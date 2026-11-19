@@ -1,16 +1,20 @@
 // Complete research source for original 0057D580 (43,845 CODE bytes).
 // All native states are written; NONEXACT and not an accepted replacement.
-#include "ObjectAdvance57D580F1237.hpp"
+#include "CharacterObject.hpp"
+#include "YuyukoFighter.hpp"
+#include "EffectServices.hpp"
 #include "MathLookup.hpp"
 
-#define OWNER_ACTOR reinterpret_cast<OwnerActor57D580F1237*>(owner)
+
+float __cdecl AngleAt00483300(float, float);
+float __cdecl AbsFloatAt00412D90(float);
 
 extern float g_F1211_AngleDivAt00657828;
 extern signed char g_F1212_DifficultyAt006714D0;
 extern unsigned int g_F1239_DwordAt0067149C;
 extern unsigned char g_F1239_ByteAt006714D1;
 
-void ObjectActor57D580F1237::Advance()
+void YuyukoObject::Advance()
 {
     if (owner->opponent->field3BA != 0) return;
     if (owner->field3BA != 0 && field08A == 0) return;
@@ -25,10 +29,10 @@ case 800:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex800 = 0; rewardIndex800 < 3; ++rewardIndex800)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -72,10 +76,10 @@ case 801:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex801 = 0; rewardIndex801 < 3; ++rewardIndex801)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -119,10 +123,10 @@ case 802:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex802 = 0; rewardIndex802 < 3; ++rewardIndex802)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -217,7 +221,7 @@ case 804:
         else {
             x = facing * velocityX + x;
             y += velocityY;
-            OWNER_ACTOR->SpawnEffect(805, x - 10.0f + RecordedRange(0, 20),
+            owner->SpawnBattleEffect(805, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
             if (animationFrame == 0) {
                 field0DA = RecordedRange(0, 20);
@@ -276,7 +280,7 @@ case 806:
         if (animationStage == 2 && field0DA < 0) {
             owner->field314 = RecordedRange(0, 40) - 90;
             owner->field318 = RecordedRange(0, 22) + 5;
-            OWNER_ACTOR->SpawnEffect(804, (100 - RecordedRange(0, 200)) * facing + x,
+            owner->SpawnBattleEffect(804, (100 - RecordedRange(0, 200)) * facing + x,
                 y, facing, 1);
             field0DA = 2;
         }
@@ -289,7 +293,7 @@ case 806:
             scaleY += 0.2f;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
-        if (animationStage == 2 && animationFrame == 0) OWNER_ACTOR->PlaySoundAt00453D40(7);
+        if (animationStage == 2 && animationFrame == 0) owner->PlaySound(7);
         break;
 
 case 807:
@@ -331,7 +335,7 @@ case 808:
         x = facing * velocityX + x;
         y -= velocityY;
         if (animationStage < 3)
-            OWNER_ACTOR->SpawnEffect(809, x - 10.0f + RecordedRange(0, 20),
+            owner->SpawnBattleEffect(809, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (field07C == 6) {
             ++field080;
@@ -348,7 +352,7 @@ case 808:
         if (animationStage == 3 && animationFrame == 0 && field07C == 1) {
             for (int burstIndex808 = 0; burstIndex808 < 8; ++burstIndex808) {
                 owner->field314 = burstIndex808;
-                OWNER_ACTOR->SpawnEffect(810, owner->opponent->x, owner->opponent->y + 100.0f, 1, 1);
+                owner->SpawnBattleEffect(810, owner->opponent->x, owner->opponent->y + 100.0f, 1, 1);
                 ++owner->fieldF0C;
             }
         }
@@ -446,7 +450,7 @@ case 812:
         SetPolarVelocity(field0C8, field0CC);
         x = facing * velocityX + x;
         y -= velocityY;
-        OWNER_ACTOR->SpawnEffect(827, x - 10.0f + RecordedRange(0, 20),
+        owner->SpawnBattleEffect(827, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationStage == 1) {
             if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
@@ -454,12 +458,12 @@ case 812:
             if (x < owner->field2D8 && facing * velocityX < 0.0f) field0D8 = 1;
             if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
-                OWNER_ACTOR->PlaySoundAt00453D40(0);
+                owner->PlaySound(0);
                 for (int collisionIndex812 = 0; collisionIndex812 < 1; ++collisionIndex812) {
                     owner->field318 = collisionIndex812 * 2 + 1;
                     owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
                         (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
-                    OWNER_ACTOR->SpawnEffect(813, x, y, facing, 1);
+                    owner->SpawnBattleEffect(813, x, y, facing, 1);
                 }
                 ClearFrameInfo();
                 return;
@@ -485,10 +489,10 @@ case 813:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex813 = 0; rewardIndex813 < 2; ++rewardIndex813)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -582,7 +586,7 @@ case 816:
         SetPolarVelocity(field0C8, field0CC);
         x = facing * velocityX + x;
         y -= velocityY;
-        OWNER_ACTOR->SpawnEffect(828, x - 10.0f + RecordedRange(0, 20),
+        owner->SpawnBattleEffect(828, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationStage == 1) {
             if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
@@ -590,12 +594,12 @@ case 816:
             if (x < owner->field2D8 && facing * velocityX < 0.0f) field0D8 = 1;
             if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
-                OWNER_ACTOR->PlaySoundAt00453D40(0);
+                owner->PlaySound(0);
                 for (int collisionIndex816 = 0; collisionIndex816 < 1; ++collisionIndex816) {
                     owner->field318 = collisionIndex816 * 2 + 1;
                     owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
                         (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
-                    OWNER_ACTOR->SpawnEffect(818, x, y, facing, 1);
+                    owner->SpawnBattleEffect(818, x, y, facing, 1);
                 }
                 ClearFrameInfo();
                 return;
@@ -630,7 +634,7 @@ case 817:
         SetPolarVelocity(field0C8, field0CC);
         x = facing * velocityX + x;
         y -= velocityY;
-        OWNER_ACTOR->SpawnEffect(829, x - 10.0f + RecordedRange(0, 20),
+        owner->SpawnBattleEffect(829, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationStage == 1) {
             if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
@@ -638,12 +642,12 @@ case 817:
             if (x < owner->field2D8 && facing * velocityX < 0.0f) field0D8 = 1;
             if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
-                OWNER_ACTOR->PlaySoundAt00453D40(0);
+                owner->PlaySound(0);
                 for (int collisionIndex817 = 0; collisionIndex817 < 1; ++collisionIndex817) {
                     owner->field318 = collisionIndex817 * 2 + 1;
                     owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
                         (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
-                    OWNER_ACTOR->SpawnEffect(819, x, y, facing, 1);
+                    owner->SpawnBattleEffect(819, x, y, facing, 1);
                 }
                 ClearFrameInfo();
                 return;
@@ -670,10 +674,10 @@ case 818:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex818 = 0; rewardIndex818 < 2; ++rewardIndex818)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -717,10 +721,10 @@ case 819:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex819 = 0; rewardIndex819 < 2; ++rewardIndex819)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -764,7 +768,7 @@ case 820:
             y = owner->y + 80.0f;
         }
         if (owner->action != 390) { ClearFrameInfo(); return; }
-        OWNER_ACTOR->SpawnEffect(805, x - 10.0f + RecordedRange(0, 40),
+        owner->SpawnBattleEffect(805, x - 10.0f + RecordedRange(0, 40),
             y - 10.0f + RecordedRange(0, 40), facing, 1);
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -851,14 +855,14 @@ case 822:
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             for (int burstIndex822 = 0; burstIndex822 < 5; ++burstIndex822) {
-                OWNER_ACTOR->PlaySoundAt00453D40(2);
+                owner->PlaySound(2);
                 owner->field314 = 8 - burstIndex822 * 4;
-                OWNER_ACTOR->SpawnEffect(823, x, y, facing, 1);
+                owner->SpawnBattleEffect(823, x, y, facing, 1);
             }
         }
         if (animationStage == 2 && animationFrame == 0) {
-            OWNER_ACTOR->SpawnEffect(824, x, y, facing, 1);
-            OWNER_ACTOR->SetCameraShakeAt00453E60(4.0f);
+            owner->SpawnBattleEffect(824, x, y, facing, 1);
+            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
         }
         break;
 
@@ -954,24 +958,24 @@ case 825:
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             for (int burstIndex825 = 0; burstIndex825 < 5; ++burstIndex825) {
-                OWNER_ACTOR->PlaySoundAt00453D40(2);
+                owner->PlaySound(2);
                 owner->field314 = 8 - burstIndex825 * 4;
-                OWNER_ACTOR->SpawnEffect(826, x, y, facing, 1);
+                owner->SpawnBattleEffect(826, x, y, facing, 1);
             }
         }
         if (animationStage == 2 && animationFrame == 0) {
-            OWNER_ACTOR->SpawnEffect(824, x, y, facing, 1);
-            OWNER_ACTOR->SetCameraShakeAt00453E60(4.0f);
+            owner->SpawnBattleEffect(824, x, y, facing, 1);
+            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
             field07C = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            OWNER_ACTOR->SpawnEffect(824, x, y, facing, 1);
-            OWNER_ACTOR->SetCameraShakeAt00453E60(4.0f);
+            owner->SpawnBattleEffect(824, x, y, facing, 1);
+            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
             field07C = 0;
         }
         if (animationStage == 4 && animationFrame == 0) {
-            OWNER_ACTOR->SpawnEffect(824, x, y, facing, 1);
-            OWNER_ACTOR->SetCameraShakeAt00453E60(4.0f);
+            owner->SpawnBattleEffect(824, x, y, facing, 1);
+            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
             field07C = 0;
         }
         break;
@@ -1085,10 +1089,10 @@ case 830:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex830 = 0; rewardIndex830 < 3; ++rewardIndex830)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1130,12 +1134,12 @@ case 830:
 case 831:
         if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
             ClearFrameInfo();
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
         }
@@ -1165,7 +1169,7 @@ case 831:
                 return;
             }
         }
-        OWNER_ACTOR->SpawnEffect(827, x - 10.0f + RecordedRange(0, 20),
+        owner->SpawnBattleEffect(827, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationFrame == 0) {
             field0DA = RecordedRange(0, 20);
@@ -1272,10 +1276,10 @@ case 834:
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex834 = 0; rewardIndex834 < 3; ++rewardIndex834)
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1369,7 +1373,7 @@ case 836:
         if (animationStage == 2 && field0DA < 0) {
             owner->field314 = -RecordedRange(0, 80) - 50;
             owner->field318 = RecordedRange(0, 18) + 15;
-            OWNER_ACTOR->SpawnEffect(837, (100 - RecordedRange(0, 200)) * facing + x,
+            owner->SpawnBattleEffect(837, (100 - RecordedRange(0, 200)) * facing + x,
                 y, facing, 1);
             field0DA = 1;
         }
@@ -1382,7 +1386,7 @@ case 836:
             scaleY += 0.1f;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
-        if (animationStage == 2 && animationFrame == 0) OWNER_ACTOR->PlaySoundAt00453D40(7);
+        if (animationStage == 2 && animationFrame == 0) owner->PlaySound(7);
         break;
 
 case 837:
@@ -1402,7 +1406,7 @@ case 837:
         if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounter(2);
         x = facing * velocityX + x;
         y += velocityY;
-        OWNER_ACTOR->SpawnEffect(805, x - 10.0f + RecordedRange(0, 20),
+        owner->SpawnBattleEffect(805, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationFrame == 0) {
             field0DA = RecordedRange(0, 20);
@@ -1419,12 +1423,12 @@ case 837:
 case 838:
         if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
             ClearFrameInfo();
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
         }
@@ -1456,7 +1460,7 @@ case 838:
                 return;
             }
         }
-        OWNER_ACTOR->SpawnEffect(827, x - 10.0f + RecordedRange(0, 20),
+        owner->SpawnBattleEffect(827, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationFrame == 0) {
             field0DA = RecordedRange(0, 20);
@@ -1485,13 +1489,13 @@ case 839:
         if (field07C == 5) { ClearFrameInfo(); return; }
         if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
             ClearFrameInfo();
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
         }
@@ -1522,7 +1526,7 @@ case 839:
         x = facing * velocityX + x;
         y += velocityY;
         if (animationFrame == 0)
-            OWNER_ACTOR->SpawnEffect(840, x - 10.0f + RecordedRange(0, 20),
+            owner->SpawnBattleEffect(840, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationFrame == 0) {
             field0DA = RecordedRange(0, 20);
@@ -1656,7 +1660,7 @@ case 843:
         x = facing * velocityX + x;
         y -= velocityY;
         if (animationStage < 3)
-            OWNER_ACTOR->SpawnEffect(809, x - 10.0f + RecordedRange(0, 20),
+            owner->SpawnBattleEffect(809, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (field07C == 6) {
             ++field080;
@@ -1673,7 +1677,7 @@ case 843:
         if (animationStage == 3 && animationFrame == 0 && field07C == 1) {
             for (int burstIndex843 = 0; burstIndex843 < 8; ++burstIndex843) {
                 owner->field314 = burstIndex843;
-                OWNER_ACTOR->SpawnEffect(842, owner->opponent->x, owner->opponent->y + 100.0f, 1, 1);
+                owner->SpawnBattleEffect(842, owner->opponent->x, owner->opponent->y + 100.0f, 1, 1);
                 ++owner->fieldF0C;
             }
         }
@@ -1861,10 +1865,10 @@ case 902:
         if (animationStage == 2 && field0DA < 0) {
             owner->field314 = -RecordedRange(0, 40) - 70;
             owner->field318 = RecordedRange(0, 6) + 15;
-            OWNER_ACTOR->SpawnEffect(903, (10 - RecordedRange(0, 20)) * facing + x,
+            owner->SpawnBattleEffect(903, (10 - RecordedRange(0, 20)) * facing + x,
                 y, facing, 1);
             if (g_F1212_DifficultyAt006714D0 == 3 && RecordedRange(0, 100) < 20)
-                OWNER_ACTOR->SpawnEffect(904, (10 - RecordedRange(0, 20)) * facing + x,
+                owner->SpawnBattleEffect(904, (10 - RecordedRange(0, 20)) * facing + x,
                     y, facing, 1);
             field0DA = 3;
         }
@@ -1877,7 +1881,7 @@ case 902:
             scaleY += 0.1f;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
-        if (animationStage == 2 && animationFrame == 0) OWNER_ACTOR->PlaySoundAt00453D40(7);
+        if (animationStage == 2 && animationFrame == 0) owner->PlaySound(7);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 0) {
             ResetSecondaryCounter(2);
             ++field0D8;
@@ -1905,7 +1909,7 @@ case 903:
         y += velocityY;
         --field0DA;
         if (field0DA <= 0) {
-            OWNER_ACTOR->SpawnEffect(805, x - 10.0f + RecordedRange(0, 20),
+            owner->SpawnBattleEffect(805, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
             field0DA = 4;
         }
@@ -1955,7 +1959,7 @@ case 904:
         y += velocityY;
         --field0DC;
         if (field0DC <= 0) {
-            OWNER_ACTOR->SpawnEffect(805, x - 10.0f + RecordedRange(0, 20),
+            owner->SpawnBattleEffect(805, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
             field0DC = 2;
         }
@@ -1992,13 +1996,13 @@ case 905:
         if (animationStage == 1 && animationFrame == 0) {
             UnknownAt0045B850(6);
             if (g_F1212_DifficultyAt006714D0 <= 1 && field0D8 < 5)
-                OWNER_ACTOR->SpawnEffect(902, field0D8 * 300 + RecordedRange(0, 50),
+                owner->SpawnBattleEffect(902, field0D8 * 300 + RecordedRange(0, 50),
                     0.0f, facing, 1);
             if (g_F1212_DifficultyAt006714D0 == 2 && field0D8 < 5)
-                OWNER_ACTOR->SpawnEffect(902, field0D8 * 270 + RecordedRange(0, 50),
+                owner->SpawnBattleEffect(902, field0D8 * 270 + RecordedRange(0, 50),
                     0.0f, facing, 1);
             if (g_F1212_DifficultyAt006714D0 == 3 && field0D8 < 6)
-                OWNER_ACTOR->SpawnEffect(902, field0D8 * 240 + RecordedRange(0, 50),
+                owner->SpawnBattleEffect(902, field0D8 * 240 + RecordedRange(0, 50),
                     0.0f, facing, 1);
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
@@ -2052,7 +2056,7 @@ case 906:
         }
         if (animationStage == 2 && animationFrame == 0) {
             ResetSecondaryCounter(2);
-            OWNER_ACTOR->SpawnEffect(907, x, y, 1, 0);
+            owner->SpawnBattleEffect(907, x, y, 1, 0);
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) owner->fieldF04 = 1;
@@ -2166,7 +2170,7 @@ case 910:
             field0D8 = 0;
         }
         if (animationStage == 1 && animationFrame == 5 && field0CC > 0.0f && field0CC < 180.0f)
-            OWNER_ACTOR->SpawnEffect(911, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
+            owner->SpawnBattleEffect(911, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
         scaleY *= 0.85;
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
@@ -2195,7 +2199,7 @@ case 911:
             ++field080;
         }
         if (animationStage == 1 && animationFrame == 0)
-            OWNER_ACTOR->SpawnEffect(912, x, y, facing, 1);
+            owner->SpawnBattleEffect(912, x, y, facing, 1);
         if (animationStage < 3) {
             scaleX += 0.07f;
             scaleY += 0.07f;
@@ -2252,7 +2256,7 @@ case 913:
             color[3] = 255;
         }
         if (animationStage == 1 && animationFrame == 5 && field0CC > 0.0f && field0CC < 180.0f)
-            OWNER_ACTOR->SpawnEffect(914, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
+            owner->SpawnBattleEffect(914, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
         scaleY *= 0.85;
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
@@ -2281,7 +2285,7 @@ case 914:
             ++field080;
         }
         if (animationStage == 1 && animationFrame == 0)
-            OWNER_ACTOR->SpawnEffect(915, x, y, facing, 1);
+            owner->SpawnBattleEffect(915, x, y, facing, 1);
         if (animationStage < 3) {
             scaleX += 0.07f;
             scaleY += 0.07f;
@@ -2411,7 +2415,7 @@ case 919:
         if (AdvanceNestedFrame() == field070) {
             if (field0D8 < 2 - g_F1212_DifficultyAt006714D0) ++field0D8;
             else {
-                OWNER_ACTOR->SpawnEffect(904, RecordedRange(0, 1200) + 60, RecordedRange(0, 120) + 700,
+                owner->SpawnBattleEffect(904, RecordedRange(0, 1200) + 60, RecordedRange(0, 120) + 700,
                     1 - (RecordedRange(0, 100) < 50) * 2, 1);
                 field0D8 = 0;
             }
@@ -2564,5 +2568,3 @@ case 997:
         break;
     }
 }
-
-#undef OWNER_ACTOR

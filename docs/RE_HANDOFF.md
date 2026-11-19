@@ -51,6 +51,12 @@ Done so far:
   and sends 93 effect-spawn calls directly through the actual `Fighter`
   owner. Its 985 differing bytes, 135 GPR roles and six widths remain
   unresolved; all 24 dependent exact functions cold-replayed successfully.
+- Yuyuko's 43,845-byte object research body is now
+  `YuyukoObject::Advance`; 66 effect spawns, eight sound calls and four
+  camera-shake calls use the shared interfaces. The full object body and
+  all 1,043 relocation positions/types were unchanged. Its 914 GPR and
+  six width differences still prevent exact credit; all 24 affected
+  units cold-replayed successfully.
 
 - The class structure from the PE vtables is in source: `Actor`, `Fighter`,
   one `<Char>Fighter` per character with its overrides under the slot names,
@@ -99,7 +105,8 @@ Next steps:
      under several class names; `relabel.py` makes renaming cheap).
 2. Move the remaining research parent classes to their real character
    classes, as now done for `ReimuFighter::Advance` and
-   `AliceObject::Advance` and `MeilingObject::Advance`. Resolve provisional
+   `AliceObject::Advance`, `MeilingObject::Advance` and
+   `SakuyaObject::Advance` and `YuyukoObject::Advance`. Resolve provisional
    native-call signatures against the shared base APIs without regressing
    the full giant function.
 3. The giants' register debt: find the construct behind the anomalous

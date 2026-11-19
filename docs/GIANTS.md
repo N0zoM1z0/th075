@@ -69,8 +69,16 @@ spelling until the target call signatures have been fully reconciled. The Meilin
 `Fighter::SpawnBattleEffect` directly through `owner` at all 93 effect-spawn
 sites; its 34,434-byte frontier remains 985 differing bytes with 135 GPR
 and six instruction-width mismatches in the late state machine. All 24
-header-affected exact units cold-replayed. The other parents still use
-historical research class names (for example `ObjectActor57D580F1237`).
+header-affected exact units cold-replayed.
+
+Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
+66 effect spawns, eight sounds and four camera-shake calls moved from
+borrowed owner declarations to shared game interfaces. Both 44,331-byte
+research bodies have exactly 1,043 relocation positions/types and zero
+nonrelocation byte differences. The 43,845 original CODE bytes remain
+nonexact (914 GPR-role differences and six widths); all 24 affected
+exact units cold-replayed. Other parents retain their historical names.
+
 
 ## Without a complete parent
 

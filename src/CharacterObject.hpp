@@ -53,7 +53,14 @@ public:
 class PatchouliObject : public CharacterObject { public: PatchouliObject(void* ownerFighter); };
 class YoumuObject : public CharacterObject { public: YoumuObject(void* ownerFighter); };
 class RemiliaObject : public CharacterObject { public: RemiliaObject(void* ownerFighter); };
-class YuyukoObject : public CharacterObject { public: YuyukoObject(void* ownerFighter); };
+class YuyukoObject : public CharacterObject {
+public:
+    YuyukoObject(void* ownerFighter);
+    virtual void Advance();   // 0057D580; complete nonexact parent
+    int RecordedRange(int lower, int upper);
+    void PlaySharedSound(short sound);
+    void UnknownAt0045B850(int value);  // native RET 4, semantics unconfirmed
+};
 class YukariObject : public CharacterObject { public: YukariObject(void* ownerFighter); };
 class SuikaObject : public CharacterObject { public: SuikaObject(void* ownerFighter); };
 class MeilingObject : public CharacterObject {
