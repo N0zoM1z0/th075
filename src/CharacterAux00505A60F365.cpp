@@ -32,7 +32,7 @@ void PatchouliFighter::AdvanceAuxiliary() {
         field490 = float(fieldF10+20) * g_SpecialPowerStepAt006590B4 * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
         fieldF10 = fieldF10-2;
         if (Rand(0,100)<50)
-            SpawnProjectile(0x38c, float(Rand(0,640)*facing)+x,0.0f,reinterpret_cast<unsigned char&>(facing),1);
+            SpawnProjectile(0x38c, float(Rand(0,640)*facing)+x,0.0f,facing,1);
         else
             SpawnProjectile(0x38c, x-float(Rand(0,640)*facing),0.0f,-facing,1);
         if (fieldF10<0) fieldF10=0;

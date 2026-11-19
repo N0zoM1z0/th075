@@ -19,7 +19,7 @@ void Fighter::SetNoticeFields(signed char notice,unsigned char first,unsigned ch
 }
 void Fighter::RenderNotice(void* text,unsigned char r,unsigned char g,unsigned char b,unsigned char highlighted) {
     if(g_BattleCharacterNumberAt0067161E<8)
-        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,24,reinterpret_cast<unsigned char&>(scriptStep),highlighted);
+        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,24,scriptStep,highlighted);
     else
-        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,16,reinterpret_cast<unsigned char&>(scriptStep),highlighted);
+        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,16,scriptStep,highlighted);
 }

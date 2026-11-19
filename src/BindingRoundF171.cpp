@@ -38,7 +38,7 @@ void Fighter::RecordRoundFields(
         opponent->healthLimits[0] = value;
         opponent->field32A[0] = first;
         opponent->field384[0] = second;
-        reinterpret_cast<unsigned char&>(opponent->field370[0]) = third;
+        opponent->field370[0] = static_cast<signed char>(third);
         opponent->field3D0[0] = payloadA;
         opponent->field400[0] = payloadB;
         opponent->field430[0] = payloadC;

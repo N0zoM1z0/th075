@@ -35,7 +35,7 @@ void BattleScene::EnterRoundEnd()
                     field018 = 2;
                     reinterpret_cast<int&>(field00C) = 300;
                 } else {
-                    reinterpret_cast<unsigned char&>(field05D) = 1;
+                    field05D = 1;
                     field018 = 3;
                     reinterpret_cast<int&>(field00C) = 180;
                 }
@@ -51,7 +51,7 @@ void BattleScene::EnterRoundEnd()
                 field018 = 2;
                 reinterpret_cast<int&>(field00C) = 300;
             } else {
-                reinterpret_cast<unsigned char&>(field05D) = 0;
+                field05D = 0;
                 field018 = 3;
                 reinterpret_cast<int&>(field00C) = 180;
             }
