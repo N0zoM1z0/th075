@@ -309,6 +309,12 @@ member operations; the old two-byte pointer-arithmetic overlay was removed.
 All 56 affected exact functions across six battle/combat/KO/round-end/reset
 translation units replayed 56/56 with complete bodies and relocations
 unchanged.
+Another 45 redundant unsigned-byte aliases around writes to already-signed
+members were removed: eleven `field532` character initializers, BattleScene
+`field018`, Meiling `sequencePhase`, Fighter `field484/field3AD/noticeState`
+and ResultScene `field00C`. Thirty-eight exact functions across twenty
+affected translation units, including the 3,797-byte Meiling stage
+configuration and hit/KO/notice helpers, replayed 38/38 unchanged.
 `Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
 signed render test; its render and base-reset functions remain byte-identical.
 Four signed-byte views used only to store zero to the unsigned `field39C`

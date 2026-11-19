@@ -1009,6 +1009,14 @@ remains its own unsigned byte. The old pointer-arithmetic overlay type and
 macro are removed. All 56 exact functions across battle-state, hit handling,
 KO/round-end processing and fighter reset (six translation units) replayed
 56/56 with complete function bytes and relocation maps unchanged.
+A further 45 unsigned-byte reference casts were removed from writes to
+members already declared `signed char`: the eleven character `field532`
+initializers, BattleScene `field018` state writes, Meiling `sequencePhase`,
+Fighter `field484/field3AD/noticeState`, and ResultScene `field00C`. This
+covers the 3,797-byte Meiling stage configuration, hit/pause/KO/round-end
+paths, notice helpers and all eleven fighter constructors. All 38 exact
+functions across the 20 touched translation units replayed 38/38 with
+complete COFF bodies and relocation maps unchanged.
 The notice gate `Fighter::noticeFirst` at `+0x6E8` is a signed byte; its
 native render test sign-extends the value. The member is now `signed char`,
 with the complete 1,637-byte render and 1,151-byte base-reset functions still
