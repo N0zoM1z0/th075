@@ -1081,6 +1081,17 @@ KO and round-end transitions; the timer's unsigned storage is preserved. All
 22 exact functions across seven battle/scene translation units replayed
 22/22, including the 3,459-byte overlay timeline and 4,764-byte battle state
 machine. The four fighter giant bodies and relocation maps remain identical.
+Battle collision response now copies `field08C`/`field090` as their actual
+float members instead of viewing the float lvalues as `unsigned long&`.
+`Actor::SaveCollisionFields` likewise snapshots `savedX`/`savedY` through
+ordinary float assignments. This preserves the original 32-bit representations
+for the finite world coordinates while expressing the observed Actor layout
+with its native C++ types. All three exact collision functions (975-byte
+hitbox resolution, 897-byte body contact, and 118-byte collision snapshot)
+replayed 3/3 with complete bodies and relocation maps unchanged.
+The battle scene constructor's two zero writes to float `field08C` are now
+`0.0f` assignments instead of integer-word aliases; its complete 922-byte
+constructor and all 40 relocations remain identical (replay 1/1).
 The score word is stored as signed `int`, while the global score ceilings
 are unsigned 32-bit values. The three unsigned-reference aliases in the
 battle state machine and knockout settlement were redundant for comparisons

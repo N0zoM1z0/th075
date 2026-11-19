@@ -359,6 +359,12 @@ positive writes to unsigned `field00C` were removed from pause/KO/round-end
 transitions without changing its storage type. Twenty-two exact functions
 across seven translation units replayed 22/22, including the complete
 3,459-byte overlay timeline and 4,764-byte battle-state machine.
+Collision body-contact and Actor snapshot paths now copy `field08C`,
+`field090`, `savedX` and `savedY` as their declared float members rather than
+through unsigned-long reference aliases. All three exact collision functions
+replayed 3/3. `BattleScene` construction also initializes float `field08C`
+with two direct `0.0f` assignments; the full 922-byte constructor and all 40
+relocations remain identical, replayed 1/1.
 The three `unsigned long&` aliases around signed `Fighter::score` were
 removed from knockout settlement, battle state transitions and pause/debug
 reset. Comparisons retain the native unsigned conversion against global score
