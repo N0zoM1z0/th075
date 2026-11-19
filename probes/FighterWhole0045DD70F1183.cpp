@@ -5,7 +5,7 @@
 // Preserve independently reviewed current bodies and all six table groups.
 // Accepted native callees at 40FAC0, 40FB40 and 453D60 consume signed WORD parameters.
 // Raw coordinate DWORD views preserve the observed float-slot bit transport.
-class FighterSwitchF598_Boss0045DD70 : public ReimuFighter { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); void Advance(); void BeginFadeParametersAt454A70(unsigned char); void SelectResourceParametersAt452B30(); void SetNonnegativeWordAt453E80(short); void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char); void SpawnFloatXAt453A70(int,float,int,char,int); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(short); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(short); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(short); };
+
 extern float g_ReimuStormFallAt00658044;
 extern float g_ReimuWarpSpreadAt006583B4;
 extern float g_ReimuWarpSpeedAt00657CF8;
@@ -60,7 +60,7 @@ extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
-void FighterSwitchF598_Boss0045DD70::Advance() {
+void ReimuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
     switch (action) {
@@ -317,7 +317,6 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
 #define F605_STAGE48 1
 #define F605_EARLY48 2
 #define F605_LATE48 5
-#define F605_COUNTER 0xF00
 case 0x48: {
     if (animationStage==0 && animationFrame==0) {
         velocityX = -(reinterpret_cast<float&>(field094));
@@ -331,8 +330,8 @@ case 0x48: {
     }
     velocityY = velocityY - field05C;
     if (velocityY + y <= g_ThresholdAt0065782C) {
-        I16(F605_COUNTER) = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-        I16(F605_COUNTER+2) = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+        scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+        scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ResetAt453E20();
         y = 0.0f;
         SetNativeActionAt40FAC0(0x61);
@@ -348,7 +347,6 @@ case 0x48: {
 #undef F605_STAGE48
 #undef F605_EARLY48
 #undef F605_LATE48
-#undef F605_COUNTER
 #define F608_PROJECTILE 0x3B7
 #define F608_SIDE 1
 #define F608_COUNTER 0xF00
@@ -649,4 +647,3 @@ case 0x48: {
 }
 #undef opponent
 #undef I16
-#undef RAW

@@ -49,10 +49,11 @@ instruction widths that follow from it.
 | 005EB520 | Meiling object | 34,434 | `CharacterObjectWhole005EB520F1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
-The research classes still carry their historical names
-(`FighterSwitchF598_Boss0045DD70`, `ObjectActor57D580F1237`, …) but derive
-from the right character class, so `FighterSwitchF598_Boss0045DD70::Advance`
-is `ReimuFighter::Advance`.
+The Reimu fighter parent now directly defines `ReimuFighter::Advance` rather than
+a second, artificial derived class. Its native-call declarations retain
+experimental ABI spelling until all alias calls can be reconciled with the
+shared `Actor` and `Fighter` APIs. The other parents still use historical
+research class names (for example `ObjectActor57D580F1237`).
 
 ## Without a complete parent
 
@@ -109,5 +110,10 @@ The deleted per-checkpoint notes with full details remain in Git:
 `git show 430a06a4:docs/<NOTE>.md` (list them with
 `git ls-tree --name-only 430a06a4 docs/`).
 
-The most promising lead is a source construct that makes a join take the
-first-jump state for otherwise identical code.
+Seven further natural-C++ source experiments at the Alice object join at
+`004F344C` (inverse comparison, operand swap, compound assignment, empty
+`else`, inverse `else`, explicit boolean, and conditional expression) did
+not improve the native byte frontier. The inverse `else`, compound
+assignment, and explicit boolean forms introduced new width/instruction
+debt. The remaining lead is a construct that makes the join take the
+first-jump register state without changing its other instructions.

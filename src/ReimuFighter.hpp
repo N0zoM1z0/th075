@@ -9,6 +9,37 @@ class ReimuFighter : public Fighter {
 public:
     ReimuFighter();
     virtual ~ReimuFighter();
+    virtual void Advance(); // slot 1, 0045DD70 (nonexact giant research parent)
+
+    // Native-call ABI hypotheses used by the giant Advance research source.
+    // These signatures preserve the VC7.1 argument passing seen in the PE;
+    // the actual shared callees are owned by Actor/Fighter, not by Reimu.
+    void SetMotionStateAt40FBB0(int,float,int);
+    void SetMotionFloatAt40FBB0(float,float,float);
+    void ResetMotionAt40FC50();
+    void SpawnDirectedAt453A70(int,int,int,char,int);
+    void SpawnWithFloatAt453A70(int,int,float,char,int);
+    void SpawnFloatXYAt453A70(int,float,float,char,int);
+    void InitTrajectoryAt453E60(float);
+    void BeginFadeParametersAt454A70(unsigned char);
+    void SelectResourceParametersAt452B30();
+    void SetNonnegativeWordAt453E80(short);
+    void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char);
+    void SpawnFloatXAt453A70(int,float,int,char,int);
+    int SelectRangeAt455580(int,int);
+    void PlaySoundAt453D40(short);
+    void ResetAt453E20();
+    void PrepareActionAt453D60(short);
+    void StartAnimationAt46D000(int);
+    void SpawnAt453C80(int,float,float,char,int);
+    void SpawnMixedAt453C80(int,int,float,char,int);
+    void SpawnRawXYAt453C80(int,int,int,char,int);
+    void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
+    short GetNativeActionAt40FA30();
+    void SetNativeActionAt40FAC0(short);
+    signed char ContactAt454EE0();
+    void SetAuxActionAt40FB40(short);
+
     void UpdateGaugeTimer(int amount);
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);

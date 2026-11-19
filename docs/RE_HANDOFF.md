@@ -1,4 +1,4 @@
-# TH075 handoff (2026-11-15)
+# TH075 handoff (2026-11-19)
 
 Follow [AGENTS.md](../AGENTS.md) and the [workflow](RE_WORKFLOW.md). The user
 reports no other active sessions: continue any dirty work you find. Keep
@@ -21,6 +21,18 @@ obsolete files removed, hash pins replaced by cold replay, and raw offsets
 replaced by named members of shared classes.
 
 Done so far:
+
+- The character-select scene now owns the exact C++ constructor, main
+  `Advance`, reset and five choice/confirmation/option methods. Their shared
+  layout covers the 28-byte per-player input records and named animation
+  fields; all eight touched complete functions cold-replay exact.
+- The 60,999-byte Reimu fighter parent is now `ReimuFighter::Advance` on the
+  real vtable class, with its two +F00/+F02 counters named in `Fighter`.
+  Its native-byte ratchet is unchanged: 6,311 register-role differences
+  beginning at `0045FDA9`; no whole-function exact credit was added.
+  All 99 header-affected exact units cold-replayed successfully (33 objects).
+- Seven VC7.1 conditional-join variants on Alice object `Advance` at
+  `004F344C` failed to improve its nonexact frontier; see GIANTS.md.
 
 - The class structure from the PE vtables is in source: `Actor`, `Fighter`,
   one `<Char>Fighter` per character with its overrides under the slot names,
@@ -67,8 +79,10 @@ Next steps:
    - callers that still declare their own copies of `TextOverlay`, sound
      bank, input mapping and other library methods (248 addresses are bound
      under several class names; `relabel.py` makes renaming cheap).
-2. Rename the research parent classes to their character classes
-   (`FighterSwitchF598_Boss0045DD70::Advance` is `ReimuFighter::Advance`).
+2. Move the remaining research parent classes to their real character
+   classes, as now done for `ReimuFighter::Advance`. Resolve provisional
+   native-call signatures against the shared base APIs without regressing
+   the full giant function.
 3. The giants' register debt: find the construct behind the anomalous
    joins described in GIANTS.md.
 
