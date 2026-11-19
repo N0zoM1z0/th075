@@ -547,7 +547,7 @@ address,name,module,confidence,evidence
 0x00427180,MusicRoomScene::DrawNumber,MusicRoomScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
 0x0042AE70,ReplayScene::DrawNumber,ReplayScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
 0x0042BFD0,ReplayScene::DrawSlotNumber,ReplayScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
-0x004315F0,ResultScene::DrawCounter,ResultScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
+0x004315F0,ResultListScene::DrawCounter,ResultScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
 0x00431D60,CardList::EncodeCharacterFile,CardList,inferred,F252; independently whole 432-byte cold exact with 15 real COFF relocation fields; nominal parent layout unproven
 0x00430EE0,ResultListScene::LoadSelectedCharacterResources,ResultScene,inferred,"F256; whole 398-byte native resource loader, all 20 COFF fields cold exact; original complete scene and texture class ownership unknown"
 0x00427300,MusicRoom::EncodeCatalogFileAt00427300,MusicRoom,inferred,F257; entire 298-byte native catalog CSV encoder and all 11 authentic COFF fields cold exact; full original scene/owner layout unknown
@@ -616,7 +616,7 @@ address,name,module,confidence,evidence
 0x0041C0D0,TextRasterizer::SelectFontAt0041C0D0,TextRasterizer,inferred,"F320; complete 83-byte native GDI GetDC/SelectObject/GetTextMetricsA caller, 3 physical COFF import fields cold exact; full private owner unproven"
 0x0042AFF0,SceneText::DrawNameGlyphsAt0042AFF0,SceneText,inferred,"F324; whole original 280-byte SceneEntryGlyphsF324 glyph-atlas draw loop, six genuine native COFF fields cold exact, full private receiver layout unproven"
 0x0042C150,SceneText::DrawNameGlyphsAt0042C150,SceneText,inferred,"F324; whole original 280-byte ReplayBrowserGlyphsF324 glyph-atlas draw loop, six genuine native COFF fields cold exact, full private receiver layout unproven"
-0x00431770,ResultScene::DrawNameGlyphs,ResultScene,inferred,"F324; whole original 280-byte ResultSceneGlyphsF324 glyph-atlas draw loop, six genuine native COFF fields cold exact, full private receiver layout unproven"
+0x00431770,ResultListScene::DrawNameGlyphs,ResultScene,inferred,"F324; whole original 280-byte ResultSceneGlyphsF324 glyph-atlas draw loop, six genuine native COFF fields cold exact, full private receiver layout unproven"
 0x00411000,SpriteSequence::AppendElement,SpriteSequence,inferred,"F325; complete 183 native CODE history append with 164-byte real element, true SpriteQuad REP MOVSD and all 4 game-list COFF fields cold exact; original private class layout unproven"
 0x00413DE0,ReplayRecords::AppendRecord,ReplayRecords,inferred,"F326; complete 1252-byte replay writer boss, 379 x86 instructions, six real iterator constructors/4 queue loops and all 50 physical relocations cold exact; owner private ABI names provisional"
 0x004138E0,ReplayRecords::FinalizeFile,ReplayRecords,inferred,"F328; entire 375-byte native replay file finalize with authentic /GS cookie, 264-byte path + real pointer and I/O state, 15 Win32/CRT/game physical relocations cold exact"
@@ -920,7 +920,7 @@ address,name,module,confidence,evidence
 0x00438C20,StaffRollScene::AdvanceAt00438C20,StaffRollScene,inferred,"F504; complete original 208 CODE /57 instructions, native JA+JAE time-window and fighter return, 13 genuine physical refs affected-only cold exact"
 0x0042C270,ReplayScene::DrawSaveFilenameAt0042C270,ReplayScene,inferred,"F514; 303-byte exact original replay filename glyph rendering both branches, native /GS, 12 true PE COFF fields and targeted 1/1 cold exact"
 0x0042B110,NameEntryScene::DrawDecimalGlyphLabelAt0042B110,NameEntryScene,inferred,"F516; entire original 169-byte NameEntry rank label, 145/145 native nonfield bytes, 6 authentic physical COFF fields and targeted 2/2 cold exact"
-0x00431890,ResultScene::DrawRankLabelAt00431890,ResultScene,inferred,"F516; entire original 169-byte Result rank label, 145/145 native nonfield bytes, 6 authentic physical COFF fields and targeted 2/2 cold exact"
+0x00431890,ResultListScene::DrawRankLabel,ResultScene,inferred,"F516; entire original 169-byte Result rank label, 145/145 native nonfield bytes, 6 authentic physical COFF fields and targeted 2/2 cold exact"
 0x00425130,GameProgress::IncrementSelectedRecord,GameProgress,inferred,"F535; whole original 92 CODE/24 instructions, native postfix signed 2D stride increment, zero COFF fields, changed-only 1/1 cold exact"
 0x00455770,CombatCoordinateView::MapWorldToScreenAt00455770,CombatCoordinateView,inferred,"F536; complete native two-axis game transform, full 111 CODE and cold exact; owner/name provisional, no native callers"
 0x0041CA30,FontSurface::IsDoubleByteAt0041CA30,FontSurface,inferred,"F555; full original 77 CODE cold exact; only original caller 0041C9D0, 28 native insns, 0 COFF; original class identity and vendor provenance provisional"

@@ -21234,7 +21234,7 @@ relocations = [
   { offset = 0x5E4, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x5FB, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x61B, type = "REL32", symbol = "?DrawQuad@SceneQuadDrawingF119@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x67E, type = "REL32", symbol = "?DrawRankLabel@ResultListScene@@QAEXMMKC@Z", target = 0x00431890 },
+  { offset = 0x67E, type = "REL32", symbol = "?DrawRankLabel@ResultListScene@@QAEXMMIC@Z", target = 0x00431890 },
   { offset = 0x6C8, type = "REL32", symbol = "?DrawNameGlyphs@ResultListScene@@QAEXMMKPBC@Z", target = 0x00431770 },
   { offset = 0x716, type = "REL32", symbol = "?DrawCounter@ResultListScene@@QAEXMMKHH@Z", target = 0x004315F0 },
   { offset = 0x731, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
@@ -40639,8 +40639,8 @@ target = 0x00411500
 source = "src/ResultNumberF253.cpp"
 object = "build/matching/ResultNumberF253.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultScene::DrawCounter"]
-symbol = "?DrawNumber@ResultNumberF253@@QAEXMMKHH@Z"
+functions = ["ResultListScene::DrawCounter"]
+symbol = "?DrawCounter@ResultListScene@@QAEXMMKHH@Z"
 target_address = 0x004315F0
 size = 377
 [[units.result-scene-draw-counter-004315f0.relocations]]
@@ -45644,8 +45644,8 @@ target = 0x00411500
 source = "src/ResultSceneGlyphsF324.cpp"
 object = "build/matching/ResultSceneGlyphsF324.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultScene::DrawNameGlyphs"]
-symbol = "?DrawNameGlyphs@ResultSceneGlyphsF324@@QAEXMMKPBC@Z"
+functions = ["ResultListScene::DrawNameGlyphs"]
+symbol = "?DrawNameGlyphs@ResultListScene@@QAEXMMKPBC@Z"
 target_address = 0x00431770
 size = 280
 [[units.result-scene-name-glyphs-00431770.relocations]]
@@ -60362,8 +60362,8 @@ target = 0x00640611
 source = "src/NameEntryResultRankGlyphLabelsF516.cpp"
 object = "build/matching/NameEntryResultRankGlyphLabelsF516.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultScene::DrawRankLabelAt00431890"]
-symbol = "?DrawRankLabel@ResultRankLabelF472@@QAEXMMIC@Z"
+functions = ["ResultListScene::DrawRankLabel"]
+symbol = "?DrawRankLabel@ResultListScene@@QAEXMMIC@Z"
 target_address = 0x00431890
 size = 169
 [[units.result-scene-draw-rank-glyphs-00431890.relocations]]
@@ -60389,7 +60389,7 @@ target = 0x0040DA00
 [[units.result-scene-draw-rank-glyphs-00431890.relocations]]
 offset = 151
 type = "REL32"
-symbol = "?DrawGlyphs@ResultRankLabelF472@@QAEXMMIPBE@Z"
+symbol = "?DrawNameGlyphs@ResultListScene@@QAEXMMKPBC@Z"
 target = 0x00431770
 [[units.result-scene-draw-rank-glyphs-00431890.relocations]]
 offset = 159

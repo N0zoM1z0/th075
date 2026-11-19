@@ -45,7 +45,7 @@ public:
     void BuildCounterPage();
     void DrawCounter(float x, float y, DWORD color, int number, int style);
     void DrawNameGlyphs(float x, float y, DWORD color, const signed char* name);
-    void DrawRankLabel(float x, float y, DWORD color, signed char rank);
+    void DrawRankLabel(float x, float y, unsigned int color, signed char rank);
 
     ResultListTexture* mainTexture;     // +008
     ResultListTexture* auxiliaryTexture; // +00C

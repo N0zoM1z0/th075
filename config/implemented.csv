@@ -564,7 +564,7 @@ NameEntryScene::UpdateShared
 MusicRoomScene::DrawNumber
 ReplayScene::DrawNumber
 ReplayScene::DrawSlotNumber
-ResultScene::DrawCounter
+ResultListScene::DrawCounter
 CardList::EncodeCharacterFile
 ResultListScene::LoadSelectedCharacterResources
 MusicRoom::EncodeCatalogFileAt00427300
@@ -633,7 +633,7 @@ FontSurface::RasterizeText
 TextRasterizer::SelectFontAt0041C0D0
 SceneText::DrawNameGlyphsAt0042AFF0
 SceneText::DrawNameGlyphsAt0042C150
-ResultScene::DrawNameGlyphs
+ResultListScene::DrawNameGlyphs
 SpriteSequence::AppendElement
 ReplayRecords::AppendRecord
 ReplayRecords::FinalizeFile
@@ -937,7 +937,7 @@ BattleScene::SetSharedValueAt004557E0
 StaffRollScene::AdvanceAt00438C20
 ReplayScene::DrawSaveFilenameAt0042C270
 NameEntryScene::DrawDecimalGlyphLabelAt0042B110
-ResultScene::DrawRankLabelAt00431890
+ResultListScene::DrawRankLabel
 GameProgress::IncrementSelectedRecord
 CombatCoordinateView::MapWorldToScreenAt00455770
 FontSurface::IsDoubleByteAt0041CA30

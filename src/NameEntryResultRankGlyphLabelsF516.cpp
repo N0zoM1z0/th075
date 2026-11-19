@@ -1,4 +1,5 @@
 #include <windows.h>
+#include "ResultListScene.hpp"
 // Independently original R109 and R043 complete rank glyph labels.
 // Real 132-byte quad is a meaningful member of a local aggregate.
 // Its borrowed 0040DA00 constructor is called on the true quad field;
@@ -19,11 +20,6 @@ public:
  void DrawRankLabel(float x,float y,unsigned int tint,signed char rank);
  void DrawGlyphs(float x,float y,unsigned int tint,const unsigned char* glyphs);
 };
-class ResultRankLabelF472 {
-public:
- void DrawRankLabel(float x,float y,unsigned int tint,signed char rank);
- void DrawGlyphs(float x,float y,unsigned int tint,const unsigned char* glyphs);
-};
 void NameEntryLabelF472::DrawRankLabel(float x,float y,unsigned int tint,signed char rank) {
  unsigned char glyphs[8];
  RankGlyphFrameF472 frame;
@@ -33,12 +29,12 @@ void NameEntryLabelF472::DrawRankLabel(float x,float y,unsigned int tint,signed 
  glyphs[5]=100;glyphs[6]=100;glyphs[7]=100;
  DrawGlyphs(x,y,tint,glyphs);
 }
-void ResultRankLabelF472::DrawRankLabel(float x,float y,unsigned int tint,signed char rank) {
+void ResultListScene::DrawRankLabel(float x,float y,unsigned int tint,signed char rank) {
  unsigned char glyphs[8];
  RankGlyphFrameF472 frame;
  frame.quad.ConstructNative(x,y,x+g_RankWidthAt00657F78,y+g_RankHeightAt0065786C);
  glyphs[0]=13;glyphs[1]=40;glyphs[2]=71;
  glyphs[3]=rank/10+52;glyphs[4]=rank%10+52;
  glyphs[5]=100;glyphs[6]=100;glyphs[7]=100;
- DrawGlyphs(x,y,tint,glyphs);
+ DrawNameGlyphs(x,y,tint,reinterpret_cast<const signed char*>(glyphs));
 }

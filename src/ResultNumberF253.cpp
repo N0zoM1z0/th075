@@ -2,6 +2,7 @@
 #include "SpriteTransform.hpp"
 #include <windows.h>
 #include <d3d8.h>
+#include "ResultListScene.hpp"
 
 // Borrowed drawing interface at scene+8; original parent layout unproven.
 class ResultNumberF253Drawer {
@@ -9,17 +10,8 @@ public: void DrawQuad(int texture,const SpriteQuad40CA80&, const RECT*, DWORD);
 };
 extern const float g_ResultDigitWidthAt00657F78;
 extern const float g_ResultDigitHeightAt0065786C;
-class ResultNumberF253 {
-public:
-    void DrawNumber(float x, float y, DWORD color, int number,
-                           int minDigits);
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x008 - 0x000];
-    void* field008;
-};
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
-void ResultNumberF253::DrawNumber(float x, float y, DWORD color,
+void ResultListScene::DrawCounter(float x, float y, DWORD color,
                                         int number, int minDigits)
 {
     int remaining=number;
@@ -31,7 +23,7 @@ void ResultNumberF253::DrawNumber(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<ResultNumberF253Drawer*>(field008)->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<ResultNumberF253Drawer*>(mainTexture)->DrawQuad(2,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-11.0f,0.0f,0.0f);
                 --minDigits;
@@ -40,7 +32,7 @@ void ResultNumberF253::DrawNumber(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<ResultNumberF253Drawer*>(field008)->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<ResultNumberF253Drawer*>(mainTexture)->DrawQuad(2,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else

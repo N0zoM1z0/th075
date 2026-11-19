@@ -33,6 +33,12 @@ Done so far:
   selected directly related functions passed local replay (18/18); all
   four touched giant frontiers remained nonexact and nonregressing. The
   wider Fighter.hpp dependency graph needs further grouped cold replay.
+- Result-list rendering helpers now belong to the real scene:
+  `DrawCounter` (377 B), `DrawNameGlyphs` (280 B), and `DrawRankLabel`
+  (169 B). The rank glyph method calls the real `DrawNameGlyphs` target
+  instead of a borrowed alias. All three complete functions, their
+  3,314-byte `Render` caller and the separate name-entry rank glyph
+  function cold-replay exactly.
 - The result-list browser is now separately modeled as `ResultListScene`
   (not the score-tallying `ResultScene`). Its 1,803-byte selection update
   and 343-byte input poll share typed page, character, availability and

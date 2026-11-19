@@ -565,7 +565,7 @@ NameEntryScene::UpdateShared,0x0042B380,function
 MusicRoomScene::DrawNumber,0x00427180,function
 ReplayScene::DrawNumber,0x0042AE70,function
 ReplayScene::DrawSlotNumber,0x0042BFD0,function
-ResultScene::DrawCounter,0x004315F0,function
+ResultListScene::DrawCounter,0x004315F0,function
 CardList::EncodeCharacterFile,0x00431D60,function
 ResultListScene::LoadSelectedCharacterResources,0x00430EE0,function
 MusicRoom::EncodeCatalogFileAt00427300,0x00427300,function
@@ -634,7 +634,7 @@ FontSurface::RasterizeText,0x0041C2E0,function
 TextRasterizer::SelectFontAt0041C0D0,0x0041C0D0,function
 SceneText::DrawNameGlyphsAt0042AFF0,0x0042AFF0,function
 SceneText::DrawNameGlyphsAt0042C150,0x0042C150,function
-ResultScene::DrawNameGlyphs,0x00431770,function
+ResultListScene::DrawNameGlyphs,0x00431770,function
 SpriteSequence::AppendElement,0x00411000,function
 ReplayRecords::AppendRecord,0x00413DE0,function
 ReplayRecords::FinalizeFile,0x004138E0,function
@@ -938,7 +938,7 @@ BattleScene::SetSharedValueAt004557E0,0x004557E0,function
 StaffRollScene::AdvanceAt00438C20,0x00438C20,function
 ReplayScene::DrawSaveFilenameAt0042C270,0x0042C270,function
 NameEntryScene::DrawDecimalGlyphLabelAt0042B110,0x0042B110,function
-ResultScene::DrawRankLabelAt00431890,0x00431890,function
+ResultListScene::DrawRankLabel,0x00431890,function
 GameProgress::IncrementSelectedRecord,0x00425130,function
 CombatCoordinateView::MapWorldToScreenAt00455770,0x00455770,function
 FontSurface::IsDoubleByteAt0041CA30,0x0041CA30,function
