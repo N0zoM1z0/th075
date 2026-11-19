@@ -96,6 +96,15 @@ offsets/types and every nonrelocation byte remain unchanged. This does
 not resolve its 726 GPR-role and six instruction-width differences;
 all 24 affected exact units cold-replayed successfully.
 
+Remilia fighter `00543210` now directly defines `RemiliaFighter::Advance`
+under the native character class, rather than a research-only subclass.
+Four observed projectile X sources use `Actor::x` instead of a borrowed
++0x44 field view. The 59,236-byte before/after COFF bodies have all
+1,863 relocation offsets/types and every nonrelocation byte unchanged.
+All 98 fighter-header-affected exact units cold-replayed (36/36, 31/31,
+31/31). The original 58,294 CODE bytes remain NONEXACT (1,741 GPR-role,
+three width differences). No giant exact credit was claimed.
+
 Sakuya fighter `004AC040` (82,796 original CODE bytes) now directly
 defines `SakuyaFighter::Advance`, rather than an artificial derived
 research receiver. Sixteen included state files use the actual

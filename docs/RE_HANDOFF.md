@@ -63,6 +63,12 @@ Done so far:
   2,352 original relocation positions/types; 98/98 locally affected
   exact units cold-replayed. The 6,958 GPR and 12 width differences
   remain unresolved, so no whole giant exact credit was added.
+- Remilia Fighter `Advance` (58,294 native CODE bytes) is now the real
+  `RemiliaFighter` virtual method, with genuine Actor::x coordinate reads
+  instead of the temporary field view. The full 59,236-byte COFF body,
+  all 1,863 relocation positions/types and all nonrelocation bytes are
+  unchanged. The 98/98 header-affected units replayed exact, grouped to
+  avoid full cold replay; 1,741 GPR and three width differences remain.
 - Youmu's complete 46,755-byte fighter `Advance` is now on the real
   `YoumuFighter` vtable class. Native-coordinate owner views became
   `x` / `opponent->x` in 13 case source files, and 15 resets use the

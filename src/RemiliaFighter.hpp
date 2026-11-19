@@ -9,6 +9,36 @@ class RemiliaFighter : public Fighter {
 public:
     RemiliaFighter();
     virtual ~RemiliaFighter();
+    virtual void Advance(); // slot 1, native 00543210, nonexact research parent
+
+    // Complete native caller ABI hypotheses; these refer to existing Actor
+    // and Fighter functions, not new independently reconstructed methods.
+    void SpawnDirectedAt453A70(int,int,int,char,int);
+    void SpawnWithFloatAt453A70(int,int,float,char,int);
+    void SpawnFloatXRawYAt453A70(int,float,int,char,int);
+    void SpawnFloatXYAt453A70(int,float,float,char,int);
+    void SpawnRawXYAt453C80(int,int,int,char,int);
+    void SpawnMixedAt453C80(int,int,float,char,int);
+    void SpawnSevenAt453B50(int,int,int,char,int,int,int);
+    void PrepareActionAt453D40(int);
+    void SetMotionStateAt40FBB0(int,float,int);
+    void MotionAt40FB70(float,float);
+    void ResetMotionAt40FC50();
+    void InitTrajectoryAt453E60(float);
+    int RandomBoundaryAt455580(int,int);
+    void InitTrajectoryAt453E80(int);
+    void ResetAt453E20();
+    void PrepareActionAt453D60(int);
+    void SubactionAt454A70(int);
+    void ConfigureStormAt454BC0(int,int,int);
+    void SubactionAt452B30();
+    void StartAnimationAt46D000(int);
+    void SpawnAt453C80(int,float,float,char,int);
+    short GetNativeActionAt40FA30();
+    void SetNativeActionAt40FAC0(int);
+    signed char ContactAt454EE0();
+    void SetAuxActionAt40FB40(int);
+
     void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;

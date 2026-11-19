@@ -1,11 +1,9 @@
 #include "RemiliaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-#include "FighterProjectileXViewF917.hpp"
 // F1196 complete original-shaped 00543210 parent, continued from F917/F1041.
 // Native stack, CFG and reference destinations agree; 1741 GPR positions
 // and three instruction widths remain NONEXACT. No whole CODE credit.
-class FighterSwitchF598_Boss00543210 : public RemiliaFighter { public: void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXRawYAt453A70(int,float,int,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnSevenAt453B50(int,int,int,char,int,int,int); void PrepareActionAt453D40(int); void SetMotionStateAt40FBB0(int,float,int); void MotionAt40FB70(float,float); void ResetMotionAt40FC50(); void InitTrajectoryAt453E60(float); int RandomBoundaryAt455580(int,int); void InitTrajectoryAt453E80(int); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void SubactionAt454A70(int); void ConfigureStormAt454BC0(int,int,int); void SubactionAt452B30(); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
-extern unsigned int g_FighterProbeMarker;
+
 extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
 extern float g_F759_C8DecelAt006593E8;
@@ -96,7 +94,7 @@ extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #include "FighterBorrowedXYViewF771.hpp"
-void FighterSwitchF598_Boss00543210::Advance() {
+void RemiliaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
     switch (action) {
@@ -716,7 +714,7 @@ void FighterSwitchF598_Boss00543210::Advance() {
                 PrepareActionAt453D60(23);
                 PrepareActionAt453D40(9);
                 SpawnAt453C80(0x73,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*20),
+                    x-float(facing*20),
                     (*(&y))+g_BurstXAt00659238,
                     facing,1);
                 SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
@@ -774,7 +772,7 @@ void FighterSwitchF598_Boss00543210::Advance() {
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
                 SpawnAt453C80(0x73,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*46),
+                    x-float(facing*46),
                     (*(&y))+g_F722_BurstYAt0065826C,
                     facing,1);
             }
@@ -867,7 +865,7 @@ void FighterSwitchF598_Boss00543210::Advance() {
                 PrepareActionAt453D60(23);
                 PrepareActionAt453D40(13);
                 SpawnAt453C80(0x74,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*20),
+                    x-float(facing*20),
                     (*(&y))+g_BurstXAt00659238,
                     facing,1);
                 SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
@@ -926,7 +924,7 @@ void FighterSwitchF598_Boss00543210::Advance() {
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
                 SpawnAt453C80(0x74,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*46),
+                    x-float(facing*46),
                     (*(&y))+g_F722_BurstYAt0065826C,
                     facing,1);
                 field36C=(field36C)-g_ContactProjectionAt00657888;
