@@ -91,12 +91,12 @@ unit covers its whole body and relocations.
 ## Small-leaf follow-up
 
 The 8-byte 00531D80 and 11-byte 00531D90 functions have decorated VC7 list
-node symbols (_Nextnode and _Prevnode for the std::list specialization
-for CharacterValueObservation)
-in config/character-list-front-origin-evidence.json. They have many callers,
-but remain unclassified/review in the canonical ledgers. Treat the decorated
-symbols and caller graph as leads, then verify the complete source signature
-and origin independently.
+node symbols (_Nextnode and _Prevnode for the std::list specialization for
+CharacterValueObservation) in config/character-list-front-origin-evidence.json
+and config/character-list-policy-origin-evidence.json, respectively. They
+have many callers but remain unclassified/review in the canonical ledgers.
+Treat the decorated symbols and caller graph as leads, then verify the
+complete source signature and origin independently.
 
 00411E80 and 00411E90 are another short accessor pair with 13 and nine
 observed callers respectively. Their source identity and origin are still
