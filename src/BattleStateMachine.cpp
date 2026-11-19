@@ -180,7 +180,7 @@ short BattleScene::AdvanceState()
             g_StateFadeAlpha = static_cast<unsigned char>(255.0f - (TIMER - 150) * 5.1f);
             g_StateResetCounter = 0;
             if (TIMER == 150) {
-                reinterpret_cast<int&>(fighters[1]->field3A4) = 0; reinterpret_cast<int&>(fighters[1]->field3A8) = 0;
+                fighters[1]->field3A4 = 0; fighters[1]->field3A8 = 0;
                 fighters[1]->field3A0 = 0; fighters[1]->field39C = 0;
                 for (resetPlayer = 0; resetPlayer < 2; ++resetPlayer) {
                     fighters[resetPlayer]->ResetRound();

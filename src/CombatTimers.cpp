@@ -24,10 +24,10 @@ void Fighter::UpdateCounters()
                     field36C = 0.0f;
                 }
             } else {
-                reinterpret_cast<int&>(field3A4) -= reinterpret_cast<int *>(reinterpret_cast<unsigned char *>(this) + 0x430)[field39D];
-                if (reinterpret_cast<int&>(field3A4) < 0) reinterpret_cast<int&>(field3A4) = 0;
-                --reinterpret_cast<int&>(field3A8);
-                if (reinterpret_cast<int&>(field3A8) < 0) reinterpret_cast<int&>(field3A8) = 0;
+                field3A4 -= reinterpret_cast<int *>(reinterpret_cast<unsigned char *>(this) + 0x430)[field39D];
+                if (field3A4 < 0) field3A4 = 0;
+                --field3A8;
+                if (field3A8 < 0) field3A8 = 0;
             }
         }
         if (cardGauge > 0.0f && field39C == 0) {

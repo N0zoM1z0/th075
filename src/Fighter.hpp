@@ -173,8 +173,8 @@ public:
     unsigned char unknown39F[0x3A0 - 0x39F];
     short field3A0;                     // +0x3A0
     short field3A2;                     // +0x3A2
-    unsigned int field3A4;              // +0x3A4
-    unsigned int field3A8;              // +0x3A8
+    int field3A4;                       // +0x3A4 signed card/knockout countdown
+    int field3A8;                       // +0x3A8 signed card/knockout countdown
     signed char field3AC;               // +0x3AC
     signed char field3AD;               // +0x3AD
     unsigned char field3AE;             // +0x3AE

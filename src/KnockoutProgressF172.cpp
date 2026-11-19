@@ -36,27 +36,27 @@ void BattleScene::ResolveKnockout()
     if (fighters[1]->health <= 0) {
         fighters[0]->field3CE.unsignedAt3CE = 0;
         fighters[1]->field3CE.unsignedAt3CE = 1;
-        if (reinterpret_cast<int&>(fighters[1]->field3A4) > 0) {
+        if (fighters[1]->field3A4 > 0) {
             if (g_FrameClockMode == 1) {
                 if (fighters[0]->field464 != 0)
                     CARD_RECORDS->MarkCardFlag(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
                 CARD_RECORDS->IncrementCardCounter(
                     reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
-                if (reinterpret_cast<int&>(fighters[1]->field3A4) > CARD_RECORDS->GetCardValue(
+                if (fighters[1]->field3A4 > CARD_RECORDS->GetCardValue(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D])) {
                     CARD_RECORDS->SetCardValue(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D],
-                        reinterpret_cast<int&>(fighters[1]->field3A4));
+                        fighters[1]->field3A4);
                 }
             }
             g_KnockoutAccumulationAt0067160C += fighters[1]->field3A8;
-            reinterpret_cast<unsigned long&>(fighters[0]->score) = reinterpret_cast<unsigned long&>(fighters[0]->score) + reinterpret_cast<int&>(fighters[1]->field3A4);
+            reinterpret_cast<unsigned long&>(fighters[0]->score) = reinterpret_cast<unsigned long&>(fighters[0]->score) + fighters[1]->field3A4;
             if (reinterpret_cast<unsigned long&>(fighters[0]->score) > g_MaxCombatScore)
                 g_MaxCombatScore = reinterpret_cast<unsigned long&>(fighters[0]->score);
             field06C = 120;
-            field068 = reinterpret_cast<int&>(fighters[1]->field3A4);
-            reinterpret_cast<int&>(fighters[1]->field3A4) = 0;
+            field068 = fighters[1]->field3A4;
+            fighters[1]->field3A4 = 0;
         }
         if (fighters[0]->field3A0 > 0)
             fighters[0]->field36C = 0.0f;
@@ -76,7 +76,7 @@ void BattleScene::ResolveKnockout()
             if (reinterpret_cast<signed char*>(fighters[1]->field32A + 1)[fighters[1]->field39D] == 0) {
                 fighters[1]->health = fighters[1]->healthLimits[fighters[1]->field39D];
                 fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->field39D];
-                reinterpret_cast<int&>(fighters[1]->field3A8) = 0;
+                fighters[1]->field3A8 = 0;
             }
         } else {
             field018 = 11;

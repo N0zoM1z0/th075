@@ -63,7 +63,7 @@ void BattleScene::RenderStatus() {
                         DRAWING->DrawQuad(0, &packet, &rect, D3DCOLOR_ARGB(field0E0[i], 255, 255, 255));
                         DrawAtlasNumberAt00446B90(520.0f,
                             F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 32.0f,
-                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), reinterpret_cast<int&>(fighters[i]->field3A4), 4, 7);
+                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), fighters[i]->field3A4, 4, 7);
                         DrawAtlasNumberAt00446B90(610.0f,
                             F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 31.0f,
                             D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), RECORDS->GetValueAt0268(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
