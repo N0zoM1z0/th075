@@ -200,6 +200,9 @@ Done so far:
   This leaf's owner uses two typed `Fighter::SpawnBattleEffect` calls;
   both the main giant and leaf retain full COFF byte and relocation
   shapes. The 24/24 header-affected exact units cold-replayed locally.
+- Four further Alice owner/object float copies now use their actual float
+  field types rather than integer-reference aliasing; the complete
+  33,731-byte COFF and all 682 relocation offsets/types remain identical.
 - Alice's giant source replaces 32 integer-reference bit-puns for float
   rotation/velocity fields with ordinary float assignments. The entire
   33,731-byte VC7.1 COFF and all 682 relocation offsets/types remain

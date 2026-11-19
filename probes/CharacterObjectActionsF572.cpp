@@ -2323,8 +2323,8 @@ void AliceObject::Advance() {
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         (owner->field314)=static_cast<float>(field0D8);
-        (reinterpret_cast<int&>(owner->field318))=reinterpret_cast<int&>(x);
-        (reinterpret_cast<int&>(owner->field31C))=reinterpret_cast<int&>(y);
+        owner->field318=x;
+        owner->field31C=y;
         owner->SpawnBattleEffect(0x38C,x,y,facing,1);
         owner->PlaySound(15);
     }
@@ -2551,8 +2551,8 @@ void AliceObject::Advance() {
     break;
 }
         case 0x3E5: {
-    reinterpret_cast<int&>(x)=reinterpret_cast<int&>(owner->x);
-    reinterpret_cast<int&>(y)=0;
+    x=owner->x;
+    y=0.0f;
     field08A=1;
     if ((animationStage)==0 && (animationFrame)==0) {
         ResetTransform(0.0f,0.0f,0.0f);

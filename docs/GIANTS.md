@@ -364,6 +364,12 @@ cold-replay exact. This is an inferred native shared calling contract;
 the eight object giant source call sites will adopt it in a later
 verified step, without recrediting the existing leaf.
 
+The Alice action source also removes four more integer-reference casts
+around known float members: fighter `field318/field31C`, object `x/y`,
+including a native zero assignment. They are now direct float-to-float
+C++ assignments; the full 33,731-byte COFF, all 682 relocation offsets/
+types and every nonrelocation byte remain unchanged.
+
 Alice's 33 KB source now also uses real float assignments for all
 32 zeroed rotation components and both float-to-float velocity copies,
 not `reinterpret_cast<int&>` bit-punning. The complete VC7.1 COFF remains
