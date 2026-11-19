@@ -470,3 +470,10 @@ x87 arithmetic.
   lists anomalous joins in an original.
 
 - SakuyaObject::Advance replaces 31 unsigned-int-reference float copies with direct float assignments. Its full 42,937-byte COFF, 929 relocation positions/types and every nonrelocation byte remain unchanged; no giant exactness is claimed.
+
+- Shared Fighter::fieldEFA at +0xEFA is now a signed short, matching
+  the five giant object callsites and the exact CharacterProjectile
+  leaf. Ninety-nine unnecessary signed reinterpret-casts were removed.
+  All five complete giant COFF bodies and relocation layouts remain
+  unchanged; the exact 855-byte projectile leaf remains exact; all
+  450 affected exact units replayed 450/450 in 13 bounded groups.

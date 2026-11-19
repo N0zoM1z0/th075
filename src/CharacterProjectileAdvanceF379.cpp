@@ -16,8 +16,8 @@ void AliceObject::AdvanceProjectileBehavior() {
         for(int i=0;i<1;++i) {
             owner->SpawnBattleEffect(996,x,y,1,1);
         }
-        if (reinterpret_cast<short&>(owner->fieldEFA)>25) {
-            reinterpret_cast<short&>(owner->fieldEFA)=0;
+        if (owner->fieldEFA>25) {
+            owner->fieldEFA=0;
             owner->SpawnBattleEffect(995,x,y,1,1);
         }
     } else {

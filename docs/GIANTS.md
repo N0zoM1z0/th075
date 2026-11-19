@@ -659,4 +659,15 @@ assignment, and explicit boolean forms introduced new width/instruction
 debt. The remaining lead is a construct that makes the join take the
 first-jump register state without changing its other instructions.
 
+The common Fighter +0xEFA field is now correctly declared short, not
+unsigned short: five object giants and the exact 855-byte character
+projectile leaf were all using signed 16-bit comparisons/increments.
+Their 99 speculative reinterpret_cast<short&> accesses are now direct
+typed member operations. Sakuya, Youmu, Remilia, Yuyuko and Yukari
+complete COFF bodies (42,937 / 40,464 / 28,868 / 44,331 / 44,104 bytes)
+retain all 929 / 938 / 696 / 1,043 / 943 relocation positions/types
+and every nonrelocation byte. The exact projectile leaf remains
+byte-for-byte matching. All 450 header-affected exact units cold-replayed
+450/450 in 13 bounded batches; no giant exactness is claimed.
+
 Sakuya's 42.5 KB object boss now uses ordinary C++ float copies for 31 same-type transfers among x/y, scale, rotation and Fighter field314. The full 42,937-byte COFF remains identical, all 929 relocation positions/types are unchanged, and there are zero nonrelocation-byte differences. The giant remains nonexact.

@@ -24,8 +24,8 @@ void YukariObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex = 0; rewardIndex < 3; ++rewardIndex)
@@ -192,8 +192,8 @@ void YukariObject::Advance()
     case 806:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex806 = 0; rewardIndex806 < 3; ++rewardIndex806)
@@ -1320,8 +1320,8 @@ void YukariObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex835 = 0; rewardIndex835 < 3; ++rewardIndex835)
@@ -1407,8 +1407,8 @@ void YukariObject::Advance()
     case 837:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex837 = 0; rewardIndex837 < 3; ++rewardIndex837)
@@ -2743,7 +2743,7 @@ void YukariObject::Advance()
             field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
-                ++reinterpret_cast<short&>(owner->fieldEFA);
+                ++owner->fieldEFA;
                 PlaySharedSound(46);
                 ClearFrameInfo();
                 if (owner->opponent->spiritCooldown > 0) {

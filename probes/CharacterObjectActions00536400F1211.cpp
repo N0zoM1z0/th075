@@ -81,8 +81,8 @@ void YoumuObject::Advance()
     case 800:
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -184,8 +184,8 @@ void YoumuObject::Advance()
     case 803:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -224,8 +224,8 @@ void YoumuObject::Advance()
         }
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -281,8 +281,8 @@ void YoumuObject::Advance()
     case 805:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -321,8 +321,8 @@ void YoumuObject::Advance()
         }
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -378,8 +378,8 @@ void YoumuObject::Advance()
     case 807:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -418,8 +418,8 @@ void YoumuObject::Advance()
         }
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -830,8 +830,8 @@ case 0x331: {
     case 832:
         if (owner->action > 49 && owner->action < 150 && animationStage < 7) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y + 100.0f, 1, 1);
@@ -950,8 +950,8 @@ case 0x331: {
             return;
         }
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             ClearFrameInfo();
@@ -1257,8 +1257,8 @@ case 0x331: {
     case 845:
     if (owner->action > 49 && owner->action < 150 && animationStage < 7) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         owner->SpawnBattleEffect(996, x, y + 100.0f, 1, 1);
@@ -1485,8 +1485,8 @@ case 0x331: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1554,8 +1554,8 @@ case 0x331: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1623,8 +1623,8 @@ case 0x331: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -2686,7 +2686,7 @@ case 0x331: {
             field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
-                ++reinterpret_cast<short&>(owner->fieldEFA);
+                ++owner->fieldEFA;
                 PlaySharedSound(46);
                 ClearFrameInfo();
                 if (owner->opponent->spiritCooldown > 0) {

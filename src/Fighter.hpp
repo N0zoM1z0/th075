@@ -268,7 +268,7 @@ public:
     FighterScriptAccessorF410 script;   // +0x714 script reader object embedded in the fighter
     unsigned char unknown715[0xEF8 - 0x715];
     short fieldEF8;                     // +0xEF8
-    unsigned short fieldEFA;            // +0xEFA
+    short fieldEFA;                     // +0xEFA signed per-owner projectile counter
     short sequenceTimer;                // +0xEFC
     unsigned short fieldEFE;            // +0xEFE
     unsigned short scriptCounterF00;    // +0xF00

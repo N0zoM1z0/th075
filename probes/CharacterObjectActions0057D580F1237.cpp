@@ -27,8 +27,8 @@ case 800:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex800 = 0; rewardIndex800 < 3; ++rewardIndex800)
@@ -74,8 +74,8 @@ case 801:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex801 = 0; rewardIndex801 < 3; ++rewardIndex801)
@@ -121,8 +121,8 @@ case 802:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex802 = 0; rewardIndex802 < 3; ++rewardIndex802)
@@ -487,8 +487,8 @@ case 813:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex813 = 0; rewardIndex813 < 2; ++rewardIndex813)
@@ -672,8 +672,8 @@ case 818:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex818 = 0; rewardIndex818 < 2; ++rewardIndex818)
@@ -719,8 +719,8 @@ case 819:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex819 = 0; rewardIndex819 < 2; ++rewardIndex819)
@@ -1087,8 +1087,8 @@ case 830:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex830 = 0; rewardIndex830 < 3; ++rewardIndex830)
@@ -1137,8 +1137,8 @@ case 831:
             owner->SpawnBattleEffect(996, x, y, 1, 1);
             owner->SpawnBattleEffect(996, x, y, 1, 1);
             owner->SpawnBattleEffect(996, x, y, 1, 1);
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
@@ -1274,8 +1274,8 @@ case 834:
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 38) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int rewardIndex834 = 0; rewardIndex834 < 3; ++rewardIndex834)
@@ -1426,8 +1426,8 @@ case 838:
             owner->SpawnBattleEffect(996, x, y, 1, 1);
             owner->SpawnBattleEffect(996, x, y, 1, 1);
             owner->SpawnBattleEffect(996, x, y, 1, 1);
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
@@ -1493,8 +1493,8 @@ case 839:
             owner->SpawnBattleEffect(996, x, y, 1, 1);
             owner->SpawnBattleEffect(996, x, y, 1, 1);
             owner->SpawnBattleEffect(996, x, y, 1, 1);
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
@@ -2493,7 +2493,7 @@ case 996:
             field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
-                ++reinterpret_cast<short&>(owner->fieldEFA);
+                ++owner->fieldEFA;
                 PlaySharedSound(46);
                 ClearFrameInfo();
                 if (owner->opponent->spiritCooldown > 0) {

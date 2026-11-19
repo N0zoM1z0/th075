@@ -140,8 +140,8 @@ case 801:
 case 802: {
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i802 = 0; i802 < 2; i802++)
@@ -200,8 +200,8 @@ case 802: {
 case 803: {
     if (owner->action > 49 && owner->action < 150 && field080 > 0) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i803 = 0; i803 < 2; i803++)
@@ -245,8 +245,8 @@ case 804: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i804 = 0; i804 < 2; i804++)
@@ -541,8 +541,8 @@ case 816: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i816 = 0; i816 < 3; i816++)
@@ -595,8 +595,8 @@ case 817: {
     }
     if (owner->action > 49 && owner->action < 150) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i817 = 0; i817 < 5; i817++)
@@ -717,8 +717,8 @@ case 821: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i821 = 0; i821 < 10; i821++)
@@ -1188,8 +1188,8 @@ case 838: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i838 = 0; i838 < 10; i838++)
@@ -1258,8 +1258,8 @@ case 839: {
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
         ClearFrameInfo();
-        if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-            reinterpret_cast<short&>(owner->fieldEFA) = 0;
+        if (owner->fieldEFA > 25) {
+            owner->fieldEFA = 0;
             owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i839 = 0; i839 < 10; i839++)
@@ -2162,7 +2162,7 @@ case 996:
             x - owner->opponent->x > -20.0f &&
             y - owner->opponent->y < 120.0f &&
             y - owner->opponent->y > 80.0f) {
-            reinterpret_cast<short&>(owner->fieldEFA)++;
+            owner->fieldEFA++;
             PlaySharedSound(46);
             ClearFrameInfo();
             if (owner->opponent->spiritCooldown > 0) {

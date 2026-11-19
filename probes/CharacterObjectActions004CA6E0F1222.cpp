@@ -21,8 +21,8 @@ void SakuyaObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 5) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -197,8 +197,8 @@ void SakuyaObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 69 && owner->action < 150 && animationStage < 1) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -300,8 +300,8 @@ void SakuyaObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 1) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -411,8 +411,8 @@ void SakuyaObject::Advance()
         else if (((owner->action > 69 && animationStage < 2) ||
                   (owner->action > 59 && animationStage == 2)) && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -503,8 +503,8 @@ void SakuyaObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1240,8 +1240,8 @@ void SakuyaObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 5) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1335,8 +1335,8 @@ void SakuyaObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 6) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1411,8 +1411,8 @@ void SakuyaObject::Advance()
         if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 5) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1526,8 +1526,8 @@ void SakuyaObject::Advance()
         else if (((owner->action > 69 && animationStage < 2) ||
                   (owner->action > 59 && animationStage == 2)) && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1606,8 +1606,8 @@ void SakuyaObject::Advance()
         else if (((owner->action > 69 && animationStage < 2) ||
                   (owner->action > 59 && animationStage == 2)) && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -2429,7 +2429,7 @@ void SakuyaObject::Advance()
             field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
-                ++reinterpret_cast<short&>(owner->fieldEFA);
+                ++owner->fieldEFA;
                 PlaySharedSound(46);
                 ClearFrameInfo();
                 if (owner->opponent->spiritCooldown > 0) {
