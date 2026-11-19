@@ -1049,6 +1049,13 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+Twelve remaining `int&` bit overlays on float members were replaced with
+native float assignments: six zero resets of Reimu's `field490` pair, two
+rotation resets, two owner-X copies and a Y zero in Youmu's scripted states.
+The pause effect's positive `field10C = 3600` write is now direct as well.
+All eight affected `ProgressPauseF174` functions replayed 8/8, and the full
+Reimu/Sakuya/Youmu/Remilia fighter `Advance` bodies and relocation maps remain
+identical.
 `BattleScene::field010` (+0x010) is now a signed `int` timeline-frame
 counter, matching its per-frame increment and signed rectangle-offset math.
 Seventeen `reinterpret_cast<int&>` views in the frame and overlay-timeline
