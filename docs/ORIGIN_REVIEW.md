@@ -4099,6 +4099,27 @@ with `scripts/repo-python scripts/verify-game-context-origins.py`.
 | `0x005F7D00` | 114 | Select an auxiliary list with a signed-byte index and dispatch virtual slot 8 |
 | `0x005F7D80` | 276 | Advance entries through virtual slot 4 across two lists, then delete/erase entries whose dword `+8` is zero |
 
+
+The `0x0045BA30` cleanup receiver is now tied to the actual
+`EffectManagerLifetimeF161` allocation created by the Fighter constructor:
+`Fighter::field2EC` is a typed pointer to the 0x54-byte owner, whose first
+member is the bound Fighter pointer and whose remaining members are four
+20-byte `std::deque<void*>` containers. `DeleteFourLists` is a member of that
+owner and is called directly by both `Fighter::ResetRound` and the owner's
+destructor. The cleanup's pointer-only `std::deque<EffectReleaseViewF160*>`
+view is retained because the original iterator/dereference/clear helper
+instantiations are independently visible; it does not recover the actual
+effect pointee type or destructor. The cleanup, owner constructor, owner
+destructor, Fighter reset caller, bind method and held-count leaf all pass
+focused cold replay (6/6), preserving their original bytes and relocation
+fields.
+The complete coupled `EffectManagerLifetimeF161` object also passes the
+whole-section verifier: 24 code/EH/data sections, 237 authored code bytes,
+all 46 actual relocation fields and both SafeSEH roots, using the fresh
+`.analysis/replay/summary.json` receipt. Compiler EH-local labels were
+refreshed by section/offset after the owner method change; no code bytes were
+masked or patched.
+
 The verifier freezes 51 complete bounded callee/parent contexts, eleven parent
 edges, 157 policy instructions, exact RET cleanup, three raw PE import bindings,
 four reviewed scene update/render slots and four complete readonly float

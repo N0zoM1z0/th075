@@ -64,6 +64,16 @@ large research parents. They do not claim new giant exactness:
   direct `int`, `unsigned long`, `float` and signed-byte member assignments.
   The 89-byte clear helper and 1,151-byte reset caller remain cold-exact;
   the 30-byte held-count leaf also replays exact after the typed-member move.
+- current work: typed `Fighter::field2EC` as the 0x54-byte
+  `EffectManagerLifetimeF161` owner and moved `DeleteFourLists` onto that
+  actual object. The owner destructor and Fighter reset caller now call the
+  member directly. The 221-byte cleanup, 85-byte destructor, 131-byte
+  constructor, 21-byte bind method, 1,151-byte reset caller and 30-byte
+  held-count leaf all pass focused replay (6/6); the original deque helper
+  template instantiations and all relocation positions remain intact.
+  The coupled owner object also passes all 24 whole code/EH/data sections,
+  237 authored bytes, 46 relocation fields and both SafeSEH roots with a
+  fresh canonical receipt.
 - 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
   +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
   identical; the 462 affected exact units cold-replayed 462/462.
