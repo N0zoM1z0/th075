@@ -44,7 +44,6 @@ public:
     // implementations use the shared Actor and object helper addresses.
     void AdvanceProjectileBehavior(); // 004F4170, original native helper
     void PlaySharedSound(short sound);
-
 };
 class PatchouliObject : public CharacterObject {
 public:

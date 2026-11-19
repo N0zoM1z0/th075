@@ -287,6 +287,17 @@ compiled code uses 414 calls to inherited `Actor::RecordedRange`. The
 105 selected Fighter/Actor-dependent exact units were replayed locally,
 all passing. None of the nonexact giant frontiers were changed.
 
+Eight native object giant parents now invoke the inherited
+`Actor::RecordedRange` instead of eight per-character speculative method
+symbols: Sakuya 75, Alice 15, Youmu 49, Remilia 24, Yuyuko 67,
+Yukari 17, Suika 73 and Meiling 57 (377 full COFF call relocations).
+All eight original complete function object sizes and each relocation
+offset/type are identical before and after the change; every
+nonrelocation code byte is unchanged. The eight nonexact native
+frontiers are not claimed exact. All 25 header-affected existing exact
+functions, including the 13-byte CharacterObject no-op and 855-byte
+Alice projectile helper, cold replayed exactly.
+
 The independently exact native recorded-range policy at 00455580 is
 now a common `Actor::RecordedRange(int,int)` method instead of an
 artificial standalone receiver. Its complete 139-byte COFF shape, all

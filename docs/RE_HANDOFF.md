@@ -28,6 +28,14 @@ Done so far:
   nine full COFF bodies and no relocation layout changes. Local exact
   verification: range leaf 1/1, object cohort 24/24, selected Actor/Fighter
   dependency cohort 105/105. No full cold replay was run.
+- Eight complete object giant parents now use the inherited
+  `Actor::RecordedRange` for 377 verified native COFF calls, rather than
+  speculative duplicate methods: Sakuya 75, Alice 15, Youmu 49,
+  Remilia 24, Yuyuko 67, Yukari 17, Suika 73 and Meiling 57.
+  Eight full COFF comparisons preserved all function body lengths,
+  relocation positions/types and every nonrelocation byte. Local
+  cold replay of the 25 header-affected exact units passed 25/25.
+  Giant byte/register debt remains NONEXACT.
 - The existing complete native 00455580 recorded-range generator is now
   `Actor::RecordedRange(int,int)` instead of the standalone borrowed
   receiver class. It remains 139-byte/11-relocation cold-exact, with
