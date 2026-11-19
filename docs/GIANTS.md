@@ -1049,6 +1049,16 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+The third-boss state words `Fighter::fieldF06` (+0xF06) and `fieldF08`
+(+0xF08) are now signed 16-bit members. Their native uses include negative
+arc increments, signed cadence countdowns, signed trajectory values and
+signed comparisons; they were incorrectly modeled as unsigned and accessed
+through 36 `reinterpret_cast<signed short&>` aliases. All eight third-boss
+fragments now use the actual members directly. The complete 83,922-byte
+Sakuya `Advance` body and all 2,352 relocations remain identical; all 46 exact
+functions across eleven reset/shared-action translation units replayed 46/46.
+The four fighter giant bodies remain identical and Sakuya's frontier remains
+at 18,253 differing bytes.
 The input counters `inputA`/`inputB`/`inputC` and `inputD` no longer use
 reference reinterpretation to force unsigned comparisons. The existing
 32-bit signed storage of A/B/C is preserved, but the intended unsigned tests

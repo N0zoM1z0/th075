@@ -335,6 +335,13 @@ ten zero writes to `field3AC`, seven direct signed-byte `field366` decrements
 and three owner-facing copies. Complete Reimu/Sakuya/Youmu/Remilia advances
 and PatchouliObject advance bodies/relocations remain identical; their
 frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 / 24,643.
+`Fighter::fieldF06` (+0xF06) and `fieldF08` (+0xF08) are now signed
+16-bit members, matching the third-boss arc, cadence and trajectory logic.
+Thirty-six signed-short reference overlays across eight boss fragments were
+removed. The complete 83,922-byte Sakuya `Advance` and all 2,352 relocations
+remain identical; 46 exact functions across eleven reset/shared-action
+translation units replayed 46/46. The four fighter giant frontiers remain
+unchanged, including Sakuya at 18,253 differing bytes.
 Input counter aliasing was cleaned up without changing the Fighter layout:
 A/B/C keep their signed 32-bit storage but use explicit unsigned value casts
 for native unsigned tests; D uses its declared unsigned value or an explicit
