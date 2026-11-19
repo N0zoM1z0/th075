@@ -318,6 +318,10 @@ configuration and hit/KO/notice helpers, replayed 38/38 unchanged.
 `ReplayRecords::AppendRecord` now increments its signed-byte `field116`
 cursor directly; the complete 1,252-byte body and all 50 relocations remain
 identical, replayed 1/1.
+Four Youmu stage-two fragments replace twenty signed-byte reinterpret
+aliases for opaque color channels with direct unsigned `0xFF` assignments.
+The complete 47,655-byte `YoumuFighter::Advance` body and all 1,491
+relocations remain identical; frontier drift remains 16,833 bytes, unchanged.
 `Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
 signed render test; its render and base-reset functions remain byte-identical.
 Four signed-byte views used only to store zero to the unsigned `field39C`

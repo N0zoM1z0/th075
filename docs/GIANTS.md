@@ -1021,6 +1021,11 @@ The replay-record append cursor at `+0x116` remains a signed byte and now
 increments directly, without an unsigned-reference alias. The complete
 1,252-byte `ReplayRecords::AppendRecord` body and all 50 relocations remain
 identical (exact replay 1/1).
+Four Youmu stage-two fragments now assign the opaque Actor color channels
+as unsigned `0xFF` values directly instead of reinterpreting each channel as
+`signed char` and storing `-1`. All 20 aliases are gone. The full 47,655-byte
+Youmu `Advance` body and all 1,491 relocations remain identical; its frontier
+stays at 16,833 differing bytes, with no regression.
 The notice gate `Fighter::noticeFirst` at `+0x6E8` is a signed byte; its
 native render test sign-extends the value. The member is now `signed char`,
 with the complete 1,637-byte render and 1,151-byte base-reset functions still
