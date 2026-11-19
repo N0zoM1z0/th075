@@ -36,6 +36,12 @@ Done so far:
   resource loader (398 B) now use the same named layout and native
   80-byte texture manager and 20-byte deque. The current shared-header
   cohort cold-replays 8/8 exact units with all relocation targets.
+  The native `ResultListScene` vtable at 006581D0 confirms slot 1 is
+  0042F970 and slot 2 is 00430080. Its 1,803-byte `Advance` and
+  3,314-byte `Render` are now the real C++ virtual methods; the latter
+  accesses the scene's named texture, record and cursor fields. Ten
+  affected exact units, including the separate music-room renderer,
+  cold-replayed successfully.
 - The character-select scene now owns the exact C++ constructor, main
   `Advance`, reset and five choice/confirmation/option methods. Their shared
   layout covers the 28-byte per-player input records and named animation
@@ -70,6 +76,12 @@ Done so far:
   accesses expressed through real named members. The 33,293-byte parent
   retained its 575-byte nonexact frontier and 133 GPR mismatches; all 24
   header-affected exact functions cold-replayed successfully.
+- Suika object `Advance` (43,501 CODE B) now belongs to `SuikaObject`;
+  64 spawns, 13 sounds, three shared sounds and five camera shakes use
+  the actual Fighter and camera contracts. The 43,972-byte object and
+  all 991 relocation positions/types stayed unchanged outside symbol
+  renames; 24/24 affected exact units passed cold replay. Its 935 GPR
+  role and one width differences remain unresolved.
 - Yukari object `Advance` (43,599 native CODE B) is now declared on
   `YukariObject`; its 52 effect, 16 sound, two auxiliary and three shake
   calls are typed through Fighter. A complete 44,104-byte COFF comparison

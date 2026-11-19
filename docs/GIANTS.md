@@ -131,6 +131,14 @@ sites; its 34,434-byte frontier remains 985 differing bytes with 135 GPR
 and six instruction-width mismatches in the late state machine. All 24
 header-affected exact units cold-replayed.
 
+Suika object `005C9CC0` now defines `SuikaObject::Advance` on the
+real CharacterObject hierarchy, with 64 effect spawns, 13 sounds,
+three shared sounds and five camera shakes using the verified native
+Fighter/EffectServices contracts. The two complete 43,972-byte COFF
+objects have all 991 relocation positions/types and every nonrelocation
+byte unchanged. The native 43,501 CODE bytes remain nonexact (935 GPR
+roles, one width); 24/24 header-affected exact units replayed.
+
 Yukari object `005A1600` is now the native `YukariObject::Advance`
 class member, with 52 effect spawns, 16 sounds, two auxiliary effects
 and three camera shakes expressed via `Fighter` and existing verified
