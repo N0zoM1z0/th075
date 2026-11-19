@@ -371,6 +371,11 @@ reset. Comparisons retain the native unsigned conversion against global score
 ceilings, and the score addition explicitly performs unsigned 32-bit
 arithmetic. Eight affected exact functions replayed 8/8, including the full
 4,824-byte `BattleScene::AdvanceState`.
+`ReplayRecords::LoadRecord` now shares the same typed owner and queue layout
+as `AppendRecord`: direct file path, record-offset array, serialized header,
+and four queue members replace its raw `AT`/`LIST` offset macros. The complete
+792-byte reader and 29 relocations remain identical; targeted replay passed
+2/2 for append and load.
 `ReplayRecords::AppendRecord` now models the native 20-byte segmented
 queue members and 8-byte owner/index iterators directly. The ten record file
 offsets, serialized header, and four queue objects have explicit typed

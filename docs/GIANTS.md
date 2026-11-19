@@ -1101,6 +1101,12 @@ storing back to the signed score member. The continue/debug score reset is a
 normal direct member assignment. All eight exact functions across the three
 state/KO/pause translation units replayed 8/8, including the 4,824-byte
 `BattleScene::AdvanceState` and 1,150-byte knockout resolver.
+The replay reader `ReplayRecords::LoadRecord` (+0x413AC0) now shares the
+same `ReplayRecordsLayoutF219` and queue storage declarations. It uses the
+actual file-path array, ten-entry record-offset table, typed serialized
+header, and four queue members directly; the `AT`/`LIST` pointer-arithmetic
+macros are gone. Its complete 792-byte body and all 29 relocations remain
+identical. The append and load functions replayed 2/2 exact.
 `ReplayRecords::AppendRecord` (+0x413DE0) now has a typed owner view instead
 of a `FIELD` macro and raw `this+offset` queue casts. The ten file-offset
 slots at `+0x11C`, serialized 16-byte header at `+0x144`, and four queue
