@@ -322,6 +322,10 @@ Four Youmu stage-two fragments replace twenty signed-byte reinterpret
 aliases for opaque color channels with direct unsigned `0xFF` assignments.
 The complete 47,655-byte `YoumuFighter::Advance` body and all 1,491
 relocations remain identical; frontier drift remains 16,833 bytes, unchanged.
+Six further unsigned-byte aliases were removed from round-winner writes,
+the round-record signed-byte conversion, projectile direction and notice
+render step arguments. The four affected translation units replayed 11/11
+exact functions.
 `Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
 signed render test; its render and base-reset functions remain byte-identical.
 Four signed-byte views used only to store zero to the unsigned `field39C`

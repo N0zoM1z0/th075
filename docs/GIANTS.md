@@ -1026,6 +1026,11 @@ as unsigned `0xFF` values directly instead of reinterpreting each channel as
 `signed char` and storing `-1`. All 20 aliases are gone. The full 47,655-byte
 Youmu `Advance` body and all 1,491 relocations remain identical; its frontier
 stays at 16,833 differing bytes, with no regression.
+Six more unsigned-byte aliases were removed from already-typed argument
+and state accesses: two round-winner writes, the signed-byte round-record
+field (with an explicit value conversion), the projectile direction argument
+and both notice-render step arguments. The affected round-end, record-field,
+character auxiliary and notice-render functions replayed 11/11 exactly.
 The notice gate `Fighter::noticeFirst` at `+0x6E8` is a signed byte; its
 native render test sign-extends the value. The member is now `signed char`,
 with the complete 1,637-byte render and 1,151-byte base-reset functions still
