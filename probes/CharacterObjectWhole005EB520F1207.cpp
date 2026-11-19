@@ -4,7 +4,7 @@
 // NONEXACT: 135 GPR positions / six widths remain, all in state 998.
 // Profile: /Od /Ob0 /Gy /GR- /GX- /Zi /I src, pinned VC7.1 build 3077.
 // Evidence: docs/OBJECT_ADVANCE_005EB520_WHOLE_F1207.md.
-// Interfaces below are borrowed receiver views; do not instantiate owners.
+// Uses the shared CharacterObject/Fighter classes and their native helpers.
 #include "CharacterObject.hpp"
 #include "MeilingFighter.hpp"
 
@@ -2586,7 +2586,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 998:
-        reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
+        facing = owner->facing;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.5f;

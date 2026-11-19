@@ -108,6 +108,12 @@ change the state and are ruled out:
 - the join is never a jump-table target, and no shared instruction, label,
   call or `this`-reload count marks the anomalous positions.
 
+Meiling object `005EB520`: 22 additional natural-C++ variants at the
+`997`/`998` boundary at `005F3904` (condition polarity, guard/else,
+scope, comparison order and facing assignment forms) did not reduce
+whole-function differences. A plain `facing = owner->facing` produces
+identical native bytes and is retained as the more natural C++ source.
+
 Per-parent attempts that failed, kept so they are not repeated: loop-update,
 return, condition and index rewrites in 005A1600; swapping 0057D580's
 state-837 equality operands (reads the limit before the frame-progress call,
