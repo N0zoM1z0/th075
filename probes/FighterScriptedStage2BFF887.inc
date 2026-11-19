@@ -26,8 +26,8 @@ case 0x2BF: {
                 float((facing)*64),
             (*(&y))+g_F884Stage5YAt00659470,
             (facing),1);
-        scriptCounterF00=static_cast<signed short>(x);
-        scriptCounterF02=static_cast<signed short>(y);
+        scriptCounterF00=(x);
+        scriptCounterF02=(y);
         Fighter::SpawnTrackedEffect(0x33D,x,y,
             (facing),1,0,1);
     }

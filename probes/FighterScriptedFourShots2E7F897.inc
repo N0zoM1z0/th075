@@ -29,8 +29,8 @@ case F897_CASE: {
         field07C=0;
     if ((animationStage)==2 && (animationFrame)==0) {
         PlaySharedSound(0x17);
-        scriptCounterF00=static_cast<signed short>(x);
-        scriptCounterF02=static_cast<signed short>(y);
+        scriptCounterF00=(x);
+        scriptCounterF02=(y);
         Fighter::SpawnTrackedEffect(0x33D,x,y,
             (facing),1,0,1);
     }
