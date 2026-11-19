@@ -1,6 +1,7 @@
+#include "CharacterSelectScene.hpp"
 #include <stdlib.h>
-// Borrowed scene receiver; per-player signed-char indices and each physical
-// field are grounded by the full native instruction stream.
+// CharacterSelectScene shares its physical input and animation fields with
+// the other character-select methods.
 class ChoiceSoundBankF228 { public: void Play(int id); };
 extern ChoiceSoundBankF228* g_ChoiceSoundAt00671618;
 extern unsigned char g_ChoiceSelectedPairAt006714CC[];
@@ -13,68 +14,56 @@ extern const float g_ChoiceDropBoundAt00657858;
 extern const float g_ChoiceDropStepAt00657480;
 extern const float g_ChoiceReadyBoundAt0065826C;
 namespace ChoiceInputF228 { int __cdecl TestAction(int key); }
-class CharacterSelectConfirmF228 {
-public:
-    void UpdatePlayerConfirmation(signed char player);
-};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define F(off) (reinterpret_cast<float*>(RAW+(off))[player])
-#define B(off) (RAW[(off)+player])
-#define I(off) (*reinterpret_cast<int*>(RAW+(off)+player*0x1c))
-void CharacterSelectConfirmF228::UpdatePlayerConfirmation(signed char player)
+void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
 {
-    if (g_ChoiceMinimumAt0065782C < F(0xcc))
-        F(0xcc) -= g_ChoiceBackStepAt00657874;
-    if (F(0xa0) < g_ChoiceRiseBoundAt00658268)
-        F(0xa0) = F(0xa0) + g_ChoiceRiseStepAt00657D14;
-    if (F(0xa8) < g_ChoiceDropBoundAt00657858)
-        F(0xa8) = F(0xa8) + g_ChoiceDropStepAt00657480;
-    if (F(0xb0) < g_ChoiceRiseBoundAt00658268)
-        F(0xb0) = F(0xb0) + g_ChoiceRiseStepAt00657D14;
-    if (F(0xb8) < g_ChoiceDropBoundAt00657858)
-        F(0xb8) = F(0xb8) + g_ChoiceDropStepAt00657480;
-    if (F(0xc0)<g_ChoiceReadyBoundAt0065826C &&
-       (F(0xc0)=F(0xc0)+g_ChoiceDropStepAt00657480,
-        g_ChoiceReadyBoundAt0065826C<F(0xc0)))
-        F(0xc0)=75.0f;
-    if (I(0x10)==-1) {
+    if (g_ChoiceMinimumAt0065782C < (portraitReturn[player]))
+        (portraitReturn[player]) -= g_ChoiceBackStepAt00657874;
+    if ((portraitEnterX[player]) < g_ChoiceRiseBoundAt00658268)
+        (portraitEnterX[player]) = (portraitEnterX[player]) + g_ChoiceRiseStepAt00657D14;
+    if ((portraitEnterY[player]) < g_ChoiceDropBoundAt00657858)
+        (portraitEnterY[player]) = (portraitEnterY[player]) + g_ChoiceDropStepAt00657480;
+    if ((portraitExitX[player]) < g_ChoiceRiseBoundAt00658268)
+        (portraitExitX[player]) = (portraitExitX[player]) + g_ChoiceRiseStepAt00657D14;
+    if ((portraitExitY[player]) < g_ChoiceDropBoundAt00657858)
+        (portraitExitY[player]) = (portraitExitY[player]) + g_ChoiceDropStepAt00657480;
+    if ((choiceStop[player])<g_ChoiceReadyBoundAt0065826C &&
+       ((choiceStop[player])=(choiceStop[player])+g_ChoiceDropStepAt00657480,
+        g_ChoiceReadyBoundAt0065826C<(choiceStop[player])))
+        (choiceStop[player])=75.0f;
+    if ((input[player].vertical)==-1) {
         g_ChoiceSoundAt00671618->Play(0x27);
-        B(0xe6)=0;
-    } else if (ChoiceInputF228::TestAction(I(0x0c))==1) {
+        (chosenPalette[player])=0;
+    } else if (ChoiceInputF228::TestAction((input[player].horizontal))==1) {
         g_ChoiceSoundAt00671618->Play(0x27);
-        B(0xe6)=1;
-    } else if (I(0x10)==1) {
+        (chosenPalette[player])=1;
+    } else if ((input[player].vertical)==1) {
         g_ChoiceSoundAt00671618->Play(0x27);
-        B(0xe6)=2;
+        (chosenPalette[player])=2;
     }
-    if (I(0x14)==1) {
-        if (F(0xc0)<g_ChoiceReadyBoundAt0065826C)
-            F(0xc0)=75.0f;
-        g_ChoiceSelectedPairAt006714CC[player]=B(0xe6);
-        B(0x96)=4;
+    if ((input[player].confirm)==1) {
+        if ((choiceStop[player])<g_ChoiceReadyBoundAt0065826C)
+            (choiceStop[player])=75.0f;
+        g_ChoiceSelectedPairAt006714CC[player]=(chosenPalette[player]);
+        (playerState[player])=4;
         if (g_ChoiceGameModeAt006714B4==3 || g_ChoiceGameModeAt006714B4==4) {
-            RAW[0x96]=8;
-            RAW[0x97]=8;
+            playerState[0]=8;
+            playerState[1]=8;
         }
         g_ChoiceSoundAt00671618->Play(0x2d);
     }
-    if (I(0x18)==1) {
+    if ((input[player].cancel)==1) {
         g_ChoiceSoundAt00671618->Play(0x28);
-        B(0x96)=1;
+        (playerState[player])=1;
     }
-    if (I(0x20)==1) B(0xe4)=static_cast<unsigned int>(!B(0xe4));
-    if (I(0x1c)==1) {
+    if ((input[player].toggle)==1) (choiceRandom[player])=static_cast<unsigned int>(!(choiceRandom[player]));
+    if ((input[player].special)==1) {
         g_ChoiceSelectedPairAt006714CC[player]=static_cast<unsigned char>(rand()%3);
-        B(0x96)=4;
+        (playerState[player])=4;
         if (g_ChoiceGameModeAt006714B4==3 || g_ChoiceGameModeAt006714B4==4) {
-            RAW[0x96]=8;
-            RAW[0x97]=8;
+            playerState[0]=8;
+            playerState[1]=8;
         }
         g_ChoiceSoundAt00671618->Play(0x2d);
     }
-    if (I(0x24)==1) B(0xee)=static_cast<unsigned int>(!B(0xee));
+    if ((input[player].alternative)==1) (alternatePalette[player])=static_cast<unsigned int>(!(alternatePalette[player]));
 }
-#undef F
-#undef B
-#undef I
-#undef RAW

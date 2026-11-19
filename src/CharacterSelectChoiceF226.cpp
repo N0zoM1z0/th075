@@ -1,6 +1,7 @@
+#include "CharacterSelectScene.hpp"
 #include <stdlib.h>
-// Borrowed scene-state view only. Field offsets and signed player index come
-// from complete native instruction decoding, not from a nominal class layout.
+// Per-player choice transitions share the scene layout and the 28-byte
+// input snapshots with the confirmation and option handlers.
 class ChoiceSoundBankF226 { public: void Play(int id); };
 extern ChoiceSoundBankF226* g_ChoiceSoundAt00671618;
 extern unsigned char g_ChoiceRandomModeAt00671610[];
@@ -14,68 +15,56 @@ extern const float g_ChoiceDropStepAt00657480;
 extern const float g_ChoiceZeroAt00657CBC;
 extern const float g_ChoiceReturnStepAt0065747C;
 namespace ChoiceInputF226 { int __cdecl TestAction(int key); }
-class CharacterSelectChoiceF226 {
-public:
-    void UpdatePlayerChoice(signed char player);
-};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define F(off) (reinterpret_cast<float*>(RAW+(off))[player])
-#define B(off) (RAW[(off)+player])
-#define I(off) (*reinterpret_cast<int*>(RAW+(off)+player*0x1c))
-void CharacterSelectChoiceF226::UpdatePlayerChoice(signed char player)
+void CharacterSelectScene::UpdatePlayerChoice(signed char player)
 {
-    if (g_ChoiceMinimumAt0065782C < F(0xcc))
-        F(0xcc) -= g_ChoiceBackStepAt00657874;
-    if (F(0xa0) < g_ChoiceRiseBoundAt00658268)
-        F(0xa0) = F(0xa0) + g_ChoiceRiseStepAt00657D14;
-    if (F(0xa8) < g_ChoiceDropBoundAt00657858)
-        F(0xa8) = F(0xa8) + g_ChoiceDropStepAt00657480;
-    if (F(0xb0) < g_ChoiceRiseBoundAt00658268)
-        F(0xb0) = F(0xb0) + g_ChoiceRiseStepAt00657D14;
-    if (F(0xb8) < g_ChoiceDropBoundAt00657858)
-        F(0xb8) = F(0xb8) + g_ChoiceDropStepAt00657480;
-    if (F(0xc0) < g_ChoiceZeroAt00657CBC)
-        F(0xc0) = F(0xc0) + g_ChoiceReturnStepAt0065747C;
-    else if (g_ChoiceZeroAt00657CBC < F(0xc0)) {
-        F(0xc0) -= g_ChoiceDropStepAt00657480;
-        if (F(0xc0) < g_ChoiceZeroAt00657CBC)
-            F(0xc0)=0.0f;
+    if (g_ChoiceMinimumAt0065782C < (portraitReturn[player]))
+        (portraitReturn[player]) -= g_ChoiceBackStepAt00657874;
+    if ((portraitEnterX[player]) < g_ChoiceRiseBoundAt00658268)
+        (portraitEnterX[player]) = (portraitEnterX[player]) + g_ChoiceRiseStepAt00657D14;
+    if ((portraitEnterY[player]) < g_ChoiceDropBoundAt00657858)
+        (portraitEnterY[player]) = (portraitEnterY[player]) + g_ChoiceDropStepAt00657480;
+    if ((portraitExitX[player]) < g_ChoiceRiseBoundAt00658268)
+        (portraitExitX[player]) = (portraitExitX[player]) + g_ChoiceRiseStepAt00657D14;
+    if ((portraitExitY[player]) < g_ChoiceDropBoundAt00657858)
+        (portraitExitY[player]) = (portraitExitY[player]) + g_ChoiceDropStepAt00657480;
+    if ((choiceStop[player]) < g_ChoiceZeroAt00657CBC)
+        (choiceStop[player]) = (choiceStop[player]) + g_ChoiceReturnStepAt0065747C;
+    else if (g_ChoiceZeroAt00657CBC < (choiceStop[player])) {
+        (choiceStop[player]) -= g_ChoiceDropStepAt00657480;
+        if ((choiceStop[player]) < g_ChoiceZeroAt00657CBC)
+            (choiceStop[player])=0.0f;
     }
-    if (I(0x10)==-1) {
+    if ((input[player].vertical)==-1) {
         g_ChoiceSoundAt00671618->Play(0x27);
-        B(0xe6)=0;
-    } else if (ChoiceInputF226::TestAction(I(0x0c))==1) {
+        (chosenPalette[player])=0;
+    } else if (ChoiceInputF226::TestAction((input[player].horizontal))==1) {
         g_ChoiceSoundAt00671618->Play(0x27);
-        B(0xe6)=1;
-    } else if (I(0x10)==1) {
+        (chosenPalette[player])=1;
+    } else if ((input[player].vertical)==1) {
         g_ChoiceSoundAt00671618->Play(0x27);
-        B(0xe6)=2;
+        (chosenPalette[player])=2;
     }
-    if (I(0x14)==1) {
-        g_ChoiceRandomModeAt00671610[player]=B(0xe6);
-        B(0x96)=2;
+    if ((input[player].confirm)==1) {
+        g_ChoiceRandomModeAt00671610[player]=(chosenPalette[player]);
+        (playerState[player])=2;
         g_ChoiceSoundAt00671618->Play(0x2d);
     }
-    if (I(0x18)==1) {
+    if ((input[player].cancel)==1) {
         g_ChoiceSoundAt00671618->Play(0x28);
         g_ChoiceStageAt00671621=0;
-        RAW[0xec]=0;
-        B(0x96)=0;
-        F(0xa0)=80.0f;
-        F(0xa8)=40.0f;
-        F(0xb0)=80.0f;
-        F(0xb8)=40.0f;
-        B(0xe8)=1;
+        optionsCursor[0]=0;
+        (playerState[player])=0;
+        (portraitEnterX[player])=80.0f;
+        (portraitEnterY[player])=40.0f;
+        (portraitExitX[player])=80.0f;
+        (portraitExitY[player])=40.0f;
+        (playerReady[player])=1;
     }
-    if (I(0x20)==1) B(0xe4) = static_cast<unsigned int>(!B(0xe4));
-    if (I(0x1c)==1) {
+    if ((input[player].toggle)==1) (choiceRandom[player]) = static_cast<unsigned int>(!(choiceRandom[player]));
+    if ((input[player].special)==1) {
         g_ChoiceRandomModeAt00671610[player]=static_cast<unsigned char>(rand()%3);
-        B(0x96)=2;
+        (playerState[player])=2;
         g_ChoiceSoundAt00671618->Play(0x2d);
     }
-    if (I(0x24)==1) B(0xee) = static_cast<unsigned int>(!B(0xee));
+    if ((input[player].alternative)==1) (alternatePalette[player]) = static_cast<unsigned int>(!(alternatePalette[player]));
 }
-#undef F
-#undef B
-#undef I
-#undef RAW
