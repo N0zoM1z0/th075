@@ -810,3 +810,15 @@ remains byte-identical, all 682 relocation records remain identical, and the
 frontier guard remains at 575 differing bytes / 133 GPR positions / zero
 width differences. This is natural-source cleanup only; Alice's giant is
 still NONEXACT and its first GPR divergence remains `0x004F344C`.
+
+A second Alice object pass removes 34 more explicit `float` casts where the
+surrounding float operand or float destination already performs the same
+conversion: the eight float/double scale updates, direct `RecordedRange`
+results, signed-facing products, and the short/char and short/float mixed
+expressions. Each family was compiled alone before combining. Eight casts
+around `RecordedRange(...) +/- integer` were deliberately retained: without
+the cast the subtraction happens in integer arithmetic before assignment,
+which changes the original COFF. The accepted natural source keeps the full
+33,731-byte function body and all 682 relocation offsets/types/addends and
+local destinations identical. The frontier remains 575 differing bytes,
+133 GPR positions and zero width mismatches; no giant exactness is claimed.
