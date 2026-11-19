@@ -94,7 +94,7 @@ void SakuyaObject::Advance()
             ResetTransform(0.0f, 0.0f, 0.0f);
             field07C = 0;
             scaleX = RecordedRange(0, 7) * 0.1f + 1.0f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             color[0] = 255;
             color[1] = 255;
             color[2] = 255;
@@ -116,7 +116,7 @@ void SakuyaObject::Advance()
             ResetTransform(0.0f, 0.0f, 0.0f);
             field07C = 0;
             scaleX = RecordedRange(0, 9) * 0.1f + 1.7f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             color[0] = 255;
             color[1] = 255;
             color[2] = 255;
@@ -179,7 +179,7 @@ void SakuyaObject::Advance()
     case 804:
         if (owner->action == 307 || owner->action == 390) {
             x = owner->x + facing * 60;
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -229,7 +229,7 @@ void SakuyaObject::Advance()
             if (animationStage == 0) {
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                owner->field314 = rotationZ;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
@@ -332,7 +332,7 @@ void SakuyaObject::Advance()
             if (animationStage == 0) {
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                owner->field314 = rotationZ;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
@@ -451,7 +451,7 @@ void SakuyaObject::Advance()
                 if (animationStage == 1) rotationZ += 40.0f;
                 if (animationStage == 2) {
                     ++field0D8;
-                    reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                    owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
@@ -562,7 +562,7 @@ void SakuyaObject::Advance()
         else {
             if (((owner->action == 500 || owner->action == 501) && owner->animationStage < 10) ||
                 ((owner->action == 502 || owner->action == 503) && owner->animationStage < 4)) {
-                reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+                x = owner->x;
                 y = owner->y + 132.0f;
             }
             else if (animationStage < 2) { ResetSecondaryCounter(2); return; }
@@ -578,7 +578,7 @@ void SakuyaObject::Advance()
                 rotationX = 0.0f;
                 rotationY = facing * field0CC;
                 rotationZ = 0.0f;
-                reinterpret_cast<unsigned int&>(rotationX) = reinterpret_cast<unsigned int&>(field0D0);
+                rotationX = field0D0;
             }
             rotationZ += 10.0f;
             if (animationStage == 2) color[0] -= 12;
@@ -596,7 +596,7 @@ void SakuyaObject::Advance()
         else {
             if (((owner->action == 500 || owner->action == 501) && owner->animationStage < 10) ||
                 ((owner->action == 502 || owner->action == 503) && owner->animationStage < 4)) {
-                reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+                x = owner->x;
                 y = owner->y + 132.0f;
             }
             else if (animationStage < 2) { ResetSecondaryCounter(2); return; }
@@ -612,7 +612,7 @@ void SakuyaObject::Advance()
                 rotationX = 0.0f;
                 rotationY = facing * field0CC;
                 rotationZ = 0.0f;
-                reinterpret_cast<unsigned int&>(rotationX) = reinterpret_cast<unsigned int&>(field0D0);
+                rotationX = field0D0;
             }
             rotationZ += 10.0f;
             if (animationStage == 2) color[0] -= 12;
@@ -694,7 +694,7 @@ void SakuyaObject::Advance()
             color[3] = 255;
             field07C = 0;
             field080 = 1;
-            reinterpret_cast<unsigned int&>(rotationZ) = reinterpret_cast<unsigned int&>(field0C8);
+            rotationZ = field0C8;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
@@ -735,7 +735,7 @@ void SakuyaObject::Advance()
         break;
 
     case 815:
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = owner->y + 100.0f;
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -825,7 +825,7 @@ void SakuyaObject::Advance()
         break;
 
     case 818:
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = owner->y + 100.0f;
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -860,8 +860,8 @@ void SakuyaObject::Advance()
 
     case 819:
         if (owner->action == 302) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (owner->action != 302) { ClearFrameInfo(); return; }
         else {
@@ -880,8 +880,8 @@ void SakuyaObject::Advance()
 
     case 820:
         if (owner->action == 304) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (owner->action != 304) { ClearFrameInfo(); return; }
         else {
@@ -900,8 +900,8 @@ void SakuyaObject::Advance()
 
     case 821:
         if (owner->action == 404 || owner->action == 405) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (owner->action != 404 && owner->action != 405) { ClearFrameInfo(); return; }
         else {
@@ -920,8 +920,8 @@ void SakuyaObject::Advance()
 
     case 822:
         if (owner->action == 308) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (owner->action != 308) { ClearFrameInfo(); return; }
         else {
@@ -940,8 +940,8 @@ void SakuyaObject::Advance()
 
     case 823:
         if (owner->action == 310) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (owner->action != 310) { ClearFrameInfo(); return; }
         else {
@@ -1152,7 +1152,7 @@ void SakuyaObject::Advance()
             color[2] = 255;
             color[3] = 255;
             scaleX = RecordedRange(0, 15) * 0.1f + 0.5f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             velocityY = -RecordedRange(0, 2);
             velocityX = 0.0f;
         }
@@ -1566,7 +1566,7 @@ void SakuyaObject::Advance()
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (animationStage == 3) {
-                    reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                    owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 0);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
@@ -1646,7 +1646,7 @@ void SakuyaObject::Advance()
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (animationStage == 3) {
-                    reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                    owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 0);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
@@ -1813,7 +1813,7 @@ void SakuyaObject::Advance()
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 if (field07C == 0) {
-                    reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                    owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
@@ -1916,7 +1916,7 @@ void SakuyaObject::Advance()
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 if (field07C == 0) {
-                    reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                    owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
@@ -2156,7 +2156,7 @@ void SakuyaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) field0D8 = 0;
             if (animationStage == 1 && animationFrame == 0) {
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(field0C8);
+                owner->field314 = field0C8;
                 owner->field318 = 10.0f;
                 owner->SpawnBattleEffect(909, x, y, facing, 1);
             }
@@ -2235,7 +2235,7 @@ void SakuyaObject::Advance()
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                owner->field314 = rotationZ;
                 reinterpret_cast<unsigned int&>(owner->field318) = reinterpret_cast<unsigned int&>(field0CC);
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
             }
@@ -2467,7 +2467,7 @@ void SakuyaObject::Advance()
         break;
 
     case 997:
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = owner->y * 0.0f + 20.0f;
         field08A = 1;
         if (animationStage == 0 && animationFrame == 0) {

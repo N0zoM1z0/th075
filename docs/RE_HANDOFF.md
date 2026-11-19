@@ -468,3 +468,5 @@ x87 arithmetic.
   members; `relabel.py UNIT...` refreshes manifest symbol names after a
   rename (offsets, types and targets must be unchanged); `anomalies.py`
   lists anomalous joins in an original.
+
+- SakuyaObject::Advance replaces 31 unsigned-int-reference float copies with direct float assignments. Its full 42,937-byte COFF, 929 relocation positions/types and every nonrelocation byte remain unchanged; no giant exactness is claimed.

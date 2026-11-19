@@ -658,3 +658,5 @@ not improve the native byte frontier. The inverse `else`, compound
 assignment, and explicit boolean forms introduced new width/instruction
 debt. The remaining lead is a construct that makes the join take the
 first-jump register state without changing its other instructions.
+
+Sakuya's 42.5 KB object boss now uses ordinary C++ float copies for 31 same-type transfers among x/y, scale, rotation and Fighter field314. The full 42,937-byte COFF remains identical, all 929 relocation positions/types are unchanged, and there are zero nonrelocation-byte differences. The giant remains nonexact.
