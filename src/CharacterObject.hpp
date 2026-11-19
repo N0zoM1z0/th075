@@ -50,7 +50,13 @@ class RemiliaObject : public CharacterObject { public: RemiliaObject(void* owner
 class YuyukoObject : public CharacterObject { public: YuyukoObject(void* ownerFighter); };
 class YukariObject : public CharacterObject { public: YukariObject(void* ownerFighter); };
 class SuikaObject : public CharacterObject { public: SuikaObject(void* ownerFighter); };
-class MeilingObject : public CharacterObject { public: MeilingObject(void* ownerFighter); };
+class MeilingObject : public CharacterObject {
+public:
+    MeilingObject(void* ownerFighter);
+    virtual void Advance();  // 005EB520, whole nonexact research parent
+    int RecordedRange(int lower, int upper);
+    void PlaySharedSound(short sound);
+};
 
 typedef char CharacterObjectLayoutCheck[(
     offsetof(CharacterObject, field0C8) == 0x0C8 &&

@@ -41,6 +41,10 @@ Done so far:
   accesses expressed through real named members. The 33,293-byte parent
   retained its 575-byte nonexact frontier and 133 GPR mismatches; all 24
   header-affected exact functions cold-replayed successfully.
+- The Meiling object 34,434-byte parent now defines `MeilingObject::Advance`
+  and sends 93 effect-spawn calls directly through the actual `Fighter`
+  owner. Its 985 differing bytes, 135 GPR roles and six widths remain
+  unresolved; all 24 dependent exact functions cold-replayed successfully.
 
 - The class structure from the PE vtables is in source: `Actor`, `Fighter`,
   one `<Char>Fighter` per character with its overrides under the slot names,
@@ -89,7 +93,7 @@ Next steps:
      under several class names; `relabel.py` makes renaming cheap).
 2. Move the remaining research parent classes to their real character
    classes, as now done for `ReimuFighter::Advance` and
-   `AliceObject::Advance`. Resolve provisional
+   `AliceObject::Advance` and `MeilingObject::Advance`. Resolve provisional
    native-call signatures against the shared base APIs without regressing
    the full giant function.
 3. The giants' register debt: find the construct behind the anomalous

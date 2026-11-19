@@ -5,12 +5,14 @@
 // Profile: /Od /Ob0 /Gy /GR- /GX- /Zi /I src, pinned VC7.1 build 3077.
 // Evidence: docs/OBJECT_ADVANCE_005EB520_WHOLE_F1207.md.
 // Interfaces below are borrowed receiver views; do not instantiate owners.
-#include "ObjectAdvance5EB520F1207.hpp"
+#include "CharacterObject.hpp"
+#include "MeilingFighter.hpp"
 
-#define OWNER_ACTOR reinterpret_cast<OwnerActor5EB520Draft*>(owner)
+float __cdecl AngleAt00483300(float, float);
+
 
 // The state labels and names describe observed behavior, not original identity.
-void ObjectActor5EB520Draft::Advance() {
+void MeilingObject::Advance() {
     if (owner->opponent->field3BA != 0) return;
     if (owner->field3BA != 0 && field08A == 0) return;
     if (field082 != 0) {
@@ -21,16 +23,16 @@ void ObjectActor5EB520Draft::Advance() {
     case 800:
         if (owner->action > 49 && owner->action < 150 && animationStage < 8) {
             ClearFrameInfo();
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
         }
@@ -131,18 +133,18 @@ void ObjectActor5EB520Draft::Advance() {
     case 803:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             return;
         }
@@ -159,10 +161,10 @@ void ObjectActor5EB520Draft::Advance() {
                 color[3] = 255;
                 field0D8 = 0;
                 owner->field314 = 0.0f;
-                OWNER_ACTOR->SpawnEffect(801, x, y, facing, 1);
+                owner->SpawnBattleEffect(801, x, y, facing, 1);
                 owner->field314 = 180.0f;
-                OWNER_ACTOR->SpawnEffect(801, x, y, facing, 1);
-                OWNER_ACTOR->SpawnEffect(802, x, y, facing, 1);
+                owner->SpawnBattleEffect(801, x, y, facing, 1);
+                owner->SpawnBattleEffect(802, x, y, facing, 1);
             }
             if (animationStage == 1) {
                 if (scaleX < 1.0f) {
@@ -213,18 +215,18 @@ void ObjectActor5EB520Draft::Advance() {
         else {
             if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearFrameInfo();
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
                 return;
             }
@@ -276,7 +278,7 @@ void ObjectActor5EB520Draft::Advance() {
                     ++field0D8;
                     ++field0DA;
                     if (field0D8 > 2) {
-                        OWNER_ACTOR->SpawnEffect(805, x, y, facing, 1);
+                        owner->SpawnBattleEffect(805, x, y, facing, 1);
                         field0D8 = 0;
                     }
                     scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
@@ -460,7 +462,7 @@ void ObjectActor5EB520Draft::Advance() {
                     scaleX = 1.0f - RecordedRange(0, 20) * 0.01f;
                     scaleY = scaleX;
                     if (field0D8 > 1) {
-                        OWNER_ACTOR->SpawnEffect(810, x, y, facing, 1);
+                        owner->SpawnBattleEffect(810, x, y, facing, 1);
                         field0D8 = 0;
                     }
                 }
@@ -562,10 +564,10 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -585,7 +587,7 @@ void ObjectActor5EB520Draft::Advance() {
                     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
                 if (animationStage < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(818, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
+                    owner->SpawnBattleEffect(818, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
                 ++field0D8;
                 if (animationStage < 2) {
@@ -629,10 +631,10 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -652,7 +654,7 @@ void ObjectActor5EB520Draft::Advance() {
                     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
                 if (animationStage < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(819, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
+                    owner->SpawnBattleEffect(819, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
                 ++field0D8;
                 if (animationStage < 2) {
@@ -696,10 +698,10 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -719,7 +721,7 @@ void ObjectActor5EB520Draft::Advance() {
                     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
                 if (animationStage < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(820, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
+                    owner->SpawnBattleEffect(820, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
                 ++field0D8;
                 if (animationStage < 2) {
@@ -763,10 +765,10 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -786,7 +788,7 @@ void ObjectActor5EB520Draft::Advance() {
                     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
                 if (animationStage < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(821, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
+                    owner->SpawnBattleEffect(821, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
                 ++field0D8;
                 if (animationStage < 2) {
@@ -830,10 +832,10 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -853,7 +855,7 @@ void ObjectActor5EB520Draft::Advance() {
                     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
                 if (animationStage < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(822, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
+                    owner->SpawnBattleEffect(822, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
                 ++field0D8;
                 if (animationStage < 2) {
@@ -897,10 +899,10 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -920,7 +922,7 @@ void ObjectActor5EB520Draft::Advance() {
                     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
                 if (animationStage < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(823, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
+                    owner->SpawnBattleEffect(823, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
                 ++field0D8;
                 if (animationStage < 2) {
@@ -964,10 +966,10 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -987,7 +989,7 @@ void ObjectActor5EB520Draft::Advance() {
                     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
                 if (animationStage < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(824, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
+                    owner->SpawnBattleEffect(824, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
                 ++field0D8;
                 if (animationStage < 2) {
@@ -1248,16 +1250,16 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -1316,16 +1318,16 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -1384,16 +1386,16 @@ void ObjectActor5EB520Draft::Advance() {
                 ClearFrameInfo();
                 if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                     reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                    owner->SpawnBattleEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
+                owner->SpawnBattleEffect(996, x, y, 1, 1);
                 return;
             }
             else {
@@ -1572,9 +1574,9 @@ void ObjectActor5EB520Draft::Advance() {
             }
             if (AdvanceNestedFrame() == field070) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
-                OWNER_ACTOR->SpawnEffect(832, x, y, facing, 1);
-                OWNER_ACTOR->SpawnEffect(833, x, y, facing, 1);
-                OWNER_ACTOR->SpawnEffect(834, x, y, facing, 1);
+                owner->SpawnBattleEffect(832, x, y, facing, 1);
+                owner->SpawnBattleEffect(833, x, y, facing, 1);
+                owner->SpawnBattleEffect(834, x, y, facing, 1);
             }
         }
         break;
@@ -1989,7 +1991,7 @@ void ObjectActor5EB520Draft::Advance() {
                     scaleY = scaleX;
                     ++field0D8;
                     if (field0D8 > 0) {
-                        OWNER_ACTOR->SpawnEffect(844, x, y, facing, 1);
+                        owner->SpawnBattleEffect(844, x, y, facing, 1);
                         field0D8 = 0;
                     }
                 }
@@ -2019,7 +2021,7 @@ void ObjectActor5EB520Draft::Advance() {
                     field07C = 0;
                 }
                 if (animationStage == 3) {
-                    OWNER_ACTOR->SpawnEffect(RecordedRange(0, 7) + 818, x + 150.0f - RecordedRange(0, 300), y + 150.0f - RecordedRange(0, 300), facing, 1);
+                    owner->SpawnBattleEffect(RecordedRange(0, 7) + 818, x + 150.0f - RecordedRange(0, 300), y + 150.0f - RecordedRange(0, 300), facing, 1);
                 }
                 if (animationStage > 3) {
                     if (color[0] > 30) {
@@ -2632,5 +2634,3 @@ void ObjectActor5EB520Draft::Advance() {
         break;
     }
 }
-
-#undef OWNER_ACTOR
