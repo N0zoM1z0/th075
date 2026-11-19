@@ -13,13 +13,13 @@ relocation, cold-builds byte-identical to the original.
 ## Status
 
 `scripts/repo-python scripts/report-reconstruction-status.py --summary`
-prints the live numbers. At the time of writing:
+prints the live numbers. Snapshot: 2026-11-19. Re-run the command for live numbers:
 
 | | |
 | --- | --- |
 | Target | user-supplied `resources/th075.exe` v1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
-| Exact functions | 982 (871,649 original CODE bytes) |
-| Authored coverage | 44.16% of 1,973,704 bytes (44.09% counting 95 origin-unknown candidates) |
+| Exact functions | 983 (871,662 original CODE bytes) |
+| Authored coverage | 44.16% of 1,973,717 bytes (44.09% including 94 review candidates / 3,407 pending bytes) |
 | Remaining authored functions | 22, all giant per-character `Advance` state machines (1,102,055 bytes) |
 
 The 98% authored-byte goal is not met.

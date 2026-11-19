@@ -23,7 +23,7 @@ pure-virtual vtable, and six mixed game/STL callers of
 `004588B0`; those remain unknown. See
 [small leaf/call graph F595](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
 
-The **current live** pending set is **95 functions /3,420 bytes**;
+The **current live** pending set is **94 functions /3,407 bytes**;
 use `config/function-origins.csv` for the authoritative current
 classification and `docs/RE_HANDOFF.md` for the active tasks.
 F595–F691 ordinary VC7.1 source research now matches **85 distinct
@@ -39,7 +39,7 @@ never resolves authored-vs-library provenance.
 
 **Historical R263 table only:** the following 97 rows / 3,608 bytes
 record what was unresolved **at the time of R263**, not today's live
-95-row/3,420-byte queue. Some old rows have since been resolved by
+94-row/3,407-byte queue. Some old rows have since been resolved by
 F536 and F555; `004135F0` is byte-reproduced by F595 but still has
 unknown provenance. Treat each row's evidence and needed witness as a
 historical research lead; use live `config/function-origins.csv` for
@@ -49,8 +49,8 @@ complete-origin milestone achieved.
 The target remains the supplied Japanese `th075.exe`, self-reporting version
 1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 **At the older R263 checkpoint**, the exact baseline was 60 functions
-/9,883 bytes /60 units across eleven objects; the *current* accepted whole register is **943 exact
-functions /862,726 CODE bytes** as independently checked after F695. No new source, mapping or exact ledger credit is awarded by
+/9,883 bytes /60 units across eleven objects; the *current* accepted whole register is **983 exact
+functions /871,662 CODE bytes** (live snapshot 2026-11-19). No new source, mapping or exact ledger credit is awarded by
 this archived provenance matrix.
 
 The original R251 audit covered all116 whole target bodies,114 RET-based
@@ -83,7 +83,7 @@ abs11/abs64 auxiliary28 source-order contribution39. Separate labs-shaped11
 and original ordinary int/long/wide alternatives remain unresolved.
 The **historical R263** remaining projection counted 95
 RET-based bodies and two native tail cases before later origin
-reclassifications. This is NOT the current 95-function inventory. Every remaining whole
+reclassifications. This is NOT the current 94-function inventory. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
 Original structured references are read back by exact JSON trail and original

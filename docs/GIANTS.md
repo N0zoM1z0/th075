@@ -26,7 +26,7 @@ It fails if the body size changes or a byte that matched now differs.
 Record an improvement with `--update NAME` and commit the file with the
 source change.
 
-## Complete research parents (measured 2026-11-15)
+## Complete research parents (measured 2026-11-19)
 
 All thirteen have the original instruction count, frame, stack slots, branch
 targets and mnemonics. What remains is register choice and the few
@@ -687,3 +687,15 @@ Reimu fighter motion now uses the real float types for the reaction-velocity pai
 YoumuObject's borrowed history record now types its +0x04/+0x08 position fields as floats (xAt04 / yAt08) and assigns them directly to the object's float coordinates. The complete 40,464-byte boss COFF, all 938 relocation offsets/types and every nonrelocation byte remain identical; the view is still non-owning and no exactness credit is claimed.
 
 The signed Fighter::fieldEFA cleanup is now complete across the remaining large callers: Meiling, Suika and Alice object giants replace 87 reinterpret_cast<short&> uses, while Reimu and Remilia fighter fragments replace four opponent-field casts. These 91 sites now use direct short member access and increment. The five complete COFF bodies (34,879 / 43,972 / 33,731 / 62,090 / 59,236 bytes), all 806 / 991 / 682 / 1,824 / 1,863 relocation offsets/types, and every nonrelocation byte remain unchanged. No exact unit depends on these boss-only fragments; all five giant frontiers remain nonexact.
+
+
+Sakuya object 004CA6E0 was revisited on 2026-11-19 at the 809/810 action
+gate. Positive and negative OR predicates, grouped comparisons, nested
+guards, switch breaks, explicit owner qualification, local register
+aliases, and goto-based forms were measured against the whole parent.
+The best transient form reduced GPR-role differences from 447 to 328,
+but emitted a 42,939-byte section instead of the required 42,937 bytes
+and failed the frontier size check. Other forms regressed or returned to
+the original 447/12 result. Every experiment was discarded; the tracked
+source remains at its committed 42,937-byte baseline. Do not repeat these
+syntax-only variants without new target evidence.
