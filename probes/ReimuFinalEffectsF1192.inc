@@ -9,7 +9,7 @@ case 0x31B: {
         SelectResourceParameters();
         PlaySharedSound(0x17);
         SpawnBattleEffect(0x3E5,x,(*(&y))+g_ContactProjectionAt00657888,
-            reinterpret_cast<char&>(facing),1);
+            facing,1);
     }
     if ((animationStage)==9 && (animationFrame)==0 && (scriptCounterF00)<8) {
         ++scriptCounterF00;

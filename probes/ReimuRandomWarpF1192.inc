@@ -22,7 +22,7 @@ case 0x2EF: {
         PlaySound(12);
         field314=float(scriptCounterF00);
         SpawnBattleEffect(0x394,float(facing*80)+(x),
-            (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
         aiCardTimer=120;
     }
     if (AdvanceNestedFrame()==(field070)) {

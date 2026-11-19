@@ -235,7 +235,7 @@ case 0x19D: {
     if ((animationStage)==6 && (animationFrame)==0) {
         field314=-30.0f; field318=8.0f;
         SpawnBattleEffect(0x32C,float(facing*37)+(x),
-            (*(&y))+g_ReimuAirVolleyYAt00659098,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuAirVolleyYAt00659098,facing,1);
         PlaySound(1);
         UpdateGaugeTimer(200);
     }
@@ -302,7 +302,7 @@ case 0x1A1: {
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=30.0f; field318=8.0f;
         SpawnBattleEffect(0x32C,float(facing*12)+(x),
-            (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
         PlaySound(1);
         UpdateGaugeTimer(200);
     }

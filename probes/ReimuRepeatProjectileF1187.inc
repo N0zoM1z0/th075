@@ -9,7 +9,7 @@ case R1187_ACTION: {
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=40.0f; field318=10.0f;
         SpawnBattleEffect(R1187_EFFECT,(*(&x))+g_ThresholdAt0065782C,
-            (*(&y))+g_ThresholdAt0065782C,reinterpret_cast<char&>(facing),0);
+            (*(&y))+g_ThresholdAt0065782C,facing,0);
         PlaySound(4);
         UpdateGaugeTimer(250);
     }

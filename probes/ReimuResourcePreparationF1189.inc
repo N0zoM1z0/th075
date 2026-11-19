@@ -10,7 +10,7 @@ case R1189_ACTION: {
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,(*(&y))+g_ContactProjectionAt00657888,
-            reinterpret_cast<char&>(facing),1);
+            facing,1);
         PlaySharedSound(0x21);
         opponent->fieldEFA=0;
     }

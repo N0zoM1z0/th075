@@ -53,7 +53,7 @@ case 0x12E: {
         SpawnBattleEffect(0x325,
             float(facing*170)+(x),
             y-g_ApproachLowerAt00658290,
-            reinterpret_cast<char&>(facing),0);
+            facing,0);
     }
     break;
 }
@@ -114,7 +114,7 @@ case 0x131: {
     if ((animationStage)==2 && (animationFrame)==0)
         SpawnBattleEffect(0x328,
             float(facing*145)+(x),
-            (*(&y))+g_ReimuShotYAt006590A4,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuShotYAt006590A4,facing,1);
     if ((animationStage)==4 && (animationFrame)==0 && (scriptCounterF00)<2) {
         ++scriptCounterF00;
         ResetSecondaryCounter(2);

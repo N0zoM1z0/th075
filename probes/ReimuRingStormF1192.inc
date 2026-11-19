@@ -26,17 +26,17 @@ case 0x2DB: {
         field314=float(RecordedRange(0,359));
         if ((scriptCounterF02)==0) {
             SpawnBattleEffect(0x384,float(facing*18)+(x),
-                (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
+                (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
             field314=float(RecordedRange(0,359));
         }
         if ((scriptCounterF02)==1) {
             SpawnBattleEffect(0x385,float(facing*18)+(x),
-                (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
+                (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
             field314=float(RecordedRange(0,359));
         }
         if ((scriptCounterF02)==2) {
             SpawnBattleEffect(0x386,float(facing*18)+(x),
-                (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
+                (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
             field314=float(RecordedRange(0,359));
         }
         ++scriptCounterF02;

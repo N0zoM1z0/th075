@@ -32,9 +32,9 @@ case 0xC8: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=11.0f;
         SpawnAuxEffect(0x7D,float(facing*80)+(x),
-            (*(&y))+g_ReimuCommandYAt00658268,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuCommandYAt00658268,facing,1);
         SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandYAt00658268,
-            reinterpret_cast<char&>(facing),1);
+            facing,1);
         PlaySharedSound(31);
     }
     break;
@@ -68,9 +68,9 @@ case 0xCA: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=9.0f; velocityY=5.0f; field05C=0.45f;
         SpawnAuxEffect(0x7D,float(facing*80)+(x),
-            (*(&y))+g_ReimuCommandFrontYAt006590AC,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuCommandFrontYAt006590AC,facing,1);
         SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandFrontYAt006590AC,
-            reinterpret_cast<char&>(facing),1);
+            facing,1);
         PlaySharedSound(31);
     }
     if (y>g_ThresholdAt0065782C && (animationStage)>1) {

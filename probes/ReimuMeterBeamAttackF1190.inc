@@ -4,7 +4,7 @@ case R1190_ACTION: {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
         SpawnAuxEffect(R1190_AUX_EFFECT,float(facing*7)+(x),
-            (*(&y))+g_ReimuMeterNearYAt00659088,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuMeterNearYAt00659088,facing,1);
         field36C=(field36C)-g_ContactProjectionAt00657888;
     }
     if ((animationStage)==10 || (animationStage)==11) UpdateGaugeTimer(5);

@@ -15,12 +15,12 @@ case R1188_ACTION: {
     }
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
-        SpawnBattleEffect(0x32D,x,y,reinterpret_cast<char&>(facing),1);
+        SpawnBattleEffect(0x32D,x,y,facing,1);
         PlaySound(3);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=R1188_LEAP_X; velocityY=R1188_LEAP_Y; field05C=0.9f;
-        SpawnAuxEffect(0x7F,x,y,reinterpret_cast<char&>(facing),1);
+        SpawnAuxEffect(0x7F,x,y,facing,1);
     }
     if ((animationStage)==10 && (animationFrame)==0) ResetSecondaryCounter(8);
     break;

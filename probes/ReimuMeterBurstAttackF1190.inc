@@ -17,7 +17,7 @@ case R1190_ACTION: {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
         SpawnAuxEffect(R1190_AUX_EFFECT,x-float(facing*2),
-            (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
+            (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         UpdateGaugeTimer(500);
     }

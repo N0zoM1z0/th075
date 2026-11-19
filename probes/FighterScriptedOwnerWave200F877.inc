@@ -31,7 +31,7 @@ case 0x200: {
     }
     if ((animationStage)==4 && (animationFrame)==0) {
         opponent->ResetPrimaryCounters(0x64);
-        reinterpret_cast<char&>(opponent->facing)=reinterpret_cast<char&>(facing);
+        opponent->facing = facing;
         opponent->x=float((facing)*-6)+(x);
     }
     if ((animationStage)==5 && (animationFrame)==0) {

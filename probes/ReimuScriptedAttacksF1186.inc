@@ -135,7 +135,7 @@ case 0x192: {
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=40.0f; field318=10.0f;
         SpawnBattleEffect(0x338,(*(&x))+g_ThresholdAt0065782C,
-            (*(&y))+g_ThresholdAt0065782C,reinterpret_cast<char&>(facing),0);
+            (*(&y))+g_ThresholdAt0065782C,facing,0);
         PlaySound(4);
         UpdateGaugeTimer(250);
     }
