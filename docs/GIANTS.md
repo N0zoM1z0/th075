@@ -929,3 +929,11 @@ value. The field is now declared `unsigned short`; all five explicit
 `reinterpret_cast<unsigned short&>` reads were replaced by direct member
 access. The affected exact units (counter update, base reset, Sakuya reset,
 Marisa chain render and battle HUD render) replayed 5/5.
+
+A second reset-field pass removes another 38 `unsigned short&` reinterpret
+aliases from zero assignments to already-signed members: `aiWaitTimer`,
+`aiStep`, `aiCardTimer`, `field6FA`, `field6FC`, Suika's `fieldF28/fieldF2A`
+and Yuyuko's `fieldF10`. These members now use their declared `short` types
+directly. The same 20 initialization/reset exact units were replayed again
+and passed 20/20. No `reinterpret_cast<unsigned short&>` aliases remain in
+tracked `src/` or `probes/` sources.

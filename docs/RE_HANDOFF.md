@@ -253,3 +253,8 @@ initialization/reset sources. All 20 affected exact units replayed 20/20.
 `Fighter::fieldEF8` (+0xEF8) is now declared `unsigned short`, matching its
 per-frame increment and the unsigned phase/modulo reads in Marisa's chain
 renderer and the battle HUD. Five affected exact units replayed 5/5.
+The reset-field cleanup removes a further 38 unsigned-short aliases around
+zero writes to signed `aiWaitTimer/aiStep/aiCardTimer`, `field6FA/field6FC`,
+Suika `fieldF28/fieldF2A`, and Yuyuko `fieldF10`. All 20 exact init/reset
+units replayed 20/20 again; no unsigned-short reference aliases remain in
+tracked source/probe files.
