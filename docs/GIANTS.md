@@ -760,6 +760,12 @@ and failed the frontier size check. Other forms regressed or returned to
 the original 447/12 result. Every experiment was discarded; the tracked
 source remains at its committed 42,937-byte baseline. Do not repeat these
 syntax-only variants without new target evidence.
+A separate natural-C++ cleanup removes five redundant `static_cast<short>`
+wrappers around `AngleAt00483300` float results assigned to short fields.
+The complete 42,937-byte COFF body remains byte-identical and all 929
+relocation positions/types/addends/local targets remain identical. The
+Sakuya giant frontier remains 447 GPR positions and 12 width differences;
+no boss exactness is claimed.
 
 The shared angle leaf `AngleAt00483300` is now natural C++ and exact as a
 21-byte authored game function. Sixteen independently authored caller

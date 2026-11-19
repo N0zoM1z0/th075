@@ -140,6 +140,9 @@ frontier remains unchanged. Sakuya's 809/810
 gate was also revisited on 2026-11-19; all syntax-only variants were discarded.
 The best transient Sakuya form was two bytes too large and failed the frontier
 size check. Do not repeat those attempts without new target evidence.
+A separate Sakuya source cleanup removed five redundant angle-result short
+casts while preserving all 42,937 COFF bytes and 929 relocation positions,
+types, addends and local targets; its 447-GPR / 12-width frontier is unchanged.
 
 For a complete parent:
 
