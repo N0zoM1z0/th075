@@ -1115,6 +1115,16 @@ also consumes the signed `field3A4` value as a record count/score. Sixteen
 state and status-render paths. All 45 exact functions across six translation
 units replayed 45/45, and all four complete fighter `Advance` bodies and
 relocation maps remain identical.
+The Actor/Fighter pointer views were made explicit without changing their
+32-bit slots. `Fighter::field534` now has renderer and secondary-texture
+union views; `stageDrawing` keeps its multi-renderer `void*` view plus the
+F286 stage-texture view. The load-stage/load-resources paths now use the typed
+members directly. The redundant pointer-reference aliases in fighter overlay
+rendering, command selection, damage-flash predicates and opponent-gauge byte
+offset access were removed. All ten exact functions across six translation
+units replayed 10/10, including the 1,186-byte `Fighter::LoadResources`,
+1,081-byte `BattleScene::RenderDamageFlash`, 753-byte opponent-gauge update
+and 374-byte stage-resource loader.
 The third-boss state words `Fighter::fieldF06` (+0xF06) and `fieldF08`
 (+0xF08) are now signed 16-bit members. Their native uses include negative
 arc increments, signed cadence countdowns, signed trajectory values and

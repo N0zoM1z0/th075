@@ -382,6 +382,14 @@ settlement semantics. Sixteen signed-reference aliases were removed. Forty-
 five exact functions across six affected translation units replayed 45/45;
 the four complete fighter `Advance` bodies and relocation maps remain
 identical.
+Fighter resource pointers now expose their observed alternate views as
+unions: `field534` is either the TimelineDrawing renderer view or the
+FighterTexture resource view, and `stageDrawing` keeps the general renderer
+pointer alongside the F286 stage texture pointer. Redundant pointer-reference
+aliases were removed from resource loading, overlay rendering, command
+selection, damage flash and opponent gauge paths. Ten exact functions across
+six translation units replayed 10/10, including full resource loading and
+battle damage-flash rendering.
 `Fighter::fieldF06` (+0xF06) and `fieldF08` (+0xF08) are now signed
 16-bit members, matching the third-boss arc, cadence and trajectory logic.
 Thirty-six signed-short reference overlays across eight boss fragments were
