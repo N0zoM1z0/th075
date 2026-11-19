@@ -125,6 +125,6 @@ void ReplayAppendF219::AppendRecord()
         WriteFile(field000,&*frame.dwordHead,4,&frame.written,0);
     }
     ClearQueues();
-    ++reinterpret_cast<unsigned char&>(field116);
+    ++field116;
 }
 #undef FIELD
