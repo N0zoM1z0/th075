@@ -1,6 +1,7 @@
 #ifndef TH075_FIGHTER_HPP
 #define TH075_FIGHTER_HPP
 #include "Actor.hpp"
+#include "FighterOutcomeByteF992.hpp"
 
 class EffectManagerLifetimeF161;
 class TimelineDrawing438D00;
@@ -193,7 +194,7 @@ public:
     short flashGauge;                   // +0x3C8
     short field3CA;                     // +0x3CA
     short field3CC;                     // +0x3CC
-    unsigned char field3CE;             // +0x3CE round outcome (F992)
+    FighterOutcomeByteF992 field3CE;    // +0x3CE signed/unsigned round outcome (F992)
     unsigned char field3CF;             // +0x3CF unsigned continuation/status byte
     unsigned int field3D0[12];          // +0x3D0
     unsigned int field400[12];          // +0x400

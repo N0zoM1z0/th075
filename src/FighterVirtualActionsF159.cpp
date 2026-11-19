@@ -1,4 +1,3 @@
-#include "FighterRoundOutcomeBytesF992.hpp"
 #include <string.h>
 #include "FighterAnimationReset453D80.hpp"
 #include "FighterVirtualActionsF159.hpp"
@@ -163,8 +162,8 @@ void Fighter::ResetRound()
     field09C = 1.0f;
     field0A0 = 1.0f;
     fadeAlpha = 0;
-    F992_OUTCOME(this).outcomeAt3CE.unsignedAt3CE = 0;
-    F992_OUTCOME(this).continuationAt3CF = 1;
+    this->field3CE.unsignedAt3CE = 0;
+    this->field3CF = 1;
     inputBindings.ClearHeldCounts();
     field2EC->DeleteFourLists();
     field366 = 2;

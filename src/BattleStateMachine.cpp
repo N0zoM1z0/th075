@@ -62,7 +62,7 @@ short BattleScene::AdvanceState()
                 fighters[i]->spirit = 1000; fighters[i]->spiritCooldown = 0;
             }
         }
-        if (TIMER <= 20) { reinterpret_cast<signed char&>(fighters[0]->field3CE) = 0; reinterpret_cast<signed char&>(fighters[1]->field3CE) = 0; STATE = 1; }
+        if (TIMER <= 20) { fighters[0]->field3CE.unsignedAt3CE = 0; fighters[1]->field3CE.unsignedAt3CE = 0; STATE = 1; }
         break;
     case 5:
         if (field08C > -200.0f) field08C -= 5.0f;
@@ -73,7 +73,7 @@ short BattleScene::AdvanceState()
                 reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render(STATE_TEXT, 120, 120, 255, 24, 2, false);
                 fighters[WINNER]->noticeBadge = fighters[WINNER]->quoteBadges[LINE];
             } else if (g_CombatMode == 4) {
-                if (reinterpret_cast<signed char&>(fighters[0]->field3CE) != 0) {
+                if (fighters[0]->field3CE.signedAt3CE != 0) {
                     if (g_FrameClockMode == 2) STATE = 6;
                     else { field0A0 = 1; field118 = 1; break; }
                 } else {
@@ -128,13 +128,13 @@ short BattleScene::AdvanceState()
         if ((fighters[0]->field3CF == 0 || fighters[1]->field3CF == 0) && TIMER < 25) ++TIMER;
         if (TIMER == 150) SetNotice(0);
         if (TIMER <= 145) {
-            if (reinterpret_cast<signed char&>(fighters[0]->field3CE)) {
+            if (fighters[0]->field3CE.signedAt3CE) {
                 fighters[0]->recoverableHealth += 600; fighters[0]->health += 200;
                 if (fighters[0]->recoverableHealth > 10000) fighters[0]->recoverableHealth = 10000;
                 if (fighters[0]->health > 10000) fighters[0]->health = 10000;
                 fighters[0]->cardGauge = 0.0f; fighters[0]->spirit = 1000; fighters[0]->spiritCooldown = 0; fighters[0]->field366 = 2;
             }
-            if (reinterpret_cast<signed char&>(fighters[1]->field3CE)) {
+            if (fighters[1]->field3CE.signedAt3CE) {
                 fighters[1]->recoverableHealth += 600;
                 if (fighters[1]->recoverableHealth >= MAX_HEALTH) {
                     fighters[1]->recoverableHealth = MAX_HEALTH;
@@ -145,7 +145,7 @@ short BattleScene::AdvanceState()
                 fighters[1]->spirit = 1000; fighters[1]->spiritCooldown = 0; fighters[0]->field39C = 0;
             }
         }
-        if (TIMER <= 20) { reinterpret_cast<signed char&>(fighters[0]->field3CE) = 0; reinterpret_cast<signed char&>(fighters[1]->field3CE) = 0; STATE = 1; }
+        if (TIMER <= 20) { fighters[0]->field3CE.unsignedAt3CE = 0; fighters[1]->field3CE.unsignedAt3CE = 0; STATE = 1; }
         break;
     case 10:
         if (TIMER == 300) SetNotice(1);
@@ -157,9 +157,9 @@ short BattleScene::AdvanceState()
             fighters[0]->field3A0 = 0; fighters[1]->field3A0 = 0;
             fighters[0]->field39C = 0; fighters[1]->field39C = 0;
             if (g_FrameClockMode == 2) {
-                if (reinterpret_cast<signed char&>(fighters[0]->field3CE)) STATE = 6;
+                if (fighters[0]->field3CE.signedAt3CE) STATE = 6;
                 else { STATE = 7; g_FrameClockMode = 4; g_StateReplayChanged = 1; }
-            } else if (reinterpret_cast<signed char&>(fighters[0]->field3CE)) {
+            } else if (fighters[0]->field3CE.signedAt3CE) {
                 STATE = 12;
                 if (g_StateContinueCount > 0) field118 = 0;
                 else field118 = 1;
@@ -184,7 +184,7 @@ short BattleScene::AdvanceState()
                 fighters[1]->field3A0 = 0; fighters[1]->field39C = 0;
                 for (resetPlayer = 0; resetPlayer < 2; ++resetPlayer) {
                     fighters[resetPlayer]->ResetRound();
-                    reinterpret_cast<signed char&>(fighters[resetPlayer]->field3CE) = 1;
+                    fighters[resetPlayer]->field3CE.unsignedAt3CE = 1;
                     fighters[resetPlayer]->x = static_cast<float>(resetPlayer * 320 + 480);
                     fighters[resetPlayer]->y = 0.0f;
                 }

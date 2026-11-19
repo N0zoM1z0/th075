@@ -77,7 +77,7 @@ bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *de
             ApplyGuardHit(attack, attacker, defender);
             return true;
         }
-        if (reinterpret_cast<signed char&>(attacker->field3CE) == 0)
+        if (attacker->field3CE.signedAt3CE == 0)
             defender->health -= damage * attacker->field09C * attacker->field0A0;
         ApplyImpact(attack, attacker, defender);
         return true;
@@ -102,7 +102,7 @@ bool BattleScene::ApplyAttackHit(Actor *attack, Fighter *attacker, Fighter *defe
     defender->field082 = attack->savedFrameInfo->defenderHitStop;
     defender->field094 = attack->savedFrameInfo->field2C;
     defender->field098 = attack->savedFrameInfo->field30;
-    if (reinterpret_cast<signed char&>(attacker->field3CE) == 0)
+    if (attacker->field3CE.signedAt3CE == 0)
         defender->health -= attacker->CalculateDamage(attack);
     if (defender->health <= 0) {
         if (field018 != 1)
@@ -158,7 +158,7 @@ void BattleScene::ApplyGuardHit(Actor *attack, Fighter *attacker, Fighter *defen
     attacker->comboRate *= attack->savedFrameInfo->comboRateScale;
     activeComboDisplay->UpdateCounter(attacker->comboCount, attacker->comboDamage,
         static_cast<short>(attacker->comboRate * 1000.0f / 2.0f));
-    if (reinterpret_cast<signed char&>(attacker->field3CE) == 0)
+    if (attacker->field3CE.signedAt3CE == 0)
         defender->health -= attacker->CalculateDamage(attack) / 2;
     if (defender->health <= 0) defender->health = 1;
     if (defender->field3A0 > 0 || defender->field39C)

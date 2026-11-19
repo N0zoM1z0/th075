@@ -1,5 +1,4 @@
 #include "GameProgress.hpp"
-#include "FighterRoundOutcomeBytesF992.hpp"
 #include "KnockoutProgressF172.hpp"
 #include "BattleScene.hpp"
 #include "FighterResourceParameters452B30.hpp"
@@ -35,8 +34,8 @@ void GameProgress::SetCardValue(signed char key, int value)
 void BattleScene::ResolveKnockout()
 {
     if (fighters[1]->health <= 0) {
-        F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 0;
-        F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 1;
+        fighters[0]->field3CE.unsignedAt3CE = 0;
+        fighters[1]->field3CE.unsignedAt3CE = 1;
         if (reinterpret_cast<int&>(fighters[1]->field3A4) > 0) {
             if (g_FrameClockMode == 1) {
                 if (fighters[0]->field464 != 0)
@@ -66,7 +65,7 @@ void BattleScene::ResolveKnockout()
         fighters[0]->field39C = 0;
         fighters[1]->field39C = 0;
         fighters[1]->field39D--;
-        F992_OUTCOME(fighters[1]).continuationAt3CF = 0;
+        fighters[1]->field3CF = 0;
         fighters[1]->recoverableHealth = 0;
         fighters[0]->field464 = 1;
         if (fighters[0]->health <= 0)
@@ -89,9 +88,9 @@ void BattleScene::ResolveKnockout()
         fighters[0]->field3A0 = 0;
         fighters[0]->field39C = 0;
         fighters[0]->field39D--;
-        F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 1;
-        F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 0;
-        F992_OUTCOME(fighters[0]).continuationAt3CF = 0;
+        fighters[0]->field3CE.unsignedAt3CE = 1;
+        fighters[1]->field3CE.unsignedAt3CE = 0;
+        fighters[0]->field3CF = 0;
         fighters[0]->field464 = 0;
         if (fighters[0]->field39D != 0) {
             fighters[0]->recoverableHealth = 10000;

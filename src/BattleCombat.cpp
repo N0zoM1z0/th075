@@ -48,7 +48,7 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
         defender->flashGauge = static_cast<short>(attack->savedFrameInfo->field1A * attacker->comboRate);
     if ((attack->savedFrameInfo->attackFlags & 0x400) && (defender->savedFrameInfo->flags & 0x40)) {
         attacker->comboDamage += attacker->CalculateDamage(attack) * 1.25;
-        if (reinterpret_cast<signed char&>(attacker->field3CE) == 0) {
+        if (attacker->field3CE.signedAt3CE == 0) {
             defender->health -= attacker->CalculateDamage(attack) * 1.25;
             if (defender->field3A0 > 0)
                 defender->recoverableHealth -= attacker->CalculateDamage(attack) * 1.25;
@@ -59,7 +59,7 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
         ApplyReactionMode(attack, attacker, defender);
     } else {
         attacker->comboDamage += attacker->CalculateDamage(attack);
-        if (reinterpret_cast<signed char&>(attacker->field3CE) == 0) {
+        if (attacker->field3CE.signedAt3CE == 0) {
             defender->health -= attacker->CalculateDamage(attack);
             if (defender->field3A0 > 0)
                 defender->recoverableHealth -= attacker->CalculateDamage(attack);
@@ -135,7 +135,7 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
             defender->flashGauge = static_cast<short>(attack->savedFrameInfo->field1A * attacker->comboRate);
         if ((attack->savedFrameInfo->attackFlags & 0x400) && (defender->savedFrameInfo->flags & 0x40)) {
             attacker->comboDamage += attacker->CalculateDamage(attack) * 1.25 / 2.0;
-            if (reinterpret_cast<signed char&>(attacker->field3CE) == 0) {
+            if (attacker->field3CE.signedAt3CE == 0) {
                 defender->health -= attacker->CalculateDamage(attack) * 1.25 / 2.0;
                 if (defender->field3A0 > 0)
                     defender->recoverableHealth -= attacker->CalculateDamage(attack) * 1.25 / 2.0;
@@ -146,7 +146,7 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
             ApplyReactionMode(attack, attacker, defender);
         } else {
             attacker->comboDamage += attacker->CalculateDamage(attack) / 2;
-            if (reinterpret_cast<signed char&>(attacker->field3CE) == 0) {
+            if (attacker->field3CE.signedAt3CE == 0) {
                 defender->health -= attacker->CalculateDamage(attack) / 2;
                 if (defender->field3A0 > 0)
                     defender->recoverableHealth -= attacker->CalculateDamage(attack) / 2;

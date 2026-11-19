@@ -1,6 +1,5 @@
 #include "GameProgress.hpp"
 #include "BattleScene.hpp"
-#include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
 
@@ -19,16 +18,16 @@ void BattleScene::EnterRoundEnd()
                 fighters[0]->field39D = 1;
                 fighters[1]->field39D = 1;
                 reinterpret_cast<unsigned char&>(field018) = 2;
-                F992_OUTCOME(fighters[0]).continuationAt3CF = 0;
-                F992_OUTCOME(fighters[1]).continuationAt3CF = 0;
-                F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 1;
-                F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 1;
+                fighters[0]->field3CF = 0;
+                fighters[1]->field3CF = 0;
+                fighters[0]->field3CE.unsignedAt3CE = 1;
+                fighters[1]->field3CE.unsignedAt3CE = 1;
                 reinterpret_cast<int&>(field00C) = 300;
             } else {
                 fighters[0]->field39D--;
-                F992_OUTCOME(fighters[0]).continuationAt3CF = 0;
-                F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 1;
-                F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 0;
+                fighters[0]->field3CF = 0;
+                fighters[0]->field3CE.unsignedAt3CE = 1;
+                fighters[1]->field3CE.unsignedAt3CE = 0;
                 field01A = 60;
                 if (fighters[0]->field39D != 0) {
                     fighters[0]->recoverableHealth = 10000;
@@ -43,9 +42,9 @@ void BattleScene::EnterRoundEnd()
             }
         } else if (fighters[1]->health <= 0) {
             fighters[1]->field39D--;
-            F992_OUTCOME(fighters[1]).continuationAt3CF = 0;
-            F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 0;
-            F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 1;
+            fighters[1]->field3CF = 0;
+            fighters[0]->field3CE.unsignedAt3CE = 0;
+            fighters[1]->field3CE.unsignedAt3CE = 1;
             if (fighters[1]->field39D != 0) {
                 fighters[1]->recoverableHealth = 10000;
                 fighters[1]->health = 10000;
