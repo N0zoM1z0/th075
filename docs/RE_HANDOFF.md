@@ -235,6 +235,10 @@ fighter `Advance` COFF bodies and relocation maps remain byte-identical
 exact reset/dispatch units replayed 12/12. A follow-up removes six
 `static_cast<signed short>` wrappers from three Youmu scripted-state fragments;
 the full 47,655-byte Advance body and all 1,491 relocations remain identical.
+The shared scripted fragments then lost 16 redundant integer-promotion casts
+and 18 float-promotion casts around the now-signed counters. All four full
+fighter Advance bodies were rebuilt once more; every byte and relocation
+position/type/addend/local target remains identical.
 All four giant frontiers are unchanged and remain nonexact.
 A further signed-counter cleanup removes 16 redundant int staging casts and
 two float casts in six bounce/resource-volley fragments. The four complete

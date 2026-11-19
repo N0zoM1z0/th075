@@ -885,6 +885,11 @@ wrappers from assignments to those now-correctly-typed fields.
 All four complete fighter `Advance` parents preserve their entire COFF bodies
 and relocation maps: Reimu 62,090 bytes / 1,824 relocations; Sakuya 83,922 /
 2,352; Youmu 47,655 / 1,491; Remilia 59,236 / 1,863. Relocation positions,
+types, addends and local targets are unchanged. A further signed-counter
+cleanup removes 16 redundant `static_cast<int>` promotions inside float
+expressions and 18 redundant `static_cast<float>` wrappers whose surrounding
+float arithmetic already performs the conversion. All four complete parent
+bodies and relocation maps were rebuilt again and remain byte-identical.
 types, addends and local targets are unchanged. Their existing frontiers also
 remain unchanged (6,311/5, 6,958/12, 2,736/5 and 1,741/3 GPR/width debt
 respectively); no giant exactness is claimed. The 12 affected exact units
