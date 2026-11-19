@@ -35,7 +35,7 @@ case 0xCB: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             -(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if ((animationStage)==3 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);

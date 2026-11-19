@@ -20,7 +20,7 @@ case 0x12F: {
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(2);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=25.0f;
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     }
     break;
 }
@@ -39,7 +39,7 @@ case 0x130: {
         field07C=0;
     }
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
-    if ((animationStage)==3 && (animationFrame)==0) PrepareActionAt453D60(0x1D);
+    if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1D);
     if ((animationStage)==3 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x339,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                 facing,1);

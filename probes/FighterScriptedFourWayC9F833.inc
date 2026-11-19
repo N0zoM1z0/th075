@@ -13,7 +13,7 @@ case 0xC9: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_F701_VolleyYAt00658268,
             -(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if ((velocityX)<g_ThresholdAt0065782C) {
         velocityX=(velocityX)+g_AnimationDeltaAt0065747C;

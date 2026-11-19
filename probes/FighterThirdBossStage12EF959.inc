@@ -22,7 +22,7 @@ case 0x12E: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
     if ((animationStage)==4 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     if ((animationStage)==4 && (animationFrame)==0) {
         SpawnSevenAt453B50(0x333,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1,0,1);

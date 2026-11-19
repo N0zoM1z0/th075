@@ -23,7 +23,7 @@ case 0x12C: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1B);
+        PlaySharedSound(0x1B);
     break;
 }
 // Natural native 004AC040 12D original game state, source probe.
@@ -46,6 +46,6 @@ case 0x12D: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if ((animationStage)==4 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     break;
 }

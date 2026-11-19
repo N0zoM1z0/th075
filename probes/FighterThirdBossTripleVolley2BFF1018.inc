@@ -32,7 +32,7 @@ case 0x2BF: {
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         ApplyAt453E80(40);
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x74,
             float((facing)*30)+(x),

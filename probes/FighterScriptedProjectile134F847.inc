@@ -22,6 +22,6 @@ case 0x134: {
         SpawnDirectedAt453A70(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
     if ((animationStage)==5 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     return;
 }

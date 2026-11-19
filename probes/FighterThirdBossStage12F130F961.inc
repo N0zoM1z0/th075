@@ -21,7 +21,7 @@ case 0x12F: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
     if ((animationStage)==4 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     break;
 }
 // Genuine original 004AC040 130: native 265B/81 x86, original sprite334.
@@ -41,7 +41,7 @@ case 0x130: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==3 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     if ((animationStage)==3 && (animationFrame)==0) {
         SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1,0,1);

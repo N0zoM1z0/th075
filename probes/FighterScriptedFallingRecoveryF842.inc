@@ -24,6 +24,6 @@ case F653_ACTION: {
 #endif
     }
     if ((animationStage)==F653_PREPARE_FRAME && (animationFrame)==0)
-        PrepareActionAt453D60(F653_PREPARE_ANIM);
+        PlaySharedSound(F653_PREPARE_ANIM);
     return;
 }

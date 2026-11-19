@@ -32,7 +32,7 @@ case 0x189: {
         velocityX=15.0f;
         velocityY=8.5f;
         field05C=0.85f;
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     }
     return;
 }

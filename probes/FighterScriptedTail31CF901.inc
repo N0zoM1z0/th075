@@ -13,7 +13,7 @@ case 0x31C: {
     if ((animationStage)==12 && (animationFrame)==0) {
         ApplyStateAt454A70(0);
         EmitStateAt452B30();
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
     }
     if ((animationStage)==15 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);

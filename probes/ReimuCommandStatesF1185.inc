@@ -35,7 +35,7 @@ case 0xC8: {
             (*(&y))+g_ReimuCommandYAt00658268,reinterpret_cast<char&>(facing),1);
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandYAt00658268,
             reinterpret_cast<char&>(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     break;
 }
@@ -48,7 +48,7 @@ case 0xC9: {
             -facing,1);
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandYAt00658268,
             -facing,1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if (y>g_ThresholdAt0065782C && (animationStage)>1 && (animationStage)<5) {
         velocityY=velocityY-field05C;
@@ -71,7 +71,7 @@ case 0xCA: {
             (*(&y))+g_ReimuCommandFrontYAt006590AC,reinterpret_cast<char&>(facing),1);
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandFrontYAt006590AC,
             reinterpret_cast<char&>(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if (y>g_ThresholdAt0065782C && (animationStage)>1) {
         velocityY=velocityY-field05C;
@@ -102,7 +102,7 @@ case 0xCB: {
             -facing,1);
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandBackYAt006590A8,
             -facing,1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     break;
 }

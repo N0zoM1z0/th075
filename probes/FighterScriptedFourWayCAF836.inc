@@ -32,7 +32,7 @@ case 0xCA: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     return;
 }

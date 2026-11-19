@@ -28,7 +28,7 @@ case F606_ACTION: {
         y=0.0f;
         SetNativeActionAt40FAC0(0x61);
         InitTrajectoryAt453E60(2.0f);
-        PrepareActionAt453D60(0x16);
+        PlaySharedSound(0x16);
         break;
     }
     if (GetNativeActionAt40FA30()==field070)

@@ -28,7 +28,7 @@ case 0x303: {
     if ((animationStage)==15 && (animationFrame)==0) {
         BeginFadeParametersAt454A70(0);
         SelectResourceParametersAt452B30();
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         aiCardTimer=0;
         field318=0.0f;
         SpawnWithFloatAt453A70(0x3A4,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,1,1);

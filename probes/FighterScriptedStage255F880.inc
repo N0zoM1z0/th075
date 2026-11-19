@@ -15,7 +15,7 @@ case 0x255: {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
-        PrepareActionAt453D60(0x21);
+        PlaySharedSound(0x21);
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);

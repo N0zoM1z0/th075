@@ -13,7 +13,7 @@ case 0x31B: {
     if ((animationStage)==4 && (animationFrame)==0) {
         ApplyStateAt454A70(0);
         EmitStateAt452B30();
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         SpawnDirectedAt453A70(0x3E5,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
     }

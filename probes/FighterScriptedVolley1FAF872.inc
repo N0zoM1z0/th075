@@ -13,7 +13,7 @@ case 0x1FA: {
             float((facing)*36)+(x),
             (*(&y))+g_F872Volley1FAYAt00659310,
             (facing),1);
-        PrepareActionAt453D60(0x14);
+        PlaySharedSound(0x14);
         opponent->field082=0x1E;
         SetNativeActionAt40FAC0(0x1FC);
         return;

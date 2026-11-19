@@ -2,7 +2,7 @@ case R1190_ACTION: {
 #include "ReimuMeterInitF1190.inc"
     if ((animationStage)==6 && (animationFrame)==0) {
         SetNonnegativeWordAt453E80(40);
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         SpawnAt453C80(R1190_AUX_EFFECT,float(facing*7)+(x),
             (*(&y))+g_ReimuMeterNearYAt00659088,reinterpret_cast<char&>(facing),1);
         field36C=(field36C)-g_ContactProjectionAt00657888;

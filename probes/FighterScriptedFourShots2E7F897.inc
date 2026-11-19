@@ -28,7 +28,7 @@ case F897_CASE: {
     if ((animationFrame)==0)
         field07C=0;
     if ((animationStage)==2 && (animationFrame)==0) {
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<signed short>(x);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<signed short>(y);
         SpawnExtraRawYAt453B50(0x33D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

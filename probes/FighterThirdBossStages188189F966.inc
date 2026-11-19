@@ -37,7 +37,7 @@ case 0x188: {
         // Actual original PE retains this inner stage 4 conditional,
         // despite the outer stage 6 test. Do not delete original branch.
         if ((animationStage)==4 && (animationFrame)==0)
-            PrepareActionAt453D60(0x1C);
+            PlaySharedSound(0x1C);
         velocityX=10.0f;
         velocityY=12.5f;
         field05C=1.0f;
@@ -63,6 +63,6 @@ case 0x189: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
     if ((animationStage)==4 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     break;
 }

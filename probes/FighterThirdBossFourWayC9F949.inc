@@ -39,7 +39,7 @@ case 0xC9: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             -(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if ((animationStage)==6 && (animationFrame)==0)
         SetAuxActionAt40FB40(5);

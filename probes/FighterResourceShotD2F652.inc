@@ -10,7 +10,7 @@ case 0xD2: {
 #if F652_SCALE_BEFORE
         velocityX=(velocityX)*g_BounceScaleAt00657F74;
         velocityY=(velocityY)*g_BounceScaleAt00657F74;
-        PrepareActionAt453D60(0x2C);
+        PlaySharedSound(0x2C);
 #endif
         SpawnWithFloatAt453A70(F652_SPRITE,reinterpret_cast<int&>(x),
                 (y)+g_ContactProjectionAt00657888,
@@ -18,7 +18,7 @@ case 0xD2: {
 #if !F652_SCALE_BEFORE
         velocityX=(velocityX)*g_BounceScaleAt00657F74;
         velocityY=(velocityY)*g_BounceScaleAt00657F74;
-        PrepareActionAt453D60(0x2C);
+        PlaySharedSound(0x2C);
 #endif
     }
     // The original applies this x87 drag every frame, even outside

@@ -8,7 +8,7 @@ case F642_CASE: {
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
         UpdateGaugeTimer(0xFA);
-        PrepareActionAt453D60(0x2C);
+        PlaySharedSound(0x2C);
         I16(F642_COUNTER)=0xB4;
         SpawnAt453C80(0x38,
             static_cast<float>(static_cast<int>(facing)*30)+(x),

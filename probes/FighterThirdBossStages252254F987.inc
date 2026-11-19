@@ -26,7 +26,7 @@ case 0x252: {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
-        PrepareActionAt453D60(0x21);
+        PlaySharedSound(0x21);
         reinterpret_cast<signed short&>(opponent->fieldEFA)=0;
     }
     break;
@@ -49,7 +49,7 @@ case 0x253: {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
-        PrepareActionAt453D60(0x21);
+        PlaySharedSound(0x21);
         reinterpret_cast<signed short&>(opponent->fieldEFA)=0;
     }
     break;
@@ -70,7 +70,7 @@ case 0x254: {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
-        PrepareActionAt453D60(0x21);
+        PlaySharedSound(0x21);
         reinterpret_cast<signed short&>(opponent->fieldEFA)=0;
     }
     break;

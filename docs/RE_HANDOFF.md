@@ -27,6 +27,11 @@ Done so far:
   its real scene and record/deque members. Both whole native functions
   preserve all relocations; the 10-unit affected-only replay (including
   music-room rendering and lifecycle) was 10/10 exact across 8 objects.
+- The shared `00453D60` sound caller is now
+  `Fighter::PlaySharedSound` across Reimu/Sakuya/Youmu/Remilia giant
+  `Advance`: 192 native relocations restored from 147 alias source calls,
+  whole objects unchanged outside symbol names, 132/132 affected-only
+  exact cold replay passed (44/44 each in three groups).
 - The shared 00453D40 sound caller is now `Fighter::PlaySound` in all
   four full fighter `Advance` research parents: 199 source calls and
   257 actual relocations renamed, with zero nonrelocation byte changes,

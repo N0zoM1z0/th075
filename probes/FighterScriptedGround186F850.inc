@@ -17,7 +17,7 @@ case 0x186: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0) {
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
         SpawnDirectedAt453A70(0x341,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),(facing),1);
     }
     return;

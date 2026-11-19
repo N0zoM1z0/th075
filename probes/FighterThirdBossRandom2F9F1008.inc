@@ -57,7 +57,7 @@ case 0x2F9: {
         }
         PlaySound(9);
         ApplyAt453E80(75);
-        PrepareActionAt453D60(23);
+        PlaySharedSound(23);
         SpawnSevenFloatAt453B50(0x330,640.0f,320.0f,1,2,0,1);
         fieldF10=1;
         opponent->ResetTransform(0.0f,0.0f,0.0f);

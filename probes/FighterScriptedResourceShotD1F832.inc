@@ -10,7 +10,7 @@ case 0xD1: {
     spirit=spirit-F651_DECAY;
     if (animationStage==0 && animationFrame==0) {
         ClearMotionFields();
-        PrepareActionAt453D60(0x2C);
+        PlaySharedSound(0x2C);
         SpawnWithFloatAt453A70(F651_SPRITE,reinterpret_cast<int&>(x),
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);

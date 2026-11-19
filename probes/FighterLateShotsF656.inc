@@ -12,13 +12,13 @@
             if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==3 && (animationFrame)==0) {
-                PrepareActionAt453D60(0x1C);
+                PlaySharedSound(0x1C);
                 SpawnDirectedAt453A70(0x341,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
             }
             if ((animationStage)==6 && (animationFrame)==0) velocityX=15.0f;
             if ((animationStage)==8 && (animationFrame)==0) {
-                PrepareActionAt453D60(0x1C);
+                PlaySharedSound(0x1C);
                 field080=1;
                 field07C=0;
                 SpawnDirectedAt453A70(0x342,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
@@ -43,7 +43,7 @@
                 SetNativeActionAt40FAC0(0);
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((animationStage)==1 && (animationFrame)==0) PrepareActionAt453D60(0x1D);
+            if ((animationStage)==1 && (animationFrame)==0) PlaySharedSound(0x1D);
             break;
         }
         case 0x135: {
@@ -90,6 +90,6 @@
             if ((animationStage)==5 && (animationFrame)==0)
                 SpawnDirectedAt453A70(0x33E,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
-            if ((animationStage)==6 && (animationFrame)==0) PrepareActionAt453D60(0x1D);
+            if ((animationStage)==6 && (animationFrame)==0) PlaySharedSound(0x1D);
             break;
         }

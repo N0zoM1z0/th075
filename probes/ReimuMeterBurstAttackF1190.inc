@@ -15,7 +15,7 @@ case R1190_ACTION: {
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         SetNonnegativeWordAt453E80(40);
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         SpawnAt453C80(R1190_AUX_EFFECT,x-float(facing*2),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         field36C=(field36C)-g_ContactProjectionAt00657888;

@@ -11,7 +11,7 @@ case 0x4C: {
     rotationZ = (rotationZ) + g_AngleShiftAt00657878;
     velocityY = velocityY - field05C;
     if (velocityY + y <= g_ThresholdAt0065782C) {
-        PrepareActionAt453D60(0x16);
+        PlaySharedSound(0x16);
         I16(F613_COUNTER) = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         I16(F613_COUNTER+2) = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();

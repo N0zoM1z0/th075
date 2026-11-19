@@ -20,6 +20,6 @@ case 0x131: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     break;
 }

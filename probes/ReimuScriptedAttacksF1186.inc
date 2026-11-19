@@ -17,7 +17,7 @@ case 0x186: {
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=15.0f;
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     }
     break;
 }
@@ -43,7 +43,7 @@ case 0x187: {
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=10.0f; velocityY=12.5f; field05C=0.85f;
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     }
     break;
 }
@@ -63,10 +63,10 @@ case 0x188: {
     }
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(2);
     if ((animationFrame)==0 && (animationStage)<12) field07C=0;
-    if ((animationStage)==3 && (animationFrame)==0) PrepareActionAt453D60(0x1B);
-    if ((animationStage)==5 && (animationFrame)==0) PrepareActionAt453D60(0x1B);
-    if ((animationStage)==7 && (animationFrame)==0) PrepareActionAt453D60(0x1B);
-    if ((animationStage)==9 && (animationFrame)==0) PrepareActionAt453D60(0x1B);
+    if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1B);
+    if ((animationStage)==5 && (animationFrame)==0) PlaySharedSound(0x1B);
+    if ((animationStage)==7 && (animationFrame)==0) PlaySharedSound(0x1B);
+    if ((animationStage)==9 && (animationFrame)==0) PlaySharedSound(0x1B);
     break;
 }
 case 0x189: {
@@ -84,7 +84,7 @@ case 0x189: {
     if ((animationStage)==2 && (animationFrame)==0) {
         field080=1; field07C=0; velocityX=12.0f;
     }
-    if ((animationStage)==3 && (animationFrame)==0) PrepareActionAt453D60(0x1D);
+    if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1D);
     if ((animationStage)==5 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(3);

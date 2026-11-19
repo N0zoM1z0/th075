@@ -25,7 +25,7 @@ case 0x136: {
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x33A,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     }
     return;
 }

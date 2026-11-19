@@ -40,7 +40,7 @@ case 0xCB: {
             float((facing)*68)+(x),
             (*(&y))+g_F950_CAVolleyYAt00658400,
             -(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     break;
 }

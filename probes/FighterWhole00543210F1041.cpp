@@ -300,7 +300,7 @@ void RemiliaFighter::Advance() {
         break;
         case 0xA:
             if (animationStage == 0 && animationFrame == 0)
-                PrepareActionAt453D60(30);
+                PlaySharedSound(30);
             ClearMotionFields();
             if (GetNativeActionAt40FA30() == field070) {
                 if (inputY == 0)
@@ -711,7 +711,7 @@ void RemiliaFighter::Advance() {
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
-                PrepareActionAt453D60(23);
+                PlaySharedSound(23);
                 PlaySound(9);
                 SpawnAt453C80(0x73,
                     x-float(facing*20),
@@ -770,7 +770,7 @@ void RemiliaFighter::Advance() {
             if (animationStage==1 && animationFrame==0) {
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
-                PrepareActionAt453D60(23);
+                PlaySharedSound(23);
                 SpawnAt453C80(0x73,
                     x-float(facing*46),
                     (*(&y))+g_F722_BurstYAt0065826C,
@@ -806,7 +806,7 @@ void RemiliaFighter::Advance() {
                 field07C=1;
                 ClearMotionFields();
                 InitTrajectoryAt453E80(40);
-                PrepareActionAt453D60(23);
+                PlaySharedSound(23);
                 SpawnMixedAt453C80(0x74,reinterpret_cast<int&>(x),
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
@@ -862,7 +862,7 @@ void RemiliaFighter::Advance() {
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
-                PrepareActionAt453D60(23);
+                PlaySharedSound(23);
                 PlaySound(13);
                 SpawnAt453C80(0x74,
                     x-float(facing*20),
@@ -922,7 +922,7 @@ void RemiliaFighter::Advance() {
                 field07C=0;
             if (animationStage==1 && animationFrame==0) {
                 InitTrajectoryAt453E80(40);
-                PrepareActionAt453D60(23);
+                PlaySharedSound(23);
                 SpawnAt453C80(0x74,
                     x-float(facing*46),
                     (*(&y))+g_F722_BurstYAt0065826C,

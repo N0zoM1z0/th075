@@ -17,7 +17,7 @@ case 0x187: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0) {
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
 
     }
     return;

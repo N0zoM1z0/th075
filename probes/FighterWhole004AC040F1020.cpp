@@ -296,7 +296,7 @@ void SakuyaFighter::Advance() {
         break;
         case 0xA:
             if (animationStage == 0 && animationFrame == 0)
-                PrepareActionAt453D60(30);
+                PlaySharedSound(30);
             ClearMotionFields();
             if (GetNativeActionAt40FA30() == field070) {
                 if (inputY == 0)

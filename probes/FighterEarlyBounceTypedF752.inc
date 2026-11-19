@@ -25,7 +25,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     rotationZ=0.0f;
                     InitTrajectoryAt453E60(2.0f);
                     ResetMotionAt40FC50();
-                    PrepareActionAt453D60(0x16);
+                    PlaySharedSound(0x16);
                     break;
                 }
             }

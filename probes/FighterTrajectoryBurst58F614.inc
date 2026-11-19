@@ -15,7 +15,7 @@ case 0x58: {
         y = 0.0f;
         SetNativeActionAt40FAC0(0x59);
         InitTrajectoryAt453E60(3.0f);
-        PrepareActionAt453D60(0x16);
+        PlaySharedSound(0x16);
         for (int burst=0;burst<10;++burst)
             SpawnDirectedAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if (reinterpret_cast<signed short&>(fieldEFA)>25) {

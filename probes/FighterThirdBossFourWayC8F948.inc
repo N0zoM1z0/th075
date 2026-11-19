@@ -50,7 +50,7 @@ case 0xC8: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_F948_C8VolleyYAt00658268,
             facing,1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     break;
 }

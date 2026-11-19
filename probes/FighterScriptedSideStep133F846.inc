@@ -20,7 +20,7 @@ case 0x133: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if ((animationStage)==5 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     if ((animationStage)==8 && (animationFrame)==0)
         x=float((facing)*70)+(x);
     return;

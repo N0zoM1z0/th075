@@ -17,14 +17,14 @@ case 0x4A: {
         velocityY = 15.0f;
         field05C = 0.5f;
         InitTrajectoryAt453E60(2.0f);
-        PrepareActionAt453D60(0x16);
+        PlaySharedSound(0x16);
         I16(F610_COUNTER) = 0;
         break;
     }
     velocityY = velocityY - field05C;
     if (velocityY + y <= g_ThresholdAt0065782C) {
 #if F610_PREPARE_BEFORE
-        PrepareActionAt453D60(0x16);
+        PlaySharedSound(0x16);
 #endif
         I16(F610_COUNTER)=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         I16(F610_COUNTER+2)=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
@@ -33,7 +33,7 @@ case 0x4A: {
         SetNativeActionAt40FAC0(0x61);
         InitTrajectoryAt453E60(2.0f);
 #if !F610_PREPARE_BEFORE
-        PrepareActionAt453D60(0x16);
+        PlaySharedSound(0x16);
 #endif
         break;
     }

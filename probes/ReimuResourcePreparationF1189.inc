@@ -11,7 +11,7 @@ case R1189_ACTION: {
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,
             reinterpret_cast<char&>(facing),1);
-        PrepareActionAt453D60(0x21);
+        PlaySharedSound(0x21);
         reinterpret_cast<short&>(opponent->fieldEFA)=0;
     }
     break;

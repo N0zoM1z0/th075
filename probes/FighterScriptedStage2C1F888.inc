@@ -10,7 +10,7 @@ case 0x2C1: {
     }
     if ((animationStage)==1 && (animationFrame)==0) {
         AnimatePushAt453E80(0x28);
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         PlaySound(9);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnMixedAt453C80(0x74,reinterpret_cast<int&>(x),

@@ -13,7 +13,7 @@ case 0x1F9: {
             float((facing)*50)+(x),
             (*(&y))+g_F872Volley1F9YAt006598BC,
             (facing),1);
-        PrepareActionAt453D60(0x14);
+        PlaySharedSound(0x14);
         opponent->field082=0x1E;
         SetNativeActionAt40FAC0(0x1FB);
         return;

@@ -25,7 +25,7 @@ case 0x186: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==4 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     if ((animationStage)==3 && (animationFrame)==0)
         SpawnSevenAt453B50(0x324,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1,0,1);
@@ -64,7 +64,7 @@ case 0x187: {
         field05C=0.6f;
     }
     if ((animationStage)==7 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     if ((animationStage)==8 && (animationFrame)==0)
         field07C=0;
     if ((animationStage)==14 && (animationFrame)==0)

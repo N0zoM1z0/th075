@@ -13,7 +13,7 @@
             if ((animationStage)==15 && (animationFrame)==0) {
                 SubactionAt454A70(0);
                 SubactionAt452B30();
-                PrepareActionAt453D60(0x17);
+                PlaySharedSound(0x17);
             }
             if ((animationStage)==22 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
                 ++reinterpret_cast<signed short&>(scriptCounterF00);

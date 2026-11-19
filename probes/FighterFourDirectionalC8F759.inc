@@ -36,7 +36,7 @@ case 0xC8: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_F701_VolleyYAt00658268,(facing),1);
         SpawnRawXYAt453C80(0x81,reinterpret_cast<int&>(x),0,(facing),0);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     break;
 }
@@ -68,7 +68,7 @@ case 0xC9: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_F701_VolleyYAt00658268,-(facing),1);
         SpawnRawXYAt453C80(0x81,reinterpret_cast<int&>(x),0,-(facing),0);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     break;
 }
@@ -96,7 +96,7 @@ case 0xCA: {
             (*(&y))+g_ContactProjectionAt00657888,(facing),1);
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=10.0f;
@@ -128,7 +128,7 @@ case 0xCB: {
             (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-10.0f;

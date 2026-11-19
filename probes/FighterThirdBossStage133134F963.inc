@@ -23,7 +23,7 @@ case 0x133: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if ((animationStage)==4 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1C);
+        PlaySharedSound(0x1C);
     if ((animationStage)==3 && (animationFrame)==0)
         SpawnSevenAt453B50(0x324,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1,0,1);
@@ -65,7 +65,7 @@ case 0x134: {
         SpawnSevenAt453B50(0x336,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1,0,1);
     if ((animationStage)==7 && (animationFrame)==0)
-        PrepareActionAt453D60(0x1D);
+        PlaySharedSound(0x1D);
     if ((animationStage)==14 && (animationFrame)==0)
         SetAuxActionAt40FB40((animationStage)-2);
     break;

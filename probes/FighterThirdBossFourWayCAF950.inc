@@ -24,7 +24,7 @@ case 0xCA: {
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
             (*(&y))+g_F950_CAVolleyYAt00658400,
             facing,1);
-        PrepareActionAt453D60(31);
+        PlaySharedSound(31);
     }
     if (y>g_ThresholdAt0065782C && (animationStage)>1) {
         velocityY=velocityY-field05C;

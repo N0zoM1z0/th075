@@ -212,6 +212,14 @@ nonexact, with zero newly regressed bytes. Only the 132 directly
 header-affected exact units were cold-replayed (44/44 in each of three
 groups), all exact. No ASM, padding, fake locals or giant exact credit.
 
+The 00453D60 shared sound endpoint is likewise now the natural
+`Fighter::PlaySharedSound(short)` inherited method: 147 textual aliases
+across 93 source files became 192 native calls (55 Reimu, 45 Sakuya,
+50 Youmu, 42 Remilia). Whole function pre/post COFF sizes and all
+relocation offsets/types were unchanged, with zero nonrelocation
+byte differences. All 132 affected exact units cold-replayed 44/44
+in each of three targeted groups. Research giants remain nonexact.
+
 The native 00453D40 per-fighter sound endpoint is also now called by its
 real `Fighter::PlaySound(short)` name in all four complete fighter research
 parents. This changes 199 textual call sites (257 compiled COFF relocations:

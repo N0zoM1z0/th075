@@ -30,7 +30,7 @@ case 0x2C0: {
             break;
         }
         ApplyAt453E80(0x64);
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         PlaySound(9);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x73,
@@ -73,7 +73,7 @@ case 0x2C1: {
         }
         ApplyAt453E80(0x28);
         PlaySound(0xA);
-        PrepareActionAt453D60(0x17);
+        PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x73,
             x

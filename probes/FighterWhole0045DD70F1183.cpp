@@ -262,7 +262,7 @@ void ReimuFighter::Advance() {
         break;
         case 0xA:
             if (animationStage == 0 && animationFrame == 0)
-                PrepareActionAt453D60(30);
+                PlaySharedSound(30);
             ClearMotionFields();
             if (GetNativeActionAt40FA30() == field070) {
                 if (inputY == 0)
@@ -336,7 +336,7 @@ case 0x48: {
         y = 0.0f;
         SetNativeActionAt40FAC0(0x61);
         InitTrajectoryAt453E60(2.0f);
-        PrepareActionAt453D60(0x16);
+        PlaySharedSound(0x16);
         break;
     }
     if (GetNativeActionAt40FA30() == field070)

@@ -15,7 +15,7 @@ case R1189_ACTION: {
     if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
 #include "ReimuSpecialShotF1189.inc"
 #if R1189_HAS_PREPARATION
-        PrepareActionAt453D60(0x29);
+        PlaySharedSound(0x29);
 #endif
         UpdateGaugeTimer(200);
     }
