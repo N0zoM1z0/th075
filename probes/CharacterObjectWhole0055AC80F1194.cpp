@@ -254,7 +254,7 @@ case 804: {
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        field0DA = static_cast<short>(field0C8);
+        field0DA = field0C8;
         ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         field07C = 0;
@@ -616,13 +616,13 @@ case 817: {
         field0D8 = 10;
         field0DA = 0;
         field0DE = 0;
-        field0DC = static_cast<short>(field0C8);
+        field0DC = field0C8;
         SetPolarVelocity(field0DC, field0D8 * 0.1f + 10.0f);
     }
     if (animationStage < 5) {
-        field0DA = static_cast<short>(Unknown483300(
+        field0DA = Unknown483300(
             owner->opponent->y - y + 100.0f,
-            (owner->opponent->x - x) * facing) / 0.01745328866f);
+            (owner->opponent->x - x) * facing) / 0.01745328866f;
         if (field0DA > field0DC + 10)
             field0DC = field0DC + 1;
         if (field0DA < field0DC - 10)
@@ -727,7 +727,7 @@ case 821: {
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
-        field0DA = static_cast<short>(field0C8);
+        field0DA = field0C8;
         field0DC = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 6;
@@ -1198,7 +1198,7 @@ case 838: {
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
-        field0DA = static_cast<short>(field0C8);
+        field0DA = field0C8;
         field0DC = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 6;
@@ -1833,7 +1833,7 @@ case 912:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        SetPolarVelocity(static_cast<float>(field0D8), 30.0f);
+        SetPolarVelocity(field0D8, 30.0f);
         rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
     }
     x = facing * velocityX + x;
@@ -1864,11 +1864,11 @@ case 913:
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        field0DA = static_cast<short>(field0C8);
+        field0DA = field0C8;
         ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         field07C = 0;
-        SetPolarVelocity(static_cast<float>(field0DA), 18.0f);
+        SetPolarVelocity(field0DA, 18.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1896,13 +1896,13 @@ case 914:
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        field0DA = static_cast<short>(field0C8);
+        field0DA = field0C8;
         ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         field07C = 0;
         SetPolarVelocity(
-            static_cast<float>(field0DA + 10 - RecordedRange(0, 20)),
-            static_cast<float>(RecordedRange(0, 9) + 6));
+            field0DA + 10 - RecordedRange(0, 20),
+            RecordedRange(0, 9) + 6);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1936,12 +1936,12 @@ case 915:
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
-        field0DA = static_cast<short>(field0C8);
+        field0DA = field0C8;
         field0DC = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         field07C = 0;
-        SetPolarVelocity(static_cast<float>(field0DA), 7.0f);
+        SetPolarVelocity(field0DA, 7.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1954,9 +1954,9 @@ case 915:
     field0D8--;
     if (g_StateRepeatLevelAt006714D0 == 3 && ++field0DA > 180)
         field0DA = field0DA - 360;
-    SetPolarVelocity(static_cast<float>(field0DA), 7.0f);
+    SetPolarVelocity(field0DA, 7.0f);
     if (field0D8 <= 0) {
-        owner->field314 = static_cast<float>(field0DA);
+        owner->field314 = field0DA;
         owner->SpawnBattleEffect(
             916, x, y, facing, 1);
         field0D8 = 10 - g_StateRepeatLevelAt006714D0;
@@ -2039,10 +2039,9 @@ case 916:
         color[2] = 255;
         color[3] = 255;
         field0D8 = 0;
-        field0DA = static_cast<short>(
-            RecordedRange(0, 40) + field0C8 - 20.0f);
+        field0DA = RecordedRange(0, 40) + field0C8 - 20.0f;
         SetPolarVelocity(
-            static_cast<float>(field0DA), field0D8 * 0.05f);
+            field0DA, field0D8 * 0.05f);
         rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
         field07C = 0;
         field080 = 1;
@@ -2075,7 +2074,7 @@ case 916:
         x = facing * velocityX + x;
         y = y - velocityY;
         SetPolarVelocity(
-            static_cast<float>(field0DA), field0D8 * 0.05f);
+            field0DA, field0D8 * 0.05f);
     }
     if (AdvanceNestedFrame() == field070) {
         ClearFrameInfo();
@@ -2104,13 +2103,13 @@ case 995:
         if (field0DA < 3)
             field0DA = 3;
         SetPolarVelocity(
-            static_cast<float>(field0D8), field0DA * 0.8f);
+            field0D8, field0DA * 0.8f);
     }
     if (animationStage == 1) {
-        field0D8 = static_cast<short>(Unknown483300(
+        field0D8 = Unknown483300(
             owner->opponent->y + 100.0f - y,
-            owner->opponent->x - x) / 0.01745328866f);
-        SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
+            owner->opponent->x - x) / 0.01745328866f;
+        SetPolarVelocity(field0D8, 20.0f);
         if (x - owner->opponent->x < 20.0f &&
             x - owner->opponent->x > -20.0f &&
             y - owner->opponent->y < 120.0f &&
@@ -2151,13 +2150,13 @@ case 996:
         if (field0DA < 3)
             field0DA = 3;
         SetPolarVelocity(
-            static_cast<float>(field0D8), field0DA * 0.8f);
+            field0D8, field0DA * 0.8f);
     }
     if (animationStage == 1) {
-        field0D8 = static_cast<short>(Unknown483300(
+        field0D8 = Unknown483300(
             owner->opponent->y + 100.0f - y,
-            owner->opponent->x - x) / 0.01745328866f);
-        SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
+            owner->opponent->x - x) / 0.01745328866f;
+        SetPolarVelocity(field0D8, 20.0f);
         if (x - owner->opponent->x < 20.0f &&
             x - owner->opponent->x > -20.0f &&
             y - owner->opponent->y < 120.0f &&
