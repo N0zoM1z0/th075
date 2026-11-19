@@ -19,11 +19,6 @@ class InputMapping4388D0 { public: void UpdateHeldCounts(); bool IsKeyDown(unsig
     int field02C;
     int field030;
 };
-class SelectionInput4388D0 { public: void PollInput(); public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x04C - 0x000];
-    int field04C;
-};
 extern InputMapping4388D0 g_InputMappingAt00671638, g_InputMappingAt00671680;
 // These copied subregions also lie at +0x2C in the corresponding receivers.
 extern HeldInputBlock4388D0 g_HeldInputAt00671664, g_HeldInputAt006716AC;

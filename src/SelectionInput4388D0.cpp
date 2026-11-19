@@ -1,30 +1,29 @@
 #include "SelectionInput4388D0.hpp"
+#include "CharacterSelectScene.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define SIDE_INPUT(side) (reinterpret_cast<char*>(this) + (side) * 28 + 12)
 
-void SelectionInput4388D0::PollInput() {
+void CharacterSelectScene::PollInput() {
     Input::PollKeyboard();
     Input::PollJoysticks();
     g_InputMappingAt00671638.UpdateHeldCounts();
-    (*reinterpret_cast<HeldInputBlock4388D0*>(reinterpret_cast<unsigned char*>(this) + 0xC)) = g_HeldInputAt00671664;
+    (input[0]) = *reinterpret_cast<SelectInputFrame*>(&g_HeldInputAt00671664);
     if (g_CombatMode != 3) {
         g_InputMappingAt00671680.UpdateHeldCounts();
-        (*reinterpret_cast<HeldInputBlock4388D0*>(reinterpret_cast<unsigned char*>(this) + 0x28)) = g_HeldInputAt006716AC;
+        (input[1]) = *reinterpret_cast<SelectInputFrame*>(&g_HeldInputAt006716AC);
     }
     if (g_InputMappingAt00671638.IsKeyDown(0x1C)
         && (g_InputMappingAt00671638.IsKeyDown(0x38)
             || g_InputMappingAt00671638.IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     if ((g_CombatMode == 5 || g_CombatMode == 1 || g_CombatMode == 3)
-        && FIELD(signed char, 0x96 + g_SelectActiveSideAt006714B8) >= 4) {
-        memcpy(SIDE_INPUT(1 - g_SelectActiveSideAt006714B8), SIDE_INPUT(g_SelectActiveSideAt006714B8), 28);
-        memset(SIDE_INPUT(g_SelectActiveSideAt006714B8), 0, 28);
+        && (playerState[g_SelectActiveSideAt006714B8]) >= 4) {
+        memcpy(&input[1 - g_SelectActiveSideAt006714B8], &input[g_SelectActiveSideAt006714B8], sizeof(SelectInputFrame));
+        memset(&input[g_SelectActiveSideAt006714B8], 0, sizeof(SelectInputFrame));
     }
     if (g_InputMappingAt00671638.IsKeyDown(1))
-        field04C = field04C + 1;
+        cancellationRequested = cancellationRequested + 1;
     else
-        field04C = 0;
+        cancellationRequested = 0;
 }
 
 bool InputMapping4388D0::IsKeyDown(unsigned char key) {
@@ -33,6 +32,3 @@ bool InputMapping4388D0::IsKeyDown(unsigned char key) {
     else
         return false;
 }
-
-#undef SIDE_INPUT
-#undef FIELD

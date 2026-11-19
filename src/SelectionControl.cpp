@@ -1,13 +1,9 @@
 #include "SelectionInput4388D0.hpp"
+#include "CharacterSelectScene.hpp"
 #include "RecordedRange455580.hpp"
 #include <stdlib.h>
 
 // Pointer-only interfaces. No complete scene/fighter/container layout is claimed.
-class SelectionUpdateF130 { public: void Update(signed char side); public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x0E0 - 0x000];
-    signed char field0E0;
-};
 class SelectionSoundF130 { public: void Play(int); };
 class SelectionProgressF130 {
 public:
@@ -20,98 +16,87 @@ extern unsigned char g_SelectionProgress[];
 extern signed char g_SelectionCharacters[];
 extern signed char g_SelectionPalettes[];
 extern signed char g_SelectionDifficulty;
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define ANIM(offset) reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))[side]
-#define SIDE_BYTE(type, offset) (reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset))[side])
-#define HELD(offset) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this) + (offset) + side * 28))
-#define CHOICE SIDE_BYTE(signed char, 0xE0)
-#define AUTO_SELECT SIDE_BYTE(signed char, 0xF2)
 #define PROGRESS reinterpret_cast<SelectionProgressF130*>(g_SelectionProgress)
-void SelectionUpdateF130::Update(signed char side) {
-    if (ANIM(0xCC) > 0.0f) ANIM(0xCC) = ANIM(0xCC) - 5.0f;
-    if (ANIM(0xA0) > 0.0f) ANIM(0xA0) = ANIM(0xA0) - 4.0f;
-    if (ANIM(0xA8) > 0.0f) ANIM(0xA8) = ANIM(0xA8) - 2.0f;
-    if (ANIM(0xB0) > 0.0f) ANIM(0xB0) = ANIM(0xB0) - 4.0f;
-    if (ANIM(0xB8) > 0.0f) ANIM(0xB8) = ANIM(0xB8) - 2.0f;
-    else SIDE_BYTE(unsigned char, 0xE8) = 0;
-    if (ANIM(0xC0) > 0.0f) ANIM(0xC0) = ANIM(0xC0) - 1.0f;
-    if (ANIM(0xC0) == 60.0f) ANIM(0xC0) = 0;
-    if (AbsoluteSelectionInputF130(HELD(0xC)) == 1 || AbsoluteSelectionInputF130(HELD(0xC)) % 15 == 1 || AUTO_SELECT > 0) {
-        if (AUTO_SELECT == 0) g_SelectionSound->Play(39);
-        ANIM(0xCC) = 100.0f;
-        ANIM(0x98) = 100.0f;
-        ANIM(0xA0) = 80.0f;
-        ANIM(0xA8) = 40.0f;
-        ANIM(0xB0) = 80.0f;
-        ANIM(0xB8) = 40.0f;
-        SIDE_BYTE(signed char, 0xE2) = CHOICE;
-        if (HELD(0xC) > 0) {
-            ++CHOICE;
+void CharacterSelectScene::UpdateSelect(signed char side) {
+    if (portraitReturn[side] > 0.0f) portraitReturn[side] = portraitReturn[side] - 5.0f;
+    if (portraitEnterX[side] > 0.0f) portraitEnterX[side] = portraitEnterX[side] - 4.0f;
+    if (portraitEnterY[side] > 0.0f) portraitEnterY[side] = portraitEnterY[side] - 2.0f;
+    if (portraitExitX[side] > 0.0f) portraitExitX[side] = portraitExitX[side] - 4.0f;
+    if (portraitExitY[side] > 0.0f) portraitExitY[side] = portraitExitY[side] - 2.0f;
+    else (playerReady[side]) = 0;
+    if (choiceStop[side] > 0.0f) choiceStop[side] = choiceStop[side] - 1.0f;
+    if (choiceStop[side] == 60.0f) choiceStop[side] = 0;
+    if (AbsoluteSelectionInputF130((input[side].horizontal)) == 1 || AbsoluteSelectionInputF130((input[side].horizontal)) % 15 == 1 || (stageCountdown[side]) > 0) {
+        if ((stageCountdown[side]) == 0) g_SelectionSound->Play(39);
+        portraitReturn[side] = 100.0f;
+        portraitFade[side] = 100.0f;
+        portraitEnterX[side] = 80.0f;
+        portraitEnterY[side] = 40.0f;
+        portraitExitX[side] = 80.0f;
+        portraitExitY[side] = 40.0f;
+        (reinterpret_cast<signed char&>(alternateCharacter[side])) = (reinterpret_cast<signed char&>(chosenCharacter[side]));
+        if ((input[side].horizontal) > 0) {
+            ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
             if (g_CombatMode == 3) {
-                if (CHOICE == 6 && FIELD(unsigned char, 0x64 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 7 && FIELD(unsigned char, 0x64 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 8 && FIELD(unsigned char, 0x64 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 9 && FIELD(unsigned char, 0x64 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 10 && FIELD(unsigned char, 0x64 + CHOICE) == 0) ++CHOICE;
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
             } else {
-                if (CHOICE == 6 && FIELD(unsigned char, 0x50 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 7 && FIELD(unsigned char, 0x50 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 8 && FIELD(unsigned char, 0x50 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 9 && FIELD(unsigned char, 0x50 + CHOICE) == 0) ++CHOICE;
-                if (CHOICE == 10 && FIELD(unsigned char, 0x50 + CHOICE) == 0) ++CHOICE;
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
             }
-            if (CHOICE >= 11) CHOICE = 0;
+            if ((reinterpret_cast<signed char&>(chosenCharacter[side])) >= 11) (reinterpret_cast<signed char&>(chosenCharacter[side])) = 0;
         } else {
-            --CHOICE;
-            if (CHOICE < 0) CHOICE = 10;
+            --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+            if ((reinterpret_cast<signed char&>(chosenCharacter[side])) < 0) (reinterpret_cast<signed char&>(chosenCharacter[side])) = 10;
             if (g_CombatMode == 3) {
-                if (CHOICE == 10 && FIELD(unsigned char, 0x64 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 9 && FIELD(unsigned char, 0x64 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 8 && FIELD(unsigned char, 0x64 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 7 && FIELD(unsigned char, 0x64 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 6 && FIELD(unsigned char, 0x64 + CHOICE) == 0) --CHOICE;
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
             } else {
-                if (CHOICE == 10 && FIELD(unsigned char, 0x50 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 9 && FIELD(unsigned char, 0x50 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 8 && FIELD(unsigned char, 0x50 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 7 && FIELD(unsigned char, 0x50 + CHOICE) == 0) --CHOICE;
-                if (CHOICE == 6 && FIELD(unsigned char, 0x50 + CHOICE) == 0) --CHOICE;
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
             }
         }
-        PROGRESS->SetSelection(field0E0, g_SelectionDifficulty);
+        PROGRESS->SetSelection(reinterpret_cast<signed char&>(chosenCharacter[0]), g_SelectionDifficulty);
     }
-    if (HELD(0x14) == 1 || HELD(0x20) == 1 || AUTO_SELECT == 1) {
+    if ((input[side].confirm) == 1 || (input[side].toggle) == 1 || (stageCountdown[side]) == 1) {
         g_SelectionSound->Play(45);
-        g_SelectionCharacters[side] = CHOICE;
-        g_SelectionPalettes[side] = HELD(0x20) == 1;
-        SIDE_BYTE(signed char, 0x96) = 1;
-        ANIM(0xC0) = 0;
-        if (g_CombatMode != 4 && FIELD(signed char, 0x96 + (1 - side)) != 0 && g_SelectionCharacters[0] == g_SelectionCharacters[1] && g_SelectionPalettes[side] == g_SelectionPalettes[1 - side])
+        g_SelectionCharacters[side] = (reinterpret_cast<signed char&>(chosenCharacter[side]));
+        g_SelectionPalettes[side] = (input[side].toggle) == 1;
+        (playerState[side]) = 1;
+        choiceStop[side] = 0;
+        if (g_CombatMode != 4 && (playerState[1 - side]) != 0 && g_SelectionCharacters[0] == g_SelectionCharacters[1] && g_SelectionPalettes[side] == g_SelectionPalettes[1 - side])
             g_SelectionPalettes[side] = 1 - g_SelectionPalettes[side];
         if (g_CombatMode == 3) {
             g_SelectionPalettes[0] = 0;
             g_SelectionPalettes[1] = 0;
         }
     }
-    if (HELD(0x1C) == 1) AUTO_SELECT = rand() % 10 + 30;
-    if (AUTO_SELECT > 0) --AUTO_SELECT;
-    if (HELD(0x24) == 1) {
+    if ((input[side].special) == 1) (stageCountdown[side]) = rand() % 10 + 30;
+    if ((stageCountdown[side]) > 0) --(stageCountdown[side]);
+    if ((input[side].alternative) == 1) {
         if (PROGRESS->GetSelectedValue() > 0 && g_CombatMode == 3) {
             g_SelectionSound->Play(45);
-            SIDE_BYTE(signed char, 0xEA) = !SIDE_BYTE(signed char, 0xEA);
+            (optionsOpen[side]) = !(optionsOpen[side]);
         }
         if (g_CombatMode != 3 && g_CombatMode != 5) {
             g_SelectionSound->Play(45);
-            SIDE_BYTE(signed char, 0xEA) = !SIDE_BYTE(signed char, 0xEA);
+            (optionsOpen[side]) = !(optionsOpen[side]);
         }
     }
 }
 #undef PROGRESS
-#undef AUTO_SELECT
-#undef CHOICE
-#undef HELD
-#undef SIDE_BYTE
-#undef ANIM
 
 class RecordedBytesF130 {
 public:
@@ -324,4 +309,3 @@ void FighterControlsF130::UpdateControls() {
 #undef SAMPLES
 #undef AUXILIARY
 #undef PRESS
-#undef FIELD

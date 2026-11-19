@@ -180,7 +180,7 @@ CharacterSelectScene::RenderCards,0x00437380,function
 CharacterSelectScene::RenderOptions,0x00438240,function
 SinglePlayerOptions438670::RenderOptions,0x00438670,function
 GameProgress::GetSelectedValue,0x00438A80,function
-SelectionInput4388D0::PollInput,0x004388D0,function
+CharacterSelectScene::PollInput,0x004388D0,function
 InputMapping4388D0::IsKeyDown,0x00407170,function
 InputMapping4388D0::UpdateHeldCounts,0x00406E80,function
 Graphics::ToggleWindowMode,0x004018A0,function
@@ -316,9 +316,9 @@ CharacterObject::Render,0x0040FC70,function
 Actor::RenderNode,0x00410350,function
 NameEntryPlayerF129::Render,0x0042A560,function
 NameEntrySharedF129::Render,0x0042B570,function
-SelectionUpdateF130::Update,0x00433CF0,function
+CharacterSelectScene::UpdateSelect,0x00433CF0,function
 FighterControlsF130::UpdateControls,0x00452F10,function
-ChoiceAnimationF131::Update,0x004350E0,function
+CharacterSelectScene::UpdateChoiceAnimation,0x004350E0,function
 ResultSelectionF131::Update,0x0042F970,function
 Fighter::SpawnBattleEffect,0x00453A70,function
 Fighter::SpawnTrackedEffect,0x00453B50,function

@@ -179,7 +179,7 @@ CharacterSelectScene::RenderCards
 CharacterSelectScene::RenderOptions
 SinglePlayerOptions438670::RenderOptions
 GameProgress::GetSelectedValue
-SelectionInput4388D0::PollInput
+CharacterSelectScene::PollInput
 InputMapping4388D0::IsKeyDown
 InputMapping4388D0::UpdateHeldCounts
 Graphics::ToggleWindowMode
@@ -315,9 +315,9 @@ CharacterObject::Render
 Actor::RenderNode
 NameEntryPlayerF129::Render
 NameEntrySharedF129::Render
-SelectionUpdateF130::Update
+CharacterSelectScene::UpdateSelect
 FighterControlsF130::UpdateControls
-ChoiceAnimationF131::Update
+CharacterSelectScene::UpdateChoiceAnimation
 ResultSelectionF131::Update
 Fighter::SpawnBattleEffect
 Fighter::SpawnTrackedEffect

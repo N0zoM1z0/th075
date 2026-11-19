@@ -1,3 +1,4 @@
+#include "CharacterSelectScene.hpp"
 #include "Graphics.hpp"
 #include <stdlib.h>
 
@@ -6,108 +7,93 @@ class SelectionSoundF130 { public: void Play(int); };
 extern SelectionSoundF130* g_SelectionSound;
 int __cdecl AbsoluteSelectionInputF130(int);
 extern signed char g_SelectionStageF131;
-class ChoiceAnimationF131 { public: void Update(signed char side); public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x096 - 0x000];
-    signed char field096;
-    signed char field097;
-    unsigned char unknown098[0x0F0 - 0x098];
-    signed char field0F0;
-    signed char field0F1;
-    signed char field0F2;
-};
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define ANIM(offset) reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))[side]
-#define HELD(offset) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this) + (offset) + side * 28))
-void ChoiceAnimationF131::Update(signed char side) {
+void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
     signed char horizontalDirection;
     int verticalDirection;
-    if (ANIM(0xA0) < 80.0f) ANIM(0xA0) = ANIM(0xA0) + 4.0f;
-    if (ANIM(0xA8) < 40.0f) ANIM(0xA8) = ANIM(0xA8) + 2.0f;
-    if (ANIM(0xB0) < 80.0f) ANIM(0xB0) = ANIM(0xB0) + 4.0f;
-    if (ANIM(0xB8) < 40.0f) ANIM(0xB8) = ANIM(0xB8) + 2.0f;
-    if (ANIM(0xC0) > 0.0f) ANIM(0xC0) = ANIM(0xC0) - 1.0f;
-    if (ANIM(0xC0) == 60.0f) ANIM(0xC0) = 0;
-    if (HELD(0x18) == 1) {
+    if (portraitEnterX[side] < 80.0f) portraitEnterX[side] = portraitEnterX[side] + 4.0f;
+    if (portraitEnterY[side] < 40.0f) portraitEnterY[side] = portraitEnterY[side] + 2.0f;
+    if (portraitExitX[side] < 80.0f) portraitExitX[side] = portraitExitX[side] + 4.0f;
+    if (portraitExitY[side] < 40.0f) portraitExitY[side] = portraitExitY[side] + 2.0f;
+    if (choiceStop[side] > 0.0f) choiceStop[side] = choiceStop[side] - 1.0f;
+    if (choiceStop[side] == 60.0f) choiceStop[side] = 0;
+    if ((input[side].cancel) == 1) {
         g_SelectionSound->Play(40);
-        FIELD(signed char, 0x96 + side) = 0;
-        ANIM(0xA0) = 80.0f;
-        ANIM(0xA8) = 40.0f;
-        ANIM(0xB0) = 80.0f;
-        ANIM(0xB8) = 40.0f;
-        FIELD(unsigned char, 0xE8 + side) = 1;
+        (playerState[side]) = 0;
+        portraitEnterX[side] = 80.0f;
+        portraitEnterY[side] = 40.0f;
+        portraitExitX[side] = 80.0f;
+        portraitExitY[side] = 40.0f;
+        (playerReady[side]) = 1;
     }
-    if (FIELD(signed char, 0x96 + (1 - side)) < 4) return;
-    if (field0F2 > 0) horizontalDirection = 1;
-    else horizontalDirection = (HELD(0xC) > 0) * 2 - 1;
-    if (AbsoluteSelectionInputF130(HELD(0xC)) == 1 ||
-        (AbsoluteSelectionInputF130(HELD(0xC)) > 60 && AbsoluteSelectionInputF130(HELD(0xC)) % 15 == 0) ||
-        (field0F2 > 0 && side == 0)) {
-        field0F1 = (field0F1 + 10 + horizontalDirection) % 10;
-        if (field0F1 == 8 && field0F0 == 1)
+    if ((playerState[1 - side]) < 4) return;
+    if (stageCountdown[0] > 0) horizontalDirection = 1;
+    else horizontalDirection = ((input[side].horizontal) > 0) * 2 - 1;
+    if (AbsoluteSelectionInputF130((input[side].horizontal)) == 1 ||
+        (AbsoluteSelectionInputF130((input[side].horizontal)) > 60 && AbsoluteSelectionInputF130((input[side].horizontal)) % 15 == 0) ||
+        (stageCountdown[0] > 0 && side == 0)) {
+        stagePage[1] = (stagePage[1] + 10 + horizontalDirection) % 10;
+        if (stagePage[1] == 8 && stagePage[0] == 1)
             g_SelectionStageF131 = 20;
-        else if (field0F1 < 6)
-            g_SelectionStageF131 = field0F1 + field0F0 * 10;
+        else if (stagePage[1] < 6)
+            g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
         else
-            g_SelectionStageF131 = field0F1;
-        while (FIELD(unsigned char, 0x78 + g_SelectionStageF131) == 0) {
-            field0F1 = (field0F1 + 10 + horizontalDirection) % 10;
-            if (field0F1 == 8 && field0F0 == 1)
+            g_SelectionStageF131 = stagePage[1];
+        while ((stageAvailable[g_SelectionStageF131]) == 0) {
+            stagePage[1] = (stagePage[1] + 10 + horizontalDirection) % 10;
+            if (stagePage[1] == 8 && stagePage[0] == 1)
                 g_SelectionStageF131 = 20;
-            else if (field0F1 < 6)
-                g_SelectionStageF131 = field0F1 + field0F0 * 10;
+            else if (stagePage[1] < 6)
+                g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
             else
-                g_SelectionStageF131 = field0F1;
+                g_SelectionStageF131 = stagePage[1];
         }
-        if (field0F2 > 0) {
-            field0F0 = rand() % 2;
-            if (field0F1 == 8 && field0F0 == 1)
+        if (stageCountdown[0] > 0) {
+            stagePage[0] = rand() % 2;
+            if (stagePage[1] == 8 && stagePage[0] == 1)
                 g_SelectionStageF131 = 20;
-            else if (field0F1 < 6)
-                g_SelectionStageF131 = field0F1 + field0F0 * 10;
+            else if (stagePage[1] < 6)
+                g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
             else
-                g_SelectionStageF131 = field0F1;
-            while (FIELD(unsigned char, 0x78 + g_SelectionStageF131) == 0) {
-                field0F0 = rand() % 2;
-                if (field0F1 == 8 && field0F0 == 1)
+                g_SelectionStageF131 = stagePage[1];
+            while ((stageAvailable[g_SelectionStageF131]) == 0) {
+                stagePage[0] = rand() % 2;
+                if (stagePage[1] == 8 && stagePage[0] == 1)
                     g_SelectionStageF131 = 20;
-                else if (field0F1 < 6)
-                    g_SelectionStageF131 = field0F1 + field0F0 * 10;
+                else if (stagePage[1] < 6)
+                    g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
                 else
-                    g_SelectionStageF131 = field0F1;
+                    g_SelectionStageF131 = stagePage[1];
             }
         }
-    } else if (AbsoluteSelectionInputF130(HELD(0x10)) == 1 || HELD(0x20) == 1 ||
-        (AbsoluteSelectionInputF130(HELD(0x10)) % 15 == 0 && AbsoluteSelectionInputF130(HELD(0x10)) > 60)) {
-        verticalDirection = (HELD(0x10) > 0) * 2 - 1;
-        field0F0 = (field0F0 + 2 + verticalDirection) % 2;
-        if (field0F1 == 8 && field0F0 == 1)
+    } else if (AbsoluteSelectionInputF130((input[side].vertical)) == 1 || (input[side].toggle) == 1 ||
+        (AbsoluteSelectionInputF130((input[side].vertical)) % 15 == 0 && AbsoluteSelectionInputF130((input[side].vertical)) > 60)) {
+        verticalDirection = ((input[side].vertical) > 0) * 2 - 1;
+        stagePage[0] = (stagePage[0] + 2 + verticalDirection) % 2;
+        if (stagePage[1] == 8 && stagePage[0] == 1)
             g_SelectionStageF131 = 20;
-        else if (field0F1 < 6)
-            g_SelectionStageF131 = field0F1 + field0F0 * 10;
+        else if (stagePage[1] < 6)
+            g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
         else
-            g_SelectionStageF131 = field0F1;
-        while (FIELD(unsigned char, 0x78 + g_SelectionStageF131) == 0) {
-            field0F0 = (field0F0 + 2 + verticalDirection) % 2;
-            if (field0F1 == 8 && field0F0 == 1)
+            g_SelectionStageF131 = stagePage[1];
+        while ((stageAvailable[g_SelectionStageF131]) == 0) {
+            stagePage[0] = (stagePage[0] + 2 + verticalDirection) % 2;
+            if (stagePage[1] == 8 && stagePage[0] == 1)
                 g_SelectionStageF131 = 20;
-            else if (field0F1 < 6)
-                g_SelectionStageF131 = field0F1 + field0F0 * 10;
+            else if (stagePage[1] < 6)
+                g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
             else
-                g_SelectionStageF131 = field0F1;
+                g_SelectionStageF131 = stagePage[1];
         }
         g_SelectionSound->Play(39);
     }
-    if (HELD(0x14) == 1 || FIELD(signed char, 0xF2 + side) == -1) {
-        field096 = 8;
-        field097 = 8;
+    if ((input[side].confirm) == 1 || (stageCountdown[side]) == -1) {
+        playerState[0] = 8;
+        playerState[1] = 8;
         g_SelectionSound->Play(45);
     }
-    if (HELD(0x1C) == 1) field0F2 = rand() % 10 + 30;
-    if (side == 0 && field0F2 > 0) --field0F2;
+    if ((input[side].special) == 1) stageCountdown[0] = rand() % 10 + 30;
+    if (side == 0 && stageCountdown[0] > 0) --stageCountdown[0];
 }
-#undef HELD
-#undef ANIM
 
 class ResultRecordsF131 { public: unsigned int Count() const; };
 class ResultSelectionF131 {
@@ -239,4 +225,3 @@ short ResultSelectionF131::Update() {
 #undef CHARACTER
 #undef PAGE
 #undef RECORDS
-#undef FIELD
