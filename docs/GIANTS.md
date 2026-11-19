@@ -63,7 +63,13 @@ A full conversion of those 71 raw source sites to direct float calls failed:
 the COFF body increased by 32 bytes and added two `__ftol2` relocations.
 The raw conversion was rejected, while the seven separately verified
 float-argument calls were retained.
-All 24 header-affected exact functions cold-replayed.
+All 24 header-affected exact functions cold-replayed. A subsequent
+Patchouli whole-function compiler comparison converted 24 more source
+spawn sites across nine case files from unsigned coordinate-bit overloads
+to the native `Fighter::SpawnBattleEffect` float API with ordinary `x, y`
+field arguments. The compiled 82,109-byte body and all 1,449 relocation
+positions/types were unchanged, with zero nonrelocation-byte differences.
+This is natural-source recovery, not new exact giant credit.
 
 Sakuya object `004CA6E0` now defines `SakuyaObject::Advance` directly.
 The original 42,511 CODE bytes are still nonexact (447 GPR-role and

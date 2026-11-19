@@ -5,13 +5,13 @@ case 0x328: {
         owner->action<0x96) {
         ClearFrameInfo();
         for (int shot=0;shot<10;++shot) {
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(
+                0x3E4,x,y,1,1);
         }
         if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
             reinterpret_cast<signed short&>(owner->fieldEFA)=0;
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x3E3,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(
+                0x3E3,x,y,1,1);
         }
         return;
     }
@@ -56,11 +56,11 @@ case 0x328: {
         owner->PlaySound(1);
         // Real PE has 16 separate CALLs: one 0x339 then 15 0x33A; not a loop.
 #define F1073_SPAWN_33A() \
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70( \
-            0x33A,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y), \
+        owner->SpawnBattleEffect( \
+            0x33A,x,y, \
             facing,1)
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            0x339,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            0x339,x,y,
             facing,1); F1073_SPAWN_33A();
         F1073_SPAWN_33A(); F1073_SPAWN_33A();
         F1073_SPAWN_33A(); F1073_SPAWN_33A();

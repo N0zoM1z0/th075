@@ -35,15 +35,15 @@ case 0x321: {
         velocityX=0.0f;
         owner->PlaySound(0xB);
         ResetPrimaryCounters(0x322);
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            0x347, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            0x347, x, y,
             facing, 1);
         reinterpret_cast<F1051Grandparent*>(owner)->SpawnProjectileAt00453C80(
             0x7F, reinterpret_cast<unsigned int&>(x), 0,
             facing, 1);
         for (int shot=0; shot<20; ++shot) {
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x33A, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y),
+            owner->SpawnBattleEffect(
+                0x33A, x, y,
                 facing, 1);
         }
         reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(10.0f);

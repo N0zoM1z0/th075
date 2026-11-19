@@ -5,13 +5,13 @@ case 0x338: {
         owner->action<0x96) {
         ClearFrameInfo();
         for (int shot=0;shot<13;++shot) {
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(
+                0x3E4,x,y,1,1);
         }
         if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
             reinterpret_cast<signed short&>(owner->fieldEFA)=0;
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x3E3,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(
+                0x3E3,x,y,1,1);
         }
         return;
     }
@@ -36,8 +36,8 @@ case 0x338: {
         scaleY=(scaleY)+g_F1062_ScaleStepAt006583F8;
     }
     if (animationStage==2 && animationFrame==0)
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            0x337,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            0x337,x,y,
             facing,1);
     if (AdvanceNestedFrame()==field070) {
         if (field0D8<5 && field080>0) {
