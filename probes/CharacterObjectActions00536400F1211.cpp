@@ -68,8 +68,8 @@ void YoumuObject::Advance()
         if (animationStage != entry->stageAt02)
             field07C = 0;
         SetThreeCounters(entry->actionAt00, entry->stageAt02, 0);
-        reinterpret_cast<unsigned int&>(x) = entry->xBitsAt04;
-        reinterpret_cast<unsigned int&>(y) = entry->yBitsAt08;
+        x = entry->xAt04;
+        y = entry->yAt08;
         facing = entry->facingAt0C;
         return;
     }

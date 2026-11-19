@@ -487,3 +487,5 @@ x87 arithmetic.
 - SuikaObject::Advance restores 22 same-type float field copies to ordinary C++ assignments; its complete 43,972-byte COFF, all 991 relocation positions/types and every nonrelocation byte are unchanged.
 
 - Actor reaction velocity fields +0x94/+0x98 and their FighterFrameInfo source fields +0x2C/+0x30 are now float. Reimu and nine trajectory fragments use direct float arithmetic; collision copies, reaction scaling and initialization are typed naturally. Reimu fighter full COFF and 1,824 relocations remain byte-identical; 462/462 affected exact units replayed locally, and CharacterProjectileAdvanceF379 remains exact.
+
+- YoumuObjectHistoryF1211's borrowed +0x04/+0x08 coordinate fields are now native floats, not unsigned DWORD bit aliases. The complete 40,464-byte object boss COFF and all 938 relocations remain byte-identical; this header is not a dependency of any exact unit.
