@@ -296,3 +296,8 @@ scene's native `movsx` sequence-state tests. The two signed-reference views
 were removed. Both full character-sequence giants, the result update and all
 eleven fighter initializers retained complete COFF bytes and relocations;
 14 affected exact units replayed 14/14.
+`Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
+signed render test; its render and base-reset functions remain byte-identical.
+Four signed-byte views used only to store zero to the unsigned `field39C`
+flag and the redundant signed view in the overlay timeline switch were also
+removed. Four affected exact functions replayed 4/4.

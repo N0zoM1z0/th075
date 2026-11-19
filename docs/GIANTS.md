@@ -994,6 +994,12 @@ reinterpret views are direct member accesses. Both complete 11KB character
 sequence giants (Alice 11,354 bytes / 375 relocations; Yuyuko 11,428 bytes /
 365 relocations), the 1,561-byte result update and all eleven fighter
 initializers remain byte-identical; all 14 exact units replayed 14/14.
+The notice gate `Fighter::noticeFirst` at `+0x6E8` is a signed byte; its
+native render test sign-extends the value. The member is now `signed char`,
+with the complete 1,637-byte render and 1,151-byte base-reset functions still
+identical. Four signed-byte aliases that only wrote zero to the unsigned
+`field39C` flag and the redundant signed view in the overlay timeline switch
+were also removed. The four affected exact functions replayed 4/4.
 The name-entry `field120` byte at `+0x120` is likewise signed: the parallel
 sprite-name view already declares it `signed char`, and the editor uses its
 sign-extended value to calculate the active record offset. The update view now
