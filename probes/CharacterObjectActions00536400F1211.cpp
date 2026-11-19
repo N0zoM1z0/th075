@@ -8,7 +8,6 @@
 #include "YoumuObjectHistoryF1211.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 
-#define OWNER_GAUGE reinterpret_cast<YoumuOwnerGaugeF1211*>(owner)
 
 #define HISTORY_LIST reinterpret_cast<ObjectHistoryListF1211*>(reinterpret_cast<unsigned char*>(owner) + 0xFEC)
 
@@ -38,12 +37,12 @@ void YoumuObject::Advance()
         static_cast<YoumuFighter*>(owner)->fieldF12 = 1;
         if (owner->field39D == 1) {
             owner->field09C = 0.5f;
-            OWNER_GAUGE->UpdateGaugeAt0046D000(5);
+            owner->UpdateGaugeTimer(5);
             static_cast<YoumuFighter*>(owner)->fieldF10 = owner->spirit;
         }
         if (owner->field39D == 2) {
             owner->field09C = 0.4f;
-            OWNER_GAUGE->UpdateGaugeAt0046D000(7);
+            owner->UpdateGaugeTimer(7);
             static_cast<YoumuFighter*>(owner)->fieldF10 = owner->spirit;
         }
         if (static_cast<YoumuFighter*>(owner)->fieldF10 <= 0 || owner->field3A0 <= 0) {
@@ -915,7 +914,7 @@ case 0x331: {
             owner->field314 = 1000.0f;
             owner->field318 = -45.0f;
             owner->SpawnBattleEffect(835, x, y, facing, 1);
-            OWNER_GAUGE->UpdateGaugeAt0046D000(20);
+            owner->UpdateGaugeTimer(20);
             owner->PlaySharedSound(42);
         }
         velocityY -= 0.4f;
@@ -1029,7 +1028,7 @@ case 0x331: {
         if (animationStage == 2 && animationFrame == 0) {
             owner->field314 = 1000.0f;
             owner->field318 = field0DC * 3 - 30;
-            OWNER_GAUGE->UpdateGaugeAt0046D000(20);
+            owner->UpdateGaugeTimer(20);
             owner->SpawnBattleEffect(835, x, y, facing, 1);
             owner->PlaySharedSound(42);
             ++field0DC;
@@ -1334,7 +1333,7 @@ case 0x331: {
         if (animationStage == 2 && animationFrame == 0) {
             owner->field314 = 1000.0f;
             owner->field318 = field0DC * 3 + 10;
-            OWNER_GAUGE->UpdateGaugeAt0046D000(20);
+            owner->UpdateGaugeTimer(20);
             owner->SpawnBattleEffect(835, x, y, facing, 1);
             owner->PlaySharedSound(42);
             ++field0DC;
@@ -1392,7 +1391,7 @@ case 0x331: {
         if (animationStage == 2 && animationFrame == 0) {
             owner->field314 = 1000.0f;
             owner->field318 = field0DC * 3 - 50;
-            OWNER_GAUGE->UpdateGaugeAt0046D000(20);
+            owner->UpdateGaugeTimer(20);
             owner->SpawnBattleEffect(835, x, y, facing, 1);
             owner->PlaySharedSound(42);
             ++field0DC;
@@ -1450,7 +1449,7 @@ case 0x331: {
         if (animationStage == 2 && animationFrame == 0) {
             owner->field314 = 1000.0f;
             owner->field318 = field0DC * 3 - 30;
-            OWNER_GAUGE->UpdateGaugeAt0046D000(20);
+            owner->UpdateGaugeTimer(20);
             owner->SpawnBattleEffect(835, x, y, facing, 1);
             owner->PlaySharedSound(42);
             ++field0DC;
@@ -2795,4 +2794,3 @@ case 0x3E6: {
 }
 
 #undef HISTORY_LIST
-#undef OWNER_GAUGE

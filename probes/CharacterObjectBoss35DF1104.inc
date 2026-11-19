@@ -4,7 +4,7 @@ case 0x35D: {
     if (animationStage==0 && animationFrame==0)
         field0D8=0;
     if (animationStage==1 && animationFrame==0) {
-        reinterpret_cast<F1051Grandparent*>(owner)->StartAnimationAt0046D000(20);
+        owner->UpdateGaugeTimer(20);
         owner->SpawnBattleEffect(
             0x330,
             (*(&x))+g_F1057_YOffsetAt00657888-

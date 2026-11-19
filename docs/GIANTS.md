@@ -180,6 +180,12 @@ shortened it a byte but introduced 838 newly differing positions. Neither
 is a valid improvement. Preserve case 837 and investigate how this join's
 register state was selected in the original compile.
 
+The previously borrowed `0046D000` cross-character gauge-timer call
+is now the common `Fighter::UpdateGaugeTimer`. Youmu/Patchouli/Remilia
+object research parents use the real owner method; the shared 126-byte
+callee itself remains cold-replay exact and all touched giant frontiers
+are unchanged. This is source/interface recovery, not giant exact credit.
+
 ## Without a complete parent
 
 Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters

@@ -324,7 +324,7 @@ Fighter::SpawnTrackedEffect
 Fighter::SpawnAuxEffect
 Fighter::PlaySound
 Fighter::PlaySharedSound
-ReimuFighter::UpdateGaugeTimer
+Fighter::UpdateGaugeTimer
 BattleEffectSpawnerF136::Spawn
 BattleEffectAdvanceF137::AdvanceAll
 BattleAnimationBindingF139::BindAnimation

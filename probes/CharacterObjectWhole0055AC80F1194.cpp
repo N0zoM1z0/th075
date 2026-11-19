@@ -162,7 +162,7 @@ case 802: {
         SetPolarVelocity(field0C8, field0CC);
     }
     if (animationStage == 1 && animationFrame == 0 && owner->spirit > 0) {
-        reinterpret_cast<FighterEffectPoliciesF135*>(owner)->UpdateGaugeTimer(15);
+        owner->UpdateGaugeTimer(15);
         owner->PlaySound(0);
         owner->SpawnBattleEffect(803, x, y, facing, 1);
     }

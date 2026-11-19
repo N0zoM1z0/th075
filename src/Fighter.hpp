@@ -73,6 +73,7 @@ public:
     void SpawnAuxEffect(short effect, float x, float y, signed char facing, signed char layer);
     void PlaySound(short sound);
     void PlaySharedSound(short sound);
+    void UpdateGaugeTimer(int amount);  // 0046D000 shared spirit timer
     bool IsState150To199();
     bool IsState95To99();
     unsigned char SelectHitResponse(unsigned int flags);

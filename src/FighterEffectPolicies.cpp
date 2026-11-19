@@ -39,7 +39,7 @@ void Fighter::PlaySharedSound(short sound)
     g_SharedEffectSoundBankF135->Play(sound);
 }
 
-void ReimuFighter::UpdateGaugeTimer(int amount)
+void Fighter::UpdateGaugeTimer(int amount)
 {
     if (spiritCooldown > 0) {
         spiritCooldown = 1000;

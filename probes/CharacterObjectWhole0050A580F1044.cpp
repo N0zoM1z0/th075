@@ -8,10 +8,8 @@
 // The state cases belong to PatchouliObject; helper call contracts remain native.
 // Shared sound, camera and effect spawning now use the real Fighter API,
 // with float coordinates passed directly to the native float parameter slots.
-// The only unresolved borrowed call is to the 0046D000 gauge-timer routine:
-// its cross-character receiver provenance must be reconciled before it can
-// be expressed as a truthful PatchouliFighter or Fighter member call.
-class F1051Grandparent { public: void StartAnimationAt0046D000(int); };
+// The native 0046D000 gauge timer is shared by Fighter owners, so case
+// 0x35D now invokes Fighter::UpdateGaugeTimer directly.
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
 extern float g_F1051_ScaleStepAt00658348;

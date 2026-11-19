@@ -40,7 +40,6 @@ public:
     signed char ContactAt454EE0();
     void SetAuxActionAt40FB40(short);
 
-    void UpdateGaugeTimer(int amount);
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
     void PollCommands();

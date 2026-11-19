@@ -20,9 +20,7 @@ public:
     ObjectHistoryEntryF1211& FrontAt00540220();
 };
 
-// Until the origin of 0046D000 is fully reconciled, only its native
-// thiscall input contract is asserted. All other owner calls use Fighter.
-class YoumuOwnerGaugeF1211 { public: void UpdateGaugeAt0046D000(int); };
+// The owner gauge timer is the inherited Fighter method at 0046D000.
 
 float __cdecl AngleAt00483300(float, float);
 

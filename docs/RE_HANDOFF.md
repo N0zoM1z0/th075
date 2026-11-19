@@ -27,6 +27,12 @@ Done so far:
   its real scene and record/deque members. Both whole native functions
   preserve all relocations; the 10-unit affected-only replay (including
   music-room rendering and lifecycle) was 10/10 exact across 8 objects.
+- Shared gauge timer `0046D000` is now `Fighter::UpdateGaugeTimer`,
+  reflecting its real calls from Youmu, Patchouli and Remilia as well as
+  Reimu. The original 126-byte function is cold-replay exact. Eighteen
+  selected directly related functions passed local replay (18/18); all
+  four touched giant frontiers remained nonexact and nonregressing. The
+  wider Fighter.hpp dependency graph needs further grouped cold replay.
 - The result-list browser is now separately modeled as `ResultListScene`
   (not the score-tallying `ResultScene`). Its 1,803-byte selection update
   and 343-byte input poll share typed page, character, availability and

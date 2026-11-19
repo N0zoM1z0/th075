@@ -325,7 +325,7 @@ Fighter::SpawnTrackedEffect,0x00453B50,function
 Fighter::SpawnAuxEffect,0x00453C80,function
 Fighter::PlaySound,0x00453D40,function
 Fighter::PlaySharedSound,0x00453D60,function
-ReimuFighter::UpdateGaugeTimer,0x0046D000,function
+Fighter::UpdateGaugeTimer,0x0046D000,function
 BattleEffectSpawnerF136::Spawn,0x0045BB10,function
 BattleEffectAdvanceF137::AdvanceAll,0x0045BDB0,function
 BattleAnimationBindingF139::BindAnimation,0x0045B880,function

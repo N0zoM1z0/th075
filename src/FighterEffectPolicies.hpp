@@ -35,7 +35,6 @@ public:
     void SpawnAuxEffect(short effect, float x, float y, signed char facing, signed char layer);
     void PlaySound(short sound);
     void PlaySharedSound(short sound);
-    void UpdateGaugeTimer(int amount);
 };
 
 #endif
