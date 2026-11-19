@@ -32,8 +32,8 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
             if (AdvanceNestedFrame()==(field070))
                 ResetSecondaryCounter(2);
             else if ((animationStage)==2 && (animationFrame)==0) {
-                velocityX=static_cast<float>(static_cast<int>(scriptCounterF00))*g_F747_BounceXAt006590BC;
-                velocityY=static_cast<float>(-static_cast<int>(scriptCounterF02))*g_F747_BounceYAt00658044;
+                velocityX=static_cast<float>(scriptCounterF00)*g_F747_BounceXAt006590BC;
+                velocityY=static_cast<float>(-scriptCounterF02)*g_F747_BounceYAt00658044;
                 field05C=0.7f;
                 ResetTransform(0.0f,95.0f,0.0f);
             }

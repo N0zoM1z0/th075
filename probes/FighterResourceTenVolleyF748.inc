@@ -38,8 +38,8 @@
                 if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==3 && (animationFrame)==0) {
-                velocityX=static_cast<float>(static_cast<int>(scriptCounterF00))*g_F748_SpeedScaleAt006590B8;
-                velocityY=static_cast<float>(-static_cast<int>(scriptCounterF02))*g_F748_SpeedScaleAt006590B8;
+                velocityX=static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
+                velocityY=static_cast<float>(-scriptCounterF02)*g_F748_SpeedScaleAt006590B8;
                 field05C=2.0f;
             }
             break;
@@ -79,8 +79,8 @@
                 if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==2 && (animationFrame)==0) {
-                velocityX=static_cast<float>(static_cast<int>(scriptCounterF00))*g_F748_SpeedScaleAt006590B8;
-                velocityY=static_cast<float>(-static_cast<int>(scriptCounterF02))*g_F748_SpeedScaleAt006590B8;
+                velocityX=static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
+                velocityY=static_cast<float>(-scriptCounterF02)*g_F748_SpeedScaleAt006590B8;
                 field05C=2.0f;
             }
             break;

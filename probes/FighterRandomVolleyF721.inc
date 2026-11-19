@@ -30,7 +30,7 @@
                     else
                         scriptCounterF00=20;
                 }
-                field314=static_cast<float>(scriptCounterF00);
+                field314=scriptCounterF00;
                 SpawnBattleEffect(0x386,
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
@@ -42,7 +42,7 @@
                 ResetSecondaryCounter(9);
             }
             if ((animationStage)==12 && (animationFrame)==0) {
-                field314=static_cast<float>(scriptCounterF00);
+                field314=scriptCounterF00;
                 if ((scriptCounterF00)==0)
                     SpawnBattleEffect(0x384,
                         float(facing*65)+(x),
