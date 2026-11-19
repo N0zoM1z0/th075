@@ -995,12 +995,20 @@ sequence giants (Alice 11,354 bytes / 375 relocations; Yuyuko 11,428 bytes /
 365 relocations), the 1,561-byte result update and all eleven fighter
 initializers remain byte-identical; all 14 exact units replayed 14/14.
 `Fighter::field3CF` at `+0x3CF` is the unsigned continuation/status byte
-in the independently recovered two-byte F992 outcome view. The shared
+immediately following the one-byte F992 outcome union at `+0x3CE`. The shared
 member is now `unsigned char`; 17 signed/unsigned reference aliases across
 `BattleStateMachine` and nine shared fighter fragments now use direct access.
 The complete Reimu/Sakuya/Youmu/Remilia fighter parents (62,090 / 83,922 /
 47,655 / 59,236 bytes; 1,824 / 2,352 / 1,491 / 1,863 relocations) remain
 byte-identical, and the affected exact battle-state function replayed 1/1.
+`Fighter::field3CE` (+0x3CE) is now the one-byte `FighterOutcomeByteF992`
+union, with explicit signed and unsigned views. This replaces 17 signed-byte
+reinterpret-reference views and all 18 uses of the old two-byte `F992_OUTCOME`
+borrowed-window macro with direct member access; the adjacent `field3CF`
+remains its own unsigned byte. The old pointer-arithmetic overlay type and
+macro are removed. All 56 exact functions across battle-state, hit handling,
+KO/round-end processing and fighter reset (six translation units) replayed
+56/56 with complete function bytes and relocation maps unchanged.
 The notice gate `Fighter::noticeFirst` at `+0x6E8` is a signed byte; its
 native render test sign-extends the value. The member is now `signed char`,
 with the complete 1,637-byte render and 1,151-byte base-reset functions still
