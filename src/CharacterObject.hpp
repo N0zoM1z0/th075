@@ -29,7 +29,21 @@ public:
 class ReimuObject : public CharacterObject { public: ReimuObject(void* ownerFighter); };
 class MarisaObject : public CharacterObject { public: MarisaObject(void* ownerFighter); };
 class SakuyaObject : public CharacterObject { public: SakuyaObject(void* ownerFighter); };
-class AliceObject : public CharacterObject { public: AliceObject(void* ownerFighter); };
+class AliceObject : public CharacterObject {
+public:
+    AliceObject(void* ownerFighter);
+    virtual void Advance();   // 004EBDA0, whole nonexact research parent
+
+    // Call-shape declarations from the giant research source; actual
+    // implementations use the shared Actor and object helper addresses.
+    void ResetAt4F4170();
+    void ResetAt45B830();
+    void ResetAt45B860(int kind);
+    void ResetStateAt40FBB0(int,int,int);
+    void MotionAt40FB70(float,float); void MotionRawAt40FB70(int,float); void MotionRawPairAt40FB70(int,int);
+    void SetStateAt40FB40(int); void SetActionAt40FAC0(int); int RandomAt455580(int,int);
+    short GetStateAt40FA30();
+};
 class PatchouliObject : public CharacterObject { public: PatchouliObject(void* ownerFighter); };
 class YoumuObject : public CharacterObject { public: YoumuObject(void* ownerFighter); };
 class RemiliaObject : public CharacterObject { public: RemiliaObject(void* ownerFighter); };

@@ -49,11 +49,17 @@ instruction widths that follow from it.
 | 005EB520 | Meiling object | 34,434 | `CharacterObjectWhole005EB520F1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
-The Reimu fighter parent now directly defines `ReimuFighter::Advance` rather than
-a second, artificial derived class. Its native-call declarations retain
-experimental ABI spelling until all alias calls can be reconciled with the
-shared `Actor` and `Fighter` APIs. The other parents still use historical
-research class names (for example `ObjectActor57D580F1237`).
+The Reimu fighter and Alice object parents now directly define
+`ReimuFighter::Advance` and `AliceObject::Advance`, rather than artificial
+derived classes. Alice's 33,293-byte parent uses real `owner` and
+`owner->opponent` fields (including named Fighter/AliceFighter members) in
+place of raw offset macros, while preserving all 575 outstanding differing
+bytes in its nonexact ratchet and its first register discrepancy at
+`004F344C`. The change also cold-replayed all 24 exact functions affected
+by `CharacterObject.hpp`. Native-call helper aliases retain provisional ABI
+spelling until the target call signatures have been fully reconciled. The
+other parents still use historical research class names (for example
+`ObjectActor57D580F1237`).
 
 ## Without a complete parent
 

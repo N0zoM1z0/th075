@@ -36,6 +36,11 @@ Done so far:
   All 99 header-affected exact units cold-replayed successfully (33 objects).
 - Seven VC7.1 conditional-join variants on Alice object `Advance` at
   `004F344C` failed to improve its nonexact frontier; see GIANTS.md.
+- Alice object `Advance` now belongs directly to `AliceObject` in the shared
+  class hierarchy, with the owner, opponent, counters, positions and gauge
+  accesses expressed through real named members. The 33,293-byte parent
+  retained its 575-byte nonexact frontier and 133 GPR mismatches; all 24
+  header-affected exact functions cold-replayed successfully.
 
 - The class structure from the PE vtables is in source: `Actor`, `Fighter`,
   one `<Char>Fighter` per character with its overrides under the slot names,
@@ -83,7 +88,8 @@ Next steps:
      bank, input mapping and other library methods (248 addresses are bound
      under several class names; `relabel.py` makes renaming cheap).
 2. Move the remaining research parent classes to their real character
-   classes, as now done for `ReimuFighter::Advance`. Resolve provisional
+   classes, as now done for `ReimuFighter::Advance` and
+   `AliceObject::Advance`. Resolve provisional
    native-call signatures against the shared base APIs without regressing
    the full giant function.
 3. The giants' register debt: find the construct behind the anomalous
