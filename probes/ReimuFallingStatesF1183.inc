@@ -42,7 +42,7 @@ case 0x12E: {
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=12.0f;
-        if (reinterpret_cast<unsigned int&>(inputA)>9U) {
+        if (static_cast<unsigned int>(inputA)>9U) {
             ResetPrimaryCounters(0x136);
             velocityX=0.0f;
         }

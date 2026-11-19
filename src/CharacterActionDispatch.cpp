@@ -25,9 +25,9 @@
     (inputD > 0 && inputY == -1 && facing * inputX >= 1) || \
     (inputD == 1 && inputY < -1 && facing * inputX >= 1))
 #define PRIORITY_OR_SPECIAL_RANK(index) (sequenceInfo->priority <= TARGET_PRIORITY(index) || sequenceInfo->priority == 99 || sequenceInfo->priority == 49)
-#define ATTACK_A (reinterpret_cast<unsigned long&>(inputA) == 1 || bufferedA > 0)
-#define ATTACK_B (reinterpret_cast<unsigned long&>(inputB) == 1 || bufferedB > 0)
-#define ATTACK_C (reinterpret_cast<unsigned long&>(inputC) == 1 || bufferedC > 0)
+#define ATTACK_A (static_cast<unsigned long>(inputA) == 1 || bufferedA > 0)
+#define ATTACK_B (static_cast<unsigned long>(inputB) == 1 || bufferedB > 0)
+#define ATTACK_C (static_cast<unsigned long>(inputC) == 1 || bufferedC > 0)
 #define FORWARD_MOTION (facing * inputX > 0 || facing * bufferedX > 0)
 #define DISTANT_FROM_OPPONENT(upper, lower) (x - opponent->x > upper || x - opponent->x < lower)
 void SakuyaFighter::DispatchActions()
@@ -455,7 +455,7 @@ void SakuyaFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if ((reinterpret_cast<unsigned long&>(inputB) == 1 || bufferedA > 0) &&
+        if ((static_cast<unsigned long>(inputB) == 1 || bufferedA > 0) &&
             FORWARD_MOTION && action == 200 &&
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(393);
@@ -542,7 +542,7 @@ void SakuyaFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if ((reinterpret_cast<unsigned long&>(inputB) == 1 || bufferedA > 0) &&
+        if ((static_cast<unsigned long>(inputB) == 1 || bufferedA > 0) &&
             inputY == 0 &&
             FORWARD_MOTION &&
             action == 200 &&

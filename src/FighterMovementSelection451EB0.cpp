@@ -15,21 +15,21 @@ void Fighter::ForwardBaseAction()
         if (inputY < 0) {
             UpdateFacingFromOpponent();
             if (inputX == 0) {
-                if (reinterpret_cast<unsigned int&>(inputD) > 0) {
+                if (static_cast<unsigned int>(inputD) > 0) {
                     if (action != 204)
                         ResetPrimaryCounters(204);
                 } else if (action != 6) {
                     ResetPrimaryCounters(6);
                 }
             } else if (facing * inputX > 0) {
-                if (reinterpret_cast<unsigned int&>(inputD) > 0) {
+                if (static_cast<unsigned int>(inputD) > 0) {
                     if (action != 205)
                         ResetPrimaryCounters(205);
                 } else if (action != 7) {
                     ResetPrimaryCounters(7);
                 }
             } else if (facing * inputX < 0) {
-                if (reinterpret_cast<unsigned int&>(inputD) > 0) {
+                if (static_cast<unsigned int>(inputD) > 0) {
                     if (action != 206)
                         ResetPrimaryCounters(206);
                 } else if (action != 8) {
@@ -46,14 +46,14 @@ void Fighter::ForwardBaseAction()
             } else if (inputX != 0) {
                 UpdateFacingFromOpponent();
                 if (facing * inputX > 0) {
-                    if (reinterpret_cast<unsigned int&>(inputD) > 0) {
+                    if (static_cast<unsigned int>(inputD) > 0) {
                         if (action != 200)
                             ResetPrimaryCounters(200);
                     } else if (action != 4) {
                         ResetPrimaryCounters(4);
                     }
                 } else {
-                    if (reinterpret_cast<unsigned int&>(inputD) > 0) {
+                    if (static_cast<unsigned int>(inputD) > 0) {
                         if (action != 201)
                             ResetPrimaryCounters(201);
                     } else if (action != 5) {

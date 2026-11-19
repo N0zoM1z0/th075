@@ -8,13 +8,13 @@
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
-                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                 || static_cast<unsigned int>(inputD)>0))
                 scriptCounterF00=1;
             if (static_cast<int>(facing) * inputX<0
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
-                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                 || static_cast<unsigned int>(inputD)>0))
                 scriptCounterF00=2;
             if ((animationStage)==0 && (animationFrame)==0) {
                 for (int shot=0;shot<10;++shot)
@@ -49,13 +49,13 @@
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
-                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                 || static_cast<unsigned int>(inputD)>0))
                 scriptCounterF00=1;
             if (static_cast<int>(facing) * inputX<0
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
-                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                 || static_cast<unsigned int>(inputD)>0))
                 scriptCounterF00=2;
             if ((animationStage)==0 && (animationFrame)==0) {
                 for (int shot=0;shot<10;++shot)

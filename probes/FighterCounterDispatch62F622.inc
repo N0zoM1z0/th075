@@ -7,20 +7,20 @@ case 0x62: {
         // The original PE has JA *into* the store for each of the
         // first three uint fields and JBE *around* it on the fourth.
         // This is a four-way OR, not three-zero AND one-positive.
-        if (reinterpret_cast<unsigned int&>(inputA)>0 ||
-            reinterpret_cast<unsigned int&>(inputB)>0 ||
-            reinterpret_cast<unsigned int&>(inputC)>0 ||
-            reinterpret_cast<unsigned int&>(inputD)>0)
+        if (static_cast<unsigned int>(inputA)>0 ||
+            static_cast<unsigned int>(inputB)>0 ||
+            static_cast<unsigned int>(inputC)>0 ||
+            static_cast<unsigned int>(inputD)>0)
             I16(F622_COUNTER)=1;
     }
     if ((facing)*inputX<0) {
         // The original PE has JA *into* the store for each of the
         // first three uint fields and JBE *around* it on the fourth.
         // This is a four-way OR, not three-zero AND one-positive.
-        if (reinterpret_cast<unsigned int&>(inputA)>0 ||
-            reinterpret_cast<unsigned int&>(inputB)>0 ||
-            reinterpret_cast<unsigned int&>(inputC)>0 ||
-            reinterpret_cast<unsigned int&>(inputD)>0)
+        if (static_cast<unsigned int>(inputA)>0 ||
+            static_cast<unsigned int>(inputB)>0 ||
+            static_cast<unsigned int>(inputC)>0 ||
+            static_cast<unsigned int>(inputD)>0)
             I16(F622_COUNTER)=2;
     }
 #endif

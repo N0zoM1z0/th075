@@ -59,16 +59,16 @@ case 0x59: {
 #undef F620_SECOND_ACTION
 case 0x61: {
     if ((facing)*inputX>0) {
-        if (reinterpret_cast<unsigned int&>(inputA)>0 ||
-            reinterpret_cast<unsigned int&>(inputB)>0 ||
-            reinterpret_cast<unsigned int&>(inputC)>0 ||
-            reinterpret_cast<unsigned int&>(inputD)>0) scriptCounterF00=1;
+        if (static_cast<unsigned int>(inputA)>0 ||
+            static_cast<unsigned int>(inputB)>0 ||
+            static_cast<unsigned int>(inputC)>0 ||
+            static_cast<unsigned int>(inputD)>0) scriptCounterF00=1;
     }
     if ((facing)*inputX<0) {
-        if (reinterpret_cast<unsigned int&>(inputA)>0 ||
-            reinterpret_cast<unsigned int&>(inputB)>0 ||
-            reinterpret_cast<unsigned int&>(inputC)>0 ||
-            reinterpret_cast<unsigned int&>(inputD)>0) scriptCounterF00=2;
+        if (static_cast<unsigned int>(inputA)>0 ||
+            static_cast<unsigned int>(inputB)>0 ||
+            static_cast<unsigned int>(inputC)>0 ||
+            static_cast<unsigned int>(inputD)>0) scriptCounterF00=2;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         for (int shot=0;shot<10;++shot)

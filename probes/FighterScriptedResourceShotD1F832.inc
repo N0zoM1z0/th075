@@ -16,7 +16,7 @@ case 0xD1: {
                 facing,1);
     }
     if (AdvanceNestedFrame()==field070) {
-        if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
+        if (static_cast<unsigned int>(inputD)>0)
             ResetSecondaryCounter(2);
         else
             ResetPrimaryCounters(0);

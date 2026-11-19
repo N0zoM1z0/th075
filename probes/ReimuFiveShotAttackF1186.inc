@@ -13,7 +13,7 @@ case R1186_ACTION: {
         UpdateGaugeTimer(100);
     }
     if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<2 &&
-        reinterpret_cast<unsigned int&>(inputC)>0) {
+        static_cast<unsigned int>(inputC)>0) {
 #include "ReimuFiveShotVolleyF1186.inc"
         PlaySound(0);
         UpdateGaugeTimer(25);

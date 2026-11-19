@@ -126,7 +126,7 @@ void Fighter::ChooseFrameAction()
         if (rand() % 2) ResetPrimaryCounters(180);
         else ResetPrimaryCounters(181);
     } else if (inputX != 0 &&
-        (inputA | inputB | inputC | reinterpret_cast<int&>(inputD))) {
+        (inputA | inputB | inputC | static_cast<int>(inputD))) {
         if (facing * inputX > 0)
             ResetPrimaryCounters(180);
         else ResetPrimaryCounters(181);

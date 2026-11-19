@@ -27,7 +27,7 @@ case 0xD2: {
     // the stage/frame-zero projectile initialization path.
     velocityY=velocityY-(field05C)*g_BounceScaleAt00657F74;
     if (AdvanceNestedFrame()==field070) {
-        if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
+        if (static_cast<unsigned int>(inputD)>0)
             ResetSecondaryCounter(2);
         else
             ResetPrimaryCounters(9);

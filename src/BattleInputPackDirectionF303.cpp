@@ -10,10 +10,10 @@ void Fighter::PackDirectionBits()
     bits|=static_cast<unsigned char>(inputX>0)<<1;
     bits|=static_cast<unsigned char>(inputY<0)<<2;
     bits|=static_cast<unsigned char>(inputY>0)<<3;
-    bits|=static_cast<unsigned char>(reinterpret_cast<unsigned int&>(inputA)>0)<<4;
-    bits|=static_cast<unsigned char>(reinterpret_cast<unsigned int&>(inputB)>0)<<5;
-    bits|=static_cast<unsigned char>(reinterpret_cast<unsigned int&>(inputC)>0)<<6;
-    bits|=static_cast<unsigned char>(reinterpret_cast<unsigned int&>(inputD)>0)<<7;
+    bits|=static_cast<unsigned char>(static_cast<unsigned int>(inputA)>0)<<4;
+    bits|=static_cast<unsigned char>(static_cast<unsigned int>(inputB)>0)<<5;
+    bits|=static_cast<unsigned char>(static_cast<unsigned int>(inputC)>0)<<6;
+    bits|=static_cast<unsigned char>(static_cast<unsigned int>(inputD)>0)<<7;
     unsigned int scratch[7];
     memset(scratch,0,sizeof(scratch));
     reinterpret_cast<FighterCommandQueueF303*>(reinterpret_cast<unsigned char*>(this)+0x518)->Queue(90,&bits);

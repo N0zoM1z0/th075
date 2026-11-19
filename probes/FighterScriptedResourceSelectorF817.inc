@@ -14,13 +14,13 @@
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
-                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                 || static_cast<unsigned int>(inputD)>0))
                 scriptCounterF00=1;
             if (static_cast<int>(facing) * inputX<0
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
-                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                 || static_cast<unsigned int>(inputD)>0))
                 scriptCounterF00=2;
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0x5F);

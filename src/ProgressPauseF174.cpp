@@ -88,7 +88,7 @@ void BattleScene::UpdatePlayerEffects()
                 || field018 == 0
                 || field018 == 5
                 || field018 == 7) {
-                reinterpret_cast<int&>(fighters[i]->inputD) = 0;
+                fighters[i]->inputD = 0;
                 fighters[i]->inputX = 0;
                 fighters[i]->inputY = 0;
                 reinterpret_cast<FighterControlCallsF174*>(fighters[i])->PackDirectionBits();
