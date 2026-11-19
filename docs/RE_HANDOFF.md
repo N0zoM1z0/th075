@@ -371,6 +371,12 @@ reset. Comparisons retain the native unsigned conversion against global score
 ceilings, and the score addition explicitly performs unsigned 32-bit
 arithmetic. Eight affected exact functions replayed 8/8, including the full
 4,824-byte `BattleScene::AdvanceState`.
+`ReplayRecords::AppendRecord` now models the native 20-byte segmented
+queue members and 8-byte owner/index iterators directly. The ten record file
+offsets, serialized header, and four queue objects have explicit typed
+members; all 23 raw owner-offset accesses and the `FIELD` macro are gone.
+The 1,252-byte body and all 50 relocations remain identical; targeted exact
+replay passed 1/1.
 `Actor` now models the `+0x080` auxiliary angle as a float overlay beside
 the ordinary signed hit-stop words `field080`/`field082`. Four
 `reinterpret_cast<float&>` views in `CharacterAuxObject::Advance` were

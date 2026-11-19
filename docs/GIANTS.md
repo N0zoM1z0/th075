@@ -1101,6 +1101,14 @@ storing back to the signed score member. The continue/debug score reset is a
 normal direct member assignment. All eight exact functions across the three
 state/KO/pause translation units replayed 8/8, including the 4,824-byte
 `BattleScene::AdvanceState` and 1,150-byte knockout resolver.
+`ReplayRecords::AppendRecord` (+0x413DE0) now has a typed owner view instead
+of a `FIELD` macro and raw `this+offset` queue casts. The ten file-offset
+slots at `+0x11C`, serialized 16-byte header at `+0x144`, and four queue
+members at `+0x154/+0x168/+0x17C/+0x190` are explicit members. The queues are
+20-byte segmented circular collections (block map, block count, first index,
+size); their 8-byte iterators hold owner plus logical index and dereference
+through 16-element blocks. The complete 1,252-byte append function and all
+50 relocations remain identical; exact replay passed 1/1.
 The four-byte Actor overlay at `+0x080` now names the auxiliary-object
 angle as `field080Angle`, while preserving the ordinary actor's adjacent
 signed `field080`/`field082` hit-stop words in an anonymous union. The four
