@@ -979,3 +979,11 @@ nine affected exact functions (pause menu/debug, end overlay, Mode 5 options
 and render, battle-state advance, scene construction, pause shortcut and
 frame-action selection) replayed 9/9 with complete bodies and relocations
 unchanged.
+The character-selection arrays `chosenCharacter` / `alternateCharacter` at
+`+0xE0/+0xE2` are signed bytes, not unsigned bytes. The selection controller
+uses negative decrement and wrap checks; the two arrays are now `signed char`
+and 70 `reinterpret_cast<signed char&>` views plus 29 redundant explicit
+signed casts across controller/card/background/options code are gone. All six
+exact selection update, card render, background render, options render,
+subselection and reset functions replayed 6/6 with their complete COFF bodies
+and relocation maps unchanged.

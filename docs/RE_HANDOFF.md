@@ -282,3 +282,8 @@ menu's negative wrap checks and signed navigation. Thirty-three signed-byte
 alias views in four source files were removed. Nine exact pause, debug, end
 overlay, Mode 5, state, scene-construction, pause-shortcut and frame-action
 functions replayed 9/9 with complete COFF bodies and relocations unchanged.
+The character-selection `chosenCharacter` and `alternateCharacter` arrays
+(+0xE0/+0xE2) are now signed bytes, matching the controller's negative
+wrap/decrement logic. Seventy signed-reference aliases and 29 explicit
+signed casts were removed; six exact selection controller, card/background/
+options render, subselection and reset functions replayed 6/6 unchanged.
