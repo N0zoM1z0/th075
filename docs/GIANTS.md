@@ -96,6 +96,19 @@ nonexact (914 GPR-role differences and six widths); all 24 affected
 exact units cold-replayed. Other parents retain their historical names.
 
 
+At Yuyuko's first register-role discrepancy (`00583489`, case 837), the
+native path returning from `AdvanceNestedFrame`/`ClearFrameInfo` joins the
+next animation-stage test with the scratch-register rotation one position
+ahead of the VC7.1 parent. Ten natural-C++ variations were cold-compiled:
+braces, swapped comparison, double negation, qualified calls, explicit
+`this`, nested stage tests, swapped constants, grouped conditions,
+postincrement and assignment-form increment. None improved the whole
+function without regressions. The swapped comparison added a byte to the
+object and 788 new differing positions; assignment-form increment
+shortened it a byte but introduced 838 newly differing positions. Neither
+is a valid improvement. Preserve case 837 and investigate how this join's
+register state was selected in the original compile.
+
 ## Without a complete parent
 
 Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters

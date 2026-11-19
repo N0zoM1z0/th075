@@ -65,6 +65,9 @@ Done so far:
   all 1,043 relocation positions/types were unchanged. Its 914 GPR and
   six width differences still prevent exact credit; all 24 affected
   units cold-replayed successfully.
+  Ten source-equivalent compiler probes at the first GPR join in case 837
+  left its entire giant frontier unchanged or regressed it; details are
+  recorded in GIANTS.md.
 
 - The class structure from the PE vtables is in source: `Actor`, `Fighter`,
   one `<Char>Fighter` per character with its overrides under the slot names,
