@@ -330,6 +330,11 @@ Forty-one `char&` aliases of signed `facing` fields were removed from 21
 Reimu/Youmu shared fragments. The complete Reimu and Youmu `Advance` bodies
 and all relocation maps remain identical; their nonexact frontier counts
 remain 42,551 and 16,833 differing bytes, unchanged.
+Twenty more byte aliases were removed from five large fighter parents:
+ten zero writes to `field3AC`, seven direct signed-byte `field366` decrements
+and three owner-facing copies. Complete Reimu/Sakuya/Youmu/Remilia advances
+and PatchouliObject advance bodies/relocations remain identical; their
+frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 / 24,643.
 `Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
 signed render test; its render and base-reset functions remain byte-identical.
 Four signed-byte views used only to store zero to the unsigned `field39C`

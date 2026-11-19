@@ -1036,6 +1036,13 @@ byte were removed from 21 shared Reimu attack/state fragments and the Youmu
 owner-wave fragment. Both complete Reimu and Youmu `Advance` bodies (62,090
 and 47,655 bytes; 1,824 and 1,491 relocations) remain byte-identical, and
 both nonexact frontiers remain unchanged at 42,551 / 16,833 differing bytes.
+Twenty further unsigned-byte aliases were removed from five large fighter
+parents: ten zero writes to signed `field3AC`, seven byte decrements of signed
+`field366`, and three owner-facing copies. The Reimu/Sakuya/Youmu/Remilia
+fighter advances and PatchouliObject advance (62,090 / 83,922 / 47,655 /
+59,236 / 82,109 bytes; 1,824 / 2,352 / 1,491 / 1,863 / 1,449 relocations)
+all remain byte-identical. Their frontier drift remains unchanged at 42,551,
+18,253, 16,833, 40,569 and 24,643 bytes respectively.
 The notice gate `Fighter::noticeFirst` at `+0x6E8` is a signed byte; its
 native render test sign-extends the value. The member is now `signed char`,
 with the complete 1,637-byte render and 1,151-byte base-reset functions still
