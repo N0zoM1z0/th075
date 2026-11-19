@@ -47,7 +47,7 @@ case 0x2DB: {
         aiCardTimer=300-g_ReimuRepeatSettingAt006714D0*20;
     }
     if ((animationStage)==4 && (animationFrame)==0) {
-        SpawnTrackedAt453B50(0x3B6,(*(&x))+g_ThresholdAt0065782C,
+        Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+g_ThresholdAt0065782C,
             (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<30) {

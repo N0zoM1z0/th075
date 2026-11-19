@@ -12,7 +12,7 @@ case F897_CASE: {
     if ((animationStage)==3 && (animationFrame)<30) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
-            SpawnAt453C80(0x3E,
+            SpawnAuxEffect(0x3E,
                 x-
                     float((facing)*65),
                 (*(&y))+g_F860ShotYAt006581DC,1,1);
@@ -31,17 +31,17 @@ case F897_CASE: {
         PlaySharedSound(0x17);
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<signed short>(x);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<signed short>(y);
-        SpawnExtraRawYAt453B50(0x33D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(0x33D,x,y,
             (facing),1,0,1);
     }
     if ((animationStage)==9 && (animationFrame)==0) {
-        SpawnExtraRawYAt453B50(F897_SECOND_SPRITE,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(F897_SECOND_SPRITE,x,y,
             (facing),1,0,1);
         PlaySound(7);
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         SetCameraShake(10.0f);
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }
     return;

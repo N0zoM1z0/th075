@@ -43,7 +43,7 @@ case 0x130: {
     if ((animationStage)==3 && (animationFrame)==0)
         PlaySharedSound(0x1C);
     if ((animationStage)==3 && (animationFrame)==0) {
-        SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(0x334,x,y,
             facing,1,0,1);
     }
     break;

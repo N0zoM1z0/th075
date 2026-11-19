@@ -27,7 +27,7 @@ case 0x1F5: {
         ResetPrimaryCounters(0);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=9.5f;
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }
     if ((animationStage)==2 && (animationFrame)==0) {
@@ -48,7 +48,7 @@ case 0x1F5: {
         velocityX=10.0f;
         velocityY=15.0f;
         field05C=0.65f;
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }
     if ((animationStage)==0x18 && (animationFrame)==0)

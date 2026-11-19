@@ -24,9 +24,9 @@ case 0x1F6: {
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=14.0f;
-        SpawnFloatXRawYAt453C80(0x80,
+        SpawnAuxEffect(0x80,
             float((facing)*100)+(x),
-            reinterpret_cast<int&>(y),(facing),1);
+            y,(facing),1);
         SpawnBattleEffect(0x336,x,y,
             (facing),1);
         PlaySound(2);

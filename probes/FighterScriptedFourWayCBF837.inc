@@ -28,11 +28,11 @@ case 0xCB: {
         velocityX=-10.0f;
         velocityY=5.0f;
         field05C=0.6f;
-        SpawnAt453C80(0x7D,
+        SpawnAuxEffect(0x7D,
             x-float((facing)*80),
             (*(&y))+g_ContactProjectionAt00657888,
             -(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_ContactProjectionAt00657888,
             -(facing),1);
         PlaySharedSound(31);

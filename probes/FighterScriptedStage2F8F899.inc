@@ -13,7 +13,7 @@ case 0x2F8: {
     if ((animationStage)<6 && (animationFrame)<10) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
-            SpawnAt453C80(0x3E,
+            SpawnAuxEffect(0x3E,
                 x-
                     float((facing)*40),
                 (*(&y))+g_F898ShotYAt0065839C,1,1);
@@ -68,9 +68,9 @@ case 0x2F8: {
         scaleY=0.05f;
         velocityX=float(RecordedRange(0,60))+
             g_ApproachUpperAt006592A4;
-        SpawnFloatXRawYAt453C80(0x80,
+        SpawnAuxEffect(0x80,
             float((facing)*150)+(x),
-            reinterpret_cast<int&>(y),(facing),1);
+            y,(facing),1);
     }
     if ((animationStage)==13-static_cast<int>(g_CloudOpponentAt006714D0)
         && (animationFrame)==0

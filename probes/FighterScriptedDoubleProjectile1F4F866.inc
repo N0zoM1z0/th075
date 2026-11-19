@@ -32,7 +32,7 @@ case 0x1F4: {
         velocityX=8.0f;
         velocityY=9.5f;
         field05C=0.65f;
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }
     if ((animationStage)==0xD && (animationFrame)==0)

@@ -13,7 +13,7 @@ case 0x2C1: {
         PlaySharedSound(0x17);
         PlaySound(9);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnMixedAt453C80(0x74,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x74,x,
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
     }
@@ -21,7 +21,7 @@ case 0x2C1: {
     if (AdvanceNestedFrame()==(field070)) {
         fieldF10=0x1A4;
         ResetPrimaryCounters(0);
-        SpawnExtraAt453B50(0x345,reinterpret_cast<int&>(x),
+        Fighter::SpawnTrackedEffect(0x345,x,
         (*(&y))+g_ContactProjectionAt00657888,1,1,0,1);
     }
     return;

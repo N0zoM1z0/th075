@@ -31,9 +31,9 @@ case 0xC8: {
     }
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=11.0f;
-        SpawnAt453C80(0x7D,float(facing*80)+(x),
+        SpawnAuxEffect(0x7D,float(facing*80)+(x),
             (*(&y))+g_ReimuCommandYAt00658268,reinterpret_cast<char&>(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandYAt00658268,
+        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandYAt00658268,
             reinterpret_cast<char&>(facing),1);
         PlaySharedSound(31);
     }
@@ -44,9 +44,9 @@ case 0xC9: {
     if ((animationStage)==0 && (animationFrame)==0) velocityX=0.0f;
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=-10.0f; velocityY=5.0f; field05C=0.6f;
-        SpawnMixedAt453C80(0x7D,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandYAt00658268,
+        SpawnAuxEffect(0x7D,x,(*(&y))+g_ReimuCommandYAt00658268,
             -facing,1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandYAt00658268,
+        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandYAt00658268,
             -facing,1);
         PlaySharedSound(31);
     }
@@ -67,9 +67,9 @@ case 0xCA: {
     if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=9.0f; velocityY=5.0f; field05C=0.45f;
-        SpawnAt453C80(0x7D,float(facing*80)+(x),
+        SpawnAuxEffect(0x7D,float(facing*80)+(x),
             (*(&y))+g_ReimuCommandFrontYAt006590AC,reinterpret_cast<char&>(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandFrontYAt006590AC,
+        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandFrontYAt006590AC,
             reinterpret_cast<char&>(facing),1);
         PlaySharedSound(31);
     }
@@ -98,9 +98,9 @@ case 0xCB: {
     if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(8);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=-9.0f; velocityY=5.0f; field05C=0.45f;
-        SpawnMixedAt453C80(0x7D,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandBackYAt006590A8,
+        SpawnAuxEffect(0x7D,x,(*(&y))+g_ReimuCommandBackYAt006590A8,
             -facing,1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandBackYAt006590A8,
+        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandBackYAt006590A8,
             -facing,1);
         PlaySharedSound(31);
     }

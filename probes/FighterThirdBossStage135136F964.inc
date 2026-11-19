@@ -81,7 +81,7 @@ case 0x136: {
         field05C=1.0f;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        SpawnSevenAt453B50(0x337,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(0x337,x,y,
             facing,1,0,1);
     }
     if ((animationStage)==9 && (animationFrame)==0)

@@ -25,7 +25,7 @@ case 0x133: {
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1C);
     if ((animationStage)==3 && (animationFrame)==0)
-        SpawnSevenAt453B50(0x324,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(0x324,x,y,
             facing,1,0,1);
     break;
 }
@@ -62,7 +62,7 @@ case 0x134: {
         field05C=0.65f;
     }
     if ((animationStage)==7 && (animationFrame)==0)
-        SpawnSevenAt453B50(0x336,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(0x336,x,y,
             facing,1,0,1);
     if ((animationStage)==7 && (animationFrame)==0)
         PlaySharedSound(0x1D);

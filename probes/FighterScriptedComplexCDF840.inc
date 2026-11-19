@@ -26,7 +26,7 @@ case 0xCD: {
             velocityX=11.0f;
             velocityY=17.5f;
             field05C=0.8f;
-            SpawnRawAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            SpawnAuxEffect(0x3C,x,y,1,1);
             field3AC=0;
         }
         if (animationStage>=field070)

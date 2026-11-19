@@ -11,7 +11,7 @@ case 0x2F0: {
     if ((animationStage)<6) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
-            SpawnAt453C80(0x3E,
+            SpawnAuxEffect(0x3E,
                 x-
                     float((facing)*40),
                 (*(&y))+g_F898ShotYAt0065839C,1,1);
@@ -61,9 +61,9 @@ case 0x2F0: {
         scaleX=3.0f;
         scaleY=0.05f;
         velocityX=20.0f;
-        SpawnFloatXRawYAt453C80(0x80,
+        SpawnAuxEffect(0x80,
             float((facing)*150)+(x),
-            reinterpret_cast<int&>(y),(facing),1);
+            y,(facing),1);
     }
     if ((animationStage)==11 && (animationFrame)==0)
         velocityX=15.0f;

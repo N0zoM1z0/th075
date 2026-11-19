@@ -27,7 +27,7 @@ case R1185_ACTION: {
             velocityY=R1185_Y_SPEED;
             field05C=0.65f;
             field3AC=0;
-            SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            SpawnAuxEffect(0x3C,x,y,1,1);
         }
         if ((animationStage)>=(field070)) animationStage=(animationStage)-2;
         BindAnimation();

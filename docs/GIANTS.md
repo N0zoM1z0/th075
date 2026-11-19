@@ -345,6 +345,17 @@ positions/types and every nonrelocation byte; all 98 exact units
 impacted by the Remilia fighter header cold-replayed 98/98 in bounded
 36/31/31 groups. The 58 KB giant remains nonexact.
 
+The Reimu, Sakuya and Youmu fighter giants now also use their actual
+inherited `Fighter::SpawnTrackedEffect(short,float,float,...)` and
+`Fighter::SpawnAuxEffect(short,float,float,...)` interfaces in place of
+94 source-level per-character 00453B50/00453C80 aliases across 57
+case-fragment files. This yields 120 native call relocations in the
+three full COFF parents (29 Reimu, 25 Sakuya, 66 Youmu); all three
+retain their original 62,090 / 83,922 / 47,655-byte section extents,
+relocation positions/types and every nonrelocation byte. 127 header-
+affected exact units cold-replayed 127/127 in bounded 43/42/42 groups.
+All three large fighter frontiers remain nonexact.
+
 Four native fighter parents now use the same inherited 00455580
 `Actor::RecordedRange(int,int)` rather than per-character range aliases:
 Reimu 29, Sakuya 97, Youmu 16 and Remilia 27 (169 native COFF call

@@ -21,14 +21,14 @@ case 0x2BF: {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnAt453C80(0x74,
+        SpawnAuxEffect(0x74,
             x-
                 float((facing)*64),
             (*(&y))+g_F884Stage5YAt00659470,
             (facing),1);
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<signed short>(x);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<signed short>(y);
-        SpawnExtraRawYAt453B50(0x33D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(0x33D,x,y,
             (facing),1,0,1);
     }
     if ((animationStage)==10 && (animationFrame)==0) {
@@ -37,7 +37,7 @@ case 0x2BF: {
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         SetCameraShake(10.0f);
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }
     return;

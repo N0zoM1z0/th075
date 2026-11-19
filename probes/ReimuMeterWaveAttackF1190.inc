@@ -3,7 +3,7 @@ case R1190_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
-        SpawnAt453C80(R1190_AUX_EFFECT,float(facing*24)+(x),
+        SpawnAuxEffect(R1190_AUX_EFFECT,float(facing*24)+(x),
             (*(&y))+g_ReimuMeterInitialYAt00659084,reinterpret_cast<char&>(facing),1);
         field36C=(field36C)-g_ContactProjectionAt00657888;
 #if R1190_HAS_ANIMATION

@@ -26,7 +26,7 @@ case 0x2BC: {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         if (field07C==1) {
             PlaySound(0xD);
-            SpawnExtraAt453B50(0x346,reinterpret_cast<int&>(x),
+            Fighter::SpawnTrackedEffect(0x346,x,
                 (*(&y))+g_ContactProjectionAt00657888,
                 (facing),1,0,1);
         }
@@ -37,7 +37,7 @@ case 0x2BC: {
         SetNonnegativeWord(0x28);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         PlaySharedSound(0x17);
-        SpawnAt453C80(0x73,
+        SpawnAuxEffect(0x73,
             x-
                  float((facing)*64),
             (*(&y))+g_F884Stage5YAt00659470,
@@ -63,9 +63,9 @@ case 0x2BC: {
         scaleY=0.05f;
         velocityX=20.0f;
         UpdateGaugeTimer(0x1F4);
-        SpawnFloatXRawYAt453C80(0x80,
+        SpawnAuxEffect(0x80,
             float((facing)*150)+(x),
-            reinterpret_cast<int&>(y),(facing),1);
+            y,(facing),1);
     }
     return;
 }

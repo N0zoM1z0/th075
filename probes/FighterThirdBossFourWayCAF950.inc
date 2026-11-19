@@ -21,7 +21,7 @@ case 0xCA: {
             float((facing)*80)+(x),
             (*(&y))+g_F950_CAVolleyYAt00658400,
             facing,1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_F950_CAVolleyYAt00658400,
             facing,1);
         PlaySharedSound(31);

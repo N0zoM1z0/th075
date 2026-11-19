@@ -23,7 +23,7 @@ case 0x252: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
-        SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x37,x,
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
         PlaySharedSound(0x21);
@@ -46,7 +46,7 @@ case 0x253: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
-        SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x37,x,
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
         PlaySharedSound(0x21);
@@ -67,7 +67,7 @@ case 0x254: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
-        SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x37,x,
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
         PlaySharedSound(0x21);

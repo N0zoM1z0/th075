@@ -24,7 +24,7 @@ case 0x12E: {
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1D);
     if ((animationStage)==4 && (animationFrame)==0) {
-        SpawnSevenAt453B50(0x333,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        Fighter::SpawnTrackedEffect(0x333,x,y,
             facing,1,0,1);
     }
     break;

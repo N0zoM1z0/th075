@@ -6,11 +6,11 @@ case 0xC9: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=-15.0f;
-        SpawnAt453C80(0x7D,
+        SpawnAuxEffect(0x7D,
             x-float((facing)*80),
             (*(&y))+g_F701_VolleyYAt00658268,
             -(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_F701_VolleyYAt00658268,
             -(facing),1);
         PlaySharedSound(31);

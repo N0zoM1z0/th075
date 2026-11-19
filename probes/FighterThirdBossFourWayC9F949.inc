@@ -33,10 +33,10 @@ case 0xC9: {
         velocityY=4.0f;
         field05C=0.6f;
         velocityX=-30.0f;
-        SpawnMixedAt453C80(0x7D,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7D,x,
             (*(&y))+g_ContactProjectionAt00657888,
             -(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_ContactProjectionAt00657888,
             -(facing),1);
         PlaySharedSound(31);

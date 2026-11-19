@@ -14,7 +14,7 @@ case 0x254: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x37,x,
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
         PlaySharedSound(0x21);

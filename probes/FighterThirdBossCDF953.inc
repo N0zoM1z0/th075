@@ -29,7 +29,7 @@ case 0xCD: {
         ++animationStage;
         if (animationStage==2) {
             // Original native call before the actual motion values are reset.
-            SpawnRawAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            SpawnAuxEffect(0x3C,x,y,1,1);
             velocityX=10.0f;
             velocityY=15.0f;
             field05C=0.7f;

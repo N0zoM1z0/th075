@@ -49,11 +49,11 @@ case 0xC8: {
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=11.5f;
-        SpawnAt453C80(0x7D,
+        SpawnAuxEffect(0x7D,
             float((facing)*80)+(x),
             (*(&y))+g_F701_VolleyYAt00658268,
             (facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_F701_VolleyYAt00658268,
             (facing),1);
     }

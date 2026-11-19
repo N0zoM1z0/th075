@@ -29,7 +29,7 @@ case 0x2DD: {
         aiCardTimer=RecordedRange(0,60);
     }
     if ((animationStage)==3 && (animationFrame)==0) {
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             (facing),1);
         velocityX=float(RecordedRange(0,6))+g_F894RandomHeightAt006592A0;
         velocityY=16.0f;

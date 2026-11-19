@@ -9,7 +9,7 @@ case 0x1F9: {
         field3AC=0;
     }
     if ((animationStage)==2 && field07C==3) {
-        SpawnAt453C80(0x32,
+        SpawnAuxEffect(0x32,
             float((facing)*50)+(x),
             (*(&y))+g_F872Volley1F9YAt006598BC,
             (facing),1);

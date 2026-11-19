@@ -11,17 +11,11 @@ public:
     virtual ~YoumuFighter();
     virtual void Advance(); // slot 1: nonexact giant at 005214B0
 
-    // Provisional native-call ABI declarations from the complete giant
-    // research parent; do not infer separate helper implementations.
+    // Remaining nonshared call-shape probes. The 00453B50 and 00453C80
+    // effects use Fighter's inherited typed methods.
     void SpawnFloatXRawYAt453A70(int,float,int,char,int);
-    void SpawnExtraAt453B50(int,int,float,char,int,int,int);
-    void SpawnExtraRawYAt453B50(int,int,int,char,int,int,int);
     void SetupCollisionAt454BC0(int,int,int);
-    void SpawnRawAt453C80(int,int,int,char,int);
-    void SpawnFloatXRawYAt453C80(int,float,int,char,int);
     void NativeGameEffectAt455B30();
-    void SpawnMixedAt453C80(int,int,float,char,int);
-    void SpawnAt453C80(int,float,float,char,int);
 
     void ConfigureStage();
     void ChooseAction();

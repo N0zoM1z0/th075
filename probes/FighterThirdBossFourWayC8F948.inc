@@ -47,7 +47,7 @@ case 0xC8: {
             float((facing)*80)+(x),
             (*(&y))+g_F948_C8VolleyYAt00658268,
             facing,1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_F948_C8VolleyYAt00658268,
             facing,1);
         PlaySharedSound(31);

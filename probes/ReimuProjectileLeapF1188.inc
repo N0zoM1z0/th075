@@ -20,7 +20,7 @@ case R1188_ACTION: {
     }
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=R1188_LEAP_X; velocityY=R1188_LEAP_Y; field05C=0.9f;
-        SpawnRawXYAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
+        SpawnAuxEffect(0x7F,x,y,reinterpret_cast<char&>(facing),1);
     }
     if ((animationStage)==10 && (animationFrame)==0) ResetSecondaryCounter(8);
     break;

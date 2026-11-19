@@ -38,7 +38,7 @@ case 0x1F4: {
         velocityX=2.0f;
         velocityY=6.5f;
         field05C=0.4f;
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             facing,1);
         PlaySound(3);
     }
@@ -105,7 +105,7 @@ case 0x1F5: {
     if ((animationStage)==7 && (animationFrame)==0) {
         velocityX=8.0f;
         velocityY=13.5f;
-        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnAuxEffect(0x7F,x,y,
             facing,1);
         field05C=0.5f;
         PlaySound(3);

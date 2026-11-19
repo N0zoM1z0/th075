@@ -51,6 +51,11 @@ Done so far:
   Whole 59,236-byte COFF and all 1,863 relocation positions/types are
   unchanged outside symbol names; 98/98 header-affected exact units
   replayed locally in three bounded groups.
+- Reimu, Sakuya and Youmu giant sources now call the real inherited
+  `Fighter::SpawnTrackedEffect` / `SpawnAuxEffect` APIs at 94 source
+  sites (120 native COFF relocations), removing 14 duplicate per-class
+  declarations. Three complete COFF bodies and all relocation shapes
+  are unchanged; 127/127 affected exact units replayed in local batches.
 - Four complete fighter giants also now call the real inherited
   `Actor::RecordedRange(int,int)`: 169 native relocations (Reimu 29,
   Sakuya 97, Youmu 16, Remilia 27). The full functions preserve their

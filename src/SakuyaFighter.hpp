@@ -11,13 +11,6 @@ public:
     virtual ~SakuyaFighter();
     virtual void Advance(); // slot 1: nonexact giant at 004AC040
 
-    // Native-call contracts carried by the complete fighter state machine.
-    // Provisional helper spellings do not establish separate class ownership.
-    void SpawnMixedAt453C80(short,int,float,signed char,signed char);
-    void SpawnRawAt453C80(short,int,int,signed char,signed char);
-    void SpawnSevenAt453B50(short,int,int,signed char,signed char,unsigned char,unsigned char);
-    void SpawnSevenRawXFloatYAt453B50(short,int,float,signed char,signed char,unsigned char,unsigned char);
-
     void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;

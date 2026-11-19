@@ -16,13 +16,13 @@ case R1190_ACTION: {
     if ((animationStage)==2 && (animationFrame)==0) {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
-        SpawnAt453C80(R1190_AUX_EFFECT,x-float(facing*2),
+        SpawnAuxEffect(R1190_AUX_EFFECT,x-float(facing*2),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         UpdateGaugeTimer(500);
     }
     if ((animationStage)==4 && (animationFrame)==0) {
-        SpawnTrackedAt453B50(0x3B6,(*(&x))+g_ThresholdAt0065782C,
+        Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+g_ThresholdAt0065782C,
             (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<13) {
