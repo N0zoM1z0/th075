@@ -149,6 +149,9 @@ types, addends and local targets; its 447-GPR / 12-width frontier is unchanged.
 Remilia's 28,868-byte object giant also dropped 24 redundant numeric casts
 while preserving all 696 relocation positions, types, addends and local
 targets; its 726-GPR / six-width frontier is unchanged.
+Suika's 43,501-byte object giant also dropped 18 redundant short casts
+while preserving all 43,972 COFF bytes and 991 relocation positions/types/
+addends/local targets; its 935-GPR / one-width frontier is unchanged.
 
 For a complete parent:
 

@@ -748,6 +748,12 @@ four complete COFF bodies (42,937 / 40,464 / 44,104 / 28,868 bytes), all
 byte remain unchanged. All four frontiers remain explicitly nonexact.
 
 SuikaObject::Advance also replaces 22 unsigned-int-reference aliases between declared float fields (scale, owner/opponent coordinates, velocity and fighter transform angle) with direct float assignments. The complete 43,972-byte COFF, all 991 relocation positions/types and every nonrelocation byte remain unchanged; the boss stays nonexact.
+A further whole-function pass removes 18 redundant `static_cast<short>`
+wrappers from Suika's short-member assignments, including angle results and
+float/coordinate truncations. The full 43,972-byte COFF body and all 991
+relocation positions/types/addends/local targets remain identical. Its
+frontier stays at 935 GPR positions, one width difference and first
+`005D2558`; no exact giant credit is claimed.
 
 Reimu fighter motion now uses the real float types for the reaction-velocity pair: FighterFrameInfo +0x2C/+0x30 and Actor +0x94/+0x98 are floats, not unsigned integer bit buckets. The 0x46 trajectory now performs ordinary float negation/addition, combat reaction scales the float fields directly, and Fighter initialization writes float zeroes. The full 62,090-byte Reimu fighter COFF remains identical with all 1,824 relocation offsets/types and zero nonrelocation-byte differences. All 462 exact units affected by the shared Actor header cold-replayed 462/462 in 16 bounded batches; the 855-byte projectile Advance remains exact.
 
