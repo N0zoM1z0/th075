@@ -268,3 +268,7 @@ loader sign-extends it before `AllocateSlots`. The declaration and call now
 use the natural member directly; the complete 1,186-byte loader body and all
 63 relocations remain identical, with the loader plus all eleven character
 initializers replayed 12/12.
+`Fighter::field6F8` (+0x6F8) is now `signed char`, matching the `movsx`
+loads in both Meiling/Patchouli stage renderers. Removing their two
+reinterpret-reference views preserves both 1,606-byte bodies and all 40
+relocations; the affected exact renderers replayed 2/2.

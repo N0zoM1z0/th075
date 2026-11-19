@@ -957,3 +957,9 @@ the member is now `short` and the call passes it directly, removing the last
 1,186-byte `Fighter::LoadResources` body and all 63 relocations remain
 identical. Its exact unit and all eleven character initialization units
 replayed 12/12.
+`Fighter::field6F8` at `+0x6F8` is a signed byte. Both complete stage
+renderers load it with native `movsx` before comparing the stage-render gate;
+the shared member is now `signed char` and both explicit signed-byte
+reinterpret views are gone. Meiling and Patchouli retain their complete
+1,606-byte COFF bodies and all 40 relocations each; the two exact renderer
+units replayed 2/2.
