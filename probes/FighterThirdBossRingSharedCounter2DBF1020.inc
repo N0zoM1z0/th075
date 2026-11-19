@@ -30,7 +30,7 @@ case 0x2DB: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
-        reinterpret_cast<signed short&>(fieldF06)=0;
+        fieldF06=0;
         field05C=0.2f;
     }
     if ((animationStage)==6 || (animationStage)==7) {
@@ -142,7 +142,7 @@ case 0x2DB: {
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         ++scriptCounterF00;
-        reinterpret_cast<signed short&>(fieldF06)=0;
+        fieldF06=0;
         int shot;
         for (shot=0;shot<360;shot+=10) {
             field314=float(shot);
@@ -163,9 +163,9 @@ case 0x2DB: {
                 facing,1);
         }
     }
-    if ((animationStage)==17 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<6) {
+    if ((animationStage)==17 && (animationFrame)==0 && (fieldF06)<6) {
         ResetSecondaryCounter(15);
-        ++reinterpret_cast<signed short&>(fieldF06);
+        ++fieldF06;
     }
     if ((animationStage)==20 && (animationFrame)==0)
         ResetSecondaryCounter(18);

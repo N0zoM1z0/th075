@@ -14,12 +14,12 @@ case 0x2E5: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
-        reinterpret_cast<signed short&>(fieldF06)=0;
-        reinterpret_cast<signed short&>(fieldF08)=g_F1004_ModeAt006714D0+2;
+        fieldF06=0;
+        fieldF08=g_F1004_ModeAt006714D0+2;
     }
-    if ((animationStage)>4 && (animationStage)<11 && (reinterpret_cast<signed short&>(fieldF08))>0) {
-        --reinterpret_cast<signed short&>(fieldF06);
-        if ((reinterpret_cast<signed short&>(fieldF06))>3-g_F1004_ModeAt006714D0) {
+    if ((animationStage)>4 && (animationStage)<11 && (fieldF08)>0) {
+        --fieldF06;
+        if ((fieldF06)>3-g_F1004_ModeAt006714D0) {
             field314=float((scriptCounterF02)*5);
             SpawnBattleEffect(0x387,
                 x -
@@ -34,9 +34,9 @@ case 0x2E5: {
                 facing,1);
             ++scriptCounterF02;
         }
-        if ((reinterpret_cast<signed short&>(fieldF06))<=0 && (reinterpret_cast<signed short&>(fieldF06))<-30) {
-            reinterpret_cast<signed short&>(fieldF06)=10;
-            --reinterpret_cast<signed short&>(fieldF08);
+        if ((fieldF06)<=0 && (fieldF06)<-30) {
+            fieldF06=10;
+            --fieldF08;
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
@@ -45,10 +45,10 @@ case 0x2E5: {
             RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==4 && (animationFrame)==0)
-        reinterpret_cast<signed short&>(fieldF06)=10;
+        fieldF06=10;
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySound(5);
-    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF08))>0)
+    if ((animationStage)==11 && (animationFrame)==0 && (fieldF08)>0)
         ResetSecondaryCounter(9);
     if ((animationStage)==13 && (animationFrame)==0) {
         ++fieldF04;

@@ -17,8 +17,8 @@ case 0x2E6: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
-        reinterpret_cast<signed short&>(fieldF06)=30;
-        reinterpret_cast<signed short&>(fieldF08)=1;
+        fieldF06=30;
+        fieldF08=1;
         field05C=0.15f;
     }
     if ((animationStage)==6 || (animationStage)==7) {

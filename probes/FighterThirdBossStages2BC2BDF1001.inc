@@ -17,7 +17,7 @@ case 0x2BC: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
-        reinterpret_cast<signed short&>(fieldF06)=0;
+        fieldF06=0;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
@@ -52,9 +52,9 @@ case 0x2BC: {
     }
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySound(5);
-    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
+    if ((animationStage)==11 && (animationFrame)==0 && (fieldF06)<5) {
         ResetSecondaryCounter(9);
-        ++reinterpret_cast<signed short&>(fieldF06);
+        ++fieldF06;
     }
     break;
 }
@@ -67,7 +67,7 @@ case 0x2BD: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
-        reinterpret_cast<signed short&>(fieldF06)=0;
+        fieldF06=0;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
@@ -102,9 +102,9 @@ case 0x2BD: {
     }
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySound(6);
-    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
+    if ((animationStage)==11 && (animationFrame)==0 && (fieldF06)<5) {
         ResetSecondaryCounter(9);
-        ++reinterpret_cast<signed short&>(fieldF06);
+        ++fieldF06;
     }
     break;
 }

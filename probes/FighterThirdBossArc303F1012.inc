@@ -17,9 +17,9 @@ case 0x303: {
         scriptCounterF02=0;
         fieldF04=0;
         if (RecordedRange(0,100)>50)
-            reinterpret_cast<signed short&>(fieldF06)=5;
+            fieldF06=5;
         else
-            reinterpret_cast<signed short&>(fieldF06)=-5;
+            fieldF06=-5;
     }
     if ((animationStage)<9 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
@@ -40,7 +40,7 @@ case 0x303: {
             if ((scriptCounterF00)<g_F1004_ModeAt006714D0*5+10) {
                 PlaySound(0);
                 scriptCounterF02=(velocityX)*g_ContactProjectionAt00657888;
-                reinterpret_cast<signed short&>(fieldF08)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+                fieldF08=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
                 field314=float(fieldF04);
                 field318=10.0f;
                 SetPolarVelocity(float(fieldF04),100.0f);
@@ -49,8 +49,8 @@ case 0x303: {
                     (*(&y))+g_F1012_ArcYAt006591EC-velocityY,
                     facing,1);
                 velocityX=float(scriptCounterF02)*g_F747_BounceYAt00658044;
-                velocityY=float(reinterpret_cast<signed short&>(fieldF08))*g_F747_BounceYAt00658044;
-                fieldF04+=reinterpret_cast<signed short&>(fieldF06);
+                velocityY=float(fieldF08)*g_F747_BounceYAt00658044;
+                fieldF04+=fieldF06;
             }
         }
     }

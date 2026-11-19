@@ -16,7 +16,7 @@ case 0x302: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
-        reinterpret_cast<signed short&>(fieldF08)=g_F1004_ModeAt006714D0+2;
+        fieldF08=g_F1004_ModeAt006714D0+2;
     }
     if ((animationStage)<13 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;

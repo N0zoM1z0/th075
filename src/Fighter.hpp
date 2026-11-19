@@ -283,8 +283,8 @@ public:
     short scriptCounterF00;              // +0xF00 signed 16-bit script state
     short scriptCounterF02;              // +0xF02 signed 16-bit script state
     short fieldF04;                     // +0xF04
-    unsigned short fieldF06;            // +0xF06
-    unsigned short fieldF08;            // +0xF08
+    short fieldF06;                     // +0xF06 signed third-boss phase/cadence value
+    short fieldF08;                     // +0xF08 signed third-boss trajectory/cadence value
     short fieldF0A;                     // +0xF0A
     short fieldF0C;                     // +0xF0C
     short fieldF0E;                     // +0xF0E

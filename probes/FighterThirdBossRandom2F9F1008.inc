@@ -15,7 +15,7 @@ case 0x2F9: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=static_cast<short>(RecordedRange(0,3));
-        reinterpret_cast<signed short&>(fieldF06)=static_cast<short>(RecordedRange(0,100));
+        fieldF06=static_cast<short>(RecordedRange(0,100));
         field07C=0;
         ClearMotionFields();
         field080=99;
@@ -24,25 +24,25 @@ case 0x2F9: {
         SpawnBattleEffect(0x38B,
             (x)+g_F1008_CenterXAt006593D0
                 - float(RecordedRange(0,480)),
-            float(RecordedRange(0,200)+((reinterpret_cast<signed short&>(fieldF06))>50)*200),
+            float(RecordedRange(0,200)+((fieldF06)>50)*200),
             facing,1);
         if (g_F1004_ModeAt006714D0>0)
             SpawnBattleEffect(0x38B,
                 (x)+g_F1008_AlternateXAt00658370
                     - float(RecordedRange(0,560)),
-                float(RecordedRange(0,250)+((reinterpret_cast<signed short&>(fieldF06))>50)*250),
+                float(RecordedRange(0,250)+((fieldF06)>50)*250),
                 facing,1);
         if ((animationStage)==9 && (animationFrame)==0 && g_F1004_ModeAt006714D0>1)
             Fighter::SpawnTrackedEffect(0x38A,
                 (x)+g_F1008_CenterXAt006593D0
                     - float(RecordedRange(0,480)),
-                float(RecordedRange(0,200)+((reinterpret_cast<signed short&>(fieldF06))>50)*200),
+                float(RecordedRange(0,200)+((fieldF06)>50)*200),
                 facing,1,0,1);
         if ((animationStage)==10 && (animationFrame)==0 && g_F1004_ModeAt006714D0>2)
             Fighter::SpawnTrackedEffect(0x38A,
                 (x)+g_F1008_AlternateXAt00658370
                     - float(RecordedRange(0,560)),
-                float(RecordedRange(0,250)+((reinterpret_cast<signed short&>(fieldF06))>50)*250),
+                float(RecordedRange(0,250)+((fieldF06)>50)*250),
                 facing,1,0,1);
     }
     if (AdvanceNestedFrame()==(field070)) {
