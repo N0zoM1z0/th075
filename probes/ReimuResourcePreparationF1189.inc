@@ -12,7 +12,7 @@ case R1189_ACTION: {
         SpawnAuxEffect(0x37,x,(*(&y))+g_ContactProjectionAt00657888,
             reinterpret_cast<char&>(facing),1);
         PlaySharedSound(0x21);
-        reinterpret_cast<short&>(opponent->fieldEFA)=0;
+        opponent->fieldEFA=0;
     }
     break;
 }

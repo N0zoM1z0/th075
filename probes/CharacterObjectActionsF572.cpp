@@ -85,8 +85,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 0x19) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -163,8 +163,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 0x19) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -241,8 +241,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 0x19) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -319,8 +319,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 0x19) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -425,8 +425,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -520,8 +520,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -595,8 +595,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -670,8 +670,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -751,8 +751,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -1538,8 +1538,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -1622,8 +1622,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
@@ -1696,8 +1696,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4,x,y,1,1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA) = 0;
             owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
@@ -1785,8 +1785,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
             owner->SpawnBattleEffect(0x3E4,x,y,1,1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
-            (reinterpret_cast<short&>(owner->fieldEFA))=0;
+        if ((owner->fieldEFA) > 25) {
+            (owner->fieldEFA)=0;
             owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
@@ -1835,8 +1835,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0;iteration<4;++iteration)
             owner->SpawnBattleEffect(0x3E4,x,y,1,1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA))>25) {
-            (reinterpret_cast<short&>(owner->fieldEFA))=0;
+        if ((owner->fieldEFA)>25) {
+            (owner->fieldEFA)=0;
             owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
@@ -1885,8 +1885,8 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         for (int iteration=0;iteration<4;++iteration)
             owner->SpawnBattleEffect(0x3E4,x,y,1,1);
-        if ((reinterpret_cast<short&>(owner->fieldEFA))>25) {
-            (reinterpret_cast<short&>(owner->fieldEFA))=0;
+        if ((owner->fieldEFA)>25) {
+            (owner->fieldEFA)=0;
             owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
@@ -2518,7 +2518,7 @@ void AliceObject::Advance() {
             (*(&x) - *(&(owner->opponent->x)) > gTouchMaxAt00659230) &&
             (*(&y) - *(&(owner->opponent->y)) < gParentYAt006590A8) &&
             (*(&y) - *(&(owner->opponent->y)) > gVerticalTouchMaxAt00658268)) {
-            ++(reinterpret_cast<short&>(owner->fieldEFA));
+            ++(owner->fieldEFA);
             PlaySharedSound(0x2E);
             ClearFrameInfo();
             if ((owner->opponent->spiritCooldown)>0) {

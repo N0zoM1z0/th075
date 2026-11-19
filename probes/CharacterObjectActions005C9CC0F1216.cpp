@@ -52,8 +52,8 @@ void SuikaObject::Advance()
     case 801:
         if (owner->action > 49 && owner->action < 150 && animationStage < 9) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex801 = 0; cancelIndex801 < 6; cancelIndex801++)
@@ -125,8 +125,8 @@ void SuikaObject::Advance()
     case 802:
         if (owner->action > 49 && owner->action < 150 && animationStage < 16) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex802 = 0; cancelIndex802 < 6; cancelIndex802++)
@@ -199,8 +199,8 @@ void SuikaObject::Advance()
     case 803:
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex803 = 0; cancelIndex803 < 15; cancelIndex803++)
@@ -265,8 +265,8 @@ void SuikaObject::Advance()
     case 805:
         if (owner->action > 49 && owner->action < 150 && animationStage < 1) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex805 = 0; cancelIndex805 < 2; cancelIndex805++)
@@ -343,8 +343,8 @@ void SuikaObject::Advance()
     case 807:
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex807 = 0; cancelIndex807 < 15; cancelIndex807++)
@@ -400,8 +400,8 @@ void SuikaObject::Advance()
     case 808:
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex808 = 0; cancelIndex808 < 15; cancelIndex808++)
@@ -443,8 +443,8 @@ void SuikaObject::Advance()
     case 809:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex809 = 0; cancelIndex809 < 10; cancelIndex809++)
@@ -534,8 +534,8 @@ void SuikaObject::Advance()
     case 812:
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex812 = 0; cancelIndex812 < 4; cancelIndex812++)
@@ -992,8 +992,8 @@ void SuikaObject::Advance()
         }
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex824 = 0; cancelIndex824 < 7; cancelIndex824++)
@@ -1056,8 +1056,8 @@ void SuikaObject::Advance()
     case 825:
         if (owner->action > 69 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex825 = 0; cancelIndex825 < 15; cancelIndex825++)
@@ -1146,8 +1146,8 @@ void SuikaObject::Advance()
         }
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex827 = 0; cancelIndex827 < 7; cancelIndex827++)
@@ -1181,8 +1181,8 @@ void SuikaObject::Advance()
     case 828:
         if (owner->action > 69 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex828 = 0; cancelIndex828 < 15; cancelIndex828++)
@@ -1254,8 +1254,8 @@ void SuikaObject::Advance()
         }
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex829 = 0; cancelIndex829 < 5; cancelIndex829++)
@@ -1319,8 +1319,8 @@ void SuikaObject::Advance()
         }
         if (owner->action > 49 && owner->action < 150) {
             ClearFrameInfo();
-            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
-                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+            if (owner->fieldEFA > 25) {
+                owner->fieldEFA = 0;
                 owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
             for (int cancelIndex830 = 0; cancelIndex830 < 5; cancelIndex830++)
@@ -2702,7 +2702,7 @@ void SuikaObject::Advance()
             field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
-                ++reinterpret_cast<short&>(owner->fieldEFA);
+                ++owner->fieldEFA;
                 PlaySharedSound(46);
                 ClearFrameInfo();
                 if (owner->opponent->spiritCooldown > 0) {

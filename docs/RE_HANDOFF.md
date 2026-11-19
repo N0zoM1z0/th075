@@ -489,3 +489,5 @@ x87 arithmetic.
 - Actor reaction velocity fields +0x94/+0x98 and their FighterFrameInfo source fields +0x2C/+0x30 are now float. Reimu and nine trajectory fragments use direct float arithmetic; collision copies, reaction scaling and initialization are typed naturally. Reimu fighter full COFF and 1,824 relocations remain byte-identical; 462/462 affected exact units replayed locally, and CharacterProjectileAdvanceF379 remains exact.
 
 - YoumuObjectHistoryF1211's borrowed +0x04/+0x08 coordinate fields are now native floats, not unsigned DWORD bit aliases. The complete 40,464-byte object boss COFF and all 938 relocations remain byte-identical; this header is not a dependency of any exact unit.
+
+- Completed the shared signed Fighter::fieldEFA migration in the remaining five boss sources: 87 direct owner accesses across Meiling/Suika/Alice and four opponent accesses across Reimu/Remilia now use the declared short field directly. All five complete boss COFF bodies and relocation layouts remain byte-identical; these fragments affect no exact replay unit.
