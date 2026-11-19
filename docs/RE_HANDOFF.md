@@ -335,6 +335,13 @@ ten zero writes to `field3AC`, seven direct signed-byte `field366` decrements
 and three owner-facing copies. Complete Reimu/Sakuya/Youmu/Remilia advances
 and PatchouliObject advance bodies/relocations remain identical; their
 frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 / 24,643.
+`BattleScene::field010` (+0x010) is now a signed `int` frame/timeline
+counter; seventeen signed-reference aliases in frame update and timeline
+rectangle math were removed. Eleven more signed-reference overlays around
+positive writes to unsigned `field00C` were removed from pause/KO/round-end
+transitions without changing its storage type. Twenty-two exact functions
+across seven translation units replayed 22/22, including the complete
+3,459-byte overlay timeline and 4,764-byte battle-state machine.
 `Fighter::field3A4` (+0x3A4) and `field3A8` (+0x3A8) are now signed
 `int` countdown fields, matching decrement, negative-clamp and knockout
 settlement semantics. Sixteen signed-reference aliases were removed. Forty-

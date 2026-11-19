@@ -1049,6 +1049,15 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+`BattleScene::field010` (+0x010) is now a signed `int` timeline-frame
+counter, matching its per-frame increment and signed rectangle-offset math.
+Seventeen `reinterpret_cast<int&>` views in the frame and overlay-timeline
+paths are gone. Eleven additional `int&` overlays around positive writes to
+the existing unsigned `BattleScene::field00C` timer were removed in pause,
+KO and round-end transitions; the timer's unsigned storage is preserved. All
+22 exact functions across seven battle/scene translation units replayed
+22/22, including the 3,459-byte overlay timeline and 4,764-byte battle state
+machine. The four fighter giant bodies and relocation maps remain identical.
 The shared Fighter card/knockout countdowns `field3A4` (+0x3A4) and
 `field3A8` (+0x3A8) are now signed `int` members. The native update subtracts
 from them, checks negative underflow and clamps to zero; knockout settlement
