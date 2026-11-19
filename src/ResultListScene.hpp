@@ -1,6 +1,17 @@
 #ifndef TH075_RESULT_LIST_SCENE_HPP
 #define TH075_RESULT_LIST_SCENE_HPP
 #include "SceneBase.hpp"
+#include <d3d8.h>
+struct IDirect3DTexture8;
+// All result-list texture views allocate the same observed 80-byte manager.
+class ResultListTexture {
+    unsigned char observedNativeBytes[80];
+public:
+    ResultListTexture();
+    ~ResultListTexture();
+    void AllocateSlots(int count);
+    void Load(const char* filename, const char* root);
+};
 
 // The replay/result browser keeps a five-DWORD VC7 deque at +0x18.
 // Its element representation remains unknown; only Count's call contract
@@ -8,8 +19,15 @@
 class ResultListRecords {
     unsigned int physicalWords[5];
 public:
+    ResultListRecords();
+    ~ResultListRecords();
     unsigned int Count() const;
+    int Size();
+    char** Entry(int index);
 };
+
+typedef char ResultListDequePhysicalSize[(sizeof(ResultListRecords) == 20) ? 1 : -1];
+typedef char ResultListTexturePhysicalSize[(sizeof(ResultListTexture) == 80) ? 1 : -1];
 
 // Result-list browser (separate from the match-scoring ResultScene).
 // Only observed fields are declared; never instantiate or infer its full size.
@@ -22,12 +40,14 @@ public:
     short UpdateSelection();           // 0042F970
     void PollInput();                  // 00430D80
     void LoadSelectedCharacterResources();
+    void LoadCharacterTextures();
+    void ClearEntries();
     void BuildRecordPage();
     void BuildCounterPage();
 
-    void* mainTexture;                 // +008
-    void* auxiliaryTexture;            // +00C
-    void* canvas;                      // +010
+    ResultListTexture* mainTexture;     // +008
+    ResultListTexture* auxiliaryTexture; // +00C
+    IDirect3DTexture8* canvas;        // +010
     void* selectedRecord;              // +014
     ResultListRecords records;         // +018, five native DWORDs
     unsigned char unknown02C[0x1BC - 0x02C];

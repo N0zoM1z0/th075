@@ -550,8 +550,8 @@ ReplayBrowserScene::ScanFiles,0x0042D470,function
 MusicRoomScene::UpdateSelection,0x004259D0,function
 MusicRoomScene::RenderTrackCatalogText,0x00426670,function
 MusicRoomScene::RenderSelectedTitle,0x004268A0,function
-ResultScene::BuildCounterPage,0x00431350,function
-ResultScene::BuildRecordPage,0x00431070,function
+ResultListScene::BuildCounterPage,0x00431350,function
+ResultListScene::BuildRecordPage,0x00431070,function
 ResultScene::Render,0x0042EF10,function
 ResultScene::DrawDecimalDigits,0x0042F530,function
 SceneTransition::DispatchMode,0x00431F60,function
@@ -576,8 +576,8 @@ MusicRoomRecord::InitializeAt00427430,0x00427430,function
 MusicRoomRecord::ReleaseBuffersAt00427470,0x00427470,function
 MusicRoomScene::Initialize,0x00425750,function
 MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0,0x004258D0,function
-ResultListScene::Initialize,0x0042F710,function
-ResultListScene::Release,0x0042F880,function
+ResultListScene::ResultListScene,0x0042F710,function
+ResultListScene::~ResultListScene,0x0042F880,function
 ReplayPlaybackScene::Initialize,0x0042C3D0,function
 ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560,0x0042C560,function
 ReplayScene::PollPlaybackInput,0x0042D330,function

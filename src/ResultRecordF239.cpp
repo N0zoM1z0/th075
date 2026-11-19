@@ -2,6 +2,7 @@
 #include <d3d8.h>
 #include <stdio.h>
 #include <string.h>
+#include "ResultListScene.hpp"
 
 class GlyphSurfaceF239 {
 public:
@@ -32,50 +33,39 @@ class ResultRecordProgressF239 {public:
     void* GetSelectedRecordAddress();
 };
 extern ResultRecordProgressF239 g_RecordProgressAt006718F8;
-class ResultNameDequeF239 {public:
-    int Size();
-    char** Entry(int index);
-};
 extern const char g_RecordEmptyAt006580B1[];
 extern const char g_RecordEmptyNameAt006580B4[];
 extern const char g_RecordMissingFormatAt006580D8[];
 extern const char g_RecordFullFormatAt006580F4[];
 extern const char g_RecordFontAt00658110[];
-class ResultRecordSceneF239 {public: void BuildRecordPage();};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define FIELD(type,offset) (*reinterpret_cast<type*>(RAW+(offset)))
-#define META(index,offset) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(FIELD(void*,0x14))+(offset)+2*(index)))
-#define NAMES (*reinterpret_cast<ResultNameDequeF239*>(RAW+0x18))
-void ResultRecordSceneF239::BuildRecordPage()
+#define META(index,offset) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(selectedRecord)+(offset)+2*(index)))
+void ResultListScene::BuildRecordPage()
 {
-    g_RecordProgressAt006718F8.Select(FIELD(unsigned char,0x1c3),0);
-    FIELD(void*,0x14)=g_RecordProgressAt006718F8.GetSelectedRecordAddress();
+    g_RecordProgressAt006718F8.Select((static_cast<unsigned char>(selectedCharacter)),0);
+    (selectedRecord)=g_RecordProgressAt006718F8.GetSelectedRecordAddress();
     D3DLOCKED_RECT locked;
     {
         char line[200];
         {
             char message[2000];
             strcpy(message,g_RecordEmptyAt006580B1);
-            for (int i=FIELD(short,0x1bc)*10;
-                 i<FIELD(short,0x1bc)*10+10 && i<NAMES.Size(); ++i) {
+            for (int i=(pageIndex)*10;
+                 i<(pageIndex)*10+10 && i<records.Size(); ++i) {
                 if (META(i,0x394)==0)
                     sprintf(line,g_RecordMissingFormatAt006580D8,i+1,g_RecordEmptyNameAt006580B4,0,0);
                 else
-                    sprintf(line,g_RecordFullFormatAt006580F4,i+1,*NAMES.Entry(i),
+                    sprintf(line,g_RecordFullFormatAt006580F4,i+1,*records.Entry(i),
                             static_cast<unsigned int>(META(i,0x268)),static_cast<unsigned int>(META(i,0x394)));
                 strcat(message,line);
             }
-            if (FIELD(IDirect3DTexture8*,0x10)->LockRect(0,&locked,0,0)==D3D_OK) {
+            if ((canvas)->LockRect(0,&locked,0,0)==D3D_OK) {
                 GlyphSurfaceF239* glyph=new GlyphSurfaceF239(0);
                 glyph->ConfigureFont(g_RecordFontAt00658110,16,120,120,255);
                 glyph->Rasterize(message,locked.pBits,1024,512,640,0,16,4,40);
                 delete glyph;
-                FIELD(IDirect3DTexture8*,0x10)->UnlockRect(0);
+                (canvas)->UnlockRect(0);
             }
         }
     }
 }
-#undef NAMES
 #undef META
-#undef FIELD
-#undef RAW

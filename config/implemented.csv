@@ -549,8 +549,8 @@ ReplayBrowserScene::ScanFiles
 MusicRoomScene::UpdateSelection
 MusicRoomScene::RenderTrackCatalogText
 MusicRoomScene::RenderSelectedTitle
-ResultScene::BuildCounterPage
-ResultScene::BuildRecordPage
+ResultListScene::BuildCounterPage
+ResultListScene::BuildRecordPage
 ResultScene::Render
 ResultScene::DrawDecimalDigits
 SceneTransition::DispatchMode
@@ -575,8 +575,8 @@ MusicRoomRecord::InitializeAt00427430
 MusicRoomRecord::ReleaseBuffersAt00427470
 MusicRoomScene::Initialize
 MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0
-ResultListScene::Initialize
-ResultListScene::Release
+ResultListScene::ResultListScene
+ResultListScene::~ResultListScene
 ReplayPlaybackScene::Initialize
 ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560
 ReplayScene::PollPlaybackInput

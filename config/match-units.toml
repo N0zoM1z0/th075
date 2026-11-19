@@ -38768,14 +38768,14 @@ target = 0x00640611
 source = "src/ResultCounterF238.cpp"
 object = "build/matching/ResultCounterF238.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultScene::BuildCounterPage"]
-symbol = "?BuildCounterPage@ResultCounterSceneF238@@QAEXXZ"
+functions = ["ResultListScene::BuildCounterPage"]
+symbol = "?BuildCounterPage@ResultListScene@@QAEXXZ"
 target_address = 0x00431350
 size = 664
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?BuildCounterPage@ResultCounterSceneF238@@QAEXXZ"
+symbol = "__ehhandler$?BuildCounterPage@ResultListScene@@QAEXXZ"
 target = 0x00655A83
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 12
@@ -38928,14 +38928,14 @@ target = 0x00640611
 source = "src/ResultRecordF239.cpp"
 object = "build/matching/ResultRecordF239.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultScene::BuildRecordPage"]
-symbol = "?BuildRecordPage@ResultRecordSceneF239@@QAEXXZ"
+functions = ["ResultListScene::BuildRecordPage"]
+symbol = "?BuildRecordPage@ResultListScene@@QAEXXZ"
 target_address = 0x00431070
 size = 721
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?BuildRecordPage@ResultRecordSceneF239@@QAEXXZ"
+symbol = "__ehhandler$?BuildRecordPage@ResultListScene@@QAEXXZ"
 target = 0x00655A6B
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 12
@@ -38985,7 +38985,7 @@ target = 0x00641B80
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 188
 type = "REL32"
-symbol = "?Size@ResultNameDequeF239@@QAEHXZ"
+symbol = "?Size@ResultListRecords@@QAEHXZ"
 target = 0x0041DD50
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 236
@@ -39005,7 +39005,7 @@ target = 0x006404F0
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 337
 type = "REL32"
-symbol = "?Entry@ResultNameDequeF239@@QAEPAPADH@Z"
+symbol = "?Entry@ResultListRecords@@QAEPAPADH@Z"
 target = 0x0041DD70
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 355
@@ -41577,14 +41577,14 @@ target = 0x00000000
 source = "src/ResultListInitF264.cpp"
 object = "build/matching/ResultListInitF264.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultListScene::Initialize"]
-symbol = "??0ResultListInitializerF264@@QAE@XZ"
+functions = ["ResultListScene::ResultListScene"]
+symbol = "??0ResultListScene@@QAE@XZ"
 target_address = 0x0042F710
 size = 366
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0ResultListInitializerF264@@QAE@XZ"
+symbol = "__ehhandler$??0ResultListScene@@QAE@XZ"
 target = 0x00655A1E
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 12
@@ -41599,17 +41599,17 @@ target = 0x00000000
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0ResultSceneBaseF264@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7ResultListInitializerF264@@6B@"
+symbol = "??_7ResultListScene@@6B@"
 target = 0x006581D0
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 61
 type = "REL32"
-symbol = "??0ResultRecordsDequeF264@@QAE@XZ"
+symbol = "??0ResultListRecords@@QAE@XZ"
 target = 0x00420320
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 92
@@ -41619,12 +41619,12 @@ target = 0x0064159D
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 116
 type = "REL32"
-symbol = "??0ResultTextureF264@@QAE@XZ"
+symbol = "??0ResultListTexture@@QAE@XZ"
 target = 0x0040AD80
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 160
 type = "REL32"
-symbol = "?AllocateSlots@ResultTextureF264@@QAEXH@Z"
+symbol = "?AllocateSlots@ResultListTexture@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 165
@@ -41639,7 +41639,7 @@ target = 0x00658064
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 181
 type = "REL32"
-symbol = "?Load@ResultTextureF264@@QAEXPBD0@Z"
+symbol = "?Load@ResultListTexture@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 205
@@ -41654,12 +41654,12 @@ target = 0x00419E10
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 330
 type = "REL32"
-symbol = "?LoadCharacterTextures@ResultListInitializerF264@@QAEXXZ"
+symbol = "?LoadCharacterTextures@ResultListScene@@QAEXXZ"
 target = 0x00430EE0
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 338
 type = "REL32"
-symbol = "?BuildCounterPage@ResultListInitializerF264@@QAEXXZ"
+symbol = "?BuildCounterPage@ResultListScene@@QAEXXZ"
 target = 0x00431350
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 358
@@ -41671,14 +41671,14 @@ target = 0x00000000
 source = "src/ResultListReleaseF265.cpp"
 object = "build/matching/ResultListReleaseF265.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultListScene::Release"]
-symbol = "??1ResultListReleaseF265@@UAE@XZ"
+functions = ["ResultListScene::~ResultListScene"]
+symbol = "??1ResultListScene@@UAE@XZ"
 target_address = 0x0042F880
 size = 229
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1ResultListReleaseF265@@UAE@XZ"
+symbol = "__ehhandler$??1ResultListScene@@UAE@XZ"
 target = 0x00655A3B
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 12
@@ -41693,32 +41693,32 @@ target = 0x00000000
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7ResultListReleaseF265@@6B@"
+symbol = "??_7ResultListScene@@6B@"
 target = 0x006581D0
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 50
 type = "REL32"
-symbol = "?ClearEntries@ResultListReleaseF265@@QAEXXZ"
+symbol = "?ClearEntries@ResultListScene@@QAEXXZ"
 target = 0x00431940
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 90
 type = "REL32"
-symbol = "??_GResultTextureF265@@QAEPAXI@Z"
+symbol = "??_GResultListTexture@@QAEPAXI@Z"
 target = 0x00425460
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 142
 type = "REL32"
-symbol = "??_GResultTextureF265@@QAEPAXI@Z"
+symbol = "??_GResultListTexture@@QAEPAXI@Z"
 target = 0x00425460
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 196
 type = "REL32"
-symbol = "??1ResultRecordsDequeF265@@QAE@XZ"
+symbol = "??1ResultListRecords@@QAE@XZ"
 target = 0x00420420
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 211
 type = "REL32"
-symbol = "??1ResultSceneBaseF265@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 221
