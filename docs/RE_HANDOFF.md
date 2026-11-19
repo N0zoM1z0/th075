@@ -250,3 +250,6 @@ remain identical; the GPR/width frontiers are unchanged.
 The signed-counter work also removes 58 unsigned-short reference aliases
 from zero-initialization of five already-signed Fighter fields across 19
 initialization/reset sources. All 20 affected exact units replayed 20/20.
+`Fighter::fieldEF8` (+0xEF8) is now declared `unsigned short`, matching its
+per-frame increment and the unsigned phase/modulo reads in Marisa's chain
+renderer and the battle HUD. Five affected exact units replayed 5/5.

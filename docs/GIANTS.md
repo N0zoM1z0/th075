@@ -921,3 +921,11 @@ short&>` aliases around already-signed Fighter members (`sequenceTimer`,
 zero. All writes now use the declared `short` members directly. The 20 exact
 initialization/reset/dispatch units covering the changed source files were
 replayed selectively and passed 20/20; no broad cold replay was run.
+
+`Fighter::fieldEF8` at `+0xEF8` is an unsigned 16-bit animation timer, not
+a signed short. `Fighter::UpdateCounters` increments it continuously, while
+Marisa's chain renderer and the battle HUD consume its unsigned phase/modulo
+value. The field is now declared `unsigned short`; all five explicit
+`reinterpret_cast<unsigned short&>` reads were replaced by direct member
+access. The affected exact units (counter update, base reset, Sakuya reset,
+Marisa chain render and battle HUD render) replayed 5/5.
