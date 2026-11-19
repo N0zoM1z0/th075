@@ -866,3 +866,9 @@ targets remain identical. The frontier stays at 575 differing bytes, 133 GPR
 positions and zero width differences; the float conversions before integer
 `RecordedRange` subtraction and before `owner->field3A0 / field0D8` remain
 because they change arithmetic semantics.
+
+Reimu fighter `0045DD70` removes two redundant `static_cast<short>` wrappers
+around float projection results assigned to short script counters. The full
+62,090-byte COFF body and all 1,824 relocation positions/types/addends/local
+targets remain identical. The frontier remains 6,311 GPR positions and five
+width differences; this is natural-source cleanup, not exact giant credit.
