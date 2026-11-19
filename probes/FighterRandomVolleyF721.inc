@@ -13,7 +13,7 @@
                     facing,1,0,1);
             }
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
                 aiCardTimer=static_cast<short>(RandomBoundaryAt455580(60,80)
                    -static_cast<int>(g_CloudOpponentAt006714D0)*20);
             }

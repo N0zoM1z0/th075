@@ -24,7 +24,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             break;
         }
         case 0x191: {
@@ -47,7 +47,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             break;
         }
         case 0x192: {
@@ -67,6 +67,6 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(2);
+                ResetPrimaryCounters(2);
             break;
         }

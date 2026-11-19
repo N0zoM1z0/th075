@@ -15,10 +15,10 @@ case 0x1FA: {
             (facing),1);
         PlaySharedSound(0x14);
         opponent->field082=0x1E;
-        SetNativeActionAt40FAC0(0x1FC);
+        ResetPrimaryCounters(0x1FC);
         return;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     return;
 }

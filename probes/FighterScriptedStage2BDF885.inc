@@ -33,14 +33,14 @@ case 0x2BD: {
                 (*(&y))+g_ContactProjectionAt00657888,
                 (facing),1,0,1);
             PlaySound(0xD);
-            SetNativeActionAt40FAC0(0x2C2);
+            ResetPrimaryCounters(0x2C2);
             ClearMotionFields();
             reinterpret_cast<int&>(x)=reinterpret_cast<int&>(opponent->x);
             return;
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         AnimatePushAt453E80(0x28);
         PlaySharedSound(0x17);

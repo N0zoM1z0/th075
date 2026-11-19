@@ -17,11 +17,11 @@ case 0x1FE: {
         opponent->ClearMotionFields();
         opponent->ResetPrimaryCounters(0x66);
         opponent->x=float((facing)*80)+(x);
-        SetNativeActionAt40FAC0(0x200);
+        ResetPrimaryCounters(0x200);
         return;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         if (opponent->y==g_ThresholdAt0065782C &&
            (opponent->action<0x32 ||

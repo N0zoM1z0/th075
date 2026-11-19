@@ -9,7 +9,7 @@ case 0x196: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         PlaySound(3);
         SpawnFloatXYAt453A70(0x353,

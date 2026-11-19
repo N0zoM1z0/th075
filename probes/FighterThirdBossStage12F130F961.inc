@@ -19,7 +19,7 @@ case 0x12F: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1C);
     break;
@@ -28,7 +28,7 @@ case 0x12F: {
 case 0x130: {
     velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C) {
-        SetNativeActionAt40FAC0(0xA);
+        ResetPrimaryCounters(0xA);
         y=0.0f;
         field05C=0.0f;
         velocityY=0.0f;
@@ -39,7 +39,7 @@ case 0x130: {
         field07C=0;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0)
         PlaySharedSound(0x1C);
     if ((animationStage)==3 && (animationFrame)==0) {

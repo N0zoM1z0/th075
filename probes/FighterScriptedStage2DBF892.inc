@@ -25,7 +25,7 @@ case 0x2DB: {
             velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=RandomBoundaryAt455580(30,60);
     }
     if ((animationStage)==2 && (animationFrame)==0)

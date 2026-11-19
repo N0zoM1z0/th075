@@ -16,7 +16,7 @@ case 0x188: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     if ((animationStage)==2 && (animationFrame)==0) {
         PlaySharedSound(0x1D);
 

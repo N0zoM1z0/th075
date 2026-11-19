@@ -10,7 +10,7 @@
                     reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
                     ClearMotionFields();
                     y=0.0f;
-                    SetNativeActionAt40FAC0(0x61);
+                    ResetPrimaryCounters(0x61);
                     rotationZ=0.0f;
                     InitTrajectoryAt453E60(2.0f);
                     ResetMotionAt40FC50();

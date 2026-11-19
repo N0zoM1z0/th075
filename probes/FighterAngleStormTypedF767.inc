@@ -53,7 +53,7 @@ case 0x2F9: {
                         facing,1);
             }
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
                 aiCardTimer=RandomBoundaryAt455580(60,100)
                        -static_cast<int>(g_CloudOpponentAt006714D0)*20;
             }

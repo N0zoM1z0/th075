@@ -21,7 +21,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
                     ClearMotionFields();
                     y=0.0f;
-                    SetNativeActionAt40FAC0(0x61);
+                    ResetPrimaryCounters(0x61);
                     rotationZ=0.0f;
                     InitTrajectoryAt453E60(2.0f);
                     ResetMotionAt40FC50();
@@ -50,9 +50,9 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 }
             }
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
                 if (inputY>0)
-                    SetNativeActionAt40FAC0(1);
+                    ResetPrimaryCounters(1);
             }
             if ((animationStage)==(field070)-1) {
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44>reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
@@ -80,9 +80,9 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 }
             }
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
                 if (inputY>0)
-                    SetNativeActionAt40FAC0(1);
+                    ResetPrimaryCounters(1);
             }
             if ((animationStage)==(field070)-1) {
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44>reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)

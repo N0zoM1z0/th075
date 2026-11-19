@@ -18,15 +18,15 @@ case 0xC8: {
     }
     if (inputY<0) {
         if ((facing)*inputX>0) {
-            SetNativeActionAt40FAC0(0xCD);
+            ResetPrimaryCounters(0xCD);
             return;
         }
-        SetNativeActionAt40FAC0(0xCC);
+        ResetPrimaryCounters(0xCC);
         return;
     }
     if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 || (animationStage)>5) {
         if ((facing)*inputX<=0) {
-            SetNativeActionAt40FAC0(0xCF);
+            ResetPrimaryCounters(0xCF);
             return;
         }
     }
@@ -38,13 +38,13 @@ case 0xC8: {
                 return;
             }
         }
-        SetNativeActionAt40FAC0(0xCF);
+        ResetPrimaryCounters(0xCF);
         return;
     }
     if ((animationFrame)==0 &&
             (facing)*inputX<=0 &&
             (reinterpret_cast<signed short&>(scriptCounterF00))>0) {
-        SetNativeActionAt40FAC0(0xCF);
+        ResetPrimaryCounters(0xCF);
         return;
     }
     if ((animationStage)==2 && (animationFrame)==0) {

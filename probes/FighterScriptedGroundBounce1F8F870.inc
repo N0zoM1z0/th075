@@ -26,7 +26,7 @@ case 0x1F8: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=8.0f;
         velocityY=12.0f;

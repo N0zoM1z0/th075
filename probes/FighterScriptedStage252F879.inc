@@ -13,7 +13,7 @@ case 0x252: {
     if ((spiritCooldown)==0 && field07C==1)
         spirit=1000;
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,

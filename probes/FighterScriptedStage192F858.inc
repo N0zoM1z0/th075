@@ -8,7 +8,7 @@ case 0x192: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0) {
         field314=3.0f;
         SpawnDirectedAt453A70(0x320,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

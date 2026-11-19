@@ -17,7 +17,7 @@
                     field3AC=0;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 InitTrajectoryAt453E60(2.0f);
                 SpawnFloatXYAt453A70(0x325,
@@ -41,7 +41,7 @@
                     field3AC=0;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             break;
         }
         case 0x188: {
@@ -58,7 +58,7 @@
                     field3AC=0;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(2);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
             break;
         }
         case 0x189: {
@@ -83,7 +83,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==7 && (animationFrame)==0) {
                 velocityY=9.0f;
                 field05C=0.9f;

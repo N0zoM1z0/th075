@@ -21,7 +21,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityY=13.5f;
                 velocityX=static_cast<float>(RandomBoundaryAt455580(0,8)-4);

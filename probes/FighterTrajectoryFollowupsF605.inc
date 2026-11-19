@@ -19,7 +19,7 @@ case 0x47: {
         I16(F605_COUNTER+2) = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();
         y = 0.0f;
-        SetNativeActionAt40FAC0(0x61);
+        ResetPrimaryCounters(0x61);
         InitTrajectoryAt453E60(2.0f);
         PlaySharedSound(0x16);
         break;
@@ -45,7 +45,7 @@ case 0x48: {
         I16(F605_COUNTER+2) = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();
         y = 0.0f;
-        SetNativeActionAt40FAC0(0x61);
+        ResetPrimaryCounters(0x61);
         InitTrajectoryAt453E60(2.0f);
         PlaySharedSound(0x16);
         break;

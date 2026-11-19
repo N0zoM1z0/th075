@@ -27,6 +27,6 @@ case F642_CASE: {
     if (I16(F642_COUNTER)>0)
         I16(F642_COUNTER)=I16(F642_COUNTER)-10;
     if (AdvanceNestedFrame()==field070)
-        SetNativeActionAt40FAC0(F642_NEXT_ACTION);
+        ResetPrimaryCounters(F642_NEXT_ACTION);
     return;
 }

@@ -7,11 +7,11 @@ case R1187_ACTION: {
     }
     if ((animationStage)>5) velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C) {
-        SetNativeActionAt40FAC0(10);
+        ResetPrimaryCounters(10);
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
 #include "ReimuThreeRandomShotsF1187.inc"
     break;
 }

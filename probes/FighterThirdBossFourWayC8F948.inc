@@ -20,15 +20,15 @@ case 0xC8: {
     }
     if (inputY<0) {
         if (static_cast<int>(facing)*inputX>0) {
-            SetNativeActionAt40FAC0(0xCD);
+            ResetPrimaryCounters(0xCD);
             break;
         }
-        SetNativeActionAt40FAC0(0xCC);
+        ResetPrimaryCounters(0xCC);
         break;
     }
     if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 &&
         static_cast<int>(facing)*inputX<=0) {
-        SetNativeActionAt40FAC0(0xCF);
+        ResetPrimaryCounters(0xCF);
         break;
     }
     if (AdvanceNestedFrame()==(field070)) {
@@ -38,7 +38,7 @@ case 0xC8: {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             break;
         }
-        SetNativeActionAt40FAC0(0xCF);
+        ResetPrimaryCounters(0xCF);
         break;
     }
     if ((animationStage)==3 && (animationFrame)==0) {

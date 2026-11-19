@@ -47,7 +47,7 @@ case 0x2F8: {
             (facing),1);
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         PlaySound(0xA);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);

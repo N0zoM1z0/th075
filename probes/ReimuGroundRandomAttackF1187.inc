@@ -4,7 +4,7 @@ case R1187_ACTION: {
         ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
 #include "ReimuThreeRandomShotsF1187.inc"
     break;
 }

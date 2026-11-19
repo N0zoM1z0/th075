@@ -14,7 +14,7 @@ case 0x303: {
             reinterpret_cast<char&>(field3CF)=1;
             break;
         }
-        SetNativeActionAt40FAC0(0x304);
+        ResetPrimaryCounters(0x304);
         break;
     }
     if ((animationStage)==3 && (animationFrame)==0) {
@@ -77,7 +77,7 @@ case 0x304: {
     }
     if (opponent->health>0 && opponent->animationStage==2 &&
         opponent->field39D>0 && opponent->action==0x63) {
-        reinterpret_cast<ReimuFighter*>(opponent)->SetNativeActionAt40FAC0(0x5F);
+        reinterpret_cast<ReimuFighter*>(opponent)->ResetPrimaryCounters(0x5F);
         reinterpret_cast<char&>(opponent->field3CF)=1;
         break;
     }

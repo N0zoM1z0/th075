@@ -16,7 +16,7 @@ case 0x18B: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     if ((animationStage)==7 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(6);

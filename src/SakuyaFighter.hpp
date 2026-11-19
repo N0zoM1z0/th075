@@ -32,7 +32,6 @@ public:
     void SpawnSevenFloatAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char);
     void SpawnSevenRawXFloatYAt453B50(short,int,float,signed char,signed char,unsigned char,unsigned char);
     int RandAt455580(int,int);
-    void SetNativeActionAt40FAC0(short);
     signed char ContactAt454EE0();
     void SetAuxActionAt40FB40(short);
 

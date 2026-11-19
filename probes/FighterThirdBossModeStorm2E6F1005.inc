@@ -106,7 +106,7 @@ case 0x2E6: {
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
             RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
     }

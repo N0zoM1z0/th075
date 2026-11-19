@@ -31,7 +31,6 @@ public:
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnRawXYAt453C80(int,int,int,char,int);
     void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
-    void SetNativeActionAt40FAC0(short);
     signed char ContactAt454EE0();
     void SetAuxActionAt40FB40(short);
 

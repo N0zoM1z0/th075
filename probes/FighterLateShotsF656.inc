@@ -10,7 +10,7 @@
             if ((velocityX)>g_ThresholdAt0065782C)
                 velocityX=(velocityX)-g_NewDragAt006581E0;
             if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySharedSound(0x1C);
                 SpawnDirectedAt453A70(0x341,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
@@ -40,7 +40,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if ((animationStage)==1 && (animationFrame)==0) PlaySharedSound(0x1D);
@@ -64,7 +64,7 @@
                 if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             }
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if ((animationStage)==7 && (animationFrame)==0) velocityX=20.0f;
@@ -86,7 +86,7 @@
                     field3AC=0;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0)
                 SpawnDirectedAt453A70(0x33E,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);

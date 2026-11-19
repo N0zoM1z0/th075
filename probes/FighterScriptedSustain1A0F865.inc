@@ -16,7 +16,7 @@ case 0x1A0: {
     if ((animationStage)>3)
         velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         field07C=1;
     return;

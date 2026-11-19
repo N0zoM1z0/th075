@@ -9,14 +9,14 @@ case 0x194: {
     }
     velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C) {
-        SetNativeActionAt40FAC0(0xA);
+        ResetPrimaryCounters(0xA);
         y=0.0f;
         field05C=0.0f;
         velocityY=0.0f;
         return;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         field314=2.0f;
         SpawnDirectedAt453A70(0x320,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

@@ -14,7 +14,7 @@
                 velocityX=0.0f;
                 field3AC=0;
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnFloatXYAt453A70(0x327,
                     float(facing*151)+(x),
@@ -37,7 +37,7 @@
                     field3AC=0;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(2);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
             if ((animationStage)==7 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 SetAuxActionAt40FB40(6);

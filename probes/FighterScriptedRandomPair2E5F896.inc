@@ -13,19 +13,19 @@ case 0x2E5: {
     if (AdvanceNestedFrame()==(field070)) {
         reinterpret_cast<signed short&>(scriptCounterF00)=RandomBoundaryAt455580(0,100);
         if (field07C==0) {
-            SetNativeActionAt40FAC0(0);
+            ResetPrimaryCounters(0);
             aiCardTimer=RandomBoundaryAt455580(60,120);
             return;
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<30) {
-            SetNativeActionAt40FAC0(0x2E6);
+            ResetPrimaryCounters(0x2E6);
             return;
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<60) {
-            SetNativeActionAt40FAC0(0x2E7);
+            ResetPrimaryCounters(0x2E7);
             return;
         }
-        SetNativeActionAt40FAC0(0x2E8);
+        ResetPrimaryCounters(0x2E8);
         return;
     }
     if ((animationStage)==2 && (animationFrame)==0) {

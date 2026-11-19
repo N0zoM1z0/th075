@@ -5,9 +5,9 @@ case 0x2C3: {
     ClearMotionFields();
     if (AdvanceNestedFrame()==(field070)) {
         if (inputY==0)
-            SetNativeActionAt40FAC0(0);
+            ResetPrimaryCounters(0);
         else
-            SetNativeActionAt40FAC0(1);
+            ResetPrimaryCounters(1);
     }
     return;
 }

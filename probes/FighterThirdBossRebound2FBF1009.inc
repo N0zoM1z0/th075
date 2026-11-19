@@ -50,7 +50,7 @@ case 0x2FB: {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0x2F9);
+        ResetPrimaryCounters(0x2F9);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
         SpawnSevenFloatAt453B50(0x338,

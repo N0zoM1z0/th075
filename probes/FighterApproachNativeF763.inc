@@ -19,7 +19,7 @@
                 velocityY=velocityY-g_JumpGroundCorrectionAt00658058;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     ClearMotionFields();
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y=0.0f;
                     break;
                 }
@@ -52,13 +52,13 @@
                 }
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 if (g_CloudOpponentAt006714D0==3) {
-                    SetNativeActionAt40FAC0(0x2DF);
+                    ResetPrimaryCounters(0x2DF);
                     break;
                 }
                 if (y>g_F715_DecisionHeightAt006593D0)
-                    SetNativeActionAt40FAC0(0x2DC);
+                    ResetPrimaryCounters(0x2DC);
                 else
-                    SetNativeActionAt40FAC0(0x2DC);
+                    ResetPrimaryCounters(0x2DC);
                 break;
             }
             if ((animationStage)==3 && (animationFrame)==0) {

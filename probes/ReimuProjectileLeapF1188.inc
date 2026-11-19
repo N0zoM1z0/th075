@@ -13,7 +13,7 @@ case R1188_ACTION: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x32D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
         PlaySound(3);

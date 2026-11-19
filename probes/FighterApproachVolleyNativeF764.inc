@@ -17,7 +17,7 @@
                 velocityY=velocityY-g_JumpGroundCorrectionAt00658058;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     ClearMotionFields();
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y=0.0f;
                     break;
                 }
@@ -48,7 +48,7 @@
                     SetAuxActionAt40FB40(12);
                     break;
                 }
-                SetNativeActionAt40FAC0(0x2FB);
+                ResetPrimaryCounters(0x2FB);
                 break;
             }
             if ((animationStage)==3 && (animationFrame)==0) {

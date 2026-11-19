@@ -15,7 +15,7 @@ case 0x31B: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         BeginStateAt454A70(0);
         RefreshStateAt452B30();
@@ -38,7 +38,7 @@ case 0x31C: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==16 && (animationFrame)==0) {
         BeginStateAt454A70(0);
         RefreshStateAt452B30();

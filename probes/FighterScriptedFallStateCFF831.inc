@@ -10,7 +10,7 @@ case 0xCF: {
         field3AC=0;
     }
     if (AdvanceNestedFrame()==field070) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         field3AC=0;
     }
     return;

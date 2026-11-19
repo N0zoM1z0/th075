@@ -20,7 +20,7 @@ case 0x2BC: {
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         ApplyAt453E80(0x28);
         PlaySharedSound(0x17);
@@ -70,7 +70,7 @@ case 0x2BD: {
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         ApplyAt453E80(0x28);
         PlaySharedSound(0x17);

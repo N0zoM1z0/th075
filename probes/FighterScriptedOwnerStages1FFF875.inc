@@ -9,7 +9,7 @@ case 0x1FF: {
         field3AC=0;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==1 && (animationFrame)==0) {
         opponent->ResetPrimaryCounters(0x64);
         opponent->x=float((facing)*74)+(x);

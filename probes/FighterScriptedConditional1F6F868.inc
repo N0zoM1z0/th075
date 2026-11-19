@@ -15,13 +15,13 @@ case 0x1F6: {
             velocityX=0.0f;
     }
     if ((animationStage)>7 && (animationStage)<0xB && (aiCommand)==0x14) {
-        SetNativeActionAt40FAC0(0x1F7);
+        ResetPrimaryCounters(0x1F7);
         ClearMotionFields();
         NativeGameEffectAt455B30();
         return;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=14.0f;
         SpawnFloatXRawYAt453C80(0x80,

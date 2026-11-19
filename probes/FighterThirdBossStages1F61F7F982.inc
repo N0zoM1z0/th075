@@ -33,7 +33,7 @@ case 0x1F6: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         field314=15.0f;
         field318=-20.0f;
@@ -95,7 +95,7 @@ case 0x1F7: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         field314=15.0f;
         field318=-20.0f;

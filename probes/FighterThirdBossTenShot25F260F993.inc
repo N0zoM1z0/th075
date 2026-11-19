@@ -17,7 +17,7 @@ case 0x25F: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         PlaySound(0);
         UpdateGaugeTimer(0x96);
@@ -46,7 +46,7 @@ case 0x260: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         PlaySound(0);
         UpdateGaugeTimer(0x96);

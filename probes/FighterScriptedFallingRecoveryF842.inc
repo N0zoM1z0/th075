@@ -18,7 +18,7 @@ case F653_ACTION: {
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(F653_NEXT_ACTION);
+        ResetPrimaryCounters(F653_NEXT_ACTION);
 #if F653_CLEAR_F00
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
 #endif

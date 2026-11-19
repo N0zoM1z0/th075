@@ -134,7 +134,7 @@ void SakuyaFighter::Advance() {
                 }
             }
             if (AdvanceNestedFrame() == field070)
-                SetNativeActionAt40FAC0(2);
+                ResetPrimaryCounters(2);
             break;
         case 0x2:
             if ((field3AC) == 0) {
@@ -176,14 +176,14 @@ void SakuyaFighter::Advance() {
                 }
             }
             if (AdvanceNestedFrame() == field070)
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             break;
         case 0x4: velocityX = 6.0f; goto native_third_shared_getter;
         case 0x5: velocityX = -6.0f; goto native_third_shared_getter;
         case 0x6:
             if (animationStage == 0 && animationFrame == 0 &&
                     ((aiCommand) == 3 || (field3AC) > 0)) {
-                SetNativeActionAt40FAC0(0xCC);
+                ResetPrimaryCounters(0xCC);
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
@@ -191,7 +191,7 @@ void SakuyaFighter::Advance() {
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
@@ -217,7 +217,7 @@ void SakuyaFighter::Advance() {
         case 0x7:
             if (animationStage == 0 && animationFrame == 0 &&
                     ((aiCommand) == 5 || (field3AC) > 0)) {
-                SetNativeActionAt40FAC0(0xCD);
+                ResetPrimaryCounters(0xCD);
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
@@ -225,7 +225,7 @@ void SakuyaFighter::Advance() {
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
@@ -251,7 +251,7 @@ void SakuyaFighter::Advance() {
         case 0x8:
             if (animationStage == 0 && animationFrame == 0 &&
                     ((aiCommand) == 4 || (field3AC) > 0)) {
-                SetNativeActionAt40FAC0(0xCE);
+                ResetPrimaryCounters(0xCE);
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
@@ -259,7 +259,7 @@ void SakuyaFighter::Advance() {
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
@@ -285,7 +285,7 @@ void SakuyaFighter::Advance() {
             field05C = 0.6f;
         velocityY = velocityY - field05C;
         if (y + velocityY <= g_ThresholdAt0065782C) {
-            SetNativeActionAt40FAC0(10);
+            ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
             return;
@@ -300,9 +300,9 @@ void SakuyaFighter::Advance() {
             ClearMotionFields();
             if (AdvanceNestedFrame() == field070) {
                 if (inputY == 0)
-                    SetNativeActionAt40FAC0(0);
+                    ResetPrimaryCounters(0);
                 else
-                    SetNativeActionAt40FAC0(1);
+                    ResetPrimaryCounters(1);
             }
             break;
         #include "FighterSingletonContactF598.inc"
@@ -684,7 +684,7 @@ void SakuyaFighter::Advance() {
 
         default:
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             break;
 #include "FighterThirdSharedGetter004AC040F1198.inc"
     }

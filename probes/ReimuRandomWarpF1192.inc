@@ -26,7 +26,7 @@ case 0x2EF: {
         aiCardTimer=120;
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=SelectRangeAt455580(0,60)+120-g_ReimuRepeatSettingAt006714D0*40;
     }
     if ((animationStage)==3 && (animationFrame)==0) {

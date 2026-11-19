@@ -3,7 +3,7 @@ case 0x31B: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         BeginFadeParametersAt454A70(0);
         SelectResourceParametersAt452B30();
@@ -23,7 +23,7 @@ case 0x31C: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         if (*reinterpret_cast<signed char*>(RAW+field39D+0x370)==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;
             SpawnWithFloatAt453A70(0x3A3,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,1,1);

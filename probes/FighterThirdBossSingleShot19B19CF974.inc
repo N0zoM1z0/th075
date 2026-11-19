@@ -27,7 +27,7 @@ case 0x19B: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     break;
 }
 // F974 authentic original Japanese 004AC040 action 0x19C, one shot.
@@ -52,6 +52,6 @@ case 0x19C: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     break;
 }

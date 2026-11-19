@@ -32,7 +32,7 @@ case 0x188: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         // Actual original PE retains this inner stage 4 conditional,
         // despite the outer stage 6 test. Do not delete original branch.
@@ -61,7 +61,7 @@ case 0x189: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1C);
     break;

@@ -9,7 +9,7 @@ case 0x31B: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         ApplyStateAt454A70(0);
         EmitStateAt452B30();

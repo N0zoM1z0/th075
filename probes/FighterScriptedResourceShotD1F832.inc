@@ -4,7 +4,7 @@
 // Source fragment belongs inside still-NONEXACT giant fighter Advance().
 case 0xD1: {
     if (spirit<2) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         return;
     }
     spirit=spirit-F651_DECAY;
@@ -19,7 +19,7 @@ case 0xD1: {
         if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
             SetAuxActionAt40FB40(2);
         else
-            SetNativeActionAt40FAC0(0);
+            ResetPrimaryCounters(0);
     }
     return;
 }

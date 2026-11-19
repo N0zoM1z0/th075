@@ -16,7 +16,7 @@ case 0x2C2: {
         if (velocityY+y<=g_ThresholdAt0065782C) {
             y=0.0f;
             ClearMotionFields();
-            SetNativeActionAt40FAC0(0x2C3);
+            ResetPrimaryCounters(0x2C3);
             return;
         }
     }

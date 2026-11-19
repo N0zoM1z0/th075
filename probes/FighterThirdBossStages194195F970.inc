@@ -37,7 +37,7 @@ case 0x194: {
     --reinterpret_cast<signed short&>(scriptCounterF00);
     velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
@@ -79,7 +79,7 @@ case 0x195: {
     --reinterpret_cast<signed short&>(scriptCounterF00);
     velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);

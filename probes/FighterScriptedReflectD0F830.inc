@@ -13,7 +13,7 @@ case 0xD0: {
         field05C=0.6f;
     velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C) {
-        SetNativeActionAt40FAC0(0xA);
+        ResetPrimaryCounters(0xA);
         y=0.0f;
         ClearMotionFields();
         return;

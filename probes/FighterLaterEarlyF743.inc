@@ -12,7 +12,7 @@
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(3);
                 field314=0.0f;
@@ -35,7 +35,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     y=0.0f;
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     break;
                 }
             }
@@ -79,7 +79,7 @@
                     facing,1);
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(9);
+                ResetPrimaryCounters(9);
             break;
         }
         case 0x1A1: {
@@ -104,6 +104,6 @@
                     facing,1);
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(9);
+                ResetPrimaryCounters(9);
             break;
         }

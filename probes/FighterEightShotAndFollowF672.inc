@@ -8,7 +8,7 @@
                 field07C=1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 UpdateGaugeTimer(250);
                 field314=-10.0f;
@@ -62,7 +62,7 @@
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
             break;
         }
         case 0x25B: {
@@ -77,7 +77,7 @@
                     (*(&y))+g_EightShotY1At00658264,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
             break;
         }
         case 0x25C: {
@@ -91,7 +91,7 @@
                     (*(&y))+g_OneShotYAt0065928C,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             break;
         }
         case 0x25D: {
@@ -105,6 +105,6 @@
                     (*(&y))+g_OneShotYAt0065928C,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             break;
         }

@@ -39,7 +39,7 @@ case 0x2DC: {
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=RandomBoundaryAt455580(0,30);
     }
     if ((animationStage)==13 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {

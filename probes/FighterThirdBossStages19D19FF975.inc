@@ -29,7 +29,7 @@ case 0x19D: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     break;
 }
 // F975 true original Japanese 004AC040 19E, float-scaled single native shot.
@@ -56,11 +56,11 @@ case 0x19E: {
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
         ClearMotionFields();
-        SetNativeActionAt40FAC0(0xA);
+        ResetPrimaryCounters(0xA);
         break;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
@@ -90,11 +90,11 @@ case 0x19F: {
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
         ClearMotionFields();
-        SetNativeActionAt40FAC0(0xA);
+        ResetPrimaryCounters(0xA);
         break;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);

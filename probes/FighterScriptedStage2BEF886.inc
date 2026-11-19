@@ -10,7 +10,7 @@ case 0x2BE: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationFrame)==0)
         field07C=0;
     if ((animationStage)==2 && (animationFrame)==0) {

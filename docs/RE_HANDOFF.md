@@ -27,6 +27,11 @@ Done so far:
   its real scene and record/deque members. Both whole native functions
   preserve all relocations; the 10-unit affected-only replay (including
   music-room rendering and lifecycle) was 10/10 exact across 8 objects.
+- All four fighter research giant `Advance` functions use the real
+  `Actor::ResetPrimaryCounters` at 705 native calls (511 source alias
+  sites). Complete COFF sizes/relocation positions and types are unchanged;
+  nonrelocation code byte differences = 0. Header-affected exact units
+  passed 132/132 targeted cold replay; giant register debt remains.
 - The native shared Actor frame-advance helper at 0040FA30 is now
   `Actor::AdvanceNestedFrame` throughout all four complete fighter giant
   research parents: 382 source calls, 552 actual COFF relocations now

@@ -13,7 +13,7 @@ case 0x58: {
         I16(F614_COUNTER+2)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         ClearMotionFields();
         y = 0.0f;
-        SetNativeActionAt40FAC0(0x59);
+        ResetPrimaryCounters(0x59);
         InitTrajectoryAt453E60(3.0f);
         PlaySharedSound(0x16);
         for (int burst=0;burst<10;++burst)

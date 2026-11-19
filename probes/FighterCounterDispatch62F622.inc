@@ -25,11 +25,11 @@ case 0x62: {
     }
 #endif
     if (AdvanceNestedFrame()==field070) {
-        SetNativeActionAt40FAC0(0x5F);
+        ResetPrimaryCounters(0x5F);
         if (I16(F622_COUNTER)==1)
-            SetNativeActionAt40FAC0(0x5D);
+            ResetPrimaryCounters(0x5D);
         if (I16(F622_COUNTER)==2)
-            SetNativeActionAt40FAC0(0x5E);
+            ResetPrimaryCounters(0x5E);
     }
     break;
 }

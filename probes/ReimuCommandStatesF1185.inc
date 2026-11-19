@@ -10,14 +10,14 @@ case 0xC8: {
     }
     if (inputY<0) {
         if ((facing)*inputX>0) {
-            SetNativeActionAt40FAC0(0xCD);
+            ResetPrimaryCounters(0xCD);
             break;
         }
-        SetNativeActionAt40FAC0(0xCC);
+        ResetPrimaryCounters(0xCC);
         break;
     }
     if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 && (facing)*inputX<=0) {
-        SetNativeActionAt40FAC0(0xCF);
+        ResetPrimaryCounters(0xCF);
         break;
     }
     if (AdvanceNestedFrame()==(field070)) {
@@ -26,7 +26,7 @@ case 0xC8: {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             break;
         }
-        SetNativeActionAt40FAC0(0xCF);
+        ResetPrimaryCounters(0xCF);
         break;
     }
     if ((animationStage)==3 && (animationFrame)==0) {
@@ -58,7 +58,7 @@ case 0xC9: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) SetAuxActionAt40FB40((animationStage)-2);
     break;
 }
@@ -77,7 +77,7 @@ case 0xCA: {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
-            SetNativeActionAt40FAC0(10);
+            ResetPrimaryCounters(10);
             break;
         }
     }
@@ -91,7 +91,7 @@ case 0xCB: {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
-            SetNativeActionAt40FAC0(10);
+            ResetPrimaryCounters(10);
             break;
         }
     }
@@ -142,7 +142,7 @@ case 0xD0: {
     if (*(&field05C)==g_ThresholdAt0065782C) field05C=0.6f;
     velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C) {
-        SetNativeActionAt40FAC0(10);
+        ResetPrimaryCounters(10);
         y=0.0f;
         ClearMotionFields();
         break;

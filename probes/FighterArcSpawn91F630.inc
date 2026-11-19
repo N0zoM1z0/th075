@@ -24,7 +24,7 @@ case 0x91: {
         I16(F630_COUNTER+2)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         ClearMotionFields();
         y=0.0f;
-        SetNativeActionAt40FAC0(0x61);
+        ResetPrimaryCounters(0x61);
         InitTrajectoryAt453E60(2.0f);
         break;
     }

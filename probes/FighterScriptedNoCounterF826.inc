@@ -19,6 +19,6 @@ case F641_CASE: {
     if (ContactAt454EE0() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==field070)
-        SetNativeActionAt40FAC0(F641_NEXT_ACTION);
+        ResetPrimaryCounters(F641_NEXT_ACTION);
     return;
 }

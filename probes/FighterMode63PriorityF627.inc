@@ -12,7 +12,7 @@ case 0x63: {
         if (animationStage==2 &&
             field39D>0 &&
             opponent->action<150) {
-            SetNativeActionAt40FAC0(0x5F);
+            ResetPrimaryCounters(0x5F);
             field3CF=1;
             break;
         }
@@ -29,7 +29,7 @@ case 0x63: {
                 field39D)==5 &&
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==2) {
-            SetNativeActionAt40FAC0(0x303);
+            ResetPrimaryCounters(0x303);
             break;
         }
         if (animationStage>1 &&
@@ -37,7 +37,7 @@ case 0x63: {
             opponent->action<150 &&
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==2) {
-            SetNativeActionAt40FAC0(0x31C);
+            ResetPrimaryCounters(0x31C);
             // Unlike the special F624 fighter, the actual native
             // stage-two action ends immediately: no bonus offset+0x370.
             break;
@@ -47,7 +47,7 @@ case 0x63: {
             opponent->action<150 &&
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==1) {
-            SetNativeActionAt40FAC0(0x31C);
+            ResetPrimaryCounters(0x31C);
             break;
         }
         if (animationStage>1 &&
@@ -55,7 +55,7 @@ case 0x63: {
             opponent->action<150 &&
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==0) {
-            SetNativeActionAt40FAC0(0x5F);
+            ResetPrimaryCounters(0x5F);
             field3CF=1;
             break;
         }

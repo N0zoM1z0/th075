@@ -48,7 +48,7 @@
             }
             if ((animationStage)==14 || (animationStage)==15) {
                 if (field07C!=0 && field07C!=3 && field07C!=1) {
-                    SetNativeActionAt40FAC0(0x1FA);
+                    ResetPrimaryCounters(0x1FA);
                     break;
                 }
                 if (y+velocityY<=g_ThresholdAt0065782C) {
@@ -65,7 +65,7 @@
                     velocityX=0.0f;
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySound(5);
                 SpawnAt453C80(0x7D,

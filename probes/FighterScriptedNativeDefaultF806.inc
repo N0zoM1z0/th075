@@ -3,5 +3,5 @@
 // This is NOT an independently callable/game-exact function.
         default:
             if (AdvanceNestedFrame()==field070)
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             break;

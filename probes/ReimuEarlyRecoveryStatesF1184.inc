@@ -7,7 +7,7 @@ case 0x59: {
         if (velocityY+y<=g_ThresholdAt0065782C) {
             reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
             reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
-            ClearMotionFields(); y=0.0f; SetNativeActionAt40FAC0(0x61);
+            ClearMotionFields(); y=0.0f; ResetPrimaryCounters(0x61);
             rotationZ=0.0f;
             InitTrajectoryAt453E60(2.0f); ResetMotionAt40FC50(); PlaySharedSound(0x16);
             break;
@@ -86,8 +86,8 @@ case 0x61: {
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0x62);
-        if (reinterpret_cast<unsigned char&>(field3CF)==0) SetNativeActionAt40FAC0(0x63);
+        ResetPrimaryCounters(0x62);
+        if (reinterpret_cast<unsigned char&>(field3CF)==0) ResetPrimaryCounters(0x63);
     } else {
         // Original 00460409 jumps over BOTH stage-specific updates.
         if ((animationStage)==3 && (animationFrame)==0) {

@@ -12,7 +12,7 @@ case 0x196: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(0);
         field314=0.0f;
@@ -48,7 +48,7 @@ case 0x197: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
         field314=25.0f;
@@ -84,7 +84,7 @@ case 0x198: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(0);
         field314=0.0f;

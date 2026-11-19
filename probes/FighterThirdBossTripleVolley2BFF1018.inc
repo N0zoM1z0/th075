@@ -29,7 +29,7 @@ case 0x2BF: {
     if ((animationFrame)==0)
         field07C=0;
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         ApplyAt453E80(40);
         PlaySharedSound(0x17);

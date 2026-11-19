@@ -14,7 +14,7 @@ case F645_CASE: {
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            SetNativeActionAt40FAC0(0xA);
+            ResetPrimaryCounters(0xA);
             y=0.0f;
             ClearMotionFields();
             return;

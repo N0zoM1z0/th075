@@ -3,9 +3,9 @@
 // x87 direction tests. Case body is NOT a separately accepted function.
 case 0x5F: {
     if (AdvanceNestedFrame()==field070) {
-        SetNativeActionAt40FAC0(F620_FIRST_ACTION);
+        ResetPrimaryCounters(F620_FIRST_ACTION);
         if (inputY>0)
-            SetNativeActionAt40FAC0(F620_SECOND_ACTION);
+            ResetPrimaryCounters(F620_SECOND_ACTION);
     }
     if (animationStage==field070-1) {
         if (*(&x)>opponent->x)

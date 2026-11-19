@@ -21,7 +21,7 @@ case 0x12C: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0)
         PlaySharedSound(0x1B);
     break;
@@ -42,7 +42,7 @@ case 0x12D: {
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if ((animationStage)==4 && (animationFrame)==0)

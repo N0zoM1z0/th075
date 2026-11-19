@@ -20,7 +20,7 @@ case 0x12E: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(2);
+        ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1D);
     if ((animationStage)==4 && (animationFrame)==0) {

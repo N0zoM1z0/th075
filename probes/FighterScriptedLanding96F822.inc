@@ -28,6 +28,6 @@ case 0x96: {
     if (ContactAt454EE0() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==field070)
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     return;
 }

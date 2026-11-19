@@ -40,7 +40,7 @@ case 0x135: {
             velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=15.0f;
         velocityY=4.5f;
@@ -74,7 +74,7 @@ case 0x136: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=4.0f;
         velocityY=9.5f;

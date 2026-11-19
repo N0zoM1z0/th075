@@ -10,7 +10,7 @@ case 0x256: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,

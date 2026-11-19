@@ -8,9 +8,9 @@
 // Both fighters share the Actor::x member at +0x44.
         case 0x5F: {
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
                 if (inputY>0)
-                    SetNativeActionAt40FAC0(1);
+                    ResetPrimaryCounters(1);
             }
             if ((animationStage)==(field070)-1) {
                 if (x >

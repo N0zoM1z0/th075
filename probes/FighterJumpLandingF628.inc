@@ -17,7 +17,7 @@ case F628_CASE: {
     if (ContactAt454EE0() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==field070)
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if (animationStage==3 && animationFrame==0 && I16(F628_COUNTER)<F628_LIMIT) {
         ++I16(F628_COUNTER);
         SetAuxActionAt40FB40(1);

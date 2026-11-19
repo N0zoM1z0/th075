@@ -20,6 +20,6 @@ case 0xC9: {
         if ((velocityX)>g_ThresholdAt0065782C) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     return;
 }

@@ -18,6 +18,6 @@ case 0x32: {
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
     if (AdvanceNestedFrame() == field070)
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     break;
 }

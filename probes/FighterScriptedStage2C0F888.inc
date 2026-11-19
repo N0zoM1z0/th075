@@ -21,7 +21,7 @@ case 0x2C0: {
         fieldF10=0x1A4;
     if (AdvanceNestedFrame()==(field070)) {
 
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         SpawnExtraAt453B50(0x345,reinterpret_cast<int&>(x),
         (*(&y))+g_ContactProjectionAt00657888,1,1,0,1);
     }

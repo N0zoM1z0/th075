@@ -9,13 +9,13 @@ case R1191_ACTION: {
 #if R1191_AIR
     if ((animationStage)>=0) velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C) {
-        SetNativeActionAt40FAC0(10);
+        ResetPrimaryCounters(10);
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
     if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(9);
 #else
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
 #endif
     if ((animationStage)==R1191_FIRST_STAGE && (animationFrame)==0) {
 #include "ReimuCounterShotF1191.inc"

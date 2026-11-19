@@ -46,7 +46,7 @@ case 0x2F9: {
                 facing,1,0,1);
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(180-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==5 && (animationFrame)==0) {

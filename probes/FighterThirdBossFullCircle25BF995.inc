@@ -238,6 +238,6 @@ case 0x25B: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     break;
 }

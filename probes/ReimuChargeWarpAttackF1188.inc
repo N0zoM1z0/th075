@@ -16,7 +16,7 @@ case R1188_ACTION: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==R1188_RETURN_STAGE && (animationFrame)==0) {
         x=opponent->x-float(facing*180);
         y=150.0f; velocityX=6.0f; velocityY=8.0f;

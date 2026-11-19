@@ -17,14 +17,14 @@ case 0xC8: {
     }
     if ((animationStage)==7 && inputY<0) {
         if ((facing)*inputX>0) {
-            SetNativeActionAt40FAC0(0xCD);
+            ResetPrimaryCounters(0xCD);
             break;
         }
-        SetNativeActionAt40FAC0(0xCC);
+        ResetPrimaryCounters(0xCC);
         break;
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         break;
     }
     if ((animationStage)==4 && (animationFrame)==0) {
@@ -56,7 +56,7 @@ case 0xC9: {
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         break;
     }
     if ((animationStage)==3 && (animationFrame)==0) {
@@ -83,11 +83,11 @@ case 0xCA: {
             field05C=0.0f;
             y=0.0f;
             animationFrame=0;
-            SetNativeActionAt40FAC0(0xA);
+            ResetPrimaryCounters(0xA);
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=30.0f;
         velocityY=-4.0f;
@@ -115,11 +115,11 @@ case 0xCB: {
             field05C=0.0f;
             y=0.0f;
             animationFrame=0;
-            SetNativeActionAt40FAC0(0xA);
+            ResetPrimaryCounters(0xA);
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
+    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-30.0f;
         velocityY=2.0f;

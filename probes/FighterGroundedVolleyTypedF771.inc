@@ -42,7 +42,7 @@
                         facing,1);
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if ((animationStage)==13 && (animationFrame)==0 &&
                 (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)+3) {
                 SetAuxActionAt40FB40(0xB);

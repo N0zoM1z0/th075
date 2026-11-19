@@ -4,11 +4,11 @@
 // original fighter parent; not a standalone game function.
         case 0x62: {
             if (AdvanceNestedFrame()==(field070)) {
-                SetNativeActionAt40FAC0(0x5F);
+                ResetPrimaryCounters(0x5F);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==1)
-                    SetNativeActionAt40FAC0(0x5D);
+                    ResetPrimaryCounters(0x5D);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==2)
-                    SetNativeActionAt40FAC0(0x5E);
+                    ResetPrimaryCounters(0x5E);
             }
             break;
         }

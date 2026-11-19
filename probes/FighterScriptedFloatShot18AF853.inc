@@ -14,7 +14,7 @@ case 0x18A: {
         field3AC=0;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0)
         SpawnFloatXYAt453A70(0x327,
             float((facing)*151)+(x),

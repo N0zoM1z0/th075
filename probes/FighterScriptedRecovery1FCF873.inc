@@ -19,7 +19,7 @@ case 0x1FC: {
         field3AC=0;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0)
         velocityX=15.0f;
     return;

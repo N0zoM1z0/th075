@@ -7,7 +7,7 @@ case 0x19E: {
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0)
         field07C=1;
     return;

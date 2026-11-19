@@ -23,7 +23,7 @@ case 0x186: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1C);
     if ((animationStage)==3 && (animationFrame)==0)
@@ -57,7 +57,7 @@ case 0x187: {
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=15.0f;
         velocityY=8.5f;

@@ -18,12 +18,12 @@ case 0xCB: {
             field05C=0.0f;
             y=0.0f;
             animationFrame=0;
-            SetNativeActionAt40FAC0(0xA);
+            ResetPrimaryCounters(0xA);
             return;
         }
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=-10.0f;
         velocityY=5.0f;

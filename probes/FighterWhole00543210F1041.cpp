@@ -138,7 +138,7 @@ void RemiliaFighter::Advance() {
                 }
             }
             if (AdvanceNestedFrame() == field070)
-                SetNativeActionAt40FAC0(2);
+                ResetPrimaryCounters(2);
             break;
         case 0x2:
             if ((field3AC) == 0) {
@@ -180,14 +180,14 @@ void RemiliaFighter::Advance() {
                 }
             }
             if (AdvanceNestedFrame() == field070)
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             break;
         case 0x4: velocityX = 6.5f; goto native_shared_getter;
         case 0x5: velocityX = -6.5f; goto native_shared_getter;
         case 0x6:
             if (animationStage == 0 && animationFrame == 0 &&
                     ((aiCommand) == 3 || (field3AC) > 0)) {
-                SetNativeActionAt40FAC0(0xCC);
+                ResetPrimaryCounters(0xCC);
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
@@ -195,7 +195,7 @@ void RemiliaFighter::Advance() {
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
@@ -220,7 +220,7 @@ void RemiliaFighter::Advance() {
         case 0x7:
             if (animationStage == 0 && animationFrame == 0 &&
                     ((aiCommand) == 5 || (field3AC) > 0)) {
-                SetNativeActionAt40FAC0(0xCD);
+                ResetPrimaryCounters(0xCD);
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
@@ -228,7 +228,7 @@ void RemiliaFighter::Advance() {
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
@@ -253,7 +253,7 @@ void RemiliaFighter::Advance() {
         case 0x8:
             if (animationStage == 0 && animationFrame == 0 &&
                     ((aiCommand) == 4 || (field3AC) > 0)) {
-                SetNativeActionAt40FAC0(0xCE);
+                ResetPrimaryCounters(0xCE);
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
@@ -263,7 +263,7 @@ void RemiliaFighter::Advance() {
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
-                    SetNativeActionAt40FAC0(10);
+                    ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
@@ -289,7 +289,7 @@ void RemiliaFighter::Advance() {
             field05C = 0.6f;
         velocityY = velocityY - field05C;
         if (y + velocityY <= g_ThresholdAt0065782C) {
-            SetNativeActionAt40FAC0(10);
+            ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
             return;
@@ -304,9 +304,9 @@ void RemiliaFighter::Advance() {
             ClearMotionFields();
             if (AdvanceNestedFrame() == field070) {
                 if (inputY == 0)
-                    SetNativeActionAt40FAC0(3);
+                    ResetPrimaryCounters(3);
                 else
-                    SetNativeActionAt40FAC0(2);
+                    ResetPrimaryCounters(2);
             }
             break;
         #include "FighterSingletonContactF598.inc"
@@ -721,7 +721,7 @@ void RemiliaFighter::Advance() {
                     facing,1,0,1);
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if (animationStage==12 && animationFrame==0) {
                 SpawnFloatXYAt453A70(0x328,
                     float(facing*65)+(x),
@@ -764,7 +764,7 @@ void RemiliaFighter::Advance() {
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if (animationFrame==0)
                 field07C=0;
             if (animationStage==1 && animationFrame==0) {
@@ -827,7 +827,7 @@ void RemiliaFighter::Advance() {
             if (animationStage==5 && animationFrame==0)
                 InitTrajectoryAt453E60(5.0f);
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if (animationStage==4 && animationFrame==0) {
                 velocityY=15.0f;
                 field05C=0.85f;
@@ -872,7 +872,7 @@ void RemiliaFighter::Advance() {
                     facing,1,0,1);
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if (animationStage==12 && animationFrame==0) {
                 UpdateGaugeTimer(750);
                 SpawnFloatXYAt453A70(0x32B,
@@ -917,7 +917,7 @@ void RemiliaFighter::Advance() {
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if (animationFrame==0)
                 field07C=0;
             if (animationStage==1 && animationFrame==0) {

@@ -212,6 +212,16 @@ nonexact, with zero newly regressed bytes. Only the 132 directly
 header-affected exact units were cold-replayed (44/44 in each of three
 groups), all exact. No ASM, padding, fake locals or giant exact credit.
 
+The native Actor action-reset helper `0040FAC0` is now called by its
+real inherited `Actor::ResetPrimaryCounters(short)` name across the
+four complete fighter giants: 511 source calls in 256 state/parent files
+expand to 705 native COFF calls (169 Reimu, 177 Sakuya, 181 Youmu,
+178 Remilia). Each full research COFF object retained its exact size,
+all relocation offsets/types and every nonrelocation byte; all
+132 header-affected exact units passed affected-only cold replay in
+three groups of 44. This is a type/ownership and natural source
+recovery, not additional giant exact coverage.
+
 The shared Actor helper `0040FA30`, which advances an animation frame,
 is now called as inherited `Actor::AdvanceNestedFrame()` rather than the
 misleading `GetNativeActionAt40FA30` in all four fighter research giants.

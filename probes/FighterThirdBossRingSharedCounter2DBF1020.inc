@@ -95,7 +95,7 @@ case 0x2DB: {
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
         SpawnSevenFloatAt453B50(0x338,

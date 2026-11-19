@@ -16,11 +16,11 @@ case 0x199: {
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
         ClearMotionFields();
-        SetNativeActionAt40FAC0(0xA);
+        ResetPrimaryCounters(0xA);
         break;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
         field314=0.0f;
@@ -59,11 +59,11 @@ case 0x19A: {
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
         ClearMotionFields();
-        SetNativeActionAt40FAC0(0xA);
+        ResetPrimaryCounters(0xA);
         break;
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
         field314=-20.0f;

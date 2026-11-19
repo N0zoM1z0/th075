@@ -25,7 +25,7 @@ case 0x2DD: {
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=RandomBoundaryAt455580(0,60);
     }
     if ((animationStage)==3 && (animationFrame)==0) {

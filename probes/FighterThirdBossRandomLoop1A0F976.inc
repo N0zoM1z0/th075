@@ -15,7 +15,7 @@ case 0x1A0: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
         if (field39D==2) {

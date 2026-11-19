@@ -54,6 +54,6 @@ case 0x259: {
         --reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     break;
 }

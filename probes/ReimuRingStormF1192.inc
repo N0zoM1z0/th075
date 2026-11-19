@@ -43,7 +43,7 @@ case 0x2DB: {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>2) reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=300-g_ReimuRepeatSettingAt006714D0*20;
     }
     if ((animationStage)==4 && (animationFrame)==0) {
@@ -55,7 +55,7 @@ case 0x2DB: {
         SetAuxActionAt40FB40(10);
     }
     if ((animationStage)==15 && (animationFrame)==0 && y==g_ThresholdAt0065782C) {
-        SetNativeActionAt40FAC0(10);
+        ResetPrimaryCounters(10);
         break;
     }
     if ((animationStage)==16 && (animationFrame)==0) SetAuxActionAt40FB40(14);

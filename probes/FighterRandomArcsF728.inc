@@ -36,7 +36,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(4);
                 velocityX=8.0f;
@@ -77,7 +77,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetNativeActionAt40FAC0(0);
+                ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(4);
                 velocityX=18.0f;

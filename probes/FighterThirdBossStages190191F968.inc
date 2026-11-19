@@ -40,7 +40,7 @@ case 0x190: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     break;
 }
 // F968 natural original Japanese 004AC040 action 0x191, 597 B 147 native x86.
@@ -77,6 +77,6 @@ case 0x191: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if (AdvanceNestedFrame()==(field070))
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
     break;
 }

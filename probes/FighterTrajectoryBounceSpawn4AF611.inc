@@ -23,7 +23,7 @@ case 0x4A: {
             SpawnDirectedAt453A70(F611_PROJECTILE,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                 facing,F611_SIDE);
         }
-        SetNativeActionAt40FAC0(0x4C);
+        ResetPrimaryCounters(0x4C);
         velocityX = -(velocityX) * g_BounceScaleAt00657F74;
         velocityY = 15.0f;
         field05C = 0.5f;
@@ -41,7 +41,7 @@ case 0x4A: {
         I16(F610_COUNTER+2)=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();
         y=0.0f;
-        SetNativeActionAt40FAC0(0x61);
+        ResetPrimaryCounters(0x61);
         InitTrajectoryAt453E60(2.0f);
 #if !F610_PREPARE_BEFORE
         PlaySharedSound(0x16);

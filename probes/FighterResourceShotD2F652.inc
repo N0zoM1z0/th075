@@ -2,7 +2,7 @@
 // Not a whole-function source match; this is an internal case.
 case 0xD2: {
     if (spirit<2) {
-        SetNativeActionAt40FAC0(9);
+        ResetPrimaryCounters(9);
         break;
     }
     spirit=spirit-F652_DECAY;
@@ -28,7 +28,7 @@ case 0xD2: {
         if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
             SetAuxActionAt40FB40(2);
         else
-            SetNativeActionAt40FAC0(9);
+            ResetPrimaryCounters(9);
     }
     break;
 }

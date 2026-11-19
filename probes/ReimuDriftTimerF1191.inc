@@ -19,7 +19,7 @@
 case 0x2E5: {
 #include "ReimuMeterInitF1190.inc"
     if (AdvanceNestedFrame()==(field070)) {
-        SetNativeActionAt40FAC0(0);
+        ResetPrimaryCounters(0);
         aiCardTimer=240-g_ReimuRepeatSettingAt006714D0*30;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
