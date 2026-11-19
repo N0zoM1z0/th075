@@ -1485,7 +1485,7 @@ void SuikaObject::Advance()
         }
         if ((owner->action < 150 || owner->action > 158) && animationStage == 0) {
             ResetSecondaryCounter(1);
-            reinterpret_cast<short&>(owner->fieldF06) = 0;
+            owner->fieldF06 = 0;
         }
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);

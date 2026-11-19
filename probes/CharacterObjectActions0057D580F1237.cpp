@@ -1545,7 +1545,7 @@ case 839:
 
 
 case 840:
-        reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
+        facing = owner->facing;
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
@@ -1765,7 +1765,7 @@ case 847:
 
 
 case 899:
-        reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
+        facing = owner->facing;
         if (owner->action > 149 && owner->action < 154 && animationStage == 0) {
             x = owner->x + float(facing * 57);
             y = owner->y + 94.0f;

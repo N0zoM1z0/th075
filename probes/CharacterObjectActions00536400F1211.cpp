@@ -628,7 +628,7 @@ void YoumuObject::Advance()
         break;
 
 case 0x331: {
-    reinterpret_cast<unsigned char&>(facing)=reinterpret_cast<unsigned char&>(owner->facing);
+    facing = owner->facing;
     if (owner->action>0x95 &&
         owner->action<0x9A &&
         animationStage==0) {
