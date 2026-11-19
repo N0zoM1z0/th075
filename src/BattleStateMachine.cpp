@@ -44,7 +44,7 @@ short BattleScene::AdvanceState()
         }
         break;
     case 4:
-        if (reinterpret_cast<unsigned char&>(fighters[0]->field3CF) == 0 || reinterpret_cast<unsigned char&>(fighters[1]->field3CF) == 0) ++TIMER;
+        if (fighters[0]->field3CF == 0 || fighters[1]->field3CF == 0) ++TIMER;
         if (TIMER == 150) {
             fighters[0]->field3A0 = 0; fighters[1]->field3A0 = 0;
             fighters[0]->field39C = 0; fighters[1]->field39C = 0;
@@ -125,7 +125,7 @@ short BattleScene::AdvanceState()
         if (g_CombatMode == 3 && reinterpret_cast<unsigned long&>(fighters[0]->score) > g_StateScoreThreshold) return 0x220A;
         return 0x2203;
     case 9:
-        if ((reinterpret_cast<unsigned char&>(fighters[0]->field3CF) == 0 || reinterpret_cast<unsigned char&>(fighters[1]->field3CF) == 0) && TIMER < 25) ++TIMER;
+        if ((fighters[0]->field3CF == 0 || fighters[1]->field3CF == 0) && TIMER < 25) ++TIMER;
         if (TIMER == 150) SetNotice(0);
         if (TIMER <= 145) {
             if (reinterpret_cast<signed char&>(fighters[0]->field3CE)) {

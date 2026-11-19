@@ -41,7 +41,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0x62);
-                if ((reinterpret_cast<unsigned char&>(field3CF))==0)
+                if ((field3CF)==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
@@ -82,7 +82,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0x62);
-                if ((reinterpret_cast<unsigned char&>(field3CF))==0)
+                if ((field3CF)==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;

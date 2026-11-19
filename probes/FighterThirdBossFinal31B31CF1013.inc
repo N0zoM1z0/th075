@@ -47,7 +47,7 @@ case 0x31C: {
     if ((animationStage)==21 && (animationFrame)==0 && (scriptCounterF00)<8) {
         ++scriptCounterF00;
         ResetSecondaryCounter(19);
-        reinterpret_cast<unsigned char&>(field3CF)=1;
+        field3CF=1;
     }
     break;
 }

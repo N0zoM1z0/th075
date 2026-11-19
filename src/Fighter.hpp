@@ -194,7 +194,7 @@ public:
     short field3CA;                     // +0x3CA
     short field3CC;                     // +0x3CC
     unsigned char field3CE;             // +0x3CE round outcome (F992)
-    signed char field3CF;               // +0x3CF
+    unsigned char field3CF;             // +0x3CF unsigned continuation/status byte
     unsigned int field3D0[12];          // +0x3D0
     unsigned int field400[12];          // +0x400
     unsigned int field430[12];          // +0x430

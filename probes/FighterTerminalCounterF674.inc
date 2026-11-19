@@ -18,7 +18,7 @@
             if ((animationStage)==22 && (animationFrame)==0 && (scriptCounterF00)<8) {
                 ++scriptCounterF00;
                 ResetSecondaryCounter(0x14);
-                reinterpret_cast<unsigned char&>(field3CF)=1;
+                field3CF=1;
             }
             break;
         }
