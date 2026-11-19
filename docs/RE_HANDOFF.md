@@ -74,6 +74,13 @@ large research parents. They do not claim new giant exactness:
   The coupled owner object also passes all 24 whole code/EH/data sections,
   237 authored bytes, 46 relocation fields and both SafeSEH roots with a
   fresh canonical receipt.
+  The 282-byte `0x0045BB10` spawn routine now belongs to that same owner:
+  `EffectManagerLifetimeF161::Spawn` uses the bound Fighter's virtual slot 7,
+  the four typed float parameters through `CharacterObject::field0D4`, and
+  the actual four deque members. Its 282 bytes / three direct relocations
+  replay exact. The 29 exact units depending on `CharacterObject.hpp` replayed
+  29/29; the owner lifecycle replayed 3/3 and the 24-section EH/data verifier
+  passed with the fresh receipt.
 - 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
   +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
   identical; the 462 affected exact units cold-replayed 462/462.
