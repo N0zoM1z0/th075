@@ -232,5 +232,7 @@ proper signed `short`s. 813 signed-short reinterpret-reference aliases across
 short casts on assignments were also removed. Reimu/Sakuya/Youmu/Remilia full
 fighter `Advance` COFF bodies and relocation maps remain byte-identical
 (62,090/1,824; 83,922/2,352; 47,655/1,491; 59,236/1,863). The 12 affected
-exact reset/dispatch units replayed 12/12. All four giant frontiers are
-unchanged and remain nonexact.
+exact reset/dispatch units replayed 12/12. A follow-up removes six
+`static_cast<signed short>` wrappers from three Youmu scripted-state fragments;
+the full 47,655-byte Advance body and all 1,491 relocations remain identical.
+All four giant frontiers are unchanged and remain nonexact.

@@ -890,3 +890,7 @@ remain unchanged (6,311/5, 6,958/12, 2,736/5 and 1,741/3 GPR/width debt
 respectively); no giant exactness is claimed. The 12 affected exact units
 covering character action dispatch and all fighter reset-round entry points
 were cold-replayed selectively and passed 12/12.
+The Youmu parent also drops six explicit `static_cast<signed short>`
+wrappers in three shared scripted-state fragments. The complete 47,655-byte
+COFF body and all 1,491 relocation positions/types/addends/local targets
+remain identical after this additional cleanup.
