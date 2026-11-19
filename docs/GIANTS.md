@@ -715,3 +715,42 @@ and failed the frontier size check. Other forms regressed or returned to
 the original 447/12 result. Every experiment was discarded; the tracked
 source remains at its committed 42,937-byte baseline. Do not repeat these
 syntax-only variants without new target evidence.
+
+The shared angle leaf `AngleAt00483300` is now natural C++ and exact as a
+21-byte authored game function. Sixteen independently authored caller
+functions make 211 original direct calls to it, including Alice and Meiling
+`Advance` parents. Its source calls the VC7.1 `atan2f` inline overload; the
+37-byte worker at `00483320` is separately recorded as VC71CRT library code,
+with its `_atan2` callee already independently classified. This closes the
+small game wrapper without claiming the header worker or CRT math body as
+game-authored bytes. The two other float math wrapper pairs remain under R163
+review because their complete SDK/ordinary alternatives are still ambiguous.
+
+## 2026-11-19 — Meiling state 997/998 register frontier
+
+The detailed target/object instruction comparison for `MeilingObject::Advance`
+(`0x005EB520`, state values 997/998) narrows the remaining mismatch to the
+switch-state entry at `0x005F3904`:
+
+- Through the two exits at `0x005F38FA` and `0x005F38FF`, the target and object
+  use the same GPRs; the final `ResetSecondaryCounter` call loads `this` into
+  `ECX` in both builds.
+- At `0x005F3904`, the target begins the state-998 body with
+  `mov eax, [ebp-4]`, while the object begins with `mov edx, [ebp-4]`.
+  The source-level facing copy is already the direct natural assignment
+  `facing = owner->facing`; changing its cast or owner alias is not the
+  remaining explanation.
+- The six instruction-width deltas later in state 998 are the x86 accumulator
+  encoding consequence of that register rotation: the target uses the shorter
+  `cmp eax, imm32` encoding where the object uses a non-`EAX` register, and in
+  two comparisons the rotation is reversed (`ECX` versus `EAX`). They are not
+  six independent source-width defects.
+- A source-order swap of the independent `case 997` and `case 998` blocks was
+  tested and rejected: VC7.1 emitted the blocks in the swapped order, losing
+  the target's native layout. The existing direct-facing, owner-alias,
+  typed-owner, case-997 polarity/else-shape, and state-998 return variants
+  remain rejected; do not repeat them without a new hypothesis.
+
+Keep this as a compiler/register-allocation frontier, not a reason to add
+inline assembly, padding, or synthetic instructions. Continue with natural
+C++ control-flow and object-model hypotheses only.
