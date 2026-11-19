@@ -581,7 +581,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
+            (owner->field318) = RecordedRange(0,10) - 5;
             owner->SpawnBattleEffect(0x320,
                    (facing) * 10 + (x),
                    y, facing, 1);
@@ -656,7 +656,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RecordedRange(0,15) - 45);
+            (owner->field318) = RecordedRange(0,15) - 45;
             owner->SpawnBattleEffect(0x321,
                    (facing) * 10 + (x),
                    y, facing, 1);
@@ -732,7 +732,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
+            (owner->field318) = RecordedRange(0,10) - 5;
             owner->SpawnBattleEffect(0x322,
                    (facing) * 10 + (x),
                    y, facing, 1);
@@ -1679,7 +1679,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RecordedRange(0,15) - 60);
+            (owner->field318) = RecordedRange(0,15) - 60;
             owner->SpawnBattleEffect(0x324,
                    (facing) * 10 + (x),
                    y, facing, 1);
@@ -1743,7 +1743,7 @@ void AliceObject::Advance() {
         if ((animationStage) == 3 && (animationFrame) == 0) {
             if ((owner->action) == 0x198) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
+                (owner->field318) = RecordedRange(0,10) - 5;
                 owner->SpawnBattleEffect(0x322,
                     (facing) * 10 + (x),
                     y, facing,1);
@@ -1751,7 +1751,7 @@ void AliceObject::Advance() {
             }
             if ((owner->action) == 0x19A) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(RecordedRange(0,10) + 30);
+                (owner->field318) = RecordedRange(0,10) + 30;
                 owner->SpawnBattleEffect(0x323,
                     (facing) * 10 + (x),
                     y, facing,1);
@@ -1759,7 +1759,7 @@ void AliceObject::Advance() {
             }
             if ((owner->action) == 0x19C) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
+                (owner->field318) = RecordedRange(0,10) - 5;
                 owner->SpawnBattleEffect(0x324,
                     (facing) * 10 + (x),
                     y, facing,1);
@@ -1767,7 +1767,7 @@ void AliceObject::Advance() {
             }
             if ((owner->action) == 0x19D) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(-RecordedRange(0,10) - 30);
+                (owner->field318) = -RecordedRange(0,10) - 30;
                 owner->SpawnBattleEffect(0x325,
                     (facing) * 10 + (x),
                     y, facing,1);
