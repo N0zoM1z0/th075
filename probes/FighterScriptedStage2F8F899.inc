@@ -42,7 +42,7 @@ case 0x2F8: {
     if ((animationStage)>6 && (animationStage)<13) {
         SpawnBattleEffect(0x392,
             (x)+g_ContactProjectionAt00657888-
-                float(RandomBoundaryAt455580(0,200)),
+                float(RecordedRange(0,200)),
             (*(&y))+g_F701_VolleyYAt00658268,
             (facing),1);
     }
@@ -66,7 +66,7 @@ case 0x2F8: {
         ResetTransform(100.0f,60.0f,0.0f);
         scaleX=3.0f;
         scaleY=0.05f;
-        velocityX=float(RandomBoundaryAt455580(0,60))+
+        velocityX=float(RecordedRange(0,60))+
             g_ApproachUpperAt006592A4;
         SpawnFloatXRawYAt453C80(0x80,
             float((facing)*150)+(x),

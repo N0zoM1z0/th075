@@ -27,12 +27,12 @@ case 0x2EF: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=SelectRangeAt455580(0,60)+120-g_ReimuRepeatSettingAt006714D0*40;
+        aiCardTimer=RecordedRange(0,60)+120-g_ReimuRepeatSettingAt006714D0*40;
     }
     if ((animationStage)==3 && (animationFrame)==0) {
-        x=((*(&opponent->x))+g_ReimuWarpSpreadAt006583B4)-float(SelectRangeAt455580(0,2000));
+        x=((*(&opponent->x))+g_ReimuWarpSpreadAt006583B4)-float(RecordedRange(0,2000));
         y=200.0f;
-        velocityX=g_ReimuWarpSpeedAt00657CF8-float(SelectRangeAt455580(0,6));
+        velocityX=g_ReimuWarpSpeedAt00657CF8-float(RecordedRange(0,6));
         velocityY=6.0f;
         PlaySound(2);
         if (x>opponent->x)

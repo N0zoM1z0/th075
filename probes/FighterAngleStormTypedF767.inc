@@ -54,7 +54,7 @@ case 0x2F9: {
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0);
-                aiCardTimer=RandomBoundaryAt455580(60,100)
+                aiCardTimer=RecordedRange(60,100)
                        -static_cast<int>(g_CloudOpponentAt006714D0)*20;
             }
             if ((animationStage)==2 && (animationFrame)==0) {

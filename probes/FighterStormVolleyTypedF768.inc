@@ -25,7 +25,7 @@
             }
             if ((animationStage)==6 && (animationFrame)==0) {
                 PlaySound(0x12);
-                field314=float(RandomBoundaryAt455580(0,40)-20);
+                field314=float(RecordedRange(0,40)-20);
                 SpawnBattleEffect(0x391,
                     float(facing*36)+(x),
                     (*(&y))+g_StormYAt0065948C,
@@ -38,7 +38,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0);
-                aiCardTimer=RandomBoundaryAt455580(60,100)
+                aiCardTimer=RecordedRange(60,100)
                            -static_cast<int>(g_CloudOpponentAt006714D0)*20;
             }
             if ((animationStage)==2 && (animationFrame)==0) PlaySound(0x15);

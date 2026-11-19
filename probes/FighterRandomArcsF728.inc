@@ -13,12 +13,12 @@
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
             }
-            if (RandomBoundaryAt455580(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
+            if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
                 SpawnBattleEffect(0x330,
                     ((x)+g_F728_RandomOffsetXAt00657878)
-                        -float(RandomBoundaryAt455580(0,60)),
+                        -float(RecordedRange(0,60)),
                     ((*(&y))+g_F728_RandomOffsetYAt00657858)
-                        +float(RandomBoundaryAt455580(0,140)),
+                        +float(RecordedRange(0,140)),
                     facing,1);
             }
             if ((velocityX)>g_ThresholdAt0065782C) {
@@ -59,12 +59,12 @@
                 if ((velocityX)<g_ThresholdAt0065782C)
                     velocityX=0.0f;
             }
-            if (RandomBoundaryAt455580(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
+            if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
                 SpawnBattleEffect(0x330,
                     ((x)+g_F728_RandomOffsetXAt00657878)
-                        -float(RandomBoundaryAt455580(0,60)),
+                        -float(RecordedRange(0,60)),
                     ((*(&y))+g_F728_RandomOffsetYAt00657858)
-                        +float(RandomBoundaryAt455580(0,140)),
+                        +float(RecordedRange(0,140)),
                     facing,1);
             }
             if (y>g_ThresholdAt0065782C) {

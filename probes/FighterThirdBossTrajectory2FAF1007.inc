@@ -40,12 +40,12 @@ case 0x2FA: {
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=16.0f;
         field05C=0.5f;
-        velocityX=float(RandAt455580(0,6)+12);
+        velocityX=float(RecordedRange(0,6)+12);
         if ((facing==1 &&
              (x)>g_F1007_RightBoundAt0065945C) ||
             (facing==-1 &&

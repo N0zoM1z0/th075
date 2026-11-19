@@ -40,7 +40,7 @@ case 0x2DC: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=RandomBoundaryAt455580(0,30);
+        aiCardTimer=RecordedRange(0,30);
     }
     if ((animationStage)==13 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);

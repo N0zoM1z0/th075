@@ -26,12 +26,12 @@ case 0x2DD: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=RandomBoundaryAt455580(0,60);
+        aiCardTimer=RecordedRange(0,60);
     }
     if ((animationStage)==3 && (animationFrame)==0) {
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        velocityX=float(RandomBoundaryAt455580(0,6))+g_F894RandomHeightAt006592A0;
+        velocityX=float(RecordedRange(0,6))+g_F894RandomHeightAt006592A0;
         velocityY=16.0f;
         field07C=0;
         field080=1;

@@ -41,8 +41,8 @@ case 0x2FB: {
     }
     if ((animationStage)<8 && (animationStage)>1)
         Fighter::SpawnTrackedEffect(0x33E,
-            float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
-            ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
+            float(RecordedRange(0,120))+(x)-g_F983_XOffsetAt00658264,
+            ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RecordedRange(0,90)),
             1,1,0,1);
     if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
         velocityX=0.0f;
@@ -93,12 +93,12 @@ case 0x2FB: {
         break;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        velocityX=float(RandAt455580(0,480)-240);
+        velocityX=float(RecordedRange(0,480)-240);
         if ((x)<g_F1009_LeftAt0065787C)
-            velocityX=float((RandAt455580(0,180)+90) *
+            velocityX=float((RecordedRange(0,180)+90) *
                 (facing));
         if ((x)>g_F1009_RightAt0065920C)
-            velocityX=float(-(RandAt455580(0,180)+90) *
+            velocityX=float(-(RecordedRange(0,180)+90) *
                 (facing));
         velocityY=3.0f;
         field05C=0.5f;

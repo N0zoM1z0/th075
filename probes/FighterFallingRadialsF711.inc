@@ -22,7 +22,7 @@
                 break;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                velocityX=float(RandomBoundaryAt455580(0,15))+g_ApproachUpperAt006592A4;
+                velocityX=float(RecordedRange(0,15))+g_ApproachUpperAt006592A4;
                 velocityY=40.0f;
                 field05C=6.0f;
                 SpawnAt453C80(0x7D,
@@ -56,7 +56,7 @@
                 break;
             }
             if ((animationStage)==3 && (animationFrame)==0) {
-                velocityX=g_F711_ReverseRandomAt00659A0C-float(RandomBoundaryAt455580(0,15));
+                velocityX=g_F711_ReverseRandomAt00659A0C-float(RecordedRange(0,15));
                 velocityY=40.0f;
                 field05C=6.0f;
                 SpawnAt453C80(0x7D,

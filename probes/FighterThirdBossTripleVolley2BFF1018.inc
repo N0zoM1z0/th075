@@ -47,7 +47,7 @@ case 0x2BF: {
         field084=20;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -58,13 +58,13 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
+            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -75,13 +75,13 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
+            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -92,13 +92,13 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
+            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -109,13 +109,13 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
+            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -126,7 +126,7 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
+            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);

@@ -14,7 +14,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0);
-                aiCardTimer=static_cast<short>(RandomBoundaryAt455580(60,80)
+                aiCardTimer=static_cast<short>(RecordedRange(60,80)
                    -static_cast<int>(g_CloudOpponentAt006714D0)*20);
             }
             if ((animationStage)==3 && (animationFrame)==0)
@@ -24,8 +24,8 @@
                     reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 else
                     reinterpret_cast<signed short&>(scriptCounterF00)=20;
-                if (RandomBoundaryAt455580(0,100)<20) {
-                    if (RandomBoundaryAt455580(0,100)<50)
+                if (RecordedRange(0,100)<20) {
+                    if (RecordedRange(0,100)<50)
                         reinterpret_cast<signed short&>(scriptCounterF00)=0;
                     else
                         reinterpret_cast<signed short&>(scriptCounterF00)=20;

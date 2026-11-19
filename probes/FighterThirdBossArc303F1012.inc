@@ -16,7 +16,7 @@ case 0x303: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         fieldF04=0;
-        if (RandAt455580(0,100)>50)
+        if (RecordedRange(0,100)>50)
             reinterpret_cast<signed short&>(fieldF06)=5;
         else
             reinterpret_cast<signed short&>(fieldF06)=-5;
@@ -57,7 +57,7 @@ case 0x303: {
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=0.0f;

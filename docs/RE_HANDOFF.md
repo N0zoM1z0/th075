@@ -28,6 +28,12 @@ Done so far:
   nine full COFF bodies and no relocation layout changes. Local exact
   verification: range leaf 1/1, object cohort 24/24, selected Actor/Fighter
   dependency cohort 105/105. No full cold replay was run.
+- Four complete fighter giants also now use `Actor::RecordedRange` in
+  169 actual compiled call sites (Reimu 29, Sakuya 97, Youmu 16,
+  Remilia 27). All four complete COFF bodies preserve original size,
+  all relocation offsets/types and every nonrelocation code byte.
+  Grouped affected-only exact replay passed 132/132 (44/44 each).
+  Giant frontiers remain nonexact against the original PE.
 - Eight complete object giant parents now use the inherited
   `Actor::RecordedRange` for 377 verified native COFF calls, rather than
   speculative duplicate methods: Sakuya 75, Alice 15, Youmu 49,

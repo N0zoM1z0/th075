@@ -43,8 +43,8 @@ case 0x2DB: {
         }
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        velocityX=float(RandAt455580(0,100)-50);
-        velocityY=float(RandAt455580(0,30)-15);
+        velocityX=float(RecordedRange(0,100)-50);
+        velocityY=float(RecordedRange(0,30)-15);
         if (x >
             opponent->x)
             facing=-1;
@@ -91,8 +91,8 @@ case 0x2DB: {
     }
     if ((animationStage)<8 && (animationStage)>1)
         Fighter::SpawnTrackedEffect(0x33E,
-            float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
-            ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
+            float(RecordedRange(0,120))+(x)-g_F983_XOffsetAt00658264,
+            ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RecordedRange(0,90)),
             1,1,0,1);
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);

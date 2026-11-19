@@ -40,19 +40,19 @@ case 0x2EF: {
         field07C=0;
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=static_cast<short>(RandAt455580(60,120));
+        aiCardTimer=static_cast<short>(RecordedRange(60,120));
     }
     if ((animationStage)==13 && (animationFrame)==0) {
         PlaySound(7);
-        velocityX=float(RandAt455580(0,6)-3);
+        velocityX=float(RecordedRange(0,6)-3);
         velocityY=1.5f;
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-70);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-70);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -67,8 +67,8 @@ case 0x2EF: {
     if ((animationStage)==17 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-50);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-50);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -83,8 +83,8 @@ case 0x2EF: {
     if ((animationStage)==19 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-50);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-50);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -99,8 +99,8 @@ case 0x2EF: {
     if ((animationStage)==21 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-50);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-50);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -115,8 +115,8 @@ case 0x2EF: {
     if ((animationStage)==23 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-50);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-50);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -162,19 +162,19 @@ case 0x2F0: {
         field07C=0;
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=static_cast<short>(RandAt455580(60,120));
+        aiCardTimer=static_cast<short>(RecordedRange(60,120));
     }
     if ((animationStage)==13 && (animationFrame)==0) {
         PlaySound(7);
-        velocityX=float(RandAt455580(0,6)-3);
+        velocityX=float(RecordedRange(0,6)-3);
         velocityY=3.5f;
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-70);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-70);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -189,8 +189,8 @@ case 0x2F0: {
     if ((animationStage)==17 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-70);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-70);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -205,8 +205,8 @@ case 0x2F0: {
     if ((animationStage)==19 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-70);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-70);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -221,8 +221,8 @@ case 0x2F0: {
     if ((animationStage)==21 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-70);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-70);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
@@ -237,8 +237,8 @@ case 0x2F0: {
     if ((animationStage)==23 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-        field314=float(RandAt455580(0,100)-70);
-        field318=float(RandAt455580(0,10)+5);
+        field314=float(RecordedRange(0,100)-70);
+        field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+

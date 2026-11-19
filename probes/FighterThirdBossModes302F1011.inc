@@ -34,7 +34,7 @@ case 0x302: {
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RandAt455580(0,60)+180-g_F1004_ModeAt006714D0*20);
+            RecordedRange(0,60)+180-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=13.5f;

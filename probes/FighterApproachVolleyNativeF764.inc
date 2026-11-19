@@ -54,7 +54,7 @@
             if ((animationStage)==3 && (animationFrame)==0) {
                 if (F699AbsAt00412D90(reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     <g_F699_DistanceAt0065787C) {
-                    if (RandomBoundaryAt455580(0,100)<50)
+                    if (RecordedRange(0,100)<50)
                         facing=1;
                     else
                         facing=-1;
@@ -69,7 +69,7 @@
                     facing,1);
                 velocityX=-20.0f;
                 velocityY=17.5f;
-                if (RandomBoundaryAt455580(0,100)<50)
+                if (RecordedRange(0,100)<50)
                     velocityY=15.0f;
                 field05C=0.8f;
             }

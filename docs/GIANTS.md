@@ -287,6 +287,15 @@ compiled code uses 414 calls to inherited `Actor::RecordedRange`. The
 105 selected Fighter/Actor-dependent exact units were replayed locally,
 all passing. None of the nonexact giant frontiers were changed.
 
+Four complete fighter giant parents now use `Actor::RecordedRange`
+for another 169 actual compiled range calls: Reimu 29, Sakuya 97,
+Youmu 16, Remilia 27. Their 62,090 / 83,922 / 47,655 / 59,236-byte
+COFF bodies preserve every original relocation position/type and every
+nonrelocation byte. The former character-specific range method aliases
+were removed from their headers; all 132 affected exact units passed
+local cold replay in three groups of 44/44. Native giant GPR/width
+debt remains nonexact.
+
 Eight native object giant parents now invoke the inherited
 `Actor::RecordedRange` instead of eight per-character speculative method
 symbols: Sakuya 75, Alice 15, Youmu 49, Remilia 24, Yuyuko 67,

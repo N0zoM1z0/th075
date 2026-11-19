@@ -16,7 +16,6 @@ public:
     void SpawnDirectedAt453A70(int,int,int,char,int);
     void SpawnFloatXRawYAt453A70(int,float,int,char,int);
     void SpawnWithFloatAt453A70(int,int,float,char,int);
-    int RandomBoundaryAt455580(int,int);
     void SpawnExtraAt453B50(int,int,float,char,int,int,int);
     void SpawnExtraRawYAt453B50(int,int,int,char,int,int,int);
     void SetupCollisionAt454BC0(int,int,int);

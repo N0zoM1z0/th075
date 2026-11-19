@@ -48,7 +48,7 @@ case 0x2BE: {
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -60,7 +60,7 @@ case 0x2BE: {
     }
     if ((animationStage)==17 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -72,7 +72,7 @@ case 0x2BE: {
     }
     if ((animationStage)==19 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -84,7 +84,7 @@ case 0x2BE: {
     }
     if ((animationStage)==21 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -96,7 +96,7 @@ case 0x2BE: {
     }
     if ((animationStage)==23 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);

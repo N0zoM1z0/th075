@@ -42,7 +42,7 @@ case 0x2E5: {
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==4 && (animationFrame)==0)
         reinterpret_cast<signed short&>(fieldF06)=10;

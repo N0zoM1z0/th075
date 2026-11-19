@@ -19,7 +19,6 @@ public:
     void SpawnRawAt453C80(short,int,int,signed char,signed char);
     void SpawnSevenAt453B50(short,int,int,signed char,signed char,unsigned char,unsigned char);
     void SpawnSevenRawXFloatYAt453B50(short,int,float,signed char,signed char,unsigned char,unsigned char);
-    int RandAt455580(int,int);
 
     void ConfigureStage();
     void ChooseAction();

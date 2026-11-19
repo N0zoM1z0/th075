@@ -15,7 +15,7 @@ case 0x2E4: {
                 opponent->x-
                 x)
                     <g_F895AbsThresholdAt006591F4) {
-            ResetPrimaryCounters(RandomBoundaryAt455580(0,4)+0x2E4);
+            ResetPrimaryCounters(RecordedRange(0,4)+0x2E4);
             return;
         }
     }
@@ -26,7 +26,7 @@ case 0x2E4: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=RandomBoundaryAt455580(30,60);
+        aiCardTimer=RecordedRange(30,60);
     }
     if ((animationStage)==2 && (animationFrame)==0)
         velocityX=12.5f;

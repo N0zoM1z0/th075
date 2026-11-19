@@ -3,7 +3,7 @@
 // 12 original genuine PE call/global fields. Real 5/8 shot loops,
 // native random number and FIADD/FILD source order. The original
 // right-to-left argument evaluation must calculate native Y base
-// BEFORE calling RandAt455580(0,20); the opposite source grammar
+// BEFORE calling RecordedRange(0,20); the opposite source grammar
 // changes 72 native ordered mnemonics. With correct natural C++
 // all original 148 positional mnemonics+widths align, 66 native
 // GPR roles still wrong in the incomplete 82KB parent. No exact credit.
@@ -23,8 +23,8 @@ case 0x1A0: {
                 field314=0.0f;
                 field318=10.0f;
                 Fighter::SpawnTrackedEffect(0x344,
-                    float((RandAt455580(0,80)+30)*(facing))+(x),
-                    ((*(&y))+g_F976_RandomYAt0065786C+shot*40)+float(RandAt455580(0,20)),
+                    float((RecordedRange(0,80)+30)*(facing))+(x),
+                    ((*(&y))+g_F976_RandomYAt0065786C+shot*40)+float(RecordedRange(0,20)),
                     facing,1,0,1);
             }
         } else {
@@ -32,8 +32,8 @@ case 0x1A0: {
                 field314=0.0f;
                 field318=10.0f;
                 Fighter::SpawnTrackedEffect(0x344,
-                    float((RandAt455580(0,100)+20)*(facing))+(x),
-                    ((*(&y))+g_F976_RandomYAt0065786C+shot*30)+float(RandAt455580(0,20)),
+                    float((RecordedRange(0,100)+20)*(facing))+(x),
+                    ((*(&y))+g_F976_RandomYAt0065786C+shot*30)+float(RecordedRange(0,20)),
                     facing,1,0,1);
             }
         }

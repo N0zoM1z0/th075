@@ -45,7 +45,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0);
-                aiCardTimer=static_cast<short>(RandomBoundaryAt455580(100,180)
+                aiCardTimer=static_cast<short>(RecordedRange(100,180)
                     -static_cast<int>(g_CloudOpponentAt006714D0)*30);
             }
             if ((animationFrame)==0)

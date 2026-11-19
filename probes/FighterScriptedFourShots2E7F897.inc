@@ -21,7 +21,7 @@ case F897_CASE: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=RandomBoundaryAt455580(0,60)+60-
+        aiCardTimer=RecordedRange(0,60)+60-
                       static_cast<int>(g_CloudOpponentAt006714D0);
         return;
     }

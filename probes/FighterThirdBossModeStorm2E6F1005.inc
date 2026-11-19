@@ -31,8 +31,8 @@ case 0x2E6: {
         }
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        velocityX=float(RandAt455580(0,100)-50);
-        velocityY=float(RandAt455580(0,5)+20);
+        velocityX=float(RecordedRange(0,100)-50);
+        velocityY=float(RecordedRange(0,5)+20);
         if (x >
                 opponent->x)
             facing=-1;
@@ -59,8 +59,8 @@ case 0x2E6: {
     }
     if ((animationStage)<8 && (animationStage)>1)
         Fighter::SpawnTrackedEffect(0x33E,
-            float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
-            ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
+            float(RecordedRange(0,120))+(x)-g_F983_XOffsetAt00658264,
+            ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RecordedRange(0,90)),
             1,1,0,1);
     if ((animationStage)>10 && (animationStage)<17 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
@@ -108,7 +108,7 @@ case 0x2E6: {
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);

@@ -15,11 +15,11 @@ case R1191_ACTION: {
     if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(R1191_AUX);
     if ((animationStage)==2 && (animationFrame)==0) {
 #if R1191_REVERSE_X
-        velocityX=g_ReimuReverseDriftAt0065907C-float(SelectRangeAt455580(0,3));
+        velocityX=g_ReimuReverseDriftAt0065907C-float(RecordedRange(0,3));
 #else
-        velocityX=float(SelectRangeAt455580(0,3))+g_ApproachLowerAt00658290;
+        velocityX=float(RecordedRange(0,3))+g_ApproachLowerAt00658290;
 #endif
-        velocityY=float(SelectRangeAt455580(0,R1191_LIFT_RANGE))+g_ReimuRandomLiftAt00657850;
+        velocityY=float(RecordedRange(0,R1191_LIFT_RANGE))+g_ReimuRandomLiftAt00657850;
         field05C=0.3f;
     }
     break;

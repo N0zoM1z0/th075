@@ -24,13 +24,13 @@
                 ResetPrimaryCounters(0);
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityY=13.5f;
-                velocityX=static_cast<float>(RandomBoundaryAt455580(0,8)-4);
+                velocityX=static_cast<float>(RecordedRange(0,8)-4);
                 field05C=0.25f;
             }
             if ((animationStage)==9 && (animationFrame)==0) {
                 PlaySound(18);
                 aiCardTimer=120;
-                fieldF04=static_cast<short>(RandomBoundaryAt455580(0,359));
+                fieldF04=static_cast<short>(RecordedRange(0,359));
                 if (g_CloudOpponentAt006714D0==0) {
                     for (int i=0; i<6; ++i) {
                         field314=static_cast<float>(i*60+(fieldF04));
