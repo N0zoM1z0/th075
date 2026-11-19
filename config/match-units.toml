@@ -28993,8 +28993,8 @@ target = 0x004116F0
 source = "src/RenderBackgroundF179.cpp"
 object = "build/matching/RenderBackgroundF179.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["BattleScene::RenderBackground"]
-symbol = "?RenderBackground@RenderBackgroundF179@@QAEXXZ"
+functions = ["CharacterSelectScene::DrawCurrent"]
+symbol = "?DrawCurrent@CharacterSelectScene@@UAEXXZ"
 target_address = 0x00435A70
 size = 6404
 [[units.battle-render-background-00435a70.relocations]]

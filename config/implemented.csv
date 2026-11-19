@@ -475,7 +475,7 @@ BackgroundStage::ApplyTransformAt004512C0
 BackgroundTransform::CopyLightAt00451BC0
 BackgroundStage::DrawSidePairAt00451D20
 BackgroundStage::ApplyTransformAt00451E00
-BattleScene::RenderBackground
+CharacterSelectScene::DrawCurrent
 BackgroundStage::AdvanceAnimationCounterAt00449EC0
 BackgroundStage::AdvanceAnimationCounterAt0044DA70
 BackgroundStage::AdvanceAnimationCounterAt0044F830

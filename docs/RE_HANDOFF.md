@@ -25,7 +25,10 @@ Done so far:
 - The character-select scene now owns the exact C++ constructor, main
   `Advance`, reset and five choice/confirmation/option methods. Their shared
   layout covers the 28-byte per-player input records and named animation
-  fields; all eight touched complete functions cold-replay exact.
+  fields; both card and options renderers now belong to `CharacterSelectScene`
+  and the 6,404-byte background renderer is now the genuine virtual
+  `CharacterSelectScene::DrawCurrent`. All eleven migrated complete
+  functions cold-replay exact.
 - The 60,999-byte Reimu fighter parent is now `ReimuFighter::Advance` on the
   real vtable class, with its two +F00/+F02 counters named in `Fighter`.
   Its native-byte ratchet is unchanged: 6,311 register-role differences
