@@ -305,7 +305,7 @@ void SuikaObject::Advance()
             if (animationStage == 0) {
                 owner->SpawnBattleEffect(806, x, y, facing, 1);
                 scaleX = RecordedRange(0, 4) * 0.1f + 0.8f;
-                reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+                scaleY = scaleX;
                 if (field080 == 0) ResetSecondaryCounter(1);
             }
             if (animationStage == 1) {
@@ -511,7 +511,7 @@ void SuikaObject::Advance()
             field0DA = RecordedRange(0, 60) - 30;
             field0DC = RecordedRange(0, 60) - 30;
             owner->SpawnBattleEffect(809, field0DA + x, field0DC + y, facing, 1);
-            reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(field0C8);
+            owner->field314 = field0C8;
             owner->SpawnBattleEffect(810, field0DA + x, field0DC + y, facing, 1);
         }
         x = facing * velocityX + x;
@@ -645,7 +645,7 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0 && field0D8 != 1) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(25, 75) * 0.01f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             color[0] = 255;
             color[1] = RecordedRange(0, 255);
             color[2] = RecordedRange(0, 255);
@@ -663,7 +663,7 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(75, 150) * 0.01f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             rotationZ = RecordedRange(0, 359);
             field0DC = static_cast<short>(AngleAt00483300(
                 owner->opponent->y + 20.0f - y,
@@ -769,8 +769,8 @@ void SuikaObject::Advance()
     case 819:
         if (owner->action != 703) ClearFrameInfo();
         if (owner->action == 703) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
@@ -804,7 +804,7 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(100, 300) * 0.01f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             rotationZ = RecordedRange(0, 359);
             field0DC = static_cast<short>(AngleAt00483300(
                 owner->opponent->y + 20.0f - y,
@@ -890,8 +890,8 @@ void SuikaObject::Advance()
     case 821:
         if (owner->action != 723) ClearFrameInfo();
         if (owner->action == 723) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
@@ -929,7 +929,7 @@ void SuikaObject::Advance()
             field080 = 1;
             field07C = 0;
             scaleX = 1.0f - RecordedRange(0, 5) * 0.1f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             color[0] = 255;
             color[1] = 255;
             color[2] = 255;
@@ -955,7 +955,7 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f - RecordedRange(0, 5) * 0.1f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             color[0] = 255;
             color[1] = 255;
             color[2] = 255;
@@ -1075,7 +1075,7 @@ void SuikaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                reinterpret_cast<unsigned int&>(velocityX) = reinterpret_cast<unsigned int&>(field0C8);
+                velocityX = field0C8;
                 velocityY = 10.0f;
                 field0DE = 0;
             }
@@ -1201,7 +1201,7 @@ void SuikaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                reinterpret_cast<unsigned int&>(velocityX) = reinterpret_cast<unsigned int&>(field0C8);
+                velocityX = field0C8;
                 velocityY = 10.0f;
                 field0DE = 0;
             }
@@ -1354,7 +1354,7 @@ void SuikaObject::Advance()
     case 831:
         if (owner->action != 723) ClearFrameInfo();
         if (owner->action == 723) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->opponent->x);
+            x = owner->opponent->x;
             y = owner->opponent->y + 100.0f;
         }
         if (animationStage == 0 && animationFrame == 0) {
@@ -1549,8 +1549,8 @@ void SuikaObject::Advance()
         break;
 
     case 903:
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-        reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+        x = owner->x;
+        y = owner->y;
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
@@ -1558,7 +1558,7 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(0, 4) * 0.1f + 0.4f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             color[0] = 64;
             color[1] = 255;
             color[2] = 255;
@@ -1836,7 +1836,7 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                         ResetTransform(0.0f, 0.0f, 0.0f);
                         scaleX = RecordedRange(75, 150) * 0.01f;
-                        reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+                        scaleY = scaleX;
                         rotationZ = RecordedRange(0, 359);
                         field0DC = static_cast<short>(AngleAt00483300(
                             static_cast<SuikaFighter*>(owner)->fieldF24 - y,
@@ -2094,7 +2094,7 @@ void SuikaObject::Advance()
             else {
                 if (animationStage == 1) {
                     scaleX = RecordedRange(0, 5) * 0.1f + 0.8f;
-                    reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+                    scaleY = scaleX;
                 }
                 x = facing * velocityX + x;
                 if (AdvanceNestedFrame() == field070) {
@@ -2176,7 +2176,7 @@ void SuikaObject::Advance()
             }
             if (animationStage == 3) {
                 scaleX = RecordedRange(0, 5) * 0.025f + 0.95;
-                reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+                scaleY = scaleX;
             }
             x = facing * velocityX + x;
             y -= velocityY;
@@ -2560,7 +2560,7 @@ void SuikaObject::Advance()
             }
             if (animationStage == 3) {
                 scaleX = RecordedRange(0, 5) * 0.025f + 0.95;
-                reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+                scaleY = scaleX;
             }
             x = facing * velocityX + x;
             y -= velocityY;
@@ -2612,7 +2612,7 @@ void SuikaObject::Advance()
             }
             if (animationStage == 3) {
                 scaleX = RecordedRange(0, 5) * 0.025f + 0.95;
-                reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+                scaleY = scaleX;
             }
             x = facing * velocityX + x;
             y -= velocityY;

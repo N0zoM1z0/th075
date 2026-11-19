@@ -679,3 +679,5 @@ references to Actor::field07C with direct signed int state access. All
 four complete COFF bodies (42,937 / 40,464 / 44,104 / 28,868 bytes), all
 929 / 938 / 943 / 696 relocation positions/types and every nonrelocation
 byte remain unchanged. All four frontiers remain explicitly nonexact.
+
+SuikaObject::Advance also replaces 22 unsigned-int-reference aliases between declared float fields (scale, owner/opponent coordinates, velocity and fighter transform angle) with direct float assignments. The complete 43,972-byte COFF, all 991 relocation positions/types and every nonrelocation byte remain unchanged; the boss stays nonexact.

@@ -483,3 +483,5 @@ x87 arithmetic.
   declared signed Actor::field07C directly at 93 sites. The four complete
   COFF bodies and all relocation layouts are unchanged byte-for-byte;
   none of these giant functions is promoted to exact.
+
+- SuikaObject::Advance restores 22 same-type float field copies to ordinary C++ assignments; its complete 43,972-byte COFF, all 991 relocation positions/types and every nonrelocation byte are unchanged.
