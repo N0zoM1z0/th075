@@ -51486,8 +51486,8 @@ target = 0x00657880
 source = "src/CharacterProjectileAdvanceF379.cpp"
 object = "build/matching/CharacterProjectileAdvanceF379.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["CharacterProjectile::AdvanceAt004F4170"]
-symbol = "?Advance@CharacterProjectileF379@@UAEXXZ"
+functions = ["AliceObject::AdvanceProjectileBehavior"]
+symbol = "?AdvanceProjectileBehavior@AliceObject@@QAEXXZ"
 target_address = 0x004F4170
 size = 855
 [[units.character-projectile-advance-004f4170.relocations]]
@@ -51503,12 +51503,12 @@ target = 0x0045B830
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 158
 type = "REL32"
-symbol = "?SpawnProjectile@CharacterFighterF379@@QAEXHIIEH@Z"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
 target = 0x00453A70
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 236
 type = "REL32"
-symbol = "?SpawnProjectile@CharacterFighterF379@@QAEXHIIEH@Z"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
 target = 0x00453A70
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 285

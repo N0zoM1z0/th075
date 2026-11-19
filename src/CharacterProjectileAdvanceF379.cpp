@@ -1,19 +1,6 @@
 #include "CharacterObject.hpp"
-// R067 original complete 855-byte character-specific projectile controller.
-// Observed original projectile-owner positional arguments are passed by
-// their exact 32-bit float bits, avoiding unintended x87 conversions.
-// One direct unparenthesized float lvalue retains the native VC7.1 EDX/EAX
-// load ordering before the original FLD/FSUB Y-coordinate operation.
-// The type/owner declarations are borrowed caller-side views only.
-// Only native observed borrowed game-object fields and call ABIs are declared.
-class CharacterFighterF379 {
-public:
-    void SpawnProjectile(int,unsigned int,unsigned int,unsigned char,int);
-};
-class CharacterProjectileF379 : public CharacterObject {
-public:
-    void Advance();
-};
+// Complete 855-byte native projectile-behaviour branch of AliceObject.
+// Called by the seven projectile action states of AliceObject::Advance.
 extern float AngleAt00483300(unsigned int,unsigned int);
 extern const float g_PolarScaleAt00658044;
 extern const float g_AngleUnitAt00657828;
@@ -21,18 +8,17 @@ extern const float g_ProjectMinXAt006595EC;
 extern const float g_ProjectMaxXAt00659424;
 extern const float g_ProjectMaxYAt006583B4;
 extern const float g_ProjectScaleF379At00659454;
-#define OWNER (reinterpret_cast<CharacterFighterF379*>(owner))
-void CharacterProjectileF379::Advance() {
+void AliceObject::AdvanceProjectileBehavior() {
     if (field07C==5) {
         ClearFrameInfo();
     } else if (owner->action>49 && owner->action<150 && animationStage<2) {
         ClearFrameInfo();
         for(int i=0;i<1;++i) {
-            OWNER->SpawnProjectile(996,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(996,x,y,1,1);
         }
         if (reinterpret_cast<short&>(owner->fieldEFA)>25) {
             reinterpret_cast<short&>(owner->fieldEFA)=0;
-            OWNER->SpawnProjectile(995,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(995,x,y,1,1);
         }
     } else {
         if (animationStage==0 && animationFrame==0) {
@@ -70,4 +56,3 @@ void CharacterProjectileF379::Advance() {
         }
     }
 }
-#undef OWNER

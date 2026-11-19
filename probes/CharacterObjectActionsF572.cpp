@@ -74,13 +74,13 @@ void AliceObject::Advance() {
         return;
     }
     switch (action) {
-        case 0x320: ResetAt4F4170(); break;
-        case 0x321: ResetAt4F4170(); break;
-        case 0x322: ResetAt4F4170(); break;
-        case 0x323: ResetAt4F4170(); break;
-        case 0x324: ResetAt4F4170(); break;
-        case 0x325: ResetAt4F4170(); break;
-        case 0x326: ResetAt4F4170(); break;
+        case 0x320: AdvanceProjectileBehavior(); break;
+        case 0x321: AdvanceProjectileBehavior(); break;
+        case 0x322: AdvanceProjectileBehavior(); break;
+        case 0x323: AdvanceProjectileBehavior(); break;
+        case 0x324: AdvanceProjectileBehavior(); break;
+        case 0x325: AdvanceProjectileBehavior(); break;
+        case 0x326: AdvanceProjectileBehavior(); break;
         case 0x327: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
         ClearFrameInfo();

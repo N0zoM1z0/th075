@@ -42,7 +42,7 @@ public:
 
     // Call-shape declarations from the giant research source; actual
     // implementations use the shared Actor and object helper addresses.
-    void ResetAt4F4170();
+    void AdvanceProjectileBehavior(); // 004F4170, original native helper
     void PlaySharedSound(short sound);
 
     int RecordedRange(int lower, int upper);

@@ -711,7 +711,7 @@ BackgroundStage::LoadBG08x
 BackgroundStage::LoadBG09a
 BackgroundStage::LoadBG09x
 CharacterAux::RunAt005301B0
-CharacterProjectile::AdvanceAt004F4170
+AliceObject::AdvanceProjectileBehavior
 BattleScene::ApplySequence
 BattleLoader::LoadStageAt004183D0
 AliceFighter::UpdateSpecialStateAt004E62A0

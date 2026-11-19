@@ -125,6 +125,11 @@ Done so far:
   accesses the scene's named texture, record and cursor fields. Ten
   affected exact units, including the separate music-room renderer,
   cold-replayed successfully.
+- Alice object's `0x320`–`0x326` actions now call a separately exact
+  native 855-byte `AliceObject::AdvanceProjectileBehavior` (004F4170).
+  This leaf's owner uses two typed `Fighter::SpawnBattleEffect` calls;
+  both the main giant and leaf retain full COFF byte and relocation
+  shapes. The 24/24 header-affected exact units cold-replayed locally.
 - Alice giant `Advance` also now calls the real Actor polar-velocity
   helper 19 times (three recovered raw-bit float arguments) plus 15
   recorded-random-range and two shared-sound calls. Full COFF shape

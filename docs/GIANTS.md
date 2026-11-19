@@ -225,6 +225,17 @@ nonexact (914 GPR-role differences and six widths); all 24 affected
 exact units cold-replayed. Other parents retain their historical names.
 
 
+Alice's seven `0x320`–`0x326` actions now call the real 855-byte
+`AliceObject::AdvanceProjectileBehavior()` at `004F4170` rather than a
+speculative reset method. This independently exact leaf includes two
+real `Fighter::SpawnBattleEffect` calls instead of borrowed owner methods.
+Original and revised leaf COFF contain identical 855-byte code bodies,
+22 identical relocation positions/types and no nonrelocation changes.
+The Alice 33,731-byte giant COFF likewise preserves all 682 relocation
+locations/types and every nonrelocation byte while renaming its seven
+real calls; 24/24 affected exact units cold-replayed. The giant's native
+register-role debt remains unchanged and NONEXACT.
+
 Alice object also recovers the actual `0040FB70` polar-velocity ABI
 and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
 three previously encoded as raw `int` float-bit transports), 15
