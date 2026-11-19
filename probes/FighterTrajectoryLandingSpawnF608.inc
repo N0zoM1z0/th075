@@ -25,8 +25,7 @@ case 0x49: {
         // the already established stage-one/frame-zero guard.
         if (fieldF0C==0) {
             fieldF0C=1;
-            SpawnDirectedAt453A70(F608_PROJECTILE,
-                reinterpret_cast<int&>(x), reinterpret_cast<int&>(y),
+            SpawnBattleEffect(F608_PROJECTILE,x,y,
                 facing, F608_SIDE);
         }
         if (velocityY != g_ThresholdAt0065782C) {

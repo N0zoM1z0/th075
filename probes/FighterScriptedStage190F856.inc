@@ -11,7 +11,7 @@ case 0x190: {
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=1.0f;
-        SpawnDirectedAt453A70(0x320,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x320,x,y,
            (facing),1);
         UpdateGaugeTimer(0xFA);
         PlaySound(0);

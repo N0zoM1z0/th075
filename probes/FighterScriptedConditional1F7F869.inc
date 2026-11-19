@@ -22,7 +22,7 @@ case 0x1F7: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
-        SpawnDirectedAt453A70(0x337,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x337,x,y,
             (facing),1);
         PlaySound(3);
     }

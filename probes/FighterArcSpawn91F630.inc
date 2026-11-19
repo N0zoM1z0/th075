@@ -11,7 +11,7 @@ case 0x91: {
     }
     if (animationStage==1 && animationFrame==0 && fieldF0C==0) {
         fieldF0C=1;
-        SpawnDirectedAt453A70(F630_PROJECTILE, reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(F630_PROJECTILE,x,y,
             facing,F630_SIDE);
     }
     if (animationStage==F630_STAGE && velocityY<g_StopThresholdAt00657480) {

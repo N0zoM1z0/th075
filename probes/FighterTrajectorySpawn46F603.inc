@@ -17,8 +17,7 @@ case 0x46: {
     // stage-one projectile branch (+0xF0C is the original flag).
     if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
         fieldF0C = 1;
-        SpawnDirectedAt453A70(TRAJECTORY_SPAWN_KIND,
-            reinterpret_cast<int&>(x), reinterpret_cast<int&>(y),
+        SpawnBattleEffect(TRAJECTORY_SPAWN_KIND,x,y,
             facing, TRAJECTORY_SPAWN_SIDE);
     }
     if (animationStage == TRAJECTORY_STAGE_THRESHOLD && velocityY < g_StopThresholdAt00657480) {

@@ -31,12 +31,12 @@ case 0x1F5: {
             (facing),1);
     }
     if ((animationStage)==2 && (animationFrame)==0) {
-        SpawnDirectedAt453A70(0x33B,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x33B,x,y,
             (facing),1);
         PlaySound(1);
     }
     if ((animationStage)==0xD && (animationFrame)==0) {
-        SpawnDirectedAt453A70(0x338,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x338,x,y,
             (facing),1);
         PlaySound(1);
     }

@@ -13,7 +13,6 @@ public:
 
     // Complete native caller ABI hypotheses; these refer to existing Actor
     // and Fighter functions, not new independently reconstructed methods.
-    void SpawnDirectedAt453A70(int,int,int,char,int);
     void SpawnWithFloatAt453A70(int,int,float,char,int);
     void SpawnFloatXRawYAt453A70(int,float,int,char,int);
     void SpawnRawXYAt453C80(int,int,int,char,int);

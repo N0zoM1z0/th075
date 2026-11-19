@@ -837,7 +837,7 @@ void RemiliaFighter::Advance() {
                     float(facing*40)+(x),
                     10.0f,
                     facing,1);
-                SpawnDirectedAt453A70(0x340,reinterpret_cast<int&>(x),0,
+                SpawnBattleEffect(0x340,x,0.0f,
                     facing,1);
                 UpdateGaugeTimer(500);
                 PlaySound(12);

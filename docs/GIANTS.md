@@ -313,6 +313,17 @@ were removed from their headers; all 132 affected exact units passed
 local cold replay in three groups of 44/44. Native giant GPR/width
 debt remains nonexact.
 
+Across four complete fighter giant parents, the `00453A70`
+integer-bit projectile-position aliases now become 62 natural C++
+`Fighter::SpawnBattleEffect(effect, x, y, ...)` calls across 39 original
+case/parent files (Reimu 13, Sakuya 10, Youmu 26 and Remilia 21 actual
+COFF call relocations, 70 total). `x` and `y` are genuine float fields,
+with native zero written `0.0f` instead of integer-bit masquerading.
+All full VC7.1 COFF bodies retain their 62,090 / 83,922 / 47,655 /
+59,236-byte extents, original relocation offsets/types and every
+nonrelocation byte. Header-affected exact cold replay passed 132/132
+in three bounded 44-unit groups. Native giant exactness is not claimed.
+
 Four native fighter parents now use the same inherited 00455580
 `Actor::RecordedRange(int,int)` rather than per-character range aliases:
 Reimu 29, Sakuya 97, Youmu 16 and Remilia 27 (169 native COFF call

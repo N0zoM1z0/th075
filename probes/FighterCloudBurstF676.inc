@@ -31,9 +31,9 @@
                 field05C=0.15f;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
-                SpawnDirectedAt453A70(0x38C,reinterpret_cast<int&>(x),0,
+                SpawnBattleEffect(0x38C,x,0.0f,
                     facing,1);
-                SpawnDirectedAt453A70(0x38F,reinterpret_cast<int&>(x),0,
+                SpawnBattleEffect(0x38F,x,0.0f,
                     facing,1);
                 PlaySound(16);
             }

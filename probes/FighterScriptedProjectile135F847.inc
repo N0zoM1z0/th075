@@ -19,7 +19,7 @@ case 0x135: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if ((animationStage)==7 && (animationFrame)==0)
-        SpawnDirectedAt453A70(0x339,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x339,x,y,
             (facing),1);
     if ((animationStage)==7 && (animationFrame)==0)
         PlaySharedSound(0x1D);

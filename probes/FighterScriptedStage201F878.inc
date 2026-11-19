@@ -16,7 +16,7 @@ case 0x201: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        SpawnDirectedAt453A70(0x336,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x336,x,y,
             (facing),1);
         PlaySound(2);
     }

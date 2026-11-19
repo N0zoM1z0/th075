@@ -27,7 +27,7 @@ case 0x1F6: {
         SpawnFloatXRawYAt453C80(0x80,
             float((facing)*100)+(x),
             reinterpret_cast<int&>(y),(facing),1);
-        SpawnDirectedAt453A70(0x336,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x336,x,y,
             (facing),1);
         PlaySound(2);
     }

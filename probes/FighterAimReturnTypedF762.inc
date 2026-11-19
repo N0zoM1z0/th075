@@ -106,7 +106,7 @@
             }
             if ((animationStage)==15 && (animationFrame)==0) {
                 field314=static_cast<float>(fieldF04);
-                SpawnDirectedAt453A70(0x338,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(0x338,x,y,
                     facing,1);
             }
             if ((animationStage)==18 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0)

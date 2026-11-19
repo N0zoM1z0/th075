@@ -87,7 +87,7 @@
                 velocityY=F729_STAGE14_Y;
             }
             if ((animationStage)==15 && (animationFrame)==0)
-                SpawnDirectedAt453A70(F729_STAGE15_SHOT,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(F729_STAGE15_SHOT,x,y,
                     facing,1);
             if ((animationStage)==18 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0)
                 ResetSecondaryCounter(19);

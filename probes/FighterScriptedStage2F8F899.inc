@@ -36,7 +36,7 @@ case 0x2F8: {
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         PlaySound(0xD);
-        SpawnDirectedAt453A70(0x393,reinterpret_cast<int&>(x),0,
+        SpawnBattleEffect(0x393,x,0.0f,
             (facing),1);
     }
     if ((animationStage)>6 && (animationStage)<13) {

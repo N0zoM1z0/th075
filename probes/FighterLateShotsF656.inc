@@ -13,7 +13,7 @@
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySharedSound(0x1C);
-                SpawnDirectedAt453A70(0x341,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(0x341,x,y,
                     facing,1);
             }
             if ((animationStage)==6 && (animationFrame)==0) velocityX=15.0f;
@@ -21,7 +21,7 @@
                 PlaySharedSound(0x1C);
                 field080=1;
                 field07C=0;
-                SpawnDirectedAt453A70(0x342,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(0x342,x,y,
                     facing,1);
             }
             break;
@@ -69,7 +69,7 @@
             }
             if ((animationStage)==7 && (animationFrame)==0) velocityX=20.0f;
             if ((animationStage)==10 && (animationFrame)==0)
-                SpawnDirectedAt453A70(0x33F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(0x33F,x,y,
                     facing,1);
             break;
         }
@@ -88,7 +88,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0)
-                SpawnDirectedAt453A70(0x33E,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(0x33E,x,y,
                     facing,1);
             if ((animationStage)==6 && (animationFrame)==0) PlaySharedSound(0x1D);
             break;

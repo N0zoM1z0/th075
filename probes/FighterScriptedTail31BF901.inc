@@ -14,7 +14,7 @@ case 0x31B: {
         BeginFadeParameters(0);
         SelectResourceParameters();
         PlaySharedSound(0x17);
-        SpawnDirectedAt453A70(0x3E5,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x3E5,x,y,
             (facing),1);
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {

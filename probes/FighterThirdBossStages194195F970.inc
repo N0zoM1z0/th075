@@ -39,7 +39,7 @@ case 0x194: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
-        SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x335,x,y,
             facing,1);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-6.0f;
@@ -81,7 +81,7 @@ case 0x195: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
-        SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x335,x,y,
             facing,1);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-6.0f;

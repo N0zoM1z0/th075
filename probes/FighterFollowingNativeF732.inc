@@ -101,7 +101,7 @@
                 velocityY=6.0f;
                 velocityX=4.5f;
                 field05C=0.65f;
-                SpawnDirectedAt453A70(0x33A,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(0x33A,x,y,
                         facing,1);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {
@@ -140,7 +140,7 @@
                 velocityY=8.0f;
                 velocityX=12.0f;
                 field05C=0.5f;
-                SpawnDirectedAt453A70(0x33A,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnBattleEffect(0x33A,x,y,
                         facing,1);
             }
             if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {

@@ -34,6 +34,12 @@ Done so far:
   all relocation offsets/types and every nonrelocation code byte.
   Grouped affected-only exact replay passed 132/132 (44/44 each).
   Giant frontiers remain nonexact against the original PE.
+- Four fighter giant `Advance` parents now dispatch another 70 native
+  effect calls through truthful `Fighter::SpawnBattleEffect`, restoring
+  62 C++ source callsites using genuine floating `x/y` instead of
+  `reinterpret_cast<int&>` bit transport. All four complete COFF bodies
+  and all relocation offsets/types remain identical outside symbol
+  labels; 132/132 affected exact units cold-replayed locally.
 - Four complete fighter giants also now call the real inherited
   `Actor::RecordedRange(int,int)`: 169 native relocations (Reimu 29,
   Sakuya 97, Youmu 16, Remilia 27). The full functions preserve their

@@ -17,10 +17,10 @@ case 0x58: {
         SetCameraShake(3.0f);
         PlaySharedSound(0x16);
         for (int burst=0;burst<10;++burst)
-            SpawnDirectedAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            SpawnBattleEffect(0x3E4,x,y,1,1);
         if (reinterpret_cast<signed short&>(fieldEFA)>25) {
             reinterpret_cast<signed short&>(fieldEFA)=0;
-            SpawnDirectedAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
     }
@@ -30,7 +30,7 @@ case 0x58: {
 #if F614_STAGE1_SPAWN
         if (fieldF0C==0) {
             fieldF0C=1;
-            SpawnDirectedAt453A70(F614_PROJECTILE,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+            SpawnBattleEffect(F614_PROJECTILE,x,y,
                 facing,F614_SIDE);
         }
 #endif

@@ -13,7 +13,6 @@ public:
 
     // Provisional native-call ABI declarations from the complete giant
     // research parent; do not infer separate helper implementations.
-    void SpawnDirectedAt453A70(int,int,int,char,int);
     void SpawnFloatXRawYAt453A70(int,float,int,char,int);
     void SpawnWithFloatAt453A70(int,int,float,char,int);
     void SpawnExtraAt453B50(int,int,float,char,int,int,int);

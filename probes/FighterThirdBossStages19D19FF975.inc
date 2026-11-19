@@ -62,7 +62,7 @@ case 0x19E: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
-        SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x335,x,y,
             facing,1);
     break;
 }
@@ -96,7 +96,7 @@ case 0x19F: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
-        SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x335,x,y,
             facing,1);
     break;
 }

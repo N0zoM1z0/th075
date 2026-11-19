@@ -18,7 +18,7 @@ case 0x186: {
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         PlaySharedSound(0x1D);
-        SpawnDirectedAt453A70(0x341,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),(facing),1);
+        SpawnBattleEffect(0x341,x,y,(facing),1);
     }
     return;
 }

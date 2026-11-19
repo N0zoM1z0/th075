@@ -23,7 +23,7 @@ case 0x136: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        SpawnDirectedAt453A70(0x33A,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x33A,x,y,
             (facing),1);
         PlaySharedSound(0x1D);
     }

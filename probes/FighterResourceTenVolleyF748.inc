@@ -18,10 +18,10 @@
                 reinterpret_cast<signed short&>(scriptCounterF00)=2;
             if ((animationStage)==0 && (animationFrame)==0) {
                 for (int shot=0;shot<10;++shot)
-                    SpawnDirectedAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+                    SpawnBattleEffect(0x3E4,x,y,1,1);
                 if ((reinterpret_cast<signed short&>(fieldEFA))>25) {
                     reinterpret_cast<signed short&>(fieldEFA)=0;
-                    SpawnDirectedAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+                    SpawnBattleEffect(0x3E3,x,y,1,1);
                 }
             }
             if ((animationStage)==3) {
@@ -59,10 +59,10 @@
                 reinterpret_cast<signed short&>(scriptCounterF00)=2;
             if ((animationStage)==0 && (animationFrame)==0) {
                 for (int shot=0;shot<10;++shot)
-                    SpawnDirectedAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+                    SpawnBattleEffect(0x3E4,x,y,1,1);
                 if ((reinterpret_cast<signed short&>(fieldEFA))>25) {
                     reinterpret_cast<signed short&>(fieldEFA)=0;
-                    SpawnDirectedAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+                    SpawnBattleEffect(0x3E3,x,y,1,1);
                 }
             }
             if ((animationStage)>3 && (animationStage)<5) {

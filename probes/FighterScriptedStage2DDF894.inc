@@ -37,7 +37,7 @@ case 0x2DD: {
         field080=1;
     }
     if ((animationStage)==18 && (animationFrame)==0) {
-        SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x335,x,y,
             (facing),1);
         PlaySound(4);
     }

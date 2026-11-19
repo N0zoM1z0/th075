@@ -25,7 +25,7 @@ case 0x1F4: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0)
-        SpawnDirectedAt453A70(0x338,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x338,x,y,
             (facing),1);
     if ((animationStage)==4 && (animationFrame)==0) {
         PlaySound(1);

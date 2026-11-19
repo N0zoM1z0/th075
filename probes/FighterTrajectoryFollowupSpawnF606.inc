@@ -12,8 +12,7 @@ case F606_ACTION: {
     }
     if (animationStage==1 && animationFrame==0 && fieldF0C==0) {
         fieldF0C=1;
-        SpawnDirectedAt453A70(F606_PROJECTILE,
-            reinterpret_cast<int&>(x), reinterpret_cast<int&>(y),
+        SpawnBattleEffect(F606_PROJECTILE,x,y,
             facing, F606_SIDE);
     }
     if (animationStage==F606_STAGE && velocityY<g_StopThresholdAt00657480) {
