@@ -50,7 +50,14 @@ public:
     void SetStateAt40FB40(int); void SetActionAt40FAC0(int); int RandomAt455580(int,int);
     short GetStateAt40FA30();
 };
-class PatchouliObject : public CharacterObject { public: PatchouliObject(void* ownerFighter); };
+class PatchouliObject : public CharacterObject {
+public:
+    PatchouliObject(void* ownerFighter);
+    virtual void Advance();  // 0050A580; complete 81,539-byte nonexact parent
+    void NativeHitAt0045B860(short effect);
+    void SetNativeAngleBitsAt0040FB70(unsigned int angleBits, float speed);
+    int RandomBoundaryAt00455580(int lower, int upper);
+};
 class YoumuObject : public CharacterObject { public: YoumuObject(void* ownerFighter); };
 class RemiliaObject : public CharacterObject { public: RemiliaObject(void* ownerFighter); };
 class YuyukoObject : public CharacterObject {

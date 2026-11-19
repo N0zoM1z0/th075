@@ -50,6 +50,6 @@ case 0x338: {
         return;
     }
     if (animationStage==2 && animationFrame==0)
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(8);
+        owner->PlaySound(8);
     return;
 }

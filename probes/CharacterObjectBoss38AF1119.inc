@@ -32,7 +32,7 @@ case 0x38A: {
             y=0.0f;
             velocityY=0.0f;
             velocityX=0.0f;
-            reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(11);
+            owner->PlaySound(11);
             ResetPrimaryCounters(0x385);
             reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x347,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
@@ -43,7 +43,7 @@ case 0x38A: {
             for (shot=0;shot<15;++shot)
                 reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                     0x389,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
-            reinterpret_cast<F1051Grandparent*>(owner)->InitTrajectoryAt00453E60(5.0f);
+            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
             return;
         }
     }

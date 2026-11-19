@@ -42,6 +42,11 @@ Done so far:
   accesses expressed through real named members. The 33,293-byte parent
   retained its 575-byte nonexact frontier and 133 GPR mismatches; all 24
   header-affected exact functions cold-replayed successfully.
+- Patchouli object `Advance` (81,539 bytes) now belongs to `PatchouliObject`.
+  The 32 shared sound calls and seven camera-shake calls have typed receivers;
+  its complete research byte frontier is unchanged (522 GPR, five width
+  differences). Raw coordinate DWORD-to-float transport still requires
+  ABI-specific work; 24 affected exact units cold-replayed successfully.
 - Sakuya object `Advance` (42,511 bytes) now belongs to `SakuyaObject`
   and uses the real Fighter effect/sound APIs for 87 call sites. Its
   nonexact instruction/register frontier is unchanged; COFF size and

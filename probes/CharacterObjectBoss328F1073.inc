@@ -52,8 +52,8 @@ case 0x328: {
     if (field080==0 ||
         y+velocityY<=g_F1044_GroundAt0065782C) {
         ClearFrameInfo();
-        reinterpret_cast<F1051Grandparent*>(owner)->InitTrajectoryAt00453E60(5.0f);
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(1);
+        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+        owner->PlaySound(1);
         // Real PE has 16 separate CALLs: one 0x339 then 15 0x33A; not a loop.
 #define F1073_SPAWN_33A() \
         reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70( \

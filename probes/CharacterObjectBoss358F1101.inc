@@ -20,7 +20,7 @@ case 0x358: {
         velocityX=8.0f;
     }
     if (animationStage==1 && animationFrame==0) {
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(2);
+        owner->PlaySound(2);
         reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
             0x359,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1);

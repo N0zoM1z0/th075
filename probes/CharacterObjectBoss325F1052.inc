@@ -26,7 +26,7 @@ case 0x325: {
         color[3]=0xFF;
         field080=1;
         field07C=0;
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(0x17);
+        owner->PlaySound(0x17);
     }
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();

@@ -53,8 +53,8 @@ case F1074_CASE: {
         facing,0);
     if (field080==0) {
         ClearFrameInfo();
-        reinterpret_cast<F1051Grandparent*>(owner)->InitTrajectoryAt00453E60(5.0f);
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(1);
+        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+        owner->PlaySound(1);
 #define F1074_SPAWN_33A() \
         reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70( \
             0x33A,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y), \

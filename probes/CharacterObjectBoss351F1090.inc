@@ -20,7 +20,7 @@ case 0x351: {
     }
     if (owner->animationStage>6 && animationStage<6) {
         ResetSecondaryCounter(animationStage+5);
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(15);
+        owner->PlaySound(15);
     }
     if (animationStage>5 && animationStage<11) {
         velocityY=0.0f;

@@ -49,6 +49,14 @@ instruction widths that follow from it.
 | 005EB520 | Meiling object | 34,434 | `CharacterObjectWhole005EB520F1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
+Patchouli object `0050A580` now defines `PatchouliObject::Advance` on its
+actual vtable class. The parent preserves its complete 81,539 CODE bytes,
+with 522 GPR and five width differences. Thirty-two parent sound calls
+and seven camera-shake calls use the existing Fighter/EffectServices
+interfaces. Raw DWORD bit transport in several spawn APIs remains
+unresolved and is intentionally not converted into numeric float casts.
+All 24 header-affected exact functions cold-replayed.
+
 Sakuya object `004CA6E0` now defines `SakuyaObject::Advance` directly.
 The original 42,511 CODE bytes are still nonexact (447 GPR-role and
 12 width differences). Of its 929 COFF relocation records, 52 effect

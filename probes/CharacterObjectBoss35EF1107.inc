@@ -47,7 +47,7 @@ case 0x35E: {
     if (animationStage>0) {
         if (field080==0) {
             ClearFrameInfo();
-            reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(1);
+            owner->PlaySound(1);
             reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x35F,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
                 facing,1);

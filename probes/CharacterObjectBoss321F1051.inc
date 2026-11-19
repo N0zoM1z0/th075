@@ -33,7 +33,7 @@ case 0x321: {
         y=0.0f;
         velocityY=0.0f;
         velocityX=0.0f;
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(0xB);
+        owner->PlaySound(0xB);
         ResetPrimaryCounters(0x322);
         reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
             0x347, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y),
@@ -46,7 +46,7 @@ case 0x321: {
                 0x33A, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y),
                 facing, 1);
         }
-        reinterpret_cast<F1051Grandparent*>(owner)->InitTrajectoryAt00453E60(10.0f);
+        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(10.0f);
         return;
     }
     if (owner->animationStage==9 && animationStage<6) {

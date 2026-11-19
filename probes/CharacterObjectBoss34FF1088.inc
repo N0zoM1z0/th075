@@ -44,7 +44,7 @@ case 0x34F: {
                     owner->facing,1);
             }
             ResetSecondaryCounter(2);
-            reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(4);
+            owner->PlaySound(4);
         }
     }
     if (animationStage>1) {
@@ -59,7 +59,7 @@ case 0x34F: {
         owner->action==0x2C1 &&
         owner->animationStage==3) {
         ResetSecondaryCounter(0);
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(20);
+        owner->PlaySound(20);
         return;
     }
     if (AdvanceNestedFrame()==field070) {
@@ -69,7 +69,7 @@ case 0x34F: {
     if (animationStage==2 && animationFrame==0) {
         ResetSecondaryCounter(0);
         owner->field36C=(owner->field36C)-g_F1085_LastYAt006592A4;
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(20);
+        owner->PlaySound(20);
     }
     return;
 }

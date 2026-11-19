@@ -1,10 +1,11 @@
 #include "CharacterObject.hpp"
 #include "PatchouliFighter.hpp"
+#include "EffectServices.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Native original-shaped TH075 CharacterObject whole switch C++ candidate.
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.
-class FighterSwitchF569_Boss0050A580 : public CharacterObject { public: void Advance(); void NativeHitAt0045B860(short); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
+// The state cases belong to PatchouliObject; helper call contracts remain native.
 // F1181: effect/sound IDs and layer/link/mode parameters use the native
 // low-word/low-byte contract witnessed by the independently exact callees.
 // Coordinate/angle DWORD overloads deliberately preserve the original raw
@@ -91,22 +92,16 @@ extern float __cdecl F1115_AbsFloatAt00412D90(float);
 
 extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
-#define RAW reinterpret_cast<char*>(this)
-#define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
-void FighterSwitchF569_Boss0050A580::Advance() {
-    if (*reinterpret_cast<signed short*>(
-            *reinterpret_cast<char**>(
-                *reinterpret_cast<char**>(RAW+0xE4)+0x2E8)+0x3BA) != 0)
+void PatchouliObject::Advance() {
+    if (owner->opponent->field3BA != 0)
         return;
-    if (*reinterpret_cast<signed short*>(
-            *reinterpret_cast<char**>(RAW+0xE4)+0x3BA) != 0 &&
-            I16(0x8A) == 0)
+    if (owner->field3BA != 0 && field08A == 0)
         return;
-    if (I16(0x82) != 0) {
-        --I16(0x82);
+    if (field082 != 0) {
+        --field082;
         return;
     }
-    switch (I16(0x60)) {
+    switch (action) {
 #include "CharacterObjectBoss320NativeF1045.inc"
 #include "CharacterObjectBoss321F1051.inc"
 #include "CharacterObjectBoss322F1046.inc"
@@ -287,5 +282,3 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         default: AdvanceNestedFrame();
     }
 }
-#undef I16
-#undef RAW

@@ -16,7 +16,7 @@ case 0x34A: {
         rotationY=0.0f;
         rotationZ=0.0f;
         rotationX=-80.0f;
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(0x10);
+        owner->PlaySound(0x10);
     }
     if (animationStage==1) {
         // The original compares parent action +0x60 with 0x2C0, then

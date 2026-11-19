@@ -21,7 +21,7 @@ case 0x388: {
         field080=1;
         field07C=0;
         velocityY=22.5f;
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(3);
+        owner->PlaySound(3);
         reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
             0x345,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1);
@@ -42,14 +42,14 @@ case 0x388: {
             (field07C!=0 && field07C!=6)) {
             velocityY=0.0f;
             ResetSecondaryCounter(3);
-            reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(5);
+            owner->PlaySound(5);
             return;
         }
     }
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
     if (animationStage==2 && animationFrame==0) {
-        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(4);
+        owner->PlaySound(4);
         velocityX=-10.0f;
         rotationZ=0.0f;
     }
