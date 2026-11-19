@@ -1,5 +1,5 @@
-// Constructor-independent character selection reset policy. Offsets are
-// physically observed fields only; no complete original scene is declared.
+#include "CharacterSelectScene.hpp"
+// Restore the initial two-player character-select state.
 extern signed char g_PlayerSelectionAt006714C8;
 extern unsigned char g_SecondPlayerAt006714C9;
 extern unsigned char g_OptionModeAt006714D0;
@@ -9,63 +9,53 @@ public:
     void RegisterSelection(unsigned char player, unsigned char mode);
 };
 extern ProgressSelectionF221 g_ProgressSelectionAt006718F8;
-class CharacterSelectionF221 {
-public:
-    void ResetSelection();
-};
-#define BYTE(off) (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define FLOAT(off) (*reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define DWORD(off) (*reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned char*>(this)+(off)))
-void CharacterSelectionF221::ResetSelection()
+void CharacterSelectScene::ResetSelection()
 {
-    BYTE(0xe5)=1;
-    BYTE(0xe4)=1;
-    BYTE(0xe7)=0;
-    BYTE(0xe6)=0;
-    FLOAT(0xd0)=100.0f;
-    FLOAT(0xcc)=100.0f;
-    FLOAT(0x9c)=100.0f;
-    FLOAT(0x98)=100.0f;
-    FLOAT(0xa4)=80.0f;
-    FLOAT(0xa0)=80.0f;
-    FLOAT(0xac)=40.0f;
-    FLOAT(0xa8)=40.0f;
-    FLOAT(0xb4)=80.0f;
-    FLOAT(0xb0)=80.0f;
-    FLOAT(0xbc)=40.0f;
-    FLOAT(0xb8)=40.0f;
-    DWORD(0xc4)=0;
-    DWORD(0xc0)=0;
-    BYTE(0xc8)=0;
-    DWORD(0xd4)=0;
-    BYTE(0x97)=0;
-    BYTE(0x96)=0;
-    BYTE(0xeb)=0;
-    BYTE(0xea)=0;
-    BYTE(0xef)=0;
-    BYTE(0xee)=0;
-    BYTE(0xed)=0;
-    BYTE(0xec)=0;
-    FLOAT(0xd8)=80.0f;
+    (choiceRandom[1])=1;
+    (choiceRandom[0])=1;
+    (chosenPalette[1])=0;
+    (chosenPalette[0])=0;
+    (portraitReturn[1])=100.0f;
+    (portraitReturn[0])=100.0f;
+    (portraitFade[1])=100.0f;
+    (portraitFade[0])=100.0f;
+    (portraitEnterX[1])=80.0f;
+    (portraitEnterX[0])=80.0f;
+    (portraitEnterY[1])=40.0f;
+    (portraitEnterY[0])=40.0f;
+    (portraitExitX[1])=80.0f;
+    (portraitExitX[0])=80.0f;
+    (portraitExitY[1])=40.0f;
+    (portraitExitY[0])=40.0f;
+    (choiceStop[1])=0;
+    (choiceStop[0])=0;
+    (transitionAlpha)=0;
+    (animationPhase)=0;
+    (playerState[1])=0;
+    (playerState[0])=0;
+    (optionsOpen[1])=0;
+    (optionsOpen[0])=0;
+    (alternatePalette[1])=0;
+    (alternatePalette[0])=0;
+    (optionsCursor[1])=0;
+    (optionsCursor[0])=0;
+    (choiceOscillation)=80.0f;
     // Native field +0xDC stores IEEE-754 0x4096CBE2; 4.712388f is the
     // meaningful rounded float literal, unlike 4.712389f (0x4096CBE4).
-    FLOAT(0xdc)=4.712388f;
-    BYTE(0xe0)=g_PlayerSelectionAt006714C8;
-    BYTE(0xe1)=g_SecondPlayerAt006714C9;
-    BYTE(0xe2)=(g_PlayerSelectionAt006714C8+1)%10;
-    BYTE(0xe3)=(g_PlayerSelectionAt006714C8+1)%10;
-    BYTE(0xe9)=1;
-    BYTE(0xe8)=1;
+    (choiceRotation)=4.712388f;
+    (chosenCharacter[0])=g_PlayerSelectionAt006714C8;
+    (chosenCharacter[1])=g_SecondPlayerAt006714C9;
+    (alternateCharacter[0])=(g_PlayerSelectionAt006714C8+1)%10;
+    (alternateCharacter[1])=(g_PlayerSelectionAt006714C8+1)%10;
+    (playerReady[1])=1;
+    (playerReady[0])=1;
     if (g_StageSelectionAt0067161D==20) {
-        BYTE(0xf1)=8;
-        BYTE(0xf0)=1;
+        (stagePage[1])=8;
+        (stagePage[0])=1;
     } else {
-        BYTE(0xf1)=g_StageSelectionAt0067161D%10;
-        BYTE(0xf0)=g_StageSelectionAt0067161D>=10;
+        (stagePage[1])=g_StageSelectionAt0067161D%10;
+        (stagePage[0])=g_StageSelectionAt0067161D>=10;
     }
     g_ProgressSelectionAt006718F8.RegisterSelection(
         g_PlayerSelectionAt006714C8,g_OptionModeAt006714D0);
 }
-#undef BYTE
-#undef FLOAT
-#undef DWORD

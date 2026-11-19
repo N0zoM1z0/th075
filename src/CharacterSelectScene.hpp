@@ -37,7 +37,7 @@ public:
     SelectInputFrame input[2];             // +00C, +028 (0x1C per player)
     void* characterTextures;               // +044
     void* backgroundTextures;              // +048
-    unsigned char unknown04C[4];
+    int cancellationRequested;              // +04C
     unsigned char leftCharacterAvailable[20];  // +050
     unsigned char rightCharacterAvailable[20]; // +064
     unsigned char stageAvailable[30];      // +078
@@ -51,7 +51,7 @@ public:
     unsigned char transitionAlpha;         // +0C8
     unsigned char unknown0C9[3];
     float portraitReturn[2];               // +0CC
-    unsigned int animationTick;            // +0D4
+    float animationPhase;                 // +0D4
     float choiceOscillation;               // +0D8
     float choiceRotation;                  // +0DC
     unsigned char chosenCharacter[2];      // +0E0

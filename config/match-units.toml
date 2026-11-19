@@ -36487,7 +36487,7 @@ source = "src/SelectionResetF221.cpp"
 object = "build/matching/SelectionResetF221.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterSelectScene::ResetSelection"]
-symbol = "?ResetSelection@CharacterSelectionF221@@QAEXXZ"
+symbol = "?ResetSelection@CharacterSelectScene@@QAEXXZ"
 target_address = 0x00433230
 size = 569
 [[units.character-select-reset-selection-00433230.relocations]]
@@ -37688,14 +37688,14 @@ source = "src/CharacterSelectAdvanceF229.cpp"
 object = "build/matching/CharacterSelectAdvanceF229.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterSelectScene::Advance"]
-symbol = "?Advance@CharacterSelectAdvanceF229@@QAEGXZ"
+symbol = "?Advance@CharacterSelectScene@@UAEGXZ"
 target_address = 0x00433470
 size = 1442
 compare_size = 1478
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 13
 type = "REL32"
-symbol = "?PollInput@CharacterSelectAdvanceF229@@QAEXXZ"
+symbol = "?PollInput@CharacterSelectScene@@QAEXXZ"
 target = 0x004388D0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 29
@@ -37915,12 +37915,12 @@ target = 0x006714B4
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1086
 type = "REL32"
-symbol = "?ProcessSubselection@CharacterSelectAdvanceF229@@QAEXXZ"
+symbol = "?ProcessSubselection@CharacterSelectScene@@QAEXXZ"
 target = 0x00433BE0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1100
 type = "REL32"
-symbol = "?ProcessPlayerOptions@CharacterSelectAdvanceF229@@QAEXC@Z"
+symbol = "?ProcessPlayerOptions@CharacterSelectScene@@QAEXC@Z"
 target = 0x00433A40
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1134
@@ -37930,27 +37930,27 @@ target = 0x00433A12
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1146
 type = "REL32"
-symbol = "?UpdateSelect@CharacterSelectAdvanceF229@@QAEXC@Z"
+symbol = "?UpdateSelect@CharacterSelectScene@@QAEXC@Z"
 target = 0x00433CF0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1160
 type = "REL32"
-symbol = "?UpdatePlayerChoice@CharacterSelectAdvanceF229@@QAEXC@Z"
+symbol = "?UpdatePlayerChoice@CharacterSelectScene@@QAEXC@Z"
 target = 0x004348E0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1174
 type = "REL32"
-symbol = "?UpdatePlayerConfirmation@CharacterSelectAdvanceF229@@QAEXC@Z"
+symbol = "?UpdatePlayerConfirmation@CharacterSelectScene@@QAEXC@Z"
 target = 0x00434CF0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1188
 type = "REL32"
-symbol = "?UpdateChoiceAnimation@CharacterSelectAdvanceF229@@QAEXC@Z"
+symbol = "?UpdateChoiceAnimation@CharacterSelectScene@@QAEXC@Z"
 target = 0x004350E0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1202
 type = "REL32"
-symbol = "?UpdateCancelAnimation@CharacterSelectAdvanceF229@@QAEXC@Z"
+symbol = "?UpdateCancelAnimation@CharacterSelectScene@@QAEXC@Z"
 target = 0x00435870
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1247
