@@ -236,6 +236,15 @@ locations/types and every nonrelocation byte while renaming its seven
 real calls; 24/24 affected exact units cold-replayed. The giant's native
 register-role debt remains unchanged and NONEXACT.
 
+Alice's seven projectile action states (`0x320`–`0x326`) now call the
+complete, separately exact 855-byte helper at `004F4170` as
+`AliceObject::AdvanceProjectileBehavior()`. Its two native effect spawns
+use `Fighter::SpawnBattleEffect`, eliminating the bogus projectile owner
+receiver. Both entire COFF bodies (33,731 and 855 bytes) keep every
+nonrelocation byte unchanged and all 682/22 relocation positions/types;
+24/24 exact header-affected functions, including the leaf, cold-replayed.
+The giant itself is still nonexact.
+
 Alice object also recovers the actual `0040FB70` polar-velocity ABI
 and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
 three previously encoded as raw `int` float-bit transports), 15

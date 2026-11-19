@@ -130,6 +130,13 @@ Done so far:
   This leaf's owner uses two typed `Fighter::SpawnBattleEffect` calls;
   both the main giant and leaf retain full COFF byte and relocation
   shapes. The 24/24 header-affected exact units cold-replayed locally.
+- The Alice `Advance` giant now calls its **real** 004F4170 action-family
+  helper as `AliceObject::AdvanceProjectileBehavior` for seven projectile
+  states. The 855-byte leaf now uses the real `Fighter::SpawnBattleEffect`
+  for its two owner spawn calls rather than a borrowed fake parent.
+  Whole 33,731-byte giant and 855-byte leaf COFF comparisons retain all
+  original nonrelocation bytes and all relocation positions/types; the
+  24 impacted exact units (including the leaf) cold-replayed 24/24.
 - Alice giant `Advance` also now calls the real Actor polar-velocity
   helper 19 times (three recovered raw-bit float arguments) plus 15
   recorded-random-range and two shared-sound calls. Full COFF shape
