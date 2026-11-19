@@ -26,9 +26,9 @@ The historical R263 matrix is not the live origin queue. Its 97 rows /
 3,608 bytes remain historical evidence; the current ledger has 94 review
 candidates / 3,407 bytes. Use config/function-origins.csv as the authority.
 
-The local main branch was clean at handoff. Recent reconstruction commits
-are local; check git status and git log before starting. No remote push was
-performed.
+The working tree is clean. At this handoff, main is two commits ahead of
+origin/main for the documentation refresh; no push was performed in this
+cleanup session. Recheck git status and git log before starting.
 
 ## Recent reconstruction work
 
