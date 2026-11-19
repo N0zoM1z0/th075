@@ -10,8 +10,8 @@ case R1190_ACTION: {
     if ((animationStage)==10 || (animationStage)==11) UpdateGaugeTimer(5);
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==8 && (animationFrame)==0) {
-        SpawnFloatXAt453A70(R1190_EFFECT,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,
-            reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
+        Fighter::SpawnBattleEffect(R1190_EFFECT,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,
+            y,facing,1);
         PlaySound(R1190_SOUND);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {

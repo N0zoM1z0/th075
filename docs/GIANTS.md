@@ -335,6 +335,16 @@ All full VC7.1 COFF bodies retain their 62,090 / 83,922 / 47,655 /
 nonrelocation byte. Header-affected exact cold replay passed 132/132
 in three bounded 44-unit groups. Native giant exactness is not claimed.
 
+The remaining 00453A70 float-X/raw-Y call aliases are now gone from
+Reimu, Youmu and Remilia. Nineteen native COFF call relocations now name
+the exact inherited Fighter::SpawnBattleEffect(short,float,float,
+signed char,signed char) API; raw y and opponent->y bit references
+become actual float fields, while Remilia's 0x41F00000 / 0xC1F00000 /
+0x42480000 / 0xC2480000 values are expressed as +30.0f / -30.0f /
++50.0f / -50.0f. All three complete COFF bodies and all relocation
+positions/types remain unchanged outside the renamed symbols. The
+127 affected exact units replayed 127/127 in three bounded groups.
+
 Three more fighter giants now inherit the exact shared 00453B50/00453C80
 effect APIs: Reimu routes 29 native call relocations, Sakuya 25 and
 Youmu 66 through Fighter::SpawnTrackedEffect / Fighter::SpawnAuxEffect.

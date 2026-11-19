@@ -45,9 +45,9 @@ case 0x2C2: {
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==1) {
             field314=0.0f;
-            SpawnFloatXRawYAt453A70(0x34A,
+            Fighter::SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*100),
-                reinterpret_cast<int&>(opponent->y),
+                opponent->y,
                 -((facing)),1);
             SpawnBattleEffect(0x329,opponent->x,
                 (opponent->y)-g_F890Phase1LowYAt0065788C,
@@ -66,9 +66,9 @@ case 0x2C2: {
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==3) {
             field314=-90.0f;
-            SpawnFloatXRawYAt453A70(0x34A,
+            Fighter::SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*100),
-                reinterpret_cast<int&>(opponent->y),
+                opponent->y,
                 (facing),1);
             SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*150),

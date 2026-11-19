@@ -41,43 +41,43 @@
                 ResetSecondaryCounter(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==6-static_cast<int>(g_CloudOpponentAt006714D0)) {
-                    SpawnFloatXRawYAt453A70(0x38D,
+                    Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))+g_ContactProjectionAt00657888,
-                        0x41F00000,facing,0);
-                    SpawnFloatXRawYAt453A70(0x38D,
+                        30.0f,facing,0);
+                    Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))-g_ContactProjectionAt00657888,
-                        0x41F00000,facing,0);
-                    SpawnFloatXRawYAt453A70(0x38D,
+                        30.0f,facing,0);
+                    Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))+g_BurstXAt00659238,
-                        0,facing,1);
-                    SpawnFloatXRawYAt453A70(0x38D,
+                        0.0f,facing,1);
+                    Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))-g_BurstXAt00659238,
-                        0,facing,1);
-                    SpawnFloatXRawYAt453A70(0x38D,
+                        0.0f,facing,1);
+                    Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))+g_BurstXAt00658400,
-                        0xC1F00000,facing,1);
-                    SpawnFloatXRawYAt453A70(0x38D,
+                        -30.0f,facing,1);
+                    Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))-g_BurstXAt00658400,
-                        0xC1F00000,facing,1);
+                        -30.0f,facing,1);
                     if (static_cast<int>(g_CloudOpponentAt006714D0)>1) {
-                        SpawnFloatXRawYAt453A70(0x38D,
+                        Fighter::SpawnBattleEffect(0x38D,
                             (*(&x))+g_BurstXAt00659420,
-                            0x42480000,facing,0);
-                        SpawnFloatXRawYAt453A70(0x38D,
+                            50.0f,facing,0);
+                        Fighter::SpawnBattleEffect(0x38D,
                             (*(&x))-g_BurstXAt00659420,
-                            0x42480000,facing,0);
-                        SpawnFloatXRawYAt453A70(0x38D,
+                            50.0f,facing,0);
+                        Fighter::SpawnBattleEffect(0x38D,
                             (*(&x))+g_BurstXAt00658370,
-                            0,facing,1);
-                        SpawnFloatXRawYAt453A70(0x38D,
+                            0.0f,facing,1);
+                        Fighter::SpawnBattleEffect(0x38D,
                             (*(&x))-g_BurstXAt00658370,
-                            0,facing,1);
-                        SpawnFloatXRawYAt453A70(0x38D,
+                            0.0f,facing,1);
+                        Fighter::SpawnBattleEffect(0x38D,
                             (*(&x))+g_BurstXAt006590A8,
-                            0xC2480000,facing,1);
-                        SpawnFloatXRawYAt453A70(0x38D,
+                            -50.0f,facing,1);
+                        Fighter::SpawnBattleEffect(0x38D,
                             (*(&x))-g_BurstXAt006590A8,
-                            0xC2480000,facing,1);
+                            -50.0f,facing,1);
                     }
                     SetCameraShake(20.0f);
                     PlaySound(20);

@@ -14,7 +14,6 @@ public:
     // Remaining nonshared call-shape probes. The native 00453B50 and
     // 00453C80 effects now use Fighter's inherited typed APIs.
     void SetMotionFloatAt40FBB0(float,float,float);
-    void SpawnFloatXAt453A70(int,float,int,char,int);
 
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);

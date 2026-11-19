@@ -16,9 +16,9 @@ case 0x259: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
-        SpawnFloatXRawYAt453A70(0x34D,
+        Fighter::SpawnBattleEffect(0x34D,
             float((facing)*80)+(x),
-            reinterpret_cast<int&>(y),(facing),1);
+            y,(facing),1);
         UpdateGaugeTimer(0x1F4);
         PlaySound(5);
     }

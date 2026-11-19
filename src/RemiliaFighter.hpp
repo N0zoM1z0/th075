@@ -13,7 +13,6 @@ public:
 
     // One remaining mixed-coordinate caller shape at 00453A70. The
     // independently exact 00453B50/00453C80 helpers are inherited directly.
-    void SpawnFloatXRawYAt453A70(int,float,int,char,int);
 
     void ConfigureStage();
     void ChooseAction();

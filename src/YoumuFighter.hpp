@@ -13,7 +13,6 @@ public:
 
     // Remaining nonshared call-shape probes. The 00453B50 and 00453C80
     // effects use Fighter's inherited typed methods.
-    void SpawnFloatXRawYAt453A70(int,float,int,char,int);
     void SetupCollisionAt454BC0(int,int,int);
     void NativeGameEffectAt455B30();
 

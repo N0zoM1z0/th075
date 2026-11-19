@@ -45,6 +45,12 @@ Done so far:
   `reinterpret_cast<int&>` bit transport. All four complete COFF bodies
   and all relocation offsets/types remain identical outside symbol
   labels; 132/132 affected exact units cold-replayed locally.
+- Reimu, Youmu and Remilia also removed the final per-character
+  00453A70 raw-Y aliases (19 native call relocations) in favor of the
+  exact inherited Fighter::SpawnBattleEffect API. Real float fields and
+  meaningful Remilia float literals replace integer-bit arguments;
+  whole giant COFF and relocation layouts remain identical, with
+  127/127 affected exact units locally replayed.
 - Reimu, Sakuya and Youmu giant parents also use the inherited shared
   effect APIs (29/25/66 native COFF call relocations), replacing
   per-character aliases and restoring real float coordinates. All three

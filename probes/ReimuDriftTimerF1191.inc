@@ -23,8 +23,8 @@ case 0x2E5: {
         aiCardTimer=240-g_ReimuRepeatSettingAt006714D0*30;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        SpawnFloatXAt453A70(0x38E,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,
-            reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
+        Fighter::SpawnBattleEffect(0x38E,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,
+            y,facing,1);
         PlaySound(7);
         aiCardTimer=180;
     }

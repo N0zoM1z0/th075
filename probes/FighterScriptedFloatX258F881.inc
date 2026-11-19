@@ -12,9 +12,9 @@ case 0x258: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
-        SpawnFloatXRawYAt453A70(0x340,
+        Fighter::SpawnBattleEffect(0x340,
             float((facing)*80)+(x),
-            reinterpret_cast<int&>(y),(facing),1);
+            y,(facing),1);
         UpdateGaugeTimer(0xFA);
         PlaySound(5);
     }
