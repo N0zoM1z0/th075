@@ -36,7 +36,6 @@ extern float gNextBonusAt00657478;
 extern float gLengthDivisorAt006583A0;
 extern float gLengthFactorAt00659720;
 extern float MagnitudeAt00428D20(float value);
-extern float AngleRawAt00483300(int first, int second);
 extern float AngleAt00483300(float first, float second);
 extern float gCompareAt0065782C;
 extern float gCompareAt0065747C;
@@ -2356,7 +2355,7 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        rotationZ = AngleRawAt00483300(reinterpret_cast<int&>(field0D0),reinterpret_cast<int&>(field0C8)) / gAngleUnitAt00657828;
+        rotationZ = AngleAt00483300(field0D0,field0C8) / gAngleUnitAt00657828;
     }
     scaleY=static_cast<float>((scaleY)*gMulDoubleAt00659730);
     if (AdvanceNestedFrame()==(field070))

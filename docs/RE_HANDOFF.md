@@ -135,6 +135,12 @@ Done so far:
   accesses the scene's named texture, record and cursor fields. Ten
   affected exact units, including the separate music-room renderer,
   cold-replayed successfully.
+- Alice parent and its exact 855-byte projectile leaf now use the true
+  `AngleAt00483300(float,float)` ABI, with two raw integer-bit call
+  declarations removed. Both complete COFF bodies and all relocation
+  locations/types are unchanged; 2/2 focused exact cold replay passed.
+  Twelve additional natural-source register-join trials at 004F344C
+  failed to improve the 133-GPR mismatch frontier and were discarded.
 - Alice object's `0x320`–`0x326` actions now call a separately exact
   native 855-byte `AliceObject::AdvanceProjectileBehavior` (004F4170).
   This leaf's owner uses two typed `Fighter::SpawnBattleEffect` calls;

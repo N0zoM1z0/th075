@@ -244,6 +244,19 @@ nonexact (914 GPR-role differences and six widths); all 24 affected
 exact units cold-replayed. Other parents retain their historical names.
 
 
+Alice's 33,293-byte parent and its exact 855-byte projectile-behavior
+leaf now pass genuine `float` values into the shared
+`AngleAt00483300(float,float)` math helper, replacing their two distinct
+raw integer-bit call signatures. Both complete COFF functions retain
+all body bytes outside relocation fields and all 682/22 original
+relocation positions/types. Targeted cold replay of the 855-byte leaf
+and the separately exact 13-byte CharacterObject hook passed 2/2;
+Alice's full parent still has 133 unresolved GPR-role differences.
+Twelve further natural-C++ trials at the first discrepancy `004F344C`
+(changes to fade lvalues, redundant float casts, scopes, labels and
+condition spelling) yielded no improvement; two regressed native byte
+or size matches, and all trial modifications were discarded.
+
 Alice's seven `0x320`–`0x326` actions now call the real 855-byte
 `AliceObject::AdvanceProjectileBehavior()` at `004F4170` rather than a
 speculative reset method. This independently exact leaf includes two

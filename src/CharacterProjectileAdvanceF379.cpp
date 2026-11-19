@@ -1,7 +1,7 @@
 #include "CharacterObject.hpp"
 // Complete 855-byte native projectile-behaviour branch of AliceObject.
 // Called by the seven projectile action states of AliceObject::Advance.
-extern float AngleAt00483300(unsigned int,unsigned int);
+extern float AngleAt00483300(float,float);
 extern const float g_PolarScaleAt00658044;
 extern const float g_AngleUnitAt00657828;
 extern const float g_ProjectMinXAt006595EC;
@@ -33,7 +33,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             color[1]=255;
             color[2]=255;
             color[3]=255;
-            rotationZ=AngleAt00483300(reinterpret_cast<unsigned int&>(velocityY),reinterpret_cast<unsigned int&>(velocityX))/g_AngleUnitAt00657828;
+            rotationZ=AngleAt00483300(velocityY,velocityX)/g_AngleUnitAt00657828;
         }
         if ((field07C==1 || field07C==2 || field07C==4 || field07C==6) && animationStage<2) {
             ResetSecondaryCounter(2);

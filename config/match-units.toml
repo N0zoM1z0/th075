@@ -16011,8 +16011,8 @@ relocations = [
 source = "src/RecordedRange455580.cpp"
 object = "build/matching/RecordedRange455580.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["RecordedRange455580::SelectRange"]
-symbol = "?SelectRange@RecordedRange455580@@QAEHHH@Z"
+functions = ["Actor::RecordedRange"]
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
 target_address = 0x00455580
 size = 139
 compare_size = 139
@@ -51538,7 +51538,7 @@ target = 0x0040FB70
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 476
 type = "REL32"
-symbol = "?AngleAt00483300@@YAMII@Z"
+symbol = "?AngleAt00483300@@YAMMM@Z"
 target = 0x00483300
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 485
