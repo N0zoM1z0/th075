@@ -3,8 +3,8 @@
 // stage-one shot. NOT independent game function or exact whole CODE credit.
 case 0x58: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(reinterpret_cast<float&>(field094));
-        reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
+        velocityX = -(field094);
+        velocityY = field098;
         field05C = 0.8f;
         field07C = 0;
     }

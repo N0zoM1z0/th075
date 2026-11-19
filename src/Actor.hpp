@@ -51,8 +51,8 @@ struct FighterFrameInfo {
     short field26;            // +0x26
     short field28;            // +0x28
     short field2A;            // +0x2A
-    unsigned long field2C;    // +0x2C copied to the defender's +0x94
-    unsigned long field30;    // +0x30 copied to the defender's +0x98
+    float field2C;            // +0x2C horizontal reaction velocity
+    float field30;            // +0x30 vertical reaction velocity
     short field34;            // +0x34
     short hitEffect;          // +0x36
     signed char field38;      // +0x38
@@ -163,8 +163,8 @@ public:
     short field08A;                     // +0x08A
     float field08C;                     // +0x08C
     float field090;                     // +0x090
-    unsigned int field094;              // +0x094
-    unsigned int field098;              // +0x098
+    float field094;                     // +0x094 horizontal reaction velocity
+    float field098;                     // +0x098 vertical reaction velocity
     float field09C;                     // +0x09C
     float field0A0;                     // +0x0A0
     float field0A4;                     // +0x0A4

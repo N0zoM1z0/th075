@@ -4,8 +4,8 @@
 // internal case source, NOT independent/accepted exact game CODE.
 case 0x46: {
     if (animationStage == 0 && animationFrame == 0) {
-        velocityX = -(reinterpret_cast<float&>(field094));
-        velocityY = *(&velocityY) + *(&reinterpret_cast<float&>(field098));
+        velocityX = -(field094);
+        velocityY += field098;
         if (velocityY < TRAJECTORY_LOWER_THRESHOLD)
             velocityY = TRAJECTORY_MINIMUM_SPEED;
         field05C = 0.8f;

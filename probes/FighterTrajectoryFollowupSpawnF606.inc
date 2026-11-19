@@ -5,8 +5,8 @@
 // These are NOT independently callable or accepted whole functions.
 case F606_ACTION: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(reinterpret_cast<float&>(field094));
-        reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
+        velocityX = -(field094);
+        velocityY = field098;
         field05C = F606_DRAG;
         field07C = 0;
     }

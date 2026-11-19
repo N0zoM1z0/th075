@@ -108,8 +108,8 @@ void Fighter::ResetRound()
     reinterpret_cast<unsigned int&>(field488) = 0;
     field48C = 0;
     reinterpret_cast<unsigned int&>(field490) = 0;
-    reinterpret_cast<float&>(field094) = 0.0f;
-    reinterpret_cast<float&>(field098) = 0.0f;
+    field094 = 0.0f;
+    field098 = 0.0f;
     field058 = 0;
     field05C = 0.0f;
     reinterpret_cast<unsigned int&>(field08C) = 0;

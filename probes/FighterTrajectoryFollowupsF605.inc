@@ -4,8 +4,8 @@
 case 0x47: {
     // Original copying +0x98 to +0x54 is MOV dword, not FLD/FSTP.
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(reinterpret_cast<float&>(field094));
-        reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
+        velocityX = -(field094);
+        velocityY = field098;
         field05C = 0.8f;
         field07C = 0;
     }
@@ -30,8 +30,8 @@ case 0x47: {
 }
 case 0x48: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(reinterpret_cast<float&>(field094));
-        reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
+        velocityX = -(field094);
+        velocityY = field098;
         field05C = 1.3f;
         field07C = 0;
     }

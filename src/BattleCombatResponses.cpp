@@ -178,8 +178,8 @@ void BattleScene::ApplyReactionMode(Actor *attack, Fighter *attacker, Fighter *d
     case 62: case 63: case 64: case 70: case 84:
         defender->ResetPrimaryCounters(defender->action + 1); break;
     case 71: case 72: case 74: case 77:
-        reinterpret_cast<float&>(defender->field094) *= 1.25f;
-        reinterpret_cast<float&>(defender->field098) *= 1.25f;
+        defender->field094 *= 1.25f;
+        defender->field098 *= 1.25f;
         defender->flashGauge = defender->flashGauge << 1; break;
     case 73:
         defender->flashGauge = 32767;
