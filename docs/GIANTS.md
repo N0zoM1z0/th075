@@ -49,6 +49,14 @@ instruction widths that follow from it.
 | 005EB520 | Meiling object | 34,434 | `CharacterObjectWhole005EB520F1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
+Sakuya object `004CA6E0` now defines `SakuyaObject::Advance` directly.
+The original 42,511 CODE bytes are still nonexact (447 GPR-role and
+12 width differences). Of its 929 COFF relocation records, 52 effect
+spawns, 22 sounds and 13 tracked spawns now bind to the real
+`Fighter`/`SakuyaFighter` interfaces. The parent body size, every
+relocation offset/type and every nonrelocation instruction byte remained
+unchanged; 24 header-affected exact units cold-replayed.
+
 The Reimu fighter, Alice object and Meiling object research parents now
 directly define `ReimuFighter::Advance`, `AliceObject::Advance`, and
 `MeilingObject::Advance`, rather than artificial derived classes. Alice's 33,293-byte parent uses real `owner` and

@@ -1,13 +1,14 @@
 // Complete research source for original 004CA6E0 (42,511 CODE bytes).
 // All native states are written; still NONEXACT and not an accepted replacement.
-#include "ObjectAdvance4CA6E0F1222.hpp"
+#include "CharacterObject.hpp"
+#include "SakuyaFighter.hpp"
 
-#define OWNER_ACTOR reinterpret_cast<OwnerActor4CA6E0F1222*>(owner)
 
+float __cdecl AngleAt00483300(float, float);
 extern float g_F1211_AngleDivAt00657828;
 extern signed char g_F1212_DifficultyAt006714D0;
 
-void ObjectActor4CA6E0F1222::Advance()
+void SakuyaObject::Advance()
 {
     if (owner->opponent->field3BA != 0) return;
     if (owner->field3BA != 0 && field08A == 0) return;
@@ -22,10 +23,10 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -61,7 +62,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field2F4 = 255;
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
-                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
             }
             if ((field07C == 2 || field07C == 4) && animationStage == 0) {
                 ResetSecondaryCounter(6);
@@ -198,12 +199,12 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -230,7 +231,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                 owner->field318 = field0D8;
-                OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
+                owner->SpawnBattleEffect(812, x, y, facing, 1);
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
@@ -244,9 +245,9 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field2F4 = 255;
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
-                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 if (y > owner->field2E0 && field0DA < 2 && velocityY < 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
@@ -255,7 +256,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x < owner->field2D8 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -265,7 +266,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x > owner->field2DC && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -301,12 +302,12 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -333,7 +334,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                 owner->field318 = field0D8;
-                OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
+                owner->SpawnBattleEffect(812, x, y, facing, 1);
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
@@ -347,16 +348,16 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field2F4 = 255;
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
-                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 if (y > owner->field2E0 && field0DA < 1 && velocityY < 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
                     field080 = 1;
                 }
                 if (y < 0.0f && field0DA < 1 && velocityY > 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
@@ -365,7 +366,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x < owner->field2D8 && field0DA < 1 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 >= 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -375,7 +376,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x > owner->field2DC && field0DA < 1 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 >= 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -412,12 +413,12 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -452,7 +453,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     ++field0D8;
                     reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                     owner->field318 = field0D8;
-                    OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
+                    owner->SpawnBattleEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
@@ -466,7 +467,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field2F4 = 255;
                     owner->field308 = 0.0f;
                     owner->field30C = 0.0f;
-                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                    static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if (animationStage == 0 || animationStage == 2) {
                     SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
@@ -504,12 +505,12 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1241,11 +1242,11 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1285,7 +1286,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field2F4 = 255;
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
-                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(835, x, y, facing, 0, 1);
+                static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 ++field0DC;
                 ++field0DA;
                 field0CC += 1.0f;
@@ -1336,10 +1337,10 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1376,7 +1377,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field2F4 = 255;
                     owner->field308 = 0.0f;
                     owner->field30C = 0.0f;
-                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(835, x, y, facing, 0, 1);
+                    static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 }
             }
             if ((field07C == 2 || field07C == 4) && animationStage < 6) {
@@ -1412,10 +1413,10 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1441,14 +1442,14 @@ void ObjectActor4CA6E0F1222::Advance()
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 if (y > owner->field2E0 && field0DA < 2 && velocityY < 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
                     field080 = 1;
                 }
                 if (y < 0.0f && field0DA < 2 && velocityY > 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
@@ -1457,7 +1458,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x < owner->field2D8 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -1467,7 +1468,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x > owner->field2DC && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -1488,7 +1489,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field2F4 = 255;
                     owner->field308 = 0.0f;
                     owner->field30C = 0.0f;
-                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(835, x, y, facing, 0, 1);
+                    static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 }
             }
             if ((field07C == 2 || field07C == 4) && animationStage == 0) {
@@ -1527,12 +1528,12 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1567,7 +1568,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (animationStage == 3) {
                     reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                     owner->field318 = field0D8;
-                    OWNER_ACTOR->SpawnEffect(812, x, y, facing, 0);
+                    owner->SpawnBattleEffect(812, x, y, facing, 0);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
@@ -1581,7 +1582,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field2F4 = 255;
                     owner->field308 = 0.0f;
                     owner->field30C = 0.0f;
-                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                    static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if ((field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 4) {
                     ResetSecondaryCounter(4);
@@ -1607,12 +1608,12 @@ void ObjectActor4CA6E0F1222::Advance()
             ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
+                owner->SpawnBattleEffect(995, x, y, 1, 1);
             }
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
             return;
         }
         else {
@@ -1647,7 +1648,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (animationStage == 3) {
                     reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                     owner->field318 = field0D8;
-                    OWNER_ACTOR->SpawnEffect(812, x, y, facing, 0);
+                    owner->SpawnBattleEffect(812, x, y, facing, 0);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
@@ -1661,7 +1662,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field2F4 = 255;
                     owner->field308 = 0.0f;
                     owner->field30C = 0.0f;
-                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                    static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if ((field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 4) {
                     ResetSecondaryCounter(4);
@@ -1814,7 +1815,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (field07C == 0) {
                     reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                     owner->field318 = field0D8;
-                    OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
+                    owner->SpawnBattleEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
@@ -1828,10 +1829,10 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field2F4 = 255;
                     owner->field308 = 0.0f;
                     owner->field30C = 0.0f;
-                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                    static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if (y > owner->field2E0 && field0DA < 1 && velocityY < 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
@@ -1839,7 +1840,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     field0CC = 4.0f;
                 }
                 if (y < 0.0f && field0DA < 1 && velocityY > 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
@@ -1849,7 +1850,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x < owner->field2D8 && field0DA < 1 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -1860,7 +1861,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x > owner->field2DC && field0DA < 1 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -1917,7 +1918,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (field07C == 0) {
                     reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                     owner->field318 = field0D8;
-                    OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
+                    owner->SpawnBattleEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
@@ -1931,17 +1932,17 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field2F4 = 255;
                     owner->field308 = 0.0f;
                     owner->field30C = 0.0f;
-                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                    static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if (y > owner->field2E0 && field0DA < 2 && velocityY < 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
                     field080 = 1;
                 }
                 if (y < 0.0f && field0DA < 2 && velocityY > 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
@@ -1950,7 +1951,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x < owner->field2D8 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -1960,7 +1961,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x > owner->field2DC && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -2127,7 +2128,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field2F4 = 255;
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
-                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
             }
             if ((field07C == 2 || field07C == 4) && animationStage < 5) {
                 ResetSecondaryCounter(6);
@@ -2157,7 +2158,7 @@ void ObjectActor4CA6E0F1222::Advance()
             if (animationStage == 1 && animationFrame == 0) {
                 reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(field0C8);
                 owner->field318 = 10.0f;
-                OWNER_ACTOR->SpawnEffect(909, x, y, facing, 1);
+                owner->SpawnBattleEffect(909, x, y, facing, 1);
             }
             if (AdvanceNestedFrame() == field070) {
                 if (field0D8 < g_F1212_DifficultyAt006714D0 * 2 + 1) {
@@ -2192,7 +2193,7 @@ void ObjectActor4CA6E0F1222::Advance()
             ++field0D8;
             if (animationStage < 5) {
                 if (y > owner->field2E0 && field0DA < g_F1212_DifficultyAt006714D0 && velocityY < 0.0f) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
@@ -2201,7 +2202,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x < owner->field2D8 && field0DA < g_F1212_DifficultyAt006714D0 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -2211,7 +2212,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 if (x > owner->field2DC && field0DA < g_F1212_DifficultyAt006714D0 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
-                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    owner->PlaySound(11);
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
@@ -2233,10 +2234,10 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field2F4 = 255;
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
-                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, x, y, facing, 0, 1);
+                static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
                 reinterpret_cast<unsigned int&>(owner->field318) = reinterpret_cast<unsigned int&>(field0CC);
-                OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
+                owner->SpawnBattleEffect(812, x, y, facing, 1);
             }
             if ((field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 5) {
                 ResetSecondaryCounter(6);
@@ -2499,5 +2500,3 @@ void ObjectActor4CA6E0F1222::Advance()
         break;
     }
 }
-
-#undef OWNER_ACTOR

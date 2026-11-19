@@ -28,7 +28,13 @@ public:
 // Each character's object class; its constructor takes the owning fighter.
 class ReimuObject : public CharacterObject { public: ReimuObject(void* ownerFighter); };
 class MarisaObject : public CharacterObject { public: MarisaObject(void* ownerFighter); };
-class SakuyaObject : public CharacterObject { public: SakuyaObject(void* ownerFighter); };
+class SakuyaObject : public CharacterObject {
+public:
+    SakuyaObject(void* ownerFighter);
+    virtual void Advance();    // 004CA6E0, nonexact 42,511-byte parent
+    int RecordedRange(int lower, int upper);
+    void PlaySharedSound(short sound);
+};
 class AliceObject : public CharacterObject {
 public:
     AliceObject(void* ownerFighter);
