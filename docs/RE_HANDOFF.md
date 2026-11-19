@@ -53,6 +53,12 @@ large research parents. They do not claim new giant exactness:
   bodies remain byte-identical at 40,464 / 44,331 / 43,972 bytes, with
   938 / 1,043 / 991 relocation positions/types unchanged; all three giant
   frontiers remain explicitly nonexact.
+- current work: moved the 30-byte `0x004071A0` held-input clear onto the
+  real `Fighter::inputBindings` member (`InputBindingsF171`) and replaced
+  the +0x494 receiver cast in `Fighter::ResetRound` with a typed member call.
+  The leaf and complete 1,151-byte reset caller both cold-replay exact (2/2);
+  the 28-byte `InputState` at block +0x2C is compile-time layout checked.
+  Original proposed role/name remains provisional.
 - 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
   +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
   identical; the 462 affected exact units cold-replayed 462/462.

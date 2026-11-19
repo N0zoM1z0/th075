@@ -810,6 +810,19 @@ was attested in a read-only project; complete instructions/decompiles are
 private under `.analysis/`. These origin decisions add no source, mapping
 or exact credit.
 
+
+The 30-byte `0x004071A0` input held-count clear is now expressed on the
+already-declared `InputBindingsF171` member rather than a separate borrowed
+`RoundResetInputCountsF159` receiver. `Fighter::inputBindings` is the actual
+embedded block at +0x494; its 28-byte `InputState` is at +0x2C. The method now
+uses `memset(&state, 0, sizeof(state))`, and the 1,151-byte
+`Fighter::ResetRound` caller invokes `inputBindings.ClearHeldCounts()`.
+Both complete functions cold-replay exact (2/2); the leaf's one real memset
+relocation and the caller's three real call relocations remain at their
+original offsets/types/destinations. The provisional origin role remains
+`InputMapping::ClearHeldCounts`; this recovers the source-side receiver/member
+view, not the original external method spelling.
+
 ## R016 — sound-bank serialization, playback and streaming worker
 
 Reviewed 2026-10-02. Fifteen complete custom bodies add 3,318 authored bytes.
