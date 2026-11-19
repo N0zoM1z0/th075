@@ -277,6 +277,16 @@ nonrelocation byte unchanged and all 682/22 relocation positions/types;
 24/24 exact header-affected functions, including the leaf, cold-replayed.
 The giant itself is still nonexact.
 
+Nine object research giants now inherit the native recorded-random-range
+method from `Actor`, rather than carrying their own duplicate declarations.
+The nine complete COFF bodies — Alice, Patchouli, Youmu, Sakuya, Yuyuko,
+Yukari, Suika, Remilia and Meiling — retain every relocation offset/type,
+identical object sizes and zero nonrelocation-byte changes. Their complete
+compiled code uses 414 calls to inherited `Actor::RecordedRange`. The
+139-byte shared leaf remains cold-replay exact; 24 object-related and
+105 selected Fighter/Actor-dependent exact units were replayed locally,
+all passing. None of the nonexact giant frontiers were changed.
+
 The independently exact native recorded-range policy at 00455580 is
 now a common `Actor::RecordedRange(int,int)` method instead of an
 artificial standalone receiver. Its complete 139-byte COFF shape, all

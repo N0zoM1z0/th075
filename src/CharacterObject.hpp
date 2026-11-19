@@ -33,7 +33,6 @@ class SakuyaObject : public CharacterObject {
 public:
     SakuyaObject(void* ownerFighter);
     virtual void Advance();    // 004CA6E0, nonexact 42,511-byte parent
-    int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
 };
 class AliceObject : public CharacterObject {
@@ -46,55 +45,47 @@ public:
     void AdvanceProjectileBehavior(); // 004F4170, original native helper
     void PlaySharedSound(short sound);
 
-    int RecordedRange(int lower, int upper);
 };
 class PatchouliObject : public CharacterObject {
 public:
     PatchouliObject(void* ownerFighter);
     virtual void Advance();  // 0050A580; complete 81,539-byte nonexact parent
     void PlaySharedSound(short sound);
-    int RecordedRange(int lower, int upper);
 };
 class YoumuObject : public CharacterObject {
 public:
     YoumuObject(void* ownerFighter);
     virtual void Advance(); // 00536400, complete nonexact object state machine
-    int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
 };
 class RemiliaObject : public CharacterObject {
 public:
     RemiliaObject(void* ownerFighter);
     virtual void Advance();        // 0055AC80, nonexact complete research parent
-    int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
 };
 class YuyukoObject : public CharacterObject {
 public:
     YuyukoObject(void* ownerFighter);
     virtual void Advance();   // 0057D580; complete nonexact parent
-    int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
 };
 class YukariObject : public CharacterObject {
 public:
     YukariObject(void* ownerFighter);
     virtual void Advance();  // original 005A1600; complete, nonexact research parent
-    int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
 };
 class SuikaObject : public CharacterObject {
 public:
     SuikaObject(void* ownerFighter);
     virtual void Advance(); // native 005C9CC0, complete nonexact research parent
-    int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
 };
 class MeilingObject : public CharacterObject {
 public:
     MeilingObject(void* ownerFighter);
     virtual void Advance();  // 005EB520, whole nonexact research parent
-    int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
 };
 

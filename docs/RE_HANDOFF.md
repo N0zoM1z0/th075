@@ -22,6 +22,12 @@ replaced by named members of shared classes.
 
 Done so far:
 
+- Nine full object giant Advances now inherit `Actor::RecordedRange`
+  instead of nine fake per-character random-range declarations. 414
+  compiled calls were audited with zero nonrelocation byte changes across
+  nine full COFF bodies and no relocation layout changes. Local exact
+  verification: range leaf 1/1, object cohort 24/24, selected Actor/Fighter
+  dependency cohort 105/105. No full cold replay was run.
 - The existing complete native 00455580 recorded-range generator is now
   `Actor::RecordedRange(int,int)` instead of the standalone borrowed
   receiver class. It remains 139-byte/11-relocation cold-exact, with
