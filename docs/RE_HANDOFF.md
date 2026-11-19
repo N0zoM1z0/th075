@@ -287,3 +287,7 @@ The character-selection `chosenCharacter` and `alternateCharacter` arrays
 wrap/decrement logic. Seventy signed-reference aliases and 29 explicit
 signed casts were removed; six exact selection controller, card/background/
 options render, subselection and reset functions replayed 6/6 unchanged.
+The name-entry `field120` at `+0x120` is now `signed char`, matching the
+parallel sprite-name view and the signed editor row-offset calculation. Its
+last signed-byte reinterpret cast is gone; `NameEntryScene::UpdatePlayer`
+remains byte-identical at 541 bytes with all 11 relocations, replayed 1/1.

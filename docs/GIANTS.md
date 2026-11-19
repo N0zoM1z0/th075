@@ -987,3 +987,9 @@ signed casts across controller/card/background/options code are gone. All six
 exact selection update, card render, background render, options render,
 subselection and reset functions replayed 6/6 with their complete COFF bodies
 and relocation maps unchanged.
+The name-entry `field120` byte at `+0x120` is likewise signed: the parallel
+sprite-name view already declares it `signed char`, and the editor uses its
+sign-extended value to calculate the active record offset. The update view now
+uses `signed char` directly, removing its last signed-byte reinterpret cast;
+the complete 541-byte `NameEntryScene::UpdatePlayer` body and all 11
+relocations remain identical (exact replay 1/1).
