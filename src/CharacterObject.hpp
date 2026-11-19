@@ -58,7 +58,13 @@ public:
     void SetNativeAngleBitsAt0040FB70(unsigned int angleBits, float speed);
     int RandomBoundaryAt00455580(int lower, int upper);
 };
-class YoumuObject : public CharacterObject { public: YoumuObject(void* ownerFighter); };
+class YoumuObject : public CharacterObject {
+public:
+    YoumuObject(void* ownerFighter);
+    virtual void Advance(); // 00536400, complete nonexact object state machine
+    int RecordedRange(int lower, int upper);
+    void PlaySharedSound(short sound);
+};
 class RemiliaObject : public CharacterObject {
 public:
     RemiliaObject(void* ownerFighter);

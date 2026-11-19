@@ -131,6 +131,17 @@ sites; its 34,434-byte frontier remains 985 differing bytes with 135 GPR
 and six instruction-width mismatches in the late state machine. All 24
 header-affected exact units cold-replayed.
 
+Youmu object `00536400` now defines `YoumuObject::Advance` with its
+16-byte recorded-action history entries preserved as a bounded borrowed
+view. 108 effect spawns, eight shared sounds, eight owner sounds, two
+auxiliary and two tracked effect calls use the real Fighter APIs. The
+seven gauge-timer calls to 0046D000 retain a provisional receiver ABI
+pending cross-character ownership proof. Both complete 40,464-byte
+COFF bodies preserve all 938 relocation offsets/types and every
+nonrelocation byte. The original 39,999 CODE bytes remain NONEXACT
+(913 GPR-role, ten width differences); 24/24 header-affected exact
+units replayed successfully.
+
 Suika object `005C9CC0` now defines `SuikaObject::Advance` on the
 real CharacterObject hierarchy, with 64 effect spawns, 13 sounds,
 three shared sounds and five camera shakes using the verified native

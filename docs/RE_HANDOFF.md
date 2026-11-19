@@ -76,6 +76,13 @@ Done so far:
   accesses expressed through real named members. The 33,293-byte parent
   retained its 575-byte nonexact frontier and 133 GPR mismatches; all 24
   header-affected exact functions cold-replayed successfully.
+- Youmu object `Advance` (39,999 CODE B) is now a real `YoumuObject`
+  member. Its history-entry view keeps the 16-byte native record and
+  Fighter's indexed `field370` without inventing the unknown history
+  container layout. All 108 spawns and the 20 effect/sound auxiliaries
+  bind to Fighter methods. The 40,464-byte complete COFF and 938
+  relocation locations/types are preserved; 24/24 exact units cold
+  replayed. Seven 0046D000 gauge calls still require receiver research.
 - Suika object `Advance` (43,501 CODE B) now belongs to `SuikaObject`;
   64 spawns, 13 sounds, three shared sounds and five camera shakes use
   the actual Fighter and camera contracts. The 43,972-byte object and
