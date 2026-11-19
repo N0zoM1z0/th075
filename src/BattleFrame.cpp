@@ -122,7 +122,7 @@ void Fighter::ChooseFrameAction()
     if (health <= 0) return;
     if (flashGauge > 0) {
         if (y > 0.0f) --flashGauge;
-    } else if (field2CD != 0 && g_CombatMode == 5 && reinterpret_cast<signed char&>(field52E) == 0) {
+    } else if (field2CD != 0 && g_CombatMode == 5 && field52E == 0) {
         if (rand() % 2) ResetPrimaryCounters(180);
         else ResetPrimaryCounters(181);
     } else if (inputX != 0 &&

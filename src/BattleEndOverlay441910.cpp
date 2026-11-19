@@ -47,18 +47,18 @@ void BattleScene::RenderEndOverlay() {
             }
             if (field018 != 5 &&
                 (field018 != 12 || g_StateContinueCount != 0)) {
-                SetRect(&rect, 384, (reinterpret_cast<signed char&>(field118) != 0) * 32 + 128,
-                    512, (reinterpret_cast<signed char&>(field118) != 0) * 32 + 160);
+                SetRect(&rect, 384, (field118 != 0) * 32 + 128,
+                    512, (field118 != 0) * 32 + 160);
                 packet.BuildQuad(256.0f, 140.0f, 384.0f, 172.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             }
-            SetRect(&rect, 256, (reinterpret_cast<signed char&>(field118) != 1) * 32 + 128,
-                384, (reinterpret_cast<signed char&>(field118) != 1) * 32 + 160);
+            SetRect(&rect, 256, (field118 != 1) * 32 + 128,
+                384, (field118 != 1) * 32 + 160);
             packet.BuildQuad(256.0f, 170.0f, 384.0f, 202.0f);
             DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             if (g_FrameClockMode != 2 && g_EndOverlayFlagAt00671624 == 0 && field018 != 7) {
-                SetRect(&rect, 0, (reinterpret_cast<signed char&>(field118) != 2) * 32 + 128,
-                    256, (reinterpret_cast<signed char&>(field118) != 2) * 32 + 155);
+                SetRect(&rect, 0, (field118 != 2) * 32 + 128,
+                    256, (field118 != 2) * 32 + 155);
                 packet.BuildQuad(192.0f, 200.0f, 448.0f, 227.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             }

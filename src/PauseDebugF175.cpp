@@ -25,7 +25,7 @@ void BattleScene::HandlePauseMenu()
             || g_HeldInputAt006716AC.counts[2] == 1) {
             field0A0 = 0;
             g_SoundBank->Play(45);
-            switch (reinterpret_cast<signed char&>(field118)) {
+            switch (field118) {
             case 0:
                 if (field018 == 12 && g_ContinueCountAt00671623 > 0) {
                     fighters[0]->field39D = 2;
@@ -62,37 +62,37 @@ void BattleScene::HandlePauseMenu()
         if (g_HeldInputAt00671664.counts[1] == 1
             || g_HeldInputAt006716AC.counts[1] == 1) {
             g_SoundBank->Play(39);
-            reinterpret_cast<signed char&>(field118)++;
+            field118++;
         }
         if (g_HeldInputAt00671664.counts[1] == -1
             || g_HeldInputAt006716AC.counts[1] == -1) {
             g_SoundBank->Play(39);
-            reinterpret_cast<signed char&>(field118)--;
+            field118--;
         }
         if (g_InputReplayModeAt0066C238 == 2) {
-            if (reinterpret_cast<signed char&>(field118) < 0)
-                reinterpret_cast<signed char&>(field118) = 1;
-            if (reinterpret_cast<signed char&>(field118) > 1)
-                reinterpret_cast<signed char&>(field118) = 0;
+            if (field118 < 0)
+                field118 = 1;
+            if (field118 > 1)
+                field118 = 0;
         }
         if (field018 == 5) {
-            if (reinterpret_cast<signed char&>(field118) < 1)
-                reinterpret_cast<signed char&>(field118) = 2;
-            if (reinterpret_cast<signed char&>(field118) > 2)
-                reinterpret_cast<signed char&>(field118) = 1;
+            if (field118 < 1)
+                field118 = 2;
+            if (field118 > 2)
+                field118 = 1;
         } else if (field018 == 12 && g_ContinueCountAt00671623 == 0) {
-            reinterpret_cast<signed char&>(field118) = 1;
+            field118 = 1;
         } else if (g_CombatMode == 3
             && (g_ContinueUsedAt00671624 != 0 || field018 == 7)) {
-            if (reinterpret_cast<signed char&>(field118) < 0)
-                reinterpret_cast<signed char&>(field118) = 1;
-            if (reinterpret_cast<signed char&>(field118) > 1)
-                reinterpret_cast<signed char&>(field118) = 0;
+            if (field118 < 0)
+                field118 = 1;
+            if (field118 > 1)
+                field118 = 0;
         } else {
-            if (reinterpret_cast<signed char&>(field118) < 0)
-                reinterpret_cast<signed char&>(field118) = 2;
-            if (reinterpret_cast<signed char&>(field118) > 2)
-                reinterpret_cast<signed char&>(field118) = 0;
+            if (field118 < 0)
+                field118 = 2;
+            if (field118 > 2)
+                field118 = 0;
         }
     }
 }

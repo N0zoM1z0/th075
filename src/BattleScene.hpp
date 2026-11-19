@@ -154,7 +154,7 @@ public:
     unsigned long field10C;             // +0x10C
     int field110;                       // +0x110
     int field114;                       // +0x114
-    unsigned char field118;             // +0x118
+    signed char field118;               // +0x118 pause/Mode 5 menu selection
 };
 
 extern signed char g_CombatMode;

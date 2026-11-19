@@ -18,7 +18,7 @@ void BattleScene::RenderModeFive() {
         if (field0A1 < 50)
             return;
         for (i = 0; i < 9; i = i + 1) {
-            if (i == reinterpret_cast<signed char&>(field118)) color = 0xFFFFFFFF;
+            if (i == field118) color = 0xFFFFFFFF;
             else color = 0xFF808080;
             SetRect(&region, 0, i * 24, 240, i * 24 + 24);
             packet.BuildQuadFromRect(&region);
