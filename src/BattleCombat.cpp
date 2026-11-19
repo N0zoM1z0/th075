@@ -128,7 +128,7 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         defender->field094 = attack->savedFrameInfo->field2C;
         defender->field098 = attack->savedFrameInfo->field30;
         defender->field3CC = 15;
-        reinterpret_cast<unsigned char&>(defender->field484) = 8;
+        defender->field484 = 8;
         if ((attack->savedFrameInfo->attackFlags & 0x100) > 0)
             defender->flashGauge = 30000;
         else

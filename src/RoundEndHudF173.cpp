@@ -17,7 +17,7 @@ void BattleScene::EnterRoundEnd()
             if (fighters[1]->health <= 0) {
                 fighters[0]->field39D = 1;
                 fighters[1]->field39D = 1;
-                reinterpret_cast<unsigned char&>(field018) = 2;
+                field018 = 2;
                 fighters[0]->field3CF = 0;
                 fighters[1]->field3CF = 0;
                 fighters[0]->field3CE.unsignedAt3CE = 1;
@@ -32,11 +32,11 @@ void BattleScene::EnterRoundEnd()
                 if (fighters[0]->field39D != 0) {
                     fighters[0]->recoverableHealth = 10000;
                     fighters[0]->health = 10000;
-                    reinterpret_cast<unsigned char&>(field018) = 2;
+                    field018 = 2;
                     reinterpret_cast<int&>(field00C) = 300;
                 } else {
                     reinterpret_cast<unsigned char&>(field05D) = 1;
-                    reinterpret_cast<unsigned char&>(field018) = 3;
+                    field018 = 3;
                     reinterpret_cast<int&>(field00C) = 180;
                 }
             }
@@ -48,11 +48,11 @@ void BattleScene::EnterRoundEnd()
             if (fighters[1]->field39D != 0) {
                 fighters[1]->recoverableHealth = 10000;
                 fighters[1]->health = 10000;
-                reinterpret_cast<unsigned char&>(field018) = 2;
+                field018 = 2;
                 reinterpret_cast<int&>(field00C) = 300;
             } else {
                 reinterpret_cast<unsigned char&>(field05D) = 0;
-                reinterpret_cast<unsigned char&>(field018) = 3;
+                field018 = 3;
                 reinterpret_cast<int&>(field00C) = 180;
             }
         }

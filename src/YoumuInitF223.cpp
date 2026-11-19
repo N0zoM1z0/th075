@@ -17,7 +17,7 @@ YoumuFighter::YoumuFighter()
     strcpy(name,g_YoumuNameAt006598C0);
     strcpy(tag,g_YoumuTagAt006598C8);
     field478=0x2ef;
-    reinterpret_cast<unsigned char&>(field532)=10;
+    field532=10;
     field06C=-10.0f;
     fieldF0C=0;
     field705[0]=4;

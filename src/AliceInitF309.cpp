@@ -10,7 +10,7 @@ AliceFighter::AliceFighter()
     strcpy(name,g_AliceNameAt006595F8);
     strcpy(tag,g_AliceTagAt00659600);
     field478=0x2ad;
-    reinterpret_cast<unsigned char&>(field532)=10;
+    field532=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

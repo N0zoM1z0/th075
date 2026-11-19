@@ -5,7 +5,7 @@
 void Fighter::ForwardBaseAction()
 {
     if (y <= 0.0f) {
-        reinterpret_cast<unsigned char&>(field3AD) = 0;
+        field3AD = 0;
         field3AE = 0;
     }
     if (y <= 0.0f &&

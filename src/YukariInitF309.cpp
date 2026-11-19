@@ -10,7 +10,7 @@ YukariFighter::YukariFighter()
     strcpy(name,g_YukariNameAt00659CB0);
     strcpy(tag,g_YukariTagAt00659CB8);
     field478=0x25e;
-    reinterpret_cast<unsigned char&>(field532)=12;
+    field532=12;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

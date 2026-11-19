@@ -10,7 +10,7 @@ SuikaFighter::SuikaFighter()
     strcpy(name,g_SuikaNameAt00659E24);
     strcpy(tag,g_SuikaTagAt00659E2C);
     field478=0x2a6;
-    reinterpret_cast<unsigned char&>(field532)=10;
+    field532=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

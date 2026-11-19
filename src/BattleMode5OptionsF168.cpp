@@ -51,7 +51,7 @@ void BattleScene::HandleMode5Options()
         case 8:
             field0A0 = 0;
             g_SoundBank->Play(45);
-            reinterpret_cast<unsigned char&>(field018) = 6;
+            field018 = 6;
             break;
         }
     }

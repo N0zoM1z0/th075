@@ -33,24 +33,24 @@ void BattleScene::HandlePauseMenu()
                     g_ContinueCountAt00671623--;
                     g_ContinueUsedAt00671624 = 1;
                     g_SequenceCounterAt00671622 = 2;
-                    reinterpret_cast<unsigned char&>(field018) = 13;
+                    field018 = 13;
                     reinterpret_cast<int&>(field00C) = 299;
                 }
                 break;
             case 1:
                 if (field018 == 12) {
                     g_RoundSelectionAt006714CE = 0;
-                    reinterpret_cast<unsigned char&>(field018) = 14;
+                    field018 = 14;
                     break;
                 }
-                reinterpret_cast<unsigned char&>(field018) = 6;
+                field018 = 6;
                 break;
             case 2:
                 if (field018 == 12) {
                     g_RoundSelectionAt006714CE = 1;
-                    reinterpret_cast<unsigned char&>(field018) = 14;
+                    field018 = 14;
                 } else {
-                    reinterpret_cast<unsigned char&>(field018) = 8;
+                    field018 = 8;
                 }
                 break;
             }

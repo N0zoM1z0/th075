@@ -9,7 +9,7 @@ void MeilingFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
         SetCameraOverrideAt00412CC0(1, 0.0f, 120.0f, 320.0f);
-        reinterpret_cast<unsigned char&>(sequencePhase) = 0;
+        sequencePhase = 0;
         g_SequenceStageAt0067161D = 1;
         SnapCameraAt00412CF0();
         x = 0.0f;
@@ -28,7 +28,7 @@ void MeilingFighter::ConfigureStage() {
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
-        reinterpret_cast<unsigned char&>(sequencePhase) = 10;
+        sequencePhase = 10;
         g_SequenceStageAt0067161D = 13;
         SetCameraOverrideAt00412CC0(1, 0.0f, 120.0f, 320.0f);
         SnapCameraAt00412CF0();
@@ -48,7 +48,7 @@ void MeilingFighter::ConfigureStage() {
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
-        reinterpret_cast<unsigned char&>(sequencePhase) = 20;
+        sequencePhase = 20;
         g_SequenceStageAt0067161D = 0;
         SetCameraOverrideAt00412CC0(1, 0.0f, 120.0f, 320.0f);
         SnapCameraAt00412CF0();
@@ -70,7 +70,7 @@ void MeilingFighter::ConfigureStage() {
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
-        reinterpret_cast<unsigned char&>(sequencePhase) = 30;
+        sequencePhase = 30;
         g_SequenceStageAt0067161D = 6;
         SetCameraOverrideAt00412CC0(1, 0.0f, 120.0f, 320.0f);
         SnapCameraAt00412CF0();
@@ -92,7 +92,7 @@ void MeilingFighter::ConfigureStage() {
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
-        reinterpret_cast<unsigned char&>(sequencePhase) = 40;
+        sequencePhase = 40;
         g_SequenceStageAt0067161D = 6;
         SetCameraOverrideAt00412CC0(1, 0.0f, 120.0f, 320.0f);
         SnapCameraAt00412CF0();
@@ -115,7 +115,7 @@ void MeilingFighter::ConfigureStage() {
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
-        reinterpret_cast<unsigned char&>(sequencePhase) = 50;
+        sequencePhase = 50;
         g_SequenceStageAt0067161D = 20;
         SetCameraOverrideAt00412CC0(1, 0.0f, 120.0f, 320.0f);
         SnapCameraAt00412CF0();
@@ -137,7 +137,7 @@ void MeilingFighter::ConfigureStage() {
         break;
     case 7:
         opponent->field460 = 1000000;
-        reinterpret_cast<unsigned char&>(sequencePhase) = 60;
+        sequencePhase = 60;
         g_SequenceStageAt0067161D = 9;
         SetCameraOverrideAt00412CC0(1, 0.0f, 320.0f, 320.0f);
         SnapCameraAt00412CF0();
@@ -159,21 +159,21 @@ void MeilingFighter::ConfigureStage() {
         opponent->ResetPrimaryCounters(0);
         break;
     case 8:
-        reinterpret_cast<unsigned char&>(sequencePhase) = 70;
+        sequencePhase = 70;
         fieldFF4 = 255;
         fieldFF5 = 0;
         fieldFF6 = 0;
         fieldFF7 = 0;
         break;
     case 9:
-        reinterpret_cast<unsigned char&>(sequencePhase) = 80;
+        sequencePhase = 80;
         fieldFF4 = 255;
         fieldFF5 = 0;
         fieldFF6 = 0;
         fieldFF7 = 0;
         break;
     case 10:
-        reinterpret_cast<unsigned char&>(sequencePhase) = 90;
+        sequencePhase = 90;
         fieldFF4 = 255;
         fieldFF5 = 0;
         fieldFF6 = 0;

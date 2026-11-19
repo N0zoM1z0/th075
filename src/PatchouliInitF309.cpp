@@ -10,7 +10,7 @@ PatchouliFighter::PatchouliFighter()
     strcpy(name,g_PatchouliNameAt00659754);
     strcpy(tag,g_PatchouliTagAt00659760);
     field478=0x32c;
-    reinterpret_cast<unsigned char&>(field532)=10;
+    field532=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

@@ -8,7 +8,7 @@ ReimuFighter::ReimuFighter()
     strcpy(name,g_ReimuNameAt006590C8);
     strcpy(tag,g_ReimuTagAt006590D0);
     field478=0x287;
-    reinterpret_cast<unsigned char&>(field532)=10;
+    field532=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

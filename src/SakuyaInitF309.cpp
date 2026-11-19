@@ -10,7 +10,7 @@ SakuyaFighter::SakuyaFighter()
     strcpy(name,g_SakuyaNameAt0065949C);
     strcpy(tag,g_SakuyaTagAt006594A4);
     field478=0x27d;
-    reinterpret_cast<unsigned char&>(field532)=10;
+    field532=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

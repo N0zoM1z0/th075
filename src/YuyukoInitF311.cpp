@@ -12,7 +12,7 @@ YuyukoFighter::YuyukoFighter()
     strcpy(name,g_YuyukoNameAt00659B74);
     strcpy(tag,g_YuyukoTagAt00659B7C);
     field478=0x21c;
-    reinterpret_cast<unsigned char&>(field532)=10;
+    field532=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

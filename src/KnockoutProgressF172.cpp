@@ -71,7 +71,7 @@ void BattleScene::ResolveKnockout()
         if (fighters[0]->health <= 0)
             fighters[0]->health = 1;
         if (fighters[1]->field39D > 0) {
-            reinterpret_cast<unsigned char&>(field018) = 9;
+            field018 = 9;
             reinterpret_cast<int&>(field00C) = 147;
             if (reinterpret_cast<signed char*>(fighters[1]->field32A + 1)[fighters[1]->field39D] == 0) {
                 fighters[1]->health = fighters[1]->healthLimits[fighters[1]->field39D];
@@ -79,7 +79,7 @@ void BattleScene::ResolveKnockout()
                 reinterpret_cast<int&>(fighters[1]->field3A8) = 0;
             }
         } else {
-            reinterpret_cast<unsigned char&>(field018) = 11;
+            field018 = 11;
             reinterpret_cast<int&>(field00C) = 180;
             field01A = 60;
         }
@@ -95,17 +95,17 @@ void BattleScene::ResolveKnockout()
         if (fighters[0]->field39D != 0) {
             fighters[0]->recoverableHealth = 10000;
             fighters[0]->health = 10000;
-            reinterpret_cast<unsigned char&>(field018) = 10;
+            field018 = 10;
             reinterpret_cast<int&>(field00C) = 300;
             field01A = 60;
         } else if (static_cast<signed char>(g_SequenceCounterAt00671622) > 0) {
             g_SequenceCounterAt00671622--;
             fighters[0]->field39D = 2;
-            reinterpret_cast<unsigned char&>(field018) = 10;
+            field018 = 10;
             reinterpret_cast<int&>(field00C) = 300;
             field01A = 60;
         } else {
-            reinterpret_cast<unsigned char&>(field018) = 11;
+            field018 = 11;
             reinterpret_cast<int&>(field00C) = 180;
             field01A = 60;
         }

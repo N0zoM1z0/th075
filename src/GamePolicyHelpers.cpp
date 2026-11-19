@@ -50,7 +50,7 @@ void Fighter::ConfigureNoticeText(u8 enabled)
 
 void Fighter::BeginNoticeTransition(u8 notice, u8 direction)
 {
-    reinterpret_cast<unsigned char&>(noticeState) = 2 - direction;
+    noticeState = 2 - direction;
     SetNoticeFields(notice, 1, direction * 0x7F + 0x80);
     noticeAxis = 0x10;
 }

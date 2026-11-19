@@ -13,7 +13,7 @@ RemiliaFighter::RemiliaFighter()
     strcpy(name,g_RemiliaNameAt00659A34);
     strcpy(tag,g_RemiliaTagAt00659A3C);
     field478=0x2a0;
-    reinterpret_cast<unsigned char&>(field532)=11;
+    field532=11;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;
