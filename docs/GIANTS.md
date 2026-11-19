@@ -963,3 +963,11 @@ the shared member is now `signed char` and both explicit signed-byte
 reinterpret views are gone. Meiling and Patchouli retain their complete
 1,606-byte COFF bodies and all 40 relocations each; the two exact renderer
 units replayed 2/2.
+The Mode 5 option bytes at `+0x52C/+0x52D/+0x52E/+0x530/+0x531` are
+also signed bytes, matching the signed loads and the already-signed Mode 5
+direction view. Their five `Fighter` members are now `signed char`; 38
+`reinterpret_cast<signed char&>` views across pause/debug, options, render,
+and battle-state code become direct member access. All seven affected exact
+functions (pause menu, debug keys, Mode 5 options/render, state advance,
+frame-action selection and base reset) replayed 7/7 with complete bodies and
+relocations unchanged.

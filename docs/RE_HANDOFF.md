@@ -272,3 +272,8 @@ initializers replayed 12/12.
 loads in both Meiling/Patchouli stage renderers. Removing their two
 reinterpret-reference views preserves both 1,606-byte bodies and all 40
 relocations; the affected exact renderers replayed 2/2.
+The five Mode 5 option bytes at `+0x52C..+0x531` (excluding the already-signed
+`+0x52F` byte) are now declared `signed char`, matching their native signed
+loads and the existing signed direction view. Thirty-eight signed-byte alias
+views across five source files were removed. Seven affected exact pause,
+debug, options, render, state, frame-action and reset functions replayed 7/7.
