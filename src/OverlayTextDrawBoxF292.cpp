@@ -22,8 +22,8 @@ class OverlayTextureF292 {public:
 extern const float g_OverlayMinScaleAt0065747C;
 extern const float g_OverlayScaleDeltaAt006578C0;
 #define TRANSLATE(x,y) quad.Translate((x),(y),0.0f)
-#define DRAW(color) OverlayDrawerF292::DrawQuad(&quad,&source,(color),reinterpret_cast<DWORD&>(texture))
-#define SCALE() quad.Scale(0.0f,39.0f,0.0f,1.0f,reinterpret_cast<DWORD&>(field010),1.0f)
+#define DRAW(color) OverlayDrawerF292::DrawQuad(&quad,&source,(color),textureBits)
+#define SCALE() quad.Scale(0.0f,39.0f,0.0f,1.0f,field010Bits,1.0f)
 void TextOverlay::DrawBox()
 {
     RECT source;
@@ -31,7 +31,7 @@ void TextOverlay::DrawBox()
     SetRect(&source,0,0,571,78);
     quad.AssignRect(&source);
     SCALE();
-    quad.TranslateRaw((reinterpret_cast<DWORD&>(x)),(reinterpret_cast<DWORD&>(y)),0);
+    quad.TranslateRaw((xBits),(yBits),0);
     if ((mode))
         reinterpret_cast<OverlayTextureF292*>(reinterpret_cast<unsigned char*>(this)+0x28)->ApplyMode(0,&quad,&source,0xffffffff);
     else
@@ -44,7 +44,7 @@ void TextOverlay::DrawBox()
         SetRect(&source,0,0,571,((field024)+6)*(field015));
         quad.BuildFromRect(&source);
         SCALE();
-        quad.TranslateRaw((reinterpret_cast<DWORD&>(x)),(reinterpret_cast<DWORD&>(y)),0);
+        quad.TranslateRaw((xBits),(yBits),0);
         TRANSLATE(9.0f,9.0f);
         TRANSLATE(-1.0f,0.0f);
         DRAW(0xff000000);
@@ -62,7 +62,7 @@ void TextOverlay::DrawBox()
         SetRect(&source,0,((field024)+6)*(field015),571,128);
         quad.BuildFromRect(&source);
         SCALE();
-        quad.TranslateRaw((reinterpret_cast<DWORD&>(x)),(reinterpret_cast<DWORD&>(y)),0);
+        quad.TranslateRaw((xBits),(yBits),0);
         if ((field00C)<0xff)
             (field00C)+=10;
         TRANSLATE(9.0f,9.0f);

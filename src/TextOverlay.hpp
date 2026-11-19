@@ -16,12 +16,24 @@ public:
                              unsigned char b, unsigned char color, unsigned char depth,
                              unsigned char restore);                // 00413460
 
-    IDirect3DTexture8* texture;         // +0x00
-    float x;                            // +0x04
-    float y;                            // +0x08
+    union {
+        IDirect3DTexture8* texture;     // +0x00 texture pointer view
+        DWORD textureBits;              // raw 32-bit overlay draw handle
+    };
+    union {
+        float x;                        // +0x04
+        DWORD xBits;                    // raw float argument view
+    };
+    union {
+        float y;                        // +0x08
+        DWORD yBits;                    // raw float argument view
+    };
     unsigned char field00C;             // +0x0C
     unsigned char unknown00D[0x010 - 0x00D];
-    float field010;                     // +0x10 box scale
+    union {
+        float field010;                 // +0x10 box scale
+        DWORD field010Bits;             // raw transform scale word
+    };
     unsigned char field014;             // +0x14
     signed char field015;               // +0x15
     unsigned char unknown016[0x018 - 0x016];
