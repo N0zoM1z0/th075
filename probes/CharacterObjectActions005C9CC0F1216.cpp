@@ -665,9 +665,9 @@ void SuikaObject::Advance()
             scaleX = RecordedRange(75, 150) * 0.01f;
             scaleY = scaleX;
             rotationZ = RecordedRange(0, 359);
-            field0DC = static_cast<short>(AngleAt00483300(
+            field0DC = AngleAt00483300(
                 owner->opponent->y + 20.0f - y,
-                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
             SetPolarVelocity(field0DC, 36.0f);
         }
         x = facing * velocityX + x;
@@ -679,8 +679,8 @@ void SuikaObject::Advance()
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 owner->PlaySharedSound(4);
-                field0D8 = static_cast<short>(x - owner->opponent->x);
-                field0DA = static_cast<short>(y - owner->opponent->y + 20.0f);
+                field0D8 = x - owner->opponent->x;
+                field0DA = y - owner->opponent->y + 20.0f;
                 ResetSecondaryCounter(2);
             }
         }
@@ -806,9 +806,9 @@ void SuikaObject::Advance()
             scaleX = RecordedRange(100, 300) * 0.01f;
             scaleY = scaleX;
             rotationZ = RecordedRange(0, 359);
-            field0DC = static_cast<short>(AngleAt00483300(
+            field0DC = AngleAt00483300(
                 owner->opponent->y + 20.0f - y,
-                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
             SetPolarVelocity(field0DC, 36.0f);
         }
         x = facing * velocityX + x;
@@ -820,8 +820,8 @@ void SuikaObject::Advance()
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 owner->PlaySharedSound(4);
-                field0D8 = static_cast<short>(x - owner->opponent->x);
-                field0DA = static_cast<short>(y - owner->opponent->y + 20.0f);
+                field0D8 = x - owner->opponent->x;
+                field0DA = y - owner->opponent->y + 20.0f;
                 ResetSecondaryCounter(2);
             }
         }
@@ -971,8 +971,8 @@ void SuikaObject::Advance()
             SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
         if (animationStage == 1) {
-            field0D8 = static_cast<short>(AngleAt00483300(
-                owner->y + 100.0f - y, owner->x - x) / g_F1211_AngleDivAt00657828);
+            field0D8 = AngleAt00483300(
+                owner->y + 100.0f - y, owner->x - x) / g_F1211_AngleDivAt00657828;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->x < 20.0f && x - owner->x > -20.0f &&
                 y - owner->y < 120.0f && y - owner->y > 80.0f) {
@@ -1591,7 +1591,7 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 field0D8 = 100;
                 field0DA = 0;
-                field0DC = static_cast<short>(field0C8);
+                field0DC = field0C8;
                 field0DE = 120;
                 field0E0 = g_F1212_DifficultyAt006714D0 * 2 + 1;
             }
@@ -1614,9 +1614,9 @@ void SuikaObject::Advance()
                         field0DE = 180 - g_F1212_DifficultyAt006714D0 * 30;
                     }
                 }
-                field0DA = static_cast<short>(AngleAt00483300(
+                field0DA = AngleAt00483300(
                     owner->opponent->y - y + 100.0f,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                 if (field0DC > field0DA) {
                     if (field0DC - field0DA <= 180) {
                         field0DC = field0DC - 1;
@@ -1657,9 +1657,9 @@ void SuikaObject::Advance()
                         field0DE = 180 - g_F1212_DifficultyAt006714D0 * 30;
                     }
                 }
-                field0DA = static_cast<short>(AngleAt00483300(
+                field0DA = AngleAt00483300(
                     owner->y - y,
-                    (owner->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                    (owner->x - x) * facing) / g_F1211_AngleDivAt00657828;
                 if (field0DC > field0DA) {
                     if (field0DC - field0DA <= 180) {
                         field0DC = field0DC - 3;
@@ -1838,9 +1838,9 @@ void SuikaObject::Advance()
                         scaleX = RecordedRange(75, 150) * 0.01f;
                         scaleY = scaleX;
                         rotationZ = RecordedRange(0, 359);
-                        field0DC = static_cast<short>(AngleAt00483300(
+                        field0DC = AngleAt00483300(
                             static_cast<SuikaFighter*>(owner)->fieldF24 - y,
-                            (static_cast<SuikaFighter*>(owner)->fieldF22 - x) * facing) / g_F1211_AngleDivAt00657828);
+                            (static_cast<SuikaFighter*>(owner)->fieldF22 - x) * facing) / g_F1211_AngleDivAt00657828;
                         SetPolarVelocity(field0DC, 36.0f);
                     }
                     x = facing * velocityX + x;
@@ -1852,8 +1852,8 @@ void SuikaObject::Advance()
                             velocityX = 0.0f;
                             velocityY = 0.0f;
                             owner->PlaySharedSound(4);
-                            field0D8 = static_cast<short>(x - static_cast<SuikaFighter*>(owner)->fieldF22);
-                            field0DA = static_cast<short>(y - static_cast<SuikaFighter*>(owner)->fieldF24);
+                            field0D8 = x - static_cast<SuikaFighter*>(owner)->fieldF22;
+                            field0DA = y - static_cast<SuikaFighter*>(owner)->fieldF24;
                             ResetSecondaryCounter(2);
                         }
                     }
@@ -1932,8 +1932,8 @@ void SuikaObject::Advance()
             return;
         }
         else {
-            static_cast<SuikaFighter*>(owner)->fieldF22 = static_cast<short>(x);
-            static_cast<SuikaFighter*>(owner)->fieldF24 = static_cast<short>(y);
+            static_cast<SuikaFighter*>(owner)->fieldF22 = x;
+            static_cast<SuikaFighter*>(owner)->fieldF24 = y;
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
@@ -1949,9 +1949,9 @@ void SuikaObject::Advance()
                 x = owner->x + facing * 140;
                 y = owner->y + 35.0f;
                 ResetSecondaryCounter(1);
-                field0DC = static_cast<short>(AngleAt00483300(
+                field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                 SetPolarVelocity(field0DC, g_F1212_DifficultyAt006714D0 * 3 + 15);
             }
             if (animationStage == 1 && y < 0.0f) {
@@ -2657,7 +2657,7 @@ void SuikaObject::Advance()
             SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
         if (animationStage == 1) {
-            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            field0D8 = AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ClearFrameInfo();
@@ -2699,7 +2699,7 @@ void SuikaObject::Advance()
             SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
         if (animationStage == 1) {
-            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            field0D8 = AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ++owner->fieldEFA;
