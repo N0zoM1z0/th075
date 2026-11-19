@@ -34,6 +34,11 @@ Done so far:
   all relocation offsets/types and every nonrelocation code byte.
   Grouped affected-only exact replay passed 132/132 (44/44 each).
   Giant frontiers remain nonexact against the original PE.
+- Four complete fighter giants also now call the real inherited
+  `Actor::RecordedRange(int,int)`: 169 native relocations (Reimu 29,
+  Sakuya 97, Youmu 16, Remilia 27). The full functions preserve their
+  original COFF bytes outside identically located/type relocations;
+  132/132 header-affected exact units cold replayed in local batches.
 - Eight complete object giant parents now use the inherited
   `Actor::RecordedRange` for 377 verified native COFF calls, rather than
   speculative duplicate methods: Sakuya 75, Alice 15, Youmu 49,

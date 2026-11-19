@@ -296,6 +296,16 @@ were removed from their headers; all 132 affected exact units passed
 local cold replay in three groups of 44/44. Native giant GPR/width
 debt remains nonexact.
 
+Four native fighter parents now use the same inherited 00455580
+`Actor::RecordedRange(int,int)` rather than per-character range aliases:
+Reimu 29, Sakuya 97, Youmu 16 and Remilia 27 (169 native COFF call
+relocation names). All four whole parent objects retain their previous
+62,090 / 83,922 / 47,655 / 59,236-byte extents, their 1,824 / 2,352 /
+1,491 / 1,863 relocation positions/types and every nonrelocation byte.
+All 132 exact units affected by the four fighter headers cold-replayed
+in three bounded groups of 44/44. The giant native frontiers remain
+nonexact and are not credited as new matched functions.
+
 Eight native object giant parents now invoke the inherited
 `Actor::RecordedRange` instead of eight per-character speculative method
 symbols: Sakuya 75, Alice 15, Youmu 49, Remilia 24, Yuyuko 67,
