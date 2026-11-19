@@ -132,7 +132,11 @@ casts in two accepted passes while retaining all 33,731 COFF bytes and 682
 relocation positions/types/addends/local destinations exactly; its 133 GPR
 positions remain. Eight casts around integer `RecordedRange` subtraction
 were explicitly retained because removing them changes the arithmetic. Meiling's 997/998 boundary
-has already had 22 natural-C++ variants without improvement. Sakuya's 809/810
+has already had 22 natural-C++ variants without improvement. A separate
+source-cleanup pass removed six redundant numeric casts from the whole
+Meiling giant while retaining all 34,879 COFF bytes and 806 relocation
+positions/types/addends/local targets; its 985-byte / 135-GPR / six-width
+frontier remains unchanged. Sakuya's 809/810
 gate was also revisited on 2026-11-19; all syntax-only variants were discarded.
 The best transient Sakuya form was two bytes too large and failed the frontier
 size check. Do not repeat those attempts without new target evidence.

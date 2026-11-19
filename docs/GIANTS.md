@@ -692,6 +692,14 @@ Meiling object `005EB520`: 22 additional natural-C++ variants at the
 scope, comparison order and facing assignment forms) did not reduce
 whole-function differences. A plain `facing = owner->facing` produces
 identical native bytes and is retained as the more natural C++ source.
+A separate whole-function source cleanup removes four redundant
+`static_cast<double>(0.02f)` promotions and two explicit `static_cast<short>`
+wrappers around float-to-short assignments. The 34,879-byte COFF body remains
+byte-identical; all 806 relocation positions/types/addends/local target
+offsets remain identical (only compiler-generated local label names rotate).
+The giant frontier is unchanged at 985 differing bytes, 135 GPR positions,
+six width deltas and first divergence `005F3904`. The `float` cast before
+`owner->field3A0 / field0D8` remains necessary to avoid integer division.
 
 Per-parent attempts that failed, kept so they are not repeated: loop-update,
 return, condition and index rewrites in 005A1600; swapping 0057D580's
