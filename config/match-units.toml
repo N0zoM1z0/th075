@@ -24472,11 +24472,11 @@ relocations = [
 ]
 
 [units."battle-effect-spawn-0045bb10"]
-source = "src/BattleEffectSpawner.cpp"
-object = "build/matching/BattleEffectSpawner.obj"
+source = "src/EffectManagerSpawnF161.cpp"
+object = "build/matching/EffectManagerSpawnF161.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/Oi", "/I", "src"]
-functions = ["BattleEffectSpawnerF136::Spawn"]
-symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+functions = ["EffectManagerLifetimeF161::Spawn"]
+symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z"
 target_address = 0x0045BB10
 size = 282
 compare_size = 282

@@ -326,7 +326,7 @@ Fighter::SpawnAuxEffect
 Fighter::PlaySound
 Fighter::PlaySharedSound
 Fighter::UpdateGaugeTimer
-BattleEffectSpawnerF136::Spawn
+EffectManagerLifetimeF161::Spawn
 BattleEffectAdvanceF137::AdvanceAll
 BattleAnimationBindingF139::BindAnimation
 Fighter::ClearMotionFields

@@ -17,7 +17,7 @@ public:
     float field0C8;                     // +0x0C8
     float field0CC;                     // +0x0CC
     float field0D0;                     // +0x0D0
-    unsigned char unknown0D4[0x0D8 - 0x0D4];
+    float field0D4;                     // +0x0D4 fourth spawn parameter
     short field0D8;                     // +0x0D8
     short field0DA;                     // +0x0DA
     short field0DC;                     // +0x0DC
