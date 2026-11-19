@@ -11,7 +11,7 @@ void Fighter::ApplyOpponentGaugeChange(
         change = static_cast<short>(base * field09C * field0A4 *
             field0A0 * comboRate *
             (opponent->field328 / 4.0f /
-             reinterpret_cast<const short*>(reinterpret_cast<unsigned char*&>(opponent) + 0x33E)
+             reinterpret_cast<const short*>(reinterpret_cast<unsigned char*>(opponent) + 0x33E)
                  [opponent->field39D] + 0.75));
     } else {
         change = static_cast<short>(base * field09C * field0A4 *

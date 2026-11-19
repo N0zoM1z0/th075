@@ -23,12 +23,12 @@ void Fighter::LoadStageResource()
     char filename[260];
     if (g_CurrentStageAt0067161E<=0) return;
     {
-        if (reinterpret_cast<FighterStageTextureF286*&>(stageDrawing))
-            delete reinterpret_cast<FighterStageTextureF286*&>(stageDrawing);
-        reinterpret_cast<FighterStageTextureF286*&>(stageDrawing)=new FighterStageTextureF286();
-        reinterpret_cast<FighterStageTextureF286*&>(stageDrawing)->AllocateSlots(FIELD(signed char,0x704+g_CurrentStageAt0067161E));
+        if (stageTexture)
+            delete stageTexture;
+        stageTexture = new FighterStageTextureF286();
+        stageTexture->AllocateSlots(FIELD(signed char,0x704+g_CurrentStageAt0067161E));
         sprintf(filename,g_StageTextureFormatAt00658FC0,reinterpret_cast<char*>(this)+0xC4,g_CurrentStageAt0067161E);
-        reinterpret_cast<FighterStageTextureF286*&>(stageDrawing)->LoadDefault(filename,g_StageArchiveAt00658FE0);
+        stageTexture->LoadDefault(filename,g_StageArchiveAt00658FE0);
     }
 }
 #undef FIELD

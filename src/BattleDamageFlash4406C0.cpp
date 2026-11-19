@@ -1,8 +1,8 @@
 #include "BattleScene.hpp"
 #include "BattleDamageFlash4406C0.hpp"
 
-#define LEFT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(reinterpret_cast<void*&>(fighters[0]))
-#define RIGHT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(reinterpret_cast<void*&>(fighters[1]))
+#define LEFT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(fighters[0])
+#define RIGHT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(fighters[1])
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 
 void BattleScene::RenderDamageFlash() {

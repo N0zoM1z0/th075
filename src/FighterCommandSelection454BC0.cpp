@@ -15,6 +15,6 @@ void Fighter::SetCommandSelection(
     int selection, unsigned char mode, unsigned int mask)
 {
     field47C = selection;
-    reinterpret_cast<SpriteSequenceParametersF154*&>(field480)->SetSamplingMode(mode);
-    reinterpret_cast<SpriteSequenceParametersF154*&>(field480)->SetColorMask(mask);
+    reinterpret_cast<SpriteSequenceParametersF154*>(field480)->SetSamplingMode(mode);
+    reinterpret_cast<SpriteSequenceParametersF154*>(field480)->SetColorMask(mask);
 }

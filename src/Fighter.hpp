@@ -5,6 +5,8 @@
 
 class EffectManagerLifetimeF161;
 class TimelineDrawing438D00;
+class FighterTextureF282;
+class FighterStageTextureF286;
 
 // Script reader embedded in every fighter at +0x714. Its methods are the
 // native callees 0045DD00 (count) and the field getters next to it.
@@ -242,7 +244,10 @@ public:
     signed char field531;             // +0x531
     signed char field532;               // +0x532
     unsigned char unknown533[0x534 - 0x533];
-    TimelineDrawing438D00* field534;    // +0x534
+    union {
+        TimelineDrawing438D00* field534; // +0x534 renderer view
+        FighterTextureF282* field534Texture; // secondary texture/resource view
+    };
     unsigned char fadeAlpha;            // +0x538
     unsigned char drawMode;             // +0x539
     signed char quoteLineCount;         // +0x53A lines in the win quote
@@ -269,7 +274,10 @@ public:
     short field6FA;                     // +0x6FA
     short field6FC;                     // +0x6FC
     unsigned char unknown6FE[0x700 - 0x6FE];
-    void* stageDrawing;                 // +0x700 drawing context of the stage renderers
+    union {
+        void* stageDrawing;             // +0x700 other stage renderer views
+        FighterStageTextureF286* stageTexture; // F286 stage texture resource
+    };
     unsigned char unknown704[0x705 - 0x704];
     unsigned char field705[10];         // +0x705 per-character settings written by the constructors
     unsigned char unknown70F[0x713 - 0x70F];

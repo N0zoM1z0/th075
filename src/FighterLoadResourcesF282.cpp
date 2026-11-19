@@ -62,14 +62,14 @@ void Fighter::LoadResources()
     LoadPattern();
     FighterLogF282::Append(g_LogPicturesAt00658ED0);
     drawing=new FighterTextureF282();
-    reinterpret_cast<FighterTextureF282*&>(field534)=new FighterTextureF282();
+    field534Texture=new FighterTextureF282();
     static_cast<FighterTextureF282*>(drawing)->AllocateSlots(field478);
     sprintf(filename,g_MainTextureFormatAt00658EE4,tag);
     if (strcmp(name,g_CharacterAliceAt00658EFC)==0 || strcmp(name,g_CharacterMeiling2At00658F04)==0)
         static_cast<FighterTextureF282*>(drawing)->Load(filename,field2CE+1,g_MainTextureArchiveAltAt00658F0C);
     else
         static_cast<FighterTextureF282*>(drawing)->Load(filename,field2CE+1,g_MainTextureArchiveDefaultAt00658F14);
-    reinterpret_cast<FighterTextureF282*>(field534)->AllocateSlots(field532);
+    field534Texture->AllocateSlots(field532);
     sprintf(filename,g_SecondaryTextureFormatAt00658F1C,tag);
     if (strcmp(name,g_CharacterPatchouliAt00658F34)==0 ||
         strcmp(name,g_CharacterYuyukoAt00658F40)==0 ||
@@ -77,9 +77,9 @@ void Fighter::LoadResources()
         strcmp(name,g_CharacterYukariAt00658F50)==0 ||
         strcmp(name,g_CharacterYoumuAt00658F58)==0 ||
         strcmp(name,g_CharacterMeiling3At00658F60)==0)
-        reinterpret_cast<FighterTextureF282*>(field534)->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
+        field534Texture->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
     else
-        reinterpret_cast<FighterTextureF282*>(field534)->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
+        field534Texture->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
     sprintf(filename,g_ScriptFormatAt00658F78,name,name);
     reinterpret_cast<FighterScriptsF282*>(&script)->LoadFile(filename,2,0);
     reinterpret_cast<FighterScriptsF282*>(&script)->LoadArchive(filename,g_ScriptArchiveAt00658F94);

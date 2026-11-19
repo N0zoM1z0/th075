@@ -1,7 +1,7 @@
 #include "FighterOverlayDrawingF163.hpp"
 #include <stdlib.h>
 
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*&>(field534)
+#define DRAWING field534
 
 void Fighter::RenderSideEffect()
 {
