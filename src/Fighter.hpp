@@ -272,7 +272,7 @@ public:
     unsigned char unknown704[0x705 - 0x704];
     unsigned char field705[10];         // +0x705 per-character settings written by the constructors
     unsigned char unknown70F[0x713 - 0x70F];
-    unsigned char field713;             // +0x713
+    signed char field713;               // +0x713 signed character sequence state
     FighterScriptAccessorF410 script;   // +0x714 script reader object embedded in the fighter
     unsigned char unknown715[0xEF8 - 0x715];
     unsigned short fieldEF8;            // +0xEF8 wrapping animation timer

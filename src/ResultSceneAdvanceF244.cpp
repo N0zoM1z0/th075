@@ -66,7 +66,7 @@ unsigned short ResultScene::Update()
                 g_ResultLeaveAt006714CE=0xff;
                 return 0x2207;
             }
-            if ((reinterpret_cast<signed char&>(g_ResultActorAt00671418->field713))>=8) {
+            if ((g_ResultActorAt00671418->field713)>=8) {
                 if (g_ResultModeAt0066C238==2) {
                     ResultPresentationF244::MusicCue(0x28);
                     ResultPresentationF244::ChangeScene(-10000,-160,1,1);
@@ -77,7 +77,7 @@ unsigned short ResultScene::Update()
             return 0x2301;
         }
     }
-    if ((reinterpret_cast<signed char&>(g_ResultActorAt00671418->field713))==10) {
+    if ((g_ResultActorAt00671418->field713)==10) {
         field014=1.0f;
     } else if ((field014)>g_ResultMinAlphaAt00658048) {
         field014=(field014)-g_ResultAlphaStepAt00658044;
