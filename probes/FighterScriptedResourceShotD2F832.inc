@@ -14,7 +14,7 @@ case 0xD2: {
         velocityY=(velocityY)*g_BounceScaleAt00657F74;
         PlaySharedSound(0x2C);
 #endif
-        SpawnWithFloatAt453A70(F652_SPRITE,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(F652_SPRITE,x,
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
 #if !F652_SCALE_BEFORE

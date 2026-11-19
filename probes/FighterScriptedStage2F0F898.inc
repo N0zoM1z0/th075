@@ -34,7 +34,7 @@ case 0x2F0: {
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         PlaySound(0xD);
-        SpawnWithFloatAt453A70(0x38D,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x38D,x,
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
     }

@@ -15,7 +15,6 @@ public:
     // These signatures preserve the VC7.1 argument passing seen in the PE;
     // the actual shared callees are owned by Actor/Fighter, not by Reimu.
     void SetMotionFloatAt40FBB0(float,float,float);
-    void SpawnWithFloatAt453A70(int,int,float,char,int);
     void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char);
     void SpawnFloatXAt453A70(int,float,int,char,int);
     void SpawnAt453C80(int,float,float,char,int);

@@ -29,7 +29,7 @@ case 0x261: {
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
             field318=15.0f;
-            SpawnWithFloatAt453A70(0x346,reinterpret_cast<int&>(x),
+            SpawnBattleEffect(0x346,x,
                 (*(&y))+g_F970_YAt006590AC,facing,1);
         }
     }
@@ -57,7 +57,7 @@ case 0x262: {
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
             field318=15.0f;
-            SpawnWithFloatAt453A70(0x347,reinterpret_cast<int&>(x),
+            SpawnBattleEffect(0x347,x,
                 (*(&y))+g_F970_YAt006590AC,facing,1);
         }
     }

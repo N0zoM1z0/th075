@@ -18,17 +18,17 @@ case 0x194: {
         UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-8);
         field318=7.0f;
-        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-4);
         field318=7.0f;
-        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-12);
         field318=7.0f;
-        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
         reinterpret_cast<signed short&>(scriptCounterF00)=2;
@@ -60,17 +60,17 @@ case 0x195: {
         UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-45);
         field318=7.0f;
-        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-41);
         field318=7.0f;
-        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-49);
         field318=7.0f;
-        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
         reinterpret_cast<signed short&>(scriptCounterF00)=2;

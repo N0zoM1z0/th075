@@ -28,47 +28,47 @@ case 0x25E: {
         UpdateGaugeTimer(0xFA);
         field314=-28.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=-21.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=-14.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=-7.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=0.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=7.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=14.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=21.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
         field314=28.0f;
         field318=10.0f;
-        SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x342,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
     }

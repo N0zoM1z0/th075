@@ -9,7 +9,7 @@ case 0xD1: {
     if (animationStage==0 && animationFrame==0) {
         ClearMotionFields();
         PlaySharedSound(0x2C);
-        SpawnWithFloatAt453A70(F651_SPRITE,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(F651_SPRITE,x,
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
     }

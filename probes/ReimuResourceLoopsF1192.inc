@@ -31,7 +31,7 @@ case 0x303: {
         PlaySharedSound(0x17);
         aiCardTimer=0;
         field318=0.0f;
-        SpawnWithFloatAt453A70(0x3A4,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,1,1);
+        SpawnBattleEffect(0x3A4,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
         if (g_ReimuRepeatSettingAt006714D0==0) {
 #define R1192_INDEX shotEasy
 #define R1192_COUNT 6
@@ -86,13 +86,13 @@ case 0x304: {
         for (int burstOuter=0; burstOuter<30; ++burstOuter) {
             field314=float(burstOuter*12);
             field318=60.0f;
-            SpawnWithFloatAt453A70(0x3A1,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,1,1);
+            SpawnBattleEffect(0x3A1,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
         }
         if (g_ReimuRepeatSettingAt006714D0>1) {
             for (int burstInner=0; burstInner<30; ++burstInner) {
                 field314=float(burstInner*12);
                 field318=100.0f;
-                SpawnWithFloatAt453A70(0x3A2,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,1,1);
+                SpawnBattleEffect(0x3A2,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
             }
         }
         reinterpret_cast<signed short&>(scriptCounterF00)=0;

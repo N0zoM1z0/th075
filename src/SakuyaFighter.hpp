@@ -13,7 +13,6 @@ public:
 
     // Native-call contracts carried by the complete fighter state machine.
     // Provisional helper spellings do not establish separate class ownership.
-    void SpawnWithFloatAt453A70(short,int,float,signed char,signed char);
     void SpawnMixedAt453C80(short,int,float,signed char,signed char);
     void SpawnRawAt453C80(short,int,int,signed char,signed char);
     void SpawnSevenAt453B50(short,int,int,signed char,signed char,unsigned char,unsigned char);

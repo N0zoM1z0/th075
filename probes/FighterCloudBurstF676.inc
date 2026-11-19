@@ -116,10 +116,10 @@
                     reinterpret_cast<signed short&>(scriptCounterF02)=0;
                     ++fieldF04;
                     if (RecordedRange(0,100)>50)
-                        SpawnWithFloatAt453A70(0x390,reinterpret_cast<int&>(x),
+                        SpawnBattleEffect(0x390,x,
                             (*(&y))+g_CloudShotYAt006591E4,1,1);
                     else
-                        SpawnWithFloatAt453A70(0x390,reinterpret_cast<int&>(x),
+                        SpawnBattleEffect(0x390,x,
                             (*(&y))+g_CloudShotYAt006591E4,-1,1);
                 }
             }
@@ -140,7 +140,7 @@
                 field05C=0.15f;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
-                SpawnWithFloatAt453A70(0x38B,reinterpret_cast<int&>(x),
+                SpawnBattleEffect(0x38B,x,
                     (*(&y))+g_CloudShotYAt006591E4,
                     facing,1);
                 PlaySound(0x15);

@@ -22,8 +22,7 @@ case 0x2C2: {
     }
     if ((animationStage)==9 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
-        SpawnWithFloatAt453A70(0x34C,
-            reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x34C,x,
             (opponent->y)+g_ContactProjectionAt00657888,
             (facing),1);
         PlaySound(0xE);
@@ -31,8 +30,7 @@ case 0x2C2: {
     if (AdvanceNestedFrame()==(field070))
         ResetSecondaryCounter(0x10);
     if ((animationStage)<9 && (animationFrame)==0) {
-        SpawnWithFloatAt453A70(0x34B,
-            reinterpret_cast<int&>(opponent->x),
+        SpawnBattleEffect(0x34B,opponent->x,
             (opponent->y)+g_ContactProjectionAt00657888,
             (facing),1);
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==0) {
@@ -41,8 +39,7 @@ case 0x2C2: {
                 opponent->x-float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);
-            SpawnWithFloatAt453A70(0x329,
-                reinterpret_cast<int&>(opponent->x),
+            SpawnBattleEffect(0x329,opponent->x,
                 (opponent->y)+g_F890Phase0AltYAt006591E4,
                 -((facing)),1);
         }
@@ -52,8 +49,7 @@ case 0x2C2: {
                 opponent->x+float(((facing))*100),
                 reinterpret_cast<int&>(opponent->y),
                 -((facing)),1);
-            SpawnWithFloatAt453A70(0x329,
-                reinterpret_cast<int&>(opponent->x),
+            SpawnBattleEffect(0x329,opponent->x,
                 (opponent->y)-g_F890Phase1LowYAt0065788C,
                 -((facing)),1);
         }
@@ -133,8 +129,7 @@ case 0x2C2: {
                 opponent->x-float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);
-            SpawnWithFloatAt453A70(0x329,
-                reinterpret_cast<int&>(opponent->x),
+            SpawnBattleEffect(0x329,opponent->x,
                 (opponent->y)+g_F890Phase0AltYAt006591E4,
                 -((facing)),1);
         }

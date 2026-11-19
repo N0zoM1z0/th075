@@ -313,6 +313,17 @@ were removed from their headers; all 132 affected exact units passed
 local cold replay in three groups of 44/44. Native giant GPR/width
 debt remains nonexact.
 
+A second typed-coordinate migration restored the 00453A70 mixed X-bit /
+Y-float projectile variant: 81 source-level calls now pass the actual
+`float x` / `opponent->x` directly to `Fighter::SpawnBattleEffect` rather
+than transporting them through fake integer-reference signatures.
+The four complete fighter parent COFF bodies retain their original
+62,090 / 83,922 / 47,655 / 59,236-byte lengths, all relocation positions
+and types and every nonrelocation code byte. There are 92 actual renamed
+native spawn relocations (Reimu 15, Sakuya 59, Youmu 10, Remilia 8).
+All 132 header-affected exact units replayed locally in three groups of
+44; native fighter giant exactness is not claimed.
+
 Across four complete fighter giant parents, the `00453A70`
 integer-bit projectile-position aliases now become 62 natural C++
 `Fighter::SpawnBattleEffect(effect, x, y, ...)` calls across 39 original

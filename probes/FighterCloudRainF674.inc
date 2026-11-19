@@ -21,10 +21,10 @@
                 if ((reinterpret_cast<signed short&>(scriptCounterF02))>100-static_cast<int>(g_CloudOpponentAt006714D0)*20) {
                     reinterpret_cast<signed short&>(scriptCounterF02)=0;
                     PlaySound(0x10);
-                    SpawnWithFloatAt453A70(0x389,reinterpret_cast<int&>(x),
+                    SpawnBattleEffect(0x389,x,
                         (*(&y))+g_CloudShotYAt006591E4,
                         facing,1);
-                    SpawnWithFloatAt453A70(0x38A,reinterpret_cast<int&>(x),
+                    SpawnBattleEffect(0x38A,x,
                         (*(&y))+g_CloudShotYAt006591E4,
                         facing,1);
                 }
@@ -47,7 +47,7 @@
                 PlaySound(0x15);
             }
             if ((animationStage)==5 && (animationFrame)==0)
-                SpawnWithFloatAt453A70(0x38B,reinterpret_cast<int&>(x),
+                SpawnBattleEffect(0x38B,x,
                     (*(&y))+g_CloudShotYAt006591E4,
                     facing,1);
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<25) {

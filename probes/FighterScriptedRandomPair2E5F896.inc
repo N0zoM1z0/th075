@@ -31,7 +31,7 @@ case 0x2E5: {
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=15.0f;
         PlaySound(7);
-        SpawnWithFloatAt453A70(0x38E,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x38E,x,
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
     }

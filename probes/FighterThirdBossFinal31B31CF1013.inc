@@ -20,7 +20,7 @@ case 0x31B: {
         BeginFadeParameters(0);
         SelectResourceParameters();
         PlaySharedSound(0x17);
-        SpawnWithFloatAt453A70(0x3E5,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x3E5,x,
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
     }

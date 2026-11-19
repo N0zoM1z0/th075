@@ -34,6 +34,11 @@ Done so far:
   all relocation offsets/types and every nonrelocation code byte.
   Grouped affected-only exact replay passed 132/132 (44/44 each).
   Giant frontiers remain nonexact against the original PE.
+- The mixed 00453A70 X-float/Y-float spawn ABI is also restored at
+  92 actual COFF call sites (81 source occurrences) across four fighter
+  giants. No integer-bit coordinate transport remains at these sites;
+  whole parent bodies are unchanged outside relocation names and
+  132/132 affected exact units replayed in three local groups.
 - Four fighter giant `Advance` parents now dispatch another 70 native
   effect calls through truthful `Fighter::SpawnBattleEffect`, restoring
   62 C++ source callsites using genuine floating `x/y` instead of

@@ -32,7 +32,7 @@ case 0x2FA: {
     if ((animationStage)>3 && (animationStage)<11 && (reinterpret_cast<signed short&>(scriptCounterF00))>8) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field314=-45.0f;
-        SpawnWithFloatAt453A70(0x38E,reinterpret_cast<int&>(x),
+        SpawnBattleEffect(0x38E,x,
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
         PlaySound(12);

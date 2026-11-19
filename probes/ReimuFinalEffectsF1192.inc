@@ -8,7 +8,7 @@ case 0x31B: {
         BeginFadeParameters(0);
         SelectResourceParameters();
         PlaySharedSound(0x17);
-        SpawnWithFloatAt453A70(0x3E5,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,
+        SpawnBattleEffect(0x3E5,x,(*(&y))+g_ContactProjectionAt00657888,
             reinterpret_cast<char&>(facing),1);
     }
     if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
@@ -26,7 +26,7 @@ case 0x31C: {
         ResetPrimaryCounters(0);
         if (*reinterpret_cast<signed char*>(RAW+field39D+0x370)==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;
-            SpawnWithFloatAt453A70(0x3A3,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,1,1);
+            SpawnBattleEffect(0x3A3,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
             if (g_ReimuRepeatSettingAt006714D0==0) {
 #define R1192_INDEX echoEasy
 #define R1192_COUNT 6
