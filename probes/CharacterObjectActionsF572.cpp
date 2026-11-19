@@ -116,8 +116,8 @@ void AliceObject::Advance() {
             owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
-            SetPolarVelocity(static_cast<float>(field0D8),
-                            static_cast<float>(field0DA)*gMulAt006590B4);
+            SetPolarVelocity(field0D8,
+                            field0DA*gMulAt006590B4);
             field0DA -= 5;
             field0D8 += 3;
             rotationZ = (rotationZ) + gAddAt00659738;
@@ -129,14 +129,14 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y - velocityY;
         if ((animationStage) < 5 && (field080) == 0) {
             ResetSecondaryCounter((animationStage) + 4);
             break;
         }
         if ((animationStage) > 4) {
-            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleX = (scaleX)*gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -194,8 +194,8 @@ void AliceObject::Advance() {
             owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
-            SetPolarVelocity(static_cast<float>(field0D8),
-                            static_cast<float>(field0DA)*gMulAt006590B4);
+            SetPolarVelocity(field0D8,
+                            field0DA*gMulAt006590B4);
             field0DA -= 5;
             field0D8 -= 2;
             rotationZ = (rotationZ) + gAddAt00659738;
@@ -207,14 +207,14 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y - velocityY;
         if ((animationStage) < 5 && (field080) == 0) {
             ResetSecondaryCounter((animationStage) + 4);
             break;
         }
         if ((animationStage) > 4) {
-            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleX = (scaleX)*gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -272,8 +272,8 @@ void AliceObject::Advance() {
             owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
-            SetPolarVelocity(static_cast<float>(field0D8),
-                            static_cast<float>(field0DA)*gMulAt006590B4);
+            SetPolarVelocity(field0D8,
+                            field0DA*gMulAt006590B4);
             field0DA -= 5;
             field0D8 += 4;
             rotationZ = (rotationZ) + gAddAt00659738;
@@ -285,14 +285,14 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y - velocityY;
         if ((animationStage) < 5 && (field080) == 0) {
             ResetSecondaryCounter((animationStage) + 4);
             break;
         }
         if ((animationStage) > 4) {
-            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleX = (scaleX)*gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -365,7 +365,7 @@ void AliceObject::Advance() {
             color[3] = 0xFF;
         }
         velocityY = (velocityY) - gDropAt00658058;
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((animationStage) < 2) {
             rotationZ = (rotationZ) + gLiftAt00657CC0;
@@ -443,7 +443,7 @@ void AliceObject::Advance() {
             color[2] = 0xFF;
             color[3] = 0xFF;
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((animationStage) < 2) {
             rotationZ = (rotationZ) + gLiftAt00657CC0;
@@ -542,7 +542,7 @@ void AliceObject::Advance() {
             velocityX = -4.0f;
             velocityY = 6.0f;
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
@@ -617,7 +617,7 @@ void AliceObject::Advance() {
             velocityX = 3.0f;
             velocityY = 16.0f;
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
@@ -692,7 +692,7 @@ void AliceObject::Advance() {
             velocityX = 6.0f;
             velocityY = 4.5f;
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
@@ -777,7 +777,7 @@ void AliceObject::Advance() {
             rotationZ = (rotationZ) + gGrowAt00657CBC;
             velocityY = (velocityY) + gGrowAt00657478;
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y - velocityY;
         if ((animationStage) == 10 && y - velocityY <= gCollisionAt00657888) {
             velocityX = 2.0f;
@@ -807,7 +807,7 @@ void AliceObject::Advance() {
             rotationZ = 0.0f;
         }
         if ((animationStage) == 6 && (animationFrame) == 0 &&
-                static_cast<float>(field0DC) < gCompareAt0065782C + field0CC) {
+                field0DC < gCompareAt0065782C + field0CC) {
             ResetSecondaryCounter(2);
             ++field0DC;
         }
@@ -931,7 +931,7 @@ void AliceObject::Advance() {
         SetPolarVelocity(-(static_cast<float>(RecordedRange(0,45))
                 - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
-    x += static_cast<float>(facing) * (velocityX);
+    x += facing * (velocityX);
     y = y + velocityY;
     velocityY = (velocityY) - gVelocityDragAt00659454;
     rotationZ = (rotationZ) + gGrowAt00657CBC;
@@ -1125,7 +1125,7 @@ void AliceObject::Advance() {
         color[3] = 0xFF;
     }
     velocityY = (velocityY) - gMotionDecelAt00657480;
-    x += static_cast<float>(facing) * (velocityX);
+    x += facing * (velocityX);
     y = y + velocityY;
     if ((animationStage) < 2) {
         rotationZ = (rotationZ) + gLiftAt00657CC0;
@@ -1168,7 +1168,7 @@ void AliceObject::Advance() {
         color[3] = 0xFF;
     }
     velocityY = (velocityY) - gMotionDecelAt00657480;
-    x += static_cast<float>(facing) * (velocityX);
+    x += facing * (velocityX);
     y = y + velocityY;
     if ((animationStage) < 2) {
         rotationZ = (rotationZ) + gLiftAt00657CC0;
@@ -1289,7 +1289,7 @@ void AliceObject::Advance() {
         field0DA = 0;
     }
     if ((animationStage) > 5) {
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((x) > gBoundRightAt00659248 ||
             (x) < gBoundLowerAt0065930C ||
@@ -1316,16 +1316,16 @@ void AliceObject::Advance() {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
-        SetPolarVelocity(static_cast<float>(field0D8),
-                       static_cast<float>(field0DA));
+        SetPolarVelocity(field0D8,
+                       field0DA);
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
         field0D8 = static_cast<short>(
             static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
-        SetPolarVelocity(static_cast<float>(field0D8),
-                       static_cast<float>(field0DA));
+        SetPolarVelocity(field0D8,
+                       field0DA);
         x = static_cast<int>(
             (owner->fieldF0C) + (facing)*(velocityX));
         y = static_cast<int>(
@@ -1361,7 +1361,7 @@ void AliceObject::Advance() {
         if ((velocityX) < gCompareAt0065782C)
             velocityX = 0.0f;
     }
-    x += static_cast<float>(facing) * (velocityX);
+    x += facing * (velocityX);
     if (AdvanceNestedFrame() == (field070)) {
         ClearFrameInfo();
         (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
@@ -1385,7 +1385,7 @@ void AliceObject::Advance() {
         field0DA = 0;
     }
     if ((animationStage) > 5) {
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((x) > gBoundRightAt00659248 ||
             (x) < gBoundLowerAt0065930C ||
@@ -1412,16 +1412,16 @@ void AliceObject::Advance() {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
-        SetPolarVelocity(static_cast<float>(field0D8),
-                       static_cast<float>(field0DA));
+        SetPolarVelocity(field0D8,
+                       field0DA);
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
         field0D8 = static_cast<short>(
             static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
-        SetPolarVelocity(static_cast<float>(field0D8),
-                       static_cast<float>(field0DA));
+        SetPolarVelocity(field0D8,
+                       field0DA);
         x = static_cast<int>(
             (owner->fieldF0C) + (facing)*(velocityX));
         y = static_cast<int>(
@@ -1450,7 +1450,7 @@ void AliceObject::Advance() {
         field0DA = 0;
     }
     if ((animationStage) > 5) {
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((x) > gBoundRightAt00659248 ||
             (x) < gBoundLowerAt0065930C ||
@@ -1478,7 +1478,7 @@ void AliceObject::Advance() {
             animationStage += 4;
         field0DA = 25;
         SetPolarVelocity(static_cast<float>(-(field0D8) + 180),
-                       static_cast<float>(field0DA));
+                       field0DA);
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
         field0D8 = static_cast<short>(
@@ -1486,7 +1486,7 @@ void AliceObject::Advance() {
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
         SetPolarVelocity(static_cast<float>(-(field0D8)),
-                       static_cast<float>(field0DA));
+                       field0DA);
         x = static_cast<int>(
             (owner->fieldF0C) + (facing)*(velocityX));
         y = static_cast<int>(
@@ -1522,7 +1522,7 @@ void AliceObject::Advance() {
         if ((velocityX) < gCompareAt0065782C)
             velocityX = 0.0f;
     }
-    x += static_cast<float>(facing) * (velocityX);
+    x += facing * (velocityX);
     if (AdvanceNestedFrame() == (field070)) {
         ClearFrameInfo();
         (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
@@ -1560,7 +1560,7 @@ void AliceObject::Advance() {
             velocityX = 3.0f;
             velocityY = -3.0f;
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
@@ -1643,7 +1643,7 @@ void AliceObject::Advance() {
             color[3] = 0xFF;
             SetPolarVelocity(field0CC,field0C8);
         }
-        x += static_cast<float>(facing) * (velocityX);
+        x += facing * (velocityX);
         y = y + velocityY;
         if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
@@ -1726,7 +1726,7 @@ void AliceObject::Advance() {
             field0DA = 0;
         }
         if ((animationStage) == 5) {
-            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleX = (scaleX)*gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -1809,7 +1809,7 @@ void AliceObject::Advance() {
             color[3]=0xFF;
         }
         velocityY = (velocityY) - gSubAt00659090;
-        x += static_cast<float>(facing)*(velocityX);
+        x += facing*(velocityX);
         y = y + velocityY;
         if ((animationStage)<2) {
             rotationZ = (rotationZ)+gLiftAt00657CC0;
@@ -1846,7 +1846,7 @@ void AliceObject::Advance() {
             field080=1;
         }
         if ((field0D8)>2) {
-            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleX = (scaleX)*gMulDoubleAt00659730;
             scaleY = (scaleY)+gAddAt006583FC;
             if ((color[0])>=10)
                 color[0]-=10;
@@ -1871,7 +1871,7 @@ void AliceObject::Advance() {
         velocityX = (velocityX)-gCompareAt0065747C;
         if ((velocityX)<gMotionDecelAt00657480)
             velocityX=2.0f;
-        x += static_cast<float>(facing)*(velocityX);
+        x += facing*(velocityX);
         y = y+velocityY;
         if (AdvanceNestedFrame()==(field070)) {
             ResetSecondaryCounter(1);
@@ -1896,7 +1896,7 @@ void AliceObject::Advance() {
             field080=1;
         }
         if ((field0D8)>1) {
-            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleX = (scaleX)*gMulDoubleAt00659730;
             scaleY = (scaleY)+gAddAt006583FC;
             if ((color[0])>=10)
                 color[0]-=10;
@@ -1923,7 +1923,7 @@ void AliceObject::Advance() {
         velocityX = (velocityX)-gCompareAt0065747C;
         if ((velocityX)<gMotionDecelAt00657480)
             velocityX=2.0f;
-        x += static_cast<float>(facing)*(velocityX);
+        x += facing*(velocityX);
         y = y+velocityY;
         if (AdvanceNestedFrame()==(field070)) {
             ClearFrameInfo();
@@ -1991,7 +1991,7 @@ void AliceObject::Advance() {
         velocityY = (field0CC)*gMulAt006590B4;
     }
     velocityY = (velocityY)-gDropAt00658058;
-    x += static_cast<float>(facing)*(velocityX);
+    x += facing*(velocityX);
     y = y + velocityY;
     if ((animationStage)<2) {
         rotationZ = (rotationZ)+gLiftAt00657CC0;
@@ -2138,7 +2138,7 @@ void AliceObject::Advance() {
         SetPolarVelocity(-(static_cast<float>(RecordedRange(0,45))
              - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
-    x += static_cast<float>(facing)*(velocityX);
+    x += facing*(velocityX);
     y = y+velocityY;
     velocityY = (velocityY)-gVelocityDragAt00659454;
     rotationZ = (rotationZ)+gGrowAt00657CBC;
@@ -2189,7 +2189,7 @@ void AliceObject::Advance() {
         break;
     }
     if ((animationStage)>7) {
-        scaleX=static_cast<float>((scaleX)*gMulDoubleAt00659730);
+        scaleX=(scaleX)*gMulDoubleAt00659730;
         scaleY=(scaleY)+gAddAt006583FC;
         if ((color[0])>=10)
             color[0]-=10;
@@ -2256,8 +2256,8 @@ void AliceObject::Advance() {
             }
         }
     }
-    SetPolarVelocity(static_cast<float>(field0DC),4.0f);
-    x += static_cast<float>(facing)*(velocityX);
+    SetPolarVelocity(field0DC,4.0f);
+    x += facing*(velocityX);
     y = y - velocityY;
     if (AdvanceNestedFrame()==(field070)) {
         if ((field0D8)<gGlobalActorCountAt006714D0*5+10) {
@@ -2288,7 +2288,7 @@ void AliceObject::Advance() {
         velocityY=(field0CC)*gMulAt006590B4;
         field0D8=static_cast<short>(RecordedRange(-480,960));
     }
-    x += static_cast<float>(facing)*(velocityX);
+    x += facing*(velocityX);
     y = y+velocityY;
     if ((animationStage)==0) {
         if ((color[0])<=235)
@@ -2299,7 +2299,7 @@ void AliceObject::Advance() {
         velocityY=(velocityY)-gDropAt00658058;
     }
     if ((animationStage)==12) {
-        scaleX=static_cast<float>((scaleX)*gMulDoubleAt00659730);
+        scaleX=(scaleX)*gMulDoubleAt00659730;
         scaleY=(scaleY)+gAddAt006583FC;
         if ((color[0])>=10)
             color[0]-=10;
@@ -2322,7 +2322,7 @@ void AliceObject::Advance() {
         ++field0DC;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        (owner->field314)=static_cast<float>(field0D8);
+        (owner->field314)=field0D8;
         owner->field318=x;
         owner->field31C=y;
         owner->SpawnBattleEffect(0x38C,x,y,facing,1);
@@ -2461,14 +2461,14 @@ void AliceObject::Advance() {
     if ((animationStage)==0) {
         --field0DA;
         if ((field0DA)<3) field0DA=3;
-        SetPolarVelocity(static_cast<float>(field0D8),
-                       static_cast<float>(field0DA)*gSubAt00659090);
+        SetPolarVelocity(field0D8,
+                       field0DA*gSubAt00659090);
     }
     if ((animationStage)==1) {
         field0D8=static_cast<short>(AngleAt00483300(
             (owner->opponent->y) + gCollisionAt00657888 - (y),
             owner->opponent->x-x) / gAngleUnitAt00657828);
-        SetPolarVelocity(static_cast<float>(field0D8),20.0f);
+        SetPolarVelocity(field0D8,20.0f);
         if ((x - owner->opponent->x < gStageContactAt0065786C) &&
             (x - owner->opponent->x > gTouchMaxAt00659230) &&
             (y - owner->opponent->y < gParentYAt006590A8) &&
@@ -2506,14 +2506,14 @@ void AliceObject::Advance() {
     if ((animationStage)==0) {
         --field0DA;
         if ((field0DA)<3) field0DA=3;
-        SetPolarVelocity(static_cast<float>(field0D8),
-                       static_cast<float>(field0DA)*gSubAt00659090);
+        SetPolarVelocity(field0D8,
+                       field0DA*gSubAt00659090);
     }
     if ((animationStage)==1) {
         field0D8=static_cast<short>(AngleAt00483300(
             (owner->opponent->y) + gCollisionAt00657888 - (y),
             owner->opponent->x-x) / gAngleUnitAt00657828);
-        SetPolarVelocity(static_cast<float>(field0D8),20.0f);
+        SetPolarVelocity(field0D8,20.0f);
         if ((x - owner->opponent->x < gStageContactAt0065786C) &&
             (x - owner->opponent->x > gTouchMaxAt00659230) &&
             (y - owner->opponent->y < gParentYAt006590A8) &&
