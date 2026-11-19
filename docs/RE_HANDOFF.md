@@ -146,6 +146,9 @@ size check. Do not repeat those attempts without new target evidence.
 A separate Sakuya source cleanup removed five redundant angle-result short
 casts while preserving all 42,937 COFF bytes and 929 relocation positions,
 types, addends and local targets; its 447-GPR / 12-width frontier is unchanged.
+Remilia's 28,868-byte object giant also dropped 24 redundant numeric casts
+while preserving all 696 relocation positions, types, addends and local
+targets; its 726-GPR / six-width frontier is unchanged.
 
 For a complete parent:
 
