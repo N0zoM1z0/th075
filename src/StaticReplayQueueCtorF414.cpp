@@ -1,31 +1,33 @@
-// Whole native-authored R177 132-byte replay/static queues constructor.
-// Four original 20-byte member constructors and each actual native EH
-// lifetime come directly from C++ member default construction under /GX.
-// This is a borrowed size-only aggregate, not an asserted private layout.
-// Native-authored R177 replay/static resource queue constructor. Four
-// independently observed 20-byte queue storage extents (not private fields).
-class NativeByteQueueF414 {
+#include "ReplaySegmentedQueueF219.hpp"
+
+// The static replay owner has the same observed prefix/header/queue offsets
+// as ReplayRecords. The four queue constructors initialize their segmented
+// block maps; the owner constructor then clears the file handle.
+class NativeByteQueueF414 : public ReplaySegmentedQueueStorageF219<char> {
 public: NativeByteQueueF414(); ~NativeByteQueueF414();
-private: unsigned char nativeObservedFootprint[20];
 };
-class NativeWordQueueF414 {
+class NativeWordQueueF414 : public ReplaySegmentedQueueStorageF219<short> {
 public: NativeWordQueueF414(); ~NativeWordQueueF414();
-private: unsigned char nativeObservedFootprint[20];
 };
-class NativeDwordQueueF414 {
+class NativeDwordQueueF414 : public ReplaySegmentedQueueStorageF219<unsigned int> {
 public: NativeDwordQueueF414(); ~NativeDwordQueueF414();
-private: unsigned char nativeObservedFootprint[20];
 };
 class ReplayStaticQueuesF414 {
-private:
- unsigned char borrowedUnobservedPrefix[0x154];
- NativeByteQueueF414 first;
- NativeWordQueueF414 second;
- NativeByteQueueF414 third;
- NativeDwordQueueF414 fourth;
-public: ReplayStaticQueuesF414();
+    HANDLE fileHandle;
+    char filePath[0x112];
+    signed char field116;
+    unsigned char unknown117[5];
+    DWORD recordOffsets[10];
+    ReplayRecordHeaderF219 header;
+    NativeByteQueueF414 first;
+    NativeWordQueueF414 second;
+    NativeByteQueueF414 third;
+    NativeDwordQueueF414 fourth;
+public:
+    ReplayStaticQueuesF414();
 };
-typedef char CheckQueueOffsetsF414[(sizeof(NativeByteQueueF414)==20 && sizeof(NativeWordQueueF414)==20 && sizeof(NativeDwordQueueF414)==20) ? 1 : -1];
-ReplayStaticQueuesF414::ReplayStaticQueuesF414() {
- *reinterpret_cast<unsigned int*>(this)=0;
+typedef char ReplayStaticQueuesSizeF414[(sizeof(ReplayStaticQueuesF414)==0x1a4)?1:-1];
+ReplayStaticQueuesF414::ReplayStaticQueuesF414()
+{
+    fileHandle=0;
 }
