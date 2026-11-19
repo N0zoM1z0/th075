@@ -894,3 +894,11 @@ The Youmu parent also drops six explicit `static_cast<signed short>`
 wrappers in three shared scripted-state fragments. The complete 47,655-byte
 COFF body and all 1,491 relocation positions/types/addends/local targets
 remain identical after this additional cleanup.
+
+A further signed-counter pass removes 16 redundant `static_cast<int>` staging
+conversions before float use in five bounce/resource-volley fragments, plus
+two redundant `static_cast<float>` conversions in the random-volley fragment.
+The signed short fields now undergo the ordinary C++ integral-to-float
+promotion directly. All four complete fighter `Advance` bodies and their
+relocation maps remain byte-identical (62,090/1,824; 83,922/2,352;
+47,655/1,491; 59,236/1,863), with all four frontiers unchanged.

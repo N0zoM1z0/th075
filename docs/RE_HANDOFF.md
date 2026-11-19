@@ -236,3 +236,7 @@ exact reset/dispatch units replayed 12/12. A follow-up removes six
 `static_cast<signed short>` wrappers from three Youmu scripted-state fragments;
 the full 47,655-byte Advance body and all 1,491 relocations remain identical.
 All four giant frontiers are unchanged and remain nonexact.
+A further signed-counter cleanup removes 16 redundant int staging casts and
+two float casts in six bounce/resource-volley fragments. The four complete
+Reimu/Sakuya/Youmu/Remilia fighter `Advance` bodies and all relocation maps
+remain identical; the GPR/width frontiers are unchanged.
