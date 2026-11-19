@@ -1049,6 +1049,16 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+The input counters `inputA`/`inputB`/`inputC` and `inputD` no longer use
+reference reinterpretation to force unsigned comparisons. The existing
+32-bit signed storage of A/B/C is preserved, but the intended unsigned tests
+now use value `static_cast`s; `inputD` uses its already-declared unsigned
+value directly or an explicit value conversion where the native expression
+requires the signed bit pattern. This removes the aliasing references without
+changing the Fighter layout. All 29 exact functions across fifteen affected
+translation units replayed 29/29, and the complete Reimu/Sakuya/Youmu/Remilia
+`Advance` bodies and relocation maps remained identical. Their existing
+frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 bytes.
 The name-entry `field120` byte at `+0x120` is likewise signed: the parallel
 sprite-name view already declares it `signed char`, and the editor uses its
 sign-extended value to calculate the active record offset. The update view now
