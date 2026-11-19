@@ -46,7 +46,7 @@ case F1074_CASE: {
     // The real random-position spawn precedes the status-dependent
     // fourteen-register 16-shot unroll. The second nested random
     // argument is evaluated first under original MSVC7.1 /Od.
-    reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
+    owner->SpawnBattleEffect(
         0x32B,
         float(RandomBoundaryAt00455580(0,60))+x-g_F1068_ActionSpeedAt00657878,
         float(RandomBoundaryAt00455580(0,60))+y-g_F1068_ActionSpeedAt00657878,

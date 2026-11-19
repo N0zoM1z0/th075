@@ -5,7 +5,7 @@ case 0x35D: {
         field0D8=0;
     if (animationStage==1 && animationFrame==0) {
         reinterpret_cast<F1051Grandparent*>(owner)->StartAnimationAt0046D000(20);
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
+        owner->SpawnBattleEffect(
             0x330,
             (*(&x))+g_F1057_YOffsetAt00657888-
                 float(RandomBoundaryAt00455580(0,200)),

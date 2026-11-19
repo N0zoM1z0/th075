@@ -53,8 +53,16 @@ Patchouli object `0050A580` now defines `PatchouliObject::Advance` on its
 actual vtable class. The parent preserves its complete 81,539 CODE bytes,
 with 522 GPR and five width differences. Thirty-two parent sound calls
 and seven camera-shake calls use the existing Fighter/EffectServices
-interfaces. Raw DWORD bit transport in several spawn APIs remains
-unresolved and is intentionally not converted into numeric float casts.
+interfaces. Six additional Patchouli source spawn sites (seven compiled calls, as one
+state is included twice) now use `Fighter::SpawnBattleEffect` with native
+float arguments. Both complete 82,109-byte function objects have all 1,449
+relocation offsets/types identical and no differing nonrelocation bytes.
+The remaining 71 source sites use original DWORD bit transport and are
+intentionally not converted into numeric float casts.
+A full conversion of those 71 raw source sites to direct float calls failed:
+the COFF body increased by 32 bytes and added two `__ftol2` relocations.
+The raw conversion was rejected, while the seven separately verified
+float-argument calls were retained.
 All 24 header-affected exact functions cold-replayed.
 
 Sakuya object `004CA6E0` now defines `SakuyaObject::Advance` directly.

@@ -47,6 +47,9 @@ Done so far:
   its complete research byte frontier is unchanged (522 GPR, five width
   differences). Raw coordinate DWORD-to-float transport still requires
   ABI-specific work; 24 affected exact units cold-replayed successfully.
+  Six additional float-argument source sites (seven compiled calls) have
+  since moved to the real `Fighter::SpawnBattleEffect` API with all 1,449
+  relocation positions/types unchanged and zero altered nonrelocation bytes.
 - Sakuya object `Advance` (42,511 bytes) now belongs to `SakuyaObject`
   and uses the real Fighter effect/sound APIs for 87 call sites. Its
   nonexact instruction/register frontier is unchanged; COFF size and

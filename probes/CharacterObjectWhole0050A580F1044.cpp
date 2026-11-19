@@ -12,7 +12,7 @@
 // MOV/PUSH bit transport into four-byte float slots. A float-compatible
 // callee body does not recover its original C++ declaration: replacing
 // these raw reads with implicit numeric float conversion is incorrect.
-class F1051Grandparent { public: void NativePrepareAt00453D40(short); void SpawnObjectAt00453A70(short,unsigned int,unsigned int,signed char,signed char); void SpawnObjectAt00453A70(short,float,float,signed char,signed char); void SpawnProjectileAt00453C80(short,unsigned int,unsigned int,signed char,signed char); void InitTrajectoryAt00453E60(float); void SpawnSevenAt00453B50(short,unsigned int,unsigned int,signed char,signed char,unsigned char,unsigned char); void StartAnimationAt0046D000(int); };
+class F1051Grandparent { public: void SpawnObjectAt00453A70(short,unsigned int,unsigned int,signed char,signed char); void SpawnProjectileAt00453C80(short,unsigned int,unsigned int,signed char,signed char); void SpawnSevenAt00453B50(short,unsigned int,unsigned int,signed char,signed char,unsigned char,unsigned char); void StartAnimationAt0046D000(int); };
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
 extern float g_F1051_ScaleStepAt00658348;

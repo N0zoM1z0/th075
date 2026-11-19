@@ -44,7 +44,7 @@ case 0x328: {
     y=y+velocityY;
     // The native projectile is spawned UNCONDITIONALLY before its
     // subsequent native state/ground branch (original ordinal 147..176).
-    reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
+    owner->SpawnBattleEffect(
         0x32B,
         float(RandomBoundaryAt00455580(0,60))+x-g_F1068_ActionSpeedAt00657878,
         float(RandomBoundaryAt00455580(0,60))+y-g_F1068_ActionSpeedAt00657878,

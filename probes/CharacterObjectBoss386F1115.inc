@@ -46,7 +46,7 @@ case 0x386: {
     if (AdvanceNestedFrame()==field070) {
         reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(10.0f);
         for (int shot=0;shot<12;++shot) {
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
+            owner->SpawnBattleEffect(
                 0x387,
                 (*(&x))+g_F1069_ParentYSecondAt00658264-float(RandomBoundaryAt00455580(0,80)),
                 float(RandomBoundaryAt00455580(0,320)),
