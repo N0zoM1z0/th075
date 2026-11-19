@@ -17223,8 +17223,8 @@ relocations = [
 source = "src/CharacterSelectCards437380.cpp"
 object = "build/matching/CharacterSelectCards437380.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["CharacterSelectCards437380::RenderCards"]
-symbol = "?RenderCards@CharacterSelectCards437380@@QAEXXZ"
+functions = ["CharacterSelectScene::RenderCards"]
+symbol = "?RenderCards@CharacterSelectScene@@QAEXXZ"
 target_address = 0x00437380
 size = 3769
 compare_size = 3769
@@ -17293,8 +17293,8 @@ relocations = [
 source = "src/CharacterSelectOptions438240.cpp"
 object = "build/matching/CharacterSelectOptions438240.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["CharacterSelectOptions438240::RenderOptions"]
-symbol = "?RenderOptions@CharacterSelectOptions438240@@QAEXXZ"
+functions = ["CharacterSelectScene::RenderOptions"]
+symbol = "?RenderOptions@CharacterSelectScene@@QAEXXZ"
 target_address = 0x00438240
 size = 1072
 compare_size = 1072
@@ -29955,7 +29955,7 @@ target = 0x0040C9A0
 [[units.battle-render-background-00435a70.relocations]]
 offset = 5132
 type = "REL32"
-symbol = "?RenderCards@CharacterSelectCards437380@@QAEXXZ"
+symbol = "?RenderCards@CharacterSelectScene@@QAEXXZ"
 target = 0x00437380
 [[units.battle-render-background-00435a70.relocations]]
 offset = 5265
@@ -30165,7 +30165,7 @@ target = 0x00438670
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6390
 type = "REL32"
-symbol = "?RenderOptions@CharacterSelectOptions438240@@QAEXXZ"
+symbol = "?RenderOptions@CharacterSelectScene@@QAEXXZ"
 target = 0x00438240
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6395

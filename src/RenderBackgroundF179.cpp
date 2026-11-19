@@ -1,8 +1,7 @@
 #include "RenderBackgroundF179.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
-#include "CharacterSelectCards437380.hpp"
-#include "CharacterSelectOptions438240.hpp"
+#include "CharacterSelectScene.hpp"
 #include "SinglePlayerOptions438670.hpp"
 
 // Ignored-result call-only view, matching the established drawing contracts.
@@ -175,7 +174,7 @@ void RenderBackgroundF179::RenderBackground()
             DRAW(0x44)->DrawQuad(field0E2 * 2 + 1, spriteQuad, &clipRect,
                                  FORWARD_ALPHA(LAYERS.leftDetail, 40.0f, tint[0]));
         }
-        reinterpret_cast<CharacterSelectCards437380*>(this)->RenderCards();
+        reinterpret_cast<CharacterSelectScene*>(this)->RenderCards();
         signed char index;
         if (field0F1 == 8 && field0F0 == 1)
             index = 16;
@@ -216,7 +215,7 @@ void RenderBackgroundF179::RenderBackground()
         if (g_CombatMode == 3)
             reinterpret_cast<SinglePlayerOptions438670*>(this)->RenderOptions();
         else
-            reinterpret_cast<CharacterSelectOptions438240*>(this)->RenderOptions();
+            reinterpret_cast<CharacterSelectScene*>(this)->RenderOptions();
         Graphics::EndFrame();
     }
 }

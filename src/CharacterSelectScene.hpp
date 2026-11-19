@@ -33,6 +33,8 @@ public:
     void UpdatePlayerConfirmation(signed char player);
     void UpdateChoiceAnimation(signed char player);
     void UpdateCancelAnimation(signed char player);
+    void RenderCards();                  // 00437380
+    void RenderOptions();                // 00438240
 
     TextureAllocF225* menuTextures;                    // +008
     SelectInputFrame input[2];             // +00C, +028 (0x1C per player)

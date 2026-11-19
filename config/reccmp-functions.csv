@@ -176,8 +176,8 @@ BattleScene::RenderRoundBanner,0x00441EA0,function
 DrawAtlasNumberAt00446B90,0x00446B90,function
 AtlasQuad446B90::AtlasQuad446B90,0x0040DA00,function
 ComboDisplay::Render,0x0043D570,function
-CharacterSelectCards437380::RenderCards,0x00437380,function
-CharacterSelectOptions438240::RenderOptions,0x00438240,function
+CharacterSelectScene::RenderCards,0x00437380,function
+CharacterSelectScene::RenderOptions,0x00438240,function
 SinglePlayerOptions438670::RenderOptions,0x00438670,function
 GameProgress::GetSelectedValue,0x00438A80,function
 SelectionInput4388D0::PollInput,0x004388D0,function

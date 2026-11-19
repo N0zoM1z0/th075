@@ -121,8 +121,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00446B90,BattleHud::DrawAtlasNumber,DrawAtlasNumberAt00446B90,R042,battle-atlas-number-00446b90
 0x0040DA00,SpriteGeometry::InitializeRectangle,AtlasQuad446B90::AtlasQuad446B90,R011,atlas-quad-rectangle-constructor-0040da00
 0x0043D570,BattleHud::RenderComboCounter,ComboDisplay::Render,R041,battle-combo-counter-0043d570
-0x00437380,CharacterSelectScene::RenderCharacterCards,CharacterSelectCards437380::RenderCards,R043,character-select-cards-00437380
-0x00438240,CharacterSelectScene::RenderPlayerOptions,CharacterSelectOptions438240::RenderOptions,R041,character-select-options-00438240
+0x00437380,CharacterSelectScene::RenderCharacterCards,CharacterSelectScene::RenderCards,R043,character-select-cards-00437380
+0x00438240,CharacterSelectScene::RenderPlayerOptions,CharacterSelectScene::RenderOptions,R041,character-select-options-00438240
 0x00438670,CharacterSelectScene::RenderSinglePlayerOptions,SinglePlayerOptions438670::RenderOptions,R041,single-player-options-00438670
 0x00438A80,ProgressRecords::GetSelectedCardValue,GameProgress::GetSelectedValue,R043,progress-card-value-00438a80
 0x004388D0,CharacterSelectScene::PollInput,SelectionInput4388D0::PollInput,R043,select-input-004388d0
