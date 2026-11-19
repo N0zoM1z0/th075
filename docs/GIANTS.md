@@ -700,6 +700,12 @@ offsets remain identical (only compiler-generated local label names rotate).
 The giant frontier is unchanged at 985 differing bytes, 135 GPR positions,
 six width deltas and first divergence `005F3904`. The `float` cast before
 `owner->field3A0 / field0D8` remains necessary to avoid integer division.
+Youmu object `00536400` also drops 13 redundant `static_cast<short>`
+wrappers around float expressions, angle results and float-to-short member
+assignments. The complete 40,464-byte COFF body and all 938 relocation
+positions/types/addends/local targets remain identical. Its giant frontier
+is unchanged at 913 GPR positions, ten width differences and first
+`005392F8`; no exact giant credit is claimed.
 
 Per-parent attempts that failed, kept so they are not repeated: loop-update,
 return, condition and index rewrites in 005A1600; swapping 0057D580's

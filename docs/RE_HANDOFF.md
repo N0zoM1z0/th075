@@ -136,6 +136,9 @@ has already had 22 natural-C++ variants without improvement. A separate
 source-cleanup pass removed six redundant numeric casts from the whole
 Meiling giant while retaining all 34,879 COFF bytes and 806 relocation
 positions/types/addends/local targets; its 985-byte / 135-GPR / six-width
+frontier remains unchanged. Youmu's 39,999-byte object giant also lost 13
+redundant short casts while retaining its full 40,464-byte COFF and 938
+relocation positions/types/addends/local targets; its 913-GPR / 10-width
 frontier remains unchanged. Sakuya's 809/810
 gate was also revisited on 2026-11-19; all syntax-only variants were discarded.
 The best transient Sakuya form was two bytes too large and failed the frontier
