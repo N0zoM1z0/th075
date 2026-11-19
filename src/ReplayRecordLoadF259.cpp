@@ -1,31 +1,29 @@
-#include <windows.h>
+#include "ReplaySegmentedQueueF219.hpp"
 
-// Borrowed views of native replay-record collections. The complete original
-// record and deque owner classes are unknown; only observed fields and
-// the function-local ABI are asserted here.
-// Nested real local lifetimes preserve VC7.1 stack locations without
-// introducing synthetic storage.
-class ReplayByteListF216 {
+// The reader uses the same typed ReplayRecords owner and segmented queue
+// layout as AppendRecord. Nested local lifetimes preserve the native VC7.1
+// stack objects, including the unsigned file-word to signed queue insertion.
+class ReplayByteListF216 : public ReplaySegmentedQueueStorageF219<char> {
 public:
     void Clear();
     void Push(const char* item);
 };
-class ReplayWordListF216 {
+class ReplayWordListF216 : public ReplaySegmentedQueueStorageF219<short> {
 public:
     void Clear();
     void Push(const short& item);
 };
-class ReplayDwordListF216 {
+class ReplayDwordListF216 : public ReplaySegmentedQueueStorageF219<unsigned int> {
 public:
     void Clear();
     void Push(const unsigned int* item);
 };
-class ReplayRecordsF216 {
+typedef ReplayRecordsLayoutF219<ReplayByteListF216,ReplayWordListF216,ReplayDwordListF216> ReplayLoadOwnerLayoutF216;
+class ReplayRecordsF216 : public ReplayLoadOwnerLayoutF216 {
 public:
     void LoadRecord(signed char slot);
 };
-#define AT(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define LIST(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
+typedef char ReplayLoadOwnerSizeF216[(sizeof(ReplayLoadOwnerLayoutF216)==0x1a4)?1:-1];
 void ReplayRecordsF216::LoadRecord(signed char slot)
 {
     unsigned int i;
@@ -44,42 +42,42 @@ void ReplayRecordsF216::LoadRecord(signed char slot)
     {
     DWORD bytesRead;
     {
-    handle = CreateFileA(reinterpret_cast<const char*>(this)+4, GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
+    handle = CreateFileA(filePath, GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
     entries = 0;
-    SetFilePointer(handle, AT(int,0x11c + 4*slot) + 0x3c, 0, FILE_BEGIN);
-    ReadFile(handle,&AT(BYTE,0x144),1,&bytesRead,0);
-    ReadFile(handle,&AT(BYTE,0x145),1,&bytesRead,0);
-    ReadFile(handle,&AT(BYTE,0x146),1,&bytesRead,0);
-    ReadFile(handle,&AT(BYTE,0x147),1,&bytesRead,0);
-    ReadFile(handle,&AT(BYTE,0x148),1,&bytesRead,0);
-    ReadFile(handle,&AT(BYTE,0x149),1,&bytesRead,0);
-    ReadFile(handle,&AT(BYTE,0x14a),1,&bytesRead,0);
-    ReadFile(handle,&AT(short,0x14c),2,&bytesRead,0);
-    ReadFile(handle,&AT(BYTE,0x14e),1,&bytesRead,0);
-    ReadFile(handle,&AT(unsigned int,0x150),4,&bytesRead,0);
+    SetFilePointer(handle, recordOffsets[slot] + 0x3c, 0, FILE_BEGIN);
+    ReadFile(handle,&header.field144,1,&bytesRead,0);
+    ReadFile(handle,&header.field145,1,&bytesRead,0);
+    ReadFile(handle,&header.field146,1,&bytesRead,0);
+    ReadFile(handle,&header.field147,1,&bytesRead,0);
+    ReadFile(handle,&header.field148,1,&bytesRead,0);
+    ReadFile(handle,&header.field149,1,&bytesRead,0);
+    ReadFile(handle,&header.field14A,1,&bytesRead,0);
+    ReadFile(handle,&header.field14C,2,&bytesRead,0);
+    ReadFile(handle,&header.field14E,1,&bytesRead,0);
+    ReadFile(handle,&header.field150,4,&bytesRead,0);
     ReadFile(handle,&entries,4,&bytesRead,0);
-    LIST(ReplayByteListF216,0x154).Clear();
+    byteInputs.Clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&item,1,&bytesRead,0);
-        LIST(ReplayByteListF216,0x154).Push(&item);
+        byteInputs.Push(&item);
     }
     ReadFile(handle,&entries,4,&bytesRead,0);
-    LIST(ReplayWordListF216,0x168).Clear();
+    wordInputs.Clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&rawWord,2,&bytesRead,0);
-        LIST(ReplayWordListF216,0x168).Push(static_cast<short>(rawWord));
+        wordInputs.Push(static_cast<short>(rawWord));
     }
     ReadFile(handle,&entries,4,&bytesRead,0);
-    LIST(ReplayByteListF216,0x17c).Clear();
+    secondaryInputs.Clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&item,1,&bytesRead,0);
-        LIST(ReplayByteListF216,0x17c).Push(&item);
+        secondaryInputs.Push(&item);
     }
     ReadFile(handle,&entries,4,&bytesRead,0);
-    LIST(ReplayDwordListF216,0x190).Clear();
+    dwordInputs.Clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&dwordItem,4,&bytesRead,0);
-        LIST(ReplayDwordListF216,0x190).Push(&dwordItem);
+        dwordInputs.Push(&dwordItem);
     }
     CloseHandle(handle);
     }
@@ -90,5 +88,3 @@ void ReplayRecordsF216::LoadRecord(signed char slot)
     }
     }
 }
-#undef LIST
-#undef AT
