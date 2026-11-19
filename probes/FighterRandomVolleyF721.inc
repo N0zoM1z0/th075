@@ -9,7 +9,7 @@
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 field07C=1;
                 ClearMotionFields();
-                SpawnSevenAt453B50(0x38E,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                Fighter::SpawnTrackedEffect(0x38E,x,y,
                     facing,1,0,1);
             }
             if (AdvanceNestedFrame()==(field070)) {

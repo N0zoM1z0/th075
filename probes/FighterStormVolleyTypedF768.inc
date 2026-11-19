@@ -17,7 +17,7 @@
             if ((animationStage)==2) {
                 ++reinterpret_cast<signed short&>(scriptCounterF02);
                 if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
-                    SpawnAt453C80(0x40,
+                    SpawnAuxEffect(0x40,
                         reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float(facing*3),
                         (*(&y))+g_YPlusAt0065929C,1,1);
                     reinterpret_cast<signed short&>(scriptCounterF02)=0;

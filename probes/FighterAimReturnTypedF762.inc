@@ -73,11 +73,11 @@
                 ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySound(5);
-                SpawnAt453C80(0x7D,
+                SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
                     (*(&y))+g_ContactProjectionAt00657888,
                     -facing,1);
-                SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+                SpawnAuxEffect(0x7E,x,
                     (*(&y))+g_ContactProjectionAt00657888,
                     -facing,1);
                 velocityX=-20.0f;

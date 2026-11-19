@@ -56,7 +56,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                     facing,1);
                 velocityY=22.0f;
                 field05C=0.7f;
@@ -95,7 +95,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                         facing,1);
                 PlaySound(4);
                 velocityY=6.0f;
@@ -135,7 +135,7 @@
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySound(4);
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                         facing,1);
                 velocityY=8.0f;
                 velocityX=12.0f;

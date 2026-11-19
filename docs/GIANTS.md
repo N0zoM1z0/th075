@@ -335,6 +335,16 @@ All full VC7.1 COFF bodies retain their 62,090 / 83,922 / 47,655 /
 nonrelocation byte. Header-affected exact cold replay passed 132/132
 in three bounded 44-unit groups. Native giant exactness is not claimed.
 
+Remilia's full 58 KB fighter giant now routes all 49 00453B50/00453C80
+calls through the real inherited `Fighter::SpawnTrackedEffect` (3) and
+`Fighter::SpawnAuxEffect` (46). Sixteen original case-fragment files and
+the parent source now use float coordinates, not integer-reference
+bit transport; four speculative per-character helper declarations were
+removed. The full 59,236-byte COFF retains all 1,863 relocation
+positions/types and every nonrelocation byte; all 98 exact units
+impacted by the Remilia fighter header cold-replayed 98/98 in bounded
+36/31/31 groups. The 58 KB giant remains nonexact.
+
 Four native fighter parents now use the same inherited 00455580
 `Actor::RecordedRange(int,int)` rather than per-character range aliases:
 Reimu 29, Sakuya 97, Youmu 16 and Remilia 27 (169 native COFF call

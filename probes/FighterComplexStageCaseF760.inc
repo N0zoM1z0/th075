@@ -28,7 +28,7 @@ case F760_ACTION: {
             velocityY=F760_SPEED;
             field05C=0.85f;
             field3AC=0;
-            SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            SpawnAuxEffect(0x3C,x,y,1,1);
         }
         if ((animationStage)>=(field070))
             animationStage=(animationStage)-2;

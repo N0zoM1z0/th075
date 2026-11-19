@@ -31,11 +31,11 @@ case 0xC8: {
         velocityX=15.0f;
         velocityY=25.0f;
         field05C=2.5f;
-        SpawnAt453C80(0x7D,float((facing)*80)+(x),
+        SpawnAuxEffect(0x7D,float((facing)*80)+(x),
             (*(&y))+g_F701_VolleyYAt00658268,(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_F701_VolleyYAt00658268,(facing),1);
-        SpawnRawXYAt453C80(0x81,reinterpret_cast<int&>(x),0,(facing),0);
+        SpawnAuxEffect(0x81,x,0.0f,(facing),0);
         PlaySharedSound(31);
     }
     break;
@@ -63,11 +63,11 @@ case 0xC9: {
         velocityX=-25.0f;
         velocityY=40.0f;
         field05C=6.0f;
-        SpawnAt453C80(0x7D,reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float((facing)*80),
+        SpawnAuxEffect(0x7D,reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float((facing)*80),
             (*(&y))+g_F701_VolleyYAt00658268,-(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_F701_VolleyYAt00658268,-(facing),1);
-        SpawnRawXYAt453C80(0x81,reinterpret_cast<int&>(x),0,-(facing),0);
+        SpawnAuxEffect(0x81,x,0.0f,-(facing),0);
         PlaySharedSound(31);
     }
     break;
@@ -92,9 +92,9 @@ case 0xCA: {
         velocityX=30.0f;
         velocityY=-4.0f;
         field05C=0.6f;
-        SpawnAt453C80(0x7D,float((facing)*80)+(x),
+        SpawnAuxEffect(0x7D,float((facing)*80)+(x),
             (*(&y))+g_ContactProjectionAt00657888,(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_ContactProjectionAt00657888,(facing),1);
         PlaySharedSound(31);
     }
@@ -124,9 +124,9 @@ case 0xCB: {
         velocityX=-30.0f;
         velocityY=2.0f;
         field05C=0.6f;
-        SpawnAt453C80(0x7D,reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float((facing)*80),
+        SpawnAuxEffect(0x7D,reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float((facing)*80),
             (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
-        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+        SpawnAuxEffect(0x7E,x,
             (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
         PlaySharedSound(31);
     }

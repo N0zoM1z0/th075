@@ -104,7 +104,7 @@
             if ((animationStage)>4 && (animationStage)<8 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
                 ++reinterpret_cast<signed short&>(scriptCounterF02);
                 if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
-                    SpawnMixedAt453C80(0x40,reinterpret_cast<int&>(x),
+                    SpawnAuxEffect(0x40,x,
                        (*(&y))+g_CloudShotYAt006591E4,1,1);
                     reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 }

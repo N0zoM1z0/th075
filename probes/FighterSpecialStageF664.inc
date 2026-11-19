@@ -1,6 +1,6 @@
 // F664 original selected giant 00543210: full physical native action 0x200/0x201.
 // Ordinary VC7.1 C++ native source interiors; enclosing whole giant remains
-// NONEXACT, and SpawnRawXYAt453C80 is a provisional raw-argument ABI proxy.
+// NONEXACT; its effect dispatch uses the inherited Fighter::SpawnAuxEffect ABI.
 // Original position +0x44/+0x48 is passed as DWORD bits, never implicit
 // FLD/FSTP by-value float conversions in this source grammar.
         case 0x200: {
@@ -22,7 +22,7 @@
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(7);
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                     facing,1);
             }
             if ((animationStage)==7 && (animationFrame)==0) velocityX=50.0f;
@@ -49,7 +49,7 @@
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(7);
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                     facing,1);
             }
             if ((animationStage)==7 && (animationFrame)==0) velocityX=50.0f;

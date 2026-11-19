@@ -713,11 +713,11 @@ void RemiliaFighter::Advance() {
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 PlaySound(9);
-                SpawnAt453C80(0x73,
+                SpawnAuxEffect(0x73,
                     x-float(facing*20),
                     (*(&y))+g_BurstXAt00659238,
                     facing,1);
-                SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                Fighter::SpawnTrackedEffect(0x334,x,y,
                     facing,1,0,1);
             }
             if (AdvanceNestedFrame()==(field070))
@@ -771,13 +771,13 @@ void RemiliaFighter::Advance() {
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
-                SpawnAt453C80(0x73,
+                SpawnAuxEffect(0x73,
                     x-float(facing*46),
                     (*(&y))+g_F722_BurstYAt0065826C,
                     facing,1);
             }
             if (animationStage==7 && animationFrame==0) {
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                     facing,1);
                 PlaySound(11);
                 velocityY=9.0f;
@@ -807,7 +807,7 @@ void RemiliaFighter::Advance() {
                 ClearMotionFields();
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
-                SpawnMixedAt453C80(0x74,reinterpret_cast<int&>(x),
+                SpawnAuxEffect(0x74,x,
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
                 field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -864,11 +864,11 @@ void RemiliaFighter::Advance() {
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 PlaySound(13);
-                SpawnAt453C80(0x74,
+                SpawnAuxEffect(0x74,
                     x-float(facing*20),
                     (*(&y))+g_BurstXAt00659238,
                     facing,1);
-                SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                Fighter::SpawnTrackedEffect(0x334,x,y,
                     facing,1,0,1);
             }
             if (AdvanceNestedFrame()==(field070))
@@ -923,14 +923,14 @@ void RemiliaFighter::Advance() {
             if (animationStage==1 && animationFrame==0) {
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
-                SpawnAt453C80(0x74,
+                SpawnAuxEffect(0x74,
                     x-float(facing*46),
                     (*(&y))+g_F722_BurstYAt0065826C,
                     facing,1);
                 field36C=(field36C)-g_ContactProjectionAt00657888;
             }
             if (animationStage==7 && animationFrame==0) {
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                     facing,1);
                 SpawnBattleEffect(0x344,
                     float(facing*55)+(x),

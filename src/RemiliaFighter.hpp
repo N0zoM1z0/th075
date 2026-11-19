@@ -11,13 +11,9 @@ public:
     virtual ~RemiliaFighter();
     virtual void Advance(); // slot 1, native 00543210, nonexact research parent
 
-    // Complete native caller ABI hypotheses; these refer to existing Actor
-    // and Fighter functions, not new independently reconstructed methods.
+    // One remaining mixed-coordinate caller shape at 00453A70. The
+    // independently exact 00453B50/00453C80 helpers are inherited directly.
     void SpawnFloatXRawYAt453A70(int,float,int,char,int);
-    void SpawnRawXYAt453C80(int,int,int,char,int);
-    void SpawnMixedAt453C80(int,int,float,char,int);
-    void SpawnSevenAt453B50(int,int,int,char,int,int,int);
-    void SpawnAt453C80(int,float,float,char,int);
 
     void ConfigureStage();
     void ChooseAction();

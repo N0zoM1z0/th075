@@ -10,7 +10,7 @@
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 SetNonnegativeWord(40);
                 PlaySharedSound(0x17);
-                SpawnMixedAt453C80(0x73,reinterpret_cast<int&>(x),
+                SpawnAuxEffect(0x73,x,
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
             }

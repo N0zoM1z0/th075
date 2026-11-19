@@ -25,11 +25,11 @@
                 velocityX=float(RecordedRange(0,15))+g_ApproachUpperAt006592A4;
                 velocityY=40.0f;
                 field05C=6.0f;
-                SpawnAt453C80(0x7D,
+                SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
                     (*(&y))+g_EightShotY2At00658268,
                     facing,1);
-                SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+                SpawnAuxEffect(0x7E,x,
                     (*(&y))+g_EightShotY2At00658268,
                     facing,1);
                 PlaySharedSound(31);
@@ -59,11 +59,11 @@
                 velocityX=g_F711_ReverseRandomAt00659A0C-float(RecordedRange(0,15));
                 velocityY=40.0f;
                 field05C=6.0f;
-                SpawnAt453C80(0x7D,
+                SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
                     (*(&y))+g_EightShotY2At00658268,
                     facing,1);
-                SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+                SpawnAuxEffect(0x7E,x,
                     (*(&y))+g_EightShotY2At00658268,
                     facing,1);
                 PlaySharedSound(31);

@@ -82,7 +82,7 @@
             if ((animationFrame)==0)
                 field07C=0;
             if ((animationStage)==7 && (animationFrame)==0) {
-                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                SpawnAuxEffect(0x3C,x,y,
                     facing,1);
                 PlaySound(11);
                 velocityY=9.0f;

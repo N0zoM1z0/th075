@@ -45,6 +45,12 @@ Done so far:
   `reinterpret_cast<int&>` bit transport. All four complete COFF bodies
   and all relocation offsets/types remain identical outside symbol
   labels; 132/132 affected exact units cold-replayed locally.
+- Remilia's 58 KB boss now routes 49 effect calls through the exact
+  inherited `Fighter::SpawnAuxEffect` / `SpawnTrackedEffect` methods,
+  removes four fake per-character aliases, and passes native float X/Y.
+  Whole 59,236-byte COFF and all 1,863 relocation positions/types are
+  unchanged outside symbol names; 98/98 header-affected exact units
+  replayed locally in three bounded groups.
 - Four complete fighter giants also now call the real inherited
   `Actor::RecordedRange(int,int)`: 169 native relocations (Reimu 29,
   Sakuya 97, Youmu 16, Remilia 27). The full functions preserve their
