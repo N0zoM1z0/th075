@@ -45,6 +45,12 @@ Done so far:
   `reinterpret_cast<int&>` bit transport. All four complete COFF bodies
   and all relocation offsets/types remain identical outside symbol
   labels; 132/132 affected exact units cold-replayed locally.
+- Reimu, Sakuya and Youmu giant parents also use the inherited shared
+  effect APIs (29/25/66 native COFF call relocations), replacing
+  per-character aliases and restoring real float coordinates. All three
+  complete COFF bodies and relocation positions/types remain unchanged
+  outside call symbols; 127/127 header-affected exact units replayed in
+  three bounded batches. All three giant frontiers remain nonexact.
 - Remilia's 58 KB boss now routes 49 effect calls through the exact
   inherited `Fighter::SpawnAuxEffect` / `SpawnTrackedEffect` methods,
   removes four fake per-character aliases, and passes native float X/Y.

@@ -335,6 +335,17 @@ All full VC7.1 COFF bodies retain their 62,090 / 83,922 / 47,655 /
 nonrelocation byte. Header-affected exact cold replay passed 132/132
 in three bounded 44-unit groups. Native giant exactness is not claimed.
 
+Three more fighter giants now inherit the exact shared 00453B50/00453C80
+effect APIs: Reimu routes 29 native call relocations, Sakuya 25 and
+Youmu 66 through Fighter::SpawnTrackedEffect / Fighter::SpawnAuxEffect.
+Their original per-character ABI aliases are removed, and raw/mixed
+integer-reference coordinate arguments become genuine float fields.
+All three complete COFF bodies retain their original 62,090 / 83,922 /
+47,655-byte extents, all 1,824 / 2,352 / 1,491 relocation positions and
+types, and every nonrelocation byte. The 127 exact units affected by
+the three shared fighter headers cold-replayed 127/127 in bounded
+43/42/42 groups. All three giant frontiers remain explicitly nonexact.
+
 Remilia's full 58 KB fighter giant now routes all 49 00453B50/00453C80
 calls through the real inherited `Fighter::SpawnTrackedEffect` (3) and
 `Fighter::SpawnAuxEffect` (46). Sixteen original case-fragment files and
