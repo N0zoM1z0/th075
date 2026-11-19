@@ -32,6 +32,12 @@ Done so far:
   sites). Complete COFF sizes/relocation positions and types are unchanged;
   nonrelocation code byte differences = 0. Header-affected exact units
   passed 132/132 targeted cold replay; giant register debt remains.
+- `Actor::ResetPrimaryCounters(short)` at 0040FAC0 now owns all 705
+  native action-reset calls in the four complete fighter `Advance`
+  research parents (511 source occurrences across 256 files). Full
+  parent COFF comparisons preserve all nonrelocation bytes/relocation
+  offsets and types. Affected-only cold replay passed 132/132 exact
+  units in three groups (44/44 each); no full repository replay.
 - The native shared Actor frame-advance helper at 0040FA30 is now
   `Actor::AdvanceNestedFrame` throughout all four complete fighter giant
   research parents: 382 source calls, 552 actual COFF relocations now

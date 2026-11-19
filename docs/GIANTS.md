@@ -222,6 +222,16 @@ all relocation offsets/types and every nonrelocation byte; all
 three groups of 44. This is a type/ownership and natural source
 recovery, not additional giant exact coverage.
 
+The shared Actor action reset `0040FAC0` is now called as the real
+inherited `Actor::ResetPrimaryCounters(short)` in four complete fighter
+state machines. 511 textual `SetNativeActionAt40FAC0` aliases across
+256 parent/case files correspond to 705 actual COFF relocations (169 Reimu,
+177 Sakuya, 181 Youmu, 178 Remilia). For every full parent, VC7.1 COFF
+body size, relocation positions/types and every nonrelocation code byte
+are unchanged against the immediate pre-migration state. All 132 affected
+exact units cold-replayed in three 44-unit groups. The giants remain
+nonexact against the PE; no exact credit is claimed.
+
 The shared Actor helper `0040FA30`, which advances an animation frame,
 is now called as inherited `Actor::AdvanceNestedFrame()` rather than the
 misleading `GetNativeActionAt40FA30` in all four fighter research giants.
