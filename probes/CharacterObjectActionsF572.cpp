@@ -117,7 +117,7 @@ void AliceObject::Advance() {
             owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
-            MotionAt40FB70(static_cast<float>(field0D8),
+            SetPolarVelocity(static_cast<float>(field0D8),
                             static_cast<float>(field0DA)*gMulAt006590B4);
             field0DA -= 5;
             field0D8 += 3;
@@ -195,7 +195,7 @@ void AliceObject::Advance() {
             owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
-            MotionAt40FB70(static_cast<float>(field0D8),
+            SetPolarVelocity(static_cast<float>(field0D8),
                             static_cast<float>(field0DA)*gMulAt006590B4);
             field0DA -= 5;
             field0D8 -= 2;
@@ -273,7 +273,7 @@ void AliceObject::Advance() {
             owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
-            MotionAt40FB70(static_cast<float>(field0D8),
+            SetPolarVelocity(static_cast<float>(field0D8),
                             static_cast<float>(field0DA)*gMulAt006590B4);
             field0DA -= 5;
             field0D8 += 4;
@@ -436,7 +436,7 @@ void AliceObject::Advance() {
             ResetTransform(0.0f,0.0f,0.0f);
             field080 = 1;
             field07C = 0;
-            MotionRawAt40FB70(reinterpret_cast<int&>(field0C8),15.0f);
+            SetPolarVelocity(field0C8,15.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0xFF;
@@ -582,7 +582,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
+            (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
             owner->SpawnBattleEffect(0x320,
                    static_cast<float>((facing) * 10) + (x),
                    y, reinterpret_cast<unsigned char&>(facing), 1);
@@ -657,7 +657,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RandomAt455580(0,15) - 45);
+            (owner->field318) = static_cast<float>(RecordedRange(0,15) - 45);
             owner->SpawnBattleEffect(0x321,
                    static_cast<float>((facing) * 10) + (x),
                    y, reinterpret_cast<unsigned char&>(facing), 1);
@@ -733,7 +733,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
+            (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
             owner->SpawnBattleEffect(0x322,
                    static_cast<float>((facing) * 10) + (x),
                    y, reinterpret_cast<unsigned char&>(facing), 1);
@@ -772,7 +772,7 @@ void AliceObject::Advance() {
             color[1] = 0xFF;
             color[2] = 0xFF;
             color[3] = 0xFF;
-            MotionRawAt40FB70(reinterpret_cast<int&>(field0C8),14.0f);
+            SetPolarVelocity(field0C8,14.0f);
         }
         if ((animationStage) == 0) {
             rotationZ = (rotationZ) + gGrowAt00657CBC;
@@ -929,7 +929,7 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        MotionAt40FB70(-(static_cast<float>(RandomAt455580(0,45))
+        SetPolarVelocity(-(static_cast<float>(RecordedRange(0,45))
                 - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
     x += static_cast<float>(facing) * (velocityX);
@@ -1059,7 +1059,7 @@ void AliceObject::Advance() {
         }
     }
     if ((animationStage) == 6)
-        scaleY = static_cast<float>(RandomAt455580(0,4) - 2)
+        scaleY = static_cast<float>(RecordedRange(0,4) - 2)
                   * gScatterRateAt006578C0 + gScatterBaseAt006581E0;
     if ((animationStage) == 7)
         scaleY = (scaleY) * gShrinkAt00659094;
@@ -1317,7 +1317,7 @@ void AliceObject::Advance() {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
-        MotionAt40FB70(static_cast<float>(field0D8),
+        SetPolarVelocity(static_cast<float>(field0D8),
                        static_cast<float>(field0DA));
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
@@ -1325,7 +1325,7 @@ void AliceObject::Advance() {
             static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
-        MotionAt40FB70(static_cast<float>(field0D8),
+        SetPolarVelocity(static_cast<float>(field0D8),
                        static_cast<float>(field0DA));
         x = static_cast<int>(
             (owner->fieldF0C) + (facing)*(velocityX));
@@ -1413,7 +1413,7 @@ void AliceObject::Advance() {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
-        MotionAt40FB70(static_cast<float>(field0D8),
+        SetPolarVelocity(static_cast<float>(field0D8),
                        static_cast<float>(field0DA));
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
@@ -1421,7 +1421,7 @@ void AliceObject::Advance() {
             static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
-        MotionAt40FB70(static_cast<float>(field0D8),
+        SetPolarVelocity(static_cast<float>(field0D8),
                        static_cast<float>(field0DA));
         x = static_cast<int>(
             (owner->fieldF0C) + (facing)*(velocityX));
@@ -1478,7 +1478,7 @@ void AliceObject::Advance() {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
-        MotionAt40FB70(static_cast<float>(-(field0D8) + 180),
+        SetPolarVelocity(static_cast<float>(-(field0D8) + 180),
                        static_cast<float>(field0DA));
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
@@ -1486,7 +1486,7 @@ void AliceObject::Advance() {
             static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
-        MotionAt40FB70(static_cast<float>(-(field0D8)),
+        SetPolarVelocity(static_cast<float>(-(field0D8)),
                        static_cast<float>(field0DA));
         x = static_cast<int>(
             (owner->fieldF0C) + (facing)*(velocityX));
@@ -1609,7 +1609,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RandomAt455580(0,60));
+            (owner->field318) = static_cast<float>(RecordedRange(0,60));
             owner->SpawnBattleEffect(0x323,
                    static_cast<float>((facing) * 10) + (x),
                    y, reinterpret_cast<unsigned char&>(facing), 1);
@@ -1642,7 +1642,7 @@ void AliceObject::Advance() {
             color[1] = 0xFF;
             color[2] = 0xFF;
             color[3] = 0xFF;
-            MotionRawPairAt40FB70(reinterpret_cast<int&>(field0CC), reinterpret_cast<int&>(field0C8));
+            SetPolarVelocity(field0CC,field0C8);
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
@@ -1683,7 +1683,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RandomAt455580(0,15) - 60);
+            (owner->field318) = static_cast<float>(RecordedRange(0,15) - 60);
             owner->SpawnBattleEffect(0x324,
                    static_cast<float>((facing) * 10) + (x),
                    y, reinterpret_cast<unsigned char&>(facing), 1);
@@ -1747,7 +1747,7 @@ void AliceObject::Advance() {
         if ((animationStage) == 3 && (animationFrame) == 0) {
             if ((owner->action) == 0x198) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
+                (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
                 owner->SpawnBattleEffect(0x322,
                     static_cast<float>((facing)*10) + (x),
                     y, reinterpret_cast<unsigned char&>(facing),1);
@@ -1755,7 +1755,7 @@ void AliceObject::Advance() {
             }
             if ((owner->action) == 0x19A) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(RandomAt455580(0,10) + 30);
+                (owner->field318) = static_cast<float>(RecordedRange(0,10) + 30);
                 owner->SpawnBattleEffect(0x323,
                     static_cast<float>((facing)*10) + (x),
                     y, reinterpret_cast<unsigned char&>(facing),1);
@@ -1763,7 +1763,7 @@ void AliceObject::Advance() {
             }
             if ((owner->action) == 0x19C) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
+                (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
                 owner->SpawnBattleEffect(0x324,
                     static_cast<float>((facing)*10) + (x),
                     y, reinterpret_cast<unsigned char&>(facing),1);
@@ -1771,7 +1771,7 @@ void AliceObject::Advance() {
             }
             if ((owner->action) == 0x19D) {
                 (owner->field314) = 1000.0f;
-                (owner->field318) = static_cast<float>(-RandomAt455580(0,10) - 30);
+                (owner->field318) = static_cast<float>(-RecordedRange(0,10) - 30);
                 owner->SpawnBattleEffect(0x325,
                     static_cast<float>((facing)*10) + (x),
                     y, reinterpret_cast<unsigned char&>(facing),1);
@@ -2136,7 +2136,7 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        MotionAt40FB70(-(static_cast<float>(RandomAt455580(0,45))
+        SetPolarVelocity(-(static_cast<float>(RecordedRange(0,45))
              - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
     x += static_cast<float>(facing)*(velocityX);
@@ -2257,7 +2257,7 @@ void AliceObject::Advance() {
             }
         }
     }
-    MotionAt40FB70(static_cast<float>(field0DC),4.0f);
+    SetPolarVelocity(static_cast<float>(field0DC),4.0f);
     x += static_cast<float>(facing)*(velocityX);
     y = *(&y) - *(&velocityY);
     if (AdvanceNestedFrame()==(field070)) {
@@ -2287,7 +2287,7 @@ void AliceObject::Advance() {
         color[3]=0xFF;
         velocityX=(field0C8)*gMulAt006590B4;
         velocityY=(field0CC)*gMulAt006590B4;
-        field0D8=static_cast<short>(RandomAt455580(-480,960));
+        field0D8=static_cast<short>(RecordedRange(-480,960));
     }
     x += static_cast<float>(facing)*(velocityX);
     y = *(&y)+*(&velocityY);
@@ -2456,20 +2456,20 @@ void AliceObject::Advance() {
         color[3]=0xFF;
         velocityX=0.0f;
         velocityY=-1.0f;
-        field0D8=static_cast<short>(RandomAt455580(0,360)-180);
+        field0D8=static_cast<short>(RecordedRange(0,360)-180);
         field0DA=15;
     }
     if ((animationStage)==0) {
         --field0DA;
         if ((field0DA)<3) field0DA=3;
-        MotionAt40FB70(static_cast<float>(field0D8),
+        SetPolarVelocity(static_cast<float>(field0D8),
                        static_cast<float>(field0DA)*gSubAt00659090);
     }
     if ((animationStage)==1) {
         field0D8=static_cast<short>(AngleAt00483300(
             (owner->opponent->y) + *(&gCollisionAt00657888) - (y),
             *(&(owner->opponent->x))-*(&x)) / gAngleUnitAt00657828);
-        MotionAt40FB70(static_cast<float>(field0D8),20.0f);
+        SetPolarVelocity(static_cast<float>(field0D8),20.0f);
         if ((*(&x) - *(&(owner->opponent->x)) < gStageContactAt0065786C) &&
             (*(&x) - *(&(owner->opponent->x)) > gTouchMaxAt00659230) &&
             (*(&y) - *(&(owner->opponent->y)) < gParentYAt006590A8) &&
@@ -2479,7 +2479,7 @@ void AliceObject::Advance() {
                 ++(reinterpret_cast<unsigned char&>(owner->opponent->field366));
             else
                 (owner->opponent->score)+=20000;
-            ResetAt45B860(0x2E);
+            PlaySharedSound(0x2E);
             break;
         }
     }
@@ -2501,26 +2501,26 @@ void AliceObject::Advance() {
         color[3]=0xFF;
         velocityX=0.0f;
         velocityY=-1.0f;
-        field0D8=static_cast<short>(RandomAt455580(0,360)-180);
+        field0D8=static_cast<short>(RecordedRange(0,360)-180);
         field0DA=15;
     }
     if ((animationStage)==0) {
         --field0DA;
         if ((field0DA)<3) field0DA=3;
-        MotionAt40FB70(static_cast<float>(field0D8),
+        SetPolarVelocity(static_cast<float>(field0D8),
                        static_cast<float>(field0DA)*gSubAt00659090);
     }
     if ((animationStage)==1) {
         field0D8=static_cast<short>(AngleAt00483300(
             (owner->opponent->y) + *(&gCollisionAt00657888) - (y),
             *(&(owner->opponent->x))-*(&x)) / gAngleUnitAt00657828);
-        MotionAt40FB70(static_cast<float>(field0D8),20.0f);
+        SetPolarVelocity(static_cast<float>(field0D8),20.0f);
         if ((*(&x) - *(&(owner->opponent->x)) < gStageContactAt0065786C) &&
             (*(&x) - *(&(owner->opponent->x)) > gTouchMaxAt00659230) &&
             (*(&y) - *(&(owner->opponent->y)) < gParentYAt006590A8) &&
             (*(&y) - *(&(owner->opponent->y)) > gVerticalTouchMaxAt00658268)) {
             ++(reinterpret_cast<short&>(owner->fieldEFA));
-            ResetAt45B860(0x2E);
+            PlaySharedSound(0x2E);
             ClearFrameInfo();
             if ((owner->opponent->spiritCooldown)>0) {
                 if ((owner->opponent->spiritCooldown)>5)

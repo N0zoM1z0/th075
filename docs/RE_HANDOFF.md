@@ -125,6 +125,10 @@ Done so far:
   accesses the scene's named texture, record and cursor fields. Ten
   affected exact units, including the separate music-room renderer,
   cold-replayed successfully.
+- Alice giant `Advance` also now calls the real Actor polar-velocity
+  helper 19 times (three recovered raw-bit float arguments) plus 15
+  recorded-random-range and two shared-sound calls. Full COFF shape
+  and 682 relocations unchanged; 24/24 affected exact units replayed.
 - Alice object giant 004EBDA0 (33,293 native CODE bytes) now uses
   true Actor / CharacterObject methods in 274 native calls for frame
   advance, reset, transition and clear. Full 33,731-byte COFF body and

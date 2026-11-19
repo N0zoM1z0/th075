@@ -43,9 +43,9 @@ public:
     // Call-shape declarations from the giant research source; actual
     // implementations use the shared Actor and object helper addresses.
     void ResetAt4F4170();
-    void ResetAt45B860(int kind);
-    void MotionAt40FB70(float,float); void MotionRawAt40FB70(int,float); void MotionRawPairAt40FB70(int,int);
-    int RandomAt455580(int,int);
+    void PlaySharedSound(short sound);
+
+    int RecordedRange(int lower, int upper);
 };
 class PatchouliObject : public CharacterObject {
 public:

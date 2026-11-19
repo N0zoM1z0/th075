@@ -225,6 +225,15 @@ nonexact (914 GPR-role differences and six widths); all 24 affected
 exact units cold-replayed. Other parents retain their historical names.
 
 
+Alice object also recovers the actual `0040FB70` polar-velocity ABI
+and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
+three previously encoded as raw `int` float-bit transports), 15
+`AliceObject::RecordedRange`, and two `AliceObject::PlaySharedSound`
+call relocations. The complete 33,731-byte COFF and all 682 relocation
+positions/types were preserved with zero nonrelocation differences.
+The original 33,293-byte native frontier remains NONEXACT (133 GPR
+mismatches, zero width mismatches); 24 impacted exact units cold replayed.
+
 Alice object `004EBDA0` now also dispatches through truthful inherited
 Actor/CharacterObject C++ calls rather than speculative `AliceObject` helper
 names: 93 `ClearFrameInfo`, 66 `ResetSecondaryCounter`, 56
