@@ -56,7 +56,7 @@ case 0x2EF: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -72,7 +72,7 @@ case 0x2EF: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -88,7 +88,7 @@ case 0x2EF: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -104,7 +104,7 @@ case 0x2EF: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -120,7 +120,7 @@ case 0x2EF: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -178,7 +178,7 @@ case 0x2F0: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -194,7 +194,7 @@ case 0x2F0: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -210,7 +210,7 @@ case 0x2F0: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -226,7 +226,7 @@ case 0x2F0: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
@@ -242,7 +242,7 @@ case 0x2F0: {
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
-                reinterpret_cast<const float&>(velocityX))*
+                velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
