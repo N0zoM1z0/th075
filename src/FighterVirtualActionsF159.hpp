@@ -13,10 +13,6 @@
 #include "AliceFighter.hpp"
 #include "Fighter.hpp"
 
-class RoundResetInputCountsF159 {
-public:
-    void ClearHeldCounts();
-};
 class RoundResetEffectsF159 {
 public:
     void DeleteFourLists();

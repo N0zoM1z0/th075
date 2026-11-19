@@ -86,9 +86,9 @@ void Fighter::ClearAuxiliaryWords()
     reinterpret_cast<unsigned int&>(bufferedD) = 0;
 }
 
-void RoundResetInputCountsF159::ClearHeldCounts()
+void InputBindingsF171::ClearHeldCounts()
 {
-    memset(reinterpret_cast<unsigned char*>(this) + 0x2C, 0, 0x1C);
+    memset(&state, 0, sizeof(state));
 }
 
 void Fighter::ResetRound()
@@ -164,7 +164,7 @@ void Fighter::ResetRound()
     fadeAlpha = 0;
     F992_OUTCOME(this).outcomeAt3CE.unsignedAt3CE = 0;
     F992_OUTCOME(this).continuationAt3CF = 1;
-    reinterpret_cast<RoundResetInputCountsF159*>(reinterpret_cast<unsigned char*>(this) + 0x494)->ClearHeldCounts();
+    inputBindings.ClearHeldCounts();
     reinterpret_cast<RoundResetEffectsF159*&>(field2EC)->DeleteFourLists();
     reinterpret_cast<unsigned char&>(field366) = 2;
     reinterpret_cast<unsigned char&>(field39D) = 2;

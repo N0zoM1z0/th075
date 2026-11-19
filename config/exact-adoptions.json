@@ -13886,12 +13886,12 @@
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void RoundResetInputCountsF159::ClearHeldCounts()",
+        "signature": "void InputBindingsF171::ClearHeldCounts()",
         "is_thunk": "false",
         "source_file": "src/FighterVirtualActionsF159.cpp",
         "evidence": "R015; F159; scripts/repo-python scripts/replay-exact-units.py --unit input-clear-held-counts-004071a0",
         "owner": "authored",
-        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F159: complete30-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation RoundResetInputCountsF159::ClearHeldCounts. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F159: complete30-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 field. The source member is InputBindingsF171::ClearHeldCounts on Fighter::inputBindings at +0x494; it clears the declared 28-byte InputState state member at +0x2C through memset(&state,0,sizeof(state)). Fighter::ResetRound calls the typed embedded member and its complete 1,151-byte body also cold-replays exact. The provisional proposed role InputMapping::ClearHeldCounts and original external name remain unproven. InputBindingsF171's member offset, 28-byte state and 0x48-byte block are compile-time checked. No complete Fighter ABI beyond the already declared layout, padding, assembly, byte grafts, masks or cropped bodies are claimed."
       },
       "origin": {
         "address": "0x004071A0",
@@ -168054,7 +168054,7 @@
         {
           "offset": 877,
           "type": "REL32",
-          "symbol": "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ",
+          "symbol": "?ClearHeldCounts@InputBindingsF171@@QAEXXZ",
           "target": 4223392
         },
         {
@@ -168104,7 +168104,7 @@
       "functions": [
         "InputMapping::ClearHeldCounts"
       ],
-      "symbol": "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ",
+      "symbol": "?ClearHeldCounts@InputBindingsF171@@QAEXXZ",
       "target_address": 4223392,
       "size": 30,
       "relocations": [

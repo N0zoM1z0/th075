@@ -25076,7 +25076,7 @@ target = 0x00453A10
 [[units.fighter-reset-round-00457010.relocations]]
 offset = 877
 type = "REL32"
-symbol = "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ"
+symbol = "?ClearHeldCounts@InputBindingsF171@@QAEXXZ"
 target = 0x004071A0
 [[units.fighter-reset-round-00457010.relocations]]
 offset = 891
@@ -25099,7 +25099,7 @@ source = "src/FighterVirtualActionsF159.cpp"
 object = "build/matching/FighterVirtualActionsF159.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["InputMapping::ClearHeldCounts"]
-symbol = "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ"
+symbol = "?ClearHeldCounts@InputBindingsF171@@QAEXXZ"
 target_address = 0x004071A0
 size = 30
 [[units.input-clear-held-counts-004071a0.relocations]]

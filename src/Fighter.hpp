@@ -28,6 +28,7 @@ struct InputState { unsigned long words[7]; };
 class InputBindingsF171 {
 public:
     void SetBindings(const void* source);
+    void ClearHeldCounts();
 
     unsigned char unknown00[0x04];
     signed char device;           // +0x04 joystick index, -1 when absent
@@ -37,6 +38,11 @@ public:
 
 // Fighter object shared by both players. Offsets up to 0xF0F are common to
 // every character; character classes declare their own members from 0xF10.
+typedef char InputBindingsF171LayoutCheck[(
+    offsetof(InputBindingsF171, state) == 0x2C &&
+    sizeof(InputState) == 0x1C &&
+    sizeof(InputBindingsF171) == 0x48) ? 1 : -1];
+
 class Fighter : public Actor {
 public:
     // Helpers every character calls at one shared address.
