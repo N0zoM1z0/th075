@@ -4,7 +4,7 @@ extern const char g_SakuyaNameAt0065949C[];
 extern const char g_SakuyaTagAt006594A4[];
 SakuyaFighter::SakuyaFighter()
 {
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     field713=1;
     strcpy(name,g_SakuyaNameAt0065949C);

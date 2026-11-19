@@ -4,7 +4,7 @@ extern const char g_AliceNameAt006595F8[];
 extern const char g_AliceTagAt00659600[];
 AliceFighter::AliceFighter()
 {
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     field713=1;
     strcpy(name,g_AliceNameAt006595F8);

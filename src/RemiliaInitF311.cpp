@@ -4,7 +4,7 @@ extern const char g_RemiliaNameAt00659A34[];
 extern const char g_RemiliaTagAt00659A3C[];
 RemiliaFighter::RemiliaFighter()
 {
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     reinterpret_cast<unsigned short&>(field6FA)=0;
     reinterpret_cast<unsigned short&>(field6FC)=0;

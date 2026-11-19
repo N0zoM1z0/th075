@@ -4,7 +4,7 @@ extern const char g_MarisaNameAt006592A8[];
 extern const char g_MarisaTagAt006592B0[];
 MarisaFighter::MarisaFighter()
 {
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     field713=1;
     strcpy(name,g_MarisaNameAt006592A8);

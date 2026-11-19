@@ -4,7 +4,7 @@ extern const char g_PatchouliNameAt00659754[];
 extern const char g_PatchouliTagAt00659760[];
 PatchouliFighter::PatchouliFighter()
 {
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     field713=1;
     strcpy(name,g_PatchouliNameAt00659754);

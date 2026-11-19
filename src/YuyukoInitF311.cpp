@@ -4,7 +4,7 @@ extern const char g_YuyukoNameAt00659B74[];
 extern const char g_YuyukoTagAt00659B7C[];
 YuyukoFighter::YuyukoFighter()
 {
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     fieldEFA=0;
     reinterpret_cast<unsigned short&>(fieldF10)=0;

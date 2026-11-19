@@ -11,7 +11,7 @@ extern const char g_YoumuTagAt006598C8[];
 YoumuFighter::YoumuFighter()
 {
     reinterpret_cast<YoumuSubcomponentF223*>(reinterpret_cast<unsigned char*>(this)+0xfec)->Initialize();
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     field713=1;
     strcpy(name,g_YoumuNameAt006598C0);
@@ -19,7 +19,7 @@ YoumuFighter::YoumuFighter()
     field478=0x2ef;
     reinterpret_cast<unsigned char&>(field532)=10;
     field06C=-10.0f;
-    reinterpret_cast<unsigned short&>(fieldF0C)=0;
+    fieldF0C=0;
     field705[0]=4;
     field705[1]=4;
     field705[2]=4;

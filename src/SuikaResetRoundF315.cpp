@@ -4,11 +4,11 @@ extern unsigned char g_SuikaGlobalMarkerAt0066C23A;
 extern unsigned char g_SuikaGlobalModeAt0066C239;
 void SuikaFighter::ResetRound()
 {
-    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    sequenceTimer=0;
     fieldEFE=0;
     scriptCounterF00=0;
     scriptCounterF02=0;
-    reinterpret_cast<unsigned short&>(fieldF04)=0;
+    fieldF04=0;
     fieldF06=0;
     fieldEFA=0;
     fieldF06=0;
