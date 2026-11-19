@@ -125,7 +125,7 @@
       "flags": 1615859744,
       "definitions": [
         {
-          "symbol": "$L7106",
+          "symbol": "$L5783",
           "offset": 0,
           "type": 32,
           "storage": 3
@@ -155,7 +155,7 @@
         {
           "offset": 23,
           "type": "DIR32",
-          "symbol": "$T7110",
+          "symbol": "$T5787",
           "addend": 0,
           "target": 6724700
         },
@@ -170,7 +170,7 @@
       "target_sha256": "c697779be14b6c03bb55488a1c4a7c5cdd94b434193594f2a9e259b6d8f1b722"
     },
     {
-      "symbol": "$T7110",
+      "symbol": "$T5787",
       "symbol_offset": 8,
       "address": 6724692,
       "size": 36,
@@ -179,13 +179,13 @@
       "flags": 1076891712,
       "definitions": [
         {
-          "symbol": "$T7110",
+          "symbol": "$T5787",
           "offset": 8,
           "type": 0,
           "storage": 3
         },
         {
-          "symbol": "$T7113",
+          "symbol": "$T5790",
           "offset": 0,
           "type": 0,
           "storage": 3
@@ -195,14 +195,14 @@
         {
           "offset": 4,
           "type": "DIR32",
-          "symbol": "$L7106",
+          "symbol": "$L5783",
           "addend": 0,
           "target": 6644640
         },
         {
           "offset": 16,
           "type": "DIR32",
-          "symbol": "$T7113",
+          "symbol": "$T5790",
           "addend": 0,
           "target": 6724692
         }
@@ -277,7 +277,7 @@
         {
           "offset": 39,
           "type": "REL32",
-          "symbol": "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ",
+          "symbol": "?DeleteFourLists@EffectManagerLifetimeF161@@QAEXXZ",
           "addend": 0,
           "target": 4569648
         },
@@ -323,7 +323,7 @@
       "flags": 1615859744,
       "definitions": [
         {
-          "symbol": "$L7121",
+          "symbol": "$L5798",
           "offset": 0,
           "type": 32,
           "storage": 3
@@ -353,7 +353,7 @@
         {
           "offset": 23,
           "type": "DIR32",
-          "symbol": "$T7123",
+          "symbol": "$T5800",
           "addend": 0,
           "target": 6724736
         },
@@ -368,7 +368,7 @@
       "target_sha256": "c77a25dc1f124d58100d16e9f0129ed282b3de62140fa8adbe0faab49057e3a1"
     },
     {
-      "symbol": "$T7123",
+      "symbol": "$T5800",
       "symbol_offset": 8,
       "address": 6724728,
       "size": 36,
@@ -377,13 +377,13 @@
       "flags": 1076891712,
       "definitions": [
         {
-          "symbol": "$T7123",
+          "symbol": "$T5800",
           "offset": 8,
           "type": 0,
           "storage": 3
         },
         {
-          "symbol": "$T7125",
+          "symbol": "$T5802",
           "offset": 0,
           "type": 0,
           "storage": 3
@@ -393,14 +393,14 @@
         {
           "offset": 4,
           "type": "DIR32",
-          "symbol": "$L7121",
+          "symbol": "$L5798",
           "addend": 0,
           "target": 6644672
         },
         {
           "offset": 16,
           "type": "DIR32",
-          "symbol": "$T7125",
+          "symbol": "$T5802",
           "addend": 0,
           "target": 6724728
         }

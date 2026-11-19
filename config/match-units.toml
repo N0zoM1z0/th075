@@ -25081,7 +25081,7 @@ target = 0x004071A0
 [[units.fighter-reset-round-00457010.relocations]]
 offset = 891
 type = "REL32"
-symbol = "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ"
+symbol = "?DeleteFourLists@EffectManagerLifetimeF161@@QAEXXZ"
 target = 0x0045BA30
 
 [units.fighter-clear-auxiliary-words-00453a10]
@@ -25217,7 +25217,7 @@ source = "src/FighterEffectCleanup45BA30.cpp"
 object = "build/matching/FighterEffectCleanup45BA30.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["BattleEffectManager::DeleteFourListsAt0045BA30"]
-symbol = "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ"
+symbol = "?DeleteFourLists@EffectManagerLifetimeF161@@QAEXXZ"
 target_address = 0x0045BA30
 size = 221
 [[units.effect-delete-four-deques-0045ba30.relocations]]
@@ -25346,7 +25346,7 @@ target = 0x00000000
 [[units.effect-destroy-owned-effects-0045b9b0.relocations]]
 offset = 39
 type = "REL32"
-symbol = "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ"
+symbol = "?DeleteFourLists@EffectManagerLifetimeF161@@QAEXXZ"
 target = 0x0045BA30
 [[units.effect-destroy-owned-effects-0045b9b0.relocations]]
 offset = 51

@@ -1,6 +1,8 @@
 #ifndef TH075_FIGHTER_HPP
 #define TH075_FIGHTER_HPP
 #include "Actor.hpp"
+
+class EffectManagerLifetimeF161;
 class TimelineDrawing438D00;
 
 // Script reader embedded in every fighter at +0x714. Its methods are the
@@ -132,7 +134,7 @@ public:
     float field2E0;                     // +0x2E0
     float field2E4;                     // +0x2E4
     Fighter* opponent;                  // +0x2E8 the other player
-    void* field2EC;                     // +0x2EC
+    EffectManagerLifetimeF161* field2EC; // +0x2EC owned effect-manager object
     unsigned char field2F0;             // +0x2F0
     unsigned char field2F1;             // +0x2F1
     unsigned char field2F2;             // +0x2F2

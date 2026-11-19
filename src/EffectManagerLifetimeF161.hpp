@@ -5,13 +5,14 @@
 
 class Fighter;
 
-// Observed lifetime prefix only: bound fighter followed by four complete
-// vendor containers. Never construct or embed this view, infer a complete
-// game-owner size, or use it to allocate original objects.
+// Observed 0x54-byte allocation: one bound Fighter pointer followed by four
+// complete 20-byte vendor deque<void*> members. This is a pointer-only view of
+// target-owned storage; never construct or embed it in reconstructed objects.
 class EffectManagerLifetimeF161 {
 public:
     ~EffectManagerLifetimeF161();
     void BindFighter(Fighter* fighter);
+    void DeleteFourLists();
 
 private:
     EffectManagerLifetimeF161();
@@ -21,5 +22,8 @@ private:
     Fighter* fighter_;
     std::deque<void*> entries_[4];
 };
+
+typedef char EffectManagerLifetimeF161SizeCheck[
+    sizeof(EffectManagerLifetimeF161) == 0x54 ? 1 : -1];
 
 #endif

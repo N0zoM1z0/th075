@@ -12,8 +12,3 @@
 #include "ReimuFighter.hpp"
 #include "AliceFighter.hpp"
 #include "Fighter.hpp"
-
-class RoundResetEffectsF159 {
-public:
-    void DeleteFourLists();
-};

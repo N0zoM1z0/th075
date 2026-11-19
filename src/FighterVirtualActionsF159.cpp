@@ -2,6 +2,7 @@
 #include <string.h>
 #include "FighterAnimationReset453D80.hpp"
 #include "FighterVirtualActionsF159.hpp"
+#include "EffectManagerLifetimeF161.hpp"
 
 // The reviewed derived policies share these used no-argument call contracts.
 #define DEFINE_FORWARD(owner) \
@@ -165,7 +166,7 @@ void Fighter::ResetRound()
     F992_OUTCOME(this).outcomeAt3CE.unsignedAt3CE = 0;
     F992_OUTCOME(this).continuationAt3CF = 1;
     inputBindings.ClearHeldCounts();
-    reinterpret_cast<RoundResetEffectsF159*&>(field2EC)->DeleteFourLists();
+    field2EC->DeleteFourLists();
     field366 = 2;
     field39D = 2;
     field3A8 = 0;

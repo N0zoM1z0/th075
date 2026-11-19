@@ -1,5 +1,4 @@
 #include "EffectManagerLifetimeF161.hpp"
-#include "FighterVirtualActionsF159.hpp"
 
 EffectManagerLifetimeF161::EffectManagerLifetimeF161()
 {
@@ -15,5 +14,5 @@ void EffectManagerLifetimeF161::BindFighter(Fighter* fighter)
 
 EffectManagerLifetimeF161::~EffectManagerLifetimeF161()
 {
-    reinterpret_cast<RoundResetEffectsF159*>(this)->DeleteFourLists();
+    DeleteFourLists();
 }
