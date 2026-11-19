@@ -28,7 +28,7 @@ case 0x1F4: {
         SpawnDirectedAt453A70(0x338,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
     if ((animationStage)==4 && (animationFrame)==0) {
-        PrepareActionAt453D40(1);
+        PlaySound(1);
         velocityX=8.0f;
         velocityY=9.5f;
         field05C=0.65f;

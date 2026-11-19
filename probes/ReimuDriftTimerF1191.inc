@@ -25,7 +25,7 @@ case 0x2E5: {
     if ((animationStage)==8 && (animationFrame)==0) {
         SpawnFloatXAt453A70(0x38E,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,
             reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
-        PlaySoundAt453D40(7);
+        PlaySound(7);
         aiCardTimer=180;
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {

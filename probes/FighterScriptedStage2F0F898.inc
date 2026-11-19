@@ -33,7 +33,7 @@ case 0x2F0: {
         velocityX=2.0f;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        PrepareActionAt453D40(0xD);
+        PlaySound(0xD);
         SpawnWithFloatAt453A70(0x38D,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
@@ -41,7 +41,7 @@ case 0x2F0: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==7 && (animationFrame)==0) {
-        PrepareActionAt453D40(0xA);
+        PlaySound(0xA);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;

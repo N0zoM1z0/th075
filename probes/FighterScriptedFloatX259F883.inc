@@ -20,7 +20,7 @@ case 0x259: {
             float((facing)*80)+(x),
             reinterpret_cast<int&>(y),(facing),1);
         UpdateGaugeTimer(0x1F4);
-        PrepareActionAt453D40(5);
+        PlaySound(5);
     }
     return;
 }

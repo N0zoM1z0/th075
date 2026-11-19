@@ -29,7 +29,7 @@ case 0x2BE: {
     }
     if ((animationStage)==10 && (animationFrame)==0) {
         UpdateGaugeTimer(0x1F4);
-        PrepareActionAt453D40(6);
+        PlaySound(6);
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         InitTrajectoryAt453E60(5.0f);

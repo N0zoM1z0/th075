@@ -55,7 +55,7 @@ case 0x2F9: {
             SetAuxActionAt40FB40(3);
             break;
         }
-        PrepareActionAt453D40(9);
+        PlaySound(9);
         ApplyAt453E80(75);
         PrepareActionAt453D60(23);
         SpawnSevenFloatAt453B50(0x330,640.0f,320.0f,1,2,0,1);

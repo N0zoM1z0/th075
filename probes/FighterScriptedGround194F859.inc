@@ -22,7 +22,7 @@ case 0x194: {
         SpawnDirectedAt453A70(0x320,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
            (facing),1);
         UpdateGaugeTimer(0xFA);
-        PrepareActionAt453D40(0);
+        PlaySound(0);
     }
     if ((animationStage)==6 && (animationFrame)==0)
         field07C=1;

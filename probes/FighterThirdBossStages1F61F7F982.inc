@@ -57,7 +57,7 @@ case 0x1F6: {
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        PrepareActionAt453D40(3);
+        PlaySound(3);
     }
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         SetAuxActionAt40FB40(2);
@@ -119,7 +119,7 @@ case 0x1F7: {
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        PrepareActionAt453D40(3);
+        PlaySound(3);
     }
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
         SetAuxActionAt40FB40(2);

@@ -19,7 +19,7 @@ case 0x19A: {
             (*(&y))+g_F701_VolleyYAt00658268,
             (facing),1);
         UpdateGaugeTimer(0xC8);
-        PrepareActionAt453D40(3);
+        PlaySound(3);
         velocityX=-5.0f;
         velocityY=12.0f;
         field05C=0.65f;

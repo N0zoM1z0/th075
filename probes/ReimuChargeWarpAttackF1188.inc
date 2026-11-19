@@ -20,7 +20,7 @@ case R1188_ACTION: {
     if ((animationStage)==R1188_RETURN_STAGE && (animationFrame)==0) {
         x=opponent->x-float(facing*180);
         y=150.0f; velocityX=6.0f; velocityY=8.0f;
-        PlaySoundAt453D40(2);
+        PlaySound(2);
     }
     if ((animationStage)==R1188_LAND_STAGE-1 && (animationFrame)==0) {
         velocityX=5.0f; velocityY=-16.0f;

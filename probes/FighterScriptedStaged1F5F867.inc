@@ -33,12 +33,12 @@ case 0x1F5: {
     if ((animationStage)==2 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x33B,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(1);
+        PlaySound(1);
     }
     if ((animationStage)==0xD && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x338,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(1);
+        PlaySound(1);
     }
     if ((animationStage)==0xE && (animationFrame)==0) {
         field080=1;

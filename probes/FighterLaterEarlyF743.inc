@@ -14,7 +14,7 @@
             if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             if ((animationStage)==5 && (animationFrame)==0) {
-                PrepareActionAt453D40(3);
+                PlaySound(3);
                 field314=0.0f;
                 SpawnFloatXYAt453A70(0x335,
                     float(facing*40)+(x),
@@ -47,7 +47,7 @@
                 field05C=0.8f;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
-                PrepareActionAt453D40(3);
+                PlaySound(3);
                 field314=-20.0f;
                 SpawnFloatXYAt453A70(0x335,
                     float(facing*27)+(x),
@@ -67,7 +67,7 @@
                 y=0.0f;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(3);
+                PlaySound(3);
                 velocityX=-8.0f;
                 velocityY=10.0f;
                 field05C=0.65f;
@@ -92,7 +92,7 @@
                 y=0.0f;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(3);
+                PlaySound(3);
                 velocityX=-8.0f;
                 velocityY=10.0f;
                 field05C=0.65f;

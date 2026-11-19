@@ -24,7 +24,7 @@
                 }
             }
             if ((animationStage)==6 && (animationFrame)==0) {
-                PrepareActionAt453D40(0x12);
+                PlaySound(0x12);
                 field314=float(RandomBoundaryAt455580(0,40)-20);
                 SpawnFloatXYAt453A70(0x391,
                     float(facing*36)+(x),
@@ -41,7 +41,7 @@
                 aiCardTimer=RandomBoundaryAt455580(60,100)
                            -static_cast<int>(g_CloudOpponentAt006714D0)*20;
             }
-            if ((animationStage)==2 && (animationFrame)==0) PrepareActionAt453D40(0x15);
+            if ((animationStage)==2 && (animationFrame)==0) PlaySound(0x15);
             if ((animationStage)==3 && (animationFrame)==0) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     ++reinterpret_cast<signed short&>(scriptCounterF00);

@@ -14,7 +14,7 @@ case 0x194: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-8);
         field318=7.0f;
@@ -56,7 +56,7 @@ case 0x195: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-45);
         field318=7.0f;

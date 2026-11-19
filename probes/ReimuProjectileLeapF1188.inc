@@ -16,7 +16,7 @@ case R1188_ACTION: {
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x32D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
-        PlaySoundAt453D40(3);
+        PlaySound(3);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=R1188_LEAP_X; velocityY=R1188_LEAP_Y; field05C=0.9f;

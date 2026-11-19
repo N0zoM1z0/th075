@@ -111,7 +111,7 @@ case 0x2E6: {
             RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==6 && (animationFrame)==0) {
-        PrepareActionAt453D40(2);
+        PlaySound(2);
         SpawnSevenFloatAt453B50(0x338,
             x -
                 float((facing)*7),
@@ -155,7 +155,7 @@ case 0x2E6: {
         velocityY=0.0f;
     }
     if ((animationStage)==11 && (animationFrame)==0)
-        PrepareActionAt453D40(5);
+        PlaySound(5);
     if ((animationStage)==17 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
         SetAuxActionAt40FB40(15);
         ++reinterpret_cast<signed short&>(scriptCounterF00);

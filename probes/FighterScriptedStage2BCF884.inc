@@ -25,7 +25,7 @@ case 0x2BC: {
     if ((reinterpret_cast<signed short&>(scriptCounterF00))==0 && field07C!=0) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         if (field07C==1) {
-            PrepareActionAt453D40(0xD);
+            PlaySound(0xD);
             SpawnExtraAt453B50(0x346,reinterpret_cast<int&>(x),
                 (*(&y))+g_ContactProjectionAt00657888,
                 (facing),1,0,1);
@@ -44,7 +44,7 @@ case 0x2BC: {
             (facing),1);
     }
     if ((animationStage)==7 && (animationFrame)==0) {
-        PrepareActionAt453D40(0xA);
+        PlaySound(0xA);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;

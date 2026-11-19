@@ -35,7 +35,7 @@ case 0x2F8: {
         velocityX=2.0f;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        PrepareActionAt453D40(0xD);
+        PlaySound(0xD);
         SpawnDirectedAt453A70(0x393,reinterpret_cast<int&>(x),0,
             (facing),1);
     }
@@ -49,7 +49,7 @@ case 0x2F8: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==7 && (animationFrame)==0) {
-        PrepareActionAt453D40(0xA);
+        PlaySound(0xA);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -77,7 +77,7 @@ case 0x2F8: {
         && (fieldF04)<static_cast<int>(g_CloudOpponentAt006714D0)+1) {
         ++fieldF04;
         SetAuxActionAt40FB40(7);
-        PrepareActionAt453D40(0xA);
+        PlaySound(0xA);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;

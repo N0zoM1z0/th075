@@ -19,7 +19,7 @@ case R1188_ACTION: {
     if ((animationStage)==R1188_RETURN_STAGE && (animationFrame)==0) {
         x=float(facing*100)+(x);
         y=50.0f; velocityX=12.0f; velocityY=6.0f;
-        PlaySoundAt453D40(2);
+        PlaySound(2);
     }
     if ((animationStage)==R1188_LAND_STAGE+2 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         SetAuxActionAt40FB40(R1188_LAND_STAGE);

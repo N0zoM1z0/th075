@@ -9,7 +9,7 @@
                 field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
-                PrepareActionAt453D40(11);
+                PlaySound(11);
                 velocityY=10.0f;
                 velocityX=30.0f;
                 field05C=0.45f;
@@ -84,7 +84,7 @@
             if ((animationStage)==7 && (animationFrame)==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
-                PrepareActionAt453D40(11);
+                PlaySound(11);
                 velocityY=9.0f;
                 velocityX=20.0f;
                 field05C=0.8f;

@@ -11,7 +11,7 @@ case 0x196: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0) {
-        PrepareActionAt453D40(3);
+        PlaySound(3);
         SpawnFloatXYAt453A70(0x353,
             float((facing)*100)+(x),
             (*(&y))+g_F860ShotYAt006581DC,

@@ -16,7 +16,7 @@ case 0x25B: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     if ((animationStage)>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0xFA);
         field314=0.0f;
         field318=7.0f;

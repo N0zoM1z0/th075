@@ -136,7 +136,7 @@ case 0x192: {
         field314=40.0f; field318=10.0f;
         SpawnFloatXYAt453A70(0x338,(*(&x))+g_ThresholdAt0065782C,
             (*(&y))+g_ThresholdAt0065782C,reinterpret_cast<char&>(facing),0);
-        PlaySoundAt453D40(4);
+        PlaySound(4);
         UpdateGaugeTimer(250);
     }
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {

@@ -37,7 +37,7 @@
                 SpawnDirectedAt453A70(0x33B,reinterpret_cast<int&>(x),0,
                     facing,1);
                 UpdateGaugeTimer(500);
-                PrepareActionAt453D40(8);
+                PlaySound(8);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<7) {
                 SetAuxActionAt40FB40(5);

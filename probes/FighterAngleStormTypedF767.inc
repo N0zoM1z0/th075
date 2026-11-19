@@ -27,7 +27,7 @@ case 0x2F9: {
                 }
             }
             if ((animationStage)==11 && (animationFrame)==0) {
-                PrepareActionAt453D40(0x12);
+                PlaySound(0x12);
                 field314=float((reinterpret_cast<signed short&>(scriptCounterF02))+(reinterpret_cast<signed short&>(scriptCounterF00))*10);
                 SpawnFloatXYAt453A70(0x391,
                     float(facing*30)+(x),
@@ -40,7 +40,7 @@ case 0x2F9: {
                         facing,1);
             }
             if ((animationStage)==14 && (animationFrame)==0) {
-                PrepareActionAt453D40(0x12);
+                PlaySound(0x12);
                 field314=float((reinterpret_cast<signed short&>(scriptCounterF02))-(reinterpret_cast<signed short&>(scriptCounterF00))*10);
                 SpawnFloatXYAt453A70(0x391,
                     float(facing*30)+(x),

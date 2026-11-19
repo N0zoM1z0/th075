@@ -14,7 +14,7 @@ case 0x1A3: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         if (field39D==2) {
             for (int shot=0;shot<5;++shot) {
                 field314=0.0f;
@@ -45,7 +45,7 @@ case 0x1A4: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         if (field39D==2) {
             for (int shot=0;shot<5;++shot) {
                 field314=-30.0f;

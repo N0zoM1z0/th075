@@ -24,7 +24,7 @@ case 0x261: {
         velocityX=-3.0f;
         velocityY=9.0f;
         field05C=0.7f;
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
@@ -52,7 +52,7 @@ case 0x262: {
         velocityX=-3.0f;
         velocityY=9.0f;
         field05C=0.7f;
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);

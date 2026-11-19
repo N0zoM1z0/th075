@@ -15,7 +15,7 @@ case R1189_ACTION: {
     if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
 #include "ReimuSpecialVolleyF1189.inc"
         UpdateGaugeTimer(R1189_ANIMATION);
-        PlaySoundAt453D40(5);
+        PlaySound(5);
     }
 #if !R1189_AIR
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);

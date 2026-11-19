@@ -29,7 +29,7 @@ case 0x1F6: {
             reinterpret_cast<int&>(y),(facing),1);
         SpawnDirectedAt453A70(0x336,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(2);
+        PlaySound(2);
     }
     return;
 }

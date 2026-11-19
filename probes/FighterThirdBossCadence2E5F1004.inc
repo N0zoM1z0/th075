@@ -47,7 +47,7 @@ case 0x2E5: {
     if ((animationStage)==4 && (animationFrame)==0)
         reinterpret_cast<signed short&>(fieldF06)=10;
     if ((animationStage)==5 && (animationFrame)==0)
-        PrepareActionAt453D40(5);
+        PlaySound(5);
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF08))>0)
         SetAuxActionAt40FB40(9);
     if ((animationStage)==13 && (animationFrame)==0) {

@@ -15,7 +15,7 @@ case R1190_ACTION: {
         SpawnFloatXYAt453A70(R1190_EFFECT,(*(&x))+g_ContactProjectionAt00657888+
             (facing*128),
             (*(&y))+g_ReimuMeterShotYAt00659080,reinterpret_cast<char&>(facing),1);
-        PlaySoundAt453D40(R1190_SOUND);
+        PlaySound(R1190_SOUND);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<R1190_LIMIT) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);

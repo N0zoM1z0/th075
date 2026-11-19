@@ -16,7 +16,7 @@ case 0x19D: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if ((animationStage)>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+55);
         field318=15.0f;
@@ -42,7 +42,7 @@ case 0x19E: {
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
     if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x28);
         field314=float(0-(reinterpret_cast<signed short&>(scriptCounterF02))*4);
         field318=15.0f;
@@ -76,7 +76,7 @@ case 0x19F: {
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
     if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x28);
         field314=float(-45-(reinterpret_cast<signed short&>(scriptCounterF02))*4);
         field318=15.0f;

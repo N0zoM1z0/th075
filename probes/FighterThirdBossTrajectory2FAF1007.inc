@@ -35,7 +35,7 @@ case 0x2FA: {
         SpawnWithFloatAt453A70(0x38E,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
-        PrepareActionAt453D40(12);
+        PlaySound(12);
     }
     if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);

@@ -38,7 +38,7 @@
             if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(4);
+                PlaySound(4);
                 velocityX=8.0f;
                 velocityY=14.0f;
                 field05C=0.8f;
@@ -79,7 +79,7 @@
             if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(4);
+                PlaySound(4);
                 velocityX=18.0f;
                 velocityY=16.0f;
                 field05C=0.8f;

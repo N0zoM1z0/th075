@@ -16,7 +16,7 @@ case 0x25C: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0xFA);
         field314=-28.0f;
         field318=10.0f;

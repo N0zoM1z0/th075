@@ -22,7 +22,7 @@ case 0x199: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         field314=0.0f;
         field318=20.0f;
         SpawnFloatXYAt453A70(0x328,
@@ -65,7 +65,7 @@ case 0x19A: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         field314=-20.0f;
         field318=20.0f;
         SpawnFloatXYAt453A70(0x328,

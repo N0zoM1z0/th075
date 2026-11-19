@@ -712,7 +712,7 @@ void RemiliaFighter::Advance() {
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
-                PrepareActionAt453D40(9);
+                PlaySound(9);
                 SpawnAt453C80(0x73,
                     x-float(facing*20),
                     (*(&y))+g_BurstXAt00659238,
@@ -732,7 +732,7 @@ void RemiliaFighter::Advance() {
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
                 UpdateGaugeTimer(500);
-                PrepareActionAt453D40(10);
+                PlaySound(10);
             }
             break;
         }
@@ -779,7 +779,7 @@ void RemiliaFighter::Advance() {
             if (animationStage==7 && animationFrame==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
-                PrepareActionAt453D40(11);
+                PlaySound(11);
                 velocityY=9.0f;
                 velocityX=20.0f;
                 UpdateGaugeTimer(500);
@@ -840,7 +840,7 @@ void RemiliaFighter::Advance() {
                 SpawnDirectedAt453A70(0x340,reinterpret_cast<int&>(x),0,
                     facing,1);
                 UpdateGaugeTimer(500);
-                PrepareActionAt453D40(12);
+                PlaySound(12);
             }
             if (animationStage==8 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<12) {
                 SetAuxActionAt40FB40(5);
@@ -863,7 +863,7 @@ void RemiliaFighter::Advance() {
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
-                PrepareActionAt453D40(13);
+                PlaySound(13);
                 SpawnAt453C80(0x74,
                     x-float(facing*20),
                     (*(&y))+g_BurstXAt00659238,
@@ -883,7 +883,7 @@ void RemiliaFighter::Advance() {
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
-                PrepareActionAt453D40(14);
+                PlaySound(14);
             }
             break;
         }
@@ -937,7 +937,7 @@ void RemiliaFighter::Advance() {
                     (*(&y))+g_F724_ShotYAt00659488,
                     facing,1);
                 UpdateGaugeTimer(500);
-                PrepareActionAt453D40(15);
+                PlaySound(15);
                 velocityY=10.5f;
                 velocityX=25.0f;
                 field05C=0.8f;

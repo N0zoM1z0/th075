@@ -1,5 +1,5 @@
     if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-        PlaySoundAt453D40(R1190_CYCLE_SOUND);
+        PlaySound(R1190_CYCLE_SOUND);
         field314=float(reinterpret_cast<signed short&>(scriptCounterF00));
         if ((reinterpret_cast<signed short&>(scriptCounterF02))==0) {
             SpawnFloatXYAt453A70(R1190_EFFECT0,float(facing*18)+(x),

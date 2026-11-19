@@ -27,6 +27,11 @@ Done so far:
   its real scene and record/deque members. Both whole native functions
   preserve all relocations; the 10-unit affected-only replay (including
   music-room rendering and lifecycle) was 10/10 exact across 8 objects.
+- The shared 00453D40 sound caller is now `Fighter::PlaySound` in all
+  four full fighter `Advance` research parents: 199 source calls and
+  257 actual relocations renamed, with zero nonrelocation byte changes,
+  no relocation location/type changes and no size changes. The 132/132
+  affected-only exact cold replay passed; nonexact frontier debt remains.
 - All four full Reimu/Sakuya/Youmu/Remilia Fighter research parents now
   invoke the inherited `Fighter::ClearMotionFields` at 494 actual COFF
   call sites (410 source occurrences across 193 case/parent files).

@@ -20,7 +20,7 @@
                 ++fieldF04;
                 if ((reinterpret_cast<signed short&>(scriptCounterF02))>100-static_cast<int>(g_CloudOpponentAt006714D0)*20) {
                     reinterpret_cast<signed short&>(scriptCounterF02)=0;
-                    PrepareActionAt453D40(0x10);
+                    PlaySound(0x10);
                     SpawnWithFloatAt453A70(0x389,reinterpret_cast<int&>(x),
                         (*(&y))+g_CloudShotYAt006591E4,
                         facing,1);
@@ -44,7 +44,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=16.5f;
                 field05C=0.15f;
-                PrepareActionAt453D40(0x15);
+                PlaySound(0x15);
             }
             if ((animationStage)==5 && (animationFrame)==0)
                 SpawnWithFloatAt453A70(0x38B,reinterpret_cast<int&>(x),

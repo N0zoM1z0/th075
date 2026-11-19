@@ -16,7 +16,7 @@ case 0x258: {
             float((facing)*80)+(x),
             reinterpret_cast<int&>(y),(facing),1);
         UpdateGaugeTimer(0xFA);
-        PrepareActionAt453D40(5);
+        PlaySound(5);
     }
     return;
 }

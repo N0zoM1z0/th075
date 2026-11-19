@@ -16,12 +16,12 @@ case 0x2DC: {
         velocityY=0.0f;
         SpawnDirectedAt453A70(0x33B,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(1);
+        PlaySound(1);
     }
     if ((animationStage)==13 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x338,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(1);
+        PlaySound(1);
     }
     if ((velocityX)>g_ThresholdAt0065782C) {
         velocityX=(velocityX)-g_F893FloatFallAt00657478;

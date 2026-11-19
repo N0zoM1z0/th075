@@ -97,7 +97,7 @@ case 0x2DB: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0) {
-        PrepareActionAt453D40(2);
+        PlaySound(2);
         SpawnSevenFloatAt453B50(0x338,
             x -
                 float((facing)*7),

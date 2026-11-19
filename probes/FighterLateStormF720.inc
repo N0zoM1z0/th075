@@ -13,7 +13,7 @@
                 field080=1;
                 field07C=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=1;
-                PrepareActionAt453D40(11);
+                PlaySound(11);
                 velocityY=-10.0f;
                 velocityX=30.0f;
                 field05C=0.8f;

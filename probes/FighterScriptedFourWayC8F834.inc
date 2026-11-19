@@ -58,8 +58,8 @@ case 0xC8: {
             (facing),1);
     }
     if ((animationStage)==4 && (animationFrame)==0)
-        PrepareActionAt453D40(15);
+        PlaySound(15);
     if ((animationStage)==8 && (animationFrame)==0)
-        PrepareActionAt453D40(16);
+        PlaySound(16);
     return;
 }

@@ -16,7 +16,7 @@ case 0x25A: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         field314=10.0f;
         field318=10.0f;
         SpawnFloatXYAt453A70(0x325,

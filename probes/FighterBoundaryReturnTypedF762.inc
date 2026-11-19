@@ -67,7 +67,7 @@
             if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             if ((animationStage)==3 && (animationFrame)==0) {
-                PrepareActionAt453D40(5);
+                PlaySound(5);
                 SpawnAt453C80(0x7D,
                     float(facing*80)+(x),
                     (*(&y))+g_ContactProjectionAt00657888,
@@ -82,7 +82,7 @@
                 field05C=0.8f;
             }
             if ((animationStage)==14 && (animationFrame)==0) {
-                PrepareActionAt453D40(6);
+                PlaySound(6);
                 velocityX=F729_STAGE14_X;
                 velocityY=F729_STAGE14_Y;
             }

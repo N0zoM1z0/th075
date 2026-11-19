@@ -236,7 +236,7 @@ case 0x19D: {
         field314=-30.0f; field318=8.0f;
         SpawnFloatXYAt453A70(0x32C,float(facing*37)+(x),
             (*(&y))+g_ReimuAirVolleyYAt00659098,reinterpret_cast<char&>(facing),1);
-        PlaySoundAt453D40(1);
+        PlaySound(1);
         UpdateGaugeTimer(200);
     }
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
@@ -303,7 +303,7 @@ case 0x1A1: {
         field314=30.0f; field318=8.0f;
         SpawnFloatXYAt453A70(0x32C,float(facing*12)+(x),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
-        PlaySoundAt453D40(1);
+        PlaySound(1);
         UpdateGaugeTimer(200);
     }
     break;

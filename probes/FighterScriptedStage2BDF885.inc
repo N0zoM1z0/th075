@@ -32,7 +32,7 @@ case 0x2BD: {
             SpawnExtraAt453B50(0x346,reinterpret_cast<int&>(x),
                 (*(&y))+g_ContactProjectionAt00657888,
                 (facing),1,0,1);
-            PrepareActionAt453D40(0xD);
+            PlaySound(0xD);
             SetNativeActionAt40FAC0(0x2C2);
             ClearMotionFields();
             reinterpret_cast<int&>(x)=reinterpret_cast<int&>(opponent->x);
@@ -52,7 +52,7 @@ case 0x2BD: {
             (facing),1);
     }
     if ((animationStage)==7 && (animationFrame)==0) {
-        PrepareActionAt453D40(0xB);
+        PlaySound(0xB);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;

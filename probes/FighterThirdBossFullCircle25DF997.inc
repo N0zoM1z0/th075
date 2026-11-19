@@ -22,7 +22,7 @@ case 0x25D: {
         velocityX=-3.0f;
         velocityY=9.0f;
         field05C=0.7f;
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0xFA);
         field314=0.0f;
         field318=7.0f;

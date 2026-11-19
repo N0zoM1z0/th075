@@ -38,7 +38,7 @@ case 0x303: {
         if ((animationFrame)==0) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             if ((reinterpret_cast<signed short&>(scriptCounterF00))<g_F1004_ModeAt006714D0*5+10) {
-                PrepareActionAt453D40(0);
+                PlaySound(0);
                 reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
                 reinterpret_cast<signed short&>(fieldF08)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
                 field314=float(fieldF04);

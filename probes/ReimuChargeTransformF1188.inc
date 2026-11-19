@@ -3,7 +3,7 @@
         SetMotionFloatAt40FBB0(0.0f,100.0f,0.0f);
         scaleX=1.0f; scaleY=1.0f;
         color[0]=255; color[1]=255; color[2]=255; color[3]=255;
-        PlaySoundAt453D40(2);
+        PlaySound(2);
     }
     if ((animationStage)==R1188_FADE_STAGE) {
         scaleX=(scaleX)-g_ProjectileFallAt006590B4;

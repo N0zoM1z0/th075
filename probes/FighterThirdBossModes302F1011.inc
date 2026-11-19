@@ -41,7 +41,7 @@ case 0x302: {
         field05C=0.5f;
     }
     if ((animationStage)==5 && (animationFrame)==0) {
-        PrepareActionAt453D40(5);
+        PlaySound(5);
         if (g_F1004_ModeAt006714D0==0) {
             for (int shot=0;shot<10;++shot) {
                 field314=float(shot*36);

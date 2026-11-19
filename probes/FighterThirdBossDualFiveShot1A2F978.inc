@@ -14,7 +14,7 @@ case 0x1A2: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
     if ((animationStage)==5 && (animationFrame)==0) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         if (field39D==2) {
             field314=65.0f;
             field318=10.0f;

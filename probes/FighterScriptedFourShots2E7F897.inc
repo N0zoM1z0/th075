@@ -37,7 +37,7 @@ case F897_CASE: {
     if ((animationStage)==9 && (animationFrame)==0) {
         SpawnExtraRawYAt453B50(F897_SECOND_SPRITE,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1,0,1);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         InitTrajectoryAt453E60(10.0f);

@@ -30,7 +30,7 @@ case 0x2E6: {
     }
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=15.0f;
-        PrepareActionAt453D40(7);
+        PlaySound(7);
         SpawnWithFloatAt453A70(0x38E,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);

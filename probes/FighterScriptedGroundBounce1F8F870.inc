@@ -37,7 +37,7 @@ case 0x1F8: {
     if ((animationStage)==7 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(4);
+        PlaySound(4);
     }
     if ((animationStage)==0xF && (animationFrame)==0)
         SetAuxActionAt40FB40(0xE);

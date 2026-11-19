@@ -35,7 +35,7 @@
                     facing,1);
                 SpawnDirectedAt453A70(0x38F,reinterpret_cast<int&>(x),0,
                     facing,1);
-                PrepareActionAt453D40(16);
+                PlaySound(16);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<6) {
                 SetAuxActionAt40FB40(5);
@@ -80,7 +80,7 @@
                             0xC2480000,facing,1);
                     }
                     InitTrajectoryAt453E60(20.0f);
-                    PrepareActionAt453D40(20);
+                    PlaySound(20);
                 }
             }
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
@@ -143,12 +143,12 @@
                 SpawnWithFloatAt453A70(0x38B,reinterpret_cast<int&>(x),
                     (*(&y))+g_CloudShotYAt006591E4,
                     facing,1);
-                PrepareActionAt453D40(0x15);
+                PlaySound(0x15);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
                 SetAuxActionAt40FB40(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))==4) PrepareActionAt453D40(0x13);
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))==4) PlaySound(0x13);
             }
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
                 SetAuxActionAt40FB40(8);

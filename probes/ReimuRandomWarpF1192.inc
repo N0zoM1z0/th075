@@ -19,7 +19,7 @@ case 0x2EF: {
     if ((reinterpret_cast<signed short&>(scriptCounterF00))<g_ReimuRepeatSettingAt006714D0*2+3 && (animationFrame)==0 &&
         ((animationStage)==7 || (animationStage)==8)) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        PlaySoundAt453D40(12);
+        PlaySound(12);
         field314=float(reinterpret_cast<signed short&>(scriptCounterF00));
         SpawnFloatXYAt453A70(0x394,float(facing*80)+(x),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
@@ -34,7 +34,7 @@ case 0x2EF: {
         y=200.0f;
         velocityX=g_ReimuWarpSpeedAt00657CF8-float(SelectRangeAt455580(0,6));
         velocityY=6.0f;
-        PlaySoundAt453D40(2);
+        PlaySound(2);
         if (x>opponent->x)
             facing=-1;
         else facing=1;

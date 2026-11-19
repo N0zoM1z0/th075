@@ -69,7 +69,7 @@
                     else
                         facing=-1;
                 }
-                PrepareActionAt453D40(5);
+                PlaySound(5);
                 SpawnAt453C80(0x7D,
                     float(facing*80)+(x),
                     (*(&y))+g_ContactProjectionAt00657888,

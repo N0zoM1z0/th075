@@ -40,7 +40,7 @@ case 0x2DB: {
             reinterpret_cast<int&>(y),(facing),1);
         SpawnDirectedAt453A70(0x336,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(2);
+        PlaySound(2);
     }
     if ((animationStage)==16 && (animationFrame)==0)
         velocityX=17.5f;

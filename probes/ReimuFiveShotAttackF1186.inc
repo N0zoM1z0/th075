@@ -9,13 +9,13 @@ case R1186_ACTION: {
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==8 && (animationFrame)==0) {
 #include "ReimuFiveShotVolleyF1186.inc"
-        PlaySoundAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(100);
     }
     if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2 &&
         reinterpret_cast<unsigned int&>(inputC)>0) {
 #include "ReimuFiveShotVolleyF1186.inc"
-        PlaySoundAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(25);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(8);

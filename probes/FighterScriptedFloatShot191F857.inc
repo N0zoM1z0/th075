@@ -9,7 +9,7 @@ case 0x191: {
             float((facing)*100)+(x),
             (*(&y))+g_F857ShotYAt00659298,
             (facing),1);
-        PrepareActionAt453D40(0);
+        PlaySound(0);
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);

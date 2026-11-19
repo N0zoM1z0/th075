@@ -40,7 +40,7 @@ case 0x1F4: {
         field05C=0.4f;
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
-        PrepareActionAt453D40(3);
+        PlaySound(3);
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         field314=15.0f;
@@ -108,7 +108,7 @@ case 0x1F5: {
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
         field05C=0.5f;
-        PrepareActionAt453D40(3);
+        PlaySound(3);
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         field314=15.0f;

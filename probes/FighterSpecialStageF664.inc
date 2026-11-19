@@ -21,7 +21,7 @@
             }
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==5 && (animationFrame)==0) {
-                PrepareActionAt453D40(7);
+                PlaySound(7);
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
             }
@@ -48,7 +48,7 @@
             }
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==5 && (animationFrame)==0) {
-                PrepareActionAt453D40(7);
+                PlaySound(7);
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
             }

@@ -12,7 +12,7 @@ case 0x2F9: {
             SpawnFloatXYAt453A70(0x396,float(facing*228)+(x),
                 (*(&y))+g_ReimuMeterShotYAt00659080,reinterpret_cast<char&>(facing),1);
         }
-        PlaySoundAt453D40(8);
+        PlaySound(8);
     }
     break;
 }

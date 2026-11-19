@@ -51,7 +51,7 @@ case 0x2BC: {
         ++fieldF04;
     }
     if ((animationStage)==5 && (animationFrame)==0)
-        PrepareActionAt453D40(5);
+        PlaySound(5);
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
         SetAuxActionAt40FB40(9);
         ++reinterpret_cast<signed short&>(fieldF06);
@@ -101,7 +101,7 @@ case 0x2BD: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
     if ((animationStage)==5 && (animationFrame)==0)
-        PrepareActionAt453D40(6);
+        PlaySound(6);
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
         SetAuxActionAt40FB40(9);
         ++reinterpret_cast<signed short&>(fieldF06);

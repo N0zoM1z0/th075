@@ -18,7 +18,7 @@
                    -static_cast<int>(g_CloudOpponentAt006714D0)*20);
             }
             if ((animationStage)==3 && (animationFrame)==0)
-                PrepareActionAt453D40(9);
+                PlaySound(9);
             if ((animationStage)==7 && (animationFrame)==0) {
                 if (opponent->y==g_ThresholdAt0065782C)
                     reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -53,7 +53,7 @@
                         float(facing*65)+(x),
                         (*(&y))+g_BarrageY1At006591EC,
                         facing,1);
-                PrepareActionAt453D40(10);
+                PlaySound(10);
             }
             break;
         }

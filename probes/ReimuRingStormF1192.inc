@@ -22,7 +22,7 @@ case 0x2DB: {
         }
     }
     if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<g_ReimuRepeatSettingAt006714D0*3+4) {
-        PlaySoundAt453D40(6);
+        PlaySound(6);
         field314=float(SelectRangeAt455580(0,359));
         if ((reinterpret_cast<signed short&>(scriptCounterF02))==0) {
             SpawnFloatXYAt453A70(0x384,float(facing*18)+(x),

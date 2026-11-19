@@ -25,7 +25,7 @@
                 }
             }
             if ((animationStage)==11 && (animationFrame)==0) {
-                PrepareActionAt453D40(0x12);
+                PlaySound(0x12);
                 field314=CalculateAngleAt483300(
                     reinterpret_cast<const FighterBorrowedXYViewF771*>(opponent)->yAt48-y,
                     (reinterpret_cast<const FighterBorrowedXYViewF771*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXYViewF771*>(this)->xAt44)

@@ -97,7 +97,7 @@
             if ((animationStage)==3 && (animationFrame)==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                         facing,1);
-                PrepareActionAt453D40(4);
+                PlaySound(4);
                 velocityY=6.0f;
                 velocityX=4.5f;
                 field05C=0.65f;
@@ -134,7 +134,7 @@
             }
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==3 && (animationFrame)==0) {
-                PrepareActionAt453D40(4);
+                PlaySound(4);
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                         facing,1);
                 velocityY=8.0f;

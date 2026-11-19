@@ -26,7 +26,7 @@ case 0x2C2: {
             reinterpret_cast<int&>(x),
             (opponent->y)+g_ContactProjectionAt00657888,
             (facing),1);
-        PrepareActionAt453D40(0xE);
+        PlaySound(0xE);
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetAuxActionAt40FB40(0x10);

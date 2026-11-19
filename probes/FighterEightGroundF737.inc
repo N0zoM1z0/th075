@@ -12,7 +12,7 @@
                 y=0.0f;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(0);
+                PlaySound(0);
                 velocityX=-4.0f;
                 velocityY=9.0f;
                 field05C=0.65f;
@@ -39,7 +39,7 @@
                 y=0.0f;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(0);
+                PlaySound(0);
                 velocityX=-4.0f;
                 velocityY=9.0f;
                 field05C=0.65f;

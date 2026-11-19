@@ -40,7 +40,7 @@ case 0x2BE: {
             facing,1);
     }
     if ((animationStage)==13 && (animationFrame)==0) {
-        PrepareActionAt453D40(7);
+        PlaySound(7);
         velocityX=0.5f;
         velocityY=1.0f;
         field05C=0.5f;
@@ -56,7 +56,7 @@ case 0x2BE: {
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
@@ -68,7 +68,7 @@ case 0x2BE: {
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
@@ -80,7 +80,7 @@ case 0x2BE: {
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
@@ -92,7 +92,7 @@ case 0x2BE: {
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
@@ -104,7 +104,7 @@ case 0x2BE: {
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<6) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             SetAuxActionAt40FB40(15);

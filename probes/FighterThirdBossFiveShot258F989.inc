@@ -16,7 +16,7 @@ case 0x258: {
     }
     if ((animationStage)>4) {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))<3 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0) {
-            PrepareActionAt453D40(0);
+            PlaySound(0);
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+100);
             field318=10.0f;
             SpawnFloatXYAt453A70(0x325,

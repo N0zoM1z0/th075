@@ -12,7 +12,7 @@
             if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             if ((animationStage)==6 && (animationFrame)==0) {
-                PrepareActionAt453D40(2);
+                PlaySound(2);
                 field314=0.0f;
                 SpawnFloatXYAt453A70(0x330,
                     float(facing*60)+(x),
@@ -22,7 +22,7 @@
             }
             if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
                     && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
-                PrepareActionAt453D40(2);
+                PlaySound(2);
                 field314=0.0f;
                 SpawnFloatXYAt453A70(0x330,
                     float(facing*60)+(x),
@@ -43,7 +43,7 @@
             if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             if ((animationStage)==6 && (animationFrame)==0) {
-                PrepareActionAt453D40(2);
+                PlaySound(2);
                 field314=30.0f;
                 SpawnFloatXYAt453A70(0x330,
                     float(facing*68)+(x),
@@ -53,7 +53,7 @@
             }
             if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
                     && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
-                PrepareActionAt453D40(2);
+                PlaySound(2);
                 field314=20.0f;
                 SpawnFloatXYAt453A70(0x330,
                     float(facing*68)+(x),
@@ -72,7 +72,7 @@
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(1);
+                PlaySound(1);
                 field314=60.0f;
                 UpdateGaugeTimer(250);
                 SpawnFloatXYAt453A70(0x347,

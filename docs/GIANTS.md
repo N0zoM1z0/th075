@@ -212,6 +212,15 @@ nonexact, with zero newly regressed bytes. Only the 132 directly
 header-affected exact units were cold-replayed (44/44 in each of three
 groups), all exact. No ASM, padding, fake locals or giant exact credit.
 
+The native 00453D40 per-fighter sound endpoint is also now called by its
+real `Fighter::PlaySound(short)` name in all four complete fighter research
+parents. This changes 199 textual call sites (257 compiled COFF relocations:
+77 Reimu, 80 Sakuya, 42 Youmu, 58 Remilia). Before/after whole-object
+compilation preserved respectively 62,090 / 83,922 / 47,655 / 59,236 bytes,
+all 1,824 / 2,352 / 1,491 / 1,863 relocation positions/types and every
+nonrelocation byte. The 132 header-affected exact units were cold-replayed
+44/44 + 44/44 + 44/44. The giant parents themselves remain NONEXACT.
+
 A later four-fighter migration replaced 410 text occurrences of the
 misleading `ResetAt453E20` alias with the real inherited
 `Fighter::ClearMotionFields`. These case fragments expand to 494 native

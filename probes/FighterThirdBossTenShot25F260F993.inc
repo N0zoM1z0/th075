@@ -19,7 +19,7 @@ case 0x25F: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
@@ -48,7 +48,7 @@ case 0x260: {
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
-        PrepareActionAt453D40(0);
+        PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);

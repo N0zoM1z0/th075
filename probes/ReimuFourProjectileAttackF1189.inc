@@ -25,7 +25,7 @@ case R1189_ACTION: {
         SpawnFloatXYAt453A70(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
             (*(&y))+R1189_Y_OFFSET,reinterpret_cast<char&>(facing),1);
         UpdateGaugeTimer(250);
-        PlaySoundAt453D40(4);
+        PlaySound(4);
     }
     break;
 }

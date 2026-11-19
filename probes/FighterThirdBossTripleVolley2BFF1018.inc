@@ -40,7 +40,7 @@ case 0x2BF: {
             facing,1);
     }
     if ((animationStage)==13 && (animationFrame)==0) {
-        PrepareActionAt453D40(7);
+        PlaySound(7);
         velocityX=0.5f;
         velocityY=0.9f;
         field05C=0.5f;
@@ -61,7 +61,7 @@ case 0x2BF: {
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
         SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
@@ -78,7 +78,7 @@ case 0x2BF: {
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
         SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
@@ -95,7 +95,7 @@ case 0x2BF: {
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
         SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
@@ -112,7 +112,7 @@ case 0x2BF: {
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
         SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
@@ -129,7 +129,7 @@ case 0x2BF: {
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
-        PrepareActionAt453D40(7);
+        PlaySound(7);
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<10) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             SetAuxActionAt40FB40(15);

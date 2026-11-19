@@ -28,7 +28,7 @@
                 field05C=0.25f;
             }
             if ((animationStage)==9 && (animationFrame)==0) {
-                PrepareActionAt453D40(18);
+                PlaySound(18);
                 aiCardTimer=120;
                 fieldF04=static_cast<short>(RandomBoundaryAt455580(0,359));
                 if (g_CloudOpponentAt006714D0==0) {

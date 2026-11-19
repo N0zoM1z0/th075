@@ -39,7 +39,7 @@ case 0x2DD: {
     if ((animationStage)==18 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-        PrepareActionAt453D40(4);
+        PlaySound(4);
     }
     if ((animationStage)==26 && (animationFrame)==0)
         SetAuxActionAt40FB40(24);

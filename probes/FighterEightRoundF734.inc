@@ -13,7 +13,7 @@
             if (inputC==0)
                 reinterpret_cast<signed short&>(scriptCounterF00)=1;
             if ((animationStage)==5 && (animationFrame)==0) {
-                PrepareActionAt453D40(0);
+                PlaySound(0);
                 field314=0.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
@@ -36,7 +36,7 @@
             if (inputC==0)
                 reinterpret_cast<signed short&>(scriptCounterF00)=1;
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(0);
+                PlaySound(0);
                 field314=20.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
@@ -56,7 +56,7 @@
                 ClearMotionFields();
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                PrepareActionAt453D40(0);
+                PlaySound(0);
                 field314=45.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
