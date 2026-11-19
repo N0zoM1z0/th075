@@ -801,3 +801,12 @@ separately classified VC71CRT library code; the `fabsf` and `sqrtf` workers
 remain unknown under R163 and are not credited. The three wrappers have
 focused exact native replay; this does not change the still-nonexact Alice
 or Meiling giant frontiers.
+
+Alice object `004EBDA0` removes 59 additional redundant numeric conversions
+across its complete `Advance` state machine: signed facing/velocity products,
+short-to-float call arguments and expressions already promoted by float
+operands now use ordinary C++ conversions. The full 33,731-byte COFF body
+remains byte-identical, all 682 relocation records remain identical, and the
+frontier guard remains at 575 differing bytes / 133 GPR positions / zero
+width differences. This is natural-source cleanup only; Alice's giant is
+still NONEXACT and its first GPR divergence remains `0x004F344C`.

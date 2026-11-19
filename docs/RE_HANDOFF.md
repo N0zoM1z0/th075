@@ -114,11 +114,13 @@ The closest complete parents by register-role debt are:
 3. Sakuya object 004CA6E0: 447 GPR differences, 12 width differences.
 
 Start with Alice or Meiling and work from the whole function, not isolated
-switch fragments. Meiling's 997/998 boundary has already had 22 natural-C++
-variants without improvement. Sakuya's 809/810 gate was also revisited on
-2026-11-19; all syntax-only variants were discarded. The best transient
-Sakuya form was two bytes too large and failed the frontier size check.
-Do not repeat those attempts without new target evidence.
+switch fragments. Alice's complete source has just dropped 59 redundant
+numeric casts while retaining all 33,731 COFF bytes and 682 relocation
+records exactly; its 133 GPR positions remain. Meiling's 997/998 boundary
+has already had 22 natural-C++ variants without improvement. Sakuya's 809/810
+gate was also revisited on 2026-11-19; all syntax-only variants were discarded.
+The best transient Sakuya form was two bytes too large and failed the frontier
+size check. Do not repeat those attempts without new target evidence.
 
 For a complete parent:
 
