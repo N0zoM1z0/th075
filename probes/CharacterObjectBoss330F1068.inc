@@ -10,8 +10,8 @@ case 0x330: {
             owner->SpawnBattleEffect(
                 0x3E4, x, y,1,1);
         }
-        if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
-            reinterpret_cast<signed short&>(owner->fieldEFA)=0;
+        if (owner->fieldEFA>25) {
+            owner->fieldEFA=0;
             owner->SpawnBattleEffect(
                 0x3E3, x, y,1,1);
         }

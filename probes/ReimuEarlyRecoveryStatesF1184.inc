@@ -73,8 +73,8 @@ case 0x61: {
     if ((animationStage)==0 && (animationFrame)==0) {
         for (int shot=0;shot<10;++shot)
             SpawnBattleEffect(0x3E4,x,y,1,1);
-        if ((reinterpret_cast<signed short&>(fieldEFA))>25) {
-            reinterpret_cast<signed short&>(fieldEFA)=0;
+        if ((fieldEFA)>25) {
+            fieldEFA=0;
             SpawnBattleEffect(0x3E3,x,y,1,1);
         }
     }

@@ -19,7 +19,7 @@ case 0x253: {
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
         PlaySharedSound(0x21);
-        reinterpret_cast<signed short&>(opponent->fieldEFA)=0;
+        opponent->fieldEFA=0;
     }
     return;
 }

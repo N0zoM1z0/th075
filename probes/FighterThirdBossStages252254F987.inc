@@ -27,7 +27,7 @@ case 0x252: {
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
         PlaySharedSound(0x21);
-        reinterpret_cast<signed short&>(opponent->fieldEFA)=0;
+        opponent->fieldEFA=0;
     }
     break;
 }
@@ -50,7 +50,7 @@ case 0x253: {
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
         PlaySharedSound(0x21);
-        reinterpret_cast<signed short&>(opponent->fieldEFA)=0;
+        opponent->fieldEFA=0;
     }
     break;
 }
@@ -71,7 +71,7 @@ case 0x254: {
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
         PlaySharedSound(0x21);
-        reinterpret_cast<signed short&>(opponent->fieldEFA)=0;
+        opponent->fieldEFA=0;
     }
     break;
 }

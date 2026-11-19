@@ -32,7 +32,7 @@ case 0x3E4: {
             x-owner->opponent->x>g_F1131_LeftHitAt00659230 &&
             y-owner->opponent->y<g_F1131_TopHitAt006590A8 &&
             y-owner->opponent->y>g_F1131_BottomHitAt00658268) {
-            ++reinterpret_cast<signed short&>(owner->fieldEFA);
+            ++owner->fieldEFA;
             PlaySharedSound(0x2E);
             ClearFrameInfo();
             if (owner->opponent->spiritCooldown>0) {
