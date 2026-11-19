@@ -19,6 +19,6 @@ case 0xD0: {
         return;
     }
     if (AdvanceNestedFrame()==field070)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
     return;
 }

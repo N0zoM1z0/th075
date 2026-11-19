@@ -16,7 +16,7 @@ case 0x2DB: {
             if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<16) {
                 y=0.0f;
                 ClearMotionFields();
-                SetAuxActionAt40FB40(16);
+                ResetSecondaryCounter(16);
                 break;
             }
         }
@@ -52,12 +52,12 @@ case 0x2DB: {
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<30) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(10);
+        ResetSecondaryCounter(10);
     }
     if ((animationStage)==15 && (animationFrame)==0 && y==g_ThresholdAt0065782C) {
         ResetPrimaryCounters(10);
         break;
     }
-    if ((animationStage)==16 && (animationFrame)==0) SetAuxActionAt40FB40(14);
+    if ((animationStage)==16 && (animationFrame)==0) ResetSecondaryCounter(14);
     break;
 }

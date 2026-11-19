@@ -52,7 +52,7 @@ case 0x2F9: {
     if ((animationStage)==5 && (animationFrame)==0) {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))<3) {
             ++reinterpret_cast<signed short&>(scriptCounterF02);
-            SetAuxActionAt40FB40(3);
+            ResetSecondaryCounter(3);
             break;
         }
         PlaySound(9);
@@ -66,7 +66,7 @@ case 0x2F9: {
     if ((animationStage)==11 && (animationFrame)==0) {
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<10) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
-            SetAuxActionAt40FB40(9);
+            ResetSecondaryCounter(9);
         } else {
             fieldF10=0;
             opponent->field010=0;
@@ -75,7 +75,7 @@ case 0x2F9: {
     }
     if ((animationStage)==13 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(11);
+        ResetSecondaryCounter(11);
     }
     break;
 }

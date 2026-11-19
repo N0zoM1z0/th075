@@ -20,7 +20,7 @@
             }
             if ((animationStage)<4 && y>g_ThresholdAt0065782C) {
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(4);
+                    ResetSecondaryCounter(4);
                     y=0.0f;
                     velocityY=0.0f;
                     field05C=0.0f;
@@ -51,6 +51,6 @@
             if ((animationFrame)==0)
                 field07C=0;
             if ((animationStage)==4 && (animationFrame)==0)
-                SetAuxActionAt40FB40(0);
+                ResetSecondaryCounter(0);
             break;
         }

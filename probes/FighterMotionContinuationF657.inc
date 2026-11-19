@@ -79,7 +79,7 @@
                     field05C=0.0f;
                     y=0.0f;
                     animationFrame=0;
-                    SetAuxActionAt40FB40(9);
+                    ResetSecondaryCounter(9);
                     break;
                 }
             }
@@ -89,6 +89,6 @@
                 field05C=0.9f;
             }
             if ((animationStage)==9 && y>g_ThresholdAt0065782C)
-                SetAuxActionAt40FB40((animationStage)-2);
+                ResetSecondaryCounter((animationStage)-2);
             break;
         }

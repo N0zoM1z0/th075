@@ -30,7 +30,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetAuxActionAt40FB40(2);
+                ResetSecondaryCounter(2);
             else if ((animationStage)==2 && (animationFrame)==0) {
                 velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F747_BounceXAt006590BC;
                 velocityY=static_cast<float>(-static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF02)))*g_F747_BounceYAt00658044;
@@ -45,7 +45,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(8);
+                    ResetSecondaryCounter(8);
                     break;
                 }
             }
@@ -66,7 +66,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 field05C=0.75f;
             }
             if ((animationStage)==8 && (animationFrame)==0)
-                SetAuxActionAt40FB40(6);
+                ResetSecondaryCounter(6);
             break;
         }
         case 0x5E: {
@@ -75,7 +75,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(8);
+                    ResetSecondaryCounter(8);
                     break;
                 }
             }
@@ -96,6 +96,6 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 field05C=0.75f;
             }
             if ((animationStage)==8 && (animationFrame)==0)
-                SetAuxActionAt40FB40(6);
+                ResetSecondaryCounter(6);
             break;
         }

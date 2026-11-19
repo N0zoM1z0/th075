@@ -20,7 +20,7 @@ case 0x1F4: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xC);
+            ResetSecondaryCounter(0xC);
             y=0.0f;
             break;
         }
@@ -67,11 +67,11 @@ case 0x1F4: {
             facing,1,0,1);
     }
     if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
-        SetAuxActionAt40FB40(8);
+        ResetSecondaryCounter(8);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if ((animationStage)==12 && (animationFrame)==0)
-        SetAuxActionAt40FB40(0xB);
+        ResetSecondaryCounter(0xB);
     break;
 }
 // F981 true Japanese original 004AC040 action 0x1F5
@@ -88,7 +88,7 @@ case 0x1F5: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xC);
+            ResetSecondaryCounter(0xC);
             y=0.0f;
             break;
         }
@@ -135,10 +135,10 @@ case 0x1F5: {
             facing,1,0,1);
     }
     if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
-        SetAuxActionAt40FB40(8);
+        ResetSecondaryCounter(8);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if ((animationStage)==12 && (animationFrame)==0)
-        SetAuxActionAt40FB40(0xB);
+        ResetSecondaryCounter(0xB);
     break;
 }

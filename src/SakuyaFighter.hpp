@@ -33,7 +33,6 @@ public:
     void SpawnSevenRawXFloatYAt453B50(short,int,float,signed char,signed char,unsigned char,unsigned char);
     int RandAt455580(int,int);
     signed char ContactAt454EE0();
-    void SetAuxActionAt40FB40(short);
 
     void ConfigureStage();
     void ChooseAction();

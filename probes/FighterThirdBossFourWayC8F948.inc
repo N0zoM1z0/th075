@@ -34,7 +34,7 @@ case 0xC8: {
     if (AdvanceNestedFrame()==(field070)) {
         if (static_cast<int>(facing)*inputX>0 &&
             (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
-            SetAuxActionAt40FB40(4);
+            ResetSecondaryCounter(4);
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             break;
         }

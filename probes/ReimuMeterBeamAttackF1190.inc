@@ -16,11 +16,11 @@ case R1190_ACTION: {
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(10);
+        ResetSecondaryCounter(10);
     }
     if ((animationStage)==14 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
-        SetAuxActionAt40FB40(12);
+        ResetSecondaryCounter(12);
     }
     break;
 }

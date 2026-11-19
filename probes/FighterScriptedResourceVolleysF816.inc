@@ -34,7 +34,7 @@
                 if (velocityY+y<g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(4);
+                    ResetSecondaryCounter(4);
                     return;
                 }
             }
@@ -49,7 +49,7 @@
                     field05C=2.0f;
                 }
                 if ((animationStage)==4 && (animationFrame)==0)
-                    SetAuxActionAt40FB40(3);
+                    ResetSecondaryCounter(3);
             }
             return;
         }
@@ -80,7 +80,7 @@
                 if (velocityY+y<g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(4);
+                    ResetSecondaryCounter(4);
                     return;
                 }
             }
@@ -95,7 +95,7 @@
                     field05C=2.0f;
                 }
                 if ((animationStage)==4 && (animationFrame)==0)
-                    SetAuxActionAt40FB40(3);
+                    ResetSecondaryCounter(3);
             }
             return;
         }

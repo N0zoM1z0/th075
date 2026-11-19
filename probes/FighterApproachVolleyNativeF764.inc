@@ -37,7 +37,7 @@
                         && facing==1)
                     || (((field2DC)-g_F699_SideOffsetAt00657874)<=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
                         && facing==-1)) {
-                    SetAuxActionAt40FB40(10);
+                    ResetSecondaryCounter(10);
                     ClearMotionFields();
                     break;
                 }
@@ -45,7 +45,7 @@
             if (AdvanceNestedFrame()==(field070)) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     ++reinterpret_cast<signed short&>(scriptCounterF00);
-                    SetAuxActionAt40FB40(12);
+                    ResetSecondaryCounter(12);
                     break;
                 }
                 ResetPrimaryCounters(0x2FB);
@@ -74,6 +74,6 @@
                 field05C=0.8f;
             }
             if ((animationStage)==10 && (animationFrame)==0)
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
             break;
         }

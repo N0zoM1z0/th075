@@ -28,7 +28,7 @@ case 0x302: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
             ClearMotionFields();
-            SetAuxActionAt40FB40(15);
+            ResetSecondaryCounter(15);
         }
     }
     if (AdvanceNestedFrame()==(field070)) {

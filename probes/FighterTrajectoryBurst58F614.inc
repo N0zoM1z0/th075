@@ -25,7 +25,7 @@ case 0x58: {
         break;
     }
     if (AdvanceNestedFrame()==field070)
-        SetAuxActionAt40FB40(animationStage-1);
+        ResetSecondaryCounter(animationStage-1);
     if (animationStage==1 && animationFrame==0) {
 #if F614_STAGE1_SPAWN
         if (fieldF0C==0) {
@@ -36,10 +36,10 @@ case 0x58: {
 #endif
         if (velocityY != g_ThresholdAt0065782C) {
             if (*(&velocityX)==g_ThresholdAt0065782C) {
-                SetAuxActionAt40FB40(3);
+                ResetSecondaryCounter(3);
                 break;
             } else {
-                SetAuxActionAt40FB40(2);
+                ResetSecondaryCounter(2);
                 break;
             }
         }

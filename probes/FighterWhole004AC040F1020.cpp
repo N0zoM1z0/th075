@@ -198,7 +198,7 @@ void SakuyaFighter::Advance() {
                 }
             }
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
             ++animationFrame;
             if (animationFrame >= (field072)) {
                 animationFrame = 0;
@@ -232,7 +232,7 @@ void SakuyaFighter::Advance() {
                 }
             }
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
             ++animationFrame;
             if (animationFrame >= (field072)) {
                 animationFrame = 0;
@@ -291,7 +291,7 @@ void SakuyaFighter::Advance() {
             return;
         }
         if (AdvanceNestedFrame() == field070) {
-            SetAuxActionAt40FB40(0);
+            ResetSecondaryCounter(0);
         }
         break;
         case 0xA:

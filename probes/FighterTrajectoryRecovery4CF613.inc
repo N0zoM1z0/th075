@@ -23,6 +23,6 @@ case 0x4C: {
         break;
     }
     if (AdvanceNestedFrame() == field070)
-        SetAuxActionAt40FB40(0);
+        ResetSecondaryCounter(0);
     break;
 }

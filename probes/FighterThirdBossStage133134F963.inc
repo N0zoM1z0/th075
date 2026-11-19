@@ -50,7 +50,7 @@ case 0x134: {
             velocityY=0.0f;
             field05C=0.0f;
             y=0.0f;
-            SetAuxActionAt40FB40(0xE);
+            ResetSecondaryCounter(0xE);
             break;
         }
     }
@@ -67,6 +67,6 @@ case 0x134: {
     if ((animationStage)==7 && (animationFrame)==0)
         PlaySharedSound(0x1D);
     if ((animationStage)==14 && (animationFrame)==0)
-        SetAuxActionAt40FB40((animationStage)-2);
+        ResetSecondaryCounter((animationStage)-2);
     break;
 }

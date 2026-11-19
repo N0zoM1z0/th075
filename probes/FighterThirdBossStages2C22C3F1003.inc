@@ -27,7 +27,7 @@ case 0x2C2: {
     if ((animationStage)==5 && (animationFrame)==0) {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))<1) {
             ++reinterpret_cast<signed short&>(scriptCounterF02);
-            SetAuxActionAt40FB40(3);
+            ResetSecondaryCounter(3);
             break;
         }
         ApplyAt453E80(0x64);
@@ -45,7 +45,7 @@ case 0x2C2: {
     }
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
     }
     break;
 }
@@ -69,7 +69,7 @@ case 0x2C3: {
     if ((animationStage)==5 && (animationFrame)==0) {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))<4) {
             ++reinterpret_cast<signed short&>(scriptCounterF02);
-            SetAuxActionAt40FB40(3);
+            ResetSecondaryCounter(3);
             break;
         }
         ApplyAt453E80(0x28);
@@ -87,7 +87,7 @@ case 0x2C3: {
     }
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
     }
     break;
 }

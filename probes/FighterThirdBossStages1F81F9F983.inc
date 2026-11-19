@@ -21,7 +21,7 @@ case 0x1F8: {
             color[0]=(color[0])-30;
         else {
             color[0]=0;
-            SetAuxActionAt40FB40(8);
+            ResetSecondaryCounter(8);
             velocityX=60.0f;
             velocityY=10.0f;
             field05C=0.4f;
@@ -37,7 +37,7 @@ case 0x1F8: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xB);
+            ResetSecondaryCounter(0xB);
             y=0.0f;
             break;
         }
@@ -84,12 +84,12 @@ case 0x1F8: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
     if ((animationStage)==11 && (animationFrame)==0)
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
     break;
 }
 // F983 natural source probe for real original 004AC040 1F9
@@ -106,7 +106,7 @@ case 0x1F9: {
             color[0]=(color[0])-30;
         else {
             color[0]=0;
-            SetAuxActionAt40FB40(8);
+            ResetSecondaryCounter(8);
             velocityX=-60.0f;
             velocityY=10.0f;
             field05C=0.4f;
@@ -122,7 +122,7 @@ case 0x1F9: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xB);
+            ResetSecondaryCounter(0xB);
             y=0.0f;
             break;
         }
@@ -169,11 +169,11 @@ case 0x1F9: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
     if ((animationStage)==11 && (animationFrame)==0)
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
     break;
 }

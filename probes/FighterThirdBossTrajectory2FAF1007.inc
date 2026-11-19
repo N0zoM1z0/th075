@@ -22,7 +22,7 @@ case 0x2FA: {
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            SetAuxActionAt40FB40(15);
+            ResetSecondaryCounter(15);
             ClearMotionFields();
             y=0.0f;
             break;
@@ -54,9 +54,9 @@ case 0x2FA: {
     }
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
-        SetAuxActionAt40FB40(4);
+        ResetSecondaryCounter(4);
     }
     if ((animationStage)==15 && (animationFrame)==0)
-        SetAuxActionAt40FB40(13);
+        ResetSecondaryCounter(13);
     break;
 }

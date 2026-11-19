@@ -8,7 +8,7 @@ case 0x4A: {
         field07C = 0;
     }
     if (animationStage==F610_STAGE && velocityY < g_StopThresholdAt00657480) {
-        SetAuxActionAt40FB40(F610_EARLY);
+        ResetSecondaryCounter(F610_EARLY);
         break;
     }
     if (ContactAt454EE0() && (velocityX) <= g_BounceThresholdAt006590C0) {
@@ -38,6 +38,6 @@ case 0x4A: {
         break;
     }
     if (AdvanceNestedFrame()==field070)
-        SetAuxActionAt40FB40(F610_LATE);
+        ResetSecondaryCounter(F610_LATE);
     break;
 }

@@ -17,7 +17,7 @@ case F606_ACTION: {
             facing, F606_SIDE);
     }
     if (animationStage==F606_STAGE && velocityY<g_StopThresholdAt00657480) {
-        SetAuxActionAt40FB40(F606_EARLY);
+        ResetSecondaryCounter(F606_EARLY);
         break;
     }
     velocityY = velocityY - field05C;
@@ -32,6 +32,6 @@ case F606_ACTION: {
         break;
     }
     if (AdvanceNestedFrame()==field070)
-        SetAuxActionAt40FB40(F606_LATE);
+        ResetSecondaryCounter(F606_LATE);
     break;
 }

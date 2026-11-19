@@ -87,7 +87,7 @@ case 0x130: {
     }
     if (y>g_ThresholdAt0065782C) velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<12 && (animationStage)>5) {
-        SetAuxActionAt40FB40(12);
+        ResetSecondaryCounter(12);
         y=0.0f; field05C=0.0f; velocityY=0.0f; velocityX=0.0f;
         break;
     }
@@ -96,7 +96,7 @@ case 0x130: {
         velocityX=5.0f; velocityY=12.5f; field05C=1.0f; field3AC=0;
         PlaySharedSound(0x1C);
     }
-    if ((animationStage)==12 && (animationFrame)==0) SetAuxActionAt40FB40(11);
+    if ((animationStage)==12 && (animationFrame)==0) ResetSecondaryCounter(11);
     break;
 }
 case 0x131: {
@@ -117,7 +117,7 @@ case 0x131: {
             (*(&y))+g_ReimuShotYAt006590A4,reinterpret_cast<char&>(facing),1);
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
         field07C=0;
     }
     break;
@@ -144,7 +144,7 @@ case 0x133: {
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f;
-            SetAuxActionAt40FB40(11);
+            ResetSecondaryCounter(11);
             break;
         }
     }
@@ -174,7 +174,7 @@ case 0x135: {
     }
     if (y>g_ThresholdAt0065782C) velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C && velocityY<g_ThresholdAt0065782C && (animationStage)==2) {
-        SetAuxActionAt40FB40(3);
+        ResetSecondaryCounter(3);
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         PlaySharedSound(0x1D);
         break;
@@ -189,7 +189,7 @@ case 0x135: {
     if ((animationStage)==3 && (animationFrame)==0) {
         if ((animationStage)==5 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
-            SetAuxActionAt40FB40(3);
+            ResetSecondaryCounter(3);
         }
     }
     break;

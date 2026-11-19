@@ -76,7 +76,7 @@ case 0x2F8: {
         && (animationFrame)==0
         && (fieldF04)<static_cast<int>(g_CloudOpponentAt006714D0)+1) {
         ++fieldF04;
-        SetAuxActionAt40FB40(7);
+        ResetSecondaryCounter(7);
         PlaySound(0xA);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
         scaleX=1.0f;

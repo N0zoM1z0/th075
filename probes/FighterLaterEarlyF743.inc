@@ -40,7 +40,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetAuxActionAt40FB40(10);
+                ResetSecondaryCounter(10);
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityX=-6.0f;
                 velocityY=17.5f;

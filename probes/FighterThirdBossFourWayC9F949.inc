@@ -21,7 +21,7 @@ case 0xC9: {
             field05C=0.0f;
             y=0.0f;
             animationFrame=0;
-            SetAuxActionAt40FB40(6);
+            ResetSecondaryCounter(6);
             break;
         }
     }
@@ -42,6 +42,6 @@ case 0xC9: {
         PlaySharedSound(31);
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
     break;
 }

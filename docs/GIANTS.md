@@ -222,6 +222,16 @@ all relocation offsets/types and every nonrelocation byte; all
 three groups of 44. This is a type/ownership and natural source
 recovery, not additional giant exact coverage.
 
+The shared Actor animation-stage reset `0040FB40` now appears as
+`Actor::ResetSecondaryCounter(short)` throughout four complete fighter
+state machines, replacing 351 textual `SetAuxActionAt40FB40` aliases.
+Their whole VC7.1 COFF bodies preserve all original sizes, relocation
+offsets/types and nonrelocation bytes; 462 compiled reset-call relocation
+symbols now point to the inherited Actor method (113 Reimu, 137 Sakuya,
+68 Youmu, 144 Remilia). All 132 source-header-affected exact units
+cold-replayed in three groups (44/44 each); no giant exact credit is
+claimed.
+
 The shared Actor action reset `0040FAC0` is now called as the real
 inherited `Actor::ResetPrimaryCounters(short)` in four complete fighter
 state machines. 511 textual `SetNativeActionAt40FAC0` aliases across

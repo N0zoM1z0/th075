@@ -12,7 +12,7 @@ case R1188_ACTION: {
     if ((animationStage)==R1188_LAND_STAGE || (animationStage)==R1188_LAND_STAGE+1) {
         if (y+velocityY<g_ThresholdAt0065782C) {
             y=0.0f; velocityX=0.0f; velocityY=0.0f;
-            SetAuxActionAt40FB40(R1188_LAND_STAGE+2);
+            ResetSecondaryCounter(R1188_LAND_STAGE+2);
             break;
         }
     }
@@ -25,6 +25,6 @@ case R1188_ACTION: {
     if ((animationStage)==R1188_LAND_STAGE-1 && (animationFrame)==0) {
         velocityX=5.0f; velocityY=-16.0f;
     }
-    if ((animationStage)==R1188_LAND_STAGE+2 && (animationFrame)==0) SetAuxActionAt40FB40(R1188_LAND_STAGE);
+    if ((animationStage)==R1188_LAND_STAGE+2 && (animationFrame)==0) ResetSecondaryCounter(R1188_LAND_STAGE);
     break;
 }

@@ -25,7 +25,7 @@ case F628_CASE: {
         ResetPrimaryCounters(0);
     if (animationStage==3 && animationFrame==0 && I16(F628_COUNTER)<F628_LIMIT) {
         ++I16(F628_COUNTER);
-        SetAuxActionAt40FB40(1);
+        ResetSecondaryCounter(1);
     }
     return;
 }

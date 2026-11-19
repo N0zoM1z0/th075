@@ -9,7 +9,7 @@ case R1188_ACTION: {
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f;
-            SetAuxActionAt40FB40(10);
+            ResetSecondaryCounter(10);
             break;
         }
     }
@@ -22,6 +22,6 @@ case R1188_ACTION: {
         velocityX=R1188_LEAP_X; velocityY=R1188_LEAP_Y; field05C=0.9f;
         SpawnRawXYAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
     }
-    if ((animationStage)==10 && (animationFrame)==0) SetAuxActionAt40FB40(8);
+    if ((animationStage)==10 && (animationFrame)==0) ResetSecondaryCounter(8);
     break;
 }

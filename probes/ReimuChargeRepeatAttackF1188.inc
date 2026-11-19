@@ -8,7 +8,7 @@ case R1188_ACTION: {
         velocityY=velocityY-g_AnimationDeltaAt0065747C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<R1188_LAND_STAGE) {
             y=0.0f; velocityY=0.0f;
-            SetAuxActionAt40FB40(R1188_LAND_STAGE);
+            ResetSecondaryCounter(R1188_LAND_STAGE);
         }
     }
     if ((animationStage)>R1188_LAND_STAGE+1) {
@@ -22,7 +22,7 @@ case R1188_ACTION: {
         PlaySound(2);
     }
     if ((animationStage)==R1188_LAND_STAGE+2 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
-        SetAuxActionAt40FB40(R1188_LAND_STAGE);
+        ResetSecondaryCounter(R1188_LAND_STAGE);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     break;

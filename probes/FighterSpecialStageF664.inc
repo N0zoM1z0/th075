@@ -16,7 +16,7 @@
                 if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             }
             if ((animationStage)==7 && field07C==2) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 velocityX=10.0f;
             }
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
@@ -43,7 +43,7 @@
                 if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             }
             if ((animationStage)==7 && field07C==2) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 velocityX=10.0f;
             }
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
@@ -56,7 +56,7 @@
             if ((animationStage)==8 && (animationFrame)==0) velocityX=10.0f;
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
-                SetAuxActionAt40FB40(2);
+                ResetSecondaryCounter(2);
                 field07C=0;
                 field080=1;
             }

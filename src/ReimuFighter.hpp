@@ -32,7 +32,6 @@ public:
     void SpawnRawXYAt453C80(int,int,int,char,int);
     void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
     signed char ContactAt454EE0();
-    void SetAuxActionAt40FB40(short);
 
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);

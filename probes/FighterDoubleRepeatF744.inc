@@ -45,7 +45,7 @@
                     (*(&y))+g_F737_RoundY0At00659A24,
                     facing,1);
                 UpdateGaugeTimer(20);
-                SetAuxActionAt40FB40(4);
+                ResetSecondaryCounter(4);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;
@@ -92,7 +92,7 @@
                     (*(&y))+g_F737_RoundY1At00659A20,
                     facing,1);
                 UpdateGaugeTimer(20);
-                SetAuxActionAt40FB40(4);
+                ResetSecondaryCounter(4);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;

@@ -19,7 +19,7 @@ case 0x31B: {
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
     }
     return;
 }

@@ -12,7 +12,7 @@ case R1191_ACTION: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(R1191_AUX);
+    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(R1191_AUX);
     if ((animationStage)==2 && (animationFrame)==0) {
 #if R1191_REVERSE_X
         velocityX=g_ReimuReverseDriftAt0065907C-float(SelectRangeAt455580(0,3));

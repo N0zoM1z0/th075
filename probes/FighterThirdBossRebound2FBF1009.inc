@@ -34,7 +34,7 @@ case 0x2FB: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
             ClearMotionFields();
-            SetAuxActionAt40FB40(13);
+            ResetSecondaryCounter(13);
             y=0.0f;
             break;
         }
@@ -88,7 +88,7 @@ case 0x2FB: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
@@ -111,6 +111,6 @@ case 0x2FB: {
             facing=1;
     }
     if ((animationStage)==13 && (animationFrame)==0)
-        SetAuxActionAt40FB40(11);
+        ResetSecondaryCounter(11);
     break;
 }

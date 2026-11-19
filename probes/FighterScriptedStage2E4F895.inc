@@ -32,7 +32,7 @@ case 0x2E4: {
         velocityX=12.5f;
     if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
     }
     return;
 }

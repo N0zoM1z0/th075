@@ -12,7 +12,7 @@ case 0x2EF: {
         velocityY=velocityY-g_ReimuAirDragAt00658348;
         if (y+velocityY<g_ThresholdAt0065782C) {
             y=0.0f; velocityX=0.0f; velocityY=0.0f;
-            SetAuxActionAt40FB40(14);
+            ResetSecondaryCounter(14);
             break;
         }
     }
@@ -39,7 +39,7 @@ case 0x2EF: {
             facing=-1;
         else facing=1;
     }
-    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<6) SetAuxActionAt40FB40(7);
-    if ((animationStage)==14 && (animationFrame)==0) SetAuxActionAt40FB40(12);
+    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<6) ResetSecondaryCounter(7);
+    if ((animationStage)==14 && (animationFrame)==0) ResetSecondaryCounter(12);
     break;
 }

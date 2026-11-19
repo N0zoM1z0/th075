@@ -29,7 +29,7 @@
                     (*(&y))+g_F740_ShotY0At00659A1C,
                     facing,1);
                 UpdateGaugeTimer(10);
-                SetAuxActionAt40FB40(6);
+                ResetSecondaryCounter(6);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;
@@ -60,7 +60,7 @@
                     (*(&y))+g_F740_ShotY1At0065928C,
                     facing,1);
                 UpdateGaugeTimer(10);
-                SetAuxActionAt40FB40(6);
+                ResetSecondaryCounter(6);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;

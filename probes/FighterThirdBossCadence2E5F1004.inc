@@ -49,11 +49,11 @@ case 0x2E5: {
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySound(5);
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF08))>0)
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
     if ((animationStage)==13 && (animationFrame)==0) {
         ++fieldF04;
         if ((fieldF04)<13)
-            SetAuxActionAt40FB40(11);
+            ResetSecondaryCounter(11);
     }
     break;
 }

@@ -18,7 +18,7 @@ case R1187_ACTION: {
         PlaySound(0);
         UpdateGaugeTimer(25);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(4);
+        ResetSecondaryCounter(4);
     }
     break;
 }

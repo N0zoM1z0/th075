@@ -17,7 +17,7 @@
             if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(0xE);
+                    ResetSecondaryCounter(0xE);
                     break;
                 }
             }
@@ -38,7 +38,7 @@
                 PlaySound(16);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<6) {
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==6-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     SpawnFloatXRawYAt453A70(0x38D,
@@ -84,7 +84,7 @@
                 }
             }
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;
@@ -126,7 +126,7 @@
             if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(0xE);
+                    ResetSecondaryCounter(0xE);
                     break;
                 }
             }
@@ -146,12 +146,12 @@
                 PlaySound(0x15);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==4) PlaySound(0x13);
             }
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;

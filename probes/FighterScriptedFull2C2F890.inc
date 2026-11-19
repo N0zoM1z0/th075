@@ -29,7 +29,7 @@ case 0x2C2: {
         PlaySound(0xE);
     }
     if (AdvanceNestedFrame()==(field070))
-        SetAuxActionAt40FB40(0x10);
+        ResetSecondaryCounter(0x10);
     if ((animationStage)<9 && (animationFrame)==0) {
         SpawnWithFloatAt453A70(0x34B,
             reinterpret_cast<int&>(opponent->x),
@@ -127,7 +127,7 @@ case 0x2C2: {
         if ((animationStage)==8 && (animationFrame)==0 && (fieldF04)==0) {
             reinterpret_cast<signed short&>(scriptCounterF00)=1;
             ++fieldF04;
-            SetAuxActionAt40FB40(1);
+            ResetSecondaryCounter(1);
             field314=0.0f;
             SpawnFloatXYAt453A70(0x34A,
                 opponent->x-float(((facing))*100),

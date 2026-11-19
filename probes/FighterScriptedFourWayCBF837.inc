@@ -39,7 +39,7 @@ case 0xCB: {
     }
     if ((animationStage)==3 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(1);
+        ResetSecondaryCounter(1);
     }
     return;
 }

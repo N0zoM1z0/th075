@@ -39,7 +39,7 @@
             if ((animationStage)==10 && (animationFrame)==0
                 && (reinterpret_cast<signed short&>(scriptCounterF02))<(3-static_cast<int>(g_CloudOpponentAt006714D0))*2) {
                 ++reinterpret_cast<signed short&>(scriptCounterF02);
-                SetAuxActionAt40FB40(9);
+                ResetSecondaryCounter(9);
             }
             if ((animationStage)==12 && (animationFrame)==0) {
                 field314=static_cast<float>(reinterpret_cast<signed short&>(scriptCounterF00));

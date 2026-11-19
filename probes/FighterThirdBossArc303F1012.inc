@@ -31,7 +31,7 @@ case 0x303: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
             ClearMotionFields();
-            SetAuxActionAt40FB40(11);
+            ResetSecondaryCounter(11);
         }
     }
     if ((animationStage)==7 || (animationStage)==8) {
@@ -76,6 +76,6 @@ case 0x303: {
                 g_F1012_AngleDivisorAt00657828);
     }
     if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<25)
-        SetAuxActionAt40FB40(7);
+        ResetSecondaryCounter(7);
     break;
 }

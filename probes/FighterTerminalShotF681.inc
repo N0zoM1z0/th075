@@ -18,7 +18,7 @@
             }
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
-                SetAuxActionAt40FB40(9);
+                ResetSecondaryCounter(9);
             }
             break;
         }

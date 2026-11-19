@@ -202,7 +202,7 @@ void RemiliaFighter::Advance() {
                 }
             }
             if (animationStage == 3 && velocityY < g_ExtraThresholdAt00657D14)
-                SetAuxActionAt40FB40(4);
+                ResetSecondaryCounter(4);
             ++animationFrame;
             if (animationFrame >= (field072)) {
                 animationFrame = 0;
@@ -235,7 +235,7 @@ void RemiliaFighter::Advance() {
                 }
             }
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
             ++animationFrame;
             if (animationFrame >= (field072)) {
                 animationFrame = 0;
@@ -259,7 +259,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (animationStage == 3 && velocityY < g_ExtraThresholdAt00657D14)
-                SetAuxActionAt40FB40(4);
+                ResetSecondaryCounter(4);
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
@@ -295,7 +295,7 @@ void RemiliaFighter::Advance() {
             return;
         }
         if (AdvanceNestedFrame() == field070) {
-            SetAuxActionAt40FB40(1);
+            ResetSecondaryCounter(1);
         }
         break;
         case 0xA:
@@ -757,7 +757,7 @@ void RemiliaFighter::Advance() {
                 if ((velocityX)<g_F718_BounceMinAt00657CF8)
                     velocityX=3.0f;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(25);
+                    ResetSecondaryCounter(25);
                     y=0.0f;
                     ClearMotionFields();
                     break;
@@ -792,12 +792,12 @@ void RemiliaFighter::Advance() {
                     facing,1);
             }
             if (animationStage==15 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
-                SetAuxActionAt40FB40(11);
+                ResetSecondaryCounter(11);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
             if (animationStage==25 && animationFrame==0)
-                SetAuxActionAt40FB40(23);
+                ResetSecondaryCounter(23);
             break;
         }
         case 0x2C1: {
@@ -820,7 +820,7 @@ void RemiliaFighter::Advance() {
             if (animationStage>10 && animationStage<14) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(14);
+                    ResetSecondaryCounter(14);
                     break;
                 }
             }
@@ -843,15 +843,15 @@ void RemiliaFighter::Advance() {
                 PlaySound(12);
             }
             if (animationStage==8 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<12) {
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             if (animationStage==11 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<14) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             if (animationStage==14 && animationFrame==0)
-                SetAuxActionAt40FB40(12);
+                ResetSecondaryCounter(12);
             break;
         }
 
@@ -910,7 +910,7 @@ void RemiliaFighter::Advance() {
                 if ((velocityX)<g_F718_BounceMinAt00657CF8)
                     velocityX=3.0f;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(25);
+                    ResetSecondaryCounter(25);
                     y=0.0f;
                     ClearMotionFields();
                     break;
@@ -949,12 +949,12 @@ void RemiliaFighter::Advance() {
                     facing,1);
             }
             if (animationStage==15 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
-                SetAuxActionAt40FB40(11);
+                ResetSecondaryCounter(11);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
             if (animationStage==25 && animationFrame==0)
-                SetAuxActionAt40FB40(23);
+                ResetSecondaryCounter(23);
             break;
         }
 

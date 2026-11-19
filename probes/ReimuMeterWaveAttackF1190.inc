@@ -19,7 +19,7 @@ case R1190_ACTION: {
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<R1190_LIMIT) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(10);
+        ResetSecondaryCounter(10);
     }
     break;
 }

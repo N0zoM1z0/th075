@@ -35,7 +35,7 @@
                 if (velocityY+y<=g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(6);
+                    ResetSecondaryCounter(6);
                     break;
                 }
             }
@@ -76,7 +76,7 @@
                 if (velocityY+y<g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(6);
+                    ResetSecondaryCounter(6);
                     break;
                 }
             }

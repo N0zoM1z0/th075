@@ -19,7 +19,7 @@ case 0x18B: {
         ResetPrimaryCounters(2);
     if ((animationStage)==7 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         field080=1;
         field07C=0;
     }

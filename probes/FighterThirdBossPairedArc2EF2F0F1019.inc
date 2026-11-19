@@ -30,7 +30,7 @@ case 0x2EF: {
     if (y>g_ThresholdAt0065782C && (animationStage)>23) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
-            SetAuxActionAt40FB40(34);
+            ResetSecondaryCounter(34);
             ClearMotionFields();
             y=0.0f;
             break;
@@ -129,11 +129,11 @@ case 0x2EF: {
         PlaySound(7);
         if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
             ++fieldF04;
-            SetAuxActionAt40FB40(15);
+            ResetSecondaryCounter(15);
         }
     }
     if ((animationStage)==34 && (animationFrame)==0)
-        SetAuxActionAt40FB40(32);
+        ResetSecondaryCounter(32);
     break;
 }
 
@@ -152,7 +152,7 @@ case 0x2F0: {
     if (y>g_ThresholdAt0065782C && (animationStage)>23) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
-            SetAuxActionAt40FB40(34);
+            ResetSecondaryCounter(34);
             ClearMotionFields();
             y=0.0f;
             break;
@@ -251,10 +251,10 @@ case 0x2F0: {
         PlaySound(7);
         if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
             ++fieldF04;
-            SetAuxActionAt40FB40(15);
+            ResetSecondaryCounter(15);
         }
     }
     if ((animationStage)==34 && (animationFrame)==0)
-        SetAuxActionAt40FB40(32);
+        ResetSecondaryCounter(32);
     break;
 }

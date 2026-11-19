@@ -31,7 +31,6 @@ public:
     void SubactionAt452B30();
     void SpawnAt453C80(int,float,float,char,int);
     signed char ContactAt454EE0();
-    void SetAuxActionAt40FB40(int);
 
     void ConfigureStage();
     void ChooseAction();

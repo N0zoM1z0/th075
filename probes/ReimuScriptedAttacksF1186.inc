@@ -36,7 +36,7 @@ case 0x187: {
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f;
-            SetAuxActionAt40FB40(0xB);
+            ResetSecondaryCounter(0xB);
             break;
         }
     }
@@ -87,7 +87,7 @@ case 0x189: {
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1D);
     if ((animationStage)==5 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(3);
+        ResetSecondaryCounter(3);
     }
     break;
 }
@@ -141,7 +141,7 @@ case 0x192: {
     }
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(4);
+        ResetSecondaryCounter(4);
     }
     break;
 }

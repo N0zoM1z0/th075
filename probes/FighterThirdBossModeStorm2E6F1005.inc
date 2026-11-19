@@ -26,7 +26,7 @@ case 0x2E6: {
             color[0]=(color[0])-30;
         else {
             color[0]=0;
-            SetAuxActionAt40FB40(8);
+            ResetSecondaryCounter(8);
             break;
         }
     }
@@ -51,7 +51,7 @@ case 0x2E6: {
             if (y+velocityY<=g_ThresholdAt0065782C) {
                 color[0]=255;
                 ClearMotionFields();
-                SetAuxActionAt40FB40(19);
+                ResetSecondaryCounter(19);
                 y=0.0f;
                 break;
             }
@@ -146,7 +146,7 @@ case 0x2E6: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         break;
     }
@@ -157,10 +157,10 @@ case 0x2E6: {
     if ((animationStage)==11 && (animationFrame)==0)
         PlaySound(5);
     if ((animationStage)==17 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
-        SetAuxActionAt40FB40(15);
+        ResetSecondaryCounter(15);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if ((animationStage)==19 && (animationFrame)==0)
-        SetAuxActionAt40FB40(17);
+        ResetSecondaryCounter(17);
     break;
 }

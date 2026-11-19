@@ -22,7 +22,7 @@ case 0xC8: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         if ((facing)*inputX>0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
-            SetAuxActionAt40FB40(5);
+            ResetSecondaryCounter(5);
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             break;
         }
@@ -54,12 +54,12 @@ case 0xC9: {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
-            SetAuxActionAt40FB40(5);
+            ResetSecondaryCounter(5);
             break;
         }
     }
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
-    if ((animationStage)==5 && (animationFrame)==0) SetAuxActionAt40FB40((animationStage)-2);
+    if ((animationStage)==5 && (animationFrame)==0) ResetSecondaryCounter((animationStage)-2);
     break;
 }
 case 0xCA: {
@@ -81,7 +81,7 @@ case 0xCA: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(9);
+    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(9);
     break;
 }
 case 0xCB: {
@@ -95,7 +95,7 @@ case 0xCB: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(8);
+    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(8);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=-9.0f; velocityY=5.0f; field05C=0.45f;
         SpawnMixedAt453C80(0x7D,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandBackYAt006590A8,
@@ -147,6 +147,6 @@ case 0xD0: {
         ClearMotionFields();
         break;
     }
-    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(4);
+    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(4);
     break;
 }

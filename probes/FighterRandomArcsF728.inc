@@ -30,7 +30,7 @@
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(12);
+                    ResetSecondaryCounter(12);
                     y=0.0f;
                     break;
                 }
@@ -44,7 +44,7 @@
                 field05C=0.8f;
             }
             if ((animationStage)==18 && (animationFrame)==0)
-                SetAuxActionAt40FB40(16);
+                ResetSecondaryCounter(16);
             break;
         }
         case 0x1F5: {
@@ -71,7 +71,7 @@
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(12);
+                    ResetSecondaryCounter(12);
                     y=0.0f;
                     break;
                 }
@@ -85,6 +85,6 @@
                 field05C=0.8f;
             }
             if ((animationStage)==12 && (animationFrame)==0)
-                SetAuxActionAt40FB40(10);
+                ResetSecondaryCounter(10);
             break;
         }

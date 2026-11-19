@@ -15,7 +15,7 @@ case 0x2DB: {
         if (F892AbsAt00412D90(
                 opponent->x-x)
                 <g_F892DistAt0065787C) {
-            SetAuxActionAt40FB40(10);
+            ResetSecondaryCounter(10);
             return;
         }
     }
@@ -32,7 +32,7 @@ case 0x2DB: {
         velocityX=12.5f;
     if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         SpawnFloatXRawYAt453C80(0x80,

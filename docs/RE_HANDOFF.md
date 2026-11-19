@@ -32,6 +32,11 @@ Done so far:
   sites). Complete COFF sizes/relocation positions and types are unchanged;
   nonrelocation code byte differences = 0. Header-affected exact units
   passed 132/132 targeted cold replay; giant register debt remains.
+- The native `0040FB40` helper is now `Actor::ResetSecondaryCounter`
+  across four fighter giant parents, replacing 351 source aliases and
+  462 actual COFF relocation symbols. Four complete parent byte/reloc
+  comparisons were unchanged; all 132 affected exact units cold-replayed
+  locally in three 44-unit groups. Giant GPR/width debt remains.
 - `Actor::ResetPrimaryCounters(short)` at 0040FAC0 now owns all 705
   native action-reset calls in the four complete fighter `Advance`
   research parents (511 source occurrences across 256 files). Full

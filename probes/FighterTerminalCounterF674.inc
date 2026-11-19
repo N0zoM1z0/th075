@@ -17,7 +17,7 @@
             }
             if ((animationStage)==22 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
-                SetAuxActionAt40FB40(0x14);
+                ResetSecondaryCounter(0x14);
                 reinterpret_cast<unsigned char&>(field3CF)=1;
             }
             break;

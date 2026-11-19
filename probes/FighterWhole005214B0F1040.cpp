@@ -175,9 +175,9 @@ void YoumuFighter::Advance() {
                 }
             }
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
             if (AdvanceNestedFrame() == field070)
-                SetAuxActionAt40FB40(11);
+                ResetSecondaryCounter(11);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = 0.0f;
                 velocityY = 16.0f;
@@ -229,7 +229,7 @@ void YoumuFighter::Advance() {
                 }
             }
             if (AdvanceNestedFrame() == field070)
-                SetAuxActionAt40FB40(13);
+                ResetSecondaryCounter(13);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = -5.5f;
                 velocityY = 16.0f;
@@ -248,7 +248,7 @@ void YoumuFighter::Advance() {
             return;
         }
         if (AdvanceNestedFrame() == field070) {
-            SetAuxActionAt40FB40(0);
+            ResetSecondaryCounter(0);
         }
         break;
         case 0xA:

@@ -19,7 +19,7 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070))
-                SetAuxActionAt40FB40(3);
+                ResetSecondaryCounter(3);
             else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F747_BounceXAt006590BC;
                 velocityY=static_cast<float>(-static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF02)))*g_F747_BounceYAt00658044;

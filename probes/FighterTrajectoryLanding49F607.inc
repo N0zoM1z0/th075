@@ -18,15 +18,15 @@ case 0x49: {
         break;
     }
     if (AdvanceNestedFrame()==field070)
-        SetAuxActionAt40FB40(animationStage-1);
+        ResetSecondaryCounter(animationStage-1);
     if (animationStage==1 && animationFrame==0 && velocityY != g_ThresholdAt0065782C) {
         // Real VC7.1 left lvalue preserves original FLD global; FLD member.
         // Both branches exit this native case, not merely the nested if.
         if (*(&velocityX) == g_ThresholdAt0065782C) {
-            SetAuxActionAt40FB40(3);
+            ResetSecondaryCounter(3);
             break;
         } else {
-            SetAuxActionAt40FB40(2);
+            ResetSecondaryCounter(2);
             break;
         }
     }

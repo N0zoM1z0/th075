@@ -9,7 +9,7 @@ case 0x91: {
         field07C=0;
     }
     if (animationStage==F629_STAGE && velocityY<g_StopThresholdAt00657480) {
-        SetAuxActionAt40FB40(F629_EARLY);
+        ResetSecondaryCounter(F629_EARLY);
         break;
     }
     velocityY=velocityY-field05C;
@@ -23,6 +23,6 @@ case 0x91: {
         break;
     }
     if (AdvanceNestedFrame()==field070)
-        SetAuxActionAt40FB40(F629_LATE);
+        ResetSecondaryCounter(F629_LATE);
     break;
 }

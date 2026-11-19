@@ -13,7 +13,7 @@ case R1191_ACTION: {
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(9);
+    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(9);
 #else
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
 #endif
@@ -26,7 +26,7 @@ case R1191_ACTION: {
     if ((animationStage)==R1191_FIRST_STAGE+2 && (animationFrame)==0 &&
         (reinterpret_cast<signed short&>(scriptCounterF00))<g_ReimuRepeatSettingAt006714D0*3+1) {
 #include "ReimuCounterShotF1191.inc"
-        SetAuxActionAt40FB40(R1191_FIRST_STAGE);
+        ResetSecondaryCounter(R1191_FIRST_STAGE);
     }
     break;
 }

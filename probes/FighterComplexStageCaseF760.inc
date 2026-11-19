@@ -17,7 +17,7 @@ case F760_ACTION: {
     }
 #if F760_HAS_AUX
     if ((animationStage)==4 && velocityY<g_ExtraThresholdAt00657D14)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
 #endif
     ++animationFrame;
     if ((animationFrame)>=(field072)) {

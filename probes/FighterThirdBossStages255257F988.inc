@@ -25,7 +25,7 @@ case 0x255: {
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
     }
     break;
 }
@@ -65,7 +65,7 @@ case 0x257: {
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
     }
     break;
 }

@@ -21,7 +21,7 @@
             if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(0xE);
+                    ResetSecondaryCounter(0xE);
                     break;
                 }
             }
@@ -40,13 +40,13 @@
                 PlaySound(8);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<7) {
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<9) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if ((animationStage)==14 && (animationFrame)==0) SetAuxActionAt40FB40(12);
+            if ((animationStage)==14 && (animationFrame)==0) ResetSecondaryCounter(12);
             break;
         }

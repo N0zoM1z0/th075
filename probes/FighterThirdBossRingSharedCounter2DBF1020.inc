@@ -38,7 +38,7 @@ case 0x2DB: {
             color[0]=(color[0])-30;
         else {
             color[0]=0;
-            SetAuxActionAt40FB40(8);
+            ResetSecondaryCounter(8);
             break;
         }
     }
@@ -64,7 +64,7 @@ case 0x2DB: {
             else {
                 color[0]=0;
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<3) {
-                    SetAuxActionAt40FB40(8);
+                    ResetSecondaryCounter(8);
                     break;
                 }
             }
@@ -76,7 +76,7 @@ case 0x2DB: {
             color[0]=(color[0])+20;
         else {
             color[0]=255;
-            SetAuxActionAt40FB40(20);
+            ResetSecondaryCounter(20);
         }
     }
     if ((animationStage)==20 || (animationStage)==21) {
@@ -84,7 +84,7 @@ case 0x2DB: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
             ClearMotionFields();
-            SetAuxActionAt40FB40(22);
+            ResetSecondaryCounter(22);
             y=0.0f;
             break;
         }
@@ -132,7 +132,7 @@ case 0x2DB: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
@@ -164,12 +164,12 @@ case 0x2DB: {
         }
     }
     if ((animationStage)==17 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<6) {
-        SetAuxActionAt40FB40(15);
+        ResetSecondaryCounter(15);
         ++reinterpret_cast<signed short&>(fieldF06);
     }
     if ((animationStage)==20 && (animationFrame)==0)
-        SetAuxActionAt40FB40(18);
+        ResetSecondaryCounter(18);
     if ((animationStage)==22 && (animationFrame)==0)
-        SetAuxActionAt40FB40(20);
+        ResetSecondaryCounter(20);
     break;
 }

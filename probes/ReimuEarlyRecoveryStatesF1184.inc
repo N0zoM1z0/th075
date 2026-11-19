@@ -13,7 +13,7 @@ case 0x59: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(3);
+    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(3);
     else if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=float(int(reinterpret_cast<signed short&>(scriptCounterF00)))*g_ReimuBounceXAt006590BC;
         velocityY=float(-int(reinterpret_cast<signed short&>(scriptCounterF02)))*g_ReimuBounceYAt00658044;
@@ -81,7 +81,7 @@ case 0x61: {
     if ((animationStage)==3 || (animationStage)==4) {
         velocityY=velocityY-field05C;
         if (velocityY+y<g_ThresholdAt0065782C) {
-            y=0.0f; ClearMotionFields(); SetAuxActionAt40FB40(5);
+            y=0.0f; ClearMotionFields(); ResetSecondaryCounter(5);
             break;
         }
     }
@@ -95,7 +95,7 @@ case 0x61: {
             velocityY=float(-int(reinterpret_cast<signed short&>(scriptCounterF02)))*g_ReimuRecoveryScaleAt006590B8;
             field05C=2.0f;
         }
-        if ((animationStage)==4 && (animationFrame)==0) SetAuxActionAt40FB40(3);
+        if ((animationStage)==4 && (animationFrame)==0) ResetSecondaryCounter(3);
     }
     break;
 }

@@ -21,7 +21,7 @@
                 if ((velocityX)<g_StopThresholdAt00657480)
                     velocityX=2.0f;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(9);
+                    ResetSecondaryCounter(9);
                     y=0.0f;
                     ClearMotionFields();
                     break;
@@ -45,12 +45,12 @@
             if ((animationFrame)==0)
                 field07C=0;
             if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
-                SetAuxActionAt40FB40(0);
+                ResetSecondaryCounter(0);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
             if ((animationStage)==9 && (animationFrame)==0)
-                SetAuxActionAt40FB40(7);
+                ResetSecondaryCounter(7);
             break;
         }
         case 0x2DE: {
@@ -68,7 +68,7 @@
                 if ((velocityX)<g_F718_BounceMinAt00657CF8)
                     velocityX=3.0f;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(25);
+                    ResetSecondaryCounter(25);
                     y=0.0f;
                     ClearMotionFields();
                     break;
@@ -96,11 +96,11 @@
                     facing,1);
             }
             if ((animationStage)==16 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
-                SetAuxActionAt40FB40(12);
+                ResetSecondaryCounter(12);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
             if ((animationStage)==25 && (animationFrame)==0)
-                SetAuxActionAt40FB40(23);
+                ResetSecondaryCounter(23);
             break;
         }

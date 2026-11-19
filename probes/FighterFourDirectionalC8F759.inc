@@ -11,7 +11,7 @@ case 0xC8: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
             ClearMotionFields();
-            SetAuxActionAt40FB40(7);
+            ResetSecondaryCounter(7);
             break;
         }
     }
@@ -51,7 +51,7 @@ case 0xC9: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
             ClearMotionFields();
-            SetAuxActionAt40FB40(6);
+            ResetSecondaryCounter(6);
             break;
         }
     }

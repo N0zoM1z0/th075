@@ -10,7 +10,7 @@ case 0x303: {
     if (AdvanceNestedFrame()==(field070)) {
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<8) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
-            SetAuxActionAt40FB40(15);
+            ResetSecondaryCounter(15);
             reinterpret_cast<char&>(field3CF)=1;
             break;
         }
@@ -99,6 +99,6 @@ case 0x304: {
     }
     reinterpret_cast<int&>(field490)=0;
     reinterpret_cast<int&>(opponent->field490)=0;
-    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(1);
+    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(1);
     break;
 }

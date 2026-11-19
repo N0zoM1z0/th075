@@ -14,7 +14,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(12);
+                    ResetSecondaryCounter(12);
                     break;
                 }
             }
@@ -35,7 +35,7 @@
                 field05C=0.7f;
             }
             if ((animationStage)==12 && (animationFrame)==0)
-                SetAuxActionAt40FB40(10);
+                ResetSecondaryCounter(10);
             break;
         }
         case 0x5E: {
@@ -44,7 +44,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(9);
+                    ResetSecondaryCounter(9);
                     break;
                 }
             }
@@ -65,6 +65,6 @@
                 field05C=0.7f;
             }
             if ((animationStage)==9 && (animationFrame)==0)
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
             break;
         }

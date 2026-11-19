@@ -31,7 +31,7 @@ case 0x1FB: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xD);
+            ResetSecondaryCounter(0xD);
             y=0.0f;
             break;
         }
@@ -79,7 +79,7 @@ case 0x1FB: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
@@ -89,7 +89,7 @@ case 0x1FB: {
         field05C=0.5f;
     }
     if ((animationStage)==13 && (animationFrame)==0)
-        SetAuxActionAt40FB40(0xB);
+        ResetSecondaryCounter(0xB);
     break;
 }
 // F983 natural source probe for real original 004AC040 1F9
@@ -117,7 +117,7 @@ case 0x1FC: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xD);
+            ResetSecondaryCounter(0xD);
             y=0.0f;
             break;
         }
@@ -165,7 +165,7 @@ case 0x1FC: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
@@ -175,7 +175,7 @@ case 0x1FC: {
         field05C=0.5f;
     }
     if ((animationStage)==13 && (animationFrame)==0)
-        SetAuxActionAt40FB40(0xB);
+        ResetSecondaryCounter(0xB);
     break;
 }
 // F983 natural source probe for real original 004AC040 1F9
@@ -203,7 +203,7 @@ case 0x1FD: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xD);
+            ResetSecondaryCounter(0xD);
             y=0.0f;
             break;
         }
@@ -251,7 +251,7 @@ case 0x1FD: {
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-        SetAuxActionAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
@@ -261,7 +261,7 @@ case 0x1FD: {
         field05C=0.5f;
     }
     if ((animationStage)==13 && (animationFrame)==0)
-        SetAuxActionAt40FB40(0xB);
+        ResetSecondaryCounter(0xB);
     break;
 }
 // F983 natural source probe for real original 004AC040 1F9

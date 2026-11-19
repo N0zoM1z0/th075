@@ -71,7 +71,7 @@ case 0x35: {
     }
     if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
         ++I16(CONTACT_STAGE_OFFSET);
-        SetAuxActionAt40FB40(1);
+        ResetSecondaryCounter(1);
     }
     break;
 }
@@ -163,7 +163,7 @@ case 0x3B: {
     }
     if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
         ++I16(CONTACT_STAGE_OFFSET);
-        SetAuxActionAt40FB40(1);
+        ResetSecondaryCounter(1);
     }
     break;
 }
@@ -255,7 +255,7 @@ case 0x41: {
     }
     if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
         ++I16(CONTACT_STAGE_OFFSET);
-        SetAuxActionAt40FB40(1);
+        ResetSecondaryCounter(1);
     }
     break;
 }

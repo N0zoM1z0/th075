@@ -22,7 +22,7 @@ case 0x46: {
             facing, TRAJECTORY_SPAWN_SIDE);
     }
     if (animationStage == TRAJECTORY_STAGE_THRESHOLD && velocityY < g_StopThresholdAt00657480) {
-        SetAuxActionAt40FB40(TRAJECTORY_EARLY_STATE);
+        ResetSecondaryCounter(TRAJECTORY_EARLY_STATE);
         break;
     }
     velocityY = velocityY - field05C;
@@ -37,6 +37,6 @@ case 0x46: {
         break;
     }
     if (AdvanceNestedFrame() == field070)
-        SetAuxActionAt40FB40(TRAJECTORY_LATE_STATE);
+        ResetSecondaryCounter(TRAJECTORY_LATE_STATE);
     break;
 }

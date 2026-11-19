@@ -52,7 +52,7 @@ case 0x187: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xE);
+            ResetSecondaryCounter(0xE);
             break;
         }
     }
@@ -68,6 +68,6 @@ case 0x187: {
     if ((animationStage)==8 && (animationFrame)==0)
         field07C=0;
     if ((animationStage)==14 && (animationFrame)==0)
-        SetAuxActionAt40FB40(0xC);
+        ResetSecondaryCounter(0xC);
     break;
 }

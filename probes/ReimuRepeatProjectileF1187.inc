@@ -15,7 +15,7 @@ case R1187_ACTION: {
     }
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(4);
+        ResetSecondaryCounter(4);
     }
     break;
 }

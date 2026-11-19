@@ -27,7 +27,7 @@ case 0x188: {
         if (velocityY+y<=g_ThresholdAt0065782C) {
             ClearMotionFields();
             y=0.0f;
-            SetAuxActionAt40FB40(0xC);
+            ResetSecondaryCounter(0xC);
             break;
         }
     }

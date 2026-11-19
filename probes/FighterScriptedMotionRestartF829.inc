@@ -21,7 +21,7 @@ case F645_CASE: {
         }
     }
     if (AdvanceNestedFrame()==field070) {
-        SetAuxActionAt40FB40(F645_AUX_ACTION);
+        ResetSecondaryCounter(F645_AUX_ACTION);
         return;
     }
     return;

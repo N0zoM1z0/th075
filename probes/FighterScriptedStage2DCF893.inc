@@ -31,7 +31,7 @@ case 0x2DC: {
     if (y>g_ThresholdAt0065782C && (animationStage)<24) {
         velocityY=velocityY-g_F893VerticalStageAt006598B0;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            SetAuxActionAt40FB40(24);
+            ResetSecondaryCounter(24);
             velocityX=0.0f;
             velocityY=0.0f;
             y=0.0f;
@@ -44,7 +44,7 @@ case 0x2DC: {
     }
     if ((animationStage)==13 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         velocityX=12.5f;
@@ -53,6 +53,6 @@ case 0x2DC: {
         field080=1;
     }
     if ((animationStage)==24 && (animationFrame)==0)
-        SetAuxActionAt40FB40(22);
+        ResetSecondaryCounter(22);
     return;
 }

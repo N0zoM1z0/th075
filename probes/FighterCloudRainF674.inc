@@ -32,7 +32,7 @@
             if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(0xE);
+                    ResetSecondaryCounter(0xE);
                     break;
                 }
             }
@@ -51,11 +51,11 @@
                     (*(&y))+g_CloudShotYAt006591E4,
                     facing,1);
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<25) {
-                SetAuxActionAt40FB40(5);
+                ResetSecondaryCounter(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<25) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;

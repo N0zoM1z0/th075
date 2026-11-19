@@ -20,7 +20,7 @@
                 velocityY=velocityY-g_ApproachAt00658058;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     ClearMotionFields();
-                    SetAuxActionAt40FB40(15);
+                    ResetSecondaryCounter(15);
                     y=0.0f;
                     break;
                 }
@@ -41,7 +41,7 @@
                         && facing==1)
                     || (((field2DC)-g_F699_SideOffsetAt00657874)<=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
                         && facing==-1)) {
-                    SetAuxActionAt40FB40(11);
+                    ResetSecondaryCounter(11);
                     ClearMotionFields();
                     break;
                 }
@@ -54,7 +54,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     velocityY=0.0f;
                     velocityX=(velocityX)*g_F728_PositiveDragAt006583FC;
-                    SetAuxActionAt40FB40(16);
+                    ResetSecondaryCounter(16);
                     y=0.0f;
                     break;
                 }
@@ -90,8 +90,8 @@
                 SpawnDirectedAt453A70(F729_STAGE15_SHOT,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
             if ((animationStage)==18 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0)
-                SetAuxActionAt40FB40(19);
+                ResetSecondaryCounter(19);
             if ((animationStage)==11 && (animationFrame)==0)
-                SetAuxActionAt40FB40(9);
+                ResetSecondaryCounter(9);
             break;
         }

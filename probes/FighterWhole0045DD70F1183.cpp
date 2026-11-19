@@ -257,7 +257,7 @@ void ReimuFighter::Advance() {
             return;
         }
         if (AdvanceNestedFrame() == field070) {
-            SetAuxActionAt40FB40(0);
+            ResetSecondaryCounter(0);
         }
         break;
         case 0xA:
@@ -325,7 +325,7 @@ case 0x48: {
         field07C = 0;
     }
     if (animationStage==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
-        SetAuxActionAt40FB40(F605_EARLY48);
+        ResetSecondaryCounter(F605_EARLY48);
         break;
     }
     velocityY = velocityY - field05C;
@@ -340,7 +340,7 @@ case 0x48: {
         break;
     }
     if (AdvanceNestedFrame() == field070)
-        SetAuxActionAt40FB40(F605_LATE48);
+        ResetSecondaryCounter(F605_LATE48);
     break;
 }
 

@@ -16,7 +16,7 @@ case R1185_ACTION: {
         }
     }
 #if R1185_HAS_AUX
-    if ((animationStage)==4 && velocityY<g_ExtraThresholdAt00657D14) SetAuxActionAt40FB40(5);
+    if ((animationStage)==4 && velocityY<g_ExtraThresholdAt00657D14) ResetSecondaryCounter(5);
 #endif
     ++animationFrame;
     if ((animationFrame)>=(field072)) {

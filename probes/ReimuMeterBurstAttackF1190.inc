@@ -5,7 +5,7 @@ case R1190_ACTION: {
     if ((animationStage)>11 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-g_SubtractAt00657478;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            SetAuxActionAt40FB40(15);
+            ResetSecondaryCounter(15);
             y=0.0f;
             ClearMotionFields();
             break;
@@ -27,10 +27,10 @@ case R1190_ACTION: {
     }
     if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<13) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(10);
+        ResetSecondaryCounter(10);
     }
 #if R1190_AIR
-    if ((animationStage)==15 && (animationFrame)==0) SetAuxActionAt40FB40(13);
+    if ((animationStage)==15 && (animationFrame)==0) ResetSecondaryCounter(13);
 #endif
     break;
 }

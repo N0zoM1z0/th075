@@ -18,7 +18,7 @@
             if ((animationStage)<18) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(0x12);
+                    ResetSecondaryCounter(0x12);
                     y=0.0f;
                     ClearMotionFields();
                     break;
@@ -45,10 +45,10 @@
                 ResetPrimaryCounters(0);
             if ((animationStage)==13 && (animationFrame)==0 &&
                 (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)+3) {
-                SetAuxActionAt40FB40(0xB);
+                ResetSecondaryCounter(0xB);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             if ((animationStage)==18 && (animationFrame)==0)
-                SetAuxActionAt40FB40(0x10);
+                ResetSecondaryCounter(0x10);
             break;
         }

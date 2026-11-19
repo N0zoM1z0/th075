@@ -26,7 +26,7 @@ case 0x31B: {
     }
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
     }
     break;
 }
@@ -46,7 +46,7 @@ case 0x31C: {
     }
     if ((animationStage)==21 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(19);
+        ResetSecondaryCounter(19);
         reinterpret_cast<unsigned char&>(field3CF)=1;
     }
     break;

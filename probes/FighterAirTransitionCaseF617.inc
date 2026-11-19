@@ -8,7 +8,7 @@ case F617_CASE: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
             ClearMotionFields();
-            SetAuxActionAt40FB40(F617_THRESHOLD);
+            ResetSecondaryCounter(F617_THRESHOLD);
             break;
         }
     }
@@ -33,6 +33,6 @@ case F617_CASE: {
         field05C=F617_FRICTION;
     }
     if (animationStage==F617_THRESHOLD && animationFrame==0)
-        SetAuxActionAt40FB40(F617_FINISH_STATE);
+        ResetSecondaryCounter(F617_FINISH_STATE);
     break;
 }

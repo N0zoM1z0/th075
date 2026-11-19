@@ -19,7 +19,7 @@ case 0xCC: {
         }
     }
     if (animationStage==4 && velocityY<g_ExtraThresholdAt00657D14)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
     ++animationFrame;
     if (animationFrame>=field072) {
         animationFrame=0;

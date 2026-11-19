@@ -26,7 +26,7 @@ case 0xD2: {
     velocityY=velocityY-(field05C)*g_BounceScaleAt00657F74;
     if (AdvanceNestedFrame()==field070) {
         if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
-            SetAuxActionAt40FB40(2);
+            ResetSecondaryCounter(2);
         else
             ResetPrimaryCounters(9);
     }

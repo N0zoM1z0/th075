@@ -22,7 +22,7 @@ case 0x189: {
         if (y+velocityY<g_ThresholdAt0065782C) {
             y=0.0f;
             velocityX=(velocityX)*g_F852GroundBounceMultiplierAt00657478;
-            SetAuxActionAt40FB40(7);
+            ResetSecondaryCounter(7);
             return;
         }
     }

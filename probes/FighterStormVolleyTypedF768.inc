@@ -45,7 +45,7 @@
             if ((animationStage)==3 && (animationFrame)==0) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     ++reinterpret_cast<signed short&>(scriptCounterF00);
-                    SetAuxActionAt40FB40(2);
+                    ResetSecondaryCounter(2);
                     break;
                 }
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -53,19 +53,19 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     ++reinterpret_cast<signed short&>(scriptCounterF00);
-                    SetAuxActionAt40FB40(3);
+                    ResetSecondaryCounter(3);
                     break;
                 }
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if ((animationStage)==8 && (animationFrame)==0
                 && (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)+6) {
-                SetAuxActionAt40FB40(6);
+                ResetSecondaryCounter(6);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             if ((animationStage)==10 && (animationFrame)==0
                 && (reinterpret_cast<signed short&>(scriptCounterF00))<10-static_cast<int>(g_CloudOpponentAt006714D0)) {
-                SetAuxActionAt40FB40(8);
+                ResetSecondaryCounter(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;

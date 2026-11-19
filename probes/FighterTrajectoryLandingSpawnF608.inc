@@ -18,7 +18,7 @@ case 0x49: {
         break;
     }
     if (AdvanceNestedFrame()==field070)
-        SetAuxActionAt40FB40(animationStage-1);
+        ResetSecondaryCounter(animationStage-1);
     if (animationStage==1 && animationFrame==0) {
         // Actual 118-x86 native case has a once-only projectile branch
         // before its two original x87 equality tests. Keep it inside
@@ -33,10 +33,10 @@ case 0x49: {
         // Real VC7.1 left lvalue preserves original FLD global; FLD member.
         // Both branches exit this native case, not merely the nested if.
         if (*(&velocityX) == g_ThresholdAt0065782C) {
-            SetAuxActionAt40FB40(3);
+            ResetSecondaryCounter(3);
             break;
         } else {
-            SetAuxActionAt40FB40(2);
+            ResetSecondaryCounter(2);
             break;
         }
         }

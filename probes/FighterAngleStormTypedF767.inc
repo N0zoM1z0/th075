@@ -20,7 +20,7 @@ case 0x2F9: {
                     velocityY=velocityY-field05C;
                 }
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    SetAuxActionAt40FB40(0x14);
+                    ResetSecondaryCounter(0x14);
                     y=0.0f;
                     ClearMotionFields();
                     break;
@@ -76,7 +76,7 @@ case 0x2F9: {
             }
             if ((animationStage)==13 && (animationFrame)==0) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
-                    SetAuxActionAt40FB40(0xB);
+                    ResetSecondaryCounter(0xB);
                     ++reinterpret_cast<signed short&>(scriptCounterF00);
                 } else reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
@@ -90,9 +90,9 @@ case 0x2F9: {
             }
             if ((animationStage)==16 && (animationFrame)==0
                 && (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
-                SetAuxActionAt40FB40(14);
+                ResetSecondaryCounter(14);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if ((animationStage)==20 && (animationFrame)==0) SetAuxActionAt40FB40(0x12);
+            if ((animationStage)==20 && (animationFrame)==0) ResetSecondaryCounter(0x12);
             break;
         }

@@ -20,7 +20,7 @@ case 0x1F6: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ClearMotionFields();
-            SetAuxActionAt40FB40(6);
+            ResetSecondaryCounter(6);
             y=0.0f;
             break;
         }
@@ -60,11 +60,11 @@ case 0x1F6: {
         PlaySound(3);
     }
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
     break;
 }
 // F982 original native 004AC040 0x1F7 double-scaled fighter action
@@ -82,7 +82,7 @@ case 0x1F7: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ClearMotionFields();
-            SetAuxActionAt40FB40(6);
+            ResetSecondaryCounter(6);
             y=0.0f;
             break;
         }
@@ -122,10 +122,10 @@ case 0x1F7: {
         PlaySound(3);
     }
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
     break;
 }

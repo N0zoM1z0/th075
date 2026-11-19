@@ -26,5 +26,5 @@
 #undef R1187_UPPER
 #undef R1187_ANIMATION
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        SetAuxActionAt40FB40(R1187_FIRST_STAGE);
+        ResetSecondaryCounter(R1187_FIRST_STAGE);
     }

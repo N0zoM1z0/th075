@@ -17,7 +17,7 @@ case 0x2DD: {
     if (y>g_ThresholdAt0065782C && (animationStage)<26) {
         velocityY=velocityY-g_F894VerticalStageAt00659090;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            SetAuxActionAt40FB40(26);
+            ResetSecondaryCounter(26);
             velocityX=0.0f;
             velocityY=0.0f;
             y=0.0f;
@@ -42,6 +42,6 @@ case 0x2DD: {
         PlaySound(4);
     }
     if ((animationStage)==26 && (animationFrame)==0)
-        SetAuxActionAt40FB40(24);
+        ResetSecondaryCounter(24);
     return;
 }

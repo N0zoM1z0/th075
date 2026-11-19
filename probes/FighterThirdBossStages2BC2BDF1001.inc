@@ -53,7 +53,7 @@ case 0x2BC: {
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySound(5);
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
         ++reinterpret_cast<signed short&>(fieldF06);
     }
     break;
@@ -103,7 +103,7 @@ case 0x2BD: {
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySound(6);
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
-        SetAuxActionAt40FB40(9);
+        ResetSecondaryCounter(9);
         ++reinterpret_cast<signed short&>(fieldF06);
     }
     break;

@@ -20,7 +20,7 @@ case 0x1F8: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ClearMotionFields();
-            SetAuxActionAt40FB40(0xF);
+            ResetSecondaryCounter(0xF);
             y=0.0f;
             return;
         }
@@ -40,6 +40,6 @@ case 0x1F8: {
         PlaySound(4);
     }
     if ((animationStage)==0xF && (animationFrame)==0)
-        SetAuxActionAt40FB40(0xE);
+        ResetSecondaryCounter(0xE);
     return;
 }

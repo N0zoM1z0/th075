@@ -18,7 +18,7 @@ case 0x1F5: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ClearMotionFields();
-            SetAuxActionAt40FB40(0x18);
+            ResetSecondaryCounter(0x18);
             y=0.0f;
             return;
         }
@@ -52,6 +52,6 @@ case 0x1F5: {
             (facing),1);
     }
     if ((animationStage)==0x18 && (animationFrame)==0)
-        SetAuxActionAt40FB40(0x16);
+        ResetSecondaryCounter(0x16);
     return;
 }
