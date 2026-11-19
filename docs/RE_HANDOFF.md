@@ -159,6 +159,11 @@ Yuyuko's 43,845-byte object giant also dropped two redundant angle-result
 short casts while preserving all 44,331 COFF bytes and 1,043 relocation
 positions/types/addends/local targets; its 914-GPR / six-width frontier is
 unchanged.
+Alice's 33,293-byte object giant dropped another 13 redundant short casts
+and one redundant float conversion while preserving all 33,731 COFF bytes and
+682 relocation positions/types/addends/local targets; its 133-GPR / zero-width
+frontier remains unchanged. Float casts protecting integer subtraction and
+integer division remain in place.
 
 For a complete parent:
 

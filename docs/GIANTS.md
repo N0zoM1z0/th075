@@ -858,3 +858,11 @@ which changes the original COFF. The accepted natural source keeps the full
 33,731-byte function body and all 682 relocation offsets/types/addends and
 local destinations identical. The frontier remains 575 differing bytes,
 133 GPR positions and zero width mismatches; no giant exactness is claimed.
+A third Alice source pass removes 13 redundant `static_cast<short>`
+wrappers around expressions assigned to short members, plus one redundant
+float conversion on a double-multiplier result assigned to `scaleY`. The full
+33,731-byte COFF body and all 682 relocation positions/types/addends/local
+targets remain identical. The frontier stays at 575 differing bytes, 133 GPR
+positions and zero width differences; the float conversions before integer
+`RecordedRange` subtraction and before `owner->field3A0 / field0D8` remain
+because they change arithmetic semantics.
