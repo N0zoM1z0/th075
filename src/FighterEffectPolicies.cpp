@@ -1,12 +1,12 @@
 #include "ReimuFighter.hpp"
-#include "FighterEffectBorrowedFieldsF973.hpp"
+#include "EffectManagerLifetimeF161.hpp"
 #include "FighterEffectPolicies.hpp"
 
 
 void Fighter::SpawnBattleEffect(short effect, float x, float y,
                                                  signed char facing, signed char layer)
 {
-    F973_EFFECT_TAIL(this, BattleEffectQueueF135).queuePointerAt2EC->Spawn(effect, x, y, facing, layer,
+    field2EC->Spawn(effect, x, y, facing, layer,
         0, 0, &field314, 0, 0);
 }
 
@@ -15,10 +15,10 @@ void Fighter::SpawnTrackedEffect(short effect, float x, float y,
                                                   unsigned char linked, unsigned char mode)
 {
     if (linked != 0) {
-        F973_EFFECT_TAIL(this, BattleEffectQueueF135).queuePointerAt2EC->Spawn(effect, x, y, facing, layer,
-            0, 0, &field314, &F973_EFFECT_TAIL(this, BattleEffectQueueF135).transformFirstByteAt2F0, mode);
+        field2EC->Spawn(effect, x, y, facing, layer,
+            0, 0, &field314, &field2F0, mode);
     } else {
-        F973_EFFECT_TAIL(this, BattleEffectQueueF135).queuePointerAt2EC->Spawn(effect, x, y, facing, layer,
+        field2EC->Spawn(effect, x, y, facing, layer,
             0, 0, &field314, 0, mode);
     }
 }

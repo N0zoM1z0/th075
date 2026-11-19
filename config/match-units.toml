@@ -24400,7 +24400,7 @@ target_address = 0x00453A70
 size = 65
 compare_size = 65
 relocations = [
-  { offset = 0x37, type = "REL32", symbol = "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
+  { offset = 0x37, type = "REL32", symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
 ]
 
 [units."fighter-tracked-effect-forwarder-f135"]
@@ -24413,8 +24413,8 @@ target_address = 0x00453B50
 size = 140
 compare_size = 140
 relocations = [
-  { offset = 0x49, type = "REL32", symbol = "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
-  { offset = 0x82, type = "REL32", symbol = "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
+  { offset = 0x49, type = "REL32", symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
+  { offset = 0x82, type = "REL32", symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
 ]
 
 [units."fighter-aux-effect-forwarder-f135"]
@@ -26139,12 +26139,12 @@ size = 136
 [[units.fighter-spawn-tracked-effect-00453ac0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z"
 target = 0x0045BB10
 [[units.fighter-spawn-tracked-effect-00453ac0.relocations]]
 offset = 126
 type = "REL32"
-symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z"
 target = 0x0045BB10
 
 [units.fighter-spawn-tracked-effect-flags-00453be0]
@@ -26158,12 +26158,12 @@ size = 145
 [[units.fighter-spawn-tracked-effect-flags-00453be0.relocations]]
 offset = 76
 type = "REL32"
-symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z"
 target = 0x0045BB10
 [[units.fighter-spawn-tracked-effect-flags-00453be0.relocations]]
 offset = 135
 type = "REL32"
-symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+symbol = "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z"
 target = 0x0045BB10
 
 [units.fighter-opponent-gauge-change-00452c10]

@@ -1,4 +1,4 @@
-#include "BattleEffectSpawner.hpp"
+#include "EffectDequeF136.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 #include "CharacterObject.hpp"
 #include "Fighter.hpp"

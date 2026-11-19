@@ -8,7 +8,7 @@
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b4efd413fa9d6b92bbc5ddea48aacaf2c41195c15acc0b33d41d31ccd5204b43"
+      "current_sha256": "08342f245735a9681936bd65351e644b82e16e32d93950d7415322fc42abaa7d"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "5fab69223a5d92db4cc0b3202911f246690c38992fdb1c045e35b5b66a687bf0"
+      "current_sha256": "3a3344d6611f7521a5f9ad6585fda9763984bccf1f54a795c2f5f9f5a132119f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d748864cee176d643205f98a65f4eb1ab04b7958d129d73a26273312c02c7362"
+      "current_sha256": "c38d53974d26c329cef3351e3312e3a5297b220a44658fe6ace6cb28fb683961"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "402664484897db4d73282e9b51275f8cf8fe69af21a573d699fdb0dd4c7f9154"
+      "current_sha256": "f05b69900afef1616c3c87abbe5ccc8b24e2f702dacc21699b70db175668ddd1"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "dd1029d90cdf4ffdc02874f0e2a8fa36386b2f9c3330564a94b31e5744f2b4ca"
+      "current_sha256": "f0cc2b93da4e6eab5869836b99a1b3fbf158be5c9ff3f98df35a52a1f4966ab2"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "ab2367341f787e2e66f2f78c5db0c0526925010f4e0ec48b660a443aa6f5dce2"
+      "current_sha256": "fcd4c56e097945a56f29b417f66b5fab550bccf4d3ba91d53d1fb1b3ee8950f6"
     }
   },
   "functions": [
@@ -11549,17 +11549,17 @@
         "size": "65",
         "span_end": "0x00453AB0",
         "current_name": "FUN_00453a70",
-        "proposed_name": "FighterEffectPoliciesF135::SpawnBattleEffect",
+        "proposed_name": "Fighter::SpawnBattleEffect",
         "module": "EffectForwarders",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void FighterEffectPoliciesF135::SpawnBattleEffect(short effect, float x, float y, signed char facing, signed char layer)",
+        "signature": "void Fighter::SpawnBattleEffect(short effect, float x, float y, signed char facing, signed char layer)",
         "is_thunk": "false",
         "source_file": "src/FighterEffectPolicies.cpp",
         "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-battle-effect-forwarder-f135",
         "owner": "authored",
-        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F135: full 65-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+        "notes": "Complete 65-byte canonical cold exact body in the six-helper cohort. SpawnBattleEffect now calls the typed EffectManagerLifetimeF161::Spawn member through Fighter::field2EC, passing the native parameter field at +0x314 and no transform. The manager is the same 0x54-byte owner with a bound Fighter* and four 20-byte deques; no separate BattleEffectQueue receiver remains."
       },
       "origin": {
         "address": "0x00453A70",
@@ -11593,17 +11593,17 @@
         "size": "140",
         "span_end": "0x00453BDB",
         "current_name": "FUN_00453b50",
-        "proposed_name": "FighterEffectPoliciesF135::SpawnTrackedEffect",
+        "proposed_name": "Fighter::SpawnTrackedEffect",
         "module": "FighterState",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void FighterEffectPoliciesF135::SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer, unsigned char linked, unsigned char mode)",
+        "signature": "void Fighter::SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer, unsigned char linked, unsigned char mode)",
         "is_thunk": "false",
         "source_file": "src/FighterEffectPolicies.cpp",
         "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-tracked-effect-forwarder-f135",
         "owner": "authored",
-        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F135: full 140-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+        "notes": "Complete 140-byte canonical cold exact body in the six-helper cohort. Both linked/unlinked branches call typed EffectManagerLifetimeF161::Spawn through field2EC with &field314, optional &field2F0, and the original mode byte. The 0x54-byte manager owner and four deque members are independently established; no separate queue receiver remains."
       },
       "origin": {
         "address": "0x00453B50",
@@ -11637,17 +11637,17 @@
         "size": "57",
         "span_end": "0x00453CB8",
         "current_name": "FUN_00453c80",
-        "proposed_name": "FighterEffectPoliciesF135::SpawnAuxEffect",
+        "proposed_name": "Fighter::SpawnAuxEffect",
         "module": "EffectForwarders",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void FighterEffectPoliciesF135::SpawnAuxEffect(short effect, float x, float y, signed char facing, signed char layer)",
+        "signature": "void Fighter::SpawnAuxEffect(short effect, float x, float y, signed char facing, signed char layer)",
         "is_thunk": "false",
         "source_file": "src/FighterEffectPolicies.cpp",
         "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-aux-effect-forwarder-f135",
         "owner": "authored",
-        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F135: full 57-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+        "notes": "Complete 57-byte canonical cold exact Fighter member. Auxiliary effects still use the independently observed global auxiliary-effects object and its pointer-only Spawn interface; no owner layout or global object size is invented."
       },
       "origin": {
         "address": "0x00453C80",
@@ -11681,17 +11681,17 @@
         "size": "32",
         "span_end": "0x00453D5F",
         "current_name": "FUN_00453d40",
-        "proposed_name": "FighterEffectPoliciesF135::PlaySound",
+        "proposed_name": "Fighter::PlaySound",
         "module": "FighterState",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void FighterEffectPoliciesF135::PlaySound(short sound)",
+        "signature": "void Fighter::PlaySound(short sound)",
         "is_thunk": "false",
         "source_file": "src/FighterEffectPolicies.cpp",
         "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-owner-sound-forwarder-f135",
         "owner": "authored",
-        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F135: full 32-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+        "notes": "Complete 32-byte canonical cold exact Fighter member. The owner sound-bank receiver remains a bounded pointer-only view at Fighter+0x6D0; no complete sound-bank layout is claimed."
       },
       "origin": {
         "address": "0x00453D40",
@@ -11725,17 +11725,17 @@
         "size": "29",
         "span_end": "0x00453D7C",
         "current_name": "FUN_00453d60",
-        "proposed_name": "FighterEffectPoliciesF135::PlaySharedSound",
+        "proposed_name": "Fighter::PlaySharedSound",
         "module": "FighterState",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void FighterEffectPoliciesF135::PlaySharedSound(short sound)",
+        "signature": "void Fighter::PlaySharedSound(short sound)",
         "is_thunk": "false",
         "source_file": "src/FighterEffectPolicies.cpp",
         "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-shared-sound-forwarder-f135",
         "owner": "authored",
-        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F135: full 29-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+        "notes": "Complete 29-byte canonical cold exact Fighter member. Shared sound remains an independently observed global sound-bank pointer and pointer-only Play interface."
       },
       "origin": {
         "address": "0x00453D60",
@@ -11769,17 +11769,17 @@
         "size": "126",
         "span_end": "0x0046D07D",
         "current_name": "FUN_0046d000",
-        "proposed_name": "FighterEffectPoliciesF135::UpdateGaugeTimer",
+        "proposed_name": "Fighter::UpdateGaugeTimer",
         "module": "ReimuFighter",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void FighterEffectPoliciesF135::UpdateGaugeTimer(int amount)",
+        "signature": "void Fighter::UpdateGaugeTimer(int amount)",
         "is_thunk": "false",
         "source_file": "src/FighterEffectPolicies.cpp",
         "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-gauge-timer-f135",
         "owner": "authored",
-        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F135: full 126-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+        "notes": "Complete 126-byte canonical cold exact Fighter member. The native DWORD argument subtraction, signed post-subtraction gauge checks and shared-sound call are preserved; the sound bank remains pointer-only."
       },
       "origin": {
         "address": "0x0046D000",
@@ -14673,7 +14673,7 @@
         "size": "136",
         "span_end": "0x00453B47",
         "current_name": "FUN_00453ac0",
-        "proposed_name": "FighterState::SpawnTrackedEffectAt00453AC0",
+        "proposed_name": "Fighter::SpawnTrackedEffectAt00453AC0",
         "module": "FighterState",
         "status": "matching",
         "match_percent": "100.00",
@@ -14683,7 +14683,7 @@
         "source_file": "src/FighterTrackedEffectsF169.cpp",
         "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F169; scripts/repo-python scripts/replay-exact-units.py --unit fighter-spawn-tracked-effect-00453ac0",
         "owner": "authored",
-        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F169: complete canonical cold exact over both full R102 bodies/281CODE/all4REL32fields. Actual RET24/RET32, unsigned linked-byte guard and signed facing/layer/unsigned flags preserved. Both real branches call unchanged canonical45BB10 with receiver at2EC, parameter address314, optional transform2F0 ornull and mode0. Canonicalcallee witnesses4float parameters/36byte transform only; original fullownerlayout/private nominaltypes unknown, receiver never instantiated/embedded. Original native roles retained via explicit COFF maps. No inertlocal/padding/fakereturn/ABItrick/assembly/conditionalbody/mask/crop/alias/rebasing. Only2newunits/oneobject cold-replayed; all392oldunits/151objects/238inputs/all13active/all97unknowns/fullpendinglargefunctions preserved."
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred original helper identity, no source/exact credit; F169: complete canonical cold exact over both full R102 bodies/281 CODE bytes/all 4 REL32 fields. Actual RET24/RET32, unsigned linked-byte guard and signed facing/layer/unsigned flags preserved. Both real branches call typed EffectManagerLifetimeF161::Spawn through the Fighter field view, using manager field2EC, parameter address field314 and optional transform field2F0 or null with mode 0. The manager is the confirmed 0x54-byte owner with Fighter* and four 20-byte deques; the concrete generated effect subclass and its destructor remain unknown. F169 stays a call-only receiver view and is never constructed or embedded. No inert local/padding/fake return/ABI trick/assembly/conditional body/mask/crop/alias/rebasing."
       },
       "origin": {
         "address": "0x00453AC0",
@@ -14717,7 +14717,7 @@
         "size": "145",
         "span_end": "0x00453C70",
         "current_name": "FUN_00453be0",
-        "proposed_name": "FighterState::SpawnTrackedEffectAt00453BE0",
+        "proposed_name": "Fighter::SpawnTrackedEffectAt00453BE0",
         "module": "FighterState",
         "status": "matching",
         "match_percent": "100.00",
@@ -14727,7 +14727,7 @@
         "source_file": "src/FighterTrackedEffectsF169.cpp",
         "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F169; scripts/repo-python scripts/replay-exact-units.py --unit fighter-spawn-tracked-effect-flags-00453be0",
         "owner": "authored",
-        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F169: complete canonical cold exact over both full R102 bodies/281CODE/all4REL32fields. Actual RET24/RET32, unsigned linked-byte guard and signed facing/layer/unsigned flags preserved. Both real branches call unchanged canonical45BB10 with receiver at2EC, parameter address314, optional transform2F0 ornull and mode0. Canonicalcallee witnesses4float parameters/36byte transform only; original fullownerlayout/private nominaltypes unknown, receiver never instantiated/embedded. Original native roles retained via explicit COFF maps. No inertlocal/padding/fakereturn/ABItrick/assembly/conditionalbody/mask/crop/alias/rebasing. Only2newunits/oneobject cold-replayed; all392oldunits/151objects/238inputs/all13active/all97unknowns/fullpendinglargefunctions preserved."
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred original helper identity, no source/exact credit; F169: complete canonical cold exact over both full R102 bodies/281 CODE bytes/all 4 REL32 fields. Actual RET24/RET32, unsigned linked-byte guard and signed facing/layer/unsigned flags preserved. Both real branches call typed EffectManagerLifetimeF161::Spawn through the Fighter field view, using manager field2EC, parameter address field314 and optional transform field2F0 or null with mode 0. The manager is the confirmed 0x54-byte owner with Fighter* and four 20-byte deques; the concrete generated effect subclass and its destructor remain unknown. F169 stays a call-only receiver view and is never constructed or embedded. No inert local/padding/fake return/ABI trick/assembly/conditional body/mask/crop/alias/rebasing."
       },
       "origin": {
         "address": "0x00453BE0",
@@ -166565,9 +166565,9 @@
         "src"
       ],
       "functions": [
-        "FighterEffectPoliciesF135::SpawnBattleEffect"
+        "Fighter::SpawnBattleEffect"
       ],
-      "symbol": "?SpawnBattleEffect@FighterEffectPoliciesF135@@QAEXFMMCC@Z",
+      "symbol": "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z",
       "target_address": 4536944,
       "size": 65,
       "compare_size": 65,
@@ -166575,7 +166575,7 @@
         {
           "offset": 55,
           "type": "REL32",
-          "symbol": "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z",
+          "symbol": "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z",
           "target": 4569872
         }
       ]
@@ -166595,9 +166595,9 @@
         "src"
       ],
       "functions": [
-        "FighterEffectPoliciesF135::SpawnTrackedEffect"
+        "Fighter::SpawnTrackedEffect"
       ],
-      "symbol": "?SpawnTrackedEffect@FighterEffectPoliciesF135@@QAEXFMMCCEE@Z",
+      "symbol": "?SpawnTrackedEffect@Fighter@@QAEXFMMCCEE@Z",
       "target_address": 4537168,
       "size": 140,
       "compare_size": 140,
@@ -166605,13 +166605,13 @@
         {
           "offset": 73,
           "type": "REL32",
-          "symbol": "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z",
+          "symbol": "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z",
           "target": 4569872
         },
         {
           "offset": 130,
           "type": "REL32",
-          "symbol": "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z",
+          "symbol": "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z",
           "target": 4569872
         }
       ]
@@ -166631,9 +166631,9 @@
         "src"
       ],
       "functions": [
-        "FighterEffectPoliciesF135::SpawnAuxEffect"
+        "Fighter::SpawnAuxEffect"
       ],
-      "symbol": "?SpawnAuxEffect@FighterEffectPoliciesF135@@QAEXFMMCC@Z",
+      "symbol": "?SpawnAuxEffect@Fighter@@QAEXFMMCC@Z",
       "target_address": 4537472,
       "size": 57,
       "compare_size": 57,
@@ -166667,9 +166667,9 @@
         "src"
       ],
       "functions": [
-        "FighterEffectPoliciesF135::PlaySound"
+        "Fighter::PlaySound"
       ],
-      "symbol": "?PlaySound@FighterEffectPoliciesF135@@QAEXF@Z",
+      "symbol": "?PlaySound@Fighter@@QAEXF@Z",
       "target_address": 4537664,
       "size": 32,
       "compare_size": 32,
@@ -166697,9 +166697,9 @@
         "src"
       ],
       "functions": [
-        "FighterEffectPoliciesF135::PlaySharedSound"
+        "Fighter::PlaySharedSound"
       ],
-      "symbol": "?PlaySharedSound@FighterEffectPoliciesF135@@QAEXF@Z",
+      "symbol": "?PlaySharedSound@Fighter@@QAEXF@Z",
       "target_address": 4537696,
       "size": 29,
       "compare_size": 29,
@@ -166733,9 +166733,9 @@
         "src"
       ],
       "functions": [
-        "FighterEffectPoliciesF135::UpdateGaugeTimer"
+        "Fighter::UpdateGaugeTimer"
       ],
-      "symbol": "?UpdateGaugeTimer@FighterEffectPoliciesF135@@QAEXH@Z",
+      "symbol": "?UpdateGaugeTimer@Fighter@@QAEXH@Z",
       "target_address": 4640768,
       "size": 126,
       "compare_size": 126,
@@ -166743,7 +166743,7 @@
         {
           "offset": 92,
           "type": "REL32",
-          "symbol": "?PlaySharedSound@FighterEffectPoliciesF135@@QAEXF@Z",
+          "symbol": "?PlaySharedSound@Fighter@@QAEXF@Z",
           "target": 4537696
         }
       ]
@@ -169553,7 +169553,7 @@
         "src"
       ],
       "functions": [
-        "FighterState::SpawnTrackedEffectAt00453AC0"
+        "Fighter::SpawnTrackedEffectAt00453AC0"
       ],
       "symbol": "?SpawnTrackedEffect@FighterTrackedEffectsF169@@QAEXFMMCCE@Z",
       "target_address": 4537024,
@@ -169562,13 +169562,13 @@
         {
           "offset": 72,
           "type": "REL32",
-          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "symbol": "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z",
           "target": 4569872
         },
         {
           "offset": 126,
           "type": "REL32",
-          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "symbol": "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z",
           "target": 4569872
         }
       ]
@@ -169588,7 +169588,7 @@
         "src"
       ],
       "functions": [
-        "FighterState::SpawnTrackedEffectAt00453BE0"
+        "Fighter::SpawnTrackedEffectAt00453BE0"
       ],
       "symbol": "?SpawnTrackedEffectWithFlags@FighterTrackedEffectsF169@@QAEXFMMCCEEE@Z",
       "target_address": 4537312,
@@ -169597,13 +169597,13 @@
         {
           "offset": 76,
           "type": "REL32",
-          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "symbol": "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z",
           "target": 4569872
         },
         {
           "offset": 135,
           "type": "REL32",
-          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "symbol": "?Spawn@EffectManagerLifetimeF161@@QAEXFMMCCEEPBMPBXE@Z",
           "target": 4569872
         }
       ]
@@ -219255,9 +219255,8 @@
     "src/SpriteNameDrawing.cpp": "e3d606f56002233d0f2a16c6ece7b6b187a97682d22e507c9ed432d121815b00",
     "src/SelectionControl.cpp": "5b37fe94876723c4b6258b3c4f45754a2c40419b8d5ff190d5f319cf070fb322",
     "src/SceneSelection.cpp": "f9fb9aab4058e8bb44fa313652f330693b15969dfbedcc92c902d9b8b87b3d14",
-    "src/FighterEffectPolicies.cpp": "25cfcca6ee0446ca89fe23b7265f8276aa67b06f5d8beaa52cad35c1a6b7b79f",
-    "src/FighterEffectPolicies.hpp": "fd05d43e870cbf1fb47f06d617c6364eedbad567c7e80e26522e597b6c23e8b9",
-    "src/BattleEffectSpawner.hpp": "e182c18329a16e431cde26334322399708a9b4c3f0d8e796446ed895c0e99da0",
+    "src/FighterEffectPolicies.cpp": "7f0a9cf2892a8f7ae531222f49512da3fe95030cd3c54bd0ddf15b70b08201b3",
+    "src/FighterEffectPolicies.hpp": "775cc2bb72cf313b2f86c402e04f75bea1831c5da2178890fe983fe111a25008",
     "src/TransformRecordF136.hpp": "63c226c416bcee0037669d17d2a75615a09cda238003807569dda0c1767a7387",
     "src/BattleEffectAdvance.cpp": "a9952766422741ee4c30f05ad26174ec502da97e97f2c2dcab83eef23962a036",
     "src/BattleEffectAdvance.hpp": "014b6f77b3cf86d68f7f125765ca720e406a03326136c2a03dde5def1f3228f0",
@@ -219279,7 +219278,7 @@
     "src/FighterMovementSelection451EB0.cpp": "dfbef003a722f521b33882d89bea1ffeb2e884b936311f91c8c2e5df0f1c52a4",
     "src/FighterEffectCleanup45BA30.cpp": "b4fe1520fdfa02e84938880bac7915e1e58535ae8b21db51c855ccf95549b9a6",
     "src/EffectManagerLifetimeF161.cpp": "3fd83e3f5dc494d540c3fcb8314696e470b60009fd9583b030091923e2707e5a",
-    "src/EffectManagerLifetimeF161.hpp": "8ca19a2058469d8d7423d1a9b798640137e4005c674fcc04b1216c23ea3e4ef9",
+    "src/EffectManagerLifetimeF161.hpp": "ccca97c653f93343660f692ce5d607ac30286c08cf69d77d55109e888672ae9c",
     "src/EffectDispatchF162.cpp": "c3f6357c36710c4f199d278208724a307068952306fc20e95516c6f042b23210",
     "src/EffectDispatchF162.hpp": "d9807c6f5b425eb968a7530518c2cc373e32c2e03ae2071daade9b1e0c082911",
     "src/FighterOverlayDrawingF163.cpp": "035f66cd5ccc1e51e943e67cb05af5ceb7bedb1b67345f64fa9d1ba72a9ba102",
@@ -219294,8 +219293,8 @@
     "src/FighterMode5DirectionF167.hpp": "f117129d3b67a89e1028ad5d6ffb6d7c3bd71542a085a1248f15190992d091b4",
     "src/BattleMode5OptionsF168.cpp": "e7d98934c5ee75ce521d0b5a6487cd054f2f6b841d6196b9484c78ba5e05ede6",
     "src/BattleMode5OptionsF168.hpp": "79f5b7bb24d286b9af3439d02268ebbf06b3075025d655142c752ec9acc4d29c",
-    "src/FighterTrackedEffectsF169.cpp": "2636b957815d7f6a3664065775dd0d00d3d97337e2eedfd507c1bc9492726ab1",
-    "src/FighterTrackedEffectsF169.hpp": "07b71fb757c13001ce1e2a87cad47ec6b9dd44a50fea6658bdb04f95d0994fa9",
+    "src/FighterTrackedEffectsF169.cpp": "3f28d139a01ab1913854d447d2c33bd9fc61542831afd181cb4f26e7085472a5",
+    "src/FighterTrackedEffectsF169.hpp": "40d25ccb26ddb968872739d286fec5d70913f6d074d2f76af278a7be3ad2673a",
     "src/FighterOpponentGaugeF170.cpp": "bd9fc1b4b25be285d870782ea8c23b71dd51e746ae8591fd50d4431044515845",
     "src/FighterOpponentGaugeF170.hpp": "6cb549cf37b8a03a539f6a552301c07eeaec2b29815cba4b1a0793442a2c3577",
     "src/BindingRoundF171.cpp": "fb51cd4873badf3c6e3de5cfdeb4c90d1874823912613ec26ec7d8abf78f9d98",
@@ -219577,7 +219576,6 @@
     "src/FighterAnimationPhaseBorrowedF1024.hpp": "7fe97056ff743f0274bb029a39a1b1af07395f7a8cbb749d23e705323613c1ce",
     "src/FighterComboBorrowedF1006.hpp": "1ba2cf4ebd5d27fcef8e4ebfb4e6410cd7ff8f1b5b25e0695a252991340b5359",
     "src/FighterCommandByteF940.hpp": "8672319e47a73d7b1e4899f6ed2e2c3202079a91afd7c297445ce75b0e2651fc",
-    "src/FighterEffectBorrowedFieldsF973.hpp": "f7300af18d96538750056694f47b5731e9aaecbb1ca7a80a13522f49f69caa46",
     "src/FighterFadeBorrowedF986.hpp": "be05700537a3194e47d3570a6e02aaf7d6ac3f35b69cd84cd2e23dd5d2b678aa",
     "src/FighterGaugeBorrowedF980.hpp": "cdabe2c6920490e850f6fe57cadda8047034d32bc9278e97fb1fe3bd5b294034",
     "src/FighterNoticeBorrowedF960.hpp": "e976db866417ddd27cc982825cc719fc995e0f338d11b731d3559bfa33206caf",
@@ -219595,7 +219593,9 @@
     "src/TextureManagerBorrowedF925.hpp": "294baaf9b1abed5da4f2f350fb8cfa05db00d18d2dad9434f6881f062c089a4e",
     "src/GamePolicyHelpers.cpp": "6d8ff0c5e29f5cef3bb986039ac222a485a129b80fd77102e0004e939bd6f5a4",
     "src/WinMainF1171.cpp": "30167f45cd4c5d32a5ee04e24e9fbc21a156b7922729ddc95de3978674ed77c6",
-    "src/EffectManagerSpawnF161.cpp": "0f502e261026f1ad986b87c7d4cc29c9ea611ac5724388f06ec6619f618c2fc7"
+    "src/EffectManagerSpawnF161.cpp": "e9d03dced831e71125f2e78c26103f1b5b681c27e72f5bf02647c80e2e8dd064",
+    "src/EffectDequeF136.hpp": "3e605cada57335a2d45ad5f3b4abe0f20da85b869d2569a7a1887f5da1203924",
+    "src/CharacterObject.hpp": "0db29e44373bfee78a795f0d6ca7a246f4af58e66a5e99b0aca945dede1d6386"
   },
   "source_revision_batches": [
     {
