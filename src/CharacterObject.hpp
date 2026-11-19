@@ -74,7 +74,14 @@ public:
     void PlaySharedSound(short sound);
     void UnknownAt0045B850(int value);  // native RET 4, semantics unconfirmed
 };
-class YukariObject : public CharacterObject { public: YukariObject(void* ownerFighter); };
+class YukariObject : public CharacterObject {
+public:
+    YukariObject(void* ownerFighter);
+    virtual void Advance();  // original 005A1600; complete, nonexact research parent
+    int RecordedRange(int lower, int upper);
+    void PlaySharedSound(short sound);
+    void UnknownAt0045B850(int value); // observed RET 4; meaning not established
+};
 class SuikaObject : public CharacterObject { public: SuikaObject(void* ownerFighter); };
 class MeilingObject : public CharacterObject {
 public:

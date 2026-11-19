@@ -1,5 +1,6 @@
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
+#include "ResultListScene.hpp"
 
 // All private scene/container/manager interfaces are pointer-only. Never
 // instantiate or embed them, or infer their complete layouts from these views.
@@ -11,13 +12,6 @@ class MusicScene425C80 {
 public:
     void RenderList();
     void DrawNumber(float, float, DWORD, int, int);
-};
-class ResultScene430080 {
-public:
-    void RenderRecordPage();
-    void DrawCounter(float, float, DWORD, int, int);
-    void DrawNameGlyphs(float, float, DWORD, const signed char*);
-    void DrawRankLabel(float, float, DWORD, signed char);
 };
 class SceneRecordContainerF119 { public: unsigned int Size(); };
 // Read-only row projection: the native stride and consumed fields are observed.
@@ -133,7 +127,16 @@ void MusicScene425C80::RenderList() {
     }
 }
 
-void ResultScene430080::RenderRecordPage() {
+// Result-list renderer: these two game-owned drawing interfaces are
+// borrowed from its typed 80-byte texture managers; no extra owner exists.
+#undef DRAWING
+#undef QUAD_DRAWING
+#undef DATA
+#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(mainTexture)
+#define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF119*>(mainTexture)
+#define DATA reinterpret_cast<char*>(selectedRecord)
+
+void ResultListScene::Render() {
     if (Graphics::BeginFrameValueAt00402660()) {
         SpriteQuad40CA80 spriteQuad;
         RECT region;
@@ -149,8 +152,8 @@ void ResultScene430080::RenderRecordPage() {
         TRANSFORM(spriteQuad)->BuildQuadFromRect(&region);
         TRANSFORM(spriteQuad)->ScaleQuad(256.0f, 0, 0, -1.0f, 1.0f, 1.0f);
         TRANSFORM(spriteQuad)->TranslateQuad(128.0f, 0, 0);
-        reinterpret_cast<SceneQuadDrawingF119*>(SCENE_FIELD(void*, 12))->DrawQuad(0, spriteQuad, &region, 0xFF808080);
-        if (SCENE_FIELD(signed char, 0x1C5) == 0) {
+        reinterpret_cast<SceneQuadDrawingF119*>((auxiliaryTexture))->DrawQuad(0, spriteQuad, &region, 0xFF808080);
+        if ((showingRecords) == 0) {
             SetRect(&region, 0, 24, 120, 120);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 120.0f, 96.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(80.0f, 72.0f, 0);
@@ -159,26 +162,26 @@ void ResultScene430080::RenderRecordPage() {
             TRANSFORM(spriteQuad)->BuildQuadFromRect(&region);
             TRANSFORM(spriteQuad)->TranslateQuad(200.0f, 74.0f, 0);
             TRANSFORM(spriteQuad)->TranslateQuad(0.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(1.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(-1.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(-1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(1.0f, 0.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFFFFFFFF, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFFFFFFFF, (canvas));
             SetRect(&region, 0, 0, 240, 24);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 240.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(80.0f, 20.0f, 0);
             QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
-            SetRect(&region, 0, SCENE_FIELD(signed char, 0x1C3) * 24, 128,
-                    SCENE_FIELD(signed char, 0x1C3) * 24 + 24);
+            SetRect(&region, 0, (selectedCharacter) * 24, 128,
+                    (selectedCharacter) * 24 + 24);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 128.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(320.0f, 20.0f, 0);
             QUAD_DRAWING->DrawQuad(3, spriteQuad, &region, 0xFFFFFFFF);
-            SetRect(&region, 168, SCENE_FIELD(signed char, 0x1C4) * 24 + 24, 240,
-                    SCENE_FIELD(signed char, 0x1C4) * 24 + 48);
+            SetRect(&region, 168, (difficultyIndex) * 24 + 24, 240,
+                    (difficultyIndex) * 24 + 48);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 72.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(464.0f, 20.0f, 0);
             QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
@@ -219,8 +222,8 @@ void ResultScene430080::RenderRecordPage() {
             DRAWING->SetBlendMode(0);
             rowLimit = 0;
             SetRect(&region, 0, 144, 24, 168);
-            for (entry = SCENE_FIELD(short, 0x1BC) * 10;
-                 entry < SCENE_FIELD(short, 0x1BC) * 10 + 10 && entry < static_cast<int>(RECORDS->Size()); entry++) {
+            for (entry = (pageIndex) * 10;
+                 entry < (pageIndex) * 10 + 10 && entry < static_cast<int>(records.Size()); entry++) {
                 DrawCounter(540.0f, static_cast<float>(rowLimit * 32 + 63), 0xFF8080FF,
                             reinterpret_cast<const int*>(DATA + 16)[entry], 0);
                 if (reinterpret_cast<const BYTE*>(DATA)[0x4C0 + entry]) {
@@ -232,21 +235,21 @@ void ResultScene430080::RenderRecordPage() {
             SetRect(&region, 0, 0, 620, 320);
             TRANSFORM(spriteQuad)->BuildQuad(10.0f, 62.0f, 630.0f, 382.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(-1.0f, 0.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(1.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(-1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFF000000, (canvas));
             TRANSFORM(spriteQuad)->TranslateQuad(0.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFFFFFFFF, TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(spriteQuad), &region, 0xFFFFFFFF, (canvas));
             SetRect(&region, 0, 120, 240, 144);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 240.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(80.0f, 20.0f, 0);
             QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
-            SetRect(&region, 0, SCENE_FIELD(signed char, 0x1C3) * 24, 128,
-                    SCENE_FIELD(signed char, 0x1C3) * 24 + 24);
+            SetRect(&region, 0, (selectedCharacter) * 24, 128,
+                    (selectedCharacter) * 24 + 24);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 128.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(320.0f, 20.0f, 0);
             QUAD_DRAWING->DrawQuad(3, spriteQuad, &region, 0xFFFFFFFF);

@@ -131,6 +131,14 @@ sites; its 34,434-byte frontier remains 985 differing bytes with 135 GPR
 and six instruction-width mismatches in the late state machine. All 24
 header-affected exact units cold-replayed.
 
+Yukari object `005A1600` is now the native `YukariObject::Advance`
+class member, with 52 effect spawns, 16 sounds, two auxiliary effects
+and three camera shakes expressed via `Fighter` and existing verified
+camera interfaces. The complete 44,104-byte COFF object has all 943
+relocation positions/types unchanged and zero nonrelocation-byte
+regressions. Its original 43,599 CODE bytes remain nonexact (613 GPR,
+11 width differences), and all 24 header-affected exact units replayed.
+
 Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
 66 effect spawns, eight sounds and four camera-shake calls moved from
 borrowed owner declarations to shared game interfaces. Both 44,331-byte

@@ -65,6 +65,11 @@ Done so far:
   accesses expressed through real named members. The 33,293-byte parent
   retained its 575-byte nonexact frontier and 133 GPR mismatches; all 24
   header-affected exact functions cold-replayed successfully.
+- Yukari object `Advance` (43,599 native CODE B) is now declared on
+  `YukariObject`; its 52 effect, 16 sound, two auxiliary and three shake
+  calls are typed through Fighter. A complete 44,104-byte COFF comparison
+  retained all 943 relocation offsets/types and zero nonrelocation differences;
+  24/24 affected exact units replayed. Nonexact GPR/width debt remains.
 - Remilia object `Advance` (28,432 original CODE bytes) now belongs to
   `RemiliaObject`, with its 24 recorded-range, 25 effect, seven sound and
   two shared-sound calls expressed via real classes. Complete 28,868-byte
