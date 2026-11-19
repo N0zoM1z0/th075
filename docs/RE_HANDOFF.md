@@ -159,10 +159,6 @@ Yuyuko's 43,845-byte object giant also dropped two redundant angle-result
 short casts while preserving all 44,331 COFF bytes and 1,043 relocation
 positions/types/addends/local targets; its 914-GPR / six-width frontier is
 unchanged.
-Yuyuko's 43,845-byte object giant also dropped two redundant angle-result
-short casts while preserving all 44,331 COFF bytes and 1,043 relocation
-positions/types/addends/local targets; its 914-GPR / six-width frontier is
-unchanged.
 
 For a complete parent:
 

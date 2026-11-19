@@ -759,11 +759,6 @@ from float-angle and coordinate assignments to short fields. The complete
 44,104-byte COFF body and all 943 relocation positions/types/addends/local
 targets remain identical. Its frontier remains 613 GPR positions, 11 width
 differences and first `005A88A8`.
-Yuyuko object `0057D580` removes two redundant `static_cast<short>`
-wrappers around angle results assigned to short fields. Its complete
-44,331-byte COFF body and all 1,043 relocation positions/types/addends/local
-targets remain identical. Its frontier remains 914 GPR positions, six width
-differences and first `00583489`.
 Yuyuko object `0057D580` removes two redundant `static_cast<short>` wrappers
 around float-angle results assigned to `field0D8`. Its complete 44,331-byte
 COFF body and all 1,043 relocation positions/types/addends/local targets
