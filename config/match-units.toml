@@ -36777,14 +36777,14 @@ target = 0x00531CE0
 source = "src/CharacterSelectInitF225.cpp"
 object = "build/matching/CharacterSelectInitF225.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["CharacterSelectScene::Initialize"]
-symbol = "??0CharacterSelectCtorF225@@QAE@XZ"
+functions = ["CharacterSelectScene::CharacterSelectScene"]
+symbol = "??0CharacterSelectScene@@QAE@XZ"
 target_address = 0x00432EA0
 size = 668
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0CharacterSelectCtorF225@@QAE@XZ"
+symbol = "__ehhandler$??0CharacterSelectScene@@QAE@XZ"
 target = 0x00655AB9
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 12
@@ -36799,12 +36799,12 @@ target = 0x00000000
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0SceneBaseF225@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7CharacterSelectCtorF225@@6B@"
+symbol = "??_7CharacterSelectScene@@6B@"
 target = 0x0065824C
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 56
@@ -36964,7 +36964,7 @@ target = 0x00419E10
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 640
 type = "REL32"
-symbol = "?ResetSelection@CharacterSelectCtorF225@@QAEXXZ"
+symbol = "?ResetSelection@CharacterSelectScene@@QAEXXZ"
 target = 0x00433230
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 660
