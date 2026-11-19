@@ -34,7 +34,7 @@ void BattleScene::HandlePauseMenu()
                     g_ContinueUsedAt00671624 = 1;
                     g_SequenceCounterAt00671622 = 2;
                     field018 = 13;
-                    reinterpret_cast<int&>(field00C) = 299;
+                    field00C = 299;
                 }
                 break;
             case 1:

@@ -102,7 +102,7 @@ public:
 
     void* textures;                     // +0x008 the scene's texture manager
     unsigned long field00C;             // +0x00C frame timer
-    unsigned long field010;             // +0x010
+    int field010;                       // +0x010 signed timeline frame offset
     int field014;                       // +0x014
     signed char field018;               // +0x018 1 in a normal match
     unsigned char unknown019[0x01A - 0x019];

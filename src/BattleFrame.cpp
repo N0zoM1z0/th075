@@ -10,7 +10,7 @@ short BattleScene::Update()
     PollPauseShortcut();
     Render();
     if (!field0A0 && !field0A1) {
-        ++reinterpret_cast<int&>(field010);
+        ++field010;
         if (g_FrameClockMode == 2 || g_FrameClockMode == 1) ++field014;
         UpdatePlayerEffects();
         ApplySequence();

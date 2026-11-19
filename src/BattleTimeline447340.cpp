@@ -13,17 +13,17 @@ void BattleScene::RenderOverlayTimeline() {
     switch (field064) {
         RECT rect;
     case 0:
-        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 640, 64);
+        SetRect(&rect, field010 * 5, 0, field010 * 5 + 640, 64);
         packet.BuildQuad(0.0f, 208.0f - field074, 640.0f, 272.0f - field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 640 - reinterpret_cast<int&>(field010) * 5, 64);
+        SetRect(&rect, 0 - field010 * 5, 0, 640 - field010 * 5, 64);
         packet.BuildQuad(0.0f, 208.0f + field074, 640.0f, 272.0f + field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 480, 64);
+        SetRect(&rect, field010 * 5, 0, field010 * 5 + 480, 64);
         packet.BuildQuad(80.0f, 208.0f - field070, 560.0f, 272.0f - field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 480 - reinterpret_cast<int&>(field010) * 5, 64);
+        SetRect(&rect, 0 - field010 * 5, 0, 480 - field010 * 5, 64);
         packet.BuildQuad(80.0f, 208.0f + field070, 560.0f, 272.0f + field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
@@ -77,17 +77,17 @@ void BattleScene::RenderOverlayTimeline() {
         }
         break;
     case 1:
-        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 640, 64);
+        SetRect(&rect, field010 * 5, 0, field010 * 5 + 640, 64);
         packet.BuildQuad(0.0f, 208.0f - field074, 640.0f, 272.0f - field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 640 - reinterpret_cast<int&>(field010) * 5, 64);
+        SetRect(&rect, 0 - field010 * 5, 0, 640 - field010 * 5, 64);
         packet.BuildQuad(0.0f, 208.0f + field074, 640.0f, 272.0f + field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 480, 64);
+        SetRect(&rect, field010 * 5, 0, field010 * 5 + 480, 64);
         packet.BuildQuad(80.0f, 208.0f - field070, 560.0f, 272.0f - field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 480 - reinterpret_cast<int&>(field010) * 5, 64);
+        SetRect(&rect, 0 - field010 * 5, 0, 480 - field010 * 5, 64);
         packet.BuildQuad(80.0f, 208.0f + field070, 560.0f, 272.0f + field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
