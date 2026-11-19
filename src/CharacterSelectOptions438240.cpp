@@ -39,7 +39,7 @@ void CharacterSelectScene::RenderOptions() {
                 SetRect(&region, 256, 832, 512, 1024);
                 packet.BuildQuad(0.0f, 0.0f, 256.0f, 192.0f);
                 QUAD->TranslateQuad(float(i * 320 + 32), 280.0f, 0.0f);
-                reinterpret_cast<RenderDrawing5E68C0*>(characterTextures)->DrawQuad((static_cast<signed char>(chosenCharacter[i])) * 2 + 1, &packet, &region, 0xFFFFFFFF);
+                reinterpret_cast<RenderDrawing5E68C0*>(characterTextures)->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, 0xFFFFFFFF);
             }
         }
     }

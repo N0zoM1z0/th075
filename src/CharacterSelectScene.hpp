@@ -58,8 +58,8 @@ public:
     float animationPhase;                 // +0D4
     float choiceOscillation;               // +0D8
     float choiceRotation;                  // +0DC
-    unsigned char chosenCharacter[2];      // +0E0
-    unsigned char alternateCharacter[2];   // +0E2
+    signed char chosenCharacter[2];      // +0E0
+    signed char alternateCharacter[2];   // +0E2
     unsigned char choiceRandom[2];         // +0E4
     unsigned char chosenPalette[2];        // +0E6
     unsigned char playerReady[2];          // +0E8

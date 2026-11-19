@@ -34,45 +34,45 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
         portraitEnterY[side] = 40.0f;
         portraitExitX[side] = 80.0f;
         portraitExitY[side] = 40.0f;
-        (reinterpret_cast<signed char&>(alternateCharacter[side])) = (reinterpret_cast<signed char&>(chosenCharacter[side]));
+        (alternateCharacter[side]) = (chosenCharacter[side]);
         if ((input[side].horizontal) > 0) {
-            ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+            ++(chosenCharacter[side]);
             if (g_CombatMode == 3) {
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((chosenCharacter[side]) == 6 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 7 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 8 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 9 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 10 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
             } else {
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) ++(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((chosenCharacter[side]) == 6 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 7 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 8 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 9 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 10 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
             }
-            if ((reinterpret_cast<signed char&>(chosenCharacter[side])) >= 11) (reinterpret_cast<signed char&>(chosenCharacter[side])) = 0;
+            if ((chosenCharacter[side]) >= 11) (chosenCharacter[side]) = 0;
         } else {
-            --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-            if ((reinterpret_cast<signed char&>(chosenCharacter[side])) < 0) (reinterpret_cast<signed char&>(chosenCharacter[side])) = 10;
+            --(chosenCharacter[side]);
+            if ((chosenCharacter[side]) < 0) (chosenCharacter[side]) = 10;
             if (g_CombatMode == 3) {
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (rightCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((chosenCharacter[side]) == 10 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 9 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 8 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 7 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 6 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
             } else {
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 10 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 9 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 8 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 7 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
-                if ((reinterpret_cast<signed char&>(chosenCharacter[side])) == 6 && (leftCharacterAvailable[reinterpret_cast<signed char&>(chosenCharacter[side])]) == 0) --(reinterpret_cast<signed char&>(chosenCharacter[side]));
+                if ((chosenCharacter[side]) == 10 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 9 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 8 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 7 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
+                if ((chosenCharacter[side]) == 6 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
             }
         }
-        PROGRESS->SetSelection(reinterpret_cast<signed char&>(chosenCharacter[0]), g_SelectionDifficulty);
+        PROGRESS->SetSelection(chosenCharacter[0], g_SelectionDifficulty);
     }
     if ((input[side].confirm) == 1 || (input[side].toggle) == 1 || (stageCountdown[side]) == 1) {
         g_SelectionSound->Play(45);
-        g_SelectionCharacters[side] = (reinterpret_cast<signed char&>(chosenCharacter[side]));
+        g_SelectionCharacters[side] = (chosenCharacter[side]);
         g_SelectionPalettes[side] = (input[side].toggle) == 1;
         (playerState[side]) = 1;
         choiceStop[side] = 0;
