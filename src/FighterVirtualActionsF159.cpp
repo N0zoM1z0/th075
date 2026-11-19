@@ -78,12 +78,12 @@ void SakuyaFighter::ResetRound()
 
 void Fighter::ClearAuxiliaryWords()
 {
-    reinterpret_cast<unsigned int&>(bufferedX) = 0;
-    reinterpret_cast<unsigned int&>(bufferedY) = 0;
-    reinterpret_cast<unsigned int&>(bufferedA) = 0;
-    reinterpret_cast<unsigned int&>(bufferedB) = 0;
-    reinterpret_cast<unsigned int&>(bufferedC) = 0;
-    reinterpret_cast<unsigned int&>(bufferedD) = 0;
+    bufferedX = 0;
+    bufferedY = 0;
+    bufferedA = 0;
+    bufferedB = 0;
+    bufferedC = 0;
+    bufferedD = 0;
 }
 
 void InputBindingsF171::ClearHeldCounts()
@@ -93,34 +93,34 @@ void InputBindingsF171::ClearHeldCounts()
 
 void Fighter::ResetRound()
 {
-    reinterpret_cast<unsigned int&>(inputX) = 0;
-    reinterpret_cast<unsigned int&>(inputY) = 0;
-    reinterpret_cast<unsigned int&>(inputA) = 0;
-    reinterpret_cast<unsigned int&>(inputB) = 0;
-    reinterpret_cast<unsigned int&>(inputC) = 0;
-    reinterpret_cast<unsigned int&>(inputD) = 0;
+    inputX = 0;
+    inputY = 0;
+    inputA = 0;
+    inputB = 0;
+    inputC = 0;
+    inputD = 0;
     field510 = 0;
     ClearAuxiliaryWords();
     x = (field2CC == 1) * 320 + 480;
     y = 0.0f;
     velocityX = 0.0f;
     velocityY = 0.0f;
-    reinterpret_cast<unsigned int&>(field488) = 0;
+    field488 = 0.0f;
     field48C = 0;
-    reinterpret_cast<unsigned int&>(field490) = 0;
+    field490 = 0.0f;
     field094 = 0.0f;
     field098 = 0.0f;
     field058 = 0;
     field05C = 0.0f;
-    reinterpret_cast<unsigned int&>(field08C) = 0;
-    reinterpret_cast<unsigned int&>(field090) = 0;
+    field08C = 0.0f;
+    field090 = 0.0f;
     field084 = 0;
     field086 = 0;
     field088 = 0;
     field3BC = 0;
     field3CA = 0;
     field3CC = 0;
-    reinterpret_cast<unsigned int&>(cardGauge) = 0;
+    cardGauge = 0.0f;
     field36C = 0.0f;
     spirit = 1000;
     spiritPrevious = 1000;
@@ -128,14 +128,14 @@ void Fighter::ResetRound()
     spiritCooldown = 0;
     field3A0 = 0;
     field39C = 0;
-    reinterpret_cast<unsigned char&>(field3AC) = 0;
-    reinterpret_cast<unsigned char&>(field3AD) = 0;
+    field3AC = 0;
+    field3AD = 0;
     field3AE = 0;
     comboCount = 0;
     comboDamage = 0;
     comboRate = 1.0f;
     field080 = 0;
-    reinterpret_cast<unsigned int&>(field07C) = 0;
+    field07C = 0;
     action = 0;
     animationStage = 0;
     animationFrame = 0;
@@ -149,16 +149,16 @@ void Fighter::ResetRound()
     fieldEF8 = 0;
     facing = 1 - (field2CC == 1) * 2;
     field6EF = 0;
-    reinterpret_cast<unsigned char&>(noticeState) = 0;
-    reinterpret_cast<unsigned char&>(noticeState) = 0;
+    noticeState = 0;
+    noticeState = 0;
     noticeAxis = 25;
     noticeExtent = 0;
     noticeColor = 0;
     noticeFirst = 1;
     noticeBadge = -1;
     noticeEnabled = 0;
-    reinterpret_cast<unsigned int&>(field47C) = 0;
-    reinterpret_cast<unsigned char&>(field484) = 0;
+    field47C = 0;
+    field484 = 0;
     field09C = 1.0f;
     field0A0 = 1.0f;
     fadeAlpha = 0;
@@ -166,15 +166,15 @@ void Fighter::ResetRound()
     F992_OUTCOME(this).continuationAt3CF = 1;
     inputBindings.ClearHeldCounts();
     reinterpret_cast<RoundResetEffectsF159*&>(field2EC)->DeleteFourLists();
-    reinterpret_cast<unsigned char&>(field366) = 2;
-    reinterpret_cast<unsigned char&>(field39D) = 2;
+    field366 = 2;
+    field39D = 2;
     field3A8 = 0;
     field3A4 = 0;
     health = 10000;
     recoverableHealth = 10000;
     field52C = 0;
     field52D = 0;
-    reinterpret_cast<unsigned char&>(field52F) = 0;
+    field52F = 0;
     field52E = 0;
     field530 = 0;
     field531 = 0;
