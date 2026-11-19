@@ -56,6 +56,11 @@ Done so far:
   `CharacterSelectScene::DrawCurrent`. The single-player options renderer
   (596 bytes) now uses the same owner and is called directly by the virtual
   render method. All 19 header-affected exact units cold-replayed correctly.
+- Remilia's 58,294-byte fighter `Advance` is now
+  `RemiliaFighter::Advance` with real actor coordinate members. The
+  59,236-byte COFF body is unchanged outside renamed relocation fields
+  (all 1,863 offsets/types preserved); 98/98 header-affected exact units
+  cold-replayed in three groups. The GPR/width debt is still nonexact.
 - Sakuya's complete 82,796-byte fighter `Advance` now belongs to
   `SakuyaFighter` instead of a research subclass. Its 16 state files
   use named real actor X members and the real Actor transform reset.

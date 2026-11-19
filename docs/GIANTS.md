@@ -105,6 +105,16 @@ All 98 fighter-header-affected exact units cold-replayed (36/36, 31/31,
 31/31). The original 58,294 CODE bytes remain NONEXACT (1,741 GPR-role,
 three width differences). No giant exact credit was claimed.
 
+Remilia fighter `00543210` now defines `RemiliaFighter::Advance` on
+its actual class instead of an artificial research subclass. Four
+projectile expressions now use the inherited `Actor::x` rather than
+borrowed +0x44 views. Original and modified VC7.1 parent objects both
+contain 59,236 bytes and 1,863 relocations; all relocation positions/types
+and every nonrelocation byte are unchanged. Its 58,294 native CODE bytes
+remain NONEXACT with 1,741 GPR-role and three width differences (40,569
+frontier differing bytes); all 98 affected exact units were cold-replayed
+in three groups (36, 31, 31). No new whole-giant exact credit.
+
 Sakuya fighter `004AC040` (82,796 original CODE bytes) now directly
 defines `SakuyaFighter::Advance`, rather than an artificial derived
 research receiver. Sixteen included state files use the actual
