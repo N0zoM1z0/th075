@@ -13,18 +13,18 @@ The current status command is:
 
 Snapshot on 2026-11-19:
 
-- 4,351 candidate functions: 983 mapped/source-present/exact, 1,005 authored,
-  94 origin-review candidates, and 3,252 excluded.
-- 983 exact functions, 871,662 original CODE bytes, across 983 match units.
-- Authored coverage is 44.16% of 1,973,717 bytes. Conservative coverage is
-  44.09%, including 3,407 pending-origin bytes.
+- 4,351 candidate functions: 986 mapped/source-present/exact, 1,008 authored,
+  90 origin-review candidates, and 3,253 excluded.
+- 986 exact functions, 871,717 original CODE bytes, across 986 match units.
+- Authored coverage is 44.17% of 1,973,772 bytes. Conservative coverage is
+  44.09%, including 3,315 pending-origin bytes.
 - The 22 remaining authored functions are all slot-1 Advance methods on the
   11 fighter and 11 character-object vtables. They total 1,102,055 CODE bytes.
 - The 98% authored-byte goal is not met.
 
 The historical R263 matrix is not the live origin queue. Its 97 rows /
-3,608 bytes remain historical evidence; the current ledger has 94 review
-candidates / 3,407 bytes. Use config/function-origins.csv as the authority.
+3,608 bytes remain historical evidence; the current ledger has 90 review
+candidates / 3,315 bytes. Use config/function-origins.csv as the authority.
 
 The working tree is clean. Main has local documentation commits relative to
 origin/main; no push was performed in this cleanup session. Recheck git status
@@ -58,6 +58,14 @@ The shared Fighter::fieldEFA migration is now complete in the remaining
 known giant callers. No ASM, padding, fake returns or target-byte arrays
 were introduced. The exact CharacterProjectileAdvanceF379 leaf remains
 exact.
+
+The shared math leaves now have natural C++ source in `src/MathFloatHelpers.cpp`:
+R269/R270 recovered the 21-byte authored atan2 wrapper while keeping its 37-byte
+VC7.1 inline worker library-owned; R271 recovered the 17-byte fabsf and sqrtf
+game wrappers from 30/68 and 3/6 complete authored caller graphs. Their three
+whole wrapper units cold-replay 3/3 exact. The 28-byte fabsf/sqrtf workers remain
+origin-unknown under the preserved R163 alternatives; no CRT or worker bytes
+were double-credited.
 
 ## Giant priorities
 

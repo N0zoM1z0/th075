@@ -17203,3 +17203,47 @@ discriminatory evidence or an explicit strategy change. The original goal is
 incomplete; do not invent extra generic controls or a resource-decoding phase.
 Final complete Web MCP acceptance stays due after the requested remaining
 review. No push was authorized.
+
+## R269 — authored shared angle wrapper over VC7.1 atan2f
+
+`0x00483300` is a complete 21-byte game-side `AngleAt00483300(float,
+float)` wrapper. Sixteen distinct direct callers are all independently
+classified authored game functions and contain 211 direct calls in total.
+`src/MathFloatHelpers.cpp` expresses the wrapper as `return atan2f(y, x);`
+using the pinned VC7.1 math header. Its complete COFF body, one REL32 at +0x0C
+to `0x00483320`, and original body/CFG digest are retained in the authored
+ledger. The exact match unit is `math-angle-at-00483300`; no inline worker or
+CRT body is counted as game-authored.
+
+## R270 — VC7.1 inline atan2f worker
+
+`0x00483320` is a 37-byte x86 inline `atan2f` implementation from the pinned
+`.tools/msvc710/Vc7/include/math.h` source (line 439). Its original body calls
+`_atan2` at `0x00642240` through one REL32 at +0x17. The source/header compile
+reproduces the complete worker; `_atan2` already has independent VC71CRT
+library evidence. The worker is classified `library/VC71CRT/exclude`, not
+authored game code, and has no game exact-match row.
+
+## R271 — authored absolute-value and magnitude wrappers
+
+`0x00412D90` (`AbsFloatAt00412D90`, 17 bytes) and `0x00428D20`
+(`MagnitudeAt00428D20`, 17 bytes) are separate authored game-side wrappers.
+The former has 30 independently authored caller functions / 68 direct call
+sites; the latter has three / six. Their natural source calls `fabsf` and
+`sqrtf` from the pinned VC7.1 math header, and each full native wrapper has
+one genuine REL32 to its 28-byte worker. Both wrapper bodies have one return,
+no internal branches, and exact focused replay units. Their source/origin
+records use R271. The workers `0x00412DB0` and `0x00428D40` remain
+`unknown/review` under the complete R163 alternatives; no library or authored
+credit is inferred for them from code-generation similarity alone.
+
+
+**Acceptance.** `scripts/repo-python scripts/verify-math-float-helper-origins.py`
+rechecks both complete caller graphs, all 74 original call sites, the two whole
+17-byte wrappers, their genuine COFF fields and the uncredited SDK workers.
+The earlier `scripts/repo-python scripts/verify-angle-at-00483300-origin.py`
+continues to validate R269/R270. The three affected natural C++ units cold-replay
+exact 3/3 through one object; no all-unit cold replay was run. The live ledger is
+now 4,261 resolved (1,008 authored, 2,672 library, 581 compiler), 90 pending
+/3,315 bytes and 3,253 excluded. Exact coverage is 986 functions /871,717 CODE
+bytes /986 units. The 98% authored-byte milestone remains unfinished.

@@ -61362,3 +61362,45 @@ symbol = "?NoOpAt0045B850@CharacterObject@@QAEXH@Z"
 target_address = 0x0045B850
 size = 13
 relocations = []
+
+[units.math-angle-at-00483300]
+source = "src/MathFloatHelpers.cpp"
+object = "build/matching/MathFloatHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AngleAt00483300"]
+symbol = "?AngleAt00483300@@YAMMM@Z"
+target_address = 0x00483300
+size = 21
+[[units.math-angle-at-00483300.relocations]]
+offset = 0x0C
+type = "REL32"
+symbol = "_atan2f"
+target = 0x00483320
+
+[units.math-absolute-float-at-00412d90]
+source = "src/MathFloatHelpers.cpp"
+object = "build/matching/MathFloatHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AbsFloatAt00412D90"]
+symbol = "?AbsFloatAt00412D90@@YAMM@Z"
+target_address = 0x00412D90
+size = 17
+[[units.math-absolute-float-at-00412d90.relocations]]
+offset = 0x08
+type = "REL32"
+symbol = "_fabsf"
+target = 0x00412DB0
+
+[units.math-square-root-float-at-00428d20]
+source = "src/MathFloatHelpers.cpp"
+object = "build/matching/MathFloatHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["MagnitudeAt00428D20"]
+symbol = "?MagnitudeAt00428D20@@YAMM@Z"
+target_address = 0x00428D20
+size = 17
+[[units.math-square-root-float-at-00428d20.relocations]]
+offset = 0x08
+type = "REL32"
+symbol = "_sqrtf"
+target = 0x00428D40

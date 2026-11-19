@@ -1,0 +1,174 @@
+{
+  "evidence_id_outer": "R269",
+  "evidence_id_worker": "R270",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "outer": {
+    "address": "0x00483300",
+    "name": "AngleAt00483300",
+    "size": 21,
+    "body_sha256": "b293f014241db4cdd8a0ccd35858edc83a0952841e766ef833112cc52721abbe",
+    "return_count": 1,
+    "internal_branch_count": 0,
+    "relocation": {
+      "offset": 12,
+      "type": "REL32",
+      "symbol": "_atan2f",
+      "target_address": "0x00483320"
+    }
+  },
+  "worker": {
+    "address": "0x00483320",
+    "name": "_atan2f",
+    "size": 37,
+    "body_sha256": "e60a4ec53dc773d55e03d76ab6c874fbdbc58f027475806fba92a5f24e80c9af",
+    "relocation": {
+      "offset": 23,
+      "type": "REL32",
+      "symbol": "_atan2",
+      "target_address": "0x00642240"
+    }
+  },
+  "source": {
+    "path": "src/MathFloatHelpers.cpp",
+    "sha256": "a7436a7052a33644336d0e603ca98f9492b80460238e13fede74c7158acd4be0"
+  },
+  "header": {
+    "path": ".tools/msvc710/Vc7/include/math.h",
+    "sha256": "776b7b9c45c5aed0e355109ab7f3435971d833d2228dd4f2b16aad4fe6bf96c8",
+    "inline_definition": "inline float atan2f(float _X, float _Y)\n        {return ((float)atan2((double)_X, (double)_Y)); }"
+  },
+  "runtime_callee": {
+    "address": "0x00642240",
+    "origin": "library",
+    "subsystem": "VC71CRT",
+    "evidence_id": "R127"
+  },
+  "callers": [
+    {
+      "address": "0x00476A40",
+      "size": 50915,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 35
+    },
+    {
+      "address": "0x0049C8F0",
+      "size": 46596,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 8
+    },
+    {
+      "address": "0x004A80F0",
+      "size": 3935,
+      "origin": "authored",
+      "origin_evidence_id": "R049",
+      "call_count": 1
+    },
+    {
+      "address": "0x004AC040",
+      "size": 82796,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 1
+    },
+    {
+      "address": "0x004CA6E0",
+      "size": 42511,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 42
+    },
+    {
+      "address": "0x004EBDA0",
+      "size": 33293,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 4
+    },
+    {
+      "address": "0x004F4170",
+      "size": 855,
+      "origin": "authored",
+      "origin_evidence_id": "R067",
+      "call_count": 1
+    },
+    {
+      "address": "0x0050A580",
+      "size": 81539,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 23
+    },
+    {
+      "address": "0x00536400",
+      "size": 39999,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 12
+    },
+    {
+      "address": "0x00543210",
+      "size": 58294,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 5
+    },
+    {
+      "address": "0x0055AC80",
+      "size": 28432,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 12
+    },
+    {
+      "address": "0x0057D580",
+      "size": 43845,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 23
+    },
+    {
+      "address": "0x005A1600",
+      "size": 43599,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 13
+    },
+    {
+      "address": "0x005C9CC0",
+      "size": 43501,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 17
+    },
+    {
+      "address": "0x005EB520",
+      "size": 34434,
+      "origin": "authored",
+      "origin_evidence_id": "R048",
+      "call_count": 9
+    },
+    {
+      "address": "0x005FAE30",
+      "size": 31352,
+      "origin": "authored",
+      "origin_evidence_id": "R064",
+      "call_count": 5
+    }
+  ],
+  "call_counts": {
+    "unique_authored_callers": 16,
+    "direct_call_sites": 211
+  },
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX-",
+    "/Zi",
+    "/I",
+    "src"
+  ]
+}

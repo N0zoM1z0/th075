@@ -58,6 +58,7 @@ address,name,size,status,match_percent,unit,evidence
 0x0045D650,Fighter::ConfigureNoticeText,78,matching,100.00,fighter-configure-notice-text,F009; scripts/repo-python scripts/replay-exact-units.py --unit fighter-configure-notice-text
 0x0045D6A0,Fighter::BeginNoticeTransition,72,matching,100.00,fighter-begin-notice-transition,F009; scripts/repo-python scripts/replay-exact-units.py --unit fighter-begin-notice-transition
 0x0045D6F0,Fighter::ClearNoticeTransition,21,matching,100.00,fighter-clear-notice-transition,F008; scripts/repo-python scripts/replay-exact-units.py --unit fighter-clear-notice-transition
+0x00483300,AngleAt00483300,21,matching,100.00,math-angle-at-00483300,R269; config/math-float-helper-origin-evidence.json; scripts/repo-python scripts/verify-math-float-helper-origins.py; scripts/repo-python scripts/replay-exact-units.py --unit math-angle-at-00483300
 0x005FAC20,AuxEffect::ClearField8,21,matching,100.00,aux-effect-clear-field8,F008; scripts/repo-python scripts/replay-exact-units.py --unit aux-effect-clear-field8
 0x00401110,Graphics::Initialize,1059,matching,100.00,graphics-initialize,scripts/repo-python scripts/replay-exact-units.py --unit graphics-initialize; F010
 0x0041CC00,DiagnosticLog::InitializeFile,67,matching,100.00,diagnostic-log-initialize-file,scripts/repo-python scripts/replay-exact-units.py --unit diagnostic-log-initialize-file; F010
@@ -982,3 +983,5 @@ address,name,size,status,match_percent,unit,evidence
 0x0043B0B0,BattleScene::~BattleScene,248,matching,100.00,battle-scene-release-0043b0b0,F1157; scripts/repo-python scripts/replay-exact-units.py --unit battle-scene-release-0043b0b0; entire 248B/75 original x86/12 fields cold exact
 0x00602A60,GameApplication::RunAt00602A60,2987,matching,100.00,game-application-run-00602a60,F1171; scripts/repo-python scripts/replay-exact-units.py --unit game-application-run-00602a60; whole 2987 CODE plus 60 owned DATA bytes/654 x86/173 fields cold exact
 0x0045B850,CharacterObject::NoOpAt0045B850,13,matching,100.00,character-object-no-op-0045b850,"manual original native disassembly, 11 PE direct callers and full 13-byte cold replay; no ASM/PADDING"
+0x00412D90,AbsFloatAt00412D90,17,matching,100.00,math-absolute-float-at-00412d90,R271; config/math-float-helper-origin-evidence.json; scripts/repo-python scripts/verify-math-float-helper-origins.py; scripts/repo-python scripts/replay-exact-units.py --unit math-absolute-float-at-00412d90
+0x00428D20,MagnitudeAt00428D20,17,matching,100.00,math-square-root-float-at-00428d20,R271; config/math-float-helper-origin-evidence.json; scripts/repo-python scripts/verify-math-float-helper-origins.py; scripts/repo-python scripts/replay-exact-units.py --unit math-square-root-float-at-00428d20

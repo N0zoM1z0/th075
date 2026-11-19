@@ -1,0 +1,430 @@
+{
+  "evidence_id": "R271",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "source": "src/MathFloatHelpers.cpp",
+  "source_sha256": "a7436a7052a33644336d0e603ca98f9492b80460238e13fede74c7158acd4be0",
+  "sdk_header": ".tools/msvc710/Vc7/include/math.h",
+  "sdk_header_sha256": "776b7b9c45c5aed0e355109ab7f3435971d833d2228dd4f2b16aad4fe6bf96c8",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX-",
+    "/Zi",
+    "/I",
+    "src"
+  ],
+  "sdk_inline_float_overloads": [
+    {
+      "name": "fabsf",
+      "line": 449,
+      "worker": "0x00412DB0",
+      "runtime": "0x006418CD"
+    },
+    {
+      "name": "sqrtf",
+      "line": 469,
+      "worker": "0x00428D40",
+      "runtime": "0x00641E54"
+    }
+  ],
+  "wrappers": [
+    {
+      "address": "0x00412D90",
+      "size": 17,
+      "role": "float absolute-value wrapper",
+      "source_function": "AbsFloatAt00412D90",
+      "symbol": "?AbsFloatAt00412D90@@YAMM@Z",
+      "unit": "math-absolute-float-at-00412d90",
+      "worker_address": "0x00412DB0",
+      "worker_size": 28,
+      "worker_name": "_fabsf",
+      "worker_callee": "0x006418CD",
+      "worker_callee_name": "_fabs",
+      "relocation_offset": 8,
+      "worker_relocation_offset": 14,
+      "header_line": 449,
+      "body_sha256": "e3e4fafc86254701a05f419c4913994a1d39e46cf769cc731c9703b95f331976",
+      "worker_body_sha256": "4587fef5192201f029476888fdead37bc6926d0acd05f073a1b4bbb18a32f6d2",
+      "callers": [
+        {
+          "address": "0x004126C0",
+          "size": 1520,
+          "origin_evidence_id": "R035",
+          "body_sha256": "a1a2f054418e7f7c0693600b1a919ac3211ccde334c3bc1a3d549f689f640aab",
+          "call_sites": [
+            "0x4127fe",
+            "0x412860",
+            "0x412a7c",
+            "0x412ada",
+            "0x412b0b"
+          ]
+        },
+        {
+          "address": "0x00472890",
+          "size": 8871,
+          "origin_evidence_id": "R047",
+          "body_sha256": "1d4dd0b4baaaf100bc62d82ae014085f42f054bdbc6614caf0bf0badb0bf8ac9",
+          "call_sites": [
+            "0x4728b0",
+            "0x4728d1"
+          ]
+        },
+        {
+          "address": "0x00474B40",
+          "size": 7780,
+          "origin_evidence_id": "R047",
+          "body_sha256": "071b4e36ca739d0e0ee511c0cad2b207943c959675c1cd3394e44c7474216da3",
+          "call_sites": [
+            "0x474b60",
+            "0x474b81"
+          ]
+        },
+        {
+          "address": "0x00499030",
+          "size": 8256,
+          "origin_evidence_id": "R047",
+          "body_sha256": "d7264f9cd878eda48553b902e727f15d8ff78d8b947d415d402847ad49c2306a",
+          "call_sites": [
+            "0x499050",
+            "0x499071"
+          ]
+        },
+        {
+          "address": "0x0049B070",
+          "size": 6097,
+          "origin_evidence_id": "R047",
+          "body_sha256": "a8666d61b2db1a5e6c96cc6e0e08513add98204c22a13f5e40ad0f5e4243075b",
+          "call_sites": [
+            "0x49b090",
+            "0x49b0b1"
+          ]
+        },
+        {
+          "address": "0x004C6B50",
+          "size": 8572,
+          "origin_evidence_id": "R047",
+          "body_sha256": "569c3417bd2125217119addaf53c939bce7605ca65ec61eb119c322f3e91f7ad",
+          "call_sites": [
+            "0x4c6b70",
+            "0x4c6b91"
+          ]
+        },
+        {
+          "address": "0x004C8CD0",
+          "size": 6504,
+          "origin_evidence_id": "R047",
+          "body_sha256": "587f2c16622d2235fa735026d623cc7a7a5abe5f81fe1604801d530032523875",
+          "call_sites": [
+            "0x4c8cf0",
+            "0x4c8d11"
+          ]
+        },
+        {
+          "address": "0x004E7DE0",
+          "size": 8871,
+          "origin_evidence_id": "R047",
+          "body_sha256": "babfa1b54ba9922f6908442fb08c3629c7c712f5c25f52bdfa54f9a426121d17",
+          "call_sites": [
+            "0x4e7e00",
+            "0x4e7e21"
+          ]
+        },
+        {
+          "address": "0x004EA090",
+          "size": 7279,
+          "origin_evidence_id": "R047",
+          "body_sha256": "0017298a9af75b60f59bbc16dd788b847768592528d8ced3b4e64df22b8638ad",
+          "call_sites": [
+            "0x4ea0b0",
+            "0x4ea0d1"
+          ]
+        },
+        {
+          "address": "0x004EBDA0",
+          "size": 33293,
+          "origin_evidence_id": "R048",
+          "body_sha256": "3792bb8be898d5cfb88eca158243e138d8e24d0663829468f05c56694d695807",
+          "call_sites": [
+            "0x4ef0cd",
+            "0x4ef322"
+          ]
+        },
+        {
+          "address": "0x00507B20",
+          "size": 3000,
+          "origin_evidence_id": "R049",
+          "body_sha256": "23f93b3f6f2af8b00f813bfce4f7f0f2a23c88bd5bd041916145c2aa5173e83a",
+          "call_sites": [
+            "0x507b40",
+            "0x50862c"
+          ]
+        },
+        {
+          "address": "0x005086E0",
+          "size": 7676,
+          "origin_evidence_id": "R047",
+          "body_sha256": "49222abf59781b88268f24825024fc04e35712c7c234165f31af695b9f0882cd",
+          "call_sites": [
+            "0x508700",
+            "0x508721"
+          ]
+        },
+        {
+          "address": "0x0050A580",
+          "size": 81539,
+          "origin_evidence_id": "R048",
+          "body_sha256": "1107c857541ca35524de812e0a9b1874263ddf68e3a5981f1006e62635832726",
+          "call_sites": [
+            "0x51b3df",
+            "0x51d269"
+          ]
+        },
+        {
+          "address": "0x005214B0",
+          "size": 46755,
+          "origin_evidence_id": "R048",
+          "body_sha256": "0ce5189be042350df0fd0eb82da310082e8cedf09e9ccd9e06a96db611cd6578",
+          "call_sites": [
+            "0x52ae15",
+            "0x52b4ec"
+          ]
+        },
+        {
+          "address": "0x00532950",
+          "size": 8273,
+          "origin_evidence_id": "R047",
+          "body_sha256": "85890b00fb92754df379f039b0982a2266a3d243a6e07ce99687b4079f5ea1d9",
+          "call_sites": [
+            "0x532970",
+            "0x532991"
+          ]
+        },
+        {
+          "address": "0x005349B0",
+          "size": 6567,
+          "origin_evidence_id": "R047",
+          "body_sha256": "512a4961ad527fcc6778910b971bf4096be38deed86b596cb520a4787ec3117a",
+          "call_sites": [
+            "0x5349d0",
+            "0x5349f1"
+          ]
+        },
+        {
+          "address": "0x00536400",
+          "size": 39999,
+          "origin_evidence_id": "R048",
+          "body_sha256": "823fc631fb60219c6751959fee28d40d0572f9243386e74dfde2a782f730d69c",
+          "call_sites": [
+            "0x53c794",
+            "0x53d383",
+            "0x53d3d7"
+          ]
+        },
+        {
+          "address": "0x00543210",
+          "size": 58294,
+          "origin_evidence_id": "R048",
+          "body_sha256": "b0aefbb078f1077e0d29f08c56eb962c2df0a9427842fb5aec6e9a3d1f8999c5",
+          "call_sites": [
+            "0x54e760",
+            "0x550c8b"
+          ]
+        },
+        {
+          "address": "0x00557380",
+          "size": 7113,
+          "origin_evidence_id": "R047",
+          "body_sha256": "6f08096c6359a7fbac1a676a4152bbdf06dc4c2d99b12ca133d8cfce5dfbbfca",
+          "call_sites": [
+            "0x5573a0",
+            "0x5573c1"
+          ]
+        },
+        {
+          "address": "0x00558F50",
+          "size": 7303,
+          "origin_evidence_id": "R047",
+          "body_sha256": "67ca3080ab1e0023a38249f3070ee207f557b7dfb85c4bb0bec97a5cff5ee332",
+          "call_sites": [
+            "0x558f70",
+            "0x558f91"
+          ]
+        },
+        {
+          "address": "0x00579650",
+          "size": 8871,
+          "origin_evidence_id": "R047",
+          "body_sha256": "04887203afe3a1b20db82fe473aebd489b5e7aecfd2fb3bc3df6b88dc795a54c",
+          "call_sites": [
+            "0x579670",
+            "0x579691"
+          ]
+        },
+        {
+          "address": "0x0057B900",
+          "size": 7125,
+          "origin_evidence_id": "R047",
+          "body_sha256": "ab520d16c22a54e043c2db51b752730b1f87faaec75afe50de55769624432781",
+          "call_sites": [
+            "0x57b920",
+            "0x57b941"
+          ]
+        },
+        {
+          "address": "0x0059D240",
+          "size": 8871,
+          "origin_evidence_id": "R047",
+          "body_sha256": "b992f47e6f2458eebcb6cc8b1825b06bb28834c73caa72ba326e083eea22845a",
+          "call_sites": [
+            "0x59d260",
+            "0x59d281"
+          ]
+        },
+        {
+          "address": "0x0059F4F0",
+          "size": 8294,
+          "origin_evidence_id": "R047",
+          "body_sha256": "83ce16aaee985b73a51c7b657cfacb1e7671c9a8fcac3083a1b7d2add6e6d49a",
+          "call_sites": [
+            "0x59f510",
+            "0x59f531"
+          ]
+        },
+        {
+          "address": "0x005A1600",
+          "size": 43599,
+          "origin_evidence_id": "R048",
+          "body_sha256": "96af78af15b596aec46bdf6d172710819f1fd23f25ed7f92e5de8935ba7917eb",
+          "call_sites": [
+            "0x5a2bb4",
+            "0x5a2f94"
+          ]
+        },
+        {
+          "address": "0x005C5D10",
+          "size": 8871,
+          "origin_evidence_id": "R047",
+          "body_sha256": "d30b25cc32e9ab88b89a06ca0c69b266ece68303d576bc1503bac3c859bce43f",
+          "call_sites": [
+            "0x5c5d30",
+            "0x5c5d51"
+          ]
+        },
+        {
+          "address": "0x005C7FC0",
+          "size": 7264,
+          "origin_evidence_id": "R047",
+          "body_sha256": "837e4f0cb50c50a38ce37eee00b7e8d728ad74509e380e6d29eccbfdf6a4dabb",
+          "call_sites": [
+            "0x5c7fe0",
+            "0x5c8001"
+          ]
+        },
+        {
+          "address": "0x005C9CC0",
+          "size": 43501,
+          "origin_evidence_id": "R048",
+          "body_sha256": "5f27a4c2461b838ee1f74ca2c5cbd8fea07f2278d6d0bd0270b593929d182c5c",
+          "call_sites": [
+            "0x5cc45e",
+            "0x5cc499",
+            "0x5ccfa4",
+            "0x5ccfdf",
+            "0x5d10bc",
+            "0x5d10fb"
+          ]
+        },
+        {
+          "address": "0x005E7370",
+          "size": 8871,
+          "origin_evidence_id": "R047",
+          "body_sha256": "428dc326bd8a7486fec5be6791c8ca38e2829ca4d1a2393b7e930ac594d7f4c7",
+          "call_sites": [
+            "0x5e7390",
+            "0x5e73b1"
+          ]
+        },
+        {
+          "address": "0x005E9620",
+          "size": 7780,
+          "origin_evidence_id": "R047",
+          "body_sha256": "7487d98885871fc8ee59c72e7f4a755c31a832f295fc2655533e727761e4975c",
+          "call_sites": [
+            "0x5e9640",
+            "0x5e9661"
+          ]
+        }
+      ],
+      "caller_count": 30,
+      "call_site_count": 68,
+      "evidence_id": "R271",
+      "origin_confidence": "high"
+    },
+    {
+      "address": "0x00428D20",
+      "size": 17,
+      "role": "float square-root wrapper",
+      "source_function": "MagnitudeAt00428D20",
+      "symbol": "?MagnitudeAt00428D20@@YAMM@Z",
+      "unit": "math-square-root-float-at-00428d20",
+      "worker_address": "0x00428D40",
+      "worker_size": 28,
+      "worker_name": "_sqrtf",
+      "worker_callee": "0x00641E54",
+      "worker_callee_name": "_sqrt",
+      "relocation_offset": 8,
+      "worker_relocation_offset": 14,
+      "header_line": 469,
+      "body_sha256": "e3e4fafc86254701a05f419c4913994a1d39e46cf769cc731c9703b95f331976",
+      "worker_body_sha256": "36d657cff62add6e11901a1eb180e9867dd4a6719d4b90c5de7ac8a858e82a79",
+      "callers": [
+        {
+          "address": "0x004277A0",
+          "size": 5339,
+          "origin_evidence_id": "R035",
+          "body_sha256": "f6590d65e3ef416dd3d0900b8e22a0c4d3fce3afece6b119cb69a3bf87ce6079",
+          "call_sites": [
+            "0x42831e",
+            "0x428337",
+            "0x428356"
+          ]
+        },
+        {
+          "address": "0x004EBDA0",
+          "size": 33293,
+          "origin_evidence_id": "R048",
+          "body_sha256": "3792bb8be898d5cfb88eca158243e138d8e24d0663829468f05c56694d695807",
+          "call_sites": [
+            "0x4f3250"
+          ]
+        },
+        {
+          "address": "0x005C9CC0",
+          "size": 43501,
+          "origin_evidence_id": "R048",
+          "body_sha256": "5f27a4c2461b838ee1f74ca2c5cbd8fea07f2278d6d0bd0270b593929d182c5c",
+          "call_sites": [
+            "0x5d00ef",
+            "0x5d04d8"
+          ]
+        }
+      ],
+      "caller_count": 3,
+      "call_site_count": 6,
+      "evidence_id": "R271",
+      "origin_confidence": "high"
+    }
+  ],
+  "worker_disposition": "The 37-byte atan2f worker is separately classified as VC71CRT library code under R270. The 28-byte fabsf/sqrtf workers reproduce pinned VC7.1 math.h inline overloads but remain unclassified under the preserved R163 alternatives. None of the workers receive authored game source or exact credit.",
+  "source_limit": "Names are reconstruction labels, not recovered original source spellings. The full original private declarations, math module layout and compiler/linker choices are not claimed.",
+  "prior_accepted": [
+    {
+      "address": "0x00483300",
+      "evidence_id": "R269",
+      "worker_evidence_id": "R270",
+      "unit": "math-angle-at-00483300"
+    }
+  ]
+}
