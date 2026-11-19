@@ -72,7 +72,13 @@ positions/types were unchanged, with zero nonrelocation-byte differences.
 A second batch converted 19 further source spawn sites across 12 case
 files. Both batches preserve the entire 82,109-byte function object,
 all 1,449 relocation offsets/types and every nonrelocation code byte.
-This is natural-source recovery, not new exact giant credit.
+A final 27 raw-coordinate spawn sites and both auxiliary/tracked
+spawn sites have now also moved onto `Fighter` members, leaving just
+one unresolved 0046D000 cross-character gauge-timer call behind the
+borrowed interface. The final whole-function VC7.1 object remains
+82,109 bytes with all 1,449 relocation positions/types preserved
+and no nonrelocation-byte differences. This is natural-source recovery,
+not new exact giant credit.
 
 Sakuya object `004CA6E0` now defines `SakuyaObject::Advance` directly.
 The original 42,511 CODE bytes are still nonexact (447 GPR-role and

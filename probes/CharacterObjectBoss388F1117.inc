@@ -22,8 +22,8 @@ case 0x388: {
         field07C=0;
         velocityY=22.5f;
         owner->PlaySound(3);
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            0x345,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            0x345,x,y,
             facing,1);
     }
     y=y+velocityY;

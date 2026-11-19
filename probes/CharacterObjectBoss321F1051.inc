@@ -38,9 +38,7 @@ case 0x321: {
         owner->SpawnBattleEffect(
             0x347, x, y,
             facing, 1);
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnProjectileAt00453C80(
-            0x7F, reinterpret_cast<unsigned int&>(x), 0,
-            facing, 1);
+        owner->SpawnAuxEffect(0x7F, x, 0.0f, facing, 1);
         for (int shot=0; shot<20; ++shot) {
             owner->SpawnBattleEffect(
                 0x33A, x, y,

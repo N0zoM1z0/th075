@@ -10,8 +10,8 @@ case 0x38E: {
         reinterpret_cast<unsigned int&>(velocityX)=reinterpret_cast<unsigned int&>(field0C8);
     }
     if (animationStage==1 && animationFrame==0)
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            0x38F,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            0x38F,x,y,
             facing,1);
     if (x>g_F1101_RightAt00659424 ||
         x<g_F1101_LeftAt0065924C) {

@@ -45,9 +45,7 @@ case 0x351: {
         }
     }
     if (field0DA==35) {
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnSevenAt00453B50(
-            0x352,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
-            facing,1,0,1);
+        owner->SpawnTrackedEffect(0x352, x, y, facing, 1, 0, 1);
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;

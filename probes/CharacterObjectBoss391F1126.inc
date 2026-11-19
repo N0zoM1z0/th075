@@ -63,8 +63,8 @@ case 0x391: {
     if (field0DA==1) {
         if (y+velocityY<=g_F1044_GroundAt0065782C) {
             ClearFrameInfo();
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x392,reinterpret_cast<unsigned int&>(x),0,
+            owner->SpawnBattleEffect(
+                0x392,x,0.0f,
                 facing,1);
             return;
         }

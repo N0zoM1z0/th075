@@ -34,8 +34,8 @@ case 0x389: {
         SetPolarVelocity(
             float(field0DA),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4);
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            0x33C,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            0x33C,x,y,
             facing,1);
         scaleX=float(double(RandomBoundaryAt00455580(0,4)-2)*
             g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);

@@ -52,6 +52,10 @@ Done so far:
   82,109-byte VC7.1 output and all 1,449 relocation offsets/types intact.
   A second batch restored 19 more source spawn calls across 12 case
   files with zero nonrelocation-byte difference against the baseline.
+  The final 27 coordinate-spawn sites and the auxiliary/tracked spawns
+  now use the real Fighter APIs too; only the cross-character
+  0046D000 gauge call retains a borrowed receiver. The whole 82,109-byte
+  compiler object and 1,449 relocation positions/types remain unchanged.
   Six additional float-argument source sites (seven compiled calls) have
   since moved to the real `Fighter::SpawnBattleEffect` API with all 1,449
   relocation positions/types unchanged and zero altered nonrelocation bytes.

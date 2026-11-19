@@ -18,13 +18,13 @@ case F1057_CASE: {
         animationStage<2) {
         ClearFrameInfo();
         for (int shot=0;shot<3;++shot) {
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x3E4, reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(
+                0x3E4, x,y,1,1);
         }
         if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
             reinterpret_cast<signed short&>(owner->fieldEFA)=0;
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x3E3, reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
+            owner->SpawnBattleEffect(
+                0x3E3, x,y,1,1);
         }
         return;
     }
@@ -65,8 +65,8 @@ case F1057_CASE: {
         SetPolarVelocity(
             float(field0DC),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4+g_F1057_SpeedBaseAt00657CBC);
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            F1057_NEXT_CASE, reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            F1057_NEXT_CASE, x,y,
             facing,1);
         scaleX=float(double(RandomBoundaryAt00455580(0,4)-2)*
             g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);

@@ -34,15 +34,15 @@ case 0x38A: {
             velocityX=0.0f;
             owner->PlaySound(11);
             ResetPrimaryCounters(0x385);
-            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                0x347,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
+            owner->SpawnBattleEffect(
+                0x347,x,y,facing,1);
             int shot;
             for (shot=0;shot<15;++shot)
-                reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                    0x33A,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
+                owner->SpawnBattleEffect(
+                    0x33A,x,y,facing,1);
             for (shot=0;shot<15;++shot)
-                reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                    0x389,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
+                owner->SpawnBattleEffect(
+                    0x389,x,y,facing,1);
             reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
             return;
         }

@@ -6,13 +6,12 @@
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.
 // The state cases belong to PatchouliObject; helper call contracts remain native.
-// F1181: effect/sound IDs and layer/link/mode parameters use the native
-// low-word/low-byte contract witnessed by the independently exact callees.
-// Coordinate/angle DWORD overloads deliberately preserve the original raw
-// MOV/PUSH bit transport into four-byte float slots. A float-compatible
-// callee body does not recover its original C++ declaration: replacing
-// these raw reads with implicit numeric float conversion is incorrect.
-class F1051Grandparent { public: void SpawnObjectAt00453A70(short,unsigned int,unsigned int,signed char,signed char); void SpawnProjectileAt00453C80(short,unsigned int,unsigned int,signed char,signed char); void SpawnSevenAt00453B50(short,unsigned int,unsigned int,signed char,signed char,unsigned char,unsigned char); void StartAnimationAt0046D000(int); };
+// Shared sound, camera and effect spawning now use the real Fighter API,
+// with float coordinates passed directly to the native float parameter slots.
+// The only unresolved borrowed call is to the 0046D000 gauge-timer routine:
+// its cross-character receiver provenance must be reconciled before it can
+// be expressed as a truthful PatchouliFighter or Fighter member call.
+class F1051Grandparent { public: void StartAnimationAt0046D000(int); };
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
 extern float g_F1051_ScaleStepAt00658348;
