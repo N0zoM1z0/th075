@@ -687,64 +687,64 @@ case 0x331: {
 
     case 820:
         if (owner->action == 308) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 821:
         if (owner->action == 504) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 822:
         if (owner->action == 502 || owner->action == 513) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 823:
         if (owner->action == 503) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 824:
         if (owner->action == 500 || owner->action == 501) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 825:
         if (owner->action == 309) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 826:
         if (owner->action == 310) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 827:
         if (owner->action == 501) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
@@ -774,8 +774,8 @@ case 0x331: {
             scaleY = 1.0f;
         }
         if (owner->action == 702) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         else {
             ClearFrameInfo();
@@ -811,8 +811,8 @@ case 0x331: {
         return;
     }
     else if (owner->action == 703) {
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-        reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+        x = owner->x;
+        y = owner->y;
     }
     else {
         ClearFrameInfo();
@@ -879,8 +879,8 @@ case 0x331: {
 
     case 833:
         if (owner->action == 390) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
@@ -1058,7 +1058,7 @@ case 0x331: {
     break;
 
     case 837:
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = owner->y + 100.0f;
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1203,7 +1203,7 @@ case 0x331: {
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        reinterpret_cast<unsigned int&>(rotationZ) = reinterpret_cast<unsigned int&>(field0C8);
+        rotationZ = field0C8;
         SetPolarVelocity(field0C8, 30.0f);
     }
     if (animationStage == 1) {
@@ -2096,8 +2096,8 @@ case 0x331: {
     }
     else {
         if (owner->action >= 700) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage > 5) {
             if (color[0] > 20) color[0] -= 20;
@@ -2118,8 +2118,8 @@ case 0x331: {
         color[3] = 255;
     }
     if (owner->action > 700) {
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-        reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+        x = owner->x;
+        y = owner->y;
     }
     else {
         ClearFrameInfo();
@@ -2140,8 +2140,8 @@ case 0x331: {
         color[3] = 255;
     }
     if (owner->action > 700) {
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-        reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+        x = owner->x;
+        y = owner->y;
     }
     else {
         ClearFrameInfo();
@@ -2184,18 +2184,18 @@ case 0x331: {
     scaleX += 0.025f;
     scaleY += 0.025f;
     if (owner->action == 741) {
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = owner->y + 100.0f;
         rotationZ = -45.0f;
     }
     if (owner->action == 742) {
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = owner->y + 100.0f;
         rotationX = -200.0f;
         rotationZ = 0.0f;
     }
     if (owner->action == 743) {
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = owner->y + 50.0f;
         rotationX = -100.0f;
         rotationZ = 0.0f;
@@ -2323,7 +2323,7 @@ case 0x331: {
             field080 = 1;
             field07C = 0;
             scaleX = RecordedRange(0, 3) * 0.1f + 0.8f;
-            reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+            scaleY = scaleX;
             color[0] = 255;
             color[1] = 255;
             color[2] = 255;
@@ -2724,7 +2724,7 @@ case 0x331: {
         break;
 
     case 997:
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = 2.0f;
         field08A = 1;
         if (animationStage == 0 && animationFrame == 0) {
@@ -2761,7 +2761,7 @@ case 0x3E6: {
         ResetSecondaryCounter(2);
         return;
     }
-    reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
+    x = owner->x;
     y=(*(&owner->y))+g_F1057_YOffsetAt00657888;
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);

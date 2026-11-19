@@ -477,3 +477,9 @@ x87 arithmetic.
   All five complete giant COFF bodies and relocation layouts remain
   unchanged; the exact 855-byte projectile leaf remains exact; all
   450 affected exact units replayed 450/450 in 13 bounded groups.
+
+- SakuyaObject, YoumuObject and YukariObject now use direct float field
+  assignments for 97 known same-type copies; RemiliaObject now uses the
+  declared signed Actor::field07C directly at 93 sites. The four complete
+  COFF bodies and all relocation layouts are unchanged byte-for-byte;
+  none of these giant functions is promoted to exact.

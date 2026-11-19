@@ -2236,7 +2236,7 @@ void SakuyaObject::Advance()
                 owner->field30C = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 owner->field314 = rotationZ;
-                reinterpret_cast<unsigned int&>(owner->field318) = reinterpret_cast<unsigned int&>(field0CC);
+                owner->field318 = field0CC;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
             }
             if ((field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 5) {

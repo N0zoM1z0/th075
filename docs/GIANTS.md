@@ -671,3 +671,11 @@ byte-for-byte matching. All 450 header-affected exact units cold-replayed
 450/450 in 13 bounded batches; no giant exactness is claimed.
 
 Sakuya's 42.5 KB object boss now uses ordinary C++ float copies for 31 same-type transfers among x/y, scale, rotation and Fighter field314. The full 42,937-byte COFF remains identical, all 929 relocation positions/types are unchanged, and there are zero nonrelocation-byte differences. The giant remains nonexact.
+
+Four more object giants now use their declared native C++ scalar types
+instead of integer-reference disguises: Sakuya, Youmu and Yukari replace
+97 same-type float copies (1/36/60), while Remilia replaces 93 unsigned
+references to Actor::field07C with direct signed int state access. All
+four complete COFF bodies (42,937 / 40,464 / 44,104 / 28,868 bytes), all
+929 / 938 / 943 / 696 relocation positions/types and every nonrelocation
+byte remain unchanged. All four frontiers remain explicitly nonexact.

@@ -167,8 +167,8 @@ void YukariObject::Advance()
 
     case 805:
         if (owner->action == 700 && owner->animationStage < 7) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -223,7 +223,7 @@ void YukariObject::Advance()
             if (animationStage == 1) {
                 SetPolarVelocity(field0D0, field0D8 * 0.1f);
                 field0D8 += 10;
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(field0D0);
+                owner->field314 = field0D0;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(807, x, y, facing, 1);
                 if (field07C != 0) {
@@ -236,7 +236,7 @@ void YukariObject::Advance()
             if (animationStage == 2) {
                 field0D8 -= 20;
                 if (field0D8 < 0) field0D8 = 0;
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(field0D0);
+                owner->field314 = field0D0;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(807, x, y, facing, 1);
                 scaleX *= 0.95f;
@@ -260,7 +260,7 @@ void YukariObject::Advance()
             color[3] = 255;
             field07C = 0;
             field080 = 1;
-            reinterpret_cast<unsigned int&>(rotationZ) = reinterpret_cast<unsigned int&>(field0C8);
+            rotationZ = field0C8;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
@@ -697,17 +697,17 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
             SetPolarVelocity(field0C8, 12.0f);
-            reinterpret_cast<unsigned int&>(rotationZ) = reinterpret_cast<unsigned int&>(field0C8);
+            rotationZ = field0C8;
         }
         if (field0C8 == 0.0f) y = 0.0f;
         if (field0C8 == -90.0f) {
-            if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-            if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+            if (facing == 1) x = owner->field2DC;
+            if (facing == -1) x = owner->field2D8;
         }
-        if (field0C8 == -180.0f) reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->field2E0);
+        if (field0C8 == -180.0f) y = owner->field2E0;
         if (field0C8 == 90.0f) {
-            if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-            if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+            if (facing == -1) x = owner->field2DC;
+            if (facing == 1) x = owner->field2D8;
         }
         x = facing * velocityX + x;
         y += velocityY;
@@ -755,8 +755,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = 12.0f;
-                if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-                if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+                if (facing == 1) x = owner->field2DC;
+                if (facing == -1) x = owner->field2D8;
                 if (y > owner->field2E0) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
@@ -771,7 +771,7 @@ void YukariObject::Advance()
                 }
                 velocityX = -12.0f;
                 velocityY = 0.0f;
-                reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->field2E0);
+                y = owner->field2E0;
                 if ((x < owner->field2D8 && facing == 1) ||
                     (x > owner->field2DC && facing == -1)) {
                     ResetSecondaryCounter(4);
@@ -787,8 +787,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = -12.0f;
-                if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-                if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+                if (facing == -1) x = owner->field2DC;
+                if (facing == 1) x = owner->field2D8;
                 if (y < 0.0f) {
                     ResetSecondaryCounter(1);
                     velocityX = 8.0f;
@@ -822,17 +822,17 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
             SetPolarVelocity(field0C8, 12.0f);
-            reinterpret_cast<unsigned int&>(rotationZ) = reinterpret_cast<unsigned int&>(field0C8);
+            rotationZ = field0C8;
         }
         if (field0C8 == 0.0f) y = 0.0f;
         if (field0C8 == -90.0f) {
-            if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-            if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+            if (facing == 1) x = owner->field2DC;
+            if (facing == -1) x = owner->field2D8;
         }
-        if (field0C8 == -180.0f) reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->field2E0);
+        if (field0C8 == -180.0f) y = owner->field2E0;
         if (field0C8 == 90.0f) {
-            if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-            if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+            if (facing == -1) x = owner->field2DC;
+            if (facing == 1) x = owner->field2D8;
         }
         x = facing * velocityX + x;
         y += velocityY;
@@ -880,8 +880,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = 12.0f;
-                if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-                if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+                if (facing == 1) x = owner->field2DC;
+                if (facing == -1) x = owner->field2D8;
                 if (y > owner->field2E0) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
@@ -896,7 +896,7 @@ void YukariObject::Advance()
                 }
                 velocityX = -12.0f;
                 velocityY = 0.0f;
-                reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->field2E0);
+                y = owner->field2E0;
                 if ((x < owner->field2D8 && facing == 1) ||
                     (x > owner->field2DC && facing == -1)) {
                     ResetSecondaryCounter(4);
@@ -912,8 +912,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = -12.0f;
-                if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-                if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+                if (facing == -1) x = owner->field2DC;
+                if (facing == 1) x = owner->field2D8;
                 if (y < 0.0f) {
                     ResetSecondaryCounter(1);
                     velocityX = 8.0f;
@@ -947,17 +947,17 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
             SetPolarVelocity(field0C8, 16.0f);
-            reinterpret_cast<unsigned int&>(rotationZ) = reinterpret_cast<unsigned int&>(field0C8);
+            rotationZ = field0C8;
         }
         if (field0C8 == 0.0f) y = 0.0f;
         if (field0C8 == -90.0f) {
-            if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-            if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+            if (facing == 1) x = owner->field2DC;
+            if (facing == -1) x = owner->field2D8;
         }
-        if (field0C8 == -180.0f) reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->field2E0);
+        if (field0C8 == -180.0f) y = owner->field2E0;
         if (field0C8 == 90.0f) {
-            if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-            if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+            if (facing == -1) x = owner->field2DC;
+            if (facing == 1) x = owner->field2D8;
         }
         x = facing * velocityX + x;
         y += velocityY;
@@ -1005,8 +1005,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = 16.0f;
-                if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-                if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+                if (facing == 1) x = owner->field2DC;
+                if (facing == -1) x = owner->field2D8;
                 if (y > owner->field2E0) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
@@ -1021,7 +1021,7 @@ void YukariObject::Advance()
                 }
                 velocityX = -16.0f;
                 velocityY = 0.0f;
-                reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->field2E0);
+                y = owner->field2E0;
                 if ((x < owner->field2D8 && facing == 1) ||
                     (x > owner->field2DC && facing == -1)) {
                     ResetSecondaryCounter(4);
@@ -1037,8 +1037,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = -16.0f;
-                if (facing == -1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2DC);
-                if (facing == 1) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->field2D8);
+                if (facing == -1) x = owner->field2DC;
+                if (facing == 1) x = owner->field2D8;
                 if (y < 0.0f) {
                     ResetSecondaryCounter(1);
                     velocityX = 8.0f;
@@ -1064,8 +1064,8 @@ void YukariObject::Advance()
 
     case 824:
         if (owner->action == 301 || owner->action == 391) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1081,8 +1081,8 @@ void YukariObject::Advance()
 
     case 825:
         if (owner->action == 321) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1098,8 +1098,8 @@ void YukariObject::Advance()
 
     case 826:
         if (owner->action == 305) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1146,8 +1146,8 @@ void YukariObject::Advance()
     case 828:
         if (owner->animationStage < 20 &&
             (owner->action == 503 || owner->action == 504 || owner->action == 505)) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
@@ -1156,7 +1156,7 @@ void YukariObject::Advance()
         if (owner->action > 49 && owner->action < 150) { ClearFrameInfo(); return; }
         else {
             if (owner->action > 502 && owner->action < 506 && owner->animationStage < 7)
-                reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+                x = owner->x;
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
@@ -1451,7 +1451,7 @@ void YukariObject::Advance()
             if (animationStage == 2) {
                 field0D8 -= 20;
                 if (field0D8 < 0) field0D8 = 0;
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(field0D0);
+                owner->field314 = field0D0;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(807, x, y, facing, 1);
                 scaleX *= 0.95f;
@@ -1609,8 +1609,8 @@ void YukariObject::Advance()
 
     case 844:
         if (owner->action == 303) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-            reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+            x = owner->x;
+            y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1723,7 +1723,7 @@ void YukariObject::Advance()
                         velocityX = 0.0f;
                         velocityY = 0.0f;
                         scaleX *= 0.85f;
-                        reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
+                        scaleY = scaleX;
                     }
                     if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
@@ -1855,7 +1855,7 @@ void YukariObject::Advance()
 
     case 905:
         if (owner->action == 741 && owner->animationStage < 12) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+            x = owner->x;
             y = owner->y + 100.0f;
         }
         if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
@@ -1881,7 +1881,7 @@ void YukariObject::Advance()
             }
             if (AdvanceNestedFrame() == field070) {
                 ResetSecondaryCounter(1);
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                owner->field314 = rotationZ;
                 owner->SpawnBattleEffect(909, x, y, facing, 1);
             }
         }
@@ -1889,7 +1889,7 @@ void YukariObject::Advance()
 
     case 906:
         if (owner->action == 741 && owner->animationStage < 12) {
-            reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+            x = owner->x;
             y = owner->y + 100.0f;
         }
         if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
@@ -1915,7 +1915,7 @@ void YukariObject::Advance()
             }
             if (AdvanceNestedFrame() == field070) {
                 ResetSecondaryCounter(1);
-                reinterpret_cast<unsigned int&>(owner->field314) = reinterpret_cast<unsigned int&>(rotationZ);
+                owner->field314 = rotationZ;
                 owner->SpawnBattleEffect(909, x, y, facing, 1);
             }
         }
@@ -2668,12 +2668,12 @@ void YukariObject::Advance()
         break;
 
     case 988:
-        if (owner->animationStage > 10) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        if (owner->animationStage > 10) x = owner->x;
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 989:
-        if (owner->animationStage < 9) reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        if (owner->animationStage < 9) x = owner->x;
         if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
@@ -2781,7 +2781,7 @@ void YukariObject::Advance()
         break;
 
     case 997:
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        x = owner->x;
         y = 2.0f;
         field08A = 1;
         if (animationStage == 0 && animationFrame == 0) {
@@ -2809,8 +2809,8 @@ void YukariObject::Advance()
         break;
 
     case 999:
-        if (animationStage < 1) reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        if (animationStage < 1) y = owner->y;
+        x = owner->x;
         owner->fieldF0C = 1;
         if (owner->animationStage == 0 &&
             (((owner->action >= 70 && owner->action <= 88 && owner->action != 76)) ||
