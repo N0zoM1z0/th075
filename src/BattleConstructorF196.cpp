@@ -71,7 +71,7 @@ BattleScene::BattleScene()
     fighters[0] = static_cast<Fighter*>(g_CombatActorAAt00671418);
     fighters[1] = static_cast<Fighter*>(g_CombatActorBAt0067141C);
     field060 = 0;
-    reinterpret_cast<unsigned long&>(field08C) = 0;
+    field08C = 0.0f;
     field094 = 0;
     field090 = -300.0f;
     field00C = 200;
@@ -99,7 +99,7 @@ BattleScene::BattleScene()
             g_FrameClockModeAt0066C238 = 3;
     } else {
         StateAudioF196::ResetScene(0, 0, 0, 0);
-        reinterpret_cast<unsigned long&>(field08C) = 0;
+        field08C = 0.0f;
         field018 = 0;
     }
     field010 = 0;
