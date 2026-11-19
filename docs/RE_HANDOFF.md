@@ -59,6 +59,11 @@ large research parents. They do not claim new giant exactness:
   The leaf and complete 1,151-byte reset caller both cold-replay exact (2/2);
   the 28-byte `InputState` at block +0x2C is compile-time layout checked.
   Original proposed role/name remains provisional.
+- b4c6ead7: removed 27 same-width reference casts from the complete
+  `Fighter::ClearAuxiliaryWords` and `Fighter::ResetRound` bodies, restoring
+  direct `int`, `unsigned long`, `float` and signed-byte member assignments.
+  The 89-byte clear helper and 1,151-byte reset caller remain cold-exact;
+  the 30-byte held-count leaf also replays exact after the typed-member move.
 - 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
   +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
   identical; the 462 affected exact units cold-replayed 462/462.

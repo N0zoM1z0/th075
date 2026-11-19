@@ -823,6 +823,16 @@ original offsets/types/destinations. The provisional origin role remains
 `InputMapping::ClearHeldCounts`; this recovers the source-side receiver/member
 view, not the original external method spelling.
 
+
+The same Fighter translation unit now uses its declared native scalar types
+throughout the two reset helpers: 27 unnecessary 32-bit/byte reference casts
+were replaced by direct assignments to the existing input, buffer, float,
+integer and signed-byte fields. The complete 89-byte
+`Fighter::ClearAuxiliaryWords` and 1,151-byte `Fighter::ResetRound` functions
+remain byte-exact; the 30-byte held-count leaf remains exact as well. No
+field offsets, call order, duplicate notice-state store or relocation fields
+changed.
+
 ## R016 — sound-bank serialization, playback and streaming worker
 
 Reviewed 2026-10-02. Fifteen complete custom bodies add 3,318 authored bytes.
