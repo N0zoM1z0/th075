@@ -1049,6 +1049,14 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+Forty float-to-float bit-reference assignments were replaced by ordinary
+member assignments throughout the large PatchouliObject action family:
+owner position copies, projectile velocity/angle copies, and paired scale
+copies. Seven more float bit aliases in the shared CharacterProjectile and
+CharacterObject constructor were replaced with direct float assignments.
+The complete 82,109-byte PatchouliObject `Advance` and all 1,449 relocations
+remain identical; its frontier stays at 24,643 differing bytes. Both affected
+exact leaf functions replayed 2/2.
 The paired third-boss arc no longer wraps its already-`float` `velocityX`
 member in ten redundant `reinterpret_cast<const float&>` expressions. The
 complete 83,922-byte Sakuya `Advance` body and all 2,352 relocations remain
