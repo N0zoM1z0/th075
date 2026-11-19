@@ -55,6 +55,11 @@ Done so far:
   shared C++ ABI, not a claim of original source class identity. Eight
   object giants will be migrated to the inherited caller separately.
 
+- The nine native object giant parents now inherit that real 0045B860
+  sound-bank forwarder, replacing 20 native per-character sound aliases.
+  All nine complete COFF bodies and relocation positions/types are
+  unchanged outside renamed call symbols, the full giants retain their
+  nonexact frontiers, and 28/28 exact header-affected units replayed.
 - The existing exact 29-byte 0045B860 sound leaf is now the common
   `CharacterObject::PlaySharedSound(short)` instead of a borrowed fake
   receiver, with both original relocations intact and 28/28 affected

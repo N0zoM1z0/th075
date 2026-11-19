@@ -226,6 +226,16 @@ relocation positions/types unchanged and zero nonrelocation-byte
 regressions. Its original 43,599 CODE bytes remain nonexact (613 GPR,
 11 width differences), and all 24 header-affected exact units replayed.
 
+Nine complete object giant `Advance` parents now inherit the same
+`CharacterObject::PlaySharedSound(short)` method instead of duplicating
+a speculative sound declaration in each character class: Sakuya 2,
+Alice 2, Patchouli 2, Youmu 4, Remilia 2, Yuyuko 2, Yukari 2, Suika 2,
+Meiling 2 (20 actual compiled COFF call relocations). All nine full VC7.1
+object sizes, relocation locations/types and nonrelocation bytes are
+identical to their pre-refactor outputs, and all nine native frontiers
+remain nonexact without regression. The 28 exact units affected by the
+shared `CharacterObject` header replayed 28/28; no giant exact credit.
+
 The native 0045B860 sound-bank forwarding method has also moved from
 a fake `EffectSound45B860` receiver into the common
 `CharacterObject::PlaySharedSound(short)` class. Its complete 29-byte
