@@ -45,8 +45,8 @@ case 0x2DB: {
     if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=float(RandAt455580(0,100)-50);
         velocityY=float(RandAt455580(0,30)-15);
-        if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 >
-            reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+        if (x >
+            opponent->x)
             facing=-1;
         else
             facing=1;
@@ -99,32 +99,32 @@ case 0x2DB: {
     if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(2);
         SpawnSevenFloatAt453B50(0x338,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x339,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33A,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33B,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33C,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33D,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
@@ -148,7 +148,7 @@ case 0x2DB: {
             field314=float(shot);
             field318=5.0f;
             SpawnFloatXYAt453A70(0x385,
-                reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                x -
                     float((facing)*8),
                 (*(&y))+g_F1016_RingYAt00659460,
                 facing,1);
@@ -157,7 +157,7 @@ case 0x2DB: {
             field314=float(shot);
             field318=10.0f;
             SpawnFloatXYAt453A70(0x385,
-                reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                x -
                     float((facing)*8),
                 (*(&y))+g_F1016_RingYAt00659460,
                 facing,1);

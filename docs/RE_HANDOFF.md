@@ -39,6 +39,13 @@ Done so far:
   `CharacterSelectScene::DrawCurrent`. The single-player options renderer
   (596 bytes) now uses the same owner and is called directly by the virtual
   render method. All 19 header-affected exact units cold-replayed correctly.
+- Sakuya's complete 82,796-byte fighter `Advance` now belongs to
+  `SakuyaFighter` instead of a research subclass. Its 16 state files
+  use named real actor X members and the real Actor transform reset.
+  The 83,922-byte COFF body has zero nonrelocation differences and all
+  2,352 original relocation positions/types; 98/98 locally affected
+  exact units cold-replayed. The 6,958 GPR and 12 width differences
+  remain unresolved, so no whole giant exact credit was added.
 - Youmu's complete 46,755-byte fighter `Advance` is now on the real
   `YoumuFighter` vtable class. Native-coordinate owner views became
   `x` / `opponent->x` in 13 case source files, and 15 resets use the

@@ -5,7 +5,7 @@
 // The natural C++ inside a still-PARTIAL 82KB parent has the real
 // 0x5F native 44-instruction GPR/mnemonic/width sequence; the original
 // entire callable game giant and saved this EBP layout remain NONEXACT.
-// FighterBorrowedXViewF752 comes from the real F939 pair include.
+// Both fighters share the Actor::x member at +0x44.
         case 0x5F: {
             if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
@@ -13,11 +13,11 @@
                     SetNativeActionAt40FAC0(1);
             }
             if ((animationStage)==(field070)-1) {
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 >
-                    reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x >
+                    opponent->x)
                     facing=-1;
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 <
-                    reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x <
+                    opponent->x)
                     facing=1;
             }
             break;

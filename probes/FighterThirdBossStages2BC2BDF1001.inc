@@ -26,7 +26,7 @@ case 0x2BC: {
         PrepareActionAt453D60(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x73,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
             facing,1);
@@ -37,13 +37,13 @@ case 0x2BC: {
         StartAnimationAt46D000(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x323,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
         SpawnFloatXYAt453A70(0x323,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
@@ -76,7 +76,7 @@ case 0x2BD: {
         PrepareActionAt453D60(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x74,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
             facing,1);
@@ -88,13 +88,13 @@ case 0x2BD: {
         StartAnimationAt46D000(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x32B,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
         SpawnFloatXYAt453A70(0x32B,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);

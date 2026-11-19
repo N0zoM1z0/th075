@@ -20,31 +20,31 @@ case 0x259: {
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+145);
             field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*100),
+                x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+140);
             field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*100),
+                x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+135);
             field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*100),
+                x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+130);
             field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*100),
+                x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+125);
             field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*100),
+                x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
             StartAnimationAt46D000(0x64);

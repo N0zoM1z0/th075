@@ -96,6 +96,17 @@ offsets/types and every nonrelocation byte remain unchanged. This does
 not resolve its 726 GPR-role and six instruction-width differences;
 all 24 affected exact units cold-replayed successfully.
 
+Sakuya fighter `004AC040` (82,796 original CODE bytes) now directly
+defines `SakuyaFighter::Advance`, rather than an artificial derived
+research receiver. Sixteen included state files use the actual
+`x`/`opponent->x` field instead of borrowed +0x44 views, and the
+opponent transform resets through the native `Actor::ResetTransform`.
+The full 83,922-byte VC7.1 object is byte-identical outside all
+2,352 unchanged relocation positions/types; its 6,958 GPR-role and
+12 width differences remain nonexact (18,253 differing frontier bytes).
+All 98 affected exact units cold-replayed across three groups (36/36,
+31/31, 31/31). No giant exact credit was claimed.
+
 Youmu fighter `005214B0` now directly defines `YoumuFighter::Advance`
 on the native fighter class. Thirteen source state files use actual
 `x`/`opponent->x` fields in place of a temporary +0x44 owner view, and

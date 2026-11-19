@@ -33,8 +33,8 @@ case 0x2E6: {
     if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=float(RandAt455580(0,100)-50);
         velocityY=float(RandAt455580(0,5)+20);
-        if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 >
-                reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+        if (x >
+                opponent->x)
             facing=-1;
         else
             facing=1;
@@ -68,7 +68,7 @@ case 0x2E6: {
             for (int shot=0;shot<12;++shot) {
                 field314=float(shot*30);
                 SpawnFloatXYAt453A70(0x387,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);
@@ -78,7 +78,7 @@ case 0x2E6: {
             for (int shot=0;shot<20;++shot) {
                 field314=float(shot*18);
                 SpawnFloatXYAt453A70(0x387,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);
@@ -88,7 +88,7 @@ case 0x2E6: {
             for (int shot=0;shot<30;++shot) {
                 field314=float(shot*12);
                 SpawnFloatXYAt453A70(0x387,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);
@@ -98,7 +98,7 @@ case 0x2E6: {
             for (int shot=0;shot<40;++shot) {
                 field314=float(shot*9);
                 SpawnFloatXYAt453A70(0x387,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);
@@ -113,32 +113,32 @@ case 0x2E6: {
     if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(2);
         SpawnSevenFloatAt453B50(0x338,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x339,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33A,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33B,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33C,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33D,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);

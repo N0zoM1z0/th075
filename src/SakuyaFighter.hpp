@@ -9,6 +9,38 @@ class SakuyaFighter : public Fighter {
 public:
     SakuyaFighter();
     virtual ~SakuyaFighter();
+    virtual void Advance(); // slot 1: nonexact giant at 004AC040
+
+    // Native-call contracts carried by the complete fighter state machine.
+    // Provisional helper spellings do not establish separate class ownership.
+    void SpawnDirectedAt453A70(short,int,int,signed char,signed char);
+    void SpawnFloatXYAt453A70(short,float,float,signed char,signed char);
+    void SpawnWithFloatAt453A70(short,int,float,signed char,signed char);
+    void SetMotionStateAt40FBB0(int,float,int);
+    void ResetMotionAt40FC50();
+    void InitTrajectoryAt453E60(float);
+    void ApplyAt453E80(short);
+    void BeginStateAt454A70(unsigned char);
+    void RefreshStateAt452B30();
+    void ResetAt453E20();
+    void SetAngleAt40FB70(float,float);
+    void SetAngleBitsAt40FB70(int,float);
+    void PrepareActionAt453D60(short);
+    void PrepareActionAt453D40(short);
+    void StartAnimationAt46D000(int);
+    void SpawnAt453C80(short,float,float,signed char,signed char);
+    void SpawnMixedAt453C80(short,int,float,signed char,signed char);
+    void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
+    void SpawnRawAt453C80(short,int,int,signed char,signed char);
+    void SpawnSevenAt453B50(short,int,int,signed char,signed char,unsigned char,unsigned char);
+    void SpawnSevenFloatAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char);
+    void SpawnSevenRawXFloatYAt453B50(short,int,float,signed char,signed char,unsigned char,unsigned char);
+    int RandAt455580(int,int);
+    short GetNativeActionAt40FA30();
+    void SetNativeActionAt40FAC0(short);
+    signed char ContactAt454EE0();
+    void SetAuxActionAt40FB40(short);
+
     void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;

@@ -35,7 +35,7 @@ case 0x2C2: {
         PrepareActionAt453D40(9);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x74,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
             facing,1);
@@ -77,7 +77,7 @@ case 0x2C3: {
         PrepareActionAt453D40(0xA);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x74,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
+            x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
             facing,1);

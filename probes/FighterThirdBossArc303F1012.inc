@@ -70,8 +70,8 @@ case 0x303: {
                 -((opponent->y)+
                     g_ContactProjectionAt00657888-y+
                     g_F1012_ArcYAt006591EC),
-                (reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44 -
-                    reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44) *
+                (opponent->x -
+                    x) *
                     (facing))/
                 g_F1012_AngleDivisorAt00657828);
     }

@@ -60,7 +60,7 @@ case 0x2F9: {
         PrepareActionAt453D60(23);
         SpawnSevenFloatAt453B50(0x330,640.0f,320.0f,1,2,0,1);
         fieldF10=1;
-        reinterpret_cast<FighterSwitchF598_Boss004AC040*>(opponent)->SetMotionStateAt40FBB0(0,0.0f,0);
+        opponent->ResetTransform(0.0f,0.0f,0.0f);
         opponent->field010=0x82;
     }
     if ((animationStage)==11 && (animationFrame)==0) {

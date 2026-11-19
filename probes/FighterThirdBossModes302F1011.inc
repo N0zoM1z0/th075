@@ -47,7 +47,7 @@ case 0x302: {
                 field314=float(shot*36);
                 field318=4.0f;
                 SpawnFloatXYAt453A70(0x389,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);
@@ -58,7 +58,7 @@ case 0x302: {
                 field314=float(shot*30);
                 field318=4.0f;
                 SpawnFloatXYAt453A70(0x389,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);
@@ -69,7 +69,7 @@ case 0x302: {
                 field314=float(shot*24);
                 field318=4.0f;
                 SpawnFloatXYAt453A70(0x389,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);
@@ -80,7 +80,7 @@ case 0x302: {
                 field314=float(shot*18);
                 field318=4.0f;
                 SpawnFloatXYAt453A70(0x389,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+                    x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
                     facing,1);

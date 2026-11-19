@@ -56,7 +56,7 @@ case 0x2BF: {
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
         SpawnFloatXYAt453A70(0x341,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
@@ -73,7 +73,7 @@ case 0x2BF: {
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
         SpawnFloatXYAt453A70(0x341,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
@@ -90,7 +90,7 @@ case 0x2BF: {
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
         SpawnFloatXYAt453A70(0x341,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
@@ -107,7 +107,7 @@ case 0x2BF: {
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
         SpawnFloatXYAt453A70(0x341,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
@@ -124,7 +124,7 @@ case 0x2BF: {
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
         SpawnFloatXYAt453A70(0x341,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
+            x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);

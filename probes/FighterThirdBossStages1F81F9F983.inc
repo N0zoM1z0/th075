@@ -57,27 +57,27 @@ case 0x1F8: {
     if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(2);
         SpawnSevenFloatAt453B50(0x338,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x339,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33A,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33B,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33C,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33D,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SetMotionStateAt40FBB0(0,0.0f,0);
@@ -142,27 +142,27 @@ case 0x1F9: {
     if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(2);
         SpawnSevenFloatAt453B50(0x338,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x339,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33A,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33B,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33C,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SpawnSevenFloatAt453B50(0x33D,
-            reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
+            x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
         SetMotionStateAt40FBB0(0,0.0f,0);
