@@ -210,10 +210,10 @@ void FighterControlsF130::UpdateControls() {
             relativeBits |= static_cast<unsigned char>(field4DC > 0) << 1;
             relativeBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
             relativeBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
-            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4E8) > 0) << 4;
-            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4EC) > 0) << 5;
-            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F0) > 0) << 6;
-            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F4) > 0) << 7;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4E8) > 0) << 4;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4EC) > 0) << 5;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F0) > 0) << 6;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F4) > 0) << 7;
             PRESS->PushBack(relativeBits);
             AUXILIARY->PushBack(field511);
             SAMPLES->PushBack(field516);
@@ -277,10 +277,10 @@ void FighterControlsF130::UpdateControls() {
             relativeBits |= static_cast<unsigned char>(field4EC == 1) << 5;
             relativeBits |= static_cast<unsigned char>(field4F0 == 1) << 6;
             relativeBits |= static_cast<unsigned char>(field4F4 == 1) << 7;
-            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4E8) > 0) << 4;
-            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4EC) > 0) << 5;
-            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F0) > 0) << 6;
-            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F4) > 0) << 7;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4E8) > 0) << 4;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4EC) > 0) << 5;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F0) > 0) << 6;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F4) > 0) << 7;
             if (g_FrameClockMode == 1) PRESS->PushBack(physicalInputBits);
         }
         if (field060 >= 300 && (field4E8 == 1 || field4EC == 1 || field4F0 == 1 || field4F4 == 1)) {
