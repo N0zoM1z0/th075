@@ -222,6 +222,17 @@ all relocation offsets/types and every nonrelocation byte; all
 three groups of 44. This is a type/ownership and natural source
 recovery, not additional giant exact coverage.
 
+A further float-ABI recovery in Sakuya and Remilia fighter parents
+changed 12 compiled call sites to the true inherited
+`Actor::SetPolarVelocity(float,float)` at 0040FB70. Ten Sakuya sites had
+previously used `reinterpret_cast<int&>(field314)` to pass a float's
+raw bits through a fake integer signature; using the natural float member
+produced the same VC7.1 output. The full 83,922-byte Sakuya and
+59,236-byte Remilia COFF bodies preserved all 2,352 and 1,863
+relocation offsets/types with zero nonrelocation-byte differences.
+All 104 affected exact units cold-replayed in three groups (36/34/34).
+These remain nonexact giant research parents.
+
 The common actor transform endpoints have also been recovered within
 the four fighter giants: native `0040FBB0` is now the inherited
 `Actor::ResetTransform(float,float,float)` with correct floating-point

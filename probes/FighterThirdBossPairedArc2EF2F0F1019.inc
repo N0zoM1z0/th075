@@ -53,7 +53,7 @@ case 0x2EF: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -69,7 +69,7 @@ case 0x2EF: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -85,7 +85,7 @@ case 0x2EF: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -101,7 +101,7 @@ case 0x2EF: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -117,7 +117,7 @@ case 0x2EF: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -175,7 +175,7 @@ case 0x2F0: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -191,7 +191,7 @@ case 0x2F0: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -207,7 +207,7 @@ case 0x2F0: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -223,7 +223,7 @@ case 0x2F0: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
@@ -239,7 +239,7 @@ case 0x2F0: {
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
-        SetAngleBitsAt40FB70(reinterpret_cast<int&>(field314),100.0f);
+        SetPolarVelocity(field314,100.0f);
         SpawnFloatXYAt453A70(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*

@@ -32,6 +32,11 @@ Done so far:
   sites). Complete COFF sizes/relocation positions and types are unchanged;
   nonrelocation code byte differences = 0. Header-affected exact units
   passed 132/132 targeted cold replay; giant register debt remains.
+- At 0040FB70, Sakuya and Remilia fighter giants now call
+  `Actor::SetPolarVelocity` directly (12 native relocations); ten
+  Sakuya calls now pass the true `float field314` instead of its fake
+  integer-bit alias. Whole COFF bytes/relocation offsets were unchanged,
+  and 104/104 affected exact functions cold-replayed locally (36/34/34).
 - Four fighter giant parents now use `Actor::ResetTransform` at
   0040FBB0 and `Actor::ClearTransformFlag` at 0040FC50 instead of
   provisional helper aliases. The new C++ float arguments preserve

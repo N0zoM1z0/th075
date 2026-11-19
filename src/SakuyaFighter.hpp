@@ -20,8 +20,6 @@ public:
     void ApplyAt453E80(short);
     void BeginStateAt454A70(unsigned char);
     void RefreshStateAt452B30();
-    void SetAngleAt40FB70(float,float);
-    void SetAngleBitsAt40FB70(int,float);
     void SpawnAt453C80(short,float,float,signed char,signed char);
     void SpawnMixedAt453C80(short,int,float,signed char,signed char);
     void ConfigureStormAt454BC0(int,unsigned char,unsigned int);

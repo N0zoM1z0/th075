@@ -98,7 +98,7 @@
                       /g_StormAngleDenominatorAt00657828);
                 if ((fieldF04)>-15)
                     fieldF04=-15;
-                MotionAt40FB70(static_cast<float>(-static_cast<int>(fieldF04)),28.0f);
+                SetPolarVelocity(static_cast<float>(-static_cast<int>(fieldF04)),28.0f);
                 ResetTransform(0.0f,80.0f,0.0f);
                 rotationZ=-(CalculateAngleAt483300(velocityY,*(&velocityX))
                              /g_StormAngleDenominatorAt00657828
