@@ -159,7 +159,7 @@ Actor::AdvanceNestedFrame
 Actor::ResetTransform
 Actor::SetPolarVelocity
 Actor::RecordedRange
-EffectSound45B860::PlaySharedSound
+CharacterObject::PlaySharedSound
 Fighter::SetCameraShake
 CameraShake412CB0::SetShakeAmount
 CameraUpdate4126C0::Advance

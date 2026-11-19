@@ -55,6 +55,11 @@ Done so far:
   shared C++ ABI, not a claim of original source class identity. Eight
   object giants will be migrated to the inherited caller separately.
 
+- The existing exact 29-byte 0045B860 sound leaf is now the common
+  `CharacterObject::PlaySharedSound(short)` instead of a borrowed fake
+  receiver, with both original relocations intact and 28/28 affected
+  exact units locally cold-replayed. Its per-character giant call
+  declarations will be unified separately.
 - Native 0045B850 was recovered as an authentic, 13-byte
   `CharacterObject::NoOpAt0045B850(int)` empty game member with `RET 4`:
   11 original PE direct calls in Yuyuko (3), Yukari (4), Suika (4)

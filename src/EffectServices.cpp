@@ -1,8 +1,9 @@
 #include "EffectServices.hpp"
+#include "CharacterObject.hpp"
 #include "Fighter.hpp"
 #include "GameLeafHelpers.hpp"
 
-void EffectSound45B860::PlaySharedSound(short sound) {
+void CharacterObject::PlaySharedSound(short sound) {
     g_SoundBank->Play(sound);
 }
 

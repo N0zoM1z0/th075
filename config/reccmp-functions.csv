@@ -160,7 +160,7 @@ Actor::AdvanceNestedFrame,0x0040FA30,function
 Actor::ResetTransform,0x0040FBB0,function
 Actor::SetPolarVelocity,0x0040FB70,function
 Actor::RecordedRange,0x00455580,function
-EffectSound45B860::PlaySharedSound,0x0045B860,function
+CharacterObject::PlaySharedSound,0x0045B860,function
 Fighter::SetCameraShake,0x00453E60,function
 CameraShake412CB0::SetShakeAmount,0x00412CB0,function
 CameraUpdate4126C0::Advance,0x004126C0,function

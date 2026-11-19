@@ -226,6 +226,13 @@ relocation positions/types unchanged and zero nonrelocation-byte
 regressions. Its original 43,599 CODE bytes remain nonexact (613 GPR,
 11 width differences), and all 24 header-affected exact units replayed.
 
+The native 0045B860 sound-bank forwarding method has also moved from
+a fake `EffectSound45B860` receiver into the common
+`CharacterObject::PlaySharedSound(short)` class. Its complete 29-byte
+body and two game-owned relocations remain cold exact, with 28/28
+header-affected exact units replayed. The object giant callers will
+next shed their duplicate per-character sound declarations.
+
 The original 0045B850 shared, parameter-discarding no-op was also
 recovered as a real 13-byte `CharacterObject` member with a genuine
 VC7.1 thiscall `RET 4`: original PE direct calls are observed in Yuyuko
