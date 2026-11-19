@@ -18,62 +18,62 @@ case 0x1A2: {
         if (field39D==2) {
             field314=65.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=55.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=45.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=35.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=25.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
         } else {
             field314=65.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=55.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=45.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=35.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);
             field314=25.0f;
             field318=10.0f;
-            SpawnSevenFloatAt453B50(0x344,
+            Fighter::SpawnTrackedEffect(0x344,
                 float((facing)*47)+(x),
                 (*(&y))+g_F969_RoundY192At00658264,
                 facing,1,0,1);

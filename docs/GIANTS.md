@@ -115,6 +115,13 @@ remain NONEXACT with 1,741 GPR-role and three width differences (40,569
 frontier differing bytes); all 98 affected exact units were cold-replayed
 in three groups (36, 31, 31). No new whole-giant exact credit.
 
+The Sakuya fighter 004AC040 source now calls the real Fighter effect
+APIs at 270 compiled sites: 153 `SpawnBattleEffect`, 104 seven-argument
+`Fighter::SpawnTrackedEffect`, and 13 `SpawnAuxEffect` calls. The two
+whole 83,922-byte VC7.1 COFF bodies contain the same 2,352 relocation
+positions/types and zero differences outside relocations. No new
+independent giant exactness is claimed; native frontier remains nonexact.
+
 Sakuya fighter `004AC040` (82,796 original CODE bytes) now directly
 defines `SakuyaFighter::Advance`, rather than an artificial derived
 research receiver. Sixteen included state files use the actual

@@ -19,31 +19,31 @@ case 0x25A: {
         PlaySound(0);
         field314=10.0f;
         field318=10.0f;
-        SpawnFloatXYAt453A70(0x325,
+        SpawnBattleEffect(0x325,
             float((facing)*97)+(x),
             (*(&y))+g_F971_YAt00659498,
             facing,1);
         field314=5.0f;
         field318=10.0f;
-        SpawnFloatXYAt453A70(0x325,
+        SpawnBattleEffect(0x325,
             float((facing)*97)+(x),
             (*(&y))+g_F971_YAt00659498,
             facing,1);
         field314=0.0f;
         field318=10.0f;
-        SpawnFloatXYAt453A70(0x325,
+        SpawnBattleEffect(0x325,
             float((facing)*97)+(x),
             (*(&y))+g_F971_YAt00659498,
             facing,1);
         field314=5.0f;
         field318=10.0f;
-        SpawnFloatXYAt453A70(0x325,
+        SpawnBattleEffect(0x325,
             float((facing)*97)+(x),
             (*(&y))+g_F971_YAt00659498,
             facing,1);
         field314=10.0f;
         field318=10.0f;
-        SpawnFloatXYAt453A70(0x325,
+        SpawnBattleEffect(0x325,
             float((facing)*97)+(x),
             (*(&y))+g_F971_YAt00659498,
             facing,1);

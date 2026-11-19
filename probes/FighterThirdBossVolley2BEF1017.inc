@@ -34,7 +34,7 @@ case 0x2BE: {
         ApplyAt453E80(40);
         PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnAt453C80(0x73,
+        SpawnAuxEffect(0x73,
             float((facing)*30)+(x),
             (*(&y))+g_F1017_StartYAt00658268,
             facing,1);
@@ -48,11 +48,11 @@ case 0x2BE: {
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x33F,
+        SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -60,11 +60,11 @@ case 0x2BE: {
     }
     if ((animationStage)==17 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x33F,
+        SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -72,11 +72,11 @@ case 0x2BE: {
     }
     if ((animationStage)==19 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x33F,
+        SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -84,11 +84,11 @@ case 0x2BE: {
     }
     if ((animationStage)==21 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x33F,
+        SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
@@ -96,11 +96,11 @@ case 0x2BE: {
     }
     if ((animationStage)==23 && (animationFrame)==0) {
         UpdateGaugeTimer(0xC);
-        SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x33F,
+        SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);

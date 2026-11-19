@@ -37,7 +37,7 @@ case 0x1FB: {
         }
     }
     if ((animationStage)<8 && (animationStage)>1)
-        SpawnSevenFloatAt453B50(0x33E,
+        Fighter::SpawnTrackedEffect(0x33E,
             float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
@@ -50,27 +50,27 @@ case 0x1FB: {
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
-        SpawnSevenFloatAt453B50(0x338,
+        Fighter::SpawnTrackedEffect(0x338,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x339,
+        Fighter::SpawnTrackedEffect(0x339,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33A,
+        Fighter::SpawnTrackedEffect(0x33A,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33B,
+        Fighter::SpawnTrackedEffect(0x33B,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33C,
+        Fighter::SpawnTrackedEffect(0x33C,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33D,
+        Fighter::SpawnTrackedEffect(0x33D,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
@@ -123,7 +123,7 @@ case 0x1FC: {
         }
     }
     if ((animationStage)<8 && (animationStage)>1)
-        SpawnSevenFloatAt453B50(0x33E,
+        Fighter::SpawnTrackedEffect(0x33E,
             float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
@@ -136,27 +136,27 @@ case 0x1FC: {
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
-        SpawnSevenFloatAt453B50(0x338,
+        Fighter::SpawnTrackedEffect(0x338,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x339,
+        Fighter::SpawnTrackedEffect(0x339,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33A,
+        Fighter::SpawnTrackedEffect(0x33A,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33B,
+        Fighter::SpawnTrackedEffect(0x33B,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33C,
+        Fighter::SpawnTrackedEffect(0x33C,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33D,
+        Fighter::SpawnTrackedEffect(0x33D,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
@@ -209,7 +209,7 @@ case 0x1FD: {
         }
     }
     if ((animationStage)<8 && (animationStage)>1)
-        SpawnSevenFloatAt453B50(0x33E,
+        Fighter::SpawnTrackedEffect(0x33E,
             float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
@@ -222,27 +222,27 @@ case 0x1FD: {
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
-        SpawnSevenFloatAt453B50(0x338,
+        Fighter::SpawnTrackedEffect(0x338,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x339,
+        Fighter::SpawnTrackedEffect(0x339,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33A,
+        Fighter::SpawnTrackedEffect(0x33A,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33B,
+        Fighter::SpawnTrackedEffect(0x33B,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33C,
+        Fighter::SpawnTrackedEffect(0x33C,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SpawnSevenFloatAt453B50(0x33D,
+        Fighter::SpawnTrackedEffect(0x33D,
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);

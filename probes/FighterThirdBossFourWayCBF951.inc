@@ -32,11 +32,11 @@ case 0xCB: {
         velocityX=-11.0f;
         velocityY=5.0f;
         field05C=0.6f;
-        SpawnAt453C80(0x7D,
+        SpawnAuxEffect(0x7D,
             float((facing)*68)+(x),
             (*(&y))+g_F950_CAVolleyYAt00658400,
             -(facing),1);
-        SpawnAt453C80(0x7E,
+        SpawnAuxEffect(0x7E,
             float((facing)*68)+(x),
             (*(&y))+g_F950_CAVolleyYAt00658400,
             -(facing),1);

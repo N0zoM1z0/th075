@@ -20,7 +20,7 @@ case 0x19D: {
         UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+55);
         field318=15.0f;
-        SpawnFloatXYAt453A70(0x326,
+        SpawnBattleEffect(0x326,
             float((47-(reinterpret_cast<signed short&>(scriptCounterF02))*10)*(facing))+(x),
             (*(&y))+g_F969_RoundY192At00658264+(reinterpret_cast<signed short&>(scriptCounterF02))*20,
             facing,1);

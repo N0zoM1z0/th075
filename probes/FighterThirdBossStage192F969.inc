@@ -20,19 +20,19 @@ case 0x192: {
         UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+45);
         field318=7.0f;
-        SpawnFloatXYAt453A70(0x320,
+        SpawnBattleEffect(0x320,
           float((47-(reinterpret_cast<signed short&>(scriptCounterF02))*10)*(facing))+(x),
           (*(&y))+g_F969_RoundY192At00658264+(reinterpret_cast<signed short&>(scriptCounterF02))*20,
           facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+49);
         field318=7.0f;
-        SpawnFloatXYAt453A70(0x320,
+        SpawnBattleEffect(0x320,
           float((47-(reinterpret_cast<signed short&>(scriptCounterF02))*10)*(facing))+(x),
           (*(&y))+g_F969_RoundY192At00658264+(reinterpret_cast<signed short&>(scriptCounterF02))*20,
           facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+41);
         field318=7.0f;
-        SpawnFloatXYAt453A70(0x320,
+        SpawnBattleEffect(0x320,
           float((47-(reinterpret_cast<signed short&>(scriptCounterF02))*10)*(facing))+(x),
           (*(&y))+g_F969_RoundY192At00658264+(reinterpret_cast<signed short&>(scriptCounterF02))*20,
           facing,1);

@@ -21,25 +21,25 @@ case 0x2F9: {
         field080=99;
     }
     if ((animationFrame)==0 && ((animationStage)==9 || (animationStage)==10)) {
-        SpawnFloatXYAt453A70(0x38B,
+        SpawnBattleEffect(0x38B,
             (x)+g_F1008_CenterXAt006593D0
                 - float(RandAt455580(0,480)),
             float(RandAt455580(0,200)+((reinterpret_cast<signed short&>(fieldF06))>50)*200),
             facing,1);
         if (g_F1004_ModeAt006714D0>0)
-            SpawnFloatXYAt453A70(0x38B,
+            SpawnBattleEffect(0x38B,
                 (x)+g_F1008_AlternateXAt00658370
                     - float(RandAt455580(0,560)),
                 float(RandAt455580(0,250)+((reinterpret_cast<signed short&>(fieldF06))>50)*250),
                 facing,1);
         if ((animationStage)==9 && (animationFrame)==0 && g_F1004_ModeAt006714D0>1)
-            SpawnSevenFloatAt453B50(0x38A,
+            Fighter::SpawnTrackedEffect(0x38A,
                 (x)+g_F1008_CenterXAt006593D0
                     - float(RandAt455580(0,480)),
                 float(RandAt455580(0,200)+((reinterpret_cast<signed short&>(fieldF06))>50)*200),
                 facing,1,0,1);
         if ((animationStage)==10 && (animationFrame)==0 && g_F1004_ModeAt006714D0>2)
-            SpawnSevenFloatAt453B50(0x38A,
+            Fighter::SpawnTrackedEffect(0x38A,
                 (x)+g_F1008_AlternateXAt00658370
                     - float(RandAt455580(0,560)),
                 float(RandAt455580(0,250)+((reinterpret_cast<signed short&>(fieldF06))>50)*250),
@@ -58,7 +58,7 @@ case 0x2F9: {
         PlaySound(9);
         ApplyAt453E80(75);
         PlaySharedSound(23);
-        SpawnSevenFloatAt453B50(0x330,640.0f,320.0f,1,2,0,1);
+        Fighter::SpawnTrackedEffect(0x330,640.0f,320.0f,1,2,0,1);
         fieldF10=1;
         opponent->ResetTransform(0.0f,0.0f,0.0f);
         opponent->field010=0x82;

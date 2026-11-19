@@ -25,7 +25,7 @@ case 0x2BC: {
         ApplyAt453E80(0x28);
         PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnAt453C80(0x73,
+        SpawnAuxEffect(0x73,
             x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
@@ -36,13 +36,13 @@ case 0x2BC: {
     if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<36) {
         UpdateGaugeTimer(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
-        SpawnFloatXYAt453A70(0x323,
+        SpawnBattleEffect(0x323,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
-        SpawnFloatXYAt453A70(0x323,
+        SpawnBattleEffect(0x323,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
@@ -75,7 +75,7 @@ case 0x2BD: {
         ApplyAt453E80(0x28);
         PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnAt453C80(0x74,
+        SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
@@ -87,13 +87,13 @@ case 0x2BD: {
         fieldF14=1;
         UpdateGaugeTimer(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
-        SpawnFloatXYAt453A70(0x32B,
+        SpawnBattleEffect(0x32B,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
-        SpawnFloatXYAt453A70(0x32B,
+        SpawnBattleEffect(0x32B,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,

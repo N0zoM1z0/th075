@@ -34,7 +34,7 @@ case 0x2BF: {
         ApplyAt453E80(40);
         PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnAt453C80(0x74,
+        SpawnAuxEffect(0x74,
             float((facing)*30)+(x),
             (*(&y))+g_F1017_StartYAt00658268,
             facing,1);
@@ -47,15 +47,15 @@ case 0x2BF: {
         field084=20;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x340,
+        SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x341,
+        SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
@@ -64,15 +64,15 @@ case 0x2BF: {
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x340,
+        SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x341,
+        SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
@@ -81,15 +81,15 @@ case 0x2BF: {
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x340,
+        SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x341,
+        SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
@@ -98,15 +98,15 @@ case 0x2BF: {
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x340,
+        SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x341,
+        SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
@@ -115,15 +115,15 @@ case 0x2BF: {
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        SpawnFloatXYAt453A70(0x322+(RandAt455580(0,100)>200),
+        SpawnBattleEffect(0x322+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x340,
+        SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
-        SpawnFloatXYAt453A70(0x341,
+        SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),

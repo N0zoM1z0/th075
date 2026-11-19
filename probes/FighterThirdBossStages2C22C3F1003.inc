@@ -34,12 +34,12 @@ case 0x2C2: {
         PlaySharedSound(0x17);
         PlaySound(9);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnAt453C80(0x74,
+        SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
             facing,1);
-        SpawnSevenFloatAt453B50(0x330,640.0f,320.0f,1,2,0,1);
+        Fighter::SpawnTrackedEffect(0x330,640.0f,320.0f,1,2,0,1);
         fieldF10=spirit;
         fieldF12=1;
     }
@@ -76,12 +76,12 @@ case 0x2C3: {
         PlaySharedSound(0x17);
         PlaySound(0xA);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        SpawnAt453C80(0x74,
+        SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
             (*(&y))+g_F972_YAt00659284,
             facing,1);
-        SpawnSevenFloatAt453B50(0x32E,640.0f,320.0f,1,2,0,1);
+        Fighter::SpawnTrackedEffect(0x32E,640.0f,320.0f,1,2,0,1);
         fieldF0C=spirit;
         fieldF0E=0;
     }

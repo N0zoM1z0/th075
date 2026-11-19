@@ -25,23 +25,23 @@ case 0x199: {
         PlaySound(0);
         field314=0.0f;
         field318=20.0f;
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*76)+(x),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*81)+(x),
             (*(&y))+g_F972_YAt00659474,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*86)+(x),
             (*(&y))+g_F972_YAt00657860,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*91)+(x),
             (*(&y))+g_F972_YAt00659284,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*96)+(x),
             (*(&y))+g_F972_YAt00659470,
             facing,1);
@@ -68,23 +68,23 @@ case 0x19A: {
         PlaySound(0);
         field314=-20.0f;
         field318=20.0f;
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*98)+(x),
             (*(&y))+g_F972_YAt00659470,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*92)+(x),
             (*(&y))+g_F972_YAt00658364,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*86)+(x),
             (*(&y))+g_F972_YAt0065946C,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*80)+(x),
             (*(&y))+g_F972_YAt00659468,
             facing,1);
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*74)+(x),
             (*(&y))+g_F972_YAt00659464,
             facing,1);

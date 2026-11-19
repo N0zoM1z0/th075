@@ -54,7 +54,7 @@ case 0x2EF: {
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -70,7 +70,7 @@ case 0x2EF: {
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -86,7 +86,7 @@ case 0x2EF: {
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -102,7 +102,7 @@ case 0x2EF: {
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -118,7 +118,7 @@ case 0x2EF: {
         field314=float(RandAt455580(0,100)-50);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -176,7 +176,7 @@ case 0x2F0: {
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -192,7 +192,7 @@ case 0x2F0: {
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -208,7 +208,7 @@ case 0x2F0: {
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -224,7 +224,7 @@ case 0x2F0: {
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),
@@ -240,7 +240,7 @@ case 0x2F0: {
         field314=float(RandAt455580(0,100)-70);
         field318=float(RandAt455580(0,10)+5);
         SetPolarVelocity(field314,100.0f);
-        SpawnFloatXYAt453A70(0x38F,
+        SpawnBattleEffect(0x38F,
             ((g_F983_XOffsetAt00658264+
                 reinterpret_cast<const float&>(velocityX))*
                 (facing))+(x),

@@ -44,7 +44,7 @@ case 0x303: {
                 field314=float(fieldF04);
                 field318=10.0f;
                 SetPolarVelocity(float(fieldF04),100.0f);
-                SpawnFloatXYAt453A70(0x388,
+                SpawnBattleEffect(0x388,
                     float(facing)*(velocityX)+(x),
                     (*(&y))+g_F1012_ArcYAt006591EC-velocityY,
                     facing,1);

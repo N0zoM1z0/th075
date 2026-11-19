@@ -132,6 +132,11 @@ Done so far:
   59,236-byte COFF body is unchanged outside renamed relocation fields
   (all 1,863 offsets/types preserved); 98/98 header-affected exact units
   cold-replayed in three groups. The GPR/width debt is still nonexact.
+- Sakuya fighter full parent now uses natural effect forwarding:
+  153 battle spawns, 104 tracked effect spawns and 13 auxiliary spawns
+  bind to the real Fighter methods. All 83,922 COFF bytes outside
+  unchanged 2,352 relocation positions are identical to pre-migration;
+  nonexact native GPR/width differences are unchanged.
 - Sakuya's complete 82,796-byte fighter `Advance` now belongs to
   `SakuyaFighter` instead of a research subclass. Its 16 state files
   use named real actor X members and the real Actor transform reset.

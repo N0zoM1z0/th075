@@ -46,7 +46,7 @@ case 0x302: {
             for (int shot=0;shot<10;++shot) {
                 field314=float(shot*36);
                 field318=4.0f;
-                SpawnFloatXYAt453A70(0x389,
+                SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
@@ -57,7 +57,7 @@ case 0x302: {
             for (int shot=0;shot<12;++shot) {
                 field314=float(shot*30);
                 field318=4.0f;
-                SpawnFloatXYAt453A70(0x389,
+                SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
@@ -68,7 +68,7 @@ case 0x302: {
             for (int shot=0;shot<15;++shot) {
                 field314=float(shot*24);
                 field318=4.0f;
-                SpawnFloatXYAt453A70(0x389,
+                SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,
@@ -79,7 +79,7 @@ case 0x302: {
             for (int shot=0;shot<20;++shot) {
                 field314=float(shot*18);
                 field318=4.0f;
-                SpawnFloatXYAt453A70(0x389,
+                SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
                     (*(&y))+g_F972_YAt0065836C,

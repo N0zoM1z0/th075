@@ -22,7 +22,7 @@ case 0x1A0: {
             for (int shot=0;shot<5;++shot) {
                 field314=0.0f;
                 field318=10.0f;
-                SpawnSevenFloatAt453B50(0x344,
+                Fighter::SpawnTrackedEffect(0x344,
                     float((RandAt455580(0,80)+30)*(facing))+(x),
                     ((*(&y))+g_F976_RandomYAt0065786C+shot*40)+float(RandAt455580(0,20)),
                     facing,1,0,1);
@@ -31,7 +31,7 @@ case 0x1A0: {
             for (int shot=0;shot<8;++shot) {
                 field314=0.0f;
                 field318=10.0f;
-                SpawnSevenFloatAt453B50(0x344,
+                Fighter::SpawnTrackedEffect(0x344,
                     float((RandAt455580(0,100)+20)*(facing))+(x),
                     ((*(&y))+g_F976_RandomYAt0065786C+shot*30)+float(RandAt455580(0,20)),
                     facing,1,0,1);

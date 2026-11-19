@@ -28,7 +28,7 @@ case 0x135: {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(5);
-            SpawnAt453C80(0x80,
+            SpawnAuxEffect(0x80,
                 float((facing)*150)+(x),
                 y,facing,1);
             break;

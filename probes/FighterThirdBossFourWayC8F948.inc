@@ -43,7 +43,7 @@ case 0xC8: {
     }
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=14.5f;
-        SpawnAt453C80(0x7D,
+        SpawnAuxEffect(0x7D,
             float((facing)*80)+(x),
             (*(&y))+g_F948_C8VolleyYAt00658268,
             facing,1);

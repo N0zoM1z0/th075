@@ -46,22 +46,22 @@ case 0x1F4: {
         field314=15.0f;
         field318=-20.0f;
         field31C=-60.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
@@ -114,22 +114,22 @@ case 0x1F5: {
         field314=15.0f;
         field318=-20.0f;
         field31C=-60.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);

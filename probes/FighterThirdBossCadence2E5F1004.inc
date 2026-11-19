@@ -21,13 +21,13 @@ case 0x2E5: {
         --reinterpret_cast<signed short&>(fieldF06);
         if ((reinterpret_cast<signed short&>(fieldF06))>3-g_F1004_ModeAt006714D0) {
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
-            SpawnFloatXYAt453A70(0x387,
+            SpawnBattleEffect(0x387,
                 x -
                     float((facing)*16),
                 (*(&y))+g_F972_YAt0065836C,
                 facing,1);
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
-            SpawnFloatXYAt453A70(0x387,
+            SpawnBattleEffect(0x387,
                 x -
                     float((facing)*16),
                 (*(&y))+g_F972_YAt0065836C,

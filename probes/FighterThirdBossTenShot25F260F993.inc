@@ -24,7 +24,7 @@ case 0x25F: {
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
             field318=15.0f;
-            SpawnFloatXYAt453A70(0x346,
+            SpawnBattleEffect(0x346,
                 float((facing)*49)+(x),
                 (*(&y))+g_F968_RoundY190At00659294,
                 facing,1);
@@ -53,7 +53,7 @@ case 0x260: {
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
             field318=15.0f;
-            SpawnFloatXYAt453A70(0x347,
+            SpawnBattleEffect(0x347,
                 float((facing)*49)+(x),
                 (*(&y))+g_F968_RoundY190At00659294,
                 facing,1);
