@@ -326,6 +326,10 @@ Six further unsigned-byte aliases were removed from round-winner writes,
 the round-record signed-byte conversion, projectile direction and notice
 render step arguments. The four affected translation units replayed 11/11
 exact functions.
+Forty-one `char&` aliases of signed `facing` fields were removed from 21
+Reimu/Youmu shared fragments. The complete Reimu and Youmu `Advance` bodies
+and all relocation maps remain identical; their nonexact frontier counts
+remain 42,551 and 16,833 differing bytes, unchanged.
 `Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
 signed render test; its render and base-reset functions remain byte-identical.
 Four signed-byte views used only to store zero to the unsigned `field39C`
