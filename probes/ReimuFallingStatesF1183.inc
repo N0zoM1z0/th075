@@ -49,7 +49,7 @@ case 0x12E: {
         break;
     }
     if ((animationStage)==5 && (animationFrame)==0) {
-        InitTrajectoryAt453E60(2.0f);
+        SetCameraShake(2.0f);
         SpawnBattleEffect(0x325,
             float(facing*170)+(x),
             y-g_ApproachLowerAt00658290,

@@ -148,6 +148,14 @@ Done so far:
   using the actual `(int,unsigned char,unsigned int)` ABI instead of
   `ConfigureStormAt454BC0`, preserving 35 native call relocations and
   whole-body code. All 132 affected exact units locally cold-replayed.
+- `00453E60` is now the real `Fighter::SetCameraShake(float)` leaf,
+  not the partial FighterShake borrowed view. The 25-byte canonical leaf
+  remains cold exact; four fighter and five object giant `Advance`
+  research parents use the real owner API at 72 compiled call sites.
+  Full pre/post COFF audits preserve every nonrelocation byte and every
+  relocation offset/type, and nine frontiers did not regress. 103/103
+  directly related exact units passed targeted cold replay; the 449-unit
+  Fighter.hpp fanout was not exhaustively replayed.
 - Reimu/Sakuya/Youmu/Remilia giant fighter states now call shared
   Fighter leaf helpers by real names: 122 horizontal-limit checks,
   29 nonnegative-word setters, nine fade initializers, nine resource

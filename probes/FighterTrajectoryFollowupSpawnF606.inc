@@ -27,7 +27,7 @@ case F606_ACTION: {
         ClearMotionFields();
         y=0.0f;
         ResetPrimaryCounters(0x61);
-        InitTrajectoryAt453E60(2.0f);
+        SetCameraShake(2.0f);
         PlaySharedSound(0x16);
         break;
     }

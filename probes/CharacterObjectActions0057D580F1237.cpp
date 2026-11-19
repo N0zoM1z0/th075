@@ -862,7 +862,7 @@ case 822:
         }
         if (animationStage == 2 && animationFrame == 0) {
             owner->SpawnBattleEffect(824, x, y, facing, 1);
-            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
+            owner->SetCameraShake(4.0f);
         }
         break;
 
@@ -965,17 +965,17 @@ case 825:
         }
         if (animationStage == 2 && animationFrame == 0) {
             owner->SpawnBattleEffect(824, x, y, facing, 1);
-            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
+            owner->SetCameraShake(4.0f);
             field07C = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
             owner->SpawnBattleEffect(824, x, y, facing, 1);
-            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
+            owner->SetCameraShake(4.0f);
             field07C = 0;
         }
         if (animationStage == 4 && animationFrame == 0) {
             owner->SpawnBattleEffect(824, x, y, facing, 1);
-            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(4.0f);
+            owner->SetCameraShake(4.0f);
             field07C = 0;
         }
         break;

@@ -5,10 +5,6 @@ class EffectSound45B860 {
 public:
     void PlaySharedSound(short sound);
 };
-class FighterShake453E60 {
-public:
-    void SetCameraShake(float amount);
-};
 namespace CameraShake412CB0 {
     void SetShakeAmount(float amount);
 }

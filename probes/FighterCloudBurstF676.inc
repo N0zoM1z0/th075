@@ -79,7 +79,7 @@
                             (*(&x))-g_BurstXAt006590A8,
                             0xC2480000,facing,1);
                     }
-                    InitTrajectoryAt453E60(20.0f);
+                    SetCameraShake(20.0f);
                     PlaySound(20);
                 }
             }

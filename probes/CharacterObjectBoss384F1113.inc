@@ -53,7 +53,7 @@ case 0x384: {
                 for (int shot=0;shot<15;++shot)
                     owner->SpawnBattleEffect(
                         0x33A,x,y,facing,1);
-            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+            owner->SetCameraShake(5.0f);
             return;
         }
     }

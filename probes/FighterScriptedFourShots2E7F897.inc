@@ -40,7 +40,7 @@ case F897_CASE: {
         PlaySound(7);
     }
     if ((animationStage)==11 && (animationFrame)==0) {
-        InitTrajectoryAt453E60(10.0f);
+        SetCameraShake(10.0f);
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
     }

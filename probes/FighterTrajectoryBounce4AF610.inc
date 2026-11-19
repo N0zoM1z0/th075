@@ -16,7 +16,7 @@ case 0x4A: {
         velocityX = -(velocityX) * g_BounceScaleAt00657F74;
         velocityY = 15.0f;
         field05C = 0.5f;
-        InitTrajectoryAt453E60(2.0f);
+        SetCameraShake(2.0f);
         PlaySharedSound(0x16);
         I16(F610_COUNTER) = 0;
         break;
@@ -31,7 +31,7 @@ case 0x4A: {
         ClearMotionFields();
         y=0.0f;
         ResetPrimaryCounters(0x61);
-        InitTrajectoryAt453E60(2.0f);
+        SetCameraShake(2.0f);
 #if !F610_PREPARE_BEFORE
         PlaySharedSound(0x16);
 #endif

@@ -18,7 +18,7 @@ case 0x4C: {
         y = 0.0f;
         ResetPrimaryCounters(0x61);
         rotationZ=0.0f;
-        InitTrajectoryAt453E60(2.0f);
+        SetCameraShake(2.0f);
         ClearTransformFlag();
         break;
     }

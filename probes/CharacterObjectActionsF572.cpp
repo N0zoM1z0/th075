@@ -11,15 +11,6 @@
 // split-case CODE/DATA acceptance is claimed.
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-class ParentEffectsF572 {
-public:
-    void SpawnAt453A70(int kind, int x, int y, int first, int second);
-    void SpawnComputedAt453A70(int kind, int x, float y, char first, int second);
-    void SpawnDirectedAt453A70(int kind, int x, int y, char first, int second);
-    void ModifyAt453D40(int arg);
-    void SpawnMovedAt453A70(int kind, float x, int y, char first, int second);
-    void SetupAt453E60(float);
-};
 extern float gFloatAt00657850;
 extern float gMulAt006590B4;
 extern float gAddAt00659738;
@@ -72,7 +63,6 @@ extern float gFadeAt0065825C;
 extern float gMotionDecelAt00657480;
 extern float gInitialClampAt00657D14;
 extern float AbsFloatAt00412D90(float value);
-#define PARENT (reinterpret_cast<ParentEffectsF572*>(owner))
 
 void AliceObject::Advance() {
     if (owner->opponent->field3BA != 0)
@@ -95,10 +85,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -121,10 +111,10 @@ void AliceObject::Advance() {
             color[3] = 0xFF;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
-            PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
+            owner->SpawnBattleEffect(0x371, x,
                                   (y) + gFloatAt00657850,
                                   facing, 1);
-            PARENT->ModifyAt453D40(2);
+            owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
             MotionAt40FB70(static_cast<float>(field0D8),
@@ -173,10 +163,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -199,10 +189,10 @@ void AliceObject::Advance() {
             color[3] = 0xFF;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
-            PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
+            owner->SpawnBattleEffect(0x371, x,
                                   (y) + gFloatAt00657850,
                                   facing, 1);
-            PARENT->ModifyAt453D40(2);
+            owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
             MotionAt40FB70(static_cast<float>(field0D8),
@@ -251,10 +241,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -277,10 +267,10 @@ void AliceObject::Advance() {
             color[3] = 0xFF;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
-            PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
+            owner->SpawnBattleEffect(0x371, x,
                                   (y) + gFloatAt00657850,
                                   facing, 1);
-            PARENT->ModifyAt453D40(2);
+            owner->PlaySound(2);
         }
         if ((animationStage) == 0) {
             MotionAt40FB70(static_cast<float>(field0D8),
@@ -329,10 +319,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x31 && (owner->action) < 0x96) {
         ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -381,9 +371,9 @@ void AliceObject::Advance() {
         if ((animationStage) < 2) {
             rotationZ = (rotationZ) + gLiftAt00657CC0;
             if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
-                PARENT->SpawnDirectedAt453A70(0x32B, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-                PARENT->SpawnDirectedAt453A70(0x32D, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-                PARENT->ModifyAt453D40(4);
+                owner->SpawnBattleEffect(0x32B, x, y, facing, 1);
+                owner->SpawnBattleEffect(0x32D, x, y, facing, 1);
+                owner->PlaySound(4);
                 ResetPrimaryCounters(0x33B);
                 y = 0.0f;
                 velocityY = 0.0f;
@@ -414,7 +404,7 @@ void AliceObject::Advance() {
         reinterpret_cast<int&>(rotationX) = 0;
         reinterpret_cast<int&>(rotationY) = 0;
         reinterpret_cast<int&>(rotationZ) = 0;
-        PARENT->SetupAt453E60(5.0f);
+        owner->SetCameraShake(5.0f);
     }
     scaleX = (float)(5 - (animationFrame)) * gCurveAt0065972C * ((animationFrame) < 5) + gStepAt00658044 + (scaleX);
     scaleY = (float)(5 - (animationFrame)) * gCurveAt0065972C * ((animationFrame) < 5) + gStepAt00658044 + (scaleY);
@@ -435,10 +425,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x31 && (owner->action) < 0x96) {
         ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -459,9 +449,9 @@ void AliceObject::Advance() {
         if ((animationStage) < 2) {
             rotationZ = (rotationZ) + gLiftAt00657CC0;
             if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
-                PARENT->ModifyAt453D40(4);
-                PARENT->SpawnDirectedAt453A70(0x32B, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-                PARENT->SpawnDirectedAt453A70(0x32D, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+                owner->PlaySound(4);
+                owner->SpawnBattleEffect(0x32B, x, y, facing, 1);
+                owner->SpawnBattleEffect(0x32D, x, y, facing, 1);
                 ResetPrimaryCounters(0x33B);
                 y = 0.0f;
                 velocityY = 0.0f;
@@ -530,10 +520,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -593,10 +583,10 @@ void AliceObject::Advance() {
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
-            PARENT->SpawnMovedAt453A70(0x320,
+            owner->SpawnBattleEffect(0x320,
                    static_cast<float>((facing) * 10) + (x),
-                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
-            PARENT->ModifyAt453D40(6);
+                   y, reinterpret_cast<unsigned char&>(facing), 1);
+            owner->PlaySound(6);
         }
     }
     break;
@@ -605,10 +595,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -668,10 +658,10 @@ void AliceObject::Advance() {
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RandomAt455580(0,15) - 45);
-            PARENT->SpawnMovedAt453A70(0x321,
+            owner->SpawnBattleEffect(0x321,
                    static_cast<float>((facing) * 10) + (x),
-                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
-            PARENT->ModifyAt453D40(6);
+                   y, reinterpret_cast<unsigned char&>(facing), 1);
+            owner->PlaySound(6);
         }
     }
     break;
@@ -680,10 +670,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -744,10 +734,10 @@ void AliceObject::Advance() {
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
-            PARENT->SpawnMovedAt453A70(0x322,
+            owner->SpawnBattleEffect(0x322,
                    static_cast<float>((facing) * 10) + (x),
-                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
-            PARENT->ModifyAt453D40(6);
+                   y, reinterpret_cast<unsigned char&>(facing), 1);
+            owner->PlaySound(6);
         }
     }
     break;
@@ -761,10 +751,10 @@ void AliceObject::Advance() {
             (field080) > 0 && (animationStage) < 11) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -823,7 +813,7 @@ void AliceObject::Advance() {
             ++field0DC;
         }
         if ((animationStage) == 10 && (animationFrame) == 0) {
-            PARENT->ModifyAt453D40(16);
+            owner->PlaySound(16);
             velocityX = 18.0f;
             velocityY = 18.0f;
         }
@@ -847,8 +837,8 @@ void AliceObject::Advance() {
         reinterpret_cast<int&>(rotationX) = 0;
         reinterpret_cast<int&>(rotationY) = 0;
         reinterpret_cast<int&>(rotationZ) = 0;
-        PARENT->SetupAt453E60(10.0f);
-        PARENT->SpawnDirectedAt453A70(0x33A, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+        owner->SetCameraShake(10.0f);
+        owner->SpawnBattleEffect(0x33A, x, y, facing, 1);
     }
     if ((field07C) == 6) {
         field07C = 0;
@@ -868,7 +858,7 @@ void AliceObject::Advance() {
     if (AdvanceNestedFrame() == (field070))
         ClearFrameInfo();
     if ((animationStage) == 2 && (animationFrame) == 0)
-        PARENT->SpawnDirectedAt453A70(0x339, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+        owner->SpawnBattleEffect(0x339, x, y, facing, 1);
     break;
 }
         case 0x339: {
@@ -1141,9 +1131,9 @@ void AliceObject::Advance() {
     if ((animationStage) < 2) {
         rotationZ = (rotationZ) + gLiftAt00657CC0;
         if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
-            PARENT->SpawnDirectedAt453A70(0x338, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-            PARENT->SpawnDirectedAt453A70(0x33A, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-            PARENT->ModifyAt453D40(8);
+            owner->SpawnBattleEffect(0x338, x, y, facing, 1);
+            owner->SpawnBattleEffect(0x33A, x, y, facing, 1);
+            owner->PlaySound(8);
             ResetPrimaryCounters(0x33B);
             y = 0.0f;
             velocityY = 0.0f;
@@ -1184,9 +1174,9 @@ void AliceObject::Advance() {
     if ((animationStage) < 2) {
         rotationZ = (rotationZ) + gLiftAt00657CC0;
         if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
-            PARENT->SpawnDirectedAt453A70(0x342, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-            PARENT->SpawnDirectedAt453A70(0x344, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-            PARENT->ModifyAt453D40(10);
+            owner->SpawnBattleEffect(0x342, x, y, facing, 1);
+            owner->SpawnBattleEffect(0x344, x, y, facing, 1);
+            owner->PlaySound(10);
             ResetPrimaryCounters(0x33B);
             y = 0.0f;
             velocityY = 0.0f;
@@ -1216,14 +1206,14 @@ void AliceObject::Advance() {
         reinterpret_cast<int&>(rotationX) = 0;
         reinterpret_cast<int&>(rotationY) = 0;
         reinterpret_cast<int&>(rotationZ) = 0;
-        PARENT->SetupAt453E60(10.0f);
+        owner->SetCameraShake(10.0f);
     }
     if ((field07C) == 6) {
         field07C = 0;
         ++field080;
     }
     if ((animationStage) == 3 && (animationFrame) == 0)
-        PARENT->SpawnDirectedAt453A70(0x343, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+        owner->SpawnBattleEffect(0x343, x, y, facing, 1);
     if (AdvanceNestedFrame() == (field070))
         ClearFrameInfo();
     break;
@@ -1548,10 +1538,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -1620,10 +1610,10 @@ void AliceObject::Advance() {
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RandomAt455580(0,60));
-            PARENT->SpawnMovedAt453A70(0x323,
+            owner->SpawnBattleEffect(0x323,
                    static_cast<float>((facing) * 10) + (x),
-                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
-            PARENT->ModifyAt453D40(6);
+                   y, reinterpret_cast<unsigned char&>(facing), 1);
+            owner->PlaySound(6);
         }
     }
     break;
@@ -1632,10 +1622,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
+            owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
         }
         break;
     } else {
@@ -1694,10 +1684,10 @@ void AliceObject::Advance() {
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RandomAt455580(0,15) - 60);
-            PARENT->SpawnMovedAt453A70(0x324,
+            owner->SpawnBattleEffect(0x324,
                    static_cast<float>((facing) * 10) + (x),
-                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
-            PARENT->ModifyAt453D40(6);
+                   y, reinterpret_cast<unsigned char&>(facing), 1);
+            owner->PlaySound(6);
         }
     }
     break;
@@ -1706,10 +1696,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E4,x,y,1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA)) = 0;
-            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
     } else {
@@ -1758,34 +1748,34 @@ void AliceObject::Advance() {
             if ((owner->action) == 0x198) {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
-                PARENT->SpawnMovedAt453A70(0x322,
+                owner->SpawnBattleEffect(0x322,
                     static_cast<float>((facing)*10) + (x),
-                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
-                PARENT->ModifyAt453D40(6);
+                    y, reinterpret_cast<unsigned char&>(facing),1);
+                owner->PlaySound(6);
             }
             if ((owner->action) == 0x19A) {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(RandomAt455580(0,10) + 30);
-                PARENT->SpawnMovedAt453A70(0x323,
+                owner->SpawnBattleEffect(0x323,
                     static_cast<float>((facing)*10) + (x),
-                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
-                PARENT->ModifyAt453D40(6);
+                    y, reinterpret_cast<unsigned char&>(facing),1);
+                owner->PlaySound(6);
             }
             if ((owner->action) == 0x19C) {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(RandomAt455580(0,10) - 5);
-                PARENT->SpawnMovedAt453A70(0x324,
+                owner->SpawnBattleEffect(0x324,
                     static_cast<float>((facing)*10) + (x),
-                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
-                PARENT->ModifyAt453D40(6);
+                    y, reinterpret_cast<unsigned char&>(facing),1);
+                owner->PlaySound(6);
             }
             if ((owner->action) == 0x19D) {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(-RandomAt455580(0,10) - 30);
-                PARENT->SpawnMovedAt453A70(0x325,
+                owner->SpawnBattleEffect(0x325,
                     static_cast<float>((facing)*10) + (x),
-                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
-                PARENT->ModifyAt453D40(6);
+                    y, reinterpret_cast<unsigned char&>(facing),1);
+                owner->PlaySound(6);
             }
         }
     }
@@ -1795,10 +1785,10 @@ void AliceObject::Advance() {
     if ((owner->action) > 0x31 && (owner->action) < 0x96) {
         ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E4,x,y,1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
             (reinterpret_cast<short&>(owner->fieldEFA))=0;
-            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
     } else {
@@ -1825,9 +1815,9 @@ void AliceObject::Advance() {
         if ((animationStage)<2) {
             rotationZ = (rotationZ)+gLiftAt00657CC0;
             if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
-                PARENT->ModifyAt453D40(4);
-                PARENT->SpawnDirectedAt453A70(0x32B,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
-                PARENT->SpawnDirectedAt453A70(0x32D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+                owner->PlaySound(4);
+                owner->SpawnBattleEffect(0x32B,x,y,facing,1);
+                owner->SpawnBattleEffect(0x32D,x,y,facing,1);
                 ResetPrimaryCounters(0x33B);
                 y=0.0f;
                 velocityY=0.0f;
@@ -1845,10 +1835,10 @@ void AliceObject::Advance() {
     if ((owner->action)>0x31 && (owner->action)<0x96) {
         ClearFrameInfo();
         for (int iteration=0;iteration<4;++iteration)
-            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E4,x,y,1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA))>25) {
             (reinterpret_cast<short&>(owner->fieldEFA))=0;
-            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
     } else {
@@ -1895,10 +1885,10 @@ void AliceObject::Advance() {
     if ((owner->action)>0x31 && (owner->action)<0x96) {
         ClearFrameInfo();
         for (int iteration=0;iteration<4;++iteration)
-            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E4,x,y,1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA))>25) {
             (reinterpret_cast<short&>(owner->fieldEFA))=0;
-            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            owner->SpawnBattleEffect(0x3E3,x,y,1,1);
         }
         break;
     } else {
@@ -2007,8 +1997,8 @@ void AliceObject::Advance() {
     if ((animationStage)<2) {
         rotationZ = (rotationZ)+gLiftAt00657CC0;
         if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
-            PARENT->SpawnDirectedAt453A70(0x388,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,0);
-            PARENT->ModifyAt453D40(8);
+            owner->SpawnBattleEffect(0x388,x,y,facing,0);
+            owner->PlaySound(8);
             ResetPrimaryCounters(0x385);
             if (gGlobalActorCountAt006714D0>1)
                 ResetPrimaryCounters(0x38E);
@@ -2044,8 +2034,8 @@ void AliceObject::Advance() {
         reinterpret_cast<int&>(rotationX)=0;
         reinterpret_cast<int&>(rotationY)=0;
         reinterpret_cast<int&>(rotationZ)=0;
-        PARENT->SetupAt453E60(5.0f);
-        PARENT->SpawnDirectedAt453A70(0x387,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+        owner->SetCameraShake(5.0f);
+        owner->SpawnBattleEffect(0x387,x,y,facing,1);
     }
     if ((field07C)==6) {
         field07C=0;
@@ -2065,7 +2055,7 @@ void AliceObject::Advance() {
     if (AdvanceNestedFrame()==(field070))
         ClearFrameInfo();
     if ((animationStage)==2 && (animationFrame)==0)
-        PARENT->SpawnDirectedAt453A70(0x386,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+        owner->SpawnBattleEffect(0x386,x,y,facing,1);
     break;
 }
         case 0x386: {
@@ -2185,9 +2175,9 @@ void AliceObject::Advance() {
         color[3]=0xFF;
     }
     if ((animationStage)==4 && (animationFrame)==0) {
-        PARENT->SpawnComputedAt453A70(0x371,reinterpret_cast<int&>(x),
+        owner->SpawnBattleEffect(0x371,x,
                     (y)+gFloatAt00657850,facing,1);
-        PARENT->ModifyAt453D40(2);
+        owner->PlaySound(2);
     }
     if ((animationStage)==0) {
         if ((color[0])<225)
@@ -2242,7 +2232,7 @@ void AliceObject::Advance() {
         field0DC=0;
     }
     if ((animationStage)==1 && (animationFrame)==0) {
-        PARENT->SpawnDirectedAt453A70(0x389,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+        owner->SpawnBattleEffect(0x389,x,y,facing,1);
     }
     if ((animationStage)>0) {
         field0DA = static_cast<short>(AngleAt00483300(
@@ -2336,18 +2326,18 @@ void AliceObject::Advance() {
         (owner->field314)=static_cast<float>(field0D8);
         (reinterpret_cast<int&>(owner->field318))=reinterpret_cast<int&>(x);
         (reinterpret_cast<int&>(owner->field31C))=reinterpret_cast<int&>(y);
-        PARENT->SpawnDirectedAt453A70(0x38C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
-        PARENT->ModifyAt453D40(15);
+        owner->SpawnBattleEffect(0x38C,x,y,facing,1);
+        owner->PlaySound(15);
     }
     if ((animationStage)==10 && (animationFrame)==0 && (field0DA)<6) {
         ++field0DA;
         ResetSecondaryCounter(9);
     }
     if ((animationStage)==11 && (animationFrame)==0) {
-        PARENT->SpawnMovedAt453A70(0x38D,
+        owner->SpawnBattleEffect(0x38D,
             static_cast<float>((field0D8)*(facing)) + (x),
-            0,facing,1);
-        PARENT->ModifyAt453D40(8);
+            0.0f,facing,1);
+        owner->PlaySound(8);
     }
     break;
 }
@@ -2390,14 +2380,14 @@ void AliceObject::Advance() {
         reinterpret_cast<int&>(rotationX)=0;
         reinterpret_cast<int&>(rotationY)=0;
         reinterpret_cast<int&>(rotationZ)=0;
-        PARENT->SetupAt453E60(10.0f);
+        owner->SetCameraShake(10.0f);
     }
     if ((field07C)==6) {
         field07C=0;
         ++field080;
     }
     if ((animationStage)==3 && (animationFrame)==0)
-        PARENT->SpawnDirectedAt453A70(0x343,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+        owner->SpawnBattleEffect(0x343,x,y,facing,1);
     if ((animationStage)<3) {
         scaleX=(scaleX)+gFadeAt00659428;
         scaleY=(scaleY)+gFadeAt00659428;
@@ -2443,8 +2433,8 @@ void AliceObject::Advance() {
         reinterpret_cast<int&>(rotationX)=0;
         reinterpret_cast<int&>(rotationY)=0;
         reinterpret_cast<int&>(rotationZ)=0;
-        PARENT->SetupAt453E60(5.0f);
-        PARENT->SpawnDirectedAt453A70(0x387,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+        owner->SetCameraShake(5.0f);
+        owner->SpawnBattleEffect(0x387,x,y,facing,1);
     }
     if ((field07C)==6) {
         field07C=0;

@@ -32,7 +32,7 @@ case 0x2BE: {
         PlaySound(6);
     }
     if ((animationStage)==11 && (animationFrame)==0) {
-        InitTrajectoryAt453E60(5.0f);
+        SetCameraShake(5.0f);
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
     }

@@ -75,6 +75,7 @@ public:
     void PlaySharedSound(short sound);
     void ClearMotionFields();            // 00453E20: clear four motion fields
     void UpdateGaugeTimer(int amount);  // 0046D000 shared spirit timer
+    void SetCameraShake(float amount); // 00453E60 native shared camera update
     bool IsState150To199();
     bool IsState95To99();
     unsigned char SelectHitResponse(unsigned int flags);

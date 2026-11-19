@@ -825,7 +825,7 @@ void RemiliaFighter::Advance() {
                 }
             }
             if (animationStage==5 && animationFrame==0)
-                InitTrajectoryAt453E60(5.0f);
+                SetCameraShake(5.0f);
             if (AdvanceNestedFrame()==(field070))
                 ResetPrimaryCounters(0);
             if (animationStage==4 && animationFrame==0) {

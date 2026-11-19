@@ -1842,7 +1842,7 @@ case 912:
         velocityX = 0.0f;
         velocityY = 0.0f;
         y = 0.0f;
-        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(3.0f);
+        owner->SetCameraShake(3.0f);
         ResetPrimaryCounters(909);
         rotationZ = 0.0f;
         color[0] = 0;

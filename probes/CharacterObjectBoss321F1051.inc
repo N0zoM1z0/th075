@@ -44,7 +44,7 @@ case 0x321: {
                 0x33A, x, y,
                 facing, 1);
         }
-        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(10.0f);
+        owner->SetCameraShake(10.0f);
         return;
     }
     if (owner->animationStage==9 && animationStage<6) {

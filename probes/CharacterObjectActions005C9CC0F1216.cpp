@@ -231,7 +231,7 @@ void SuikaObject::Advance()
             if (AdvanceNestedFrame() == field070) {
                 ClearFrameInfo();
                 owner->PlaySound(18);
-                reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+                owner->SetCameraShake(5.0f);
                 for (int burstIndex803 = 0; burstIndex803 < 18; burstIndex803++) {
                     owner->field314 = burstIndex803 * 20;
                     owner->field318 = 17.0f;
@@ -387,7 +387,7 @@ void SuikaObject::Advance()
             if (AdvanceNestedFrame() == field070) {
                 ClearFrameInfo();
                 owner->PlaySound(18);
-                reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+                owner->SetCameraShake(5.0f);
                 for (int burstIndex807 = 0; burstIndex807 < 18; burstIndex807++) {
                     owner->field314 = burstIndex807 * 20;
                     owner->field318 = 17.0f;
@@ -430,7 +430,7 @@ void SuikaObject::Advance()
             if (AdvanceNestedFrame() == field070) {
                 ClearFrameInfo();
                 owner->PlaySound(18);
-                reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+                owner->SetCameraShake(5.0f);
                 for (int burstIndex808 = 0; burstIndex808 < 18; burstIndex808++) {
                     owner->field314 = burstIndex808 * 20;
                     owner->field318 = 17.0f;
@@ -2004,7 +2004,7 @@ void SuikaObject::Advance()
                 owner->field490 = -(field0D8 * 0.1f) *
                     (facing * owner->opponent->facing) *
                     (((owner->opponent->x - x) * facing > 0.0f) * 2 - 1);
-                reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(2.0f);
+                owner->SetCameraShake(2.0f);
                 if (field0DC <= 0) {
                     owner->field31C = RecordedRange(0, 359);
                     SetPolarVelocity(owner->field31C, 960.0f);
@@ -2294,7 +2294,7 @@ void SuikaObject::Advance()
                 owner->field490 = -(field0D8 * 0.1f) *
                     (facing * owner->opponent->facing) *
                     (((owner->opponent->x - x) * facing > 0.0f) * 2 - 1);
-                reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(2.0f);
+                owner->SetCameraShake(2.0f);
 
             }
             if (animationStage == 4) {

@@ -160,7 +160,7 @@ Actor::ResetTransform
 Actor::SetPolarVelocity
 RecordedRange455580::SelectRange
 EffectSound45B860::PlaySharedSound
-FighterShake453E60::SetCameraShake
+Fighter::SetCameraShake
 CameraShake412CB0::SetShakeAmount
 CameraUpdate4126C0::Advance
 CameraInputs412660::Initialize

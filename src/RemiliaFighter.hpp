@@ -19,7 +19,6 @@ public:
     void SpawnRawXYAt453C80(int,int,int,char,int);
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnSevenAt453B50(int,int,int,char,int,int,int);
-    void InitTrajectoryAt453E60(float);
     int RandomBoundaryAt455580(int,int);
     void SpawnAt453C80(int,float,float,char,int);
 

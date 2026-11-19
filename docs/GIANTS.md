@@ -124,6 +124,17 @@ offsets/types are unchanged. The 132 affected exact units cold replayed
 in three affected-only groups (44/44 each), and no giant exactness is
 claimed.
 
+The original camera-shake leaf at `00453E60` now belongs to the real
+`Fighter::SetCameraShake(float)` API rather than a borrowed receiver class.
+The native leaf remains structural-exact (25-byte full body, one relocation).
+Four complete fighter and five object giant research parents now call it
+from 72 compiled sites (51 fighter + 21 object), retaining each entire
+COFF body size, relocation offsets/types and every nonrelocation byte.
+All nine complete native giant frontiers remain NONEXACT but nonregressing.
+An affected-only replay of 103 directly related exact units was 103/103
+across three batches (36/34/33); the full 449-unit Fighter.hpp header
+fanout was intentionally not cold-replayed.
+
 Four fighter giant research parents now call shared, verified Fighter
 helpers instead of provisional class-specific aliases: 122 native
 `CheckHorizontalLimits` calls (00454EE0), 29 `SetNonnegativeWord`

@@ -53,7 +53,7 @@ case F1074_CASE: {
         facing,0);
     if (field080==0) {
         ClearFrameInfo();
-        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+        owner->SetCameraShake(5.0f);
         owner->PlaySound(1);
 #define F1074_SPAWN_33A() \
         owner->SpawnBattleEffect( \

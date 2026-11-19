@@ -41,7 +41,7 @@ case 0x130: {
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1D);
     if ((animationStage)==3 && (animationFrame)==0)
-        SpawnDirectedAt453A70(0x339,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+        SpawnBattleEffect(0x339,x,y,
                 facing,1);
     break;
 }

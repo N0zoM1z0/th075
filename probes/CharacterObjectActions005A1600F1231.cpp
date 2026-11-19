@@ -365,7 +365,7 @@ void YukariObject::Advance()
         if (y + velocityY <= 0.0f && animationStage < 7) {
             velocityY = 0.0f;
             y = 0.0f;
-            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+            owner->SetCameraShake(5.0f);
             ResetSecondaryCounter(7);
             owner->PlaySound(10);
             owner->SpawnAuxEffect(129, x - 50.0f, 0.0f, 1, 1);
@@ -2193,7 +2193,7 @@ void YukariObject::Advance()
         if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+                owner->SetCameraShake(5.0f);
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 4.0f;
                 scaleY = 2.0f;
@@ -2214,7 +2214,7 @@ void YukariObject::Advance()
         if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+                owner->SetCameraShake(5.0f);
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 4.0f;
                 scaleY = 2.0f;

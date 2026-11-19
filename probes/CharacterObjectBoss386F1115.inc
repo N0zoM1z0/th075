@@ -36,7 +36,7 @@ case 0x386: {
             velocityX=0.0f;
             scaleX=1.0f;
             scaleY=1.0f;
-            reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(5.0f);
+            owner->SetCameraShake(5.0f);
             ResetSecondaryCounter(2);
             return;
         }
@@ -44,7 +44,7 @@ case 0x386: {
     x=float(facing)*velocityX+x;
     y=y+velocityY;
     if (AdvanceNestedFrame()==field070) {
-        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(10.0f);
+        owner->SetCameraShake(10.0f);
         for (int shot=0;shot<12;++shot) {
             owner->SpawnBattleEffect(
                 0x387,

@@ -17,7 +17,6 @@ public:
     void SetMotionFloatAt40FBB0(float,float,float);
     void SpawnDirectedAt453A70(int,int,int,char,int);
     void SpawnWithFloatAt453A70(int,int,float,char,int);
-    void InitTrajectoryAt453E60(float);
     void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char);
     void SpawnFloatXAt453A70(int,float,int,char,int);
     int SelectRangeAt455580(int,int);
