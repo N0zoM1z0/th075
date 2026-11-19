@@ -101,9 +101,14 @@ large research parents. They do not claim new giant exactness:
   identical.
 
 The shared Fighter::fieldEFA migration is now complete in the remaining
-known giant callers. No ASM, padding, fake returns or target-byte arrays
-were introduced. The exact CharacterProjectileAdvanceF379 leaf remains
-exact.
+known giant callers. A follow-up removed 61 more signed-short aliases from
+29 shared boss-state fragments; complete Patchouli, Reimu, Sakuya, Youmu and
+Remilia parent builds retained every code byte and relocation. `fieldEFE` is
+also restored as a signed short stage-fade timer; both Meiling/Patchouli
+renderers retained all 1,606 bytes and 40 relocations, and the 23 affected
+render/init/reset units replayed 23/23 exact. No ASM, padding, fake returns or
+target-byte arrays were introduced. The exact CharacterProjectileAdvanceF379
+leaf remains exact.
 
 The shared math leaves now have natural C++ source in `src/MathFloatHelpers.cpp`:
 R269/R270 recovered the 21-byte authored atan2 wrapper while keeping its 37-byte

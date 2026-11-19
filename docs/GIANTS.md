@@ -770,6 +770,19 @@ Reimu fighter motion now uses the real float types for the reaction-velocity pai
 YoumuObject's borrowed history record now types its +0x04/+0x08 position fields as floats (xAt04 / yAt08) and assigns them directly to the object's float coordinates. The complete 40,464-byte boss COFF, all 938 relocation offsets/types and every nonrelocation byte remain identical; the view is still non-owning and no exactness credit is claimed.
 
 The signed Fighter::fieldEFA cleanup is now complete across the remaining large callers: Meiling, Suika and Alice object giants replace 87 reinterpret_cast<short&> uses, while Reimu and Remilia fighter fragments replace four opponent-field casts. These 91 sites now use direct short member access and increment. The five complete COFF bodies (34,879 / 43,972 / 33,731 / 62,090 / 59,236 bytes), all 806 / 991 / 682 / 1,824 / 1,863 relocation offsets/types, and every nonrelocation byte remain unchanged. No exact unit depends on these boss-only fragments; all five giant frontiers remain nonexact.
+A second `fieldEFA` pass removes 61 more signed-short reference aliases from
+29 shared boss-state fragments. The five complete consumers—Patchouli object
+Advance plus Reimu, Sakuya, Youmu and Remilia fighter Advance—were rebuilt
+against the pre-change sources: every COFF byte and every relocation
+position/type/addend/local target remains identical. Their frontiers are
+unchanged (Patchouli 24,643 differing bytes; Reimu 42,551; Sakuya 18,253;
+Youmu 16,833; Remilia 40,569); none is promoted to exact.
+
+`Fighter::fieldEFE` is now a signed `short`, matching the two complete Meiling
+and Patchouli stage renderers' explicit signed-word timer operations. Removing
+all six `reinterpret_cast<short&>` views preserves both complete 1,606-byte
+COFF bodies and all 40 relocations in each. The 21 relevant initialization /
+reset units plus the two renderers replayed 23/23 exact.
 
 
 Sakuya object 004CA6E0 was revisited on 2026-11-19 at the 809/810 action
