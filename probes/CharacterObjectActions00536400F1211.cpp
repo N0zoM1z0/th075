@@ -235,13 +235,13 @@ void YoumuObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                field0DA = static_cast<short>(1000.0f - field0C8 * 60.0f);
+                field0DA = 1000.0f - field0C8 * 60.0f;
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
-                field0DC = static_cast<short>(AngleAt00483300(
+                field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                 if (field0DC < -20) field0DC = 10;
                 if (field0DC > 20) field0DC = -10;
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
@@ -332,13 +332,13 @@ void YoumuObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                field0DA = static_cast<short>(1000.0f - field0C8 * 60.0f);
+                field0DA = 1000.0f - field0C8 * 60.0f;
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
-                field0DC = static_cast<short>(AngleAt00483300(
+                field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                 if (field0DC < -65) field0DC = -55;
                 if (field0DC > -25) field0DC = -15;
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
@@ -429,13 +429,13 @@ void YoumuObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                field0DA = static_cast<short>(1000.0f - field0C8 * 60.0f);
+                field0DA = 1000.0f - field0C8 * 60.0f;
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
-                field0DC = static_cast<short>(AngleAt00483300(
+                field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
+                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                 if (field0DC < 25) field0DC = 35;
                 if (field0DC > 65) field0DC = 55;
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
@@ -961,8 +961,8 @@ case 0x331: {
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                field0DA = static_cast<short>(field0C8);
-                field0DC = static_cast<short>(field0CC);
+                field0DA = field0C8;
+                field0DC = field0CC;
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
@@ -1113,8 +1113,8 @@ case 0x331: {
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                field0DA = static_cast<short>(field0C8);
-                field0DC = static_cast<short>(field0CC);
+                field0DA = field0C8;
+                field0DC = field0CC;
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
@@ -2043,7 +2043,7 @@ case 0x331: {
         field0D8 = 0;
         field0DA = 0;
         field0DC = 0;
-        field0DE = static_cast<short>(field0C8);
+        field0DE = field0C8;
     }
     if (owner->field3A0 <= 0) {
         ResetPrimaryCounters(810);
@@ -2641,7 +2641,7 @@ case 0x331: {
             SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
         if (animationStage == 1) {
-            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            field0D8 = AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ClearFrameInfo();
@@ -2683,7 +2683,7 @@ case 0x331: {
             SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
         if (animationStage == 1) {
-            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            field0D8 = AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ++owner->fieldEFA;
