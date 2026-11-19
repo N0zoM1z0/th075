@@ -155,8 +155,15 @@ public:
         };
     };
     int field07C;                       // +0x07C
-    short field080;                     // +0x080
-    short field082;                     // +0x082 nonzero: skip this frame and count down
+    // Ordinary actors use the two signed hit-stop words. Character auxiliary
+    // angle actions overlay the same four bytes with one float value.
+    union {
+        struct {
+            short field080;             // +0x080
+            short field082;             // +0x082 nonzero: skip this frame and count down
+        };
+        float field080Angle;            // +0x080 CharacterAuxObject angle state
+    };
     short field084;                     // +0x084
     short field086;                     // +0x086
     short field088;                     // +0x088

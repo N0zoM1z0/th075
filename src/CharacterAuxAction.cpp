@@ -676,7 +676,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             field074 = static_cast<short>(ChooseIntegerRange(0, 359));
-            reinterpret_cast<float&>(field080) = field074 + 180;
+            field080Angle = field074 + 180;
             SetPolarVelocity(field074, 500.0f);
             SpawnPeer(63, x + velocityX, y + velocityY, 1, 1);
         }
@@ -705,7 +705,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             field074 = 0;
-            SetPolarVelocity(reinterpret_cast<float&>(field080), 15.0f);
+            SetPolarVelocity(field080Angle, 15.0f);
         }
         if (field074 == 0) {
             if (color[0] < 215) {
@@ -742,7 +742,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             field074 = static_cast<short>(ChooseIntegerRange(0, 359));
-            reinterpret_cast<float&>(field080) = field074 + 180;
+            field080Angle = field074 + 180;
             SetPolarVelocity(field074, 500.0f);
             SpawnPeer(65, x + velocityX, y + velocityY, 1, 1);
         }
@@ -771,7 +771,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             field074 = 0;
-            SetPolarVelocity(reinterpret_cast<float&>(field080), 15.0f);
+            SetPolarVelocity(field080Angle, 15.0f);
         }
         if (field074 == 0) {
             if (color[0] < 215) {
