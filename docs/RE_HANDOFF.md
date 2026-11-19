@@ -240,6 +240,11 @@ Done so far:
   COFF body and all 696 relocation offsets/types remain unchanged, with
   zero differences outside relocations; 24 impacted units cold-replayed.
   The 726 GPR and six width mismatches still prevent giant exact credit.
+- Patchouli object giant now uses 37 recorded-range calls,
+  19 Actor polar-velocity calls (recovering 11 source raw float-bit sites),
+  and two shared-sound calls through real C++ interfaces. The complete
+  82,109-byte COFF, 1,449 relocations and 24 affected exact units were
+  locally checked with no regression; native GPR/width debt remains.
 - Patchouli object `Advance` (81,539 bytes) now belongs to `PatchouliObject`.
   The 32 shared sound calls and seven camera-shake calls have typed receivers;
   its complete research byte frontier is unchanged (522 GPR, five width

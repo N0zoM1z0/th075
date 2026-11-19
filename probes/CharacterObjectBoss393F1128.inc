@@ -23,12 +23,12 @@ case 0x393: {
             ++field0D8;
         else if (field0DA==0) {
             owner->SpawnBattleEffect(
-                0x391,0.0f,float(RandomBoundaryAt00455580(0,60)+380),1,1);
+                0x391,0.0f,float(RecordedRange(0,60)+380),1,1);
             field0DA=1;
             field0D8=0;
         } else {
             owner->SpawnBattleEffect(
-                0x391,1280.0f,float(RandomBoundaryAt00455580(0,120)+240),-1,1);
+                0x391,1280.0f,float(RecordedRange(0,120)+240),-1,1);
             field0DA=0;
             field0D8=0;
         }

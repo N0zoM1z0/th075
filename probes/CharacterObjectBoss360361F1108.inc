@@ -30,13 +30,13 @@ case F1108_CASE: {
         field07C=0;
         field080=1;
         field0D8=15;
-        SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
+        SetPolarVelocity(field0C8,
             float(field0D8));
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;
     if (animationStage==0) {
-        SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
+        SetPolarVelocity(field0C8,
             float(field0D8));
         --field0D8;
         if (field0D8<0)

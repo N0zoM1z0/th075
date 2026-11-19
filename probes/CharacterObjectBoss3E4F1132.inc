@@ -12,7 +12,7 @@ case 0x3E4: {
         color[3]=0xFF;
         velocityX=0.0f;
         velocityY=-1.0f;
-        field0D8=short(RandomBoundaryAt00455580(0,360)-180);
+        field0D8=short(RecordedRange(0,360)-180);
         field0DA=15;
     }
     if (animationStage==0) {
@@ -33,7 +33,7 @@ case 0x3E4: {
             y-owner->opponent->y<g_F1131_TopHitAt006590A8 &&
             y-owner->opponent->y>g_F1131_BottomHitAt00658268) {
             ++reinterpret_cast<signed short&>(owner->fieldEFA);
-            NativeHitAt0045B860(0x2E);
+            PlaySharedSound(0x2E);
             ClearFrameInfo();
             if (owner->opponent->spiritCooldown>0) {
                 if (owner->opponent->spiritCooldown>5)

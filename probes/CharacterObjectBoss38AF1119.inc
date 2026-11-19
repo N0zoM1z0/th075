@@ -49,7 +49,7 @@ case 0x38A: {
     }
     if (owner->animationStage==9 && animationStage<6) {
         ResetSecondaryCounter(animationStage+5);
-        velocityX=float(RandomBoundaryAt00455580(0,30)+10);
+        velocityX=float(RecordedRange(0,30)+10);
         velocityY=-20.0f;
     }
     x=float(facing)*velocityX+x;

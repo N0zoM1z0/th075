@@ -12,7 +12,7 @@ case 0x3E3: {
         color[3]=0xFF;
         velocityX=0.0f;
         velocityY=-1.0f;
-        field0D8=short(RandomBoundaryAt00455580(0,360)-180);
+        field0D8=short(RecordedRange(0,360)-180);
         field0DA=15;
     }
     if (animationStage==0) {
@@ -38,7 +38,7 @@ case 0x3E3: {
             else {
                 owner->opponent->score+=0x4E20;
             }
-            NativeHitAt0045B860(0x2E);
+            PlaySharedSound(0x2E);
             return;
         }
     }

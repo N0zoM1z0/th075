@@ -14,7 +14,7 @@ case 0x391: {
         color[2]=0xFF;
         color[3]=0xFF;
         velocityX=3.0f;
-        velocityY=g_F1095_UpperYAt00659890-float(RandomBoundaryAt00455580(0,9));
+        velocityY=g_F1095_UpperYAt00659890-float(RecordedRange(0,9));
         field0D8=0;
         field0DA=0;
         field0DC=0;

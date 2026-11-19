@@ -28,7 +28,7 @@ case 0x386: {
         velocityY=0.0f;
     }
     if (animationStage==1) {
-        scaleX=float(RandomBoundaryAt00455580(0,4))*
+        scaleX=float(RecordedRange(0,4))*
             g_F1057_SpeedScaleAt006590B4+g_F1115_RandomDoubleAt006583B8;
         reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
         if (F1115_AbsFloatAt00412D90(x-
@@ -48,8 +48,8 @@ case 0x386: {
         for (int shot=0;shot<12;++shot) {
             owner->SpawnBattleEffect(
                 0x387,
-                (*(&x))+g_F1069_ParentYSecondAt00658264-float(RandomBoundaryAt00455580(0,80)),
-                float(RandomBoundaryAt00455580(0,320)),
+                (*(&x))+g_F1069_ParentYSecondAt00658264-float(RecordedRange(0,80)),
+                float(RecordedRange(0,320)),
                 facing,1);
         }
         ClearFrameInfo();

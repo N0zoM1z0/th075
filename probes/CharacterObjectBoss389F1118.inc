@@ -23,9 +23,9 @@ case 0x389: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field0D8=short(RandomBoundaryAt00455580(0,300)+200);
-        field0DA=short(RandomBoundaryAt00455580(0,50)+45);
-        field0DC=short(RandomBoundaryAt00455580(0,15)+5);
+        field0D8=short(RecordedRange(0,300)+200);
+        field0DA=short(RecordedRange(0,50)+45);
+        field0DC=short(RecordedRange(0,15)+5);
         SetPolarVelocity(
             float(field0DA),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4);
@@ -37,7 +37,7 @@ case 0x389: {
         owner->SpawnBattleEffect(
             0x33C,x,y,
             facing,1);
-        scaleX=float(double(RandomBoundaryAt00455580(0,4)-2)*
+        scaleX=float(double(RecordedRange(0,4)-2)*
             g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
         reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
         // Native ordinal-101 JG skips the entire signed-speed decay:

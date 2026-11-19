@@ -49,6 +49,16 @@ instruction widths that follow from it.
 | 005EB520 | Meiling object | 34,434 | `CharacterObjectWhole005EB520F1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
+Patchouli object's 81,539-byte giant now calls native typed C++
+helpers in place of its last random/angle/sound alias methods:
+`PatchouliObject::RecordedRange` for 37 compiled native calls,
+`Actor::SetPolarVelocity` for 19 calls (including exact float-bit
+argument recovery), and `PatchouliObject::PlaySharedSound` for two.
+Whole 82,109-byte COFF bodies preserve all 1,449 relocation positions/
+types, zero nonrelocation byte changes and its unchanged nonexact
+24,643-byte frontier. All 24 `CharacterObject.hpp`-affected exact
+units cold-replayed successfully.
+
 Patchouli object `0050A580` now defines `PatchouliObject::Advance` on its
 actual vtable class. The parent preserves its complete 81,539 CODE bytes,
 with 522 GPR and five width differences. Thirty-two parent sound calls

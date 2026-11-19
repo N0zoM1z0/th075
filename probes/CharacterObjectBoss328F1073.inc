@@ -30,7 +30,7 @@ case 0x328: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),13.0f);
+        SetPolarVelocity(field0C8,13.0f);
         reinterpret_cast<unsigned int&>(rotationZ)=reinterpret_cast<unsigned int&>(field0C8);
         field0D8=0;
         field080=1;
@@ -46,8 +46,8 @@ case 0x328: {
     // subsequent native state/ground branch (original ordinal 147..176).
     owner->SpawnBattleEffect(
         0x32B,
-        float(RandomBoundaryAt00455580(0,60))+x-g_F1068_ActionSpeedAt00657878,
-        float(RandomBoundaryAt00455580(0,60))+y-g_F1068_ActionSpeedAt00657878,
+        float(RecordedRange(0,60))+x-g_F1068_ActionSpeedAt00657878,
+        float(RecordedRange(0,60))+y-g_F1068_ActionSpeedAt00657878,
         facing,0);
     if (field080==0 ||
         y+velocityY<=g_F1044_GroundAt0065782C) {

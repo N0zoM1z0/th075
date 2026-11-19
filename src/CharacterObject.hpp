@@ -9,6 +9,7 @@ class CharacterObject : public Actor {
 public:
     CharacterObject();                  // 0045B760; object vtables have no destructor slot
     void ClearFrameInfo();              // 0045B830
+    void NoOpAt0045B850(int unused);    // 0045B850, observed native no-op RET 4
     void Render();                      // slot 2, 0040FC70
 
     ActionSequenceSlots* sequences;     // +0x0C4 the owner's sequence container (owner + 0x468)
@@ -51,9 +52,8 @@ class PatchouliObject : public CharacterObject {
 public:
     PatchouliObject(void* ownerFighter);
     virtual void Advance();  // 0050A580; complete 81,539-byte nonexact parent
-    void NativeHitAt0045B860(short effect);
-    void SetNativeAngleBitsAt0040FB70(unsigned int angleBits, float speed);
-    int RandomBoundaryAt00455580(int lower, int upper);
+    void PlaySharedSound(short sound);
+    int RecordedRange(int lower, int upper);
 };
 class YoumuObject : public CharacterObject {
 public:
@@ -75,7 +75,6 @@ public:
     virtual void Advance();   // 0057D580; complete nonexact parent
     int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
-    void UnknownAt0045B850(int value);  // native RET 4, semantics unconfirmed
 };
 class YukariObject : public CharacterObject {
 public:
@@ -83,7 +82,6 @@ public:
     virtual void Advance();  // original 005A1600; complete, nonexact research parent
     int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
-    void UnknownAt0045B850(int value); // observed RET 4; meaning not established
 };
 class SuikaObject : public CharacterObject {
 public:
@@ -91,7 +89,6 @@ public:
     virtual void Advance(); // native 005C9CC0, complete nonexact research parent
     int RecordedRange(int lower, int upper);
     void PlaySharedSound(short sound);
-    void UnknownAt0045B850(int value); // observed RET 4, meaning not established
 };
 class MeilingObject : public CharacterObject {
 public:

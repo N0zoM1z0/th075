@@ -48,8 +48,8 @@ case F1074_CASE: {
     // argument is evaluated first under original MSVC7.1 /Od.
     owner->SpawnBattleEffect(
         0x32B,
-        float(RandomBoundaryAt00455580(0,60))+x-g_F1068_ActionSpeedAt00657878,
-        float(RandomBoundaryAt00455580(0,60))+y-g_F1068_ActionSpeedAt00657878,
+        float(RecordedRange(0,60))+x-g_F1068_ActionSpeedAt00657878,
+        float(RecordedRange(0,60))+y-g_F1068_ActionSpeedAt00657878,
         facing,0);
     if (field080==0) {
         ClearFrameInfo();

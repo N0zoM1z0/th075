@@ -23,7 +23,7 @@ case 0x385: {
         rotationZ=15.0f;
     }
     if (animationStage==2) {
-        scaleX=float(RandomBoundaryAt00455580(0,6))*
+        scaleX=float(RecordedRange(0,6))*
             g_F1057_SpeedScaleAt006590B4+g_F1114_RandomOffsetAt00659094;
         scaleY=(*(&scaleX))+g_F1051_ScaleCeilingAt0065747C;
     }

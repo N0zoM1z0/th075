@@ -10,7 +10,7 @@ case 0x323: {
         field080=1;
         field07C=0;
         field0D8=0;
-        SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
+        SetPolarVelocity(field0C8,
             float(field0D8)*g_F1057_SpeedScaleAt006590B4+
             g_F1070_InitSpeedAt00657858);
         scaleX=0.1f;
@@ -24,7 +24,7 @@ case 0x323: {
     }
     ++field0D8;
     if (animationStage<2) {
-        SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
+        SetPolarVelocity(field0C8,
             float(field0D8)*g_F1057_SpeedScaleAt006590B4+
             g_F1070_AnimSpeedAt006592A4);
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {

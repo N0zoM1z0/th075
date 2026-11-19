@@ -79,7 +79,7 @@ case F1111_CASE: {
         owner->SpawnBattleEffect(
             F1111_NEXT_ACTION,x,y,
             facing,1);
-        scaleX=float(double(RandomBoundaryAt00455580(0,4)-2)*
+        scaleX=float(double(RecordedRange(0,4)-2)*
             g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
         reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
     }

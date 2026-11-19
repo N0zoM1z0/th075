@@ -5,9 +5,9 @@ case 0x33A: {
         ResetTransform(0,0,0);
         field080=1;
         field07C=0;
-        field0D8=short(RandomBoundaryAt00455580(0,13)+12);
-        field0DA=short(RandomBoundaryAt00455580(0,0x167));
-        scaleX=float(RandomBoundaryAt00455580(0,30)+20)*g_F1059_ScaleBaseAt006590B4;
+        field0D8=short(RecordedRange(0,13)+12);
+        field0DA=short(RecordedRange(0,0x167));
+        scaleX=float(RecordedRange(0,30)+20)*g_F1059_ScaleBaseAt006590B4;
         scaleY=(scaleX)*g_F1059_ScaleRatioAt00657478;
         color[0]=0xFF;
         color[1]=0xFF;

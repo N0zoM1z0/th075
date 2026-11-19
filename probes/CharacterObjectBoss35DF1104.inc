@@ -8,7 +8,7 @@ case 0x35D: {
         owner->SpawnBattleEffect(
             0x330,
             (*(&x))+g_F1057_YOffsetAt00657888-
-                float(RandomBoundaryAt00455580(0,200)),
+                float(RecordedRange(0,200)),
             0.0f,facing,1);
         ++field0D8;
     }

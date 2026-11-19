@@ -23,9 +23,9 @@ case 0x387: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        rotationZ=float(RandomBoundaryAt00455580(0,0x167));
-        velocityX=float(RandomBoundaryAt00455580(0,16)-8);
-        velocityY=float(RandomBoundaryAt00455580(0,6)+12);
+        rotationZ=float(RecordedRange(0,0x167));
+        velocityX=float(RecordedRange(0,16)-8);
+        velocityY=float(RecordedRange(0,6)+12);
     }
     // The native stage-zero guard jumps to ordinal 92: BOTH the
     // velocity decrement and angle nudge run on every frame.
