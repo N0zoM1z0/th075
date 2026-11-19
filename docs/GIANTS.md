@@ -950,3 +950,10 @@ and Yuyuko's `fieldF10`. These members now use their declared `short` types
 directly. The same 20 initialization/reset exact units were replayed again
 and passed 20/20. No `reinterpret_cast<unsigned short&>` aliases remain in
 tracked `src/` or `probes/` sources.
+`Fighter::field478` at `+0x478` is a signed 16-bit texture-slot count. The
+native `LoadResources` body uses `movsx` before passing it to `AllocateSlots`;
+the member is now `short` and the call passes it directly, removing the last
+`reinterpret_cast<short&>` member view in tracked source. The complete
+1,186-byte `Fighter::LoadResources` body and all 63 relocations remain
+identical. Its exact unit and all eleven character initialization units
+replayed 12/12.

@@ -263,3 +263,8 @@ zero writes to signed `aiWaitTimer/aiStep/aiCardTimer`, `field6FA/field6FC`,
 Suika `fieldF28/fieldF2A`, and Yuyuko `fieldF10`. All 20 exact init/reset
 units replayed 20/20 again; no unsigned-short reference aliases remain in
 tracked source/probe files.
+`Fighter::field478` (+0x478) is also a signed short: the native resource
+loader sign-extends it before `AllocateSlots`. The declaration and call now
+use the natural member directly; the complete 1,186-byte loader body and all
+63 relocations remain identical, with the loader plus all eleven character
+initializers replayed 12/12.
