@@ -87,9 +87,9 @@ void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
     }
     if (hit) {
         second->field08C = (hitBounds.left + hitBounds.right) / 2.0f;
-        reinterpret_cast<unsigned long&>(first->field08C) = reinterpret_cast<unsigned long&>(second->field08C);
+        first->field08C = second->field08C;
         second->field090 = (hitBounds.top + hitBounds.bottom) / 2.0f;
-        reinterpret_cast<unsigned long&>(first->field090) = reinterpret_cast<unsigned long&>(second->field090);
+        first->field090 = second->field090;
         if (first->sequenceInfo->priority >= second->sequenceInfo->targetPriority ||
             second->sequenceInfo->priority >= first->sequenceInfo->targetPriority) {
             first->field07C = 5;
@@ -107,14 +107,14 @@ void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
     }
 }
 
-// Positions are copied as raw DWORDs, not as floats.
+// Preserve the collision snapshot as ordinary float members.
 void Actor::SaveCollisionFields()
 {
     savedField07C = field07C;
     savedFrameInfo = frameInfo;
     savedSequenceInfo = sequenceInfo;
-    reinterpret_cast<unsigned long&>(savedX) = reinterpret_cast<unsigned long&>(x);
-    reinterpret_cast<unsigned long&>(savedY) = reinterpret_cast<unsigned long&>(y);
+    savedX = x;
+    savedY = y;
     savedFacing = facing;
     savedAction = action;
 }
