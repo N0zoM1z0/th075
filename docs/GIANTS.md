@@ -214,6 +214,16 @@ nonexact (914 GPR-role differences and six widths); all 24 affected
 exact units cold-replayed. Other parents retain their historical names.
 
 
+Alice object `004EBDA0` now also dispatches through truthful inherited
+Actor/CharacterObject C++ calls rather than speculative `AliceObject` helper
+names: 93 `ClearFrameInfo`, 66 `ResetSecondaryCounter`, 56
+`AdvanceNestedFrame`, 52 `ResetTransform` and seven
+`ResetPrimaryCounters` call relocations (274 total). Full 33,731-byte
+COFF output preserves all 682 original relocation positions/types with
+zero nonrelocation-byte differences. Its 33,293-byte native frontier is
+unchanged (133 GPR-role, no width mismatches), and the 24 exact units
+depending on `CharacterObject.hpp` cold-replayed successfully.
+
 At Yuyuko's first register-role discrepancy (`00583489`, case 837), the
 native path returning from `AdvanceNestedFrame`/`ClearFrameInfo` joins the
 next animation-stage test with the scratch-register rotation one position

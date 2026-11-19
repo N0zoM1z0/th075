@@ -93,7 +93,7 @@ void AliceObject::Advance() {
         case 0x326: ResetAt4F4170(); break;
         case 0x327: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
@@ -110,7 +110,7 @@ void AliceObject::Advance() {
             field0D8 = -30;
             field0DA = 150;
             field0DC = 0;
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field080 = 4;
             field07C = 0;
             scaleX = 1.0f;
@@ -135,7 +135,7 @@ void AliceObject::Advance() {
             if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                SetStateAt40FB40(1);
+                ResetSecondaryCounter(1);
                 rotationZ = 0.0f;
                 break;
             }
@@ -143,7 +143,7 @@ void AliceObject::Advance() {
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) - *(&velocityY);
         if ((animationStage) < 5 && (field080) == 0) {
-            SetStateAt40FB40((animationStage) + 4);
+            ResetSecondaryCounter((animationStage) + 4);
             break;
         }
         if ((animationStage) > 4) {
@@ -152,18 +152,18 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            SetStateAt40FB40(5);
+        if (AdvanceNestedFrame() == (field070)) {
+            ResetSecondaryCounter(5);
             break;
         }
         if ((animationFrame) == 0)
             field07C = 0;
         if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
-            SetStateAt40FB40(1);
+            ResetSecondaryCounter(1);
             ++field0DC;
         }
     }
@@ -171,7 +171,7 @@ void AliceObject::Advance() {
 }
         case 0x328: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
@@ -188,7 +188,7 @@ void AliceObject::Advance() {
             field0D8 = 70;
             field0DA = 150;
             field0DC = 0;
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field080 = 4;
             field07C = 0;
             scaleX = 1.0f;
@@ -213,7 +213,7 @@ void AliceObject::Advance() {
             if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                SetStateAt40FB40(1);
+                ResetSecondaryCounter(1);
                 rotationZ = 0.0f;
                 break;
             }
@@ -221,7 +221,7 @@ void AliceObject::Advance() {
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) - *(&velocityY);
         if ((animationStage) < 5 && (field080) == 0) {
-            SetStateAt40FB40((animationStage) + 4);
+            ResetSecondaryCounter((animationStage) + 4);
             break;
         }
         if ((animationStage) > 4) {
@@ -230,18 +230,18 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            SetStateAt40FB40(5);
+        if (AdvanceNestedFrame() == (field070)) {
+            ResetSecondaryCounter(5);
             break;
         }
         if ((animationFrame) == 0)
             field07C = 0;
         if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
-            SetStateAt40FB40(1);
+            ResetSecondaryCounter(1);
             ++field0DC;
         }
     }
@@ -249,7 +249,7 @@ void AliceObject::Advance() {
 }
         case 0x329: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
@@ -266,7 +266,7 @@ void AliceObject::Advance() {
             field0D8 = -30;
             field0DA = 200;
             field0DC = 0;
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field080 = 4;
             field07C = 0;
             scaleX = 1.0f;
@@ -291,7 +291,7 @@ void AliceObject::Advance() {
             if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                SetStateAt40FB40(1);
+                ResetSecondaryCounter(1);
                 rotationZ = 0.0f;
                 break;
             }
@@ -299,7 +299,7 @@ void AliceObject::Advance() {
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) - *(&velocityY);
         if ((animationStage) < 5 && (field080) == 0) {
-            SetStateAt40FB40((animationStage) + 4);
+            ResetSecondaryCounter((animationStage) + 4);
             break;
         }
         if ((animationStage) > 4) {
@@ -308,18 +308,18 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            SetStateAt40FB40(5);
+        if (AdvanceNestedFrame() == (field070)) {
+            ResetSecondaryCounter(5);
             break;
         }
         if ((animationFrame) == 0)
             field07C = 0;
         if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
-            SetStateAt40FB40(1);
+            ResetSecondaryCounter(1);
             ++field0DC;
         }
     }
@@ -327,7 +327,7 @@ void AliceObject::Advance() {
 }
         case 0x32A: {
     if ((owner->action) > 0x31 && (owner->action) < 0x96) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 0x19) {
@@ -341,7 +341,7 @@ void AliceObject::Advance() {
             field080 = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field080 = 1;
             field07C = 0;
             if (*(&field0C8) == gCompareAt0065782C) {
@@ -384,7 +384,7 @@ void AliceObject::Advance() {
                 PARENT->SpawnDirectedAt453A70(0x32B, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
                 PARENT->SpawnDirectedAt453A70(0x32D, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
                 PARENT->ModifyAt453D40(4);
-                SetActionAt40FAC0(0x33B);
+                ResetPrimaryCounters(0x33B);
                 y = 0.0f;
                 velocityY = 0.0f;
                 velocityX = 0.0f;
@@ -392,15 +392,15 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070))
-            SetStateAt40FB40(1);
+        if (AdvanceNestedFrame() == (field070))
+            ResetSecondaryCounter(1);
     }
     break;
 }
         case 0x32B: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
@@ -423,17 +423,17 @@ void AliceObject::Advance() {
             color[0] -= 10;
         else {
             color[0] = 0;
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x32C: {
     if ((owner->action) > 0x31 && (owner->action) < 0x96) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -443,7 +443,7 @@ void AliceObject::Advance() {
         break;
     } else {
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field080 = 1;
             field07C = 0;
             MotionRawAt40FB70(reinterpret_cast<int&>(field0C8),15.0f);
@@ -462,7 +462,7 @@ void AliceObject::Advance() {
                 PARENT->ModifyAt453D40(4);
                 PARENT->SpawnDirectedAt453A70(0x32B, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
                 PARENT->SpawnDirectedAt453A70(0x32D, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-                SetActionAt40FAC0(0x33B);
+                ResetPrimaryCounters(0x33B);
                 y = 0.0f;
                 velocityY = 0.0f;
                 velocityX = 0.0f;
@@ -470,14 +470,14 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070))
-            SetStateAt40FB40(1);
+        if (AdvanceNestedFrame() == (field070))
+            ResetSecondaryCounter(1);
     }
     break;
 }
         case 0x32D: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 0.4f;
         scaleY = 0.4f;
         color[0] = 0xFF;
@@ -493,18 +493,18 @@ void AliceObject::Advance() {
         if ((color[0]) > 20)
             color[0] -= 20;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x32E: {
     if ((animationStage) == 0 && (animationFrame) == 0 && (field0D8) == 1) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
@@ -522,13 +522,13 @@ void AliceObject::Advance() {
     scaleX = (scaleX) + gFadeAt00659428;
     scaleY = (scaleY) + gFadeAt00659428;
     color[0] -= 10;
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x330: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -542,7 +542,7 @@ void AliceObject::Advance() {
             field080 = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -569,12 +569,12 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            ResetAt45B830();
+        if (AdvanceNestedFrame() == (field070)) {
+            ClearFrameInfo();
             break;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
@@ -583,12 +583,12 @@ void AliceObject::Advance() {
             rotationZ = 0.0f;
         }
         if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             ++field0DC;
         }
         if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
             ++field0DA;
-            SetStateAt40FB40(9);
+            ResetSecondaryCounter(9);
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
@@ -603,7 +603,7 @@ void AliceObject::Advance() {
 }
         case 0x331: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -617,7 +617,7 @@ void AliceObject::Advance() {
             field080 = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -644,12 +644,12 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            ResetAt45B830();
+        if (AdvanceNestedFrame() == (field070)) {
+            ClearFrameInfo();
             break;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
@@ -658,12 +658,12 @@ void AliceObject::Advance() {
             rotationZ = 0.0f;
         }
         if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             ++field0DC;
         }
         if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
             ++field0DA;
-            SetStateAt40FB40(9);
+            ResetSecondaryCounter(9);
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
@@ -678,7 +678,7 @@ void AliceObject::Advance() {
 }
         case 0x332: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -692,7 +692,7 @@ void AliceObject::Advance() {
             field080 = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -719,12 +719,12 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            ResetAt45B830();
+        if (AdvanceNestedFrame() == (field070)) {
+            ClearFrameInfo();
             break;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
@@ -734,12 +734,12 @@ void AliceObject::Advance() {
             facing = -(facing);
         }
         if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             ++field0DC;
         }
         if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
             ++field0DA;
-            SetStateAt40FB40(9);
+            ResetSecondaryCounter(9);
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
@@ -759,7 +759,7 @@ void AliceObject::Advance() {
     }
     if ((owner->action) > 0x45 && (owner->action) < 0x96 &&
             (field080) > 0 && (animationStage) < 11) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -774,7 +774,7 @@ void AliceObject::Advance() {
             field0DC = 0;
             field07C = 0;
             field080 = 99;
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -793,7 +793,7 @@ void AliceObject::Advance() {
         if ((animationStage) == 10 && *(&y) - *(&velocityY) <= gCollisionAt00657888) {
             velocityX = 2.0f;
             velocityY = 2.0f;
-            SetStateAt40FB40(11);
+            ResetSecondaryCounter(11);
         }
         if ((animationStage) > 10 && (field0D8) > 2) {
             velocityX = 0.0f;
@@ -803,12 +803,12 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            SetStateAt40FB40(10);
+        if (AdvanceNestedFrame() == (field070)) {
+            ResetSecondaryCounter(10);
             ++field0D8;
             break;
         }
@@ -819,7 +819,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 6 && (animationFrame) == 0 &&
                 static_cast<float>(field0DC) < *(&gCompareAt0065782C) + *(&field0CC)) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             ++field0DC;
         }
         if ((animationStage) == 10 && (animationFrame) == 0) {
@@ -833,7 +833,7 @@ void AliceObject::Advance() {
         case 0x338: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
@@ -861,12 +861,12 @@ void AliceObject::Advance() {
             color[0] -= 20;
         else {
             color[0] = 0;
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     if ((animationStage) == 2 && (animationFrame) == 0)
         PARENT->SpawnDirectedAt453A70(0x339, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
     break;
@@ -874,7 +874,7 @@ void AliceObject::Advance() {
         case 0x339: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
@@ -896,17 +896,17 @@ void AliceObject::Advance() {
             color[0] -= 40;
         else {
             color[0] = 0;
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x33A: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -922,17 +922,17 @@ void AliceObject::Advance() {
         if ((color[0]) > 20)
             color[0] -= 20;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x33B: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -947,11 +947,11 @@ void AliceObject::Advance() {
     velocityY = (velocityY) - gVelocityDragAt00659454;
     rotationZ = (rotationZ) + gGrowAt00657CBC;
     if ((y) < gMaxPositionAt0065912C) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x33C: {
@@ -968,7 +968,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field07C = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -989,12 +989,12 @@ void AliceObject::Advance() {
         if ((color[0]) >= 10)
             color[0] -= 10;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070)) {
-        SetStateAt40FB40(1);
+    if (AdvanceNestedFrame() == (field070)) {
+        ResetSecondaryCounter(1);
         break;
     }
     break;
@@ -1013,7 +1013,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field07C = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1034,12 +1034,12 @@ void AliceObject::Advance() {
         if ((color[0]) >= 10)
             color[0] -= 10;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070)) {
-        SetStateAt40FB40(1);
+    if (AdvanceNestedFrame() == (field070)) {
+        ResetSecondaryCounter(1);
         break;
     }
     break;
@@ -1050,14 +1050,14 @@ void AliceObject::Advance() {
         y = (owner->y) + gStageOffsetAt006590AC;
     }
     if ((owner->action) != 0x2BE && (animationStage) < 7) {
-        SetStateAt40FB40(7);
+        ResetSecondaryCounter(7);
         break;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field080 = 1;
         field07C = 0;
         if ((field0D8) != 1) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             scaleX = 1.5f;
             scaleY = 1.5f;
             field0D8 = 0;
@@ -1073,10 +1073,10 @@ void AliceObject::Advance() {
                   * gScatterRateAt006578C0 + gScatterBaseAt006581E0;
     if ((animationStage) == 7)
         scaleY = (scaleY) * gShrinkAt00659094;
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     if ((animationStage) == 7 && (animationFrame) == 0 && (field0D8) < 10) {
-        SetStateAt40FB40(6);
+        ResetSecondaryCounter(6);
         field07C = 0;
         ++field0D8;
     }
@@ -1088,12 +1088,12 @@ void AliceObject::Advance() {
         y = (owner->y) + gStageOffsetAt006590AC;
     }
     if ((owner->action) != 0x2C1 && (animationStage) < 17) {
-        SetStateAt40FB40(17);
+        ResetSecondaryCounter(17);
         break;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field07C = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 2.0f;
         scaleY = 1.5f;
         field0D8 = 0;
@@ -1103,12 +1103,12 @@ void AliceObject::Advance() {
         color[3] = 0xFF;
         field080 = 25;
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     if ((animationFrame) == 0)
         field07C = 0;
     if ((animationStage) == 13 && (animationFrame) == 0 && (field0D8) < 2) {
-        SetStateAt40FB40(6);
+        ResetSecondaryCounter(6);
         ++field0D8;
     }
     break;
@@ -1119,7 +1119,7 @@ void AliceObject::Advance() {
         field080 = 1;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
@@ -1144,7 +1144,7 @@ void AliceObject::Advance() {
             PARENT->SpawnDirectedAt453A70(0x338, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
             PARENT->SpawnDirectedAt453A70(0x33A, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
             PARENT->ModifyAt453D40(8);
-            SetActionAt40FAC0(0x33B);
+            ResetPrimaryCounters(0x33B);
             y = 0.0f;
             velocityY = 0.0f;
             velocityX = 0.0f;
@@ -1152,8 +1152,8 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        SetStateAt40FB40(1);
+    if (AdvanceNestedFrame() == (field070))
+        ResetSecondaryCounter(1);
     break;
 }
         case 0x341: {
@@ -1162,7 +1162,7 @@ void AliceObject::Advance() {
         field080 = 1;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
@@ -1187,7 +1187,7 @@ void AliceObject::Advance() {
             PARENT->SpawnDirectedAt453A70(0x342, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
             PARENT->SpawnDirectedAt453A70(0x344, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
             PARENT->ModifyAt453D40(10);
-            SetActionAt40FAC0(0x33B);
+            ResetPrimaryCounters(0x33B);
             y = 0.0f;
             velocityY = 0.0f;
             velocityX = 0.0f;
@@ -1195,14 +1195,14 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        SetStateAt40FB40(1);
+    if (AdvanceNestedFrame() == (field070))
+        ResetSecondaryCounter(1);
     break;
 }
         case 0x342: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
@@ -1224,14 +1224,14 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 3 && (animationFrame) == 0)
         PARENT->SpawnDirectedAt453A70(0x343, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x343: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
@@ -1253,17 +1253,17 @@ void AliceObject::Advance() {
             color[0] -= 20;
         else {
             color[0] = 0;
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x344: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -1279,17 +1279,17 @@ void AliceObject::Advance() {
         if ((color[0]) > 20)
             color[0] -= 20;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30() == (field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070))
+        ClearFrameInfo();
     break;
 }
         case 0x345: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -1306,17 +1306,17 @@ void AliceObject::Advance() {
             (x) < gBoundLowerAt0065930C ||
             (y) < gBoundLowerAt0065930C ||
             (y) > gBoundUpperAt00658E80) {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
-        if (GetStateAt40FA30() == (field070))
-            SetStateAt40FB40(6);
+        if (AdvanceNestedFrame() == (field070))
+            ResetSecondaryCounter(6);
         break;
     }
     if ((animationStage) == 1) {
         rotationZ = (rotationZ) + gGrowAt00657CBC;
         if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             field080 = 99;
             rotationZ = 0.0f;
             field07C = 0;
@@ -1344,17 +1344,17 @@ void AliceObject::Advance() {
         if ((field0DA) < 140) field0DA += 7;
         if ((field0DA) > 140) field0DA = 140;
     }
-    if (GetStateAt40FA30() == (field070)) SetStateAt40FB40(6);
-    if ((animationStage) == 2 && (animationFrame) == 0) SetStateAt40FB40(1);
+    if (AdvanceNestedFrame() == (field070)) ResetSecondaryCounter(6);
+    if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
-        SetStateAt40FB40(2);
+        ResetSecondaryCounter(2);
         field07C = 0;
     }
     break;
 }
         case 0x346: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -1373,8 +1373,8 @@ void AliceObject::Advance() {
             velocityX = 0.0f;
     }
     x += static_cast<float>(facing) * (velocityX);
-    if (GetStateAt40FA30() == (field070)) {
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070)) {
+        ClearFrameInfo();
         (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
     }
     if ((animationStage) == 1 && (animationFrame) == 0)
@@ -1385,7 +1385,7 @@ void AliceObject::Advance() {
 }
         case 0x347: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -1402,17 +1402,17 @@ void AliceObject::Advance() {
             (x) < gBoundLowerAt0065930C ||
             (y) < gBoundLowerAt0065930C ||
             (y) > gBoundUpperAt00658E80) {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
-        if (GetStateAt40FA30() == (field070))
-            SetStateAt40FB40(6);
+        if (AdvanceNestedFrame() == (field070))
+            ResetSecondaryCounter(6);
         break;
     }
     if ((animationStage) == 1) {
         rotationZ = (rotationZ) + gGrowAt00657CBC;
         if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             field080 = 99;
             rotationZ = 0.0f;
             field07C = 0;
@@ -1440,17 +1440,17 @@ void AliceObject::Advance() {
         if ((field0DA) < 120) field0DA += 6;
         if ((field0DA) > 120) field0DA = 120;
     }
-    if (GetStateAt40FA30() == (field070)) SetStateAt40FB40(6);
-    if ((animationStage) == 2 && (animationFrame) == 0) SetStateAt40FB40(1);
+    if (AdvanceNestedFrame() == (field070)) ResetSecondaryCounter(6);
+    if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
-        SetStateAt40FB40(2);
+        ResetSecondaryCounter(2);
         field07C = 0;
     }
     break;
 }
         case 0x348: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -1467,17 +1467,17 @@ void AliceObject::Advance() {
             (x) < gBoundLowerAt0065930C ||
             (y) < gBoundLowerAt0065930C ||
             (y) > gBoundUpperAt00658E80) {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
-        if (GetStateAt40FA30() == (field070))
-            SetStateAt40FB40(6);
+        if (AdvanceNestedFrame() == (field070))
+            ResetSecondaryCounter(6);
         break;
     }
     if ((animationStage) == 1) {
         rotationZ = (rotationZ) + gGrowAt00657CBC;
         if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             field080 = 99;
             rotationZ = 0.0f;
             field07C = 0;
@@ -1505,17 +1505,17 @@ void AliceObject::Advance() {
         if ((field0DA) < 200) field0DA += 10;
         if ((field0DA) > 200) field0DA = 200;
     }
-    if (GetStateAt40FA30() == (field070)) SetStateAt40FB40(6);
-    if ((animationStage) == 2 && (animationFrame) == 0) SetStateAt40FB40(1);
+    if (AdvanceNestedFrame() == (field070)) ResetSecondaryCounter(6);
+    if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
-        SetStateAt40FB40(2);
+        ResetSecondaryCounter(2);
         field07C = 0;
     }
     break;
 }
         case 0x349: {
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -1534,8 +1534,8 @@ void AliceObject::Advance() {
             velocityX = 0.0f;
     }
     x += static_cast<float>(facing) * (velocityX);
-    if (GetStateAt40FA30() == (field070)) {
-        ResetAt45B830();
+    if (AdvanceNestedFrame() == (field070)) {
+        ClearFrameInfo();
         (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
     }
     if ((animationStage) == 1 && (animationFrame) == 0)
@@ -1546,7 +1546,7 @@ void AliceObject::Advance() {
 }
         case 0x34A: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -1560,7 +1560,7 @@ void AliceObject::Advance() {
             field080 = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -1584,7 +1584,7 @@ void AliceObject::Advance() {
                 y = 20.0f;
                 velocityY = 0.0f;
                 velocityX = 0.0f;
-                SetStateAt40FB40(1);
+                ResetSecondaryCounter(1);
                 rotationZ = 0.0f;
                 color[0] = 0xFF;
                 break;
@@ -1596,12 +1596,12 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            ResetAt45B830();
+        if (AdvanceNestedFrame() == (field070)) {
+            ClearFrameInfo();
             break;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
@@ -1610,12 +1610,12 @@ void AliceObject::Advance() {
             rotationZ = 0.0f;
         }
         if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 1) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             ++field0DC;
         }
         if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
             ++field0DA;
-            SetStateAt40FB40(9);
+            ResetSecondaryCounter(9);
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
@@ -1630,7 +1630,7 @@ void AliceObject::Advance() {
 }
         case 0x34B: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 11) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -1644,7 +1644,7 @@ void AliceObject::Advance() {
             field080 = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -1670,12 +1670,12 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            ResetAt45B830();
+        if (AdvanceNestedFrame() == (field070)) {
+            ClearFrameInfo();
             break;
         }
         if ((animationStage) == 1 && (animationFrame) == 0) {
@@ -1684,12 +1684,12 @@ void AliceObject::Advance() {
             rotationZ = 0.0f;
         }
         if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
-            SetStateAt40FB40(2);
+            ResetSecondaryCounter(2);
             ++field0DC;
         }
         if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
             ++field0DA;
-            SetStateAt40FB40(9);
+            ResetSecondaryCounter(9);
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
@@ -1704,7 +1704,7 @@ void AliceObject::Advance() {
 }
         case 0x34C: {
     if ((owner->action) > 0x45 && (owner->action) < 0x96 && (animationStage) < 5) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -1722,11 +1722,11 @@ void AliceObject::Advance() {
             if ((owner->action) == 0x19A)
                 y = (owner->y) + gParentYExtraAt00658264;
         } else if ((animationStage) < 5) {
-            SetStateAt40FB40(5);
+            ResetSecondaryCounter(5);
             break;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -1742,17 +1742,17 @@ void AliceObject::Advance() {
             if ((color[0]) >= 10)
                 color[0] -= 10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
-        if (GetStateAt40FA30() == (field070)) {
-            ResetAt45B830();
+        if (AdvanceNestedFrame() == (field070)) {
+            ClearFrameInfo();
             break;
         }
         if ((animationStage) == 4 && (animationFrame) == 0 && (field0DA) < 8) {
             ++field0DA;
-            SetStateAt40FB40(3);
+            ResetSecondaryCounter(3);
         }
         if ((animationStage) == 3 && (animationFrame) == 0) {
             if ((owner->action) == 0x198) {
@@ -1793,7 +1793,7 @@ void AliceObject::Advance() {
 }
         case 0x34D: {
     if ((owner->action) > 0x31 && (owner->action) < 0x96) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0; iteration<5; ++iteration)
             PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA)) > 25) {
@@ -1807,7 +1807,7 @@ void AliceObject::Advance() {
             field080=1;
         }
         if ((animationStage)==0 && (animationFrame)==0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
             field080=1;
             field07C=0;
             reinterpret_cast<int&>(velocityX)=reinterpret_cast<int&>(field0C8);
@@ -1828,7 +1828,7 @@ void AliceObject::Advance() {
                 PARENT->ModifyAt453D40(4);
                 PARENT->SpawnDirectedAt453A70(0x32B,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
                 PARENT->SpawnDirectedAt453A70(0x32D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
-                SetActionAt40FAC0(0x33B);
+                ResetPrimaryCounters(0x33B);
                 y=0.0f;
                 velocityY=0.0f;
                 velocityX=0.0f;
@@ -1836,14 +1836,14 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30()==(field070))
-            SetStateAt40FB40(1);
+        if (AdvanceNestedFrame()==(field070))
+            ResetSecondaryCounter(1);
     }
     break;
 }
         case 0x34E: {
     if ((owner->action)>0x31 && (owner->action)<0x96) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0;iteration<4;++iteration)
             PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA))>25) {
@@ -1862,12 +1862,12 @@ void AliceObject::Advance() {
             if ((color[0])>=10)
                 color[0]-=10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
         if ((animationStage)==0 && (animationFrame)==0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
 
             velocityX=20.0f;
             velocityY=0.0f;
@@ -1884,8 +1884,8 @@ void AliceObject::Advance() {
             velocityX=2.0f;
         x += static_cast<float>(facing)*(velocityX);
         y = *(&y)+*(&velocityY);
-        if (GetStateAt40FA30()==(field070)) {
-            SetStateAt40FB40(1);
+        if (AdvanceNestedFrame()==(field070)) {
+            ResetSecondaryCounter(1);
             ++field0D8;
         }
     }
@@ -1893,7 +1893,7 @@ void AliceObject::Advance() {
 }
         case 0x34F: {
     if ((owner->action)>0x31 && (owner->action)<0x96) {
-        ResetAt45B830();
+        ClearFrameInfo();
         for (int iteration=0;iteration<4;++iteration)
             PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if ((reinterpret_cast<short&>(owner->fieldEFA))>25) {
@@ -1912,12 +1912,12 @@ void AliceObject::Advance() {
             if ((color[0])>=10)
                 color[0]-=10;
             else {
-                ResetAt45B830();
+                ClearFrameInfo();
                 break;
             }
         }
         if ((animationStage)==0 && (animationFrame)==0) {
-            ResetStateAt40FBB0(0,0,0);
+            ResetTransform(0.0f,0.0f,0.0f);
 
             velocityX=20.0f;
             velocityY=0.0f;
@@ -1936,8 +1936,8 @@ void AliceObject::Advance() {
             velocityX=2.0f;
         x += static_cast<float>(facing)*(velocityX);
         y = *(&y)+*(&velocityY);
-        if (GetStateAt40FA30()==(field070)) {
-            ResetAt45B830();
+        if (AdvanceNestedFrame()==(field070)) {
+            ClearFrameInfo();
         }
     }
     break;
@@ -1948,7 +1948,7 @@ void AliceObject::Advance() {
         y = (owner->y) + gParentYAt006590A0;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -1961,16 +1961,16 @@ void AliceObject::Advance() {
     if ((color[0])>20)
         color[0]-=20;
     else {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     break;
 }
         case 0x371: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=0.85f;
         scaleY=0.85f;
         color[0]=0xFF;
@@ -1981,17 +1981,17 @@ void AliceObject::Advance() {
         rotationX=-65.0f;
     }
     rotationZ = (rotationZ)-gSubtractAt00659728;
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     break;
 }
         case 0x384: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -2009,9 +2009,9 @@ void AliceObject::Advance() {
         if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
             PARENT->SpawnDirectedAt453A70(0x388,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,0);
             PARENT->ModifyAt453D40(8);
-            SetActionAt40FAC0(0x385);
+            ResetPrimaryCounters(0x385);
             if (gGlobalActorCountAt006714D0>1)
-                SetActionAt40FAC0(0x38E);
+                ResetPrimaryCounters(0x38E);
             y=0.0f;
             velocityY=0.0f;
             velocityX=0.0f;
@@ -2019,18 +2019,18 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30()==(field070))
-        SetStateAt40FB40(1);
+    if (AdvanceNestedFrame()==(field070))
+        ResetSecondaryCounter(1);
     break;
 }
         case 0x385: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080=1;
         field07C=0;
         velocityY=0.0f;
@@ -2058,24 +2058,24 @@ void AliceObject::Advance() {
             color[0]-=40;
         else {
             color[0]=0;
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     if ((animationStage)==2 && (animationFrame)==0)
         PARENT->SpawnDirectedAt453A70(0x386,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
     break;
 }
         case 0x386: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080=1;
         field07C=0;
         velocityY=0.0f;
@@ -2096,20 +2096,20 @@ void AliceObject::Advance() {
         color[0]-=20;
     else {
         color[0]=0;
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     break;
 }
         case 0x387: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=0.75f;
         scaleY=0.75f;
         color[0]=0xFF;
@@ -2125,21 +2125,21 @@ void AliceObject::Advance() {
         if ((color[0])>20)
             color[0]-=20;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     break;
 }
         case 0x388: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -2154,16 +2154,16 @@ void AliceObject::Advance() {
     velocityY = (velocityY)-gVelocityDragAt00659454;
     rotationZ = (rotationZ)+gGrowAt00657CBC;
     if ((y)<gMaxPositionAt0065912C) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     break;
 }
         case 0x389: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((field07C)==6) {
@@ -2174,7 +2174,7 @@ void AliceObject::Advance() {
         field0D8=-30;
         field0DA=150;
         field0DC=0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080=1;
         field07C=0;
         scaleX=1.0f;
@@ -2196,7 +2196,7 @@ void AliceObject::Advance() {
             color[0]=0xFF;
     }
     if ((animationStage)<8 && (field080)==0) {
-        SetStateAt40FB40((animationStage)+4);
+        ResetSecondaryCounter((animationStage)+4);
         break;
     }
     if ((animationStage)>7) {
@@ -2205,29 +2205,29 @@ void AliceObject::Advance() {
         if ((color[0])>=10)
             color[0]-=10;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30()==(field070)) {
-        SetStateAt40FB40(8);
+    if (AdvanceNestedFrame()==(field070)) {
+        ResetSecondaryCounter(8);
         break;
     }
     if ((animationFrame)==0)
         field07C=0;
     if ((animationStage)==8 && (animationFrame)==0 && (field0DC)<5) {
-        SetStateAt40FB40(4);
+        ResetSecondaryCounter(4);
         ++field0DC;
     }
     break;
 }
         case 0x38A: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080=1;
         field07C=0;
         scaleX=1.0f;
@@ -2270,24 +2270,24 @@ void AliceObject::Advance() {
     MotionAt40FB70(static_cast<float>(field0DC),4.0f);
     x += static_cast<float>(facing)*(velocityX);
     y = *(&y) - *(&velocityY);
-    if (GetStateAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         if ((field0D8)<gGlobalActorCountAt006714D0*5+10) {
             ++field0D8;
-            SetStateAt40FB40(1);
+            ResetSecondaryCounter(1);
             break;
         }
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     break;
 }
         case 0x38B: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field07C=0;
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2315,12 +2315,12 @@ void AliceObject::Advance() {
         if ((color[0])>=10)
             color[0]-=10;
         else {
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30()==(field070)) {
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070)) {
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==1 && (animationFrame)==0) {
@@ -2329,7 +2329,7 @@ void AliceObject::Advance() {
         rotationZ=0.0f;
     }
     if ((animationStage)==6 && (animationFrame)==0 && (field0DC)<0) {
-        SetStateAt40FB40(2);
+        ResetSecondaryCounter(2);
         ++field0DC;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
@@ -2341,7 +2341,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage)==10 && (animationFrame)==0 && (field0DA)<6) {
         ++field0DA;
-        SetStateAt40FB40(9);
+        ResetSecondaryCounter(9);
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         PARENT->SpawnMovedAt453A70(0x38D,
@@ -2353,11 +2353,11 @@ void AliceObject::Advance() {
 }
         case 0x38C: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX = MagnitudeAt00428D20(
             *(&field0C8)* *(&field0C8) + *(&field0D0)* *(&field0D0))
             / gLengthDivisorAt006583A0 * gLengthFactorAt00659720;
@@ -2369,14 +2369,14 @@ void AliceObject::Advance() {
         rotationZ = AngleRawAt00483300(reinterpret_cast<int&>(field0D0),reinterpret_cast<int&>(field0C8)) / gAngleUnitAt00657828;
     }
     scaleY=static_cast<float>((scaleY)*gMulDoubleAt00659730);
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     break;
 }
         case 0x38D: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080=1;
         field07C=0;
         velocityY=0.0f;
@@ -2410,26 +2410,26 @@ void AliceObject::Advance() {
             color[2]-=20;
         } else {
             color[0]=0;
-            ResetAt45B830();
+            ClearFrameInfo();
             break;
         }
     }
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     if ((animationStage)==4 && (animationFrame)==0 && (field0D8)<5) {
         ++field0D8;
-        SetStateAt40FB40(3);
+        ResetSecondaryCounter(3);
     }
     break;
 }
         case 0x38E: {
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         field080=1;
         field07C=0;
         velocityY=0.0f;
@@ -2450,14 +2450,14 @@ void AliceObject::Advance() {
         field07C=0;
         ++field080;
     }
-    if (GetStateAt40FA30()==(field070))
-        ResetAt45B830();
+    if (AdvanceNestedFrame()==(field070))
+        ClearFrameInfo();
     break;
 }
         case 0x3E3: {
     facing=1;
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -2484,7 +2484,7 @@ void AliceObject::Advance() {
             (*(&x) - *(&(owner->opponent->x)) > gTouchMaxAt00659230) &&
             (*(&y) - *(&(owner->opponent->y)) < gParentYAt006590A8) &&
             (*(&y) - *(&(owner->opponent->y)) > gVerticalTouchMaxAt00658268)) {
-            ResetAt45B830();
+            ClearFrameInfo();
             if ((owner->opponent->field366)<2)
                 ++(reinterpret_cast<unsigned char&>(owner->opponent->field366));
             else
@@ -2495,14 +2495,14 @@ void AliceObject::Advance() {
     }
     x=*(&x)+*(&velocityX);
     y=*(&y)-*(&velocityY);
-    if (GetStateAt40FA30()==(field070))
-        SetStateAt40FB40(1);
+    if (AdvanceNestedFrame()==(field070))
+        ResetSecondaryCounter(1);
     break;
 }
         case 0x3E4: {
     facing=1;
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -2531,7 +2531,7 @@ void AliceObject::Advance() {
             (*(&y) - *(&(owner->opponent->y)) > gVerticalTouchMaxAt00658268)) {
             ++(reinterpret_cast<short&>(owner->fieldEFA));
             ResetAt45B860(0x2E);
-            ResetAt45B830();
+            ClearFrameInfo();
             if ((owner->opponent->spiritCooldown)>0) {
                 if ((owner->opponent->spiritCooldown)>5)
                     (owner->opponent->spiritCooldown)-=5;
@@ -2557,8 +2557,8 @@ void AliceObject::Advance() {
     }
     x=*(&x)+*(&velocityX);
     y=*(&y)-*(&velocityY);
-    if (GetStateAt40FA30()==(field070))
-        SetStateAt40FB40(1);
+    if (AdvanceNestedFrame()==(field070))
+        ResetSecondaryCounter(1);
     break;
 }
         case 0x3E5: {
@@ -2566,7 +2566,7 @@ void AliceObject::Advance() {
     reinterpret_cast<int&>(y)=0;
     field08A=1;
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetStateAt40FBB0(0,0,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         scaleX=3.0f;
         scaleY=3.0f;
         color[0]=0xFF;
@@ -2580,18 +2580,18 @@ void AliceObject::Advance() {
         field0D8=(owner->field3A0);
     }
     if ((owner->field3A0)<=0) {
-        ResetAt45B830();
+        ClearFrameInfo();
         break;
     }
     scaleX=static_cast<float>((owner->field3A0))/(field0D8)*2.0f;
     scaleY=static_cast<float>((owner->field3A0))/(field0D8)*2.0f;
     rotationZ=(rotationZ)+gCompareAt0065747C;
-    if (GetStateAt40FA30()==(field070)) {
-        SetStateAt40FB40(9);
+    if (AdvanceNestedFrame()==(field070)) {
+        ResetSecondaryCounter(9);
         break;
     }
     break;
 }
-        default: GetStateAt40FA30();
+        default: AdvanceNestedFrame();
     }
 }

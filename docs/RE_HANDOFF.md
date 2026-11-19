@@ -125,6 +125,12 @@ Done so far:
   accesses the scene's named texture, record and cursor fields. Ten
   affected exact units, including the separate music-room renderer,
   cold-replayed successfully.
+- Alice object giant 004EBDA0 (33,293 native CODE bytes) now uses
+  true Actor / CharacterObject methods in 274 native calls for frame
+  advance, reset, transition and clear. Full 33,731-byte COFF body and
+  682 relocation offsets/types are preserved with zero nonrelocation
+  changes; 24/24 exact header-affected units cold-replayed. It remains
+  nonexact against the original PE (133 GPR differences).
 - The character-select scene now owns the exact C++ constructor, main
   `Advance`, reset and five choice/confirmation/option methods. Their shared
   layout covers the 28-byte per-player input records and named animation
