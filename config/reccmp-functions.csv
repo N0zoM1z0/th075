@@ -329,7 +329,7 @@ Fighter::UpdateGaugeTimer,0x0046D000,function
 BattleEffectSpawnerF136::Spawn,0x0045BB10,function
 BattleEffectAdvanceF137::AdvanceAll,0x0045BDB0,function
 BattleAnimationBindingF139::BindAnimation,0x0045B880,function
-FighterMotionClear453E20::ClearMotionFields,0x00453E20,function
+Fighter::ClearMotionFields,0x00453E20,function
 Fighter::SetNonnegativeWord,0x00453E80,function
 Fighter::BeginFadeParameters,0x00454A70,function
 SpriteSequenceParametersF154::SetSamplingMode,0x00410FA0,function

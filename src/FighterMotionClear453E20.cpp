@@ -1,15 +1,10 @@
-#include "FighterMotionClear453E20.hpp"
+#include "Fighter.hpp"
 
-// Preserve the observed DWORD zero stores without claiming the original
-// declarations of these four motion fields.
-#define WORD_AT(offset) (*reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-
-void FighterMotionClear453E20::ClearMotionFields()
+// Clear the four motion fields using their native C++ members.
+void Fighter::ClearMotionFields()
 {
-    WORD_AT(0x50) = 0;
-    WORD_AT(0x54) = 0;
-    WORD_AT(0x58) = 0;
-    WORD_AT(0x5C) = 0;
+    velocityX = 0.0f;
+    velocityY = 0.0f;
+    field058 = 0;
+    field05C = 0.0f;
 }
-
-#undef WORD_AT

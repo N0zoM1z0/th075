@@ -27,6 +27,12 @@ Done so far:
   its real scene and record/deque members. Both whole native functions
   preserve all relocations; the 10-unit affected-only replay (including
   music-room rendering and lifecycle) was 10/10 exact across 8 objects.
+- The 51-byte `00453E20` motion clear leaf is now
+  `Fighter::ClearMotionFields`, using the actual four Actor motion
+  members (`velocityX`, `velocityY`, `field058`, `field05C`) instead
+  of an offset-only borrowed receiver. Complete leaf cold replay and
+  four directly related Fighter helpers passed 5/5; the four large
+  fighter `Advance` callers are to be migrated separately.
 - Shared gauge timer `0046D000` is now `Fighter::UpdateGaugeTimer`,
   reflecting its real calls from Youmu, Patchouli and Remilia as well as
   Reimu. The original 126-byte function is cold-replay exact. Eighteen

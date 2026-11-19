@@ -328,7 +328,7 @@ Fighter::UpdateGaugeTimer
 BattleEffectSpawnerF136::Spawn
 BattleEffectAdvanceF137::AdvanceAll
 BattleAnimationBindingF139::BindAnimation
-FighterMotionClear453E20::ClearMotionFields
+Fighter::ClearMotionFields
 Fighter::SetNonnegativeWord
 Fighter::BeginFadeParameters
 SpriteSequenceParametersF154::SetSamplingMode
