@@ -20,7 +20,7 @@
                     float(facing*40)+(x),
                     (*(&y))+g_F743_Y19CAt00659A14,
                     facing,1);
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
             }
             break;
         }
@@ -53,7 +53,7 @@
                     float(facing*27)+(x),
                     (*(&y))+g_F737_RoundY1At00659A20,
                     facing,1);
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
             }
             break;
         }
@@ -72,7 +72,7 @@
                 velocityY=10.0f;
                 field05C=0.65f;
                 field314=0.0f;
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
                 SpawnFloatXYAt453A70(0x335,
                     float(facing*45)+(x),
                     (*(&y))+g_F743_Y1A0At00659288,
@@ -97,7 +97,7 @@
                 velocityY=10.0f;
                 field05C=0.65f;
                 field314=-20.0f;
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
                 SpawnFloatXYAt453A70(0x335,
                     float(facing*27)+(x),
                     (*(&y))+g_F737_RoundY1At00659A20,

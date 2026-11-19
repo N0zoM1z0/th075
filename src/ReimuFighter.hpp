@@ -30,7 +30,6 @@ public:
     void PlaySoundAt453D40(short);
     void ResetAt453E20();
     void PrepareActionAt453D60(short);
-    void StartAnimationAt46D000(int);
     void SpawnAt453C80(int,float,float,char,int);
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnRawXYAt453C80(int,int,int,char,int);

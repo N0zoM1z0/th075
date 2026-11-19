@@ -34,7 +34,7 @@ case 0x2BC: {
     if ((fieldF04)>0)
         --fieldF04;
     if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<36) {
-        StartAnimationAt46D000(0xA);
+        UpdateGaugeTimer(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x323,
             x
@@ -85,7 +85,7 @@ case 0x2BD: {
         --fieldF04;
     if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<72) {
         fieldF14=1;
-        StartAnimationAt46D000(0xA);
+        UpdateGaugeTimer(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x32B,
             x

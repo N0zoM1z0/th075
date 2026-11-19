@@ -17,7 +17,7 @@
                 velocityY=9.0f;
                 field05C=0.65f;
                 field314=0.0f;
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
                 for (int shot=0;shot<8;++shot) {
                     SpawnFloatXYAt453A70(0x324,
                        float(facing*35)+(x),
@@ -44,7 +44,7 @@
                 velocityY=9.0f;
                 field05C=0.65f;
                 field314=-30.0f;
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
                 for (int shot=0;shot<8;++shot) {
                     SpawnFloatXYAt453A70(0x324,
                        float(facing*27)+(x),

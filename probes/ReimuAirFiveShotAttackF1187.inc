@@ -10,13 +10,13 @@ case R1187_ACTION: {
         velocityX=-3.0f; velocityY=8.0f; field05C=0.55f;
 #include "ReimuFiveShotVolleyF1186.inc"
         PlaySoundAt453D40(0);
-        StartAnimationAt46D000(100);
+        UpdateGaugeTimer(100);
     }
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2 &&
         reinterpret_cast<unsigned int&>(inputC)>0) {
 #include "ReimuFiveShotVolleyF1186.inc"
         PlaySoundAt453D40(0);
-        StartAnimationAt46D000(25);
+        UpdateGaugeTimer(25);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(4);
     }

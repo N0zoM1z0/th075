@@ -18,7 +18,7 @@ case 0x19A: {
             float((facing)*60)+(x),
             (*(&y))+g_F701_VolleyYAt00658268,
             (facing),1);
-        StartAnimationAt46D000(0xC8);
+        UpdateGaugeTimer(0xC8);
         PrepareActionAt453D40(3);
         velocityX=-5.0f;
         velocityY=12.0f;

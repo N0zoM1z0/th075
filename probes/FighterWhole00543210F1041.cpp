@@ -731,7 +731,7 @@ void RemiliaFighter::Advance() {
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
-                StartAnimationAt46D000(500);
+                UpdateGaugeTimer(500);
                 PrepareActionAt453D40(10);
             }
             break;
@@ -782,7 +782,7 @@ void RemiliaFighter::Advance() {
                 PrepareActionAt453D40(11);
                 velocityY=9.0f;
                 velocityX=20.0f;
-                StartAnimationAt46D000(500);
+                UpdateGaugeTimer(500);
                 field05C=0.8f;
             }
             if (animationStage>6 && animationStage<15) {
@@ -839,7 +839,7 @@ void RemiliaFighter::Advance() {
                     facing,1);
                 SpawnDirectedAt453A70(0x340,reinterpret_cast<int&>(x),0,
                     facing,1);
-                StartAnimationAt46D000(500);
+                UpdateGaugeTimer(500);
                 PrepareActionAt453D40(12);
             }
             if (animationStage==8 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<12) {
@@ -874,7 +874,7 @@ void RemiliaFighter::Advance() {
             if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             if (animationStage==12 && animationFrame==0) {
-                StartAnimationAt46D000(750);
+                UpdateGaugeTimer(750);
                 SpawnFloatXYAt453A70(0x32B,
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
@@ -936,7 +936,7 @@ void RemiliaFighter::Advance() {
                     float(facing*55)+(x),
                     (*(&y))+g_F724_ShotYAt00659488,
                     facing,1);
-                StartAnimationAt46D000(500);
+                UpdateGaugeTimer(500);
                 PrepareActionAt453D40(15);
                 velocityY=10.5f;
                 velocityX=25.0f;

@@ -7,7 +7,7 @@ case R1190_ACTION: {
             (*(&y))+g_ReimuMeterNearYAt00659088,reinterpret_cast<char&>(facing),1);
         field36C=(field36C)-g_ContactProjectionAt00657888;
     }
-    if ((animationStage)==10 || (animationStage)==11) StartAnimationAt46D000(5);
+    if ((animationStage)==10 || (animationStage)==11) UpdateGaugeTimer(5);
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==8 && (animationFrame)==0) {
         SpawnFloatXAt453A70(R1190_EFFECT,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,

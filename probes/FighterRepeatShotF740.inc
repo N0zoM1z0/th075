@@ -18,7 +18,7 @@
                     float(facing*60)+(x),
                     (*(&y))+g_F740_ShotY0At00659A1C,
                     facing,1);
-                StartAnimationAt46D000(100);
+                UpdateGaugeTimer(100);
             }
             if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
                     && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
@@ -28,7 +28,7 @@
                     float(facing*60)+(x),
                     (*(&y))+g_F740_ShotY0At00659A1C,
                     facing,1);
-                StartAnimationAt46D000(10);
+                UpdateGaugeTimer(10);
                 SetAuxActionAt40FB40(6);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
@@ -49,7 +49,7 @@
                     float(facing*68)+(x),
                     (*(&y))+g_F740_ShotY1At0065928C,
                     facing,1);
-                StartAnimationAt46D000(100);
+                UpdateGaugeTimer(100);
             }
             if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
                     && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
@@ -59,7 +59,7 @@
                     float(facing*68)+(x),
                     (*(&y))+g_F740_ShotY1At0065928C,
                     facing,1);
-                StartAnimationAt46D000(10);
+                UpdateGaugeTimer(10);
                 SetAuxActionAt40FB40(6);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
@@ -74,7 +74,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 PrepareActionAt453D40(1);
                 field314=60.0f;
-                StartAnimationAt46D000(250);
+                UpdateGaugeTimer(250);
                 SpawnFloatXYAt453A70(0x347,
                     float(facing*28)+(x),
                     (*(&y))+g_F740_ShotY2At00659A18,

@@ -36,7 +36,7 @@
                     facing,1);
                 SpawnDirectedAt453A70(0x33B,reinterpret_cast<int&>(x),0,
                     facing,1);
-                StartAnimationAt46D000(500);
+                UpdateGaugeTimer(500);
                 PrepareActionAt453D40(8);
             }
             if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<7) {

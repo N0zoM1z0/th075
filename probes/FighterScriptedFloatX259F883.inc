@@ -19,7 +19,7 @@ case 0x259: {
         SpawnFloatXRawYAt453A70(0x34D,
             float((facing)*80)+(x),
             reinterpret_cast<int&>(y),(facing),1);
-        StartAnimationAt46D000(0x1F4);
+        UpdateGaugeTimer(0x1F4);
         PrepareActionAt453D40(5);
     }
     return;

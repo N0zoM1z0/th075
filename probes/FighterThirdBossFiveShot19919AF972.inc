@@ -45,7 +45,7 @@ case 0x199: {
             float((facing)*96)+(x),
             (*(&y))+g_F972_YAt00659470,
             facing,1);
-        StartAnimationAt46D000(0x96);
+        UpdateGaugeTimer(0x96);
     }
     break;
 }
@@ -88,7 +88,7 @@ case 0x19A: {
             float((facing)*74)+(x),
             (*(&y))+g_F972_YAt00659464,
             facing,1);
-        StartAnimationAt46D000(0x96);
+        UpdateGaugeTimer(0x96);
     }
     break;
 }

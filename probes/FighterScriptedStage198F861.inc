@@ -15,7 +15,7 @@ case 0x198: {
             float((facing)*90)+(x),
             (*(&y))+g_F861ShotYAt00659460,
             (facing),1);
-        StartAnimationAt46D000(0xC8);
+        UpdateGaugeTimer(0xC8);
     }
     return;
 }

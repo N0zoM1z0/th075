@@ -32,7 +32,6 @@ public:
     void SubactionAt454A70(int);
     void ConfigureStormAt454BC0(int,int,int);
     void SubactionAt452B30();
-    void StartAnimationAt46D000(int);
     void SpawnAt453C80(int,float,float,char,int);
     short GetNativeActionAt40FA30();
     void SetNativeActionAt40FAC0(int);

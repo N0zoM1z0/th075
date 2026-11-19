@@ -15,7 +15,7 @@ case 0x19B: {
     }
     if ((animationStage)>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
-        StartAnimationAt46D000(0x28);
+        UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-30);
         field318=15.0f;
         SpawnFloatXYAt453A70(0x326,
@@ -40,7 +40,7 @@ case 0x19C: {
     }
     if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
-        StartAnimationAt46D000(0x28);
+        UpdateGaugeTimer(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+30);
         field318=15.0f;
         SpawnFloatXYAt453A70(0x326,

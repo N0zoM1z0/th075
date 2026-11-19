@@ -32,7 +32,7 @@ case 0x2BF: {
             (facing),1,0,1);
     }
     if ((animationStage)==10 && (animationFrame)==0) {
-        StartAnimationAt46D000(0x1F4);
+        UpdateGaugeTimer(0x1F4);
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==11 && (animationFrame)==0) {

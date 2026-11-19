@@ -14,7 +14,7 @@ case R1189_ACTION: {
 #endif
     if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
 #include "ReimuSpecialVolleyF1189.inc"
-        StartAnimationAt46D000(R1189_ANIMATION);
+        UpdateGaugeTimer(R1189_ANIMATION);
         PlaySoundAt453D40(5);
     }
 #if !R1189_AIR

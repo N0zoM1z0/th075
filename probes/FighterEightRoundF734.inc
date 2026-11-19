@@ -15,7 +15,7 @@
             if ((animationStage)==5 && (animationFrame)==0) {
                 PrepareActionAt453D40(0);
                 field314=0.0f;
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
                     SpawnFloatXYAt453A70(0x324,
                         float(facing*70)+(x),
@@ -38,7 +38,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 PrepareActionAt453D40(0);
                 field314=20.0f;
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
                     SpawnFloatXYAt453A70(0x324,
                         float(facing*64)+(x),
@@ -58,7 +58,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 PrepareActionAt453D40(0);
                 field314=45.0f;
-                StartAnimationAt46D000(200);
+                UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
                     SpawnFloatXYAt453A70(0x324,
                         float(facing*44)+(x),

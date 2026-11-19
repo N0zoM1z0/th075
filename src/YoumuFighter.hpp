@@ -36,7 +36,6 @@ public:
     void PrepareActionAt453D40(int);
     void ConfigureStormAt454BC0(int,int,int);
     void SpawnMixedAt453C80(int,int,float,char,int);
-    void StartAnimationAt46D000(int);
     void SpawnAt453C80(int,float,float,char,int);
     short GetNativeActionAt40FA30();
     void SetNativeActionAt40FAC0(int);

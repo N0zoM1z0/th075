@@ -15,7 +15,7 @@ case 0x258: {
         SpawnFloatXRawYAt453A70(0x340,
             float((facing)*80)+(x),
             reinterpret_cast<int&>(y),(facing),1);
-        StartAnimationAt46D000(0xFA);
+        UpdateGaugeTimer(0xFA);
         PrepareActionAt453D40(5);
     }
     return;

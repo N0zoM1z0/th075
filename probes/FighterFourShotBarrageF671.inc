@@ -9,7 +9,7 @@ case 0x258: {
                 ResetAt453E20();
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                StartAnimationAt46D000(100);
+                UpdateGaugeTimer(100);
                 field314=-110.0f;
                 field318=5.0f;
                 SpawnFloatXYAt453A70(0x322,

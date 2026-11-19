@@ -60,7 +60,7 @@ case 0x2BF: {
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
@@ -77,7 +77,7 @@ case 0x2BF: {
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
@@ -94,7 +94,7 @@ case 0x2BF: {
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
@@ -111,7 +111,7 @@ case 0x2BF: {
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
@@ -128,7 +128,7 @@ case 0x2BF: {
                 float((facing)*640),
             ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RandAt455580(0,400)),
             facing,1);
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         PrepareActionAt453D40(7);
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<10) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);

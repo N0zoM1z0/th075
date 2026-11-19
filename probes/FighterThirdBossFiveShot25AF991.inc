@@ -47,7 +47,7 @@ case 0x25A: {
             float((facing)*97)+(x),
             (*(&y))+g_F971_YAt00659498,
             facing,1);
-        StartAnimationAt46D000(0xFA);
+        UpdateGaugeTimer(0xFA);
     }
     break;
 }

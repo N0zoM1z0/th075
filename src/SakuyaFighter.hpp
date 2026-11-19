@@ -27,7 +27,6 @@ public:
     void SetAngleBitsAt40FB70(int,float);
     void PrepareActionAt453D60(short);
     void PrepareActionAt453D40(short);
-    void StartAnimationAt46D000(int);
     void SpawnAt453C80(short,float,float,signed char,signed char);
     void SpawnMixedAt453C80(short,int,float,signed char,signed char);
     void ConfigureStormAt454BC0(int,unsigned char,unsigned int);

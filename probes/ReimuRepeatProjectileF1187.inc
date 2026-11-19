@@ -11,7 +11,7 @@ case R1187_ACTION: {
         SpawnFloatXYAt453A70(R1187_EFFECT,(*(&x))+g_ThresholdAt0065782C,
             (*(&y))+g_ThresholdAt0065782C,reinterpret_cast<char&>(facing),0);
         PlaySoundAt453D40(4);
-        StartAnimationAt46D000(250);
+        UpdateGaugeTimer(250);
     }
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);

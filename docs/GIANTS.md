@@ -199,6 +199,18 @@ shortened it a byte but introduced 838 newly differing positions. Neither
 is a valid improvement. Preserve case 837 and investigate how this join's
 register state was selected in the original compile.
 
+The 0046D000 shared gauge-timer caller cleanup is also complete in the
+four full fighter research parents: 52 Reimu, 44 Sakuya, 14 Youmu, and
+28 Remilia compiled call sites (138 total) now use the inherited natural
+`Fighter::UpdateGaugeTimer` member rather than the misleading
+`StartAnimationAt46D000` alias. For each complete fighter COFF object,
+pre/post output length, every relocation offset/type and all
+nonrelocation bytes are identical (respectively 62,090/1,824,
+83,922/2,352, 47,655/1,491, and 59,236/1,863 bytes/relocations).
+All four whole-function native frontiers remained nonregressing, with no
+new exact giant credit. This preserves the original 0046D000 shared
+implementation and removes fake per-character helper declarations.
+
 The previously borrowed `0046D000` cross-character gauge-timer call
 is now the common `Fighter::UpdateGaugeTimer`. Youmu/Patchouli/Remilia
 object research parents use the real owner method; the shared 126-byte

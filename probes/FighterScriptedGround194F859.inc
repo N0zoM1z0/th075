@@ -21,7 +21,7 @@ case 0x194: {
         field314=2.0f;
         SpawnDirectedAt453A70(0x320,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
            (facing),1);
-        StartAnimationAt46D000(0xFA);
+        UpdateGaugeTimer(0xFA);
         PrepareActionAt453D40(0);
     }
     if ((animationStage)==6 && (animationFrame)==0)

@@ -47,7 +47,7 @@ case 0x2BE: {
         field084=10;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
@@ -59,7 +59,7 @@ case 0x2BE: {
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
@@ -71,7 +71,7 @@ case 0x2BE: {
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
@@ -83,7 +83,7 @@ case 0x2BE: {
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,
@@ -95,7 +95,7 @@ case 0x2BE: {
         PrepareActionAt453D40(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        StartAnimationAt46D000(0xC);
+        UpdateGaugeTimer(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
             (*(&y))+g_F1017_VolleyYAt0065908C,

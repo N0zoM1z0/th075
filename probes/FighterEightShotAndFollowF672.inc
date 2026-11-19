@@ -10,7 +10,7 @@
             }
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==5 && (animationFrame)==0) {
-                StartAnimationAt46D000(250);
+                UpdateGaugeTimer(250);
                 field314=-10.0f;
                 SpawnFloatXYAt453A70(0x321,
                     float(facing*40)+(x),

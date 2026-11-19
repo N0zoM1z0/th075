@@ -7,7 +7,7 @@ case R1190_ACTION: {
             (*(&y))+g_ReimuMeterInitialYAt00659084,reinterpret_cast<char&>(facing),1);
         field36C=(field36C)-g_ContactProjectionAt00657888;
 #if R1190_HAS_ANIMATION
-        StartAnimationAt46D000(500);
+        UpdateGaugeTimer(500);
 #endif
     }
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);

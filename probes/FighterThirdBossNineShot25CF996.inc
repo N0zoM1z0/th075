@@ -17,7 +17,7 @@ case 0x25C: {
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
-        StartAnimationAt46D000(0xFA);
+        UpdateGaugeTimer(0xFA);
         field314=-28.0f;
         field318=10.0f;
         SpawnFloatXYAt453A70(0x342,

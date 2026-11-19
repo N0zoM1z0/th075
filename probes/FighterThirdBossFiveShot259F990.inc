@@ -47,7 +47,7 @@ case 0x259: {
                 x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
-            StartAnimationAt46D000(0x64);
+            UpdateGaugeTimer(0x64);
             ++reinterpret_cast<signed short&>(scriptCounterF02);
             reinterpret_cast<signed short&>(scriptCounterF00)=3;
         }

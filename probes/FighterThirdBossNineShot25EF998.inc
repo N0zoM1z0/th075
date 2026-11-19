@@ -25,7 +25,7 @@ case 0x25E: {
         velocityY=9.0f;
         field05C=0.7f;
         PrepareActionAt453D40(0);
-        StartAnimationAt46D000(0xFA);
+        UpdateGaugeTimer(0xFA);
         field314=-28.0f;
         field318=10.0f;
         SpawnWithFloatAt453A70(0x342,reinterpret_cast<int&>(x),

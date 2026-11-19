@@ -70,7 +70,7 @@ case 0x2BD: {
         scaleX=3.0f;
         scaleY=0.05f;
         velocityX=30.0f;
-        StartAnimationAt46D000(0x1F4);
+        UpdateGaugeTimer(0x1F4);
         SpawnFloatXRawYAt453C80(0x80,
             float((facing)*150)+(x),
             reinterpret_cast<int&>(y),(facing),1);

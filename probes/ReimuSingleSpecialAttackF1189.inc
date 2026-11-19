@@ -17,7 +17,7 @@ case R1189_ACTION: {
 #if R1189_HAS_PREPARATION
         PrepareActionAt453D60(0x29);
 #endif
-        StartAnimationAt46D000(200);
+        UpdateGaugeTimer(200);
     }
 #if !R1189_AIR
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);

@@ -74,7 +74,7 @@ case 0x1FB: {
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        StartAnimationAt46D000(0xC8);
+        UpdateGaugeTimer(0xC8);
         SetMotionStateAt40FBB0(0,0.0f,0);
         color[0]=255;
     }
@@ -160,7 +160,7 @@ case 0x1FC: {
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        StartAnimationAt46D000(0xC8);
+        UpdateGaugeTimer(0xC8);
         SetMotionStateAt40FBB0(0,0.0f,0);
         color[0]=255;
     }
@@ -246,7 +246,7 @@ case 0x1FD: {
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        StartAnimationAt46D000(0xC8);
+        UpdateGaugeTimer(0xC8);
         SetMotionStateAt40FBB0(0,0.0f,0);
         color[0]=255;
     }

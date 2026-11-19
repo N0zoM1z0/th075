@@ -30,9 +30,14 @@ Done so far:
 - Shared gauge timer `0046D000` is now `Fighter::UpdateGaugeTimer`,
   reflecting its real calls from Youmu, Patchouli and Remilia as well as
   Reimu. The original 126-byte function is cold-replay exact. Eighteen
-  selected directly related functions passed local replay (18/18); all
-  four touched giant frontiers remained nonexact and nonregressing. The
-  wider Fighter.hpp dependency graph needs further grouped cold replay.
+  directly affected Fighter/character units were locally selected and
+  replayed 105/105 exact; the broader Fighter.hpp include graph was not
+  exhaustively cold-replayed. The four fighter research giants also now
+  call the shared gauge method from 138 native call sites (52 Reimu,
+  44 Sakuya, 14 Youmu, 28 Remilia). Complete pre/post 62,090,
+  83,922, 47,655, and 59,236-byte COFF bodies preserve every
+  nonrelocation byte and every relocation position/type, but still
+  remain nonexact against the target PE.
 - Result-list rendering helpers now belong to the real scene:
   `DrawCounter` (377 B), `DrawNameGlyphs` (280 B), and `DrawRankLabel`
   (169 B). The rank glyph method calls the real `DrawNameGlyphs` target

@@ -16,7 +16,7 @@ case 0x196: {
             float((facing)*100)+(x),
             (*(&y))+g_F860ShotYAt006581DC,
             (facing),1);
-        StartAnimationAt46D000(0xC8);
+        UpdateGaugeTimer(0xC8);
     }
     return;
 }

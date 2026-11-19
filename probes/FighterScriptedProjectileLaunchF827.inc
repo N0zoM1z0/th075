@@ -7,7 +7,7 @@ case F642_CASE: {
     if ((cardGauge)>g_AnimationMaximumAt006583B4)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
-        StartAnimationAt46D000(0xFA);
+        UpdateGaugeTimer(0xFA);
         PrepareActionAt453D60(0x2C);
         I16(F642_COUNTER)=0xB4;
         SpawnAt453C80(0x38,

@@ -37,7 +37,7 @@ case 0x196: {
             float((facing)*59)+(x),
             (*(&y))+g_F971_YAt00659488,
             facing,1);
-        StartAnimationAt46D000(0x96);
+        UpdateGaugeTimer(0x96);
     }
     break;
 }
@@ -73,7 +73,7 @@ case 0x197: {
             float((facing)*109)+(x),
             (*(&y))+g_F971_YAt00659478,
             facing,1);
-        StartAnimationAt46D000(0x96);
+        UpdateGaugeTimer(0x96);
     }
     break;
 }
@@ -109,7 +109,7 @@ case 0x198: {
             float((facing)*116)+(x),
             (*(&y))+g_F971_YAt00657CBC,
             facing,1);
-        StartAnimationAt46D000(0x96);
+        UpdateGaugeTimer(0x96);
     }
     break;
 }

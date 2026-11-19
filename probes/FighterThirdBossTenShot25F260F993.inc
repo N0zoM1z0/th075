@@ -20,7 +20,7 @@ case 0x25F: {
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         PrepareActionAt453D40(0);
-        StartAnimationAt46D000(0x96);
+        UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
             field318=15.0f;
@@ -49,7 +49,7 @@ case 0x260: {
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         PrepareActionAt453D40(0);
-        StartAnimationAt46D000(0x96);
+        UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
             field314=float(30-shot*6);
             field318=15.0f;

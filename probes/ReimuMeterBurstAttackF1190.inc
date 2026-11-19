@@ -19,7 +19,7 @@ case R1190_ACTION: {
         SpawnAt453C80(R1190_AUX_EFFECT,x-float(facing*2),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         field36C=(field36C)-g_ContactProjectionAt00657888;
-        StartAnimationAt46D000(500);
+        UpdateGaugeTimer(500);
     }
     if ((animationStage)==4 && (animationFrame)==0) {
         SpawnTrackedAt453B50(0x3B6,(*(&x))+g_ThresholdAt0065782C,

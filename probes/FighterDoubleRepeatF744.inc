@@ -33,7 +33,7 @@
                     float(facing*35)+(x),
                     (*(&y))+g_F737_RoundY0At00659A24,
                     facing,1);
-                StartAnimationAt46D000(100);
+                UpdateGaugeTimer(100);
             }
             if ((animationStage)==5 && (animationFrame)==0
                     && static_cast<unsigned int>(inputA)>0
@@ -44,7 +44,7 @@
                     float(facing*35)+(x),
                     (*(&y))+g_F737_RoundY0At00659A24,
                     facing,1);
-                StartAnimationAt46D000(20);
+                UpdateGaugeTimer(20);
                 SetAuxActionAt40FB40(4);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
@@ -80,7 +80,7 @@
                     float(facing*27)+(x),
                     (*(&y))+g_F737_RoundY1At00659A20,
                     facing,1);
-                StartAnimationAt46D000(100);
+                UpdateGaugeTimer(100);
             }
             if ((animationStage)==5 && (animationFrame)==0
                     && static_cast<unsigned int>(inputA)>0
@@ -91,7 +91,7 @@
                     float(facing*27)+(x),
                     (*(&y))+g_F737_RoundY1At00659A20,
                     facing,1);
-                StartAnimationAt46D000(20);
+                UpdateGaugeTimer(20);
                 SetAuxActionAt40FB40(4);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }

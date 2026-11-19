@@ -3,4 +3,4 @@
         SpawnFloatXYAt453A70(R1187_EFFECT,float(facing*R1187_X_OFFSET)+(x),
             (*(&y))+R1187_Y_OFFSET,reinterpret_cast<char&>(facing),1);
         PlaySoundAt453D40(0);
-        StartAnimationAt46D000(R1187_ANIMATION);
+        UpdateGaugeTimer(R1187_ANIMATION);
