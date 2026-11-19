@@ -335,6 +335,12 @@ ten zero writes to `field3AC`, seven direct signed-byte `field366` decrements
 and three owner-facing copies. Complete Reimu/Sakuya/Youmu/Remilia advances
 and PatchouliObject advance bodies/relocations remain identical; their
 frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 / 24,643.
+`Fighter::field3A4` (+0x3A4) and `field3A8` (+0x3A8) are now signed
+`int` countdown fields, matching decrement, negative-clamp and knockout
+settlement semantics. Sixteen signed-reference aliases were removed. Forty-
+five exact functions across six affected translation units replayed 45/45;
+the four complete fighter `Advance` bodies and relocation maps remain
+identical.
 `Fighter::fieldF06` (+0xF06) and `fieldF08` (+0xF08) are now signed
 16-bit members, matching the third-boss arc, cadence and trajectory logic.
 Thirty-six signed-short reference overlays across eight boss fragments were

@@ -1049,6 +1049,14 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+The shared Fighter card/knockout countdowns `field3A4` (+0x3A4) and
+`field3A8` (+0x3A8) are now signed `int` members. The native update subtracts
+from them, checks negative underflow and clamps to zero; knockout settlement
+also consumes the signed `field3A4` value as a record count/score. Sixteen
+`reinterpret_cast<int&>` views were removed across the timer, knockout, battle
+state and status-render paths. All 45 exact functions across six translation
+units replayed 45/45, and all four complete fighter `Advance` bodies and
+relocation maps remain identical.
 The third-boss state words `Fighter::fieldF06` (+0xF06) and `fieldF08`
 (+0xF08) are now signed 16-bit members. Their native uses include negative
 arc increments, signed cadence countdowns, signed trajectory values and
