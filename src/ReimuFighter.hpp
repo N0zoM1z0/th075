@@ -19,9 +19,6 @@ public:
     void SpawnWithFloatAt453A70(int,int,float,char,int);
     void SpawnFloatXYAt453A70(int,float,float,char,int);
     void InitTrajectoryAt453E60(float);
-    void BeginFadeParametersAt454A70(unsigned char);
-    void SelectResourceParametersAt452B30();
-    void SetNonnegativeWordAt453E80(short);
     void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char);
     void SpawnFloatXAt453A70(int,float,int,char,int);
     int SelectRangeAt455580(int,int);
@@ -29,7 +26,6 @@ public:
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnRawXYAt453C80(int,int,int,char,int);
     void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
-    signed char ContactAt454EE0();
 
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);

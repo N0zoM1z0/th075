@@ -11,8 +11,8 @@ case 0x31C: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==12 && (animationFrame)==0) {
-        ApplyStateAt454A70(0);
-        EmitStateAt452B30();
+        BeginFadeParameters(0);
+        SelectResourceParameters();
         PlaySharedSound(0x17);
     }
     if ((animationStage)==15 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {

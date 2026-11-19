@@ -26,8 +26,8 @@ case 0x303: {
     }
     if ((animationStage)==13 && (animationFrame)==0) ClearMotionFields();
     if ((animationStage)==15 && (animationFrame)==0) {
-        BeginFadeParametersAt454A70(0);
-        SelectResourceParametersAt452B30();
+        BeginFadeParameters(0);
+        SelectResourceParameters();
         PlaySharedSound(0x17);
         aiCardTimer=0;
         field318=0.0f;

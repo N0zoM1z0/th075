@@ -14,7 +14,7 @@ case R1190_ACTION: {
 #endif
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
-        SetNonnegativeWordAt453E80(40);
+        SetNonnegativeWord(40);
         PlaySharedSound(0x17);
         SpawnAt453C80(R1190_AUX_EFFECT,x-float(facing*2),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);

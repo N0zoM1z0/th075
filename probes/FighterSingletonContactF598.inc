@@ -12,7 +12,7 @@ case 0x32: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);

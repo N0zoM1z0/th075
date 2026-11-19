@@ -18,11 +18,8 @@ public:
     void SpawnFloatXYAt453A70(int,float,float,char,int);
     void SpawnWithFloatAt453A70(int,int,float,char,int);
     int RandomBoundaryAt455580(int,int);
-    void AnimatePushAt453E80(int);
     void SpawnExtraAt453B50(int,int,float,char,int,int,int);
     void SpawnExtraRawYAt453B50(int,int,int,char,int,int,int);
-    void ApplyStateAt454A70(int);
-    void EmitStateAt452B30();
     void InitTrajectoryAt453E60(float);
     void SetupCollisionAt454BC0(int,int,int);
     void SpawnRawAt453C80(int,int,int,char,int);
@@ -31,7 +28,6 @@ public:
     void ConfigureStormAt454BC0(int,int,int);
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnAt453C80(int,float,float,char,int);
-    signed char ContactAt454EE0();
 
     void ConfigureStage();
     void ChooseAction();

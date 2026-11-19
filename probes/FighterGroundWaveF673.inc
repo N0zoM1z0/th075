@@ -8,7 +8,7 @@
                 field07C=1;
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
-                InitTrajectoryAt453E80(40);
+                SetNonnegativeWord(40);
                 PlaySharedSound(0x17);
                 SpawnMixedAt453C80(0x73,reinterpret_cast<int&>(x),
                     (*(&y))+g_ContactProjectionAt00657888,

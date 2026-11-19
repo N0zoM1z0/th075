@@ -56,7 +56,7 @@ case 0x2F9: {
             break;
         }
         PlaySound(9);
-        ApplyAt453E80(75);
+        SetNonnegativeWord(75);
         PlaySharedSound(23);
         Fighter::SpawnTrackedEffect(0x330,640.0f,320.0f,1,2,0,1);
         fieldF10=1;

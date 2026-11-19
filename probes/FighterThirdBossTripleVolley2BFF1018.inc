@@ -31,7 +31,7 @@ case 0x2BF: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
-        ApplyAt453E80(40);
+        SetNonnegativeWord(40);
         PlaySharedSound(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAuxEffect(0x74,

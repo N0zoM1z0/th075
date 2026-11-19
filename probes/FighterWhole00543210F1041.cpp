@@ -710,7 +710,7 @@ void RemiliaFighter::Advance() {
                 field07C=1;
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
-                InitTrajectoryAt453E80(40);
+                SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 PlaySound(9);
                 SpawnAt453C80(0x73,
@@ -769,7 +769,7 @@ void RemiliaFighter::Advance() {
                 field07C=0;
             if (animationStage==1 && animationFrame==0) {
                 field36C=(field36C)-g_ContactProjectionAt00657888;
-                InitTrajectoryAt453E80(40);
+                SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 SpawnAt453C80(0x73,
                     x-float(facing*46),
@@ -805,7 +805,7 @@ void RemiliaFighter::Advance() {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 field07C=1;
                 ClearMotionFields();
-                InitTrajectoryAt453E80(40);
+                SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 SpawnMixedAt453C80(0x74,reinterpret_cast<int&>(x),
                     (*(&y))+g_ContactProjectionAt00657888,
@@ -861,7 +861,7 @@ void RemiliaFighter::Advance() {
                 field07C=1;
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
-                InitTrajectoryAt453E80(40);
+                SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 PlaySound(13);
                 SpawnAt453C80(0x74,
@@ -921,7 +921,7 @@ void RemiliaFighter::Advance() {
             if (animationFrame==0)
                 field07C=0;
             if (animationStage==1 && animationFrame==0) {
-                InitTrajectoryAt453E80(40);
+                SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 SpawnAt453C80(0x74,
                     x-float(facing*46),

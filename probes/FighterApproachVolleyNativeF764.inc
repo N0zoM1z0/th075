@@ -22,14 +22,14 @@
                     break;
                 }
             }
-            if ((animationStage)>9 && (animationStage)<13 && !ContactAt454EE0()) {
+            if ((animationStage)>9 && (animationStage)<13 && !CheckHorizontalLimits()) {
                 if (facing==1)
                     x=(field2D8)+g_F699_SideOffsetAt00657874;
                 if (facing==-1)
                     x=(field2DC)-g_F699_SideOffsetAt00657874;
             }
             if ((animationStage)>7 && (animationStage)<10 && y>g_ThresholdAt0065782C) {
-                if ((ContactAt454EE0() && (((x)<g_F699_SideEdgeAt00657884
+                if ((CheckHorizontalLimits() && (((x)<g_F699_SideEdgeAt00657884
                      && facing==1)
                     || ((x)>g_F699_SideEdgeAt00657884
                         && facing==-1)))

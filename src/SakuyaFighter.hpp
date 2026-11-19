@@ -14,21 +14,14 @@ public:
     // Native-call contracts carried by the complete fighter state machine.
     // Provisional helper spellings do not establish separate class ownership.
     void SpawnDirectedAt453A70(short,int,int,signed char,signed char);
-    void SpawnFloatXYAt453A70(short,float,float,signed char,signed char);
     void SpawnWithFloatAt453A70(short,int,float,signed char,signed char);
     void InitTrajectoryAt453E60(float);
-    void ApplyAt453E80(short);
-    void BeginStateAt454A70(unsigned char);
-    void RefreshStateAt452B30();
-    void SpawnAt453C80(short,float,float,signed char,signed char);
     void SpawnMixedAt453C80(short,int,float,signed char,signed char);
     void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
     void SpawnRawAt453C80(short,int,int,signed char,signed char);
     void SpawnSevenAt453B50(short,int,int,signed char,signed char,unsigned char,unsigned char);
-    void SpawnSevenFloatAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char);
     void SpawnSevenRawXFloatYAt453B50(short,int,float,signed char,signed char,unsigned char,unsigned char);
     int RandAt455580(int,int);
-    signed char ContactAt454EE0();
 
     void ConfigureStage();
     void ChooseAction();

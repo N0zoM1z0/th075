@@ -115,6 +115,18 @@ remain NONEXACT with 1,741 GPR-role and three width differences (40,569
 frontier differing bytes); all 98 affected exact units were cold-replayed
 in three groups (36, 31, 31). No new whole-giant exact credit.
 
+Four fighter giant research parents now call shared, verified Fighter
+helpers instead of provisional class-specific aliases: 122 native
+`CheckHorizontalLimits` calls (00454EE0), 29 `SetNonnegativeWord`
+(00453E80), nine `BeginFadeParameters` (00454A70), nine
+`SelectResourceParameters` (00452B30), and six `SpawnAuxEffect`
+(00453C80) calls. Their original 62,090 / 83,922 / 47,655 / 59,236
+byte COFF bodies and all 1,824 / 2,352 / 1,491 / 1,863 relocation
+offsets/types are preserved, with zero changes outside relocation
+fields; four nonexact native frontiers are not worsened. All 132 affected
+exact units cold-replayed locally in three groups of 44/44 (not a full
+repository replay).
+
 The Sakuya fighter 004AC040 source now calls the real Fighter effect
 APIs at 270 compiled sites: 153 `SpawnBattleEffect`, 104 seven-argument
 `Fighter::SpawnTrackedEffect`, and 13 `SpawnAuxEffect` calls. The two

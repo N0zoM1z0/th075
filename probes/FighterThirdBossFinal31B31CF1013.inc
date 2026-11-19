@@ -17,8 +17,8 @@ case 0x31B: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        BeginStateAt454A70(0);
-        RefreshStateAt452B30();
+        BeginFadeParameters(0);
+        SelectResourceParameters();
         PlaySharedSound(0x17);
         SpawnWithFloatAt453A70(0x3E5,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
@@ -40,8 +40,8 @@ case 0x31C: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==16 && (animationFrame)==0) {
-        BeginStateAt454A70(0);
-        RefreshStateAt452B30();
+        BeginFadeParameters(0);
+        SelectResourceParameters();
         PlaySharedSound(0x17);
     }
     if ((animationStage)==21 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {

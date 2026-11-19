@@ -34,7 +34,7 @@ case 0x2BC: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        AnimatePushAt453E80(0x28);
+        SetNonnegativeWord(0x28);
         field36C=(field36C)-g_ContactProjectionAt00657888;
         PlaySharedSound(0x17);
         SpawnAt453C80(0x73,

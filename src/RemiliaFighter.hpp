@@ -22,12 +22,8 @@ public:
     void SpawnSevenAt453B50(int,int,int,char,int,int,int);
     void InitTrajectoryAt453E60(float);
     int RandomBoundaryAt455580(int,int);
-    void InitTrajectoryAt453E80(int);
-    void SubactionAt454A70(int);
     void ConfigureStormAt454BC0(int,int,int);
-    void SubactionAt452B30();
     void SpawnAt453C80(int,float,float,char,int);
-    signed char ContactAt454EE0();
 
     void ConfigureStage();
     void ChooseAction();

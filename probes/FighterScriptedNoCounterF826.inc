@@ -16,7 +16,7 @@ case F641_CASE: {
         if ((velocityX)>g_ThresholdAt0065782C)
             velocityX=0.0f;
     }
-    if (ContactAt454EE0() && field3BE)
+    if (CheckHorizontalLimits() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==field070)
         ResetPrimaryCounters(F641_NEXT_ACTION);

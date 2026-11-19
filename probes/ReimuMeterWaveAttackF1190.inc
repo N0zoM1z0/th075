@@ -1,7 +1,7 @@
 case R1190_ACTION: {
 #include "ReimuMeterInitF1190.inc"
     if ((animationStage)==0 && (animationFrame)==0) {
-        SetNonnegativeWordAt453E80(40);
+        SetNonnegativeWord(40);
         PlaySharedSound(0x17);
         SpawnAt453C80(R1190_AUX_EFFECT,float(facing*24)+(x),
             (*(&y))+g_ReimuMeterInitialYAt00659084,reinterpret_cast<char&>(facing),1);

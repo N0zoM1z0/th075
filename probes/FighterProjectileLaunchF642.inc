@@ -9,7 +9,7 @@ case F642_CASE: {
         UpdateGaugeTimer(0xFA);
         PlaySharedSound(0x2C);
         I16(F642_COUNTER)=0xB4;
-        SpawnAt453C80(0x38,
+        SpawnAuxEffect(0x38,
             static_cast<float>(static_cast<int>(facing)*30)+(x),
             // VC7.1's real member y lvalue forces the native
             // FLD member / FADD global x87 order. y alias gives

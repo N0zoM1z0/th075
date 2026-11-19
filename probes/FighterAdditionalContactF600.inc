@@ -16,7 +16,7 @@ case 0x33: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -37,7 +37,7 @@ case 0x34: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -59,7 +59,7 @@ case 0x35: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -87,7 +87,7 @@ case 0x38: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -108,7 +108,7 @@ case 0x39: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -129,7 +129,7 @@ case 0x3A: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -151,7 +151,7 @@ case 0x3B: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -179,7 +179,7 @@ case 0x3E: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -200,7 +200,7 @@ case 0x3F: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -221,7 +221,7 @@ case 0x40: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
@@ -243,7 +243,7 @@ case 0x41: {
         if ((velocityX) > g_ThresholdAt0065782C)
             velocityX = 0.0f;
     }
-    if (ContactAt454EE0() &&
+    if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);

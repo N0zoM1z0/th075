@@ -30,7 +30,7 @@ case 0x2C2: {
             ResetSecondaryCounter(3);
             break;
         }
-        ApplyAt453E80(0x64);
+        SetNonnegativeWord(0x64);
         PlaySharedSound(0x17);
         PlaySound(9);
         field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -72,7 +72,7 @@ case 0x2C3: {
             ResetSecondaryCounter(3);
             break;
         }
-        ApplyAt453E80(0x28);
+        SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         PlaySound(0xA);
         field36C=(field36C)-g_ContactProjectionAt00657888;

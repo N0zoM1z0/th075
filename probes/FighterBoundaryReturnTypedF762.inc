@@ -25,7 +25,7 @@
                     break;
                 }
             }
-            if ((animationStage)>10 && (animationStage)<14 && !ContactAt454EE0()) {
+            if ((animationStage)>10 && (animationStage)<14 && !CheckHorizontalLimits()) {
                 if (facing==1)
                     x=(field2D8)+g_F699_SideOffsetAt00657874;
                 if (facing==-1)
@@ -33,7 +33,7 @@
             }
             if ((animationStage)>8 && (animationStage)<11
                 && y>g_ThresholdAt0065782C) {
-                if ((ContactAt454EE0() && (((x)<g_F699_SideEdgeAt00657884
+                if ((CheckHorizontalLimits() && (((x)<g_F699_SideEdgeAt00657884
                         && facing==1)
                     || ((x)>g_F699_SideEdgeAt00657884
                         && facing==-1)))

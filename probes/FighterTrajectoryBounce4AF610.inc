@@ -11,7 +11,7 @@ case 0x4A: {
         ResetSecondaryCounter(F610_EARLY);
         break;
     }
-    if (ContactAt454EE0() && (velocityX) <= g_BounceThresholdAt006590C0) {
+    if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
         ResetPrimaryCounters(0x4C);
         velocityX = -(velocityX) * g_BounceScaleAt00657F74;
         velocityY = 15.0f;

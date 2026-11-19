@@ -17,7 +17,7 @@ case 0x4A: {
         ResetSecondaryCounter(F610_EARLY);
         break;
     }
-    if (ContactAt454EE0() && (velocityX) <= g_BounceThresholdAt006590C0) {
+    if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
         if (fieldF0C==0) {
             fieldF0C=1;
             SpawnDirectedAt453A70(F611_PROJECTILE,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

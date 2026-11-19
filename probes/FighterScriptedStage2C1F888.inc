@@ -9,7 +9,7 @@ case 0x2C1: {
         ClearMotionFields();
     }
     if ((animationStage)==1 && (animationFrame)==0) {
-        AnimatePushAt453E80(0x28);
+        SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         PlaySound(9);
         field36C=(field36C)-g_ContactProjectionAt00657888;
