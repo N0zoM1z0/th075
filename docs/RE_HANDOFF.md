@@ -167,6 +167,9 @@ and one redundant float conversion while preserving all 33,731 COFF bytes and
 682 relocation positions/types/addends/local targets; its 133-GPR / zero-width
 frontier remains unchanged. Float casts protecting integer subtraction and
 integer division remain in place.
+Alice also loses eight redundant float wrappers around `RecordedRange`
+results while retaining the one `0..4 - 2` wrapper whose removal changes
+code generation; the full 33,731-byte body and all 682 relocations remain exact.
 
 For a complete parent:
 

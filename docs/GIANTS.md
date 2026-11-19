@@ -866,6 +866,13 @@ targets remain identical. The frontier stays at 575 differing bytes, 133 GPR
 positions and zero width differences; the float conversions before integer
 `RecordedRange` subtraction and before `owner->field3A0 / field0D8` remain
 because they change arithmetic semantics.
+A further Alice cleanup removes eight `static_cast<float>` wrappers around
+`RecordedRange` integer results assigned to float members. The `0..4` range
+minus two wrapper was tested separately and retained because its removal
+changes code generation. With only the eight byte-neutral wrappers removed,
+the complete 33,731-byte COFF body and all 682 relocation positions/types/
+addends/local targets remain identical; the 575-byte / 133-GPR / zero-width
+frontier remains unchanged.
 
 Reimu fighter `0045DD70` removes two redundant `static_cast<short>` wrappers
 around float projection results assigned to short script counters. The full
