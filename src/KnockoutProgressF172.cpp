@@ -51,9 +51,10 @@ void BattleScene::ResolveKnockout()
                 }
             }
             g_KnockoutAccumulationAt0067160C += fighters[1]->field3A8;
-            reinterpret_cast<unsigned long&>(fighters[0]->score) = reinterpret_cast<unsigned long&>(fighters[0]->score) + fighters[1]->field3A4;
-            if (reinterpret_cast<unsigned long&>(fighters[0]->score) > g_MaxCombatScore)
-                g_MaxCombatScore = reinterpret_cast<unsigned long&>(fighters[0]->score);
+            fighters[0]->score = static_cast<int>(
+                static_cast<unsigned long>(fighters[0]->score) + fighters[1]->field3A4);
+            if (fighters[0]->score > g_MaxCombatScore)
+                g_MaxCombatScore = fighters[0]->score;
             field06C = 120;
             field068 = fighters[1]->field3A4;
             fighters[1]->field3A4 = 0;

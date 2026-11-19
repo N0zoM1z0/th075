@@ -9,7 +9,7 @@
 short BattleScene::AdvanceState()
 {
     int i, j, k, resetPlayer;
-    if (reinterpret_cast<unsigned long&>(fighters[0]->score) > g_MaxCombatScore) g_MaxCombatScore = reinterpret_cast<unsigned long&>(fighters[0]->score);
+    if (fighters[0]->score > g_MaxCombatScore) g_MaxCombatScore = fighters[0]->score;
     switch (STATE) {
     case 0:
         if (field08C < 0.0f) field08C += 5.0f;
@@ -122,7 +122,7 @@ short BattleScene::AdvanceState()
         StateAudio::PlayTrack(40); StateAudio::Fade(-10000, -160, true, true);
         if (g_FrameClockMode == 2 || g_FrameClockMode == 4) return 0x2205;
         if (g_StateReturnFlag) g_StateReplay.AppendRecord();
-        if (g_CombatMode == 3 && reinterpret_cast<unsigned long&>(fighters[0]->score) > g_StateScoreThreshold) return 0x220A;
+        if (g_CombatMode == 3 && fighters[0]->score > g_StateScoreThreshold) return 0x220A;
         return 0x2203;
     case 9:
         if ((fighters[0]->field3CF == 0 || fighters[1]->field3CF == 0) && TIMER < 25) ++TIMER;

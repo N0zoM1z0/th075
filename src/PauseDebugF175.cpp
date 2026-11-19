@@ -29,7 +29,7 @@ void BattleScene::HandlePauseMenu()
             case 0:
                 if (field018 == 12 && g_ContinueCountAt00671623 > 0) {
                     fighters[0]->field39D = 2;
-                    reinterpret_cast<unsigned long&>(fighters[0]->score) = 0;
+                    fighters[0]->score = 0;
                     g_ContinueCountAt00671623--;
                     g_ContinueUsedAt00671624 = 1;
                     g_SequenceCounterAt00671622 = 2;
