@@ -250,6 +250,17 @@ all relocation offsets/types and every nonrelocation byte; all
 three groups of 44. This is a type/ownership and natural source
 recovery, not additional giant exact coverage.
 
+The native 00453A70 ordinary effect constructor is now invoked as
+`Fighter::SpawnBattleEffect(short,float,float,signed char,signed char)`
+throughout the Reimu, Youmu, and Remilia fighter giants as well as Sakuya.
+Reimu's raw `int`-signature float argument alias rewrites preserve the
+real IEEE-754 float data directly; whole-function COFF audits verified
+133 Reimu, 20 Youmu and 69 Remilia compiled native spawns (222 total)
+renamed to the shared API. All body sizes, relocation offsets/types and
+nonrelocation bytes remained unchanged. All 127 currently header-affected
+exact units passed targeted cold replay in 43/42/42-unit groups; the
+nonexact giant frontiers remain unchanged.
+
 A further float-ABI recovery in Sakuya and Remilia fighter parents
 changed 12 compiled call sites to the true inherited
 `Actor::SetPolarVelocity(float,float)` at 0040FB70. Ten Sakuya sites had

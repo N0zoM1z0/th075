@@ -32,6 +32,12 @@ Done so far:
   sites). Complete COFF sizes/relocation positions and types are unchanged;
   nonrelocation code byte differences = 0. Header-affected exact units
   passed 132/132 targeted cold replay; giant register debt remains.
+- Reimu/Youmu/Remilia giant fighter `Advance` now uses the shared
+  `Fighter::SpawnBattleEffect` native float ABI instead of per-character
+  borrowed `SpawnFloatXYAt453A70(int,float,float,char,int)` receiver
+  variants (133/20/69 real compiled calls). The whole COFF sizes,
+  relocation positions/types and nonrelocation bytes are unchanged;
+  127/127 header-affected exact units cold replayed locally (43/42/42).
 - At 0040FB70, Sakuya and Remilia fighter giants now call
   `Actor::SetPolarVelocity` directly (12 native relocations); ten
   Sakuya calls now pass the true `float field314` instead of its fake

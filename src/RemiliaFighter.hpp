@@ -16,7 +16,6 @@ public:
     void SpawnDirectedAt453A70(int,int,int,char,int);
     void SpawnWithFloatAt453A70(int,int,float,char,int);
     void SpawnFloatXRawYAt453A70(int,float,int,char,int);
-    void SpawnFloatXYAt453A70(int,float,float,char,int);
     void SpawnRawXYAt453C80(int,int,int,char,int);
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnSevenAt453B50(int,int,int,char,int,int,int);
