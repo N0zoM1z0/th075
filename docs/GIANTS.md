@@ -225,6 +225,15 @@ renumbering); the 39,999-byte object giant remains NONEXACT at 913 GPR / 10
 width differences. No owner layout, node payload ownership or STL ABI is
 newly credited.
 
+Three more complete object bosses now use direct declared member types in
+place of redundant reference reinterpretations: Youmu and Yuyuko assign the
+signed-char `facing` member directly from `owner->facing` (one and two sites),
+and Suika writes zero directly to the declared unsigned-short `owner->fieldF06`.
+Their full 40,464 / 44,331 / 43,972-byte COFF bodies remain byte-identical,
+with all 938 / 1,043 / 991 relocation positions/types unchanged. The native
+frontiers remain nonexact at 913/10, 914/6 and 935/1 GPR/width differences;
+no giant exactness is claimed.
+
 Suika object `005C9CC0` now defines `SuikaObject::Advance` on the
 real CharacterObject hierarchy, with 64 effect spawns, 13 sounds,
 three shared sounds and five camera shakes using the verified native

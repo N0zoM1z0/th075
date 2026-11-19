@@ -48,6 +48,11 @@ large research parents. They do not claim new giant exactness:
   positions/types. R243's historical canonical verifier currently predates
   the accepted R049 row and stops at that stale snapshot; do not downgrade
   the accepted auxiliary function to make the old snapshot pass.
+- 40913af9: removed four redundant byte/word reference casts across the
+  complete Youmu, Yuyuko and Suika object Advances. All three complete COFF
+  bodies remain byte-identical at 40,464 / 44,331 / 43,972 bytes, with
+  938 / 1,043 / 991 relocation positions/types unchanged; all three giant
+  frontiers remain explicitly nonexact.
 - 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
   +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
   identical; the 462 affected exact units cold-replayed 462/462.
