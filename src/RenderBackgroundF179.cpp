@@ -1,7 +1,6 @@
 #include "CharacterSelectScene.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
-#include "SinglePlayerOptions438670.hpp"
 
 // Ignored-result call-only view, matching the established drawing contracts.
 class BackgroundDrawingF179 {
@@ -13,6 +12,7 @@ public:
 // Reference-only observed byte views. No original names or ownership claimed.
 extern signed char g_BackgroundPadFrameAt00671620;
 extern unsigned char g_BackgroundPadNoticeAt00671621;
+extern signed char g_CombatMode;
 
 // All used animation and overlay fields share the scene layout.
 #define QUAD reinterpret_cast<SpriteTransform*>(&spriteQuad)
@@ -188,7 +188,7 @@ void CharacterSelectScene::DrawCurrent()
             (reinterpret_cast<BackgroundDrawingF179*>(menuTextures))->DrawQuad(6, spriteQuad, &clipRect, 0xFFFFFFFF);
         }
         if (g_CombatMode == 3)
-            reinterpret_cast<SinglePlayerOptions438670*>(this)->RenderOptions();
+            RenderSinglePlayerOptions();
         else
             RenderOptions();
         Graphics::EndFrame();

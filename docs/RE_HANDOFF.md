@@ -27,8 +27,9 @@ Done so far:
   layout covers the 28-byte per-player input records and named animation
   fields; both card and options renderers now belong to `CharacterSelectScene`
   and the 6,404-byte background renderer is now the genuine virtual
-  `CharacterSelectScene::DrawCurrent`. All eleven migrated complete
-  functions cold-replay exact.
+  `CharacterSelectScene::DrawCurrent`. The single-player options renderer
+  (596 bytes) now uses the same owner and is called directly by the virtual
+  render method. All 19 header-affected exact units cold-replayed correctly.
 - The 60,999-byte Reimu fighter parent is now `ReimuFighter::Advance` on the
   real vtable class, with its two +F00/+F02 counters named in `Fighter`.
   Its native-byte ratchet is unchanged: 6,311 register-role differences

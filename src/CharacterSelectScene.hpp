@@ -35,6 +35,7 @@ public:
     void UpdateCancelAnimation(signed char player);
     void RenderCards();                  // 00437380
     void RenderOptions();                // 00438240
+    void RenderSinglePlayerOptions();    // 00438670
 
     TextureAllocF225* menuTextures;                    // +008
     SelectInputFrame input[2];             // +00C, +028 (0x1C per player)

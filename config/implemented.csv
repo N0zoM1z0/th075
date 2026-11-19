@@ -177,7 +177,7 @@ AtlasQuad446B90::AtlasQuad446B90
 ComboDisplay::Render
 CharacterSelectScene::RenderCards
 CharacterSelectScene::RenderOptions
-SinglePlayerOptions438670::RenderOptions
+CharacterSelectScene::RenderSinglePlayerOptions
 GameProgress::GetSelectedValue
 CharacterSelectScene::PollInput
 InputMapping4388D0::IsKeyDown

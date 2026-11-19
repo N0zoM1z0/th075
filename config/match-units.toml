@@ -17335,8 +17335,8 @@ relocations = [
 source = "src/SinglePlayerOptions438670.cpp"
 object = "build/matching/SinglePlayerOptions438670.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["SinglePlayerOptions438670::RenderOptions"]
-symbol = "?RenderOptions@SinglePlayerOptions438670@@QAEXXZ"
+functions = ["CharacterSelectScene::RenderSinglePlayerOptions"]
+symbol = "?RenderSinglePlayerOptions@CharacterSelectScene@@QAEXXZ"
 target_address = 0x00438670
 size = 596
 compare_size = 596
@@ -30160,7 +30160,7 @@ target = 0x006714B4
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6377
 type = "REL32"
-symbol = "?RenderOptions@SinglePlayerOptions438670@@QAEXXZ"
+symbol = "?RenderSinglePlayerOptions@CharacterSelectScene@@QAEXXZ"
 target = 0x00438670
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6390

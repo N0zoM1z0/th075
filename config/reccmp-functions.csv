@@ -178,7 +178,7 @@ AtlasQuad446B90::AtlasQuad446B90,0x0040DA00,function
 ComboDisplay::Render,0x0043D570,function
 CharacterSelectScene::RenderCards,0x00437380,function
 CharacterSelectScene::RenderOptions,0x00438240,function
-SinglePlayerOptions438670::RenderOptions,0x00438670,function
+CharacterSelectScene::RenderSinglePlayerOptions,0x00438670,function
 GameProgress::GetSelectedValue,0x00438A80,function
 CharacterSelectScene::PollInput,0x004388D0,function
 InputMapping4388D0::IsKeyDown,0x00407170,function

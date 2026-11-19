@@ -1,12 +1,14 @@
 #include "GameProgress.hpp"
-#include "SinglePlayerOptions438670.hpp"
+#include "BattleHud43E040.hpp"
+#include "SpriteTransform.hpp"
+#include "CharacterSelectScene.hpp"
 
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
-#define DRAW field008
+#define DRAW reinterpret_cast<RenderDrawing5E68C0*>(menuTextures)
 #define VALUE reinterpret_cast<GameProgress*>(&g_BattleRecords)->GetSelectedValue()
 
-void SinglePlayerOptions438670::RenderOptions() {
-    if (field0EA == 0)
+void CharacterSelectScene::RenderSinglePlayerOptions() {
+    if (optionsOpen[0] == 0)
         return;
     RenderQuadPacket5E68C0 packet;
     {
@@ -25,7 +27,7 @@ void SinglePlayerOptions438670::RenderOptions() {
         DRAW->DrawQuad(6, &packet, &region, 0xFF808080);
         SetRect(&region, 0, 224, 64, 256);
         packet.BuildQuad(0.0f, 0.0f, 64.0f, 32.0f);
-        QUAD->TranslateQuad(408.0f, float(field0EC * 32 + 120), 0.0f);
+        QUAD->TranslateQuad(408.0f, float(optionsCursor[0] * 32 + 120), 0.0f);
         DRAW->DrawQuad(6, &packet, &region, 0xFFFFFFFF);
     }
 }
