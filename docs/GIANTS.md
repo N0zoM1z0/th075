@@ -987,6 +987,13 @@ signed casts across controller/card/background/options code are gone. All six
 exact selection update, card render, background render, options render,
 subselection and reset functions replayed 6/6 with their complete COFF bodies
 and relocation maps unchanged.
+`Fighter::field713` at `+0x713` is a signed character-sequence state byte.
+The result-scene target uses `movsx` for its `>= 8` and `== 10` state tests;
+the shared member is now `signed char`, and the two result-scene signed-byte
+reinterpret views are direct member accesses. Both complete 11KB character
+sequence giants (Alice 11,354 bytes / 375 relocations; Yuyuko 11,428 bytes /
+365 relocations), the 1,561-byte result update and all eleven fighter
+initializers remain byte-identical; all 14 exact units replayed 14/14.
 The name-entry `field120` byte at `+0x120` is likewise signed: the parallel
 sprite-name view already declares it `signed char`, and the editor uses its
 sign-extended value to calculate the active record offset. The update view now

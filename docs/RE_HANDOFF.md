@@ -291,3 +291,8 @@ The name-entry `field120` at `+0x120` is now `signed char`, matching the
 parallel sprite-name view and the signed editor row-offset calculation. Its
 last signed-byte reinterpret cast is gone; `NameEntryScene::UpdatePlayer`
 remains byte-identical at 541 bytes with all 11 relocations, replayed 1/1.
+`Fighter::field713` (+0x713) is now `signed char`, matching the result
+scene's native `movsx` sequence-state tests. The two signed-reference views
+were removed. Both full character-sequence giants, the result update and all
+eleven fighter initializers retained complete COFF bytes and relocations;
+14 affected exact units replayed 14/14.
