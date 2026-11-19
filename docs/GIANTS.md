@@ -1049,6 +1049,10 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+The paired third-boss arc no longer wraps its already-`float` `velocityX`
+member in ten redundant `reinterpret_cast<const float&>` expressions. The
+complete 83,922-byte Sakuya `Advance` body and all 2,352 relocations remain
+identical; its frontier stays at 18,253 differing bytes.
 Twelve remaining `int&` bit overlays on float members were replaced with
 native float assignments: six zero resets of Reimu's `field490` pair, two
 rotation resets, two owner-X copies and a Y zero in Youmu's scripted states.

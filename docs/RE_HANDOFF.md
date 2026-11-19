@@ -335,6 +335,10 @@ ten zero writes to `field3AC`, seven direct signed-byte `field366` decrements
 and three owner-facing copies. Complete Reimu/Sakuya/Youmu/Remilia advances
 and PatchouliObject advance bodies/relocations remain identical; their
 frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 / 24,643.
+Ten redundant const-float reference casts around the already-float
+third-boss `velocityX` field were removed. Sakuya's complete 83,922-byte
+`Advance` and all 2,352 relocations remain identical; frontier drift remains
+18,253 bytes.
 Twelve float-member `int&` overlays were replaced with ordinary float
 assignments (Reimu `field490`, fighter `rotationZ`, Youmu owner-X and Y), and
 the pause-effect `field10C` positive assignment is direct. All eight
