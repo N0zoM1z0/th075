@@ -1,5 +1,6 @@
 #include "YoumuFighter.hpp"
 #include "Fighter.hpp"
+#include "YoumuHistoryQueueF378.hpp"
 // Independently recovered complete 1,008-byte native character auxiliary
 // state controller. It deliberately preserves the second explicit
 // else-if (mode==3) comparison: VC7.1 emits native re-test and CFG.
@@ -7,21 +8,6 @@
 // stack, not an invented local or full private fighter layout.
 // The snapshot is a genuine physically observed 16-byte command structure,
 // not an inferred complete character class or artificial padding.
-struct ObservedInputSnapshotF378 {
-    short action;
-    short guard;
-    float x;
-    float y;
-    signed char facing;
-    short bearing;
-};
-typedef char CheckSnapshot16F378[(sizeof(ObservedInputSnapshotF378)==16)?1:-1];
-class ObservedEffectQueueF378 {
-public:
-    void AddSnapshot(ObservedInputSnapshotF378 const*);
-    unsigned int Count();
-    void PruneOld();
-};
 extern signed char g_CharacterSpecialModeAt006714B4;
 #define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
 #define QUEUE (*reinterpret_cast<ObservedEffectQueueF378*>(reinterpret_cast<unsigned char*>(this)+0xFEC))

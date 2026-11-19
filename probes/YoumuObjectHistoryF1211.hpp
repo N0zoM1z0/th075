@@ -1,24 +1,14 @@
 #pragma once
 #include "CharacterObject.hpp"
 #include "YoumuFighter.hpp"
+#include "YoumuHistoryQueueF378.hpp"
 
-// Borrowed 16-byte history payload, independently consumed at 005365FF.
-// The coordinates are native float positions. Natural member
-// alignment accounts for the byte before counterAt0E; no filler is declared.
-// Never use this view to instantiate or size the enclosing list or owner.
-struct ObjectHistoryEntryF1211 {
-    short actionAt00;
-    short stageAt02;
-    float xAt04;
-    float yAt08;
-    signed char facingAt0C;
-    short counterAt0E;
-};
-
-class ObjectHistoryListF1211 {
-public:
-    ObjectHistoryEntryF1211& FrontAt00540220();
-};
+// The object history relay reads the same 16-byte value that the fighter's
+// auxiliary update appends. R243 classifies FrontAt00540220 as the native
+// list-front worker over the same borrowed +0xFEC list; these aliases keep
+// the action-side field names without inventing a second container type.
+typedef ObservedInputSnapshotF378 ObjectHistoryEntryF1211;
+typedef ObservedEffectQueueF378 ObjectHistoryListF1211;
 
 // The owner gauge timer is the inherited Fighter method at 0046D000.
 
