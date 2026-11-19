@@ -408,7 +408,7 @@ void YukariObject::Advance()
         if (animationStage == 2 && AbsFloatAt00412D90(x - owner->opponent->x) < 100.0f) {
             ResetSecondaryCounter(3);
             velocityX = 10.0f;
-            UnknownAt0045B850(8);
+            NoOpAt0045B850(8);
             return;
         }
         else {
@@ -450,7 +450,7 @@ void YukariObject::Advance()
                         }
                         else ResetSecondaryCounter(5);
                     }
-                    if (animationStage == 5 && animationFrame == 0) UnknownAt0045B850(9);
+                    if (animationStage == 5 && animationFrame == 0) NoOpAt0045B850(9);
                 }
             }
         }
@@ -480,7 +480,7 @@ void YukariObject::Advance()
         if (animationStage == 2 && AbsFloatAt00412D90(x - owner->opponent->x) < 100.0f) {
             ResetSecondaryCounter(3);
             velocityX = 10.0f;
-            UnknownAt0045B850(8);
+            NoOpAt0045B850(8);
             return;
         }
         else {
@@ -522,7 +522,7 @@ void YukariObject::Advance()
                         }
                         else ResetSecondaryCounter(5);
                     }
-                    if (animationStage == 5 && animationFrame == 0) UnknownAt0045B850(9);
+                    if (animationStage == 5 && animationFrame == 0) NoOpAt0045B850(9);
                 }
             }
         }

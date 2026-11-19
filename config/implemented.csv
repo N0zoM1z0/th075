@@ -980,3 +980,4 @@ SpriteDrawingF780::DrawQuad
 ArchiveCatalog::Release
 BattleScene::~BattleScene
 GameApplication::RunAt00602A60
+CharacterObject::NoOpAt0045B850

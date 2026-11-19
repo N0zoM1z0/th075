@@ -226,6 +226,15 @@ relocation positions/types unchanged and zero nonrelocation-byte
 regressions. Its original 43,599 CODE bytes remain nonexact (613 GPR,
 11 width differences), and all 24 header-affected exact units replayed.
 
+The original 0045B850 shared, parameter-discarding no-op was also
+recovered as a real 13-byte `CharacterObject` member with a genuine
+VC7.1 thiscall `RET 4`: original PE direct calls are observed in Yuyuko
+(3), Yukari (4) and Suika (4) object giant Advances. The complete
+three giant COFF outputs keep all original relocation positions/types
+and nonrelocation bytes; the independently complete 13-byte leaf
+cold-replays exact and adds one conservative exact unit. This is a
+native function, not ASM, a filler stub or a claim of original naming.
+
 Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
 66 effect spawns, eight sounds and four camera-shake calls moved from
 borrowed owner declarations to shared game interfaces. Both 44,331-byte

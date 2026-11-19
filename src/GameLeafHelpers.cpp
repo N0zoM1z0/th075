@@ -16,6 +16,12 @@ void CharacterObject::ClearFrameInfo()
     frameInfo = 0;
 }
 
+// Authentic empty action hook: native function keeps a thiscall receiver
+// and discards one integer argument (RET 4). No artificial filler.
+void CharacterObject::NoOpAt0045B850(int unused)
+{
+}
+
 void Fighter::ClearNoticeTransition()
 {
     *(reinterpret_cast<u8 *>(this) + 0x6E6) = 0;

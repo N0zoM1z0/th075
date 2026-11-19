@@ -22,6 +22,16 @@ replaced by named members of shared classes.
 
 Done so far:
 
+- Native 0045B850 was recovered as an authentic, 13-byte
+  `CharacterObject::NoOpAt0045B850(int)` empty game member with `RET 4`:
+  11 original PE direct calls in Yuyuko (3), Yukari (4), Suika (4)
+  establish its shared role. Original bytes cold-replay exact 13/13,
+  0 relocations. The three complete object giant COFF parents preserve
+  all their relocation positions/types and all nonrelocation bytes.
+  The five other units from the same source cold replay 6/6 exact.
+  Conservative tracking advanced from 982 to 983 exact functions.
+  No ASM, padding, synthetic exactness or claim of original method name.
+
 - Result-list browser virtual slot 1 is now `ResultListScene::Advance`
   (1,803 B) and slot 2 is `ResultListScene::Render` (3,314 B), sharing
   its real scene and record/deque members. Both whole native functions

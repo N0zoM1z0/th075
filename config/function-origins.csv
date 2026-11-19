@@ -2095,7 +2095,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045B740,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0045B760,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
 0x0045B830,authored,BattleEffect,authored,complete-game-policy-with-batch-context,R104
-0x0045B850,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045B850,authored,BattleEffect,authored,complete-native-noop-with-11-game-callers,manual-2026-11-19-original-pe-call-crossrefs
 0x0045B860,authored,BattleEffect,authored,complete-game-policy-with-batch-context,R102
 0x0045B880,authored,BattleObject,authored,whole-virtual-frame-selection-and-independent-game-resource-receiver-dispatch-context,R222
 0x0045B920,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166

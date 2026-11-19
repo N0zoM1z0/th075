@@ -343,7 +343,7 @@ case 808:
         }
         if (animationStage == 2 && field07C == 1) {
             ResetSecondaryCounter(3);
-            UnknownAt0045B850(9);
+            NoOpAt0045B850(9);
             velocityX = 0.0f;
             velocityY = 0.0f;
             owner->fieldF0C = 0;
@@ -1667,7 +1667,7 @@ case 843:
             field07C = 0;
         }
         if (animationStage == 2 && field07C == 1) {
-            UnknownAt0045B850(14);
+            NoOpAt0045B850(14);
             ResetSecondaryCounter(3);
             velocityX = 0.0f;
             velocityY = 0.0f;
@@ -1994,7 +1994,7 @@ case 905:
             field0D8 = 0;
         }
         if (animationStage == 1 && animationFrame == 0) {
-            UnknownAt0045B850(6);
+            NoOpAt0045B850(6);
             if (g_F1212_DifficultyAt006714D0 <= 1 && field0D8 < 5)
                 owner->SpawnBattleEffect(902, field0D8 * 300 + RecordedRange(0, 50),
                     0.0f, facing, 1);

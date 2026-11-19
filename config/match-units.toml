@@ -61352,3 +61352,13 @@ relocations = [
  { offset = 0xBDF, type = "DIR32", symbol = "$L55749", target = 0x00603498 },
  { offset = 0xBE3, type = "DIR32", symbol = "$L55755", target = 0x006034E8 },
 ]
+
+[units.character-object-no-op-0045b850]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterObject::NoOpAt0045B850"]
+symbol = "?NoOpAt0045B850@CharacterObject@@QAEXH@Z"
+target_address = 0x0045B850
+size = 13
+relocations = []

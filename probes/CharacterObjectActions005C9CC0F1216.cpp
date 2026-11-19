@@ -1025,7 +1025,7 @@ void SuikaObject::Advance()
                 velocityY = 0.0f;
                 field080 = 1;
                 field07C = 0;
-                UnknownAt0045B850(1);
+                NoOpAt0045B850(1);
                 ResetSecondaryCounter(2);
                 owner->SpawnBattleEffect(827, x, y, facing, 1);
                 scaleX = 1.0f;
@@ -1290,7 +1290,7 @@ void SuikaObject::Advance()
                 velocityY = 0.0f;
                 field080 = 1;
                 field07C = 0;
-                UnknownAt0045B850(1);
+                NoOpAt0045B850(1);
                 ClearFrameInfo();
                 owner->SpawnBattleEffect(830, x, y, facing, 1);
                 scaleX = 1.0f;
@@ -2023,7 +2023,7 @@ void SuikaObject::Advance()
             }
             if (AdvanceNestedFrame() == field070) ClearFrameInfo();
             if (animationStage == 1 && animationFrame == 0) {
-                UnknownAt0045B850(31);
+                NoOpAt0045B850(31);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -2303,7 +2303,7 @@ void SuikaObject::Advance()
             }
             if (AdvanceNestedFrame() == field070) ClearFrameInfo();
             if (animationStage == 1 && animationFrame == 0) {
-                UnknownAt0045B850(31);
+                NoOpAt0045B850(31);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
