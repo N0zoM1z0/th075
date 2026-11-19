@@ -4121,7 +4121,7 @@ refreshed by section/offset after the owner method change; no code bytes were
 masked or patched.
 The 282-byte effect-spawn body at `0x0045BB10` is now also a member of
 that same owner, `EffectManagerLifetimeF161::Spawn`, rather than a separate
-`BattleEffectSpawnerF136` receiver. Its first owner member is the bound
+spawner receiver. Its first owner member is the bound
 `Fighter*`; the four following 20-byte members are the actual effect deques.
 The spawn body calls the Fighter's real virtual slot 7 (`CreateOwnedObject`),
 uses the four `CharacterObject` float parameters at `+0xC8..+0xD4`, and
@@ -4130,9 +4130,13 @@ relocations cold-replay exact. `CharacterObject::field0D4` is now typed as a
 float based on this independent write witness. All 29 exact units whose
 include closure reaches `CharacterObject.hpp` replayed 29/29; the manager's
 three lifecycle functions replayed 3/3 and its 24-section coupled verifier
-remains exact. The separate factory/spawner alias is no longer needed for
-this method; the remaining deque push helper is still a pointer-only view of
-the native deque member, not an invented owner.
+remains exact. The separate factory/spawner aliases and `FighterEffectBorrowedFieldsF973`
+byte-offset view are no longer needed. `Fighter::SpawnBattleEffect` and its
+seven-argument tracked overload now call the typed manager member directly;
+the two F169 tracked-effect entry points retain only a call-only receiver
+identity and reach the same manager through typed `Fighter` fields. The
+remaining `EffectDequeF136` declaration supplies only the native `PushBack`
+method ABI on an actual 20-byte deque member, not an invented queue owner.
 
 The verifier freezes 51 complete bounded callee/parent contexts, eleven parent
 edges, 157 policy instructions, exact RET cleanup, three raw PE import bindings,

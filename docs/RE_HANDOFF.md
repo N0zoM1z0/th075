@@ -81,6 +81,12 @@ large research parents. They do not claim new giant exactness:
   replay exact. The 29 exact units depending on `CharacterObject.hpp` replayed
   29/29; the owner lifecycle replayed 3/3 and the 24-section EH/data verifier
   passed with the fresh receipt.
+- current follow-up: `Fighter::SpawnBattleEffect` and the existing tracked
+  forwarder now call `field2EC->Spawn` directly. Removed the F135/F136
+  queue/spawner receiver declarations and the F973 raw byte-view header;
+  the two F169 tracked-effect entry points use typed Fighter fields through
+  their call-only receiver view. The six Fighter policy functions, both
+  tracked-effect helpers and the 282-byte manager Spawn all cold-replay 9/9.
 - 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
   +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
   identical; the 462 affected exact units cold-replayed 462/462.
