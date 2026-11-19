@@ -1712,8 +1712,8 @@ void MeilingObject::Advance() {
             field07C = 0;
             field080 = 1;
         }
-        scaleX += field0D8 * 0.03 + static_cast<double>(0.02f);
-        scaleY += field0D8 * 0.03 + static_cast<double>(0.02f);
+        scaleX += field0D8 * 0.03 + 0.02f;
+        scaleY += field0D8 * 0.03 + 0.02f;
         if (field0D8 > 0) --field0D8;
         if (animationStage == 21) {
             if (color[0] > 15) {
@@ -1744,8 +1744,8 @@ void MeilingObject::Advance() {
             field07C = 0;
             field080 = 1;
         }
-        scaleX += field0D8 * 0.03 + static_cast<double>(0.02f);
-        scaleY += field0D8 * 0.03 + static_cast<double>(0.02f);
+        scaleX += field0D8 * 0.03 + 0.02f;
+        scaleY += field0D8 * 0.03 + 0.02f;
         if (field0D8 > 0) --field0D8;
         if (animationStage == 21) {
             if (color[0] > 15) {
@@ -2473,7 +2473,7 @@ void MeilingObject::Advance() {
             SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
         if (animationStage == 1) {
-            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            field0D8 = AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ClearFrameInfo();
@@ -2514,7 +2514,7 @@ void MeilingObject::Advance() {
             SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
         if (animationStage == 1) {
-            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            field0D8 = AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ++owner->fieldEFA;
