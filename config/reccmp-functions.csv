@@ -159,7 +159,7 @@ MeilingFighter::PollCommands,0x005E6F70,function
 Actor::AdvanceNestedFrame,0x0040FA30,function
 Actor::ResetTransform,0x0040FBB0,function
 Actor::SetPolarVelocity,0x0040FB70,function
-RecordedRange455580::SelectRange,0x00455580,function
+Actor::RecordedRange,0x00455580,function
 EffectSound45B860::PlaySharedSound,0x0045B860,function
 Fighter::SetCameraShake,0x00453E60,function
 CameraShake412CB0::SetShakeAmount,0x00412CB0,function

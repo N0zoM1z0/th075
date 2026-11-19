@@ -90,6 +90,7 @@ public:
     void SetPolarVelocity(float angle, float speed);                // 0040FB70
     void ResetTransform(float pivotX, float pivotY, float pivotZ);  // 0040FBB0
     void ClearTransformFlag();                                      // 0040FC50
+    int RecordedRange(int lower, int upper);                         // 00455580: recorded/native random sample
     void SaveCollisionFields();                                     // 00455500 snapshot for the hit tests
 
     // Slots shared by fighter and object vtables. Advance is pure in the

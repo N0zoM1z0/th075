@@ -9,10 +9,6 @@ public:
     void PopFront();
     void PushBack(const short& sample);
 };
-class RecordedRange455580 {
-public:
-    int SelectRange(int lower, int upper);
-};
 
 extern signed char g_FrameClockMode;
 // External storage view only; the original container type and extent are unknown.

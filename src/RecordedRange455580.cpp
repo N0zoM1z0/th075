@@ -1,9 +1,10 @@
 #include "RecordedRange455580.hpp"
+#include "Actor.hpp"
 #include <cstdlib>
 
 #define SAMPLES reinterpret_cast<RecordedSamples455580View*>(g_RecordedSamplesAt006718B8)
 
-int RecordedRange455580::SelectRange(int lower, int upper) {
+int Actor::RecordedRange(int lower, int upper) {
     short sample = 0;
     if (g_FrameClockMode == 2) {
         if (SAMPLES->Count() > 0) {

@@ -158,7 +158,7 @@ MeilingFighter::PollCommands
 Actor::AdvanceNestedFrame
 Actor::ResetTransform
 Actor::SetPolarVelocity
-RecordedRange455580::SelectRange
+Actor::RecordedRange
 EffectSound45B860::PlaySharedSound
 Fighter::SetCameraShake
 CameraShake412CB0::SetShakeAmount

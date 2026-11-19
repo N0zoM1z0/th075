@@ -277,6 +277,14 @@ nonrelocation byte unchanged and all 682/22 relocation positions/types;
 24/24 exact header-affected functions, including the leaf, cold-replayed.
 The giant itself is still nonexact.
 
+The independently exact native recorded-range policy at 00455580 is
+now a common `Actor::RecordedRange(int,int)` method instead of an
+artificial standalone receiver. Its complete 139-byte COFF shape, all
+11 relocation targets and signed replay/record sampling behaviour
+cold-replay exact. This is an inferred native shared calling contract;
+the eight object giant source call sites will adopt it in a later
+verified step, without recrediting the existing leaf.
+
 Alice object also recovers the actual `0040FB70` polar-velocity ABI
 and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
 three previously encoded as raw `int` float-bit transports), 15

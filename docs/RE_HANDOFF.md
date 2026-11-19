@@ -22,6 +22,14 @@ replaced by named members of shared classes.
 
 Done so far:
 
+- The existing complete native 00455580 recorded-range generator is now
+  `Actor::RecordedRange(int,int)` instead of the standalone borrowed
+  receiver class. It remains 139-byte/11-relocation cold-exact, with
+  both 0040FAC0/0040FB40 adjacent Actor helpers 3/3 exact; 24/24
+  relevant object and renderer units cold-replayed. This is an inferred
+  shared C++ ABI, not a claim of original source class identity. Eight
+  object giants will be migrated to the inherited caller separately.
+
 - Native 0045B850 was recovered as an authentic, 13-byte
   `CharacterObject::NoOpAt0045B850(int)` empty game member with `RET 4`:
   11 original PE direct calls in Yuyuko (3), Yukari (4), Suika (4)
