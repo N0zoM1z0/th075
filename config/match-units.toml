@@ -21171,8 +21171,8 @@ relocations = [
 source = "src/MenuSceneDrawing.cpp"
 object = "build/matching/MenuSceneDrawing.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultScene430080::RenderRecordPage"]
-symbol = "?RenderRecordPage@ResultScene430080@@QAEXXZ"
+functions = ["ResultListScene::Render"]
+symbol = "?Render@ResultListScene@@UAEXXZ"
 target_address = 0x00430080
 size = 3314
 compare_size = 3314
@@ -21234,22 +21234,22 @@ relocations = [
   { offset = 0x5E4, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x5FB, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x61B, type = "REL32", symbol = "?DrawQuad@SceneQuadDrawingF119@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x67E, type = "REL32", symbol = "?DrawRankLabel@ResultScene430080@@QAEXMMKC@Z", target = 0x00431890 },
-  { offset = 0x6C8, type = "REL32", symbol = "?DrawNameGlyphs@ResultScene430080@@QAEXMMKPBC@Z", target = 0x00431770 },
-  { offset = 0x716, type = "REL32", symbol = "?DrawCounter@ResultScene430080@@QAEXMMKHH@Z", target = 0x004315F0 },
+  { offset = 0x67E, type = "REL32", symbol = "?DrawRankLabel@ResultListScene@@QAEXMMKC@Z", target = 0x00431890 },
+  { offset = 0x6C8, type = "REL32", symbol = "?DrawNameGlyphs@ResultListScene@@QAEXMMKPBC@Z", target = 0x00431770 },
+  { offset = 0x716, type = "REL32", symbol = "?DrawCounter@ResultListScene@@QAEXMMKHH@Z", target = 0x004315F0 },
   { offset = 0x731, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x784, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x7A4, type = "REL32", symbol = "?DrawQuad@SceneQuadDrawingF119@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x7F2, type = "REL32", symbol = "?DrawCounter@ResultScene430080@@QAEXMMKHH@Z", target = 0x004315F0 },
-  { offset = 0x83E, type = "REL32", symbol = "?DrawCounter@ResultScene430080@@QAEXMMKHH@Z", target = 0x004315F0 },
+  { offset = 0x7F2, type = "REL32", symbol = "?DrawCounter@ResultListScene@@QAEXMMKHH@Z", target = 0x004315F0 },
+  { offset = 0x83E, type = "REL32", symbol = "?DrawCounter@ResultListScene@@QAEXMMKHH@Z", target = 0x004315F0 },
   { offset = 0x862, type = "REL32", symbol = "?SetBlendMode@TimelineDrawing438D00@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x8AA, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x8F7, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x917, type = "REL32", symbol = "?DrawQuad@SceneQuadDrawingF119@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x92C, type = "REL32", symbol = "?SetBlendMode@TimelineDrawing438D00@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x951, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
-  { offset = 0x9A5, type = "REL32", symbol = "?Size@SceneRecordContainerF119@@QAEIXZ", target = 0x0041DD50 },
-  { offset = 0x9F8, type = "REL32", symbol = "?DrawCounter@ResultScene430080@@QAEXMMKHH@Z", target = 0x004315F0 },
+  { offset = 0x9A5, type = "REL32", symbol = "?Size@ResultListRecords@@QAEHXZ", target = 0x0041DD50 },
+  { offset = 0x9F8, type = "REL32", symbol = "?DrawCounter@ResultListScene@@QAEXMMKHH@Z", target = 0x004315F0 },
   { offset = 0xA60, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0xA80, type = "REL32", symbol = "?DrawQuad@SceneQuadDrawingF119@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0xAAF, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
@@ -24342,8 +24342,8 @@ relocations = [
 source = "src/SceneSelection.cpp"
 object = "build/matching/SceneSelection.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultListScene::UpdateSelection"]
-symbol = "?UpdateSelection@ResultListScene@@QAEFXZ"
+functions = ["ResultListScene::Advance"]
+symbol = "?Advance@ResultListScene@@UAEGXZ"
 target_address = 0x0042F970
 size = 1803
 compare_size = 1803

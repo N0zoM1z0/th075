@@ -35,9 +35,8 @@ class ResultListScene : public SceneBase {
 public:
     ResultListScene();
     virtual ~ResultListScene();
-    virtual unsigned short Advance();  // slot 1
-    virtual void Render();             // slot 2
-    short UpdateSelection();           // 0042F970
+    virtual unsigned short Advance();  // slot 1, 0042F970
+    virtual void Render();             // slot 2, 00430080
     void PollInput();                  // 00430D80
     void LoadSelectedCharacterResources();
     void LoadEncodedCards(void* cards, const char* resourceName);

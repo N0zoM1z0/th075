@@ -22,6 +22,11 @@ replaced by named members of shared classes.
 
 Done so far:
 
+- Result-list browser virtual slot 1 is now `ResultListScene::Advance`
+  (1,803 B) and slot 2 is `ResultListScene::Render` (3,314 B), sharing
+  its real scene and record/deque members. Both whole native functions
+  preserve all relocations; the 10-unit affected-only replay (including
+  music-room rendering and lifecycle) was 10/10 exact across 8 objects.
 - The result-list browser is now separately modeled as `ResultListScene`
   (not the score-tallying `ResultScene`). Its 1,803-byte selection update
   and 343-byte input poll share typed page, character, availability and

@@ -96,7 +96,7 @@ void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
     if (side == 0 && stageCountdown[0] > 0) --stageCountdown[0];
 }
 
-short ResultListScene::UpdateSelection() {
+unsigned short ResultListScene::Advance() {
     PollInput();
     Render();
     Graphics::Present();

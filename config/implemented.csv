@@ -251,7 +251,7 @@ YukariFighter::ConfigureStage
 SuikaFighter::ConfigureStage
 OpeningTimeline4277A0::RenderTimeline
 MusicScene425C80::RenderList
-ResultScene430080::RenderRecordPage
+ResultListScene::Render
 AuxiliaryActor4A80F0::Update
 PatchouliFighter::ChooseAction
 PatchouliFighter::RenderStage
@@ -318,7 +318,7 @@ NameEntrySharedF129::Render
 CharacterSelectScene::UpdateSelect
 FighterControlsF130::UpdateControls
 CharacterSelectScene::UpdateChoiceAnimation
-ResultListScene::UpdateSelection
+ResultListScene::Advance
 Fighter::SpawnBattleEffect
 Fighter::SpawnTrackedEffect
 Fighter::SpawnAuxEffect

@@ -252,7 +252,7 @@ YukariFighter::ConfigureStage,0x0059B7F0,function
 SuikaFighter::ConfigureStage,0x005C43D0,function
 OpeningTimeline4277A0::RenderTimeline,0x004277A0,function
 MusicScene425C80::RenderList,0x00425C80,function
-ResultScene430080::RenderRecordPage,0x00430080,function
+ResultListScene::Render,0x00430080,function
 AuxiliaryActor4A80F0::Update,0x004A80F0,function
 PatchouliFighter::ChooseAction,0x00507B20,function
 PatchouliFighter::RenderStage,0x00507040,function
@@ -319,7 +319,7 @@ NameEntrySharedF129::Render,0x0042B570,function
 CharacterSelectScene::UpdateSelect,0x00433CF0,function
 FighterControlsF130::UpdateControls,0x00452F10,function
 CharacterSelectScene::UpdateChoiceAnimation,0x004350E0,function
-ResultListScene::UpdateSelection,0x0042F970,function
+ResultListScene::Advance,0x0042F970,function
 Fighter::SpawnBattleEffect,0x00453A70,function
 Fighter::SpawnTrackedEffect,0x00453B50,function
 Fighter::SpawnAuxEffect,0x00453C80,function
