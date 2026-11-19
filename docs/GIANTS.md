@@ -1101,6 +1101,13 @@ storing back to the signed score member. The continue/debug score reset is a
 normal direct member assignment. All eight exact functions across the three
 state/KO/pause translation units replayed 8/8, including the 4,824-byte
 `BattleScene::AdvanceState` and 1,150-byte knockout resolver.
+The queue policy and static lifetime paths now consume that same typed
+segmented storage: `ClearFourQueues` and `IsPrimaryInputQueueEmpty` use direct
+queue members, while the static constructor/destructor expose the file handle,
+record header, offset table, and four queue members at their native offsets.
+The destructor now uses the typed `HANDLE` field and compiler-managed
+reverse-order member destruction. All four queue-policy/constructor/destructor
+functions replayed 4/4 exact (67 / 35 / 132 / 161 bytes respectively).
 The replay reader `ReplayRecords::LoadRecord` (+0x413AC0) now shares the
 same `ReplayRecordsLayoutF219` and queue storage declarations. It uses the
 actual file-path array, ten-entry record-offset table, typed serialized

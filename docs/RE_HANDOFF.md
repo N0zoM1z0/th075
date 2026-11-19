@@ -371,6 +371,12 @@ reset. Comparisons retain the native unsigned conversion against global score
 ceilings, and the score addition explicitly performs unsigned 32-bit
 arithmetic. Eight affected exact functions replayed 8/8, including the full
 4,824-byte `BattleScene::AdvanceState`.
+The replay queue policy no longer uses its `QUEUE` pointer-arithmetic macro;
+clear and empty checks are direct member calls. Static queue construction and
+destruction now declare the same typed owner prefix, file handle, record
+header, and four segmented queue members. The destructor directly closes the
+`HANDLE` and lets C++ destroy members in reverse order. Four affected exact
+functions replayed 4/4 (67, 35, 132 and 161 bytes).
 `ReplayRecords::LoadRecord` now shares the same typed owner and queue layout
 as `AppendRecord`: direct file path, record-offset array, serialized header,
 and four queue members replace its raw `AT`/`LIST` offset macros. The complete
