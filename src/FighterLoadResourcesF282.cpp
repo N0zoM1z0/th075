@@ -63,7 +63,7 @@ void Fighter::LoadResources()
     FighterLogF282::Append(g_LogPicturesAt00658ED0);
     drawing=new FighterTextureF282();
     reinterpret_cast<FighterTextureF282*&>(field534)=new FighterTextureF282();
-    static_cast<FighterTextureF282*>(drawing)->AllocateSlots(reinterpret_cast<short&>(field478));
+    static_cast<FighterTextureF282*>(drawing)->AllocateSlots(field478);
     sprintf(filename,g_MainTextureFormatAt00658EE4,tag);
     if (strcmp(name,g_CharacterAliceAt00658EFC)==0 || strcmp(name,g_CharacterMeiling2At00658F04)==0)
         static_cast<FighterTextureF282*>(drawing)->Load(filename,field2CE+1,g_MainTextureArchiveAltAt00658F0C);

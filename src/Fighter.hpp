@@ -204,7 +204,7 @@ public:
     unsigned char unknown466[0x468 - 0x466];
     ActionSequenceSlots sequenceSlots;  // +0x468 action sequences, indexed by action id
     unsigned char unknown469[0x478 - 0x469];
-    unsigned short field478;            // +0x478
+    short field478;                     // +0x478 signed texture slot count
     unsigned char unknown47A[0x47C - 0x47A];
     int field47C;                       // +0x47C
     void* field480;                     // +0x480
