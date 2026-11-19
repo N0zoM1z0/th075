@@ -26,12 +26,12 @@
             if ((animationStage)==6 && (animationFrame)==0) {
                 PlaySound(0x12);
                 field314=float(RandomBoundaryAt455580(0,40)-20);
-                SpawnFloatXYAt453A70(0x391,
+                SpawnBattleEffect(0x391,
                     float(facing*36)+(x),
                     (*(&y))+g_StormYAt0065948C,
                     facing,1);
                 for (int i=0; i<static_cast<int>(g_CloudOpponentAt006714D0)*2+2; ++i)
-                    SpawnFloatXYAt453A70(0x392,
+                    SpawnBattleEffect(0x392,
                         float(facing*36)+(x),
                         (*(&y))+g_StormYAt0065948C,
                         facing,1);

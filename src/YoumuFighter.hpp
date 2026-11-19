@@ -25,7 +25,6 @@ public:
     void SpawnRawAt453C80(int,int,int,char,int);
     void SpawnFloatXRawYAt453C80(int,float,int,char,int);
     void NativeGameEffectAt455B30();
-    void ConfigureStormAt454BC0(int,int,int);
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnAt453C80(int,float,float,char,int);
 

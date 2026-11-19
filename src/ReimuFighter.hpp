@@ -25,7 +25,6 @@ public:
     void SpawnAt453C80(int,float,float,char,int);
     void SpawnMixedAt453C80(int,int,float,char,int);
     void SpawnRawXYAt453C80(int,int,int,char,int);
-    void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
 
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);

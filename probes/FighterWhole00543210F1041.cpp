@@ -723,11 +723,11 @@ void RemiliaFighter::Advance() {
             if (AdvanceNestedFrame()==(field070))
                 ResetPrimaryCounters(0);
             if (animationStage==12 && animationFrame==0) {
-                SpawnFloatXYAt453A70(0x328,
+                SpawnBattleEffect(0x328,
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
-                SpawnFloatXYAt453A70(0x33C,
+                SpawnBattleEffect(0x33C,
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
@@ -786,7 +786,7 @@ void RemiliaFighter::Advance() {
                 field05C=0.8f;
             }
             if (animationStage>6 && animationStage<15) {
-                SpawnFloatXYAt453A70(0x329,
+                SpawnBattleEffect(0x329,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
@@ -833,7 +833,7 @@ void RemiliaFighter::Advance() {
                 field05C=0.85f;
             }
             if (animationStage==5 && animationFrame==0) {
-                SpawnFloatXYAt453A70(0x32A,
+                SpawnBattleEffect(0x32A,
                     float(facing*40)+(x),
                     10.0f,
                     facing,1);
@@ -875,11 +875,11 @@ void RemiliaFighter::Advance() {
                 ResetPrimaryCounters(0);
             if (animationStage==12 && animationFrame==0) {
                 UpdateGaugeTimer(750);
-                SpawnFloatXYAt453A70(0x32B,
+                SpawnBattleEffect(0x32B,
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
-                SpawnFloatXYAt453A70(0x33D,
+                SpawnBattleEffect(0x33D,
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
@@ -932,7 +932,7 @@ void RemiliaFighter::Advance() {
             if (animationStage==7 && animationFrame==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
-                SpawnFloatXYAt453A70(0x344,
+                SpawnBattleEffect(0x344,
                     float(facing*55)+(x),
                     (*(&y))+g_F724_ShotYAt00659488,
                     facing,1);
@@ -943,7 +943,7 @@ void RemiliaFighter::Advance() {
                 field05C=0.8f;
             }
             if (animationStage>6 && animationStage<15) {
-                SpawnFloatXYAt453A70(0x32E,
+                SpawnBattleEffect(0x32E,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);

@@ -16,7 +16,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
-                SpawnFloatXYAt453A70(0x327,
+                SpawnBattleEffect(0x327,
                     float(facing*151)+(x),
                     (y)+g_YPlusAt0065929C,
                     facing,1);
@@ -45,7 +45,7 @@
                 field07C=0;
             }
             if ((animationStage)==6 && (animationFrame)==0) {
-                SpawnFloatXYAt453A70(0x328,
+                SpawnBattleEffect(0x328,
                     float(facing*128)+(x),
                     (y)+g_YPlusAt00658400,
                     facing,1);

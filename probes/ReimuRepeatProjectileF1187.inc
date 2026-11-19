@@ -8,7 +8,7 @@ case R1187_ACTION: {
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=40.0f; field318=10.0f;
-        SpawnFloatXYAt453A70(R1187_EFFECT,(*(&x))+g_ThresholdAt0065782C,
+        SpawnBattleEffect(R1187_EFFECT,(*(&x))+g_ThresholdAt0065782C,
             (*(&y))+g_ThresholdAt0065782C,reinterpret_cast<char&>(facing),0);
         PlaySound(4);
         UpdateGaugeTimer(250);

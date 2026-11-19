@@ -13,16 +13,16 @@ case R1189_ACTION: {
     if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
         field314=0.0f;
         field318=(*(&y))+R1189_Y_OFFSET;
-        SpawnFloatXYAt453A70(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
+        SpawnBattleEffect(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
             (*(&y))+R1189_Y_OFFSET,reinterpret_cast<char&>(facing),1);
         field314=1.0f;
-        SpawnFloatXYAt453A70(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
+        SpawnBattleEffect(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
             (*(&y))+R1189_Y_OFFSET,reinterpret_cast<char&>(facing),1);
         field314=2.0f;
-        SpawnFloatXYAt453A70(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
+        SpawnBattleEffect(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
             (*(&y))+R1189_Y_OFFSET,reinterpret_cast<char&>(facing),1);
         field314=3.0f;
-        SpawnFloatXYAt453A70(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
+        SpawnBattleEffect(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),
             (*(&y))+R1189_Y_OFFSET,reinterpret_cast<char&>(facing),1);
         UpdateGaugeTimer(250);
         PlaySound(4);

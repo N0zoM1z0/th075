@@ -6,7 +6,7 @@
 // PARTIAL 82KB original father uses only a 0x40 stack frame.
 // The original game giant remains NONEXACT; no case-only credit.
 case 0xCA: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=0.0f;

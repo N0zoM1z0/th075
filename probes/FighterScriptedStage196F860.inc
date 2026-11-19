@@ -12,7 +12,7 @@ case 0x196: {
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         PlaySound(3);
-        SpawnFloatXYAt453A70(0x353,
+        SpawnBattleEffect(0x353,
             float((facing)*100)+(x),
             (*(&y))+g_F860ShotYAt006581DC,
             (facing),1);

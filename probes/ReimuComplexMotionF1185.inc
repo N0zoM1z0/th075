@@ -2,7 +2,7 @@
 // this source is included only by the live nonexact 0045DD70 parent.
 case R1185_ACTION: {
     if ((*(&y)==g_ThresholdAt0065782C) || velocityY>g_ThresholdAt0065782C) {
-        ConfigureStormAt454BC0(3,4,0xFF);
+        SetCommandSelection(3,4,0xFF);
         field088=2;
     }
     if ((animationStage)==0 && (field3AC)==0) ClearMotionFields();

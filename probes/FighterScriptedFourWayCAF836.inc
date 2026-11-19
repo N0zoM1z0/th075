@@ -3,7 +3,7 @@
 // Unlike another fighter, resets native motion slots, with stage2 sprite.
 // Not independently callable original CODE.
 case 0xCA: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=0.0f;

@@ -17,7 +17,7 @@
                 field314=0.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
-                    SpawnFloatXYAt453A70(0x324,
+                    SpawnBattleEffect(0x324,
                         float(facing*70)+(x),
                         (*(&y))+g_F734_RoundY0At00659A30,
                         facing,1);
@@ -40,7 +40,7 @@
                 field314=20.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
-                    SpawnFloatXYAt453A70(0x324,
+                    SpawnBattleEffect(0x324,
                         float(facing*64)+(x),
                         (*(&y))+g_F734_RoundY1At00659A2C,
                         facing,1);
@@ -60,7 +60,7 @@
                 field314=45.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0; shot<8; ++shot) {
-                    SpawnFloatXYAt453A70(0x324,
+                    SpawnBattleEffect(0x324,
                         float(facing*44)+(x),
                         (*(&y))+g_F734_RoundY2At00659A28,
                         facing,1);

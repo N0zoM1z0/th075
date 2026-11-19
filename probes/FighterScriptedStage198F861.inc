@@ -11,7 +11,7 @@ case 0x198: {
         ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0) {
         PlaySound(3);
-        SpawnFloatXYAt453A70(0x351,
+        SpawnBattleEffect(0x351,
             float((facing)*90)+(x),
             (*(&y))+g_F861ShotYAt00659460,
             (facing),1);

@@ -5,7 +5,7 @@ case 0x191: {
     if ((animationStage)==0 && (animationFrame)==0)
         field07C=1;
     if ((animationStage)==5 && (animationFrame)==0) {
-        SpawnFloatXYAt453A70(0x321,
+        SpawnBattleEffect(0x321,
             float((facing)*100)+(x),
             (*(&y))+g_F857ShotYAt00659298,
             (facing),1);

@@ -3,7 +3,7 @@
 // 2DE 0054ED53..0054EFE7: 660 B /189 native x86.
 // Native behavioral branches and typed PE calls retained; whole giant NONEXACT.
         case 0x2DD: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
                 ClearMotionFields();
                 field080=1;
@@ -28,11 +28,11 @@
                 }
             }
             if ((animationStage)<4) {
-                SpawnFloatXYAt453A70(0x329,
+                SpawnBattleEffect(0x329,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
-                SpawnFloatXYAt453A70(0x387,
+                SpawnBattleEffect(0x387,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
@@ -54,7 +54,7 @@
             break;
         }
         case 0x2DE: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
                 field080=99;
@@ -90,7 +90,7 @@
                 field05C=0.8f;
             }
             if ((animationStage)>6 && (animationStage)<16) {
-                SpawnFloatXYAt453A70(0x329,
+                SpawnBattleEffect(0x329,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);

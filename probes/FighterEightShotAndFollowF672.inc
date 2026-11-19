@@ -12,38 +12,38 @@
             if ((animationStage)==5 && (animationFrame)==0) {
                 UpdateGaugeTimer(250);
                 field314=-10.0f;
-                SpawnFloatXYAt453A70(0x321,
+                SpawnBattleEffect(0x321,
                     float(facing*40)+(x),
                     (*(&y))+g_EightShotY0At006591F8,
                     facing,1);
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
                     (*(&y))+g_EightShotY0At006591F8,
                     facing,1);
                 field314=10.0f;
-                SpawnFloatXYAt453A70(0x321,
+                SpawnBattleEffect(0x321,
                     float(facing*40)+(x),
                     (*(&y))+g_EightShotY1At00658264,
                     facing,1);
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
                     (*(&y))+g_EightShotY1At00658264,
                     facing,1);
                 field314=-6.0f;
-                SpawnFloatXYAt453A70(0x321,
+                SpawnBattleEffect(0x321,
                     float(facing*75)+(x),
                     (*(&y))+g_BarrageY3At0065908C,
                     facing,1);
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
                     (*(&y))+g_BarrageY3At0065908C,
                     facing,1);
                 field314=6.0f;
-                SpawnFloatXYAt453A70(0x321,
+                SpawnBattleEffect(0x321,
                     float(facing*75)+(x),
                     (*(&y))+g_EightShotY2At00658268,
                     facing,1);
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
                     (*(&y))+g_EightShotY2At00658268,
                     facing,1);
@@ -57,7 +57,7 @@
                 field07C=1;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
-                SpawnFloatXYAt453A70(0x32B,
+                SpawnBattleEffect(0x32B,
                     float(facing*100)+(x),
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
@@ -72,7 +72,7 @@
                 field07C=1;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
-                SpawnFloatXYAt453A70(0x32D,
+                SpawnBattleEffect(0x32D,
                     float(facing*100)+(x),
                     (*(&y))+g_EightShotY1At00658264,
                     facing,1);
@@ -86,7 +86,7 @@
                 ClearMotionFields();
             }
             if ((animationStage)==5 && (animationFrame)==0) {
-                SpawnFloatXYAt453A70(0x332,
+                SpawnBattleEffect(0x332,
                     float(facing*70)+(x),
                     (*(&y))+g_OneShotYAt0065928C,
                     facing,1);
@@ -100,7 +100,7 @@
                 ClearMotionFields();
             }
             if ((animationStage)==5 && (animationFrame)==0) {
-                SpawnFloatXYAt453A70(0x333,
+                SpawnBattleEffect(0x333,
                     float(facing*70)+(x),
                     (*(&y))+g_OneShotYAt0065928C,
                     facing,1);

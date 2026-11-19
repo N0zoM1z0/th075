@@ -3,7 +3,7 @@
 // Genuine four independent tier-specific projectile loops, not stubs.
 // Nonexact boss-context source only; do not award whole-function credit.
         case 0x302: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
@@ -34,7 +34,7 @@
                 if (g_CloudOpponentAt006714D0==0) {
                     for (int i=0; i<6; ++i) {
                         field314=static_cast<float>(i*60+(fieldF04));
-                        SpawnFloatXYAt453A70(0x393,
+                        SpawnBattleEffect(0x393,
                             (x)+g_ThresholdAt0065782C,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);
@@ -43,7 +43,7 @@
                 if (g_CloudOpponentAt006714D0==1) {
                     for (int i=0; i<6; ++i) {
                         field314=static_cast<float>(i*60+(fieldF04));
-                        SpawnFloatXYAt453A70(0x393,
+                        SpawnBattleEffect(0x393,
                             (x)+g_ThresholdAt0065782C,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);
@@ -52,7 +52,7 @@
                 if (g_CloudOpponentAt006714D0==2) {
                     for (int i=0; i<8; ++i) {
                         field314=static_cast<float>(i*45+(fieldF04));
-                        SpawnFloatXYAt453A70(0x393,
+                        SpawnBattleEffect(0x393,
                             (x)+g_ThresholdAt0065782C,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);
@@ -61,7 +61,7 @@
                 if (g_CloudOpponentAt006714D0==3) {
                     for (int i=0; i<8; ++i) {
                         field314=static_cast<float>(i*45+(fieldF04));
-                        SpawnFloatXYAt453A70(0x393,
+                        SpawnBattleEffect(0x393,
                             (x)+g_ThresholdAt0065782C,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);

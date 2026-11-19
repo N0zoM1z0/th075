@@ -12,25 +12,25 @@ case 0x258: {
                 UpdateGaugeTimer(100);
                 field314=-110.0f;
                 field318=5.0f;
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
                 field314=110.0f;
                 field318=5.0f;
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
                     (*(&y))+g_BarrageY2At006581DC,
                     facing,1);
                 field314=-70.0f;
                 field318=4.0f;
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
                     (*(&y))+g_BarrageY3At0065908C,
                     facing,1);
                 field314=70.0f;
                 field318=4.0f;
-                SpawnFloatXYAt453A70(0x322,
+                SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);

@@ -21,7 +21,7 @@ case 0x2EF: {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         PlaySound(12);
         field314=float(reinterpret_cast<signed short&>(scriptCounterF00));
-        SpawnFloatXYAt453A70(0x394,float(facing*80)+(x),
+        SpawnBattleEffect(0x394,float(facing*80)+(x),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         aiCardTimer=120;
     }

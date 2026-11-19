@@ -6,7 +6,7 @@
 // original saved-this EBP-0x64 is still wrong in this partial parent.
 // No independent callable function or whole-fighter exactness claim.
 case 0xC9: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0)
         ClearMotionFields();
     if ((animationStage)==2 && (animationFrame)==0)

@@ -20,7 +20,7 @@
             if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 InitTrajectoryAt453E60(2.0f);
-                SpawnFloatXYAt453A70(0x325,
+                SpawnBattleEffect(0x325,
                     float(facing*170)+(x),
                     (y)-g_ApproachLowerAt00658290,
                     facing,0);

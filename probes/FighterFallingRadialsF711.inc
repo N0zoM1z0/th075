@@ -3,7 +3,7 @@
 // velocity; two native 7D/7E projectiles are retained in each case.
 // Entire original fighter still NONEXACT; no independent function credit.
         case 0x2D0: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=0.0f;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -37,7 +37,7 @@
             break;
         }
         case 0x2D1: {
-            ConfigureStormAt454BC0(3,4,0xFF);
+            SetCommandSelection(3,4,0xFF);
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=0.0f;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;

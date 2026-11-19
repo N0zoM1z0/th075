@@ -16,7 +16,7 @@ case 0x18A: {
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0)
-        SpawnFloatXYAt453A70(0x327,
+        SpawnBattleEffect(0x327,
             float((facing)*151)+(x),
             (*(&y))+g_F853OffsetYAt0065929C,
             (facing),1);

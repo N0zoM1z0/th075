@@ -3,7 +3,7 @@
 // member at this+0x44, and native epilogue direct return.
 // This is an ORIGINAL INTERIOR only, NOT an independent exact function.
 case 0xC9: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=-15.0f;
         SpawnAt453C80(0x7D,

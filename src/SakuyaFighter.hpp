@@ -17,7 +17,6 @@ public:
     void SpawnWithFloatAt453A70(short,int,float,signed char,signed char);
     void InitTrajectoryAt453E60(float);
     void SpawnMixedAt453C80(short,int,float,signed char,signed char);
-    void ConfigureStormAt454BC0(int,unsigned char,unsigned int);
     void SpawnRawAt453C80(short,int,int,signed char,signed char);
     void SpawnSevenAt453B50(short,int,int,signed char,signed char,unsigned char,unsigned char);
     void SpawnSevenRawXFloatYAt453B50(short,int,float,signed char,signed char,unsigned char,unsigned char);

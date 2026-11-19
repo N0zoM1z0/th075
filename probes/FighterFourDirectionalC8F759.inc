@@ -1,7 +1,7 @@
 // F759 real original game action 0xC8..0xCB, all under the same 00543210 giant.
 // These are switch-case interiors, not individually accepted callable CODE.
 case 0xC8: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -41,7 +41,7 @@ case 0xC8: {
     break;
 }
 case 0xC9: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -73,7 +73,7 @@ case 0xC9: {
     break;
 }
 case 0xCA: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
     if (y>g_ThresholdAt0065782C && (animationStage)>5) {
         velocityY=velocityY-field05C;
@@ -105,7 +105,7 @@ case 0xCA: {
     break;
 }
 case 0xCB: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
     if (y>g_ThresholdAt0065782C && (animationStage)>4) {
         velocityY=velocityY-field05C;

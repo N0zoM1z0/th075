@@ -29,7 +29,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(2);
                 field314=0.0f;
-                SpawnFloatXYAt453A70(0x330,
+                SpawnBattleEffect(0x330,
                     float(facing*35)+(x),
                     (*(&y))+g_F737_RoundY0At00659A24,
                     facing,1);
@@ -40,7 +40,7 @@
                     && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
                 PlaySound(2);
                 field314=0.0f;
-                SpawnFloatXYAt453A70(0x330,
+                SpawnBattleEffect(0x330,
                     float(facing*35)+(x),
                     (*(&y))+g_F737_RoundY0At00659A24,
                     facing,1);
@@ -76,7 +76,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(2);
                 field314=-20.0f;
-                SpawnFloatXYAt453A70(0x330,
+                SpawnBattleEffect(0x330,
                     float(facing*27)+(x),
                     (*(&y))+g_F737_RoundY1At00659A20,
                     facing,1);
@@ -87,7 +87,7 @@
                     && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
                 PlaySound(2);
                 field314=-20.0f;
-                SpawnFloatXYAt453A70(0x330,
+                SpawnBattleEffect(0x330,
                     float(facing*27)+(x),
                     (*(&y))+g_F737_RoundY1At00659A20,
                     facing,1);

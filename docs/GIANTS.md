@@ -115,6 +115,15 @@ remain NONEXACT with 1,741 GPR-role and three width differences (40,569
 frontier differing bytes); all 98 affected exact units were cold-replayed
 in three groups (36, 31, 31). No new whole-giant exact credit.
 
+The 00454BC0 action-command selection interface is now the real
+`Fighter::SetCommandSelection(int,unsigned char,unsigned int)` in Reimu,
+Sakuya, Youmu and Remilia giant state machines (7 / 7 / 4 / 17 native
+calls). This also removes speculative per-character `int,int,int`
+prototypes: the actual VC7.1 code, COFF body sizes and all relocation
+offsets/types are unchanged. The 132 affected exact units cold replayed
+in three affected-only groups (44/44 each), and no giant exactness is
+claimed.
+
 Four fighter giant research parents now call shared, verified Fighter
 helpers instead of provisional class-specific aliases: 122 native
 `CheckHorizontalLimits` calls (00454EE0), 29 `SetNonnegativeWord`

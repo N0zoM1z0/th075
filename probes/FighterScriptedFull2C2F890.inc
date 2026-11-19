@@ -37,7 +37,7 @@ case 0x2C2: {
             (facing),1);
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==0) {
             field314=0.0f;
-            SpawnFloatXYAt453A70(0x34A,
+            SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);
@@ -59,11 +59,11 @@ case 0x2C2: {
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==2) {
             field314=90.0f;
-            SpawnFloatXYAt453A70(0x34A,
+            SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);
-            SpawnFloatXYAt453A70(0x329,
+            SpawnBattleEffect(0x329,
                 opponent->x+float(((facing))*150),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
@@ -74,51 +74,51 @@ case 0x2C2: {
                 opponent->x-float(((facing))*100),
                 reinterpret_cast<int&>(opponent->y),
                 (facing),1);
-            SpawnFloatXYAt453A70(0x329,
+            SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*150),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==4) {
             field314=45.0f;
-            SpawnFloatXYAt453A70(0x34A,
+            SpawnBattleEffect(0x34A,
                 (opponent->x)+g_ThresholdAt0065782C,
                 (opponent->y)+g_F890Phase4HiYAt00659420,
                 (facing),1);
-            SpawnFloatXYAt453A70(0x329,
+            SpawnBattleEffect(0x329,
                 opponent->x+float(((facing))*125),
                 (opponent->y)+g_F890Phase4OtherYAt006598B4,
                 -((facing)),1);
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==5) {
             field314=-45.0f;
-            SpawnFloatXYAt453A70(0x34A,
+            SpawnBattleEffect(0x34A,
                 (opponent->x)+g_ThresholdAt0065782C,
                 (opponent->y)-g_F890Phase5YAt0065786C,
                 -((facing)),1);
-            SpawnFloatXYAt453A70(0x329,
+            SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*125),
                 (opponent->y)-g_ApproachUpperAt006592A4,
                 (facing),1);
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==6) {
             field314=45.0f;
-            SpawnFloatXYAt453A70(0x34A,
+            SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*120),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
-            SpawnFloatXYAt453A70(0x329,
+            SpawnBattleEffect(0x329,
                 opponent->x+float(((facing))*125),
                 (opponent->y)-g_ApproachUpperAt006592A4,
                 (facing),1);
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==7) {
             field314=-45.0f;
-            SpawnFloatXYAt453A70(0x34A,
+            SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*120),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 (facing),1);
-            SpawnFloatXYAt453A70(0x329,
+            SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*125),
                 (opponent->y)+g_F890Phase4OtherYAt006598B4,
                 -((facing)),1);
@@ -129,7 +129,7 @@ case 0x2C2: {
             ++fieldF04;
             ResetSecondaryCounter(1);
             field314=0.0f;
-            SpawnFloatXYAt453A70(0x34A,
+            SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);

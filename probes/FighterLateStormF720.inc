@@ -8,7 +8,7 @@
 // float projectiles, difficulty gate, terminal counter and state 4.
 // Source-backed nonexact giant; never accept this as a whole game function.
         case 0x2DF: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
                 field080=1;
                 field07C=0;
@@ -28,12 +28,12 @@
                 }
             }
             if ((animationStage)<4) {
-                SpawnFloatXYAt453A70(0x333,
+                SpawnBattleEffect(0x333,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
                 if (g_CloudOpponentAt006714D0>1)
-                    SpawnFloatXYAt453A70(0x387,
+                    SpawnBattleEffect(0x387,
                         float(facing*62)+(x),
                         (*(&y))+g_F714_ShotYAt00657868,
                         facing,1);

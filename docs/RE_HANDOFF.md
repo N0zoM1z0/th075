@@ -132,6 +132,10 @@ Done so far:
   59,236-byte COFF body is unchanged outside renamed relocation fields
   (all 1,863 offsets/types preserved); 98/98 header-affected exact units
   cold-replayed in three groups. The GPR/width debt is still nonexact.
+- Four fighter giants now call `Fighter::SetCommandSelection` (00454BC0)
+  using the actual `(int,unsigned char,unsigned int)` ABI instead of
+  `ConfigureStormAt454BC0`, preserving 35 native call relocations and
+  whole-body code. All 132 affected exact units locally cold-replayed.
 - Reimu/Sakuya/Youmu/Remilia giant fighter states now call shared
   Fighter leaf helpers by real names: 122 horizontal-limit checks,
   29 nonnegative-word setters, nine fade initializers, nine resource

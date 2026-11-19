@@ -6,7 +6,7 @@
 // Native ground contact, one angled 391 projectile, a real indexed 392
 // volley, and completion/phase transitions. Whole parent is NOT exact.
         case 0x2FB: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
@@ -31,12 +31,12 @@
                     (reinterpret_cast<const FighterBorrowedXYViewF771*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXYViewF771*>(this)->xAt44)
                         *static_cast<float>(facing))
                     /g_StormAngleDenominatorAt00657828;
-                SpawnFloatXYAt453A70(0x391,
+                SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
                     facing,1);
                 for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+2;++i)
-                    SpawnFloatXYAt453A70(0x392,
+                    SpawnBattleEffect(0x392,
                         float(facing*36)+(x),
                         (*(&y))+g_StormYAt0065948C,
                         facing,1);

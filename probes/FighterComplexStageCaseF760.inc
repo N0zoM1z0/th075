@@ -1,7 +1,7 @@
 case F760_ACTION: {
     if ((*(&y)==g_ThresholdAt0065782C) ||
         velocityY>g_ThresholdAt0065782C) {
-        ConfigureStormAt454BC0(3,4,0xFF);
+        SetCommandSelection(3,4,0xFF);
         field088=2;
     }
     if ((animationStage)==0 && (field3AC)==0)

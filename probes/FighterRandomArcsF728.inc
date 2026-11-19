@@ -14,7 +14,7 @@
                 reinterpret_cast<unsigned char&>(field3AC)=0;
             }
             if (RandomBoundaryAt455580(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
-                SpawnFloatXYAt453A70(0x330,
+                SpawnBattleEffect(0x330,
                     ((x)+g_F728_RandomOffsetXAt00657878)
                         -float(RandomBoundaryAt455580(0,60)),
                     ((*(&y))+g_F728_RandomOffsetYAt00657858)
@@ -60,7 +60,7 @@
                     velocityX=0.0f;
             }
             if (RandomBoundaryAt455580(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
-                SpawnFloatXYAt453A70(0x330,
+                SpawnBattleEffect(0x330,
                     ((x)+g_F728_RandomOffsetXAt00657878)
                         -float(RandomBoundaryAt455580(0,60)),
                     ((*(&y))+g_F728_RandomOffsetYAt00657858)

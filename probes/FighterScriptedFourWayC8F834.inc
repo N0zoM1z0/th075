@@ -5,7 +5,7 @@
  // All 7 direct returns target the enclosing full fighter epilogue.
  // This is NOT independently callable original exact CODE.
 case 0xC8: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     field3AC=1;
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;

@@ -8,7 +8,7 @@
 // manual ASM, fake locals, or separate-case 'exact' credit.
 case 0xC8: {
     field3AC=1;
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;

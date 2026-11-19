@@ -2,7 +2,7 @@
 // Source-compatible DWORD coordinate views retain original MOV/PUSH transfer.
 case 0xC8: {
     field3AC=1;
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; reinterpret_cast<signed short&>(scriptCounterF00)=0; }
     if ((velocityX)>g_ReimuC8BrakeAt00657D70) {
         velocityX=(velocityX)-g_SubtractAt00657478;
@@ -40,7 +40,7 @@ case 0xC8: {
     break;
 }
 case 0xC9: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) velocityX=0.0f;
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=-10.0f; velocityY=5.0f; field05C=0.6f;
@@ -63,7 +63,7 @@ case 0xC9: {
     break;
 }
 case 0xCA: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=9.0f; velocityY=5.0f; field05C=0.45f;
@@ -85,7 +85,7 @@ case 0xCA: {
     break;
 }
 case 0xCB: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) { reinterpret_cast<signed short&>(scriptCounterF00)=0; velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
     if (y>g_ThresholdAt0065782C && (animationStage)>0) {
         velocityY=velocityY-field05C;

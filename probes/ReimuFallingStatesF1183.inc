@@ -50,7 +50,7 @@ case 0x12E: {
     }
     if ((animationStage)==5 && (animationFrame)==0) {
         InitTrajectoryAt453E60(2.0f);
-        SpawnFloatXYAt453A70(0x325,
+        SpawnBattleEffect(0x325,
             float(facing*170)+(x),
             y-g_ApproachLowerAt00658290,
             reinterpret_cast<char&>(facing),0);
@@ -112,7 +112,7 @@ case 0x131: {
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
     if ((animationStage)==1 && (animationFrame)==0) PlaySharedSound(0x1B);
     if ((animationStage)==2 && (animationFrame)==0)
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float(facing*145)+(x),
             (*(&y))+g_ReimuShotYAt006590A4,reinterpret_cast<char&>(facing),1);
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {

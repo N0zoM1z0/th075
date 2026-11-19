@@ -24,7 +24,7 @@ case 0x18B: {
         field07C=0;
     }
     if ((animationStage)==6 && (animationFrame)==0) {
-        SpawnFloatXYAt453A70(0x328,
+        SpawnBattleEffect(0x328,
             float((facing)*128)+(x),
             (*(&y))+g_F855ShotYAt00658400,
             (facing),1);

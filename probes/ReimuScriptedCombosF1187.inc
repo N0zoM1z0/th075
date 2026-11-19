@@ -234,7 +234,7 @@ case 0x19D: {
     if ((animationStage)==0 && (animationFrame)==0) { field07C=1; ClearMotionFields(); }
     if ((animationStage)==6 && (animationFrame)==0) {
         field314=-30.0f; field318=8.0f;
-        SpawnFloatXYAt453A70(0x32C,float(facing*37)+(x),
+        SpawnBattleEffect(0x32C,float(facing*37)+(x),
             (*(&y))+g_ReimuAirVolleyYAt00659098,reinterpret_cast<char&>(facing),1);
         PlaySound(1);
         UpdateGaugeTimer(200);
@@ -301,7 +301,7 @@ case 0x1A1: {
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=30.0f; field318=8.0f;
-        SpawnFloatXYAt453A70(0x32C,float(facing*12)+(x),
+        SpawnBattleEffect(0x32C,float(facing*12)+(x),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         PlaySound(1);
         UpdateGaugeTimer(200);

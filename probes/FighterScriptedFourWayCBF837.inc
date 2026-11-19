@@ -3,7 +3,7 @@
 // and actual native source order recover all non-parent-JMP bytes.
 // This is NOT an independently callable original game function.
 case 0xCB: {
-    ConfigureStormAt454BC0(3,4,0xFF);
+    SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         velocityX=0.0f;

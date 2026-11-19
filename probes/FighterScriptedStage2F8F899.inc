@@ -40,7 +40,7 @@ case 0x2F8: {
             (facing),1);
     }
     if ((animationStage)>6 && (animationStage)<13) {
-        SpawnFloatXYAt453A70(0x392,
+        SpawnBattleEffect(0x392,
             (x)+g_ContactProjectionAt00657888-
                 float(RandomBoundaryAt455580(0,200)),
             (*(&y))+g_F701_VolleyYAt00658268,

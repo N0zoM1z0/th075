@@ -3,7 +3,7 @@
 // original random direction/facing and stage-count based shots.
 // Native original whole giant remains NONEXACT; no individual case credit.
         case 0x2E5: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
@@ -31,7 +31,7 @@
                         reinterpret_cast<signed short&>(scriptCounterF00)=20;
                 }
                 field314=static_cast<float>(reinterpret_cast<signed short&>(scriptCounterF00));
-                SpawnFloatXYAt453A70(0x386,
+                SpawnBattleEffect(0x386,
                     float(facing*65)+(x),
                     (*(&y))+g_BarrageY1At006591EC,
                     facing,1);
@@ -44,12 +44,12 @@
             if ((animationStage)==12 && (animationFrame)==0) {
                 field314=static_cast<float>(reinterpret_cast<signed short&>(scriptCounterF00));
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==0)
-                    SpawnFloatXYAt453A70(0x384,
+                    SpawnBattleEffect(0x384,
                         float(facing*65)+(x),
                         (*(&y))+g_BarrageY1At006591EC,
                         facing,1);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==20)
-                    SpawnFloatXYAt453A70(0x388,
+                    SpawnBattleEffect(0x388,
                         float(facing*65)+(x),
                         (*(&y))+g_BarrageY1At006591EC,
                         facing,1);

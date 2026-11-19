@@ -7,7 +7,7 @@
 // and original GPR register roles remain NONSTRICT. Never credit case.
 // CalculateAngleAt483300 / __ftol2 are native source ABI probes only.
 case 0x2F9: {
-            ConfigureStormAt454BC0(3,4,0xFF0000);
+            SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
@@ -29,12 +29,12 @@ case 0x2F9: {
             if ((animationStage)==11 && (animationFrame)==0) {
                 PlaySound(0x12);
                 field314=float((reinterpret_cast<signed short&>(scriptCounterF02))+(reinterpret_cast<signed short&>(scriptCounterF00))*10);
-                SpawnFloatXYAt453A70(0x391,
+                SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
                     facing,1);
                 for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+4;++i)
-                    SpawnFloatXYAt453A70(0x392,
+                    SpawnBattleEffect(0x392,
                         float(facing*30)+(x),
                         (*(&y))+g_StormAngleShotYAt00659A18,
                         facing,1);
@@ -42,12 +42,12 @@ case 0x2F9: {
             if ((animationStage)==14 && (animationFrame)==0) {
                 PlaySound(0x12);
                 field314=float((reinterpret_cast<signed short&>(scriptCounterF02))-(reinterpret_cast<signed short&>(scriptCounterF00))*10);
-                SpawnFloatXYAt453A70(0x391,
+                SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
                     facing,1);
                 for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+4;++i)
-                    SpawnFloatXYAt453A70(0x392,
+                    SpawnBattleEffect(0x392,
                         float(facing*30)+(x),
                         (*(&y))+g_StormAngleShotYAt00659A18,
                         facing,1);
