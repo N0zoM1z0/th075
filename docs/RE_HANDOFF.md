@@ -41,6 +41,13 @@ large research parents. They do not claim new giant exactness:
 - 075bb570: typed YoumuObjectHistoryF1211 coordinates at +0x04/+0x08 as
   floats and restored direct coordinate assignments. Its full 40,464-byte
   parent and all 938 relocation positions/types remained identical.
+- 30cf0700: unified Youmu's R049 snapshot writer and R243 object-history
+  reader on one borrowed +0xFEC list view and one 16-byte record. The
+  1,008-byte auxiliary function still replays exact 1/1; the 40,464-byte
+  Youmu object COFF remains byte-identical with all 938 relocation
+  positions/types. R243's historical canonical verifier currently predates
+  the accepted R049 row and stops at that stale snapshot; do not downgrade
+  the accepted auxiliary function to make the old snapshot pass.
 - 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
   +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
   identical; the 462 affected exact units cold-replayed 462/462.

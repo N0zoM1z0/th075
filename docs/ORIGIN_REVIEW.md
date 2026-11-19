@@ -15376,6 +15376,27 @@ action identifiers, coordinates and direction. All17 whole native anchors /
 41,770 bytes and20 canonical pairs are frozen and rechecked. A contextual
 instruction window never substitutes for the full owner comparison.
 
+
+The R049 Youmu auxiliary source and this R243 history consumer now share
+`src/YoumuHistoryQueueF378.hpp`: one borrowed +0xFEC list view and one
+16-byte record with natural union aliases for the two call-site vocabularies.
+The exact 1,008-byte `005301B0` auxiliary unit remains byte-identical and
+cold-replays 1/1; the 40,464-byte `00536400` consumer remains byte-identical
+with 938 relocation positions/types unchanged. This source consolidation
+changes only the front-call COFF symbol to the shared view and compiler-local
+label names; it does not claim an original full YoumuFighter, list-node, or STL
+layout.
+
+**Historical verifier caveat (2026-11-19).** The frozen R243 canonical
+snapshot predates the later R049/F378 acceptance and still expects
+`0x005301B0` to be unclassified. The live ledger now correctly records it as
+an accepted authored/matching 1,008-byte function, so
+`verify-character-list-front-origins.py` currently stops at that stale
+canonical row before reaching its native checks. Do not downgrade R049 to
+satisfy the historical snapshot; the focused R049 replay and the complete
+Youmu giant non-regression frontier are the current checks. The immutable
+R243 native evidence and its three library classifications remain unchanged.
+
 Fresh `tests/origin_probes/CharacterListFront.cpp` includes the unchanged
 original character-list policy source and instantiates genuine VC7.1 list
 definitions with a complete generic16-byte record. Pinned3077 `/Od /Ob0 /Gy

@@ -210,6 +210,21 @@ nonrelocation byte. The original 39,999 CODE bytes remain NONEXACT
 (913 GPR-role, ten width differences); 24/24 header-affected exact
 units replayed successfully.
 
+The Youmu fighter's R049 auxiliary snapshot path and the R243 object-history
+front path now share one borrowed native-list view in
+`src/YoumuHistoryQueueF378.hpp`. The same 16-byte record exposes both the
+snapshot names and the object relay's action/stage/coordinate/facing/counter
+names through natural C++ unions; the list view carries `AddSnapshot`,
+`Count`, `PruneOld` and `FrontAt00540220` without asserting a complete
+YoumuFighter or STL layout. The complete 1,008-byte auxiliary function still
+cold-replays exact (1/1), all 18 original relocation fields and every code
+byte remain identical, and the full 40,464-byte Youmu object COFF remains
+byte-identical with all 938 relocation positions/types. Only the front-call
+COFF symbol now names the shared list type (plus compiler-local label
+renumbering); the 39,999-byte object giant remains NONEXACT at 913 GPR / 10
+width differences. No owner layout, node payload ownership or STL ABI is
+newly credited.
+
 Suika object `005C9CC0` now defines `SuikaObject::Advance` on the
 real CharacterObject hierarchy, with 64 effect spawns, 13 sounds,
 three shared sounds and five camera shakes using the verified native
