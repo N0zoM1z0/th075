@@ -428,6 +428,13 @@ reinterpretations were redundant type punning: `Actor::facing` is already a
 positions/types and every nonrelocation byte (0 differences); the
 33,293-byte giant frontier remains NONEXACT with 133 GPR-role differences.
 
+Alice's hit-confirm path also increments the opponent's declared signed-char
+`Fighter::field366` directly. Its old `reinterpret_cast<unsigned char&>`
+was unnecessary: the branch first bounds the value below two, and the
+natural signed-char increment produces the same complete object code.
+The 33,731-byte COFF still has all 682 relocation positions/types and zero
+nonrelocation-byte differences; the 33,293-byte boss remains NONEXACT.
+
 Alice object also recovers the actual `0040FB70` polar-velocity ABI
 and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
 three previously encoded as raw `int` float-bit transports), 15

@@ -2475,7 +2475,7 @@ void AliceObject::Advance() {
             (*(&y) - *(&(owner->opponent->y)) > gVerticalTouchMaxAt00658268)) {
             ClearFrameInfo();
             if ((owner->opponent->field366)<2)
-                ++(reinterpret_cast<unsigned char&>(owner->opponent->field366));
+                ++owner->opponent->field366;
             else
                 (owner->opponent->score)+=20000;
             PlaySharedSound(0x2E);
