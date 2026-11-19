@@ -335,6 +335,9 @@ ten zero writes to `field3AC`, seven direct signed-byte `field366` decrements
 and three owner-facing copies. Complete Reimu/Sakuya/Youmu/Remilia advances
 and PatchouliObject advance bodies/relocations remain identical; their
 frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 / 24,643.
+The four selection input counters now use explicit unsigned value casts
+instead of reference reinterpretation; all eight aliases are gone and both
+selection/update functions replayed 2/2 exactly.
 Forty float bit-copy aliases in the PatchouliObject action family and seven
 more in CharacterProjectile/CharacterObject initialization were replaced by
 ordinary float assignments. The complete 82,109-byte PatchouliObject giant

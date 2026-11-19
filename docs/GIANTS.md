@@ -1049,6 +1049,10 @@ with the complete 1,637-byte render and 1,151-byte base-reset functions still
 identical. Four signed-byte aliases that only wrote zero to the unsigned
 `field39C` flag and the redundant signed view in the overlay timeline switch
 were also removed. The four affected exact functions replayed 4/4.
+Selection input history now tests the four signed storage counters with
+explicit `static_cast<unsigned int>` value conversions rather than
+reinterpret-cast references. Eight aliases across the two selection/update
+functions were removed; both complete functions replayed 2/2 exactly.
 Forty float-to-float bit-reference assignments were replaced by ordinary
 member assignments throughout the large PatchouliObject action family:
 owner position copies, projectile velocity/angle copies, and paired scale
