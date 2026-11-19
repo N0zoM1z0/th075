@@ -435,6 +435,19 @@ natural signed-char increment produces the same complete object code.
 The 33,731-byte COFF still has all 682 relocation positions/types and zero
 nonrelocation-byte differences; the 33,293-byte boss remains NONEXACT.
 
+Alice's 33 KB `Advance` now also uses direct C++ lvalues in place of 118
+redundant address-of/dereference identity expressions (`*(&member)`). The
+recovery covers repeated Y/velocity updates, X/Y projectile motion, owner and
+opponent coordinates, animation-distance fields and global float constants.
+Each expression family was compiled independently before combining them;
+the final natural source compiles to the identical 33,731-byte COFF body,
+all 682 relocation positions/types and zero changed bytes. The two remaining
+`field0CC` and `field0D0` identity pairs were tested separately and together
+before inclusion. This is source-semantic/readability progress only: the
+33,293-byte giant still has 133 GPR-role mismatches, first at `0x004F344C`.
+The separate-if form was retained; nested else/else-if, goto, switch, stage
+aliases and register-local trials did not improve the native join.
+
 Alice object also recovers the actual `0040FB70` polar-velocity ABI
 and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
 three previously encoded as raw `int` float-bit transports), 15
