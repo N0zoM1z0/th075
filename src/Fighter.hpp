@@ -278,7 +278,7 @@ public:
     unsigned short fieldEF8;            // +0xEF8 wrapping animation timer
     short fieldEFA;                     // +0xEFA signed per-owner projectile counter
     short sequenceTimer;                // +0xEFC
-    unsigned short fieldEFE;            // +0xEFE
+    short fieldEFE;                     // +0xEFE signed stage fade timer
     short scriptCounterF00;              // +0xF00 signed 16-bit script state
     short scriptCounterF02;              // +0xF02 signed 16-bit script state
     short fieldF04;                     // +0xF04

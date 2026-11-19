@@ -22,15 +22,15 @@ void MeilingFighter::RenderStage(signed char stage) {
         SetRect(&rect, 0, 0, 304, 80);
         sprite.BuildQuad(fieldF38, fieldF60, fieldF38 + 304.0f, fieldF60 + 80.0f);
         DRAWING->DrawQuad(3, &sprite, &rect, D3DCOLOR_ARGB(fieldFF7, 255, 255, 255));
-        if ((reinterpret_cast<signed char&>(field6F8)) == 1 && (fieldFF7) < 255 && (reinterpret_cast<short&>(fieldEFE)) == 0) {
+        if ((reinterpret_cast<signed char&>(field6F8)) == 1 && (fieldFF7) < 255 && (fieldEFE) == 0) {
             if ((fieldFF7) < 250)
                 fieldFF7 = (fieldFF7) + 5;
             else
                 fieldFF7 = 255;
         }
         if ((fieldFF7) == 255)
-            ++reinterpret_cast<short&>(fieldEFE);
-        if ((reinterpret_cast<short&>(fieldEFE)) > 180) {
+            ++fieldEFE;
+        if ((fieldEFE) > 180) {
             if ((fieldFF7) > 0)
                 fieldFF7 = (fieldFF7) - 5;
             // Preserve the target's ineffective unsigned-alpha lower clamp.
