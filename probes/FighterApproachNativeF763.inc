@@ -12,7 +12,7 @@
                 field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)<10 && y>g_ThresholdAt0065782C && (animationStage)>2) {
                 velocityX=-30.0f;
@@ -45,12 +45,12 @@
                 }
             }
             if (AdvanceNestedFrame()==(field070)) {
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
-                    ++reinterpret_cast<signed short&>(scriptCounterF00);
+                if ((scriptCounterF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                    ++scriptCounterF00;
                     ResetSecondaryCounter(12);
                     break;
                 }
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 if (g_CloudOpponentAt006714D0==3) {
                     ResetPrimaryCounters(0x2DF);
                     break;

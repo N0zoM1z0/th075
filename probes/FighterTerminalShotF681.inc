@@ -4,7 +4,7 @@
 // Actual saved-this role is source EBP-0xC, original PE EBP-0x44.
         case 0x31B: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
             }
@@ -16,8 +16,8 @@
                 SpawnBattleEffect(0x3E5,x,y,
                         facing,1);
             }
-            if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+            if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<8) {
+                ++scriptCounterF00;
                 ResetSecondaryCounter(9);
             }
             break;

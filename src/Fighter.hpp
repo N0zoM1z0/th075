@@ -279,8 +279,8 @@ public:
     short fieldEFA;                     // +0xEFA signed per-owner projectile counter
     short sequenceTimer;                // +0xEFC
     unsigned short fieldEFE;            // +0xEFE
-    unsigned short scriptCounterF00;    // +0xF00
-    unsigned short scriptCounterF02;    // +0xF02
+    short scriptCounterF00;              // +0xF00 signed 16-bit script state
+    short scriptCounterF02;              // +0xF02 signed 16-bit script state
     short fieldF04;                     // +0xF04
     unsigned short fieldF06;            // +0xF06
     unsigned short fieldF08;            // +0xF08

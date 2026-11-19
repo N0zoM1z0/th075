@@ -11,8 +11,8 @@
 case 0x2E5: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
         reinterpret_cast<signed short&>(fieldF08)=g_F1004_ModeAt006714D0+2;
@@ -20,19 +20,19 @@ case 0x2E5: {
     if ((animationStage)>4 && (animationStage)<11 && (reinterpret_cast<signed short&>(fieldF08))>0) {
         --reinterpret_cast<signed short&>(fieldF06);
         if ((reinterpret_cast<signed short&>(fieldF06))>3-g_F1004_ModeAt006714D0) {
-            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
+            field314=float((scriptCounterF02)*5);
             SpawnBattleEffect(0x387,
                 x -
                     float((facing)*16),
                 (*(&y))+g_F972_YAt0065836C,
                 facing,1);
-            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
+            field314=float((scriptCounterF02)*5+180);
             SpawnBattleEffect(0x387,
                 x -
                     float((facing)*16),
                 (*(&y))+g_F972_YAt0065836C,
                 facing,1);
-            ++reinterpret_cast<signed short&>(scriptCounterF02);
+            ++scriptCounterF02;
         }
         if ((reinterpret_cast<signed short&>(fieldF06))<=0 && (reinterpret_cast<signed short&>(fieldF06))<-30) {
             reinterpret_cast<signed short&>(fieldF06)=10;

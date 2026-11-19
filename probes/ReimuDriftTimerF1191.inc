@@ -28,12 +28,12 @@ case 0x2E5: {
         PlaySound(7);
         aiCardTimer=180;
     }
-    if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<1) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(10);
     }
-    if ((animationStage)==14 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+    if ((animationStage)==14 && (animationFrame)==0 && (scriptCounterF02)<1) {
+        ++scriptCounterF02;
         ResetSecondaryCounter(12);
     }
     break;

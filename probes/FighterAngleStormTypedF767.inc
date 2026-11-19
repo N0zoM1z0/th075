@@ -9,8 +9,8 @@
 case 0x2F9: {
             SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
-                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                scriptCounterF00=0;
+                scriptCounterF02=0;
                 fieldF04=0;
                 field07C=1;
                 ClearMotionFields();
@@ -28,7 +28,7 @@ case 0x2F9: {
             }
             if ((animationStage)==11 && (animationFrame)==0) {
                 PlaySound(0x12);
-                field314=float((reinterpret_cast<signed short&>(scriptCounterF02))+(reinterpret_cast<signed short&>(scriptCounterF00))*10);
+                field314=float((scriptCounterF02)+(scriptCounterF00)*10);
                 SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
@@ -41,7 +41,7 @@ case 0x2F9: {
             }
             if ((animationStage)==14 && (animationFrame)==0) {
                 PlaySound(0x12);
-                field314=float((reinterpret_cast<signed short&>(scriptCounterF02))-(reinterpret_cast<signed short&>(scriptCounterF00))*10);
+                field314=float((scriptCounterF02)-(scriptCounterF00)*10);
                 SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
@@ -67,31 +67,31 @@ case 0x2F9: {
                 velocityY=(*(&velocityY))*g_StormMotionAt00658348;
             }
             if ((animationStage)==11 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>(
+                scriptCounterF02=
                     CalculateAngleAt483300(
                         (*(&(opponent->y))-*(&y)),
                         ((reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
                            *static_cast<float>(facing))
-                    /g_StormAngleDenominatorAt00657828);
+                    /g_StormAngleDenominatorAt00657828;
             }
             if ((animationStage)==13 && (animationFrame)==0) {
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
+                if ((scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
                     ResetSecondaryCounter(0xB);
-                    ++reinterpret_cast<signed short&>(scriptCounterF00);
-                } else reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                    ++scriptCounterF00;
+                } else scriptCounterF00=0;
             }
             if ((animationStage)==14 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>(
+                scriptCounterF02=
                     CalculateAngleAt483300(
                         (*(&(opponent->y))-*(&y)),
                         ((reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
                            *static_cast<float>(facing))
-                    /g_StormAngleDenominatorAt00657828);
+                    /g_StormAngleDenominatorAt00657828;
             }
             if ((animationStage)==16 && (animationFrame)==0
-                && (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
+                && (scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
                 ResetSecondaryCounter(14);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             if ((animationStage)==20 && (animationFrame)==0) ResetSecondaryCounter(0x12);
             break;

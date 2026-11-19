@@ -18,8 +18,8 @@
 // F1019 original Japanese TH075 native state0x2EF.
 case 0x2EF: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         field07C=0;
         ClearMotionFields();
@@ -49,8 +49,8 @@ case 0x2EF: {
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -60,13 +60,13 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -76,13 +76,13 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -92,13 +92,13 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -108,13 +108,13 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -124,8 +124,8 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
         if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
             ++fieldF04;
@@ -140,8 +140,8 @@ case 0x2EF: {
 // F1019 original Japanese TH075 native state0x2F0.
 case 0x2F0: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         field07C=0;
         ClearMotionFields();
@@ -171,8 +171,8 @@ case 0x2F0: {
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -182,13 +182,13 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -198,13 +198,13 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -214,13 +214,13 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -230,13 +230,13 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -246,8 +246,8 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
         if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
             ++fieldF04;

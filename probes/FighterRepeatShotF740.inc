@@ -7,7 +7,7 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ClearMotionFields();
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (AdvanceNestedFrame()==(field070))
                 ResetPrimaryCounters(0);
@@ -21,7 +21,7 @@
                 UpdateGaugeTimer(100);
             }
             if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
+                    && (scriptCounterF00)<6 && (spirit)>0) {
                 PlaySound(2);
                 field314=0.0f;
                 SpawnBattleEffect(0x330,
@@ -30,7 +30,7 @@
                     facing,1);
                 UpdateGaugeTimer(10);
                 ResetSecondaryCounter(6);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             break;
         }
@@ -38,7 +38,7 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ClearMotionFields();
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (AdvanceNestedFrame()==(field070))
                 ResetPrimaryCounters(0);
@@ -52,7 +52,7 @@
                 UpdateGaugeTimer(100);
             }
             if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
+                    && (scriptCounterF00)<6 && (spirit)>0) {
                 PlaySound(2);
                 field314=20.0f;
                 SpawnBattleEffect(0x330,
@@ -61,7 +61,7 @@
                     facing,1);
                 UpdateGaugeTimer(10);
                 ResetSecondaryCounter(6);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             break;
         }
@@ -69,7 +69,7 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ClearMotionFields();
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(1);

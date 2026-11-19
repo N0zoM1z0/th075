@@ -2,20 +2,20 @@
 // Full original 46755B parent NONEXACT, not independently callable CODE.
 case 0x2F0: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         field07C=0;
         field080=1;
         ClearMotionFields();
     }
     if ((animationStage)<6) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
+        ++scriptCounterF02;
+        if ((scriptCounterF02)>4) {
             SpawnAuxEffect(0x3E,
                 x-
                     float((facing)*40),
                 (*(&y))+g_F898ShotYAt0065839C,1,1);
-            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+            scriptCounterF02=0;
         }
     }
     if ((animationStage)>10) {

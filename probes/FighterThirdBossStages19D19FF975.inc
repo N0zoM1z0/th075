@@ -12,22 +12,22 @@ case 0x19D: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
-    if ((animationStage)>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>5 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
         PlaySound(0);
         UpdateGaugeTimer(0x28);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+55);
+        field314=float((scriptCounterF02)*4+55);
         field318=15.0f;
         SpawnBattleEffect(0x326,
-            float((47-(reinterpret_cast<signed short&>(scriptCounterF02))*10)*(facing))+(x),
-            (*(&y))+g_F969_RoundY192At00658264+(reinterpret_cast<signed short&>(scriptCounterF02))*20,
+            float((47-(scriptCounterF02)*10)*(facing))+(x),
+            (*(&y))+g_F969_RoundY192At00658264+(scriptCounterF02)*20,
             facing,1);
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(2);
     break;
@@ -36,23 +36,23 @@ case 0x19D: {
 case 0x19E: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
-    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
         PlaySound(0);
         UpdateGaugeTimer(0x28);
-        field314=float(0-(reinterpret_cast<signed short&>(scriptCounterF02))*4);
+        field314=float(0-(scriptCounterF02)*4);
         field318=15.0f;
         SpawnBattleEffect(0x326,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
         ClearMotionFields();
@@ -70,23 +70,23 @@ case 0x19E: {
 case 0x19F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
-    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
         PlaySound(0);
         UpdateGaugeTimer(0x28);
-        field314=float(-45-(reinterpret_cast<signed short&>(scriptCounterF02))*4);
+        field314=float(-45-(scriptCounterF02)*4);
         field318=15.0f;
         SpawnBattleEffect(0x326,x,
             (*(&y))+g_F970_YAt006590AC,
             facing,1);
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
         ClearMotionFields();

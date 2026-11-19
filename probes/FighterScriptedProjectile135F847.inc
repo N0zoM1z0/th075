@@ -16,7 +16,7 @@ case 0x135: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if ((animationStage)==7 && (animationFrame)==0)
         SpawnBattleEffect(0x339,x,y,

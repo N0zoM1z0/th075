@@ -1,6 +1,6 @@
 case 0x303: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
+        scriptCounterF00=0; field07C=1;
         ClearMotionFields();
     }
     reinterpret_cast<int&>(field490)=0;
@@ -8,8 +8,8 @@ case 0x303: {
     if ((animationStage)<15 && y>g_ThresholdAt0065782C) velocityY=velocityY-field05C;
     if ((animationStage)>14) fieldF26=(fieldF26)+5;
     if (AdvanceNestedFrame()==(field070)) {
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
+        if ((scriptCounterF00)<8) {
+            ++scriptCounterF00;
             ResetSecondaryCounter(15);
             reinterpret_cast<char&>(field3CF)=1;
             break;
@@ -73,7 +73,7 @@ case 0x303: {
 }
 case 0x304: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1; ClearMotionFields(); reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field07C=1; ClearMotionFields(); scriptCounterF00=0;
     }
     if (opponent->health>0 && opponent->animationStage==2 &&
         opponent->field39D>0 && opponent->action==0x63) {
@@ -81,8 +81,8 @@ case 0x304: {
         reinterpret_cast<char&>(opponent->field3CF)=1;
         break;
     }
-    ++reinterpret_cast<signed short&>(scriptCounterF00);
-    if ((reinterpret_cast<signed short&>(scriptCounterF00))>300-(10000-(health)*2)/100-g_ReimuRepeatSettingAt006714D0*30) {
+    ++scriptCounterF00;
+    if ((scriptCounterF00)>300-(10000-(health)*2)/100-g_ReimuRepeatSettingAt006714D0*30) {
         for (int burstOuter=0; burstOuter<30; ++burstOuter) {
             field314=float(burstOuter*12);
             field318=60.0f;
@@ -95,7 +95,7 @@ case 0x304: {
                 SpawnBattleEffect(0x3A2,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
             }
         }
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     reinterpret_cast<int&>(field490)=0;
     reinterpret_cast<int&>(opponent->field490)=0;

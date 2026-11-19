@@ -11,7 +11,7 @@ case 0xCA: {
         velocityX=0.0f;
         velocityY=0.0f;
         field05C=0.0f;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=11.0f;

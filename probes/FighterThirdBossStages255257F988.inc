@@ -13,7 +13,7 @@ case 0x255: {
         field080=1;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
@@ -23,8 +23,8 @@ case 0x255: {
             facing,1);
         PlaySharedSound(0x21);
     }
-    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<1) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(6);
     }
     break;
@@ -36,7 +36,7 @@ case 0x256: {
         field080=1;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
@@ -54,7 +54,7 @@ case 0x257: {
         field080=1;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
@@ -63,8 +63,8 @@ case 0x257: {
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
     }
-    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<1) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(6);
     }
     break;

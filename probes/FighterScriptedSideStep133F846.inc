@@ -17,7 +17,7 @@ case 0x133: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySharedSound(0x1D);

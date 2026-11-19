@@ -13,8 +13,8 @@ case 0x1F6: {
         field080=99;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
     if ((animationStage)>3 && (animationStage)<6) {
         velocityY=velocityY-field05C;
@@ -26,9 +26,9 @@ case 0x1F6: {
         }
     }
     if (field07C!=0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
-            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        ++scriptCounterF02;
+        if ((scriptCounterF02)>6) {
+            scriptCounterF02=0;
             field07C=0;
         }
     }
@@ -59,9 +59,9 @@ case 0x1F6: {
             facing,1,0,1);
         PlaySound(3);
     }
-    if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
+    if ((animationStage)==4 && (animationFrame)==0 && (scriptCounterF00)<2) {
         ResetSecondaryCounter(2);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
     }
     if ((animationStage)==6 && (animationFrame)==0)
         ResetSecondaryCounter(5);
@@ -75,8 +75,8 @@ case 0x1F7: {
         field080=99;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
     if ((animationStage)>3 && (animationStage)<6) {
         velocityY=velocityY-field05C;
@@ -88,9 +88,9 @@ case 0x1F7: {
         }
     }
     if (field07C!=0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
-            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        ++scriptCounterF02;
+        if ((scriptCounterF02)>6) {
+            scriptCounterF02=0;
             field07C=0;
         }
     }
@@ -121,9 +121,9 @@ case 0x1F7: {
             facing,1,0,1);
         PlaySound(3);
     }
-    if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
+    if ((animationStage)==4 && (animationFrame)==0 && (scriptCounterF00)<4) {
         ResetSecondaryCounter(2);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
     }
     if ((animationStage)==6 && (animationFrame)==0)
         ResetSecondaryCounter(5);

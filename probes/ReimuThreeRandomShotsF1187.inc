@@ -16,7 +16,7 @@
 #undef R1187_UPPER
 #undef R1187_ANIMATION
     }
-    if ((animationStage)==R1187_FIRST_STAGE+2 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<R1187_REPEAT_LIMIT &&
+    if ((animationStage)==R1187_FIRST_STAGE+2 && (animationFrame)==0 && (scriptCounterF00)<R1187_REPEAT_LIMIT &&
         *reinterpret_cast<unsigned int*>(RAW+R1187_RESOURCE)>0) {
 #define R1187_ANGLE_BIAS R1187_ANGLE_BIAS2
 #define R1187_UPPER R1187_UPPER2
@@ -25,6 +25,6 @@
 #undef R1187_ANGLE_BIAS
 #undef R1187_UPPER
 #undef R1187_ANIMATION
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
         ResetSecondaryCounter(R1187_FIRST_STAGE);
     }

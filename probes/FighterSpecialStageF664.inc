@@ -9,7 +9,7 @@
                 field080=1;
                 field07C=0;
                 field3AC=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)>7) {
                 velocityX=(velocityX)-g_FallingLateDragAt00659240;
@@ -36,7 +36,7 @@
                 field080=1;
                 field07C=0;
                 field3AC=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)>7) {
                 velocityX=(velocityX)-g_FallingLateDragAt00659240;
@@ -54,8 +54,8 @@
             }
             if ((animationStage)==7 && (animationFrame)==0) velocityX=50.0f;
             if ((animationStage)==8 && (animationFrame)==0) velocityX=10.0f;
-            if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+            if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)==0) {
+                ++scriptCounterF00;
                 ResetSecondaryCounter(2);
                 field07C=0;
                 field080=1;

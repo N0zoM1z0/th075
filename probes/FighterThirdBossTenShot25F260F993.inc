@@ -12,13 +12,13 @@ case 0x25F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
-    if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
+    if ((animationStage)==6 && (animationFrame)==0 && (scriptCounterF00)<=0 && (scriptCounterF02)<1) {
         PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
@@ -29,10 +29,10 @@ case 0x25F: {
                 (*(&y))+g_F968_RoundY190At00659294,
                 facing,1);
         }
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
     break;
 }
@@ -41,13 +41,13 @@ case 0x260: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
-    if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
+    if ((animationStage)==6 && (animationFrame)==0 && (scriptCounterF00)<=0 && (scriptCounterF02)<1) {
         PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
@@ -58,10 +58,10 @@ case 0x260: {
                 (*(&y))+g_F968_RoundY190At00659294,
                 facing,1);
         }
-        velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
-        velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
+        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
     break;
 }

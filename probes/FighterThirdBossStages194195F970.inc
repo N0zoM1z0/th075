@@ -10,31 +10,31 @@
 case 0x194: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
-    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
         PlaySound(0);
         UpdateGaugeTimer(0x28);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-8);
+        field314=float((scriptCounterF02)*4-8);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-4);
+        field314=float((scriptCounterF02)*4-4);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-12);
+        field314=float((scriptCounterF02)*4-12);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);
@@ -52,31 +52,31 @@ case 0x194: {
 case 0x195: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
-    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
         PlaySound(0);
         UpdateGaugeTimer(0x28);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-45);
+        field314=float((scriptCounterF02)*4-45);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-41);
+        field314=float((scriptCounterF02)*4-41);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-49);
+        field314=float((scriptCounterF02)*4-49);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
              (*(&y))+g_F970_YAt006590AC,
              facing,1);
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(9);

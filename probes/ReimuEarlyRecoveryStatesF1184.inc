@@ -5,8 +5,8 @@ case 0x59: {
         rotationZ=(rotationZ)+g_ReimuRotationStepAt00657858;
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
-            reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-            reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
+            scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+            scriptCounterF02=(*(&velocityY))*g_ContactProjectionAt00657888;
             ClearMotionFields(); y=0.0f; ResetPrimaryCounters(0x61);
             rotationZ=0.0f;
             SetCameraShake(2.0f); ClearTransformFlag(); PlaySharedSound(0x16);
@@ -15,8 +15,8 @@ case 0x59: {
     }
     if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(3);
     else if ((animationStage)==3 && (animationFrame)==0) {
-        velocityX=float(int(reinterpret_cast<signed short&>(scriptCounterF00)))*g_ReimuBounceXAt006590BC;
-        velocityY=float(-int(reinterpret_cast<signed short&>(scriptCounterF02)))*g_ReimuBounceYAt00658044;
+        velocityX=float(int(scriptCounterF00))*g_ReimuBounceXAt006590BC;
+        velocityY=float(-int(scriptCounterF02))*g_ReimuBounceYAt00658044;
         field05C=0.7f;
         SetMotionFloatAt40FBB0(-7.0f,75.0f,0.0f);
     }
@@ -62,13 +62,13 @@ case 0x61: {
         if (reinterpret_cast<unsigned int&>(inputA)>0 ||
             reinterpret_cast<unsigned int&>(inputB)>0 ||
             reinterpret_cast<unsigned int&>(inputC)>0 ||
-            reinterpret_cast<unsigned int&>(inputD)>0) reinterpret_cast<signed short&>(scriptCounterF00)=1;
+            reinterpret_cast<unsigned int&>(inputD)>0) scriptCounterF00=1;
     }
     if ((facing)*inputX<0) {
         if (reinterpret_cast<unsigned int&>(inputA)>0 ||
             reinterpret_cast<unsigned int&>(inputB)>0 ||
             reinterpret_cast<unsigned int&>(inputC)>0 ||
-            reinterpret_cast<unsigned int&>(inputD)>0) reinterpret_cast<signed short&>(scriptCounterF00)=2;
+            reinterpret_cast<unsigned int&>(inputD)>0) scriptCounterF00=2;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         for (int shot=0;shot<10;++shot)
@@ -91,8 +91,8 @@ case 0x61: {
     } else {
         // Original 00460409 jumps over BOTH stage-specific updates.
         if ((animationStage)==3 && (animationFrame)==0) {
-            velocityX=float(int(reinterpret_cast<signed short&>(scriptCounterF00)))*g_ReimuRecoveryScaleAt006590B8;
-            velocityY=float(-int(reinterpret_cast<signed short&>(scriptCounterF02)))*g_ReimuRecoveryScaleAt006590B8;
+            velocityX=float(int(scriptCounterF00))*g_ReimuRecoveryScaleAt006590B8;
+            velocityY=float(-int(scriptCounterF02))*g_ReimuRecoveryScaleAt006590B8;
             field05C=2.0f;
         }
         if ((animationStage)==4 && (animationFrame)==0) ResetSecondaryCounter(3);

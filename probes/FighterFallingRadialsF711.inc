@@ -6,7 +6,7 @@
             SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=0.0f;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (y>g_ThresholdAt0065782C && (animationStage)<7) {
                 velocityY=velocityY-g_ApproachLowerAt00658290;
@@ -40,7 +40,7 @@
             SetCommandSelection(3,4,0xFF);
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=0.0f;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (y>g_ThresholdAt0065782C && (animationStage)<6) {
                 velocityY=velocityY-g_ApproachLowerAt00658290;

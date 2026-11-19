@@ -4,19 +4,19 @@
 // Whole 46,755B original father is NONEXACT. Do not credit split game CODE.
 case F897_CASE: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=0;
         field080=0x63;
         ClearMotionFields();
     }
     if ((animationStage)==3 && (animationFrame)<30) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
+        ++scriptCounterF02;
+        if ((scriptCounterF02)>4) {
             SpawnAuxEffect(0x3E,
                 x-
                     float((facing)*65),
                 (*(&y))+g_F860ShotYAt006581DC,1,1);
-            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+            scriptCounterF02=0;
         }
     }
     if (AdvanceNestedFrame()==(field070)) {
@@ -29,8 +29,8 @@ case F897_CASE: {
         field07C=0;
     if ((animationStage)==2 && (animationFrame)==0) {
         PlaySharedSound(0x17);
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<signed short>(x);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<signed short>(y);
+        scriptCounterF00=static_cast<signed short>(x);
+        scriptCounterF02=static_cast<signed short>(y);
         Fighter::SpawnTrackedEffect(0x33D,x,y,
             (facing),1,0,1);
     }

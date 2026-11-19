@@ -10,7 +10,7 @@
 // F1013 original Japanese final fighter state 0x31B.
 case 0x31B: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=1;
         ClearMotionFields();
     }
@@ -24,8 +24,8 @@ case 0x31B: {
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
     }
-    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<8) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(9);
     }
     break;
@@ -33,7 +33,7 @@ case 0x31B: {
 // F1013 original Japanese final fighter state 0x31C.
 case 0x31C: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=1;
         ClearMotionFields();
     }
@@ -44,8 +44,8 @@ case 0x31C: {
         SelectResourceParameters();
         PlaySharedSound(0x17);
     }
-    if ((animationStage)==21 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==21 && (animationFrame)==0 && (scriptCounterF00)<8) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(19);
         reinterpret_cast<unsigned char&>(field3CF)=1;
     }

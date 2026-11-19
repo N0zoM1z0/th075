@@ -17,8 +17,8 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 rotationZ=(rotationZ)+g_F728_RandomOffsetYAt00657858;
                 velocityY=velocityY-field05C;
                 if (velocityY+y<=g_ThresholdAt0065782C) {
-                    reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-                    reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
+                    scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
+                    scriptCounterF02=(*(&velocityY))*g_ContactProjectionAt00657888;
                     ClearMotionFields();
                     y=0.0f;
                     ResetPrimaryCounters(0x61);
@@ -32,8 +32,8 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
             if (AdvanceNestedFrame()==(field070))
                 ResetSecondaryCounter(2);
             else if ((animationStage)==2 && (animationFrame)==0) {
-                velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F747_BounceXAt006590BC;
-                velocityY=static_cast<float>(-static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF02)))*g_F747_BounceYAt00658044;
+                velocityX=static_cast<float>(static_cast<int>(scriptCounterF00))*g_F747_BounceXAt006590BC;
+                velocityY=static_cast<float>(-static_cast<int>(scriptCounterF02))*g_F747_BounceYAt00658044;
                 field05C=0.7f;
                 ResetTransform(0.0f,95.0f,0.0f);
             }

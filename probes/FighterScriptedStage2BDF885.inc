@@ -8,7 +8,7 @@
 // Enclosing 46755B original fighter still NONEXACT, no split case CODE credit.
 case 0x2BD: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=0;
         field080=1;
         ClearMotionFields();
@@ -26,8 +26,8 @@ case 0x2BD: {
         scaleX=(scaleX)-g_F865SustainScaleAt00658348;
         scaleY=(scaleY)+g_F884PhaseYAt006598B8;
     }
-    if ((reinterpret_cast<signed short&>(scriptCounterF00))==0 && field07C!=0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((scriptCounterF00)==0 && field07C!=0) {
+        ++scriptCounterF00;
         if (field07C==1) {
             Fighter::SpawnTrackedEffect(0x346,x,
                 (*(&y))+g_ContactProjectionAt00657888,

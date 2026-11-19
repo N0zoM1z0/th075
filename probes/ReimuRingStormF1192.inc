@@ -1,6 +1,6 @@
 case 0x2DB: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0; reinterpret_cast<signed short&>(scriptCounterF02)=0; field07C=1;
+        scriptCounterF00=0; scriptCounterF02=0; field07C=1;
         if (y==g_ThresholdAt0065782C) ClearMotionFields();
         else {
             velocityX=(velocityX)*g_ReimuAirDragAt00658348;
@@ -21,26 +21,26 @@ case 0x2DB: {
             }
         }
     }
-    if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<g_ReimuRepeatSettingAt006714D0*3+4) {
+    if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<g_ReimuRepeatSettingAt006714D0*3+4) {
         PlaySound(6);
         field314=float(RecordedRange(0,359));
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))==0) {
+        if ((scriptCounterF02)==0) {
             SpawnBattleEffect(0x384,float(facing*18)+(x),
                 (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
             field314=float(RecordedRange(0,359));
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))==1) {
+        if ((scriptCounterF02)==1) {
             SpawnBattleEffect(0x385,float(facing*18)+(x),
                 (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
             field314=float(RecordedRange(0,359));
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))==2) {
+        if ((scriptCounterF02)==2) {
             SpawnBattleEffect(0x386,float(facing*18)+(x),
                 (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
             field314=float(RecordedRange(0,359));
         }
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))>2) reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        ++scriptCounterF02;
+        if ((scriptCounterF02)>2) scriptCounterF02=0;
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
@@ -50,8 +50,8 @@ case 0x2DB: {
         Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+g_ThresholdAt0065782C,
             (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
     }
-    if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<30) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<30) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(10);
     }
     if ((animationStage)==15 && (animationFrame)==0 && y==g_ThresholdAt0065782C) {

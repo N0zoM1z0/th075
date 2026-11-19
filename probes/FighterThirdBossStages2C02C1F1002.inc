@@ -11,8 +11,8 @@
 // F1002 original Japanese 004AC040 action 2C0
 case 0x2C0: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         field07C=0;
         ClearMotionFields();
         field080=99;
@@ -24,8 +24,8 @@ case 0x2C0: {
             1,1,0,1);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))<1) {
-            ++reinterpret_cast<signed short&>(scriptCounterF02);
+        if ((scriptCounterF02)<1) {
+            ++scriptCounterF02;
             ResetSecondaryCounter(3);
             break;
         }
@@ -42,8 +42,8 @@ case 0x2C0: {
         fieldF10=spirit;
         fieldF12=1;
     }
-    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<4) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(9);
     }
     break;
@@ -51,8 +51,8 @@ case 0x2C0: {
 // F1002 original Japanese 004AC040 action 2C1
 case 0x2C1: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         field07C=0;
         ClearMotionFields();
         field080=99;
@@ -66,8 +66,8 @@ case 0x2C1: {
             1,1,0,1);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))<4) {
-            ++reinterpret_cast<signed short&>(scriptCounterF02);
+        if ((scriptCounterF02)<4) {
+            ++scriptCounterF02;
             ResetSecondaryCounter(3);
             break;
         }
@@ -84,8 +84,8 @@ case 0x2C1: {
         fieldF0C=spirit;
         fieldF0E=0;
     }
-    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<4) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(9);
     }
     break;

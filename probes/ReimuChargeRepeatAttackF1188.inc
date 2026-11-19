@@ -1,7 +1,7 @@
 case R1188_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1; field07C=0; field3AC=0; reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field080=1; field07C=0; field3AC=0; scriptCounterF00=0;
     }
 #include "ReimuChargeTransformF1188.inc"
     if (y>g_ThresholdAt0065782C && (animationStage)>R1188_RETURN_STAGE-1) {
@@ -21,9 +21,9 @@ case R1188_ACTION: {
         y=50.0f; velocityX=12.0f; velocityY=6.0f;
         PlaySound(2);
     }
-    if ((animationStage)==R1188_LAND_STAGE+2 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
+    if ((animationStage)==R1188_LAND_STAGE+2 && (animationFrame)==0 && (scriptCounterF00)<1) {
         ResetSecondaryCounter(R1188_LAND_STAGE);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
     }
     break;
 }

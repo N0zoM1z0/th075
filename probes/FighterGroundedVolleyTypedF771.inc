@@ -8,8 +8,8 @@
         case 0x2FB: {
             SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
-                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                scriptCounterF00=0;
+                scriptCounterF02=0;
                 fieldF04=0;
                 velocityX=15.0f;
                 velocityY=10.0f;
@@ -44,9 +44,9 @@
             if (AdvanceNestedFrame()==(field070))
                 ResetPrimaryCounters(0);
             if ((animationStage)==13 && (animationFrame)==0 &&
-                (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)+3) {
+                (scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)+3) {
                 ResetSecondaryCounter(0xB);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             if ((animationStage)==18 && (animationFrame)==0)
                 ResetSecondaryCounter(0x10);

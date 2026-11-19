@@ -11,8 +11,8 @@
 case 0x261: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
@@ -39,8 +39,8 @@ case 0x261: {
 case 0x262: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }

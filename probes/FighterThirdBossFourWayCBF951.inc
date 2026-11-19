@@ -9,7 +9,7 @@
 case 0xCB: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         velocityX=0.0f;
         velocityY=0.0f;
         field05C=0.0f;

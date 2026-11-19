@@ -13,8 +13,8 @@ case 0x1F4: {
         field080=99;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
@@ -26,9 +26,9 @@ case 0x1F4: {
         }
     }
     if (field07C!=0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
-            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        ++scriptCounterF02;
+        if ((scriptCounterF02)>6) {
+            scriptCounterF02=0;
             field07C=0;
         }
     }
@@ -66,9 +66,9 @@ case 0x1F4: {
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
     }
-    if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
+    if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<1) {
         ResetSecondaryCounter(8);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
     }
     if ((animationStage)==12 && (animationFrame)==0)
         ResetSecondaryCounter(0xB);
@@ -81,8 +81,8 @@ case 0x1F5: {
         field080=99;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
@@ -94,9 +94,9 @@ case 0x1F5: {
         }
     }
     if (field07C!=0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
-            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        ++scriptCounterF02;
+        if ((scriptCounterF02)>6) {
+            scriptCounterF02=0;
             field07C=0;
         }
     }
@@ -134,9 +134,9 @@ case 0x1F5: {
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
     }
-    if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
+    if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<3) {
         ResetSecondaryCounter(8);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
     }
     if ((animationStage)==12 && (animationFrame)==0)
         ResetSecondaryCounter(0xB);

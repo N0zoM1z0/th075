@@ -11,11 +11,11 @@
 // F1001 original SHA-pinned Japanese 004AC040 action 0x2BC
 case 0x2BC: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
@@ -33,21 +33,21 @@ case 0x2BC: {
     }
     if ((fieldF04)>0)
         --fieldF04;
-    if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<36) {
+    if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (scriptCounterF02)<36) {
         UpdateGaugeTimer(0xA);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
+        field314=float((scriptCounterF02)*5);
         SpawnBattleEffect(0x323,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
+        field314=float((scriptCounterF02)*5+180);
         SpawnBattleEffect(0x323,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        ++scriptCounterF02;
         ++fieldF04;
     }
     if ((animationStage)==5 && (animationFrame)==0)
@@ -61,11 +61,11 @@ case 0x2BC: {
 // F1001 original SHA-pinned Japanese 004AC040 action 0x2BD
 case 0x2BD: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
@@ -83,22 +83,22 @@ case 0x2BD: {
     }
     if ((fieldF04)>0)
         --fieldF04;
-    if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<72) {
+    if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (scriptCounterF02)<72) {
         fieldF14=1;
         UpdateGaugeTimer(0xA);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
+        field314=float((scriptCounterF02)*5);
         SpawnBattleEffect(0x32B,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
-        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
+        field314=float((scriptCounterF02)*5+180);
         SpawnBattleEffect(0x32B,
             x
                 - float((facing)*16),
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        ++scriptCounterF02;
     }
     if ((animationStage)==5 && (animationFrame)==0)
         PlaySound(6);

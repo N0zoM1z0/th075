@@ -12,7 +12,7 @@
 // F1018 real original Japanese actor 004AC040 2BF
 case 0x2BF: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=0;
         ClearMotionFields();
         field080=99;
@@ -130,8 +130,8 @@ case 0x2BF: {
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))<10) {
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
+        if ((scriptCounterF00)<10) {
+            ++scriptCounterF00;
             ResetSecondaryCounter(15);
         }
     }

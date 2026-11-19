@@ -3,7 +3,7 @@ case R1187_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
     if ((animationStage)==3 && (animationFrame)==0) {
@@ -13,8 +13,8 @@ case R1187_ACTION: {
         PlaySound(4);
         UpdateGaugeTimer(250);
     }
-    if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==6 && (animationFrame)==0 && (scriptCounterF00)<2) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(4);
     }
     break;

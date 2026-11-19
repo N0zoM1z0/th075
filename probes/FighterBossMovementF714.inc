@@ -4,10 +4,10 @@
 // Source-backed nonexact giant; never accept this as a whole game function.
         case 0x2DC: {
             SetCommandSelection(3,4,0xFF0000);
-            if ((animationStage)==0 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
+            if ((animationStage)==0 && (animationFrame)==0 && (scriptCounterF00)==0) {
                 field080=1;
                 field07C=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=1;
+                scriptCounterF00=1;
                 PlaySound(11);
                 velocityY=-10.0f;
                 velocityX=30.0f;

@@ -2,7 +2,7 @@
 case R1187_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
@@ -12,12 +12,12 @@ case R1187_ACTION: {
         PlaySound(0);
         UpdateGaugeTimer(100);
     }
-    if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2 &&
+    if ((animationStage)==6 && (animationFrame)==0 && (scriptCounterF00)<2 &&
         reinterpret_cast<unsigned int&>(inputC)>0) {
 #include "ReimuFiveShotVolleyF1186.inc"
         PlaySound(0);
         UpdateGaugeTimer(25);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
         ResetSecondaryCounter(4);
     }
     break;

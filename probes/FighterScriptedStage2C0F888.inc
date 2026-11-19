@@ -3,7 +3,7 @@
 // Full 46755B giant NONEXACT, do not treat original inner case as callable CODE.
 case 0x2C0: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=0;
         field080=1;
         ClearMotionFields();

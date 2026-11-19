@@ -706,7 +706,7 @@ void RemiliaFighter::Advance() {
 #include "FighterGroundWaveF673.inc"
         case 0x2BF: {
             if (animationStage==0 && animationFrame==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -749,7 +749,7 @@ void RemiliaFighter::Advance() {
                 field080=99;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (animationStage<25 && y>g_ThresholdAt0065782C && animationStage>15) {
                 velocityX=(velocityX)-g_F718_FallingDragAt00659090;
@@ -791,9 +791,9 @@ void RemiliaFighter::Advance() {
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
             }
-            if (animationStage==15 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
+            if (animationStage==15 && animationFrame==0 && (scriptCounterF00)<3) {
                 ResetSecondaryCounter(11);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
                 break;
             }
             if (animationStage==25 && animationFrame==0)
@@ -802,7 +802,7 @@ void RemiliaFighter::Advance() {
         }
         case 0x2C1: {
             if (animationStage==0 && animationFrame==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
                 SetNonnegativeWord(40);
@@ -842,13 +842,13 @@ void RemiliaFighter::Advance() {
                 UpdateGaugeTimer(500);
                 PlaySound(12);
             }
-            if (animationStage==8 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<12) {
+            if (animationStage==8 && animationFrame==0 && (scriptCounterF00)<12) {
                 ResetSecondaryCounter(5);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
-            if (animationStage==11 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<14) {
+            if (animationStage==11 && animationFrame==0 && (scriptCounterF00)<14) {
                 ResetSecondaryCounter(8);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             if (animationStage==14 && animationFrame==0)
                 ResetSecondaryCounter(12);
@@ -857,7 +857,7 @@ void RemiliaFighter::Advance() {
 
         case 0x2C4: {
             if (animationStage==0 && animationFrame==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -902,7 +902,7 @@ void RemiliaFighter::Advance() {
                 field080=99;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (animationStage<25 && y>g_ThresholdAt0065782C && animationStage>15) {
                 velocityX=(velocityX)-g_F718_FallingDragAt00659090;
@@ -948,9 +948,9 @@ void RemiliaFighter::Advance() {
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
             }
-            if (animationStage==15 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
+            if (animationStage==15 && animationFrame==0 && (scriptCounterF00)<5) {
                 ResetSecondaryCounter(11);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
                 break;
             }
             if (animationStage==25 && animationFrame==0)

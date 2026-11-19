@@ -25,8 +25,8 @@ case R1190_ACTION: {
         Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+g_ThresholdAt0065782C,
             (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
     }
-    if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<13) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<13) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(10);
     }
 #if R1190_AIR

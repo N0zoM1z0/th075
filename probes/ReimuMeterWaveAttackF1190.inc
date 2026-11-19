@@ -17,8 +17,8 @@ case R1190_ACTION: {
             (*(&y))+g_ReimuMeterShotYAt00659080,reinterpret_cast<char&>(facing),1);
         PlaySound(R1190_SOUND);
     }
-    if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<R1190_LIMIT) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<R1190_LIMIT) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(10);
     }
     break;

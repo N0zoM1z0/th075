@@ -15,13 +15,13 @@
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
                  || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
-                reinterpret_cast<signed short&>(scriptCounterF00)=1;
+                scriptCounterF00=1;
             if (static_cast<int>(facing) * inputX<0
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
                  || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
-                reinterpret_cast<signed short&>(scriptCounterF00)=2;
+                scriptCounterF00=2;
             if ((animationStage)==0 && (animationFrame)==0) {
                 for (int shot=0;shot<10;++shot)
                     SpawnBattleEffect(0x3E4,x,y,1,1);
@@ -44,8 +44,8 @@
                 if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==3 && (animationFrame)==0) {
-                velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F748_SpeedScaleAt006590B8;
-                velocityY=static_cast<float>(-static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF02)))*g_F748_SpeedScaleAt006590B8;
+                velocityX=static_cast<float>(static_cast<int>(scriptCounterF00))*g_F748_SpeedScaleAt006590B8;
+                velocityY=static_cast<float>(-static_cast<int>(scriptCounterF02))*g_F748_SpeedScaleAt006590B8;
                 field05C=2.0f;
             }
             break;
@@ -56,13 +56,13 @@
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
                  || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
-                reinterpret_cast<signed short&>(scriptCounterF00)=1;
+                scriptCounterF00=1;
             if (static_cast<int>(facing) * inputX<0
                 && (static_cast<unsigned int>(inputA)>0
                  || static_cast<unsigned int>(inputB)>0
                  || static_cast<unsigned int>(inputC)>0
                  || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
-                reinterpret_cast<signed short&>(scriptCounterF00)=2;
+                scriptCounterF00=2;
             if ((animationStage)==0 && (animationFrame)==0) {
                 for (int shot=0;shot<10;++shot)
                     SpawnBattleEffect(0x3E4,x,y,1,1);
@@ -85,8 +85,8 @@
                 if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==3 && (animationFrame)==0) {
-                velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F748_SpeedScaleAt006590B8;
-                velocityY=static_cast<float>(-static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF02)))*g_F748_SpeedScaleAt006590B8;
+                velocityX=static_cast<float>(static_cast<int>(scriptCounterF00))*g_F748_SpeedScaleAt006590B8;
+                velocityY=static_cast<float>(-static_cast<int>(scriptCounterF02))*g_F748_SpeedScaleAt006590B8;
                 field05C=2.0f;
             }
             break;

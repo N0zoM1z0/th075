@@ -9,7 +9,7 @@ case 0xC8: {
     field3AC=1;
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if ((velocityX)>g_F834_UpperAt00657CBC) {
         velocityX=(velocityX)-g_SubtractAt00657478;
@@ -24,7 +24,7 @@ case 0xC8: {
         ResetPrimaryCounters(0xCC);
         return;
     }
-    if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 || (animationStage)>5) {
+    if ((scriptCounterF00)>0 || (animationStage)>5) {
         if ((facing)*inputX<=0) {
             ResetPrimaryCounters(0xCF);
             return;
@@ -32,9 +32,9 @@ case 0xC8: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         if ((facing)*inputX>0) {
-            if ((reinterpret_cast<signed short&>(scriptCounterF00))<1) {
+            if ((scriptCounterF00)<1) {
                 ResetSecondaryCounter(2);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
                 return;
             }
         }
@@ -43,7 +43,7 @@ case 0xC8: {
     }
     if ((animationFrame)==0 &&
             (facing)*inputX<=0 &&
-            (reinterpret_cast<signed short&>(scriptCounterF00))>0) {
+            (scriptCounterF00)>0) {
         ResetPrimaryCounters(0xCF);
         return;
     }

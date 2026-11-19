@@ -109,7 +109,7 @@
                 SpawnBattleEffect(0x338,x,y,
                     facing,1);
             }
-            if ((animationStage)==18 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0)
+            if ((animationStage)==18 && (animationFrame)==0 && (scriptCounterF00)==0)
                 ResetSecondaryCounter(19);
             if ((animationStage)==11 && (animationFrame)==0)
                 ResetSecondaryCounter(9);

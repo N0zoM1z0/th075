@@ -8,19 +8,19 @@
 // from EBP-8 to EBP-0xC. No fake locals, manual code or credit.
         case 0x2F8: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
-                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                scriptCounterF00=0;
+                scriptCounterF02=0;
                 fieldF04=0;
                 field07C=1;
                 ClearMotionFields();
             }
             if ((animationStage)==2) {
-                ++reinterpret_cast<signed short&>(scriptCounterF02);
-                if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
+                ++scriptCounterF02;
+                if ((scriptCounterF02)>4) {
                     SpawnAuxEffect(0x40,
                         reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float(facing*3),
                         (*(&y))+g_YPlusAt0065929C,1,1);
-                    reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                    scriptCounterF02=0;
                 }
             }
             if ((animationStage)==6 && (animationFrame)==0) {
@@ -43,30 +43,30 @@
             }
             if ((animationStage)==2 && (animationFrame)==0) PlaySound(0x15);
             if ((animationStage)==3 && (animationFrame)==0) {
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
-                    ++reinterpret_cast<signed short&>(scriptCounterF00);
+                if ((scriptCounterF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                    ++scriptCounterF00;
                     ResetSecondaryCounter(2);
                     break;
                 }
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
-                    ++reinterpret_cast<signed short&>(scriptCounterF00);
+                if ((scriptCounterF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                    ++scriptCounterF00;
                     ResetSecondaryCounter(3);
                     break;
                 }
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)==8 && (animationFrame)==0
-                && (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)+6) {
+                && (scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)+6) {
                 ResetSecondaryCounter(6);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             if ((animationStage)==10 && (animationFrame)==0
-                && (reinterpret_cast<signed short&>(scriptCounterF00))<10-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                && (scriptCounterF00)<10-static_cast<int>(g_CloudOpponentAt006714D0)) {
                 ResetSecondaryCounter(8);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             break;
         }

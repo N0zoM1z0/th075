@@ -107,7 +107,7 @@ case 0x131: {
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0; field080=3; field07C=0;
+        scriptCounterF00=0; field080=3; field07C=0;
     }
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
     if ((animationStage)==1 && (animationFrame)==0) PlaySharedSound(0x1B);
@@ -115,8 +115,8 @@ case 0x131: {
         SpawnBattleEffect(0x328,
             float(facing*145)+(x),
             (*(&y))+g_ReimuShotYAt006590A4,reinterpret_cast<char&>(facing),1);
-    if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==4 && (animationFrame)==0 && (scriptCounterF00)<2) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(2);
         field07C=0;
     }
@@ -167,7 +167,7 @@ case 0x133: {
 #undef F653_PREPARE_ANIM
 #undef F653_CLEAR_F00
 case 0x135: {
-    if ((animationStage)==0 && (animationFrame)==0) { ClearMotionFields(); reinterpret_cast<signed short&>(scriptCounterF00)=0; }
+    if ((animationStage)==0 && (animationFrame)==0) { ClearMotionFields(); scriptCounterF00=0; }
     if ((animationStage)>4 && y==g_ThresholdAt0065782C) {
         velocityX=(velocityX)-g_ReimuGroundDragAt00658350;
         if ((velocityX)<g_ThresholdAt0065782C) { velocityX=0.0f; field3AC=0; }
@@ -187,8 +187,8 @@ case 0x135: {
     // Keep both observed guards; simplifying this contradictory path would
     // discard native instructions rather than reconstruct the original.
     if ((animationStage)==3 && (animationFrame)==0) {
-        if ((animationStage)==5 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
+        if ((animationStage)==5 && (animationFrame)==0 && (scriptCounterF00)<4) {
+            ++scriptCounterF00;
             ResetSecondaryCounter(3);
         }
     }

@@ -4,7 +4,7 @@
 // Inner original game case, not independently callable exact CODE.
 case 0x31B: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=1;
         ClearMotionFields();
     }
@@ -17,8 +17,8 @@ case 0x31B: {
         SpawnBattleEffect(0x3E5,x,y,
             (facing),1);
     }
-    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<8) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(6);
     }
     return;

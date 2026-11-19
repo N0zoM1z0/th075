@@ -1,7 +1,7 @@
 case 0x2EF: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1; field07C=0; field3AC=0; reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field080=1; field07C=0; field3AC=0; scriptCounterF00=0;
     }
 #define R1188_FADE_STAGE 1
 #define R1188_RETURN_STAGE 3
@@ -16,11 +16,11 @@ case 0x2EF: {
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(scriptCounterF00))<g_ReimuRepeatSettingAt006714D0*2+3 && (animationFrame)==0 &&
+    if ((scriptCounterF00)<g_ReimuRepeatSettingAt006714D0*2+3 && (animationFrame)==0 &&
         ((animationStage)==7 || (animationStage)==8)) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
         PlaySound(12);
-        field314=float(reinterpret_cast<signed short&>(scriptCounterF00));
+        field314=float(scriptCounterF00);
         SpawnBattleEffect(0x394,float(facing*80)+(x),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         aiCardTimer=120;
@@ -39,7 +39,7 @@ case 0x2EF: {
             facing=-1;
         else facing=1;
     }
-    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<6) ResetSecondaryCounter(7);
+    if ((animationStage)==9 && (animationFrame)==0 && (scriptCounterF00)<6) ResetSecondaryCounter(7);
     if ((animationStage)==14 && (animationFrame)==0) ResetSecondaryCounter(12);
     break;
 }

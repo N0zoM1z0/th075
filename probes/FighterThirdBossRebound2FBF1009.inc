@@ -16,8 +16,8 @@ case 0x2FB: {
         ClearMotionFields();
         field07C=1;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
     if ((animationStage)==6 || (animationStage)==7) {
         if ((color[0])>20)
@@ -44,10 +44,10 @@ case 0x2FB: {
             float(RecordedRange(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RecordedRange(0,90)),
             1,1,0,1);
-    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
+    if ((animationStage)==9 && (animationFrame)==0 && (scriptCounterF00)==0) {
         velocityX=0.0f;
         velocityY=0.0f;
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0x2F9);
@@ -87,9 +87,9 @@ case 0x2FB: {
         ResetTransform(0.0f,0.0f,0.0f);
         color[0]=255;
     }
-    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
+    if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF02)<4) {
         ResetSecondaryCounter(6);
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        ++scriptCounterF02;
         break;
     }
     if ((animationStage)==8 && (animationFrame)==0) {

@@ -12,7 +12,7 @@
 // F1017 real original fighter action 2BE.
 case 0x2BE: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=0;
         ClearMotionFields();
         field080=99;
@@ -105,8 +105,8 @@ case 0x2BE: {
             (*(&y))+g_F1017_VolleyYAt0065908C,
             facing,1);
         PlaySound(7);
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))<6) {
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
+        if ((scriptCounterF00)<6) {
+            ++scriptCounterF00;
             ResetSecondaryCounter(15);
         }
     }

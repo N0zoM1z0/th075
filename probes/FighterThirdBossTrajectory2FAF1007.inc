@@ -13,8 +13,8 @@
 case 0x2FA: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
         reinterpret_cast<signed short&>(fieldF08)=g_F1004_ModeAt006714D0+2;
@@ -28,9 +28,9 @@ case 0x2FA: {
             break;
         }
     }
-    ++reinterpret_cast<signed short&>(scriptCounterF00);
-    if ((animationStage)>3 && (animationStage)<11 && (reinterpret_cast<signed short&>(scriptCounterF00))>8) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+    ++scriptCounterF00;
+    if ((animationStage)>3 && (animationStage)<11 && (scriptCounterF00)>8) {
+        scriptCounterF00=0;
         field314=-45.0f;
         SpawnBattleEffect(0x38E,x,
             (*(&y))+g_ContactProjectionAt00657888,
@@ -52,8 +52,8 @@ case 0x2FA: {
              (x)<g_ContactProjectionAt00657888))
             velocityX=-(velocityX);
     }
-    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+    if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF02)<1) {
+        ++scriptCounterF02;
         ResetSecondaryCounter(4);
     }
     if ((animationStage)==15 && (animationFrame)==0)

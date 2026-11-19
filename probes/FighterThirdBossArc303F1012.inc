@@ -13,8 +13,8 @@
 case 0x303: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         if (RecordedRange(0,100)>50)
             reinterpret_cast<signed short&>(fieldF06)=5;
@@ -36,10 +36,10 @@ case 0x303: {
     }
     if ((animationStage)==7 || (animationStage)==8) {
         if ((animationFrame)==0) {
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
-            if ((reinterpret_cast<signed short&>(scriptCounterF00))<g_F1004_ModeAt006714D0*5+10) {
+            ++scriptCounterF00;
+            if ((scriptCounterF00)<g_F1004_ModeAt006714D0*5+10) {
                 PlaySound(0);
-                reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
+                scriptCounterF02=(velocityX)*g_ContactProjectionAt00657888;
                 reinterpret_cast<signed short&>(fieldF08)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
                 field314=float(fieldF04);
                 field318=10.0f;
@@ -48,7 +48,7 @@ case 0x303: {
                     float(facing)*(velocityX)+(x),
                     (*(&y))+g_F1012_ArcYAt006591EC-velocityY,
                     facing,1);
-                velocityX=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
+                velocityX=float(scriptCounterF02)*g_F747_BounceYAt00658044;
                 velocityY=float(reinterpret_cast<signed short&>(fieldF08))*g_F747_BounceYAt00658044;
                 fieldF04+=reinterpret_cast<signed short&>(fieldF06);
             }
@@ -75,7 +75,7 @@ case 0x303: {
                     (facing))/
                 g_F1012_AngleDivisorAt00657828);
     }
-    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<25)
+    if ((animationStage)==9 && (animationFrame)==0 && (scriptCounterF00)<25)
         ResetSecondaryCounter(7);
     break;
 }

@@ -5,8 +5,8 @@
         case 0x302: {
             SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
-                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                scriptCounterF00=0;
+                scriptCounterF02=0;
                 fieldF04=0;
                 field07C=1;
                 ClearMotionFields();

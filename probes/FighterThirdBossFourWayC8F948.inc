@@ -11,7 +11,7 @@ case 0xC8: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if ((velocityX)>g_F948_C8UpperAt00657854) {
         velocityX=(velocityX)-g_F948_C8DragAt00658350;
@@ -26,16 +26,16 @@ case 0xC8: {
         ResetPrimaryCounters(0xCC);
         break;
     }
-    if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 &&
+    if ((scriptCounterF00)>0 &&
         static_cast<int>(facing)*inputX<=0) {
         ResetPrimaryCounters(0xCF);
         break;
     }
     if (AdvanceNestedFrame()==(field070)) {
         if (static_cast<int>(facing)*inputX>0 &&
-            (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
+            (scriptCounterF00)<2) {
             ResetSecondaryCounter(4);
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
+            ++scriptCounterF00;
             break;
         }
         ResetPrimaryCounters(0xCF);

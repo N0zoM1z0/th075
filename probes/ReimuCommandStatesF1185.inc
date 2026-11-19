@@ -3,7 +3,7 @@
 case 0xC8: {
     field3AC=1;
     SetCommandSelection(3,4,0xFF);
-    if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; reinterpret_cast<signed short&>(scriptCounterF00)=0; }
+    if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; scriptCounterF00=0; }
     if ((velocityX)>g_ReimuC8BrakeAt00657D70) {
         velocityX=(velocityX)-g_SubtractAt00657478;
         if ((velocityX)<g_ReimuC8ClampAt006590B0) velocityX=9.0f;
@@ -16,14 +16,14 @@ case 0xC8: {
         ResetPrimaryCounters(0xCC);
         break;
     }
-    if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 && (facing)*inputX<=0) {
+    if ((scriptCounterF00)>0 && (facing)*inputX<=0) {
         ResetPrimaryCounters(0xCF);
         break;
     }
     if (AdvanceNestedFrame()==(field070)) {
-        if ((facing)*inputX>0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
+        if ((facing)*inputX>0 && (scriptCounterF00)<3) {
             ResetSecondaryCounter(5);
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
+            ++scriptCounterF00;
             break;
         }
         ResetPrimaryCounters(0xCF);
@@ -86,7 +86,7 @@ case 0xCA: {
 }
 case 0xCB: {
     SetCommandSelection(3,4,0xFF);
-    if ((animationStage)==0 && (animationFrame)==0) { reinterpret_cast<signed short&>(scriptCounterF00)=0; velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
+    if ((animationStage)==0 && (animationFrame)==0) { scriptCounterF00=0; velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
     if (y>g_ThresholdAt0065782C && (animationStage)>0) {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {

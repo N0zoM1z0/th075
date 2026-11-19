@@ -1,6 +1,6 @@
 case 0x31B: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
+        scriptCounterF00=0; field07C=1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
@@ -11,15 +11,15 @@ case 0x31B: {
         SpawnBattleEffect(0x3E5,x,(*(&y))+g_ContactProjectionAt00657888,
             reinterpret_cast<char&>(facing),1);
     }
-    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==9 && (animationFrame)==0 && (scriptCounterF00)<8) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(7);
     }
     break;
 }
 case 0x31C: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
+        scriptCounterF00=0; field07C=1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(field070)) {
@@ -70,8 +70,8 @@ case 0x31C: {
         SelectResourceParameters();
         PlaySharedSound(0x17);
     }
-    if ((animationStage)==24 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==24 && (animationFrame)==0 && (scriptCounterF00)<8) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(22);
         reinterpret_cast<char&>(field3CF)=1;
     }

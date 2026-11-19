@@ -2,7 +2,7 @@ case R1189_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         --reinterpret_cast<unsigned char&>(field366);
         ClearMotionFields();
-        field080=1; field07C=0; field3AC=0; reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field080=1; field07C=0; field3AC=0; scriptCounterF00=0;
     }
 #if R1189_HAS_BONUS
     if ((spiritCooldown)==0 && field07C==1) spirit=1000;

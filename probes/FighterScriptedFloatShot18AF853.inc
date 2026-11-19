@@ -6,7 +6,7 @@ case 0x18A: {
         field080=1;
         field07C=0;
         velocityX=15.0f;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
     if ((velocityX)<g_ThresholdAt0065782C) {

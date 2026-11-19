@@ -4,8 +4,8 @@
 // Whole original fighter remains NONEXACT; internal state is NOT callable exact CODE.
 case 0x2C2: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         field07C=0;
         field080=1;
@@ -20,8 +20,8 @@ case 0x2C2: {
             return;
         }
     }
-    if ((animationStage)==9 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+    if ((animationStage)==9 && (scriptCounterF02)==0) {
+        ++scriptCounterF02;
         SpawnBattleEffect(0x34C,x,
             (opponent->y)+g_ContactProjectionAt00657888,
             (facing),1);
@@ -33,7 +33,7 @@ case 0x2C2: {
         SpawnBattleEffect(0x34B,opponent->x,
             (opponent->y)+g_ContactProjectionAt00657888,
             (facing),1);
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==0) {
+        if ((scriptCounterF00)==0) {
             field314=0.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*100),
@@ -43,7 +43,7 @@ case 0x2C2: {
                 (opponent->y)+g_F890Phase0AltYAt006591E4,
                 -((facing)),1);
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==1) {
+        if ((scriptCounterF00)==1) {
             field314=0.0f;
             Fighter::SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*100),
@@ -53,7 +53,7 @@ case 0x2C2: {
                 (opponent->y)-g_F890Phase1LowYAt0065788C,
                 -((facing)),1);
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==2) {
+        if ((scriptCounterF00)==2) {
             field314=90.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*100),
@@ -64,7 +64,7 @@ case 0x2C2: {
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==3) {
+        if ((scriptCounterF00)==3) {
             field314=-90.0f;
             Fighter::SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*100),
@@ -75,7 +75,7 @@ case 0x2C2: {
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==4) {
+        if ((scriptCounterF00)==4) {
             field314=45.0f;
             SpawnBattleEffect(0x34A,
                 (opponent->x)+g_ThresholdAt0065782C,
@@ -86,7 +86,7 @@ case 0x2C2: {
                 (opponent->y)+g_F890Phase4OtherYAt006598B4,
                 -((facing)),1);
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==5) {
+        if ((scriptCounterF00)==5) {
             field314=-45.0f;
             SpawnBattleEffect(0x34A,
                 (opponent->x)+g_ThresholdAt0065782C,
@@ -97,7 +97,7 @@ case 0x2C2: {
                 (opponent->y)-g_ApproachUpperAt006592A4,
                 (facing),1);
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==6) {
+        if ((scriptCounterF00)==6) {
             field314=45.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*120),
@@ -108,7 +108,7 @@ case 0x2C2: {
                 (opponent->y)-g_ApproachUpperAt006592A4,
                 (facing),1);
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))==7) {
+        if ((scriptCounterF00)==7) {
             field314=-45.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*120),
@@ -119,9 +119,9 @@ case 0x2C2: {
                 (opponent->y)+g_F890Phase4OtherYAt006598B4,
                 -((facing)),1);
         }
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
         if ((animationStage)==8 && (animationFrame)==0 && (fieldF04)==0) {
-            reinterpret_cast<signed short&>(scriptCounterF00)=1;
+            scriptCounterF00=1;
             ++fieldF04;
             ResetSecondaryCounter(1);
             field314=0.0f;

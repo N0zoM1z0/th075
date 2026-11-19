@@ -20,7 +20,7 @@ case F653_ACTION: {
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(F653_NEXT_ACTION);
 #if F653_CLEAR_F00
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
 #endif
     }
     if ((animationStage)==F653_PREPARE_FRAME && (animationFrame)==0)

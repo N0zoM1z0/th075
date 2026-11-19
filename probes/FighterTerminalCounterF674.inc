@@ -5,7 +5,7 @@
 // beyond 2EF, restoring 2EF native 5-byte JMP; no artificial padding.
         case 0x31C: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
             }
@@ -15,8 +15,8 @@
                 SelectResourceParameters();
                 PlaySharedSound(0x17);
             }
-            if ((animationStage)==22 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+            if ((animationStage)==22 && (animationFrame)==0 && (scriptCounterF00)<8) {
+                ++scriptCounterF00;
                 ResetSecondaryCounter(0x14);
                 reinterpret_cast<unsigned char&>(field3CF)=1;
             }

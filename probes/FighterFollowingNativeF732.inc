@@ -9,7 +9,7 @@
         case 0x1FA: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=-5.0f;
-                velocityY=static_cast<float>((reinterpret_cast<signed short&>(scriptCounterF00))==1)*g_FloatMulAt00657874+g_FloatAddAt00657CBC;
+                velocityY=static_cast<float>((scriptCounterF00)==1)*g_FloatMulAt00657874+g_FloatAddAt00657CBC;
                 field05C=-0.8f;
                 field07C=0;
                 field3AC=0;
@@ -33,7 +33,7 @@
                 field080=1;
                 field07C=0;
                 field3AC=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)<8 && y>g_ThresholdAt0065782C && (animationStage)>2)
                 velocityY=velocityY-g_RisingGravityAt0065747C;
@@ -63,9 +63,9 @@
             }
             if ((animationStage)==8 && (animationFrame)==0) ClearMotionFields();
             if ((animationStage)==10 && (animationFrame)==0) {
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))<1) {
+                if ((scriptCounterF00)<1) {
                     ResetSecondaryCounter(8);
-                    ++reinterpret_cast<signed short&>(scriptCounterF00);
+                    ++scriptCounterF00;
                     break;
                 }
                 velocityX=20.0f;
@@ -80,7 +80,7 @@
                 field080=1;
                 field07C=0;
                 field3AC=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)<18 && y>g_ThresholdAt0065782C && (animationStage)>7) {
                 velocityX=(velocityX)-g_ShotPositiveDragAt00659A10;
@@ -104,9 +104,9 @@
                 SpawnBattleEffect(0x33A,x,y,
                         facing,1);
             }
-            if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {
+            if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<0) {
                 ResetSecondaryCounter(4);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
                 break;
             }
             if ((animationStage)==18 && (animationFrame)==0)
@@ -119,7 +119,7 @@
                 field080=1;
                 field07C=0;
                 field3AC=0;
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)<22 && y>g_ThresholdAt0065782C && (animationStage)>12) {
                 velocityX=(velocityX)-g_ShotPositiveDragAt00659A10;
@@ -143,9 +143,9 @@
                 SpawnBattleEffect(0x33A,x,y,
                         facing,1);
             }
-            if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {
+            if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<0) {
                 ResetSecondaryCounter(8);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
                 break;
             }
             if ((animationStage)==22 && (animationFrame)==0)

@@ -13,7 +13,7 @@ case 0x1A0: {
         field07C=1;
         ClearMotionFields();
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
+    --scriptCounterF00;
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {

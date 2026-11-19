@@ -3,7 +3,7 @@ case R1187_ACTION: {
         velocityX=(velocityX)*g_ProjectileFallAt006590B4;
         velocityY=(*(&velocityY))*g_ProjectileFallAt006590B4;
         field07C=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if ((animationStage)>5) velocityY=velocityY-field05C;
     if (y+velocityY<=g_ThresholdAt0065782C) {

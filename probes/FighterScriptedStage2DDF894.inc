@@ -4,8 +4,8 @@
 case 0x2DD: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
     }
     if ((animationStage)==2 && (animationFrame)==0) {

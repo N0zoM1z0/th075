@@ -5,9 +5,9 @@
         case 0x62: {
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0x5F);
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))==1)
+                if ((scriptCounterF00)==1)
                     ResetPrimaryCounters(0x5D);
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))==2)
+                if ((scriptCounterF00)==2)
                     ResetPrimaryCounters(0x5E);
             }
             break;

@@ -14,8 +14,8 @@ case 0x2E6: {
         ClearMotionFields();
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=30;
         reinterpret_cast<signed short&>(fieldF08)=1;
@@ -62,8 +62,8 @@ case 0x2E6: {
             float(RecordedRange(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RecordedRange(0,90)),
             1,1,0,1);
-    if ((animationStage)>10 && (animationStage)<17 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+    if ((animationStage)>10 && (animationStage)<17 && (scriptCounterF02)==0) {
+        ++scriptCounterF02;
         if (g_F1004_ModeAt006714D0==0) {
             for (int shot=0;shot<12;++shot) {
                 field314=float(shot*30);
@@ -145,9 +145,9 @@ case 0x2E6: {
         ResetTransform(0.0f,0.0f,0.0f);
         color[0]=255;
     }
-    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
+    if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<4) {
         ResetSecondaryCounter(6);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
         break;
     }
     if ((animationStage)==9 && (animationFrame)==0) {
@@ -156,9 +156,9 @@ case 0x2E6: {
     }
     if ((animationStage)==11 && (animationFrame)==0)
         PlaySound(5);
-    if ((animationStage)==17 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
+    if ((animationStage)==17 && (animationFrame)==0 && (scriptCounterF00)<10) {
         ResetSecondaryCounter(15);
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
     }
     if ((animationStage)==19 && (animationFrame)==0)
         ResetSecondaryCounter(17);

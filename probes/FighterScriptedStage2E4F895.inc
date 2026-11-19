@@ -5,8 +5,8 @@ case 0x2E4: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=0;
         field080=1;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         ClearMotionFields();
     }
@@ -30,8 +30,8 @@ case 0x2E4: {
     }
     if ((animationStage)==2 && (animationFrame)==0)
         velocityX=12.5f;
-    if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<2) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(2);
     }
     return;

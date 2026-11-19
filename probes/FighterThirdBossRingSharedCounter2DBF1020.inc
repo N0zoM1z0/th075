@@ -27,8 +27,8 @@ case 0x2DB: {
         ClearMotionFields();
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
         field05C=0.2f;
@@ -58,12 +58,12 @@ case 0x2DB: {
             color[0]=255;
     }
     if ((animationStage)==15 || (animationStage)==16) {
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))<2) {
+        if ((scriptCounterF00)<2) {
             if ((color[0])>40)
                 color[0]=(color[0])-40;
             else {
                 color[0]=0;
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))<3) {
+                if ((scriptCounterF00)<3) {
                     ResetSecondaryCounter(8);
                     break;
                 }
@@ -131,9 +131,9 @@ case 0x2DB: {
         ResetTransform(0.0f,0.0f,0.0f);
         color[0]=255;
     }
-    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
+    if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF02)<4) {
         ResetSecondaryCounter(6);
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        ++scriptCounterF02;
         break;
     }
     if ((animationStage)==9 && (animationFrame)==0) {
@@ -141,7 +141,7 @@ case 0x2DB: {
         velocityY=0.0f;
     }
     if ((animationStage)==11 && (animationFrame)==0) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+        ++scriptCounterF00;
         reinterpret_cast<signed short&>(fieldF06)=0;
         int shot;
         for (shot=0;shot<360;shot+=10) {

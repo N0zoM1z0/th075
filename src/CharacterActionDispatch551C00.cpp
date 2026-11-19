@@ -348,9 +348,9 @@ void RemiliaFighter::DispatchActions()
         sequenceInfo->priority <= TARGET_PRIORITY(504) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
-        reinterpret_cast<short&>(scriptCounterF00) = 0;
+        scriptCounterF00 = 0;
         ResetPrimaryCounters(504);
-        if (y > 0.0f) reinterpret_cast<short&>(scriptCounterF00) = 1;
+        if (y > 0.0f) scriptCounterF00 = 1;
         return;
     }
     if (aiCommand == 21 &&
@@ -360,9 +360,9 @@ void RemiliaFighter::DispatchActions()
         sequenceInfo->priority <= TARGET_PRIORITY(503) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
-        reinterpret_cast<short&>(scriptCounterF00) = 0;
+        scriptCounterF00 = 0;
         ResetPrimaryCounters(503);
-        if (y > 0.0f) reinterpret_cast<short&>(scriptCounterF00) = 1;
+        if (y > 0.0f) scriptCounterF00 = 1;
         return;
     }
     if (aiCommand == 20 &&
@@ -372,9 +372,9 @@ void RemiliaFighter::DispatchActions()
         sequenceInfo->priority <= TARGET_PRIORITY(502) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
-        reinterpret_cast<short&>(scriptCounterF00) = 0;
+        scriptCounterF00 = 0;
         ResetPrimaryCounters(502);
-        if (y > 0.0f) reinterpret_cast<short&>(scriptCounterF00) = 1;
+        if (y > 0.0f) scriptCounterF00 = 1;
         return;
     }
     if (aiCommand == 101 &&

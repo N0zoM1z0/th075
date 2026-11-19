@@ -4,8 +4,8 @@
 // Historic source class and native float/raw argument ABIs are provisional.
         case 0x2F0: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
-                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                scriptCounterF00=0;
+                scriptCounterF02=0;
                 fieldF04=0;
                 field07C=1;
                 ClearMotionFields();
@@ -37,10 +37,10 @@
                     facing,1);
                 PlaySound(16);
             }
-            if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<6) {
+            if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<6) {
                 ResetSecondaryCounter(5);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))==6-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                ++scriptCounterF00;
+                if ((scriptCounterF00)==6-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))+g_ContactProjectionAt00657888,
                         30.0f,facing,0);
@@ -83,16 +83,16 @@
                     PlaySound(20);
                 }
             }
-            if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
+            if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<5) {
                 ResetSecondaryCounter(8);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             break;
         }
         case 0x2F1: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
-                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                scriptCounterF00=0;
+                scriptCounterF02=0;
                 fieldF04=0;
                 field07C=1;
                 ClearMotionFields();
@@ -101,19 +101,19 @@
                 velocityY=velocityY-g_CloudGravityAt0065785C;
                 if (velocityY<g_ThresholdAt0065782C) velocityY=0.0f;
             }
-            if ((animationStage)>4 && (animationStage)<8 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
-                ++reinterpret_cast<signed short&>(scriptCounterF02);
-                if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
+            if ((animationStage)>4 && (animationStage)<8 && (scriptCounterF00)<3) {
+                ++scriptCounterF02;
+                if ((scriptCounterF02)>4) {
                     SpawnAuxEffect(0x40,x,
                        (*(&y))+g_CloudShotYAt006591E4,1,1);
-                    reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                    scriptCounterF02=0;
                 }
             }
-            if ((animationStage)>4 && (animationStage)<8 && (reinterpret_cast<signed short&>(scriptCounterF00))>3) {
-                ++reinterpret_cast<signed short&>(scriptCounterF02);
-                if ((reinterpret_cast<signed short&>(scriptCounterF02))>2 &&
+            if ((animationStage)>4 && (animationStage)<8 && (scriptCounterF00)>3) {
+                ++scriptCounterF02;
+                if ((scriptCounterF02)>2 &&
                     (fieldF04)<static_cast<int>(g_CloudOpponentAt006714D0)*5+15) {
-                    reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                    scriptCounterF02=0;
                     ++fieldF04;
                     if (RecordedRange(0,100)>50)
                         SpawnBattleEffect(0x390,x,
@@ -145,14 +145,14 @@
                     facing,1);
                 PlaySound(0x15);
             }
-            if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
+            if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<10) {
                 ResetSecondaryCounter(5);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
-                if ((reinterpret_cast<signed short&>(scriptCounterF00))==4) PlaySound(0x13);
+                ++scriptCounterF00;
+                if ((scriptCounterF00)==4) PlaySound(0x13);
             }
-            if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
+            if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<5) {
                 ResetSecondaryCounter(8);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             break;
         }

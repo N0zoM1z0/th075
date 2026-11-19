@@ -5,7 +5,7 @@
 // Native stage, gravity, ground, two authentic 0x330 shots per action.
         case 0x19A: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 velocityX=(velocityX)*g_BounceScaleAt00657F74;
                 velocityY=(*(&velocityY))*g_BounceScaleAt00657F74;
@@ -37,7 +37,7 @@
             }
             if ((animationStage)==5 && (animationFrame)==0
                     && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
+                    && (scriptCounterF00)<6 && (spirit)>0) {
                 PlaySound(2);
                 field314=0.0f;
                 SpawnBattleEffect(0x330,
@@ -46,13 +46,13 @@
                     facing,1);
                 UpdateGaugeTimer(20);
                 ResetSecondaryCounter(4);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             break;
         }
         case 0x19B: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 velocityX=(velocityX)*g_BounceScaleAt00657F74;
                 velocityY=(*(&velocityY))*g_BounceScaleAt00657F74;
@@ -84,7 +84,7 @@
             }
             if ((animationStage)==5 && (animationFrame)==0
                     && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
+                    && (scriptCounterF00)<6 && (spirit)>0) {
                 PlaySound(2);
                 field314=-20.0f;
                 SpawnBattleEffect(0x330,
@@ -93,7 +93,7 @@
                     facing,1);
                 UpdateGaugeTimer(20);
                 ResetSecondaryCounter(4);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             break;
         }

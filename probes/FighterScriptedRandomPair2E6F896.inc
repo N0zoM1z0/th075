@@ -3,7 +3,7 @@
 // No fake source locals; entire original 46755B father NONEXACT.
 case 0x2E6: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=0;
         field080=1;
     }
@@ -11,17 +11,17 @@ case 0x2E6: {
     if ((velocityX)<g_ThresholdAt0065782C)
         velocityX=0.0f;
     if (AdvanceNestedFrame()==(field070)) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=RecordedRange(0,100);
+        scriptCounterF00=RecordedRange(0,100);
         if (field07C==0) {
             ResetPrimaryCounters(0);
             aiCardTimer=RecordedRange(60,120);
             return;
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))<30) {
+        if ((scriptCounterF00)<30) {
             ResetPrimaryCounters(0x2E5);
             return;
         }
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))<60) {
+        if ((scriptCounterF00)<60) {
             ResetPrimaryCounters(0x2E7);
             return;
         }

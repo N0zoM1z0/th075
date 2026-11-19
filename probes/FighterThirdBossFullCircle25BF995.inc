@@ -11,11 +11,11 @@ case 0x25B: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
-    --reinterpret_cast<signed short&>(scriptCounterF00);
-    if ((animationStage)>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
+    --scriptCounterF00;
+    if ((animationStage)>5 && (scriptCounterF00)<=0 && (scriptCounterF02)<1) {
         PlaySound(0);
         UpdateGaugeTimer(0xFA);
         field314=0.0f;
@@ -234,8 +234,8 @@ case 0x25B: {
             float((facing)*49)+(x),
             (*(&y))+g_F968_RoundY190At00659294,
             facing,1);
-        reinterpret_cast<signed short&>(scriptCounterF00)=2;
-        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        scriptCounterF00=2;
+        ++scriptCounterF02;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);

@@ -4,7 +4,7 @@
 // Source method types remain provisional native ABI probes.
         case 0x2BC: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -39,13 +39,13 @@
                 UpdateGaugeTimer(500);
                 PlaySound(8);
             }
-            if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<7) {
+            if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<7) {
                 ResetSecondaryCounter(5);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
-            if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<9) {
+            if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<9) {
                 ResetSecondaryCounter(8);
-                ++reinterpret_cast<signed short&>(scriptCounterF00);
+                ++scriptCounterF00;
             }
             if ((animationStage)==14 && (animationFrame)==0) ResetSecondaryCounter(12);
             break;

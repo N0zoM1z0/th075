@@ -8,7 +8,7 @@ case 0x253: {
         field080=1;
         field07C=0;
         field3AC=0;
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
     }
     if ((spiritCooldown)==0 && field07C==1)
         spirit=1000;

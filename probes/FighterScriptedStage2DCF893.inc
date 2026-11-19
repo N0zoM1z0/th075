@@ -5,8 +5,8 @@
 case 0x2DC: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=0;
     }
     if ((animationStage)==2 && (animationFrame)==0) {
@@ -42,8 +42,8 @@ case 0x2DC: {
         ResetPrimaryCounters(0);
         aiCardTimer=RecordedRange(0,30);
     }
-    if ((animationStage)==13 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==13 && (animationFrame)==0 && (scriptCounterF00)<1) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(2);
     }
     if ((animationStage)==15 && (animationFrame)==0) {

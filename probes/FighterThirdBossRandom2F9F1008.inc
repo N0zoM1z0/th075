@@ -12,8 +12,8 @@
 // F1008 true original Japanese 004AC040 case 2F9
 case 0x2F9: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
         fieldF04=static_cast<short>(RecordedRange(0,3));
         reinterpret_cast<signed short&>(fieldF06)=static_cast<short>(RecordedRange(0,100));
         field07C=0;
@@ -50,8 +50,8 @@ case 0x2F9: {
         aiCardTimer=static_cast<short>(180-g_F1004_ModeAt006714D0*20);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))<3) {
-            ++reinterpret_cast<signed short&>(scriptCounterF02);
+        if ((scriptCounterF02)<3) {
+            ++scriptCounterF02;
             ResetSecondaryCounter(3);
             break;
         }
@@ -64,17 +64,17 @@ case 0x2F9: {
         opponent->field010=0x82;
     }
     if ((animationStage)==11 && (animationFrame)==0) {
-        if ((reinterpret_cast<signed short&>(scriptCounterF00))<10) {
-            ++reinterpret_cast<signed short&>(scriptCounterF00);
+        if ((scriptCounterF00)<10) {
+            ++scriptCounterF00;
             ResetSecondaryCounter(9);
         } else {
             fieldF10=0;
             opponent->field010=0;
-            reinterpret_cast<signed short&>(scriptCounterF00)=0;
+            scriptCounterF00=0;
         }
     }
-    if ((animationStage)==13 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
-        ++reinterpret_cast<signed short&>(scriptCounterF00);
+    if ((animationStage)==13 && (animationFrame)==0 && (scriptCounterF00)<10) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(11);
     }
     break;

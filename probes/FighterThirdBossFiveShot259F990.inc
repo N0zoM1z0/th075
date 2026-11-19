@@ -11,47 +11,47 @@ case 0x259: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ClearMotionFields();
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
-        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        scriptCounterF00=0;
+        scriptCounterF02=0;
     }
     if ((animationStage)>4) {
-        if ((reinterpret_cast<signed short&>(scriptCounterF02))<3 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0) {
+        if ((scriptCounterF02)<3 && (scriptCounterF00)<=0) {
             PlaySound(0);
-            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+145);
+            field314=float((scriptCounterF02)*3+145);
             field318=10.0f;
             SpawnBattleEffect(0x325,
                 x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
-            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+140);
+            field314=float((scriptCounterF02)*3+140);
             field318=10.0f;
             SpawnBattleEffect(0x325,
                 x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
-            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+135);
+            field314=float((scriptCounterF02)*3+135);
             field318=10.0f;
             SpawnBattleEffect(0x325,
                 x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
-            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+130);
+            field314=float((scriptCounterF02)*3+130);
             field318=10.0f;
             SpawnBattleEffect(0x325,
                 x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
-            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+125);
+            field314=float((scriptCounterF02)*3+125);
             field318=10.0f;
             SpawnBattleEffect(0x325,
                 x-float((facing)*100),
                 (*(&y))+g_F971_YAt00659498,
                 facing,1);
             UpdateGaugeTimer(0x64);
-            ++reinterpret_cast<signed short&>(scriptCounterF02);
-            reinterpret_cast<signed short&>(scriptCounterF00)=3;
+            ++scriptCounterF02;
+            scriptCounterF00=3;
         }
-        --reinterpret_cast<signed short&>(scriptCounterF00);
+        --scriptCounterF00;
     }
     if (AdvanceNestedFrame()==(field070))
         ResetPrimaryCounters(0);

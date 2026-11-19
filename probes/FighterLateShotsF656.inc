@@ -41,7 +41,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0);
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)==1 && (animationFrame)==0) PlaySharedSound(0x1D);
             break;
@@ -65,7 +65,7 @@
             }
             if (AdvanceNestedFrame()==(field070)) {
                 ResetPrimaryCounters(0);
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if ((animationStage)==7 && (animationFrame)==0) velocityX=20.0f;
             if ((animationStage)==10 && (animationFrame)==0)

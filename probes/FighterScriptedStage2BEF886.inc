@@ -4,7 +4,7 @@
 // Whole original game fighter NONEXACT; no split-case acceptance.
 case 0x2BE: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        scriptCounterF00=0;
         field07C=0;
         field080=6;
         ClearMotionFields();
@@ -22,8 +22,8 @@ case 0x2BE: {
                 float((facing)*64),
             (*(&y))+g_F884Stage5YAt00659470,
             (facing),1);
-        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<signed short>(x);
-        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<signed short>(y);
+        scriptCounterF00=static_cast<signed short>(x);
+        scriptCounterF02=static_cast<signed short>(y);
         Fighter::SpawnTrackedEffect(0x33C,x,y,
             (facing),1,0,1);
     }

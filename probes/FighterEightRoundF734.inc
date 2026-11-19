@@ -8,10 +8,10 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ClearMotionFields();
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (inputC==0)
-                reinterpret_cast<signed short&>(scriptCounterF00)=1;
+                scriptCounterF00=1;
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(0);
                 field314=0.0f;
@@ -31,10 +31,10 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ClearMotionFields();
-                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                scriptCounterF00=0;
             }
             if (inputC==0)
-                reinterpret_cast<signed short&>(scriptCounterF00)=1;
+                scriptCounterF00=1;
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(0);
                 field314=20.0f;
