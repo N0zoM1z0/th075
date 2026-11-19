@@ -200,6 +200,10 @@ Done so far:
   This leaf's owner uses two typed `Fighter::SpawnBattleEffect` calls;
   both the main giant and leaf retain full COFF byte and relocation
   shapes. The 24/24 header-affected exact units cold-replayed locally.
+- Alice's giant source replaces 32 integer-reference bit-puns for float
+  rotation/velocity fields with ordinary float assignments. The entire
+  33,731-byte VC7.1 COFF and all 682 relocation offsets/types remain
+  unchanged; GPR debt is still 133 and no exactness is claimed.
 - The Alice `Advance` giant now calls its **real** 004F4170 action-family
   helper as `AliceObject::AdvanceProjectileBehavior` for seven projectile
   states. The 855-byte leaf now uses the real `Fighter::SpawnBattleEffect`

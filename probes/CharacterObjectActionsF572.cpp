@@ -400,9 +400,9 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<int&>(rotationX) = 0;
-        reinterpret_cast<int&>(rotationY) = 0;
-        reinterpret_cast<int&>(rotationZ) = 0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
         owner->SetCameraShake(5.0f);
     }
     scaleX = (float)(5 - (animationFrame)) * gCurveAt0065972C * ((animationFrame) < 5) + gStepAt00658044 + (scaleX);
@@ -504,9 +504,9 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<int&>(rotationX) = 0;
-        reinterpret_cast<int&>(rotationY) = 0;
-        reinterpret_cast<int&>(rotationZ) = 0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
     }
     scaleX = (scaleX) + gFadeAt00659428;
     scaleY = (scaleY) + gFadeAt00659428;
@@ -833,9 +833,9 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<int&>(rotationX) = 0;
-        reinterpret_cast<int&>(rotationY) = 0;
-        reinterpret_cast<int&>(rotationZ) = 0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
         owner->SetCameraShake(10.0f);
         owner->SpawnBattleEffect(0x33A, x, y, facing, 1);
     }
@@ -874,9 +874,9 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<int&>(rotationX) = 0;
-        reinterpret_cast<int&>(rotationY) = 0;
-        reinterpret_cast<int&>(rotationZ) = 0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
     }
     scaleX = (scaleX) + gFadeAt00659428;
     scaleY = (scaleY) + gFadeAt00659428;
@@ -1202,9 +1202,9 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<int&>(rotationX) = 0;
-        reinterpret_cast<int&>(rotationY) = 0;
-        reinterpret_cast<int&>(rotationZ) = 0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
         owner->SetCameraShake(10.0f);
     }
     if ((field07C) == 6) {
@@ -1231,9 +1231,9 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<int&>(rotationX) = 0;
-        reinterpret_cast<int&>(rotationY) = 0;
-        reinterpret_cast<int&>(rotationZ) = 0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
     }
     scaleX = (scaleX) + gFadeAt0065825C;
     scaleY = (scaleY) + gFadeAt0065825C;
@@ -1799,8 +1799,8 @@ void AliceObject::Advance() {
             ResetTransform(0.0f,0.0f,0.0f);
             field080=1;
             field07C=0;
-            reinterpret_cast<int&>(velocityX)=reinterpret_cast<int&>(field0C8);
-            reinterpret_cast<int&>(velocityY)=reinterpret_cast<int&>(field0CC);
+            velocityX=field0C8;
+            velocityY=field0CC;
             scaleX=1.0f;
             scaleY=1.0f;
             color[0]=0xFF;
@@ -2030,9 +2030,9 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<int&>(rotationX)=0;
-        reinterpret_cast<int&>(rotationY)=0;
-        reinterpret_cast<int&>(rotationZ)=0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
         owner->SetCameraShake(5.0f);
         owner->SpawnBattleEffect(0x387,x,y,facing,1);
     }
@@ -2075,9 +2075,9 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<int&>(rotationX)=0;
-        reinterpret_cast<int&>(rotationY)=0;
-        reinterpret_cast<int&>(rotationZ)=0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
     }
     scaleX = (scaleX)+gAbsScaleAt00659724;
     scaleY = (scaleY)+gAbsScaleAt00659724;
@@ -2376,9 +2376,9 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<int&>(rotationX)=0;
-        reinterpret_cast<int&>(rotationY)=0;
-        reinterpret_cast<int&>(rotationZ)=0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
         owner->SetCameraShake(10.0f);
     }
     if ((field07C)==6) {
@@ -2429,9 +2429,9 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<int&>(rotationX)=0;
-        reinterpret_cast<int&>(rotationY)=0;
-        reinterpret_cast<int&>(rotationZ)=0;
+        rotationX = 0.0f;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
         owner->SetCameraShake(5.0f);
         owner->SpawnBattleEffect(0x387,x,y,facing,1);
     }
@@ -2563,8 +2563,8 @@ void AliceObject::Advance() {
         color[2]=0xFF;
         color[3]=0xFF;
         field01A=0x4E2;
-        reinterpret_cast<int&>(rotationY)=0;
-        reinterpret_cast<int&>(rotationZ)=0;
+        rotationY = 0.0f;
+        rotationZ = 0.0f;
         rotationX=-80.0f;
         field0D8=(owner->field3A0);
     }

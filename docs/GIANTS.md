@@ -364,6 +364,13 @@ cold-replay exact. This is an inferred native shared calling contract;
 the eight object giant source call sites will adopt it in a later
 verified step, without recrediting the existing leaf.
 
+Alice's 33 KB source now also uses real float assignments for all
+32 zeroed rotation components and both float-to-float velocity copies,
+not `reinterpret_cast<int&>` bit-punning. The complete VC7.1 COFF remains
+33,731 bytes with all 682 relocation positions/types and zero
+nonrelocation-byte differences. This is a source-semantic cleanup only;
+the 133-position GPR debt remains and the giant is still nonexact.
+
 Alice object also recovers the actual `0040FB70` polar-velocity ABI
 and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
 three previously encoded as raw `int` float-bit transports), 15
