@@ -152,6 +152,17 @@ targets; its 726-GPR / six-width frontier is unchanged.
 Suika's 43,501-byte object giant also dropped 18 redundant short casts
 while preserving all 43,972 COFF bytes and 991 relocation positions/types/
 addends/local targets; its 935-GPR / one-width frontier is unchanged.
+Yukari's 43,599-byte object giant also dropped six redundant short casts
+while preserving all 44,104 COFF bytes and 943 relocation positions/types/
+addends/local targets; its 613-GPR / 11-width frontier is unchanged.
+Yuyuko's 43,845-byte object giant also dropped two redundant angle-result
+short casts while preserving all 44,331 COFF bytes and 1,043 relocation
+positions/types/addends/local targets; its 914-GPR / six-width frontier is
+unchanged.
+Yuyuko's 43,845-byte object giant also dropped two redundant angle-result
+short casts while preserving all 44,331 COFF bytes and 1,043 relocation
+positions/types/addends/local targets; its 914-GPR / six-width frontier is
+unchanged.
 
 For a complete parent:
 

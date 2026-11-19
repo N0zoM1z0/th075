@@ -754,6 +754,21 @@ float/coordinate truncations. The full 43,972-byte COFF body and all 991
 relocation positions/types/addends/local targets remain identical. Its
 frontier stays at 935 GPR positions, one width difference and first
 `005D2558`; no exact giant credit is claimed.
+Yukari object `005A1600` removes six redundant `static_cast<short>` wrappers
+from float-angle and coordinate assignments to short fields. The complete
+44,104-byte COFF body and all 943 relocation positions/types/addends/local
+targets remain identical. Its frontier remains 613 GPR positions, 11 width
+differences and first `005A88A8`.
+Yuyuko object `0057D580` removes two redundant `static_cast<short>`
+wrappers around angle results assigned to short fields. Its complete
+44,331-byte COFF body and all 1,043 relocation positions/types/addends/local
+targets remain identical. Its frontier remains 914 GPR positions, six width
+differences and first `00583489`.
+Yuyuko object `0057D580` removes two redundant `static_cast<short>` wrappers
+around float-angle results assigned to `field0D8`. Its complete 44,331-byte
+COFF body and all 1,043 relocation positions/types/addends/local targets
+remain identical. Its frontier remains 914 GPR positions, six width
+differences and first `00583489`.
 
 Reimu fighter motion now uses the real float types for the reaction-velocity pair: FighterFrameInfo +0x2C/+0x30 and Actor +0x94/+0x98 are floats, not unsigned integer bit buckets. The 0x46 trajectory now performs ordinary float negation/addition, combat reaction scales the float fields directly, and Fighter initialization writes float zeroes. The full 62,090-byte Reimu fighter COFF remains identical with all 1,824 relocation offsets/types and zero nonrelocation-byte differences. All 462 exact units affected by the shared Actor header cold-replayed 462/462 in 16 bounded batches; the 855-byte projectile Advance remains exact.
 
