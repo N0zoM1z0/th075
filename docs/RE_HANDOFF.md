@@ -371,6 +371,11 @@ reset. Comparisons retain the native unsigned conversion against global score
 ceilings, and the score addition explicitly performs unsigned 32-bit
 arithmetic. Eight affected exact functions replayed 8/8, including the full
 4,824-byte `BattleScene::AdvanceState`.
+`Actor` now models the `+0x080` auxiliary angle as a float overlay beside
+the ordinary signed hit-stop words `field080`/`field082`. Four
+`reinterpret_cast<float&>` views in `CharacterAuxObject::Advance` were
+replaced with the named union member. Complete 31,777-byte body and 913
+relocations remain identical; exact replay passed 1/1.
 `Fighter::field3A4` (+0x3A4) and `field3A8` (+0x3A8) are now signed
 `int` countdown fields, matching decrement, negative-clamp and knockout
 settlement semantics. Sixteen signed-reference aliases were removed. Forty-

@@ -1101,6 +1101,12 @@ storing back to the signed score member. The continue/debug score reset is a
 normal direct member assignment. All eight exact functions across the three
 state/KO/pause translation units replayed 8/8, including the 4,824-byte
 `BattleScene::AdvanceState` and 1,150-byte knockout resolver.
+The four-byte Actor overlay at `+0x080` now names the auxiliary-object
+angle as `field080Angle`, while preserving the ordinary actor's adjacent
+signed `field080`/`field082` hit-stop words in an anonymous union. The four
+float-reference aliases in `CharacterAuxObject::Advance` are direct typed
+member accesses. Its complete 31,777-byte body and all 913 relocations remain
+identical; the exact 31,352-byte function coverage replayed 1/1.
 The shared Fighter card/knockout countdowns `field3A4` (+0x3A4) and
 `field3A8` (+0x3A8) are now signed `int` members. The native update subtracts
 from them, checks negative underflow and clamps to zero; knockout settlement
