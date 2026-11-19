@@ -75,7 +75,7 @@ case 0x1FA: {
             x-float((facing)*7),
             (*(&y))+g_F983_BurstYAt00659490,
             1,1,0,1);
-        SetMotionStateAt40FBB0(0,0.0f,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         color[0]=255;
     }
     if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {

@@ -4,7 +4,7 @@
 case 0x4C: {
     if (I16(F613_COUNTER)==0) {
         ++I16(F613_COUNTER);
-        SetMotionStateAt40FBB0(0,95.0f,0);
+        ResetTransform(0.0f,95.0f,0.0f);
     }
     // Original PE executes this global angle advance on *every* frame,
     // even when the once-only F613_COUNTER initialization is skipped.
@@ -19,7 +19,7 @@ case 0x4C: {
         ResetPrimaryCounters(0x61);
         rotationZ=0.0f;
         InitTrajectoryAt453E60(2.0f);
-        ResetMotionAt40FC50();
+        ClearTransformFlag();
         break;
     }
     if (AdvanceNestedFrame() == field070)

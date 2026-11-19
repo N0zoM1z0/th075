@@ -24,7 +24,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     ResetPrimaryCounters(0x61);
                     rotationZ=0.0f;
                     InitTrajectoryAt453E60(2.0f);
-                    ResetMotionAt40FC50();
+                    ClearTransformFlag();
                     PlaySharedSound(0x16);
                     break;
                 }
@@ -35,7 +35,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F747_BounceXAt006590BC;
                 velocityY=static_cast<float>(-static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF02)))*g_F747_BounceYAt00658044;
                 field05C=0.7f;
-                SetMotionStateAt40FBB0(0,95.0f,0);
+                ResetTransform(0.0f,95.0f,0.0f);
             }
             break;
         }

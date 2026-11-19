@@ -32,6 +32,12 @@ Done so far:
   sites). Complete COFF sizes/relocation positions and types are unchanged;
   nonrelocation code byte differences = 0. Header-affected exact units
   passed 132/132 targeted cold replay; giant register debt remains.
+- Four fighter giant parents now use `Actor::ResetTransform` at
+  0040FBB0 and `Actor::ClearTransformFlag` at 0040FC50 instead of
+  provisional helper aliases. The new C++ float arguments preserve
+  all four whole-function nonrelocation bytes and original relocation
+  positions/types (45 renamed native calls); 132/132 affected-only
+  exact cold replay passed. No ASM/PADDING or giant exact credit.
 - The native `0040FB40` helper is now `Actor::ResetSecondaryCounter`
   across four fighter giant parents, replacing 351 source aliases and
   462 actual COFF relocation symbols. Four complete parent byte/reloc

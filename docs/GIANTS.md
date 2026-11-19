@@ -222,6 +222,16 @@ all relocation offsets/types and every nonrelocation byte; all
 three groups of 44. This is a type/ownership and natural source
 recovery, not additional giant exact coverage.
 
+The common actor transform endpoints have also been recovered within
+the four fighter giants: native `0040FBB0` is now the inherited
+`Actor::ResetTransform(float,float,float)` with correct floating-point
+arguments, and `0040FC50` is `Actor::ClearTransformFlag()`.
+The rewritten state fragments account for 45 native call relocation
+renames in aggregate, with all four complete VC7.1 object sizes,
+relocation offsets/types and nonrelocation bytes unchanged from the
+pre-migration parents. All 132 header-affected exact units passed local
+cold replay in three 44-unit groups. Giant exactness remains unresolved.
+
 The shared Actor animation-stage reset `0040FB40` now appears as
 `Actor::ResetSecondaryCounter(short)` throughout four complete fighter
 state machines, replacing 351 textual `SetAuxActionAt40FB40` aliases.

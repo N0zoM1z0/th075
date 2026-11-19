@@ -51,7 +51,7 @@
             }
             if ((animationStage)==14 || (animationStage)==15) {
                 if (field07C!=0 && field07C!=3 && field07C!=1) {
-                    SetMotionStateAt40FBB0(0,0.0f,0);
+                    ResetTransform(0.0f,0.0f,0.0f);
                     ResetPrimaryCounters(0x1FA);
                     break;
                 }
@@ -59,7 +59,7 @@
                     velocityY=0.0f;
                     velocityX=(velocityX)*g_F728_PositiveDragAt006583FC;
                     ResetSecondaryCounter(16);
-                    SetMotionStateAt40FBB0(0,0.0f,0);
+                    ResetTransform(0.0f,0.0f,0.0f);
                     y=0.0f;
                     break;
                 }
@@ -99,7 +99,7 @@
                 if ((fieldF04)>-15)
                     fieldF04=-15;
                 MotionAt40FB70(static_cast<float>(-static_cast<int>(fieldF04)),28.0f);
-                SetMotionStateAt40FBB0(0,80.0f,0);
+                ResetTransform(0.0f,80.0f,0.0f);
                 rotationZ=-(CalculateAngleAt483300(velocityY,*(&velocityX))
                              /g_StormAngleDenominatorAt00657828
                               +g_F731_AimOffsetAt00657CBC);

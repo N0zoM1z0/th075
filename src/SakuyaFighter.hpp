@@ -16,8 +16,6 @@ public:
     void SpawnDirectedAt453A70(short,int,int,signed char,signed char);
     void SpawnFloatXYAt453A70(short,float,float,signed char,signed char);
     void SpawnWithFloatAt453A70(short,int,float,signed char,signed char);
-    void SetMotionStateAt40FBB0(int,float,int);
-    void ResetMotionAt40FC50();
     void InitTrajectoryAt453E60(float);
     void ApplyAt453E80(short);
     void BeginStateAt454A70(unsigned char);

@@ -14,9 +14,7 @@ public:
     // Native-call ABI hypotheses used by the giant Advance research source.
     // These signatures preserve the VC7.1 argument passing seen in the PE;
     // the actual shared callees are owned by Actor/Fighter, not by Reimu.
-    void SetMotionStateAt40FBB0(int,float,int);
     void SetMotionFloatAt40FBB0(float,float,float);
-    void ResetMotionAt40FC50();
     void SpawnDirectedAt453A70(int,int,int,char,int);
     void SpawnWithFloatAt453A70(int,int,float,char,int);
     void SpawnFloatXYAt453A70(int,float,float,char,int);

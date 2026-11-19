@@ -140,7 +140,7 @@ case 0x2C2: {
         }
     }
     if ((animationStage)==9 && (animationFrame)==0) {
-        SetFloatMotionAt40FBB0(0.0f,0.0f,0);
+        ResetTransform(0.0f,0.0f,0.0f);
         reinterpret_cast<int&>(x)=reinterpret_cast<int&>(opponent->x);
         reinterpret_cast<int&>(y)=0;
         velocityX=0.0f;

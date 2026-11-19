@@ -50,7 +50,7 @@ case 0x2F8: {
         ResetPrimaryCounters(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         PlaySound(0xA);
-        SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
+        ResetTransform(-200.0f,60.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         reinterpret_cast<signed char&>(color[0])=-1;
@@ -63,7 +63,7 @@ case 0x2F8: {
         scaleY=1.0f;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        SetFloatMotionAt40FBB0(100.0f,60.0f,0);
+        ResetTransform(100.0f,60.0f,0.0f);
         scaleX=3.0f;
         scaleY=0.05f;
         velocityX=float(RandomBoundaryAt455580(0,60))+
@@ -78,7 +78,7 @@ case 0x2F8: {
         ++fieldF04;
         ResetSecondaryCounter(7);
         PlaySound(0xA);
-        SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
+        ResetTransform(-200.0f,60.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         reinterpret_cast<signed char&>(color[0])=-1;

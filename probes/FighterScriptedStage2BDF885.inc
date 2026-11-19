@@ -53,7 +53,7 @@ case 0x2BD: {
     }
     if ((animationStage)==7 && (animationFrame)==0) {
         PlaySound(0xB);
-        SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
+        ResetTransform(-200.0f,60.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
         reinterpret_cast<signed char&>(color[0])=-1;
@@ -66,7 +66,7 @@ case 0x2BD: {
         scaleY=1.0f;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        SetFloatMotionAt40FBB0(100.0f,60.0f,0);
+        ResetTransform(100.0f,60.0f,0.0f);
         scaleX=3.0f;
         scaleY=0.05f;
         velocityX=30.0f;
