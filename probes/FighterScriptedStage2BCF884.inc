@@ -48,10 +48,10 @@ case 0x2BC: {
         ResetTransform(-200.0f,60.0f,0.0f);
         scaleX=1.0f;
         scaleY=1.0f;
-        reinterpret_cast<signed char&>(color[0])=-1;
-        reinterpret_cast<signed char&>(color[1])=-1;
-        reinterpret_cast<signed char&>(color[2])=-1;
-        reinterpret_cast<signed char&>(color[3])=-1;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
     }
     if ((animationStage)==10 && (animationFrame)==0) {
         scaleX=1.0f;
