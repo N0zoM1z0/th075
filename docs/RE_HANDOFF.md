@@ -274,6 +274,11 @@ reinterpret-reference views preserves both 1,606-byte bodies and all 40
 relocations; the affected exact renderers replayed 2/2.
 The five Mode 5 option bytes at `+0x52C..+0x531` (excluding the already-signed
 `+0x52F` byte) are now declared `signed char`, matching their native signed
-loads and the existing signed direction view. Thirty-eight signed-byte alias
+loads and the existing signed direction view. Thirty-nine signed-byte alias
 views across five source files were removed. Seven affected exact pause,
 debug, options, render, state, frame-action and reset functions replayed 7/7.
+`BattleScene::field118` (+0x118) is now `signed char`, matching the pause
+menu's negative wrap checks and signed navigation. Thirty-three signed-byte
+alias views in four source files were removed. Nine exact pause, debug, end
+overlay, Mode 5, state, scene-construction, pause-shortcut and frame-action
+functions replayed 9/9 with complete COFF bodies and relocations unchanged.
