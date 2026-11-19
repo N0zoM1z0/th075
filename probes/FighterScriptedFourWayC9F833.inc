@@ -7,7 +7,7 @@ case 0xC9: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=-15.0f;
         SpawnAt453C80(0x7D,
-            reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44-float((facing)*80),
+            x-float((facing)*80),
             (*(&y))+g_F701_VolleyYAt00658268,
             -(facing),1);
         SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),

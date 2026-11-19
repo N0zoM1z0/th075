@@ -38,7 +38,7 @@ case 0x2C2: {
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==0) {
             field314=0.0f;
             SpawnFloatXYAt453A70(0x34A,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-float(((facing))*100),
+                opponent->x-float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);
             SpawnWithFloatAt453A70(0x329,
@@ -49,7 +49,7 @@ case 0x2C2: {
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==1) {
             field314=0.0f;
             SpawnFloatXRawYAt453A70(0x34A,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44+float(((facing))*100),
+                opponent->x+float(((facing))*100),
                 reinterpret_cast<int&>(opponent->y),
                 -((facing)),1);
             SpawnWithFloatAt453A70(0x329,
@@ -60,22 +60,22 @@ case 0x2C2: {
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==2) {
             field314=90.0f;
             SpawnFloatXYAt453A70(0x34A,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44+float(((facing))*100),
+                opponent->x+float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);
             SpawnFloatXYAt453A70(0x329,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44+float(((facing))*150),
+                opponent->x+float(((facing))*150),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==3) {
             field314=-90.0f;
             SpawnFloatXRawYAt453A70(0x34A,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-float(((facing))*100),
+                opponent->x-float(((facing))*100),
                 reinterpret_cast<int&>(opponent->y),
                 (facing),1);
             SpawnFloatXYAt453A70(0x329,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-float(((facing))*150),
+                opponent->x-float(((facing))*150),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
         }
@@ -86,7 +86,7 @@ case 0x2C2: {
                 (opponent->y)+g_F890Phase4HiYAt00659420,
                 (facing),1);
             SpawnFloatXYAt453A70(0x329,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44+float(((facing))*125),
+                opponent->x+float(((facing))*125),
                 (opponent->y)+g_F890Phase4OtherYAt006598B4,
                 -((facing)),1);
         }
@@ -97,29 +97,29 @@ case 0x2C2: {
                 (opponent->y)-g_F890Phase5YAt0065786C,
                 -((facing)),1);
             SpawnFloatXYAt453A70(0x329,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-float(((facing))*125),
+                opponent->x-float(((facing))*125),
                 (opponent->y)-g_ApproachUpperAt006592A4,
                 (facing),1);
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==6) {
             field314=45.0f;
             SpawnFloatXYAt453A70(0x34A,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44+float(((facing))*120),
+                opponent->x+float(((facing))*120),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 -((facing)),1);
             SpawnFloatXYAt453A70(0x329,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44+float(((facing))*125),
+                opponent->x+float(((facing))*125),
                 (opponent->y)-g_ApproachUpperAt006592A4,
                 (facing),1);
         }
         if ((reinterpret_cast<signed short&>(scriptCounterF00))==7) {
             field314=-45.0f;
             SpawnFloatXYAt453A70(0x34A,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-float(((facing))*120),
+                opponent->x-float(((facing))*120),
                 (opponent->y)+g_ContactProjectionAt00657888,
                 (facing),1);
             SpawnFloatXYAt453A70(0x329,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-float(((facing))*125),
+                opponent->x-float(((facing))*125),
                 (opponent->y)+g_F890Phase4OtherYAt006598B4,
                 -((facing)),1);
         }
@@ -130,7 +130,7 @@ case 0x2C2: {
             SetAuxActionAt40FB40(1);
             field314=0.0f;
             SpawnFloatXYAt453A70(0x34A,
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-float(((facing))*100),
+                opponent->x-float(((facing))*100),
                 (opponent->y)+g_F890Phase0YAt0065835C,
                 (facing),1);
             SpawnWithFloatAt453A70(0x329,

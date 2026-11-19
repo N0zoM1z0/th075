@@ -15,7 +15,7 @@ case 0x1FE: {
             (*(&y))+g_F872Volley1FAYAt00659310,
             (facing),1);
         reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->ResetAt453E20();
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x66);
+        opponent->ResetPrimaryCounters(0x66);
         opponent->x=float((facing)*80)+(x);
         SetNativeActionAt40FAC0(0x200);
         return;

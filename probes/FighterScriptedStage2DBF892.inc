@@ -13,7 +13,7 @@ case 0x2DB: {
     }
     if ((animationStage)>1 && (animationStage)<10) {
         if (F892AbsAt00412D90(
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44)
+                opponent->x-x)
                 <g_F892DistAt0065787C) {
             SetAuxActionAt40FB40(10);
             return;

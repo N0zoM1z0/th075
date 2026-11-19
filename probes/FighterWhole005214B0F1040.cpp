@@ -33,7 +33,6 @@ extern float g_F852GroundBounceMultiplierAt00657478;
 extern float g_AdditionalGravityAt00659090;
 extern float g_F834_UpperAt00657CBC;
 extern float g_F834_LowerAt006590B0;
-struct FighterBorrowedXViewF833 { unsigned char observedUnknown[0x44]; float xAt44; };
 extern float g_F701_VolleyYAt00658268;
 extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
@@ -43,17 +42,16 @@ extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F747_BounceYAt00658044;
-// F874: only the real native caller methods of actor+0x2E8 are borrowed.
+// The owner-collision clear function at 00453E20 still has a borrowed
+// receiver; action-state reset now uses Actor::ResetPrimaryCounters.
 class FighterBorrowedOwnerF874 {
 public:
-    void SetNativeActionAt40FAC0(int action);
     void ResetAt453E20();
 };
 // F1197 complete original-shaped 005214B0 parent, continued from F901/F1040.
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
 // five instruction widths remain NONEXACT. No whole CODE credit.
-class FighterSwitchF598_Boss005214B0 : public YoumuFighter { public: void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnFloatXRawYAt453A70(int,float,int,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SetMotionStateAt40FBB0(int,float,int); int RandomBoundaryAt455580(int,int); void SetFloatMotionAt40FBB0(float,float,int); void AnimatePushAt453E80(int); void SpawnExtraAt453B50(int,int,float,char,int,int,int); void SpawnExtraRawYAt453B50(int,int,int,char,int,int,int); void ResetMotionAt40FC50(); void ApplyStateAt454A70(int); void EmitStateAt452B30(); void InitTrajectoryAt453E60(float); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void SetupCollisionAt454BC0(int,int,int); void SpawnRawAt453C80(int,int,int,char,int); void SpawnFloatXRawYAt453C80(int,float,int,char,int); void NativeGameEffectAt455B30(); void PrepareActionAt453D40(int); void ConfigureStormAt454BC0(int,int,int); void SpawnMixedAt453C80(int,int,float,char,int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
-extern unsigned int g_FighterProbeMarker;
+
 extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
 extern float g_ApproachLowerAt00658290;
@@ -74,7 +72,7 @@ extern double g_RiseAt00658050;
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #define F32(off) (*reinterpret_cast<float*>(RAW+(off)))
 #define U8(off) (*reinterpret_cast<unsigned char*>(RAW+(off)))
-void FighterSwitchF598_Boss005214B0::Advance() {
+void YoumuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
     switch (action) {

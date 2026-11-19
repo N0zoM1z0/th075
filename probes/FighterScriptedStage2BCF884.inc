@@ -38,7 +38,7 @@ case 0x2BC: {
         field36C=(field36C)-g_ContactProjectionAt00657888;
         PrepareActionAt453D60(0x17);
         SpawnAt453C80(0x73,
-            reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44-
+            x-
                  float((facing)*64),
             (*(&y))+g_F884Stage5YAt00659470,
             (facing),1);

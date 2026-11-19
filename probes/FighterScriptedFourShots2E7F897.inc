@@ -13,7 +13,7 @@ case F897_CASE: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
             SpawnAt453C80(0x3E,
-                reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44-
+                x-
                     float((facing)*65),
                 (*(&y))+g_F860ShotYAt006581DC,1,1);
             reinterpret_cast<signed short&>(scriptCounterF02)=0;

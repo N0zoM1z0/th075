@@ -96,6 +96,16 @@ offsets/types and every nonrelocation byte remain unchanged. This does
 not resolve its 726 GPR-role and six instruction-width differences;
 all 24 affected exact units cold-replayed successfully.
 
+Youmu fighter `005214B0` now directly defines `YoumuFighter::Advance`
+on the native fighter class. Thirteen source state files use actual
+`x`/`opponent->x` fields in place of a temporary +0x44 owner view, and
+15 opponent state resets now call `Actor::ResetPrimaryCounters`.
+The two 47,655-byte whole COFF bodies have identical nonrelocation bytes
+and all 1,491 relocation offsets/types; its 46,755-byte original CODE
+remains nonexact (2,736 GPR-role and five width differences, frontier
+16,833 differing bytes). All 85 exact units depending on the real fighter
+header cold-replayed in three affected-only groups (36/36, 25/25, 24/24).
+
 The Reimu fighter, Alice object and Meiling object research parents now
 directly define `ReimuFighter::Advance`, `AliceObject::Advance`, and
 `MeilingObject::Advance`, rather than artificial derived classes. Alice's 33,293-byte parent uses real `owner` and

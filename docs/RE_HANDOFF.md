@@ -39,6 +39,13 @@ Done so far:
   `CharacterSelectScene::DrawCurrent`. The single-player options renderer
   (596 bytes) now uses the same owner and is called directly by the virtual
   render method. All 19 header-affected exact units cold-replayed correctly.
+- Youmu's complete 46,755-byte fighter `Advance` is now on the real
+  `YoumuFighter` vtable class. Native-coordinate owner views became
+  `x` / `opponent->x` in 13 case source files, and 15 resets use the
+  actual Actor API. The 47,655-byte object and all 1,491 relocation
+  positions/types remained identical outside renamed relocations.
+  All 85 header-affected exact units passed grouped local cold replay.
+  The 2,736 GPR mismatches and five widths remain nonexact.
 - The 60,999-byte Reimu fighter parent is now `ReimuFighter::Advance` on the
   real vtable class, with its two +F00/+F02 counters named in `Fighter`.
   Its native-byte ratchet is unchanged: 6,311 register-role differences

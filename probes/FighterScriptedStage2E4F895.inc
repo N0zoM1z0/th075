@@ -12,8 +12,8 @@ case 0x2E4: {
     }
     if ((animationStage)>1 && (animationStage)<10) {
         if (F892AbsAt00412D90(
-                reinterpret_cast<FighterBorrowedXViewF833*>(opponent)->xAt44-
-                reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44)
+                opponent->x-
+                x)
                     <g_F895AbsThresholdAt006591F4) {
             SetNativeActionAt40FAC0(RandomBoundaryAt455580(0,4)+0x2E4);
             return;

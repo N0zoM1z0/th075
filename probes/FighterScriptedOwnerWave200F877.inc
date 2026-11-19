@@ -14,31 +14,31 @@ case 0x200: {
         return;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->ResetPrimaryCounters(0x64);
         opponent->x=float((facing)*74)+(x);
     }
     if ((animationStage)==1 && (animationFrame)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->ResetPrimaryCounters(0x64);
         opponent->x=float((facing)*46)+(x);
     }
     if ((animationStage)==2 && (animationFrame)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->ResetPrimaryCounters(0x64);
         opponent->x=float((facing)*23)+(x);
     }
     if ((animationStage)==3 && (animationFrame)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->ResetPrimaryCounters(0x64);
         opponent->x=float((facing)*13)+(x);
     }
     if ((animationStage)==4 && (animationFrame)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->ResetPrimaryCounters(0x64);
         reinterpret_cast<char&>(opponent->facing)=reinterpret_cast<char&>(facing);
         opponent->x=float((facing)*-6)+(x);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
-        opponent->x=reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44-float((facing)*26);
+        opponent->ResetPrimaryCounters(0x64);
+        opponent->x=x-float((facing)*26);
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x35);
+        opponent->ResetPrimaryCounters(0x35);
     return;
 }

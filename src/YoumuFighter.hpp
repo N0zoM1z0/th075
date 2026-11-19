@@ -9,6 +9,40 @@ class YoumuFighter : public Fighter {
 public:
     YoumuFighter();
     virtual ~YoumuFighter();
+    virtual void Advance(); // slot 1: nonexact giant at 005214B0
+
+    // Provisional native-call ABI declarations from the complete giant
+    // research parent; do not infer separate helper implementations.
+    void SpawnDirectedAt453A70(int,int,int,char,int);
+    void SpawnFloatXRawYAt453A70(int,float,int,char,int);
+    void SpawnFloatXYAt453A70(int,float,float,char,int);
+    void SpawnWithFloatAt453A70(int,int,float,char,int);
+    void SetMotionStateAt40FBB0(int,float,int);
+    int RandomBoundaryAt455580(int,int);
+    void SetFloatMotionAt40FBB0(float,float,int);
+    void AnimatePushAt453E80(int);
+    void SpawnExtraAt453B50(int,int,float,char,int,int,int);
+    void SpawnExtraRawYAt453B50(int,int,int,char,int,int,int);
+    void ResetMotionAt40FC50();
+    void ApplyStateAt454A70(int);
+    void EmitStateAt452B30();
+    void InitTrajectoryAt453E60(float);
+    void ResetAt453E20();
+    void PrepareActionAt453D60(int);
+    void SetupCollisionAt454BC0(int,int,int);
+    void SpawnRawAt453C80(int,int,int,char,int);
+    void SpawnFloatXRawYAt453C80(int,float,int,char,int);
+    void NativeGameEffectAt455B30();
+    void PrepareActionAt453D40(int);
+    void ConfigureStormAt454BC0(int,int,int);
+    void SpawnMixedAt453C80(int,int,float,char,int);
+    void StartAnimationAt46D000(int);
+    void SpawnAt453C80(int,float,float,char,int);
+    short GetNativeActionAt40FA30();
+    void SetNativeActionAt40FAC0(int);
+    signed char ContactAt454EE0();
+    void SetAuxActionAt40FB40(int);
+
     void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;
