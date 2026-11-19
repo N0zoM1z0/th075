@@ -553,7 +553,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - gAddAt006583FC;
         }
         if ((animationStage) == 11) {
-            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleX = (scaleX) * gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -583,7 +583,7 @@ void AliceObject::Advance() {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
             owner->SpawnBattleEffect(0x320,
-                   static_cast<float>((facing) * 10) + (x),
+                   (facing) * 10 + (x),
                    y, facing, 1);
             owner->PlaySound(6);
         }
@@ -628,7 +628,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - gSubAt00659090;
         }
         if ((animationStage) == 11) {
-            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleX = (scaleX) * gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -658,7 +658,7 @@ void AliceObject::Advance() {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RecordedRange(0,15) - 45);
             owner->SpawnBattleEffect(0x321,
-                   static_cast<float>((facing) * 10) + (x),
+                   (facing) * 10 + (x),
                    y, facing, 1);
             owner->PlaySound(6);
         }
@@ -703,7 +703,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - gAddAt006583FC;
         }
         if ((animationStage) == 11) {
-            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleX = (scaleX) * gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -734,7 +734,7 @@ void AliceObject::Advance() {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
             owner->SpawnBattleEffect(0x322,
-                   static_cast<float>((facing) * 10) + (x),
+                   (facing) * 10 + (x),
                    y, facing, 1);
             owner->PlaySound(6);
         }
@@ -787,7 +787,7 @@ void AliceObject::Advance() {
         if ((animationStage) > 10 && (field0D8) > 2) {
             velocityX = 0.0f;
             velocityY = 0.0f;
-            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleX = (scaleX) * gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -928,7 +928,7 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        SetPolarVelocity(-(static_cast<float>(RecordedRange(0,45))
+        SetPolarVelocity(-(RecordedRange(0,45)
                 - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
     x += facing * (velocityX);
@@ -945,7 +945,7 @@ void AliceObject::Advance() {
 }
         case 0x33C: {
     if ((owner->action) == 0x2BE) {
-        x = owner->x + static_cast<float>((facing) * 65);
+        x = owner->x + (facing) * 65;
         y = (owner->y) + gStageOffsetAt006590AC;
     }
     if ((owner->action) != 0x2BE ||
@@ -973,7 +973,7 @@ void AliceObject::Advance() {
             color[0] = 0xFF;
     }
     if ((field0D8) == 1) {
-        scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+        scaleX = (scaleX) * gMulDoubleAt00659730;
         scaleY = (scaleY) + gAddAt006583FC;
         if ((color[0]) >= 10)
             color[0] -= 10;
@@ -990,7 +990,7 @@ void AliceObject::Advance() {
 }
         case 0x33D: {
     if ((owner->action) == 0x2C1) {
-        x = owner->x + static_cast<float>((facing) * 65);
+        x = owner->x + (facing) * 65;
         y = (owner->y) + gStageOffsetAt006590AC;
     }
     if ((owner->action) != 0x2C1 ||
@@ -1018,7 +1018,7 @@ void AliceObject::Advance() {
             color[0] = 0xFF;
     }
     if ((field0D8) == 1) {
-        scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+        scaleX = (scaleX) * gMulDoubleAt00659730;
         scaleY = (scaleY) + gAddAt006583FC;
         if ((color[0]) >= 10)
             color[0] -= 10;
@@ -1035,7 +1035,7 @@ void AliceObject::Advance() {
 }
         case 0x33E: {
     if ((owner->action) == 0x2BE) {
-        x = owner->x + static_cast<float>((facing) * 140);
+        x = owner->x + (facing) * 140;
         y = (owner->y) + gStageOffsetAt006590AC;
     }
     if ((owner->action) != 0x2BE && (animationStage) < 7) {
@@ -1073,7 +1073,7 @@ void AliceObject::Advance() {
 }
         case 0x33F: {
     if ((owner->action) == 0x2C1) {
-        x = owner->x + static_cast<float>((facing) * 180);
+        x = owner->x + (facing) * 180;
         y = (owner->y) + gStageOffsetAt006590AC;
     }
     if ((owner->action) != 0x2C1 && (animationStage) < 17) {
@@ -1112,7 +1112,7 @@ void AliceObject::Advance() {
         field080 = 1;
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
-            owner->x + static_cast<float>((owner->facing)*90) - (owner->opponent->x)
+            owner->x + (owner->facing) * 90 - (owner->opponent->x)
         ) * gAbsScaleAt00659724;
         if ((velocityX) < gInitialClampAt00657D14)
             velocityX = 4.0f;
@@ -1155,7 +1155,7 @@ void AliceObject::Advance() {
         field080 = 1;
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
-            owner->x + static_cast<float>((owner->facing)*90) - (owner->opponent->x)
+            owner->x + (owner->facing) * 90 - (owner->opponent->x)
         ) * gAbsScaleAt00659724;
         if ((velocityX) < gInitialClampAt00657D14)
             velocityX = 4.0f;
@@ -1321,7 +1321,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
         field0D8 = static_cast<short>(
-            static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
+            (static_cast<AliceFighter*>(owner)->fieldF10) - 180 + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
         SetPolarVelocity(field0D8,
@@ -1417,7 +1417,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
         field0D8 = static_cast<short>(
-            static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
+            (static_cast<AliceFighter*>(owner)->fieldF10) - 180 + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
         SetPolarVelocity(field0D8,
@@ -1477,15 +1477,15 @@ void AliceObject::Advance() {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
-        SetPolarVelocity(static_cast<float>(-(field0D8) + 180),
+        SetPolarVelocity(-(field0D8) + 180,
                        field0DA);
     }
     if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
         field0D8 = static_cast<short>(
-            static_cast<float>((static_cast<AliceFighter*>(owner)->fieldF10)-180) + (field0C8));
+            (static_cast<AliceFighter*>(owner)->fieldF10) - 180 + (field0C8));
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
-        SetPolarVelocity(static_cast<float>(-(field0D8)),
+        SetPolarVelocity(-(field0D8),
                        field0DA);
         x = static_cast<int>(
             (owner->fieldF0C) + (facing)*(velocityX));
@@ -1580,7 +1580,7 @@ void AliceObject::Advance() {
             }
         }
         if ((animationStage) == 11) {
-            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleX = (scaleX) * gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -1608,9 +1608,9 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 9 && (animationFrame) == 0) {
             (owner->field314) = 1200.0f;
-            (owner->field318) = static_cast<float>(RecordedRange(0,60));
+            (owner->field318) = RecordedRange(0,60);
             owner->SpawnBattleEffect(0x323,
-                   static_cast<float>((facing) * 10) + (x),
+                   (facing) * 10 + (x),
                    y, facing, 1);
             owner->PlaySound(6);
         }
@@ -1654,7 +1654,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - gGrowAt00657478;
         }
         if ((animationStage) == 11) {
-            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleX = (scaleX) * gMulDoubleAt00659730;
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -1684,7 +1684,7 @@ void AliceObject::Advance() {
             (owner->field314) = 1200.0f;
             (owner->field318) = static_cast<float>(RecordedRange(0,15) - 60);
             owner->SpawnBattleEffect(0x324,
-                   static_cast<float>((facing) * 10) + (x),
+                   (facing) * 10 + (x),
                    y, facing, 1);
             owner->PlaySound(6);
         }
@@ -1706,7 +1706,7 @@ void AliceObject::Advance() {
             ((owner->action) == 0x19C && (owner->animationStage) < 5) ||
             ((owner->action) == 0x19A && (owner->animationStage) < 7) ||
             ((owner->action) == 0x19D && (owner->animationStage) < 5)) {
-            x = owner->x + static_cast<float>((facing)*60);
+            x = owner->x + (facing) * 60;
             y = (owner->y) + gParentYAt006590A8;
             if ((owner->action) == 0x19A)
                 y = (owner->y) + gParentYExtraAt00658264;
@@ -1748,7 +1748,7 @@ void AliceObject::Advance() {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
                 owner->SpawnBattleEffect(0x322,
-                    static_cast<float>((facing)*10) + (x),
+                    (facing) * 10 + (x),
                     y, facing,1);
                 owner->PlaySound(6);
             }
@@ -1756,7 +1756,7 @@ void AliceObject::Advance() {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(RecordedRange(0,10) + 30);
                 owner->SpawnBattleEffect(0x323,
-                    static_cast<float>((facing)*10) + (x),
+                    (facing) * 10 + (x),
                     y, facing,1);
                 owner->PlaySound(6);
             }
@@ -1764,7 +1764,7 @@ void AliceObject::Advance() {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
                 owner->SpawnBattleEffect(0x324,
-                    static_cast<float>((facing)*10) + (x),
+                    (facing) * 10 + (x),
                     y, facing,1);
                 owner->PlaySound(6);
             }
@@ -1772,7 +1772,7 @@ void AliceObject::Advance() {
                 (owner->field314) = 1000.0f;
                 (owner->field318) = static_cast<float>(-RecordedRange(0,10) - 30);
                 owner->SpawnBattleEffect(0x325,
-                    static_cast<float>((facing)*10) + (x),
+                    (facing) * 10 + (x),
                     y, facing,1);
                 owner->PlaySound(6);
             }
@@ -1933,7 +1933,7 @@ void AliceObject::Advance() {
 }
         case 0x370: {
     if ((owner->action)==0x133) {
-        x = owner->x + static_cast<float>((facing)*260);
+        x = owner->x + (facing) * 260;
         y = (owner->y) + gParentYAt006590A0;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
@@ -2135,7 +2135,7 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        SetPolarVelocity(-(static_cast<float>(RecordedRange(0,45))
+        SetPolarVelocity(-(RecordedRange(0,45)
              - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
     x += facing*(velocityX);
@@ -2334,7 +2334,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         owner->SpawnBattleEffect(0x38D,
-            static_cast<float>((field0D8)*(facing)) + (x),
+            (field0D8) * (facing) + (x),
             0.0f,facing,1);
         owner->PlaySound(8);
     }
