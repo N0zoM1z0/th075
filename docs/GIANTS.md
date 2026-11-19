@@ -1017,6 +1017,10 @@ covers the 3,797-byte Meiling stage configuration, hit/pause/KO/round-end
 paths, notice helpers and all eleven fighter constructors. All 38 exact
 functions across the 20 touched translation units replayed 38/38 with
 complete COFF bodies and relocation maps unchanged.
+The replay-record append cursor at `+0x116` remains a signed byte and now
+increments directly, without an unsigned-reference alias. The complete
+1,252-byte `ReplayRecords::AppendRecord` body and all 50 relocations remain
+identical (exact replay 1/1).
 The notice gate `Fighter::noticeFirst` at `+0x6E8` is a signed byte; its
 native render test sign-extends the value. The member is now `signed char`,
 with the complete 1,637-byte render and 1,151-byte base-reset functions still
