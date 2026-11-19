@@ -101,15 +101,15 @@ void BattleScene::ProcessDebugKeys()
 {
     if (g_InputMappingAt00671638.IsKeyDown(0x3B)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            reinterpret_cast<signed char&>(fighters[1]->field52C) = (reinterpret_cast<signed char&>(fighters[1]->field52C) + 1) % 6;
+            fighters[1]->field52C = (fighters[1]->field52C + 1) % 6;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappingAt00671638.IsKeyDown(0x3C)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            reinterpret_cast<signed char&>(fighters[1]->field52D) = (reinterpret_cast<signed char&>(fighters[1]->field52D) + 9) % 10;
+            fighters[1]->field52D = (fighters[1]->field52D + 9) % 10;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappingAt00671638.IsKeyDown(0x3D)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            reinterpret_cast<signed char&>(fighters[1]->field52D) = (reinterpret_cast<signed char&>(fighters[1]->field52D) + 1) % 10;
+            fighters[1]->field52D = (fighters[1]->field52D + 1) % 10;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappingAt00671638.IsKeyDown(0x3E)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
@@ -117,15 +117,15 @@ void BattleScene::ProcessDebugKeys()
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappingAt00671638.IsKeyDown(0x3F)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            reinterpret_cast<signed char&>(fighters[1]->field52E) = (reinterpret_cast<signed char&>(fighters[1]->field52E) + 1) % 2;
+            fighters[1]->field52E = (fighters[1]->field52E + 1) % 2;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappingAt00671638.IsKeyDown(0x40)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            reinterpret_cast<signed char&>(fighters[1]->field530) = (reinterpret_cast<signed char&>(fighters[1]->field530) + 1) % 4;
+            fighters[1]->field530 = (fighters[1]->field530 + 1) % 4;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappingAt00671638.IsKeyDown(0x41)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            reinterpret_cast<signed char&>(fighters[1]->field531) = (reinterpret_cast<signed char&>(fighters[1]->field531) + 1) % 2;
+            fighters[1]->field531 = (fighters[1]->field531 + 1) % 2;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappingAt00671638.IsKeyDown(0x42)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
@@ -134,7 +134,7 @@ void BattleScene::ProcessDebugKeys()
     } else {
         g_DebugKeyRepeatAt0068D618 = 0;
     }
-    fighters[0]->field39D = 2 - reinterpret_cast<signed char&>(fighters[1]->field52C) / 3;
-    fighters[0]->field398[0] = reinterpret_cast<signed char&>(fighters[1]->field52C) % 3;
-    fighters[0]->field398[1] = reinterpret_cast<signed char&>(fighters[1]->field52C) % 3;
+    fighters[0]->field39D = 2 - fighters[1]->field52C / 3;
+    fighters[0]->field398[0] = fighters[1]->field52C % 3;
+    fighters[0]->field398[1] = fighters[1]->field52C % 3;
 }

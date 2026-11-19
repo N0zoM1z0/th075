@@ -28,7 +28,7 @@ void BattleScene::RenderModeFive() {
             DRAWING->DrawQuad(10, &packet, &region, color);
         }
         for (i = 0; i < 6; i = i + 1) {
-            if (i == reinterpret_cast<signed char&>(fighters[1]->field52C)) color = 0xFFFFFFFF;
+            if (i == fighters[1]->field52C) color = 0xFFFFFFFF;
             else color = 0xFF808080;
             SetRect(&region, i % 3 * 72, i / 3 * 24 + 216, i % 3 * 72 + 72, i / 3 * 24 + 240);
             packet.BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
@@ -36,7 +36,7 @@ void BattleScene::RenderModeFive() {
             DRAWING->DrawQuad(10, &packet, &region, color);
         }
         for (i = 0; i < 10; i = i + 1) {
-            if (i == reinterpret_cast<signed char&>(fighters[1]->field52D)) color = 0xFFFFFFFF;
+            if (i == fighters[1]->field52D) color = 0xFFFFFFFF;
             else color = 0xFF808080;
             SetRect(&region, i * 24, 264, i * 24 + 24, 288);
             packet.BuildQuad(float(i * 24), 0.0f, float(i * 24 + 24), 24.0f);
@@ -68,44 +68,44 @@ void BattleScene::RenderModeFive() {
         QUAD->Translate(548.0f, 138.0f, 0.0f);
         DRAWING->DrawQuad(10, &packet, &region, color);
         for (i = 0; i < 2; i = i + 1) {
-            if (i == reinterpret_cast<signed char&>(fighters[1]->field52E)) color = 0xFFFFFFFF;
+            if (i == fighters[1]->field52E) color = 0xFFFFFFFF;
             else color = 0xFF808080;
             SetRect(&region, i * 72, 336, i * 72 + 72, 360);
             packet.BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
             QUAD->Translate(float(i * 72 + 260), 162.0f, 0.0f);
             DRAWING->DrawQuad(10, &packet, &region, color);
         }
-        if (reinterpret_cast<signed char&>(fighters[1]->field530) == 0) color = 0xFFFFFFFF;
+        if (fighters[1]->field530 == 0) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 360, 72, 384);
         packet.BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
         QUAD->Translate(260.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, &packet, &region, color);
-        if (reinterpret_cast<signed char&>(fighters[1]->field530) == 1) color = 0xFFFFFFFF;
+        if (fighters[1]->field530 == 1) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 72, 360, 168, 384);
         packet.BuildQuad(0.0f, 0.0f, 96.0f, 24.0f);
         QUAD->Translate(332.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, &packet, &region, color);
-        if (reinterpret_cast<signed char&>(fighters[1]->field530) == 2) color = 0xFFFFFFFF;
+        if (fighters[1]->field530 == 2) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 384, 72, 408);
         packet.BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
         QUAD->Translate(428.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, &packet, &region, color);
-        if (reinterpret_cast<signed char&>(fighters[1]->field530) == 3) color = 0xFFFFFFFF;
+        if (fighters[1]->field530 == 3) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 72, 384, 168, 408);
         packet.BuildQuad(0.0f, 0.0f, 96.0f, 24.0f);
         QUAD->Translate(500.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, &packet, &region, color);
-        if (reinterpret_cast<signed char&>(fighters[1]->field531) == 0) color = 0xFFFFFFFF;
+        if (fighters[1]->field531 == 0) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 408, 72, 432);
         packet.BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
         QUAD->Translate(260.0f, 210.0f, 0.0f);
         DRAWING->DrawQuad(10, &packet, &region, color);
-        if (reinterpret_cast<signed char&>(fighters[1]->field531) == 1) color = 0xFFFFFFFF;
+        if (fighters[1]->field531 == 1) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 72, 408, 168, 432);
         packet.BuildQuad(0.0f, 0.0f, 96.0f, 24.0f);

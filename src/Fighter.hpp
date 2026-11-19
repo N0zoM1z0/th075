@@ -233,12 +233,12 @@ public:
     short aiStep;                       // +0x514
     short aiCardTimer;                  // +0x516
     unsigned char unknown518[0x52C - 0x518];
-    unsigned char field52C;             // +0x52C
-    unsigned char field52D;             // +0x52D
-    unsigned char field52E;             // +0x52E
+    signed char field52C;             // +0x52C
+    signed char field52D;             // +0x52D
+    signed char field52E;             // +0x52E
     signed char field52F;               // +0x52F
-    unsigned char field530;             // +0x530
-    unsigned char field531;             // +0x531
+    signed char field530;             // +0x530
+    signed char field531;             // +0x531
     signed char field532;               // +0x532
     unsigned char unknown533[0x534 - 0x533];
     TimelineDrawing438D00* field534;    // +0x534
