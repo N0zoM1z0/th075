@@ -69,6 +69,9 @@ spawn sites across nine case files from unsigned coordinate-bit overloads
 to the native `Fighter::SpawnBattleEffect` float API with ordinary `x, y`
 field arguments. The compiled 82,109-byte body and all 1,449 relocation
 positions/types were unchanged, with zero nonrelocation-byte differences.
+A second batch converted 19 further source spawn sites across 12 case
+files. Both batches preserve the entire 82,109-byte function object,
+all 1,449 relocation offsets/types and every nonrelocation code byte.
 This is natural-source recovery, not new exact giant credit.
 
 Sakuya object `004CA6E0` now defines `SakuyaObject::Advance` directly.

@@ -50,6 +50,8 @@ Done so far:
   Another 24 raw coordinate spawn callsites across nine case files now use
   `owner->SpawnBattleEffect(effect, x, y, ...)` with a byte-identical
   82,109-byte VC7.1 output and all 1,449 relocation offsets/types intact.
+  A second batch restored 19 more source spawn calls across 12 case
+  files with zero nonrelocation-byte difference against the baseline.
   Six additional float-argument source sites (seven compiled calls) have
   since moved to the real `Fighter::SpawnBattleEffect` API with all 1,449
   relocation positions/types unchanged and zero altered nonrelocation bytes.

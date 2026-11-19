@@ -32,8 +32,8 @@ case 0x351: {
         scaleY=(scaleY)+g_F1057_NudgeAt00657480;
     }
     if (animationStage>10 && animationStage<16) {
-        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-            0x33A,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+        owner->SpawnBattleEffect(
+            0x33A,x,y,
             facing,1);
     }
     if (animationStage>15) {

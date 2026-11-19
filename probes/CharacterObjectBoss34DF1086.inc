@@ -38,8 +38,8 @@ case 0x34D: {
             (owner->action==0x25C && owner->animationStage==6)) {
             for (int shot=0;shot<8;++shot) {
                 owner->field314=float(shot*45);
-                reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
-                    0x361,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+                owner->SpawnBattleEffect(
+                    0x361,x,y,
                     owner->facing,1);
             }
             ResetSecondaryCounter(2);
