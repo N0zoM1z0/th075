@@ -907,3 +907,10 @@ The signed short fields now undergo the ordinary C++ integral-to-float
 promotion directly. All four complete fighter `Advance` bodies and their
 relocation maps remain byte-identical (62,090/1,824; 83,922/2,352;
 47,655/1,491; 59,236/1,863), with all four frontiers unchanged.
+
+A related reset/initialization cleanup removes 58 `reinterpret_cast<unsigned
+short&>` aliases around already-signed Fighter members (`sequenceTimer`,
+`fieldF04`, `fieldF0A`, `fieldF0C`, `fieldF0E`) when those members are set to
+zero. All writes now use the declared `short` members directly. The 20 exact
+initialization/reset/dispatch units covering the changed source files were
+replayed selectively and passed 20/20; no broad cold replay was run.

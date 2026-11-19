@@ -244,3 +244,6 @@ A further signed-counter cleanup removes 16 redundant int staging casts and
 two float casts in six bounce/resource-volley fragments. The four complete
 Reimu/Sakuya/Youmu/Remilia fighter `Advance` bodies and all relocation maps
 remain identical; the GPR/width frontiers are unchanged.
+The signed-counter work also removes 58 unsigned-short reference aliases
+from zero-initialization of five already-signed Fighter fields across 19
+initialization/reset sources. All 20 affected exact units replayed 20/20.
