@@ -22,6 +22,12 @@ replaced by named members of shared classes.
 
 Done so far:
 
+- The result-list browser is now separately modeled as `ResultListScene`
+  (not the score-tallying `ResultScene`). Its 1,803-byte selection update
+  and 343-byte input poll share typed page, character, availability and
+  input members. Both cold-replay exactly, along with the shared source's
+  selection animation (3/3 exact affected units). The constructor and
+  record-page builder still need consolidation with the new layout.
 - The character-select scene now owns the exact C++ constructor, main
   `Advance`, reset and five choice/confirmation/option methods. Their shared
   layout covers the 28-byte per-player input records and named animation

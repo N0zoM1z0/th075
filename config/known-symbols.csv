@@ -301,7 +301,7 @@ address,name,module,confidence,evidence
 0x00433CF0,CharacterSelectScene::UpdateSelect,SelectionControl,inferred,F130; own whole cold exact / complete CFG/CPU-x87 joins/selection masks/queue andvirtual packets; original identities/types/private layouts provisional
 0x00452F10,FighterControlsF130::UpdateControls,SelectionControl,inferred,F130; own whole cold exact / complete CFG/CPU-x87 joins/selection masks/queue andvirtual packets; original identities/types/private layouts provisional
 0x004350E0,CharacterSelectScene::UpdateChoiceAnimation,SceneSelection,inferred,F131; own whole cold exact / complete CFG/CPU-x87 joins/stage loops/shortAX cursor andpage packets; original identities/types/private layouts provisional
-0x0042F970,ResultSelectionF131::Update,SceneSelection,inferred,F131; own whole cold exact / complete CFG/CPU-x87 joins/stage loops/shortAX cursor andpage packets; original identities/types/private layouts provisional
+0x0042F970,ResultListScene::UpdateSelection,SceneSelection,inferred,F131; own whole cold exact / complete CFG/CPU-x87 joins/stage loops/shortAX cursor andpage packets; original identities/types/private layouts provisional
 0x00453A70,Fighter::SpawnBattleEffect,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
 0x00453B50,Fighter::SpawnTrackedEffect,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
 0x00453C80,Fighter::SpawnAuxEffect,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
@@ -553,7 +553,7 @@ address,name,module,confidence,evidence
 0x00427300,MusicRoom::EncodeCatalogFileAt00427300,MusicRoom,inferred,F257; entire 298-byte native catalog CSV encoder and all 11 authentic COFF fields cold exact; full original scene/owner layout unknown
 0x00426DD0,MusicRoom::LoadCatalogAt00426DD0,MusicRoom,inferred,"F258; 916 original CODE + 16-byte owned dispatch table, all 18 physical relocation fields cold exact; full MusicRoom ABI unproven"
 0x00413AC0,ReplayRecords::LoadRecord,ReplayRecords,inferred,F259; native full 792-byte on-disk record loader and 29 physical COFF relocations cold exact; original class and container identity provisional
-0x00430D80,ResultScenePollF260::PollInput,ResultScene,inferred,F260; entire 343-byte result input polling controller with 27 native COFF fields cold exact; complete scene/input ABI unknown
+0x00430D80,ResultListScene::PollInput,ResultScene,inferred,F260; entire 343-byte result input polling controller with 27 native COFF fields cold exact; complete scene/input ABI unknown
 0x00427430,MusicRoomRecord::InitializeAt00427430,MusicRoomRecord,inferred,F261; complete 50-byte native scene record lifetime with 0 authentic COFF fields cold-exact; original name provisional
 0x00427470,MusicRoomRecord::ReleaseBuffersAt00427470,MusicRoomRecord,inferred,F261; complete 82-byte native scene record lifetime with 3 authentic COFF fields cold-exact; original name provisional
 0x00425750,MusicRoomScene::Initialize,MusicRoomScene,inferred,F262; entire 372-byte MusicRoom scene ctor and its 60 native array-record lifetimes/23 relocations cold exact; original full scene layout and R108 base origin unproven

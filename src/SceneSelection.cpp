@@ -1,5 +1,6 @@
 #include "CharacterSelectScene.hpp"
 #include "Graphics.hpp"
+#include "ResultListScene.hpp"
 #include <stdlib.h>
 
 // Partial pointer-only interfaces; no private owner is instantiated or embedded.
@@ -95,133 +96,99 @@ void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
     if (side == 0 && stageCountdown[0] > 0) --stageCountdown[0];
 }
 
-class ResultRecordsF131 { public: unsigned int Count() const; };
-class ResultSelectionF131 {
-public:
-    virtual void UnknownSlot0();
-    virtual void UnknownSlot1();
-    virtual void Render();
-    short Update();
-    void PollInput();
-    void LoadSelectedCharacterResources();
-    void BuildRecordPage();
-    void BuildCounterPage();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown004[0x1BE - 0x004];
-    unsigned char field1BE;
-    signed char field1BF;
-    signed char field1C0;
-    signed char field1C1;
-    signed char field1C2;
-    unsigned char unknown1C3[0x1C4 - 0x1C3];
-    signed char field1C4;
-    signed char field1C5;
-    unsigned char unknown1C6[0x1CC - 0x1C6];
-    unsigned char field1CC;
-    unsigned char field1CD;
-    unsigned char field1CE;
-    unsigned char field1CF;
-};
-#define RECORDS reinterpret_cast<ResultRecordsF131*>(reinterpret_cast<char*>(this) + 0x18)
-#define PAGE (*reinterpret_cast<short*>(reinterpret_cast<unsigned char*>(this) + 0x1BC))
-#define CHARACTER (*reinterpret_cast<signed char*>(reinterpret_cast<unsigned char*>(this) + 0x1C3))
-short ResultSelectionF131::Update() {
+short ResultListScene::UpdateSelection() {
     PollInput();
     Render();
     Graphics::Present();
-    if (field1C5 == 0) {
-        if (field1C0 < 0) {
+    if (showingRecords == 0) {
+        if (verticalInput < 0) {
             g_SelectionSound->Play(39);
-            --field1C4;
-            if (field1C4 < 0) field1C4 = 3;
+            --difficultyIndex;
+            if (difficultyIndex < 0) difficultyIndex = 3;
             BuildCounterPage();
         }
-        if (field1C0 > 0) {
+        if (verticalInput > 0) {
             g_SelectionSound->Play(39);
-            ++field1C4;
-            if (field1C4 > 3) field1C4 = 0;
+            ++difficultyIndex;
+            if (difficultyIndex > 3) difficultyIndex = 0;
             BuildCounterPage();
         }
-        if (field1BF < 0) {
+        if (horizontalInput < 0) {
             g_SelectionSound->Play(39);
-            --CHARACTER;
-            if (CHARACTER < 0) CHARACTER = 9;
-            if (CHARACTER == 9 && field1CF == 0) --CHARACTER;
-            if (CHARACTER == 8 && field1CE == 0) --CHARACTER;
-            if (CHARACTER == 7 && field1CD == 0) --CHARACTER;
-            if (CHARACTER == 6 && field1CC == 0) --CHARACTER;
+            --(selectedCharacter);
+            if ((selectedCharacter) < 0) (selectedCharacter) = 9;
+            if ((selectedCharacter) == 9 && selectableCharacter[9] == 0) --(selectedCharacter);
+            if ((selectedCharacter) == 8 && selectableCharacter[8] == 0) --(selectedCharacter);
+            if ((selectedCharacter) == 7 && selectableCharacter[7] == 0) --(selectedCharacter);
+            if ((selectedCharacter) == 6 && selectableCharacter[6] == 0) --(selectedCharacter);
             LoadSelectedCharacterResources();
             BuildCounterPage();
         }
-        if (field1BF > 0) {
+        if (horizontalInput > 0) {
             g_SelectionSound->Play(39);
-            ++CHARACTER;
-            if (CHARACTER == 6 && field1CC == 0) ++CHARACTER;
-            if (CHARACTER == 7 && field1CD == 0) ++CHARACTER;
-            if (CHARACTER == 8 && field1CE == 0) ++CHARACTER;
-            if (CHARACTER == 9 && field1CF == 0) ++CHARACTER;
-            if (CHARACTER > 9) CHARACTER = 0;
+            ++(selectedCharacter);
+            if ((selectedCharacter) == 6 && selectableCharacter[6] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) == 7 && selectableCharacter[7] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) == 8 && selectableCharacter[8] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) == 9 && selectableCharacter[9] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) > 9) (selectedCharacter) = 0;
             LoadSelectedCharacterResources();
             BuildCounterPage();
         }
     } else {
-        if (field1C0 < 0) {
+        if (verticalInput < 0) {
             g_SelectionSound->Play(39);
-            --PAGE;
-            if (PAGE < 0) PAGE = (RECORDS->Count() - 1) / 10;
+            --(pageIndex);
+            if ((pageIndex) < 0) (pageIndex) = (records.Count() - 1) / 10;
             BuildRecordPage();
         }
-        if (field1C0 > 0) {
+        if (verticalInput > 0) {
             g_SelectionSound->Play(39);
-            ++PAGE;
-            if (PAGE > (static_cast<int>(RECORDS->Count()) - 1) / 10) PAGE = 0;
+            ++(pageIndex);
+            if ((pageIndex) > (static_cast<int>(records.Count()) - 1) / 10) (pageIndex) = 0;
             BuildRecordPage();
         }
-        if (field1BF < 0) {
+        if (horizontalInput < 0) {
             g_SelectionSound->Play(39);
-            --CHARACTER;
-            if (CHARACTER < 0) CHARACTER = 9;
-            if (CHARACTER == 9 && field1CF == 0) --CHARACTER;
-            if (CHARACTER == 8 && field1CE == 0) --CHARACTER;
-            if (CHARACTER == 7 && field1CD == 0) --CHARACTER;
-            if (CHARACTER == 6 && field1CC == 0) --CHARACTER;
+            --(selectedCharacter);
+            if ((selectedCharacter) < 0) (selectedCharacter) = 9;
+            if ((selectedCharacter) == 9 && selectableCharacter[9] == 0) --(selectedCharacter);
+            if ((selectedCharacter) == 8 && selectableCharacter[8] == 0) --(selectedCharacter);
+            if ((selectedCharacter) == 7 && selectableCharacter[7] == 0) --(selectedCharacter);
+            if ((selectedCharacter) == 6 && selectableCharacter[6] == 0) --(selectedCharacter);
             LoadSelectedCharacterResources();
-            PAGE = 0;
+            (pageIndex) = 0;
             BuildRecordPage();
         }
-        if (field1BF > 0) {
+        if (horizontalInput > 0) {
             g_SelectionSound->Play(39);
-            ++CHARACTER;
-            if (CHARACTER == 6 && field1CC == 0) ++CHARACTER;
-            if (CHARACTER == 7 && field1CD == 0) ++CHARACTER;
-            if (CHARACTER == 8 && field1CE == 0) ++CHARACTER;
-            if (CHARACTER == 9 && field1CF == 0) ++CHARACTER;
-            if (CHARACTER > 9) CHARACTER = 0;
+            ++(selectedCharacter);
+            if ((selectedCharacter) == 6 && selectableCharacter[6] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) == 7 && selectableCharacter[7] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) == 8 && selectableCharacter[8] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) == 9 && selectableCharacter[9] == 0) ++(selectedCharacter);
+            if ((selectedCharacter) > 9) (selectedCharacter) = 0;
             LoadSelectedCharacterResources();
-            PAGE = 0;
+            (pageIndex) = 0;
             BuildRecordPage();
         }
     }
-    if (field1BE < 255) field1BE += 25;
-    if (field1C1 == 1) {
-        if (field1C5 == 0) {
+    if (displayAlpha < 255) displayAlpha += 25;
+    if (confirmInput == 1) {
+        if (showingRecords == 0) {
             BuildRecordPage();
             g_SelectionSound->Play(45);
-            PAGE = 0;
-            field1C5 = 1;
+            (pageIndex) = 0;
+            showingRecords = 1;
         } else {
             g_SelectionSound->Play(45);
-            field1C5 = 0;
+            showingRecords = 0;
             BuildCounterPage();
         }
     }
-    if (field1C2 == 1) {
+    if (cancelInput == 1) {
         g_SelectionSound->Play(40);
         return 0x2202;
     }
     return 0xE;
 }
-#undef CHARACTER
-#undef PAGE
-#undef RECORDS

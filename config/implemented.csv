@@ -318,7 +318,7 @@ NameEntrySharedF129::Render
 CharacterSelectScene::UpdateSelect
 FighterControlsF130::UpdateControls
 CharacterSelectScene::UpdateChoiceAnimation
-ResultSelectionF131::Update
+ResultListScene::UpdateSelection
 Fighter::SpawnBattleEffect
 Fighter::SpawnTrackedEffect
 Fighter::SpawnAuxEffect
@@ -570,7 +570,7 @@ ResultScene::LoadSelectedCharacterResources
 MusicRoom::EncodeCatalogFileAt00427300
 MusicRoom::LoadCatalogAt00426DD0
 ReplayRecords::LoadRecord
-ResultScenePollF260::PollInput
+ResultListScene::PollInput
 MusicRoomRecord::InitializeAt00427430
 MusicRoomRecord::ReleaseBuffersAt00427470
 MusicRoomScene::Initialize

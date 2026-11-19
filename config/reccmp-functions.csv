@@ -319,7 +319,7 @@ NameEntrySharedF129::Render,0x0042B570,function
 CharacterSelectScene::UpdateSelect,0x00433CF0,function
 FighterControlsF130::UpdateControls,0x00452F10,function
 CharacterSelectScene::UpdateChoiceAnimation,0x004350E0,function
-ResultSelectionF131::Update,0x0042F970,function
+ResultListScene::UpdateSelection,0x0042F970,function
 Fighter::SpawnBattleEffect,0x00453A70,function
 Fighter::SpawnTrackedEffect,0x00453B50,function
 Fighter::SpawnAuxEffect,0x00453C80,function
@@ -571,7 +571,7 @@ ResultScene::LoadSelectedCharacterResources,0x00430EE0,function
 MusicRoom::EncodeCatalogFileAt00427300,0x00427300,function
 MusicRoom::LoadCatalogAt00426DD0,0x00426DD0,function
 ReplayRecords::LoadRecord,0x00413AC0,function
-ResultScenePollF260::PollInput,0x00430D80,function
+ResultListScene::PollInput,0x00430D80,function
 MusicRoomRecord::InitializeAt00427430,0x00427430,function
 MusicRoomRecord::ReleaseBuffersAt00427470,0x00427470,function
 MusicRoomScene::Initialize,0x00425750,function
