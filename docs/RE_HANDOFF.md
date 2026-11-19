@@ -218,6 +218,11 @@ Done so far:
   helper 19 times (three recovered raw-bit float arguments) plus 15
   recorded-random-range and two shared-sound calls. Full COFF shape
   and 682 relocations unchanged; 24/24 affected exact units replayed.
+- Alice state 0x38D terminal fade now uses an explicit early return
+  after clearing the frame. Because the switch is the function tail,
+  this is semantically identical to its prior break; the complete
+  33,731-byte COFF object, all 682 relocations and every nonrelocation
+  byte remain unchanged. This is source clarity only, not new exact credit.
 - Alice object giant 004EBDA0 (33,293 native CODE bytes) now uses
   true Actor / CharacterObject methods in 274 native calls for frame
   advance, reset, transition and clear. Full 33,731-byte COFF body and

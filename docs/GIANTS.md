@@ -386,7 +386,15 @@ positions/types were preserved with zero nonrelocation differences.
 The original 33,293-byte native frontier remains NONEXACT (133 GPR
 mismatches, zero width mismatches); 24 impacted exact units cold replayed.
 
-Alice object `004EBDA0` now also dispatches through truthful inherited
+Alice object `004EBDA0` Alice action 0x38D terminal fade now expresses its switch-tail exit as
+an early return rather than a break that exits the function's only
+switch. The source explicitly clears the final color channel and frame
+before returning; this is semantically equivalent to the original
+switch-tail break and emits exactly the same 33,731-byte COFF body,
+682 relocation offsets/types and zero nonrelocation-byte differences.
+It does not reduce the remaining 133 GPR mismatches or claim exactness.
+
+now also dispatches through truthful inherited
 Actor/CharacterObject C++ calls rather than speculative `AliceObject` helper
 names: 93 `ClearFrameInfo`, 66 `ResetSecondaryCounter`, 56
 `AdvanceNestedFrame`, 52 `ResetTransform` and seven
