@@ -754,3 +754,13 @@ switch-state entry at `0x005F3904`:
 Keep this as a compiler/register-allocation frontier, not a reason to add
 inline assembly, padding, or synthetic instructions. Continue with natural
 C++ control-flow and object-model hypotheses only.
+
+Three shared math leaves now have complete natural C++ game wrappers in
+`src/MathFloatHelpers.cpp`: angle (`00483300`, 21 bytes), absolute value
+(`00412D90`, 17 bytes), and magnitude (`00428D20`, 17 bytes). They are
+called from 16/30/3 independently authored game functions respectively
+(211/68/6 direct call sites). The angle's 37-byte `atan2f` worker is
+separately classified VC71CRT library code; the `fabsf` and `sqrtf` workers
+remain unknown under R163 and are not credited. The three wrappers have
+focused exact native replay; this does not change the still-nonexact Alice
+or Meiling giant frontiers.
