@@ -27,6 +27,13 @@ Done so far:
   its real scene and record/deque members. Both whole native functions
   preserve all relocations; the 10-unit affected-only replay (including
   music-room rendering and lifecycle) was 10/10 exact across 8 objects.
+- All four full Reimu/Sakuya/Youmu/Remilia Fighter research parents now
+  invoke the inherited `Fighter::ClearMotionFields` at 494 actual COFF
+  call sites (410 source occurrences across 193 case/parent files).
+  Full pre/post COFF byte/relocation audits were unchanged outside
+  call names; all 132 header-affected exact units cold-replayed in
+  three groups (44/44 each), without a full repository cold replay.
+  The four research parents remain nonexact against the original PE.
 - The 51-byte `00453E20` motion clear leaf is now
   `Fighter::ClearMotionFields`, using the actual four Actor motion
   members (`velocityX`, `velocityY`, `field058`, `field05C`) instead

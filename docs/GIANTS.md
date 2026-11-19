@@ -212,6 +212,17 @@ nonexact, with zero newly regressed bytes. Only the 132 directly
 header-affected exact units were cold-replayed (44/44 in each of three
 groups), all exact. No ASM, padding, fake locals or giant exact credit.
 
+A later four-fighter migration replaced 410 text occurrences of the
+misleading `ResetAt453E20` alias with the real inherited
+`Fighter::ClearMotionFields`. These case fragments expand to 494 native
+COFF call relocations across Reimu (105), Sakuya (139), Youmu (115),
+and Remilia (135). All four full research object sizes stayed at
+62,090 / 83,922 / 47,655 / 59,236 bytes, their 1,824 / 2,352 /
+1,491 / 1,863 relocation offsets/types unchanged, and nonrelocation
+code bytes identical. All 132 header-affected exact units cold replayed
+in three local groups of 44/44, not full replay. This is meaningful
+natural C++ call recovery; the giant parents remain NONEXACT.
+
 The 0046D000 shared gauge-timer caller cleanup is also complete in the
 four full fighter research parents: 52 Reimu, 44 Sakuya, 14 Youmu, and
 28 Remilia compiled call sites (138 total) now use the inherited natural
