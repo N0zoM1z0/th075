@@ -8,6 +8,7 @@ public:
 };
 extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
+extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F747_BounceYAt00658044;
@@ -289,6 +290,9 @@ void MarisaFighterAdvanceProbe::Advance() {
 #define F614_SIDE 0
 #include "MarisaFighterTrajectoryBurst58F614.inc"
 #include "MarisaFighterScriptedBounce59.inc"
+#include "MarisaFighterEarlyBounce5D5E5F.inc"
+#include "MarisaFighterResourceVolleys6061.inc"
+#include "MarisaFighterResourceSelector62.inc"
 #undef F614_STAGE1_SPAWN
 #undef F614_PROJECTILE
 #undef F614_SIDE
