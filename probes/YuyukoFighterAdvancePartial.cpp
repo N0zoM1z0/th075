@@ -1760,7 +1760,6 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x259:
-    case 0x25A:
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
             ClearMotionFields();
@@ -1769,11 +1768,30 @@ void YuyukoFighter::Advance() {
             UpdateGaugeTimer(250);
             PlaySound(1);
             for (int burstIndex259 = 0; burstIndex259 < 5; ++burstIndex259) {
-                field314 = static_cast<float>(burstIndex259 * 20 +
-                    (action == 0x259 ? 50 : 110));
+                field314 = static_cast<float>(burstIndex259 * 20 + 50);
                 field318 = 5.0f;
-                SpawnBattleEffect(action == 0x259 ? 0x330 : 0x331,
-                    facing * 43.0f + x, y + g_BarrageYAt006595B4, facing, 1);
+                SpawnBattleEffect(0x330, facing * 43.0f + x,
+                    y + g_BarrageYAt006595B4, facing, 1);
+            }
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
+    case 0x25A:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 4 && animationFrame == 0) {
+            PlaySound(1);
+            UpdateGaugeTimer(250);
+            for (int burstIndex25A = 0; burstIndex25A < 5; ++burstIndex25A) {
+                field314 = static_cast<float>(burstIndex25A * 20 + 110);
+                field318 = 5.0f;
+                SpawnBattleEffect(0x331, facing * 43.0f + x,
+                    y + g_BarrageYAt006595B4, facing, 1);
             }
         }
         if (AdvanceNestedFrame() != animationStageCount)
@@ -1782,15 +1800,30 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x25F:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 6 && animationFrame == 0) {
+            UpdateGaugeTimer(200);
+            SpawnBattleEffect(0x336, facing * 105.0f + x,
+                y + g_BarrageYAt00659B70, facing, 1);
+            PlaySound(2);
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
     case 0x260:
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
             ClearMotionFields();
         }
         if (animationStage == 6 && animationFrame == 0) {
-            UpdateGaugeTimer(action == 0x25F ? 200 : 250);
-            SpawnBattleEffect(action == 0x25F ? 0x336 : 0x339,
-                facing * 105.0f + x, y + g_BarrageYAt00659B70, facing, 1);
+            UpdateGaugeTimer(250);
+            SpawnBattleEffect(0x339, facing * 105.0f + x,
+                y + g_BarrageYAt00659B70, facing, 1);
             PlaySound(2);
         }
         if (AdvanceNestedFrame() != animationStageCount)
@@ -1799,6 +1832,24 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x261:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            velocityX *= g_RepeatScaleAt00658348;
+            velocityY *= g_RepeatScaleAt00658348;
+        }
+        if (animationStage > 15)
+            velocityY -= field05C;
+        if (animationStage == 6 && animationFrame == 0) {
+            UpdateGaugeTimer(200);
+            SpawnBattleEffect(0x336, facing * 85.0f + x,
+                y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+            PlaySound(2);
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(9);
+        return;
+
     case 0x262:
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
@@ -1809,9 +1860,8 @@ void YuyukoFighter::Advance() {
             velocityY -= field05C;
         if (animationStage == 6 && animationFrame == 0) {
             UpdateGaugeTimer(250);
-            SpawnBattleEffect(action == 0x261 ? 0x336 : 0x339,
-                facing * 85.0f + x, y + g_Stage700EffectYOffsetAt00659460,
-                facing, 1);
+            SpawnBattleEffect(0x339, facing * 85.0f + x,
+                y + g_Stage700EffectYOffsetAt00659460, facing, 1);
             PlaySound(2);
         }
         if (AdvanceNestedFrame() != animationStageCount)

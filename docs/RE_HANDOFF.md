@@ -84,7 +84,7 @@ the first mismatch lies inside the state-838 entry itself.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 59,975-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 60,802-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, selected `0x12D..0x136`
 special-move phases, `0x187..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -114,13 +114,16 @@ Actions `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5` are now separate
 handlers as well, retaining their per-action launch velocities and reset paths.
 Actions `0x252`, `0x253`, and `0x254` are also separate; only `0x252/0x253`
 perform the spirit-recovery check, matching the original action-specific flow.
-Low actions `1` and `3` now retain separate handlers and their distinct
-primary-counter destinations (`2` and `0`). Low actions `6..9` retain their
+Effect actions `0x259`, `0x25A`, `0x25F`, `0x260`, `0x261`, and `0x262` now
+retain separate handlers and their original per-action effect/timer constants;
+`0x25A` also restores the target sound-before-gauge call order. Low actions
+`1` and `3` retain separate handlers and their distinct primary-counter
+destinations (`2` and `0`). Low actions `6..9` retain their
 separate command gates, gravity/contact branches, per-action stage velocities
 and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The structural comparison is expected to report a size mismatch (59,975 vs.
+The structural comparison is expected to report a size mismatch (60,802 vs.
 61,872 bytes).
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header

@@ -345,7 +345,7 @@ cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
 Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. Its 59,975-byte VC7.1 body now also
+`probes/YuyukoFighterAdvancePartial.cpp`. Its 60,802-byte VC7.1 body now also
 covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
 `0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
 The source keeps the individual initial velocities, gauge accumulation,
@@ -359,9 +359,11 @@ per-action handlers, retaining their individual velocities and counter targets.
 The `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5` movement actions now also
 retain separate C++ bodies for their distinct launch velocities and reset paths.
 Actions `0x252`, `0x253`, and `0x254` are separate as well; the spirit-recovery
-gate is restricted to `0x252/0x253` as in the target control flow. Low actions
-`1` and `3` also have separate handlers for their distinct primary-counter
-destinations. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
+gate is restricted to `0x252/0x253` as in the target control flow. Effect
+actions `0x259`, `0x25A`, `0x25F`, `0x260`, `0x261`, and `0x262` now retain
+separate per-action handlers, including the original `0x25A` sound/gauge order.
+Low actions `1` and `3` also have separate handlers for their distinct
+primary-counter destinations. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
 rebound actions, and action `400`'s repeated five-effect barrage are represented.
 All 114 unique top-level Ghidra switch labels have explicit natural-C++ case
 handlers. The `0x303` fan has three independent countdown branches with paired
@@ -749,7 +751,7 @@ Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
 
-Yuyuko fighter `00564BE0` now has a 59,975-byte natural-C++ partial parent in
+Yuyuko fighter `00564BE0` now has a 60,802-byte natural-C++ partial parent in
 `probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
 the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
 states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected
