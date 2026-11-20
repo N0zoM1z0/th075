@@ -9,6 +9,9 @@ public:
 extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
 extern float g_F748_SpeedScaleAt006590B8;
+extern float g_MarisaCommandSpeedUpperAt006592A0;
+extern float g_MarisaCommandSpeedLowerAt00657850;
+extern float g_MarisaCommandYAt00658268;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F747_BounceYAt00658044;
@@ -470,6 +473,10 @@ void MarisaFighterAdvanceProbe::Advance() {
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
+#include "MarisaFighterSpecialCardC8CB.inc"
+#include "MarisaFighterSpecialCardCCCE.inc"
+#include "MarisaFighterSpecialCardCF.inc"
+#include "MarisaFighterSpecialCardD0D2.inc"
         default:
             if (AdvanceNestedFrame() == field070)
                 ResetPrimaryCounters(0);
