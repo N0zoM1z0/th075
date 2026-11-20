@@ -986,3 +986,4 @@ CharacterObject::NoOpAt0045B850,0x0045B850,function
 AbsFloatAt00412D90,0x00412D90,function
 MagnitudeAt00428D20,0x00428D20,function
 CharacterObject::AdvanceAt004EBDA0,0x004EBDA0,function
+CharacterObject::AdvanceAt0055AC80,0x0055AC80,function

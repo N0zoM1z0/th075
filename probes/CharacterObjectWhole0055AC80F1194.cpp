@@ -15,10 +15,10 @@ extern signed char g_StateRepeatLevelAt006714D0;
 
 #undef PlaySound
 
-// F1194: continued from the preserved complete F167 normal C++ draft.
-// All 57 native state bodies/default are present. The complete callable remains
-// NONEXACT: 726 GPR positions and six CMP widths differ from the pinned PE.
-// Frame 0x19C, every EBP operand, native CFG and reference destinations agree.
+// F1194: complete natural C++ reconstruction of RemiliaObject::Advance.
+// The 28,432-byte native CODE body and its 232-byte jump table plus 198-byte
+// remap are compared in one complete extent; table bytes are not CODE credit.
+// All 696 physical COFF relocations resolve to their original destinations.
 void RemiliaObject::Advance()
 {
     if (owner->opponent->field3BA != 0) return;
@@ -1544,6 +1544,8 @@ case 905:
         color[3] = 255;
         velocityX = 0.0f;
         velocityY = 0.0f;
+    } else if (animationStage != 0 || animationFrame != 0) {
+        // Non-initial frames preserve the existing transform state.
     }
     if (animationStage == 1) {
         scaleX = scaleX + 0.05f;

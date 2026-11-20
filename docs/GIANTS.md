@@ -79,7 +79,7 @@ instruction widths that follow from it.
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `CharacterObjectWhole0050A580F1044.cpp` | 522 | 5 | 00515C0E (#10128) |
 | 00536400 | Youmu object | 39,999 | `CharacterObjectActions00536400F1211.cpp` | 913 | 10 | 005392F8 (#3223) |
-| 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` | 726 | 6 | 0055F711 (#5225) |
+| 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `CharacterObjectActions0057D580F1237.cpp` | 914 | 6 | 00583489 (#6565) |
 | 005A1600 | Yukari object | 43,599 | `CharacterObjectActions005A1600F1231.cpp` | 613 | 11 | 005A88A8 (#7965) |
 | 005C9CC0 | Suika object | 43,501 | `CharacterObjectActions005C9CC0F1216.cpp` | 935 | 1 | 005D2558 (#9213) |
@@ -162,13 +162,16 @@ spawns, 22 sounds and 13 tracked spawns now bind to the real
 relocation offset/type and every nonrelocation instruction byte remained
 unchanged; 24 header-affected exact units cold-replayed.
 
-Remilia object `0055AC80` now defines `RemiliaObject::Advance` on its
-real class. Twenty-four random-range, 25 effect-spawn, seven sound and
-two shared-sound call sites now use typed C++ members instead of borrowed
-receiver aliases. The full 28,868-byte COFF body, all 696 relocation
-offsets/types and every nonrelocation byte remain unchanged. This does
-not resolve its 726 GPR-role and six instruction-width differences;
-all 24 affected exact units cold-replayed successfully.
+Remilia object `0055AC80` defines `RemiliaObject::Advance` on its real
+class. Twenty-four random-range, 25 effect-spawn, seven sound and two
+shared-sound call sites use typed C++ members instead of borrowed receiver
+aliases. The earlier 28,868-byte research draft retained 726 GPR-role and
+six instruction-width differences. The later F1194 state-flow reconstruction
+uses a natural non-initial-frame preservation branch and now cold-replays the
+complete 28,432-byte native CODE body exact. Its 232-byte guarded jump table
+and 198-byte remap are also independently compared in the 28,862-byte extent;
+all 696 physical relocations resolve to original destinations. The tables are
+comparison data, not additional authored CODE coverage.
 
 Remilia fighter `00543210` now directly defines `RemiliaFighter::Advance`
 under the native character class, rather than a research-only subclass.

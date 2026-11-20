@@ -663,3 +663,15 @@ through the observed `Actor::facing` member at +0x66 instead of a raw
 +0x518 byte-deque view is still opaque because the complete owner member
 layout is not established. The full 695-byte function cold-replayed 1/1 exact
 with all 33 original COFF fields.
+
+
+Remilia object `0055AC80` is now a complete natural-C++ cold-exact unit.
+`CharacterObjectWhole0055AC80F1194.cpp` builds `RemiliaObject::Advance` with
+28432 native CODE bytes and a complete 28862-byte comparison extent. The
+adjacent 232-byte guarded jump table and 198-byte remap were separately
+verified against the original image and are not counted as CODE. All 696
+physical COFF relocations (302 DIR32, 394 REL32) were checked against their
+original destinations: 60 local labels and 636 external references. The
+non-initial-frame state-preservation branch restores the native condition
+flow without assembly, padding, fabricated locals or byte grafts. The
+single affected unit cold-replayed 1/1 exact; no full cold replay was run.

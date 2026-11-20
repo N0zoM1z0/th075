@@ -984,3 +984,4 @@ GameApplication::RunAt00602A60
 CharacterObject::NoOpAt0045B850
 AbsFloatAt00412D90
 MagnitudeAt00428D20
+CharacterObject::AdvanceAt0055AC80

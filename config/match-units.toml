@@ -62098,3 +62098,4189 @@ relocations = [
   { offset = 0x82F5, type = "DIR32", symbol = "$L1841", target = 0x004F3E15 },
   { offset = 0x82F9, type = "DIR32", symbol = "$L1847", target = 0x004F3FA1 },
 ]
+
+[units.remilia-object-advance-0055ac80]
+source = "probes/CharacterObjectWhole0055AC80F1194.cpp"
+object = "build/matching/RemiliaObjectAdvance.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
+functions = ["CharacterObject::AdvanceAt0055AC80"]
+symbol = "?Advance@RemiliaObject@@UAEXXZ"
+target_address = 0x0055AC80
+size = 28432
+compare_size = 28862
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 167
+type = "DIR32"
+symbol = "$L1910"
+target = 0x00561C78
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 174
+type = "DIR32"
+symbol = "$L2024"
+target = 0x00561B90
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 285
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 367
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 386
+type = "DIR32"
+symbol = "__real@c2f00000"
+target = 0x0065924C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 401
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 418
+type = "DIR32"
+symbol = "__real@40a00000"
+target = 0x00657874
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 509
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 521
+type = "DIR32"
+symbol = "__real@3f000000"
+target = 0x00657478
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 539
+type = "DIR32"
+symbol = "__real@3f000000"
+target = 0x00657478
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 594
+type = "DIR32"
+symbol = "__real@3f400000"
+target = 0x00658350
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 612
+type = "DIR32"
+symbol = "__real@3f400000"
+target = 0x00658350
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 646
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 664
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 682
+type = "DIR32"
+symbol = "__real@40200000"
+target = 0x006593E8
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 769
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 814
+type = "DIR32"
+symbol = "__real@40800000"
+target = 0x00657D14
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 820
+type = "DIR32"
+symbol = "__real@41400000"
+target = 0x006590C4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 862
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 870
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 892
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 925
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1019
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1062
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1105
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1158
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1250
+type = "DIR32"
+symbol = "__real@3e99999a"
+target = 0x006583FC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1268
+type = "DIR32"
+symbol = "__real@3e99999a"
+target = 0x006583FC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1286
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1305
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1324
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1343
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1358
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1408
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1430
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1506
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1582
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1643
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1702
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1800
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1859
+type = "REL32"
+symbol = "?UpdateGaugeTimer@Fighter@@QAEXH@Z"
+target = 0x0046D000
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1875
+type = "REL32"
+symbol = "?PlaySound@Fighter@@QAEXF@Z"
+target = 0x00453D40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1917
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1978
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 1997
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2016
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2035
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2050
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2135
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2197
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2210
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2232
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2320
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2398
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2474
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2535
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2578
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2701
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2720
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2739
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2758
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2773
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2830
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2838
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2862
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2884
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 2960
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3036
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3097
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3148
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3172
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3212
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3224
+type = "DIR32"
+symbol = "__real@3c23d70a"
+target = 0x00658044
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3253
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3273
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3340
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3349
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3404
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3470
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3489
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3508
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3527
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3542
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3595
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3617
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3668
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3781
+type = "DIR32"
+symbol = "__real@3f000000"
+target = 0x00657478
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3799
+type = "DIR32"
+symbol = "__real@41000000"
+target = 0x00657D70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3959
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 3982
+type = "DIR32"
+symbol = "__real@3e4ccccd"
+target = 0x00658348
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4000
+type = "DIR32"
+symbol = "__real@3e4ccccd"
+target = 0x00658348
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4056
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4069
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4091
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4190
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4253
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4403
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4425
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4512
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4593
+type = "DIR32"
+symbol = "__real@42d00000"
+target = 0x0065929C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4635
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4695
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4713
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4767
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4789
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4830
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4963
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4982
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 4997
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5010
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5034
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5089
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5184
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5208
+type = "DIR32"
+symbol = "__real@3f866666"
+target = 0x00659B58
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5226
+type = "DIR32"
+symbol = "__real@3f866666"
+target = 0x00659B58
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5244
+type = "DIR32"
+symbol = "__real@40c00000"
+target = 0x00658290
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5288
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5301
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5323
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5379
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5427
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5490
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5640
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5662
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5749
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5790
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5923
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5942
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5957
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5970
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 5994
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6049
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6144
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6168
+type = "DIR32"
+symbol = "__real@3f866666"
+target = 0x00659B58
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6186
+type = "DIR32"
+symbol = "__real@3f866666"
+target = 0x00659B58
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6204
+type = "DIR32"
+symbol = "__real@40c00000"
+target = 0x00658290
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6248
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6261
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6283
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6305
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6381
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6457
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6518
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6569
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6611
+type = "DIR32"
+symbol = "__real@41700000"
+target = 0x00657CBC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6626
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6647
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6714
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6723
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6778
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6844
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6863
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6882
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6901
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6916
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6969
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 6991
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7008
+type = "DIR32"
+symbol = "__real@44ac8000"
+target = 0x0065925C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7027
+type = "DIR32"
+symbol = "__real@c2c80000"
+target = 0x00659258
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7046
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7065
+type = "DIR32"
+symbol = "__real@c3700000"
+target = 0x00658374
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7080
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7102
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7162
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7238
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7299
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7350
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7470
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7502
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7508
+type = "DIR32"
+symbol = "__real@41200000"
+target = 0x00657850
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7540
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7627
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7636
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7645
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7650
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7836
+type = "DIR32"
+symbol = "__real@3e19999a"
+target = 0x006583F8
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7842
+type = "DIR32"
+symbol = "__real@40e00000"
+target = 0x00659254
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7880
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7970
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 7989
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8008
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8027
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8042
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8075
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8139
+type = "DIR32"
+symbol = "__real@3f59999a"
+target = 0x00659454
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8157
+type = "DIR32"
+symbol = "__real@3f59999a"
+target = 0x00659454
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8201
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8214
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8236
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8269
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8318
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8419
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8449
+type = "DIR32"
+symbol = "__real@3f866666"
+target = 0x00659B58
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8467
+type = "DIR32"
+symbol = "__real@3f866666"
+target = 0x00659B58
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8485
+type = "DIR32"
+symbol = "__real@40c00000"
+target = 0x00658290
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8529
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8542
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8564
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8701
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8777
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8799
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8821
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8897
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 8973
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9034
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9097
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9133
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9242
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9261
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9270
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9406
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9425
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9444
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9463
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9478
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9530
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9543
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9567
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9669
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9771
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9899
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 9940
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10016
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10038
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10166
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10207
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10283
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10305
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10433
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10477
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10540
+type = "DIR32"
+symbol = "__real@41700000"
+target = 0x00657CBC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10576
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10598
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10688
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10729
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10805
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 10827
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11066
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11107
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11234
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11258
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11454
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11495
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11551
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11575
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11621
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11728
+type = "DIR32"
+symbol = "__real@44cd0000"
+target = 0x00659B54
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11747
+type = "DIR32"
+symbol = "__real@c3b40000"
+target = 0x00659128
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11762
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11775
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11799
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11845
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11952
+type = "DIR32"
+symbol = "__real@44cd0000"
+target = 0x00659B54
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11971
+type = "DIR32"
+symbol = "__real@c3b40000"
+target = 0x00659128
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11986
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 11999
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12023
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12100
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12141
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12217
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12239
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12317
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12358
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12414
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12436
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12632
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12673
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12729
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12753
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12830
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12871
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12947
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 12969
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13046
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13087
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13163
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13185
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13235
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13292
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13412
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13431
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13450
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13469
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13484
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13497
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13519
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13615
+type = "DIR32"
+symbol = "__real@42ac0000"
+target = 0x00659488
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13631
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13672
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13738
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13762
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13816
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 13974
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14008
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14014
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14054
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14060
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14192
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14205
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14227
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14249
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14325
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14401
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14462
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14525
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14561
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14670
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14689
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14698
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14804
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14823
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14842
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14861
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14876
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14933
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14946
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 14970
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15072
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15106
+type = "REL32"
+symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z"
+target = 0x0040FAC0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15208
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15242
+type = "REL32"
+symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z"
+target = 0x0040FAC0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15264
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15339
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15415
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15476
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15531
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15686
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15698
+type = "DIR32"
+symbol = "__real@3ee66666"
+target = 0x00659888
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15716
+type = "DIR32"
+symbol = "__real@c1900000"
+target = 0x00659B50
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15774
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15846
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15865
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15884
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15903
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15918
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15931
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 15970
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16017
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16140
+type = "DIR32"
+symbol = "__real@42bc0000"
+target = 0x00659138
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16246
+type = "DIR32"
+symbol = "__real@42700000"
+target = 0x00658264
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16330
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16399
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16435
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16491
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16513
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16546
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16595
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16688
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16707
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16716
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16824
+type = "DIR32"
+symbol = "__real@41f00000"
+target = 0x00657878
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16842
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16876
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16900
+type = "DIR32"
+symbol = "__real@41f00000"
+target = 0x00657878
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16923
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16935
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16954
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16969
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 16982
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17006
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17049
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17098
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17158
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17202
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17235
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17253
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17283
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17350
+type = "DIR32"
+symbol = "__real@44a28000"
+target = 0x00659B4C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17369
+type = "DIR32"
+symbol = "__real@c2700000"
+target = 0x00658DF4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17388
+type = "DIR32"
+symbol = "__real@44700000"
+target = 0x0065920C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17407
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17422
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17466
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17472
+type = "DIR32"
+symbol = "__real@3f000000"
+target = 0x00657478
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17497
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17527
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17556
+type = "DIR32"
+symbol = "__real@3f666666"
+target = 0x00659240
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17582
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17604
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17637
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17678
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17755
+type = "DIR32"
+symbol = "__real@3feb333333333333"
+target = 0x00659730
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17769
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17791
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17824
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17873
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17933
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 17977
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18008
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18032
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18099
+type = "DIR32"
+symbol = "__real@44a28000"
+target = 0x00659B4C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18118
+type = "DIR32"
+symbol = "__real@c2700000"
+target = 0x00658DF4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18137
+type = "DIR32"
+symbol = "__real@44700000"
+target = 0x0065920C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18156
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18171
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18215
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18221
+type = "DIR32"
+symbol = "__real@3f000000"
+target = 0x00657478
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18246
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18276
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18305
+type = "DIR32"
+symbol = "__real@3f666666"
+target = 0x00659240
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18331
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18353
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18386
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18435
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18528
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18547
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18556
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18664
+type = "DIR32"
+symbol = "__real@41f00000"
+target = 0x00657878
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18682
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18716
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18740
+type = "DIR32"
+symbol = "__real@41f00000"
+target = 0x00657878
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18763
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18775
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18794
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18809
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18822
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18846
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18889
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 18963
+type = "DIR32"
+symbol = "__real@437a0000"
+target = 0x006591E4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19005
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19109
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19127
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19145
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19239
+type = "DIR32"
+symbol = "__real@40000000"
+target = 0x00657480
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19257
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19276
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19295
+type = "DIR32"
+symbol = "__real@44a00000"
+target = 0x00658E80
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19314
+type = "DIR32"
+symbol = "__real@c3be0000"
+target = 0x00659B48
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19329
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19342
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19366
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19449
+type = "REL32"
+symbol = "?PlaySound@Fighter@@QAEXF@Z"
+target = 0x00453D40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19525
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19540
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19549
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19561
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19594
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19635
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19739
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19757
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19824
+type = "DIR32"
+symbol = "__real@40000000"
+target = 0x00657480
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19842
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19861
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19880
+type = "DIR32"
+symbol = "__real@44a00000"
+target = 0x00658E80
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19899
+type = "DIR32"
+symbol = "__real@c3be0000"
+target = 0x00659B48
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19914
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19927
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19949
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 19982
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20075
+type = "DIR32"
+symbol = "__real@437a0000"
+target = 0x006591E4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20161
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20202
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20293
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20311
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20329
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20380
+type = "DIR32"
+symbol = "__real@3f59999a"
+target = 0x00659454
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20398
+type = "DIR32"
+symbol = "__real@3f59999a"
+target = 0x00659454
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20412
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20436
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20507
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20545
+type = "DIR32"
+symbol = "__real@3c23d70a"
+target = 0x00658044
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20551
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20585
+type = "DIR32"
+symbol = "__real@3c23d70a"
+target = 0x00658044
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20591
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20607
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20640
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20742
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20856
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20874
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20892
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20980
+type = "DIR32"
+symbol = "__real@40000000"
+target = 0x00657480
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 20998
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21017
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21036
+type = "DIR32"
+symbol = "__real@44a00000"
+target = 0x00658E80
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21055
+type = "DIR32"
+symbol = "__real@c3be0000"
+target = 0x00659B48
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21070
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21083
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21105
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21138
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21179
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21292
+type = "DIR32"
+symbol = "__real@3f000000"
+target = 0x00657478
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21310
+type = "DIR32"
+symbol = "__real@40000000"
+target = 0x00657480
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21339
+type = "DIR32"
+symbol = "__real@3f59999a"
+target = 0x00659454
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21357
+type = "DIR32"
+symbol = "__real@3e4ccccd"
+target = 0x00658348
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21371
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21393
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21490
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21578
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21600
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21640
+type = "DIR32"
+symbol = "?g_StateRepeatLevelAt006714D0@@3CA"
+target = 0x006714D0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21687
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21720
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21821
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21935
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 21953
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22020
+type = "DIR32"
+symbol = "__real@40000000"
+target = 0x00657480
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22038
+type = "DIR32"
+symbol = "__real@44e10000"
+target = 0x00659B60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22057
+type = "DIR32"
+symbol = "__real@c42a0000"
+target = 0x00659B5C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22076
+type = "DIR32"
+symbol = "__real@44a00000"
+target = 0x00658E80
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22095
+type = "DIR32"
+symbol = "__real@c3be0000"
+target = 0x00659B48
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22110
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22123
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22145
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22178
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22220
+type = "DIR32"
+symbol = "?g_StateRepeatLevelAt006714D0@@3CA"
+target = 0x006714D0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22237
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22286
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22395
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22414
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22423
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22502
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22558
+type = "REL32"
+symbol = "?SetCameraShake@Fighter@@QAEXM@Z"
+target = 0x00453E60
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22571
+type = "REL32"
+symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z"
+target = 0x0040FAC0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22604
+type = "REL32"
+symbol = "?PlaySound@Fighter@@QAEXF@Z"
+target = 0x00453D40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22621
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22640
+type = "DIR32"
+symbol = "__real@c2f00000"
+target = 0x0065924C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22655
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22668
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22690
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22723
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22772
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22796
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22857
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22972
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 22991
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23010
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23029
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23044
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23097
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23119
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23152
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23201
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23225
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23259
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23303
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23329
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23426
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23498
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23517
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23536
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23555
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23570
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23623
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23645
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23678
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23739
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23775
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23836
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 23970
+type = "DIR32"
+symbol = "?g_StateRepeatLevelAt006714D0@@3CA"
+target = 0x006714D0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24081
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24174
+type = "REL32"
+symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z"
+target = 0x00453A70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24181
+type = "DIR32"
+symbol = "?g_StateRepeatLevelAt006714D0@@3CA"
+target = 0x006714D0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24205
+type = "DIR32"
+symbol = "?g_StateRepeatLevelAt006714D0@@3CA"
+target = 0x006714D0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24272
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24295
+type = "REL32"
+symbol = "?PlaySound@Fighter@@QAEXF@Z"
+target = 0x00453D40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24388
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24426
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24449
+type = "REL32"
+symbol = "?PlaySound@Fighter@@QAEXF@Z"
+target = 0x00453D40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24605
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24640
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24667
+type = "REL32"
+symbol = "?PlaySound@Fighter@@QAEXF@Z"
+target = 0x00453D40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24883
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24918
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 24945
+type = "REL32"
+symbol = "?PlaySound@Fighter@@QAEXF@Z"
+target = 0x00453D40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25098
+type = "DIR32"
+symbol = "__real@44af0000"
+target = 0x00659424
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25117
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25136
+type = "DIR32"
+symbol = "__real@447a0000"
+target = 0x006583B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25155
+type = "DIR32"
+symbol = "__real@c3200000"
+target = 0x006595EC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25170
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25225
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25238
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25260
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25293
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25342
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25436
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25463
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25468
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25506
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25544
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25563
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25572
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25624
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25642
+type = "DIR32"
+symbol = "__real@3dcccccd"
+target = 0x006590B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25660
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25718
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25767
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25785
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25803
+type = "DIR32"
+symbol = "__real@44ac8000"
+target = 0x0065925C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25822
+type = "DIR32"
+symbol = "__real@c2c80000"
+target = 0x00659258
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25841
+type = "DIR32"
+symbol = "__real@44700000"
+target = 0x0065920C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25860
+type = "DIR32"
+symbol = "__real@c2c80000"
+target = 0x00659258
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 25875
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26003
+type = "DIR32"
+symbol = "__real@3d4ccccd"
+target = 0x006578C0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26041
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26049
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26071
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26128
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26211
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26328
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26366
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26434
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26449
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26458
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26463
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26512
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26542
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26583
+type = "DIR32"
+symbol = "__real@c1a00000"
+target = 0x00659230
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26624
+type = "DIR32"
+symbol = "__real@42f00000"
+target = 0x006590A8
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26665
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26684
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26815
+type = "REL32"
+symbol = "?PlaySharedSound@CharacterObject@@QAEXF@Z"
+target = 0x0045B860
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26864
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26888
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 26940
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27023
+type = "REL32"
+symbol = "?RecordedRange@Actor@@QAEHHH@Z"
+target = 0x00455580
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27140
+type = "DIR32"
+symbol = "__real@3f4ccccd"
+target = 0x00659090
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27178
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27246
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27261
+type = "REL32"
+symbol = "?Unknown483300@@YAMMM@Z"
+target = 0x00483300
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27270
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27275
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27324
+type = "REL32"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
+target = 0x0040FB70
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27354
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27395
+type = "DIR32"
+symbol = "__real@c1a00000"
+target = 0x00659230
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27436
+type = "DIR32"
+symbol = "__real@42f00000"
+target = 0x006590A8
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27477
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27534
+type = "REL32"
+symbol = "?PlaySharedSound@CharacterObject@@QAEXF@Z"
+target = 0x0045B860
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27542
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27859
+type = "DIR32"
+symbol = "__real@408f373333333333"
+target = 0x00659228
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27893
+type = "DIR32"
+symbol = "__real@3f000000"
+target = 0x00657478
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 27990
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28014
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28099
+type = "REL32"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
+target = 0x0040FBB0
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28240
+type = "REL32"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
+target = 0x0045B830
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28373
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28387
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28411
+type = "REL32"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
+target = 0x0040FB40
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28423
+type = "REL32"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
+target = 0x0040FA30
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28432
+type = "DIR32"
+symbol = "$L1361"
+target = 0x0055AD32
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28436
+type = "DIR32"
+symbol = "$L1379"
+target = 0x0055B0DA
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28440
+type = "DIR32"
+symbol = "$L1386"
+target = 0x0055B21F
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28444
+type = "DIR32"
+symbol = "$L1405"
+target = 0x0055B599
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28448
+type = "DIR32"
+symbol = "$L1419"
+target = 0x0055B7B7
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28452
+type = "DIR32"
+symbol = "$L1434"
+target = 0x0055BAAA
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28456
+type = "DIR32"
+symbol = "$L1446"
+target = 0x0055BC84
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28460
+type = "DIR32"
+symbol = "$L1453"
+target = 0x0055BE29
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28464
+type = "DIR32"
+symbol = "$L1458"
+target = 0x0055BF3E
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28468
+type = "DIR32"
+symbol = "$L1463"
+target = 0x0055C03D
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28472
+type = "DIR32"
+symbol = "$L1468"
+target = 0x0055C154
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28476
+type = "DIR32"
+symbol = "$L1475"
+target = 0x0055C2FE
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28480
+type = "DIR32"
+symbol = "$L1480"
+target = 0x0055C3FD
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28484
+type = "DIR32"
+symbol = "$L1485"
+target = 0x0055C514
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28488
+type = "DIR32"
+symbol = "$L1500"
+target = 0x0055C7D8
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28492
+type = "DIR32"
+symbol = "$L1524"
+target = 0x0055CCD6
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28496
+type = "DIR32"
+symbol = "$L1529"
+target = 0x0055CDFD
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28500
+type = "DIR32"
+symbol = "$L1534"
+target = 0x0055CEE8
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28504
+type = "DIR32"
+symbol = "$L1553"
+target = 0x0055D2B4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28508
+type = "DIR32"
+symbol = "$L1559"
+target = 0x0055D3BF
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28512
+type = "DIR32"
+symbol = "$L1565"
+target = 0x0055D4CA
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28516
+type = "DIR32"
+symbol = "$L1571"
+target = 0x0055D5EF
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28520
+type = "DIR32"
+symbol = "$L1576"
+target = 0x0055D6D4
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28524
+type = "DIR32"
+symbol = "$L1588"
+target = 0x0055D883
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28528
+type = "DIR32"
+symbol = "$L1598"
+target = 0x0055D9C5
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28532
+type = "DIR32"
+symbol = "$L1603"
+target = 0x0055DAA5
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28536
+type = "DIR32"
+symbol = "$L1608"
+target = 0x0055DB85
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28540
+type = "DIR32"
+symbol = "$L1613"
+target = 0x0055DC5D
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28544
+type = "DIR32"
+symbol = "$L1618"
+target = 0x0055DD22
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28548
+type = "DIR32"
+symbol = "$L1628"
+target = 0x0055DE5F
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28552
+type = "DIR32"
+symbol = "$L1633"
+target = 0x0055DF37
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28556
+type = "DIR32"
+symbol = "$L1638"
+target = 0x0055E00F
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28560
+type = "DIR32"
+symbol = "$L1645"
+target = 0x0055E158
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28564
+type = "DIR32"
+symbol = "$L1650"
+target = 0x0055E250
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28568
+type = "DIR32"
+symbol = "$L1657"
+target = 0x0055E41C
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28572
+type = "DIR32"
+symbol = "$L1679"
+target = 0x0055E813
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28576
+type = "DIR32"
+symbol = "$L1697"
+target = 0x0055EB1A
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28580
+type = "DIR32"
+symbol = "$L1705"
+target = 0x0055ED0A
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28584
+type = "DIR32"
+symbol = "$L1711"
+target = 0x0055EF01
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28588
+type = "DIR32"
+symbol = "$L1721"
+target = 0x0055F14D
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28592
+type = "DIR32"
+symbol = "$L1725"
+target = 0x0055F208
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28596
+type = "DIR32"
+symbol = "$L1735"
+target = 0x0055F43A
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28600
+type = "DIR32"
+symbol = "$L1741"
+target = 0x0055F631
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28604
+type = "DIR32"
+symbol = "$L1755"
+target = 0x0055F8F2
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28608
+type = "DIR32"
+symbol = "$L1765"
+target = 0x0055FA76
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28612
+type = "DIR32"
+symbol = "$L1778"
+target = 0x0055FD08
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28616
+type = "DIR32"
+symbol = "$L1790"
+target = 0x0055FEFA
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28620
+type = "DIR32"
+symbol = "$L1796"
+target = 0x0056001A
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28624
+type = "DIR32"
+symbol = "$L1802"
+target = 0x00560140
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28628
+type = "DIR32"
+symbol = "$L1813"
+target = 0x0056030A
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28632
+type = "DIR32"
+symbol = "$L1820"
+target = 0x0056052B
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28636
+type = "DIR32"
+symbol = "$L1827"
+target = 0x005606D8
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28640
+type = "DIR32"
+symbol = "$L1836"
+target = 0x005608E6
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28644
+type = "DIR32"
+symbol = "$L1860"
+target = 0x00560F35
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28648
+type = "DIR32"
+symbol = "$L1871"
+target = 0x00561265
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28652
+type = "DIR32"
+symbol = "$L1880"
+target = 0x00561591
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28656
+type = "DIR32"
+symbol = "$L1896"
+target = 0x005619F7
+
+[[units.remilia-object-advance-0055ac80.relocations]]
+offset = 28660
+type = "DIR32"
+symbol = "$L1902"
+target = 0x00561B83
