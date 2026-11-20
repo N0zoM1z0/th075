@@ -591,3 +591,10 @@ GPR divergence is earlier than the old 809/810 experiments, at `004CCBD7`
 in the action-800 four-float bounds guard. Ten equivalent guard rewrites did
 not change Sakuya's 447/12 frontier. Preserve the known-rejected transient
 809/810 variant (328 GPR but +2 bytes) as research only; do not promote it.
+
+Patchouli `0x356` (`005154ED`) had an actual source behavior error: its effect
+loop was written for 8 iterations, while the original native loop and Ghidra
+control flow both compare against 10 (`00515C73`, `cmp ..., 0x0A`). The natural
+C++ loop is now corrected to ten iterations. The rebuilt parent retains the
+same 522/5 register frontier and first mismatch `00515C0E`; no whole-boss
+exactness is claimed.
