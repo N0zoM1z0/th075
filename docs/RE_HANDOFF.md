@@ -35,9 +35,11 @@ main; those commits have not been pushed. Recheck Git state before editing.
   `probes/MarisaFighterAdvancePartial.cpp`: 155 native action-state bodies,
   inherited named fields/methods, no offset casts or marker placeholders.
   The latest states `0x2E5`, `0x2E6`, and `0x2F9` add 1,973 original bytes /
-  521 instructions. Its 49,857-byte/14,260-instruction VC7.1 object is
-  explicitly NONEXACT against the 50,735-byte/14,260-instruction original.
-  This remains an incomplete research parent, not an exact-credit claim.
+  521 instructions. All 141 unique top-level Ghidra action labels mapped by
+  the original action-handler table now have source cases. Its 49,857-byte /
+  14,260-instruction VC7.1 object remains explicitly NONEXACT against the
+  50,735-byte / 14,260-instruction original: the 878-byte size delta remains
+  real and unaccepted. This is not an exact-credit claim.
 
 Current focused source recoveries (2026-11-20):
 
