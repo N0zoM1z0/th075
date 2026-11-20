@@ -1,4 +1,4 @@
-# TH075 handoff (2026-11-19)
+# TH075 handoff (2026-11-20)
 
 Follow [AGENTS.md](../AGENTS.md) first. This handoff is the live task summary;
 [GIANTS.md](GIANTS.md) contains the complete-parent measurements and the
@@ -11,7 +11,7 @@ The current status command is:
 
     scripts/repo-python scripts/report-reconstruction-status.py --summary
 
-Snapshot on 2026-11-19:
+Snapshot checked on 2026-11-20:
 
 - 4,351 candidate functions: 986 mapped/source-present/exact, 1,008 authored,
   90 origin-review candidates, and 3,253 excluded.
@@ -26,11 +26,31 @@ The historical R263 matrix is not the live origin queue. Its 97 rows /
 3,608 bytes remain historical evidence; the current ledger has 90 review
 candidates / 3,315 bytes. Use config/function-origins.csv as the authority.
 
-The working tree is clean. Main has local documentation commits relative to
-origin/main; no push was performed in this cleanup session. Recheck git status
-and git log before starting.
+The working tree was clean after four new reconstruction checkpoints on
+main; those commits have not been pushed. Recheck Git state before editing.
 
 ## Recent reconstruction work
+
+Current focused source recoveries (2026-11-20):
+
+- `91951cb2` and `933e13af`: the native 0x54-byte four-deque effect owner now
+  has typed advancing and dispatching views. The `Actor` virtual render slots,
+  frame pointer at +0x74 and dispatch flags +0x67/+0x68 replace raw pointer
+  arithmetic in three complete functions (296, 166 and 207 bytes); 3/3 cold
+  comparisons pass with complete relocations.
+- `1caedf6b`: Youmu's actual +0xFEC member is a 12-byte VC7.1 `std::list`
+  of 16-byte action snapshots, ending at the independently observed +0xFF8
+  allocation bound. The class constructor now automatically constructs the
+  native member, and reset explicitly clears it. Both exact owners, the
+  1,008-byte snapshot writer and all their header-dependent callers replayed
+  81/81. The complete 40,464-byte Youmu object `Advance` parent now reads
+  `owner->historyQueue` directly; its 938 relocation positions, types,
+  addends and destinations and every section byte remain identical. It is
+  still nonexact (913 GPR-role and ten instruction-width differences).
+- `48dca566`: the complete 859-byte `BattleScene::Update` invokes the effect
+  owner's `AdvanceAll` through `fighters[i]->field2EC` instead of raw +0x2EC
+  receiver casts. Its four direct relocations retain their target addresses;
+  74/74 affected exact units passed the focused cold replay.
 
 The latest commits restore natural C++ field types and call expressions in
 large research parents. They do not claim new giant exactness:

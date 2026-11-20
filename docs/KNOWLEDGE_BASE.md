@@ -74,6 +74,23 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
 
 ## Layout facts
 
+- Youmu has an independently observed 0xFF8-byte fighter allocation
+  (`BattleCharacterLoaderF398`, character 5). The VC7.1 12-byte
+  `std::list<ObservedInputSnapshotF378>` member at +0xFEC is the final
+  member, after an unobserved +0xFE4..+0xFEB gap. The snapshot is 16 bytes:
+  action/stage shorts, float x/y, facing byte and bearing short. Its automatic
+  construction, clearing, auxiliary writer and object `Advance` reader retain
+  the original method call destinations (00531C00, 00531CE0, 00531CB0,
+  00540220). Affected exact units cold-replayed 81/81; the 39,999-byte
+  object giant remains nonexact with its full 40,464-byte COFF unchanged.
+- The bound fighter's effect manager at +0x2EC occupies 0x54 bytes: its
+  bound `Fighter*` and four 20-byte VC7.1 deque members. Effect advance
+  (0045BDB0) and both drawing dispatchers (0045BC30, 0045BCE0) now use
+  named typed deque members, inherited `Actor` virtual slots and native
+  effect flags. `BattleScene::Update` (0043B1B0) invokes all four per-frame
+  effect ticks through this manager. The three effect functions cold-replay
+  3/3 and the frame/header-dependency set cold-replays 74/74.
+
 - The controller binding block is embedded at +0x494. `SetBindings` copies
   40 bytes at +4 and clears 28 at +0x2C, so the block spans 0x48 bytes and
   ends where `inputX` (+0x4DC) begins. Held input is at +0x4DC–0x4F4 (X, Y,

@@ -200,8 +200,7 @@ and six instruction-width mismatches in the late state machine. All 24
 header-affected exact units cold-replayed.
 
 Youmu object `00536400` now defines `YoumuObject::Advance` with its
-16-byte recorded-action history entries preserved as a bounded borrowed
-view. 108 effect spawns, eight shared sounds, eight owner sounds, two
+16-byte recorded-action history entries read from the typed owner list. 108 effect spawns, eight shared sounds, eight owner sounds, two
 auxiliary and two tracked effect calls use the real Fighter APIs. The
 seven gauge-timer calls to 0046D000 retain a provisional receiver ABI
 pending cross-character ownership proof. Both complete 40,464-byte
@@ -210,20 +209,19 @@ nonrelocation byte. The original 39,999 CODE bytes remain NONEXACT
 (913 GPR-role, ten width differences); 24/24 header-affected exact
 units replayed successfully.
 
-The Youmu fighter's R049 auxiliary snapshot path and the R243 object-history
-front path now share one borrowed native-list view in
-`src/YoumuHistoryQueueF378.hpp`. The same 16-byte record exposes both the
-snapshot names and the object relay's action/stage/coordinate/facing/counter
-names through natural C++ unions; the list view carries `AddSnapshot`,
-`Count`, `PruneOld` and `FrontAt00540220` without asserting a complete
-YoumuFighter or STL layout. The complete 1,008-byte auxiliary function still
-cold-replays exact (1/1), all 18 original relocation fields and every code
-byte remain identical, and the full 40,464-byte Youmu object COFF remains
-byte-identical with all 938 relocation positions/types. Only the front-call
-COFF symbol now names the shared list type (plus compiler-local label
-renumbering); the 39,999-byte object giant remains NONEXACT at 913 GPR / 10
-width differences. No owner layout, node payload ownership or STL ABI is
-newly credited.
+The Youmu fighter's R049 auxiliary writer and R243 object-history reader
+now share `YoumuFighter::historyQueue`, an actual final C++ member at +0xFEC.
+The source uses the 12-byte VC7.1 `std::list<ObservedInputSnapshotF378>`
+layout and its 16-byte record; the independently observed Youmu allocation
+ends at +0xFF8. The constructor's automatic member construction calls the
+original 00531C00, and `ResetRound` calls the standard list `clear` at
+00531CE0 without a synthetic subcomponent or raw offset cast. The snapshot
+writer and object giant use direct member access. The complete constructor,
+reset, writer and all header-dependent exact units cold-replayed 81/81.
+The 40,464-byte object COFF, its 938 relocation positions/types/addends/
+destinations and all code bytes remain identical. The 39,999-byte object
+giant remains NONEXACT at 913 GPR / ten widths; actual source names and
+unobserved list-node details remain provisional.
 
 Three more complete object bosses now use direct declared member types in
 place of redundant reference reinterpretations: Youmu and Yuyuko assign the
