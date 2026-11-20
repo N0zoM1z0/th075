@@ -101,9 +101,11 @@ resets, and the shared animation advance path. The `0x2F9` fan keeps each
 repeat-level radial/burst branch separate and calls the exact `Actor::RecordedRange`
 leaf at every random sample. The `0x303` fan keeps three independent countdown
 branches with their original paired 20-shot loops and difficulty-three offsets.
-All 114 unique Ghidra switch labels have explicit natural-C++ handlers. Low
-actions `6..9` now retain their separate command gates, gravity/contact
-branches, per-action stage velocities and original secondary-counter behavior;
+All 114 unique Ghidra switch labels have explicit natural-C++ handlers. The
+original x87 inclusive ground-contact edge is preserved in the audited `0x91`,
+`0x9E`, `0xB4..0xB5`, `0xC9..0xCE` and `0xD0` actions. Low actions `6..9` now
+retain their separate command gates, gravity/contact branches, per-action stage
+velocities and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
 The structural comparison is expected to report a size mismatch (54,509 vs.

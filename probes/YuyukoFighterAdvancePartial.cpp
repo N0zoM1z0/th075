@@ -2800,7 +2800,7 @@ void YuyukoFighter::Advance() {
         }
         if (g_ThresholdAt0065782C <= y) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -2877,7 +2877,7 @@ void YuyukoFighter::Advance() {
         }
         if (g_ThresholdAt0065782C < y) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -2930,7 +2930,7 @@ void YuyukoFighter::Advance() {
         }
         if (g_ThresholdAt0065782C < y && animationStage > 0 && animationStage < 5) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -2955,7 +2955,7 @@ void YuyukoFighter::Advance() {
         }
         if (g_ThresholdAt0065782C < y && animationStage > 1) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -2985,7 +2985,7 @@ void YuyukoFighter::Advance() {
         }
         if (g_ThresholdAt0065782C < y && animationStage > 0) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -3016,7 +3016,7 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
         if (g_ThresholdAt0065782C < y) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3050,7 +3050,7 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
         if (g_ThresholdAt0065782C < y) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3084,7 +3084,7 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
         if (g_ThresholdAt0065782C < y) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3128,7 +3128,7 @@ void YuyukoFighter::Advance() {
         if (field05C == g_ThresholdAt0065782C)
             field05C = 0.6f;
         velocityY -= field05C;
-        if (y + velocityY < g_ThresholdAt0065782C) {
+        if (y + velocityY <= g_ThresholdAt0065782C) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -3151,7 +3151,7 @@ void YuyukoFighter::Advance() {
             return;
         }
         velocityY -= field05C;
-        if (y + velocityY < g_ThresholdAt0065782C) {
+        if (y + velocityY <= g_ThresholdAt0065782C) {
             scriptCounterF00 = static_cast<short>(velocityX * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>(velocityY * g_ContactProjectionAt00657888);
             ClearMotionFields();
