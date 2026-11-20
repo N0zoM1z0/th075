@@ -84,18 +84,19 @@ the first mismatch lies inside the state-838 entry itself.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 18,668-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 19,505-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, selected `0x12D..0x136`
 special-move phases, `0x187..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
-`0x19A`, `0x19C`, `0x19E`, `0x1A0`, and `0x8C`: horizontal drift,
+`0x19A`, `0x19C`, `0x19E`, `0x1A0`, action `700`, and `0x8C`: horizontal
+drift,
 bounce/landing
 transitions, projected velocity, direction-sensitive recovery, input-driven
 follow-ups, repeated barrage and resource/effect bursts, hit-stop/counter
 resets, and the shared animation advance path. Unimplemented action families
 still use the observed common default transition only as a research fallback;
 this is not a complete parent and receives no whole-function exactness credit.
-The structural comparison is expected to report a size mismatch (18,668 vs.
+The structural comparison is expected to report a size mismatch (19,505 vs.
 61,872 bytes).
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header

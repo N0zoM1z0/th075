@@ -36,6 +36,7 @@ extern float g_BarrageYAt00659298;
 extern float g_RepeatScaleAt006583E0;
 extern float g_RepeatScaleAt00658348;
 extern float g_BarrageXOffsetAt00657874;
+extern float g_Stage700EffectYOffsetAt00659460;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -1414,6 +1415,61 @@ void YuyukoFighter::Advance() {
         if (animationStage != 8 || animationFrame != 0)
             return;
         PlaySound(10);
+        return;
+
+    case 700:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 2 && animationFrame == 0) {
+            SetNonnegativeWord(0x28);
+            PlaySharedSound(0x17);
+            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, x, y + g_Stage700EffectYOffsetAt00659460,
+                facing, 1);
+        }
+        if (animationStage == 4 && animationFrame == 0) {
+            UpdateGaugeTimer(500);
+            PlaySound(4);
+            for (int burstIndex700 = 0; burstIndex700 < 12; ++burstIndex700) {
+                field314 = static_cast<float>(burstIndex700 * 30);
+                field318 = 8.0f;
+                field31C = 30.0f;
+                SpawnBattleEffect(0x323, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+
+                field314 = static_cast<float>(burstIndex700 * -30);
+                field318 = 8.0f;
+                field31C = -30.0f;
+                SpawnBattleEffect(0x323, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+
+                field314 = static_cast<float>(burstIndex700 * 30);
+                field318 = 7.0f;
+                field31C = 35.0f;
+                SpawnBattleEffect(0x323, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+
+                field314 = static_cast<float>(burstIndex700 * -30);
+                field318 = 7.0f;
+                field31C = -35.0f;
+                SpawnBattleEffect(0x323, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+            }
+        }
+        if (animationStage == 10 && animationFrame == 0 && scriptCounterF00 < 2) {
+            ++scriptCounterF00;
+            ResetSecondaryCounter(8);
+        }
+        if (animationStage != 12 || animationFrame != 0 || scriptCounterF02 > 1)
+            return;
+        ++scriptCounterF02;
+        ResetSecondaryCounter(10);
         return;
 
     case 0x8C:
