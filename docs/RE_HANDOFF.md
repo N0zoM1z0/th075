@@ -199,3 +199,12 @@ nonrelocation byte matches, and its two REL32 fields resolve to `004170B0` and
 owner or interface; the existing explicit-interface-destructor alternative
 remains byte-equivalent. Both functions therefore retain their prior origin and
 exactness dispositions.
+
+
+The orphaned 40-byte setter at `004135F0` now has a second natural-C++
+alternative in `probes/UnknownParameterStoreAt004135F0.cpp`. Its pinned VC7.1
+probe matches all 40 original bytes with zero relocations: one byte is stored
+at receiver +0x24 and two raw DWORD arguments at +0x1C/+0x20. The receiver's
+preceding 0x1C bytes are deliberately untyped; the evidence's FontSurface
+context does not yet prove the owner or whether the DWORDs are floats or raw
+integer bit patterns. It remains unclassified and receives no exact credit.
