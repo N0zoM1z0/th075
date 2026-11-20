@@ -1,8 +1,8 @@
 #include "Fighter.hpp"
 #include <windows.h>
 #include <string.h>
-// Borrow the native physical fighter input and command deque call boundary,
-// not a complete original fighter/VC7 container layout.
+// The input-history subobject begins with Fighter::inputHistory; its native
+// queue operation is exposed through a borrowed call-only interface.
 class FighterCommandQueueF303 {public: void Queue(int frames,const unsigned char* packed);};
 void Fighter::PackDirectionBits()
 {
@@ -16,5 +16,5 @@ void Fighter::PackDirectionBits()
     bits|=static_cast<unsigned char>(static_cast<unsigned int>(inputD)>0)<<7;
     unsigned int scratch[7];
     memset(scratch,0,sizeof(scratch));
-    reinterpret_cast<FighterCommandQueueF303*>(reinterpret_cast<unsigned char*>(this)+0x518)->Queue(90,&bits);
+    reinterpret_cast<FighterCommandQueueF303*>(&inputHistory)->Queue(90,&bits);
 }
