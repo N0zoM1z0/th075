@@ -49,7 +49,7 @@ case 0x2FB: {
         velocityY=0.0f;
         ++scriptCounterF00;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0x2F9);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);

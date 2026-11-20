@@ -11,7 +11,7 @@ case 0x191: {
             (facing),1);
         PlaySound(0);
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     return;
 }

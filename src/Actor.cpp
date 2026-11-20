@@ -6,16 +6,16 @@
 // (0040FA30-0040FC50, in address order).
 
 // Advances the frame counter through the current stage; returns the stage
-// reached when one completes, the stage count when the action wraps, else 0.
+// reached when one completes, animationStageCount when the action wraps, else 0.
 short Actor::AdvanceNestedFrame() {
     ++animationFrame;
-    if (animationFrame >= field072) {
+    if (animationFrame >= animationFrameCount) {
         animationFrame = 0;
         ++animationStage;
-        if (animationStage >= field070) {
+        if (animationStage >= animationStageCount) {
             animationStage = 0;
             BindAnimation();
-            return field070;
+            return animationStageCount;
         }
         BindAnimation();
         return animationStage;

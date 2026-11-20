@@ -7,7 +7,7 @@ case 0x192: {
         field07C=0;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0) {
         field314=3.0f;

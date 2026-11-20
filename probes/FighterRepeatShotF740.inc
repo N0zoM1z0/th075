@@ -9,7 +9,7 @@
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==6 && (animationFrame)==0) {
                 PlaySound(2);
@@ -40,7 +40,7 @@
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==6 && (animationFrame)==0) {
                 PlaySound(2);
@@ -80,7 +80,7 @@
                     (*(&y))+g_F740_ShotY2At00659A18,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(2);
             break;
         }

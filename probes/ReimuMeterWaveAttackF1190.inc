@@ -10,7 +10,7 @@ case R1190_ACTION: {
         UpdateGaugeTimer(500);
 #endif
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         SpawnBattleEffect(R1190_EFFECT,(*(&x))+g_ContactProjectionAt00657888+
             (facing*128),

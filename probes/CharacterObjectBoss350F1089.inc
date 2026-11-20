@@ -63,7 +63,7 @@ case 0x350: {
         owner->PlaySound(20);
         return;
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;
     }

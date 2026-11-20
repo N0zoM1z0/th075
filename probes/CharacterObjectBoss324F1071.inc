@@ -82,7 +82,7 @@ case 0x324: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

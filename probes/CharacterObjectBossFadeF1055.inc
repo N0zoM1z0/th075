@@ -17,7 +17,7 @@ case F1055_CASE: {
         color[0] -= 20;
     else
         color[0] = 0;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

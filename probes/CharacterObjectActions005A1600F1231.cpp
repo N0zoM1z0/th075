@@ -68,7 +68,7 @@ void YukariObject::Advance()
                         scaleX *= 0.9f;
                         scaleY *= 0.9f;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -88,7 +88,7 @@ void YukariObject::Advance()
         scaleX += 0.2f;
         scaleY += 0.2f;
         if (color[0] > 20) color[0] -= 20;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 802:
@@ -106,7 +106,7 @@ void YukariObject::Advance()
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 803:
@@ -129,7 +129,7 @@ void YukariObject::Advance()
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 804:
@@ -162,7 +162,7 @@ void YukariObject::Advance()
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 805:
@@ -183,7 +183,7 @@ void YukariObject::Advance()
         if ((owner->animationStage > 6 && owner->action == 700) || owner->action != 700) {
             ClearFrameInfo(); return;
         }
-        else if (AdvanceNestedFrame() == field070) {
+        else if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
             field07C = 0;
         }
@@ -245,7 +245,7 @@ void YukariObject::Advance()
             if (x > 1800.0f || x < -520.0f || y > 1400.0f || y < -520.0f) {
                 ClearFrameInfo(); return;
             }
-            else if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            else if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -262,7 +262,7 @@ void YukariObject::Advance()
             field080 = 1;
             rotationZ = field0C8;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 808:
@@ -291,7 +291,7 @@ void YukariObject::Advance()
             if (scaleX > 0.15f) scaleX -= 0.15f;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(6);
             ++field0D8;
             if (field0D8 > 1) field080 = 0;
@@ -324,7 +324,7 @@ void YukariObject::Advance()
             if (scaleX > 0.15f) scaleX -= 0.15f;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(6);
             ++field0D8;
             if (field0D8 > 2) field080 = 0;
@@ -341,7 +341,7 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 3 && animationFrame == 0)
             owner->SpawnBattleEffect(811, x, y - 220.0f, facing, 1);
         break;
@@ -377,7 +377,7 @@ void YukariObject::Advance()
                 if (color[0] > 15) color[0] -= 15;
                 else { ClearFrameInfo(); return; }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 6 && animationFrame == 0) {
                 velocityY = -18.0f;
                 owner->PlaySound(5);
@@ -431,7 +431,7 @@ void YukariObject::Advance()
                 ClearFrameInfo(); owner->fieldF0E = 0; return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) {
+                if (AdvanceNestedFrame() == animationStageCount) {
                     ClearFrameInfo(); owner->fieldF0E = 0; return;
                 }
                 else {
@@ -503,7 +503,7 @@ void YukariObject::Advance()
                 ClearFrameInfo(); owner->fieldF0E = 0; return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) {
+                if (AdvanceNestedFrame() == animationStageCount) {
                     ClearFrameInfo(); owner->fieldF0E = 0; return;
                 }
                 else {
@@ -574,7 +574,7 @@ void YukariObject::Advance()
         }
         x = facing * velocityX + x;
         y += velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ClearFrameInfo(); static_cast<YukariFighter*>(owner)->fieldF10 = 0; return;
         }
         else {
@@ -633,7 +633,7 @@ void YukariObject::Advance()
                 if (color[0] > 20) color[0] -= 20;
                 else { ClearFrameInfo(); return; }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0) {
                 ResetSecondaryCounter(2);
                 field07C = 0;
@@ -679,7 +679,7 @@ void YukariObject::Advance()
                 if (color[0] > 20) color[0] -= 20;
                 else { ClearFrameInfo(); return; }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0) {
                 ResetSecondaryCounter(2);
                 field07C = 0;
@@ -711,7 +711,7 @@ void YukariObject::Advance()
         }
         x = facing * velocityX + x;
         y += velocityY;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 819:
@@ -803,7 +803,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) { ResetSecondaryCounter(4); return; }
+            if (AdvanceNestedFrame() == animationStageCount) { ResetSecondaryCounter(4); return; }
             else {
                 if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
                 if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
@@ -836,7 +836,7 @@ void YukariObject::Advance()
         }
         x = facing * velocityX + x;
         y += velocityY;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 821:
@@ -928,7 +928,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) { ResetSecondaryCounter(4); return; }
+            if (AdvanceNestedFrame() == animationStageCount) { ResetSecondaryCounter(4); return; }
             else {
                 if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
                 if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
@@ -961,7 +961,7 @@ void YukariObject::Advance()
         }
         x = facing * velocityX + x;
         y += velocityY;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 823:
@@ -1053,7 +1053,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) { ResetSecondaryCounter(4); return; }
+            if (AdvanceNestedFrame() == animationStageCount) { ResetSecondaryCounter(4); return; }
             else {
                 if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
                 if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
@@ -1076,7 +1076,7 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 825:
@@ -1093,7 +1093,7 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 826:
@@ -1110,7 +1110,7 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 827:
@@ -1139,7 +1139,7 @@ void YukariObject::Advance()
                 if (color[0] > 20) color[0] -= 20;
                 else { ClearFrameInfo(); return; }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -1149,7 +1149,7 @@ void YukariObject::Advance()
             x = owner->x;
             y = owner->y;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 829:
@@ -1178,7 +1178,7 @@ void YukariObject::Advance()
                 scaleX -= 0.25f;
                 if (scaleX < 0.0f) scaleX = 0.0f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 1 && animationFrame == 0) scaleX = 0.05f;
         }
         break;
@@ -1213,7 +1213,7 @@ void YukariObject::Advance()
             if (color[0] > 30) color[0] -= 30;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 831:
@@ -1232,7 +1232,7 @@ void YukariObject::Advance()
         x = facing * velocityX + x;
         scaleX += 0.2f;
         scaleY *= 0.95f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 832:
@@ -1251,7 +1251,7 @@ void YukariObject::Advance()
         y += velocityY;
         scaleY += 0.2f;
         scaleX *= 0.95f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 833:
@@ -1277,7 +1277,7 @@ void YukariObject::Advance()
             if (scaleX > 0.15f) scaleX -= 0.15f;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(6);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(6);
         if (animationStage > 6 && animationFrame == 0 && field0D8 > 0) {
             --field0D8;
             owner->PlaySound(3);
@@ -1302,7 +1302,7 @@ void YukariObject::Advance()
             field0D8 = static_cast<YukariFighter*>(owner)->fieldF30 * 2 + 6;
             static_cast<YukariFighter*>(owner)->fieldF30 = 0;
         }
-        if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
         else {
             if (animationStage == 21 && animationFrame == 0 && field0D8 > 0)
                 ResetSecondaryCounter(10);
@@ -1371,7 +1371,7 @@ void YukariObject::Advance()
                         scaleX *= 0.9f;
                         scaleY *= 0.9f;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -1390,7 +1390,7 @@ void YukariObject::Advance()
             field0D8 = static_cast<YukariFighter*>(owner)->fieldF30 + 3;
             static_cast<YukariFighter*>(owner)->fieldF30 = 0;
         }
-        if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
         else {
             if (animationStage == 21 && animationFrame == 0 && field0D8 > 0)
                 ResetSecondaryCounter(10);
@@ -1460,7 +1460,7 @@ void YukariObject::Advance()
             if (x > 1800.0f || x < -520.0f || y > 1400.0f || y < -520.0f) {
                 ClearFrameInfo(); return;
             }
-            else if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            else if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -1484,7 +1484,7 @@ void YukariObject::Advance()
             scaleY += 0.01f;
             if (color[0] > 15) color[0] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 839:
@@ -1507,7 +1507,7 @@ void YukariObject::Advance()
             scaleY += 0.01f;
             if (color[0] > 15) color[0] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 840:
@@ -1530,7 +1530,7 @@ void YukariObject::Advance()
             scaleY += 0.01f;
             if (color[0] > 15) color[0] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 841:
@@ -1554,7 +1554,7 @@ void YukariObject::Advance()
             scaleY += 0.01f;
             if (color[0] > 15) color[0] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 842:
@@ -1579,7 +1579,7 @@ void YukariObject::Advance()
             scaleY += 0.01f;
             if (color[0] > 15) color[0] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 843:
@@ -1604,7 +1604,7 @@ void YukariObject::Advance()
             scaleY += 0.01f;
             if (color[0] > 15) color[0] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 844:
@@ -1621,7 +1621,7 @@ void YukariObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 900:
@@ -1668,7 +1668,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y -= velocityY;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(3);
                 field07C = 0;
                 field080 = 1;
@@ -1725,7 +1725,7 @@ void YukariObject::Advance()
                         scaleX *= 0.85f;
                         scaleY = scaleX;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -1760,7 +1760,7 @@ void YukariObject::Advance()
                         if (color[0] > 20) color[0] -= 20;
                         else { ClearFrameInfo(); return; }
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -1780,7 +1780,7 @@ void YukariObject::Advance()
                 rotationZ = -field0C8;
             }
             scaleY *= 0.95;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -1827,7 +1827,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y -= velocityY;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(3);
                 field07C = 0;
                 field080 = 1;
@@ -1879,7 +1879,7 @@ void YukariObject::Advance()
                 scaleY += 0.1f;
                 if (scaleX > 1.0f) { scaleX = 1.0f; scaleY = 1.0f; }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(1);
                 owner->field314 = rotationZ;
                 owner->SpawnBattleEffect(909, x, y, facing, 1);
@@ -1913,7 +1913,7 @@ void YukariObject::Advance()
                 scaleY += 0.1f;
                 if (scaleX > 1.0f) { scaleX = 1.0f; scaleY = 1.0f; }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(1);
                 owner->field314 = rotationZ;
                 owner->SpawnBattleEffect(909, x, y, facing, 1);
@@ -1949,7 +1949,7 @@ void YukariObject::Advance()
                 else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                    if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -1999,7 +1999,7 @@ void YukariObject::Advance()
             else {
                 x = facing * velocityX + x;
                 y += velocityY;
-                if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
             }
         }
         break;
@@ -2029,7 +2029,7 @@ void YukariObject::Advance()
             scaleY += 0.05f;
             if (color[0] > 10) color[0] -= 10;
             else { ClearFrameInfo(); return; }
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         }
         break;
 
@@ -2061,7 +2061,7 @@ void YukariObject::Advance()
                 else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                    if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -2112,7 +2112,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
                 ResetSecondaryCounter(1);
                 field07C = 0;
@@ -2143,7 +2143,7 @@ void YukariObject::Advance()
                 if (color[0] > 20) color[0] -= 20;
                 else { ClearFrameInfo(); return; }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -2161,7 +2161,7 @@ void YukariObject::Advance()
                 rotationZ = -field0C8;
             }
             scaleY *= 0.95;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -2179,7 +2179,7 @@ void YukariObject::Advance()
             }
             scaleX += 0.05f;
             scaleY *= 0.95;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 owner->PlaySound(23);
                 if (g_F1212_DifficultyAt006714D0 == 0)
@@ -2206,7 +2206,7 @@ void YukariObject::Advance()
             }
             scaleX += 0.5f;
             scaleY *= 0.95;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -2227,7 +2227,7 @@ void YukariObject::Advance()
             }
             scaleX += 0.5f;
             scaleY *= 0.95;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -2308,7 +2308,7 @@ void YukariObject::Advance()
                     if (field0E0 < 0) field0E0 = 3;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         }
         break;
 
@@ -2356,7 +2356,7 @@ void YukariObject::Advance()
                 owner->field318 = 5.0f;
                 owner->SpawnBattleEffect(923, x, y, 1, 1);
             }
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         }
         break;
 
@@ -2375,7 +2375,7 @@ void YukariObject::Advance()
         else color[0] = 0;
         scaleX *= 0.85f;
         scaleY *= 0.85f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 920:
@@ -2428,7 +2428,7 @@ void YukariObject::Advance()
             if (velocityY < 0.25f && velocityY > -0.25f) velocityY = 0.0f;
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         }
         break;
 
@@ -2460,7 +2460,7 @@ void YukariObject::Advance()
                 else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                    if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -2509,7 +2509,7 @@ void YukariObject::Advance()
                         y -= velocityY;
                         SetPolarVelocity(field0DA, field0D8 * 0.05f);
                     }
-                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                    if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -2557,7 +2557,7 @@ void YukariObject::Advance()
                         x = facing * velocityX + x;
                         y -= velocityY;
                     }
-                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                    if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -2607,7 +2607,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
                 ResetSecondaryCounter(1);
                 field07C = 0;
@@ -2659,7 +2659,7 @@ void YukariObject::Advance()
             }
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
                 ResetSecondaryCounter(1);
                 field07C = 0;
@@ -2669,12 +2669,12 @@ void YukariObject::Advance()
 
     case 988:
         if (owner->animationStage > 10) x = owner->x;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 989:
         if (owner->animationStage < 9) x = owner->x;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 995:
@@ -2714,7 +2714,7 @@ void YukariObject::Advance()
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2775,7 +2775,7 @@ void YukariObject::Advance()
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2804,7 +2804,7 @@ void YukariObject::Advance()
             scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2;
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
             rotationZ += 1.0f;
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(9);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(9);
         }
         break;
 
@@ -2838,7 +2838,7 @@ void YukariObject::Advance()
             return;
         }
         if (animationStage == 0) rotationZ -= 35.0f;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ClearFrameInfo();
             owner->fieldF0C = 0;
         }

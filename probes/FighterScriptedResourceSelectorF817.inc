@@ -22,7 +22,7 @@
                  || static_cast<unsigned int>(inputC)>0
                  || static_cast<unsigned int>(inputD)>0))
                 scriptCounterF00=2;
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0x5F);
                 if ((scriptCounterF00)==1) ResetPrimaryCounters(0x5D);
                 if ((scriptCounterF00)==2) ResetPrimaryCounters(0x5E);

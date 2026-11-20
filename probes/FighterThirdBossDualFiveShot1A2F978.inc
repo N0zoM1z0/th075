@@ -11,7 +11,7 @@ case 0x1A2: {
         field07C=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(2);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);

@@ -3,7 +3,7 @@
 // Authored as a real internal state in a still NONEXACT 82KB
 // original fighter parent; not a standalone game function.
         case 0x62: {
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0x5F);
                 if ((scriptCounterF00)==1)
                     ResetPrimaryCounters(0x5D);

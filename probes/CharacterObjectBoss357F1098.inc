@@ -39,7 +39,7 @@ case 0x357: {
         }
     }
     if (owner->field082==0 &&
-        AdvanceNestedFrame()==field070) {
+        AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;
     }

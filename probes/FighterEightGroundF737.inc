@@ -25,7 +25,7 @@
                        facing,1);
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(9);
             break;
         }
@@ -52,7 +52,7 @@
                        facing,1);
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(9);
             break;
         }

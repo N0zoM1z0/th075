@@ -19,7 +19,7 @@ case 0x1F7: {
         NativeGameEffectAt455B30();
         return;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         SpawnBattleEffect(0x337,x,y,

@@ -38,7 +38,7 @@ case 0xCA: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     break;
 }

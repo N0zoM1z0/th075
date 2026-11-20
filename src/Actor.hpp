@@ -168,8 +168,8 @@ public:
     unsigned char field068;             // +0x068
     unsigned char unknown069[0x06C - 0x069];
     float field06C;                     // +0x06C
-    short field070;                     // +0x070
-    short field072;                     // +0x072
+    short animationStageCount;                     // +0x070
+    short animationFrameCount;                     // +0x072
     // +0x074..0x07B is the animation binding that slot 0 maintains: fighters
     // and character objects keep two record pointers here, auxiliary
     // effects (CharacterAuxObject) keep four counters.

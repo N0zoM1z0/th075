@@ -14,7 +14,7 @@
                 ResetSecondaryCounter(6);
                 return;
             }
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             ResetSecondaryCounter(0);
             return;
@@ -26,7 +26,7 @@
                 field080 = 6;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);

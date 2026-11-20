@@ -105,7 +105,7 @@ case 0x2E6: {
             }
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
             RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);

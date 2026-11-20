@@ -63,7 +63,7 @@ case 0x34C: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;
     }

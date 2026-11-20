@@ -1,6 +1,6 @@
 case 0x2F9: {
 #include "ReimuMeterInitF1190.inc"
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=240-g_ReimuRepeatSettingAt006714D0*20;
     }

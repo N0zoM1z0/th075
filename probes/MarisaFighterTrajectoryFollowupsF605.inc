@@ -24,7 +24,7 @@ case 0x47: {
         PlaySharedSound(0x16);
         break;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(F605_LATE47);
     break;
 }
@@ -50,7 +50,7 @@ case 0x48: {
         PlaySharedSound(0x16);
         break;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(F605_LATE48);
     break;
 }

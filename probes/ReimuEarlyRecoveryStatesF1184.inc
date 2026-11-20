@@ -13,7 +13,7 @@ case 0x59: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(3);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(3);
     else if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=float(int(scriptCounterF00))*g_ReimuBounceXAt006590BC;
         velocityY=float(-int(scriptCounterF02))*g_ReimuBounceYAt00658044;
@@ -85,7 +85,7 @@ case 0x61: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0x62);
         if (field3CF==0) ResetPrimaryCounters(0x63);
     } else {

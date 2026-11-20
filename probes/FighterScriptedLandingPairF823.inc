@@ -27,7 +27,7 @@ case F633_CASE: {
     }
     if (CheckHorizontalLimits() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(F633_NEXT_ACTION);
     return;
 }

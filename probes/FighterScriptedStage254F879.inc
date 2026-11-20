@@ -11,7 +11,7 @@ case 0x254: {
         scriptCounterF00=0;
     }
 
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,

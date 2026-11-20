@@ -22,7 +22,7 @@
                     static_cast<float>(facing * 64) + x,
                     y + g_MarisaResourceYAt006581DC, facing, 1);
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(0x78, 0xB4) -
                     g_MarisaDifficultyAt006714D0 * 20);
@@ -75,7 +75,7 @@
                     static_cast<float>(facing * 64) + x,
                     y + g_MarisaResourceYAt006581DC, facing, 1);
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(0x78, 0xB4) -
                     g_MarisaDifficultyAt006714D0 * 20);
@@ -121,7 +121,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(12);
                 aiCardTimer = 0;
             }

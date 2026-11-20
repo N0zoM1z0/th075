@@ -24,7 +24,7 @@ case 0x2DD: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=RecordedRange(0,60);
     }

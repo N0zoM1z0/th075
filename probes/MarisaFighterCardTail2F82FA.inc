@@ -18,7 +18,7 @@ SpawnBattleEffect(0x330,
                 ClearMotionFields();
                 return;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0)
                 PlaySound(2);
@@ -62,7 +62,7 @@ SpawnBattleEffect(0x330,
                 ResetPrimaryCounters(0x2F9);
                 return;
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (scriptCounterF02 > 0 && g_MarisaDifficultyAt006714D0 < 2) {
                     ResetPrimaryCounters(0x2FA);
                     return;
@@ -99,7 +99,7 @@ SpawnBattleEffect(0x330,
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 2 && animationFrame == 0)
                 ResetSecondaryCounter(0);

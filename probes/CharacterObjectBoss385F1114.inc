@@ -29,7 +29,7 @@ case 0x385: {
     }
     if (animationStage>2)
         scaleX=(scaleX)*g_F1114_FadeAt00659240;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==3 && animationFrame==0) {
         if (field0D8<9) {

@@ -21,7 +21,7 @@ case 0xCE: {
         }
     }
     ++animationFrame;
-    if (animationFrame>=field072) {
+    if (animationFrame>=animationFrameCount) {
         animationFrame=0;
         ++animationStage;
         if (animationStage==3) {
@@ -32,7 +32,7 @@ case 0xCE: {
             field05C=0.7f;
             field3AC=0;
         }
-        if (animationStage>=field070)
+        if (animationStage>=animationStageCount)
             animationStage=animationStage-2;
         BindAnimation();
     }

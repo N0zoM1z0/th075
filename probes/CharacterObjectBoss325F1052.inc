@@ -28,7 +28,7 @@ case 0x325: {
         field07C=0;
         owner->PlaySound(0x17);
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

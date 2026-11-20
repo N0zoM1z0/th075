@@ -39,7 +39,7 @@ case 0x338: {
         owner->SpawnBattleEffect(
             0x337,x,y,
             facing,1);
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         if (field0D8<5 && field080>0) {
             field07C=0;
             ++field0D8;

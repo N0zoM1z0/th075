@@ -13,7 +13,7 @@ case R1188_ACTION: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         SpawnBattleEffect(0x32D,x,y,facing,1);
         PlaySound(3);

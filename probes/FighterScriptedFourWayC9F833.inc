@@ -19,7 +19,7 @@ case 0xC9: {
         velocityX=(velocityX)+g_AnimationDeltaAt0065747C;
         if ((velocityX)>g_ThresholdAt0065782C) velocityX=0.0f;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     return;
 }

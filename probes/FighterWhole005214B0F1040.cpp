@@ -106,7 +106,7 @@ void YoumuFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(2);
             break;
         case 0x2:
@@ -148,7 +148,7 @@ void YoumuFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             break;
         case 0x4: velocityX = 3.0f; goto native_script_shared_getter;
@@ -172,7 +172,7 @@ void YoumuFighter::Advance() {
             }
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 ResetSecondaryCounter(5);
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(11);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = 0.0f;
@@ -198,7 +198,7 @@ void YoumuFighter::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = 5.5f;
@@ -224,7 +224,7 @@ void YoumuFighter::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(13);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = -5.5f;
@@ -243,13 +243,13 @@ void YoumuFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(0);
         }
         break;
         case 0xA:
             ClearMotionFields();
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (inputY == 0)
                     ResetPrimaryCounters(0);
                 else

@@ -6,7 +6,7 @@
                 ClearMotionFields();
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 6 && animationFrame == 0) {
                 field314 = static_cast<float>(static_cast<int>(scriptCounterF00) << 3);
@@ -36,7 +36,7 @@
                 ClearMotionFields();
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 6 && animationFrame == 0) {
                 field314 = static_cast<float>(scriptCounterF00 * 8 + 30);
@@ -75,7 +75,7 @@
                 PlaySound(1);
                 UpdateGaugeTimer(20);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 7 && animationFrame == 0 &&
                 inputC != 0 && scriptCounterF00 <= 4) {
@@ -92,7 +92,7 @@
                 scriptCounterF00 = 0;
             }
             velocityY -= field05C;
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 6 && animationFrame == 0) {
                 velocityX = -3.0f;
@@ -125,7 +125,7 @@
                 scriptCounterF00 = 0;
             }
             velocityY -= field05C;
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 6 && animationFrame == 0) {
                 velocityX = -3.0f;
@@ -158,7 +158,7 @@
                 scriptCounterF00 = 0;
             }
             velocityY -= field05C;
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 6 && animationFrame == 0) {
                 velocityX = -3.0f;

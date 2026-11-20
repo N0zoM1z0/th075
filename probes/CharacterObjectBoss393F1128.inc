@@ -18,7 +18,7 @@ case 0x393: {
         field080=1;
         field07C=0;
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         if (field0D8<2-int(g_F1113_DifficultyAt006714D0))
             ++field0D8;
         else if (field0DA==0) {

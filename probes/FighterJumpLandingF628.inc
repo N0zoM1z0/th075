@@ -16,7 +16,7 @@ case F628_CASE: {
     }
     if (CheckHorizontalLimits() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(0);
     if (animationStage==3 && animationFrame==0 && scriptCounterF00<F628_LIMIT) {
         ++scriptCounterF00;

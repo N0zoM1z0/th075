@@ -14,7 +14,7 @@
                     field3AC = 0;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 scriptCounterF00 = 0;
             }
@@ -37,7 +37,7 @@
                     field3AC = 0;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(2);
             if (animationStage == 3 && animationFrame == 0)
                 PlaySharedSound(0x1B);
@@ -58,7 +58,7 @@
                     field3AC = 0;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(2);
             if (animationStage == 3 && animationFrame == 0)
                 PlaySharedSound(0x1C);
@@ -78,7 +78,7 @@
                 field080 = 1;
                 field07C = 0;
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(9);
                 return;
             }
@@ -107,7 +107,7 @@
                 field080 = 1;
                 field07C = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 2 && animationFrame == 0)
                 PlaySharedSound(0x1C);
@@ -138,7 +138,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 7 && animationFrame == 0) {
                 velocityX = 15.0f;
@@ -166,7 +166,7 @@
                     field3AC = 0;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 scriptCounterF00 = 0;
             }
@@ -189,7 +189,7 @@
                     field3AC = 0;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 scriptCounterF00 = 0;
             }
@@ -217,7 +217,7 @@
                 if (velocityX < g_ThresholdAt0065782C)
                     velocityX = 0.0f;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0)
                 velocityX = 12.0f;

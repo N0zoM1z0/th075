@@ -20,7 +20,7 @@ case 0xC8: {
         ResetPrimaryCounters(0xCF);
         break;
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         if ((facing)*inputX>0 && (scriptCounterF00)<3) {
             ResetSecondaryCounter(5);
             ++scriptCounterF00;
@@ -58,7 +58,7 @@ case 0xC9: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) ResetSecondaryCounter((animationStage)-2);
     break;
 }
@@ -81,7 +81,7 @@ case 0xCA: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(9);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(9);
     break;
 }
 case 0xCB: {
@@ -95,7 +95,7 @@ case 0xCB: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(8);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(8);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=-9.0f; velocityY=5.0f; field05C=0.45f;
         SpawnAuxEffect(0x7D,x,(*(&y))+g_ReimuCommandBackYAt006590A8,
@@ -147,6 +147,6 @@ case 0xD0: {
         ClearMotionFields();
         break;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(4);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(4);
     break;
 }

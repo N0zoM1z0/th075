@@ -16,7 +16,7 @@ case 0xD0: {
         ClearMotionFields();
         break;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(5);
     break;
 }

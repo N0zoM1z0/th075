@@ -31,7 +31,7 @@ case 0x188: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         // Actual original PE retains this inner stage 4 conditional,
@@ -60,7 +60,7 @@ case 0x189: {
             field3AC=0;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1C);

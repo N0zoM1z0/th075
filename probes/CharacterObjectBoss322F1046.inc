@@ -22,7 +22,7 @@ case 0x322: {
         color[3] = 0xFF;
         rotationZ = 15.0f;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 }

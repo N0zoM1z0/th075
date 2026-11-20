@@ -27,7 +27,7 @@ case 0x3E6: {
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
     if (animationStage==2)
         color[0]=unsigned char(color[0]-12);
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==2 && animationFrame==0)
         ResetSecondaryCounter(1);

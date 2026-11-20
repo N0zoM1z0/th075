@@ -17,7 +17,7 @@ case 0x49: {
         PlaySharedSound(0x16);
         break;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(animationStage-1);
     if (animationStage==1 && animationFrame==0 && velocityY != g_ThresholdAt0065782C) {
         // Real VC7.1 left lvalue preserves original FLD global; FLD member.

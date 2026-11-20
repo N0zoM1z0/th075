@@ -15,7 +15,7 @@ case 0x194: {
         velocityY=0.0f;
         return;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         field314=2.0f;

@@ -15,7 +15,7 @@ case 0xD1: {
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         if (static_cast<unsigned int>(inputD)>0)
             ResetSecondaryCounter(2);
         else

@@ -17,7 +17,7 @@ case 0x32: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
     break;
 }

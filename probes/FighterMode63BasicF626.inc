@@ -41,7 +41,7 @@ case 0x63: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(2);
     break;
 }

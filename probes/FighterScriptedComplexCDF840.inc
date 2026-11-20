@@ -19,7 +19,7 @@ case 0xCD: {
         }
     }
     ++animationFrame;
-    if (animationFrame>=field072) {
+    if (animationFrame>=animationFrameCount) {
         animationFrame=0;
         ++animationStage;
         if (animationStage==3) {
@@ -29,7 +29,7 @@ case 0xCD: {
             SpawnAuxEffect(0x3C,x,y,1,1);
             field3AC=0;
         }
-        if (animationStage>=field070)
+        if (animationStage>=animationStageCount)
             animationStage=animationStage-2;
         BindAnimation();
     }

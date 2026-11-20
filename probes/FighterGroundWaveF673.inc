@@ -26,7 +26,7 @@
                 }
             }
             if ((animationStage)==5 && (animationFrame)==0) SetCameraShake(2.0f);
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=15.0f;
                 field05C=0.85f;

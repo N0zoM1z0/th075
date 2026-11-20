@@ -69,7 +69,7 @@ case 0x355: {
     }
     y=y+velocityY;
     x=float(facing)*velocityX+x;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==0x1F && animationFrame==0) {
         if (field0DA<6) {

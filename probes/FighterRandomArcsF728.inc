@@ -35,7 +35,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(4);
@@ -76,7 +76,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(4);

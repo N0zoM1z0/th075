@@ -12,12 +12,12 @@ case F617_CASE: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ResetPrimaryCounters(0);
         if (inputY>0)
             ResetPrimaryCounters(1);
     }
-    if (animationStage==field070-1) {
+    if (animationStage==animationStageCount-1) {
         // The native first comparison only skips the first assignment,
         // not the second comparison: two independent original ifs.
         // Retain the genuine source member lvalue to recover VC7.1 x87

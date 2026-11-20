@@ -8,7 +8,7 @@ case 0x31C: {
         field07C=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==12 && (animationFrame)==0) {
         BeginFadeParameters(0);

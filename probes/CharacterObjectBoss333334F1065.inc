@@ -71,7 +71,7 @@ case F1065_ACTION: {
         ResetSecondaryCounter(0x17);
         return;
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;
     }

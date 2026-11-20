@@ -35,6 +35,6 @@ case 0x258: {
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
         }

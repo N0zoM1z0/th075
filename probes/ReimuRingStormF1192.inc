@@ -42,7 +42,7 @@ case 0x2DB: {
         ++scriptCounterF02;
         if ((scriptCounterF02)>2) scriptCounterF02=0;
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=300-g_ReimuRepeatSettingAt006714D0*20;
     }

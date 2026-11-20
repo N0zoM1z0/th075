@@ -19,7 +19,7 @@ case 0x2C0: {
     }
     if ((animationStage)>10)
         fieldF10=0x1A4;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
 
         ResetPrimaryCounters(0);
         Fighter::SpawnTrackedEffect(0x345,x,

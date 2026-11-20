@@ -5,6 +5,6 @@
 // and invokes real ResetPrimaryCounters(0) only on equality.
 // This is one *interior* of still-NONEXACT 00543210, not callable CODE.
 default:
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     break;

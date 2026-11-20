@@ -69,7 +69,7 @@
                 if ((velocityX)<g_ThresholdAt0065782C)
                     velocityX=0.0f;
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySound(5);

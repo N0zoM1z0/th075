@@ -17,7 +17,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 break;
             }
@@ -51,7 +51,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 break;
             }

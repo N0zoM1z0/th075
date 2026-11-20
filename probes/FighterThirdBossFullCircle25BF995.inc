@@ -237,7 +237,7 @@ case 0x25B: {
         scriptCounterF00=2;
         ++scriptCounterF02;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     break;
 }

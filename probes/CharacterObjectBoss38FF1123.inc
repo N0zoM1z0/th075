@@ -10,7 +10,7 @@ case 0x38F: {
         field080=1;
         field07C=0;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

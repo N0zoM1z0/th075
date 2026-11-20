@@ -89,7 +89,7 @@ case 0x35E: {
         float(field0D8)*g_F1057_SpeedScaleAt006590B4);
     x=float(facing)*velocityX+x;
     y=y-velocityY;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(1);
     return;
 }

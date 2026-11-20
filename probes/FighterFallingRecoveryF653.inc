@@ -14,7 +14,7 @@ case F653_ACTION: {
             field3AC=0;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(F653_NEXT_ACTION);
 #if F653_CLEAR_F00
         scriptCounterF00=0;

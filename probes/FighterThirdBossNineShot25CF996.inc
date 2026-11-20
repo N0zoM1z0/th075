@@ -13,7 +13,7 @@ case 0x25C: {
         scriptCounterF02=0;
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(0);

@@ -14,7 +14,7 @@
                 ClearMotionFields();
                 return;
             }
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             ResetSecondaryCounter(5);
             return;
@@ -32,7 +32,7 @@
                 SpawnBattleEffect(0x3E6, x,
                     y + g_ContactProjectionAt00657888, facing, 1);
             }
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             if (inputD != 0)
                 ResetSecondaryCounter(2);
@@ -55,7 +55,7 @@
                 PlaySharedSound(0x2C);
             }
             velocityY -= field05C * 0.25f;
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             if (inputD != 0)
                 ResetSecondaryCounter(2);

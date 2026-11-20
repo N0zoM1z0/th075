@@ -12,7 +12,7 @@ action32Special: {
                 }
                 if (CheckHorizontalLimits() && field3BE != 0)
                     field490 = velocityX * static_cast<float>(g_JumpReflectionAt006583E8);
-                if (AdvanceNestedFrame() == field070)
+                if (AdvanceNestedFrame() == animationStageCount)
                     ResetPrimaryCounters(0);
                 return;
 

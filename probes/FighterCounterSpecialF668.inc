@@ -14,7 +14,7 @@ case 0x252: {
                 scriptCounterF00=0;
             }
             if ((spiritCooldown)==0 && field07C==1) spirit=1000;
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
                     (*(&y))+g_ContactProjectionAt00657888,
@@ -34,7 +34,7 @@ case 0x252: {
                 scriptCounterF00=0;
             }
             if ((spiritCooldown)==0 && field07C==1) spirit=1000;
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
                     (*(&y))+g_ContactProjectionAt00657888,
@@ -54,7 +54,7 @@ case 0x252: {
                 field3AC=0;
                 scriptCounterF00=0;
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
                     (*(&y))+g_ContactProjectionAt00657888,

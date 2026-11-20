@@ -33,7 +33,7 @@ case 0x9E: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(9);
     return;
 }

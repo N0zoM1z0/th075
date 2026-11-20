@@ -25,7 +25,7 @@ case F642_CASE: {
     field490=(-scriptCounterF00)*g_ProjectileFallAt006590B4;
     if (scriptCounterF00>0)
         scriptCounterF00=scriptCounterF00-10;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(F642_NEXT_ACTION);
     break;
 }

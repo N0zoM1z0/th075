@@ -15,7 +15,7 @@
                 ResetSecondaryCounter(6);
                 return;
             }
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             ResetSecondaryCounter(0);
             return;
@@ -28,7 +28,7 @@
                 field080 = 6;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);
@@ -64,7 +64,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(3);
             if (animationStage == 4 && animationFrame == 0) {
                 velocityX = static_cast<float>(RecordedRange(0, 8)) +
@@ -98,7 +98,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(12);
                 aiCardTimer = 0;
             }
@@ -129,7 +129,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 2 && animationFrame == 0)
                 ResetSecondaryCounter(0);
@@ -142,7 +142,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 4 && animationFrame == 0) {
                 BeginFadeParameters(0);
@@ -166,7 +166,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 16 && animationFrame == 0) {
                 BeginFadeParameters(0);

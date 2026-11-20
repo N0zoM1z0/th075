@@ -5,7 +5,7 @@
                 ClearMotionFields();
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage != 6 || animationFrame != 0)
                 return;
@@ -24,7 +24,7 @@
                 velocityX *= g_BounceScaleAt00657F74;
                 velocityY *= g_BounceScaleAt00657F74;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage != 6 || animationFrame != 0)
                 return;
@@ -43,7 +43,7 @@
                 velocityX *= g_BounceScaleAt00657F74;
                 velocityY *= g_BounceScaleAt00657F74;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage != 6 || animationFrame != 0)
                 return;
@@ -81,7 +81,7 @@
                     y + g_MarisaResourceYAt0065928C, facing, 1);
                 PlaySound(5);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }
@@ -111,7 +111,7 @@
                     y + g_MarisaResourceYAt0065928C, facing, 1);
                 PlaySound(5);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }

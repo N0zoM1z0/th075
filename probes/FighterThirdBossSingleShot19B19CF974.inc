@@ -26,7 +26,7 @@ case 0x19B: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     break;
 }
@@ -51,7 +51,7 @@ case 0x19C: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     break;
 }

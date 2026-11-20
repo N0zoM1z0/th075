@@ -39,7 +39,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(0, 60) + 180 -
                     g_MarisaDifficultyAt006714D0 * 30);
@@ -79,7 +79,7 @@
                         y + g_MarisaResourceYAt00659274, facing, 1);
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(60, 120) -
                     g_MarisaDifficultyAt006714D0 * 20);
@@ -124,7 +124,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(60, 180) -
                     g_MarisaDifficultyAt006714D0 * 20);
@@ -161,7 +161,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(3);
             if (animationStage == 4 && animationFrame == 0) {
                 velocityX = static_cast<float>(RecordedRange(0, 8)) +

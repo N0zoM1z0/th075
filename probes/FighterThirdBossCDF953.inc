@@ -24,7 +24,7 @@ case 0xCD: {
         velocityY<g_ExtraThresholdAt00657D14)
         ResetSecondaryCounter(5);
     ++animationFrame;
-    if (animationFrame>=field072) {
+    if (animationFrame>=animationFrameCount) {
         animationFrame=0;
         ++animationStage;
         if (animationStage==2) {
@@ -35,7 +35,7 @@ case 0xCD: {
             field05C=0.7f;
             field3AC=0;
         }
-        if (animationStage>=field070)
+        if (animationStage>=animationStageCount)
             animationStage=animationStage-2;
         BindAnimation();
     }

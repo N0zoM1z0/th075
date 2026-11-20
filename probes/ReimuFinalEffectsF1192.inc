@@ -3,7 +3,7 @@ case 0x31B: {
         scriptCounterF00=0; field07C=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         BeginFadeParameters(0);
         SelectResourceParameters();
@@ -22,7 +22,7 @@ case 0x31C: {
         scriptCounterF00=0; field07C=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         if (field370[field39D]==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;

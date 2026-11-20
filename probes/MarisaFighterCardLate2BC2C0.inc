@@ -21,7 +21,7 @@
                     static_cast<float>(facing * 64) + x,
                     y + g_MarisaResourceYAt006581DC, facing, 1);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 6 && animationFrame == 0) {
                 ResetPrimaryCounters(0x2BD);
@@ -70,7 +70,7 @@
                 field05C = 0.5f;
                 y = 400.0f;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 2 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);

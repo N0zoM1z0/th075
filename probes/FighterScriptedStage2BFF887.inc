@@ -13,7 +13,7 @@ case 0x2BF: {
         field080=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationFrame)==0)
         field07C=0;

@@ -12,7 +12,7 @@ case R1190_ACTION: {
         }
     }
 #endif
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);

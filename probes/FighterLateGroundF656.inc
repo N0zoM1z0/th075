@@ -12,7 +12,7 @@
                 field080=1;
                 field07C=0;
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
             if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1C);
             if ((animationStage)==5 && (animationFrame)==0) {
                 field080=1;

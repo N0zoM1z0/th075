@@ -145,7 +145,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ResetSecondaryCounter(5);
             break;
         }
@@ -223,7 +223,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ResetSecondaryCounter(5);
             break;
         }
@@ -301,7 +301,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ResetSecondaryCounter(5);
             break;
         }
@@ -381,7 +381,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070))
+        if (AdvanceNestedFrame() == (animationStageCount))
             ResetSecondaryCounter(1);
     }
     break;
@@ -416,7 +416,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -459,7 +459,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070))
+        if (AdvanceNestedFrame() == (animationStageCount))
             ResetSecondaryCounter(1);
     }
     break;
@@ -486,7 +486,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -511,7 +511,7 @@ void AliceObject::Advance() {
     scaleX = (scaleX) + gFadeAt00659428;
     scaleY = (scaleY) + gFadeAt00659428;
     color[0] -= 10;
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -562,7 +562,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ClearFrameInfo();
             break;
         }
@@ -637,7 +637,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ClearFrameInfo();
             break;
         }
@@ -712,7 +712,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ClearFrameInfo();
             break;
         }
@@ -796,7 +796,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ResetSecondaryCounter(10);
             ++field0D8;
             break;
@@ -854,7 +854,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     if ((animationStage) == 2 && (animationFrame) == 0)
         owner->SpawnBattleEffect(0x339, x, y, facing, 1);
@@ -889,7 +889,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -915,7 +915,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -939,7 +939,7 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         break;
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -982,7 +982,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070)) {
+    if (AdvanceNestedFrame() == (animationStageCount)) {
         ResetSecondaryCounter(1);
         break;
     }
@@ -1027,7 +1027,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070)) {
+    if (AdvanceNestedFrame() == (animationStageCount)) {
         ResetSecondaryCounter(1);
         break;
     }
@@ -1062,7 +1062,7 @@ void AliceObject::Advance() {
                   * gScatterRateAt006578C0 + gScatterBaseAt006581E0;
     if ((animationStage) == 7)
         scaleY = (scaleY) * gShrinkAt00659094;
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     if ((animationStage) == 7 && (animationFrame) == 0 && (field0D8) < 10) {
         ResetSecondaryCounter(6);
@@ -1092,7 +1092,7 @@ void AliceObject::Advance() {
         color[3] = 0xFF;
         field080 = 25;
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     if ((animationFrame) == 0)
         field07C = 0;
@@ -1141,7 +1141,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ResetSecondaryCounter(1);
     break;
 }
@@ -1184,7 +1184,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ResetSecondaryCounter(1);
     break;
 }
@@ -1213,7 +1213,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 3 && (animationFrame) == 0)
         owner->SpawnBattleEffect(0x343, x, y, facing, 1);
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -1246,7 +1246,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -1272,7 +1272,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame() == (field070))
+    if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -1298,7 +1298,7 @@ void AliceObject::Advance() {
             ClearFrameInfo();
             break;
         }
-        if (AdvanceNestedFrame() == (field070))
+        if (AdvanceNestedFrame() == (animationStageCount))
             ResetSecondaryCounter(6);
         break;
     }
@@ -1332,7 +1332,7 @@ void AliceObject::Advance() {
         if ((field0DA) < 140) field0DA += 7;
         if ((field0DA) > 140) field0DA = 140;
     }
-    if (AdvanceNestedFrame() == (field070)) ResetSecondaryCounter(6);
+    if (AdvanceNestedFrame() == (animationStageCount)) ResetSecondaryCounter(6);
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
         ResetSecondaryCounter(2);
@@ -1361,7 +1361,7 @@ void AliceObject::Advance() {
             velocityX = 0.0f;
     }
     x += facing * (velocityX);
-    if (AdvanceNestedFrame() == (field070)) {
+    if (AdvanceNestedFrame() == (animationStageCount)) {
         ClearFrameInfo();
         (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
     }
@@ -1393,7 +1393,7 @@ void AliceObject::Advance() {
             ClearFrameInfo();
             break;
         }
-        if (AdvanceNestedFrame() == (field070))
+        if (AdvanceNestedFrame() == (animationStageCount))
             ResetSecondaryCounter(6);
         break;
     }
@@ -1427,7 +1427,7 @@ void AliceObject::Advance() {
         if ((field0DA) < 120) field0DA += 6;
         if ((field0DA) > 120) field0DA = 120;
     }
-    if (AdvanceNestedFrame() == (field070)) ResetSecondaryCounter(6);
+    if (AdvanceNestedFrame() == (animationStageCount)) ResetSecondaryCounter(6);
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
         ResetSecondaryCounter(2);
@@ -1457,7 +1457,7 @@ void AliceObject::Advance() {
             ClearFrameInfo();
             break;
         }
-        if (AdvanceNestedFrame() == (field070))
+        if (AdvanceNestedFrame() == (animationStageCount))
             ResetSecondaryCounter(6);
         break;
     }
@@ -1491,7 +1491,7 @@ void AliceObject::Advance() {
         if ((field0DA) < 200) field0DA += 10;
         if ((field0DA) > 200) field0DA = 200;
     }
-    if (AdvanceNestedFrame() == (field070)) ResetSecondaryCounter(6);
+    if (AdvanceNestedFrame() == (animationStageCount)) ResetSecondaryCounter(6);
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
         ResetSecondaryCounter(2);
@@ -1520,7 +1520,7 @@ void AliceObject::Advance() {
             velocityX = 0.0f;
     }
     x += facing * (velocityX);
-    if (AdvanceNestedFrame() == (field070)) {
+    if (AdvanceNestedFrame() == (animationStageCount)) {
         ClearFrameInfo();
         (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
     }
@@ -1586,7 +1586,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ClearFrameInfo();
             break;
         }
@@ -1660,7 +1660,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ClearFrameInfo();
             break;
         }
@@ -1732,7 +1732,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame() == (field070)) {
+        if (AdvanceNestedFrame() == (animationStageCount)) {
             ClearFrameInfo();
             break;
         }
@@ -1822,7 +1822,7 @@ void AliceObject::Advance() {
                 break;
             }
         }
-        if (AdvanceNestedFrame()==(field070))
+        if (AdvanceNestedFrame()==(animationStageCount))
             ResetSecondaryCounter(1);
     }
     break;
@@ -1870,7 +1870,7 @@ void AliceObject::Advance() {
             velocityX=2.0f;
         x += facing*(velocityX);
         y = y+velocityY;
-        if (AdvanceNestedFrame()==(field070)) {
+        if (AdvanceNestedFrame()==(animationStageCount)) {
             ResetSecondaryCounter(1);
             ++field0D8;
         }
@@ -1922,7 +1922,7 @@ void AliceObject::Advance() {
             velocityX=2.0f;
         x += facing*(velocityX);
         y = y+velocityY;
-        if (AdvanceNestedFrame()==(field070)) {
+        if (AdvanceNestedFrame()==(animationStageCount)) {
             ClearFrameInfo();
         }
     }
@@ -1950,7 +1950,7 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         break;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -1967,7 +1967,7 @@ void AliceObject::Advance() {
         rotationX=-65.0f;
     }
     rotationZ = (rotationZ)-gSubtractAt00659728;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -2005,7 +2005,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetSecondaryCounter(1);
     break;
 }
@@ -2048,7 +2048,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     if ((animationStage)==2 && (animationFrame)==0)
         owner->SpawnBattleEffect(0x386,x,y,facing,1);
@@ -2085,7 +2085,7 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         break;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -2115,7 +2115,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -2143,7 +2143,7 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         break;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -2195,7 +2195,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetSecondaryCounter(8);
         break;
     }
@@ -2256,7 +2256,7 @@ void AliceObject::Advance() {
     SetPolarVelocity(field0DC,4.0f);
     x += facing*(velocityX);
     y = y - velocityY;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         if ((field0D8)<gGlobalActorCountAt006714D0*5+10) {
             ++field0D8;
             ResetSecondaryCounter(1);
@@ -2305,7 +2305,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ClearFrameInfo();
         break;
     }
@@ -2355,7 +2355,7 @@ void AliceObject::Advance() {
         rotationZ = AngleAt00483300(field0D0,field0C8) / gAngleUnitAt00657828;
     }
     scaleY=(scaleY)*gMulDoubleAt00659730;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -2402,7 +2402,7 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     if ((animationStage)==4 && (animationFrame)==0 && (field0D8)<5) {
         ++field0D8;
@@ -2438,7 +2438,7 @@ void AliceObject::Advance() {
         field07C=0;
         ++field080;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
 }
@@ -2483,7 +2483,7 @@ void AliceObject::Advance() {
     }
     x=x+velocityX;
     y=y-velocityY;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetSecondaryCounter(1);
     break;
 }
@@ -2545,7 +2545,7 @@ void AliceObject::Advance() {
     }
     x=x+velocityX;
     y=y-velocityY;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetSecondaryCounter(1);
     break;
 }
@@ -2574,7 +2574,7 @@ void AliceObject::Advance() {
     scaleX=static_cast<float>((owner->field3A0))/(field0D8)*2.0f;
     scaleY=static_cast<float>((owner->field3A0))/(field0D8)*2.0f;
     rotationZ=(rotationZ)+gCompareAt0065747C;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetSecondaryCounter(9);
         break;
     }

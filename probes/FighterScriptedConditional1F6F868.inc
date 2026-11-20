@@ -20,7 +20,7 @@ case 0x1F6: {
         NativeGameEffectAt455B30();
         return;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=14.0f;

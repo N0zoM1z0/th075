@@ -18,7 +18,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(3);
             else if (animationStage == 3 && animationFrame == 0) {
                 velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;

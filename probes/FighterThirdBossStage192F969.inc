@@ -40,7 +40,7 @@ case 0x192: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(2);
     break;
 }

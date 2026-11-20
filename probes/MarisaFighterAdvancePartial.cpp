@@ -370,7 +370,7 @@ void MarisaFighterAdvanceProbe::Advance() {
         goto switchDefault;
 #include "MarisaFighterAction32SpecialBody.inc"
 switchDefault:
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
     return;
 

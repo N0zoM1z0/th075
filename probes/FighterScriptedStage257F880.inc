@@ -9,7 +9,7 @@ case 0x257: {
         field3AC=0;
         scriptCounterF00=0;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,

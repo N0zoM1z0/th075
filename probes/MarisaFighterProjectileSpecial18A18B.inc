@@ -11,7 +11,7 @@
                 velocityX = 0.0f;
                 field3AC = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 5 && animationFrame == 0) {
                 SpawnBattleEffect(0x327,
@@ -35,7 +35,7 @@
                     field3AC = 0;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(2);
             if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 2) {
                 ++scriptCounterF00;

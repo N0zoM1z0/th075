@@ -67,7 +67,7 @@ case 0x356: {
         ResetSecondaryCounter(0x17);
         return;
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;
     }

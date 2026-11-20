@@ -27,7 +27,7 @@ case 0x2C2: {
             (facing),1);
         PlaySound(0xE);
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetSecondaryCounter(0x10);
     if ((animationStage)<9 && (animationFrame)==0) {
         SpawnBattleEffect(0x34B,opponent->x,

@@ -134,7 +134,7 @@ void RemiliaFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(2);
             break;
         case 0x2:
@@ -176,7 +176,7 @@ void RemiliaFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             break;
         case 0x4: velocityX = 6.5f; goto native_shared_getter;
@@ -201,7 +201,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 3 && velocityY < g_ExtraThresholdAt00657D14)
                 ResetSecondaryCounter(4);
             ++animationFrame;
-            if (animationFrame >= (field072)) {
+            if (animationFrame >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if (animationStage == 3) {
@@ -209,7 +209,7 @@ void RemiliaFighter::Advance() {
                     velocityY = 19.0f;
                     field05C = 0.95f;
                 }
-                if (animationStage >= (field070))
+                if (animationStage >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -234,7 +234,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 ResetSecondaryCounter(5);
             ++animationFrame;
-            if (animationFrame >= (field072)) {
+            if (animationFrame >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if (animationStage == 3) {
@@ -242,7 +242,7 @@ void RemiliaFighter::Advance() {
                     velocityY = 18.0f;
                     field05C = 0.95f;
                 }
-                if (animationStage >= (field070))
+                if (animationStage >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -267,7 +267,7 @@ void RemiliaFighter::Advance() {
                 }
             }
             ++animationFrame;
-            if (animationFrame >= (field072)) {
+            if (animationFrame >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if (animationStage == 3) {
@@ -276,7 +276,7 @@ void RemiliaFighter::Advance() {
                     velocityY = 18.0f;
                     field05C = 0.95f;
                 }
-                if (animationStage >= (field070))
+                if (animationStage >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -291,7 +291,7 @@ void RemiliaFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -299,7 +299,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0)
                 PlaySharedSound(30);
             ClearMotionFields();
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (inputY == 0)
                     ResetPrimaryCounters(3);
                 else
@@ -717,7 +717,7 @@ void RemiliaFighter::Advance() {
                 Fighter::SpawnTrackedEffect(0x334,x,y,
                     facing,1,0,1);
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if (animationStage==12 && animationFrame==0) {
                 SpawnBattleEffect(0x328,
@@ -760,7 +760,7 @@ void RemiliaFighter::Advance() {
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if (animationFrame==0)
                 field07C=0;
@@ -823,7 +823,7 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage==5 && animationFrame==0)
                 SetCameraShake(5.0f);
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if (animationStage==4 && animationFrame==0) {
                 velocityY=15.0f;
@@ -868,7 +868,7 @@ void RemiliaFighter::Advance() {
                 Fighter::SpawnTrackedEffect(0x334,x,y,
                     facing,1,0,1);
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if (animationStage==12 && animationFrame==0) {
                 UpdateGaugeTimer(750);
@@ -913,7 +913,7 @@ void RemiliaFighter::Advance() {
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if (animationFrame==0)
                 field07C=0;

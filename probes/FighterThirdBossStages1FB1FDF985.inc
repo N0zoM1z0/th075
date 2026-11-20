@@ -46,7 +46,7 @@ case 0x1FB: {
         velocityY=0.0f;
         ++scriptCounterF00;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
@@ -132,7 +132,7 @@ case 0x1FC: {
         velocityY=0.0f;
         ++scriptCounterF00;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
@@ -218,7 +218,7 @@ case 0x1FD: {
         velocityY=0.0f;
         ++scriptCounterF00;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);

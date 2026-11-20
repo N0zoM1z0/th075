@@ -12,7 +12,7 @@
                 Fighter::SpawnTrackedEffect(0x38E,x,y,
                     facing,1,0,1);
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=static_cast<short>(RecordedRange(60,80)
                    -static_cast<int>(g_CloudOpponentAt006714D0)*20);

@@ -5,7 +5,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);
@@ -26,7 +26,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);
@@ -49,7 +49,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 5 && animationFrame == 0)
                 PlaySound(0x10);
@@ -63,7 +63,7 @@
                 velocityX *= g_MarisaCardVelocityScaleAt006590B4;
                 velocityY *= g_MarisaCardVelocityScaleAt006590B4;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 5 && animationFrame == 0)
                 PlaySound(0x10);
@@ -84,7 +84,7 @@
                     static_cast<float>(facing * 64) + x,
                     y + g_MarisaResourceYAt006581DC, facing, 1);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 2 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);
@@ -126,7 +126,7 @@
                 field3A0 = 1;
                 return;
             }
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             ResetSecondaryCounter(0);
             return;
@@ -138,7 +138,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);
@@ -159,7 +159,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);
@@ -182,7 +182,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 5 && animationFrame == 0)
                 PlaySound(6);
@@ -196,7 +196,7 @@
                 velocityX *= g_MarisaCardVelocityScaleAt006590B4;
                 velocityY *= g_MarisaCardVelocityScaleAt006590B4;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 5 && animationFrame == 0)
                 PlaySound(6);
@@ -210,7 +210,7 @@
                 ClearMotionFields();
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             ResetPrimaryCounters(0);
             return;
@@ -224,7 +224,7 @@
                 field07C = 1;
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() != field070)
+            if (AdvanceNestedFrame() != animationStageCount)
                 return;
             ResetPrimaryCounters(9);
             return;

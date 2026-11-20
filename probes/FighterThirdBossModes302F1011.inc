@@ -31,7 +31,7 @@ case 0x302: {
             ResetSecondaryCounter(15);
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
             RecordedRange(0,60)+180-g_F1004_ModeAt006714D0*20);

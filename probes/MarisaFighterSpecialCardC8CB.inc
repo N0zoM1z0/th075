@@ -24,7 +24,7 @@
                 ResetPrimaryCounters(0xCF);
                 return;
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (static_cast<int>(facing) * inputX > 0 && scriptCounterF00 < 2) {
                     ResetSecondaryCounter(4);
                     ++scriptCounterF00;
@@ -72,7 +72,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage != 5 || animationFrame != 0)
                 return;
@@ -110,7 +110,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(9);
                 return;
             }
@@ -137,7 +137,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 1 && animationFrame == 0) {
                 velocityX = -10.5f;

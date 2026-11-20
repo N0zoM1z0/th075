@@ -24,7 +24,7 @@
                 velocityX=0.0f;
                 y=0.0f;
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(9);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(2);
@@ -71,7 +71,7 @@
                 velocityX=0.0f;
                 y=0.0f;
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(9);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(2);

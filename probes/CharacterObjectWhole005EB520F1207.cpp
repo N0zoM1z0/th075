@@ -49,7 +49,7 @@ void MeilingObject::Advance() {
                 color[3] = 255;
                 field0D8 = 10;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 801:
@@ -90,7 +90,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 802:
@@ -127,7 +127,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 803:
@@ -194,7 +194,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0 && owner->action == 600 && owner->animationStage < 8) {
                 ResetSecondaryCounter(2);
                 ++field0D8;
@@ -272,7 +272,7 @@ void MeilingObject::Advance() {
                 }
                 x += facing * velocityX;
                 y += velocityY;
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 2 && animationFrame == 0 && field080 > 0 && field0DA < 20) {
                     ResetSecondaryCounter(1);
                     ++field0D8;
@@ -326,7 +326,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 806:
@@ -344,7 +344,7 @@ void MeilingObject::Advance() {
             x = owner->x;
             y = owner->y + 100.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 807:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
@@ -384,7 +384,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 808:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
@@ -423,7 +423,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 809:
         if (x > 1580.0f || x < -300.0f) {
@@ -504,7 +504,7 @@ void MeilingObject::Advance() {
                 }
                 x += facing * velocityX;
                 y += velocityY;
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 2 && animationFrame == 0) {
                     velocityX = 18.5f;
                     scaleX = 0.6f;
@@ -551,7 +551,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 811:
@@ -615,7 +615,7 @@ void MeilingObject::Advance() {
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     }
                 }
             }
@@ -682,7 +682,7 @@ void MeilingObject::Advance() {
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     }
                 }
             }
@@ -749,7 +749,7 @@ void MeilingObject::Advance() {
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     }
                 }
             }
@@ -816,7 +816,7 @@ void MeilingObject::Advance() {
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     }
                 }
             }
@@ -883,7 +883,7 @@ void MeilingObject::Advance() {
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     }
                 }
             }
@@ -950,7 +950,7 @@ void MeilingObject::Advance() {
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     }
                 }
             }
@@ -1017,7 +1017,7 @@ void MeilingObject::Advance() {
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     }
                 }
             }
@@ -1052,7 +1052,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 819:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1083,7 +1083,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 820:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1114,7 +1114,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 821:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1145,7 +1145,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 822:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1176,7 +1176,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 823:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1207,7 +1207,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 824:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1238,7 +1238,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 825:
         if (field07C == 5) {
@@ -1299,7 +1299,7 @@ void MeilingObject::Advance() {
                     SetPolarVelocity(0.0f, field0DA * 0.01f);
                     x += facing * velocityX;
                     y += velocityY;
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     if (animationStage == 26 && animationFrame == 0 && field0D8 < 2) {
                         ++field0D8;
                         ResetSecondaryCounter(13);
@@ -1367,7 +1367,7 @@ void MeilingObject::Advance() {
                     SetPolarVelocity(0.0f, field0DA * 0.01f);
                     x += facing * velocityX;
                     y += velocityY;
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     if (animationStage == 26 && animationFrame == 0 && field0D8 < 3) {
                         ++field0D8;
                         ResetSecondaryCounter(13);
@@ -1435,7 +1435,7 @@ void MeilingObject::Advance() {
                     SetPolarVelocity(-30.0f, field0DA * 0.01f);
                     x += facing * velocityX;
                     y += velocityY;
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     if (animationStage == 26 && animationFrame == 0 && field0D8 < 3) {
                         ++field0D8;
                         ResetSecondaryCounter(13);
@@ -1473,7 +1473,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 829:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1505,7 +1505,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 830:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1536,7 +1536,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 831:
         if (x > 1380.0f || x < -100.0f) {
@@ -1572,7 +1572,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
                 owner->SpawnBattleEffect(832, x, y, facing, 1);
                 owner->SpawnBattleEffect(833, x, y, facing, 1);
@@ -1617,7 +1617,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 833:
@@ -1656,7 +1656,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 834:
@@ -1692,7 +1692,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 835:
@@ -1725,7 +1725,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 836:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1757,7 +1757,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 837:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1790,7 +1790,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 838:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1819,7 +1819,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 839:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1848,7 +1848,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 840:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1865,7 +1865,7 @@ void MeilingObject::Advance() {
             x = owner->x;
             y = owner->y + 100.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 841:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
@@ -1905,7 +1905,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 842:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
@@ -1944,7 +1944,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 843:
         if (x > 1580.0f || x < -300.0f) {
@@ -2036,7 +2036,7 @@ void MeilingObject::Advance() {
                 }
                 x += facing * velocityX;
                 y += velocityY;
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 3 && animationFrame == 0) {
                     ResetSecondaryCounter(2);
                     field07C = 0;
@@ -2081,7 +2081,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 845:
@@ -2095,7 +2095,7 @@ void MeilingObject::Advance() {
             scaleY = 1.0f;
             field0D8 = 1;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 846:
         if (owner->action == 305) {
@@ -2107,7 +2107,7 @@ void MeilingObject::Advance() {
             return;
         }
         if (owner->field082 == 0) {
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
     case 847:
@@ -2140,7 +2140,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 848:
         if (animationStage == 0 && animationFrame == 0) {
@@ -2172,7 +2172,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 849:
         if (animationStage == 0 && animationFrame == 0) {
@@ -2205,7 +2205,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 850:
         if (animationStage == 0 && animationFrame == 0) {
@@ -2233,7 +2233,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 990:
         if (static_cast<MeilingFighter*>(owner)->fieldF2A == 0 && animationStage < 2) {
@@ -2279,7 +2279,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 return;
             }
@@ -2330,7 +2330,7 @@ void MeilingObject::Advance() {
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 return;
             }
@@ -2362,7 +2362,7 @@ void MeilingObject::Advance() {
             scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2 + 1.0f;
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2 + 1.0f;
             rotationZ -= 1.0f;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(1);
                 return;
             }
@@ -2393,7 +2393,7 @@ void MeilingObject::Advance() {
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             }
         }
         break;
@@ -2448,7 +2448,7 @@ void MeilingObject::Advance() {
                 if (animationStage == 0 || animationStage == 7) {
                     rotationZ -= 35.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             }
         }
         break;
@@ -2489,7 +2489,7 @@ void MeilingObject::Advance() {
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2549,7 +2549,7 @@ void MeilingObject::Advance() {
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2579,7 +2579,7 @@ void MeilingObject::Advance() {
             scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2;
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
             rotationZ += 1.0f;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(10);
                 break;
             }
@@ -2625,7 +2625,7 @@ void MeilingObject::Advance() {
                 return;
             }
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;

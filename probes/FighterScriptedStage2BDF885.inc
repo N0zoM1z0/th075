@@ -39,7 +39,7 @@ case 0x2BD: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);

@@ -17,7 +17,7 @@ case 0x12F: {
         velocityX=(velocityX)-g_FallingLateDragAt00659240;
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=25.0f;
         PlaySharedSound(0x1D);
@@ -38,7 +38,7 @@ case 0x130: {
         field080=1;
         field07C=0;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1D);
     if ((animationStage)==3 && (animationFrame)==0)
         SpawnBattleEffect(0x339,x,y,

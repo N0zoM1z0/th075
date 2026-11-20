@@ -3,7 +3,7 @@
 // Whole 46755B original fighter NONEXACT; this is not an independent callable leaf.
 case 0x2C3: {
     ClearMotionFields();
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         if (inputY==0)
             ResetPrimaryCounters(0);
         else

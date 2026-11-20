@@ -10,7 +10,7 @@ case R1189_ACTION: {
 #endif
     }
 #if R1189_AIR
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
 #endif
     if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
 #include "ReimuSpecialShotF1189.inc"
@@ -20,7 +20,7 @@ case R1189_ACTION: {
         UpdateGaugeTimer(200);
     }
 #if !R1189_AIR
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
 #endif
     break;
 }

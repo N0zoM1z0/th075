@@ -22,7 +22,7 @@ case 0x91: {
         SetCameraShake(2.0f);
         break;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(F629_LATE);
     break;
 }

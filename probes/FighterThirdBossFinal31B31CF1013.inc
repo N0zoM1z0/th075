@@ -14,7 +14,7 @@ case 0x31B: {
         field07C=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         BeginFadeParameters(0);
@@ -37,7 +37,7 @@ case 0x31C: {
         field07C=1;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==16 && (animationFrame)==0) {
         BeginFadeParameters(0);

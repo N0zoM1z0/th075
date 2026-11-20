@@ -65,7 +65,7 @@ case 0x3E4: {
     }
     x=x+velocityX;
     y=y-velocityY;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(1);
     return;
 }

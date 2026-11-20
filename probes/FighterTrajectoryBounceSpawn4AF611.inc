@@ -48,7 +48,7 @@ case 0x4A: {
 #endif
         break;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(F610_LATE);
     break;
 }

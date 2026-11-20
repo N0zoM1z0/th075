@@ -22,7 +22,7 @@ case 0x1F4: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnBattleEffect(0x338,x,y,

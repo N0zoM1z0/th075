@@ -11,7 +11,7 @@
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(3);
@@ -39,7 +39,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetSecondaryCounter(10);
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityX=-6.0f;
@@ -78,7 +78,7 @@
                     (*(&y))+g_F743_Y1A0At00659288,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(9);
             break;
         }
@@ -103,7 +103,7 @@
                     (*(&y))+g_F737_RoundY1At00659A20,
                     facing,1);
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(9);
             break;
         }

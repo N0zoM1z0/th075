@@ -52,7 +52,7 @@ case 0x331: {
         else
             color[0]=0;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==1 && animationFrame==0)
         ResetSecondaryCounter(0);

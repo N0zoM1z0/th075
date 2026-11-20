@@ -19,7 +19,7 @@ case 0x2BC: {
         fieldF04=0;
         fieldF06=0;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
@@ -69,7 +69,7 @@ case 0x2BD: {
         fieldF04=0;
         fieldF06=0;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);

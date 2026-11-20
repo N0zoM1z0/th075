@@ -26,7 +26,7 @@ case 0xCB: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-11.0f;

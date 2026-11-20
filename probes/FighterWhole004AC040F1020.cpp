@@ -131,7 +131,7 @@ void SakuyaFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(2);
             break;
         case 0x2:
@@ -173,7 +173,7 @@ void SakuyaFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             break;
         case 0x4: velocityX = 6.0f; goto native_third_shared_getter;
@@ -198,7 +198,7 @@ void SakuyaFighter::Advance() {
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 ResetSecondaryCounter(5);
             ++animationFrame;
-            if (animationFrame >= (field072)) {
+            if (animationFrame >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if (animationStage == 2) {
@@ -207,7 +207,7 @@ void SakuyaFighter::Advance() {
                     field05C = 0.7f;
                     field3AC = 0;
                 }
-                if (animationStage >= (field070))
+                if (animationStage >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -232,7 +232,7 @@ void SakuyaFighter::Advance() {
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 ResetSecondaryCounter(5);
             ++animationFrame;
-            if (animationFrame >= (field072)) {
+            if (animationFrame >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if (animationStage == 2) {
@@ -241,7 +241,7 @@ void SakuyaFighter::Advance() {
                     velocityY = 15.0f;
                     field05C = 0.7f;
                 }
-                if (animationStage >= (field070))
+                if (animationStage >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -264,7 +264,7 @@ void SakuyaFighter::Advance() {
                 }
             }
             ++animationFrame;
-            if (animationFrame >= (field072)) {
+            if (animationFrame >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if (animationStage == 2) {
@@ -273,7 +273,7 @@ void SakuyaFighter::Advance() {
                     velocityY = 15.0f;
                     field05C = 0.7f;
                 }
-                if (animationStage >= (field070))
+                if (animationStage >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -288,7 +288,7 @@ void SakuyaFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(0);
         }
         break;
@@ -296,7 +296,7 @@ void SakuyaFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0)
                 PlaySharedSound(30);
             ClearMotionFields();
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (inputY == 0)
                     ResetPrimaryCounters(0);
                 else
@@ -681,7 +681,7 @@ void SakuyaFighter::Advance() {
 #include "FighterThirdBossFinal31B31CF1013.inc"
 
         default:
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             break;
 #include "FighterThirdSharedGetter004AC040F1198.inc"

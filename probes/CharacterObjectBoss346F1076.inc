@@ -82,7 +82,7 @@ case 0x346: {
         ClearFrameInfo();
         return;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==2 && animationFrame==0) {
         field0DC=short(F1057_FloatAtan2At00483300(

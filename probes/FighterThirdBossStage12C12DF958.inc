@@ -20,7 +20,7 @@ case 0x12C: {
             field3AC=0;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0)
         PlaySharedSound(0x1B);
@@ -41,7 +41,7 @@ case 0x12D: {
             field3AC=0;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         scriptCounterF00=0;
     }

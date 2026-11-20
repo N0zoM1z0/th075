@@ -5,7 +5,7 @@ case R1187_ACTION: {
         scriptCounterF00=0;
     }
     velocityY=velocityY-field05C;
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=-3.0f; velocityY=8.0f; field05C=0.55f;
 #include "ReimuFiveShotVolleyF1186.inc"

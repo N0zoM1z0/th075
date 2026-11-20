@@ -19,7 +19,7 @@
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 ResetSecondaryCounter(5);
             ++animationFrame;
-            if (animationFrame < field072)
+            if (animationFrame < animationFrameCount)
                 return;
             animationFrame = 0;
             ++animationStage;
@@ -30,7 +30,7 @@
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
-            if (field070 <= animationStage)
+            if (animationStageCount <= animationStage)
                 animationStage -= 2;
             BindAnimation();
             return;
@@ -55,7 +55,7 @@
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 ResetSecondaryCounter(5);
             ++animationFrame;
-            if (animationFrame < field072)
+            if (animationFrame < animationFrameCount)
                 return;
             animationFrame = 0;
             ++animationStage;
@@ -66,7 +66,7 @@
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
-            if (field070 <= animationStage)
+            if (animationStageCount <= animationStage)
                 animationStage -= 2;
             BindAnimation();
             return;
@@ -89,7 +89,7 @@
                 }
             }
             ++animationFrame;
-            if (animationFrame < field072)
+            if (animationFrame < animationFrameCount)
                 return;
             animationFrame = 0;
             ++animationStage;
@@ -100,7 +100,7 @@
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
-            if (field070 <= animationStage)
+            if (animationStageCount <= animationStage)
                 animationStage -= 2;
             BindAnimation();
             return;

@@ -42,7 +42,7 @@ case 0x335: {
     }
     x=float(facing)*velocityX + x;
     y=y-velocityY;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

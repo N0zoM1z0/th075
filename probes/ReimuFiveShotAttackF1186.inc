@@ -6,7 +6,7 @@ case R1186_ACTION: {
         ClearMotionFields();
         scriptCounterF00=0;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==8 && (animationFrame)==0) {
 #include "ReimuFiveShotVolleyF1186.inc"
         PlaySound(0);

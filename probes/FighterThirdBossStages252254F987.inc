@@ -20,7 +20,7 @@ case 0x252: {
     }
     if ((spiritCooldown)==0 && field07C==1)
         spirit=1000;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,
@@ -43,7 +43,7 @@ case 0x253: {
     }
     if ((spiritCooldown)==0 && field07C==1)
         spirit=1000;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,
@@ -64,7 +64,7 @@ case 0x254: {
         field3AC=0;
         scriptCounterF00=0;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,

@@ -10,7 +10,7 @@
             }
             if (spiritCooldown == 0 && field07C == 1)
                 spirit = 1000;
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 5 && animationFrame == 0) {
                 SpawnAuxEffect(0x37, x,
@@ -32,7 +32,7 @@
             }
             if (spiritCooldown == 0 && field07C == 1)
                 spirit = 1000;
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 5 && animationFrame == 0) {
                 SpawnAuxEffect(0x37, x,
@@ -52,7 +52,7 @@
                 field3AC = 0;
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 5 && animationFrame == 0) {
                 SpawnAuxEffect(0x37, x,
@@ -71,7 +71,7 @@
                 field3AC = 0;
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 5 && animationFrame == 0) {
                 SpawnAuxEffect(0x37, x,
@@ -95,7 +95,7 @@
                 field3AC = 0;
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 5 && animationFrame == 0) {
                 SpawnAuxEffect(0x37, x,
@@ -113,7 +113,7 @@
                 field3AC = 0;
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             if (animationStage == 5 && animationFrame == 0) {
                 SpawnAuxEffect(0x37, x,
@@ -143,7 +143,7 @@
                 PlaySound(4);
                 UpdateGaugeTimer(200);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }
@@ -162,7 +162,7 @@
                 PlaySound(4);
                 UpdateGaugeTimer(200);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }
@@ -182,7 +182,7 @@
                 PlaySound(4);
                 UpdateGaugeTimer(200);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             return;
         }
@@ -202,7 +202,7 @@
                 PlaySound(4);
                 UpdateGaugeTimer(200);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(9);
             return;
         }
@@ -218,7 +218,7 @@
                     y + g_MarisaResourceYAt0065928C, facing, 1);
                 PlaySound(5);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }
@@ -234,7 +234,7 @@
                     y + g_MarisaResourceYAt0065928C, facing, 1);
                 PlaySound(5);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }
@@ -253,7 +253,7 @@
                     y + g_MarisaResourceYAt0065928C, facing, 1);
                 PlaySound(5);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }
@@ -272,7 +272,7 @@
                     y + g_MarisaResourceYAt0065928C, facing, 1);
                 PlaySound(5);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             return;
         }

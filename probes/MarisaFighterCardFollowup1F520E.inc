@@ -27,7 +27,7 @@ SpawnBattleEffect(0x330,
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 3 && animationFrame == 0)
                 PlaySound(2);
@@ -54,7 +54,7 @@ SpawnBattleEffect(0x330,
                 if (velocityX < g_ThresholdAt0065782C)
                     velocityX = 0.0f;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 2 && animationFrame == 0)
                 velocityX = 12.5f;
@@ -95,7 +95,7 @@ SpawnBattleEffect(0x330,
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 9 && animationFrame == 0) {
                 velocityX = 14.0f;
@@ -142,7 +142,7 @@ SpawnBattleEffect(0x330,
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 9 && animationFrame == 0) {
                 velocityX = 18.25f;
@@ -189,7 +189,7 @@ SpawnBattleEffect(0x330,
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 9 && animationFrame == 0) {
                 velocityX = 14.0f;
@@ -238,7 +238,7 @@ SpawnBattleEffect(0x330,
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 9 && animationFrame == 0) {
                 velocityX = 18.25f;
@@ -277,7 +277,7 @@ SpawnBattleEffect(0x330,
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 10 && animationFrame == 0)
                 ResetSecondaryCounter(8);

@@ -11,7 +11,7 @@ case 0x1A3: {
         field07C=1;
     }
     velocityY=velocityY-field05C;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
@@ -42,7 +42,7 @@ case 0x1A4: {
         field07C=1;
     }
     velocityY=velocityY-field05C;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);

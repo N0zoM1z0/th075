@@ -76,7 +76,7 @@ case 0x391: {
     }
     y=y+velocityY;
     x=float(facing)*velocityX+x;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==0x1F && animationFrame==0) {
         ResetSecondaryCounter(1);

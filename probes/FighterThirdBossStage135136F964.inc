@@ -39,7 +39,7 @@ case 0x135: {
         if ((velocityX)<g_ThresholdAt0065782C)
             velocityX=0.0f;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=15.0f;
@@ -73,7 +73,7 @@ case 0x136: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=4.0f;

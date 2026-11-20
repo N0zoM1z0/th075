@@ -13,7 +13,7 @@ case 0x38C: {
     }
     velocityX=(*(&velocityX))+g_F1120_XBrakingAt00659090;
     x=float(facing)*velocityX+x;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

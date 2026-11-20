@@ -22,7 +22,7 @@ case 0x34B: {
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==15 && animationFrame==0)
         velocityY=-40.0f;

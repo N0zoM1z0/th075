@@ -45,7 +45,7 @@ case 0x2F9: {
                 float(RecordedRange(0,250)+((fieldF06)>50)*250),
                 facing,1,0,1);
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(180-g_F1004_ModeAt006714D0*20);
     }

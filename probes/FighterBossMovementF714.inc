@@ -38,7 +38,7 @@
                 if ((velocityX)<g_ThresholdAt0065782C)
                     velocityX=0.0f;
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=static_cast<short>(RecordedRange(100,180)
                     -static_cast<int>(g_CloudOpponentAt006714D0)*30);

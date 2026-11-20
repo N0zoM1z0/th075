@@ -21,7 +21,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetSecondaryCounter(2);
             else if ((animationStage)==2 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*g_F747_BounceXAt006590BC;
@@ -41,12 +41,12 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 if (inputY>0)
                     ResetPrimaryCounters(1);
             }
-            if ((animationStage)==(field070)-1) {
+            if ((animationStage)==(animationStageCount)-1) {
                 if (x>opponent->x)
                     facing=-1;
                 if (x<opponent->x)
@@ -71,12 +71,12 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 if (inputY>0)
                     ResetPrimaryCounters(1);
             }
-            if ((animationStage)==(field070)-1) {
+            if ((animationStage)==(animationStageCount)-1) {
                 if (x>opponent->x)
                     facing=-1;
                 if (x<opponent->x)

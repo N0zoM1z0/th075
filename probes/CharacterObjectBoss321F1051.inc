@@ -61,7 +61,7 @@ case 0x321: {
         x;
     y=y+
         velocityY;
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ResetSecondaryCounter(6);
         return;
     }

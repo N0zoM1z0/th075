@@ -5,7 +5,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 4 && animationFrame == 0) {
                 BeginFadeParameters(0);
@@ -28,7 +28,7 @@
                 field07C = 1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 16 && animationFrame == 0) {
                 BeginFadeParameters(0);

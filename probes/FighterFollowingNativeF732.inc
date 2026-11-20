@@ -23,7 +23,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==8 && (animationFrame)==0) ResetSecondaryCounter(6);
             break;
         }
@@ -54,7 +54,7 @@
                 velocityX=(velocityX)-g_RisingDragAt006581E0;
                 if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 SpawnAuxEffect(0x3C,x,y,
                     facing,1);
@@ -93,7 +93,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 SpawnAuxEffect(0x3C,x,y,
                         facing,1);
@@ -132,7 +132,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySound(4);
                 SpawnAuxEffect(0x3C,x,y,

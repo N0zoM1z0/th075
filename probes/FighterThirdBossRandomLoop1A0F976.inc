@@ -14,7 +14,7 @@ case 0x1A0: {
         ClearMotionFields();
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);

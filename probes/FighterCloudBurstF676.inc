@@ -21,7 +21,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=RecordedRange(60,100)
                            -static_cast<int>(g_CloudOpponentAt006714D0)*20;
@@ -130,7 +130,7 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=RecordedRange(60,120)
                            -static_cast<int>(g_CloudOpponentAt006714D0)*20;

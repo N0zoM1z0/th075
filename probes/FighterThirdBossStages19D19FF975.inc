@@ -28,7 +28,7 @@ case 0x19D: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(2);
     break;
 }
@@ -59,7 +59,7 @@ case 0x19E: {
         ResetPrimaryCounters(0xA);
         break;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnBattleEffect(0x335,x,y,
@@ -93,7 +93,7 @@ case 0x19F: {
         ResetPrimaryCounters(0xA);
         break;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnBattleEffect(0x335,x,y,

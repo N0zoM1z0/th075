@@ -64,7 +64,7 @@ case 800:
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -111,7 +111,7 @@ case 801:
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -158,7 +158,7 @@ case 802:
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -193,7 +193,7 @@ case 803:
             if (color[0] >= 5) color[0] -= 5;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
             ResetSecondaryCounter(1);
             field07C = 0;
@@ -228,7 +228,7 @@ case 804:
                 scaleX = field0DA * 0.01f + 0.5f;
                 scaleY = field0DA * 0.01f + 0.5f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
             if (animationStage == 3 && animationFrame == 0 && field0D8 < 45) {
                 ResetSecondaryCounter(2);
@@ -257,7 +257,7 @@ case 805:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 806:
@@ -292,7 +292,7 @@ case 806:
             scaleX += 0.8f;
             scaleY += 0.2f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) owner->PlaySound(7);
         break;
 
@@ -311,7 +311,7 @@ case 807:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 808:
@@ -361,7 +361,7 @@ case 808:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         break;
 
@@ -385,7 +385,7 @@ case 809:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 810:
@@ -421,7 +421,7 @@ case 810:
             if (color[0] > 10) color[0] -= 10;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) { ResetSecondaryCounter(15); return; }
+        if (AdvanceNestedFrame() == animationStageCount) { ResetSecondaryCounter(15); return; }
         if (animationStage == 15 && animationFrame == 0) {
             if (field0D8 - 1 < field0C8 * 2) {
                 ResetSecondaryCounter(1);
@@ -474,7 +474,7 @@ case 812:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
@@ -524,7 +524,7 @@ case 813:
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -547,7 +547,7 @@ case 814:
             field01A = 1250;
             rotationX = 110.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 815:
@@ -567,7 +567,7 @@ case 815:
             field01A = 1250;
             rotationX = 110.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 816:
@@ -610,7 +610,7 @@ case 816:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
@@ -658,7 +658,7 @@ case 817:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
@@ -709,7 +709,7 @@ case 818:
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -756,7 +756,7 @@ case 819:
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -784,7 +784,7 @@ case 820:
             scaleX = field0DA * 0.01f + 1.5f;
             scaleY = field0DA * 0.01f + 1.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
@@ -809,7 +809,7 @@ case 821:
             field01A = 1250;
             rotationX = 140.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 
@@ -852,7 +852,7 @@ case 822:
             scaleX *= 0.85f;
             scaleY = scaleX;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             for (int burstIndex822 = 0; burstIndex822 < 5; ++burstIndex822) {
                 owner->PlaySound(2);
@@ -891,7 +891,7 @@ case 823:
             scaleX += 0.1f;
             scaleY *= 0.85f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) scaleY += 3.0f;
         break;
 
@@ -912,7 +912,7 @@ case 824:
         scaleY += 0.2f;
         if (color[0] > 20) color[0] -= 20;
         else { ClearFrameInfo(); return; }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 
@@ -955,7 +955,7 @@ case 825:
             scaleX *= 0.85f;
             scaleY = scaleX;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             for (int burstIndex825 = 0; burstIndex825 < 5; ++burstIndex825) {
                 owner->PlaySound(2);
@@ -1005,7 +1005,7 @@ case 826:
             scaleX += 0.1f;
             scaleY *= 0.85f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) scaleY += 3.0f;
         if (animationStage == 3 && animationFrame == 0) scaleY += 3.0f;
         if (animationStage == 4 && animationFrame == 0) scaleY += 3.0f;
@@ -1034,7 +1034,7 @@ case 827:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 828:
@@ -1057,7 +1057,7 @@ case 828:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 829:
@@ -1080,7 +1080,7 @@ case 829:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 830:
@@ -1125,7 +1125,7 @@ case 830:
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -1176,7 +1176,7 @@ case 831:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
         if (animationStage == 2 && animationFrame == 0) {
             if (field0DC < 5) {
                 ResetSecondaryCounter(1);
@@ -1225,7 +1225,7 @@ case 832:
             if (color[0] >= 5) color[0] -= 5;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
             ResetSecondaryCounter(1);
             field07C = 0;
@@ -1262,7 +1262,7 @@ case 833:
             if (color[0] >= 5) color[0] -= 5;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
             ResetSecondaryCounter(1);
             field07C = 0;
@@ -1321,7 +1321,7 @@ case 834:
                         }
                         else { ClearFrameInfo(); return; }
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -1343,7 +1343,7 @@ case 835:
         }
         scaleX += 0.05f;
         scaleY += 0.05f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 836:
@@ -1385,7 +1385,7 @@ case 836:
             scaleX += 0.8f;
             scaleY += 0.1f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) owner->PlaySound(7);
         break;
 
@@ -1413,7 +1413,7 @@ case 837:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
             ++field0D8;
@@ -1467,7 +1467,7 @@ case 838:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
         if (animationStage == 2 && animationFrame == 0) {
             if (field0DC < 5) {
                 ResetSecondaryCounter(1);
@@ -1533,7 +1533,7 @@ case 839:
             scaleX = field0DA * 0.01f + 0.9f;
             scaleY = field0DA * 0.01f + 0.9f;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             if (field0DC < 60 && field080 > 0) {
                 ResetSecondaryCounter(1);
                 ++field0DC;
@@ -1565,7 +1565,7 @@ case 840:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 
@@ -1590,7 +1590,7 @@ case 841:
             field01A = 1250;
             rotationX = -70.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 842:
@@ -1626,7 +1626,7 @@ case 842:
             if (color[0] > 10) color[0] -= 10;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) { ResetSecondaryCounter(21); return; }
+        if (AdvanceNestedFrame() == animationStageCount) { ResetSecondaryCounter(21); return; }
         if (animationStage == 21 && animationFrame == 0) {
             if (field0D8 - 1 < field0C8 * 5.0f) {
                 ResetSecondaryCounter(1);
@@ -1686,7 +1686,7 @@ case 843:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         break;
 
@@ -1705,7 +1705,7 @@ case 844:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 case 845:
@@ -1723,7 +1723,7 @@ case 845:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 
@@ -1742,7 +1742,7 @@ case 846:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 case 847:
@@ -1760,7 +1760,7 @@ case 847:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 
@@ -1798,7 +1798,7 @@ case 899:
             if (color[0] > 30) color[0] -= 30;
             else color[0] = 0;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) ResetSecondaryCounter(0);
         return;
 
@@ -1836,7 +1836,7 @@ case 900:
             if (color[0] >= 5) color[0] -= 5;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) {
             field07C = 0;
             ResetSecondaryCounter(1);
@@ -1880,7 +1880,7 @@ case 902:
             scaleX += 0.4f;
             scaleY += 0.1f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) owner->PlaySound(7);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 0) {
             ResetSecondaryCounter(2);
@@ -1918,7 +1918,7 @@ case 903:
             scaleX = field0DA * 0.01f + 1.0f;
             scaleY = field0DA * 0.01f + 1.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
             ++field0D8;
@@ -1969,7 +1969,7 @@ case 904:
             scaleX = field0DA * 0.02f + 0.9f;
             scaleY = field0DA * 0.02f + 0.9f;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 15) {
             ++field0D8;
             ResetSecondaryCounter(1);
@@ -2005,7 +2005,7 @@ case 905:
                 owner->SpawnBattleEffect(902, field0D8 * 240 + RecordedRange(0, 50),
                     0.0f, facing, 1);
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 13) {
             ++field0D8;
             ResetSecondaryCounter(1);
@@ -2058,7 +2058,7 @@ case 906:
             ResetSecondaryCounter(2);
             owner->SpawnBattleEffect(907, x, y, 1, 0);
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) owner->fieldF04 = 1;
         if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         break;
@@ -2083,7 +2083,7 @@ case 907:
             if (color[0] > 25) color[0] -= 25;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 908:
@@ -2112,7 +2112,7 @@ case 908:
         y -= velocityY;
         if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
         if (color[0] > 20 && animationStage == 2) color[0] -= 20;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
             field07C = 0;
             return;
@@ -2145,7 +2145,7 @@ case 909:
         if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
         if (field07C != 0 && animationStage < 3) { ResetSecondaryCounter(3); return; }
         if (color[0] > 20 && animationStage == 3) color[0] -= 20;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) {
             field07C = 0;
             field0D8 = 0;
@@ -2172,7 +2172,7 @@ case 910:
         if (animationStage == 1 && animationFrame == 5 && field0CC > 0.0f && field0CC < 180.0f)
             owner->SpawnBattleEffect(911, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
         scaleY *= 0.85;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 911:
@@ -2209,7 +2209,7 @@ case 911:
             if (color[0] >= 15) color[0] -= 15;
             else { color[0] = 0; ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 
@@ -2238,7 +2238,7 @@ case 912:
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 913:
@@ -2258,7 +2258,7 @@ case 913:
         if (animationStage == 1 && animationFrame == 5 && field0CC > 0.0f && field0CC < 180.0f)
             owner->SpawnBattleEffect(914, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
         scaleY *= 0.85;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 914:
@@ -2295,7 +2295,7 @@ case 914:
             if (color[0] >= 15) color[0] -= 15;
             else { color[0] = 0; ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 
@@ -2319,7 +2319,7 @@ case 915:
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 916:
@@ -2344,7 +2344,7 @@ case 916:
         x = facing * velocityX + x;
         y -= velocityY;
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 917:
@@ -2369,7 +2369,7 @@ case 917:
         x = facing * velocityX + x;
         y -= velocityY;
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 918:
@@ -2394,7 +2394,7 @@ case 918:
         x = facing * velocityX + x;
         y -= velocityY;
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 919:
@@ -2412,7 +2412,7 @@ case 919:
             field080 = 1;
             field07C = 0;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             if (field0D8 < 2 - g_F1212_DifficultyAt006714D0) ++field0D8;
             else {
                 owner->SpawnBattleEffect(904, RecordedRange(0, 1200) + 60, RecordedRange(0, 120) + 700,
@@ -2464,7 +2464,7 @@ case 995:
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2525,7 +2525,7 @@ case 996:
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2556,7 +2556,7 @@ case 997:
             scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2;
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
             rotationZ += 1.0f;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(9);
                 break;
             }

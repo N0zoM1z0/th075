@@ -239,7 +239,7 @@ case 0x19D: {
         PlaySound(1);
         UpdateGaugeTimer(200);
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     break;
 }
 
@@ -298,7 +298,7 @@ case 0x1A1: {
         velocityY=(*(&velocityY))*g_ProjectileFallAt006590B4;
         field07C=1;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=30.0f; field318=8.0f;
         SpawnBattleEffect(0x32C,float(facing*12)+(x),

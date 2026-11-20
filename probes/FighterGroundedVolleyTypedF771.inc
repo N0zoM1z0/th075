@@ -41,7 +41,7 @@
                         (*(&y))+g_StormYAt0065948C,
                         facing,1);
             }
-            if (AdvanceNestedFrame()==(field070))
+            if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==13 && (animationFrame)==0 &&
                 (scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)+3) {

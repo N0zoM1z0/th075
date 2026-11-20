@@ -15,7 +15,7 @@ case 0x133: {
             field3AC=0;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         scriptCounterF00=0;
     }

@@ -16,7 +16,7 @@ case 0x2C2: {
         ClearMotionFields();
         field080=99;
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         fieldF12=1;
         Fighter::SpawnTrackedEffect(0x332,x,
@@ -60,7 +60,7 @@ case 0x2C3: {
     }
     if ((animationStage)>5)
         fieldF0C=300;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         Fighter::SpawnTrackedEffect(0x32F,x,
             (*(&y))+g_ContactProjectionAt00657888,

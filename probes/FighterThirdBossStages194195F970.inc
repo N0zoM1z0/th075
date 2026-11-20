@@ -36,7 +36,7 @@ case 0x194: {
     }
     --scriptCounterF00;
     velocityY=velocityY-field05C;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnBattleEffect(0x335,x,y,
@@ -78,7 +78,7 @@ case 0x195: {
     }
     --scriptCounterF00;
     velocityY=velocityY-field05C;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnBattleEffect(0x335,x,y,

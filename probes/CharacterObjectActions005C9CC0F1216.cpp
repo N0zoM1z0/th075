@@ -46,7 +46,7 @@ void SuikaObject::Advance()
             color[3] = 255;
             field080 = 1;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 801:
@@ -114,7 +114,7 @@ void SuikaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
                 if (animationStage == 9 && animationFrame == 0) ResetSecondaryCounter(5);
                 if (animationStage == 19 && animationFrame == 0) ResetSecondaryCounter(17);
@@ -186,7 +186,7 @@ void SuikaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 6 && animationFrame == 0) ResetSecondaryCounter(4);
                 if (animationStage == 8 && animationFrame == 0)
                     velocityX = RecordedRange(0, 3) + 5;
@@ -228,7 +228,7 @@ void SuikaObject::Advance()
             else velocityX = 2.5f;
             velocityY -= 0.6f;
             owner->SpawnBattleEffect(804, x, y, facing, 1);
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 owner->PlaySound(18);
                 owner->SetCameraShake(5.0f);
@@ -259,7 +259,7 @@ void SuikaObject::Advance()
         y += velocityY;
         scaleX *= 0.85f;
         scaleY *= 0.85f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 805:
@@ -312,7 +312,7 @@ void SuikaObject::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -337,7 +337,7 @@ void SuikaObject::Advance()
             color[2] -= 15;
         }
         else { ClearFrameInfo(); return; }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 807:
@@ -384,7 +384,7 @@ void SuikaObject::Advance()
             else velocityX = 10.0f;
             velocityY -= 0.6f;
             owner->SpawnBattleEffect(804, x, y, facing, 1);
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 owner->PlaySound(18);
                 owner->SetCameraShake(5.0f);
@@ -427,7 +427,7 @@ void SuikaObject::Advance()
             y += velocityY;
             velocityY -= 0.45f;
             owner->SpawnBattleEffect(804, x, y, facing, 1);
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 owner->PlaySound(18);
                 owner->SetCameraShake(5.0f);
@@ -463,7 +463,7 @@ void SuikaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -492,7 +492,7 @@ void SuikaObject::Advance()
             }
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 811:
@@ -521,7 +521,7 @@ void SuikaObject::Advance()
             return;
         }
         else {
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (field0D8 < 6) {
                     ResetSecondaryCounter(1);
                     ++field0D8;
@@ -574,7 +574,7 @@ void SuikaObject::Advance()
                 scaleX = field0DA * 0.01f + 0.5f;
                 scaleY = field0DA * 0.01f + 0.5f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
             if (animationStage == 3 && animationFrame == 0 && field0D8 < 25) {
                 ResetSecondaryCounter(2);
@@ -603,7 +603,7 @@ void SuikaObject::Advance()
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 814:
@@ -619,7 +619,7 @@ void SuikaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 815:
@@ -638,7 +638,7 @@ void SuikaObject::Advance()
         scaleX += 0.08f;
         scaleY += 0.08f;
         color[0] -= 7;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 816:
@@ -656,7 +656,7 @@ void SuikaObject::Advance()
         color[0] -= 7;
         scaleX -= 0.01f;
         scaleY -= 0.01f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 817:
@@ -743,7 +743,7 @@ void SuikaObject::Advance()
             if (color[0] > 5) color[0] -= 5;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 818:
@@ -763,7 +763,7 @@ void SuikaObject::Advance()
         scaleY += 0.08f;
         if (color[0] > 10) color[0] -= 10;
         else { ClearFrameInfo(); return; }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         break;
 
     case 819:
@@ -797,7 +797,7 @@ void SuikaObject::Advance()
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         break;
 
     case 820:
@@ -884,7 +884,7 @@ void SuikaObject::Advance()
             if (color[0] > 5) color[0] -= 5;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 821:
@@ -918,7 +918,7 @@ void SuikaObject::Advance()
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         break;
 
     case 822:
@@ -947,7 +947,7 @@ void SuikaObject::Advance()
         velocityY -= 0.3f;
         y -= velocityY;
         x = facing * velocityX + x;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 823:
@@ -982,7 +982,7 @@ void SuikaObject::Advance()
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         break;
 
     case 824:
@@ -1047,7 +1047,7 @@ void SuikaObject::Advance()
                             else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                    if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -1108,7 +1108,7 @@ void SuikaObject::Advance()
                     scaleX *= 0.85f;
                     scaleY *= 0.85f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) {
                     owner->PlaySound(31);
                     velocityX = 0.0f;
@@ -1136,7 +1136,7 @@ void SuikaObject::Advance()
         scaleY -= 0.05f;
         if (animationFrame > 5) color[0] -= 15;
         rotationZ += 10.0f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 827:
@@ -1173,7 +1173,7 @@ void SuikaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
             }
         }
         break;
@@ -1233,7 +1233,7 @@ void SuikaObject::Advance()
                     scaleX *= 0.85f;
                     scaleY *= 0.85f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) {
                     owner->PlaySound(31);
                     velocityX = 0.0f;
@@ -1306,7 +1306,7 @@ void SuikaObject::Advance()
                             else {
                     x = facing * velocityX + x;
                     y += velocityY;
-                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                    if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -1346,7 +1346,7 @@ void SuikaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
             }
         }
         break;
@@ -1366,7 +1366,7 @@ void SuikaObject::Advance()
             if (color[0] > 20) color[0] -= 20;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         break;
 
     case 832:
@@ -1391,7 +1391,7 @@ void SuikaObject::Advance()
             }
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 833:
@@ -1418,7 +1418,7 @@ void SuikaObject::Advance()
             }
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             color[0] = 255;
             for (int burstIndex833 = 0; burstIndex833 < 12; burstIndex833++) {
@@ -1453,7 +1453,7 @@ void SuikaObject::Advance()
             }
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 835:
@@ -1466,7 +1466,7 @@ void SuikaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 850:
@@ -1503,7 +1503,7 @@ void SuikaObject::Advance()
             if (color[0] > 30) color[0] -= 30;
             else color[0] = 0;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) ResetSecondaryCounter(0);
         break;
 
@@ -1531,7 +1531,7 @@ void SuikaObject::Advance()
         else {
             x = facing * velocityX + x;
             y += velocityY;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 ResetTransform(0.0f, 0.0f, 0.0f);
             }
@@ -1541,17 +1541,17 @@ void SuikaObject::Advance()
         break;
 
     case 901:
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 902:
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 903:
         x = owner->x;
         y = owner->y;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 904:
@@ -1567,7 +1567,7 @@ void SuikaObject::Advance()
         scaleX += 0.01f;
         scaleY += 0.01f;
         color[0] -= 1;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 905:
@@ -1685,7 +1685,7 @@ void SuikaObject::Advance()
             SetPolarVelocity(field0DC, field0D8 * 0.1f);
             x = facing * velocityX + x;
             y -= velocityY;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (owner->animationStage < 3) {
                     ++field0D8;
                     ResetSecondaryCounter(1);
@@ -1744,7 +1744,7 @@ void SuikaObject::Advance()
                             else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) {
+                    if (AdvanceNestedFrame() == animationStageCount) {
                         ClearFrameInfo();
                         return;
                     }
@@ -1791,7 +1791,7 @@ void SuikaObject::Advance()
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
+                if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
             }
         }
         break;
@@ -1822,7 +1822,7 @@ void SuikaObject::Advance()
             else {
                 scaleY *= 0.9f;
                 scaleX += 0.1f;
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(4);
+                if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(4);
             }
         }
         break;
@@ -1922,7 +1922,7 @@ void SuikaObject::Advance()
                         if (color[0] > 5) color[0] -= 5;
                         else { ClearFrameInfo(); return; }
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -1967,7 +1967,7 @@ void SuikaObject::Advance()
                 else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+                    if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
                 }
             }
         }
@@ -2021,7 +2021,7 @@ void SuikaObject::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 1 && animationFrame == 0) {
                 NoOpAt0045B850(31);
                 velocityX = 0.0f;
@@ -2058,7 +2058,7 @@ void SuikaObject::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0 &&
                 field0DA < g_F1212_DifficultyAt006714D0 + 2) {
                 ++field0DA;
@@ -2097,7 +2097,7 @@ void SuikaObject::Advance()
                     scaleY = scaleX;
                 }
                 x = facing * velocityX + x;
-                if (AdvanceNestedFrame() == field070) {
+                if (AdvanceNestedFrame() == animationStageCount) {
                     ClearFrameInfo();
                     owner->SpawnBattleEffect(913, x, y, facing, 0);
                     return;
@@ -2139,7 +2139,7 @@ void SuikaObject::Advance()
                     if (color[0] > 20) color[0] -= 20;
                     else { ClearFrameInfo(); return; }
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 2 && animationFrame == 0) {
                     velocityX = 0.0f;
                     velocityY = 0.0f;
@@ -2186,7 +2186,7 @@ void SuikaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) {
+                if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(3);
                     field07C = 0;
                     return;
@@ -2250,7 +2250,7 @@ void SuikaObject::Advance()
                             else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) {
+                    if (AdvanceNestedFrame() == animationStageCount) {
                         ClearFrameInfo();
                         return;
                     }
@@ -2301,7 +2301,7 @@ void SuikaObject::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 1 && animationFrame == 0) {
                 NoOpAt0045B850(31);
                 velocityX = 0.0f;
@@ -2334,7 +2334,7 @@ void SuikaObject::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         }
         break;
@@ -2357,7 +2357,7 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 rotationZ = RecordedRange(0, 359);
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -2397,7 +2397,7 @@ void SuikaObject::Advance()
                     owner->SpawnBattleEffect(925, x, y, facing, 1);
                     owner->SpawnBattleEffect(925, x, y, facing, 1);
                 }
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+                if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
             }
         }
         break;
@@ -2420,7 +2420,7 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 rotationZ = RecordedRange(0, 359);
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -2460,7 +2460,7 @@ void SuikaObject::Advance()
                     owner->SpawnBattleEffect(927, x, y, facing, 1);
                     owner->SpawnBattleEffect(927, x, y, facing, 1);
                 }
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+                if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
             }
         }
         break;
@@ -2483,7 +2483,7 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 rotationZ = RecordedRange(0, 359);
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -2527,7 +2527,7 @@ void SuikaObject::Advance()
                     }
                     ClearFrameInfo();
                 }
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+                if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
             }
         }
         break;
@@ -2570,7 +2570,7 @@ void SuikaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) {
+                if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(3);
                     field07C = 0;
                     return;
@@ -2622,7 +2622,7 @@ void SuikaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) {
+                if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(3);
                     field07C = 0;
                     return;
@@ -2673,7 +2673,7 @@ void SuikaObject::Advance()
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2734,7 +2734,7 @@ void SuikaObject::Advance()
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2765,7 +2765,7 @@ void SuikaObject::Advance()
             scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2;
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
             rotationZ += 1.0f;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(10);
                 break;
             }

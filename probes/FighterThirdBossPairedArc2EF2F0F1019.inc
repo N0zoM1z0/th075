@@ -38,7 +38,7 @@ case 0x2EF: {
     }
     if ((animationFrame)==0)
         field07C=0;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(RecordedRange(60,120));
     }
@@ -160,7 +160,7 @@ case 0x2F0: {
     }
     if ((animationFrame)==0)
         field07C=0;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(RecordedRange(60,120));
     }

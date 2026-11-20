@@ -43,7 +43,7 @@ case 0x386: {
     }
     x=float(facing)*velocityX+x;
     y=y+velocityY;
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         owner->SetCameraShake(10.0f);
         for (int shot=0;shot<12;++shot) {
             owner->SpawnBattleEffect(

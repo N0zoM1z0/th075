@@ -19,7 +19,7 @@ case 0x199: {
         ResetPrimaryCounters(0xA);
         break;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
@@ -62,7 +62,7 @@ case 0x19A: {
         ResetPrimaryCounters(0xA);
         break;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);

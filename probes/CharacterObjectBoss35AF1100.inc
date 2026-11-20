@@ -6,7 +6,7 @@ case 0x35A: {
         scaleX=1.5f;
         scaleY=1.5f;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

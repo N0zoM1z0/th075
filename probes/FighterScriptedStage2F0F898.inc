@@ -38,7 +38,7 @@ case 0x2F0: {
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         PlaySound(0xA);

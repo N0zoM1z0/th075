@@ -37,7 +37,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 2 && animationFrame == 0) {
                 SetNonnegativeWord(0x28);
@@ -118,7 +118,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(0, 60) + 180 -
                     g_MarisaDifficultyAt006714D0 * 30);

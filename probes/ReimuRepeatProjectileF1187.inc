@@ -5,7 +5,7 @@ case R1187_ACTION: {
         ClearMotionFields();
         scriptCounterF00=0;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=40.0f; field318=10.0f;
         SpawnBattleEffect(R1187_EFFECT,(*(&x))+g_ThresholdAt0065782C,

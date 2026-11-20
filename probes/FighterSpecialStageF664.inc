@@ -19,7 +19,7 @@
                 ResetSecondaryCounter(8);
                 velocityX=10.0f;
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(7);
                 SpawnAuxEffect(0x3C,x,y,
@@ -46,7 +46,7 @@
                 ResetSecondaryCounter(8);
                 velocityX=10.0f;
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(7);
                 SpawnAuxEffect(0x3C,x,y,

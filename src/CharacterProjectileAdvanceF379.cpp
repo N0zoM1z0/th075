@@ -52,7 +52,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             }
             if(x>g_ProjectMaxXAt00659424 || x<g_ProjectMinXAt006595EC || y>g_ProjectMaxYAt006583B4 || y<g_ProjectMinXAt006595EC)
                 ClearFrameInfo();
-            else if (AdvanceNestedFrame()==field070) ClearFrameInfo();
+            else if (AdvanceNestedFrame()==animationStageCount) ClearFrameInfo();
         }
     }
 }

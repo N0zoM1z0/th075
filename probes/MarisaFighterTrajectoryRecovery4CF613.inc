@@ -22,7 +22,7 @@ case 0x4C: {
         ClearTransformFlag();
         break;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(0);
     break;
 }

@@ -20,7 +20,7 @@
                         y + g_MarisaResourceYAt00659274, facing, 1);
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(60, 120) -
                     g_MarisaDifficultyAt006714D0 * 20);
@@ -66,7 +66,7 @@
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 aiCardTimer = static_cast<short>(RecordedRange(60, 180) -
                     g_MarisaDifficultyAt006714D0 * 20);
@@ -121,7 +121,7 @@
                 ResetPrimaryCounters(0x2F9);
                 return;
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (scriptCounterF02 > 0 && g_MarisaDifficultyAt006714D0 < 2) {
                     ResetPrimaryCounters(0x2FA);
                     return;

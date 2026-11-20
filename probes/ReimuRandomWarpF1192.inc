@@ -25,7 +25,7 @@ case 0x2EF: {
             (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
         aiCardTimer=120;
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=RecordedRange(0,60)+120-g_ReimuRepeatSettingAt006714D0*40;
     }

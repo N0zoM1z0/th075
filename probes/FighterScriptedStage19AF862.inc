@@ -11,7 +11,7 @@ case 0x19A: {
         velocityY=0.0f;
         return;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnBattleEffect(0x352,

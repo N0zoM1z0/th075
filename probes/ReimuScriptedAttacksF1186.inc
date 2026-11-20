@@ -14,7 +14,7 @@ case 0x186: {
         velocityX=(velocityX)-g_AnimationDeltaAt0065747C;
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=15.0f;
         PlaySharedSound(0x1D);
@@ -40,7 +40,7 @@ case 0x187: {
             break;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=10.0f; velocityY=12.5f; field05C=0.85f;
         PlaySharedSound(0x1C);
@@ -61,7 +61,7 @@ case 0x188: {
         field080=8;
         field07C=0;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationFrame)==0 && (animationStage)<12) field07C=0;
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1B);
     if ((animationStage)==5 && (animationFrame)==0) PlaySharedSound(0x1B);
@@ -80,7 +80,7 @@ case 0x189: {
         velocityX=(velocityX)-g_ReimuGroundDragAt00658350;
         if ((velocityX)<g_ThresholdAt0065782C) { velocityX=0.0f; field3AC=0; }
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==2 && (animationFrame)==0) {
         field080=1; field07C=0; velocityX=12.0f;
     }
@@ -131,7 +131,7 @@ case 0x192: {
         ClearMotionFields();
         scriptCounterF00=0;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(2);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=40.0f; field318=10.0f;
         SpawnBattleEffect(0x338,(*(&x))+g_ThresholdAt0065782C,

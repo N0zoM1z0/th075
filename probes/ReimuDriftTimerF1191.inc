@@ -18,7 +18,7 @@
 #undef R1191_LIFT_RANGE
 case 0x2E5: {
 #include "ReimuMeterInitF1190.inc"
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=240-g_ReimuRepeatSettingAt006714D0*30;
     }

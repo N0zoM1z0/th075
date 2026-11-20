@@ -30,7 +30,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 2:
         if (animationStage == 0 && animationFrame == 0) {
@@ -73,7 +73,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 3:
         if (animationStage == 0 && animationFrame == 0) {
@@ -120,7 +120,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 5:
         if (animationStage == 0 && animationFrame == 0) {
@@ -163,7 +163,7 @@ void CharacterAuxObject::Advance()
             if (color[2] > 60) color[2] -= 60;
         }
         ++field074;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 6:
         if (animationStage == 0 && animationFrame == 0) {
@@ -206,7 +206,7 @@ void CharacterAuxObject::Advance()
             if (color[2] > 60) color[2] -= 60;
         }
         ++field074;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 7:
         if (animationStage == 0 && animationFrame == 0) {
@@ -249,7 +249,7 @@ void CharacterAuxObject::Advance()
             if (color[2] > 60) color[2] -= 60;
         }
         ++field074;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 8:
         if (animationStage == 0 && animationFrame == 0) {
@@ -292,7 +292,7 @@ void CharacterAuxObject::Advance()
             if (color[2] > 60) color[2] -= 60;
         }
         ++field074;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 13:
         if (animationStage == 0 && animationFrame == 0) {
@@ -318,7 +318,7 @@ void CharacterAuxObject::Advance()
             SpawnPeer(104, x, y, 1, 1);
         }
         ++field074;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 14:
         if (animationStage == 0 && animationFrame == 0) {
@@ -362,7 +362,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 15:
         if (animationStage == 0 && animationFrame == 0) {
@@ -401,7 +401,7 @@ void CharacterAuxObject::Advance()
             if (color[2] > 25) color[2] -= 25;
         }
         ++field074;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 50:
         if (animationStage == 0 && animationFrame == 0) {
@@ -438,7 +438,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 25) color[1] -= 25;
             if (color[2] > 25) color[2] -= 25;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 51:
         if (animationStage == 0 && animationFrame == 0) {
@@ -475,7 +475,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 25) color[3] -= 25;
             if (color[2] > 25) color[2] -= 25;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 52:
         if (animationStage == 0 && animationFrame == 0) {
@@ -490,7 +490,7 @@ void CharacterAuxObject::Advance()
             SpawnPeer(107, x, y, 1, 1);
             SpawnPeer(107, x, y, 1, 1);
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 53:
         if (animationStage == 0 && animationFrame == 0) {
@@ -515,7 +515,7 @@ void CharacterAuxObject::Advance()
             SpawnPeer(104, x, y, 1, 1);
             SpawnPeer(104, x, y, 1, 1);
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 54:
         if (animationStage == 0 && animationFrame == 0) {
@@ -531,7 +531,7 @@ void CharacterAuxObject::Advance()
             SpawnPeer(111, x, y, 1, 1);
             SpawnPeer(111, x, y, 1, 1);
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 55:
         if (animationStage == 0 && animationFrame == 0) {
@@ -575,7 +575,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 56:
         if (animationStage == 0 && animationFrame == 0) {
@@ -608,7 +608,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 25) color[1] -= 25;
             if (color[2] > 25) color[2] -= 25;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 57:
         if (animationStage == 0 && animationFrame == 0) {
@@ -636,7 +636,7 @@ void CharacterAuxObject::Advance()
                 color[0] -= 8;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 60:
         if (animationStage == 0 && animationFrame == 0) {
@@ -664,7 +664,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 62:
         if (animationStage == 0 && animationFrame == 0) {
@@ -693,7 +693,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 25) color[1] -= 25;
             if (color[2] > 25) color[2] -= 25;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 63:
         if (animationStage == 0 && animationFrame == 0) {
@@ -730,7 +730,7 @@ void CharacterAuxObject::Advance()
         y += velocityY;
         scaleX -= 0.033f;
         scaleY -= 0.033f;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 64:
         if (animationStage == 0 && animationFrame == 0) {
@@ -759,7 +759,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 25) color[1] -= 25;
             if (color[2] > 25) color[2] -= 25;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 65:
         if (animationStage == 0 && animationFrame == 0) {
@@ -796,7 +796,7 @@ void CharacterAuxObject::Advance()
         y += velocityY;
         scaleX -= 0.033f;
         scaleY -= 0.033f;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 100:
         if (animationStage == 0 && animationFrame == 0) {
@@ -821,7 +821,7 @@ void CharacterAuxObject::Advance()
         else {
             color[0] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 101:
         if (animationStage == 0 && animationFrame == 0) {
@@ -846,7 +846,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 20) color[1] -= 15;
         if (color[2] > 20) color[2] -= 15;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 102:
         if (animationStage == 0 && animationFrame == 0) {
@@ -876,7 +876,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 10) color[1] -= 10;
             if (color[2] > 10) color[2] -= 10;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 103:
         if (animationStage == 0 && animationFrame == 0) {
@@ -901,7 +901,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 20) color[1] -= 15;
         if (color[2] > 20) color[2] -= 15;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 104:
         if (animationStage == 0 && animationFrame == 0) {
@@ -930,7 +930,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 105:
         if (animationStage == 0 && animationFrame == 0) {
@@ -959,7 +959,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[3] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 106:
         if (animationStage == 0 && animationFrame == 0) {
@@ -986,7 +986,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 107:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1017,7 +1017,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 15;
             if (color[2] > 20) color[2] -= 15;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 108:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1045,7 +1045,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 109:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1073,7 +1073,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 110:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1104,7 +1104,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 5;
             if (color[2] > 20) color[2] -= 5;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 111:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1135,7 +1135,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 5;
             if (color[2] > 20) color[2] -= 5;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 112:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1162,7 +1162,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 113:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1187,7 +1187,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 20) color[1] -= 15;
         if (color[2] > 20) color[2] -= 15;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 114:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1217,7 +1217,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 115:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1237,7 +1237,7 @@ void CharacterAuxObject::Advance()
             SpawnPeer(144, x, y, 1, 1);
             SpawnPeer(145, x, y, 1, 1);
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 116:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1271,7 +1271,7 @@ void CharacterAuxObject::Advance()
             SpawnPeer(136, x, y, 1, 1);
             SpawnPeer(136, x, y, 1, 1);
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 117:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1291,7 +1291,7 @@ void CharacterAuxObject::Advance()
         scaleX += 0.02f;
         scaleY += 0.02f;
         if (animationStage > 0) color[0] -= 6;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 118:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1311,7 +1311,7 @@ void CharacterAuxObject::Advance()
         scaleX += 0.02f;
         scaleY += 0.02f;
         if (animationStage > 0) color[0] -= 6;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 119:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1337,7 +1337,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 120:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1363,7 +1363,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 121:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1389,7 +1389,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 122:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1417,7 +1417,7 @@ void CharacterAuxObject::Advance()
                 color[0] -= 8;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 123:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1444,7 +1444,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 10) color[1] -= 10;
             if (color[2] > 10) color[2] -= 10;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
             ++field074;
         }
@@ -1474,7 +1474,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 10) color[1] -= 10;
             if (color[2] > 10) color[2] -= 10;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
             ++field074;
         }
@@ -1505,7 +1505,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 126:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1517,7 +1517,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 127:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1529,7 +1529,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 128:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1541,7 +1541,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 129:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1553,7 +1553,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 130:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1565,7 +1565,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 131:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1591,7 +1591,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 132:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1617,7 +1617,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 133:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1643,7 +1643,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 134:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1671,7 +1671,7 @@ void CharacterAuxObject::Advance()
                 color[0] -= 8;
             }
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 135:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1698,7 +1698,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 10) color[1] -= 10;
             if (color[2] > 10) color[2] -= 10;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
             ++field074;
         }
@@ -1728,7 +1728,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 10) color[1] -= 10;
             if (color[2] > 10) color[2] -= 10;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
             ++field074;
         }
@@ -1753,7 +1753,7 @@ void CharacterAuxObject::Advance()
             ClearField8();
             break;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 138:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1781,7 +1781,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 139:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1807,7 +1807,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 140:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1836,7 +1836,7 @@ void CharacterAuxObject::Advance()
             if (color[1] > 20) color[1] -= 20;
             if (color[2] > 20) color[2] -= 20;
         }
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 141:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1861,7 +1861,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 10) color[1] -= 10;
         if (color[2] > 10) color[2] -= 10;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 142:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1886,7 +1886,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 10) color[1] -= 10;
         if (color[2] > 10) color[2] -= 10;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 143:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1916,7 +1916,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 10) color[1] -= 10;
         if (color[2] > 10) color[2] -= 10;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 144:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1946,7 +1946,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 10) color[1] -= 10;
         if (color[2] > 10) color[2] -= 10;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     case 145:
         if (animationStage == 0 && animationFrame == 0) {
@@ -1974,7 +1974,7 @@ void CharacterAuxObject::Advance()
         }
         if (color[1] > 10) color[1] -= 10;
         if (color[2] > 10) color[2] -= 10;
-        if (AdvanceNestedFrame() == field070) ClearField8();
+        if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
     }
 }

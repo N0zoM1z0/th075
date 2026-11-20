@@ -24,7 +24,7 @@ case 0x62: {
             scriptCounterF00=2;
     }
 #endif
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ResetPrimaryCounters(0x5F);
         if (scriptCounterF00==1)
             ResetPrimaryCounters(0x5D);

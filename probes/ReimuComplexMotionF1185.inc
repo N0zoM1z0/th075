@@ -19,7 +19,7 @@ case R1185_ACTION: {
     if ((animationStage)==4 && velocityY<g_ExtraThresholdAt00657D14) ResetSecondaryCounter(5);
 #endif
     ++animationFrame;
-    if ((animationFrame)>=(field072)) {
+    if ((animationFrame)>=(animationFrameCount)) {
         animationFrame=0;
         ++animationStage;
         if ((animationStage)==2) {
@@ -29,7 +29,7 @@ case R1185_ACTION: {
             field3AC=0;
             SpawnAuxEffect(0x3C,x,y,1,1);
         }
-        if ((animationStage)>=(field070)) animationStage=(animationStage)-2;
+        if ((animationStage)>=(animationStageCount)) animationStage=(animationStage)-2;
         BindAnimation();
     }
     break;

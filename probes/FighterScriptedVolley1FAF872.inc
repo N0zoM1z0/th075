@@ -18,7 +18,7 @@ case 0x1FA: {
         ResetPrimaryCounters(0x1FC);
         return;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     return;
 }

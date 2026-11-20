@@ -20,7 +20,7 @@ case 0x1FD: {
         ResetPrimaryCounters(0x1FF);
         return;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         if (opponent->y==g_ThresholdAt0065782C &&

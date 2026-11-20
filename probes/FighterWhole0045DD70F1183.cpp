@@ -101,7 +101,7 @@ void ReimuFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(2);
             break;
         case 0x2:
@@ -143,7 +143,7 @@ void ReimuFighter::Advance() {
                     }
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             break;
         case 0x4: velocityX = 4.5f; goto native_shared_getter;
@@ -166,7 +166,7 @@ void ReimuFighter::Advance() {
                 }
             }
             ++animationFrame;
-            if ((animationFrame) >= (field072)) {
+            if ((animationFrame) >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if ((animationStage) == 2) {
@@ -175,7 +175,7 @@ void ReimuFighter::Advance() {
                     field05C = 0.55f;
                     field3AC = 0;
                 }
-                if ((animationStage) >= (field070))
+                if ((animationStage) >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -198,7 +198,7 @@ void ReimuFighter::Advance() {
                 }
             }
             ++animationFrame;
-            if ((animationFrame) >= (field072)) {
+            if ((animationFrame) >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if ((animationStage) == 2) {
@@ -207,7 +207,7 @@ void ReimuFighter::Advance() {
                     field05C = 0.55f;
                     field3AC = 0;
                 }
-                if ((animationStage) >= (field070))
+                if ((animationStage) >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -230,7 +230,7 @@ void ReimuFighter::Advance() {
                 }
             }
             ++animationFrame;
-            if ((animationFrame) >= (field072)) {
+            if ((animationFrame) >= (animationFrameCount)) {
                 animationFrame = 0;
                 ++animationStage;
                 if ((animationStage) == 2) {
@@ -239,7 +239,7 @@ void ReimuFighter::Advance() {
                     field05C = 0.55f;
                     field3AC = 0;
                 }
-                if ((animationStage) >= (field070))
+                if ((animationStage) >= (animationStageCount))
                     animationStage -= 2;
                 BindAnimation();
             }
@@ -254,7 +254,7 @@ void ReimuFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(0);
         }
         break;
@@ -262,7 +262,7 @@ void ReimuFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0)
                 PlaySharedSound(30);
             ClearMotionFields();
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (inputY == 0)
                     ResetPrimaryCounters(0);
                 else
@@ -337,7 +337,7 @@ case 0x48: {
         PlaySharedSound(0x16);
         break;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(F605_LATE48);
     break;
 }
@@ -638,7 +638,7 @@ case 0x48: {
 #include "ReimuResourceLoopsF1192.inc"
 #include "ReimuFinalEffectsF1192.inc"
         default:
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
 #include "ReimuSharedGetterTailF1192.inc"
     }

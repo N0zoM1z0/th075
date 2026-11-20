@@ -13,7 +13,7 @@ action186Special: {
                     field3AC = 0;
                 }
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 4 && animationFrame == 0)
                 PlaySharedSound(0x1D);

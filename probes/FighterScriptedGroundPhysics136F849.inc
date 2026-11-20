@@ -20,7 +20,7 @@ case 0x136: {
         if ((velocityX)<g_ThresholdAt0065782C)
             velocityX=0.0f;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnBattleEffect(0x33A,x,y,

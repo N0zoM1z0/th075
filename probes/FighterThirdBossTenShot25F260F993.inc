@@ -16,7 +16,7 @@ case 0x25F: {
         scriptCounterF02=0;
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0 && (scriptCounterF00)<=0 && (scriptCounterF02)<1) {
         PlaySound(0);
@@ -45,7 +45,7 @@ case 0x260: {
         scriptCounterF02=0;
     }
     --scriptCounterF00;
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0 && (scriptCounterF00)<=0 && (scriptCounterF02)<1) {
         PlaySound(0);

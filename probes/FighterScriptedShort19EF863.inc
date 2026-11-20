@@ -6,7 +6,7 @@ case 0x19E: {
         field07C=0;
         ClearMotionFields();
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0)
         field07C=1;

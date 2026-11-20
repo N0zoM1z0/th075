@@ -12,7 +12,7 @@ case 0x35D: {
             0.0f,facing,1);
         ++field0D8;
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         if (field0D8<5)
             ResetSecondaryCounter(1);
         else

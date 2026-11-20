@@ -7,7 +7,7 @@ case 0x303: {
     opponent->field490=0.0f;
     if ((animationStage)<15 && y>g_ThresholdAt0065782C) velocityY=velocityY-field05C;
     if ((animationStage)>14) fieldF26=(fieldF26)+5;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         if ((scriptCounterF00)<8) {
             ++scriptCounterF00;
             ResetSecondaryCounter(15);
@@ -99,6 +99,6 @@ case 0x304: {
     }
     field490=0.0f;
     opponent->field490=0.0f;
-    if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(1);
     break;
 }

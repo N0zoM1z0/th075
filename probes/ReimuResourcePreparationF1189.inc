@@ -7,7 +7,7 @@ case R1189_ACTION: {
 #if R1189_HAS_BONUS
     if ((spiritCooldown)==0 && field07C==1) spirit=1000;
 #endif
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,(*(&y))+g_ContactProjectionAt00657888,
             facing,1);

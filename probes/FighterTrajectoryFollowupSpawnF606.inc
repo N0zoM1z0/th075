@@ -30,7 +30,7 @@ case F606_ACTION: {
         PlaySharedSound(0x16);
         break;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(F606_LATE);
     break;
 }

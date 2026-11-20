@@ -9,7 +9,7 @@
                 field07C=1;
                 ClearMotionFields();
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==15 && (animationFrame)==0) {
                 BeginFadeParameters(0);
                 SelectResourceParameters();

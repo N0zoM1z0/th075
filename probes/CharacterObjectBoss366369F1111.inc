@@ -116,7 +116,7 @@ case F1111_CASE: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==2 && animationFrame==0)
         ResetSecondaryCounter(1);

@@ -30,7 +30,7 @@ case 0xC8: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         if ((facing)*inputX>0) {
             if ((scriptCounterF00)<1) {
                 ResetSecondaryCounter(2);

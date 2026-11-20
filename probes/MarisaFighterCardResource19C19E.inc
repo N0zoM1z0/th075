@@ -5,7 +5,7 @@
                 ClearMotionFields();
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage != 6 || animationFrame != 0)
                 return;
@@ -24,7 +24,7 @@
                 ClearMotionFields();
                 scriptCounterF00 = 0;
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage != 6 || animationFrame != 0)
                 return;
@@ -51,7 +51,7 @@
                 PlaySound(1);
                 UpdateGaugeTimer(200);
             }
-            if (AdvanceNestedFrame() == field070)
+            if (AdvanceNestedFrame() == animationStageCount)
                 ResetPrimaryCounters(0);
             if (animationStage == 7 && animationFrame == 0 &&
                 inputC != 0 && scriptCounterF00 < 5) {

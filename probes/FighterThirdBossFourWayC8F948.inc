@@ -31,7 +31,7 @@ case 0xC8: {
         ResetPrimaryCounters(0xCF);
         break;
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         if (static_cast<int>(facing)*inputX>0 &&
             (scriptCounterF00)<2) {
             ResetSecondaryCounter(4);

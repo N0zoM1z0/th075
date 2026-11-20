@@ -20,7 +20,7 @@ case 0x32C: {
         color[2] = 0xFF;
         color[3] = 0xFF;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 }

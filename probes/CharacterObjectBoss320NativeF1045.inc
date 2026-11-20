@@ -29,7 +29,7 @@ case 0x320: {
     velocityY = (velocityY) - g_F1044_GravityAt0065747C;
     if (velocityY < g_F1044_GroundAt0065782C)
         velocityY = 0.0f;
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(1);
     return;
 }

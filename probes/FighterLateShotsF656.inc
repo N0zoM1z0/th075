@@ -10,7 +10,7 @@
             if ((velocityX)>g_ThresholdAt0065782C)
                 velocityX=(velocityX)-g_NewDragAt006581E0;
             if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySharedSound(0x1C);
                 SpawnBattleEffect(0x341,x,y,
@@ -39,7 +39,7 @@
                     field3AC=0;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 scriptCounterF00=0;
             }
@@ -63,7 +63,7 @@
                 velocityX=(velocityX)-g_SubtractAt00657478;
                 if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             }
-            if (AdvanceNestedFrame()==(field070)) {
+            if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 scriptCounterF00=0;
             }
@@ -86,7 +86,7 @@
                     field3AC=0;
                 }
             }
-            if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(0);
+            if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==5 && (animationFrame)==0)
                 SpawnBattleEffect(0x33E,x,y,
                     facing,1);

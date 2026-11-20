@@ -46,7 +46,7 @@ case 0x2F8: {
             (*(&y))+g_F701_VolleyYAt00658268,
             (facing),1);
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         PlaySound(0xA);

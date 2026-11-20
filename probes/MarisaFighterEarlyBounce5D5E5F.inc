@@ -10,12 +10,12 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 if (inputY > 0)
                     ResetPrimaryCounters(1);
             }
-            if (animationStage == field070 - 1) {
+            if (animationStage == animationStageCount - 1) {
                 if (opponent->x < x)
                     facing = -1;
                 if (x < opponent->x)
@@ -40,12 +40,12 @@
                     break;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 if (inputY > 0)
                     ResetPrimaryCounters(1);
             }
-            if (animationStage == field070 - 1) {
+            if (animationStage == animationStageCount - 1) {
                 if (opponent->x < x)
                     facing = -1;
                 if (x < opponent->x)
@@ -61,12 +61,12 @@
             break;
         }
         case 0x5F: {
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetPrimaryCounters(0);
                 if (inputY > 0)
                     ResetPrimaryCounters(1);
             }
-            if (animationStage != field070 - 1)
+            if (animationStage != animationStageCount - 1)
                 break;
             if (opponent->x < x)
                 facing = -1;

@@ -81,7 +81,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 4 && animationFrame == 0) ResetSecondaryCounter(0);
                 if (animationStage == 7 && animationFrame == 0) ResetSecondaryCounter(6);
             }
@@ -107,7 +107,7 @@ void SakuyaObject::Advance()
         x = field0DA * 6.0f * facing + x;
         scaleX += 0.1f;
         scaleY += 0.02f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 802:
@@ -128,7 +128,7 @@ void SakuyaObject::Advance()
         scaleX += 0.02f;
         scaleX += 0.5f;
         scaleY += 0.02f;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 803:
@@ -170,7 +170,7 @@ void SakuyaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(2);
+                if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(2);
                 if (animationStage == 1 && animationFrame == 0) color[0] = 255;
             }
         }
@@ -190,7 +190,7 @@ void SakuyaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 805:
@@ -291,7 +291,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             }
         }
         break;
@@ -401,7 +401,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             }
         }
         break;
@@ -484,7 +484,7 @@ void SakuyaObject::Advance()
                         velocityY += 0.5f;
                         rotationZ += 40.0f;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     if (animationStage == 2 && animationFrame == 0) {
                         field080 = 1;
                         field07C = 0;
@@ -548,7 +548,7 @@ void SakuyaObject::Advance()
                     }
                 }
                 if (animationStage == 1) scaleX += 0.3f;
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             }
         }
         break;
@@ -582,7 +582,7 @@ void SakuyaObject::Advance()
             }
             rotationZ += 10.0f;
             if (animationStage == 2) color[0] -= 12;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         }
         break;
@@ -616,7 +616,7 @@ void SakuyaObject::Advance()
             }
             rotationZ += 10.0f;
             if (animationStage == 2) color[0] -= 12;
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         }
         break;
@@ -656,7 +656,7 @@ void SakuyaObject::Advance()
             }
             x = facing * velocityX + x;
             y -= velocityY;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(6);
                 ++field0D8;
                 if (field0D8 > 40) ClearFrameInfo();
@@ -696,7 +696,7 @@ void SakuyaObject::Advance()
             field080 = 1;
             rotationZ = field0C8;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 813:
@@ -709,7 +709,7 @@ void SakuyaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 814:
@@ -731,7 +731,7 @@ void SakuyaObject::Advance()
             else { ClearFrameInfo(); return; }
         }
         rotationZ += 0.25f;
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         break;
 
     case 815:
@@ -764,7 +764,7 @@ void SakuyaObject::Advance()
         else if (animationStage == 3) { ClearFrameInfo(); return; }
         else {
             rotationZ += 1.0f;
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(3);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(3);
             if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         }
         break;
@@ -787,7 +787,7 @@ void SakuyaObject::Advance()
             if (color[0] > 5) color[0] -= 5;
             else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
+        if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(1);
         break;
 
     case 817:
@@ -818,7 +818,7 @@ void SakuyaObject::Advance()
             color[3] = 255;
             field0D8 = 1;
         }
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ClearFrameInfo();
             owner->fieldF0A = 0;
         }
@@ -853,7 +853,7 @@ void SakuyaObject::Advance()
         }
         else if (animationStage == 3) { ClearFrameInfo(); return; }
         else {
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(3);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(3);
             if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         }
         break;
@@ -874,7 +874,7 @@ void SakuyaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -894,7 +894,7 @@ void SakuyaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -914,7 +914,7 @@ void SakuyaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -934,7 +934,7 @@ void SakuyaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -954,7 +954,7 @@ void SakuyaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;
 
@@ -986,7 +986,7 @@ void SakuyaObject::Advance()
         if (field0DC < 5) rotationY = field0E0 + rotationY;
         if (field0DC > 4) rotationY -= field0E0;
         color[0] -= 8;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 825:
@@ -1017,7 +1017,7 @@ void SakuyaObject::Advance()
         if (field0DC < 5) rotationY = field0E0 + rotationY;
         if (field0DC > 4) rotationY -= field0E0;
         color[0] -= 8;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 826:
@@ -1048,7 +1048,7 @@ void SakuyaObject::Advance()
         if (field0DC < 5) rotationY = field0E0 + rotationY;
         if (field0DC > 4) rotationY -= field0E0;
         color[0] -= 8;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 827:
@@ -1079,7 +1079,7 @@ void SakuyaObject::Advance()
         if (field0DC < 5) rotationY = field0E0 + rotationY;
         if (field0DC > 4) rotationY -= field0E0;
         color[0] -= 8;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 828:
@@ -1110,7 +1110,7 @@ void SakuyaObject::Advance()
         if (field0DC < 5) rotationY = field0E0 + rotationY;
         if (field0DC > 4) rotationY -= field0E0;
         color[0] -= 8;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 829:
@@ -1141,7 +1141,7 @@ void SakuyaObject::Advance()
         if (field0DC < 5) rotationY = field0E0 + rotationY;
         if (field0DC > 4) rotationY -= field0E0;
         color[0] -= 8;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 830:
@@ -1160,7 +1160,7 @@ void SakuyaObject::Advance()
         y += velocityY;
         x = facing * velocityX + x;
         color[0] -= 8;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 831:
@@ -1176,7 +1176,7 @@ void SakuyaObject::Advance()
             }
             x = facing * velocityX + x;
             y -= velocityY;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (field0D8 < 4) {
                     ++field0D8;
                     ResetSecondaryCounter(1);
@@ -1199,7 +1199,7 @@ void SakuyaObject::Advance()
             }
             x = facing * velocityX + x;
             y -= velocityY;
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (field0D8 < 9) {
                     ++field0D8;
                     ResetSecondaryCounter(1);
@@ -1233,7 +1233,7 @@ void SakuyaObject::Advance()
         }
         x = facing * velocityX + x;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 834:
@@ -1310,7 +1310,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
             }
         }
@@ -1328,7 +1328,7 @@ void SakuyaObject::Advance()
         color[0] -= 12;
         color[1] -= 12;
         color[2] -= 12;
-        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
     case 836:
@@ -1395,7 +1395,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) field08A = 0;
                 if (animationStage == 2 && animationFrame == 0) {
                     field07C = 0;
@@ -1509,7 +1509,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) field08A = 0;
                 if (animationStage == 2 && animationFrame == 0) {
                     field07C = 0;
@@ -1595,7 +1595,7 @@ void SakuyaObject::Advance()
                         velocityY += 0.5f;
                         rotationZ += 40.0f;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 }
             }
         }
@@ -1675,7 +1675,7 @@ void SakuyaObject::Advance()
                         velocityY += 0.5f;
                         rotationZ += 40.0f;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                    if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     if (animationStage == 2 && animationFrame == 0) facing = -facing;
                 }
             }
@@ -1733,7 +1733,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
                 if (animationStage == 7 && animationFrame == 0) ResetSecondaryCounter(6);
             }
@@ -1779,7 +1779,7 @@ void SakuyaObject::Advance()
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(2);
+                if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(2);
                 if (animationStage == 1 && animationFrame == 0) color[0] = 255;
             }
         }
@@ -1884,7 +1884,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             }
         }
         break;
@@ -1983,7 +1983,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             }
         }
         break;
@@ -2021,7 +2021,7 @@ void SakuyaObject::Advance()
                     if (color[0] > 20) color[0] -= 20;
                     else { ClearFrameInfo(); return; }
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
             }
         }
@@ -2054,7 +2054,7 @@ void SakuyaObject::Advance()
                     if (color[0] > 20) color[0] -= 20;
                     else { ClearFrameInfo(); return; }
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
             }
         }
@@ -2087,7 +2087,7 @@ void SakuyaObject::Advance()
                     if (color[0] > 20) color[0] -= 20;
                     else { ClearFrameInfo(); return; }
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
             }
         }
@@ -2144,7 +2144,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
                 if (animationStage == 7 && animationFrame == 0) ResetSecondaryCounter(6);
             }
@@ -2160,7 +2160,7 @@ void SakuyaObject::Advance()
                 owner->field318 = 10.0f;
                 owner->SpawnBattleEffect(909, x, y, facing, 1);
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 if (field0D8 < g_F1212_DifficultyAt006714D0 * 2 + 1) {
                     ResetSecondaryCounter(1);
                     ++field0D8;
@@ -2253,7 +2253,7 @@ void SakuyaObject::Advance()
                     velocityY += 0.5f;
                     rotationZ += 40.0f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
                 if (animationStage == 7 && animationFrame == 0) ResetSecondaryCounter(6);
             }
@@ -2304,7 +2304,7 @@ void SakuyaObject::Advance()
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 return;
             }
@@ -2356,7 +2356,7 @@ void SakuyaObject::Advance()
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == field070) {
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 return;
             }
@@ -2400,7 +2400,7 @@ void SakuyaObject::Advance()
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2461,7 +2461,7 @@ void SakuyaObject::Advance()
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) {
+        if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
         }
         break;
@@ -2490,7 +2490,7 @@ void SakuyaObject::Advance()
             scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2;
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
             rotationZ += 1.0f;
-            if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(40);
+            if (AdvanceNestedFrame() == animationStageCount) ResetSecondaryCounter(40);
             if (animationStage == 40 && animationFrame == 0) color[0] = 255;
         }
         break;

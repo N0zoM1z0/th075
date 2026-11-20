@@ -20,7 +20,7 @@ case F645_CASE: {
             return;
         }
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ResetSecondaryCounter(F645_AUX_ACTION);
         return;
     }

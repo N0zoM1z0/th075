@@ -9,7 +9,7 @@ case 0x345: {
         color[2] = 0xFF;
         color[3] = 0xFF;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 }

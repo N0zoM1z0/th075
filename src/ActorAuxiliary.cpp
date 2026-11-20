@@ -158,7 +158,7 @@ void AuxiliaryActor4A80F0::Update()
     }
     if (animationStage == 7) color[0] = color[0] - 25;
     if (OWNER(short, 0xF12) == 6) SPAWN(843, x, y, 1, 1);
-    if (AdvanceNestedFrame() == field070) {
+    if (AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
         if (field0DC == 0) --OWNER(short, 0xF14);
         if (field0E0 == 0) --OWNER(short, 0xF16);

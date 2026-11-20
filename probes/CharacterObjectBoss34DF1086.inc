@@ -61,7 +61,7 @@ case 0x34D: {
         owner->PlaySound(20);
         return;
     }
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;
     }

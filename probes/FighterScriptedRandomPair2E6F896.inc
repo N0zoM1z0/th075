@@ -10,7 +10,7 @@ case 0x2E6: {
     velocityX=(velocityX)-g_F893FloatFallAt00657478;
     if ((velocityX)<g_ThresholdAt0065782C)
         velocityX=0.0f;
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         scriptCounterF00=RecordedRange(0,100);
         if (field07C==0) {
             ResetPrimaryCounters(0);

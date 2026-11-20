@@ -72,7 +72,7 @@ case 0x328: {
 #undef F1073_SPAWN_33A
         return;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(1);
     return;
 }

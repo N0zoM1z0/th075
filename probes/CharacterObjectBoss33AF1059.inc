@@ -37,7 +37,7 @@ case 0x33A: {
         else
             color[0]=0;
     }
-    if (AdvanceNestedFrame()==field070)
+    if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     return;
 }

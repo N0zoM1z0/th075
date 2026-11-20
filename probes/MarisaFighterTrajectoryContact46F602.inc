@@ -29,7 +29,7 @@ case 0x46: {
         PlaySharedSound(0x16);
         break;
     }
-    if (AdvanceNestedFrame() == field070)
+    if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(TRAJECTORY_LATE_STATE);
     break;
 }

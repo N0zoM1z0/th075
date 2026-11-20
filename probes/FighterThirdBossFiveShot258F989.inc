@@ -53,7 +53,7 @@ case 0x258: {
         }
         --scriptCounterF00;
     }
-    if (AdvanceNestedFrame()==(field070))
+    if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     break;
 }

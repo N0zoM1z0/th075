@@ -11,7 +11,7 @@ case R1187_ACTION: {
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if (AdvanceNestedFrame()==(field070)) ResetPrimaryCounters(9);
+    if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
 #include "ReimuThreeRandomShotsF1187.inc"
     break;
 }

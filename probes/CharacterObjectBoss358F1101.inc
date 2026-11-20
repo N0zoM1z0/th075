@@ -31,7 +31,7 @@ case 0x358: {
         return;
     }
     x=float(facing)*velocityX+x;
-    if (AdvanceNestedFrame()==field070) {
+    if (AdvanceNestedFrame()==animationStageCount) {
         if (field0D8<5) {
             ++field0D8;
             ResetSecondaryCounter(1);

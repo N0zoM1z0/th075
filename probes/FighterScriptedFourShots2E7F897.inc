@@ -19,7 +19,7 @@ case F897_CASE: {
             scriptCounterF02=0;
         }
     }
-    if (AdvanceNestedFrame()==(field070)) {
+    if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=RecordedRange(0,60)+60-
                       static_cast<int>(g_CloudOpponentAt006714D0);
