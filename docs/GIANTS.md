@@ -126,6 +126,16 @@ types, zero nonrelocation byte changes and its unchanged nonexact
 24,643-byte frontier. All 24 `CharacterObject.hpp`-affected exact
 units cold-replayed successfully.
 
+Patchouli action `0x34B` was audited against its x87 branch, not just the
+Ghidra pseudocode. The target uses `FCOMP` / `FNSTSW` / `TEST AH,0x41` / `JNE`;
+that condition also takes the movement path for unordered values. The existing
+natural-C++ `if (y > bound) ClearFrameInfo(); else move;` emits the matching
+condition. A positive `y <= bound` rewrite changed the body to 82,110 bytes
+and displaced many matching offsets; `!(y <= bound)` kept the size but added
+a new differing byte. Both candidates were rejected, and the source remains
+unchanged. The targeted animation-progress and ClearFrameInfo leaves replay
+exact (2/2).
+
 Patchouli object `0050A580` now defines `PatchouliObject::Advance` on its
 actual vtable class. The parent preserves its complete 81,539 CODE bytes,
 with 522 GPR and five width differences. Thirty-two parent sound calls
