@@ -1,9 +1,9 @@
 // Marisa's native 0x2EF, 0x2F0 and 0x2F8 late card states.
         case 0x2EF: {
             if (animationStage == 0 && animationFrame == 0) {
-                field07C = 1;
                 scriptCounterF00 = 0;
                 scriptCounterF02 = 0;
+                field07C = 1;
                 ClearMotionFields();
             }
             if (animationStage == 2 && animationFrame < 45) {
@@ -55,9 +55,9 @@
 
         case 0x2F0: {
             if (animationStage == 0 && animationFrame == 0) {
-                field07C = 1;
                 scriptCounterF00 = 0;
                 scriptCounterF02 = 0;
+                field07C = 1;
                 ClearMotionFields();
             }
             if (animationStage == 2 && animationFrame < 45) {
@@ -109,10 +109,10 @@
 
         case 0x2F8: {
             if (animationStage == 0 && animationFrame == 0) {
+                ClearMotionFields();
                 field080 = 1;
                 field07C = 0;
                 field3AC = 0;
-                ClearMotionFields();
             }
             if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
                 const float effectY = y + g_MarisaRandomEffectYAt00657858;
@@ -122,7 +122,7 @@
                 SpawnBattleEffect(0x330, spawnX, spawnY, facing, 1);
             }
             if (animationStage == 7 && y > g_MarisaHighBoundaryAt0065926C) {
-                y = g_MarisaHighBoundaryAt0065926C;
+                y = 870.0f;
                 ResetPrimaryCounters(0x2F9);
                 ClearMotionFields();
                 return;
