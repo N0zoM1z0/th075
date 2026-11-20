@@ -741,3 +741,10 @@ the same usual conversion against the unsigned best-score global. Targeted
 `Fighter* g_ActorAt00671418` interface (`Fighter::score`, +0x2D0) instead of
 reconstructing the member address with `unsigned char*` arithmetic. The
 complete 1344-byte renderer cold-replayed 1/1 exact.
+
+`GameStateF201::SaveSnapshot` now obtains the fighter's score (+0x2D0) and
+health (+0x324) through the existing `Fighter` member definitions rather than
+three raw byte-offset loads. The global retains its original `unsigned char*`
+ABI symbol; only the use-site view is typed. Assignment to the snapshot's
+DWORD/WORD destinations preserves the original unsigned-width conversions.
+The complete 904-byte snapshot function cold-replayed 1/1 exact.

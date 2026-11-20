@@ -1,4 +1,5 @@
 #include <windows.h>
+#include "Fighter.hpp"
 
 // Storage anchors are only address-compatible borrowed views. This function
 // never constructs or embeds an assumed original game-state owner.
@@ -69,7 +70,7 @@ void SaveSnapshot()
         DST(0x36) = g_PlayerDifficultyAt00671438[1];
         DST(0x37) = g_PlayerSettingsAt00671434[1];
         *reinterpret_cast<DWORD*>(&DST(0x3e)) =
-            *reinterpret_cast<DWORD*>(g_ActorAt00671418 + 0x2d0);
+            reinterpret_cast<Fighter*>(g_ActorAt00671418)->score;
         DST(0x38) = g_StageAt0067161D;
     } else if (g_CombatModeAt006714B4 == 3) {
         DST(3) = static_cast<unsigned char>(g_OptionsModeAt006714D0 + 1);
@@ -83,10 +84,10 @@ void SaveSnapshot()
         DST(0x35) = g_PlayerRoundAt006714AC[1];
         DST(5) = static_cast<unsigned char>(-1);
         *reinterpret_cast<unsigned short*>(&DST(0x3a)) =
-            *reinterpret_cast<unsigned short*>(g_ActorAt00671418 + 0x324);
+            reinterpret_cast<Fighter*>(g_ActorAt00671418)->health;
         DST(0x3c) = g_StageFlagAt00671622;
         *reinterpret_cast<DWORD*>(&DST(0x3e)) =
-            *reinterpret_cast<DWORD*>(g_ActorAt00671418 + 0x2d0);
+            reinterpret_cast<Fighter*>(g_ActorAt00671418)->score;
         DST(0x38) = g_ExtraStageAt0067161E;
     }
 }
