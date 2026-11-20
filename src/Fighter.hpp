@@ -2,6 +2,7 @@
 #define TH075_FIGHTER_HPP
 #include "Actor.hpp"
 #include "FighterOutcomeByteF992.hpp"
+#include "FighterEffectPolicies.hpp"
 
 class EffectManagerLifetimeF161;
 class TimelineDrawing438D00;
@@ -254,7 +255,10 @@ public:
     char quoteLines[2][200];            // +0x53B win quote text, one line each
     signed char quoteBadges[2];         // +0x6CB notice badge shown with each line
     unsigned char unknown6CD[0x6D0 - 0x6CD];
-    unsigned char sounds[0x6E4 - 0x6D0]; // +0x6D0 the fighter's sound bank
+    union {
+        unsigned char sounds[0x6E4 - 0x6D0]; // raw storage view used by resource loading
+        EffectSoundBankF135 soundBank;       // +0x6D0 embedded sound-bank view
+    };
     signed char sequencePhase;          // +0x6E4
     unsigned char unknown6E5[0x6E6 - 0x6E5];
     signed char noticeState;            // +0x6E6

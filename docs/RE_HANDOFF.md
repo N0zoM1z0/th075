@@ -573,3 +573,13 @@ the reviewed historical role label; the COFF symbol and match-unit binding
 are the actual `CharacterAuxObject::ClearField8`. The 21-byte leaf cold
 replayed 1/1 exact, with zero relocations. This is a pointer-only inherited
 field view; no full auxiliary-object size is claimed.
+
+
+`Fighter::PlaySound` now calls the named `soundBank` union view at Fighter
++0x6D0 instead of reconstructing the receiver with `this + 0x6D0`. The
+`EffectSoundBankF135` view occupies the already observed 20-byte subobject;
+its internal fields and any larger shared-bank owner's complete layout remain
+unknown. The existing raw `sounds[20]` view remains for the independent
+resource loader. The owner-sound leaf and that 1,186-byte loader both cold
+replayed exact, as did all four neighboring effect/sound forwarders (6/6
+affected units across two objects).
