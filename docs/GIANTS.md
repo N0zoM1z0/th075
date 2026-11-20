@@ -90,17 +90,17 @@ The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
 Marisa fighter `Advance` (`0x00486550`, 50,735 CODE bytes) now has a
 tracked, natural-C++ partial parent probe. It derives from the real
 `MarisaFighter`, uses named inherited `Actor`/`Fighter` fields and methods,
-and contains 110 recovered action-state bodies. Recent batches added states
+and contains 124 recovered action-state bodies. Recent batches added states
 `0x5D`–`0x62`, `0xC8`–`0xD2`, `0x12D`–`0x136`, `0x186`–`0x18B`,
-`0x190`–`0x1A3`, and `0x1F5`/`0x208`/`0x20A`–`0x20E`. The latest seven
-original handlers span 3,386 bytes / 970 instructions. The probe and its
-Marisa-specific counter fragments contain no raw offset casts, ASM, padding,
-or synthetic marker cases. VC7.1 compiles it to 34,729 CODE bytes / 10,025
-instructions; the original is 50,735 bytes / 14,260 instructions. This is
-deliberately NONEXACT and not entered into the complete-parent frontier;
-substantial original state coverage remains to be recovered. The 468-value
-original dispatch map and its 153 unique handler addresses remain the
-authority for further case work.
+`0x190`–`0x1A3`, `0x1F5`/`0x208`/`0x20A`–`0x20E`, and `0x252`–`0x25D` /
+`0x270`–`0x271`. The latest fourteen original handlers span 3,180 bytes /
+910 instructions. The probe and its Marisa-specific counter fragments contain
+no raw offset casts, ASM, padding, or synthetic marker cases. VC7.1 compiles
+it to 38,040 CODE bytes / 10,889 instructions; the original is 50,735 bytes /
+14,260 instructions. This is deliberately NONEXACT and not entered into the
+complete-parent frontier; substantial original state coverage remains to be
+recovered. The 468-value original dispatch map and its 153 unique handler
+addresses remain the authority for further case work.
 Patchouli object's 81,539-byte giant now calls native typed C++
 helpers in place of its last random/angle/sound alias methods:
 `PatchouliObject::RecordedRange` for 37 compiled native calls,
