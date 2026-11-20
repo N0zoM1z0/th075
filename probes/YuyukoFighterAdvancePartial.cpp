@@ -2969,6 +2969,57 @@ void YuyukoFighter::Advance() {
         ResetSecondaryCounter(5);
         return;
 
+    case 0x91:
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -10.0f;
+            velocityY = 14.0f;
+            field05C = 0.5f;
+            field07C = 0;
+        }
+        if (animationStage == 1 && velocityY < g_StopThresholdAt00657480) {
+            ResetSecondaryCounter(2);
+            return;
+        }
+        velocityY -= field05C;
+        if (y + velocityY < g_ThresholdAt0065782C) {
+            scriptCounterF00 = static_cast<short>(velocityX * g_ContactProjectionAt00657888);
+            scriptCounterF02 = static_cast<short>(velocityY * g_ContactProjectionAt00657888);
+            ClearMotionFields();
+            y = 0.0f;
+            ResetPrimaryCounters(0x61);
+            SetCameraShake(2.0f);
+            PlaySharedSound(0x16);
+            return;
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetSecondaryCounter(6);
+        return;
+
+    case 400:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            ClearMotionFields();
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+        }
+        --scriptCounterF00;
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage < 8 || scriptCounterF00 > 0 || scriptCounterF02 > 2)
+            return;
+        UpdateGaugeTimer(100);
+        PlaySound(0);
+        scriptCounterF00 = 15;
+        ++scriptCounterF02;
+        for (int burstIndex400 = 0; burstIndex400 < 5; ++burstIndex400) {
+            field318 = 1.0f;
+            field314 = static_cast<float>(burstIndex400 * -20 + 40);
+            SpawnBattleEffect(800, facing * 50.0f + x,
+                y + g_BarrageY1At006591EC, facing, 1);
+        }
+        return;
+
     case 0x8C:
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
