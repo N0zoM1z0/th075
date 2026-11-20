@@ -493,6 +493,7 @@ void MarisaFighterAdvanceProbe::Advance() {
 #include "MarisaFighterCardResource191194.inc"
 #include "MarisaFighterCardResource19C19E.inc"
 #include "MarisaFighterCardResource19F1A3.inc"
+#include "MarisaFighterCardVolleys19619B.inc"
         default:
             if (AdvanceNestedFrame() == field070)
                 ResetPrimaryCounters(0);

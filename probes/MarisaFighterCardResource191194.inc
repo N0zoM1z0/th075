@@ -1,4 +1,23 @@
 // Marisa's native card-resource finishers 0x191, 0x192 and 0x194.
+// Marisa's native 0x190 resource finisher.
+        case 0x190: {
+            if (animationStage == 0 && animationFrame == 0) {
+                field07C = 1;
+                ClearMotionFields();
+                scriptCounterF00 = 0;
+            }
+            if (AdvanceNestedFrame() == field070)
+                ResetPrimaryCounters(0);
+            if (animationStage != 5 || animationFrame != 0)
+                return;
+            SpawnBattleEffect(800,
+                static_cast<float>(facing * 100) + x,
+                y + g_ContactProjectionAt00657888, facing, 1);
+            UpdateGaugeTimer(0x96);
+            PlaySound(6);
+            return;
+        }
+
         case 0x191: {
             if (animationStage == 0 && animationFrame == 0)
                 field07C = 1;
