@@ -178,3 +178,12 @@ relocations. The address-anchored name deliberately avoids claiming a stronger
 semantic role because Ghidra reports no static xrefs; the neighboring
 00454BC0 setter and +0x480 sequence receiver provide the bounded Fighter
 context.
+
+
+An additional orphaned Actor-state leaf at 00454F70 now has a natural C++
+source candidate (`src/ActorFrameFlagPredicate454F70.cpp`). The pinned VC7.1
+probe reproduces all 31 bytes with no relocations: an ECX Actor pointer reaches
+`frameInfo->flags` and returns whether bit 0x20 is set. Ghidra reports no static
+callers, so the original owner, semantic role and authored/compiler origin
+remain unknown. It is deliberately left unclassified and receives no exact
+match credit.
