@@ -1,13 +1,6 @@
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 
-// Typed views of independently observed fields, without guessed intervening
-// storage or complete owner layouts. Names describe inferred combat roles.
-#define FIELD(type, object, offset) \
-    (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-// Native signed 16-bit flash bar length is at original actor+0x3C8.
-// These are two independently observed adjacent native signed WORDs.
-
 bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     signed char response = reinterpret_cast<CombatResponseActor *>(defender)->ClassifyResponse(attack->savedFrameInfo->attackFlags);
@@ -198,10 +191,7 @@ void BattleScene::SpawnMidpointEffect(short effect, unsigned char direction)
         direction, 1, 0, 0);
 }
 
-#undef FlashBarSpanF1072
 
-#undef TimerWordF1072
-#undef ActionWordF1072
 
 void BattleScene::StartHitSequence(Fighter *fighter, short value)
 {

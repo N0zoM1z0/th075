@@ -1,11 +1,6 @@
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 
-// Observed scalar views, without complete owner layouts.
-#define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-#define RECORD(type, actor, pointer, offset) FIELD(type, FIELD(void *, actor, pointer), offset)
-#define FRAME(type, actor, offset) RECORD(type, actor, 0xAC, offset)
-// Actual attack/collision FRAME record bitflags (32-bit at +0x3C/+0x40).
 void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if (attack->savedField07C != 0 || attack->field080 <= 0) return;
@@ -115,6 +110,3 @@ void Actor::SaveCollisionFields()
     savedFacing = facing;
     savedAction = action;
 }
-
-#undef F1079_ATTACK_FLAGS
-#undef F1079_DEFENSE_FLAGS
