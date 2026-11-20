@@ -85,12 +85,10 @@
             break;
         case 0x4:
             velocityX = 6.0f;
-            AdvanceNestedFrame();
-            return;
+            goto advanceNestedAndReturn;
         case 0x5:
             velocityX = -6.0f;
-            AdvanceNestedFrame();
-            return;
+            goto advanceNestedAndReturn;
         case 0x6:
             if (animationStage == 0 && animationFrame == 0 &&
                     (aiCommand == 3 || field3AC > 0)) {

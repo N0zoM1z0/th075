@@ -236,3 +236,12 @@ scratch after the `switch` has already selected its case. This mirrors the
 original decompiler's reuse of `iVar5`, avoids introducing extra floating-point
 locals, and keeps the Y random draw before the X random draw. The change remains
 a natural C++ candidate and is validated by the targeted VC7.1 probe only.
+
+
+The low Marisa actions `0x04` and `0x05` now branch to one shared
+`advanceNestedAndReturn` C++ tail rather than emitting duplicate calls. The
+pinned VC7.1 candidate places that tail at `00492B2E`; its body is the same
+three-instruction shape as the original `00492B73` tail (load `this`, call
+`Actor::AdvanceNestedFrame`, return). Their two handler bodies now end in a
+jump to that shared tail, matching the original control-flow sharing. The
+remaining stack-base offset and call-relocation differences are still open.

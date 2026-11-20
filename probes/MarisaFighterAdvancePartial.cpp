@@ -372,4 +372,8 @@ switchDefault:
     if (AdvanceNestedFrame() == field070)
         ResetPrimaryCounters(0);
     return;
+
+advanceNestedAndReturn:
+    AdvanceNestedFrame();
+    return;
 }
