@@ -35,6 +35,7 @@ extern float g_BarrageYAt00659290;
 extern float g_BarrageYAt00659298;
 extern float g_RepeatScaleAt006583E0;
 extern float g_RepeatScaleAt00658348;
+extern float g_BarrageXOffsetAt00657874;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -1289,6 +1290,44 @@ void YuyukoFighter::Advance() {
         UpdateGaugeTimer(30);
         scriptCounterF00 = 5;
         ++scriptCounterF02;
+        return;
+
+    case 0x19A:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            velocityX *= g_RepeatScaleAt00658348;
+            velocityY *= g_RepeatScaleAt00658348;
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            fieldF04 = 0;
+            fieldF06 = 0;
+        }
+        if (animationStage > 7) {
+            velocityY -= field05C;
+            if (y + velocityY <= g_ThresholdAt0065782C) {
+                y = 0.0f;
+                velocityY = 0.0f;
+                velocityX = 0.0f;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(9);
+        if (animationStage != 5 || animationFrame != 0)
+            return;
+        PlaySound(10);
+        scriptCounterF00 = static_cast<short>(velocityX * g_ContactProjectionAt00657888);
+        scriptCounterF02 = static_cast<short>(velocityY * g_ContactProjectionAt00657888);
+        UpdateGaugeTimer(150);
+        for (int burstIndex19A = 0; burstIndex19A < 7; ++burstIndex19A) {
+            field314 = static_cast<float>(30 - burstIndex19A * 10);
+            field318 = 10.0f;
+            SetPolarVelocity(field314, 80.0f);
+            SpawnBattleEffect(0x342,
+                (g_BarrageXOffsetAt00657874 + velocityX) * facing + x,
+                (y + g_BarrageYAt00659290) - velocityY, facing, 1);
+        }
+        velocityX = static_cast<float>(scriptCounterF00) * g_BounceYAt00658044;
+        velocityY = static_cast<float>(scriptCounterF02) * g_BounceYAt00658044;
         return;
 
     case 0x19C:
