@@ -598,3 +598,10 @@ control flow both compare against 10 (`00515C73`, `cmp ..., 0x0A`). The natural
 C++ loop is now corrected to ten iterations. The rebuilt parent retains the
 same 522/5 register frontier and first mismatch `00515C0E`; no whole-boss
 exactness is claimed.
+
+
+`Fighter::ApplyOpponentGaugeChange` no longer reconstructs the opponent's
+`short` array at +0x33E with a raw pointer cast. The observed `Fighter::healthLimits[20]`
+member and signed `field39D` index are now used directly; the unused `FIELD`
+macro was removed. The 753-byte function cold-replayed 1/1 exact, preserving
+all original code and relocations.
