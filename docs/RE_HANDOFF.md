@@ -80,6 +80,27 @@ claim. The next useful Yuyuko investigation starts at `00583489`; inspect the
 surrounding state-837/838 join and original control flow rather than assuming
 the first mismatch lies inside the state-838 entry itself.
 
+### Yuyuko fighter Advance partial reconstruction
+
+`0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
+parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 6,088-byte
+VC7.1 body covers actions `0..10`, `0x32..0x41` (only the observed cases),
+`0x46..0x49`, and `0x8C`: horizontal drift, jump/landing transitions,
+velocity projection, hit-stop/counter resets, and the shared animation
+advance path. Unimplemented action families still use the observed common
+default transition only as a research fallback; this is not a complete
+parent and receives no whole-function exactness credit. The structural
+comparison is expected to report a size mismatch (6,088 vs. 61,872 bytes).
+
+After adding the virtual slot declaration, the 13 exact Yuyuko header
+consumer units were cold-replayed individually: 13/13 exact across 11
+objects. The complete Yuyuko object `Advance` parent still builds with its
+existing 1,697-byte frontier and no regression. Continue from the remaining
+Yuyuko move cases in `.analysis/yuyuko-fighter-decompile.c`; do not replace
+the partial body with decompiler text or count its partial extent as a
+complete function.
+
 ## Remaining giant parents
 
 The 11 complete but nonexact parents are:

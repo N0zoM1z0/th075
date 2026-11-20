@@ -9,6 +9,7 @@ class YuyukoFighter : public Fighter {
 public:
     YuyukoFighter();
     virtual ~YuyukoFighter();
+    virtual void Advance(); // slot 1: partial native move-state reconstruction at 00564BE0
     void ConfigureStage();
     void ChooseCardAction();
     static int cardCountdown;
