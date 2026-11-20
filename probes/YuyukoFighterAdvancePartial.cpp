@@ -2719,6 +2719,256 @@ void YuyukoFighter::Advance() {
         ResetSecondaryCounter(7);
         return;
 
+    case 200:
+        field3AC = 1;
+        SetCommandSelection(3, 4, 0xFF);
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = 0.0f;
+            scriptCounterF00 = 0;
+        }
+        if (g_BarrageXOffsetAt00657874 < velocityX) {
+            velocityX -= g_SubtractAt00657478;
+            if (velocityX < g_ApproachLowerAt00658290)
+                velocityX = g_ApproachLowerAt00658290;
+        }
+        if (inputY < 0) {
+            ResetPrimaryCounters(facing * inputX > 0 ? 0xCD : 0xCC);
+            return;
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            if (facing * inputX > 0 && scriptCounterF00 < 5) {
+                ResetSecondaryCounter(2);
+                ++scriptCounterF00;
+                return;
+            }
+            ResetPrimaryCounters(0xCF);
+            return;
+        }
+        if (animationStage != 1 || animationFrame != 0)
+            return;
+        velocityX = 15.0f;
+        return;
+
+    case 0xC9:
+        SetCommandSelection(3, 4, 0xFF);
+        if (animationStage == 0 && animationFrame == 0)
+            velocityX = 0.0f;
+        if (animationStage == 1 && animationFrame == 0) {
+            velocityX = -10.0f;
+            velocityY = 2.0f;
+            field05C = 0.2f;
+        }
+        if (g_ThresholdAt0065782C < y && animationStage > 0 && animationStage < 5) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field05C = 0.0f;
+                y = 0.0f;
+                ResetSecondaryCounter(5);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage != 5 || animationFrame != 0)
+            return;
+        ResetSecondaryCounter(animationStage - 2);
+        return;
+
+    case 0xCA:
+        SetCommandSelection(3, 4, 0xFF);
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field05C = 0.0f;
+        }
+        if (g_ThresholdAt0065782C < y && animationStage > 1) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field05C = 0.0f;
+                y = 0.0f;
+                ResetPrimaryCounters(10);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(9);
+            return;
+        }
+        if (animationStage != 2 || animationFrame != 0)
+            return;
+        velocityX = 7.5f;
+        velocityY = 3.5f;
+        field05C = 0.45f;
+        return;
+
+    case 0xCB:
+        SetCommandSelection(3, 4, 0xFF);
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field05C = 0.0f;
+        }
+        if (g_ThresholdAt0065782C < y && animationStage > 0) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field05C = 0.0f;
+                y = 0.0f;
+                ResetPrimaryCounters(10);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(9);
+        if (animationStage == 2 && animationFrame == 0) {
+            velocityX = -7.5f;
+            velocityY = 3.5f;
+            field05C = 0.45f;
+        }
+        if (animationStage != 5 || scriptCounterF00 > 0)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(3);
+        return;
+
+    case 0xCC:
+        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+            SetCommandSelection(3, 4, 0xFF);
+            field088 = 2;
+        }
+        if (animationStage == 0 && field3AC == 0)
+            ClearMotionFields();
+        if (g_ThresholdAt0065782C < y) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                ResetPrimaryCounters(10);
+                y = 0.0f;
+                ClearMotionFields();
+                return;
+            }
+        }
+        if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
+            ResetSecondaryCounter(3);
+        ++animationFrame;
+        if (animationFrame < animationFrameCount)
+            return;
+        animationFrame = 0;
+        ++animationStage;
+        if (animationStage == 2) {
+            velocityX = 0.0f;
+            velocityY = 18.5f;
+            field05C = 0.55f;
+            SpawnAuxEffect(0x3C, x, y, 1, 1);
+        }
+        if (animationStageCount <= animationStage)
+            animationStage -= 2;
+        BindAnimation();
+        return;
+
+    case 0xCD:
+        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+            SetCommandSelection(3, 4, 0xFF);
+            field088 = 2;
+        }
+        if (animationStage == 0 && field3AC == 0)
+            ClearMotionFields();
+        if (g_ThresholdAt0065782C < y) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                ResetPrimaryCounters(10);
+                y = 0.0f;
+                ClearMotionFields();
+                return;
+            }
+        }
+        if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
+            ResetSecondaryCounter(3);
+        ++animationFrame;
+        if (animationFrame < animationFrameCount)
+            return;
+        animationFrame = 0;
+        ++animationStage;
+        if (animationStage == 2) {
+            velocityX = 0.0f;
+            velocityY = 13.5f;
+            field05C = 0.5f;
+            SpawnAuxEffect(0x3C, x, y, 1, 1);
+        }
+        if (animationStageCount <= animationStage)
+            animationStage -= 2;
+        BindAnimation();
+        return;
+
+    case 0xCE:
+        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+            SetCommandSelection(3, 4, 0xFF);
+            field088 = 2;
+        }
+        if (animationStage == 0 && field3AC == 0)
+            ClearMotionFields();
+        if (g_ThresholdAt0065782C < y) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                ResetPrimaryCounters(10);
+                y = 0.0f;
+                ClearMotionFields();
+                return;
+            }
+        }
+        ++animationFrame;
+        if (animationFrame < animationFrameCount)
+            return;
+        animationFrame = 0;
+        ++animationStage;
+        if (animationStage == 2) {
+            velocityX = -10.0f;
+            velocityY = 13.5f;
+            field05C = 0.5f;
+            SpawnAuxEffect(0x3C, x, y, 1, 1);
+        }
+        if (animationStageCount <= animationStage)
+            animationStage -= 2;
+        BindAnimation();
+        return;
+
+    case 0xCF:
+        field3AC = 1;
+        velocityX -= g_SubtractAt00657478;
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX = 0.0f;
+            field3AC = 0;
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        field3AC = 0;
+        return;
+
+    case 0xD0:
+        if (animationStage == 0 && animationFrame == 0) {
+            facing = -facing;
+            velocityX = -velocityX;
+        }
+        if (field05C == g_ThresholdAt0065782C)
+            field05C = 0.6f;
+        velocityY -= field05C;
+        if (y + velocityY < g_ThresholdAt0065782C) {
+            ResetPrimaryCounters(10);
+            y = 0.0f;
+            ClearMotionFields();
+            return;
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetSecondaryCounter(5);
+        return;
+
     case 0x8C:
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
