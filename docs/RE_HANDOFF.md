@@ -501,3 +501,14 @@ signed render test; its render and base-reset functions remain byte-identical.
 Four signed-byte views used only to store zero to the unsigned `field39C`
 flag and the redundant signed view in the overlay timeline switch were also
 removed. Four affected exact functions replayed 4/4.
+
+A further typed-member pass removed HUD and collision borrowed views without
+changing the original generated code. `BattleScene::RenderHud` now reads the
+existing `Fighter::field32A` and `Fighter::healthLimits` arrays directly; its
+9,841-byte / 2,401-instruction exact unit replay passed 1/1. `ResolveBodySeparation`
+now passes the existing `FighterFrameInfo::bodyBox` member rather than
+recomputing `frameInfo + 0x44`; its 1,861-byte / 540-instruction exact unit
+replay passed 1/1. Unused notice/name-group borrowed windows and stale collision
+RECT/record macros were deleted. Six affected translation units compiled
+locally. The routing-only raw-member scan fell from 98 candidates to 80; this
+heuristic count is not an exactness or completion metric.
