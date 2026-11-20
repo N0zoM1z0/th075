@@ -208,3 +208,12 @@ at receiver +0x24 and two raw DWORD arguments at +0x1C/+0x20. The receiver's
 preceding 0x1C bytes are deliberately untyped; the evidence's FontSurface
 context does not yet prove the owner or whether the DWORDs are floats or raw
 integer bit patterns. It remains unclassified and receives no exact credit.
+
+
+The 16-byte getter at `004124B0` now has a natural C++ pointer-holder
+alternative in `probes/UnknownPointerHolderGetterAt004124B0.cpp`. It cold-compiles
+byte-for-byte with zero relocations. Its two callers (`00411EA0` and `00411F20`)
+are container/proxy-management paths, including a call to the VC7
+`allocator<std::_Container_proxy>::destroy`; this narrows the context but does
+not prove the original receiver type or STL/game ownership boundary. It remains
+unclassified and receives no exact credit.
