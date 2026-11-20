@@ -1622,8 +1622,6 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x252:
-    case 0x253:
-    case 0x254:
         if (animationStage == 0 && animationFrame == 0) {
             --field366;
             ClearMotionFields();
@@ -1636,9 +1634,51 @@ void YuyukoFighter::Advance() {
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
+        if (animationStage != 4)
+            return;
         if (animationFrame != 0)
             return;
-        if (action == 0x254 ? animationStage != 5 : animationStage != 4)
+        SpawnAuxEffect(0x37, x, y + g_ContactProjectionAt00657888, facing, 1);
+        PlaySharedSound(0x21);
+        opponent->fieldEFA = 0;
+        return;
+
+    case 0x253:
+        if (animationStage == 0 && animationFrame == 0) {
+            --field366;
+            ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+            field3AC = 0;
+            scriptCounterF00 = 0;
+        }
+        if (spiritCooldown == 0 && field07C == 1)
+            spirit = 1000;
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage != 4)
+            return;
+        if (animationFrame != 0)
+            return;
+        SpawnAuxEffect(0x37, x, y + g_ContactProjectionAt00657888, facing, 1);
+        PlaySharedSound(0x21);
+        opponent->fieldEFA = 0;
+        return;
+
+    case 0x254:
+        if (animationStage == 0 && animationFrame == 0) {
+            --field366;
+            ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+            field3AC = 0;
+            scriptCounterF00 = 0;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage != 5)
+            return;
+        if (animationFrame != 0)
             return;
         SpawnAuxEffect(0x37, x, y + g_ContactProjectionAt00657888, facing, 1);
         PlaySharedSound(0x21);
