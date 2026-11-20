@@ -27,7 +27,7 @@ void Fighter::LoadStageResource()
             delete stageTexture;
         stageTexture = new FighterStageTextureF286();
         stageTexture->AllocateSlots(FIELD(signed char,0x704+g_CurrentStageAt0067161E));
-        sprintf(filename,g_StageTextureFormatAt00658FC0,reinterpret_cast<char*>(this)+0xC4,g_CurrentStageAt0067161E);
+        sprintf(filename,g_StageTextureFormatAt00658FC0,name,g_CurrentStageAt0067161E);
         stageTexture->LoadDefault(filename,g_StageArchiveAt00658FE0);
     }
 }

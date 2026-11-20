@@ -685,3 +685,10 @@ shared VC7.1 object cold-replayed all 11 affected complete 130-byte CODE
 functions and their 40-byte switch-table comparison extents (11/11 exact).
 The one-byte layout and `sizeof(Fighter)` are unchanged; the field's deeper
 semantic name remains provisional.
+
+`Fighter::LoadStageResource` now passes the already-declared `Fighter::name`
+member to the stage-texture format string instead of reconstructing the same
+`this+0xC4` address through a raw character-pointer cast. This is the actual
+260-byte name buffer declared at Fighter+0xC4; the stage index and all texture
+resource/lifetime operations are unchanged. The complete 374-byte function,
+including its EH and security-cookie relocations, cold-replayed 1/1 exact.
