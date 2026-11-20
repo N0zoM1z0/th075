@@ -28,6 +28,7 @@ extern float g_ReimuRepeatDragAt00659090;
 extern float g_ReimuCommandFrontYAt006590AC;
 extern float g_YPlusAt0065929C;
 extern float g_YPlusAt00658400;
+extern float g_BarrageY1At006591EC;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -1115,6 +1116,72 @@ void YuyukoFighter::Advance() {
             return;
         SpawnBattleEffect(0x328, (static_cast<int>(facing) << 7) + x,
             y + g_YPlusAt00658400, facing, 1);
+        return;
+
+    case 0x191:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            ClearMotionFields();
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+        }
+        --scriptCounterF00;
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage != 8 || animationFrame != 0)
+            return;
+        UpdateGaugeTimer(0xFA);
+        PlaySound(0);
+        for (int burstIndex191 = 0; burstIndex191 < 8; ++burstIndex191) {
+            field318 = static_cast<float>(burstIndex191 * 2 + 2);
+            SpawnBattleEffect(0x33E, facing * 50.0f + x,
+                y + g_BarrageY1At006591EC, facing, 1);
+        }
+        return;
+
+    case 0x192:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field07C = 1;
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+        }
+        if (animationStage > 3 && animationStage < 15) {
+            velocityY -= field05C;
+            if (y + velocityY <= g_ThresholdAt0065782C) {
+                ClearMotionFields();
+                y = 0.0f;
+                ResetSecondaryCounter(15);
+                return;
+            }
+        }
+        if (animationStage > 3 && animationStage < 11) {
+            --scriptCounterF02;
+            if (scriptCounterF02 < 1) {
+                field318 = 1.0f;
+                field314 = 0.0f;
+                PlaySound(0);
+                UpdateGaugeTimer(40);
+                SpawnBattleEffect(800, x, y + g_ReimuCommandFrontYAt006590AC, facing, 1);
+                scriptCounterF02 = 4;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            scriptCounterF00 = 0;
+        }
+        if (animationStage == 4 && animationFrame == 0) {
+            velocityY = 10.0f;
+            field05C = 0.3f;
+        }
+        if (animationStage == 12 && animationFrame == 0 && scriptCounterF00 < 1) {
+            ++scriptCounterF00;
+            ResetSecondaryCounter(5);
+        }
+        if (animationStage != 15 || animationFrame != 0)
+            return;
+        ResetSecondaryCounter(14);
         return;
 
     case 0x8C:
