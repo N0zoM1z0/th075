@@ -70,23 +70,7 @@ void MarisaFighterAdvanceProbe::Advance() {
         return;
         int actionSnapshot = action;
         if (actionSnapshot <= 0x32) {
-        if (actionSnapshot == 0x32) {
-                if (animationStage == 0 && animationFrame == 0) {
-                    velocityX = -8.0f;
-                    velocityY = 0.0f;
-                    field07C = 0;
-                }
-                if (velocityX < g_ThresholdAt0065782C) {
-                    velocityX += g_JumpGroundCorrectionAt00658058;
-                    if (velocityX > g_ThresholdAt0065782C)
-                        velocityX = 0.0f;
-                }
-                if (CheckHorizontalLimits() && field3BE != 0)
-                    field490 = velocityX * static_cast<float>(g_JumpReflectionAt006583E8);
-                if (AdvanceNestedFrame() == field070)
-                    ResetPrimaryCounters(0);
-                return;
-            }
+        if (actionSnapshot == 0x32) goto action32Special;
         switch (actionSnapshot) {
                 #include "MarisaFighterLowActions.inc"
                 default: goto switchDefault;
@@ -155,6 +139,9 @@ void MarisaFighterAdvanceProbe::Advance() {
 #undef F614_SIDE
 #include "MarisaFighterMode63BasicF626.inc"
             }
+            goto switchDefault;
+            #include "MarisaFighterJumpLanding8CSpecialBody.inc"
+
         }
         else if (actionSnapshot <= 0x12C) {
             #include "MarisaFighterAction12CSpecial.inc"
@@ -330,12 +317,18 @@ void MarisaFighterAdvanceProbe::Advance() {
 #include "MarisaFighterSpecialCardCF.inc"
 #include "MarisaFighterSpecialCardD0D2.inc"
             }
+            goto switchDefault;
+            #include "MarisaFighterAction12CSpecialBody.inc"
+
         }
         else if (actionSnapshot <= 0x186) {
             #include "MarisaFighterEarlySpecial186.inc"
             switch (actionSnapshot) {
 #include "MarisaFighterStage12D136.inc"
             }
+            goto switchDefault;
+            #include "MarisaFighterEarlySpecial186Body.inc"
+
         }
         else if (actionSnapshot <= 0x1F4) {
             #include "MarisaFighterAction1F4Special.inc"
@@ -347,27 +340,32 @@ void MarisaFighterAdvanceProbe::Advance() {
 #include "MarisaFighterCardResource19F1A3.inc"
 #include "MarisaFighterCardVolleys19619B.inc"
             }
+            goto switchDefault;
+            #include "MarisaFighterAction1F4SpecialBody.inc"
+
         }
         else if (actionSnapshot <= 0x2C2) {
             #include "MarisaFighterAction2C2Special.inc"
             switch (actionSnapshot) {
 #include "MarisaFighterCardFollowup1F520E.inc"
 #include "MarisaFighterCardResource252271.inc"
-#include "MarisaFighterCardTail2BD.inc"
-#include "MarisaFighterCardLate2BC2C0.inc"
-#include "MarisaFighterCardLate2BF.inc"
+#include "MarisaFighterCardTail2BC2C1.inc"
             }
+            goto switchDefault;
+            #include "MarisaFighterAction2C2SpecialBody.inc"
+
         }
         else {
             switch (actionSnapshot) {
 #include "MarisaFighterLateCard2C3D1.inc"
-#include "MarisaFighterCardTail2E731C.inc"
-#include "MarisaFighterCardLate2DB.inc"
-#include "MarisaFighterCardTail2EF2F8.inc"
-#include "MarisaFighterRandomCard2E52F9.inc"
+#include "MarisaFighterCardTail2DB2E7.inc"
+#include "MarisaFighterCardTail2EF2F2.inc"
+#include "MarisaFighterCardTail2F82FA.inc"
+#include "MarisaFighterCardTail31B31C.inc"
             }
         }
         goto switchDefault;
+#include "MarisaFighterAction32SpecialBody.inc"
 switchDefault:
     if (AdvanceNestedFrame() == field070)
         ResetPrimaryCounters(0);
