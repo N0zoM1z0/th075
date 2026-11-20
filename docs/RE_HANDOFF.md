@@ -633,3 +633,8 @@ unused `FIELD(type, offset)` reinterpret-cast macros; all real accesses in both
 complete bodies already use observed Fighter members. Their dead macros and
 `#undef`s are removed. The 1,028-byte and 1,121-byte leaves cold-replayed 2/2
 exact with all original relocations.
+
+The Reimu `00470A40` auxiliary controller likewise had an unused
+`FIELD(type, offset)` raw-pointer macro despite using only observed Fighter
+members. The dead macro/undef are removed; its full 1,027-byte leaf cold
+replayed 1/1 exact with all eleven original relocations.

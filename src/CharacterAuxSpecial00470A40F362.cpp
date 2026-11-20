@@ -8,7 +8,6 @@
 // Declaration-only receiver view; full character owner layout unknown.
 
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void ReimuFighter::AdvanceAuxiliary() {
@@ -76,5 +75,3 @@ void ReimuFighter::AdvanceAuxiliary() {
         fieldF2A = 0;
     }
 }
-
-#undef FIELD
