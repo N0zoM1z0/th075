@@ -83,8 +83,6 @@ void YuyukoFighter::Advance() {
         return;
 
     case 1:
-    case 3: {
-        short neutralAction = action == 1 ? 2 : 0;
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
@@ -104,9 +102,31 @@ void YuyukoFighter::Advance() {
             }
         }
         if (AdvanceNestedFrame() == animationStageCount)
-            ResetPrimaryCounters(neutralAction);
+            ResetPrimaryCounters(2);
         return;
-    }
+
+    case 3:
+        if (field3AC == 0) {
+            ClearMotionFields();
+        } else {
+            if (g_ThresholdAt0065782C < velocityX) {
+                velocityX -= g_SubtractAt00657478;
+                if (velocityX < g_ThresholdAt0065782C) {
+                    ClearMotionFields();
+                    field3AC = 0;
+                }
+            }
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX += g_RiseAt00658050;
+                if (g_ThresholdAt0065782C < velocityX) {
+                    ClearMotionFields();
+                    field3AC = 0;
+                }
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        return;
 
     case 4:
         velocityX = 4.0f;
