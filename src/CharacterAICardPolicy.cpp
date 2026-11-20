@@ -418,7 +418,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
             return;
         }
     }
-    if (static_cast<float>(rand()) < spirit * 0.8f + 0.0f &&
+    if (rand() < spirit * 0.8f + 0.0f &&
         distance.x > 320.0f &&
         spirit > 350) {
         aiWaitTimer = ChooseIntegerRange(0, 45);
@@ -428,7 +428,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (rand() < 1000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < spirit * 1.0f + 0.0f &&
+    if (rand() < spirit * 1.0f + 0.0f &&
         distance.x > 560.0f &&
         spirit > 250 &&
         distance.y < 100.0f) {
@@ -439,7 +439,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (rand() < 2000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < spirit * 0.5f + 0.0f &&
+    if (rand() < spirit * 0.5f + 0.0f &&
         distance.x > 560.0f &&
         spirit > 250) {
         inputB = 1;
@@ -632,13 +632,13 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
     }
     if (distance.y < 150.0f &&
         distance.x > 200.0f &&
-        static_cast<float>(rand()) < spirit * 0.1f) {
+        rand() < spirit * 0.1f) {
         F940_COMMAND_AT511(this) = 20;
         return;
     }
     if (distance.y < 150.0f &&
         distance.x > 400.0f &&
-        static_cast<float>(rand()) < spirit * 0.1f) {
+        rand() < spirit * 0.1f) {
         F940_COMMAND_AT511(this) = 21;
         return;
     }

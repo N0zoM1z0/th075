@@ -554,3 +554,8 @@ the adjacent right-hand expressions are already `float`, so the explicit
 `static_cast<float>` wrappers were redundant. The six affected 8,871-byte
 units cold-replayed 6/6 exact from one `CharacterAIPolicy.obj`; this changes
 source clarity only and leaves all native bytes/relocations unchanged.
+
+`CharacterAICardPolicy<Policy>::ChooseCardAction` uses the same ordinary
+implicit `rand()`-to-float conversions: its five explicit casts were removed
+without changing either 7,780-byte template instantiation. Both original card
+AI units cold-replayed 2/2 exact from one `CharacterAICardPolicy.obj`.
