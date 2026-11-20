@@ -547,3 +547,10 @@ canonical exact-replay registry is not yet updated: preserve the separate
 CODE/data extents and do not claim accepted exactness until a complete replay
 unit can represent them without crediting switch data as authored CODE.
 Next giant frontier is Meiling `005EB520` (135 GPR / six widths).
+
+The six `CharacterAIPolicy<Policy>::ChooseAction` instantiations now use the
+ordinary implicit integer-to-float conversion in five `rand()` comparisons;
+the adjacent right-hand expressions are already `float`, so the explicit
+`static_cast<float>` wrappers were redundant. The six affected 8,871-byte
+units cold-replayed 6/6 exact from one `CharacterAIPolicy.obj`; this changes
+source clarity only and leaves all native bytes/relocations unchanged.
