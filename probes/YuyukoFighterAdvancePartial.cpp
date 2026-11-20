@@ -2787,22 +2787,122 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x96:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = -9.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
     case 0x97:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = -10.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
     case 0x98:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = -13.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
     case 0x9F:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = -9.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
     case 0xA0:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = -10.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
     case 0xA1:
         cardGauge += g_CardGaugeStepAt0065747C;
         if (g_ThousandAt006583B4 < cardGauge)
             cardGauge = g_ThousandAt006583B4;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            if (action == 0x96 || action == 0x9F)
-                velocityX = -9.0f;
-            else if (action == 0x97 || action == 0xA0)
-                velocityX = -10.0f;
-            else
-                velocityX = -13.0f;
+            velocityX = -13.0f;
             velocityY = 0.0f;
             field07C = 0;
         }
@@ -2819,19 +2919,56 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x9A:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = -9.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(2);
+        return;
+
     case 0x9B:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            velocityX = -10.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(2);
+        return;
+
     case 0x9C:
         cardGauge += g_CardGaugeStepAt0065747C;
         if (g_ThousandAt006583B4 < cardGauge)
             cardGauge = g_ThousandAt006583B4;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            if (action == 0x9A)
-                velocityX = -9.0f;
-            else if (action == 0x9B)
-                velocityX = -10.0f;
-            else
-                velocityX = -13.0f;
+            velocityX = -13.0f;
             velocityY = 0.0f;
             field07C = 0;
         }
