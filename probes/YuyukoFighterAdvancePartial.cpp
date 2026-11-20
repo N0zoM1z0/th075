@@ -43,6 +43,8 @@ extern float g_Stage2BFYOffsetAt00658398;
 extern float g_Stage2BFY2At00659B6C;
 extern float g_Stage2DAEffectYOffsetAt0065908C;
 extern signed char g_StateRepeatLevelAt006714D0;
+extern float g_Stage2E4EffectYOffsetAt006583B4;
+extern float g_YuyukoChaseDivisorAt0065788C;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -2057,6 +2059,76 @@ void YuyukoFighter::Advance() {
             return;
         ++scriptCounterF02;
         ResetSecondaryCounter(12);
+        return;
+
+    case 0x2DB:
+        if (animationStage == 0 && animationFrame == 0) {
+            ClearMotionFields();
+            ResetTransform(0.0f, 0.0f, 0.0f);
+        }
+        if (color[0] < 0x81)
+            color[0] = 0x80;
+        else
+            color[0] = static_cast<unsigned char>(
+                static_cast<signed char>(color[0]) - 6);
+        if (animationStage == 0 && field3AC == 0)
+            ClearMotionFields();
+        if (y > g_ThresholdAt0065782C) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                ResetTransform(0.0f, 0.0f, 0.0f);
+                ResetPrimaryCounters(0x2DA);
+                y = 0.0f;
+                ClearMotionFields();
+                return;
+            }
+        }
+        if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
+            ResetSecondaryCounter(3);
+        ++animationFrame;
+        if (animationFrame < animationFrameCount)
+            return;
+        animationFrame = 0;
+        ++animationStage;
+        if (animationStage == 2) {
+            velocityX = (opponent->x - x) * facing / g_YuyukoChaseDivisorAt0065788C;
+            velocityY = 10.0f;
+            field05C = 0.4f;
+        }
+        if (animationStageCount <= animationStage)
+            animationStage -= 2;
+        BindAnimation();
+        return;
+
+    case 0x2E4:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 0;
+            field080 = 8;
+            ClearMotionFields();
+            scriptCounterF00 = 0;
+        }
+        if ((animationStage == 7 || animationStage == 8) && animationFrame == 0)
+            SpawnBattleEffect(0x388, facing * 67.0f + x,
+                y + g_RadialPatternYOffsetAt00659274, facing, 1);
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            SpawnBattleEffect(0x397, x,
+                y + g_Stage2E4EffectYOffsetAt006583B4, facing, 1);
+        }
+        if (animationStage == 7 && animationFrame == 0)
+            PlaySound(3);
+        if (animationStage == 9 && animationFrame == 0) {
+            if (scriptCounterF00 < g_StateRepeatLevelAt006714D0 * 4 + 5) {
+                ++scriptCounterF00;
+                ResetSecondaryCounter(7);
+                return;
+            }
+            field07C = 1;
+        }
+        if (animationStage != 11 || animationFrame != 0 || scriptCounterF00 > 4)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(9);
         return;
 
     case 0x8C:
