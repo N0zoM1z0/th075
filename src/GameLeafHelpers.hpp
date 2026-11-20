@@ -82,10 +82,7 @@ public:
 
 
 
-class AuxEffect {
-public:
-    void ClearField8();
-};
+
 
 extern int g_ClampedGameValue;
 void SetClampedGameValue(int value);

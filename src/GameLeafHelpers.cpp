@@ -1,5 +1,7 @@
 #include "CharacterObject.hpp"
 #include "GameLeafHelpers.hpp"
+#include "CharacterAuxAction.hpp"
+typedef CharacterAuxObject AuxEffect;
 
 SpriteGeometry *SpriteGeometry::SetFourDwords(
     u32 first, u32 second, u32 third, u32 fourth)
@@ -29,7 +31,7 @@ void Fighter::ClearNoticeTransition()
 
 void AuxEffect::ClearField8()
 {
-    *reinterpret_cast<u32 *>(reinterpret_cast<u8 *>(this) + 8) = 0;
+    drawFrame = 0;
 }
 
 void SetClampedGameValue(int value)

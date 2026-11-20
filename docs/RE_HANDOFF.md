@@ -564,3 +564,12 @@ view explicitly models only the 12-byte unknown prefix and the copied vector;
 no enclosing `SpriteScene` size or later fields are claimed, and no instance
 is created. Its affected `GamePolicyHelpers.obj` unit cold-replayed 1/1 exact
 (38/38 CODE bytes).
+
+
+The `0x005FAC20` clear-field leaf now uses the native `CharacterAuxObject`
+owner and its observed `Actor::drawFrame` pointer at +0x08 instead of a raw
+`this + 8` DWORD store. `AuxEffect` remains only a source typedef preserving
+the reviewed historical role label; the COFF symbol and match-unit binding
+are the actual `CharacterAuxObject::ClearField8`. The 21-byte leaf cold
+replayed 1/1 exact, with zero relocations. This is a pointer-only inherited
+field view; no full auxiliary-object size is claimed.
