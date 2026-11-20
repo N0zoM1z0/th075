@@ -1,5 +1,4 @@
 #include "YoumuFighter.hpp"
-#include "FighterCommandByteF940.hpp"
 // Complete borrowed 27-pattern command-priority input controller. Each
 // genuine pattern has its own original constant pool address. The receiver
 // class and command string contents are not asserted beyond these reads.
@@ -30,7 +29,7 @@ extern const char g_ComboPatternAt006599BC[];
 extern const char g_ComboPatternAt006599C0[];
 extern const char g_ComboPatternAt006599C4[];
 extern const char g_ComboPatternAt006599CC[];
-#define STATUS F940_COMMAND_AT511(this)
+#define STATUS aiCommand
 void YoumuFighter::PollCommands() {
     STATUS = 0;
     if (CheckPattern(g_ComboPatternAt00659920,5,15)) STATUS=61;

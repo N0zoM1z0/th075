@@ -1,4 +1,3 @@
-#include "FighterCommandByteF940.hpp"
 #include "CharacterAIPolicy.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
@@ -40,7 +39,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
         if (action != 200) {
-            F940_COMMAND_AT511(this) = FORWARD_COMMAND;
+            aiCommand = FORWARD_COMMAND;
             return;
         }
     }
@@ -55,7 +54,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
         if (action != 200) {
-            F940_COMMAND_AT511(this) = FORWARD_COMMAND;
+            aiCommand = FORWARD_COMMAND;
             return;
         }
     }
@@ -71,7 +70,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
         if (action != 200) {
-            F940_COMMAND_AT511(this) = FORWARD_COMMAND;
+            aiCommand = FORWARD_COMMAND;
             return;
         }
     }
@@ -87,7 +86,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
         if (action != 200) {
-            F940_COMMAND_AT511(this) = FORWARD_COMMAND;
+            aiCommand = FORWARD_COMMAND;
             return;
         }
     }
@@ -104,14 +103,14 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 3 &&
             field39C == 0 &&
             field3A0 <= 0) {
-            F940_COMMAND_AT511(this) = 103;
+            aiCommand = 103;
             return;
         }
         if (opponent->action == 98 &&
             rand() < 20 &&
             field39C == 0 &&
             field3A0 <= 0) {
-            F940_COMMAND_AT511(this) = 103;
+            aiCommand = 103;
             return;
         }
     }
@@ -121,21 +120,21 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 50 &&
             field39C == 0 &&
             field3A0 <= 0) {
-            F940_COMMAND_AT511(this) = 103;
+            aiCommand = 103;
             return;
         }
         if (health < 4000 &&
             rand() < 5 &&
             field39C == 0 &&
             field3A0 <= 0) {
-            F940_COMMAND_AT511(this) = 103;
+            aiCommand = 103;
             return;
         }
         if (OPPONENT_GUARD &&
             health < 3000 &&
             field39C == 0 &&
             field3A0 <= 0) {
-            F940_COMMAND_AT511(this) = 103;
+            aiCommand = 103;
             return;
         }
     }
@@ -144,25 +143,25 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (distance.x > 0.0f) {
             if (y == 0.0f) {
                 if (rand() < 4000) {
-                    F940_COMMAND_AT511(this) = 3;
+                    aiCommand = 3;
                     return;
                 }
                 if (rand() < 4000) {
-                    F940_COMMAND_AT511(this) = 4;
+                    aiCommand = 4;
                     return;
                 }
                 if (rand() < 4000) {
-                    F940_COMMAND_AT511(this) = 5;
+                    aiCommand = 5;
                     return;
                 }
             }
             if (y > 0.0f) {
                 if (rand() < 4000) {
-                    F940_COMMAND_AT511(this) = AIR_BACK_COMMAND;
+                    aiCommand = AIR_BACK_COMMAND;
                     return;
                 }
                 if (rand() < 4000) {
-                    F940_COMMAND_AT511(this) = AIR_FORWARD_COMMAND;
+                    aiCommand = AIR_FORWARD_COMMAND;
                     return;
                 }
             }
@@ -172,7 +171,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             distance.x < 300.0f &&
             spirit > 500 &&
             rand() < 100) {
-            F940_COMMAND_AT511(this) = 20;
+            aiCommand = 20;
             return;
         }
         if (action > 399 &&
@@ -180,7 +179,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             distance.x > 600.0f &&
             spirit > 500 &&
             rand() < 100) {
-            F940_COMMAND_AT511(this) = 21;
+            aiCommand = 21;
             return;
         }
         if (action > 399 &&
@@ -188,7 +187,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             distance.x < 300.0f &&
             spirit > 500 &&
             rand() < 100) {
-            F940_COMMAND_AT511(this) = 10;
+            aiCommand = 10;
             return;
         }
         if (action > 399 &&
@@ -196,14 +195,14 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             distance.x > 600.0f &&
             spirit > 500 &&
             rand() < 100) {
-            F940_COMMAND_AT511(this) = 11;
+            aiCommand = 11;
             return;
         }
         if (action > 399 &&
             action < 500 &&
             distance.x < 450.0f &&
             rand() < 200) {
-            F940_COMMAND_AT511(this) = 20;
+            aiCommand = 20;
             return;
         }
         if (action > 399 &&
@@ -211,7 +210,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             distance.x > 300.0f &&
             distance.x < 700.0f &&
             rand() < 100) {
-            F940_COMMAND_AT511(this) = 21;
+            aiCommand = 21;
             return;
         }
     }
@@ -222,7 +221,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             field36C >= 100.0f &&
             field398[Policy::firstSelector] == 1 &&
             field39D == Policy::firstMode) {
-            F940_COMMAND_AT511(this) = 13;
+            aiCommand = 13;
             return;
         }
         if ((action == 500 || action == 501 || action == 309 || action == 308 || action == 307 || action == 390 || action == 392 || action == 393) &&
@@ -231,7 +230,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             field36C >= 100.0f &&
             field398[Policy::secondSelector] == 1 &&
             field39D == 2) {
-            F940_COMMAND_AT511(this) = 13;
+            aiCommand = 13;
             return;
         }
         if ((action == 500 || action == 501 || action == 309 || action == 310 || action == 390 || action == 393) &&
@@ -240,7 +239,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             field36C >= 100.0f &&
             field398[1] == 2 &&
             field39D == 1) {
-            F940_COMMAND_AT511(this) = 13;
+            aiCommand = 13;
             return;
         }
         if ((action == 393 || action == 392 || action == 506 || action == 301 || action == 308 || action == 307) &&
@@ -249,7 +248,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             field36C >= 100.0f &&
             field398[Policy::cancelSelector] == 2 &&
             field39D == 2) {
-            F940_COMMAND_AT511(this) = 13;
+            aiCommand = 13;
             return;
         }
         if ((action == 393 || action == 392 || action == 506 || action == 301 || action == 303) &&
@@ -258,7 +257,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             field36C >= 100.0f &&
             field398[1] == 0 &&
             field39D == 1) {
-            F940_COMMAND_AT511(this) = 13;
+            aiCommand = 13;
             return;
         }
         if ((action == 393 || action == 392 || action == 506 || action == 301 || action == 303) &&
@@ -267,7 +266,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             field36C >= 100.0f &&
             field398[Policy::cancelSelector] == 0 &&
             field39D == 2) {
-            F940_COMMAND_AT511(this) = 13;
+            aiCommand = 13;
             return;
         }
         if (action == 307 &&
@@ -281,28 +280,28 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (action == 307 &&
             rand() < 1000 &&
             spirit > 500) {
-            F940_COMMAND_AT511(this) = 20;
+            aiCommand = 20;
             return;
         }
         if (action == 307 &&
             rand() < 500) {
-            F940_COMMAND_AT511(this) = 100;
+            aiCommand = 100;
             return;
         }
         if (distance.x > 150.0f &&
             action == 307 &&
             rand() < 500) {
-            F940_COMMAND_AT511(this) = 101;
+            aiCommand = 101;
             return;
         }
         if (action == 307 &&
             rand() < 500) {
-            F940_COMMAND_AT511(this) = 40;
+            aiCommand = 40;
             return;
         }
         if (action == 307 &&
             rand() < 200) {
-            F940_COMMAND_AT511(this) = 41;
+            aiCommand = 41;
             return;
         }
         if (distance.x < 100.0f &&
@@ -317,14 +316,14 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (distance.x < 200.0f &&
             (action == 301 || action == 308) &&
             rand() < 20000) {
-            F940_COMMAND_AT511(this) = 20;
+            aiCommand = 20;
             return;
         }
         if (distance.x < 100.0f &&
             (action == 301 || action == 308) &&
             rand() < 5000 &&
             field07C == 1) {
-            F940_COMMAND_AT511(this) = 31;
+            aiCommand = 31;
             return;
         }
         if (action == 300 &&
@@ -353,30 +352,30 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         }
         if (action == 303 &&
             rand() < 550) {
-            F940_COMMAND_AT511(this) = 100;
+            aiCommand = 100;
             return;
         }
         if (distance.x > 150.0f &&
             action == 303 &&
             rand() < 300) {
-            F940_COMMAND_AT511(this) = 101;
+            aiCommand = 101;
             return;
         }
         if (distance.x < 100.0f &&
             action == 301 &&
             rand() < 1000) {
-            F940_COMMAND_AT511(this) = 30;
+            aiCommand = 30;
             return;
         }
         if (action == 303 &&
             rand() < 200) {
-            F940_COMMAND_AT511(this) = 100;
+            aiCommand = 100;
             return;
         }
         if (distance.x > 150.0f &&
             action == 303 &&
             rand() < 200) {
-            F940_COMMAND_AT511(this) = 101;
+            aiCommand = 101;
             return;
         }
         if (action == 301 &&
@@ -437,12 +436,12 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (action == 308 &&
             rand() < 10000 &&
             spirit > 300) {
-            F940_COMMAND_AT511(this) = 10;
+            aiCommand = 10;
             return;
         }
         if (action == 308 &&
             rand() < 200) {
-            F940_COMMAND_AT511(this) = 20;
+            aiCommand = 20;
             return;
         }
         if (distance.x < 60.0f &&
@@ -481,26 +480,26 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (rand() < 50) inputY = -1;
     if (y == 0.0f) {
         if (rand() < 1000) {
-            F940_COMMAND_AT511(this) = 3;
+            aiCommand = 3;
             return;
         }
         if (rand() < 1000) {
-            F940_COMMAND_AT511(this) = 4;
+            aiCommand = 4;
             return;
         }
         if (distance.x > 400.0f &&
             rand() < 1000) {
-            F940_COMMAND_AT511(this) = 5;
+            aiCommand = 5;
             return;
         }
     }
     if (y > 0.0f) {
         if (rand() < 1100) {
-            F940_COMMAND_AT511(this) = AIR_BACK_COMMAND;
+            aiCommand = AIR_BACK_COMMAND;
             return;
         }
         if (rand() < 1100) {
-            F940_COMMAND_AT511(this) = AIR_FORWARD_COMMAND;
+            aiCommand = AIR_FORWARD_COMMAND;
             return;
         }
     }
@@ -514,18 +513,18 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (distance.x > 200.0f &&
         y > 0.0f &&
         rand() < 80) {
-        F940_COMMAND_AT511(this) = F940_COMMAND_AT511(this) = AIR_BACK_COMMAND;
+        aiCommand = aiCommand = AIR_BACK_COMMAND;
         return;
     }
     if (distance.x > 350.0f &&
         y == 0.0f &&
         rand() < 50) {
-        F940_COMMAND_AT511(this) = F940_COMMAND_AT511(this) = AIR_BACK_COMMAND;
+        aiCommand = aiCommand = AIR_BACK_COMMAND;
         return;
     }
     if (distance.x < 400.0f &&
         rand() < 100) {
-        F940_COMMAND_AT511(this) = F940_COMMAND_AT511(this) = AIR_FORWARD_COMMAND;
+        aiCommand = aiCommand = AIR_FORWARD_COMMAND;
         return;
     }
     if (y == 0.0f && (opponent->action < 93 || opponent->action > 99)) {
@@ -614,7 +613,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         field36C >= 100.0f &&
         field398[1] == 2 &&
         field39D == 1) {
-        F940_COMMAND_AT511(this) = 13;
+        aiCommand = 13;
         return;
     }
     if (rand() < (opponent->y > 0.0f ? 1 : 0) * 1500 + 1000 &&
@@ -623,7 +622,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         field36C >= 100.0f &&
         field398[1] == 1 &&
         field39D == 1) {
-        F940_COMMAND_AT511(this) = 13;
+        aiCommand = 13;
         return;
     }
     if (rand() < 1500 &&
@@ -631,7 +630,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         field36C >= 100.0f &&
         field398[1] == 0 &&
         field39D == 1) {
-        F940_COMMAND_AT511(this) = 13;
+        aiCommand = 13;
         return;
     }
     if (rand() < 500 &&
@@ -640,7 +639,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         field36C >= 100.0f &&
         field398[Policy::lateSelector] == 2 &&
         field39D == 2) {
-        F940_COMMAND_AT511(this) = 13;
+        aiCommand = 13;
         return;
     }
     if (rand() < 1500 &&
@@ -648,7 +647,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         field36C >= 100.0f &&
         field398[0] == 0 &&
         field39D == 2) {
-        F940_COMMAND_AT511(this) = 13;
+        aiCommand = 13;
         return;
     }
     if (rand() < (opponent->y > 0.0f ? 1 : 0) * 1500 + 500 &&
@@ -657,7 +656,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         field36C >= 100.0f &&
         field398[0] == 1 &&
         field39D == 2) {
-        F940_COMMAND_AT511(this) = 13;
+        aiCommand = 13;
         return;
     }
     if (distance.y < 150.0f &&
@@ -665,44 +664,44 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         rand() < 600 &&
         opponent->action != 93 &&
         opponent->action != 94) {
-        F940_COMMAND_AT511(this) = 30;
+        aiCommand = 30;
         return;
     }
     if (distance.x > 100.0f &&
         distance.x < 300.0f &&
         rand() < 200) {
-        F940_COMMAND_AT511(this) = 100;
+        aiCommand = 100;
         return;
     }
     if (distance.x > 400.0f &&
         distance.x < 500.0f &&
         opponent->y == 0.0f &&
         rand() < 200) {
-        F940_COMMAND_AT511(this) = 101;
+        aiCommand = 101;
         return;
     }
     if (distance.x > 350.0f &&
         rand() < 200 &&
         spirit > 350) {
-        F940_COMMAND_AT511(this) = 10;
+        aiCommand = 10;
         return;
     }
     if (distance.x > 350.0f &&
         rand() < 200 &&
         spirit > 350) {
-        F940_COMMAND_AT511(this) = 11;
+        aiCommand = 11;
         return;
     }
     if (rand() < 250 &&
         opponent->action != 93 &&
         opponent->action != 94) {
-        F940_COMMAND_AT511(this) = 40;
+        aiCommand = 40;
         return;
     }
     if (rand() < 100 &&
         opponent->action != 93 &&
         opponent->action != 94) {
-        F940_COMMAND_AT511(this) = 41;
+        aiCommand = 41;
         return;
     }
     if (distance.y < 250.0f &&
@@ -711,19 +710,19 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         rand() < 100 &&
         opponent->action != 93 &&
         opponent->action != 94) {
-        F940_COMMAND_AT511(this) = 31;
+        aiCommand = 31;
         return;
     }
     if (distance.y < 150.0f &&
         distance.x > 200.0f &&
         rand() < spirit * 0.1f) {
-        F940_COMMAND_AT511(this) = 20;
+        aiCommand = 20;
         return;
     }
     if (distance.y < 150.0f &&
         distance.x > 400.0f &&
         rand() < spirit * 0.1f) {
-        F940_COMMAND_AT511(this) = 21;
+        aiCommand = 21;
         return;
     }
     if (Policy::countdown > 0) {
