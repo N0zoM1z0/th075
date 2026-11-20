@@ -66326,3 +66326,30 @@ relocations = [
   { offset = 0x145, type = "REL32", symbol = "?_Buy@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IAE_NI@Z", target = 0x00458D20 },
   { offset = 0x169, type = "REL32", symbol = "??$_Ucopy@PAUtagRECT@@@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IAEPAUtagRECT@@PAU2@00@Z", target = 0x0045A710 },
 ]
+
+
+[units.std-vector-rect-size]
+source = "src/FighterFrameInfo.cpp"
+object = "build/matching/FighterFrameInfo.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
+functions = ["std::vector<RECT>::size"]
+symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ"
+target_address = 0x004452D0
+size = 52
+relocations = []
+
+[units.std-vector-rect-at]
+source = "src/BattleCollisionDispatch.cpp"
+object = "build/matching/BattleCollisionDispatch.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["std::vector<RECT>::at"]
+symbol = "?at@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAUtagRECT@@I@Z"
+target_address = 0x00445310
+size = 70
+relocations = [
+  { offset = 0xD, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x1A, type = "REL32", symbol = "?_Xran@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IBEXXZ", target = 0x00445490 },
+  { offset = 0x2E, type = "REL32", symbol = "?begin@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAE?AViterator@12@XZ", target = 0x00445470 },
+  { offset = 0x35, type = "REL32", symbol = "??Hiterator@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBE?AV012@H@Z", target = 0x00445620 },
+  { offset = 0x3C, type = "REL32", symbol = "??Diterator@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEAAUtagRECT@@XZ", target = 0x00445600 },
+]
