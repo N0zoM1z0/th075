@@ -37,6 +37,9 @@ extern float g_MarisaResourceYAt00659280;
 extern float g_MarisaResourceYAt00659290;
 extern float g_MarisaResourceYAt006590AC;
 extern float g_MarisaMinimumDriftAt00659278;
+extern float g_MarisaHighBoundaryAt0065926C;
+extern float g_MarisaResourceYAt00659274;
+extern float g_MarisaNegativeCardDriftAt00659268;
 extern signed char g_MarisaDifficultyAt006714D0;
 extern float g_MarisaCardVelocityScaleAt006590B4;
 extern float g_F728_RandomOffsetYAt00657858;
@@ -518,6 +521,7 @@ void MarisaFighterAdvanceProbe::Advance() {
 #include "MarisaFighterCardLate2BC2C0.inc"
 #include "MarisaFighterCardLate2BF2DB.inc"
 #include "MarisaFighterCardTail2EF2F8.inc"
+#include "MarisaFighterRandomCard2E52F9.inc"
         default:
             if (AdvanceNestedFrame() == field070)
                 ResetPrimaryCounters(0);
