@@ -1386,7 +1386,9 @@ predicate-order/inclusive-bound forms and several local-owner aliases were
 compiled against the whole parent for `0x358`; none produced an acceptable
 improvement. The stage-first condition reduces a raw zipped GPR count but
 reorders the native tests and adds instruction/width differences; mnemonic-
-aligned comparison confirms it does not solve the register rotation. All
+aligned comparison confirms it does not solve the register rotation. Further
+isolated variants using register pointers, references, `short`/`long` temporaries
+and explicit `goto` guards also worsened the whole-object frontier. All
 experiments were discarded; both case sources remain unchanged.
 
 

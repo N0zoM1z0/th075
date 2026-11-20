@@ -136,7 +136,8 @@ implemented as decimal `case 700`, including its 48-effect stage burst; no
 duplicate case was added. The source now reproduces the target dispatch's
 singleton boundaries at `0x12C`, `0x186`, `0x1F4` and `0x2BC`. Their eight
 shared animation, motion-clear, battle/aux-effect and sound leaf units replay
-8/8 exact across three objects. Action `0x19E`
+8/8 exact across three objects. The separate 37-byte `Fighter::SetNonnegativeWord`
+leaf used by action `700` / `0x2BC` also replays 1/1 exact. Action `0x19E`
 now restores its missing stage-3 barrage: `PlaySound(0)`, captures both velocity
 components through the original `0x657888` projection, starts the 300-frame
 gauge timer, emits five angles (`10 + 15*i`) with three layers (`0x320`, `0x321`,
