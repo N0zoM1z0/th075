@@ -93,18 +93,19 @@ tracked, natural-C++ partial parent probe. It derives from the real
 and contains 155 recovered action-state bodies. Recent batches added states
 `0x5D`–`0x62`, `0xC8`–`0xD2`, `0x12D`–`0x136`, `0x186`–`0x18B`,
 `0x190`–`0x1A3`, `0x1F5`/`0x208`/`0x20A`–`0x20E`, `0x252`–`0x25D`,
-`0x270`–`0x271`, `0x2BC`–`0x2D1`, and `0x2BD`/`0x2C1`/`0x2E7`/`0x2F2`/
+`0x270`–`0x271`, `0x2BC`–`0x2D1`, `0x2BD`/`0x2C1`/`0x2E7`/`0x2F2`/
 `0x2FA`/`0x31B`/`0x31C`, and `0x2E5`/`0x2E6`/`0x2F9`. The latest three
 original handlers span 1,973 bytes / 521 instructions. The probe and its
 Marisa-specific counter fragments contain no raw offset casts, ASM, padding,
 or synthetic marker cases. The expanded source covers all 141 unique
- top-level action labels in the current Ghidra decompilation that map through
- the original action-handler table. VC7.1 compiles it to 49,857 CODE bytes /
- 14,260 instructions; the original is 50,735 bytes / 14,260 instructions.
- This remains deliberately NONEXACT and is not entered into the complete-
- parent frontier: equal instruction counts do not erase the 878-byte code
- generation difference. The 468-value original dispatch map and its 153
- unique handler addresses remain the authority for further case work.
+top-level action labels in the current Ghidra decompilation that map through
+the original action-handler table. This inventory is repeatable with
+`scripts/validate-marisa-advance-cases.py`. VC7.1 compiles it to 49,857 CODE
+bytes / 14,260 instructions; the original is 50,735 bytes / 14,260
+instructions. This remains deliberately NONEXACT and is not entered into the
+complete-parent frontier: equal instruction counts do not erase the 878-byte
+code generation difference. The 468-value original dispatch map and its
+153 unique handler addresses remain the authority for further case work.
 Patchouli object's 81,539-byte giant now calls native typed C++
 helpers in place of its last random/angle/sound alias methods:
 `PatchouliObject::RecordedRange` for 37 compiled native calls,
