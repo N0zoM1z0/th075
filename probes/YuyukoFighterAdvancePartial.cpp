@@ -2249,8 +2249,8 @@ void YuyukoFighter::Advance() {
         if (opponent->health > 0) {
             if (scriptCounterF00 < 1) {
                 scriptCounterF00 = 180;
-                scriptCounterF02 = static_cast<short>(ChooseIntegerRange(0, 20) + 30);
-                if (ChooseIntegerRange(0, 100) < 50) {
+                scriptCounterF02 = static_cast<short>(RecordedRange(0, 20) + 30);
+                if (RecordedRange(0, 100) < 50) {
                     if (y < g_YuyukoFanUpperYAt006593D0) {
                         if (g_YuyukoFanLeftXAt00657D10 <= x)
                             fieldF04 = -175;
@@ -2296,8 +2296,8 @@ void YuyukoFighter::Advance() {
                         (g_StateRepeatLevelAt006714D0 > 0 && fieldF08 == -20) ||
                         (g_StateRepeatLevelAt006714D0 > 1 && fieldF08 == -40) ||
                         (g_StateRepeatLevelAt006714D0 > 2 && fieldF08 == -60)) {
-                    field318 = static_cast<float>(ChooseIntegerRange(0, 600));
-                    field31C = static_cast<float>(ChooseIntegerRange(0, 300));
+                    field318 = static_cast<float>(RecordedRange(0, 600));
+                    field31C = static_cast<float>(RecordedRange(0, 300));
                     PlaySound(0);
                     for (int burstIndex2F9 = 0; burstIndex2F9 < 6; ++burstIndex2F9) {
                         field314 = static_cast<float>(burstIndex2F9 * 60);
@@ -2312,6 +2312,7 @@ void YuyukoFighter::Advance() {
 
             if (scriptCounterF00 == 0 || scriptCounterF00 == -30 ||
                     (g_StateRepeatLevelAt006714D0 > 1 && scriptCounterF00 == -60)) {
+                PlaySound(0);
                 short effect2F9 = scriptCounterF00 == 0 ? 0x394 :
                     scriptCounterF00 == -30 ? 0x395 : 0x396;
                 for (int fanIndex2F9A = 0; fanIndex2F9A < 20; ++fanIndex2F9A) {
