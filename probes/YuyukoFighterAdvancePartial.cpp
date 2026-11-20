@@ -2131,6 +2131,95 @@ void YuyukoFighter::Advance() {
         ResetSecondaryCounter(9);
         return;
 
+    case 0x2EE:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            fieldF04 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 9 || animationStage == 10) {
+            ++scriptCounterF02;
+            if (scriptCounterF02 > 20) {
+                SpawnBattleEffect(0x386, opponent->x, y, facing, 1);
+                PlaySound(6);
+                scriptCounterF02 = 0;
+                ++scriptCounterF00;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            if (y > 0.0f)
+                ResetPrimaryCounters(9);
+            aiCardTimer = static_cast<short>(
+                g_StateRepeatLevelAt006714D0 * -30 + 240);
+        }
+        if (animationStage == 11 && animationFrame == 0 &&
+                scriptCounterF00 < g_StateRepeatLevelAt006714D0 * 2 + 4) {
+            ResetSecondaryCounter(9);
+            return;
+        }
+        if (animationStage != 13 || animationFrame != 0 || fieldF04 > 1)
+            return;
+        ++fieldF04;
+        ResetSecondaryCounter(11);
+        return;
+
+    case 0x2EF:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            fieldF04 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            if (y > 0.0f)
+                ResetPrimaryCounters(9);
+            aiCardTimer = static_cast<short>(
+                g_StateRepeatLevelAt006714D0 * -30 + 240);
+        }
+        if (animationStage != 4 || animationFrame != 0)
+            return;
+        SpawnBattleEffect(0x389, opponent->x, y, facing, 1);
+        return;
+
+    case 0x2F8:
+        if (animationStage == 0 && animationFrame == 0) {
+            ClearMotionFields();
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+        }
+        if (animationStage < 3 && scriptCounterF00 < 3 && animationFrame < 70) {
+            ++scriptCounterF02;
+            if (scriptCounterF02 > 4) {
+                SpawnAuxEffect(0x40, x, y + g_Stage2DAEffectYOffsetAt0065908C, 1, 1);
+                scriptCounterF02 = 0;
+            }
+        }
+        velocityY -= field05C;
+        if (velocityY < g_ThresholdAt0065782C)
+            velocityY = 0.0f;
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0x2F9);
+            fieldF04 = 0;
+            return;
+        }
+        if (animationStage == 2 && animationFrame == 0) {
+            velocityY = 10.0f;
+            field05C = 0.3f;
+        }
+        if (animationStage == 3 && animationFrame == 0) {
+            SpawnBattleEffect(0x38A, x, y, 1, 0);
+            PlaySound(13);
+        }
+        if (animationStage != 8 || animationFrame != 0 || fieldF04 != 0)
+            return;
+        ResetSecondaryCounter(6);
+        return;
+
     case 0x8C:
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
