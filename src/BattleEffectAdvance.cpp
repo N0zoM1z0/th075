@@ -1,13 +1,13 @@
 #include <deque>
 #include <new>
-#include "BattleEffectAdvance.hpp"
+#include "EffectManagerLifetimeF161.hpp"
 
-typedef std::deque<AdvancingEffectF137*> EffectDequeF137;
+typedef std::deque<Actor*> EffectDequeF137;
 typedef char CheckedEffectDequeF137[(sizeof(EffectDequeF137) == 20) ? 1 : -1];
 typedef char CheckedEffectIteratorF137[(sizeof(EffectDequeF137::iterator) == 8) ? 1 : -1];
 
 
-void BattleEffectAdvanceF137::AdvanceAll()
+void EffectManagerLifetimeF161::AdvanceAll()
 {
     int layer;
     for (layer = 0; layer < 4; layer++) {

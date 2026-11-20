@@ -62,6 +62,14 @@ Current focused source recoveries (2026-11-20):
   emitted VC7.1 template symbol names, not target bytes, addresses, sizes or
   resolved relocation destinations.
 
+- The battle effect tick (`0x0045BDB0`, 296 bytes) and both rendering
+  dispatchers (`0x0045BC30`, 166 bytes; `0x0045BCE0`, 207 bytes) now
+  define methods of `EffectManagerLifetimeF161` itself and iterate its actual
+  `std::deque<Actor*>` members. The old F136/F137/F162 borrowed owner classes
+  and unused headers were removed. All three whole functions cold-replay
+  3/3 exactly, including every VC7.1 typed-deque relocation; no new authored
+  bytes are credited because these were already accepted functions.
+
 The latest commits restore natural C++ field types and call expressions in
 large research parents. They do not claim new giant exactness:
 

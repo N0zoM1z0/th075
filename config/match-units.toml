@@ -24491,21 +24491,21 @@ source = "src/BattleEffectAdvance.cpp"
 object = "build/matching/BattleEffectAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["BattleEffectAdvanceF137::AdvanceAll"]
-symbol = "?AdvanceAll@BattleEffectAdvanceF137@@QAEXXZ"
+symbol = "?AdvanceAll@EffectManagerLifetimeF161@@QAEXXZ"
 target_address = 0x0045BDB0
 size = 296
 compare_size = 296
 relocations = [
-  { offset = 0x33, type = "REL32", symbol = "?size@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEIXZ", target = 0x0045BF50 },
-  { offset = 0x66, type = "REL32", symbol = "??A?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAEAAPAVAdvancingEffectF137@@I@Z", target = 0x0045BF70 },
-  { offset = 0x8E, type = "REL32", symbol = "?begin@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@XZ", target = 0x00445360 },
-  { offset = 0xA4, type = "REL32", symbol = "?end@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@XZ", target = 0x00445390 },
-  { offset = 0xAD, type = "REL32", symbol = "??9const_iterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBE_NABV012@@Z", target = 0x00445440 },
-  { offset = 0xBC, type = "REL32", symbol = "??Diterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEAAPAVAdvancingEffectF137@@XZ", target = 0x004453E0 },
-  { offset = 0xCC, type = "REL32", symbol = "??Diterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEAAPAVAdvancingEffectF137@@XZ", target = 0x004453E0 },
+  { offset = 0x33, type = "REL32", symbol = "?size@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEIXZ", target = 0x0045BF50 },
+  { offset = 0x66, type = "REL32", symbol = "??A?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAPAVActor@@I@Z", target = 0x0045BF70 },
+  { offset = 0x8E, type = "REL32", symbol = "?begin@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ", target = 0x00445360 },
+  { offset = 0xA4, type = "REL32", symbol = "?end@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ", target = 0x00445390 },
+  { offset = 0xAD, type = "REL32", symbol = "??9const_iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV012@@Z", target = 0x00445440 },
+  { offset = 0xBC, type = "REL32", symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ", target = 0x004453E0 },
+  { offset = 0xCC, type = "REL32", symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ", target = 0x004453E0 },
   { offset = 0xDA, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
-  { offset = 0xFB, type = "REL32", symbol = "?erase@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@V312@@Z", target = 0x0045C0A0 },
-  { offset = 0x116, type = "REL32", symbol = "??Eiterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AV012@H@Z", target = 0x00445400 },
+  { offset = 0xFB, type = "REL32", symbol = "?erase@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@V312@@Z", target = 0x0045C0A0 },
+  { offset = 0x116, type = "REL32", symbol = "??Eiterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV012@H@Z", target = 0x00445400 },
 ]
 
 [units."battle-animation-bind-0045b880"]
@@ -25379,43 +25379,43 @@ source = "src/EffectDispatchF162.cpp"
 object = "build/matching/EffectDispatchF162.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["BattleEffectManager::DispatchSelectedListAt0045BC30"]
-symbol = "?DispatchSelected@EffectDispatchF162@@QAEXC@Z"
+symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z"
 target_address = 0x0045BC30
 size = 166
 [[units.effect-dispatch-selected-list-0045bc30.relocations]]
 offset = 28
 type = "REL32"
-symbol = "?begin@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?begin@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00445360
 [[units.effect-dispatch-selected-list-0045bc30.relocations]]
 offset = 51
 type = "REL32"
-symbol = "?end@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?end@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00445390
 [[units.effect-dispatch-selected-list-0045bc30.relocations]]
 offset = 67
 type = "REL32"
-symbol = "??Eiterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE?AV012@H@Z"
+symbol = "??Eiterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x00445400
 [[units.effect-dispatch-selected-list-0045bc30.relocations]]
 offset = 79
 type = "REL32"
-symbol = "??9const_iterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??9const_iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x00445440
 [[units.effect-dispatch-selected-list-0045bc30.relocations]]
 offset = 94
 type = "REL32"
-symbol = "??Diterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBEAAPAVDispatchingEffectF162@@XZ"
+symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ"
 target = 0x004453E0
 [[units.effect-dispatch-selected-list-0045bc30.relocations]]
 offset = 112
 type = "REL32"
-symbol = "??Diterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBEAAPAVDispatchingEffectF162@@XZ"
+symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ"
 target = 0x004453E0
 [[units.effect-dispatch-selected-list-0045bc30.relocations]]
 offset = 138
 type = "REL32"
-symbol = "??Diterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBEAAPAVDispatchingEffectF162@@XZ"
+symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ"
 target = 0x004453E0
 
 [units.effect-dispatch-four-lists-0045bce0]
@@ -25423,48 +25423,48 @@ source = "src/EffectDispatchF162.cpp"
 object = "build/matching/EffectDispatchF162.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["BattleEffectManager::DispatchFourListsAt0045BCE0"]
-symbol = "?DispatchAll@EffectDispatchF162@@QAEXXZ"
+symbol = "?DispatchAll@EffectManagerLifetimeF161@@QAEXXZ"
 target_address = 0x0045BCE0
 size = 207
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 13
 type = "REL32"
-symbol = "??0iterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE@XZ"
+symbol = "??0iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ"
 target = 0x004453C0
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 21
 type = "REL32"
-symbol = "??0iterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE@XZ"
+symbol = "??0iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ"
 target = 0x004453C0
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 71
 type = "REL32"
-symbol = "?begin@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?begin@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00445360
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 104
 type = "REL32"
-symbol = "?end@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?end@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00445390
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 131
 type = "REL32"
-symbol = "??Eiterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QAE?AV012@H@Z"
+symbol = "??Eiterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x00445400
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 143
 type = "REL32"
-symbol = "??9const_iterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??9const_iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x00445440
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 158
 type = "REL32"
-symbol = "??Diterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBEAAPAVDispatchingEffectF162@@XZ"
+symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ"
 target = 0x004453E0
 [[units.effect-dispatch-four-lists-0045bce0.relocations]]
 offset = 176
 type = "REL32"
-symbol = "??Diterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBEAAPAVDispatchingEffectF162@@XZ"
+symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ"
 target = 0x004453E0
 
 [units.fighter-render-side-effect-00454840]

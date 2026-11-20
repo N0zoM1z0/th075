@@ -1,12 +1,12 @@
-#include "EffectDispatchF162.hpp"
+#include "EffectManagerLifetimeF161.hpp"
 #include <deque>
 
-typedef std::deque<DispatchingEffectF162*> DispatchDequeF162;
+typedef std::deque<Actor*> DispatchDequeF162;
 typedef char DispatchDequeSizeF162[(sizeof(DispatchDequeF162) == 20) ? 1 : -1];
 typedef char DispatchIteratorSizeF162[(sizeof(DispatchDequeF162::iterator) == 8) ? 1 : -1];
 
 
-void EffectDispatchF162::DispatchSelected(signed char layer)
+void EffectManagerLifetimeF161::DispatchSelected(signed char layer)
 {
     DispatchDequeF162::iterator current = entries_[layer].begin();
     DispatchDequeF162::iterator last = entries_[layer].end();
@@ -19,7 +19,7 @@ void EffectDispatchF162::DispatchSelected(signed char layer)
     }
 }
 
-void EffectDispatchF162::DispatchAll()
+void EffectManagerLifetimeF161::DispatchAll()
 {
     DispatchDequeF162::iterator current;
     DispatchDequeF162::iterator last;

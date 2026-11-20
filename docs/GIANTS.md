@@ -43,6 +43,15 @@ code/EH/data sections and 46 relocations verify against the unchanged PE with
 fresh 3/3 owner cold-replay receipts. This supplies a typed implementation
 for the fighter/object effects used by the large Advance state machines.
 
+The effect manager's frame advance (296 bytes) and both render dispatch
+methods (166/207 bytes) are now methods of the same
+`EffectManagerLifetimeF161` object that constructs, owns, spawns and clears
+its four `std::deque<Actor*>` members. They cold-replay 3/3 with their entire
+original bytes and relocation destinations; the temporary owner view classes
+and headers are gone. This restores a single native C++ owner for fighter and
+object state-machine effect calls without changing the outstanding giant
+register-allocation frontiers.
+
 ## Complete research parents (measured 2026-11-19)
 
 All thirteen have the original instruction count, frame, stack slots, branch
