@@ -1272,7 +1272,7 @@ void YuyukoFighter::Advance() {
         }
         if (animationStage > 16)
             velocityY -= field05C;
-        if (y + velocityY < g_ThresholdAt0065782C) {
+        if (y + velocityY <= g_ThresholdAt0065782C) {
             y = 0.0f;
             velocityY = 0.0f;
             velocityX = 0.0f;
@@ -1420,7 +1420,7 @@ void YuyukoFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage != 8 || animationFrame != 0)
             return;
-        UpdateGaugeTimer(10);
+        PlaySound(10);
         return;
 
     case 0x19E:
