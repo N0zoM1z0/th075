@@ -66284,3 +66284,45 @@ offset = 28660
 type = "DIR32"
 symbol = "$L1902"
 target = 0x00561B83
+
+
+[units.fighter-frame-info-assignment]
+source = "src/FighterFrameInfo.cpp"
+object = "build/matching/FighterFrameInfo.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
+functions = ["FighterFrameInfo::operator="]
+symbol = "??4FighterFrameInfo@@QAEAAU0@ABU0@@Z"
+target_address = 0x0045AAE0
+size = 368
+relocations = [
+  { offset = 0x151, type = "REL32", symbol = "??4?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAV01@ABV01@@Z", target = 0x0045AC50 },
+  { offset = 0x163, type = "REL32", symbol = "??4?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAV01@ABV01@@Z", target = 0x0045AC50 },
+]
+
+[units.std-vector-rect-assignment]
+source = "src/FighterFrameInfo.cpp"
+object = "build/matching/FighterFrameInfo.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
+functions = ["std::vector<RECT>::operator="]
+symbol = "??4?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAV01@ABV01@@Z"
+target_address = 0x0045AC50
+size = 381
+relocations = [
+  { offset = 0x1A, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x26, type = "REL32", symbol = "?clear@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEXXZ", target = 0x00458A80 },
+  { offset = 0x33, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x3D, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x5B, type = "REL32", symbol = "??$copy@PAUtagRECT@@PAU1@@std@@YAPAUtagRECT@@PAU1@00@Z", target = 0x0045B230 },
+  { offset = 0x74, type = "REL32", symbol = "?_Destroy@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IAEXPAUtagRECT@@0@Z", target = 0x00459480 },
+  { offset = 0x7C, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x98, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0xA2, type = "REL32", symbol = "?capacity@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x00458C40 },
+  { offset = 0xAE, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0xD1, type = "REL32", symbol = "??$copy@PAUtagRECT@@PAU1@@std@@YAPAUtagRECT@@PAU1@00@Z", target = 0x0045B230 },
+  { offset = 0xEE, type = "REL32", symbol = "??$_Ucopy@PAUtagRECT@@@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IAEPAUtagRECT@@PAU2@00@Z", target = 0x0045A710 },
+  { offset = 0x115, type = "REL32", symbol = "?_Destroy@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IAEXPAUtagRECT@@0@Z", target = 0x00459480 },
+  { offset = 0x134, type = "REL32", symbol = "?deallocate@?$allocator@UtagRECT@@@std@@QAEXPAUtagRECT@@I@Z", target = 0x00459850 },
+  { offset = 0x13C, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x145, type = "REL32", symbol = "?_Buy@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IAE_NI@Z", target = 0x00458D20 },
+  { offset = 0x169, type = "REL32", symbol = "??$_Ucopy@PAUtagRECT@@@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@IAEPAUtagRECT@@PAU2@00@Z", target = 0x0045A710 },
+]

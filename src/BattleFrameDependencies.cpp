@@ -22,8 +22,8 @@ void BattleScene::ResolveBodySeparation()
     else if (boundary[1] == 1 && g_LeftBoundaryOwner < 0) g_LeftBoundaryOwner = 1;
     fighters[0]->field488 = 0.0f;
     fighters[1]->field488 = 0.0f;
-    COLLISION->TransformBounds(&firstBounds, reinterpret_cast<const RECT *>(fighters[0]->frameInfo->bodyBox), reinterpret_cast<Actor *>(fighters[0]));
-    COLLISION->TransformBounds(&bounds2, reinterpret_cast<const RECT *>(fighters[1]->frameInfo->bodyBox), reinterpret_cast<Actor *>(fighters[1]));
+    COLLISION->TransformBounds(&firstBounds, reinterpret_cast<const RECT *>(&fighters[0]->frameInfo->bodyBox), reinterpret_cast<Actor *>(fighters[0]));
+    COLLISION->TransformBounds(&bounds2, reinterpret_cast<const RECT *>(&fighters[1]->frameInfo->bodyBox), reinterpret_cast<Actor *>(fighters[1]));
     if (COLLISION->TestOverlap(&firstBounds, &bounds2)) {
         if (boundary[0] == -1 && g_RightBoundaryOwner == 0) {
             fighters[1]->x -= bounds2.right - firstBounds.left - 1;

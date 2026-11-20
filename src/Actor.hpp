@@ -1,8 +1,9 @@
 #ifndef TH075_ACTOR_HPP
 #define TH075_ACTOR_HPP
 #include <stddef.h>
+#include <vector>
 
-struct tagRECT;   // RECT; defined by <windows.h> where it is needed
+struct tagRECT;   // RECT; defined by <windows.h> where vector operations are instantiated
 
 // Pose record a frame points to (+0x08): blend mode, colour and transform.
 struct ActorPose {
@@ -20,26 +21,57 @@ struct ActorPose {
     float rotationZ;          // +0x20
 };
 
-// The vector of collision boxes a frame carries (std::vector<RECT>, 16 bytes).
+// The vector of collision boxes a frame carries (+0x54 and +0x64).
+// Its 16-byte object is the VC7.1 std::vector<tagRECT> representation;
+// Size/At are the original game-facing accessors at 004452D0/00445310.
+struct FighterFrameInfo;
 class CollisionRectSequence {
 public:
     unsigned int Size();
     tagRECT &At(unsigned int index);
 private:
-    unsigned char storage[0x10];
+    std::vector<tagRECT> storage;
+    friend struct FighterFrameInfo;
 };
+
+typedef char CollisionRectSequenceLayoutCheck[(sizeof(CollisionRectSequence) == 0x10) ? 1 : -1];
+
+// The first 16 bytes are copied as four words by the native memberwise
+// assignment. Keep their observed names while preserving the contiguous header.
+struct FighterFrameInfoHeader {
+    short originX;            // +0x00 sprite origin
+    short originY;            // +0x02
+    short unknown04;          // +0x04
+    short textureIndex;       // +0x06
+    ActorPose* pose;           // +0x08
+    unsigned long field0C;    // +0x0C
+};
+
+// RECT-compatible body bounds. The Windows RECT view is used only at the
+// collision API boundary; this four-LONG record retains the native 16-byte copy.
+struct CollisionBounds {
+    long left;
+    long top;
+    long right;
+    long bottom;
+};
+
+typedef char CollisionBoundsLayoutCheck[(sizeof(CollisionBounds) == 0x10) ? 1 : -1];
 
 // Animation frame record (Actor+0x74, and its collision snapshot at +0xAC).
 struct FighterFrameInfo {
-    short originX;            // +0x00 sprite origin
-    short originY;            // +0x02
-    unsigned char unknown04[0x06 - 0x04];
-    short textureIndex;       // +0x06
-    ActorPose* pose;          // +0x08
-    unsigned char field0C;    // +0x0C
-    unsigned char unknown0D[0x10 - 0x0D];
+    union {
+        FighterFrameInfoHeader header;
+        struct {
+            short originX;
+            short originY;
+            short unknown04;
+            short textureIndex;
+            ActorPose* pose;
+            unsigned long field0C;
+        };
+    };
     short damage;             // +0x10
-    unsigned char unknown12[0x14 - 0x12];
     float comboRateScale;     // +0x14 multiplies the attacker's combo rate
     short field18;            // +0x18
     short field1A;            // +0x1A flash gauge given to the defender
@@ -56,13 +88,22 @@ struct FighterFrameInfo {
     short field34;            // +0x34
     short hitEffect;          // +0x36
     signed char field38;      // +0x38
-    unsigned char unknown39[0x3C - 0x39];
     unsigned long flags;      // +0x3C defence flags; bit 0x20 is tested before action changes
     unsigned long attackFlags;// +0x40
-    long bodyBox[4];          // +0x44 RECT
+    CollisionBounds bodyBox;  // +0x44 RECT
     CollisionRectSequence hurtBoxes;  // +0x54
     CollisionRectSequence hitBoxes;   // +0x64
+
+    FighterFrameInfo& operator=(const FighterFrameInfo& other);
 };
+
+typedef char FighterFrameInfoLayoutCheck[(
+    offsetof(FighterFrameInfo, damage) == 0x10 &&
+    offsetof(FighterFrameInfo, flags) == 0x3C &&
+    offsetof(FighterFrameInfo, bodyBox) == 0x44 &&
+    offsetof(FighterFrameInfo, hurtBoxes) == 0x54 &&
+    offsetof(FighterFrameInfo, hitBoxes) == 0x64 &&
+    sizeof(FighterFrameInfo) == 0x74) ? 1 : -1];
 
 // Action sequence record (Actor+0x78 and the entries of Fighter::sequenceSlots).
 // A candidate's targetPriority is compared with the current priority.

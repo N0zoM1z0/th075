@@ -27,7 +27,7 @@ void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighte
         TransformBounds(&attackBounds[i], &attack->savedFrameInfo->hitBoxes.At(i), attack);
     for (i = 0; i < defenderCount; ++i)
         TransformBounds(&defendBounds[i], &defender->savedFrameInfo->hurtBoxes.At(i), defender);
-    TransformBounds(&bodyRectangle, reinterpret_cast<RECT*>(defender->savedFrameInfo->bodyBox), defender);
+    TransformBounds(&bodyRectangle, reinterpret_cast<RECT*>(&defender->savedFrameInfo->bodyBox), defender);
     ClearBounds();
     for (i = 0; i < attackSize; ++i) {
         for (int j = 0; j < defenderCount; ++j) {
@@ -66,8 +66,8 @@ void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
         TransformBounds(&attackBounds[i], &first->frameInfo->hitBoxes.At(i), first);
     for (i = 0; i < countB; ++i)
         TransformBounds(&defendBounds[i], &second->frameInfo->hitBoxes.At(i), second);
-    TransformBounds(&attackBounds[countA], reinterpret_cast<RECT*>(first->frameInfo->bodyBox), first);
-    TransformBounds(&defendBounds[countB], reinterpret_cast<RECT*>(second->frameInfo->bodyBox), second);
+    TransformBounds(&attackBounds[countA], reinterpret_cast<RECT*>(&first->frameInfo->bodyBox), first);
+    TransformBounds(&defendBounds[countB], reinterpret_cast<RECT*>(&second->frameInfo->bodyBox), second);
     ClearBounds();
     for (i = 0; i <= countA; ++i) {
         for (int j = 0; j <= countB; ++j) {

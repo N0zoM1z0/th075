@@ -135,7 +135,14 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   (+0x10 damage, +0x14 combo-rate factor, +0x1C/+0x1E attacker and defender
   hit-stop, +0x24 card-gauge gain, +0x36 hit effect, +0x3C defence flags,
   +0x40 attack flags) and the collision boxes (+0x44 body box, +0x54 hurt
-  boxes, +0x64 hit boxes, each a 16-byte vector of RECTs).
+  boxes, +0x64 hit boxes, each a 16-byte vector of RECTs). The
+  `CollisionRectSequence` members are now backed by real
+  `std::vector<tagRECT>` objects while retaining their native `Size`/`At`
+  entry points. `FighterFrameInfo::operator=` at 0045AAE0 cold-replays its
+  full 368-byte body and both vector-assignment relocations (0x151/0x163)
+  to 0045AC50. The 381-byte `std::vector<RECT>::operator=` at 0045AC50
+  also cold-replays with all 17 relocations. These compiler/library-origin
+  functions remain excluded from authored exact coverage.
 - Fighter gauges: +0x3B0 `spirit` (specials need it, guarding drains it, at
   0 the fighter is guard-crushed into state 143), +0x368 `cardGauge` (float,
   filled by hits, capped at 2000), +0x3C0 `comboRate` (each hit multiplies

@@ -113,6 +113,15 @@ result and staff-roll score reads, and the NameEntry texture/state prefix.
 Inspect `git log -10 --oneline` for the exact checkpoint sequence; each uses
 the requested `gpt-web: ...` prefix.
 
+A 2026-11-20 leaf pass recovered the 0x74-byte `FighterFrameInfo` layout and
+its memberwise assignment at 0045AAE0 as natural C++. The two embedded
+`std::vector<RECT>` assignments call the existing VC7.1 vector operator= at
+0045AC50. Their complete 368-byte / 381-byte functions cold-replay with
+2/2 and 17/17 relocations respectively. The affected collision dispatch,
+frame dependency and Actor helper objects also replayed 13/13 exact units.
+Both new functions retain compiler/library origin classifications and do
+not increase authored exact coverage.
+
 ## Next-agent working loop
 
 1. Read `AGENTS.md`, this handoff, the relevant section of `GIANTS.md`, and
