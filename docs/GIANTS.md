@@ -1265,3 +1265,22 @@ parent. Its `size = 33,293` credits only authored CODE, while
 the 438 table bytes are never counted as authored CODE. The canonical
 `matches.csv` and `functions.csv` ledgers now record 100.00% matching. Alice is
 removed from `frontiers.toml`; Meiling is the next active giant frontier.
+
+## 2026-11-20 — Meiling/Sakuya register-frontier recheck
+
+Meiling `005EB520` still has 135 GPR-role and six width differences, with the
+first mismatch at `005F3904` in action 998. The mismatches are a consistent
+EAX/ECX/EDX rotation through that state's body; the six width changes are
+associated with the different accumulator/register forms of its integer
+comparisons. Explicit `this`, base/derived owner casts, volatile lvalues,
+owner-pointer aliases, and register locals did not alter the native register
+rotation. All probes were discarded; the complete source remains unchanged.
+
+Sakuya `004CA6E0` was also rechecked at its actual first GPR mismatch,
+`004CCBD7` in the action-800 bounds guard (not the later 809/810 gate). The
+target reloads the receiver through ECX/EDX/EAX/ECX for the four float-bound
+comparisons, while the current object uses EAX/ECX/EDX/EAX. Ten equivalent
+predicate order/grouping/negation/qualification variants retained the same
+447 GPR and 12 width differences; nested forms expanded the body and were
+rejected. The earlier 809/810 transient 328-GPR form remains rejected because
+its section was two bytes too large. No source change or exactness credit.

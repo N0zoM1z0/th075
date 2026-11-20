@@ -583,3 +583,11 @@ unknown. The existing raw `sounds[20]` view remains for the independent
 resource loader. The owner-sound leaf and that 1,186-byte loader both cold
 replayed exact, as did all four neighboring effect/sound forwarders (6/6
 affected units across two objects).
+
+The 2026-11-20 boss recheck narrowed the remaining frontiers without changing
+the tracked giant sources: Meiling's 135 GPR / six width differences are a
+stable EAX/ECX/EDX rotation inside action 998 at `005F3904`; Sakuya's first
+GPR divergence is earlier than the old 809/810 experiments, at `004CCBD7`
+in the action-800 four-float bounds guard. Ten equivalent guard rewrites did
+not change Sakuya's 447/12 frontier. Preserve the known-rejected transient
+809/810 variant (328 GPR but +2 bytes) as research only; do not promote it.
