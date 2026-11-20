@@ -194,7 +194,7 @@ short BattleScene::AdvanceState()
                 reinterpret_cast<StateEffects *>(&g_CombatEffects)->ReleaseEntries();
                 g_StateStageTotal = 0;
                 for (resetPlayer = 1; resetPlayer <= fighters[1]->field39E; ++resetPlayer)
-                    g_StateStageTotal += reinterpret_cast<int *>(reinterpret_cast<unsigned char *>(fighters[1]) + 0x400)[resetPlayer];
+                    g_StateStageTotal += static_cast<int>(fighters[1]->field400[resetPlayer]);
             }
         } else if (TIMER < 50) {
             g_StateFadeAlpha = static_cast<unsigned char>(TIMER * 5.1f);

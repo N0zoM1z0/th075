@@ -706,3 +706,10 @@ window and its pointer arithmetic were removed from this renderer; draw order
 and overlay calls are unchanged. The complete 1637-byte render function
 (including all 91 relocations and its full comparison extent) cold-replayed
 1/1 exact.
+
+`BattleScene::AdvanceState` now reads the fighter's existing `field400`
+array directly instead of rebuilding `fighters[1]+0x400` through an `int*`
+cast. The member remains declared as `unsigned int` because other native
+writers/readers use the 32-bit unsigned payload; the original signed countdown
+sum is preserved with an explicit `static_cast<int>` at the arithmetic use.
+The complete 4764-byte state-machine function cold-replayed 1/1 exact.
