@@ -108,6 +108,20 @@ def source_cases(path: Path, macros: dict[str, str], seen: list[int]) -> None:
                 seen.append(int(value, 0))
             except ValueError as exc:
                 raise ValueError(f"{path}:{line_number}: unresolved case {value!r}") from exc
+            continue
+        # The native parent has six range-boundary handlers outside its sparse
+        # switches.  Keep those if-dispatches in the same coverage set, expanding
+        # their per-include F628_CASE macro exactly as the preprocessor does.
+        special = re.match(
+            r"\s*if\s*\(\s*(?:actionSnapshot|action)\s*==\s*([^\)]+)\)",
+            line,
+        )
+        if special:
+            value = expand(special.group(1).strip(), macros)
+            try:
+                seen.append(int(value, 0))
+            except ValueError as exc:
+                raise ValueError(f"{path}:{line_number}: unresolved special action {value!r}") from exc
     if stack:
         raise ValueError(f"{path}: unterminated #if block")
 
@@ -128,12 +142,9 @@ def main() -> int:
             value = int(match.group(1), 0)
             if value in valid_actions:
                 top_level.add(value)
-    source_text = SOURCE.read_text(encoding="utf-8")
-    special_actions = {
-        int(value, 0)
-        for value in re.findall(r"\bif\s*\(\s*action\s*==\s*(0x[0-9a-fA-F]+|\d+)\s*\)", source_text)
-    }
-    implemented = set(source) | special_actions
+    # source_cases() has already expanded and included both ordinary case
+    # labels and the standalone actionSnapshot/action boundary handlers.
+    implemented = set(source)
     missing = sorted(top_level - implemented)
 
     handler_by_action: dict[int, int] = {}
@@ -155,7 +166,7 @@ def main() -> int:
     has_default = bool(re.search(r"^\s*default\s*:", SOURCE.read_text(encoding="utf-8"), re.M))
 
     print(
-        f"Marisa Advance source labels: {len(source)} ({len(implemented)} including special if-dispatches); "
+        f"Marisa Advance source dispatches: {len(source)} (including special if-dispatches); "
         f"mapped Ghidra top-level labels: {len(top_level)}; "
         f"covered: {len(top_level) - len(missing)}/{len(top_level)}"
     )
