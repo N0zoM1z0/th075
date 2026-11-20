@@ -19,6 +19,7 @@ extern float g_MarisaSpecialProjectileYAt00658400;
 extern float g_MarisaProjectilePairYAt00657CF8;
 extern float g_MarisaHorizontalSlowdownAt00659094;
 extern float g_MarisaOpponentBoundaryAt00657884;
+extern const float g_MarisaPhaseDivisorBAt0065788C;
 extern float g_MarisaRandomEffectYAt00657858;
 extern float g_MarisaRandomEffectXAt00657878;
 extern float g_MarisaResourceYAt00659298;

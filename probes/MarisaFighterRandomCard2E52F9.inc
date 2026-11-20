@@ -109,15 +109,15 @@
                 }
             }
             velocityX = 0.0f;
-            if (x < opponent->x - g_MarisaOpponentBoundaryAt00657884)
+            if (x < opponent->x - g_MarisaPhaseDivisorBAt0065788C)
                 velocityX = static_cast<float>(g_MarisaDifficultyAt006714D0) *
                     g_SubtractAt00657478 + g_AnimationDeltaAt0065747C;
-            if (opponent->x + g_MarisaOpponentBoundaryAt00657884 < x)
+            if (opponent->x + g_MarisaPhaseDivisorBAt0065788C < x)
                 velocityX = g_MarisaNegativeCardDriftAt00659268 -
                     static_cast<float>(g_MarisaDifficultyAt006714D0) *
                     g_SubtractAt00657478;
             if (animationStage == 1 && y > g_MarisaHighBoundaryAt0065926C) {
-                y = g_MarisaHighBoundaryAt0065926C;
+                y = 870.0f;
                 ResetPrimaryCounters(0x2F9);
                 return;
             }
