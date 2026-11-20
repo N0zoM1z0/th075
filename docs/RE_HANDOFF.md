@@ -138,6 +138,15 @@ whole wrapper units cold-replay 3/3 exact. The 28-byte fabsf/sqrtf workers remai
 origin-unknown under the preserved R163 alternatives; no CRT or worker bytes
 were double-credited.
 
+- Youmu's +0xFEC action-history queue is now an actual 12-byte
+  `std::list<ObservedInputSnapshotF378>` member of the 0xFF8-byte
+  `YoumuFighter`. The auxiliary writer uses native `push_back`, `size`,
+  `pop_front`; the 39,999-byte object `Advance` uses `front`. The constructor,
+  reset and auxiliary units cold-replay 3/3, and all 81 exact users of the
+  changed header replayed 81/81. The 40,464-byte object parent and all 938
+  relocation locations/types/addends/local destinations remain unchanged;
+  its 913-GPR/10-width nonexact frontier is not promoted.
+
 ## Giant priorities
 
 There are 13 complete, nonexact research parents and nine without a complete

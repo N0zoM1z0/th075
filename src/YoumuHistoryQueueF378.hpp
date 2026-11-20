@@ -16,16 +16,5 @@ struct ObservedInputSnapshotF378 {
 };
 typedef char CheckSnapshot16F378[(sizeof(ObservedInputSnapshotF378)==16)?1:-1];
 
-// VC7.1's 12-byte std::list of the 16-byte action snapshots, embedded at
-// YoumuFighter +0xFEC. The native allocation ends at +0xFF8. The queue
-// exposes native insert/count/prune helpers and the list-front worker;
-// their original private member names remain unknown.
-class ObservedEffectQueueF378 : public std::list<ObservedInputSnapshotF378> {
-public:
-    void AddSnapshot(ObservedInputSnapshotF378 const*);
-    unsigned int Count();
-    void PruneOld();
-    ObservedInputSnapshotF378& FrontAt00540220();
-};
 
 #endif

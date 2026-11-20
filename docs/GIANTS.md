@@ -26,6 +26,15 @@ It fails if the body size changes or a byte that matched now differs.
 Record an improvement with `--update NAME` and commit the file with the
 source change.
 
+The Youmu object parent now reads the native `std::list` front through
+`YoumuFighter::historyQueue` (+0xFEC), the same list appended and pruned by
+its exact 1,008-byte auxiliary writer. The original 0xFF8 allocation and
+VC7.1's 12-byte list establish the shared owner/member layout. The entire
+40,464-byte research COFF body is unchanged, with all 938 relocations retaining
+their positions, types, addends and local targets; the front-call symbol now
+names `std::list<ObservedInputSnapshotF378>::front`. This remains a NONEXACT
+giant. Its 81 affected exact units cold-replayed 81/81.
+
 ## Complete research parents (measured 2026-11-19)
 
 All thirteen have the original instruction count, frame, stack slots, branch

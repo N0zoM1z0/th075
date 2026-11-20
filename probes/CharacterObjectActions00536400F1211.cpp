@@ -61,7 +61,7 @@ void YoumuObject::Advance()
         field010 = 0x82;
         if (owner->field082 != 0) return;
 
-        entry = &static_cast<YoumuFighter*>(owner)->historyQueue.FrontAt00540220();
+        entry = &static_cast<YoumuFighter*>(owner)->historyQueue.front();
         if (action != entry->actionAt00)
             field080 = entry->counterAt0E;
         if (animationStage != entry->stageAt02)

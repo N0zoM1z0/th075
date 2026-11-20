@@ -18,8 +18,8 @@ void YoumuFighter::AdvanceAuxiliary() {
         snapshot.y=y;
         snapshot.facing=facing;
         snapshot.bearing=field080;
-        historyQueue.AddSnapshot(&snapshot);
-        if (historyQueue.Count()>10) historyQueue.PruneOld();
+        historyQueue.push_back(snapshot);
+        if (historyQueue.size()>10) historyQueue.pop_front();
     }
     if (fieldF10>0) --fieldF10;
     if (velocityX==0.0f && field3AC>0) field3AC=0;

@@ -56,7 +56,7 @@ public:
     unsigned char fieldFE2;
     unsigned char fieldFE3;
     unsigned char unknownFE4[0xFEC - 0xFE4]; // unobserved fighter state
-    ObservedEffectQueueF378 historyQueue;  // +0xFEC, native 12-byte std::list
+    std::list<ObservedInputSnapshotF378> historyQueue;  // +0xFEC, native 12-byte std::list
 };
 
 typedef char YoumuHistoryListLayoutF378[
