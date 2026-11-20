@@ -557,3 +557,10 @@ source clarity only and leaves all native bytes/relocations unchanged.
 implicit `rand()`-to-float conversions: its five explicit casts were removed
 without changing either 7,780-byte template instantiation. Both original card
 AI units cold-replayed 2/2 exact from one `CharacterAICardPolicy.obj`.
+
+`SpriteScene::CopyVector` now reads the observed +0x0C `Vector3` through a
+named `field00C` member instead of a raw `this + 0x0C` reinterpret-cast. The
+view explicitly models only the 12-byte unknown prefix and the copied vector;
+no enclosing `SpriteScene` size or later fields are claimed, and no instance
+is created. Its affected `GamePolicyHelpers.obj` unit cold-replayed 1/1 exact
+(38/38 CODE bytes).

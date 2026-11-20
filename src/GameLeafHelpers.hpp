@@ -11,11 +11,17 @@ struct Vector3 {
     u32 z;
 };
 
+// Pointer-only observed prefix: CopyVector reads one Vector3 at +0x0C.
+// The enclosing SpriteScene size and all later fields remain unknown.
 class SpriteScene {
 public:
     void CopyVector(Vector3 *destination);
     static void DispatchGlobalDraw(int first, int second, int third);
+
+    unsigned char unknown000[0x0C];
+    Vector3 field00C;
 };
+typedef char SpriteSceneVectorOffsetCheck[(offsetof(SpriteScene, field00C) == 0x0C) ? 1 : -1];
 
 class DrawDispatcher {
 public:

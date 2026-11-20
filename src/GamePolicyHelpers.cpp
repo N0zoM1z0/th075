@@ -3,8 +3,7 @@
 
 void SpriteScene::CopyVector(Vector3 *destination)
 {
-    *destination = *reinterpret_cast<Vector3 *>(
-        reinterpret_cast<u8 *>(this) + 0x0C);
+    *destination = field00C;
 }
 
 void SpriteScene::DispatchGlobalDraw(int first, int second, int third)
