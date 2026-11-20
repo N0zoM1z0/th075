@@ -1,6 +1,5 @@
 #include "BattleScene.hpp"
 #include "BattleHud43E040.hpp"
-#include "BattleHudBorrowedViewsF1134.hpp"
 
 #define LEFT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(fighters[0]->drawing)
 #define RIGHT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(fighters[1]->drawing)
@@ -71,11 +70,11 @@ void BattleScene::RenderHud() {
         }
 
         if (g_CombatMode == 3) {
-            switch (F1134_FIGHTER_VARIANT(fighters[1],fighters[1]->field39D)) {
+            switch (fighters[1]->field32A[fighters[1]->field39D]) {
             case 0:
                 if (field018 == 9 || field018 == 10) {
-                    SetRect(&region, 866 - fighters[1]->recoverableHealth * 225 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D), 10, 866, 21);
-                    packet.BuildQuad(float(fighters[1]->recoverableHealth * 56 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D) + 384), 27.0f, 384.0f, 38.0f);
+                    SetRect(&region, 866 - fighters[1]->recoverableHealth * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 10, 866, 21);
+                    packet.BuildQuad(float(fighters[1]->recoverableHealth * 56 / fighters[1]->healthLimits[fighters[1]->field39D] + 384), 27.0f, 384.0f, 38.0f);
                 } else {
                     SetRect(&region, 641, 10, 866, 21);
                     packet.BuildQuad(440.0f, 27.0f, 384.0f, 38.0f);
@@ -83,22 +82,22 @@ void BattleScene::RenderHud() {
                 if (field08C != 0.0f)
                     QUAD->Translate(0.0f, field08C, 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
-                SetRect(&region, 865 - fighters[1]->health * 225 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D), 236, 865, 247);
-                packet.BuildQuad(float(fighters[1]->health * 169 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D) + 440), 27.0f, 440.0f, 38.0f);
+                SetRect(&region, 865 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 236, 865, 247);
+                packet.BuildQuad(float(fighters[1]->health * 169 / fighters[1]->healthLimits[fighters[1]->field39D] + 440), 27.0f, 440.0f, 38.0f);
                 if (field08C != 0.0f)
                     QUAD->Translate(0.0f, field08C, 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
                 break;
             case 1:
-                SetRect(&region, 866 - fighters[1]->health * 225 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D), 10, 866, 21);
-                packet.BuildQuad(float(fighters[1]->health * 56 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D) + 384), 27.0f, 384.0f, 38.0f);
+                SetRect(&region, 866 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 10, 866, 21);
+                packet.BuildQuad(float(fighters[1]->health * 56 / fighters[1]->healthLimits[fighters[1]->field39D] + 384), 27.0f, 384.0f, 38.0f);
                 if (field08C != 0.0f)
                     QUAD->Translate(0.0f, field08C, 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
                 break;
             case 2:
-                SetRect(&region, 866 - fighters[1]->health * 225 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D), 10, 866, 21);
-                packet.BuildQuad(float(fighters[1]->health * 225 / F1134_FIGHTER_HEALTH_LIMIT(fighters[1],fighters[1]->field39D) + 384), 27.0f, 384.0f, 38.0f);
+                SetRect(&region, 866 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 10, 866, 21);
+                packet.BuildQuad(float(fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D] + 384), 27.0f, 384.0f, 38.0f);
                 if (field08C != 0.0f)
                     QUAD->Translate(0.0f, field08C, 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
