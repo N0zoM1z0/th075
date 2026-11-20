@@ -24,7 +24,7 @@ case 0x31C: {
     }
     if (AdvanceNestedFrame()==(field070)) {
         ResetPrimaryCounters(0);
-        if (*reinterpret_cast<signed char*>(RAW+field39D+0x370)==4) {
+        if (field370[field39D]==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;
             SpawnBattleEffect(0x3A3,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
             if (g_ReimuRepeatSettingAt006714D0==0) {
