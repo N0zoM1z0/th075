@@ -14,7 +14,6 @@ public:
     void ChooseFrameAction();
     signed char CheckHorizontalLimits();
 };
-class FrameEffectOwner { public: void AdvanceAll(); };
 class FrameAuxEffects { public: void AdvanceAndPrune(); };
 // Bounded copied value: seven observed dwords, no enclosing owner layout.
 extern signed char g_FrameClockMode;

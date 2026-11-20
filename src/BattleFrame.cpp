@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include "Graphics.hpp"
 #include "BattleFrame.hpp"
-#define FIELD_AT(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-#define PLAYER(offset) FIELD_AT(Fighter *, this, offset)
-#define EFFECTS(offset) FIELD_AT(FrameEffectOwner *, PLAYER(offset), 0x2EC)
+#include "EffectManagerLifetimeF161.hpp"
 short BattleScene::Update()
 {
     PollPauseShortcut();
@@ -21,14 +19,14 @@ short BattleScene::Update()
                 fighters[0]->AdvanceSequence();
                 fighters[0]->Advance();
                 fighters[1]->Advance();
-                EFFECTS(0x44)->AdvanceAll();
-                EFFECTS(0x48)->AdvanceAll();
+                fighters[0]->field2EC->AdvanceAll();
+                fighters[1]->field2EC->AdvanceAll();
                 ResolveBodySeparation();
             } else {
                 fighters[0]->Advance();
                 fighters[1]->Advance();
-                EFFECTS(0x44)->AdvanceAll();
-                EFFECTS(0x48)->AdvanceAll();
+                fighters[0]->field2EC->AdvanceAll();
+                fighters[1]->field2EC->AdvanceAll();
                 if (field018 != 4 && field018 != 9 && field018 != 0)
                     reinterpret_cast<BattleScene *>(this)->ResolveActiveCollisions();
                 ResolveBodySeparation();
