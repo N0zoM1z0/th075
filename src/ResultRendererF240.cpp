@@ -70,7 +70,7 @@ void ResultScene::Render()
         TRANSFORM(quad)->TranslateQuad(static_cast<float>(offsets[4]),0.0f,0.0f);
         DRAWER->DrawQuad(2,quad,&region,RESULT_COLOR);
         DrawDecimalDigits(300.0f,221.0f,RESULT_COLOR,field038,1,0);
-        DrawDecimalDigits(300.0f,245.0f,RESULT_COLOR,*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(g_ActorAt00671418)+0x2d0),1,0);
+        DrawDecimalDigits(300.0f,245.0f,RESULT_COLOR,g_ActorAt00671418->score,1,0);
         Graphics::EndFrame();
         }
     }

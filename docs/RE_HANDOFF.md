@@ -736,3 +736,8 @@ linkage type (the COFF symbol is still the native `PAX` symbol); the use site
 casts to the known `Fighter` interface. The signed `int` score still undergoes
 the same usual conversion against the unsigned best-score global. Targeted
 208-byte cold replay remains 1/1 exact.
+
+`ResultScene::Render` now draws the fighter score through the existing typed
+`Fighter* g_ActorAt00671418` interface (`Fighter::score`, +0x2D0) instead of
+reconstructing the member address with `unsigned char*` arithmetic. The
+complete 1344-byte renderer cold-replayed 1/1 exact.
