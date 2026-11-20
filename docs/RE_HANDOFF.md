@@ -748,3 +748,10 @@ three raw byte-offset loads. The global retains its original `unsigned char*`
 ABI symbol; only the use-site view is typed. Assignment to the snapshot's
 DWORD/WORD destinations preserves the original unsigned-width conversions.
 The complete 904-byte snapshot function cold-replayed 1/1 exact.
+
+The Meiling and eight-character `PollCommands` implementations now write the
+existing `Fighter::aiCommand` byte at +0x511 directly instead of routing each
+read/write through a repeated `this+0x511` cast macro. All nine complete native
+functions were replayed together: 9/9 exact across the two affected objects.
+The original one-byte field remains in the Fighter layout; no fake container
+or partial owner object was introduced.
