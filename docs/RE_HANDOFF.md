@@ -35,11 +35,15 @@ main; those commits have not been pushed. Recheck Git state before editing.
   `probes/MarisaFighterAdvancePartial.cpp`: 158 native action-state bodies,
   inherited named fields/methods, no offset casts or marker placeholders.
   The latest nested handlers `0x12C`, `0x1F4`, and `0x2C2` add 1,147 original
-  bytes. All 141 unique top-level Ghidra action labels and all 158 explicit
+  bytes. A machine-code audit corrected 38 landing comparisons to strict
+  `< 0` where the original x87 `JP` path requires it, preserving separate
+  inclusive stage-exit guards in `0x133`/`0x189`; `0x2F9` now uses the original
+  50-unit opponent spacing and 870-unit reset height. All 141 unique top-level
+  Ghidra action labels and all 158 explicit
   in-parent handler groups have source coverage; the shared default handler
-  is represented by the source default path. Its 51,924-byte/14,842-
+  is represented by the source default path. Its 51,920-byte/14,840-
   instruction VC7.1 object is explicitly NONEXACT against the 50,735-byte /
-  14,260-instruction original. The 1,189-byte / 582-instruction difference
+  14,260-instruction original. The 1,185-byte / 580-instruction difference
   remains unaccepted; this is not an exact-credit claim.
 
 Current focused source recoveries (2026-11-20):

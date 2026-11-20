@@ -91,20 +91,25 @@ Marisa fighter `Advance` (`0x00486550`, 50,735 CODE bytes) now has a
 tracked, natural-C++ partial parent probe. It derives from the real
 `MarisaFighter`, uses named inherited `Actor`/`Fighter` fields and methods,
 and contains 158 recovered action-state bodies. Recent batches added states
-`0x5D`–`0x62`, `0x8F`/`0x90`, `0x97`–`0xA8`, `0xC8`–`0xD2`,
-`0x12C`–`0x136`, `0x186`–`0x18B`, `0x190`–`0x1A3`, `0x1F4`/`0x1F5`,
+`0x46`–`0x4C`, `0x58`, `0x5D`–`0x62`, `0x8F`/`0x90`, `0x97`–`0xA8`,
+`0xC8`–`0xD2`, `0x12C`–`0x136`, `0x186`–`0x18B`, `0x190`–`0x1A3`,
+`0x1F4`/`0x1F5`,
 `0x208`/`0x20A`–`0x20E`, `0x252`–`0x25D`, `0x270`–`0x271`,
 `0x2BC`–`0x2D1`, and the late `0x2E5`–`0x2F9` / `0x31B`–`0x31C`
 resource tails. The latest three nested handler bodies (`0x12C`, `0x1F4`,
-`0x2C2`) add 1,147 original bytes. The probe and its Marisa-specific
+`0x2C2`) add 1,147 original bytes. A follow-up machine-code audit corrected
+38 landing comparisons from inclusive `<= 0` to strict `< 0` where the
+original x87 `FCOMP`/status-word `JP` branch requires it, while retaining the
+separate inclusive stage-exit guards in `0x133` and `0x189`. It also fixed
+`0x2F9`'s 50-unit opponent spacing and 870-unit reset height. The probe and its Marisa-specific
 counter fragments contain no raw offset casts, ASM, padding, or synthetic
 marker cases. The expanded source covers all 141 unique top-level Ghidra
 action labels and all 158 explicit in-parent handler groups; the shared
 default handler is retained as a real default path. This inventory is
 repeatable with `scripts/validate-marisa-advance-cases.py`. VC7.1 compiles it
-to 51,924 CODE bytes / 14,842 instructions; the original is 50,735 bytes /
+to 51,920 CODE bytes / 14,840 instructions; the original is 50,735 bytes /
 14,260 instructions. This remains deliberately NONEXACT and is not entered
-into the complete-parent frontier: the 1,189-byte / 582-instruction code
+into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
