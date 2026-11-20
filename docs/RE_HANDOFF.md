@@ -621,3 +621,9 @@ resource-loading class retains its original COFF method symbol and has only an
 opaque 20-byte storage view. All six affected resource/effect/sound units
 cold-replayed 6/6 exact across three objects. No internal sound-bank field
 layout is claimed.
+
+`FighterNoticeF283::SetNoticeModeByte` now uses the observed inherited
+`Fighter::sequencePhase` member at +0x6E4 rather than a raw byte pointer at
+`this+0x6E4`. Its call-only view inherits the already verified Fighter prefix;
+no FighterNoticeF283 instances or new owner layout are asserted. The complete
+25-byte leaf cold-replayed 1/1 exact with no relocations.
