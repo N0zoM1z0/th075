@@ -115,11 +115,10 @@
                 field3AC = 0;
             }
             if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
-                const float effectY = y + g_MarisaRandomEffectYAt00657858;
-                const float spawnY = static_cast<float>(RecordedRange(0, 0x8C)) + effectY;
-                const float effectX = x + g_MarisaRandomEffectXAt00657878;
-                const float spawnX = effectX - static_cast<float>(RecordedRange(0, 0x3C));
-                SpawnBattleEffect(0x330, spawnX, spawnY, facing, 1);
+                actionSnapshot = RecordedRange(0, 0x8C);
+SpawnBattleEffect(0x330,
+    x + g_MarisaRandomEffectXAt00657878 - static_cast<float>(RecordedRange(0, 0x3C)),
+    y + g_MarisaRandomEffectYAt00657858 + static_cast<float>(actionSnapshot), facing, 1);
             }
             if (animationStage == 7 && y > g_MarisaHighBoundaryAt0065926C) {
                 y = 870.0f;

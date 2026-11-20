@@ -229,3 +229,10 @@ its native range. The pinned VC7.1 probe compiles and tracking validation passes
 this is a control-flow/source-organization advance, not an exact-byte claim.
 The large function still needs stack-frame, register-allocation and byte-level
 work. No full cold replay was run.
+
+
+The random-offset effect paths now reuse `actionSnapshot` as the shared integer
+scratch after the `switch` has already selected its case. This mirrors the
+original decompiler's reuse of `iVar5`, avoids introducing extra floating-point
+locals, and keeps the Y random draw before the X random draw. The change remains
+a natural C++ candidate and is validated by the targeted VC7.1 probe only.
