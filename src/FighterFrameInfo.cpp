@@ -26,7 +26,7 @@ FighterFrameInfo& FighterFrameInfo::operator=(const FighterFrameInfo& other)
     flags = other.flags;
     attackFlags = other.attackFlags;
     bodyBox = other.bodyBox;
-    hurtBoxes.storage = other.hurtBoxes.storage;
-    hitBoxes.storage = other.hitBoxes.storage;
+    hurtBoxes = other.hurtBoxes;
+    hitBoxes = other.hitBoxes;
     return *this;
 }

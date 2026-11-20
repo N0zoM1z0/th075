@@ -21,12 +21,12 @@ void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighte
     signed char attackSize, defenderCount;
     int i;
     int contacts[4][5];
-    attackSize = static_cast<signed char>(attack->savedFrameInfo->hitBoxes.Size());
-    defenderCount = static_cast<signed char>(defender->savedFrameInfo->hurtBoxes.Size());
+    attackSize = static_cast<signed char>(attack->savedFrameInfo->hitBoxes.size());
+    defenderCount = static_cast<signed char>(defender->savedFrameInfo->hurtBoxes.size());
     for (i = 0; i < attackSize; ++i)
-        TransformBounds(&attackBounds[i], &attack->savedFrameInfo->hitBoxes.At(i), attack);
+        TransformBounds(&attackBounds[i], &attack->savedFrameInfo->hitBoxes.at(i), attack);
     for (i = 0; i < defenderCount; ++i)
-        TransformBounds(&defendBounds[i], &defender->savedFrameInfo->hurtBoxes.At(i), defender);
+        TransformBounds(&defendBounds[i], &defender->savedFrameInfo->hurtBoxes.at(i), defender);
     TransformBounds(&bodyRectangle, reinterpret_cast<RECT*>(&defender->savedFrameInfo->bodyBox), defender);
     ClearBounds();
     for (i = 0; i < attackSize; ++i) {
@@ -59,13 +59,13 @@ void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
     if (second->savedSequenceInfo->targetPriority == 0) return;
     int i;
     unsigned int hit = 0;
-    signed char countA = static_cast<signed char>(first->frameInfo->hitBoxes.Size());
-    signed char countB = static_cast<signed char>(second->frameInfo->hitBoxes.Size());
+    signed char countA = static_cast<signed char>(first->frameInfo->hitBoxes.size());
+    signed char countB = static_cast<signed char>(second->frameInfo->hitBoxes.size());
     RECT attackBounds[6], defendBounds[6];
     for (i = 0; i < countA; ++i)
-        TransformBounds(&attackBounds[i], &first->frameInfo->hitBoxes.At(i), first);
+        TransformBounds(&attackBounds[i], &first->frameInfo->hitBoxes.at(i), first);
     for (i = 0; i < countB; ++i)
-        TransformBounds(&defendBounds[i], &second->frameInfo->hitBoxes.At(i), second);
+        TransformBounds(&defendBounds[i], &second->frameInfo->hitBoxes.at(i), second);
     TransformBounds(&attackBounds[countA], reinterpret_cast<RECT*>(&first->frameInfo->bodyBox), first);
     TransformBounds(&defendBounds[countB], reinterpret_cast<RECT*>(&second->frameInfo->bodyBox), second);
     ClearBounds();

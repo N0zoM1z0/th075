@@ -1899,11 +1899,11 @@ target_address = 0x00442A70
 size = 975
 relocations = [
   { offset = 0x32, type = "REL32", symbol = "?IsGroundedStateWindow@Fighter@@QAE_NXZ", target = 0x00455010 },
-  { offset = 0xEE, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
-  { offset = 0x102, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
-  { offset = 0x139, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0xEE, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x102, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x139, type = "REL32", symbol = "?at@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
   { offset = 0x153, type = "REL32", symbol = "?TransformBounds@BattleScene@@QAEXPAUtagRECT@@PBU2@PAVActor@@@Z", target = 0x004491E0 },
-  { offset = 0x189, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0x189, type = "REL32", symbol = "?at@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
   { offset = 0x1A3, type = "REL32", symbol = "?TransformBounds@BattleScene@@QAEXPAUtagRECT@@PBU2@PAVActor@@@Z", target = 0x004491E0 },
   { offset = 0x1C8, type = "REL32", symbol = "?TransformBounds@BattleScene@@QAEXPAUtagRECT@@PBU2@PAVActor@@@Z", target = 0x004491E0 },
   { offset = 0x1D3, type = "REL32", symbol = "?ClearBounds@BattleScene@@QAEXXZ", target = 0x00442540 },
@@ -1927,11 +1927,11 @@ symbol = "?ResolveBodyContact@BattleScene@@QAEXPAVActor@@0@Z"
 target_address = 0x00442E40
 size = 897
 relocations = [
-  { offset = 0x8A, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
-  { offset = 0x9B, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
-  { offset = 0xCF, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0x8A, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0x9B, type = "REL32", symbol = "?size@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEIXZ", target = 0x004452D0 },
+  { offset = 0xCF, type = "REL32", symbol = "?at@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
   { offset = 0xE9, type = "REL32", symbol = "?TransformBounds@BattleScene@@QAEXPAUtagRECT@@PBU2@PAVActor@@@Z", target = 0x004491E0 },
-  { offset = 0x11C, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0x11C, type = "REL32", symbol = "?at@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
   { offset = 0x133, type = "REL32", symbol = "?TransformBounds@BattleScene@@QAEXPAUtagRECT@@PBU2@PAVActor@@@Z", target = 0x004491E0 },
   { offset = 0x15D, type = "REL32", symbol = "?TransformBounds@BattleScene@@QAEXPAUtagRECT@@PBU2@PAVActor@@@Z", target = 0x004491E0 },
   { offset = 0x182, type = "REL32", symbol = "?TransformBounds@BattleScene@@QAEXPAUtagRECT@@PBU2@PAVActor@@@Z", target = 0x004491E0 },

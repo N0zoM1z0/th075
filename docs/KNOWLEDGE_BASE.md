@@ -136,9 +136,10 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   hit-stop, +0x24 card-gauge gain, +0x36 hit effect, +0x3C defence flags,
   +0x40 attack flags) and the collision boxes (+0x44 body box, +0x54 hurt
   boxes, +0x64 hit boxes, each a 16-byte vector of RECTs). The
-  `CollisionRectSequence` members are now backed by real
-  `std::vector<tagRECT>` objects while retaining their native `Size`/`At`
-  entry points. `FighterFrameInfo::operator=` at 0045AAE0 cold-replays its
+  The hurt/hit members are now declared directly as
+  `std::vector<tagRECT>`, so collision dispatch emits the native VC7.1
+  `vector::size()` / `vector::at()` symbols at 004452D0 / 00445310.
+  `FighterFrameInfo::operator=` at 0045AAE0 cold-replays its
   full 368-byte body and both vector-assignment relocations (0x151/0x163)
   to 0045AC50. The 381-byte `std::vector<RECT>::operator=` at 0045AC50
   also cold-replays with all 17 relocations. These compiler/library-origin

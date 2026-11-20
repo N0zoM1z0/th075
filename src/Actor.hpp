@@ -21,20 +21,10 @@ struct ActorPose {
     float rotationZ;          // +0x20
 };
 
-// The vector of collision boxes a frame carries (+0x54 and +0x64).
-// Its 16-byte object is the VC7.1 std::vector<tagRECT> representation;
-// Size/At are the original game-facing accessors at 004452D0/00445310.
-struct FighterFrameInfo;
-class CollisionRectSequence {
-public:
-    unsigned int Size();
-    tagRECT &At(unsigned int index);
-private:
-    std::vector<tagRECT> storage;
-    friend struct FighterFrameInfo;
-};
-
-typedef char CollisionRectSequenceLayoutCheck[(sizeof(CollisionRectSequence) == 0x10) ? 1 : -1];
+// Each collision-box sequence is the native VC7.1 std::vector<RECT>
+// object (16 bytes); its size()/at() methods are the original game STL
+// instantiations at 004452D0 and 00445310.
+typedef char RectVectorLayoutCheck[(sizeof(std::vector<tagRECT>) == 0x10) ? 1 : -1];
 
 // The first 16 bytes are copied as four words by the native memberwise
 // assignment. Keep their observed names while preserving the contiguous header.
@@ -91,8 +81,8 @@ struct FighterFrameInfo {
     unsigned long flags;      // +0x3C defence flags; bit 0x20 is tested before action changes
     unsigned long attackFlags;// +0x40
     CollisionBounds bodyBox;  // +0x44 RECT
-    CollisionRectSequence hurtBoxes;  // +0x54
-    CollisionRectSequence hitBoxes;   // +0x64
+    std::vector<tagRECT> hurtBoxes;  // +0x54
+    std::vector<tagRECT> hitBoxes;   // +0x64
 
     FighterFrameInfo& operator=(const FighterFrameInfo& other);
 };
