@@ -70,7 +70,7 @@ case 0x2F9: {
                 scriptCounterF02=
                     CalculateAngleAt483300(
                         (*(&(opponent->y))-*(&y)),
-                        ((reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
+                        ((opponent->x-x))
                            *static_cast<float>(facing))
                     /g_StormAngleDenominatorAt00657828;
             }
@@ -84,7 +84,7 @@ case 0x2F9: {
                 scriptCounterF02=
                     CalculateAngleAt483300(
                         (*(&(opponent->y))-*(&y)),
-                        ((reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
+                        ((opponent->x-x))
                            *static_cast<float>(facing))
                     /g_StormAngleDenominatorAt00657828;
             }

@@ -9,11 +9,11 @@
                     ResetPrimaryCounters(1);
             }
             if ((animationStage)==(field070)-1) {
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 >
-                    reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x >
+                    opponent->x)
                     facing=-1;
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 <
-                    reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x <
+                    opponent->x)
                     facing=1;
             }
             break;

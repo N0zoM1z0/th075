@@ -33,9 +33,9 @@
                      && facing==1)
                     || ((x)>g_F699_SideEdgeAt00657884
                         && facing==-1)))
-                    || (((field2D8)+g_F699_SideOffsetAt00657874)>=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
+                    || (((field2D8)+g_F699_SideOffsetAt00657874)>=x
                         && facing==1)
-                    || (((field2DC)-g_F699_SideOffsetAt00657874)<=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
+                    || (((field2DC)-g_F699_SideOffsetAt00657874)<=x
                         && facing==-1)) {
                     ResetSecondaryCounter(10);
                     ClearMotionFields();
@@ -52,7 +52,7 @@
                 break;
             }
             if ((animationStage)==3 && (animationFrame)==0) {
-                if (F699AbsAt00412D90(reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (F699AbsAt00412D90(x-opponent->x)
                     <g_F699_DistanceAt0065787C) {
                     if (RecordedRange(0,100)<50)
                         facing=1;

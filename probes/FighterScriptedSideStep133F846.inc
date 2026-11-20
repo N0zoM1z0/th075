@@ -1,6 +1,6 @@
 // F846 selected actor original 0x133, 270B/78 x86/6 genuine PE fields.
 // Native stage8 direction*70 integer-to-float conversion precedes ADD
-// to observed xAt44; this original GPR/x87 order naturally matches.
+// to observed Actor::x; this original GPR/x87 order naturally matches.
 // This is a whole giant function interior, not independent callable CODE.
 case 0x133: {
     if ((animationStage)==0 && (animationFrame)==0) {

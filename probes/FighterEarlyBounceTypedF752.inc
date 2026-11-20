@@ -1,12 +1,4 @@
-// F752: actual original 05D/05E borrowed actor and opponent X at +0x44.
-// The type is ONLY an observed borrowed memory view: never instantiated.
-// Both typed floating members restore native VC7.1 direct FCOMP memory
-// instead of the two nonoriginal FLD/FCOMPP sequences from raw casts.
-struct FighterBorrowedXViewF752 {
-    unsigned int observedRealOwnerWordsBeforeX[17];
-    float xAt44;
-};
-typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x48)?1:-1];
+// X comparisons use the inherited Actor::x member at +0x44.
 // F747: true complete original 059/05D/05E normal C++ action interiors
 // in ONE 58KB fighter 00543210 giant parent. No independent CODE credit.
 // Native original 059 00545109..0054526D 356 B /95 x86;
@@ -55,9 +47,9 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     ResetPrimaryCounters(1);
             }
             if ((animationStage)==(field070)-1) {
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44>reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x>opponent->x)
                     facing=-1;
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44<reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x<opponent->x)
                     facing=1;
             }
             if ((animationStage)==3 && (animationFrame)==0) {
@@ -85,9 +77,9 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     ResetPrimaryCounters(1);
             }
             if ((animationStage)==(field070)-1) {
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44>reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x>opponent->x)
                     facing=-1;
-                if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44<reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
+                if (x<opponent->x)
                     facing=1;
             }
             if ((animationStage)==3 && (animationFrame)==0) {

@@ -63,7 +63,7 @@ case 0xC9: {
         velocityX=-25.0f;
         velocityY=40.0f;
         field05C=6.0f;
-        SpawnAuxEffect(0x7D,reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float((facing)*80),
+        SpawnAuxEffect(0x7D,x-float((facing)*80),
             (*(&y))+g_F701_VolleyYAt00658268,-(facing),1);
         SpawnAuxEffect(0x7E,x,
             (*(&y))+g_F701_VolleyYAt00658268,-(facing),1);
@@ -124,7 +124,7 @@ case 0xCB: {
         velocityX=-30.0f;
         velocityY=2.0f;
         field05C=0.6f;
-        SpawnAuxEffect(0x7D,reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float((facing)*80),
+        SpawnAuxEffect(0x7D,x-float((facing)*80),
             (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
         SpawnAuxEffect(0x7E,x,
             (*(&y))+g_ContactProjectionAt00657888,-(facing),1);

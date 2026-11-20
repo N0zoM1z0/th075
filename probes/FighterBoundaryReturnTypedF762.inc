@@ -37,9 +37,9 @@
                         && facing==1)
                     || ((x)>g_F699_SideEdgeAt00657884
                         && facing==-1)))
-                    || (((field2D8)+g_F699_SideOffsetAt00657874)>=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
+                    || (((field2D8)+g_F699_SideOffsetAt00657874)>=x
                         && facing==1)
-                    || (((field2DC)-g_F699_SideOffsetAt00657874)<=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
+                    || (((field2DC)-g_F699_SideOffsetAt00657874)<=x
                         && facing==-1)) {
                     ResetSecondaryCounter(11);
                     ClearMotionFields();

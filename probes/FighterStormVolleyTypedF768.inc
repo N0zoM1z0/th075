@@ -18,7 +18,7 @@
                 ++scriptCounterF02;
                 if ((scriptCounterF02)>4) {
                     SpawnAuxEffect(0x40,
-                        reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float(facing*3),
+                        x-float(facing*3),
                         (*(&y))+g_YPlusAt0065929C,1,1);
                     scriptCounterF02=0;
                 }

@@ -91,7 +91,6 @@ extern double g_ContactScaleAt006583E8;
 extern float g_ExtraThresholdAt00657D14;
 extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
-#include "FighterBorrowedXYViewF771.hpp"
 void RemiliaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;

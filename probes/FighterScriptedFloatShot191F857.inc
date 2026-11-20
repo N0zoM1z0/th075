@@ -1,5 +1,5 @@
 // F857 original 191 interior, 166B/53-x86/5 actual PE fields.
-// True stage5 FILD facing*100 then FADD xAt44; Y member FLD then FADD global.
+// True stage5 FILD facing*100 then FADD Actor::x; Y member FLD then FADD global.
 // Natural normal C++ still has real register and final-JMP byte mismatches.
 case 0x191: {
     if ((animationStage)==0 && (animationFrame)==0)
