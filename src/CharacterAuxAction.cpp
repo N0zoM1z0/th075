@@ -675,7 +675,7 @@ void CharacterAuxObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field074 = static_cast<short>(ChooseIntegerRange(0, 359));
+            field074 = ChooseIntegerRange(0, 359);
             field080Angle = field074 + 180;
             SetPolarVelocity(field074, 500.0f);
             SpawnPeer(63, x + velocityX, y + velocityY, 1, 1);
@@ -741,7 +741,7 @@ void CharacterAuxObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field074 = static_cast<short>(ChooseIntegerRange(0, 359));
+            field074 = ChooseIntegerRange(0, 359);
             field080Angle = field074 + 180;
             SetPolarVelocity(field074, 500.0f);
             SpawnPeer(65, x + velocityX, y + velocityY, 1, 1);
@@ -858,10 +858,10 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             rotationZ = ChooseIntegerRange(0, 360);
-            field074 = static_cast<short>(ChooseIntegerRange(0, 750) + 1000);
-            field076 = static_cast<short>(ChooseIntegerRange(0, 360) - 180);
+            field074 = ChooseIntegerRange(0, 750) + 1000;
+            field076 = ChooseIntegerRange(0, 360) - 180;
         }
-        field074 = static_cast<short>(field074 * 0.95f);
+        field074 = field074 * 0.95f;
         SetPolarVelocity(field076, field074 * 0.01f);
         x += velocityX;
         y += velocityY;
@@ -990,7 +990,7 @@ void CharacterAuxObject::Advance()
         break;
     case 107:
         if (animationStage == 0 && animationFrame == 0) {
-            field078 = static_cast<short>(ChooseIntegerRange(50, 110));
+            field078 = ChooseIntegerRange(50, 110);
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = field078 * 0.01f;
             scaleY = field078 * 0.01f;
@@ -998,10 +998,10 @@ void CharacterAuxObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field074 = static_cast<short>(ChooseIntegerRange(0, 750) + 1000);
-            field076 = static_cast<short>(ChooseIntegerRange(0, 360) - 180);
+            field074 = ChooseIntegerRange(0, 750) + 1000;
+            field076 = ChooseIntegerRange(0, 360) - 180;
         }
-        field074 = static_cast<short>(field074 * 0.96f);
+        field074 = field074 * 0.96f;
         SetPolarVelocity(field076, field074 * 0.01f);
         x += velocityX;
         y += velocityY;
@@ -1077,7 +1077,7 @@ void CharacterAuxObject::Advance()
         break;
     case 110:
         if (animationStage == 0 && animationFrame == 0) {
-            field078 = static_cast<short>(ChooseIntegerRange(50, 110));
+            field078 = ChooseIntegerRange(50, 110);
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -1085,11 +1085,11 @@ void CharacterAuxObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field074 = static_cast<short>(ChooseIntegerRange(0, 500) + 1500);
-            field076 = static_cast<short>(ChooseIntegerRange(0, 360));
+            field074 = ChooseIntegerRange(0, 500) + 1500;
+            field076 = ChooseIntegerRange(0, 360);
             rotationZ = field076 - 90;
         }
-        field074 = static_cast<short>(field074 * 0.97f);
+        field074 = field074 * 0.97f;
         SetPolarVelocity(field076 - 180, field074 * 0.01f);
         x += velocityX;
         y += velocityY;
@@ -1198,10 +1198,10 @@ void CharacterAuxObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field074 = static_cast<short>(ChooseIntegerRange(0, 1000) + 4000);
-            field076 = static_cast<short>(ChooseIntegerRange(0, 360));
+            field074 = ChooseIntegerRange(0, 1000) + 4000;
+            field076 = ChooseIntegerRange(0, 360);
         }
-        field074 = static_cast<short>(field074 * 0.9f);
+        field074 = field074 * 0.9f;
         SetPolarVelocity(field076 - 180, field074 * 0.01f);
         x += velocityX;
         y += velocityY;

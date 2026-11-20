@@ -52,6 +52,11 @@ and headers are gone. This restores a single native C++ owner for fighter and
 object state-machine effect calls without changing the outstanding giant
 register-allocation frontiers.
 
+The already-exact 31,352-byte `CharacterAuxObject::Advance` auxiliary
+boss now uses direct C++ short assignments in 16 random/decay paths instead
+of redundant explicit narrowing casts. The complete 31,777-byte COFF section
+and all 913 relocations still pass cold exact replay (1/1).
+
 ## Complete research parents (measured 2026-11-19)
 
 All thirteen have the original instruction count, frame, stack slots, branch

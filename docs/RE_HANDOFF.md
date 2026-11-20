@@ -70,6 +70,12 @@ Current focused source recoveries (2026-11-20):
   3/3 exactly, including every VC7.1 typed-deque relocation; no new authored
   bytes are credited because these were already accepted functions.
 
+- The independently exact 31,352-byte `CharacterAuxObject::Advance`
+  auxiliary state machine now uses ordinary implicit short assignments at 16
+  random-range and decay conversion sites, removing redundant casts. Its
+  entire 31,777-byte COFF section and 913 relocations still cold-replay
+  exact 1/1, with no change to credited authored bytes.
+
 The latest commits restore natural C++ field types and call expressions in
 large research parents. They do not claim new giant exactness:
 
