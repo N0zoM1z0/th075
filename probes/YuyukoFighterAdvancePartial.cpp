@@ -51,6 +51,8 @@ extern float g_YuyukoFanLowerYAt00659238;
 extern float g_YuyukoFanRightXAt00659B68;
 extern float g_YuyukoFanSpeedScaleAt006590B4;
 extern float g_YuyukoFanSpawnXOffsetAt0065784C;
+extern float g_YuyukoAnglePeriodAt00657864;
+extern float g_YuyukoAngleUpperWrapAt006595E4;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -2345,6 +2347,192 @@ void YuyukoFighter::Advance() {
         if (animationStage != 7 || animationFrame != 0)
             return;
         ResetSecondaryCounter(1);
+        return;
+
+    case 0x302:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 1) {
+            if (color[0] < 6)
+                color[0] = 0;
+            else
+                color[0] = static_cast<unsigned char>(color[0] - 5);
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0x303);
+            field3CF = 1;
+            x = 640.0f;
+            y = 200.0f;
+            facing = 1;
+            return;
+        }
+        if (animationStage != 1 || animationFrame != 0)
+            return;
+        ResetTransform(0.0f, 0.0f, 0.0f);
+        BeginFadeParameters(0);
+        SelectResourceParameters();
+        PlaySharedSound(0x17);
+        return;
+
+    case 0x303:
+        field010 = 0x82;
+        facing = 1;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 120;
+            scriptCounterF02 = -90;
+            fieldF04 = 90;
+            fieldF06 = 0;
+            fieldF08 = 0;
+            ClearMotionFields();
+        }
+        if (opponent->health > 0 && opponent->animationStage == 2 &&
+                opponent->field39D > 0 && opponent->action == 99) {
+            ResetPrimaryCounters(0x5F);
+            opponent->field3CF = 1;
+            return;
+        }
+        if (color[0] < 250)
+            color[0] = static_cast<unsigned char>(color[0] + 5);
+        else
+            color[0] = 255;
+        x = 640.0f;
+        y = 200.0f;
+        if (opponent->health > 0) {
+            --scriptCounterF00;
+            ++fieldF06;
+            opponent->field490 = 0.0f;
+            if (fieldF06 > 300 && animationStage == 1 && animationFrame == 0) {
+                scriptCounterF02 = static_cast<short>(scriptCounterF02 + 10);
+                if (scriptCounterF02 == 180)
+                    scriptCounterF02 = -180;
+                fieldF04 = static_cast<short>(fieldF04 - 10);
+                if (fieldF04 == -180)
+                    fieldF04 = 180;
+                PlaySound(0x0E);
+                field318 = static_cast<float>(scriptCounterF02);
+                SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
+                if (g_StateRepeatLevelAt006714D0 > 0) {
+                    field318 = static_cast<float>(fieldF04);
+                    SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
+                }
+                if (g_StateRepeatLevelAt006714D0 == 2) {
+                    field318 = static_cast<float>(fieldF04 + 180);
+                    if (g_YuyukoFanLowerYAt00659238 <= field318)
+                        field318 -= g_YuyukoAnglePeriodAt00657864;
+                    SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
+                    field318 = static_cast<float>(scriptCounterF02 - 180);
+                    if (field318 < g_YuyukoAngleUpperWrapAt006595E4)
+                        field318 += g_YuyukoAnglePeriodAt00657864;
+                    SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
+                }
+                if (g_StateRepeatLevelAt006714D0 == 3) {
+                    field318 = static_cast<float>(fieldF04 + 120);
+                    if (g_YuyukoFanLowerYAt00659238 <= field318)
+                        field318 -= g_YuyukoAnglePeriodAt00657864;
+                    SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
+                    field318 = static_cast<float>(scriptCounterF02 - 120);
+                    if (field318 < g_YuyukoAngleUpperWrapAt006595E4)
+                        field318 += g_YuyukoAnglePeriodAt00657864;
+                    SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
+                    field318 = static_cast<float>(fieldF04 + 240);
+                    if (g_YuyukoFanLowerYAt00659238 <= field318)
+                        field318 -= g_YuyukoAnglePeriodAt00657864;
+                    SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
+                    field318 = static_cast<float>(scriptCounterF02 - 240);
+                    if (field318 < g_YuyukoAngleUpperWrapAt006595E4)
+                        field318 += g_YuyukoAnglePeriodAt00657864;
+                    SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
+                }
+            }
+            if (scriptCounterF00 < 1) {
+                if (scriptCounterF00 == 0 || scriptCounterF00 == -30 ||
+                        (g_StateRepeatLevelAt006714D0 > 1 && scriptCounterF00 == -60)) {
+                    short fanEffect303 = scriptCounterF00 == 0 ? 0x394 :
+                        (scriptCounterF00 == -30 ? 0x395 : 0x396);
+                    PlaySound(0);
+                    for (int fanIndex303A = 0; fanIndex303A < 20; ++fanIndex303A) {
+                        field314 = static_cast<float>(fanIndex303A * 18);
+                        field318 = 1.0f;
+                        field31C = 1.0f;
+                        SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                            field314 = static_cast<float>(fanIndex303A * 18 + 9);
+                            field318 = 3.0f;
+                            SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                        }
+                    }
+                    for (int fanIndex303B = 0; fanIndex303B < 20; ++fanIndex303B) {
+                        field314 = static_cast<float>(fanIndex303B * -18);
+                        field318 = 1.0f;
+                        field31C = -1.0f;
+                        SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                            field314 = static_cast<float>(fanIndex303B * 18 + 9);
+                            field318 = 3.0f;
+                            SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                        }
+                    }
+                }
+                if (scriptCounterF00 == -60)
+                    scriptCounterF00 = static_cast<short>(
+                        g_StateRepeatLevelAt006714D0 * -10 + 180);
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(1);
+            return;
+        }
+        if (animationStage != 7 || animationFrame != 0)
+            return;
+        ResetPrimaryCounters(1);
+        return;
+
+    case 0x31B:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 5 && animationFrame == 0) {
+            BeginFadeParameters(0);
+            SelectResourceParameters();
+            PlaySharedSound(0x17);
+            SpawnBattleEffect(0x3E5, x, y, facing, 1);
+        }
+        if (animationStage != 9 || animationFrame != 0 || scriptCounterF00 > 7)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(7);
+        return;
+
+    case 0x31C:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            if (field370[field39D] == 1) {
+                ResetPrimaryCounters(0x2E4);
+                return;
+            }
+            ResetPrimaryCounters(0);
+        }
+        if (animationStage == 0x0B && animationFrame == 0) {
+            BeginFadeParameters(0);
+            SelectResourceParameters();
+            PlaySharedSound(0x17);
+        }
+        if (animationStage != 0x0E || animationFrame != 0 || scriptCounterF00 > 7)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(0x0C);
+        field3CF = 1;
         return;
 
     case 0x8C:
