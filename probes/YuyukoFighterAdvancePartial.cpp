@@ -1915,6 +1915,54 @@ void YuyukoFighter::Advance() {
         ResetSecondaryCounter(10);
         return;
 
+    case 0x2C2:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            field07C = 1;
+            ClearMotionFields();
+            SetNonnegativeWord(0x28);
+            PlaySharedSound(0x17);
+            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, x, y + g_BarrageY1At006591EC, facing, 1);
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 8 && animationFrame == 0) {
+            UpdateGaugeTimer(500);
+            PlaySound(6);
+            SpawnBattleEffect(0x344, opponent->x, y, facing, 1);
+        }
+        if (animationStage != 11 || animationFrame != 0 || scriptCounterF00 > 5)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(9);
+        return;
+
+    case 0x2C3:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 2 && animationFrame == 0) {
+            SetNonnegativeWord(0x28);
+            PlaySharedSound(0x17);
+            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, facing * 42.0f + x,
+                y + g_Stage2BFYOffsetAt00658398, facing, 1);
+        }
+        if (animationStage != 7 || animationFrame != 0)
+            return;
+        PlaySound(13);
+        UpdateGaugeTimer(500);
+        SpawnBattleEffect(0x34B, facing * 83.0f + x,
+            y + g_Stage2BFY2At00659B6C, facing, 1);
+        return;
+
     case 0x8C:
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
