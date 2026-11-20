@@ -1413,7 +1413,7 @@ void YuyukoFighter::Advance() {
         }
         if (animationStage > 16)
             velocityY -= field05C;
-        if (y + velocityY < g_ThresholdAt0065782C) {
+        if (y + velocityY <= g_ThresholdAt0065782C) {
             y = 0.0f;
             velocityY = 0.0f;
             velocityX = 0.0f;
@@ -1914,6 +1914,32 @@ void YuyukoFighter::Advance() {
                 field318 = 8.0f;
                 field31C = -35.0f;
                 SpawnBattleEffect(0x340, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+            }
+        }
+        if (animationStage == 7 && animationFrame == 0) {
+            UpdateGaugeTimer(300);
+            PlaySound(5);
+            for (int burstIndex2C0B = 0; burstIndex2C0B < 12; ++burstIndex2C0B) {
+                field314 = static_cast<float>(burstIndex2C0B * 30);
+                field318 = 7.0f;
+                field31C = 30.0f;
+                SpawnBattleEffect(0x341, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+                field314 = static_cast<float>(burstIndex2C0B * -30);
+                field318 = 7.0f;
+                field31C = -30.0f;
+                SpawnBattleEffect(0x341, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+                field314 = static_cast<float>(burstIndex2C0B * 30);
+                field318 = 6.0f;
+                field31C = 35.0f;
+                SpawnBattleEffect(0x341, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+                field314 = static_cast<float>(burstIndex2C0B * -30);
+                field318 = 6.0f;
+                field31C = -35.0f;
+                SpawnBattleEffect(0x341, x,
                     y + g_Stage700EffectYOffsetAt00659460, facing, 1);
             }
         }
