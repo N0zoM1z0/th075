@@ -90,12 +90,12 @@ The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
 Marisa fighter `Advance` (`0x00486550`, 50,735 CODE bytes) now has a
 tracked, natural-C++ partial parent probe. It derives from the real
 `MarisaFighter`, uses named inherited `Actor`/`Fighter` fields and methods,
-and contains 79 recovered action-state bodies. Recent batches added states
-`0x5D`–`0x62`, `0xC8`–`0xD2`, `0x186`–`0x18B`, and `0x191`/`0x192`/`0x194`.
-The latest three original handlers span 582 bytes / 178 instructions. The
-probe and its Marisa-specific counter fragments contain no raw offset casts,
-ASM, padding, or synthetic marker cases. VC7.1 compiles it to 23,035 CODE
-bytes / 6,559 instructions; the original is 50,735 bytes / 14,260
+and contains 87 recovered action-state bodies. Recent batches added states
+`0x5D`–`0x62`, `0xC8`–`0xD2`, `0x186`–`0x18B`, and `0x191`–`0x1A3`.
+The latest eight original handlers span 2,194 bytes / 634 instructions.
+The probe and its Marisa-specific counter fragments contain no raw offset
+casts, ASM, padding, or synthetic marker cases. VC7.1 compiles it to 25,413
+CODE bytes / 7,249 instructions; the original is 50,735 bytes / 14,260
 instructions. This is deliberately NONEXACT and not entered into the
 complete-parent frontier; substantial original state coverage remains to be
 recovered. The 468-value original dispatch map and its 153 unique handler
