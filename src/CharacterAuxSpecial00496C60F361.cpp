@@ -7,7 +7,6 @@
 // Declaration-only receiver view: full original fighter layout is unknown.
 
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void MarisaFighter::AdvanceAuxiliary() {
@@ -75,5 +74,3 @@ void MarisaFighter::AdvanceAuxiliary() {
         fieldF32 = 0;
     }
 }
-
-#undef FIELD

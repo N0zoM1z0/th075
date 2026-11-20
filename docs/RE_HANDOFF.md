@@ -605,3 +605,10 @@ exactness is claimed.
 member and signed `field39D` index are now used directly; the unused `FIELD`
 macro was removed. The 753-byte function cold-replayed 1/1 exact, preserving
 all original code and relocations.
+
+
+The independently exact Marisa auxiliary controller at `00496C60` no longer
+carries an unused `FIELD(type, offset)` raw-pointer macro; every actual access
+in its 1,027-byte body already uses the observed Fighter members. Removing
+the dead macro/undef leaves the complete function and all 11 relocations
+unchanged; its targeted cold replay passed 1/1 exact.
