@@ -188,7 +188,7 @@ void MarisaFighterAdvanceProbe::Advance() {
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -222,7 +222,7 @@ void MarisaFighterAdvanceProbe::Advance() {
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -256,7 +256,7 @@ void MarisaFighterAdvanceProbe::Advance() {
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -282,7 +282,7 @@ void MarisaFighterAdvanceProbe::Advance() {
         if (field05C == g_ThresholdAt0065782C)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY < g_ThresholdAt0065782C) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();

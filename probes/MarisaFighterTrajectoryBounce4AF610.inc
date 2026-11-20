@@ -22,7 +22,7 @@ case 0x4A: {
         break;
     }
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y < g_ThresholdAt0065782C) {
 #if F610_PREPARE_BEFORE
         PlaySharedSound(0x16);
 #endif

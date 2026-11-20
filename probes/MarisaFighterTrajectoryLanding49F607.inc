@@ -7,7 +7,7 @@ case 0x49: {
         field05C = 0.8f;
         field07C = 0;
     }
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y < g_ThresholdAt0065782C) {
         scriptCounterF00=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();

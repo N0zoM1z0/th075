@@ -3,7 +3,7 @@
         case 0x5D: {
             if (animationStage < 11 && y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     y = 0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(11);
@@ -33,7 +33,7 @@
         case 0x5E: {
             if (animationStage < 12 && y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     y = 0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
