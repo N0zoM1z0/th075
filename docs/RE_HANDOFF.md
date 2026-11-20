@@ -84,7 +84,7 @@ the first mismatch lies inside the state-838 entry itself.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 54,509-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 55,270-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, selected `0x12D..0x136`
 special-move phases, `0x187..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -103,12 +103,15 @@ leaf at every random sample. The `0x303` fan keeps three independent countdown
 branches with their original paired 20-shot loops and difficulty-three offsets.
 All 114 unique Ghidra switch labels have explicit natural-C++ handlers. The
 original x87 inclusive ground-contact edge is preserved in the audited `0x91`,
-`0x9E`, `0xB4..0xB5`, `0xC9..0xCE` and `0xD0` actions. Low actions `6..9` now
+`0x9E`, `0xB4..0xB5`, `0xC9..0xCE` and `0xD0` actions. Actions `0x60` and
+`0x61` now have separate natural-C++ bodies, retaining their distinct original
+input-test grouping, effect burst, landing transition and velocity follow-up.
+Low actions `6..9` now
 retain their separate command gates, gravity/contact branches, per-action stage
 velocities and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The structural comparison is expected to report a size mismatch (54,509 vs.
+The structural comparison is expected to report a size mismatch (55,270 vs.
 61,872 bytes).
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header

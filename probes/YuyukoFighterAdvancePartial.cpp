@@ -739,12 +739,11 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x60:
-    case 0x61:
         if (0 < facing * inputX &&
                 (inputA != 0 || inputB != 0 || inputC != 0 || inputD != 0))
             scriptCounterF00 = 1;
         if (facing * inputX < 0 &&
-                (inputA != 0 || inputB != 0 || inputC != 0 || inputD != 0))
+                ((inputA != 0 || inputB != 0) || (inputC != 0 || inputD != 0)))
             scriptCounterF00 = 2;
         if (animationStage == 0 && animationFrame == 0) {
             for (int effectIndex60 = 0; effectIndex60 < 10; ++effectIndex60)
@@ -754,7 +753,45 @@ void YuyukoFighter::Advance() {
                 SpawnBattleEffect(0x3E3, x, y, 1, 1);
             }
         }
-        if ((animationStage == 2 || animationStage == 3 || animationStage == 4)) {
+        if (animationStage == 2 || animationStage == 3 || animationStage == 4) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                y = 0.0f;
+                ClearMotionFields();
+                ResetSecondaryCounter(5);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0x62);
+            if (field3CF != 0)
+                return;
+            ResetPrimaryCounters(99);
+            return;
+        }
+        if (animationStage != 2 || animationFrame != 0)
+            return;
+        velocityX = scriptCounterF00 * g_F748_SpeedScaleAt006590B8;
+        velocityY = -scriptCounterF02 * g_F748_SpeedScaleAt006590B8;
+        field05C = 2.0f;
+        return;
+
+    case 0x61:
+        if (0 < facing * inputX &&
+                ((inputA != 0 || inputB != 0) || (inputC != 0 || inputD != 0)))
+            scriptCounterF00 = 1;
+        if (facing * inputX < 0 &&
+                (((inputA != 0 || inputB != 0) || inputC != 0) || inputD != 0))
+            scriptCounterF00 = 2;
+        if (animationStage == 0 && animationFrame == 0) {
+            for (int effectIndex61 = 0; effectIndex61 < 10; ++effectIndex61)
+                SpawnBattleEffect(0x3E4, x, y, 1, 1);
+            if (fieldEFA > 25) {
+                fieldEFA = 0;
+                SpawnBattleEffect(0x3E3, x, y, 1, 1);
+            }
+        }
+        if (animationStage == 2 || animationStage == 3 || animationStage == 4) {
             velocityY -= field05C;
             if (y + velocityY < g_ThresholdAt0065782C) {
                 y = 0.0f;
