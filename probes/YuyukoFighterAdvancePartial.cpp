@@ -37,6 +37,9 @@ extern float g_RepeatScaleAt006583E0;
 extern float g_RepeatScaleAt00658348;
 extern float g_BarrageXOffsetAt00657874;
 extern float g_Stage700EffectYOffsetAt00659460;
+// Shared PE constants keep the names already used by their other consumers.
+extern const float g_ChoiceRiseBoundAt00658268; // Yuyuko 0x186 effect Y offset
+extern float g_MarisaCardFallAt00659264; // Yuyuko 0x1F4 horizontal drag
 extern float g_SpecialMoveDragAt00659888;
 extern float g_RadialPatternYOffsetAt00659274;
 extern float g_Stage2BFYOffsetAt00658398;
@@ -882,6 +885,29 @@ void YuyukoFighter::Advance() {
             ResetSecondaryCounter(2);
         return;
 
+    case 0x12C:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+        }
+        if (field3AC > 0) {
+            velocityX -= g_JumpGroundCorrectionAt00658058;
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                field3AC = 0;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 2 && animationFrame == 0)
+            SpawnBattleEffect(0x34C, x, y, facing, 1);
+        if (animationStage != 3 || animationFrame != 0)
+            return;
+        PlaySharedSound(0x1C);
+        return;
+
     case 0x12D:
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
@@ -1118,6 +1144,30 @@ void YuyukoFighter::Advance() {
         if (animationStage != 7 || animationFrame != 0)
             return;
         velocityX = 0.0f;
+        return;
+
+    case 0x186:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 3;
+            field07C = 0;
+            velocityX = 10.0f;
+        }
+        if (animationStage > 0) {
+            velocityX -= g_JumpGroundCorrectionAt00658058;
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                field3AC = 0;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage < 7 && animationFrame == 0)
+            field07C = 0;
+        if (animationStage == 4 && animationFrame == 0)
+            SpawnBattleEffect(0x334, static_cast<float>(static_cast<int>(facing) * 0x92) + x,
+                y + g_ChoiceRiseBoundAt00658268, facing, 1);
         return;
 
     case 0x187:
@@ -1633,6 +1683,48 @@ void YuyukoFighter::Advance() {
             return;
         ++scriptCounterF02;
         ResetSecondaryCounter(10);
+        return;
+
+    case 0x1F4:
+        if (animationStage == 0 && animationFrame == 0) {
+            ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+            field3AC = 0;
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            fieldF04 = 0;
+        }
+        if (g_ThresholdAt0065782C < velocityX && animationStage > 5) {
+            velocityX -= g_MarisaCardFallAt00659264;
+            if (velocityX < g_ThresholdAt0065782C)
+                velocityX = 0.0f;
+        }
+        if (animationStage > 5 && animationStage < 10) {
+            --fieldF04;
+            if (fieldF04 < 1) {
+                fieldF04 = 3;
+                SpawnBattleEffect(0x343, static_cast<float>(static_cast<int>(facing) * 0x32) + x,
+                    y + g_BarrageYAt00659298, facing, 1);
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 1 && animationFrame == 0) {
+            SpawnAuxEffect(0x7F, x, y, facing, 1);
+            velocityX = 8.0f;
+            PlaySound(0x0B);
+        }
+        if (animationStage == 4 && animationFrame == 0 && scriptCounterF02 < 2) {
+            ++scriptCounterF02;
+            ResetSecondaryCounter(2);
+        }
+        if (animationStage == 6 && animationFrame == 0)
+            PlaySound(0);
+        if (animationStage != 10 || animationFrame != 0 || scriptCounterF00 > 0)
+            return;
+        ResetSecondaryCounter(6);
+        ++scriptCounterF00;
         return;
 
     case 0x1F5:
