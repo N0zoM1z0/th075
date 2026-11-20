@@ -21,7 +21,7 @@
             }
             if (y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
                     y = 0.0f;
@@ -89,7 +89,7 @@
             if (animationStage > 14 && animationStage < 27 &&
                 y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     ResetSecondaryCounter(0x1B);
                     y = 0.0f;
@@ -136,7 +136,7 @@
             if (animationStage > 14 && animationStage < 27 &&
                 y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     ResetSecondaryCounter(0x1B);
                     y = 0.0f;
@@ -183,7 +183,7 @@
             if (animationStage > 14 && animationStage < 27 &&
                 y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     ResetSecondaryCounter(0x1B);
                     y = 0.0f;
@@ -232,7 +232,7 @@
             if (animationStage > 14 && animationStage < 27 &&
                 y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     ResetSecondaryCounter(0x1B);
                     y = 0.0f;
@@ -271,7 +271,7 @@
             }
             if (animationStage < 10) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     ResetSecondaryCounter(10);
                     y = 0.0f;

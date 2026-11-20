@@ -8,7 +8,7 @@
             if (field05C == g_ThresholdAt0065782C)
                 field05C = 0.6f;
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y < g_ThresholdAt0065782C) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();

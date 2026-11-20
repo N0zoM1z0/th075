@@ -15,7 +15,7 @@
             }
             if (y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
                     y = 0.0f;

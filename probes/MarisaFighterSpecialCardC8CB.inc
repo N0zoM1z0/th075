@@ -62,7 +62,7 @@
             }
             if (animationStage > 1 && animationStage < 5 && y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (velocityY + y <= g_ThresholdAt0065782C) {
+                if (velocityY + y < g_ThresholdAt0065782C) {
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                     field05C = 0.0f;
@@ -100,7 +100,7 @@
             }
             if (animationStage > 1 && y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (velocityY + y <= g_ThresholdAt0065782C) {
+                if (velocityY + y < g_ThresholdAt0065782C) {
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                     field05C = 0.0f;
@@ -127,7 +127,7 @@
             }
             if (animationStage > 0 && y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (velocityY + y <= g_ThresholdAt0065782C) {
+                if (velocityY + y < g_ThresholdAt0065782C) {
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                     field05C = 0.0f;

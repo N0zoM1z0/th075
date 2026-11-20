@@ -30,7 +30,7 @@
             if (y > g_ThresholdAt0065782C && animationStage > 22 &&
                 animationStage < 35) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     y = 0.0f;
                     ResetSecondaryCounter(0x23);
@@ -111,7 +111,7 @@
                 velocityX += g_SubtractAt00657478;
                 if (velocityX > g_MarisaMinimumDriftAt00659278)
                     velocityX = g_MarisaMinimumDriftAt00659278;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ClearMotionFields();
                     y = 0.0f;
                     ResetSecondaryCounter(26);
