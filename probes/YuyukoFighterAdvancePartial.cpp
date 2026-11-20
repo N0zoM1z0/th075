@@ -37,6 +37,7 @@ extern float g_RepeatScaleAt006583E0;
 extern float g_RepeatScaleAt00658348;
 extern float g_BarrageXOffsetAt00657874;
 extern float g_Stage700EffectYOffsetAt00659460;
+extern float g_SpecialMoveDragAt00659888;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -1470,6 +1471,186 @@ void YuyukoFighter::Advance() {
             return;
         ++scriptCounterF02;
         ResetSecondaryCounter(10);
+        return;
+
+    case 0x1F5:
+        if (animationStage == 0 && animationFrame == 0) {
+            ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+            field3AC = 0;
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            fieldF04 = 0;
+        }
+        if (g_ThresholdAt0065782C < velocityX && animationStage > 5) {
+            velocityX -= g_SpecialMoveDragAt00659888;
+            if (velocityX < g_ThresholdAt0065782C)
+                velocityX = 0.0f;
+        }
+        if (animationStage > 5 && animationStage < 10) {
+            --fieldF04;
+            if (fieldF04 < 1) {
+                fieldF04 = 3;
+                SpawnBattleEffect(0x343, facing * 50.0f + x,
+                    y + g_BarrageYAt00659298, facing, 1);
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 1 && animationFrame == 0) {
+            SpawnAuxEffect(0x7F, x, y, facing, 1);
+            velocityX = 12.0f;
+            PlaySound(11);
+        }
+        if (animationStage == 4 && animationFrame == 0 && scriptCounterF02 < 2) {
+            ++scriptCounterF02;
+            ResetSecondaryCounter(2);
+        }
+        if (animationStage == 6 && animationFrame == 0)
+            PlaySound(0);
+        if (animationStage != 10 || animationFrame != 0 || scriptCounterF00 > 0)
+            return;
+        ResetSecondaryCounter(6);
+        ++scriptCounterF00;
+        return;
+
+    case 0x252:
+    case 0x253:
+    case 0x254:
+        if (animationStage == 0 && animationFrame == 0) {
+            --field366;
+            ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+            field3AC = 0;
+            scriptCounterF00 = 0;
+        }
+        if (spiritCooldown == 0 && field07C == 1)
+            spirit = 1000;
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationFrame != 0)
+            return;
+        if (action == 0x254 ? animationStage != 5 : animationStage != 4)
+            return;
+        SpawnAuxEffect(0x37, x, y + g_ContactProjectionAt00657888, facing, 1);
+        PlaySharedSound(0x21);
+        opponent->fieldEFA = 0;
+        return;
+
+    case 0x255:
+    case 599:
+        if (animationStage == 0 && animationFrame == 0) {
+            ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+            field3AC = 0;
+            scriptCounterF00 = 0;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(9);
+        if (animationStage == 5 && animationFrame == 0)
+            SpawnAuxEffect(0x37, x, y + g_ContactProjectionAt00657888, facing, 1);
+        if (animationStage != 8 || animationFrame != 0 || scriptCounterF00 > 0)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(6);
+        return;
+
+    case 0x256:
+        if (animationStage == 0 && animationFrame == 0) {
+            ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+            field3AC = 0;
+            scriptCounterF00 = 0;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(9);
+        if (animationStage != 5 || animationFrame != 0)
+            return;
+        SpawnAuxEffect(0x37, x, y + g_ContactProjectionAt00657888, facing, 1);
+        return;
+
+    case 600:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 4 && animationFrame == 0) {
+            PlaySound(1);
+            UpdateGaugeTimer(250);
+            for (int burstIndex600 = 0; burstIndex600 < 5; ++burstIndex600) {
+                field314 = static_cast<float>(burstIndex600 * 20);
+                field318 = 5.0f;
+                SpawnBattleEffect(0x32C, facing * 43.0f + x,
+                    y + g_BarrageYAt006595B4, facing, 1);
+            }
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
+    case 0x259:
+    case 0x25A:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 4 && animationFrame == 0) {
+            UpdateGaugeTimer(250);
+            PlaySound(1);
+            for (int burstIndex259 = 0; burstIndex259 < 5; ++burstIndex259) {
+                field314 = static_cast<float>(burstIndex259 * 20 +
+                    (action == 0x259 ? 50 : 110));
+                field318 = 5.0f;
+                SpawnBattleEffect(action == 0x259 ? 0x330 : 0x331,
+                    facing * 43.0f + x, y + g_BarrageYAt006595B4, facing, 1);
+            }
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
+    case 0x25F:
+    case 0x260:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 6 && animationFrame == 0) {
+            UpdateGaugeTimer(action == 0x25F ? 200 : 250);
+            SpawnBattleEffect(action == 0x25F ? 0x336 : 0x339,
+                facing * 105.0f + x, y + g_BarrageYAt00659B70, facing, 1);
+            PlaySound(2);
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
+    case 0x261:
+    case 0x262:
+        if (animationStage == 0 && animationFrame == 0) {
+            field07C = 1;
+            velocityX *= g_RepeatScaleAt00658348;
+            velocityY *= g_RepeatScaleAt00658348;
+        }
+        if (animationStage > 15)
+            velocityY -= field05C;
+        if (animationStage == 6 && animationFrame == 0) {
+            UpdateGaugeTimer(250);
+            SpawnBattleEffect(action == 0x261 ? 0x336 : 0x339,
+                facing * 85.0f + x, y + g_Stage700EffectYOffsetAt00659460,
+                facing, 1);
+            PlaySound(2);
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(9);
         return;
 
     case 0x8C:
