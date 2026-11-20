@@ -92,7 +92,6 @@ extern float g_ExtraThresholdAt00657D14;
 extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
-#define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #include "FighterBorrowedXYViewF771.hpp"
 void RemiliaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -981,5 +980,4 @@ void RemiliaFighter::Advance() {
     }
 }
 #undef opponent
-#undef I16
 #undef RAW

@@ -9,7 +9,7 @@ case F642_CASE: {
     if (animationStage==0 && animationFrame==0) {
         UpdateGaugeTimer(0xFA);
         PlaySharedSound(0x2C);
-        I16(F642_COUNTER)=0xB4;
+        scriptCounterF00=0xB4;
         SpawnAuxEffect(0x38,
             static_cast<float>(static_cast<int>(facing)*30)+(x),
             // VC7.1's real member y lvalue forces the native
@@ -23,9 +23,9 @@ case F642_CASE: {
         if ((velocityX)>g_ThresholdAt0065782C)
             velocityX=0.0f;
     }
-    field490=(-I16(F642_COUNTER))*g_ProjectileFallAt006590B4;
-    if (I16(F642_COUNTER)>0)
-        I16(F642_COUNTER)=I16(F642_COUNTER)-10;
+    field490=(-scriptCounterF00)*g_ProjectileFallAt006590B4;
+    if (scriptCounterF00>0)
+        scriptCounterF00=scriptCounterF00-10;
     if (AdvanceNestedFrame()==field070)
         ResetPrimaryCounters(F642_NEXT_ACTION);
     return;

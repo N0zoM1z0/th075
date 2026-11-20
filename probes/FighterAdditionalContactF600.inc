@@ -49,7 +49,7 @@ case 0x34: {
 
 case 0x35: {
     if (animationStage == 0 && animationFrame == 0) {
-        I16(CONTACT_STAGE_OFFSET) = 0;
+        scriptCounterF00 = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -66,11 +66,11 @@ case 0x35: {
     }
     if (AdvanceNestedFrame() == field070) {
         ResetPrimaryCounters(0);
-        I16(CONTACT_STAGE_OFFSET) = 0;
+        scriptCounterF00 = 0;
         break;
     }
-    if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
-        ++I16(CONTACT_STAGE_OFFSET);
+    if (animationStage == 7 && scriptCounterF00 < 1) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
     break;
@@ -141,7 +141,7 @@ case 0x3A: {
 
 case 0x3B: {
     if (animationStage == 0 && animationFrame == 0) {
-        I16(CONTACT_STAGE_OFFSET) = 0;
+        scriptCounterF00 = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -158,11 +158,11 @@ case 0x3B: {
     }
     if (AdvanceNestedFrame() == field070) {
         ResetPrimaryCounters(0);
-        I16(CONTACT_STAGE_OFFSET) = 0;
+        scriptCounterF00 = 0;
         break;
     }
-    if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
-        ++I16(CONTACT_STAGE_OFFSET);
+    if (animationStage == 7 && scriptCounterF00 < 1) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
     break;
@@ -233,7 +233,7 @@ case 0x40: {
 
 case 0x41: {
     if (animationStage == 0 && animationFrame == 0) {
-        I16(CONTACT_STAGE_OFFSET) = 0;
+        scriptCounterF00 = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -250,11 +250,11 @@ case 0x41: {
     }
     if (AdvanceNestedFrame() == field070) {
         ResetPrimaryCounters(0);
-        I16(CONTACT_STAGE_OFFSET) = 0;
+        scriptCounterF00 = 0;
         break;
     }
-    if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
-        ++I16(CONTACT_STAGE_OFFSET);
+    if (animationStage == 7 && scriptCounterF00 < 1) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
     break;

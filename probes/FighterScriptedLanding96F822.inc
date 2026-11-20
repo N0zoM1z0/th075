@@ -12,7 +12,7 @@ case 0x96: {
         // trajectory short; 00543210 clears it AFTER motion init.
         fieldF0A=0;
 #endif
-        I16(F631_COUNTER)=0;
+        scriptCounterF00=0;
         velocityX=-9.0f;
         velocityY=0.0f;
         field07C=0;

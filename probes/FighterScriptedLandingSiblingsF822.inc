@@ -12,7 +12,7 @@ case F633_CASE: {
         // trajectory short; 00543210 clears it AFTER motion init.
         fieldF0A=0;
 #endif
-        I16(F633_COUNTER)=0;
+        scriptCounterF00=0;
         velocityX=F633_START_HEIGHT;
         velocityY=0.0f;
         field07C=0;

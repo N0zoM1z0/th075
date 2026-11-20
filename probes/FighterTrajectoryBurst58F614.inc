@@ -9,8 +9,8 @@ case 0x58: {
         field07C = 0;
     }
     if (velocityY + y <= g_ThresholdAt0065782C) {
-        I16(F614_COUNTER)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        I16(F614_COUNTER+2)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         ClearMotionFields();
         y = 0.0f;
         ResetPrimaryCounters(0x59);

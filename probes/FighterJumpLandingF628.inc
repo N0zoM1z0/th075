@@ -7,7 +7,7 @@ case F628_CASE: {
         velocityX=F628_START_POS;
         velocityY=0.0f;
         field07C=0;
-        I16(F628_COUNTER)=0;
+        scriptCounterF00=0;
     }
     if ((velocityX)<g_ThresholdAt0065782C) {
         velocityX=(velocityX)+g_JumpGroundCorrectionAt00658058;
@@ -18,8 +18,8 @@ case F628_CASE: {
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==field070)
         ResetPrimaryCounters(0);
-    if (animationStage==3 && animationFrame==0 && I16(F628_COUNTER)<F628_LIMIT) {
-        ++I16(F628_COUNTER);
+    if (animationStage==3 && animationFrame==0 && scriptCounterF00<F628_LIMIT) {
+        ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
     break;

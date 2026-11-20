@@ -64,7 +64,6 @@ extern float g_ExtraThresholdAt00657D14;
 extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
-#define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #define F32(off) (*reinterpret_cast<float*>(RAW+(off)))
 #define U8(off) (*reinterpret_cast<unsigned char*>(RAW+(off)))
 void YoumuFighter::Advance() {
@@ -718,5 +717,4 @@ void YoumuFighter::Advance() {
     }
 }
 #undef opponent
-#undef I16
 #undef RAW

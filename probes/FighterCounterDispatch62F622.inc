@@ -11,7 +11,7 @@ case 0x62: {
             static_cast<unsigned int>(inputB)>0 ||
             static_cast<unsigned int>(inputC)>0 ||
             static_cast<unsigned int>(inputD)>0)
-            I16(F622_COUNTER)=1;
+            scriptCounterF00=1;
     }
     if ((facing)*inputX<0) {
         // The original PE has JA *into* the store for each of the
@@ -21,14 +21,14 @@ case 0x62: {
             static_cast<unsigned int>(inputB)>0 ||
             static_cast<unsigned int>(inputC)>0 ||
             static_cast<unsigned int>(inputD)>0)
-            I16(F622_COUNTER)=2;
+            scriptCounterF00=2;
     }
 #endif
     if (AdvanceNestedFrame()==field070) {
         ResetPrimaryCounters(0x5F);
-        if (I16(F622_COUNTER)==1)
+        if (scriptCounterF00==1)
             ResetPrimaryCounters(0x5D);
-        if (I16(F622_COUNTER)==2)
+        if (scriptCounterF00==2)
             ResetPrimaryCounters(0x5E);
     }
     break;

@@ -29,7 +29,7 @@ case 0x4A: {
         field05C = 0.5f;
         SetCameraShake(2.0f);
         PlaySharedSound(0x16);
-        I16(F610_COUNTER) = 0;
+        scriptCounterF00 = 0;
         break;
     }
     velocityY = velocityY - field05C;
@@ -37,8 +37,8 @@ case 0x4A: {
 #if F610_PREPARE_BEFORE
         PlaySharedSound(0x16);
 #endif
-        I16(F610_COUNTER)=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-        I16(F610_COUNTER+2)=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+        scriptCounterF02=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();
         y=0.0f;
         ResetPrimaryCounters(0x61);
