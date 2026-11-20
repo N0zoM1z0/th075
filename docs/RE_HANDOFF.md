@@ -245,3 +245,14 @@ three-instruction shape as the original `00492B73` tail (load `this`, call
 `Actor::AdvanceNestedFrame`, return). Their two handler bodies now end in a
 jump to that shared tail, matching the original control-flow sharing. The
 remaining stack-base offset and call-relocation differences are still open.
+
+
+The low Marisa dispatch now lays out the `0x32` special edge as the positive
+`JE` arm, with the ordinary `0x00..0x0A` switch on the fallthrough path. This
+replaces the previous `JNE` plus unconditional jump sequence and matches the
+original branch polarity at `00486597`. The source-coverage verifier now counts
+natural `goto` edges to the out-of-line boundary bodies, so action `0x32` stays
+covered without a fake switch case. The current candidate still has a different
+local layout (`this` at `EBP-0x1C`, action at `EBP-4`, plus a switch temporary at
+`EBP-0x20`); the original uses `this` at `EBP-0x18` and one action local at
+`EBP-0x1C`. No exact-byte claim is made.

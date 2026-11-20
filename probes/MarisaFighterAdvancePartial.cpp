@@ -70,13 +70,16 @@ void MarisaFighterAdvanceProbe::Advance() {
         return;
         int actionSnapshot = action;
         if (actionSnapshot <= 0x32) {
-        if (actionSnapshot == 0x32) goto action32Special;
-        switch (actionSnapshot) {
-                #include "MarisaFighterLowActions.inc"
-                default: goto switchDefault;
+            if (actionSnapshot != 0x32) {
+                switch (actionSnapshot) {
+                    #include "MarisaFighterLowActions.inc"
+                    default: goto switchDefault;
+                }
+            } else {
+                goto action32Special;
             }
-        return;
-    }
+            return;
+        }
 
         if (actionSnapshot <= 0x8C) {
             #define F628_CASE 0x8C

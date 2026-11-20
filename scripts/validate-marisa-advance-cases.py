@@ -122,6 +122,21 @@ def source_cases(path: Path, macros: dict[str, str], seen: list[int]) -> None:
                 seen.append(int(value, 0))
             except ValueError as exc:
                 raise ValueError(f"{path}:{line_number}: unresolved special action {value!r}") from exc
+        # Boundary handlers can be dispatched by a positive or negative
+        # condition followed by a natural C++ goto to an out-of-line body.
+        # Count those label edges as source coverage too (not as switch cases).
+        goto = re.match(r"\s*goto\s+([A-Za-z_]\w*)\s*;", line)
+        if goto:
+            target_action = {
+                "action32Special": 0x32,
+                "action8CSpecial": 0x8C,
+                "action12CSpecial": 0x12C,
+                "action186Special": 0x186,
+                "action1F4Special": 0x1F4,
+                "action2C2Special": 0x2C2,
+            }.get(goto.group(1))
+            if target_action is not None:
+                seen.append(target_action)
     if stack:
         raise ValueError(f"{path}: unterminated #if block")
 
