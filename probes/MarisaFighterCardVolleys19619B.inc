@@ -122,7 +122,6 @@
         case 0x19A: {
             if (animationStage == 0 && animationFrame == 0) {
                 field07C = 1;
-                ClearMotionFields();
                 scriptCounterF00 = 0;
             }
             velocityY -= field05C;
@@ -156,7 +155,6 @@
         case 0x19B: {
             if (animationStage == 0 && animationFrame == 0) {
                 field07C = 1;
-                ClearMotionFields();
                 scriptCounterF00 = 0;
             }
             velocityY -= field05C;

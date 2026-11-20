@@ -26,6 +26,7 @@ extern float g_MarisaResourceYAt006590A4;
 extern float g_MarisaResourceYAt00659294;
 extern float g_MarisaResourceYAt006581DC;
 extern float g_MarisaResourceYAt00659290;
+extern float g_MarisaResourceYAt00659270;
 extern float g_MarisaResourceYAt0065928C;
 extern float g_MarisaResourceYAt00659288;
 extern float g_MarisaResourceYAt00659284;
@@ -66,6 +67,23 @@ extern double g_RiseAt00658050;
 void MarisaFighterAdvanceProbe::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
+    if (action == 0x32) {
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -8.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (velocityX > g_ThresholdAt0065782C)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_JumpReflectionAt006583E8);
+        if (AdvanceNestedFrame() == field070)
+            ResetPrimaryCounters(0);
+        return;
+    }
     switch (action) {
         case 0x0:
             if (field3AC == 0) {
@@ -151,8 +169,14 @@ void MarisaFighterAdvanceProbe::Advance() {
             if (AdvanceNestedFrame() == field070)
                 ResetPrimaryCounters(0);
             break;
-        case 0x4: velocityX = 6.0f; break;
-        case 0x5: velocityX = -6.0f; break;
+        case 0x4:
+            velocityX = 6.0f;
+            AdvanceNestedFrame();
+            return;
+        case 0x5:
+            velocityX = -6.0f;
+            AdvanceNestedFrame();
+            return;
         case 0x6:
             if (animationStage == 0 && animationFrame == 0 &&
                     (aiCommand == 3 || field3AC > 0)) {
@@ -513,9 +537,12 @@ void MarisaFighterAdvanceProbe::Advance() {
 #include "MarisaFighterCardResource19C19E.inc"
 #include "MarisaFighterCardResource19F1A3.inc"
 #include "MarisaFighterCardVolleys19619B.inc"
+#include "MarisaFighterAction12C.inc"
 #include "MarisaFighterStage12D136.inc"
+#include "MarisaFighterAction1F4.inc"
 #include "MarisaFighterCardFollowup1F520E.inc"
 #include "MarisaFighterCardResource252271.inc"
+#include "MarisaFighterAction2C2.inc"
 #include "MarisaFighterLateCard2C3D1.inc"
 #include "MarisaFighterCardTail2BD31C.inc"
 #include "MarisaFighterCardLate2BC2C0.inc"

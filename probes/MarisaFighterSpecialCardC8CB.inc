@@ -49,6 +49,17 @@
             SetCommandSelection(3, 4, 0xFF);
             if (animationStage == 0 && animationFrame == 0)
                 velocityX = 0.0f;
+            if (animationStage == 2 && animationFrame == 0) {
+                velocityX = -11.0f;
+                velocityY = 5.0f;
+                field05C = 0.6f;
+                SpawnAuxEffect(0x7D,
+                    x - static_cast<float>(facing * 80),
+                    y + g_MarisaCommandYAt00658268, -facing, 1);
+                SpawnAuxEffect(0x7E, x,
+                    y + g_MarisaCommandYAt00658268, -facing, 1);
+                PlaySharedSound(0x1F);
+            }
             if (animationStage > 1 && animationStage < 5 && y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
                 if (velocityY + y <= g_ThresholdAt0065782C) {
