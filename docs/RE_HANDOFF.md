@@ -592,12 +592,12 @@ in the action-800 four-float bounds guard. Ten equivalent guard rewrites did
 not change Sakuya's 447/12 frontier. Preserve the known-rejected transient
 809/810 variant (328 GPR but +2 bytes) as research only; do not promote it.
 
-Patchouli `0x356` (`005154ED`) had an actual source behavior error: its effect
-loop was written for 8 iterations, while the original native loop and Ghidra
-control flow both compare against 10 (`00515C73`, `cmp ..., 0x0A`). The natural
-C++ loop is now corrected to ten iterations. The rebuilt parent retains the
-same 522/5 register frontier and first mismatch `00515C0E`; no whole-boss
-exactness is claimed.
+Patchouli `0x356` was checked against its own Ghidra switch arm. That arm's
+native effect loop is `local_6c < 8`; the separate `0x0A` loop at `00515C73`
+belongs to a different control-flow block. The ten-iteration probe was
+therefore reverted; the tracked source remains at eight. No semantic repair
+or exactness credit is claimed for that probe. The parent remains at 522/5
+register differences with first mismatch `00515C0E`.
 
 
 `Fighter::ApplyOpponentGaugeChange` no longer reconstructs the opponent's

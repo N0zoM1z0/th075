@@ -5,7 +5,7 @@ case 0x356: {
         owner->action<0x96 &&
         animationStage<0x17) {
         ClearFrameInfo();
-        for (int shot=0;shot<10;++shot) {
+        for (int shot=0;shot<8;++shot) {
             owner->SpawnBattleEffect(
                 0x3E4,x,y,1,1);
         }

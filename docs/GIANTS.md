@@ -1285,13 +1285,10 @@ predicate order/grouping/negation/qualification variants retained the same
 rejected. The earlier 809/810 transient 328-GPR form remains rejected because
 its section was two bytes too large. No source change or exactness credit.
 
-Patchouli action `0x356` (`005154ED` native state body) now emits the
-observed ten `0x3E4` effects rather than the previously reconstructed eight.
-The native loop at `00515C6A..00515CA7` compares its counter against `0x0A`,
-which is independently confirmed by the target Ghidra decompilation; the
-source loop bound was corrected from 8 to 10. The whole 81,539-byte parent
-still has 522 GPR-role differences and five width differences, with the same
-first register mismatch at `00515C0E`. The rebuilt parent is still 82,109
-bytes including its object-owned tables, and the corrected loop changes only
-the loop-bound immediate in its local codegen. This is a gameplay-semantic
-repair, not a new exact-parent claim.
+Patchouli action `0x356` was checked against its own Ghidra switch arm rather
+than nearby disassembly. That arm's effect loop is `local_6c < 8`; the separate
+`0x0A` loop at `00515C73` belongs to a different control-flow block and must
+not be attributed to this action. The source remains eight iterations. The
+brief ten-iteration probe was reverted and receives no semantic or exactness
+credit. The parent remains at 522 GPR-role and five width differences, with
+first mismatch `00515C0E`.
