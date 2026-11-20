@@ -256,3 +256,12 @@ covered without a fake switch case. The current candidate still has a different
 local layout (`this` at `EBP-0x1C`, action at `EBP-4`, plus a switch temporary at
 `EBP-0x20`); the original uses `this` at `EBP-0x18` and one action local at
 `EBP-0x1C`. No exact-byte claim is made.
+
+
+The late card-tail case order was checked against the original handler-address
+map rather than inferred from numeric action IDs. The original PE emits
+`0x2BC`, `0x2BD`, `0x2BF`, `0x2C0`, then `0x2C1` (addresses `0048FA35`,
+`0048FC34`, `0048FD1C`, `004901AA`, `004904C0`). An intermediate reorder that
+moved `0x2C1` ahead of `0x2BF`/`0x2C0` was therefore reversed. The source order
+now follows the verified PE handler layout; the focused VC7.1 build and the
+158-action coverage check pass.
