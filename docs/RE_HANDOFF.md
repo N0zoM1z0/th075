@@ -195,29 +195,31 @@ were double-credited.
 
 ## Giant priorities
 
-There are 13 complete, nonexact research parents and nine without a complete
-parent. The current 13-parent measurement table is in GIANTS.md.
+There are 12 complete, nonexact research parents and nine without a complete
+parent. GIANTS.md retains the complete-parent table, including Alice as the
+newly exact 33,293-byte object parent.
 
-The closest complete parents by register-role debt are:
+The closest remaining nonexact parents by register-role debt are:
 
-1. Alice object 004EBDA0: zero GPR differences and zero width differences;
-   the 004F344C join now follows the original register rotation. Its 438-byte
-   frontier suffix is the two separately matched switch tables, not code.
-2. Meiling object 005EB520: 135 GPR differences, six width differences;
+1. Meiling object 005EB520: 135 GPR differences, six width differences;
    first divergence 005F3904.
-3. Sakuya object 004CA6E0: 447 GPR differences, 12 width differences.
+2. Sakuya object 004CA6E0: 447 GPR differences, 12 width differences.
+3. Patchouli object 0050A580: 522 GPR differences, five width differences;
+   first divergence 00515C0E.
 
-Start with Alice or Meiling and work from the whole function, not isolated
-switch fragments. Alice's complete source has dropped 93 redundant numeric
-casts in two accepted passes while retaining all 33,731 COFF bytes and 682
-relocation positions/types/addends/local destinations exactly; its 133 GPR
-positions remain. Eight casts around integer `RecordedRange` subtraction
-were explicitly retained because removing them changes the arithmetic. Meiling's 997/998 boundary
-has already had 22 natural-C++ variants without improvement. A separate
-source-cleanup pass removed six redundant numeric casts from the whole
-Meiling giant while retaining all 34,879 COFF bytes and 806 relocation
-positions/types/addends/local targets; its 985-byte / 135-GPR / six-width
-frontier remains unchanged. Youmu's 39,999-byte object giant also lost 13
+Work on the remaining bosses from the whole function, not isolated switch
+fragments. Alice `004EBDA0` is now canonical exact: one natural-C++ source
+build compares all 33,731 bytes (33,293 authored CODE plus 240-byte and
+198-byte switch tables), with 682 relocation records and 1/1 exact replay.
+The table extents are separately compared and do not increase CODE coverage.
+Eight casts around integer `RecordedRange` subtraction were deliberately
+retained in the historical Alice cleanup because removing them changes the
+arithmetic. Meiling's 997/998 boundary has already had 22 natural-C++ variants
+without improvement. A separate source-cleanup pass removed six redundant
+numeric casts from the whole Meiling giant while retaining all 34,879 COFF
+bytes and 806 relocation positions/types/addends/local targets; its 985-byte /
+135-GPR / six-width frontier remains unchanged. Youmu's 39,999-byte object
+giant also lost 13
 redundant short casts while retaining its full 40,464-byte COFF and 938
 relocation positions/types/addends/local targets; its 913-GPR / 10-width
 frontier remains unchanged. Sakuya's 809/810
@@ -537,16 +539,12 @@ not a claim of new whole-function exactness.
 
 
 Alice object `004EBDA0` has now eliminated its first-join register debt with
-a natural empty stage-3 `else if` arm. The whole authored CODE extent measures
-8,789/9,009 instructions with zero mnemonic, width or GPR differences.
-The complete 33,731-byte COFF extent (33,293 CODE + 240-byte and 198-byte
-switch tables) has zero non-relocation byte differences; both table hashes,
-all 62 local relocation destinations and all 620 external relocation
-references (64 symbols) were checked against the original target. The
-canonical exact-replay registry is not yet updated: preserve the separate
-CODE/data extents and do not claim accepted exactness until a complete replay
-unit can represent them without crediting switch data as authored CODE.
-Next giant frontier is Meiling `005EB520` (135 GPR / six widths).
+a natural empty stage-3 `else if` arm and is accepted by exact replay unit
+`alice-object-advance-004ebda0`. The replay compares 33,731 bytes while
+crediting only 33,293 authored CODE bytes; its 240-byte and 198-byte switch
+tables are compared as separately owned data. All 682 COFF relocation records
+and destinations are replayed, and the unit reports 1/1 exact. Next giant
+frontier is Meiling `005EB520` (135 GPR / six widths).
 
 The six `CharacterAIPolicy<Policy>::ChooseAction` instantiations now use the
 ordinary implicit integer-to-float conversion in five `rand()` comparisons;
