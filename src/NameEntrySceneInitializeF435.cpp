@@ -25,9 +25,9 @@ public:NameEntryInitF435();virtual ~NameEntryInitF435();
 };
 #define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
 NameEntryInitF435::NameEntryInitF435() {
-    FIELD(NameEntryTextureF435*,8) = new NameEntryTextureF435;
-    FIELD(NameEntryTextureF435*,8)->AllocateSlots(3);
-    FIELD(NameEntryTextureF435*,8)->LoadArchive(g_ReplayDataPathAt00657F84,g_ReplayArchiveRootAt00657F7C);
+    texture = new NameEntryTextureF435;
+    texture->AllocateSlots(3);
+    texture->LoadArchive(g_ReplayDataPathAt00657F84,g_ReplayArchiveRootAt00657F7C);
     FIELD(short,0xE)=0;
     FIELD(short,0x10)=0;
     FIELD(short,0x12)=0;

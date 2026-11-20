@@ -713,3 +713,10 @@ cast. The member remains declared as `unsigned int` because other native
 writers/readers use the 32-bit unsigned payload; the original signed countdown
 sum is preserved with an explicit `static_cast<int>` at the arithmetic use.
 The complete 4764-byte state-machine function cold-replayed 1/1 exact.
+
+`NameEntryInitF435::NameEntryInitF435` now allocates, initializes and loads
+its already-declared `NameEntryTextureF435* texture` member directly instead
+of addressing the same inherited-layout-proven +0x08 member through a raw
+`this+8` cast. The member remains at +0x08 after the 8-byte SceneBaseF435
+subobject; allocation size, resource order and the other constructor fields
+are unchanged. The complete 260-byte constructor cold-replayed 1/1 exact.
