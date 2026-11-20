@@ -761,3 +761,22 @@ the existing `Fighter::field460` member instead of a raw pointer-plus-offset
 load. The imported global remains `void*` to preserve its native symbol ABI;
 the use site supplies the established Fighter view. The complete 547-byte
 constructor cold-replayed 1/1 exact.
+
+Yuyuko's 43,845-byte `YuyukoObject::Advance` research frontier made a large
+state-dispatch alignment step. In state 838, the pure-field condition that
+handles owner actions 611/612/613 is now expressed with the stage/action arm
+first and the `action != 611 && field080 == 0 && action != 612` arm second.
+This is Boolean-equivalent to the previous expression: all terms are plain
+field reads with no side effects. It changes only source-level evaluation
+order and the compiler's register/code layout; no assembly, padding, or
+machine-code literals were introduced.
+
+The compiled body shrank from 44,331 to 44,327 bytes. The frontier now has
+1,697 differing bytes instead of 17,739: 16,120 formerly differing bytes
+match, with 78 previously matching offsets displaced by the compiler's new
+instruction layout. The reviewed frontier baseline records those offsets.
+Crucially, the original and rebuilt switch dispatch tables now agree at all
+198 action entries (800 through 997), including the formerly shifted state
+839 boundary. `scripts/check-frontier.py yuyuko-object-advance-0057d580`
+passes after recording the improvement; this is a nonexact giant-function
+frontier, not an exact cold-replay claim.
