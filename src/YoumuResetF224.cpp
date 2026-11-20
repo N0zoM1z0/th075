@@ -1,11 +1,6 @@
 #include "YoumuFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-// Physical field receiver, not a complete reconstructed fighter object.
-class YoumuSubcomponentF224 {
-public:
-    void ResetRound();
-};
 void YoumuFighter::ResetRound()
 {
     sequenceTimer=0;
@@ -24,6 +19,6 @@ void YoumuFighter::ResetRound()
     aiWaitTimer=0;
     aiStep=0;
     aiCardTimer=0;
-    reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
-    reinterpret_cast<YoumuSubcomponentF224*>(reinterpret_cast<unsigned char*>(this)+0xfec)->ResetRound();
+    Fighter::ResetRound();
+    historyQueue.clear();
 }

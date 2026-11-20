@@ -1,6 +1,7 @@
 #ifndef TH075_YOUMU_FIGHTER_HPP
 #define TH075_YOUMU_FIGHTER_HPP
 #include "Fighter.hpp"
+#include "YoumuHistoryQueueF378.hpp"
 class YoumuGeneratedF224;
 
 // Youmu's fighter: vtable Youmu ctor F223 at 0x006598D0.
@@ -54,6 +55,12 @@ public:
     unsigned char fieldFE1;
     unsigned char fieldFE2;
     unsigned char fieldFE3;
+    unsigned char unknownFE4[0xFEC - 0xFE4]; // unobserved fighter state
+    ObservedEffectQueueF378 historyQueue;  // +0xFEC, native 12-byte std::list
 };
+
+typedef char YoumuHistoryListLayoutF378[
+    offsetof(YoumuFighter, historyQueue) == 0xFEC &&
+    sizeof(YoumuFighter) == 0xFF8 ? 1 : -1];
 
 #endif

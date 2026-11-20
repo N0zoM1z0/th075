@@ -1,5 +1,5 @@
 // Work in progress toward the complete original 00536400 (39,999 CODE B).
-// The history relay and the written cases are genuine native game logic.
+// The typed owner history relay and the written cases are native game logic.
 // All native states are written; this draft remains NONEXACT and is not
 // an executable replacement or an accepted reconstruction unit.
 // See docs/OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md.
@@ -9,7 +9,6 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 
 
-#define HISTORY_LIST reinterpret_cast<ObjectHistoryListF1211*>(reinterpret_cast<unsigned char*>(owner) + 0xFEC)
 
 extern float g_F1069_ParentYFirstAt00659138;
 extern float g_F1069_ParentYSecondAt00658264;
@@ -62,7 +61,7 @@ void YoumuObject::Advance()
         field010 = 0x82;
         if (owner->field082 != 0) return;
 
-        entry = &HISTORY_LIST->FrontAt00540220();
+        entry = &static_cast<YoumuFighter*>(owner)->historyQueue.FrontAt00540220();
         if (action != entry->actionAt00)
             field080 = entry->counterAt0E;
         if (animationStage != entry->stageAt02)
@@ -2792,5 +2791,3 @@ case 0x3E6: {
         break;
     }
 }
-
-#undef HISTORY_LIST

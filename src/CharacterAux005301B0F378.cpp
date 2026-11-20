@@ -9,8 +9,6 @@
 // The snapshot is a genuine physically observed 16-byte command structure,
 // not an inferred complete character class or artificial padding.
 extern signed char g_CharacterSpecialModeAt006714B4;
-#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
-#define QUEUE (*reinterpret_cast<ObservedEffectQueueF378*>(reinterpret_cast<unsigned char*>(this)+0xFEC))
 void YoumuFighter::AdvanceAuxiliary() {
     if (field082==0 && field3B8==0) {
         ObservedInputSnapshotF378 snapshot;
@@ -20,8 +18,8 @@ void YoumuFighter::AdvanceAuxiliary() {
         snapshot.y=y;
         snapshot.facing=facing;
         snapshot.bearing=field080;
-        QUEUE.AddSnapshot(&snapshot);
-        if (QUEUE.Count()>10) QUEUE.PruneOld();
+        historyQueue.AddSnapshot(&snapshot);
+        if (historyQueue.Count()>10) historyQueue.PruneOld();
     }
     if (fieldF10>0) --fieldF10;
     if (velocityX==0.0f && field3AC>0) field3AC=0;
@@ -61,5 +59,3 @@ void YoumuFighter::AdvanceAuxiliary() {
         if (fieldF14>60) fieldF14=60;
     } else fieldF14=0;
 }
-#undef QUEUE
-#undef FIELD

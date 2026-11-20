@@ -1,16 +1,10 @@
 #include "YoumuFighter.hpp"
 #include <string.h>
-// Call-only derived constructor. Base receiver used for real C++ EH cleanup;
-// subcomponent at +0xFEC is an observed existing subobject, not padding.
-class YoumuSubcomponentF223 {
-public:
-    void Initialize();
-};
+// The native +0xFEC list is constructed as the final derived member.
 extern const char g_YoumuNameAt006598C0[];
 extern const char g_YoumuTagAt006598C8[];
 YoumuFighter::YoumuFighter()
 {
-    reinterpret_cast<YoumuSubcomponentF223*>(reinterpret_cast<unsigned char*>(this)+0xfec)->Initialize();
     sequenceTimer=0;
     fieldEFE=0;
     field713=1;

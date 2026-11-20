@@ -36686,7 +36686,7 @@ target = 0x006598D0
 [[units.youmu-fighter-initialize-0052cee0.relocations]]
 offset = 62
 type = "REL32"
-symbol = "?Initialize@YoumuSubcomponentF223@@QAEXXZ"
+symbol = "??0ObservedEffectQueueF378@@QAE@XZ"
 target = 0x00531C00
 [[units.youmu-fighter-initialize-0052cee0.relocations]]
 offset = 101
@@ -36769,7 +36769,7 @@ target = 0x00457010
 [[units.youmu-fighter-reset-round-0052d110.relocations]]
 offset = 217
 type = "REL32"
-symbol = "?ResetRound@YoumuSubcomponentF224@@QAEXXZ"
+symbol = "?clear@?$list@UObservedInputSnapshotF378@@V?$allocator@UObservedInputSnapshotF378@@@std@@@std@@QAEXXZ"
 target = 0x00531CE0
 
 
