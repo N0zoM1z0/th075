@@ -2109,7 +2109,7 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
         if (y > g_ThresholdAt0065782C) {
             velocityY -= field05C;
-            if (y + velocityY < g_ThresholdAt0065782C) {
+            if (y + velocityY <= g_ThresholdAt0065782C) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 ResetPrimaryCounters(0x2DA);
                 y = 0.0f;
