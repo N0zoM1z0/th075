@@ -128,7 +128,12 @@ def main() -> int:
             value = int(match.group(1), 0)
             if value in valid_actions:
                 top_level.add(value)
-    implemented = set(source)
+    source_text = SOURCE.read_text(encoding="utf-8")
+    special_actions = {
+        int(value, 0)
+        for value in re.findall(r"\bif\s*\(\s*action\s*==\s*(0x[0-9a-fA-F]+|\d+)\s*\)", source_text)
+    }
+    implemented = set(source) | special_actions
     missing = sorted(top_level - implemented)
 
     handler_by_action: dict[int, int] = {}
@@ -150,7 +155,7 @@ def main() -> int:
     has_default = bool(re.search(r"^\s*default\s*:", SOURCE.read_text(encoding="utf-8"), re.M))
 
     print(
-        f"Marisa Advance source labels: {len(source)} ({len(implemented)} unique); "
+        f"Marisa Advance source labels: {len(source)} ({len(implemented)} including special if-dispatches); "
         f"mapped Ghidra top-level labels: {len(top_level)}; "
         f"covered: {len(top_level) - len(missing)}/{len(top_level)}"
     )
