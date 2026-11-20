@@ -271,7 +271,7 @@ public:
         FighterSoundsF282 soundResources;    // resource-loading interface
     };
     signed char sequencePhase;          // +0x6E4
-    unsigned char unknown6E5[0x6E6 - 0x6E5];
+    unsigned char field6E5;               // +0x6E5 byte written by SelectVariant
     signed char noticeState;            // +0x6E6
     signed char noticeBadge;            // +0x6E7
     signed char noticeFirst;            // +0x6E8 signed notice gate

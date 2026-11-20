@@ -675,3 +675,13 @@ original destinations: 60 local labels and 636 external references. The
 non-initial-frame state-preservation branch restores the native condition
 flow without assembly, padding, fabricated locals or byte grafts. The
 single affected unit cold-replayed 1/1 exact; no full cold replay was run.
+
+The shared fighter byte at `Fighter+0x6E5`, written by the eleven
+character-specific `SelectVariant` overrides, is now declared as the observed
+`Fighter::field6E5` byte rather than a one-byte opaque gap. All eleven natural
+C++ overrides in `FighterSpecialVariantsF374.cpp` now assign the inherited
+member directly; the raw `this+0x6E5` reinterpret-cast macro is gone. The
+shared VC7.1 object cold-replayed all 11 affected complete 130-byte CODE
+functions and their 40-byte switch-table comparison extents (11/11 exact).
+The one-byte layout and `sizeof(Fighter)` are unchanged; the field's deeper
+semantic name remains provisional.
