@@ -1,5 +1,4 @@
 #include "BattleScene.hpp"
-#include "FighterFadeBorrowedF986.hpp"
 #include "BattleRender43D9D0.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 
@@ -84,9 +83,9 @@ void BattleScene::Render() {
         RenderHud();
         fighters[0]->field2EC->DispatchSelected(3);
         fighters[1]->field2EC->DispatchSelected(3);
-        if (F986_FADE(fighters[0]).fadeAlphaAt538 > 0)
+        if (fighters[0]->fadeAlpha > 0)
             reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderFadeOverlay();
-        if (F986_FADE(fighters[1]).fadeAlphaAt538 > 0)
+        if (fighters[1]->fadeAlpha > 0)
             reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderFadeOverlay();
         RenderStatus();
         if (field018 == 5) {

@@ -699,3 +699,10 @@ array instead of rebuilding both addresses through byte-pointer casts. The
 counter value is explicitly converted to signed `int` before subtracting from
 the signed countdown, preserving the original arithmetic. The complete
 1696-byte function cold-replayed 1/1 exact.
+
+`BattleScene::Render` now reads both players' fade-alpha bytes through the
+existing `Fighter::fadeAlpha` member at +0x538. The two-byte borrowed fade
+window and its pointer arithmetic were removed from this renderer; draw order
+and overlay calls are unchanged. The complete 1637-byte render function
+(including all 91 relocations and its full comparison extent) cold-replayed
+1/1 exact.
