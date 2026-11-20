@@ -1,38 +1,40 @@
 # TH075 storage policy
 
-Keep what is needed to continue reconstruction:
+Preserve the inputs and contexts needed to continue reconstruction:
 
-- Inputs: the pinned original resources/th075.exe, shared toolchain,
-  game-specific .tools/wine/ prefix and ghidra-project/.
-  .analysis/vc71-wine is a compatibility symlink to the same TH075 prefix.
-- Current results: src/, active research sources in probes/, canonical
-  exact/origin ledgers and evidence in config/, and scripts that cold-build
-  and compare complete functions, owned extents and relocations.
-- Useful knowledge: the live handoff, GIANTS.md, verified findings and failed
-  approaches worth avoiding. Keep notes concise.
-- Unresolved compiler contexts that would be costly to recreate: retain the
-  selected parent and the relevant source snapshots, target observations and
-  settings needed to investigate it.
+- The pinned `resources/th075.exe`, tracked title-screen/progress assets,
+  `src/`, `probes/`, canonical `config/` ledgers and repository scripts.
+- Shared `.tools/` installations, the TH075-specific Wine prefix and
+  `ghidra-project/`. Shared tools may serve other repositories; do not trim
+  them based only on TH075 usage.
+- Useful `.analysis/` contexts: complete-parent baselines, original-PE
+  observations, current Ghidra query results, layout tools, origin research
+  and private runtime settings. Do not delete `.analysis/` wholesale.
+- Concise current findings and failed approaches in `docs/`; the canonical
+  ledgers and Git history retain accepted state and tracked-source history.
 
-The contents of build/ are disposable compiler outputs: COFF objects, PDBs,
-origin/layout probes, matching intermediates and replay scratch. They are not
-canonical evidence; scripts recreate the directories and outputs. Clear them
-when no build or debugger is using them. Do not preserve old build products
-merely because a document once linked to them.
+`build/` is disposable compiler output: COFF objects, PDBs, probe products,
+matching intermediates and replay scratch. It is not canonical evidence.
+Repository scripts recreate it. Clear its contents when no compiler or
+debugger is using them; do not retain old objects merely because a document
+once linked to them.
 
-The .analysis/ tree is mixed. Preserve current giant baselines, original-PE
-observations, layout-tools, current Ghidra query context and private runtime
-configuration. Remove superseded logs, batch lists, duplicate trial objects
-and completed replay scratch when their findings have been summarized in
-Markdown or the canonical ledgers. A document reference alone does not justify
-retaining a file.
+The `.analysis/` tree is mixed. Remove session-local trial variants after the
+winning source change and useful negative results have been recorded. Remove
+completed replay scratch when the canonical ledgers already contain the
+accepted result, superseded snapshots recoverable from Git history, and
+byte-identical duplicate diagnostics. Before deleting any other research
+file, check whether it is the only retained original-PE observation or
+compiler context for an unresolved parent. A document reference alone does
+not justify retaining a disposable output, but a valuable research context
+should not be discarded just to make the directory smaller.
 
-Shared .tools/ installations serve other repositories too; do not trim them
-based only on TH075 usage. Preserve the game-specific Wine prefix and Ghidra
-project. Keep binaries, tools, Wine prefixes, analyzer databases and generated
-decompiles out of Git.
+At the 2026-11-20 handoff, the generated build tree and completed trial/replay
+scratch were cleared, saving approximately 218 MB. The remaining `.analysis/`
+research contexts, shared tools, Ghidra project, Wine prefix and original
+executable were preserved. No deletion receipt or cleanup report is needed.
 
-A fresh clone needs the private inputs/runtime separately. Exact acceptance
-requires the affected unit's cold build and complete strict comparison, even
-when an older object still exists. No deletion receipt or cleanup report is
-required.
+Keep binaries, tools, Wine prefixes, analyzer databases, generated decompiles
+and secrets out of Git. A fresh clone requires private inputs/runtime
+separately. Exact acceptance still requires a cold build and complete strict
+comparison of the affected unit, even when an older object exists.
