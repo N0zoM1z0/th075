@@ -728,3 +728,11 @@ places the first short at +0x0E; no hand-written gap/padding member was added.
 The still-untyped `GetSelection` output buffer at +0x1C remains a borrowed
 out-parameter because its record type/extent is not yet established. The
 complete 260-byte constructor cold-replayed 1/1 exact after the member rewrite.
+
+`StaffRollAdvanceF450::Advance` now reads the already established
+`Fighter::score` member at +0x2D0 instead of reconstructing the same address
+through a byte-pointer cast. The imported global retains its original `void*`
+linkage type (the COFF symbol is still the native `PAX` symbol); the use site
+casts to the known `Fighter` interface. The signed `int` score still undergoes
+the same usual conversion against the unsigned best-score global. Targeted
+208-byte cold replay remains 1/1 exact.

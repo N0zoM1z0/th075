@@ -1,5 +1,6 @@
 #include <windows.h>
 #include <mmsystem.h>
+#include "Fighter.hpp"
 // Complete original R043 208-byte StaffRoll scene advancement.
 // The source-scope of stage actions AND fighter result branch is the
 // outside-window condition. Unlike old F450/F451/F486/F487 probes,
@@ -41,7 +42,7 @@ unsigned short StaffRollAdvanceF450::Advance() {
             if (g_StaffRollFighterAt00671418) {
             if (g_StaffRollCompletionAt00671623<3) g_ReplayNameModeAt006714CE=0;
             else g_ReplayNameModeAt006714CE=-1;
-            if (*reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned char*>(g_StaffRollFighterAt00671418)+0x2D0)>g_StaffRollBestScoreAt00671420)
+            if (static_cast<Fighter*>(g_StaffRollFighterAt00671418)->score>g_StaffRollBestScoreAt00671420)
                 return 0x110A;
             return 0x1107;
         }
