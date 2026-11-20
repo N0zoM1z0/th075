@@ -345,19 +345,20 @@ cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
 Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. Its 41,667-byte VC7.1 body now also
+`probes/YuyukoFighterAdvancePartial.cpp`. Its 53,225-byte VC7.1 body now also
 covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
 `0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
 The source keeps the individual initial velocities, gauge accumulation,
 landing transitions, timer/effect side effects and action-specific counter
 resets. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
-rebound actions, and action `400`'s repeated five-effect barrage are now
-represented. All 114 unique top-level Ghidra switch labels have explicit
-natural-C++ case handlers; this remains a partial parent with unresolved
-control-flow and code-generation differences, not an exact function. The
-`0x2F9` randomized fan now uses the exact `Actor::RecordedRange(0x00455580)`
-policy at all four sample sites and restores the per-cycle fan sound trigger;
-the 139-byte random-range leaf cold-replayed exact.
+rebound actions, and action `400`'s repeated five-effect barrage are represented.
+All 114 unique top-level Ghidra switch labels have explicit natural-C++ case
+handlers. The `0x303` fan has three independent countdown branches with paired
+20-shot loops; the `0x2F9` fan has separate repeat-level radial and random-burst
+branches, with all ten random samples calling the exact `Actor::RecordedRange`
+leaf at `0x00455580`. The 139-byte random-range leaf cold-replays exact. The
+parent remains partial with unresolved common/default control flow and
+code-generation differences, not an exact function.
 This is a partial reconstruction, not a whole-function exactness claim.
 
 Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
@@ -737,7 +738,7 @@ Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
 
-Yuyuko fighter `00564BE0` now has an 35,452-byte natural-C++ partial parent in
+Yuyuko fighter `00564BE0` now has a 53,225-byte natural-C++ partial parent in
 `probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
 the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
 states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected
@@ -748,8 +749,13 @@ action `700`'s 48-effect stage burst, knockout/continue transitions
 `0x259..0x25A`, `0x25F..0x265`, and `0x2BD..0x2C3` radial/impact
 patterns, difficulty-scaled `0x2DA` radial phases, manual-motion state `0x2DB`,
 `0x2E4` multi-phase effects, difficulty-scaled `0x2EE..0x2EF`, `0x2F8`
-recovery and the randomized polar/radial fan `0x2F9`, and `0x8C`; the original function is 61,872 bytes. This is an active
-partial reconstruction, not whole-function coverage or exact credit. The
+recovery and the randomized polar/radial fan `0x2F9`, `0x302..0x303`,
+`0x31B..0x31C`, `0x8F..0x90`, `0x91`, `0x96..0x98`, `0x9A..0x9E`,
+`0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, `0xB4..0xB5`, `200`,
+`0xC9..0xD0`, `400`, and `0x8C`; the original function is 61,872 bytes.
+All 114 unique Ghidra switch labels now have natural-C++ case handlers, but
+common/default flow and code-generation differences remain. This is an active
+partial reconstruction, not whole-function exactness. The
 13 exact Yuyuko translation units affected by its `YuyukoFighter.hpp` slot
 declaration cold-replay 13/13 exact.
 

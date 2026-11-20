@@ -2272,35 +2272,76 @@ void YuyukoFighter::Advance() {
             if (fieldF06 < 1) {
                 PlaySound(13);
                 fieldF06 = 180;
-                int radialCount2F9 = 6;
-                int radialStep2F9 = 60;
-                if (g_StateRepeatLevelAt006714D0 == 1) {
-                    radialCount2F9 = 9;
-                    radialStep2F9 = 40;
-                } else if (g_StateRepeatLevelAt006714D0 == 2) {
-                    radialCount2F9 = 12;
-                    radialStep2F9 = 30;
-                } else if (g_StateRepeatLevelAt006714D0 == 3) {
-                    radialCount2F9 = 18;
-                    radialStep2F9 = 20;
+                if (g_StateRepeatLevelAt006714D0 == 0) {
+                    for (int radialIndex2F9A = 0; radialIndex2F9A < 6; ++radialIndex2F9A) {
+                        field314 = static_cast<float>(radialIndex2F9A * 60);
+                        SpawnBattleEffect(0x38C, x,
+                            y + g_ContactProjectionAt00657888, facing, 1);
+                    }
                 }
-                for (int radialIndex2F9 = 0; radialIndex2F9 < radialCount2F9; ++radialIndex2F9) {
-                    field314 = static_cast<float>(radialIndex2F9 * radialStep2F9);
-                    SpawnBattleEffect(0x38C, x,
-                        y + g_ContactProjectionAt00657888, facing, 1);
+                if (g_StateRepeatLevelAt006714D0 == 1) {
+                    for (int radialIndex2F9B = 0; radialIndex2F9B < 9; ++radialIndex2F9B) {
+                        field314 = static_cast<float>(radialIndex2F9B * 40);
+                        SpawnBattleEffect(0x38C, x,
+                            y + g_ContactProjectionAt00657888, facing, 1);
+                    }
+                }
+                if (g_StateRepeatLevelAt006714D0 == 2) {
+                    for (int radialIndex2F9C = 0; radialIndex2F9C < 12; ++radialIndex2F9C) {
+                        field314 = static_cast<float>(radialIndex2F9C * 30);
+                        SpawnBattleEffect(0x38C, x,
+                            y + g_ContactProjectionAt00657888, facing, 1);
+                    }
+                }
+                if (g_StateRepeatLevelAt006714D0 == 3) {
+                    for (int radialIndex2F9D = 0; radialIndex2F9D < 18; ++radialIndex2F9D) {
+                        field314 = static_cast<float>(radialIndex2F9D * 20);
+                        SpawnBattleEffect(0x38C, x,
+                            y + g_ContactProjectionAt00657888, facing, 1);
+                    }
                 }
             }
 
             if (fieldF08 < 1) {
-                if (fieldF08 == 0 ||
-                        (g_StateRepeatLevelAt006714D0 > 0 && fieldF08 == -20) ||
-                        (g_StateRepeatLevelAt006714D0 > 1 && fieldF08 == -40) ||
-                        (g_StateRepeatLevelAt006714D0 > 2 && fieldF08 == -60)) {
+                if (fieldF08 == 0) {
                     field318 = static_cast<float>(RecordedRange(0, 600));
                     field31C = static_cast<float>(RecordedRange(0, 300));
                     PlaySound(0);
-                    for (int burstIndex2F9 = 0; burstIndex2F9 < 6; ++burstIndex2F9) {
-                        field314 = static_cast<float>(burstIndex2F9 * 60);
+                    for (int burstIndex2F9A = 0; burstIndex2F9A < 6; ++burstIndex2F9A) {
+                        field314 = static_cast<float>(burstIndex2F9A * 60);
+                        SpawnBattleEffect(0x38D,
+                            x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
+                            y + field31C, facing, 1);
+                    }
+                }
+                if (g_StateRepeatLevelAt006714D0 > 0 && fieldF08 == -20) {
+                    field318 = static_cast<float>(RecordedRange(0, 600));
+                    field31C = static_cast<float>(RecordedRange(0, 300));
+                    PlaySound(0);
+                    for (int burstIndex2F9B = 0; burstIndex2F9B < 6; ++burstIndex2F9B) {
+                        field314 = static_cast<float>(burstIndex2F9B * 60);
+                        SpawnBattleEffect(0x38D,
+                            x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
+                            y + field31C, facing, 1);
+                    }
+                }
+                if (g_StateRepeatLevelAt006714D0 > 1 && fieldF08 == -40) {
+                    field318 = static_cast<float>(RecordedRange(0, 600));
+                    field31C = static_cast<float>(RecordedRange(0, 300));
+                    PlaySound(0);
+                    for (int burstIndex2F9C = 0; burstIndex2F9C < 6; ++burstIndex2F9C) {
+                        field314 = static_cast<float>(burstIndex2F9C * 60);
+                        SpawnBattleEffect(0x38D,
+                            x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
+                            y + field31C, facing, 1);
+                    }
+                }
+                if (g_StateRepeatLevelAt006714D0 > 2 && fieldF08 == -60) {
+                    field318 = static_cast<float>(RecordedRange(0, 600));
+                    field31C = static_cast<float>(RecordedRange(0, 300));
+                    PlaySound(0);
+                    for (int burstIndex2F9D = 0; burstIndex2F9D < 6; ++burstIndex2F9D) {
+                        field314 = static_cast<float>(burstIndex2F9D * 60);
                         SpawnBattleEffect(0x38D,
                             x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
                             y + field31C, facing, 1);
