@@ -1,4 +1,4 @@
-// Original handler order 0x2BC, 0x2BD, 0x2BF, 0x2C0, 0x2C1.
+// Original PE handler order: 0x2BC, 0x2BD, 0x2C1, 0x2BF, 0x2C0.
         case 0x2BC: {
             if (animationStage == 0 && animationFrame == 0) {
                 scriptCounterF00 = 0;
@@ -50,6 +50,32 @@
             if (AdvanceNestedFrame() != field070)
                 return;
             ResetSecondaryCounter(0);
+            return;
+        }
+        case 0x2C1: {
+            if (animationStage == 0 && animationFrame == 0) {
+                scriptCounterF00 = 0;
+                field07C = 0;
+                field080 = 6;
+                ClearMotionFields();
+            }
+            if (AdvanceNestedFrame() == field070)
+                ResetPrimaryCounters(0);
+            if (animationStage == 3 && animationFrame == 0) {
+                SetNonnegativeWord(0x28);
+                PlaySharedSound(0x17);
+                field36C -= g_ContactProjectionAt00657888;
+                SpawnAuxEffect(0x73, x,
+                    y + g_MarisaSpecialProjectileYAt00658400, facing, 1);
+            }
+            if (animationStage == 6 && animationFrame == 0) {
+                SpawnBattleEffect(0x342, x, y, facing, 1);
+                UpdateGaugeTimer(500);
+                fieldF14 = 4;
+                fieldF16 = 4;
+                fieldF18 = 0x1A4;
+                PlaySound(0x0D);
+            }
             return;
         }
         case 0x2BF: {
@@ -186,31 +212,5 @@
                 ResetSecondaryCounter(4);
             if (animationStage == 7 && animationFrame == 0)
                 ResetSecondaryCounter(5);
-            return;
-        }
-        case 0x2C1: {
-            if (animationStage == 0 && animationFrame == 0) {
-                scriptCounterF00 = 0;
-                field07C = 0;
-                field080 = 6;
-                ClearMotionFields();
-            }
-            if (AdvanceNestedFrame() == field070)
-                ResetPrimaryCounters(0);
-            if (animationStage == 3 && animationFrame == 0) {
-                SetNonnegativeWord(0x28);
-                PlaySharedSound(0x17);
-                field36C -= g_ContactProjectionAt00657888;
-                SpawnAuxEffect(0x73, x,
-                    y + g_MarisaSpecialProjectileYAt00658400, facing, 1);
-            }
-            if (animationStage == 6 && animationFrame == 0) {
-                SpawnBattleEffect(0x342, x, y, facing, 1);
-                UpdateGaugeTimer(500);
-                fieldF14 = 4;
-                fieldF16 = 4;
-                fieldF18 = 0x1A4;
-                PlaySound(0x0D);
-            }
             return;
         }
