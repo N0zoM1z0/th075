@@ -1,10 +1,11 @@
 #include "FighterInputSequenceF165.hpp"
+#include "Actor.hpp"
 #include <deque>
 
 // A complete vendor byte-compatible container view, not a private owner layout
 // or proof of the original nominal element declaration.
 #define HISTORY (*reinterpret_cast<std::deque<unsigned char>*>(reinterpret_cast<unsigned char*>(this) + 0x518))
-#define FACING (*reinterpret_cast<signed char*>(reinterpret_cast<unsigned char*>(this) + 0x66))
+#define FACING (reinterpret_cast<Actor*>(this)->facing)
 
 unsigned char FighterInputSequenceF165::MatchSequence(const char* text, signed char count, signed char historyOffset) {
     std::deque<unsigned char>::iterator current = HISTORY.end() + historyOffset;

@@ -656,3 +656,10 @@ in the distinct `ActionSequenceSlots::At` interface. The complete 149-byte
 function and all five native calls/relocations cold-replayed 1/1 exact; the
 call-only receiver remains uninstantiated and no full Fighter layout is
 claimed.
+
+`FighterInputSequenceF165::MatchSequence` now reads the shared facing byte
+through the observed `Actor::facing` member at +0x66 instead of a raw
+`this+0x66` byte cast. The call-only receiver remains pointer-only; its separate
++0x518 byte-deque view is still opaque because the complete owner member
+layout is not established. The full 695-byte function cold-replayed 1/1 exact
+with all 33 original COFF fields.
