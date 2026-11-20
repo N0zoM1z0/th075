@@ -24,7 +24,7 @@ void CharacterObject::NoOpAt0045B850(int unused)
 
 void Fighter::ClearNoticeTransition()
 {
-    *(reinterpret_cast<u8 *>(this) + 0x6E6) = 0;
+    noticeState = 0;
 }
 
 void AuxEffect::ClearField8()
