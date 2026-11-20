@@ -1382,10 +1382,8 @@ surrounding state-837/838 join at that address; do not treat the first
 mismatch as necessarily belonging to the state-838 entry itself.
 
 
-Yukari object `005A1600` partial `Advance` in
-`probes/CharacterObjectActions005A1600F1231.cpp` now restores action `900`'s
-stage-2 proximity transition: when the object is within 100 units of its
-opponent, it resets secondary stage 3, sets horizontal speed to 10 and invokes
-the original `0045B850(8)` transition helper instead of falling through to the
-ordinary movement/animation path. This is a natural-C++ recovery; the overall
-Yukari object remains partial and is not claimed exact.
+Yukari object `005A1600` action `900` remains at its committed baseline. A
+speculative stage-2 proximity gate was rejected after checking the original
+case-900 decompile and target code: that action has no 100-unit distance test
+or `0045B850(8)` transition. Do not reintroduce that trial without new target
+evidence; the Yukari object remains a separate partial reconstruction.
