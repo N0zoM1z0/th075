@@ -57,7 +57,7 @@
             }
             if (y > g_ThresholdAt0065782C) {
                 velocityY -= field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     ResetSecondaryCounter(0x0E);
                     y = 0.0f;
                     ClearMotionFields();
@@ -122,7 +122,7 @@
             --scriptCounterF00;
             if (animationStage < 2) {
                 velocityY -= g_MarisaCardFallAt00659264;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY < g_ThresholdAt0065782C) {
                     y = 0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(2);
