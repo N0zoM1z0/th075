@@ -512,3 +512,14 @@ replay passed 1/1. Unused notice/name-group borrowed windows and stale collision
 RECT/record macros were deleted. Six affected translation units compiled
 locally. The routing-only raw-member scan fell from 98 candidates to 80; this
 heuristic count is not an exactness or completion metric.
+
+Shared fighter giant-state probes were also made more semantic without changing
+VC7.1 output. Sixty-nine `I16(offset)` lvalue uses across the shared landing,
+trajectory, projectile, and counter fragments now name `scriptCounterF00` or
+`scriptCounterF02`; the four Reimu/Sakuya/Youmu/Remilia `Advance` translation
+units no longer need that offset macro. The two mode-63 borrowed byte-array
+reads now use `field32A[index]` (with the observed signed-byte conversion) and
+`field370[index]`. All four giant parent objects remained byte-identical to
+their pre-change objects: Reimu 62,090 bytes, Sakuya 83,922, Youmu 47,655, and
+Remilia 59,236. These are source/codegen-preservation checks, not claims that
+the four parents are now exact against the original executable.
