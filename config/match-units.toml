@@ -43757,7 +43757,7 @@ target = 0x00406DB0
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 110
 type = "REL32"
-symbol = "??0FighterDequeF287@@QAE@XZ"
+symbol = "??0FighterInputStateF287@@QAE@XZ"
 target = 0x00414360
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 128
@@ -43782,7 +43782,7 @@ target = 0x00640490
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 198
 type = "REL32"
-symbol = "?Initialize@FighterDequeF287@@QAEXII@Z"
+symbol = "?Initialize@FighterInputStateF287@@QAEXII@Z"
 target = 0x0045A620
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 205
