@@ -374,6 +374,15 @@ parent remains partial with unresolved common/default control flow and
 code-generation differences, not an exact function.
 This is a partial reconstruction, not a whole-function exactness claim.
 
+For Yuyuko fighter actions `0`, `2`, `0x5D`, and `0x5E`, Ghidra prints the
+stale `Concurrency::details::ContextBase::ClearCancel` label, but the original
+PE call target is `0x00453E20`, the exact `Fighter::ClearMotionFields` leaf.
+The current source call is correct; no separate cancel helper is implied.
+A duplicated 5D/5E source-body experiment added 357 bytes without improving
+the direct object comparison, so the compact shared C++ arm is retained.
+The first Yuyuko object GPR mismatch at `0x00583489` is likewise a register
+allocation difference at the stage-3 test, not a demonstrated logic error.
+
 Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
 66 effect spawns, eight sounds and four camera-shake calls moved from
 borrowed owner declarations to shared game interfaces. Both 44,331-byte

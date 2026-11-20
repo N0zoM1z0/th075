@@ -73,12 +73,15 @@ padding or machine-code literals were added.
 - All 198 switch-table entries for actions 800–997 now point to the same
   relative state-entry offsets as the original.
 - The current instruction diagnostic is 23 mnemonic, 28 width and 897 GPR
-  differences; the first GPR mismatch is `00583489` (#6565).
+  differences. The first GPR mismatch is `00583489` (#6565), at the action
+  837/838 join: both versions test stage 3, but VC7.1 assigns the receiver and
+  loaded stage to different scratch registers. Nested-if, early-break and
+  local-temporary source variants did not improve the whole-object comparison.
 
 This is substantial progress in a complete boss function, not an exactness
-claim. The next useful Yuyuko investigation starts at `00583489`; inspect the
-surrounding state-837/838 join and original control flow rather than assuming
-the first mismatch lies inside the state-838 entry itself.
+claim. Treat `00583489` as a register-allocation mismatch unless new evidence
+shows a different state transition; do not rewrite action 837 merely to change
+its source spelling.
 
 ### Yuyuko fighter Advance partial reconstruction
 
@@ -107,7 +110,14 @@ original x87 inclusive ground-contact edge is preserved in the audited `0x91`,
 `0x61` now have separate natural-C++ bodies, retaining their distinct original
 input-test grouping, effect burst, landing transition and velocity follow-up.
 Actions `0x8F` and `0x90` are also separate handlers rather than one shared
-branch, matching the original per-action dispatch layout. The horizontal
+branch, matching the original per-action dispatch layout. One decompiler label
+needs care: `Concurrency::details::ContextBase::ClearCancel` at the Yuyuko
+fighter actions `0`, `2`, `0x5D`, and `0x5E` resolves in target machine code to
+`0x00453E20`, the exact `Fighter::ClearMotionFields` leaf. The existing C++
+call is correct; do not invent a separate `ClearCancel` helper from that label.
+The 5D/5E duplicated-body experiment grew the object by 357 bytes without
+improving the direct byte comparison, so the shared source arm remains.
+The horizontal
 gauge-drift actions `0x96..0x98`, `0x9F..0xA1`, and `0x9A..0x9C` now retain
 separate handlers with their original per-action velocities and counter targets.
 Actions `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5` are now separate
