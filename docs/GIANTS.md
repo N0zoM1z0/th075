@@ -345,14 +345,15 @@ cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
 Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. Its 55,270-byte VC7.1 body now also
+`probes/YuyukoFighterAdvancePartial.cpp`. Its 55,646-byte VC7.1 body now also
 covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
 `0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
 The source keeps the individual initial velocities, gauge accumulation,
 landing transitions, timer/effect side effects and action-specific counter
 resets. Actions `0x60` and `0x61` now have separate natural-C++ handlers with
 their original input-test grouping, effect burst, landing transition and
-velocity follow-up. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
+velocity follow-up. Actions `0x8F` and `0x90` also retain separate handlers
+for their original horizontal-recovery state machines. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
 rebound actions, and action `400`'s repeated five-effect barrage are represented.
 All 114 unique top-level Ghidra switch labels have explicit natural-C++ case
 handlers. The `0x303` fan has three independent countdown branches with paired
@@ -740,7 +741,7 @@ Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
 
-Yuyuko fighter `00564BE0` now has a 55,270-byte natural-C++ partial parent in
+Yuyuko fighter `00564BE0` now has a 55,646-byte natural-C++ partial parent in
 `probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
 the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
 states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected

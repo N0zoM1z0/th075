@@ -2743,6 +2743,27 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x8F:
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -12.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+            scriptCounterF00 = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage != 3 || animationFrame != 0 || scriptCounterF00 > 6)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(1);
+        return;
+
     case 0x90:
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
