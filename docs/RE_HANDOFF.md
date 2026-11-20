@@ -720,3 +720,11 @@ of addressing the same inherited-layout-proven +0x08 member through a raw
 `this+8` cast. The member remains at +0x08 after the 8-byte SceneBaseF435
 subobject; allocation size, resource order and the other constructor fields
 are unchanged. The complete 260-byte constructor cold-replayed 1/1 exact.
+
+The `NameEntryInitF435` constructor's observed field prefix is now represented
+as natural C++ members: texture pointer +0x08, byte +0x0C, four short values
++0x0E..+0x14, and selection pointer +0x18. The compiler's normal alignment
+places the first short at +0x0E; no hand-written gap/padding member was added.
+The still-untyped `GetSelection` output buffer at +0x1C remains a borrowed
+out-parameter because its record type/extent is not yet established. The
+complete 260-byte constructor cold-replayed 1/1 exact after the member rewrite.

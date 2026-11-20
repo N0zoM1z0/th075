@@ -20,7 +20,13 @@ extern signed char g_ReplayNameModeAt006714CE;
 extern char g_ReplayDataPathAt00657F84[];
 extern char g_ReplayArchiveRootAt00657F7C[];
 class NameEntryInitF435 : public SceneBaseF435 {
-    NameEntryTextureF435* texture;
+    NameEntryTextureF435* texture;  // +0x08
+    unsigned char field00C;         // +0x0C
+    short field00E;                 // +0x0E
+    short field010;                 // +0x10
+    short field012;                 // +0x12
+    short field014;                 // +0x14
+    void* field018;                 // +0x18
 public:NameEntryInitF435();virtual ~NameEntryInitF435();
 };
 #define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
@@ -28,12 +34,12 @@ NameEntryInitF435::NameEntryInitF435() {
     texture = new NameEntryTextureF435;
     texture->AllocateSlots(3);
     texture->LoadArchive(g_ReplayDataPathAt00657F84,g_ReplayArchiveRootAt00657F7C);
-    FIELD(short,0xE)=0;
-    FIELD(short,0x10)=0;
-    FIELD(short,0x12)=0;
-    FIELD(short,0x14)=0;
-    if(g_ReplayNameModeAt006714CE<0) FIELD(unsigned char,0xC)=1;
-    else FIELD(unsigned char,0xC)=0;
-    FIELD(void*,0x18)=g_ReplayDataReaderAt00671750.GetSelection(reinterpret_cast<unsigned char*>(this)+0x1C);
+    field00E=0;
+    field010=0;
+    field012=0;
+    field014=0;
+    if(g_ReplayNameModeAt006714CE<0) field00C=1;
+    else field00C=0;
+    field018=g_ReplayDataReaderAt00671750.GetSelection(reinterpret_cast<unsigned char*>(this)+0x1C);
 }
 #undef FIELD
