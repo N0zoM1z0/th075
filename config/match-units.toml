@@ -43792,12 +43792,12 @@ target = 0x0064159D
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 229
 type = "REL32"
-symbol = "??0FighterSpecialF287@@QAE@XZ"
+symbol = "??0EffectManagerLifetimeF161@@AAE@XZ"
 target = 0x0045B920
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 281
 type = "REL32"
-symbol = "?Initialize@FighterSpecialF287@@QAEXPAX@Z"
+symbol = "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighter@@@Z"
 target = 0x0045BA10
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 337

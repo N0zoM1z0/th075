@@ -3,6 +3,7 @@
 #include <new>
 #include <deque>
 #include <stddef.h>
+#include "EffectManagerLifetimeF161.hpp"
 // Physical subobject boundaries established from the original member calls;
 // do not infer unobserved internal fields of fighter or library containers.
 class FighterBaseF287 { public: FighterBaseF287(); virtual void Reserved(); };
@@ -49,10 +50,7 @@ typedef char AssertInputStateF287[(
     sizeof(FighterInputStateF287) == 0x1B8) ? 1 : -1];
 class FighterSoundF287 {unsigned char physicalBytes[0x44];public: FighterSoundF287(); ~FighterSoundF287(); void Configure();};
 class FighterScriptF287 { public: FighterScriptF287(); ~FighterScriptF287(); };
-class FighterSpecialF287 {
-    unsigned char observedBytes[0x54];
-public: FighterSpecialF287(); void Initialize(void* fighter);
-};
+
 typedef char AssertPropsF287[(sizeof(FighterActorPropertiesF287)==0x194)?1:-1];
 typedef char AssertVectorF287[(sizeof(FighterActorVectorF287)==0x2c)?1:-1];
 typedef char AssertInputF287[(sizeof(FighterInputF287)==0x84)?1:-1];
@@ -76,8 +74,8 @@ FighterInitF287::FighterInitF287()
     unsigned int scratch[7];
     memset(scratch,0,28);
     replay.Initialize(90,0);
-    FIELD(FighterSpecialF287*,0x2ec)=new FighterSpecialF287();
-    FIELD(FighterSpecialF287*,0x2ec)->Initialize(this);
+    FIELD(EffectManagerLifetimeF161*,0x2ec)=new EffectManagerLifetimeF161();
+    FIELD(EffectManagerLifetimeF161*,0x2ec)->BindFighter(reinterpret_cast<Fighter*>(this));
     FIELD(void*,4)=0;
     FIELD(void*,0x534)=0;
     FIELD(void*,0x700)=0;
