@@ -755,3 +755,9 @@ read/write through a repeated `this+0x511` cast macro. All nine complete native
 functions were replayed together: 9/9 exact across the two affected objects.
 The original one-byte field remains in the Fighter layout; no fake container
 or partial owner object was introduced.
+
+`ResultScene::ResultScene` now reads the secondary fighter's +0x460 value via
+the existing `Fighter::field460` member instead of a raw pointer-plus-offset
+load. The imported global remains `void*` to preserve its native symbol ABI;
+the use site supplies the established Fighter view. The complete 547-byte
+constructor cold-replayed 1/1 exact.

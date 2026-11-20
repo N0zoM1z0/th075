@@ -28,7 +28,7 @@ ResultScene::ResultScene()
     field014=1.0f;
     field018=0;
     field019=0;
-    values[0]=*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(g_ResultActorSecondaryAt0067141C)+0x460);
+    values[0]=static_cast<Fighter*>(g_ResultActorSecondaryAt0067141C)->field460;
     values[2]=g_ResultScoreTotalAt0067160C;
     field030=static_cast<float>(g_ResultScoreTotalAt0067160C)/static_cast<float>(g_ResultTotalDenominatorAt006714BC)+g_ResultOneAt0065747C;
     values[1]=g_ResultBonusAt006714C0;
