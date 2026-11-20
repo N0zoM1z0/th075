@@ -6,7 +6,6 @@
 
 // Interfaces of the objects a fighter loads; the 80- and 24-byte classes
 // carry the allocation sizes the original uses.
-class FighterSoundsF282 {public: void Load(const char* filename,const char* archive);};
 class FighterTextureF282 {
     unsigned char observedBytes[80];
 public:
@@ -55,9 +54,9 @@ void Fighter::LoadResources()
     FighterLogF282::Append(g_LogSoundsAt00658E84);
     sprintf(filename,g_SoundFileFormatAt00658E94,tag);
     if (strcmp(name,g_CharacterMeilingAt00658EA4)==0)
-        reinterpret_cast<FighterSoundsF282*>(sounds)->Load(filename,g_SoundArchiveMeilingAt00658EAC);
+        soundResources.Load(filename,g_SoundArchiveMeilingAt00658EAC);
     else
-        reinterpret_cast<FighterSoundsF282*>(sounds)->Load(filename,g_SoundArchiveDefaultAt00658EB4);
+        soundResources.Load(filename,g_SoundArchiveDefaultAt00658EB4);
     FighterLogF282::Append(g_LogPatternsAt00658EBC);
     LoadPattern();
     FighterLogF282::Append(g_LogPicturesAt00658ED0);

@@ -612,3 +612,12 @@ carries an unused `FIELD(type, offset)` raw-pointer macro; every actual access
 in its 1,027-byte body already uses the observed Fighter members. Removing
 the dead macro/undef leaves the complete function and all 11 relocations
 unchanged; its targeted cold replay passed 1/1 exact.
+
+The same 20-byte Fighter sound subobject now has three explicit, size-checked
+views: raw `sounds[20]` storage, `EffectSoundBankF135` playback, and
+`FighterSoundsF282` resource loading. `Fighter::LoadResources` uses
+`soundResources.Load` directly instead of reinterpreting the byte array; the
+resource-loading class retains its original COFF method symbol and has only an
+opaque 20-byte storage view. All six affected resource/effect/sound units
+cold-replayed 6/6 exact across three objects. No internal sound-bank field
+layout is claimed.

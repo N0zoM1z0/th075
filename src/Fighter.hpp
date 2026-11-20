@@ -9,6 +9,16 @@ class TimelineDrawing438D00;
 class FighterTextureF282;
 class FighterStageTextureF286;
 
+// Pointer-only resource interface over the observed 20-byte sound subobject.
+class FighterSoundsF282 {
+public:
+    void Load(const char* filename, const char* archive);
+
+private:
+    unsigned char unknown000[0x14];
+};
+typedef char FighterSoundsF282SizeCheck[(sizeof(FighterSoundsF282) == 0x14) ? 1 : -1];
+
 // Script reader embedded in every fighter at +0x714. Its methods are the
 // native callees 0045DD00 (count) and the field getters next to it.
 class FighterScriptAccessorF410 {
@@ -256,8 +266,9 @@ public:
     signed char quoteBadges[2];         // +0x6CB notice badge shown with each line
     unsigned char unknown6CD[0x6D0 - 0x6CD];
     union {
-        unsigned char sounds[0x6E4 - 0x6D0]; // raw storage view used by resource loading
-        EffectSoundBankF135 soundBank;       // +0x6D0 embedded sound-bank view
+        unsigned char sounds[0x6E4 - 0x6D0]; // raw storage view
+        EffectSoundBankF135 soundBank;       // playback interface at +0x6D0
+        FighterSoundsF282 soundResources;    // resource-loading interface
     };
     signed char sequencePhase;          // +0x6E4
     unsigned char unknown6E5[0x6E6 - 0x6E5];
