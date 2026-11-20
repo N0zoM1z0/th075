@@ -1,5 +1,4 @@
 #include "BattleScene.hpp"
-#include "FighterNoticeBorrowedF960.hpp"
 #include "GameLeafHelpers.hpp"
 
 void SpriteScene::CopyVector(Vector3 *destination)

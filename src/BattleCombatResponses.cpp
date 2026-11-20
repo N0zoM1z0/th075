@@ -190,9 +190,6 @@ void BattleScene::ApplyReactionMode(Actor *attack, Fighter *attacker, Fighter *d
     g_SoundBank->Play(25);
     SpawnMidpointEffect(54, attack->facing);
 }
-// Four consecutive original native signed-32bit collision bounds.
-// Raw borrowed array avoids proposing a guessed original owner class.
-#define CombatBoundsF1072(owner) (reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(owner)+0x34))
 void BattleScene::SpawnMidpointEffect(short effect, unsigned char direction)
 {
     g_CombatEffects.Spawn(effect,
@@ -201,7 +198,6 @@ void BattleScene::SpawnMidpointEffect(short effect, unsigned char direction)
         direction, 1, 0, 0);
 }
 
-#undef CombatBoundsF1072
 #undef FlashBarSpanF1072
 
 #undef TimerWordF1072

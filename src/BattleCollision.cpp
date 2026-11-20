@@ -1,10 +1,5 @@
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
-// Scalar views refer only to observed fields of existing objects.
-#define FIELD(type, object, offset) \
-    (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-// Native owner+0x34 is a 16-byte borrowed RECT window (not an allocated pointer).
-#define F1056_BOUNDS(owner) (*reinterpret_cast<RECT *>(reinterpret_cast<unsigned char *>(owner) + 0x34))
 void BattleScene::ApplyImpact(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     attack->field07C = 2;

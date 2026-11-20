@@ -5,9 +5,6 @@
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define RECORD(type, actor, pointer, offset) FIELD(type, FIELD(void *, actor, pointer), offset)
 #define FRAME(type, actor, offset) RECORD(type, actor, 0xAC, offset)
-// Native battle collision owner+0x34 is four actual signed Win32 RECT
-// boundary DWORDs; this is only a borrowed window, not a new owner.
-#define F1079_BOUNDS(owner) (*reinterpret_cast<RECT*>(reinterpret_cast<unsigned char*>(owner)+0x34))
 // Actual attack/collision FRAME record bitflags (32-bit at +0x3C/+0x40).
 void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighter *defender)
 {
@@ -119,6 +116,5 @@ void Actor::SaveCollisionFields()
     savedAction = action;
 }
 
-#undef F1079_BOUNDS
 #undef F1079_ATTACK_FLAGS
 #undef F1079_DEFENSE_FLAGS
