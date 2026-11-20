@@ -646,3 +646,13 @@ case and its own Ghidra arm confirms an eight-effect loop. Reordered
 predicate and owner-alias trials on `0x358` did not yield a source form that
 preserves the native instruction order/register allocation; no giant source
 was changed.
+
+`FighterAnimationReset453D80::BindAnimation` no longer reaches the Fighter
+sequence vector through `this + 0x468`. The observed virtual receiver is a
+Fighter (vtable slot 0), and the existing `Fighter::sequenceSlots` member is
+now the source of the typed `AnimationSequencesF156` view. This preserves the
+original VC7 `AnimationSequencesF156::At` instantiation rather than swapping
+in the distinct `ActionSequenceSlots::At` interface. The complete 149-byte
+function and all five native calls/relocations cold-replayed 1/1 exact; the
+call-only receiver remains uninstantiated and no full Fighter layout is
+claimed.
