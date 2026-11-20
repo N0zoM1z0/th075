@@ -25762,8 +25762,8 @@ target = 0x00455266
 source = "src/FighterInputSequenceF165.cpp"
 object = "build/matching/FighterInputSequenceF165.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["BattleInput::MatchSequenceAt00455800"]
-symbol = "?MatchSequence@FighterInputSequenceF165@@QAEEPBDCC@Z"
+functions = ["Fighter::MatchInputPattern"]
+symbol = "?MatchInputPattern@Fighter@@QAECPBDCC@Z"
 target_address = 0x00455800
 size = 695
 compare_size = 803
@@ -25790,12 +25790,12 @@ target = 0x00414400
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 137
 type = "DIR32"
-symbol = "$L5906"
+symbol = "$L7415"
 target = 0x00455AFB
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 144
 type = "DIR32"
-symbol = "$L5910"
+symbol = "$L7419"
 target = 0x00455AB7
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 387
@@ -25850,87 +25850,87 @@ target = 0x00640611
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 695
 type = "DIR32"
-symbol = "$L5542"
+symbol = "$L7055"
 target = 0x00455894
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 699
 type = "DIR32"
-symbol = "$L5543"
+symbol = "$L7056"
 target = 0x004558A1
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 703
 type = "DIR32"
-symbol = "$L5544"
+symbol = "$L7057"
 target = 0x004558AE
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 707
 type = "DIR32"
-symbol = "$L5545"
+symbol = "$L7058"
 target = 0x004558BB
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 711
 type = "DIR32"
-symbol = "$L5551"
+symbol = "$L7062"
 target = 0x004558EA
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 715
 type = "DIR32"
-symbol = "$L5552"
+symbol = "$L7063"
 target = 0x004558F4
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 719
 type = "DIR32"
-symbol = "$L5558"
+symbol = "$L7067"
 target = 0x0045591D
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 723
 type = "DIR32"
-symbol = "$L5559"
+symbol = "$L7068"
 target = 0x00455927
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 727
 type = "DIR32"
-symbol = "$L5560"
+symbol = "$L7069"
 target = 0x00455931
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 731
 type = "DIR32"
-symbol = "$L5561"
+symbol = "$L7070"
 target = 0x0045593B
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 735
 type = "DIR32"
-symbol = "$L5562"
+symbol = "$L7071"
 target = 0x00455945
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 739
 type = "DIR32"
-symbol = "$L5563"
+symbol = "$L7072"
 target = 0x0045594F
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 743
 type = "DIR32"
-symbol = "$L5564"
+symbol = "$L7073"
 target = 0x00455959
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 747
 type = "DIR32"
-symbol = "$L5546"
+symbol = "$L7059"
 target = 0x004558C8
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 751
 type = "DIR32"
-symbol = "$L5553"
+symbol = "$L7064"
 target = 0x004558FE
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 755
 type = "DIR32"
-symbol = "$L5565"
+symbol = "$L7074"
 target = 0x00455963
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 759
 type = "DIR32"
-symbol = "$L5539"
+symbol = "$L7052"
 target = 0x0045596B
 
 [units.fighter-mode5-direction-00454c20]

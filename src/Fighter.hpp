@@ -1,6 +1,7 @@
 #ifndef TH075_FIGHTER_HPP
 #define TH075_FIGHTER_HPP
 #include "Actor.hpp"
+#include <deque>
 #include "FighterOutcomeByteF992.hpp"
 #include "FighterEffectPolicies.hpp"
 
@@ -247,7 +248,7 @@ public:
     short aiWaitTimer;                  // +0x512
     short aiStep;                       // +0x514
     short aiCardTimer;                  // +0x516
-    unsigned char unknown518[0x52C - 0x518];
+    std::deque<unsigned char> inputHistory; // +0x518, native command history
     signed char field52C;             // +0x52C
     signed char field52D;             // +0x52D
     signed char field52E;             // +0x52E
@@ -319,6 +320,8 @@ typedef char FighterLayoutCheck[(
     offsetof(Fighter, health) == 0x324 &&
     offsetof(Fighter, spirit) == 0x3B0 &&
     offsetof(Fighter, inputBindings) == 0x494 &&
+    offsetof(Fighter, inputHistory) == 0x518 &&
+    sizeof(std::deque<unsigned char>) == 0x14 &&
     offsetof(Fighter, inputX) == 0x4DC &&
     offsetof(Fighter, script) == 0x714 &&
     offsetof(Fighter, sequenceTimer) == 0xEFC &&

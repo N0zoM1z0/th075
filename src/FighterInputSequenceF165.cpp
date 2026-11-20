@@ -1,17 +1,11 @@
-#include "FighterInputSequenceF165.hpp"
-#include "Actor.hpp"
-#include <deque>
+#include "Fighter.hpp"
 
-// A complete vendor byte-compatible container view, not a private owner layout
-// or proof of the original nominal element declaration.
-#define HISTORY (*reinterpret_cast<std::deque<unsigned char>*>(reinterpret_cast<unsigned char*>(this) + 0x518))
-#define FACING (reinterpret_cast<Actor*>(this)->facing)
-
-unsigned char FighterInputSequenceF165::MatchSequence(const char* text, signed char count, signed char historyOffset) {
-    std::deque<unsigned char>::iterator current = HISTORY.end() + historyOffset;
+// The native command history is the Fighter-owned VC7 deque at +0x518.
+signed char Fighter::MatchInputPattern(const char* text, signed char count, signed char historyOffset) {
+    std::deque<unsigned char>::iterator current = inputHistory.end() + historyOffset;
     int index;
     {
-        std::deque<unsigned char>::iterator last = HISTORY.end();
+        std::deque<unsigned char>::iterator last = inputHistory.end();
         unsigned char commands[20];
 
         for (index = 0; index < count; index++) {
@@ -21,14 +15,14 @@ unsigned char FighterInputSequenceF165::MatchSequence(const char* text, signed c
             case '3': commands[index] = 10; break;
             case '4': commands[index] = 1; break;
             case 'L':
-                if (FACING > 0) commands[index] = 1;
+                if (facing > 0) commands[index] = 1;
                 else commands[index] = 2;
                 break;
             case '5':
             case 'N': commands[index] = 0; break;
             case '6': commands[index] = 2; break;
             case 'R':
-                if (FACING > 0) commands[index] = 2;
+                if (facing > 0) commands[index] = 2;
                 else commands[index] = 1;
                 break;
             case '7': commands[index] = 5; break;
@@ -60,6 +54,3 @@ unsigned char FighterInputSequenceF165::MatchSequence(const char* text, signed c
     }
     return 0;
 }
-
-#undef FACING
-#undef HISTORY
