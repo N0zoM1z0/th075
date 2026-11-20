@@ -119,50 +119,104 @@ void YuyukoFighter::Advance() {
         return;
 
     case 6:
-    case 7:
-    case 8: {
-        short specialAction = action == 6 ? 0xCC : action == 7 ? 0xCD : 0xCE;
-        unsigned char command = action == 6 ? 3 : action == 7 ? 5 : 4;
         if (animationStage == 0 && animationFrame == 0 &&
-                (aiCommand == command || field3AC > 0)) {
-            ResetPrimaryCounters(specialAction);
-            return;
-        }
-        if (animationStage == 0 && field3AC == 0)
-            ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
-            velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+                (aiCommand == 3 || field3AC > 0)) {
+            ResetPrimaryCounters(0xCC);
+        } else {
+            if (animationStage == 0 && field3AC == 0)
+                ClearMotionFields();
+            if (y <= g_ThresholdAt0065782C ||
+                    ((velocityY -= field05C), y + velocityY <= g_ThresholdAt0065782C)) {
+                if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
+                    ResetSecondaryCounter(3);
+                ++animationFrame;
+                if (animationFrame >= animationFrameCount) {
+                    animationFrame = 0;
+                    ++animationStage;
+                    if (animationStage == 2) {
+                        velocityX = 0.0f;
+                        velocityY = 12.0f;
+                        field05C = 0.4f;
+                    }
+                    if (animationStageCount <= animationStage)
+                        animationStage -= 2;
+                    BindAnimation();
+                }
+            } else {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
-                return;
             }
-        }
-        if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
-            ResetSecondaryCounter(3);
-        ++animationFrame;
-        if (animationFrame >= animationFrameCount) {
-            animationFrame = 0;
-            ++animationStage;
-            if (animationStage == 2) {
-                velocityX = action == 6 ? 0.0f : action == 7 ? 4.0f : -4.0f;
-                if (action == 8) field3AC = 0;
-                velocityY = 12.0f;
-                field05C = 0.4f;
-            }
-            if (animationStage >= animationStageCount)
-                animationStage -= 2;
-            BindAnimation();
         }
         return;
-    }
+
+    case 7:
+        if (animationStage == 0 && animationFrame == 0 &&
+                (aiCommand == 5 || field3AC > 0)) {
+            ResetPrimaryCounters(0xCD);
+        } else {
+            if (animationStage == 0 && field3AC == 0)
+                ClearMotionFields();
+            if (y <= g_ThresholdAt0065782C ||
+                    ((velocityY -= field05C), y + velocityY <= g_ThresholdAt0065782C)) {
+                if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
+                    ResetSecondaryCounter(3);
+                ++animationFrame;
+                if (animationFrame >= animationFrameCount) {
+                    animationFrame = 0;
+                    ++animationStage;
+                    if (animationStage == 2) {
+                        velocityX = 4.0f;
+                        velocityY = 12.0f;
+                        field05C = 0.4f;
+                    }
+                    if (animationStageCount <= animationStage)
+                        animationStage -= 2;
+                    BindAnimation();
+                }
+            } else {
+                ResetPrimaryCounters(10);
+                y = 0.0f;
+                ClearMotionFields();
+            }
+        }
+        return;
+
+    case 8:
+        if (animationStage == 0 && animationFrame == 0 &&
+                (aiCommand == 4 || field3AC > 0)) {
+            ResetPrimaryCounters(0xCE);
+        } else {
+            if (animationStage == 0 && field3AC == 0)
+                ClearMotionFields();
+            if (y <= g_ThresholdAt0065782C ||
+                    ((velocityY -= field05C), y + velocityY <= g_ThresholdAt0065782C)) {
+                ++animationFrame;
+                if (animationFrame >= animationFrameCount) {
+                    animationFrame = 0;
+                    ++animationStage;
+                    if (animationStage == 2) {
+                        velocityX = -4.0f;
+                        velocityY = 12.0f;
+                        field05C = 0.4f;
+                    }
+                    if (animationStageCount <= animationStage)
+                        animationStage -= 2;
+                    BindAnimation();
+                }
+            } else {
+                ResetPrimaryCounters(10);
+                y = 0.0f;
+                ClearMotionFields();
+            }
+        }
+        return;
 
     case 9:
         if (field05C == g_ThresholdAt0065782C)
             field05C = 0.6f;
         velocityY -= field05C;
-        if (y + velocityY > g_ThresholdAt0065782C) {
+        if (y + velocityY <= g_ThresholdAt0065782C) {
             if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(0);
         } else {

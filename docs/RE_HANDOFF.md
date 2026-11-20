@@ -84,7 +84,7 @@ the first mismatch lies inside the state-838 entry itself.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 53,819-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 54,509-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, selected `0x12D..0x136`
 special-move phases, `0x187..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -101,10 +101,12 @@ resets, and the shared animation advance path. The `0x2F9` fan keeps each
 repeat-level radial/burst branch separate and calls the exact `Actor::RecordedRange`
 leaf at every random sample. The `0x303` fan keeps three independent countdown
 branches with their original paired 20-shot loops and difficulty-three offsets.
-All 114 unique Ghidra switch labels have explicit natural-C++ handlers; the
-remaining common/default path and code-generation differences are still under
-investigation, so this is not a whole-function exactness claim.
-The structural comparison is expected to report a size mismatch (53,819 vs.
+All 114 unique Ghidra switch labels have explicit natural-C++ handlers. Low
+actions `6..9` now retain their separate command gates, gravity/contact
+branches, per-action stage velocities and original secondary-counter behavior;
+the remaining common/default path and code-generation differences are still
+under investigation, so this is not a whole-function exactness claim.
+The structural comparison is expected to report a size mismatch (54,509 vs.
 61,872 bytes).
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header
