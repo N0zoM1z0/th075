@@ -68,242 +68,17 @@ extern double g_RiseAt00658050;
 void MarisaFighterAdvanceProbe::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
-    if (action == 0x32) {
-        if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -8.0f;
-            velocityY = 0.0f;
-            field07C = 0;
-        }
-        if (velocityX < g_ThresholdAt0065782C) {
-            velocityX += g_JumpGroundCorrectionAt00658058;
-            if (velocityX > g_ThresholdAt0065782C)
-                velocityX = 0.0f;
-        }
-        if (CheckHorizontalLimits() && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_JumpReflectionAt006583E8);
-        if (AdvanceNestedFrame() == field070)
-            ResetPrimaryCounters(0);
-        return;
-    }
-    switch (action) {
-        case 0x0:
-            if (field3AC == 0) {
-                ClearMotionFields();
-            } else {
-                if (velocityX > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if (velocityX < g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-                if (velocityX < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if (velocityX > g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-            }
-            break;
-        case 0x1:
-            if (field3AC == 0) {
-                ClearMotionFields();
-            } else {
-                if (velocityX > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if (velocityX < g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-                if (velocityX < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if (velocityX > g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-            }
-            if (AdvanceNestedFrame() == field070)
-                ResetPrimaryCounters(2);
-            break;
-        case 0x2:
-            if (field3AC == 0) {
-                ClearMotionFields();
-            } else {
-                if (velocityX > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if (velocityX < g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-                if (velocityX < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if (velocityX > g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-            }
-            break;
-        case 0x3:
-            if (field3AC == 0) {
-                ClearMotionFields();
-            } else {
-                if (velocityX > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if (velocityX < g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-                if (velocityX < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if (velocityX > g_ThresholdAt0065782C) {
-                        ClearMotionFields();
-                        field3AC = 0;
-                    }
-                }
-            }
-            if (AdvanceNestedFrame() == field070)
-                ResetPrimaryCounters(0);
-            break;
-        case 0x4:
-            velocityX = 6.0f;
-            AdvanceNestedFrame();
-            return;
-        case 0x5:
-            velocityX = -6.0f;
-            AdvanceNestedFrame();
-            return;
-        case 0x6:
-            if (animationStage == 0 && animationFrame == 0 &&
-                    (aiCommand == 3 || field3AC > 0)) {
-                ResetPrimaryCounters(0xCC);
-                return;
-            }
-            if (animationStage == 0 && field3AC == 0)
-                ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
-                if (y + velocityY < g_ThresholdAt0065782C) {
-                    ResetPrimaryCounters(10);
-                    y = 0.0f;
-                    ClearMotionFields();
-                    return;
-                }
-            }
-            if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
-                ResetSecondaryCounter(5);
-            ++animationFrame;
-            if (animationFrame >= field072) {
-                animationFrame = 0;
-                ++animationStage;
-                if (animationStage == 4) {
-                    velocityX = 0.0f;
-                    velocityY = 16.0f;
-                    field05C = 0.75f;
-                    field3AC = 0;
-                }
-                if (animationStage >= field070)
-                    animationStage -= 2;
-                BindAnimation();
-            }
-            break;
-        case 0x7:
-            if (animationStage == 0 && animationFrame == 0 &&
-                    (aiCommand == 5 || field3AC > 0)) {
-                ResetPrimaryCounters(0xCD);
-                return;
-            }
-            if (animationStage == 0 && field3AC == 0)
-                ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
-                if (y + velocityY < g_ThresholdAt0065782C) {
-                    ResetPrimaryCounters(10);
-                    y = 0.0f;
-                    ClearMotionFields();
-                    return;
-                }
-            }
-            if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
-                ResetSecondaryCounter(5);
-            ++animationFrame;
-            if (animationFrame >= field072) {
-                animationFrame = 0;
-                ++animationStage;
-                if (animationStage == 4) {
-                    velocityX = 5.0f;
-                    velocityY = 16.0f;
-                    field05C = 0.75f;
-                    field3AC = 0;
-                }
-                if (animationStage >= field070)
-                    animationStage -= 2;
-                BindAnimation();
-            }
-            break;
-        case 0x8:
-            if (animationStage == 0 && animationFrame == 0 &&
-                    (aiCommand == 4 || field3AC > 0)) {
-                ResetPrimaryCounters(0xCE);
-                return;
-            }
-            if (animationStage == 0 && field3AC == 0)
-                ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
-                if (y + velocityY < g_ThresholdAt0065782C) {
-                    ResetPrimaryCounters(10);
-                    y = 0.0f;
-                    ClearMotionFields();
-                    return;
-                }
-            }
-            ++animationFrame;
-            if (animationFrame >= field072) {
-                animationFrame = 0;
-                ++animationStage;
-                if (animationStage == 4) {
-                    velocityX = -4.0f;
-                    field3AC = 0;
-                    velocityY = 16.0f;
-                    field05C = 0.75f;
-                }
-                if (animationStage >= field070)
-                    animationStage -= 2;
-                BindAnimation();
-            }
-            break;
-        case 0x9:
-        if (field05C == g_ThresholdAt0065782C)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
-        if (y + velocityY < g_ThresholdAt0065782C) {
-            ResetPrimaryCounters(10);
-            y = 0.0f;
-            ClearMotionFields();
-            return;
-        }
-        if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounter(0);
-        }
-        break;
-        case 0xA:
-            if (animationStage == 0 && animationFrame == 0)
-                PlaySharedSound(30);
-            ClearMotionFields();
-            if (AdvanceNestedFrame() == field070) {
-                if (inputY == 0)
-                    ResetPrimaryCounters(3);
-                else
-                    ResetPrimaryCounters(2);
-            }
-            break;
-        #include "FighterSingletonContactF598.inc"
+        int actionSnapshot = action;
+    if (actionSnapshot > 0x32) {
+        if (actionSnapshot <= 0x8C) {
+            #define F628_CASE 0x8C
+            #define F628_START_POS -11.0f
+            #define F628_LIMIT 5
+            #include "MarisaFighterJumpLanding8CSpecial.inc"
+            #undef F628_CASE
+            #undef F628_START_POS
+            #undef F628_LIMIT
+            switch (actionSnapshot) {
 #include "MarisaFighterAdditionalContactF600.inc"
 #define TRAJECTORY_LOWER_THRESHOLD g_ApproachLowerAt00658290
 #define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
@@ -355,13 +130,11 @@ void MarisaFighterAdvanceProbe::Advance() {
 #undef F614_PROJECTILE
 #undef F614_SIDE
 #include "MarisaFighterMode63BasicF626.inc"
-#define F628_CASE 0x8C
-#define F628_START_POS -11.0f
-#define F628_LIMIT 5
-#include "MarisaFighterJumpLandingF628.inc"
-#undef F628_CASE
-#undef F628_START_POS
-#undef F628_LIMIT
+            }
+        }
+        else if (actionSnapshot <= 0x12C) {
+            #include "MarisaFighterAction12CSpecial.inc"
+            switch (actionSnapshot) {
 #define F628_CASE 0x8F
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
@@ -532,27 +305,70 @@ void MarisaFighterAdvanceProbe::Advance() {
 #include "MarisaFighterSpecialCardCCCE.inc"
 #include "MarisaFighterSpecialCardCF.inc"
 #include "MarisaFighterSpecialCardD0D2.inc"
-#include "MarisaFighterEarlySpecial186189.inc"
+            }
+        }
+        else if (actionSnapshot <= 0x186) {
+            #include "MarisaFighterEarlySpecial186.inc"
+            switch (actionSnapshot) {
+#include "MarisaFighterStage12D136.inc"
+            }
+        }
+        else if (actionSnapshot <= 0x1F4) {
+            #include "MarisaFighterAction1F4Special.inc"
+            switch (actionSnapshot) {
+#include "MarisaFighterEarlySpecial187189.inc"
 #include "MarisaFighterProjectileSpecial18A18B.inc"
 #include "MarisaFighterCardResource191194.inc"
 #include "MarisaFighterCardResource19C19E.inc"
 #include "MarisaFighterCardResource19F1A3.inc"
 #include "MarisaFighterCardVolleys19619B.inc"
-#include "MarisaFighterAction12C.inc"
-#include "MarisaFighterStage12D136.inc"
-#include "MarisaFighterAction1F4.inc"
+            }
+        }
+        else if (actionSnapshot <= 0x2C2) {
+            #include "MarisaFighterAction2C2Special.inc"
+            switch (actionSnapshot) {
 #include "MarisaFighterCardFollowup1F520E.inc"
 #include "MarisaFighterCardResource252271.inc"
-#include "MarisaFighterAction2C2.inc"
-#include "MarisaFighterLateCard2C3D1.inc"
-#include "MarisaFighterCardTail2BD31C.inc"
+#include "MarisaFighterCardTail2BD.inc"
 #include "MarisaFighterCardLate2BC2C0.inc"
-#include "MarisaFighterCardLate2BF2DB.inc"
+#include "MarisaFighterCardLate2BF.inc"
+            }
+        }
+        else {
+            switch (actionSnapshot) {
+#include "MarisaFighterLateCard2C3D1.inc"
+#include "MarisaFighterCardTail2E731C.inc"
+#include "MarisaFighterCardLate2DB.inc"
 #include "MarisaFighterCardTail2EF2F8.inc"
 #include "MarisaFighterRandomCard2E52F9.inc"
-        default:
-            if (AdvanceNestedFrame() == field070)
-                ResetPrimaryCounters(0);
-            return;
+            }
+        }
+        goto switchDefault;
     }
+if (actionSnapshot == 0x32) {
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -8.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (velocityX > g_ThresholdAt0065782C)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_JumpReflectionAt006583E8);
+        if (AdvanceNestedFrame() == field070)
+            ResetPrimaryCounters(0);
+        return;
+    }
+    switch (actionSnapshot) {
+        #include "MarisaFighterLowActions.inc"
+        default: goto switchDefault;
+    }
+    return;
+switchDefault:
+    if (AdvanceNestedFrame() == field070)
+        ResetPrimaryCounters(0);
+    return;
 }

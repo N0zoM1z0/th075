@@ -217,3 +217,15 @@ are container/proxy-management paths, including a call to the VC7
 `allocator<std::_Container_proxy>::destroy`; this narrows the context but does
 not prove the original receiver type or STL/game ownership boundary. It remains
 unclassified and receives no exact credit.
+
+
+Marisa fighter `Advance` (`00486550`) now retains its 158 recovered action
+bodies in the original six inclusive action bands instead of one flat switch.
+The low `0x00..0x0A` switch, the `0x32` branch, and the five boundary actions
+`0x8C`, `0x12C`, `0x186`, `0x1F4`, and `0x2C2` are separated; the normal
+high-range cases share the original nested-frame fallback. Range-crossing case
+includes were split into ordinary C++ source units so each switch covers only
+its native range. The pinned VC7.1 probe compiles and tracking validation passes;
+this is a control-flow/source-organization advance, not an exact-byte claim.
+The large function still needs stack-frame, register-allocation and byte-level
+work. No full cold replay was run.
