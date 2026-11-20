@@ -523,3 +523,13 @@ reads now use `field32A[index]` (with the observed signed-byte conversion) and
 their pre-change objects: Reimu 62,090 bytes, Sakuya 83,922, Youmu 47,655, and
 Remilia 59,236. These are source/codegen-preservation checks, not claims that
 the four parents are now exact against the original executable.
+
+The remaining unused `RAW`/`F32`/`U8` macro scaffolding was removed from the
+Sakuya, Youmu, and Remilia giant probes; each object stayed byte-identical to
+its saved pre-edit object. Reimu's last two active `RAW` field reads were also
+recovered: its random-shot resource selector now selects the named `inputA`
+or `inputB` member at preprocessing time, and its final effect reads
+`field370[field39D]`. The complete Reimu `Advance` object also stayed
+byte-identical to its pre-edit object. All four giant parent sources now have
+no `RAW`, `I16`, `F32`, or `U8` view macros; this is a source-semantic cleanup,
+not a claim of new whole-function exactness.
