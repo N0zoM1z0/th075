@@ -180,6 +180,29 @@ def main() -> int:
     missing_handlers = sorted(set(handler_actions) - represented_handlers - {default_handler})
     has_default = bool(re.search(r"^\s*default\s*:", SOURCE.read_text(encoding="utf-8"), re.M))
 
+    # The source order of this sparse late-card switch is observable in the
+    # compiler's emitted handler layout. Guard it against accidental numeric
+    # sorting: the original PE handler addresses define the required order.
+    late_tail = PROBES / "MarisaFighterCardTail2BC2C1.inc"
+    late_order = [
+        int(match.group(1), 0)
+        for line in late_tail.read_text(encoding="utf-8").splitlines()
+        if (match := re.match(r"\s*case\s+(0x[0-9a-fA-F]+|\d+)\s*:", line))
+    ]
+    if len(late_order) != len(set(late_order)):
+        raise ValueError("duplicate action in Marisa late-card handler order")
+    if any(action not in handler_by_action for action in late_order):
+        raise ValueError("late-card source case is absent from the original handler map")
+    expected_late_order = sorted(late_order, key=handler_by_action.__getitem__)
+    if late_order != expected_late_order:
+        print(
+            "late-card handler order mismatch: source="
+            + ", ".join(f"0x{x:X}" for x in late_order)
+            + "; PE="
+            + ", ".join(f"0x{x:X}" for x in expected_late_order)
+        )
+        return 1
+
     print(
         f"Marisa Advance source dispatches: {len(source)} (including special if-dispatches); "
         f"mapped Ghidra top-level labels: {len(top_level)}; "

@@ -265,3 +265,10 @@ map rather than inferred from numeric action IDs. The original PE emits
 moved `0x2C1` ahead of `0x2BF`/`0x2C0` was therefore reversed. The source order
 now follows the verified PE handler layout; the focused VC7.1 build and the
 158-action coverage check pass.
+
+
+The Marisa source-coverage verifier now also enforces the `0x2BC..0x2C1` card
+tail's source order against the original PE handler addresses. This catches a
+case reorder that preserves action coverage but changes emitted handler layout.
+The validator reports the source/PE order separately from its 158-action
+coverage result.
