@@ -1292,3 +1292,15 @@ not be attributed to this action. The source remains eight iterations. The
 brief ten-iteration probe was reverted and receives no semantic or exactness
 credit. The parent remains at 522 GPR-role and five width differences, with
 first mismatch `00515C0E`.
+
+The Patchouli first GPR divergence `00515C0E` is the entry of action
+`0x358` (source fragment `CharacterObjectBoss358F1101.inc`), not action
+`0x356`. Its following `cmp [ebp-0x6c], 0x0A` at `00515C73` is the ten-effect
+loop already present in the `0x358` source. Action `0x356` is the separate
+preceding switch arm and correctly retains its eight-effect loop. Five
+predicate-order/inclusive-bound forms and several local-owner aliases were
+compiled against the whole parent for `0x358`; none produced an acceptable
+improvement. The stage-first condition reduces a raw zipped GPR count but
+reorders the native tests and adds instruction/width differences; mnemonic-
+aligned comparison confirms it does not solve the register rotation. All
+experiments were discarded; both case sources remain unchanged.

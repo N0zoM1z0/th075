@@ -638,3 +638,11 @@ The Reimu `00470A40` auxiliary controller likewise had an unused
 `FIELD(type, offset)` raw-pointer macro despite using only observed Fighter
 members. The dead macro/undef are removed; its full 1,027-byte leaf cold
 replayed 1/1 exact with all eleven original relocations.
+
+Patchouli case attribution is now explicit: `00515C0E` is the first
+instruction of action `0x358` (`CharacterObjectBoss358F1101.inc`), whose
+`0x0A` loop at `00515C73` is already correct. Action `0x356` is the preceding
+case and its own Ghidra arm confirms an eight-effect loop. Reordered
+predicate and owner-alias trials on `0x358` did not yield a source form that
+preserves the native instruction order/register allocation; no giant source
+was changed.
