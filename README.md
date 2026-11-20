@@ -13,21 +13,21 @@ relocation, cold-builds byte-identical to the original.
 ## Status
 
 `scripts/repo-python scripts/report-reconstruction-status.py --summary`
-prints the live numbers. Snapshot: 2026-11-19. Re-run the command for live numbers:
+prints the live numbers. Snapshot: 2026-11-20. Re-run the command for live numbers:
 
 | | |
 | --- | --- |
 | Target | user-supplied `resources/th075.exe` v1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
-| Exact functions | 983 (871,662 original CODE bytes) |
-| Authored coverage | 44.16% of 1,973,717 bytes (44.09% including 94 review candidates / 3,407 pending bytes) |
-| Remaining authored functions | 22, all giant per-character `Advance` state machines (1,102,055 bytes) |
+| Exact functions | 988 (933,442 authored CODE bytes) |
+| Authored coverage | 47.29% of 1,973,772 bytes (47.21% conservative, including 90 origin-review candidates / 3,315 pending bytes) |
+| Remaining authored functions | 20 giant per-character `Advance` state machines (1,040,330 bytes; 11 fighters and nine objects) |
 
 The 98% authored-byte goal is not met.
 
 ## Where to start
 
 - [Handoff](docs/RE_HANDOFF.md): current work and next steps.
-- [Giants](docs/GIANTS.md): the 22 remaining functions, their research
+- [Giants](docs/GIANTS.md): the 20 remaining functions, their research
   parents and measured register debt.
 - [Knowledge base](docs/KNOWLEDGE_BASE.md): class structure, layouts and
   VC7.1 code-generation rules.

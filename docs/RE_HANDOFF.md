@@ -1,782 +1,160 @@
 # TH075 handoff (2026-11-20)
 
-Follow [AGENTS.md](../AGENTS.md) first. This handoff is the live task summary;
-[GIANTS.md](GIANTS.md) contains the complete-parent measurements and the
-remaining compiler investigation. The user reports no other active sessions.
-Inspect Git before editing and continue all work in the registered repository.
+Follow [AGENTS.md](../AGENTS.md) first. This file is the concise live
+handoff; [GIANTS.md](GIANTS.md) keeps the complete-parent table, detailed
+compiler investigations and rejected hypotheses. The user reports no other
+active sessions. Continue in the registered `th075` repository and inspect
+Git before every change.
 
-## Live state
+## Live reconstruction state
 
-The current status command is:
+Run this command for authoritative current counts:
 
     scripts/repo-python scripts/report-reconstruction-status.py --summary
 
 Snapshot checked on 2026-11-20:
 
-- 4,351 candidate functions: 986 mapped/source-present/exact, 1,008 authored,
-  90 origin-review candidates, and 3,253 excluded.
-- 986 exact functions, 871,717 original CODE bytes, across 986 match units.
-- Authored coverage is 44.17% of 1,973,772 bytes. Conservative coverage is
-  44.09%, including 3,315 pending-origin bytes.
-- The 22 remaining authored functions are all slot-1 Advance methods on the
-  11 fighter and 11 character-object vtables. They total 1,102,055 CODE bytes.
+- 4,351 candidate functions: 1,008 authored, 90 origin-review candidates,
+  and 3,253 excluded.
+- 988 accepted exact functions cover 933,442 authored CODE bytes.
+- The authored denominator is 1,973,772 bytes: 47.29% exact, or 47.21%
+  conservative when the 3,315 pending-origin bytes are included.
+- 20 authored functions remain, totaling 1,040,330 CODE bytes. All are
+  slot-1 `Advance` methods: 11 fighter vtables and nine character-object
+  vtables.
+- Thirteen whole-function parents are available: 11 remain nonexact and
+  two object parents are already exact (Alice `004EBDA0`, Remilia
+  `0055AC80`). Nine remaining functions do not yet have a complete parent.
 - The 98% authored-byte goal is not met.
 
-The historical R263 matrix is not the live origin queue. Its 97 rows /
-3,608 bytes remain historical evidence; the current ledger has 90 review
-candidates / 3,315 bytes. Use config/function-origins.csv as the authority.
+`config/function-origins.csv` is the live origin authority. The 97-row /
+3,608-byte R263 review matrix is historical; the live queue is 90 candidates /
+3,315 bytes. Do not use the historical count as the current backlog.
 
-The working tree was clean after four new reconstruction checkpoints on
-main; those commits have not been pushed. Recheck Git state before editing.
+The reconstruction baseline before this documentation pass was
+`43a36a53` (`gpt-web: align Yuyuko object case dispatch`); the worktree was
+clean and `main` matched `origin/main`. Recheck `git status --short --branch`
+and `git log` before editing.
 
-## Recent reconstruction work
+Target: the user-supplied Japanese TH075 v1.11 executable
+`resources/th075.exe`, SHA-256
+`bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 
-- Marisa fighter boss `0x00486550` now has a tracked typed partial source in
-  `probes/MarisaFighterAdvancePartial.cpp`: 158 native action-state bodies,
-  inherited named fields/methods, no offset casts or marker placeholders.
-  The latest nested handlers `0x12C`, `0x1F4`, and `0x2C2` add 1,147 original
-  bytes. A machine-code audit corrected 38 landing comparisons to strict
-  `< 0` where the original x87 `JP` path requires it, preserving separate
-  inclusive stage-exit guards in `0x133`/`0x189`; `0x2F9` now uses the original
-  50-unit opponent spacing and 870-unit reset height. All 141 unique top-level
-  Ghidra action labels and all 158 explicit
-  in-parent handler groups have source coverage; the shared default handler
-  is represented by the source default path. Its 51,920-byte/14,840-
-  instruction VC7.1 object is explicitly NONEXACT against the 50,735-byte /
-  14,260-instruction original. The 1,185-byte / 580-instruction difference
-  remains unaccepted; this is not an exact-credit claim.
+## Recently remeasured object frontiers
 
-Current focused source recoveries (2026-11-20):
+These four complete object parents were measured against the current source
+on 2026-11-20. `section` is the rebuilt COFF function size; the original CODE
+extent is the comparison target.
 
-- `91951cb2` and `933e13af`: the native 0x54-byte four-deque effect owner now
-  has typed advancing and dispatching views. The `Actor` virtual render slots,
-  frame pointer at +0x74 and dispatch flags +0x67/+0x68 replace raw pointer
-  arithmetic in three complete functions (296, 166 and 207 bytes); 3/3 cold
-  comparisons pass with complete relocations.
-- `1caedf6b`: Youmu's actual +0xFEC member is a 12-byte VC7.1 `std::list`
-  of 16-byte action snapshots, ending at the independently observed +0xFF8
-  allocation bound. The class constructor now automatically constructs the
-  native member, and reset explicitly clears it. Both exact owners, the
-  1,008-byte snapshot writer and all their header-dependent callers replayed
-  81/81. The complete 40,464-byte Youmu object `Advance` parent now reads
-  `owner->historyQueue` directly; its 938 relocation positions, types,
-  addends and destinations and every section byte remain identical. It is
-  still nonexact (913 GPR-role and ten instruction-width differences).
-- `48dca566`: the complete 859-byte `BattleScene::Update` invokes the effect
-  owner's `AdvanceAll` through `fighters[i]->field2EC` instead of raw +0x2EC
-  receiver casts. Its four direct relocations retain their target addresses;
-  74/74 affected exact units passed the focused cold replay.
+| Character | Address | Original CODE | COFF section | Mnemonic differences | Width differences | GPR differences | First GPR difference |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| Meiling | `005EB520` | 34,434 | 34,879 | 0 | 6 | 135 | `005F3904` (#9200) |
+| Yuyuko | `0057D580` | 43,845 | 44,327 | 23 | 28 | 897 | `00583489` (#6565) |
+| Yukari | `005A1600` | 43,599 | 44,104 | 0 | 11 | 613 | `005A88A8` (#7965) |
+| Suika | `005C9CC0` | 43,501 | 43,972 | 0 | 1 | 935 | `005D2558` (#9213) |
 
-- The effect manager now has actual `std::deque<Actor*> entries_[4]`.
-  `Spawn` uses native `push_back`, and deletion iterates and clears those
-  members directly, without pointer reinterpretations. The five affected
-  whole function bodies cold-replay 5/5 and all 58 header-affected exact units
-  replay 58/58. The manager's complete 24 source-owned code/EH/data sections,
-  46 relocations and two SafeSEH roots verify exact with a fresh 3/3
-  constructor/destructor/bind cold receipt. The section evidence changes only
-  emitted VC7.1 template symbol names, not target bytes, addresses, sizes or
-  resolved relocation destinations.
+The complete set of 11 nonexact parents and their compiler flags is in
+`config/frontiers.toml`. The other parent measurements are summarized in
+[GIANTS.md](GIANTS.md). A passing `check-frontier.py` is a nonregression
+result, not whole-function exactness.
 
-- The battle effect tick (`0x0045BDB0`, 296 bytes) and both rendering
-  dispatchers (`0x0045BC30`, 166 bytes; `0x0045BCE0`, 207 bytes) now
-  define methods of `EffectManagerLifetimeF161` itself and iterate its actual
-  `std::deque<Actor*>` members. The old F136/F137/F162 borrowed owner classes
-  and unused headers were removed. All three whole functions cold-replay
-  3/3 exactly, including every VC7.1 typed-deque relocation; no new authored
-  bytes are credited because these were already accepted functions.
+### Latest Yuyuko improvement
 
-- The independently exact 31,352-byte `CharacterAuxObject::Advance`
-  auxiliary state machine now uses ordinary implicit short assignments at 16
-  random-range and decay conversion sites, removing redundant casts. Its
-  entire 31,777-byte COFF section and 913 relocations still cold-replay
-  exact 1/1, with no change to credited authored bytes.
+In `probes/CharacterObjectActions0057D580F1237.cpp`, state 838's condition
+now evaluates the `animationStage == 0` / owner-action 611–613 arm before the
+independent `field080` / owner-action exclusions. The expression is
+Boolean-equivalent to the previous one; it only reorders plain field reads
+and lets VC7.1 choose a different natural register layout. No assembly,
+padding or machine-code literals were added.
 
-- Youmu's 16-byte snapshot record now has one natural field vocabulary
-  (`action`, `stage`, `x`, `y`, `facing`, `counter`) for both the writer and
-  `YoumuObject::Advance`. Six redundant union aliases and the historical
-  object-side typedef are gone. The 1,008-byte writer and all 81 header users
-  cold-replay exactly; the entire 40,464-byte giant parent and all 938
-  relocation offsets/types/addends/targets remain unchanged and NONEXACT.
+- The COFF section shrank from 44,331 to 44,327 bytes.
+- The frontier fell from 17,739 to 1,697 differing bytes: 16,120 formerly
+  differing bytes now match, with 78 previously matching offsets displaced.
+- All 198 switch-table entries for actions 800–997 now point to the same
+  relative state-entry offsets as the original.
+- The current instruction diagnostic is 23 mnemonic, 28 width and 897 GPR
+  differences; the first GPR mismatch is `00583489` (#6565).
 
-The latest commits restore natural C++ field types and call expressions in
-large research parents. They do not claim new giant exactness:
+This is substantial progress in a complete boss function, not an exactness
+claim. The next useful Yuyuko investigation starts at `00583489`; inspect the
+surrounding state-837/838 join and original control flow rather than assuming
+the first mismatch lies inside the state-838 entry itself.
 
-- dfa7b04b: removed 91 unnecessary short-reference casts for the signed
-  Fighter::fieldEFA member across Meiling, Suika, Alice, Reimu and Remilia.
-  Five complete COFF bodies and their relocation layouts remained identical.
-- 075bb570: typed YoumuObjectHistoryF1211 coordinates at +0x04/+0x08 as
-  floats and restored direct coordinate assignments. Its full 40,464-byte
-  parent and all 938 relocation positions/types remained identical.
-- 30cf0700: unified Youmu's R049 snapshot writer and R243 object-history
-  reader on one borrowed +0xFEC list view and one 16-byte record. The
-  1,008-byte auxiliary function still replays exact 1/1; the 40,464-byte
-  Youmu object COFF remains byte-identical with all 938 relocation
-  positions/types. R243's historical canonical verifier currently predates
-  the accepted R049 row and stops at that stale snapshot; do not downgrade
-  the accepted auxiliary function to make the old snapshot pass.
-- 40913af9: removed four redundant byte/word reference casts across the
-  complete Youmu, Yuyuko and Suika object Advances. All three complete COFF
-  bodies remain byte-identical at 40,464 / 44,331 / 43,972 bytes, with
-  938 / 1,043 / 991 relocation positions/types unchanged; all three giant
-  frontiers remain explicitly nonexact.
-- current work: moved the 30-byte `0x004071A0` held-input clear onto the
-  real `Fighter::inputBindings` member (`InputBindingsF171`) and replaced
-  the +0x494 receiver cast in `Fighter::ResetRound` with a typed member call.
-  The leaf and complete 1,151-byte reset caller both cold-replay exact (2/2);
-  the 28-byte `InputState` at block +0x2C is compile-time layout checked.
-  Original proposed role/name remains provisional.
-- b4c6ead7: removed 27 same-width reference casts from the complete
-  `Fighter::ClearAuxiliaryWords` and `Fighter::ResetRound` bodies, restoring
-  direct `int`, `unsigned long`, `float` and signed-byte member assignments.
-  The 89-byte clear helper and 1,151-byte reset caller remain cold-exact;
-  the 30-byte held-count leaf also replays exact after the typed-member move.
-- current work: typed `Fighter::field2EC` as the 0x54-byte
-  `EffectManagerLifetimeF161` owner and moved `DeleteFourLists` onto that
-  actual object. The owner destructor and Fighter reset caller now call the
-  member directly. The 221-byte cleanup, 85-byte destructor, 131-byte
-  constructor, 21-byte bind method, 1,151-byte reset caller and 30-byte
-  held-count leaf all pass focused replay (6/6); the original deque helper
-  template instantiations and all relocation positions remain intact.
-  The coupled owner object also passes all 24 whole code/EH/data sections,
-  237 authored bytes, 46 relocation fields and both SafeSEH roots with a
-  fresh canonical receipt.
-  The 282-byte `0x0045BB10` spawn routine now belongs to that same owner:
-  `EffectManagerLifetimeF161::Spawn` uses the bound Fighter's virtual slot 7,
-  the four typed float parameters through `CharacterObject::field0D4`, and
-  the actual four deque members. Its 282 bytes / three direct relocations
-  replay exact. The 29 exact units depending on `CharacterObject.hpp` replayed
-  29/29; the owner lifecycle replayed 3/3 and the 24-section EH/data verifier
-  passed with the fresh receipt.
-- current follow-up: `Fighter::SpawnBattleEffect` and the existing tracked
-  forwarder now call `field2EC->Spawn` directly. Removed the F135/F136
-  queue/spawner receiver declarations and the F973 raw byte-view header;
-  the two F169 tracked-effect entry points use typed Fighter fields through
-  their call-only receiver view. The six Fighter policy functions, both
-  tracked-effect helpers and the 282-byte manager Spawn all cold-replay 9/9.
-- 1c67b549: restored float types for FighterFrameInfo +0x2C/+0x30 and Actor
-  +0x94/+0x98. Reimu's full fighter COFF and 1,824 relocations remained
-  identical; the 462 affected exact units cold-replayed 462/462.
-- ba650436: restored 22 same-type float assignments in SuikaObject::Advance.
-  Its full 43,972-byte COFF and all 991 relocation positions/types remained
-  identical.
-- 6ab698e5: restored 97 float copies in Sakuya/Youmu/Yukari object parents
-  and 93 direct signed-int accesses to Remilia's declared field07C. All four
-  complete parent COFF bodies and relocation layouts remained identical.
-- 003c377f: restored 31 same-type float copies in SakuyaObject::Advance.
-  Its full 42,937-byte COFF and all 929 relocation positions/types remained
-  identical.
+## Remaining giant parents
 
-The shared Fighter::fieldEFA migration is now complete in the remaining
-known giant callers. A follow-up removed 61 more signed-short aliases from
-29 shared boss-state fragments; complete Patchouli, Reimu, Sakuya, Youmu and
-Remilia parent builds retained every code byte and relocation. `fieldEFE` is
-also restored as a signed short stage-fade timer; both Meiling/Patchouli
-renderers retained all 1,606 bytes and 40 relocations, and the 23 affected
-render/init/reset units replayed 23/23 exact. No ASM, padding, fake returns or
-target-byte arrays were introduced. The exact CharacterProjectileAdvanceF379
-leaf remains exact.
+The 11 complete but nonexact parents are:
 
-The shared math leaves now have natural C++ source in `src/MathFloatHelpers.cpp`:
-R269/R270 recovered the 21-byte authored atan2 wrapper while keeping its 37-byte
-VC7.1 inline worker library-owned; R271 recovered the 17-byte fabsf and sqrtf
-game wrappers from 30/68 and 3/6 complete authored caller graphs. Their three
-whole wrapper units cold-replay 3/3 exact. The 28-byte fabsf/sqrtf workers remain
-origin-unknown under the preserved R163 alternatives; no CRT or worker bytes
-were double-credited.
+- Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
+  Remilia `00543210`.
+- Objects: Sakuya `004CA6E0`, Patchouli `0050A580`, Youmu `00536400`,
+  Yuyuko `0057D580`, Yukari `005A1600`, Suika `005C9CC0`, Meiling
+  `005EB520`.
 
-- Youmu's +0xFEC action-history queue is now an actual 12-byte
-  `std::list<ObservedInputSnapshotF378>` member of the 0xFF8-byte
-  `YoumuFighter`. The auxiliary writer uses native `push_back`, `size`,
-  `pop_front`; the 39,999-byte object `Advance` uses `front`. The constructor,
-  reset and auxiliary units cold-replay 3/3, and all 81 exact users of the
-  changed header replayed 81/81. The 40,464-byte object parent and all 938
-  relocation locations/types/addends/local destinations remain unchanged;
-  its 913-GPR/10-width nonexact frontier is not promoted.
+The nine remaining functions without a complete parent are:
 
-## Giant priorities
+- Objects: Reimu `00476A40` (50,915 bytes), Marisa `0049C8F0`
+  (46,596 bytes).
+- Fighters: Marisa `00486550` (50,735 bytes), Alice `004D7E70`
+  (43,601 bytes), Patchouli `004F7130` (44,211 bytes), Yuyuko `00564BE0`
+  (61,872 bytes), Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0`
+  (71,616 bytes), Meiling `005D73C0` (43,282 bytes).
 
-There are 12 complete, nonexact research parents and nine without a complete
-parent. GIANTS.md retains the complete-parent table, including Alice as the
-newly exact 33,293-byte object parent.
+`docs/GIANTS.md` records the full sources, original extents, previous
+experiments and useful negative results. In particular, do not repeat the
+22 already-tried Meiling 997/998 source variants at `005F3904` or the
+rejected Sakuya 809/810 variants without new target evidence.
 
-The closest remaining nonexact parents by register-role debt are:
+## Recent source checkpoints
 
-1. Meiling object 005EB520: 135 GPR differences, six width differences;
-   first divergence 005F3904.
-2. Sakuya object 004CA6E0: 447 GPR differences, 12 width differences.
-3. Patchouli object 0050A580: 522 GPR differences, five width differences;
-   first divergence 00515C0E.
+The latest commit improves Yuyuko's complete object `Advance` parent. The
+preceding checkpoints also replace raw Fighter/NameEntry offset access with
+shared typed members for result state, command bytes, snapshot score/health,
+result and staff-roll score reads, and the NameEntry texture/state prefix.
+Inspect `git log -10 --oneline` for the exact checkpoint sequence; each uses
+the requested `gpt-web: ...` prefix.
 
-Work on the remaining bosses from the whole function, not isolated switch
-fragments. Alice `004EBDA0` is now canonical exact: one natural-C++ source
-build compares all 33,731 bytes (33,293 authored CODE plus 240-byte and
-198-byte switch tables), with 682 relocation records and 1/1 exact replay.
-The table extents are separately compared and do not increase CODE coverage.
-Eight casts around integer `RecordedRange` subtraction were deliberately
-retained in the historical Alice cleanup because removing them changes the
-arithmetic. Meiling's 997/998 boundary has already had 22 natural-C++ variants
-without improvement. A separate source-cleanup pass removed six redundant
-numeric casts from the whole Meiling giant while retaining all 34,879 COFF
-bytes and 806 relocation positions/types/addends/local targets; its 985-byte /
-135-GPR / six-width frontier remains unchanged. Youmu's 39,999-byte object
-giant also lost 13
-redundant short casts while retaining its full 40,464-byte COFF and 938
-relocation positions/types/addends/local targets; its 913-GPR / 10-width
-frontier remains unchanged. Sakuya's 809/810
-gate was also revisited on 2026-11-19; all syntax-only variants were discarded.
-The best transient Sakuya form was two bytes too large and failed the frontier
-size check. Do not repeat those attempts without new target evidence.
-A separate Sakuya source cleanup removed five redundant angle-result short
-casts while preserving all 42,937 COFF bytes and 929 relocation positions,
-types, addends and local targets; its 447-GPR / 12-width frontier is unchanged.
-Remilia's 28,868-byte object giant also dropped 24 redundant numeric casts
-while preserving all 696 relocation positions, types, addends and local
-targets; its 726-GPR / six-width frontier is unchanged.
-Suika's 43,501-byte object giant also dropped 18 redundant short casts
-while preserving all 43,972 COFF bytes and 991 relocation positions/types/
-addends/local targets; its 935-GPR / one-width frontier is unchanged.
-Yukari's 43,599-byte object giant also dropped six redundant short casts
-while preserving all 44,104 COFF bytes and 943 relocation positions/types/
-addends/local targets; its 613-GPR / 11-width frontier is unchanged.
-Yuyuko's 43,845-byte object giant also dropped two redundant angle-result
-short casts while preserving all 44,331 COFF bytes and 1,043 relocation
-positions/types/addends/local targets; its 914-GPR / six-width frontier is
-unchanged.
-Reimu's 60,999-byte fighter giant also dropped two redundant short casts
-while preserving all 62,090 COFF bytes and 1,824 relocation positions/types/
-addends/local targets; its 6,311-GPR / five-width frontier is unchanged.
-Alice's 33,293-byte object giant dropped another 13 redundant short casts
-and one redundant float conversion while preserving all 33,731 COFF bytes and
-682 relocation positions/types/addends/local targets; its 133-GPR / zero-width
-frontier remains unchanged. Float casts protecting integer subtraction and
-integer division remain in place.
-Alice also loses eight redundant float wrappers around `RecordedRange`
-results while retaining the one `0..4 - 2` wrapper whose removal changes
-code generation; the full 33,731-byte body and all 682 relocations remain exact.
+## Next-agent working loop
 
-For a complete parent:
-
-    scripts/repo-python scripts/measure-giant.py 004EBDA0 005EB520
-    scripts/repo-python scripts/check-frontier.py alice-object-advance-004ebda0 meiling-object-advance-005eb520
-
-Measure after each substantive change. A frontier check is a nonregression
-guard, not exact acceptance. A giant is exact only after a complete replay
-unit covers its whole body and relocations.
-
-## Small-leaf follow-up
-
-The 8-byte 00531D80 and 11-byte 00531D90 functions have decorated VC7 list
-node symbols (_Nextnode and _Prevnode for the std::list specialization for
-CharacterValueObservation) in config/character-list-front-origin-evidence.json
-and config/character-list-policy-origin-evidence.json, respectively. They
-have many callers but remain unclassified/review in the canonical ledgers.
-Treat the decorated symbols and caller graph as leads, then verify the
-complete source signature and origin independently.
-
-00411E80 and 00411E90 are another short accessor pair with 13 and nine
-observed callers respectively. Their source identity and origin are still
-review; do not name or classify them from their tiny bodies alone.
-
-## Working loop
-
-1. Check git status and read the relevant class/source, complete parent,
-   frontier and current target evidence.
-2. Use Ghidra through scripts/ghidra.py and the existing headless runtime.
-   Keep compiler builds serial and invoke repository Python through
-   scripts/repo-python.
-3. Restore real C/C++ types, member access and control flow. Do not use
-   assembly, padding, inert code, invented ABI declarations or source splits
-   to imitate progress.
-4. Compare the complete affected COFF body and every relocation. If a shared
-   header or ABI changes, cold-replay only the affected exact units.
-5. Commit substantial progress with the requested prefix: gpt-web: ...
+1. Read `AGENTS.md`, this handoff, the relevant section of `GIANTS.md`, and
+   the complete source/target context for the selected parent.
+2. Measure the whole function with `scripts/repo-python
+   scripts/measure-giant.py ADDRESS`; use Ghidra through
+   `scripts/repo-python scripts/ghidra.py` and the existing headless runtime.
+3. Work on complete boss control flow and natural C++ types/expressions.
+   Do not substitute ASM, padding, inert statements, byte arrays, fake ABI
+   declarations or source splits for reconstruction.
+4. Build and compare only the selected parent. Run
+   `scripts/repo-python scripts/check-frontier.py FRONTIER_NAME` after a
+   substantive parent change; update its ratchet only when the improvement
+   has been reviewed.
+5. Cold-replay only newly accepted or affected exact units, including shared
+   header consumers when relevant. Never run the full cold replay merely for
+   a handoff or progress check.
+6. Commit each substantive checkpoint promptly with `gpt-web: ...`; make
+   multiple coherent commits during a productive session rather than stopping
+   after the first one.
 
 Useful commands:
 
+    git status --short --branch
+    scripts/repo-python scripts/verify-target.py
     scripts/repo-python scripts/validate-tracking.py --require-target
     scripts/repo-python scripts/report-reconstruction-status.py --summary
     scripts/repo-python scripts/measure-giant.py ADDRESS
     scripts/repo-python scripts/check-frontier.py FRONTIER_NAME
     scripts/repo-python scripts/replay-exact-units.py --unit UNIT_NAME
 
-Never run a full cold replay merely for handoff. Documentation-only changes
-need git diff --check; ordinary notes do not need compiler replay or full CI.
+For documentation-only changes, `git diff --check` is sufficient. Do not run
+full CI or full cold replay without a demonstrated need.
 
-## Storage state
+## Storage handoff
 
-The generated build scratch tree has been cleared at this handoff; build/
-is recreated empty and repository scripts repopulate it as needed. Python
-bytecode caches and this session's temporary replay/batch logs were removed.
-The active .analysis research contexts, layout-tools, Ghidra project, shared
-.tools installation, game-specific Wine prefix, original target and canonical
-config ledgers were preserved. See [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md)
-before removing any further private research context.
-
-The common Fighter `scriptCounterF00/F02` fields at +0xF00/+0xF02 are now
-proper signed `short`s. 813 signed-short reinterpret-reference aliases across
-140 source/include files now use the actual members directly; 29 redundant
-short casts on assignments were also removed. Reimu/Sakuya/Youmu/Remilia full
-fighter `Advance` COFF bodies and relocation maps remain byte-identical
-(62,090/1,824; 83,922/2,352; 47,655/1,491; 59,236/1,863). The 12 affected
-exact reset/dispatch units replayed 12/12. A follow-up removes six
-`static_cast<signed short>` wrappers from three Youmu scripted-state fragments;
-the full 47,655-byte Advance body and all 1,491 relocations remain identical.
-The shared scripted fragments then lost 16 redundant integer-promotion casts
-and 18 float-promotion casts around the now-signed counters. All four full
-fighter Advance bodies were rebuilt once more; every byte and relocation
-position/type/addend/local target remains identical.
-All four giant frontiers are unchanged and remain nonexact.
-A further signed-counter cleanup removes 16 redundant int staging casts and
-two float casts in six bounce/resource-volley fragments. The four complete
-Reimu/Sakuya/Youmu/Remilia fighter `Advance` bodies and all relocation maps
-remain identical; the GPR/width frontiers are unchanged.
-The signed-counter work also removes 58 unsigned-short reference aliases
-from zero-initialization of five already-signed Fighter fields across 19
-initialization/reset sources. All 20 affected exact units replayed 20/20.
-`Fighter::fieldEF8` (+0xEF8) is now declared `unsigned short`, matching its
-per-frame increment and the unsigned phase/modulo reads in Marisa's chain
-renderer and the battle HUD. Five affected exact units replayed 5/5.
-The reset-field cleanup removes a further 38 unsigned-short aliases around
-zero writes to signed `aiWaitTimer/aiStep/aiCardTimer`, `field6FA/field6FC`,
-Suika `fieldF28/fieldF2A`, and Yuyuko `fieldF10`. All 20 exact init/reset
-units replayed 20/20 again; no unsigned-short reference aliases remain in
-tracked source/probe files.
-`Fighter::field478` (+0x478) is also a signed short: the native resource
-loader sign-extends it before `AllocateSlots`. The declaration and call now
-use the natural member directly; the complete 1,186-byte loader body and all
-63 relocations remain identical, with the loader plus all eleven character
-initializers replayed 12/12.
-`Fighter::field6F8` (+0x6F8) is now `signed char`, matching the `movsx`
-loads in both Meiling/Patchouli stage renderers. Removing their two
-reinterpret-reference views preserves both 1,606-byte bodies and all 40
-relocations; the affected exact renderers replayed 2/2.
-The five Mode 5 option bytes at `+0x52C..+0x531` (excluding the already-signed
-`+0x52F` byte) are now declared `signed char`, matching their native signed
-loads and the existing signed direction view. Thirty-nine signed-byte alias
-views across five source files were removed. Seven affected exact pause,
-debug, options, render, state, frame-action and reset functions replayed 7/7.
-`BattleScene::field118` (+0x118) is now `signed char`, matching the pause
-menu's negative wrap checks and signed navigation. Thirty-three signed-byte
-alias views in four source files were removed. Nine exact pause, debug, end
-overlay, Mode 5, state, scene-construction, pause-shortcut and frame-action
-functions replayed 9/9 with complete COFF bodies and relocations unchanged.
-The character-selection `chosenCharacter` and `alternateCharacter` arrays
-(+0xE0/+0xE2) are now signed bytes, matching the controller's negative
-wrap/decrement logic. Seventy signed-reference aliases and 29 explicit
-signed casts were removed; six exact selection controller, card/background/
-options render, subselection and reset functions replayed 6/6 unchanged.
-The name-entry `field120` at `+0x120` is now `signed char`, matching the
-parallel sprite-name view and the signed editor row-offset calculation. Its
-last signed-byte reinterpret cast is gone; `NameEntryScene::UpdatePlayer`
-remains byte-identical at 541 bytes with all 11 relocations, replayed 1/1.
-`Fighter::field713` (+0x713) is now `signed char`, matching the result
-scene's native `movsx` sequence-state tests. The two signed-reference views
-were removed. Both full character-sequence giants, the result update and all
-eleven fighter initializers retained complete COFF bytes and relocations;
-14 affected exact units replayed 14/14.
-`Fighter::field3CF` (+0x3CF) is now `unsigned char`, the continuation/status
-byte immediately following the one-byte F992 outcome union. Seventeen
-signed/unsigned reference aliases across BattleStateMachine and nine fighter
-fragments were removed. All four complete Reimu/Sakuya/Youmu/Remilia fighter
-parents and relocation maps remain identical; the exact battle-state
-function replayed 1/1.
-`Fighter::field3CE` (+0x3CE) is now a one-byte `FighterOutcomeByteF992` union
-with explicit signed/unsigned views. The 17 signed reinterpret-reference
-views and 18 `F992_OUTCOME` borrowed-window macro accesses are now direct
-member operations; the old two-byte pointer-arithmetic overlay was removed.
-All 56 affected exact functions across six battle/combat/KO/round-end/reset
-translation units replayed 56/56 with complete bodies and relocations
-unchanged.
-Another 45 redundant unsigned-byte aliases around writes to already-signed
-members were removed: eleven `field532` character initializers, BattleScene
-`field018`, Meiling `sequencePhase`, Fighter `field484/field3AD/noticeState`
-and ResultScene `field00C`. Thirty-eight exact functions across twenty
-affected translation units, including the 3,797-byte Meiling stage
-configuration and hit/KO/notice helpers, replayed 38/38 unchanged.
-`ReplayRecords::AppendRecord` now increments its signed-byte `field116`
-cursor directly; the complete 1,252-byte body and all 50 relocations remain
-identical, replayed 1/1.
-Four Youmu stage-two fragments replace twenty signed-byte reinterpret
-aliases for opaque color channels with direct unsigned `0xFF` assignments.
-The complete 47,655-byte `YoumuFighter::Advance` body and all 1,491
-relocations remain identical; frontier drift remains 16,833 bytes, unchanged.
-Six further unsigned-byte aliases were removed from round-winner writes,
-the round-record signed-byte conversion, projectile direction and notice
-render step arguments. The four affected translation units replayed 11/11
-exact functions.
-Forty-one `char&` aliases of signed `facing` fields were removed from 21
-Reimu/Youmu shared fragments. The complete Reimu and Youmu `Advance` bodies
-and all relocation maps remain identical; their nonexact frontier counts
-remain 42,551 and 16,833 differing bytes, unchanged.
-Twenty more byte aliases were removed from five large fighter parents:
-ten zero writes to `field3AC`, seven direct signed-byte `field366` decrements
-and three owner-facing copies. Complete Reimu/Sakuya/Youmu/Remilia advances
-and PatchouliObject advance bodies/relocations remain identical; their
-frontier drift counts remain 42,551 / 18,253 / 16,833 / 40,569 / 24,643.
-The four selection input counters now use explicit unsigned value casts
-instead of reference reinterpretation; all eight aliases are gone and both
-selection/update functions replayed 2/2 exactly.
-Forty float bit-copy aliases in the PatchouliObject action family and seven
-more in CharacterProjectile/CharacterObject initialization were replaced by
-ordinary float assignments. The complete 82,109-byte PatchouliObject giant
-and all 1,449 relocations remain identical; frontier drift stays 24,643
-bytes. Both exact leaf functions replayed 2/2.
-Ten redundant const-float reference casts around the already-float
-third-boss `velocityX` field were removed. Sakuya's complete 83,922-byte
-`Advance` and all 2,352 relocations remain identical; frontier drift remains
-18,253 bytes.
-Twelve float-member `int&` overlays were replaced with ordinary float
-assignments (Reimu `field490`, fighter `rotationZ`, Youmu owner-X and Y), and
-the pause-effect `field10C` positive assignment is direct. All eight
-`ProgressPauseF174` exact functions replayed 8/8; all four fighter giant
-bodies and relocation maps remained identical.
-`BattleScene::field010` (+0x010) is now a signed `int` frame/timeline
-counter; seventeen signed-reference aliases in frame update and timeline
-rectangle math were removed. Eleven more signed-reference overlays around
-positive writes to unsigned `field00C` were removed from pause/KO/round-end
-transitions without changing its storage type. Twenty-two exact functions
-across seven translation units replayed 22/22, including the complete
-3,459-byte overlay timeline and 4,764-byte battle-state machine.
-Collision body-contact and Actor snapshot paths now copy `field08C`,
-`field090`, `savedX` and `savedY` as their declared float members rather than
-through unsigned-long reference aliases. All three exact collision functions
-replayed 3/3. `BattleScene` construction also initializes float `field08C`
-with two direct `0.0f` assignments; the full 922-byte constructor and all 40
-relocations remain identical, replayed 1/1.
-The three `unsigned long&` aliases around signed `Fighter::score` were
-removed from knockout settlement, battle state transitions and pause/debug
-reset. Comparisons retain the native unsigned conversion against global score
-ceilings, and the score addition explicitly performs unsigned 32-bit
-arithmetic. Eight affected exact functions replayed 8/8, including the full
-4,824-byte `BattleScene::AdvanceState`.
-The replay queue policy no longer uses its `QUEUE` pointer-arithmetic macro;
-clear and empty checks are direct member calls. Static queue construction and
-destruction now declare the same typed owner prefix, file handle, record
-header, and four segmented queue members. The destructor directly closes the
-`HANDLE` and lets C++ destroy members in reverse order. Four affected exact
-functions replayed 4/4 (67, 35, 132 and 161 bytes).
-`ReplayRecords::LoadRecord` now shares the same typed owner and queue layout
-as `AppendRecord`: direct file path, record-offset array, serialized header,
-and four queue members replace its raw `AT`/`LIST` offset macros. The complete
-792-byte reader and 29 relocations remain identical; targeted replay passed
-2/2 for append and load.
-`ReplayRecords::AppendRecord` now models the native 20-byte segmented
-queue members and 8-byte owner/index iterators directly. The ten record file
-offsets, serialized header, and four queue objects have explicit typed
-members; all 23 raw owner-offset accesses and the `FIELD` macro are gone.
-The 1,252-byte body and all 50 relocations remain identical; targeted exact
-replay passed 1/1.
-`Actor` now models the `+0x080` auxiliary angle as a float overlay beside
-the ordinary signed hit-stop words `field080`/`field082`. Four
-`reinterpret_cast<float&>` views in `CharacterAuxObject::Advance` were
-replaced with the named union member. Complete 31,777-byte body and 913
-relocations remain identical; exact replay passed 1/1.
-`Fighter::field3A4` (+0x3A4) and `field3A8` (+0x3A8) are now signed
-`int` countdown fields, matching decrement, negative-clamp and knockout
-settlement semantics. Sixteen signed-reference aliases were removed. Forty-
-five exact functions across six affected translation units replayed 45/45;
-the four complete fighter `Advance` bodies and relocation maps remain
-identical.
-Fighter resource pointers now expose their observed alternate views as
-unions: `field534` is either the TimelineDrawing renderer view or the
-FighterTexture resource view, and `stageDrawing` keeps the general renderer
-pointer alongside the F286 stage texture pointer. Redundant pointer-reference
-aliases were removed from resource loading, overlay rendering, command
-selection, damage flash and opponent gauge paths. Ten exact functions across
-six translation units replayed 10/10, including full resource loading and
-battle damage-flash rendering.
-`Fighter::fieldF06` (+0xF06) and `fieldF08` (+0xF08) are now signed
-16-bit members, matching the third-boss arc, cadence and trajectory logic.
-Thirty-six signed-short reference overlays across eight boss fragments were
-removed. The complete 83,922-byte Sakuya `Advance` and all 2,352 relocations
-remain identical; 46 exact functions across eleven reset/shared-action
-translation units replayed 46/46. The four fighter giant frontiers remain
-unchanged, including Sakuya at 18,253 differing bytes.
-Input counter aliasing was cleaned up without changing the Fighter layout:
-A/B/C keep their signed 32-bit storage but use explicit unsigned value casts
-for native unsigned tests; D uses its declared unsigned value or an explicit
-value conversion where required. Twenty-nine exact functions across fifteen
-translation units replayed 29/29. All four complete fighter `Advance` bodies
-and relocation maps remained identical; frontier drift remains
-42,551 / 18,253 / 16,833 / 40,569 bytes.
-`Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
-signed render test; its render and base-reset functions remain byte-identical.
-Four signed-byte views used only to store zero to the unsigned `field39C`
-flag and the redundant signed view in the overlay timeline switch were also
-removed. Four affected exact functions replayed 4/4.
-
-A further typed-member pass removed HUD and collision borrowed views without
-changing the original generated code. `BattleScene::RenderHud` now reads the
-existing `Fighter::field32A` and `Fighter::healthLimits` arrays directly; its
-9,841-byte / 2,401-instruction exact unit replay passed 1/1. `ResolveBodySeparation`
-now passes the existing `FighterFrameInfo::bodyBox` member rather than
-recomputing `frameInfo + 0x44`; its 1,861-byte / 540-instruction exact unit
-replay passed 1/1. Unused notice/name-group borrowed windows and stale collision
-RECT/record macros were deleted. Six affected translation units compiled
-locally. The routing-only raw-member scan fell from 98 candidates to 80; this
-heuristic count is not an exactness or completion metric.
-
-Shared fighter giant-state probes were also made more semantic without changing
-VC7.1 output. Sixty-nine `I16(offset)` lvalue uses across the shared landing,
-trajectory, projectile, and counter fragments now name `scriptCounterF00` or
-`scriptCounterF02`; the four Reimu/Sakuya/Youmu/Remilia `Advance` translation
-units no longer need that offset macro. The two mode-63 borrowed byte-array
-reads now use `field32A[index]` (with the observed signed-byte conversion) and
-`field370[index]`. All four giant parent objects remained byte-identical to
-their pre-change objects: Reimu 62,090 bytes, Sakuya 83,922, Youmu 47,655, and
-Remilia 59,236. These are source/codegen-preservation checks, not claims that
-the four parents are now exact against the original executable.
-
-The remaining unused `RAW`/`F32`/`U8` macro scaffolding was removed from the
-Sakuya, Youmu, and Remilia giant probes; each object stayed byte-identical to
-its saved pre-edit object. Reimu's last two active `RAW` field reads were also
-recovered: its random-shot resource selector now selects the named `inputA`
-or `inputB` member at preprocessing time, and its final effect reads
-`field370[field39D]`. The complete Reimu `Advance` object also stayed
-byte-identical to its pre-edit object. All four giant parent sources now have
-no `RAW`, `I16`, `F32`, or `U8` view macros; this is a source-semantic cleanup,
-not a claim of new whole-function exactness.
-
-
-Alice object `004EBDA0` has now eliminated its first-join register debt with
-a natural empty stage-3 `else if` arm and is accepted by exact replay unit
-`alice-object-advance-004ebda0`. The replay compares 33,731 bytes while
-crediting only 33,293 authored CODE bytes; its 240-byte and 198-byte switch
-tables are compared as separately owned data. All 682 COFF relocation records
-and destinations are replayed, and the unit reports 1/1 exact. Next giant
-frontier is Meiling `005EB520` (135 GPR / six widths).
-
-The six `CharacterAIPolicy<Policy>::ChooseAction` instantiations now use the
-ordinary implicit integer-to-float conversion in five `rand()` comparisons;
-the adjacent right-hand expressions are already `float`, so the explicit
-`static_cast<float>` wrappers were redundant. The six affected 8,871-byte
-units cold-replayed 6/6 exact from one `CharacterAIPolicy.obj`; this changes
-source clarity only and leaves all native bytes/relocations unchanged.
-
-`CharacterAICardPolicy<Policy>::ChooseCardAction` uses the same ordinary
-implicit `rand()`-to-float conversions: its five explicit casts were removed
-without changing either 7,780-byte template instantiation. Both original card
-AI units cold-replayed 2/2 exact from one `CharacterAICardPolicy.obj`.
-
-`SpriteScene::CopyVector` now reads the observed +0x0C `Vector3` through a
-named `field00C` member instead of a raw `this + 0x0C` reinterpret-cast. The
-view explicitly models only the 12-byte unknown prefix and the copied vector;
-no enclosing `SpriteScene` size or later fields are claimed, and no instance
-is created. Its affected `GamePolicyHelpers.obj` unit cold-replayed 1/1 exact
-(38/38 CODE bytes).
-
-
-The `0x005FAC20` clear-field leaf now uses the native `CharacterAuxObject`
-owner and its observed `Actor::drawFrame` pointer at +0x08 instead of a raw
-`this + 8` DWORD store. `AuxEffect` remains only a source typedef preserving
-the reviewed historical role label; the COFF symbol and match-unit binding
-are the actual `CharacterAuxObject::ClearField8`. The 21-byte leaf cold
-replayed 1/1 exact, with zero relocations. This is a pointer-only inherited
-field view; no full auxiliary-object size is claimed.
-
-
-`Fighter::PlaySound` now calls the named `soundBank` union view at Fighter
-+0x6D0 instead of reconstructing the receiver with `this + 0x6D0`. The
-`EffectSoundBankF135` view occupies the already observed 20-byte subobject;
-its internal fields and any larger shared-bank owner's complete layout remain
-unknown. The existing raw `sounds[20]` view remains for the independent
-resource loader. The owner-sound leaf and that 1,186-byte loader both cold
-replayed exact, as did all four neighboring effect/sound forwarders (6/6
-affected units across two objects).
-
-The 2026-11-20 boss recheck narrowed the remaining frontiers without changing
-the tracked giant sources: Meiling's 135 GPR / six width differences are a
-stable EAX/ECX/EDX rotation inside action 998 at `005F3904`; Sakuya's first
-GPR divergence is earlier than the old 809/810 experiments, at `004CCBD7`
-in the action-800 four-float bounds guard. Ten equivalent guard rewrites did
-not change Sakuya's 447/12 frontier. Preserve the known-rejected transient
-809/810 variant (328 GPR but +2 bytes) as research only; do not promote it.
-
-Patchouli `0x356` was checked against its own Ghidra switch arm. That arm's
-native effect loop is `local_6c < 8`; the separate `0x0A` loop at `00515C73`
-belongs to a different control-flow block. The ten-iteration probe was
-therefore reverted; the tracked source remains at eight. No semantic repair
-or exactness credit is claimed for that probe. The parent remains at 522/5
-register differences with first mismatch `00515C0E`.
-
-
-`Fighter::ApplyOpponentGaugeChange` no longer reconstructs the opponent's
-`short` array at +0x33E with a raw pointer cast. The observed `Fighter::healthLimits[20]`
-member and signed `field39D` index are now used directly; the unused `FIELD`
-macro was removed. The 753-byte function cold-replayed 1/1 exact, preserving
-all original code and relocations.
-
-
-The independently exact Marisa auxiliary controller at `00496C60` no longer
-carries an unused `FIELD(type, offset)` raw-pointer macro; every actual access
-in its 1,027-byte body already uses the observed Fighter members. Removing
-the dead macro/undef leaves the complete function and all 11 relocations
-unchanged; its targeted cold replay passed 1/1 exact.
-
-The same 20-byte Fighter sound subobject now has three explicit, size-checked
-views: raw `sounds[20]` storage, `EffectSoundBankF135` playback, and
-`FighterSoundsF282` resource loading. `Fighter::LoadResources` uses
-`soundResources.Load` directly instead of reinterpreting the byte array; the
-resource-loading class retains its original COFF method symbol and has only an
-opaque 20-byte storage view. All six affected resource/effect/sound units
-cold-replayed 6/6 exact across three objects. No internal sound-bank field
-layout is claimed.
-
-`FighterNoticeF283::SetNoticeModeByte` now uses the observed inherited
-`Fighter::sequencePhase` member at +0x6E4 rather than a raw byte pointer at
-`this+0x6E4`. Its call-only view inherits the already verified Fighter prefix;
-no FighterNoticeF283 instances or new owner layout are asserted. The complete
-25-byte leaf cold-replayed 1/1 exact with no relocations.
-
-The Remilia `00555530` and Yuyuko `00577750` auxiliary controllers also had
-unused `FIELD(type, offset)` reinterpret-cast macros; all real accesses in both
-complete bodies already use observed Fighter members. Their dead macros and
-`#undef`s are removed. The 1,028-byte and 1,121-byte leaves cold-replayed 2/2
-exact with all original relocations.
-
-The Reimu `00470A40` auxiliary controller likewise had an unused
-`FIELD(type, offset)` raw-pointer macro despite using only observed Fighter
-members. The dead macro/undef are removed; its full 1,027-byte leaf cold
-replayed 1/1 exact with all eleven original relocations.
-
-Patchouli case attribution is now explicit: `00515C0E` is the first
-instruction of action `0x358` (`CharacterObjectBoss358F1101.inc`), whose
-`0x0A` loop at `00515C73` is already correct. Action `0x356` is the preceding
-case and its own Ghidra arm confirms an eight-effect loop. Reordered
-predicate and owner-alias trials on `0x358` did not yield a source form that
-preserves the native instruction order/register allocation; no giant source
-was changed.
-
-`FighterAnimationReset453D80::BindAnimation` no longer reaches the Fighter
-sequence vector through `this + 0x468`. The observed virtual receiver is a
-Fighter (vtable slot 0), and the existing `Fighter::sequenceSlots` member is
-now the source of the typed `AnimationSequencesF156` view. This preserves the
-original VC7 `AnimationSequencesF156::At` instantiation rather than swapping
-in the distinct `ActionSequenceSlots::At` interface. The complete 149-byte
-function and all five native calls/relocations cold-replayed 1/1 exact; the
-call-only receiver remains uninstantiated and no full Fighter layout is
-claimed.
-
-`FighterInputSequenceF165::MatchSequence` now reads the shared facing byte
-through the observed `Actor::facing` member at +0x66 instead of a raw
-`this+0x66` byte cast. The call-only receiver remains pointer-only; its separate
-+0x518 byte-deque view is still opaque because the complete owner member
-layout is not established. The full 695-byte function cold-replayed 1/1 exact
-with all 33 original COFF fields.
-
-
-Remilia object `0055AC80` is now a complete natural-C++ cold-exact unit.
-`CharacterObjectWhole0055AC80F1194.cpp` builds `RemiliaObject::Advance` with
-28432 native CODE bytes and a complete 28862-byte comparison extent. The
-adjacent 232-byte guarded jump table and 198-byte remap were separately
-verified against the original image and are not counted as CODE. All 696
-physical COFF relocations (302 DIR32, 394 REL32) were checked against their
-original destinations: 60 local labels and 636 external references. The
-non-initial-frame state-preservation branch restores the native condition
-flow without assembly, padding, fabricated locals or byte grafts. The
-single affected unit cold-replayed 1/1 exact; no full cold replay was run.
-
-The shared fighter byte at `Fighter+0x6E5`, written by the eleven
-character-specific `SelectVariant` overrides, is now declared as the observed
-`Fighter::field6E5` byte rather than a one-byte opaque gap. All eleven natural
-C++ overrides in `FighterSpecialVariantsF374.cpp` now assign the inherited
-member directly; the raw `this+0x6E5` reinterpret-cast macro is gone. The
-shared VC7.1 object cold-replayed all 11 affected complete 130-byte CODE
-functions and their 40-byte switch-table comparison extents (11/11 exact).
-The one-byte layout and `sizeof(Fighter)` are unchanged; the field's deeper
-semantic name remains provisional.
-
-`Fighter::LoadStageResource` now passes the already-declared `Fighter::name`
-member to the stage-texture format string instead of reconstructing the same
-`this+0xC4` address through a raw character-pointer cast. This is the actual
-260-byte name buffer declared at Fighter+0xC4; the stage index and all texture
-resource/lifetime operations are unchanged. The complete 374-byte function,
-including its EH and security-cookie relocations, cold-replayed 1/1 exact.
-
-`Fighter::UpdateCounters` now reads the frame's observed `FighterFrameInfo::flags`
-member directly and indexes the already-declared `Fighter::field430` counter
-array instead of rebuilding both addresses through byte-pointer casts. The
-counter value is explicitly converted to signed `int` before subtracting from
-the signed countdown, preserving the original arithmetic. The complete
-1696-byte function cold-replayed 1/1 exact.
-
-`BattleScene::Render` now reads both players' fade-alpha bytes through the
-existing `Fighter::fadeAlpha` member at +0x538. The two-byte borrowed fade
-window and its pointer arithmetic were removed from this renderer; draw order
-and overlay calls are unchanged. The complete 1637-byte render function
-(including all 91 relocations and its full comparison extent) cold-replayed
-1/1 exact.
-
-`BattleScene::AdvanceState` now reads the fighter's existing `field400`
-array directly instead of rebuilding `fighters[1]+0x400` through an `int*`
-cast. The member remains declared as `unsigned int` because other native
-writers/readers use the 32-bit unsigned payload; the original signed countdown
-sum is preserved with an explicit `static_cast<int>` at the arithmetic use.
-The complete 4764-byte state-machine function cold-replayed 1/1 exact.
-
-`NameEntryInitF435::NameEntryInitF435` now allocates, initializes and loads
-its already-declared `NameEntryTextureF435* texture` member directly instead
-of addressing the same inherited-layout-proven +0x08 member through a raw
-`this+8` cast. The member remains at +0x08 after the 8-byte SceneBaseF435
-subobject; allocation size, resource order and the other constructor fields
-are unchanged. The complete 260-byte constructor cold-replayed 1/1 exact.
-
-The `NameEntryInitF435` constructor's observed field prefix is now represented
-as natural C++ members: texture pointer +0x08, byte +0x0C, four short values
-+0x0E..+0x14, and selection pointer +0x18. The compiler's normal alignment
-places the first short at +0x0E; no hand-written gap/padding member was added.
-The still-untyped `GetSelection` output buffer at +0x1C remains a borrowed
-out-parameter because its record type/extent is not yet established. The
-complete 260-byte constructor cold-replayed 1/1 exact after the member rewrite.
-
-`StaffRollAdvanceF450::Advance` now reads the already established
-`Fighter::score` member at +0x2D0 instead of reconstructing the same address
-through a byte-pointer cast. The imported global retains its original `void*`
-linkage type (the COFF symbol is still the native `PAX` symbol); the use site
-casts to the known `Fighter` interface. The signed `int` score still undergoes
-the same usual conversion against the unsigned best-score global. Targeted
-208-byte cold replay remains 1/1 exact.
-
-`ResultScene::Render` now draws the fighter score through the existing typed
-`Fighter* g_ActorAt00671418` interface (`Fighter::score`, +0x2D0) instead of
-reconstructing the member address with `unsigned char*` arithmetic. The
-complete 1344-byte renderer cold-replayed 1/1 exact.
-
-`GameStateF201::SaveSnapshot` now obtains the fighter's score (+0x2D0) and
-health (+0x324) through the existing `Fighter` member definitions rather than
-three raw byte-offset loads. The global retains its original `unsigned char*`
-ABI symbol; only the use-site view is typed. Assignment to the snapshot's
-DWORD/WORD destinations preserves the original unsigned-width conversions.
-The complete 904-byte snapshot function cold-replayed 1/1 exact.
-
-The Meiling and eight-character `PollCommands` implementations now write the
-existing `Fighter::aiCommand` byte at +0x511 directly instead of routing each
-read/write through a repeated `this+0x511` cast macro. All nine complete native
-functions were replayed together: 9/9 exact across the two affected objects.
-The original one-byte field remains in the Fighter layout; no fake container
-or partial owner object was introduced.
-
-`ResultScene::ResultScene` now reads the secondary fighter's +0x460 value via
-the existing `Fighter::field460` member instead of a raw pointer-plus-offset
-load. The imported global remains `void*` to preserve its native symbol ABI;
-the use site supplies the established Fighter view. The complete 547-byte
-constructor cold-replayed 1/1 exact.
-
-Yuyuko's 43,845-byte `YuyukoObject::Advance` research frontier made a large
-state-dispatch alignment step. In state 838, the pure-field condition that
-handles owner actions 611/612/613 is now expressed with the stage/action arm
-first and the `action != 611 && field080 == 0 && action != 612` arm second.
-This is Boolean-equivalent to the previous expression: all terms are plain
-field reads with no side effects. It changes only source-level evaluation
-order and the compiler's register/code layout; no assembly, padding, or
-machine-code literals were introduced.
-
-The compiled body shrank from 44,331 to 44,327 bytes. The frontier now has
-1,697 differing bytes instead of 17,739: 16,120 formerly differing bytes
-match, with 78 previously matching offsets displaced by the compiler's new
-instruction layout. The reviewed frontier baseline records those offsets.
-Crucially, the original and rebuilt switch dispatch tables now agree at all
-198 action entries (800 through 997), including the formerly shifted state
-839 boundary. `scripts/check-frontier.py yuyuko-object-advance-0057d580`
-passes after recording the improvement; this is a nonexact giant-function
-frontier, not an exact cold-replay claim.
+The 202 MB generated `build/` tree has been cleared; the directory remains and
+repository scripts recreate its outputs. Rejected Yuyuko/Suika trial sources,
+completed replay scratch, superseded match-unit snapshots, one duplicate
+native-target JSON and Python bytecode cache were removed, saving about
+218 MB. The 134 MB `.analysis/` tree was retained because it contains active
+whole-function, original-PE, Ghidra and layout research. Preserve it rather
+than deleting it wholesale. Also preserve `.tools/`, `ghidra-project/`, the
+original executable and tracked resources. See
+[STORAGE_HYGIENE.md](STORAGE_HYGIENE.md) before further cleanup.

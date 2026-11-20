@@ -1,10 +1,11 @@
-# The 22 remaining giants
+# The 20 remaining giants
 
-Every authored function that is not yet exact is the slot-1 `Advance` of one
-of the 11 fighter or 11 character-object vtables: the per-frame state machine,
-one big `switch (action)`, 28–83 KB each. Thirteen have a complete research
-parent in `probes/` that compiles to the original instruction sequence apart
-from register choice. The other nine have no complete parent yet.
+All 20 currently unmatched authored functions are slot-1 `Advance` methods
+from 11 fighter and nine character-object vtables: per-frame state machines
+with large `switch (action)` bodies, 34–83 KB each. Thirteen parents have a
+complete research source in `probes/`: Alice object `004EBDA0` and Remilia
+object `0055AC80` are now exact, leaving 11 complete but nonexact parents.
+The other nine remaining functions have no complete parent yet.
 
 Measure a parent with
 
@@ -63,11 +64,13 @@ with no alternative union aliases or object-side overlay typedef. The
 whole 40,464-byte object `Advance` parent remains byte-for-byte identical,
 including all 938 relocation records. Its nonexact register frontier remains.
 
-## Complete research parents (measured 2026-11-19)
+## Complete research parents
 
-All thirteen have the original instruction count, frame, stack slots, branch
-targets and mnemonics. What remains is register choice and the few
-instruction widths that follow from it.
+The table lists all 13 complete parents. Meiling, Yuyuko, Yukari and Suika
+were remeasured on 2026-11-20; the other rows retain their 2026-11-19
+measurements. Instruction, width and register counts are diagnostic measures,
+not byte equality; mnemonic/width drift can accompany a register-allocation
+change.
 
 | Original | Character | Size | Parent | GPR debt | Widths | First GPR difference |
 | --- | --- | ---: | --- | ---: | ---: | --- |
@@ -80,7 +83,7 @@ instruction widths that follow from it.
 | 0050A580 | Patchouli object | 81,539 | `CharacterObjectWhole0050A580F1044.cpp` | 522 | 5 | 00515C0E (#10128) |
 | 00536400 | Youmu object | 39,999 | `CharacterObjectActions00536400F1211.cpp` | 913 | 10 | 005392F8 (#3223) |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
-| 0057D580 | Yuyuko object | 43,845 | `CharacterObjectActions0057D580F1237.cpp` | 914 | 6 | 00583489 (#6565) |
+| 0057D580 | Yuyuko object | 43,845 | `CharacterObjectActions0057D580F1237.cpp` | 897 | 28 | 00583489 (#6565) |
 | 005A1600 | Yukari object | 43,599 | `CharacterObjectActions005A1600F1231.cpp` | 613 | 11 | 005A88A8 (#7965) |
 | 005C9CC0 | Suika object | 43,501 | `CharacterObjectActions005C9CC0F1216.cpp` | 935 | 1 | 005D2558 (#9213) |
 | 005EB520 | Meiling object | 34,434 | `CharacterObjectWhole005EB520F1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
@@ -345,8 +348,8 @@ Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
 66 effect spawns, eight sounds and four camera-shake calls moved from
 borrowed owner declarations to shared game interfaces. Both 44,331-byte
 research bodies have exactly 1,043 relocation positions/types and zero
-nonrelocation byte differences. The 43,845 original CODE bytes remain
-nonexact (914 GPR-role differences and six widths); all 24 affected
+nonrelocation byte differences. At that earlier checkpoint, its 43,845
+original CODE bytes remained nonexact (914 GPR-role differences and six widths); all 24 affected
 exact units cold-replayed. Other parents retain their historical names.
 
 
@@ -1307,3 +1310,26 @@ improvement. The stage-first condition reduces a raw zipped GPR count but
 reorders the native tests and adds instruction/width differences; mnemonic-
 aligned comparison confirms it does not solve the register rotation. All
 experiments were discarded; both case sources remain unchanged.
+
+
+## 2026-11-20 — Yuyuko state-838 source-order frontier
+
+The complete Yuyuko object parent `0057D580` now expresses state 838's
+independent owner-action and stage tests in a different natural-C++ order.
+The `animationStage == 0` / owner-action 611–613 arm is evaluated first;
+the `owner->action != 611 && field080 == 0 && owner->action != 612` arm
+comes second. The predicates are Boolean-equivalent and read only ordinary
+fields, so this changes VC7.1's register/code layout without changing game
+behavior or introducing assembly, padding or machine-code literals.
+
+The COFF section shrank from 44,331 to 44,327 bytes. The byte frontier fell
+from 17,739 to 1,697 differences: 16,120 formerly differing bytes now
+match, with 78 previously matching offsets displaced. All 198 switch-table
+entries for actions 800–997 now resolve to the same relative state-entry
+offsets as the original.
+
+The current instruction diagnostic is 23 mnemonic, 28 width and 897 GPR
+differences, with the first GPR mismatch at `00583489` (#6565). This is a
+nonexact whole-function frontier. The next useful investigation is the
+surrounding state-837/838 join at that address; do not treat the first
+mismatch as necessarily belonging to the state-838 entry itself.

@@ -63,21 +63,25 @@ without a verified build.
 
 Use the existing Ghidra wrapper and local tools; do not use REA.
 Preserve **all** accepted exact units and origin evidence, including
-the historical R268 checkpoint and every later verified adoption. The 94
-unresolved origins remain unknown; they do not block reconstruction of
-independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
-For the still-unmatched authored backlog, count provenance via
-`config/function-origins.csv` (currently 22 = 22 giant + 0
+the historical R268 checkpoint and every later verified adoption. The live
+origin ledger has 90 origin-review candidates (3,315 pending bytes); the
+97-row / 3,608-byte R263 matrix is historical only. These candidates remain
+unknown until independently attributed; they do not block reconstruction of
+independently reviewed authored functions. Include all pending bytes in the
+conservative goal denominator. For the still-unmatched authored backlog,
+count provenance via `config/function-origins.csv` (currently 20 giant, zero
 small/medium), not by assuming every unknown candidate is authored.
 The 11 independently authored, formerly owner-blank copy/audio/sprite
 candidates have now all been accepted in F755–F780. Remaining origin-
 unknown candidates require independent attribution; an exact source-
 generated machine function does not itself prove authored ownership.
 Start with the live cohort in `docs/RE_HANDOFF.md` and `docs/GIANTS.md`;
-historical experiments must not override current evidence. The 22 remaining
-authored functions are the slot-1 `Advance` methods of the 11 fighter and 11
-object vtables. Thirteen have complete but nonexact research parents in
-`probes/`; measure one with `scripts/repo-python scripts/measure-giant.py
+historical experiments must not override current evidence. The 20 remaining
+authored functions are slot-1 `Advance` methods of 11 fighter and nine
+character-object vtables. Eleven have complete but nonexact research parents
+in `probes/`; nine have no complete parent. Alice object `004EBDA0` and
+Remilia object `0055AC80` are already exact and are not part of the remaining
+count. Measure a parent with `scripts/repo-python scripts/measure-giant.py
 ADDRESS`. Never count partial switch states as whole-function exact. Matching
 branch destinations or external PE targets does not prove relocation offsets
 or byte equality.
