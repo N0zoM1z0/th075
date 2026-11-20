@@ -20,6 +20,7 @@ extern float g_AngleShiftAt00657878;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_BounceXAt006590BC;
 extern float g_BounceYAt00658044;
+extern float g_BarrageOffsetAt00658DF4;
 extern float g_F748_SpeedScaleAt006590B8;
 extern signed char g_ModeAt006714B4;
 extern float g_ReimuLeapDragAt006583FC;
@@ -1507,8 +1508,43 @@ void YuyukoFighter::Advance() {
         }
         if (animationStage == 2 && animationFrame == 0)
             velocityX = -50.0f;
-        if (animationStage == 3 && animationFrame == 0)
-            PlaySharedSound(0x1D);
+        if (animationStage == 3 && animationFrame == 0) {
+            PlaySound(0);
+            scriptCounterF00 = static_cast<short>(
+                velocityX * g_ContactProjectionAt00657888);
+            scriptCounterF02 = static_cast<short>(
+                velocityY * g_ContactProjectionAt00657888);
+            UpdateGaugeTimer(300);
+            for (int burstIndex19E = 0; burstIndex19E < 5; ++burstIndex19E) {
+                field314 = static_cast<float>(burstIndex19E * 15 + 10);
+                field318 = 2.0f;
+                SetPolarVelocity(field314, 200.0f);
+                SpawnBattleEffect(0x320,
+                    (g_BarrageOffsetAt00658DF4 + velocityX) *
+                        static_cast<float>(facing) + x,
+                    y - velocityY, facing, 1);
+
+                field314 = static_cast<float>(burstIndex19E * 15 + 10);
+                field318 = 6.0f;
+                SetPolarVelocity(field314, 200.0f);
+                SpawnBattleEffect(0x321,
+                    (g_BarrageOffsetAt00658DF4 + velocityX) *
+                        static_cast<float>(facing) + x,
+                    y - velocityY, facing, 1);
+
+                field314 = static_cast<float>(burstIndex19E * 15 + 10);
+                field318 = 10.0f;
+                SetPolarVelocity(field314, 200.0f);
+                SpawnBattleEffect(0x322,
+                    (g_BarrageOffsetAt00658DF4 + velocityX) *
+                        static_cast<float>(facing) + x,
+                    y - velocityY, facing, 1);
+            }
+            velocityX = static_cast<float>(scriptCounterF00) *
+                g_BounceYAt00658044;
+            velocityY = static_cast<float>(scriptCounterF02) *
+                g_BounceYAt00658044;
+        }
         if (animationStage != 7 || animationFrame != 0)
             return;
         velocityX = 0.0f;
