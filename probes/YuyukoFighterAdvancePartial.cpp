@@ -15,6 +15,14 @@ extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
 extern float g_StopThresholdAt00657480;
 extern float g_ContactProjectionAt00657888;
+extern float g_BounceThresholdAt006590C0;
+extern float g_BounceScaleAt00657F74;
+extern float g_AngleShiftAt00657878;
+extern float g_F728_RandomOffsetYAt00657858;
+extern float g_BounceXAt006590BC;
+extern float g_BounceYAt00658044;
+extern float g_F748_SpeedScaleAt006590B8;
+extern signed char g_ModeAt006714B4;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -480,6 +488,256 @@ void YuyukoFighter::Advance() {
         if (animationStage != 1 || animationFrame != 0 || velocityY == 0.0f)
             return;
         ResetSecondaryCounter(velocityX == 0.0f ? 3 : 2);
+        return;
+
+    case 0x4A:
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -field094;
+            velocityY = field098;
+            field05C = 0.8f;
+            field07C = 0;
+        }
+        if (animationStage == 1 && velocityY < g_StopThresholdAt00657480) {
+            ResetSecondaryCounter(2);
+            return;
+        }
+        if (CheckHorizontalLimits() && velocityX <= g_BounceThresholdAt006590C0) {
+            ResetPrimaryCounters(0x4C);
+            velocityX = -velocityX * g_BounceScaleAt00657F74;
+            velocityY = 15.0f;
+            field05C = 0.5f;
+            SetCameraShake(2.0f);
+            PlaySharedSound(0x16);
+            scriptCounterF00 = 0;
+            return;
+        }
+        velocityY -= field05C;
+        if (y + velocityY <= g_ThresholdAt0065782C) {
+            PlaySharedSound(0x16);
+            scriptCounterF00 = static_cast<short>(velocityX * g_ContactProjectionAt00657888);
+            scriptCounterF02 = static_cast<short>(velocityY * g_ContactProjectionAt00657888);
+            ClearMotionFields();
+            y = 0.0f;
+            ResetPrimaryCounters(0x61);
+            SetCameraShake(2.0f);
+            return;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetSecondaryCounter(6);
+        return;
+
+    case 0x4C:
+        if (scriptCounterF00 == 0) {
+            ++scriptCounterF00;
+            ResetTransform(0.0f, 95.0f, 0.0f);
+        }
+        rotationZ += g_AngleShiftAt00657878;
+        velocityY -= field05C;
+        if (y + velocityY <= g_ThresholdAt0065782C) {
+            PlaySharedSound(0x16);
+            scriptCounterF00 = static_cast<short>(velocityX * g_ContactProjectionAt00657888);
+            scriptCounterF02 = static_cast<short>(velocityY * g_ContactProjectionAt00657888);
+            ClearMotionFields();
+            y = 0.0f;
+            ResetPrimaryCounters(0x61);
+            rotationZ = 0.0f;
+            SetCameraShake(2.0f);
+            ClearTransformFlag();
+            return;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetSecondaryCounter(0);
+        return;
+
+    case 0x58:
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -field094;
+            velocityY = field098;
+            field05C = 0.8f;
+            field07C = 0;
+        }
+        if (y + velocityY <= g_ThresholdAt0065782C) {
+            scriptCounterF00 = static_cast<short>(velocityX * g_ContactProjectionAt00657888);
+            scriptCounterF02 = static_cast<short>(velocityY * g_ContactProjectionAt00657888);
+            ClearMotionFields();
+            y = 0.0f;
+            ResetPrimaryCounters(0x59);
+            SetCameraShake(3.0f);
+            PlaySharedSound(0x16);
+            for (int effectIndex58 = 0; effectIndex58 < 10; ++effectIndex58)
+                SpawnBattleEffect(0x3E4, x, y, 1, 1);
+            if (fieldEFA < 26)
+                return;
+            fieldEFA = 0;
+            SpawnBattleEffect(0x3E3, x, y, 1, 1);
+            return;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetSecondaryCounter(animationStage - 1);
+        if (animationStage != 1 || animationFrame != 0 || velocityY == 0.0f)
+            return;
+        ResetSecondaryCounter(velocityX == 0.0f ? 3 : 2);
+        return;
+
+    case 0x59:
+        if (animationStage == 3) {
+            rotationZ += g_F728_RandomOffsetYAt00657858;
+            velocityY -= field05C;
+            if (y + velocityY <= g_ThresholdAt0065782C) {
+                scriptCounterF00 = static_cast<short>(velocityX * g_ContactProjectionAt00657888);
+                scriptCounterF02 = static_cast<short>(velocityY * g_ContactProjectionAt00657888);
+                ClearMotionFields();
+                y = 0.0f;
+                ResetPrimaryCounters(0x61);
+                rotationZ = 0.0f;
+                SetCameraShake(2.0f);
+                ClearTransformFlag();
+                PlaySharedSound(0x16);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetSecondaryCounter(3);
+            return;
+        }
+        if (animationStage != 3 || animationFrame != 0)
+            return;
+        velocityX = scriptCounterF00 * g_BounceXAt006590BC;
+        velocityY = -scriptCounterF02 * g_BounceYAt00658044;
+        field05C = 0.7f;
+        ResetTransform(0.0f, 95.0f, 0.0f);
+        return;
+
+    case 0x5D:
+    case 0x5E:
+        if (animationStage < 7 && y > g_ThresholdAt0065782C) {
+            velocityY -= field05C;
+            if (y + velocityY <= g_ThresholdAt0065782C) {
+                y = 0.0f;
+                ClearMotionFields();
+                ResetSecondaryCounter(7);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            if (inputY > 0)
+                ResetPrimaryCounters(1);
+        }
+        if (animationStage == animationStageCount - 1) {
+            if (opponent->x < x)
+                facing = -1;
+            if (x < opponent->x)
+                facing = 1;
+        }
+        if (animationStage == 3 && animationFrame == 0) {
+            velocityY = 8.0f;
+            velocityX = action == 0x5D ? 13.5f : -11.5f;
+            field05C = action == 0x5D ? 0.6f : 0.5f;
+        }
+        if (animationStage != 7 || animationFrame != 0)
+            return;
+        ResetSecondaryCounter(5);
+        return;
+
+    case 0x5F:
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(3);
+            if (inputY > 0)
+                ResetPrimaryCounters(2);
+        }
+        if (animationStage != animationStageCount - 1)
+            return;
+        if (opponent->x < x)
+            facing = -1;
+        if (opponent->x > x)
+            facing = 1;
+        return;
+
+    case 0x60:
+    case 0x61:
+        if (0 < facing * inputX &&
+                (inputA != 0 || inputB != 0 || inputC != 0 || inputD != 0))
+            scriptCounterF00 = 1;
+        if (facing * inputX < 0 &&
+                (inputA != 0 || inputB != 0 || inputC != 0 || inputD != 0))
+            scriptCounterF00 = 2;
+        if (animationStage == 0 && animationFrame == 0) {
+            for (int effectIndex60 = 0; effectIndex60 < 10; ++effectIndex60)
+                SpawnBattleEffect(0x3E4, x, y, 1, 1);
+            if (fieldEFA > 25) {
+                fieldEFA = 0;
+                SpawnBattleEffect(0x3E3, x, y, 1, 1);
+            }
+        }
+        if ((animationStage == 2 || animationStage == 3 || animationStage == 4)) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                y = 0.0f;
+                ClearMotionFields();
+                ResetSecondaryCounter(5);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0x62);
+            if (field3CF != 0)
+                return;
+            ResetPrimaryCounters(99);
+            return;
+        }
+        if (animationStage != 2 || animationFrame != 0)
+            return;
+        velocityX = scriptCounterF00 * g_F748_SpeedScaleAt006590B8;
+        velocityY = -scriptCounterF02 * g_F748_SpeedScaleAt006590B8;
+        field05C = 2.0f;
+        return;
+
+    case 0x62:
+        if (0 < facing * inputX &&
+                (inputA != 0 || inputB != 0 || inputC != 0 || inputD != 0))
+            scriptCounterF00 = 1;
+        if (facing * inputX < 0 &&
+                (inputA != 0 || inputB != 0 || inputC != 0 || inputD != 0))
+            scriptCounterF00 = 2;
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0x5F);
+        if (scriptCounterF00 == 1)
+            ResetPrimaryCounters(0x5D);
+        if (scriptCounterF00 != 2)
+            return;
+        ResetPrimaryCounters(0x5E);
+        return;
+
+    case 99:
+        if (g_ModeAt006714B4 == 3 && field2CD != 0) {
+            if (animationStage > 1 && field39D > 0 && opponent->action < 150 &&
+                    field32A[field39D] == 2) {
+                ResetPrimaryCounters(0x31C);
+                if (field370[field39D] != 4)
+                    return;
+                ResetPrimaryCounters(0x302);
+                return;
+            }
+            if (animationStage > 0 && field39D > 0 && opponent->action < 150 &&
+                    field32A[field39D] == 1) {
+                ResetPrimaryCounters(0x31C);
+                return;
+            }
+            if (animationStage > 1 && field39D > 0 && opponent->action < 150 &&
+                    field32A[field39D] == 0) {
+                ResetPrimaryCounters(0x5F);
+                field3CF = 1;
+                return;
+            }
+        } else if (animationStage == 2 && field39D > 0 && opponent->action < 150) {
+            ResetPrimaryCounters(0x5F);
+            field3CF = 1;
+            return;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetSecondaryCounter(2);
         return;
 
     case 0x8C:
