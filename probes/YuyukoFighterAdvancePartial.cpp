@@ -23,6 +23,9 @@ extern float g_BounceXAt006590BC;
 extern float g_BounceYAt00658044;
 extern float g_F748_SpeedScaleAt006590B8;
 extern signed char g_ModeAt006714B4;
+extern float g_ReimuLeapDragAt006583FC;
+extern float g_ReimuRepeatDragAt00659090;
+extern float g_ReimuCommandFrontYAt006590AC;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -738,6 +741,244 @@ void YuyukoFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(2);
+        return;
+
+    case 0x12D:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+        }
+        if (animationStage > 3 && animationStage < 15) {
+            velocityY -= field05C;
+            if (y + velocityY <= g_ThresholdAt0065782C) {
+                ClearMotionFields();
+                y = 0.0f;
+                ResetSecondaryCounter(15);
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            scriptCounterF00 = 0;
+        }
+        if (animationStage == 4 && animationFrame == 0) {
+            velocityX = 5.0f;
+            velocityY = 10.0f;
+            field05C = 0.8f;
+            PlaySound(0x0C);
+            SpawnBattleEffect(0x32F, x, y + g_ContactProjectionAt00657888, facing, 1);
+        }
+        if (animationStage != 15 || animationFrame != 0)
+            return;
+        ResetSecondaryCounter(14);
+        return;
+
+    case 0x12E:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 2;
+            field07C = 0;
+        }
+        if (field3AC > 0) {
+            velocityX -= g_JumpGroundCorrectionAt00658058;
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                field3AC = 0;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(2);
+        if (animationStage == 1 && animationFrame == 0)
+            PlaySharedSound(0x1B);
+        if (animationStage != 1 || animationFrame != 0)
+            return;
+        SpawnBattleEffect(0x34D, x, y, facing, 1);
+        return;
+
+    case 0x12F:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+        }
+        if (field3AC > 0) {
+            velocityX -= g_JumpGroundCorrectionAt00658058;
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                field3AC = 0;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(2);
+        if (animationStage == 3 && animationFrame == 0)
+            PlaySharedSound(0x1D);
+        if (animationStage != 2 || animationFrame != 0)
+            return;
+        SpawnBattleEffect(0x34F, x, y, facing, 1);
+        return;
+
+    case 0x135:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+        }
+        if (field3AC > 0) {
+            velocityX -= g_JumpGroundCorrectionAt00658058;
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                field3AC = 0;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            scriptCounterF00 = 0;
+        }
+        if (animationStage != 3 || animationFrame != 0)
+            return;
+        SpawnBattleEffect(0x349, facing * 20.0f + x,
+            y + g_F728_RandomOffsetYAt00657858, facing, 1);
+        PlaySound(0x0C);
+        return;
+
+    case 0x136:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+        }
+        if (field3AC > 0) {
+            velocityX -= g_JumpGroundCorrectionAt00658058;
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                field3AC = 0;
+            }
+        }
+        if (animationStage == 6 && animationFrame == 0)
+            velocityX = 0.0f;
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage == 4 && animationFrame == 0) {
+            SpawnBattleEffect(0x335, facing * 20.0f + x,
+                y + g_ContactProjectionAt00657888, facing, 1);
+            PlaySound(0x0C);
+        }
+        if (animationStage != 6 || animationFrame != 0)
+            return;
+        velocityX = 27.0f;
+        return;
+
+    case 0x130:
+        velocityY -= field05C;
+        if (y + velocityY <= g_ThresholdAt0065782C) {
+            ResetPrimaryCounters(10);
+            y = 0.0f;
+            field05C = 0.0f;
+            velocityY = 0.0f;
+            return;
+        }
+        if (animationStage == 0 && animationFrame == 0) {
+            field080 = 1;
+            field07C = 0;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(9);
+        if (animationStage != 2 || animationFrame != 0)
+            return;
+        SpawnBattleEffect(0x327, facing * 3.0f + x,
+            y + g_ReimuCommandFrontYAt006590AC, facing, 1);
+        PlaySound(0x0C);
+        return;
+
+    case 0x131:
+        velocityY -= field05C;
+        if (y + velocityY <= g_ThresholdAt0065782C) {
+            ResetPrimaryCounters(10);
+            y = 0.0f;
+            field05C = 0.0f;
+            velocityY = 0.0f;
+            return;
+        }
+        if (animationStage == 0 && animationFrame == 0) {
+            field080 = 4;
+            field07C = 0;
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(9);
+        if (animationFrame == 0 && animationStage < 9)
+            field07C = 0;
+        if (animationStage == 4 && animationFrame == 0)
+            PlaySharedSound(0x1D);
+        if (animationStage != 4 || animationFrame != 0)
+            return;
+        SpawnBattleEffect(0x34E, x, y, facing, 1);
+        return;
+
+    case 0x133:
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field05C = 0.0f;
+            field080 = 1;
+            field07C = 0;
+            ClearMotionFields();
+        }
+        if ((animationStage == 2 || animationStage == 3 || animationStage == 5 ||
+                animationStage == 6 || animationStage == 7) && animationFrame == 0)
+            velocityX = 0.0f;
+        if (animationStage == 3 && animationFrame == 0) {
+            velocityX = 0.0f;
+            PlaySound(0x0C);
+            SpawnBattleEffect(0x32E, facing * 20.0f + x, 125.0f, facing, 1);
+        }
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if ((animationStage == 2 || animationStage == 3 || animationStage == 5 ||
+                animationStage == 6 || animationStage == 7) && animationFrame == 0)
+            velocityX = 20.0f;
+        if (animationStage != 7 || animationFrame != 0)
+            return;
+        velocityX = 20.0f;
+        return;
+
+    case 0x134:
+        if (animationStage == 0 && animationFrame == 0) {
+            if (field3AC == 0)
+                ClearMotionFields();
+            field080 = 1;
+            field07C = 0;
+        }
+        if (field3AC > 0 && animationStage < 2) {
+            velocityX -= g_ReimuLeapDragAt006583FC;
+            if (velocityX < g_ThresholdAt0065782C) {
+                velocityX = 0.0f;
+                field3AC = 0;
+            }
+        }
+        if (animationStage == 2 && animationFrame == 0)
+            velocityX = -15.0f;
+        if (velocityX < g_ThresholdAt0065782C && animationStage > 1) {
+            velocityX += g_ReimuRepeatDragAt00659090;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            scriptCounterF00 = 0;
+        }
+        if (animationStage == 2 && animationFrame == 0)
+            velocityX = -50.0f;
+        if (animationStage == 3 && animationFrame == 0)
+            PlaySharedSound(0x1D);
+        if (animationStage != 7 || animationFrame != 0)
+            return;
+        velocityX = 0.0f;
         return;
 
     case 0x8C:

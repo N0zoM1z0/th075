@@ -721,11 +721,12 @@ Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
 
-Yuyuko fighter `00564BE0` now has a 9,535-byte natural-C++ partial parent in
+Yuyuko fighter `00564BE0` now has a 12,552-byte natural-C++ partial parent in
 `probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
 the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
-states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, and
-`0x8C`; the original function is 61,872 bytes. This is an active
+states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected
+`0x12D..0x136` special-move phases, and `0x8C`; the original function is
+61,872 bytes. This is an active
 partial reconstruction, not whole-function coverage or exact credit. The
 13 exact Yuyuko translation units affected by its `YuyukoFighter.hpp` slot
 declaration cold-replay 13/13 exact.
