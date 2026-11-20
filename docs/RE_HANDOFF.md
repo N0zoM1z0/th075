@@ -32,14 +32,15 @@ main; those commits have not been pushed. Recheck Git state before editing.
 ## Recent reconstruction work
 
 - Marisa fighter boss `0x00486550` now has a tracked typed partial source in
-  `probes/MarisaFighterAdvancePartial.cpp`: 155 native action-state bodies,
+  `probes/MarisaFighterAdvancePartial.cpp`: 158 native action-state bodies,
   inherited named fields/methods, no offset casts or marker placeholders.
-  The latest states `0x2E5`, `0x2E6`, and `0x2F9` add 1,973 original bytes /
-  521 instructions. All 141 unique top-level Ghidra action labels mapped by
-  the original action-handler table now have source cases. Its 49,857-byte /
-  14,260-instruction VC7.1 object remains explicitly NONEXACT against the
-  50,735-byte / 14,260-instruction original: the 878-byte size delta remains
-  real and unaccepted. This is not an exact-credit claim.
+  The latest nested handlers `0x12C`, `0x1F4`, and `0x2C2` add 1,147 original
+  bytes. All 141 unique top-level Ghidra action labels and all 158 explicit
+  in-parent handler groups have source coverage; the shared default handler
+  is represented by the source default path. Its 51,924-byte/14,842-
+  instruction VC7.1 object is explicitly NONEXACT against the 50,735-byte /
+  14,260-instruction original. The 1,189-byte / 582-instruction difference
+  remains unaccepted; this is not an exact-credit claim.
 
 Current focused source recoveries (2026-11-20):
 

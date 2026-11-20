@@ -130,15 +130,45 @@ def main() -> int:
                 top_level.add(value)
     implemented = set(source)
     missing = sorted(top_level - implemented)
+
+    handler_by_action: dict[int, int] = {}
+    with HANDLERS.open(newline="", encoding="utf-8") as stream:
+        for row in csv.DictReader(stream):
+            handler_by_action[int(row["action"], 0)] = int(row["handler"], 16)
+    parent_start = 0x00486550
+    parent_end = parent_start + 50735
+    handler_actions: dict[int, list[int]] = {}
+    for action, handler in handler_by_action.items():
+        if parent_start <= handler < parent_end:
+            handler_actions.setdefault(handler, []).append(action)
+    represented_handlers = {
+        handler for handler, actions in handler_actions.items()
+        if any(action in implemented for action in actions)
+    }
+    default_handler = 0x00492B51
+    missing_handlers = sorted(set(handler_actions) - represented_handlers - {default_handler})
+    has_default = bool(re.search(r"^\s*default\s*:", SOURCE.read_text(encoding="utf-8"), re.M))
+
     print(
         f"Marisa Advance source labels: {len(source)} ({len(implemented)} unique); "
         f"mapped Ghidra top-level labels: {len(top_level)}; "
         f"covered: {len(top_level) - len(missing)}/{len(top_level)}"
     )
+    print(
+        f"in-parent handler addresses: {len(handler_actions)}; "
+        f"explicitly covered: {len(represented_handlers)}; "
+        f"shared default fallback: {'present' if has_default and default_handler in handler_actions else 'missing'}"
+    )
     if missing:
         print("missing action IDs: " + ", ".join(f"0x{x:X}" for x in missing))
+    if missing_handlers:
+        print("missing handler addresses: " + ", ".join(f"0x{x:08X}" for x in missing_handlers))
+    if not has_default or default_handler not in handler_actions:
+        print("shared default handler is not represented by the source default:", file=sys.stderr)
         return 1
-    print("case coverage OK (not an exactness or runtime verdict)")
+    if missing or missing_handlers:
+        return 1
+    print("case/handler coverage OK (not an exactness or runtime verdict)")
     return 0
 
 
