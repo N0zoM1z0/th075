@@ -2379,8 +2379,8 @@ void YuyukoFighter::Advance() {
         return;
 
     case 0x303:
-        field010 = 0x82;
         facing = 1;
+        field010 = 0x82;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 120;
             scriptCounterF02 = -90;
@@ -2425,7 +2425,7 @@ void YuyukoFighter::Advance() {
                         field318 -= g_YuyukoAnglePeriodAt00657864;
                     SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(scriptCounterF02 - 180);
-                    if (field318 < g_YuyukoAngleUpperWrapAt006595E4)
+                    if (field318 <= g_YuyukoAngleUpperWrapAt006595E4)
                         field318 += g_YuyukoAnglePeriodAt00657864;
                     SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
                 }
@@ -2435,7 +2435,7 @@ void YuyukoFighter::Advance() {
                         field318 -= g_YuyukoAnglePeriodAt00657864;
                     SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(scriptCounterF02 - 120);
-                    if (field318 < g_YuyukoAngleUpperWrapAt006595E4)
+                    if (field318 <= g_YuyukoAngleUpperWrapAt006595E4)
                         field318 += g_YuyukoAnglePeriodAt00657864;
                     SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(fieldF04 + 240);
@@ -2443,43 +2443,91 @@ void YuyukoFighter::Advance() {
                         field318 -= g_YuyukoAnglePeriodAt00657864;
                     SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(scriptCounterF02 - 240);
-                    if (field318 < g_YuyukoAngleUpperWrapAt006595E4)
+                    if (field318 <= g_YuyukoAngleUpperWrapAt006595E4)
                         field318 += g_YuyukoAnglePeriodAt00657864;
                     SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
                 }
             }
             if (scriptCounterF00 < 1) {
-                if (scriptCounterF00 == 0 || scriptCounterF00 == -30 ||
-                        (g_StateRepeatLevelAt006714D0 > 1 && scriptCounterF00 == -60)) {
-                    short fanEffect303 = scriptCounterF00 == 0 ? 0x394 :
-                        (scriptCounterF00 == -30 ? 0x395 : 0x396);
+                if (scriptCounterF00 == 0) {
                     PlaySound(0);
                     for (int fanIndex303A = 0; fanIndex303A < 20; ++fanIndex303A) {
                         field314 = static_cast<float>(fanIndex303A * 18);
                         field318 = 1.0f;
                         field31C = 1.0f;
-                        SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                        SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
                         if (g_StateRepeatLevelAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303A * 18 + 9);
                             field318 = 3.0f;
-                            SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                            SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
                         }
                     }
                     for (int fanIndex303B = 0; fanIndex303B < 20; ++fanIndex303B) {
                         field314 = static_cast<float>(fanIndex303B * -18);
                         field318 = 1.0f;
                         field31C = -1.0f;
-                        SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                        SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
                         if (g_StateRepeatLevelAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303B * 18 + 9);
                             field318 = 3.0f;
-                            SpawnBattleEffect(fanEffect303, 640.0f, 340.0f, 1, 1);
+                            SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
                         }
                     }
                 }
-                if (scriptCounterF00 == -60)
+                if (scriptCounterF00 == -30) {
+                    PlaySound(0);
+                    for (int fanIndex303C = 0; fanIndex303C < 20; ++fanIndex303C) {
+                        field314 = static_cast<float>(fanIndex303C * 18);
+                        field318 = 1.0f;
+                        field31C = 1.0f;
+                        SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
+                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                            field314 = static_cast<float>(fanIndex303C * 18 + 9);
+                            field318 = 3.0f;
+                            SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
+                        }
+                    }
+                    for (int fanIndex303D = 0; fanIndex303D < 20; ++fanIndex303D) {
+                        field314 = static_cast<float>(fanIndex303D * -18);
+                        field318 = 1.0f;
+                        field31C = -1.0f;
+                        SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
+                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                            field314 = static_cast<float>(fanIndex303D * 18 + 9);
+                            field318 = 3.0f;
+                            SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
+                        }
+                    }
+                }
+                if (g_StateRepeatLevelAt006714D0 > 1 && scriptCounterF00 == -60) {
+                    PlaySound(0);
+                    for (int fanIndex303E = 0; fanIndex303E < 20; ++fanIndex303E) {
+                        field314 = static_cast<float>(fanIndex303E * 18);
+                        field318 = 1.0f;
+                        field31C = 1.0f;
+                        SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
+                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                            field314 = static_cast<float>(fanIndex303E * 18 + 9);
+                            field318 = 3.0f;
+                            SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
+                        }
+                    }
+                    for (int fanIndex303F = 0; fanIndex303F < 20; ++fanIndex303F) {
+                        field314 = static_cast<float>(fanIndex303F * -18);
+                        field318 = 1.0f;
+                        field31C = -1.0f;
+                        SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
+                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                            field314 = static_cast<float>(fanIndex303F * 18 + 9);
+                            field318 = 3.0f;
+                            SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
+                        }
+                    }
+                }
+                if (scriptCounterF00 == -60) {
                     scriptCounterF00 = static_cast<short>(
                         g_StateRepeatLevelAt006714D0 * -10 + 180);
+                }
             }
         }
         if (AdvanceNestedFrame() == animationStageCount) {
