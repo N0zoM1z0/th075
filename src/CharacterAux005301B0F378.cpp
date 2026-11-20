@@ -13,11 +13,11 @@ void YoumuFighter::AdvanceAuxiliary() {
     if (field082==0 && field3B8==0) {
         ObservedInputSnapshotF378 snapshot;
         snapshot.action=action;
-        snapshot.guard=animationStage;
+        snapshot.stage=animationStage;
         snapshot.x=x;
         snapshot.y=y;
         snapshot.facing=facing;
-        snapshot.bearing=field080;
+        snapshot.counter=field080;
         historyQueue.push_back(snapshot);
         if (historyQueue.size()>10) historyQueue.pop_front();
     }

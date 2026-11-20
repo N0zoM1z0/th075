@@ -76,6 +76,13 @@ Current focused source recoveries (2026-11-20):
   entire 31,777-byte COFF section and 913 relocations still cold-replay
   exact 1/1, with no change to credited authored bytes.
 
+- Youmu's 16-byte snapshot record now has one natural field vocabulary
+  (`action`, `stage`, `x`, `y`, `facing`, `counter`) for both the writer and
+  `YoumuObject::Advance`. Six redundant union aliases and the historical
+  object-side typedef are gone. The 1,008-byte writer and all 81 header users
+  cold-replay exactly; the entire 40,464-byte giant parent and all 938
+  relocation offsets/types/addends/targets remain unchanged and NONEXACT.
+
 The latest commits restore natural C++ field types and call expressions in
 large research parents. They do not claim new giant exactness:
 

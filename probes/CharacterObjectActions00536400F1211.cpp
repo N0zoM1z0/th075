@@ -28,7 +28,7 @@ extern signed char g_F1212_DifficultyAt006714D0;
 void YoumuObject::Advance()
 {
     int burstIndex;
-    ObjectHistoryEntryF1211* entry;
+    ObservedInputSnapshotF378* entry;
     if (owner->opponent->field3BA != 0) return;
     if (owner->field3BA != 0 && field08A == 0) return;
 
@@ -62,14 +62,14 @@ void YoumuObject::Advance()
         if (owner->field082 != 0) return;
 
         entry = &static_cast<YoumuFighter*>(owner)->historyQueue.front();
-        if (action != entry->actionAt00)
-            field080 = entry->counterAt0E;
-        if (animationStage != entry->stageAt02)
+        if (action != entry->action)
+            field080 = entry->counter;
+        if (animationStage != entry->stage)
             field07C = 0;
-        SetThreeCounters(entry->actionAt00, entry->stageAt02, 0);
-        x = entry->xAt04;
-        y = entry->yAt08;
-        facing = entry->facingAt0C;
+        SetThreeCounters(entry->action, entry->stage, 0);
+        x = entry->x;
+        y = entry->y;
+        facing = entry->facing;
         return;
     }
     if (field082 != 0) {

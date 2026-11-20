@@ -57,6 +57,12 @@ boss now uses direct C++ short assignments in 16 random/decay paths instead
 of redundant explicit narrowing casts. The complete 31,777-byte COFF section
 and all 913 relocations still pass cold exact replay (1/1).
 
+Youmu's shared 16-byte history record now uses ordinary named members,
+with no alternative union aliases or object-side overlay typedef. The
+1,008-byte snapshot writer and all 81 affected exact units cold-replay; the
+whole 40,464-byte object `Advance` parent remains byte-for-byte identical,
+including all 938 relocation records. Its nonexact register frontier remains.
+
 ## Complete research parents (measured 2026-11-19)
 
 All thirteen have the original instruction count, frame, stack slots, branch
