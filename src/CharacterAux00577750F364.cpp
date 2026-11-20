@@ -7,7 +7,6 @@
 // Declaration-only receiver view, only observed fields and calls.
 
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void YuyukoFighter::AdvanceAuxiliary() {
@@ -81,5 +80,3 @@ void YuyukoFighter::AdvanceAuxiliary() {
         fieldF10 = 0;
     }
 }
-
-#undef FIELD

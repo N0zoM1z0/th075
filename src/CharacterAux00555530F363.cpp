@@ -7,7 +7,6 @@
 // Declaration-only receiver view; complete owner layout unknown.
 
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void RemiliaFighter::AdvanceAuxiliary() {
@@ -76,5 +75,3 @@ void RemiliaFighter::AdvanceAuxiliary() {
     }
 
 }
-
-#undef FIELD

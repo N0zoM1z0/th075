@@ -627,3 +627,9 @@ layout is claimed.
 `this+0x6E4`. Its call-only view inherits the already verified Fighter prefix;
 no FighterNoticeF283 instances or new owner layout are asserted. The complete
 25-byte leaf cold-replayed 1/1 exact with no relocations.
+
+The Remilia `00555530` and Yuyuko `00577750` auxiliary controllers also had
+unused `FIELD(type, offset)` reinterpret-cast macros; all real accesses in both
+complete bodies already use observed Fighter members. Their dead macros and
+`#undef`s are removed. The 1,028-byte and 1,121-byte leaves cold-replayed 2/2
+exact with all original relocations.
