@@ -52,6 +52,16 @@ Current focused source recoveries (2026-11-20):
   receiver casts. Its four direct relocations retain their target addresses;
   74/74 affected exact units passed the focused cold replay.
 
+- The effect manager now has actual `std::deque<Actor*> entries_[4]`.
+  `Spawn` uses native `push_back`, and deletion iterates and clears those
+  members directly, without pointer reinterpretations. The five affected
+  whole function bodies cold-replay 5/5 and all 58 header-affected exact units
+  replay 58/58. The manager's complete 24 source-owned code/EH/data sections,
+  46 relocations and two SafeSEH roots verify exact with a fresh 3/3
+  constructor/destructor/bind cold receipt. The section evidence changes only
+  emitted VC7.1 template symbol names, not target bytes, addresses, sizes or
+  resolved relocation destinations.
+
 The latest commits restore natural C++ field types and call expressions in
 large research parents. They do not claim new giant exactness:
 

@@ -35,6 +35,14 @@ their positions, types, addends and local targets; the front-call symbol now
 names `std::list<ObservedInputSnapshotF378>::front`. This remains a NONEXACT
 giant. Its 81 affected exact units cold-replayed 81/81.
 
+The shared 0x54-byte effect manager now owns four `std::deque<Actor*>`
+instances rather than borrowed raw/void-pointer views. The complete
+constructor, destructor, cleanup, spawn and bind functions retain their
+exact full bodies; their 58 header-dependent units replayed 58/58. Its 24
+code/EH/data sections and 46 relocations verify against the unchanged PE with
+fresh 3/3 owner cold-replay receipts. This supplies a typed implementation
+for the fighter/object effects used by the large Advance state machines.
+
 ## Complete research parents (measured 2026-11-19)
 
 All thirteen have the original instruction count, frame, stack slots, branch

@@ -2,12 +2,13 @@
 #define TH075_EFFECT_MANAGER_LIFETIME_F161_HPP
 
 #include <deque>
+#include "Actor.hpp"
 
 class Fighter;
 
-// Observed 0x54-byte allocation: one bound Fighter pointer followed by four
-// complete 20-byte vendor deque<void*> members. This is a pointer-only view of
-// target-owned storage; never construct or embed it in reconstructed objects.
+// Observed native 0x54-byte owner: one bound Fighter pointer followed by four
+// complete 20-byte VC7.1 deques of Actor pointers. The game owns this
+// allocation; the reconstruction only accesses it through existing pointers.
 class EffectManagerLifetimeF161 {
 public:
     ~EffectManagerLifetimeF161();
@@ -26,7 +27,7 @@ private:
     EffectManagerLifetimeF161& operator=(const EffectManagerLifetimeF161&);
 
     Fighter* fighter_;
-    std::deque<void*> entries_[4];
+    std::deque<Actor*> entries_[4];
 };
 
 typedef char EffectManagerLifetimeF161SizeCheck[

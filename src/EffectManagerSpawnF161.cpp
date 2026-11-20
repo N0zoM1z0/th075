@@ -1,4 +1,3 @@
-#include "EffectDequeF136.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 #include "CharacterObject.hpp"
 #include "Fighter.hpp"
@@ -31,6 +30,6 @@ void EffectManagerLifetimeF161::Spawn(short effect, float x, float y, signed cha
         *reinterpret_cast<TransformRecordF136*>(reinterpret_cast<unsigned char*>(node) + 0x10) =
             *static_cast<const TransformRecordF136*>(transform);
     }
-    reinterpret_cast<EffectDequeF136*>(&entries_[layer])->PushBack(node);
+    entries_[layer].push_back(node);
 }
 

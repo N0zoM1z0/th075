@@ -24483,7 +24483,7 @@ compare_size = 282
 relocations = [
   { offset = 0x27, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0xE7, type = "REL32", symbol = "?ResetTransform@Actor@@QAEXMMM@Z", target = 0x0040FBB0 },
-  { offset = 0x10E, type = "REL32", symbol = "?PushBack@EffectDequeF136@@QAEXABQAVActor@@@Z", target = 0x0045BFC0 },
+  { offset = 0x10E, type = "REL32", symbol = "?push_back@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEXABQAVActor@@@Z", target = 0x0045BFC0 },
 ]
 
 [units."battle-effect-advance-all-0045bdb0"]
@@ -25223,42 +25223,42 @@ size = 221
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 13
 type = "REL32"
-symbol = "??0iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE@XZ"
+symbol = "??0iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ"
 target = 0x004453C0
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 21
 type = "REL32"
-symbol = "??0iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE@XZ"
+symbol = "??0iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ"
 target = 0x004453C0
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 71
 type = "REL32"
-symbol = "?begin@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?begin@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00445360
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 104
 type = "REL32"
-symbol = "?end@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?end@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00445390
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 131
 type = "REL32"
-symbol = "??Eiterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AV012@H@Z"
+symbol = "??Eiterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x00445400
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 143
 type = "REL32"
-symbol = "??9const_iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??9const_iterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x00445440
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 158
 type = "REL32"
-symbol = "??Diterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBEAAPAUEffectReleaseViewF160@@XZ"
+symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ"
 target = 0x004453E0
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 171
 type = "REL32"
-symbol = "??Diterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBEAAPAUEffectReleaseViewF160@@XZ"
+symbol = "??Diterator@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ"
 target = 0x004453E0
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 185
@@ -25268,7 +25268,7 @@ target = 0x00640F15
 [[units.effect-delete-four-deques-0045ba30.relocations]]
 offset = 208
 type = "REL32"
-symbol = "?clear@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAEXXZ"
+symbol = "?clear@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEXXZ"
 target = 0x0045C0E0
 
 [units.effect-initialize-four-deques-0045b920]
@@ -25297,12 +25297,12 @@ target = 0x00000000
 [[units.effect-initialize-four-deques-0045b920.relocations]]
 offset = 31
 type = "DIR32"
-symbol = "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
+symbol = "??1?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ"
 target = 0x0045BF30
 [[units.effect-initialize-four-deques-0045b920.relocations]]
 offset = 36
 type = "DIR32"
-symbol = "??0?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
+symbol = "??0?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ"
 target = 0x0045BEE0
 [[units.effect-initialize-four-deques-0045b920.relocations]]
 offset = 52
@@ -25312,7 +25312,7 @@ target = 0x00641C78
 [[units.effect-initialize-four-deques-0045b920.relocations]]
 offset = 101
 type = "REL32"
-symbol = "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ"
+symbol = "?clear@?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEXXZ"
 target = 0x0045C0E0
 [[units.effect-initialize-four-deques-0045b920.relocations]]
 offset = 123
@@ -25351,7 +25351,7 @@ target = 0x0045BA30
 [[units.effect-destroy-owned-effects-0045b9b0.relocations]]
 offset = 51
 type = "DIR32"
-symbol = "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
+symbol = "??1?$deque@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ"
 target = 0x0045BF30
 [[units.effect-destroy-owned-effects-0045b9b0.relocations]]
 offset = 67
