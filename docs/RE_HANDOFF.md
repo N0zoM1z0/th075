@@ -87,11 +87,11 @@ its source spelling.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 61,556-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 63,161-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
-`0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, selected `0x12D..0x136`
-special-move phases, `0x187..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
-`0x19A`, `0x19C`, `0x19E`, `0x1A0`, `0x1F5`, `0x252..0x256`, `599`,
+`0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, `0x12C..0x136`
+special-move phases, `0x186..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
+`0x19A`, `0x19C`, `0x19E`, `0x1A0`, `0x1F4..0x1F5`, `0x252..0x256`, `599`,
 `600`, `0x259..0x25A`, `0x25F..0x265`, action `700`, `0x2BD..0x2C3`,
 `0x2DA`, `0x2DB`, `0x2E4`, `0x2EE..0x2EF`, `0x2F8..0x2F9`,
 `0x302..0x303`, `0x31B..0x31C`, `0x8F..0x90`, `0x96..0x98`,
@@ -126,7 +126,17 @@ Actions `0x252`, `0x253`, and `0x254` are also separate; only `0x252/0x253`
 perform the spirit-recovery check, matching the original action-specific flow.
 Effect actions `0x259`, `0x25A`, `0x25F`, `0x260`, `0x261`, and `0x262` now
 retain separate handlers and their original per-action effect/timer constants;
-`0x25A` also restores the target sound-before-gauge call order. Action `0x19E`
+`0x25A` also restores the target sound-before-gauge call order. Three direct
+boundary actions that were absent from the source now have explicit handlers:
+`0x12C` (conditional motion clear, horizontal decay, effect `0x34C` and shared
+sound `0x1C`), `0x186` (initial horizontal launch, decay and effect `0x334`),
+and `0x1F4` (the timed `0x343` trail, auxiliary `0x7F` effect and its staged
+counter/sound transitions). The fourth direct boundary, `0x2BC`, was already
+implemented as decimal `case 700`, including its 48-effect stage burst; no
+duplicate case was added. The source now reproduces the target dispatch's
+singleton boundaries at `0x12C`, `0x186`, `0x1F4` and `0x2BC`. Their eight
+shared animation, motion-clear, battle/aux-effect and sound leaf units replay
+8/8 exact across three objects. Action `0x19E`
 now restores its missing stage-3 barrage: `PlaySound(0)`, captures both velocity
 components through the original `0x657888` projection, starts the 300-frame
 gauge timer, emits five angles (`10 + 15*i`) with three layers (`0x320`, `0x321`,
@@ -139,8 +149,9 @@ separate command gates, gravity/contact branches, per-action stage velocities
 and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The structural comparison is expected to report a size mismatch (61,556 vs.
-61,872 bytes).
+The structural comparison currently reports a size mismatch (63,161 vs.
+61,872 bytes; +1,289). The restored handlers are semantically grounded, but the
+whole-function VC7.1 layout is not exact and still needs code-generation work.
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header
 consumer units were cold-replayed individually: 13/13 exact across 11
