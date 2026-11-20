@@ -311,3 +311,12 @@ tail's source order against the original PE handler addresses. This catches a
 case reorder that preserves action coverage but changes emitted handler layout.
 The validator reports the source/PE order separately from its 158-action
 coverage result.
+
+
+Yukari object `005A1600` partial `Advance` in
+`probes/CharacterObjectActions005A1600F1231.cpp` now restores action `900`'s
+stage-2 proximity transition: when the object is within 100 units of its
+opponent, it resets secondary stage 3, sets horizontal speed to 10 and invokes
+the original `0045B850(8)` transition helper instead of falling through to the
+ordinary movement/animation path. This is a natural-C++ recovery; the overall
+Yukari object remains partial and is not claimed exact.
