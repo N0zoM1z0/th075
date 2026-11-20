@@ -344,6 +344,15 @@ and nonrelocation bytes; the independently complete 13-byte leaf
 cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
+Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
+`probes/YuyukoFighterAdvancePartial.cpp`. Its 38,131-byte VC7.1 body now also
+covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
+`0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
+The source keeps the individual initial velocities, gauge accumulation,
+landing transitions, timer/effect side effects and action-specific counter
+resets; action `0x91` and the remaining missing families are still open.
+This is a partial reconstruction, not a whole-function exactness claim.
+
 Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
 66 effect spawns, eight sounds and four camera-shake calls moved from
 borrowed owner declarations to shared game interfaces. Both 44,331-byte

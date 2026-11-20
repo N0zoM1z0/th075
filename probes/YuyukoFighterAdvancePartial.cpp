@@ -1,8 +1,7 @@
 // Partial natural-C++ reconstruction of the Yuyuko fighter move state
-// machine at 0x00564BE0. This probe covers the signed horizontal-drift family
-// (0x32-0x41) and the long landing state 0x8C. Other recovered states are
-// intentionally not claimed; the shared native default path is retained as
-// a falsifiable fallback while the remaining action families are recovered.
+// machine at 0x00564BE0. Recovered action families retain their observed
+// per-state transitions; the shared native default path remains a falsifiable
+// fallback for action states that have not yet been reconstructed.
 #include "YuyukoFighter.hpp"
 
 extern float g_ThresholdAt0065782C;
@@ -43,7 +42,7 @@ extern float g_Stage2BFYOffsetAt00658398;
 extern float g_Stage2BFY2At00659B6C;
 extern float g_Stage2DAEffectYOffsetAt0065908C;
 extern signed char g_StateRepeatLevelAt006714D0;
-extern float g_Stage2E4EffectYOffsetAt006583B4;
+extern float g_ThousandAt006583B4;
 extern float g_YuyukoChaseDivisorAt0065788C;
 extern float g_YuyukoFanUpperYAt006593D0;
 extern float g_YuyukoFanLeftXAt00657D10;
@@ -53,6 +52,7 @@ extern float g_YuyukoFanSpeedScaleAt006590B4;
 extern float g_YuyukoFanSpawnXOffsetAt0065784C;
 extern float g_YuyukoAnglePeriodAt00657864;
 extern float g_YuyukoAngleUpperWrapAt006595E4;
+extern float g_CardGaugeStepAt0065747C;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -2121,7 +2121,7 @@ void YuyukoFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             SpawnBattleEffect(0x397, x,
-                y + g_Stage2E4EffectYOffsetAt006583B4, facing, 1);
+                y + g_ThousandAt006583B4, facing, 1);
         }
         if (animationStage == 7 && animationFrame == 0)
             PlaySound(3);
@@ -2533,6 +2533,190 @@ void YuyukoFighter::Advance() {
         ++scriptCounterF00;
         ResetSecondaryCounter(0x0C);
         field3CF = 1;
+        return;
+
+    case 0x8F:
+    case 0x90:
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -12.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+            scriptCounterF00 = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() == animationStageCount)
+            ResetPrimaryCounters(0);
+        if (animationStage != 3 || animationFrame != 0 || scriptCounterF00 > 6)
+            return;
+        ++scriptCounterF00;
+        ResetSecondaryCounter(1);
+        return;
+
+    case 0x96:
+    case 0x97:
+    case 0x98:
+    case 0x9F:
+    case 0xA0:
+    case 0xA1:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            if (action == 0x96 || action == 0x9F)
+                velocityX = -9.0f;
+            else if (action == 0x97 || action == 0xA0)
+                velocityX = -10.0f;
+            else
+                velocityX = -13.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(0);
+        return;
+
+    case 0x9A:
+    case 0x9B:
+    case 0x9C:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            if (action == 0x9A)
+                velocityX = -9.0f;
+            else if (action == 0x9B)
+                velocityX = -10.0f;
+            else
+                velocityX = -13.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(2);
+        return;
+
+    case 0x9E:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            velocityX = -6.0f;
+            velocityY = 8.0f;
+            field05C = 0.75f;
+        }
+        if (g_ThresholdAt0065782C <= y) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                ResetPrimaryCounters(10);
+                y = 0.0f;
+                ClearMotionFields();
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(9);
+        return;
+
+    case 0xA3:
+    case 0xA4:
+    case 0xA5:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            if (action == 0xA3)
+                velocityX = -9.0f;
+            else if (action == 0xA4)
+                velocityX = -10.0f;
+            else
+                velocityX = -13.0f;
+            velocityY = 0.0f;
+            field07C = 0;
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        if (CheckHorizontalLimits() != 0 && field3BE != 0)
+            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(2);
+        return;
+
+    case 0xA7:
+    case 0xA8:
+        cardGauge += g_CardGaugeStepAt0065747C;
+        if (g_ThousandAt006583B4 < cardGauge)
+            cardGauge = g_ThousandAt006583B4;
+        if (animationStage == 0 && animationFrame == 0) {
+            UpdateGaugeTimer(250);
+            PlaySharedSound(0x2C);
+            scriptCounterF00 = 180;
+            SpawnAuxEffect(0x38, x + facing * 30.0f,
+                y + g_ContactProjectionAt00657888, facing, 1);
+        }
+        if (velocityX < g_ThresholdAt0065782C) {
+            velocityX += g_JumpGroundCorrectionAt00658058;
+            if (g_ThresholdAt0065782C < velocityX)
+                velocityX = 0.0f;
+        }
+        field490 = -static_cast<float>(scriptCounterF00) * g_F748_SpeedScaleAt006590B8;
+        if (scriptCounterF00 > 0)
+            scriptCounterF00 = static_cast<short>(scriptCounterF00 - 10);
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetPrimaryCounters(action == 0xA7 ? 0 : 2);
+        return;
+
+    case 0xB4:
+    case 0xB5:
+        if (animationStage == 0 && animationFrame == 0) {
+            ClearMotionFields();
+            velocityX = action == 0xB4 ? 8.0f : -8.0f;
+            velocityY = 12.5f;
+            field05C = 0.75f;
+            rotationZ = 0.0f;
+            ClearTransformFlag();
+        }
+        if (g_ThresholdAt0065782C < y) {
+            velocityY -= field05C;
+            if (y + velocityY < g_ThresholdAt0065782C) {
+                ResetPrimaryCounters(10);
+                y = 0.0f;
+                ClearMotionFields();
+                return;
+            }
+        }
+        if (AdvanceNestedFrame() != animationStageCount)
+            return;
+        ResetSecondaryCounter(7);
         return;
 
     case 0x8C:
