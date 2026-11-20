@@ -18,11 +18,6 @@ public:
     void SetDepthMode(int);
     void SetColorMultiplier(float);
 };
-class RenderLists43D9D0 {
-public:
-    void DispatchSelected(signed char);
-    void DispatchFourLists();
-};
 class RenderAux43D9D0 { public: void DispatchSelected(signed char); };
 class RenderSequence43D9D0 { public: void RenderElements(); };
 // Slots are observed indices, not recovered original declarations. Only slots

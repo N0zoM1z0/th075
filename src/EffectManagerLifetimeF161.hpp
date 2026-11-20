@@ -14,6 +14,8 @@ public:
     void BindFighter(Fighter* fighter);
     void DeleteFourLists();
     void AdvanceAll();             // 0045BDB0, updates and prunes all four effect lists
+    void DispatchSelected(signed char layer);  // 0045BC30, per-layer render
+    void DispatchAll();           // 0045BCE0, four layers of overlay renders
     void Spawn(short effect, float x, float y, signed char facing, signed char layer,
                unsigned char flagA, unsigned char flagB, const float* parameters,
                const void* transform, unsigned char mode);

@@ -1,6 +1,7 @@
 #include "BattleScene.hpp"
 #include "FighterFadeBorrowedF986.hpp"
 #include "BattleRender43D9D0.hpp"
+#include "EffectManagerLifetimeF161.hpp"
 
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 #define AUX reinterpret_cast<RenderAux43D9D0*>(&g_CombatEffects)
@@ -34,23 +35,23 @@ void BattleScene::Render() {
             g_DrawDispatcher->Slot4();
             STYLE->SetDepthMode(0);
             STYLE->SetDepthMode(3);
-            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchFourLists();
-            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchFourLists();
+            fighters[0]->field2EC->DispatchAll();
+            fighters[1]->field2EC->DispatchAll();
             reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMirrored();
             reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMirrored();
             STYLE->SetColorMultiplier(1.0f);
             g_DrawDispatcher->Slot3();
             STYLE->SetDepthMode(0);
             STYLE->SetDepthMode(3);
-            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(2);
-            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(2);
+            fighters[0]->field2EC->DispatchSelected(2);
+            fighters[1]->field2EC->DispatchSelected(2);
             STYLE->SetDepthMode(1);
             STYLE->SetDepthMode(2);
             reinterpret_cast<RenderSequence43D9D0*>(fighters[0]->field480)->RenderElements();
             reinterpret_cast<RenderSequence43D9D0*>(fighters[1]->field480)->RenderElements();
             AUX->DispatchSelected(0);
-            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(0);
-            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(0);
+            fighters[0]->field2EC->DispatchSelected(0);
+            fighters[1]->field2EC->DispatchSelected(0);
             if (g_RenderOrderAt0068C860 != 0) {
                 reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMain();
                 reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMain();
@@ -62,8 +63,8 @@ void BattleScene::Render() {
                 reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawAuxiliary();
                 reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawAuxiliary();
             }
-            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(1);
-            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(1);
+            fighters[0]->field2EC->DispatchSelected(1);
+            fighters[1]->field2EC->DispatchSelected(1);
             AUX->DispatchSelected(1);
             STYLE->SetColorMultiplier(field09C);
             g_DrawDispatcher->Slot2();
@@ -81,8 +82,8 @@ void BattleScene::Render() {
                 (static_cast<D3DCOLOR>(g_StateFadeAlpha) << 24) | g_StateResetCounter);
         }
         RenderHud();
-        reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(3);
-        reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(3);
+        fighters[0]->field2EC->DispatchSelected(3);
+        fighters[1]->field2EC->DispatchSelected(3);
         if (F986_FADE(fighters[0]).fadeAlphaAt538 > 0)
             reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderFadeOverlay();
         if (F986_FADE(fighters[1]).fadeAlphaAt538 > 0)
