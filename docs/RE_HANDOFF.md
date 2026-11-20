@@ -200,8 +200,9 @@ parent. The current 13-parent measurement table is in GIANTS.md.
 
 The closest complete parents by register-role debt are:
 
-1. Alice object 004EBDA0: 133 GPR differences, zero width differences;
-   first divergence 004F344C.
+1. Alice object 004EBDA0: zero GPR differences and zero width differences;
+   the 004F344C join now follows the original register rotation. Its 438-byte
+   frontier suffix is the two separately matched switch tables, not code.
 2. Meiling object 005EB520: 135 GPR differences, six width differences;
    first divergence 005F3904.
 3. Sakuya object 004CA6E0: 447 GPR differences, 12 width differences.
@@ -533,3 +534,16 @@ or `inputB` member at preprocessing time, and its final effect reads
 byte-identical to its pre-edit object. All four giant parent sources now have
 no `RAW`, `I16`, `F32`, or `U8` view macros; this is a source-semantic cleanup,
 not a claim of new whole-function exactness.
+
+
+Alice object `004EBDA0` has now eliminated its first-join register debt with
+a natural empty stage-3 `else if` arm. The whole authored CODE extent measures
+8,789/9,009 instructions with zero mnemonic, width or GPR differences.
+The complete 33,731-byte COFF extent (33,293 CODE + 240-byte and 198-byte
+switch tables) has zero non-relocation byte differences; both table hashes,
+all 62 local relocation destinations and all 620 external relocation
+references (64 symbols) were checked against the original target. The
+canonical exact-replay registry is not yet updated: preserve the separate
+CODE/data extents and do not claim accepted exactness until a complete replay
+unit can represent them without crediting switch data as authored CODE.
+Next giant frontier is Meiling `005EB520` (135 GPR / six widths).

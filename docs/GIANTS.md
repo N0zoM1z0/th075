@@ -76,7 +76,7 @@ instruction widths that follow from it.
 | 005214B0 | Youmu fighter | 46,755 | `FighterWhole005214B0F1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
 | 00543210 | Remilia fighter | 58,294 | `FighterWhole00543210F1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
 | 004CA6E0 | Sakuya object | 42,511 | `CharacterObjectActions004CA6E0F1222.cpp` | 447 | 12 | 004CCBD7 (#2526) |
-| 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` | 133 | 0 | 004F344C (#8076) |
+| 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `CharacterObjectWhole0050A580F1044.cpp` | 522 | 5 | 00515C0E (#10128) |
 | 00536400 | Youmu object | 39,999 | `CharacterObjectActions00536400F1211.cpp` | 913 | 10 | 005392F8 (#3223) |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` | 726 | 6 | 0055F711 (#5225) |
@@ -1234,3 +1234,34 @@ sign-extended value to calculate the active record offset. The update view now
 uses `signed char` directly, removing its last signed-byte reinterpret cast;
 the complete 541-byte `NameEntryScene::UpdatePlayer` body and all 11
 relocations remain identical (exact replay 1/1).
+
+
+## 2026-11-20 — Alice object first-join register debt eliminated
+
+The Alice object `Advance` join at `0x004F344C` now uses the original
+VC7.1 register rotation. The `animationStage < 3` scale-growth branch has an
+explicit, empty `else if (animationStage == 3)` arm: stage 3 is a real no-op
+for this scale update, and expressing that state explicitly changes the
+compiler's join predecessor state without adding instructions. This is
+ordinary C++ control flow, not padding or a synthetic instruction sequence.
+
+Focused VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` measurement now reports
+8,789/9,009 target/object instructions, zero mnemonic differences, zero
+instruction-width differences and zero GPR operand differences. The
+byte-frontier ratchet fell from 575 to 438 bytes; its remaining range is
+exactly the object suffix after the 33,293-byte CODE extent, not a code
+mismatch. That 438-byte suffix consists of the two separately reviewed
+original switch tables: 240 bytes at `0x004F3FAD` and 198 bytes at
+`0x004F409D`; both target SHA-256 values in
+`config/authored-origin-switches.csv` match the object bytes. Across the
+complete 33,731-byte code-plus-table object extent, every non-relocation byte
+matches the target. All 682 COFF relocation destinations also resolve:
+62 local targets and 620 external references (64 distinct symbols) agree
+with the original local offsets and known function/global/runtime addresses.
+
+This is a substantial compiler/code-generation breakthrough, but it is not
+yet a canonical accepted replay unit: the 33,293-byte authored CODE extent
+and the two separately owned switch-data extents must remain distinct, and
+`functions.csv` has not been promoted. The 438-byte ratchet suffix is retained
+because the existing giant frontier checker compares the CODE extent while
+the COFF function symbol also carries both adjacent switch tables.

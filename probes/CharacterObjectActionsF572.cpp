@@ -2387,6 +2387,8 @@ void AliceObject::Advance() {
     if ((animationStage)<3) {
         scaleX=(scaleX)+gFadeAt00659428;
         scaleY=(scaleY)+gFadeAt00659428;
+    } else if ((animationStage)==3) {
+        // Stage 3 deliberately leaves the scale unchanged.
     }
     if ((animationStage)==4) {
         scaleX=(scaleX)*gSubAt00659090;
