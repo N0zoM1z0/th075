@@ -187,3 +187,15 @@ probe reproduces all 31 bytes with no relocations: an ECX Actor pointer reaches
 callers, so the original owner, semantic role and authored/compiler origin
 remain unknown. It is deliberately left unclassified and receives no exact
 match credit.
+
+
+A new natural-C++ source alternative is retained for the unresolved lifetime
+leaf at `004170B0` in `probes/UnknownOwnerReleaseAt004170B0.cpp`. A one-pointer
+owner whose destructor invokes the third `__stdcall` virtual slot of its
+resource interface cold-compiles to all 27 original bytes. A probe-only `delete`
+expression also emits the 44-byte scalar-deleting COMDAT at `0041A140`: every
+nonrelocation byte matches, and its two REL32 fields resolve to `004170B0` and
+`00640F15`. This narrows the source shape but does not identify the original
+owner or interface; the existing explicit-interface-destructor alternative
+remains byte-equivalent. Both functions therefore retain their prior origin and
+exactness dispositions.
