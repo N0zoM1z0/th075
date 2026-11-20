@@ -169,3 +169,12 @@ whole-function, original-PE, Ghidra and layout research. Preserve it rather
 than deleting it wholesale. Also preserve `.tools/`, `ghidra-project/`, the
 original executable and tracked resources. See
 [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md) before further cleanup.
+
+
+A focused Fighter leaf pass also recovered the unreferenced 24-byte method at
+00454C00 as `Fighter::ClearField47CAt00454C00`. Its complete body is the
+natural member operation `field47C = 0`, cold-replayed byte-for-byte with no
+relocations. The address-anchored name deliberately avoids claiming a stronger
+semantic role because Ghidra reports no static xrefs; the neighboring
+00454BC0 setter and +0x480 sequence receiver provide the bounded Fighter
+context.

@@ -33,6 +33,13 @@ dumps them):
   character's overrides and its own members from +0xF10 (shorts in some
   characters, floats in others). The constructors live in
   `src/<Char>Init*.cpp`.
+- Fighter command-selection state uses `field47C` (+0x47C) and the
+  associated sprite-sequence pointer at +0x480. `SetCommandSelection`
+  (00454BC0) writes the selection and updates the sequence sampling/color
+  policy. The adjacent 24-byte leaf at 00454C00 is now reconstructed as
+  `Fighter::ClearField47CAt00454C00`; it is a natural member store of zero
+  to +0x47C and cold-replays exactly. Its address-anchored name is retained
+  because no static references to this leaf were found.
 - `CharacterObject : Actor` (`src/CharacterObject.hpp`, constructor
   0045B760, base table 00659064, `sizeof` 0xE8) is each character's effect
   object: `sequences` at +0xC4, floats +0xC8–0xD0, shorts +0xD8–0xE2 and

@@ -74,6 +74,7 @@ public:
     void LoadPattern();                                             // 00457660
     void SelectResourceParameters();                                // 00452B30
     void SetCommandSelection(int selection, unsigned char mode, unsigned int mask);  // 00454BC0
+    void ClearField47CAt00454C00();                                  // 00454C00
     void LoadStageResource();                                       // 004584D0
     void InitializeNotice(short notice);                            // 0045CDC0
     unsigned char ProcessAction();                                  // 0045CE10

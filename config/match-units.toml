@@ -66353,3 +66353,14 @@ relocations = [
   { offset = 0x35, type = "REL32", symbol = "??Hiterator@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBE?AV012@H@Z", target = 0x00445620 },
   { offset = 0x3C, type = "REL32", symbol = "??Diterator@?$vector@UtagRECT@@V?$allocator@UtagRECT@@@std@@@std@@QBEAAUtagRECT@@XZ", target = 0x00445600 },
 ]
+
+
+[units.fighter-clear-field47c-00454c00]
+source = "src/FighterClearField47C454C00.cpp"
+object = "build/matching/FighterClearField47C454C00.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["Fighter::ClearField47CAt00454C00"]
+symbol = "?ClearField47CAt00454C00@Fighter@@QAEXXZ"
+target_address = 0x00454C00
+size = 24
+relocations = []
