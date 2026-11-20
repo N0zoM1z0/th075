@@ -94,8 +94,8 @@ and contains 149 recovered action-state bodies. Recent batches added states
 `0x5D`–`0x62`, `0xC8`–`0xD2`, `0x12D`–`0x136`, `0x186`–`0x18B`,
 `0x190`–`0x1A3`, `0x1F5`/`0x208`/`0x20A`–`0x20E`, `0x252`–`0x25D`,
 `0x270`–`0x271`, `0x2BC`–`0x2D1`, and `0x2BD`/`0x2C1`/`0x2E7`/`0x2F2`/
-`0x2FA`/`0x31B`/`0x31C`. The latest two original handlers (`0x2BF` and
-`0x2DB`) span 2,024 bytes / 584 instructions. The probe and its Marisa-
+`0x2FA`/`0x31B`/`0x31C`. The latest four original handlers (`0x2BC`, `0x2BF`, `0x2C0`, and
+`0x2DB`) span 3,325 bytes / 961 instructions. The probe and its Marisa-
 specific counter fragments contain no raw offset casts, ASM, padding, or
 synthetic marker cases. VC7.1 compiles it to 46,070 CODE bytes / 13,203
 instructions; the original is 50,735 bytes / 14,260 instructions. This is

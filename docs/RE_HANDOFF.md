@@ -34,8 +34,8 @@ main; those commits have not been pushed. Recheck Git state before editing.
 - Marisa fighter boss `0x00486550` now has a tracked typed partial source in
   `probes/MarisaFighterAdvancePartial.cpp`: 149 native action-state bodies,
   inherited named fields/methods, no offset casts or marker placeholders.
-  The latest large states `0x2BF` and `0x2DB` add 2,024 original bytes /
-  584 instructions. Its 46,070-byte/13,203-instruction VC7.1 object is
+  The latest large states `0x2BC`, `0x2BF`, `0x2C0`, and `0x2DB` add
+  3,325 original bytes / 961 instructions. Its 46,070-byte/13,203-instruction VC7.1 object is
   explicitly NONEXACT against the 50,735-byte/14,260-instruction original.
   This remains an incomplete research parent, not an exact-credit claim.
 
