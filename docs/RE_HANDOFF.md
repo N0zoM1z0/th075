@@ -31,6 +31,13 @@ main; those commits have not been pushed. Recheck Git state before editing.
 
 ## Recent reconstruction work
 
+- Marisa fighter boss `0x00486550` now has a tracked typed partial source in
+  `probes/MarisaFighterAdvancePartial.cpp`: 53 native action-state bodies,
+  inherited named fields/methods, no offset casts or marker placeholders.
+  Its 14,578-byte/4,057-instruction VC7.1 object is explicitly NONEXACT
+  against the 50,735-byte/14,260-instruction original. This is a starting
+  parent, not a complete function or exact-credit claim.
+
 Current focused source recoveries (2026-11-20):
 
 - `91951cb2` and `933e13af`: the native 0x54-byte four-deque effect owner now

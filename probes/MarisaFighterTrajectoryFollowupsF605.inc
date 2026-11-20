@@ -1,0 +1,56 @@
+// F605: native second packed-switch actions 0x47 and 0x48 in large
+// original fighter Advance() functions. These are NOT independent
+// function credits; owner-specific spawn variants differ.
+case 0x47: {
+    // Original copying +0x98 to +0x54 is MOV dword, not FLD/FSTP.
+    if (animationStage==0 && animationFrame==0) {
+        velocityX = -(field094);
+        velocityY = field098;
+        field05C = 0.8f;
+        field07C = 0;
+    }
+    if (animationStage==F605_STAGE47 && velocityY < g_StopThresholdAt00657480) {
+        ResetSecondaryCounter(F605_EARLY47);
+        break;
+    }
+    velocityY = velocityY - field05C;
+    if (velocityY + y <= g_ThresholdAt0065782C) {
+        scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+        scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+        ClearMotionFields();
+        y = 0.0f;
+        ResetPrimaryCounters(0x61);
+        SetCameraShake(2.0f);
+        PlaySharedSound(0x16);
+        break;
+    }
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(F605_LATE47);
+    break;
+}
+case 0x48: {
+    if (animationStage==0 && animationFrame==0) {
+        velocityX = -(field094);
+        velocityY = field098;
+        field05C = 1.3f;
+        field07C = 0;
+    }
+    if (animationStage==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
+        ResetSecondaryCounter(F605_EARLY48);
+        break;
+    }
+    velocityY = velocityY - field05C;
+    if (velocityY + y <= g_ThresholdAt0065782C) {
+        scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+        scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+        ClearMotionFields();
+        y = 0.0f;
+        ResetPrimaryCounters(0x61);
+        SetCameraShake(2.0f);
+        PlaySharedSound(0x16);
+        break;
+    }
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(F605_LATE48);
+    break;
+}
