@@ -1,6 +1,4 @@
 #include "CombatTimers.hpp"
-#define FIELD_AT(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-#define SELF(type, offset) FIELD_AT(type, this, offset)
 void Fighter::UpdateCounters()
 {
     // Opponent freeze suspends counters but not view bounds and the frame count.
@@ -12,7 +10,7 @@ void Fighter::UpdateCounters()
         opponent->field490 = 0.0f;
         if (field084 > 0) --field084;
         if (field086 > 0) --field086;
-        if (FIELD_AT(unsigned long, frameInfo, 0x3C) & 0x1000) field086 = 6;
+        if (frameInfo->flags & 0x1000) field086 = 6;
         if (field088 > 0) --field088;
         if (field3BC > 0) --field3BC;
         if (field3A0 > 0) {
@@ -24,7 +22,7 @@ void Fighter::UpdateCounters()
                     field36C = 0.0f;
                 }
             } else {
-                field3A4 -= reinterpret_cast<int *>(reinterpret_cast<unsigned char *>(this) + 0x430)[field39D];
+                field3A4 -= static_cast<int>(field430[field39D]);
                 if (field3A4 < 0) field3A4 = 0;
                 --field3A8;
                 if (field3A8 < 0) field3A8 = 0;

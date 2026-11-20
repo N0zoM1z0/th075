@@ -692,3 +692,10 @@ member to the stage-texture format string instead of reconstructing the same
 260-byte name buffer declared at Fighter+0xC4; the stage index and all texture
 resource/lifetime operations are unchanged. The complete 374-byte function,
 including its EH and security-cookie relocations, cold-replayed 1/1 exact.
+
+`Fighter::UpdateCounters` now reads the frame's observed `FighterFrameInfo::flags`
+member directly and indexes the already-declared `Fighter::field430` counter
+array instead of rebuilding both addresses through byte-pointer casts. The
+counter value is explicitly converted to signed `int` before subtracting from
+the signed countdown, preserving the original arithmetic. The complete
+1696-byte function cold-replayed 1/1 exact.
