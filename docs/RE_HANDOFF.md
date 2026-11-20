@@ -84,7 +84,7 @@ the first mismatch lies inside the state-838 entry itself.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 61,122-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 60,802-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, selected `0x12D..0x136`
 special-move phases, `0x187..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -123,7 +123,7 @@ separate command gates, gravity/contact branches, per-action stage velocities
 and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The structural comparison is expected to report a size mismatch (61,122 vs.
+The structural comparison is expected to report a size mismatch (60,802 vs.
 61,872 bytes).
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header
