@@ -41,6 +41,8 @@ extern float g_SpecialMoveDragAt00659888;
 extern float g_RadialPatternYOffsetAt00659274;
 extern float g_Stage2BFYOffsetAt00658398;
 extern float g_Stage2BFY2At00659B6C;
+extern float g_Stage2DAEffectYOffsetAt0065908C;
+extern signed char g_StateRepeatLevelAt006714D0;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -1961,6 +1963,100 @@ void YuyukoFighter::Advance() {
         UpdateGaugeTimer(500);
         SpawnBattleEffect(0x34B, facing * 83.0f + x,
             y + g_Stage2BFY2At00659B6C, facing, 1);
+        return;
+
+    case 0x2DA:
+        if (animationStage == 0 && animationFrame == 0) {
+            scriptCounterF00 = 0;
+            scriptCounterF02 = 0;
+            fieldF04 = 0;
+            field07C = 1;
+            ClearMotionFields();
+        }
+        if (animationStage == 2 && animationFrame < 30) {
+            ++fieldF04;
+            if (fieldF04 > 4) {
+                SpawnAuxEffect(0x3E, x, y + g_Stage2DAEffectYOffsetAt0065908C, 1, 1);
+                fieldF04 = 0;
+            }
+        }
+        if (AdvanceNestedFrame() == animationStageCount) {
+            ResetPrimaryCounters(0);
+            if (y > 0.0f)
+                ResetPrimaryCounters(9);
+            aiCardTimer = static_cast<short>(
+                g_StateRepeatLevelAt006714D0 * -40 + 180);
+        }
+        if (animationStage == 4 && animationFrame == 0) {
+            PlaySound(4);
+            for (int fanIndex2DA4 = 0; fanIndex2DA4 < 9; ++fanIndex2DA4) {
+                field314 = static_cast<float>(fanIndex2DA4 * 40);
+                field318 = 8.0f;
+                field31C = 1.0f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+                field314 = static_cast<float>(fanIndex2DA4 * -40 + 20);
+                field318 = 8.0f;
+                field31C = -1.0f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+            }
+        }
+        if (animationStage == 6 && animationFrame == 0) {
+            PlaySound(4);
+            for (int fanIndex2DA6 = 0; fanIndex2DA6 < 9; ++fanIndex2DA6) {
+                field314 = static_cast<float>(fanIndex2DA6 * 40);
+                field318 = 10.0f;
+                field31C = 0.8f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+                field314 = static_cast<float>(fanIndex2DA6 * -40 + 20);
+                field318 = 10.0f;
+                field31C = -0.8f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+            }
+        }
+        if (animationStage == 8 && animationFrame == 0 &&
+                g_StateRepeatLevelAt006714D0 > 1) {
+            PlaySound(4);
+            for (int fanIndex2DA8 = 0; fanIndex2DA8 < 9; ++fanIndex2DA8) {
+                field314 = static_cast<float>(fanIndex2DA8 * 40);
+                field318 = 12.0f;
+                field31C = 0.6f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+                field314 = static_cast<float>(fanIndex2DA8 * -40 + 20);
+                field318 = 12.0f;
+                field31C = -0.6f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+            }
+        }
+        if (animationStage == 10 && animationFrame == 0 &&
+                g_StateRepeatLevelAt006714D0 > 2) {
+            PlaySound(4);
+            for (int fanIndex2DA10 = 0; fanIndex2DA10 < 9; ++fanIndex2DA10) {
+                field314 = static_cast<float>(fanIndex2DA10 * 40);
+                field318 = 14.0f;
+                field31C = 0.6f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+                field314 = static_cast<float>(fanIndex2DA10 * -40 + 20);
+                field318 = 14.0f;
+                field31C = -0.6f;
+                SpawnBattleEffect(900, x,
+                    y + g_Stage700EffectYOffsetAt00659460, facing, 1);
+            }
+        }
+        if (animationStage == 12 && animationFrame == 0 && scriptCounterF00 < 2) {
+            ++scriptCounterF00;
+            ResetSecondaryCounter(10);
+        }
+        if (animationStage != 14 || animationFrame != 0 || scriptCounterF02 > 5)
+            return;
+        ++scriptCounterF02;
+        ResetSecondaryCounter(12);
         return;
 
     case 0x8C:
