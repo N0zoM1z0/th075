@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers twenty-nine
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33E (except 0x326).
+// The original parent is 50,915 bytes. This research source covers thirty
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33F (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -1661,6 +1661,71 @@ void ReimuObject::Advance()
                         scaleY = 3.5f;
                         velocityX = 0.0f;
                         velocityY = 0.0f;
+                    }
+                }
+                break;
+            case 0x33F:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else if (owner->action < 0x32 || owner->action > 0x95 ||
+                    animationStage > 3) {
+                    if (g_ReimuObjectRightBoundAt0065925C < x ||
+                        x < g_ReimuObjectLeftBoundAt00659258) {
+                        ClearFrameInfo();
+                    }
+                    else {
+                        if (animationStage == 0 && animationFrame == 0) {
+                            if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                                ResetTransform(0.0f, 0.0f, 0.0f);
+                                velocityY = 3.0f;
+                                velocityX = 11.0f;
+                                rotationZ = -AngleAt00483300(velocityY, velocityX) /
+                                    g_ReimuObjectAngleUnitAt00657828;
+                            }
+                            if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                                ResetTransform(0.0f, 0.0f, 0.0f);
+                                velocityY = 6.0f;
+                                velocityX = 8.0f;
+                                rotationZ = -AngleAt00483300(velocityY, velocityX) /
+                                    g_ReimuObjectAngleUnitAt00657828;
+                            }
+                            if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                                ResetTransform(0.0f, 0.0f, 0.0f);
+                                velocityY = -3.0f;
+                                velocityX = 11.0f;
+                                rotationZ = -AngleAt00483300(velocityY, velocityX) /
+                                    g_ReimuObjectAngleUnitAt00657828;
+                            }
+                            if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                                ResetTransform(0.0f, 0.0f, 0.0f);
+                                velocityY = -6.0f;
+                                velocityX = 8.0f;
+                                rotationZ = -AngleAt00483300(velocityY, velocityX) /
+                                    g_ReimuObjectAngleUnitAt00657828;
+                            }
+                        }
+                        x = facing * velocityX + x;
+                        y = y + velocityY;
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            owner->SpawnBattleEffect(0x340, x, y, facing, 1);
+                            ClearFrameInfo();
+                        }
+                    }
+                }
+                else {
+                    ClearFrameInfo();
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    if (owner->fieldEFA > 0x19) {
+                        owner->fieldEFA = 0;
+                        owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
                     }
                 }
                 break;
