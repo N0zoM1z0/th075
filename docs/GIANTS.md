@@ -187,6 +187,16 @@ recompiles and still covers 141/141 top-level labels and 158/158 explicit
 in-parent handler addresses. This is a runtime-semantic correction, not a
 whole-function exactness claim.
 
+The 162-byte BattlePointerQueues::ReleaseEntries leaf now exposes its two
+side lists as named adjacent NativePointerListF337 members instead of
+reinterpret-casting this+0 and this+0x14 at each use. The observed 20-byte
+list view is backed by std::deque<void*>: VC7.1 confirms sizeof 0x14, the
+native Size helper reads +0x10, and At returns void** for the pointers that
+the owner frees. The two-member receiver prefix is checked as 0x28 bytes;
+the unknown remainder of its original owner and allocator/lifetime details
+remain unclaimed. The focused 005F7140 replay is still byte-exact, including
+all eight original COFF relocations.
+
 The linked-effect transform copy is now expressed through one native
 36-byte TransformRecordF136 packet shared by the Fighter and Actor layouts.
 Fighter+0x2F0 exposes it as effectTransformRecord; Actor+0x10 exposes it as
