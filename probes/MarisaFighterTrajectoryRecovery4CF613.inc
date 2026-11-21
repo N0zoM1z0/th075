@@ -20,9 +20,9 @@ case 0x4C: {
         rotationZ=0.0f;
         SetCameraShake(2.0f);
         ClearTransformFlag();
-        break;
+        return;
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(0);
-    break;
+    return;
 }

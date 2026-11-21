@@ -15,7 +15,7 @@
                     SetCameraShake(2.0f);
                     ClearTransformFlag();
                     PlaySharedSound(0x16);
-                    break;
+                    return;
                 }
             }
             if (AdvanceNestedFrame()==(animationStageCount))
@@ -26,5 +26,5 @@
                 field05C=0.7f;
                 ResetTransform(0.0f,95.0f,0.0f);
             }
-            break;
+            return;
         }

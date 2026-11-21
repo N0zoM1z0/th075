@@ -28,5 +28,5 @@ case 0x96: {
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(0);
-    break;
+    return;
 }

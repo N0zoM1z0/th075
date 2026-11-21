@@ -22,5 +22,5 @@ case F628_CASE: {
         ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
-    break;
+    return;
 }

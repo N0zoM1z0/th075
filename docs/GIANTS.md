@@ -116,6 +116,12 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+The same original-return audit fixed four more Marisa state fragments:
+scripted bounce 0x59, recovery 0x4C, jump landings 0x8F/0x90, and landing
+timer 0x96. Their six old switch breaks now return on the native contact,
+counter-completion, or timer-update paths. The validator now enforces these
+per-fragment terminal edges as well.
+
 The remaining early trajectory handlers 0x46, 0x49, 0x4A and 0x58 now
 also preserve their original return paths. Their 15 switch breaks covered
 the stage-threshold exits, landing/contact transitions, bounce redirect,
