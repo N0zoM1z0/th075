@@ -26,6 +26,7 @@ extern const float g_ReimuObjectEffectSpreadAt00657CBC;
 extern const float g_ReimuObjectScalarAt006590B4;
 extern const float g_ReimuObjectSpeedScaleAt00658044;
 extern const float g_ReimuObjectRotationStepAt00657850;
+extern const float g_ReimuObjectOwnerOffsetAt006590A4;
 extern const float g_ReimuObjectRightBoundAt00659250;
 extern const float g_ReimuObjectLeftBoundAt00658344;
 extern const float g_ReimuObjectUpperBoundAt00658E80;
@@ -309,6 +310,44 @@ void ReimuObject::Advance()
                     color[2] = 0xFF;
                     color[3] = 0xFF;
                     rotationZ = 60.0f;
+                }
+                break;
+
+            case 0x328:
+                facing = owner->facing;
+                if (owner->action == 0x131 && owner->animationStage < 4 &&
+                    animationStage == 0) {
+                    x = facing * 0x91 + owner->x;
+                    y = owner->y + g_ReimuObjectOwnerOffsetAt006590A4;
+                }
+                else if (animationStage != 1) {
+                    ResetSecondaryCounter(1);
+                }
+                if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    rotationZ = facing * 0x46;
+                    field0D8 = 1;
+                }
+                rotationZ = rotationZ + g_ReimuObjectDirectionMarker5At00657874;
+                if (animationStage > 0) {
+                    if (color[0] < 0x1F) {
+                        color[0] = 0;
+                    }
+                    else {
+                        color[0] = color[0] - 0x1E;
+                    }
+                }
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
+                }
+                if (animationStage == 1 && animationFrame == 0) {
+                    ResetSecondaryCounter(0);
                 }
                 break;
 
