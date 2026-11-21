@@ -10,7 +10,7 @@ void FighterTrackedEffectsF169::SpawnTrackedEffect(
     if (linked) {
         field2EC->Spawn(
             effect, x, y, facing, layer, 0, 0,
-            &field314, &field2F0, 0);
+            &field314, &effectTransformRecord, 0);
     } else {
         field2EC->Spawn(
             effect, x, y, facing, layer, 0, 0,
@@ -25,7 +25,7 @@ void FighterTrackedEffectsF169::SpawnTrackedEffectWithFlags(
     if (linked) {
         field2EC->Spawn(
             effect, x, y, facing, layer, flagA, flagB,
-            &field314, &field2F0, 0);
+            &field314, &effectTransformRecord, 0);
     } else {
         field2EC->Spawn(
             effect, x, y, facing, layer, flagA, flagB,

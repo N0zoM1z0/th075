@@ -27,8 +27,7 @@ void EffectManagerLifetimeF161::Spawn(short effect, float x, float y, signed cha
     node->field0A4 = fighter_->field0A4;
     if (transform != 0) {
         node->ResetTransform(0, 0, 0);
-        *reinterpret_cast<TransformRecordF136*>(reinterpret_cast<unsigned char*>(node) + 0x10) =
-            *static_cast<const TransformRecordF136*>(transform);
+        node->transformRecord = *static_cast<const TransformRecordF136*>(transform);
     }
     entries_[layer].push_back(node);
 }

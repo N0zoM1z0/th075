@@ -16,7 +16,7 @@ void Fighter::SpawnTrackedEffect(short effect, float x, float y,
 {
     if (linked != 0) {
         field2EC->Spawn(effect, x, y, facing, layer,
-            0, 0, &field314, &field2F0, mode);
+            0, 0, &field314, &effectTransformRecord, mode);
     } else {
         field2EC->Spawn(effect, x, y, facing, layer,
             0, 0, &field314, 0, mode);

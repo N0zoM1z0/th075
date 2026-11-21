@@ -116,6 +116,19 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+The linked-effect transform copy is now expressed through one native
+36-byte TransformRecordF136 packet shared by the Fighter and Actor layouts.
+Fighter+0x2F0 exposes it as effectTransformRecord; Actor+0x10 exposes it as
+transformRecord. EffectManagerLifetimeF161::Spawn no longer manufactures an
+Actor+0x10 pointer with raw byte arithmetic, and both fighter tracked-effect
+forwarders pass the named packet. The VC7.1 compiler still emits the original
+nine-DWORD REP MOVSD copy: the full 282-byte Spawn body and all three
+relocations replay exact. Actor/Fighter layout assertions retain sizes 0xC4
+and 0xF10, and five focused units (Spawn, both tracked-effect forwarders,
+their shared Fighter forwarder, and ResetTransform) replay 5/5 exact. The
+Sakuya object parent and Actor rendering consumer also compile against the
+overlaid declarations. No full cold replay was run.
+
 Marisa fighter partial parent action 0x63 now preserves its four native
 terminal transitions as return statements. The partial parent places this
 case inside a nested sparse switch(actionSnapshot) followed by the shared

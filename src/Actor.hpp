@@ -2,6 +2,7 @@
 #define TH075_ACTOR_HPP
 #include <stddef.h>
 #include <vector>
+#include "TransformRecordF136.hpp"
 
 struct tagRECT;   // RECT; defined by <windows.h> where vector operations are instantiated
 
@@ -136,18 +137,26 @@ public:
     void* drawing;                      // +0x004 sprite drawing context, shared with the owner's objects
     FighterFrameInfo* drawFrame;        // +0x008 frame record the node renderers draw
     unsigned char unknown00C[0x010 - 0x00C];
-    unsigned char field010;             // +0x010
-    unsigned char color[4];             // +0x011 four colour channels, all 255 when opaque
-    unsigned char unknown015[0x016 - 0x015];
-    short field016;                     // +0x016
-    short field018;                     // +0x018
-    short field01A;                     // +0x01A
-    float scaleX;                       // +0x01C
-    float scaleY;                       // +0x020
-    float scaleZ;                       // +0x024
-    float rotationX;                    // +0x028
-    float rotationY;                    // +0x02C
-    float rotationZ;                    // +0x030
+    // The transform packet at +0x10 is also copied as a 36-byte record
+    // when a fighter spawns a linked effect. Keep the individual Actor
+    // fields and the packet view over exactly the same native storage.
+    union {
+        struct {
+            unsigned char field010;     // +0x010 transform enabled
+            unsigned char color[4];     // +0x011 four colour channels
+            unsigned char unknown015[0x016 - 0x015];
+            short field016;             // +0x016
+            short field018;             // +0x018
+            short field01A;             // +0x01A
+            float scaleX;               // +0x01C
+            float scaleY;               // +0x020
+            float scaleZ;               // +0x024
+            float rotationX;            // +0x028
+            float rotationY;            // +0x02C
+            float rotationZ;            // +0x030
+        };
+        TransformRecordF136 transformRecord;
+    };
     float pivotX;                       // +0x034
     float pivotY;                       // +0x038
     float pivotZ;                       // +0x03C
@@ -221,6 +230,7 @@ public:
 
 typedef char ActorLayoutCheck[(
     offsetof(Actor, x) == 0x044 &&
+    offsetof(Actor, transformRecord) == 0x010 &&
     offsetof(Actor, action) == 0x060 &&
     offsetof(Actor, frameInfo) == 0x074 &&
     offsetof(Actor, savedFrameInfo) == 0x0AC &&

@@ -151,21 +151,28 @@ public:
     float field2E4;                     // +0x2E4
     Fighter* opponent;                  // +0x2E8 the other player
     EffectManagerLifetimeF161* field2EC; // +0x2EC owned effect-manager object
-    unsigned char field2F0;             // +0x2F0
-    unsigned char field2F1;             // +0x2F1
-    unsigned char field2F2;             // +0x2F2
-    unsigned char field2F3;             // +0x2F3
-    unsigned char field2F4;             // +0x2F4
-    unsigned char unknown2F5[0x2F6 - 0x2F5];
-    short field2F6;                     // +0x2F6
-    short field2F8;                     // +0x2F8
-    short field2FA;                     // +0x2FA
-    float field2FC;                     // +0x2FC
-    float field300;                     // +0x300
-    unsigned char unknown304[0x308 - 0x304];
-    float field308;                     // +0x308
-    float field30C;                     // +0x30C
-    float field310;                     // +0x310
+    // Linked effects copy this exact 36-byte fighter packet into Actor+0x10.
+    // Retain all existing field names while exposing its shared transform type.
+    union {
+        struct {
+            unsigned char field2F0;     // +0x2F0 transform enabled
+            unsigned char field2F1;     // +0x2F1 alpha
+            unsigned char field2F2;     // +0x2F2 red
+            unsigned char field2F3;     // +0x2F3 green
+            unsigned char field2F4;     // +0x2F4 blue
+            unsigned char unknown2F5[0x2F6 - 0x2F5];
+            short field2F6;             // +0x2F6
+            short field2F8;             // +0x2F8
+            short field2FA;             // +0x2FA
+            float field2FC;             // +0x2FC
+            float field300;             // +0x300
+            unsigned char unknown304[0x308 - 0x304];
+            float field308;             // +0x308
+            float field30C;             // +0x30C
+            float field310;             // +0x310
+        };
+        TransformRecordF136 effectTransformRecord;
+    };
     float field314;                     // +0x314
     float field318;                     // +0x318
     float field31C;                     // +0x31C
@@ -317,6 +324,7 @@ public:
 
 typedef char FighterLayoutCheck[(
     offsetof(Fighter, opponent) == 0x2E8 &&
+    offsetof(Fighter, effectTransformRecord) == 0x2F0 &&
     offsetof(Fighter, health) == 0x324 &&
     offsetof(Fighter, spirit) == 0x3B0 &&
     offsetof(Fighter, inputBindings) == 0x494 &&
