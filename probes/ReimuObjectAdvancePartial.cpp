@@ -1,9 +1,8 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This file currently models only the
-// Eleven actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x32C.
-// Other original actions are intentionally not represented; this is not a
-// original actions are intentionally not represented and this is not a
-// complete replacement or an exactness claim.
+// The original parent is 50,915 bytes. This research source covers twelve
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x32D (except 0x326).
+// Other original actions remain unrepresented; this is not a complete
+// replacement or an exactness claim.
 #include "CharacterObject.hpp"
 
 extern float __cdecl AngleAt00483300(float y, float x);
@@ -858,6 +857,82 @@ void ReimuObject::Advance()
                     if (owner->fieldEFA > 0x19) {
                         owner->fieldEFA = 0;
                         owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                    }
+                }
+                break;
+            case 0x32D:
+                if (owner->action == 0x1FA || owner->action == 0x1FB) {
+                    x = owner->x;
+                    y = owner->y;
+                }
+                if ((owner->action != 0x1FA || owner->field082 < 1) &&
+                    AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
+                }
+                break;
+
+            case 0x32D:
+            case 0x32E:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (field07C == 6) {
+                        field07C = 0;
+                        field080 = 1;
+                    }
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 1;
+                        field07C = 0;
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0D8 = 0;
+                        field0DA = 0;
+                        field0DC = 0;
+                        field0DE = 0;
+                        field0DC = static_cast<short>(field0C8);
+                    }
+                    SetPolarVelocity(field0C8,
+                        static_cast<float>(field0DA) * g_ReimuObjectScalarAt006590B4 +
+                        g_ReimuObjectScalarAt00657850);
+                    field0DE = field0DE + 0x1E;
+                    field0DA = field0DA + 1;
+                    if (animationStage > 0 && field0DC < 0x5A) {
+                        if (owner->opponent->y + g_ReimuObjectContactProjectionAt00657888 < y) {
+                            field0C8 = field0C8 + g_ReimuObjectDirectionMarker1At0065747C;
+                        }
+                        if (y < owner->opponent->y + g_ReimuObjectContactProjectionAt00657888) {
+                            field0C8 = field0C8 - g_ReimuObjectDirectionMarker1At0065747C;
+                        }
+                        field0DC = field0DC + 1;
+                    }
+                    x = facing * velocityX + x;
+                    y = y + velocityY;
+                    rotationZ = rotationZ + g_ReimuObjectRotationStepAt006590C4;
+                    if ((field07C == 1 || field07C == 2 || field07C == 4) && field080 == 0) {
+                        ResetSecondaryCounter(3);
+                    }
+                    if (animationStage > 2) {
+                        if (color[0] < 0x19) {
+                            color[0] = 0;
+                        }
+                        else {
+                            color[0] = color[0] - 0x19;
+                        }
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
+                    }
+                    if (animationStage == 3 && animationFrame == 0 &&
+                        field0D8 < 0xC && field080 > 0) {
+                        ResetSecondaryCounter(2);
+                        field0D8 = field0D8 + 1;
+                        field07C = 0;
                     }
                 }
                 break;
