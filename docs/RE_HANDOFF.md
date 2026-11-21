@@ -87,7 +87,7 @@ its source spelling.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,416-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,254-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, `0x12C..0x136`
 special-move phases, `0x186..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -153,13 +153,16 @@ separate command gates, gravity/contact branches, per-action stage velocities
 and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The corrected VC7.1 body is 62,416 bytes versus the 61,872-byte target (+544),
-with 52,265 direct non-relocation byte differences (down from 53,477). Removing
-the misplaced action-303 volley and restoring its three original loop-counter
-lifetimes reduced the stack frame from `0x348` to `0x31C` (44 bytes) and the
-body by 745 bytes. Six affected animation, counter, motion-clear, battle-effect
-and sound leaf units replayed 6/6 exact. The whole-function layout is still not
-exact and needs further code-generation work.
+The corrected VC7.1 body is 62,254 bytes versus the 61,872-byte target (+382),
+with 51,620 direct non-relocation byte differences. Removing the misplaced
+action-303 volley and restoring its three original loop-counter lifetimes
+reduced the stack frame from `0x348` to `0x31C`; preserving the target's double
+contact-scale multiply at all 27 call sites then reduced it further to `0x2B0`
+(only 8 bytes above target), removed 27 conversion temporaries, and reduced
+direct differences by another 645 bytes. Six affected animation, counter,
+motion-clear, battle-effect and sound leaf units replayed 6/6 exact. The
+whole-function layout is still not exact and needs further code-generation
+work.
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header
 consumer units were cold-replayed individually: 13/13 exact across 11
