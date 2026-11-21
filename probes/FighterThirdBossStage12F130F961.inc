@@ -7,8 +7,7 @@
 case 0x12F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
-            ClearMotionFields();
-        field080=1;
+                    field080=1;
         field07C=0;
     }
     if ((field3AC)>0) {
