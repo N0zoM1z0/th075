@@ -1,9 +1,10 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers sixteen
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x331 (except 0x326).
+// The original parent is 50,915 bytes. This research source covers seventeen
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x332 (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
+#include "ReimuFighter.hpp"
 
 extern float __cdecl AngleAt00483300(float y, float x);
 
@@ -39,6 +40,7 @@ extern const float g_ReimuObjectRotationStepAt006590C4;
 extern const float g_ReimuObjectOwnerYOffsetAt00659080;
 extern const float g_ReimuObjectScaleMultiplierAt00659090;
 extern const float g_ReimuObjectScaleIncrementAt006583FC;
+extern const float g_ReimuObjectRightBoundAt00659248;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 
@@ -1041,6 +1043,85 @@ void ReimuObject::Advance()
                 }
                 else {
                     ResetSecondaryCounter(animationStage + 10);
+                }
+                break;
+            case 0x332:
+                static_cast<ReimuFighter*>(owner)->fieldF22 = 1;
+                if (owner->action == 0x2C1 && animationStage < 0x13) {
+                    x = facing * 0xE4 + owner->x;
+                    y = owner->y + g_ReimuObjectOwnerYOffsetAt00659080;
+                }
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    field080 = 999;
+                    field07C = 0;
+                    scaleX = 6.0f;
+                    scaleY = 6.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 0;
+                    field0DA = 0;
+                    field0DC = 0;
+                    field0DE = 0;
+                    field0E0 = 0;
+                    velocityX = 0.0f;
+                    velocityY = 0.0f;
+                }
+                if (animationStage > 0x13) {
+                    rotationZ = rotationZ - g_ReimuObjectDirectionMarker4At00657D14;
+                    velocityX = velocityX + g_ReimuObjectScaleStepAt00658348;
+                    if (owner->spirit < 6) {
+                        field0E0 = 1;
+                        owner->UpdateGaugeTimer(owner->spirit - 1);
+                    }
+                    else {
+                        owner->UpdateGaugeTimer(4);
+                    }
+                    if (field0E0 == 1) {
+                        field080 = 0;
+                        if (color[0] < 0x0B) {
+                            ClearFrameInfo();
+                            static_cast<ReimuFighter*>(owner)->fieldF22 = 0;
+                            return;
+                        }
+                        color[0] = color[0] - 10;
+                    }
+                }
+                if (field07C != 0) {
+                    field0DA = 10;
+                    field0D8 = field0D8 + 1;
+                    if ((field07C == 6 || field07C == 4) && field0D8 < 2) {
+                        field0D8 = 2;
+                    }
+                    if (field0D8 > 2) {
+                        field0D8 = 0;
+                        field07C = 0;
+                    }
+                }
+                if (field0DA > 0) {
+                    field0DA = field0DA - 1;
+                    velocityX = 2.0f;
+                    if (field0DA == 0) {
+                        velocityX = 2.0f;
+                    }
+                }
+                x = facing * velocityX + x;
+                y = y + velocityY;
+                if (x < g_ReimuObjectLowerBoundAt00657880 ||
+                    g_ReimuObjectRightBoundAt00659248 < x) {
+                    ClearFrameInfo();
+                    static_cast<ReimuFighter*>(owner)->fieldF22 = 0;
+                }
+                else {
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(0x28);
+                    }
+                    if (animationStage == 0x13 && animationFrame == 0) {
+                        velocityX = 2.0f;
+                        velocityY = 0.0f;
+                    }
                 }
                 break;
             }
