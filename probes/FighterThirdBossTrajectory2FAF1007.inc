@@ -12,7 +12,6 @@
 // F1007 SHA-pinned Japanese original 004AC040 fighter case 2FA.
 case 0x2FA: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
@@ -23,7 +22,6 @@ case 0x2FA: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ResetSecondaryCounter(15);
-            ClearMotionFields();
             y=0.0f;
             break;
         }
