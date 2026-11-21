@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers seventeen
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x332 (except 0x326).
+// The original parent is 50,915 bytes. This research source covers twenty-two
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x337 (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -1122,6 +1122,120 @@ void ReimuObject::Advance()
                         velocityX = 2.0f;
                         velocityY = 0.0f;
                     }
+                }
+                break;
+            case 0x333:
+                if (owner->action == 0x2BF) {
+                    x = owner->x;
+                    y = owner->y;
+                }
+                if (animationStage < 6 && owner->action != 0x2BF) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        scaleX = 6.0f;
+                        scaleY = 6.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0D8 = 0;
+                        field0DA = 0;
+                        field0DC = 0;
+                        field0DE = 0;
+                    }
+                    if (animationStage == 6) {
+                        if (color[0] < 7) {
+                            color[0] = 0;
+                        }
+                        else {
+                            color[0] = color[0] - 7;
+                        }
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
+                    }
+                    if (animationStage == 6 && animationFrame == 0) {
+                        owner->SpawnBattleEffect(0x334, x, y, facing, 1);
+                    }
+                }
+                break;
+
+            case 0x334:
+                if (animationStage == 0 && animationFrame == 0 && field0DC == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    field080 = 99;
+                    field07C = 0;
+                    scaleX = 6.0f;
+                    scaleY = 6.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 0;
+                    field0DA = 0;
+                    field0DC = 1;
+                }
+                if (owner->action == 0x2BF) {
+                    x = owner->x;
+                    y = owner->y;
+                }
+                if ((owner->action == 0x2BF && owner->animationStage < 0x0C) ||
+                    animationStage > 0x15) {
+                    if (field07C != 0) {
+                        field0D8 = field0D8 + 1;
+                        if (field0D8 > 2) {
+                            field0D8 = 0;
+                            field07C = 0;
+                        }
+                    }
+                    if (animationStage > 0x15) {
+                        if (color[0] < 5) {
+                            color[0] = 0;
+                            ClearFrameInfo();
+                            return;
+                        }
+                        color[0] = color[0] - 5;
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(0x16);
+                    }
+                    else if (animationStage == 0x16 && animationFrame == 0) {
+                        ResetSecondaryCounter(0);
+                    }
+                }
+                else {
+                    ResetSecondaryCounter(animationStage + 0x16);
+                }
+                break;
+
+            case 0x335:
+            case 0x336:
+            case 0x337:
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    field080 = 1;
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                }
+                if (animationStage == 0) {
+                    scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
+                    scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+                }
+                if (animationStage == 1) {
+                    scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
+                    scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+                    color[0] = color[0] - 0x32;
+                }
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
                 }
                 break;
             }
