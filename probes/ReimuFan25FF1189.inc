@@ -1,26 +1,36 @@
 // Reimu Fighter::Advance native action 0x25F.
+// Quarter-speed opening followed by the six-shot 0x320 stage-3 fan.
 case 0x25F:
     if (animationStage == 0 && animationFrame == 0) {
+        velocityX = velocityX * g_BounceScaleAt00657F74;
+        velocityY = velocityY * g_BounceScaleAt00657F74;
         field07C = 1;
-        ClearMotionFields();
-        scriptCounterF00 = 0;
-        scriptCounterF02 = 0;
     }
-    --scriptCounterF00;
-    if (AdvanceNestedFrame() == animationStageCount) ResetPrimaryCounters(0);
-    if (animationStage != 6 || animationFrame != 0) return;
-    if (scriptCounterF00 > 0 || scriptCounterF02 > 0) return;
-    ResetSecondaryCounter(0);
-    UpdateGaugeTimer(0x96);
-    for (int shot = 0; shot < 10; ++shot) {
-        field314 = static_cast<float>(shot * -6 + 0x1E);
-        field318 = 15.0f;
-        SpawnBattleEffect(0x346,
-            x + static_cast<float>(facing * 0x31),
-            y + g_ReimuFullCircleYOffsetAt00659294, facing, 1);
+    if (AdvanceNestedFrame() == animationStageCount) {
+        ResetPrimaryCounters(9);
     }
-    velocityX = static_cast<float>(scriptCounterF00) * g_ReimuStormFallAt00658044;
-    velocityY = static_cast<float>(scriptCounterF02) * g_ReimuStormFallAt00658044;
-    scriptCounterF00 = 2;
-    ++scriptCounterF02;
+    if (animationStage != 3 || animationFrame != 0) {
+        return;
+    }
+    field314 = 20.0f;
+    field318 = 10.0f;
+    SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
+        y + g_ReimuCommandBackYAt006590A8, facing, 1);
+    field314 = 40.0f;
+    SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
+        y + g_ReimuCommandBackYAt006590A8, facing, 1);
+    field314 = 60.0f;
+    SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
+        y + g_ReimuCommandBackYAt006590A8, facing, 1);
+    field314 = -20.0f;
+    SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
+        y + g_ReimuCommandBackYAt006590A8, facing, 1);
+    field314 = -40.0f;
+    SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
+        y + g_ReimuCommandBackYAt006590A8, facing, 1);
+    field314 = -60.0f;
+    SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
+        y + g_ReimuCommandBackYAt006590A8, facing, 1);
+    UpdateGaugeTimer(0xFA);
+    ResetSecondaryCounter(5);
     return;

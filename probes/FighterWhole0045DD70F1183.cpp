@@ -67,14 +67,6 @@ extern float g_ReimuFallingSpawnYOffsetAt0065908C;
 extern float g_ReimuStormLeftBoundaryAt0065787C;
 extern float g_ReimuStormRightBoundaryAt0065920C;
 extern float g_ReimuApproachRightBoundAt0065945C;
-extern float g_ReimuFiveShotYAt00657858;
-extern float g_ReimuFiveShotYAt0065786C;
-extern float g_ReimuFiveShotSecondYAt00659474;
-extern float g_ReimuFiveShotThirdYAt00657860;
-extern float g_ReimuFiveShotFourthYAt00659284;
-extern float g_ReimuFiveShotFifthYAt00659470;
-extern float g_ReimuFullCircleYOffsetAt00659294;
-extern float g_ReimuSpecialVolleyYAt00659498;
 
 static short ReimuRoundFloatToShort(float value)
 {
@@ -668,18 +660,6 @@ case 0x48: {
 #include "ReimuDifficultyShotF1191.inc"
 #include "ReimuResourceLoopsF1192.inc"
 #include "ReimuFinalEffectsF1192.inc"
-#include "ReimuBossModeStorm2E6F1183.inc"
-#include "ReimuBossPairedArc2F0F1183.inc"
-#include "ReimuBossGroundedVolley2FBF1183.inc"
-#include "ReimuBossFourTierVolley302F1183.inc"
-#include "ReimuBossVolley1FC1FDF1183.inc"
-#include "ReimuBossVolley1F9F1183.inc"
-#include "ReimuBossTrajectory2FAF1183.inc"
-#include "ReimuBossFanShots1A21A41F1183.inc"
-#include "ReimuBossStageEffects255257F1183.inc"
-#include "ReimuFighterAction60F1183.inc"
-#include "ReimuFighterFiveShot199F1183.inc"
-#include "ReimuFighterChargeVolley19FF1183.inc"
         default:
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
