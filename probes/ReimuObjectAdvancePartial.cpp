@@ -1,7 +1,7 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
 // The original parent is 50,915 bytes. This file currently models only the
-// nine transcribed actions (800, 0x321, 0x322, 0x324, 0x325, 0x327-0x32A
-// excluding 0x326); other
+// Eleven actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x32C.
+// Other original actions are intentionally not represented; this is not a
 // original actions are intentionally not represented and this is not a
 // complete replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -26,7 +26,7 @@ extern const float g_ReimuObjectDirectionMarker7At00659254;
 extern const float g_ReimuObjectEffectSpreadAt00657CBC;
 extern const float g_ReimuObjectScalarAt006590B4;
 extern const float g_ReimuObjectSpeedScaleAt00658044;
-extern const float g_ReimuObjectRotationStepAt00657850;
+extern const float g_ReimuObjectScalarAt00657850;
 extern const float g_ReimuObjectOwnerOffsetAt006590A4;
 extern const float g_ReimuObjectRightBoundAt00659250;
 extern const float g_ReimuObjectLeftBoundAt00658344;
@@ -34,6 +34,9 @@ extern const float g_ReimuObjectUpperBoundAt00658E80;
 extern const float g_ReimuObjectLowerBoundAt00657880;
 extern const float g_ReimuObjectUpperBoundAt006583B4;
 extern const float g_ReimuObjectLowerBoundAt00658374;
+extern const float g_ReimuObjectUpperBoundAt00657884;
+extern const float g_ReimuObjectLowerBoundAt0065924C;
+extern const float g_ReimuObjectRotationStepAt006590C4;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 
@@ -411,7 +414,7 @@ void ReimuObject::Advance()
                             static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
                         x = facing * velocityX + x;
                         y = y - velocityY;
-                        rotationZ = rotationZ + g_ReimuObjectRotationStepAt00657850;
+                        rotationZ = rotationZ + g_ReimuObjectScalarAt00657850;
                         if (g_ReimuObjectRightBoundAt00659250 < x ||
                             x < g_ReimuObjectLeftBoundAt00658344 ||
                             g_ReimuObjectUpperBoundAt00658E80 < y ||
@@ -568,7 +571,7 @@ void ReimuObject::Advance()
                             static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
                         x = facing * velocityX + x;
                         y = y - velocityY;
-                        rotationZ = rotationZ + g_ReimuObjectRotationStepAt00657850;
+                        rotationZ = rotationZ + g_ReimuObjectScalarAt00657850;
                         if (g_ReimuObjectRightBoundAt00659250 < x ||
                             x < g_ReimuObjectLeftBoundAt00658344 ||
                             g_ReimuObjectUpperBoundAt00658E80 < y ||
@@ -688,7 +691,7 @@ void ReimuObject::Advance()
                             static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
                         x = facing * velocityX + x;
                         y = y - velocityY;
-                        rotationZ = rotationZ + g_ReimuObjectRotationStepAt00657850;
+                        rotationZ = rotationZ + g_ReimuObjectScalarAt00657850;
                         if (g_ReimuObjectRightBoundAt00659250 < x ||
                             x < g_ReimuObjectLeftBoundAt00658344 ||
                             g_ReimuObjectUpperBoundAt00658E80 < y ||
@@ -711,6 +714,153 @@ void ReimuObject::Advance()
                 }
                 break;
 
+
+            case 0x32B:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else if (owner->action < 0x32 || owner->action > 0x95 ||
+                    animationStage > 3) {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 1;
+                        field07C = 0;
+                        SetPolarVelocity(field0C8, field0CC);
+                        field0D8 = 0;
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        rotationZ = AngleAt00483300(velocityY, velocityX) /
+                            g_ReimuObjectAngleUnitAt00657828;
+                    }
+                    field0D8 = field0D8 + 1;
+                    SetPolarVelocity(field0C8,
+                        static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4 + field0CC);
+                    if (field07C == 0 || animationStage != 1) {
+                        x = facing * velocityX + x;
+                        y = y - velocityY;
+                        if (g_ReimuObjectRightBoundAt0065925C < x ||
+                            x < g_ReimuObjectLeftBoundAt00659258 ||
+                            g_ReimuObjectUpperBoundAt00657884 < y ||
+                            y < g_ReimuObjectLowerBoundAt0065924C) {
+                            ClearFrameInfo();
+                        }
+                        else {
+                            if (animationStage > 1) {
+                                if (color[0] < 0x19) {
+                                    color[0] = 0;
+                                }
+                                else {
+                                    color[0] = color[0] - 0x19;
+                                }
+                            }
+                            if (AdvanceNestedFrame() == animationStageCount) {
+                                ClearFrameInfo();
+                            }
+                        }
+                    }
+                    else {
+                        ResetSecondaryCounter(2);
+                    }
+                }
+                else {
+                    ClearFrameInfo();
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    if (owner->fieldEFA > 0x19) {
+                        owner->fieldEFA = 0;
+                        owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                    }
+                }
+                break;
+
+            case 0x32C:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else if (owner->action < 0x32 || owner->action > 0x95 ||
+                    animationStage > 3) {
+                    if (g_ReimuObjectRightBoundAt0065925C < x ||
+                        x < g_ReimuObjectLeftBoundAt00659258 ||
+                        g_ReimuObjectUpperBoundAt006583B4 < y ||
+                        y < g_ReimuObjectLowerBoundAt00658374) {
+                        ClearFrameInfo();
+                    }
+                    else {
+                        if (animationStage == 0 && animationFrame == 0) {
+                            ResetTransform(0.0f, 0.0f, 0.0f);
+                            field080 = 4;
+                            field07C = 0;
+                            scaleX = 1.0f;
+                            scaleY = 1.0f;
+                            color[0] = 0xFF;
+                            color[1] = 0xFF;
+                            color[2] = 0xFF;
+                            color[3] = 0xFF;
+                            field0D8 = 0;
+                            field0DA = 0;
+                            field0DC = 0;
+                            field0DE = 0;
+                            field0DC = static_cast<short>(field0C8);
+                        }
+                        SetPolarVelocity(field0C8,
+                            static_cast<float>(field0DA) * g_ReimuObjectScalarAt006590B4 +
+                            g_ReimuObjectScalarAt00657850);
+                        field0DE = field0DE + 0x1E;
+                        field0DA = field0DA + 1;
+                        if (animationStage > 0 && field0DC < 0x5A) {
+                            if (owner->opponent->y + g_ReimuObjectContactProjectionAt00657888 < y) {
+                                field0C8 = field0C8 + g_ReimuObjectDirectionMarker1At0065747C;
+                            }
+                            if (y < owner->opponent->y + g_ReimuObjectContactProjectionAt00657888) {
+                                field0C8 = field0C8 - g_ReimuObjectDirectionMarker1At0065747C;
+                            }
+                            field0DC = field0DC + 1;
+                        }
+                        x = facing * velocityX + x;
+                        y = y + velocityY;
+                        rotationZ = rotationZ + g_ReimuObjectRotationStepAt006590C4;
+                        if ((field07C == 1 || field07C == 2 || field07C == 4) && field080 == 0) {
+                            ResetSecondaryCounter(3);
+                        }
+                        if (animationStage > 2) {
+                            if (color[0] < 0x19) {
+                                color[0] = 0;
+                            }
+                            else {
+                                color[0] = color[0] - 0x19;
+                            }
+                        }
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            ClearFrameInfo();
+                        }
+                        if (animationStage == 3 && animationFrame == 0 &&
+                            field0D8 < 0xC && field080 > 0) {
+                            ResetSecondaryCounter(2);
+                            field0D8 = field0D8 + 1;
+                            field07C = 0;
+                        }
+                    }
+                }
+                else {
+                    ClearFrameInfo();
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    if (owner->fieldEFA > 0x19) {
+                        owner->fieldEFA = 0;
+                        owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                    }
+                }
+                break;
             }
         }
     }
