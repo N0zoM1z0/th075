@@ -26,7 +26,7 @@ case 0x25D:
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x1E),
             y + g_ReimuSpecialYAt0065908C, facing, 1);
         UpdateGaugeTimer(0xFA);
-        ResetSecondaryCounter(5);
+        PlaySound(5);
     }
     if (AdvanceNestedFrame() != animationStageCount) {
         return;

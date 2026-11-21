@@ -26,5 +26,5 @@ case 0x258:
     SpawnBattleEffect(0x321, x + static_cast<float>(facing * 0x72),
         y + g_ReimuLowVolleyYAt006590A0, facing, 1);
     UpdateGaugeTimer(0xFA);
-    ResetSecondaryCounter(4);
+    PlaySound(4);
     return;

@@ -32,5 +32,5 @@ case 0x25F:
     SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
         y + g_ReimuCommandBackYAt006590A8, facing, 1);
     UpdateGaugeTimer(0xFA);
-    ResetSecondaryCounter(5);
+    PlaySound(5);
     return;
