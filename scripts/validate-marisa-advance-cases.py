@@ -176,6 +176,11 @@ def main() -> int:
         print("Marisa actions 0x60/0x61 must return on all four native exits", file=sys.stderr)
         return 1
 
+    trajectory_followups = (PROBES / "MarisaFighterTrajectoryFollowupsF605.inc").read_text(encoding="utf-8")
+    if trajectory_followups.count("return;") != 6 or trajectory_followups.count("break;") != 0:
+        print("Marisa actions 0x47/0x48 must return on all six native exits", file=sys.stderr)
+        return 1
+
     source: list[int] = []
     source_cases(SOURCE, {}, source)
     with HANDLERS.open(newline="", encoding="utf-8") as stream:
