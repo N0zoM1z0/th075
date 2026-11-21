@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers twenty-five
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33A (except 0x326).
+// The original parent is 50,915 bytes. This research source covers twenty-six
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33B (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -43,6 +43,8 @@ extern const float g_ReimuObjectScaleIncrementAt006583FC;
 extern const float g_ReimuObjectRightBoundAt00659248;
 extern const float g_ReimuObjectFullRotationAt00657864;
 extern const float g_ReimuObjectHalfAt00657478;
+extern float g_AngleShiftAt00657878;
+extern double g_RiseAt00658050;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 
@@ -1455,6 +1457,79 @@ void ReimuObject::Advance()
                     owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
                     owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
                     owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                }
+                break;
+            case 0x33B:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else if (owner->action < 0x32 || owner->action > 0x95 ||
+                    animationStage > 3) {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 1;
+                        field07C = 0;
+                        SetPolarVelocity(field0C8, field0CC);
+                        field0D8 = 0;
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        rotationZ = AngleAt00483300(velocityY, velocityX) /
+                            g_ReimuObjectAngleUnitAt00657828;
+                    }
+                    field0D8 = field0D8 + 1;
+                    if (animationStage < 3) {
+                        SetPolarVelocity(field0C8, field0CC);
+                    }
+                    if (field07C == 1 || field07C == 2 || field07C == 4) {
+                        if (animationStage == 1 && field07C == 1) {
+                            ResetSecondaryCounter(2);
+                            return;
+                        }
+                        if (animationStage == 1) {
+                            ResetSecondaryCounter(3);
+                            velocityX = -8.0f;
+                            velocityY = -10.0f;
+                            return;
+                        }
+                    }
+                    x = facing * velocityX + x;
+                    y = y - velocityY;
+                    if (g_ReimuObjectRightBoundAt0065925C < x ||
+                        x < g_ReimuObjectLeftBoundAt00659258 ||
+                        g_ReimuObjectUpperBoundAt00657884 < y ||
+                        y < g_ReimuObjectLowerBoundAt0065924C) {
+                        ClearFrameInfo();
+                    }
+                    else {
+                        if (animationStage == 2) {
+                            if (color[0] < 0x19) {
+                                color[0] = 0;
+                                ClearFrameInfo();
+                                return;
+                            }
+                            color[0] = color[0] - 0x19;
+                        }
+                        if (animationStage == 3) {
+                            rotationZ = rotationZ + g_AngleShiftAt00657878;
+                            velocityY = velocityY + static_cast<float>(g_RiseAt00658050);
+                        }
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            ClearFrameInfo();
+                        }
+                    }
+                }
+                else {
+                    ClearFrameInfo();
+                    if (owner->fieldEFA > 0x19) {
+                        owner->fieldEFA = 0;
+                        owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                    }
                     owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
                     owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
                 }
