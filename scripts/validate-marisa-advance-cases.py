@@ -161,6 +161,16 @@ def main() -> int:
         print("Marisa F600 actions must return on all 14 native terminal paths", file=sys.stderr)
         return 1
 
+    early_bounce = (PROBES / "MarisaFighterEarlyBounce5D5E5F.inc").read_text(encoding="utf-8")
+    if early_bounce.count("return;") != 7 or early_bounce.count("break;") != 0:
+        print("Marisa actions 0x5D-0x5F must return on all seven native exits", file=sys.stderr)
+        return 1
+
+    arc91 = (PROBES / "MarisaFighterArcTrajectory91F629.inc").read_text(encoding="utf-8")
+    if arc91.count("return;") != 3 or arc91.count("break;") != 0:
+        print("Marisa action 0x91 must return on all three native exits", file=sys.stderr)
+        return 1
+
     source: list[int] = []
     source_cases(SOURCE, {}, source)
     with HANDLERS.open(newline="", encoding="utf-8") as stream:

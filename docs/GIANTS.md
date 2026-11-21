@@ -116,6 +116,16 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+The same nested-switch return audit now covers Marisa actions 0x5D-0x5F
+and 0x91. Original Ghidra control flow confirms seven terminal exits in the
+early-bounce/facing group and three in the arc-trajectory action. Their old
+break statements fell through to the partial parent's common default frame
+handler; all ten now return directly, matching the original transition,
+landing, and frame-completion paths. The validator guards these exit counts,
+and the full Marisa partial parent compiles with all 141/141 top-level labels
+and 158/158 explicit in-parent handlers still covered. This remains a
+semantic correction to the partial parent, not whole-function exactness.
+
 Marisa's eleven contact actions 0x33-0x41 in F600 now preserve the native
 return edges instead of breaking out of the partial parent's nested action
 switch. Ghidra's original parent has no switch breaks in these eleven cases:

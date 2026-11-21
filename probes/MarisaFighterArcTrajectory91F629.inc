@@ -10,7 +10,7 @@ case 0x91: {
     }
     if (animationStage==F629_STAGE && velocityY<g_StopThresholdAt00657480) {
         ResetSecondaryCounter(F629_EARLY);
-        break;
+        return;
     }
     velocityY=velocityY-field05C;
     if (velocityY+y<=g_ThresholdAt0065782C) {
@@ -20,9 +20,9 @@ case 0x91: {
         y=0.0f;
         ResetPrimaryCounters(0x61);
         SetCameraShake(2.0f);
-        break;
+        return;
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(F629_LATE);
-    break;
+    return;
 }
