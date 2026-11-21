@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers fifteen
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x330 (except 0x326).
+// The original parent is 50,915 bytes. This research source covers sixteen
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x331 (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -994,6 +994,53 @@ void ReimuObject::Advance()
                     if (animationStage == 6 && animationFrame == 0) {
                         owner->SpawnBattleEffect(0x331, x, y, facing, 1);
                     }
+                }
+                break;
+            case 0x331:
+                if (animationStage == 0 && animationFrame == 0 && field0DC == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    field080 = 99;
+                    field07C = 0;
+                    scaleX = 4.0f;
+                    scaleY = 4.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 0;
+                    field0DA = 0;
+                    field0DC = 1;
+                }
+                if (owner->action == 0x2BE) {
+                    x = owner->x;
+                    y = owner->y;
+                }
+                if ((owner->action == 0x2BE && owner->animationStage < 0x0C) ||
+                    animationStage > 9) {
+                    if (field07C != 0) {
+                        field0D8 = field0D8 + 1;
+                        if (field0D8 > 2) {
+                            field0D8 = 0;
+                            field07C = 0;
+                        }
+                    }
+                    if (animationStage > 9) {
+                        if (color[0] < 5) {
+                            color[0] = 0;
+                            ClearFrameInfo();
+                            return;
+                        }
+                        color[0] = color[0] - 5;
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(10);
+                    }
+                    else if (animationStage == 10 && animationFrame == 0) {
+                        ResetSecondaryCounter(0);
+                    }
+                }
+                else {
+                    ResetSecondaryCounter(animationStage + 10);
                 }
                 break;
             }
