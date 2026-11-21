@@ -87,7 +87,7 @@ its source spelling.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,060-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,043-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, `0x12C..0x136`
 special-move phases, `0x186..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -112,7 +112,12 @@ effect 800; action 0x2E4 keeps separate stage-7 and stage-8 0x388 emissions.
 All 39 original signed-char facing products are accounted for: 38 reuse
 one natural C++ integer scratch, while action 0x18A retains its direct
 integer-promotion 0x97 product because that form emits the target instruction
-sequence. Fifteen targeted animation, movement, range, reset, battle/aux-effect,
+sequence. Action 0x91 now retains its two float-to-short velocity projections:
+the apparent calls to 0x006406AC are VC7.1 __ftol2 conversions, not random
+number calls. Its ground-contact path clears motion, resets primary counters
+to 0x61, applies camera shake and emits no extra shared sound; the shared-sound
+call inventory now matches the original exactly. Fifteen targeted animation,
+movement, range, reset, battle/aux-effect,
 sound, gauge, camera and word-helper leaf units replay 15/15 exact. The source
 uses one flat natural-C++ switch; VC7.1 already lowers it into the target's
 seven-range dispatch tree and six singleton-boundary checks. An explicit
@@ -168,17 +173,20 @@ separate command gates, gravity/contact branches, per-action stage velocities
 and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The latest shared-scratch VC7.1 body is 62,060 bytes versus the 61,872-byte
-target (+188), with 51,937 direct non-relocation byte differences and a
+The latest shared-scratch VC7.1 body is 62,043 bytes versus the 61,872-byte
+target (+171), with 51,920 direct non-relocation byte differences and a
 0x224 stack frame. Reusing one integer scratch across 38 facing products
-reduced the previous 62,271-byte body by 211 bytes, reduced direct differences
-by 11, and shrank the frame from 0x2B8 to 0x224. The prior corrections
-remain: removing the misplaced action-303 volley restored its three original
-loop-counter lifetimes, and preserving the target's double contact-scale
-multiply at all 27 call sites removed 27 conversion temporaries. Fifteen
-targeted animation, movement, range, reset, battle/aux-effect, sound, gauge,
-camera and word-helper leaf units replay 15/15 exact. The whole-function
-layout remains non-exact and needs further code-generation work.
+reduced the previous 62,271-byte body by 211 bytes; removing action 0x91's
+unsupported shared-sound call then reduced it by another 17 bytes and brought
+direct differences down by another 17, with the frame unchanged. The prior
+corrections remain: removing the misplaced action-303 volley restored its
+three original loop-counter lifetimes, and preserving the target's double
+contact-scale multiply at all 27 call sites removed 27 conversion temporaries.
+Fifteen targeted animation, movement, range, reset, battle/aux-effect, sound,
+gauge, camera and word-helper leaf units replay 15/15 exact; the five directly
+affected animation/reset/motion/camera leaves replayed 5/5 after the 0x91 fix.
+The whole-function layout remains non-exact and needs further code-generation
+work.
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header
 consumer units were cold-replayed individually: 13/13 exact across 11

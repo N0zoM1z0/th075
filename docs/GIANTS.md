@@ -355,7 +355,7 @@ cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
 Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. Its 62,060-byte VC7.1 body now also
+`probes/YuyukoFighterAdvancePartial.cpp`. Its 62,043-byte VC7.1 body now also
 covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
 `0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
 The source keeps the individual initial velocities, gauge accumulation,
@@ -381,7 +381,9 @@ actions `0x259`, `0x25A`, `0x25F`, `0x260`, `0x261`, and `0x262` now retain
 separate per-action handlers, including the original `0x25A` sound/gauge order.
 Low actions `1` and `3` also have separate handlers for their distinct
 primary-counter destinations. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
-rebound actions, and action `400`'s repeated five-effect barrage are represented.
+rebound actions, and action `400`'s repeated five-effect barrage are represented. Action 0x91's two 0x006406AC calls are __ftol2 float-to-short conversions
+of the projected velocity components; the unsupported extra PlaySharedSound
+call has been removed, and the shared-sound inventory now matches the target.
 All 125 original switch case labels across the seven ranges have explicit
 natural-C++ handlers, along with six singleton boundaries (0x32, 0x8C,
 0x12C, 0x186, 0x1F4, 0x2BC): 131 distinct action values total. The
@@ -402,11 +404,12 @@ float reduced the body to 62,254 bytes and direct differences to 51,620, with
 a 0x2B0 frame. Restoring action 0x192's missing effect-800 X offset,
 separating action 0x2E4's stage-7/stage-8 emissions, and normalizing all
 signed-facing offsets brought the body to 62,271 bytes (+399), 51,948 direct
-differences and a 0x2B8 frame. The latest shared-scratch source reduces that
-to 62,060 bytes (+188), 51,937 direct differences and a 0x224 frame. The
-38 shared integer scratch assignments plus action 0x18A's direct 0x97
-integer-promotion product account for all 39 original signed-facing products.
-Fifteen targeted related leaf units replay 15/15 exact. An explicit nested
+differences and a 0x2B8 frame. The latest shared-scratch source reduced that to 62,060 bytes (+188),
+51,937 direct differences and a 0x224 frame. Removing the unsupported action-0x91
+shared-sound call reduced the current body again to 62,043 bytes (+171), with
+51,920 direct differences and the same 0x224 frame. Fifteen targeted related leaf units replay 15/15 exact, and the five
+animation/reset/motion/camera leaves
+directly affected by the 0x91 correction replay 5/5 exact. An explicit nested
 seven-switch rewrite was tested and rejected: 62,204 bytes, 52,560 direct
 differences and a 0x240 frame. The flat switch already lowers into the
 target's seven-range dispatch tree. The parent remains partial with unresolved
@@ -800,7 +803,7 @@ Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
 
-Yuyuko fighter `00564BE0` now has a 62,060-byte natural-C++ partial parent in
+Yuyuko fighter `00564BE0` now has a 62,043-byte natural-C++ partial parent in
 `probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
 the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
 states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected
@@ -817,10 +820,11 @@ recovery and the randomized polar/radial fan `0x2F9`, `0x302..0x303`,
 `0xC9..0xD0`, `400`, and `0x8C`; the original function is 61,872 bytes.
 All 125 original switch labels plus six singleton boundaries have natural-C++
 handlers (131 distinct action values); common/default flow and code-generation
-differences remain. The current VC7.1 body is 62,060 bytes versus the 61,872-byte
-target (+188), with 51,937 direct non-relocation byte differences and a 0x224
-stack frame; this is an active partial reconstruction, not whole-function
-exactness. The
+differences remain. Action 0x91 now preserves both __ftol2 velocity conversions
+and no longer emits the unsupported shared sound. The current VC7.1 body is
+62,043 bytes versus the 61,872-byte target (+171), with 51,920 direct
+non-relocation byte differences and a 0x224 stack frame; this is an active
+partial reconstruction, not whole-function exactness. The
 13 exact Yuyuko translation units affected by its `YuyukoFighter.hpp` slot
 declaration cold-replay 13/13 exact.
 
