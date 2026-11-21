@@ -656,6 +656,7 @@ case 0x48: {
 #include "ReimuBossVolley1F9F1183.inc"
 #include "ReimuBossTrajectory2FAF1183.inc"
 #include "ReimuBossFanShots1A21A41F1183.inc"
+#include "ReimuBossStageEffects255257F1183.inc"
         default:
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
