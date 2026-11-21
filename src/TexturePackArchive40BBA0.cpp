@@ -1,4 +1,5 @@
 #include "GraphicsTexture.hpp"
+#include "TextureManagerF198.hpp"
 #include <stddef.h>
 #include <new>
 
@@ -23,12 +24,6 @@ class TexturePalette40C8C0 { public: void Refresh(int); };
 class BitmapSerialized41B2B0 { public: void Load(const TextureRecordSnapshot40BF60*); };
 class ArchiveContext41D750 { public: HANDLE SeekNamedEntry(const char*); };
 namespace ArchiveLookup41CF00 { ArchiveContext41D750* Find(const char*); }
-class TexturePackArchive40BBA0 {
-public:
-    void Load(const char*, signed char, const char*);
-    void LoadDefault(const char*, const char*);
-};
-
 #define COUNTS reinterpret_cast<TextureEntryCount40C8C0*>(reinterpret_cast<char*>(this) + 8)
 #define ENTRIES reinterpret_cast<SpriteEntries40CA80*>(reinterpret_cast<char*>(this) + 8)
 #define HANDLES reinterpret_cast<TextureHandles40C8C0*>(reinterpret_cast<char*>(this) + 24)
@@ -39,11 +34,11 @@ public:
 #define ENTRY_PALETTE (*reinterpret_cast<WORD**>(reinterpret_cast<char*>(ENTRIES->At(index)) + 20))
 #define ENTRY_PIXELS (*reinterpret_cast<BYTE**>(reinterpret_cast<char*>(ENTRIES->At(index)) + 28))
 
-void TexturePackArchive40BBA0::LoadDefault(const char* filename, const char* archiveName) {
+void TextureManagerF198::LoadDefault(const char* filename, const char* archiveName) {
     Load(filename, 0, archiveName);
 }
 
-void TexturePackArchive40BBA0::Load(const char* filename, signed char selectedPalette, const char* archiveName) {
+void TextureManagerF198::Load(const char* filename, signed char selectedPalette, const char* archiveName) {
     int nEntriesCount = COUNTS->Size();
     // The archive context owns this positioned handle.
     HANDLE sourceFile = ArchiveLookup41CF00::Find(archiveName)->SeekNamedEntry(filename);

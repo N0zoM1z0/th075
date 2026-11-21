@@ -1,4 +1,5 @@
-#include "BackgroundStageStateF933.hpp"
+#include "BackgroundStageBaseF479.hpp"
+#include "SpriteDraw40CA80.hpp"
 // Independently target-reviewed complete native game stage constructors.
 // This translation unit has only borrowed callable base/camera/pack APIs.
 // Each constructor has genuine C++ /GX EH and original character-specific
@@ -97,39 +98,54 @@ BackgroundBG01yF377::BackgroundBG01yF377() {
 }
 extern const char g_DirectoryBG02aAt006586C4F377[];
 extern const char g_FilenameBG02aAt006586CCF377[];
-class BackgroundBG02aF377:public StageBaseF377 {public:BackgroundBG02aF377();virtual ~BackgroundBG02aF377();};
+class BackgroundBG02aF377:public NativeBackgroundBaseF479 {
+public:
+    unsigned int field68;
+    SpriteQuad40CA80 stageQuad;
+    BackgroundBG02aF377();
+    virtual ~BackgroundBG02aF377();
+};
 BackgroundBG02aF377::BackgroundBG02aF377() {
-    CAMERA(0x6C)->Initialize();
-    PACK.AllocateUnformattedSlots(5);
-    PACK.ReadPack(g_FilenameBG02aAt006586CCF377,g_DirectoryBG02aAt006586C4F377);
-    INITIAL_ZERO_FIELDS.zeroAt0C=0;
-    INITIAL_ZERO_FIELDS.zeroAt10=0;
-    INITIAL_ZERO_FIELDS.zeroAt14=0;
-    FIELD(unsigned int,0x68)=0;
+    textureManager.AllocateUnformattedSlots(5);
+    textureManager.LoadDefault(g_FilenameBG02aAt006586CCF377,g_DirectoryBG02aAt006586C4F377);
+    parameters.zero.zeroAt0C=0;
+    parameters.zero.zeroAt10=0;
+    parameters.zero.zeroAt14=0;
+    field68=0;
 }
 extern const char g_DirectoryBG02bAt00658708F377[];
 extern const char g_FilenameBG02bAt00658710F377[];
-class BackgroundBG02bF377:public StageBaseF377 {public:BackgroundBG02bF377();virtual ~BackgroundBG02bF377();};
+class BackgroundBG02bF377:public NativeBackgroundBaseF479 {
+public:
+    unsigned int field68;
+    SpriteQuad40CA80 stageQuad;
+    BackgroundBG02bF377();
+    virtual ~BackgroundBG02bF377();
+};
 BackgroundBG02bF377::BackgroundBG02bF377() {
-    CAMERA(0x6C)->Initialize();
-    PACK.AllocateUnformattedSlots(5);
-    PACK.ReadPack(g_FilenameBG02bAt00658710F377,g_DirectoryBG02bAt00658708F377);
-    INITIAL_ZERO_FIELDS.zeroAt0C=0;
-    INITIAL_ZERO_FIELDS.zeroAt10=0;
-    INITIAL_ZERO_FIELDS.zeroAt14=0;
-    FIELD(unsigned int,0x68)=0;
+    textureManager.AllocateUnformattedSlots(5);
+    textureManager.LoadDefault(g_FilenameBG02bAt00658710F377,g_DirectoryBG02bAt00658708F377);
+    parameters.zero.zeroAt0C=0;
+    parameters.zero.zeroAt10=0;
+    parameters.zero.zeroAt14=0;
+    field68=0;
 }
 extern const char g_DirectoryBG02cAt00658744F377[];
 extern const char g_FilenameBG02cAt0065874CF377[];
-class BackgroundBG02cF377:public StageBaseF377 {public:BackgroundBG02cF377();virtual ~BackgroundBG02cF377();};
+class BackgroundBG02cF377:public NativeBackgroundBaseF479 {
+public:
+    unsigned int field68;
+    SpriteQuad40CA80 stageQuad;
+    BackgroundBG02cF377();
+    virtual ~BackgroundBG02cF377();
+};
 BackgroundBG02cF377::BackgroundBG02cF377() {
-    CAMERA(0x6C)->Initialize();
-    PACK.AllocateUnformattedSlots(5);
-    PACK.ReadPack(g_FilenameBG02cAt0065874CF377,g_DirectoryBG02cAt00658744F377);
-    INITIAL_ZERO_FIELDS.zeroAt0C=0;
-    INITIAL_ZERO_FIELDS.zeroAt10=0;
-    INITIAL_ZERO_FIELDS.zeroAt14=0;
-    FIELD(unsigned int,0x68)=0;
+    textureManager.AllocateUnformattedSlots(5);
+    textureManager.LoadDefault(g_FilenameBG02cAt0065874CF377,g_DirectoryBG02cAt00658744F377);
+    parameters.zero.zeroAt0C=0;
+    parameters.zero.zeroAt10=0;
+    parameters.zero.zeroAt14=0;
+    field68=0;
 }
 extern const char g_DirectoryBG02xAt00658780F377[];
 extern const char g_FilenameBG02xAt00658788F377[];

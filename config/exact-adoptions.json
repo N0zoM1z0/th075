@@ -6,39 +6,39 @@
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
-      "size": 1692,
+      "size": 33629,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "08342f245735a9681936bd65351e644b82e16e32d93950d7415322fc42abaa7d"
+      "current_sha256": "97ba1a2a2aadb049fec1f4c1b470329db56f6c90b53cf14c72c2b4bca113ebf1"
     },
     "config/known-globals.csv": {
-      "size": 8096,
+      "size": 33316,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
       "current_sha256": "e7fd135aa4e731972a1c2e50a7b57c8a594c0ee725d4bc7e69230693e079023a"
     },
     "config/known-symbols.csv": {
-      "size": 5783,
+      "size": 202791,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "3a3344d6611f7521a5f9ad6585fda9763984bccf1f54a795c2f5f9f5a132119f"
+      "current_sha256": "b66117c5a4ad7308363d216a488e3e75619f896f7855686530a92fe92eddbf49"
     },
     "config/match-units.toml": {
-      "size": 79348,
+      "size": 3523502,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "c38d53974d26c329cef3351e3312e3a5297b220a44658fe6ace6cb28fb683961"
+      "current_sha256": "e9abbf5b906e0edbc2b305da7b80978ba5394c2e73da71b32bd546e416f9f80b"
     },
     "config/matches.csv": {
-      "size": 11363,
+      "size": 250335,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f05b69900afef1616c3c87abbe5ccc8b24e2f702dacc21699b70db175668ddd1"
+      "current_sha256": "d9a7179a165830c92f3e1255a877b8f8947d0b83ce0bb9e2df5682327593851e"
     },
     "config/reccmp-functions.csv": {
-      "size": 2910,
+      "size": 53495,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f0cc2b93da4e6eab5869836b99a1b3fbf158be5c9ff3f98df35a52a1f4966ab2"
+      "current_sha256": "cfbe72fa7f15a17f4f6e6bc439b1197424fd803f10b52c797e2c3c3fe11d7924"
     },
     "config/authored-origin-name-aliases.csv": {
-      "size": 2202,
+      "size": 31719,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "fcd4c56e097945a56f29b417f66b5fab550bccf4d3ba91d53d1fb1b3ee8950f6"
+      "current_sha256": "c0cb969b3e5775daa63e1c1c7225cd25665cd7534d5e355a689cdd5054a2dc70"
     }
   },
   "functions": [
@@ -6269,12 +6269,12 @@
         "size": "918",
         "span_end": "0x0040BF35",
         "current_name": "FUN_0040bba0",
-        "proposed_name": "TexturePackArchive40BBA0::Load",
+        "proposed_name": "TextureManagerF198::Load",
         "module": "TextureManager",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void TexturePackArchive40BBA0::Load(const char*, signed char, const char*)",
+        "signature": "void TextureManagerF198::Load(const char*, signed char, const char*)",
         "is_thunk": "false",
         "source_file": "src/TexturePackArchive40BBA0.cpp",
         "evidence": "R019; F104; scripts/repo-python scripts/replay-exact-units.py --unit texture-pack-archive-0040bba0",
@@ -6313,12 +6313,12 @@
         "size": "31",
         "span_end": "0x0040BB9E",
         "current_name": "FUN_0040bb80",
-        "proposed_name": "TexturePackArchive40BBA0::LoadDefault",
+        "proposed_name": "TextureManagerF198::LoadDefault",
         "module": "TextureManager",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void TexturePackArchive40BBA0::LoadDefault(const char*, const char*)",
+        "signature": "void TextureManagerF198::LoadDefault(const char*, const char*)",
         "is_thunk": "false",
         "source_file": "src/TexturePackArchive40BBA0.cpp",
         "evidence": "R019; F104; scripts/repo-python scripts/replay-exact-units.py --unit texture-pack-archive-default-0040bb80",
@@ -19777,12 +19777,12 @@
         "size": "128",
         "span_end": "0x0040B24F",
         "current_name": "FUN_0040b1d0",
-        "proposed_name": "TextureManager::AllocateUnformattedSlots",
+        "proposed_name": "TextureManagerF198::AllocateUnformattedSlots",
         "module": "TextureManager",
         "status": "matching",
         "match_percent": "100.00",
         "calling_convention": "thiscall",
-        "signature": "void TextureSlotAllocatorF198::AllocateUnformattedSlots(int)",
+        "signature": "void TextureManagerF198::AllocateUnformattedSlots(int)",
         "is_thunk": "false",
         "source_file": "src/TextureSlotsF198.cpp",
         "evidence": "R017; F198; scripts/repo-python scripts/replay-exact-units.py --unit texture-manager-allocate-unformatted-slots-0040b1d0",
@@ -134043,9 +134043,9 @@
         "src"
       ],
       "functions": [
-        "TexturePackArchive40BBA0::Load"
+        "TextureManagerF198::Load"
       ],
-      "symbol": "?Load@TexturePackArchive40BBA0@@QAEXPBDC0@Z",
+      "symbol": "?Load@TextureManagerF198@@QAEXPBDC0@Z",
       "target_address": 4242336,
       "size": 918,
       "compare_size": 918,
@@ -134288,9 +134288,9 @@
         "src"
       ],
       "functions": [
-        "TexturePackArchive40BBA0::LoadDefault"
+        "TextureManagerF198::LoadDefault"
       ],
-      "symbol": "?LoadDefault@TexturePackArchive40BBA0@@QAEXPBD0@Z",
+      "symbol": "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z",
       "target_address": 4242304,
       "size": 31,
       "compare_size": 31,
@@ -134298,7 +134298,7 @@
         {
           "offset": 21,
           "type": "REL32",
-          "symbol": "?Load@TexturePackArchive40BBA0@@QAEXPBDC0@Z",
+          "symbol": "?Load@TextureManagerF198@@QAEXPBDC0@Z",
           "target": 4242336
         }
       ]
@@ -179881,9 +179881,9 @@
         "src"
       ],
       "functions": [
-        "TextureManager::AllocateUnformattedSlots"
+        "TextureManagerF198::AllocateUnformattedSlots"
       ],
-      "symbol": "?AllocateUnformattedSlots@TextureSlotAllocatorF198@@QAEXH@Z",
+      "symbol": "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z",
       "target_address": 4239824,
       "size": 128,
       "relocations": [
@@ -201225,7 +201225,7 @@
         {
           "offset": 32,
           "type": "REL32",
-          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "symbol": "??0NativeBackgroundBaseF479@@QAE@XZ",
           "target": 4496864
         },
         {
@@ -201237,13 +201237,13 @@
         {
           "offset": 59,
           "type": "REL32",
-          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
           "target": 4250000
         },
         {
           "offset": 72,
           "type": "REL32",
-          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "symbol": "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z",
           "target": 4239824
         },
         {
@@ -201261,7 +201261,7 @@
         {
           "offset": 93,
           "type": "REL32",
-          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "symbol": "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z",
           "target": 4242304
         },
         {
@@ -201314,7 +201314,7 @@
         {
           "offset": 32,
           "type": "REL32",
-          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "symbol": "??0NativeBackgroundBaseF479@@QAE@XZ",
           "target": 4496864
         },
         {
@@ -201326,13 +201326,13 @@
         {
           "offset": 59,
           "type": "REL32",
-          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
           "target": 4250000
         },
         {
           "offset": 72,
           "type": "REL32",
-          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "symbol": "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z",
           "target": 4239824
         },
         {
@@ -201350,7 +201350,7 @@
         {
           "offset": 93,
           "type": "REL32",
-          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "symbol": "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z",
           "target": 4242304
         },
         {
@@ -201403,7 +201403,7 @@
         {
           "offset": 32,
           "type": "REL32",
-          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "symbol": "??0NativeBackgroundBaseF479@@QAE@XZ",
           "target": 4496864
         },
         {
@@ -201415,13 +201415,13 @@
         {
           "offset": 59,
           "type": "REL32",
-          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
           "target": 4250000
         },
         {
           "offset": 72,
           "type": "REL32",
-          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "symbol": "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z",
           "target": 4239824
         },
         {
@@ -201439,7 +201439,7 @@
         {
           "offset": 93,
           "type": "REL32",
-          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "symbol": "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z",
           "target": 4242304
         },
         {

@@ -187,6 +187,16 @@ recompiles and still covers 141/141 top-level labels and 158/158 explicit
 in-parent handler addresses. This is a runtime-semantic correction, not a
 whole-function exactness claim.
 
+The BG02a/BG02b/BG02c load constructors now use the same native
+NativeBackgroundBaseF479 layout as their destructor views. Each has a real
+SpriteQuad40CA80 member at +0x6C and the preceding +0x68 word; the base
+TextureManager at +0x18 and the three stage words at +0x0C..+0x14 are direct
+members. TextureManagerF198 now owns its unformatted-slot allocation,
+archive load/default and blend methods instead of three independent
+call-only receiver aliases. The three BG02 constructors and the three
+TextureManager helpers replay exact (6/6); the remaining stage constructors
+still need their individual derived layouts recovered.
+
 The BG02a/BG02b/BG02c 60-byte blend methods now access the original
 embedded TextureManager member directly. BackgroundStage's native base
 layout is represented as its virtual base header, +0x04 camera-reset state,

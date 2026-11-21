@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 // Physically observed stack temporary is 44 bytes and is always constructed
 // and destroyed around the owner's resource-slot allocation call.
 class TemporaryTextureSlotF198 {
@@ -16,12 +17,8 @@ class TexturePayloadSlotsF198 {
 public:
     void InitializeSlots(int count, unsigned int* zeroSlot);
 };
-class TextureSlotAllocatorF198 {
-public:
-    void AllocateUnformattedSlots(int count);
-};
 #define AT(type, off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-void TextureSlotAllocatorF198::AllocateUnformattedSlots(int count)
+void TextureManagerF198::AllocateUnformattedSlots(int count)
 {
     TemporaryTextureSlotF198 defaultEntry;
     AT(unsigned char, 0x4c) = 0;

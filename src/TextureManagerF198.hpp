@@ -42,6 +42,9 @@ class TextureManagerF198 : public TextureRefCountF198 {
     unsigned char defaultDepthAt76;
 public:
     TextureManagerF198();
+    void AllocateUnformattedSlots(int count);
+    void LoadDefault(const char* filename, const char* archiveName);
+    void Load(const char* filename, signed char selectedPalette, const char* archiveName);
     void SetBlendMode(int mode);
 };
 

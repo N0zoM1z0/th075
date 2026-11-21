@@ -14,6 +14,7 @@ union BackgroundStageParameterFieldsF933 {
 
 class NativeBackgroundBaseF479 {
 public:
+    NativeBackgroundBaseF479();
     virtual ~NativeBackgroundBaseF479();
     CameraResetF481 cameraReset;
     BackgroundStageParameterFieldsF933 parameters;
