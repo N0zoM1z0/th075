@@ -87,7 +87,7 @@ its source spelling.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 63,161-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,416-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, `0x12C..0x136`
 special-move phases, `0x186..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -100,10 +100,13 @@ actions `0x91`, `200`, `0xC9..0xD0`, `400`, and `0x8C`: horizontal drift,
 bounce/landing
 transitions, projected velocity, direction-sensitive recovery, input-driven
 follow-ups, repeated barrage and resource/effect bursts, hit-stop/counter
-resets, and the shared animation advance path. The `0x2F9` fan keeps each
-repeat-level radial/burst branch separate and calls the exact `Actor::RecordedRange`
-leaf at every random sample. The `0x303` fan keeps three independent countdown
-branches with their original paired 20-shot loops and difficulty-three offsets.
+resets, and the shared animation advance path. Action `0x2F9` now contains only
+its original repeat-level `0x38C` radial and `0x38D` random-position burst
+patterns; a copied `0x394..0x396` fan volley and its countdown reset were removed
+because those belong exclusively to action `0x303`. The `0x303` fan keeps its
+three independent countdown branches and paired 20-shot loops, while reusing
+three C++ loop counters in the same pairs as the original `local_80`,
+`local_84`, and `local_88` lifetimes.
 All 114 unique Ghidra switch labels have explicit natural-C++ handlers. The
 original x87 inclusive ground-contact edge is preserved in the audited `0x91`,
 `0x9E`, `0xB4..0xB5`, `0xC9..0xCE` and `0xD0` actions. Actions `0x60` and
@@ -150,9 +153,13 @@ separate command gates, gravity/contact branches, per-action stage velocities
 and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The structural comparison currently reports a size mismatch (63,161 vs.
-61,872 bytes; +1,289). The restored handlers are semantically grounded, but the
-whole-function VC7.1 layout is not exact and still needs code-generation work.
+The corrected VC7.1 body is 62,416 bytes versus the 61,872-byte target (+544),
+with 52,265 direct non-relocation byte differences (down from 53,477). Removing
+the misplaced action-303 volley and restoring its three original loop-counter
+lifetimes reduced the stack frame from `0x348` to `0x31C` (44 bytes) and the
+body by 745 bytes. Six affected animation, counter, motion-clear, battle-effect
+and sound leaf units replayed 6/6 exact. The whole-function layout is still not
+exact and needs further code-generation work.
 
 After adding the virtual slot declaration, the 13 exact Yuyuko header
 consumer units were cold-replayed individually: 13/13 exact across 11
