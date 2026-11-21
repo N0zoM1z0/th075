@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 187 action
-// values: 53 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 189 action
+// values: 55 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2722,6 +2722,79 @@ void ReimuObject::Advance()
                 }
                 break;
             }
+
+            case 0x3A5:
+                if (g_ReimuObjectRightBoundAt0065925C < x ||
+                    x < g_ReimuObjectLeftBoundAt00659258 ||
+                    g_ReimuObjectUpperBoundAt006583B4 < y ||
+                    y < g_ReimuObjectLowerBoundAt00658374 ||
+                    owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 1;
+                        field07C = 0;
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0DA = 0;
+                        field0DE = 0;
+                        field0DC = static_cast<short>(field0C8);
+                        field0E0 = 0;
+                        const float targetAngle = AngleAt00483300(
+                            (owner->opponent->y - y) + g_ReimuObjectContactProjectionAt00657888,
+                            (owner->opponent->x - x) * facing) /
+                            g_ReimuObjectAngleUnitAt00657828;
+                        SetPolarVelocity(targetAngle, 2.0f);
+                    }
+                    x = facing * velocityX + x;
+                    y = y - velocityY;
+                    rotationZ = rotationZ + g_ReimuObjectDirectionMarker4At00657D14;
+                    if (field07C == 6) {
+                        field080 = 1;
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(1);
+                        field07C = 0;
+                        if (field0E0 > 0x14) {
+                            ClearFrameInfo();
+                        }
+                    }
+                }
+                break;
+
+            case 0x3A6:
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                    }
+                    if (animationStage == 1) {
+                        scaleX = scaleX + g_ReimuObjectScaleStepAt00658348;
+                        scaleY = scaleY + g_ReimuObjectScaleStepAt00658348;
+                        if (color[0] < 0x15) {
+                            ClearFrameInfo();
+                            return;
+                        }
+                        color[0] = color[0] - 0x14;
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
+                    }
+                }
+                break;
 
             case 0x323:
             case 0x326:
