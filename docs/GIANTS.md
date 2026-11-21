@@ -116,6 +116,18 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+Marisa fighter partial parent action 0x63 now preserves its four native
+terminal transitions as return statements. The partial parent places this
+case inside a nested sparse switch(actionSnapshot) followed by the shared
+switchDefault frame path; the previous break statements exited only that
+inner switch and incorrectly advanced the common frame after a transition.
+The original action has three mode-3 transitions and one mode-not-3 transition
+that return immediately. The focused parent compile succeeds, and
+validate-marisa-advance-cases.py still reports all 141/141 top-level labels
+and 158/158 explicit in-parent handler addresses covered. The validator now
+guards the four-return/one-break structure. This is a semantic correction to
+the partial natural-C++ parent, not a whole-function exactness claim.
+
 Patchouli object's 81,539-byte giant now calls native typed C++
 helpers in place of its last random/angle/sound alias methods:
 `PatchouliObject::RecordedRange` for 37 compiled native calls,

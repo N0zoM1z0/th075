@@ -1,4 +1,6 @@
-// F626: native 109-instruction action0x63 in regular fighter giants,
+// F626: native 109-instruction action0x63 in regular fighter giants.
+// Its four action-transition exits return from the parent; the shared
+// partial-parent frame/default path must not run after those transitions.
 // no bonus-action branch after the +0x32A == 2 mode transition.
 // This original natural C++ is distinct from 118-x86 F624 source.
 // Not a separately accepted whole function or byte-level code graft.
@@ -13,7 +15,7 @@ case 0x63: {
             opponent->action<150) {
             ResetPrimaryCounters(0x5F);
             field3CF=1;
-            break;
+            return;
         }
     } else {
         if (animationStage>1 &&
@@ -23,14 +25,14 @@ case 0x63: {
             ResetPrimaryCounters(0x31C);
             // Unlike the special F624 fighter, the actual native
             // stage-two action ends immediately: no bonus offset+0x370.
-            break;
+            return;
         }
         if (animationStage>0 &&
             field39D>0 &&
             opponent->action<150 &&
             static_cast<signed char>(field32A[field39D])==1) {
             ResetPrimaryCounters(0x31C);
-            break;
+            return;
         }
         if (animationStage>1 &&
             field39D>0 &&
@@ -38,7 +40,7 @@ case 0x63: {
             static_cast<signed char>(field32A[field39D])==0) {
             ResetPrimaryCounters(0x5F);
             field3CF=1;
-            break;
+            return;
         }
     }
     if (AdvanceNestedFrame()==animationStageCount)

@@ -146,6 +146,16 @@ def main() -> int:
         if not path.is_file():
             print(f"missing analysis input: {path.relative_to(ROOT)}", file=sys.stderr)
             return 2
+    # Action 0x63 has four terminal transitions in the original parent.
+    # This include is nested inside the partial parent's sparse switch, so
+    # a break would incorrectly fall through to switchDefault and advance a
+    # second frame. Keep the four native early returns and the one normal
+    # switch exit distinct.
+    mode63 = (PROBES / "MarisaFighterMode63BasicF626.inc").read_text(encoding="utf-8")
+    if mode63.count("return;") != 4 or mode63.count("break;") != 1:
+        print("Marisa action 0x63 must keep four early returns and one normal switch break", file=sys.stderr)
+        return 1
+
     source: list[int] = []
     source_cases(SOURCE, {}, source)
     with HANDLERS.open(newline="", encoding="utf-8") as stream:
