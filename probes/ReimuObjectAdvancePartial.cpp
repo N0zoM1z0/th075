@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 186 action
-// values: 52 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 187 action
+// values: 53 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2640,6 +2640,78 @@ void ReimuObject::Advance()
                         if (field0DC < 1) {
                             reimuOwner->fieldF28 = 0;
                         }
+                        if (reimuOwner->fieldF26 < 0x78) {
+                            reimuOwner->fieldF26 = reimuOwner->fieldF26 + 2;
+                        }
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            ResetSecondaryCounter(1);
+                        }
+                    }
+                }
+                break;
+            }
+
+            case 0x3A4: {
+                ReimuFighter* reimuOwner = static_cast<ReimuFighter*>(owner);
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                    reimuOwner->fieldF24 = 0;
+                    reimuOwner->fieldF26 = 0;
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        velocityX = 0.0f;
+                        velocityY = 0.0f;
+                        field0D8 = 0;
+                        field0DA = 1;
+                        field0DC = 0;
+                        field0DE = 0;
+                        field0E0 = 0;
+                        owner->aiCardTimer = 0x3C;
+                    }
+                    field0CC = field0CC + g_ReimuObjectScalarAt006590B4;
+                    if (g_ReimuObjectDirectionMarker5At00657874 <= field0CC) {
+                        field0CC = g_ReimuObjectDirectionMarker5At00657874;
+                    }
+                    if (owner->field3B8 == 0) {
+                        reimuOwner->fieldF24 = static_cast<short>(field0CC);
+                    }
+                    if (reimuOwner->fieldF24 > 0xB4) {
+                        reimuOwner->fieldF24 = reimuOwner->fieldF24 - 0x168;
+                    }
+                    if (reimuOwner->fieldF24 < -0xB4) {
+                        reimuOwner->fieldF24 = reimuOwner->fieldF24 + 0x168;
+                    }
+                    if (owner->action == 0x304) {
+                        field0E0 = field0E0 + 1;
+                        if (field0E0 > 7) {
+                            reimuOwner->fieldF26 = reimuOwner->fieldF26 - 1;
+                            field0E0 = 0;
+                        }
+                        if (reimuOwner->fieldF26 < 0x78) {
+                            reimuOwner->fieldF26 = reimuOwner->fieldF26 + 2;
+                        }
+                    }
+                    if (owner->aiCardTimer < 1) {
+                        owner->aiCardTimer =
+                            g_StateRepeatLevelAt006714D0 * -0x1E + 300;
+                        reimuOwner->fieldF28 = 3;
+                        field0DC = 1;
+                    }
+                    else {
+                        if (field0DC < 1) {
+                            reimuOwner->fieldF28 = 0;
+                        }
+                        facing = 1;
+                        owner->aiCardTimer = owner->aiCardTimer - 1;
+                        field0DC = field0DC - 1;
                         if (reimuOwner->fieldF26 < 0x78) {
                             reimuOwner->fieldF26 = reimuOwner->fieldF26 + 2;
                         }
