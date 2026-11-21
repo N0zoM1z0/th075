@@ -58,6 +58,12 @@ extern float g_ApproachAt00658058;
 extern double g_ContactScaleAt006583E8;
 extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
+extern float g_ReimuStormPairYBaseAt00657CBC;
+extern float g_ReimuStormPairXBaseAt00658264;
+extern float g_ReimuStormRingYOffsetAt0065836C;
+extern float g_ReimuStormBurstYOffsetAt00659490;
+extern float g_ReimuFallingGravityAt00658354;
+extern float g_ReimuFallingSpawnYOffsetAt0065908C;
 void ReimuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -637,6 +643,8 @@ case 0x48: {
 #include "ReimuDifficultyShotF1191.inc"
 #include "ReimuResourceLoopsF1192.inc"
 #include "ReimuFinalEffectsF1192.inc"
+#include "ReimuBossModeStorm2E6F1183.inc"
+#include "ReimuBossPairedArc2F0F1183.inc"
         default:
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
