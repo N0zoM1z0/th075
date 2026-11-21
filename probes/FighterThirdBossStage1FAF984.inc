@@ -5,7 +5,6 @@
  // original receiver remains nonnative EBP, full giant NONEXACT.
 case 0x1FA: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ClearMotionFields();
         field07C=0;
         field3AC=0;
         scriptCounterF00=0;
@@ -31,7 +30,6 @@ case 0x1FA: {
             color[0]=255;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
-            ClearMotionFields();
             ResetSecondaryCounter(0xB);
             y=0.0f;
             break;

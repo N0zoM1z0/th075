@@ -12,7 +12,6 @@
 // F1012 original Japanese game fighter 004AC040 state303.
 case 0x303: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
@@ -30,7 +29,6 @@ case 0x303: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ClearMotionFields();
             ResetSecondaryCounter(11);
         }
     }

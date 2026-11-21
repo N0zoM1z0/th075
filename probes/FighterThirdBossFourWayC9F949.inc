@@ -8,7 +8,6 @@
 case 0xC9: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0)
-        ClearMotionFields();
     if ((animationStage)==2 && (animationFrame)==0)
         velocityX=0.0f;
     if ((animationStage)==4 && (animationFrame)==0)
