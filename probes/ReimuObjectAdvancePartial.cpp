@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 191 action
-// values: 57 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 192 action
+// values: 58 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2828,6 +2828,78 @@ void ReimuObject::Advance()
                     ClearFrameInfo();
                 }
                 break;
+
+            case 0x3B7: {
+                const short ownerAction = owner->action;
+                if (animationStage < 1) {
+                    y = owner->y;
+                }
+                x = owner->x;
+                owner->fieldF0C = 1;
+                if (owner->animationStage == 0 &&
+                    (((ownerAction > 0x45 && ownerAction < 0x59) &&
+                      ownerAction != 0x4C) ||
+                     ownerAction == 0xB5 || ownerAction == 0xB4 ||
+                     ownerAction == 0x91)) {
+                    ClearFrameInfo();
+                    owner->fieldF0C = 0;
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(-45.0f, 45.0f, 0.0f);
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                    }
+                    if (animationStage == 0 &&
+                        (ownerAction == 0x60 || ownerAction == 0x61) &&
+                        owner->animationStage == 5) {
+                        ResetSecondaryCounter(1);
+                        rotationZ = 0.0f;
+                    }
+                    else if (animationStage == 5 &&
+                        (ownerAction == 0x5F || ownerAction == 0x5E ||
+                         ownerAction == 0x5D || ownerAction == 0x31C ||
+                         ownerAction == 0x303) &&
+                        owner->animationStage == 3) {
+                        ResetSecondaryCounter(6);
+                    }
+                    else if (animationStage == 7 &&
+                        (ownerAction == 0x5F || ownerAction == 0x5E ||
+                         ownerAction == 0x5D || ownerAction == 0x31C) &&
+                        owner->animationStage == 0x0B) {
+                        ClearFrameInfo();
+                        owner->fieldF0C = 0;
+                    }
+                    else {
+                        if (animationStage == 7 && animationFrame == 0 &&
+                            ownerAction != 0x303 && ownerAction != 0x304) {
+                            velocityY = 15.0f;
+                            field05C = -1.0f;
+                        }
+                        if (animationStage == 7 &&
+                            ownerAction != 0x304 && ownerAction != 0x303) {
+                            velocityY = velocityY + field05C;
+                            y = y + velocityY;
+                        }
+                        if (animationStage == 7 &&
+                            (ownerAction == 0x304 || ownerAction == 0x303)) {
+                            x = owner->x + static_cast<float>(facing * 0x78);
+                            y = owner->y + g_ReimuObjectContactProjectionAt00657888;
+                        }
+                        if (animationStage == 0 || animationStage == 7) {
+                            rotationZ = rotationZ - g_ReimuObjectScalarAt0065839C;
+                        }
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            ClearFrameInfo();
+                        }
+                    }
+                }
+                break;
+            }
 
             case 0x323:
             case 0x326:
