@@ -156,6 +156,11 @@ def main() -> int:
         print("Marisa action 0x63 must keep four early returns and one normal switch break", file=sys.stderr)
         return 1
 
+    contact = (PROBES / "MarisaFighterAdditionalContactF600.inc").read_text(encoding="utf-8")
+    if contact.count("return;") != 14 or contact.count("break;") != 0:
+        print("Marisa F600 actions must return on all 14 native terminal paths", file=sys.stderr)
+        return 1
+
     source: list[int] = []
     source_cases(SOURCE, {}, source)
     with HANDLERS.open(newline="", encoding="utf-8") as stream:

@@ -116,6 +116,18 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+Marisa's eleven contact actions 0x33-0x41 in F600 now preserve the native
+return edges instead of breaking out of the partial parent's nested action
+switch. Ghidra's original parent has no switch breaks in these eleven cases:
+each ordinary contact path returns after AdvanceNestedFrame/ResetPrimaryCounters,
+and the 0x35/0x3B/0x41 repeat paths return after their stage-7 counter update.
+The old 14 breaks fell through to switchDefault and could advance the frame a
+second time. All 14 terminal exits are now returns; the Marisa validator
+guards this structure along with action 0x63. The complete partial parent
+recompiles and still covers 141/141 top-level labels and 158/158 explicit
+in-parent handler addresses. This is a runtime-semantic correction, not a
+whole-function exactness claim.
+
 The linked-effect transform copy is now expressed through one native
 36-byte TransformRecordF136 packet shared by the Fighter and Actor layouts.
 Fighter+0x2F0 exposes it as effectTransformRecord; Actor+0x10 exposes it as

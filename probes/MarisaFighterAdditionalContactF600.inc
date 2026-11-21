@@ -1,6 +1,7 @@
 // F600: real consecutive native second-switch contact states of eleven
-// fighter bosses. These cases are inside the incomplete whole function,
-// NOT independent functions or accepted authored original CODE.
+// fighter bosses. Every terminal path returns from the native parent;
+// the partial parent's shared default frame handler is only for unmapped
+// actions. These are not independent functions or accepted authored CODE.
 // Stage-7 variants use the native counter offset supplied by the owner:
 // +0xEFC for fighter 005AEEC0 and +0xF00 for the other ten giants.
 // Source is natural VC7.1 C++; original PE controls comparison.
@@ -23,7 +24,7 @@ case 0x33: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
-    break;
+    return;
 }
 
 case 0x34: {
@@ -44,7 +45,7 @@ case 0x34: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
-    break;
+    return;
 }
 
 case 0x35: {
@@ -67,13 +68,13 @@ case 0x35: {
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetPrimaryCounters(0);
         scriptCounterF00 = 0;
-        break;
+        return;
     }
     if (animationStage == 7 && scriptCounterF00 < 1) {
         ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
-    break;
+    return;
 }
 
 case 0x38: {
@@ -94,7 +95,7 @@ case 0x38: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
-    break;
+    return;
 }
 
 case 0x39: {
@@ -115,7 +116,7 @@ case 0x39: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
-    break;
+    return;
 }
 
 case 0x3A: {
@@ -136,7 +137,7 @@ case 0x3A: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
-    break;
+    return;
 }
 
 case 0x3B: {
@@ -159,13 +160,13 @@ case 0x3B: {
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetPrimaryCounters(0);
         scriptCounterF00 = 0;
-        break;
+        return;
     }
     if (animationStage == 7 && scriptCounterF00 < 1) {
         ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
-    break;
+    return;
 }
 
 case 0x3E: {
@@ -186,7 +187,7 @@ case 0x3E: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(2);
-    break;
+    return;
 }
 
 case 0x3F: {
@@ -207,7 +208,7 @@ case 0x3F: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(2);
-    break;
+    return;
 }
 
 case 0x40: {
@@ -228,7 +229,7 @@ case 0x40: {
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(2);
-    break;
+    return;
 }
 
 case 0x41: {
@@ -251,11 +252,11 @@ case 0x41: {
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetPrimaryCounters(0);
         scriptCounterF00 = 0;
-        break;
+        return;
     }
     if (animationStage == 7 && scriptCounterF00 < 1) {
         ++scriptCounterF00;
         ResetSecondaryCounter(1);
     }
-    break;
+    return;
 }
