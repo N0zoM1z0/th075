@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers thirty-nine
-// actions: 800, 0x321, 0x322, 0x324, 0x325, 0x327-0x342, 900, and 0x385-0x389.
+// The original parent is 50,915 bytes. This research source covers 173 action
+// values: 39 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2105,6 +2105,142 @@ void ReimuObject::Advance()
                         scaleY = 4.0f;
                     }
                 }
+                break;
+            case 0x323:
+            case 0x326:
+            case 0x343:
+            case 0x344:
+            case 0x345:
+            case 0x346:
+            case 0x347:
+            case 0x348:
+            case 0x349:
+            case 0x34A:
+            case 0x34B:
+            case 0x34C:
+            case 0x34D:
+            case 0x34E:
+            case 0x34F:
+            case 0x350:
+            case 0x351:
+            case 0x352:
+            case 0x353:
+            case 0x354:
+            case 0x355:
+            case 0x356:
+            case 0x357:
+            case 0x358:
+            case 0x359:
+            case 0x35A:
+            case 0x35B:
+            case 0x35C:
+            case 0x35D:
+            case 0x35E:
+            case 0x35F:
+            case 0x360:
+            case 0x361:
+            case 0x362:
+            case 0x363:
+            case 0x364:
+            case 0x365:
+            case 0x366:
+            case 0x367:
+            case 0x368:
+            case 0x369:
+            case 0x36A:
+            case 0x36B:
+            case 0x36C:
+            case 0x36D:
+            case 0x36E:
+            case 0x36F:
+            case 0x370:
+            case 0x371:
+            case 0x372:
+            case 0x373:
+            case 0x374:
+            case 0x375:
+            case 0x376:
+            case 0x377:
+            case 0x378:
+            case 0x379:
+            case 0x37A:
+            case 0x37B:
+            case 0x37C:
+            case 0x37D:
+            case 0x37E:
+            case 0x37F:
+            case 0x380:
+            case 0x381:
+            case 0x382:
+            case 0x383:
+            case 0x38A:
+            case 0x38B:
+            case 0x38C:
+            case 0x38D:
+            case 0x392:
+            case 0x393:
+            case 0x398:
+            case 0x399:
+            case 0x39A:
+            case 0x39B:
+            case 0x39C:
+            case 0x39D:
+            case 0x39E:
+            case 0x3A7:
+            case 0x3A8:
+            case 0x3A9:
+            case 0x3AA:
+            case 0x3AB:
+            case 0x3AD:
+            case 0x3AE:
+            case 0x3AF:
+            case 0x3B0:
+            case 0x3B1:
+            case 0x3B2:
+            case 0x3B3:
+            case 0x3B4:
+            case 0x3B5:
+            case 0x3B8:
+            case 0x3B9:
+            case 0x3BA:
+            case 0x3BB:
+            case 0x3BC:
+            case 0x3BD:
+            case 0x3BE:
+            case 0x3BF:
+            case 0x3C0:
+            case 0x3C1:
+            case 0x3C2:
+            case 0x3C3:
+            case 0x3C4:
+            case 0x3C5:
+            case 0x3C6:
+            case 0x3C7:
+            case 0x3C8:
+            case 0x3C9:
+            case 0x3CA:
+            case 0x3CB:
+            case 0x3CC:
+            case 0x3CD:
+            case 0x3CE:
+            case 0x3CF:
+            case 0x3D0:
+            case 0x3D1:
+            case 0x3D2:
+            case 0x3D3:
+            case 0x3D4:
+            case 0x3D5:
+            case 0x3D6:
+            case 0x3D7:
+            case 0x3D8:
+            case 0x3D9:
+            case 0x3DA:
+            case 0x3DB:
+            case 0x3DC:
+            case 0x3DD:
+            case 0x3E0:
+            case 0x3E1:
+                AdvanceNestedFrame();
                 break;
             }
         }
