@@ -1,16 +1,27 @@
-// F746 native authored R212 BackgroundStage counters; no dummy locals.
-// Original whole 0044E8D0: decrement timer at +0x68, wrap below 0
-// to 0xF00, advance modulo-42 stage tick at +0x6C, and add +0x70.
+#include <stddef.h>
+
+// Borrowed receiver prefix for the complete BG05b counter callback. Only the
+// three signed 32-bit fields at +0x68/+0x6C/+0x70 are observed; the preceding
+// bytes and the full background owner extent remain unknown. Use only through
+// the original this pointer, never instantiate or embed this view.
 class BackgroundCountersF746 {
 public:
- void AdvanceBG05bCounters();
+    unsigned char unknown000[0x68];
+    int timerAt68;
+    int stageTickAt6C;
+    int counterAt70;
+
+    void AdvanceBG05bCounters();
 };
-#define FIELD(off) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this)+(off)))
+typedef char BackgroundCountersF746Offsets[
+    (offsetof(BackgroundCountersF746, timerAt68) == 0x68 &&
+     offsetof(BackgroundCountersF746, stageTickAt6C) == 0x6C &&
+     offsetof(BackgroundCountersF746, counterAt70) == 0x70) ? 1 : -1];
+
 void BackgroundCountersF746::AdvanceBG05bCounters() {
-    --FIELD(0x68);
-    if (FIELD(0x68)<0) FIELD(0x68)=0xF00;
-    ++FIELD(0x6C);
-    if (FIELD(0x6C)>=42) FIELD(0x6C)=0;
-    ++FIELD(0x70);
+    --timerAt68;
+    if (timerAt68 < 0) timerAt68 = 0xF00;
+    ++stageTickAt6C;
+    if (stageTickAt6C >= 42) stageTickAt6C = 0;
+    ++counterAt70;
 }
-#undef FIELD
