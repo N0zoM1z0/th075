@@ -15,44 +15,10 @@ case 0x262:
     field05C = 0.7f;
     ResetSecondaryCounter(0);
     UpdateGaugeTimer(0x96);
-    field314 = 30.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = 24.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = 18.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = 12.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = 6.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = 0.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = -6.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = -12.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = -18.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
-    field314 = -24.0f;
-    field318 = 15.0f;
-    SpawnBattleEffect(0x347, x,
-        y + g_ReimuCommandFrontYAt006590AC, facing, 1);
+    for (int shot = 0; shot < 10; ++shot) {
+        field314 = static_cast<float>(shot * -6 + 0x1E);
+        field318 = 15.0f;
+        SpawnBattleEffect(0x347, x,
+            y + g_ReimuCommandFrontYAt006590AC, facing, 1);
+    }
     return;
