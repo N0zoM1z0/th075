@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 198 action
-// values: 64 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 199 action
+// values: 65 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -64,6 +64,8 @@ extern const float g_ReimuObjectHorizontalHitLowerAt00659230;
 extern const float g_ReimuObjectVerticalHitUpperAt006590A8;
 extern const float g_ReimuObjectVerticalHitLowerAt00658268;
 extern const double g_ReimuObjectSpiritGaugeLimitAt00659228;
+extern const float g_ReimuObjectBossFollowYOffsetAt00659138;
+extern const float g_ReimuObjectBossFollowYOffsetAt00658264;
 
 void ReimuObject::Advance()
 {
@@ -3090,6 +3092,59 @@ void ReimuObject::Advance()
                 y = y - velocityY;
                 if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(1);
+                }
+                break;
+
+
+            case 0x3E6:
+                facing = owner->facing;
+                x = owner->x;
+                y = 0.0f;
+                field08A = 1;
+                if (owner->action > 0x95 && owner->action < 0x9A &&
+                    animationStage == 0) {
+                    x = owner->x + static_cast<float>(facing * 0x39);
+                    y = owner->y + g_ReimuObjectBossFollowYOffsetAt00659138;
+                }
+                if (owner->action > 0x99 && owner->action < 0x9E &&
+                    animationStage == 0) {
+                    x = owner->x + static_cast<float>(facing * 0x39);
+                    y = owner->y + g_ReimuObjectBossFollowYOffsetAt00658264;
+                }
+                if (owner->action == 0x9E && animationStage == 0) {
+                    x = owner->x + static_cast<float>(facing * 0x39);
+                    y = owner->y + g_ReimuObjectContactProjectionAt00657888;
+                }
+                if ((owner->action < 0x96 || owner->action > 0x9E) &&
+                    animationStage == 0) {
+                    ResetSecondaryCounter(1);
+                    owner->fieldF0A = 0;
+                }
+                if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 0.75f;
+                    scaleY = 0.75f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    rotationY = 50.0f;
+                    field0D8 = 1;
+                }
+                rotationZ = rotationZ + g_ReimuObjectScalarAt00657480;
+                if (animationStage > 0) {
+                    if (color[0] < 0x1F) {
+                        color[0] = 0;
+                    }
+                    else {
+                        color[0] = static_cast<unsigned char>(color[0] - 0x1E);
+                    }
+                }
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
+                }
+                if (animationStage == 1 && animationFrame == 0) {
+                    ResetSecondaryCounter(0);
                 }
                 break;
 
