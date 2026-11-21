@@ -1,6 +1,6 @@
 // F1019 original Japanese 004AC040 actions 2EF and 2F0.
 // Preserve native motion state: entry clears field07C but does not clear
-// velocityX/velocityY/field058/field05C; landing clears only Y.
+// velocityX/velocityY/field058/field05C; landing writes Y=0 only.
 // 2EF uses gravity 00658044, stage-13 lift 1.5 and angles -70/-50;
 // 2F0 uses gravity 00658354, stage-13 lift 3.5 and angles -70.
 // The stage-23 F04 repeat guard remains nested inside the final shot.

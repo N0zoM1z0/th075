@@ -1,18 +1,13 @@
-// F1013 original Japanese 004AC040 true final 31B/31C states.
- // Native original 31B: 257B/76 x86/9 actual PE targets;
- // native 31C: 219B/63 x86/7 actual PE targets.
- // Correct stage5/11 vs16/21, stage5 0x3E5 raw X+float Y
- // shot, stage21 signed state count and native +0x3CF BYTE.
- // Normal entire original-shaped PARTIAL 82KB source emits
- // all 139 original mnemonic, width and GPR roles naturally.
- // New real cases make preceding 303 final shared JMP use
- // native 5-byte near. Whole 82KB fighter still NONEXACT.
+// F1013 original Japanese 004AC040 final states 31B and 31C.
+// Entry resets F00 and sets field07C; native does not clear the four motion
+// fields. State 31B transitions at stage 5 and repeats at stage 11/counter 9;
+// state 31C transitions at stage 16 and repeats at stage 21/counter 19 while
+// setting byte +0x3CF. Native ContextBase::ClearCancel remains unwrapped.
 // F1013 original Japanese final fighter state 0x31B.
 case 0x31B: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
         field07C=1;
-        ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
@@ -35,7 +30,6 @@ case 0x31C: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
         field07C=1;
-        ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);

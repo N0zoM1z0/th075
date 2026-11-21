@@ -1,17 +1,13 @@
-// F964 real Japanese TH075 original fighter 004AC040 stages 135/136.
- // Original 135 physical 004B18B1..004B1A98, 487B/137x86/12 PE fields.
- // Compiled source 481B/137x86; two -0xA4 long EBP scratch widths
- // account for 6 missing original bytes, with 89 wrong GPR roles.
- // Original 136 physical 004B1A98..004B1C5B, 451B/134x86/11 PE fields.
- // Compiled source 451B/134x86, zero wrong mnemonic/width positions,
- // 84 wrong GPR roles. Native 136 uses FLOAT EQUALITY on +0x48
- // (FUCOMPP/TEST AH,44h) in the genuine falling-flag branch.
- // Original 136->186 physical boundary has no separate afterRET label;
- // do not invent a switch entry or accept internal code as whole exact.
+// F964 original Japanese 004AC040 movement states 135 and 136.
+// Native entry/landing paths clear the cancellation state, not the four
+// motion fields; ClearMotionFields would incorrectly zero X/Y velocity and
+// both acceleration words. Preserve the native field07C/hit-stop writes.
+// State 135 falls during stages 3/4, then damps X after stage 4; state 136
+// uses exact ground-Y equality for its X drag and lands only before stage 12.
+// The native ContextBase::ClearCancel call still lacks a typed source wrapper.
 // Original third-fighter native game action 135, candidate.
 case 0x135: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ClearMotionFields();
         field080=1;
         field07C=0;
     }
@@ -26,7 +22,6 @@ case 0x135: {
         velocityY=velocityY-g_AnimationDeltaAt0065747C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ClearMotionFields();
             ResetSecondaryCounter(5);
             SpawnAuxEffect(0x80,
                 float((facing)*150)+(x),
@@ -53,7 +48,6 @@ case 0x135: {
 // Original third-fighter native game action 136, candidate.
 case 0x136: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ClearMotionFields();
         field080=2;
         field07C=0;
     }
@@ -68,7 +62,6 @@ case 0x136: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<12) {
             y=0.0f;
-            ClearMotionFields();
             ResetSecondaryCounter(0xC);
             break;
         }
