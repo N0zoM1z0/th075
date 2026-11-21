@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers twelve
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x32D (except 0x326).
+// The original parent is 50,915 bytes. This research source covers thirteen
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x32E (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -15,7 +15,7 @@ extern const float g_ReimuObjectLeftBoundAt00659258;
 extern const float g_ReimuObjectAngleUnitAt00657828;
 extern const float g_ReimuObjectDirectionMarker0At0065782C;
 extern const float g_ReimuObjectDirectionMarker1At0065747C;
-extern const float g_ReimuObjectDirectionMarker2At00657480;
+extern const float g_ReimuObjectScalarAt00657480;
 extern const float g_ReimuObjectDirectionMarker3At00657CF8;
 extern const float g_ReimuObjectScaleStepAt00658348;
 extern const float g_ReimuObjectDirectionMarker4At00657D14;
@@ -36,6 +36,8 @@ extern const float g_ReimuObjectLowerBoundAt00658374;
 extern const float g_ReimuObjectUpperBoundAt00657884;
 extern const float g_ReimuObjectLowerBoundAt0065924C;
 extern const float g_ReimuObjectRotationStepAt006590C4;
+extern const float g_ReimuObjectOwnerYOffsetAt00659080;
+extern const float g_ReimuObjectScaleMultiplierAt00659090;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 
@@ -97,10 +99,10 @@ void ReimuObject::Advance()
                     field0D8 = field0D8 + 2;
                     if (animationStage > 0 && field0DA < 0x3C) {
                         if (owner->opponent->y + g_ReimuObjectContactProjectionAt00657888 < y) {
-                            field0C8 = field0C8 + g_ReimuObjectDirectionMarker2At00657480;
+                            field0C8 = field0C8 + g_ReimuObjectScalarAt00657480;
                         }
                         if (y < owner->opponent->y + g_ReimuObjectContactProjectionAt00657888) {
-                            field0C8 = field0C8 - g_ReimuObjectDirectionMarker2At00657480;
+                            field0C8 = field0C8 - g_ReimuObjectScalarAt00657480;
                         }
                         field0DA = field0DA + 1;
                     }
@@ -159,7 +161,7 @@ void ReimuObject::Advance()
                             rotationZ = -AngleAt00483300(velocityY, velocityX) /
                                 g_ReimuObjectAngleUnitAt00657828;
                         }
-                        if (field0C8 == g_ReimuObjectDirectionMarker2At00657480) {
+                        if (field0C8 == g_ReimuObjectScalarAt00657480) {
                             ResetTransform(0.0f, 0.0f, 0.0f);
                             velocityY = -5.0f;
                             velocityX = 11.0f;
@@ -214,7 +216,7 @@ void ReimuObject::Advance()
                             rotationZ = -AngleAt00483300(velocityY, velocityX) /
                                 g_ReimuObjectAngleUnitAt00657828;
                         }
-                        if (field0C8 == g_ReimuObjectDirectionMarker2At00657480) {
+                        if (field0C8 == g_ReimuObjectScalarAt00657480) {
                             ResetTransform(0.0f, 0.0f, 0.0f);
                             velocityY = -5.0f;
                             velocityX = 25.0f;
@@ -334,7 +336,7 @@ void ReimuObject::Advance()
                         if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
                             field0DC = 0x2D;
                         }
-                        if (field0C8 == g_ReimuObjectDirectionMarker2At00657480) {
+                        if (field0C8 == g_ReimuObjectScalarAt00657480) {
                             field0DC = 0x5A;
                         }
                         if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
@@ -491,7 +493,7 @@ void ReimuObject::Advance()
                         if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
                             field0DC = 0x2D;
                         }
-                        if (field0C8 == g_ReimuObjectDirectionMarker2At00657480) {
+                        if (field0C8 == g_ReimuObjectScalarAt00657480) {
                             field0DC = 0x5A;
                         }
                         if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
@@ -611,7 +613,7 @@ void ReimuObject::Advance()
                         if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
                             field0DC = 0x2D;
                         }
-                        if (field0C8 == g_ReimuObjectDirectionMarker2At00657480) {
+                        if (field0C8 == g_ReimuObjectScalarAt00657480) {
                             field0DC = 0x5A;
                         }
                         if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
@@ -871,22 +873,26 @@ void ReimuObject::Advance()
                 }
                 break;
 
-            case 0x32D:
             case 0x32E:
-                if (field07C == 5) {
-                    ClearFrameInfo();
+                if (owner->action == 0x2C0) {
+                    x = facing * 0xE4 + owner->x;
+                    y = owner->y + g_ReimuObjectOwnerYOffsetAt00659080;
+                }
+                if (animationStage < 0x39 &&
+                    ((owner->action == 0x2C0 && owner->animationStage > 0x0C) ||
+                     owner->action != 0x2C0)) {
+                    scaleX = 3.0f;
+                    scaleY = 3.0f;
+                    owner->SpawnBattleEffect(0x32F, x, y, facing, 1);
+                    ResetSecondaryCounter(0x39);
                 }
                 else {
-                    if (field07C == 6) {
-                        field07C = 0;
-                        field080 = 1;
-                    }
                     if (animationStage == 0 && animationFrame == 0) {
                         ResetTransform(0.0f, 0.0f, 0.0f);
-                        field080 = 1;
+                        field080 = 99;
                         field07C = 0;
-                        scaleX = 1.0f;
-                        scaleY = 1.0f;
+                        scaleX = 2.0f;
+                        scaleY = 2.0f;
                         color[0] = 0xFF;
                         color[1] = 0xFF;
                         color[2] = 0xFF;
@@ -895,44 +901,33 @@ void ReimuObject::Advance()
                         field0DA = 0;
                         field0DC = 0;
                         field0DE = 0;
-                        field0DC = static_cast<short>(field0C8);
                     }
-                    SetPolarVelocity(field0C8,
-                        static_cast<float>(field0DA) * g_ReimuObjectScalarAt006590B4 +
-                        g_ReimuObjectScalarAt00657850);
-                    field0DE = field0DE + 0x1E;
-                    field0DA = field0DA + 1;
-                    if (animationStage > 0 && field0DC < 0x5A) {
-                        if (owner->opponent->y + g_ReimuObjectContactProjectionAt00657888 < y) {
-                            field0C8 = field0C8 + g_ReimuObjectDirectionMarker1At0065747C;
+                    rotationZ = rotationZ - g_ReimuObjectScalarAt00657480;
+                    if (field07C != 0) {
+                        field0D8 = field0D8 + 1;
+                        if (field0D8 > 5) {
+                            field0D8 = 0;
+                            field07C = 0;
                         }
-                        if (y < owner->opponent->y + g_ReimuObjectContactProjectionAt00657888) {
-                            field0C8 = field0C8 - g_ReimuObjectDirectionMarker1At0065747C;
-                        }
-                        field0DC = field0DC + 1;
                     }
-                    x = facing * velocityX + x;
-                    y = y + velocityY;
-                    rotationZ = rotationZ + g_ReimuObjectRotationStepAt006590C4;
-                    if ((field07C == 1 || field07C == 2 || field07C == 4) && field080 == 0) {
-                        ResetSecondaryCounter(3);
+                    if (animationStage > 0x38) {
+                        scaleX = scaleX * g_ReimuObjectScaleMultiplierAt00659090;
+                        scaleY = scaleY * g_ReimuObjectScaleMultiplierAt00659090;
                     }
-                    if (animationStage > 2) {
-                        if (color[0] < 0x19) {
+                    if (animationStage == 0x3A) {
+                        if (color[0] < 0x0F) {
                             color[0] = 0;
                         }
                         else {
-                            color[0] = color[0] - 0x19;
+                            color[0] = color[0] - 0x0F;
                         }
                     }
                     if (AdvanceNestedFrame() == animationStageCount) {
                         ClearFrameInfo();
                     }
-                    if (animationStage == 3 && animationFrame == 0 &&
-                        field0D8 < 0xC && field080 > 0) {
-                        ResetSecondaryCounter(2);
-                        field0D8 = field0D8 + 1;
-                        field07C = 0;
+                    if (animationStage == 0x39 && animationFrame == 0 &&
+                        owner->action == 0x2C0 && owner->animationStage < 0x0D) {
+                        ResetSecondaryCounter(0x1B);
                     }
                 }
                 break;
