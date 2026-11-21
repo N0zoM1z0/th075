@@ -88,6 +88,20 @@ extern double g_ContactScaleAt006583E8;
 extern float g_ExtraThresholdAt00657D14;
 extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
+// FUN_006406AC applies x87 ROUND to ST0; preserve the default nearest-even result.
+static short SakuyaRoundFloatToShort(float value)
+{
+    int integral = static_cast<int>(value);
+    const float fractional = value - static_cast<float>(integral);
+    if (fractional > 0.5f || (fractional == 0.5f && integral % 2 != 0)) {
+        ++integral;
+    }
+    else if (fractional < -0.5f || (fractional == -0.5f && integral % 2 != 0)) {
+        --integral;
+    }
+    return static_cast<short>(integral);
+}
+
 void SakuyaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;

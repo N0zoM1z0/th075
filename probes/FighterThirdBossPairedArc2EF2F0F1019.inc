@@ -1,20 +1,11 @@
-// F1019 real Japanese original 004AC040 actions 2EF and 2F0.
- // Each physical PE 2229 native CODE B/573 x86/80 actual PE
- // fields. Both normal whole PARTIAL father source interiors
- // have ZERO native positional mnemonic, width and GPR errors.
- // 2EF fall global00658044 vs 2F0 global00658354,
- // stage13 vertical1.5f vs3.5f, first random angle
- // minus70 vs four following −50. Last stage23 F04
- // counter condition must be NESTED within stage23.
- // Original 0040FB70 receives raw 32-bit float angle
- // bits (one MOV and PUSH), not C++ FP FLD/FSTP.
- // Borrowed CONST actor velocity+0x50 yields original
- // FLD global00658264 / FADD actor+0x50, then FIMUL
- // signed facing, unlike mutable raw-pointer alternatives.
- // Whole original 82KB parent remains NONEXACT: one extra
- // native original-sized slot in our generated father,
- // CODE +6 B, frame0x724 vs native0x720, prior 2BE GPR
- // roles and original physical whole offsets still differ.
+// F1019 original Japanese 004AC040 actions 2EF and 2F0.
+// Preserve native motion state: entry clears field07C but does not clear
+// velocityX/velocityY/field058/field05C; landing clears only Y.
+// 2EF uses gravity 00658044, stage-13 lift 1.5 and angles -70/-50;
+// 2F0 uses gravity 00658354, stage-13 lift 3.5 and angles -70.
+// The stage-23 F04 repeat guard remains nested inside the final shot.
+// FUN_006406AC results use x87 nearest-even conversion before short stores.
+// FUN_0040FB70 consumes the stored float angle and speed 100.
 // F1019 original Japanese TH075 native state0x2EF.
 case 0x2EF: {
     if ((animationStage)==0 && (animationFrame)==0) {
@@ -22,7 +13,6 @@ case 0x2EF: {
         scriptCounterF02=0;
         fieldF04=0;
         field07C=0;
-        ClearMotionFields();
         field080=99;
     }
     if (y>g_ThresholdAt0065782C && (animationStage)<22)
@@ -31,7 +21,6 @@ case 0x2EF: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             ResetSecondaryCounter(34);
-            ClearMotionFields();
             y=0.0f;
             break;
         }
@@ -49,8 +38,8 @@ case 0x2EF: {
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -65,8 +54,8 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -81,8 +70,8 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -97,8 +86,8 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -113,8 +102,8 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -144,7 +133,6 @@ case 0x2F0: {
         scriptCounterF02=0;
         fieldF04=0;
         field07C=0;
-        ClearMotionFields();
         field080=99;
     }
     if (y>g_ThresholdAt0065782C && (animationStage)<22)
@@ -153,7 +141,6 @@ case 0x2F0: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             ResetSecondaryCounter(34);
-            ClearMotionFields();
             y=0.0f;
             break;
         }
@@ -171,8 +158,8 @@ case 0x2F0: {
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -187,8 +174,8 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -203,8 +190,8 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -219,8 +206,8 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
@@ -235,8 +222,8 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-        scriptCounterF02=(velocityY)*g_ContactProjectionAt00657888;
+        scriptCounterF00=SakuyaRoundFloatToShort((velocityX)*g_ContactProjectionAt00657888);
+        scriptCounterF02=SakuyaRoundFloatToShort((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
