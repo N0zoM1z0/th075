@@ -1,14 +1,8 @@
-// F1008 pinned original Japanese 004AC040 2F9:
- // 1254 native CODEB /326x86 /33 real PE targets.
- // True random sprites0x38B and 7-arg sprite0x38A
- // gated by signed global mode006714D0, physical
- // two center-X globals006593D0/00658370 and
- // native F06>50 boolean offsets. Native stage5
- // opponent motion/F10, stage11/13 bounded aux.
- // Full-partial natural VC7.1 parent aligns all
- // 326 native mnemonics/width/GPR roles. Genuine
- // preceding 2F9 restores next 2FA GPR phase
- // from 113 wrong -> ZERO; whole giant NONEXACT.
+// F1008 original Japanese 004AC040 state 2F9.
+// Entry initializes F00/F02/F04/F06, field07C and field080; it does not
+// clear velocityX/velocityY/field058/field05C. Native ClearCancel is separate.
+// Stages 9/10 emit mode-gated random 38B/38A effects; stage 5 delays three
+// times before opponent transform, then stages 11/13 repeat at counters 9/11.
 // F1008 true original Japanese 004AC040 case 2F9
 case 0x2F9: {
     if ((animationStage)==0 && (animationFrame)==0) {
@@ -17,7 +11,6 @@ case 0x2F9: {
         fieldF04=static_cast<short>(RecordedRange(0,3));
         fieldF06=static_cast<short>(RecordedRange(0,100));
         field07C=0;
-        ClearMotionFields();
         field080=99;
     }
     if ((animationFrame)==0 && ((animationStage)==9 || (animationStage)==10)) {
