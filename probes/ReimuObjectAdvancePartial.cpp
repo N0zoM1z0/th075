@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 173 action
-// values: 39 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 175 action
+// values: 41 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2106,6 +2106,73 @@ void ReimuObject::Advance()
                     }
                 }
                 break;
+            case 0x38E:
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 4.0f;
+                    scaleY = 4.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 0;
+                    field0DA = 0;
+                    field0DC = 0;
+                    field0DE = 0;
+                }
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 6) {
+                        if (color[0] < 7) {
+                            color[0] = 0;
+                        }
+                        else {
+                            color[0] = color[0] - 7;
+                        }
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
+                    }
+                    if (animationStage == 6 && animationFrame == 0) {
+                        owner->SpawnBattleEffect(0x38F, x, y, facing, 1);
+                    }
+                }
+                break;
+
+            case 0x38F:
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    field080 = 0;
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 0;
+                    field0DA = 0;
+                }
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else if (color[0] < 0x0F) {
+                    ClearFrameInfo();
+                }
+                else {
+                    color[0] = color[0] - 0x0F;
+                    if (animationStage == 1 && animationFrame == 0) {
+                        owner->SpawnBattleEffect(0x390, x, y, 1, 1);
+                        owner->SpawnBattleEffect(0x390, x, y, -1, 1);
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
+                    }
+                }
+                break;
+
             case 0x323:
             case 0x326:
             case 0x343:
