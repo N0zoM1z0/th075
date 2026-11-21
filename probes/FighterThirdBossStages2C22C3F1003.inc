@@ -13,7 +13,6 @@ case 0x2C2: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         field07C=0;
-        ClearMotionFields();
         field080=99;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
@@ -55,7 +54,6 @@ case 0x2C3: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         field07C=0;
-        ClearMotionFields();
         field080=99;
     }
     if ((animationStage)>5)
