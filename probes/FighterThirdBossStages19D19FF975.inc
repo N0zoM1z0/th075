@@ -54,7 +54,6 @@ case 0x19E: {
     --scriptCounterF00;
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
-        ClearMotionFields();
         ResetPrimaryCounters(0xA);
         break;
     }
@@ -88,7 +87,6 @@ case 0x19F: {
     --scriptCounterF00;
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
-        ClearMotionFields();
         ResetPrimaryCounters(0xA);
         break;
     }
