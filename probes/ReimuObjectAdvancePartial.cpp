@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers twenty-seven
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33C (except 0x326).
+// The original parent is 50,915 bytes. This research source covers twenty-nine
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33E (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -1536,6 +1536,8 @@ void ReimuObject::Advance()
                 }
                 break;
             case 0x33C:
+            case 0x33D:
+            case 0x33E:
                 if (field07C == 5) {
                     ClearFrameInfo();
                 }
@@ -1587,7 +1589,7 @@ void ReimuObject::Advance()
                         effectY = effectY - static_cast<float>(RecordedRange(0, 0x1E));
                         float effectX = x + g_ReimuObjectEffectSpreadAt00657CBC;
                         effectX = effectX - static_cast<float>(RecordedRange(0, 0x1E));
-                        owner->SpawnBattleEffect(0x335, effectX, effectY, facing, 1);
+                        owner->SpawnBattleEffect(static_cast<short>(action - 7), effectX, effectY, facing, 1);
                     }
                     if (field07C == 0 || animationStage != 1 || field080 != 0) {
                         if (animationStage == 0) {
