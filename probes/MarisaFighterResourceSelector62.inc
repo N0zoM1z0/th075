@@ -20,5 +20,5 @@
                 if (scriptCounterF00 == 2)
                     ResetPrimaryCounters(0x5E);
             }
-            break;
+            return;
         }

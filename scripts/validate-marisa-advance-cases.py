@@ -198,6 +198,9 @@ def main() -> int:
         "MarisaFighterTrajectoryRecovery4CF613.inc": 2,
         "MarisaFighterJumpLandingF628.inc": 1,
         "MarisaFighterLandingTimer96F631.inc": 1,
+        "MarisaFighterResourceSelector62.inc": 1,
+        "MarisaFighterProjectileLaunchF642.inc": 1,
+        "MarisaFighterLandingTimerSiblingsF633.inc": 1,
     }
     for filename, expected in additional_exit_counts.items():
         fragment = (PROBES / filename).read_text(encoding="utf-8")

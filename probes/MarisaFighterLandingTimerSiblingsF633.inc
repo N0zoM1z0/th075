@@ -28,5 +28,5 @@ case F633_CASE: {
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(F633_NEXT_ACTION);
-    break;
+    return;
 }

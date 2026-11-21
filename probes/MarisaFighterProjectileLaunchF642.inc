@@ -27,5 +27,5 @@ case F642_CASE: {
         scriptCounterF00=scriptCounterF00-10;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(F642_NEXT_ACTION);
-    break;
+    return;
 }

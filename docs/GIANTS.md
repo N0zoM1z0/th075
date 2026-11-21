@@ -116,6 +116,12 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+Marisa action 0x62's resource selector, the 0xA7/0xA8 projectile-launch
+pair, and the 0x97/0x98/0x9A-0xA1 landing-timer siblings now return after
+their native nested-frame/counter update. Their three former breaks entered
+the partial default handler despite the original Ghidra cases returning.
+The per-fragment validator now checks these terminal edges too.
+
 The same original-return audit fixed four more Marisa state fragments:
 scripted bounce 0x59, recovery 0x4C, jump landings 0x8F/0x90, and landing
 timer 0x96. Their six old switch breaks now return on the native contact,
