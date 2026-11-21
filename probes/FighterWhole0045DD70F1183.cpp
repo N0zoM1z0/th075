@@ -69,6 +69,10 @@ extern float g_ReimuStormRightBoundaryAt0065920C;
 extern float g_ReimuApproachRightBoundAt0065945C;
 extern float g_ReimuFiveShotYAt00657858;
 extern float g_ReimuFiveShotYAt0065786C;
+extern float g_ReimuFiveShotSecondYAt00659474;
+extern float g_ReimuFiveShotThirdYAt00657860;
+extern float g_ReimuFiveShotFourthYAt00659284;
+extern float g_ReimuFiveShotFifthYAt00659470;
 void ReimuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -657,6 +661,12 @@ case 0x48: {
 #include "ReimuBossTrajectory2FAF1183.inc"
 #include "ReimuBossFanShots1A21A41F1183.inc"
 #include "ReimuBossStageEffects255257F1183.inc"
+#include "ReimuBossInputResource60F1183.inc"
+#include "ReimuBossFiveShot199F1183.inc"
+#include "ReimuBossCadence19FF1183.inc"
+#include "ReimuFighterAction60F1183.inc"
+#include "ReimuFighterFiveShot199F1183.inc"
+#include "ReimuFighterChargeVolley19FF1183.inc"
         default:
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
