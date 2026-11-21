@@ -73,6 +73,7 @@ extern float g_ReimuFiveShotSecondYAt00659474;
 extern float g_ReimuFiveShotThirdYAt00657860;
 extern float g_ReimuFiveShotFourthYAt00659284;
 extern float g_ReimuFiveShotFifthYAt00659470;
+extern float g_ReimuFullCircleYOffsetAt00659294;
 
 static short ReimuRoundFloatToShort(float value)
 {

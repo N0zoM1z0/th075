@@ -72,21 +72,7 @@
 #undef R1189_Y_OFFSET
 
 
-#define R1189_ACTION 0x25b
-#define R1189_AIR 1
-#define R1189_EFFECT 0x322
-#define R1189_NEXT_ACTION 9
-#define R1189_FIRE_STAGE 3
-#define R1189_X_OFFSET 12
-#define R1189_Y_OFFSET g_ReimuCommandBackYAt006590A8
-#include "ReimuFourProjectileAttackF1189.inc"
-#undef R1189_ACTION
-#undef R1189_AIR
-#undef R1189_EFFECT
-#undef R1189_NEXT_ACTION
-#undef R1189_FIRE_STAGE
-#undef R1189_X_OFFSET
-#undef R1189_Y_OFFSET
+#include "ReimuFullCircle25BF1189.inc"
 
 
 #define R1189_ACTION 0x25c
