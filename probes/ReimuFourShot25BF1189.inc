@@ -1,5 +1,6 @@
-// Native pre-switch Reimu action 0x25B branch from 0045DD70.
+// Reimu Fighter::Advance native action 0x25B.
 // Four ordered 0x322 projectiles at stage 3, then the native gauge/sound tail.
+case 0x25B:
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = velocityX * g_BounceScaleAt00657F74;
         velocityY = velocityY * g_BounceScaleAt00657F74;

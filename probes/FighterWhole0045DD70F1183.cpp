@@ -648,9 +648,6 @@ case 0x48: {
 #include "ReimuResourceLoopsF1192.inc"
 #include "ReimuFinalEffectsF1192.inc"
         default:
-            if (action == 0x25B) {
-#include "ReimuFourShot25BF1189.inc"
-            }
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
 #include "ReimuSharedGetterTailF1192.inc"

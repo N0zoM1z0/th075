@@ -21,6 +21,7 @@
 #include "ReimuFourShot258F1189.inc"
 #include "ReimuFourShot259F1189.inc"
 #include "ReimuFourShot25AF1189.inc"
+#include "ReimuFourShot25BF1189.inc"
 #include "ReimuFan25CF1189.inc"
 #include "ReimuCircle25DF1189.inc"
 #include "ReimuFan25EF1189.inc"
