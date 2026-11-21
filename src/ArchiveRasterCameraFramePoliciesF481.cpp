@@ -1,3 +1,4 @@
+#include "CameraResetF481.hpp"
 #include <windows.h>
 #include <d3d8.h>
 // Five individually native-verified original complete R-origin functions.
@@ -43,7 +44,6 @@ extern float g_CameraResetHeightAt0067140C;
 extern unsigned int g_CameraResetTwoAt006713F8;
 extern unsigned int g_CameraResetThreeAt00671410;
 extern unsigned int g_CameraResetFourAt006713FC;
-class CameraResetF481 {public: CameraResetF481* ResetParameters();};
 CameraResetF481* CameraResetF481::ResetParameters() {
  g_CameraResetOneAt006713EC=0;
  g_CameraResetHeightAt0067140C=20.0f;

@@ -187,6 +187,17 @@ recompiles and still covers 141/141 top-level labels and 158/158 explicit
 in-parent handler addresses. This is a runtime-semantic correction, not a
 whole-function exactness claim.
 
+The BG02a/BG02b/BG02c 60-byte blend methods now access the original
+embedded TextureManager member directly. BackgroundStage's native base
+layout is represented as its virtual base header, +0x04 camera-reset state,
+the three stage-specific words at +0x0C..+0x14, and the 80-byte
+TextureManager at +0x18. The constructor at 00449DE0 and destructor at
+00449D40 independently establish the same embedded object lifetime; the
+80-byte TextureManager layout is also asserted by its own constructor and
+destructor views. The three blend bodies and the 65-byte SetBlendMode leaf
+remain structurally exact. Unknown camera-state words and historical class
+spelling remain provisional; this does not claim a complete stage owner.
+
 The 162-byte BattlePointerQueues::ReleaseEntries leaf now exposes its two
 side lists as named adjacent NativePointerListF337 members instead of
 reinterpret-casting this+0 and this+0x14 at each use. The observed 20-byte

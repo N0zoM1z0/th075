@@ -1,8 +1,8 @@
+#include "BackgroundStageBaseF479.hpp"
 // Thirty-six independently original complete derived stage virtual
 // destructors. Each unique native vtable and actual native base
 // destructor call was verified at its distinct PE address.
 // The borrowed background base and its body are not duplicated.
-class NativeBackgroundBaseF479 { public: virtual ~NativeBackgroundBaseF479(); };
 class BG00aF479: public NativeBackgroundBaseF479 { public: virtual ~BG00aF479(); };
 BG00aF479::~BG00aF479() { }
 class BG00bF479: public NativeBackgroundBaseF479 { public: virtual ~BG00bF479(); };

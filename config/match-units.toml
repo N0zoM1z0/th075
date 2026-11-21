@@ -47707,7 +47707,7 @@ target = 0x006406AC
 [[units.background-stage-apply-blend-02a-0044b980.relocations]]
 offset = 52
 type = "REL32"
-symbol = "?SetBlendMode@BackgroundDrawerF366@@QAEXH@Z"
+symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z"
 target = 0x0040C7F0
 
 
@@ -47747,7 +47747,7 @@ target = 0x006406AC
 [[units.background-stage-apply-blend-02b-0044bea0.relocations]]
 offset = 52
 type = "REL32"
-symbol = "?SetBlendMode@BackgroundDrawerF366@@QAEXH@Z"
+symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z"
 target = 0x0040C7F0
 
 
@@ -47787,7 +47787,7 @@ target = 0x006406AC
 [[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
 offset = 52
 type = "REL32"
-symbol = "?SetBlendMode@BackgroundDrawerF366@@QAEXH@Z"
+symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z"
 target = 0x0040C7F0
 
 
@@ -60539,8 +60539,8 @@ relocations = [
 source = "src/TexturePolicyLeavesF736.cpp"
 object = "build/matching/TexturePolicyLeavesF736.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["TextureManagerF736::SetBlendMode"]
-symbol = "?SetBlendMode@TextureManagerF736@@QAEXH@Z"
+functions = ["TextureManagerF198::SetBlendMode"]
+symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z"
 target_address = 0x0040C7F0
 size = 65
 relocations = [

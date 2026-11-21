@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "Graphics.hpp"
 #include "GraphicsTexturedDraw.hpp"
 
@@ -23,11 +24,7 @@ void TextureManagerSlotsF736::ClearSlots() {
     textures.Clear();
 }
 
-class TextureManagerF736 {
-public:
-    void SetBlendMode(int mode);
-};
-void TextureManagerF736::SetBlendMode(int mode) {
+void TextureManagerF198::SetBlendMode(int mode) {
     if (mode == 2 || mode == 3 || mode == 6)
         Graphics::SetDepthMode(3);
     else

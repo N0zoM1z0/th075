@@ -949,7 +949,7 @@ TextureManagerF735::SetTextureFilter
 TextureManagerF735::SetPixelShaderMode
 TextureManagerF735::SetColorMultiplier
 TextureManagerSlotsF736::ClearSlots
-TextureManagerF736::SetBlendMode
+TextureManagerF198::SetBlendMode
 SpriteTexturesF736::DrawProjectedTriangleStrip
 SpriteDrawingF736::DrawOpaqueSpriteWhite
 SpriteDrawingF736::GetTextureRect
