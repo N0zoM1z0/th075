@@ -9,8 +9,7 @@
 case 0x196: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ClearMotionFields();
-    }
+            }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==6 && (animationFrame)==0) {
@@ -45,8 +44,7 @@ case 0x196: {
 case 0x197: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ClearMotionFields();
-    }
+            }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
@@ -81,8 +79,7 @@ case 0x197: {
 case 0x198: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ClearMotionFields();
-    }
+            }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(2);
     if ((animationStage)==6 && (animationFrame)==0) {

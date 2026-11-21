@@ -11,7 +11,6 @@
 case 0x19D: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
     }

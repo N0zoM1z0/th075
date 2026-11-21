@@ -10,8 +10,7 @@
 case 0x190: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ClearMotionFields();
-        scriptCounterF00=0;
+                scriptCounterF00=0;
         scriptCounterF02=0;
     }
     if ((animationStage)>5 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
@@ -47,8 +46,7 @@ case 0x190: {
 case 0x191: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ClearMotionFields();
-        scriptCounterF00=0;
+                scriptCounterF00=0;
         scriptCounterF02=0;
     }
     if ((animationStage)>4 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
