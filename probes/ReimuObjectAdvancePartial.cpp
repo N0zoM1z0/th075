@@ -314,44 +314,6 @@ void ReimuObject::Advance()
                 }
                 break;
 
-            case 0x328:
-                facing = owner->facing;
-                if (owner->action == 0x131 && owner->animationStage < 4 &&
-                    animationStage == 0) {
-                    x = facing * 0x91 + owner->x;
-                    y = owner->y + g_ReimuObjectOwnerOffsetAt006590A4;
-                }
-                else if (animationStage != 1) {
-                    ResetSecondaryCounter(1);
-                }
-                if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-                    ResetTransform(0.0f, 0.0f, 0.0f);
-                    scaleX = 1.0f;
-                    scaleY = 1.0f;
-                    color[0] = 0xFF;
-                    color[1] = 0xFF;
-                    color[2] = 0xFF;
-                    color[3] = 0xFF;
-                    rotationZ = facing * 0x46;
-                    field0D8 = 1;
-                }
-                rotationZ = rotationZ + g_ReimuObjectDirectionMarker5At00657874;
-                if (animationStage > 0) {
-                    if (color[0] < 0x1F) {
-                        color[0] = 0;
-                    }
-                    else {
-                        color[0] = color[0] - 0x1E;
-                    }
-                }
-                if (AdvanceNestedFrame() == animationStageCount) {
-                    ClearFrameInfo();
-                }
-                if (animationStage == 1 && animationFrame == 0) {
-                    ResetSecondaryCounter(0);
-                }
-                break;
-
             case 0x327:
                 if (field07C == 5) {
                     ClearFrameInfo();
@@ -405,7 +367,7 @@ void ReimuObject::Advance()
                         // Target x87 sequence divides by the angle unit before
                         // the float-to-short conversion (the decompiler omits it).
                         field0DC = static_cast<short>(AngleAt00483300(
-                            (owner->opponent->y + g_ReimuObjectEffectSpreadAt00657CBC) - y,
+                            (owner->opponent->y + g_ReimuObjectContactProjectionAt00657888) - y,
                             (owner->opponent->x - x) * facing) /
                             g_ReimuObjectAngleUnitAt00657828);
                     }
@@ -471,6 +433,44 @@ void ReimuObject::Advance()
                     }
                 }
                 break;
+            case 0x328:
+                facing = owner->facing;
+                if (owner->action == 0x131 && owner->animationStage < 4 &&
+                    animationStage == 0) {
+                    x = facing * 0x91 + owner->x;
+                    y = owner->y + g_ReimuObjectOwnerOffsetAt006590A4;
+                }
+                else if (animationStage != 1) {
+                    ResetSecondaryCounter(1);
+                }
+                if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    rotationZ = facing * 0x46;
+                    field0D8 = 1;
+                }
+                rotationZ = rotationZ + g_ReimuObjectDirectionMarker5At00657874;
+                if (animationStage > 0) {
+                    if (color[0] < 0x1F) {
+                        color[0] = 0;
+                    }
+                    else {
+                        color[0] = color[0] - 0x1E;
+                    }
+                }
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
+                }
+                if (animationStage == 1 && animationFrame == 0) {
+                    ResetSecondaryCounter(0);
+                }
+                break;
+
             case 0x329:
                 if (field07C == 5) {
                     ClearFrameInfo();
