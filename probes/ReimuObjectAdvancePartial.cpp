@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 189 action
-// values: 55 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 191 action
+// values: 57 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -44,6 +44,7 @@ extern const float g_ReimuObjectRightBoundAt00659248;
 extern const float g_ReimuObjectFullRotationAt00657864;
 extern const float g_ReimuObjectHalfAt00657478;
 extern const float g_ReimuObjectLowerOscillationLimitAt00659234;
+extern const float g_ReimuObjectScalarAt0065839C;
 extern const float g_ReimuObjectScaleCeilingAt006581E0;
 extern const float g_ReimuObjectVerticalSpringAt00658354;
 extern const float g_ReimuObjectHorizontalDriftAt006578C0;
@@ -2498,7 +2499,8 @@ void ReimuObject::Advance()
             case 0x39F:
             case 0x3A0:
             case 0x3A1:
-            case 0x3A2: {
+            case 0x3A2:
+            case 0x3AC: {
                 const float initialSpeedScale =
                     action == 0x3A0 ? g_ReimuObjectHorizontalDriftAt006578C0 :
                     g_ReimuObjectScalarAt006590B4;
@@ -2793,6 +2795,37 @@ void ReimuObject::Advance()
                     if (AdvanceNestedFrame() == animationStageCount) {
                         ClearFrameInfo();
                     }
+                }
+                break;
+
+            case 0x3B6:
+                if (owner->action == 700 || owner->action == 0x2BD ||
+                    owner->action == 0x2C2 || owner->action == 0x2C3) {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field07C = 0;
+                        field080 = 1;
+                        velocityY = 15.0f;
+                    }
+                    rotationZ = rotationZ - g_ReimuObjectScalarAt0065839C;
+                    y = y + velocityY;
+                    if (y <= g_ReimuObjectUpperBoundAt006583B4) {
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            ClearFrameInfo();
+                        }
+                    }
+                    else {
+                        ClearFrameInfo();
+                    }
+                }
+                else {
+                    ClearFrameInfo();
                 }
                 break;
 
