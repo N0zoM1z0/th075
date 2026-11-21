@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 180 action
-// values: 46 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 181 action
+// values: 47 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -49,6 +49,9 @@ extern const float g_ReimuObjectHorizontalDriftAt006578C0;
 extern const float g_ReimuObjectScaleBaseAt00659240;
 extern const float g_ReimuObjectScaleFadeAt0065923C;
 extern const float g_ReimuObjectVerticalLowerLimitAt00659244;
+extern const float g_ReimuObjectRotationStepAt00658290;
+extern const float g_ReimuObjectHalfTurnAt00659238;
+extern signed char g_StateRepeatLevelAt006714D0;
 extern float g_AngleShiftAt00657878;
 extern double g_RiseAt00658050;
 extern const float g_ReimuObjectContactProjectionAt00657888;
@@ -2414,6 +2417,82 @@ void ReimuObject::Advance()
                     }
                 }
                 break;
+
+            case 0x397: {
+                ReimuFighter* reimuOwner = static_cast<ReimuFighter*>(owner);
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                    break;
+                }
+                facing = 1;
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 0;
+                    field0DA = 0;
+                    field0DC = 0;
+                    field0DE = 0;
+                    field0E0 = 0;
+                }
+                field0E0 = field0E0 - 1;
+                field0DE = field0DE - 1;
+                rotationZ = rotationZ + g_ReimuObjectRotationStepAt00658290;
+                SetPolarVelocity(static_cast<float>(reimuOwner->fieldF24) + field0C8,
+                    static_cast<float>(reimuOwner->fieldF26));
+                x = owner->x + velocityX;
+                y = owner->y + velocityY + g_ReimuObjectContactProjectionAt00657888;
+                if (reimuOwner->fieldF28 == 0 && owner->action == 0x303) {
+                    field0E0 = 0;
+                }
+                if (reimuOwner->fieldF28 == 1 && field0E0 < 1) {
+                    owner->PlaySound(0);
+                    owner->field314 = 0.0f;
+                    owner->field318 = 60.0f;
+                    owner->SpawnBattleEffect(0x39F, x, y, owner->facing, 1);
+                    field0E0 = static_cast<short>(5 - g_StateRepeatLevelAt006714D0);
+                }
+                if (reimuOwner->fieldF28 == 2 && field0E0 < 1) {
+                    owner->PlaySound(0);
+                    owner->field314 = -(static_cast<float>(reimuOwner->fieldF24) + field0C8) *
+                        static_cast<float>(facing);
+                    owner->field318 = 60.0f;
+                    owner->SpawnBattleEffect(0x39F, x, y, 1, 1);
+                    field0E0 = static_cast<short>(5 - g_StateRepeatLevelAt006714D0);
+                }
+                if (reimuOwner->fieldF28 == 3 && field0DE < 1) {
+                    owner->PlaySound(0x0D);
+                    owner->field314 = -(static_cast<float>(reimuOwner->fieldF24) + field0C8 +
+                        g_ReimuObjectDirectionMarker0At0065782C) * static_cast<float>(facing);
+                    owner->field318 = 100.0f;
+                    owner->SpawnBattleEffect(0x3A0, x, y, 1, 1);
+                    field0DE = 10;
+                }
+                if (reimuOwner->fieldF28 == 4 && field0DE < 1) {
+                    owner->PlaySound(0x0D);
+                    owner->field314 = -(static_cast<float>(reimuOwner->fieldF24) + field0C8 +
+                        g_ReimuObjectHalfTurnAt00659238) * static_cast<float>(facing);
+                    owner->field318 = 40.0f;
+                    owner->SpawnBattleEffect(0x3A1, x, y, 1, 1);
+                    field0DE = 10;
+                }
+                if (owner->action == 0x304 && field0E0 < 1) {
+                    owner->PlaySound(0);
+                    owner->field314 = -(static_cast<float>(reimuOwner->fieldF24) + field0C8) *
+                        static_cast<float>(facing);
+                    owner->field318 = 250.0f;
+                    owner->SpawnBattleEffect(0x3AC, x, y, 1, 1);
+                    field0E0 = 3;
+                }
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ResetSecondaryCounter(1);
+                }
+                break;
+            }
 
             case 0x323:
             case 0x326:
