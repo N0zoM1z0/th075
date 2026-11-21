@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 181 action
-// values: 47 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 185 action
+// values: 51 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2490,6 +2490,83 @@ void ReimuObject::Advance()
                 }
                 if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(1);
+                }
+                break;
+            }
+
+            case 0x39F:
+            case 0x3A0:
+            case 0x3A1:
+            case 0x3A2: {
+                const float initialSpeedScale =
+                    action == 0x3A0 ? g_ReimuObjectHorizontalDriftAt006578C0 :
+                    g_ReimuObjectScalarAt006590B4;
+                short stage2SpeedChange = 3;
+                if (action == 0x3A0) {
+                    stage2SpeedChange = -2;
+                }
+                else if (action == 0x3A2) {
+                    stage2SpeedChange = -3;
+                }
+                if (g_ReimuObjectRightBoundAt0065925C < x ||
+                    x < g_ReimuObjectLeftBoundAt00659258 ||
+                    g_ReimuObjectUpperBoundAt006583B4 < y ||
+                    y < g_ReimuObjectLowerBoundAt00658374 ||
+                    owner->field3A0 == 0) {
+                    ClearFrameInfo();
+                }
+                else if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 1;
+                        field07C = 0;
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0D8 = static_cast<short>(field0CC);
+                        field0DA = 0;
+                        field0DE = 0;
+                        field0DC = static_cast<short>(field0C8);
+                        SetPolarVelocity(static_cast<float>(field0DC),
+                            static_cast<float>(field0D8) * initialSpeedScale);
+                    }
+                    if (animationStage == 1) {
+                        if (field0D8 > 1) {
+                            field0D8 = field0D8 - 2;
+                        }
+                        if (field0D8 < 1) {
+                            field0D8 = 1;
+                        }
+                    }
+                    if (animationStage == 2) {
+                        field0D8 = field0D8 + stage2SpeedChange;
+                    }
+                    SetPolarVelocity(static_cast<float>(field0DC),
+                        static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                    rotationZ = AngleAt00483300(velocityY, velocityX) /
+                        g_ReimuObjectAngleUnitAt00657828;
+                    x = facing * velocityX + x;
+                    y = y - velocityY;
+                    if (animationStage < 3 && field080 == 0) {
+                        ResetSecondaryCounter(3);
+                    }
+                    if (animationStage > 2) {
+                        if (color[0] < 0x19) {
+                            color[0] = 0;
+                        }
+                        else {
+                            color[0] = color[0] - 0x19;
+                        }
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
+                    }
                 }
                 break;
             }
