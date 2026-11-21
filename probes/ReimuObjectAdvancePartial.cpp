@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 196 action
-// values: 62 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 198 action
+// values: 64 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -59,6 +59,11 @@ extern double g_RiseAt00658050;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 extern const float g_ReimuObjectScaleDenominatorAt00658294;
+extern const float g_ReimuObjectHorizontalHitUpperAt0065786C;
+extern const float g_ReimuObjectHorizontalHitLowerAt00659230;
+extern const float g_ReimuObjectVerticalHitUpperAt006590A8;
+extern const float g_ReimuObjectVerticalHitLowerAt00658268;
+extern const double g_ReimuObjectSpiritGaugeLimitAt00659228;
 
 void ReimuObject::Advance()
 {
@@ -3000,6 +3005,91 @@ void ReimuObject::Advance()
                     if (AdvanceNestedFrame() == animationStageCount) {
                         ResetSecondaryCounter(action == 0x3E2 ? 1 : 10);
                     }
+                }
+                break;
+
+
+            case 0x3E3:
+            case 0x3E4:
+                facing = 1;
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    velocityX = 0.0f;
+                    velocityY = -1.0f;
+                    field0D8 = static_cast<short>(RecordedRange(0, 360) - 0xB4);
+                    field0DA = 0x0F;
+                }
+                if (animationStage == 0) {
+                    field0DA = field0DA - 1;
+                    if (field0DA < 3) {
+                        field0DA = 3;
+                    }
+                    SetPolarVelocity(static_cast<float>(field0D8),
+                        static_cast<float>(field0DA) * g_ReimuObjectScaleMultiplierAt00659090);
+                }
+                if (animationStage == 1) {
+                    const float targetAngle = AngleAt00483300(
+                        (owner->opponent->y + g_ReimuObjectContactProjectionAt00657888) - y,
+                        owner->opponent->x - x) / g_ReimuObjectAngleUnitAt00657828;
+                    field0D8 = static_cast<short>(targetAngle);
+                    SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
+                    if (x - owner->opponent->x < g_ReimuObjectHorizontalHitUpperAt0065786C &&
+                        x - owner->opponent->x > g_ReimuObjectHorizontalHitLowerAt00659230 &&
+                        y - owner->opponent->y < g_ReimuObjectVerticalHitUpperAt006590A8 &&
+                        y - owner->opponent->y > g_ReimuObjectVerticalHitLowerAt00658268) {
+                        if (action == 0x3E3) {
+                            ClearFrameInfo();
+                            if (owner->opponent->field366 < 2) {
+                                owner->opponent->field366 = owner->opponent->field366 + 1;
+                            }
+                            else {
+                                owner->opponent->score = owner->opponent->score + 0x4E20;
+                            }
+                            PlaySharedSound(0x2E);
+                            return;
+                        }
+                        owner->fieldEFA = owner->fieldEFA + 1;
+                        PlaySharedSound(0x2E);
+                        ClearFrameInfo();
+                        if (owner->opponent->spiritCooldown > 0) {
+                            if (owner->opponent->spiritCooldown > 5) {
+                                owner->opponent->spiritCooldown =
+                                    owner->opponent->spiritCooldown - 5;
+                            }
+                            else {
+                                owner->opponent->spiritCooldown = 0;
+                                owner->opponent->spirit = 1000;
+                            }
+                            return;
+                        }
+                        if (owner->opponent->spirit < 0x3DE) {
+                            owner->opponent->spirit = owner->opponent->spirit + 10;
+                        }
+                        else {
+                            owner->opponent->spirit = 1000;
+                            if (owner->opponent->field39C == 0) {
+                                if (owner->opponent->field36C < g_ReimuObjectSpiritGaugeLimitAt00659228) {
+                                    owner->opponent->field36C = owner->opponent->field36C +
+                                        g_ReimuObjectHalfAt00657478;
+                                }
+                                else {
+                                    owner->opponent->field36C = 900.0f;
+                                }
+                            }
+                        }
+                        return;
+                    }
+                }
+                x = x + velocityX;
+                y = y - velocityY;
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ResetSecondaryCounter(1);
                 }
                 break;
 
