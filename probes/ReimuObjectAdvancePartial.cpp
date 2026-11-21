@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers twenty-two
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x337 (except 0x326).
+// The original parent is 50,915 bytes. This research source covers twenty-three
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x338 (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -41,6 +41,8 @@ extern const float g_ReimuObjectOwnerYOffsetAt00659080;
 extern const float g_ReimuObjectScaleMultiplierAt00659090;
 extern const float g_ReimuObjectScaleIncrementAt006583FC;
 extern const float g_ReimuObjectRightBoundAt00659248;
+extern const float g_ReimuObjectFullRotationAt00657864;
+extern const float g_ReimuObjectHalfAt00657478;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 
@@ -1236,6 +1238,79 @@ void ReimuObject::Advance()
                 }
                 if (AdvanceNestedFrame() == animationStageCount) {
                     ClearFrameInfo();
+                }
+                break;
+            case 0x338:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else if (owner->action < 0x32 || owner->action > 0x95 ||
+                    animationStage > 3) {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 1;
+                        field07C = 0;
+                        scaleX = 2.0f;
+                        scaleY = 2.0f;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        rotationX = 75.0f;
+                        velocityX = 20.0f;
+                        field080 = 3;
+                        field0D8 = 0;
+                    }
+                    if (field07C == 4) {
+                        field07C = 0;
+                    }
+                    if (field080 == 0 && animationStage == 2) {
+                        ResetSecondaryCounter(3);
+                    }
+                    else {
+                        rotationZ = rotationZ + g_ReimuObjectScalarAt00657850;
+                        if (g_ReimuObjectFullRotationAt00657864 < rotationZ) {
+                            rotationX = rotationX - g_ReimuObjectFullRotationAt00657864;
+                        }
+                        if (animationStage < 3) {
+                            velocityX = velocityX - g_ReimuObjectDirectionMarker1At0065747C;
+                            if (velocityX < g_ReimuObjectHalfAt00657478) {
+                                velocityX = g_ReimuObjectHalfAt00657478;
+                            }
+                        }
+                        if (animationStage == 3) {
+                            color[0] = color[0] - 10;
+                            if (color[0] == 0) {
+                                color[0] = 0;
+                                ClearFrameInfo();
+                                break;
+                            }
+                        }
+                        x = facing * velocityX + x;
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            ClearFrameInfo();
+                        }
+                        if (animationStage == 3 && animationFrame == 0 &&
+                            field0D8 < 6) {
+                            field0D8 = field0D8 + 1;
+                            ResetSecondaryCounter(2);
+                            field07C = 0;
+                        }
+                    }
+                }
+                else {
+                    ClearFrameInfo();
+                    if (owner->fieldEFA > 0x19) {
+                        owner->fieldEFA = 0;
+                        owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                    }
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
                 }
                 break;
             }
