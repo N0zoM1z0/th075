@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 194 action
-// values: 60 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 196 action
+// values: 62 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2960,6 +2960,47 @@ void ReimuObject::Advance()
                 }
                 break;
             }
+
+
+            case 0x3E2:
+            case 0x3E5:
+                x = owner->x;
+                y = action == 0x3E2 ? 1.0f : 0.0f;
+                field08A = 1;
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 3.0f;
+                    scaleY = 3.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field01A = 0x4E2;
+                    rotationX = -80.0f;
+                    rotationY = 0.0f;
+                    rotationZ = 0.0f;
+                    field0D8 = owner->field3A0;
+                }
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    const float remainingRatio =
+                        static_cast<float>(owner->field3A0) /
+                        static_cast<float>(field0D8);
+                    scaleX = remainingRatio + remainingRatio + 1.0f;
+                    scaleY = scaleX;
+                    if (action == 0x3E2) {
+                        rotationZ = rotationZ - g_ReimuObjectDirectionMarker1At0065747C;
+                    }
+                    else {
+                        rotationZ = rotationZ + g_ReimuObjectDirectionMarker1At0065747C;
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(action == 0x3E2 ? 1 : 10);
+                    }
+                }
+                break;
 
             case 0x323:
             case 0x326:
