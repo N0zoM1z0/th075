@@ -267,7 +267,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -284,7 +284,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -302,7 +302,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -321,7 +321,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             scriptCounterF00 = 0;
@@ -345,7 +345,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -363,7 +363,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -381,7 +381,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -400,7 +400,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             scriptCounterF00 = 0;
@@ -424,7 +424,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -442,7 +442,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -460,7 +460,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -479,7 +479,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             scriptCounterF00 = 0;
@@ -2967,7 +2967,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage != 3 || animationFrame != 0 || scriptCounterF00 > 6)
@@ -2989,7 +2989,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage != 3 || animationFrame != 0 || scriptCounterF00 > 6)
@@ -3014,7 +3014,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -3036,7 +3036,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -3058,7 +3058,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -3080,7 +3080,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -3102,7 +3102,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -3124,7 +3124,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(0);
@@ -3146,7 +3146,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -3168,7 +3168,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -3190,7 +3190,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -3234,7 +3234,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -3255,7 +3255,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -3276,7 +3276,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() != animationStageCount)
             return;
         ResetPrimaryCounters(2);
@@ -3690,7 +3690,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() != 0 && field3BE != 0)
-            field490 = velocityX * static_cast<float>(g_ContactScaleAt006583E8);
+            field490 = velocityX * g_ContactScaleAt006583E8;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage != 3 || animationFrame != 0 || scriptCounterF00 > 4)
