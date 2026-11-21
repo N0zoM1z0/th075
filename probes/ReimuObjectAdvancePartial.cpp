@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 178 action
-// values: 44 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 180 action
+// values: 46 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2315,6 +2315,102 @@ void ReimuObject::Advance()
                     }
                     if (AdvanceNestedFrame() == animationStageCount) {
                         ClearFrameInfo();
+                    }
+                }
+                break;
+
+            case 0x395:
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 99;
+                        field07C = 0;
+                        scaleX = 2.0f;
+                        scaleY = 2.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0D8 = 0;
+                        field0DA = 0;
+                        field0DC = 0;
+                        field0DE = 0;
+                        velocityX = 0.0f;
+                        velocityY = 0.0f;
+                    }
+                    if (animationStage > 0x13) {
+                        rotationZ = rotationZ - g_ReimuObjectDirectionMarker4At00657D14;
+                        velocityX = velocityX + g_ReimuObjectHorizontalDriftAt006578C0;
+                    }
+                    x = facing * velocityX + x;
+                    y = y + velocityY;
+                    if (field07C != 0) {
+                        field0D8 = field0D8 + 1;
+                        if (field07C == 6 || field07C == 4) {
+                            field0D8 = 6;
+                        }
+                        if (field0D8 > 5) {
+                            field0D8 = 0;
+                            field07C = 0;
+                        }
+                    }
+                    if (x < g_ReimuObjectLowerBoundAt00657880 ||
+                        g_ReimuObjectRightBoundAt00659248 < x) {
+                        ClearFrameInfo();
+                    }
+                    else if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(0x1B);
+                    }
+                }
+                break;
+
+            case 0x396:
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 99;
+                        field07C = 0;
+                        scaleX = 6.0f;
+                        scaleY = 6.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0D8 = 0;
+                        field0DA = 0;
+                        field0DC = 0;
+                        field0DE = 0;
+                        velocityX = 0.0f;
+                        velocityY = 0.0f;
+                    }
+                    if (animationStage > 0x13) {
+                        rotationZ = rotationZ - g_ReimuObjectDirectionMarker4At00657D14;
+                        velocityX = velocityX + g_ReimuObjectVerticalSpringAt00658354;
+                    }
+                    if (field07C != 0) {
+                        field0D8 = field0D8 + 1;
+                        if (field07C == 6 || field07C == 4) {
+                            field0D8 = 3;
+                        }
+                        if (field0D8 > 2) {
+                            field0D8 = 0;
+                            field07C = 0;
+                        }
+                    }
+                    x = facing * velocityX + x;
+                    y = y + velocityY;
+                    if (x < g_ReimuObjectLowerBoundAt00657880 ||
+                        g_ReimuObjectRightBoundAt00659248 < x) {
+                        ClearFrameInfo();
+                    }
+                    else if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(0x28);
                     }
                 }
                 break;
