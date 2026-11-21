@@ -21,55 +21,13 @@
 #undef R1189_HAS_BONUS
 
 
-#define R1189_ACTION 0x258
-#define R1189_AIR 0
-#define R1189_EFFECT 0x321
-#define R1189_NEXT_ACTION 0
-#define R1189_FIRE_STAGE 8
-#define R1189_X_OFFSET 114
-#define R1189_Y_OFFSET g_ReimuLowVolleyYAt006590A0
-#include "ReimuFourProjectileAttackF1189.inc"
-#undef R1189_ACTION
-#undef R1189_AIR
-#undef R1189_EFFECT
-#undef R1189_NEXT_ACTION
-#undef R1189_FIRE_STAGE
-#undef R1189_X_OFFSET
-#undef R1189_Y_OFFSET
+#include "ReimuThreeRoundVolley258F1189.inc"
 
 
-#define R1189_ACTION 0x259
-#define R1189_AIR 0
-#define R1189_EFFECT 0x322
-#define R1189_NEXT_ACTION 0
-#define R1189_FIRE_STAGE 8
-#define R1189_X_OFFSET 114
-#define R1189_Y_OFFSET g_ReimuLowVolleyYAt006590A0
-#include "ReimuFourProjectileAttackF1189.inc"
-#undef R1189_ACTION
-#undef R1189_AIR
-#undef R1189_EFFECT
-#undef R1189_NEXT_ACTION
-#undef R1189_FIRE_STAGE
-#undef R1189_X_OFFSET
-#undef R1189_Y_OFFSET
+#include "ReimuThreeRoundVolley259F1189.inc"
 
 
-#define R1189_ACTION 0x25a
-#define R1189_AIR 1
-#define R1189_EFFECT 0x321
-#define R1189_NEXT_ACTION 9
-#define R1189_FIRE_STAGE 3
-#define R1189_X_OFFSET 12
-#define R1189_Y_OFFSET g_ReimuCommandBackYAt006590A8
-#include "ReimuFourProjectileAttackF1189.inc"
-#undef R1189_ACTION
-#undef R1189_AIR
-#undef R1189_EFFECT
-#undef R1189_NEXT_ACTION
-#undef R1189_FIRE_STAGE
-#undef R1189_X_OFFSET
-#undef R1189_Y_OFFSET
+#include "ReimuFiveShot25AF1189.inc"
 
 
 #include "ReimuFullCircle25BF1189.inc"
