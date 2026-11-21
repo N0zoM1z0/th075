@@ -73,6 +73,20 @@ extern float g_ReimuFiveShotSecondYAt00659474;
 extern float g_ReimuFiveShotThirdYAt00657860;
 extern float g_ReimuFiveShotFourthYAt00659284;
 extern float g_ReimuFiveShotFifthYAt00659470;
+
+static short ReimuRoundFloatToShort(float value)
+{
+    int integral = static_cast<int>(value);
+    const float fractional = value - static_cast<float>(integral);
+    if (fractional > 0.5f || (fractional == 0.5f && integral % 2 != 0)) {
+        ++integral;
+    }
+    else if (fractional < -0.5f || (fractional == -0.5f && integral % 2 != 0)) {
+        --integral;
+    }
+    return static_cast<short>(integral);
+}
+
 void ReimuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;

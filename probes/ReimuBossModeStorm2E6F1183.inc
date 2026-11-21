@@ -33,7 +33,7 @@ case 0x2E6: {
     if (animationStage > 0x0D && animationStage < 0x13 &&
         g_ThresholdAt0065782C < y) {
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY < g_ThresholdAt0065782C) {
             color[0] = 0xFF;
             ClearMotionFields();
             ResetSecondaryCounter(0x13);
@@ -84,7 +84,7 @@ case 0x2E6: {
             g_ReimuRepeatSettingAt006714D0 * 20);
     }
     if (animationStage == 6 && animationFrame == 0) {
-        PlaySound(2);
+        ResetSecondaryCounter(2);
         Fighter::SpawnTrackedEffect(0x338, x - static_cast<float>(facing * 7), y + g_ReimuStormBurstYOffsetAt00659490, 1, 1, 0, 1);
         Fighter::SpawnTrackedEffect(0x339, x - static_cast<float>(facing * 7), y + g_ReimuStormBurstYOffsetAt00659490, 1, 1, 0, 1);
         Fighter::SpawnTrackedEffect(0x33A, x - static_cast<float>(facing * 7), y + g_ReimuStormBurstYOffsetAt00659490, 1, 1, 0, 1);
@@ -103,7 +103,7 @@ case 0x2E6: {
         velocityX = 0.0f;
         velocityY = 0.0f;
     }
-    if (animationStage == 0x0B && animationFrame == 0) PlaySound(5);
+    if (animationStage == 0x0B && animationFrame == 0) ResetSecondaryCounter(5);
     if (animationStage == 0x11 && animationFrame == 0 && scriptCounterF00 < 10) {
         ResetSecondaryCounter(0x0F);
         ++scriptCounterF00;
