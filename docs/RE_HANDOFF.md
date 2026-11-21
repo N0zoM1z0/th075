@@ -87,7 +87,7 @@ its source spelling.
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
 parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,254-byte
+`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,271-byte
 VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
 `0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, `0x12C..0x136`
 special-move phases, `0x186..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
@@ -107,6 +107,15 @@ because those belong exclusively to action `0x303`. The `0x303` fan keeps its
 three independent countdown branches and paired 20-shot loops, while reusing
 three C++ loop counters in the same pairs as the original `local_80`,
 `local_84`, and `local_88` lifetimes.
+Action 0x192 now restores its original 50-unit facing-dependent X offset for
+effect 800; action 0x2E4 keeps separate stage-7 and stage-8 0x388 emissions.
+All facing-based X offsets preserve the original signed-char integer
+multiplication before float conversion. Fifteen targeted animation, movement,
+range, reset, battle/aux-effect, sound, gauge, camera and word-helper leaf
+units replay 15/15 exact. A natural-C++ seven-range/switch dispatch rewrite
+was compiled but not retained because VC7.1 introduced per-switch temporary
+slots and a larger frame than the current flat-switch baseline.
+
 All 114 unique Ghidra switch labels have explicit natural-C++ handlers. The
 original x87 inclusive ground-contact edge is preserved in the audited `0x91`,
 `0x9E`, `0xB4..0xB5`, `0xC9..0xCE` and `0xD0` actions. Actions `0x60` and
@@ -153,11 +162,11 @@ separate command gates, gravity/contact branches, per-action stage velocities
 and original secondary-counter behavior;
 the remaining common/default path and code-generation differences are still
 under investigation, so this is not a whole-function exactness claim.
-The corrected VC7.1 body is 62,254 bytes versus the 61,872-byte target (+382),
-with 51,620 direct non-relocation byte differences. Removing the misplaced
+The corrected VC7.1 body is 62,271 bytes versus the 61,872-byte target (+399),
+with 51,948 direct non-relocation byte differences. Removing the misplaced
 action-303 volley and restoring its three original loop-counter lifetimes
 reduced the stack frame from `0x348` to `0x31C`; preserving the target's double
-contact-scale multiply at all 27 call sites then reduced it further to `0x2B0`
+contact-scale multiply at all 27 call sites then reduced it further to `0x2B8`
 (only 8 bytes above target), removed 27 conversion temporaries, and reduced
 direct differences by another 645 bytes. Six affected animation, counter,
 motion-clear, battle-effect and sound leaf units replayed 6/6 exact. The

@@ -355,7 +355,7 @@ cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
 Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. Its 62,254-byte VC7.1 body now also
+`probes/YuyukoFighterAdvancePartial.cpp`. Its 62,271-byte VC7.1 body now also
 covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
 `0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
 The source keeps the individual initial velocities, gauge accumulation,
@@ -396,8 +396,8 @@ non-relocation differences from 53,477 to 52,265, and the stack frame from
 `0x348` to `0x31C`. A second correction restored all 27 `field490` products to
 the target's double-precision `fmul QWORD [0x6583E8]` instead of narrowing the
 constant to float first. This removed 27 compiler conversion temporaries,
-reduced the body to 62,254 bytes and direct differences to 51,620, and brought
-the frame to `0x2B0` (8 bytes above target). Six related leaf units replay
+reduced the body to 62,271 bytes and direct differences to 51,948, and brought
+the frame to `0x2B8` (8 bytes above target). Six related leaf units replay
 6/6 exact. The parent remains partial with unresolved common/default control
 flow and code-generation differences, not an exact function.
 This is a partial reconstruction, not a whole-function exactness claim.
@@ -788,7 +788,7 @@ Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
 
-Yuyuko fighter `00564BE0` now has a 62,254-byte natural-C++ partial parent in
+Yuyuko fighter `00564BE0` now has a 62,271-byte natural-C++ partial parent in
 `probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
 the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
 states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected
@@ -805,8 +805,8 @@ recovery and the randomized polar/radial fan `0x2F9`, `0x302..0x303`,
 `0xC9..0xD0`, `400`, and `0x8C`; the original function is 61,872 bytes.
 All 114 unique Ghidra switch labels now have natural-C++ case handlers, but
 common/default flow and code-generation differences remain. The current VC7.1
-body is 62,254 bytes versus the 61,872-byte target (+382), with 51,620 direct
-non-relocation byte differences and a `0x2B0` stack frame; this is an active
+body is 62,271 bytes versus the 61,872-byte target (+399), with 51,948 direct
+non-relocation byte differences and a `0x2B8` stack frame; this is an active
 partial reconstruction, not whole-function exactness. The
 13 exact Yuyuko translation units affected by its `YuyukoFighter.hpp` slot
 declaration cold-replay 13/13 exact.
