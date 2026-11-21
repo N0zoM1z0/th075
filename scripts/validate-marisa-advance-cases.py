@@ -72,6 +72,10 @@ def source_cases(path: Path, macros: dict[str, str], seen: list[int]) -> None:
                 condition = eval_condition(argument, macros) if active else False
                 stack.append((active, condition, False))
                 active = active and condition
+            elif name in ("ifdef", "ifndef"):
+                condition = ((argument in macros) if name == "ifdef" else (argument not in macros)) if active else False
+                stack.append((active, condition, False))
+                active = active and condition
             elif name == "else":
                 if not stack or stack[-1][2]:
                     raise ValueError(f"{path}:{line_number}: unmatched/duplicate #else")
@@ -206,6 +210,25 @@ def main() -> int:
         fragment = (PROBES / filename).read_text(encoding="utf-8")
         if fragment.count("return;") != expected or fragment.count("break;") != 0:
             print(f"Marisa {filename} must return on all {expected} native exits", file=sys.stderr)
+            return 1
+
+    # Three shared fragments also serve complete giant parents, where break
+    # correctly exits the top-level action switch. Marisa's partial parent
+    # nests them in a sparse switch followed by switchDefault, so it must
+    # explicitly select return instead.
+    nested_exit_macros = {
+        "FighterGroundBoost9EF637.inc": ("F637_EXIT", 1),
+        "FighterLandingNoCounterF641.inc": ("F641_EXIT", 3),
+        "FighterMotionRestartB4F645.inc": ("F645_EXIT", 2),
+    }
+    parent_text = SOURCE.read_text(encoding="utf-8")
+    for filename, (macro, expected_uses) in nested_exit_macros.items():
+        fragment = (PROBES / filename).read_text(encoding="utf-8")
+        if fragment.count(macro + ";") == 0 or fragment.count("#define " + macro + " break") != 1:
+            print(f"shared fragment {filename} lacks its default break terminator", file=sys.stderr)
+            return 1
+        if parent_text.count("#define " + macro + " return") != expected_uses:
+            print(f"Marisa parent must select return at all {expected_uses} {macro} includes", file=sys.stderr)
             return 1
 
     source: list[int] = []

@@ -1,3 +1,8 @@
+#ifndef F637_EXIT
+#define F637_EXIT break
+#define F637_EXIT_LOCAL_DEFAULT
+#endif
+
 // F637 natural original case0x9E: timed ground approach + launch.
 // This is a case within a still NONEXACT huge fighter Advance(),
 // not an accepted whole original function or ASM byte substitution.
@@ -29,10 +34,14 @@ case 0x9E: {
             ResetPrimaryCounters(0xA);
             y=0.0f;
             ClearMotionFields();
-            break;
+            F637_EXIT;
         }
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(9);
-    break;
+    F637_EXIT;
 }
+#ifdef F637_EXIT_LOCAL_DEFAULT
+#undef F637_EXIT_LOCAL_DEFAULT
+#undef F637_EXIT
+#endif

@@ -233,7 +233,9 @@ void MarisaFighterAdvanceProbe::Advance() {
 #define F637_EXTRA_FLAG 0
 #define F637_EXTRA_BEFORE 0
 #define F637_STRICT_ABOVE 0
+#define F637_EXIT return
 #include "FighterGroundBoost9EF637.inc"
+#undef F637_EXIT
 #undef F637_EXTRA_FLAG
 #undef F637_EXTRA_BEFORE
 #undef F637_STRICT_ABOVE
@@ -273,21 +275,27 @@ void MarisaFighterAdvanceProbe::Advance() {
 #define F641_CASE 0xA3
 #define F641_START_HEIGHT -9.0f
 #define F641_NEXT_ACTION 2
+#define F641_EXIT return
 #include "FighterLandingNoCounterF641.inc"
+#undef F641_EXIT
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA4
 #define F641_START_HEIGHT -10.0f
 #define F641_NEXT_ACTION 2
+#define F641_EXIT return
 #include "FighterLandingNoCounterF641.inc"
+#undef F641_EXIT
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA5
 #define F641_START_HEIGHT -13.0f
 #define F641_NEXT_ACTION 2
+#define F641_EXIT return
 #include "FighterLandingNoCounterF641.inc"
+#undef F641_EXIT
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
@@ -304,14 +312,18 @@ void MarisaFighterAdvanceProbe::Advance() {
 #define F645_CASE 0xB4
 #define F645_START_POS 8.0f
 #define F645_AUX_ACTION 8
+#define F645_EXIT return
 #include "FighterMotionRestartB4F645.inc"
+#undef F645_EXIT
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
 #define F645_CASE 0xB5
 #define F645_START_POS -8.0f
 #define F645_AUX_ACTION 10
+#define F645_EXIT return
 #include "FighterMotionRestartB4F645.inc"
+#undef F645_EXIT
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION

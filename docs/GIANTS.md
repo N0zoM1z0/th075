@@ -116,6 +116,19 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+Three shared fighter fragments required a context-sensitive terminator:
+ground boost 0x9E, landing siblings 0xA3-0xA5, and motion restart 0xB4/0xB5.
+Their original top-level fighter parents correctly use switch-break exits,
+but Marisa's partial parent nests them inside a sparse switch followed by
+switchDefault. Each fragment now accepts a local exit macro defaulting to
+break; Marisa explicitly selects return for its nested uses. This preserves
+the existing complete Reimu/Sakuya/Remilia parent source semantics while
+preventing Marisa from falling through to an extra frame advance. Rebuilt
+complete-parent measurements are unchanged: Reimu 60,999/62,090 bytes and
+6,311 GPR/5 width differences; Sakuya 82,796/83,922 bytes and 6,958/12;
+Remilia 58,294/59,236 bytes and 1,741/3. Marisa's partial parent compiles and
+the source-coverage validator remains 141/141 labels and 158/158 handlers.
+
 Marisa action 0x62's resource selector, the 0xA7/0xA8 projectile-launch
 pair, and the 0x97/0x98/0x9A-0xA1 landing-timer siblings now return after
 their native nested-frame/counter update. Their three former breaks entered

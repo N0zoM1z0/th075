@@ -1,3 +1,8 @@
+#ifndef F641_EXIT
+#define F641_EXIT break
+#define F641_EXIT_LOCAL_DEFAULT
+#endif
+
 // F641: genuine original 71-instruction A3/A4/A5 timed landing
 // actions with NO trajectory counter reset, unlike the earlier F633
 // 73/75-x86 family. This is an inner case of a nonexact giant.
@@ -19,5 +24,9 @@ case F641_CASE: {
         field490=(velocityX)*g_JumpReflectionAt006583E8;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(F641_NEXT_ACTION);
-    break;
+    F641_EXIT;
 }
+#ifdef F641_EXIT_LOCAL_DEFAULT
+#undef F641_EXIT_LOCAL_DEFAULT
+#undef F641_EXIT
+#endif
