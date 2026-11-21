@@ -181,6 +181,18 @@ def main() -> int:
         print("Marisa actions 0x47/0x48 must return on all six native exits", file=sys.stderr)
         return 1
 
+    trajectory_exit_counts = {
+        "MarisaFighterTrajectoryContact46F602.inc": 3,
+        "MarisaFighterTrajectoryLanding49F607.inc": 4,
+        "MarisaFighterTrajectoryBounce4AF610.inc": 4,
+        "MarisaFighterTrajectoryBurst58F614.inc": 4,
+    }
+    for filename, expected in trajectory_exit_counts.items():
+        fragment = (PROBES / filename).read_text(encoding="utf-8")
+        if fragment.count("return;") != expected or fragment.count("break;") != 0:
+            print(f"Marisa {filename} must return on all {expected} native exits", file=sys.stderr)
+            return 1
+
     source: list[int] = []
     source_cases(SOURCE, {}, source)
     with HANDLERS.open(newline="", encoding="utf-8") as stream:

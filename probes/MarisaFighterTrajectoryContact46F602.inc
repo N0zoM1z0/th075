@@ -16,7 +16,7 @@ case 0x46: {
     }
     if (animationStage == TRAJECTORY_STAGE_THRESHOLD && velocityY < g_StopThresholdAt00657480) {
         ResetSecondaryCounter(TRAJECTORY_EARLY_STATE);
-        break;
+        return;
     }
     velocityY = velocityY - field05C;
     if (velocityY + y < g_ThresholdAt0065782C) {
@@ -27,9 +27,9 @@ case 0x46: {
         ResetPrimaryCounters(0x61);
         SetCameraShake(2.0f);
         PlaySharedSound(0x16);
-        break;
+        return;
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(TRAJECTORY_LATE_STATE);
-    break;
+    return;
 }

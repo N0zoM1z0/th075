@@ -9,7 +9,7 @@ case 0x4A: {
     }
     if (animationStage==F610_STAGE && velocityY < g_StopThresholdAt00657480) {
         ResetSecondaryCounter(F610_EARLY);
-        break;
+        return;
     }
     if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
         ResetPrimaryCounters(0x4C);
@@ -19,7 +19,7 @@ case 0x4A: {
         SetCameraShake(2.0f);
         PlaySharedSound(0x16);
         scriptCounterF00 = 0;
-        break;
+        return;
     }
     velocityY = velocityY - field05C;
     if (velocityY + y < g_ThresholdAt0065782C) {
@@ -35,9 +35,9 @@ case 0x4A: {
 #if !F610_PREPARE_BEFORE
         PlaySharedSound(0x16);
 #endif
-        break;
+        return;
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(F610_LATE);
-    break;
+    return;
 }

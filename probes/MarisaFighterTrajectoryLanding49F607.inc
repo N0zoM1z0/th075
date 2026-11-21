@@ -15,7 +15,7 @@ case 0x49: {
         ResetPrimaryCounters(0x61);
         SetCameraShake(2.0f);
         PlaySharedSound(0x16);
-        break;
+        return;
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(animationStage-1);
@@ -24,11 +24,11 @@ case 0x49: {
         // Both branches exit this native case, not merely the nested if.
         if (*(&velocityX) == g_ThresholdAt0065782C) {
             ResetSecondaryCounter(3);
-            break;
+            return;
         } else {
             ResetSecondaryCounter(2);
-            break;
+            return;
         }
     }
-    break;
+    return;
 }

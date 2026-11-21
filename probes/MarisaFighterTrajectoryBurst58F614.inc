@@ -22,7 +22,7 @@ case 0x58: {
             fieldEFA=0;
             SpawnBattleEffect(0x3E3,x,y,1,1);
         }
-        break;
+        return;
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(animationStage-1);
@@ -37,12 +37,12 @@ case 0x58: {
         if (velocityY != g_ThresholdAt0065782C) {
             if (*(&velocityX)==g_ThresholdAt0065782C) {
                 ResetSecondaryCounter(3);
-                break;
+                return;
             } else {
                 ResetSecondaryCounter(2);
-                break;
+                return;
             }
         }
     }
-    break;
+    return;
 }

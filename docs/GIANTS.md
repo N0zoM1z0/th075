@@ -116,6 +116,15 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+The remaining early trajectory handlers 0x46, 0x49, 0x4A and 0x58 now
+also preserve their original return paths. Their 15 switch breaks covered
+the stage-threshold exits, landing/contact transitions, bounce redirect,
+and stage-one resource follow-up branches; the original decompilation returns
+from each of those paths. All 15 now return from the parent rather than
+falling into the partial switchDefault frame handler. The Marisa validator
+guards the per-fragment exit counts, and the full partial parent still
+compiles with all action/handler coverage intact.
+
 Marisa trajectory follow-ups 0x47/0x48 now preserve six additional native
 returns. The original handlers return after their stage-3 early reset, after
 the ground-contact transition into action 0x61, and after the ordinary nested
