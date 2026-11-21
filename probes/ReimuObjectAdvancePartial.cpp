@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers twenty-four
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x339 (except 0x326).
+// The original parent is 50,915 bytes. This research source covers twenty-five
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33A (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -1346,6 +1346,79 @@ void ReimuObject::Advance()
                         }
                         if (animationStage < 3) {
                             velocityX = velocityX - g_ReimuObjectScalarAt00657480;
+                            if (velocityX < g_ReimuObjectHalfAt00657478) {
+                                velocityX = g_ReimuObjectHalfAt00657478;
+                            }
+                        }
+                        if (animationStage == 3) {
+                            color[0] = color[0] - 10;
+                            if (color[0] == 0) {
+                                color[0] = 0;
+                                ClearFrameInfo();
+                                break;
+                            }
+                        }
+                        x = facing * velocityX + x;
+                        if (AdvanceNestedFrame() == animationStageCount) {
+                            ClearFrameInfo();
+                        }
+                        if (animationStage == 3 && animationFrame == 0 &&
+                            field0D8 < 6) {
+                            field0D8 = field0D8 + 1;
+                            ResetSecondaryCounter(2);
+                            field07C = 0;
+                        }
+                    }
+                }
+                else {
+                    ClearFrameInfo();
+                    if (owner->fieldEFA > 0x19) {
+                        owner->fieldEFA = 0;
+                        owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                    }
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                }
+                break;
+            case 0x33A:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else if (owner->action < 0x32 || owner->action > 0x95 ||
+                    animationStage > 3) {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        field080 = 1;
+                        field07C = 0;
+                        scaleX = 2.0f;
+                        scaleY = 2.0f;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        rotationX = 75.0f;
+                        velocityX = 60.0f;
+                        field080 = 3;
+                        field0D8 = 0;
+                    }
+                    if (field07C == 4) {
+                        field07C = 0;
+                    }
+                    if (field080 == 0 && animationStage == 2) {
+                        ResetSecondaryCounter(3);
+                    }
+                    else {
+                        rotationZ = rotationZ + g_ReimuObjectScalarAt00657850;
+                        if (g_ReimuObjectFullRotationAt00657864 < rotationZ) {
+                            rotationX = rotationX - g_ReimuObjectFullRotationAt00657864;
+                        }
+                        if (animationStage < 3) {
+                            velocityX = velocityX - g_ReimuObjectDirectionMarker3At00657CF8;
                             if (velocityX < g_ReimuObjectHalfAt00657478) {
                                 velocityX = g_ReimuObjectHalfAt00657478;
                             }
