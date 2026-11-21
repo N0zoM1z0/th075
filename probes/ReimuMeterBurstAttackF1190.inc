@@ -4,7 +4,7 @@ case R1190_ACTION: {
 #if R1190_AIR
     if ((animationStage)>11 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-g_SubtractAt00657478;
-        if (y+velocityY<g_ThresholdAt0065782C) {
+        if (y+velocityY<=g_ThresholdAt0065782C) {
             ResetSecondaryCounter(15);
             y=0.0f;
             ClearMotionFields();
