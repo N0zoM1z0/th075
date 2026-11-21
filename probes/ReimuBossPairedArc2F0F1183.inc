@@ -32,13 +32,10 @@ case 0x2F0: {
         velocityY = 3.5f;
         field05C = 0.5f;
     }
-    if ((animationStage == 0x0F || animationStage == 0x11 || animationStage == 0x13 ||
-         animationStage == 0x15 || animationStage == 0x17) && animationFrame == 0) {
-        const short firingStage = animationStage;
+    if (animationStage == 0xf && animationFrame == 0) {
         scriptCounterF00 = ReimuRoundFloatToShort(velocityX * 100.0f);
         scriptCounterF02 = ReimuRoundFloatToShort(velocityY * 100.0f);
-        field314 = static_cast<float>(RecordedRange(0, 100) -
-            (firingStage == 0x0F ? 0x46 : 0x32));
+        field314 = static_cast<float>(RecordedRange(0, 100) - 0x46);
         field318 = static_cast<float>(RecordedRange(0, 10) + 5);
         SetPolarVelocity(field314, 100.0f);
         SpawnBattleEffect(0x38F,
@@ -47,8 +44,63 @@ case 0x2F0: {
         velocityX = static_cast<float>(scriptCounterF00) * g_ReimuStormFallAt00658044;
         velocityY = static_cast<float>(scriptCounterF02) * g_ReimuStormFallAt00658044;
         ResetSecondaryCounter(7);
-        if (firingStage == 0x17 &&
-            fieldF04 < g_ReimuRepeatSettingAt006714D0 * 2 + 8) {
+
+    }
+    if (animationStage == 0x11 && animationFrame == 0) {
+        scriptCounterF00 = ReimuRoundFloatToShort(velocityX * 100.0f);
+        scriptCounterF02 = ReimuRoundFloatToShort(velocityY * 100.0f);
+        field314 = static_cast<float>(RecordedRange(0, 100) - 0x32);
+        field318 = static_cast<float>(RecordedRange(0, 10) + 5);
+        SetPolarVelocity(field314, 100.0f);
+        SpawnBattleEffect(0x38F,
+            (g_ReimuStormPairXBaseAt00658264 + velocityX) * static_cast<float>(facing) + x,
+            (y + g_ReimuFallingSpawnYOffsetAt0065908C) - velocityY, facing, 1);
+        velocityX = static_cast<float>(scriptCounterF00) * g_ReimuStormFallAt00658044;
+        velocityY = static_cast<float>(scriptCounterF02) * g_ReimuStormFallAt00658044;
+        ResetSecondaryCounter(7);
+
+    }
+    if (animationStage == 0x13 && animationFrame == 0) {
+        scriptCounterF00 = ReimuRoundFloatToShort(velocityX * 100.0f);
+        scriptCounterF02 = ReimuRoundFloatToShort(velocityY * 100.0f);
+        field314 = static_cast<float>(RecordedRange(0, 100) - 0x32);
+        field318 = static_cast<float>(RecordedRange(0, 10) + 5);
+        SetPolarVelocity(field314, 100.0f);
+        SpawnBattleEffect(0x38F,
+            (g_ReimuStormPairXBaseAt00658264 + velocityX) * static_cast<float>(facing) + x,
+            (y + g_ReimuFallingSpawnYOffsetAt0065908C) - velocityY, facing, 1);
+        velocityX = static_cast<float>(scriptCounterF00) * g_ReimuStormFallAt00658044;
+        velocityY = static_cast<float>(scriptCounterF02) * g_ReimuStormFallAt00658044;
+        ResetSecondaryCounter(7);
+
+    }
+    if (animationStage == 0x15 && animationFrame == 0) {
+        scriptCounterF00 = ReimuRoundFloatToShort(velocityX * 100.0f);
+        scriptCounterF02 = ReimuRoundFloatToShort(velocityY * 100.0f);
+        field314 = static_cast<float>(RecordedRange(0, 100) - 0x32);
+        field318 = static_cast<float>(RecordedRange(0, 10) + 5);
+        SetPolarVelocity(field314, 100.0f);
+        SpawnBattleEffect(0x38F,
+            (g_ReimuStormPairXBaseAt00658264 + velocityX) * static_cast<float>(facing) + x,
+            (y + g_ReimuFallingSpawnYOffsetAt0065908C) - velocityY, facing, 1);
+        velocityX = static_cast<float>(scriptCounterF00) * g_ReimuStormFallAt00658044;
+        velocityY = static_cast<float>(scriptCounterF02) * g_ReimuStormFallAt00658044;
+        ResetSecondaryCounter(7);
+
+    }
+    if (animationStage == 0x17 && animationFrame == 0) {
+        scriptCounterF00 = ReimuRoundFloatToShort(velocityX * 100.0f);
+        scriptCounterF02 = ReimuRoundFloatToShort(velocityY * 100.0f);
+        field314 = static_cast<float>(RecordedRange(0, 100) - 0x32);
+        field318 = static_cast<float>(RecordedRange(0, 10) + 5);
+        SetPolarVelocity(field314, 100.0f);
+        SpawnBattleEffect(0x38F,
+            (g_ReimuStormPairXBaseAt00658264 + velocityX) * static_cast<float>(facing) + x,
+            (y + g_ReimuFallingSpawnYOffsetAt0065908C) - velocityY, facing, 1);
+        velocityX = static_cast<float>(scriptCounterF00) * g_ReimuStormFallAt00658044;
+        velocityY = static_cast<float>(scriptCounterF02) * g_ReimuStormFallAt00658044;
+        ResetSecondaryCounter(7);
+                if (fieldF04 < g_ReimuRepeatSettingAt006714D0 * 2 + 8) {
             ++fieldF04;
             ResetSecondaryCounter(0x0F);
         }
