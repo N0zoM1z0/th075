@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers thirteen
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x32E (except 0x326).
+// The original parent is 50,915 bytes. This research source covers fifteen
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x330 (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -38,6 +38,7 @@ extern const float g_ReimuObjectLowerBoundAt0065924C;
 extern const float g_ReimuObjectRotationStepAt006590C4;
 extern const float g_ReimuObjectOwnerYOffsetAt00659080;
 extern const float g_ReimuObjectScaleMultiplierAt00659090;
+extern const float g_ReimuObjectScaleIncrementAt006583FC;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 
@@ -928,6 +929,70 @@ void ReimuObject::Advance()
                     if (animationStage == 0x39 && animationFrame == 0 &&
                         owner->action == 0x2C0 && owner->animationStage < 0x0D) {
                         ResetSecondaryCounter(0x1B);
+                    }
+                }
+                break;
+            case 0x32F:
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                }
+                scaleX = scaleX + g_ReimuObjectScaleIncrementAt006583FC;
+                scaleY = scaleY + g_ReimuObjectScaleIncrementAt006583FC;
+                if (animationStage > 0) {
+                    if (color[0] < 0x0F) {
+                        color[0] = 0;
+                    }
+                    else {
+                        color[0] = color[0] - 0x0F;
+                    }
+                }
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
+                }
+                break;
+
+            case 0x330:
+                if (owner->action == 0x2BE) {
+                    x = owner->x;
+                    y = owner->y;
+                }
+                if (animationStage < 6 && owner->action != 0x2BE) {
+                    ClearFrameInfo();
+                }
+                else {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        scaleX = 4.0f;
+                        scaleY = 4.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0D8 = 0;
+                        field0DA = 0;
+                        field0DC = 0;
+                        field0DE = 0;
+                    }
+                    if (animationStage == 6) {
+                        if (color[0] < 7) {
+                            color[0] = 0;
+                        }
+                        else {
+                            color[0] = color[0] - 7;
+                        }
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
+                    }
+                    if (animationStage == 6 && animationFrame == 0) {
+                        owner->SpawnBattleEffect(0x331, x, y, facing, 1);
                     }
                 }
                 break;
