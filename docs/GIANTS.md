@@ -116,6 +116,13 @@ into the complete-parent frontier: the 1,185-byte / 580-instruction code
 generation difference is real and unaccepted. The 468-value original
 dispatch map and its 153 unique handler addresses remain the authority for
 further case work.
+Marisa's resource volleys 0x60/0x61 also had four incorrect switch breaks.
+The original handlers return both when the stage-3 ground boundary is hit
+and after the ordinary nested-frame/volley-counter update. The partial parent
+now returns on those four paths instead of entering switchDefault and
+advancing another frame. The Marisa validator guards all four exits, and the
+parent still compiles with full source-label/handler coverage.
+
 The same nested-switch return audit now covers Marisa actions 0x5D-0x5F
 and 0x91. Original Ghidra control flow confirms seven terminal exits in the
 early-bounce/facing group and three in the arc-trajectory action. Their old

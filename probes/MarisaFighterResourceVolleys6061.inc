@@ -27,7 +27,7 @@
                     y = 0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(4);
-                    break;
+                    return;
                 }
             }
             if (AdvanceNestedFrame() == animationStageCount) {
@@ -39,7 +39,7 @@
                 velocityY = static_cast<float>(-scriptCounterF02) * g_F748_SpeedScaleAt006590B8;
                 field05C = 2.0f;
             }
-            break;
+            return;
         }
         case 0x61: {
             if (static_cast<int>(facing) * inputX > 0
@@ -68,7 +68,7 @@
                     y = 0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(4);
-                    break;
+                    return;
                 }
             }
             if (AdvanceNestedFrame() == animationStageCount) {
@@ -80,5 +80,5 @@
                 velocityY = static_cast<float>(-scriptCounterF02) * g_F748_SpeedScaleAt006590B8;
                 field05C = 2.0f;
             }
-            break;
+            return;
         }

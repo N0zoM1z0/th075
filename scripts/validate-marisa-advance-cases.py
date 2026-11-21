@@ -171,6 +171,11 @@ def main() -> int:
         print("Marisa action 0x91 must return on all three native exits", file=sys.stderr)
         return 1
 
+    resource_volleys = (PROBES / "MarisaFighterResourceVolleys6061.inc").read_text(encoding="utf-8")
+    if resource_volleys.count("return;") != 4 or resource_volleys.count("break;") != 0:
+        print("Marisa actions 0x60/0x61 must return on all four native exits", file=sys.stderr)
+        return 1
+
     source: list[int] = []
     source_cases(SOURCE, {}, source)
     with HANDLERS.open(newline="", encoding="utf-8") as stream:
