@@ -380,3 +380,20 @@ speculative stage-2 proximity gate was rejected after checking the original
 case-900 decompile and target code: that action has no 100-unit distance test
 or `0045B850(8)` transition. Do not reintroduce that trial without new target
 evidence; the Yukari object remains a separate partial reconstruction.
+
+### Latest Yuyuko source follow-up
+
+Action 0x192 restores its original 50-unit facing-dependent X offset for
+effect 800. Action 0x2E4 retains separate stage-7 and stage-8 0x388 emissions.
+Facing-based X offsets now preserve signed-char integer multiplication
+before conversion to float. The current VC7.1 body is 62,271 bytes versus the
+61,872-byte target (+399), with 51,948 direct non-relocation byte differences
+and a 0x2B8 frame. Relative to the prior double-contact-scale checkpoint
+(62,254 bytes, 51,620 direct differences, 0x2B0 frame), these source-level
+semantic corrections add 17 body bytes, 328 direct differences and 8 frame
+bytes; this is not a whole-function exactness claim. Fifteen targeted
+animation, movement, range, reset, battle/aux-effect, sound, gauge, camera
+and word-helper leaf units replay 15/15 exact. A natural-C++ seven-range/
+switch dispatch rewrite was compiled but not retained because VC7.1 created
+per-switch temporary slots and a larger frame than the current flat-switch
+baseline.
