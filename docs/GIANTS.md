@@ -83,7 +83,7 @@ change.
 | 0050A580 | Patchouli object | 81,539 | `CharacterObjectWhole0050A580F1044.cpp` | 522 | 5 | 00515C0E (#10128) |
 | 00536400 | Youmu object | 39,999 | `CharacterObjectActions00536400F1211.cpp` | 913 | 10 | 005392F8 (#3223) |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
-| 0057D580 | Yuyuko object | 43,845 | `CharacterObjectActions0057D580F1237.cpp` | 897 | 28 | 00583489 (#6565) |
+| 0057D580 | Yuyuko object | 43,845 | `CharacterObjectActions0057D580F1237.cpp` | 914 | 6 | 00583489 (#6565) |
 | 005A1600 | Yukari object | 43,599 | `CharacterObjectActions005A1600F1231.cpp` | 613 | 11 | 005A88A8 (#7965) |
 | 005C9CC0 | Suika object | 43,501 | `CharacterObjectActions005C9CC0F1216.cpp` | 935 | 1 | 005D2558 (#9213) |
 | 005EB520 | Meiling object | 34,434 | `CharacterObjectWhole005EB520F1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
@@ -521,8 +521,14 @@ PE call target is `0x00453E20`, the exact `Fighter::ClearMotionFields` leaf.
 The current source call is correct; no separate cancel helper is implied.
 A duplicated 5D/5E source-body experiment added 357 bytes without improving
 the direct object comparison, so the compact shared C++ arm is retained.
-The first Yuyuko object GPR mismatch at `0x00583489` is likewise a register
-allocation difference at the stage-3 test, not a demonstrated logic error.
+The first Yuyuko object GPR mismatch at `0x00583489` remains a register
+allocation difference at the stage-3 test. A later `0x838` branch group was
+also found to have a source-order mismatch: the original tests `field080 == 0`
+and the 611/612 exclusions before the owner-stage/action group. Reordering
+the equivalent short-circuit terms to that original order restores the full
+11,694-instruction control-flow shape through the function epilogue; the
+remaining four-byte body-size delta and register allocation differences are
+still under investigation. No whole-function exactness is claimed.
 
 Yuyuko object `0057D580` now defines `YuyukoObject::Advance`, with
 66 effect spawns, eight sounds and four camera-shake calls moved from

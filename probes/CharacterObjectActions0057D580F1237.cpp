@@ -1452,8 +1452,8 @@ case 838:
             if (field0D8 > 120) field0D8 = 120;
             x = velocityX + field0CC;
             y = velocityY + field0D0;
-            if ((owner->animationStage == 0 && (owner->action == 611 || owner->action == 612 || owner->action == 613)) ||
-                (owner->action != 611 && field080 == 0 && owner->action != 612)) {
+            if ((field080 == 0 && owner->action != 611 && owner->action != 612) ||
+                ((owner->action == 611 || owner->action == 612 || owner->action == 613) && owner->animationStage == 0)) {
                 ResetSecondaryCounter(3);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
