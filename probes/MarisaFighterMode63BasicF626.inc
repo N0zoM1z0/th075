@@ -45,5 +45,5 @@ case 0x63: {
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(2);
-    break;
+    return;
 }

@@ -181,7 +181,9 @@ their shared Fighter forwarder, and ResetTransform) replay 5/5 exact. The
 Sakuya object parent and Actor rendering consumer also compile against the
 overlaid declarations. No full cold replay was run.
 
-Marisa fighter partial parent action 0x63 now preserves its four native
+Marisa fighter partial parent action 0x63 now preserves all five native
+terminal paths as returns, including the ordinary nested-frame completion
+after its three conditional mode-3 transitions and one mode-not-3 transition.
 terminal transitions as return statements. The partial parent places this
 case inside a nested sparse switch(actionSnapshot) followed by the shared
 switchDefault frame path; the previous break statements exited only that
