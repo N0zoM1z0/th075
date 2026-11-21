@@ -2988,7 +2988,8 @@ void ReimuObject::Advance()
                     const float remainingRatio =
                         static_cast<float>(owner->field3A0) /
                         static_cast<float>(field0D8);
-                    scaleX = remainingRatio + remainingRatio + 1.0f;
+                    scaleX = remainingRatio + remainingRatio +
+                        (action == 0x3E2 ? g_ReimuObjectDirectionMarker1At0065747C : 0.0f);
                     scaleY = scaleX;
                     if (action == 0x3E2) {
                         rotationZ = rotationZ - g_ReimuObjectDirectionMarker1At0065747C;
