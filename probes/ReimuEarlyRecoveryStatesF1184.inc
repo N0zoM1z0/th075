@@ -18,7 +18,7 @@ case 0x59: {
         velocityX=float(int(scriptCounterF00))*g_ReimuBounceXAt006590BC;
         velocityY=float(-int(scriptCounterF02))*g_ReimuBounceYAt00658044;
         field05C=0.7f;
-        SetMotionFloatAt40FBB0(-7.0f,75.0f,0.0f);
+        ResetTransform(-7.0f,75.0f,0.0f);
     }
     break;
 }

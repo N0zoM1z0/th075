@@ -11,10 +11,6 @@ public:
     virtual ~ReimuFighter();
     virtual void Advance(); // slot 1, 0045DD70 (nonexact giant research parent)
 
-    // Remaining nonshared call-shape probes. The native 00453B50 and
-    // 00453C80 effects now use Fighter's inherited typed APIs.
-    void SetMotionFloatAt40FBB0(float,float,float);
-
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
     void PollCommands();

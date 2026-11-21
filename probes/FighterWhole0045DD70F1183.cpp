@@ -71,9 +71,6 @@ extern float g_ReimuApproachRightBoundAt0065945C;
 void ReimuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
-    if (action == 0x25B) {
-#include "ReimuFourShot25BF1189.inc"
-    }
     switch (action) {
         case 0x0:
             if ((field3AC) == 0) {
@@ -651,6 +648,9 @@ case 0x48: {
 #include "ReimuResourceLoopsF1192.inc"
 #include "ReimuFinalEffectsF1192.inc"
         default:
+            if (action == 0x25B) {
+#include "ReimuFourShot25BF1189.inc"
+            }
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
 #include "ReimuSharedGetterTailF1192.inc"
