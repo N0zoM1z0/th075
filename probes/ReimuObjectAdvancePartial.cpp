@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 175 action
-// values: 41 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 176 action
+// values: 42 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -2169,6 +2169,37 @@ void ReimuObject::Advance()
                     }
                     if (AdvanceNestedFrame() == animationStageCount) {
                         ClearFrameInfo();
+                    }
+                }
+                break;
+
+            case 0x390:
+                if (animationStage == 0 && animationFrame == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    field080 = 99;
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 0;
+                    field0DA = 0;
+                    velocityX = 1.5f;
+                }
+                if (owner->field3A0 < 1) {
+                    ClearFrameInfo();
+                }
+                else {
+                    x = facing * velocityX + x;
+                    if (g_ReimuObjectRightBoundAt00659250 < x ||
+                        x < g_ReimuObjectLeftBoundAt00658344 ||
+                        owner->field3A0 == 0) {
+                        ClearFrameInfo();
+                    }
+                    else if (AdvanceNestedFrame() == animationStageCount) {
+                        ResetSecondaryCounter(0);
                     }
                 }
                 break;
