@@ -28,7 +28,11 @@ public:
 };
 
 // Each character's object class; its constructor takes the owning fighter.
-class ReimuObject : public CharacterObject { public: ReimuObject(void* ownerFighter); };
+class ReimuObject : public CharacterObject {
+public:
+    ReimuObject(void* ownerFighter);
+    virtual void Advance(); // 00476A40, partial natural-C++ research parent
+};
 class MarisaObject : public CharacterObject { public: MarisaObject(void* ownerFighter); };
 class SakuyaObject : public CharacterObject {
 public:
