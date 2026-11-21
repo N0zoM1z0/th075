@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers thirty
-// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x33F (except 0x326).
+// The original parent is 50,915 bytes. This research source covers thirty-two
+// actions: 800, 0x321, 0x322, 0x324, 0x325, and 0x327-0x341 (except 0x326).
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -44,6 +44,11 @@ extern const float g_ReimuObjectRightBoundAt00659248;
 extern const float g_ReimuObjectFullRotationAt00657864;
 extern const float g_ReimuObjectHalfAt00657478;
 extern const float g_ReimuObjectScaleCeilingAt006581E0;
+extern const float g_ReimuObjectVerticalSpringAt00658354;
+extern const float g_ReimuObjectHorizontalDriftAt006578C0;
+extern const float g_ReimuObjectScaleBaseAt00659240;
+extern const float g_ReimuObjectScaleFadeAt0065923C;
+extern const float g_ReimuObjectVerticalLowerLimitAt00659244;
 extern float g_AngleShiftAt00657878;
 extern double g_RiseAt00658050;
 extern const float g_ReimuObjectContactProjectionAt00657888;
@@ -1727,6 +1732,116 @@ void ReimuObject::Advance()
                         owner->fieldEFA = 0;
                         owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
                     }
+                }
+                break;
+            case 0x340:
+                if (field07C == 5) {
+                    ClearFrameInfo();
+                }
+                else if (owner->action < 0x32 || owner->action > 0x95 ||
+                    animationStage > 3) {
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        scaleX = 1.0f;
+                        scaleY = 1.0f;
+                        color[0] = 0xFF;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                        field0D8 = 0;
+                        field0DA = 0;
+                        field0DC = 0;
+                        velocityX = 1.0f;
+                        velocityY = 0.0f;
+                        field080 = 2;
+                        field07C = 0;
+                    }
+                    if (owner->opponent->y + g_ReimuObjectContactProjectionAt00657888 < y) {
+                        velocityY = velocityY - g_ReimuObjectVerticalSpringAt00658354;
+                    }
+                    if (y <= owner->opponent->y + g_ReimuObjectContactProjectionAt00657888) {
+                        velocityY = velocityY + g_ReimuObjectVerticalSpringAt00658354;
+                    }
+                    if (g_ReimuObjectScalarAt00657480 < velocityY) {
+                        velocityY = 2.0f;
+                    }
+                    if (velocityY < g_ReimuObjectVerticalLowerLimitAt00659244) {
+                        velocityY = -2.0f;
+                    }
+                    velocityX = velocityX + g_ReimuObjectHorizontalDriftAt006578C0;
+                    if (field0D8 < 1) {
+                        field07C = 0;
+                        field0D8 = 10;
+                    }
+                    field0D8 = field0D8 - 1;
+                    x = facing * velocityX + x;
+                    y = y + velocityY;
+                    if (animationFrame == 0) {
+                        float effectY = y - g_ReimuObjectScalarAt00657850;
+                        effectY = static_cast<float>(RecordedRange(0, 0x14)) + effectY;
+                        float effectX = x - g_ReimuObjectScalarAt00657850;
+                        effectX = static_cast<float>(RecordedRange(0, 0x14)) + effectX;
+                        owner->SpawnBattleEffect(0x341, effectX, effectY, facing, 1);
+                    }
+                    if (animationFrame == 0) {
+                        field0DA = static_cast<short>(RecordedRange(0, 0x14));
+                        scaleX = static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044 +
+                            g_ReimuObjectScaleBaseAt00659240;
+                        scaleY = static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044 +
+                            g_ReimuObjectScaleBaseAt00659240;
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        if (field0DC < 0x3C && field080 > 0) {
+                            ResetSecondaryCounter(1);
+                            field0DC = field0DC + 1;
+                        }
+                        else {
+                            ClearFrameInfo();
+                        }
+                    }
+                }
+                else {
+                    ClearFrameInfo();
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                    if (owner->fieldEFA > 0x19) {
+                        owner->fieldEFA = 0;
+                        owner->SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                    }
+                }
+                break;
+
+            case 0x341:
+                facing = owner->facing;
+                if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
+                    ResetTransform(0.0f, 0.0f, 0.0f);
+                    scaleX = 0.8f;
+                    scaleY = 0.8f;
+                    color[0] = 0xFF;
+                    color[1] = 0xFF;
+                    color[2] = 0xFF;
+                    color[3] = 0xFF;
+                    field0D8 = 1;
+                    velocityY = 4.0f;
+                    velocityX = 0.0f;
+                }
+                velocityY = velocityY - g_ReimuObjectScalarAt006590B4;
+                x = facing * velocityX + x;
+                y = y + velocityY;
+                if (color[0] < 0x0E) {
+                    color[0] = 0;
+                }
+                else {
+                    color[0] = color[0] - 0x0D;
+                }
+                scaleX = scaleX * g_ReimuObjectScaleFadeAt0065923C;
+                scaleY = scaleY * g_ReimuObjectScaleFadeAt0065923C;
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
                 }
                 break;
             }
