@@ -66,6 +66,7 @@ extern float g_ReimuFallingGravityAt00658354;
 extern float g_ReimuFallingSpawnYOffsetAt0065908C;
 extern float g_ReimuStormLeftBoundaryAt0065787C;
 extern float g_ReimuStormRightBoundaryAt0065920C;
+extern float g_ReimuApproachRightBoundAt0065945C;
 void ReimuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -650,6 +651,8 @@ case 0x48: {
 #include "ReimuBossGroundedVolley2FBF1183.inc"
 #include "ReimuBossFourTierVolley302F1183.inc"
 #include "ReimuBossVolley1FC1FDF1183.inc"
+#include "ReimuBossVolley1F9F1183.inc"
+#include "ReimuBossTrajectory2FAF1183.inc"
         default:
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
