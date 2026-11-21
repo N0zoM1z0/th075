@@ -355,7 +355,7 @@ cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
 Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. Its 62,271-byte VC7.1 body now also
+`probes/YuyukoFighterAdvancePartial.cpp`. Its 62,060-byte VC7.1 body now also
 covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
 `0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
 The source keeps the individual initial velocities, gauge accumulation,
@@ -382,8 +382,11 @@ separate per-action handlers, including the original `0x25A` sound/gauge order.
 Low actions `1` and `3` also have separate handlers for their distinct
 primary-counter destinations. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
 rebound actions, and action `400`'s repeated five-effect barrage are represented.
-All 114 unique top-level Ghidra switch labels have explicit natural-C++ case
-handlers. The `0x303` fan has three independent countdown branches with paired
+All 125 original switch case labels across the seven ranges have explicit
+natural-C++ handlers, along with six singleton boundaries (0x32, 0x8C,
+0x12C, 0x186, 0x1F4, 0x2BC): 131 distinct action values total. The
+single flat source switch naturally compiles into the target's seven-range
+dispatch tree. The `0x303` fan has three independent countdown branches with paired
 20-shot loops and now reuses three loop-counter locals in the original
 `local_80`/`local_84`/`local_88` pairs. The `0x2F9` fan contains only the original
 repeat-level `0x38C` radial and `0x38D` random-position bursts; the misplaced
@@ -391,15 +394,24 @@ repeat-level `0x38C` radial and `0x38D` random-position bursts; the misplaced
 they are exclusively part of `0x303`. All ten random samples in the remaining
 `0x2F9` pattern call the exact `Actor::RecordedRange` leaf at `0x00455580`.
 The 139-byte random-range leaf cold-replays exact. Removing the misplaced
-`0x303` volley reduced the VC7.1 body from 63,161 to 62,416 bytes, direct
+0x303 volley reduced the VC7.1 body from 63,161 to 62,416 bytes, direct
 non-relocation differences from 53,477 to 52,265, and the stack frame from
-`0x348` to `0x31C`. A second correction restored all 27 `field490` products to
-the target's double-precision `fmul QWORD [0x6583E8]` instead of narrowing the
-constant to float first. This removed 27 compiler conversion temporaries,
-reduced the body to 62,271 bytes and direct differences to 51,948, and brought
-the frame to `0x2B8` (8 bytes above target). Six related leaf units replay
-6/6 exact. The parent remains partial with unresolved common/default control
-flow and code-generation differences, not an exact function.
+0x348 to 0x31C. Restoring all 27 field490 products to the target's
+double-precision fmul QWORD [0x6583E8] instead of narrowing the constant to
+float reduced the body to 62,254 bytes and direct differences to 51,620, with
+a 0x2B0 frame. Restoring action 0x192's missing effect-800 X offset,
+separating action 0x2E4's stage-7/stage-8 emissions, and normalizing all
+signed-facing offsets brought the body to 62,271 bytes (+399), 51,948 direct
+differences and a 0x2B8 frame. The latest shared-scratch source reduces that
+to 62,060 bytes (+188), 51,937 direct differences and a 0x224 frame. The
+38 shared integer scratch assignments plus action 0x18A's direct 0x97
+integer-promotion product account for all 39 original signed-facing products.
+Fifteen targeted related leaf units replay 15/15 exact. An explicit nested
+seven-switch rewrite was tested and rejected: 62,204 bytes, 52,560 direct
+differences and a 0x240 frame. The flat switch already lowers into the
+target's seven-range dispatch tree. The parent remains partial with unresolved
+common/default control flow and code-generation differences, not an exact
+function.
 This is a partial reconstruction, not a whole-function exactness claim.
 
 For Yuyuko fighter actions `0`, `2`, `0x5D`, and `0x5E`, Ghidra prints the
@@ -788,7 +800,7 @@ Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
 
-Yuyuko fighter `00564BE0` now has a 62,271-byte natural-C++ partial parent in
+Yuyuko fighter `00564BE0` now has a 62,060-byte natural-C++ partial parent in
 `probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
 the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
 states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected
@@ -803,11 +815,12 @@ recovery and the randomized polar/radial fan `0x2F9`, `0x302..0x303`,
 `0x31B..0x31C`, `0x8F..0x90`, `0x91`, `0x96..0x98`, `0x9A..0x9E`,
 `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, `0xB4..0xB5`, `200`,
 `0xC9..0xD0`, `400`, and `0x8C`; the original function is 61,872 bytes.
-All 114 unique Ghidra switch labels now have natural-C++ case handlers, but
-common/default flow and code-generation differences remain. The current VC7.1
-body is 62,271 bytes versus the 61,872-byte target (+399), with 51,948 direct
-non-relocation byte differences and a `0x2B8` stack frame; this is an active
-partial reconstruction, not whole-function exactness. The
+All 125 original switch labels plus six singleton boundaries have natural-C++
+handlers (131 distinct action values); common/default flow and code-generation
+differences remain. The current VC7.1 body is 62,060 bytes versus the 61,872-byte
+target (+188), with 51,937 direct non-relocation byte differences and a 0x224
+stack frame; this is an active partial reconstruction, not whole-function
+exactness. The
 13 exact Yuyuko translation units affected by its `YuyukoFighter.hpp` slot
 declaration cold-replay 13/13 exact.
 
