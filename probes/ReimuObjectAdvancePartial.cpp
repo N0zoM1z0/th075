@@ -1,6 +1,6 @@
 // Partial natural-C++ reconstruction of ReimuObject::Advance at 00476A40.
-// The original parent is 50,915 bytes. This research source covers 192 action
-// values: 58 behavior-specific states and 134 frame-only remap states.
+// The original parent is 50,915 bytes. This research source covers 194 action
+// values: 60 behavior-specific states and 134 frame-only remap states.
 // Other original actions remain unrepresented; this is not a complete
 // replacement or an exactness claim.
 #include "CharacterObject.hpp"
@@ -58,6 +58,7 @@ extern float g_AngleShiftAt00657878;
 extern double g_RiseAt00658050;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
+extern const float g_ReimuObjectScaleDenominatorAt00658294;
 
 void ReimuObject::Advance()
 {
@@ -2896,6 +2897,65 @@ void ReimuObject::Advance()
                         if (AdvanceNestedFrame() == animationStageCount) {
                             ClearFrameInfo();
                         }
+                    }
+                }
+                break;
+            }
+
+
+            case 0x3DE:
+            case 0x3DF: {
+                ReimuFighter* reimuOwner = static_cast<ReimuFighter*>(owner);
+                if (reimuOwner->fieldF2A == 0 && animationStage < 2) {
+                    ResetSecondaryCounter(2);
+                }
+                else {
+                    x = owner->x;
+                    y = owner->y + g_ReimuObjectContactProjectionAt00657888;
+                    field08A = 1;
+                    if (animationStage == 0 && animationFrame == 0) {
+                        ResetTransform(0.0f, 0.0f, 0.0f);
+                        scaleX = action == 0x3DE ? 2.0f : 0.0f;
+                        scaleY = scaleX;
+                        color[0] = 0;
+                        color[1] = 0xFF;
+                        color[2] = 0xFF;
+                        color[3] = 0xFF;
+                    }
+                    if (action == 0x3DF) {
+                        scaleX = static_cast<float>(reimuOwner->fieldF2A) /
+                            g_ReimuObjectScaleDenominatorAt00658294;
+                        scaleY = scaleX;
+                    }
+                    rotationZ = rotationZ + g_ReimuObjectDirectionMarker1At0065747C;
+                    if (animationStage == 0) {
+                        if (color[0] < (action == 0x3DE ? 0xB4 : 0xE6)) {
+                            color[0] = static_cast<unsigned char>(color[0] + 0x19);
+                        }
+                        else {
+                            color[0] = action == 0x3DE ? 0xB4 : 0xFF;
+                        }
+                        if (reimuOwner->fieldF2A > 0x77) {
+                            ResetSecondaryCounter(1);
+                            color[0] = action == 0x3DE ? 0xB4 : 0xFF;
+                            return;
+                        }
+                    }
+                    if (animationStage == 2) {
+                        const unsigned char fadeStep = action == 0x3DE ? 0x1E : 0x0A;
+                        if (color[0] < fadeStep) {
+                            color[0] = 0;
+                        }
+                        else {
+                            color[0] = static_cast<unsigned char>(color[0] - fadeStep);
+                        }
+                        if (color[0] == 0) {
+                            ClearFrameInfo();
+                            return;
+                        }
+                    }
+                    if (AdvanceNestedFrame() == animationStageCount) {
+                        ClearFrameInfo();
                     }
                 }
                 break;
