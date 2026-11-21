@@ -12,6 +12,7 @@
 // F1011 pinned Japanese original 004AC040 game action302.
 case 0x302: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
@@ -26,6 +27,7 @@ case 0x302: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
+            ClearMotionFields();
             ResetSecondaryCounter(15);
         }
     }

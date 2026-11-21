@@ -10,11 +10,13 @@ case 0xCE: {
         field088=2;
     }
     if (animationStage==0 && (field3AC)==0)
+        ClearMotionFields();
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             ResetPrimaryCounters(10);
             y=0.0f;
+            ClearMotionFields();
             break;
         }
     }

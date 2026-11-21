@@ -24,6 +24,7 @@
 // F1016 original Japanese fighter 004AC040 action 2DB genuine gameplay.
 case 0x2DB: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
                 field07C=0;
         field3AC=0;
         scriptCounterF00=0;
@@ -82,6 +83,7 @@ case 0x2DB: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
+            ClearMotionFields();
                         ResetSecondaryCounter(22);
             y=0.0f;
             break;

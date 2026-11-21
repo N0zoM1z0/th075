@@ -9,6 +9,7 @@
 // F988 real Japanese original 004AC040 action 0x255
 case 0x255: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
                 field080=1;
         field07C=0;
         field3AC=0;
@@ -31,6 +32,7 @@ case 0x255: {
 // F988 real Japanese original 004AC040 action 0x256
 case 0x256: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
                 field080=1;
         field07C=0;
         field3AC=0;
@@ -48,6 +50,7 @@ case 0x256: {
 // F988 real Japanese original 004AC040 action 0x257
 case 0x257: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
                 field080=1;
         field07C=0;
         field3AC=0;

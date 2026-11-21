@@ -11,6 +11,7 @@
 case 0x1A0: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
+        ClearMotionFields();
             }
     --scriptCounterF00;
     if (AdvanceNestedFrame()==(animationStageCount))

@@ -11,6 +11,7 @@
 case 0x19D: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
+        ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
     }
@@ -54,6 +55,7 @@ case 0x19E: {
     --scriptCounterF00;
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
+        ClearMotionFields();
         ResetPrimaryCounters(0xA);
         break;
     }
@@ -87,6 +89,7 @@ case 0x19F: {
     --scriptCounterF00;
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
+        ClearMotionFields();
         ResetPrimaryCounters(0xA);
         break;
     }

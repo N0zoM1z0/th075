@@ -10,6 +10,7 @@
 // F983 natural source probe for real original 004AC040 1F8
 case 0x1F8: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
         field07C=0;
         field3AC=0;
         scriptCounterF00=0;
@@ -35,6 +36,7 @@ case 0x1F8: {
             color[0]=255;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
+            ClearMotionFields();
             ResetSecondaryCounter(0xB);
             y=0.0f;
             break;
@@ -93,6 +95,7 @@ case 0x1F8: {
 // F983 natural source probe for real original 004AC040 1F9
 case 0x1F9: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
         field07C=0;
         field3AC=0;
         scriptCounterF00=0;
@@ -118,6 +121,7 @@ case 0x1F9: {
             color[0]=255;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
+            ClearMotionFields();
             ResetSecondaryCounter(0xB);
             y=0.0f;
             break;

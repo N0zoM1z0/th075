@@ -9,6 +9,7 @@
  // Whole 82KB original remains NONEXACT, many GPR/EBP differences.
 case 0x1FB: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
         field07C=1;
         field3AC=0;
         scriptCounterF00=0;
@@ -29,6 +30,7 @@ case 0x1FB: {
             color[0]=255;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
+            ClearMotionFields();
             ResetSecondaryCounter(0xD);
             y=0.0f;
             break;
@@ -93,6 +95,7 @@ case 0x1FB: {
 // F983 natural source probe for real original 004AC040 1F9
 case 0x1FC: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
         field07C=1;
         field3AC=0;
         scriptCounterF00=0;
@@ -113,6 +116,7 @@ case 0x1FC: {
             color[0]=255;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
+            ClearMotionFields();
             ResetSecondaryCounter(0xD);
             y=0.0f;
             break;
@@ -177,6 +181,7 @@ case 0x1FC: {
 // F983 natural source probe for real original 004AC040 1F9
 case 0x1FD: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        ClearMotionFields();
         field07C=1;
         field3AC=0;
         scriptCounterF00=0;
@@ -197,6 +202,7 @@ case 0x1FD: {
             color[0]=255;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
+            ClearMotionFields();
             ResetSecondaryCounter(0xD);
             y=0.0f;
             break;

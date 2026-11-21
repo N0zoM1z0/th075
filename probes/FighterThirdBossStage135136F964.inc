@@ -1,13 +1,12 @@
 // F964 original Japanese 004AC040 movement states 135 and 136.
-// Native entry/landing paths clear the cancellation state, not the four
-// motion fields; ClearMotionFields would incorrectly zero X/Y velocity and
-// both acceleration words. Preserve the native field07C/hit-stop writes.
+// Native 00453E20 entry/landing calls clear velocityX, velocityY, field058
+// and field05C. Preserve the separate field07C/hit-stop writes as well.
 // State 135 falls during stages 3/4, then damps X after stage 4; state 136
 // uses exact ground-Y equality for its X drag and lands only before stage 12.
-// The native ContextBase::ClearCancel call still lacks a typed source wrapper.
 // Original third-fighter native game action 135, candidate.
 case 0x135: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        if ((field3AC)==0) ClearMotionFields();
         field080=1;
         field07C=0;
     }
@@ -22,6 +21,7 @@ case 0x135: {
         velocityY=velocityY-g_AnimationDeltaAt0065747C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
+            ClearMotionFields();
             ResetSecondaryCounter(5);
             SpawnAuxEffect(0x80,
                 float((facing)*150)+(x),
@@ -48,6 +48,7 @@ case 0x135: {
 // Original third-fighter native game action 136, candidate.
 case 0x136: {
     if ((animationStage)==0 && (animationFrame)==0) {
+        if ((field3AC)==0) ClearMotionFields();
         field080=2;
         field07C=0;
     }
@@ -62,6 +63,7 @@ case 0x136: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<12) {
             y=0.0f;
+            ClearMotionFields();
             ResetSecondaryCounter(0xC);
             break;
         }

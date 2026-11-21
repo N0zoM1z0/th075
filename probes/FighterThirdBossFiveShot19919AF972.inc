@@ -15,6 +15,7 @@ case 0x199: {
     }
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
+        ClearMotionFields();
         ResetPrimaryCounters(0xA);
         break;
     }
@@ -57,6 +58,7 @@ case 0x19A: {
     }
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
+        ClearMotionFields();
         ResetPrimaryCounters(0xA);
         break;
     }

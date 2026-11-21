@@ -34,6 +34,7 @@
                 velocityY=velocityY-field05C;
                 if (velocityY+y<=g_ThresholdAt0065782C) {
                     y=0.0f;
+                    ClearMotionFields();
                     ResetSecondaryCounter(6);
                     break;
                 }
@@ -74,6 +75,7 @@
                 velocityY=velocityY-field05C;
                 if (velocityY+y<g_ThresholdAt0065782C) {
                     y=0.0f;
+                    ClearMotionFields();
                     ResetSecondaryCounter(6);
                     break;
                 }

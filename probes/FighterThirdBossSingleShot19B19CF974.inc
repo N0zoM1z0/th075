@@ -9,6 +9,7 @@
 case 0x19B: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
+        ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;
     }
@@ -33,6 +34,7 @@ case 0x19B: {
 case 0x19C: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
+        ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;
     }

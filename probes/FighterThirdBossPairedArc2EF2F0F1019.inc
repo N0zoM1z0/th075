@@ -1,6 +1,6 @@
 // F1019 original Japanese 004AC040 actions 2EF and 2F0.
-// Preserve native motion state: entry clears field07C but does not clear
-// velocityX/velocityY/field058/field05C; landing writes Y=0 only.
+// Native entry and landing both call 00453E20, clearing velocityX,
+// velocityY, field058 and field05C before the stage handoff.
 // 2EF uses gravity 00658044, stage-13 lift 1.5 and angles -70/-50;
 // 2F0 uses gravity 00658354, stage-13 lift 3.5 and angles -70.
 // The stage-23 F04 repeat guard remains nested inside the final shot.
@@ -13,6 +13,7 @@ case 0x2EF: {
         scriptCounterF02=0;
         fieldF04=0;
         field07C=0;
+        ClearMotionFields();
         field080=99;
     }
     if (y>g_ThresholdAt0065782C && (animationStage)<22)
@@ -21,6 +22,7 @@ case 0x2EF: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             ResetSecondaryCounter(34);
+            ClearMotionFields();
             y=0.0f;
             break;
         }
@@ -133,6 +135,7 @@ case 0x2F0: {
         scriptCounterF02=0;
         fieldF04=0;
         field07C=0;
+        ClearMotionFields();
         field080=99;
     }
     if (y>g_ThresholdAt0065782C && (animationStage)<22)
@@ -141,6 +144,7 @@ case 0x2F0: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             ResetSecondaryCounter(34);
+            ClearMotionFields();
             y=0.0f;
             break;
         }
