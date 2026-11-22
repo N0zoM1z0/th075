@@ -43,7 +43,7 @@ differing = "40,79,122,157,196,422,1083,1172,1374,1773,2121,2143,2789,2856,3069,
 [frontiers.patchouli-object-advance-0050a580]
 character = "Patchouli"
 kind = "object"
-source = "probes/CharacterObjectWhole0050A580F1044.cpp"
+source = "src/PatchouliObjectAdvanceF1044.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@PatchouliObject@@UAEXXZ"
 address = 0x0050A580

@@ -51,7 +51,7 @@ public:
 class PatchouliObject : public CharacterObject {
 public:
     PatchouliObject(void* ownerFighter);
-    virtual void Advance();  // 0050A580; complete 81,539-byte nonexact parent
+    virtual void Advance();  // 0050A580, nonexact natural-C++ parent in PatchouliObjectAdvanceF1044.cpp
 };
 class YoumuObject : public CharacterObject {
 public:

@@ -2,7 +2,7 @@
 #include "PatchouliFighter.hpp"
 #include "EffectServices.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-// Native original-shaped TH075 CharacterObject whole switch C++ candidate.
+// Natural-C++ reconstruction of PatchouliObject::Advance at 0050A580.
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.
 // The state cases belong to PatchouliObject; helper call contracts remain native.
