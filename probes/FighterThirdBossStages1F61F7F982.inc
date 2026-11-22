@@ -22,7 +22,7 @@ case 0x1F6: {
             ClearMotionFields();
             ResetSecondaryCounter(6);
             y=0.0f;
-            break;
+            return;
         }
     }
     if (field07C!=0) {
@@ -63,9 +63,12 @@ case 0x1F6: {
         ResetSecondaryCounter(2);
         ++scriptCounterF00;
     }
-    if ((animationStage)==6 && (animationFrame)==0)
-        ResetSecondaryCounter(5);
-    break;
+    if ((animationStage)!=6)
+        return;
+    if ((animationFrame)!=0)
+        return;
+    ResetSecondaryCounter(5);
+    return;
 }
 // F982 original native 004AC040 0x1F7 double-scaled fighter action
 case 0x1F7: {
@@ -84,7 +87,7 @@ case 0x1F7: {
             ClearMotionFields();
             ResetSecondaryCounter(6);
             y=0.0f;
-            break;
+            return;
         }
     }
     if (field07C!=0) {
@@ -125,7 +128,10 @@ case 0x1F7: {
         ResetSecondaryCounter(2);
         ++scriptCounterF00;
     }
-    if ((animationStage)==6 && (animationFrame)==0)
-        ResetSecondaryCounter(5);
-    break;
+    if ((animationStage)!=6)
+        return;
+    if ((animationFrame)!=0)
+        return;
+    ResetSecondaryCounter(5);
+    return;
 }
