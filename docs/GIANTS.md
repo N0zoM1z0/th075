@@ -1601,3 +1601,11 @@ and word-helper leaf units replay 15/15 exact. A natural-C++ seven-range/
 switch dispatch rewrite was compiled but not retained because VC7.1 created
 per-switch temporary slots and a larger frame than the current flat-switch
 baseline.
+
+### 2026-11-22: Sakuya object Advance 004CA6E0 — action-808 register frontier
+
+A fresh target disassembly around the first register mismatch at `004CCBD7` clarifies the earlier shorthand that called this the “action-800 bounds guard”: the mismatching block is the later `case 808` in `CharacterObjectActions004CA6E0F1222.cpp`. `case 800` is a distinct block and uses the 1400/-160 horizontal bounds; action 808 uses 2000/-1000 horizontal bounds and 1000/-160 vertical bounds. The PE constants at `006583D8`, `006595E0`, `006583B4`, and `006595EC` decode to those four values.
+
+The current object-advance frontier remains 42,511 bytes, with no mnemonic mismatches, 12 width differences, and 447 register-operand mismatches (441 instructions). Those register mismatches are confined to the `004CC000` and `004CD000` blocks and form the same three-register cycle: target EAX maps to source EDX, target ECX to source EAX, and target EDX to source ECX. The first occurrence is the action-808 bounds guard at `004CCBD7`.
+
+A target-shaped four-guard `goto` formulation was tested for action 808: four conditional branches to one out-of-bounds label, followed by an unconditional jump over the cleanup block to the in-bounds body. It cold-compiled to the same 447-register / 12-width frontier as the original `||` expression. Earlier condition-order, grouping, negation, qualification, and owner-alias experiments likewise did not improve this frontier. Do not repeat those syntax-only variants; the next useful step needs new evidence about live-register allocation at the action-808 block. No assembly, byte graft, padding, or fabricated locals were introduced.
