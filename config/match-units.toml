@@ -33225,12 +33225,12 @@ target = 0x0041A110
 [[units.game-globals-release-00417430.relocations]]
 offset = 270
 type = "DIR32"
-symbol = "?g_ResourceOwnerBAt006714C4@@3PAVSceneResourceOwnerBF195@@A"
+symbol = "?g_WindowOverlayAt006714C4@@3PAVWindowOverlayF212@@A"
 target = 0x006714C4
 [[units.game-globals-release-00417430.relocations]]
 offset = 295
 type = "REL32"
-symbol = "??_GSceneResourceOwnerBF195@@QAEPAXI@Z"
+symbol = "??_GWindowOverlayF212@@QAEPAXI@Z"
 target = 0x0041A140
 [[units.game-globals-release-00417430.relocations]]
 offset = 313
@@ -56536,11 +56536,11 @@ target = 0x00423E10
 
 
 [units.game-globals-initialize-black-surface-00417000]
-source = "src/GameGlobalsInitializeBlackSurfaceF459.cpp"
-object = "build/matching/GameGlobalsInitializeBlackSurfaceF459.obj"
+source = "src/WindowOverlayF212.cpp"
+object = "build/matching/WindowOverlayF212.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["GameGlobals::InitializeBlackSurfaceAt00417000"]
-symbol = "?InitializeBlackSurface@BlackSurfaceF459@@QAEPAV1@XZ"
+symbol = "??0WindowOverlayF212@@QAE@XZ"
 target_address = 0x00417000
 size = 168
 [[units.game-globals-initialize-black-surface-00417000.relocations]]
@@ -56549,6 +56549,17 @@ type = "REL32"
 symbol = "?CreateBlackSurfaceAt00401C20@@YAXHHPAPAUIDirect3DTexture8@@H@Z"
 target = 0x00401C20
 
+
+
+[units.game-globals-black-surface-destructor-004170b0]
+source = "src/WindowOverlayF212.cpp"
+object = "build/matching/WindowOverlayF212.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["WindowOverlayF212::~WindowOverlayF212At004170B0"]
+symbol = "??1WindowOverlayF212@@QAE@XZ"
+target_address = 0x004170B0
+size = 27
+relocations = []
 
 [units.frame-capture-primary-004170d0]
 source = "src/FrameCapturePrimaryF460.cpp"

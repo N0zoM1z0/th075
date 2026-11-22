@@ -1,8 +1,10 @@
 #include <windows.h>
+#include "WindowOverlayF212.hpp"
 
 // Call-only views of the original game-level sound initialization.
-// Allocation sizes 120, 8, 20 are native-observed operator new arguments;
-// physical allocation carriers are not assertions of full original types.
+// Allocation sizes 120, 8, 20 are native-observed operator new arguments.
+// WindowOverlayF212 is the shared 8-byte texture owner; the 120/20-byte
+// window/audio carriers remain bounded physical views, not complete layouts.
 class InputBindingF212 {
 public:
     void Configure(void* keymap);
@@ -17,11 +19,6 @@ class WindowDisplayF212 {
 public:
     WindowDisplayF212();
 };
-class WindowOverlayF212 {
-    unsigned char nativePhysicalStorage[8];
-public:
-    WindowOverlayF212();
-};
 class AudioDeviceF212 {
     unsigned char nativePhysicalStorage[20];
 public:
@@ -29,7 +26,6 @@ public:
     void LoadWaveBank(const char*, const char*);
 };
 typedef char AssertWindow120F212[(sizeof(WindowDisplayF212)==120)?1:-1];
-typedef char AssertOverlay8F212[(sizeof(WindowOverlayF212)==8)?1:-1];
 typedef char AssertAudio20F212[(sizeof(AudioDeviceF212)==20)?1:-1];
 
 extern WindowDisplayF212* g_WindowDisplayAt0067143C;

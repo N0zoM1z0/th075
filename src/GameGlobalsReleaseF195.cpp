@@ -1,7 +1,8 @@
 #include <windows.h>
+#include "WindowOverlayF212.hpp"
 
-// Borrowed owner pointers only: no complete heap object layouts or
-// allocations are asserted by this file.
+// Other resource pointers remain borrowed opaque owners. The 8-byte
+// WindowOverlayF212 texture owner is shared with its constructor/destructor.
 class SceneCombatActorF195 {
 public:
     virtual void Slot0();
@@ -16,7 +17,6 @@ public:
     virtual ~SceneThirdOwnerF195();
 };
 class SceneResourceOwnerAF195 { public: ~SceneResourceOwnerAF195(); };
-class SceneResourceOwnerBF195 { public: ~SceneResourceOwnerBF195(); };
 class SceneResourceOwnerCF195 { public: ~SceneResourceOwnerCF195(); };
 
 extern unsigned int g_GameDefaultsUseCountAt00671614;
@@ -24,7 +24,7 @@ extern SceneCombatActorF195* g_CombatActorAAt00671418;
 extern SceneCombatActorF195* g_CombatActorBAt0067141C;
 extern SceneThirdOwnerF195* g_SceneOwnerAt00671424;
 extern SceneResourceOwnerAF195* g_ResourceOwnerAAt0067143C;
-extern SceneResourceOwnerBF195* g_ResourceOwnerBAt006714C4;
+extern WindowOverlayF212* g_WindowOverlayAt006714C4;
 extern SceneResourceOwnerCF195* g_ResourceOwnerCAt00671618;
 namespace AudioControl407CA0 { void __cdecl ClearPlayback(); }
 
@@ -44,7 +44,7 @@ void GameGlobalsReleaseF195::Release()
         g_SceneOwnerAt00671424 = 0;
         AudioControl407CA0::ClearPlayback();
         delete g_ResourceOwnerAAt0067143C;
-        delete g_ResourceOwnerBAt006714C4;
+        delete g_WindowOverlayAt006714C4;
         delete g_ResourceOwnerCAt00671618;
     }
 }

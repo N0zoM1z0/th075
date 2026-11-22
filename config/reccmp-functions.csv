@@ -988,3 +988,4 @@ MagnitudeAt00428D20,0x00428D20,function
 CharacterObject::AdvanceAt004EBDA0,0x004EBDA0,function
 CharacterObject::AdvanceAt0055AC80,0x0055AC80,function
 Fighter::ClearField47CAt00454C00,0x00454C00,function
+WindowOverlayF212::~WindowOverlayF212At004170B0,0x004170B0,function
