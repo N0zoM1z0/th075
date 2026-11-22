@@ -19,7 +19,7 @@ differing = "48,84,116,135,174,196,235,257,289,314,356,553,765,945,1157,1172,118
 [frontiers.sakuya-fighter-advance-004ac040]
 character = "Sakuya"
 kind = "fighter"
-source = "probes/FighterWhole004AC040F1020.cpp"
+source = "src/SakuyaFighterAdvanceF1020.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@SakuyaFighter@@UAEXXZ"
 address = 0x004AC040
