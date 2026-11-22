@@ -15,16 +15,20 @@
                     SetCameraShake(2.0f);
                     ClearTransformFlag();
                     PlaySharedSound(0x16);
-                    break;
+                    return;
                 }
             }
-            if (AdvanceNestedFrame() == animationStageCount)
+            if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(3);
-            else if (animationStage == 3 && animationFrame == 0) {
-                velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;
-                velocityY = static_cast<float>(-scriptCounterF02) * g_F747_BounceYAt00658044;
-                field05C = 0.7f;
-                ResetTransform(0.0f,95.0f,0.0f);
+                return;
             }
-            break;
+            if (animationStage != 3)
+                return;
+            if (animationFrame != 0)
+                return;
+            velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;
+            velocityY = static_cast<float>(-scriptCounterF02) * g_F747_BounceYAt00658044;
+            field05C = 0.7f;
+            ResetTransform(0.0f,95.0f,0.0f);
+            return;
         }
