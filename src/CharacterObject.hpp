@@ -71,7 +71,7 @@ public:
 class YukariObject : public CharacterObject {
 public:
     YukariObject(void* ownerFighter);
-    virtual void Advance();  // original 005A1600; complete, nonexact research parent
+    virtual void Advance();  // 005A1600, nonexact natural-C++ parent in YukariObjectAdvanceF1231.cpp
 };
 class SuikaObject : public CharacterObject {
 public:

@@ -1,5 +1,6 @@
-// Complete research source for original 005A1600 (43,599 CODE bytes).
-// All native states are written; still NONEXACT and not an accepted replacement.
+// Natural-C++ reconstruction of YukariObject::Advance at 005A1600.
+// The 43,599-byte object state machine is represented in full, but remains
+// NONEXACT; no exact replacement or original private-layout claim.
 #include "CharacterObject.hpp"
 #include "YukariFighter.hpp"
 #include "EffectServices.hpp"

@@ -103,7 +103,7 @@ differing = "40,79,122,157,196,411,712,850,934,956,1171,1472,1610,1694,1716,1931
 [frontiers.yukari-object-advance-005a1600]
 character = "Yukari"
 kind = "object"
-source = "probes/CharacterObjectActions005A1600F1231.cpp"
+source = "src/YukariObjectAdvanceF1231.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@YukariObject@@UAEXXZ"
 address = 0x005A1600
