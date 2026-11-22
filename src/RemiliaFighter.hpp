@@ -9,7 +9,7 @@ class RemiliaFighter : public Fighter {
 public:
     RemiliaFighter();
     virtual ~RemiliaFighter();
-    virtual void Advance(); // slot 1, native 00543210, nonexact research parent
+    virtual void Advance(); // slot 1, native 00543210, nonexact natural-C++ parent in RemiliaFighterAdvanceF1041.cpp
 
     // One remaining mixed-coordinate caller shape at 00453A70. The
     // independently exact 00453B50/00453C80 helpers are inherited directly.

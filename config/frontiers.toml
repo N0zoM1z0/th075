@@ -79,7 +79,7 @@ differing = "39,78,386,492,643,686,721,948,1491,1504,1892,2279,2542,2864,2886,31
 [frontiers.remilia-fighter-advance-00543210]
 character = "Remilia"
 kind = "fighter"
-source = "probes/FighterWhole00543210F1041.cpp"
+source = "src/RemiliaFighterAdvanceF1041.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@RemiliaFighter@@UAEXXZ"
 address = 0x00543210

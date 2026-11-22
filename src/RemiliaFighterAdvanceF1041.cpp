@@ -1,8 +1,8 @@
 #include "RemiliaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-// F1196 complete original-shaped 00543210 parent, continued from F917/F1041.
-// Native stack, CFG and reference destinations agree; 1741 GPR positions
-// and three instruction widths remain NONEXACT. No whole CODE credit.
+// Natural-C++ reconstruction of RemiliaFighter::Advance at 00543210.
+// The complete 58,294-byte fighter state machine remains NONEXACT:
+// 1,741 GPR positions and three instruction widths still differ.
 
 extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;

@@ -77,7 +77,7 @@ change.
 | 0045DD70 | Reimu fighter | 60,999 | `FighterWhole0045DD70F1183.cpp` | 6,311 | 5 | 0045FDA9 (#2292) |
 | 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
 | 005214B0 | Youmu fighter | 46,755 | `FighterWhole005214B0F1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
-| 00543210 | Remilia fighter | 58,294 | `FighterWhole00543210F1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
+| 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` | 447 | 12 | 004CCBD7 (#2526) |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` | 522 | 5 | 00515C0E (#10128) |
@@ -322,7 +322,11 @@ Four observed projectile X sources use `Actor::x` instead of a borrowed
 1,863 relocation offsets/types and every nonrelocation byte unchanged.
 All 98 fighter-header-affected exact units cold-replayed (36/36, 31/31,
 31/31). The original 58,294 CODE bytes remain NONEXACT (1,741 GPR-role,
-three width differences). No giant exact credit was claimed.
+three width differences). The complete natural-C++ source is now promoted to
+`src/RemiliaFighterAdvanceF1041.cpp`, with the ledger marked `reconstructed`,
+not `matching`; the native vtable at `0x00659A40` confirms slot 1 points to
+`0x00543210`. Its three guarded dispatch tables/remaps are independently
+verified. No giant exact credit was claimed.
 
 Remilia fighter `00543210` now defines `RemiliaFighter::Advance` on
 its actual class instead of an artificial research subclass. Four
