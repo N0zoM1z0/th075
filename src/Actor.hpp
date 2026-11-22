@@ -177,8 +177,14 @@ public:
     unsigned char field068;             // +0x068
     unsigned char unknown069[0x06C - 0x069];
     float field06C;                     // +0x06C
-    short animationStageCount;                     // +0x070
-    short animationFrameCount;                     // +0x072
+    union {
+        short field070;                 // +0x070 native stage-count word
+        short animationStageCount;      // semantic alias
+    };
+    union {
+        short field072;                 // +0x072 native frame-count word
+        short animationFrameCount;     // semantic alias
+    };
     // +0x074..0x07B is the animation binding that slot 0 maintains: fighters
     // and character objects keep two record pointers here, auxiliary
     // effects (CharacterAuxObject) keep four counters.
