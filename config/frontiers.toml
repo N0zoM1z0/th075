@@ -31,7 +31,7 @@ differing = "7867,7871,7874,7883,7886,7895,7898,7901,7904,7907,7910,7913,7916,79
 [frontiers.sakuya-object-advance-004ca6e0]
 character = "Sakuya"
 kind = "object"
-source = "probes/CharacterObjectActions004CA6E0F1222.cpp"
+source = "src/SakuyaObjectAdvanceF1222.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@SakuyaObject@@UAEXXZ"
 address = 0x004CA6E0

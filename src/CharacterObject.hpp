@@ -37,7 +37,7 @@ class MarisaObject : public CharacterObject { public: MarisaObject(void* ownerFi
 class SakuyaObject : public CharacterObject {
 public:
     SakuyaObject(void* ownerFighter);
-    virtual void Advance();    // 004CA6E0, nonexact 42,511-byte parent
+    virtual void Advance();    // 004CA6E0, nonexact natural-C++ parent in SakuyaObjectAdvanceF1222.cpp
 };
 class AliceObject : public CharacterObject {
 public:

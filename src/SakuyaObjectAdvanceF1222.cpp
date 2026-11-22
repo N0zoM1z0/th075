@@ -1,5 +1,6 @@
-// Complete research source for original 004CA6E0 (42,511 CODE bytes).
-// All native states are written; still NONEXACT and not an accepted replacement.
+// Natural-C++ reconstruction of SakuyaObject::Advance at 004CA6E0.
+// All native states are represented; the 42,511-byte body remains NONEXACT.
+// Keep its guarded switch/remap data separately evidenced; no exactness credit.
 #include "CharacterObject.hpp"
 #include "SakuyaFighter.hpp"
 
