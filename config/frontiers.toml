@@ -127,7 +127,7 @@ differing = "39,78,121,156,490,704,1351,1406,1457,1591,1805,2366,2421,2472,2656,
 [frontiers.meiling-object-advance-005eb520]
 character = "Meiling"
 kind = "object"
-source = "probes/CharacterObjectWhole005EB520F1207.cpp"
+source = "src/MeilingObjectAdvanceF1207.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@MeilingObject@@UAEXXZ"
 address = 0x005EB520

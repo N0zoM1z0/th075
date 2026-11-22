@@ -1,7 +1,7 @@
-// F1207 restores the complete F061 active07 natural C++ research parent.
-// F1209 reconciles its real virtual slot 1 with native vtable/dispatch evidence.
-// Original: 005EB520, 34,434 CODE bytes / 9,378 x86; 443 owned DATA bytes.
+// Natural-C++ reconstruction of MeilingObject::Advance at 005EB520.
+// Original: 34,434 CODE bytes / 9,378 x86; generated switch data is separate.
 // NONEXACT: 135 GPR positions / six widths remain, all in state 998.
+// The original compile profile has no /GS flag; preserve that frontier.
 // Profile: /Od /Ob0 /Gy /GR- /GX- /Zi /I src, pinned VC7.1 build 3077.
 // Evidence: docs/OBJECT_ADVANCE_005EB520_WHOLE_F1207.md.
 // Uses the shared CharacterObject/Fighter classes and their native helpers.

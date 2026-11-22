@@ -81,7 +81,7 @@ public:
 class MeilingObject : public CharacterObject {
 public:
     MeilingObject(void* ownerFighter);
-    virtual void Advance();  // 005EB520, whole nonexact research parent
+    virtual void Advance();  // 005EB520, nonexact natural-C++ parent in MeilingObjectAdvanceF1207.cpp
 };
 
 typedef char CharacterObjectLayoutCheck[(
