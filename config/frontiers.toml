@@ -115,7 +115,7 @@ differing = "39,78,121,156,195,410,770,908,1009,1202,1358,1393,1642,1677,2186,22
 [frontiers.suika-object-advance-005c9cc0]
 character = "Suika"
 kind = "object"
-source = "probes/CharacterObjectActions005C9CC0F1216.cpp"
+source = "src/SuikaObjectAdvanceF1216.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@SuikaObject@@UAEXXZ"
 address = 0x005C9CC0

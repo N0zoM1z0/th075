@@ -85,7 +85,7 @@ change.
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` | 914 | 6 | 00583489 (#6565) |
 | 005A1600 | Yukari object | 43,599 | `CharacterObjectActions005A1600F1231.cpp` | 613 | 11 | 005A88A8 (#7965) |
-| 005C9CC0 | Suika object | 43,501 | `CharacterObjectActions005C9CC0F1216.cpp` | 935 | 1 | 005D2558 (#9213) |
+| 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` | 935 | 1 | 005D2558 (#9213) |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
@@ -1612,9 +1612,9 @@ A target-shaped four-guard `goto` formulation was tested for action 808: four co
 
 The action-808 source now names the four read-only arena bounds as `extern const float` references to `006583D8` (2000), `006595E0` (-1000), `006583B4` (1000), and `006595EC` (-160), matching the actual PE data reads instead of embedding equal-valued literals. The separate action-800 1400/-160 guard is unchanged. The focused frontier remains 447 GPR / 12 width differences: this is a source/data-identity correction, not an exactness claim. Constant-left, ternary, member-alias, and break/return rewrites were also measured without improving the register cycle.
 
-### 2026-11-22: promoted Sakuya, Patchouli, Youmu, Yuyuko and Meiling object parents
+### 2026-11-22: promoted Sakuya, Patchouli, Youmu, Yuyuko, Meiling and Suika object parents
 
-The complete natural-C++ parents for the large Sakuya, Patchouli, Youmu, Yuyuko and Meiling object state machines are now promoted from `probes/` into `src/`. Their ledger status is `reconstructed`, not `matching`; original function extents, source-origin classification and exactness are kept independent. The promotion does not claim a byte-exact replacement.
+The complete natural-C++ parents for the large Sakuya, Patchouli, Youmu, Yuyuko, Meiling and Suika object state machines are now promoted from `probes/` into `src/`. Their ledger status is `reconstructed`, not `matching`; original function extents, source-origin classification and exactness are kept independent. The promotion does not claim a byte-exact replacement.
 
 - `0x004CA6E0` — `src/SakuyaObjectAdvanceF1222.cpp`, 42,511 target CODE bytes. The focused VC7.1 frontier remains 0 mnemonic, 12 width and 447 GPR differences; first GPR difference `0x004CCBD7`. The 12 width differences are the action-500..503 comparisons in the adjacent object action blocks, where the same EAX/ECX/EDX register cycle changes the accumulator `cmp` encoding. A positive-outer-guard rewrite of action 809 regressed the frontier; keep the original natural predicate until a new allocation hypothesis exists.
 - `0x0050A580` — `src/PatchouliObjectAdvanceF1044.cpp`, 81,539 target CODE bytes. The focused frontier remains 0 mnemonic, 5 width and 522 GPR differences; first GPR difference `0x00515C0E`, in Patchouli case `0x354`. The target/source difference is the same three-register cycle. A local `Fighter*` alias and three action/stage predicate orderings all regressed the instruction frontier; retain the original source form.
@@ -1625,7 +1625,9 @@ The complete natural-C++ parents for the large Sakuya, Patchouli, Youmu, Yuyuko 
 
 - `0x005EB520` — `src/MeilingObjectAdvanceF1207.cpp`, 34,434 target CODE bytes. The focused frontier is 0 mnemonic, 6 width and 135 GPR differences; first GPR difference `0x005F3904`, all register differences in state 998. Its recorded VC7.1 profile intentionally omits `/GS`; do not silently add that flag. The guarded dispatch has a 244-byte table at `0x005F3BA2` and a 199-byte remap at `0x005F3C96`, both independently revalidated against the original PE.
 
-The COFF section extents include generated switch data and must not be mistaken for function padding. Sakuya's separately recorded guarded dispatch uses a 224-byte table at `0x004D4CEF` and a 198-byte remap at `0x004D4DCF`; Patchouli's uses a 368-byte table at `0x0051E403` and a 199-byte remap at `0x0051E573`; Youmu's uses a 268-byte table at `0x0054003F` and a 199-byte remap at `0x0054014B`; Yuyuko's uses a 284-byte table at `0x005880C5` and a 198-byte remap at `0x005881E1`; Meiling's uses a 244-byte table at `0x005F3BA2` and a 199-byte remap at `0x005F3C96`. All five dispatch guards, complete tables and remaps were independently revalidated against the original PE. The extra COFF extent is not a license to extend the C++ body, add padding, or graft table bytes into source.
+- `0x005C9CC0` — `src/SuikaObjectAdvanceF1216.cpp`, 43,501 target CODE bytes. The focused frontier is 0 mnemonic, 1 width and 935 GPR differences; first GPR difference `0x005D2558`. The guarded dispatch has a 272-byte table at `0x005D46AD` and a 198-byte remap at `0x005D47BD`, both independently revalidated against the original PE.
+
+The COFF section extents include generated switch data and must not be mistaken for function padding. Sakuya's separately recorded guarded dispatch uses a 224-byte table at `0x004D4CEF` and a 198-byte remap at `0x004D4DCF`; Patchouli's uses a 368-byte table at `0x0051E403` and a 199-byte remap at `0x0051E573`; Youmu's uses a 268-byte table at `0x0054003F` and a 199-byte remap at `0x0054014B`; Yuyuko's uses a 284-byte table at `0x005880C5` and a 198-byte remap at `0x005881E1`; Meiling's uses a 244-byte table at `0x005F3BA2` and a 199-byte remap at `0x005F3C96`; Suika's uses a 272-byte table at `0x005D46AD` and a 198-byte remap at `0x005D47BD`. All six dispatch guards, complete tables and remaps were independently revalidated against the original PE. The extra COFF extent is not a license to extend the C++ body, add padding, or graft table bytes into source.
 
 The parallel `SakuyaFighter::Advance()` frontier remains a separate 82,796-byte giant. Typed-short substitutions for its `F00/F02` counters and targeted `case 0x59` return/control-flow variants did not improve its 6,958-GPR / 12-width frontier. Keep the shared `FighterScriptedBounce59F813.inc` unchanged; the next step needs new register-allocation evidence, not another spelling-only edit. `/O1` and `/O2` compiler-profile trials changed thousands of mnemonics, so retain the locked `/Od` profile.
 

@@ -1,6 +1,6 @@
-// Work in progress toward complete original 005C9CC0 (43,501 CODE B).
-// All native states are written. This complete research parent remains
-// NONEXACT and is not an accepted executable replacement.
+// Natural-C++ reconstruction of SuikaObject::Advance at 005C9CC0.
+// The 43,501-byte object state machine is represented in full, but remains
+// NONEXACT; no exact replacement or original private-layout claim.
 #include "CharacterObject.hpp"
 #include "SuikaFighter.hpp"
 #include "EffectServices.hpp"

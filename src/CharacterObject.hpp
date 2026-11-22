@@ -76,7 +76,7 @@ public:
 class SuikaObject : public CharacterObject {
 public:
     SuikaObject(void* ownerFighter);
-    virtual void Advance(); // native 005C9CC0, complete nonexact research parent
+    virtual void Advance(); // 005C9CC0, nonexact natural-C++ parent in SuikaObjectAdvanceF1216.cpp
 };
 class MeilingObject : public CharacterObject {
 public:
