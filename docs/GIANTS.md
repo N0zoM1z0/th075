@@ -1620,7 +1620,7 @@ A target-shaped four-guard `goto` formulation was tested for action 808: four co
 
 The action-808 source now names the four read-only arena bounds as `extern const float` references to `006583D8` (2000), `006595E0` (-1000), `006583B4` (1000), and `006595EC` (-160), matching the actual PE data reads instead of embedding equal-valued literals. The separate action-800 1400/-160 guard is unchanged. The focused frontier remains 447 GPR / 12 width differences: this is a source/data-identity correction, not an exactness claim. Constant-left, ternary, member-alias, and break/return rewrites were also measured without improving the register cycle.
 
-### 2026-11-22: promoted Sakuya, Patchouli, Youmu, Yuyuko, Meiling and Suika object parents
+### 2026-11-22: promoted Sakuya, Patchouli, Youmu, Yuyuko, Meiling, Suika and Yukari object parents
 
 The complete natural-C++ parents for the large Sakuya, Patchouli, Youmu, Yuyuko, Meiling, Suika and Yukari object state machines are now promoted from `probes/` into `src/`. Their ledger status is `reconstructed`, not `matching`; original function extents, source-origin classification and exactness are kept independent. The promotion does not claim a byte-exact replacement.
 
@@ -1645,9 +1645,20 @@ For Reimu fighter `0045DD70`, the first width difference at `004605C6` is `cmp e
 
 ## 2026-11-22: promoted fighter action-state sources
 
-Two complete large fighter action-state bodies have moved from research-only probes into `src/` as natural C++ reconstructions. Their `functions.csv` status is `reconstructed`, not `matching`; `function-origins.csv` remains independently unclassified and no authored/exact origin credit is inferred.
+Four complete large fighter action-state bodies are now in `src/` as natural C++ reconstructions. Their `functions.csv` status is `reconstructed`, not `matching`; the independent `function-origins.csv` source-origin records remain unchanged, and no giant exact-match credit is inferred.
 
 - `0x004AC040` — `src/SakuyaFighterAdvanceF1020.cpp`, full 82,796-byte native body. The focused frontier preserves the full extent and CFG. Current byte debt is 18,253 bytes, with 6,958 GPR operand positions and 12 instruction-width differences; first GPR divergence is `0x004ADEFA`.
 - `0x0045DD70` — `src/ReimuFighterAdvanceF1183.cpp`, full 60,999-byte native body. The focused frontier preserves the full extent and switch/control-flow shape. The first GPR divergence is `0x0045FDA9`; the first width divergence is `0x004605C6`, after which linear instruction decoding loses alignment.
+- `0x00543210` — `src/RemiliaFighterAdvanceF1041.cpp`, full 58,294-byte native body. The focused frontier remains 0 mnemonic, 3 width and 1,741 GPR differences; first GPR divergence `0x00545109`. Original vtable `0x00659A40` slot 1 points directly to `0x00543210`; all three guarded dispatch tables/remaps were independently verified.
+- `0x005214B0` — `src/YoumuFighterAdvanceF1040.cpp`, full 46,755-byte native body. The focused frontier remains 0 mnemonic, 5 width and 2,736 GPR differences; first GPR divergence `0x0052327A`. Original vtable `0x006598D0` slot 1 points directly to `0x005214B0`; all four guarded dispatch tables/remaps were independently verified.
 
-Both bodies are ordinary C++ composed from action-specific source fragments. No inline assembly, emitted bytes, padding, raw-code grafts, masks, or truncated comparisons were introduced. Their remaining compiler/codegen debt stays explicit and is the next reconstruction target.
+All four bodies are ordinary C++ composed from action-specific source fragments. No inline assembly, emitted bytes, padding, raw-code grafts, masks, or truncated comparisons were introduced. Their remaining compiler/codegen debt stays explicit and is the next reconstruction target.
+
+
+### 2026-11-22: targeted fighter register-frontier and leaf replay batch
+
+Meiling object `005EB520` remains at 0 mnemonic / 6 width / 135 GPR differences, all GPR differences confined to action state 998; the first is `005F3904`. Direct and explicit `this` member assignment, `Actor` base casts, address dereference, signed-byte casts, register pointer/value aliases, local reference aliases, and nested/reordered stage/frame guards were compiled under the pinned VC7.1 profile. None improved the frontier, so the committed natural-C++ state remains unchanged.
+
+Sakuya fighter `004AC040` remains at 0 mnemonic / 12 width / 6,958 GPR differences. The first GPR mismatch `004ADEFA` is in action `0x59`. Plain/constant-left predicates, nested and goto control flow, local/register stage aliases, pointer/reference/volatile views, and later stage/frame predicate ordering were measured; none improved the whole-function frontier. Keep the existing `FighterScriptedBounce59F813.inc` source until a new allocation hypothesis has evidence.
+
+Eight affected-only cold leaf replays were independently exact in this batch: `Actor::ResetPrimaryCounters` (52 B), `Actor::ResetSecondaryCounter` (43 B), `Actor::AdvanceNestedFrame` (142 B), `Actor::ResetTransform` (158 B), `Actor::SetPolarVelocity` (57 B), `Fighter::ClearMotionFields` (51 B), `Fighter::SetCameraShake` (25 B), and `CharacterObject::PlaySharedSound` (29 B). These are real game helpers called by the giant state machines; no STL/CRT helper or unreferenced no-op was promoted as game logic. No full cold replay was run.
