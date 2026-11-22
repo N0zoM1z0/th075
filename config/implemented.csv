@@ -987,3 +987,4 @@ MagnitudeAt00428D20
 CharacterObject::AdvanceAt0055AC80
 WindowOverlayF212::~WindowOverlayF212At004170B0
 SakuyaFighter::Advance
+ReimuFighter::AdvanceActionStatesAt0045DD70

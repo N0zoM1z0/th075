@@ -7,7 +7,7 @@
 [frontiers.reimu-fighter-advance-0045dd70]
 character = "Reimu"
 kind = "fighter"
-source = "probes/FighterWhole0045DD70F1183.cpp"
+source = "src/ReimuFighterAdvanceF1183.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@ReimuFighter@@UAEXXZ"
 address = 0x0045DD70
