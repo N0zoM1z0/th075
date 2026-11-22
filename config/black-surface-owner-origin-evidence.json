@@ -1,0 +1,269 @@
+{
+  "evidence_id": "R107",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "owner": {
+    "global_pointer": "0x006714C4",
+    "allocation_size": 8,
+    "texture_pointer_offset": 0,
+    "state_byte_offset": 4,
+    "nominal_class_name": "WindowOverlayF212 (inferred)"
+  },
+  "functions": {
+    "constructor": {
+      "address": "0x00417000",
+      "size": 168,
+      "body_sha256": "45d9fa0cfa27b987a3f0e21fc5eb658829518e556b9d1cf16abd1f8d5568982e",
+      "calls": [
+        {
+          "site": "0x00417019",
+          "target": "0x00401C20",
+          "kind": "direct"
+        },
+        {
+          "site": "0x00417038",
+          "kind": "indirect",
+          "base": "eax",
+          "index": null,
+          "disp": 64,
+          "operand_size": 4
+        },
+        {
+          "site": "0x00417097",
+          "kind": "indirect",
+          "base": "eax",
+          "index": null,
+          "disp": 68,
+          "operand_size": 4
+        }
+      ],
+      "return_count": 1
+    },
+    "destructor": {
+      "address": "0x004170B0",
+      "size": 27,
+      "body_sha256": "56f40f3e9040f30a2ecf094767e4a652b13e4e9b5ce6f27c044409229c330200",
+      "calls": [
+        {
+          "site": "0x004170C4",
+          "kind": "indirect",
+          "base": "ecx",
+          "index": null,
+          "disp": 8,
+          "operand_size": 4
+        }
+      ],
+      "return_count": 1
+    },
+    "release": {
+      "address": "0x00417430",
+      "size": 358,
+      "body_sha256": "238163545e5867e5869753fed589643a52634d8107f9fe11486a58a42bd6016b",
+      "calls": [
+        {
+          "site": "0x00417474",
+          "kind": "indirect",
+          "base": "edx",
+          "index": null,
+          "disp": 20,
+          "operand_size": 4
+        },
+        {
+          "site": "0x004174AA",
+          "kind": "indirect",
+          "base": "eax",
+          "index": null,
+          "disp": 20,
+          "operand_size": 4
+        },
+        {
+          "site": "0x004174E1",
+          "kind": "indirect",
+          "base": "edx",
+          "index": null,
+          "disp": 0,
+          "operand_size": 4
+        },
+        {
+          "site": "0x0041750D",
+          "target": "0x00407CA0",
+          "kind": "direct"
+        },
+        {
+          "site": "0x0041752B",
+          "target": "0x0041A110",
+          "kind": "direct"
+        },
+        {
+          "site": "0x00417556",
+          "target": "0x0041A140",
+          "kind": "direct"
+        },
+        {
+          "site": "0x00417581",
+          "target": "0x0041A170",
+          "kind": "direct"
+        }
+      ],
+      "return_count": 1
+    },
+    "initializer": {
+      "address": "0x004175A0",
+      "size": 334,
+      "body_sha256": "edabd3cf233ed6befa5b4761245e68d43f798d87ccd4580c60580a8c35c78fa8",
+      "calls": [
+        {
+          "site": "0x004175C5",
+          "target": "0x00406E10",
+          "kind": "direct"
+        },
+        {
+          "site": "0x004175D4",
+          "target": "0x00406E10",
+          "kind": "direct"
+        },
+        {
+          "site": "0x004175DB",
+          "target": "0x0064159D",
+          "kind": "direct"
+        },
+        {
+          "site": "0x004175F6",
+          "target": "0x00412DD0",
+          "kind": "direct"
+        },
+        {
+          "site": "0x0041761F",
+          "target": "0x0064159D",
+          "kind": "direct"
+        },
+        {
+          "site": "0x0041763A",
+          "target": "0x00417000",
+          "kind": "direct"
+        },
+        {
+          "site": "0x00417662",
+          "target": "0x0064159D",
+          "kind": "direct"
+        },
+        {
+          "site": "0x0041767D",
+          "target": "0x004071C0",
+          "kind": "direct"
+        },
+        {
+          "site": "0x004176AA",
+          "target": "0x004073B0",
+          "kind": "direct"
+        },
+        {
+          "site": "0x004176B9",
+          "target": "0x004073C0",
+          "kind": "direct"
+        },
+        {
+          "site": "0x004176D1",
+          "target": "0x004076A0",
+          "kind": "direct"
+        },
+        {
+          "site": "0x004176DB",
+          "target": "0x005F70E0",
+          "kind": "direct"
+        }
+      ],
+      "return_count": 1
+    },
+    "deleting_wrapper": {
+      "address": "0x0041A140",
+      "size": 44,
+      "body_sha256": "4fc6fde8b990c80c46121bc3a404e231438341f7c2eed08d7370478c9a529efd",
+      "calls": [
+        {
+          "site": "0x0041A14A",
+          "target": "0x004170B0",
+          "kind": "direct"
+        },
+        {
+          "site": "0x0041A15B",
+          "target": "0x00640F15",
+          "kind": "direct"
+        }
+      ],
+      "return_count": 1
+    }
+  },
+  "allocation_sites": [
+    {
+      "site": "0x004175DB",
+      "target": "0x0064159D",
+      "preceding_instruction": {
+        "mnemonic": "push",
+        "operand": "0x78"
+      },
+      "allocation_size": 120
+    },
+    {
+      "site": "0x0041761F",
+      "target": "0x0064159D",
+      "preceding_instruction": {
+        "mnemonic": "push",
+        "operand": "8"
+      },
+      "allocation_size": 8
+    },
+    {
+      "site": "0x00417662",
+      "target": "0x0064159D",
+      "preceding_instruction": {
+        "mnemonic": "push",
+        "operand": "0x14"
+      },
+      "allocation_size": 20
+    }
+  ],
+  "constructor_call_sites": [
+    {
+      "site": "0x0041763A",
+      "target": "0x00417000",
+      "kind": "direct"
+    }
+  ],
+  "release_wrapper_call_sites": [
+    {
+      "site": "0x00417556",
+      "target": "0x0041A140",
+      "kind": "direct"
+    }
+  ],
+  "wrapper_destructor_call_sites": [
+    {
+      "site": "0x0041A14A",
+      "target": "0x004170B0",
+      "kind": "direct"
+    }
+  ],
+  "wrapper_operator_delete_call_sites": [
+    {
+      "site": "0x0041A15B",
+      "target": "0x00640F15",
+      "kind": "direct"
+    }
+  ],
+  "destructor_com_release_calls": [
+    {
+      "site": "0x004170C4",
+      "kind": "indirect",
+      "base": "ecx",
+      "index": null,
+      "disp": 8,
+      "operand_size": 4
+    }
+  ],
+  "reviewed_parent_evidence": {
+    "constructor": "R053",
+    "initializer": "R052",
+    "release": "R052",
+    "deleting_wrapper": "R037"
+  }
+}
