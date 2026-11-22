@@ -56,7 +56,7 @@ public:
 class YoumuObject : public CharacterObject {
 public:
     YoumuObject(void* ownerFighter);
-    virtual void Advance(); // 00536400, complete nonexact object state machine
+    virtual void Advance(); // 00536400, nonexact natural-C++ parent in YoumuObjectAdvanceF1211.cpp
 };
 class RemiliaObject : public CharacterObject {
 public:

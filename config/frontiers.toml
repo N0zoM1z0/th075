@@ -67,7 +67,7 @@ differing = "47,83,134,195,256,310,349,371,405,602,814,994,1206,1221,1236,1305,1
 [frontiers.youmu-object-advance-00536400]
 character = "Youmu"
 kind = "object"
-source = "probes/CharacterObjectActions00536400F1211.cpp"
+source = "src/YoumuObjectAdvanceF1211.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@YoumuObject@@UAEXXZ"
 address = 0x00536400

@@ -1,8 +1,7 @@
-// Work in progress toward the complete original 00536400 (39,999 CODE B).
-// The typed owner history relay and the written cases are native game logic.
-// All native states are written; this draft remains NONEXACT and is not
-// an executable replacement or an accepted reconstruction unit.
-// See docs/OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md.
+// Natural-C++ reconstruction of YoumuObject::Advance at 00536400.
+// The 39,999-byte native object state machine is represented in full, but
+// remains NONEXACT; no exact replacement or original private-layout claim.
+// The typed list-history declarations are kept in YoumuObjectHistoryF1211.hpp.
 #include "CharacterObject.hpp"
 #include "YoumuFighter.hpp"
 #include "YoumuObjectHistoryF1211.hpp"
