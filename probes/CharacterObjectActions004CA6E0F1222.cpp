@@ -7,6 +7,10 @@
 float __cdecl AngleAt00483300(float, float);
 extern float g_F1211_AngleDivAt00657828;
 extern signed char g_F1212_DifficultyAt006714D0;
+extern const float g_SakuyaObjectMaxXAt006583D8;
+extern const float g_SakuyaObjectMinXAt006595E0;
+extern const float g_SakuyaObjectMaxYAt006583B4;
+extern const float g_SakuyaObjectMinYAt006595EC;
 
 void SakuyaObject::Advance()
 {
@@ -534,7 +538,7 @@ void SakuyaObject::Advance()
             x = facing * velocityX + x;
             y -= velocityY;
             ++field0D8;
-            if (x > 2000.0f || x < -1000.0f || y > 1000.0f || y < -160.0f) {
+            if (x > g_SakuyaObjectMaxXAt006583D8 || x < g_SakuyaObjectMinXAt006595E0 || y > g_SakuyaObjectMaxYAt006583B4 || y < g_SakuyaObjectMinYAt006595EC) {
                 ClearFrameInfo();
                 return;
             }
