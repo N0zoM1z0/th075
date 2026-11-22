@@ -33,7 +33,7 @@ case 0x1FB: {
             ClearMotionFields();
             ResetSecondaryCounter(0xD);
             y=0.0f;
-            break;
+            return;
         }
     }
     if ((animationStage)<8 && (animationStage)>1)
@@ -81,16 +81,19 @@ case 0x1FB: {
     if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF02)<4) {
         ResetSecondaryCounter(6);
         ++scriptCounterF02;
-        break;
+        return;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=60.0f;
         velocityY=3.0f;
         field05C=0.5f;
     }
-    if ((animationStage)==13 && (animationFrame)==0)
-        ResetSecondaryCounter(0xB);
-    break;
+    if ((animationStage)!=13)
+        return;
+    if ((animationFrame)!=0)
+        return;
+    ResetSecondaryCounter(0xB);
+    return;
 }
 // F983 natural source probe for real original 004AC040 1F9
 case 0x1FC: {
@@ -119,7 +122,7 @@ case 0x1FC: {
             ClearMotionFields();
             ResetSecondaryCounter(0xD);
             y=0.0f;
-            break;
+            return;
         }
     }
     if ((animationStage)<8 && (animationStage)>1)
@@ -167,16 +170,19 @@ case 0x1FC: {
     if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF02)<4) {
         ResetSecondaryCounter(6);
         ++scriptCounterF02;
-        break;
+        return;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=-60.0f;
         velocityY=3.0f;
         field05C=0.5f;
     }
-    if ((animationStage)==13 && (animationFrame)==0)
-        ResetSecondaryCounter(0xB);
-    break;
+    if ((animationStage)!=13)
+        return;
+    if ((animationFrame)!=0)
+        return;
+    ResetSecondaryCounter(0xB);
+    return;
 }
 // F983 natural source probe for real original 004AC040 1F9
 case 0x1FD: {
