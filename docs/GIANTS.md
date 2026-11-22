@@ -78,9 +78,9 @@ change.
 | 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
 | 005214B0 | Youmu fighter | 46,755 | `FighterWhole005214B0F1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
 | 00543210 | Remilia fighter | 58,294 | `FighterWhole00543210F1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
-| 004CA6E0 | Sakuya object | 42,511 | `CharacterObjectActions004CA6E0F1222.cpp` | 447 | 12 | 004CCBD7 (#2526) |
+| 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` | 447 | 12 | 004CCBD7 (#2526) |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
-| 0050A580 | Patchouli object | 81,539 | `CharacterObjectWhole0050A580F1044.cpp` | 522 | 5 | 00515C0E (#10128) |
+| 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` | 522 | 5 | 00515C0E (#10128) |
 | 00536400 | Youmu object | 39,999 | `CharacterObjectActions00536400F1211.cpp` | 913 | 10 | 005392F8 (#3223) |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `CharacterObjectActions0057D580F1237.cpp` | 914 | 6 | 00583489 (#6565) |
@@ -1604,13 +1604,24 @@ baseline.
 
 ### 2026-11-22: Sakuya object Advance 004CA6E0 — action-808 register frontier
 
-A fresh target disassembly around the first register mismatch at `004CCBD7` clarifies the earlier shorthand that called this the “action-800 bounds guard”: the mismatching block is the later `case 808` in `CharacterObjectActions004CA6E0F1222.cpp`. `case 800` is a distinct block and uses the 1400/-160 horizontal bounds; action 808 uses 2000/-1000 horizontal bounds and 1000/-160 vertical bounds. The PE constants at `006583D8`, `006595E0`, `006583B4`, and `006595EC` decode to those four values.
+A fresh target disassembly around the first register mismatch at `004CCBD7` clarifies the earlier shorthand that called this the “action-800 bounds guard”: the mismatching block is the later `case 808` in `SakuyaObjectAdvanceF1222.cpp`. `case 800` is a distinct block and uses the 1400/-160 horizontal bounds; action 808 uses 2000/-1000 horizontal bounds and 1000/-160 vertical bounds. The PE constants at `006583D8`, `006595E0`, `006583B4`, and `006595EC` decode to those four values.
 
 The current object-advance frontier remains 42,511 bytes, with no mnemonic mismatches, 12 width differences, and 447 register-operand mismatches (441 instructions). Those register mismatches are confined to the `004CC000` and `004CD000` blocks and form the same three-register cycle: target EAX maps to source EDX, target ECX to source EAX, and target EDX to source ECX. The first occurrence is the action-808 bounds guard at `004CCBD7`.
 
 A target-shaped four-guard `goto` formulation was tested for action 808: four conditional branches to one out-of-bounds label, followed by an unconditional jump over the cleanup block to the in-bounds body. It cold-compiled to the same 447-register / 12-width frontier as the original `||` expression. Earlier condition-order, grouping, negation, qualification, and owner-alias experiments likewise did not improve this frontier. Do not repeat those syntax-only variants; the next useful step needs new evidence about live-register allocation at the action-808 block. No assembly, byte graft, padding, or fabricated locals were introduced.
 
 The action-808 source now names the four read-only arena bounds as `extern const float` references to `006583D8` (2000), `006595E0` (-1000), `006583B4` (1000), and `006595EC` (-160), matching the actual PE data reads instead of embedding equal-valued literals. The separate action-800 1400/-160 guard is unchanged. The focused frontier remains 447 GPR / 12 width differences: this is a source/data-identity correction, not an exactness claim. Constant-left, ternary, member-alias, and break/return rewrites were also measured without improving the register cycle.
+
+### 2026-11-22: promoted Sakuya and Patchouli object parents
+
+The complete natural-C++ parents for both large object state machines are now promoted from `probes/` into `src/`. Their ledger status is `reconstructed`, not `matching`; original function extents, source-origin classification and exactness are kept independent. The promotion does not claim a byte-exact replacement.
+
+- `0x004CA6E0` — `src/SakuyaObjectAdvanceF1222.cpp`, 42,511 target CODE bytes. The focused VC7.1 frontier remains 0 mnemonic, 12 width and 447 GPR differences; first GPR difference `0x004CCBD7`. The 12 width differences are the action-500..503 comparisons in the adjacent object action blocks, where the same EAX/ECX/EDX register cycle changes the accumulator `cmp` encoding. A positive-outer-guard rewrite of action 809 regressed the frontier; keep the original natural predicate until a new allocation hypothesis exists.
+- `0x0050A580` — `src/PatchouliObjectAdvanceF1044.cpp`, 81,539 target CODE bytes. The focused frontier remains 0 mnemonic, 5 width and 522 GPR differences; first GPR difference `0x00515C0E`, in Patchouli case `0x354`. The target/source difference is the same three-register cycle. A local `Fighter*` alias and three action/stage predicate orderings all regressed the instruction frontier; retain the original source form.
+
+The COFF section extents include generated switch data and must not be mistaken for function padding. Sakuya's separately recorded guarded dispatch uses a 224-byte table at `0x004D4CEF` and a 198-byte remap at `0x004D4DCF`; Patchouli's uses a 368-byte table at `0x0051E403` and a 199-byte remap at `0x0051E573`. Both dispatch guards, complete tables and remaps were independently revalidated against the original PE. The extra COFF extent is not a license to extend the C++ body, add padding, or graft table bytes into source.
+
+The parallel `SakuyaFighter::Advance()` frontier remains a separate 82,796-byte giant. Typed-short substitutions for its `F00/F02` counters and targeted `case 0x59` return/control-flow variants did not improve its 6,958-GPR / 12-width frontier. Keep the shared `FighterScriptedBounce59F813.inc` unchanged; the next step needs new register-allocation evidence, not another spelling-only edit. `/O1` and `/O2` compiler-profile trials changed thousands of mnemonics, so retain the locked `/Od` profile.
 
 For Reimu fighter `0045DD70`, the first width difference at `004605C6` is `cmp eax,0x96` (target) versus `cmp edx,0x96` (source), a register-choice encoding-width change rather than a missing action. The priority-mode `case 0x63` is already present through `ReimuEarlyRecoveryStatesF1184.inc` and `FighterMode63PriorityF627.inc`. Changing that comparison to hexadecimal, constant-left, casts, or a raw short load did not change the focused frontier; keep the existing natural C++ handler until a new register-allocation hypothesis is available. After the latest source update, the focused frontier's recorded COFF object size was refreshed from 62,090 to 61,926 bytes; the original target extent remains 60,999 bytes.
 
