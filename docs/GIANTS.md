@@ -1609,3 +1609,12 @@ A fresh target disassembly around the first register mismatch at `004CCBD7` clar
 The current object-advance frontier remains 42,511 bytes, with no mnemonic mismatches, 12 width differences, and 447 register-operand mismatches (441 instructions). Those register mismatches are confined to the `004CC000` and `004CD000` blocks and form the same three-register cycle: target EAX maps to source EDX, target ECX to source EAX, and target EDX to source ECX. The first occurrence is the action-808 bounds guard at `004CCBD7`.
 
 A target-shaped four-guard `goto` formulation was tested for action 808: four conditional branches to one out-of-bounds label, followed by an unconditional jump over the cleanup block to the in-bounds body. It cold-compiled to the same 447-register / 12-width frontier as the original `||` expression. Earlier condition-order, grouping, negation, qualification, and owner-alias experiments likewise did not improve this frontier. Do not repeat those syntax-only variants; the next useful step needs new evidence about live-register allocation at the action-808 block. No assembly, byte graft, padding, or fabricated locals were introduced.
+
+## 2026-11-22: promoted fighter action-state sources
+
+Two complete large fighter action-state bodies have moved from research-only probes into `src/` as natural C++ reconstructions. Their `functions.csv` status is `reconstructed`, not `matching`; `function-origins.csv` remains independently unclassified and no authored/exact origin credit is inferred.
+
+- `0x004AC040` — `src/SakuyaFighterAdvanceF1020.cpp`, full 82,796-byte native body. The focused frontier preserves the full extent and CFG. Current byte debt is 18,253 bytes, with 6,958 GPR operand positions and 12 instruction-width differences; first GPR divergence is `0x004ADEFA`.
+- `0x0045DD70` — `src/ReimuFighterAdvanceF1183.cpp`, full 60,999-byte native body. The focused frontier preserves the full extent and switch/control-flow shape. The first GPR divergence is `0x0045FDA9`; the first width divergence is `0x004605C6`, after which linear instruction decoding loses alignment.
+
+Both bodies are ordinary C++ composed from action-specific source fragments. No inline assembly, emitted bytes, padding, raw-code grafts, masks, or truncated comparisons were introduced. Their remaining compiler/codegen debt stays explicit and is the next reconstruction target.
