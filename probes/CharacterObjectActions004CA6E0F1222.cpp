@@ -7,12 +7,6 @@
 float __cdecl AngleAt00483300(float, float);
 extern float g_F1211_AngleDivAt00657828;
 extern signed char g_F1212_DifficultyAt006714D0;
-// The native action-800 trajectory uses the wider arena envelope, not the
-// 1400/-160 bounds used by the neighboring 00536400 object family.
-extern const float g_SakuyaObjectMaxXAt006583D8;
-extern const float g_SakuyaObjectMinXAt006595E0;
-extern const float g_SakuyaObjectMaxYAt006583B4;
-extern const float g_SakuyaObjectMinYAt006595EC;
 
 void SakuyaObject::Advance()
 {
@@ -74,7 +68,7 @@ void SakuyaObject::Advance()
                 ResetSecondaryCounter(6);
                 return;
             }
-            else if (x > g_SakuyaObjectMaxXAt006583D8 || x < g_SakuyaObjectMinXAt006595E0 || y > g_SakuyaObjectMaxYAt006583B4 || y < g_SakuyaObjectMinYAt006595EC) {
+            else if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) {
                 ClearFrameInfo();
                 return;
             }
