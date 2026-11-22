@@ -1,4 +1,4 @@
-// F874 selected original owner pointer +0x2E8, two native calls and owner X/float Y.
+// Native receiver split: clear/move the opponent, reset this fighter.
 // Native outer equality/inner range forms ONE real conditional with else zero.
 // 1FD has true original 6B CMP ECX,149 not yet normal VC7.1-restored.
 // Original whole giant NONEXACT, no inner-case callable exact credit.
@@ -15,7 +15,7 @@ case 0x1FE: {
             (*(&y))+g_F872Volley1FAYAt00659310,
             (facing),1);
         opponent->ClearMotionFields();
-        opponent->ResetPrimaryCounters(0x66);
+        ResetPrimaryCounters(0x66);
         opponent->x=float((facing)*80)+(x);
         ResetPrimaryCounters(0x200);
         return;
