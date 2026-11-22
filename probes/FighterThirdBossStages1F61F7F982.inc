@@ -19,8 +19,8 @@ case 0x1F6: {
     if ((animationStage)>3 && (animationStage)<6) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
-            SetAuxActionAt40FB40(6);
+            ClearMotionFields();
+            ResetSecondaryCounter(6);
             y=0.0f;
             break;
         }
@@ -32,39 +32,39 @@ case 0x1F6: {
             field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
-        SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070))
+        ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         field314=15.0f;
         field318=-20.0f;
         field31C=-60.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        PrepareActionAt453D40(3);
+        PlaySound(3);
     }
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
     break;
 }
 // F982 original native 004AC040 0x1F7 double-scaled fighter action
@@ -81,8 +81,8 @@ case 0x1F7: {
     if ((animationStage)>3 && (animationStage)<6) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
-            SetAuxActionAt40FB40(6);
+            ClearMotionFields();
+            ResetSecondaryCounter(6);
             y=0.0f;
             break;
         }
@@ -94,38 +94,38 @@ case 0x1F7: {
             field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
-        SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070))
+        ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         field314=15.0f;
         field318=-20.0f;
         field31C=-60.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
-        SpawnSevenFloatAt453B50(0x32A,
+        Fighter::SpawnTrackedEffect(0x32A,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        SpawnSevenFloatAt453B50(0x329,
+        Fighter::SpawnTrackedEffect(0x329,
             (x)+g_ThresholdAt0065782C,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
-        PrepareActionAt453D40(3);
+        PlaySound(3);
     }
     if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
-        SetAuxActionAt40FB40(2);
+        ResetSecondaryCounter(2);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        SetAuxActionAt40FB40(5);
+        ResetSecondaryCounter(5);
     break;
 }
