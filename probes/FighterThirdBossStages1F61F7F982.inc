@@ -63,11 +63,10 @@ case 0x1F6: {
         ResetSecondaryCounter(2);
         ++scriptCounterF00;
     }
-    if ((animationStage)!=6)
-        return;
-    if ((animationFrame)!=0)
-        return;
-    ResetSecondaryCounter(5);
+    if ((animationStage)==6) {
+        if ((animationFrame)==0)
+            ResetSecondaryCounter(5);
+    }
     return;
 }
 // F982 original native 004AC040 0x1F7 double-scaled fighter action
@@ -128,10 +127,9 @@ case 0x1F7: {
         ResetSecondaryCounter(2);
         ++scriptCounterF00;
     }
-    if ((animationStage)!=6)
-        return;
-    if ((animationFrame)!=0)
-        return;
-    ResetSecondaryCounter(5);
+    if ((animationStage)==6) {
+        if ((animationFrame)==0)
+            ResetSecondaryCounter(5);
+    }
     return;
 }

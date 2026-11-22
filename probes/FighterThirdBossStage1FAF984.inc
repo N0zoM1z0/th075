@@ -83,11 +83,10 @@ case 0x1FA: {
         ++scriptCounterF02;
         return;
     }
-    if ((animationStage)!=11)
-        return;
-    if ((animationFrame)!=0)
-        return;
-    ResetSecondaryCounter(9);
+    if ((animationStage)==11) {
+        if ((animationFrame)==0)
+            ResetSecondaryCounter(9);
+    }
     return;
 }
 // F983 natural source probe for real original 004AC040 1F9

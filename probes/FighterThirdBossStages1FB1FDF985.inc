@@ -88,11 +88,10 @@ case 0x1FB: {
         velocityY=3.0f;
         field05C=0.5f;
     }
-    if ((animationStage)!=13)
-        return;
-    if ((animationFrame)!=0)
-        return;
-    ResetSecondaryCounter(0xB);
+    if ((animationStage)==13) {
+        if ((animationFrame)==0)
+            ResetSecondaryCounter(0xB);
+    }
     return;
 }
 // F983 natural source probe for real original 004AC040 1F9
@@ -177,11 +176,10 @@ case 0x1FC: {
         velocityY=3.0f;
         field05C=0.5f;
     }
-    if ((animationStage)!=13)
-        return;
-    if ((animationFrame)!=0)
-        return;
-    ResetSecondaryCounter(0xB);
+    if ((animationStage)==13) {
+        if ((animationFrame)==0)
+            ResetSecondaryCounter(0xB);
+    }
     return;
 }
 // F983 natural source probe for real original 004AC040 1F9
@@ -266,11 +264,10 @@ case 0x1FD: {
         velocityY=3.0f;
         field05C=0.5f;
     }
-    if ((animationStage)!=13)
-        return;
-    if ((animationFrame)!=0)
-        return;
-    ResetSecondaryCounter(0xB);
+    if ((animationStage)==13) {
+        if ((animationFrame)==0)
+            ResetSecondaryCounter(0xB);
+    }
     return;
 }
 // F983 natural source probe for real original 004AC040 1F9
