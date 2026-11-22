@@ -10,7 +10,7 @@ class YoumuFighter : public Fighter {
 public:
     YoumuFighter();
     virtual ~YoumuFighter();
-    virtual void Advance(); // slot 1: nonexact giant at 005214B0
+    virtual void Advance(); // slot 1, native 005214B0, nonexact natural-C++ parent in YoumuFighterAdvanceF1040.cpp
 
     // Remaining nonshared call-shape probes. The 00453B50 and 00453C80
     // effects use Fighter's inherited typed methods.

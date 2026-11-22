@@ -55,7 +55,7 @@ differing = "45,90,142,192,295,651,691,1344,1652,1699,1727,1986,2014,2620,2800,2
 [frontiers.youmu-fighter-advance-005214b0]
 character = "Youmu"
 kind = "fighter"
-source = "probes/FighterWhole005214B0F1040.cpp"
+source = "src/YoumuFighterAdvanceF1040.cpp"
 flags = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 symbol = "?Advance@YoumuFighter@@UAEXXZ"
 address = 0x005214B0

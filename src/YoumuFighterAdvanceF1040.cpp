@@ -1,3 +1,6 @@
+// Natural-C++ reconstruction of YoumuFighter::Advance at 005214B0.
+// The complete 46,755-byte fighter state machine remains NONEXACT:
+// 2,736 GPR positions and five instruction widths still differ.
 #include "YoumuFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 extern float g_F898ShotYAt0065839C;

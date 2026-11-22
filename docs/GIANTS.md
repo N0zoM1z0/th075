@@ -76,7 +76,7 @@ change.
 | --- | --- | ---: | --- | ---: | ---: | --- |
 | 0045DD70 | Reimu fighter | 60,999 | `FighterWhole0045DD70F1183.cpp` | 6,311 | 5 | 0045FDA9 (#2292) |
 | 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
-| 005214B0 | Youmu fighter | 46,755 | `FighterWhole005214B0F1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
+| 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` | 447 | 12 | 004CCBD7 (#2526) |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
@@ -395,8 +395,12 @@ on the native fighter class. Thirteen source state files use actual
 The two 47,655-byte whole COFF bodies have identical nonrelocation bytes
 and all 1,491 relocation offsets/types; its 46,755-byte original CODE
 remains nonexact (2,736 GPR-role and five width differences, frontier
-16,833 differing bytes). All 85 exact units depending on the real fighter
-header cold-replayed in three affected-only groups (36/36, 25/25, 24/24).
+16,833 differing bytes). The complete natural-C++ source is now promoted to
+`src/YoumuFighterAdvanceF1040.cpp` and the ledger marks it `reconstructed`,
+not `matching`; the native vtable at `0x006598D0` confirms slot 1 points to
+`0x005214B0`. Its four guarded dispatch tables/remaps are independently
+verified. All 85 exact units depending on the real fighter header cold-replayed
+in three affected-only groups (36/36, 25/25, 24/24).
 
 The Reimu fighter, Alice object and Meiling object research parents now
 directly define `ReimuFighter::Advance`, `AliceObject::Advance`, and
