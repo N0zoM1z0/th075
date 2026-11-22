@@ -88,8 +88,6 @@ extern double g_ContactScaleAt006583E8;
 extern float g_ExtraThresholdAt00657D14;
 extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
-#define RAW reinterpret_cast<char*>(this)
-#define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 void SakuyaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -690,5 +688,3 @@ void SakuyaFighter::Advance() {
     }
 }
 #undef opponent
-#undef I16
-#undef RAW
