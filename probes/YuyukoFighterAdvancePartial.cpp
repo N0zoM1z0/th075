@@ -2769,10 +2769,13 @@ void YuyukoFighter::Advance() {
             opponent->field3CF = 1;
             return;
         }
-        if (color[0] < 250)
-            color[0] = static_cast<unsigned char>(color[0] + 5);
-        else
-            color[0] = 255;
+        if (color[0] != 255) {
+            if (color[0] < 250)
+                color[0] = static_cast<unsigned char>(color[0] + 5);
+            else
+                color[0] = 255;
+        }
+        facing = 1;
         x = 640.0f;
         y = 200.0f;
         if (opponent->health > 0) {
