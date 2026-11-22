@@ -66,7 +66,7 @@ public:
 class YuyukoObject : public CharacterObject {
 public:
     YuyukoObject(void* ownerFighter);
-    virtual void Advance();   // 0057D580; complete nonexact parent
+    virtual void Advance();   // 0057D580, nonexact natural-C++ parent in YuyukoObjectAdvanceF1237.cpp
 };
 class YukariObject : public CharacterObject {
 public:

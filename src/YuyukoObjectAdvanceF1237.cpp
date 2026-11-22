@@ -1,5 +1,6 @@
-// Complete research source for original 0057D580 (43,845 CODE bytes).
-// All native states are written; NONEXACT and not an accepted replacement.
+// Natural-C++ reconstruction of YuyukoObject::Advance at 0057D580.
+// The 43,845-byte object state machine is represented in full, but remains
+// NONEXACT; no exact replacement or original private-layout claim.
 #include "CharacterObject.hpp"
 #include "YuyukoFighter.hpp"
 #include "EffectServices.hpp"
