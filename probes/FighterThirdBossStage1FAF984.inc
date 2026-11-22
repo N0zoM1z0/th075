@@ -20,7 +20,7 @@ case 0x1FA: {
             velocityX=120.0f;
             velocityY=10.0f;
             field05C=0.4f;
-            break;
+            return;
         }
     }
     if ((animationStage)==9 || (animationStage)==10) {
@@ -34,7 +34,7 @@ case 0x1FA: {
             ClearMotionFields();
             ResetSecondaryCounter(0xB);
             y=0.0f;
-            break;
+            return;
         }
     }
     if ((animationStage)<8 && (animationStage)>1)
@@ -81,10 +81,13 @@ case 0x1FA: {
     if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF02)<4) {
         ResetSecondaryCounter(6);
         ++scriptCounterF02;
-        break;
+        return;
     }
-    if ((animationStage)==11 && (animationFrame)==0)
-        ResetSecondaryCounter(9);
-    break;
+    if ((animationStage)!=11)
+        return;
+    if ((animationFrame)!=0)
+        return;
+    ResetSecondaryCounter(9);
+    return;
 }
 // F983 natural source probe for real original 004AC040 1F9
