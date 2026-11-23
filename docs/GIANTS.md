@@ -1808,6 +1808,14 @@ lets VC7.1 reach EAX at `005F3904` with the target `0x210` stack
 frame and `[ebp-4]` receiver slot. The rotation update, completion call,
 reset, and two exits retain their original instructions and offsets.
 
+The read-only trace of the accepted source shows four extra requests
+after the completion comparison. Each stage operand contributes a
+receiver reload and a signed-word load, with C2 opcodes `0x1` and
+`0xC5`. Those requests advance the cursor from `108A9740` to
+`108A9738` and leave no emitted instructions. The next request is the
+reload at `005F3904`, which now selects EAX. The debugger build
+reproduces the cold build's complete section and relocation records.
+
 The canonical replay compares 34,877 bytes at `005EB520` with zero
 differences, including every byte of the 244-byte jump table at
 `005F3BA2` and the 199-byte remap at `005F3C96`. All 199 action
@@ -1816,4 +1824,5 @@ targets match. The unit credits the 34,434 bytes of authored code.
 
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit meiling-object-advance-005eb520
+scripts/repo-python .analysis/meiling-allocator/trace-run.py stage-exact
 ```
