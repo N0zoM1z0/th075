@@ -40,32 +40,29 @@ Target: the user-supplied Japanese TH075 v1.11 executable
 `resources/th075.exe`, SHA-256
 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 
-## Recently remeasured object frontiers
+## Previously measured object frontiers
 
-These four complete object parents were measured against the current source
-on 2026-11-20. `section` is the rebuilt COFF function size; the original CODE
-extent is the comparison target.
+These object parents were measured on 2026-11-20. `section` is the
+rebuilt COFF function size.
 
 | Character | Address | Original CODE | COFF section | Mnemonic differences | Width differences | GPR differences | First GPR difference |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Meiling | `005EB520` | 34,434 | 34,879 | 0 | 6 | 135 | `005F3904` (#9200) |
 | Yuyuko | `0057D580` | 43,845 | 44,327 | 23 | 28 | 897 | `00583489` (#6565) |
 | Yukari | `005A1600` | 43,599 | 44,104 | 0 | 11 | 613 | `005A88A8` (#7965) |
 | Suika | `005C9CC0` | 43,501 | 43,972 | 0 | 1 | 935 | `005D2558` (#9213) |
 
-The complete set of 11 nonexact parents and their compiler flags is in
+The nonexact parents and their compiler flags are in
 `config/frontiers.toml`. The other parent measurements are summarized in
 [GIANTS.md](GIANTS.md). A passing `check-frontier.py` is a nonregression
 result, not whole-function exactness.
 
-### Meiling action 998 register allocation
+### Meiling object Advance is exact
 
-The back end enters action 998's first reload with the EDX search
-position. An isolated deletion of the action 997 rotation update moves
-it to EAX and clears all of 998's register and width differences, while
-changing the preceding action's bytes and behavior. The maintained
-function still needs a source form that preserves the rotation store
-and reproduces the cursor at the 997/998 boundary. [Complete comparisons and replay commands](GIANTS.md#2026-11-23--meiling-action-998-inherits-the-scratch-register-cursor)
+`meiling-object-advance-005eb520` cold-replays 34,877 bytes with all 806
+relocations. The in-progress animation path in action 997 restores EAX
+at the first reload of action 998 and preserves the original stack,
+rotation update and exits. Coverage increases by 34,434 authored bytes.
+[Compiler evidence and replay command](GIANTS.md#meiling-now-cold-replays-exactly)
 
 ### Latest Yuyuko improvement
 
@@ -207,13 +204,12 @@ complete function.
 
 ## Remaining giant parents
 
-The 11 complete but nonexact parents are:
+The complete but nonexact parents are:
 
 - Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
   Remilia `00543210`.
 - Objects: Sakuya `004CA6E0`, Patchouli `0050A580`, Youmu `00536400`,
-  Yuyuko `0057D580`, Yukari `005A1600`, Suika `005C9CC0`, Meiling
-  `005EB520`.
+  Yuyuko `0057D580`, Yukari `005A1600`, Suika `005C9CC0`.
 
 The nine remaining functions without a complete parent are:
 
@@ -224,10 +220,8 @@ The nine remaining functions without a complete parent are:
   (61,872 bytes), Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0`
   (71,616 bytes), Meiling `005D73C0` (43,282 bytes).
 
-`docs/GIANTS.md` records the full sources, original extents, previous
-experiments and useful negative results. In particular, do not repeat the
-22 already-tried Meiling 997/998 source variants at `005F3904` or the
-rejected Sakuya 809/810 variants without new target evidence.
+`docs/GIANTS.md` records the full sources, original extents and
+previous experiments, including the rejected Sakuya 809/810 variants.
 
 ## Recent source checkpoints
 

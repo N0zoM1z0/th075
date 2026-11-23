@@ -216,6 +216,12 @@ before adding the base, in a different instruction order.
   in the untouched action 998 from EDX to EAX. Compare the cursor
   before selection alongside the emitted register and follow the case
   entries through the jump table. [Meiling compiler trace and replay](GIANTS.md#2026-11-23--meiling-action-998-inherits-the-scratch-register-cursor)
+- VC7.1 can allocate a condition's operands before removing an empty
+  branch. Alice action `0x38D` consumes two register choices for its
+  empty stage-3 path. Meiling's explicit in-progress stage path in
+  997 restores the original EAX at action 998 with the original frame,
+  calls, and exits. Both functions cold-replay exactly.
+  [Measured controls and complete comparison](GIANTS.md#cross-check-with-alices-eliminated-stage-test)
 - At a handful of joins the original instead takes the register state of the
   **first** conditional jump into the join (for `A && B`, the state after
   testing `A`). Those joins sit exactly where each giant's register debt

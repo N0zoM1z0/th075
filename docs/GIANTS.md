@@ -1,11 +1,11 @@
-# The 20 remaining giants
+# The remaining giants
 
-All 20 currently unmatched authored functions are slot-1 `Advance` methods
-from 11 fighter and nine character-object vtables: per-frame state machines
-with large `switch (action)` bodies, 34–83 KB each. Thirteen parents have a
-complete research source in `probes/`: Alice object `004EBDA0` and Remilia
-object `0055AC80` are now exact, leaving 11 complete but nonexact parents.
-The other nine remaining functions have no complete parent yet.
+The unmatched authored functions are slot-1 `Advance` methods from
+the fighter and character-object vtables. They are per-frame state
+machines with large `switch (action)` bodies. The Alice, Remilia and
+Meiling object parents now have exact replay units. Use the live
+reconstruction report for the authored backlog and the table below
+for complete source parents.
 
 Measure a parent with
 
@@ -66,11 +66,9 @@ including all 938 relocation records. Its nonexact register frontier remains.
 
 ## Complete research parents
 
-The table lists all 13 complete parents. Meiling, Yuyuko, Yukari and Suika
-were remeasured on 2026-11-20; the other rows retain their 2026-11-19
-measurements. Instruction, width and register counts are diagnostic measures,
-not byte equality; mnemonic/width drift can accompany a register-allocation
-change.
+The table lists the complete parents and their recorded comparisons.
+Instruction and width counts describe the nonexact builds. The exact
+rows have complete replay units.
 
 | Original | Character | Size | Parent | GPR debt | Widths | First GPR difference |
 | --- | --- | ---: | --- | ---: | ---: | --- |
@@ -86,7 +84,7 @@ change.
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` | 914 | 6 | 00583489 (#6565) |
 | 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` | 613 | 11 | 005A88A8 (#7965) |
 | 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` | 935 | 1 | 005D2558 (#9213) |
-| 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (no `/GS`) | 135 | 6 | 005F3904 (#9200) |
+| 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
 
@@ -1748,3 +1746,74 @@ Use the window between the last matching register request in 997 and
 the first in 998 when evaluating a new whole-function candidate. A
 source change must preserve the rotation store and both exits while
 explaining how the compiler reaches the target EAX choice.
+
+### Cross-check with Alice's eliminated stage test
+
+Alice action `0x38D` supplies a same-compiler example of allocations
+that change the register search without adding machine instructions.
+The accepted source's empty stage-3 arm still gives a complete
+33,731-byte match with 682 relocations. Removing only that arm keeps
+the extent and relocation fields but introduces 137 differing bytes
+starting at `004F344D`. The pinned read-only C2 trace shows two extra
+requests in the accepted build between offsets `+0x76A6` and
+`+0x76AC`. Their nodes have opcodes `0x1` and `0xC5`, the same
+opcodes as the adjacent receiver reload and signed-word load. Neither
+adds an instruction between the final scale store and the stage-4
+test. The two requests move the starting candidate for that test from
+ECX to EAX. Both traced objects agree with their ordinary builds.
+
+Meiling's first cross-check reached EAX while keeping action 997's
+rotation update. Both scratch versions store the actual frame advance result
+in a signed `short reachedStage` and retain the completion check and
+reset. Adding only the empty `else if (reachedStage == 0)` arm restores
+the target register sequence and instruction widths in 998. Both
+versions enlarge the frame from `0x210` to `0x214` and move `this`
+from `[ebp-4]` to `[ebp-8]`. The extra word store already differs
+at the earlier action, and both builds first differ in the prologue
+at `005EB525`.
+
+| Meiling control | CODE / full bytes | Full byte differences | Action 998 |
+| --- | ---: | ---: | --- |
+| Named short result | 34,447 / 34,890 | 24,827 | EDX, 135 register / 6 width differences |
+| Named short result with an explicit zero-result arm | 34,445 / 34,888 | 24,820 | EAX, 0 register / 0 width differences |
+
+All 806 relocation fields were applied in each comparison. Both remaps
+match and all 199 actions retain their destination blocks, but 185
+action entry offsets and the shared return offset move. Keeping the
+result in an `int` removes the cursor effect of the zero-result arm.
+Declaring the short `register` leaves its stack slot in place. Direct
+`goto` and `return` exits in 997 give the baseline comparison. The
+old baseline has 135 instruction-encoding differences when
+instructions are aligned and corresponding branch and relocation fields
+are accounted for. Every one is in action 998. The named-short pair's
+trace shows one extra `0xC5` request from the zero-result arm. It moves
+the cursor from EDX to EAX before the first reload in 998.
+
+```bash
+unset DISPLAY WAYLAND_DISPLAY
+export WINEDLLOVERRIDES='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d'
+scripts/repo-python .analysis/meiling-allocator/alice-control.py
+scripts/repo-python .analysis/meiling-allocator/trace-run.py alice-stage3 alice-default
+scripts/repo-python .analysis/meiling-allocator/playback-controls.py advance-short advance-short-playing
+scripts/repo-python .analysis/meiling-allocator/whole-playback.py advance-short advance-short-playing
+scripts/repo-python .analysis/meiling-allocator/trace-run.py advance-short advance-short-playing
+```
+
+### Meiling now cold-replays exactly
+
+Action 997 checks whether the animation is still in range after handling
+a completed animation. An in-progress stage continues on the next tick.
+Expressing that path directly as `else if (animationStage < animationStageCount)`
+lets VC7.1 reach EAX at `005F3904` with the target `0x210` stack
+frame and `[ebp-4]` receiver slot. The rotation update, completion call,
+reset, and two exits retain their original instructions and offsets.
+
+The canonical replay compares 34,877 bytes at `005EB520` with zero
+differences, including every byte of the 244-byte jump table at
+`005F3BA2` and the 199-byte remap at `005F3C96`. All 199 action
+entry offsets, 901 direct branches, and 806 relocation offsets and
+targets match. The unit credits the 34,434 bytes of authored code.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit meiling-object-advance-005eb520
+```

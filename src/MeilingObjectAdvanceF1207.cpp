@@ -1,9 +1,6 @@
 // Natural-C++ reconstruction of MeilingObject::Advance at 005EB520.
-// Original: 34,434 CODE bytes / 9,378 x86; generated switch data is separate.
-// NONEXACT: 135 GPR positions / six widths remain, all in state 998.
-// The original compile profile has no /GS flag; preserve that frontier.
-// Profile: /Od /Ob0 /Gy /GR- /GX- /Zi /I src, pinned VC7.1 build 3077.
-// Evidence: docs/OBJECT_ADVANCE_005EB520_WHOLE_F1207.md.
+// Replays 34,434 code bytes plus 443 bytes of switch data with VC7.1 build 3077.
+// Compiler profile and relocation bindings are in config/match-units.toml.
 // Uses the shared CharacterObject/Fighter classes and their native helpers.
 #include "CharacterObject.hpp"
 #include "MeilingFighter.hpp"
@@ -2582,6 +2579,8 @@ void MeilingObject::Advance() {
             if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(10);
                 break;
+            } else if (animationStage < animationStageCount) {
+                // A stage in progress continues on the next tick.
             }
         }
         break;

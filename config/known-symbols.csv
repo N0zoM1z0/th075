@@ -940,3 +940,4 @@ address,name,module,confidence,evidence
 0x00602A60,GameApplication::RunAt00602A60,GameApplication,inferred,R113; F1171; whole original WinMain 2987 CODE plus 60 owned DATA bytes/654 x86/173 fields; canonical one-unit cold exact; scene names/private field meanings provisional
 0x0045B850,CharacterObject::NoOpAt0045B850,BattleEffect,inferred,"13 native bytes; 11 PE direct game-owned callers; original private class name provisional; pure C++ empty thiscall RET 4; targeted cold exact"
 0x0055AC80,CharacterObject::AdvanceAt0055AC80,CharacterObject,inferred,R048; complete cold exact 28432-byte Remilia object Advance; original private owner identity/layout remain provisional
+0x005EB520,MeilingObject::Advance,MeilingObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
