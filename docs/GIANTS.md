@@ -1662,3 +1662,89 @@ Meiling object `005EB520` remains at 0 mnemonic / 6 width / 135 GPR differences,
 Sakuya fighter `004AC040` remains at 0 mnemonic / 12 width / 6,958 GPR differences. The first GPR mismatch `004ADEFA` is in action `0x59`. Plain/constant-left predicates, nested and goto control flow, local/register stage aliases, pointer/reference/volatile views, and later stage/frame predicate ordering were measured; none improved the whole-function frontier. Keep the existing `FighterScriptedBounce59F813.inc` source until a new allocation hypothesis has evidence.
 
 Eight affected-only cold leaf replays were independently exact in this batch: `Actor::ResetPrimaryCounters` (52 B), `Actor::ResetSecondaryCounter` (43 B), `Actor::AdvanceNestedFrame` (142 B), `Actor::ResetTransform` (158 B), `Actor::SetPolarVelocity` (57 B), `Fighter::ClearMotionFields` (51 B), `Fighter::SetCameraShake` (25 B), and `CharacterObject::PlaySharedSound` (29 B). These are real game helpers called by the giant state machines; no STL/CRT helper or unreferenced no-op was promoted as game logic. No full cold replay was run.
+
+## 2026-11-23 — Meiling action 998 inherits the scratch register cursor
+
+VC7.1 starts the first `this` reload of action 998 at the EDX entry of
+its scratch register search in the maintained build. Omitting only
+`rotationZ += 1.0f;` from action 997 in a scratch copy changes the
+action 998 entry to EAX and removes all 135 register and six instruction
+width differences within 998. Action 998's source is identical in both
+builds. The target executes the omitted update at `005F38C8–005F38D9`.
+
+The deletion removes two receiver reloads. Its first register difference
+in an instruction that survives the deletion is the sign extension of
+`AdvanceNestedFrame`'s result at target `005F38E2`. The result moves
+from EDX to EAX. The call still receives `this` in ECX and the two
+action 997 exits still target the shared return. Omitting the whole of
+997 also gives EAX, but makes 997 dispatch to the default. Omitting 996
+instead gives ECX at 998. Explicit `this` qualification of both sides of
+the facing assignment and appending the real
+`Actor::ResetSecondaryCounter` definition to the translation unit each
+reproduce the baseline code and relocation destinations. Pre- and
+post-increment, reversed addition, subtracting negative one, and
+returning immediately after the reset also keep the EDX entry.
+
+The read-only Wine/GDB builds used the pinned `c2.dll` and the Meiling
+frontier's `/Od /Ob0 /Gy /GR- /GX- /Zi` profile. They reproduced the
+ordinary builds' whole sections and relocation records. The search at
+`10775ACC` reads its starting pointer from `108A7D0C` via `10775443`.
+The entries at `108A9738`, `108A973C` and `108A9740` correspond to
+EAX, ECX and EDX. The store at `10776893` records the next position.
+The two receiver reloads for the baseline rotation update advance the
+cursor from `108A9738` through `108A973C` to `108A9740`. The
+rotation omission removes exactly those two requests. The next request
+in both builds is the sign extension at native `005F38E2`, which takes
+the first candidate at its respective search position.
+
+At the first reload in action 998, the baseline starts at `108A9740`
+and takes EDX, advancing to `108A9738`. Both omissions start at
+`108A9738` and take EAX, advancing to `108A973C`. The operands logged
+at emission site `107B1490` tie these choices to the reload from
+`[ebp-4]`. The search accepts the starting entry in each build.
+The target's original compiler inputs remain unknown.
+
+The full comparisons used the 34,877-byte target extent, including the
+61 jump words and 199 remap bytes. Existing bindings resolved every
+external call and the PE supplied the literal operands, whose bytes
+were checked against the COFF literal symbols. The object supplied the
+same-section relocation destinations.
+
+| Build | CODE / full bytes | COFF relocations | Full byte differences | Action 998 |
+| --- | ---: | ---: | ---: | --- |
+| Maintained, explicit `this`, or visible reset | 34,436 / 34,879 | 806 | 876 | EDX, 135 register / 6 width differences |
+| Omit action 997 | 34,032 / 34,471 | 800 | 1,817 | EAX, 0 register / 0 width differences |
+| Omit the action 997 rotation update | 34,416 / 34,859 | 805 | 1,207 | EAX, 0 register / 0 width differences |
+
+The byte totals include the unmatched end of the longer extent. In the
+baseline the first byte difference is at `005EB547`, a jump displacement
+to the shared return that moved by two bytes. Six CODE relocation
+coordinates move, along with both table pointers' destinations. All 901
+direct branches preserve their destination instructions, and all 199
+actions preserve their destination blocks. The same edge and dispatch
+checks pass in the rotation-omission build, with an identical remap and
+11 moved CODE relocation coordinates after the omitted update. That
+control has four register differences in the surviving tail of action
+997, starting at `005F38E2`. The maintained C++ still performs the
+rotation and the match ledger remains at its previous state.
+
+Replay from the repository root with the scratch helpers in
+`.analysis/meiling-allocator/` and the current
+[Meiling source](../src/MeilingObjectAdvanceF1207.cpp). The positive
+control removes the rotation update between the scale stores and the
+frame-advance call in `case 997`. The local negative control replaces
+`facing = owner->facing;` with `this->facing = this->owner->facing;`.
+
+```bash
+unset DISPLAY WAYLAND_DISPLAY
+export WINEDLLOVERRIDES='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d'
+scripts/repo-python .analysis/meiling-allocator/probe.py baseline explicit-this omit-997
+scripts/repo-python .analysis/meiling-allocator/followup.py visible-reset omit-997-rotation
+scripts/repo-python .analysis/meiling-allocator/audit.py baseline explicit-this visible-reset omit-997 omit-997-rotation
+scripts/repo-python .analysis/meiling-allocator/trace-run.py baseline omit-997-rotation
+```
+
+Use the window between the last matching register request in 997 and
+the first in 998 when evaluating a new whole-function candidate. A
+source change must preserve the rotation store and both exits while
+explaining how the compiler reaches the target EAX choice.

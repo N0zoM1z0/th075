@@ -209,6 +209,13 @@ before adding the base, in a different instruction order.
 - At `/Od` the compiler reloads `this` from its stack slot for every member
   access and cycles the scratch register eax → ecx → edx → eax from one load
   to the next. The cycle continues across statements and at most joins.
+- In the pinned VC7.1 back end the local scratch search reads its cursor
+  at `108A7D0C` and advances it at `10776893`. The Meiling object
+  comparison shows that the choice can carry across independent switch
+  arms. Removing one real update in action 997 moves the first reload
+  in the untouched action 998 from EDX to EAX. Compare the cursor
+  before selection alongside the emitted register and follow the case
+  entries through the jump table. [Meiling compiler trace and replay](GIANTS.md#2026-11-23--meiling-action-998-inherits-the-scratch-register-cursor)
 - At a handful of joins the original instead takes the register state of the
   **first** conditional jump into the join (for `A && B`, the state after
   testing `A`). Those joins sit exactly where each giant's register debt

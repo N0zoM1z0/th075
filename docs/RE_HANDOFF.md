@@ -58,6 +58,15 @@ The complete set of 11 nonexact parents and their compiler flags is in
 [GIANTS.md](GIANTS.md). A passing `check-frontier.py` is a nonregression
 result, not whole-function exactness.
 
+### Meiling action 998 register allocation
+
+The back end enters action 998's first reload with the EDX search
+position. An isolated deletion of the action 997 rotation update moves
+it to EAX and clears all of 998's register and width differences, while
+changing the preceding action's bytes and behavior. The maintained
+function still needs a source form that preserves the rotation store
+and reproduces the cursor at the 997/998 boundary. [Complete comparisons and replay commands](GIANTS.md#2026-11-23--meiling-action-998-inherits-the-scratch-register-cursor)
+
 ### Latest Yuyuko improvement
 
 In `probes/CharacterObjectActions0057D580F1237.cpp`, state 838's condition
