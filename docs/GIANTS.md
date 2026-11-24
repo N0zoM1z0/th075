@@ -79,6 +79,7 @@ rows have complete replay units.
 | 004AC040 | Sakuya fighter | 82,796 | `SakuyaFighterAdvanceF1020.cpp` (cold exact, `/GX`) | 0 | 0 | — |
 | 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` (cold exact) | 0 | 0 | — |
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` (cold exact) | 0 | 0 | — |
+| 00564BE0 | Yuyuko fighter | 61,872 | `YuyukoFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` (cold exact) | 0 | 0 | — |
@@ -492,75 +493,11 @@ and nonrelocation bytes; the independently complete 13-byte leaf
 cold-replays exact and adds one conservative exact unit. This is a
 native function, not ASM, a filler stub or a claim of original naming.
 
-Yuyuko fighter `00564BE0` has a natural-C++ partial `Advance` parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. Its 62,043-byte VC7.1 body now also
-covers the common horizontal-recovery groups `0x8F..0x90`, `0x96..0x98`,
-`0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5`.
-The source keeps the individual initial velocities, gauge accumulation,
-landing transitions, timer/effect side effects and action-specific counter
-resets. The missing direct boundary handlers `0x12C`, `0x186` and `0x1F4` are
-now explicit C++ bodies, preserving their motion decay, launch/effect, timer,
-sound and counter transitions. Direct boundary `0x2BC` is already present as
-decimal `case 700`, including the 48-effect burst. The dispatch comparisons now
-include the original singleton boundaries; eight affected shared leaf units
-replay 8/8 exact. Action `0x19E` now includes the previously missing stage-3 five-angle,
-three-layer barrage (`0x320..0x322`), its 300-frame timer/sound, velocity capture
-and restoration; seven affected leaf units replay exact. Actions `0x60` and `0x61` now have separate natural-C++ handlers with
-their original input-test grouping, effect burst, landing transition and
-velocity follow-up. Actions `0x8F` and `0x90` also retain separate handlers
-for their original horizontal-recovery state machines. The gauge-drift groups
-`0x96..0x98`, `0x9F..0xA1`, and `0x9A..0x9C` are likewise split into separate
-per-action handlers, retaining their individual velocities and counter targets.
-The `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5` movement actions now also
-retain separate C++ bodies for their distinct launch velocities and reset paths.
-Actions `0x252`, `0x253`, and `0x254` are separate as well; the spirit-recovery
-gate is restricted to `0x252/0x253` as in the target control flow. Effect
-actions `0x259`, `0x25A`, `0x25F`, `0x260`, `0x261`, and `0x262` now retain
-separate per-action handlers, including the original `0x25A` sound/gauge order.
-Low actions `1` and `3` also have separate handlers for their distinct
-primary-counter destinations. The `0x91` impact recovery, `200`, `0xC9..0xD0` command-driven movement and
-rebound actions, and action `400`'s repeated five-effect barrage are represented. Action 0x91's two 0x006406AC calls are __ftol2 float-to-short conversions
-of the projected velocity components; the unsupported extra PlaySharedSound
-call has been removed, and the shared-sound inventory now matches the target.
-All 125 original switch case labels across the seven ranges have explicit
-natural-C++ handlers, along with six singleton boundaries (0x32, 0x8C,
-0x12C, 0x186, 0x1F4, 0x2BC): 131 distinct action values total. The
-single flat source switch naturally compiles into the target's seven-range
-dispatch tree. The `0x303` fan has three independent countdown branches with paired
-20-shot loops and now reuses three loop-counter locals in the original
-`local_80`/`local_84`/`local_88` pairs. The `0x2F9` fan contains only the original
-repeat-level `0x38C` radial and `0x38D` random-position bursts; the misplaced
-`0x394..0x396` fan volley and countdown reset were removed from `0x2F9` because
-they are exclusively part of `0x303`. All ten random samples in the remaining
-`0x2F9` pattern call the exact `Actor::RecordedRange` leaf at `0x00455580`.
-The 139-byte random-range leaf cold-replays exact. Removing the misplaced
-0x303 volley reduced the VC7.1 body from 63,161 to 62,416 bytes, direct
-non-relocation differences from 53,477 to 52,265, and the stack frame from
-0x348 to 0x31C. Restoring all 27 field490 products to the target's
-double-precision fmul QWORD [0x6583E8] instead of narrowing the constant to
-float reduced the body to 62,254 bytes and direct differences to 51,620, with
-a 0x2B0 frame. Restoring action 0x192's missing effect-800 X offset,
-separating action 0x2E4's stage-7/stage-8 emissions, and normalizing all
-signed-facing offsets brought the body to 62,271 bytes (+399), 51,948 direct
-differences and a 0x2B8 frame. The latest shared-scratch source reduced that to 62,060 bytes (+188),
-51,937 direct differences and a 0x224 frame. Removing the unsupported action-0x91
-shared-sound call reduced the current body again to 62,043 bytes (+171), with
-51,920 direct differences and the same 0x224 frame. Fifteen targeted related leaf units replay 15/15 exact, and the five
-animation/reset/motion/camera leaves
-directly affected by the 0x91 correction replay 5/5 exact. An explicit nested
-seven-switch rewrite was tested and rejected: 62,204 bytes, 52,560 direct
-differences and a 0x240 frame. The flat switch already lowers into the
-target's seven-range dispatch tree. The parent remains partial with unresolved
-common/default control flow and code-generation differences, not an exact
-function.
-This is a partial reconstruction, not a whole-function exactness claim.
+Ghidra labels the shared call in Yuyuko fighter actions `0`, `2`, `0x5D`
+and `0x5E` as `Concurrency::details::ContextBase::ClearCancel`. Its
+destination `0x00453E20` is the exact `Fighter::ClearMotionFields` leaf.
+[Whole-function replay](#2026-11-24--yuyukos-fighter-advance-cold-replays-exactly)
 
-For Yuyuko fighter actions `0`, `2`, `0x5D`, and `0x5E`, Ghidra prints the
-stale `Concurrency::details::ContextBase::ClearCancel` label, but the original
-PE call target is `0x00453E20`, the exact `Fighter::ClearMotionFields` leaf.
-The current source call is correct; no separate cancel helper is implied.
-A duplicated 5D/5E source-body experiment added 357 bytes without improving
-the direct object comparison, so the compact shared C++ arm is retained.
 The first Yuyuko object GPR mismatch at `0x00583489` remains a register
 allocation difference at the stage-3 test. A later `0x838` branch group was
 also found to have a source-order mismatch: the original tests `field080 == 0`
@@ -940,36 +877,11 @@ are unchanged. This is source/interface recovery, not giant exact credit.
 ## Without a complete parent
 
 Fighters 00486550 (Marisa, 50,735 B), 004D7E70 (Alice, 43,601 B), 004F7130
-(Patchouli, 44,211 B), 00564BE0 (Yuyuko, 61,872 B), 0058AF60 (Yukari,
+(Patchouli, 44,211 B), 0058AF60 (Yukari,
 49,230 B), 005AEEC0 (Suika, 71,616 B) and 005D73C0 (Meiling, 43,282 B).
 `config/fighter-boss-dispatch-fingerprints.json` has their extents and jump
 tables. Each fighter shares its switch grammar with the others, so a new
 parent starts from the closest complete one plus the native case bodies.
-
-Yuyuko fighter `00564BE0` now has a 62,043-byte natural-C++ partial parent in
-`probes/YuyukoFighterAdvancePartial.cpp`. It covers the low movement actions,
-the observed `0x32..0x41` horizontal-drift cases, `0x46..0x4A` bounce/landing
-states, `0x4C`, `0x58..0x59`, `0x5D..0x63` recovery/input follow-ups, selected
-`0x12D..0x136` special-move phases, `0x187..0x18B`, `0x191..0x192`, `0x194`,
-`0x196..0x198`, `0x19A`, `0x19C`, `0x19E`, `0x1A0` repeated resource/effect bursts,
-action `700`'s 48-effect stage burst, knockout/continue transitions
-`0x1F5` and `0x252..0x256`, resource/impact states `599..600`,
-`0x259..0x25A`, `0x25F..0x265`, and `0x2BD..0x2C3` radial/impact
-patterns, difficulty-scaled `0x2DA` radial phases, manual-motion state `0x2DB`,
-`0x2E4` multi-phase effects, difficulty-scaled `0x2EE..0x2EF`, `0x2F8`
-recovery and the randomized polar/radial fan `0x2F9`, `0x302..0x303`,
-`0x31B..0x31C`, `0x8F..0x90`, `0x91`, `0x96..0x98`, `0x9A..0x9E`,
-`0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, `0xB4..0xB5`, `200`,
-`0xC9..0xD0`, `400`, and `0x8C`; the original function is 61,872 bytes.
-All 125 original switch labels plus six singleton boundaries have natural-C++
-handlers (131 distinct action values); common/default flow and code-generation
-differences remain. Action 0x91 now preserves both __ftol2 velocity conversions
-and no longer emits the unsupported shared sound. The current VC7.1 body is
-62,043 bytes versus the 61,872-byte target (+171), with 51,920 direct
-non-relocation byte differences and a 0x224 stack frame; this is an active
-partial reconstruction, not whole-function exactness. The
-13 exact Yuyuko translation units affected by its `YuyukoFighter.hpp` slot
-declaration cold-replay 13/13 exact.
 
 ## Why the register debt exists
 
@@ -2232,3 +2144,39 @@ Its 3,935 bytes and 52 relocations match with the typed receiver.
 ```sh
 scripts/repo-python scripts/replay-exact-units.py --unit marisa-object-advance-0049c8f0 --unit auxiliary-actor-update-004a80f0
 ```
+
+
+## 2026-11-24 — Yuyuko's fighter Advance cold-replays exactly
+
+`YuyukoFighter::Advance` at `0x00564BE0` covers 61,872 CODE bytes.
+The complete extent through the last remap is 62,746 bytes, with
+1,438 relocations, 1,575 direct branches and 131 jump words in seven
+tables. The five remaps and six singleton comparisons resolve 131
+explicit actions. The flat switch lowers to the original dispatch tree.
+Actions 0, 2, 4 and 5 reach the nested-frame call at `0x00573D81`.
+
+Two separate landing continuations in `0x5D` and `0x5E` restore the
+entry registers at `0x0056762C` and `0x005677E5`. The completed-animation
+and frame-zero launch paths in `0x60` and `0x61` share short internal
+exits at `0x00567AE4` and `0x00567DBA`. Keeping the later launch frames
+in `0x61` restores the EDX reload for `0x62` at `0x00567E3D`. Removing
+the copied zero-input arm from `0x62` then restores the EAX result at
+`0x00567F14`. This separates the previous action's register effect from
+the local effect after the two directional inputs.
+
+Removing only the launch continuation from the final source changes the
+reload at `0x00567E3D` to ECX and moves 968 code relocation fields. The
+full linked comparison reports 40,118 differing bytes, including the
+one-byte size increase. The control is repeatable with
+`scripts/repo-python .analysis/yuyuko-fighter-advance/continuation-control.py`
+after the cold replay.
+
+Action `0x303` needs three separate counters, each scoped to the pair of
+20-shot loops for its countdown branch. Case-scope declaration
+permutations leave the first and second counters transposed or move the
+first counter past the disp8 limit. Scoping each to its countdown arm
+restores `[ebp-0x7c]`, `[ebp-0x80]` and `[ebp-0x84]` and removes the
+last 24 differing bytes. The original opponent resets in `0x2F9` and
+`0x303`, signed input projections and x87 operand order are preserved.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit yuyuko-fighter-advance-00564be0

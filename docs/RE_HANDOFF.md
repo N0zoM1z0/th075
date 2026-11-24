@@ -122,118 +122,14 @@ paths in `0x1F8` through `0x1FA` restore the final register differences.
 The ledger credits 82,796 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--sakuyas-fighter-advance-cold-replays-exactly)
 
-### Yuyuko fighter Advance partial reconstruction
+### Yuyuko fighter Advance is exact
 
-`0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
-parent in `probes/YuyukoFighterAdvancePartial.cpp`, declared as
-`YuyukoFighter::Advance` in `src/YuyukoFighter.hpp`. The current 62,043-byte
-VC7.1 body covers actions `0..10`, the observed `0x32..0x41` cases,
-`0x46..0x4A`, `0x4C`, `0x58..0x59`, `0x5D..0x63`, `0x12C..0x136`
-special-move phases, `0x186..0x18B`, `0x191..0x192`, `0x194`, `0x196..0x198`,
-`0x19A`, `0x19C`, `0x19E`, `0x1A0`, `0x1F4..0x1F5`, `0x252..0x256`, `599`,
-`600`, `0x259..0x25A`, `0x25F..0x265`, action `700`, `0x2BD..0x2C3`,
-`0x2DA`, `0x2DB`, `0x2E4`, `0x2EE..0x2EF`, `0x2F8..0x2F9`,
-`0x302..0x303`, `0x31B..0x31C`, `0x8F..0x90`, `0x96..0x98`,
-`0x9A..0x9E`, `0x9F..0xA1`, `0xA3..0xA5`, `0xA7..0xA8`, `0xB4..0xB5`,
-actions `0x91`, `200`, `0xC9..0xD0`, `400`, and `0x8C`: horizontal drift,
-bounce/landing
-transitions, projected velocity, direction-sensitive recovery, input-driven
-follow-ups, repeated barrage and resource/effect bursts, hit-stop/counter
-resets, and the shared animation advance path. Action `0x2F9` now contains only
-its original repeat-level `0x38C` radial and `0x38D` random-position burst
-patterns; a copied `0x394..0x396` fan volley and its countdown reset were removed
-because those belong exclusively to action `0x303`. The `0x303` fan keeps its
-three independent countdown branches and paired 20-shot loops, while reusing
-three C++ loop counters in the same pairs as the original `local_80`,
-`local_84`, and `local_88` lifetimes.
-Action 0x192 now restores its original 50-unit facing-dependent X offset for
-effect 800; action 0x2E4 keeps separate stage-7 and stage-8 0x388 emissions.
-All 39 original signed-char facing products are accounted for: 38 reuse
-one natural C++ integer scratch, while action 0x18A retains its direct
-integer-promotion 0x97 product because that form emits the target instruction
-sequence. Action 0x91 now retains its two float-to-short velocity projections:
-the apparent calls to 0x006406AC are VC7.1 __ftol2 conversions, not random
-number calls. Its ground-contact path clears motion, resets primary counters
-to 0x61, applies camera shake and emits no extra shared sound; the shared-sound
-call inventory now matches the original exactly. Fifteen targeted animation,
-movement, range, reset, battle/aux-effect,
-sound, gauge, camera and word-helper leaf units replay 15/15 exact. The source
-uses one flat natural-C++ switch; VC7.1 already lowers it into the target's
-seven-range dispatch tree and six singleton-boundary checks. An explicit
-seven-switch source rewrite was tested but not retained: it compiled to
-62,204 bytes (+332), 52,560 direct differences and a 0x240 frame, all worse
-than the flat-switch candidate.
-
-All 125 original switch case labels across the seven ranges have explicit
-natural-C++ handlers, along with the six singleton boundaries `0x32`, `0x8C`,
-`0x12C`, `0x186`, `0x1F4` and `0x2BC` (131 distinct action values total). The
-original x87 inclusive ground-contact edge is preserved in the audited `0x91`,
-`0x9E`, `0xB4..0xB5`, `0xC9..0xCE` and `0xD0` actions. Actions `0x60` and
-`0x61` now have separate natural-C++ bodies, retaining their distinct original
-input-test grouping, effect burst, landing transition and velocity follow-up.
-Actions `0x8F` and `0x90` are also separate handlers rather than one shared
-branch, matching the original per-action dispatch layout. One decompiler label
-needs care: `Concurrency::details::ContextBase::ClearCancel` at the Yuyuko
-fighter actions `0`, `2`, `0x5D`, and `0x5E` resolves in target machine code to
-`0x00453E20`, the exact `Fighter::ClearMotionFields` leaf. The existing C++
-call is correct; do not invent a separate `ClearCancel` helper from that label.
-The 5D/5E duplicated-body experiment grew the object by 357 bytes without
-improving the direct byte comparison, so the shared source arm remains.
-The horizontal
-gauge-drift actions `0x96..0x98`, `0x9F..0xA1`, and `0x9A..0x9C` now retain
-separate handlers with their original per-action velocities and counter targets.
-Actions `0xA3..0xA5`, `0xA7..0xA8`, and `0xB4..0xB5` are now separate
-handlers as well, retaining their per-action launch velocities and reset paths.
-Actions `0x252`, `0x253`, and `0x254` are also separate; only `0x252/0x253`
-perform the spirit-recovery check, matching the original action-specific flow.
-Effect actions `0x259`, `0x25A`, `0x25F`, `0x260`, `0x261`, and `0x262` now
-retain separate handlers and their original per-action effect/timer constants;
-`0x25A` also restores the target sound-before-gauge call order. Three direct
-boundary actions that were absent from the source now have explicit handlers:
-`0x12C` (conditional motion clear, horizontal decay, effect `0x34C` and shared
-sound `0x1C`), `0x186` (initial horizontal launch, decay and effect `0x334`),
-and `0x1F4` (the timed `0x343` trail, auxiliary `0x7F` effect and its staged
-counter/sound transitions). The fourth direct boundary, `0x2BC`, was already
-implemented as decimal `case 700`, including its 48-effect stage burst; no
-duplicate case was added. The source now reproduces the target dispatch's
-singleton boundaries at `0x12C`, `0x186`, `0x1F4` and `0x2BC`. Their eight
-shared animation, motion-clear, battle/aux-effect and sound leaf units replay
-8/8 exact across three objects. The separate 37-byte `Fighter::SetNonnegativeWord`
-leaf used by action `700` / `0x2BC` also replays 1/1 exact. Action `0x19E`
-now restores its missing stage-3 barrage: `PlaySound(0)`, captures both velocity
-components through the original `0x657888` projection, starts the 300-frame
-gauge timer, emits five angles (`10 + 15*i`) with three layers (`0x320`, `0x321`,
-`0x322`) at `field318` values 2/6/10, then restores the saved velocity using
-`0x658044`. This replaces the incorrect `PlaySharedSound(0x1D)` placeholder.
-The affected animation, counter, motion-clear, timer, battle-effect and sound
-leaves replayed 7/7 exact. Low actions `1` and `3` retain separate handlers and
-their distinct primary-counter destinations (`2` and `0`). Low actions `6..9` retain their
-separate command gates, gravity/contact branches, per-action stage velocities
-and original secondary-counter behavior;
-the remaining common/default path and code-generation differences are still
-under investigation, so this is not a whole-function exactness claim.
-The latest shared-scratch VC7.1 body is 62,043 bytes versus the 61,872-byte
-target (+171), with 51,920 direct non-relocation byte differences and a
-0x224 stack frame. Reusing one integer scratch across 38 facing products
-reduced the previous 62,271-byte body by 211 bytes; removing action 0x91's
-unsupported shared-sound call then reduced it by another 17 bytes and brought
-direct differences down by another 17, with the frame unchanged. The prior
-corrections remain: removing the misplaced action-303 volley restored its
-three original loop-counter lifetimes, and preserving the target's double
-contact-scale multiply at all 27 call sites removed 27 conversion temporaries.
-Fifteen targeted animation, movement, range, reset, battle/aux-effect, sound,
-gauge, camera and word-helper leaf units replay 15/15 exact; the five directly
-affected animation/reset/motion/camera leaves replayed 5/5 after the 0x91 fix.
-The whole-function layout remains non-exact and needs further code-generation
-work.
-
-After adding the virtual slot declaration, the 13 exact Yuyuko header
-consumer units were cold-replayed individually: 13/13 exact across 11
-objects. The complete Yuyuko object `Advance` parent still builds with its
-existing 1,697-byte frontier and no regression. Continue from the remaining
-Yuyuko move cases in `.analysis/yuyuko-fighter-decompile.c`; do not replace
-the partial body with decompiler text or count its partial extent as a
-complete function.
+`yuyuko-fighter-advance-00564be0` cold-replays 62,746 bytes with seven
+jump tables, five remaps and 1,438 relocations. The landing and launch
+continuations close the register joins in `0x5E`, `0x5F` and `0x62`.
+The three loop counters scoped to the countdown branches in `0x303`
+restore the native stack slots. The ledger credits 61,872 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--yuyukos-fighter-advance-cold-replays-exactly)
 
 ## Remaining giant parents
 
@@ -241,7 +137,7 @@ The remaining authored functions are fighter `Advance` methods with
 partial or unstarted parents.
 
 - Marisa `00486550` (50,735 bytes), Alice `004D7E70` (43,601 bytes),
-  Patchouli `004F7130` (44,211 bytes), Yuyuko `00564BE0` (61,872 bytes).
+  Patchouli `004F7130` (44,211 bytes).
 - Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0` (71,616 bytes),
   Meiling `005D73C0` (43,282 bytes).
 

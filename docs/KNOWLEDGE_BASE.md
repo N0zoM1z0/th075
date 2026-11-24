@@ -317,6 +317,10 @@ before adding the base, in a different instruction order.
   temporaries live in which nested scopes) instead of renaming variables.
   Scoped lifetimes fixed the 0x24-byte frame of the config reader F259 and
   the quad/RECT order of the scene renderer (outer quad, inner RECT).
+- In Yuyuko fighter action `0x303`, three countdown branches each use a
+  counter across two loops. Declaring each counter inside its own branch
+  recovers all three native offsets after reordering the case-level
+  declarations failed. [Yuyuko fighter comparison](GIANTS.md#2026-11-24--yuyukos-fighter-advance-cold-replays-exactly)
 - Variable names can change slot assignment, but a name sweep without a
   lifetime model rarely converges.
 - Passing a typed null pointer rvalue to a `T* const&` parameter creates the
