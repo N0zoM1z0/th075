@@ -1,10 +1,7 @@
 #pragma once
-#include "SpriteDraw40CA80.hpp"
-#include <stdio.h>
+#include <windows.h>
+#include <stddef.h>
 
-// Pointer-only views; complete original owner and bitmap layouts are unknown.
-class BitmapPalette40C380 { public: void Load(const char*); };
-class BitmapPackSource40BF60 { public: bool LoadFile(const char*); void Encode(); };
 class TexturePack40BF60 {
 public:
     void Save(const char*, const char*, signed char);

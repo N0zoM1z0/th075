@@ -17694,7 +17694,7 @@ relocations = [
   { offset = 0x36, type = "REL32", symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ", target = 0x0040DD20 },
   { offset = 0x4E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x5C, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
-  { offset = 0x6D, type = "REL32", symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z", target = 0x0040C590 },
+  { offset = 0x6D, type = "REL32", symbol = "?Refresh@TextureManagerF198@@QAEXH@Z", target = 0x0040C590 },
   { offset = 0x76, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
   { offset = 0x83, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
   { offset = 0x96, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
@@ -17705,7 +17705,7 @@ source = "src/TexturePalette40C590.cpp"
 object = "build/matching/TexturePalette40C590.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["TexturePalette40C8C0::Refresh"]
-symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z"
+symbol = "?Refresh@TextureManagerF198@@QAEXH@Z"
 target_address = 0x0040C590
 size = 340
 compare_size = 340
@@ -17720,7 +17720,7 @@ relocations = [
   { offset = 0xDC, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
   { offset = 0x11F, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x135, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x13C, type = "REL32", symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z", target = 0x0041B990 },
+  { offset = 0x13C, type = "REL32", symbol = "?CopyTo@TextureEntryStorageF769@@QAEXPAXEI@Z", target = 0x0041B990 },
 ]
 
 [units."bitmap-upload-0041b990"]
@@ -17728,7 +17728,7 @@ source = "src/BitmapUpload41B990.cpp"
 object = "build/matching/BitmapUpload41B990.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapUpload40C590::CopyTo"]
-symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z"
+symbol = "?CopyTo@TextureEntryStorageF769@@QAEXPAXEI@Z"
 target_address = 0x0041B990
 size = 1448
 compare_size = 1530
@@ -17752,12 +17752,12 @@ source = "src/TextureUpload40C730.cpp"
 object = "build/matching/TextureUpload40C730.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["TextureUpload40C730::Upload"]
-symbol = "?Upload@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@PAPAUIDirect3DTexture8@@@Z"
+symbol = "?Upload@TextureUpload40C730@@QAEXPAUTextureEntryStorageF769@@PAPAUIDirect3DTexture8@@@Z"
 target_address = 0x0040C730
 size = 173
 compare_size = 173
 relocations = [
-  { offset = 0x95, type = "REL32", symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z", target = 0x0041B990 },
+  { offset = 0x95, type = "REL32", symbol = "?CopyTo@TextureEntryStorageF769@@QAEXPAXEI@Z", target = 0x0041B990 },
 ]
 
 [units."texture-upload-handle-0040c6f0"]
@@ -17765,13 +17765,13 @@ source = "src/TextureUpload40C730.cpp"
 object = "build/matching/TextureUpload40C730.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["TextureUpload40C730::UploadByHandle"]
-symbol = "?UploadByHandle@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@H@Z"
+symbol = "?UploadByHandle@TextureUpload40C730@@QAEXPAUTextureEntryStorageF769@@H@Z"
 target_address = 0x0040C6F0
 size = 54
 compare_size = 54
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
-  { offset = 0x2C, type = "REL32", symbol = "?Upload@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@PAPAUIDirect3DTexture8@@@Z", target = 0x0040C730 },
+  { offset = 0x2C, type = "REL32", symbol = "?Upload@TextureUpload40C730@@QAEXPAUTextureEntryStorageF769@@PAPAUIDirect3DTexture8@@@Z", target = 0x0040C730 },
 ]
 
 [units."bitmap-palette-load-0040c380"]
@@ -17779,7 +17779,7 @@ source = "src/BitmapPalette40C380.cpp"
 object = "build/matching/BitmapPalette40C380.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapPalette40C380::Load"]
-symbol = "?Load@BitmapPalette40C380@@QAEXPBD@Z"
+symbol = "?LoadPalette@TextureManagerF198@@QAEXPBD@Z"
 target_address = 0x0040C380
 size = 523
 compare_size = 523
@@ -17812,7 +17812,7 @@ relocations = [
   { offset = 0xC5, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0xFC, type = "DIR32", symbol = "$SG68785", target = 0x0065780C },
   { offset = 0x108, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
-  { offset = 0x11D, type = "REL32", symbol = "?Load@BitmapPalette40C380@@QAEXPBD@Z", target = 0x0040C380 },
+  { offset = 0x11D, type = "REL32", symbol = "?LoadPalette@TextureManagerF198@@QAEXPBD@Z", target = 0x0040C380 },
   { offset = 0x13F, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x166, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x188, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
@@ -17822,9 +17822,9 @@ relocations = [
   { offset = 0x216, type = "DIR32", symbol = "$SG68798", target = 0x0065781C },
   { offset = 0x222, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
   { offset = 0x23E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x245, type = "REL32", symbol = "?LoadFile@BitmapPackSource40BF60@@QAE_NPBD@Z", target = 0x0041A3D0 },
+  { offset = 0x245, type = "REL32", symbol = "?LoadFile@TextureEntryStorageF769@@QAE_NPBD@Z", target = 0x0041A3D0 },
   { offset = 0x257, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x25E, type = "REL32", symbol = "?Encode@BitmapPackSource40BF60@@QAEXXZ", target = 0x0041B400 },
+  { offset = 0x25E, type = "REL32", symbol = "?Encode@TextureEntryStorageF769@@QAEXXZ", target = 0x0041B400 },
   { offset = 0x270, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x288, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x2A0, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
@@ -17862,7 +17862,7 @@ source = "src/BitmapLoad41A3D0.cpp"
 object = "build/matching/BitmapLoad41A3D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapPackSource40BF60::LoadFile"]
-symbol = "?LoadFile@BitmapPackSource40BF60@@QAE_NPBD@Z"
+symbol = "?LoadFile@TextureEntryStorageF769@@QAE_NPBD@Z"
 target_address = 0x0041A3D0
 size = 3751
 compare_size = 3796
@@ -17898,7 +17898,7 @@ source = "src/BitmapEncode41B400.cpp"
 object = "build/matching/BitmapEncode41B400.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapPackSource40BF60::Encode"]
-symbol = "?Encode@BitmapPackSource40BF60@@QAEXXZ"
+symbol = "?Encode@TextureEntryStorageF769@@QAEXXZ"
 target_address = 0x0041B400
 size = 1383
 compare_size = 1424
@@ -17931,7 +17931,7 @@ source = "src/BitmapSerialized41B2B0.cpp"
 object = "build/matching/BitmapSerialized41B2B0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapSerialized41B2B0::Load"]
-symbol = "?Load@BitmapSerialized41B2B0@@QAEXPBUTextureRecordSnapshot40BF60@@@Z"
+symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTextureRecordSnapshot40BF60@@@Z"
 target_address = 0x0041B2B0
 size = 326
 compare_size = 326
@@ -17980,14 +17980,14 @@ relocations = [
   { offset = 0x2A9, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0x2DB, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x2EE, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x2F5, type = "REL32", symbol = "?Load@BitmapSerialized41B2B0@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
+  { offset = 0x2F5, type = "REL32", symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
   { offset = 0x304, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x316, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x328, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
   { offset = 0x338, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x34C, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x356, type = "REL32", symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z", target = 0x00401C20 },
-  { offset = 0x365, type = "REL32", symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z", target = 0x0040C590 },
+  { offset = 0x365, type = "REL32", symbol = "?Refresh@TextureManagerF198@@QAEXH@Z", target = 0x0040C590 },
   { offset = 0x374, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x383, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x395, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
@@ -18043,14 +18043,14 @@ relocations = [
   { offset = 0x294, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0x2C6, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x2D9, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x2E0, type = "REL32", symbol = "?Load@BitmapSerialized41B2B0@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
+  { offset = 0x2E0, type = "REL32", symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
   { offset = 0x2EF, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x301, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x313, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
   { offset = 0x323, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x337, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x341, type = "REL32", symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z", target = 0x00401C20 },
-  { offset = 0x350, type = "REL32", symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z", target = 0x0040C590 },
+  { offset = 0x350, type = "REL32", symbol = "?Refresh@TextureManagerF198@@QAEXH@Z", target = 0x0040C590 },
   { offset = 0x35F, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x36E, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x380, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
@@ -18074,7 +18074,7 @@ source = "src/BitmapLifecycle41A2D0.cpp"
 object = "build/matching/BitmapLifecycle41A2D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapLifecycle41A2D0::ConstructDefault"]
-symbol = "??0BitmapLifecycle41A2D0@@QAE@XZ"
+symbol = "??0TextureEntryStorageF769@@IAE@XZ"
 target_address = 0x0041A2D0
 size = 57
 compare_size = 57
@@ -18086,7 +18086,7 @@ source = "src/BitmapLifecycle41A2D0.cpp"
 object = "build/matching/BitmapLifecycle41A2D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapLifecycle41A2D0::ConstructWithFormat"]
-symbol = "??0BitmapLifecycle41A2D0@@QAE@E@Z"
+symbol = "??0TextureEntryStorageF769@@IAE@E@Z"
 target_address = 0x0041A310
 size = 105
 compare_size = 105
@@ -18098,7 +18098,7 @@ source = "src/BitmapLifecycle41A2D0.cpp"
 object = "build/matching/BitmapLifecycle41A2D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapLifecycle41A2D0::Destroy"]
-symbol = "??1BitmapLifecycle41A2D0@@QAE@XZ"
+symbol = "??1TextureEntryStorageF769@@IAE@XZ"
 target_address = 0x0041A380
 size = 75
 compare_size = 75
@@ -35540,7 +35540,7 @@ source = "src/BitmapDirectoryF206.cpp"
 object = "build/matching/BitmapDirectoryF206.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["TextureManager::LoadBitmapDirectory"]
-symbol = "?LoadBitmapDirectory@TextureManagerF206@@QAEXPBD@Z"
+symbol = "?LoadBitmapDirectory@TextureManagerF198@@QAEXPBD@Z"
 target_address = 0x0040B280
 size = 727
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
@@ -35551,22 +35551,22 @@ target = 0x0066FE30
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 33
 type = "REL32"
-symbol = "?Size@BitmapEntriesF206@@QAEHXZ"
+symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ"
 target = 0x0040DD20
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 105
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 137
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 165
 type = "DIR32"
-symbol = "?g_BitmapFormatAt006577F4@@3QBDB"
+symbol = "$SG62826"
 target = 0x006577F4
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 177
@@ -35576,67 +35576,67 @@ target = 0x006404F0
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 208
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 215
 type = "REL32"
-symbol = "?LoadFile@BitmapEntryF206@@QAE_NPBD@Z"
+symbol = "?LoadFile@TextureEntryStorageF769@@QAE_NPBD@Z"
 target = 0x0041A3D0
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 247
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 281
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 311
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 338
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 365
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 390
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 397
 type = "REL32"
-symbol = "?EncodeIndexedPalette@BitmapEntryF206@@QAEXXZ"
+symbol = "?Encode@TextureEntryStorageF769@@QAEXXZ"
 target = 0x0041B400
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 423
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 448
 type = "REL32"
-symbol = "?At@BitmapHandlesF206@@QAEPAPAUIDirect3DTexture8@@H@Z"
+symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z"
 target = 0x0040DEE0
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 470
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 496
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 506
@@ -35646,12 +35646,12 @@ target = 0x00401B20
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 527
 type = "REL32"
-symbol = "?Refresh@TextureManagerF206@@QAEXH@Z"
+symbol = "?Refresh@TextureManagerF198@@QAEXH@Z"
 target = 0x0040C590
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 548
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 569
@@ -35661,27 +35661,27 @@ target = 0x0064169D
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 593
 type = "REL32"
-symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 623
 type = "REL32"
-symbol = "?End@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@XZ"
+symbol = "?end@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0040DD00
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 661
 type = "REL32"
-symbol = "?Begin@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@XZ"
+symbol = "?begin@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0040DCE0
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 668
 type = "REL32"
-symbol = "??HBitmapIteratorF206@@QBE?AV0@H@Z"
+symbol = "??Hiterator@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBE?AV012@H@Z"
 target = 0x0040DFD0
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 692
 type = "REL32"
-symbol = "?Erase@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@V2@0@Z"
+symbol = "?erase@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE?AViterator@12@V312@0@Z"
 target = 0x0040DDC0
 [[units.texture-load-bitmap-directory-0040b280.relocations]]
 offset = 717
@@ -35694,7 +35694,7 @@ source = "src/BitmapDirectoryFormatF207.cpp"
 object = "build/matching/BitmapDirectoryFormatF207.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["TextureManager::LoadBitmapDirectoryWithFormat"]
-symbol = "?LoadBitmapDirectoryWithFormat@TextureManagerF207@@QAEXPBD@Z"
+symbol = "?LoadBitmapDirectoryWithFormat@TextureManagerF198@@QAEXPBD@Z"
 target_address = 0x0040B560
 size = 575
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
@@ -35705,22 +35705,22 @@ target = 0x0066FE30
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 33
 type = "REL32"
-symbol = "?Size@BitmapEntriesF207@@QAEHXZ"
+symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ"
 target = 0x0040DD20
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 105
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 137
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 165
 type = "DIR32"
-symbol = "?g_BitmapFormatAt00657800@@3QBDB"
+symbol = "$SG62826"
 target = 0x00657800
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 177
@@ -35730,37 +35730,37 @@ target = 0x006404F0
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 208
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 215
 type = "REL32"
-symbol = "?LoadFile@BitmapEntryF207@@QAE_NPBD@Z"
+symbol = "?LoadFile@TextureEntryStorageF769@@QAE_NPBD@Z"
 target = 0x0041A3D0
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 247
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 272
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 296
 type = "REL32"
-symbol = "?At@BitmapHandlesF207@@QAEPAPAUIDirect3DTexture8@@H@Z"
+symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z"
 target = 0x0040DEE0
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 318
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 344
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 354
@@ -35770,12 +35770,12 @@ target = 0x00401C20
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 375
 type = "REL32"
-symbol = "?Refresh@TextureManagerF207@@QAEXH@Z"
+symbol = "?Refresh@TextureManagerF198@@QAEXH@Z"
 target = 0x0040C590
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 396
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 417
@@ -35785,27 +35785,27 @@ target = 0x0064169D
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 441
 type = "REL32"
-symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z"
 target = 0x0040DD60
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 471
 type = "REL32"
-symbol = "?End@BitmapEntriesF207@@QAE?AVBitmapIteratorF207@@XZ"
+symbol = "?end@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0040DD00
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 509
 type = "REL32"
-symbol = "?Begin@BitmapEntriesF207@@QAE?AVBitmapIteratorF207@@XZ"
+symbol = "?begin@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0040DCE0
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 516
 type = "REL32"
-symbol = "??HBitmapIteratorF207@@QBE?AV0@H@Z"
+symbol = "??Hiterator@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBE?AV012@H@Z"
 target = 0x0040DFD0
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 540
 type = "REL32"
-symbol = "?Erase@BitmapEntriesF207@@QAE?AVBitmapIteratorF207@@V2@0@Z"
+symbol = "?erase@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE?AViterator@12@V312@0@Z"
 target = 0x0040DDC0
 [[units.texture-load-bitmap-directory-format-0040b560.relocations]]
 offset = 565
@@ -46661,58 +46661,58 @@ source = "src/ArchiveCatalogCloseF341.cpp"
 object = "build/matching/ArchiveCatalogCloseF341.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ArchiveCatalog::CloseNamed"]
-symbol = "?CloseNamed@ArchiveCatalogF341@@YAXPBD@Z"
+symbol = "?CloseNamed@ArchiveCatalog@@SAXPBD@Z"
 target_address = 0x0041D080
 size = 264
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 11
 type = "DIR32"
-symbol = "?g_ArchiveNamesF341@@3UNameDequeF341@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 16
 type = "REL32"
-symbol = "?BeginInto@NameDequeF341@@QAEXPAUNameIteratorF341@@@Z"
+symbol = "?begin@?$deque@PADV?$allocator@PAD@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041DCF0
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 25
 type = "DIR32"
-symbol = "?g_ArchiveNamesF341@@3UNameDequeF341@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 30
 type = "REL32"
-symbol = "?EndInto@NameDequeF341@@QAEXPAUNameIteratorF341@@@Z"
+symbol = "?end@?$deque@PADV?$allocator@PAD@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041DD20
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 39
 type = "DIR32"
-symbol = "?g_ArchiveResourcesF341@@3UResourceDequeF341@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 44
 type = "REL32"
-symbol = "?BeginInto@ResourceDequeF341@@QAEXPAUResourceIteratorF341@@@Z"
+symbol = "?begin@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041DA90
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 53
 type = "DIR32"
-symbol = "?g_ArchiveResourcesF341@@3UResourceDequeF341@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 58
 type = "REL32"
-symbol = "?EndInto@ResourceDequeF341@@QAEXPAUResourceIteratorF341@@@Z"
+symbol = "?end@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041DAC0
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 70
 type = "REL32"
-symbol = "??9NameIteratorF341@@QBE_NABU0@@Z"
+symbol = "??9const_iterator@?$deque@PADV?$allocator@PAD@std@@@std@@QBE_NABV012@@Z"
 target = 0x0041DFD0
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 93
 type = "REL32"
-symbol = "??DNameIteratorF341@@QBEAAPADXZ"
+symbol = "??Diterator@?$deque@PADV?$allocator@PAD@std@@@std@@QBEAAPADXZ"
 target = 0x0041DF70
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 101
@@ -46722,42 +46722,42 @@ target = 0x006416B0
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 116
 type = "REL32"
-symbol = "??DResourceIteratorF341@@QBEAAPAVArchiveResourceF341@@XZ"
+symbol = "??Diterator@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QBEAAPAVDataArchiveF481@@XZ"
 target = 0x0041E000
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 143
 type = "REL32"
-symbol = "??_GArchiveResourceF341@@QAEPAXI@Z"
+symbol = "??_GDataArchiveF481@@QAEPAXI@Z"
 target = 0x0041D8C0
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 172
 type = "DIR32"
-symbol = "?g_ArchiveResourcesF341@@3UResourceDequeF341@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 177
 type = "REL32"
-symbol = "?Erase@ResourceDequeF341@@QAE?AUResourceIteratorF341@@U2@@Z"
+symbol = "?erase@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAE?AViterator@12@V312@@Z"
 target = 0x0041DC90
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 205
 type = "DIR32"
-symbol = "?g_ArchiveNamesF341@@3UNameDequeF341@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 210
 type = "REL32"
-symbol = "?Erase@NameDequeF341@@QAE?AUNameIteratorF341@@U2@@Z"
+symbol = "?erase@?$deque@PADV?$allocator@PAD@std@@@std@@QAE?AViterator@12@V312@@Z"
 target = 0x0041DF10
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 237
 type = "REL32"
-symbol = "??ENameIteratorF341@@QAE?AU0@H@Z"
+symbol = "??Eiterator@?$deque@PADV?$allocator@PAD@std@@@std@@QAE?AV012@H@Z"
 target = 0x0041DF90
 [[units.archive-catalog-close-named-0041d080.relocations]]
 offset = 251
 type = "REL32"
-symbol = "??EResourceIteratorF341@@QAE?AU0@H@Z"
+symbol = "??Eiterator@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x0041E020
 
 
@@ -46766,7 +46766,7 @@ source = "src/ArchiveAppendFileF342.cpp"
 object = "build/matching/ArchiveAppendFileF342.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["DataArchive::AppendReadableFileAt0041D6C0"]
-symbol = "?AppendReadableFile@DataArchiveF342@@QAEXPBD@Z"
+symbol = "?AppendReadableFile@DataArchiveF481@@QAEXPBD@Z"
 target_address = 0x0041D6C0
 size = 133
 [[units.data-archive-append-readable-file-0041d6c0.relocations]]
@@ -46797,7 +46797,7 @@ target = 0x00657138
 [[units.data-archive-append-readable-file-0041d6c0.relocations]]
 offset = 115
 type = "REL32"
-symbol = "?AddEntry@ArchiveEntryListF342@@QAEXABUArchiveWireEntryF342@@@Z"
+symbol = "?push_back@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXABUArchiveWireEntryF250@@@Z"
 target = 0x0041D9C0
 [[units.data-archive-append-readable-file-0041d6c0.relocations]]
 offset = 123

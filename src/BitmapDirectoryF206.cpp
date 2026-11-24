@@ -1,84 +1,40 @@
-#include <windows.h>
-#include <d3d8.h>
+#include "TextureManagerF198.hpp"
+#include "GraphicsTexture.hpp"
 #include <stdio.h>
 #include <stdlib.h>
-// Private diagnostic only: record and vector owner types are deliberately
-// call-only and do not establish complete original C++ class layouts.
-extern const char g_BitmapFormatAt006577F4[];
-class BitmapEntryF206 {
-public:
-    bool LoadFile(const char* path);
-    void EncodeIndexedPalette();
-};
-class BitmapIteratorF206 {
-public:
-    // Original native iterator temporaries are four-byte pointer views.
-    unsigned char* storage;
-    BitmapIteratorF206 operator+(int offset) const;
-};
-typedef char IteratorPhysicalSizeF206[(sizeof(BitmapIteratorF206)==4)?1:-1];
-class BitmapEntriesF206 {
-public:
-    int Size();
-    unsigned char* At(int index);
-    BitmapIteratorF206 Begin();
-    BitmapIteratorF206 End();
-    BitmapIteratorF206 Erase(BitmapIteratorF206 first, BitmapIteratorF206 last);
-};
-class BitmapHandlesF206 {
-public:
-    IDirect3DTexture8** At(int index);
-};
-namespace Graphics {
-    bool Create16BitTexture(unsigned short width,unsigned short height,
-                            IDirect3DTexture8** texture);
-}
-class TextureManagerF206 {
-public:
-    void LoadBitmapDirectory(const char*);
-    void Refresh(int index);
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x004 - 0x000];
-    unsigned long field004;
-    unsigned char unknown008[0x04C - 0x008];
-    unsigned char field04C;
-};
-#define ENTRIES reinterpret_cast<BitmapEntriesF206*>(reinterpret_cast<unsigned char*>(this)+8)
-#define HANDLES reinterpret_cast<BitmapHandlesF206*>(reinterpret_cast<unsigned char*>(this)+0x18)
-#define ENTRY(type,off) (*reinterpret_cast<type*>(ENTRIES->At(work.index)+(off)))
-void TextureManagerF206::LoadBitmapDirectory(const char* baseDir)
+
+#define ENTRY entries[work.index]
+void TextureManagerF198::LoadBitmapDirectory(const char* baseDir)
 {
     struct BitmapDirectoryWork {
-    int index;
-    int total;
-    char filename[260];
+        int index;
+        int total;
+        char filename[260];
     } work;
-    work.total = ENTRIES->Size();
-    for (work.index=0; work.index<work.total; ++work.index) {
-        ENTRY(unsigned char,0) = field04C;
-        ENTRY(DWORD,0x14) = field004;
-        sprintf(work.filename,g_BitmapFormatAt006577F4,baseDir,work.index);
-        if (reinterpret_cast<BitmapEntryF206*>(ENTRIES->At(work.index))->LoadFile(work.filename)) {
-            if (ENTRY(unsigned int,4)<256 && ENTRY(unsigned int,8)<256 &&
-                (ENTRY(unsigned int,8)>64 || ENTRY(unsigned int,8)>64)) {
-                ENTRY(unsigned char,0x28)=1;
-                reinterpret_cast<BitmapEntryF206*>(ENTRIES->At(work.index))->EncodeIndexedPalette();
+    work.total = static_cast<int>(entries.size());
+    for (work.index = 0; work.index < work.total; ++work.index) {
+        ENTRY.uploadFormat = textureDepth;
+        ENTRY.palette = palette;
+        sprintf(work.filename, "%s\\%04d.bmp", baseDir, work.index);
+        if (ENTRY.LoadFile(work.filename)) {
+            if (ENTRY.storedWidth < 256 && ENTRY.storedHeight < 256 &&
+                (ENTRY.storedHeight > 64 || ENTRY.storedHeight > 64)) {
+                ENTRY.paletteFlag = 1;
+                ENTRY.Encode();
             } else {
-                ENTRY(unsigned char,0x28)=0;
+                ENTRY.paletteFlag = 0;
                 Graphics::Create16BitTexture(
-                    ENTRY(unsigned short,4),ENTRY(unsigned short,8),HANDLES->At(work.index));
+                    static_cast<unsigned short>(ENTRY.storedWidth),
+                    static_cast<unsigned short>(ENTRY.storedHeight), &textures[work.index]);
                 Refresh(work.index);
-                void* buffer = ENTRY(void*,0x1c);
+                void* buffer = ENTRY.pixels;
                 free(buffer);
-                ENTRY(void*,0x1c) = 0;
+                ENTRY.pixels = 0;
             }
         } else {
-            ENTRIES->Erase(ENTRIES->Begin() + work.index, ENTRIES->End());
+            entries.erase(entries.begin() + work.index, entries.end());
             work.total = work.index;
         }
     }
 }
 #undef ENTRY
-#undef HANDLES
-#undef ENTRIES

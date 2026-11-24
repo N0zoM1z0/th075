@@ -1,24 +1,9 @@
 #include "GraphicsTexture.hpp"
 #include "TextureManagerF198.hpp"
-#include <stddef.h>
+#include "TexturePack40BF60.hpp"
 #include <new>
 
-// Complete source-compatible value, identical to the accepted save/load views.
-struct TextureRecordSnapshot40BF60 {
-    int width, height, stride;
-    unsigned char depth;
-    DWORD encodedSize;
-    void* data;
-};
-
-typedef char LoadRecordSize40B7C0[(sizeof(TextureRecordSnapshot40BF60) == 24) ? 1 : -1];
-typedef char LoadRecordDepth40B7C0[(offsetof(TextureRecordSnapshot40BF60, depth) == 12) ? 1 : -1];
-typedef char LoadRecordEncoded40B7C0[(offsetof(TextureRecordSnapshot40BF60, encodedSize) == 16) ? 1 : -1];
-typedef char LoadRecordData40B7C0[(offsetof(TextureRecordSnapshot40BF60, data) == 20) ? 1 : -1];
-
 // These owner/container interfaces are pointer-only and never instantiated.
-class TexturePalette40C8C0 { public: void Refresh(int); };
-class BitmapSerialized41B2B0 { public: void Load(const TextureRecordSnapshot40BF60*); };
 class TexturePackLoad40B7C0 {
 public:
     void Load(const char*, signed char);
@@ -78,10 +63,10 @@ void TexturePackLoad40B7C0::Load(const char* filename, signed char selectedPalet
             record.data = new BYTE[(static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3];
             ReadFile(sourceFile, record.data, (static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3, &dwRead, 0);
         }
-        reinterpret_cast<BitmapSerialized41B2B0*>(&ENTRY)->Load(&record);
+        ENTRY.LoadSerialized(&record);
         delete[] static_cast<BYTE*>(record.data);
         Graphics::CreateTexture(static_cast<unsigned short>(ENTRY.storedWidth), static_cast<unsigned short>(ENTRY.storedHeight), &MANAGER->textures[index], ENTRY.uploadFormat);
-        reinterpret_cast<TexturePalette40C8C0*>(this)->Refresh(index);
+        MANAGER->Refresh(index);
         delete[] ENTRY.pixels;
         ENTRY.pixels = 0;
     }

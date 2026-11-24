@@ -103,6 +103,14 @@ named size and offset fields. A headless consumer opened a synthetic
 archive containing one encoded index record, sought to its payload with
 both methods and read the expected bytes.
 
+Appending a readable file uses the same 108-byte index record as the
+reader. Named close uses the registered-name and object deques directly.
+VC7.1 placed the four iterator locals at different offsets under the
+first set of names. The current names reproduce the 264-byte function
+and all 19 relocation fields with ordinary iterator initialization.
+A headless library consumer appended an entry, closed the first of two
+registered archives and found the remaining archive by name.
+
 The 20-byte sound bank starts with a VC7.1 vector of DirectSound buffer
 pointers. Its count field is at `+0x10`. Startup and fighter initialization
 call the same constructor. Playback uses unchecked indexing for the null
@@ -193,10 +201,20 @@ made VC7.1 place the RECT at `[ebp-0x10]` in both declaration orders. The
 on the existing combined stack carrier.
 
 The texture manager stores a VC7.1 vector of 44-byte entries at `+0x08`
-and two vectors of texture pointers at `+0x18` and `+0x28`. Texture
-lookup, pack I/O, sprite dimensions, and resource release use those same
-members. The entry's bitmap fields extend through the pixels pointer
-at `+0x1C`. The bitmap subobject's full extent remains open.
+and two vectors of texture pointers at `+0x18` and `+0x28`. Both bitmap
+directory loaders use those vectors along with pack I/O, texture lookup,
+and release. Bitmap load, encode, and upload use the entry's named fields.
+The entry constructor and destructor each call the bitmap lifetime
+routine at offset zero. The source models the observed 44-byte slot as
+shared storage. The historical bitmap subobject's extent remains open.
+
+The serialized bitmap loader calls the scalar allocator entry at
+`0x0064159D` for byte arrays under its original VC7.1 profile. Pulling
+the texture-manager templates into its translation unit changed those
+three COFF relocations to the array allocator. The smaller shared record
+header restores the scalar binding and the complete 326-byte comparison.
+A headless library consumer loaded a synthetic 8-bit BMP and checked
+its palette colors before and after encoding.
 
 WinMain's graphics client occupies a standalone byte and both lifetime
 methods update a shared count. A client member at manager offset zero

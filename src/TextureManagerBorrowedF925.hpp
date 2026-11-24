@@ -2,14 +2,16 @@
 #include <windows.h>
 #include <stddef.h>
 
-// The native vector stores complete 44-byte entries. The bitmap methods
-// receive the entry address and access the first group of fields.
-struct NativeTextureElementF769 {
+struct TextureRecordSnapshot40BF60;
+
+// Storage for one complete 44-byte vector entry. Bitmap operations receive
+// the entry address and access its leading fields.
+struct TextureEntryStorageF769 {
     BYTE uploadFormat;
     BYTE unknown01[3];
-    int storedWidth;
-    int storedHeight;
-    int storedStride;
+    unsigned int storedWidth;
+    unsigned int storedHeight;
+    unsigned int storedStride;
     DWORD encodedSize;
     WORD* palette;
     BYTE ownsPalette;
@@ -18,6 +20,19 @@ struct NativeTextureElementF769 {
     BYTE unknown20[8];
     BYTE paletteFlag;
     BYTE unknown29[3];
+
+    bool LoadFile(const char* filename);
+    void Encode();
+    void LoadSerialized(const TextureRecordSnapshot40BF60* record);
+    void CopyTo(void* output, unsigned char depth, unsigned int outputWidth);
+
+protected:
+    TextureEntryStorageF769();
+    explicit TextureEntryStorageF769(BYTE format);
+    ~TextureEntryStorageF769();
+};
+
+struct NativeTextureElementF769 : public TextureEntryStorageF769 {
     NativeTextureElementF769();
     ~NativeTextureElementF769();
 };

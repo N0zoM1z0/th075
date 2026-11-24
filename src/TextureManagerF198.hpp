@@ -31,6 +31,10 @@ public:
     void AllocateUnformattedSlots(int count);
     void LoadDefault(const char* filename, const char* archiveName);
     void Load(const char* filename, signed char selectedPalette, const char* archiveName);
+    void LoadPalette(const char* filename);
+    void LoadBitmapDirectory(const char* baseDir);
+    void LoadBitmapDirectoryWithFormat(const char* baseDir);
+    void Refresh(int index);
     void Present();
     void SetBlendMode(int mode);
     void SetDepthMode(int mode);

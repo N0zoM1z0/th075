@@ -1,12 +1,11 @@
 #pragma once
 #include "SpriteDraw40CA80.hpp"
 
-// Pointer-only interfaces; complete original owner/bitmap layouts are unknown.
-class BitmapUpload40C590 { public: void CopyTo(void*, unsigned char, unsigned int); };
+struct TextureEntryStorageF769;
 class TextureUpload40C730 {
 public:
-    void Upload(BitmapUpload40C590*, IDirect3DTexture8**);
-    void UploadByHandle(BitmapUpload40C590*, int);
+    void Upload(TextureEntryStorageF769*, IDirect3DTexture8**);
+    void UploadByHandle(TextureEntryStorageF769*, int);
 };
 
 typedef char SurfaceSize40C730[(sizeof(D3DSURFACE_DESC) == 32) ? 1 : -1];

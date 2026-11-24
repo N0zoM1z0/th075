@@ -1,79 +1,33 @@
-#include <windows.h>
-#include <d3d8.h>
+#include "TextureManagerF198.hpp"
+#include "GraphicsTexture.hpp"
 #include <stdio.h>
 #include <stdlib.h>
-// Physical pointer-only record/iterator interfaces for this accepted
-// full-body reconstruction. Original STL element and source class
-// identities remain unproved; do not instantiate external owners.
-extern const char g_BitmapFormatAt00657800[];
-class BitmapEntryF207 {
-public:
-    bool LoadFile(const char* path);
-    void EncodeIndexedPalette();
-};
-class BitmapIteratorF207 {
-public:
-    // Original native iterator temporaries are four-byte pointer views.
-    unsigned char* storage;
-    BitmapIteratorF207 operator+(int offset) const;
-};
-typedef char IteratorPhysicalSizeF207[(sizeof(BitmapIteratorF207)==4)?1:-1];
-class BitmapEntriesF207 {
-public:
-    int Size();
-    unsigned char* At(int index);
-    BitmapIteratorF207 Begin();
-    BitmapIteratorF207 End();
-    BitmapIteratorF207 Erase(BitmapIteratorF207 first, BitmapIteratorF207 last);
-};
-class BitmapHandlesF207 {
-public:
-    IDirect3DTexture8** At(int index);
-};
-namespace Graphics {
-    bool CreateTexture(unsigned short width, unsigned short height,
-                       IDirect3DTexture8** texture, unsigned char bitsPerPixel);
-}
-class TextureManagerF207 {
-public:
-    void LoadBitmapDirectoryWithFormat(const char*);
-    void Refresh(int index);
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x004 - 0x000];
-    unsigned long field004;
-    unsigned char unknown008[0x04C - 0x008];
-    unsigned char field04C;
-};
-#define ENTRIES reinterpret_cast<BitmapEntriesF207*>(reinterpret_cast<unsigned char*>(this)+8)
-#define HANDLES reinterpret_cast<BitmapHandlesF207*>(reinterpret_cast<unsigned char*>(this)+0x18)
-#define ENTRY(type,off) (*reinterpret_cast<type*>(ENTRIES->At(work.index)+(off)))
-void TextureManagerF207::LoadBitmapDirectoryWithFormat(const char* baseDir)
+
+#define ENTRY entries[work.index]
+void TextureManagerF198::LoadBitmapDirectoryWithFormat(const char* baseDir)
 {
     struct BitmapDirectoryWork {
-    int index;
-    int total;
-    char filename[260];
+        int index;
+        int total;
+        char filename[260];
     } work;
-    work.total = ENTRIES->Size();
-    for (work.index=0; work.index<work.total; ++work.index) {
-        ENTRY(unsigned char,0) = field04C;
-        ENTRY(DWORD,0x14) = field004;
-        sprintf(work.filename,g_BitmapFormatAt00657800,baseDir,work.index);
-        if (reinterpret_cast<BitmapEntryF207*>(ENTRIES->At(work.index))->LoadFile(work.filename)) {
-            ENTRY(unsigned char,0x28)=0;
-            Graphics::CreateTexture(ENTRY(unsigned short,4),
-                ENTRY(unsigned short,8),HANDLES->At(work.index),ENTRY(unsigned char,0));
+    work.total = static_cast<int>(entries.size());
+    for (work.index = 0; work.index < work.total; ++work.index) {
+        ENTRY.uploadFormat = textureDepth;
+        ENTRY.palette = palette;
+        sprintf(work.filename, "%s\\%04d.bmp", baseDir, work.index);
+        if (ENTRY.LoadFile(work.filename)) {
+            ENTRY.paletteFlag = 0;
+            Graphics::CreateTexture(static_cast<unsigned short>(ENTRY.storedWidth),
+                static_cast<unsigned short>(ENTRY.storedHeight), &textures[work.index], ENTRY.uploadFormat);
             Refresh(work.index);
-            void* buffer = ENTRY(void*,0x1c);
+            void* buffer = ENTRY.pixels;
             free(buffer);
-            ENTRY(void*,0x1c) = 0;
+            ENTRY.pixels = 0;
         } else {
-            ENTRIES->Erase(ENTRIES->Begin() + work.index, ENTRIES->End());
+            entries.erase(entries.begin() + work.index, entries.end());
             work.total = work.index;
         }
     }
 }
 #undef ENTRY
-#undef HANDLES
-#undef ENTRIES

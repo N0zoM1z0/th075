@@ -18,6 +18,7 @@ public:
     void OpenAndReadIndex(const char* filename);
     HANDLE SeekNamedEntry(const char* name);
     HANDLE SeekNamedEntryWithSize(const char* name, DWORD* size);
+    void AppendReadableFile(const char* filename);
 
 private:
     HANDLE originalHandle;

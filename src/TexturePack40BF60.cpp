@@ -1,10 +1,9 @@
 #include "TexturePack40BF60.hpp"
 #include "TextureManagerF198.hpp"
+#include <stdio.h>
 
 #define MANAGER reinterpret_cast<TextureManagerF198*>(this)
 #define ENTRY MANAGER->entries[index]
-#define PALETTE_LOADER reinterpret_cast<BitmapPalette40C380*>(this)
-#define BITMAP reinterpret_cast<BitmapPackSource40BF60*>(&ENTRY)
 
 void TexturePack40BF60::Save(const char* directory, const char* outputFilename, signed char paletteCount) {
     TextureRecordSnapshot40BF60 record;
@@ -27,7 +26,7 @@ void TexturePack40BF60::Save(const char* directory, const char* outputFilename, 
                 WriteFile(outputHandle, MANAGER->palette, 512, &written, 0);
                 for (int paletteIndex = 2; paletteIndex <= paletteCount; paletteIndex++) {
                     sprintf(filename, "%s\\pal%dp.bmp", directory, paletteIndex);
-                    PALETTE_LOADER->Load(filename);
+                    MANAGER->LoadPalette(filename);
                     WriteFile(outputHandle, MANAGER->palette, 512, &written, 0);
                 }
             } else {
@@ -43,8 +42,8 @@ void TexturePack40BF60::Save(const char* directory, const char* outputFilename, 
             ENTRY.uploadFormat = MANAGER->textureDepth;
             ENTRY.palette = MANAGER->palette;
             sprintf(filename, "%s\\%04d.bmp", directory, index);
-            BITMAP->LoadFile(filename);
-            BITMAP->Encode();
+            ENTRY.LoadFile(filename);
+            ENTRY.Encode();
             record.width = ENTRY.storedWidth;
             record.height = ENTRY.storedHeight;
             record.stride = ENTRY.storedStride;
@@ -72,7 +71,5 @@ void TexturePack40BF60::SaveDefault(const char* directory, const char* filename)
     Save(directory, filename, 0);
 }
 
-#undef BITMAP
-#undef PALETTE_LOADER
 #undef ENTRY
 #undef MANAGER

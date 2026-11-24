@@ -1,15 +1,7 @@
+#include "TextureManagerBorrowedF925.hpp"
 #include <windows.h>
 #include <stddef.h>
 
-// Pointer-only interface; the complete original bitmap owner remains unknown.
-class BitmapPackSource40BF60 { public: bool LoadFile(const char*); void Encode(); };
-#define FORMAT (*reinterpret_cast<BYTE*>(this))
-#define WIDTH (*reinterpret_cast<unsigned int*>(reinterpret_cast<char*>(this) + 4))
-#define HEIGHT (*reinterpret_cast<unsigned int*>(reinterpret_cast<char*>(this) + 8))
-#define STRIDE (*reinterpret_cast<unsigned int*>(reinterpret_cast<char*>(this) + 12))
-#define PALETTE (*reinterpret_cast<WORD**>(reinterpret_cast<char*>(this) + 20))
-#define OWNS_PALETTE (*reinterpret_cast<BYTE*>(reinterpret_cast<char*>(this) + 24))
-#define PIXELS (*reinterpret_cast<void**>(reinterpret_cast<char*>(this) + 28))
 
 // A complete temporary color value, separate from the incomplete bitmap owner.
 struct BitmapColor41A3D0 { BYTE red, green, blue, alpha; };
@@ -18,7 +10,7 @@ typedef char BitmapFileSize41A3D0[(sizeof(BITMAPFILEHEADER) == 14) ? 1 : -1];
 typedef char BitmapInfoSize41A3D0[(sizeof(BITMAPINFOHEADER) == 40) ? 1 : -1];
 typedef char BitmapBitsOffset41A3D0[(offsetof(BITMAPINFOHEADER, biBitCount) == 14) ? 1 : -1];
 
-bool BitmapPackSource40BF60::LoadFile(const char* filename) {
+bool TextureEntryStorageF769::LoadFile(const char* filename) {
     RGBQUAD* pColors = 0;
     WORD* pRgbPalette = 0;
     DWORD* colorMap32 = 0;
@@ -43,38 +35,38 @@ bool BitmapPackSource40BF60::LoadFile(const char* filename) {
     DWORD nOffset = bfh->bfOffBits;
     BITMAPINFOHEADER* pInfo = reinterpret_cast<BITMAPINFOHEADER*>(inputData + sizeof(BITMAPFILEHEADER));
     BYTE bitCount = static_cast<BYTE>(pInfo->biBitCount);
-    if (FORMAT == 0) {
-        FORMAT = bitCount;
-        if (FORMAT < 8)
-            FORMAT = 8;
+    if (uploadFormat == 0) {
+        uploadFormat = bitCount;
+        if (uploadFormat < 8)
+            uploadFormat = 8;
     }
-    if (FORMAT == 32 && bitCount <= 24)
-        FORMAT = 24;
+    if (uploadFormat == 32 && bitCount <= 24)
+        uploadFormat = 24;
     if (bitCount == 32)
-        FORMAT = 32;
+        uploadFormat = 32;
     int paletteCount = 1 << bitCount;
-    WIDTH = pInfo->biWidth;
-    HEIGHT = pInfo->biHeight;
-    STRIDE = WIDTH;
-    if (STRIDE % 4 > 0)
-        STRIDE = (STRIDE / 4 + 1) * 4;
-    unsigned int nLineBytes = (bitCount * WIDTH) >> 3;
+    storedWidth = pInfo->biWidth;
+    storedHeight = pInfo->biHeight;
+    storedStride = storedWidth;
+    if (storedStride % 4 > 0)
+        storedStride = (storedStride / 4 + 1) * 4;
+    unsigned int nLineBytes = (bitCount * storedWidth) >> 3;
     if (nLineBytes % 4 > 0)
         nLineBytes = (nLineBytes / 4 + 1) * 4;
     if (bitCount <= 8) {
-        if (!PALETTE) {
+        if (!palette) {
             pColors = reinterpret_cast<RGBQUAD*>(inputData + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER));
-            PALETTE = new WORD[256];
+            palette = new WORD[256];
             for (int index = 0; index < paletteCount; index++) {
-                PALETTE[index] = pColors[index].rgbBlue >> 3;
-                PALETTE[index] |= (pColors[index].rgbGreen >> 3) << 5;
-                PALETTE[index] |= (pColors[index].rgbRed >> 3) << 10;
-                PALETTE[index] |= 0x8000;
+                palette[index] = pColors[index].rgbBlue >> 3;
+                palette[index] |= (pColors[index].rgbGreen >> 3) << 5;
+                palette[index] |= (pColors[index].rgbRed >> 3) << 10;
+                palette[index] |= 0x8000;
             }
-            PALETTE[kKeyIndex] &= 0x7FFF;
-            OWNS_PALETTE = 1;
+            palette[kKeyIndex] &= 0x7FFF;
+            ownsPalette = 1;
         }
-        if (FORMAT >= 16) {
+        if (uploadFormat >= 16) {
             pColors = reinterpret_cast<RGBQUAD*>(inputData + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER));
             pRgbaEntries = new BitmapColor41A3D0[256];
             for (int index = 0; index < paletteCount; index++) {
@@ -83,7 +75,7 @@ bool BitmapPackSource40BF60::LoadFile(const char* filename) {
                 pRgbaEntries[index].blue = pColors[index].rgbBlue;
                 pRgbaEntries[index].alpha = pColors[index].rgbReserved;
             }
-            if (FORMAT == 16) {
+            if (uploadFormat == 16) {
                 pRgbPalette = new WORD[256];
                 for (int index = 0; index < 256; index++) {
                     pRgbPalette[index] = pRgbaEntries[index].blue >> 3;
@@ -92,7 +84,7 @@ bool BitmapPackSource40BF60::LoadFile(const char* filename) {
                     pRgbPalette[index] |= 0x8000;
                 }
                 pRgbPalette[kKeyIndex] &= 0x7FFF;
-            } else if (FORMAT == 24) {
+            } else if (uploadFormat == 24) {
                 colorMap32 = new DWORD[256];
                 for (int index = 0; index < 256; index++) {
                     colorMap32[index] = pRgbaEntries[index].blue;
@@ -105,71 +97,71 @@ bool BitmapPackSource40BF60::LoadFile(const char* filename) {
             delete[] pRgbaEntries;
         }
     }
-    switch (FORMAT) {
+    switch (uploadFormat) {
     case 8:
-        PIXELS = new BYTE[HEIGHT * STRIDE];
-        pDest8 = static_cast<BYTE*>(PIXELS);
-        for (unsigned int y = 0; y < HEIGHT; y++) {
-            for (unsigned int x = 0; x < WIDTH; x++)
-                pDest8[(HEIGHT - 1 - y) * STRIDE + x] = inputData[y * nLineBytes + x + nOffset];
+        pixels = new BYTE[storedHeight * storedStride];
+        pDest8 = pixels;
+        for (unsigned int y = 0; y < storedHeight; y++) {
+            for (unsigned int x = 0; x < storedWidth; x++)
+                pDest8[(storedHeight - 1 - y) * storedStride + x] = inputData[y * nLineBytes + x + nOffset];
         }
         break;
     case 16:
-        PIXELS = new WORD[HEIGHT * STRIDE];
-        out16 = static_cast<WORD*>(PIXELS);
+        pixels = reinterpret_cast<BYTE*>(new WORD[storedHeight * storedStride]);
+        out16 = reinterpret_cast<WORD*>(pixels);
         if (bitCount <= 8) {
-            for (unsigned int y = 0; y < HEIGHT; y++) {
-                for (unsigned int x = 0; x < WIDTH; x++)
-                    out16[(HEIGHT - 1 - y) * STRIDE + x] = pRgbPalette[inputData[y * nLineBytes + x + nOffset]];
+            for (unsigned int y = 0; y < storedHeight; y++) {
+                for (unsigned int x = 0; x < storedWidth; x++)
+                    out16[(storedHeight - 1 - y) * storedStride + x] = pRgbPalette[inputData[y * nLineBytes + x + nOffset]];
             }
         } else {
-            for (unsigned int y = 0; y < HEIGHT; y++) {
-                for (unsigned int x = 0; x < WIDTH; x++) {
-                    out16[(HEIGHT - 1 - y) * STRIDE + x] = inputData[x * 3 + y * nLineBytes + nOffset] >> 3;
-                    out16[(HEIGHT - 1 - y) * STRIDE + x] |= (inputData[x * 3 + y * nLineBytes + nOffset + 1] >> 3) << 5;
-                    out16[(HEIGHT - 1 - y) * STRIDE + x] |= (inputData[x * 3 + y * nLineBytes + nOffset + 2] >> 3) << 10;
+            for (unsigned int y = 0; y < storedHeight; y++) {
+                for (unsigned int x = 0; x < storedWidth; x++) {
+                    out16[(storedHeight - 1 - y) * storedStride + x] = inputData[x * 3 + y * nLineBytes + nOffset] >> 3;
+                    out16[(storedHeight - 1 - y) * storedStride + x] |= (inputData[x * 3 + y * nLineBytes + nOffset + 1] >> 3) << 5;
+                    out16[(storedHeight - 1 - y) * storedStride + x] |= (inputData[x * 3 + y * nLineBytes + nOffset + 2] >> 3) << 10;
                     if ((inputData[x * 3 + y * nLineBytes + nOffset] | inputData[x * 3 + y * nLineBytes + nOffset + 1] | inputData[x * 3 + y * nLineBytes + nOffset + 2]) == 0)
-                        out16[(HEIGHT - 1 - y) * STRIDE + x] &= 0x7FFF;
+                        out16[(storedHeight - 1 - y) * storedStride + x] &= 0x7FFF;
                     else
-                        out16[(HEIGHT - 1 - y) * STRIDE + x] |= 0x8000;
+                        out16[(storedHeight - 1 - y) * storedStride + x] |= 0x8000;
                 }
             }
         }
         break;
     case 24:
-        PIXELS = new DWORD[HEIGHT * STRIDE];
-        pDest32 = static_cast<DWORD*>(PIXELS);
+        pixels = reinterpret_cast<BYTE*>(new DWORD[storedHeight * storedStride]);
+        pDest32 = reinterpret_cast<DWORD*>(pixels);
         if (bitCount <= 8) {
-            for (unsigned int y = 0; y < HEIGHT; y++) {
-                for (unsigned int x = 0; x < WIDTH; x++)
-                    pDest32[(HEIGHT - 1 - y) * STRIDE + x] = colorMap32[inputData[y * nLineBytes + x + nOffset]];
+            for (unsigned int y = 0; y < storedHeight; y++) {
+                for (unsigned int x = 0; x < storedWidth; x++)
+                    pDest32[(storedHeight - 1 - y) * storedStride + x] = colorMap32[inputData[y * nLineBytes + x + nOffset]];
             }
         } else {
-            for (unsigned int y = 0; y < HEIGHT; y++) {
-                for (unsigned int x = 0; x < WIDTH; x++) {
-                    pDest32[(HEIGHT - 1 - y) * STRIDE + x] = inputData[x * 3 + y * nLineBytes + nOffset];
-                    pDest32[(HEIGHT - 1 - y) * STRIDE + x] |= inputData[x * 3 + y * nLineBytes + nOffset + 1] << 8;
-                    pDest32[(HEIGHT - 1 - y) * STRIDE + x] |= inputData[x * 3 + y * nLineBytes + nOffset + 2] << 16;
+            for (unsigned int y = 0; y < storedHeight; y++) {
+                for (unsigned int x = 0; x < storedWidth; x++) {
+                    pDest32[(storedHeight - 1 - y) * storedStride + x] = inputData[x * 3 + y * nLineBytes + nOffset];
+                    pDest32[(storedHeight - 1 - y) * storedStride + x] |= inputData[x * 3 + y * nLineBytes + nOffset + 1] << 8;
+                    pDest32[(storedHeight - 1 - y) * storedStride + x] |= inputData[x * 3 + y * nLineBytes + nOffset + 2] << 16;
                     if ((inputData[x * 3 + y * nLineBytes + nOffset] | inputData[x * 3 + y * nLineBytes + nOffset + 1] | inputData[x * 3 + y * nLineBytes + nOffset + 2]) == 0)
-                        pDest32[(HEIGHT - 1 - y) * STRIDE + x] &= 0xFFFFFF;
+                        pDest32[(storedHeight - 1 - y) * storedStride + x] &= 0xFFFFFF;
                     else
-                        pDest32[(HEIGHT - 1 - y) * STRIDE + x] |= 0xFF000000;
+                        pDest32[(storedHeight - 1 - y) * storedStride + x] |= 0xFF000000;
                 }
             }
         }
         break;
     case 32:
-        PIXELS = new DWORD[HEIGHT * STRIDE];
-        pDest32 = static_cast<DWORD*>(PIXELS);
+        pixels = reinterpret_cast<BYTE*>(new DWORD[storedHeight * storedStride]);
+        pDest32 = reinterpret_cast<DWORD*>(pixels);
         if (bitCount <= 8) {
-            for (unsigned int y = 0; y < HEIGHT; y++) {
-                for (unsigned int x = 0; x < WIDTH; x++)
-                    pDest32[(HEIGHT - 1 - y) * STRIDE + x] = colorMap32[inputData[y * nLineBytes + x + nOffset]];
+            for (unsigned int y = 0; y < storedHeight; y++) {
+                for (unsigned int x = 0; x < storedWidth; x++)
+                    pDest32[(storedHeight - 1 - y) * storedStride + x] = colorMap32[inputData[y * nLineBytes + x + nOffset]];
             }
         } else {
-            for (unsigned int y = 0; y < HEIGHT; y++) {
-                for (unsigned int x = 0; x < WIDTH; x++)
-                    pDest32[(HEIGHT - 1 - y) * STRIDE + x] = *reinterpret_cast<DWORD*>(inputData + y * nLineBytes + x * 4 + nOffset);
+            for (unsigned int y = 0; y < storedHeight; y++) {
+                for (unsigned int x = 0; x < storedWidth; x++)
+                    pDest32[(storedHeight - 1 - y) * storedStride + x] = *reinterpret_cast<DWORD*>(inputData + y * nLineBytes + x * 4 + nOffset);
             }
         }
     }
@@ -181,11 +173,3 @@ bool BitmapPackSource40BF60::LoadFile(const char* filename) {
     delete[] inputData;
     return true;
 }
-
-#undef FORMAT
-#undef WIDTH
-#undef HEIGHT
-#undef STRIDE
-#undef PALETTE
-#undef OWNS_PALETTE
-#undef PIXELS

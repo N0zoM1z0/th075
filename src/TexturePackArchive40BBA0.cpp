@@ -2,25 +2,8 @@
 #include "DataArchive.hpp"
 #include "GraphicsTexture.hpp"
 #include "TextureManagerF198.hpp"
-#include <stddef.h>
+#include "TexturePack40BF60.hpp"
 #include <new>
-
-// Complete source-compatible value, identical to the accepted save/load views.
-struct TextureRecordSnapshot40BF60 {
-    int width, height, stride;
-    unsigned char depth;
-    DWORD encodedSize;
-    void* data;
-};
-
-typedef char ArchiveRecordSize40BBA0[(sizeof(TextureRecordSnapshot40BF60) == 24) ? 1 : -1];
-typedef char ArchiveRecordDepth40BBA0[(offsetof(TextureRecordSnapshot40BF60, depth) == 12) ? 1 : -1];
-typedef char ArchiveRecordEncoded40BBA0[(offsetof(TextureRecordSnapshot40BF60, encodedSize) == 16) ? 1 : -1];
-typedef char ArchiveRecordData40BBA0[(offsetof(TextureRecordSnapshot40BF60, data) == 20) ? 1 : -1];
-
-// These owner/container interfaces are pointer-only and never instantiated.
-class TexturePalette40C8C0 { public: void Refresh(int); };
-class BitmapSerialized41B2B0 { public: void Load(const TextureRecordSnapshot40BF60*); };
 
 void TextureManagerF198::LoadDefault(const char* filename, const char* archiveName) {
     Load(filename, 0, archiveName);
@@ -71,10 +54,10 @@ void TextureManagerF198::Load(const char* filename, signed char selectedPalette,
             record.data = new BYTE[(static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3];
             ReadFile(sourceFile, record.data, (static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3, &dwRead, 0);
         }
-        reinterpret_cast<BitmapSerialized41B2B0*>(&entries[index])->Load(&record);
+        entries[index].LoadSerialized(&record);
         delete[] static_cast<BYTE*>(record.data);
         Graphics::CreateTexture(static_cast<unsigned short>(entries[index].storedWidth), static_cast<unsigned short>(entries[index].storedHeight), &textures[index], entries[index].uploadFormat);
-        reinterpret_cast<TexturePalette40C8C0*>(this)->Refresh(index);
+        Refresh(index);
         delete[] entries[index].pixels;
         entries[index].pixels = 0;
     }

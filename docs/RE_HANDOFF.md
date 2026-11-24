@@ -24,12 +24,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,914 unresolved externals. WinMain and the six
+stops at `LNK1120` with 1,876 unresolved externals. WinMain and the six
 existing scene types share `SceneBase`. The character selection
 constructor and destructor use the same three texture-manager members.
 Startup, capture, drawing, and cleanup share the frame texture owner.
-The latest batch cold-replayed 56 units across 39 objects and removed
-17 unresolved symbols. The frame entry forwards the native status and
+The latest batch cold-replayed 286 units across 128 objects and removed
+38 unresolved symbols. The frame entry forwards the native status and
 the score callers share the progress object.
 
 Menu and results text use the same 56-byte GDI font surface. Startup,
@@ -50,15 +50,17 @@ binding reconciled with the native stack layout.
 The loading and logo draw routines use the same transform and frame
 completion methods. Their default quad constructor has the same local
 layout constraint.
-Texture pack I/O, allocation, drawing, and teardown share the
-manager's three typed vectors. WinMain and the manager use the same
+Texture pack I/O, bitmap directories, drawing, and teardown share the
+manager's three typed vectors. The bitmap codec and entry lifetime use
+the same 44-byte entry storage. WinMain and the manager use the same
 graphics client, and the manager uses the native four-byte deque layout.
 Scene constructors and the results cleanup now call the shared manager.
 Drawing callers use the same texture-manager state methods for blend,
 depth, filtering, shader mode, and color scaling. Ordinary and projected
 quad drawing and texture-rectangle lookup also share the manager. The
 default and four-float quad constructors use the same SDK-backed layout.
-The bitmap entry lifetime still needs linkable definitions.
+Archive append and named close use the existing catalog deques and
+index list. Archive writing still uses borrowed iterator calls.
 Headless library consumers exercised both camera snap modes, the log,
 cosine table, sound defaults, configuration save and load, event queue
 insertion, archive registration, lookup, entry reads, and handle release,

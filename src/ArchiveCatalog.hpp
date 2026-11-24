@@ -16,6 +16,7 @@ class ArchiveCatalog
 public:
     ArchiveCatalog();
     ~ArchiveCatalog();
+    static void CloseNamed(const char* name);
 };
 
 namespace ResourceLookupF217
