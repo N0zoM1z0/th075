@@ -224,6 +224,9 @@ R289 reproduces the complete CRT interval around `0x00641FB8` with
 both CRT and ordinary input objects. R290 uses the original C++
 startup table to distinguish the event service pulse at
 `0x00423B20`, which cold-replays all 26 bytes and both relocations.
+R291 matches the sprite quad constructors and two 132-byte copies
+with both payload layouts. The original type at `+0x40` still needs
+a typed use or build symbol.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH

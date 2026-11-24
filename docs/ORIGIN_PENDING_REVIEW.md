@@ -402,7 +402,7 @@ The current direct-call scan is in
 | --- | --- |
 | `0x0040D8C0`, `0x0040D8E0` | The typed texture cleanup reaches the bitmap-containing entry's destructor. The R108 implicit and explicit member lifetime forms both match the constructor and destructor with their bitmap calls. |
 | `0x0040D900`, `0x0040D920`, `0x0040D940`, `0x0040D960` | Both R163 whole source chains reach the exact CRT cosine and sine entries with the same float argument and return behavior. Their header and ordinary forms differ in source ownership. |
-| `0x0040D9F0` | Calls identify the quad payload at `+0x40`. An SDK matrix constructor and an ordinary empty payload constructor each emit all 14 target bytes. The original type of that subobject is unknown. |
+| `0x0040D9F0` | Both R291 layouts match the empty leaf, all three callers and three complete drawing or copy functions. The original type of the subobject at `+0x40` is unknown. |
 | `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
 | `0x00412DB0`, `0x00428D40` | The authored caller units reach the same CRT fabs and sqrt operations with the R163 header and ordinary worker forms. |
 | `0x004138D0`, `0x00441FD0` | Complete empty bodies with zero recorded Ghidra references. The current static scan finds no direct caller or absolute pointer literal for either entry. |
@@ -493,6 +493,35 @@ The control source uses `/MT /Od /Ob0 /Gy /GR- /GX /GS /Zl` and
     scripts/repo-python .analysis/final-origin-review/event-pulse-registration/compare.py
     scripts/repo-python .analysis/final-origin-review/crt-link-order/scan-unowned-entries.py
     scripts/repo-python scripts/replay-exact-units.py --unit event-service-pulse-00423b20 --unit background-base-virtual-destroy-00449d40 --unit camera-motion-set-override-00412cc0 --unit sprite-sequence-remove-front-if-present-004110c0 --unit event-queue-local-acquire-release-004239c0 --unit frame-capture-install-present-callback-00417120 --unit frame-capture-enable-direct-draw-00417140 --unit battle-end-scene-destroy-00424f40
+
+### R291 — Sprite quad payload layout
+
+The native background transform copies 33 dwords at `0x00449D28`.
+The sprite history append copies the same width at `0x00411035`, and
+its next argument starts at `[ebp+0x98]`, 132 bytes past the quad
+argument. The default constructor clears all 132 bytes. The textured
+and projected draw entries at `0x004029F0` and `0x00402D50` read
+the coordinates of the first four vertices.
+
+Two scratch layouts preserve the observed size and the constructor
+receiver at `+0x40`. One has an ordinary empty constructor for a
+17-dword member. The other uses the pinned D3DX8 `D3DXMATRIX` and
+a separate dword at `+0x80`. The same sources build with each
+unit's canonical VC7.1 profile. Each layout reproduces the complete
+14-byte leaf, its three caller constructors, the 1,132-byte sprite
+draw and both copies. All 2,069 bytes and 46 relocation operands
+compare per layout. The three constructor calls bind to the
+corresponding COFF symbol at the same native entry. Identifying the
+original type requires an operation that uses the tail as a typed
+value or a matching build symbol.
+
+All eight `D3DXMATRIX` default constructor definitions in the pinned
+D3DX8 archive contain the same three bytes as several other default
+constructors. The archive has no code relocation naming the matrix
+constructor, so its optimized copies supply no typed call to this leaf.
+
+    scripts/repo-python .analysis/final-origin-review/quad-payload/replay.py
+    scripts/repo-python .analysis/final-origin-review/quad-payload/archive.py
 
 ## Historical R263 inventory
 
