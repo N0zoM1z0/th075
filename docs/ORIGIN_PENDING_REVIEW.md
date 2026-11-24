@@ -403,7 +403,7 @@ The current direct-call scan is in
 | --- | --- |
 | `0x0040D900`, `0x0040D940` | R308 matches the complete sprite drawing interval with the precompiled standard overloads and ordinary wrappers. R303 rules out the x87 bodies in the older SDK shape archive. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
-| `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers both Battle End destructors together. The R306 debug and link-time code generation controls leave the deleting destructor early. |
+| `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers both Battle End destructors together. R306 and R309 leave the deleting destructor early with debug, inlining and template controls. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R308 matches the complete collision interval with the precompiled header, two ordinary functions, and an ordinary function calling the header worker. |
@@ -1040,6 +1040,25 @@ forms preserve the original offsets and all bytes.
     scripts/repo-python .analysis/final-origin-review/trig-link-order/compare.py header-early header-pch ordinary-late header-deferred
     bash .analysis/final-origin-review/history-dtor-spine/build.sh implicit inline out-of-line in-class
     scripts/repo-python .analysis/final-origin-review/history-dtor-spine/compare.py implicit inline out-of-line in-class
+
+### R309 — Explicit scene template instantiation keeps the implicit constructor early
+
+The Scene base template emits its implicit constructor at `+0x170`
+from the Battle End constructor. It stays there when the caller
+declares `extern template` and the explicit instantiation is in a
+separate object. The two builds match all 1,289 body, vtable and
+exception bytes with 113 relocation fields.
+
+An in-class Battle End destructor also preserves all those bytes.
+Its deleting wrapper still occupies `+0x140`, the original ordinary
+destructor slot. The implicit and explicit base constructors land
+at `+0x190` and the native `+0x3C0`, respectively. With `/Ob1` the
+explicit inline base constructor disappears as a standalone body
+and both derived constructor extents change. The unresolved
+comparison is the native order of the two Battle End destructors.
+
+    bash .analysis/final-origin-review/scene-ctor-variants/build.sh inclass-dtor inclass-dtor-implicit inline-ob1 template-implicit template-extern
+    scripts/repo-python .analysis/final-origin-review/scene-ctor-variants/compare.py inclass-dtor inclass-dtor-implicit inline-ob1 template-implicit template-extern
 
 ## Historical R263 inventory
 
