@@ -150,6 +150,10 @@ combined alpha. The horizontal clipping bounds follow from the
 initializers when definitions refer to other float objects. The verified
 literal values keep both definitions in read-only storage.
 
+The Patchouli object has a left clipping edge of -180. Reflecting it
+across the 1280-unit span gives the right edge of 1460, which matches the
+four bytes at `0x00659884`.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

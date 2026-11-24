@@ -17,7 +17,7 @@
 extern float g_F1055_FadeScaleAt006598A4;
 extern float g_F1059_ScaleFadeAt006598A8;
 extern float g_F1075_StepAt006598A0;
-extern float g_F1126_RightAt00659884;
+extern const float g_F1126_RightAt00659884;
 
 
 void PatchouliObject::Advance() {

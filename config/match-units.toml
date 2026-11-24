@@ -70435,7 +70435,7 @@ relocations = [
   { offset = 0x12D67, type = "DIR32", symbol = "?Zero@FloatConstants@@3MB", target = 0x0065782C },
   { offset = 0x12D79, type = "REL32", symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ", target = 0x0045B830 },
   { offset = 0x12DA7, type = "REL32", symbol = "?SpawnBattleEffect@Fighter@@QAEXFMMCC@Z", target = 0x00453A70 },
-  { offset = 0x12DBB, type = "DIR32", symbol = "?g_F1126_RightAt00659884@@3MA", target = 0x00659884 },
+  { offset = 0x12DBB, type = "DIR32", symbol = "?g_F1126_RightAt00659884@@3MB", target = 0x00659884 },
   { offset = 0x12DD1, type = "DIR32", symbol = "?NegativeHundredEighty@GeometryConstants@@3MB", target = 0x006595E4 },
   { offset = 0x12DE3, type = "REL32", symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ", target = 0x0045B830 },
   { offset = 0x12E3F, type = "REL32", symbol = "?AdvanceNestedFrame@ActorRenderingBase@@QAEFXZ", target = 0x0040FA30 },

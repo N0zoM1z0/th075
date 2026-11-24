@@ -232,3 +232,5 @@ const double g_MarisaSparkGrowthLossAt00659440 = 0.07;
 extern const float g_MarisaVolleyRightLimitAt006593EC = 1360.0f;
 // The left streak bound mirrors the 2000-unit right bound across that span.
 extern const float g_MarisaStreakLeftLimitAt0065941C = -720.0f;
+// Reflect the -180-unit left edge across the 1280-unit span.
+extern const float g_F1126_RightAt00659884 = 1460.0f;

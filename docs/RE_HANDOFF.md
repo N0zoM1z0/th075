@@ -22,12 +22,16 @@ configured translation units and archive them as `build/program/th075.lib`.
 CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
-All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 60 unresolved data symbols. The grayscale shader,
-two clipping bounds and the texture and replay error definitions resolved
-five names. All nine affected units cold-replayed exactly. A headless
-archive consumer assembled the linked shader, checked the bounds and
-created the replay temporary file.
+A clean build at `98fde36a` compiled and archived all 441 x86 objects.
+The strict link reproduced the same 60 missing data symbols. The reflected
+right clipping bound resolved one of them. All four affected units
+cold-replayed exactly, and a headless archive consumer checked the bound.
+The updated strict link stops at `LNK1120` with 59 unresolved data symbols.
+
+The grayscale shader, two clipping bounds and the texture and replay
+error definitions resolved five names. All nine affected units cold-replayed
+exactly. A headless archive consumer assembled the linked shader, checked
+the bounds and created the replay temporary file.
 
 Graphics, input, replay and resource-loader diagnostics resolved nine
 names. All 34 affected units cold-replayed exactly.
@@ -223,8 +227,9 @@ trip, and handle release,
 and the four corners produced by the RECT constructor.
 Use `build/program/link.log` and the relocation targets to find candidate
 definitions. Batch related exact units with `--batch` to compile each
-profile together. The unresolved set contains 51 floating-point symbols
-and nine option or command strings.
+profile together. Reuse the verified objects for the next archive and
+strict link when the remaining objects are current. The unresolved set
+contains 50 floating-point symbols and nine option or command strings.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
 
 ## Origin review
