@@ -1,9 +1,8 @@
 #include "CharacterSelectScene.hpp"
+#include "SoundBank.hpp"
 #include <stdlib.h>
 // CharacterSelectScene shares its physical input and animation fields with
 // the other character-select methods.
-class ChoiceSoundBankF228 { public: void Play(int id); };
-extern ChoiceSoundBankF228* g_ChoiceSoundAt00671618;
 extern unsigned char g_ChoiceSelectedPairAt006714CC[];
 extern signed char g_ChoiceGameModeAt006714B4;
 extern const float g_ChoiceMinimumAt0065782C;
@@ -31,13 +30,13 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
         g_ChoiceReadyBoundAt0065826C<(choiceStop[player])))
         (choiceStop[player])=75.0f;
     if ((input[player].vertical)==-1) {
-        g_ChoiceSoundAt00671618->Play(0x27);
+        g_SoundBank->Play(0x27);
         (chosenPalette[player])=0;
     } else if (ChoiceInputF228::TestAction((input[player].horizontal))==1) {
-        g_ChoiceSoundAt00671618->Play(0x27);
+        g_SoundBank->Play(0x27);
         (chosenPalette[player])=1;
     } else if ((input[player].vertical)==1) {
-        g_ChoiceSoundAt00671618->Play(0x27);
+        g_SoundBank->Play(0x27);
         (chosenPalette[player])=2;
     }
     if ((input[player].confirm)==1) {
@@ -49,10 +48,10 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
             playerState[0]=8;
             playerState[1]=8;
         }
-        g_ChoiceSoundAt00671618->Play(0x2d);
+        g_SoundBank->Play(0x2d);
     }
     if ((input[player].cancel)==1) {
-        g_ChoiceSoundAt00671618->Play(0x28);
+        g_SoundBank->Play(0x28);
         (playerState[player])=1;
     }
     if ((input[player].toggle)==1) (choiceRandom[player])=static_cast<unsigned int>(!(choiceRandom[player]));
@@ -63,7 +62,7 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
             playerState[0]=8;
             playerState[1]=8;
         }
-        g_ChoiceSoundAt00671618->Play(0x2d);
+        g_SoundBank->Play(0x2d);
     }
     if ((input[player].alternative)==1) (alternatePalette[player])=static_cast<unsigned int>(!(alternatePalette[player]));
 }

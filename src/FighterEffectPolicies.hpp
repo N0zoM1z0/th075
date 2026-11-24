@@ -12,8 +12,6 @@ public:
 // fields and any larger shared-bank owner remain unknown.
 class EffectSoundBankF135 {
 public:
-    void Play(int sound);
-
 private:
     unsigned char unknown000[0x14];
 };
@@ -21,7 +19,6 @@ typedef char EffectSoundBankF135SizeCheck[(sizeof(EffectSoundBankF135) == 0x14) 
 
 // References to target-owned storage only; no object definitions are provided.
 extern AuxiliaryEffectsF135 g_AuxiliaryEffectsF135;
-extern EffectSoundBankF135* g_SharedEffectSoundBankF135;
 
 
 #endif

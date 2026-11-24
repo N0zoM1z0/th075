@@ -209,7 +209,7 @@ BitmapLifecycle41A2D0::Destroy,0x0041A380,function
 FighterPattern457660::Load,0x00457660,function
 ScriptResource4205F0::LoadArchive,0x004205F0,function
 ScriptResource4205F0::LoadFile,0x004206D0,function
-SoundArchive4076A0::Load,0x004076A0,function
+SoundBank::LoadArchive,0x004076A0,function
 ScriptResource4205F0::Parse,0x00420880,function
 ScriptRecord421200::ScriptRecord421200,0x00421200,function
 ScriptRecord421200::~ScriptRecord421200,0x00421220,function
@@ -222,9 +222,9 @@ SharedSound4066C0::Initialize,0x004066E0,function
 SoundCreation406A20::Create,0x00406A20,function
 SharedWave406820::Load,0x00406820,function
 SharedPcm406B80::Read,0x00406B80,function
-SoundBank4073D0::LoadWaveDirectory,0x004073D0,function
-SoundBank4073D0::LoadSerializedFile,0x00407540,function
-SoundBank4073D0::SaveSerializedFile,0x004077E0,function
+SoundBank::LoadWaveDirectory,0x004073D0,function
+SoundBank::LoadSerializedFile,0x00407540,function
+SoundBank::SaveSerializedFile,0x004077E0,function
 AudioStream::OpenFile,0x00408110,function
 AudioStream::OpenArchiveEntry,0x00408390,function
 AudioStream::ReadLoopPointsFromFile,0x00408670,function
@@ -238,7 +238,7 @@ AudioControl407CA0::ScheduleFade,0x00407E60,function
 AudioControl407CA0::Worker,0x00407EF0,function
 AudioVolume4073B0::SetSoundBankVolume,0x004073B0,function
 AudioVolume4073B0::SetStreamVolume,0x004073C0,function
-SoundBankPlay4079C0::Play,0x004079C0,function
+SoundBank::Play,0x004079C0,function
 AudioStream::AudioStream,0x00409290,function
 AudioStream::~AudioStream,0x004092F0,function
 ReimuFighter::ConfigureStage,0x00470F00,function
@@ -967,8 +967,8 @@ InputMappingF742::InputMappingF742,0x00406DB0,function
 GameProgress::ClearUnlockBit,0x00416D50,function
 BackgroundCountersF746::AdvanceBG05bCounters,0x0044E8D0,function
 CharacterAuxFrameF750::RefreshSelectedFrame,0x005FAC60,function
-AudioStreamClientF753::AudioStreamClientF753,0x004071C0,function
-AudioStreamClientF755::~AudioStreamClientF755,0x00407270,function
+SoundBank::SoundBank,0x004071C0,function
+SoundBank::~SoundBank,0x00407270,function
 AudioQueueFileF758::QueueFile,0x00407A50,function
 AudioQueueArchiveF760::QueueArchiveEntry,0x00407B80,function
 SpriteDrawingF765::DrawOpaqueSprite,0x0040D790,function
@@ -1011,7 +1011,7 @@ SuikaFighter::Advance,0x005AEEC0,function
 MeilingFighter::Advance,0x005D73C0,function
 RecordPrefix16F738::~RecordPrefix16F738,0x004588B0,function
 FrameFlag20PredicateAt00454F70,0x00454F70,function
-FighterSoundF287::Configure,0x004073A0,function
+SoundBank::Configure,0x004073A0,function
 ProgressLifetime4169D0::~ProgressLifetime4169D0,0x004169D0,function
 StaffRollAdvanceF450::AdvanceHookAt00438CF0,0x00438CF0,function
 CommandListF283::SetCapacityAt00410FC0,0x00410FC0,function

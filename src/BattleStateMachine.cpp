@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "BattleScene.hpp"
 #include "BattleStateMachine.hpp"
 #define STATE field018
@@ -14,7 +15,7 @@ short BattleScene::AdvanceState()
     case 0:
         if (field08C < 0.0f) field08C += 5.0f;
         if (TIMER == 150) {
-            if (g_CombatMode != 3) StateAudio::TransitionFade();
+            if (g_CombatMode != 3) MusicF205::ScheduleTransitionFade();
             SetNotice(0);
         }
         if (TIMER == 20) STATE = 1;
@@ -30,7 +31,7 @@ short BattleScene::AdvanceState()
             fighters[0]->field39C = 0; fighters[1]->field39C = 0;
             if (g_FrameClockMode == 2) {
                 if (g_NoticeSelection == g_StateReplayLimit || g_CombatMode == 1 || g_CombatMode == 2) { STATE = 6; break; }
-                StateAudio::Fade(-10000, -200, true, false);
+                AudioControl407CA0::ScheduleFade(-10000, -200, true, false);
                 return 0x2201;
             } else {
                 LINE = 0;
@@ -79,14 +80,14 @@ short BattleScene::AdvanceState()
                 } else {
                     if (g_FrameClockMode == 2) {
                         if (g_NoticeSelection == g_StateReplayLimit) { STATE = 6; break; }
-                        StateAudio::Fade(-10000, -200, true, false); return 0x2201;
+                        AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
                     } else {
                         g_StateReplay.AppendRecord();
                         if (g_NoticeSelection == g_StateRecordLimit) {
-                            StateAudio::PlayTrack(40); StateAudio::Fade(-10000, -160, true, true);
+                            MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
                             g_StateReturnFlag = -1; return 0x2207;
                         }
-                        StateAudio::Fade(-10000, -200, true, false); return 0x2201;
+                        AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
                     }
                 }
             } else {
@@ -96,7 +97,7 @@ short BattleScene::AdvanceState()
         }
         break;
     case 6:
-        StateAudio::PlayTrack(40); StateAudio::Fade(-10000, -160, true, true);
+        MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
         if (g_FrameClockMode == 2 || g_FrameClockMode == 4) return 0x2205;
         return 0x2203;
     case 7:
@@ -107,7 +108,7 @@ short BattleScene::AdvanceState()
                 if (g_FrameClockMode == 4) { g_FrameClockMode = 2; g_StateReplayChanged = 1; }
                 if (g_FrameClockMode == 3) g_FrameClockMode = 1;
             } else if (field05C == 2) {
-                StateAudio::Fade(-10000, -160, true, false);
+                AudioControl407CA0::ScheduleFade(-10000, -160, true, false);
                 g_StateCapture->InstallCallback(); Render(); g_StateCapture->EnableDirectDraw(); g_StateCapture->CapturePrimary();
                 if (g_FrameClockMode == 4) { g_FrameClockMode = 2; g_StateReplayChanged = 1; }
                 else if (g_FrameClockMode == 3) g_FrameClockMode = 1;
@@ -117,9 +118,9 @@ short BattleScene::AdvanceState()
         }
         break;
     case 8:
-        StateAudio::PlayTrack(40); StateAudio::Fade(-10000, -160, true, true); g_StateReplay.AppendRecord(); return 0x2207;
+        MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); g_StateReplay.AppendRecord(); return 0x2207;
     case 14:
-        StateAudio::PlayTrack(40); StateAudio::Fade(-10000, -160, true, true);
+        MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
         if (g_FrameClockMode == 2 || g_FrameClockMode == 4) return 0x2205;
         if (g_StateReturnFlag) g_StateReplay.AppendRecord();
         if (g_CombatMode == 3 && fighters[0]->score > g_StateScoreThreshold) return 0x220A;
@@ -223,7 +224,7 @@ short BattleScene::AdvanceState()
     }
     if (g_CombatMode == 6) {
         ++field10C;
-        if (field10C > 3600) { StateAudio::PlayTrack(40); StateAudio::Fade(-10000, -160, true, true); return 0x2202; }
+        if (field10C > 3600) { MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); return 0x2202; }
     }
     if (TIMER > 0) --TIMER;
     if (field06C > 0) --field06C;

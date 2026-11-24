@@ -2,6 +2,7 @@
 #define TH075_GAME_LEAF_HELPERS_HPP
 
 #include "Fighter.hpp"
+#include "SoundBank.hpp"
 typedef unsigned char u8;
 typedef unsigned long u32;
 
@@ -49,13 +50,6 @@ public:
 extern TextRenderer *g_TextRenderer;
 extern signed char g_NoticeSelection;
 extern float g_ZeroFloat;
-
-class SoundBank {
-public:
-    void Play(int sound);
-};
-
-extern SoundBank *g_SoundBank;
 
 class SpriteGeometry {
 public:

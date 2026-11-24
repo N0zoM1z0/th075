@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 // Complete original 3,765-CODE-byte R065 battle stage constructor dispatcher.
 // All 18 stage IDs, both variant branches and 36 native ctor addresses
 // were recovered from this original target, not assumed from earlier notes.
@@ -270,7 +271,6 @@ extern signed char g_ReplayModeAt0066C238;
 extern const char g_StartStageLogAt00657A4C[];
 extern const char g_EndStageLogAt00657A5C[];
 extern void BattleLogAt0041CC50(const char*);
-extern void SetStageStateAt00419CB0(int);
 class AudioStageF389 {public:void BeginStage(int);};
 extern AudioStageF389 g_AudioStageAt006718F8;
 namespace BattleStageLoaderF389 {void LoadStage();}
@@ -354,7 +354,7 @@ void BattleStageLoaderF389::LoadStage() {
         else g_CurrentBattleStageAt00671424=new StageBG02zF389;
         break;
     }
-    if(g_BattleModeAt006714B4!=3) SetStageStateAt00419CB0(int(g_StageIdAt0067161D));
+    if(g_BattleModeAt006714B4!=3) MusicF204::PlayTrackByIndex(int(g_StageIdAt0067161D));
     if(g_ReplayModeAt0066C238!=2 && g_ReplayModeAt0066C238!=4)
         g_AudioStageAt006718F8.BeginStage(int(g_StageIdAt0067161D)+200);
     BattleLogAt0041CC50(g_EndStageLogAt00657A5C);

@@ -1,10 +1,9 @@
 #include <windows.h>
+#include "AudioControl.hpp"
+#include "SoundBank.hpp"
 #include "WindowOverlayF212.hpp"
 
-// Call-only views of the original game-level sound initialization.
-// Allocation sizes 120, 8, 20 are native-observed operator new arguments.
-// WindowOverlayF212 is the shared 8-byte texture owner; the 120/20-byte
-// window/audio carriers remain bounded physical views, not complete layouts.
+// The display view carries the observed 120-byte allocation size.
 class InputBindingF212 {
 public:
     void Configure(void* keymap);
@@ -19,18 +18,10 @@ class WindowDisplayF212 {
 public:
     WindowDisplayF212();
 };
-class AudioDeviceF212 {
-    unsigned char nativePhysicalStorage[20];
-public:
-    AudioDeviceF212();
-    void LoadWaveBank(const char*, const char*);
-};
 typedef char AssertWindow120F212[(sizeof(WindowDisplayF212)==120)?1:-1];
-typedef char AssertAudio20F212[(sizeof(AudioDeviceF212)==20)?1:-1];
 
 extern WindowDisplayF212* g_WindowDisplayAt0067143C;
 extern WindowOverlayF212* g_WindowOverlayAt006714C4;
-extern AudioDeviceF212* g_AudioDeviceAt00671618;
 extern unsigned char g_SoundVolumeAt006714B6;
 extern unsigned char g_StreamVolumeAt006714B7;
 extern const char g_WaveArchivePathAt00657A24[];
@@ -41,10 +32,6 @@ public:
     void Initialize();
 };
 extern GameWorkerF212 g_WorkerAt006716C8;
-namespace AudioVolumeF212 {
-    void SetSoundBankVolume(unsigned char volume);
-    void SetStreamVolume(unsigned char volume);
-}
 
 namespace GameGlobalsF212 {
 void InitializeSound()
@@ -53,11 +40,11 @@ void InitializeSound()
     g_InputBindingBAt00671680.Configure(g_KeymapBAt00671468);
     g_WindowDisplayAt0067143C = new WindowDisplayF212();
     g_WindowOverlayAt006714C4 = new WindowOverlayF212();
-    g_AudioDeviceAt00671618 = new AudioDeviceF212();
-    AudioVolumeF212::SetSoundBankVolume(g_SoundVolumeAt006714B6);
-    AudioVolumeF212::SetStreamVolume(g_StreamVolumeAt006714B7);
-    g_AudioDeviceAt00671618->LoadWaveBank(g_WaveArchivePathAt00657A24,
-                                          g_WaveArchiveIndexAt00657A1C);
+    g_SoundBank = new SoundBank();
+    AudioVolume4073B0::SetSoundBankVolume(g_SoundVolumeAt006714B6);
+    AudioVolume4073B0::SetStreamVolume(g_StreamVolumeAt006714B7);
+    g_SoundBank->LoadArchive(g_WaveArchivePathAt00657A24,
+                             g_WaveArchiveIndexAt00657A1C);
     g_WorkerAt006716C8.Initialize();
 }
 }

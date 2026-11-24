@@ -208,7 +208,7 @@ BitmapLifecycle41A2D0::Destroy
 FighterPattern457660::Load
 ScriptResource4205F0::LoadArchive
 ScriptResource4205F0::LoadFile
-SoundArchive4076A0::Load
+SoundBank::LoadArchive
 ScriptResource4205F0::Parse
 ScriptRecord421200::ScriptRecord421200
 ScriptRecord421200::~ScriptRecord421200
@@ -221,9 +221,9 @@ SharedSound4066C0::Initialize
 SoundCreation406A20::Create
 SharedWave406820::Load
 SharedPcm406B80::Read
-SoundBank4073D0::LoadWaveDirectory
-SoundBank4073D0::LoadSerializedFile
-SoundBank4073D0::SaveSerializedFile
+SoundBank::LoadWaveDirectory
+SoundBank::LoadSerializedFile
+SoundBank::SaveSerializedFile
 AudioStream::OpenFile
 AudioStream::OpenArchiveEntry
 AudioStream::ReadLoopPointsFromFile
@@ -237,7 +237,7 @@ AudioControl407CA0::ScheduleFade
 AudioControl407CA0::Worker
 AudioVolume4073B0::SetSoundBankVolume
 AudioVolume4073B0::SetStreamVolume
-SoundBankPlay4079C0::Play
+SoundBank::Play
 AudioStream::AudioStream
 AudioStream::~AudioStream
 ReimuFighter::ConfigureStage
@@ -966,8 +966,8 @@ InputMappingF742::InputMappingF742
 GameProgress::ClearUnlockBit
 BackgroundCountersF746::AdvanceBG05bCounters
 CharacterAuxFrameF750::RefreshSelectedFrame
-AudioStreamClientF753::AudioStreamClientF753
-AudioStreamClientF755::~AudioStreamClientF755
+SoundBank::SoundBank
+SoundBank::~SoundBank
 AudioQueueFileF758::QueueFile
 AudioQueueArchiveF760::QueueArchiveEntry
 SpriteDrawingF765::DrawOpaqueSprite
@@ -1008,7 +1008,7 @@ SuikaFighter::Advance
 MeilingFighter::Advance
 RecordPrefix16F738::~RecordPrefix16F738
 FrameFlag20PredicateAt00454F70
-FighterSoundF287::Configure
+SoundBank::Configure
 ProgressLifetime4169D0::~ProgressLifetime4169D0
 StaffRollAdvanceF450::AdvanceHookAt00438CF0
 CommandListF283::SetCapacityAt00410FC0

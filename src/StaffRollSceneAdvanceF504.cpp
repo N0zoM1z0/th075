@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "Graphics.hpp"
 #include <windows.h>
 #include <mmsystem.h>
@@ -14,8 +15,6 @@ extern void* g_StaffRollFighterAt00671418;
 extern signed char g_StaffRollCompletionAt00671623;
 extern signed char g_ReplayNameModeAt006714CE;
 extern unsigned int g_StaffRollBestScoreAt00671420;
-extern void SetStageAt00419CB0(int);
-extern void __cdecl ConfigureStaffViewportAt00407E60(int,int,int,int);
 class StaffRollAdvanceF450 {
 public:
     virtual void V00();
@@ -37,8 +36,8 @@ unsigned short StaffRollAdvanceF450::Advance() {
     AdvanceHookAt00438CF0();
     if (g_StaffRollPhaseAt0067166C==1) {
         if (field00C>0x14C08 || field00C<0x13880) {
-            SetStageAt00419CB0(40);
-            ConfigureStaffViewportAt00407E60(-10000,-160,1,1);
+            MusicF204::PlayTrackByIndex(40);
+            AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
             if (g_StaffRollFighterAt00671418) {
             if (g_StaffRollCompletionAt00671623<3) g_ReplayNameModeAt006714CE=0;
             else g_ReplayNameModeAt006714CE=-1;

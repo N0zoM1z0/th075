@@ -1,11 +1,10 @@
 #include "CharacterSelectScene.hpp"
+#include "SoundBank.hpp"
 #include "Graphics.hpp"
 #include "ResultListScene.hpp"
 #include <stdlib.h>
 
 // Partial pointer-only interfaces; no private owner is instantiated or embedded.
-class SelectionSoundF130 { public: void Play(int); };
-extern SelectionSoundF130* g_SelectionSound;
 int __cdecl AbsoluteSelectionInputF130(int);
 extern signed char g_SelectionStageF131;
 void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
@@ -18,7 +17,7 @@ void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
     if (choiceStop[side] > 0.0f) choiceStop[side] = choiceStop[side] - 1.0f;
     if (choiceStop[side] == 60.0f) choiceStop[side] = 0;
     if ((input[side].cancel) == 1) {
-        g_SelectionSound->Play(40);
+        g_SoundBank->Play(40);
         (playerState[side]) = 0;
         portraitEnterX[side] = 80.0f;
         portraitEnterY[side] = 40.0f;
@@ -85,12 +84,12 @@ void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
             else
                 g_SelectionStageF131 = stagePage[1];
         }
-        g_SelectionSound->Play(39);
+        g_SoundBank->Play(39);
     }
     if ((input[side].confirm) == 1 || (stageCountdown[side]) == -1) {
         playerState[0] = 8;
         playerState[1] = 8;
-        g_SelectionSound->Play(45);
+        g_SoundBank->Play(45);
     }
     if ((input[side].special) == 1) stageCountdown[0] = rand() % 10 + 30;
     if (side == 0 && stageCountdown[0] > 0) --stageCountdown[0];
@@ -102,19 +101,19 @@ unsigned short ResultListScene::Advance() {
     Graphics::Present();
     if (showingRecords == 0) {
         if (verticalInput < 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             --difficultyIndex;
             if (difficultyIndex < 0) difficultyIndex = 3;
             BuildCounterPage();
         }
         if (verticalInput > 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             ++difficultyIndex;
             if (difficultyIndex > 3) difficultyIndex = 0;
             BuildCounterPage();
         }
         if (horizontalInput < 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             --(selectedCharacter);
             if ((selectedCharacter) < 0) (selectedCharacter) = 9;
             if ((selectedCharacter) == 9 && selectableCharacter[9] == 0) --(selectedCharacter);
@@ -125,7 +124,7 @@ unsigned short ResultListScene::Advance() {
             BuildCounterPage();
         }
         if (horizontalInput > 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             ++(selectedCharacter);
             if ((selectedCharacter) == 6 && selectableCharacter[6] == 0) ++(selectedCharacter);
             if ((selectedCharacter) == 7 && selectableCharacter[7] == 0) ++(selectedCharacter);
@@ -137,19 +136,19 @@ unsigned short ResultListScene::Advance() {
         }
     } else {
         if (verticalInput < 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             --(pageIndex);
             if ((pageIndex) < 0) (pageIndex) = (records.Count() - 1) / 10;
             BuildRecordPage();
         }
         if (verticalInput > 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             ++(pageIndex);
             if ((pageIndex) > (static_cast<int>(records.Count()) - 1) / 10) (pageIndex) = 0;
             BuildRecordPage();
         }
         if (horizontalInput < 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             --(selectedCharacter);
             if ((selectedCharacter) < 0) (selectedCharacter) = 9;
             if ((selectedCharacter) == 9 && selectableCharacter[9] == 0) --(selectedCharacter);
@@ -161,7 +160,7 @@ unsigned short ResultListScene::Advance() {
             BuildRecordPage();
         }
         if (horizontalInput > 0) {
-            g_SelectionSound->Play(39);
+            g_SoundBank->Play(39);
             ++(selectedCharacter);
             if ((selectedCharacter) == 6 && selectableCharacter[6] == 0) ++(selectedCharacter);
             if ((selectedCharacter) == 7 && selectableCharacter[7] == 0) ++(selectedCharacter);
@@ -177,17 +176,17 @@ unsigned short ResultListScene::Advance() {
     if (confirmInput == 1) {
         if (showingRecords == 0) {
             BuildRecordPage();
-            g_SelectionSound->Play(45);
+            g_SoundBank->Play(45);
             (pageIndex) = 0;
             showingRecords = 1;
         } else {
-            g_SelectionSound->Play(45);
+            g_SoundBank->Play(45);
             showingRecords = 0;
             BuildCounterPage();
         }
     }
     if (cancelInput == 1) {
-        g_SelectionSound->Play(40);
+        g_SoundBank->Play(40);
         return 0x2202;
     }
     return 0xE;

@@ -78,6 +78,21 @@ named size and offset fields. A headless consumer opened a synthetic
 archive containing one encoded index record, sought to its payload with
 both methods and read the expected bytes.
 
+The 20-byte sound bank starts with a VC7.1 vector of DirectSound buffer
+pointers. Its count field is at `+0x10`. Startup and fighter initialization
+call the same constructor. Playback uses unchecked indexing for the null
+test, then checked indexing for the buffer it plays. Teardown uses
+unchecked indexing and releases the same vector. The stream worker and
+the bank lifetime share the playback flag and event handle. The bank and
+stream volume bytes start at 100. Options retain signed byte arithmetic
+when reading and updating the configuration volume bytes.
+
+The call at `0x00419CB0` selects a music track, and `0x00407E60` schedules
+a fade using two signed 32-bit values and two byte flags. Several scene
+callers formerly labeled these operations as stage or viewport changes.
+The complete caller comparisons preserve the original destinations.
+[Sound vector evidence](ORIGIN_PENDING_REVIEW.md#r286--sound-buffer-and-replay-and-script-deque-helpers)
+
 Camera initialization, motion, and drawing share the initially zeroed
 camera state at `0x006713BC` through `0x00671414`. The combat view offsets
 at `0x00671404` and `0x006713C4` are written by the camera and read by the

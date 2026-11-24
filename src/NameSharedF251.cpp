@@ -1,8 +1,7 @@
 #include "Graphics.hpp"
+#include "SoundBank.hpp"
 // Borrowed player editor, sound device and score persistence receiver. The
 // original parent layout remains unproven and is not instantiated.
-class NameSharedSoundF251 { public: void Play(int sound); };
-extern NameSharedSoundF251* g_NameSoundAt00671618;
 class NameScoreF251 { public: void SaveCurrent(); };
 extern NameScoreF251 g_NameScoreAt00671750;
 extern signed char g_NameModeAt0066C238;
@@ -25,7 +24,7 @@ unsigned short NameSharedSceneF251::UpdateShared()
     PollInput();
     if (BYTE(0xc)==0) {
         if (SHORT(0x16)==1) {
-            g_NameSoundAt00671618->Play(0x2d);
+            g_SoundBank->Play(0x2d);
             if (SELECTED==0x5b) {
                 if (SHORT(0x12)>7)
                     g_NameLastLetterAt0067185F=100;
@@ -50,7 +49,7 @@ unsigned short NameSharedSceneF251::UpdateShared()
             }
         }
         if (SHORT(0x16)==2) {
-            g_NameSoundAt00671618->Play(0x28);
+            g_SoundBank->Play(0x28);
             --SHORT(0x12);
             g_NameLettersAt00671858[SHORT(0x12)]=100;
             if (SHORT(0x12)<0) {
@@ -59,7 +58,7 @@ unsigned short NameSharedSceneF251::UpdateShared()
             }
         }
     } else if (SHORT(0x16)==1) {
-        g_NameSoundAt00671618->Play(0x2d);
+        g_SoundBank->Play(0x2d);
         if (SHORT(0x14)==0) {
             BYTE(0xc)=0;
             SHORT(0xe)=0;

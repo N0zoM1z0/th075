@@ -1,3 +1,4 @@
+#include "SoundBank.hpp"
 // Native whole call wrappers around original effect, audio, deque and
 // shared fighter state. Only the physically observed own/class ABIs are
 // expressed; borrowed game systems remain externally implemented.
@@ -24,11 +25,9 @@ void PeerFXOwnerF499::SpawnConfiguredPeer(short kind,int kindX,int kindY,
                                          unsigned char c,unsigned char d){
  linkedManager->Spawn(kind,kindX,kindY,a,b,c,d,physicalPosition);
 }
-class SharedSoundFXF499 {public:void Play(int);};
-extern SharedSoundFXF499* g_SharedSoundAt00671618;
 class AudioForwarderF499 {public:void PlaySharedSound(short sound);};
 void AudioForwarderF499::PlaySharedSound(short sound){
- g_SharedSoundAt00671618->Play(sound);
+ g_SoundBank->Play(sound);
 }
 class NativeCommandDequeF499 {public:void Clear();};
 class NativeCommandListF499 {

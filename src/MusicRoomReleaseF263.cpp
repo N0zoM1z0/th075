@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "MusicCatalogRecordF261.hpp"
 #include <windows.h>
 #include <d3d8.h>
@@ -14,11 +15,6 @@ class MusicTextureF263 {
 public:
     ~MusicTextureF263();
 };
-namespace MusicRoomSoundF263 {
-    void __cdecl Stop();
-    void __cdecl ReleasePending(int);
-    void __cdecl Reset();
-}
 class MusicRoomReleaseF263 : public MusicBaseSceneF263 {
     MusicTextureF263* texture;
     IDirect3DTexture8* canvasA;
@@ -42,7 +38,7 @@ MusicRoomReleaseF263::~MusicRoomReleaseF263()
     canvasD->Release();
     if (texture)
         delete texture;
-    MusicRoomSoundF263::Stop();
-    MusicRoomSoundF263::ReleasePending(40);
-    MusicRoomSoundF263::Reset();
+    AudioControl407CA0::Stop();
+    MusicF204::PlayTrackByIndex(40);
+    MusicF205::ScheduleTransitionFade();
 }

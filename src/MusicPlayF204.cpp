@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include <windows.h>
 #include <stdio.h>
 
@@ -18,9 +19,6 @@ public:
     void MarkPlayed(int item);
 };
 extern MusicProgressArchiveF204 g_MusicProgressAt006718F8;
-namespace AudioStreamF204 {
-void QueueArchiveEntry(const char*, int, const char*);
-}
 
 namespace MusicF204 {
 void PlayTrackByIndex(int track)
@@ -42,9 +40,9 @@ void PlayTrackByIndex(int track)
         sprintf(wavePath, g_WaveFormatDefaultAt00657AE8, track);
 
     if (track != 41)
-        AudioStreamF204::QueueArchiveEntry(wavePath, 2, g_NormalSoundFolderAt00657AFC);
+        AudioQueueArchiveF760::QueueArchiveEntry(wavePath, 2, g_NormalSoundFolderAt00657AFC);
     else
-        AudioStreamF204::QueueArchiveEntry(wavePath, 0, g_EndingSoundFolderAt00657B04);
+        AudioQueueArchiveF760::QueueArchiveEntry(wavePath, 0, g_EndingSoundFolderAt00657B04);
 
     if (g_FrameClockModeAt0066C238 != 2 &&
         g_FrameClockModeAt0066C238 != 4)

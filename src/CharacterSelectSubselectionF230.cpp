@@ -1,7 +1,6 @@
 #include "CharacterSelectScene.hpp"
+#include "SoundBank.hpp"
 // Subselection uses player zero of the scene and the native progress-card receiver.
-class ChoiceSoundF230 {public: void Play(int id);};
-extern ChoiceSoundF230* g_ChoiceSoundAt00671618;
 class ProgressCardViewF230 {public: signed char GetSelectedValue();};
 extern ProgressCardViewF230 g_SelectedCardAt006718F8;
 extern unsigned char g_SelectedFighterAt006714C8;
@@ -12,11 +11,11 @@ namespace ChoiceInputF230 {int __cdecl TestAction(int input);}
 void CharacterSelectScene::ProcessSubselection()
 {
     if (ChoiceInputF230::TestAction((input[0].vertical))==1) {
-        g_ChoiceSoundAt00671618->Play(0x27);
+        g_SoundBank->Play(0x27);
         (optionsCursor[0])=((optionsCursor[0])+(input[0].vertical)+g_SelectedCardAt006718F8.GetSelectedValue())%g_SelectedCardAt006718F8.GetSelectedValue();
     }
     if ((input[0].confirm)==1) {
-        g_ChoiceSoundAt00671618->Play(0x2d);
+        g_SoundBank->Play(0x2d);
         g_SelectedFighterAt006714C8=(chosenCharacter[0]);
         g_PlayerPadAt00671620=(optionsCursor[0])+1;
         g_SelectStageAt00671621=1;
@@ -27,7 +26,7 @@ void CharacterSelectScene::ProcessSubselection()
     }
     if ((input[0].alternative)==1 || (input[0].cancel)==1) {
         g_PlayerPadAt00671620=1;
-        g_ChoiceSoundAt00671618->Play(0x28);
+        g_SoundBank->Play(0x28);
         (optionsOpen[0])=0;
         (optionsCursor[0])=0;
     }

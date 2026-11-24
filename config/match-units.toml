@@ -2274,7 +2274,7 @@ relocations = [
   { offset = 0x5A, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x70, type = "DIR32", symbol = "__real@40a00000", target = 0x00657874 },
   { offset = 0x8C, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x96, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x96, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0xA0, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0xCB, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0x100, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
@@ -2283,7 +2283,7 @@ relocations = [
   { offset = 0x15F, type = "DIR32", symbol = "?g_StateReplayLimit@@3CA", target = 0x00671866 },
   { offset = 0x16A, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x176, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x19A, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x19A, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x1BF, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
   { offset = 0x1C4, type = "REL32", symbol = "?Configure@StateTextSurface@@QAEXMME@Z", target = 0x00413420 },
   { offset = 0x1D7, type = "REL32", symbol = "?ChoosePattern@StatePatternActor@@QAEXXZ", target = 0x0045D810 },
@@ -2305,18 +2305,18 @@ relocations = [
   { offset = 0x5D3, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x5DF, type = "DIR32", symbol = "?g_NoticeSelection@@3CA", target = 0x0067161E },
   { offset = 0x5E6, type = "DIR32", symbol = "?g_StateReplayLimit@@3CA", target = 0x00671866 },
-  { offset = 0x609, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x609, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x61A, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x61F, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
   { offset = 0x626, type = "DIR32", symbol = "?g_NoticeSelection@@3CA", target = 0x0067161E },
   { offset = 0x62D, type = "DIR32", symbol = "?g_StateRecordLimit@@3CA", target = 0x0067161F },
-  { offset = 0x638, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x64E, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x638, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x64E, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x657, type = "DIR32", symbol = "?g_StateReturnFlag@@3CA", target = 0x006714CE },
-  { offset = 0x674, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x674, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x689, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x6B7, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x6CD, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x6B7, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x6CD, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x6D7, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x6E3, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x74F, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
@@ -2324,7 +2324,7 @@ relocations = [
   { offset = 0x761, type = "DIR32", symbol = "?g_StateReplayChanged@@3EA", target = 0x00671632 },
   { offset = 0x769, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x774, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x79D, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x79D, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x7A6, type = "DIR32", symbol = "?g_StateCapture@@3PAVStateCapture@@A", target = 0x006714C4 },
   { offset = 0x7AB, type = "REL32", symbol = "?InstallCallback@StateCapture@@QAEXXZ", target = 0x00417120 },
   { offset = 0x7BC, type = "DIR32", symbol = "?g_StateCapture@@3PAVStateCapture@@A", target = 0x006714C4 },
@@ -2339,12 +2339,12 @@ relocations = [
   { offset = 0x802, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x80C, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x811, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
-  { offset = 0x826, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x83C, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x826, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x83C, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x844, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x849, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
-  { offset = 0x859, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x86F, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x859, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x86F, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x879, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x885, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x89A, type = "DIR32", symbol = "?g_StateReturnFlag@@3CA", target = 0x006714CE },
@@ -2381,8 +2381,8 @@ relocations = [
   { offset = 0xF3A, type = "REL32", symbol = "?UpdateTransition@BattleScene@@QAEXXZ", target = 0x0043D010 },
   { offset = 0xFD9, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x108B, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x10BB, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x10D1, type = "REL32", symbol = "?Fade@StateAudio@@YAXHH_N0@Z", target = 0x00407E60 },
+  { offset = 0x10BB, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x10D1, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x1113, type = "DIR32", symbol = "?g_StateFadeValue@@3MA", target = 0x00671628 },
   { offset = 0x1119, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x1126, type = "DIR32", symbol = "?g_StateFadeValue@@3MA", target = 0x00671628 },
@@ -10589,14 +10589,14 @@ relocations = [
   { offset = 0x2D55, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2D66, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2D72, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2D90, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2D90, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2D97, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DA6, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DAE, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DB6, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2E02, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2E2A, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2E32, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2E2A, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2E32, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2E60, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2E6E, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2E76, type = "DIR32", symbol = "$L55797", target = 0x004A9081 },
@@ -11022,14 +11022,14 @@ relocations = [
   { offset = 0x2F4F, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2F60, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2F6C, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2F8A, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2F8A, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2F91, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FA0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FA8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FB0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FFC, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x3024, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x302C, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x3024, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x302C, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x305A, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x3068, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x3070, type = "DIR32", symbol = "$L55795", target = 0x0048337A },
@@ -11462,14 +11462,14 @@ relocations = [
   { offset = 0x2D32, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2D43, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2D4F, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2D6D, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2D6D, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2D74, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D83, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D8B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D93, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DDF, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2E07, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2E0F, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2E07, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2E0F, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2E3D, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2E4B, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2E53, type = "DIR32", symbol = "$L55795", target = 0x004D4ED1 },
@@ -11856,14 +11856,14 @@ relocations = [
   { offset = 0x29E3, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x29F4, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2A00, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2A1E, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2A1E, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2A25, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A34, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A3C, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A44, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A90, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2AB8, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2AC0, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2AB8, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2AC0, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2AEE, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2AFC, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2B04, type = "DIR32", symbol = "$L55795", target = 0x004F4501 },
@@ -12251,14 +12251,14 @@ relocations = [
   { offset = 0x2BE0, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2BF1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2BFD, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2C1B, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2C1B, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2C22, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C31, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C39, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C41, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C8D, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2CB5, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2CBD, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2CB5, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2CBD, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2CEB, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2CF9, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2D01, type = "DIR32", symbol = "$L55795", target = 0x0051E671 },
@@ -12657,14 +12657,14 @@ relocations = [
   { offset = 0x2CEA, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2CFB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2D07, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2D25, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2D25, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2D2C, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D3B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D43, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D4B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D97, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2DBF, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2DC7, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2DBF, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2DC7, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2DF5, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2E03, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2E0B, type = "DIR32", symbol = "$L55795", target = 0x005402C1 },
@@ -13057,14 +13057,14 @@ relocations = [
   { offset = 0x2C0F, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2C20, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2C2C, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2C4A, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2C4A, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2C51, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C60, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C69, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C71, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2CBD, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2CE5, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2CED, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2CE5, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2CED, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2D1B, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2D29, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2D31, type = "DIR32", symbol = "$L55795", target = 0x00561D71 },
@@ -13441,14 +13441,14 @@ relocations = [
   { offset = 0x2A3D, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2A4E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2A5A, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2A78, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2A78, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2A7F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A8E, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A96, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A9E, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2AEA, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2B12, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2B1A, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2B12, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2B1A, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2B48, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2B56, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2B5E, type = "DIR32", symbol = "$L55795", target = 0x005882E1 },
@@ -13819,14 +13819,14 @@ relocations = [
   { offset = 0x29D5, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x29E6, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x29F2, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2A10, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2A10, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2A17, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A25, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A2E, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A36, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A82, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2AAA, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2AB2, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x2AAA, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2AB2, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x2AE0, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2AEE, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x2AF6, type = "DIR32", symbol = "$L55793", target = 0x005AC281 },
@@ -14198,14 +14198,14 @@ relocations = [
   { offset = 0x28B7, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x28C8, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x28D4, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x28F2, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x28F2, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x28F9, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2908, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2910, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2918, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2964, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x298C, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x2994, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x298C, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x2994, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x29C2, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x29D0, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x29D8, type = "DIR32", symbol = "$L55795", target = 0x005D48C1 },
@@ -14621,14 +14621,14 @@ relocations = [
   { offset = 0x2F4F, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
   { offset = 0x2F60, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x2F6C, type = "REL32", symbol = "?ProcessAction@Fighter@@QAEEXZ", target = 0x0045CE10 },
-  { offset = 0x2F8A, type = "REL32", symbol = "?Stop@SequenceAudio@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x2F8A, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
   { offset = 0x2F91, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FA0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FA8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FB0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2FFC, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x3024, type = "REL32", symbol = "?PlayTrack@StateAudio@@YAXH@Z", target = 0x00419CB0 },
-  { offset = 0x302C, type = "REL32", symbol = "?TransitionFade@StateAudio@@YAXXZ", target = 0x00419DF0 },
+  { offset = 0x3024, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
+  { offset = 0x302C, type = "REL32", symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ", target = 0x00419DF0 },
   { offset = 0x305A, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x3068, type = "REL32", symbol = "?AdvanceNoticeLevels@Fighter@@QAEXXZ", target = 0x0045D710 },
   { offset = 0x3070, type = "DIR32", symbol = "$L55795", target = 0x005F3D8A },
@@ -18334,23 +18334,23 @@ relocations = [
 source = "src/ResourceStreams4205F0.cpp"
 object = "build/matching/ResourceStreams4205F0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["SoundArchive4076A0::Load"]
-symbol = "?Load@SoundArchive4076A0@@QAEXPBD0@Z"
+functions = ["SoundBank::LoadArchive"]
+symbol = "?LoadArchive@SoundBank@@QAEXPBD0@Z"
 target_address = 0x004076A0
 size = 310
 compare_size = 310
 relocations = [
-  { offset = 0xD, type = "REL32", symbol = "?Size@SoundArchive4076A0@@QAEIXZ", target = 0x004093A0 },
+  { offset = 0xD, type = "REL32", symbol = "?size@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QBEIXZ", target = 0x004093A0 },
   { offset = 0x1D, type = "REL32", symbol = "?FindByName@ResourceLookupF217@@YAPAVDataArchiveF481@@PBD@Z", target = 0x0041CF00 },
   { offset = 0x27, type = "REL32", symbol = "?SeekNamedEntry@DataArchiveF481@@QAEPAXPBD@Z", target = 0x0041D750 },
   { offset = 0x4B, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
-  { offset = 0x59, type = "REL32", symbol = "?Assign@SoundArchive4076A0@@QAEXHH@Z", target = 0x0040A6C0 },
+  { offset = 0x59, type = "REL32", symbol = "??$assign@H@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEXHH@Z", target = 0x0040A6C0 },
   { offset = 0x8D, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0xAF, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0xC5, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0xCE, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0xF2, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
-  { offset = 0x100, type = "REL32", symbol = "?At@SoundArchive4076A0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x100, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
   { offset = 0x112, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
   { offset = 0x124, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
 ]
@@ -18745,24 +18745,24 @@ relocations = [
 source = "src/SoundBank4073D0.cpp"
 object = "build/matching/SoundBank4073D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["SoundBank4073D0::LoadWaveDirectory"]
-symbol = "?LoadWaveDirectory@SoundBank4073D0@@QAEXPBDI@Z"
+functions = ["SoundBank::LoadWaveDirectory"]
+symbol = "?LoadWaveDirectory@SoundBank@@QAEXPBDI@Z"
 target_address = 0x004073D0
 size = 367
 compare_size = 367
 relocations = [
   { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
-  { offset = 0x3C, type = "REL32", symbol = "?Size@SoundBank4073D0@@QAEIXZ", target = 0x004093A0 },
-  { offset = 0x50, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
-  { offset = 0x64, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
-  { offset = 0x8D, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
-  { offset = 0xA0, type = "REL32", symbol = "?ClearStorage@SoundBank4073D0@@QAEXXZ", target = 0x00409490 },
-  { offset = 0xC6, type = "REL32", symbol = "?Assign@SoundBank4073D0@@QAEXIABQAUIDirectSoundBuffer8@@@Z", target = 0x00409470 },
+  { offset = 0x3C, type = "REL32", symbol = "?size@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QBEIXZ", target = 0x004093A0 },
+  { offset = 0x50, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x64, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x8D, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0xA0, type = "REL32", symbol = "?clear@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEXXZ", target = 0x00409490 },
+  { offset = 0xC6, type = "REL32", symbol = "?assign@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEXIABQAUIDirectSoundBuffer8@@@Z", target = 0x00409470 },
   { offset = 0xED, type = "DIR32", symbol = "$SG57270", target = 0x006577A0 },
   { offset = 0xF9, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
   { offset = 0x11B, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
   { offset = 0x137, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
-  { offset = 0x148, type = "REL32", symbol = "?At@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x004093E0 },
+  { offset = 0x148, type = "REL32", symbol = "?at@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x004093E0 },
   { offset = 0x155, type = "REL32", symbol = "?Load@SharedWave406820@@YA_NPBDPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406820 },
   { offset = 0x165, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
 ]
@@ -18771,23 +18771,23 @@ relocations = [
 source = "src/SoundBank4073D0.cpp"
 object = "build/matching/SoundBank4073D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["SoundBank4073D0::LoadSerializedFile"]
-symbol = "?LoadSerializedFile@SoundBank4073D0@@QAEXPBD@Z"
+functions = ["SoundBank::LoadSerializedFile"]
+symbol = "?LoadSerializedFile@SoundBank@@QAEXPBD@Z"
 target_address = 0x00407540
 size = 341
 compare_size = 341
 relocations = [
-  { offset = 0xD, type = "REL32", symbol = "?Size@SoundBank4073D0@@QAEIXZ", target = 0x004093A0 },
+  { offset = 0xD, type = "REL32", symbol = "?size@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QBEIXZ", target = 0x004093A0 },
   { offset = 0x2C, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
   { offset = 0x4A, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
   { offset = 0x60, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
-  { offset = 0x6E, type = "REL32", symbol = "?AssignIntegral@SoundBank4073D0@@QAEXHH@Z", target = 0x0040A6C0 },
+  { offset = 0x6E, type = "REL32", symbol = "??$assign@H@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEXHH@Z", target = 0x0040A6C0 },
   { offset = 0xA2, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0xC4, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0xDA, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0xE3, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0x107, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
-  { offset = 0x115, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x115, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
   { offset = 0x127, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
   { offset = 0x139, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x14B, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
@@ -18797,25 +18797,25 @@ relocations = [
 source = "src/SoundBank4073D0.cpp"
 object = "build/matching/SoundBank4073D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["SoundBank4073D0::SaveSerializedFile"]
-symbol = "?SaveSerializedFile@SoundBank4073D0@@QAEXPBD@Z"
+functions = ["SoundBank::SaveSerializedFile"]
+symbol = "?SaveSerializedFile@SoundBank@@QAEXPBD@Z"
 target_address = 0x004077E0
 size = 472
 compare_size = 472
 relocations = [
-  { offset = 0xD, type = "REL32", symbol = "?Size@SoundBank4073D0@@QAEIXZ", target = 0x004093A0 },
+  { offset = 0xD, type = "REL32", symbol = "?size@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QBEIXZ", target = 0x004093A0 },
   { offset = 0x2C, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
   { offset = 0x4A, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
   { offset = 0x60, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0x8A, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x8A, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
   { offset = 0xAD, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0xC0, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0xC0, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
   { offset = 0xEE, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0xFA, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0xFA, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
   { offset = 0x129, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0x135, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x135, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
   { offset = 0x176, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0x182, type = "REL32", symbol = "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x182, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
   { offset = 0x1BF, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x1CE, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
 ]
@@ -19144,15 +19144,15 @@ relocations = [
 source = "src/AudioLifecycle4073B0.cpp"
 object = "build/matching/AudioLifecycle4073B0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["SoundBankPlay4079C0::Play"]
-symbol = "?Play@SoundBankPlay4079C0@@QAEXH@Z"
+functions = ["SoundBank::Play"]
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target_address = 0x004079C0
 size = 142
 compare_size = 142
 relocations = [
-  { offset = 0x13, type = "REL32", symbol = "?Size@SoundBankPlay4079C0@@QAEIXZ", target = 0x004093A0 },
-  { offset = 0x26, type = "REL32", symbol = "?Unchecked@SoundBankPlay4079C0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
-  { offset = 0x39, type = "REL32", symbol = "?At@SoundBankPlay4079C0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x004093E0 },
+  { offset = 0x13, type = "REL32", symbol = "?size@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QBEIXZ", target = 0x004093A0 },
+  { offset = 0x26, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x39, type = "REL32", symbol = "?at@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x004093E0 },
   { offset = 0x5F, type = "DIR32", symbol = "?soundBankVolume@@3CA", target = 0x0066C213 },
 ]
 
@@ -24187,15 +24187,15 @@ relocations = [
   { offset = 0x190, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
   { offset = 0x1C6, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
   { offset = 0x1E2, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
-  { offset = 0x224, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x229, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x224, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x229, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x2EC, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x672, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x98F, type = "DIR32", symbol = "?g_SelectionDifficulty@@3CA", target = 0x006714D0 },
   { offset = 0x99F, type = "DIR32", symbol = "?g_SelectionProgress@@3PAEA", target = 0x006718F8 },
   { offset = 0x9A4, type = "REL32", symbol = "?SetSelection@SelectionProgressF130@@QAEXCC@Z", target = 0x0041A1A0 },
-  { offset = 0x9E6, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x9EB, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x9E6, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x9EB, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0xA03, type = "DIR32", symbol = "?g_SelectionCharacters@@3PACA", target = 0x006714C8 },
   { offset = 0xA1F, type = "DIR32", symbol = "?g_SelectionPalettes@@3PACA", target = 0x006714AC },
   { offset = 0xA47, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
@@ -24212,12 +24212,12 @@ relocations = [
   { offset = 0xB4A, type = "DIR32", symbol = "?g_SelectionProgress@@3PAEA", target = 0x006718F8 },
   { offset = 0xB4F, type = "REL32", symbol = "?GetSelectedValue@SelectionProgressF130@@QAECXZ", target = 0x00438A80 },
   { offset = 0xB5D, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0xB6A, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0xB6F, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0xB6A, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0xB6F, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0xB99, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0xBA5, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0xBB2, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0xBB7, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0xBB2, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0xBB7, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
 ]
 
 [units."fighter-update-controls-00452f10"]
@@ -24300,8 +24300,8 @@ relocations = [
   { offset = 0x10D, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x128, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
   { offset = 0x143, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
-  { offset = 0x17E, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x183, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x17E, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x183, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x24C, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
   { offset = 0x268, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
   { offset = 0x284, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
@@ -24331,10 +24331,10 @@ relocations = [
   { offset = 0x68B, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
   { offset = 0x6BC, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
   { offset = 0x6CC, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x6D9, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x6DE, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
-  { offset = 0x71F, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x724, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x6D9, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x6DE, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x71F, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x724, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x73A, type = "REL32", symbol = "_rand", target = 0x006418AB },
 ]
 
@@ -24350,44 +24350,44 @@ compare_size = 1803
 relocations = [
   { offset = 0xC, type = "REL32", symbol = "?PollInput@ResultListScene@@QAEXXZ", target = 0x00430D80 },
   { offset = 0x1C, type = "REL32", symbol = "?Present@Graphics@@YAXXZ", target = 0x004028F0 },
-  { offset = 0x44, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x49, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x44, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x49, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x7E, type = "REL32", symbol = "?BuildCounterPage@ResultListScene@@QAEXXZ", target = 0x00431350 },
-  { offset = 0x94, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x99, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x94, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x99, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0xCF, type = "REL32", symbol = "?BuildCounterPage@ResultListScene@@QAEXXZ", target = 0x00431350 },
-  { offset = 0xE9, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0xEE, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0xE9, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0xEE, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x1E9, type = "REL32", symbol = "?LoadSelectedCharacterResources@ResultListScene@@QAEXXZ", target = 0x00430EE0 },
   { offset = 0x1F1, type = "REL32", symbol = "?BuildCounterPage@ResultListScene@@QAEXXZ", target = 0x00431350 },
-  { offset = 0x20B, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x210, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x20B, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x210, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x30C, type = "REL32", symbol = "?LoadSelectedCharacterResources@ResultListScene@@QAEXXZ", target = 0x00430EE0 },
   { offset = 0x314, type = "REL32", symbol = "?BuildCounterPage@ResultListScene@@QAEXXZ", target = 0x00431350 },
-  { offset = 0x32F, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x334, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x32F, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x334, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x365, type = "REL32", symbol = "?Count@ResultListRecords@@QBEIXZ", target = 0x0041DD50 },
   { offset = 0x383, type = "REL32", symbol = "?BuildRecordPage@ResultListScene@@QAEXXZ", target = 0x00431070 },
-  { offset = 0x399, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x39E, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x399, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x39E, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x3CB, type = "REL32", symbol = "?Count@ResultListRecords@@QBEIXZ", target = 0x0041DD50 },
   { offset = 0x3EE, type = "REL32", symbol = "?BuildRecordPage@ResultListScene@@QAEXXZ", target = 0x00431070 },
-  { offset = 0x408, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x40D, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x408, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x40D, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x508, type = "REL32", symbol = "?LoadSelectedCharacterResources@ResultListScene@@QAEXXZ", target = 0x00430EE0 },
   { offset = 0x51C, type = "REL32", symbol = "?BuildRecordPage@ResultListScene@@QAEXXZ", target = 0x00431070 },
-  { offset = 0x536, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x53B, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x536, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x53B, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x638, type = "REL32", symbol = "?LoadSelectedCharacterResources@ResultListScene@@QAEXXZ", target = 0x00430EE0 },
   { offset = 0x64C, type = "REL32", symbol = "?BuildRecordPage@ResultListScene@@QAEXXZ", target = 0x00431070 },
   { offset = 0x698, type = "REL32", symbol = "?BuildRecordPage@ResultListScene@@QAEXXZ", target = 0x00431070 },
-  { offset = 0x6A0, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x6A5, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
-  { offset = 0x6C5, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x6CA, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x6A0, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x6A5, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x6C5, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x6CA, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x6DC, type = "REL32", symbol = "?BuildCounterPage@ResultListScene@@QAEXXZ", target = 0x00431350 },
-  { offset = 0x6F3, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
-  { offset = 0x6F8, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x6F3, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x6F8, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
 ]
 
 [units."fighter-battle-effect-forwarder-f135"]
@@ -24441,7 +24441,7 @@ target_address = 0x00453D40
 size = 32
 compare_size = 32
 relocations = [
-  { offset = 0x16, type = "REL32", symbol = "?Play@EffectSoundBankF135@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x16, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
 ]
 
 [units."fighter-shared-sound-forwarder-f135"]
@@ -24454,8 +24454,8 @@ target_address = 0x00453D60
 size = 29
 compare_size = 29
 relocations = [
-  { offset = 0xE, type = "DIR32", symbol = "?g_SharedEffectSoundBankF135@@3PAVEffectSoundBankF135@@A", target = 0x00671618 },
-  { offset = 0x13, type = "REL32", symbol = "?Play@EffectSoundBankF135@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0xE, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x13, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
 ]
 
 [units."fighter-gauge-timer-f135"]
@@ -31497,7 +31497,7 @@ target = 0x00671633
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 1201
 type = "REL32"
-symbol = "?ScheduleFade@AudioControlF185@@YAXJJEE@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 1216
@@ -31507,7 +31507,7 @@ target = 0x00671633
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 1233
 type = "REL32"
-symbol = "?ScheduleFade@AudioControlF185@@YAXJJEE@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 1248
@@ -31702,27 +31702,27 @@ target = 0x00671428
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 489
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 497
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 504
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 515
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 522
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 528
@@ -31737,27 +31737,27 @@ target = 0x00407DD0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 559
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 568
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 575
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 585
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 592
 type = "DIR32"
-symbol = "?g_StreamVolumeAt006714B7@@3CA"
+symbol = "?g_StreamVolumeAt006714B7@@3EA"
 target = 0x006714B7
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 598
@@ -31792,27 +31792,27 @@ target = 0x004079C0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 709
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 717
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 724
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 735
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 742
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 748
@@ -31822,27 +31822,27 @@ target = 0x004073B0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 769
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 778
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 785
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 795
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 802
 type = "DIR32"
-symbol = "?g_SoundVolumeAt006714B6@@3CA"
+symbol = "?g_SoundVolumeAt006714B6@@3EA"
 target = 0x006714B6
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 808
@@ -33235,12 +33235,12 @@ target = 0x0041A140
 [[units.game-globals-release-00417430.relocations]]
 offset = 313
 type = "DIR32"
-symbol = "?g_ResourceOwnerCAt00671618@@3PAVSceneResourceOwnerCF195@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.game-globals-release-00417430.relocations]]
 offset = 338
 type = "REL32"
-symbol = "??_GSceneResourceOwnerCF195@@QAEPAXI@Z"
+symbol = "??_GSoundBank@@QAEPAXI@Z"
 target = 0x0041A170
 
 [units.battle-scene-initialize-0043ad10]
@@ -35482,7 +35482,7 @@ target = 0x00657AFC
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 234
 type = "REL32"
-symbol = "?QueueArchiveEntry@AudioStreamF204@@YAXPBDH0@Z"
+symbol = "?QueueArchiveEntry@AudioQueueArchiveF760@@YAXPBDH0@Z"
 target = 0x00407B80
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 244
@@ -35492,7 +35492,7 @@ target = 0x00657B04
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 258
 type = "REL32"
-symbol = "?QueueArchiveEntry@AudioStreamF204@@YAXPBDH0@Z"
+symbol = "?QueueArchiveEntry@AudioQueueArchiveF760@@YAXPBDH0@Z"
 target = 0x00407B80
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 268
@@ -35532,7 +35532,7 @@ size = 27
 [[units.audio-stream-schedule-transition-fade-00419df0.relocations]]
 offset = 18
 type = "REL32"
-symbol = "?ScheduleFade@AudioFadeF205@@YAXJJEE@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 
 [units.texture-load-bitmap-directory-0040b280]
@@ -35958,12 +35958,12 @@ target = 0x0064159D
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 222
 type = "REL32"
-symbol = "??0AudioDeviceF212@@QAE@XZ"
+symbol = "??0SoundBank@@QAE@XZ"
 target = 0x004071C0
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 256
 type = "DIR32"
-symbol = "?g_AudioDeviceAt00671618@@3PAVAudioDeviceF212@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 261
@@ -35973,7 +35973,7 @@ target = 0x006714B6
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 267
 type = "REL32"
-symbol = "?SetSoundBankVolume@AudioVolumeF212@@YAXE@Z"
+symbol = "?SetSoundBankVolume@AudioVolume4073B0@@YAXC@Z"
 target = 0x004073B0
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 276
@@ -35983,7 +35983,7 @@ target = 0x006714B7
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 282
 type = "REL32"
-symbol = "?SetStreamVolume@AudioVolumeF212@@YAXE@Z"
+symbol = "?SetStreamVolume@AudioVolume4073B0@@YAXC@Z"
 target = 0x004073C0
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 290
@@ -35998,12 +35998,12 @@ target = 0x00657A24
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 301
 type = "DIR32"
-symbol = "?g_AudioDeviceAt00671618@@3PAVAudioDeviceF212@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 306
 type = "REL32"
-symbol = "?LoadWaveBank@AudioDeviceF212@@QAEXPBD0@Z"
+symbol = "?LoadArchive@SoundBank@@QAEXPBD0@Z"
 target = 0x004076A0
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 311
@@ -36994,22 +36994,22 @@ target = 0x004028F0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 62
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 67
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 124
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 129
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 165
@@ -37024,22 +37024,22 @@ target = 0x0041DD50
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 209
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 214
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 270
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 275
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 310
@@ -37054,12 +37054,12 @@ target = 0x0041DD50
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 359
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 364
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 412
@@ -37069,12 +37069,12 @@ target = 0x0042DBA0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 445
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 450
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 494
@@ -37094,12 +37094,12 @@ target = 0x0042DBA0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 615
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 620
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 650
@@ -37134,7 +37134,7 @@ target = 0x00641B80
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 744
 type = "REL32"
-symbol = "?BeginSelectedReplay@BrowserSceneStepsF226@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 775
@@ -37164,17 +37164,17 @@ target = 0x00641B80
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 833
 type = "REL32"
-symbol = "?BeginSelectedReplay@BrowserSceneStepsF226@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 855
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 860
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 866
@@ -37199,27 +37199,27 @@ target = 0x00641B80
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 918
 type = "REL32"
-symbol = "?BeginSelectedReplay@BrowserSceneStepsF226@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 959
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 964
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 981
 type = "DIR32"
-symbol = "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 986
 type = "REL32"
-symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 
 
@@ -37309,12 +37309,12 @@ target = 0x00657CBC
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 502
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 507
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 544
@@ -37324,22 +37324,22 @@ target = 0x00438A60
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 560
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 565
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 607
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 612
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 668
@@ -37349,22 +37349,22 @@ target = 0x00671610
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 691
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 696
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 725
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 730
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 736
@@ -37384,12 +37384,12 @@ target = 0x00671610
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 963
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 968
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 
 
@@ -37579,12 +37579,12 @@ target = 0x0065826C
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 439
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 444
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 481
@@ -37594,22 +37594,22 @@ target = 0x00438A60
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 497
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 502
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 544
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 549
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 605
@@ -37634,22 +37634,22 @@ target = 0x006714B4
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 721
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 726
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 751
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 756
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 844
@@ -37674,12 +37674,12 @@ target = 0x006714B4
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 929
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
 offset = 934
 type = "REL32"
-symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 
 
@@ -37780,12 +37780,12 @@ target = 0x00671670
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 467
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 472
 type = "REL32"
-symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 479
@@ -37805,12 +37805,12 @@ target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 595
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 600
 type = "REL32"
-symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 607
@@ -37850,12 +37850,12 @@ target = 0x00671670
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 775
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 780
 type = "REL32"
-symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 836
@@ -37865,12 +37865,12 @@ target = 0x00671670
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 861
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 866
 type = "REL32"
-symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 887
@@ -37880,12 +37880,12 @@ target = 0x00671670
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 912
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 917
 type = "REL32"
-symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 935
@@ -37900,12 +37900,12 @@ target = 0x00671670
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1001
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1006
 type = "REL32"
-symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1073
@@ -38000,7 +38000,7 @@ target = 0x006714AD
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1341
 type = "REL32"
-symbol = "?ChangeScene@SelectionGlobalF229@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1349
@@ -38090,12 +38090,12 @@ target = 0x00438A60
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 39
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 44
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 136
@@ -38105,12 +38105,12 @@ target = 0x00438A60
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 152
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 157
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 168
@@ -38125,12 +38125,12 @@ target = 0x00671438
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 230
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 235
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 246
@@ -38145,12 +38145,12 @@ target = 0x00671434
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 292
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 297
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 308
@@ -38165,12 +38165,12 @@ target = 0x00671434
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 354
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-player-options-00433a40.relocations]]
 offset = 359
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 
 
@@ -38190,12 +38190,12 @@ target = 0x00438A60
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 32
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 37
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 58
@@ -38220,12 +38220,12 @@ target = 0x00438A80
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 112
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 117
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 131
@@ -38255,12 +38255,12 @@ target = 0x00671620
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 230
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 235
 type = "REL32"
-symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 
 
@@ -38525,12 +38525,12 @@ target = 0x004268A0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 514
 type = "REL32"
-symbol = "?PlayMusic@MusicAudioF234@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 536
 type = "REL32"
-symbol = "?Transition@MusicAudioF234@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 555
@@ -38555,7 +38555,7 @@ target = 0x00407170
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 619
 type = "REL32"
-symbol = "?Transition@MusicAudioF234@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 
 
@@ -39806,12 +39806,12 @@ target = 0x00671866
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 516
 type = "REL32"
-symbol = "?MusicCue@ResultPresentationF244@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 538
 type = "REL32"
-symbol = "?ChangeScene@ResultPresentationF244@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 557
@@ -39821,12 +39821,12 @@ target = 0x00671621
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 568
 type = "REL32"
-symbol = "?MusicCue@ResultPresentationF244@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 590
 type = "REL32"
-symbol = "?ChangeScene@ResultPresentationF244@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 599
@@ -39846,12 +39846,12 @@ target = 0x0066C238
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 646
 type = "REL32"
-symbol = "?MusicCue@ResultPresentationF244@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 668
 type = "REL32"
-symbol = "?ChangeScene@ResultPresentationF244@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 704
@@ -39871,12 +39871,12 @@ target = 0x00658044
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1001
 type = "DIR32"
-symbol = "?g_ResultSoundAt00671618@@3PAVResultSoundF244@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1006
 type = "REL32"
-symbol = "?Play@ResultSoundF244@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1035
@@ -39886,12 +39886,12 @@ target = 0x006406AC
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1049
 type = "DIR32"
-symbol = "?g_ResultSoundAt00671618@@3PAVResultSoundF244@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1054
 type = "REL32"
-symbol = "?Play@ResultSoundF244@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1083
@@ -39901,12 +39901,12 @@ target = 0x006406AC
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1097
 type = "DIR32"
-symbol = "?g_ResultSoundAt00671618@@3PAVResultSoundF244@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1102
 type = "REL32"
-symbol = "?Play@ResultSoundF244@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1131
@@ -39916,22 +39916,22 @@ target = 0x006406AC
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1145
 type = "DIR32"
-symbol = "?g_ResultSoundAt00671618@@3PAVResultSoundF244@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1150
 type = "REL32"
-symbol = "?Play@ResultSoundF244@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1170
 type = "DIR32"
-symbol = "?g_ResultSoundAt00671618@@3PAVResultSoundF244@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1175
 type = "REL32"
-symbol = "?Play@ResultSoundF244@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1182
@@ -39991,12 +39991,12 @@ target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1465
 type = "DIR32"
-symbol = "?g_ResultSoundAt00671618@@3PAVResultSoundF244@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1470
 type = "REL32"
-symbol = "?Play@ResultSoundF244@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1477
@@ -40181,12 +40181,12 @@ target = 0x0042AB90
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "?g_NameEntrySoundAt00671618@@3PAVNameEntrySoundF246@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 40
 type = "REL32"
-symbol = "?Play@NameEntrySoundF246@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 176
@@ -40216,12 +40216,12 @@ target = 0x006714CE
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 433
 type = "DIR32"
-symbol = "?g_NameEntrySoundAt00671618@@3PAVNameEntrySoundF246@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 438
 type = "REL32"
-symbol = "?Play@NameEntrySoundF246@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 529
@@ -40396,12 +40396,12 @@ target = 0x0042BCD0
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "?g_NameSoundAt00671618@@3PAVNameSharedSoundF251@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 55
 type = "REL32"
-symbol = "?Play@NameSharedSoundF251@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 97
@@ -40441,12 +40441,12 @@ target = 0x00671858
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 331
 type = "DIR32"
-symbol = "?g_NameSoundAt00671618@@3PAVNameSharedSoundF251@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 336
 type = "REL32"
-symbol = "?Play@NameSharedSoundF251@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 367
@@ -40456,12 +40456,12 @@ target = 0x00671858
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 417
 type = "DIR32"
-symbol = "?g_NameSoundAt00671618@@3PAVNameSharedSoundF251@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 422
 type = "REL32"
-symbol = "?Play@NameSharedSoundF251@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 482
@@ -41540,17 +41540,17 @@ target = 0x00425460
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 171
 type = "REL32"
-symbol = "?Stop@MusicRoomSoundF263@@YAXXZ"
+symbol = "?Stop@AudioControl407CA0@@YAXXZ"
 target = 0x00407D70
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?ReleasePending@MusicRoomSoundF263@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 186
 type = "REL32"
-symbol = "?Reset@MusicRoomSoundF263@@YAXXZ"
+symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ"
 target = 0x00419DF0
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 195
@@ -43048,7 +43048,7 @@ target = 0x00658EAC
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 144
 type = "REL32"
-symbol = "?Load@FighterSoundsF282@@QAEXPBD0@Z"
+symbol = "?LoadArchive@SoundBank@@QAEXPBD0@Z"
 target = 0x004076A0
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 151
@@ -43058,7 +43058,7 @@ target = 0x00658EB4
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 175
 type = "REL32"
-symbol = "?Load@FighterSoundsF282@@QAEXPBD0@Z"
+symbol = "?LoadArchive@SoundBank@@QAEXPBD0@Z"
 target = 0x004076A0
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 180
@@ -43480,7 +43480,7 @@ target = 0x004204D0
 [[units.fighter-state-release-resources-00456910.relocations]]
 offset = 513
 type = "REL32"
-symbol = "??1FighterSoundF284@@QAE@XZ"
+symbol = "??1SoundBank@@QAE@XZ"
 target = 0x00407270
 [[units.fighter-state-release-resources-00456910.relocations]]
 offset = 531
@@ -43762,7 +43762,7 @@ target = 0x00414360
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 128
 type = "REL32"
-symbol = "??0FighterSoundF287@@QAE@XZ"
+symbol = "??0SoundBank@@QAE@XZ"
 target = 0x004071C0
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 146
@@ -43772,7 +43772,7 @@ target = 0x00420440
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 164
 type = "REL32"
-symbol = "?Configure@FighterSoundF287@@QAEXXZ"
+symbol = "?Configure@SoundBank@@QAEXXZ"
 target = 0x004073A0
 [[units.fighter-state-initialize-004567b0.relocations]]
 offset = 177
@@ -46937,12 +46937,12 @@ target = 0x00658264
 [[units.character-select-update-cancel-animation-00435870.relocations]]
 offset = 380
 type = "DIR32"
-symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF270@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.character-select-update-cancel-animation-00435870.relocations]]
 offset = 385
 type = "REL32"
-symbol = "?Play@SceneSelectionSoundF270@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 
 
@@ -52915,7 +52915,7 @@ target = 0x0067161D
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3683
 type = "REL32"
-symbol = "?SetStageStateAt00419CB0@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3693
@@ -54746,12 +54746,12 @@ target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1216
 type = "REL32"
-symbol = "?SelectStageAt00419CB0@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1224
 type = "REL32"
-symbol = "?RebuildStageAt00419DF0@@YAXXZ"
+symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ"
 target = 0x00419DF0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1265
@@ -56131,12 +56131,12 @@ target = 0x0040BB80
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 153
 type = "REL32"
-symbol = "?SetStageAt00419CB0@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 161
 type = "REL32"
-symbol = "?ReloadStageAt00419DF0@@YAXXZ"
+symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ"
 target = 0x00419DF0
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 167
@@ -56191,12 +56191,12 @@ target = 0x006582BC
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 55
 type = "REL32"
-symbol = "?BeforeStaffAt00407D70@@YAXXZ"
+symbol = "?Stop@AudioControl407CA0@@YAXXZ"
 target = 0x00407D70
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 62
 type = "REL32"
-symbol = "?SetStageAt00419CB0@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 72
@@ -56241,7 +56241,7 @@ target = 0x00657264
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 196
 type = "REL32"
-symbol = "?AfterStaffAt00407CC0@@YAXXZ"
+symbol = "?Start@AudioControl407CA0@@YAXXZ"
 target = 0x00407CC0
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 216
@@ -56657,12 +56657,12 @@ target = 0x0067161E
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 84
 type = "REL32"
-symbol = "?ChooseStageAt00419CB0@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 106
 type = "REL32"
-symbol = "?ConfigureViewportAt00407E60@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 114
@@ -60148,12 +60148,12 @@ size = 29
 [[units.aux-effect-play-shared-sound-005fac40.relocations]]
 offset = 14
 type = "DIR32"
-symbol = "?g_SharedSoundAt00671618@@3PAVSharedSoundFXF499@@A"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
 target = 0x00671618
 [[units.aux-effect-play-shared-sound-005fac40.relocations]]
 offset = 19
 type = "REL32"
-symbol = "?Play@SharedSoundFXF499@@QAEXH@Z"
+symbol = "?Play@SoundBank@@QAEXH@Z"
 target = 0x004079C0
 
 
@@ -60217,12 +60217,12 @@ target = 0x0067166C
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 79
 type = "REL32"
-symbol = "?SetStageAt00419CB0@@YAXH@Z"
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
 target = 0x00419CB0
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 101
 type = "REL32"
-symbol = "?ConfigureStaffViewportAt00407E60@@YAXHHHH@Z"
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
 target = 0x00407E60
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 110
@@ -60815,28 +60815,28 @@ relocations = [
 source = "src/AudioStreamAcquireF753.cpp"
 object = "build/matching/AudioStreamAcquireF753.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioStreamClientF753::AudioStreamClientF753"]
-symbol = "??0AudioStreamClientF753@@QAE@XZ"
+functions = ["SoundBank::SoundBank"]
+symbol = "??0SoundBank@@QAE@XZ"
 target_address = 0x004071C0
 size = 161
 relocations = [
- { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0AudioStreamClientF753@@QAE@XZ", target = 0x00654DE8 },
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0SoundBank@@QAE@XZ", target = 0x00654DE8 },
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
- { offset = 0x20, type = "REL32", symbol = "??0AudioBuffersF753@@QAE@XZ", target = 0x00409350 },
- { offset = 0x2D, type = "DIR32", symbol = "?g_AudioStreamRefCountF753@@3HA", target = 0x00671388 },
+ { offset = 0x20, type = "REL32", symbol = "??0?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAE@XZ", target = 0x00409350 },
+ { offset = 0x2D, type = "DIR32", symbol = "?audioClientCount@@3HA", target = 0x00671388 },
  { offset = 0x35, type = "DIR32", symbol = "?g_GlobalAudioBuffersF753@@3UGlobalAudioBuffersF753@@A", target = 0x006713A0 },
  { offset = 0x3A, type = "REL32", symbol = "?InitShared@GlobalAudioBuffersF753@@QAEXXZ", target = 0x00409740 },
- { offset = 0x40, type = "DIR32", symbol = "?g_AudioWorkerHandleF753@@3PAXA", target = 0x00671398 },
- { offset = 0x48, type = "DIR32", symbol = "?g_AudioWorkerIDF753@@3KA", target = 0x0067139C },
- { offset = 0x51, type = "DIR32", symbol = "_AudioWorkerMainF753@4", target = 0x00407EF0 },
+ { offset = 0x40, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },
+ { offset = 0x48, type = "DIR32", symbol = "?audioWorkerId@@3KA", target = 0x0067139C },
+ { offset = 0x51, type = "DIR32", symbol = "?Worker@AudioControl407CA0@@YGKPAX@Z", target = 0x00407EF0 },
  { offset = 0x5B, type = "DIR32", symbol = "__imp__CreateThread@24", target = 0x0065713C },
- { offset = 0x60, type = "DIR32", symbol = "?g_AudioWorkerHandleF753@@3PAXA", target = 0x00671398 },
- { offset = 0x67, type = "DIR32", symbol = "?g_AudioWorkerHandleF753@@3PAXA", target = 0x00671398 },
+ { offset = 0x60, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },
+ { offset = 0x67, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },
  { offset = 0x6E, type = "DIR32", symbol = "__imp__SetThreadPriority@8", target = 0x00657140 },
- { offset = 0x76, type = "REL32", symbol = "?Clear@AudioBuffersF753@@QAEXXZ", target = 0x00409490 },
- { offset = 0x7C, type = "DIR32", symbol = "?g_AudioStreamRefCountF753@@3HA", target = 0x00671388 },
- { offset = 0x85, type = "DIR32", symbol = "?g_AudioStreamRefCountF753@@3HA", target = 0x00671388 },
+ { offset = 0x76, type = "REL32", symbol = "?clear@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEXXZ", target = 0x00409490 },
+ { offset = 0x7C, type = "DIR32", symbol = "?audioClientCount@@3HA", target = 0x00671388 },
+ { offset = 0x85, type = "DIR32", symbol = "?audioClientCount@@3HA", target = 0x00671388 },
  { offset = 0x99, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
 
@@ -60846,34 +60846,34 @@ relocations = [
 source = "src/AudioStreamReleaseF755.cpp"
 object = "build/matching/AudioStreamReleaseF755.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioStreamClientF755::~AudioStreamClientF755"]
-symbol = "??1AudioStreamClientF755@@QAE@XZ"
+functions = ["SoundBank::~SoundBank"]
+symbol = "??1SoundBank@@QAE@XZ"
 target_address = 0x00407270
 size = 292
 relocations = [
- { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1AudioStreamClientF755@@QAE@XZ", target = 0x00654DFA },
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1SoundBank@@QAE@XZ", target = 0x00654DFA },
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
- { offset = 0x26, type = "DIR32", symbol = "?g_AudioStreamRefCountF755@@3HA", target = 0x00671388 },
- { offset = 0x2E, type = "DIR32", symbol = "?g_AudioStreamRefCountF755@@3HA", target = 0x00671388 },
- { offset = 0x36, type = "DIR32", symbol = "?g_AudioWorkerRunningF755@@3DA", target = 0x0067138E },
- { offset = 0x3F, type = "DIR32", symbol = "?g_AudioWorkerHandleF755@@3PAXA", target = 0x00671398 },
+ { offset = 0x26, type = "DIR32", symbol = "?audioClientCount@@3HA", target = 0x00671388 },
+ { offset = 0x2E, type = "DIR32", symbol = "?audioClientCount@@3HA", target = 0x00671388 },
+ { offset = 0x36, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+ { offset = 0x3F, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },
  { offset = 0x46, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657134 },
- { offset = 0x4C, type = "DIR32", symbol = "?g_AudioWaitHandleF755@@3PAXA", target = 0x00671394 },
+ { offset = 0x4C, type = "DIR32", symbol = "?audioWorkerEvent@@3PAXA", target = 0x00671394 },
  { offset = 0x53, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
- { offset = 0x58, type = "DIR32", symbol = "?g_AudioWorkerHandleF755@@3PAXA", target = 0x00671398 },
+ { offset = 0x58, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },
  { offset = 0x5F, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
- { offset = 0x65, type = "DIR32", symbol = "?g_AudioWaitHandleF755@@3PAXA", target = 0x00671394 },
- { offset = 0x6F, type = "DIR32", symbol = "?g_AudioWorkerHandleF755@@3PAXA", target = 0x00671398 },
+ { offset = 0x65, type = "DIR32", symbol = "?audioWorkerEvent@@3PAXA", target = 0x00671394 },
+ { offset = 0x6F, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },
  { offset = 0x78, type = "DIR32", symbol = "?g_GlobalAudioBuffersF755@@3UGlobalAudioBuffersF755@@A", target = 0x006713A0 },
  { offset = 0x7D, type = "REL32", symbol = "?ReleaseSharedDequeAt409740@GlobalAudioBuffersF755@@QAEXXZ", target = 0x00409740 },
- { offset = 0x97, type = "REL32", symbol = "?Size@AudioBuffersF755@@QAEIXZ", target = 0x004093A0 },
- { offset = 0xA8, type = "REL32", symbol = "?At@AudioBuffersF755@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
- { offset = 0xB9, type = "REL32", symbol = "?At@AudioBuffersF755@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
- { offset = 0xD6, type = "REL32", symbol = "?At@AudioBuffersF755@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
- { offset = 0xF3, type = "REL32", symbol = "?At@AudioBuffersF755@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
- { offset = 0x103, type = "REL32", symbol = "?Clear@AudioBuffersF755@@QAEXXZ", target = 0x00409490 },
- { offset = 0x112, type = "REL32", symbol = "??1AudioBuffersF755@@QAE@XZ", target = 0x00409380 },
+ { offset = 0x97, type = "REL32", symbol = "?size@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QBEIXZ", target = 0x004093A0 },
+ { offset = 0xA8, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+ { offset = 0xB9, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+ { offset = 0xD6, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+ { offset = 0xF3, type = "REL32", symbol = "??A?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+ { offset = 0x103, type = "REL32", symbol = "?clear@?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAEXXZ", target = 0x00409490 },
+ { offset = 0x112, type = "REL32", symbol = "??1?$vector@PAUIDirectSoundBuffer8@@V?$allocator@PAUIDirectSoundBuffer8@@@std@@@std@@QAE@XZ", target = 0x00409380 },
  { offset = 0x11C, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
 
@@ -94483,8 +94483,8 @@ relocations = []
 source = "src/FighterInitializeF287.cpp"
 object = "build/matching/FighterInitializeF287.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["FighterSoundF287::Configure"]
-symbol = "?Configure@FighterSoundF287@@QAEXXZ"
+functions = ["SoundBank::Configure"]
+symbol = "?Configure@SoundBank@@QAEXXZ"
 target_address = 0x004073A0
 size = 11
 relocations = []

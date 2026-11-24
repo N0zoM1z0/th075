@@ -152,7 +152,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00457660,FighterState::LoadPattern,FighterPattern457660::Load,R045,fighter-pattern-load-00457660
 0x004205F0,FighterScript::LoadArchiveEntryAt004205F0,ScriptResource4205F0::LoadArchive,R070,script-archive-load-004205f0
 0x004206D0,AssetFile::LoadAndTransform,ScriptResource4205F0::LoadFile,R040,script-file-load-004206d0
-0x004076A0,SoundBank::LoadSerializedArchiveEntry,SoundArchive4076A0::Load,R016,sound-archive-load-004076a0
+0x004076A0,SoundBank::LoadSerializedArchiveEntry,SoundBank::LoadArchive,R016,sound-archive-load-004076a0
 0x00420880,FighterScript::ParseAt00420880,ScriptResource4205F0::Parse,R070,script-parser-00420880
 0x00421200,FighterScript::InitializeRecordBuffer,ScriptRecord421200::ScriptRecord421200,R153,script-record-constructor-00421200
 0x00421220,FighterScript::ReleaseRecordBuffer,ScriptRecord421200::~ScriptRecord421200,R153,script-record-destructor-00421220
@@ -165,9 +165,9 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00406A20,SharedSound::CreateBuffer,SoundCreation406A20::Create,R015,shared-sound-create-00406a20
 0x00406820,SharedSound::LoadWaveBuffer,SharedWave406820::Load,R015,shared-wave-load-00406820
 0x00406B80,SharedSound::ReadPcmWave,SharedPcm406B80::Read,R015,shared-pcm-read-00406b80
-0x004073D0,SoundBank::LoadWaveDirectory,SoundBank4073D0::LoadWaveDirectory,R016,sound-bank-wave-directory-004073d0
-0x00407540,SoundBank::LoadSerializedFile,SoundBank4073D0::LoadSerializedFile,R016,sound-bank-file-load-00407540
-0x004077E0,SoundBank::SaveSerializedFile,SoundBank4073D0::SaveSerializedFile,R016,sound-bank-file-save-004077e0
+0x004073D0,SoundBank::LoadWaveDirectory,SoundBank::LoadWaveDirectory,R016,sound-bank-wave-directory-004073d0
+0x00407540,SoundBank::LoadSerializedFile,SoundBank::LoadSerializedFile,R016,sound-bank-file-load-00407540
+0x004077E0,SoundBank::SaveSerializedFile,SoundBank::SaveSerializedFile,R016,sound-bank-file-save-004077e0
 0x00408110,AudioStreamRecord::OpenFile,AudioStream::OpenFile,R017,audio-record-open-file-00408110
 0x00408390,AudioStreamRecord::OpenArchiveEntry,AudioStream::OpenArchiveEntry,R017,audio-record-open-archive-00408390
 0x00408670,AudioStreamRecord::ReadLoopPointsFromFile,AudioStream::ReadLoopPointsFromFile,R017,audio-record-loop-file-00408670
@@ -181,7 +181,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00407EF0,AudioStream::Worker,AudioControl407CA0::Worker,R016,stream-control-worker-00407ef0
 0x004073B0,SoundBank::SetVolume,AudioVolume4073B0::SetSoundBankVolume,R016,sound-bank-volume-004073b0
 0x004073C0,AudioStream::SetVolume,AudioVolume4073B0::SetStreamVolume,R016,stream-volume-004073c0
-0x004079C0,SoundBank::Play,SoundBankPlay4079C0::Play,R016,sound-bank-play-004079c0
+0x004079C0,SoundBank::Play,SoundBank::Play,R016,sound-bank-play-004079c0
 0x00409290,AudioStreamRecord::Initialize,AudioStream::AudioStream,R017,audio-record-ctor-00409290
 0x004092F0,AudioStreamRecord::ReleaseResources,AudioStream::~AudioStream,R017,audio-record-dtor-004092f0
 0x00470F00,CharacterSpecial::AdvanceAt00470F00,CharacterSpecial470F00::ConfigureStage,R049,character-special-stage-00470f00

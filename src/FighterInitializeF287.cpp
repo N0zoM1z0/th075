@@ -4,6 +4,7 @@
 #include <deque>
 #include <stddef.h>
 #include "EffectManagerLifetimeF161.hpp"
+#include "SoundBank.hpp"
 // Physical subobject boundaries established from the original member calls;
 // do not infer unobserved internal fields of fighter or library containers.
 class FighterBaseF287 { public: FighterBaseF287(); virtual void Reserved(); };
@@ -48,8 +49,7 @@ typedef char AssertInputStateF287[(
     offsetof(FighterInputStateF287, quoteLines) == 0x23 &&
     offsetof(FighterInputStateF287, quoteBadges) == 0x1B3 &&
     sizeof(FighterInputStateF287) == 0x1B8) ? 1 : -1];
-class FighterSoundF287 {unsigned char physicalBytes[0x44];public: FighterSoundF287(); ~FighterSoundF287(); void Configure();};
-void FighterSoundF287::Configure()
+void SoundBank::Configure()
 {
 }
 class FighterScriptF287 { public: FighterScriptF287(); ~FighterScriptF287(); };
@@ -57,14 +57,14 @@ class FighterScriptF287 { public: FighterScriptF287(); ~FighterScriptF287(); };
 typedef char AssertPropsF287[(sizeof(FighterActorPropertiesF287)==0x194)?1:-1];
 typedef char AssertVectorF287[(sizeof(FighterActorVectorF287)==0x2c)?1:-1];
 typedef char AssertInputF287[(sizeof(FighterInputF287)==0x84)?1:-1];
-typedef char AssertSoundF287[(sizeof(FighterSoundF287)==0x44)?1:-1];
 class FighterInitF287 : public FighterBaseF287 {
     unsigned char observedBaseGameState[0x2d0];
     FighterActorPropertiesF287 properties;
     FighterActorVectorF287 actors;
     FighterInputF287 input;
     FighterInputStateF287 replay;
-    FighterSoundF287 sounds;
+    SoundBank sounds;
+    unsigned char remainingFighterState6E4[0x30];
     FighterScriptF287 scripts;
 public:
     FighterInitF287();

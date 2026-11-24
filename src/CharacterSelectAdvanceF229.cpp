@@ -1,8 +1,8 @@
+#include "AudioControl.hpp"
 #include "Graphics.hpp"
+#include "SoundBank.hpp"
 #include "CharacterSelectScene.hpp"
 // Main character-select update and transition loop.
-class SceneSelectionSoundF229 {public: void Play(int sound);};
-extern SceneSelectionSoundF229* g_ChoiceSoundAt00671618;
 extern signed char g_ChoiceGameModeAt006714B4;
 extern signed char g_ChoiceFocusAt006714B8;
 // The native input controller repeats a physically observed 0x48-byte record.
@@ -22,12 +22,9 @@ extern const float g_ChoiceClockStepAt0065825C;
 extern const float g_ChoiceRiseLimitAt0065788C;
 extern const float g_ChoiceLoopLimitAt00658258;
 extern const float g_ChoiceReturnStepAt0065747C;
-namespace SelectionGlobalF229 {
-    void ChangeScene(int x, int y, int one, int zero);
-}
 class SelectionReplayF229 {public: void BeginCapture();};
 extern SelectionReplayF229 g_ReplayCaptureAt00671750;
-#define PLAY(id) g_ChoiceSoundAt00671618->Play(id)
+#define PLAY(id) g_SoundBank->Play(id)
 unsigned short CharacterSelectScene::Advance()
 {
     PollInput();
@@ -112,7 +109,7 @@ unsigned short CharacterSelectScene::Advance()
             g_ModeLeftAt006714AC=0;
             g_ModeRightAt006714AD=0;
         }
-        SelectionGlobalF229::ChangeScene(-10000,-60,1,0);
+        AudioControl407CA0::ScheduleFade(-10000,-60,1,0);
         g_ReplayCaptureAt00671750.BeginCapture();
         return 0x2201;
     } else {

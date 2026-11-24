@@ -1,4 +1,5 @@
 #include "AudioStream.hpp"
+#include "AudioControl.hpp"
 #include <windows.h>
 #include <mmsystem.h>
 #include <dsound.h>
@@ -15,9 +16,12 @@ public:
 // An external unsized object-representation anchor declares no queue storage.
 extern BYTE audioQueueStorage[];
 extern signed char masterVolume;
-extern BYTE audioPlaying;
-extern BYTE audioFading;
-extern HANDLE audioWorkerEvent;
+int audioClientCount;
+BYTE audioPlaying;
+BYTE audioFading;
+HANDLE audioWorkerEvent;
+HANDLE audioWorkerHandle;
+DWORD audioWorkerId;
 #define QUEUE reinterpret_cast<AudioQueue407CA0*>(audioQueueStorage)
 
 namespace AudioControl407CA0 {

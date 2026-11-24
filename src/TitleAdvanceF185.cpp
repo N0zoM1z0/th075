@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "TitleScene.hpp"
 #include "MenuInputF184.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -10,7 +11,6 @@
 
 // Only a slot-2 virtual call. The original owner and base layout are unknown.
 namespace Graphics { void Present(); }
-namespace AudioControlF185 { void __cdecl ScheduleFade(long first, long second, unsigned char third, unsigned char fourth); }
 
 extern HWND g_GameMainWindowAt00671608;
 extern signed char g_TitleAttractSwitchAt00671633;
@@ -138,11 +138,11 @@ unsigned short TitleScene::Update()
         g_SequenceStageAt0067161D = static_cast<unsigned char>(rand() % 6 + (rand() % 2) * 10);
         g_CombatMode = 6;
         ++g_TitleAttractSwitchAt00671633;
-        AudioControlF185::ScheduleFade(-10000, -300, 1, 0);
+        AudioControl407CA0::ScheduleFade(-10000, -300, 1, 0);
         return 0x2201;
       }
       g_TitleAttractSwitchAt00671633 = 0;
-      AudioControlF185::ScheduleFade(-10000, -35, 1, 0);
+      AudioControl407CA0::ScheduleFade(-10000, -35, 1, 0);
       return 0x3304;
     }
     field00C = timeGetTime() - field010;

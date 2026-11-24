@@ -24,7 +24,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 2,266 unresolved externals. Camera initialization,
+stops at `LNK1120` with 2,169 unresolved externals. Sound bank lifetime,
+archive loading, and playback share the 20-byte DirectSound buffer owner.
+Music callers share the playback and fade entries. This batch replayed
+112 units and resolved 97 linker symbols. The streaming queue still uses
+borrowed deque bindings.
+
+Camera initialization,
 update, snap, and rendering share state. Scene and sequence callers share
 the camera override and snap entries. The music, options,
 results, and window constructors share the D3D8 texture allocator.
@@ -40,8 +46,6 @@ Drawing callers use the same texture-manager state methods for blend,
 depth, filtering, shader mode, and color scaling. Ordinary and projected
 quad drawing and texture-rectangle lookup also share the manager. The
 default and four-float quad constructors use the same SDK-backed layout.
-The drawing checkpoint compared 76 exact units from 42 freshly compiled
-objects and resolved 46 distinct linker symbols.
 The bitmap entry lifetime still needs linkable definitions.
 Headless library consumers exercised both camera snap modes, the log,
 cosine table, sound defaults, configuration save and load, event queue

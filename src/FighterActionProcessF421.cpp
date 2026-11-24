@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "Fighter.hpp"
 // Independently verified complete R065-authored 1,926-byte fighter-script
 // action dispatcher. The original 36-byte native jump table plus 15-byte
@@ -11,8 +12,6 @@
 extern signed char g_ActionLastIndexAt0066C24F;
 extern signed char g_ActionLastBitAt0066C24E;
 extern unsigned char g_InputCanCancelAt00671632;
-extern void SelectStageAt00419CB0(int);
-extern void RebuildStageAt00419DF0();
 unsigned char Fighter::ProcessAction() {
   signed char mask,number,bit;
   if(scriptIndex>=script.CountPatternEntries(scriptId) || scriptIndex<0) {
@@ -53,8 +52,8 @@ unsigned char Fighter::ProcessAction() {
         }break;
       case 10: field6F8=static_cast<unsigned char>(script.GetWordField(scriptId,scriptIndex));break;
       case 11:
-          SelectStageAt00419CB0(script.GetWordField(scriptId,scriptIndex));
-          RebuildStageAt00419DF0();
+          MusicF204::PlayTrackByIndex(script.GetWordField(scriptId,scriptIndex));
+          MusicF205::ScheduleTransitionFade();
           break;
       case 12: field6FA=script.GetWordField(scriptId,scriptIndex);break;
       case 13: field6FC=script.GetWordField(scriptId,scriptIndex);break;

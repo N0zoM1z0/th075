@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 #include <mmsystem.h>
@@ -14,10 +15,6 @@ extern const char g_OpeningPathAt00657CCC[];
 extern const char g_OpeningRootAt00657CC4[];
 extern const char g_StaffPathAt006582A0[];
 extern const char g_StaffRootAt00658298[];
-extern void BeforeStaffAt00407D70();
-extern void AfterStaffAt00407CC0();
-extern void SetStageAt00419CB0(int);
-extern void ReloadStageAt00419DF0();
 class OpeningSceneF446 : public SceneBaseF446 {
     TextureManagerF198* texture;
     unsigned int elapsed;
@@ -34,18 +31,18 @@ OpeningSceneF446::OpeningSceneF446() {
     texture=new TextureManagerF198;
     texture->AllocateUnformattedSlots(24);
     texture->LoadDefault(g_OpeningPathAt00657CCC,g_OpeningRootAt00657CC4);
-    SetStageAt00419CB0(40);
-    ReloadStageAt00419DF0();
+    MusicF204::PlayTrackByIndex(40);
+    MusicF205::ScheduleTransitionFade();
     startTicks=timeGetTime();
     elapsed=timeGetTime()-startTicks;
 }
 StaffRollSceneF446::StaffRollSceneF446() {
-    BeforeStaffAt00407D70();
-    SetStageAt00419CB0(41);
+    AudioControl407CA0::Stop();
+    MusicF204::PlayTrackByIndex(41);
     texture=new TextureManagerF198;
     texture->AllocateUnformattedSlots(27);
     texture->LoadDefault(g_StaffPathAt006582A0,g_StaffRootAt00658298);
     startTicks=timeGetTime();
     elapsed=timeGetTime()-startTicks;
-    AfterStaffAt00407CC0();
+    AudioControl407CA0::Start();
 }

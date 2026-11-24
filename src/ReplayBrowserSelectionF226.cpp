@@ -1,4 +1,6 @@
+#include "AudioControl.hpp"
 #include "Graphics.hpp"
+#include "SoundBank.hpp"
 #include <string.h>
 // Borrowed physical interfaces. Original scene, list and item layouts remain
 // unproved; none of these interfaces creates/embeds an original owner object.
@@ -16,17 +18,11 @@ class ReplayItemsF226 {
 public:
     ReplayItemF226* Entry(int index);
 };
-class SoundDeviceF226 {
-public:
-    void Play(int soundId);
-};
-extern SoundDeviceF226* g_SoundAt00671618;
 extern unsigned char g_ReplayModeAt0066C238;
 extern unsigned short g_SelectedReplayVariantAt006714A4;
 extern char g_ReplayPathAt00671754[];
 namespace BrowserSceneStepsF226 {
     void PollInputs();
-    void BeginSelectedReplay(int x, int y, int flag, int mode);
 }
 class ReplayBrowserF226 {
 public:
@@ -49,10 +45,10 @@ public:
 };
 #define NAME_LIST (*reinterpret_cast<ReplayNameListF226*>(reinterpret_cast<unsigned char*>(this)+0x0c))
 #define ITEMS (*reinterpret_cast<ReplayItemsF226*>(reinterpret_cast<unsigned char*>(this)+0x20))
-#define PLAY(sound) g_SoundAt00671618->Play(sound)
+#define PLAY(sound) g_SoundBank->Play(sound)
 #define TRANSITION() { \
   strcpy(g_ReplayPathAt00671754, *NAME_LIST.Entry(field048)); \
-  BrowserSceneStepsF226::BeginSelectedReplay(-10000,-60,1,0); \
+  AudioControl407CA0::ScheduleFade(-10000,-60,1,0); \
 }
 unsigned short ReplayBrowserF226::UpdateSelection()
 {

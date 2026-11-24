@@ -1,4 +1,5 @@
 #include "ArchiveCatalog.hpp"
+#include "AudioControl.hpp"
 #include "DataArchive.hpp"
 #include <windows.h>
 #include <stddef.h>

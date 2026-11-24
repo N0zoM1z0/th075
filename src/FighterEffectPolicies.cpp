@@ -1,4 +1,5 @@
 #include "ReimuFighter.hpp"
+#include "SoundBank.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 #include "FighterEffectPolicies.hpp"
 
@@ -31,12 +32,12 @@ void Fighter::SpawnAuxEffect(short effect, float x, float y,
 
 void Fighter::PlaySound(short sound)
 {
-    soundBank.Play(sound);
+    reinterpret_cast<SoundBank*>(&soundBank)->Play(sound);
 }
 
 void Fighter::PlaySharedSound(short sound)
 {
-    g_SharedEffectSoundBankF135->Play(sound);
+    g_SoundBank->Play(sound);
 }
 
 void Fighter::UpdateGaugeTimer(int amount)

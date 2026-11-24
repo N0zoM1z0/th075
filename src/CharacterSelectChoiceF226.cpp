@@ -1,9 +1,8 @@
 #include "CharacterSelectScene.hpp"
+#include "SoundBank.hpp"
 #include <stdlib.h>
 // Per-player choice transitions share the scene layout and the 28-byte
 // input snapshots with the confirmation and option handlers.
-class ChoiceSoundBankF226 { public: void Play(int id); };
-extern ChoiceSoundBankF226* g_ChoiceSoundAt00671618;
 extern unsigned char g_ChoiceRandomModeAt00671610[];
 extern unsigned char g_ChoiceStageAt00671621;
 extern const float g_ChoiceMinimumAt0065782C;
@@ -35,22 +34,22 @@ void CharacterSelectScene::UpdatePlayerChoice(signed char player)
             (choiceStop[player])=0.0f;
     }
     if ((input[player].vertical)==-1) {
-        g_ChoiceSoundAt00671618->Play(0x27);
+        g_SoundBank->Play(0x27);
         (chosenPalette[player])=0;
     } else if (ChoiceInputF226::TestAction((input[player].horizontal))==1) {
-        g_ChoiceSoundAt00671618->Play(0x27);
+        g_SoundBank->Play(0x27);
         (chosenPalette[player])=1;
     } else if ((input[player].vertical)==1) {
-        g_ChoiceSoundAt00671618->Play(0x27);
+        g_SoundBank->Play(0x27);
         (chosenPalette[player])=2;
     }
     if ((input[player].confirm)==1) {
         g_ChoiceRandomModeAt00671610[player]=(chosenPalette[player]);
         (playerState[player])=2;
-        g_ChoiceSoundAt00671618->Play(0x2d);
+        g_SoundBank->Play(0x2d);
     }
     if ((input[player].cancel)==1) {
-        g_ChoiceSoundAt00671618->Play(0x28);
+        g_SoundBank->Play(0x28);
         g_ChoiceStageAt00671621=0;
         optionsCursor[0]=0;
         (playerState[player])=0;
@@ -64,7 +63,7 @@ void CharacterSelectScene::UpdatePlayerChoice(signed char player)
     if ((input[player].special)==1) {
         g_ChoiceRandomModeAt00671610[player]=static_cast<unsigned char>(rand()%3);
         (playerState[player])=2;
-        g_ChoiceSoundAt00671618->Play(0x2d);
+        g_SoundBank->Play(0x2d);
     }
     if ((input[player].alternative)==1) (alternatePalette[player]) = static_cast<unsigned int>(!(alternatePalette[player]));
 }

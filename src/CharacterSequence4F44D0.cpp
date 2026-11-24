@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "CharacterSequence4F44D0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset))
@@ -975,7 +976,7 @@ void AliceFighter::AdvanceSequence()
             g_StateResetCounter = 0xFFFFFF;
             if (ProcessAction()) {
                 if (sequenceTimer == 0) {
-                    SequenceAudio::Stop();
+                    AudioControl407CA0::Stop();
                     if (g_StateFadeAlpha < 252) g_StateFadeAlpha += 3;
                     else {
                         g_StateFadeAlpha = 255;
@@ -992,8 +993,8 @@ void AliceFighter::AdvanceSequence()
         break;
     }
     if (field6FA == 0) {
-        StateAudio::PlayTrack(field6FC);
-        StateAudio::TransitionFade();
+        MusicF204::PlayTrackByIndex(field6FC);
+        MusicF205::ScheduleTransitionFade();
     }
     if (field6FA >= 0) --field6FA;
     AdvanceNoticeLevels();

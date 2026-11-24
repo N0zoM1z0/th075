@@ -1,4 +1,5 @@
 #include "ArchiveCatalog.hpp"
+#include "SoundBank.hpp"
 #include "DataArchive.hpp"
 #include <windows.h>
 #include <mmsystem.h>
@@ -12,13 +13,6 @@ public:
     void LoadArchive(const char*, const char*);
     void LoadFile(const char*, signed char, const char*);
     void Parse(char*, unsigned int);
-};
-class SoundArchive4076A0 {
-public:
-    void Load(const char*, const char*);
-    unsigned int Size();
-    void Assign(int, int);
-    IDirectSoundBuffer8*& At(unsigned int);
 };
 namespace SoundCreation406A20 {
     bool __cdecl Create(const WAVEFORMATEX*, const void*, DWORD, IDirectSoundBuffer8**, DWORD);
@@ -87,12 +81,12 @@ void ScriptResource4205F0::LoadFile(const char* filename, signed char mode, cons
     delete[] data;
 }
 
-void SoundArchive4076A0::Load(const char* filename, const char* archive) {
+void SoundBank::LoadArchive(const char* filename, const char* archive) {
     char* buffer;
     DWORD pcmBytes;
     BYTE entryPresent;
     WAVEFORMATEX format;
-    int sampleCount = Size();
+    int sampleCount = buffers.size();
     int sampleIndex;
     HANDLE file;
     DWORD inputBytesRead;
@@ -100,7 +94,7 @@ void SoundArchive4076A0::Load(const char* filename, const char* archive) {
     if (file == INVALID_HANDLE_VALUE)
         return;
     ReadFile(file, &sampleCount, 4, &inputBytesRead, 0);
-    Assign(sampleCount, 0);
+    buffers.assign(sampleCount, 0);
     for (sampleIndex = 0; sampleIndex < sampleCount; sampleIndex++) {
         ReadFile(file, &entryPresent, 1, &inputBytesRead, 0);
         if (entryPresent) {
@@ -108,7 +102,7 @@ void SoundArchive4076A0::Load(const char* filename, const char* archive) {
             ReadFile(file, &format, sizeof(format), &inputBytesRead, 0);
             buffer = new char[pcmBytes];
             ReadFile(file, buffer, pcmBytes, &inputBytesRead, 0);
-            SoundCreation406A20::Create(&format, buffer, pcmBytes, &At(sampleIndex), 0);
+            SoundCreation406A20::Create(&format, buffer, pcmBytes, &buffers[sampleIndex], 0);
             delete[] buffer;
         }
     }

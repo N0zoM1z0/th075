@@ -1,7 +1,6 @@
 #include "Graphics.hpp"
+#include "SoundBank.hpp"
 // Borrowed record/scene side-only interfaces, not a complete original owner.
-class NameEntrySoundF246 {public: void Play(int id);};
-extern NameEntrySoundF246* g_NameEntrySoundAt00671618;
 class NameEntryProgressF246 {
 public:
     void SaveScore();
@@ -35,7 +34,7 @@ unsigned short NameEntryUpdateF246::UpdatePlayer()
 {
     PollPlayerInput();
     if (field016==1) {
-        g_NameEntrySoundAt00671618->Play(0x2d);
+        g_SoundBank->Play(0x2d);
         if (SELECTION_CODE==0x5b) {
             if (field014>7)
                 LAST_CHAR=100;
@@ -61,7 +60,7 @@ unsigned short NameEntryUpdateF246::UpdatePlayer()
         }
     }
     if (field016==2) {
-        g_NameEntrySoundAt00671618->Play(0x28);
+        g_SoundBank->Play(0x28);
         --field014;
         if (field014<0)
             field014=0;

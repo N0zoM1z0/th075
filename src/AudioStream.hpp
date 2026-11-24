@@ -37,4 +37,11 @@ public:
     BYTE unknown03B;
     HANDLE file;                        // +0x3C
 };
+
+extern int audioClientCount;
+extern BYTE audioPlaying;
+extern BYTE audioFading;
+extern HANDLE audioWorkerEvent;
+extern HANDLE audioWorkerHandle;
+extern DWORD audioWorkerId;
 #endif

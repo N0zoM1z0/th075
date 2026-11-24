@@ -5,7 +5,6 @@
 #include "BattleStateMachine.hpp"
 
 #include "CameraMotion.hpp"
-namespace SequenceAudio { void Stop(); }
 // Narrow views of the observed byte writes; original declarations unknown.
 extern unsigned char g_SequenceCounterAt00671622;
 #endif

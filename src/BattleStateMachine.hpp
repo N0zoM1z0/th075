@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #ifndef TH075_BATTLE_STATE_MACHINE_HPP
 #define TH075_BATTLE_STATE_MACHINE_HPP
 #include "BattleFrame.hpp"
@@ -9,7 +10,6 @@ class StateReplay { public: void AppendRecord(); bool IsInputEmpty(); };
 class StateCapture { public: void InstallCallback(); void EnableDirectDraw(); void CapturePrimary(); };
 class StateRecords { public: void IncrementCounter(signed char first, signed char second); };
 class StateEffects { public: void ReleaseEntries(); };
-namespace StateAudio { void Fade(int volume, int step, bool enabled, bool stop); void TransitionFade(); void PlayTrack(int track); }
 extern StateReplay g_StateReplay;
 extern StateCapture *g_StateCapture;
 extern signed char g_StateReplayLimit;

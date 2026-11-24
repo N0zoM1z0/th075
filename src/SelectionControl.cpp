@@ -1,17 +1,16 @@
 #include "SelectionInput4388D0.hpp"
+#include "SoundBank.hpp"
 #include "CharacterSelectScene.hpp"
 #include "RecordedRange455580.hpp"
 #include <stdlib.h>
 
 // Pointer-only interfaces. No complete scene/fighter/container layout is claimed.
-class SelectionSoundF130 { public: void Play(int); };
 class SelectionProgressF130 {
 public:
     void SetSelection(signed char, signed char);
     signed char GetSelectedValue();
 };
 int __cdecl AbsoluteSelectionInputF130(int);
-extern SelectionSoundF130* g_SelectionSound;
 extern unsigned char g_SelectionProgress[];
 extern signed char g_SelectionCharacters[];
 extern signed char g_SelectionPalettes[];
@@ -27,7 +26,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     if (choiceStop[side] > 0.0f) choiceStop[side] = choiceStop[side] - 1.0f;
     if (choiceStop[side] == 60.0f) choiceStop[side] = 0;
     if (AbsoluteSelectionInputF130((input[side].horizontal)) == 1 || AbsoluteSelectionInputF130((input[side].horizontal)) % 15 == 1 || (stageCountdown[side]) > 0) {
-        if ((stageCountdown[side]) == 0) g_SelectionSound->Play(39);
+        if ((stageCountdown[side]) == 0) g_SoundBank->Play(39);
         portraitReturn[side] = 100.0f;
         portraitFade[side] = 100.0f;
         portraitEnterX[side] = 80.0f;
@@ -71,7 +70,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
         PROGRESS->SetSelection(chosenCharacter[0], g_SelectionDifficulty);
     }
     if ((input[side].confirm) == 1 || (input[side].toggle) == 1 || (stageCountdown[side]) == 1) {
-        g_SelectionSound->Play(45);
+        g_SoundBank->Play(45);
         g_SelectionCharacters[side] = (chosenCharacter[side]);
         g_SelectionPalettes[side] = (input[side].toggle) == 1;
         (playerState[side]) = 1;
@@ -87,11 +86,11 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     if ((stageCountdown[side]) > 0) --(stageCountdown[side]);
     if ((input[side].alternative) == 1) {
         if (PROGRESS->GetSelectedValue() > 0 && g_CombatMode == 3) {
-            g_SelectionSound->Play(45);
+            g_SoundBank->Play(45);
             (optionsOpen[side]) = !(optionsOpen[side]);
         }
         if (g_CombatMode != 3 && g_CombatMode != 5) {
-            g_SelectionSound->Play(45);
+            g_SoundBank->Play(45);
             (optionsOpen[side]) = !(optionsOpen[side]);
         }
     }

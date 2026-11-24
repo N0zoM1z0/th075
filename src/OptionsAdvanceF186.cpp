@@ -1,3 +1,4 @@
+#include "AudioControl.hpp"
 #include "OptionsScene.hpp"
 #include "MenuInputF184.hpp"
 #include "GameLeafHelpers.hpp"
@@ -8,15 +9,14 @@ namespace AudioVolume4073B0 {
     void __cdecl SetSoundBankVolume(signed char);
     void __cdecl SetStreamVolume(signed char);
 }
-namespace AudioControl407CA0 { void __cdecl ApplyVolumeOffset(long); }
 namespace OptionsSettingsF186 { void SaveConfiguration(); }
 
 extern signed char g_OptionsModeAt006714D0;
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671428;
-extern signed char g_StreamVolumeAt006714B7;
-extern signed char g_SoundVolumeAt006714B6;
+extern unsigned char g_StreamVolumeAt006714B7;
+extern unsigned char g_SoundVolumeAt006714B6;
 
 #define SOUND(value) g_SoundBank->Play(value)
 
@@ -69,14 +69,14 @@ unsigned short OptionsScene::Update()
         break;
     case 4:
         if (field015 > 0) {
-            g_StreamVolumeAt006714B7 += 5;
-            if (g_StreamVolumeAt006714B7 > 100) g_StreamVolumeAt006714B7 = 100;
+            reinterpret_cast<signed char&>(g_StreamVolumeAt006714B7) += 5;
+            if (static_cast<signed char>(g_StreamVolumeAt006714B7) > 100) g_StreamVolumeAt006714B7 = 100;
             AudioVolume4073B0::SetStreamVolume(g_StreamVolumeAt006714B7);
             AudioControl407CA0::ApplyVolumeOffset(0);
         }
         if (field015 < 0) {
-            g_StreamVolumeAt006714B7 -= 5;
-            if (g_StreamVolumeAt006714B7 < 0) g_StreamVolumeAt006714B7 = 0;
+            reinterpret_cast<signed char&>(g_StreamVolumeAt006714B7) -= 5;
+            if (static_cast<signed char>(g_StreamVolumeAt006714B7) < 0) g_StreamVolumeAt006714B7 = 0;
             AudioVolume4073B0::SetStreamVolume(g_StreamVolumeAt006714B7);
             AudioControl407CA0::ApplyVolumeOffset(0);
         }
@@ -90,13 +90,13 @@ unsigned short OptionsScene::Update()
         }
         pressedItem--;
         if (field015 > 0) {
-            g_SoundVolumeAt006714B6 += 5;
-            if (g_SoundVolumeAt006714B6 > 100) g_SoundVolumeAt006714B6 = 100;
+            reinterpret_cast<signed char&>(g_SoundVolumeAt006714B6) += 5;
+            if (static_cast<signed char>(g_SoundVolumeAt006714B6) > 100) g_SoundVolumeAt006714B6 = 100;
             AudioVolume4073B0::SetSoundBankVolume(g_SoundVolumeAt006714B6);
         }
         if (field015 < 0) {
-            g_SoundVolumeAt006714B6 -= 5;
-            if (g_SoundVolumeAt006714B6 < 0) g_SoundVolumeAt006714B6 = 0;
+            reinterpret_cast<signed char&>(g_SoundVolumeAt006714B6) -= 5;
+            if (static_cast<signed char>(g_SoundVolumeAt006714B6) < 0) g_SoundVolumeAt006714B6 = 0;
             AudioVolume4073B0::SetSoundBankVolume(g_SoundVolumeAt006714B6);
         }
         if (field017)
