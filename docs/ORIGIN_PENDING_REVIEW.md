@@ -755,6 +755,23 @@ declarations unresolved.
     bash .analysis/final-origin-review/actor-ctor-order/build.sh
     scripts/repo-python .analysis/final-origin-review/actor-ctor-order/compare.py
 
+### R300 — Publisher patch reproduces the pinned executable
+
+The Japanese 1.11 patch passes the publisher's MD5 check
+(`bcde4f88a50e720c0f14f28441965106`). Its LHa payload passes all three
+archive checks. The streamed `th075.exe` has the same SHA-256 as the
+repository target, and `th075b.dat` has the same SHA-256 as the R268
+archive member. The third file is `readme.txt`. The original RSDS
+record is the only target GUID occurrence in the three decoded streams
+and the installer stub. The DAT directory contains 37 game-resource
+entries and no separately named symbol, map or object file.
+[Publisher release and digest](https://tasofro.net/arc/index.html#tf012-p)
+
+    7z l -slt /path/to/th075_111s.exe
+    7z t /path/to/th075_111s.exe
+    7z x -so /path/to/th075_111s.exe th075.exe | sha256sum
+    scripts/repo-python .analysis/final-origin-review/official-patch-symbols/audit.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

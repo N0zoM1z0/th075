@@ -216,9 +216,12 @@ two setters through the existing sprite and text rendering layouts.
 
 R288 lists the current unresolved addresses and their missing
 evidence. The remaining short lifetimes and math workers retain
-complete byte-equal alternatives. The PE's RSDS record identifies
-the original debug database, which is absent from the supplied
-archive. [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
+complete byte-equal alternatives. The publisher's Japanese 1.11 patch
+contains the pinned executable and game data already present in the
+supplied archive. The PE's RSDS record remains the only original debug
+record found in either package.
+[Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
+[Publisher patch check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
 
 R294 identifies `0x00641FB8` as the inferred CRT `labs` contribution
 from the native request order and the full 1,140-byte linked interval.
