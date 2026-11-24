@@ -234,6 +234,12 @@ before adding the base, in a different instruction order.
   counter increment. An empty floating-point boundary test at that
   position still emits its x87 comparison.
   [Sakuya controls](GIANTS.md#2026-11-24--sakuyas-arena-bounds-check-cold-replays-exactly)
+- A register difference at an action entry can originate in the
+  preceding action's completion path. Patchouli's `0x357` and
+  `0x3E5` end with a completion check and two matching exits in both
+  builds. Explicitly expressing the in-progress path in each restores
+  the register choices at the next action entry.
+  [Patchouli controls](GIANTS.md#2026-11-24--patchoulis-object-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

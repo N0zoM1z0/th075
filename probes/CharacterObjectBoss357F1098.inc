@@ -1,5 +1,5 @@
 // F1098: genuine Japanese original 005159A0..00515C0E,
-// 622 original CODE B /131 x86, one interior of NONEXACT 81KB boss.
+// 622 code bytes and 131 x86 instructions in PatchouliObject::Advance.
 case 0x357: {
     if (owner->action>0x31 &&
         owner->action<0x96 &&
@@ -42,6 +42,8 @@ case 0x357: {
         AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;
+    } else if (animationStage < animationStageCount) {
+        // Let the unfinished animation continue on the next tick.
     }
     return;
 }

@@ -1,5 +1,5 @@
 // F1130: original Japanese 0x3E5 at 0051E01F..0051E215:
-// 502 native original CODE B /96 x86 inside ONE nonexact 81KB Boss.
+// 502 code bytes and 96 x86 instructions in PatchouliObject::Advance.
 case 0x3E5: {
     x = owner->x;
     y=0.0f;
@@ -28,6 +28,8 @@ case 0x3E5: {
     if (AdvanceNestedFrame()==animationStageCount) {
         ResetSecondaryCounter(10);
         return;
+    } else if (animationStage < animationStageCount) {
+        // Let the unfinished animation continue on the next tick.
     }
     return;
 }

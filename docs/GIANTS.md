@@ -2,8 +2,8 @@
 
 The unmatched authored functions are slot-1 `Advance` methods from
 the fighter and character-object vtables. They are per-frame state
-machines with large `switch (action)` bodies. The Sakuya, Alice, Remilia,
-Meiling and Suika object parents now have exact replay units. Use the live
+machines with large `switch (action)` bodies. The Sakuya, Alice, Patchouli,
+Remilia, Meiling and Suika object parents now have exact replay units. Use the live
 reconstruction report for the authored backlog and the table below
 for complete source parents.
 
@@ -78,7 +78,7 @@ rows have complete replay units.
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
-| 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` | 522 | 5 | 00515C0E (#10128) |
+| 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` (cold exact) | 0 | 0 | — |
 | 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` | 913 | 10 | 005392F8 (#3223) |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` | 914 | 6 | 00583489 (#6565) |
@@ -1882,4 +1882,34 @@ the 224-byte jump table at `004D4CEF` and the 198-byte remap at
 
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit sakuya-object-advance-004ca6e0
+```
+
+## 2026-11-24 — Patchouli's object Advance cold-replays exactly
+
+Actions `0x357` and `0x3E5` now explicitly leave an unfinished
+animation to continue when `animationStage < animationStageCount`.
+VC7.1 emits the original completion checks and exits. The source
+conditions restore the register choices at the following action
+entries, `00515C0E` and `0051E215`. The completion calls, frame
+updates and effect loops all retain their original bytes.
+
+| Explicit in-progress paths | First differing register use | GPR differences | Complete relocated byte differences |
+| --- | --- | ---: | ---: |
+| Baseline | `00515C0E` in `0x358` | 522 | 26,719 |
+| `0x357` | `0051E215` in `0x3E6` | 75 | 1,193 |
+| `0x357` and `0x3E5` | — | 0 | 0 |
+
+The original `0x357` exit skips frame progression while the owner is
+delayed. Naming only that delay in an empty arm leaves the baseline
+bytes unchanged. Checking the object's animation stage and count
+reproduces the register choice in `0x358` while keeping the delay guard
+and the completion cleanup.
+
+The canonical replay compares 82,106 bytes, including the 368-byte
+jump table at `0051E403` and the 199-byte remap at `0051E573`.
+All 1,449 relocations, 199 action offsets and 1,834 direct branch
+destinations match. The match ledger credits 81,539 code bytes.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit patchouli-object-advance-0050a580
 ```

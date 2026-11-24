@@ -3,8 +3,8 @@
 #include "EffectServices.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of PatchouliObject::Advance at 0050A580.
-// Original source/owner layout and the entire 81KB machine function remain NONEXACT;
-// all genuine case/default gameplay is sourced from independent original PE evidence.
+// Replays 81,539 code bytes plus 567 bytes of switch data with VC7.1 build 3077.
+// Compiler profile and relocation bindings are in config/match-units.toml.
 // The state cases belong to PatchouliObject; helper call contracts remain native.
 // Shared sound, camera and effect spawning now use the real Fighter API,
 // with float coordinates passed directly to the native float parameter slots.

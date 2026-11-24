@@ -77,6 +77,13 @@ relocations. Explicitly handling later startup frames in action 808
 restores the original registers at the arena bounds check and adds
 42,511 authored code bytes. [Comparison and replay](GIANTS.md#2026-11-24--sakuyas-arena-bounds-check-cold-replays-exactly)
 
+### Patchouli object Advance is exact
+
+`patchouli-object-advance-0050a580` cold-replays 82,106 bytes with all
+1,449 relocations. The in-progress animation paths in actions `0x357`
+and `0x3E5` restore the following action entries and add 81,539 authored
+code bytes. [Comparison and replay](GIANTS.md#2026-11-24--patchoulis-object-advance-cold-replays-exactly)
+
 ### Latest Yuyuko improvement
 
 In `probes/CharacterObjectActions0057D580F1237.cpp`, state 838's condition
@@ -221,8 +228,7 @@ The complete but nonexact parents are:
 
 - Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
   Remilia `00543210`.
-- Objects: Patchouli `0050A580`, Youmu `00536400`,
-  Yuyuko `0057D580`, Yukari `005A1600`.
+- Objects: Youmu `00536400`, Yuyuko `0057D580`, Yukari `005A1600`.
 
 The nine remaining functions without a complete parent are:
 
