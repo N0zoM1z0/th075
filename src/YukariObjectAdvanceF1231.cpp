@@ -1,6 +1,6 @@
 // Natural-C++ reconstruction of YukariObject::Advance at 005A1600.
-// The 43,599-byte object state machine is represented in full, but remains
-// NONEXACT; no exact replacement or original private-layout claim.
+// Replays 43,599 code bytes plus 508 bytes of switch data with VC7.1 build 3077.
+// Compiler profile and relocation bindings are in config/match-units.toml.
 #include "CharacterObject.hpp"
 #include "YukariFighter.hpp"
 #include "EffectServices.hpp"
@@ -2000,7 +2000,12 @@ void YukariObject::Advance()
             else {
                 x = facing * velocityX + x;
                 y += velocityY;
-                if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
+                if (AdvanceNestedFrame() == animationStageCount) {
+                    ClearFrameInfo();
+                    return;
+                } else if (animationStage < animationStageCount) {
+                    // Let the unfinished animation continue on the next tick.
+                }
             }
         }
         break;

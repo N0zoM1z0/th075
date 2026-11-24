@@ -995,3 +995,4 @@ MeilingObject::Advance,0x005EB520,function
 SuikaObject::Advance,0x005C9CC0,function
 SakuyaObject::Advance,0x004CA6E0,function
 PatchouliObject::Advance,0x0050A580,function
+YukariObject::Advance,0x005A1600,function

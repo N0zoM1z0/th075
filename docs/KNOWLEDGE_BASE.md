@@ -240,6 +240,11 @@ before adding the base, in a different instruction order.
   builds. Explicitly expressing the in-progress path in each restores
   the register choices at the next action entry.
   [Patchouli controls](GIANTS.md#2026-11-24--patchoulis-object-advance-cold-replays-exactly)
+- A register change can shorten some instruction encodings and lengthen
+  others. Yukari's explicit unfinished-animation path in 908 restores
+  eleven instruction widths across the complete object. The matching
+  body grows by three bytes with the same instruction count.
+  [Yukari comparison](GIANTS.md#2026-11-24--yukaris-object-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

@@ -48,7 +48,6 @@ rebuilt COFF function size.
 | Character | Address | Original CODE | COFF section | Mnemonic differences | Width differences | GPR differences | First GPR difference |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | Yuyuko | `0057D580` | 43,845 | 44,327 | 23 | 28 | 897 | `00583489` (#6565) |
-| Yukari | `005A1600` | 43,599 | 44,104 | 0 | 11 | 613 | `005A88A8` (#7965) |
 
 The nonexact parents and their compiler flags are in
 `config/frontiers.toml`. The other parent measurements are summarized in
@@ -83,6 +82,13 @@ restores the original registers at the arena bounds check and adds
 1,449 relocations. The in-progress animation paths in actions `0x357`
 and `0x3E5` restore the following action entries and add 81,539 authored
 code bytes. [Comparison and replay](GIANTS.md#2026-11-24--patchoulis-object-advance-cold-replays-exactly)
+
+### Yukari object Advance is exact
+
+`yukari-object-advance-005a1600` cold-replays 44,107 bytes with all 943
+relocations. The unfinished animation path in action 908 restores the
+register choices across 909–917 and adds 43,599 authored code bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--yukaris-object-advance-cold-replays-exactly)
 
 ### Latest Yuyuko improvement
 
@@ -228,7 +234,7 @@ The complete but nonexact parents are:
 
 - Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
   Remilia `00543210`.
-- Objects: Youmu `00536400`, Yuyuko `0057D580`, Yukari `005A1600`.
+- Objects: Youmu `00536400`, Yuyuko `0057D580`.
 
 The nine remaining functions without a complete parent are:
 
@@ -244,12 +250,10 @@ previous experiments.
 
 ## Recent source checkpoints
 
-The latest commit improves Yuyuko's complete object `Advance` parent. The
-preceding checkpoints also replace raw Fighter/NameEntry offset access with
-shared typed members for result state, command bytes, snapshot score/health,
-result and staff-roll score reads, and the NameEntry texture/state prefix.
-Inspect `git log -10 --oneline` for the exact checkpoint sequence; each uses
-the requested `gpt-web: ...` prefix.
+Earlier checkpoints improve Yuyuko's complete object `Advance` parent and
+replace raw Fighter and NameEntry offsets with shared typed members.
+Inspect `git log -10 --oneline` for the checkpoint sequence. Use the
+requested `gpt-6.2-sol: ...` prefix for new commits.
 
 A 2026-11-20 leaf pass recovered the 0x74-byte `FighterFrameInfo` layout and
 its memberwise assignment at 0045AAE0 as natural C++. The hurt/hit members
@@ -279,7 +283,7 @@ do not increase authored exact coverage.
 5. Cold-replay only newly accepted or affected exact units, including shared
    header consumers when relevant. Never run the full cold replay merely for
    a handoff or progress check.
-6. Commit each substantive checkpoint promptly with `gpt-web: ...`; make
+6. Commit each substantive checkpoint promptly with `gpt-6.2-sol: ...`; make
    multiple coherent commits during a productive session rather than stopping
    after the first one.
 

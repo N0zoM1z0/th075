@@ -3,9 +3,9 @@
 The unmatched authored functions are slot-1 `Advance` methods from
 the fighter and character-object vtables. They are per-frame state
 machines with large `switch (action)` bodies. The Sakuya, Alice, Patchouli,
-Remilia, Meiling and Suika object parents now have exact replay units. Use the live
-reconstruction report for the authored backlog and the table below
-for complete source parents.
+Remilia, Yukari, Suika and Meiling object parents have exact replay units.
+Use the live reconstruction report for the authored backlog and the
+table below for complete source parents.
 
 Measure a parent with
 
@@ -82,7 +82,7 @@ rows have complete replay units.
 | 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` | 913 | 10 | 005392F8 (#3223) |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` | 914 | 6 | 00583489 (#6565) |
-| 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` | 613 | 11 | 005A88A8 (#7965) |
+| 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` (cold exact) | 0 | 0 | — |
 | 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` (cold exact) | 0 | 0 | — |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
 
@@ -1912,4 +1912,24 @@ destinations match. The match ledger credits 81,539 code bytes.
 
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit patchouli-object-advance-0050a580
+```
+
+## 2026-11-24 — Yukari's object Advance cold-replays exactly
+
+Action 908 now explicitly lets an unfinished animation continue when
+`animationStage < animationStageCount`. The VC7.1 build emits the original
+movement, bounds checks and completion cleanup. At the following entry,
+`005A88A8`, the first receiver reload uses ECX as in the target.
+That change clears all 613 register differences across actions 909–917.
+The eleven instruction-width differences also disappear, with the code
+extent growing from 43,596 to the target 43,599 bytes.
+
+The cold replay compares 44,107 bytes with zero differences, including
+the 308-byte jump table at `005AC04F`, the 200-byte remap at `005AC183`,
+and all 943 relocation fields. The complete audit checks all 200 action
+offsets and 1,196 direct branch destinations. The match ledger credits
+43,599 code bytes.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit yukari-object-advance-005a1600
 ```
