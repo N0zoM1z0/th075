@@ -6,10 +6,6 @@
 #include <d3d8.h>
 #include "ResultScene.hpp"
 
-// Borrowed drawing interface at scene+8; original parent layout unproven.
-class ResultDigitDrawerF241 {
-public: void DrawQuad(int texture,const SpriteQuad40CA80&, const RECT*, DWORD);
-};
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
 void ResultScene::DrawDecimalDigits(float x, float y, DWORD color,
                                         int number, signed char style, int minDigits)
@@ -23,7 +19,7 @@ void ResultScene::DrawDecimalDigits(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) << 4, style * 20 + 0x80,
                         ((remaining % 10) << 4) + 0x10, style * 20 + 0x94);
-                reinterpret_cast<TextureManagerF198*>(textures)->DrawQuad(2,quad,&rect,color);
+                textures->DrawQuad(2,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-16.0f,0.0f,0.0f);
                 --minDigits;
@@ -32,7 +28,7 @@ void ResultScene::DrawDecimalDigits(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) << 4, style * 20 + 0x80,
                         ((remaining % 10) << 4) + 0x10, style * 20 + 0x94);
-                reinterpret_cast<TextureManagerF198*>(textures)->DrawQuad(2,quad,&rect,color);
+                textures->DrawQuad(2,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else

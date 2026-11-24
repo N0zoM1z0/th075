@@ -3,6 +3,8 @@
 #include <windows.h>
 #include "SceneBase.hpp"
 
+class TextureManagerF198;
+
 // The scene that tallies a finished match (vtable 00658038). The full extent
 // is unknown, so it is only reached through the game's pointer.
 class ResultScene : public SceneBase {
@@ -15,7 +17,7 @@ public:
     void DrawDecimalDigits(float x, float y, DWORD color, int number,
                            signed char style, int minDigits);       // 0042F530
 
-    void* textures;                     // +0x008 the scene's texture manager
+    TextureManagerF198* textures;                     // +0x008 the scene's texture manager
     signed char field00C;               // +0x00C
     unsigned char field00D;             // +0x00D
     unsigned char unknown00E[0x010 - 0x00E];

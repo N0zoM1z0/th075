@@ -55441,7 +55441,7 @@ target = 0x00657F38
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GOptionTextureF432@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 136
@@ -56602,7 +56602,7 @@ target = 0x00657210
 [[units.frame-capture-present-primary-00417160.relocations]]
 offset = 50
 type = "REL32"
-symbol = "?InitializeFromRectangle@NativeQuadF461@@QAEXPBUtagRECT@@@Z"
+symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z"
 target = 0x0040DB50
 [[units.frame-capture-present-primary-00417160.relocations]]
 offset = 57
@@ -57466,7 +57466,7 @@ target = 0x00658038
 [[units.result-scene-release-resource-0042e870.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.result-scene-release-resource-0042e870.relocations]]
 offset = 109
@@ -57561,7 +57561,7 @@ target = 0x00671630
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 97
 type = "REL32"
-symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 124
@@ -58598,7 +58598,7 @@ target = 0x00402660
 [[units.loading-scene-draw-complete-00425390.relocations]]
 offset = 34
 type = "REL32"
-symbol = "?ConstructNative@DrawQuadF470@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.loading-scene-draw-complete-00425390.relocations]]
 offset = 50
@@ -58648,7 +58648,7 @@ target = 0x00402660
 [[units.logo-scene-draw-complete-00425620.relocations]]
 offset = 34
 type = "REL32"
-symbol = "?ConstructNative@DrawQuadF470@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.logo-scene-draw-complete-00425620.relocations]]
 offset = 50
@@ -60276,37 +60276,37 @@ target = 0x0066FE30
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 28
 type = "DIR32"
-symbol = "?Twenty@GeometryConstants@@3MB"
+symbol = "__real@41a00000"
 target = 0x0065786C
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 41
 type = "DIR32"
-symbol = "?Nineteen@GeometryConstants@@3MB"
+symbol = "__real@41980000"
 target = 0x00657F78
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 64
 type = "REL32"
-symbol = "?ConstructNative@ReplayQuadF510@@QAEXMMMM@Z"
+symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z"
 target = 0x0040DA00
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 70
 type = "DIR32"
-symbol = "?g_OriginalReplayPrefixAt00657F9C@@3UOriginalReplayPrefixF511@@B"
+symbol = "$SG72109"
 target = 0x00657F9C
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 81
 type = "DIR32"
-symbol = "?g_OriginalReplayPrefixAt00657F9C@@3UOriginalReplayPrefixF511@@B"
+symbol = "$SG72109"
 target = 0x00657F9C
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 93
 type = "DIR32"
-symbol = "?g_OriginalReplayPrefixAt00657F9C@@3UOriginalReplayPrefixF511@@B"
+symbol = "$SG72109"
 target = 0x00657F9C
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 106
 type = "DIR32"
-symbol = "?g_OriginalReplayPrefixAt00657F9C@@3UOriginalReplayPrefixF511@@B"
+symbol = "$SG72109"
 target = 0x00657F9C
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 131
@@ -60355,7 +60355,7 @@ target = 0x00657F78
 [[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
 offset = 64
 type = "REL32"
-symbol = "?ConstructNative@RankQuadF472@@QAEXMMMM@Z"
+symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z"
 target = 0x0040DA00
 [[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
 offset = 151
@@ -60395,7 +60395,7 @@ target = 0x00657F78
 [[units.result-scene-draw-rank-glyphs-00431890.relocations]]
 offset = 64
 type = "REL32"
-symbol = "?ConstructNative@RankQuadF472@@QAEXMMMM@Z"
+symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z"
 target = 0x0040DA00
 [[units.result-scene-draw-rank-glyphs-00431890.relocations]]
 offset = 151

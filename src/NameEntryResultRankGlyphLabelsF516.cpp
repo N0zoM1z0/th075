@@ -2,34 +2,21 @@
 #include "GeometryConstants.hpp"
 #include <windows.h>
 #include "ResultListScene.hpp"
-// Independently original R109 and R043 complete rank glyph labels.
-// Real 132-byte quad is a meaningful member of a local aggregate.
-// Its borrowed 0040DA00 constructor is called on the true quad field;
-// real separate eight-glyph array triggers the native /GS cookie and
-// authentic EBP-0x98 quad, EBP-0x0C glyph positions.
-// Two individually observed complete native 169-byte scene rank label methods.
-// Only real quad allocation footprint, text glyphs, original globals and ABI.
-class RankQuadF472 {
- unsigned int observedQuadCarrier[33];
-public:void ConstructNative(float x,float y,float width,float height);
-};
-struct RankGlyphFrameF472 { RankQuadF472 quad; };
+#include "SpriteQuad.hpp"
 
 void PlayerNameEntryScene::DrawRankLabel(float x,float y,DWORD tint,signed char rank) {
- unsigned char glyphs[8];
- RankGlyphFrameF472 frame;
- frame.quad.ConstructNative(x,y,x+GeometryConstants::Nineteen,y+GeometryConstants::Twenty);
- glyphs[0]=13;glyphs[1]=40;glyphs[2]=71;
- glyphs[3]=rank/10+52;glyphs[4]=rank%10+52;
- glyphs[5]=100;glyphs[6]=100;glyphs[7]=100;
- DrawNameGlyphs(x,y,tint,reinterpret_cast<const signed char*>(glyphs));
+    SpriteQuad40CA80 rankQuad(x, y, x + GeometryConstants::Nineteen, y + GeometryConstants::Twenty);
+    signed char glyphCodes[8];
+    glyphCodes[0]=13;glyphCodes[1]=40;glyphCodes[2]=71;
+    glyphCodes[3]=rank/10+52;glyphCodes[4]=rank%10+52;
+    glyphCodes[5]=100;glyphCodes[6]=100;glyphCodes[7]=100;
+    DrawNameGlyphs(x,y,tint,glyphCodes);
 }
 void ResultListScene::DrawRankLabel(float x,float y,unsigned int tint,signed char rank) {
- unsigned char glyphs[8];
- RankGlyphFrameF472 frame;
- frame.quad.ConstructNative(x,y,x+GeometryConstants::Nineteen,y+GeometryConstants::Twenty);
- glyphs[0]=13;glyphs[1]=40;glyphs[2]=71;
- glyphs[3]=rank/10+52;glyphs[4]=rank%10+52;
- glyphs[5]=100;glyphs[6]=100;glyphs[7]=100;
- DrawNameGlyphs(x,y,tint,reinterpret_cast<const signed char*>(glyphs));
+    SpriteQuad40CA80 rankQuad(x, y, x + GeometryConstants::Nineteen, y + GeometryConstants::Twenty);
+    signed char glyphCodes[8];
+    glyphCodes[0]=13;glyphCodes[1]=40;glyphCodes[2]=71;
+    glyphCodes[3]=rank/10+52;glyphCodes[4]=rank%10+52;
+    glyphCodes[5]=100;glyphCodes[6]=100;glyphCodes[7]=100;
+    DrawNameGlyphs(x,y,tint,glyphCodes);
 }

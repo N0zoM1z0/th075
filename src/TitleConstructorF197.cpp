@@ -14,8 +14,8 @@ TitleScene::TitleScene()
     field010 = timeGetTime();
     field00C = timeGetTime() - field010;
     textures = new TextureManagerF198();
-    static_cast<TextureManagerF198*>(textures)->AllocateUnformattedSlots(4);
-    static_cast<TextureManagerF198*>(textures)->LoadDefault(
+    textures->AllocateUnformattedSlots(4);
+    textures->LoadDefault(
         g_TitleTextureDataAt006582F0, g_TitleTextureRootAt006582E8);
     field014 = 0;
     field018 = 0;

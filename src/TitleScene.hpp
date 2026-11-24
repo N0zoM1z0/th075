@@ -2,6 +2,8 @@
 #define TH075_TITLE_SCENE_HPP
 #include "SceneBase.hpp"
 
+class TextureManagerF198;
+
 // The title menu (vtable 00658308). The full extent is unknown, so the
 // scene is only reached through the game's pointer.
 class TitleScene : public SceneBase {
@@ -12,7 +14,7 @@ public:
     virtual void Render();                                          // slot 2, 0043A7A0
     void PollMenuInput();                                           // 0043ABF0
 
-    void* textures;                     // +0x008 the scene's texture manager
+    TextureManagerF198* textures;                     // +0x008 the scene's texture manager
     unsigned int field00C;              // +0x00C elapsed time
     unsigned int field010;              // +0x010 start time
     int field014;                       // +0x014 confirm pressed

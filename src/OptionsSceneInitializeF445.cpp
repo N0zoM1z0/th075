@@ -10,8 +10,8 @@ extern const char g_OptionsArchiveRootAt00657D78[];
 OptionsScene::OptionsScene() {
     canvas=0;
     textures=new TextureManagerF198;
-    static_cast<TextureManagerF198*>(textures)->AllocateUnformattedSlots(3);
-    static_cast<TextureManagerF198*>(textures)->LoadDefault(g_OptionsDataPathAt00657D80,g_OptionsArchiveRootAt00657D78);
+    textures->AllocateUnformattedSlots(3);
+    textures->LoadDefault(g_OptionsDataPathAt00657D80,g_OptionsArchiveRootAt00657D78);
     Graphics::CreateTexture(0x400, 0x200, &canvas, 0x20);
     field014=5;
     currentItem=0;

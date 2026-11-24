@@ -2,6 +2,8 @@
 #define TH075_OPTIONS_SCENE_HPP
 #include "SceneBase.hpp"
 
+class TextureManagerF198;
+
 struct IDirect3DTexture8;
 
 // The options menu (vtable 00657F38). The full extent is unknown, so the
@@ -15,7 +17,7 @@ public:
     void PollInput();                                               // 00429DC0
     void Apply(unsigned char option);                               // 00429F00 redraws an option's value
 
-    void* textures;                     // +0x008 the scene's texture manager
+    TextureManagerF198* textures;                     // +0x008 the scene's texture manager
     IDirect3DTexture8* canvas;          // +0x00C surface the option values are drawn on
     short currentItem;                  // +0x010
     short pressedItem;                  // +0x012

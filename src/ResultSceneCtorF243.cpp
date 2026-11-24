@@ -12,8 +12,8 @@ extern const char g_ResultTextureRootAt00658014[];
 ResultScene::ResultScene()
 {
     textures = new TextureManagerF198();
-    static_cast<TextureManagerF198*>(textures)->AllocateUnformattedSlots(3);
-    static_cast<TextureManagerF198*>(textures)->LoadDefault(g_ResultTexturePathAt0065801C,g_ResultTextureRootAt00658014);
+    textures->AllocateUnformattedSlots(3);
+    textures->LoadDefault(g_ResultTexturePathAt0065801C,g_ResultTextureRootAt00658014);
     field014=1.0f;
     field018=0;
     field019=0;

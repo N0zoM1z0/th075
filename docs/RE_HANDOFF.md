@@ -23,7 +23,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 481 unresolved externals. The container and
+stops at `LNK1120` with 474 unresolved externals. The scene cleanup and
+quad batch resolved seven symbols and cold-replayed 29 units across 20
+objects. Options, results and title share the texture manager type from
+construction through destruction. The loading, logo, capture, rank and
+replay filename callers use the shared quad constructors.
+
+The container and
 storage batch resolved seven symbols and cold-replayed 20 units across
 16 objects. The HUD and status views share the typed frame vectors, and
 the direction-bit writer uses the typed input deque. The character loader
@@ -120,12 +126,9 @@ Camera initialization, update, snap, and rendering share state. Scene
 and sequence callers share the camera override and snap entries. The music, options,
 results, and window constructors share the D3D8 texture allocator.
 Transition dispatch and frame capture share the presentation callback
-API. Transition and opaque sprite drawing share the SDK-backed RECT
-constructor. The frame capture callback still needs its constructor
-binding reconciled with the native stack layout.
-The loading and logo draw routines use the same transform and frame
-completion methods. Their default quad constructor has the same local
-layout constraint.
+API. Transition, frame capture and opaque sprite drawing share the
+SDK-backed RECT constructor. The loading and logo draw routines use the
+same default quad constructor, transform and frame completion methods.
 Texture pack I/O, bitmap directories, drawing, and teardown share the
 manager's three typed vectors. The bitmap codec and entry lifetime use
 the same 44-byte entry storage. WinMain and the manager use the same

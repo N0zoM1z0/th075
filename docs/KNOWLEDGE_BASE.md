@@ -473,6 +473,27 @@ quad by reference and preserve the observed local copy layout. The
 four-float constructor at `0x0040DA00` uses the same quad layout as
 the default constructor at `0x0040D990`.
 
+The loading and logo renderers match with a named quad outside the
+inner `RECT` scope. Rank rendering matches with the named `rankQuad`
+and `glyphCodes` locals in one scope. A discarded temporary retained
+the full code size and relocation offsets, but placed the quad eight
+bytes closer to the frame pointer. Frame capture matches using
+`RECT region` and `SpriteRectF211 spriteQuad` in one scope. The save
+filename renderer uses the browser's existing character-array prefix.
+The fourteen readonly bytes match at both native locations, and the
+save renderer copies them through the original four relocation addends.
+
+The options, result and title scene vtables resolve the weak vector
+deleting entry to each scalar deleting destructor. Their texture
+cleanup calls the 44-byte manager deleting wrapper at `0x00425460`,
+which calls the manager destructor at `0x0040AE40`.
+
+At `819f57a4`, linking the archive with WinMain and the seven
+`.CRT$XCU` objects omitted 34 externals from the full-object link
+diagnostic. Twenty-two came from the replay append object and seven
+from the sprite history renderer. The archive link helps prioritize
+missing definitions by translation unit.
+
 Naming the entry's byte arrays caused VC7.1 to emit a stack cookie in
 the three slot allocators with `/GS`. Omitting that option for those
 three units reproduced the native prologues and their full unwind
