@@ -406,7 +406,7 @@ The current direct-call scan is in
 | `0x004138D0`, `0x00441FD0` | Neither empty body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. The original owners are unknown. |
 | `0x004229D0` | R286 uses the actual script sequence layout. Both copy forms reproduce all 28 bytes and the relocation to the same deque copy constructor. |
 | `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
-| `0x00438A60`, `0x00641FB8` | The R163 long absolute-value overload and ordinary wrapper match. The underlying 11-byte body also matches both pinned CRT members. R263 independently places the separate `abs.obj` contribution at `0x00641DAA`. |
+| `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
 | `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
 | `0x00458650`, `0x00458670`, `0x00458770` | The two vtable constructors and the sprite list member destructor match complete explicit and implicit forms. The destructor's scalar-deleting caller also matches, including both calls. |
@@ -448,8 +448,8 @@ outside the interval. Supplying the original `memcmp.obj` and
 all 544 bytes and fields in the same relative layout. The result
 holds in fresh links with and without `/DEBUG`, using the linker's
 automatic alignment. The original input order is
-unknown, so the interval cannot independently identify the 11-byte
-body as `labs.obj`.
+unknown, so the interval alone cannot identify the 11-byte body as
+`labs.obj`. R294 compares the larger request sequence.
 
 In `.analysis/final-origin-review/crt-link-order/`, the two entry
 objects use `/MT /Od /Ob0 /Oi- /Gy /GR- /GX- /Zl` and
@@ -591,6 +591,37 @@ constructor. The role of the final dword at `+0x80` remains unknown.
 
     bash .analysis/final-origin-review/quad-comdat-selection/link.sh
     scripts/repo-python .analysis/final-origin-review/quad-comdat-selection/compare.py
+
+### R294 — CRT absolute-value archive request order
+
+The earliest native direct transfers to `abs`, `strncmp`, `sqrt`,
+`memcmp`, the 11-byte absolute-value candidate, `log10`, `ceil`,
+and `atan2` occur in that order. The scene constructor at
+`0x004251C0` stores the vtable whose three entries request
+`_purecall` between the first `strncmp` and `sqrt` requests.
+The `purevirt.obj` contribution includes the adjacent 16-byte
+handler setter and its two real data fields. The earlier R263
+`abs.obj` contribution still compares separately as all 39 bytes.
+
+The pinned linker extracts the unmodified `libcmt.lib` members in
+this order when a C++ object issues those same requests, including
+the pure virtual requests through an actual vtable. The complete
+`0x00641DE0` through `0x00642254` interval, ending immediately
+after the two `atan2` entries, matches all 1,140 bytes and 49
+relocation operands. Code and data symbols bind separately in the
+native and probe images. Swapping only the two request positions
+moves `log10.obj` ahead of `labs.obj`.
+
+With the ordinary byte-equal function in a separate object or a
+regular archive on either side of `libcmt.lib`, the linker places
+the leaf outside the interval. The span from `memcmp` to `log10`
+loses 16 bytes. R289's explicit-object input can still reproduce
+the smaller interval. The larger native request order supports
+the inferred `labs.obj` association at `0x00641FB8`. The caller
+at `0x00438A60` has both R163 declarations and remains unresolved.
+
+    bash .analysis/final-origin-review/crt-request-order/link.sh
+    scripts/repo-python .analysis/final-origin-review/crt-request-order/compare.py
 
 ## Historical R263 inventory
 

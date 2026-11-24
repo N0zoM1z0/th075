@@ -220,8 +220,12 @@ complete byte-equal alternatives. The PE's RSDS record identifies
 the original debug database, which is absent from the supplied
 archive. [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 
-R289 reproduces the complete CRT interval around `0x00641FB8` with
-both CRT and ordinary input objects. R290 uses the original C++
+R294 identifies `0x00641FB8` as the inferred CRT `labs` contribution
+from the native request order and the full 1,140-byte linked interval.
+The outer wrapper remains unresolved.
+[CRT request order](ORIGIN_PENDING_REVIEW.md#r294--crt-absolute-value-archive-request-order)
+
+R290 uses the original C++
 startup table to distinguish the event service pulse at
 `0x00423B20`, which cold-replays all 26 bytes and both relocations.
 R292 identifies four inner float workers as VC7.1 header code
