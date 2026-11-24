@@ -1,10 +1,10 @@
-#include "NameEntryInputF182.hpp"
+#include "NameEntryScenes.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "GameLeafHelpers.hpp"
 
 #define HELD(button) g_InputMappings[i].held.counts[button]
 
-void NameEntryInputF182::PollPlayerInput()
+void PlayerNameEntryScene::PollInput()
 {
     Input::PollKeyboard();
     Input::PollJoysticks();
@@ -59,7 +59,7 @@ void NameEntryInputF182::PollPlayerInput()
     }
 }
 
-void NameEntryInputF182::PollSharedInput()
+void SharedNameEntryScene::PollInput()
 {
     Input::PollKeyboard();
     Input::PollJoysticks();

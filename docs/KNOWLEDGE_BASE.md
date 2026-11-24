@@ -170,7 +170,7 @@ all 36 bytes of the wrapper. The application and scene drawing callers
 share that interface.
 
 WinMain uses the shared event, input, sound, archive and game-default
-lifetime functions. Eleven scene types have compile-time checks for the
+lifetime functions. Fourteen scene types have compile-time checks for the
 native allocation sizes. The comparison covers the complete WinMain
 body and its 15-entry scene table.
 
@@ -191,6 +191,15 @@ at offsets 12 and 16. Battle-end uses a 12-byte allocation. For all
 five types, both the constructor and the destructor objects emit the
 same three virtual table entries and the native 44-byte deleting
 destructor. Exception cleanup calls the shared base destructor.
+
+The two name-entry scenes share their rendering, input and allocation
+layouts through `NameEntryScenes.hpp`. The player name editor selects a
+`ProgressScore` in the existing difficulty record. The shared editor
+uses the player name in the replay file header. The music room's four
+texture pointers precede 60 catalog records of 16 bytes each. Its
+selection counters follow the catalog at offsets `0x3DC` through
+`0x3DF`. Named member accesses preserve the original array strides
+and all three scenes' virtual table targets.
 
 The progress object occupies `0x16BC8` bytes from `0x006718F8` to the cosine
 table. Its startup and registered exit wrappers match the native code.

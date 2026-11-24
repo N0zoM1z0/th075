@@ -1,3 +1,4 @@
+#include "MusicRoomScene.hpp"
 #include "BattleEndScene.hpp"
 #include "SequenceScenes.hpp"
 #include "PlayerState.hpp"
@@ -11,7 +12,6 @@
 // Complete native game input tick policies: two independent 106-byte
 // scene entrypoints and a 107-byte battle-end actor-specific variant.
 class FighterInputF466 {public:void AdvanceActorInput();};
-class SceneTwoInputsF466 {public:void PollInput();};
 void BattleEndScene::PollInput() {
     Input::PollKeyboard();
     Input::PollJoysticks();
@@ -22,7 +22,7 @@ void BattleEndScene::PollInput() {
             Graphics::ToggleWindowMode();
     }
 }
-void SceneTwoInputsF466::PollInput() {
+void MusicRoomScene::PollInput() {
     Input::PollKeyboard();
     Input::PollJoysticks();
     g_InputMappings[0].UpdateHeldCounts();

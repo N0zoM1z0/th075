@@ -1,3 +1,4 @@
+#include "MusicRoomScene.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -8,11 +9,6 @@
 // instantiate or embed them, or infer their complete layouts from these views.
 class SceneQuadDrawingF119 {
 public:
-};
-class MusicScene425C80 {
-public:
-    void RenderList();
-    void DrawNumber(float, float, DWORD, int, int);
 };
 class SceneRecordContainerF119 { public: unsigned int Size(); };
 // Read-only row projection: the native stride and consumed fields are observed.
@@ -36,7 +32,7 @@ typedef char ResultRowScoreF119[(offsetof(ResultRowF119, score) == 12) ? 1 : -1]
 #define ROW(number) (reinterpret_cast<const ResultRowF119*>(DATA + 0x55C)[number])
 #define RECORDS reinterpret_cast<SceneRecordContainerF119*>(reinterpret_cast<char*>(this) + 24)
 
-void MusicScene425C80::RenderList() {
+void MusicRoomScene::Render() {
     if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 quadValue;
         SpriteQuad40CA80 iconQuad;
@@ -44,86 +40,86 @@ void MusicScene425C80::RenderList() {
         RECT iconRegion;
         int musicIndex;
         BYTE opacity;
-        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
-        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
+        texture->SetDepthMode(0);
+        texture->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
+        texture->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 34, 256, 98);
         TRANSFORM(quadValue)->BuildQuad(10.0f, 10.0f, 266.0f, 74.0f);
-        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+        texture->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         TRANSFORM(quadValue)->BuildQuad(90.0f, 90.0f, 602.0f, 108.0f);
         SetRect(&iconRegion, 150, 10, 157, 16);
         TRANSFORM(iconQuad)->BuildQuad(80.0f, 100.0f, 87.0f, 106.0f);
-        for (musicIndex = 0; musicIndex < 10 && SCENE_FIELD(signed char, 0x3DF) + musicIndex < SCENE_FIELD(signed char, 0x3DC); musicIndex++) {
-            if (SCENE_FIELD(signed char, 0x3DF) + musicIndex != SCENE_FIELD(signed char, 0x3DE))
+        for (musicIndex = 0; musicIndex < 10 && firstVisibleTrack + musicIndex < trackCount; musicIndex++) {
+            if (firstVisibleTrack + musicIndex != selectedTrack)
                 opacity = 128;
             else
                 opacity = 255;
             DrawNumber(80.0f, quadValue.first.y + 1.0f, D3DCOLOR_ARGB(opacity, 255, 255, 255),
-                       SCENE_FIELD(signed char, 0x3DF) + 1 + musicIndex, 2);
-            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, iconQuad, &iconRegion, D3DCOLOR_ARGB(opacity, 255, 255, 255));
-            SetRect(&region, 0, (SCENE_FIELD(signed char, 0x3DF) + musicIndex) * 18, 512,
-                    (SCENE_FIELD(signed char, 0x3DF) + musicIndex) * 18 + 18);
+                       firstVisibleTrack + 1 + musicIndex, 2);
+            texture->DrawQuad(1, iconQuad, &iconRegion, D3DCOLOR_ARGB(opacity, 255, 255, 255));
+            SetRect(&region, 0, (firstVisibleTrack + musicIndex) * 18, 512,
+                    (firstVisibleTrack + musicIndex) * 18 + 18);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, 0.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), canvasB);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), canvasB);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), canvasB);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 0, 0, 0), canvasB);
             TRANSFORM(quadValue)->TranslateQuad(0.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 255, 255, 255), TEXTURE(16));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(opacity, 255, 255, 255), canvasB);
             TRANSFORM(quadValue)->TranslateQuad(0, 18.0f, 0);
             TRANSFORM(iconQuad)->TranslateQuad(0, 18.0f, 0);
         }
         SetRect(&region, 165, 0, 180, 16);
         TRANSFORM(quadValue)->BuildQuad(30.0f,
-            static_cast<float>((SCENE_FIELD(signed char, 0x3DE) - SCENE_FIELD(signed char, 0x3DF)) * 18 + 90), 45.0f,
-            static_cast<float>((SCENE_FIELD(signed char, 0x3DE) - SCENE_FIELD(signed char, 0x3DF)) * 18 + 106));
-        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+            static_cast<float>((selectedTrack - firstVisibleTrack) * 18 + 90), 45.0f,
+            static_cast<float>((selectedTrack - firstVisibleTrack) * 18 + 106));
+        texture->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 512, 32);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(64.0f, 320.0f, 0);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, 0.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(24));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasD);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(24));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasD);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(24));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasD);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(24));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasD);
             TRANSFORM(quadValue)->TranslateQuad(0.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFFFFFFFF, TEXTURE(24));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFFFFFFFF, canvasD);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(300.0f, 40.0f, 0);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, 0.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(20));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasC);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(20));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasC);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(20));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasC);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(20));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasC);
             TRANSFORM(quadValue)->TranslateQuad(0.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFFFFFFFF, TEXTURE(20));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFFFFFFFF, canvasC);
         SetRect(&region, 0, 16, 120, 32);
         TRANSFORM(quadValue)->BuildQuad(300.0f, 20.0f, 420.0f, 36.0f);
-        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+        texture->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 512, 512);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(80.0f, 340.0f, 0);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, 0.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(12));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasA);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(12));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasA);
             TRANSFORM(quadValue)->TranslateQuad(1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(12));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasA);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, -1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, TEXTURE(12));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFF000000, canvasA);
             TRANSFORM(quadValue)->TranslateQuad(0.0f, 1.0f, 0);
-            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFFFFFFFF, TEXTURE(12));
+            Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFFFFFFFF, canvasA);
         Graphics::EndFrame();
     }
 }

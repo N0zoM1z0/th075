@@ -21085,7 +21085,7 @@ source = "src/MenuSceneDrawing.cpp"
 object = "build/matching/MenuSceneDrawing.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicScene425C80::RenderList"]
-symbol = "?RenderList@MusicScene425C80@@QAEXXZ"
+symbol = "?Render@MusicRoomScene@@UAEXXZ"
 target_address = 0x00425C80
 size = 2429
 compare_size = 2429
@@ -21105,7 +21105,7 @@ relocations = [
   { offset = 0x12F, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x14E, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x21B, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
-  { offset = 0x22F, type = "REL32", symbol = "?DrawNumber@MusicScene425C80@@QAEXMMKHH@Z", target = 0x00427180 },
+  { offset = 0x22F, type = "REL32", symbol = "?DrawNumber@MusicRoomScene@@AAEXMMKHH@Z", target = 0x00427180 },
   { offset = 0x26C, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x2B1, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x2C5, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
@@ -24040,7 +24040,7 @@ source = "src/SpriteNameDrawing.cpp"
 object = "build/matching/SpriteNameDrawing.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryPlayerF129::Render"]
-symbol = "?Render@NameEntryPlayerF129@@QAEXXZ"
+symbol = "?Render@PlayerNameEntryScene@@UAEXXZ"
 target_address = 0x0042A560
 size = 1581
 compare_size = 1581
@@ -24068,14 +24068,14 @@ relocations = [
   { offset = 0x21A, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
   { offset = 0x26A, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x28A, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x31A, type = "REL32", symbol = "?DrawRank@NameEntryPlayerF129@@QAEXMMKC@Z", target = 0x0042B110 },
-  { offset = 0x367, type = "REL32", symbol = "?DrawName@NameEntryPlayerF129@@QAEXMMKPBC@Z", target = 0x0042AFF0 },
-  { offset = 0x3B7, type = "REL32", symbol = "?DrawNumber@NameEntryPlayerF129@@QAEXMMKHH@Z", target = 0x0042AE70 },
+  { offset = 0x31A, type = "REL32", symbol = "?DrawRankLabel@PlayerNameEntryScene@@AAEXMMKC@Z", target = 0x0042B110 },
+  { offset = 0x367, type = "REL32", symbol = "?DrawNameGlyphs@PlayerNameEntryScene@@AAEXMMKPBC@Z", target = 0x0042AFF0 },
+  { offset = 0x3B7, type = "REL32", symbol = "?DrawNumber@PlayerNameEntryScene@@AAEXMMKHH@Z", target = 0x0042AE70 },
   { offset = 0x3D2, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x41F, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x444, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x494, type = "REL32", symbol = "?DrawNumber@NameEntryPlayerF129@@QAEXMMKHH@Z", target = 0x0042AE70 },
-  { offset = 0x4E3, type = "REL32", symbol = "?DrawNumber@NameEntryPlayerF129@@QAEXMMKHH@Z", target = 0x0042AE70 },
+  { offset = 0x494, type = "REL32", symbol = "?DrawNumber@PlayerNameEntryScene@@AAEXMMKHH@Z", target = 0x0042AE70 },
+  { offset = 0x4E3, type = "REL32", symbol = "?DrawNumber@PlayerNameEntryScene@@AAEXMMKHH@Z", target = 0x0042AE70 },
   { offset = 0x570, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x589, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x5AD, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
@@ -24089,7 +24089,7 @@ source = "src/SpriteNameDrawing.cpp"
 object = "build/matching/SpriteNameDrawing.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntrySharedF129::Render"]
-symbol = "?Render@NameEntrySharedF129@@QAEXXZ"
+symbol = "?Render@SharedNameEntryScene@@UAEXXZ"
 target_address = 0x0042B570
 size = 1875
 compare_size = 1875
@@ -24120,21 +24120,21 @@ relocations = [
   { offset = 0x2B4, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x2D3, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x2F3, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x314, type = "REL32", symbol = "?DrawFilename@NameEntrySharedF129@@QAEXMMKPBD@Z", target = 0x0042C270 },
+  { offset = 0x314, type = "REL32", symbol = "?DrawSaveFilename@SharedNameEntryScene@@AAEXMMKPBD@Z", target = 0x0042C270 },
   { offset = 0x319, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
-  { offset = 0x330, type = "REL32", symbol = "?DrawName@NameEntrySharedF129@@QAEXMMKPBC@Z", target = 0x0042C150 },
+  { offset = 0x330, type = "REL32", symbol = "?DrawNameGlyphs@SharedNameEntryScene@@AAEXMMKPBC@Z", target = 0x0042C150 },
   { offset = 0x3B8, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x3D1, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x3F5, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
   { offset = 0x42A, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x44A, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x453, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
-  { offset = 0x46B, type = "REL32", symbol = "?DrawNumber@NameEntrySharedF129@@QAEXMMKHH@Z", target = 0x0042BFD0 },
+  { offset = 0x46B, type = "REL32", symbol = "?DrawNumber@SharedNameEntryScene@@AAEXMMKHH@Z", target = 0x0042BFD0 },
   { offset = 0x486, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x4A5, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x4C5, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x4CE, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
-  { offset = 0x4E6, type = "REL32", symbol = "?DrawNumber@NameEntrySharedF129@@QAEXMMKHH@Z", target = 0x0042BFD0 },
+  { offset = 0x4E6, type = "REL32", symbol = "?DrawNumber@SharedNameEntryScene@@AAEXMMKHH@Z", target = 0x0042BFD0 },
   { offset = 0x4ED, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x4FC, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x50C, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
@@ -30395,7 +30395,7 @@ source = "src/NameEntryInputF182.cpp"
 object = "build/matching/NameEntryInputF182.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryScene::PollPlayerInput"]
-symbol = "?PollPlayerInput@NameEntryInputF182@@QAEXXZ"
+symbol = "?PollInput@PlayerNameEntryScene@@AAEXXZ"
 target_address = 0x0042AB90
 size = 722
 [[units.name-entry-poll-player-0042ab90.relocations]]
@@ -30594,7 +30594,7 @@ source = "src/NameEntryInputF182.cpp"
 object = "build/matching/NameEntryInputF182.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryScene::PollSharedInput"]
-symbol = "?PollSharedInput@NameEntryInputF182@@QAEXXZ"
+symbol = "?PollInput@SharedNameEntryScene@@AAEXXZ"
 target_address = 0x0042BCD0
 size = 764
 [[units.name-entry-poll-shared-0042bcd0.relocations]]
@@ -32488,13 +32488,13 @@ source = "src/MusicDetailF191.cpp"
 object = "build/matching/MusicDetailF191.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoomScene::RenderSelectedDetails"]
-symbol = "?RenderSelectedDetails@MusicDetailsF191@@QAEXC@Z"
+symbol = "?RenderSelectedDetails@MusicRoomScene@@AAEXC@Z"
 target_address = 0x00426A70
 size = 860
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?RenderSelectedDetails@MusicDetailsF191@@QAEXC@Z"
+symbol = "__ehhandler$?RenderSelectedDetails@MusicRoomScene@@AAEXC@Z"
 target = 0x00655837
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 12
@@ -38434,13 +38434,13 @@ source = "src/MusicSelectF234.cpp"
 object = "build/matching/MusicSelectF234.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoomScene::UpdateSelection"]
-symbol = "?UpdateSelection@MusicRoomSelectionF234@@QAEGXZ"
+symbol = "?Update@MusicRoomScene@@UAEGXZ"
 target_address = 0x004259D0
 size = 675
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?PollInput@MusicRoomSelectionF234@@QAEXXZ"
+symbol = "?PollInput@MusicRoomScene@@AAEXXZ"
 target = 0x00426600
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 27
@@ -38470,7 +38470,7 @@ target = 0x00416DC0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 160
 type = "REL32"
-symbol = "?Highlight@MusicRoomSelectionF234@@QAEXE@Z"
+symbol = "?RenderSelectedDetails@MusicRoomScene@@AAEXC@Z"
 target = 0x00426A70
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 171
@@ -38495,7 +38495,7 @@ target = 0x00416DC0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 300
 type = "REL32"
-symbol = "?Highlight@MusicRoomSelectionF234@@QAEXE@Z"
+symbol = "?RenderSelectedDetails@MusicRoomScene@@AAEXC@Z"
 target = 0x00426A70
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 397
@@ -38520,7 +38520,7 @@ target = 0x00416DC0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 487
 type = "REL32"
-symbol = "?Choose@MusicRoomSelectionF234@@QAEXE@Z"
+symbol = "?RenderSelectedTitle@MusicRoomScene@@AAEXC@Z"
 target = 0x004268A0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 514
@@ -38564,13 +38564,13 @@ source = "src/MusicListRenderF235.cpp"
 object = "build/matching/MusicListRenderF235.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoomScene::RenderTrackCatalogText"]
-symbol = "?RenderTrackCatalogText@MusicListRenderF235@@QAEXXZ"
+symbol = "?RenderTrackCatalogText@MusicRoomScene@@AAEXXZ"
 target_address = 0x00426670
 size = 555
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?RenderTrackCatalogText@MusicListRenderF235@@QAEXXZ"
+symbol = "__ehhandler$?RenderTrackCatalogText@MusicRoomScene@@AAEXXZ"
 target = 0x006557F9
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 12
@@ -38679,13 +38679,13 @@ source = "src/MusicTitleRenderF235.cpp"
 object = "build/matching/MusicTitleRenderF235.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoomScene::RenderSelectedTitle"]
-symbol = "?RenderSelectedTitle@MusicTitleRenderF235@@QAEXC@Z"
+symbol = "?RenderSelectedTitle@MusicRoomScene@@AAEXC@Z"
 target_address = 0x004268A0
 size = 452
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?RenderSelectedTitle@MusicTitleRenderF235@@QAEXC@Z"
+symbol = "__ehhandler$?RenderSelectedTitle@MusicRoomScene@@AAEXC@Z"
 target = 0x00655811
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 12
@@ -40170,13 +40170,13 @@ source = "src/NameEntryUpdateF246.cpp"
 object = "build/matching/NameEntryUpdateF246.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryScene::UpdatePlayer"]
-symbol = "?UpdatePlayer@NameEntryUpdateF246@@QAEGXZ"
+symbol = "?Update@PlayerNameEntryScene@@UAEGXZ"
 target_address = 0x0042A340
 size = 541
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?PollPlayerInput@NameEntryUpdateF246@@QAEXXZ"
+symbol = "?PollInput@PlayerNameEntryScene@@AAEXXZ"
 target = 0x0042AB90
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 35
@@ -40385,13 +40385,13 @@ source = "src/NameSharedF251.cpp"
 object = "build/matching/NameSharedF251.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryScene::UpdateShared"]
-symbol = "?UpdateShared@NameSharedSceneF251@@QAEGXZ"
+symbol = "?Update@SharedNameEntryScene@@UAEGXZ"
 target_address = 0x0042B380
 size = 494
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?PollInput@NameSharedSceneF251@@QAEXXZ"
+symbol = "?PollInput@SharedNameEntryScene@@AAEXXZ"
 target = 0x0042BCD0
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 50
@@ -40475,7 +40475,7 @@ source = "src/MusicNumberF253.cpp"
 object = "build/matching/MusicNumberF253.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoomScene::DrawNumber"]
-symbol = "?DrawNumber@MusicNumberF253@@QAEXMMKHH@Z"
+symbol = "?DrawNumber@MusicRoomScene@@AAEXMMKHH@Z"
 target_address = 0x00427180
 size = 377
 [[units.music-room-draw-number-00427180.relocations]]
@@ -40530,7 +40530,7 @@ source = "src/ReplayNumberF253.cpp"
 object = "build/matching/ReplayNumberF253.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayScene::DrawNumber"]
-symbol = "?DrawNumber@ReplayNumberF253@@QAEXMMKHH@Z"
+symbol = "?DrawNumber@PlayerNameEntryScene@@AAEXMMKHH@Z"
 target_address = 0x0042AE70
 size = 377
 [[units.replay-scene-draw-number-0042ae70.relocations]]
@@ -40585,7 +40585,7 @@ source = "src/ReplaySlotNumberF253.cpp"
 object = "build/matching/ReplaySlotNumberF253.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayScene::DrawSlotNumber"]
-symbol = "?DrawNumber@ReplaySlotNumberF253@@QAEXMMKHH@Z"
+symbol = "?DrawNumber@SharedNameEntryScene@@AAEXMMKHH@Z"
 target_address = 0x0042BFD0
 size = 377
 [[units.replay-scene-draw-slot-number-0042bfd0.relocations]]
@@ -40953,7 +40953,7 @@ source = "src/MusicCatalogLoadF258.cpp"
 object = "build/matching/MusicCatalogLoadF258.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoom::LoadCatalogAt00426DD0"]
-symbol = "?LoadCatalog@MusicCatalogF215@@QAEXXZ"
+symbol = "?LoadCatalog@MusicRoomScene@@AAEXXZ"
 target_address = 0x00426DD0
 size = 916
 compare_size = 932
@@ -41385,13 +41385,13 @@ source = "src/MusicRoomInitF262.cpp"
 object = "build/matching/MusicRoomInitF262.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoomScene::Initialize"]
-symbol = "??0MusicRoomInitializeF262@@QAE@XZ"
+symbol = "??0MusicRoomScene@@QAE@XZ"
 target_address = 0x00425750
 size = 372
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0MusicRoomInitializeF262@@QAE@XZ"
+symbol = "__ehhandler$??0MusicRoomScene@@QAE@XZ"
 target = 0x006557B9
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 12
@@ -41406,12 +41406,12 @@ target = 0x00000000
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0MusicBaseSceneF262@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7MusicRoomInitializeF262@@6B@"
+symbol = "??_7MusicRoomScene@@6B@"
 target = 0x00657CB0
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 55
@@ -41481,22 +41481,22 @@ target = 0x00401C20
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 306
 type = "REL32"
-symbol = "?LoadCatalog@MusicRoomInitializeF262@@QAEXXZ"
+symbol = "?LoadCatalog@MusicRoomScene@@AAEXXZ"
 target = 0x00426DD0
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 314
 type = "REL32"
-symbol = "?RenderCatalogText@MusicRoomInitializeF262@@QAEXXZ"
+symbol = "?RenderTrackCatalogText@MusicRoomScene@@AAEXXZ"
 target = 0x00426670
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 324
 type = "REL32"
-symbol = "?SetupTrack@MusicRoomInitializeF262@@QAEXH@Z"
+symbol = "?RenderSelectedDetails@MusicRoomScene@@AAEXC@Z"
 target = 0x00426A70
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 334
 type = "REL32"
-symbol = "?RenderTitle@MusicRoomInitializeF262@@QAEXH@Z"
+symbol = "?RenderSelectedTitle@MusicRoomScene@@AAEXC@Z"
 target = 0x004268A0
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 364
@@ -41509,13 +41509,13 @@ source = "src/MusicRoomReleaseF263.cpp"
 object = "build/matching/MusicRoomReleaseF263.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0"]
-symbol = "??1MusicRoomReleaseF263@@UAE@XZ"
+symbol = "??1MusicRoomScene@@UAE@XZ"
 target_address = 0x004258D0
 size = 244
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1MusicRoomReleaseF263@@UAE@XZ"
+symbol = "__ehhandler$??1MusicRoomScene@@UAE@XZ"
 target = 0x006557E1
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 12
@@ -41530,12 +41530,12 @@ target = 0x00000000
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7MusicRoomReleaseF263@@6B@"
+symbol = "??_7MusicRoomScene@@6B@"
 target = 0x00657CB0
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 154
 type = "REL32"
-symbol = "??_GMusicTextureF263@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 171
@@ -41565,7 +41565,7 @@ target = 0x00641D4A
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 226
 type = "REL32"
-symbol = "??1MusicBaseSceneF263@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.music-room-scene-release-004258d0.relocations]]
 offset = 236
@@ -42088,13 +42088,13 @@ source = "src/ReplaySceneInitF269.cpp"
 object = "build/matching/ReplaySceneInitF269.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayScene::Initialize"]
-symbol = "??0ReplaySceneInitF269@@QAE@XZ"
+symbol = "??0PlayerNameEntryScene@@QAE@XZ"
 target_address = 0x0042A180
 size = 315
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0ReplaySceneInitF269@@QAE@XZ"
+symbol = "__ehhandler$??0PlayerNameEntryScene@@QAE@XZ"
 target = 0x006558E3
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 12
@@ -42109,12 +42109,12 @@ target = 0x00000000
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0ReplayBaseF269@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7ReplaySceneInitF269@@6B@"
+symbol = "??_7PlayerNameEntryScene@@6B@"
 target = 0x00657F64
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 57
@@ -45567,7 +45567,7 @@ source = "src/SceneEntryGlyphsF324.cpp"
 object = "build/matching/SceneEntryGlyphsF324.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SceneText::DrawNameGlyphsAt0042AFF0"]
-symbol = "?DrawNameGlyphs@SceneEntryGlyphsF324@@QAEXMMKPBC@Z"
+symbol = "?DrawNameGlyphs@PlayerNameEntryScene@@AAEXMMKPBC@Z"
 target_address = 0x0042AFF0
 size = 280
 [[units.scene-entry-name-glyphs-0042aff0.relocations]]
@@ -45606,7 +45606,7 @@ source = "src/ReplayBrowserGlyphsF324.cpp"
 object = "build/matching/ReplayBrowserGlyphsF324.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SceneText::DrawNameGlyphsAt0042C150"]
-symbol = "?DrawNameGlyphs@ReplayBrowserGlyphsF324@@QAEXMMKPBC@Z"
+symbol = "?DrawNameGlyphs@SharedNameEntryScene@@AAEXMMKPBC@Z"
 target_address = 0x0042C150
 size = 280
 [[units.replay-browser-name-glyphs-0042c150.relocations]]
@@ -55460,13 +55460,13 @@ source = "src/NameEntrySceneInitializeF435.cpp"
 object = "build/matching/NameEntrySceneInitializeF435.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryScene::InitializeAt0042B1F0"]
-symbol = "??0NameEntryInitF435@@QAE@XZ"
+symbol = "??0SharedNameEntryScene@@QAE@XZ"
 target_address = 0x0042B1F0
 size = 260
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0NameEntryInitF435@@QAE@XZ"
+symbol = "__ehhandler$??0SharedNameEntryScene@@QAE@XZ"
 target = 0x00655913
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 12
@@ -55481,12 +55481,12 @@ target = 0x00000000
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0SceneBaseF435@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7NameEntryInitF435@@6B@"
+symbol = "??_7SharedNameEntryScene@@6B@"
 target = 0x00657FAC
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 57
@@ -56851,7 +56851,7 @@ source = "src/SceneInputPollingFamilyF467.cpp"
 object = "build/matching/SceneInputPollingFamilyF467.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SceneInput::PollTwoMappingsAt00426600"]
-symbol = "?PollInput@SceneTwoInputsF466@@QAEXXZ"
+symbol = "?PollInput@MusicRoomScene@@AAEXXZ"
 target_address = 0x00426600
 size = 106
 [[units.scene-input-poll-two-mappings-00426600.relocations]]
@@ -57350,13 +57350,13 @@ source = "src/SceneResourceDestructorsF474.cpp"
 object = "build/matching/SceneResourceDestructorsF474.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayScene::ReleaseResourcesAt0042A2C0"]
-symbol = "??1ReplaySceneReleaseF474@@UAE@XZ"
+symbol = "??1PlayerNameEntryScene@@UAE@XZ"
 target_address = 0x0042A2C0
 size = 127
 [[units.replay-scene-release-resource-0042a2c0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1ReplaySceneReleaseF474@@UAE@XZ"
+symbol = "__ehhandler$??1PlayerNameEntryScene@@UAE@XZ"
 target = 0x006558F5
 [[units.replay-scene-release-resource-0042a2c0.relocations]]
 offset = 12
@@ -57371,17 +57371,17 @@ target = 0x00000000
 [[units.replay-scene-release-resource-0042a2c0.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7ReplaySceneReleaseF474@@6B@"
+symbol = "??_7PlayerNameEntryScene@@6B@"
 target = 0x00657F64
 [[units.replay-scene-release-resource-0042a2c0.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.replay-scene-release-resource-0042a2c0.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.replay-scene-release-resource-0042a2c0.relocations]]
 offset = 119
@@ -57395,13 +57395,13 @@ source = "src/SceneResourceDestructorsF474.cpp"
 object = "build/matching/SceneResourceDestructorsF474.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryScene::ReleaseResourcesAt0042B300"]
-symbol = "??1NameEntrySceneReleaseF474@@UAE@XZ"
+symbol = "??1SharedNameEntryScene@@UAE@XZ"
 target_address = 0x0042B300
 size = 127
 [[units.nameentry-scene-release-resource-0042b300.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1NameEntrySceneReleaseF474@@UAE@XZ"
+symbol = "__ehhandler$??1SharedNameEntryScene@@UAE@XZ"
 target = 0x00655925
 [[units.nameentry-scene-release-resource-0042b300.relocations]]
 offset = 12
@@ -57416,17 +57416,17 @@ target = 0x00000000
 [[units.nameentry-scene-release-resource-0042b300.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7NameEntrySceneReleaseF474@@6B@"
+symbol = "??_7SharedNameEntryScene@@6B@"
 target = 0x00657FAC
 [[units.nameentry-scene-release-resource-0042b300.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.nameentry-scene-release-resource-0042b300.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.nameentry-scene-release-resource-0042b300.relocations]]
 offset = 119
@@ -60265,7 +60265,7 @@ source = "src/ReplaySceneDrawSaveFilenameF514.cpp"
 object = "build/matching/ReplaySceneDrawSaveFilenameF514.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayScene::DrawSaveFilenameAt0042C270"]
-symbol = "?DrawSaveFilename@ReplayFilenameF424@@QAEXMMIPBC@Z"
+symbol = "?DrawSaveFilename@SharedNameEntryScene@@AAEXMMKPBD@Z"
 target_address = 0x0042C270
 size = 303
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
@@ -60316,12 +60316,12 @@ target = 0x00641F00
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 224
 type = "REL32"
-symbol = "?DrawCharacters@ReplayFilenameF424@@QAEXMMIPBE@Z"
+symbol = "?DrawNameGlyphs@SharedNameEntryScene@@AAEXMMKPBC@Z"
 target = 0x0042C150
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 285
 type = "REL32"
-symbol = "?DrawCharacters@ReplayFilenameF424@@QAEXMMIPBE@Z"
+symbol = "?DrawNameGlyphs@SharedNameEntryScene@@AAEXMMKPBC@Z"
 target = 0x0042C150
 [[units.replay-scene-draw-save-filename-0042c270.relocations]]
 offset = 293
@@ -60334,7 +60334,7 @@ source = "src/NameEntryResultRankGlyphLabelsF516.cpp"
 object = "build/matching/NameEntryResultRankGlyphLabelsF516.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["NameEntryScene::DrawDecimalGlyphLabelAt0042B110"]
-symbol = "?DrawRankLabel@NameEntryLabelF472@@QAEXMMIC@Z"
+symbol = "?DrawRankLabel@PlayerNameEntryScene@@AAEXMMKC@Z"
 target_address = 0x0042B110
 size = 169
 [[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
@@ -60360,7 +60360,7 @@ target = 0x0040DA00
 [[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
 offset = 151
 type = "REL32"
-symbol = "?DrawGlyphs@NameEntryLabelF472@@QAEXMMIPBE@Z"
+symbol = "?DrawNameGlyphs@PlayerNameEntryScene@@AAEXMMKPBC@Z"
 target = 0x0042AFF0
 [[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
 offset = 159
@@ -61320,17 +61320,17 @@ relocations = [
  { offset = 0x7ED, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x80A, type = "REL32", symbol = "??0ResultScene@@QAE@XZ", target = 0x0042E640 },
  { offset = 0x843, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x860, type = "REL32", symbol = "??0Scene7F1171@@QAE@XZ", target = 0x0042B1F0 },
+ { offset = 0x860, type = "REL32", symbol = "??0SharedNameEntryScene@@QAE@XZ", target = 0x0042B1F0 },
  { offset = 0x896, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x8B3, type = "REL32", symbol = "??0BattleEndScene@@QAE@XZ", target = 0x00424E00 },
  { offset = 0x8E9, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x906, type = "REL32", symbol = "??0OptionsScene@@QAE@XZ", target = 0x00428D60 },
  { offset = 0x93F, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x95C, type = "REL32", symbol = "??0Scene10F1171@@QAE@XZ", target = 0x0042A180 },
+ { offset = 0x95C, type = "REL32", symbol = "??0PlayerNameEntryScene@@QAE@XZ", target = 0x0042A180 },
  { offset = 0x992, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x9AF, type = "REL32", symbol = "??0StaffRollScene@@QAE@XZ", target = 0x00438AC0 },
  { offset = 0x9E8, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0xA05, type = "REL32", symbol = "??0Scene12F1171@@QAE@XZ", target = 0x00425750 },
+ { offset = 0xA05, type = "REL32", symbol = "??0MusicRoomScene@@QAE@XZ", target = 0x00425750 },
  { offset = 0xA3B, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0xA58, type = "REL32", symbol = "??0OpeningScene@@QAE@XZ", target = 0x004275D0 },
  { offset = 0xA8E, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },

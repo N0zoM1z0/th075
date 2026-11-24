@@ -1,3 +1,5 @@
+#include "NameEntryScenes.hpp"
+#include "MusicRoomScene.hpp"
 #include "LoadingLogoScenes.hpp"
 #include "BattleEndScene.hpp"
 #include "SequenceScenes.hpp"
@@ -38,9 +40,6 @@
 namespace ArchiveCatalogF353 { void OpenAndRegister(const char*, const char*); }
 #define DEF_SCENE(N,SIZE) class Scene##N##F1171 : public SceneBase { public:Scene##N##F1171();unsigned short Update();void Render();private:unsigned char observedSize[(SIZE)-sizeof(SceneBase)];};
 DEF_SCENE(5,0x54)
-DEF_SCENE(7,0x120)
-DEF_SCENE(10,0x124)
-DEF_SCENE(12,0x3E0)
 #undef DEF_SCENE
 
 typedef char LoadingSceneAllocationSize[(sizeof(LoadingScene) == 0x10) ? 1 : -1];
@@ -48,6 +47,9 @@ typedef char LogoSceneAllocationSize[(sizeof(LogoScene) == 0x10) ? 1 : -1];
 typedef char BattleEndSceneAllocationSize[(sizeof(BattleEndScene) == 0xC) ? 1 : -1];
 typedef char StaffRollSceneAllocationSize[(sizeof(StaffRollScene) == 0x14) ? 1 : -1];
 typedef char OpeningSceneAllocationSize[(sizeof(OpeningScene) == 0x14) ? 1 : -1];
+typedef char SharedNameEntrySceneAllocationSize[(sizeof(SharedNameEntryScene) == 0x120) ? 1 : -1];
+typedef char PlayerNameEntrySceneAllocationSize[(sizeof(PlayerNameEntryScene) == 0x124) ? 1 : -1];
+typedef char MusicRoomSceneAllocationSize[(sizeof(MusicRoomScene) == 0x3E0) ? 1 : -1];
 typedef char BattleSceneAllocationSize[(sizeof(BattleScene) == 0x11C) ? 1 : -1];
 typedef char TitleSceneAllocationSize[(sizeof(TitleScene) == 0x3C) ? 1 : -1];
 typedef char CharacterSelectSceneAllocationSize[(sizeof(CharacterSelectScene) == 0xF4) ? 1 : -1];
@@ -181,12 +183,12 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
                 case 3: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new CharacterSelectScene)); } break;
                 case 5: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene5F1171); } break;
                 case 6: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultScene)); } break;
-                case 7: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene7F1171); } break;
+                case 7: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new SharedNameEntryScene)); } break;
                 case 8: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleEndScene)); } break;
                 case 9: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OptionsScene)); } break;
-                case 10: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene10F1171); } break;
+                case 10: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new PlayerNameEntryScene)); } break;
                 case 11: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new StaffRollScene)); } break;
-                case 12: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene12F1171); } break;
+                case 12: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new MusicRoomScene)); } break;
                 case 13: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OpeningScene)); } break;
                 case 14: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultListScene)); } break;
                 }

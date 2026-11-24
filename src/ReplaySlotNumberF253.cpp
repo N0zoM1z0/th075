@@ -1,3 +1,4 @@
+#include "NameEntryScenes.hpp"
 #include "GeometryConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -5,21 +6,8 @@
 #include <windows.h>
 #include <d3d8.h>
 
-// Borrowed drawing interface at scene+8; original parent layout unproven.
-class ReplaySlotNumberF253Drawer {
-public: void DrawQuad(int texture,const SpriteQuad40CA80&, const RECT*, DWORD);
-};
-class ReplaySlotNumberF253 {
-public:
-    void DrawNumber(float x, float y, DWORD color, int number,
-                           int minDigits);
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x008 - 0x000];
-    void* field008;
-};
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
-void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
+void SharedNameEntryScene::DrawNumber(float x, float y, DWORD color,
                                         int number, int minDigits)
 {
     int remaining=number;
@@ -31,7 +19,7 @@ void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<TextureManagerF198*>(field008)->DrawQuad(2,quad,&rect,color);
+                texture->DrawQuad(2,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-11.0f,0.0f,0.0f);
                 --minDigits;
@@ -40,7 +28,7 @@ void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<TextureManagerF198*>(field008)->DrawQuad(2,quad,&rect,color);
+                texture->DrawQuad(2,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else

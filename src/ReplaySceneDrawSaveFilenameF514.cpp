@@ -1,3 +1,4 @@
+#include "NameEntryScenes.hpp"
 #include "GeometryConstants.hpp"
 #include <windows.h>
 #include <string.h>
@@ -23,11 +24,7 @@ typedef char VerifyPrefixF511[(sizeof(OriginalReplayPrefixF511)==16)?1:-1];
 extern const OriginalReplayPrefixF511 g_OriginalReplayPrefixAt00657F9C;
 struct ReplayFrameF511 {OriginalReplayPrefixF511 prefix;ReplayQuadF510 quad;};
 typedef char VerifyFrameF511[(sizeof(ReplayFrameF511)==148)?1:-1];
-class ReplayFilenameF424 {public:
-    void DrawSaveFilename(float x,float y,unsigned int tint,const signed char* filename);
-    void DrawCharacters(float x,float y,unsigned int tint,const unsigned char* characters);
-};
-void ReplayFilenameF424::DrawSaveFilename(float x,float y,unsigned int tint,const signed char* filename) {
+void SharedNameEntryScene::DrawSaveFilename(float x,float y,DWORD tint,const char* filename) {
   ReplayFrameF511 frame;
   unsigned char glyphs[8];
   frame.quad.ConstructNative(x,y,x+GeometryConstants::Nineteen,y+GeometryConstants::Twenty);
@@ -39,10 +36,10 @@ void ReplayFilenameF424::DrawSaveFilename(float x,float y,unsigned int tint,cons
     glyphs[0]=13;glyphs[1]=40;glyphs[2]=71;
     glyphs[3]=filename[13]+4;glyphs[4]=filename[14]+4;glyphs[5]=filename[15]+4;
     glyphs[6]=100;glyphs[7]=100;
-    DrawCharacters(x,y,tint,glyphs);
+    DrawNameGlyphs(x,y,tint,reinterpret_cast<const signed char*>(glyphs));
   } else {
     glyphs[0]=20;glyphs[1]=44;glyphs[2]=30;glyphs[3]=43;
     glyphs[4]=100;glyphs[5]=100;glyphs[6]=100;glyphs[7]=100;
-    DrawCharacters(x,y,tint,glyphs);
+    DrawNameGlyphs(x,y,tint,reinterpret_cast<const signed char*>(glyphs));
   }
 }

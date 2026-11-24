@@ -1,74 +1,59 @@
+#include "NameEntryScenes.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
-// Borrowed player editor, sound device and score persistence receiver. The
-// original parent layout remains unproven and is not instantiated.
-class NameSharedSceneF251 {
-public:
-    virtual void SlotZero();
-    virtual void SlotOne();
-    virtual void DrawCurrent();
-    unsigned short UpdateShared();
-    void PollInput();
-};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define BYTE(off) (*reinterpret_cast<signed char*>(RAW+(off)))
-#define SHORT(off) (*reinterpret_cast<short*>(RAW+(off)))
-#define SELECTED (static_cast<int>(SHORT(0xe))+static_cast<int>(SHORT(0x10))*26)
-unsigned short NameSharedSceneF251::UpdateShared()
+#define SELECTED (static_cast<int>(field00E)+static_cast<int>(field010)*26)
+unsigned short SharedNameEntryScene::Update()
 {
     PollInput();
-    if (BYTE(0xc)==0) {
-        if (SHORT(0x16)==1) {
+    if (field00C==0) {
+        if (field016==1) {
             g_SoundBank->Play(0x2d);
             if (SELECTED==0x5b) {
-                if (SHORT(0x12)>7)
+                if (field012>7)
                     g_ReplayRecords.fileHeader.playerName[7]=100;
                 else
-                    g_ReplayRecords.fileHeader.playerName[SHORT(0x12)]=100;
+                    g_ReplayRecords.fileHeader.playerName[field012]=100;
             } else if (SELECTED==0x5c) {
                 if (g_ReplayModeAt0066C238==1)
                     g_ReplayRecords.FinalizeFile();
                 return 0x2202;
             } else {
-                if (SHORT(0x12)>7)
+                if (field012>7)
                     g_ReplayRecords.fileHeader.playerName[7]=static_cast<unsigned char>(SELECTED);
                 else
-                    g_ReplayRecords.fileHeader.playerName[SHORT(0x12)]=static_cast<unsigned char>(SELECTED);
+                    g_ReplayRecords.fileHeader.playerName[field012]=static_cast<unsigned char>(SELECTED);
             }
-            ++SHORT(0x12);
-            if (SHORT(0x12)>8)
-                SHORT(0x12)=8;
-            if (SHORT(0x12)==8) {
-                SHORT(0xe)=14;
-                SHORT(0x10)=3;
+            ++field012;
+            if (field012>8)
+                field012=8;
+            if (field012==8) {
+                field00E=14;
+                field010=3;
             }
         }
-        if (SHORT(0x16)==2) {
+        if (field016==2) {
             g_SoundBank->Play(0x28);
-            --SHORT(0x12);
-            g_ReplayRecords.fileHeader.playerName[SHORT(0x12)]=100;
-            if (SHORT(0x12)<0) {
-                BYTE(0xc)=1;
-                SHORT(0x12)=0;
+            --field012;
+            g_ReplayRecords.fileHeader.playerName[field012]=100;
+            if (field012<0) {
+                field00C=1;
+                field012=0;
             }
         }
-    } else if (SHORT(0x16)==1) {
+    } else if (field016==1) {
         g_SoundBank->Play(0x2d);
-        if (SHORT(0x14)==0) {
-            BYTE(0xc)=0;
-            SHORT(0xe)=0;
-            SHORT(0x10)=0;
+        if (field014==0) {
+            field00C=0;
+            field00E=0;
+            field010=0;
         } else {
             return 0x2202;
         }
     }
-    DrawCurrent();
+    Render();
     Graphics::Present();
     return 7;
 }
 #undef SELECTED
-#undef SHORT
-#undef BYTE
-#undef RAW

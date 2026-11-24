@@ -1,3 +1,4 @@
+#include "MusicRoomScene.hpp"
 #include "GeometryConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -5,21 +6,8 @@
 #include <windows.h>
 #include <d3d8.h>
 
-// Borrowed drawing interface at scene+8; original parent layout unproven.
-class MusicNumberF253Drawer {
-public: void DrawQuad(int texture,const SpriteQuad40CA80&, const RECT*, DWORD);
-};
-class MusicNumberF253 {
-public:
-    void DrawNumber(float x, float y, DWORD color, int number,
-                           int minDigits);
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x008 - 0x000];
-    void* field008;
-};
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
-void MusicNumberF253::DrawNumber(float x, float y, DWORD color,
+void MusicRoomScene::DrawNumber(float x, float y, DWORD color,
                                         int number, int minDigits)
 {
     int remaining=number;
@@ -31,7 +19,7 @@ void MusicNumberF253::DrawNumber(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) * 15, 0,
                         ((remaining % 10) * 15) + 15, 16);
-                reinterpret_cast<TextureManagerF198*>(field008)->DrawQuad(1,quad,&rect,color);
+                texture->DrawQuad(1,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-14.0f,0.0f,0.0f);
                 --minDigits;
@@ -40,7 +28,7 @@ void MusicNumberF253::DrawNumber(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) * 15, 0,
                         ((remaining % 10) * 15) + 15, 16);
-                reinterpret_cast<TextureManagerF198*>(field008)->DrawQuad(1,quad,&rect,color);
+                texture->DrawQuad(1,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else

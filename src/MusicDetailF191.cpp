@@ -1,3 +1,4 @@
+#include "MusicRoomScene.hpp"
 #include "FontSurface.hpp"
 #include <windows.h>
 #include <d3d8.h>
@@ -13,43 +14,34 @@ extern const char g_MusicUnknownTitleAt00657C56[];
 extern const char g_MusicNumberedDetailsAt00657C58[];
 extern const char g_MusicSelectedFontAt00657C48[];
 extern const char g_MusicNumberedFontAt00657C68[];
-class MusicDetailsF191 {
-public:
-    void RenderSelectedDetails(signed char selected);
-};
-#define AT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
-#define TRACK_FIELD(type, base) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (base) + selected * 16))
-
-void MusicDetailsF191::RenderSelectedDetails(signed char selected)
+void MusicRoomScene::RenderSelectedDetails(signed char selected)
 {
     char message[2000];
-    if (selected < 0 || AT(signed char, 0x3DC) <= selected)
+    if (selected < 0 || trackCount <= selected)
         strcpy(message, g_MusicUnknownTrackAt00657C46);
     else
-        strcpy(message, TRACK_FIELD(const char*, 0x28));
+        strcpy(message, records[selected].third);
 
     D3DLOCKED_RECT locked;
-    if (AT(IDirect3DTexture8*, 0x0C)->LockRect(0, &locked, 0, 0) == D3D_OK) {
+    if (canvasA->LockRect(0, &locked, 0, 0) == D3D_OK) {
         FontSurface *glyph = new FontSurface(0);
         glyph->ConfigureFont(g_MusicSelectedFontAt00657C48, 16, 120, 120, 255);
         glyph->RasterizeText(message, locked.pBits, 512, 512, 528, 0, 2, 4, 40);
         delete glyph;
-        AT(IDirect3DTexture8*, 0x0C)->UnlockRect(0);
+        canvasA->UnlockRect(0);
     }
 
-    if (selected < 0 || AT(signed char, 0x3DC) <= selected)
+    if (selected < 0 || trackCount <= selected)
         strcpy(message, g_MusicUnknownTitleAt00657C56);
     else
         sprintf(message, g_MusicNumberedDetailsAt00657C58,
-                selected+1, TRACK_FIELD(const char*, 0x24), TRACK_FIELD(const char*, 0x20));
+                selected+1, records[selected].second, records[selected].first);
 
-    if (AT(IDirect3DTexture8*, 0x18)->LockRect(0, &locked, 0, 0) == D3D_OK) {
+    if (canvasD->LockRect(0, &locked, 0, 0) == D3D_OK) {
         FontSurface *glyph = new FontSurface(0);
         glyph->ConfigureFont(g_MusicNumberedFontAt00657C68, 16, 120, 120, 255);
         glyph->RasterizeText(message, locked.pBits, 512, 32, 528, 0, 2, 4, 40);
         delete glyph;
-        AT(IDirect3DTexture8*, 0x18)->UnlockRect(0);
+        canvasD->UnlockRect(0);
     }
 }
-#undef AT
-#undef TRACK_FIELD

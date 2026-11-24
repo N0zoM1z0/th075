@@ -1,3 +1,4 @@
+#include "MusicRoomScene.hpp"
 #include "ArchiveCatalog.hpp"
 #include "DataArchive.hpp"
 #include <windows.h>
@@ -13,14 +14,7 @@
 // the final buffer release. This file owns no CRT/archive helper bodies.
 extern const char g_MusicCatalogDirectoryAt00657C78[];
 extern const char g_MusicCatalogFilenameAt00657C80[];
-class MusicCatalogF215 {public: void LoadCatalog();public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x3DC - 0x000];
-    signed char field3DC;
-};
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define ENTRY(type,off) FIELD(type, 16*field3DC + (off))
-void MusicCatalogF215::LoadCatalog()
+void MusicRoomScene::LoadCatalog()
 {
     HANDLE file;
     {
@@ -60,7 +54,7 @@ void MusicCatalogF215::LoadCatalog()
         key+=delta;
         delta+='=';
     }
-    field3DC=0;
+    trackCount=0;
     cursor=0;
     column=0;
     while (cursor<fileBytes) {
@@ -88,34 +82,34 @@ void MusicCatalogF215::LoadCatalog()
         switch (column) {
         case 0:
             while (begin!=last) {
-                ENTRY(signed char,0x1c)=ENTRY(signed char,0x1c)*10-48+buffer[begin];
+                records[trackCount].counter=records[trackCount].counter*10-48+buffer[begin];
                 ++begin;
             }
             break;
         case 1:
             {
             char* allocatedName = reinterpret_cast<char*>(::operator new(last-begin+1));
-            ENTRY(char*,0x24)=allocatedName;
+            records[trackCount].second=allocatedName;
             }
-            memcpy(ENTRY(char*,0x24),buffer+begin,last-begin);
-            ENTRY(char*,0x24)[last-begin]=0;
+            memcpy(records[trackCount].second,buffer+begin,last-begin);
+            records[trackCount].second[last-begin]=0;
             break;
         case 2:
             {
             char* allocatedTitle = reinterpret_cast<char*>(::operator new(last-begin+1));
-            ENTRY(char*,0x20)=allocatedTitle;
+            records[trackCount].first=allocatedTitle;
             }
-            memcpy(ENTRY(char*,0x20),buffer+begin,last-begin);
-            ENTRY(char*,0x20)[last-begin]=0;
+            memcpy(records[trackCount].first,buffer+begin,last-begin);
+            records[trackCount].first[last-begin]=0;
             break;
         case 3:
             {
             char* allocatedExtra = reinterpret_cast<char*>(::operator new(last-begin+1));
-            ENTRY(char*,0x28)=allocatedExtra;
+            records[trackCount].third=allocatedExtra;
             }
-            memcpy(ENTRY(char*,0x28),buffer+begin,last-begin);
-            ENTRY(char*,0x28)[last-begin]=0;
-            ++field3DC;
+            memcpy(records[trackCount].third,buffer+begin,last-begin);
+            records[trackCount].third[last-begin]=0;
+            ++trackCount;
             break;
         }
         if (buffer[cursor]=='\n') column=0;
@@ -138,5 +132,3 @@ void MusicCatalogF215::LoadCatalog()
     }
     }
 }
-#undef ENTRY
-#undef FIELD
