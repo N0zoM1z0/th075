@@ -404,11 +404,12 @@ The current direct-call scan is in
 | `0x0040D900`, `0x0040D940` | Both R163 forms bind to the R292 cosine and sine workers. R303 rules out the decorated definitions in the older SDK shape archive, which compute results with x87 instructions directly. |
 | `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
-| `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers the deleting destructor with a precompiled header, but moves the ordinary Battle End destructor from its native slot. |
+| `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers both Battle End destructors together. The R306 debug and link-time code generation controls leave the deleting destructor early. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
-| `0x00458650`, `0x00458670`, `0x00458770` | R299 reproduces the two constructors and both five-slot vtables in the original order with implicit and explicit declarations. The fighter cleanup also retains the original destructor order with both forms. |
+| `0x00458670` | The R306 linked resource-loader interval matches with both implicit and explicit rendering base constructors. |
+| `0x00458770` | The R299 fighter cleanup retains the original destructor order with implicit and explicit base destructors. |
 
 The pinned PE has an RSDS record for `東方萃夢想.pdb` with GUID
 `9306058f-6d68-4650-b80b-1e0d05dd1e18` and age 3. Its COFF symbol
@@ -941,6 +942,41 @@ scene constructor at `0x004251C0` remains unresolved.
     scripts/repo-python .analysis/final-origin-review/scene-ctor-order/make.py
     bash .analysis/final-origin-review/ctor-pch-order/build.sh stage-split-constants stage-implicit-dtor-constants scene-late scene-header-dtor scene-inline-declaration
     scripts/repo-python .analysis/final-origin-review/ctor-pch-order/compare.py stage-split-constants stage-implicit-dtor-constants scene-late scene-header-dtor scene-inline-declaration
+
+### R306 — Actor constructor follows the stage resource loader
+
+VC7.1 reproduces the complete 439-byte interval `0x004584D0..0x00458686`
+with an out-of-line Actor constructor and either an implicit or an
+out-of-line rendering base constructor. The loader calls the scalar
+deleting destructor supplied by the earlier LoadingScene object in
+both the native executable and the scratch link. With that binding,
+the two constructors land at `+0x180` and `+0x1A0` from the loader.
+
+The separate comparison of the full Fighter constructor, both base
+constructors, both five-slot vtables, the exception handler and the
+unwind map matches 606 bytes with 46 relocation fields. The already
+exact CharacterObject constructor also calls the Actor constructor.
+Making Actor implicit emits its constructor at `-0x20` from the
+loader. The same displacement occurs when the Fighter constructor
+and loader share a compile unit with a precompiled header. The
+linked order supports authored origin for `0x00458650`. Both
+rendering base definitions survive the full comparison.
+
+The Battle End control retains the early deleting destructor with
+`/Z7` and with linked `/GL /LTCG` code. The `/Z7` bodies and
+exception sections account for 1,289 bytes and 113 relocation
+fields. `/ZI` changes seven or more function bodies. An inferred
+ordinary destructor is 19 bytes and omits the original vtable
+store. The native 28-byte body still has no control that places
+the ordinary destructor early and the deleting destructor late.
+
+    bash .analysis/final-origin-review/actor-base-split/build.sh
+    scripts/repo-python .analysis/final-origin-review/actor-base-split/compare.py
+    bash .analysis/final-origin-review/actor-base-split/link-stage-tail.sh
+    bash .analysis/final-origin-review/actor-base-split/build-pch-control.sh
+    scripts/repo-python .analysis/final-origin-review/actor-base-split/compare-tail.py
+    bash .analysis/final-origin-review/scene-emission-profiles/build.sh
+    scripts/repo-python .analysis/final-origin-review/scene-emission-profiles/compare.py
 
 ## Historical R263 inventory
 

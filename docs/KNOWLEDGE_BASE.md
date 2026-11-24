@@ -80,6 +80,13 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
 
 ## Layout facts
 
+- The Actor constructor at `0x00458650` calls the rendering base
+  constructor and installs the five-slot Actor vtable. Across the
+  complete VC7.1 loader interval, making Actor implicit moves it to
+  the early Fighter caller's position even with a shared precompiled
+  header. The rendering base can stay implicit at its original slot.
+  [Linked loader comparison](ORIGIN_PENDING_REVIEW.md#r306--actor-constructor-follows-the-stage-resource-loader)
+
 - The stage base constructor at `0x00449DE0` installs its six-slot
   vtable, then constructs the camera at `+4` and texture manager at
   `+0x18`. The precompiled derived destructor defers its deleting

@@ -184,8 +184,8 @@ ledger credits 43,282 CODE bytes.
 ## Authored coverage and pending origin review
 
 Coverage exceeds the 98% goal even with the pending origin candidates
-in the denominator. The R304 texture entry lifetimes and R305 stage
-base constructor await exact source adoption. Use the live report
+in the denominator. The R304 texture entry lifetimes, R305 stage base
+constructor and R306 Actor constructor await exact source adoption. Use the live report
 for current counts and `config/function-origins.csv` for the remaining
 provenance decisions.
 
@@ -222,6 +222,12 @@ supplied archive. The PE's RSDS record remains the only original debug
 record found in either package.
 [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 [Publisher patch check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
+
+R306 attributes the Actor constructor through the linked stage resource
+loader and both complete base constructors. The compiler emits the
+implicit Actor before the loader even when both Fighter callers share
+a precompiled header. Both rendering base forms match the linked interval.
+[Actor constructor controls](ORIGIN_PENDING_REVIEW.md#r306--actor-constructor-follows-the-stage-resource-loader)
 
 R305 identifies the stage base constructor through the complete BG00a
 code interval and both adjacent vtables. For the scene, precompiling
