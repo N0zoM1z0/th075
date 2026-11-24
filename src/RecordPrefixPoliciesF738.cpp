@@ -9,6 +9,7 @@ struct RecordPrefix16F738 {
  unsigned char nativeTail[3];
  RecordPrefix16F738* ZeroAndSetFlag();
  void ResetAllocation36();
+ ~RecordPrefix16F738();
 };
 typedef char AssertRecord16F738[(sizeof(RecordPrefix16F738)==16)?1:-1];
 RecordPrefix16F738* RecordPrefix16F738::ZeroAndSetFlag() {
@@ -25,4 +26,11 @@ void RecordPrefix16F738::ResetAllocation36() {
  }
  // Original branch joins BEFORE memset: reused allocations are reset too.
  memset(owned36At8,0,36);
+}
+
+RecordPrefix16F738::~RecordPrefix16F738() {
+    if (owned36At8) {
+        unsigned char* extension = owned36At8;
+        ::operator delete(extension);
+    }
 }

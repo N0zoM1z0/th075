@@ -94456,3 +94456,15 @@ relocations = [
   { offset = 0xAC65, type = "DIR32", symbol = "$L8160", target = 0x005E19B7 },
   { offset = 0xAC69, type = "DIR32", symbol = "$L8186", target = 0x005E1CA4 },
 ]
+
+[units.record-prefix-destroy-004588b0]
+source = "src/RecordPrefixPoliciesF738.cpp"
+object = "build/matching/RecordPrefixPoliciesF738.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RecordPrefix16F738::~RecordPrefix16F738"]
+symbol = "??1RecordPrefix16F738@@QAE@XZ"
+target_address = 0x004588B0
+size = 43
+relocations = [
+  { offset = 0x20, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+]

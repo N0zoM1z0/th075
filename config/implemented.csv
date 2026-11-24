@@ -1006,3 +1006,4 @@ PatchouliFighter::Advance
 YukariFighter::Advance
 SuikaFighter::Advance
 MeilingFighter::Advance
+RecordPrefix16F738::~RecordPrefix16F738

@@ -70,6 +70,36 @@ origin row supersedes an unknown one.
 Run `scripts/repo-python .analysis/sdk-lifetime-origin/native-replay.py`
 to replay the current set, or pass one address to check its scope.
 
+### R274 — the game frame's optional extension cleanup
+
+`0x004588B0` releases the optional extension of the game's 16-byte
+frame prefix. The authored fighter pattern loader passes a real frame
+to `0x00458790` at `0x00457AEB`. That routine allocates and clears the
+36-byte extension at prefix offset `+8`. The loader then reads pose
+fields into the extension. The nested record initializes the prefix
+at offset zero at `0x004587FF` and calls its cleanup at `0x00458941`.
+The construction unwind map's state zero reaches the same cleanup
+through `0x006561C0`. The independent effects loader also initializes
+and destroys the same stack prefix at `0x005F7214` and `0x005F7897`.
+
+The full 43-byte body has a source-level null guard and one REL32 at
+`+0x20` to scalar `operator delete` at `0x00640F15`. Direct `delete`
+emits 34 bytes. Under `/Ob0`, implicit destruction of either an
+`std::auto_ptr` member or a nested owning member instead emits a
+22-byte outer destructor that calls the member destructor. The
+`/Ob1` builds inline those operations into their caller through
+different instruction sequences. The native frame-copy routine
+copies the prefix words, including `+8`, without transferring
+ownership from the source as `std::auto_ptr` copy construction does.
+
+The accepted source pairs `::operator delete` with the existing
+raw allocation through `::operator new`. It and both existing
+prefix methods cold-replay exactly from one object. The full call
+and unwind observations and probe comparisons run with
+`scripts/repo-python .analysis/frame-prefix-origin/inspect.py`.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit record-prefix-destroy-004588b0 --unit record-prefix-reset-allocation-00458790 --unit record-prefix-zero-flag-00458880
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

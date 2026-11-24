@@ -189,6 +189,11 @@ origin candidates in the denominator. Use the live report for current
 counts and `config/function-origins.csv` for the remaining provenance
 decisions.
 
+R274 identifies the guarded extension cleanup at `0x004588B0` through
+the game pattern parser, the original prefix lifetime calls, and the
+same-receiver unwind entry. The new destructor cold-replays 43 bytes
+and its scalar deallocation relocation.
+
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
 sections, so the origin remains unresolved. R272 and R273 attribute the
