@@ -185,6 +185,16 @@ before adding the base, in a different instruction order.
 
 ## VC7.1 `/Od` code generation
 
+### Lifetime declarations and typed callers
+
+The same 11-byte empty receiver body can be a live scene hook or an
+explicit destructor. Follow the actual receiver across the call.
+The progress global's matching constructor and registered finalizer
+establish its destructor, and the implicit trivial control omits the
+registration. A nontrivial implicit member lifetime can instead emit
+the same calls as an explicit empty destructor, as the sprite list
+owner demonstrates. [Comparisons and replay](ORIGIN_PENDING_REVIEW.md#r285--empty-sound-and-staff-roll-hooks-and-the-progress-destructor)
+
 ### x87 operand order
 
 - The compiler orders x87 loads by expression shape. In `x = x * g` with a

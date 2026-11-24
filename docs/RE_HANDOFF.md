@@ -214,6 +214,12 @@ R286 identifies the sound buffer vector clear and the replay header
 and script sequence deque destruction helpers. R287 cold-matches
 two setters through the existing sprite and text rendering layouts.
 
+R288 lists the current unresolved addresses and their missing
+evidence. The remaining short lifetimes and math workers retain
+complete byte-equal alternatives. The PE's RSDS record identifies
+the original debug database, which is absent from the supplied
+archive. [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
+
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
 sections, so the origin remains unresolved. R272 and R273 attribute the

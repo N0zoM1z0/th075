@@ -390,6 +390,49 @@ unit using the shared TextOverlay header cold-replay exactly.
 
     scripts/repo-python scripts/replay-exact-units.py --unit sprite-sequence-set-capacity-00410fc0 --unit command-list-initialize-defaults-00410f30 --unit text-overlay-set-raster-parameters-004135f0 --unit overlay-text-draw-box-00412eb0 --unit font-surface-configure-text-00413420 --unit font-surface-render-text-to-texture-00413460
 
+### R288 — Remaining origin evidence
+
+The remaining complete native bodies and their incoming calls were
+checked against the current ledger. The two empty functions with no
+recorded callers were also queried in the read-only Ghidra project.
+The current direct-call scan is in
+`.analysis/final-origin-review/residual-inbounds.log`.
+
+| Candidates | Evidence gap |
+| --- | --- |
+| `0x0040D8C0`, `0x0040D8E0` | The typed texture cleanup reaches the bitmap-containing entry's destructor. The R108 implicit and explicit member lifetime forms both match the constructor and destructor with their bitmap calls. |
+| `0x0040D900`, `0x0040D920`, `0x0040D940`, `0x0040D960` | Both R163 whole source chains reach the exact CRT cosine and sine entries with the same float argument and return behavior. Their header and ordinary forms differ in source ownership. |
+| `0x0040D9F0` | Calls identify the quad payload at `+0x40`. An SDK matrix constructor and an ordinary empty payload constructor each emit all 14 target bytes. The original type of that subobject is unknown. |
+| `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
+| `0x00412DB0`, `0x00428D40` | The authored caller units reach the same CRT fabs and sqrt operations with the R163 header and ordinary worker forms. |
+| `0x004138D0`, `0x00441FD0` | Complete empty bodies with zero recorded Ghidra references. The current static scan finds no direct caller or absolute pointer literal for either entry. |
+| `0x004229D0` | R286 uses the actual script sequence layout. Both copy forms reproduce all 28 bytes and the relocation to the same deque copy constructor. |
+| `0x00423B20` | The complete 26-byte scope calls the event service constructor with 16 and then its destructor on the same stack receiver. The R114 ordinary and generated initializer forms match. |
+| `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
+| `0x00438A60`, `0x00641FB8` | The R163 long absolute-value overload and ordinary wrapper match. The underlying 11-byte body also matches both pinned CRT members. R263 independently places the separate `abs.obj` contribution at `0x00641DAA`. |
+| `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
+| `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
+| `0x00458650`, `0x00458670`, `0x00458770` | The two vtable constructors and the sprite list member destructor match complete explicit and implicit forms. The destructor's scalar-deleting caller also matches, including both calls. |
+| `0x004591E0` | The typed frame copy still matches both implicit and explicit forms through all 417 code bytes, the 29-byte handler and 44-byte exception data, including all 13 relocations. |
+
+The pinned PE has an RSDS record for `東方萃夢想.pdb` with GUID
+`9306058f-6d68-4650-b80b-1e0d05dd1e18` and age 3. Its COFF symbol
+table is empty. The supplied archive listing contains the original
+PE and no matching PDB, map or object file. A matching PDB or the
+original build objects could identify contributions whose distinct
+C++ forms produce identical code.
+
+    scripts/repo-python .analysis/pending-origin-2026-11-24/inbounds.py
+    scripts/repo-python scripts/ghidra.py query .analysis/final-origin-review/004138d0-xrefs.txt xrefs_to 30 0x004138D0
+    scripts/repo-python scripts/ghidra.py query .analysis/final-origin-review/00441fd0-xrefs.txt xrefs_to 30 0x00441FD0
+    scripts/compile-probe.sh .analysis/final-origin-review/lifetime-alternatives.cpp build/probes/LifetimeFinal-0.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src /DEXPLICIT_MEMBERS=0
+    scripts/compile-probe.sh .analysis/final-origin-review/lifetime-alternatives.cpp build/probes/LifetimeFinal-1.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src /DEXPLICIT_MEMBERS=1
+    scripts/compile-probe.sh .analysis/final-origin-review/sprite-list-explicit.cpp build/probes/SpriteHistoryListExplicitCtor.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
+    scripts/compile-probe.sh .analysis/final-origin-review/log10-controls.cpp build/probes/Log10OriginControls.obj /Od /Ob0 /Gy /GR- /GX- /Zi
+    scripts/repo-python scripts/replay-exact-units.py --unit battle-round-banner-00441ea0
+    scripts/repo-python .analysis/final-origin-review/check-residual-controls.py
+    scripts/repo-python .analysis/frame-copy-origin/compare.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
