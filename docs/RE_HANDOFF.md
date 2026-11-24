@@ -184,8 +184,8 @@ ledger credits 43,282 CODE bytes.
 ## Authored coverage and pending origin review
 
 Coverage exceeds the 98% goal even with the pending origin candidates
-in the denominator. The texture entry lifetimes and stage base
-constructor from R304–R305 await exact source adoption.
+in the denominator. The stage base constructor from R305
+awaits exact source adoption.
 Use the live report for current counts and
 `config/function-origins.csv` for the remaining provenance decisions.
 
@@ -244,6 +244,11 @@ R315 returns the Actor constructor to review. Omitting `/Gy` and
 using the full native Fighter vtable leaves both implicit and
 explicit Actor definitions in the original slot after the loader.
 [Actor constructor controls](ORIGIN_PENDING_REVIEW.md#r315--the-complete-fighter-vtable-permits-an-implicit-actor-constructor)
+
+R316 returns both texture entry lifetimes to review. With all
+35 methods in one compile unit and `/Gy` omitted, both forms
+match the complete code interval and three exception records.
+[Texture lifetime controls](ORIGIN_PENDING_REVIEW.md#r316--omitting-function-packaging-leaves-both-texture-lifetimes-at-the-native-offsets)
 
 R305 identifies the stage base constructor through the complete BG00a
 code interval and both adjacent vtables. R311 matches the scene's

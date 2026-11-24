@@ -401,6 +401,7 @@ The current direct-call scan is in
 
 | Candidates | Evidence gap |
 | --- | --- |
+| `0x0040D8C0`, `0x0040D8E0` | R316 reproduces all 10,483 linked bytes and three exception records with both lifetime forms in a single compile unit without `/Gy`. |
 | `0x0040D900`, `0x0040D940` | R308 matches the complete sprite drawing interval with the precompiled standard overloads and ordinary wrappers. R303 rules out the x87 bodies in the older SDK shape archive. |
 | `0x00411C10` | R314 reproduces the full 3,113-byte linked interval with implicit and explicit constructors by omitting `/Gy`. |
 | `0x004138D0`, `0x00441FD0` | R313 reproduces both complete surrounding intervals with ordinary functions and template instantiations. Neither body has a direct caller or an absolute pointer literal. |
@@ -893,11 +894,11 @@ destructor before the second. The independent D3DX8 link shows that
 this `/OPT:ICF` setting collapses seven separate native SDK entries and
 shrinks the original 90-byte sprite interval to 81 bytes.
 
-The full linked order and the three independently reviewed texture
-callers support authored origin for `0x0040D8C0` and `0x0040D8E0`.
-The entry occupies 44 bytes and calls the native bitmap lifetime at
-offset zero. The bitmap's extent inside the entry and the original
-declaration spelling remain open. Exact source adoption is pending.
+The linked order in these builds initially supported authored
+origin for `0x0040D8C0` and `0x0040D8E0`. R316 restores both to
+review using a complete implicit compile without `/Gy`. The
+entry occupies 44 bytes and calls the native bitmap lifetime at
+offset zero. The bitmap's extent inside the entry remains open.
 
     scripts/repo-python .analysis/final-origin-review/texture-lifetime/replay.py
     bash .analysis/final-origin-review/texture-emission-order/build.sh
@@ -1236,6 +1237,25 @@ wrapper. This reopens the origin of `0x00458650`; commit
 
     bash .analysis/final-origin-review/actor-no-gy/build.sh
     scripts/repo-python .analysis/final-origin-review/actor-no-gy/compare.py both-explicit implicit-actor
+
+### R316 — Omitting function packaging leaves both texture lifetimes at the native offsets
+
+All 35 texture methods compile in one translation unit after
+their shared declarations are consolidated. Without `/Gy`,
+the implicit lifetime functions are the first two COMDATs
+after the shared ordinary code section, at the native
+`0x0040D8C0` and `0x0040D8E0`. The out-of-line definitions
+remain in the ordinary code section at those same offsets.
+
+Both forms reproduce the complete 10,483-byte code interval
+`0x0040B000..0x0040D8F2` and all 308 code relocation fields.
+Each also matches all 162 bytes and 15 relocation fields in
+the three allocator exception records. This reopens both
+origins. The earlier linked comparison and ownership decision
+remain in commit `2f07989c`.
+
+    bash .analysis/final-origin-review/texture-no-gy/build.sh implicit out-of-line-last
+    scripts/repo-python .analysis/final-origin-review/texture-no-gy/compare.py implicit out-of-line-last
 
 ## Historical R263 inventory
 

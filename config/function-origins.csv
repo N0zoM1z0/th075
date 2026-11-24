@@ -380,8 +380,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040D790,authored,SpriteDrawing,authored,custom-policy-backed,R011
 0x0040D840,authored,SpriteDrawing,authored,custom-policy-backed,R011
 0x0040D870,authored,SpriteDrawing,authored,custom-policy-backed,R011
-0x0040D8C0,authored,TextureEntry,authored,inferred-from-complete-linked-texture-lifetime-order,R304
-0x0040D8E0,authored,TextureEntry,authored,inferred-from-complete-linked-texture-lifetime-order,R304
+0x0040D8C0,unknown,TextureEntry,review,explicit-implicit-source-ambiguity,R316
+0x0040D8E0,unknown,TextureEntry,review,explicit-implicit-source-ambiguity,R316
 0x0040D900,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040D920,library,VC71CRT,exclude,full-vc71-header-worker-and-native-d3dx8-comdat-selection,R292
 0x0040D940,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
