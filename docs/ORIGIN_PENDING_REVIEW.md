@@ -7,8 +7,8 @@ For `0x004591E0`, the real frame-header fields and two
 16-byte prefix has a destructor. A probe using the existing trivial
 `FighterFrameInfo` header layout instead emits 491 CODE bytes and omits
 the prefix cleanup. The three native callers are `0x00458E70`,
-`0x00459CB0`, and `0x0045B640`. The last caller allocates a
-`0x74`-byte record before invoking the copy.
+`0x00459CB0`, and `0x0045B640`. The last caller passes the record
+size `0x74` to placement new before invoking the copy.
 
 An implicit copy constructor and an explicit initializer-list constructor
 both reproduce 417 CODE bytes at `0x004591E0`, the 29-byte EH carrier at
@@ -25,6 +25,28 @@ and `/DEXPLICIT_COPY=1`, producing
 `build/probes/FrameCopyOriginOwnedExplicit.obj`. Run
 `scripts/repo-python .analysis/frame-copy-origin/compare.py` for the
 complete comparisons.
+
+### R272 — D3DX8 StringBuffer contribution
+
+`0x00620132` and `0x006200DA` come from `obj\i386\cd3dxbuffer.obj`
+in the pinned D3DX8 archive. The complete five-byte section 52 defines
+`CD3DXStringBuffer::~CD3DXStringBuffer` and has one REL32 to its
+base destructor at `0x0061FE0A`. The complete 24-byte section 43
+defines `CD3DXBuffer::CD3DXBuffer`, calls the interface constructor
+at `0x00620090`, and installs the vtable at `0x0065DE1C`.
+
+The archive member replays 25 code sections and five data sections
+with 54 relocation fields and zero linked byte differences. The vtable
+and same-object call and jump destinations follow the actual COFF
+definitions and weak fallback indices. This establishes library
+provenance for both functions, using the same evidence standard as
+[R039's D3DX8 forwarders](ORIGIN_REVIEW.md#r039--complete-d3dx8-destructor-forwarding-comdats).
+R264 preserves the unresolved explicit-versus-implicit source forms.
+
+The [R264 evidence](../config/sdk-string-buffer-review-evidence.json)
+records the archive and member identities, all section placements and
+the relocation bindings. The local replay is
+`scripts/repo-python .analysis/sdk-string-buffer-origin/verify-contribution.py`.
 
 ## Historical R263 inventory
 

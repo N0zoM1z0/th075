@@ -189,6 +189,12 @@ origin candidates in the denominator. Use the live report for current
 counts and `config/function-origins.csv` for the remaining provenance
 decisions.
 
+The pending review now has a complete explicit-versus-implicit control
+for the frame copy at `0x004591E0`. Both forms match its CODE and EH
+sections, so the origin remains unresolved. R272 identifies
+`0x00620132` and `0x006200DA` from the original D3DX8 archive member.
+[Evidence and replay](ORIGIN_PENDING_REVIEW.md#current-follow-up)
+
 ## Recent source checkpoints
 
 Inspect `git log -10 --oneline` for the checkpoint sequence. Use the
