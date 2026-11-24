@@ -3,9 +3,9 @@
 // established separately from the pinned PE. This is not an independent
 // complete original function or adopted exact CODE.
 case F617_CASE: {
-    if (animationStage<F617_THRESHOLD && y>g_ThresholdAt0065782C) {
+    if (animationStage<F617_THRESHOLD && y>FloatConstants::Zero) {
         velocityY = velocityY - field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(F617_THRESHOLD);

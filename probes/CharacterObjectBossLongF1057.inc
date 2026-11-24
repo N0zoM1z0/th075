@@ -64,7 +64,7 @@ case F1057_CASE: {
     if (animationStage<=1) {
         SetPolarVelocity(
             float(field0DC),
-            float(field0D8)*g_F1057_SpeedScaleAt006590B4+g_F1057_SpeedBaseAt00657CBC);
+            float(field0D8)*FloatConstants::OneTenth+g_F1057_SpeedBaseAt00657CBC);
         owner->SpawnBattleEffect(
             F1057_NEXT_CASE, x,y,
             facing,1);
@@ -75,9 +75,9 @@ case F1057_CASE: {
     field0D8=short(field0D8+2);
     if (animationStage>0 && field0DA<60) {
         if ((*(&owner->opponent->y))+g_F1057_YOffsetAt00657888<y)
-            field0C8=(field0C8)+g_F1057_NudgeAt00657480;
+            field0C8=(field0C8)+FloatConstants::Two;
         if ((*(&owner->opponent->y))+g_F1057_YOffsetAt00657888>y)
-            field0C8=(field0C8)-g_F1057_NudgeAt00657480;
+            field0C8=(field0C8)-FloatConstants::Two;
         ++field0DA;
     }
     x=float(facing)*velocityX+x;

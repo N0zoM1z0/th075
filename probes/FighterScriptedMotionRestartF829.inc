@@ -11,9 +11,9 @@ case F645_CASE: {
         rotationZ=0.0f;
         ClearTransformFlag();
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;
             ClearMotionFields();

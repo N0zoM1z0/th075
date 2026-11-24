@@ -9,8 +9,8 @@ case 0x133: {
         field07C=0;
     }
     if ((field3AC)>0) {
-        velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }

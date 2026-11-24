@@ -6,9 +6,9 @@ case 0xC8: {
         velocityX=0.0f;
         scriptCounterF00=0;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)<7) {
+    if (y>FloatConstants::Zero && (animationStage)<7) {
         velocityY=velocityY-g_F759_C8DecelAt006593E8;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(7);
@@ -46,9 +46,9 @@ case 0xC9: {
         velocityX=0.0f;
         scriptCounterF00=0;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)<6) {
+    if (y>FloatConstants::Zero && (animationStage)<6) {
         velocityY=velocityY-g_F759_C9DecelAt00658290;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(6);
@@ -75,9 +75,9 @@ case 0xC9: {
 case 0xCA: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
-    if (y>g_ThresholdAt0065782C && (animationStage)>5) {
+    if (y>FloatConstants::Zero && (animationStage)>5) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;
@@ -107,9 +107,9 @@ case 0xCA: {
 case 0xCB: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
-    if (y>g_ThresholdAt0065782C && (animationStage)>4) {
+    if (y>FloatConstants::Zero && (animationStage)>4) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;

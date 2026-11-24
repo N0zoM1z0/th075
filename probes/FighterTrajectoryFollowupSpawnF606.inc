@@ -15,12 +15,12 @@ case F606_ACTION: {
         SpawnBattleEffect(F606_PROJECTILE,x,y,
             facing, F606_SIDE);
     }
-    if (animationStage==F606_STAGE && velocityY<g_StopThresholdAt00657480) {
+    if (animationStage==F606_STAGE && velocityY<FloatConstants::Two) {
         ResetSecondaryCounter(F606_EARLY);
         break;
     }
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();

@@ -11,15 +11,15 @@ case 0x135: {
         field07C=0;
     }
     if ((field3AC)>0) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
     if ((animationStage)==3 || (animationStage)==4) {
-        velocityY=velocityY-g_AnimationDeltaAt0065747C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        velocityY=velocityY-FloatConstants::One;
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(5);
@@ -31,7 +31,7 @@ case 0x135: {
     }
     if ((animationStage)>4) {
         velocityX=(velocityX)-g_F964_LateFallAt00658048;
-        if ((velocityX)<g_ThresholdAt0065782C)
+        if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount))
@@ -52,16 +52,16 @@ case 0x136: {
         field080=2;
         field07C=0;
     }
-    if ((field3AC)>0 && y==g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+    if ((field3AC)>0 && y==FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<12) {
+        if (y+velocityY<=FloatConstants::Zero && (animationStage)<12) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(0xC);

@@ -12,8 +12,8 @@ case 0x2C2: {
         ClearMotionFields();
     }
     if ((animationStage)>9) {
-        velocityY=velocityY-g_F890GravityAt006581E0;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        velocityY=velocityY-FloatConstants::OneAndHalf;
+        if (velocityY+y<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetPrimaryCounters(0x2C3);
@@ -78,7 +78,7 @@ case 0x2C2: {
         if ((scriptCounterF00)==4) {
             field314=45.0f;
             SpawnBattleEffect(0x34A,
-                (opponent->x)+g_ThresholdAt0065782C,
+                (opponent->x)+FloatConstants::Zero,
                 (opponent->y)+g_F890Phase4HiYAt00659420,
                 (facing),1);
             SpawnBattleEffect(0x329,
@@ -89,7 +89,7 @@ case 0x2C2: {
         if ((scriptCounterF00)==5) {
             field314=-45.0f;
             SpawnBattleEffect(0x34A,
-                (opponent->x)+g_ThresholdAt0065782C,
+                (opponent->x)+FloatConstants::Zero,
                 (opponent->y)-g_F890Phase5YAt0065786C,
                 -((facing)),1);
             SpawnBattleEffect(0x329,

@@ -2,9 +2,9 @@
 // Real height global658350, stage6 owner counters & POS15, independent game entry.
 // Enclosing whole giant remains nonexact; no split-case exact CODE.
 case 0x1FB: {
-    if ((velocityX)>g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_F873GroundDropAt00658350;
-        if ((velocityX)<g_ThresholdAt0065782C)
+    if ((velocityX)>FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::ThreeQuarters;
+        if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
     if ((animationStage)==0 && (animationFrame)==0) {

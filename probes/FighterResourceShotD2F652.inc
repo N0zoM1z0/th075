@@ -8,22 +8,22 @@ case 0xD2: {
     spirit=spirit-F652_DECAY;
     if (animationStage==0 && animationFrame==0) {
 #if F652_SCALE_BEFORE
-        velocityX=(velocityX)*g_BounceScaleAt00657F74;
-        velocityY=(velocityY)*g_BounceScaleAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
         PlaySharedSound(0x2C);
 #endif
         SpawnBattleEffect(F652_SPRITE,x,
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
 #if !F652_SCALE_BEFORE
-        velocityX=(velocityX)*g_BounceScaleAt00657F74;
-        velocityY=(velocityY)*g_BounceScaleAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
         PlaySharedSound(0x2C);
 #endif
     }
     // The original applies this x87 drag every frame, even outside
     // the stage/frame-zero projectile initialization path.
-    velocityY=velocityY-(field05C)*g_BounceScaleAt00657F74;
+    velocityY=velocityY-(field05C)*FloatConstants::Quarter;
     if (AdvanceNestedFrame()==animationStageCount) {
         if (static_cast<unsigned int>(inputD)>0)
             ResetSecondaryCounter(2);

@@ -1,7 +1,7 @@
+#include "FloatConstants.hpp"
 #include "SpriteTransform.hpp"
 #include "MathLookup.hpp"
 
-extern float g_ZeroFloat;
 
 void SpriteTransform::BuildQuadFromRect(const RECT *rectangle)
 {
@@ -70,7 +70,7 @@ void SpriteTransform::RotateQuad(float x, float y, float z,
 {
     D3DXVECTOR4 before;
     float cosine, sine;
-    if (angleZ != g_ZeroFloat)
+    if (angleZ != FloatConstants::Zero)
     {
         cosine = MathLookup::ReadCosTable(angleZ);
         sine = MathLookup::ReadPhaseTable(angleZ);
@@ -87,7 +87,7 @@ void SpriteTransform::RotateQuad(float x, float y, float z,
         corners_[2].x = (before.x - x) * cosine + x - (before.y - y) * sine;
         corners_[2].y = (before.x - x) * sine + y + (before.y - y) * cosine;
     }
-    if (angleY != g_ZeroFloat)
+    if (angleY != FloatConstants::Zero)
     {
         cosine = MathLookup::ReadCosTable(angleY);
         sine = MathLookup::ReadPhaseTable(angleY);
@@ -104,7 +104,7 @@ void SpriteTransform::RotateQuad(float x, float y, float z,
         corners_[2].x = (before.z - z) * sine + x + (before.x - x) * cosine;
         corners_[2].z = (before.z - z) * cosine + z - (before.x - x) * sine;
     }
-    if (angleX != g_ZeroFloat)
+    if (angleX != FloatConstants::Zero)
     {
         cosine = MathLookup::ReadCosTable(angleX);
         sine = MathLookup::ReadPhaseTable(angleX);

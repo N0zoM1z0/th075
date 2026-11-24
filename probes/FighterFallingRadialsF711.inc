@@ -8,9 +8,9 @@
                 velocityX=0.0f;
                 scriptCounterF00=0;
             }
-            if (y>g_ThresholdAt0065782C && (animationStage)<7) {
+            if (y>FloatConstants::Zero && (animationStage)<7) {
                 velocityY=velocityY-g_ApproachLowerAt00658290;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(7);
@@ -42,9 +42,9 @@
                 velocityX=0.0f;
                 scriptCounterF00=0;
             }
-            if (y>g_ThresholdAt0065782C && (animationStage)<6) {
+            if (y>FloatConstants::Zero && (animationStage)<6) {
                 velocityY=velocityY-g_ApproachLowerAt00658290;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(6);

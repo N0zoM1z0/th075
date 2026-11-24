@@ -12,10 +12,10 @@
                 field3AC=0;
                 scriptCounterF00=0;
             }
-            if ((animationStage)<10 && y>g_ThresholdAt0065782C && (animationStage)>2) {
+            if ((animationStage)<10 && y>FloatConstants::Zero && (animationStage)>2) {
                 velocityX=-30.0f;
-                velocityY=velocityY-g_JumpGroundCorrectionAt00658058;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                velocityY=velocityY-FloatConstants::ThreeFifths;
+                if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     ResetPrimaryCounters(10);
                     y=0.0f;
@@ -24,18 +24,18 @@
             }
             if ((animationStage)>9 && (animationStage)<13 && !CheckHorizontalLimits()) {
                 if (facing==1)
-                    x=(field2D8)+g_F699_SideOffsetAt00657874;
+                    x=(field2D8)+FloatConstants::Five;
                 if (facing==-1)
-                    x=(field2DC)-g_F699_SideOffsetAt00657874;
+                    x=(field2DC)-FloatConstants::Five;
             }
-            if ((animationStage)>7 && (animationStage)<10 && y>g_ThresholdAt0065782C) {
+            if ((animationStage)>7 && (animationStage)<10 && y>FloatConstants::Zero) {
                 if ((CheckHorizontalLimits() && (((x)<g_F699_SideEdgeAt00657884
                      && facing==1)
                     || ((x)>g_F699_SideEdgeAt00657884
                         && facing==-1)))
-                    || (((field2D8)+g_F699_SideOffsetAt00657874)>=x
+                    || (((field2D8)+FloatConstants::Five)>=x
                         && facing==1)
-                    || (((field2DC)-g_F699_SideOffsetAt00657874)<=x
+                    || (((field2DC)-FloatConstants::Five)<=x
                         && facing==-1)) {
                     ResetSecondaryCounter(10);
                     ClearMotionFields();

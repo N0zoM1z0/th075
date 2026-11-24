@@ -20,8 +20,8 @@ case 0x2DB: {
         }
     }
     if ((animationStage)>15) {
-        velocityX=(velocityX)-g_BounceScaleAt00657F74;
-        if ((velocityX)<g_ThresholdAt0065782C)
+        velocityX=(velocityX)-FloatConstants::Quarter;
+        if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {

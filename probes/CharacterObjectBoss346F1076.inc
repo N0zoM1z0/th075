@@ -47,7 +47,7 @@ case 0x346: {
     }
     if (animationStage==2) {
         ++field0D8;
-        scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
+        scaleX=(scaleX)+FloatConstants::OneTenth;
         scaleY=(scaleY)*g_F1076_ScaleMulAt00659450;
         SetPolarVelocity(float(field0DC),
                                      float(field0D8));
@@ -58,7 +58,7 @@ case 0x346: {
     }
     if (animationStage==3) {
         ++field0D8;
-        scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
+        scaleX=(scaleX)+FloatConstants::OneTenth;
         scaleY=(scaleY)*g_F1076_ScaleMulAt00659450;
         SetPolarVelocity(float(field0DC),
                                      float(field0D8));

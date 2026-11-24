@@ -19,9 +19,9 @@ case 0x2FA: {
         fieldF06=0;
         fieldF08=g_OptionsModeAt006714D0+2;
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetSecondaryCounter(15);
             ClearMotionFields();
             y=0.0f;

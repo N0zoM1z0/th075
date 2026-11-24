@@ -9,8 +9,8 @@
                 velocityX=15.0f;
                 scriptCounterF00=0;
             }
-            velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-            if ((velocityX)<g_ThresholdAt0065782C) {
+            velocityX=(velocityX)-FloatConstants::ThreeFifths;
+            if ((velocityX)<FloatConstants::Zero) {
                 velocityX=0.0f;
                 field3AC=0;
             }
@@ -31,8 +31,8 @@
                 scriptCounterF00=0;
             }
             if ((animationStage)>6) {
-                velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-                if ((velocityX)<g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero) {
                     velocityX=0.0f;
                     field3AC=0;
                 }

@@ -7,7 +7,7 @@ case 0x49: {
         field05C = 0.8f;
         field07C = 0;
     }
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();
@@ -28,10 +28,10 @@ case 0x49: {
             SpawnBattleEffect(F608_PROJECTILE,x,y,
                 facing, F608_SIDE);
         }
-        if (velocityY != g_ThresholdAt0065782C) {
+        if (velocityY != FloatConstants::Zero) {
         // Real VC7.1 left lvalue preserves original FLD global; FLD member.
         // Both branches exit this native case, not merely the nested if.
-        if (*(&velocityX) == g_ThresholdAt0065782C) {
+        if (*(&velocityX) == FloatConstants::Zero) {
             ResetSecondaryCounter(3);
             break;
         } else {

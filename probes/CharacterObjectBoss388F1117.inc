@@ -29,16 +29,16 @@ case 0x388: {
     y=y+velocityY;
     if (animationStage==1) {
         rotationZ=(rotationZ)+g_F1068_ActionSpeedAt00657878;
-        velocityY=velocityY-g_F1051_ScaleCeilingAt0065747C;
-        if (velocityY<g_F1044_GroundAt0065782C)
+        velocityY=velocityY-FloatConstants::One;
+        if (velocityY<FloatConstants::Zero)
             velocityY=0.0f;
     }
     if (animationStage==2) {
-        velocityY=velocityY-g_F1059_ScaleRatioAt00657478;
+        velocityY=velocityY-FloatConstants::Half;
         y=y+velocityY;
         // Native TEST AH,0x41; JNP jumps straight INTO the hit
         // body. Otherwise, only then consult native status 0/6.
-        if (y+velocityY<=g_F1044_GroundAt0065782C ||
+        if (y+velocityY<=FloatConstants::Zero ||
             (field07C!=0 && field07C!=6)) {
             velocityY=0.0f;
             ResetSecondaryCounter(3);

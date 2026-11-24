@@ -3,7 +3,7 @@
 // ground correction, contact rebound and optional extra stage-zero
 // projectile counter. Entire giant fighter Advance() is NONEXACT.
 case F633_CASE: {
-    cardGauge=(cardGauge)+g_AnimationDeltaAt0065747C;
+    cardGauge=(cardGauge)+FloatConstants::One;
     if ((cardGauge)>g_AnimationMaximumAt006583B4)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
@@ -20,13 +20,13 @@ case F633_CASE: {
         fieldF0A=0;
 #endif
     }
-    if ((velocityX)<g_ThresholdAt0065782C) {
-        velocityX=(velocityX)+g_JumpGroundCorrectionAt00658058;
-        if ((velocityX)>g_ThresholdAt0065782C)
+    if ((velocityX)<FloatConstants::Zero) {
+        velocityX=(velocityX)+FloatConstants::ThreeFifths;
+        if ((velocityX)>FloatConstants::Zero)
             velocityX=0.0f;
     }
     if (CheckHorizontalLimits() && field3BE)
-        field490=(velocityX)*g_JumpReflectionAt006583E8;
+        field490=(velocityX)*FloatConstants::ThreeQuartersDouble;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(F633_NEXT_ACTION);
     return;

@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "PatchouliFighter.hpp"
 #include "Fighter.hpp"
 // F365: independently checked COMPLETE native 1,576-byte extended character special effect
@@ -14,7 +15,6 @@
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
-extern const float g_SpecialPowerStepAt006590B4;
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void PatchouliFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
@@ -29,7 +29,7 @@ void PatchouliFighter::AdvanceAuxiliary() {
     if (fieldF0C < 0) fieldF0C = 359;
     if (fieldF0C >= 360) fieldF0C = 0;
     if (fieldF10 > 0) {
-        field490 = float(fieldF10+20) * g_SpecialPowerStepAt006590B4 * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
+        field490 = float(fieldF10+20) * FloatConstants::OneTenth * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
         fieldF10 = fieldF10-2;
         if (Rand(0,100)<50)
             SpawnProjectile(0x38c, float(Rand(0,640)*facing)+x,0.0f,facing,1);

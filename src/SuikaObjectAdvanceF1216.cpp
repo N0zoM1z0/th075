@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of SuikaObject::Advance at 005C9CC0.
@@ -10,7 +11,6 @@
 
 float __cdecl AngleAt00483300(float, float);
 float __cdecl AbsFloatAt00412D90(float);
-extern float g_F1057_NudgeAt00657480;
 extern float g_F1211_AngleDivAt00657828;
 
 void SuikaObject::Advance()
@@ -559,7 +559,7 @@ void SuikaObject::Advance()
             }
             SetPolarVelocity(field0C8, field0CC);
             if (field0CC > 2.0f) field0CC -= 1.0f;
-            if (animationStage < 2 && field0CC == g_F1057_NudgeAt00657480)
+            if (animationStage < 2 && field0CC == FloatConstants::Two)
                 ResetSecondaryCounter(2);
             x = facing * velocityX + x;
             y += velocityY;

@@ -1,5 +1,6 @@
 #ifndef TH075_GAME_LEAF_HELPERS_HPP
 #define TH075_GAME_LEAF_HELPERS_HPP
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 
 #include "Fighter.hpp"
@@ -37,7 +38,6 @@ public:
 
 extern DrawDispatcher *g_DrawDispatcher;
 
-extern float g_ZeroFloat;
 
 class SpriteGeometry {
 public:

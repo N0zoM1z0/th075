@@ -1,39 +1,23 @@
+#include "FloatConstants.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "SuikaFighter.hpp"
 
-extern float g_AdditionalGravityAt00659090;
 extern float g_AngleShiftAt00657878;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachAt00658058;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_BounceScaleAt00657F74;
 extern float g_BounceThresholdAt006590C0;
 extern float g_ContactProjectionAt00657888;
-extern double g_ContactScaleAt006583E8;
-extern float g_ExtraThresholdAt00657D14;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
-extern float g_F747_BounceYAt00658044;
 extern float g_F748_SpeedScaleAt006590B8;
-extern float g_JumpGroundCorrectionAt00658058;
-extern double g_JumpReflectionAt006583E8;
 extern float g_MarisaSpecialProjectileYAt00658400;
 extern float g_MarisaSpecialProjectileYAt0065929C;
-extern float g_ProjectileFallAt006590B4;
-extern float g_RepeatScaleAt00658348;
-extern double g_RiseAt00658050;
-extern float g_StopThresholdAt00657480;
-extern float g_SubtractAt00657478;
 extern float g_SuikaOffsetAt00657834;
-extern float g_SuikaOffsetAt00657850;
-extern float g_SuikaOffsetAt00657874;
 extern float g_SuikaOffsetAt00657884;
 extern float g_SuikaOffsetAt00657888;
 extern float g_SuikaOffsetAt0065788C;
-extern float g_SuikaOffsetAt00657CF8;
 extern float g_SuikaOffsetAt00657D10;
 extern float g_SuikaOffsetAt006581DC;
 extern float g_SuikaOffsetAt00658264;
@@ -64,7 +48,6 @@ extern float g_SuikaOffsetAt00659E14;
 extern float g_SuikaOffsetAt00659E18;
 extern float g_SuikaOffsetAt00659E1C;
 extern float g_SuikaOffsetAt00659E20;
-extern float g_ThresholdAt0065782C;
 
 void SuikaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -75,16 +58,16 @@ void SuikaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -97,16 +80,16 @@ void SuikaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -121,16 +104,16 @@ void SuikaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -143,16 +126,16 @@ void SuikaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -179,16 +162,16 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= (field072)) {
@@ -219,16 +202,16 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -254,8 +237,8 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C &&
-            ((velocityY = velocityY - field05C), y + velocityY <= g_ThresholdAt0065782C)) {
+        if (y > FloatConstants::Zero &&
+            ((velocityY = velocityY - field05C), y + velocityY <= FloatConstants::Zero)) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -278,10 +261,10 @@ void SuikaFighter::Advance() {
     }
 
     case 0x9: {
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -312,13 +295,13 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if (velocityX < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if (velocityX > g_ThresholdAt0065782C)
+        if (velocityX < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if (velocityX > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE != 0)
-            field490 = static_cast<float>((velocityX) * g_JumpReflectionAt006583E8);
+            field490 = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -330,15 +313,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -351,15 +334,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -373,15 +356,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -401,15 +384,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -422,15 +405,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -443,15 +426,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -465,15 +448,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -493,15 +476,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -514,15 +497,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -535,15 +518,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -557,15 +540,15 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -590,12 +573,12 @@ void SuikaFighter::Advance() {
                 velocityY = 25.0f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -617,12 +600,12 @@ void SuikaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -644,12 +627,12 @@ void SuikaFighter::Advance() {
             field05C = 1.3f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -671,7 +654,7 @@ void SuikaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -683,8 +666,8 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(animationStage - 1);
-        if (animationStage == 1 && animationFrame == 0 && velocityY != g_ThresholdAt0065782C) {
-            if (velocityX == (g_ThresholdAt0065782C)) {
+        if (animationStage == 1 && animationFrame == 0 && velocityY != FloatConstants::Zero) {
+            if (velocityX == (FloatConstants::Zero)) {
                 ResetSecondaryCounter(3);
                 return;
             } else {
@@ -702,13 +685,13 @@ void SuikaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
             ResetPrimaryCounters(0x4C);
-            velocityX = -(velocityX) * g_BounceScaleAt00657F74;
+            velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
             field05C = 0.5f;
             SetCameraShake(2.0f);
@@ -717,7 +700,7 @@ void SuikaFighter::Advance() {
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
 
             Fighter::PlaySharedSound(0x16);
 
@@ -743,7 +726,7 @@ void SuikaFighter::Advance() {
 
         rotationZ = (rotationZ) + g_AngleShiftAt00657878;
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
             sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
@@ -767,7 +750,7 @@ void SuikaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -786,8 +769,8 @@ void SuikaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(animationStage - 1);
         if (animationStage == 1 && animationFrame == 0) {
-            if (velocityY != g_ThresholdAt0065782C) {
-                if (velocityX == (g_ThresholdAt0065782C)) {
+            if (velocityY != FloatConstants::Zero) {
+                if (velocityX == (FloatConstants::Zero)) {
                     ResetSecondaryCounter(3);
                     return;
                 } else {
@@ -805,7 +788,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 3) {
             rotationZ = (rotationZ) + g_F728_RandomOffsetYAt00657858;
             velocityY = velocityY - field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 sequenceTimer = (velocityX) * g_ContactProjectionAt00657888;
                 fieldEFE = (velocityY) * g_ContactProjectionAt00657888;
                 ClearMotionFields();
@@ -822,7 +805,7 @@ void SuikaFighter::Advance() {
             ResetSecondaryCounter(3);
         else if (animationStage == 3 && animationFrame == 0) {
             velocityX = static_cast<float>(sequenceTimer) * g_F747_BounceXAt006590BC;
-            velocityY = static_cast<float>(-fieldEFE) * g_F747_BounceYAt00658044;
+            velocityY = static_cast<float>(-fieldEFE) * FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(0.0f, 95.0f, 0.0f);
         }
@@ -907,7 +890,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage >= 3 && animationStage <= 5) {
             velocityY -= field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(6);
@@ -949,7 +932,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage >= 3 && animationStage <= 5) {
             velocityY -= field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(6);
@@ -1037,13 +1020,13 @@ void SuikaFighter::Advance() {
             field07C = 0;
             sequenceTimer = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && sequenceTimer < 5) {
@@ -1060,13 +1043,13 @@ void SuikaFighter::Advance() {
             field07C = 0;
             sequenceTimer = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && sequenceTimer < 7) {
@@ -1083,13 +1066,13 @@ void SuikaFighter::Advance() {
             field07C = 0;
             sequenceTimer = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && sequenceTimer < 7) {
@@ -1106,12 +1089,12 @@ void SuikaFighter::Advance() {
             field05C = 0.5f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -1126,7 +1109,7 @@ void SuikaFighter::Advance() {
     }
 
     case 0x96: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1135,20 +1118,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x97: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1157,20 +1140,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x98: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1179,20 +1162,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x9A: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1201,20 +1184,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9B: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1223,20 +1206,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9C: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1245,20 +1228,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9E: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1268,10 +1251,10 @@ void SuikaFighter::Advance() {
             field05C = 0.75f;
         }
 
-        if (y >= g_ThresholdAt0065782C) {
+        if (y >= FloatConstants::Zero) {
 
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1284,7 +1267,7 @@ void SuikaFighter::Advance() {
     }
 
     case 0x9F: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1293,20 +1276,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA0: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1315,20 +1298,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA1: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1337,20 +1320,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA3: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1358,20 +1341,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA4: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1379,20 +1362,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA5: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1400,20 +1383,20 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA7: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1426,12 +1409,12 @@ void SuikaFighter::Advance() {
                 (y) + g_ContactProjectionAt00657888,
                 facing, 1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-sequenceTimer) * g_ProjectileFallAt006590B4;
+        field490 = (-sequenceTimer) * FloatConstants::OneTenth;
         if (sequenceTimer > 0)
             sequenceTimer = sequenceTimer - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1440,7 +1423,7 @@ void SuikaFighter::Advance() {
     }
 
     case 0xA8: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1453,12 +1436,12 @@ void SuikaFighter::Advance() {
                 (y) + g_ContactProjectionAt00657888,
                 facing, 1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-sequenceTimer) * g_ProjectileFallAt006590B4;
+        field490 = (-sequenceTimer) * FloatConstants::OneTenth;
         if (sequenceTimer > 0)
             sequenceTimer = sequenceTimer - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1475,9 +1458,9 @@ void SuikaFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1500,9 +1483,9 @@ void SuikaFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1523,9 +1506,9 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
             velocityX = 9.0f;
         }
-        if (velocityX > g_SuikaOffsetAt00657850) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_SuikaOffsetAt00657850)
+        if (velocityX > FloatConstants::Ten) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Ten)
                 velocityX = 10.0f;
         }
         if (inputY < 0) {
@@ -1582,9 +1565,9 @@ void SuikaFighter::Advance() {
             field05C = 0.0f;
             sequenceTimer = 0;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 1) {
+        if (y > FloatConstants::Zero && animationStage > 1) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1616,9 +1599,9 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             field05C = 0.0f;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 0) {
+        if (y > FloatConstants::Zero && animationStage > 0) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1643,22 +1626,22 @@ void SuikaFighter::Advance() {
     }
 
     case 0xCC: {
-        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -1679,22 +1662,22 @@ void SuikaFighter::Advance() {
     }
 
     case 0xCD: {
-        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -1715,15 +1698,15 @@ void SuikaFighter::Advance() {
     }
 
     case 0xCE: {
-        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1750,8 +1733,8 @@ void SuikaFighter::Advance() {
 
     case 0xCF: {
         field3AC = 1;
-        velocityX -= g_SubtractAt00657478;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::Half;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -1767,10 +1750,10 @@ void SuikaFighter::Advance() {
             facing = static_cast<signed char>(-facing);
             velocityX = -velocityX;
         }
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -1790,8 +1773,8 @@ void SuikaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1813,8 +1796,8 @@ void SuikaFighter::Advance() {
             field07C = 1;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1839,8 +1822,8 @@ void SuikaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1867,15 +1850,15 @@ void SuikaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
         }
         if (animationStage > 2) {
-            velocityX -= g_AdditionalGravityAt00659090;
-            if (velocityX < g_ThresholdAt0065782C)
+            velocityX -= FloatConstants::FourFifths;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1892,7 +1875,7 @@ void SuikaFighter::Advance() {
 
     case 0x130: {
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y = 0.0f;
             field05C = 0.0f;
@@ -1915,7 +1898,7 @@ void SuikaFighter::Advance() {
 
     case 0x131: {
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y = 0.0f;
             field05C = 0.0f;
@@ -1939,7 +1922,7 @@ void SuikaFighter::Advance() {
 
     case 0x132: {
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f; field05C = 0.0f; velocityY = 0.0f;
             break;
@@ -1960,9 +1943,9 @@ void SuikaFighter::Advance() {
             field080 = 1;
             field07C = 0;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 2 && animationStage < 6) {
+        if (y > FloatConstants::Zero && animationStage > 2 && animationStage < 6) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1998,8 +1981,8 @@ void SuikaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2021,16 +2004,16 @@ void SuikaFighter::Advance() {
             field080 = 1;
             field07C = 0;
         }
-        if (y == g_ThresholdAt0065782C) {
-            velocityX -= g_AdditionalGravityAt00659090;
-            if (velocityX < g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero) {
+            velocityX -= FloatConstants::FourFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 3 && animationStage < 6) {
+        if (y > FloatConstants::Zero && animationStage > 3 && animationStage < 6) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 ResetSecondaryCounter(6);
                 velocityY = 0.0f;
                 y = 0.0f;
@@ -2057,16 +2040,16 @@ void SuikaFighter::Advance() {
             field080 = 1;
             field07C = 0;
         }
-        if (y == g_ThresholdAt0065782C) {
-            velocityX -= g_AdditionalGravityAt00659090;
-            if (velocityX < g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero) {
+            velocityX -= FloatConstants::FourFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 4 && animationStage < 7) {
+        if (y > FloatConstants::Zero && animationStage > 4 && animationStage < 7) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 ResetSecondaryCounter(7);
                 y = 0.0f;
                 velocityY = 0.0f;
@@ -2092,8 +2075,8 @@ void SuikaFighter::Advance() {
             velocityX = 7.0f;
         }
         if (animationStage > 16) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2115,12 +2098,12 @@ void SuikaFighter::Advance() {
             velocityY = 0.0f;
             velocityX = 10.0f;
         }
-        if (velocityX > g_ThresholdAt0065782C && y == g_ThresholdAt0065782C) {
+        if (velocityX > FloatConstants::Zero && y == FloatConstants::Zero) {
             velocityX -= g_SuikaOffsetAt006583F8;
-            if (velocityX < g_ThresholdAt0065782C)
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 3 && animationStage < 17) {
+        if (y > FloatConstants::Zero && animationStage > 3 && animationStage < 17) {
             if (field07C != 0) {
                 ResetSecondaryCounter(17);
                 velocityX = -3.0f;
@@ -2130,16 +2113,16 @@ void SuikaFighter::Advance() {
                 return;
             }
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(23);
                 return;
             }
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 16 && animationStage < 23) {
+        if (y > FloatConstants::Zero && animationStage > 16 && animationStage < 23) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityY = 0.0f;
                 field05C = 0.0f;
                 y = 0.0f;
@@ -2172,8 +2155,8 @@ void SuikaFighter::Advance() {
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2208,7 +2191,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage > 7) {
             velocityX -= g_SuikaOffsetAt00659094;
-            if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2227,8 +2210,8 @@ void SuikaFighter::Advance() {
             velocityX = 15.0f;
             sequenceTimer = 0;
         }
-        velocityX -= g_JumpGroundCorrectionAt00658058;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::ThreeFifths;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -2250,8 +2233,8 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
         }
         if (animationStage > 6) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2319,8 +2302,8 @@ void SuikaFighter::Advance() {
 
     case 0x194: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -2335,8 +2318,8 @@ void SuikaFighter::Advance() {
 
     case 0x195: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -2399,8 +2382,8 @@ void SuikaFighter::Advance() {
 
     case 0x19A: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -2416,8 +2399,8 @@ void SuikaFighter::Advance() {
 
     case 0x19B: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -2470,8 +2453,8 @@ void SuikaFighter::Advance() {
 
     case 0x1A0: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
             sequenceTimer = 0;
         }
@@ -2499,8 +2482,8 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
         }
         if (animationStage > 9) {
-            if (velocityX > g_ThresholdAt0065782C)
-                velocityX -= g_SubtractAt00657478;
+            if (velocityX > FloatConstants::Zero)
+                velocityX -= FloatConstants::Half;
             else
                 velocityX = 0.0f;
         }
@@ -2535,8 +2518,8 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
         }
         if (animationStage > 9) {
-            if (velocityX > g_ThresholdAt0065782C)
-                velocityX -= g_SubtractAt00657478;
+            if (velocityX > FloatConstants::Zero)
+                velocityX -= FloatConstants::Half;
             else
                 velocityX = 0.0f;
         }
@@ -2560,7 +2543,7 @@ void SuikaFighter::Advance() {
             field07C = 0;
             field3AC = 0;
         }
-        if (animationStage == 8 && y + velocityY <= g_ThresholdAt0065782C) {
+        if (animationStage == 8 && y + velocityY <= FloatConstants::Zero) {
             PlaySound(3);
             velocityX = -4.0f;
             velocityY = 10.0f;
@@ -2571,8 +2554,8 @@ void SuikaFighter::Advance() {
             return;
         }
         if (animationStage > 8 && animationStage < 29) {
-            velocityY -= g_AdditionalGravityAt00659090;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            velocityY -= FloatConstants::FourFifths;
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(29);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2601,7 +2584,7 @@ void SuikaFighter::Advance() {
             field07C = 0;
             field3AC = 0;
         }
-        if (animationStage == 8 && y + velocityY <= g_ThresholdAt0065782C) {
+        if (animationStage == 8 && y + velocityY <= FloatConstants::Zero) {
             PlaySound(3);
             velocityX = -3.0f;
             velocityY = 8.0f;
@@ -2612,8 +2595,8 @@ void SuikaFighter::Advance() {
             return;
         }
         if (animationStage > 8 && animationStage < 29) {
-            velocityY -= g_AdditionalGravityAt00659090;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            velocityY -= FloatConstants::FourFifths;
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(29);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2864,7 +2847,7 @@ void SuikaFighter::Advance() {
             ApplyOpponentGaugeChange(2000, 100, 1);
         }
         if (animationStage > 8 && animationStage < 17) {
-            if (opponent->y == g_ThresholdAt0065782C)
+            if (opponent->y == FloatConstants::Zero)
                 field080 = 1;
             else
                 field080 = 0;
@@ -2879,7 +2862,7 @@ void SuikaFighter::Advance() {
                 return;
             }
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x2BD);
@@ -2889,8 +2872,8 @@ void SuikaFighter::Advance() {
         if (animationStage > 16 && animationStage < 35) {
             if (animationStage < 21) {
                 AdjustCameraOffset(0);
-                velocityY -= g_SubtractAt00657478;
-                if (velocityY < g_ThresholdAt0065782C)
+                velocityY -= FloatConstants::Half;
+                if (velocityY < FloatConstants::Zero)
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
@@ -2930,8 +2913,8 @@ void SuikaFighter::Advance() {
             }
         }
         if (animationStage > 34) {
-            velocityY -= g_JumpGroundCorrectionAt00658058;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            velocityY -= FloatConstants::ThreeFifths;
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetPrimaryCounters(10);
@@ -3148,9 +3131,9 @@ void SuikaFighter::Advance() {
             field080 = 1;
         }
         if (animationStage > 6 && animationStage < 16) {
-            if (scaleX < g_StopThresholdAt00657480) {
-                scaleX = (scaleX) + g_RepeatScaleAt00658348;
-                scaleY = (scaleY) + g_RepeatScaleAt00658348;
+            if (scaleX < FloatConstants::Two) {
+                scaleX = (scaleX) + FloatConstants::OneFifth;
+                scaleY = (scaleY) + FloatConstants::OneFifth;
             } else {
                 scaleX = 2.0f;
                 scaleY = 2.0f;
@@ -3274,7 +3257,7 @@ void SuikaFighter::Advance() {
             field07C = 0;
             ClearMotionFields();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             if (inputA == 1) {
                 ResetPrimaryCounters(0x2C7);
                 return;
@@ -3284,7 +3267,7 @@ void SuikaFighter::Advance() {
                 return;
             }
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(15);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3376,7 +3359,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage < 6) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(6);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3405,7 +3388,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage < 3) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(3);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3433,7 +3416,7 @@ void SuikaFighter::Advance() {
             fieldF1E = 0;
         }
         if (animationStage == 0) {
-            if (scaleX > g_SubtractAt00657478) {
+            if (scaleX > FloatConstants::Half) {
                 scaleX -= g_SuikaOffsetAt006593F4;
                 scaleY -= g_SuikaOffsetAt006593F4;
             } else {
@@ -3468,7 +3451,7 @@ void SuikaFighter::Advance() {
             ApplyOpponentGaugeChange(3000, 50, 1);
         }
         if (animationStage > 8 && animationStage < 17) {
-            if (opponent->y == g_ThresholdAt0065782C)
+            if (opponent->y == FloatConstants::Zero)
                 field080 = 1;
             else
                 field080 = 0;
@@ -3483,7 +3466,7 @@ void SuikaFighter::Advance() {
                 return;
             }
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x2BD);
@@ -3493,8 +3476,8 @@ void SuikaFighter::Advance() {
         if (animationStage > 16 && animationStage < 35) {
             if (animationStage < 21) {
                 AdjustCameraOffset(0);
-                velocityY -= g_SubtractAt00657478;
-                if (velocityY < g_ThresholdAt0065782C)
+                velocityY -= FloatConstants::Half;
+                if (velocityY < FloatConstants::Zero)
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
@@ -3534,8 +3517,8 @@ void SuikaFighter::Advance() {
             }
         }
         if (animationStage > 34) {
-            velocityY -= g_JumpGroundCorrectionAt00658058;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            velocityY -= FloatConstants::ThreeFifths;
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetPrimaryCounters(10);
@@ -3751,9 +3734,9 @@ void SuikaFighter::Advance() {
             field080 = 1;
         }
         if (animationStage > 6 && animationStage < 16) {
-            if (scaleX < g_SuikaOffsetAt00657CF8) {
-                scaleX = (scaleX) + g_RepeatScaleAt00658348;
-                scaleY = (scaleY) + g_RepeatScaleAt00658348;
+            if (scaleX < FloatConstants::Three) {
+                scaleX = (scaleX) + FloatConstants::OneFifth;
+                scaleY = (scaleY) + FloatConstants::OneFifth;
             } else {
                 scaleX = 3.0f;
                 scaleY = 3.0f;
@@ -3876,7 +3859,7 @@ void SuikaFighter::Advance() {
             field07C = 0;
             ClearMotionFields();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             if (inputA == 1) {
                 ResetPrimaryCounters(0x2DB);
                 return;
@@ -3886,7 +3869,7 @@ void SuikaFighter::Advance() {
                 return;
             }
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(15);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3978,7 +3961,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage < 6) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(6);
                 y = 0.0f;
                 ClearMotionFields();
@@ -4007,7 +3990,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage < 3) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(3);
                 y = 0.0f;
                 ClearMotionFields();
@@ -4087,7 +4070,7 @@ void SuikaFighter::Advance() {
             field080 = 1;
             velocityY = static_cast<float>(-24 - g_OptionsModeAt006714D0 * 2);
         }
-        if (animationStage == 0 && y + velocityY <= g_ThresholdAt0065782C) {
+        if (animationStage == 0 && y + velocityY <= FloatConstants::Zero) {
             ClearMotionFields();
             y = 0.0f;
             ResetSecondaryCounter(1);
@@ -4212,13 +4195,13 @@ void SuikaFighter::Advance() {
                     scriptCounterF00 = 165;
                 }
             }
-            if (y == g_ThresholdAt0065782C)
+            if (y == FloatConstants::Zero)
                 scriptCounterF00 = static_cast<short>(-RecordedRange(0, 50) - 65);
         }
         if (animationStage == 1) {
             if (fieldEFE > 0)
                 fieldEFE -= 2;
-            SetPolarVelocity(static_cast<float>(scriptCounterF00), static_cast<float>(fieldEFE) * g_ProjectileFallAt006590B4);
+            SetPolarVelocity(static_cast<float>(scriptCounterF00), static_cast<float>(fieldEFE) * FloatConstants::OneTenth);
         }
         if (animationStage == 3 || animationStage == 4) {
             if (color[0] < 245) {
@@ -4231,7 +4214,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 5 || animationStage == 6) {
             velocityY -= g_SuikaOffsetAt006583F8;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(7);
                 ClearMotionFields();
                 y = 0.0f;
@@ -4310,7 +4293,7 @@ void SuikaFighter::Advance() {
             }
         }
         if (animationStage > 8 && animationStage < 17) {
-            if (opponent->y == g_ThresholdAt0065782C)
+            if (opponent->y == FloatConstants::Zero)
                 field080 = 1;
             else
                 field080 = 0;
@@ -4325,7 +4308,7 @@ void SuikaFighter::Advance() {
                 return;
             }
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x304);
@@ -4335,8 +4318,8 @@ void SuikaFighter::Advance() {
         if (animationStage > 16 && animationStage < 35) {
             if (animationStage < 21) {
                 AdjustCameraOffset(0);
-                velocityY -= g_SubtractAt00657478;
-                if (velocityY < g_ThresholdAt0065782C)
+                velocityY -= FloatConstants::Half;
+                if (velocityY < FloatConstants::Zero)
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
@@ -4376,8 +4359,8 @@ void SuikaFighter::Advance() {
             }
         }
         if (animationStage > 34) {
-            velocityY -= g_JumpGroundCorrectionAt00658058;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            velocityY -= FloatConstants::ThreeFifths;
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetPrimaryCounters(10);
@@ -4529,7 +4512,7 @@ void SuikaFighter::Advance() {
             ApplyOpponentGaugeChange(3000, 50, 1);
         }
         if (animationStage > 8 && animationStage < 17) {
-            if (opponent->y == g_ThresholdAt0065782C)
+            if (opponent->y == FloatConstants::Zero)
                 field080 = 1;
             else
                 field080 = 0;
@@ -4544,7 +4527,7 @@ void SuikaFighter::Advance() {
                 return;
             }
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x304);
@@ -4554,8 +4537,8 @@ void SuikaFighter::Advance() {
         if (animationStage > 16 && animationStage < 35) {
             if (animationStage < 21) {
                 AdjustCameraOffset(0);
-                velocityY -= g_SubtractAt00657478;
-                if (velocityY < g_ThresholdAt0065782C)
+                velocityY -= FloatConstants::Half;
+                if (velocityY < FloatConstants::Zero)
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
@@ -4595,8 +4578,8 @@ void SuikaFighter::Advance() {
             }
         }
         if (animationStage > 34) {
-            velocityY -= g_JumpGroundCorrectionAt00658058;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            velocityY -= FloatConstants::ThreeFifths;
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetPrimaryCounters(10);
@@ -4742,7 +4725,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage > 3 && animationStage < 14) {
             velocityY -= g_SuikaOffsetAt00659094;
-            if (velocityY < g_AnimationDeltaAt0065747C)
+            if (velocityY < FloatConstants::One)
                 velocityY = 1.0f;
             velocityX = 0.0f;
             if (animationStage > 6 && animationStage < 14) {
@@ -4775,7 +4758,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage > 17) {
             velocityY -= g_SuikaOffsetAt00659094;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetPrimaryCounters(10);
@@ -5031,36 +5014,36 @@ void SuikaFighter::Advance() {
                 field314 = static_cast<float>(scriptCounterF02);
                 field318 = 15.0f;
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 if (g_OptionsModeAt006714D0 == 1) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 2) {
                     field314 = static_cast<float>(scriptCounterF02 + 120);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 120);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 3) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 + 90);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 90);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 }
                 velocityX = 0.0f;
@@ -5142,36 +5125,36 @@ void SuikaFighter::Advance() {
                 field314 = static_cast<float>(scriptCounterF02);
                 field318 = 15.0f;
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 if (g_OptionsModeAt006714D0 == 1) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 2) {
                     field314 = static_cast<float>(scriptCounterF02 + 120);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 120);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 3) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 + 90);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 90);
                     SetPolarVelocity(field314, 200.0f);
-                    SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                    SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                         ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 }
                 velocityX = 0.0f;
@@ -5241,36 +5224,36 @@ void SuikaFighter::Advance() {
             field314 = static_cast<float>(scriptCounterF02);
             field318 = 15.0f;
             SetPolarVelocity(field314, 200.0f);
-            SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+            SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                 ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
             if (g_OptionsModeAt006714D0 == 1) {
                 field314 = static_cast<float>(scriptCounterF02 + 180);
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 2) {
                 field314 = static_cast<float>(scriptCounterF02 + 120);
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 field314 = static_cast<float>(scriptCounterF02 - 120);
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 3) {
                 field314 = static_cast<float>(scriptCounterF02 + 180);
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 field314 = static_cast<float>(scriptCounterF02 + 90);
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
                 field314 = static_cast<float>(scriptCounterF02 - 90);
                 SetPolarVelocity(field314, 200.0f);
-                SpawnBattleEffect(0x397, (g_SuikaOffsetAt00657874 + velocityX) * facing + x,
+                SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
                     ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
             }
             velocityX = 0.0f;

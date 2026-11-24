@@ -1,3 +1,4 @@
+#include "../src/FloatConstants.hpp"
 #include "SakuyaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // F1203 complete original-shaped 004AC040 parent, continued from F1020.

@@ -20,7 +20,7 @@ case 0x3E4: {
         if (field0DA<3)
             field0DA=3;
         SetPolarVelocity(float(field0D8),
-            float(field0DA)*g_F1120_XBrakingAt00659090);
+            float(field0DA)*FloatConstants::FourFifths);
     }
     if (animationStage==1) {
         field0D8=short(AngleAt00483300(
@@ -55,7 +55,7 @@ case 0x3E4: {
                 if (owner->opponent->field39C==0) {
                     if (owner->opponent->field36C<g_F1132_DoubleAt00659228)
                         owner->opponent->field36C=
-                            (*(&owner->opponent->field36C))+g_F1059_ScaleRatioAt00657478;
+                            (*(&owner->opponent->field36C))+FloatConstants::Half;
                     else
                         owner->opponent->field36C=900.0f;
                 }

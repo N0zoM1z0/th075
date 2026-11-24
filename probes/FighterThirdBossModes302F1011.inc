@@ -18,14 +18,14 @@ case 0x302: {
         fieldF04=0;
         fieldF08=g_OptionsModeAt006714D0+2;
     }
-    if ((animationStage)<13 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)<13 && y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (velocityY<g_AnimationDeltaAt0065747C)
+        if (velocityY<FloatConstants::One)
             velocityY=1.0f;
     }
-    if ((animationStage)>12 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)>12 && y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(15);

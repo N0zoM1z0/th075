@@ -2,8 +2,8 @@
 // Four ordered 0x322 projectiles at stage 3, then the native gauge/sound tail.
 case 0x25B:
     if (animationStage == 0 && animationFrame == 0) {
-        velocityX = (velocityX) * g_BounceScaleAt00657F74;
-        velocityY = (velocityY) * g_BounceScaleAt00657F74;
+        velocityX = (velocityX) * FloatConstants::Quarter;
+        velocityY = (velocityY) * FloatConstants::Quarter;
         field07C = 1;
     }
     if (AdvanceNestedFrame() == animationStageCount)

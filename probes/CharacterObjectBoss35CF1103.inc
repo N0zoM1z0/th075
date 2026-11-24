@@ -15,8 +15,8 @@ case 0x35C: {
         velocityX=0.0f;
         velocityY=0.0f;
     }
-    scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
-    scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
+    scaleX=(scaleX)+FloatConstants::OneTenth;
+    scaleY=(scaleY)+FloatConstants::OneTenth;
     if (animationStage>0) {
         if (color[0]>15)
             color[0]-=10;

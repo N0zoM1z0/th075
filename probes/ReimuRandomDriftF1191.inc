@@ -3,9 +3,9 @@ case R1191_ACTION: {
         field07C=1; scriptCounterF00=0; scriptCounterF02=0;
         ClearMotionFields();
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y=0.0f;
             ClearMotionFields();
@@ -19,7 +19,7 @@ case R1191_ACTION: {
 #else
         velocityX=float(RecordedRange(0,3))+g_ApproachLowerAt00658290;
 #endif
-        velocityY=float(RecordedRange(0,R1191_LIFT_RANGE))+g_ReimuRandomLiftAt00657850;
+        velocityY=float(RecordedRange(0,R1191_LIFT_RANGE))+FloatConstants::Ten;
         field05C=0.3f;
     }
     break;

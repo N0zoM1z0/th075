@@ -13,8 +13,8 @@ case 0x261: {
         field07C=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
-        velocityX=(velocityX)*g_F972_GravityAt00657F74;
-        velocityY=(velocityY)*g_F972_GravityAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
     }
     if ((animationStage)>4)
         velocityY=velocityY-field05C;
@@ -41,8 +41,8 @@ case 0x262: {
         field07C=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
-        velocityX=(velocityX)*g_F972_GravityAt00657F74;
-        velocityY=(velocityY)*g_F972_GravityAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
     }
     if ((animationStage)>4)
         velocityY=velocityY-field05C;

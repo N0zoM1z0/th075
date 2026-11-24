@@ -32,13 +32,13 @@ case 0x356: {
         field07C=0;
     }
     velocityX=velocityX-g_F1093_XStepAt00658048;
-    velocityY=(*(&velocityY))+g_F1085_ParentYMultiplierAt00657F74;
-    if (velocityX<g_F1057_NudgeAt00657480)
+    velocityY=(*(&velocityY))+FloatConstants::Quarter;
+    if (velocityX<FloatConstants::Two)
         velocityX=2.0f;
     if (field0D8==0) {
-        if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
-            scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
-            scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
+        if (scaleX<FloatConstants::One) {
+            scaleX=(scaleX)+FloatConstants::OneTenth;
+            scaleY=(scaleY)+FloatConstants::OneTenth;
             color[0]=unsigned char(color[0]+25);
         } else {
             scaleX=1.0f;

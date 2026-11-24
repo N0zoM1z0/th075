@@ -3,7 +3,7 @@
 // actions with NO trajectory counter reset, unlike the earlier F633
 // 73/75-x86 family. This is an inner case of a nonexact giant.
 case F641_CASE: {
-    cardGauge=(cardGauge)+g_AnimationDeltaAt0065747C;
+    cardGauge=(cardGauge)+FloatConstants::One;
     if ((cardGauge)>g_AnimationMaximumAt006583B4)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
@@ -11,13 +11,13 @@ case F641_CASE: {
         velocityY=0.0f;
         field07C=0;
     }
-    if ((velocityX)<g_ThresholdAt0065782C) {
-        velocityX=(velocityX)+g_JumpGroundCorrectionAt00658058;
-        if ((velocityX)>g_ThresholdAt0065782C)
+    if ((velocityX)<FloatConstants::Zero) {
+        velocityX=(velocityX)+FloatConstants::ThreeFifths;
+        if ((velocityX)>FloatConstants::Zero)
             velocityX=0.0f;
     }
     if (CheckHorizontalLimits() && field3BE)
-        field490=(velocityX)*g_JumpReflectionAt006583E8;
+        field490=(velocityX)*FloatConstants::ThreeQuartersDouble;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(F641_NEXT_ACTION);
     return;

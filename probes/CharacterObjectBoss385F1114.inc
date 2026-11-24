@@ -24,8 +24,8 @@ case 0x385: {
     }
     if (animationStage==2) {
         scaleX=float(RecordedRange(0,6))*
-            g_F1057_SpeedScaleAt006590B4+g_F1114_RandomOffsetAt00659094;
-        scaleY=(*(&scaleX))+g_F1051_ScaleCeilingAt0065747C;
+            FloatConstants::OneTenth+g_F1114_RandomOffsetAt00659094;
+        scaleY=(*(&scaleX))+FloatConstants::One;
     }
     if (animationStage>2)
         scaleX=(scaleX)*g_F1114_FadeAt00659240;

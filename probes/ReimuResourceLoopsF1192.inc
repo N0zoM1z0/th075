@@ -5,7 +5,7 @@ case 0x303: {
     }
     field490=0.0f;
     opponent->field490=0.0f;
-    if ((animationStage)<15 && y>g_ThresholdAt0065782C) velocityY=velocityY-field05C;
+    if ((animationStage)<15 && y>FloatConstants::Zero) velocityY=velocityY-field05C;
     if ((animationStage)>14) fieldF26=(fieldF26)+5;
     if (AdvanceNestedFrame()==(animationStageCount)) {
         if ((scriptCounterF00)<8) {

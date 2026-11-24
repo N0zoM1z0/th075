@@ -15,10 +15,10 @@
                 field07C=0;
                 field3AC=0;
             }
-            if ((animationStage)<11 && y>g_ThresholdAt0065782C && (animationStage)>2) {
+            if ((animationStage)<11 && y>FloatConstants::Zero && (animationStage)>2) {
                 velocityX=-30.0f;
-                velocityY=velocityY-g_ApproachAt00658058;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                velocityY=velocityY-FloatConstants::ThreeFifths;
+                if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     ResetSecondaryCounter(15);
                     y=0.0f;
@@ -27,19 +27,19 @@
             }
             if ((animationStage)>10 && (animationStage)<14 && !CheckHorizontalLimits()) {
                 if (facing==1)
-                    x=(field2D8)+g_F699_SideOffsetAt00657874;
+                    x=(field2D8)+FloatConstants::Five;
                 if (facing==-1)
-                    x=(field2DC)-g_F699_SideOffsetAt00657874;
+                    x=(field2DC)-FloatConstants::Five;
             }
             if ((animationStage)>8 && (animationStage)<11
-                && y>g_ThresholdAt0065782C) {
+                && y>FloatConstants::Zero) {
                 if ((CheckHorizontalLimits() && (((x)<g_F699_SideEdgeAt00657884
                         && facing==1)
                     || ((x)>g_F699_SideEdgeAt00657884
                         && facing==-1)))
-                    || (((field2D8)+g_F699_SideOffsetAt00657874)>=x
+                    || (((field2D8)+FloatConstants::Five)>=x
                         && facing==1)
-                    || (((field2DC)-g_F699_SideOffsetAt00657874)<=x
+                    || (((field2DC)-FloatConstants::Five)<=x
                         && facing==-1)) {
                     ResetSecondaryCounter(11);
                     ClearMotionFields();
@@ -51,17 +51,17 @@
                     ResetPrimaryCounters(0x1FA);
                     break;
                 }
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     velocityY=0.0f;
-                    velocityX=(velocityX)*g_F728_PositiveDragAt006583FC;
+                    velocityX=(velocityX)*FloatConstants::ThreeTenths;
                     ResetSecondaryCounter(16);
                     y=0.0f;
                     break;
                 }
             }
             if ((animationStage)>15) {
-                velocityX=(velocityX)-g_NewDragAt006581E0;
-                if ((velocityX)<g_ThresholdAt0065782C)
+                velocityX=(velocityX)-FloatConstants::OneAndHalf;
+                if ((velocityX)<FloatConstants::Zero)
                     velocityX=0.0f;
             }
             if (AdvanceNestedFrame()==(animationStageCount))
@@ -77,7 +77,7 @@
                     -facing,1);
                 velocityX=-20.0f;
                 velocityY=20.0f;
-                if (y>g_ThresholdAt0065782C)
+                if (y>FloatConstants::Zero)
                     velocityY=8.0f;
                 field05C=0.8f;
             }

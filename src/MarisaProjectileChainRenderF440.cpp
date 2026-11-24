@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "MarisaFighter.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -18,9 +19,7 @@ public:
     void DrawProjectileChain(int texture, const void* records, int count);
 };
 extern const float g_MarisaAngleStepAt00657828;
-extern const float g_MarisaAngleMultiplierAt00657850;
 extern const float g_MarisaParticleDepthAt006582E0;
-extern const float g_MarisaDepthDivisorAt00657480;
 extern const float g_MarisaPhaseDivisorAAt00659310;
 extern const float g_MarisaPhaseDivisorBAt0065788C;
 extern const float g_MarisaPhaseMultiplierAt00657878;
@@ -64,12 +63,12 @@ void MarisaFighter::RenderChain() {
         angle=static_cast<short>(i*100);
         radius=static_cast<short>(static_cast<float>(i*10+50)*(field1010));
         for(j=0;j<36;++j) {
-            quad.first.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
-            quad.first.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
+            quad.first.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
+            quad.first.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
             quad.first.z=0.0f;
-            quad.fourth.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
-            quad.fourth.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
-            quad.fourth.z=g_MarisaParticleDepthAt006582E0*field1010/g_MarisaDepthDivisorAt00657480;
+            quad.fourth.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
+            quad.fourth.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
+            quad.fourth.z=g_MarisaParticleDepthAt006582E0*field1010/FloatConstants::Two;
             reinterpret_cast<SpriteTransform*>(&quad)->RotateQuad(
               0.0f,0.0f,0.0f,
               float(phaseA)+CameraSineAt0040D940(float(i*6)+float(fieldEF8)/g_MarisaPhaseDivisorBAt0065788C)*g_MarisaPhaseMultiplierAt00657878,

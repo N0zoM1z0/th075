@@ -13,9 +13,9 @@ case 0xC9: {
         velocityX=0.0f;
     if ((animationStage)==4 && (animationFrame)==0)
         velocityX=-10.0f;
-    if (y>g_ThresholdAt0065782C && (animationStage)>3 && (animationStage)<6) {
+    if (y>FloatConstants::Zero && (animationStage)>3 && (animationStage)<6) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;

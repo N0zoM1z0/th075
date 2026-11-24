@@ -7,9 +7,9 @@
                 field080=1;
                 field07C=0;
             }
-            if ((velocityX)>g_ThresholdAt0065782C)
-                velocityX=(velocityX)-g_NewDragAt006581E0;
-            if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
+            if ((velocityX)>FloatConstants::Zero)
+                velocityX=(velocityX)-FloatConstants::OneAndHalf;
+            if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySharedSound(0x1C);
@@ -33,8 +33,8 @@
                 field07C=0;
             }
             if ((field3AC)>0) {
-                velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-                if ((velocityX)<g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero) {
                     velocityX=0.0f;
                     field3AC=0;
                 }
@@ -53,15 +53,15 @@
                 field07C=0;
             }
             if ((field3AC)>0) {
-                velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-                if ((velocityX)<g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero) {
                     velocityX=0.0f;
                     field3AC=0;
                 }
             }
             if ((animationStage)==10 || (animationStage)==11) {
-                velocityX=(velocityX)-g_SubtractAt00657478;
-                if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
+                velocityX=(velocityX)-FloatConstants::Half;
+                if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
             }
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
@@ -80,8 +80,8 @@
                 field07C=0;
             }
             if ((field3AC)>0) {
-                velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-                if ((velocityX)<g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero) {
                     velocityX=0.0f;
                     field3AC=0;
                 }

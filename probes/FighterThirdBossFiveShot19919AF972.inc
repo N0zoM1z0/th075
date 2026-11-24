@@ -9,11 +9,11 @@
 // F972 original Japanese 004AC040 action 0x199, five real native shot calls.
 case 0x199: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        velocityX=(velocityX)*g_F972_GravityAt00657F74;
-        velocityY=(velocityY)*g_F972_GravityAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
         field07C=1;
     }
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         y=0.0f;
         ClearMotionFields();
         ResetPrimaryCounters(0xA);
@@ -52,11 +52,11 @@ case 0x199: {
 // F972 original Japanese 004AC040 action 0x19A, five real native shot calls.
 case 0x19A: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        velocityX=(velocityX)*g_F972_GravityAt00657F74;
-        velocityY=(velocityY)*g_F972_GravityAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
         field07C=1;
     }
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         y=0.0f;
         ClearMotionFields();
         ResetPrimaryCounters(0xA);

@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "AliceFighter.hpp"
 
@@ -13,25 +14,16 @@ extern float g_AliceEffectYAt006591F8;
 extern float g_AliceEffectYAt00659478;
 extern float g_AliceEffectYAt006595F4;
 extern float g_AngleShiftAt00657878;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachAt00658058;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_BounceScaleAt00657F74;
 extern float g_BounceThresholdAt006590C0;
 extern float g_ContactProjectionAt00657888;
-extern double g_ContactScaleAt006583E8;
 extern float g_EightShotY1At00658264;
-extern float g_ExtraThresholdAt00657D14;
 extern float g_F728_RandomOffsetXAt00657878;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
-extern float g_F747_BounceYAt00658044;
 extern float g_F748_SpeedScaleAt006590B8;
-extern float g_JumpGroundCorrectionAt00658058;
-extern double g_JumpReflectionAt006583E8;
-extern float g_MarisaCommandSpeedLowerAt00657850;
 extern float g_MarisaCommandYAt00658268;
 extern float g_MarisaResourceYAt006590AC;
 extern float g_MarisaResourceYAt00659274;
@@ -39,16 +31,8 @@ extern float g_MarisaResourceYAt00659280;
 extern float g_MarisaSpecialProjectileYAt00658400;
 extern float g_MarisaSpecialProjectileYAt0065929C;
 extern float g_OneShotYAt0065928C;
-extern float g_ProjectileFallAt006590B4;
 extern float g_ReimuC8ClampAt006590B0;
 extern float g_ReimuCommandYAt00658268;
-extern float g_ReimuLeapDragAt006583FC;
-extern float g_ReimuRepeatDragAt00659090;
-extern float g_RepeatScaleAt00658348;
-extern double g_RiseAt00658050;
-extern float g_StopThresholdAt00657480;
-extern float g_SubtractAt00657478;
-extern float g_ThresholdAt0065782C;
 extern float g_YPlusAt00658400;
 
 void AliceFighter::Advance() {
@@ -60,16 +44,16 @@ void AliceFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -82,16 +66,16 @@ void AliceFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -106,16 +90,16 @@ void AliceFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -128,16 +112,16 @@ void AliceFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -166,9 +150,9 @@ void AliceFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -199,16 +183,16 @@ void AliceFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -234,8 +218,8 @@ void AliceFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C &&
-            ((velocityY = velocityY - field05C), y + velocityY <= g_ThresholdAt0065782C)) {
+        if (y > FloatConstants::Zero &&
+            ((velocityY = velocityY - field05C), y + velocityY <= FloatConstants::Zero)) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -258,10 +242,10 @@ void AliceFighter::Advance() {
     }
 
     case 0x9: {
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -292,13 +276,13 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if (velocityX < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if (velocityX > g_ThresholdAt0065782C)
+        if (velocityX < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if (velocityX > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE != 0)
-            field490 = static_cast<float>((velocityX) * g_JumpReflectionAt006583E8);
+            field490 = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -310,15 +294,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -331,15 +315,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -353,15 +337,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -381,15 +365,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -402,15 +386,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -423,15 +407,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -445,15 +429,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -473,15 +457,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -494,15 +478,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -515,15 +499,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -537,15 +521,15 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -570,12 +554,12 @@ void AliceFighter::Advance() {
                 velocityY = 25.0f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -597,12 +581,12 @@ void AliceFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -624,12 +608,12 @@ void AliceFighter::Advance() {
             field05C = 1.3f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -651,7 +635,7 @@ void AliceFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -663,9 +647,9 @@ void AliceFighter::Advance() {
         }
         if (AdvanceNestedFrame()==animationStageCount)
             ResetSecondaryCounter(animationStage-1);
-        if (animationStage == 1 && animationFrame == 0 && velocityY != g_ThresholdAt0065782C) {
+        if (animationStage == 1 && animationFrame == 0 && velocityY != FloatConstants::Zero) {
 
-            if (velocityX == (g_ThresholdAt0065782C)) {
+            if (velocityX == (FloatConstants::Zero)) {
                 ResetSecondaryCounter(3);
                 return;
             } else {
@@ -683,13 +667,13 @@ void AliceFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
             ResetPrimaryCounters(0x4C);
-            velocityX = -(velocityX) * g_BounceScaleAt00657F74;
+            velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
             field05C = 0.5f;
             SetCameraShake(2.0f);
@@ -698,7 +682,7 @@ void AliceFighter::Advance() {
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
 
             Fighter::PlaySharedSound(0x16);
 
@@ -724,7 +708,7 @@ void AliceFighter::Advance() {
 
         rotationZ = (rotationZ) + g_AngleShiftAt00657878;
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
@@ -748,7 +732,7 @@ void AliceFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -768,8 +752,8 @@ void AliceFighter::Advance() {
             ResetSecondaryCounter(animationStage-1);
         if (animationStage == 1 && animationFrame == 0) {
 
-            if (velocityY != g_ThresholdAt0065782C) {
-                if (velocityX == (g_ThresholdAt0065782C)) {
+            if (velocityY != FloatConstants::Zero) {
+                if (velocityX == (FloatConstants::Zero)) {
                     ResetSecondaryCounter(3);
                     return;
                 } else {
@@ -787,7 +771,7 @@ void AliceFighter::Advance() {
         if (animationStage == 3) {
             rotationZ = (rotationZ)+g_F728_RandomOffsetYAt00657858;
             velocityY = velocityY-field05C;
-            if (velocityY+y <= g_ThresholdAt0065782C) {
+            if (velocityY+y <= FloatConstants::Zero) {
                 scriptCounterF00 = (velocityX)*g_ContactProjectionAt00657888;
                 scriptCounterF02 = (velocityY)*g_ContactProjectionAt00657888;
                 ClearMotionFields();
@@ -804,7 +788,7 @@ void AliceFighter::Advance() {
             ResetSecondaryCounter(3);
         else if (animationStage == 3 && animationFrame == 0) {
             velocityX = static_cast<float>(scriptCounterF00)*g_F747_BounceXAt006590BC;
-            velocityY = static_cast<float>(-scriptCounterF02)*g_F747_BounceYAt00658044;
+            velocityY = static_cast<float>(-scriptCounterF02)*FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(0.0f,95.0f,0.0f);
         }
@@ -814,9 +798,9 @@ void AliceFighter::Advance() {
     case 0x5D: {
         if (animationStage == 0 && animationFrame == 0)
             velocityX = 15.0f;
-        if (animationStage < 11 && y > g_ThresholdAt0065782C) {
+        if (animationStage < 11 && y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(11);
@@ -842,9 +826,9 @@ void AliceFighter::Advance() {
     case 0x5E: {
         if (animationStage == 0 && animationFrame == 0)
             velocityX = -15.0f;
-        if (animationStage < 12 && y > g_ThresholdAt0065782C) {
+        if (animationStage < 12 && y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(12);
@@ -908,7 +892,7 @@ void AliceFighter::Advance() {
         }
         if (animationStage <= 6 && animationStage > 2) {
             velocityY = velocityY-field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(7);
@@ -950,7 +934,7 @@ void AliceFighter::Advance() {
         }
         if (animationStage <= 6 && animationStage > 2) {
             velocityY = velocityY-field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(7);
@@ -1041,13 +1025,13 @@ void AliceFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 5) {
@@ -1064,13 +1048,13 @@ void AliceFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1087,13 +1071,13 @@ void AliceFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1110,12 +1094,12 @@ void AliceFighter::Advance() {
             field05C = 0.5f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY-field05C;
-        if (velocityY+y <= g_ThresholdAt0065782C) {
+        if (velocityY+y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -1130,7 +1114,7 @@ void AliceFighter::Advance() {
     }
 
     case 0x96: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1141,20 +1125,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x97: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1165,20 +1149,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x98: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1189,20 +1173,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x9A: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1213,20 +1197,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9B: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1237,20 +1221,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9C: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1261,20 +1245,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9E: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1285,10 +1269,10 @@ void AliceFighter::Advance() {
 
         }
 
-        if (y >= g_ThresholdAt0065782C) {
+        if (y >= FloatConstants::Zero) {
 
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1301,7 +1285,7 @@ void AliceFighter::Advance() {
     }
 
     case 0x9F: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1312,20 +1296,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA0: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1336,20 +1320,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA1: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1360,20 +1344,20 @@ void AliceFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA3: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1381,20 +1365,20 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA4: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1402,20 +1386,20 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA5: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1423,20 +1407,20 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA7: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1449,12 +1433,12 @@ void AliceFighter::Advance() {
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00)*g_ProjectileFallAt006590B4;
+        field490 = (-scriptCounterF00)*FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00-10;
         if (AdvanceNestedFrame()==animationStageCount)
@@ -1463,7 +1447,7 @@ void AliceFighter::Advance() {
     }
 
     case 0xA8: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1476,12 +1460,12 @@ void AliceFighter::Advance() {
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00)*g_ProjectileFallAt006590B4;
+        field490 = (-scriptCounterF00)*FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00-10;
         if (AdvanceNestedFrame()==animationStageCount)
@@ -1498,9 +1482,9 @@ void AliceFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1523,9 +1507,9 @@ void AliceFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if ((y) > g_ThresholdAt0065782C) {
+        if ((y) > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1544,7 +1528,7 @@ void AliceFighter::Advance() {
         SetCommandSelection(3,4,0xFF);
         if (animationStage == 0 && animationFrame == 0) { velocityX=0.0f; scriptCounterF00=0; }
         if ((velocityX) > g_ReimuC8ClampAt006590B0) {
-            velocityX = (velocityX)-g_SubtractAt00657478;
+            velocityX = (velocityX)-FloatConstants::Half;
             if ((velocityX) < g_ReimuC8ClampAt006590B0) velocityX=9.0f;
         }
         if (inputY < 0) {
@@ -1583,9 +1567,9 @@ void AliceFighter::Advance() {
         SetCommandSelection(3, 4, 0xFF);
         if (animationStage == 0 && animationFrame == 0)
             velocityX = 0.0f;
-        if (y > g_ThresholdAt0065782C && animationStage > 2 && animationStage < 11) {
+        if (y > FloatConstants::Zero && animationStage > 2 && animationStage < 11) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1629,9 +1613,9 @@ void AliceFighter::Advance() {
                 (y) + g_ContactProjectionAt00657888, facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 1) {
+        if (y > FloatConstants::Zero && animationStage > 1) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1654,9 +1638,9 @@ void AliceFighter::Advance() {
             velocityY = 0.0f;
             field05C = 0.0f;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 0) {
+        if (y > FloatConstants::Zero && animationStage > 0) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1687,14 +1671,14 @@ void AliceFighter::Advance() {
     }
 
     case 0xCC: {
-        if ((y == (g_ThresholdAt0065782C)) || velocityY > g_ThresholdAt0065782C) {
+        if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3,4,0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0) ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1702,7 +1686,7 @@ void AliceFighter::Advance() {
             }
         }
 
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
 
         ++animationFrame;
@@ -1723,14 +1707,14 @@ void AliceFighter::Advance() {
     }
 
     case 0xCD: {
-        if ((y == (g_ThresholdAt0065782C)) || velocityY > g_ThresholdAt0065782C) {
+        if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3,4,0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0) ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1738,7 +1722,7 @@ void AliceFighter::Advance() {
             }
         }
 
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
 
         ++animationFrame;
@@ -1759,14 +1743,14 @@ void AliceFighter::Advance() {
     }
 
     case 0xCE: {
-        if ((y == (g_ThresholdAt0065782C)) || velocityY > g_ThresholdAt0065782C) {
+        if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3,4,0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0) ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1793,8 +1777,8 @@ void AliceFighter::Advance() {
 
     case 0xCF: {
         field3AC = 1;
-        velocityX -= g_SubtractAt00657478;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::Half;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -1810,10 +1794,10 @@ void AliceFighter::Advance() {
             facing = static_cast<signed char>(-facing);
             velocityX = -velocityX;
         }
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -1877,8 +1861,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1905,8 +1889,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX = (velocityX)-g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            velocityX = (velocityX)-FloatConstants::ThreeFifths;
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1930,8 +1914,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1959,8 +1943,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1974,7 +1958,7 @@ void AliceFighter::Advance() {
 
     case 0x130: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -2002,7 +1986,7 @@ void AliceFighter::Advance() {
 
     case 0x131: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -2028,8 +2012,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2055,8 +2039,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2078,8 +2062,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2092,9 +2076,9 @@ void AliceFighter::Advance() {
             PlaySharedSound(0x1D);
             SpawnBattleEffect(0x34F, x, y, facing, 1);
             SpawnBattleEffect(0x34E, (x) + g_YPlusAt00658400,
-                (y) + g_MarisaCommandSpeedLowerAt00657850, facing, 1);
+                (y) + FloatConstants::Ten, facing, 1);
             SpawnBattleEffect(0x34E, x - g_YPlusAt00658400,
-                (y) + g_MarisaCommandSpeedLowerAt00657850, facing, 1);
+                (y) + FloatConstants::Ten, facing, 1);
             SpawnBattleEffect(0x34E, x, (y) + g_AngleShiftAt00657878, facing, 0);
         }
         return;
@@ -2108,15 +2092,15 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
         }
-        if (animationStage > 8 && velocityX > g_ThresholdAt0065782C) {
-            velocityX -= g_ReimuRepeatDragAt00659090;
-            if (velocityX < g_ThresholdAt0065782C)
+        if (animationStage > 8 && velocityX > FloatConstants::Zero) {
+            velocityX -= FloatConstants::FourFifths;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2136,8 +2120,8 @@ void AliceFighter::Advance() {
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2165,8 +2149,8 @@ void AliceFighter::Advance() {
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2186,8 +2170,8 @@ void AliceFighter::Advance() {
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2215,8 +2199,8 @@ void AliceFighter::Advance() {
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2235,8 +2219,8 @@ void AliceFighter::Advance() {
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
-        velocityX -= g_JumpGroundCorrectionAt00658058;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::ThreeFifths;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -2258,8 +2242,8 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage > 6) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2335,7 +2319,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0)
             field07C = 1;
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C)
+        if (y + velocityY <= FloatConstants::Zero)
             velocityX = 0.0f;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2354,12 +2338,12 @@ void AliceFighter::Advance() {
     case 0x197: {
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_RepeatScaleAt00658348;
-            velocityY = (velocityY) * g_RepeatScaleAt00658348;
+            velocityX = (velocityX) * FloatConstants::OneFifth;
+            velocityY = (velocityY) * FloatConstants::OneFifth;
         }
         if (animationStage > 3)
             velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C)
+        if (y + velocityY <= FloatConstants::Zero)
             velocityX = 0.0f;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2416,11 +2400,11 @@ void AliceFighter::Advance() {
     case 0x19C: {
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_RepeatScaleAt00658348;
-            velocityY = (velocityY) * g_RepeatScaleAt00658348;
+            velocityX = (velocityX) * FloatConstants::OneFifth;
+            velocityY = (velocityY) * FloatConstants::OneFifth;
             scriptCounterF00 = 0;
         }
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             y = 0.0f;
@@ -2438,11 +2422,11 @@ void AliceFighter::Advance() {
     case 0x19D: {
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_RepeatScaleAt00658348;
-            velocityY = (velocityY) * g_RepeatScaleAt00658348;
+            velocityX = (velocityX) * FloatConstants::OneFifth;
+            velocityY = (velocityY) * FloatConstants::OneFifth;
             scriptCounterF00 = 0;
         }
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             y = 0.0f;
@@ -2543,9 +2527,9 @@ void AliceFighter::Advance() {
             field07C = 1;
             ClearMotionFields();
         }
-        if (y > g_ThresholdAt0065782C && animationStage < 9) {
+        if (y > FloatConstants::Zero && animationStage < 9) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(9);
@@ -2591,14 +2575,14 @@ void AliceFighter::Advance() {
                 (y) + g_F728_RandomOffsetYAt00657858 + static_cast<float>(RecordedRange(0, 140)),
                 facing, 1);
         }
-        if (velocityX > g_ThresholdAt0065782C) {
-            velocityX -= g_ReimuLeapDragAt006583FC;
-            if (velocityX < g_ThresholdAt0065782C)
+        if (velocityX > FloatConstants::Zero) {
+            velocityX -= FloatConstants::ThreeTenths;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(12);
                 y = 0.0f;
@@ -2624,9 +2608,9 @@ void AliceFighter::Advance() {
             field07C = 0;
             field3AC = 0;
         }
-        if (velocityX > g_ThresholdAt0065782C) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C)
+        if (velocityX > FloatConstants::Zero) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
@@ -2635,9 +2619,9 @@ void AliceFighter::Advance() {
                 (y) + g_F728_RandomOffsetYAt00657858 + static_cast<float>(RecordedRange(0, 140)),
                 facing, 1);
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(12);
                 y = 0.0f;
@@ -2830,8 +2814,8 @@ void AliceFighter::Advance() {
 
     case 0x25B: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX)*g_BounceScaleAt00657F74;
-            velocityY = (velocityY)*g_BounceScaleAt00657F74;
+            velocityX = (velocityX)*FloatConstants::Quarter;
+            velocityY = (velocityY)*FloatConstants::Quarter;
             field07C = 1;
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -2979,10 +2963,10 @@ void AliceFighter::Advance() {
             field07C = 1;
             ClearMotionFields();
         }
-        if (y > g_ThresholdAt0065782C && animationStage < 9) {
-            velocityX = (velocityX) + g_ReimuLeapDragAt006583FC;
+        if (y > FloatConstants::Zero && animationStage < 9) {
+            velocityX = (velocityX) + FloatConstants::ThreeTenths;
             velocityY = velocityY + field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(9);
@@ -3018,9 +3002,9 @@ void AliceFighter::Advance() {
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
-        if (y > g_ThresholdAt0065782C && animationStage < 9) {
+        if (y > FloatConstants::Zero && animationStage < 9) {
             velocityY = velocityY + field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(9);
@@ -3260,16 +3244,16 @@ void AliceFighter::Advance() {
     case 0x2D0: {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -3300,9 +3284,9 @@ void AliceFighter::Advance() {
             field07C = 1;
             ClearMotionFields();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 ClearMotionFields();
                 y = 0.0f;
@@ -3406,9 +3390,9 @@ void AliceFighter::Advance() {
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
-        if (y > g_ThresholdAt0065782C && animationStage < 9) {
+        if (y > FloatConstants::Zero && animationStage < 9) {
             velocityY = velocityY + field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(9);
@@ -3464,9 +3448,9 @@ void AliceFighter::Advance() {
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
-        if (y > g_ThresholdAt0065782C && animationStage < 9) {
+        if (y > FloatConstants::Zero && animationStage < 9) {
             velocityY = velocityY + field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(9);

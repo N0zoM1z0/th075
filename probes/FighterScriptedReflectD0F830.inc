@@ -9,10 +9,10 @@ case 0xD0: {
             -facing;
         velocityX=-(velocityX);
     }
-    if (*(&field05C)==g_ThresholdAt0065782C)
+    if (*(&field05C)==FloatConstants::Zero)
         field05C=0.6f;
     velocityY=velocityY-field05C;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;
         ClearMotionFields();

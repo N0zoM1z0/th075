@@ -10,7 +10,7 @@ case 0x4C: {
     // even when the once-only F613_COUNTER initialization is skipped.
     rotationZ = (rotationZ) + g_AngleShiftAt00657878;
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
         PlaySharedSound(0x16);
         scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);

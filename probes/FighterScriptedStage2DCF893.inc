@@ -23,14 +23,14 @@ case 0x2DC: {
             (facing),1);
         PlaySound(1);
     }
-    if ((velocityX)>g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_F893FloatFallAt00657478;
-        if ((velocityX)<g_ThresholdAt0065782C)
+    if ((velocityX)>FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::Half;
+        if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)<24) {
+    if (y>FloatConstants::Zero && (animationStage)<24) {
         velocityY=velocityY-g_F893VerticalStageAt006598B0;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetSecondaryCounter(24);
             velocityX=0.0f;
             velocityY=0.0f;

@@ -17,9 +17,9 @@ case 0x2BF: {
         ClearMotionFields();
         field080=99;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)>23) {
+    if (y>FloatConstants::Zero && (animationStage)>23) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
+        if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {
             ResetSecondaryCounter(34);
             ClearMotionFields();
             y=0.0f;

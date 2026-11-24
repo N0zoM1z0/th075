@@ -22,15 +22,15 @@ case 0x2F8: {
     }
     if ((animationStage)>13) {
         velocityX=(velocityX)-g_F884DoubleDropAt00657D00;
-        if ((velocityX)<g_ThresholdAt0065782C)
+        if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
     if ((animationStage)==7) {
-        scaleX=(scaleX)+g_F865SustainScaleAt00658348;
+        scaleX=(scaleX)+FloatConstants::OneFifth;
         scaleY=(scaleY)-g_F884PhaseYAt006598B8;
     }
     if ((animationStage)==9) {
-        scaleX=(scaleX)-g_F865SustainScaleAt00658348;
+        scaleX=(scaleX)-FloatConstants::OneFifth;
         scaleY=(scaleY)+g_F884PhaseYAt006598B8;
         velocityX=2.0f;
     }

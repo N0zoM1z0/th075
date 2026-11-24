@@ -13,7 +13,7 @@ case 0x4A: {
         SpawnBattleEffect(F611_PROJECTILE,x,y,
             facing,F611_SIDE);
     }
-    if (animationStage==F610_STAGE && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage==F610_STAGE && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F610_EARLY);
         break;
     }
@@ -24,7 +24,7 @@ case 0x4A: {
                 facing,F611_SIDE);
         }
         ResetPrimaryCounters(0x4C);
-        velocityX = -(velocityX) * g_BounceScaleAt00657F74;
+        velocityX = -(velocityX) * FloatConstants::Quarter;
         velocityY = 15.0f;
         field05C = 0.5f;
         SetCameraShake(2.0f);
@@ -33,7 +33,7 @@ case 0x4A: {
         break;
     }
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
 #if F610_PREPARE_BEFORE
         PlaySharedSound(0x16);
 #endif

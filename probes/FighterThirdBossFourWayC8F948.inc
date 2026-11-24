@@ -14,7 +14,7 @@ case 0xC8: {
         scriptCounterF00=0;
     }
     if ((velocityX)>g_F948_C8UpperAt00657854) {
-        velocityX=(velocityX)-g_F948_C8DragAt00658350;
+        velocityX=(velocityX)-FloatConstants::ThreeQuarters;
         if ((velocityX)<g_F948_C8UpperAt00657854)
             velocityX=11.0f;
     }

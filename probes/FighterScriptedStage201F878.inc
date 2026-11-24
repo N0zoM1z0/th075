@@ -8,9 +8,9 @@ case 0x201: {
         field07C=0;
         field3AC=0;
     }
-    if ((velocityX)>g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_F873GroundDropAt00658350;
-        if ((velocityX)<g_ThresholdAt0065782C)
+    if ((velocityX)>FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::ThreeQuarters;
+        if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     } else if (animationStage >= 0 && animationStage < 5) {
         // The preparation stages keep their current horizontal speed.

@@ -12,8 +12,8 @@ case 0x133: {
         field07C=0;
     }
     if ((field3AC)>0) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
@@ -38,14 +38,14 @@ case 0x134: {
         field080=1;
         field07C=0;
     }
-    if ((velocityX)>g_ThresholdAt0065782C)
-        velocityX=(velocityX)-g_SubtractAt00657478;
-    if ((velocityX)<g_StopThresholdAt00657480 &&
-        y>g_ThresholdAt0065782C)
+    if ((velocityX)>FloatConstants::Zero)
+        velocityX=(velocityX)-FloatConstants::Half;
+    if ((velocityX)<FloatConstants::Two &&
+        y>FloatConstants::Zero)
         velocityX=2.0f;
-    if (y>g_ThresholdAt0065782C && (animationStage)<14) {
+    if (y>FloatConstants::Zero && (animationStage)<14) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;

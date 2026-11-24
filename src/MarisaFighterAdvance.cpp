@@ -1,16 +1,14 @@
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "MarisaFighter.hpp"
 
-extern float g_ThresholdAt0065782C;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_MarisaCommandSpeedUpperAt006592A0;
-extern float g_MarisaCommandSpeedLowerAt00657850;
 extern float g_MarisaCommandYAt00658268;
 extern float g_MarisaSpecialYCorrectionAt00658290;
 extern float g_MarisaSpecialDriftAt006578C0;
 extern float g_MarisaSpecialProjectileYAt0065929C;
 extern float g_MarisaSpecialProjectileYAt00658400;
-extern float g_MarisaProjectilePairYAt00657CF8;
 extern float g_MarisaHorizontalSlowdownAt00659094;
 extern float g_MarisaOpponentBoundaryAt00657884;
 extern const float g_MarisaPhaseDivisorBAt0065788C;
@@ -35,28 +33,14 @@ extern float g_MarisaMinimumDriftAt00659278;
 extern float g_MarisaHighBoundaryAt0065926C;
 extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaNegativeCardDriftAt00659268;
-extern float g_MarisaCardVelocityScaleAt006590B4;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
-extern float g_F747_BounceYAt00658044;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_JumpGroundCorrectionAt00658058;
-extern double g_JumpReflectionAt006583E8;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_StopThresholdAt00657480;
 extern float g_ContactProjectionAt00657888;
-extern float g_ProjectileFallAt006590B4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_BounceScaleAt00657F74;
 extern float g_AngleShiftAt00657878;
-extern float g_ApproachAt00658058;
-extern double g_ContactScaleAt006583E8;
-extern float g_ExtraThresholdAt00657D14;
-extern float g_SubtractAt00657478;
-extern double g_RiseAt00658050;
-extern float g_ReimuLeapDragAt006583FC;
 void MarisaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -66,16 +50,16 @@ void MarisaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -88,16 +72,16 @@ void MarisaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -112,16 +96,16 @@ void MarisaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -134,16 +118,16 @@ void MarisaFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -172,16 +156,16 @@ void MarisaFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -208,16 +192,16 @@ void MarisaFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -244,9 +228,9 @@ void MarisaFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -271,10 +255,10 @@ void MarisaFighter::Advance() {
     }
 
     case 0x9: {
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -305,13 +289,13 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if (velocityX < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if (velocityX > g_ThresholdAt0065782C)
+        if (velocityX < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if (velocityX > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE != 0)
-            field490 = static_cast<float>((velocityX) * g_JumpReflectionAt006583E8);
+            field490 = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -323,15 +307,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -344,15 +328,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -366,15 +350,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -394,15 +378,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -415,15 +399,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -436,15 +420,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -458,15 +442,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -486,15 +470,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -507,15 +491,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -528,15 +512,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -550,15 +534,15 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -583,12 +567,12 @@ void MarisaFighter::Advance() {
                 velocityY = 25.0f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -610,12 +594,12 @@ void MarisaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -637,12 +621,12 @@ void MarisaFighter::Advance() {
             field05C = 1.3f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -664,7 +648,7 @@ void MarisaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -676,9 +660,9 @@ void MarisaFighter::Advance() {
         }
         if (AdvanceNestedFrame()==animationStageCount)
             ResetSecondaryCounter(animationStage-1);
-        if (animationStage == 1 && animationFrame == 0 && velocityY != g_ThresholdAt0065782C) {
+        if (animationStage == 1 && animationFrame == 0 && velocityY != FloatConstants::Zero) {
 
-            if (velocityX == (g_ThresholdAt0065782C)) {
+            if (velocityX == (FloatConstants::Zero)) {
                 ResetSecondaryCounter(3);
                 return;
             } else {
@@ -696,13 +680,13 @@ void MarisaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
             ResetPrimaryCounters(0x4C);
-            velocityX = -(velocityX) * g_BounceScaleAt00657F74;
+            velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
             field05C = 0.5f;
             SetCameraShake(2.0f);
@@ -711,7 +695,7 @@ void MarisaFighter::Advance() {
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
 
             Fighter::PlaySharedSound(0x16);
 
@@ -737,7 +721,7 @@ void MarisaFighter::Advance() {
 
         rotationZ = (rotationZ) + g_AngleShiftAt00657878;
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
@@ -761,7 +745,7 @@ void MarisaFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -781,8 +765,8 @@ void MarisaFighter::Advance() {
             ResetSecondaryCounter(animationStage-1);
         if (animationStage == 1 && animationFrame == 0) {
 
-            if (velocityY != g_ThresholdAt0065782C) {
-                if (velocityX == (g_ThresholdAt0065782C)) {
+            if (velocityY != FloatConstants::Zero) {
+                if (velocityX == (FloatConstants::Zero)) {
                     ResetSecondaryCounter(3);
                     return;
                 } else {
@@ -800,7 +784,7 @@ void MarisaFighter::Advance() {
         if ((animationStage) == 3) {
             rotationZ = (rotationZ)+g_F728_RandomOffsetYAt00657858;
             velocityY = velocityY-field05C;
-            if (velocityY+y <= g_ThresholdAt0065782C) {
+            if (velocityY+y <= FloatConstants::Zero) {
                 scriptCounterF00 = (velocityX)*g_ContactProjectionAt00657888;
                 scriptCounterF02 = (velocityY)*g_ContactProjectionAt00657888;
                 ClearMotionFields();
@@ -817,7 +801,7 @@ void MarisaFighter::Advance() {
             ResetSecondaryCounter(3);
         else if ((animationStage) == 3 && (animationFrame) == 0) {
             velocityX = static_cast<float>(scriptCounterF00)*g_F747_BounceXAt006590BC;
-            velocityY = static_cast<float>(-scriptCounterF02)*g_F747_BounceYAt00658044;
+            velocityY = static_cast<float>(-scriptCounterF02)*FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(0.0f,95.0f,0.0f);
         } else if (animationStage == 3 && animationFrame != 0) {
@@ -827,9 +811,9 @@ void MarisaFighter::Advance() {
     }
 
     case 0x5D: {
-        if (animationStage < 11 && y > g_ThresholdAt0065782C) {
+        if (animationStage < 11 && y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(11);
@@ -861,9 +845,9 @@ void MarisaFighter::Advance() {
     }
 
     case 0x5E: {
-        if (animationStage < 12 && y > g_ThresholdAt0065782C) {
+        if (animationStage < 12 && y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(12);
@@ -932,7 +916,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage == 3) {
             velocityY -= field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(4);
@@ -974,7 +958,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage == 3) {
             velocityY -= field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(4);
@@ -1065,13 +1049,13 @@ void MarisaFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 5) {
@@ -1088,13 +1072,13 @@ void MarisaFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1111,13 +1095,13 @@ void MarisaFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1134,12 +1118,12 @@ void MarisaFighter::Advance() {
             field05C = 0.5f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY-field05C;
-        if (velocityY+y <= g_ThresholdAt0065782C) {
+        if (velocityY+y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -1154,7 +1138,7 @@ void MarisaFighter::Advance() {
     }
 
     case 0x96: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1165,20 +1149,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x97: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1189,20 +1173,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x98: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1213,20 +1197,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x9A: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1237,20 +1221,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9B: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1261,20 +1245,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9C: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1285,20 +1269,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9E: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1309,10 +1293,10 @@ void MarisaFighter::Advance() {
 
         }
 
-        if (y >= g_ThresholdAt0065782C) {
+        if (y >= FloatConstants::Zero) {
 
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1325,7 +1309,7 @@ void MarisaFighter::Advance() {
     }
 
     case 0x9F: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1336,20 +1320,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA0: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1360,20 +1344,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA1: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1384,20 +1368,20 @@ void MarisaFighter::Advance() {
             field07C = 0;
 
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA3: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1405,20 +1389,20 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA4: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1426,20 +1410,20 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA5: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1447,20 +1431,20 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*g_JumpReflectionAt006583E8;
+            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA7: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1473,12 +1457,12 @@ void MarisaFighter::Advance() {
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00)*g_ProjectileFallAt006590B4;
+        field490 = (-scriptCounterF00)*FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00-10;
         if (AdvanceNestedFrame()==animationStageCount)
@@ -1487,7 +1471,7 @@ void MarisaFighter::Advance() {
     }
 
     case 0xA8: {
-        cardGauge = (cardGauge)+g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge)+FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1500,12 +1484,12 @@ void MarisaFighter::Advance() {
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX)+g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX)+FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00)*g_ProjectileFallAt006590B4;
+        field490 = (-scriptCounterF00)*FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00-10;
         if (AdvanceNestedFrame()==animationStageCount)
@@ -1522,9 +1506,9 @@ void MarisaFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1547,9 +1531,9 @@ void MarisaFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY-field05C;
-            if (y+velocityY <= g_ThresholdAt0065782C) {
+            if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1571,8 +1555,8 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (velocityX > g_MarisaCommandSpeedUpperAt006592A0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_MarisaCommandSpeedLowerAt00657850)
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Ten)
                 velocityX = 10.0f;
         }
         if (inputY < 0) {
@@ -1623,9 +1607,9 @@ void MarisaFighter::Advance() {
                 (y) + g_MarisaCommandYAt00658268, -facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 1 && animationStage < 5) {
+        if (y > FloatConstants::Zero && animationStage > 1 && animationStage < 5) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1661,9 +1645,9 @@ void MarisaFighter::Advance() {
                 (y) + g_ContactProjectionAt00657888, facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 1) {
+        if (y > FloatConstants::Zero && animationStage > 1) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1686,9 +1670,9 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             field05C = 0.0f;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 0) {
+        if (y > FloatConstants::Zero && animationStage > 0) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1719,22 +1703,22 @@ void MarisaFighter::Advance() {
     }
 
     case 0xCC: {
-        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -1755,22 +1739,22 @@ void MarisaFighter::Advance() {
     }
 
     case 0xCD: {
-        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -1791,15 +1775,15 @@ void MarisaFighter::Advance() {
     }
 
     case 0xCE: {
-        if (y == g_ThresholdAt0065782C || velocityY > g_ThresholdAt0065782C) {
+        if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1826,8 +1810,8 @@ void MarisaFighter::Advance() {
 
     case 0xCF: {
         field3AC = 1;
-        velocityX -= g_SubtractAt00657478;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::Half;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -1843,10 +1827,10 @@ void MarisaFighter::Advance() {
             facing = static_cast<signed char>(-facing);
             velocityX = -velocityX;
         }
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -1910,8 +1894,8 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1931,8 +1915,8 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1954,8 +1938,8 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1975,8 +1959,8 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1990,7 +1974,7 @@ void MarisaFighter::Advance() {
 
     case 0x130: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -2006,10 +1990,10 @@ void MarisaFighter::Advance() {
         } else if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x323,
                 static_cast<float>(facing * 38) + x,
-                (y) + g_MarisaProjectilePairYAt00657CF8, facing, 1);
+                (y) + FloatConstants::Three, facing, 1);
             SpawnBattleEffect(0x324,
                 static_cast<float>(facing * 38) + x,
-                (y) + g_MarisaProjectilePairYAt00657CF8, facing, 1);
+                (y) + FloatConstants::Three, facing, 1);
             Fighter::PlaySharedSound(0x1C);
         }
         return;
@@ -2017,7 +2001,7 @@ void MarisaFighter::Advance() {
 
     case 0x131: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -2043,12 +2027,12 @@ void MarisaFighter::Advance() {
             field080 = 1;
             field07C = 0;
         }
-        if (velocityX > g_ThresholdAt0065782C)
+        if (velocityX > FloatConstants::Zero)
             velocityX -= g_MarisaSpecialDriftAt006578C0;
-        if (y > g_ThresholdAt0065782C &&
+        if (y > FloatConstants::Zero &&
             animationStage > 6 && animationStage < 9) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -2067,7 +2051,7 @@ void MarisaFighter::Advance() {
             field05C = 0.9f;
             PlaySound(0x12);
         }
-        if (animationStage == 9 && y > g_ThresholdAt0065782C) {
+        if (animationStage == 9 && y > FloatConstants::Zero) {
             ResetSecondaryCounter(animationStage - 2);
         }
         return;
@@ -2081,8 +2065,8 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2104,8 +2088,8 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2127,15 +2111,15 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
         }
-        if (animationStage > 2 && velocityX > g_ThresholdAt0065782C) {
-            velocityX -= g_AnimationDeltaAt0065747C;
-            if (velocityX < g_ThresholdAt0065782C)
+        if (animationStage > 2 && velocityX > FloatConstants::Zero) {
+            velocityX -= FloatConstants::One;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2161,8 +2145,8 @@ void MarisaFighter::Advance() {
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2188,8 +2172,8 @@ void MarisaFighter::Advance() {
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_ThresholdAt0065782C)
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2207,8 +2191,8 @@ void MarisaFighter::Advance() {
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2229,12 +2213,12 @@ void MarisaFighter::Advance() {
             velocityY = 0.0f;
             velocityX = 12.5f;
         }
-        if (velocityX > g_ThresholdAt0065782C)
+        if (velocityX > FloatConstants::Zero)
             velocityX -= g_MarisaSpecialDriftAt006578C0;
-        if (y > g_ThresholdAt0065782C &&
+        if (y > FloatConstants::Zero &&
             animationStage > 6 && animationStage < 9) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -2251,7 +2235,7 @@ void MarisaFighter::Advance() {
             velocityY = 9.0f;
             field05C = 0.9f;
         }
-        if (animationStage == 9 && y > g_ThresholdAt0065782C) {
+        if (animationStage == 9 && y > FloatConstants::Zero) {
             ResetSecondaryCounter(animationStage - 2);
         }
         return;
@@ -2264,8 +2248,8 @@ void MarisaFighter::Advance() {
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
-        velocityX -= g_JumpGroundCorrectionAt00658058;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::ThreeFifths;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -2287,8 +2271,8 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage > 6) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2362,8 +2346,8 @@ void MarisaFighter::Advance() {
 
     case 0x194: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_MarisaCardVelocityScaleAt006590B4;
-            velocityY = (velocityY) * g_MarisaCardVelocityScaleAt006590B4;
+            velocityX = (velocityX) * FloatConstants::OneTenth;
+            velocityY = (velocityY) * FloatConstants::OneTenth;
             field07C = 1;
             scriptCounterF00 = 0;
         }
@@ -2646,8 +2630,8 @@ void MarisaFighter::Advance() {
     case 0x1A0: {
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2665,8 +2649,8 @@ void MarisaFighter::Advance() {
     case 0x1A1: {
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2753,14 +2737,14 @@ void MarisaFighter::Advance() {
                 (x) + g_MarisaRandomEffectXAt00657878 - static_cast<float>(RecordedRange(0, 0x3C)),
                 (y) + g_MarisaRandomEffectYAt00657858 + static_cast<float>(RecordedRange(0, 0x8C)), facing, 1);
         }
-        if (velocityX > g_ThresholdAt0065782C) {
-            velocityX -= g_ReimuLeapDragAt006583FC;
-            if (velocityX < g_ThresholdAt0065782C)
+        if (velocityX > FloatConstants::Zero) {
+            velocityX -= FloatConstants::ThreeTenths;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(12);
                 y = 0.0f;
@@ -2789,9 +2773,9 @@ void MarisaFighter::Advance() {
             field07C = 0;
             field3AC = 0;
         }
-        if (velocityX > g_ThresholdAt0065782C) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C)
+        if (velocityX > FloatConstants::Zero) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
@@ -2799,9 +2783,9 @@ void MarisaFighter::Advance() {
                 (x) + g_MarisaRandomEffectXAt00657878 - static_cast<float>(RecordedRange(0, 60)),
                 (y) + g_MarisaRandomEffectYAt00657858 + static_cast<float>(RecordedRange(0, 140)), facing, 1);
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(12);
                 y = 0.0f;
@@ -2832,7 +2816,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage > 6) {
             velocityX -= g_MarisaHorizontalSlowdownAt00659094;
-            if (velocityX < g_ThresholdAt0065782C)
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         } else if (animationStage == 6 && animationFrame != 0) {
             // Keep the current speed until the drift stage starts.
@@ -2870,7 +2854,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage > 14 && animationStage < 27) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(0x1B);
                 y = 0.0f;
@@ -2916,7 +2900,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage > 14 && animationStage < 27) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(0x1B);
                 y = 0.0f;
@@ -2962,7 +2946,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage > 14 && animationStage < 27) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(0x1B);
                 y = 0.0f;
@@ -3010,7 +2994,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage > 14 && animationStage < 27) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(0x1B);
                 y = 0.0f;
@@ -3040,7 +3024,7 @@ void MarisaFighter::Advance() {
 
     case 0x20E: {
         if (animationStage == 0 && animationFrame == 0) {
-            if (y == g_ThresholdAt0065782C)
+            if (y == FloatConstants::Zero)
                 field07C = 1;
             ClearMotionFields();
             velocityX = 10.0f;
@@ -3049,7 +3033,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage < 10) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(10);
                 y = 0.0f;
@@ -3229,8 +3213,8 @@ void MarisaFighter::Advance() {
 
     case 0x25A: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
             scriptCounterF00 = 0;
         }
@@ -3249,8 +3233,8 @@ void MarisaFighter::Advance() {
 
     case 0x25B: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
             scriptCounterF00 = 0;
         }
@@ -3419,10 +3403,10 @@ void MarisaFighter::Advance() {
                 x - static_cast<float>(facing * 90),
                 (y) + g_MarisaResourceYAt00659280, -facing, 1);
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 22 &&
+        if (y > FloatConstants::Zero && animationStage > 22 &&
             animationStage < 35) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(0x23);
@@ -3435,7 +3419,7 @@ void MarisaFighter::Advance() {
             SetNonnegativeWord(0x28);
             field36C -= g_ContactProjectionAt00657888;
             Fighter::PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, x - g_ThresholdAt0065782C,
+            SpawnAuxEffect(0x73, x - FloatConstants::Zero,
                 (y) + g_MarisaSpecialProjectileYAt00658400, facing, 1);
         }
         if (animationStage == 15 && animationFrame == 0) {
@@ -3443,17 +3427,17 @@ void MarisaFighter::Advance() {
             velocityX = 25.0f;
             PlaySound(10);
             UpdateGaugeTimer(500);
-            SpawnBattleEffect(0x33B, x - g_ThresholdAt0065782C, y, facing, 1);
+            SpawnBattleEffect(0x33B, x - FloatConstants::Zero, y, facing, 1);
             SpawnBattleEffect(0x34E,
                 x - static_cast<float>(facing * 110),
                 (y) + g_MarisaResourceYAt00659280, facing, 1);
-            if (y == g_ThresholdAt0065782C)
+            if (y == FloatConstants::Zero)
                 SpawnAuxEffect(0x7F, x, 0.0f, facing, 1);
         } else if (animationStage == 15 && animationFrame != 0) {
             // Continue the firing animation.
         }
         if (animationFrame == 0 && animationStage > 14 && animationStage < 23) {
-            if (y == g_ThresholdAt0065782C) {
+            if (y == FloatConstants::Zero) {
                 SpawnAuxEffect(0x80,
                     x - static_cast<float>(facing * 200), y, facing, 1);
             }
@@ -3480,9 +3464,9 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(7);
@@ -3515,7 +3499,7 @@ void MarisaFighter::Advance() {
             SetNonnegativeWord(0x28);
             Fighter::PlaySharedSound(0x17);
             field36C -= g_ContactProjectionAt00657888;
-            SpawnAuxEffect(0x74, x - g_ThresholdAt0065782C,
+            SpawnAuxEffect(0x74, x - FloatConstants::Zero,
                 (y) + g_MarisaSpecialProjectileYAt00658400, facing, 1);
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -3544,11 +3528,11 @@ void MarisaFighter::Advance() {
             SetNonnegativeWord(0x28);
             Fighter::PlaySharedSound(0x17);
             field36C -= g_ContactProjectionAt00657888;
-            SpawnAuxEffect(0x73, x - g_ThresholdAt0065782C,
+            SpawnAuxEffect(0x73, x - FloatConstants::Zero,
                 (y) + g_MarisaSpecialProjectileYAt00658400, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
-            SpawnBattleEffect(0x342, x - g_ThresholdAt0065782C, y, facing, 1);
+            SpawnBattleEffect(0x342, x - FloatConstants::Zero, y, facing, 1);
             UpdateGaugeTimer(500);
             fieldF14 = 4;
             fieldF16 = 4;
@@ -3571,11 +3555,11 @@ void MarisaFighter::Advance() {
             SetNonnegativeWord(0x28);
             Fighter::PlaySharedSound(0x17);
             field36C -= g_ContactProjectionAt00657888;
-            SpawnAuxEffect(0x74, x - g_ThresholdAt0065782C,
+            SpawnAuxEffect(0x74, x - FloatConstants::Zero,
                 (y) + g_MarisaSpecialProjectileYAt00658400, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
-            SpawnBattleEffect(0x343, x - g_ThresholdAt0065782C, y, facing, 1);
+            SpawnBattleEffect(0x343, x - FloatConstants::Zero, y, facing, 1);
             UpdateGaugeTimer(0x1F4);
             fieldF14 = 6;
             fieldF16 = 6;
@@ -3596,7 +3580,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             SetNonnegativeWord(0x28);
             Fighter::PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, x - g_ThresholdAt0065782C,
+            SpawnAuxEffect(0x73, x - FloatConstants::Zero,
                 (y) + g_MarisaResourceYAt006581DC, facing, 1);
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3646,8 +3630,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             field07C = 1;
-            velocityX = (velocityX) * g_MarisaCardVelocityScaleAt006590B4;
-            velocityY = (velocityY) * g_MarisaCardVelocityScaleAt006590B4;
+            velocityX = (velocityX) * FloatConstants::OneTenth;
+            velocityY = (velocityY) * FloatConstants::OneTenth;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -3696,8 +3680,8 @@ void MarisaFighter::Advance() {
                 (y) + g_MarisaResourceYAt006581DC, facing, 1);
         }
         SetCameraShake(5.0f);
-        if ((field36C) >= g_MarisaProjectilePairYAt00657CF8 || spirit >= 20) {
-            field36C -= g_MarisaProjectilePairYAt00657CF8;
+        if ((field36C) >= FloatConstants::Three || spirit >= 20) {
+            field36C -= FloatConstants::Three;
             UpdateGaugeTimer(20);
         } else {
             field36C = 0.0f;
@@ -3728,7 +3712,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             SetNonnegativeWord(0x28);
             Fighter::PlaySharedSound(0x17);
-            SpawnAuxEffect(0x74, x - g_ThresholdAt0065782C,
+            SpawnAuxEffect(0x74, x - FloatConstants::Zero,
                 (y) + g_MarisaResourceYAt006581DC, facing, 1);
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3778,8 +3762,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             field07C = 1;
-            velocityX = (velocityX) * g_MarisaCardVelocityScaleAt006590B4;
-            velocityY = (velocityY) * g_MarisaCardVelocityScaleAt006590B4;
+            velocityX = (velocityX) * FloatConstants::OneTenth;
+            velocityY = (velocityY) * FloatConstants::OneTenth;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -3814,8 +3798,8 @@ void MarisaFighter::Advance() {
 
     case 0x2D0: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_MarisaCardVelocityScaleAt006590B4;
-            velocityY = (velocityY) * g_MarisaCardVelocityScaleAt006590B4;
+            velocityX = (velocityX) * FloatConstants::OneTenth;
+            velocityY = (velocityY) * FloatConstants::OneTenth;
             field07C = 1;
             scriptCounterF00 = 0;
         }
@@ -3827,8 +3811,8 @@ void MarisaFighter::Advance() {
 
     case 0x2D1: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_MarisaCardVelocityScaleAt006590B4;
-            velocityY = (velocityY) * g_MarisaCardVelocityScaleAt006590B4;
+            velocityX = (velocityX) * FloatConstants::OneTenth;
+            velocityY = (velocityY) * FloatConstants::OneTenth;
             field07C = 1;
             scriptCounterF00 = 0;
         }
@@ -3865,12 +3849,12 @@ void MarisaFighter::Advance() {
                 scriptCounterF02 = -(g_OptionsModeAt006714D0 - 3);
             }
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 16) {
+        if (y > FloatConstants::Zero && animationStage > 16) {
             velocityY -= field05C;
-            velocityX = (velocityX) + g_SubtractAt00657478;
+            velocityX = (velocityX) + FloatConstants::Half;
             if (velocityX > g_MarisaMinimumDriftAt00659278)
                 velocityX = -5.0f;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
                 ResetSecondaryCounter(26);
@@ -3885,8 +3869,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0) {
             velocityX = 25.0f;
             PlaySound(10);
-            SpawnBattleEffect(0x33B, x - g_ThresholdAt0065782C, y, facing, 1);
-            if (y == g_ThresholdAt0065782C)
+            SpawnBattleEffect(0x33B, x - FloatConstants::Zero, y, facing, 1);
+            if (y == FloatConstants::Zero)
                 SpawnAuxEffect(0x7F, x, 0.0f, facing, 1);
         }
         if (animationStage == 17 && animationFrame == 0 && scriptCounterF00 < 3) {
@@ -3955,9 +3939,9 @@ void MarisaFighter::Advance() {
                     (y) + g_MarisaResourceYAt0065927C, facing, 1);
             }
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(0x1C);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3971,7 +3955,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = static_cast<float>(RecordedRange(0, 8)) +
-                g_ExtraThresholdAt00657D14;
+                FloatConstants::Four;
             velocityY = static_cast<float>(RecordedRange(0, 5)) +
                 g_MarisaRandomVelocityYBaseAt00657D70;
             field05C = 0.2f;
@@ -3993,9 +3977,9 @@ void MarisaFighter::Advance() {
             scriptCounterF02 = 0;
             ClearMotionFields();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(0x0E);
                 y = 0.0f;
                 ClearMotionFields();
@@ -4006,7 +3990,7 @@ void MarisaFighter::Advance() {
             ResetPrimaryCounters(3);
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = static_cast<float>(RecordedRange(0, 8)) +
-                g_ExtraThresholdAt00657D14;
+                FloatConstants::Four;
             velocityY = static_cast<float>(RecordedRange(0, 5)) +
                 g_MarisaRandomVelocityYBaseAt00657D70;
             field05C = 0.2f;
@@ -4131,9 +4115,9 @@ void MarisaFighter::Advance() {
             scriptCounterF02 = 0;
             ClearMotionFields();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -4148,7 +4132,7 @@ void MarisaFighter::Advance() {
             velocityX = static_cast<float>(RecordedRange(0, 8)) +
                 g_MarisaRandomVelocityYBaseAt00657D70;
             velocityY = static_cast<float>(RecordedRange(0, 5)) +
-                g_MarisaCommandSpeedLowerAt00657850;
+                FloatConstants::Ten;
             field05C = 0.5f;
         }
         return;
@@ -4207,11 +4191,11 @@ void MarisaFighter::Advance() {
         velocityX = 0.0f;
         if (x < opponent->x - g_MarisaPhaseDivisorBAt0065788C)
             velocityX = static_cast<float>(g_OptionsModeAt006714D0) *
-                g_SubtractAt00657478 + g_AnimationDeltaAt0065747C;
+                FloatConstants::Half + FloatConstants::One;
         if ((opponent->x) + g_MarisaPhaseDivisorBAt0065788C < x)
             velocityX = g_MarisaNegativeCardDriftAt00659268 -
                 static_cast<float>(g_OptionsModeAt006714D0) *
-                g_SubtractAt00657478;
+                FloatConstants::Half;
         if (animationStage == 1 && y > g_MarisaHighBoundaryAt0065926C) {
             y = 920.0f;
             ResetPrimaryCounters(0x2F9);
@@ -4248,7 +4232,7 @@ void MarisaFighter::Advance() {
         --scriptCounterF00;
         if (animationStage < 2) {
             velocityY -= g_MarisaCardFallAt00659264;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(2);

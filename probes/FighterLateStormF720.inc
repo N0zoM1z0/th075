@@ -18,8 +18,8 @@
                 velocityX=30.0f;
                 field05C=0.8f;
             }
-            if ((animationStage)<4 && y>g_ThresholdAt0065782C) {
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+            if ((animationStage)<4 && y>FloatConstants::Zero) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(4);
                     y=0.0f;
                     velocityY=0.0f;
@@ -38,9 +38,9 @@
                         (*(&y))+g_F714_ShotYAt00657868,
                         facing,1);
             }
-            if ((animationStage)>3 && (velocityX)>g_ThresholdAt0065782C) {
-                velocityX=(velocityX)-g_F714_DecelerationAt0065747C;
-                if ((velocityX)<g_ThresholdAt0065782C)
+            if ((animationStage)>3 && (velocityX)>FloatConstants::Zero) {
+                velocityX=(velocityX)-FloatConstants::One;
+                if ((velocityX)<FloatConstants::Zero)
                     velocityX=0.0f;
             }
             if (AdvanceNestedFrame()==(animationStageCount)) {

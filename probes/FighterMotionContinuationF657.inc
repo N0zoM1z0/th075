@@ -11,8 +11,8 @@
                 velocityX=10.0f;
             }
             if ((animationStage)>0) {
-                velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-                if ((velocityX)<g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero) {
                     velocityX=0.0f;
                     field3AC=0;
                 }
@@ -35,8 +35,8 @@
                 velocityX=10.0f;
             }
             if ((animationStage)>0) {
-                velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-                if ((velocityX)<g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero) {
                     velocityX=0.0f;
                     field3AC=0;
                 }
@@ -52,8 +52,8 @@
                 velocityX=15.0f;
             }
             if ((animationStage)>0) {
-                velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-                if ((velocityX)<g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero) {
                     velocityX=0.0f;
                     field3AC=0;
                 }
@@ -70,10 +70,10 @@
                 velocityY=0.0f;
                 velocityX=15.0f;
             }
-            if ((velocityX)>g_ThresholdAt0065782C) velocityX=(velocityX)-g_SlowPositiveDragAt006578C0;
-            if (y>g_ThresholdAt0065782C && (animationStage)>6 && (animationStage)<9) {
+            if ((velocityX)>FloatConstants::Zero) velocityX=(velocityX)-g_SlowPositiveDragAt006578C0;
+            if (y>FloatConstants::Zero && (animationStage)>6 && (animationStage)<9) {
                 velocityY=velocityY-field05C;
-                if (velocityY+y<=g_ThresholdAt0065782C) {
+                if (velocityY+y<=FloatConstants::Zero) {
                     velocityX=0.0f;
                     velocityY=0.0f;
                     field05C=0.0f;
@@ -88,7 +88,7 @@
                 velocityY=9.0f;
                 field05C=0.9f;
             }
-            if ((animationStage)==9 && y>g_ThresholdAt0065782C)
+            if ((animationStage)==9 && y>FloatConstants::Zero)
                 ResetSecondaryCounter((animationStage)-2);
             break;
         }

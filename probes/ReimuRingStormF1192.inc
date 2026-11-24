@@ -1,19 +1,19 @@
 case 0x2DB: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0; scriptCounterF02=0; field07C=1;
-        if (y==g_ThresholdAt0065782C) ClearMotionFields();
+        if (y==FloatConstants::Zero) ClearMotionFields();
         else {
-            velocityX=(velocityX)*g_ReimuAirDragAt00658348;
-            velocityY=(*(&velocityY))*g_ReimuAirDragAt00658348;
+            velocityX=(velocityX)*FloatConstants::OneFifth;
+            velocityY=(*(&velocityY))*FloatConstants::OneFifth;
         }
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         if ((animationStage)<12) {
-            velocityY=velocityY-g_ReimuStormFallAt00658044;
-            if (y+velocityY<=g_ThresholdAt0065782C) velocityX=0.0f;
+            velocityY=velocityY-FloatConstants::OneHundredth;
+            if (y+velocityY<=FloatConstants::Zero) velocityX=0.0f;
         } else {
             velocityY=velocityY-field05C;
-            if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<16) {
+            if (y+velocityY<=FloatConstants::Zero && (animationStage)<16) {
                 y=0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(16);
@@ -47,14 +47,14 @@ case 0x2DB: {
         aiCardTimer=300-g_OptionsModeAt006714D0*20;
     }
     if ((animationStage)==4 && (animationFrame)==0) {
-        Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+g_ThresholdAt0065782C,
+        Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+FloatConstants::Zero,
             (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<30) {
         ++scriptCounterF00;
         ResetSecondaryCounter(10);
     }
-    if ((animationStage)==15 && (animationFrame)==0 && y==g_ThresholdAt0065782C) {
+    if ((animationStage)==15 && (animationFrame)==0 && y==FloatConstants::Zero) {
         ResetPrimaryCounters(10);
         break;
     }

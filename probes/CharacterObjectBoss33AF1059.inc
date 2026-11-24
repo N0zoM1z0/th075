@@ -7,8 +7,8 @@ case 0x33A: {
         field07C=0;
         field0D8=short(RecordedRange(0,13)+12);
         field0DA=short(RecordedRange(0,0x167));
-        scaleX=float(RecordedRange(0,30)+20)*g_F1059_ScaleBaseAt006590B4;
-        scaleY=(scaleX)*g_F1059_ScaleRatioAt00657478;
+        scaleX=float(RecordedRange(0,30)+20)*FloatConstants::OneTenth;
+        scaleY=(scaleX)*FloatConstants::Half;
         color[0]=0xFF;
         color[1]=0xFF;
         color[2]=0xFF;

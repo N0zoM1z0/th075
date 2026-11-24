@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
@@ -12,9 +13,7 @@
 // firstRecord is physically read and stored in the original even though
 // another front() reads the active command before dispatch.
 // Observed original call ABIs and field offsets only, not a whole battle class.
-extern const float g_LevelStepAt00657850;
 extern const float g_LevelMaxAt00657B28;
-extern const float g_LevelZeroAt0065782C;
 void BattleScene::ApplySequence() {
     if(g_CombatMode==5) {
         ProcessDebugKeys();
@@ -36,16 +35,16 @@ void BattleScene::ApplySequence() {
                     case 4: field01C=0;break;
                     case 5: field01C=1;break;
                     case 6:
-                        fighters[0]->field36C=(fighters[0]->field36C)+g_LevelStepAt00657850;
-                        fighters[1]->field36C=(fighters[1]->field36C)+g_LevelStepAt00657850;
+                        fighters[0]->field36C=(fighters[0]->field36C)+FloatConstants::Ten;
+                        fighters[1]->field36C=(fighters[1]->field36C)+FloatConstants::Ten;
                         if((fighters[0]->field36C)>g_LevelMaxAt00657B28) fighters[0]->field36C=900.0f;
                         if((fighters[1]->field36C)>g_LevelMaxAt00657B28) fighters[1]->field36C=900.0f;
                         break;
                     case 7:
-                        fighters[0]->field36C=(fighters[0]->field36C)-g_LevelStepAt00657850;
-                        fighters[1]->field36C=(fighters[1]->field36C)-g_LevelStepAt00657850;
-                        if((fighters[0]->field36C)<g_LevelZeroAt0065782C) fighters[0]->field36C=0.0f;
-                        if((fighters[1]->field36C)<g_LevelZeroAt0065782C) fighters[1]->field36C=0.0f;
+                        fighters[0]->field36C=(fighters[0]->field36C)-FloatConstants::Ten;
+                        fighters[1]->field36C=(fighters[1]->field36C)-FloatConstants::Ten;
+                        if((fighters[0]->field36C)<FloatConstants::Zero) fighters[0]->field36C=0.0f;
+                        if((fighters[1]->field36C)<FloatConstants::Zero) fighters[1]->field36C=0.0f;
                         break;
                     }
                     if(g_ReplayRecords.dwordInputs.size()<=0) break;
@@ -91,8 +90,8 @@ void BattleScene::ApplySequence() {
                         g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
                         int action6=6;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action6));
                     }
-                    fighters[0]->field36C=(fighters[0]->field36C)+g_LevelStepAt00657850;
-                    fighters[1]->field36C=(fighters[1]->field36C)+g_LevelStepAt00657850;
+                    fighters[0]->field36C=(fighters[0]->field36C)+FloatConstants::Ten;
+                    fighters[1]->field36C=(fighters[1]->field36C)+FloatConstants::Ten;
                     if((fighters[0]->field36C)>g_LevelMaxAt00657B28) fighters[0]->field36C=900.0f;
                     if((fighters[1]->field36C)>g_LevelMaxAt00657B28) fighters[1]->field36C=900.0f;
                 }
@@ -101,10 +100,10 @@ void BattleScene::ApplySequence() {
                         g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
                         int action7=7;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action7));
                     }
-                    fighters[0]->field36C=(fighters[0]->field36C)-g_LevelStepAt00657850;
-                    fighters[1]->field36C=(fighters[1]->field36C)-g_LevelStepAt00657850;
-                    if((fighters[0]->field36C)<g_LevelZeroAt0065782C) fighters[0]->field36C=0.0f;
-                    if((fighters[1]->field36C)<g_LevelZeroAt0065782C) fighters[1]->field36C=0.0f;
+                    fighters[0]->field36C=(fighters[0]->field36C)-FloatConstants::Ten;
+                    fighters[1]->field36C=(fighters[1]->field36C)-FloatConstants::Ten;
+                    if((fighters[0]->field36C)<FloatConstants::Zero) fighters[0]->field36C=0.0f;
+                    if((fighters[1]->field36C)<FloatConstants::Zero) fighters[1]->field36C=0.0f;
                 }
             }
         }

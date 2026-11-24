@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "ArchiveCatalog.hpp"
 #include "DataArchive.hpp"
 #include <windows.h>
@@ -31,7 +32,6 @@ public:
 };
 extern const char g_ArchiveRootAt0065A0B8[];
 extern const char g_EffectPatPathAt0065A0C0[];
-extern const float g_EffectShortScaleAt00658044;
 struct EffectVarsGroupF294 {
     short number;
     int entryCount;
@@ -95,9 +95,9 @@ void EffectsCatalogF294::LoadPatternCatalog()
                 READ(reinterpret_cast<unsigned char*>(DATA)+4,1);
 
                 READ(&values.number,2);
-                R(float,DATA,0xc)=static_cast<float>(values.number)*g_EffectShortScaleAt00658044;
-                R(float,DATA,0x10)=static_cast<float>(values.number)*g_EffectShortScaleAt00658044;
-                R(float,DATA,0x14)=static_cast<float>(values.number)*g_EffectShortScaleAt00658044;
+                R(float,DATA,0xc)=static_cast<float>(values.number)*FloatConstants::OneHundredth;
+                R(float,DATA,0x10)=static_cast<float>(values.number)*FloatConstants::OneHundredth;
+                R(float,DATA,0x14)=static_cast<float>(values.number)*FloatConstants::OneHundredth;
                 READ(reinterpret_cast<unsigned char*>(DATA)+6,2);
                 READ(reinterpret_cast<unsigned char*>(DATA)+8,2);
                 READ(reinterpret_cast<unsigned char*>(DATA)+10,2);

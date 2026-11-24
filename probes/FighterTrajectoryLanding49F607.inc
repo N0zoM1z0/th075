@@ -7,7 +7,7 @@ case 0x49: {
         field05C = 0.8f;
         field07C = 0;
     }
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();
@@ -19,10 +19,10 @@ case 0x49: {
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ResetSecondaryCounter(animationStage-1);
-    if (animationStage==1 && animationFrame==0 && velocityY != g_ThresholdAt0065782C) {
+    if (animationStage==1 && animationFrame==0 && velocityY != FloatConstants::Zero) {
         // Real VC7.1 left lvalue preserves original FLD global; FLD member.
         // Both branches exit this native case, not merely the nested if.
-        if (*(&velocityX) == g_ThresholdAt0065782C) {
+        if (*(&velocityX) == FloatConstants::Zero) {
             ResetSecondaryCounter(3);
             break;
         } else {

@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 #include "CharacterObject.hpp"
@@ -12,10 +13,6 @@
 // with float coordinates passed directly to the native float parameter slots.
 // The native 0046D000 gauge timer is shared by Fighter owners, so case
 // 0x35D now invokes Fighter::UpdateGaugeTimer directly.
-extern float g_F1044_GravityAt0065747C;
-extern float g_F1044_GroundAt0065782C;
-extern float g_F1051_ScaleStepAt00658348;
-extern float g_F1051_ScaleCeilingAt0065747C;
 extern float g_F1051_TrajectoryUpperAt006590C4;
 extern float g_F1051_TrajectoryLowerAt00658290;
 extern float g_F1055_FadeScaleAt006598A4;
@@ -25,33 +22,24 @@ extern float g_F1057_UpperBoundAt006583B4;
 extern float g_F1057_LowerBoundAt00658374;
 extern float g_F1057_YOffsetAt00657888;
 extern float g_F1057_AngleDivAt00657828;
-extern float g_F1057_SpeedScaleAt006590B4;
 extern float g_F1057_SpeedBaseAt00657CBC;
 extern double g_F1057_RandomDoubleAt00658A20;
 extern double g_F1057_RandomBaseAt00657D00;
-extern float g_F1057_NudgeAt00657480;
-extern float g_F1059_ScaleBaseAt006590B4;
-extern float g_F1059_ScaleRatioAt00657478;
 extern float g_F1059_ScaleFadeAt006598A8;
 extern float g_F1059_UpperBoundAt00657884;
 extern float g_F1059_LowerBoundAt0065924C;
-extern float g_F1061_CeilingAt006583FC;
 extern float g_F1061_StepAt0065972C;
 extern float g_F1061_OffsetAt00658354;
 extern float g_F1075_StepAt006598A0;
-extern float g_F1075_CeilingAt00658058;
 extern float g_F1076_AngleNudgeAt00658294;
 extern float g_F1076_ScaleMulAt00659450;
 extern float g_F1076_RightAt00659424;
 extern float g_F1076_LeftAt006595EC;
 extern float g_F1076_TargetYOffsetAt00658398;
 extern float g_F1080_ParentScaleAt006590A8;
-extern float g_F1080_AngleIncreaseAt00657850;
 extern float g_F1081_ParentYOffsetAt00658268;
-extern float g_F1081_AngleStepAt00657874;
 extern float g_F1083_YBoundAt00658E80;
 extern float g_F1085_ParentMultiplierAt0065989C;
-extern float g_F1085_ParentYMultiplierAt00657F74;
 extern float g_F1085_YOffsetAt0065835C;
 extern float g_F1085_LastYAt006592A4;
 extern float g_F1062_ScaleStepAt006583F8;
@@ -68,12 +56,9 @@ extern float g_F1095_UpperYAt00659890;
 extern float g_F1101_RightAt00659424;
 extern float g_F1101_LeftAt0065924C;
 extern float g_F1110_NativeSpeedAt006578C0;
-extern float g_F1110_NativeBaseAt00657CF8;
 extern float g_F1113_DivisorAt0065988C;
 extern float g_F1057_SpeedBaseAt006590BC;
-extern float g_F1120_XBrakingAt00659090;
 extern float g_F1125_YUpperAt00657884;
-extern float g_F1126_XDistanceAt00657850;
 extern float g_F1126_RightAt00659884;
 extern float g_F1126_LeftAt006595E4;
 extern float g_F1131_LeftHitAt00659230;

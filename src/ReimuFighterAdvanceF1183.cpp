@@ -1,27 +1,21 @@
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "ReimuFighter.hpp"
 // Natural-C++ reconstruction of ReimuFighter::Advance at 0045DD70.
 
-extern float g_ReimuStormFallAt00658044;
 extern float g_ReimuWarpSpreadAt006583B4;
-extern float g_ReimuWarpSpeedAt00657CF8;
 extern float g_ReimuArenaCenterAt00657884;
 extern float g_ReimuReverseDriftAt0065907C;
-extern float g_ReimuRandomLiftAt00657850;
 extern float g_ReimuMeterTrailYAt0065835C;
 extern float g_ReimuMeterNearYAt00659088;
 extern float g_ReimuMeterInitialYAt00659084;
 extern float g_ReimuMeterShotYAt00659080;
 extern float g_ReimuSpecialYAt0065908C;
 extern float g_ReimuChargeFallAt00659094;
-extern float g_ReimuRepeatDragAt00659090;
-extern float g_ReimuLeapDragAt006583FC;
 extern float g_ReimuAirVolleyYAt00659098;
 extern float g_ReimuDownVolleyYAt0065826C;
 extern float g_ReimuLowVolleyYAt006590A0;
 extern float g_ReimuHighVolleyYAt0065909C;
-extern float g_ThresholdAt0065782C;
-extern float g_ExtraThresholdAt00657D14;
 extern float g_ReimuC8BrakeAt00657D70;
 extern float g_ReimuC8ClampAt006590B0;
 extern float g_ReimuCommandYAt00658268;
@@ -30,28 +24,14 @@ extern float g_ReimuCommandBackYAt006590A8;
 extern float g_ReimuShotYAt006590A4;
 extern float g_ReimuRotationStepAt00657858;
 extern float g_ReimuBounceXAt006590BC;
-extern float g_ReimuBounceYAt00658044;
 extern float g_ReimuRecoveryScaleAt006590B8;
-extern float g_ReimuAirDragAt00658348;
-extern float g_ReimuGroundDragAt00658350;
-extern float g_ReimuLateDragAt006581E0;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_JumpGroundCorrectionAt00658058;
-extern double g_JumpReflectionAt006583E8;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_StopThresholdAt00657480;
 extern float g_TrajectoryUpperAt006590C4;
 extern float g_ContactProjectionAt00657888;
-extern float g_ProjectileFallAt006590B4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_BounceScaleAt00657F74;
 extern float g_AngleShiftAt00657878;
-extern float g_ApproachAt00658058;
-extern double g_ContactScaleAt006583E8;
-extern float g_SubtractAt00657478;
-extern double g_RiseAt00658050;
 extern float g_ReimuStormPairYBaseAt00657CBC;
 extern float g_ReimuStormPairXBaseAt00658264;
 extern float g_ReimuStormRingYOffsetAt0065836C;
@@ -70,16 +50,16 @@ void ReimuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -90,16 +70,16 @@ void ReimuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -112,16 +92,16 @@ void ReimuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -132,16 +112,16 @@ void ReimuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -160,9 +140,9 @@ void ReimuFighter::Advance() {
             }
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -192,9 +172,9 @@ void ReimuFighter::Advance() {
             }
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -224,9 +204,9 @@ void ReimuFighter::Advance() {
             }
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -249,10 +229,10 @@ void ReimuFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -277,7 +257,7 @@ void ReimuFighter::Advance() {
 #define CONTACT_STAGE_OFFSET 0xF00
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
-#define TRAJECTORY_LOWER_THRESHOLD g_StopThresholdAt00657480
+#define TRAJECTORY_LOWER_THRESHOLD FloatConstants::Two
 #define TRAJECTORY_UPPER_THRESHOLD g_TrajectoryUpperAt006590C4
 #define TRAJECTORY_MINIMUM_SPEED 2.0f
 #define TRAJECTORY_MAXIMUM_SPEED 12.0f
@@ -326,12 +306,12 @@ case 0x48: {
         field05C = 1.3f;
         field07C = 0;
     }
-    if (animationStage==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage==F605_STAGE48 && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F605_EARLY48);
         break;
     }
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = (velocityX) * g_ContactProjectionAt00657888;
         scriptCounterF02 = (velocityY) * g_ContactProjectionAt00657888;
         ClearMotionFields();
@@ -381,7 +361,7 @@ case 0x48: {
                 field05C = 0.8f;
                 field07C = 0;
             }
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
                 scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
                 ClearMotionFields();
@@ -404,8 +384,8 @@ case 0x48: {
                     fieldF0C = 1;
                     SpawnBattleEffect(0x3B7, x, y, facing, 1);
                 }
-                if (velocityY != g_ThresholdAt0065782C) {
-                    if (velocityX == g_ThresholdAt0065782C) {
+                if (velocityY != FloatConstants::Zero) {
+                    if (velocityX == FloatConstants::Zero) {
                         ResetSecondaryCounter(3);
                         break;
                     } else {

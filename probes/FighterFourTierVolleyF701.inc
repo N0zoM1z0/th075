@@ -11,9 +11,9 @@
                 field07C=1;
                 ClearMotionFields();
             }
-            if (y>g_ThresholdAt0065782C) {
+            if (y>FloatConstants::Zero) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(11);
                     y=0.0f;
                     ClearMotionFields();
@@ -35,7 +35,7 @@
                     for (int i=0; i<6; ++i) {
                         field314=static_cast<float>(i*60+(fieldF04));
                         SpawnBattleEffect(0x393,
-                            (x)+g_ThresholdAt0065782C,
+                            (x)+FloatConstants::Zero,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);
                     }
@@ -44,7 +44,7 @@
                     for (int i=0; i<6; ++i) {
                         field314=static_cast<float>(i*60+(fieldF04));
                         SpawnBattleEffect(0x393,
-                            (x)+g_ThresholdAt0065782C,
+                            (x)+FloatConstants::Zero,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);
                     }
@@ -53,7 +53,7 @@
                     for (int i=0; i<8; ++i) {
                         field314=static_cast<float>(i*45+(fieldF04));
                         SpawnBattleEffect(0x393,
-                            (x)+g_ThresholdAt0065782C,
+                            (x)+FloatConstants::Zero,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);
                     }
@@ -62,7 +62,7 @@
                     for (int i=0; i<8; ++i) {
                         field314=static_cast<float>(i*45+(fieldF04));
                         SpawnBattleEffect(0x393,
-                            (x)+g_ThresholdAt0065782C,
+                            (x)+FloatConstants::Zero,
                             (*(&y))+g_F701_VolleyYAt00658268,
                             facing,1);
                     }

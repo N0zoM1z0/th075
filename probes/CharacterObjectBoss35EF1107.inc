@@ -42,7 +42,7 @@ case 0x35E: {
         rotationZ=AngleAt00483300(
             velocityY,velocityX)/g_F1057_AngleDivAt00657828;
         SetPolarVelocity(float(field0DC),
-            float(field0D8)*g_F1057_SpeedScaleAt006590B4);
+            float(field0D8)*FloatConstants::OneTenth);
     }
     if (animationStage>0) {
         if (field080==0) {
@@ -86,7 +86,7 @@ case 0x35E: {
         }
     }
     SetPolarVelocity(float(field0DC),
-        float(field0D8)*g_F1057_SpeedScaleAt006590B4);
+        float(field0D8)*FloatConstants::OneTenth);
     x=float(facing)*velocityX+x;
     y=y-velocityY;
     if (AdvanceNestedFrame()==animationStageCount)

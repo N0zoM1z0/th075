@@ -16,8 +16,8 @@ case 0x186: {
         velocityX=10.0f;
     }
     if ((animationStage)>0) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
@@ -41,15 +41,15 @@ case 0x187: {
         velocityX=10.0f;
     }
     if ((animationStage)<2) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(0xE);

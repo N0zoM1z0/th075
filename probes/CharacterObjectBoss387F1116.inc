@@ -34,7 +34,7 @@ case 0x387: {
     x=float(facing)*velocityX+x;
     y=y+velocityY;
     if (animationStage==1) {
-        if (y+velocityY<=g_F1044_GroundAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetSecondaryCounter(2);
             velocityY=-velocityY;
             y=0.0f;

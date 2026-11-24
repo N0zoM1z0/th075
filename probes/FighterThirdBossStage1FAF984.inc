@@ -29,7 +29,7 @@ case 0x1FA: {
             color[0]=(color[0])+20;
         else
             color[0]=255;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             color[0]=255;
             ClearMotionFields();
             ResetSecondaryCounter(0xB);

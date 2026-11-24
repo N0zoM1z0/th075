@@ -20,15 +20,15 @@ case 0x384: {
         velocityY=0.0f;
     }
     if (animationStage<6) {
-        scaleX=(scaleX)+g_F1051_ScaleStepAt00658348;
-        scaleY=(scaleY)+g_F1051_ScaleStepAt00658348;
-        if (scaleX>g_F1057_NudgeAt00657480)
+        scaleX=(scaleX)+FloatConstants::OneFifth;
+        scaleY=(scaleY)+FloatConstants::OneFifth;
+        if (scaleX>FloatConstants::Two)
             scaleX=2.0f;
-        if (scaleY>g_F1057_NudgeAt00657480)
+        if (scaleY>FloatConstants::Two)
             scaleY=2.0f;
     }
     if (animationStage>5) {
-        if (y+velocityY<=g_F1044_GroundAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             velocityY=0.0f;
             velocityX=0.0f;

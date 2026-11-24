@@ -8,7 +8,7 @@ case 0x194: {
         field07C=0;
     }
     velocityY=velocityY-field05C;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;
         field05C=0.0f;

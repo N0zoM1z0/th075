@@ -21,9 +21,9 @@ case 0x391: {
         field080=0;
         field07C=0;
     }
-    if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
-        scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
-        scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
+    if (scaleX<FloatConstants::One) {
+        scaleX=(scaleX)+FloatConstants::OneTenth;
+        scaleY=(scaleY)+FloatConstants::OneTenth;
     } else {
         scaleX=1.0f;
         scaleY=1.0f;
@@ -38,21 +38,21 @@ case 0x391: {
         if (velocityY>g_F1095_UpperYAt00659890)
             field0DC=0;
     }
-    if (scaleX==g_F1051_ScaleCeilingAt0065747C &&
+    if (scaleX==FloatConstants::One &&
         g_OptionsModeAt006714D0>1) {
-        if (velocityX>g_F1044_GroundAt0065782C &&
+        if (velocityX>FloatConstants::Zero &&
             x>g_F1083_YBoundAt00658E80) {
             velocityX=-velocityX;
         }
-        if (velocityX<g_F1044_GroundAt0065782C &&
-            x<g_F1044_GroundAt0065782C)
+        if (velocityX<FloatConstants::Zero &&
+            x<FloatConstants::Zero)
             velocityX=-velocityX;
     }
     if (field0DA==0 &&
-        scaleX==g_F1051_ScaleCeilingAt0065747C) {
+        scaleX==FloatConstants::One) {
         if (owner->opponent->y<y &&
             AbsFloatAt00412D90(x-
-                owner->opponent->x)<g_F1126_XDistanceAt00657850) {
+                owner->opponent->x)<FloatConstants::Ten) {
             field0DA=1;
             velocityX=0.0f;
             velocityY=-30.0f;
@@ -61,7 +61,7 @@ case 0x391: {
         }
     }
     if (field0DA==1) {
-        if (y+velocityY<=g_F1044_GroundAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ClearFrameInfo();
             owner->SpawnBattleEffect(
                 0x392,x,0.0f,

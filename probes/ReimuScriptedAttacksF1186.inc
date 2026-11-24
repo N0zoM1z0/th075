@@ -6,12 +6,12 @@ case 0x186: {
         field07C=0;
     }
     if ((field3AC)>0) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) { velocityX=0.0f; field3AC=0; }
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
-    if ((animationStage)>3 && (velocityX)>g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_AnimationDeltaAt0065747C;
-        if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
+    if ((animationStage)>3 && (velocityX)>FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::One;
+        if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if (animationStage == 4 && animationFrame == 0) {
@@ -24,18 +24,18 @@ case 0x186: {
 }
 case 0x187: {
     if ((animationStage)==0 && (animationFrame)==0) scriptCounterF00=0;
-    if ((animationStage)<5 && y==g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_ReimuGroundDragAt00658350;
-        if ((velocityX)<g_ThresholdAt0065782C) { velocityX=0.0f; field3AC=0; }
+    if ((animationStage)<5 && y==FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::ThreeQuarters;
+        if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=9.0f; velocityY=0.0f; field05C=0.0f;
         field080=1; field07C=0;
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f;
             ResetSecondaryCounter(0xB);
             break;
@@ -55,8 +55,8 @@ case 0x188: {
         velocityX=8.0f;
     }
     if ((animationStage)>0) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) { velocityX=0.0f; field3AC=0; }
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         field080=8;
@@ -77,9 +77,9 @@ case 0x189: {
         velocityX=12.0f; field3AC=0;
     }
     if ((animationStage)==0 && (animationFrame)==0) scriptCounterF00=0;
-    if ((animationStage)>4 && y==g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_ReimuGroundDragAt00658350;
-        if ((velocityX)<g_ThresholdAt0065782C) { velocityX=0.0f; field3AC=0; }
+    if ((animationStage)>4 && y==FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::ThreeQuarters;
+        if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==2 && (animationFrame)==0) {
@@ -135,8 +135,8 @@ case 0x192: {
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=40.0f; field318=10.0f;
-        SpawnBattleEffect(0x338,(*(&x))+g_ThresholdAt0065782C,
-            (*(&y))+g_ThresholdAt0065782C,facing,0);
+        SpawnBattleEffect(0x338,(*(&x))+FloatConstants::Zero,
+            (*(&y))+FloatConstants::Zero,facing,0);
         PlaySound(4);
         UpdateGaugeTimer(250);
     }

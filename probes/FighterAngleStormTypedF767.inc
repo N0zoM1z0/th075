@@ -19,7 +19,7 @@ case 0x2F9: {
                 if ((animationStage)>15 || (animationStage)<10) {
                     velocityY=velocityY-field05C;
                 }
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0x14);
                     y=0.0f;
                     ClearMotionFields();
@@ -63,8 +63,8 @@ case 0x2F9: {
                 field05C=0.4f;
             }
             if ((animationStage)==10 && (animationFrame)==0) {
-                velocityX=(*(&velocityX))*g_StormMotionAt00658348;
-                velocityY=(*(&velocityY))*g_StormMotionAt00658348;
+                velocityX=(*(&velocityX))*FloatConstants::OneFifth;
+                velocityY=(*(&velocityY))*FloatConstants::OneFifth;
             }
             if ((animationStage)==11 && (animationFrame)==0) {
                 scriptCounterF02=

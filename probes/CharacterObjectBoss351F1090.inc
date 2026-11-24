@@ -28,8 +28,8 @@ case 0x351: {
             ResetSecondaryCounter(animationStage+5);
             return;
         }
-        scaleX=(scaleX)+g_F1057_NudgeAt00657480;
-        scaleY=(scaleY)+g_F1057_NudgeAt00657480;
+        scaleX=(scaleX)+FloatConstants::Two;
+        scaleY=(scaleY)+FloatConstants::Two;
     }
     if (animationStage>10 && animationStage<16) {
         owner->SpawnBattleEffect(

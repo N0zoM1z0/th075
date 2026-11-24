@@ -11,15 +11,15 @@ case 0x33: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
@@ -32,15 +32,15 @@ case 0x34: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
@@ -54,15 +54,15 @@ case 0x35: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetPrimaryCounters(0);
@@ -82,15 +82,15 @@ case 0x38: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
@@ -103,15 +103,15 @@ case 0x39: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
@@ -124,15 +124,15 @@ case 0x3A: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);
@@ -146,15 +146,15 @@ case 0x3B: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetPrimaryCounters(0);
@@ -174,15 +174,15 @@ case 0x3E: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(2);
@@ -195,15 +195,15 @@ case 0x3F: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(2);
@@ -216,15 +216,15 @@ case 0x40: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(2);
@@ -238,15 +238,15 @@ case 0x41: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetPrimaryCounters(0);

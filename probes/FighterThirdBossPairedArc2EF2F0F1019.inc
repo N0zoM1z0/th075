@@ -17,11 +17,11 @@ case 0x2EF: {
         ClearMotionFields();
         field080=99;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)<22)
-        velocityY=velocityY-g_F747_BounceYAt00658044;
-    if (y>g_ThresholdAt0065782C && (animationStage)>23) {
+    if (y>FloatConstants::Zero && (animationStage)<22)
+        velocityY=velocityY-FloatConstants::OneHundredth;
+    if (y>FloatConstants::Zero && (animationStage)>23) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
+        if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {
             ResetSecondaryCounter(34);
             ClearMotionFields();
             y=0.0f;
@@ -52,8 +52,8 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
@@ -68,8 +68,8 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
@@ -84,8 +84,8 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
@@ -100,8 +100,8 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
@@ -116,8 +116,8 @@ case 0x2EF: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
         if ((fieldF04)<g_OptionsModeAt006714D0*2+8) {
             ++fieldF04;
@@ -139,11 +139,11 @@ case 0x2F0: {
         ClearMotionFields();
         field080=99;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)<22)
+    if (y>FloatConstants::Zero && (animationStage)<22)
         velocityY=velocityY-g_F1019_FallAt00658354;
-    if (y>g_ThresholdAt0065782C && (animationStage)>23) {
+    if (y>FloatConstants::Zero && (animationStage)>23) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
+        if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {
             ResetSecondaryCounter(34);
             ClearMotionFields();
             y=0.0f;
@@ -174,8 +174,8 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
@@ -190,8 +190,8 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
@@ -206,8 +206,8 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
@@ -222,8 +222,8 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
@@ -238,8 +238,8 @@ case 0x2F0: {
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
             facing,1);
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         PlaySound(7);
         if ((fieldF04)<g_OptionsModeAt006714D0*2+8) {
             ++fieldF04;

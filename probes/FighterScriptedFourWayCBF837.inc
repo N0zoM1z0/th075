@@ -10,9 +10,9 @@ case 0xCB: {
         velocityY=0.0f;
         field05C=0.0f;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)>0) {
+    if (y>FloatConstants::Zero && (animationStage)>0) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;

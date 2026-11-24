@@ -4,16 +4,16 @@
 // Real state transition fires raw 0x3C projectile BEFORE writing
 // the new frame/trajectory values. Full 82KB parent remains NONEXACT.
 case 0xCD: {
-    if ((*(&y) == g_ThresholdAt0065782C) ||
-        velocityY > g_ThresholdAt0065782C) {
+    if ((*(&y) == FloatConstants::Zero) ||
+        velocityY > FloatConstants::Zero) {
         SetCommandSelection(3,4,0xFF);
         field088=2;
     }
     if (animationStage==0 && (field3AC)==0)
         ClearMotionFields();
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y=0.0f;
             ClearMotionFields();
@@ -21,7 +21,7 @@ case 0xCD: {
         }
     }
     if (animationStage==4 &&
-        velocityY<g_ExtraThresholdAt00657D14)
+        velocityY<FloatConstants::Four)
         ResetSecondaryCounter(5);
     ++animationFrame;
     if (animationFrame>=animationFrameCount) {

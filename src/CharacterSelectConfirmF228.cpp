@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "CharacterSelectScene.hpp"
@@ -5,28 +6,24 @@
 #include <stdlib.h>
 // CharacterSelectScene shares its physical input and animation fields with
 // the other character-select methods.
-extern const float g_ChoiceMinimumAt0065782C;
-extern const float g_ChoiceBackStepAt00657874;
 extern const float g_ChoiceRiseBoundAt00658268;
-extern const float g_ChoiceRiseStepAt00657D14;
 extern const float g_ChoiceDropBoundAt00657858;
-extern const float g_ChoiceDropStepAt00657480;
 extern const float g_ChoiceReadyBoundAt0065826C;
 namespace ChoiceInputF228 { int __cdecl TestAction(int key); }
 void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
 {
-    if (g_ChoiceMinimumAt0065782C < (portraitReturn[player]))
-        (portraitReturn[player]) -= g_ChoiceBackStepAt00657874;
+    if (FloatConstants::Zero < (portraitReturn[player]))
+        (portraitReturn[player]) -= FloatConstants::Five;
     if ((portraitEnterX[player]) < g_ChoiceRiseBoundAt00658268)
-        (portraitEnterX[player]) = (portraitEnterX[player]) + g_ChoiceRiseStepAt00657D14;
+        (portraitEnterX[player]) = (portraitEnterX[player]) + FloatConstants::Four;
     if ((portraitEnterY[player]) < g_ChoiceDropBoundAt00657858)
-        (portraitEnterY[player]) = (portraitEnterY[player]) + g_ChoiceDropStepAt00657480;
+        (portraitEnterY[player]) = (portraitEnterY[player]) + FloatConstants::Two;
     if ((portraitExitX[player]) < g_ChoiceRiseBoundAt00658268)
-        (portraitExitX[player]) = (portraitExitX[player]) + g_ChoiceRiseStepAt00657D14;
+        (portraitExitX[player]) = (portraitExitX[player]) + FloatConstants::Four;
     if ((portraitExitY[player]) < g_ChoiceDropBoundAt00657858)
-        (portraitExitY[player]) = (portraitExitY[player]) + g_ChoiceDropStepAt00657480;
+        (portraitExitY[player]) = (portraitExitY[player]) + FloatConstants::Two;
     if ((choiceStop[player])<g_ChoiceReadyBoundAt0065826C &&
-       ((choiceStop[player])=(choiceStop[player])+g_ChoiceDropStepAt00657480,
+       ((choiceStop[player])=(choiceStop[player])+FloatConstants::Two,
         g_ChoiceReadyBoundAt0065826C<(choiceStop[player])))
         (choiceStop[player])=75.0f;
     if ((input[player].vertical)==-1) {

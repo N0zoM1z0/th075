@@ -1,8 +1,8 @@
 // Sakuya landing actions 0x5D and 0x5E in 0x004AC040.
         case 0x5D: {
-            if ((animationStage)<12 && y>g_ThresholdAt0065782C) {
+            if ((animationStage)<12 && y>FloatConstants::Zero) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
@@ -33,9 +33,9 @@
             break;
         }
         case 0x5E: {
-            if ((animationStage)<9 && y>g_ThresholdAt0065782C) {
+            if ((animationStage)<9 && y>FloatConstants::Zero) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(9);

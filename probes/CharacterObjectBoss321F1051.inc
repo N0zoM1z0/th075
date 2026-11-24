@@ -21,15 +21,15 @@ case 0x321: {
         velocityY=0.0f;
     }
     if (animationStage<6) {
-        scaleX=(scaleX)+g_F1051_ScaleStepAt00658348;
-        scaleY=(scaleY)+g_F1051_ScaleStepAt00658348;
-        if (scaleX>g_F1051_ScaleCeilingAt0065747C)
+        scaleX=(scaleX)+FloatConstants::OneFifth;
+        scaleY=(scaleY)+FloatConstants::OneFifth;
+        if (scaleX>FloatConstants::One)
             scaleX=2.0f;
-        if (scaleY>g_F1051_ScaleCeilingAt0065747C)
+        if (scaleY>FloatConstants::One)
             scaleY=2.0f;
     }
     if (animationStage>5 &&
-        y+velocityY <= g_F1044_GroundAt0065782C) {
+        y+velocityY <= FloatConstants::Zero) {
         y=0.0f;
         velocityY=0.0f;
         velocityX=0.0f;

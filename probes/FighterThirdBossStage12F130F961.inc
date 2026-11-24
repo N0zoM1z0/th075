@@ -12,8 +12,8 @@ case 0x12F: {
         field07C=0;
     }
     if ((field3AC)>0) {
-        velocityX=(velocityX)-g_ApproachAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
@@ -27,7 +27,7 @@ case 0x12F: {
 // Genuine original 004AC040 130: native 265B/81 x86, original sprite334.
 case 0x130: {
     velocityY=velocityY-field05C;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;
         field05C=0.0f;

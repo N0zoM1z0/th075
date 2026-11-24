@@ -7,19 +7,19 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 scriptCounterF00=0;
                 field07C=1;
-                velocityX=(velocityX)*g_BounceScaleAt00657F74;
-                velocityY=(*(&velocityY))*g_BounceScaleAt00657F74;
+                velocityX=(velocityX)*FloatConstants::Quarter;
+                velocityY=(*(&velocityY))*FloatConstants::Quarter;
             }
             if ((animationStage)>5) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     y=0.0f;
                     ResetPrimaryCounters(10);
                     break;
                 }
             }
-            if (y+velocityY<=g_ThresholdAt0065782C) {
+            if (y+velocityY<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
                 y=0.0f;
@@ -54,19 +54,19 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 scriptCounterF00=0;
                 field07C=1;
-                velocityX=(velocityX)*g_BounceScaleAt00657F74;
-                velocityY=(*(&velocityY))*g_BounceScaleAt00657F74;
+                velocityX=(velocityX)*FloatConstants::Quarter;
+                velocityY=(*(&velocityY))*FloatConstants::Quarter;
             }
             if ((animationStage)>5) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     y=0.0f;
                     ResetPrimaryCounters(10);
                     break;
                 }
             }
-            if (y+velocityY<=g_ThresholdAt0065782C) {
+            if (y+velocityY<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
                 y=0.0f;

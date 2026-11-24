@@ -5,10 +5,10 @@ case 0x1A0: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field080=1;
         field07C=0;
-        velocityX=(velocityX)*g_F865SustainScaleAt00658348;
-        velocityY=(*(&velocityY))*g_F865SustainScaleAt00658348;
+        velocityX=(velocityX)*FloatConstants::OneFifth;
+        velocityY=(*(&velocityY))*FloatConstants::OneFifth;
     }
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         velocityX=0.0f;
         velocityY=0.0f;
         y=0.0f;

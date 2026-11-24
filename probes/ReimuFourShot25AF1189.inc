@@ -2,8 +2,8 @@
 // Four 0x321 projectiles after the quarter-speed opening and stage-3 transition.
 case 0x25A:
     if (animationStage == 0 && animationFrame == 0) {
-        velocityX = (velocityX) * g_BounceScaleAt00657F74;
-        velocityY = (velocityY) * g_BounceScaleAt00657F74;
+        velocityX = (velocityX) * FloatConstants::Quarter;
+        velocityY = (velocityY) * FloatConstants::Quarter;
         field07C = 1;
     }
     if (AdvanceNestedFrame() == animationStageCount) {

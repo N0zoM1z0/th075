@@ -38,8 +38,8 @@ case 0x19E: {
         field07C=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
-        velocityX=(velocityX)*g_F972_GravityAt00657F74;
-        velocityY=(velocityY)*g_F972_GravityAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
     }
     if ((animationStage)>4 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
         PlaySound(0);
@@ -53,7 +53,7 @@ case 0x19E: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         y=0.0f;
         ClearMotionFields();
         ResetPrimaryCounters(0xA);
@@ -72,8 +72,8 @@ case 0x19F: {
         field07C=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
-        velocityX=(velocityX)*g_F972_GravityAt00657F74;
-        velocityY=(velocityY)*g_F972_GravityAt00657F74;
+        velocityX=(velocityX)*FloatConstants::Quarter;
+        velocityY=(velocityY)*FloatConstants::Quarter;
     }
     if ((animationStage)>4 && (scriptCounterF00)<=0 && (scriptCounterF02)<5) {
         PlaySound(0);
@@ -87,7 +87,7 @@ case 0x19F: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         y=0.0f;
         ClearMotionFields();
         ResetPrimaryCounters(0xA);

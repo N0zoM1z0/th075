@@ -5,7 +5,7 @@ case 0xC8: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; scriptCounterF00=0; }
     if ((velocityX)>g_ReimuC8BrakeAt00657D70) {
-        velocityX=(velocityX)-g_SubtractAt00657478;
+        velocityX=(velocityX)-FloatConstants::Half;
         if ((velocityX)<g_ReimuC8ClampAt006590B0) velocityX=9.0f;
     }
     if (inputY<0) {
@@ -50,9 +50,9 @@ case 0xC9: {
             -facing,1);
         PlaySharedSound(31);
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)>1 && (animationStage)<5) {
+    if (y>FloatConstants::Zero && (animationStage)>1 && (animationStage)<5) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
             ResetSecondaryCounter(5);
             break;
@@ -73,9 +73,9 @@ case 0xCA: {
             facing,1);
         PlaySharedSound(31);
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)>1) {
+    if (y>FloatConstants::Zero && (animationStage)>1) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
             ResetPrimaryCounters(10);
             break;
@@ -87,9 +87,9 @@ case 0xCA: {
 case 0xCB: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) { scriptCounterF00=0; velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
-    if (y>g_ThresholdAt0065782C && (animationStage)>0) {
+    if (y>FloatConstants::Zero && (animationStage)>0) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
             ResetPrimaryCounters(10);
             break;
@@ -139,9 +139,9 @@ case 0xD0: {
         facing=-facing;
         velocityX=-(velocityX);
     }
-    if (*(&field05C)==g_ThresholdAt0065782C) field05C=0.6f;
+    if (*(&field05C)==FloatConstants::Zero) field05C=0.6f;
     velocityY=velocityY-field05C;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
         y=0.0f;
         ClearMotionFields();

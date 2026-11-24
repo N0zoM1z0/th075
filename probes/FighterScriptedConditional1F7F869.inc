@@ -8,9 +8,9 @@ case 0x1F7: {
         field07C=0;
         field3AC=0;
     }
-    if ((velocityX)>g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_SubtractAt00657478;
-        if ((velocityX)<g_ThresholdAt0065782C)
+    if ((velocityX)>FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::Half;
+        if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
     if ((animationStage)>3 && (animationStage)<7 && (aiCommand)==0x14) {

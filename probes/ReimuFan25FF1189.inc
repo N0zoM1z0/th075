@@ -2,8 +2,8 @@
 // Quarter-speed opening followed by the six-shot 0x320 stage-3 fan.
 case 0x25F:
     if (animationStage == 0 && animationFrame == 0) {
-        velocityX = (velocityX) * g_BounceScaleAt00657F74;
-        velocityY = (velocityY) * g_BounceScaleAt00657F74;
+        velocityX = (velocityX) * FloatConstants::Quarter;
+        velocityY = (velocityY) * FloatConstants::Quarter;
         field07C = 1;
     }
     if (AdvanceNestedFrame() == animationStageCount) {

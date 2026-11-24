@@ -11,8 +11,8 @@ case 0x352: {
         color[3]=0xFF;
         field0D8=0;
     }
-    scaleX=(scaleX)+g_F1051_ScaleCeilingAt0065747C;
-    scaleY=(scaleY)+g_F1051_ScaleCeilingAt0065747C;
+    scaleX=(scaleX)+FloatConstants::One;
+    scaleY=(scaleY)+FloatConstants::One;
     if (animationStage>1) {
         if (color[0]>20)
             color[0]-=20;

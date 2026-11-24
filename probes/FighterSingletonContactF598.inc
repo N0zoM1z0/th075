@@ -7,15 +7,15 @@ case 0x32: {
         velocityY = 0.0f;
         field07C = 0;
     }
-    if ((velocityX) < g_ThresholdAt0065782C) {
-        velocityX = (velocityX) + g_ApproachAt00658058;
-        if ((velocityX) > g_ThresholdAt0065782C)
+    if ((velocityX) < FloatConstants::Zero) {
+        velocityX = (velocityX) + FloatConstants::ThreeFifths;
+        if ((velocityX) > FloatConstants::Zero)
             velocityX = 0.0f;
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
         field490 =
-            static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+            static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(0);

@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 // Reconstruction of ReimuObject::Advance at 00476A40.
 #include "CharacterObject.hpp"
@@ -9,19 +10,9 @@ extern float __cdecl AngleAt00483300(float y, float x);
 extern const float g_ReimuObjectRightBoundAt0065925C;
 extern const float g_ReimuObjectLeftBoundAt00659258;
 extern const float g_ReimuObjectAngleUnitAt00657828;
-extern const float g_ReimuObjectDirectionMarker0At0065782C;
-extern const float g_ReimuObjectDirectionMarker1At0065747C;
-extern const float g_ReimuObjectScalarAt00657480;
-extern const float g_ReimuObjectDirectionMarker3At00657CF8;
-extern const float g_ReimuObjectScaleStepAt00658348;
-extern const float g_ReimuObjectDirectionMarker4At00657D14;
-extern const float g_ReimuObjectDirectionMarker5At00657874;
 extern const float g_ReimuObjectScalarAt00658290;
 extern const float g_ReimuObjectDirectionMarker7At00659254;
 extern const float g_ReimuObjectEffectSpreadAt00657CBC;
-extern const float g_ReimuObjectScalarAt006590B4;
-extern const float g_ReimuObjectSpeedScaleAt00658044;
-extern const float g_ReimuObjectScalarAt00657850;
 extern const float g_ReimuObjectOwnerOffsetAt006590A4;
 extern const float g_ReimuObjectRightBoundAt00659250;
 extern const float g_ReimuObjectLeftBoundAt00658344;
@@ -33,14 +24,10 @@ extern const float g_ReimuObjectUpperBoundAt00657884;
 extern const float g_ReimuObjectLowerBoundAt0065924C;
 extern const float g_ReimuObjectRotationStepAt006590C4;
 extern const float g_ReimuObjectOwnerYOffsetAt00659080;
-extern const float g_ReimuObjectScaleMultiplierAt00659090;
-extern const float g_ReimuObjectScaleIncrementAt006583FC;
 extern const float g_ReimuObjectRightBoundAt00659248;
 extern const float g_ReimuObjectFullRotationAt00657864;
-extern const float g_ReimuObjectHalfAt00657478;
 extern const float g_ReimuObjectLowerOscillationLimitAt00659234;
 extern const float g_ReimuObjectScalarAt0065839C;
-extern const float g_ReimuObjectScaleCeilingAt006581E0;
 extern const float g_ReimuObjectVerticalSpringAt00658354;
 extern const float g_ReimuObjectHorizontalDriftAt006578C0;
 extern const float g_ReimuObjectScaleBaseAt00659240;
@@ -49,7 +36,6 @@ extern const float g_ReimuObjectVerticalLowerLimitAt00659244;
 extern const float g_ReimuObjectRotationStepAt00658290;
 extern const float g_ReimuObjectHalfTurnAt00659238;
 extern float g_AngleShiftAt00657878;
-extern double g_RiseAt00658050;
 extern const float g_ReimuObjectContactProjectionAt00657888;
 extern const float g_ReimuObjectRotationStepAt00657D70;
 extern const float g_ReimuObjectScaleDenominatorAt00658294;
@@ -130,16 +116,16 @@ void ReimuObject::Advance()
             }
         }
         SetPolarVelocity(static_cast<float>(field0DC),
-            static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4 +
+            static_cast<float>(field0D8) * FloatConstants::OneTenth +
             g_ReimuObjectScalarAt00658290);
         field0DE = field0DE + 0x1E;
         field0D8 = field0D8 + 2;
         if (animationStage > 0 && field0DA < 0x3C) {
             if ((owner->opponent->y) + g_ReimuObjectContactProjectionAt00657888 < y) {
-                field0C8 = (field0C8) + g_ReimuObjectScalarAt00657480;
+                field0C8 = (field0C8) + FloatConstants::Two;
             }
             if (y < (owner->opponent->y) + g_ReimuObjectContactProjectionAt00657888) {
-                field0C8 = field0C8 - g_ReimuObjectScalarAt00657480;
+                field0C8 = field0C8 - FloatConstants::Two;
             }
             ++field0DA;
         }
@@ -174,28 +160,28 @@ void ReimuObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = 5.0f;
                     velocityX = 11.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = 6.0f;
                     velocityX = 8.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = -5.0f;
                     velocityX = 11.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = -6.0f;
                     velocityX = 8.0f;
@@ -211,7 +197,7 @@ void ReimuObject::Advance()
             if (animationStage == 1 && animationFrame == 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     owner->SpawnBattleEffect(
                         0x325, x - facing * 30, field0CC, facing, 1);
                 }
@@ -231,28 +217,28 @@ void ReimuObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = 5.0f;
                     velocityX = 25.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = 6.0f;
                     velocityX = 22.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = -5.0f;
                     velocityX = 25.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = -6.0f;
                     velocityX = 22.0f;
@@ -268,7 +254,7 @@ void ReimuObject::Advance()
             if (animationStage == 1 && animationFrame == 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     owner->SpawnBattleEffect(
                         0x325, x - facing * 30, field0CC, facing, 1);
                 }
@@ -328,8 +314,8 @@ void ReimuObject::Advance()
             color[2] = 0xFF;
             color[3] = 0xFF;
         }
-        scaleX = (scaleX) + g_ReimuObjectScaleStepAt00658348;
-        scaleY = (scaleY) + g_ReimuObjectScaleStepAt00658348;
+        scaleX = (scaleX) + FloatConstants::OneFifth;
+        scaleY = (scaleY) + FloatConstants::OneFifth;
         if (color[0] > 20 && animationStage > 0) {
             color[0] = color[0] - 20;
         }
@@ -362,22 +348,22 @@ void ReimuObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 field0DA = 0x5DC;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     field0DC = 0;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     field0DC = 0x2D;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     field0DC = 0x5A;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     field0DC = 0x87;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker4At00657D14) {
+                if (field0C8 == FloatConstants::Four) {
                     field0DC = 0xB4;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker5At00657874) {
+                if (field0C8 == FloatConstants::Five) {
                     field0DC = 0xE1;
                 }
                 if (field0C8 == g_ReimuObjectScalarAt00658290) {
@@ -426,9 +412,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -441,19 +427,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -489,7 +475,7 @@ void ReimuObject::Advance()
             rotationX = 15.0f;
             field0D8 = 1;
         }
-        rotationZ = (rotationZ) + g_ReimuObjectDirectionMarker5At00657874;
+        rotationZ = (rotationZ) + FloatConstants::Five;
         if (animationStage > 0) {
             if (color[0] > 0x1E) {
                 color[0] -= 0x1E;
@@ -518,22 +504,22 @@ void ReimuObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 field0DA = 0x5DC;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     field0DC = 0;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     field0DC = 0x2D;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     field0DC = 0x5A;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     field0DC = 0x87;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker4At00657D14) {
+                if (field0C8 == FloatConstants::Four) {
                     field0DC = 0xB4;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker5At00657874) {
+                if (field0C8 == FloatConstants::Five) {
                     field0DC = 0xE1;
                 }
                 if (field0C8 == g_ReimuObjectScalarAt00658290) {
@@ -582,9 +568,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -597,19 +583,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -636,22 +622,22 @@ void ReimuObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 field0DA = 0x5DC;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     field0DC = 0;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     field0DC = 0x2D;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     field0DC = 0x5A;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     field0DC = 0x87;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker4At00657D14) {
+                if (field0C8 == FloatConstants::Four) {
                     field0DC = 0xB4;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker5At00657874) {
+                if (field0C8 == FloatConstants::Five) {
                     field0DC = 0xE1;
                 }
                 if (field0C8 == g_ReimuObjectScalarAt00658290) {
@@ -700,9 +686,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -715,19 +701,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -773,7 +759,7 @@ void ReimuObject::Advance()
         }
         ++field0D8;
         SetPolarVelocity(field0C8,
-            static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4 + field0CC);
+            static_cast<float>(field0D8) * FloatConstants::OneTenth + field0CC);
         if (field07C != 0 && animationStage == 1) {
             ResetSecondaryCounter(2);
             return;
@@ -847,16 +833,16 @@ void ReimuObject::Advance()
                 field0DC = static_cast<short>(field0C8);
             }
             SetPolarVelocity(field0C8,
-                static_cast<float>(field0DA) * g_ReimuObjectScalarAt006590B4 +
-                g_ReimuObjectScalarAt00657850);
+                static_cast<float>(field0DA) * FloatConstants::OneTenth +
+                FloatConstants::Ten);
             field0DE = field0DE + 0x1E;
             ++field0DA;
             if (animationStage > 0 && field0DC < 0x5A) {
                 if ((owner->opponent->y) + g_ReimuObjectContactProjectionAt00657888 < y) {
-                    field0C8 = (field0C8) + g_ReimuObjectDirectionMarker1At0065747C;
+                    field0C8 = (field0C8) + FloatConstants::One;
                 }
                 if (y < (owner->opponent->y) + g_ReimuObjectContactProjectionAt00657888) {
-                    field0C8 = field0C8 - g_ReimuObjectDirectionMarker1At0065747C;
+                    field0C8 = field0C8 - FloatConstants::One;
                 }
                 ++field0DC;
             }
@@ -926,7 +912,7 @@ void ReimuObject::Advance()
                 field0DC = 0;
                 field0DE = 0;
             }
-            rotationZ = rotationZ - g_ReimuObjectScalarAt00657480;
+            rotationZ = rotationZ - FloatConstants::Two;
             if (field07C != 0) {
                 ++field0D8;
                 if (field0D8 > 5) {
@@ -935,8 +921,8 @@ void ReimuObject::Advance()
                 }
             }
             if (animationStage > 0x38) {
-                scaleX = (scaleX) * g_ReimuObjectScaleMultiplierAt00659090;
-                scaleY = (scaleY) * g_ReimuObjectScaleMultiplierAt00659090;
+                scaleX = (scaleX) * FloatConstants::FourFifths;
+                scaleY = (scaleY) * FloatConstants::FourFifths;
             }
             if (animationStage == 0x3A) {
                 if (color[0] >= 0x0F) {
@@ -966,8 +952,8 @@ void ReimuObject::Advance()
             color[2] = 0xFF;
             color[3] = 0xFF;
         }
-        scaleX = (scaleX) + g_ReimuObjectScaleIncrementAt006583FC;
-        scaleY = (scaleY) + g_ReimuObjectScaleIncrementAt006583FC;
+        scaleX = (scaleX) + FloatConstants::ThreeTenths;
+        scaleY = (scaleY) + FloatConstants::ThreeTenths;
         if (animationStage > 0) {
             if (color[0] >= 0x0F) {
                 color[0] = color[0] - 0x0F;
@@ -1093,8 +1079,8 @@ void ReimuObject::Advance()
             velocityY = 0.0f;
         }
         if (animationStage > 0x13) {
-            rotationZ = rotationZ - g_ReimuObjectDirectionMarker4At00657D14;
-            velocityX = (velocityX) + g_ReimuObjectScaleStepAt00658348;
+            rotationZ = rotationZ - FloatConstants::Four;
+            velocityX = (velocityX) + FloatConstants::OneFifth;
             if (owner->spirit > 5) {
                 owner->UpdateGaugeTimer(4);
             } else {
@@ -1250,12 +1236,12 @@ void ReimuObject::Advance()
             color[3] = 0xFF;
         }
         if (animationStage == 0) {
-            scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
-            scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+            scaleX = scaleX - FloatConstants::OneTenth;
+            scaleY = scaleY - FloatConstants::OneTenth;
         }
         if (animationStage == 1) {
-            scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
-            scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+            scaleX = scaleX - FloatConstants::OneTenth;
+            scaleY = scaleY - FloatConstants::OneTenth;
             color[0] = color[0] - 0x32;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -1276,12 +1262,12 @@ void ReimuObject::Advance()
             color[3] = 0xFF;
         }
         if (animationStage == 0) {
-            scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
-            scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+            scaleX = scaleX - FloatConstants::OneTenth;
+            scaleY = scaleY - FloatConstants::OneTenth;
         }
         if (animationStage == 1) {
-            scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
-            scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+            scaleX = scaleX - FloatConstants::OneTenth;
+            scaleY = scaleY - FloatConstants::OneTenth;
             color[0] = color[0] - 0x32;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -1302,12 +1288,12 @@ void ReimuObject::Advance()
             color[3] = 0xFF;
         }
         if (animationStage == 0) {
-            scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
-            scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+            scaleX = scaleX - FloatConstants::OneTenth;
+            scaleY = scaleY - FloatConstants::OneTenth;
         }
         if (animationStage == 1) {
-            scaleX = scaleX - g_ReimuObjectScalarAt006590B4;
-            scaleY = scaleY - g_ReimuObjectScalarAt006590B4;
+            scaleX = scaleX - FloatConstants::OneTenth;
+            scaleY = scaleY - FloatConstants::OneTenth;
             color[0] = color[0] - 0x32;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -1358,13 +1344,13 @@ void ReimuObject::Advance()
             return;
         }
         else {
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (rotationZ > g_ReimuObjectFullRotationAt00657864) {
                 rotationX = rotationX - g_ReimuObjectFullRotationAt00657864;
             }
             if (animationStage < 3) {
-                velocityX = velocityX - g_ReimuObjectDirectionMarker1At0065747C;
-                if (velocityX < g_ReimuObjectHalfAt00657478) {
+                velocityX = velocityX - FloatConstants::One;
+                if (velocityX < FloatConstants::Half) {
                     velocityX = 0.5f;
                 }
             }
@@ -1432,13 +1418,13 @@ void ReimuObject::Advance()
             return;
         }
         else {
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (rotationZ > g_ReimuObjectFullRotationAt00657864) {
                 rotationX = rotationX - g_ReimuObjectFullRotationAt00657864;
             }
             if (animationStage < 3) {
-                velocityX = velocityX - g_ReimuObjectScalarAt00657480;
-                if (velocityX < g_ReimuObjectHalfAt00657478) {
+                velocityX = velocityX - FloatConstants::Two;
+                if (velocityX < FloatConstants::Half) {
                     velocityX = 0.5f;
                 }
             }
@@ -1506,13 +1492,13 @@ void ReimuObject::Advance()
             return;
         }
         else {
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (rotationZ > g_ReimuObjectFullRotationAt00657864) {
                 rotationX = rotationX - g_ReimuObjectFullRotationAt00657864;
             }
             if (animationStage < 3) {
-                velocityX = velocityX - g_ReimuObjectDirectionMarker3At00657CF8;
-                if (velocityX < g_ReimuObjectHalfAt00657478) {
+                velocityX = velocityX - FloatConstants::Three;
+                if (velocityX < FloatConstants::Half) {
                     velocityX = 0.5f;
                 }
             }
@@ -1604,7 +1590,7 @@ void ReimuObject::Advance()
             }
             if (animationStage == 3) {
                 rotationZ = (rotationZ) + g_AngleShiftAt00657878;
-                velocityY = (velocityY) + g_RiseAt00658050;
+                velocityY = (velocityY) + FloatConstants::HalfDouble;
             }
             if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
@@ -1625,22 +1611,22 @@ void ReimuObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 field0DA = 2000;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     field0DC = 0;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     field0DC = 0x2D;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     field0DC = 0x5A;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     field0DC = 0x87;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker4At00657D14) {
+                if (field0C8 == FloatConstants::Four) {
                     field0DC = 0xB4;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker5At00657874) {
+                if (field0C8 == FloatConstants::Five) {
                     field0DC = 0xE1;
                 }
                 if (field0C8 == g_ReimuObjectScalarAt00658290) {
@@ -1682,9 +1668,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScaleStepAt00658348;
-                scaleY = (scaleY) + g_ReimuObjectScaleStepAt00658348;
-                if (scaleX > g_ReimuObjectScaleCeilingAt006581E0) {
+                scaleX = (scaleX) + FloatConstants::OneFifth;
+                scaleY = (scaleY) + FloatConstants::OneFifth;
+                if (scaleX > FloatConstants::OneAndHalf) {
                     scaleX = 1.5f;
                     scaleY = 1.5f;
                 }
@@ -1697,21 +1683,21 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleIncrementAt006583FC;
-                scaleY = scaleY - g_ReimuObjectScaleIncrementAt006583FC;
+                scaleX = scaleX - FloatConstants::ThreeTenths;
+                scaleY = scaleY - FloatConstants::ThreeTenths;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             if (animationStage < 2) {
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                    static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             }
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -1752,22 +1738,22 @@ void ReimuObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 field0DA = 2000;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     field0DC = 0;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     field0DC = 0x2D;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     field0DC = 0x5A;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     field0DC = 0x87;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker4At00657D14) {
+                if (field0C8 == FloatConstants::Four) {
                     field0DC = 0xB4;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker5At00657874) {
+                if (field0C8 == FloatConstants::Five) {
                     field0DC = 0xE1;
                 }
                 if (field0C8 == g_ReimuObjectScalarAt00658290) {
@@ -1809,9 +1795,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScaleStepAt00658348;
-                scaleY = (scaleY) + g_ReimuObjectScaleStepAt00658348;
-                if (scaleX > g_ReimuObjectScaleCeilingAt006581E0) {
+                scaleX = (scaleX) + FloatConstants::OneFifth;
+                scaleY = (scaleY) + FloatConstants::OneFifth;
+                if (scaleX > FloatConstants::OneAndHalf) {
                     scaleX = 1.5f;
                     scaleY = 1.5f;
                 }
@@ -1824,21 +1810,21 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleIncrementAt006583FC;
-                scaleY = scaleY - g_ReimuObjectScaleIncrementAt006583FC;
+                scaleX = scaleX - FloatConstants::ThreeTenths;
+                scaleY = scaleY - FloatConstants::ThreeTenths;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             if (animationStage < 2) {
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                    static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             }
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -1879,22 +1865,22 @@ void ReimuObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 field0DA = 2000;
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     field0DC = 0;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     field0DC = 0x2D;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     field0DC = 0x5A;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     field0DC = 0x87;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker4At00657D14) {
+                if (field0C8 == FloatConstants::Four) {
                     field0DC = 0xB4;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker5At00657874) {
+                if (field0C8 == FloatConstants::Five) {
                     field0DC = 0xE1;
                 }
                 if (field0C8 == g_ReimuObjectScalarAt00658290) {
@@ -1936,9 +1922,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScaleStepAt00658348;
-                scaleY = (scaleY) + g_ReimuObjectScaleStepAt00658348;
-                if (scaleX > g_ReimuObjectScaleCeilingAt006581E0) {
+                scaleX = (scaleX) + FloatConstants::OneFifth;
+                scaleY = (scaleY) + FloatConstants::OneFifth;
+                if (scaleX > FloatConstants::OneAndHalf) {
                     scaleX = 1.5f;
                     scaleY = 1.5f;
                 }
@@ -1951,21 +1937,21 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleIncrementAt006583FC;
-                scaleY = scaleY - g_ReimuObjectScaleIncrementAt006583FC;
+                scaleX = scaleX - FloatConstants::ThreeTenths;
+                scaleY = scaleY - FloatConstants::ThreeTenths;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             if (animationStage < 2) {
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                    static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             }
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -2019,28 +2005,28 @@ void ReimuObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                if (field0C8 == g_ReimuObjectDirectionMarker0At0065782C) {
+                if (field0C8 == FloatConstants::Zero) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = 3.0f;
                     velocityX = 11.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker1At0065747C) {
+                if (field0C8 == FloatConstants::One) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = 6.0f;
                     velocityX = 8.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectScalarAt00657480) {
+                if (field0C8 == FloatConstants::Two) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = -3.0f;
                     velocityX = 11.0f;
                     rotationZ = -AngleAt00483300(velocityY, velocityX) /
                         g_ReimuObjectAngleUnitAt00657828;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker3At00657CF8) {
+                if (field0C8 == FloatConstants::Three) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
                     velocityY = -6.0f;
                     velocityX = 8.0f;
@@ -2098,7 +2084,7 @@ void ReimuObject::Advance()
         if (y <= (owner->opponent->y) + g_ReimuObjectContactProjectionAt00657888) {
             velocityY = (velocityY) + g_ReimuObjectVerticalSpringAt00658354;
         }
-        if (velocityY > g_ReimuObjectScalarAt00657480) {
+        if (velocityY > FloatConstants::Two) {
             velocityY = 2.0f;
         }
         if (velocityY < g_ReimuObjectVerticalLowerLimitAt00659244) {
@@ -2114,14 +2100,14 @@ void ReimuObject::Advance()
         y = y + velocityY;
         if (animationFrame == 0) {
             owner->SpawnBattleEffect(0x341,
-                ((x) - g_ReimuObjectScalarAt00657850) + static_cast<float>(RecordedRange(0, 0x14)),
-                ((y) - g_ReimuObjectScalarAt00657850) + static_cast<float>(RecordedRange(0, 0x14)), facing, 1);
+                ((x) - FloatConstants::Ten) + static_cast<float>(RecordedRange(0, 0x14)),
+                ((y) - FloatConstants::Ten) + static_cast<float>(RecordedRange(0, 0x14)), facing, 1);
         }
         if (animationFrame == 0) {
             field0DA = static_cast<short>(RecordedRange(0, 0x14));
-            scaleX = static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044 +
+            scaleX = static_cast<float>(field0DA) * FloatConstants::OneHundredth +
                 g_ReimuObjectScaleBaseAt00659240;
-            scaleY = static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044 +
+            scaleY = static_cast<float>(field0DA) * FloatConstants::OneHundredth +
                 g_ReimuObjectScaleBaseAt00659240;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -2149,7 +2135,7 @@ void ReimuObject::Advance()
             velocityY = 4.0f;
             velocityX = 0.0f;
         }
-        velocityY = velocityY - g_ReimuObjectScalarAt006590B4;
+        velocityY = velocityY - FloatConstants::OneTenth;
         x = facing * velocityX + x;
         y = y + velocityY;
         if (color[0] > 0x0D) {
@@ -2203,8 +2189,8 @@ void ReimuObject::Advance()
             field0DE = 0;
             field0DC = static_cast<short>(field0C8);
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4 +
-                g_ReimuObjectScalarAt00657850);
+                static_cast<float>(field0D8) * FloatConstants::OneTenth +
+                FloatConstants::Ten);
         }
         if (animationStage > 0) {
             field0DA = static_cast<short>(AngleAt00483300(
@@ -2225,8 +2211,8 @@ void ReimuObject::Advance()
             }
         }
         SetPolarVelocity(static_cast<float>(field0DC),
-            static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4 +
-            g_ReimuObjectScalarAt00657850);
+            static_cast<float>(field0D8) * FloatConstants::OneTenth +
+            FloatConstants::Ten);
         rotationZ = AngleAt00483300(velocityY, velocityX) /
             g_ReimuObjectAngleUnitAt00657828;
         field0DE = field0DE + 0x1E;
@@ -2298,9 +2284,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -2313,19 +2299,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -2390,9 +2376,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -2405,19 +2391,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -2482,9 +2468,9 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -2497,19 +2483,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -2566,9 +2552,9 @@ void ReimuObject::Advance()
                 return;
             }
             if (animationStage < 2) {
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -2581,19 +2567,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -2650,9 +2636,9 @@ void ReimuObject::Advance()
                 return;
             }
             if (animationStage < 2) {
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -2665,19 +2651,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -2734,9 +2720,9 @@ void ReimuObject::Advance()
                 return;
             }
             if (animationStage < 2) {
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                scaleY = (scaleY) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                scaleY = (scaleY) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                 }
@@ -2749,19 +2735,19 @@ void ReimuObject::Advance()
                 if (field0DA < 0) {
                     field0DA = 0;
                 }
-                scaleX = scaleX - g_ReimuObjectScaleStepAt00658348;
-                scaleY = scaleY - g_ReimuObjectScaleStepAt00658348;
+                scaleX = scaleX - FloatConstants::OneFifth;
+                scaleY = scaleY - FloatConstants::OneFifth;
                 color[0] = color[0] - 10;
-                if (scaleX < g_ReimuObjectDirectionMarker0At0065782C) {
+                if (scaleX < FloatConstants::Zero) {
                     scaleX = 0.0f;
                     scaleY = 0.0f;
                 }
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0DA) * g_ReimuObjectSpeedScaleAt00658044);
+                static_cast<float>(field0DA) * FloatConstants::OneHundredth);
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             if (x > g_ReimuObjectRightBoundAt00659250 ||
                 x < g_ReimuObjectLeftBoundAt00658344 ||
                 y > g_ReimuObjectUpperBoundAt00658E80 ||
@@ -2906,7 +2892,7 @@ void ReimuObject::Advance()
                 field0DE = 0;
                 field0DC = static_cast<short>(field0C8);
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                    static_cast<float>(field0D8) * FloatConstants::OneTenth);
             }
             if (animationStage == 1) {
                 if (field0D8 > 1) {
@@ -2922,7 +2908,7 @@ void ReimuObject::Advance()
                 // Hold the projectile speed during the fade.
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                static_cast<float>(field0D8) * FloatConstants::OneTenth);
             rotationZ = AngleAt00483300(velocityY, velocityX) /
                 g_ReimuObjectAngleUnitAt00657828;
             x = facing * velocityX + x;
@@ -2970,21 +2956,21 @@ void ReimuObject::Advance()
                 color[1] = 0xFF;
                 color[2] = 0xFF;
                 color[3] = 0xFF;
-                velocityX = (field0C8) + g_ReimuObjectDirectionMarker0At0065782C;
+                velocityX = (field0C8) + FloatConstants::Zero;
                 velocityY = 3.0f;
             }
             if (animationStage == 1) {
-                scaleX = (scaleX) + g_ReimuObjectScalarAt006590B4;
-                if (scaleX > g_ReimuObjectDirectionMarker1At0065747C) {
+                scaleX = (scaleX) + FloatConstants::OneTenth;
+                if (scaleX > FloatConstants::One) {
                     scaleX = 1.0f;
                 }
                 scaleY = scaleX;
             }
-            rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657850;
+            rotationZ = (rotationZ) + FloatConstants::Ten;
             x = facing * velocityX + x;
             y = y + velocityY;
-            velocityY = velocityY - g_ReimuObjectHalfAt00657478;
-            if (y + velocityY < g_ReimuObjectDirectionMarker0At0065782C) {
+            velocityY = velocityY - FloatConstants::Half;
+            if (y + velocityY < FloatConstants::Zero) {
                 y = 0.0f;
                 velocityY = -velocityY;
                 field07C = 0;
@@ -3024,7 +3010,7 @@ void ReimuObject::Advance()
                 velocityY = 0.0f;
             }
             if (animationStage > 0x13) {
-                rotationZ = rotationZ - g_ReimuObjectDirectionMarker4At00657D14;
+                rotationZ = rotationZ - FloatConstants::Four;
                 velocityX = (velocityX) + g_ReimuObjectHorizontalDriftAt006578C0;
             }
             x = facing * velocityX + x;
@@ -3074,7 +3060,7 @@ void ReimuObject::Advance()
                 velocityY = 0.0f;
             }
             if (animationStage > 0x13) {
-                rotationZ = rotationZ - g_ReimuObjectDirectionMarker4At00657D14;
+                rotationZ = rotationZ - FloatConstants::Four;
                 velocityX = (velocityX) + g_ReimuObjectVerticalSpringAt00658354;
             }
             if (field07C != 0) {
@@ -3148,7 +3134,7 @@ void ReimuObject::Advance()
         if (static_cast<ReimuFighter*>(owner)->fieldF28 == 3 && field0DE <= 0) {
             owner->PlaySound(0x0D);
             owner->field314 = -(static_cast<float>(static_cast<ReimuFighter*>(owner)->fieldF24) + field0C8 +
-                g_ReimuObjectDirectionMarker0At0065782C) * static_cast<float>(facing);
+                FloatConstants::Zero) * static_cast<float>(facing);
             owner->field318 = 100.0f;
             owner->SpawnBattleEffect(0x3A0, x, y, 1, 1);
             field0DE = 10;
@@ -3204,7 +3190,7 @@ void ReimuObject::Advance()
                 field0DE = 0;
                 field0DC = static_cast<short>(field0C8);
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                    static_cast<float>(field0D8) * FloatConstants::OneTenth);
             }
             if (animationStage == 1) {
                 if (field0D8 > 1) {
@@ -3220,7 +3206,7 @@ void ReimuObject::Advance()
                 // Hold the projectile speed during the fade.
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                static_cast<float>(field0D8) * FloatConstants::OneTenth);
             rotationZ = AngleAt00483300(velocityY, velocityX) /
                 g_ReimuObjectAngleUnitAt00657828;
             x = facing * velocityX + x;
@@ -3290,7 +3276,7 @@ void ReimuObject::Advance()
                 // Hold the projectile speed during the fade.
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                static_cast<float>(field0D8) * FloatConstants::OneTenth);
             rotationZ = AngleAt00483300(velocityY, velocityX) /
                 g_ReimuObjectAngleUnitAt00657828;
             x = facing * velocityX + x;
@@ -3344,7 +3330,7 @@ void ReimuObject::Advance()
                 field0DE = 0;
                 field0DC = static_cast<short>(field0C8);
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                    static_cast<float>(field0D8) * FloatConstants::OneTenth);
             }
             if (animationStage == 1) {
                 if (field0D8 > 1) {
@@ -3360,7 +3346,7 @@ void ReimuObject::Advance()
                 // Hold the projectile speed during the fade.
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                static_cast<float>(field0D8) * FloatConstants::OneTenth);
             rotationZ = AngleAt00483300(velocityY, velocityX) /
                 g_ReimuObjectAngleUnitAt00657828;
             x = facing * velocityX + x;
@@ -3414,7 +3400,7 @@ void ReimuObject::Advance()
                 field0DE = 0;
                 field0DC = static_cast<short>(field0C8);
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                    static_cast<float>(field0D8) * FloatConstants::OneTenth);
             }
             if (animationStage == 1) {
                 if (field0D8 > 1) {
@@ -3430,7 +3416,7 @@ void ReimuObject::Advance()
                 // Hold the projectile speed during the fade.
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                static_cast<float>(field0D8) * FloatConstants::OneTenth);
             rotationZ = AngleAt00483300(velocityY, velocityX) /
                 g_ReimuObjectAngleUnitAt00657828;
             x = facing * velocityX + x;
@@ -3481,13 +3467,13 @@ void ReimuObject::Advance()
                 owner->aiCardTimer = 0x3C;
             }
             if (field0DA == 1) {
-                field0CC = (field0CC) + g_ReimuObjectScalarAt006590B4;
-                if (field0CC >= g_ReimuObjectScalarAt00657850) {
+                field0CC = (field0CC) + FloatConstants::OneTenth;
+                if (field0CC >= FloatConstants::Ten) {
                     field0DA = -1;
                 }
             }
             if (field0DA == -1) {
-                field0CC = field0CC - g_ReimuObjectScalarAt006590B4;
+                field0CC = field0CC - FloatConstants::OneTenth;
                 if (field0CC <= g_ReimuObjectLowerOscillationLimitAt00659234) {
                     field0DA = 1;
                 }
@@ -3560,12 +3546,12 @@ void ReimuObject::Advance()
                 field0E0 = 0;
                 owner->aiCardTimer = 0x3C;
             }
-            field0CC = (field0CC) + g_ReimuObjectScalarAt006590B4;
-            if (field0CC >= g_ReimuObjectDirectionMarker5At00657874) {
+            field0CC = (field0CC) + FloatConstants::OneTenth;
+            if (field0CC >= FloatConstants::Five) {
                 field0CC = 5.0f;
             }
             if (owner->field3B8 == 0) {
-                static_cast<ReimuFighter*>(owner)->fieldF24 += g_ReimuObjectDirectionMarker1At0065747C;
+                static_cast<ReimuFighter*>(owner)->fieldF24 += FloatConstants::One;
             }
             if (static_cast<ReimuFighter*>(owner)->fieldF24 > 0xB4) {
                 static_cast<ReimuFighter*>(owner)->fieldF24 = static_cast<ReimuFighter*>(owner)->fieldF24 - 0x168;
@@ -3641,7 +3627,7 @@ void ReimuObject::Advance()
             }
             x = facing * velocityX + x;
             y = y - velocityY;
-            rotationZ = (rotationZ) + g_ReimuObjectDirectionMarker4At00657D14;
+            rotationZ = (rotationZ) + FloatConstants::Four;
             if (field07C == 6) {
                 field080 = 1;
             }
@@ -3670,8 +3656,8 @@ void ReimuObject::Advance()
                 color[3] = 0xFF;
             }
             if (animationStage == 1) {
-                scaleX = (scaleX) + g_ReimuObjectScaleStepAt00658348;
-                scaleY = (scaleY) + g_ReimuObjectScaleStepAt00658348;
+                scaleX = (scaleX) + FloatConstants::OneFifth;
+                scaleY = (scaleY) + FloatConstants::OneFifth;
                 if (color[0] > 0x14) {
                     color[0] -= 0x14;
                 } else {
@@ -3714,7 +3700,7 @@ void ReimuObject::Advance()
                 field0DE = 0;
                 field0DC = static_cast<short>(field0C8);
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                    static_cast<float>(field0D8) * FloatConstants::OneTenth);
             }
             if (animationStage == 1) {
                 if (field0D8 > 1) {
@@ -3730,7 +3716,7 @@ void ReimuObject::Advance()
                 // Hold the projectile speed during the fade.
             }
             SetPolarVelocity(static_cast<float>(field0DC),
-                static_cast<float>(field0D8) * g_ReimuObjectScalarAt006590B4);
+                static_cast<float>(field0D8) * FloatConstants::OneTenth);
             rotationZ = AngleAt00483300(velocityY, velocityX) /
                 g_ReimuObjectAngleUnitAt00657828;
             x = facing * velocityX + x;
@@ -3773,7 +3759,7 @@ void ReimuObject::Advance()
                 color[2] = 0xFF;
                 color[3] = 0xFF;
             }
-            rotationZ = (rotationZ) + g_ReimuObjectDirectionMarker1At0065747C;
+            rotationZ = (rotationZ) + FloatConstants::One;
             if (animationStage == 0) {
                 if (color[0] < 0xB4) {
                     color[0] = static_cast<unsigned char>(color[0] + 0x19);
@@ -3883,10 +3869,10 @@ void ReimuObject::Advance()
         }
         else {
             scaleX = (static_cast<float>(owner->field3A0) /
-                static_cast<float>(field0D8)) * 2.0f + g_ReimuObjectDirectionMarker1At0065747C;
+                static_cast<float>(field0D8)) * 2.0f + FloatConstants::One;
             scaleY = (static_cast<float>(owner->field3A0) /
-                static_cast<float>(field0D8)) * 2.0f + g_ReimuObjectDirectionMarker1At0065747C;
-            rotationZ = rotationZ - g_ReimuObjectDirectionMarker1At0065747C;
+                static_cast<float>(field0D8)) * 2.0f + FloatConstants::One;
+            rotationZ = rotationZ - FloatConstants::One;
             if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(1);
                 return;
@@ -4020,7 +4006,7 @@ void ReimuObject::Advance()
                 field0DA = 3;
             }
             SetPolarVelocity(static_cast<float>(field0D8),
-                static_cast<float>(field0DA) * g_ReimuObjectScaleMultiplierAt00659090);
+                static_cast<float>(field0DA) * FloatConstants::FourFifths);
         }
         if (animationStage == 1) {
             field0D8 = static_cast<short>(AngleAt00483300(
@@ -4070,7 +4056,7 @@ void ReimuObject::Advance()
                 field0DA = 3;
             }
             SetPolarVelocity(static_cast<float>(field0D8),
-                static_cast<float>(field0DA) * g_ReimuObjectScaleMultiplierAt00659090);
+                static_cast<float>(field0DA) * FloatConstants::FourFifths);
         }
         if (animationStage == 1) {
             field0D8 = static_cast<short>(AngleAt00483300(
@@ -4103,7 +4089,7 @@ void ReimuObject::Advance()
                     if (owner->opponent->field39C == 0) {
                         if (owner->opponent->field36C < g_ReimuObjectSpiritGaugeLimitAt00659228) {
                             owner->opponent->field36C = (owner->opponent->field36C) +
-                                g_ReimuObjectHalfAt00657478;
+                                FloatConstants::Half;
                         }
                         else {
                             owner->opponent->field36C = 900.0f;
@@ -4147,7 +4133,7 @@ void ReimuObject::Advance()
                 static_cast<float>(field0D8)) * 2.0f;
             scaleY = (static_cast<float>(owner->field3A0) /
                 static_cast<float>(field0D8)) * 2.0f;
-            rotationZ = (rotationZ) + g_ReimuObjectDirectionMarker1At0065747C;
+            rotationZ = (rotationZ) + FloatConstants::One;
             if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(10);
                 return;
@@ -4189,7 +4175,7 @@ void ReimuObject::Advance()
             rotationY = 50.0f;
             field0D8 = 1;
         }
-        rotationZ = (rotationZ) + g_ReimuObjectScalarAt00657480;
+        rotationZ = (rotationZ) + FloatConstants::Two;
         if (animationStage > 0) {
             if (color[0] > 0x1E) {
                 color[0] -= 0x1E;

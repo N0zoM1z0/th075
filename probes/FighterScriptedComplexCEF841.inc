@@ -3,7 +3,7 @@
 // Real unconditional virtual frame method, native x87 operand order.
 // Interior case only, no independently callable exact CODE.
 case 0xCE: {
-    if (y==g_ThresholdAt0065782C || velocityY>g_ThresholdAt0065782C) {
+    if (y==FloatConstants::Zero || velocityY>FloatConstants::Zero) {
         SetupCollisionAt454BC0(3,4,0xFF);
         field088=2;
     }
@@ -11,7 +11,7 @@ case 0xCE: {
         ClearMotionFields();
     if (animationStage>2) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;
             ClearMotionFields();

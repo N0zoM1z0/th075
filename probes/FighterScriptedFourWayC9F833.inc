@@ -15,9 +15,9 @@ case 0xC9: {
             -(facing),1);
         PlaySharedSound(31);
     }
-    if ((velocityX)<g_ThresholdAt0065782C) {
-        velocityX=(velocityX)+g_AnimationDeltaAt0065747C;
-        if ((velocityX)>g_ThresholdAt0065782C) velocityX=0.0f;
+    if ((velocityX)<FloatConstants::Zero) {
+        velocityX=(velocityX)+FloatConstants::One;
+        if ((velocityX)>FloatConstants::Zero) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);

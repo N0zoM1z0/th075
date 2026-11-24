@@ -16,12 +16,12 @@ case 0x339: {
         field0D8=0;
     }
     scaleX =
-        (g_F1061_CeilingAt006583FC -
+        (FloatConstants::ThreeTenths -
             float(field0D8)*g_F1061_StepAt0065972C *
             int(field0D8<10)) +
         g_F1061_OffsetAt00658354 + scaleX;
     scaleY =
-        (g_F1061_CeilingAt006583FC -
+        (FloatConstants::ThreeTenths -
             float(field0D8)*g_F1061_StepAt0065972C *
             int(field0D8<10)) +
         g_F1061_OffsetAt00658354 + scaleY;

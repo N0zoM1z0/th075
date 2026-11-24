@@ -14,9 +14,9 @@ case 0x2DD: {
         velocityX=10.0f;
         velocityY=0.0f;
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)<26) {
-        velocityY=velocityY-g_F894VerticalStageAt00659090;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero && (animationStage)<26) {
+        velocityY=velocityY-FloatConstants::FourFifths;
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetSecondaryCounter(26);
             velocityX=0.0f;
             velocityY=0.0f;

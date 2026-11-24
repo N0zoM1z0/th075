@@ -37,7 +37,7 @@ case 0x34A: {
             return;
         }
     }
-    rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
+    rotationZ=(rotationZ)+FloatConstants::One;
     if (AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;

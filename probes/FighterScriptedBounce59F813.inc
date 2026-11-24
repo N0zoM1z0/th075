@@ -5,7 +5,7 @@
             if ((animationStage)==3) {
                 rotationZ=(rotationZ)+g_F728_RandomOffsetYAt00657858;
                 velocityY=velocityY-field05C;
-                if (velocityY+y<=g_ThresholdAt0065782C) {
+                if (velocityY+y<=FloatConstants::Zero) {
                     scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
                     scriptCounterF02=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
                     ClearMotionFields();
@@ -22,7 +22,7 @@
                 ResetSecondaryCounter(3);
             else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*g_F747_BounceXAt006590BC;
-                velocityY=static_cast<float>(-scriptCounterF02)*g_F747_BounceYAt00658044;
+                velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneHundredth;
                 field05C=0.7f;
                 ResetTransform(0.0f, 95.0f, 0.0f);
             } else if (animationStage == 3 && animationFrame != 0) {

@@ -8,9 +8,9 @@ case 0x2EF: {
 #include "ReimuChargeTransformF1188.inc"
 #undef R1188_FADE_STAGE
 #undef R1188_RETURN_STAGE
-    if (y>g_ThresholdAt0065782C && (animationStage)<14) {
-        velocityY=velocityY-g_ReimuAirDragAt00658348;
-        if (y+velocityY<g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero && (animationStage)<14) {
+        velocityY=velocityY-FloatConstants::OneFifth;
+        if (y+velocityY<FloatConstants::Zero) {
             y=0.0f; velocityX=0.0f; velocityY=0.0f;
             ResetSecondaryCounter(14);
             break;
@@ -32,7 +32,7 @@ case 0x2EF: {
     if ((animationStage)==3 && (animationFrame)==0) {
         x=((*(&opponent->x))+g_ReimuWarpSpreadAt006583B4)-float(RecordedRange(0,2000));
         y=200.0f;
-        velocityX=g_ReimuWarpSpeedAt00657CF8-float(RecordedRange(0,6));
+        velocityX=FloatConstants::Three-float(RecordedRange(0,6));
         velocityY=6.0f;
         PlaySound(2);
         if (x>opponent->x)

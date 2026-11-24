@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 #include "SakuyaFighter.hpp"
@@ -6,10 +7,8 @@
 
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
-extern float g_F747_BounceYAt00658044;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F948_C8UpperAt00657854;
-extern float g_F948_C8DragAt00658350;
 extern float g_F948_C8VolleyYAt00658268;
 extern float g_F950_CAVolleyYAt00658400;
 extern float g_F964_LateFallAt00658048;
@@ -32,7 +31,6 @@ extern float g_F971_YAt00658264;
 extern float g_F971_YAt00658294;
 extern float g_F971_YAt00657878;
 extern float g_F971_YAt00657CBC;
-extern float g_F972_GravityAt00657F74;
 extern float g_F972_YAt00657860;
 extern float g_F972_YAt00658364;
 extern float g_F972_YAt0065836C;
@@ -65,25 +63,13 @@ extern float g_F1017_VolleyYAt0065908C;
 extern float g_F1018_ThirdYAt0065784C;
 extern float g_F1019_FallAt00658354;
 extern float g_F1019_VolleyYAt0065908C;
-extern float g_ThresholdAt0065782C;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_JumpGroundCorrectionAt00658058;
-extern double g_JumpReflectionAt006583E8;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_StopThresholdAt00657480;
 extern float g_TrajectoryUpperAt006590C4;
 extern float g_ContactProjectionAt00657888;
-extern float g_ProjectileFallAt006590B4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_BounceScaleAt00657F74;
 extern float g_AngleShiftAt00657878;
-extern float g_ApproachAt00658058;
-extern double g_ContactScaleAt006583E8;
-extern float g_ExtraThresholdAt00657D14;
-extern float g_SubtractAt00657478;
-extern double g_RiseAt00658050;
 void SakuyaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -92,16 +78,16 @@ void SakuyaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -112,16 +98,16 @@ void SakuyaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -134,16 +120,16 @@ void SakuyaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -154,16 +140,16 @@ void SakuyaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -182,16 +168,16 @@ void SakuyaFighter::Advance() {
             }
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
                 }
             }
-            if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+            if (animationStage == 4 && velocityY < FloatConstants::Four)
                 ResetSecondaryCounter(5);
             ++animationFrame;
             if (animationFrame >= (field072)) {
@@ -216,16 +202,16 @@ void SakuyaFighter::Advance() {
             }
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
                 }
             }
-            if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+            if (animationStage == 4 && velocityY < FloatConstants::Four)
                 ResetSecondaryCounter(5);
             ++animationFrame;
             if (animationFrame >= (field072)) {
@@ -250,9 +236,9 @@ void SakuyaFighter::Advance() {
             }
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -275,10 +261,10 @@ void SakuyaFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -360,7 +346,7 @@ void SakuyaFighter::Advance() {
                 field05C = 0.8f;
                 field07C = 0;
             }
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
                 scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
                 ClearMotionFields();
@@ -379,8 +365,8 @@ void SakuyaFighter::Advance() {
             if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(animationStage - 1);
             if (animationStage == 1 && animationFrame == 0) {
-                if (velocityY != g_ThresholdAt0065782C) {
-                    if (velocityX == g_ThresholdAt0065782C) {
+                if (velocityY != FloatConstants::Zero) {
+                    if (velocityX == FloatConstants::Zero) {
                         ResetSecondaryCounter(3);
                         break;
                     } else {

@@ -1,28 +1,19 @@
+#include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 #include "RemiliaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of RemiliaFighter::Advance at 00543210.
 
-extern float g_ThresholdAt0065782C;
 extern float g_F759_C8DecelAt006593E8;
 extern float g_F759_C9DecelAt00658290;
 extern float g_F701_VolleyYAt00658268;
-extern float g_F699_SideOffsetAt00657874;
 extern float g_F699_SideEdgeAt00657884;
 extern float g_F699_DistanceAt0065787C;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_JumpGroundCorrectionAt00658058;
 extern float g_FallingLateDragAt00659240;
-extern float g_NewDragAt006581E0;
 extern float g_SlowPositiveDragAt006578C0;
 extern float g_ShotPositiveDragAt00659A10;
-extern float g_SpeedClampAt00657CF8;
-extern float g_RisingGravityAt0065747C;
-extern float g_RisingDragAt006581E0;
-extern float g_BounceScaleAt006583FC;
-extern float g_FloatMulAt00657874;
 extern float g_FloatAddAt00657CBC;
 extern float g_F734_RoundY0At00659A30;
 extern float g_F734_RoundY1At00659A2C;
@@ -43,34 +34,25 @@ extern float g_EightShotY0At006591F8;
 extern float g_EightShotY1At00658264;
 extern float g_EightShotY2At00658268;
 extern float g_OneShotYAt0065928C;
-extern double g_JumpReflectionAt006583E8;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
 extern float g_F711_ReverseRandomAt00659A0C;
 extern float g_F714_ShotYAt00657868;
-extern float g_F714_DecelerationAt0065747C;
 extern float g_F715_DecisionHeightAt006593D0;
-extern float g_F718_FallingDragAt00659090;
-extern float g_F718_BounceMinAt00657CF8;
 extern float g_F722_BurstYAt0065826C;
 extern float g_F722_LowYAt00659A10;
 extern float g_F724_ShotYAt00659488;
 extern float g_F728_RandomOffsetXAt00657878;
 extern float g_F728_RandomOffsetYAt00657858;
-extern float g_F728_PositiveDragAt006583FC;
 extern float g_F731_AimOffsetAt00657CBC;
-extern float g_F728_PositiveDrag2At00658058;
-extern float g_StopThresholdAt00657480;
 extern float g_TrajectoryUpperAt006590C4;
 extern float g_ContactProjectionAt00657888;
 extern float g_F747_BounceXAt006590BC;
-extern float g_F747_BounceYAt00658044;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_FallDecelerationAt00659888;
 extern float g_CloudGravityAt0065785C;
 extern float g_CloudShotYAt006591E4;
 extern float g_StormAngleShotYAt00659A18;
-extern float g_StormMotionAt00658348;
 extern float g_StormAngleDenominatorAt00657828;
 extern float g_StormYAt0065948C;
 extern float g_BurstXAt00659238;
@@ -78,15 +60,8 @@ extern float g_BurstXAt00658400;
 extern float g_BurstXAt00659420;
 extern float g_BurstXAt00658370;
 extern float g_BurstXAt006590A8;
-extern float g_ProjectileFallAt006590B4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_BounceScaleAt00657F74;
 extern float g_AngleShiftAt00657878;
-extern float g_ApproachAt00658058;
-extern double g_ContactScaleAt006583E8;
-extern float g_ExtraThresholdAt00657D14;
-extern float g_SubtractAt00657478;
-extern double g_RiseAt00658050;
 void RemiliaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -95,16 +70,16 @@ void RemiliaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -115,16 +90,16 @@ void RemiliaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -137,16 +112,16 @@ void RemiliaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -157,16 +132,16 @@ void RemiliaFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -185,16 +160,16 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
                 }
             }
-            if (animationStage == 3 && velocityY < g_ExtraThresholdAt00657D14)
+            if (animationStage == 3 && velocityY < FloatConstants::Four)
                 ResetSecondaryCounter(4);
             ++animationFrame;
             if (animationFrame >= (animationFrameCount)) {
@@ -218,16 +193,16 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
                 }
             }
-            if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+            if (animationStage == 4 && velocityY < FloatConstants::Four)
                 ResetSecondaryCounter(5);
             ++animationFrame;
             if (animationFrame >= (animationFrameCount)) {
@@ -251,11 +226,11 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
-            if (animationStage == 3 && velocityY < g_ExtraThresholdAt00657D14)
+            if (animationStage == 3 && velocityY < FloatConstants::Four)
                 ResetSecondaryCounter(4);
-            if (y > g_ThresholdAt0065782C) {
+            if (y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -278,10 +253,10 @@ void RemiliaFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -363,7 +338,7 @@ void RemiliaFighter::Advance() {
                 field05C = 0.8f;
                 field07C = 0;
             }
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
                 scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
                 ClearMotionFields();
@@ -382,8 +357,8 @@ void RemiliaFighter::Advance() {
             if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(animationStage - 1);
             if (animationStage == 1 && animationFrame == 0) {
-                if (velocityY != g_ThresholdAt0065782C) {
-                    if (velocityX == g_ThresholdAt0065782C) {
+                if (velocityY != FloatConstants::Zero) {
+                    if (velocityX == FloatConstants::Zero) {
                         ResetSecondaryCounter(3);
                         break;
                     } else {
@@ -775,12 +750,12 @@ void RemiliaFighter::Advance() {
                 field3AC=0;
                 scriptCounterF00=0;
             }
-            if (animationStage<25 && y>g_ThresholdAt0065782C && animationStage>15) {
-                velocityX=(velocityX)-g_F718_FallingDragAt00659090;
+            if (animationStage<25 && y>FloatConstants::Zero && animationStage>15) {
+                velocityX=(velocityX)-FloatConstants::FourFifths;
                 velocityY=velocityY-field05C;
-                if ((velocityX)<g_F718_BounceMinAt00657CF8)
+                if ((velocityX)<FloatConstants::Three)
                     velocityX=3.0f;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(25);
                     y=0.0f;
                     ClearMotionFields();
@@ -838,12 +813,12 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage>3 && animationStage<11) {
                 velocityY=velocityY-g_F722_LowYAt00659A10;
-                if (velocityY<g_ThresholdAt0065782C)
+                if (velocityY<FloatConstants::Zero)
                     velocityY=0.0f;
             }
             if (animationStage>10 && animationStage<14) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(14);
                     break;
                 }
@@ -928,12 +903,12 @@ void RemiliaFighter::Advance() {
                 field3AC=0;
                 scriptCounterF00=0;
             }
-            if (animationStage<25 && y>g_ThresholdAt0065782C && animationStage>15) {
-                velocityX=(velocityX)-g_F718_FallingDragAt00659090;
+            if (animationStage<25 && y>FloatConstants::Zero && animationStage>15) {
+                velocityX=(velocityX)-FloatConstants::FourFifths;
                 velocityY=velocityY-field05C;
-                if ((velocityX)<g_F718_BounceMinAt00657CF8)
+                if ((velocityX)<FloatConstants::Three)
                     velocityX=3.0f;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(25);
                     y=0.0f;
                     ClearMotionFields();

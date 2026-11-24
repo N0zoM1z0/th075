@@ -3,7 +3,7 @@
 // Real floating from signed direction and signed short counter; this
 // is a case INSIDE one currently NONEXACT fighter giant function.
 case F642_CASE: {
-    cardGauge=(cardGauge)+g_AnimationDeltaAt0065747C;
+    cardGauge=(cardGauge)+FloatConstants::One;
     if ((cardGauge)>g_AnimationMaximumAt006583B4)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
@@ -18,12 +18,12 @@ case F642_CASE: {
             (y)+g_ContactProjectionAt00657888,
             facing,1);
     }
-    if ((velocityX)<g_ThresholdAt0065782C) {
-        velocityX=(velocityX)+g_JumpGroundCorrectionAt00658058;
-        if ((velocityX)>g_ThresholdAt0065782C)
+    if ((velocityX)<FloatConstants::Zero) {
+        velocityX=(velocityX)+FloatConstants::ThreeFifths;
+        if ((velocityX)>FloatConstants::Zero)
             velocityX=0.0f;
     }
-    field490=(-scriptCounterF00)*g_ProjectileFallAt006590B4;
+    field490=(-scriptCounterF00)*FloatConstants::OneTenth;
     if (scriptCounterF00>0)
         scriptCounterF00=scriptCounterF00-10;
     if (AdvanceNestedFrame()==animationStageCount)

@@ -1,14 +1,14 @@
 // Native Reimu CC/CD/CE motion loop. Parameters are actual actor policies;
 // this source is included only by the live nonexact 0045DD70 parent.
 case R1185_ACTION: {
-    if ((*(&y)==g_ThresholdAt0065782C) || velocityY>g_ThresholdAt0065782C) {
+    if ((*(&y)==FloatConstants::Zero) || velocityY>FloatConstants::Zero) {
         SetCommandSelection(3,4,0xFF);
         field088=2;
     }
     if ((animationStage)==0 && (field3AC)==0) ClearMotionFields();
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y=0.0f;
             ClearMotionFields();
@@ -16,7 +16,7 @@ case R1185_ACTION: {
         }
     }
 #if R1185_HAS_AUX
-    if ((animationStage)==4 && velocityY<g_ExtraThresholdAt00657D14) ResetSecondaryCounter(5);
+    if ((animationStage)==4 && velocityY<FloatConstants::Four) ResetSecondaryCounter(5);
 #endif
     ++animationFrame;
     if ((animationFrame)>=(animationFrameCount)) {

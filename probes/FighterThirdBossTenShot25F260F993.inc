@@ -29,8 +29,8 @@ case 0x25F: {
                 (*(&y))+g_F968_RoundY190At00659294,
                 facing,1);
         }
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         scriptCounterF00=2;
         ++scriptCounterF02;
     }
@@ -58,8 +58,8 @@ case 0x260: {
                 (*(&y))+g_F968_RoundY190At00659294,
                 facing,1);
         }
-        velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
-        velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
+        velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
+        velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
         scriptCounterF00=2;
         ++scriptCounterF02;
     }

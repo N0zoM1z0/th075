@@ -8,8 +8,8 @@ case 0x187: {
         velocityX=12.5f;
     }
     if ((animationStage)>0) {
-        velocityX=(velocityX)-g_AdditionalGravityAt00659090;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::FourFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }

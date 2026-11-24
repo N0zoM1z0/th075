@@ -20,7 +20,7 @@
             if ((animationStage)==3 && (animationFrame)==0)
                 PlaySound(9);
             if ((animationStage)==7 && (animationFrame)==0) {
-                if (opponent->y==g_ThresholdAt0065782C)
+                if (opponent->y==FloatConstants::Zero)
                     scriptCounterF00=0;
                 else
                     scriptCounterF00=20;

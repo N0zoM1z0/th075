@@ -9,12 +9,12 @@ case 0x47: {
         field05C = 0.8f;
         field07C = 0;
     }
-    if (animationStage==F605_STAGE47 && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage==F605_STAGE47 && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F605_EARLY47);
         break;
     }
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();
@@ -35,12 +35,12 @@ case 0x48: {
         field05C = 1.3f;
         field07C = 0;
     }
-    if (animationStage==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage==F605_STAGE48 && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F605_EARLY48);
         break;
     }
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
         ClearMotionFields();

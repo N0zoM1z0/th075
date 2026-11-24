@@ -11,7 +11,7 @@ case 0x323: {
         field07C=0;
         field0D8=0;
         SetPolarVelocity(field0C8,
-            float(field0D8)*g_F1057_SpeedScaleAt006590B4+
+            float(field0D8)*FloatConstants::OneTenth+
             g_F1070_InitSpeedAt00657858);
         scaleX=0.1f;
         scaleY=0.1f;
@@ -25,11 +25,11 @@ case 0x323: {
     ++field0D8;
     if (animationStage<2) {
         SetPolarVelocity(field0C8,
-            float(field0D8)*g_F1057_SpeedScaleAt006590B4+
+            float(field0D8)*FloatConstants::OneTenth+
             g_F1070_AnimSpeedAt006592A4);
-        if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
-            scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
-            scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
+        if (scaleX<FloatConstants::One) {
+            scaleX=(scaleX)+FloatConstants::OneTenth;
+            scaleY=(scaleY)+FloatConstants::OneTenth;
         }
     }
     if (field07C==6) {

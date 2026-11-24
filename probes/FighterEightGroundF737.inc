@@ -6,7 +6,7 @@
             if ((animationStage)==0 && (animationFrame)==0)
                 field07C=1;
             velocityY=velocityY-field05C;
-            if ((y+velocityY)<=g_ThresholdAt0065782C) {
+            if ((y+velocityY)<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
                 y=0.0f;
@@ -33,7 +33,7 @@
             if ((animationStage)==0 && (animationFrame)==0)
                 field07C=1;
             velocityY=velocityY-field05C;
-            if ((y+velocityY)<=g_ThresholdAt0065782C) {
+            if ((y+velocityY)<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
                 y=0.0f;

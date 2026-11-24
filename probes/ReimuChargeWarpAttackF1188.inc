@@ -4,13 +4,13 @@ case R1188_ACTION: {
         field080=1; field07C=0; field3AC=0;
     }
 #include "ReimuChargeTransformF1188.inc"
-    if (y>g_ThresholdAt0065782C && (animationStage)<R1188_LAND_STAGE
+    if (y>FloatConstants::Zero && (animationStage)<R1188_LAND_STAGE
 #if R1188_HAS_GRAVITY_MIN
         && (animationStage)>3
 #endif
     ) velocityY=velocityY-g_ReimuChargeFallAt00659094;
     if ((animationStage)==R1188_LAND_STAGE || (animationStage)==R1188_LAND_STAGE+1) {
-        if (y+velocityY<g_ThresholdAt0065782C) {
+        if (y+velocityY<FloatConstants::Zero) {
             y=0.0f; velocityX=0.0f; velocityY=0.0f;
             ResetSecondaryCounter(R1188_LAND_STAGE+2);
             break;

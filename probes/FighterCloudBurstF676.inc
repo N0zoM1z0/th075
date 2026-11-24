@@ -9,13 +9,13 @@
             }
             if ((animationStage)>3 && (animationStage)<11) {
                 velocityY=velocityY-g_CloudGravityAt0065785C;
-                if (velocityY<g_ThresholdAt0065782C) velocityY=0.0f;
+                if (velocityY<FloatConstants::Zero) velocityY=0.0f;
             } else if (animationStage >= 0 && animationStage < 4) {
                 // The preparation stages keep their current vertical speed.
             }
             if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0xE);
                     break;
                 }
@@ -98,7 +98,7 @@
             }
             if ((animationStage)>3 && (animationStage)<11) {
                 velocityY=velocityY-g_CloudGravityAt0065785C;
-                if (velocityY<g_ThresholdAt0065782C) velocityY=0.0f;
+                if (velocityY<FloatConstants::Zero) velocityY=0.0f;
             }
             if ((animationStage)>4 && (animationStage)<8 && (scriptCounterF00)<3) {
                 ++scriptCounterF02;
@@ -124,7 +124,7 @@
             }
             if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0xE);
                     break;
                 }

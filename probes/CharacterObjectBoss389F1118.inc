@@ -28,12 +28,12 @@ case 0x389: {
         field0DC=short(RecordedRange(0,15)+5);
         SetPolarVelocity(
             float(field0DA),
-            float(field0D8)*g_F1057_SpeedScaleAt006590B4);
+            float(field0D8)*FloatConstants::OneTenth);
     }
     if (animationStage<=1) {
         SetPolarVelocity(
             float(field0DA),
-            float(field0D8)*g_F1057_SpeedScaleAt006590B4);
+            float(field0D8)*FloatConstants::OneTenth);
         owner->SpawnBattleEffect(
             0x33C,x,y,
             facing,1);

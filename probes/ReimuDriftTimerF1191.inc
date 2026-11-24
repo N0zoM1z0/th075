@@ -23,7 +23,7 @@ case 0x2E5: {
         aiCardTimer=240-g_OptionsModeAt006714D0*30;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
-        Fighter::SpawnBattleEffect(0x38E,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,
+        Fighter::SpawnBattleEffect(0x38E,(*(&x))+FloatConstants::Zero+FloatConstants::Zero,
             y,facing,1);
         PlaySound(7);
         aiCardTimer=180;

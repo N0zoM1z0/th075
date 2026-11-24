@@ -7,15 +7,15 @@ case 0x12F: {
         field07C=0;
     }
     if ((field3AC)>0 && (animationStage)<4) {
-        velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeFifths;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
     if ((animationStage)>3) {
         velocityX=(velocityX)-g_FallingLateDragAt00659240;
-        if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
+        if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==4 && (animationFrame)==0) {
@@ -27,7 +27,7 @@ case 0x12F: {
 // Original 0x130: ground contact, motion reset, and stage-3 projectile.
 case 0x130: {
     velocityY=velocityY-field05C;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
         y=0.0f;
         field05C=0.0f;

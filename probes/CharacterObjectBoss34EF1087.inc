@@ -18,7 +18,7 @@ case 0x34E: {
             g_F1085_ParentMultiplierAt0065989C*static_cast<const float&>(field0C8),
         float(field0D8));
     x=velocityX+owner->x;
-    y=(*(&velocityY))*g_F1085_ParentYMultiplierAt00657F74+
+    y=(*(&velocityY))*FloatConstants::Quarter+
         owner->y+g_F1085_YOffsetAt0065835C;
     if (field0D8<140)
         field0D8=short(field0D8+5);

@@ -40,14 +40,14 @@ case F1065_ACTION: {
         field07C=0;
     }
     SetPolarVelocity(F1066_INITIAL_ANGLE,
-        float(field0DC)*g_F1057_SpeedScaleAt006590B4);
+        float(field0DC)*FloatConstants::OneTenth);
     field0DC=short(field0DC-6);
     if (field0DC<20)
         field0DC=20;
     if (field0D8==0) {
-        if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
-            scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
-            scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
+        if (scaleX<FloatConstants::One) {
+            scaleX=(scaleX)+FloatConstants::OneTenth;
+            scaleY=(scaleY)+FloatConstants::OneTenth;
             color[0]=unsigned char(color[0]+25);
         } else {
             scaleX=1.0f;

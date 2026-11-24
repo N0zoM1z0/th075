@@ -12,7 +12,7 @@ case 0xC8: {
         scriptCounterF00=0;
     }
     if ((velocityX)>g_F834_UpperAt00657CBC) {
-        velocityX=(velocityX)-g_SubtractAt00657478;
+        velocityX=(velocityX)-FloatConstants::Half;
         if ((velocityX)<g_F834_LowerAt006590B0)
             velocityX=9.0f;
     }

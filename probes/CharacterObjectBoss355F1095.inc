@@ -33,15 +33,15 @@ case 0x355: {
         field07C=0;
     }
     if (scaleX<g_F1095_ScaleCeilingAt00659898) {
-        scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
-        scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
+        scaleX=(scaleX)+FloatConstants::OneTenth;
+        scaleY=(scaleY)+FloatConstants::OneTenth;
     } else if (field0D8==0) {
         field080=10;
         ++field0D8;
     }
-    if (velocityX>g_F1059_ScaleRatioAt00657478) {
-        velocityX=velocityX-g_F1059_ScaleRatioAt00657478;
-        if (velocityX<g_F1059_ScaleRatioAt00657478)
+    if (velocityX>FloatConstants::Half) {
+        velocityX=velocityX-FloatConstants::Half;
+        if (velocityX<FloatConstants::Half)
             velocityX=0.5f;
     }
     if (field0DC==0) {
@@ -63,8 +63,8 @@ case 0x355: {
         field0DC=2;
     }
     if (animationStage==0x1F) {
-        scaleX=(scaleX)+g_F1051_ScaleStepAt00658348;
-        scaleY=(scaleY)+g_F1051_ScaleStepAt00658348;
+        scaleX=(scaleX)+FloatConstants::OneFifth;
+        scaleY=(scaleY)+FloatConstants::OneFifth;
         color[0]=unsigned char(color[0]-25);
     }
     y=y+velocityY;

@@ -26,8 +26,8 @@ case 0x320: {
         velocityY = 10.0f;
     }
     y = y + velocityY;
-    velocityY = (velocityY) - g_F1044_GravityAt0065747C;
-    if (velocityY < g_F1044_GroundAt0065782C)
+    velocityY = (velocityY) - FloatConstants::One;
+    if (velocityY < FloatConstants::Zero)
         velocityY = 0.0f;
     if (AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(1);

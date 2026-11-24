@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
@@ -10,36 +11,33 @@
 // Main character-select update and transition loop.
 // The native input controller repeats a physically observed 0x48-byte record.
 // This borrowed indexed view is not instantiated or used to infer its fields.
-extern const float g_ChoiceZeroAt0065782C;
-extern const float g_ChoiceHalfStepAt00657874;
 extern const float g_ChoiceFadeAt00658260;
 extern const float g_ChoiceClockStepAt0065825C;
 extern const float g_ChoiceRiseLimitAt0065788C;
 extern const float g_ChoiceLoopLimitAt00658258;
-extern const float g_ChoiceReturnStepAt0065747C;
 #define PLAY(id) g_SoundBank->Play(id)
 unsigned short CharacterSelectScene::Update()
 {
     PollInput();
     Render();
     Graphics::Present();
-    if (g_ChoiceHalfStepAt00657874 < (choiceOscillation))
+    if (FloatConstants::Five < (choiceOscillation))
         (choiceOscillation) = (choiceOscillation) * g_ChoiceFadeAt00658260;
     (choiceRotation) = (choiceRotation) + g_ChoiceClockStepAt0065825C;
     if ((playerState[0]) >= 4 && (playerState[1]) >= 4) {
         if ((transitionAlpha) < 255)
             (transitionAlpha) = (transitionAlpha) + 5;
         if ((portraitFade[0]) < g_ChoiceRiseLimitAt0065788C)
-            (portraitFade[0]) = (portraitFade[0]) + g_ChoiceHalfStepAt00657874;
+            (portraitFade[0]) = (portraitFade[0]) + FloatConstants::Five;
         if ((portraitFade[1]) < g_ChoiceRiseLimitAt0065788C)
-            (portraitFade[1]) = (portraitFade[1]) + g_ChoiceHalfStepAt00657874;
+            (portraitFade[1]) = (portraitFade[1]) + FloatConstants::Five;
     } else {
         if ((transitionAlpha) > 5)
             (transitionAlpha) = (transitionAlpha) - 5;
-        if (g_ChoiceZeroAt0065782C < (portraitFade[0]))
-            (portraitFade[0]) -= g_ChoiceHalfStepAt00657874;
-        if (g_ChoiceZeroAt0065782C < (portraitFade[1]))
-            (portraitFade[1]) -= g_ChoiceHalfStepAt00657874;
+        if (FloatConstants::Zero < (portraitFade[0]))
+            (portraitFade[0]) -= FloatConstants::Five;
+        if (FloatConstants::Zero < (portraitFade[1]))
+            (portraitFade[1]) -= FloatConstants::Five;
     }
     if (g_CombatMode==1 || g_CombatMode==5) {
         if (g_InputMappings[g_SelectedSideAt006714B8].held.counts[3]==1 || (cancellationRequested)==1) {
@@ -106,7 +104,7 @@ unsigned short CharacterSelectScene::Update()
         g_ReplayRecords.BeginCapture();
         return 0x2201;
     } else {
-        (animationPhase) = (animationPhase) + g_ChoiceReturnStepAt0065747C;
+        (animationPhase) = (animationPhase) + FloatConstants::One;
         if (g_ChoiceLoopLimitAt00658258 < (animationPhase))
             (animationPhase) -= g_ChoiceLoopLimitAt00658258;
         return 3;

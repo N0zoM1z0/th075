@@ -81,7 +81,7 @@ case 0x2DB: {
     }
     if ((animationStage)==20 || (animationStage)==21) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             color[0]=255;
             ClearMotionFields();
                         ResetSecondaryCounter(22);

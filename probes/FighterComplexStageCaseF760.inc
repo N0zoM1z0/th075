@@ -1,14 +1,14 @@
 case F760_ACTION: {
-    if ((*(&y)==g_ThresholdAt0065782C) ||
-        velocityY>g_ThresholdAt0065782C) {
+    if ((*(&y)==FloatConstants::Zero) ||
+        velocityY>FloatConstants::Zero) {
         SetCommandSelection(3,4,0xFF);
         field088=2;
     }
     if ((animationStage)==0 && (field3AC)==0)
         ClearMotionFields();
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;
             ClearMotionFields();
@@ -16,7 +16,7 @@ case F760_ACTION: {
         }
     }
 #if F760_HAS_AUX
-    if ((animationStage)==4 && velocityY<g_ExtraThresholdAt00657D14)
+    if ((animationStage)==4 && velocityY<FloatConstants::Four)
         ResetSecondaryCounter(5);
 #endif
     ++animationFrame;

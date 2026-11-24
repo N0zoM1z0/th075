@@ -46,9 +46,9 @@ case 0x2E6: {
             color[0]=255;
     }
     if ((animationStage)>13 && (animationStage)<19) {
-        if (y>g_ThresholdAt0065782C) {
+        if (y>FloatConstants::Zero) {
             velocityY=velocityY-field05C;
-            if (y+velocityY<=g_ThresholdAt0065782C) {
+            if (y+velocityY<=FloatConstants::Zero) {
                 color[0]=255;
                 ClearMotionFields();
                 ResetSecondaryCounter(19);

@@ -22,7 +22,7 @@ case 0x348: {
         field0D8=120;
     x=velocityX+owner->x;
     y=velocityY+owner->y+g_F1057_YOffsetAt00657888;
-    rotationZ=(rotationZ)+g_F1080_AngleIncreaseAt00657850;
+    rotationZ=(rotationZ)+FloatConstants::Ten;
     if (animationStage==1) {
         if (owner->action!=0x2BE ||
             (owner->action==0x2BE &&

@@ -24,14 +24,16 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,576 unresolved externals. WinMain and the six
-existing scene types share `SceneBase`. The character selection
+stops at `LNK1120` with 1,429 unresolved externals. Nineteen read-only
+floating-point constants replace 147 unresolved names. The batch
+cold-replayed 170 units across 99 objects and verified that each refreshed
+library member matches its replayed object. WinMain and the six existing
+scene types share `SceneBase`. The character selection
 constructor and destructor use the same three texture-manager members.
 Startup, capture, drawing, and cleanup share the frame texture owner.
 Startup sequences share five state variables and the existing character
 and stage loaders. Battle state, configuration bytes and the event worker's
-wait value use shared definitions. The latest batch cold-replayed 49 units
-across 43 objects and removed 67 unresolved symbols. Selection, snapshots
+wait value use shared definitions. Selection, snapshots
 and the battle loader share six player byte pairs and two fighter pointers.
 Scene setup and teardown use those same pointers. Replay capture,
 snapshot fields, the name screen, path selection and playback limits use

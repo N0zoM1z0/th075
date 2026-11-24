@@ -7,13 +7,13 @@ case 0x4A: {
         field05C = 0.8f;
         field07C = 0;
     }
-    if (animationStage==F610_STAGE && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage==F610_STAGE && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F610_EARLY);
         break;
     }
     if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
         ResetPrimaryCounters(0x4C);
-        velocityX = -(velocityX) * g_BounceScaleAt00657F74;
+        velocityX = -(velocityX) * FloatConstants::Quarter;
         velocityY = 15.0f;
         field05C = 0.5f;
         SetCameraShake(2.0f);
@@ -22,7 +22,7 @@ case 0x4A: {
         break;
     }
     velocityY = velocityY - field05C;
-    if (velocityY + y <= g_ThresholdAt0065782C) {
+    if (velocityY + y <= FloatConstants::Zero) {
 #if F610_PREPARE_BEFORE
         PlaySharedSound(0x16);
 #endif

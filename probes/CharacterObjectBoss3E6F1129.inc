@@ -24,7 +24,7 @@ case 0x3E6: {
     }
     scaleX=(scaleX)-g_F1057_SpeedBaseAt006590BC;
     scaleY=(scaleY)-g_F1057_SpeedBaseAt006590BC;
-    rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
+    rotationZ=(rotationZ)+FloatConstants::One;
     if (animationStage==2)
         color[0]=unsigned char(color[0]-12);
     if (AdvanceNestedFrame()==animationStageCount)

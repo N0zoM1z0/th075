@@ -3,11 +3,11 @@ case R1188_ACTION: {
         velocityX=0.0f; velocityY=0.0f; field05C=0.0f;
         field080=1; field07C=0;
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        velocityX=(velocityX)-g_ReimuLeapDragAt006583FC;
-        if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-FloatConstants::ThreeTenths;
+        if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
+        if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f;
             ResetSecondaryCounter(10);
             break;

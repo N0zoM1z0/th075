@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "PatchouliFighter.hpp"
 
@@ -5,27 +6,17 @@ extern float g_AliceEffectYAt00658264;
 extern float g_AliceEffectYAt00658364;
 extern float g_AliceEffectYAt006590A8;
 extern float g_AngleShiftAt00657878;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachAt00658058;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_BounceScaleAt00657F74;
 extern float g_BounceThresholdAt006590C0;
 extern float g_ContactProjectionAt00657888;
-extern double g_ContactScaleAt006583E8;
-extern float g_ExtraThresholdAt00657D14;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
-extern float g_F747_BounceYAt00658044;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F964_LateFallAt00658048;
 extern float g_F970_YAt006590AC;
 extern float g_FallingLateDragAt00659240;
-extern float g_JumpGroundCorrectionAt00658058;
-extern double g_JumpReflectionAt006583E8;
-extern float g_MarisaCardVelocityScaleAt006590B4;
-extern float g_MarisaCommandSpeedLowerAt00657850;
 extern float g_MarisaCommandYAt00658268;
 extern float g_MarisaResourceYAt006581DC;
 extern float g_MarisaResourceYAt006590AC;
@@ -43,13 +34,6 @@ extern float g_PatchouliEffectYAt00659744;
 extern float g_PatchouliEffectYAt00659748;
 extern float g_PatchouliEffectYAt0065974C;
 extern float g_PatchouliEffectYAt00659750;
-extern float g_ProjectileFallAt006590B4;
-extern float g_ReimuLeapDragAt006583FC;
-extern float g_RepeatScaleAt00658348;
-extern double g_RiseAt00658050;
-extern float g_StopThresholdAt00657480;
-extern float g_SubtractAt00657478;
-extern float g_ThresholdAt0065782C;
 extern float g_TrajectoryUpperAt006590C4;
 extern float g_YuyukoFanLowerYAt00659238;
 
@@ -62,16 +46,16 @@ void PatchouliFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -84,16 +68,16 @@ void PatchouliFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -108,16 +92,16 @@ void PatchouliFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -130,16 +114,16 @@ void PatchouliFighter::Advance() {
         if (field3AC == 0) {
             ClearMotionFields();
         } else {
-            if (velocityX > g_ThresholdAt0065782C) {
-                velocityX -= g_SubtractAt00657478;
-                if (velocityX < g_ThresholdAt0065782C) {
+            if (velocityX > FloatConstants::Zero) {
+                velocityX -= FloatConstants::Half;
+                if (velocityX < FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
             }
-            if (velocityX < g_ThresholdAt0065782C) {
-                velocityX += g_RiseAt00658050;
-                if (velocityX > g_ThresholdAt0065782C) {
+            if (velocityX < FloatConstants::Zero) {
+                velocityX += FloatConstants::HalfDouble;
+                if (velocityX > FloatConstants::Zero) {
                     ClearMotionFields();
                     field3AC = 0;
                 }
@@ -168,16 +152,16 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= (field072)) {
@@ -208,16 +192,16 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
                 return;
             }
         }
-        if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 4 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(5);
         ++animationFrame;
         if (animationFrame >= animationFrameCount) {
@@ -249,9 +233,9 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -276,10 +260,10 @@ void PatchouliFighter::Advance() {
     }
 
     case 0x9: {
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -310,13 +294,13 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if (velocityX < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if (velocityX > g_ThresholdAt0065782C)
+        if (velocityX < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if (velocityX > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE != 0)
-            field490 = static_cast<float>((velocityX) * g_JumpReflectionAt006583E8);
+            field490 = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -328,15 +312,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -349,15 +333,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -371,15 +355,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -399,15 +383,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -420,15 +404,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -441,15 +425,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -463,15 +447,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -491,15 +475,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -512,15 +496,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -533,15 +517,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -555,15 +539,15 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_ApproachAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
             field490 =
-                static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
+                static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -588,12 +572,12 @@ void PatchouliFighter::Advance() {
                 velocityY = 25.0f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -615,12 +599,12 @@ void PatchouliFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -642,12 +626,12 @@ void PatchouliFighter::Advance() {
             field05C = 1.3f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -669,7 +653,7 @@ void PatchouliFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -681,8 +665,8 @@ void PatchouliFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(animationStage - 1);
-        if (animationStage == 1 && animationFrame == 0 && velocityY != g_ThresholdAt0065782C) {
-            if (velocityX == (g_ThresholdAt0065782C)) {
+        if (animationStage == 1 && animationFrame == 0 && velocityY != FloatConstants::Zero) {
+            if (velocityX == (FloatConstants::Zero)) {
                 ResetSecondaryCounter(3);
                 return;
             } else {
@@ -700,13 +684,13 @@ void PatchouliFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (animationStage == 3 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
             return;
         }
         if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
             ResetPrimaryCounters(0x4C);
-            velocityX = -(velocityX) * g_BounceScaleAt00657F74;
+            velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
             field05C = 0.5f;
             SetCameraShake(2.0f);
@@ -715,7 +699,7 @@ void PatchouliFighter::Advance() {
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
 
             Fighter::PlaySharedSound(0x16);
 
@@ -741,7 +725,7 @@ void PatchouliFighter::Advance() {
 
         rotationZ = (rotationZ) + g_AngleShiftAt00657878;
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
@@ -765,7 +749,7 @@ void PatchouliFighter::Advance() {
             field05C = 0.8f;
             field07C = 0;
         }
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -784,8 +768,8 @@ void PatchouliFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(animationStage - 1);
         if (animationStage == 1 && animationFrame == 0) {
-            if (velocityY != g_ThresholdAt0065782C) {
-                if (velocityX == (g_ThresholdAt0065782C)) {
+            if (velocityY != FloatConstants::Zero) {
+                if (velocityX == (FloatConstants::Zero)) {
                     ResetSecondaryCounter(3);
                     return;
                 } else {
@@ -803,7 +787,7 @@ void PatchouliFighter::Advance() {
         if (animationStage > 2) {
             rotationZ = (rotationZ) + g_F728_RandomOffsetYAt00657858;
             velocityY = velocityY - field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = (velocityX) * g_ContactProjectionAt00657888;
                 scriptCounterF02 = (velocityY) * g_ContactProjectionAt00657888;
                 ClearMotionFields();
@@ -820,7 +804,7 @@ void PatchouliFighter::Advance() {
             ResetSecondaryCounter(4);
         else if (animationStage == 3 && animationFrame == 0) {
             velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;
-            velocityY = static_cast<float>(-scriptCounterF02) * g_F747_BounceYAt00658044;
+            velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(0.0f, 95.0f, 0.0f);
         }
@@ -910,7 +894,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage > 2 && animationStage < 7) {
             velocityY = velocityY - field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(7);
@@ -940,7 +924,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage > 2 && animationStage < 7) {
             velocityY = velocityY - field05C;
-            if (velocityY + y < g_ThresholdAt0065782C) {
+            if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(7);
@@ -1031,13 +1015,13 @@ void PatchouliFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 5) {
@@ -1054,13 +1038,13 @@ void PatchouliFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1077,13 +1061,13 @@ void PatchouliFighter::Advance() {
             field07C = 0;
             scriptCounterF00 = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1100,12 +1084,12 @@ void PatchouliFighter::Advance() {
             field05C = 0.5f;
             field07C = 0;
         }
-        if (animationStage == 2 && velocityY < g_StopThresholdAt00657480) {
+        if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
         velocityY = velocityY - field05C;
-        if (velocityY + y <= g_ThresholdAt0065782C) {
+        if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
             scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
             ClearMotionFields();
@@ -1120,7 +1104,7 @@ void PatchouliFighter::Advance() {
     }
 
     case 0x96: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1129,20 +1113,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x97: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1151,20 +1135,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x98: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1173,20 +1157,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0x9A: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1195,20 +1179,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9B: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1217,20 +1201,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9C: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1239,20 +1223,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0x9E: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1262,10 +1246,10 @@ void PatchouliFighter::Advance() {
             field05C = 0.75f;
         }
 
-        if (y >= g_ThresholdAt0065782C) {
+        if (y >= FloatConstants::Zero) {
 
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1278,7 +1262,7 @@ void PatchouliFighter::Advance() {
     }
 
     case 0x9F: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1287,20 +1271,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA0: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1309,20 +1293,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA1: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1331,20 +1315,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
     }
 
     case 0xA3: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1352,20 +1336,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA4: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1373,20 +1357,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA5: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1394,20 +1378,20 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field07C = 0;
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * g_JumpReflectionAt006583E8;
+            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
     }
 
     case 0xA7: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1420,12 +1404,12 @@ void PatchouliFighter::Advance() {
                 (y) + g_ContactProjectionAt00657888,
                 facing, 1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00) * g_ProjectileFallAt006590B4;
+        field490 = (-scriptCounterF00) * FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00 - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1434,7 +1418,7 @@ void PatchouliFighter::Advance() {
     }
 
     case 0xA8: {
-        cardGauge = (cardGauge) + g_AnimationDeltaAt0065747C;
+        cardGauge = (cardGauge) + FloatConstants::One;
         if ((cardGauge) > g_AnimationMaximumAt006583B4)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
@@ -1447,12 +1431,12 @@ void PatchouliFighter::Advance() {
                 (y) + g_ContactProjectionAt00657888,
                 facing, 1);
         }
-        if ((velocityX) < g_ThresholdAt0065782C) {
-            velocityX = (velocityX) + g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) > g_ThresholdAt0065782C)
+        if ((velocityX) < FloatConstants::Zero) {
+            velocityX = (velocityX) + FloatConstants::ThreeFifths;
+            if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00) * g_ProjectileFallAt006590B4;
+        field490 = (-scriptCounterF00) * FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00 - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1469,9 +1453,9 @@ void PatchouliFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1494,9 +1478,9 @@ void PatchouliFighter::Advance() {
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1517,9 +1501,9 @@ void PatchouliFighter::Advance() {
             velocityX = 0.0f;
             scriptCounterF00 = 0;
         }
-        if (velocityX > g_MarisaCommandSpeedLowerAt00657850) {
-            velocityX -= g_SubtractAt00657478;
-            if (velocityX < g_MarisaCommandSpeedLowerAt00657850)
+        if (velocityX > FloatConstants::Ten) {
+            velocityX -= FloatConstants::Half;
+            if (velocityX < FloatConstants::Ten)
                 velocityX = 10.0f;
         }
         if (inputY < 0) {
@@ -1570,9 +1554,9 @@ void PatchouliFighter::Advance() {
                 (y) + g_MarisaCommandYAt00658268, -facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 0 && animationStage < 9) {
+        if (y > FloatConstants::Zero && animationStage > 0 && animationStage < 9) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1608,9 +1592,9 @@ void PatchouliFighter::Advance() {
                 (y) + g_ContactProjectionAt00657888, facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 1) {
+        if (y > FloatConstants::Zero && animationStage > 1) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1633,9 +1617,9 @@ void PatchouliFighter::Advance() {
             velocityY = 0.0f;
             field05C = 0.0f;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 0) {
+        if (y > FloatConstants::Zero && animationStage > 0) {
             velocityY -= field05C;
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field05C = 0.0f;
@@ -1662,15 +1646,15 @@ void PatchouliFighter::Advance() {
     }
 
     case 0xCC: {
-        if ((y == (g_ThresholdAt0065782C)) || velocityY > g_ThresholdAt0065782C) {
+        if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1678,7 +1662,7 @@ void PatchouliFighter::Advance() {
             }
         }
 
-        if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 2 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(3);
 
         ++animationFrame;
@@ -1699,15 +1683,15 @@ void PatchouliFighter::Advance() {
     }
 
     case 0xCD: {
-        if ((y == (g_ThresholdAt0065782C)) || velocityY > g_ThresholdAt0065782C) {
+        if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1715,7 +1699,7 @@ void PatchouliFighter::Advance() {
             }
         }
 
-        if (animationStage == 2 && velocityY < g_ExtraThresholdAt00657D14)
+        if (animationStage == 2 && velocityY < FloatConstants::Four)
             ResetSecondaryCounter(3);
 
         ++animationFrame;
@@ -1736,15 +1720,15 @@ void PatchouliFighter::Advance() {
     }
 
     case 0xCE: {
-        if ((y == (g_ThresholdAt0065782C)) || velocityY > g_ThresholdAt0065782C) {
+        if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
             field088 = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY = velocityY - field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -1771,8 +1755,8 @@ void PatchouliFighter::Advance() {
 
     case 0xCF: {
         field3AC = 1;
-        velocityX -= g_SubtractAt00657478;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::Half;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -1788,10 +1772,10 @@ void PatchouliFighter::Advance() {
             facing = static_cast<signed char>(-facing);
             velocityX = -velocityX;
         }
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -1832,8 +1816,8 @@ void PatchouliFighter::Advance() {
         spirit = spirit - 3;
         if (animationStage == 0 && animationFrame == 0) {
 
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             PlaySharedSound(0x2C);
 
             SpawnBattleEffect(0x3e6, x,
@@ -1841,7 +1825,7 @@ void PatchouliFighter::Advance() {
                     facing, 1);
         }
 
-        velocityY = velocityY - (field05C) * g_BounceScaleAt00657F74;
+        velocityY = velocityY - (field05C) * FloatConstants::Quarter;
         if (AdvanceNestedFrame() == animationStageCount) {
             if (static_cast<unsigned int>(inputD) > 0)
                 ResetSecondaryCounter(2);
@@ -1859,8 +1843,8 @@ void PatchouliFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1880,8 +1864,8 @@ void PatchouliFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX = (velocityX) - g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            velocityX = (velocityX) - FloatConstants::ThreeFifths;
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1905,8 +1889,8 @@ void PatchouliFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1926,8 +1910,8 @@ void PatchouliFighter::Advance() {
             field07C = 0;
         }
         if (field3AC > 0) {
-            velocityX = (velocityX) - g_ApproachAt00658058;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            velocityX = (velocityX) - FloatConstants::ThreeFifths;
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -1941,7 +1925,7 @@ void PatchouliFighter::Advance() {
 
     case 0x130: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -1964,7 +1948,7 @@ void PatchouliFighter::Advance() {
 
     case 0x131: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -2003,8 +1987,8 @@ void PatchouliFighter::Advance() {
             field07C = 1;
         }
         if (field3AC > 0) {
-            velocityX = (velocityX) - g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            velocityX = (velocityX) - FloatConstants::ThreeFifths;
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2031,8 +2015,8 @@ void PatchouliFighter::Advance() {
             scriptCounterF02 = 0;
         }
         if (field3AC > 0) {
-            velocityX = (velocityX) - g_JumpGroundCorrectionAt00658058;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            velocityX = (velocityX) - FloatConstants::ThreeFifths;
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2055,9 +2039,9 @@ void PatchouliFighter::Advance() {
             field3AC = 0;
             field07C = 0;
         }
-        if (velocityX > g_ThresholdAt0065782C) {
+        if (velocityX > FloatConstants::Zero) {
             velocityX -= g_FallingLateDragAt00659240;
-            if (velocityX < g_ThresholdAt0065782C)
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -2078,9 +2062,9 @@ void PatchouliFighter::Advance() {
             field3AC = 0;
             field07C = 0;
         }
-        if (velocityX > g_ThresholdAt0065782C) {
+        if (velocityX > FloatConstants::Zero) {
             velocityX -= g_FallingLateDragAt00659240;
-            if (velocityX < g_ThresholdAt0065782C)
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2094,7 +2078,7 @@ void PatchouliFighter::Advance() {
 
     case 0x137: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -2118,7 +2102,7 @@ void PatchouliFighter::Advance() {
 
     case 0x138: {
         velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             field05C = 0.0f;
@@ -2148,8 +2132,8 @@ void PatchouliFighter::Advance() {
             velocityX = 8.0f;
         }
         if (animationStage > 0) {
-            velocityX = (velocityX) - g_SubtractAt00657478;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            velocityX = (velocityX) - FloatConstants::Half;
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2172,7 +2156,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage > 0) {
             velocityX = (velocityX) - g_F964_LateFallAt00658048;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2196,7 +2180,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage > 0) {
             velocityX = (velocityX) - g_F964_LateFallAt00658048;
-            if ((velocityX) < g_ThresholdAt0065782C) {
+            if ((velocityX) < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2219,8 +2203,8 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage > 0) {
-            velocityX -= g_ReimuLeapDragAt006583FC;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeTenths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2248,8 +2232,8 @@ void PatchouliFighter::Advance() {
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
-        velocityX -= g_JumpGroundCorrectionAt00658058;
-        if (velocityX < g_ThresholdAt0065782C) {
+        velocityX -= FloatConstants::ThreeFifths;
+        if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;
         }
@@ -2271,8 +2255,8 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage > 6) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2376,11 +2360,11 @@ void PatchouliFighter::Advance() {
 
     case 0x194: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             velocityY = 0.0f;
             velocityX = 0.0f;
             y = 0.0f;
@@ -2408,11 +2392,11 @@ void PatchouliFighter::Advance() {
 
     case 0x195: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             velocityY = 0.0f;
             velocityX = 0.0f;
             y = 0.0f;
@@ -2446,8 +2430,8 @@ void PatchouliFighter::Advance() {
             field07C = 1;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2476,8 +2460,8 @@ void PatchouliFighter::Advance() {
             field07C = 1;
         }
         if (field3AC > 0) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C) {
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
                 field3AC = 0;
             }
@@ -2514,13 +2498,13 @@ void PatchouliFighter::Advance() {
 
     case 0x19A: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
         if (animationStage > 8)
             velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             velocityY = 0.0f;
             velocityX = 0.0f;
             y = 0.0f;
@@ -2580,13 +2564,13 @@ void PatchouliFighter::Advance() {
 
     case 0x1A0: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
             field07C = 1;
         }
         if (animationStage > 8)
             velocityY -= field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             velocityY = 0.0f;
             velocityX = 0.0f;
             y = 0.0f;
@@ -2605,12 +2589,12 @@ void PatchouliFighter::Advance() {
     case 0x1A1: {
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_RepeatScaleAt00658348;
-            velocityY = (velocityY) * g_RepeatScaleAt00658348;
+            velocityX = (velocityX) * FloatConstants::OneFifth;
+            velocityY = (velocityY) * FloatConstants::OneFifth;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
         }
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             velocityY = 0.0f;
             velocityX = 0.0f;
             y = 0.0f;
@@ -2639,9 +2623,9 @@ void PatchouliFighter::Advance() {
             field07C = 0;
             field3AC = 0;
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(17);
                 y = 0.0f;
@@ -2676,9 +2660,9 @@ void PatchouliFighter::Advance() {
             field07C = 0;
             field3AC = 0;
         }
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(17);
                 y = 0.0f;
@@ -2696,7 +2680,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationFrame == 0)
             field07C = 0;
-        if (animationStage == 13 && animationFrame == 0 && velocityY > g_ExtraThresholdAt00657D14) {
+        if (animationStage == 13 && animationFrame == 0 && velocityY > FloatConstants::Four) {
             ResetSecondaryCounter(6);
             field07C = 0;
         }
@@ -2871,8 +2855,8 @@ void PatchouliFighter::Advance() {
     case 0x25A: {
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_BounceScaleAt00657F74;
-            velocityY = (velocityY) * g_BounceScaleAt00657F74;
+            velocityX = (velocityX) * FloatConstants::Quarter;
+            velocityY = (velocityY) * FloatConstants::Quarter;
         }
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(100);
@@ -2884,8 +2868,8 @@ void PatchouliFighter::Advance() {
             velocityY = 8.0f;
         }
         if (animationStage > 2) {
-            velocityY -= g_JumpGroundCorrectionAt00658058;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            velocityY -= FloatConstants::ThreeFifths;
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetPrimaryCounters(10);
@@ -3031,8 +3015,8 @@ void PatchouliFighter::Advance() {
             scriptCounterF02 = 0;
         }
         if (animationStage > 13) {
-            velocityX -= g_JumpGroundCorrectionAt00658058;
-            if (velocityX < g_ThresholdAt0065782C)
+            velocityX -= FloatConstants::ThreeFifths;
+            if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3087,7 +3071,7 @@ void PatchouliFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            if (y > g_ThresholdAt0065782C)
+            if (y > FloatConstants::Zero)
                 ResetPrimaryCounters(9);
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -3141,7 +3125,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage > 6 && animationStage < 9) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
                 ResetSecondaryCounter(9);
@@ -3239,13 +3223,13 @@ void PatchouliFighter::Advance() {
             if (fieldF04 == 180)
                 fieldF04 = 0;
             SpawnBattleEffect(0x34B, x + velocityX, (velocityY) * g_PatchouliEffectYAt00659740,
-                facing, velocityY < g_ThresholdAt0065782C);
+                facing, velocityY < FloatConstants::Zero);
             SpawnBattleEffect(0x35C, x + velocityX, (velocityY) * g_PatchouliEffectYAt00659740,
-                facing, velocityY < g_ThresholdAt0065782C);
+                facing, velocityY < FloatConstants::Zero);
             SpawnBattleEffect(0x34B, x - velocityX, -(velocityY) * g_PatchouliEffectYAt00659740,
-                facing, velocityY < g_ThresholdAt0065782C);
+                facing, velocityY < FloatConstants::Zero);
             SpawnBattleEffect(0x35C, x - velocityX, -(velocityY) * g_PatchouliEffectYAt00659740,
-                facing, velocityY < g_ThresholdAt0065782C);
+                facing, velocityY < FloatConstants::Zero);
             scriptCounterF02 = 2;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3301,9 +3285,9 @@ void PatchouliFighter::Advance() {
     case 0x2D0: {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3325,9 +3309,9 @@ void PatchouliFighter::Advance() {
     case 0x2D1: {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
-        if (y > g_ThresholdAt0065782C) {
+        if (y > FloatConstants::Zero) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3378,9 +3362,9 @@ void PatchouliFighter::Advance() {
             fieldF04 = 0;
             fieldF06 = 0;
         }
-        if (y > g_ThresholdAt0065782C && (animationStage < 4 || animationStage > 11)) {
+        if (y > FloatConstants::Zero && (animationStage < 4 || animationStage > 11)) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(16);
                 y = 0.0f;
                 ClearMotionFields();
@@ -3408,8 +3392,8 @@ void PatchouliFighter::Advance() {
             field05C = 0.3f;
         }
         if (animationStage == 4 && animationFrame == 0) {
-            velocityX = (velocityX) * g_RepeatScaleAt00658348;
-            velocityY = (velocityY) * g_RepeatScaleAt00658348;
+            velocityX = (velocityX) * FloatConstants::OneFifth;
+            velocityY = (velocityY) * FloatConstants::OneFifth;
         }
         if (animationStage == 12 && animationFrame == 0 && scriptCounterF02 < 5) {
             ++scriptCounterF02;
@@ -3437,7 +3421,7 @@ void PatchouliFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            if (y > g_ThresholdAt0065782C)
+            if (y > FloatConstants::Zero)
                 ResetPrimaryCounters(9);
             aiCardTimer = static_cast<short>(RecordedRange(60, 90) - g_OptionsModeAt006714D0 * 30);
         }
@@ -3468,9 +3452,9 @@ void PatchouliFighter::Advance() {
             scriptCounterF02 = 0;
             fieldF04 = 0;
         }
-        if (y > g_ThresholdAt0065782C && animationStage > 19) {
+        if (y > FloatConstants::Zero && animationStage > 19) {
             velocityY -= field05C;
-            if (y + velocityY <= g_ThresholdAt0065782C) {
+            if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 ResetSecondaryCounter(24);
                 y = 0.0f;
@@ -3478,9 +3462,9 @@ void PatchouliFighter::Advance() {
             }
         }
         if (animationStage > 5 && animationStage < 20) {
-            field490 = static_cast<float>(scriptCounterF00) * g_MarisaCardVelocityScaleAt006590B4 *
+            field490 = static_cast<float>(scriptCounterF00) * FloatConstants::OneTenth *
                 static_cast<float>(facing * opponent->facing) *
-                static_cast<float>(2 * ((opponent->x - x) * facing > g_ThresholdAt0065782C) - 1);
+                static_cast<float>(2 * ((opponent->x - x) * facing > FloatConstants::Zero) - 1);
             scriptCounterF00 -= 2;
             --fieldF04;
             if (scriptCounterF00 < 40)

@@ -15,12 +15,12 @@
                 field05C=0.45f;
                 scriptCounterF00=1;
             }
-            if ((animationStage)<9 && y>g_ThresholdAt0065782C && (animationStage)>3) {
-                velocityX=(velocityX)-g_NewDragAt006581E0;
+            if ((animationStage)<9 && y>FloatConstants::Zero && (animationStage)>3) {
+                velocityX=(velocityX)-FloatConstants::OneAndHalf;
                 velocityY=velocityY-field05C;
-                if ((velocityX)<g_StopThresholdAt00657480)
+                if ((velocityX)<FloatConstants::Two)
                     velocityX=2.0f;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(9);
                     y=0.0f;
                     ClearMotionFields();
@@ -62,12 +62,12 @@
                 field3AC=0;
                 scriptCounterF00=0;
             }
-            if ((animationStage)<25 && y>g_ThresholdAt0065782C && (animationStage)>14) {
-                velocityX=(velocityX)-g_F718_FallingDragAt00659090;
+            if ((animationStage)<25 && y>FloatConstants::Zero && (animationStage)>14) {
+                velocityX=(velocityX)-FloatConstants::FourFifths;
                 velocityY=velocityY-field05C;
-                if ((velocityX)<g_F718_BounceMinAt00657CF8)
+                if ((velocityX)<FloatConstants::Three)
                     velocityX=3.0f;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(25);
                     y=0.0f;
                     ClearMotionFields();

@@ -8,7 +8,7 @@ case R1191_ACTION: {
     }
 #if R1191_AIR
     if ((animationStage)>=0) velocityY=velocityY-field05C;
-    if (y+velocityY<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;

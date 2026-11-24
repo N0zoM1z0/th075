@@ -7,7 +7,7 @@
 // This is a case within a still NONEXACT huge fighter Advance(),
 // not an accepted whole original function or ASM byte substitution.
 case 0x9E: {
-    cardGauge=(cardGauge)+g_AnimationDeltaAt0065747C;
+    cardGauge=(cardGauge)+FloatConstants::One;
     if ((cardGauge)>g_AnimationMaximumAt006583B4)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
@@ -25,12 +25,12 @@ case 0x9E: {
     // native FCOMP/TEST AH,0x41/JNE. The other ten use >=, whose
     // genuine original TEST AH,1/JNE has different equality behavior.
 #if F637_STRICT_ABOVE
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
 #else
-    if (y>=g_ThresholdAt0065782C) {
+    if (y>=FloatConstants::Zero) {
 #endif
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;
             ClearMotionFields();

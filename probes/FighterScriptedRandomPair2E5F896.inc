@@ -7,8 +7,8 @@ case 0x2E5: {
         field07C=0;
         field080=1;
     }
-    velocityX=(velocityX)-g_F893FloatFallAt00657478;
-    if ((velocityX)<g_ThresholdAt0065782C)
+    velocityX=(velocityX)-FloatConstants::Half;
+    if ((velocityX)<FloatConstants::Zero)
         velocityX=0.0f;
     if (AdvanceNestedFrame()==(animationStageCount)) {
         scriptCounterF00=RecordedRange(0,100);

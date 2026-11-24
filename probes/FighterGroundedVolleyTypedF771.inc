@@ -17,7 +17,7 @@
             }
             if ((animationStage)<18) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0x12);
                     y=0.0f;
                     ClearMotionFields();

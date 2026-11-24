@@ -52,8 +52,8 @@
         }
         case 0x25A: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                velocityX=(velocityX)*g_BounceScaleAt00657F74;
-                velocityY=(*(&velocityY))*g_BounceScaleAt00657F74;
+                velocityX=(velocityX)*FloatConstants::Quarter;
+                velocityY=(*(&velocityY))*FloatConstants::Quarter;
                 field07C=1;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
@@ -67,8 +67,8 @@
         }
         case 0x25B: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                velocityX=(velocityX)*g_BounceScaleAt00657F74;
-                velocityY=(*(&velocityY))*g_BounceScaleAt00657F74;
+                velocityX=(velocityX)*FloatConstants::Quarter;
+                velocityY=(*(&velocityY))*FloatConstants::Quarter;
                 field07C=1;
             }
             if ((animationStage)==5 && (animationFrame)==0) {

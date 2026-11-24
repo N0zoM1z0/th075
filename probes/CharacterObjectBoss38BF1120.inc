@@ -24,8 +24,8 @@ case 0x38B: {
         field07C=0;
     }
     if (field0DC==0) {
-        velocityX=velocityX-g_F1120_XBrakingAt00659090;
-        if (velocityX<g_F1051_ScaleCeilingAt0065747C) {
+        velocityX=velocityX-FloatConstants::FourFifths;
+        if (velocityX<FloatConstants::One) {
             velocityX=1.0f;
             field0DC=1;
         }
@@ -33,11 +33,11 @@ case 0x38B: {
     if (field0DC>0 && field0DC<30)
         ++field0DC;
     if (field0DC>29)
-        velocityX=(*(&velocityX))+g_F1059_ScaleRatioAt00657478;
+        velocityX=(*(&velocityX))+FloatConstants::Half;
     if (field0D8==0) {
-        if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
-            scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
-            scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
+        if (scaleX<FloatConstants::One) {
+            scaleX=(scaleX)+FloatConstants::OneTenth;
+            scaleY=(scaleY)+FloatConstants::OneTenth;
             color[0]=unsigned char(color[0]+25);
         } else {
             scaleX=1.0f;

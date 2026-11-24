@@ -90,6 +90,17 @@ The floating-point call sites share the VC7.1 wrappers declared in
 `MathFloatHelpers.hpp`, and character loading uses the same snapshot
 entry points as the replay code.
 
+`FloatConstants.hpp` lets callers share nineteen read-only scalars whose
+values already appear as VC7.1 literal definitions. The Japanese 1.11 image
+stores them in `.rdata`. Separate definitions in `MathFloatHelpers.cpp`
+preserve the memory operands, including 4,328 zero-addend `DIR32` fields
+that previously referred to 147 different extern names. The shared type
+tracks each operand width, including the single- and double-precision
+halves and three quarters. Include the declarations at the translation
+unit's top level so switch fragments can use them inside function bodies.
+A headless consumer linked against the library and checked all nineteen
+values alongside the existing absolute-value and square-root wrappers.
+
 The paired and family stage pack constructors inherit the existing
 `NativeBackgroundBaseF479` layout. The embedded texture manager begins at
 `+0x18`, and the first trailing stage member starts at `+0x68`. The

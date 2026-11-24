@@ -4,16 +4,16 @@ case R1188_ACTION: {
         field080=1; field07C=0; field3AC=0; scriptCounterF00=0;
     }
 #include "ReimuChargeTransformF1188.inc"
-    if (y>g_ThresholdAt0065782C && (animationStage)>R1188_RETURN_STAGE-1) {
-        velocityY=velocityY-g_AnimationDeltaAt0065747C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<R1188_LAND_STAGE) {
+    if (y>FloatConstants::Zero && (animationStage)>R1188_RETURN_STAGE-1) {
+        velocityY=velocityY-FloatConstants::One;
+        if (y+velocityY<=FloatConstants::Zero && (animationStage)<R1188_LAND_STAGE) {
             y=0.0f; velocityY=0.0f;
             ResetSecondaryCounter(R1188_LAND_STAGE);
         }
     }
     if ((animationStage)>R1188_LAND_STAGE+1) {
-        velocityX=(velocityX)-g_ReimuRepeatDragAt00659090;
-        if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
+        velocityX=(velocityX)-FloatConstants::FourFifths;
+        if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==R1188_RETURN_STAGE && (animationFrame)==0) {

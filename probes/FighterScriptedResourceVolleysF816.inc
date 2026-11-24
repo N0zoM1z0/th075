@@ -31,7 +31,7 @@
             }
             if ((animationStage)==3 || (animationStage)==2) {
                 velocityY=velocityY-field05C;
-                if (velocityY+y<g_ThresholdAt0065782C) {
+                if (velocityY+y<FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(4);
@@ -77,7 +77,7 @@
             }
             if ((animationStage)==3 || (animationStage)==2) {
                 velocityY=velocityY-field05C;
-                if (velocityY+y<g_ThresholdAt0065782C) {
+                if (velocityY+y<FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(4);

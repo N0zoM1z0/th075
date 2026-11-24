@@ -14,7 +14,7 @@ case 0x349: {
     }
     x = owner->x;
     y=(*(&owner->y))+g_F1081_ParentYOffsetAt00658268;
-    rotationZ=(rotationZ)-g_F1081_AngleStepAt00657874;
+    rotationZ=(rotationZ)-FloatConstants::Five;
     if (animationStage==1) {
         if (owner->action!=0x2BE ||
             (owner->action==0x2BE &&

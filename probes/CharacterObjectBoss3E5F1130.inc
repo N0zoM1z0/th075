@@ -24,7 +24,7 @@ case 0x3E5: {
     }
     scaleX=float(owner->field3A0)/field0D8*2.0f;
     scaleY=float(owner->field3A0)/field0D8*2.0f;
-    rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
+    rotationZ=(rotationZ)+FloatConstants::One;
     if (AdvanceNestedFrame()==animationStageCount) {
         ResetSecondaryCounter(10);
         return;

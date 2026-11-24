@@ -23,7 +23,7 @@ case 0x1FD: {
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==2 && (animationFrame)==0) {
-        if (opponent->y==g_ThresholdAt0065782C &&
+        if (opponent->y==FloatConstants::Zero &&
            (opponent->action<0x32 ||
             opponent->action>0x95)) {
             field080=1;

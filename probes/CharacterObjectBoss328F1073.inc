@@ -50,7 +50,7 @@ case 0x328: {
         float(RecordedRange(0,60))+y-g_F1068_ActionSpeedAt00657878,
         facing,0);
     if (field080==0 ||
-        y+velocityY<=g_F1044_GroundAt0065782C) {
+        y+velocityY<=FloatConstants::Zero) {
         ClearFrameInfo();
         owner->SetCameraShake(5.0f);
         owner->PlaySound(1);

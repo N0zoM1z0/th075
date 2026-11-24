@@ -13,7 +13,7 @@
             }
             if ((animationStage)>7) {
                 velocityX=(velocityX)-g_FallingLateDragAt00659240;
-                if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
+                if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
             }
             if ((animationStage)==7 && field07C==2) {
                 ResetSecondaryCounter(8);
@@ -40,7 +40,7 @@
             }
             if ((animationStage)>7) {
                 velocityX=(velocityX)-g_FallingLateDragAt00659240;
-                if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
+                if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
             }
             if ((animationStage)==7 && field07C==2) {
                 ResetSecondaryCounter(8);

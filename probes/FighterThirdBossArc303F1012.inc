@@ -22,14 +22,14 @@ case 0x303: {
         else
             fieldF06=-5;
     }
-    if ((animationStage)<9 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)<9 && y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (velocityY<g_AnimationDeltaAt0065747C)
+        if (velocityY<FloatConstants::One)
             velocityY=1.0f;
     }
-    if ((animationStage)>8 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)>8 && y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
             ResetSecondaryCounter(11);
@@ -49,8 +49,8 @@ case 0x303: {
                     float(facing)*(velocityX)+(x),
                     (*(&y))+g_F1012_ArcYAt006591EC-velocityY,
                     facing,1);
-                velocityX=float(scriptCounterF02)*g_F747_BounceYAt00658044;
-                velocityY=float(fieldF08)*g_F747_BounceYAt00658044;
+                velocityX=float(scriptCounterF02)*FloatConstants::OneHundredth;
+                velocityY=float(fieldF08)*FloatConstants::OneHundredth;
                 fieldF04+=fieldF06;
             }
         }

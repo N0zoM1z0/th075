@@ -2,9 +2,9 @@ case R1190_ACTION: {
 #include "ReimuMeterInitF1190.inc"
 #include "ReimuMeterCycleF1190.inc"
 #if R1190_AIR
-    if ((animationStage)>11 && y>g_ThresholdAt0065782C) {
-        velocityY=velocityY-g_SubtractAt00657478;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+    if ((animationStage)>11 && y>FloatConstants::Zero) {
+        velocityY=velocityY-FloatConstants::Half;
+        if (y+velocityY<=FloatConstants::Zero) {
             ResetSecondaryCounter(15);
             y=0.0f;
             ClearMotionFields();
@@ -22,7 +22,7 @@ case R1190_ACTION: {
         UpdateGaugeTimer(500);
     }
     if ((animationStage)==4 && (animationFrame)==0) {
-        Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+g_ThresholdAt0065782C,
+        Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+FloatConstants::Zero,
             (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<13) {

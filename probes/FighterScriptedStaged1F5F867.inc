@@ -9,14 +9,14 @@ case 0x1F5: {
         field07C=0;
         field3AC=0;
     }
-    if ((velocityX)>g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_F866DropAt006583FC;
-        if ((velocityX)<g_StopThresholdAt00657480)
+    if ((velocityX)>FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::ThreeTenths;
+        if ((velocityX)<FloatConstants::Two)
             velocityX=2.0f;
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(0x18);
             y=0.0f;

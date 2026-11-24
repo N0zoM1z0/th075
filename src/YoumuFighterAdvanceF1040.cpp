@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YoumuFighter::Advance at 005214B0.
@@ -5,12 +6,9 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 extern float g_F898ShotYAt0065839C;
 extern float g_F895AbsThresholdAt006591F4;
-extern float g_F894VerticalStageAt00659090;
 extern float g_F894RandomHeightAt006592A0;
-extern float g_F893FloatFallAt00657478;
 extern float g_F893VerticalStageAt006598B0;
 extern float g_F892DistAt0065787C;
-extern float g_F890GravityAt006581E0;
 extern float g_F890Phase0YAt0065835C;
 extern float g_F890Phase0AltYAt006591E4;
 extern float g_F890Phase1LowYAt0065788C;
@@ -20,49 +18,31 @@ extern float g_F890Phase5YAt0065786C;
 extern double g_F884DoubleDropAt00657D00;
 extern float g_F884PhaseYAt006598B8;
 extern float g_F884Stage5YAt00659470;
-extern float g_F873GroundDropAt00658350;
 extern float g_F872Volley1F9YAt006598BC;
 extern float g_F872Volley1FAYAt00659310;
-extern float g_F866DropAt006583FC;
-extern float g_F865SustainScaleAt00658348;
 extern float g_F861ShotYAt00659460;
 extern float g_F860ShotYAt006581DC;
 extern float g_F857ShotYAt00659298;
 extern float g_F855ShotYAt00658400;
 extern float g_F853OffsetYAt0065929C;
-extern float g_F852GroundBounceMultiplierAt00657478;
-extern float g_AdditionalGravityAt00659090;
 extern float g_F834_UpperAt00657CBC;
 extern float g_F834_LowerAt006590B0;
 extern float g_F701_VolleyYAt00658268;
-extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
-extern float g_JumpGroundCorrectionAt00658058;
-extern double g_JumpReflectionAt006583E8;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
-extern float g_F747_BounceYAt00658044;
 // Owner motion clearing now invokes the inherited Fighter method.
 // F1197 complete original-shaped 005214B0 parent, continued from F901/F1040.
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
 // five instruction widths remain NONEXACT. No whole CODE credit.
 
-extern float g_ThresholdAt0065782C;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_StopThresholdAt00657480;
 extern float g_TrajectoryUpperAt006590C4;
 extern float g_ContactProjectionAt00657888;
-extern float g_ProjectileFallAt006590B4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_BounceScaleAt00657F74;
 extern float g_AngleShiftAt00657878;
-extern float g_ApproachAt00658058;
-extern double g_ContactScaleAt006583E8;
-extern float g_ExtraThresholdAt00657D14;
-extern float g_SubtractAt00657478;
-extern double g_RiseAt00658050;
 void YoumuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -71,16 +51,16 @@ void YoumuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -91,16 +71,16 @@ void YoumuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -113,16 +93,16 @@ void YoumuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -133,16 +113,16 @@ void YoumuFighter::Advance() {
             if ((field3AC) == 0) {
                 ClearMotionFields();
             } else {
-                if ((velocityX) > g_ThresholdAt0065782C) {
-                    velocityX -= g_SubtractAt00657478;
-                    if ((velocityX) < g_ThresholdAt0065782C) {
+                if ((velocityX) > FloatConstants::Zero) {
+                    velocityX -= FloatConstants::Half;
+                    if ((velocityX) < FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
                 }
-                if ((velocityX) < g_ThresholdAt0065782C) {
-                    velocityX += g_RiseAt00658050;
-                    if ((velocityX) > g_ThresholdAt0065782C) {
+                if ((velocityX) < FloatConstants::Zero) {
+                    velocityX += FloatConstants::HalfDouble;
+                    if ((velocityX) > FloatConstants::Zero) {
                         ClearMotionFields();
                         field3AC = 0;
                     }
@@ -163,14 +143,14 @@ void YoumuFighter::Advance() {
                 ClearMotionFields();
             if (animationStage > 2) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
                     return;
                 }
             }
-            if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
+            if (animationStage == 4 && velocityY < FloatConstants::Four)
                 ResetSecondaryCounter(5);
             if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(11);
@@ -191,7 +171,7 @@ void YoumuFighter::Advance() {
                 ClearMotionFields();
             if (animationStage > 2) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -217,7 +197,7 @@ void YoumuFighter::Advance() {
                 ClearMotionFields();
             if (animationStage > 2) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
                     ClearMotionFields();
@@ -234,10 +214,10 @@ void YoumuFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == g_ThresholdAt0065782C)
+        if (field05C == FloatConstants::Zero)
             field05C = 0.6f;
         velocityY = velocityY - field05C;
-        if (y + velocityY <= g_ThresholdAt0065782C) {
+        if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -317,7 +297,7 @@ void YoumuFighter::Advance() {
                 field05C = 0.8f;
                 field07C = 0;
             }
-            if (velocityY + y <= g_ThresholdAt0065782C) {
+            if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
                 scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
                 ClearMotionFields();
@@ -336,8 +316,8 @@ void YoumuFighter::Advance() {
             if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(animationStage - 1);
             if (animationStage == 1 && animationFrame == 0) {
-                if (velocityY != g_ThresholdAt0065782C) {
-                    if (velocityX == g_ThresholdAt0065782C) {
+                if (velocityY != FloatConstants::Zero) {
+                    if (velocityX == FloatConstants::Zero) {
                         ResetSecondaryCounter(3);
                         break;
                     } else {
@@ -354,7 +334,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 3) {
                 rotationZ = (rotationZ) + g_F728_RandomOffsetYAt00657858;
                 velocityY = velocityY - field05C;
-                if (velocityY + y <= g_ThresholdAt0065782C) {
+                if (velocityY + y <= FloatConstants::Zero) {
                     scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
                     scriptCounterF02 = static_cast<short>((*(&velocityY)) * g_ContactProjectionAt00657888);
                     ClearMotionFields();
@@ -371,7 +351,7 @@ void YoumuFighter::Advance() {
                 ResetSecondaryCounter(3);
             else if (animationStage == 3 && animationFrame == 0) {
                 velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;
-                velocityY = static_cast<float>(-scriptCounterF02) * g_F747_BounceYAt00658044;
+                velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneHundredth;
                 field05C = 0.7f;
                 ResetTransform(0.0f, 95.0f, 0.0f);
             } else if (animationStage == 3 && animationFrame != 0) {
@@ -380,9 +360,9 @@ void YoumuFighter::Advance() {
             break;
         }
         case 0x5D: {
-            if (animationStage < 19 && y > g_ThresholdAt0065782C) {
+            if (animationStage < 19 && y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     y = 0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(19);
@@ -414,9 +394,9 @@ void YoumuFighter::Advance() {
             break;
         }
         case 0x5E: {
-            if (animationStage < 18 && y > g_ThresholdAt0065782C) {
+            if (animationStage < 18 && y > FloatConstants::Zero) {
                 velocityY = velocityY - field05C;
-                if (y + velocityY <= g_ThresholdAt0065782C) {
+                if (y + velocityY <= FloatConstants::Zero) {
                     y = 0.0f;
                     ClearMotionFields();
                     ResetSecondaryCounter(18);

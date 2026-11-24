@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "TextureManagerF198.hpp"
 #include "GraphicsTexturedDraw.hpp"
@@ -13,7 +14,6 @@ public:
          float pivotX,float pivotY,float scaleX,float scaleY,
          float angle,unsigned char flags);
 };
-extern float g_ZeroAngleF775;
 extern float g_AngleUnitF775;
 float __cdecl CameraCosineAt0040D900(float);
 float __cdecl CameraSineAt0040D940(float);
@@ -26,10 +26,10 @@ void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
     region.top=0;
     region.right=ENTRY.storedWidth;
     region.bottom=ENTRY.storedHeight;
-    if (scaleX==1.0f && scaleY==1.0f && angle==g_ZeroAngleF775) {
+    if (scaleX==1.0f && scaleY==1.0f && angle==FloatConstants::Zero) {
         quad=SpriteQuad40CA80(x-pivotX,y-pivotY,
              x-pivotX+region.right,y-pivotY+region.bottom);
-    } else if (angle==g_ZeroAngleF775) {
+    } else if (angle==FloatConstants::Zero) {
         quad=SpriteQuad40CA80(x-pivotX*scaleX,y-pivotY*scaleY,
              (region.right-pivotX)*scaleX+x,
              (region.bottom-pivotY)*scaleY+y);

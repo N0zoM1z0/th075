@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "FontSurface.hpp"
@@ -33,7 +34,7 @@ void BattleScene::DrawSelectedNotice()
 
 bool Fighter::IsGroundedStateWindow()
 {
-    return y > g_ZeroFloat
+    return y > FloatConstants::Zero
         && flashGauge == 0
         && IsState50To149()
         && (frameInfo->flags & 0x100000) == 0;

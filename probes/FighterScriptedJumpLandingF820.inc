@@ -14,13 +14,13 @@ case F628_CASE: {
         field07C=0;
         scriptCounterF00=0;
     }
-    if ((velocityX)<g_ThresholdAt0065782C) {
-        velocityX=(velocityX)+g_JumpGroundCorrectionAt00658058;
-        if ((velocityX)>g_ThresholdAt0065782C)
+    if ((velocityX)<FloatConstants::Zero) {
+        velocityX=(velocityX)+FloatConstants::ThreeFifths;
+        if ((velocityX)>FloatConstants::Zero)
             velocityX=0.0f;
     }
     if (CheckHorizontalLimits() && field3BE)
-        field490=(velocityX)*g_JumpReflectionAt006583E8;
+        field490=(velocityX)*FloatConstants::ThreeQuartersDouble;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(0);
     if (animationStage==3 && animationFrame==0 && scriptCounterF00<F628_LIMIT) {

@@ -45,7 +45,7 @@ case 0x331: {
         rotationY=50.0f;
         field0D8=1;
     }
-    rotationZ=(rotationZ)+g_F1057_NudgeAt00657480;
+    rotationZ=(rotationZ)+FloatConstants::Two;
     if (animationStage>0) {
         if (color[0]>30)
             color[0]-=30;

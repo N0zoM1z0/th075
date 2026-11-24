@@ -4,7 +4,7 @@ case 0x59: {
     if ((animationStage)==3) {
         rotationZ=(rotationZ)+g_ReimuRotationStepAt00657858;
         velocityY=velocityY-field05C;
-        if (velocityY+y<=g_ThresholdAt0065782C) {
+        if (velocityY+y<=FloatConstants::Zero) {
             scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
             scriptCounterF02=(*(&velocityY))*g_ContactProjectionAt00657888;
             ClearMotionFields(); y=0.0f; ResetPrimaryCounters(0x61);
@@ -16,7 +16,7 @@ case 0x59: {
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(3);
     else if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=float(int(scriptCounterF00))*g_ReimuBounceXAt006590BC;
-        velocityY=float(-int(scriptCounterF02))*g_ReimuBounceYAt00658044;
+        velocityY=float(-int(scriptCounterF02))*FloatConstants::OneHundredth;
         field05C=0.7f;
         ResetTransform(-7.0f,75.0f,0.0f);
     } else if (animationStage == 3 && animationFrame != 0) {
@@ -82,7 +82,7 @@ case 0x61: {
     }
     if ((animationStage)==3 || (animationStage)==4) {
         velocityY=velocityY-field05C;
-        if (velocityY+y<g_ThresholdAt0065782C) {
+        if (velocityY+y<FloatConstants::Zero) {
             y=0.0f; ClearMotionFields(); ResetSecondaryCounter(5);
             break;
         }

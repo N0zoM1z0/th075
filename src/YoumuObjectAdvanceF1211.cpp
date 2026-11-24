@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YoumuObject::Advance at 00536400.
 // Replays 39,999 code bytes plus 467 bytes of switch data with VC7.1 build 3077.
@@ -13,9 +14,7 @@
 extern float g_F1069_ParentYFirstAt00659138;
 extern float g_F1069_ParentYSecondAt00658264;
 extern float g_F1057_YOffsetAt00657888;
-extern float g_F1057_NudgeAt00657480;
 extern float g_F1057_SpeedBaseAt006590BC;
-extern float g_F1051_ScaleCeilingAt0065747C;
 extern float g_F1211_SplitAltitudeAt006599EC;
 extern float g_F1211_HalfSpreadAt00657878;
 extern float g_F1211_RightBoundAt00659424;
@@ -669,7 +668,7 @@ case 0x331: {
         rotationY=50.0f;
         field0D8=1;
     }
-    rotationZ=(rotationZ)+g_F1057_NudgeAt00657480;
+    rotationZ=(rotationZ)+FloatConstants::Two;
     if (animationStage>0) {
         if (color[0]>30)
             color[0]-=30;
@@ -2489,7 +2488,7 @@ case 0x331: {
         else velocityX = -2.0f;
         if (velocityY > 0.0f) velocityY -= 0.6f;
         else velocityY = 0.0f;
-        if (velocityX == g_F1057_NudgeAt00657480) ++field0DA;
+        if (velocityX == FloatConstants::Two) ++field0DA;
         if (x < 30.0f) {
             velocityX = 0.0f;
             x = 30.0f;
@@ -2781,7 +2780,7 @@ case 0x3E6: {
     }
     scaleX=(scaleX)-g_F1057_SpeedBaseAt006590BC;
     scaleY=(scaleY)-g_F1057_SpeedBaseAt006590BC;
-    rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
+    rotationZ=(rotationZ)+FloatConstants::One;
     if (animationStage==2)
         color[0]=unsigned char(color[0]-12);
     if (AdvanceNestedFrame()==animationStageCount)

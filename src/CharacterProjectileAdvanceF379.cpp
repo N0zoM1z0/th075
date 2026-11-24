@@ -1,8 +1,8 @@
+#include "FloatConstants.hpp"
 #include "CharacterObject.hpp"
 // Complete 855-byte native projectile-behaviour branch of AliceObject.
 // Called by the seven projectile action states of AliceObject::Advance.
 extern float AngleAt00483300(float,float);
-extern const float g_PolarScaleAt00658044;
 extern const float g_AngleUnitAt00657828;
 extern const float g_ProjectMinXAt006595EC;
 extern const float g_ProjectMaxXAt00659424;
@@ -27,7 +27,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             ResetTransform(0,0,0);
             field080=1;
             field07C=0;
-            SetPolarVelocity(static_cast<float>(field0DC),static_cast<float>(field0DA)*g_PolarScaleAt00658044);
+            SetPolarVelocity(static_cast<float>(field0DC),static_cast<float>(field0DA)*FloatConstants::OneHundredth);
             scaleX=1.5f;scaleY=1.5f;
             color[0]=255;
             color[1]=255;
@@ -41,7 +41,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             velocityY=0.0f;
         } else {
             if (animationStage<2) {
-                SetPolarVelocity(static_cast<float>(field0DC),static_cast<float>(field0DA)*g_PolarScaleAt00658044);
+                SetPolarVelocity(static_cast<float>(field0DC),static_cast<float>(field0DA)*FloatConstants::OneHundredth);
                 x=static_cast<float>(facing)*velocityX+x;
                 y=y-velocityY;
             }

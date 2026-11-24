@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "Actor.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -15,7 +16,6 @@ extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
 extern const float g_CameraOffsetXAt00657834;
 extern const float g_CameraOffsetYAt00657830;
-extern const float g_ZeroAt0065782C;
 
 namespace SpriteDispatchF254 {
     void Combine(SpriteQuad40CA80* destination,DWORD* color,SpriteQuad40CA80* source);
@@ -104,7 +104,7 @@ void Actor::RenderMirroredNode()
     TRANSFORM(composed)->TranslateQuad(xShift,yOrigin+g_CameraOffsetYAt00657830+(field06C),0.0f);
     g_ActiveCameraAt00671424->CopyVector(tint);
     reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(2);
-    if (tint[0] != g_ZeroAt0065782C || tint[1] != g_ZeroAt0065782C || tint[2] != g_ZeroAt0065782C) {
+    if (tint[0] != FloatConstants::Zero || tint[1] != FloatConstants::Zero || tint[2] != FloatConstants::Zero) {
         reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawProjectedQuad(drawFrame->textureIndex,composed,&sourceRect,tint[0]+xShift,tint[1]+yOrigin,tint[2],color);
     } else {
         reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(drawFrame->textureIndex,composed,&sourceRect,color);

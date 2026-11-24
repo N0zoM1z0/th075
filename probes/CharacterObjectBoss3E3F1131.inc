@@ -20,7 +20,7 @@ case 0x3E3: {
         if (field0DA<3)
             field0DA=3;
         SetPolarVelocity(float(field0D8),
-            float(field0DA)*g_F1120_XBrakingAt00659090);
+            float(field0DA)*FloatConstants::FourFifths);
     }
     if (animationStage==1) {
         field0D8=short(AngleAt00483300(

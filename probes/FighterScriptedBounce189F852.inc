@@ -10,18 +10,18 @@ case 0x189: {
         velocityX=12.5f;
         field05C=0.0f;
     }
-    if (*(&y)==g_ThresholdAt0065782C) {
-        velocityX=(velocityX)-g_AnimationDeltaAt0065747C;
-        if ((velocityX)<g_ThresholdAt0065782C) {
+    if (*(&y)==FloatConstants::Zero) {
+        velocityX=(velocityX)-FloatConstants::One;
+        if ((velocityX)<FloatConstants::Zero) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
-    if (y>g_ThresholdAt0065782C && (animationStage)<7) {
+    if (y>FloatConstants::Zero && (animationStage)<7) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<g_ThresholdAt0065782C) {
+        if (y+velocityY<FloatConstants::Zero) {
             y=0.0f;
-            velocityX=(velocityX)*g_F852GroundBounceMultiplierAt00657478;
+            velocityX=(velocityX)*FloatConstants::Half;
             ResetSecondaryCounter(7);
             return;
         }

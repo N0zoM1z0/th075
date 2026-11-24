@@ -21,14 +21,14 @@
                         +float(RecordedRange(0,140)),
                     facing,1);
             }
-            if ((velocityX)>g_ThresholdAt0065782C) {
-                velocityX=(velocityX)-g_F728_PositiveDragAt006583FC;
-                if ((velocityX)<g_ThresholdAt0065782C)
+            if ((velocityX)>FloatConstants::Zero) {
+                velocityX=(velocityX)-FloatConstants::ThreeTenths;
+                if ((velocityX)<FloatConstants::Zero)
                     velocityX=0.0f;
             }
-            if (y>g_ThresholdAt0065782C) {
+            if (y>FloatConstants::Zero) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
                     y=0.0f;
@@ -54,9 +54,9 @@
                 field07C=0;
                 field3AC=0;
             }
-            if ((velocityX)>g_ThresholdAt0065782C) {
-                velocityX=(velocityX)-g_F728_PositiveDrag2At00658058;
-                if ((velocityX)<g_ThresholdAt0065782C)
+            if ((velocityX)>FloatConstants::Zero) {
+                velocityX=(velocityX)-FloatConstants::ThreeFifths;
+                if ((velocityX)<FloatConstants::Zero)
                     velocityX=0.0f;
             }
             if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
@@ -67,9 +67,9 @@
                         +float(RecordedRange(0,140)),
                     facing,1);
             }
-            if (y>g_ThresholdAt0065782C) {
+            if (y>FloatConstants::Zero) {
                 velocityY=velocityY-field05C;
-                if (y+velocityY<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
                     y=0.0f;

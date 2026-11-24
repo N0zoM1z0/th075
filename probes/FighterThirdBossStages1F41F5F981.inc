@@ -16,9 +16,9 @@ case 0x1F4: {
         scriptCounterF00=0;
         scriptCounterF02=0;
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(0xC);
             y=0.0f;
@@ -47,22 +47,22 @@ case 0x1F4: {
         field318=-20.0f;
         field31C=-60.0f;
         Fighter::SpawnTrackedEffect(0x32A,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
         Fighter::SpawnTrackedEffect(0x32A,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
     }
@@ -84,9 +84,9 @@ case 0x1F5: {
         scriptCounterF00=0;
         scriptCounterF02=0;
     }
-    if (y>g_ThresholdAt0065782C) {
+    if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C) {
+        if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(0xC);
             y=0.0f;
@@ -115,22 +115,22 @@ case 0x1F5: {
         field318=-20.0f;
         field31C=-60.0f;
         Fighter::SpawnTrackedEffect(0x32A,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
         Fighter::SpawnTrackedEffect(0x32A,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
-            (x)+g_ThresholdAt0065782C,
+            (x)+FloatConstants::Zero,
             (*(&y))+g_F981_YAt00659270,
             facing,1,0,1);
     }

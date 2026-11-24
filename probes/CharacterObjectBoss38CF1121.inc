@@ -11,7 +11,7 @@ case 0x38C: {
         color[3]=0xFF;
         velocityX=6.0f;
     }
-    velocityX=(*(&velocityX))+g_F1120_XBrakingAt00659090;
+    velocityX=(*(&velocityX))+FloatConstants::FourFifths;
     x=float(facing)*velocityX+x;
     if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
