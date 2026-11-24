@@ -261,6 +261,12 @@ before adding the base, in a different instruction order.
   three earlier action joins are fixed. Confirm later cases before
   changing them individually.
   [Remilia controls](GIANTS.md#2026-11-24--remilias-fighter-advance-cold-replays-exactly)
+- Track the first differing instruction alongside the byte count while
+  recovering adjacent actions. Explicit late landing frames in Youmu's
+  `0x5D` move the first difference into `0x5E` even as a width change
+  nearly doubles the total. The matching path in `0x5E` recovers the
+  affected action.
+  [Youmu fighter controls](GIANTS.md#2026-11-24--youmus-fighter-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

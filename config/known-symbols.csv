@@ -948,3 +948,4 @@ address,name,module,confidence,evidence
 0x00536400,YoumuObject::Advance,YoumuObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
 0x0057D580,YuyukoObject::Advance,YuyukoObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
 0x00543210,RemiliaFighter::Advance,RemiliaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
+0x005214B0,YoumuFighter::Advance,YoumuFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048

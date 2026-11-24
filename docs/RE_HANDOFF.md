@@ -102,6 +102,15 @@ stage paths in actions `0x58`, `0x5E`, `0x61` and `0x2F0` restore the
 register joins. The ledger credits 58,294 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--remilias-fighter-advance-cold-replays-exactly)
 
+### Youmu fighter Advance is exact
+
+`youmu-fighter-advance-005214b0` cold-replays 47,656 bytes with all
+seven jump tables, four remap arrays and 1,491 relocations. The
+`0x58` continuation fixes the same entry join as Remilia, and the
+`0x136` and `0x201` animation paths close the later register differences.
+The ledger credits 46,755 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--youmus-fighter-advance-cold-replays-exactly)
+
 ### Yuyuko fighter Advance partial reconstruction
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
@@ -219,7 +228,7 @@ complete function.
 
 The complete but nonexact parents are:
 
-- Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`.
+- Fighters: Reimu `0045DD70` and Sakuya `004AC040`.
 
 The nine remaining functions without a complete parent are:
 

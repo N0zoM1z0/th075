@@ -1,6 +1,4 @@
 // Natural-C++ reconstruction of YoumuFighter::Advance at 005214B0.
-// The complete 46,755-byte fighter state machine remains NONEXACT:
-// 2,736 GPR positions and five instruction widths still differ.
 #include "YoumuFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 extern float g_F898ShotYAt0065839C;
@@ -313,46 +311,142 @@ void YoumuFighter::Advance() {
 #define F613_COUNTER 0xF00
 #include "FighterTrajectoryRecovery4CF613.inc"
 #undef F613_COUNTER
-#define F614_COUNTER 0xF00
-#define F614_STAGE1_SPAWN 0
-#define F614_PROJECTILE 0x3E7
-#define F614_SIDE 0
-#include "FighterTrajectoryBurst58F614.inc"
-#undef F614_COUNTER
-#undef F614_STAGE1_SPAWN
-#undef F614_PROJECTILE
-#undef F614_SIDE
-#include "FighterScriptedBounce59F813.inc"
-#define F617_CASE 0x5D
-#define F617_THRESHOLD 19
-#define F617_BEGIN_STAGE 6
-#define F617_FINISH_STATE 18
-#define F617_START_SPEED 8.0f
-#define F617_START_POS 13.5f
-#define F617_FRICTION 0.6000000238418579f
-#include "FighterAirTransitionCaseF617.inc"
-#undef F617_CASE
-#undef F617_THRESHOLD
-#undef F617_BEGIN_STAGE
-#undef F617_FINISH_STATE
-#undef F617_START_SPEED
-#undef F617_START_POS
-#undef F617_FRICTION
-#define F617_CASE 0x5E
-#define F617_THRESHOLD 18
-#define F617_BEGIN_STAGE 6
-#define F617_FINISH_STATE 16
-#define F617_START_SPEED 8.0f
-#define F617_START_POS -13.5f
-#define F617_FRICTION 0.6000000238418579f
-#include "FighterAirTransitionCaseF617.inc"
-#undef F617_CASE
-#undef F617_THRESHOLD
-#undef F617_BEGIN_STAGE
-#undef F617_FINISH_STATE
-#undef F617_START_SPEED
-#undef F617_START_POS
-#undef F617_FRICTION
+        case 0x58: {
+            if (animationStage == 0 && animationFrame == 0) {
+                velocityX = -field094;
+                velocityY = field098;
+                field05C = 0.8f;
+                field07C = 0;
+            }
+            if (velocityY + y <= g_ThresholdAt0065782C) {
+                scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+                scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+                ClearMotionFields();
+                y = 0.0f;
+                ResetPrimaryCounters(0x59);
+                SetCameraShake(3.0f);
+                PlaySharedSound(0x16);
+                for (int burst = 0; burst < 10; ++burst)
+                    SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                if (fieldEFA > 25) {
+                    fieldEFA = 0;
+                    SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                }
+                break;
+            }
+            if (AdvanceNestedFrame() == animationStageCount)
+                ResetSecondaryCounter(animationStage - 1);
+            if (animationStage == 1 && animationFrame == 0) {
+                if (velocityY != g_ThresholdAt0065782C) {
+                    if (velocityX == g_ThresholdAt0065782C) {
+                        ResetSecondaryCounter(3);
+                        break;
+                    } else {
+                        ResetSecondaryCounter(2);
+                        break;
+                    }
+                }
+            } else if (animationStage == 1 && animationFrame != 0) {
+                // Continue the current trajectory.
+            }
+            break;
+        }
+        case 0x59: {
+            if (animationStage == 3) {
+                rotationZ = (rotationZ) + g_F728_RandomOffsetYAt00657858;
+                velocityY = velocityY - field05C;
+                if (velocityY + y <= g_ThresholdAt0065782C) {
+                    scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+                    scriptCounterF02 = static_cast<short>((*(&velocityY)) * g_ContactProjectionAt00657888);
+                    ClearMotionFields();
+                    y = 0.0f;
+                    ResetPrimaryCounters(0x61);
+                    rotationZ = 0.0f;
+                    SetCameraShake(2.0f);
+                    ClearTransformFlag();
+                    PlaySharedSound(0x16);
+                    break;
+                }
+            }
+            if (AdvanceNestedFrame() == animationStageCount)
+                ResetSecondaryCounter(3);
+            else if (animationStage == 3 && animationFrame == 0) {
+                velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;
+                velocityY = static_cast<float>(-scriptCounterF02) * g_F747_BounceYAt00658044;
+                field05C = 0.7f;
+                ResetTransform(0.0f, 95.0f, 0.0f);
+            } else if (animationStage == 3 && animationFrame != 0) {
+                // Keep the rebound motion on later frames.
+            }
+            break;
+        }
+        case 0x5D: {
+            if (animationStage < 19 && y > g_ThresholdAt0065782C) {
+                velocityY = velocityY - field05C;
+                if (y + velocityY <= g_ThresholdAt0065782C) {
+                    y = 0.0f;
+                    ClearMotionFields();
+                    ResetSecondaryCounter(19);
+                    break;
+                }
+            }
+            if (AdvanceNestedFrame() == animationStageCount) {
+                ResetPrimaryCounters(0);
+                if (inputY > 0)
+                    ResetPrimaryCounters(1);
+            }
+            if (animationStage == animationStageCount - 1) {
+                // Keep the two independent comparisons in their x87 operand order.
+                if (*(&x) > opponent->x)
+                    facing = -1;
+                if (*(&x) < opponent->x)
+                    facing = 1;
+            }
+            if (animationStage == 6 && animationFrame == 0) {
+                velocityY = 8.0f;
+                velocityX = 13.5f;
+                field05C = 0.6f;
+            }
+            if (animationStage == 19 && animationFrame == 0)
+                ResetSecondaryCounter(18);
+            else if (animationStage == 19 && animationFrame != 0) {
+                // Continue the landing animation.
+            }
+            break;
+        }
+        case 0x5E: {
+            if (animationStage < 18 && y > g_ThresholdAt0065782C) {
+                velocityY = velocityY - field05C;
+                if (y + velocityY <= g_ThresholdAt0065782C) {
+                    y = 0.0f;
+                    ClearMotionFields();
+                    ResetSecondaryCounter(18);
+                    break;
+                }
+            }
+            if (AdvanceNestedFrame() == animationStageCount) {
+                ResetPrimaryCounters(0);
+                if (inputY > 0)
+                    ResetPrimaryCounters(1);
+            }
+            if (animationStage == animationStageCount - 1) {
+                if (*(&x) > opponent->x)
+                    facing = -1;
+                if (*(&x) < opponent->x)
+                    facing = 1;
+            }
+            if (animationStage == 6 && animationFrame == 0) {
+                velocityY = 8.0f;
+                velocityX = -13.5f;
+                field05C = 0.6f;
+            }
+            if (animationStage == 18 && animationFrame == 0)
+                ResetSecondaryCounter(16);
+            else if (animationStage == 18 && animationFrame != 0) {
+                // Continue the landing animation.
+            }
+            break;
+        }
 #define F620_FIRST_ACTION 0
 #define F620_SECOND_ACTION 1
 #include "FighterScriptedFacingF816.inc"

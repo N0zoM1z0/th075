@@ -1,7 +1,4 @@
-// F849 genuine original 0x136 ground/extra-fall and sprite0x33A.
-// Full 321B/95 x86/10 native typed PE fields. Current parent has
-// 15 real stage5 GPR operand negatives and two entire-parent JMP bytes.
-// Not byte exact or independently callable original CODE.
+// Youmu's ground recovery and effect 0x33A in action 0x136.
 case 0x136: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
@@ -22,6 +19,9 @@ case 0x136: {
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
+    else if (animationStage < animationStageCount) {
+        // Continue the current animation.
+    }
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnBattleEffect(0x33A,x,y,
             (facing),1);

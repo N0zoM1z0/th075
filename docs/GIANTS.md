@@ -75,7 +75,7 @@ rows have complete replay units.
 | --- | --- | ---: | --- | ---: | ---: | --- |
 | 0045DD70 | Reimu fighter | 60,999 | `FighterWhole0045DD70F1183.cpp` | 6,311 | 5 | 0045FDA9 (#2292) |
 | 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
-| 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
+| 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` (cold exact) | 0 | 0 | — |
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` (cold exact) | 0 | 0 | — |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
@@ -2040,4 +2040,45 @@ accepted source with:
 
 ```sh
 scripts/repo-python scripts/replay-exact-units.py --unit remilia-fighter-advance-00543210
+```
+
+## 2026-11-24 — Youmu's fighter Advance cold-replays exactly
+
+Youmu's fighter `Advance` at `0x005214B0` matches 46,755 CODE bytes
+and the 901 bytes of owned dispatch data starting at `0x0052CB53`.
+The 47,656-byte comparison resolves 1,491 relocations and includes
+seven jump tables, four remap arrays, 379 dispatch entries, and
+1,522 direct branch edges.
+
+The first divergence was the receiver reload at the entry to
+action `0x59`. The later stage-one frames in `0x58` fix the same
+cross-action join as in Remilia. The rebound and landing frame paths
+in `0x59`, `0x5D` and `0x5E` move the first difference to the
+completion check in `0x62`. The `0x5D` change temporarily increases
+the total byte differences while moving the first divergence into
+`0x5E`. Its counterpart in `0x5E` restores the rest of that case.
+
+The input-idle path in `0x62` keeps the previous attack selection. The
+ongoing animation path in `0x136` then restores the full size and all
+dispatch offsets. The remaining join follows the ground-speed
+clamp in `0x201`. Expressing the preparation stages there fixes the
+rest of the function through the shared epilogue.
+
+| Cumulative source variant | GPR differences | Width differences | First GPR difference | Relocated byte differences |
+| --- | ---: | ---: | --- | ---: |
+| Parent at `240ece09` | 2,736 | 5 | `0x0052327A` | 18,391 |
+| Later stage-one frames in `0x58` | 2,717 | 5 | `0x005233DE` | 18,372 |
+| Later rebound frames in `0x59` | 2,662 | 3 | `0x0052352F` | 18,241 |
+| Later landing frames in `0x5D` | 2,867 | 6 | `0x00523688` | 35,637 |
+| Later landing frames in `0x5E` | 2,595 | 5 | `0x00523C4E` | 18,250 |
+| Idle attack inputs in `0x62` | 2,333 | 3 | `0x00526CDA` | 17,912 |
+| Ongoing animation in `0x136` | 686 | 2 | `0x0052904F` | 886 |
+| Preparation stages in `0x201` | 0 | 0 | — | 0 |
+
+The local comparison log is
+`.analysis/youmu-fighter-advance/whole-function-audit.log`. Replay the
+accepted source with:
+
+```sh
+scripts/repo-python scripts/replay-exact-units.py --unit youmu-fighter-advance-005214b0
 ```

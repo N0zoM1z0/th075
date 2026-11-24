@@ -12,6 +12,8 @@ case 0x201: {
         velocityX=(velocityX)-g_F873GroundDropAt00658350;
         if ((velocityX)<g_ThresholdAt0065782C)
             velocityX=0.0f;
+    } else if (animationStage >= 0 && animationStage < 5) {
+        // The preparation stages keep their current horizontal speed.
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
