@@ -1,7 +1,6 @@
 #ifndef TH075_YUYUKO_FIGHTER_HPP
 #define TH075_YUYUKO_FIGHTER_HPP
 #include "Fighter.hpp"
-class YuyukoOwnedObjectF469;
 
 // Yuyuko's fighter: vtable Yuyuko ctor F311 at 0x00659B80.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -20,7 +19,7 @@ public:
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
-    void CreateOwnedObject(YuyukoOwnedObjectF469** out);
+    void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
     void ResetRound();
 

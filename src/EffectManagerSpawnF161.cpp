@@ -8,8 +8,8 @@ void EffectManagerLifetimeF161::Spawn(short effect, float x, float y, signed cha
                                   unsigned char flagB, const float* parameters,
                                   const void* transform, unsigned char mode)
 {
-    Actor* node;
-    fighter_->CreateOwnedObject(reinterpret_cast<void**>(&node));
+    CharacterObject* node;
+    fighter_->CreateOwnedObject(&node);
     node->ResetPrimaryCounters(effect);
     node->x = x;
     node->y = y;
@@ -17,10 +17,10 @@ void EffectManagerLifetimeF161::Spawn(short effect, float x, float y, signed cha
     node->field067 = flagA;
     node->field068 = flagB;
     node->field040 = 0;
-    static_cast<CharacterObject*>(node)->field0C8 = parameters[0];
-    static_cast<CharacterObject*>(node)->field0CC = parameters[1];
-    static_cast<CharacterObject*>(node)->field0D0 = parameters[2];
-    static_cast<CharacterObject*>(node)->field0D4 = parameters[3];
+    node->field0C8 = parameters[0];
+    node->field0CC = parameters[1];
+    node->field0D0 = parameters[2];
+    node->field0D4 = parameters[3];
     node->field08A = mode;
     node->field09C = 1.0f;
     node->field0A0 = 1.0f;

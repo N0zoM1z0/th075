@@ -1,7 +1,6 @@
 #ifndef TH075_MARISA_FIGHTER_HPP
 #define TH075_MARISA_FIGHTER_HPP
 #include "Fighter.hpp"
-class MarisaGeneratedF223;
 
 // One vertex of Marisa's projectile chain. The reset clears the position
 // with integer stores, the renderer reads it as floats.
@@ -33,7 +32,7 @@ public:
     void AdvanceSequence();
     void PlaySharedSound(short sound);
     void RenderChain();
-    void CreateOwnedObject(MarisaGeneratedF223** output);
+    void CreateOwnedObject(CharacterObject** output);
     void ForwardBaseAction();
     void NoOpSlot18();
     void SelectVariant();

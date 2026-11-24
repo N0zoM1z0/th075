@@ -1,8 +1,9 @@
+#include "CharacterObject.hpp"
 #include <deque>
 #include <new>
 #include "EffectManagerLifetimeF161.hpp"
 
-typedef std::deque<Actor*> EffectDequeF137;
+typedef std::deque<CharacterObject*> EffectDequeF137;
 typedef char CheckedEffectDequeF137[(sizeof(EffectDequeF137) == 20) ? 1 : -1];
 typedef char CheckedEffectIteratorF137[(sizeof(EffectDequeF137::iterator) == 8) ? 1 : -1];
 

@@ -427,6 +427,20 @@ arguments and the existing command selection and direction packers.
 Fighter resource loading uses the parser's two stream methods on the
 script object at `+0x714`.
 
+The script resource spans `+0x714..+0xEF7` in the fighter. Its first
+1,000 shorts map script IDs to a VC7.1 deque of 20-byte sequences.
+Each sequence holds a deque of 8-byte records. The constructor, parser,
+field accessors and destructor use those types directly. R296 identifies
+the sequence copy as compiler-generated.
+[Script copy evidence](ORIGIN_PENDING_REVIEW.md#r296--script-sequence-copy-emission-order)
+
+The action table at `Fighter+0x468` is a VC7.1 vector of sequence
+pointers. The 20-byte sequence holds a vector of 116-byte animation
+frames followed by two priority words. Fighter and character object
+slot 0 use the same typed vector accessors. The fighter's slot-7
+factory returns a `CharacterObject*` through its output parameter,
+and the owned effect manager stores that type in all four deques.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

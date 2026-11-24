@@ -1,7 +1,6 @@
 #ifndef TH075_YUKARI_FIGHTER_HPP
 #define TH075_YUKARI_FIGHTER_HPP
 #include "Fighter.hpp"
-class YukariOwnedObjectF469;
 
 // Yukari's fighter: vtable Yukari ctor F309 at 0x00659CC0.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -19,7 +18,7 @@ public:
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
-    void CreateOwnedObject(YukariOwnedObjectF469** out);
+    void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
     void ResetBaseRound();
     void ResetRound();

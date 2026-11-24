@@ -1,7 +1,6 @@
 #ifndef TH075_ALICE_FIGHTER_HPP
 #define TH075_ALICE_FIGHTER_HPP
 #include "Fighter.hpp"
-class AliceGeneratedF227;
 
 // Alice's fighter: vtable Alice ctor F309 at 0x00659608.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -11,7 +10,7 @@ public:
     virtual ~AliceFighter();
     virtual void Advance(); // Slot 1 at 004D7E70.
     void ConfigureStage();
-    void CreateOwnedObject(AliceGeneratedF227** output);
+    void CreateOwnedObject(CharacterObject** output);
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();

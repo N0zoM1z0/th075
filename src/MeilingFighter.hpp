@@ -1,7 +1,6 @@
 #ifndef TH075_MEILING_FIGHTER_HPP
 #define TH075_MEILING_FIGHTER_HPP
 #include "Fighter.hpp"
-class MeilingOwnedObjectF469;
 
 // Meiling's fighter: vtable Meiling ctor F311 at 0x00659F50.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -19,7 +18,7 @@ public:
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
-    void CreateOwnedObject(MeilingOwnedObjectF469** out);
+    void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
     void ResetRound();
 

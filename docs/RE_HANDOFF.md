@@ -23,8 +23,15 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 773 unresolved externals. The stage batch resolved
-79 symbols and cold-replayed 407 units across 81 objects.
+stops at `LNK1120` with 728 unresolved externals. The fighter resource
+batch resolved 45 symbols and cold-replayed 471 units across 242 objects.
+Script parsing, field access and cleanup share the nested deques.
+A headless consumer of the static library exercised all three with a
+synthetic script and verified that missing IDs return an empty count.
+Fighter slot 7 constructs the eleven typed character objects, and all
+five slots match for their base and derived object tables. The battle
+loader still needs the shared fighter lifetime and the remaining fighter
+virtual slot bindings before it can allocate the typed fighter classes.
 Character effects, command selection, and mode 5 input call the shared
 fighter methods. Fighter resource loads use the existing script stream
 methods. Stage drawing, fighter texture loads, and the static effect
@@ -137,8 +144,10 @@ scoped comparison for a new origin decision.
 1. Read [AGENTS.md](../AGENTS.md) and inspect Git and the target preflight.
    Use the existing headless Ghidra project and serialize compiler builds.
 2. Use the strict link log to bind remaining callers to existing sources.
-   The fighter script field accessors and parser still declare separate
-   views of the nested VC7.1 deques. Verify the affected units together.
+   The typed animation vector at `+0x468` and script resource at `+0x714`
+   are available for consolidating the fighter constructor and destructor.
+   Verify the fighter table's AI and stage-render slots before switching
+   the loader to the derived fighter types.
 3. For origin review, look for observations that distinguish the remaining
    byte-equal alternatives. Keep the origin and exactness ledgers separate.
    Replay commands and their dependencies are in the linked evidence notes.

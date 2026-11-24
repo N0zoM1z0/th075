@@ -1,7 +1,6 @@
 #ifndef TH075_REIMU_FIGHTER_HPP
 #define TH075_REIMU_FIGHTER_HPP
 #include "Fighter.hpp"
-class ReimuGeneratedF227;
 
 // Reimu's fighter: vtable Reimu ctor F311 at 0x006590D8.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -15,7 +14,7 @@ public:
     void PollCommands();
     void AdvanceSequence();
     void ConfigureStage();
-    void CreateOwnedObject(ReimuGeneratedF227** output);
+    void CreateOwnedObject(CharacterObject** output);
     void DispatchActions();
     void ForwardBaseAction();
     void RenderChain();

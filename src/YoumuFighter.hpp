@@ -2,7 +2,6 @@
 #define TH075_YOUMU_FIGHTER_HPP
 #include "Fighter.hpp"
 #include "YoumuHistoryQueueF378.hpp"
-class YoumuGeneratedF224;
 
 // Youmu's fighter: vtable Youmu ctor F223 at 0x006598D0.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -22,7 +21,7 @@ public:
     void AdvanceAuxiliary();
     void PollCommands();
     void AdvanceSequence();
-    void CreateOwnedObject(YoumuGeneratedF224** output);
+    void CreateOwnedObject(CharacterObject** output);
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();

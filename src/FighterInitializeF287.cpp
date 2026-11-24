@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include "EffectManagerLifetimeF161.hpp"
 #include "SoundBank.hpp"
+#include "ScriptResource4205F0.hpp"
 // Physical subobject boundaries established from the original member calls;
 // do not infer unobserved internal fields of fighter or library containers.
 class FighterBaseF287 { public: FighterBaseF287(); virtual void Reserved(); };
@@ -52,7 +53,6 @@ typedef char AssertInputStateF287[(
 void SoundBank::Configure()
 {
 }
-class FighterScriptF287 { public: FighterScriptF287(); ~FighterScriptF287(); };
 
 typedef char AssertPropsF287[(sizeof(FighterActorPropertiesF287)==0x194)?1:-1];
 typedef char AssertVectorF287[(sizeof(FighterActorVectorF287)==0x2c)?1:-1];
@@ -65,7 +65,7 @@ class FighterInitF287 : public FighterBaseF287 {
     FighterInputStateF287 replay;
     SoundBank sounds;
     unsigned char remainingFighterState6E4[0x30];
-    FighterScriptF287 scripts;
+    ScriptResource4205F0 scripts;
 public:
     FighterInitF287();
     virtual ~FighterInitF287();

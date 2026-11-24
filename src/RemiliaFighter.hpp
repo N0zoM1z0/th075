@@ -1,7 +1,6 @@
 #ifndef TH075_REMILIA_FIGHTER_HPP
 #define TH075_REMILIA_FIGHTER_HPP
 #include "Fighter.hpp"
-class RemiliaOwnedObjectF469;
 
 // Remilia's fighter: vtable Remilia ctor F311 at 0x00659A40.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -26,7 +25,7 @@ public:
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
-    void CreateOwnedObject(RemiliaOwnedObjectF469** out);
+    void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
     void ResetRound();
 

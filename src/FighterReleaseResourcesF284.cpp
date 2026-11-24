@@ -1,5 +1,6 @@
 #include "SelectionInput4388D0.hpp"
 #include "SoundBank.hpp"
+#include "ScriptResource4205F0.hpp"
 
 // Physical, independently x86-observed fighter member boundaries and
 // original game/VC7 call interfaces. Opaque member spans are purely
@@ -22,7 +23,6 @@ public:
     void Clear();
     ~FighterDequeF284();
 };
-class FighterScriptF284 {public: ~FighterScriptF284();};
 class FighterResourceReleaseF284 {
 public:
     virtual ~FighterResourceReleaseF284();
@@ -34,7 +34,7 @@ private:
     FighterDequeF284 replay;
     SoundBank sounds;
     unsigned char remainingFighterState6E4[0x30];
-    FighterScriptF284 scripts;
+    ScriptResource4205F0 scripts;
 };
 typedef char AssertFighterActorsF284[(sizeof(FighterVectorF284)==0x2c)?1:-1];
 typedef char AssertFighterDequeF284[(sizeof(FighterDequeF284)==0x1b8)?1:-1];

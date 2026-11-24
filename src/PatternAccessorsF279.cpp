@@ -1,34 +1,16 @@
-// Borrowed native VC7 deque-index methods for game-owned pattern field
-// extraction. Container helper implementations are explicitly not authored.
-class PatternEntryVectorF279 {
-public:
-    unsigned char* At(int index);
-};
-class PatternSequenceTableF279 {
-public:
-    PatternEntryVectorF279* At(int index);
-};
-class PatternAccessorsF279 {
-public:
-    signed char GetByteField(short sequence,short entry);
-    short GetWordField(short sequence,short entry);
-    void* GetDwordField(short sequence,short entry);
-};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define ROW (*reinterpret_cast<short*>(RAW+2*sequence))
-#define ITEM reinterpret_cast<PatternSequenceTableF279*>(RAW+0x7d0)->At(ROW)->At(entry)
-signed char PatternAccessorsF279::GetByteField(short sequence,short entry)
+#include "ScriptResource4205F0.hpp"
+
+signed char ScriptResource4205F0::GetByteField(short sequence, short entry)
 {
-    return *reinterpret_cast<signed char*>(ITEM);
+    return static_cast<signed char>(groups.at(groupIndex[sequence]).records.at(entry).kind);
 }
-short PatternAccessorsF279::GetWordField(short sequence,short entry)
+
+short ScriptResource4205F0::GetWordField(short sequence, short entry)
 {
-    return *reinterpret_cast<short*>(ITEM+2);
+    return groups.at(groupIndex[sequence]).records.at(entry).value;
 }
-void* PatternAccessorsF279::GetDwordField(short sequence,short entry)
+
+void* ScriptResource4205F0::GetDwordField(short sequence, short entry)
 {
-    return *reinterpret_cast<void**>(ITEM+4);
+    return groups.at(groupIndex[sequence]).records.at(entry).text;
 }
-#undef ITEM
-#undef ROW
-#undef RAW

@@ -1,7 +1,6 @@
 #ifndef TH075_PATCHOULI_FIGHTER_HPP
 #define TH075_PATCHOULI_FIGHTER_HPP
 #include "Fighter.hpp"
-class PatchouliOwnedObjectF469;
 
 // Patchouli's fighter: vtable Patchouli ctor F309 at 0x00659768.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -23,7 +22,7 @@ public:
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
-    void CreateOwnedObject(PatchouliOwnedObjectF469** out);
+    void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
     void ResetRound();
 

@@ -5,10 +5,11 @@
 #include "Actor.hpp"
 
 class Fighter;
+class CharacterObject;
 class FighterInitF287;
 
 // Native 0x54-byte Fighter-owned manager: one bound Fighter pointer followed
-// by four complete 20-byte VC7.1 deques of Actor pointers. Fighter initialization
+// by four complete 20-byte VC7.1 deques of character object pointers. Fighter initialization
 // constructs it at +0x2EC; later code accesses it through that owned pointer.
 class EffectManagerLifetimeF161 {
 public:
@@ -29,7 +30,7 @@ private:
     EffectManagerLifetimeF161& operator=(const EffectManagerLifetimeF161&);
 
     Fighter* fighter_;
-    std::deque<Actor*> entries_[4];
+    std::deque<CharacterObject*> entries_[4];
 };
 
 typedef char EffectManagerLifetimeF161SizeCheck[

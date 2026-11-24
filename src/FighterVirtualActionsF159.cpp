@@ -1,5 +1,4 @@
 #include <string.h>
-#include "FighterAnimationReset453D80.hpp"
 #include "FighterVirtualActionsF159.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 
@@ -139,7 +138,7 @@ void Fighter::ResetRound()
     action = 0;
     animationStage = 0;
     animationFrame = 0;
-    reinterpret_cast<FighterAnimationReset453D80*>(this)->BindAnimation();
+    BindAnimation();
     field082 = 0;
     field3B8 = 0;
     field3BA = 0;

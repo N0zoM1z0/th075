@@ -69,8 +69,8 @@ void Fighter::LoadResources()
     else
         reinterpret_cast<TextureManagerF198*>(field534Texture)->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
     sprintf(filename,g_ScriptFormatAt00658F78,name,name);
-    reinterpret_cast<ScriptResource4205F0*>(&script)->LoadFile(filename,2,0);
-    reinterpret_cast<ScriptResource4205F0*>(&script)->LoadArchive(filename,g_ScriptArchiveAt00658F94);
+    script.LoadFile(filename,2,0);
+    script.LoadArchive(filename,g_ScriptArchiveAt00658F94);
     field480=new FighterCommandsF282(static_cast<FighterTextureF282*>(drawing));
     SetNoticeMode(0);
     ResetRound();

@@ -41,7 +41,7 @@ short BattleScene::AdvanceState()
             } else {
                 LINE = 0;
                 g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
-                reinterpret_cast<StatePatternActor *>(fighters[WINNER])->ChoosePattern();
+                fighters[WINNER]->ChoosePatternSequence();
                 g_TextRenderer->RenderTextToTexture(STATE_TEXT, 120, 120, 255, 24, 2, false);
                 fighters[WINNER]->noticeBadge = fighters[WINNER]->quoteBadges[LINE];
                 g_GameProgress.IncrementModeCounter(g_PlayerIdAt006714C8[WINNER], g_PlayerIdAt006714C8[1 - WINNER]);

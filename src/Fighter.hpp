@@ -4,8 +4,10 @@
 #include <deque>
 #include "FighterOutcomeByteF992.hpp"
 #include "FighterEffectPolicies.hpp"
+#include "ScriptResource4205F0.hpp"
 
 class EffectManagerLifetimeF161;
+class CharacterObject;
 class TimelineDrawing438D00;
 class FighterTextureF282;
 class FighterStageTextureF286;
@@ -20,21 +22,7 @@ private:
 };
 typedef char FighterSoundsF282SizeCheck[(sizeof(FighterSoundsF282) == 0x14) ? 1 : -1];
 
-// Script reader embedded in every fighter at +0x714. Its methods are the
-// native callees 0045DD00 (count) and the field getters next to it.
-class FighterScriptAccessorF410 {
-public:
-    short CountPatternEntries(short script);
-    signed char GetByteField(short script, short index);
-    short GetWordField(short script, short index);
-    void* GetDwordField(short script, short index);
-};
-
-// Action sequence container at Fighter+0x468 (native accessor 004420B0).
-class ActionSequenceSlots {
-public:
-    void *&At(unsigned int index);
-};
+typedef std::vector<FighterSequenceInfo*> ActionSequenceSlots;
 
 // Controller binding block embedded at Fighter+0x494. SetBindings copies 40
 // bytes at +4 and clears 28 bytes at +0x2C, so the block spans 0x48 bytes.
@@ -72,6 +60,7 @@ public:
     short CalculateDamage(Actor* attack);                           // 00455640 damage this fighter's attack deals
     void SetNoticeMode(unsigned char mode);                         // 0045CD50
     void LoadResources();                                           // 00456B60
+    void ChoosePatternSequence();
     void LoadPattern();                                             // 00457660
     void SelectResourceParameters();                                // 00452B30
     void ApplyMode5Direction();                                      // 00454C20
@@ -87,6 +76,7 @@ public:
 
     // Base fighter methods (0x451EB0-0x45D710).
     void SetBindings(const void* source);
+    void BindAnimation();
     void Render();                        // slot 2 override for every fighter, 00453F70
     void SetNoticeFields(signed char value,unsigned char enabled,unsigned char alpha);
     void RenderNotice(void* text,unsigned char red,unsigned char green,unsigned char blue,unsigned char highlighted);
@@ -125,7 +115,7 @@ public:
     Fighter();                            // 004567B0
     virtual ~Fighter();                   // slot 5: each character's deleting destructor
     virtual void ResetRound();            // slot 6, base 00457010
-    virtual void CreateOwnedObject(void** object) = 0;  // slot 7, typed per character
+    virtual void CreateOwnedObject(CharacterObject** object) = 0;  // slot 7
     virtual void ForwardBaseAction();     // slot 8, base 00451EB0
     virtual void RenderChain() = 0;       // slot 9
     virtual void DispatchActions() = 0;   // slot 10
@@ -228,7 +218,6 @@ public:
     unsigned char field465;             // +0x465
     unsigned char unknown466[0x468 - 0x466];
     ActionSequenceSlots sequenceSlots;  // +0x468 action sequences, indexed by action id
-    unsigned char unknown469[0x478 - 0x469];
     short field478;                     // +0x478 signed texture slot count
     unsigned char unknown47A[0x47C - 0x47A];
     int field47C;                       // +0x47C
@@ -308,8 +297,7 @@ public:
     unsigned char field705[10];         // +0x705 per-character settings written by the constructors
     unsigned char unknown70F[0x713 - 0x70F];
     signed char field713;               // +0x713 signed character sequence state
-    FighterScriptAccessorF410 script;   // +0x714 script reader object embedded in the fighter
-    unsigned char unknown715[0xEF8 - 0x715];
+    ScriptResource4205F0 script;       // +0x714 script indices and sequence deque
     unsigned short fieldEF8;            // +0xEF8 wrapping animation timer
     short fieldEFA;                     // +0xEFA signed per-owner projectile counter
     short sequenceTimer;                // +0xEFC
@@ -329,6 +317,8 @@ typedef char FighterLayoutCheck[(
     offsetof(Fighter, effectTransformRecord) == 0x2F0 &&
     offsetof(Fighter, health) == 0x324 &&
     offsetof(Fighter, spirit) == 0x3B0 &&
+    offsetof(Fighter, sequenceSlots) == 0x468 &&
+    offsetof(Fighter, field478) == 0x478 &&
     offsetof(Fighter, inputBindings) == 0x494 &&
     offsetof(Fighter, inputHistory) == 0x518 &&
     sizeof(std::deque<unsigned char>) == 0x14 &&

@@ -1,6 +1,6 @@
 #include "CharacterActionDispatch502450.hpp"
 
-#define TARGET_PRIORITY(index) (static_cast<FighterSequenceInfo *>(sequenceSlots.At(index))->targetPriority)
+#define TARGET_PRIORITY(index) (sequenceSlots.at(index)->targetPriority)
 #define ACTION_CHANGE_ALLOWED ((action > 299 && field07C != 0 && field07C != 3) || action < 300)
 #define FORWARD_INPUT \
     ((aiCommand == 1 && facing == 1) || \

@@ -1,11 +1,12 @@
+#include "CharacterObject.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 #include <deque>
 #include <new>
 
-// The same four native std::deque<Actor*> members that Spawn writes are
-// traversed and cleared here. Actor's trivial destructor preserves the
+// The same four native std::deque<CharacterObject*> members that Spawn writes are
+// traversed and cleared here. The trivial object destructor preserves the
 // original unsized deallocation of each effect pointer.
-typedef std::deque<Actor*> EffectAddressDequeF160;
+typedef std::deque<CharacterObject*> EffectAddressDequeF160;
 typedef char EffectAddressDequeSizeF160[(sizeof(EffectAddressDequeF160) == 20) ? 1 : -1];
 typedef char EffectAddressIteratorSizeF160[(sizeof(EffectAddressDequeF160::iterator) == 8) ? 1 : -1];
 

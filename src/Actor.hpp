@@ -101,7 +101,7 @@ typedef char FighterFrameInfoLayoutCheck[(
 // Action sequence record (Actor+0x78 and the entries of Fighter::sequenceSlots).
 // A candidate's targetPriority is compared with the current priority.
 struct FighterSequenceInfo {
-    unsigned char unknown00[0x10];
+    std::vector<FighterFrameInfo> frames;
     short targetPriority;     // +0x10
     short priority;           // +0x12
 };
@@ -130,7 +130,7 @@ public:
     // Slots shared by fighter and object vtables. Advance is pure in the
     // base fighter table (00658FE8 slot 1 is _purecall); each class's
     // per-frame state machine overrides it.
-    virtual void BindAnimation();         // slot 0, fighters: 00453D80
+    virtual void BindAnimation() = 0;         // slot 0, fighters: 00453D80
     virtual void Advance() = 0;           // slot 1
     virtual void Render();                // slot 2, fighters: 00453F70
     virtual void RenderNode();            // slot 3, 00410350

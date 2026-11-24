@@ -1,7 +1,8 @@
+#include "CharacterObject.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 #include <deque>
 
-typedef std::deque<Actor*> DispatchDequeF162;
+typedef std::deque<CharacterObject*> DispatchDequeF162;
 typedef char DispatchDequeSizeF162[(sizeof(DispatchDequeF162) == 20) ? 1 : -1];
 typedef char DispatchIteratorSizeF162[(sizeof(DispatchDequeF162::iterator) == 8) ? 1 : -1];
 

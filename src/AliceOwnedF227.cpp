@@ -1,12 +1,9 @@
+#include "CharacterObject.hpp"
 #include "AliceFighter.hpp"
-// Physical allocation carrier only, not the complete original owner class.
-class AliceGeneratedF227 {
-    unsigned char nativeAllocation[0xe8];
-public:
-    AliceGeneratedF227(void* fighter);
-};
-typedef char AssertAliceGenerated232F227[(sizeof(AliceGeneratedF227)==0xe8)?1:-1];
-void AliceFighter::CreateOwnedObject(AliceGeneratedF227** output)
+
+typedef char AliceObjectFactorySizeCheck[(sizeof(AliceObject) == 0xE8) ? 1 : -1];
+
+void AliceFighter::CreateOwnedObject(CharacterObject** output)
 {
-    *output = new AliceGeneratedF227(this);
+    *output = new AliceObject(this);
 }

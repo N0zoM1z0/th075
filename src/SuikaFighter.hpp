@@ -1,7 +1,6 @@
 #ifndef TH075_SUIKA_FIGHTER_HPP
 #define TH075_SUIKA_FIGHTER_HPP
 #include "Fighter.hpp"
-class SuikaOwnedObjectF469;
 
 // Suika's fighter: vtable Suika ctor F309 at 0x00659E30.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -23,7 +22,7 @@ public:
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
-    void CreateOwnedObject(SuikaOwnedObjectF469** out);
+    void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
     void ResetBaseRound();
     void ResetRound();

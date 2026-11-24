@@ -1,7 +1,6 @@
 #ifndef TH075_SAKUYA_FIGHTER_HPP
 #define TH075_SAKUYA_FIGHTER_HPP
 #include "Fighter.hpp"
-class SakuyaOwnedObjectF469;
 
 // Sakuya's fighter: vtable Sakuya ctor F309 at 0x006594A8.
 // Slot overrides use the Fighter slot names; the rest are helpers.
@@ -25,7 +24,7 @@ public:
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
-    void CreateOwnedObject(SakuyaOwnedObjectF469** out);
+    void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
 
     // Fields after the shared Fighter layout.

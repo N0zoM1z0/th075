@@ -11,7 +11,7 @@ public:
     void ClearFrameInfo();              // 0045B830
     void PlaySharedSound(short sound);    // 0045B860, native sound-bank forwarding
     void NoOpAt0045B850(int unused);    // 0045B850, observed native no-op RET 4
-    void Render();                      // slot 2, 0040FC70
+    void BindAnimation();               // slot 0, 0045B880
 
     ActionSequenceSlots* sequences;     // +0x0C4 the owner's sequence container (owner + 0x468)
     float field0C8;                     // +0x0C8
