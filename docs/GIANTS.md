@@ -3,7 +3,7 @@
 The unmatched authored functions are slot-1 `Advance` methods from
 the fighter and character-object vtables. They are per-frame state
 machines with large `switch (action)` bodies. The Sakuya, Alice, Patchouli,
-Remilia, Yukari, Suika and Meiling object parents have exact replay units.
+Youmu, Remilia, Yukari, Suika and Meiling object parents have exact replay units.
 Use the live reconstruction report for the authored backlog and the
 table below for complete source parents.
 
@@ -33,8 +33,9 @@ its exact 1,008-byte auxiliary writer. The original 0xFF8 allocation and
 VC7.1's 12-byte list establish the shared owner/member layout. The entire
 40,464-byte research COFF body is unchanged, with all 938 relocations retaining
 their positions, types, addends and local targets; the front-call symbol now
-names `std::list<ObservedInputSnapshotF378>::front`. This remains a NONEXACT
-giant. Its 81 affected exact units cold-replayed 81/81.
+names `std::list<ObservedInputSnapshotF378>::front`. The layout change
+cold-replayed all 81 affected exact units. The [complete object replay](#2026-11-24--youmus-object-advance-cold-replays-exactly)
+now includes that call.
 
 The shared 0x54-byte effect manager now owns four `std::deque<Actor*>`
 instances rather than borrowed raw/void-pointer views. The complete
@@ -62,7 +63,7 @@ Youmu's shared 16-byte history record now uses ordinary named members,
 with no alternative union aliases or object-side overlay typedef. The
 1,008-byte snapshot writer and all 81 affected exact units cold-replay; the
 whole 40,464-byte object `Advance` parent remains byte-for-byte identical,
-including all 938 relocation records. Its nonexact register frontier remains.
+including all 938 relocation records at that checkpoint.
 
 ## Complete research parents
 
@@ -79,7 +80,7 @@ rows have complete replay units.
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` (cold exact) | 0 | 0 | — |
-| 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` | 913 | 10 | 005392F8 (#3223) |
+| 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` (cold exact) | 0 | 0 | — |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` | 914 | 6 | 00583489 (#6565) |
 | 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` (cold exact) | 0 | 0 | — |
@@ -1932,4 +1933,34 @@ offsets and 1,196 direct branch destinations. The match ledger credits
 
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit yukari-object-advance-005a1600
+```
+
+## 2026-11-24 — Youmu's object Advance cold-replays exactly
+
+Actions 829 and 906 switch to stage 14 when their owner reaches the
+trigger stage. Explicitly expressing the path already at stage 14 or
+later preserves the original stage change and return, followed by
+the usual owner checks on the continuing path. VC7.1 emits the target
+registers at both joins and removes the ten instruction-width differences.
+
+| Explicit later-stage paths | First differing register use | GPR differences | Complete relocated byte differences |
+| --- | --- | ---: | ---: |
+| Baseline | `005392F8` in 829 | 913 | 26,729 |
+| 829 | `0053DB86` in 906 | 472 | 9,470 |
+| 829 and 906 | — | 0 | 0 |
+
+The history-reader call at `005365FF` binds the typed
+`std::list<ObservedInputSnapshotF378>::front` to `00540220`. The
+emitted 32-byte member matches using its native begin and dereference
+destinations. The emitted dependency bodies also match the addresses
+recorded in the [R243 origin evidence](../config/character-list-front-origin-evidence.json).
+
+The canonical replay compares 40,466 bytes with zero differences,
+including all 938 relocation fields, the 268-byte jump table at
+`0054003F` and the 199-byte remap at `0054014B`. The full audit
+checks 199 action offsets and 967 direct branch destinations.
+The match ledger credits 39,999 code bytes.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit youmu-object-advance-00536400
 ```

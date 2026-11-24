@@ -1,6 +1,6 @@
 // Natural-C++ reconstruction of YoumuObject::Advance at 00536400.
-// The 39,999-byte native object state machine is represented in full, but
-// remains NONEXACT; no exact replacement or original private-layout claim.
+// Replays 39,999 code bytes plus 467 bytes of switch data with VC7.1 build 3077.
+// Compiler profile and relocation bindings are in config/match-units.toml.
 // The typed list-history declarations are kept in YoumuObjectHistoryF1211.hpp.
 #include "CharacterObject.hpp"
 #include "YoumuFighter.hpp"
@@ -808,7 +808,10 @@ case 0x331: {
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    else if (owner->action == 703) {
+    else if (animationStage >= 14) {
+        // Continue the animation already at stage 14 or later.
+    }
+    if (owner->action == 703) {
         x = owner->x;
         y = owner->y;
     }
@@ -2093,6 +2096,9 @@ case 0x331: {
         return;
     }
     else {
+        if (animationStage >= 14) {
+            // Continue the animation already at stage 14 or later.
+        }
         if (owner->action >= 700) {
             x = owner->x;
             y = owner->y;

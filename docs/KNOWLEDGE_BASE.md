@@ -245,6 +245,11 @@ before adding the base, in a different instruction order.
   eleven instruction widths across the complete object. The matching
   body grows by three bytes with the same instruction count.
   [Yukari comparison](GIANTS.md#2026-11-24--yukaris-object-advance-cold-replays-exactly)
+- When two actions have the same stage-change guard, compare the later
+  join after correcting the earlier one. Youmu's explicit stage-14
+  continuation in action 829 exposes the corresponding join in 906.
+  Both changes together reproduce the full function and switch layout.
+  [Youmu controls](GIANTS.md#2026-11-24--youmus-object-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

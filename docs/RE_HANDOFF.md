@@ -90,6 +90,14 @@ relocations. The unfinished animation path in action 908 restores the
 register choices across 909–917 and adds 43,599 authored code bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--yukaris-object-advance-cold-replays-exactly)
 
+### Youmu object Advance is exact
+
+`youmu-object-advance-00536400` cold-replays 40,466 bytes with all
+938 relocations. The later-stage paths in 829 and 906 restore both
+register joins. The typed history reader binds to the native list
+front and the ledger credits 39,999 bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--youmus-object-advance-cold-replays-exactly)
+
 ### Latest Yuyuko improvement
 
 In `probes/CharacterObjectActions0057D580F1237.cpp`, state 838's condition
@@ -234,7 +242,7 @@ The complete but nonexact parents are:
 
 - Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
   Remilia `00543210`.
-- Objects: Youmu `00536400`, Yuyuko `0057D580`.
+- Object: Yuyuko `0057D580`.
 
 The nine remaining functions without a complete parent are:
 
