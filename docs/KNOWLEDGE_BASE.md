@@ -170,7 +170,7 @@ all 36 bytes of the wrapper. The application and scene drawing callers
 share that interface.
 
 WinMain uses the shared event, input, sound, archive and game-default
-lifetime functions. Fourteen scene types have compile-time checks for the
+lifetime functions. All fifteen scene types have compile-time checks for the
 native allocation sizes. The comparison covers the complete WinMain
 body and its 15-entry scene table.
 
@@ -200,6 +200,14 @@ texture pointers precede 60 catalog records of 16 bytes each. Its
 selection counters follow the catalog at offsets `0x3DC` through
 `0x3DF`. Named member accesses preserve the original array strides
 and all three scenes' virtual table targets.
+
+The 84-byte replay browser owns 20-byte VC7.1 deques at offsets
+`0x0C`, `0x20` and `0x34` for filenames, 60-byte replay file headers
+and secondary mode bytes. The scanner, selection and renderer use
+the same containers. Selection writes to `g_ReplayRecords.filePath`
+with a four-byte relocation addend. The scanner uses the CRT array
+allocation entry at `0x006416A2` and retains the native file-header local
+and stack-cookie layout.
 
 The progress object occupies `0x16BC8` bytes from `0x006718F8` to the cosine
 table. Its startup and registered exit wrappers match the native code.

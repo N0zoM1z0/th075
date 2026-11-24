@@ -1,3 +1,4 @@
+#include "ReplayBrowserScene.hpp"
 #include "NameEntryScenes.hpp"
 #include "MusicRoomScene.hpp"
 #include "LoadingLogoScenes.hpp"
@@ -12,11 +13,6 @@
 #include "DisplayOptions.hpp"
 // Complete original Japanese TH075 1.11 WinMain, 00602A60..0060360A.
 // The 15-entry post-RET scene table is compared separately from CODE coverage.
-// Scene names are provisional. Their complete allocation carriers use the
-// independently observed 15 new extents and native 8-byte scene-base boundary.
-// observedSize is actual allocated private storage, not frame padding or a
-// claim that its still-opaque private field meanings have been recovered.
-// Never reuse these carriers as another callable's private semantic layout.
 // The const pointer reference materializes the genuinely used construction
 // value before transfer to currentSceneOwner; it creates no named dummy local.
 #include <windows.h>
@@ -38,10 +34,7 @@
 // original window/resource/scene native call and all 15 scene allocations.
 // Only actually observed scene allocation footprints and interface calls.
 namespace ArchiveCatalogF353 { void OpenAndRegister(const char*, const char*); }
-#define DEF_SCENE(N,SIZE) class Scene##N##F1171 : public SceneBase { public:Scene##N##F1171();unsigned short Update();void Render();private:unsigned char observedSize[(SIZE)-sizeof(SceneBase)];};
-DEF_SCENE(5,0x54)
-#undef DEF_SCENE
-
+typedef char ReplayBrowserSceneAllocationSize[(sizeof(ReplayBrowserScene) == 0x54) ? 1 : -1];
 typedef char LoadingSceneAllocationSize[(sizeof(LoadingScene) == 0x10) ? 1 : -1];
 typedef char LogoSceneAllocationSize[(sizeof(LogoScene) == 0x10) ? 1 : -1];
 typedef char BattleEndSceneAllocationSize[(sizeof(BattleEndScene) == 0xC) ? 1 : -1];
@@ -181,7 +174,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
                 case 1: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LoadingScene)); } break;
                 case 2: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new TitleScene)); } break;
                 case 3: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new CharacterSelectScene)); } break;
-                case 5: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene5F1171); } break;
+                case 5: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ReplayBrowserScene)); } break;
                 case 6: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultScene)); } break;
                 case 7: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new SharedNameEntryScene)); } break;
                 case 8: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleEndScene)); } break;

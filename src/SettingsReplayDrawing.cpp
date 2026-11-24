@@ -1,3 +1,4 @@
+#include "ReplayBrowserScene.hpp"
 #include "GameConfigStorage.hpp"
 #include "GameSharedState.hpp"
 #include "Graphics.hpp"
@@ -7,15 +8,6 @@
 #include "SpriteTransform.hpp"
 
 // Pointer-only entry views. Original identities and complete layouts unknown.
-class ReplayBrowser42CA60 { public: void RenderList(); void DrawFilename(float, float, DWORD, const char*); void DrawNameGlyphs(float, float, DWORD, const signed char*); void DrawMetadataNumber(float, float, DWORD, int, int); public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x048 - 0x000];
-    short field048;
-    short field04A;
-    unsigned char field04C;
-    unsigned char unknown04D[0x051 - 0x04D];
-    signed char field051;
-};
 class SceneQuadDrawingF124 { public: void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD); };
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_OptionsFlagAt00671430;
@@ -119,20 +111,9 @@ void OptionsScene::Render() {
 #undef DRAWING
 #undef FIELD
 
-class ReplayFilesF124 { public: unsigned int Size(); const char** At(unsigned int); };
-class ReplayRecordsF124 { public: void* At(unsigned int); };
-class ReplayModesF124 { public: unsigned char* At(unsigned int); };
-
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0x8)))
-#define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF124*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0x8)))
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
-#define FILES reinterpret_cast<ReplayFilesF124*>(reinterpret_cast<char*>(this) + 12)
-#define RECORDS reinterpret_cast<ReplayRecordsF124*>(reinterpret_cast<char*>(this) + 32)
-#define MODES reinterpret_cast<ReplayModesF124*>(reinterpret_cast<char*>(this) + 52)
-#define RECORD_BYTE(index, offset) (*(static_cast<signed char*>(RECORDS->At(index)) + (offset)))
 
-void ReplayBrowser42CA60::RenderList() {
+void ReplayBrowserScene::Render() {
     if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 quadValue;
         RECT region;
@@ -143,68 +124,61 @@ void ReplayBrowser42CA60::RenderList() {
         DWORD shadowColor;
         int selectionIndex;
         BYTE opacity;
-        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
-        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
+        texture->SetDepthMode(0);
+        texture->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
+        texture->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 192, 96, 512, 128);
         TRANSFORM(quadValue)->BuildQuad(160.0f, 10.0f, 480.0f, 42.0f);
-        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+        texture->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 512, 20);
         TRANSFORM(quadValue)->BuildQuad(64.0f, 50.0f, 576.0f, 70.0f);
-        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+        texture->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         pageRows = 10;
         firstRow = (field048 / 10) * 10;
-        if (field048 / 10 == FILES->Size() / 10) pageRows = FILES->Size() % 10;
+        if (field048 / 10 == filenames.size() / 10) pageRows = filenames.size() % 10;
         for (recordIndex = 0; recordIndex < pageRows; recordIndex++) {
             if (firstRow + recordIndex == field048)
                 textTint = D3DCOLOR_ARGB(field04C, 255, 255, 255);
             else
                 textTint = D3DCOLOR_ARGB(field04C / 2, 255, 255, 255);
-            DrawFilename(50.0f, static_cast<float>(recordIndex * 24 + 80), textTint, *FILES->At(firstRow + recordIndex));
-            DrawNameGlyphs(160.0f, static_cast<float>(recordIndex * 24 + 80), textTint, static_cast<signed char*>(RECORDS->At(firstRow + recordIndex)));
-            DrawMetadataNumber(330.0f, static_cast<float>(recordIndex * 24 + 80), textTint, RECORD_BYTE(firstRow + recordIndex, 8), 2);
+            DrawFilename(50.0f, static_cast<float>(recordIndex * 24 + 80), textTint, filenames[firstRow + recordIndex]);
+            DrawNameGlyphs(160.0f, static_cast<float>(recordIndex * 24 + 80), textTint, reinterpret_cast<const signed char*>(headers[firstRow + recordIndex].playerName));
+            DrawMetadataNumber(330.0f, static_cast<float>(recordIndex * 24 + 80), textTint, static_cast<signed char>(headers[firstRow + recordIndex].month), 2);
             SetRect(&region, 228, 40, 247, 60);
             TRANSFORM(quadValue)->BuildQuad(325.0f, static_cast<float>(recordIndex * 24 + 80), 344.0f, static_cast<float>(recordIndex * 24 + 100));
-            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, textTint);
-            DrawMetadataNumber(370.0f, static_cast<float>(recordIndex * 24 + 80), textTint, RECORD_BYTE(firstRow + recordIndex, 9), 2);
-            if (RECORD_BYTE(firstRow + recordIndex, 13) == 0) {
+            texture->DrawQuad(2, quadValue, &region, textTint);
+            DrawMetadataNumber(370.0f, static_cast<float>(recordIndex * 24 + 80), textTint, static_cast<signed char>(headers[firstRow + recordIndex].day), 2);
+            if (static_cast<signed char>(headers[firstRow + recordIndex].mode) == 0) {
                 if (firstRow + recordIndex == field048)
                     shadowColor = D3DCOLOR_ARGB(field04C, 192, 192, 192);
                 else
                     shadowColor = D3DCOLOR_ARGB(field04C / 2, 192, 192, 192);
-                SetRect(&region, 0, *MODES->At(firstRow + recordIndex) * 20 + 20, 100, *MODES->At(firstRow + recordIndex) * 20 + 40);
+                SetRect(&region, 0, secondaryModes[firstRow + recordIndex] * 20 + 20, 100, secondaryModes[firstRow + recordIndex] * 20 + 40);
                 TRANSFORM(quadValue)->BuildQuad(380.0f, static_cast<float>(recordIndex * 24 + 86), 480.0f, static_cast<float>(recordIndex * 24 + 100));
                 TRANSFORM(quadValue)->TranslateQuad(36.0f, 8.0f, 0);
-                reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, shadowColor);
+                texture->DrawQuad(1, quadValue, &region, shadowColor);
             }
-            SetRect(&region, 0, RECORD_BYTE(firstRow + recordIndex, 10) * 20 + 20, 100, RECORD_BYTE(firstRow + recordIndex, 10) * 20 + 40);
+            SetRect(&region, 0, static_cast<signed char>(headers[firstRow + recordIndex].primaryFighter) * 20 + 20, 100, static_cast<signed char>(headers[firstRow + recordIndex].primaryFighter) * 20 + 40);
             TRANSFORM(quadValue)->BuildQuad(380.0f, static_cast<float>(recordIndex * 24 + 80), 480.0f, static_cast<float>(recordIndex * 24 + 100));
-            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, textTint);
-            SetRect(&region, 100, RECORD_BYTE(firstRow + recordIndex, 13) * 20 + 20, 180, RECORD_BYTE(firstRow + recordIndex, 13) * 20 + 40);
+            texture->DrawQuad(1, quadValue, &region, textTint);
+            SetRect(&region, 100, static_cast<signed char>(headers[firstRow + recordIndex].mode) * 20 + 20, 180, static_cast<signed char>(headers[firstRow + recordIndex].mode) * 20 + 40);
             TRANSFORM(quadValue)->BuildQuad(500.0f, static_cast<float>(recordIndex * 24 + 80), 580.0f, static_cast<float>(recordIndex * 24 + 100));
-            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, textTint);
+            texture->DrawQuad(1, quadValue, &region, textTint);
         }
         if (field051 == 1) {
-            for (selectionIndex = 0; selectionIndex < RECORD_BYTE(field048, 14); selectionIndex++) {
+            for (selectionIndex = 0; selectionIndex < headers[field048].recordCount; selectionIndex++) {
                 if (field04A == selectionIndex) opacity = 255;
                 else opacity = 128;
                 SetRect(&region, 100, selectionIndex * 17 + 224, 200, selectionIndex * 17 + 241);
                 TRANSFORM(quadValue)->BuildQuad(40.0f, static_cast<float>(selectionIndex * 20 + 320), 140.0f, static_cast<float>(selectionIndex * 20 + 337));
                 if (selectionIndex >= 5) TRANSFORM(quadValue)->TranslateQuad(120.0f, -100.0f, 0);
-                reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(opacity, 255, 255, 255));
+                texture->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(opacity, 255, 255, 255));
             }
         }
         Graphics::EndFrame();
     }
 }
 
-#undef RECORD_BYTE
-#undef MODES
-#undef RECORDS
-#undef FILES
 #undef TRANSFORM
-#undef QUAD_DRAWING
-#undef DRAWING
-#undef FIELD

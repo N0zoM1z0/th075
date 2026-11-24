@@ -22676,7 +22676,7 @@ source = "src/SettingsReplayDrawing.cpp"
 object = "build/matching/SettingsReplayDrawing.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayBrowser42CA60::RenderList"]
-symbol = "?RenderList@ReplayBrowser42CA60@@QAEXXZ"
+symbol = "?Render@ReplayBrowserScene@@UAEXXZ"
 target_address = 0x0042CA60
 size = 2246
 compare_size = 2246
@@ -22694,37 +22694,37 @@ relocations = [
   { offset = 0x109, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x128, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x148, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x18F, type = "REL32", symbol = "?Size@ReplayFilesF124@@QAEIXZ", target = 0x0041DD50 },
-  { offset = 0x1AA, type = "REL32", symbol = "?Size@ReplayFilesF124@@QAEIXZ", target = 0x0041DD50 },
-  { offset = 0x274, type = "REL32", symbol = "?At@ReplayFilesF124@@QAEPAPBDI@Z", target = 0x0041DDC0 },
-  { offset = 0x2AA, type = "REL32", symbol = "?DrawFilename@ReplayBrowser42CA60@@QAEXMMKPBD@Z", target = 0x0042D980 },
-  { offset = 0x2C5, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
-  { offset = 0x2F9, type = "REL32", symbol = "?DrawNameGlyphs@ReplayBrowser42CA60@@QAEXMMKPBC@Z", target = 0x0042D860 },
-  { offset = 0x316, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
-  { offset = 0x34E, type = "REL32", symbol = "?DrawMetadataNumber@ReplayBrowser42CA60@@QAEXMMKHH@Z", target = 0x0042D6E0 },
+  { offset = 0x18F, type = "REL32", symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ", target = 0x0041DD50 },
+  { offset = 0x1AA, type = "REL32", symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ", target = 0x0041DD50 },
+  { offset = 0x274, type = "REL32", symbol = "??A?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z", target = 0x0041DDC0 },
+  { offset = 0x2AA, type = "REL32", symbol = "?DrawFilename@ReplayBrowserScene@@AAEXMMKPBD@Z", target = 0x0042D980 },
+  { offset = 0x2C5, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
+  { offset = 0x2F9, type = "REL32", symbol = "?DrawNameGlyphs@ReplayBrowserScene@@AAEXMMKPBC@Z", target = 0x0042D860 },
+  { offset = 0x316, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
+  { offset = 0x34E, type = "REL32", symbol = "?DrawMetadataNumber@ReplayBrowserScene@@AAEXMMKHH@Z", target = 0x0042D6E0 },
   { offset = 0x369, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x3B6, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x3DB, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x3F8, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
-  { offset = 0x430, type = "REL32", symbol = "?DrawMetadataNumber@ReplayBrowser42CA60@@QAEXMMKHH@Z", target = 0x0042D6E0 },
-  { offset = 0x44B, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
-  { offset = 0x4E5, type = "REL32", symbol = "?At@ReplayModesF124@@QAEPAEI@Z", target = 0x0042DAF0 },
-  { offset = 0x50C, type = "REL32", symbol = "?At@ReplayModesF124@@QAEPAEI@Z", target = 0x0042DAF0 },
+  { offset = 0x3F8, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
+  { offset = 0x430, type = "REL32", symbol = "?DrawMetadataNumber@ReplayBrowserScene@@AAEXMMKHH@Z", target = 0x0042D6E0 },
+  { offset = 0x44B, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
+  { offset = 0x4E5, type = "REL32", symbol = "??A?$deque@EV?$allocator@E@std@@@std@@QAEAAEI@Z", target = 0x0042DAF0 },
+  { offset = 0x50C, type = "REL32", symbol = "??A?$deque@EV?$allocator@E@std@@@std@@QAEAAEI@Z", target = 0x0042DAF0 },
   { offset = 0x525, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x572, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x589, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x5AE, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x5C9, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
-  { offset = 0x5F1, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
+  { offset = 0x5C9, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
+  { offset = 0x5F1, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
   { offset = 0x60B, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x658, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x67D, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x698, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
-  { offset = 0x6C3, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
+  { offset = 0x698, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
+  { offset = 0x6C3, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
   { offset = 0x6DD, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x72A, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x74F, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x79B, type = "REL32", symbol = "?At@ReplayRecordsF124@@QAEPAXI@Z", target = 0x0042DBA0 },
+  { offset = 0x79B, type = "REL32", symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z", target = 0x0042DBA0 },
   { offset = 0x800, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x852, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x872, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
@@ -22737,7 +22737,7 @@ source = "src/ReplayTextHelpers.cpp"
 object = "build/matching/ReplayTextHelpers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayTextF125::DrawMetadataNumber"]
-symbol = "?DrawMetadataNumber@ReplayTextF125@@QAEXMMKHH@Z"
+symbol = "?DrawMetadataNumber@ReplayBrowserScene@@AAEXMMKHH@Z"
 target_address = 0x0042D6E0
 size = 377
 compare_size = 377
@@ -22758,7 +22758,7 @@ source = "src/ReplayTextHelpers.cpp"
 object = "build/matching/ReplayTextHelpers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayTextF125::DrawNameGlyphs"]
-symbol = "?DrawNameGlyphs@ReplayTextF125@@QAEXMMKPBC@Z"
+symbol = "?DrawNameGlyphs@ReplayBrowserScene@@AAEXMMKPBC@Z"
 target_address = 0x0042D860
 size = 280
 compare_size = 280
@@ -22776,7 +22776,7 @@ source = "src/ReplayTextHelpers.cpp"
 object = "build/matching/ReplayTextHelpers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayTextF125::DrawFilename"]
-symbol = "?DrawFilename@ReplayTextF125@@QAEXMMKPBD@Z"
+symbol = "?DrawFilename@ReplayBrowserScene@@AAEXMMKPBD@Z"
 target_address = 0x0042D980
 size = 315
 compare_size = 315
@@ -22790,8 +22790,8 @@ relocations = [
   { offset = 0x5D, type = "DIR32", symbol = "$SG62175", target = 0x00657FF8 },
   { offset = 0x6A, type = "DIR32", symbol = "$SG62175", target = 0x00657FF8 },
   { offset = 0x83, type = "REL32", symbol = "_memcmp", target = 0x00641F00 },
-  { offset = 0xEC, type = "REL32", symbol = "?DrawNameGlyphs@ReplayTextF125@@QAEXMMKPBC@Z", target = 0x0042D860 },
-  { offset = 0x129, type = "REL32", symbol = "?DrawNameGlyphs@ReplayTextF125@@QAEXMMKPBC@Z", target = 0x0042D860 },
+  { offset = 0xEC, type = "REL32", symbol = "?DrawNameGlyphs@ReplayBrowserScene@@AAEXMMKPBC@Z", target = 0x0042D860 },
+  { offset = 0x129, type = "REL32", symbol = "?DrawNameGlyphs@ReplayBrowserScene@@AAEXMMKPBC@Z", target = 0x0042D860 },
   { offset = 0x131, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
 ]
 
@@ -36978,13 +36978,13 @@ source = "src/ReplayBrowserSelectionF226.cpp"
 object = "build/matching/ReplayBrowserSelectionF226.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayBrowserScene::UpdateSelection"]
-symbol = "?UpdateSelection@ReplayBrowserF226@@QAEGXZ"
+symbol = "?Update@ReplayBrowserScene@@UAEGXZ"
 target_address = 0x0042C670
 size = 1005
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 12
 type = "REL32"
-symbol = "?ReadInput@ReplayBrowserF226@@QAEXXZ"
+symbol = "?PollInput@ReplayBrowserScene@@AAEXXZ"
 target = 0x0042D330
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 28
@@ -37014,12 +37014,12 @@ target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 165
 type = "REL32"
-symbol = "?Size@ReplayNameListF226@@QAEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 180
 type = "REL32"
-symbol = "?Size@ReplayNameListF226@@QAEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 209
@@ -37044,12 +37044,12 @@ target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 310
 type = "REL32"
-symbol = "?Size@ReplayNameListF226@@QAEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 325
 type = "REL32"
-symbol = "?Size@ReplayNameListF226@@QAEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 359
@@ -37064,7 +37064,7 @@ target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 412
 type = "REL32"
-symbol = "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z"
+symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z"
 target = 0x0042DBA0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 445
@@ -37079,17 +37079,17 @@ target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 494
 type = "REL32"
-symbol = "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z"
+symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z"
 target = 0x0042DBA0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 568
 type = "REL32"
-symbol = "?Size@ReplayNameListF226@@QAEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 595
 type = "REL32"
-symbol = "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z"
+symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z"
 target = 0x0042DBA0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 615
@@ -37104,7 +37104,7 @@ target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 650
 type = "REL32"
-symbol = "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z"
+symbol = "??A?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEAAUReplayFileHeaderF219@@I@Z"
 target = 0x0042DBA0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 684
@@ -37119,13 +37119,13 @@ target = 0x0066C238
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 712
 type = "REL32"
-symbol = "?Entry@ReplayNameListF226@@QAEPAPADH@Z"
+symbol = "??A?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z"
 target = 0x0041DDC0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 720
 type = "DIR32"
-symbol = "?g_ReplayPathAt00671754@@3PADA"
-target = 0x00671754
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 725
 type = "REL32"
@@ -37149,13 +37149,13 @@ target = 0x0066C238
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 801
 type = "REL32"
-symbol = "?Entry@ReplayNameListF226@@QAEPAPADH@Z"
+symbol = "??A?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z"
 target = 0x0041DDC0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 809
 type = "DIR32"
-symbol = "?g_ReplayPathAt00671754@@3PADA"
-target = 0x00671754
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 814
 type = "REL32"
@@ -37184,13 +37184,13 @@ target = 0x0066C238
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 886
 type = "REL32"
-symbol = "?Entry@ReplayNameListF226@@QAEPAPADH@Z"
+symbol = "??A?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z"
 target = 0x0041DDC0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 894
 type = "DIR32"
-symbol = "?g_ReplayPathAt00671754@@3PADA"
-target = 0x00671754
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 899
 type = "REL32"
@@ -38269,7 +38269,7 @@ source = "src/ReplayScanF231.cpp"
 object = "build/matching/ReplayScanF231.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayBrowserScene::ScanFiles"]
-symbol = "?ScanFiles@ReplayBrowserScanF231@@QAEXXZ"
+symbol = "?ScanFiles@ReplayBrowserScene@@AAEXXZ"
 target_address = 0x0042D470
 size = 613
 [[units.replay-browser-scan-files-0042d470.relocations]]
@@ -38290,17 +38290,17 @@ target = 0x00657068
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 81
 type = "REL32"
-symbol = "?push_back@ReplayFilenameDequeF231@@QAEXABQAD@Z"
+symbol = "?push_back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEXABQAD@Z"
 target = 0x0041DE30
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 91
 type = "REL32"
-symbol = "??2@YAPAXI@Z"
+symbol = "??_U@YAPAXI@Z"
 target = 0x006416A2
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 114
 type = "REL32"
-symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 127
@@ -38310,7 +38310,7 @@ target = 0x00657FE8
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 141
 type = "REL32"
-symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 149
@@ -38320,7 +38320,7 @@ target = 0x00641B80
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 173
 type = "REL32"
-symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 181
@@ -38335,17 +38335,17 @@ target = 0x00657064
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 240
 type = "REL32"
-symbol = "?push_back@ReplayFilenameDequeF231@@QAEXABQAD@Z"
+symbol = "?push_back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEXABQAD@Z"
 target = 0x0041DE30
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 250
 type = "REL32"
-symbol = "??2@YAPAXI@Z"
+symbol = "??_U@YAPAXI@Z"
 target = 0x006416A2
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 273
 type = "REL32"
-symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 286
@@ -38355,7 +38355,7 @@ target = 0x00657FF0
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 300
 type = "REL32"
-symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 308
@@ -38365,7 +38365,7 @@ target = 0x00641B80
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 332
 type = "REL32"
-symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 340
@@ -38380,17 +38380,17 @@ target = 0x00657060
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 372
 type = "REL32"
-symbol = "?size@ReplayFilenameDequeF231@@QBEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 421
 type = "REL32"
-symbol = "?size@ReplayFilenameDequeF231@@QBEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 472
 type = "REL32"
-symbol = "??AReplayFilenameDequeF231@@QAEPAPADI@Z"
+symbol = "??A?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z"
 target = 0x0041DDC0
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 481
@@ -38405,7 +38405,7 @@ target = 0x0065712C
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 533
 type = "REL32"
-symbol = "?push_back@ReplayHeaderDequeF231@@QAEXPBX@Z"
+symbol = "?push_back@?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAEXABUReplayFileHeaderF219@@@Z"
 target = 0x0042DBE0
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 561
@@ -38415,7 +38415,7 @@ target = 0x0065712C
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 582
 type = "REL32"
-symbol = "?push_back@ReplayFlagsDequeF231@@QAEXABE@Z"
+symbol = "?push_back@?$deque@EV?$allocator@E@std@@@std@@QAEXABE@Z"
 target = 0x00414450
 [[units.replay-browser-scan-files-0042d470.relocations]]
 offset = 592
@@ -41731,13 +41731,13 @@ source = "src/ReplayPlaybackInitF266.cpp"
 object = "build/matching/ReplayPlaybackInitF266.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayPlaybackScene::Initialize"]
-symbol = "??0ReplayPlaybackInitF266@@QAE@XZ"
+symbol = "??0ReplayBrowserScene@@QAE@XZ"
 target_address = 0x0042C3D0
 size = 395
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0ReplayPlaybackInitF266@@QAE@XZ"
+symbol = "__ehhandler$??0ReplayBrowserScene@@QAE@XZ"
 target = 0x00655964
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 12
@@ -41752,32 +41752,32 @@ target = 0x00000000
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0ReplayBaseF266@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7ReplayPlaybackInitF266@@6B@"
+symbol = "??_7ReplayBrowserScene@@6B@"
 target = 0x00658008
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 61
 type = "REL32"
-symbol = "??0ReplayDequeNamesF266@@QAE@XZ"
+symbol = "??0?$deque@PADV?$allocator@PAD@std@@@std@@QAE@XZ"
 target = 0x00420320
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 76
 type = "REL32"
-symbol = "??0ReplayDequeFilesF266@@QAE@XZ"
+symbol = "??0?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAE@XZ"
 target = 0x0042DB30
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 91
 type = "REL32"
-symbol = "??0ReplayDequeRecordsF266@@QAE@XZ"
+symbol = "??0?$deque@EV?$allocator@E@std@@@std@@QAE@XZ"
 target = 0x00414360
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 106
 type = "REL32"
-symbol = "?Clear@ReplayDequeNamesF266@@QAEXXZ"
+symbol = "?clear@?$deque@PADV?$allocator@PAD@std@@@std@@QAEXXZ"
 target = 0x0041DF50
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 113
@@ -41842,7 +41842,7 @@ target = 0x00671418
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 339
 type = "REL32"
-symbol = "?ScanFiles@ReplayPlaybackInitF266@@QAEXXZ"
+symbol = "?ScanFiles@ReplayBrowserScene@@AAEXXZ"
 target = 0x0042D470
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 356
@@ -41860,13 +41860,13 @@ source = "src/ReplayPlaybackReleaseF267.cpp"
 object = "build/matching/ReplayPlaybackReleaseF267.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560"]
-symbol = "??1ReplayPlaybackReleaseF267@@UAE@XZ"
+symbol = "??1ReplayBrowserScene@@UAE@XZ"
 target_address = 0x0042C560
 size = 265
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1ReplayPlaybackReleaseF267@@UAE@XZ"
+symbol = "__ehhandler$??1ReplayBrowserScene@@UAE@XZ"
 target = 0x00655997
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 12
@@ -41881,7 +41881,7 @@ target = 0x00000000
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7ReplayPlaybackReleaseF267@@6B@"
+symbol = "??_7ReplayBrowserScene@@6B@"
 target = 0x00658008
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 56
@@ -41891,12 +41891,12 @@ target = 0x0067162C
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 85
 type = "REL32"
-symbol = "?Size@ReplayDequeNamesF267@@QBEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 105
 type = "REL32"
-symbol = "?At@ReplayDequeNamesF267@@QAEPAPADI@Z"
+symbol = "??A?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z"
 target = 0x0041DDC0
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 119
@@ -41906,32 +41906,32 @@ target = 0x0064169D
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 135
 type = "REL32"
-symbol = "?Clear@ReplayDequeNamesF267@@QAEXXZ"
+symbol = "?clear@?$deque@PADV?$allocator@PAD@std@@@std@@QAEXXZ"
 target = 0x0041DF50
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 175
 type = "REL32"
-symbol = "??_GReplayTextureF267@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 202
 type = "REL32"
-symbol = "??1ReplayDequeRecordsF267@@QAE@XZ"
+symbol = "??1?$deque@EV?$allocator@E@std@@@std@@QAE@XZ"
 target = 0x004143B0
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 217
 type = "REL32"
-symbol = "??1ReplayDequeFilesF267@@QAE@XZ"
+symbol = "??1?$deque@UReplayFileHeaderF219@@V?$allocator@UReplayFileHeaderF219@@@std@@@std@@QAE@XZ"
 target = 0x0042DB80
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 232
 type = "REL32"
-symbol = "??1ReplayDequeNamesF267@@QAE@XZ"
+symbol = "??1?$deque@PADV?$allocator@PAD@std@@@std@@QAE@XZ"
 target = 0x00420420
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 247
 type = "REL32"
-symbol = "??1ReplayBaseF267@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.replay-browser-destroy-owned-files-0042c560.relocations]]
 offset = 257
@@ -41944,7 +41944,7 @@ source = "src/ReplayInputF268.cpp"
 object = "build/matching/ReplayInputF268.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReplayScene::PollPlaybackInput"]
-symbol = "?PollInput@ReplayInputPollF268@@QAEXXZ"
+symbol = "?PollInput@ReplayBrowserScene@@AAEXXZ"
 target_address = 0x0042D330
 size = 310
 [[units.replay-scene-poll-playback-input-0042d330.relocations]]
@@ -61316,7 +61316,7 @@ relocations = [
  { offset = 0x747, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x764, type = "REL32", symbol = "??0CharacterSelectScene@@QAE@XZ", target = 0x00432EA0 },
  { offset = 0x79A, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x7B7, type = "REL32", symbol = "??0Scene5F1171@@QAE@XZ", target = 0x0042C3D0 },
+ { offset = 0x7B7, type = "REL32", symbol = "??0ReplayBrowserScene@@QAE@XZ", target = 0x0042C3D0 },
  { offset = 0x7ED, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x80A, type = "REL32", symbol = "??0ResultScene@@QAE@XZ", target = 0x0042E640 },
  { offset = 0x843, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },

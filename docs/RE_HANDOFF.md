@@ -24,11 +24,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,087 unresolved externals. Fourteen scene types
-now share `SceneBase` with WinMain. The two name-entry scenes and music
-room share their layouts across construction, input, rendering and
-cleanup. Cold replay covered 37 units across 24 objects, and their
-virtual tables, deleting destructors and exception cleanup matched.
+stops at `LNK1120` with 1,049 unresolved externals. All fifteen scene
+allocations in WinMain call their existing constructors through
+`SceneBase`-derived types. The replay browser uses three VC7.1 deques
+for filenames, file headers and secondary mode bytes. Its latest
+cold replay covered 11 units across eight objects. The virtual table,
+deleting destructor and exception cleanup also match.
 The character selection
 constructor and destructor use the same three texture-manager members.
 Startup, capture, drawing, and cleanup share the frame texture owner.
@@ -84,8 +85,8 @@ trip, and handle release,
 and the four corners produced by the RECT constructor.
 Use `build/program/link.log` and the relocation targets to find candidate
 definitions. Batch related exact units with `--batch` to compile each
-profile together. WinMain still needs the replay browser and startup
-resource bindings.
+profile together. Startup resource bindings and transitive scene
+dependencies remain open.
 The graphics and DirectInput error strings and pixel shader are also
 unresolved.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
