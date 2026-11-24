@@ -1,10 +1,5 @@
 #include "ReimuFighter.hpp"
-// F1183 live whole original 0045DD70 parent, continued from the existing
-// F652 native D1/D2 source. The complete 60,999B callable is NONEXACT.
-// All state bodies, native stack slots, CFG and PE targets are verified; GPR/width debt remains.
-// Preserve independently reviewed current bodies and all six table groups.
-// Accepted native callees at 40FAC0, 40FB40 and 453D60 consume signed WORD parameters.
-// Raw coordinate DWORD views preserve the observed float-slot bit transport.
+// Natural-C++ reconstruction of ReimuFighter::Advance at 0045DD70.
 
 extern float g_ReimuStormFallAt00658044;
 extern float g_ReimuWarpSpreadAt006583B4;
@@ -380,15 +375,50 @@ case 0x48: {
 #define F613_COUNTER 0xF00
 #include "FighterTrajectoryRecovery4CF613.inc"
 #undef F613_COUNTER
-#define F614_COUNTER 0xF00
-#define F614_STAGE1_SPAWN 1
-#define F614_PROJECTILE 0x3B7
-#define F614_SIDE 1
-#include "FighterTrajectoryBurst58F614.inc"
-#undef F614_COUNTER
-#undef F614_STAGE1_SPAWN
-#undef F614_PROJECTILE
-#undef F614_SIDE
+        case 0x58: {
+            if (animationStage == 0 && animationFrame == 0) {
+                velocityX = -field094;
+                velocityY = field098;
+                field05C = 0.8f;
+                field07C = 0;
+            }
+            if (velocityY + y <= g_ThresholdAt0065782C) {
+                scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+                scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+                ClearMotionFields();
+                y = 0.0f;
+                ResetPrimaryCounters(0x59);
+                SetCameraShake(3.0f);
+                PlaySharedSound(0x16);
+                for (int burst = 0; burst < 10; ++burst)
+                    SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                if (fieldEFA > 25) {
+                    fieldEFA = 0;
+                    SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                }
+                break;
+            }
+            if (AdvanceNestedFrame() == animationStageCount)
+                ResetSecondaryCounter(animationStage - 1);
+            if (animationStage == 1 && animationFrame == 0) {
+                if (fieldF0C == 0) {
+                    fieldF0C = 1;
+                    SpawnBattleEffect(0x3B7, x, y, facing, 1);
+                }
+                if (velocityY != g_ThresholdAt0065782C) {
+                    if (velocityX == g_ThresholdAt0065782C) {
+                        ResetSecondaryCounter(3);
+                        break;
+                    } else {
+                        ResetSecondaryCounter(2);
+                        break;
+                    }
+                }
+            } else if (animationStage == 1 && animationFrame != 0) {
+                // Continue the current trajectory.
+            }
+            break;
+        }
 #include "ReimuEarlyRecoveryStatesF1184.inc"
 
 

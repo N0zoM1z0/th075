@@ -111,6 +111,14 @@ seven jump tables, four remap arrays and 1,491 relocations. The
 The ledger credits 46,755 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--youmus-fighter-advance-cold-replays-exactly)
 
+### Reimu fighter Advance is exact
+
+`reimu-fighter-advance-0045dd70` cold-replays 62,089 bytes with six
+jump tables, four remap arrays and all 1,824 relocations. The special
+attacks in `0x258`–`0x25F` recover the original firing guards and
+per-shot parameter writes. The ledger credits 60,999 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--reimus-fighter-advance-cold-replays-exactly)
+
 ### Yuyuko fighter Advance partial reconstruction
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
@@ -226,9 +234,7 @@ complete function.
 
 ## Remaining giant parents
 
-The complete but nonexact parents are:
-
-- Fighters: Reimu `0045DD70` and Sakuya `004AC040`.
+Sakuya fighter `004AC040` has a complete nonexact parent.
 
 The nine remaining functions without a complete parent are:
 

@@ -34,5 +34,8 @@ case F617_CASE: {
     }
     if (animationStage==F617_THRESHOLD && animationFrame==0)
         ResetSecondaryCounter(F617_FINISH_STATE);
+    else if (animationStage == F617_THRESHOLD && animationFrame != 0) {
+        // Continue the landing animation.
+    }
     break;
 }

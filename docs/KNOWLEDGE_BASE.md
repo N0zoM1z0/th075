@@ -267,6 +267,12 @@ before adding the base, in a different instruction order.
   nearly doubles the total. The matching path in `0x5E` recovers the
   affected action.
   [Youmu fighter controls](GIANTS.md#2026-11-24--youmus-fighter-advance-cold-replays-exactly)
+- When instruction alignment is lost, pair action bodies through their
+  jump-table entries. Reimu's eight consecutive special actions expose
+  an inverted firing guard, skipped per-projectile field writes, and
+  x87 operand order differences. Fixing those actions restores global
+  instruction alignment and lets the launch continuation be tested.
+  [Reimu comparison](GIANTS.md#2026-11-24--reimus-fighter-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

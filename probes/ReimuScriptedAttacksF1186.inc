@@ -1,5 +1,4 @@
-// Original Reimu 186..192 attack policies. Interior evidence only;
-// the single 0045DD70 owner remains incomplete and NONEXACT.
+// Reimu attack actions 0x186 through 0x192 in 0x0045DD70.
 case 0x186: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
@@ -15,9 +14,11 @@ case 0x186: {
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
-    if ((animationStage)==4 && (animationFrame)==0) {
-        velocityX=15.0f;
+    if (animationStage == 4 && animationFrame == 0) {
+        velocityX = 15.0f;
         PlaySharedSound(0x1D);
+    } else if (animationStage == 4 && animationFrame != 0) {
+        // Continue the launch animation.
     }
     break;
 }

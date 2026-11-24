@@ -207,6 +207,11 @@ case 0x136: {
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
-    if ((animationStage)==4 && (animationFrame)==0) { velocityX=15.0f; PlaySharedSound(0x1D); }
+    if (animationStage == 4 && animationFrame == 0) {
+        velocityX = 15.0f;
+        PlaySharedSound(0x1D);
+    } else if (animationStage == 4 && animationFrame != 0) {
+        // Continue the launch animation.
+    }
     break;
 }

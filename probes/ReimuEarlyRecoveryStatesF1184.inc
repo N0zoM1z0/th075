@@ -19,6 +19,8 @@ case 0x59: {
         velocityY=float(-int(scriptCounterF02))*g_ReimuBounceYAt00658044;
         field05C=0.7f;
         ResetTransform(-7.0f,75.0f,0.0f);
+    } else if (animationStage == 3 && animationFrame != 0) {
+        // Keep the rebound motion on later frames.
     }
     break;
 }
@@ -95,7 +97,11 @@ case 0x61: {
             velocityY=float(-int(scriptCounterF02))*g_ReimuRecoveryScaleAt006590B8;
             field05C=2.0f;
         }
-        if ((animationStage)==4 && (animationFrame)==0) ResetSecondaryCounter(3);
+        if (animationStage == 4 && animationFrame == 0)
+            ResetSecondaryCounter(3);
+        else if (animationStage == 4 && animationFrame != 0) {
+            // Continue the rebound animation.
+        }
     }
     break;
 }

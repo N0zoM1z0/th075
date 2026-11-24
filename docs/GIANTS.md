@@ -73,7 +73,7 @@ rows have complete replay units.
 
 | Original | Character | Size | Parent | GPR debt | Widths | First GPR difference |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| 0045DD70 | Reimu fighter | 60,999 | `FighterWhole0045DD70F1183.cpp` | 6,311 | 5 | 0045FDA9 (#2292) |
+| 0045DD70 | Reimu fighter | 60,999 | `ReimuFighterAdvanceF1183.cpp` (cold exact) | 0 | 0 | — |
 | 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
 | 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` (cold exact) | 0 | 0 | — |
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` (cold exact) | 0 | 0 | — |
@@ -2081,4 +2081,46 @@ accepted source with:
 
 ```sh
 scripts/repo-python scripts/replay-exact-units.py --unit youmu-fighter-advance-005214b0
+```
+
+## 2026-11-24 — Reimu's fighter Advance cold-replays exactly
+
+Reimu's fighter `Advance` at `0x0045DD70` matches 60,999 CODE bytes
+and 1,090 bytes of dispatch data starting at `0x0046CBB7`. The
+62,089-byte comparison includes six jump tables, four remap arrays,
+and all 1,824 relocations. The unit uses the existing ledger name
+`ReimuFighter::AdvanceActionStatesAt0045DD70`.
+
+The first receiver reload differs at the entry to `0x59`. As in
+Remilia and Youmu, the later stage-one frames in `0x58` restore it.
+Writing the remaining rebound and landing continuations in `0x59`,
+`0x5D`, `0x5E`, and `0x61` fixes the early sequence through the
+priority-mode action `0x63`.
+
+Pairing the actions by their native jump-table entries exposed eight
+separate instruction-sequence differences in `0x258`–`0x25F`.
+The original puts the projectile bodies under affirmative stage/frame
+guards and resets only when the animation completes. Its two-shot
+and six-shot fans write `field318 = 10.0f` for every projectile. The
+source also retains the member-first x87 evaluation of the projectile
+Y offset and the opening speed scale. Together these changes recover
+the full 16,837-instruction layout.
+
+The two matching launch continuations in `0x136` and `0x186` then
+restore register allocation. The second aligns the remaining 5,783
+register operands and the two instruction widths that were still
+moving later action and relocation offsets.
+
+| Cumulative source variant | GPR differences | Width differences | First GPR difference | Relocated byte differences |
+| --- | ---: | ---: | --- | ---: |
+| Early continuations and eight corrected special actions | 5,834 | 2 | `0x00463B59` | 6,282 |
+| Later launch frames in `0x136` | 5,783 | 2 | `0x00463C80` | 6,231 |
+| Later launch frames in `0x186` | 0 | 0 | — | 0 |
+
+The local comparison log is
+`.analysis/reimu-fighter-advance/whole-function-audit.log`. Replay the
+accepted source with:
+
+```sh
+scripts/repo-python scripts/replay-exact-units.py --unit reimu-fighter-advance-0045dd70
 ```
