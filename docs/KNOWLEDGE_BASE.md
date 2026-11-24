@@ -273,6 +273,11 @@ before adding the base, in a different instruction order.
   x87 operand order differences. Fixing those actions restores global
   instruction alignment and lets the launch continuation be tested.
   [Reimu comparison](GIANTS.md#2026-11-24--reimus-fighter-advance-cold-replays-exactly)
+- Repeated actions can each need the same continuation branch. In
+  Sakuya's fighter `Advance`, expressing the repeat limit in `0x1F8`
+  and `0x1F9` affects thousands of later operands. Applying the same
+  path at the corresponding join in `0x1FA` closes the entire function.
+  [Sakuya fighter controls](GIANTS.md#2026-11-24--sakuyas-fighter-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

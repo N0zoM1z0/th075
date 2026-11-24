@@ -42,5 +42,8 @@ case 0xCB: {
             -(facing),1);
         PlaySharedSound(31);
     }
+    else if (animationStage == 3 && animationFrame != 0) {
+        // Keep the launch motion on later frames.
+    }
     break;
 }

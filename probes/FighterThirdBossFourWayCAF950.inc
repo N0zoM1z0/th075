@@ -40,5 +40,8 @@ case 0xCA: {
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
+    else if (animationStage < animationStageCount) {
+        // Continue the current animation.
+    }
     break;
 }

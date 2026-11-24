@@ -74,7 +74,7 @@ rows have complete replay units.
 | Original | Character | Size | Parent | GPR debt | Widths | First GPR difference |
 | --- | --- | ---: | --- | ---: | ---: | --- |
 | 0045DD70 | Reimu fighter | 60,999 | `ReimuFighterAdvanceF1183.cpp` (cold exact) | 0 | 0 | — |
-| 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
+| 004AC040 | Sakuya fighter | 82,796 | `SakuyaFighterAdvanceF1020.cpp` (cold exact, `/GX`) | 0 | 0 | — |
 | 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` (cold exact) | 0 | 0 | — |
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` (cold exact) | 0 | 0 | — |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
@@ -2123,4 +2123,44 @@ accepted source with:
 
 ```sh
 scripts/repo-python scripts/replay-exact-units.py --unit reimu-fighter-advance-0045dd70
+```
+
+## 2026-11-24 — Sakuya's fighter Advance cold-replays exactly
+
+Sakuya's fighter `Advance` at `0x004AC040` matches all 82,796 CODE
+bytes and 1,126 bytes of owned dispatch data at `0x004C03AC`.
+The 83,922-byte comparison uses the recorded VC7.1 `/GX` profile
+and includes six jump tables, four remap arrays, 543 dispatch
+entries, and 2,352 relocations.
+
+The first receiver reload differs at the entry to `0x59`. The
+later stage-one frames in `0x58` restore it, as in the other
+fighter parents. The rebound and landing continuations in `0x59`,
+`0x5D`, `0x5E`, and `0x61` match the early sequence. The next
+three joins respond to ongoing animation in `0xCA` and later
+animation frames in `0xCB` and `0x130`.
+
+The last three affected actions share a repeat limit of four.
+Expressing the stage-eight path at that limit in `0x1F8`, `0x1F9`,
+and `0x1FA` restores the stage-eleven tests and the later register
+choices. Each of the first two changes moves the first difference
+forward and increases the number of mismatched bytes relative to
+the build before the three changes. The third restores all offsets.
+
+| Cumulative source variant | GPR differences | Width differences | First GPR difference | Relocated byte differences |
+| --- | ---: | ---: | --- | ---: |
+| Parent at `b64e6109` | 6,958 | 12 | `0x004ADEFA` | 18,539 |
+| Continuations through `0x61` | 6,555 | 10 | `0x004B0691` | 18,058 |
+| Also `0xCA` and `0xCB` | 6,399 | 10 | `0x004B14C9` | 17,898 |
+| Later frames in `0x130` | 348 | 2 | `0x004B5EDF` | 1,283 |
+| Repeat limit in `0x1F8` | 3,340 | 8 | `0x004B636E` | 5,186 |
+| Repeat limit in `0x1F9` | 3,198 | 8 | `0x004B67FE` | 13,714 |
+| Repeat limit in `0x1FA` | 0 | 0 | — | 0 |
+
+The local comparison log is
+`.analysis/sakuya-fighter-advance/whole-function-audit.log`. Replay the
+accepted source with:
+
+```sh
+scripts/repo-python scripts/replay-exact-units.py --unit sakuya-fighter-advance-004ac040
 ```

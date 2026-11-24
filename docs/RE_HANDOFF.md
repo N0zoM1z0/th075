@@ -119,6 +119,14 @@ attacks in `0x258`–`0x25F` recover the original firing guards and
 per-shot parameter writes. The ledger credits 60,999 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--reimus-fighter-advance-cold-replays-exactly)
 
+### Sakuya fighter Advance is exact
+
+`sakuya-fighter-advance-004ac040` cold-replays 83,922 bytes with all
+six jump tables, four remap arrays and 2,352 relocations. The repeat-limit
+paths in `0x1F8` through `0x1FA` restore the final register differences.
+The ledger credits 82,796 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--sakuyas-fighter-advance-cold-replays-exactly)
+
 ### Yuyuko fighter Advance partial reconstruction
 
 `0x00564BE0` (61,872 original CODE bytes) now has a natural C++ partial
@@ -234,9 +242,7 @@ complete function.
 
 ## Remaining giant parents
 
-Sakuya fighter `004AC040` has a complete nonexact parent.
-
-The nine remaining functions without a complete parent are:
+All complete parents now cold-replay exactly. The remaining nine functions have partial or unstarted parents.
 
 - Objects: Reimu `00476A40` (50,915 bytes), Marisa `0049C8F0`
   (46,596 bytes).

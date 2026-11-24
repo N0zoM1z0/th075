@@ -46,5 +46,8 @@ case 0x130: {
         Fighter::SpawnTrackedEffect(0x334,x,y,
             facing,1,0,1);
     }
+    else if (animationStage == 3 && animationFrame != 0) {
+        // Continue the stage after the opening shot.
+    }
     break;
 }

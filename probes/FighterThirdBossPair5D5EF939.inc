@@ -1,13 +1,4 @@
-// F939: original 004AC040 two native 337B/101 x86 adjacent stage actions, actor-specific stage/camera/aux thresholds, whole father NONEXACT.
-// F752: actual original 05D/05E borrowed actor and opponent X at +0x44.
-// The type is ONLY an observed borrowed memory view: never instantiated.
-// Both typed floating members restore native VC7.1 direct FCOMP memory
-// instead of the two nonoriginal FLD/FCOMPP sequences from raw casts.
-// F747: true complete original 059/05D/05E normal C++ action interiors
-// in ONE 58KB fighter 00543210 giant parent. No independent CODE credit.
-// Native original 059 00545109..0054526D 356 B /95 x86;
-// 05D 0054526D..005453BE 337 B/101 x86;
-// 05E 005453BE..0054550F 337 B/101 x86.
+// Sakuya landing actions 0x5D and 0x5E in 0x004AC040.
         case 0x5D: {
             if ((animationStage)<12 && y>g_ThresholdAt0065782C) {
                 velocityY=velocityY-field05C;
@@ -34,8 +25,11 @@
                 velocityX=12.5f;
                 field05C=0.7f;
             }
-            if ((animationStage)==12 && (animationFrame)==0)
+            if (animationStage == 12 && animationFrame == 0)
                 ResetSecondaryCounter(10);
+            else if (animationStage == 12 && animationFrame != 0) {
+                // Continue the landing animation.
+            }
             break;
         }
         case 0x5E: {
@@ -64,7 +58,10 @@
                 velocityX=-12.5f;
                 field05C=0.7f;
             }
-            if ((animationStage)==9 && (animationFrame)==0)
+            if (animationStage == 9 && animationFrame == 0)
                 ResetSecondaryCounter(8);
+            else if (animationStage == 9 && animationFrame != 0) {
+                // Continue the landing animation.
+            }
             break;
         }
