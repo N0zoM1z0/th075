@@ -11,7 +11,6 @@
 // declaration of complete original scene, actor or texture ownership.
 class ResultSpriteDrawingF240 {
 public:
-    void DrawQuad(int texture, const SpriteQuad40CA80&, const RECT*, DWORD color);
 };
 // The observed native call to the accepted ScaleQuad callee transfers its
 // float scale factors as three raw 32-bit IEEE754 values (MOV/PUSH). This
@@ -47,7 +46,7 @@ void ResultScene::Render()
         reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(0);
         SetRect(&region,0,0,640,480);
         TRANSFORM(quad)->BuildQuadFromRect(&region);
-        DRAWER->DrawQuad(0,quad,&region,0xffffffff);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(0,quad,&region,0xffffffff);
         reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(2);
         SetRect(&region,0,0,640,480);
         TRANSFORM(quad)->BuildQuadFromRect(&region);
@@ -58,7 +57,7 @@ void ResultScene::Render()
         SetRect(&region,0,0,256,256);
         TRANSFORM(quad)->BuildQuadFromRect(&region);
         TRANSFORM(quad)->TranslateQuad(30.0f,30.0f,0.0f);
-        DRAWER->DrawQuad(1,quad,&region,RESULT_COLOR);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(1,quad,&region,RESULT_COLOR);
         DrawDecimalDigits(OFFSET_X(0),70.0f,RESULT_COLOR,values[0],0,0);
         DrawDecimalDigits(OFFSET_X(1),94.0f,RESULT_COLOR,values[1],0,0);
         DrawDecimalDigits(OFFSET_X(2),118.0f,RESULT_COLOR,values[2],0,0);
@@ -66,7 +65,7 @@ void ResultScene::Render()
         SetRect(&region,0,g_SelectionAt006714D0*32,160,g_SelectionAt006714D0*32+32);
         TRANSFORM(quad)->BuildQuad(156.0f,168.0f,316.0f,200.0f);
         TRANSFORM(quad)->TranslateQuad(static_cast<float>(offsets[4]),0.0f,0.0f);
-        DRAWER->DrawQuad(2,quad,&region,RESULT_COLOR);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(2,quad,&region,RESULT_COLOR);
         DrawDecimalDigits(300.0f,221.0f,RESULT_COLOR,field038,1,0);
         DrawDecimalDigits(300.0f,245.0f,RESULT_COLOR,g_ActorAt00671418->score,1,0);
         Graphics::EndFrame();

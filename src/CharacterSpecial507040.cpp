@@ -19,17 +19,17 @@ void PatchouliFighter::RenderStage(signed char stage)
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(fieldF14, fieldF3C, fieldF14 + 1024.0f, fieldF3C + 32.0f);
-        QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(fieldFDC, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(fieldFDC, 255, 255, 255));
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(fieldF18, fieldF40, fieldF18 + 1024.0f, fieldF40 + 32.0f);
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(fieldFDD, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(fieldFDD, 255, 255, 255));
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(1);
         SetRect(&region, 0, 0, 640, 128);
         TRANSFORM(quadValue)->BuildQuad(fieldF1C, fieldF44, fieldF1C + 640.0f, fieldF44 + 128.0f);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(fieldFDE, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(fieldFDE, 255, 255, 255));
         SetRect(&region, 0, 0, 304, 80);
         TRANSFORM(quadValue)->BuildQuad(fieldF20, fieldF48, fieldF20 + 304.0f, fieldF48 + 80.0f);
-        QUAD_DRAWING->DrawQuad(3, quadValue, &region, D3DCOLOR_ARGB(fieldFDF, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(3, quadValue, &region, D3DCOLOR_ARGB(fieldFDF, 255, 255, 255));
         if ((field6F8) == 1 && (fieldFDF) < 255 && (fieldEFE) == 0) {
             if ((fieldFDF) < 250) fieldFDF += 5;
             else fieldFDF = 255;
@@ -45,18 +45,18 @@ void PatchouliFighter::RenderStage(signed char stage)
     case 8: case 9:
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(fieldFDC, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(fieldFDC, 255, 255, 255));
         break;
     case 10:
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(fieldFDC, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(fieldFDC, 255, 255, 255));
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(fieldFDD, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(fieldFDD, 255, 255, 255));
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(fieldFDE, 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(fieldFDE, 255, 255, 255));
         break;
     }
 }

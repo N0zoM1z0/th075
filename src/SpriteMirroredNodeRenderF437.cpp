@@ -8,9 +8,6 @@
 // views: only the two complete native 132-byte stack quad values are owned.
 class SpriteRenderDeviceF254 {
 public:
-    void GetTextureRect(int texture, RECT* result);
-    void DrawQuad(int texture, const SpriteQuad40CA80&, const RECT*, DWORD);
-    void DrawTintedQuad(int texture, const SpriteQuad40CA80&, const RECT*,float,float,float,DWORD);
 };
 class SpriteCameraF254 { public: void CopyVector(float* out); };
 extern SpriteCameraF254* g_ActiveCameraAt00671424;
@@ -81,7 +78,7 @@ void Actor::RenderMirroredNode()
 #define tint state.tint
     xShift = g_CombatViewOffsetX - g_CameraOffsetXAt00657834;
     yOrigin = g_CombatViewOffsetY;
-    DRAWER->GetTextureRect(drawFrame->textureIndex,&sourceRect);
+    reinterpret_cast<TextureManagerF198*>(DRAWER)->GetTextureRect(drawFrame->textureIndex,&sourceRect);
     TRANSFORM(transformed)->BuildQuadFromRect(&sourceRect);
     if (drawFrame->pose) {
         SCALE(transformed,static_cast<float>(drawFrame->originX),static_cast<float>(drawFrame->originY),0.0f,
@@ -108,9 +105,9 @@ void Actor::RenderMirroredNode()
     g_ActiveCameraAt00671424->CopyVector(tint);
     reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(2);
     if (tint[0] != g_ZeroAt0065782C || tint[1] != g_ZeroAt0065782C || tint[2] != g_ZeroAt0065782C) {
-        DRAWER->DrawTintedQuad(drawFrame->textureIndex,composed,&sourceRect,tint[0]+xShift,tint[1]+yOrigin,tint[2],color);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawProjectedQuad(drawFrame->textureIndex,composed,&sourceRect,tint[0]+xShift,tint[1]+yOrigin,tint[2],color);
     } else {
-        DRAWER->DrawQuad(drawFrame->textureIndex,composed,&sourceRect,color);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(drawFrame->textureIndex,composed,&sourceRect,color);
     }
     reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(1);
 }

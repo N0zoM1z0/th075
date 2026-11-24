@@ -7,14 +7,6 @@
 // cosine/sine rotation and genuine quad vector swapping. Three x87
 // source evaluation orders were independently decoded from original PE.
 // Historical owner/private payload meanings remain provisional.
-class SpriteScaledQuadF775 {
-public:
-    D3DXVECTOR4 first, second, third, fourth;
-    RenderQuadPayload5E68C0 payload;
-    SpriteScaledQuadF775();
-    SpriteScaledQuadF775(float,float,float,float);
-};
-typedef char ScaledQuadSizeF775[(sizeof(SpriteScaledQuadF775)==132)?1:-1];
 class SpriteDrawingF775 {
 public:
     void DrawScaled(int texture,float x,float y,DWORD color,
@@ -28,17 +20,17 @@ float __cdecl CameraSineAt0040D940(float);
 #define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
 void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scaleX,float scaleY,float angle,unsigned char flags) {
-    SpriteScaledQuadF775 quad;
+    SpriteQuad40CA80 quad;
     { RECT region;
     region.left=0;
     region.top=0;
     region.right=ENTRY.storedWidth;
     region.bottom=ENTRY.storedHeight;
     if (scaleX==1.0f && scaleY==1.0f && angle==g_ZeroAngleF775) {
-        quad=SpriteScaledQuadF775(x-pivotX,y-pivotY,
+        quad=SpriteQuad40CA80(x-pivotX,y-pivotY,
              x-pivotX+region.right,y-pivotY+region.bottom);
     } else if (angle==g_ZeroAngleF775) {
-        quad=SpriteScaledQuadF775(x-pivotX*scaleX,y-pivotY*scaleY,
+        quad=SpriteQuad40CA80(x-pivotX*scaleX,y-pivotY*scaleY,
              (region.right-pivotX)*scaleX+x,
              (region.bottom-pivotY)*scaleY+y);
     } else {

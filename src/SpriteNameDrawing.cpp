@@ -7,9 +7,6 @@
 // Pointer-only owner/frame/pose views; complete private layouts are unknown.
 class NodeDrawingF129 {
 public:
-    void GetTextureRect(int, RECT*);
-    void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
-    void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
 };
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
@@ -25,7 +22,7 @@ void CharacterObject::Render() {
     SpriteQuad40CA80 transformedQuad;
     cameraHorizontal = g_CombatViewOffsetX - 160.0f;
     cameraY = g_CombatViewOffsetY;
-    DRAWING->GetTextureRect(drawFrame->textureIndex, &textureRect);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->GetTextureRect(drawFrame->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (drawFrame->pose != 0) {
         switch (drawFrame->pose->blendMode) {
@@ -63,10 +60,10 @@ void CharacterObject::Render() {
     TRANSFORM(transformedQuad)->TranslateQuad(cameraHorizontal + x - (facing) * (drawFrame->originX),
         cameraY + 420.0f - y - (drawFrame->originY), 0);
     if (spriteOffset.x != 0 || spriteOffset.y != 0 || spriteOffset.z != 0)
-        DRAWING->DrawProjectedQuad(drawFrame->textureIndex, transformedQuad, &textureRect,
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(drawFrame->textureIndex, transformedQuad, &textureRect,
             cameraHorizontal + x + spriteOffset.x, cameraY + 420.0f - y + spriteOffset.y, spriteOffset.z, drawColor);
     else
-        DRAWING->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(-1);
 }
 
@@ -76,7 +73,7 @@ void Actor::RenderNode() {
     D3DVECTOR spriteOffset;
     DWORD drawColor;
     SpriteQuad40CA80 transformedQuad;
-    DRAWING->GetTextureRect(drawFrame->textureIndex, &textureRect);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->GetTextureRect(drawFrame->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (drawFrame->pose != 0) {
         switch (drawFrame->pose->blendMode) {
@@ -113,10 +110,10 @@ void Actor::RenderNode() {
     }
     TRANSFORM(transformedQuad)->TranslateQuad(x - (facing) * (drawFrame->originX), y - (drawFrame->originY), 0);
     if (spriteOffset.x != 0 || spriteOffset.y != 0 || spriteOffset.z != 0)
-        DRAWING->DrawProjectedQuad(drawFrame->textureIndex, transformedQuad, &textureRect,
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(drawFrame->textureIndex, transformedQuad, &textureRect,
             spriteOffset.x + x, spriteOffset.y + y, spriteOffset.z, drawColor);
     else
-        DRAWING->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(-1);
 }
 
@@ -127,7 +124,6 @@ void Actor::RenderNode() {
 #define SLOT(type, offset) (*reinterpret_cast<type*>(SLOT_ADDRESS(offset)))
 class NameDrawingF129 {
 public:
-    void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
 };
 #define NAME_DRAWING reinterpret_cast<NameDrawingF129*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0x8)))
 class NameEntryPlayerF129 {
@@ -176,19 +172,19 @@ void NameEntryPlayerF129::Render() {
         RECT textureRect;
         SetRect(&textureRect, 0, 0, 640, 480);
         TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
-        NAME_DRAWING->DrawQuad(0, transformedQuad, &textureRect, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(0, transformedQuad, &textureRect, 0xFFFFFFFF);
         SetRect(&textureRect, 192, 128, 512, 160);
         TRANSFORM(transformedQuad)->BuildQuad(160.0f, 10.0f, 480.0f, 42.0f);
-        NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
         SetRect(&textureRect, 0, 80, 500, 160);
         TRANSFORM(transformedQuad)->BuildQuad(70.0f, 300.0f, 570.0f, 380.0f);
-        NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
         SetRect(&textureRect, field010 * 19, field012 * 20 + 160,
             field010 * 19 + 19, field012 * 20 + 180);
         TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
         TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
         TRANSFORM(transformedQuad)->TranslateQuad(field010 * 19 + 70, field012 * 20 + 300, 0);
-        NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
         for (int entry = 0; entry < 10; ++entry) {
             DWORD rowColor;
             if (entry != field120) rowColor = 0xFF808080;
@@ -198,7 +194,7 @@ void NameEntryPlayerF129::Render() {
             DrawNumber(330.0f, entry * 20 + 80, rowColor, SLOT(signed char, 0x564), 2);
             SetRect(&textureRect, 228, 40, 247, 60);
             TRANSFORM(transformedQuad)->BuildQuad(325.0f, entry * 20 + 80, 344.0f, entry * 20 + 100);
-            NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, rowColor);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, rowColor);
             DrawNumber(370.0f, entry * 20 + 80, rowColor, SLOT(signed char, 0x565), 2);
             DrawNumber(560.0f, entry * 20 + 80, rowColor, SLOT(int, 0x568), 0);
         }
@@ -208,7 +204,7 @@ void NameEntryPlayerF129::Render() {
             TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
             TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
             TRANSFORM(transformedQuad)->TranslateQuad(field014 * 14 + 160, field120 * 20 + 80, 0);
-            NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
         }
         Graphics::EndFrame();
     }
@@ -223,23 +219,23 @@ void NameEntrySharedF129::Render() {
         RECT textureRect;
         SetRect(&textureRect, 0, 0, 640, 480);
         TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
-        NAME_DRAWING->DrawQuad(0, transformedQuad, &textureRect, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(0, transformedQuad, &textureRect, 0xFFFFFFFF);
         SetRect(&textureRect, 192, 160, 512, 192);
         TRANSFORM(transformedQuad)->BuildQuad(160.0f, 20.0f, 480.0f, 52.0f);
-        NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
         if (field00C == 0) {
             SetRect(&textureRect, 0, 80, 500, 160);
             TRANSFORM(transformedQuad)->BuildQuad(70.0f, 300.0f, 570.0f, 380.0f);
-            NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             SetRect(&textureRect, field00E * 19, field010 * 20 + 160,
                 field00E * 19 + 19, field010 * 20 + 180);
             TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
             TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
             TRANSFORM(transformedQuad)->TranslateQuad(field00E * 19 + 70, field010 * 20 + 300, 0);
-            NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             SetRect(&textureRect, 0, 0, 512, 20);
             TRANSFORM(transformedQuad)->BuildQuad(64.0f, 100.0f, 576.0f, 120.0f);
-            NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
             DrawFilename(50.0f, 130.0f, 0xFFFFFFFF, reinterpret_cast<const char*>(this) + 0x1C);
             DrawName(160.0f, 130.0f, 0xFFFFFFFF, g_NameSharedGlyphs);
             if (field012 < 8 && field00E + field010 * 26 != 92) {
@@ -248,33 +244,33 @@ void NameEntrySharedF129::Render() {
                 TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
                 TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
                 TRANSFORM(transformedQuad)->TranslateQuad(field012 * 14 + 160, 130.0f, 0);
-                NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
+                reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             }
             DrawNumber(330.0f, 130.0f, 0xFFFFFFFF, g_NameSharedCodeOne, 2);
             SetRect(&textureRect, 228, 40, 247, 60);
             TRANSFORM(transformedQuad)->BuildQuad(325.0f, 130.0f, 344.0f, 150.0f);
-            NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             DrawNumber(370.0f, 130.0f, 0xFFFFFFFF, g_NameSharedCodeTwo, 2);
             if (g_NameSharedFlag == 0) {
                 SetRect(&textureRect, 0, g_NameSharedAlternate * 20 + 20, 100, g_NameSharedAlternate * 20 + 40);
                 TRANSFORM(transformedQuad)->BuildQuad(380.0f, 136.0f, 480.0f, 150.0f);
                 TRANSFORM(transformedQuad)->TranslateQuad(36.0f, 8.0f, 0);
-                NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFB0B0B0);
+                reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFB0B0B0);
             }
             SetRect(&textureRect, 0, g_NameSharedType * 20 + 20, 100, g_NameSharedType * 20 + 40);
             TRANSFORM(transformedQuad)->BuildQuad(380.0f, 130.0f, 480.0f, 150.0f);
-            NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
             SetRect(&textureRect, 100, g_NameSharedFlag * 20 + 20, 180, g_NameSharedFlag * 20 + 40);
             TRANSFORM(transformedQuad)->BuildQuad(500.0f, 130.0f, 580.0f, 150.0f);
-            NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
         } else {
             SetRect(&textureRect, 200, 20, 460, 60);
             TRANSFORM(transformedQuad)->BuildQuad(190.0f, 200.0f, 450.0f, 240.0f);
-            NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
             if (field014 == 0) SetRect(&textureRect, 320, 192, 448, 224);
             else SetRect(&textureRect, 192, 192, 320, 224);
             TRANSFORM(transformedQuad)->BuildQuad(256.0f, 280.0f, 384.0f, 312.0f);
-            NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
         }
         Graphics::EndFrame();
     }

@@ -13,6 +13,8 @@ struct TextureQueueEntryF198 {
     unsigned char unknown00[4];
 };
 
+class SpriteQuad40CA80;
+
 class TextureManagerF198 {
     GraphicsResourceClient graphicsClient;
 public:
@@ -35,6 +37,10 @@ public:
     void SetTextureFilter(int mode);
     void SetPixelShaderMode(signed char mode);
     void SetColorMultiplier(float multiplier);
+    void GetTextureRect(int index, RECT* rectangle);
+    void DrawQuad(int texture, const SpriteQuad40CA80& quad, const RECT* rect, DWORD color);
+    void DrawProjectedQuad(int texture, const SpriteQuad40CA80& quad, const RECT* rect,
+        float x, float y, float z, DWORD color);
 };
 
 typedef char AssertTextureManager80F198[

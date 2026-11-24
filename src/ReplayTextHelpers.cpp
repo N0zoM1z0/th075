@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "BattleAtlasNumber446B90.hpp"
 #include <cstring>
 
@@ -19,7 +20,7 @@ void ReplayTextF125::DrawMetadataNumber(float x, float y, DWORD color, int value
     if (digits > 0) {
         while (digits > 0) {
             SetRect(&region, (digitValue % 10) * 19, 40, (digitValue % 10) * 19 + 19, 60);
-            DRAWING->DrawQuad(2, mainQuad, &region, color);
+            reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(2, mainQuad, &region, color);
             digitValue /= 10;
             TRANSFORM(mainQuad)->TranslateQuad(-11.0f, 0, 0);
             --digits;
@@ -27,7 +28,7 @@ void ReplayTextF125::DrawMetadataNumber(float x, float y, DWORD color, int value
     } else {
         while (digitValue >= 0) {
             SetRect(&region, (digitValue % 10) * 19, 40, (digitValue % 10) * 19 + 19, 60);
-            DRAWING->DrawQuad(2, mainQuad, &region, color);
+            reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(2, mainQuad, &region, color);
             if (digitValue < 10) digitValue = -1;
             else digitValue /= 10;
             TRANSFORM(mainQuad)->TranslateQuad(-11.0f, 0, 0);
@@ -42,7 +43,7 @@ void ReplayTextF125::DrawNameGlyphs(float x, float y, DWORD color, const signed 
     for (glyphIndex = 0; glyphIndex < 8; glyphIndex++) {
         SetRect(&region, (codes[glyphIndex] % 26) * 19, (codes[glyphIndex] / 26) * 20,
                 (codes[glyphIndex] % 26) * 19 + 19, (codes[glyphIndex] / 26) * 20 + 20);
-        DRAWING->DrawQuad(2, quadValue, &region, color);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(2, quadValue, &region, color);
         TRANSFORM(quadValue)->TranslateQuad(14.0f, 0, 0);
     }
 }

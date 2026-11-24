@@ -175,7 +175,7 @@ BattleScene::RenderModeFive,0x00448710,function
 BattleScene::RenderDamageFlash,0x004406C0,function
 BattleScene::RenderRoundBanner,0x00441EA0,function
 DrawAtlasNumberAt00446B90,0x00446B90,function
-AtlasQuad446B90::AtlasQuad446B90,0x0040DA00,function
+SpriteQuad40CA80::ConstructFromBounds,0x0040DA00,function
 ComboDisplay::Render,0x0043D570,function
 CharacterSelectScene::RenderCards,0x00437380,function
 CharacterSelectScene::RenderOptions,0x00438240,function
@@ -953,7 +953,7 @@ TextureManagerSlotsF736::ClearSlots,0x0040B250,function
 TextureManagerF198::SetBlendMode,0x0040C7F0,function
 SpriteTexturesF736::DrawProjectedTriangleStrip,0x0040C970,function
 SpriteDrawingF736::DrawOpaqueSpriteWhite,0x0040D840,function
-SpriteDrawingF736::GetTextureRect,0x0040D870,function
+TextureManagerF198::GetTextureRect,0x0040D870,function
 ProgressRecordsF736::CheckEncodedItem,0x0041A0E0,function
 RecordPrefix16F738::ResetAllocation36,0x00458790,function
 RecordPrefix16F738::ZeroAndSetFlag,0x00458880,function
@@ -977,8 +977,8 @@ TextureManagerF769::AllocateTextureSlots,0x0040B110,function
 TextureManagerF770::AllocateSharedTextures,0x0040B000,function
 SpriteDrawingF775::DrawScaled,0x0040D2E0,function
 SpriteDrawingF776::DrawVariant,0x0040CEF0,function
-SpriteDrawingF751::DrawProjectedQuad,0x0040CA20,function
-SpriteDrawingF780::DrawQuad,0x0040C9A0,function
+TextureManagerF198::DrawProjectedQuad,0x0040CA20,function
+TextureManagerF198::DrawQuad,0x0040C9A0,function
 ArchiveCatalog::Release,0x0041CE50,function
 BattleScene::~BattleScene,0x0043B0B0,function
 GameApplication::RunAt00602A60,0x00602A60,function

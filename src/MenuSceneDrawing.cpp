@@ -7,7 +7,6 @@
 // instantiate or embed them, or infer their complete layouts from these views.
 class SceneQuadDrawingF119 {
 public:
-    void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
 };
 class MusicScene425C80 {
 public:
@@ -48,10 +47,10 @@ void MusicScene425C80::RenderList() {
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 34, 256, 98);
         TRANSFORM(quadValue)->BuildQuad(10.0f, 10.0f, 266.0f, 74.0f);
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         TRANSFORM(quadValue)->BuildQuad(90.0f, 90.0f, 602.0f, 108.0f);
         SetRect(&iconRegion, 150, 10, 157, 16);
         TRANSFORM(iconQuad)->BuildQuad(80.0f, 100.0f, 87.0f, 106.0f);
@@ -62,7 +61,7 @@ void MusicScene425C80::RenderList() {
                 opacity = 255;
             DrawNumber(80.0f, quadValue.first.y + 1.0f, D3DCOLOR_ARGB(opacity, 255, 255, 255),
                        SCENE_FIELD(signed char, 0x3DF) + 1 + musicIndex, 2);
-            QUAD_DRAWING->DrawQuad(1, iconQuad, &iconRegion, D3DCOLOR_ARGB(opacity, 255, 255, 255));
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, iconQuad, &iconRegion, D3DCOLOR_ARGB(opacity, 255, 255, 255));
             SetRect(&region, 0, (SCENE_FIELD(signed char, 0x3DF) + musicIndex) * 18, 512,
                     (SCENE_FIELD(signed char, 0x3DF) + musicIndex) * 18 + 18);
             TRANSFORM(quadValue)->TranslateQuad(-1.0f, 0.0f, 0);
@@ -82,7 +81,7 @@ void MusicScene425C80::RenderList() {
         TRANSFORM(quadValue)->BuildQuad(30.0f,
             static_cast<float>((SCENE_FIELD(signed char, 0x3DE) - SCENE_FIELD(signed char, 0x3DF)) * 18 + 90), 45.0f,
             static_cast<float>((SCENE_FIELD(signed char, 0x3DE) - SCENE_FIELD(signed char, 0x3DF)) * 18 + 106));
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 512, 32);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(64.0f, 320.0f, 0);
@@ -110,7 +109,7 @@ void MusicScene425C80::RenderList() {
             Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, 0xFFFFFFFF, TEXTURE(20));
         SetRect(&region, 0, 16, 120, 32);
         TRANSFORM(quadValue)->BuildQuad(300.0f, 20.0f, 420.0f, 36.0f);
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 512, 512);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(80.0f, 340.0f, 0);
@@ -148,17 +147,17 @@ void ResultListScene::Render() {
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(spriteQuad)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(0, spriteQuad, &region, 0xFFFFFFFF);
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, spriteQuad, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 512, 512);
         TRANSFORM(spriteQuad)->BuildQuadFromRect(&region);
         TRANSFORM(spriteQuad)->ScaleQuad(256.0f, 0, 0, -1.0f, 1.0f, 1.0f);
         TRANSFORM(spriteQuad)->TranslateQuad(128.0f, 0, 0);
-        reinterpret_cast<SceneQuadDrawingF119*>((auxiliaryTexture))->DrawQuad(0, spriteQuad, &region, 0xFF808080);
+        auxiliaryTexture->DrawQuad(0, spriteQuad, &region, 0xFF808080);
         if ((showingRecords) == 0) {
             SetRect(&region, 0, 24, 120, 120);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 120.0f, 96.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(80.0f, 72.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 0, 0, 240, 240);
             TRANSFORM(spriteQuad)->BuildQuadFromRect(&region);
             TRANSFORM(spriteQuad)->TranslateQuad(200.0f, 74.0f, 0);
@@ -175,40 +174,40 @@ void ResultListScene::Render() {
             SetRect(&region, 0, 0, 240, 24);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 240.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(80.0f, 20.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 0, (selectedCharacter) * 24, 128,
                     (selectedCharacter) * 24 + 24);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 128.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(320.0f, 20.0f, 0);
-            QUAD_DRAWING->DrawQuad(3, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(3, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 168, (difficultyIndex) * 24 + 24, 240,
                     (difficultyIndex) * 24 + 48);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 72.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(464.0f, 20.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 120, 24, 168, 48);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 48.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(80.0f, 200.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 120, 48, 168, 72);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 48.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(160.0f, 200.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 120, 72, 168, 96);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 48.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(300.0f, 200.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 120, 96, 168, 120);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 48.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(500.0f, 200.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             for (rankIndex = 0; rankIndex < 10; rankIndex++) {
                 DrawRankLabel(80.0f, static_cast<float>(rankIndex * 20 + 230), 0xFFFFFFFF, rankIndex + 1);
                 DrawNameGlyphs(160.0f, static_cast<float>(rankIndex * 20 + 230), 0xFFFFFFFF, ROW(rankIndex).name);
                 DrawCounter(330.0f, static_cast<float>(rankIndex * 20 + 230), 0xFFFFFFFF, ROW(rankIndex).firstResult, 2);
                 SetRect(&region, 228, 40, 247, 60);
                 TRANSFORM(spriteQuad)->BuildQuad(325.0f, static_cast<float>(rankIndex * 20 + 230), 344.0f, static_cast<float>(rankIndex * 20 + 250));
-                QUAD_DRAWING->DrawQuad(2, spriteQuad, &region, 0xFFFFFFFF);
+                reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, spriteQuad, &region, 0xFFFFFFFF);
                 DrawCounter(370.0f, static_cast<float>(rankIndex * 20 + 230), 0xFFFFFFFF, ROW(rankIndex).secondResult, 2);
                 DrawCounter(560.0f, static_cast<float>(rankIndex * 20 + 230), 0xFFFFFFFF, ROW(rankIndex).score, 0);
             }
@@ -218,7 +217,7 @@ void ResultListScene::Render() {
             for (entry = 0; entry < rowLimit; entry++) {
                 SetRect(&region, 128, 67, 130, 77);
                 TRANSFORM(spriteQuad)->BuildQuad(10.0f, static_cast<float>(entry * 32 + 70), 630.0f, static_cast<float>(entry * 32 + 80));
-                QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+                reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             }
             reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
             rowLimit = 0;
@@ -229,7 +228,7 @@ void ResultListScene::Render() {
                             reinterpret_cast<const int*>(DATA + 16)[entry], 0);
                 if (reinterpret_cast<const BYTE*>(DATA)[0x4C0 + entry]) {
                     TRANSFORM(spriteQuad)->BuildQuad(535.0f, static_cast<float>(rowLimit * 32 + 61), 559.0f, static_cast<float>(rowLimit * 32 + 85));
-                    QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+                    reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
                 }
                 rowLimit++;
             }
@@ -248,12 +247,12 @@ void ResultListScene::Render() {
             SetRect(&region, 0, 120, 240, 144);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 240.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(80.0f, 20.0f, 0);
-            QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             SetRect(&region, 0, (selectedCharacter) * 24, 128,
                     (selectedCharacter) * 24 + 24);
             TRANSFORM(spriteQuad)->BuildQuad(0, 0, 128.0f, 24.0f);
             TRANSFORM(spriteQuad)->TranslateQuad(320.0f, 20.0f, 0);
-            QUAD_DRAWING->DrawQuad(3, spriteQuad, &region, 0xFFFFFFFF);
+            reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(3, spriteQuad, &region, 0xFFFFFFFF);
         }
         Graphics::EndFrame();
     }

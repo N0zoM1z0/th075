@@ -33,17 +33,17 @@ void CharacterStageRendererF122<Policy>::Render(signed char stage)
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(FLOAT(Policy::xBase + 0), FLOAT(Policy::xBase + 40), FLOAT(Policy::xBase + 0) + 1024.0f, FLOAT(Policy::xBase + 40) + 32.0f);
-        QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 200), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 200), 255, 255, 255));
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(FLOAT(Policy::xBase + 4), FLOAT(Policy::xBase + 44), FLOAT(Policy::xBase + 4) + 1024.0f, FLOAT(Policy::xBase + 44) + 32.0f);
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 201), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 201), 255, 255, 255));
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(1);
         SetRect(&region, 0, 0, 640, 128);
         TRANSFORM(quadValue)->BuildQuad(FLOAT(Policy::xBase + 8), FLOAT(Policy::xBase + 48), FLOAT(Policy::xBase + 8) + 640.0f, FLOAT(Policy::xBase + 48) + 128.0f);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 202), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 202), 255, 255, 255));
         SetRect(&region, 0, 0, 304, 80);
         TRANSFORM(quadValue)->BuildQuad(FLOAT(Policy::xBase + 12), FLOAT(Policy::xBase + 52), FLOAT(Policy::xBase + 12) + 304.0f, FLOAT(Policy::xBase + 52) + 80.0f);
-        QUAD_DRAWING->DrawQuad(3, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 203), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(3, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 203), 255, 255, 255));
         if (FIELD(signed char, 0x6F8) == 1 && FIELD(unsigned char, Policy::xBase + 203) < 255 && FIELD(short, Policy::timerOffset) == 0) {
             if (FIELD(unsigned char, Policy::xBase + 203) < 250) FIELD(unsigned char, Policy::xBase + 203) += 5;
             else FIELD(unsigned char, Policy::xBase + 203) = 255;
@@ -59,18 +59,18 @@ void CharacterStageRendererF122<Policy>::Render(signed char stage)
     case 8: case 9:
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 200), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 200), 255, 255, 255));
         break;
     case 10:
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 200), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 200), 255, 255, 255));
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 201), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 201), 255, 255, 255));
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 202), 255, 255, 255));
+        reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 202), 255, 255, 255));
         break;
     }
 }

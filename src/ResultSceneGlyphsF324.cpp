@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <windows.h>
@@ -6,10 +7,6 @@
 // receiver at +8 only, not a speculative complete scene layout.
 extern const float g_CharacterGlyphWidthAt00657F78;
 extern const float g_CharacterGlyphHeightAt0065786C;
-class NameGlyphRendererF324 {
-public:
-    void DrawQuad(int texture,const SpriteQuad40CA80& quad,const RECT* rectangle,DWORD tint);
-};
 struct GlyphIndexRectF324 { int index; RECT rect; };
 void ResultListScene::DrawNameGlyphs(float x,float y,DWORD tint,const signed char* name)
 {
@@ -20,7 +17,7 @@ void ResultListScene::DrawNameGlyphs(float x,float y,DWORD tint,const signed cha
 
         SetRect(&state.rect,(name[state.index]%26)*19,(name[state.index]/26)*20,
                 (name[state.index]%26)*19+19,(name[state.index]/26)*20+20);
-        (reinterpret_cast<NameGlyphRendererF324*>(mainTexture))->DrawQuad(2,quad,&state.rect,tint);
+        mainTexture->DrawQuad(2,quad,&state.rect,tint);
         reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(14.0f,0.0f,0.0f);
     }
 }

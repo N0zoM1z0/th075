@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "CharacterSelectScene.hpp"
 #include "BattleHud43E040.hpp"
 #include "SpriteTransform.hpp"
@@ -5,7 +6,7 @@ extern signed char g_CombatMode;
 
 #define ANGLE choiceStop[i]
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
-#define DRAW reinterpret_cast<RenderDrawing5E68C0*>(characterTextures)
+#define DRAW reinterpret_cast<TextureManagerF198*>(characterTextures)
 #define NORMAL(a) D3DCOLOR_ARGB(a, normal[i], normal[i], normal[i])
 #define DIM(a) D3DCOLOR_ARGB(a, dim[i], dim[i], dim[i])
 
@@ -33,7 +34,7 @@ void CharacterSelectScene::RenderCards() {
                 else
                     alpha = static_cast<unsigned char>(ANGLE - 45.0f) / 2;
                 atlasOffset = (ANGLE > 45.0f) * 128;
-                packet.BuildQuad(0.0f, 0.0f, 128.0f, 160.0f);
+                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 128.0f, 160.0f);
                 QUAD->RotateQuad(64.0f, 80.0f, 0.0f, 0.0f, 90.0f - ANGLE * 6.0f, 0.0f);
                 if (ANGLE > 30.0f && ANGLE < 60.0f)
                     SetRect(&region, 256, 480, 384, 640);
@@ -44,7 +45,7 @@ void CharacterSelectScene::RenderCards() {
                     color = NORMAL(255);
                 else
                     color = DIM(255);
-                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, color);
+                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, color);
                 if (ANGLE > 30.0f && ANGLE < 60.0f)
                     SetRect(&region, 256, 480, 384, 640);
                 else
@@ -54,7 +55,7 @@ void CharacterSelectScene::RenderCards() {
                     color = NORMAL(255);
                 else
                     color = DIM(255);
-                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, color);
+                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, color);
                 if (ANGLE > 30.0f && ANGLE < 60.0f)
                     SetRect(&region, 256, 480, 384, 640);
                 else
@@ -64,9 +65,9 @@ void CharacterSelectScene::RenderCards() {
                     color = NORMAL(255);
                 else
                     color = DIM(255);
-                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, color);
+                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, color);
                 atlasOffset = (ANGLE > 45.0f) * 96;
-                packet.BuildQuad(0.0f, 0.0f, 256.0f, 32.0f);
+                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 256.0f, 32.0f);
                 SetRect(&region, 256, atlasOffset + 640, 512, atlasOffset + 672);
                 QUAD->TranslateQuad(float(i * 320 + 100), 150.0f, 0.0f);
                 QUAD->TranslateQuad(0.0f, float(alpha - 15), 0.0f);
@@ -74,7 +75,7 @@ void CharacterSelectScene::RenderCards() {
                     color = NORMAL(alpha * 17);
                 else
                     color = DIM(alpha * 17);
-                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, color);
+                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, color);
                 SetRect(&region, 256, atlasOffset + 672, 512, atlasOffset + 704);
                 QUAD->TranslateQuad(-120.0f, 120.0f, 0.0f);
                 QUAD->TranslateQuad(float(-(alpha - 15)), float(-(alpha - 15)), 0.0f);
@@ -82,7 +83,7 @@ void CharacterSelectScene::RenderCards() {
                     color = NORMAL(alpha * 17);
                 else
                     color = DIM(alpha * 17);
-                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, color);
+                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, color);
                 SetRect(&region, 256, atlasOffset + 704, 512, atlasOffset + 736);
                 QUAD->TranslateQuad(60.0f, 120.0f, 0.0f);
                 QUAD->TranslateQuad(float(alpha - 15), float(-(alpha - 15)), 0.0f);
@@ -90,7 +91,7 @@ void CharacterSelectScene::RenderCards() {
                     color = NORMAL(alpha * 17);
                 else
                     color = DIM(alpha * 17);
-                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, color);
+                DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, color);
                 if ((alternatePalette[i]) != 0) {
                     short badgeRow;
                     if ((playerState[i]) == 1)
@@ -100,15 +101,15 @@ void CharacterSelectScene::RenderCards() {
                     else
                         continue;
                     SetRect(&region, 0, badgeRow + 640, 256, badgeRow + 704);
-                    packet.BuildQuad(0.0f, 0.0f, 256.0f, 64.0f);
+                    reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 256.0f, 64.0f);
                     QUAD->TranslateQuad(float(i * 320 + 32), 64.0f, 0.0f);
-                    DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, 0xFFFFFFFF);
+                    DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, 0xFFFFFFFF);
                     SetRect(&region, 0, badgeRow + 704, 256, badgeRow + 768);
                     QUAD->TranslateQuad(0.0f, 128.0f, 0.0f);
-                    DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, 0xFFFFFFFF);
+                    DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, 0xFFFFFFFF);
                     SetRect(&region, 0, badgeRow + 768, 256, badgeRow + 832);
                     QUAD->TranslateQuad(0.0f, 128.0f, 0.0f);
-                    DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, &packet, &region, 0xFFFFFFFF);
+                    DRAW->DrawQuad((chosenCharacter[i]) * 2 + 1, packet, &region, 0xFFFFFFFF);
                 }
             }
         }

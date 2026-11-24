@@ -1,7 +1,9 @@
+#include "SpriteTransform.hpp"
+#include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleRoundBanner441EA0.hpp"
 
-#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(textures)
+#define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 
 void BattleScene::RenderRoundBanner() {
     unsigned char opacity;
@@ -16,8 +18,8 @@ void BattleScene::RenderRoundBanner() {
         }
         RECT region;
         SetRect(&region, 0, 0, 512, 42);
-        packet.BuildQuad(64.0f, 120.0f, 576.0f, 162.0f);
-        DRAWING->DrawQuad(9, &packet, &region, D3DCOLOR_ARGB(opacity, 255, 255, 255));
+        reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(64.0f, 120.0f, 576.0f, 162.0f);
+        DRAWING->DrawQuad(9, packet, &region, D3DCOLOR_ARGB(opacity, 255, 255, 255));
         DrawAtlasNumberDefaultAt00446B60(float(count * 19 + 320), 150.0f,
             D3DCOLOR_ARGB(opacity, 255, 255, 255), field068, 13);
     }

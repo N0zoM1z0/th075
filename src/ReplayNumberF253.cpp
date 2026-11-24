@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <windows.h>
@@ -31,7 +32,7 @@ void ReplayNumberF253::DrawNumber(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<ReplayNumberF253Drawer*>(field008)->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<TextureManagerF198*>(field008)->DrawQuad(2,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-11.0f,0.0f,0.0f);
                 --minDigits;
@@ -40,7 +41,7 @@ void ReplayNumberF253::DrawNumber(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<ReplayNumberF253Drawer*>(field008)->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<TextureManagerF198*>(field008)->DrawQuad(2,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else

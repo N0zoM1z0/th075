@@ -7,14 +7,6 @@
 // scale/no-angle path, cosine/sine rotation and actual vector swapping.
 // Branch-source order is native: scale!=1 & angle==0 first, then rotation.
 // Historical owner/private payload meanings remain provisional.
-class SpriteScaledQuadF776 {
-public:
-    D3DXVECTOR4 first, second, third, fourth;
-    RenderQuadPayload5E68C0 payload;
-    SpriteScaledQuadF776();
-    SpriteScaledQuadF776(float,float,float,float);
-};
-typedef char ScaledQuadSizeF776[(sizeof(SpriteScaledQuadF776)==132)?1:-1];
 class SpriteDrawingF776 {
 public:
     void DrawVariant(int texture,float x,float y,DWORD color,
@@ -32,17 +24,17 @@ void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
     if (mode == 0) {
         reinterpret_cast<TimelineDrawing438D00*>(this)->DrawSprite(texture,x,y,color,pivotX,pivotY,scale,angle,flags);
     } else {
-    SpriteScaledQuadF776 quad;
+    SpriteQuad40CA80 quad;
     { RECT region;
     region.left=0;
     region.top=0;
     region.right=ENTRY.storedWidth;
     region.bottom=ENTRY.storedHeight;
     if (scale==1.0f && angle==g_ZeroAngleF776) {
-        quad=SpriteScaledQuadF776(x-pivotX,y-pivotY,
+        quad=SpriteQuad40CA80(x-pivotX,y-pivotY,
              x-pivotX+region.right,y-pivotY+region.bottom);
     } else if (scale!=1.0f && angle==g_ZeroAngleF776) {
-        quad=SpriteScaledQuadF776(x-pivotX*scale,y-pivotY*scale,
+        quad=SpriteQuad40CA80(x-pivotX*scale,y-pivotY*scale,
              (region.right-pivotX)*scale+x,
              (region.bottom-pivotY)*scale+y);
     } else {

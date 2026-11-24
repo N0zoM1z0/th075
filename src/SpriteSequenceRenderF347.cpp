@@ -21,13 +21,6 @@ public:
     SequenceIteratorF261 begin();
     void End(SequenceIteratorF261* out);
 };
-class SequenceRendererF261 {
-public:
-    void GetTextureRect(int texture, RECT* rectangle);
-    void DrawQuad(int texture, const SpriteQuad40CA80& quad, const RECT* rectangle, DWORD tint);
-    void DrawProjectedQuad(int texture, const SpriteQuad40CA80& quad, const RECT* rectangle,
-                           DWORD scaleXBits, DWORD scaleYBits, DWORD scaleZBits, DWORD tint);
-};
 extern float g_CombatViewOffsetX;
 extern const float g_SequenceBaseOffsetAt00657834;
 extern float g_CombatViewOffsetY;
@@ -47,6 +40,15 @@ struct NativeSequenceStateF331 {
     NativeQuadCarrierF331 quad;
 };
 struct NativeScaleTripleF336 {float x,y,z;};
+struct NativeSequenceDrawRecordF347 {
+    short textureIndex;
+    unsigned char unknown002[2];
+    SpriteQuad40CA80 quad;
+    unsigned char unknown088[8];
+    NativeScaleTripleF336 projection;
+    DWORD tint;
+    unsigned char blendMode;
+};
 class SpriteSequenceF261 { public: void RenderElements(); public:
     // Observed fields; meanings not yet known.
     void* field000;
@@ -56,9 +58,9 @@ class SpriteSequenceF261 { public: void RenderElements(); public:
     short field012;
     unsigned long field014;
 };
-#define REC(type,p,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(p)+(off)))
+#define DRAW_RECORD (reinterpret_cast<const NativeSequenceDrawRecordF347*>(it.operator->()))
 #define LIST reinterpret_cast<SequenceListF261*>(reinterpret_cast<unsigned char*>(this)+4)
-#define DRAWER reinterpret_cast<SequenceRendererF261*>(field000)
+#define DRAWER field000
 #define QUAD (*reinterpret_cast<SpriteQuad40CA80*>(&state.quad))
 #define TRANSLATE(q) reinterpret_cast<SpriteTransform*>(&(q))
 void SpriteSequenceF261::RenderElements()
@@ -77,31 +79,31 @@ void SpriteSequenceF261::RenderElements()
         for (;it!=state.end;it++,++state.counter) {
             if (state.counter%field010==field010-1) {
 
-                DRAWER->GetTextureRect(REC(short,it.operator->(),0),&state.rect);
-                switch(REC(unsigned char,it.operator->(),0xa0)) {
+                reinterpret_cast<TextureManagerF198*>(DRAWER)->GetTextureRect(DRAW_RECORD->textureIndex,&state.rect);
+                switch(DRAW_RECORD->blendMode) {
                 case 0: reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(0); break;
                 case 1: reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(2); break;
                 case 2: reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(3); break;
                 }
-                QUAD=*reinterpret_cast<const SpriteQuad40CA80*>(it.operator->()+4);
-                state.tint=(((REC(DWORD,it.operator->(),0x9c)>>24)*state.counter)/field012<<24)
-                    | (field014&REC(DWORD,it.operator->(),0x9c));
+                QUAD=DRAW_RECORD->quad;
+                state.tint=(((DRAW_RECORD->tint>>24)*state.counter)/field012<<24)
+                    | (field014&DRAW_RECORD->tint);
                 TRANSLATE(QUAD)->TranslateQuad(state.x,y+g_SequenceYOffsetAt00657830,0.0f);
-                if (reinterpret_cast<NativeScaleTripleF336*>(it.operator->()+0x90)->x!=0.0f ||
-                    reinterpret_cast<NativeScaleTripleF336*>(it.operator->()+0x90)->y!=0.0f ||
-                    reinterpret_cast<NativeScaleTripleF336*>(it.operator->()+0x90)->z!=0.0f) {
-                    DRAWER->DrawProjectedQuad(REC(short,it.operator->(),0),QUAD,&state.rect,
-                        REC(DWORD,it.operator->(),0x90),REC(DWORD,it.operator->(),0x94),
-                        REC(DWORD,it.operator->(),0x98),state.tint);
+                if (DRAW_RECORD->projection.x!=0.0f ||
+                    DRAW_RECORD->projection.y!=0.0f ||
+                    DRAW_RECORD->projection.z!=0.0f) {
+                    reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawProjectedQuad(DRAW_RECORD->textureIndex,QUAD,&state.rect,
+                        DRAW_RECORD->projection.x,DRAW_RECORD->projection.y,
+                        DRAW_RECORD->projection.z,state.tint);
                 } else {
-                    DRAWER->DrawQuad(REC(short,it.operator->(),0),QUAD,&state.rect,state.tint);
+                    reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(DRAW_RECORD->textureIndex,QUAD,&state.rect,state.tint);
                 }
             }
         }
         }
     }
 }
-#undef REC
+#undef DRAW_RECORD
 #undef LIST
 #undef DRAWER
 #undef QUAD

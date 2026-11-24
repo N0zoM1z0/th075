@@ -24,7 +24,7 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 2,312 unresolved externals. Camera initialization,
+stops at `LNK1120` with 2,266 unresolved externals. Camera initialization,
 update, snap, and rendering share state. Scene and sequence callers share
 the camera override and snap entries. The music, options,
 results, and window constructors share the D3D8 texture allocator.
@@ -37,14 +37,19 @@ manager's three typed vectors. WinMain and the manager use the same
 graphics client, and the manager uses the native four-byte deque layout.
 Scene constructors and the results cleanup now call the shared manager.
 Drawing callers use the same texture-manager state methods for blend,
-depth, filtering, shader mode, and color scaling.
+depth, filtering, shader mode, and color scaling. Ordinary and projected
+quad drawing and texture-rectangle lookup also share the manager. The
+default and four-float quad constructors use the same SDK-backed layout.
+The drawing checkpoint compared 76 exact units from 42 freshly compiled
+objects and resolved 46 distinct linker symbols.
 The bitmap entry lifetime still needs linkable definitions.
 Headless library consumers exercised both camera snap modes, the log,
 cosine table, sound defaults, configuration save and load, event queue
 insertion, archive registration, lookup, entry reads, and handle release,
 and the four corners produced by the RECT constructor.
 Use `build/program/link.log` and the relocation targets to find candidate
-definitions. WinMain still needs compatible scene and lifetime declarations.
+definitions. Batch related exact units with `--batch` to compile each
+profile together. WinMain still needs compatible scene and lifetime declarations.
 The event worker still uses borrowed iterator bindings.
 The graphics and DirectInput error strings and pixel shader are also
 unresolved.

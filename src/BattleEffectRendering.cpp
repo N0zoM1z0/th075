@@ -1,27 +1,14 @@
+#include "SpriteGeometryF211.hpp"
 #include "TextureManagerF198.hpp"
 #include "GraphicsDraw.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "GraphicsVertex.hpp"
 
-// Independently complete132byte physical packet; original identity is unknown.
-// The RECT constructor constructs the same four vectors and full payload.
-class RectQuadF127 {
-public:
-    D3DXVECTOR4 first, second, third, fourth;
-    RenderQuadPayload5E68C0 payload;
-    RectQuadF127(const RECT*);
-};
-typedef char RectQuadSizeF127[(sizeof(RectQuadF127) == 132) ? 1 : -1];
-
 // All private drawing/effect owners are pointer-only views, never local values.
 class EffectDrawingF127 {
 public:
     void DrawSpriteVariant(int, float, float, DWORD, float, float, float, float, unsigned char, unsigned char);
-    void DrawProjectedQuad(int, const RectQuadF127&, const RECT*, float, float, float, DWORD);
-    void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
-    void DrawQuad(int, const RectQuadF127&, const RECT*, DWORD);
-    void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
     void DrawTriangleStrip(int, Graphics::ScreenVertex*, int);
 };
 extern "C" double __cdecl sin(double);
@@ -70,19 +57,19 @@ void EffectPattern0044B630::Render() {
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
     RECT spriteRectFirst;
     spriteRectFirst.left = 0; spriteRectFirst.top = 0; spriteRectFirst.right = 32; spriteRectFirst.bottom = 41;
-    RectQuadF127 spriteQuadFirst(&spriteRectFirst);
+    SpriteRectF211 spriteQuadFirst(&spriteRectFirst);
     TRANSFORM(spriteQuadFirst)->RotateQuad(16.0f, 41.0f, 0, -15.0f, OWNER_INT(0x68) * 16, 0);
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal + 796, cameraY - 26, 0);
     RECT secondTextureRect;
     secondTextureRect.left = 0; secondTextureRect.top = 0; secondTextureRect.right = 32; secondTextureRect.bottom = 41;
-    RectQuadF127 secondSpriteQuad(&secondTextureRect);
+    SpriteRectF211 secondSpriteQuad(&secondTextureRect);
     TRANSFORM(secondSpriteQuad)->RotateQuad(16.0f, 41.0f, 0, -15.0f, OWNER_INT(0x68) * 16 + 90, 0);
     TRANSFORM(secondSpriteQuad)->TranslateQuad(cameraHorizontal + 796, cameraY - 26, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(1, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 570.0, 0xFFFFFFFF, 600.0f, 300.0f, 1.0f, 0, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0, 0);
-    DRAWING->DrawProjectedQuad(3, spriteQuadFirst, &spriteRectFirst, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
-    DRAWING->DrawProjectedQuad(4, secondSpriteQuad, &secondTextureRect, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(3, reinterpret_cast<const SpriteQuad40CA80&>(spriteQuadFirst), &spriteRectFirst, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(4, reinterpret_cast<const SpriteQuad40CA80&>(secondSpriteQuad), &secondTextureRect, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
 }
 
 void EffectPattern0044BB50::Render() {
@@ -92,19 +79,19 @@ void EffectPattern0044BB50::Render() {
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
     RECT spriteRectFirst;
     spriteRectFirst.left = 0; spriteRectFirst.top = 0; spriteRectFirst.right = 32; spriteRectFirst.bottom = 41;
-    RectQuadF127 spriteQuadFirst(&spriteRectFirst);
+    SpriteRectF211 spriteQuadFirst(&spriteRectFirst);
     TRANSFORM(spriteQuadFirst)->RotateQuad(16.0f, 41.0f, 0, -15.0f, OWNER_INT(0x68) * 16, 0);
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal + 796, cameraY - 26, 0);
     RECT secondTextureRect;
     secondTextureRect.left = 0; secondTextureRect.top = 0; secondTextureRect.right = 32; secondTextureRect.bottom = 41;
-    RectQuadF127 secondSpriteQuad(&secondTextureRect);
+    SpriteRectF211 secondSpriteQuad(&secondTextureRect);
     TRANSFORM(secondSpriteQuad)->RotateQuad(16.0f, 41.0f, 0, -15.0f, OWNER_INT(0x68) * 16 + 90, 0);
     TRANSFORM(secondSpriteQuad)->TranslateQuad(cameraHorizontal + 796, cameraY - 26, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(1, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 570.0, 0xFFFFFFFF, 600.0f, 300.0f, 1.0f, 0, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0, 0);
-    DRAWING->DrawProjectedQuad(3, spriteQuadFirst, &spriteRectFirst, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
-    DRAWING->DrawProjectedQuad(4, secondSpriteQuad, &secondTextureRect, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(3, reinterpret_cast<const SpriteQuad40CA80&>(spriteQuadFirst), &spriteRectFirst, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(4, reinterpret_cast<const SpriteQuad40CA80&>(secondSpriteQuad), &secondTextureRect, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
 }
 
 void EffectPattern0044C070::Render() {
@@ -114,19 +101,19 @@ void EffectPattern0044C070::Render() {
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
     RECT spriteRectFirst;
     spriteRectFirst.left = 0; spriteRectFirst.top = 0; spriteRectFirst.right = 32; spriteRectFirst.bottom = 41;
-    RectQuadF127 spriteQuadFirst(&spriteRectFirst);
+    SpriteRectF211 spriteQuadFirst(&spriteRectFirst);
     TRANSFORM(spriteQuadFirst)->RotateQuad(16.0f, 41.0f, 0, -15.0f, OWNER_INT(0x68) * 16, 0);
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal + 796, cameraY - 26, 0);
     RECT secondTextureRect;
     secondTextureRect.left = 0; secondTextureRect.top = 0; secondTextureRect.right = 32; secondTextureRect.bottom = 41;
-    RectQuadF127 secondSpriteQuad(&secondTextureRect);
+    SpriteRectF211 secondSpriteQuad(&secondTextureRect);
     TRANSFORM(secondSpriteQuad)->RotateQuad(16.0f, 41.0f, 0, -15.0f, OWNER_INT(0x68) * 16 + 90, 0);
     TRANSFORM(secondSpriteQuad)->TranslateQuad(cameraHorizontal + 796, cameraY - 26, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(1, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 570.0, 0xFFFFFFFF, 600.0f, 300.0f, 1.0f, 0, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0, 0);
-    DRAWING->DrawProjectedQuad(3, spriteQuadFirst, &spriteRectFirst, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
-    DRAWING->DrawProjectedQuad(4, secondSpriteQuad, &secondTextureRect, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(3, reinterpret_cast<const SpriteQuad40CA80&>(spriteQuadFirst), &spriteRectFirst, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(4, reinterpret_cast<const SpriteQuad40CA80&>(secondSpriteQuad), &secondTextureRect, 320.0f, 160.0f, 1500.0f, 0xFFFFFFFF);
 }
 
 void EffectPattern0044D620::Render() {
@@ -205,11 +192,11 @@ void EffectPattern0044E3D0::Render() {
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
     SpriteQuad40CA80 spriteQuadFirst(0, 0, stripCount * 128 * 3, 256.0f);
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal * 0.75 + OWNER_INT(0x68) * 0.4, cameraY * 0.75 + 160.0, 0);
-    DRAWING->DrawProjectedQuad(3, spriteQuadFirst, &imageRect, 320.0f, 240.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(3, spriteQuadFirst, &imageRect, 320.0f, 240.0f, 1500.0f, 0xFFFFFFFF);
     imageRect.left = 0; imageRect.top = 0; imageRect.right = (5 - stripCount) * 128; imageRect.bottom = 128;
     SpriteQuad40CA80 projectedQuadSecond(0, 0, (5 - stripCount) * 128 * 3, 256.0f);
     TRANSFORM(projectedQuadSecond)->TranslateQuad(cameraHorizontal * 0.75 + OWNER_INT(0x68) * 0.4 - (5 - stripCount) * 128 * 3, cameraY * 0.75 + 160.0, 0);
-    DRAWING->DrawProjectedQuad(3, projectedQuadSecond, &imageRect, 320.0f, 240.0f, 1500.0f, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(3, projectedQuadSecond, &imageRect, 320.0f, 240.0f, 1500.0f, 0xFFFFFFFF);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(1);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0, 0);
 }
@@ -235,11 +222,11 @@ void EffectPattern0044FAF0::Render() {
     int cameraY = static_cast<int>(g_CombatViewOffsetY);
     RECT imageRect;
     imageRect.left = 0; imageRect.top = 0; imageRect.right = 256; imageRect.bottom = 256;
-    RectQuadF127 spriteQuadFirst(&imageRect);
+    SpriteRectF211 spriteQuadFirst(&imageRect);
     TRANSFORM(spriteQuadFirst)->RotateQuad(128.0f, 128.0f, 0, 85.0f, 0, OWNER_INT(0x68) * 0.2);
     TRANSFORM(spriteQuadFirst)->ScaleQuad(128.0f, 128.0f, 0, 3.5f, 3.5f, 1.0f);
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal + 192, cameraY + 290, 0);
-    RectQuadF127 secondProjectedQuad(&imageRect);
+    SpriteRectF211 secondProjectedQuad(&imageRect);
     TRANSFORM(secondProjectedQuad)->RotateQuad(128.0f, 128.0f, 0, 85.0f, 0, -OWNER_INT(0x68) * 0.2);
     TRANSFORM(secondProjectedQuad)->ScaleQuad(128.0f, 128.0f, 0, 4.0f, 4.0f, 1.0f);
     TRANSFORM(secondProjectedQuad)->TranslateQuad(cameraHorizontal + 192, cameraY + 290, 0);
@@ -247,8 +234,8 @@ void EffectPattern0044FAF0::Render() {
     sourceRect.left = 0; sourceRect.top = 0; sourceRect.right = 256; sourceRect.bottom = 256;
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
-    DRAWING->DrawQuad(1, spriteQuadFirst, &sourceRect, 0xFFFFFFFF);
-    DRAWING->DrawQuad(2, secondProjectedQuad, &sourceRect, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(1, reinterpret_cast<const SpriteQuad40CA80&>(spriteQuadFirst), &sourceRect, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(2, reinterpret_cast<const SpriteQuad40CA80&>(secondProjectedQuad), &sourceRect, 0xFFFFFFFF);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(1);
 }
 
@@ -274,8 +261,8 @@ void EffectPattern0044FD40::Render() {
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(3);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(7);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2);
-    DRAWING->DrawQuad(3, spriteQuadFirst, &imageRect, 0xFFFFFFFF);
-    DRAWING->DrawQuad(3, projectedQuadSecond, &imageRect, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(3, spriteQuadFirst, &imageRect, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(3, projectedQuadSecond, &imageRect, 0xFFFFFFFF);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(4);
 }
 
@@ -293,11 +280,11 @@ void EffectPattern00450420::Render() {
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
     SpriteQuad40CA80 firstQuad(0, 1.0f, atlasSliceCount * 128 * 6, 256.0f);
     TRANSFORM(firstQuad)->TranslateQuad(cameraHorizontal * 0.75 + OWNER_INT(0x68) * 0.1, cameraY * 0.75 + 120.0, 0);
-    DRAWING->DrawProjectedQuad(2, firstQuad, &imageRect, 320.0f, 240.0f, 1500.0f, 0x64FFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(2, firstQuad, &imageRect, 320.0f, 240.0f, 1500.0f, 0x64FFFFFF);
     imageRect.left = 0; imageRect.top = 1; imageRect.right = (5 - atlasSliceCount) * 128; imageRect.bottom = 128;
     SpriteQuad40CA80 projectedQuadSecond(0, 1.0f, (5 - atlasSliceCount) * 128 * 6, 256.0f);
     TRANSFORM(projectedQuadSecond)->TranslateQuad(cameraHorizontal * 0.75 + OWNER_INT(0x68) * 0.1 - (5 - atlasSliceCount) * 128 * 6, cameraY * 0.75 + 120.0, 0);
-    DRAWING->DrawProjectedQuad(2, projectedQuadSecond, &imageRect, 320.0f, 240.0f, 1500.0f, 0x64FFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(2, projectedQuadSecond, &imageRect, 320.0f, 240.0f, 1500.0f, 0x64FFFFFF);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(1);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(1, cameraHorizontal + 320, cameraY * 0.75 + 60.0, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 0);
     reinterpret_cast<TimelineDrawing438D00*>(DRAWING)->DrawSprite(1, cameraHorizontal + 320, cameraY * 0.75 + 60.0, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 1);
@@ -335,7 +322,7 @@ void EffectPattern00450EE0::Render() {
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal + 110, cameraY + 388, 0.25f);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(7);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2);
-    DRAWING->DrawQuad(53, spriteQuadFirst, &imageRect, 0xFFFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(53, spriteQuadFirst, &imageRect, 0xFFFFFFFF);
 }
 
 void EffectPattern00451440::Render() {
@@ -371,7 +358,7 @@ void EffectPattern00451440::Render() {
     spriteQuadFirst.fourth.x = cameraHorizontal * 0.5 + -150.0; spriteQuadFirst.fourth.y = (cameraY + 384) + -4.0; spriteQuadFirst.fourth.z = 0;
     spriteQuadFirst.second.x = 874.0f; spriteQuadFirst.second.y = cameraY * 0.8 + -4.0; spriteQuadFirst.second.z = 0;
     spriteQuadFirst.third.x = cameraHorizontal * 0.5 + 1024.0 + -150.0; spriteQuadFirst.third.y = (cameraY + 384) + -4.0; spriteQuadFirst.third.z = 0;
-    DRAWING->DrawQuad((OWNER_INT(0x68) / 2) % 21 + 5, spriteQuadFirst, &imageRect, 0xC0FFFFFF);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad((OWNER_INT(0x68) / 2) % 21 + 5, spriteQuadFirst, &imageRect, 0xC0FFFFFF);
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
 }
 

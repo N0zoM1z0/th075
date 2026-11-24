@@ -127,6 +127,16 @@ interface. The blend method selects depth state before forwarding the
 blend mode, and the depth, filter, shader, and color methods forward
 to the shared graphics state.
 
+The ordinary draw at `0x0040C9A0` and projected draw at `0x0040CA20`
+copy all 132 bytes of the sprite quad before calling the graphics
+renderer. The ordinary draw also stores a texture lookup and the size
+of the entry vector in its local frame before the second lookup. Using
+the SDK-backed quad directly for local copy storage changed the ordinary
+draw's stack layout under VC7.1. The entry points accept that shared
+quad by reference and preserve the observed local copy layout. The
+four-float constructor at `0x0040DA00` uses the same quad layout as
+the default constructor at `0x0040D990`.
+
 Naming the entry's byte arrays caused VC7.1 to emit a stack cookie in
 the three slot allocators with `/GS`. Omitting that option for those
 three units reproduced the native prologues and their full unwind

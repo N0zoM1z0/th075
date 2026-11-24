@@ -1,6 +1,7 @@
 #include "BattleScene.hpp"
 #include "BattleHud43E040.hpp"
 #include "GraphicsTexturedDraw.hpp"
+#include "SpriteTransform.hpp"
 
 
 void ComboDisplay::Render() {
@@ -14,7 +15,7 @@ void ComboDisplay::Render() {
             if (shown > 99)
                 shown = 99;
             if (side > 0) {
-                packet.BuildQuad(slide + 10.0f, 132.0f,
+                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(slide + 10.0f, 132.0f,
                     slide + 10.0f + 136.0f, 202.0f);
                 Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&packet),
                     &region, D3DCOLOR_ARGB(alpha, 255, 255, 255), texture);
@@ -25,7 +26,7 @@ void ComboDisplay::Render() {
                 DrawAtlasNumberDefaultAt00446B60(slide + 10.0f + 67.0f,
                     187.0f, D3DCOLOR_ARGB(alpha, 255, 255, 255), rate, 1);
             } else {
-                packet.BuildQuad(-slide + 494.0f, 132.0f,
+                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(-slide + 494.0f, 132.0f,
                     -slide + 494.0f + 136.0f, 202.0f);
                 Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&packet),
                     &region, D3DCOLOR_ARGB(alpha, 255, 255, 255), texture);

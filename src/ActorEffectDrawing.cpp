@@ -6,9 +6,6 @@
 
 class FighterDrawingF126 {
 public:
-    void GetTextureRect(int, RECT*);
-    void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
-    void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
 };
 class FighterHistoryF126 {
 public:
@@ -36,7 +33,7 @@ void Fighter::Render() {
     cameraY = g_CombatViewOffsetY;
     if (field082 > 0 && reinterpret_cast<Fighter*>(this)->IsState50To149())
         cameraHorizontal += 2 - (field082 % 2) * 4;
-    DRAWING->GetTextureRect(frameInfo->textureIndex, &textureRect);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->GetTextureRect(frameInfo->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (frameInfo->pose != 0) {
         switch (frameInfo->pose->blendMode) {
@@ -81,15 +78,15 @@ void Fighter::Render() {
     }
     TRANSFORM(transformedQuad)->TranslateQuad(cameraHorizontal, cameraY + 420.0f, 0);
     if (spriteOffset.x != 0.0f || spriteOffset.y != 0.0f || spriteOffset.z != 0.0f)
-        DRAWING->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
     else
-        DRAWING->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
     if (field484 > 0) {
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2);
         if (spriteOffset.x != 0.0f || spriteOffset.y != 0.0f || spriteOffset.z != 0.0f)
-            DRAWING->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
+            reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
         else
-            DRAWING->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
+            reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
     }
     reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(-1);
 }
@@ -103,7 +100,6 @@ extern "C" double __cdecl sin(double);
 class EffectPattern44E930 { public: void Render(); };
 class EffectDrawingF126 {
 public:
-    void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
 };
 #define EFFECT_INT(offset) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this) + (offset)))
 #define EFFECT_DRAWING reinterpret_cast<EffectDrawingF126*>(reinterpret_cast<char*>(this) + 0x18)
@@ -147,14 +143,14 @@ void EffectPattern44E930::Render() {
     reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);
     SpriteQuad40CA80 spriteQuadFirst(0, 0, stripCount * 128 * 3, 256.0f);
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal * 0.75 + EFFECT_INT(0x68) * 0.4, cameraY * 0.75 + 160.0, 0);
-    EFFECT_DRAWING->DrawProjectedQuad(3, spriteQuadFirst, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawProjectedQuad(3, spriteQuadFirst, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
     rectangle.left = 0;
     rectangle.top = 0;
     rectangle.right = (5 - stripCount) * 128;
     rectangle.bottom = 128;
     SpriteQuad40CA80 secondStrip(0, 0, (5 - stripCount) * 128 * 3, 256.0f);
     TRANSFORM(secondStrip)->TranslateQuad(cameraHorizontal * 0.75 + EFFECT_INT(0x68) * 0.4 - (5 - stripCount) * 128 * 3, cameraY * 0.75 + 160.0, 0);
-    EFFECT_DRAWING->DrawProjectedQuad(3, secondStrip, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawProjectedQuad(3, secondStrip, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
     reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(1);
     reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(2);
     reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);

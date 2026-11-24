@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <windows.h>
@@ -23,7 +24,7 @@ void ResultScene::DrawDecimalDigits(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) << 4, style * 20 + 0x80,
                         ((remaining % 10) << 4) + 0x10, style * 20 + 0x94);
-                reinterpret_cast<ResultDigitDrawerF241*>(textures)->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<TextureManagerF198*>(textures)->DrawQuad(2,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-16.0f,0.0f,0.0f);
                 --minDigits;
@@ -32,7 +33,7 @@ void ResultScene::DrawDecimalDigits(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) << 4, style * 20 + 0x80,
                         ((remaining % 10) << 4) + 0x10, style * 20 + 0x94);
-                reinterpret_cast<ResultDigitDrawerF241*>(textures)->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<TextureManagerF198*>(textures)->DrawQuad(2,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else

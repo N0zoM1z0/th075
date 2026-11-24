@@ -3,16 +3,7 @@
 #include "GraphicsTexturedDraw.hpp"
 #include "SpriteTransform.hpp"
 
-// Complete physical packet view with the observed parameterized constructor.
-// Original class identity and payload member partition remain unknown.
-class AtlasQuad446B90 {
-public:
-    D3DXVECTOR4 first, second, third, fourth;
-    RenderQuadPayload5E68C0 payload;
-    AtlasQuad446B90(float, float, float, float);
-};
-typedef char AtlasQuadSize446B90[(sizeof(AtlasQuad446B90) == 132) ? 1 : -1];
-typedef char AtlasQuadPayload446B90[(offsetof(AtlasQuad446B90, payload) == 64) ? 1 : -1];
+typedef SpriteQuad40CA80 AtlasQuad446B90;
 
 // Observed indexed access views; outer table extents and original names unknown.
 extern short g_AtlasNumberAdvanceAt0068C868[];
