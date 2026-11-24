@@ -6,10 +6,8 @@
 #include <string.h>
 
 
-// The target's missing-title string and explicit sprintf format have
-// distinct native references; the source does not manufacture title bytes.
-extern const char g_MusicMissingTitleAt00657C32[];
-extern const char g_MusicTitleFormatAt00657C34[];
+extern const char g_MusicMissingTitleAt00657C32[] = "";
+extern const char g_MusicTitleFormatAt00657C34[] = "%s";
 extern const char g_MusicTitleFontAt00657C38[];
 void MusicRoomScene::RenderSelectedTitle(signed char selected)
 {

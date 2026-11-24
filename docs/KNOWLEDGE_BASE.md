@@ -115,6 +115,11 @@ resource path formats. The replay and plain card paths use spellings
 already recorded in the origin review. Both startup icon lookups name
 `ICON1`, which is present in the supplied PE's icon-group directory.
 
+Startup registers the BGM archive as `sound`. The queue lookup and both
+playback paths use that name. The music detail view formats two supplied
+strings after a two-digit track number. The empty music and results
+text defaults have independent one-byte definitions.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

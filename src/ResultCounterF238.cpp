@@ -9,7 +9,7 @@
 
 // This side-only view represents observed calls and physical fields, not a
 // complete original game scene or named original class layout.
-extern const char g_ResultCounterEmptyAt0065811E[];
+extern const char g_ResultCounterEmptyAt0065811E[] = "";
 extern const char g_ResultCounterFormat0At00658120[];
 extern const char g_ResultCounterFormat1At00658128[];
 extern const char g_ResultCounterFormat2At00658130[];

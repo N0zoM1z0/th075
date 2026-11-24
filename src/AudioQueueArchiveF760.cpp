@@ -4,7 +4,7 @@
 #include <windows.h>
 #include <stddef.h>
 #include "AudioStream.hpp"
-extern const char g_DefaultAudioArchiveNameF760[];
+extern const char g_DefaultAudioArchiveNameF760[] = "sound";
 
 namespace AudioQueueArchiveF760 {
 void __cdecl QueueArchiveEntry(const char* filename,int mode,const char* archive) {

@@ -10,8 +10,8 @@ extern const char g_WaveFormatCAt00657AA4[] = "wave\\bgm\\%02dc.wav";
 extern const char g_WaveOpeningAt00657AB8[] = "wave\\bgm\\sys00_op.wav";
 extern const char g_WaveEndingAt00657AD0[] = "wave\\bgm\\sys99_ed.wav";
 extern const char g_WaveFormatDefaultAt00657AE8[] = "wave\\bgm\\%02d.wav";
-extern const char g_NormalSoundFolderAt00657AFC[];
-extern const char g_EndingSoundFolderAt00657B04[];
+extern const char g_NormalSoundFolderAt00657AFC[] = "sound";
+extern const char g_EndingSoundFolderAt00657B04[] = "sound";
 
 
 namespace MusicF204 {

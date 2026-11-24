@@ -9,9 +9,9 @@
 // constructor/deleter calls and native allocation length; full original
 // class identity and the +0x18 word's purpose remain unknown.
 
-extern const char g_MusicUnknownTrackAt00657C46[];
-extern const char g_MusicUnknownTitleAt00657C56[];
-extern const char g_MusicNumberedDetailsAt00657C58[];
+extern const char g_MusicUnknownTrackAt00657C46[] = "";
+extern const char g_MusicUnknownTitleAt00657C56[] = "";
+extern const char g_MusicNumberedDetailsAt00657C58[] = "No.%02d %s / %s";
 extern const char g_MusicSelectedFontAt00657C48[];
 extern const char g_MusicNumberedFontAt00657C68[];
 void MusicRoomScene::RenderSelectedDetails(signed char selected)

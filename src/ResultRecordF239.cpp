@@ -9,7 +9,7 @@
 
 // Borrowed original record selection and deque access interfaces. No full
 // nominal class/allocator ownership layout is reconstructed in this source.
-extern const char g_RecordEmptyAt006580B1[];
+extern const char g_RecordEmptyAt006580B1[] = "";
 extern const char g_RecordEmptyNameAt006580B4[];
 extern const char g_RecordMissingFormatAt006580D8[];
 extern const char g_RecordFullFormatAt006580F4[];

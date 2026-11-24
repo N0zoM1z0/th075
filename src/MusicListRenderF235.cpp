@@ -9,7 +9,7 @@
 
 // Observed independent PE string addresses, including the literal 2-byte
 // escape sequence used as the line suffix. No complete scene class embedded.
-extern const char g_MusicListEmptyAt00657C0A[];
+extern const char g_MusicListEmptyAt00657C0A[] = "";
 extern const char g_MusicListHiddenAt00657C0C[];
 extern const char g_MusicListBreakAt00657C20[];
 extern const char g_MusicListFontAt00657C24[];
