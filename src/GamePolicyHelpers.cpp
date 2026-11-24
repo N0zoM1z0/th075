@@ -4,15 +4,16 @@
 #include "FontSurface.hpp"
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
+#include "BackgroundStageBaseF479.hpp"
 
-void SpriteScene::CopyVector(Vector3 *destination)
+void NativeBackgroundBaseF479::CopyParameters(BackgroundStageFloatFieldsF933* destination)
 {
-    *destination = field00C;
+    *destination = parameters.floating;
 }
 
-void SpriteScene::DispatchGlobalDraw(int first, int second, int third)
+void SpriteScene::DispatchGlobalDraw(SpriteQuad40CA80* destination, DWORD* color, SpriteQuad40CA80* source)
 {
-    g_DrawDispatcher->Draw(first, second, third);
+    g_CurrentBattleStageAt00671424->ApplyTransform(destination, color, source);
 }
 
 u8 FontSurface::DecodeHexDigit(char digit)

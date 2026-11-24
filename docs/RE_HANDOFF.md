@@ -2,8 +2,7 @@
 
 The conservative authored-byte coverage exceeds 98%. All 22 character
 fighter and object slot-1 `Advance` methods have accepted exact units.
-The authored stage base constructor at `0x00449DE0` still needs a
-canonical source unit and a cold exact replay.
+The stage base constructor at `0x00449DE0` has a 45-byte exact unit.
 [Advance source and replay index](GIANTS.md) · [Stage constructor evidence](ORIGIN_PENDING_REVIEW.md#r305--stage-base-constructor-follows-the-deleting-destructors)
 
 Use the ledgers for live counts and provenance.
@@ -24,8 +23,8 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 852 unresolved externals. The latest batch
-resolved 21 symbols and cold-replayed 493 units across 226 objects.
+stops at `LNK1120` with 773 unresolved externals. The stage batch resolved
+79 symbols and cold-replayed 407 units across 81 objects.
 Character effects, command selection, and mode 5 input call the shared
 fighter methods. Fighter resource loads use the existing script stream
 methods. Stage drawing, fighter texture loads, and the static effect
@@ -50,9 +49,10 @@ snapshot fields, the name screen, path selection and playback limits use
 the same owner as the four native deques. The replay append routine still
 needs the VC7.1 iterator stack layout. Battle records and selection use
 `GameProgress`, and rendering calls the existing `Fighter` methods.
-Stage pack loading uses the embedded texture manager at `+0x18`, and
-battle scene teardown uses the same manager's deleting destructor. Stage
-base construction and the complete stage virtual tables remain open.
+Stage loading and teardown share the active stage pointer with frame
+updates and rendering. All 36 stage classes use their native allocation
+sizes and share the base camera and texture members. The six-slot
+virtual tables, deleting destructors and constructor unwind records match.
 The frame entry forwards the native status and the score callers share
 the progress object.
 
@@ -136,10 +136,9 @@ scoped comparison for a new origin decision.
 
 1. Read [AGENTS.md](../AGENTS.md) and inspect Git and the target preflight.
    Use the existing headless Ghidra project and serialize compiler builds.
-2. For the stage constructor, start from the R305 and R314 complete
-   comparisons and the existing background layout. Verify consumers if the
-   layout or declarations change. Adopt a new unit only after
-   `scripts/repo-python scripts/replay-exact-units.py --unit NAME` passes.
+2. Use the strict link log to bind remaining callers to existing sources.
+   The fighter script field accessors and parser still declare separate
+   views of the nested VC7.1 deques. Verify the affected units together.
 3. For origin review, look for observations that distinguish the remaining
    byte-equal alternatives. Keep the origin and exactness ledgers separate.
    Replay commands and their dependencies are in the linked evidence notes.

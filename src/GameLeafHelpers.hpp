@@ -8,36 +8,12 @@
 typedef unsigned char u8;
 typedef unsigned long u32;
 
-struct Vector3 {
-    u32 x;
-    u32 y;
-    u32 z;
-};
+class SpriteQuad40CA80;
 
-// Pointer-only observed prefix: CopyVector reads one Vector3 at +0x0C.
-// The enclosing SpriteScene size and all later fields remain unknown.
 class SpriteScene {
 public:
-    void CopyVector(Vector3 *destination);
-    static void DispatchGlobalDraw(int first, int second, int third);
-
-    unsigned char unknown000[0x0C];
-    Vector3 field00C;
+    static void DispatchGlobalDraw(SpriteQuad40CA80* destination, unsigned long* color, SpriteQuad40CA80* source);
 };
-typedef char SpriteSceneVectorOffsetCheck[(offsetof(SpriteScene, field00C) == 0x0C) ? 1 : -1];
-
-class DrawDispatcher {
-public:
-    virtual void Slot0();
-    virtual void Slot1();
-    virtual void Slot2();
-    virtual void Slot3();
-    virtual void Slot4();
-    virtual void Draw(int first, int second, int third);
-};
-
-extern DrawDispatcher *g_DrawDispatcher;
-
 
 class SpriteGeometry {
 public:

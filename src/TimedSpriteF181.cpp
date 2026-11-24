@@ -1,4 +1,4 @@
-#include "TimedSpriteF181.hpp"
+#include "BackgroundStages.hpp"
 #include "BattleHud43E040.hpp"
 #include "FighterEffectPolicies.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -6,7 +6,7 @@
 #include <math.h>
 
 
-void TimedSpriteF181::RenderTimedSprite()
+void BackgroundBG09aF377::Slot2()
 {
     int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
@@ -25,12 +25,12 @@ void TimedSpriteF181::RenderTimedSprite()
     quad.third.y = 128.0f;
     quad.third.z = 0.0f;
     reinterpret_cast<SpriteTransform*>(&quad)->ScaleQuad(32.0f, 0.0f, 0.0f,
-        32.0f, static_cast<float>((sin((field068 / 0.01745328866f) * 0.0005)
+        32.0f, static_cast<float>((sin((field68 / 0.01745328866f) * 0.0005)
                                   + 12.0) * 0.1), 1.0f);
     reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(float(cameraHorizontal + 240), float(y + 388), 0.25f);
-    drawing.SetDepthMode(3);
-    drawing.SetDepthMode(7);
-    drawing.SetBlendMode(2);
-    drawing.DrawQuad(4, quad, &rectangle, 0xFFFFFFFF);
-    drawing.SetBlendMode(0);
+    textureManager.SetDepthMode(3);
+    textureManager.SetDepthMode(7);
+    textureManager.SetBlendMode(2);
+    textureManager.DrawQuad(4, quad, &rectangle, 0xFFFFFFFF);
+    textureManager.SetBlendMode(0);
 }

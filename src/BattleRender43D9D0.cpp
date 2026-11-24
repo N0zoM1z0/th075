@@ -1,4 +1,5 @@
 #include "GameSharedState.hpp"
+#include "BackgroundStageBaseF479.hpp"
 #include "Graphics.hpp"
 #include "TextOverlay.hpp"
 #include "TextureManagerF198.hpp"
@@ -35,7 +36,7 @@ void BattleScene::Render() {
     if (Graphics::BeginFrame()) {
         if (g_FramePresentToggle) {
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
-            g_DrawDispatcher->Slot4();
+            g_CurrentBattleStageAt00671424->Render();
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(3);
             fighters[0]->field2EC->DispatchAll();
@@ -43,7 +44,7 @@ void BattleScene::Render() {
             fighters[0]->RenderMirroredNode();
             fighters[1]->RenderMirroredNode();
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
-            g_DrawDispatcher->Slot3();
+            g_CurrentBattleStageAt00671424->Slot3();
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(3);
             fighters[0]->field2EC->DispatchSelected(2);
@@ -70,7 +71,7 @@ void BattleScene::Render() {
             fighters[1]->field2EC->DispatchSelected(1);
             AUX->DispatchSelected(1);
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
-            g_DrawDispatcher->Slot2();
+            g_CurrentBattleStageAt00671424->Slot2();
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
             if (g_OptionsFlagAt00671428)

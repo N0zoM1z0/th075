@@ -1,4 +1,5 @@
 #include "GameSharedState.hpp"
+#include "BackgroundStageBaseF479.hpp"
 #include "BattleScene.hpp"
 #include <stdlib.h>
 #include "Graphics.hpp"
@@ -39,7 +40,7 @@ unsigned short BattleScene::Update()
             fighters[0]->AdvanceAuxiliary();
             fighters[1]->AdvanceAuxiliary();
             reinterpret_cast<FrameAuxEffects *>(&g_CombatEffects)->AdvanceAndPrune();
-            g_DrawDispatcher->Slot1();
+            g_CurrentBattleStageAt00671424->Advance();
         } else {
             --field01A;
         }

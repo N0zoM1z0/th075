@@ -1,8 +1,8 @@
-#include "BackgroundPoliciesF178.hpp"
+#include "BackgroundStages.hpp"
+#include "CameraUpdate4126C0.hpp"
 #include "SpriteTransform.hpp"
-#include "BackgroundTimelineBorrowF1049.hpp"
 
-void BackgroundPoliciesF178::ApplyTransformAt00449CE0(SpriteQuad40CA80* destination,
+void Background00aF376::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -11,7 +11,7 @@ void BackgroundPoliciesF178::ApplyTransformAt00449CE0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044A180(SpriteQuad40CA80* destination,
+void Background00bF376::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -20,7 +20,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044A180(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044A470(SpriteQuad40CA80* destination,
+void BackgroundBG00cF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -29,17 +29,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044A470(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044A5C0()
+void BackgroundBG00xF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044A6A0(SpriteQuad40CA80* destination,
+void BackgroundBG00xF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -48,17 +48,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044A6A0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044A7F0()
+void BackgroundBG00yF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044A8D0(SpriteQuad40CA80* destination,
+void BackgroundBG00yF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -67,17 +67,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044A8D0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044AA20()
+void BackgroundBG00zF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044AB00(SpriteQuad40CA80* destination,
+void BackgroundBG00zF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -86,7 +86,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044AB00(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044ADA0(SpriteQuad40CA80* destination,
+void BackgroundBG01aF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -95,7 +95,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044ADA0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044B040(SpriteQuad40CA80* destination,
+void BackgroundBG01bF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -104,17 +104,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044B040(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044B190()
+void BackgroundBG01xF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044B270(SpriteQuad40CA80* destination,
+void BackgroundBG01xF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -123,17 +123,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044B270(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044B3C0()
+void BackgroundBG01yF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044B4A0(SpriteQuad40CA80* destination,
+void BackgroundBG01yF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -142,7 +142,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044B4A0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044B9C0(SpriteQuad40CA80* destination,
+void BackgroundBG02aF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -151,7 +151,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044B9C0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044BEE0(SpriteQuad40CA80* destination,
+void BackgroundBG02bF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -160,7 +160,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044BEE0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044C400(SpriteQuad40CA80* destination,
+void BackgroundBG02cF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -169,17 +169,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044C400(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044C560()
+void BackgroundBG02xF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044C640(SpriteQuad40CA80* destination,
+void BackgroundBG02xF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -188,17 +188,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044C640(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044C7A0()
+void BackgroundBG02yF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044C880(SpriteQuad40CA80* destination,
+void BackgroundBG02yF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -207,17 +207,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044C880(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044C9E0()
+void BackgroundBG02zF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044CAC0(SpriteQuad40CA80* destination,
+void BackgroundBG02zF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -226,7 +226,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044CAC0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044CD60(SpriteQuad40CA80* destination,
+void BackgroundBG03aF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -235,7 +235,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044CD60(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044D000(SpriteQuad40CA80* destination,
+void BackgroundBG03bF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -244,17 +244,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044D000(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044D160()
+void BackgroundBG03xF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044D240(SpriteQuad40CA80* destination,
+void BackgroundBG03xF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -263,17 +263,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044D240(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044D3A0()
+void BackgroundBG03yF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044D480(SpriteQuad40CA80* destination,
+void BackgroundBG03yF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -282,7 +282,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044D480(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::CopyDarkAt0044D910(SpriteQuad40CA80* destination,
+void BackgroundBG04aF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 0.0f);
@@ -291,7 +291,7 @@ void BackgroundPoliciesF178::CopyDarkAt0044D910(SpriteQuad40CA80* destination,
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::CopyDarkAt0044DDC0(SpriteQuad40CA80* destination,
+void BackgroundBG04bF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 0.0f);
@@ -300,17 +300,17 @@ void BackgroundPoliciesF178::CopyDarkAt0044DDC0(SpriteQuad40CA80* destination,
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044DF20()
+void BackgroundBG04xF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044E000(SpriteQuad40CA80* destination,
+void BackgroundBG04xF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -319,17 +319,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044E000(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044E160()
+void BackgroundBG04yF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044E240(SpriteQuad40CA80* destination,
+void BackgroundBG04yF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -338,7 +338,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044E240(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044E760(SpriteQuad40CA80* destination,
+void BackgroundBG05aF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -347,7 +347,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044E760(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044F250(SpriteQuad40CA80* destination,
+void BackgroundBG05bF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -356,17 +356,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044F250(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044F3B0()
+void BackgroundBG05xF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044F490(SpriteQuad40CA80* destination,
+void BackgroundBG05xF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -375,17 +375,17 @@ void BackgroundPoliciesF178::ApplyTransformAt0044F490(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt0044F5F0()
+void BackgroundBG05yF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt0044F6D0(SpriteQuad40CA80* destination,
+void BackgroundBG05yF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
@@ -394,91 +394,7 @@ void BackgroundPoliciesF178::ApplyTransformAt0044F6D0(SpriteQuad40CA80* destinat
     *color = 0x80000000;
 }
 
-void BackgroundPoliciesF178::CopyLightAt00450040(SpriteQuad40CA80* destination,
-    DWORD* color, SpriteQuad40CA80* source)
-{
-    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 0.0f);
-    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
-    *destination = *source;
-    *color = 0x40FFFFFF;
-}
-
-void BackgroundPoliciesF178::DrawSidePairAt004501A0()
-{
-    int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
-    int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
-        0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
-        1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-}
-
-void BackgroundPoliciesF178::ApplyTransformAt00450280(SpriteQuad40CA80* destination,
-    DWORD* color, SpriteQuad40CA80* source)
-{
-    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
-    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
-    *destination = *source;
-    *color = 0x80000000;
-}
-
-void BackgroundPoliciesF178::ApplyTransformAt00450830(SpriteQuad40CA80* destination,
-    DWORD* color, SpriteQuad40CA80* source)
-{
-    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
-    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
-    *destination = *source;
-    *color = 0x80000000;
-}
-
-void BackgroundPoliciesF178::DrawSidePairAt00450990()
-{
-    int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
-    int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
-        0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
-        1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-}
-
-void BackgroundPoliciesF178::ApplyTransformAt00450A70(SpriteQuad40CA80* destination,
-    DWORD* color, SpriteQuad40CA80* source)
-{
-    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
-    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
-    *destination = *source;
-    *color = 0x80000000;
-}
-
-void BackgroundPoliciesF178::ApplyTransformAt00451080(SpriteQuad40CA80* destination,
-    DWORD* color, SpriteQuad40CA80* source)
-{
-    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
-    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
-    *destination = *source;
-    *color = 0x80000000;
-}
-
-void BackgroundPoliciesF178::DrawSidePairAt004511E0()
-{
-    int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
-    int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
-        0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
-        1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-}
-
-void BackgroundPoliciesF178::ApplyTransformAt004512C0(SpriteQuad40CA80* destination,
-    DWORD* color, SpriteQuad40CA80* source)
-{
-    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
-    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
-    *destination = *source;
-    *color = 0x80000000;
-}
-
-void BackgroundPoliciesF178::CopyLightAt00451BC0(SpriteQuad40CA80* destination,
+void BackgroundBG06aF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 0.0f);
@@ -487,17 +403,101 @@ void BackgroundPoliciesF178::CopyLightAt00451BC0(SpriteQuad40CA80* destination,
     *color = 0x40FFFFFF;
 }
 
-void BackgroundPoliciesF178::DrawSidePairAt00451D20()
+void BackgroundBG06xF377::Render()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
+    textureManager.DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
-void BackgroundPoliciesF178::ApplyTransformAt00451E00(SpriteQuad40CA80* destination,
+void BackgroundBG06xF377::ApplyTransform(SpriteQuad40CA80* destination,
+    DWORD* color, SpriteQuad40CA80* source)
+{
+    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
+    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
+    *destination = *source;
+    *color = 0x80000000;
+}
+
+void BackgroundBG07aF377::ApplyTransform(SpriteQuad40CA80* destination,
+    DWORD* color, SpriteQuad40CA80* source)
+{
+    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
+    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
+    *destination = *source;
+    *color = 0x80000000;
+}
+
+void BackgroundBG07xF377::Render()
+{
+    int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int y = static_cast<int>(g_CombatViewOffsetY);
+    textureManager.DrawSprite(
+        0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
+    textureManager.DrawSprite(
+        1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
+}
+
+void BackgroundBG07xF377::ApplyTransform(SpriteQuad40CA80* destination,
+    DWORD* color, SpriteQuad40CA80* source)
+{
+    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
+    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
+    *destination = *source;
+    *color = 0x80000000;
+}
+
+void BackgroundBG08aF377::ApplyTransform(SpriteQuad40CA80* destination,
+    DWORD* color, SpriteQuad40CA80* source)
+{
+    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
+    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
+    *destination = *source;
+    *color = 0x80000000;
+}
+
+void BackgroundBG08xF377::Render()
+{
+    int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int y = static_cast<int>(g_CombatViewOffsetY);
+    textureManager.DrawSprite(
+        0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
+    textureManager.DrawSprite(
+        1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
+}
+
+void BackgroundBG08xF377::ApplyTransform(SpriteQuad40CA80* destination,
+    DWORD* color, SpriteQuad40CA80* source)
+{
+    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);
+    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
+    *destination = *source;
+    *color = 0x80000000;
+}
+
+void BackgroundBG09aF377::ApplyTransform(SpriteQuad40CA80* destination,
+    DWORD* color, SpriteQuad40CA80* source)
+{
+    reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 0.0f);
+    reinterpret_cast<SpriteTransform*>(source)->RotateQuad(0.0f, 0.0f, 0.0f, 160.0f, 0.0f, 0.0f);
+    *destination = *source;
+    *color = 0x40FFFFFF;
+}
+
+void BackgroundBG09xF377::Render()
+{
+    int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int y = static_cast<int>(g_CombatViewOffsetY);
+    textureManager.DrawSprite(
+        0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
+    textureManager.DrawSprite(
+        1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
+}
+
+void BackgroundBG09xF377::ApplyTransform(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
 {
     reinterpret_cast<SpriteTransform*>(source)->ScaleQuad(0.0f, 0.0f, 0.0f, 1.0f, 0.3f, 1.0f);

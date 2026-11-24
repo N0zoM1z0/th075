@@ -115,13 +115,19 @@ calculations share the existing 300.0f value. Callers of
 Compiling the implementation with that declaration preserves its
 389-byte body at `0x004574D0` and resolves the existing callers.
 
-The paired and family stage pack constructors inherit the existing
-`NativeBackgroundBaseF479` layout. The embedded texture manager begins at
-`+0x18`, and the first trailing stage member starts at `+0x68`. The
-`SpriteQuad40CA80` member starts at `+0x68`, `+0x6C`, `+0x70`, or
-`+0x74`, depending on the stage. The stages share the
-existing base destructor. The constructor comparisons also preserve the
-exception cleanup calls at `0x00449D40`.
+The loader and lifetime methods share all 36 stage class declarations.
+The base constructor at `0x00449DE0` calls the camera constructor at
+`+0x04` and the texture manager constructor at `+0x18`. The first stage
+member begins at `+0x68`. The native `SpriteQuad40CA80` placement varies
+from `+0x68` to `+0x74`. The BG09a renderer accesses 130 28-byte
+vertices beginning at `+0xF0` within the observed `0x1D28` allocation.
+The complete six-slot tables bind the existing callbacks, and the
+constructor unwind records call the base destructor at `0x00449D40`.
+
+Loading, frame updates, rendering, and shutdown use the same initially
+null stage pointer at `0x00671424`. The final virtual slot receives the
+destination quad, color and source quad in that order. The mirrored
+renderer copies the three stage parameters at `+0x0C`.
 
 Battle teardown emits the same 44-byte texture-manager deleting wrapper
 at `0x00425460`, including calls to `0x0040AE40` and `0x00640F15`.

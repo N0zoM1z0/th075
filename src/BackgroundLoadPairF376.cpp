@@ -1,24 +1,9 @@
-#include "BackgroundStageBaseF479.hpp"
-#include "SpriteQuad.hpp"
+#include "BackgroundStages.hpp"
 
 extern const char g_BGDirectory00aF376[];
 extern const char g_BGFilename00aF376[];
 extern const char g_BGDirectory00bF376[];
 extern const char g_BGFilename00bF376[];
-class Background00aF376 : public NativeBackgroundBaseF479 {
-public:
-    SpriteQuad40CA80 stageQuad;
-    Background00aF376();
-    virtual ~Background00aF376();
-};
-class Background00bF376 : public NativeBackgroundBaseF479 {
-public:
-    int field68;
-    SpriteQuad40CA80 stageQuad;
-    Background00bF376();
-    virtual ~Background00bF376();
-};
-
 Background00aF376::Background00aF376()
 {
     textureManager.AllocateUnformattedSlots(3);

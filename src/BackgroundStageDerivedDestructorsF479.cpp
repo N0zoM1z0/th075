@@ -1,77 +1,38 @@
-#include "BackgroundStageBaseF479.hpp"
-// Thirty-six independently original complete derived stage virtual
-// destructors. Each unique native vtable and actual native base
-// destructor call was verified at its distinct PE address.
-// The borrowed background base and its body are not duplicated.
-class BG00aF479: public NativeBackgroundBaseF479 { public: virtual ~BG00aF479(); };
-BG00aF479::~BG00aF479() { }
-class BG00bF479: public NativeBackgroundBaseF479 { public: virtual ~BG00bF479(); };
-BG00bF479::~BG00bF479() { }
-class BG00cF479: public NativeBackgroundBaseF479 { public: virtual ~BG00cF479(); };
-BG00cF479::~BG00cF479() { }
-class BG00xF479: public NativeBackgroundBaseF479 { public: virtual ~BG00xF479(); };
-BG00xF479::~BG00xF479() { }
-class BG00yF479: public NativeBackgroundBaseF479 { public: virtual ~BG00yF479(); };
-BG00yF479::~BG00yF479() { }
-class BG00zF479: public NativeBackgroundBaseF479 { public: virtual ~BG00zF479(); };
-BG00zF479::~BG00zF479() { }
-class BG01aF479: public NativeBackgroundBaseF479 { public: virtual ~BG01aF479(); };
-BG01aF479::~BG01aF479() { }
-class BG01bF479: public NativeBackgroundBaseF479 { public: virtual ~BG01bF479(); };
-BG01bF479::~BG01bF479() { }
-class BG01xF479: public NativeBackgroundBaseF479 { public: virtual ~BG01xF479(); };
-BG01xF479::~BG01xF479() { }
-class BG01yF479: public NativeBackgroundBaseF479 { public: virtual ~BG01yF479(); };
-BG01yF479::~BG01yF479() { }
-class BG02aF479: public NativeBackgroundBaseF479 { public: virtual ~BG02aF479(); };
-BG02aF479::~BG02aF479() { }
-class BG02bF479: public NativeBackgroundBaseF479 { public: virtual ~BG02bF479(); };
-BG02bF479::~BG02bF479() { }
-class BG02cF479: public NativeBackgroundBaseF479 { public: virtual ~BG02cF479(); };
-BG02cF479::~BG02cF479() { }
-class BG02xF479: public NativeBackgroundBaseF479 { public: virtual ~BG02xF479(); };
-BG02xF479::~BG02xF479() { }
-class BG02yF479: public NativeBackgroundBaseF479 { public: virtual ~BG02yF479(); };
-BG02yF479::~BG02yF479() { }
-class BG02zF479: public NativeBackgroundBaseF479 { public: virtual ~BG02zF479(); };
-BG02zF479::~BG02zF479() { }
-class BG03aF479: public NativeBackgroundBaseF479 { public: virtual ~BG03aF479(); };
-BG03aF479::~BG03aF479() { }
-class BG03bF479: public NativeBackgroundBaseF479 { public: virtual ~BG03bF479(); };
-BG03bF479::~BG03bF479() { }
-class BG03xF479: public NativeBackgroundBaseF479 { public: virtual ~BG03xF479(); };
-BG03xF479::~BG03xF479() { }
-class BG03yF479: public NativeBackgroundBaseF479 { public: virtual ~BG03yF479(); };
-BG03yF479::~BG03yF479() { }
-class BG04aF479: public NativeBackgroundBaseF479 { public: virtual ~BG04aF479(); };
-BG04aF479::~BG04aF479() { }
-class BG04bF479: public NativeBackgroundBaseF479 { public: virtual ~BG04bF479(); };
-BG04bF479::~BG04bF479() { }
-class BG04xF479: public NativeBackgroundBaseF479 { public: virtual ~BG04xF479(); };
-BG04xF479::~BG04xF479() { }
-class BG04yF479: public NativeBackgroundBaseF479 { public: virtual ~BG04yF479(); };
-BG04yF479::~BG04yF479() { }
-class BG05aF479: public NativeBackgroundBaseF479 { public: virtual ~BG05aF479(); };
-BG05aF479::~BG05aF479() { }
-class BG05bF479: public NativeBackgroundBaseF479 { public: virtual ~BG05bF479(); };
-BG05bF479::~BG05bF479() { }
-class BG05xF479: public NativeBackgroundBaseF479 { public: virtual ~BG05xF479(); };
-BG05xF479::~BG05xF479() { }
-class BG05yF479: public NativeBackgroundBaseF479 { public: virtual ~BG05yF479(); };
-BG05yF479::~BG05yF479() { }
-class BG06aF479: public NativeBackgroundBaseF479 { public: virtual ~BG06aF479(); };
-BG06aF479::~BG06aF479() { }
-class BG06xF479: public NativeBackgroundBaseF479 { public: virtual ~BG06xF479(); };
-BG06xF479::~BG06xF479() { }
-class BG07aF479: public NativeBackgroundBaseF479 { public: virtual ~BG07aF479(); };
-BG07aF479::~BG07aF479() { }
-class BG07xF479: public NativeBackgroundBaseF479 { public: virtual ~BG07xF479(); };
-BG07xF479::~BG07xF479() { }
-class BG08aF479: public NativeBackgroundBaseF479 { public: virtual ~BG08aF479(); };
-BG08aF479::~BG08aF479() { }
-class BG08xF479: public NativeBackgroundBaseF479 { public: virtual ~BG08xF479(); };
-BG08xF479::~BG08xF479() { }
-class BG09aF479: public NativeBackgroundBaseF479 { public: virtual ~BG09aF479(); };
-BG09aF479::~BG09aF479() { }
-class BG09xF479: public NativeBackgroundBaseF479 { public: virtual ~BG09xF479(); };
-BG09xF479::~BG09xF479() { }
+#include "BackgroundStages.hpp"
+
+Background00aF376::~Background00aF376() { }
+Background00bF376::~Background00bF376() { }
+BackgroundBG00cF377::~BackgroundBG00cF377() { }
+BackgroundBG00xF377::~BackgroundBG00xF377() { }
+BackgroundBG00yF377::~BackgroundBG00yF377() { }
+BackgroundBG00zF377::~BackgroundBG00zF377() { }
+BackgroundBG01aF377::~BackgroundBG01aF377() { }
+BackgroundBG01bF377::~BackgroundBG01bF377() { }
+BackgroundBG01xF377::~BackgroundBG01xF377() { }
+BackgroundBG01yF377::~BackgroundBG01yF377() { }
+BackgroundBG02aF377::~BackgroundBG02aF377() { }
+BackgroundBG02bF377::~BackgroundBG02bF377() { }
+BackgroundBG02cF377::~BackgroundBG02cF377() { }
+BackgroundBG02xF377::~BackgroundBG02xF377() { }
+BackgroundBG02yF377::~BackgroundBG02yF377() { }
+BackgroundBG02zF377::~BackgroundBG02zF377() { }
+BackgroundBG03aF377::~BackgroundBG03aF377() { }
+BackgroundBG03bF377::~BackgroundBG03bF377() { }
+BackgroundBG03xF377::~BackgroundBG03xF377() { }
+BackgroundBG03yF377::~BackgroundBG03yF377() { }
+BackgroundBG04aF377::~BackgroundBG04aF377() { }
+BackgroundBG04bF377::~BackgroundBG04bF377() { }
+BackgroundBG04xF377::~BackgroundBG04xF377() { }
+BackgroundBG04yF377::~BackgroundBG04yF377() { }
+BackgroundBG05aF377::~BackgroundBG05aF377() { }
+BackgroundBG05bF377::~BackgroundBG05bF377() { }
+BackgroundBG05xF377::~BackgroundBG05xF377() { }
+BackgroundBG05yF377::~BackgroundBG05yF377() { }
+BackgroundBG06aF377::~BackgroundBG06aF377() { }
+BackgroundBG06xF377::~BackgroundBG06xF377() { }
+BackgroundBG07aF377::~BackgroundBG07aF377() { }
+BackgroundBG07xF377::~BackgroundBG07xF377() { }
+BackgroundBG08aF377::~BackgroundBG08aF377() { }
+BackgroundBG08xF377::~BackgroundBG08xF377() { }
+BackgroundBG09aF377::~BackgroundBG09aF377() { }
+BackgroundBG09xF377::~BackgroundBG09xF377() { }

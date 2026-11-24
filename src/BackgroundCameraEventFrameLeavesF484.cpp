@@ -5,6 +5,12 @@
 #include "BackgroundStageBaseF479.hpp"
 #include "WindowOverlayF212.hpp"
 
+NativeBackgroundBaseF479* g_CurrentBattleStageAt00671424;
+
+NativeBackgroundBaseF479::NativeBackgroundBaseF479()
+{
+}
+
 NativeBackgroundBaseF479::~NativeBackgroundBaseF479()
 {
 }

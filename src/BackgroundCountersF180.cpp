@@ -1,71 +1,71 @@
-#include "BackgroundCountersF180.hpp"
+#include "BackgroundStages.hpp"
 
-void BackgroundCountersF180::AdvanceAt00449EC0()
+void Background00bF376::Advance()
 {
-    animationTick = animationTick + 1;
+    field68 = field68 + 1;
 }
 
-void BackgroundCountersF180::AdvanceAt0044DA70()
+void BackgroundBG04bF377::Advance()
 {
-    animationTick = animationTick + 1;
+    field68 = field68 + 1;
 }
 
-void BackgroundCountersF180::AdvanceAt0044F830()
+void BackgroundBG06aF377::Advance()
 {
-    animationTick = animationTick + 1;
+    field68 = field68 + 1;
 }
 
-void BackgroundCountersF180::AdvanceAt00451420()
+void BackgroundBG09aF377::Advance()
 {
-    animationTick = animationTick + 1;
+    field68 = field68 + 1;
 }
 
-void BackgroundCountersF180::AdvanceAt0044B600()
+void BackgroundBG02aF377::Advance()
 {
-    animationTick = animationTick + 1;
-    if (animationTick > 360)
-        animationTick = 0;
+    field68 = field68 + 1;
+    if (field68 > 360)
+        field68 = 0;
 }
 
-void BackgroundCountersF180::AdvanceAt0044BB20()
+void BackgroundBG02bF377::Advance()
 {
-    animationTick = animationTick + 1;
-    if (animationTick > 360)
-        animationTick = 0;
+    field68 = field68 + 1;
+    if (field68 > 360)
+        field68 = 0;
 }
 
-void BackgroundCountersF180::AdvanceAt0044C040()
+void BackgroundBG02cF377::Advance()
 {
-    animationTick = animationTick + 1;
-    if (animationTick > 360)
-        animationTick = 0;
+    field68 = field68 + 1;
+    if (field68 > 360)
+        field68 = 0;
 }
 
-void BackgroundCountersF180::AdvanceAt0044D5E0()
+void BackgroundBG04aF377::Advance()
 {
-    animationTick = animationTick + 1;
-    if (animationTick > 2500.0)
-        animationTick = 0;
+    field68 = field68 + 1;
+    if (field68 > 2500.0)
+        field68 = 0;
 }
 
-void BackgroundCountersF180::AdvanceAt004503E0()
+void BackgroundBG07aF377::Advance()
 {
-    animationTick = animationTick + 1;
-    if (animationTick >= 15360.0)
-        animationTick = 0;
+    field68 = field68 + 1;
+    if (field68 >= 15360.0)
+        field68 = 0;
 }
 
-void BackgroundCountersF180::AdvanceAt00450BD0()
+void BackgroundBG08aF377::Advance()
 {
-    animationTick = animationTick + 1;
-    animationFrame = animationFrame + 1;
-    if (animationFrame > 71)
-        animationFrame = 0;
+    field68 = field68 + 1;
+    field6C = field6C + 1;
+    if (field6C > 71)
+        field6C = 0;
 }
 
-void BackgroundCountersF180::AdvanceAt0044E3A0()
+void BackgroundBG05aF377::Advance()
 {
-    animationTick = animationTick - 1;
-    if (animationTick < 0)
-        animationTick = 3840;
+    field68 = field68 - 1;
+    if (field68 < 0)
+        field68 = 3840;
 }

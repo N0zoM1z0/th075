@@ -4,6 +4,8 @@
 #include "Actor.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
+#include "BackgroundStageBaseF479.hpp"
+#include "GameLeafHelpers.hpp"
 #include <windows.h>
 
 // All scene, child, and drawing owner declarations are borrowed call-only
@@ -11,14 +13,9 @@
 class SpriteRenderDeviceF254 {
 public:
 };
-class SpriteCameraF254 { public: void CopyVector(float* out); };
-extern SpriteCameraF254* g_ActiveCameraAt00671424;
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
 
-namespace SpriteDispatchF254 {
-    void Combine(SpriteQuad40CA80* destination,DWORD* color,SpriteQuad40CA80* source);
-}
 class RawSpriteScaleF254 {
 public: void ScaleQuad(float,float,float,DWORD,DWORD,DWORD);
 };
@@ -49,7 +46,7 @@ typedef char CheckCarrierSizeF355[(sizeof(RawQuadCarrierF355)==140)?1:-1];
 struct NativeMirrorFrameF355 {
     RECT sourceRect;
     RawQuadCarrierF355 composed;
-    float tint[3];
+    BackgroundStageFloatFieldsF933 tint;
     float xShift;
     DWORD color;
     RawQuadCarrierF355 transformed;
@@ -99,12 +96,12 @@ void Actor::RenderMirroredNode()
     }
     TRANSFORM(transformed)->TranslateQuad(x-(facing)*(drawFrame->originX),
                                          -(y)-static_cast<float>(drawFrame->originY),0.0f);
-    SpriteDispatchF254::Combine(&composed,&color,&transformed);
+    SpriteScene::DispatchGlobalDraw(&composed,&color,&transformed);
     TRANSFORM(composed)->TranslateQuad(xShift,yOrigin+GeometryConstants::FourHundredTwenty+(field06C),0.0f);
-    g_ActiveCameraAt00671424->CopyVector(tint);
+    g_CurrentBattleStageAt00671424->CopyParameters(&tint);
     reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(2);
-    if (tint[0] != FloatConstants::Zero || tint[1] != FloatConstants::Zero || tint[2] != FloatConstants::Zero) {
-        reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawProjectedQuad(drawFrame->textureIndex,composed,&sourceRect,tint[0]+xShift,tint[1]+yOrigin,tint[2],color);
+    if (tint.floatAt0C != FloatConstants::Zero || tint.floatAt10 != FloatConstants::Zero || tint.floatAt14 != FloatConstants::Zero) {
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawProjectedQuad(drawFrame->textureIndex,composed,&sourceRect,tint.floatAt0C+xShift,tint.floatAt10+yOrigin,tint.floatAt14,color);
     } else {
         reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(drawFrame->textureIndex,composed,&sourceRect,color);
     }

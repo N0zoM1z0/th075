@@ -822,6 +822,7 @@ RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90
 CameraMotion::ResetParametersAt00412620
 FrameCapture::DrawIfEnabledAt004171D0
 BackgroundBase::DestroyAt00449D40
+BackgroundBase::BackgroundBase
 CameraMotion::SetOverrideAt00412CC0
 SpriteSequence::RemoveFrontIfPresentAt004110C0
 EventQueue::LocalAcquireReleaseAt004239C0

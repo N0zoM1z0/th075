@@ -16,13 +16,12 @@ extern float g_CameraVerticalBiasAt0067140C;
 extern float g_CameraShakeAmountAt006713F8;
 extern float g_CameraShakePhaseXAt00671410;
 extern float g_CameraShakePhaseYAt006713FC;
-CameraResetF481* CameraResetF481::ResetParameters() {
+CameraResetF481::CameraResetF481() {
  g_CameraHorizontalBiasAt006713EC=0;
  g_CameraVerticalBiasAt0067140C=20.0f;
  g_CameraShakeAmountAt006713F8=0;
  g_CameraShakePhaseXAt00671410=0;
  g_CameraShakePhaseYAt006713FC=0;
- return this;
 }
 void WindowOverlayF212::DrawIfEnabled(const SpriteQuad40CA80& quad, const RECT* rect, DWORD color)
 {

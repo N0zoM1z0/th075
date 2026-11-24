@@ -1,3 +1,4 @@
+#include "BackgroundStages.hpp"
 #include "BattleResultState.hpp"
 #include "BattleSessionState.hpp"
 #include "TextureManagerF198.hpp"
@@ -97,15 +98,9 @@ void Fighter::Render() {
 
 // C sine entry and pointer-only drawing view; no private owner allocation.
 extern "C" double __cdecl sin(double);
-class EffectPattern44E930 { public: void Render(); };
-class EffectDrawingF126 {
-public:
-};
-#define EFFECT_INT(offset) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this) + (offset)))
-#define EFFECT_DRAWING reinterpret_cast<EffectDrawingF126*>(reinterpret_cast<char*>(this) + 0x18)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 // Keep double arithmetic until the native float arguments or integer truncations.
-void EffectPattern44E930::Render() {
+void BackgroundBG05bF377::Render() {
     RECT rectangle;
     int spriteIndexThird;
     int firstImageIndex;
@@ -120,57 +115,55 @@ void EffectPattern44E930::Render() {
     int verticalWaveTwo;
     cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     cameraY = static_cast<int>(g_CombatViewOffsetY);
-    oscillationOne = static_cast<int>(sin(EFFECT_INT(0x70) * 0.1 + 1.0) * 5.0);
-    verticalWaveTwo = static_cast<int>(sin(EFFECT_INT(0x70) * 0.1 + 2.0) * 4.0);
-    verticalShiftThree = static_cast<int>(sin(EFFECT_INT(0x70) * 0.1 + 3.0) * 5.0);
-    verticalWaveFour = static_cast<int>(sin(EFFECT_INT(0x70) * 0.1 + 4.0) * 6.0);
-    firstImageIndex = EFFECT_INT(0x6C) / 3 + 4;
+    oscillationOne = static_cast<int>(sin(field70 * 0.1 + 1.0) * 5.0);
+    verticalWaveTwo = static_cast<int>(sin(field70 * 0.1 + 2.0) * 4.0);
+    verticalShiftThree = static_cast<int>(sin(field70 * 0.1 + 3.0) * 5.0);
+    verticalWaveFour = static_cast<int>(sin(field70 * 0.1 + 4.0) * 6.0);
+    firstImageIndex = field6C / 3 + 4;
     frameIndexSecond = firstImageIndex + 3;
     spriteIndexThird = firstImageIndex + 7;
     fourthImageIndex = firstImageIndex + 11;
     if (firstImageIndex + 3 >= 18) frameIndexSecond = firstImageIndex - 11;
     if (firstImageIndex + 7 >= 18) spriteIndexThird = firstImageIndex - 7;
     if (firstImageIndex + 11 >= 18) fourthImageIndex = firstImageIndex - 3;
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetDepthMode(0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(1, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 150.0, 0xFFFFFFFF, 700.0f, 200.0f, 1.0f, 0.0f, 0);
-    stripCount = static_cast<int>((1536.0 - EFFECT_INT(0x68) * 0.4) / 384.0);
+    textureManager.SetDepthMode(0);
+    textureManager.SetBlendMode(0);
+    textureManager.DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0.0f, 0);
+    textureManager.DrawSprite(1, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 150.0, 0xFFFFFFFF, 700.0f, 200.0f, 1.0f, 0.0f, 0);
+    stripCount = static_cast<int>((1536.0 - field68 * 0.4) / 384.0);
     rectangle.left = 0;
     rectangle.top = 0;
     rectangle.right = stripCount * 128;
     rectangle.bottom = 128;
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);
+    textureManager.SetTextureFilter(2);
     SpriteQuad40CA80 spriteQuadFirst(0, 0, stripCount * 128 * 3, 256.0f);
-    TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal * 0.75 + EFFECT_INT(0x68) * 0.4, cameraY * 0.75 + 160.0, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawProjectedQuad(3, spriteQuadFirst, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
+    TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal * 0.75 + field68 * 0.4, cameraY * 0.75 + 160.0, 0);
+    textureManager.DrawProjectedQuad(3, spriteQuadFirst, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
     rectangle.left = 0;
     rectangle.top = 0;
     rectangle.right = (5 - stripCount) * 128;
     rectangle.bottom = 128;
     SpriteQuad40CA80 secondStrip(0, 0, (5 - stripCount) * 128 * 3, 256.0f);
-    TRANSFORM(secondStrip)->TranslateQuad(cameraHorizontal * 0.75 + EFFECT_INT(0x68) * 0.4 - (5 - stripCount) * 128 * 3, cameraY * 0.75 + 160.0, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawProjectedQuad(3, secondStrip, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(1);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(2);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(frameIndexSecond, cameraHorizontal - 260, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.6f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal + 680, cameraY + 170 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(1);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(2);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(fourthImageIndex, cameraHorizontal - 250, cameraY + 240 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 1.1f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal - 150, cameraY + 200 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(firstImageIndex, cameraHorizontal + 150, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal + 360, cameraY + 190 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(firstImageIndex, cameraHorizontal + 450, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(frameIndexSecond, cameraHorizontal + 650, cameraY + 230 + verticalWaveTwo, 0x87FFFFFF, 32.0f, 64.0f, 1.3f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal + 760, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(1);
-    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(0);
+    TRANSFORM(secondStrip)->TranslateQuad(cameraHorizontal * 0.75 + field68 * 0.4 - (5 - stripCount) * 128 * 3, cameraY * 0.75 + 160.0, 0);
+    textureManager.DrawProjectedQuad(3, secondStrip, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
+    textureManager.SetTextureFilter(1);
+    textureManager.SetBlendMode(2);
+    textureManager.SetTextureFilter(2);
+    textureManager.DrawSprite(frameIndexSecond, cameraHorizontal - 260, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.6f, 0.0f, 0);
+    textureManager.DrawSprite(spriteIndexThird, cameraHorizontal + 680, cameraY + 170 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    textureManager.SetTextureFilter(1);
+    textureManager.SetBlendMode(0);
+    textureManager.DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0.0f, 0);
+    textureManager.SetBlendMode(2);
+    textureManager.SetTextureFilter(2);
+    textureManager.DrawSprite(fourthImageIndex, cameraHorizontal - 250, cameraY + 240 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 1.1f, 0.0f, 0);
+    textureManager.DrawSprite(spriteIndexThird, cameraHorizontal - 150, cameraY + 200 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    textureManager.DrawSprite(firstImageIndex, cameraHorizontal + 150, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    textureManager.DrawSprite(spriteIndexThird, cameraHorizontal + 360, cameraY + 190 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
+    textureManager.DrawSprite(firstImageIndex, cameraHorizontal + 450, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    textureManager.DrawSprite(frameIndexSecond, cameraHorizontal + 650, cameraY + 230 + verticalWaveTwo, 0x87FFFFFF, 32.0f, 64.0f, 1.3f, 0.0f, 0);
+    textureManager.DrawSprite(spriteIndexThird, cameraHorizontal + 760, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
+    textureManager.SetTextureFilter(1);
+    textureManager.SetBlendMode(0);
 }
 #undef TRANSFORM
-#undef EFFECT_DRAWING
-#undef EFFECT_INT
