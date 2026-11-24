@@ -1,16 +1,13 @@
 #include "EventQueue.hpp"
 #include "Graphics.hpp"
 #include "CameraMotion.hpp"
-#include "TextureManagerF198.hpp"
+#include "BackgroundStageBaseF479.hpp"
 #include "WindowOverlayF212.hpp"
-// Native actual background base lifetime: vtable and borrowed +0x18
-// resource member destroyed by the compiler, no guessed private fields.
-class BackgroundBaseF484 {
-  unsigned char untypedOwnerBytes[0x14];
-  TextureManagerF198 resource;
-public:virtual ~BackgroundBaseF484();
-};
-BackgroundBaseF484::~BackgroundBaseF484() {}
+
+NativeBackgroundBaseF479::~NativeBackgroundBaseF479()
+{
+}
+
 // The true camera override is cdecl and writes exactly one byte and
 // three raw float input bits to originally distinct camera globals.
 extern unsigned char g_CameraOverrideEnabledAt00671414;

@@ -49093,7 +49093,7 @@ target = 0x00000000
 [[units.background-stage-load-bg00a-00449aa0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0BackgroundBaseF376@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg00a-00449aa0.relocations]]
 offset = 48
@@ -49103,12 +49103,12 @@ target = 0x00658434
 [[units.background-stage-load-bg00a-00449aa0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageQuadF376@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg00a-00449aa0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StagePackF376@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg00a-00449aa0.relocations]]
 offset = 77
@@ -49123,7 +49123,7 @@ target = 0x00658418
 [[units.background-stage-load-bg00a-00449aa0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StagePackF376@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg00a-00449aa0.relocations]]
 offset = 143
@@ -49158,7 +49158,7 @@ target = 0x00000000
 [[units.background-stage-load-bg00b-00449e10.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0BackgroundBaseF376@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg00b-00449e10.relocations]]
 offset = 48
@@ -49168,12 +49168,12 @@ target = 0x006584A4
 [[units.background-stage-load-bg00b-00449e10.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageQuadF376@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg00b-00449e10.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StagePackF376@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg00b-00449e10.relocations]]
 offset = 77
@@ -49188,7 +49188,7 @@ target = 0x00658488
 [[units.background-stage-load-bg00b-00449e10.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StagePackF376@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg00b-00449e10.relocations]]
 offset = 153
@@ -49223,7 +49223,7 @@ target = 0x00000000
 [[units.background-stage-load-bg00c-0044a230.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg00c-0044a230.relocations]]
 offset = 48
@@ -49233,12 +49233,12 @@ target = 0x006584FC
 [[units.background-stage-load-bg00c-0044a230.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg00c-0044a230.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg00c-0044a230.relocations]]
 offset = 77
@@ -49253,7 +49253,7 @@ target = 0x006584E0
 [[units.background-stage-load-bg00c-0044a230.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg00c-0044a230.relocations]]
 offset = 143
@@ -49288,7 +49288,7 @@ target = 0x00000000
 [[units.background-stage-load-bg00x-0044a520.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg00x-0044a520.relocations]]
 offset = 48
@@ -49298,7 +49298,7 @@ target = 0x00658538
 [[units.background-stage-load-bg00x-0044a520.relocations]]
 offset = 61
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg00x-0044a520.relocations]]
 offset = 66
@@ -49313,7 +49313,7 @@ target = 0x0065851C
 [[units.background-stage-load-bg00x-0044a520.relocations]]
 offset = 82
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg00x-0044a520.relocations]]
 offset = 132
@@ -49348,7 +49348,7 @@ target = 0x00000000
 [[units.background-stage-load-bg00y-0044a750.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg00y-0044a750.relocations]]
 offset = 48
@@ -49358,7 +49358,7 @@ target = 0x00658574
 [[units.background-stage-load-bg00y-0044a750.relocations]]
 offset = 61
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg00y-0044a750.relocations]]
 offset = 66
@@ -49373,7 +49373,7 @@ target = 0x00658558
 [[units.background-stage-load-bg00y-0044a750.relocations]]
 offset = 82
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg00y-0044a750.relocations]]
 offset = 132
@@ -49408,7 +49408,7 @@ target = 0x00000000
 [[units.background-stage-load-bg00z-0044a980.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg00z-0044a980.relocations]]
 offset = 48
@@ -49418,7 +49418,7 @@ target = 0x006585B0
 [[units.background-stage-load-bg00z-0044a980.relocations]]
 offset = 61
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg00z-0044a980.relocations]]
 offset = 66
@@ -49433,7 +49433,7 @@ target = 0x00658594
 [[units.background-stage-load-bg00z-0044a980.relocations]]
 offset = 82
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg00z-0044a980.relocations]]
 offset = 132
@@ -49468,7 +49468,7 @@ target = 0x00000000
 [[units.background-stage-load-bg01a-0044abb0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg01a-0044abb0.relocations]]
 offset = 48
@@ -49478,12 +49478,12 @@ target = 0x006585EC
 [[units.background-stage-load-bg01a-0044abb0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg01a-0044abb0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg01a-0044abb0.relocations]]
 offset = 77
@@ -49498,7 +49498,7 @@ target = 0x006585D0
 [[units.background-stage-load-bg01a-0044abb0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg01a-0044abb0.relocations]]
 offset = 143
@@ -49533,7 +49533,7 @@ target = 0x00000000
 [[units.background-stage-load-bg01b-0044ae50.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg01b-0044ae50.relocations]]
 offset = 48
@@ -49543,12 +49543,12 @@ target = 0x00658634
 [[units.background-stage-load-bg01b-0044ae50.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg01b-0044ae50.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg01b-0044ae50.relocations]]
 offset = 77
@@ -49563,7 +49563,7 @@ target = 0x00658618
 [[units.background-stage-load-bg01b-0044ae50.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg01b-0044ae50.relocations]]
 offset = 143
@@ -49598,7 +49598,7 @@ target = 0x00000000
 [[units.background-stage-load-bg01x-0044b0f0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg01x-0044b0f0.relocations]]
 offset = 48
@@ -49608,7 +49608,7 @@ target = 0x00658670
 [[units.background-stage-load-bg01x-0044b0f0.relocations]]
 offset = 61
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg01x-0044b0f0.relocations]]
 offset = 66
@@ -49623,7 +49623,7 @@ target = 0x00658654
 [[units.background-stage-load-bg01x-0044b0f0.relocations]]
 offset = 82
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg01x-0044b0f0.relocations]]
 offset = 132
@@ -49658,7 +49658,7 @@ target = 0x00000000
 [[units.background-stage-load-bg01y-0044b320.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg01y-0044b320.relocations]]
 offset = 48
@@ -49668,7 +49668,7 @@ target = 0x006586AC
 [[units.background-stage-load-bg01y-0044b320.relocations]]
 offset = 61
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg01y-0044b320.relocations]]
 offset = 66
@@ -49683,7 +49683,7 @@ target = 0x00658690
 [[units.background-stage-load-bg01y-0044b320.relocations]]
 offset = 82
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg01y-0044b320.relocations]]
 offset = 132
@@ -49913,7 +49913,7 @@ target = 0x00000000
 [[units.background-stage-load-bg02x-0044c4b0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg02x-0044c4b0.relocations]]
 offset = 48
@@ -49923,12 +49923,12 @@ target = 0x006587A4
 [[units.background-stage-load-bg02x-0044c4b0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg02x-0044c4b0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg02x-0044c4b0.relocations]]
 offset = 77
@@ -49943,7 +49943,7 @@ target = 0x00658788
 [[units.background-stage-load-bg02x-0044c4b0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg02x-0044c4b0.relocations]]
 offset = 143
@@ -49978,7 +49978,7 @@ target = 0x00000000
 [[units.background-stage-load-bg02y-0044c6f0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg02y-0044c6f0.relocations]]
 offset = 48
@@ -49988,12 +49988,12 @@ target = 0x006587E0
 [[units.background-stage-load-bg02y-0044c6f0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg02y-0044c6f0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg02y-0044c6f0.relocations]]
 offset = 77
@@ -50008,7 +50008,7 @@ target = 0x006587C4
 [[units.background-stage-load-bg02y-0044c6f0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg02y-0044c6f0.relocations]]
 offset = 143
@@ -50043,7 +50043,7 @@ target = 0x00000000
 [[units.background-stage-load-bg02z-0044c930.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg02z-0044c930.relocations]]
 offset = 48
@@ -50053,12 +50053,12 @@ target = 0x0065881C
 [[units.background-stage-load-bg02z-0044c930.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg02z-0044c930.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg02z-0044c930.relocations]]
 offset = 77
@@ -50073,7 +50073,7 @@ target = 0x00658800
 [[units.background-stage-load-bg02z-0044c930.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg02z-0044c930.relocations]]
 offset = 143
@@ -50108,7 +50108,7 @@ target = 0x00000000
 [[units.background-stage-load-bg03a-0044cb70.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg03a-0044cb70.relocations]]
 offset = 48
@@ -50118,12 +50118,12 @@ target = 0x00658858
 [[units.background-stage-load-bg03a-0044cb70.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg03a-0044cb70.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg03a-0044cb70.relocations]]
 offset = 77
@@ -50138,7 +50138,7 @@ target = 0x0065883C
 [[units.background-stage-load-bg03a-0044cb70.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg03a-0044cb70.relocations]]
 offset = 143
@@ -50173,7 +50173,7 @@ target = 0x00000000
 [[units.background-stage-load-bg03b-0044ce10.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg03b-0044ce10.relocations]]
 offset = 48
@@ -50183,12 +50183,12 @@ target = 0x00658894
 [[units.background-stage-load-bg03b-0044ce10.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg03b-0044ce10.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg03b-0044ce10.relocations]]
 offset = 77
@@ -50203,7 +50203,7 @@ target = 0x00658878
 [[units.background-stage-load-bg03b-0044ce10.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg03b-0044ce10.relocations]]
 offset = 143
@@ -50238,7 +50238,7 @@ target = 0x00000000
 [[units.background-stage-load-bg03x-0044d0b0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg03x-0044d0b0.relocations]]
 offset = 48
@@ -50248,12 +50248,12 @@ target = 0x006588D0
 [[units.background-stage-load-bg03x-0044d0b0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg03x-0044d0b0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg03x-0044d0b0.relocations]]
 offset = 77
@@ -50268,7 +50268,7 @@ target = 0x006588B4
 [[units.background-stage-load-bg03x-0044d0b0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg03x-0044d0b0.relocations]]
 offset = 143
@@ -50303,7 +50303,7 @@ target = 0x00000000
 [[units.background-stage-load-bg03y-0044d2f0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg03y-0044d2f0.relocations]]
 offset = 48
@@ -50313,12 +50313,12 @@ target = 0x0065890C
 [[units.background-stage-load-bg03y-0044d2f0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg03y-0044d2f0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg03y-0044d2f0.relocations]]
 offset = 77
@@ -50333,7 +50333,7 @@ target = 0x006588F0
 [[units.background-stage-load-bg03y-0044d2f0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg03y-0044d2f0.relocations]]
 offset = 143
@@ -50368,7 +50368,7 @@ target = 0x00000000
 [[units.background-stage-load-bg04a-0044d530.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg04a-0044d530.relocations]]
 offset = 48
@@ -50378,12 +50378,12 @@ target = 0x00658948
 [[units.background-stage-load-bg04a-0044d530.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg04a-0044d530.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg04a-0044d530.relocations]]
 offset = 77
@@ -50398,7 +50398,7 @@ target = 0x0065892C
 [[units.background-stage-load-bg04a-0044d530.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg04a-0044d530.relocations]]
 offset = 153
@@ -50433,7 +50433,7 @@ target = 0x00000000
 [[units.background-stage-load-bg04b-0044d9c0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg04b-0044d9c0.relocations]]
 offset = 48
@@ -50443,12 +50443,12 @@ target = 0x006589E4
 [[units.background-stage-load-bg04b-0044d9c0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg04b-0044d9c0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg04b-0044d9c0.relocations]]
 offset = 77
@@ -50463,7 +50463,7 @@ target = 0x006589C8
 [[units.background-stage-load-bg04b-0044d9c0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg04b-0044d9c0.relocations]]
 offset = 153
@@ -50498,7 +50498,7 @@ target = 0x00000000
 [[units.background-stage-load-bg04x-0044de70.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg04x-0044de70.relocations]]
 offset = 48
@@ -50508,12 +50508,12 @@ target = 0x00658A4C
 [[units.background-stage-load-bg04x-0044de70.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg04x-0044de70.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg04x-0044de70.relocations]]
 offset = 77
@@ -50528,7 +50528,7 @@ target = 0x00658A30
 [[units.background-stage-load-bg04x-0044de70.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg04x-0044de70.relocations]]
 offset = 143
@@ -50563,7 +50563,7 @@ target = 0x00000000
 [[units.background-stage-load-bg04y-0044e0b0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg04y-0044e0b0.relocations]]
 offset = 48
@@ -50573,12 +50573,12 @@ target = 0x00658A88
 [[units.background-stage-load-bg04y-0044e0b0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg04y-0044e0b0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg04y-0044e0b0.relocations]]
 offset = 77
@@ -50593,7 +50593,7 @@ target = 0x00658A6C
 [[units.background-stage-load-bg04y-0044e0b0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg04y-0044e0b0.relocations]]
 offset = 143
@@ -50628,7 +50628,7 @@ target = 0x00000000
 [[units.background-stage-load-bg05a-0044e2f0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg05a-0044e2f0.relocations]]
 offset = 48
@@ -50638,12 +50638,12 @@ target = 0x00658AC4
 [[units.background-stage-load-bg05a-0044e2f0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg05a-0044e2f0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg05a-0044e2f0.relocations]]
 offset = 77
@@ -50658,7 +50658,7 @@ target = 0x00658AA8
 [[units.background-stage-load-bg05a-0044e2f0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg05a-0044e2f0.relocations]]
 offset = 153
@@ -50693,7 +50693,7 @@ target = 0x00000000
 [[units.background-stage-load-bg05b-0044e810.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg05b-0044e810.relocations]]
 offset = 48
@@ -50703,12 +50703,12 @@ target = 0x00658B24
 [[units.background-stage-load-bg05b-0044e810.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg05b-0044e810.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg05b-0044e810.relocations]]
 offset = 77
@@ -50723,7 +50723,7 @@ target = 0x00658B08
 [[units.background-stage-load-bg05b-0044e810.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg05b-0044e810.relocations]]
 offset = 173
@@ -50758,7 +50758,7 @@ target = 0x00000000
 [[units.background-stage-load-bg05x-0044f300.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg05x-0044f300.relocations]]
 offset = 48
@@ -50768,12 +50768,12 @@ target = 0x00658B84
 [[units.background-stage-load-bg05x-0044f300.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg05x-0044f300.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg05x-0044f300.relocations]]
 offset = 77
@@ -50788,7 +50788,7 @@ target = 0x00658B68
 [[units.background-stage-load-bg05x-0044f300.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg05x-0044f300.relocations]]
 offset = 143
@@ -50823,7 +50823,7 @@ target = 0x00000000
 [[units.background-stage-load-bg05y-0044f540.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg05y-0044f540.relocations]]
 offset = 48
@@ -50833,12 +50833,12 @@ target = 0x00658BC0
 [[units.background-stage-load-bg05y-0044f540.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg05y-0044f540.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg05y-0044f540.relocations]]
 offset = 77
@@ -50853,7 +50853,7 @@ target = 0x00658BA4
 [[units.background-stage-load-bg05y-0044f540.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg05y-0044f540.relocations]]
 offset = 143
@@ -50888,7 +50888,7 @@ target = 0x00000000
 [[units.background-stage-load-bg06a-0044f780.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg06a-0044f780.relocations]]
 offset = 48
@@ -50898,12 +50898,12 @@ target = 0x00658BFC
 [[units.background-stage-load-bg06a-0044f780.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg06a-0044f780.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg06a-0044f780.relocations]]
 offset = 77
@@ -50918,7 +50918,7 @@ target = 0x00658BE0
 [[units.background-stage-load-bg06a-0044f780.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg06a-0044f780.relocations]]
 offset = 153
@@ -50953,7 +50953,7 @@ target = 0x00000000
 [[units.background-stage-load-bg06x-004500f0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg06x-004500f0.relocations]]
 offset = 48
@@ -50963,12 +50963,12 @@ target = 0x00658C54
 [[units.background-stage-load-bg06x-004500f0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg06x-004500f0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg06x-004500f0.relocations]]
 offset = 77
@@ -50983,7 +50983,7 @@ target = 0x00658C38
 [[units.background-stage-load-bg06x-004500f0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg06x-004500f0.relocations]]
 offset = 143
@@ -51018,7 +51018,7 @@ target = 0x00000000
 [[units.background-stage-load-bg07a-00450330.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg07a-00450330.relocations]]
 offset = 48
@@ -51028,12 +51028,12 @@ target = 0x00658C90
 [[units.background-stage-load-bg07a-00450330.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg07a-00450330.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg07a-00450330.relocations]]
 offset = 77
@@ -51048,7 +51048,7 @@ target = 0x00658C74
 [[units.background-stage-load-bg07a-00450330.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg07a-00450330.relocations]]
 offset = 153
@@ -51083,7 +51083,7 @@ target = 0x00000000
 [[units.background-stage-load-bg07x-004508e0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg07x-004508e0.relocations]]
 offset = 48
@@ -51093,12 +51093,12 @@ target = 0x00658CFC
 [[units.background-stage-load-bg07x-004508e0.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg07x-004508e0.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg07x-004508e0.relocations]]
 offset = 77
@@ -51113,7 +51113,7 @@ target = 0x00658CE0
 [[units.background-stage-load-bg07x-004508e0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg07x-004508e0.relocations]]
 offset = 143
@@ -51148,7 +51148,7 @@ target = 0x00000000
 [[units.background-stage-load-bg08a-00450b20.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg08a-00450b20.relocations]]
 offset = 48
@@ -51158,12 +51158,12 @@ target = 0x00658D38
 [[units.background-stage-load-bg08a-00450b20.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg08a-00450b20.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg08a-00450b20.relocations]]
 offset = 77
@@ -51178,7 +51178,7 @@ target = 0x00658D1C
 [[units.background-stage-load-bg08a-00450b20.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg08a-00450b20.relocations]]
 offset = 163
@@ -51213,7 +51213,7 @@ target = 0x00000000
 [[units.background-stage-load-bg08x-00451130.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg08x-00451130.relocations]]
 offset = 48
@@ -51223,12 +51223,12 @@ target = 0x00658D84
 [[units.background-stage-load-bg08x-00451130.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg08x-00451130.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg08x-00451130.relocations]]
 offset = 77
@@ -51243,7 +51243,7 @@ target = 0x00658D68
 [[units.background-stage-load-bg08x-00451130.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg08x-00451130.relocations]]
 offset = 143
@@ -51278,7 +51278,7 @@ target = 0x00000000
 [[units.background-stage-load-bg09a-00451370.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg09a-00451370.relocations]]
 offset = 48
@@ -51288,12 +51288,12 @@ target = 0x00658DC0
 [[units.background-stage-load-bg09a-00451370.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg09a-00451370.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg09a-00451370.relocations]]
 offset = 77
@@ -51308,7 +51308,7 @@ target = 0x00658DA4
 [[units.background-stage-load-bg09a-00451370.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg09a-00451370.relocations]]
 offset = 153
@@ -51343,7 +51343,7 @@ target = 0x00000000
 [[units.background-stage-load-bg09x-00451c70.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0StageBaseF377@@QAE@XZ"
+symbol = "??0NativeBackgroundBaseF479@@QAE@XZ"
 target = 0x00449DE0
 [[units.background-stage-load-bg09x-00451c70.relocations]]
 offset = 48
@@ -51353,12 +51353,12 @@ target = 0x00658E54
 [[units.background-stage-load-bg09x-00451c70.relocations]]
 offset = 59
 type = "REL32"
-symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.background-stage-load-bg09x-00451c70.relocations]]
 offset = 72
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.background-stage-load-bg09x-00451c70.relocations]]
 offset = 77
@@ -51373,7 +51373,7 @@ target = 0x00658E38
 [[units.background-stage-load-bg09x-00451c70.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.background-stage-load-bg09x-00451c70.relocations]]
 offset = 143
@@ -58443,13 +58443,13 @@ source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
 object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["BackgroundBase::DestroyAt00449D40"]
-symbol = "??1BackgroundBaseF484@@UAE@XZ"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
 target_address = 0x00449D40
 size = 31
 [[units.background-base-virtual-destroy-00449d40.relocations]]
 offset = 12
 type = "DIR32"
-symbol = "??_7BackgroundBaseF484@@6B@"
+symbol = "??_7NativeBackgroundBaseF479@@6B@"
 target = 0x0065844C
 [[units.background-base-virtual-destroy-00449d40.relocations]]
 offset = 23
@@ -61170,7 +61170,7 @@ relocations = [
  { offset = 0x23, type = "DIR32", symbol = "??_7BattleScene@@6B@", target = 0x00658334 },
  { offset = 0x31, type = "DIR32", symbol = "?g_FrameClockModeAt0066C238@@3CA", target = 0x0066C238 },
  { offset = 0x46, type = "REL32", symbol = "?SetClampedGameValue@@YAXH@Z", target = 0x00423C60 },
- { offset = 0x71, type = "REL32", symbol = "??_GTextureManagerF200@@QAEPAXI@Z", target = 0x00425460 },
+ { offset = 0x71, type = "REL32", symbol = "??_GTextureManagerF198@@QAEPAXI@Z", target = 0x00425460 },
  { offset = 0x98, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
  { offset = 0xB6, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
  { offset = 0xD4, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },

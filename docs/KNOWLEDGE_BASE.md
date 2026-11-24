@@ -73,6 +73,20 @@ The floating-point call sites share the VC7.1 wrappers declared in
 `MathFloatHelpers.hpp`, and character loading uses the same snapshot
 entry points as the replay code.
 
+The paired and family stage pack constructors inherit the existing
+`NativeBackgroundBaseF479` layout. The embedded texture manager begins at
+`+0x18`, and the first trailing stage member starts at `+0x68`. The
+`SpriteQuad40CA80` member starts at `+0x68`, `+0x6C`, `+0x70`, or
+`+0x74`, depending on the stage. The stages share the
+existing base destructor. The constructor comparisons also preserve the
+exception cleanup calls at `0x00449D40`.
+
+Battle teardown emits the same 44-byte texture-manager deleting wrapper
+at `0x00425460`, including calls to `0x0040AE40` and `0x00640F15`.
+A standalone link against the archive reached seven unresolved graphics
+data definitions after adding the program's Windows SDK libraries. Six
+are diagnostic strings and one is the pixel shader.
+
 `Graphics::BeginFrame` returns the status from `BeginTarget` on both
 branches. The native caller tests AL, and the bool declaration preserves
 all 36 bytes of the wrapper. The application and scene drawing callers
