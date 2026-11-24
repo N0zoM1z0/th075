@@ -1,4 +1,4 @@
-#include <windows.h>
+#include "EventQueue.hpp"
 // All 28 bytes of the two live checked iterators' actual original state
 // are observed: three initialized tracking DWORDs and two 8-byte values.
 class QueueIteratorF334 {
@@ -24,11 +24,8 @@ public:
     QueueIteratorF334 Erase(QueueIteratorF334 it);
     void** Front();
 };
-extern HANDLE g_QueueReadyEventAt0068BE34;
-extern DWORD g_QueueWaitTimeoutAt0066C23C;
 extern QueueCollectionF334 g_EventQueueAt0068BE44;
-class EventWorkerF334 {public: static int __stdcall RunWorker(int unused);};
-int __stdcall EventWorkerF334::RunWorker(int unused)
+DWORD WINAPI EventWorkerF334::RunWorker(LPVOID)
 {
     LiveWorkerIteratorsF334 state;
     state.beginChecked=0;
@@ -37,7 +34,7 @@ int __stdcall EventWorkerF334::RunWorker(int unused)
     state.it.Initialize();
     state.end.Initialize();
     while (true) {
-        WaitForSingleObject(g_QueueReadyEventAt0068BE34,g_QueueWaitTimeoutAt0066C23C);
+        WaitForSingleObject(g_EventReadyAt0068BE34,g_EventWaitMsAt0066C23C);
         state.it=g_EventQueueAt0068BE44.Begin();
         state.end=g_EventQueueAt0068BE44.End();
         while (state.it!=state.end) {

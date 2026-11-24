@@ -24,12 +24,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All configured sources compile and archive. The strict executable link
-stopped at `LNK1120` with 2,618 unresolved externals after reconciling startup,
+stopped at `LNK1120` with 2,600 unresolved externals after reconciling startup,
 input and presentation calls and defining shared device and configuration
 state. Headless library consumers exercised the log, cosine table, sound
-defaults and the configuration save and load path.
+defaults, the configuration save and load path and event queue insertion.
 Use `build/program/link.log` and the relocation targets to find candidate
 definitions. WinMain still needs compatible scene and lifetime declarations.
+The event worker still uses borrowed iterator bindings.
 The graphics and DirectInput error strings and pixel shader are also
 unresolved.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)

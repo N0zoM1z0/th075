@@ -49,6 +49,21 @@ and the configuration writer use the same storage. A headless executable
 linked from the aggregate library saved a 90-byte `config.ini`, cleared
 the test state and loaded the stored key bytes, display flags and volumes.
 
+WinMain registers the address of its event handle with the startup queue.
+The enqueue, acquire and release code now uses the same VC7.1
+`std::deque<HANDLE*>` at `0x0068BE44`. The worker and lifecycle code also
+share the ready event and wait interval, which starts at 16 milliseconds.
+The worker's loop dereferences the queued address before calling
+`SetEvent`. The release path passes the queued address itself, as shown
+by the different native load chain. A headless library consumer verified
+that enqueuing the same handle address twice leaves one entry.
+
+The worker's direct STL iterator trial emitted 250 of the native 273
+bytes. The target has three extra initialization stores before the iterator
+constructors and an explicit zero return. Its current whole-function
+comparison retains the borrowed iterator bindings while those local
+slots are investigated.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

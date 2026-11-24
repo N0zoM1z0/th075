@@ -14,6 +14,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "DiagnosticLog.hpp"
+#include "EventQueue.hpp"
 #include "GraphicsDevice.hpp"
 #include "InputJoystick.hpp"
 #include "MathLookup.hpp"
@@ -56,7 +57,6 @@ extern const char g_ArchiveRootAt0065A1B0[];
 extern unsigned char g_AppInitializedAt0068D674;
 extern HWND g_GameMainWindowAt00671608;
 extern ReplayGlobalF1171 g_ReplayGlobalAt006718F8;
-extern void __cdecl ConfigureEventAt00423C80(HANDLE*);
 namespace SharedSound4066C0 { bool Initialize(HWND); }
 namespace GameGlobalsF212 { void InitializeSound(); }
 extern LRESULT CALLBACK AppWindowProcF468(HWND,UINT,WPARAM,LPARAM);
@@ -119,7 +119,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     if(FAILED(CoInitialize(0))) { return 0; }
     while(!g_AppInitializedAt0068D674) {}
     HANDLE eventReady=CreateEventA(0,FALSE,FALSE,0);
-    ConfigureEventAt00423C80(&eventReady);
+    EventQueueGuardF457::AppendUnique(&eventReady);
     MathLookup::BuildCosTable();
     ArchiveCatalogF1171 archiveOwner;
     ArchiveCatalogF353::OpenAndRegister(g_ArchiveTh075At0065A1B8,g_ArchiveRootAt0065A1B0);

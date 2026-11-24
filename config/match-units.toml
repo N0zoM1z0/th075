@@ -46056,7 +46056,7 @@ source = "src/EventQueueRunWorkerF334.cpp"
 object = "build/matching/EventQueueRunWorkerF334.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["EventQueue::RunWorkerAt00423B40"]
-symbol = "?RunWorker@EventWorkerF334@@SGHH@Z"
+symbol = "?RunWorker@EventWorkerF334@@SGKPAX@Z"
 target_address = 0x00423B40
 size = 273
 [[units.event-queue-run-worker-00423b40.relocations]]
@@ -46072,12 +46072,12 @@ target = 0x00423F50
 [[units.event-queue-run-worker-00423b40.relocations]]
 offset = 58
 type = "DIR32"
-symbol = "?g_QueueWaitTimeoutAt0066C23C@@3KA"
+symbol = "?g_EventWaitMsAt0066C23C@@3HA"
 target = 0x0066C23C
 [[units.event-queue-run-worker-00423b40.relocations]]
 offset = 65
 type = "DIR32"
-symbol = "?g_QueueReadyEventAt0068BE34@@3PAXA"
+symbol = "?g_EventReadyAt0068BE34@@3PAXA"
 target = 0x0068BE34
 [[units.event-queue-run-worker-00423b40.relocations]]
 offset = 72
@@ -46191,12 +46191,12 @@ target = 0x00657268
 [[units.event-service-acquire-shared-004239f0.relocations]]
 offset = 52
 type = "DIR32"
-symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+symbol = "?g_EventServiceQueueAt0068BE44@@3V?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@A"
 target = 0x0068BE44
 [[units.event-service-acquire-shared-004239f0.relocations]]
 offset = 57
 type = "REL32"
-symbol = "?Reset@EventServiceQueueF335@@QAEXXZ"
+symbol = "?clear@?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@QAEXXZ"
 target = 0x00423F30
 [[units.event-service-acquire-shared-004239f0.relocations]]
 offset = 71
@@ -46216,7 +46216,7 @@ target = 0x0068BE3C
 [[units.event-service-acquire-shared-004239f0.relocations]]
 offset = 90
 type = "DIR32"
-symbol = "?RunWorker@EventWorkerF335@@SGHH@Z"
+symbol = "?RunWorker@EventWorkerF334@@SGKPAX@Z"
 target = 0x00423B40
 [[units.event-service-acquire-shared-004239f0.relocations]]
 offset = 100
@@ -46290,22 +46290,22 @@ target = 0x00657134
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 65
 type = "DIR32"
-symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+symbol = "?g_EventServiceQueueAt0068BE44@@3V?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@A"
 target = 0x0068BE44
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 70
 type = "REL32"
-symbol = "?Size@EventServiceQueueF335@@QAEIXZ"
+symbol = "?size@?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@QBEIXZ"
 target = 0x00423D40
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 84
 type = "DIR32"
-symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+symbol = "?g_EventServiceQueueAt0068BE44@@3V?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@A"
 target = 0x0068BE44
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 89
 type = "REL32"
-symbol = "?At@EventServiceQueueF335@@QAEPAPAXI@Z"
+symbol = "??A?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@QAEAAPAPAXI@Z"
 target = 0x00423DB0
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 98
@@ -46315,12 +46315,12 @@ target = 0x0065705C
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 105
 type = "DIR32"
-symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+symbol = "?g_EventServiceQueueAt0068BE44@@3V?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@A"
 target = 0x0068BE44
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 110
 type = "REL32"
-symbol = "?Reset@EventServiceQueueF335@@QAEXXZ"
+symbol = "?clear@?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@QAEXXZ"
 target = 0x00423F30
 [[units.event-service-release-shared-00423a90.relocations]]
 offset = 116
@@ -56500,38 +56500,38 @@ source = "src/EventQueueAppendUniqueF458.cpp"
 object = "build/matching/EventQueueAppendUniqueF458.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["EventQueue::EnqueueUniqueAt00423C80"]
-symbol = "?AppendUnique@EventQueueGuardF457@@YAXI@Z"
+symbol = "?AppendUnique@EventQueueGuardF457@@YAXPAPAX@Z"
 target_address = 0x00423C80
 size = 96
 [[units.event-queue-append-unique-00423c80.relocations]]
 offset = 29
 type = "DIR32"
-symbol = "?g_EventQueueAt0068BE44@@3VEventWordDequeF457@@A"
+symbol = "?g_EventServiceQueueAt0068BE44@@3V?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@A"
 target = 0x0068BE44
 [[units.event-queue-append-unique-00423c80.relocations]]
 offset = 34
 type = "REL32"
-symbol = "?Size@EventWordDequeF457@@QAEIXZ"
+symbol = "?size@?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@QBEIXZ"
 target = 0x00423D40
 [[units.event-queue-append-unique-00423c80.relocations]]
 offset = 48
 type = "DIR32"
-symbol = "?g_EventQueueAt0068BE44@@3VEventWordDequeF457@@A"
+symbol = "?g_EventServiceQueueAt0068BE44@@3V?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@A"
 target = 0x0068BE44
 [[units.event-queue-append-unique-00423c80.relocations]]
 offset = 53
 type = "REL32"
-symbol = "?At@EventWordDequeF457@@QAEPAII@Z"
+symbol = "?at@?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@QAEAAPAPAXI@Z"
 target = 0x00423D60
 [[units.event-queue-append-unique-00423c80.relocations]]
 offset = 83
 type = "DIR32"
-symbol = "?g_EventQueueAt0068BE44@@3VEventWordDequeF457@@A"
+symbol = "?g_EventServiceQueueAt0068BE44@@3V?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@A"
 target = 0x0068BE44
 [[units.event-queue-append-unique-00423c80.relocations]]
 offset = 88
 type = "REL32"
-symbol = "?PushBack@EventWordDequeF457@@QAEXPBI@Z"
+symbol = "?push_back@?$deque@PAPAXV?$allocator@PAPAX@std@@@std@@QAEXABQAPAX@Z"
 target = 0x00423E10
 
 
@@ -61235,7 +61235,7 @@ relocations = [
  { offset = 0x271, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
  { offset = 0x283, type = "DIR32", symbol = "?g_AppInitializedAt0068D674@@3EA", target = 0x0068D674 },
  { offset = 0x297, type = "DIR32", symbol = "__imp__CreateEventA@16", target = 0x00657054 },
- { offset = 0x2A3, type = "REL32", symbol = "?ConfigureEventAt00423C80@@YAXPAPAX@Z", target = 0x00423C80 },
+ { offset = 0x2A3, type = "REL32", symbol = "?AppendUnique@EventQueueGuardF457@@YAXPAPAX@Z", target = 0x00423C80 },
  { offset = 0x2AB, type = "REL32", symbol = "?BuildCosTable@MathLookup@@YAXXZ", target = 0x0041CAE0 },
  { offset = 0x2B3, type = "REL32", symbol = "??0ArchiveCatalogF1171@@QAE@XZ", target = 0x0041CE10 },
  { offset = 0x2B8, type = "DIR32", symbol = "?g_ArchiveRootAt0065A1B0@@3QBDB", target = 0x0065A1B0 },
