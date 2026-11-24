@@ -402,12 +402,12 @@ The current direct-call scan is in
 | Candidates | Evidence gap |
 | --- | --- |
 | `0x0040D8C0`, `0x0040D8E0` | R295 matches both declaration forms across all three callers, their unwind data and both leaves. The forms differ in COFF function records that are absent from the PE. |
-| `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
+| `0x0040D900`, `0x0040D940` | Both R163 forms bind to the R292 cosine and sine workers. R303 rules out the decorated definitions in the older SDK shape archive, which compute results with x87 instructions directly. |
 | `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
 | `0x004251C0`, `0x00449DE0` | R302 matches both constructors, their first complete derived callers, and the adjacent vtables and unwind records. Late explicit definitions restore the native constructor offsets. The deleting destructors still occupy different linked slots. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
-| `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
+| `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
 | `0x00458650`, `0x00458670`, `0x00458770` | R299 reproduces the two constructors and both five-slot vtables in the original order with implicit and explicit declarations. The fighter cleanup also retains the original destructor order with both forms. |
 
@@ -826,6 +826,40 @@ deleting destructors remains the missing control for an origin decision.
     bash .analysis/final-origin-review/stage-ctor-order/build.sh packed
     bash .analysis/final-origin-review/stage-ctor-order/build.sh embedded
     scripts/repo-python .analysis/final-origin-review/stage-ctor-order/compare.py
+
+### R303 — Standard log10f can occupy the native banner slot
+
+The pinned header and an ordinary wrapper both reproduce the full
+444-byte interval `0x00441EA0..0x0044205B`. The interval contains the
+303-byte banner, the five-byte uncalled body, two 44-byte progress
+accessors, and the 28-byte worker. Comparisons include the inter-function
+alignment and all eight relocations. The linker resolves the internal
+call to the worker. The compare binds the external operands to the
+known PE destinations after checking their physical COFF fields.
+
+Including `<math.h>` before the banner emits `_log10f` immediately
+after it. Moving that include below the banner while retaining the
+existing rendering header still makes the definition visible before
+the caller through a transitive include. With a narrow view of the
+same 132-byte render packet, the unchanged banner call can use a
+forward declaration and see the real header definition only after
+both progress accessors. That link and the late ordinary definitions
+place the worker at the original `+0x1A0`. Both a plain and an inline
+forward declaration of `_log10f` preserve the full native interval.
+
+A direct transfer scan of the current 4,351 function extents found
+no second wrapper body for any of the five checked `cos`, `sin`,
+`labs`, `log10` and `ceil` chains. The older `d3dx.lib` and
+`d3dxd.lib` each define the decorated C++ cosine and sine overloads
+in `shapes.obj`. Their full seven- and ten-byte bodies execute
+`fcos` or `fsin` directly and have no relocations. The native outer
+overloads are 17 bytes and call the independently attributed header
+workers. The archive definitions leave the two outer declarations
+unresolved.
+
+    scripts/repo-python .analysis/final-origin-review/math-wrapper-order/scan.py
+    bash .analysis/final-origin-review/math-wrapper-order/build-banner.sh
+    scripts/repo-python .analysis/final-origin-review/math-wrapper-order/compare-banner.py
 
 ## Historical R263 inventory
 
