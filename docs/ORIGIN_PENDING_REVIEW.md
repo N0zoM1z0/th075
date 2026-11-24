@@ -245,6 +245,21 @@ relocation fields.
 
     scripts/repo-python scripts/replay-exact-units.py --unit actor-frame-flag20-predicate-00454f70 --unit character-action-dispatch-005e2310
 
+### R282 — D3DXVECTOR4 default constructor
+
+The pinned D3DX8 header emits the complete 14-byte constructor at
+`0x0040D980` in three cold-exact objects. The scaled draw calls it
+for a temporary coordinate vector at `0x0040D5A7`. The default quad
+and atlas constructors call the same symbol for four 16-byte
+members, independently identifying the SDK type. The complete
+14-byte COMDAT has zero relocations and zero differences in all
+three objects. The separate empty constructor at `0x0040D9F0`
+receives the quad payload at offset `0x40`, whose original type
+and declaration remain open.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit sprite-drawing-scaled-native-0040d2e0 --unit sprite-quad-clear-0040d990 --unit atlas-quad-rectangle-constructor-0040da00
+    scripts/repo-python .analysis/final-origin-review/compare-d3dx-vector.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

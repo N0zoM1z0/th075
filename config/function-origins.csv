@@ -386,7 +386,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040D920,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040D940,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040D960,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040D980,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040D980,library,D3DX8,exclude,complete-sdk-header-constructor-with-typed-callers,R282
 0x0040D990,authored,SpriteGeometry,authored,custom-policy-backed,R011
 0x0040D9F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040DA00,authored,SpriteGeometry,authored,custom-policy-backed,R011
