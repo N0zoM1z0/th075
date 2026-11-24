@@ -11,7 +11,7 @@
 // escape sequence used as the line suffix. No complete scene class embedded.
 extern const char g_MusicListEmptyAt00657C0A[] = "";
 extern const char g_MusicListHiddenAt00657C0C[] = "\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48";
-extern const char g_MusicListBreakAt00657C20[];
+extern const char g_MusicListBreakAt00657C20[] = "\\n";
 extern const char g_MusicListFontAt00657C24[];
 void MusicRoomScene::RenderTrackCatalogText()
 {

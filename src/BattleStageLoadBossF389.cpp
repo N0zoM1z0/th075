@@ -7,8 +7,8 @@
 #include "BackgroundStages.hpp"
 
 extern unsigned char g_OptionsFlagAt00671604;
-extern const char g_StartStageLogAt00657A4C[];
-extern const char g_EndStageLogAt00657A5C[];
+extern const char g_StartStageLogAt00657A4C[] = "LoadStage...\r\n";
+extern const char g_EndStageLogAt00657A5C[] = "...OK\r\n";
 void BattleStageLoaderF389::LoadStage() {
     DiagnosticLog::AppendString(g_StartStageLogAt00657A4C);
     if(g_CurrentBattleStageAt00671424) {

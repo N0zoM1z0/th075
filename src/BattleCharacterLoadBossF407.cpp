@@ -36,8 +36,8 @@ typedef char SuikaFighterAllocationSize[sizeof(SuikaFighter) == 0x1000 ? 1 : -1]
 typedef char MeilingFighterAllocationSize[sizeof(MeilingFighter) == 0x1000 ? 1 : -1];
 
 signed char g_StoryRosterAt00671490[10];
-extern const char g_LoadCharacterLogAt00657A30[];
-extern const char g_LoadCharactersDoneAt00657A44[];
+extern const char g_LoadCharacterLogAt00657A30[] = "LoadCharacter...\r\n";
+extern const char g_LoadCharactersDoneAt00657A44[] = "...OK\r\n";
 
 void BattleCharacterLoaderF398::LoadCharacters() {
  DiagnosticLog::AppendString(g_LoadCharacterLogAt00657A30);

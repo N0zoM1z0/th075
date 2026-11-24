@@ -10,9 +10,9 @@
 // Borrowed original record selection and deque access interfaces. No full
 // nominal class/allocator ownership layout is reconstructed in this source.
 extern const char g_RecordEmptyAt006580B1[] = "";
-extern const char g_RecordEmptyNameAt006580B4[];
-extern const char g_RecordMissingFormatAt006580D8[];
-extern const char g_RecordFullFormatAt006580F4[];
+extern const char g_RecordEmptyNameAt006580B4[] = "\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48";
+extern const char g_RecordMissingFormatAt006580D8[] = " No.%03d  %-59s %03d/%03d\\n";
+extern const char g_RecordFullFormatAt006580F4[] = " No.%03d  %-59s %03d/%03d\\n";
 extern const char g_RecordFontAt00658110[];
 #define META(index,offset) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(selectedRecord)+(offset)+2*(index)))
 void ResultListScene::BuildRecordPage()
