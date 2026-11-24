@@ -85,9 +85,9 @@ void Fighter::ClearAuxiliaryWords()
     bufferedD = 0;
 }
 
-void InputBindingsF171::ClearHeldCounts()
+void InputMapping4388D0::ClearHeldCounts()
 {
-    memset(&state, 0, sizeof(state));
+    memset(&held, 0, sizeof(held));
 }
 
 void Fighter::ResetRound()

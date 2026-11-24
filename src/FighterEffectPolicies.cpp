@@ -32,7 +32,7 @@ void Fighter::SpawnAuxEffect(short effect, float x, float y,
 
 void Fighter::PlaySound(short sound)
 {
-    reinterpret_cast<SoundBank*>(&soundBank)->Play(sound);
+    soundBank.Play(sound);
 }
 
 void Fighter::PlaySharedSound(short sound)

@@ -7,7 +7,6 @@
 class ReimuFighter : public Fighter {
 public:
     ReimuFighter();
-    virtual ~ReimuFighter();
     virtual void Advance(); // slot 1, 0045DD70 (nonexact giant research parent)
 
     void AdvanceAuxiliary();

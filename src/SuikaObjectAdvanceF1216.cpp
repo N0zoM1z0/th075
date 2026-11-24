@@ -352,7 +352,7 @@ void SuikaObject::Advance()
             return;
         }
         else {
-            if (x < owner->field2D8 && field0D8 == 0 &&
+            if (x < owner->cameraState.field04 && field0D8 == 0 &&
                 ((facing == -1 && velocityX > 0.0f) ||
                  (facing == 1 && velocityX < 0.0f))) {
                 facing = -facing;

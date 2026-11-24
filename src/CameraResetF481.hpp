@@ -5,8 +5,8 @@
 // state object to eight bytes; the two member meanings remain unknown.
 class CameraResetF481 {
     unsigned int unknown00;
-    unsigned int unknown04;
 public:
+    float field04;
     CameraResetF481();
 };
 

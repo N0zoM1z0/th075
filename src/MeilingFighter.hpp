@@ -7,7 +7,6 @@
 class MeilingFighter : public Fighter {
 public:
     MeilingFighter();
-    virtual ~MeilingFighter();
     virtual void Advance(); // Slot 1 at 005D73C0.
     void DispatchActions();
     void AdvanceAuxiliary();

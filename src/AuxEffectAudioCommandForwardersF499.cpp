@@ -1,3 +1,4 @@
+#include "CommandListF283.hpp"
 #include "SoundBank.hpp"
 // Native whole call wrappers around original effect, audio, deque and
 // shared fighter state. Only the physically observed own/class ABIs are
@@ -29,13 +30,10 @@ class AudioForwarderF499 {public:void PlaySharedSound(short sound);};
 void AudioForwarderF499::PlaySharedSound(short sound){
  g_SoundBank->Play(sound);
 }
-class NativeCommandDequeF499 {public:void Clear();};
-class NativeCommandListF499 {
- unsigned int unknownNativeOwnerWord;
- NativeCommandDequeF499 entries;
-public:void ClearEntries();
-};
-void NativeCommandListF499::ClearEntries(){entries.Clear();}
+void CommandListF283::Reset()
+{
+    queue.clear();
+}
 extern unsigned int g_SharedFighterValueAt00671628;
 class BattleSceneSharedF499 {public:void SetSharedValue(unsigned int value);};
 void BattleSceneSharedF499::SetSharedValue(unsigned int value){

@@ -452,7 +452,7 @@ case 812:
         if (animationStage == 1) {
             if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
             if (y < 0.0f && velocityY > 0.0f) field0D8 = 1;
-            if (x < owner->field2D8 && facing * velocityX < 0.0f) field0D8 = 1;
+            if (x < owner->cameraState.field04 && facing * velocityX < 0.0f) field0D8 = 1;
             if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
                 owner->PlaySound(0);
@@ -588,7 +588,7 @@ case 816:
         if (animationStage == 1) {
             if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
             if (y < 0.0f && velocityY > 0.0f) field0D8 = 1;
-            if (x < owner->field2D8 && facing * velocityX < 0.0f) field0D8 = 1;
+            if (x < owner->cameraState.field04 && facing * velocityX < 0.0f) field0D8 = 1;
             if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
                 owner->PlaySound(0);
@@ -636,7 +636,7 @@ case 817:
         if (animationStage == 1) {
             if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
             if (y < 0.0f && velocityY > 0.0f) field0D8 = 1;
-            if (x < owner->field2D8 && facing * velocityX < 0.0f) field0D8 = 1;
+            if (x < owner->cameraState.field04 && facing * velocityX < 0.0f) field0D8 = 1;
             if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
                 owner->PlaySound(0);

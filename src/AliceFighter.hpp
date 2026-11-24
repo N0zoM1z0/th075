@@ -7,7 +7,6 @@
 class AliceFighter : public Fighter {
 public:
     AliceFighter();
-    virtual ~AliceFighter();
     virtual void Advance(); // Slot 1 at 004D7E70.
     void ConfigureStage();
     void CreateOwnedObject(CharacterObject** output);

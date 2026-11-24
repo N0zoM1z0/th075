@@ -1980,7 +1980,7 @@ case 915:
             field080 = 1;
             field0CC = 4.0f;
         }
-        if (x < owner->field2D8 && field0DC < 1 &&
+        if (x < owner->cameraState.field04 && field0DC < 1 &&
             ((facing == -1 && velocityX > 0.0f) ||
              (facing == 1 && velocityX < 0.0f))) {
             owner->PlaySound(11);

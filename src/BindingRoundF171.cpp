@@ -20,7 +20,7 @@ void InputMapping4388D0::SetBindings(const void* source)
 
 void Fighter::SetBindings(const void* source)
 {
-    reinterpret_cast<InputMapping4388D0*>(&inputBindings)->SetBindings(source);
+    inputBindings.SetBindings(source);
 }
 
 void Fighter::BindOpponent(void* other)

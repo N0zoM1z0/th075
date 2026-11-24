@@ -5,6 +5,9 @@
 #include "FighterOutcomeByteF992.hpp"
 #include "FighterEffectPolicies.hpp"
 #include "ScriptResource4205F0.hpp"
+#include "CameraResetF481.hpp"
+#include "InputMapping4388D0.hpp"
+#include "SoundBank.hpp"
 
 class EffectManagerLifetimeF161;
 class CharacterObject;
@@ -12,41 +15,10 @@ class TimelineDrawing438D00;
 class FighterTextureF282;
 class FighterStageTextureF286;
 
-// Pointer-only resource interface over the observed 20-byte sound subobject.
-class FighterSoundsF282 {
-public:
-    void Load(const char* filename, const char* archive);
-
-private:
-    unsigned char unknown000[0x14];
-};
-typedef char FighterSoundsF282SizeCheck[(sizeof(FighterSoundsF282) == 0x14) ? 1 : -1];
-
 typedef std::vector<FighterSequenceInfo*> ActionSequenceSlots;
+typedef HeldInputBlock4388D0 InputState;
 
-// Controller binding block embedded at Fighter+0x494. SetBindings copies 40
-// bytes at +4 and clears 28 bytes at +0x2C, so the block spans 0x48 bytes.
-// The 28-byte input state a fighter's bindings keep (the battle scene saves
-// a copy of each side's at +0xA4/+0xC0).
-struct InputState { unsigned long words[7]; };
-
-class InputBindingsF171 {
-public:
-    void SetBindings(const void* source);
-    void ClearHeldCounts();
-
-    unsigned char unknown00[0x04];
-    signed char device;           // +0x04 joystick index, -1 when absent
-    unsigned char bindings[0x2C - 0x05];
-    InputState state;             // +0x2C
-};
-
-// Fighter object shared by both players. Offsets up to 0xF0F are common to
-// every character; character classes declare their own members from 0xF10.
-typedef char InputBindingsF171LayoutCheck[(
-    offsetof(InputBindingsF171, state) == 0x2C &&
-    sizeof(InputState) == 0x1C &&
-    sizeof(InputBindingsF171) == 0x48) ? 1 : -1];
+class CommandListF283;
 
 class Fighter : public Actor {
 public:
@@ -113,7 +85,7 @@ public:
     // Fighter vtable slots 5-19. The base table (00658FE8) implements only
     // slots 6 and 8; the rest are _purecall and per character.
     Fighter();                            // 004567B0
-    virtual ~Fighter();                   // slot 5: each character's deleting destructor
+    virtual ~Fighter() = 0;                   // slot 5: each character's deleting destructor
     virtual void ResetRound();            // slot 6, base 00457010
     virtual void CreateOwnedObject(CharacterObject** object) = 0;  // slot 7
     virtual void ForwardBaseAction();     // slot 8, base 00451EB0
@@ -136,8 +108,7 @@ public:
     signed char field2CE;               // +0x2CE LoadResources loads field2CE + 1 texture pages
     unsigned char unknown2CF[0x2D0 - 0x2CF];
     int score;                          // +0x2D0 raised by 100-500 per hit
-    unsigned char unknown2D4[0x2D8 - 0x2D4];
-    float field2D8;                     // +0x2D8
+    CameraResetF481 cameraState;        // +0x2D4
     float field2DC;                     // +0x2DC
     float field2E0;                     // +0x2E0
     float field2E4;                     // +0x2E4
@@ -221,13 +192,13 @@ public:
     short field478;                     // +0x478 signed texture slot count
     unsigned char unknown47A[0x47C - 0x47A];
     int field47C;                       // +0x47C
-    void* field480;                     // +0x480
+    CommandListF283* field480;                     // +0x480
     signed char field484;               // +0x484
     unsigned char unknown485[0x488 - 0x485];
     float field488;                     // +0x488
     unsigned int field48C;              // +0x48C
     float field490;                     // +0x490
-    InputBindingsF171 inputBindings;    // +0x494 controller binding block
+    InputMapping4388D0 inputBindings;    // +0x494 controller binding block
     int inputX;                         // +0x4DC held input: direction -1/0/+1, buttons count held frames
     int inputY;                         // +0x4E0
     int field4E4;                       // +0x4E4
@@ -265,11 +236,7 @@ public:
     char quoteLines[2][200];            // +0x53B win quote text, one line each
     signed char quoteBadges[2];         // +0x6CB notice badge shown with each line
     unsigned char unknown6CD[0x6D0 - 0x6CD];
-    union {
-        unsigned char sounds[0x6E4 - 0x6D0]; // raw storage view
-        EffectSoundBankF135 soundBank;       // playback interface at +0x6D0
-        FighterSoundsF282 soundResources;    // resource-loading interface
-    };
+    SoundBank soundBank;                // +0x6D0
     signed char sequencePhase;          // +0x6E4
     unsigned char field6E5;               // +0x6E5 byte written by SelectVariant
     signed char noticeState;            // +0x6E6
@@ -313,6 +280,8 @@ public:
 };
 
 typedef char FighterLayoutCheck[(
+    offsetof(Fighter, cameraState) == 0x2D4 &&
+    offsetof(Fighter, soundBank) == 0x6D0 &&
     offsetof(Fighter, opponent) == 0x2E8 &&
     offsetof(Fighter, effectTransformRecord) == 0x2F0 &&
     offsetof(Fighter, health) == 0x324 &&

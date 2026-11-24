@@ -17,7 +17,7 @@ extern float g_CombatViewOffsetY;
 #define DRAWING reinterpret_cast<NodeDrawingF129*>(drawing)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 // Draw the actor relative to the battle camera.
-void Actor::Render() {
+void ActorRenderingBase::Render() {
     RECT textureRect;
     D3DVECTOR spriteOffset;
     float cameraHorizontal;
@@ -72,7 +72,7 @@ void Actor::Render() {
 }
 
 // Actor vtable slot 3.
-void Actor::RenderNode() {
+void ActorRenderingBase::RenderNode() {
     RECT textureRect;
     D3DVECTOR spriteOffset;
     DWORD drawColor;

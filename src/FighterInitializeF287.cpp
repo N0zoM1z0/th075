@@ -1,86 +1,30 @@
-#include "SelectionInput4388D0.hpp"
-#include <windows.h>
-#include <string.h>
-#include <new>
-#include <deque>
-#include <stddef.h>
+#include "Fighter.hpp"
 #include "EffectManagerLifetimeF161.hpp"
-#include "SoundBank.hpp"
-#include "ScriptResource4205F0.hpp"
-// Physical subobject boundaries established from the original member calls;
-// do not infer unobserved internal fields of fighter or library containers.
-class FighterBaseF287 { public: FighterBaseF287(); virtual void Reserved(); };
-class FighterActorPropertiesF287 {
-    unsigned char physicalBytes[0x194];
-public: FighterActorPropertiesF287();
-};
-class FighterActorVectorF287 {
-    unsigned char physicalBytes[0x2c];
-public: FighterActorVectorF287(); ~FighterActorVectorF287();
-};
-// The +0x518..+0x6CF input-state subobject starts with the native
-// VC7.1 command deque, followed by the fighter's input/quote state.
-class FighterInputStateF287 {
-public:
-    std::deque<unsigned char> inputHistory; // +0x00: Fighter+0x518
-    signed char field52C;
-    signed char field52D;
-    signed char field52E;
-    signed char field52F;
-    signed char field530;
-    signed char field531;
-    signed char field532;
-    unsigned char unknown533;
-    void* field534;
-    unsigned char fadeAlpha;
-    unsigned char drawMode;
-    signed char quoteLineCount;
-    char quoteLines[2][200];
-    signed char quoteBadges[2];
-    unsigned char unknown6CD[3];
+#include <windows.h>
+#include <new>
+#include <string.h>
 
-    FighterInputStateF287();
-    ~FighterInputStateF287();
-    void Initialize(unsigned int count,unsigned int param);
-};
-typedef char AssertInputStateF287[(
-    offsetof(FighterInputStateF287, inputHistory) == 0x00 &&
-    offsetof(FighterInputStateF287, field52C) == 0x14 &&
-    offsetof(FighterInputStateF287, field534) == 0x1C &&
-    offsetof(FighterInputStateF287, quoteLines) == 0x23 &&
-    offsetof(FighterInputStateF287, quoteBadges) == 0x1B3 &&
-    sizeof(FighterInputStateF287) == 0x1B8) ? 1 : -1];
+ActorRenderingBase::ActorRenderingBase()
+{
+}
+
+Actor::Actor()
+{
+}
+
 void SoundBank::Configure()
 {
 }
 
-typedef char AssertPropsF287[(sizeof(FighterActorPropertiesF287)==0x194)?1:-1];
-typedef char AssertVectorF287[(sizeof(FighterActorVectorF287)==0x2c)?1:-1];
-class FighterInitF287 : public FighterBaseF287 {
-    unsigned char observedBaseGameState[0x2d0];
-    FighterActorPropertiesF287 properties;
-    FighterActorVectorF287 actors;
-    InputMapping4388D0 input;
-    unsigned char remainingFighterState4DC[0x3C];
-    FighterInputStateF287 replay;
-    SoundBank sounds;
-    unsigned char remainingFighterState6E4[0x30];
-    ScriptResource4205F0 scripts;
-public:
-    FighterInitF287();
-    virtual ~FighterInitF287();
-};
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-FighterInitF287::FighterInitF287()
+Fighter::Fighter()
 {
-    sounds.Configure();
+    soundBank.Configure();
     unsigned int scratch[7];
-    memset(scratch,0,28);
-    replay.Initialize(90,0);
-    FIELD(EffectManagerLifetimeF161*,0x2ec)=new EffectManagerLifetimeF161();
-    FIELD(EffectManagerLifetimeF161*,0x2ec)->BindFighter(reinterpret_cast<Fighter*>(this));
-    FIELD(void*,4)=0;
-    FIELD(void*,0x534)=0;
-    FIELD(void*,0x700)=0;
+    memset(scratch, 0, sizeof(scratch));
+    inputHistory.assign(90, 0);
+    field2EC = new EffectManagerLifetimeF161();
+    field2EC->BindFighter(this);
+    drawing = 0;
+    field534 = 0;
+    stageDrawing = 0;
 }
-#undef FIELD

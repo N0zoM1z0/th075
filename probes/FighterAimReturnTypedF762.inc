@@ -30,7 +30,7 @@
             }
             if ((animationStage)>10 && (animationStage)<14 && !CheckHorizontalLimits()) {
                 if (facing==1)
-                    x=(field2D8)+FloatConstants::Five;
+                    x=(cameraState.field04)+FloatConstants::Five;
                 if (facing==-1)
                     x=(field2DC)-FloatConstants::Five;
             }
@@ -40,7 +40,7 @@
                         && facing==1)
                     || ((x)>GeometryConstants::SixHundredForty
                         && facing==-1)))
-                    || (((field2D8)+FloatConstants::Five)>=x
+                    || (((cameraState.field04)+FloatConstants::Five)>=x
                         && facing==1)
                     || (((field2DC)-FloatConstants::Five)<=x
                         && facing==-1)) {

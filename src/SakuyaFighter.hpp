@@ -7,7 +7,6 @@
 class SakuyaFighter : public Fighter {
 public:
     SakuyaFighter();
-    virtual ~SakuyaFighter();
     virtual void Advance(); // slot 1: nonexact giant at 004AC040
 
     void ConfigureStage();

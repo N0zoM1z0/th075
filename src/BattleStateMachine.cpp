@@ -248,8 +248,8 @@ short BattleScene::AdvanceState()
         else if (g_StageAt0067161E >= g_ReplayRecords.fileHeader.recordCount) STATE = 6;
     }
     if (field0A0 || field0A1) {
-        inputSnapshots[0] = fighters[0]->inputBindings.state;
-        inputSnapshots[1] = fighters[1]->inputBindings.state;
+        inputSnapshots[0] = fighters[0]->inputBindings.held;
+        inputSnapshots[1] = fighters[1]->inputBindings.held;
     }
     return 0;
 }

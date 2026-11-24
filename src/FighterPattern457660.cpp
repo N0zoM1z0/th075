@@ -5,63 +5,15 @@
 #include <stdio.h>
 #include <vector>
 
-// Complete physical sourceFile-backed packedValue. The two vector element declarations
-// remain opaque; this function only constructs the externally defined owner.
-struct PatternBox16;
-struct PatternPrefix16 {
-    short field0, field2, field4, field6;
-    void* extension;
-    BYTE simple;
-    void ResetExtension();
-};
-class PatternFrame116 : public PatternPrefix16 {
-public:
-    PatternFrame116();
-    ~PatternFrame116();
-    short field16;
-    float angle;
-    short field24, field26, field28, field30, field32;
-    short field34, field36, field38, field40, field42;
-    float scale44, scale48;
-    short field52, field54, field56;
-    DWORD field60, field64;
-    BYTE serialized68[16];
-    std::vector<PatternBox16> firstBoxes, secondBoxes;
-};
-class PatternSequence20 {
-public:
-    PatternSequence20();
-    ~PatternSequence20();
-    void Clear();
-    void Assign(unsigned int, const PatternFrame116&);
-    PatternFrame116& At(unsigned int);
-    std::vector<PatternFrame116> frames;
-    short field16, field18;
-};
-typedef char PrefixSize[(sizeof(PatternPrefix16) == 16) ? 1 : -1];
-typedef char FrameSize[(sizeof(PatternFrame116) == 116) ? 1 : -1];
-typedef char SequenceSize[(sizeof(PatternSequence20) == 20) ? 1 : -1];
-typedef char FrameFirst[(offsetof(PatternFrame116, firstBoxes) == 84) ? 1 : -1];
-typedef char FrameSecond[(offsetof(PatternFrame116, secondBoxes) == 100) ? 1 : -1];
-// Pointer-only interfaces; these are never instantiated.
-class PatternSlots457660 {
-public:
-    unsigned int Size();
-    PatternSequence20*& At(unsigned int);
-    void Clear();
-    void Assign(unsigned int, PatternSequence20* const&);
-};
-class PatternBoxWriter458A10 { public: void Append(const BYTE*); };
-class FighterPattern457660 { public: void Load(); };
-#define NAME (reinterpret_cast<const char*>(this) + 196)
-#define SLOTS reinterpret_cast<PatternSlots457660*>(reinterpret_cast<char*>(this) + 1128)
-#define FRAME (SLOTS->At(patternId)->At(index))
-#define EXTENSION (*reinterpret_cast<FighterPatternExtensionBorrowF1035*>(FRAME.extension))
+#include "Fighter.hpp"
 
-void FighterPattern457660::Load() {
+#define FRAME (sequenceSlots[patternId]->frames[index])
+#define EXTENSION (*reinterpret_cast<FighterPatternExtensionBorrowF1035*>(FRAME.pose))
+
+void Fighter::LoadPattern() {
     unsigned int nRectangles;
-    BYTE boxData[16];
-    PatternFrame116 defaultFrame;
+    RECT boxData;
+    FighterFrameInfo defaultFrame;
     unsigned int nBox;
     short packedValue;
     char szFilename[MAX_PATH];
@@ -74,36 +26,36 @@ void FighterPattern457660::Load() {
     DWORD nRead;
     int iItem;
 
-    sprintf(szFilename, "data\\character\\%s\\%s.pat", NAME, NAME);
+    sprintf(szFilename, "data\\character\\%s\\%s.pat", name, name);
     sourceFile = ResourceLookupF217::FindByName("datab")->SeekNamedEntry(szFilename);
-    for (patternId = 0; patternId < SLOTS->Size(); patternId++) {
-        if (SLOTS->At(patternId)) {
-            SLOTS->At(patternId)->Clear();
-            delete SLOTS->At(patternId);
+    for (patternId = 0; patternId < sequenceSlots.size(); patternId++) {
+        if (sequenceSlots[patternId]) {
+            sequenceSlots[patternId]->frames.clear();
+            delete sequenceSlots[patternId];
         }
     }
-    SLOTS->Clear();
+    sequenceSlots.clear();
     ReadFile(sourceFile, &patternId, 4, &nRead, 0);
-    SLOTS->Assign(patternId, 0);
+    sequenceSlots.assign(patternId, 0);
     ReadFile(sourceFile, &count, 4, &nRead, 0);
     for (iItem = 0; iItem < count; iItem++) {
         ReadFile(sourceFile, &patternId, 4, &nRead, 0);
-        if (!SLOTS->At(patternId))
-            SLOTS->At(patternId) = new PatternSequence20;
-        ReadFile(sourceFile, &SLOTS->At(patternId)->field16, 2, &nRead, 0);
-        ReadFile(sourceFile, &SLOTS->At(patternId)->field18, 2, &nRead, 0);
+        if (!sequenceSlots[patternId])
+            sequenceSlots[patternId] = new FighterSequenceInfo;
+        ReadFile(sourceFile, &sequenceSlots[patternId]->targetPriority, 2, &nRead, 0);
+        ReadFile(sourceFile, &sequenceSlots[patternId]->priority, 2, &nRead, 0);
         ReadFile(sourceFile, &frameTotal, 4, &nRead, 0);
-        SLOTS->At(patternId)->Assign(frameTotal, defaultFrame);
+        sequenceSlots[patternId]->frames.assign(frameTotal, defaultFrame);
         for (index = 0; index < frameTotal; index++) {
-            ReadFile(sourceFile, &FRAME.field6, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field0, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field2, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field4, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.textureIndex, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.originX, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.originY, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.unknown04, 2, &nRead, 0);
             ReadFile(sourceFile, &frameType, 1, &nRead, 0);
             if (frameType == 0) {
-                FRAME.simple = 1;
+                FRAME.field0C = 1;
             } else if (frameType == 1) {
-                FRAME.simple = 0;
+                FRAME.field0C = 0;
             } else if (frameType == 2) {
                 // Declare this borrowed type at its real use site. Earlier
                 // native filename literals keep their original COFF symbols.
@@ -128,38 +80,38 @@ void FighterPattern457660::Load() {
                 ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
                 EXTENSION.valueAt20 = static_cast<float>(packedValue);
             }
-            ReadFile(sourceFile, &FRAME.field16, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.damage, 2, &nRead, 0);
             ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-            FRAME.angle = packedValue * 0.001f;
-            ReadFile(sourceFile, &FRAME.field24, 2, &nRead, 0);
+            FRAME.comboRateScale = packedValue * 0.001f;
+            ReadFile(sourceFile, &FRAME.field18, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.field1A, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.attackerHitStop, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.defenderHitStop, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.field20, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.field22, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.meterGain, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.field26, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.field28, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field30, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field32, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.field2A, 2, &nRead, 0);
+            ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
+            FRAME.field2C = packedValue * 0.01f;
+            ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
+            FRAME.field30 = packedValue * 0.01f;
             ReadFile(sourceFile, &FRAME.field34, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field36, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.hitEffect, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.field38, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field40, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field42, 2, &nRead, 0);
-            ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-            FRAME.scale44 = packedValue * 0.01f;
-            ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-            FRAME.scale48 = packedValue * 0.01f;
-            ReadFile(sourceFile, &FRAME.field52, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field54, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field56, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field60, 4, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field64, 4, &nRead, 0);
-            ReadFile(sourceFile, FRAME.serialized68, 16, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.flags, 4, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.attackFlags, 4, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.bodyBox, 16, &nRead, 0);
             ReadFile(sourceFile, &nRectangles, 4, &nRead, 0);
             for (nBox = 0; nBox < nRectangles; nBox++) {
-                ReadFile(sourceFile, boxData, 16, &nRead, 0);
-                reinterpret_cast<PatternBoxWriter458A10*>(&FRAME.firstBoxes)->Append(boxData);
+                ReadFile(sourceFile, &boxData, 16, &nRead, 0);
+                FRAME.hurtBoxes.push_back(boxData);
             }
             ReadFile(sourceFile, &nRectangles, 4, &nRead, 0);
             for (nBox = 0; nBox < nRectangles; nBox++) {
-                ReadFile(sourceFile, boxData, 16, &nRead, 0);
-                reinterpret_cast<PatternBoxWriter458A10*>(&FRAME.secondBoxes)->Append(boxData);
+                ReadFile(sourceFile, &boxData, 16, &nRead, 0);
+                FRAME.hitBoxes.push_back(boxData);
             }
         }
     }
@@ -167,5 +119,3 @@ void FighterPattern457660::Load() {
 
 #undef EXTENSION
 #undef FRAME
-#undef SLOTS
-#undef NAME

@@ -255,7 +255,7 @@ void SakuyaObject::Advance()
                     field07C = 0;
                     field080 = 1;
                 }
-                if (x < owner->field2D8 && field0DA < 2 &&
+                if (x < owner->cameraState.field04 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -365,7 +365,7 @@ void SakuyaObject::Advance()
                     field07C = 0;
                     field080 = 1;
                 }
-                if (x < owner->field2D8 && field0DA < 1 &&
+                if (x < owner->cameraState.field04 && field0DA < 1 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -1460,7 +1460,7 @@ void SakuyaObject::Advance()
                     field07C = 0;
                     field080 = 1;
                 }
-                if (x < owner->field2D8 && field0DA < 2 &&
+                if (x < owner->cameraState.field04 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -1852,7 +1852,7 @@ void SakuyaObject::Advance()
                     field080 = 1;
                     field0CC = 4.0f;
                 }
-                if (x < owner->field2D8 && field0DA < 1 &&
+                if (x < owner->cameraState.field04 && field0DA < 1 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -1953,7 +1953,7 @@ void SakuyaObject::Advance()
                     field07C = 0;
                     field080 = 1;
                 }
-                if (x < owner->field2D8 && field0DA < 2 &&
+                if (x < owner->cameraState.field04 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -2204,7 +2204,7 @@ void SakuyaObject::Advance()
                     field07C = 0;
                     field080 = 1;
                 }
-                if (x < owner->field2D8 && field0DA < g_OptionsModeAt006714D0 &&
+                if (x < owner->cameraState.field04 && field0DA < g_OptionsModeAt006714D0 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);

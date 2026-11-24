@@ -32,3 +32,19 @@ EffectCatalogF304::~EffectCatalogF304()
     }
     records.Clear();
 }
+
+class VectorBase16F739 {
+ unsigned int nativeWords[4];
+public:
+ VectorBase16F739();
+ ~VectorBase16F739();
+ void Clear();
+};
+class Record16F739 {
+ VectorBase16F739 child;
+public:
+ Record16F739();
+ ~Record16F739();
+};
+Record16F739::Record16F739() {child.Clear();}
+Record16F739::~Record16F739() {child.Clear();}

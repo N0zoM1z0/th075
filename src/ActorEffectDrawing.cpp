@@ -1,3 +1,4 @@
+#include "CommandListF283.hpp"
 #include "BackgroundStages.hpp"
 #include "BattleResultState.hpp"
 #include "BattleSessionState.hpp"
@@ -10,16 +11,10 @@
 class FighterDrawingF126 {
 public:
 };
-class FighterHistoryF126 {
-public:
-    void AppendElement(short, float, float, SpriteQuad40CA80, D3DVECTOR, DWORD, signed char);
-    void RemoveFrontIfPresent();
-};
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
 
 #define DRAWING reinterpret_cast<FighterDrawingF126*>(drawing)
-#define HISTORY reinterpret_cast<FighterHistoryF126*>(field480)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 
 // The history call copies a complete quad and SDK vector by value.
@@ -71,10 +66,10 @@ void Fighter::Render() {
     }
     TRANSFORM(transformedQuad)->TranslateQuad(x - facing * (frameInfo->originX), -y - (frameInfo->originY), 0);
     if (g_RenderByte0067161C == 0) {
-        HISTORY->AppendElement(frameInfo->textureIndex, x, y, transformedQuad, spriteOffset, drawColor, 1);
+        field480->AppendElement(frameInfo->textureIndex, x, y, transformedQuad, spriteOffset, drawColor, 1);
         if (g_FramePresentToggle != 0 && field47C <= 0) {
-            HISTORY->RemoveFrontIfPresent();
-            HISTORY->RemoveFrontIfPresent();
+            field480->RemoveFrontIfPresent();
+            field480->RemoveFrontIfPresent();
         }
     }
     TRANSFORM(transformedQuad)->TranslateQuad(cameraHorizontal, cameraY + 420.0f, 0);
@@ -93,7 +88,6 @@ void Fighter::Render() {
 }
 
 #undef TRANSFORM
-#undef HISTORY
 #undef DRAWING
 
 // C sine entry and pointer-only drawing view; no private owner allocation.

@@ -1,20 +1,21 @@
-#include "FighterCommandSelection454BC0.hpp"
+#include "Fighter.hpp"
+#include "CommandListF283.hpp"
 
 
-void SpriteSequenceParametersF154::SetSamplingMode(unsigned char mode)
+void CommandListF283::SetSamplingMode(unsigned char mode)
 {
-    field010 = mode;
+    this->mode = mode;
 }
 
-void SpriteSequenceParametersF154::SetColorMask(unsigned int mask)
+void CommandListF283::SetColorMask(unsigned int mask)
 {
-    field014 = mask;
+    colorMask = mask;
 }
 
 void Fighter::SetCommandSelection(
     int selection, unsigned char mode, unsigned int mask)
 {
     field47C = selection;
-    reinterpret_cast<SpriteSequenceParametersF154*>(field480)->SetSamplingMode(mode);
-    reinterpret_cast<SpriteSequenceParametersF154*>(field480)->SetColorMask(mask);
+    field480->SetSamplingMode(mode);
+    field480->SetColorMask(mask);
 }

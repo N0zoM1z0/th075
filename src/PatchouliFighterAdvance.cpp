@@ -3447,7 +3447,7 @@ void PatchouliFighter::Advance() {
                 scriptCounterF00 = 40;
             if (fieldF04 <= 0) {
                 if (facing == 1) {
-                    SpawnBattleEffect(0x38B, field2D8 - GeometryConstants::Hundred,
+                    SpawnBattleEffect(0x38B, cameraState.field04 - GeometryConstants::Hundred,
                         static_cast<float>(RecordedRange(0, 280)), facing, 1);
                 }
                 if (facing == -1) {

@@ -59,8 +59,8 @@ unsigned short BattleScene::Update()
         if (g_OptionsFlagAt00671430) g_FramePresentToggle = 1;
         else g_FramePresentToggle = static_cast<int>(!g_FramePresentToggle);
         if (!field0A0 && !field0A1) {
-            fighters[0]->inputBindings.state = inputSnapshots[0];
-            fighters[1]->inputBindings.state = inputSnapshots[1];
+            fighters[0]->inputBindings.held = inputSnapshots[0];
+            fighters[1]->inputBindings.held = inputSnapshots[1];
         }
         return 0;
     }

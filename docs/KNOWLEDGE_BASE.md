@@ -577,15 +577,20 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   `inputA == 1 || bufferedA > 0`.
 - +0x53A–0x6CC hold the win quote: the line count, two 200-byte lines from
   +0x53B and a notice badge per line from +0x6CB.
-- The fighter constructor (`FighterInitF287.cpp`, base `Actor` 00458650)
-  constructs embedded objects in this order: a 0x194-byte block at +0x2D4,
-  the sequence slots at +0x468 (0x2C bytes), the input object at +0x494
-  (0x84 bytes, the bindings are its first 0x48), a 0x1B8-byte history
-  deque at +0x518, a sound object at +0x6D0 and the script reader at
-  +0x714. The constructor then allocates the object manager at +0x2EC and
-  clears +0x04, +0x534 and +0x700. Open question: a 0x44-byte sound object
-  would cover +0x6E4–0x713, which other code uses as fighter fields (the
-  notice and script words); one of the two readings is wrong.
+- `Fighter::Fighter` at `0x004567B0` constructs the rendering and Actor
+  bases, then the 8-byte camera state at `+0x2D4`, 16-byte sequence
+  vector at `+0x468`, 72-byte input mapping at `+0x494`, 20-byte input
+  history deque at `+0x518`, 20-byte sound bank at `+0x6D0`, and script
+  resource at `+0x714`. The remaining fields between the constructor
+  call addresses belong to the fighter. Its destructor frees the same
+  sequence, history and texture owners. Native slot 5 of the Fighter
+  base table is pure while the class supplies the base destructor body
+  for derived teardown.
+- The 24-byte command history owner begins with its texture pointer.
+  Its 12-byte VC7.1 list at `+0x04` stores 164-byte sprite records.
+  The constructor, append, trim, reset and deleting destructor now
+  share that class. The renderer still uses a borrowed iterator view.
+  [Command history destructor evidence](ORIGIN_PENDING_REVIEW.md#r299--fighter-cleanup-and-paired-base-construction)
 - `RecordRoundFields` (004574D0) fills arrays at 0x32A, 0x33E, 0x370 and
   0x384 (20 entries each) and at 0x3D0, 0x400 and 0x430 (12 each), and raises
   +0x39D to the highest index used. +0x39D is therefore not a selected card,

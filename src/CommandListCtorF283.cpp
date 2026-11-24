@@ -1,23 +1,6 @@
-#include <windows.h>
-// Observed local resource-list construction at +4; the original complete
-// private command container layout and owner names remain unproven.
-class CommandQueueF283 {
-    unsigned int observedWords[3];
-public:
-    CommandQueueF283();
-    ~CommandQueueF283();
-};
-class CommandListF283 {
-    void* texture;
-    CommandQueueF283 queue;
-    unsigned char mode;
-    short capacity;
-public:
-    CommandListF283(void* source);
-    void Reset();
-    void SetCapacityAt00410FC0(short maximumEntries);
-};
-CommandListF283::CommandListF283(void* source)
+#include "CommandListF283.hpp"
+
+CommandListF283::CommandListF283(TextureManagerF198* source)
 {
     texture=source;
     capacity=15;

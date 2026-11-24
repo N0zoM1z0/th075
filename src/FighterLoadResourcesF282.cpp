@@ -8,12 +8,8 @@
 #include "SoundBank.hpp"
 #include "ScriptResource4205F0.hpp"
 
-// The command container has its own observed 24-byte allocation.
-class FighterCommandsF282 {
-    unsigned char observedBytes[24];
-public: FighterCommandsF282(FighterTextureF282* texture);
-};
-typedef char VerifyFighterCommandsF282[(sizeof(FighterCommandsF282)==24)?1:-1];
+#include "CommandListF283.hpp"
+
 extern const char g_LogSoundsAt00658E84[];
 extern const char g_SoundFileFormatAt00658E94[];
 extern const char g_CharacterMeilingAt00658EA4[];
@@ -43,9 +39,9 @@ void Fighter::LoadResources()
     DiagnosticLog::AppendString(g_LogSoundsAt00658E84);
     sprintf(filename,g_SoundFileFormatAt00658E94,tag);
     if (strcmp(name,g_CharacterMeilingAt00658EA4)==0)
-        reinterpret_cast<SoundBank*>(&soundResources)->LoadArchive(filename,g_SoundArchiveMeilingAt00658EAC);
+        soundBank.LoadArchive(filename,g_SoundArchiveMeilingAt00658EAC);
     else
-        reinterpret_cast<SoundBank*>(&soundResources)->LoadArchive(filename,g_SoundArchiveDefaultAt00658EB4);
+        soundBank.LoadArchive(filename,g_SoundArchiveDefaultAt00658EB4);
     DiagnosticLog::AppendString(g_LogPatternsAt00658EBC);
     LoadPattern();
     DiagnosticLog::AppendString(g_LogPicturesAt00658ED0);
@@ -71,7 +67,7 @@ void Fighter::LoadResources()
     sprintf(filename,g_ScriptFormatAt00658F78,name,name);
     script.LoadFile(filename,2,0);
     script.LoadArchive(filename,g_ScriptArchiveAt00658F94);
-    field480=new FighterCommandsF282(static_cast<FighterTextureF282*>(drawing));
+    field480=new CommandListF283(static_cast<TextureManagerF198*>(drawing));
     SetNoticeMode(0);
     ResetRound();
 }

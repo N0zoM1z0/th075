@@ -7,7 +7,6 @@
 class PatchouliFighter : public Fighter {
 public:
     PatchouliFighter();
-    virtual ~PatchouliFighter();
     virtual void Advance(); // Slot 1 at 004F7130.
     void ConfigureStage();
     void ChooseAction();

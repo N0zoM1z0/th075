@@ -60,7 +60,7 @@ struct NativeMirrorFrameF355 {
 #define ROTATE_FLOAT(q,x,y,z,sx,sy,sz) reinterpret_cast<FloatSpriteRotateF254*>(&(q))->RotateQuad(x,y,z,sx,sy,sz)
 #define ROTATE(q,x,y,z,sx,sy,sz) reinterpret_cast<RawSpriteRotateF254*>(&(q))->RotateQuad(x,y,z,sx,sy,sz)
 // Actor vtable slot 4: the reflection drawn below an actor.
-void Actor::RenderMirroredNode()
+void ActorRenderingBase::RenderMirroredNode()
 {
     NativeMirrorFrameF355 state;
     state.transformed.Construct();

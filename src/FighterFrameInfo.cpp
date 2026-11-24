@@ -5,7 +5,7 @@
 // 0045A980 and their shared 0045AAE0 assignment routine.
 FighterFrameInfo& FighterFrameInfo::operator=(const FighterFrameInfo& other)
 {
-    header = other.header;
+    static_cast<FighterFrameInfoHeader&>(*this) = other;
     damage = other.damage;
     comboRateScale = other.comboRateScale;
     field18 = other.field18;

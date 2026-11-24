@@ -6,7 +6,6 @@
 
 class Fighter;
 class CharacterObject;
-class FighterInitF287;
 
 // Native 0x54-byte Fighter-owned manager: one bound Fighter pointer followed
 // by four complete 20-byte VC7.1 deques of character object pointers. Fighter initialization
@@ -24,7 +23,7 @@ public:
                const void* transform, unsigned char mode);
 
 private:
-    friend class FighterInitF287;
+    friend class Fighter;
     EffectManagerLifetimeF161();
     EffectManagerLifetimeF161(const EffectManagerLifetimeF161&);
     EffectManagerLifetimeF161& operator=(const EffectManagerLifetimeF161&);

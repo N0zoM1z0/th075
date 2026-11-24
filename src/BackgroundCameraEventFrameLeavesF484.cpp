@@ -1,3 +1,4 @@
+#include "CommandListF283.hpp"
 #include "BattleEndScene.hpp"
 #include "EventQueue.hpp"
 #include "Graphics.hpp"
@@ -27,14 +28,10 @@ void CameraMotionOverrideF484::SetOverride(unsigned char active,float x,float y,
   g_CameraVerticalOverrideAt006713BC=y;
   g_CameraZoomOverrideAt006713F4=z;
 }
-class SpriteDequeF484 {public: unsigned int Size();void PopFront();};
-class SpriteSequenceF484 {
- unsigned int originalPrefixWord;
- SpriteDequeF484 deque;
-public:void RemoveFrontIfPresent();
-};
-void SpriteSequenceF484::RemoveFrontIfPresent() {
- if(deque.Size()>0) deque.PopFront();
+void CommandListF283::RemoveFrontIfPresent()
+{
+    if (queue.size() > 0)
+        queue.pop_front();
 }
 class EventContextF484 {public:EventContextF484* AcquireAndRelease();};
 EventContextF484* EventContextF484::AcquireAndRelease() {

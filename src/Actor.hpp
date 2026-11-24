@@ -30,6 +30,11 @@ typedef char RectVectorLayoutCheck[(sizeof(std::vector<tagRECT>) == 0x10) ? 1 : 
 // The first 16 bytes are copied as four words by the native memberwise
 // assignment. Keep their observed names while preserving the contiguous header.
 struct FighterFrameInfoHeader {
+    FighterFrameInfoHeader();
+    ~FighterFrameInfoHeader();
+    void ResetExtension();
+
+
     short originX;            // +0x00 sprite origin
     short originY;            // +0x02
     short unknown04;          // +0x04
@@ -51,19 +56,10 @@ struct CollisionBounds {
 typedef char CollisionBoundsLayoutCheck[(sizeof(CollisionBounds) == 0x10) ? 1 : -1];
 
 // Animation frame record (Actor+0x74, and its collision snapshot at +0xAC).
-struct FighterFrameInfo {
-    union {
-        FighterFrameInfoHeader header;
-        struct {
-            short originX;
-            short originY;
-            short unknown04;
-            short textureIndex;
-            ActorPose* pose;
-            unsigned char field0C;
-            unsigned char unknown0D[3];
-        };
-    };
+struct FighterFrameInfo : public FighterFrameInfoHeader {
+    FighterFrameInfo();
+    ~FighterFrameInfo();
+
     short damage;             // +0x10
     float comboRateScale;     // +0x14 multiplies the attacker's combo rate
     short field18;            // +0x18
@@ -101,6 +97,9 @@ typedef char FighterFrameInfoLayoutCheck[(
 // Action sequence record (Actor+0x78 and the entries of Fighter::sequenceSlots).
 // A candidate's targetPriority is compared with the current priority.
 struct FighterSequenceInfo {
+    FighterSequenceInfo();
+    ~FighterSequenceInfo();
+
     std::vector<FighterFrameInfo> frames;
     short targetPriority;     // +0x10
     short priority;           // +0x12
@@ -112,20 +111,9 @@ struct FighterSequenceInfo {
 // own members from 0xC4. unknownNNN regions are unobserved;
 // fieldNNN members are observed but not yet understood. The full object size
 // is unknown, so these classes are only reached through the game's pointers.
-class Actor {
+class ActorRenderingBase {
 public:
-    Actor();                                                        // 00458650
-
-    // Helpers shared by every actor (src/Actor.cpp).
-    short AdvanceNestedFrame();                                     // 0040FA30
-    void ResetPrimaryCounters(short state);                         // 0040FAC0
-    void SetThreeCounters(short action, short stage, short frame);  // 0040FB00
-    void ResetSecondaryCounter(short stage);                        // 0040FB40
-    void SetPolarVelocity(float angle, float speed);                // 0040FB70
-    void ResetTransform(float pivotX, float pivotY, float pivotZ);  // 0040FBB0
-    void ClearTransformFlag();                                      // 0040FC50
-    int RecordedRange(int lower, int upper);                         // 00455580: recorded/native random sample
-    void SaveCollisionFields();                                     // 00455500 snapshot for the hit tests
+    ActorRenderingBase();                                                        // 00458670
 
     // Slots shared by fighter and object vtables. Advance is pure in the
     // base fighter table (00658FE8 slot 1 is _purecall); each class's
@@ -234,6 +222,22 @@ public:
     float savedY;                       // +0x0BC
     signed char savedFacing;            // +0x0C0
     unsigned char unknown0C1[0x0C4 - 0x0C1];
+};
+
+class Actor : public ActorRenderingBase {
+public:
+    Actor();                                                        // 00458650
+
+    // Helpers shared by every actor (src/Actor.cpp).
+    short AdvanceNestedFrame();                                     // 0040FA30
+    void ResetPrimaryCounters(short state);                         // 0040FAC0
+    void SetThreeCounters(short action, short stage, short frame);  // 0040FB00
+    void ResetSecondaryCounter(short stage);                        // 0040FB40
+    void SetPolarVelocity(float angle, float speed);                // 0040FB70
+    void ResetTransform(float pivotX, float pivotY, float pivotZ);  // 0040FBB0
+    void ClearTransformFlag();                                      // 0040FC50
+    int RecordedRange(int lower, int upper);                         // 00455580: recorded/native random sample
+    void SaveCollisionFields();                                     // 00455500 snapshot for the hit tests
 };
 
 typedef char ActorLayoutCheck[(

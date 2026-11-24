@@ -1,36 +1,25 @@
-// F738 native R210/R211 authored prefix init policies; genuine used
-// 16-byte record and conditional allocation. No full historical type claim.
-#include <string.h>
+#include "Actor.hpp"
 #include <new>
-struct RecordPrefix16F738 {
- unsigned char nativePrefix[8];
- unsigned char* owned36At8;
- unsigned char initializedFlagAt12;
- unsigned char nativeTail[3];
- RecordPrefix16F738* ZeroAndSetFlag();
- void ResetAllocation36();
- ~RecordPrefix16F738();
-};
-typedef char AssertRecord16F738[(sizeof(RecordPrefix16F738)==16)?1:-1];
-RecordPrefix16F738* RecordPrefix16F738::ZeroAndSetFlag() {
+#include <string.h>
+
+FighterFrameInfoHeader::FighterFrameInfoHeader() {
  memset(this,0,16);
- owned36At8=0;
- initializedFlagAt12=1;
- return this;
+ pose=0;
+ field0C=1;
 }
-void RecordPrefix16F738::ResetAllocation36() {
- initializedFlagAt12=0;
- if (!owned36At8) {
-   unsigned char* newOwned36=static_cast<unsigned char*>(::operator new(36));
-   owned36At8=newOwned36;
+void FighterFrameInfoHeader::ResetExtension() {
+ field0C=0;
+ if (!pose) {
+   ActorPose* newPose=static_cast<ActorPose*>(::operator new(sizeof(ActorPose)));
+   pose=newPose;
  }
  // Original branch joins BEFORE memset: reused allocations are reset too.
- memset(owned36At8,0,36);
+ memset(pose,0,36);
 }
 
-RecordPrefix16F738::~RecordPrefix16F738() {
-    if (owned36At8) {
-        unsigned char* extension = owned36At8;
+FighterFrameInfoHeader::~FighterFrameInfoHeader() {
+    if (pose) {
+        ActorPose* extension = pose;
         ::operator delete(extension);
     }
 }
