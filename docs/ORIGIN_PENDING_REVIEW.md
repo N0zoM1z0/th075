@@ -402,8 +402,8 @@ The current direct-call scan is in
 | Candidates | Evidence gap |
 | --- | --- |
 | `0x0040D900`, `0x0040D940` | R308 matches the complete sprite drawing interval with the precompiled standard overloads and ordinary wrappers. R303 rules out the x87 bodies in the older SDK shape archive. |
-| `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
-| `0x004251C0` | R311 matches the 229-byte constructor suffix with explicit definitions and the 68-byte readonly interval with both forms. The full code comparison still places the Battle End deleting wrapper in the wrong slot. |
+| `0x004138D0`, `0x00441FD0` | R313 reproduces both complete surrounding intervals with ordinary functions and template instantiations. Neither body has a direct caller or an absolute pointer literal. |
+| `0x004251C0` | R311 matches the 229-byte constructor suffix with explicit definitions and the 68-byte readonly interval with both forms. In R312 the first Battle End constructor object still supplies the deleting wrapper when the ordinary destructor is defined elsewhere. |
 | `0x00438A60` | R310 preserves all 14 native caller edges with a deferred standard overload and a late ordinary wrapper. Both call the `labs` body identified by R294. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R308 matches the complete collision interval with the precompiled header, two ordinary functions, and an ordinary function calling the header worker. |
@@ -1118,6 +1118,54 @@ Neither arrangement recovers the full native order.
     scripts/repo-python .analysis/final-origin-review/scene-data-order/compare.py implicit defined-late separate separate-dtor-pch
     bash .analysis/final-origin-review/scene-derived-template/build.sh specialized extern-deferred specialized-implicit specialized-decl-pch specialized-dtor-pch member-dtor
     scripts/repo-python .analysis/final-origin-review/scene-derived-template/compare.py specialized extern-deferred specialized-implicit specialized-decl-pch specialized-dtor-pch member-dtor
+
+### R312 — The constructor object supplies the Battle End deleting wrapper
+
+The isolated Battle End constructor object emits the complete
+44-byte deleting wrapper and both call relocations even when the
+ordinary destructor is defined later. A separate destructor object
+emits another byte-equal wrapper with the same pick-any COMDAT name.
+The pinned linker chooses the constructor object's definition at
+`+0x140`. Reversing the two input objects chooses the destructor
+object's definition and moves both destructors before the constructor.
+
+Sharing the inline ordinary destructor in a precompiled header
+still puts both bodies in the constructor object. The positive
+comparisons include both complete derived constructors, the virtual
+methods, all three vtables and both unwind records. The 68-byte
+readonly span matches in all the splits. The implicit base
+constructor in the precompiled split appears at `+0x140` and breaks
+the 229-byte constructor suffix.
+
+    bash .analysis/final-origin-review/scene-wrapper-owner/build.sh split-ctor split-dtor split-pch split-pch-implicit
+    bash .analysis/final-origin-review/scene-wrapper-owner/relink.sh
+    scripts/repo-python .analysis/final-origin-review/scene-wrapper-owner/compare.py split-ctor split-dtor split-pch split-pch-implicit split-dtor-reversed
+
+### R313 — Uncalled functions retain byte-equal linked alternatives
+
+The ordinary destructor and the template member at `0x004138D0`
+both reproduce the full 711-byte replay interval
+`0x00413790..0x00413A56` with 28 relocation fields. It includes
+`BeginCapture`, the four-queue clear, the uncalled body and
+`FinalizeFile`. The two uncalled functions occupy the same
+aligned slot under debug retention.
+
+The complete 444-byte banner interval `0x00441EA0..0x0044205B`
+matches with an ordinary empty function and with the pinned
+`std::_Destroy<unsigned long>` instantiation. Both use the same
+banner, accessors, log worker and eight relocation fields. With
+the instantiation in the same object as those bodies, VC7.1 emits
+it at `+0x1B0` instead of `+0x130`. A separate instantiation
+object in the input sequence reproduces the native order.
+
+An updated local scan found 3,279 readable PDB identities that differ
+from the native RSDS record. The remaining three named files
+have program database 2.0 headers from the older VC4 runtime
+installation and do not contain the target GUID in either byte order.
+
+    bash .analysis/final-origin-review/empty-hook-windows/build.sh
+    scripts/repo-python .analysis/final-origin-review/empty-hook-windows/compare.py
+    scripts/repo-python scripts/audit-local-pdb-identities.py --root /home/pentester/coding/codex_ida --output .analysis/final-origin-review/current-pdb-identities.json
 
 ## Historical R263 inventory
 

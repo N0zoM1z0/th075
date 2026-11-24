@@ -229,6 +229,10 @@ the complete fighter cleanup interval with three list owner destructor
 forms. These candidates retain multiple origins.
 [Linked math and cleanup comparisons](ORIGIN_PENDING_REVIEW.md#r308--complete-math-and-cleanup-intervals-retain-multiple-origins)
 
+R313 links the complete replay and banner intervals with both ordinary
+and template alternatives for the two uncalled bodies.
+[Uncalled function comparisons](ORIGIN_PENDING_REVIEW.md#r313--uncalled-functions-retain-byte-equal-linked-alternatives)
+
 R307 attributes the sprite history element constructor through a
 3,113-byte interval starting at `AppendElement`. The implicit
 constructor occupies the next native method's slot even with real
@@ -245,9 +249,11 @@ R305 identifies the stage base constructor through the complete BG00a
 code interval and both adjacent vtables. R311 matches the scene's
 constructor suffix and readonly data across separate objects. Its
 member specializations also restore the ordinary destructor slot.
-The deleting wrapper remains the first mismatch in that comparison.
+R312 finds that the isolated constructor object still supplies the
+deleting wrapper when the ordinary destructor is defined elsewhere.
 [Precompiled constructor controls](ORIGIN_PENDING_REVIEW.md#r305--stage-base-constructor-follows-the-deleting-destructors)
 [Scene data and constructor order](ORIGIN_PENDING_REVIEW.md#r311--scene-constructor-suffix-matches-across-object-boundaries)
+[Selected wrapper providers](ORIGIN_PENDING_REVIEW.md#r312--the-constructor-object-supplies-the-battle-end-deleting-wrapper)
 
 R303 reproduces the full banner interval with the genuine `log10f`
 definition deferred past the progress accessors and with a late
