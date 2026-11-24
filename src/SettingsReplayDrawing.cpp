@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "OptionsScene.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -30,8 +31,8 @@ void OptionsScene::Render() {
     if (Graphics::BeginFrameValueAt00402660()) {
         SpriteQuad40CA80 quadValue;
         RECT region;
-        DRAWING->SetDepthMode(0);
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         QUAD_DRAWING->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
@@ -142,8 +143,8 @@ void ReplayBrowser42CA60::RenderList() {
         DWORD shadowColor;
         int selectionIndex;
         BYTE opacity;
-        DRAWING->SetDepthMode(0);
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         QUAD_DRAWING->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);

@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "Actor.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -8,7 +9,6 @@
 class SpriteRenderDeviceF254 {
 public:
     void GetTextureRect(int texture, RECT* result);
-    void SetTextureFilter(int value);
     void DrawQuad(int texture, const SpriteQuad40CA80&, const RECT*, DWORD);
     void DrawTintedQuad(int texture, const SpriteQuad40CA80&, const RECT*,float,float,float,DWORD);
 };
@@ -106,13 +106,13 @@ void Actor::RenderMirroredNode()
     SpriteDispatchF254::Combine(&composed,&color,&transformed);
     TRANSFORM(composed)->TranslateQuad(xShift,yOrigin+g_CameraOffsetYAt00657830+(field06C),0.0f);
     g_ActiveCameraAt00671424->CopyVector(tint);
-    DRAWER->SetTextureFilter(2);
+    reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(2);
     if (tint[0] != g_ZeroAt0065782C || tint[1] != g_ZeroAt0065782C || tint[2] != g_ZeroAt0065782C) {
         DRAWER->DrawTintedQuad(drawFrame->textureIndex,composed,&sourceRect,tint[0]+xShift,tint[1]+yOrigin,tint[2],color);
     } else {
         DRAWER->DrawQuad(drawFrame->textureIndex,composed,&sourceRect,color);
     }
-    DRAWER->SetTextureFilter(1);
+    reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(1);
 }
 #undef tint
 #undef color

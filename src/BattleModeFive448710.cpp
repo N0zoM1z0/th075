@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleModeFive448710.hpp"
 
@@ -12,7 +13,7 @@ void BattleScene::RenderModeFive() {
     {
         D3DCOLOR color;
         RECT region;
-        STYLE->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         Graphics::DrawFilledRectangle(&region, D3DCOLOR_ARGB(field0A1, 0, 0, 0));
         if (field0A1 < 50)

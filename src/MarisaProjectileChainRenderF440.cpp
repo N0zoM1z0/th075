@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "MarisaFighter.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -14,7 +15,6 @@
 // No complete original fighter/auxiliary owner layout is asserted.
 class MarisaRendererF356 {
 public:
-    void SetBlendMode(int mode);
     void DrawProjectileChain(int texture, const void* records, int count);
 };
 extern const float g_MarisaAngleStepAt00657828;
@@ -57,7 +57,7 @@ void MarisaFighter::RenderChain() {
 #define radius state.radius
     xShift=g_CombatViewOffsetX-g_MarisaCameraOffsetXAt00657834;
     yOrigin=g_CombatViewOffsetY;
-    DRAWER->SetBlendMode(2);
+    reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(2);
     for(i=1;i<=8;++i) {
         phaseA=static_cast<short>(i*0x150%40-20);
         phaseB=static_cast<short>(i*0x104%60-30);

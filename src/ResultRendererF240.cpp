@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "StaffTimeline438D00.hpp"
@@ -10,9 +11,6 @@
 // declaration of complete original scene, actor or texture ownership.
 class ResultSpriteDrawingF240 {
 public:
-    void SetDepthMode(int mode);
-    void SetBlendMode(int mode);
-    void SetTextureFilter(int mode);
     void DrawQuad(int texture, const SpriteQuad40CA80&, const RECT*, DWORD color);
 };
 // The observed native call to the accepted ScaleQuad callee transfers its
@@ -45,18 +43,18 @@ void ResultScene::Render()
         SpriteQuad40CA80 quad;
         {
         RECT region;
-        DRAWER->SetDepthMode(0);
-        DRAWER->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(0);
         SetRect(&region,0,0,640,480);
         TRANSFORM(quad)->BuildQuadFromRect(&region);
         DRAWER->DrawQuad(0,quad,&region,0xffffffff);
-        DRAWER->SetTextureFilter(2);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(2);
         SetRect(&region,0,0,640,480);
         TRANSFORM(quad)->BuildQuadFromRect(&region);
         TRANSFORM(quad)->RotateQuad(320.0f,240.0f,0.0f,PERCENT,PERCENT,PERCENT);
         reinterpret_cast<ResultRawScaleF240*>(&quad)->ScaleQuad(520.0f,360.0f,0.0f,reinterpret_cast<unsigned long&>(field014),reinterpret_cast<unsigned long&>(field014),reinterpret_cast<unsigned long&>(field014));
         g_FrameCaptureAt006714C4->Draw(quad,&region,D3DCOLOR_ARGB(static_cast<unsigned char>(g_ResultFullAlphaMultiplierAt00657CF0*field014),255,255,255));
-        DRAWER->SetTextureFilter(1);
+        reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(1);
         SetRect(&region,0,0,256,256);
         TRANSFORM(quad)->BuildQuadFromRect(&region);
         TRANSFORM(quad)->TranslateQuad(30.0f,30.0f,0.0f);

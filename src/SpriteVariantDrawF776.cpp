@@ -17,9 +17,6 @@ public:
 typedef char ScaledQuadSizeF776[(sizeof(SpriteScaledQuadF776)==132)?1:-1];
 class SpriteDrawingF776 {
 public:
-    IDirect3DTexture8* GetTexture(int);
-    void DrawBase(int texture,float x,float y,DWORD color,
-         float pivotX,float pivotY,float scale,float angle,unsigned char flags);
     void DrawVariant(int texture,float x,float y,DWORD color,
          float pivotX,float pivotY,float scale,float angle,
          unsigned char flags,unsigned char mode);
@@ -33,7 +30,7 @@ void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scale,float angle,
     unsigned char flags,unsigned char mode) {
     if (mode == 0) {
-        DrawBase(texture,x,y,color,pivotX,pivotY,scale,angle,flags);
+        reinterpret_cast<TimelineDrawing438D00*>(this)->DrawSprite(texture,x,y,color,pivotX,pivotY,scale,angle,flags);
     } else {
     SpriteScaledQuadF776 quad;
     { RECT region;
@@ -70,7 +67,7 @@ void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
         quad.third=temp;
     }
     Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&quad),
-         &region,color,GetTexture(texture));
+         &region,color,reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
     }
     }
 }

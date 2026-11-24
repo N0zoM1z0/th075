@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "PatchouliFighter.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -15,14 +16,14 @@ void PatchouliFighter::RenderStage(signed char stage)
     RECT region;
     switch (stage) {
     case 1: case 2: case 3: case 4: case 5: case 6: case 7:
-        DRAWING->SetTextureFilter(2);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(fieldF14, fieldF3C, fieldF14 + 1024.0f, fieldF3C + 32.0f);
         QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(fieldFDC, 255, 255, 255));
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(fieldF18, fieldF40, fieldF18 + 1024.0f, fieldF40 + 32.0f);
         QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(fieldFDD, 255, 255, 255));
-        DRAWING->SetTextureFilter(1);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(1);
         SetRect(&region, 0, 0, 640, 128);
         TRANSFORM(quadValue)->BuildQuad(fieldF1C, fieldF44, fieldF1C + 640.0f, fieldF44 + 128.0f);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(fieldFDE, 255, 255, 255));

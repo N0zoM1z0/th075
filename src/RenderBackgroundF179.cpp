@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -5,8 +6,6 @@
 // Ignored-result call-only view, matching the established drawing contracts.
 class BackgroundDrawingF179 {
 public:
-    void SetDepthMode(int);
-    void SetBlendMode(int);
     void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
 };
 // Reference-only observed byte views. No original names or ownership claimed.
@@ -27,8 +26,8 @@ void CharacterSelectScene::DrawCurrent()
         tint[0] = 255 - (optionsOpen[0]) * 128;
         tint[1] = 255 - (optionsOpen[1]) * 128;
         RECT clipRect;
-        (reinterpret_cast<BackgroundDrawingF179*>(menuTextures))->SetDepthMode(0);
-        (reinterpret_cast<BackgroundDrawingF179*>(menuTextures))->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(menuTextures)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(menuTextures)->SetBlendMode(0);
         SetRect(&clipRect, 0, 0, 640, 480);
         QUAD->BuildQuadFromRect(&clipRect);
         (reinterpret_cast<BackgroundDrawingF179*>(menuTextures))->DrawQuad(0, spriteQuad, &clipRect, 0xFFFFFFFF);

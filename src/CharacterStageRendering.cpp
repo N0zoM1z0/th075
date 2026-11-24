@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 
@@ -29,14 +30,14 @@ void CharacterStageRendererF122<Policy>::Render(signed char stage)
     RECT region;
     switch (stage) {
     case 1: case 2: case 3: case 4: case 5: case 6: case 7:
-        DRAWING->SetTextureFilter(2);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(FLOAT(Policy::xBase + 0), FLOAT(Policy::xBase + 40), FLOAT(Policy::xBase + 0) + 1024.0f, FLOAT(Policy::xBase + 40) + 32.0f);
         QUAD_DRAWING->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 200), 255, 255, 255));
         SetRect(&region, 0, 0, 1024, 32);
         TRANSFORM(quadValue)->BuildQuad(FLOAT(Policy::xBase + 4), FLOAT(Policy::xBase + 44), FLOAT(Policy::xBase + 4) + 1024.0f, FLOAT(Policy::xBase + 44) + 32.0f);
         QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 201), 255, 255, 255));
-        DRAWING->SetTextureFilter(1);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(1);
         SetRect(&region, 0, 0, 640, 128);
         TRANSFORM(quadValue)->BuildQuad(FLOAT(Policy::xBase + 8), FLOAT(Policy::xBase + 48), FLOAT(Policy::xBase + 8) + 640.0f, FLOAT(Policy::xBase + 48) + 128.0f);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(FIELD(unsigned char, Policy::xBase + 202), 255, 255, 255));

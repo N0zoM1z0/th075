@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <windows.h>
@@ -23,7 +24,6 @@ public:
 class SequenceRendererF261 {
 public:
     void GetTextureRect(int texture, RECT* rectangle);
-    void SetBlendMode(int mode);
     void DrawQuad(int texture, const SpriteQuad40CA80& quad, const RECT* rectangle, DWORD tint);
     void DrawProjectedQuad(int texture, const SpriteQuad40CA80& quad, const RECT* rectangle,
                            DWORD scaleXBits, DWORD scaleYBits, DWORD scaleZBits, DWORD tint);
@@ -79,9 +79,9 @@ void SpriteSequenceF261::RenderElements()
 
                 DRAWER->GetTextureRect(REC(short,it.operator->(),0),&state.rect);
                 switch(REC(unsigned char,it.operator->(),0xa0)) {
-                case 0: DRAWER->SetBlendMode(0); break;
-                case 1: DRAWER->SetBlendMode(2); break;
-                case 2: DRAWER->SetBlendMode(3); break;
+                case 0: reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(0); break;
+                case 1: reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(2); break;
+                case 2: reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(3); break;
                 }
                 QUAD=*reinterpret_cast<const SpriteQuad40CA80*>(it.operator->()+4);
                 state.tint=(((REC(DWORD,it.operator->(),0x9c)>>24)*state.counter)/field012<<24)

@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 
 // Pointer-only scene view; never instantiate or embed this incomplete owner.
@@ -18,13 +19,13 @@ void OpeningTimeline4277A0::RenderTimeline() {
         float scrollPosition;
         BYTE opacity;
         int entryIndex;
-        DRAWING->SetDepthMode(0);
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         begin = 0;
         rangeEnd = 49400;
         if (TIME >= begin && TIME < rangeEnd)
             DRAWING->DrawSprite(0, 320.0f, 240.0f, 0xFFFFFFFF, 320.0f, 240.0f, 10.0f, 0, 0);
-        DRAWING->SetTextureFilter(2);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetTextureFilter(2);
         begin = 0;
         rangeEnd = 21400;
         if (TIME >= begin && TIME < rangeEnd) {

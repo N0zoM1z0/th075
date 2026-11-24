@@ -1,3 +1,4 @@
+#include "CameraMotion.hpp"
 #include "MarisaFighter.hpp"
 #include "SakuyaFighter.hpp"
 #include "AliceFighter.hpp"
@@ -9,10 +10,6 @@
 #include "SuikaFighter.hpp"
 #include "GameLeafHelpers.hpp"
 
-namespace CameraStage470F00 {
-    void __cdecl SetOverride(unsigned char, float, float, float);
-    void __cdecl Snap();
-}
 extern signed char specialStage;
 extern signed char stageDifficulty;
 extern int stageTransitionCounter;
@@ -25,10 +22,10 @@ void MarisaFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
         stageIntroCharacter = 3;
-        CameraStage470F00::Snap();
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -47,8 +44,8 @@ void MarisaFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -67,8 +64,8 @@ void MarisaFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -89,8 +86,8 @@ void MarisaFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -111,8 +108,8 @@ void MarisaFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -134,8 +131,8 @@ void MarisaFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -158,8 +155,8 @@ void MarisaFighter::ConfigureStage() {
         opponent->field460 = 1000000;
         stageTransitionCounter = 0;
         stageTransitionMode = 0;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -209,8 +206,8 @@ void SakuyaFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -229,8 +226,8 @@ void SakuyaFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -249,8 +246,8 @@ void SakuyaFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -271,8 +268,8 @@ void SakuyaFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -293,8 +290,8 @@ void SakuyaFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -316,8 +313,8 @@ void SakuyaFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -338,8 +335,8 @@ void SakuyaFighter::ConfigureStage() {
         sequencePhase = 60;
         stageIntroCharacter = 9;
         opponent->field460 = 1000000;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -389,8 +386,8 @@ void AliceFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -409,8 +406,8 @@ void AliceFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -429,8 +426,8 @@ void AliceFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -451,8 +448,8 @@ void AliceFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -473,8 +470,8 @@ void AliceFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -496,8 +493,8 @@ void AliceFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -518,8 +515,8 @@ void AliceFighter::ConfigureStage() {
         sequencePhase = 60;
         stageIntroCharacter = 9;
         opponent->field460 = 1000000;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -569,8 +566,8 @@ void PatchouliFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -589,8 +586,8 @@ void PatchouliFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -609,8 +606,8 @@ void PatchouliFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -631,8 +628,8 @@ void PatchouliFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -653,8 +650,8 @@ void PatchouliFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -676,8 +673,8 @@ void PatchouliFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -697,9 +694,9 @@ void PatchouliFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         stageIntroCharacter = 9;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         opponent->field460 = 1000000;
-        CameraStage470F00::Snap();
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -749,8 +746,8 @@ void YoumuFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -769,8 +766,8 @@ void YoumuFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -789,8 +786,8 @@ void YoumuFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -811,8 +808,8 @@ void YoumuFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -833,8 +830,8 @@ void YoumuFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -856,8 +853,8 @@ void YoumuFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -878,9 +875,9 @@ void YoumuFighter::ConfigureStage() {
         sequencePhase = 60;
         stageIntroCharacter = 9;
         opponent->field460 = 1000000;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFE0 = 0;
@@ -930,8 +927,8 @@ void RemiliaFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFD8 = 0;
@@ -950,8 +947,8 @@ void RemiliaFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFD8 = 0;
@@ -970,8 +967,8 @@ void RemiliaFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFD8 = 0;
@@ -992,8 +989,8 @@ void RemiliaFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFD8 = 0;
@@ -1014,8 +1011,8 @@ void RemiliaFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFD8 = 0;
@@ -1037,8 +1034,8 @@ void RemiliaFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFD8 = 0;
@@ -1059,8 +1056,8 @@ void RemiliaFighter::ConfigureStage() {
         sequencePhase = 60;
         stageIntroCharacter = 9;
         opponent->field460 = 1000000;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFD8 = 0;
@@ -1110,8 +1107,8 @@ void YuyukoFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -1130,8 +1127,8 @@ void YuyukoFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -1150,8 +1147,8 @@ void YuyukoFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -1172,8 +1169,8 @@ void YuyukoFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -1194,8 +1191,8 @@ void YuyukoFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -1217,8 +1214,8 @@ void YuyukoFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -1239,8 +1236,8 @@ void YuyukoFighter::ConfigureStage() {
         sequencePhase = 60;
         stageIntroCharacter = 9;
         opponent->field460 = 1000000;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFDC = 0;
@@ -1288,10 +1285,10 @@ void YukariFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
         stageIntroCharacter = 6;
-        CameraStage470F00::Snap();
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -1310,8 +1307,8 @@ void YukariFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -1330,8 +1327,8 @@ void YukariFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -1352,8 +1349,8 @@ void YukariFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -1374,8 +1371,8 @@ void YukariFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -1397,8 +1394,8 @@ void YukariFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -1419,8 +1416,8 @@ void YukariFighter::ConfigureStage() {
         sequencePhase = 60;
         stageIntroCharacter = 9;
         opponent->field460 = 1000000;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFFC = 0;
@@ -1468,10 +1465,10 @@ void SuikaFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
         stageIntroCharacter = 9;
-        CameraStage470F00::Snap();
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -1490,8 +1487,8 @@ void SuikaFighter::ConfigureStage() {
         opponent->field460 = 100000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -1510,8 +1507,8 @@ void SuikaFighter::ConfigureStage() {
         opponent->field460 = 200000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -1532,8 +1529,8 @@ void SuikaFighter::ConfigureStage() {
         opponent->field460 = 400000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -1554,8 +1551,8 @@ void SuikaFighter::ConfigureStage() {
         opponent->field460 = 600000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -1577,8 +1574,8 @@ void SuikaFighter::ConfigureStage() {
         opponent->field460 = 800000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -1599,8 +1596,8 @@ void SuikaFighter::ConfigureStage() {
         sequencePhase = 60;
         stageIntroCharacter = 9;
         opponent->field460 = 1000000;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;

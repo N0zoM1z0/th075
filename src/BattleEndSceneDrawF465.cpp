@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "GraphicsDraw.hpp"
 #include <windows.h>
 // Independently exact entire native R053 scene draw. Original borrowed
@@ -7,8 +8,6 @@
 // render modes, 18th virtual call and 640x480 alpha-tinted screen overlay.
 class ActorDrawerF464 {
 public:
-    void SetDepthMode(int mode);
-    void SetBlendMode(int mode);
     void DrawOverlay();
 };
 class BattleActorF464 {
@@ -31,8 +30,8 @@ class BattleEndDrawF464 {public:void Draw();};
 #define ACTOR_DRAWER (*reinterpret_cast<ActorDrawerF464**>(reinterpret_cast<unsigned char*>(g_BattleEndActorAt00671418)+4))
 void BattleEndDrawF464::Draw() {
     if(GraphicsBeginAt00402660()) {
-        ACTOR_DRAWER->SetDepthMode(0);
-        ACTOR_DRAWER->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(ACTOR_DRAWER)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(ACTOR_DRAWER)->SetBlendMode(0);
         g_BattleEndActorAt00671418->DrawCharacter(g_BattleEndCharacterAt0067161E);
         if(ACTOR_FIELD(unsigned char,0x6EE))
             g_BattleEndOverlayDrawerAt0067143C->DrawOverlay();

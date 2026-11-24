@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "ResultListScene.hpp"
@@ -43,8 +44,8 @@ void MusicScene425C80::RenderList() {
         RECT iconRegion;
         int musicIndex;
         BYTE opacity;
-        DRAWING->SetDepthMode(0);
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         QUAD_DRAWING->DrawQuad(0, quadValue, &region, 0xFFFFFFFF);
@@ -143,8 +144,8 @@ void ResultListScene::Render() {
         int rankIndex;
         int entry;
         int rowLimit;
-        DRAWING->SetDepthMode(0);
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         TRANSFORM(spriteQuad)->BuildQuadFromRect(&region);
         QUAD_DRAWING->DrawQuad(0, spriteQuad, &region, 0xFFFFFFFF);
@@ -213,13 +214,13 @@ void ResultListScene::Render() {
             }
         } else {
             rowLimit = 10;
-            DRAWING->SetBlendMode(2);
+            reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2);
             for (entry = 0; entry < rowLimit; entry++) {
                 SetRect(&region, 128, 67, 130, 77);
                 TRANSFORM(spriteQuad)->BuildQuad(10.0f, static_cast<float>(entry * 32 + 70), 630.0f, static_cast<float>(entry * 32 + 80));
                 QUAD_DRAWING->DrawQuad(1, spriteQuad, &region, 0xFFFFFFFF);
             }
-            DRAWING->SetBlendMode(0);
+            reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
             rowLimit = 0;
             SetRect(&region, 0, 144, 24, 168);
             for (entry = (pageIndex) * 10;

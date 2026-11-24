@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleHud43E040.hpp"
 
@@ -21,7 +22,7 @@ void BattleScene::RenderHud() {
         int leftStateRow;
         int rightBand;
 
-        STYLE->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
         color = D3DCOLOR_ARGB(g_SequenceByteAt0066C239, 255, 255, 255);
         SetRect(&region, 0, 0, 128, 128);
         packet.BuildQuadFromRect(&region);

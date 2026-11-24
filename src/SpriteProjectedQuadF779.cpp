@@ -15,7 +15,6 @@ __declspec(align(4)) struct NativeSpriteQuadF751 {float positions[4][4]; DWORD p
 typedef char NativeSpriteQuadSizeF751[(sizeof(NativeSpriteQuadF751)==132)?1:-1];
 class SpriteDrawingF751 {
 public:
-    IDirect3DTexture8* GetTexture(int);
     void DrawProjectedQuad(int, const NativeSpriteQuadF751&, const RECT*,
                            float,float,float,DWORD);
 };
@@ -24,5 +23,5 @@ void SpriteDrawingF751::DrawProjectedQuad(int texture,
     float x,float y,float z,DWORD color) {
     NativeSpriteQuadF751 usedQuad(quad);
     Graphics::DrawProjectedTexturedQuad(usedQuad.positions,
-                                        rect,x,y,z,color,GetTexture(texture));
+                                        rect,x,y,z,color,reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
 }

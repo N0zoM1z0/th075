@@ -7,7 +7,7 @@ void SuikaFighter::AdvanceSequence()
 {
     switch (sequencePhase) {
     case 0:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
             fieldF2C = -192.0f;
@@ -82,7 +82,7 @@ void SuikaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(6);
                 fieldF28 = 0;
                 break;
@@ -111,7 +111,7 @@ void SuikaFighter::AdvanceSequence()
         }
         break;
     case 10:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
             fieldF2C = -192.0f;
@@ -186,7 +186,7 @@ void SuikaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(16);
                 fieldF28 = 0;
                 break;
@@ -215,7 +215,7 @@ void SuikaFighter::AdvanceSequence()
         }
         break;
     case 20:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
             fieldF2C = -192.0f;
@@ -290,7 +290,7 @@ void SuikaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(26);
                 fieldF28 = 0;
                 break;
@@ -320,7 +320,7 @@ void SuikaFighter::AdvanceSequence()
         }
         break;
     case 30:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
             fieldF2C = -192.0f;
@@ -395,7 +395,7 @@ void SuikaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(36);
                 fieldF28 = 0;
                 break;
@@ -424,7 +424,7 @@ void SuikaFighter::AdvanceSequence()
         }
         break;
     case 40:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
             fieldF2C = -192.0f;
@@ -517,7 +517,7 @@ void SuikaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(46);
                 fieldF28 = 0;
                 break;
@@ -546,7 +546,7 @@ void SuikaFighter::AdvanceSequence()
         }
         break;
     case 50:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
             fieldF2C = -192.0f;
@@ -639,7 +639,7 @@ void SuikaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(56);
                 fieldF28 = 0;
                 break;
@@ -719,7 +719,7 @@ void SuikaFighter::AdvanceSequence()
         ++fieldF28;
         break;
     case 61:
-        SequenceCamera::SetOverride(1, 0.0f, 320 - fieldF28, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320 - fieldF28, 320.0f);
         fieldF28 = fieldF28 + 1;
         if (fieldF28 >= 320) {
             SetNoticeMode(62);
@@ -727,7 +727,7 @@ void SuikaFighter::AdvanceSequence()
         }
         break;
     case 62:
-        SequenceCamera::SetOverride(1, 0.0f, 0.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 0.0f, 320.0f);
         InitializeNotice(14);
         SetNoticeMode(63);
         break;
@@ -742,7 +742,7 @@ void SuikaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(64);
                 fieldF28 = 0;
                 g_StateFadeAlpha = 0;

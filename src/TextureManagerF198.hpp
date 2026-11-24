@@ -29,7 +29,12 @@ public:
     void AllocateUnformattedSlots(int count);
     void LoadDefault(const char* filename, const char* archiveName);
     void Load(const char* filename, signed char selectedPalette, const char* archiveName);
+    void Present();
     void SetBlendMode(int mode);
+    void SetDepthMode(int mode);
+    void SetTextureFilter(int mode);
+    void SetPixelShaderMode(signed char mode);
+    void SetColorMultiplier(float multiplier);
 };
 
 typedef char AssertTextureManager80F198[

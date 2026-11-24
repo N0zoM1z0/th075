@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleTimeline447340.hpp"
 
@@ -8,8 +9,8 @@
 
 void BattleScene::RenderOverlayTimeline() {
     RenderQuadPacket5E68C0 packet;
-    STYLE->SetDepthMode(0);
-    STYLE->SetBlendMode(0);
+    reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
+    reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
     switch (field064) {
         RECT rect;
     case 0:
@@ -48,10 +49,10 @@ void BattleScene::RenderOverlayTimeline() {
             SetRect(&rect, 0, 0, 512, 64);
             packet.BuildQuad(64.0f, 208.0f, 576.0f, 272.0f);
             QUAD->Scale(320.0f, 240.0f, 0.0f, field080 + 1.2f, field080 + 1.2f, 1.0f);
-            STYLE->SetBlendMode(2);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(2);
             DRAWING->DrawQuad(6, &packet, &rect,
                 D3DCOLOR_ARGB(255 - static_cast<unsigned char>(field080 * 40.0f), 255, 255, 255));
-            STYLE->SetBlendMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
         }
         if (field060 <= 75 && field07C > -300.0f) {
             SetRect(&rect, 0, 0, 512, 128);
@@ -70,10 +71,10 @@ void BattleScene::RenderOverlayTimeline() {
             SetRect(&rect, 0, 0, 256, 256);
             packet.BuildQuad(192.0f, 112.0f, 448.0f, 368.0f);
             QUAD->Scale(320.0f, 240.0f, 0.0f, field088, field088, 1.0f);
-            STYLE->SetBlendMode(2);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(2);
             DRAWING->DrawQuad(2, &packet, &rect,
                 D3DCOLOR_ARGB(255 - static_cast<unsigned char>(field088 * 60.0f), 255, 255, 255));
-            STYLE->SetBlendMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
         }
         break;
     case 1:
@@ -112,10 +113,10 @@ void BattleScene::RenderOverlayTimeline() {
             SetRect(&rect, 0, 0, 256, 256);
             packet.BuildQuad(192.0f, 112.0f, 448.0f, 368.0f);
             QUAD->Scale(320.0f, 240.0f, 0.0f, field088, field088, 1.0f);
-            STYLE->SetBlendMode(2);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(2);
             DRAWING->DrawQuad(2, &packet, &rect,
                 D3DCOLOR_ARGB(255 - static_cast<unsigned char>(field088 * 60.0f), 255, 255, 255));
-            STYLE->SetBlendMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
         }
     }
 }

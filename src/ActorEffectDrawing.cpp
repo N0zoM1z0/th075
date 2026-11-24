@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "Fighter.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -6,8 +7,6 @@
 class FighterDrawingF126 {
 public:
     void GetTextureRect(int, RECT*);
-    void SetBlendMode(int);
-    void SetPixelShaderMode(signed char);
     void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
     void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
 };
@@ -41,9 +40,9 @@ void Fighter::Render() {
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (frameInfo->pose != 0) {
         switch (frameInfo->pose->blendMode) {
-        case 0: DRAWING->SetBlendMode(0); break;
-        case 1: DRAWING->SetBlendMode(2); break;
-        case 2: DRAWING->SetBlendMode(3); break;
+        case 0: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0); break;
+        case 1: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2); break;
+        case 2: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(3); break;
         }
         TRANSFORM(transformedQuad)->ScaleQuad(frameInfo->originX, frameInfo->originY, 0, frameInfo->pose->scaleX, frameInfo->pose->scaleY, frameInfo->pose->scaleZ);
         TRANSFORM(transformedQuad)->RotateQuad(frameInfo->originX, frameInfo->originY, 0, frameInfo->pose->rotationX, frameInfo->pose->rotationY, frameInfo->pose->rotationZ);
@@ -56,13 +55,13 @@ void Fighter::Render() {
         spriteOffset.x = 0.0f;
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         if (frameInfo->field0C != 0)
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
     if (field040 != 0) {
-        if (field010 & 0x80) DRAWING->SetPixelShaderMode(0);
+        if (field010 & 0x80) reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(0);
         TRANSFORM(transformedQuad)->ScaleQuad(facing * ((frameInfo->originX) + pivotX),
             (frameInfo->originY) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
         TRANSFORM(transformedQuad)->RotateQuad(facing * ((frameInfo->originX) + pivotX),
@@ -86,13 +85,13 @@ void Fighter::Render() {
     else
         DRAWING->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
     if (field484 > 0) {
-        DRAWING->SetBlendMode(2);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2);
         if (spriteOffset.x != 0.0f || spriteOffset.y != 0.0f || spriteOffset.z != 0.0f)
             DRAWING->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
         else
             DRAWING->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
     }
-    DRAWING->SetPixelShaderMode(-1);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(-1);
 }
 
 #undef TRANSFORM
@@ -104,10 +103,6 @@ extern "C" double __cdecl sin(double);
 class EffectPattern44E930 { public: void Render(); };
 class EffectDrawingF126 {
 public:
-    void SetDepthEnabled(int);
-    void SetBlendMode(int);
-    void SetFilterMode(int);
-    void DrawSprite(int, float, float, DWORD, float, float, float, float, unsigned char);
     void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
 };
 #define EFFECT_INT(offset) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this) + (offset)))
@@ -140,16 +135,16 @@ void EffectPattern44E930::Render() {
     if (firstImageIndex + 3 >= 18) frameIndexSecond = firstImageIndex - 11;
     if (firstImageIndex + 7 >= 18) spriteIndexThird = firstImageIndex - 7;
     if (firstImageIndex + 11 >= 18) fourthImageIndex = firstImageIndex - 3;
-    EFFECT_DRAWING->SetDepthEnabled(0);
-    EFFECT_DRAWING->SetBlendMode(0);
-    EFFECT_DRAWING->DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(1, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 150.0, 0xFFFFFFFF, 700.0f, 200.0f, 1.0f, 0.0f, 0);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetDepthMode(0);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(1, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 150.0, 0xFFFFFFFF, 700.0f, 200.0f, 1.0f, 0.0f, 0);
     stripCount = static_cast<int>((1536.0 - EFFECT_INT(0x68) * 0.4) / 384.0);
     rectangle.left = 0;
     rectangle.top = 0;
     rectangle.right = stripCount * 128;
     rectangle.bottom = 128;
-    EFFECT_DRAWING->SetFilterMode(2);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);
     SpriteQuad40CA80 spriteQuadFirst(0, 0, stripCount * 128 * 3, 256.0f);
     TRANSFORM(spriteQuadFirst)->TranslateQuad(cameraHorizontal * 0.75 + EFFECT_INT(0x68) * 0.4, cameraY * 0.75 + 160.0, 0);
     EFFECT_DRAWING->DrawProjectedQuad(3, spriteQuadFirst, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
@@ -160,25 +155,25 @@ void EffectPattern44E930::Render() {
     SpriteQuad40CA80 secondStrip(0, 0, (5 - stripCount) * 128 * 3, 256.0f);
     TRANSFORM(secondStrip)->TranslateQuad(cameraHorizontal * 0.75 + EFFECT_INT(0x68) * 0.4 - (5 - stripCount) * 128 * 3, cameraY * 0.75 + 160.0, 0);
     EFFECT_DRAWING->DrawProjectedQuad(3, secondStrip, &rectangle, 320.0f, 240.0f, 1500.0f, 0x7FFFFFFF);
-    EFFECT_DRAWING->SetFilterMode(1);
-    EFFECT_DRAWING->SetBlendMode(2);
-    EFFECT_DRAWING->SetFilterMode(2);
-    EFFECT_DRAWING->DrawSprite(frameIndexSecond, cameraHorizontal - 260, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.6f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(spriteIndexThird, cameraHorizontal + 680, cameraY + 170 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    EFFECT_DRAWING->SetFilterMode(1);
-    EFFECT_DRAWING->SetBlendMode(0);
-    EFFECT_DRAWING->DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0.0f, 0);
-    EFFECT_DRAWING->SetBlendMode(2);
-    EFFECT_DRAWING->SetFilterMode(2);
-    EFFECT_DRAWING->DrawSprite(fourthImageIndex, cameraHorizontal - 250, cameraY + 240 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 1.1f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(spriteIndexThird, cameraHorizontal - 150, cameraY + 200 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(firstImageIndex, cameraHorizontal + 150, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(spriteIndexThird, cameraHorizontal + 360, cameraY + 190 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(firstImageIndex, cameraHorizontal + 450, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(frameIndexSecond, cameraHorizontal + 650, cameraY + 230 + verticalWaveTwo, 0x87FFFFFF, 32.0f, 64.0f, 1.3f, 0.0f, 0);
-    EFFECT_DRAWING->DrawSprite(spriteIndexThird, cameraHorizontal + 760, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
-    EFFECT_DRAWING->SetFilterMode(1);
-    EFFECT_DRAWING->SetBlendMode(0);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(1);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(2);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(frameIndexSecond, cameraHorizontal - 260, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.6f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal + 680, cameraY + 170 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(1);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(0, cameraHorizontal + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0.0f, 0);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(2);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(2);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(fourthImageIndex, cameraHorizontal - 250, cameraY + 240 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 1.1f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal - 150, cameraY + 200 + verticalShiftThree, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(firstImageIndex, cameraHorizontal + 150, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal + 360, cameraY + 190 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(firstImageIndex, cameraHorizontal + 450, cameraY + 200 + oscillationOne, 0x87FFFFFF, 32.0f, 64.0f, 1.0f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(frameIndexSecond, cameraHorizontal + 650, cameraY + 230 + verticalWaveTwo, 0x87FFFFFF, 32.0f, 64.0f, 1.3f, 0.0f, 0);
+    reinterpret_cast<TimelineDrawing438D00*>(EFFECT_DRAWING)->DrawSprite(spriteIndexThird, cameraHorizontal + 760, cameraY + 200 + verticalWaveFour, 0x87FFFFFF, 32.0f, 64.0f, 0.8f, 0.0f, 0);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetTextureFilter(1);
+    reinterpret_cast<TextureManagerF198*>(EFFECT_DRAWING)->SetBlendMode(0);
 }
 #undef TRANSFORM
 #undef EFFECT_DRAWING

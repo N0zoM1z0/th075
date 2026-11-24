@@ -1,10 +1,7 @@
+#include "CameraMotion.hpp"
 #include "ReimuFighter.hpp"
 #include "GameLeafHelpers.hpp"
 
-namespace CameraStage470F00 {
-    void __cdecl SetOverride(unsigned char, float, float, float);
-    void __cdecl Snap();
-}
 extern signed char specialStage;
 extern signed char stageDifficulty;
 extern int stageTransitionCounter;
@@ -17,10 +14,10 @@ void ReimuFighter::ConfigureStage() {
         opponent->field460 = 50000;
         stageTransitionCounter = 0;
         stageTransitionMode = -1;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
         stageIntroCharacter = 1;
-        CameraStage470F00::Snap();
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -39,8 +36,8 @@ void ReimuFighter::ConfigureStage() {
         stageTransitionMode = -1;
         sequencePhase = 10;
         stageIntroCharacter = 13;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -59,8 +56,8 @@ void ReimuFighter::ConfigureStage() {
         stageTransitionMode = -1;
         sequencePhase = 20;
         stageIntroCharacter = 0;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -81,8 +78,8 @@ void ReimuFighter::ConfigureStage() {
         stageTransitionMode = -1;
         sequencePhase = 30;
         stageIntroCharacter = 6;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -103,8 +100,8 @@ void ReimuFighter::ConfigureStage() {
         stageTransitionMode = -1;
         sequencePhase = 40;
         stageIntroCharacter = 6;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -126,8 +123,8 @@ void ReimuFighter::ConfigureStage() {
         stageTransitionMode = -1;
         sequencePhase = 50;
         stageIntroCharacter = 20;
-        CameraStage470F00::SetOverride(1, 0.0f, 120.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
         fieldFF4 = 0;
@@ -148,8 +145,8 @@ void ReimuFighter::ConfigureStage() {
         opponent->field460 = 1000000;
         sequencePhase = 60;
         stageIntroCharacter = 9;
-        CameraStage470F00::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        CameraStage470F00::Snap();
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
+        CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
         fieldFF4 = 0;

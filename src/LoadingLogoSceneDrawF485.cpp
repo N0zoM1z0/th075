@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 // Independently complete original native Loading/Logo scene draw routines.
 // The borrowed DrawQuad::ConstructNative() is the original 0040D990
@@ -20,8 +21,6 @@ struct DrawFrameF470 {RECT rectangle; DrawQuadF470 quad;};
 typedef char CheckFrame152F470[(sizeof(DrawFrameF470)==152)?1:-1];
 class SceneTextureDrawerF470 {
 public:
- void SetDepthMode(int);
- void SetBlendMode(int);
  void DrawQuad(int,const DrawQuadF470*,const RECT*,unsigned int);
 };
 extern unsigned char __cdecl GraphicsBeginAt00402660();
@@ -40,8 +39,8 @@ void LoadingSceneDrawF470::Draw() {
  if(GraphicsBeginAt00402660()) {
     DrawFrameF470 frame;
     frame.quad.ConstructNative();
-    drawer->SetDepthMode(0);
-    drawer->SetBlendMode(0);
+    reinterpret_cast<TextureManagerF198*>(drawer)->SetDepthMode(0);
+    reinterpret_cast<TextureManagerF198*>(drawer)->SetBlendMode(0);
     SetRect(&frame.rectangle,0,0,640,480);
     frame.quad.BuildQuadFromRect(&frame.rectangle);
     drawer->DrawQuad(0,&frame.quad,&frame.rectangle,0xffffffff);
@@ -52,8 +51,8 @@ void LogoSceneDrawF470::Draw() {
  if(GraphicsBeginAt00402660()) {
     DrawFrameF470 frame;
     frame.quad.ConstructNative();
-    drawer->SetDepthMode(0);
-    drawer->SetBlendMode(0);
+    reinterpret_cast<TextureManagerF198*>(drawer)->SetDepthMode(0);
+    reinterpret_cast<TextureManagerF198*>(drawer)->SetBlendMode(0);
     SetRect(&frame.rectangle,0,0,640,480);
     frame.quad.BuildQuadFromRect(&frame.rectangle);
     drawer->DrawQuad(0,&frame.quad,&frame.rectangle,0xffffffff);

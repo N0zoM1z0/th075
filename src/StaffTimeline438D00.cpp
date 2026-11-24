@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "StaffTimeline438D00.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
@@ -11,13 +12,13 @@ void StaffTimeline438D00::RenderTimeline() {
         float offset;
         {
             unsigned char alpha;
-            DRAW->SetDepthMode(0);
-            DRAW->SetBlendMode(0);
+            reinterpret_cast<TextureManagerF198*>(DRAW)->SetDepthMode(0);
+            reinterpret_cast<TextureManagerF198*>(DRAW)->SetBlendMode(0);
             begin = 0;
             end = 7900;
             if (TICK >= begin && TICK < end)
                 DRAW->DrawSprite(0, 320.0f, 240.0f, 0xFFFFFFFF, 320.0f, 240.0f, 10.0f, 0.0f, 0);
-            DRAW->SetTextureFilter(2);
+            reinterpret_cast<TextureManagerF198*>(DRAW)->SetTextureFilter(2);
             begin = 1000;
             end = 5300;
             if (TICK >= begin && TICK < end) {
@@ -47,12 +48,12 @@ void StaffTimeline438D00::RenderTimeline() {
             end = 8500;
             if (TICK >= begin && TICK < end) {
                 offset = -float(TICK - begin) / float(end - begin) * 64.0f * 16.0f * 4.0f;
-                DRAW->SetTextureFilter(1);
+                reinterpret_cast<TextureManagerF198*>(DRAW)->SetTextureFilter(1);
                 DRAW->DrawSprite(2, 320.0f, offset + 480.0f, 0xFFFFFFFF, 512.0f, 0.0f, 16.0f, 0.0f, 0);
                 DRAW->DrawSprite(3, 320.0f, offset + 480.0f + 1024.0f, 0xFFFFFFFF, 512.0f, 0.0f, 16.0f, 0.0f, 0);
                 DRAW->DrawSprite(4, 320.0f, offset + 480.0f + 2048.0f, 0xFFFFFFFF, 512.0f, 0.0f, 16.0f, 0.0f, 0);
                 DRAW->DrawSprite(5, 320.0f, offset + 480.0f + 3072.0f, 0xFFFFFFFF, 512.0f, 0.0f, 16.0f, 0.0f, 0);
-                DRAW->SetTextureFilter(2);
+                reinterpret_cast<TextureManagerF198*>(DRAW)->SetTextureFilter(2);
             }
             begin = 7900;
             end = 8000;
@@ -172,7 +173,7 @@ void StaffTimeline438D00::RenderTimeline() {
             end = 90000;
             if (TICK >= begin)
                 DRAW->DrawSprite(22, 320.0f, 280.0f, 0xFFFFFFFF, 32.0f, 16.0f, 1.0f, 0.0f, 0);
-            DRAW->SetTextureFilter(1);
+            reinterpret_cast<TextureManagerF198*>(DRAW)->SetTextureFilter(1);
             Graphics::EndFrame();
         }
     }

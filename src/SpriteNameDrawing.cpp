@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "CharacterObject.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -7,8 +8,6 @@
 class NodeDrawingF129 {
 public:
     void GetTextureRect(int, RECT*);
-    void SetBlendMode(int);
-    void SetPixelShaderMode(signed char);
     void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
     void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
 };
@@ -30,9 +29,9 @@ void CharacterObject::Render() {
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (drawFrame->pose != 0) {
         switch (drawFrame->pose->blendMode) {
-        case 0: DRAWING->SetBlendMode(0); break;
-        case 1: DRAWING->SetBlendMode(2); break;
-        case 2: DRAWING->SetBlendMode(3); break;
+        case 0: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0); break;
+        case 1: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2); break;
+        case 2: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(3); break;
         }
         TRANSFORM(transformedQuad)->ScaleQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->scaleX, drawFrame->pose->scaleY, drawFrame->pose->scaleZ);
         TRANSFORM(transformedQuad)->RotateQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->rotationX, drawFrame->pose->rotationY, drawFrame->pose->rotationZ);
@@ -45,13 +44,13 @@ void CharacterObject::Render() {
         spriteOffset.x = 0.0f;
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         if (drawFrame->field0C != 0)
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, (facing) * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
     if (field040 != 0) {
-        if (field010 & 0x80) DRAWING->SetPixelShaderMode(0);
+        if (field010 & 0x80) reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(0);
         TRANSFORM(transformedQuad)->ScaleQuad((facing) * ((drawFrame->originX) + pivotX),
             (drawFrame->originY) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
         TRANSFORM(transformedQuad)->RotateQuad((facing) * ((drawFrame->originX) + pivotX),
@@ -68,7 +67,7 @@ void CharacterObject::Render() {
             cameraHorizontal + x + spriteOffset.x, cameraY + 420.0f - y + spriteOffset.y, spriteOffset.z, drawColor);
     else
         DRAWING->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
-    DRAWING->SetPixelShaderMode(-1);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(-1);
 }
 
 // Actor vtable slot 3.
@@ -81,9 +80,9 @@ void Actor::RenderNode() {
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (drawFrame->pose != 0) {
         switch (drawFrame->pose->blendMode) {
-        case 0: DRAWING->SetBlendMode(0); break;
-        case 1: DRAWING->SetBlendMode(2); break;
-        case 2: DRAWING->SetBlendMode(3); break;
+        case 0: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0); break;
+        case 1: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2); break;
+        case 2: reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(3); break;
         }
         TRANSFORM(transformedQuad)->ScaleQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->scaleX, drawFrame->pose->scaleY, drawFrame->pose->scaleZ);
         TRANSFORM(transformedQuad)->RotateQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->rotationX, drawFrame->pose->rotationY, drawFrame->pose->rotationZ);
@@ -96,13 +95,13 @@ void Actor::RenderNode() {
         spriteOffset.x = 0.0f;
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
-        DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
         if (drawFrame->field0C != 0)
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, (facing) * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
     if (field040 != 0) {
-        if (field010 & 0x80) DRAWING->SetPixelShaderMode(0);
+        if (field010 & 0x80) reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(0);
         TRANSFORM(transformedQuad)->ScaleQuad((facing) * ((drawFrame->originX) + pivotX),
             (drawFrame->originY) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
         TRANSFORM(transformedQuad)->RotateQuad((facing) * ((drawFrame->originX) + pivotX),
@@ -118,7 +117,7 @@ void Actor::RenderNode() {
             spriteOffset.x + x, spriteOffset.y + y, spriteOffset.z, drawColor);
     else
         DRAWING->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
-    DRAWING->SetPixelShaderMode(-1);
+    reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(-1);
 }
 
 #undef DRAWING
@@ -128,8 +127,6 @@ void Actor::RenderNode() {
 #define SLOT(type, offset) (*reinterpret_cast<type*>(SLOT_ADDRESS(offset)))
 class NameDrawingF129 {
 public:
-    void SetDepthMode(int);
-    void SetBlendMode(int);
     void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
 };
 #define NAME_DRAWING reinterpret_cast<NameDrawingF129*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0x8)))
@@ -174,8 +171,8 @@ void NameEntryPlayerF129::Render() {
     if (Graphics::BeginFrameValueAt00402660()) {
         SpriteQuad40CA80 transformedQuad;
         float pulseScale = CameraSineAt0040D940(timeGetTime() / 100.0f) * 0.25f + 1.25f;
-        NAME_DRAWING->SetDepthMode(0);
-        NAME_DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->SetBlendMode(0);
         RECT textureRect;
         SetRect(&textureRect, 0, 0, 640, 480);
         TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
@@ -221,8 +218,8 @@ void NameEntrySharedF129::Render() {
     if (Graphics::BeginFrameValueAt00402660()) {
         SpriteQuad40CA80 transformedQuad;
         float pulseScale = CameraSineAt0040D940(timeGetTime() / 100.0f) * 0.25f + 1.25f;
-        NAME_DRAWING->SetDepthMode(0);
-        NAME_DRAWING->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->SetBlendMode(0);
         RECT textureRect;
         SetRect(&textureRect, 0, 0, 640, 480);
         TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);

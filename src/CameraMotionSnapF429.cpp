@@ -1,3 +1,5 @@
+#include "CameraMotion.hpp"
+
 // Independent complete original game camera snap policy: true camera mode,
 // borrowed globals and original camera offsets, without owner class guesses.
 extern unsigned char g_CameraOverrideEnabledAt00671414;
@@ -13,7 +15,6 @@ extern float g_CameraZoomOverrideAt006713F4;
 extern float g_CameraZoomTargetAt006713C0;
 extern float g_CombatViewSpan;
 extern const float g_CameraYOffsetAt0065784C = 300.0f;
-namespace CameraSnapF429 {void Snap();}
 void CameraSnapF429::Snap() {
  if (g_CameraOverrideEnabledAt00671414) {
    g_CombatViewOffsetX=g_CameraHorizontalOverrideAt006713E8;

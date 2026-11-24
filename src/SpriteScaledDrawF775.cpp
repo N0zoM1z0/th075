@@ -17,7 +17,6 @@ public:
 typedef char ScaledQuadSizeF775[(sizeof(SpriteScaledQuadF775)==132)?1:-1];
 class SpriteDrawingF775 {
 public:
-    IDirect3DTexture8* GetTexture(int);
     void DrawScaled(int texture,float x,float y,DWORD color,
          float pivotX,float pivotY,float scaleX,float scaleY,
          float angle,unsigned char flags);
@@ -64,7 +63,7 @@ void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
         quad.third=temp;
     }
     Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&quad),
-         &region,color,GetTexture(texture));
+         &region,color,reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
     }
 }
 #undef ENTRY

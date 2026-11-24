@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleDamageFlash4406C0.hpp"
 
@@ -11,7 +12,7 @@ void BattleScene::RenderDamageFlash() {
     D3DCOLOR color;
     RECT region;
     unsigned char component;
-    STYLE->SetBlendMode(0);
+    reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
     x = g_CombatViewOffsetX - 160.0f;
     screenY = g_CombatViewOffsetY;
     if ((fighters[0]->frameInfo->flags & 0x100000) == 0 && fighters[0]->health > 0 &&

@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleRender43D9D0.hpp"
 #include "EffectManagerLifetimeF161.hpp"
@@ -30,22 +31,22 @@ void BattleScene::Render() {
         ((((320.0f - g_CombatViewSpan) * 0.0f) / 320.0f) * 280.0f) / 2.0f);
     if (BeginGraphicsFrameWithStatusAt00402660()) {
         if (g_FramePresentToggle) {
-            STYLE->SetColorMultiplier(field09C);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
             g_DrawDispatcher->Slot4();
-            STYLE->SetDepthMode(0);
-            STYLE->SetDepthMode(3);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(3);
             fighters[0]->field2EC->DispatchAll();
             fighters[1]->field2EC->DispatchAll();
             reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMirrored();
             reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMirrored();
-            STYLE->SetColorMultiplier(1.0f);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
             g_DrawDispatcher->Slot3();
-            STYLE->SetDepthMode(0);
-            STYLE->SetDepthMode(3);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(3);
             fighters[0]->field2EC->DispatchSelected(2);
             fighters[1]->field2EC->DispatchSelected(2);
-            STYLE->SetDepthMode(1);
-            STYLE->SetDepthMode(2);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(1);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(2);
             reinterpret_cast<RenderSequence43D9D0*>(fighters[0]->field480)->RenderElements();
             reinterpret_cast<RenderSequence43D9D0*>(fighters[1]->field480)->RenderElements();
             AUX->DispatchSelected(0);
@@ -65,10 +66,10 @@ void BattleScene::Render() {
             fighters[0]->field2EC->DispatchSelected(1);
             fighters[1]->field2EC->DispatchSelected(1);
             AUX->DispatchSelected(1);
-            STYLE->SetColorMultiplier(field09C);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
             g_DrawDispatcher->Slot2();
-            STYLE->SetColorMultiplier(1.0f);
-            STYLE->SetDepthMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
             if (g_OptionsFlagAt00671428)
                 RenderDamageFlash();
         }
@@ -76,7 +77,7 @@ void BattleScene::Render() {
         if (g_StateFadeAlpha > 0) {
             RECT rectangle;
             SetRect(&rectangle, 0, 0, 640, 480);
-            STYLE->SetBlendMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
             Graphics::DrawFilledRectangle(&rectangle,
                 (static_cast<D3DCOLOR>(g_StateFadeAlpha) << 24) | g_StateResetCounter);
         }

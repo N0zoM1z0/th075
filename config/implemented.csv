@@ -943,11 +943,11 @@ GameProgress::IncrementSelectedRecord
 CombatCoordinateView::MapWorldToScreenAt00455770
 FontSurface::IsDoubleByteAt0041CA30
 InputMappingF735::ReleaseClient
-TextureManagerF735::Present
-TextureManagerF735::SetDepthMode
-TextureManagerF735::SetTextureFilter
-TextureManagerF735::SetPixelShaderMode
-TextureManagerF735::SetColorMultiplier
+TextureManagerF198::Present
+TextureManagerF198::SetDepthMode
+TextureManagerF198::SetTextureFilter
+TextureManagerF198::SetPixelShaderMode
+TextureManagerF198::SetColorMultiplier
 TextureManagerSlotsF736::ClearSlots
 TextureManagerF198::SetBlendMode
 SpriteTexturesF736::DrawProjectedTriangleStrip

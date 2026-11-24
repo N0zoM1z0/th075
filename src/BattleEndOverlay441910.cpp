@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleEndOverlay441910.hpp"
 
@@ -14,7 +15,7 @@ void BattleScene::RenderEndOverlay() {
         RenderQuadPacket5E68C0 packet;
         {
             RECT rect;
-            STYLE->SetBlendMode(0);
+            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
             SetRect(&rect, 0, 0, 640, 480);
             Graphics::DrawFilledRectangle(&rect, D3DCOLOR_ARGB(field0A1, 0, 0, 0));
             if (field0A1 < 50)

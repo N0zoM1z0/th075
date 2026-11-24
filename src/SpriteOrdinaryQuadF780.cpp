@@ -17,15 +17,14 @@ typedef char LocalDrawContextSizeF780[(sizeof(LocalDrawContextF780)==140)?1:-1];
 class SpriteEntryVectorF780 { public: int size() const; };
 class SpriteDrawingF780 {
 public:
-    IDirect3DTexture8* GetTexture(int);
     void DrawQuad(int, const NativeSpriteQuadF780&, const RECT*, DWORD);
 };
 void SpriteDrawingF780::DrawQuad(int texture,
     const NativeSpriteQuadF780& quad, const RECT* rect, DWORD color) {
     LocalDrawContextF780 scratch;
-    scratch.texture = GetTexture(texture); // Original prior texture lookup (EBP-8).
+    scratch.texture = reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture); // Original prior texture lookup (EBP-8).
     scratch.count = reinterpret_cast<const SpriteEntryVectorF780*>(
         reinterpret_cast<const char*>(this)+8)->size(); // Original size query (EBP-4).
     scratch.quad = quad;
-    Graphics::DrawTexturedQuad(scratch.quad.positions, rect, color, GetTexture(texture));
+    Graphics::DrawTexturedQuad(scratch.quad.positions, rect, color, reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
 }

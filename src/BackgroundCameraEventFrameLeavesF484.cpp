@@ -1,4 +1,5 @@
 #include "Graphics.hpp"
+#include "CameraMotion.hpp"
 #include "TextureManagerF198.hpp"
 // Native actual background base lifetime: vtable and borrowed +0x18
 // resource member destroyed by the compiler, no guessed private fields.
@@ -14,9 +15,6 @@ extern unsigned char g_CameraOverrideEnabledAt00671414;
 extern float g_CameraHorizontalOverrideAt006713E8;
 extern float g_CameraVerticalOverrideAt006713BC;
 extern float g_CameraZoomOverrideAt006713F4;
-namespace CameraMotionOverrideF484 {
- void SetOverride(unsigned char active,float x,float y,float z);
-}
 void CameraMotionOverrideF484::SetOverride(unsigned char active,float x,float y,float z) {
   g_CameraOverrideEnabledAt00671414=active;
   g_CameraHorizontalOverrideAt006713E8=x;

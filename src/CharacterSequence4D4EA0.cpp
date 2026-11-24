@@ -7,7 +7,7 @@ void SakuyaFighter::AdvanceSequence()
 {
     switch (sequencePhase) {
     case 0:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
             fieldF18 = -192.0f;
@@ -104,7 +104,7 @@ void SakuyaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(6);
                 sequenceTimer = 0;
                 break;
@@ -133,7 +133,7 @@ void SakuyaFighter::AdvanceSequence()
         }
         break;
     case 10:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
             fieldF18 = -192.0f;
@@ -230,7 +230,7 @@ void SakuyaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(16);
                 sequenceTimer = 0;
                 break;
@@ -259,7 +259,7 @@ void SakuyaFighter::AdvanceSequence()
         }
         break;
     case 20:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
             fieldF18 = -192.0f;
@@ -356,7 +356,7 @@ void SakuyaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(26);
                 sequenceTimer = 0;
                 break;
@@ -386,7 +386,7 @@ void SakuyaFighter::AdvanceSequence()
         }
         break;
     case 30:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
             fieldF18 = -192.0f;
@@ -483,7 +483,7 @@ void SakuyaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(36);
                 sequenceTimer = 0;
                 break;
@@ -512,7 +512,7 @@ void SakuyaFighter::AdvanceSequence()
         }
         break;
     case 40:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
             fieldF18 = -192.0f;
@@ -596,7 +596,7 @@ void SakuyaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(46);
                 sequenceTimer = 0;
                 break;
@@ -635,7 +635,7 @@ void SakuyaFighter::AdvanceSequence()
         }
         break;
     case 50:
-        SequenceCamera::SetOverride(1, 0.0f,
+        CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
             fieldF18 = -192.0f;
@@ -750,7 +750,7 @@ void SakuyaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(56);
                 sequenceTimer = 0;
                 break;
@@ -840,7 +840,7 @@ void SakuyaFighter::AdvanceSequence()
         ++sequenceTimer;
         break;
     case 61:
-        SequenceCamera::SetOverride(1, 0.0f, 320 - sequenceTimer, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 320 - sequenceTimer, 320.0f);
         sequenceTimer = sequenceTimer + 1;
         if (sequenceTimer >= 320) {
             SetNoticeMode(62);
@@ -848,7 +848,7 @@ void SakuyaFighter::AdvanceSequence()
         }
         break;
     case 62:
-        SequenceCamera::SetOverride(1, 0.0f, 0.0f, 320.0f);
+        CameraMotionOverrideF484::SetOverride(1, 0.0f, 0.0f, 320.0f);
         InitializeNotice(17);
         SetNoticeMode(63);
         break;
@@ -863,7 +863,7 @@ void SakuyaFighter::AdvanceSequence()
                 field6F8 = 0;
                 ConfigureNoticeText(0);
                 field6EF = 1;
-                SequenceCamera::SetOverride(0, 0.0f, 0.0f, 0.0f);
+                CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(64);
                 sequenceTimer = 0;
                 g_StateFadeAlpha = 0;

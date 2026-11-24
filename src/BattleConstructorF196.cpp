@@ -1,3 +1,4 @@
+#include "CameraMotion.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
@@ -21,7 +22,6 @@ extern unsigned char g_SequenceByteAt0066C23A;
 extern const char g_BattleTextureDataAt0065831C[];
 extern const char g_BattleTextureRootAt00658314[];
 namespace StateAudioF196 {
-    void __cdecl ResetScene(int,int,int,int);
 }
 
 
@@ -74,7 +74,7 @@ BattleScene::BattleScene()
         if (g_FrameClockModeAt0066C238 == 1)
             g_FrameClockModeAt0066C238 = 3;
     } else {
-        StateAudioF196::ResetScene(0, 0, 0, 0);
+        CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
         field08C = 0.0f;
         field018 = 0;
     }

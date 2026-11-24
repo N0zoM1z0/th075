@@ -83,6 +83,9 @@ camera state at `0x006713BC` through `0x00671414`. The combat view offsets
 at `0x00671404` and `0x006713C4` are written by the camera and read by the
 renderers. The pinned VC7.1 `cosf` and `sinf` wrappers also supply the two
 float entry points called by the camera and scaled sprite routines.
+The override entry at `0x00412CC0` takes an enabled byte and three
+floats. The reset path passes zero for each argument. Scene callers use
+that entry and the snap routine at `0x00412CF0`.
 
 The renderer reads the frame flag at `FighterFrameInfo+0x0C` as a byte.
 The frame assignment copies the entire 16-byte header, including the
@@ -119,6 +122,10 @@ preserves the native palette offset and 80-byte extent. VC7.1 eliminated
 the client storage when declared as an empty base. The deque at `+0x38`
 uses four-byte entries with trivial destruction. Its constructor,
 destructor, cleanup, and back removal match with the pinned VC7.1 deque.
+The texture-manager draw state methods retain their native thiscall
+interface. The blend method selects depth state before forwarding the
+blend mode, and the depth, filter, shader, and color methods forward
+to the shared graphics state.
 
 Naming the entry's byte arrays caused VC7.1 to emit a stack cookie in
 the three slot allocators with `/GS`. Omitting that option for those

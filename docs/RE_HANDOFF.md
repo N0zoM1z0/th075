@@ -24,8 +24,9 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 2,363 unresolved externals. Camera initialization,
-update, snap, and rendering now use shared state. The music, options,
+stops at `LNK1120` with 2,312 unresolved externals. Camera initialization,
+update, snap, and rendering share state. Scene and sequence callers share
+the camera override and snap entries. The music, options,
 results, and window constructors share the D3D8 texture allocator.
 Transition dispatch and frame capture share the presentation callback
 API. Transition and opaque sprite drawing share the SDK-backed RECT
@@ -35,6 +36,8 @@ Texture pack I/O, allocation, drawing, and teardown share the
 manager's three typed vectors. WinMain and the manager use the same
 graphics client, and the manager uses the native four-byte deque layout.
 Scene constructors and the results cleanup now call the shared manager.
+Drawing callers use the same texture-manager state methods for blend,
+depth, filtering, shader mode, and color scaling.
 The bitmap entry lifetime still needs linkable definitions.
 Headless library consumers exercised both camera snap modes, the log,
 cosine table, sound defaults, configuration save and load, event queue

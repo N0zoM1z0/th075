@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "TitleScene.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -5,9 +6,6 @@
 // Existing drawing receiver only; no complete owner layout is claimed.
 class TitleMenuDrawingF183 {
 public:
-    void SetDepthMode(int);
-    void SetBlendMode(int);
-    void SetTextureFilter(int);
     void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
 };
 
@@ -21,8 +19,8 @@ void TitleScene::Render()
     if (Graphics::BeginFrameValueAt00402660()) {
         SpriteQuad40CA80 spriteQuad;
         RECT region;
-        DRAW->SetDepthMode(0);
-        DRAW->SetBlendMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAW)->SetDepthMode(0);
+        reinterpret_cast<TextureManagerF198*>(DRAW)->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
         QUAD->BuildQuadFromRect(&region);
         DRAW->DrawQuad(0, spriteQuad, &region, D3DCOLOR_ARGB(field020, 255, 255, 255));
@@ -32,7 +30,7 @@ void TitleScene::Render()
         SetRect(&region, 0, 0, 512, 32);
         QUAD->BuildQuad(64.0f, 448.0f, 576.0f, 480.0f);
         DRAW->DrawQuad(3, spriteQuad, &region, D3DCOLOR_ARGB(field022, 255, 255, 255));
-        DRAW->SetTextureFilter(2);
+        reinterpret_cast<TextureManagerF198*>(DRAW)->SetTextureFilter(2);
         for (int item = 0; item < 10; item++) {
             SetRect(&region, 0, 0, 25, 256);
             QUAD->BuildQuadFromRect(&region);
@@ -47,7 +45,7 @@ void TitleScene::Render()
             DRAW->DrawQuad(1, spriteQuad, &region,
                            D3DCOLOR_ARGB(field023, HIGHLIGHT, HIGHLIGHT, HIGHLIGHT));
         }
-        DRAW->SetTextureFilter(1);
+        reinterpret_cast<TextureManagerF198*>(DRAW)->SetTextureFilter(1);
         Graphics::EndFrame();
     }
 }

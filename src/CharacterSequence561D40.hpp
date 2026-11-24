@@ -4,7 +4,7 @@
 #include "Fighter.hpp"
 #include "BattleStateMachine.hpp"
 
-namespace SequenceCamera { void SetOverride(unsigned char enabled, float x, float y, float zoom); }
+#include "CameraMotion.hpp"
 namespace SequenceAudio { void Stop(); }
 namespace SequenceStage { void Load(); }
 // Narrow views of the observed byte writes; original declarations unknown.
