@@ -17,3 +17,13 @@ float __cdecl MagnitudeAt00428D20(float value)
 {
     return sqrtf(value);
 }
+
+float __cdecl CameraCosineAt0040D900(float radians)
+{
+    return cosf(radians);
+}
+
+float __cdecl CameraSineAt0040D940(float radians)
+{
+    return sinf(radians);
+}

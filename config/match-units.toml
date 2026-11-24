@@ -16122,7 +16122,7 @@ relocations = [
   { offset = 0x127, type = "DIR32", symbol = "?g_CameraHorizontalAt006713E4@@3MA", target = 0x006713E4 },
   { offset = 0x12C, type = "DIR32", symbol = "?g_CameraFirstXAt006713C8@@3PAMA", target = 0x006713C8 },
   { offset = 0x132, type = "DIR32", symbol = "?g_CameraSecondXAt006713CC@@3PAMA", target = 0x006713CC },
-  { offset = 0x13F, type = "REL32", symbol = "?CameraAbsoluteAt00412D90@@YAMM@Z", target = 0x00412D90 },
+  { offset = 0x13F, type = "REL32", symbol = "?AbsFloatAt00412D90@@YAMM@Z", target = 0x00412D90 },
   { offset = 0x148, type = "DIR32", symbol = "__real@445c0000", target = 0x00657870 },
   { offset = 0x14D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x175, type = "DIR32", symbol = "__real@42480000", target = 0x0065788C },
@@ -16131,7 +16131,7 @@ relocations = [
   { offset = 0x189, type = "DIR32", symbol = "__real@42480000", target = 0x0065788C },
   { offset = 0x18F, type = "DIR32", symbol = "?g_CameraVerticalBiasAt0067140C@@3MA", target = 0x0067140C },
   { offset = 0x194, type = "DIR32", symbol = "?g_CameraSecondYAt006713D4@@3PAMA", target = 0x006713D4 },
-  { offset = 0x1A1, type = "REL32", symbol = "?CameraAbsoluteAt00412D90@@YAMM@Z", target = 0x00412D90 },
+  { offset = 0x1A1, type = "REL32", symbol = "?AbsFloatAt00412D90@@YAMM@Z", target = 0x00412D90 },
   { offset = 0x1AA, type = "DIR32", symbol = "__real@42c80000", target = 0x00657888 },
   { offset = 0x1B0, type = "DIR32", symbol = "?g_CameraVerticalTargetAt00671400@@3MA", target = 0x00671400 },
   { offset = 0x1C7, type = "DIR32", symbol = "?g_CameraVerticalTargetAt00671400@@3MA", target = 0x00671400 },
@@ -16199,7 +16199,7 @@ relocations = [
   { offset = 0x3A1, type = "DIR32", symbol = "?g_CameraShakeYAt006713D8@@3MA", target = 0x006713D8 },
   { offset = 0x3AA, type = "DIR32", symbol = "?g_CameraFirstXAt006713C8@@3PAMA", target = 0x006713C8 },
   { offset = 0x3B0, type = "DIR32", symbol = "?g_CameraSecondXAt006713CC@@3PAMA", target = 0x006713CC },
-  { offset = 0x3BD, type = "REL32", symbol = "?CameraAbsoluteAt00412D90@@YAMM@Z", target = 0x00412D90 },
+  { offset = 0x3BD, type = "REL32", symbol = "?AbsFloatAt00412D90@@YAMM@Z", target = 0x00412D90 },
   { offset = 0x3C6, type = "DIR32", symbol = "__real@445c0000", target = 0x00657870 },
   { offset = 0x3CC, type = "DIR32", symbol = "?g_CameraZoomTargetAt006713C0@@3MA", target = 0x006713C0 },
   { offset = 0x3D3, type = "DIR32", symbol = "?g_CameraOverrideEnabledAt00671414@@3EA", target = 0x00671414 },
@@ -16211,13 +16211,13 @@ relocations = [
   { offset = 0x406, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x40C, type = "DIR32", symbol = "?g_CameraHorizontalBiasAt006713EC@@3MA", target = 0x006713EC },
   { offset = 0x412, type = "DIR32", symbol = "__real@42480000", target = 0x0065788C },
-  { offset = 0x41B, type = "REL32", symbol = "?CameraAbsoluteAt00412D90@@YAMM@Z", target = 0x00412D90 },
+  { offset = 0x41B, type = "REL32", symbol = "?AbsFloatAt00412D90@@YAMM@Z", target = 0x00412D90 },
   { offset = 0x424, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x42A, type = "DIR32", symbol = "?g_CameraZoomTargetAt006713C0@@3MA", target = 0x006713C0 },
   { offset = 0x437, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x43D, type = "DIR32", symbol = "?g_CameraHorizontalBiasAt006713EC@@3MA", target = 0x006713EC },
   { offset = 0x443, type = "DIR32", symbol = "__real@42480000", target = 0x0065788C },
-  { offset = 0x44C, type = "REL32", symbol = "?CameraAbsoluteAt00412D90@@YAMM@Z", target = 0x00412D90 },
+  { offset = 0x44C, type = "REL32", symbol = "?AbsFloatAt00412D90@@YAMM@Z", target = 0x00412D90 },
   { offset = 0x455, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x45B, type = "DIR32", symbol = "?g_CameraZoomTargetAt006713C0@@3MA", target = 0x006713C0 },
   { offset = 0x461, type = "DIR32", symbol = "?g_CombatViewSpan@@3MA", target = 0x006713DC },
@@ -22806,9 +22806,9 @@ size = 2246
 compare_size = 2246
 relocations = [
   { offset = 0x18, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
-  { offset = 0x1E, type = "DIR32", symbol = "?g_RenderCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x1E, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x24, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
-  { offset = 0x2F, type = "DIR32", symbol = "?g_RenderCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x2F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x4E, type = "REL32", symbol = "?IsState50To149@Fighter@@QAE_NXZ", target = 0x00454F90 },
   { offset = 0xB4, type = "REL32", symbol = "?GetTextureRect@FighterDrawingF126@@QAEXHPAUtagRECT@@@Z", target = 0x0040D870 },
   { offset = 0xC6, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
@@ -22855,10 +22855,10 @@ target_address = 0x0044E930
 size = 2297
 compare_size = 2297
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_RenderCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_RenderCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x3F, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x45, type = "DIR32", symbol = "__real@3ff0000000000000", target = 0x00657D00 },
@@ -22942,10 +22942,10 @@ target_address = 0x00449EE0
 size = 640
 compare_size = 640
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -22987,10 +22987,10 @@ target_address = 0x0044B630
 size = 830
 compare_size = 830
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x43, type = "REL32", symbol = "?SetDepthMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x53, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
@@ -23025,10 +23025,10 @@ target_address = 0x0044BB50
 size = 830
 compare_size = 830
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x43, type = "REL32", symbol = "?SetDepthMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x53, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
@@ -23063,10 +23063,10 @@ target_address = 0x0044C070
 size = 830
 compare_size = 830
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x43, type = "REL32", symbol = "?SetDepthMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x53, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
@@ -23101,10 +23101,10 @@ target_address = 0x0044D620
 size = 716
 compare_size = 716
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x3C, type = "DIR32", symbol = "__real@4071800000000000", target = 0x006589B8 },
   { offset = 0x4B, type = "DIR32", symbol = "__real@c080000000000000", target = 0x006589B0 },
@@ -23145,10 +23145,10 @@ target_address = 0x0044DA90
 size = 781
 compare_size = 781
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetDepthMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x7B, type = "REL32", symbol = "?DrawSprite@EffectDrawingF127@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
@@ -23197,10 +23197,10 @@ target_address = 0x0044E3D0
 size = 872
 compare_size = 872
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x40, type = "REL32", symbol = "?SetDepthMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x50, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
@@ -23247,10 +23247,10 @@ target_address = 0x0044F850
 size = 662
 compare_size = 662
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetDepthMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x7B, type = "REL32", symbol = "?DrawSprite@EffectDrawingF127@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
@@ -23294,10 +23294,10 @@ target_address = 0x0044FAF0
 size = 579
 compare_size = 579
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x5B, type = "REL32", symbol = "??0RectQuadF127@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
   { offset = 0x6A, type = "DIR32", symbol = "__real@3fc999999999999a", target = 0x006583C8 },
@@ -23326,10 +23326,10 @@ target_address = 0x0044FD40
 size = 756
 compare_size = 756
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x57, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0xE3, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
@@ -23365,10 +23365,10 @@ target_address = 0x00450420
 size = 1005
 compare_size = 1005
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x4B, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x5B, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
@@ -23417,10 +23417,10 @@ target_address = 0x00450C10
 size = 699
 compare_size = 699
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -23459,10 +23459,10 @@ target_address = 0x00450EE0
 size = 408
 compare_size = 408
 relocations = [
-  { offset = 0x11, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x17, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x28, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x57, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0xD1, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
@@ -23487,10 +23487,10 @@ target_address = 0x00451440
 size = 1449
 compare_size = 1449
 relocations = [
-  { offset = 0x12, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x12, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x18, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x1D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x29, type = "DIR32", symbol = "?g_EffectCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x29, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x2E, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x40, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
   { offset = 0x46, type = "DIR32", symbol = "__real@3f33a92a30553261", target = 0x00658E28 },
@@ -23521,11 +23521,11 @@ relocations = [
   { offset = 0x1D9, type = "DIR32", symbol = "__real@407d000000000000", target = 0x00658DF8 },
   { offset = 0x1F3, type = "REL32", symbol = "?DrawSprite@EffectDrawingF127@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x203, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
-  { offset = 0x23A, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x23A, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x240, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
   { offset = 0x246, type = "DIR32", symbol = "__real@c2700000", target = 0x00658DF4 },
   { offset = 0x264, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
-  { offset = 0x288, type = "DIR32", symbol = "?g_EffectCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x288, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x28E, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
   { offset = 0x294, type = "DIR32", symbol = "__real@447f0000", target = 0x00658DF0 },
   { offset = 0x2B2, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
@@ -23806,10 +23806,10 @@ target_address = 0x00449B50
 size = 358
 compare_size = 358
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -23836,10 +23836,10 @@ target_address = 0x0044A2E0
 size = 358
 compare_size = 358
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -23866,10 +23866,10 @@ target_address = 0x0044AC60
 size = 284
 compare_size = 284
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -23893,10 +23893,10 @@ target_address = 0x0044AF00
 size = 284
 compare_size = 284
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -23920,10 +23920,10 @@ target_address = 0x0044CC20
 size = 284
 compare_size = 284
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -23947,10 +23947,10 @@ target_address = 0x0044CEC0
 size = 284
 compare_size = 284
 relocations = [
-  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0xB, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
   { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
@@ -23975,9 +23975,9 @@ size = 1758
 compare_size = 1758
 relocations = [
   { offset = 0x16, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
-  { offset = 0x1C, type = "DIR32", symbol = "?g_NodeCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x1C, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x22, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
-  { offset = 0x2D, type = "DIR32", symbol = "?g_NodeCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x2D, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x53, type = "REL32", symbol = "?GetTextureRect@NodeDrawingF129@@QAEXHPAUtagRECT@@@Z", target = 0x0040D870 },
   { offset = 0x65, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
   { offset = 0xB9, type = "REL32", symbol = "?SetBlendMode@NodeDrawingF129@@QAEXH@Z", target = 0x0040C7F0 },
@@ -46972,7 +46972,7 @@ target = 0x00411CC0
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 100
 type = "DIR32"
-symbol = "?g_SequenceBaseXAt00671404@@3MB"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 106
@@ -46982,7 +46982,7 @@ target = 0x00657834
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 118
 type = "DIR32"
-symbol = "?g_SequenceBaseYAt006713C4@@3MB"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 132
@@ -47682,7 +47682,7 @@ size = 60
 [[units.background-stage-apply-blend-02a-0044b980.relocations]]
 offset = 11
 type = "DIR32"
-symbol = "?g_BGCameraXAt00671404@@3MA"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.background-stage-apply-blend-02a-0044b980.relocations]]
 offset = 17
@@ -47697,7 +47697,7 @@ target = 0x006406AC
 [[units.background-stage-apply-blend-02a-0044b980.relocations]]
 offset = 31
 type = "DIR32"
-symbol = "?g_BGCameraYAt006713C4@@3MA"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.background-stage-apply-blend-02a-0044b980.relocations]]
 offset = 36
@@ -47722,7 +47722,7 @@ size = 60
 [[units.background-stage-apply-blend-02b-0044bea0.relocations]]
 offset = 11
 type = "DIR32"
-symbol = "?g_BGCameraXAt00671404@@3MA"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.background-stage-apply-blend-02b-0044bea0.relocations]]
 offset = 17
@@ -47737,7 +47737,7 @@ target = 0x006406AC
 [[units.background-stage-apply-blend-02b-0044bea0.relocations]]
 offset = 31
 type = "DIR32"
-symbol = "?g_BGCameraYAt006713C4@@3MA"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.background-stage-apply-blend-02b-0044bea0.relocations]]
 offset = 36
@@ -47762,7 +47762,7 @@ size = 60
 [[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
 offset = 11
 type = "DIR32"
-symbol = "?g_BGCameraXAt00671404@@3MA"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
 offset = 17
@@ -47777,7 +47777,7 @@ target = 0x006406AC
 [[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
 offset = 31
 type = "DIR32"
-symbol = "?g_BGCameraYAt006713C4@@3MA"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
 offset = 36
@@ -55186,22 +55186,22 @@ size = 146
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "?g_CameraChooseCurrentAt00671414@@3EA"
+symbol = "?g_CameraOverrideEnabledAt00671414@@3EA"
 target = 0x00671414
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 16
 type = "DIR32"
-symbol = "?g_CameraCurrentXAt006713E8@@3MA"
+symbol = "?g_CameraHorizontalOverrideAt006713E8@@3MA"
 target = 0x006713E8
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 22
 type = "DIR32"
-symbol = "?g_CameraActualXAt00671404@@3MA"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 28
 type = "DIR32"
-symbol = "?g_CameraCurrentYAt006713BC@@3MA"
+symbol = "?g_CameraVerticalOverrideAt006713BC@@3MA"
 target = 0x006713BC
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 34
@@ -55211,52 +55211,52 @@ target = 0x0065784C
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 40
 type = "DIR32"
-symbol = "?g_CameraActualYAt006713C4@@3MA"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 46
 type = "DIR32"
-symbol = "?g_CameraCurrentXAt006713E8@@3MA"
+symbol = "?g_CameraHorizontalOverrideAt006713E8@@3MA"
 target = 0x006713E8
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 52
 type = "DIR32"
-symbol = "?g_CameraInitialXAt006713E4@@3MA"
+symbol = "?g_CameraHorizontalAt006713E4@@3MA"
 target = 0x006713E4
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 57
 type = "DIR32"
-symbol = "?g_CameraCurrentYAt006713BC@@3MA"
+symbol = "?g_CameraVerticalOverrideAt006713BC@@3MA"
 target = 0x006713BC
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 62
 type = "DIR32"
-symbol = "?g_CameraInitialYAt00671408@@3MA"
+symbol = "?g_CameraVerticalAt00671408@@3MA"
 target = 0x00671408
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 68
 type = "DIR32"
-symbol = "?g_CameraCurrentZAt006713F4@@3MA"
+symbol = "?g_CameraZoomOverrideAt006713F4@@3MA"
 target = 0x006713F4
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 74
 type = "DIR32"
-symbol = "?g_CameraActualZAt006713DC@@3MA"
+symbol = "?g_CombatViewSpan@@3MA"
 target = 0x006713DC
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 82
 type = "DIR32"
-symbol = "?g_CameraAlternateXAt006713F0@@3MA"
+symbol = "?g_CameraHorizontalTargetAt006713F0@@3MA"
 target = 0x006713F0
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 88
 type = "DIR32"
-symbol = "?g_CameraActualXAt00671404@@3MA"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 94
 type = "DIR32"
-symbol = "?g_CameraAlternateYAt00671400@@3MA"
+symbol = "?g_CameraVerticalTargetAt00671400@@3MA"
 target = 0x00671400
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 100
@@ -55266,37 +55266,37 @@ target = 0x0065784C
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 106
 type = "DIR32"
-symbol = "?g_CameraActualYAt006713C4@@3MA"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 111
 type = "DIR32"
-symbol = "?g_CameraAlternateXAt006713F0@@3MA"
+symbol = "?g_CameraHorizontalTargetAt006713F0@@3MA"
 target = 0x006713F0
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 116
 type = "DIR32"
-symbol = "?g_CameraInitialXAt006713E4@@3MA"
+symbol = "?g_CameraHorizontalAt006713E4@@3MA"
 target = 0x006713E4
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 122
 type = "DIR32"
-symbol = "?g_CameraAlternateYAt00671400@@3MA"
+symbol = "?g_CameraVerticalTargetAt00671400@@3MA"
 target = 0x00671400
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 128
 type = "DIR32"
-symbol = "?g_CameraInitialYAt00671408@@3MA"
+symbol = "?g_CameraVerticalAt00671408@@3MA"
 target = 0x00671408
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 134
 type = "DIR32"
-symbol = "?g_CameraAlternateZAt006713C0@@3MA"
+symbol = "?g_CameraZoomTargetAt006713C0@@3MA"
 target = 0x006713C0
 [[units.camera-motion-snap-00412cf0.relocations]]
 offset = 140
 type = "DIR32"
-symbol = "?g_CameraActualZAt006713DC@@3MA"
+symbol = "?g_CombatViewSpan@@3MA"
 target = 0x006713DC
 
 
@@ -55561,7 +55561,7 @@ target = 0x0040D990
 [[units.sprite-scene-render-mirrored-node-00410a00.relocations]]
 offset = 39
 type = "DIR32"
-symbol = "?g_CameraXAt00671404@@3MA"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.sprite-scene-render-mirrored-node-00410a00.relocations]]
 offset = 45
@@ -55571,7 +55571,7 @@ target = 0x00657834
 [[units.sprite-scene-render-mirrored-node-00410a00.relocations]]
 offset = 56
 type = "DIR32"
-symbol = "?g_CameraYAt006713C4@@3MA"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.sprite-scene-render-mirrored-node-00410a00.relocations]]
 offset = 94
@@ -55696,7 +55696,7 @@ target = 0x0040D990
 [[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "?g_MarisaCameraXAt00671404@@3MB"
+symbol = "?g_CombatViewOffsetX@@3MA"
 target = 0x00671404
 [[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
 offset = 56
@@ -55706,7 +55706,7 @@ target = 0x00657834
 [[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
 offset = 68
 type = "DIR32"
-symbol = "?g_MarisaCameraYAt006713C4@@3MB"
+symbol = "?g_CombatViewOffsetY@@3MA"
 target = 0x006713C4
 [[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
 offset = 87
@@ -58400,27 +58400,27 @@ size = 64
 [[units.camera-motion-reset-parameters-00412620.relocations]]
 offset = 9
 type = "DIR32"
-symbol = "?g_CameraResetOneAt006713EC@@3IA"
+symbol = "?g_CameraHorizontalBiasAt006713EC@@3MA"
 target = 0x006713EC
 [[units.camera-motion-reset-parameters-00412620.relocations]]
 offset = 19
 type = "DIR32"
-symbol = "?g_CameraResetHeightAt0067140C@@3MA"
+symbol = "?g_CameraVerticalBiasAt0067140C@@3MA"
 target = 0x0067140C
 [[units.camera-motion-reset-parameters-00412620.relocations]]
 offset = 29
 type = "DIR32"
-symbol = "?g_CameraResetTwoAt006713F8@@3IA"
+symbol = "?g_CameraShakeAmountAt006713F8@@3MA"
 target = 0x006713F8
 [[units.camera-motion-reset-parameters-00412620.relocations]]
 offset = 39
 type = "DIR32"
-symbol = "?g_CameraResetThreeAt00671410@@3IA"
+symbol = "?g_CameraShakePhaseXAt00671410@@3MA"
 target = 0x00671410
 [[units.camera-motion-reset-parameters-00412620.relocations]]
 offset = 49
 type = "DIR32"
-symbol = "?g_CameraResetFourAt006713FC@@3IA"
+symbol = "?g_CameraShakePhaseYAt006713FC@@3MA"
 target = 0x006713FC
 
 
@@ -58435,7 +58435,7 @@ size = 50
 [[units.frame-capture-draw-if-enabled-004171d0.relocations]]
 offset = 37
 type = "REL32"
-symbol = "?DrawD3DQuadAt004029F0@@YAXPAY03$$CBMPBUtagRECT@@IPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 
 [units.background-base-virtual-destroy-00449d40]
@@ -58469,22 +58469,22 @@ size = 39
 [[units.camera-motion-set-override-00412cc0.relocations]]
 offset = 7
 type = "DIR32"
-symbol = "?g_OverrideEnabledAt00671414@@3EA"
+symbol = "?g_CameraOverrideEnabledAt00671414@@3EA"
 target = 0x00671414
 [[units.camera-motion-set-override-00412cc0.relocations]]
 offset = 16
 type = "DIR32"
-symbol = "?g_OverrideXAt006713E8@@3MA"
+symbol = "?g_CameraHorizontalOverrideAt006713E8@@3MA"
 target = 0x006713E8
 [[units.camera-motion-set-override-00412cc0.relocations]]
 offset = 25
 type = "DIR32"
-symbol = "?g_OverrideYAt006713BC@@3MA"
+symbol = "?g_CameraVerticalOverrideAt006713BC@@3MA"
 target = 0x006713BC
 [[units.camera-motion-set-override-00412cc0.relocations]]
 offset = 33
 type = "DIR32"
-symbol = "?g_OverrideZAt006713F4@@3MA"
+symbol = "?g_CameraZoomOverrideAt006713F4@@3MA"
 target = 0x006713F4
 
 
@@ -61058,9 +61058,9 @@ relocations = [
  { offset = 0xDF, type = "DIR32", symbol = "?g_ZeroAngleF775@@3MA", target = 0x0065782C },
  { offset = 0x136, type = "REL32", symbol = "??0SpriteScaledQuadF775@@QAE@MMMM@Z", target = 0x0040DA00 },
  { offset = 0x153, type = "DIR32", symbol = "?g_AngleUnitF775@@3MA", target = 0x00657828 },
- { offset = 0x15C, type = "REL32", symbol = "?CosAt0040D900@@YAMM@Z", target = 0x0040D900 },
+ { offset = 0x15C, type = "REL32", symbol = "?CameraCosineAt0040D900@@YAMM@Z", target = 0x0040D900 },
  { offset = 0x16E, type = "DIR32", symbol = "?g_AngleUnitF775@@3MA", target = 0x00657828 },
- { offset = 0x177, type = "REL32", symbol = "?SinAt0040D940@@YAMM@Z", target = 0x0040D940 },
+ { offset = 0x177, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
  { offset = 0x2C8, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
  { offset = 0x3A3, type = "REL32", symbol = "?GetTexture@SpriteDrawingF775@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x3BB, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
@@ -61086,9 +61086,9 @@ relocations = [
  { offset = 0x11B, type = "DIR32", symbol = "?g_ZeroAngleF776@@3MA", target = 0x0065782C },
  { offset = 0x172, type = "REL32", symbol = "??0SpriteScaledQuadF776@@QAE@MMMM@Z", target = 0x0040DA00 },
  { offset = 0x18F, type = "DIR32", symbol = "?g_AngleUnitF776@@3MA", target = 0x00657828 },
- { offset = 0x198, type = "REL32", symbol = "?CosAt0040D900@@YAMM@Z", target = 0x0040D900 },
+ { offset = 0x198, type = "REL32", symbol = "?CameraCosineAt0040D900@@YAMM@Z", target = 0x0040D900 },
  { offset = 0x1AD, type = "DIR32", symbol = "?g_AngleUnitF776@@3MA", target = 0x00657828 },
- { offset = 0x1B6, type = "REL32", symbol = "?SinAt0040D940@@YAMM@Z", target = 0x0040D940 },
+ { offset = 0x1B6, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
  { offset = 0x2E0, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
  { offset = 0x3BB, type = "REL32", symbol = "?GetTexture@SpriteDrawingF776@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x3D3, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },

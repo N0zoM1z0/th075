@@ -14,8 +14,8 @@ public:
 };
 class SpriteCameraF254 { public: void CopyVector(float* out); };
 extern SpriteCameraF254* g_ActiveCameraAt00671424;
-extern float g_CameraXAt00671404;
-extern float g_CameraYAt006713C4;
+extern float g_CombatViewOffsetX;
+extern float g_CombatViewOffsetY;
 extern const float g_CameraOffsetXAt00657834;
 extern const float g_CameraOffsetYAt00657830;
 extern const float g_ZeroAt0065782C;
@@ -79,8 +79,8 @@ void Actor::RenderMirroredNode()
 #define sourceRect state.sourceRect
 #define color state.color
 #define tint state.tint
-    xShift = g_CameraXAt00671404 - g_CameraOffsetXAt00657834;
-    yOrigin = g_CameraYAt006713C4;
+    xShift = g_CombatViewOffsetX - g_CameraOffsetXAt00657834;
+    yOrigin = g_CombatViewOffsetY;
     DRAWER->GetTextureRect(drawFrame->textureIndex,&sourceRect);
     TRANSFORM(transformed)->BuildQuadFromRect(&sourceRect);
     if (drawFrame->pose) {

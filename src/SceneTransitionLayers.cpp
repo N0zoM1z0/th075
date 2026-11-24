@@ -172,8 +172,8 @@ public:
     void SetBlendMode(int);
     void DrawSprite(int, float, float, DWORD, float, float, float, float, unsigned char);
 };
-extern float g_LayerCameraX;
-extern float g_LayerCameraY;
+extern float g_CombatViewOffsetX;
+extern float g_CombatViewOffsetY;
 #define DRAWING reinterpret_cast<LayerDrawingF128*>(reinterpret_cast<char*>(this) + 0x18)
 class EffectLayer00449B50 { public: void Draw(); };
 class EffectLayer0044A2E0 { public: void Draw(); };
@@ -182,8 +182,8 @@ class EffectLayer0044AF00 { public: void Draw(); };
 class EffectLayer0044CC20 { public: void Draw(); };
 class EffectLayer0044CEC0 { public: void Draw(); };
 void EffectLayer00449B50::Draw() {
-    int cameraX = static_cast<int>(g_LayerCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_LayerCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 320.0, cameraY + 280, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 0);
@@ -192,8 +192,8 @@ void EffectLayer00449B50::Draw() {
 }
 
 void EffectLayer0044A2E0::Draw() {
-    int cameraX = static_cast<int>(g_LayerCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_LayerCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 320.0, cameraY + 280, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 0);
@@ -202,8 +202,8 @@ void EffectLayer0044A2E0::Draw() {
 }
 
 void EffectLayer0044AC60::Draw() {
-    int cameraX = static_cast<int>(g_LayerCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_LayerCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 345.0, cameraY + 240, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 0);
@@ -211,8 +211,8 @@ void EffectLayer0044AC60::Draw() {
 }
 
 void EffectLayer0044AF00::Draw() {
-    int cameraX = static_cast<int>(g_LayerCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_LayerCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 345.0, cameraY + 240, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 0);
@@ -220,8 +220,8 @@ void EffectLayer0044AF00::Draw() {
 }
 
 void EffectLayer0044CC20::Draw() {
-    int cameraX = static_cast<int>(g_LayerCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_LayerCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 320.0, cameraY + 280, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 1);
@@ -229,8 +229,8 @@ void EffectLayer0044CC20::Draw() {
 }
 
 void EffectLayer0044CEC0::Draw() {
-    int cameraX = static_cast<int>(g_LayerCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_LayerCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 320.0, cameraY + 280, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 1);

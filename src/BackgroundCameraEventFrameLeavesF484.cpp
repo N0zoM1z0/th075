@@ -11,18 +11,18 @@ public:virtual ~BackgroundBaseF484();
 BackgroundBaseF484::~BackgroundBaseF484() {}
 // The true camera override is cdecl and writes exactly one byte and
 // three raw float input bits to originally distinct camera globals.
-extern unsigned char g_OverrideEnabledAt00671414;
-extern float g_OverrideXAt006713E8;
-extern float g_OverrideYAt006713BC;
-extern float g_OverrideZAt006713F4;
+extern unsigned char g_CameraOverrideEnabledAt00671414;
+extern float g_CameraHorizontalOverrideAt006713E8;
+extern float g_CameraVerticalOverrideAt006713BC;
+extern float g_CameraZoomOverrideAt006713F4;
 namespace CameraMotionOverrideF484 {
  void SetOverride(unsigned char active,float x,float y,float z);
 }
 void CameraMotionOverrideF484::SetOverride(unsigned char active,float x,float y,float z) {
-  g_OverrideEnabledAt00671414=active;
-  g_OverrideXAt006713E8=x;
-  g_OverrideYAt006713BC=y;
-  g_OverrideZAt006713F4=z;
+  g_CameraOverrideEnabledAt00671414=active;
+  g_CameraHorizontalOverrideAt006713E8=x;
+  g_CameraVerticalOverrideAt006713BC=y;
+  g_CameraZoomOverrideAt006713F4=z;
 }
 class SpriteDequeF484 {public: unsigned int Size();void PopFront();};
 class SpriteSequenceF484 {

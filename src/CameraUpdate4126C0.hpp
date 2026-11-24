@@ -5,7 +5,6 @@ namespace CameraUpdate4126C0 {
 }
 
 // Observed cdecl(float), ST0-result views. Original declarations remain unknown.
-float __cdecl CameraAbsoluteAt00412D90(float value);
 float __cdecl CameraCosineAt0040D900(float radians);
 float __cdecl CameraSineAt0040D940(float radians);
 

@@ -26,8 +26,8 @@ public:
 };
 extern float g_ZeroAngleF776;
 extern float g_AngleUnitF776;
-float __cdecl CosAt0040D900(float);
-float __cdecl SinAt0040D940(float);
+float __cdecl CameraCosineAt0040D900(float);
+float __cdecl CameraSineAt0040D940(float);
 #define ENTRY_AT(fld) (*reinterpret_cast<int*>(reinterpret_cast<char*>(reinterpret_cast<SpriteScaledListF776*>(reinterpret_cast<char*>(this)+8)->At(texture))+(fld)))
 void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scale,float angle,
@@ -49,8 +49,8 @@ void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
              (region.right-pivotX)*scale+x,
              (region.bottom-pivotY)*scale+y);
     } else {
-        float cosine=CosAt0040D900(angle*g_AngleUnitF776)*scale;
-        float sine=SinAt0040D940(angle*g_AngleUnitF776)*scale;
+        float cosine=CameraCosineAt0040D900(angle*g_AngleUnitF776)*scale;
+        float sine=CameraSineAt0040D940(angle*g_AngleUnitF776)*scale;
         quad.first.x=(x-pivotX*cosine)+pivotY*sine;
         quad.first.y=(y-pivotX*sine)-pivotY*cosine;
         quad.fourth.x=(x-pivotX*cosine)-(region.bottom-pivotY)*sine;

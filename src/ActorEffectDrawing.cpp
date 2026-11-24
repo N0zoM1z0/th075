@@ -16,8 +16,8 @@ public:
     void AppendElement(short, float, float, SpriteQuad40CA80, D3DVECTOR, DWORD, signed char);
     void RemoveFrontIfPresent();
 };
-extern float g_RenderCameraX;
-extern float g_RenderCameraY;
+extern float g_CombatViewOffsetX;
+extern float g_CombatViewOffsetY;
 extern unsigned char g_RenderByte0067161C;
 extern unsigned char g_RenderByte0066C237;
 
@@ -33,8 +33,8 @@ void Fighter::Render() {
     DWORD drawColor;
     float cameraY;
     SpriteQuad40CA80 transformedQuad;
-    cameraHorizontal = g_RenderCameraX - 160.0f;
-    cameraY = g_RenderCameraY;
+    cameraHorizontal = g_CombatViewOffsetX - 160.0f;
+    cameraY = g_CombatViewOffsetY;
     if (field082 > 0 && reinterpret_cast<Fighter*>(this)->IsState50To149())
         cameraHorizontal += 2 - (field082 % 2) * 4;
     DRAWING->GetTextureRect(frameInfo->textureIndex, &textureRect);
@@ -127,8 +127,8 @@ void EffectPattern44E930::Render() {
     int verticalWaveFour;
     int cameraY;
     int verticalWaveTwo;
-    cameraHorizontal = static_cast<int>(g_RenderCameraX + 160.0f);
-    cameraY = static_cast<int>(g_RenderCameraY);
+    cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    cameraY = static_cast<int>(g_CombatViewOffsetY);
     oscillationOne = static_cast<int>(sin(EFFECT_INT(0x70) * 0.1 + 1.0) * 5.0);
     verticalWaveTwo = static_cast<int>(sin(EFFECT_INT(0x70) * 0.1 + 2.0) * 4.0);
     verticalShiftThree = static_cast<int>(sin(EFFECT_INT(0x70) * 0.1 + 3.0) * 5.0);

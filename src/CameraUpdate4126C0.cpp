@@ -1,5 +1,31 @@
 #include "CameraUpdate4126C0.hpp"
 
+float __cdecl AbsFloatAt00412D90(float value);
+
+float* g_CameraFirstXAt006713C8;
+float* g_CameraSecondXAt006713CC;
+float* g_CameraFirstYAt006713D0;
+float* g_CameraSecondYAt006713D4;
+float g_CameraHorizontalBiasAt006713EC;
+float g_CameraHorizontalTargetAt006713F0;
+float g_CameraHorizontalAt006713E4;
+float g_CameraHorizontalOverrideAt006713E8;
+unsigned char g_CameraOverrideEnabledAt00671414;
+float g_CameraVerticalBiasAt0067140C;
+float g_CameraVerticalTargetAt00671400;
+float g_CameraVerticalOverrideAt006713BC;
+float g_CameraVerticalAt00671408;
+float g_CameraShakeAmountAt006713F8;
+float g_CameraShakePhaseXAt00671410;
+float g_CameraShakePhaseYAt006713FC;
+float g_CameraShakeXAt006713E0;
+float g_CameraShakeYAt006713D8;
+float g_CameraZoomTargetAt006713C0;
+float g_CameraZoomOverrideAt006713F4;
+float g_CombatViewSpan;
+float g_CombatViewOffsetX;
+float g_CombatViewOffsetY;
+
 void CameraUpdate4126C0::Advance() {
     g_CameraHorizontalTargetAt006713F0 = 640.0f -
         ((50.0f - g_CameraHorizontalBiasAt006713EC) * *g_CameraFirstXAt006713C8 +
@@ -22,14 +48,14 @@ void CameraUpdate4126C0::Advance() {
             g_CameraHorizontalAt006713E4 = g_CameraHorizontalTargetAt006713F0;
     }
 
-    int span = static_cast<int>(880.0f - CameraAbsoluteAt00412D90(
+    int span = static_cast<int>(880.0f - AbsFloatAt00412D90(
         *g_CameraFirstXAt006713C8 - *g_CameraSecondXAt006713CC));
     if (span > 320)
         span = 320;
     else if (span < 0)
         span = 0;
 
-    g_CameraVerticalTargetAt00671400 = CameraAbsoluteAt00412D90(
+    g_CameraVerticalTargetAt00671400 = AbsFloatAt00412D90(
         (50.0f - g_CameraVerticalBiasAt0067140C) * *g_CameraFirstYAt006713D0 -
         (50.0f + g_CameraVerticalBiasAt0067140C) * *g_CameraSecondYAt006713D4) / 100.0f;
     if (span / 3 < g_CameraVerticalTargetAt00671400)
@@ -67,15 +93,15 @@ void CameraUpdate4126C0::Advance() {
         }
     }
 
-    g_CameraZoomTargetAt006713C0 = 880.0f - CameraAbsoluteAt00412D90(
+    g_CameraZoomTargetAt006713C0 = 880.0f - AbsFloatAt00412D90(
         *g_CameraFirstXAt006713C8 - *g_CameraSecondXAt006713CC);
     if (g_CameraOverrideEnabledAt00671414)
         g_CameraZoomTargetAt006713C0 = g_CameraZoomOverrideAt006713F4;
     if (g_CameraZoomTargetAt006713C0 > 320.0f)
         g_CameraZoomTargetAt006713C0 = 320.0f;
-    else if (CameraAbsoluteAt00412D90(
+    else if (AbsFloatAt00412D90(
                  320.0f * g_CameraHorizontalBiasAt006713EC / 50.0f) + 0.0f > g_CameraZoomTargetAt006713C0)
-        g_CameraZoomTargetAt006713C0 = CameraAbsoluteAt00412D90(
+        g_CameraZoomTargetAt006713C0 = AbsFloatAt00412D90(
             320.0f * g_CameraHorizontalBiasAt006713EC / 50.0f) + 0.0f;
     if (g_CombatViewSpan > g_CameraZoomTargetAt006713C0) {
         g_CombatViewSpan -= (g_CombatViewSpan - g_CameraZoomTargetAt006713C0) / 40.0f + 11.0f;

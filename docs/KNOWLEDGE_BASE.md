@@ -78,6 +78,16 @@ named size and offset fields. A headless consumer opened a synthetic
 archive containing one encoded index record, sought to its payload with
 both methods and read the expected bytes.
 
+Camera initialization, motion, and drawing share the initially zeroed
+camera state at `0x006713BC` through `0x00671414`. The combat view offsets
+at `0x00671404` and `0x006713C4` are written by the camera and read by the
+renderers. The pinned VC7.1 `cosf` and `sinf` wrappers also supply the two
+float entry points called by the camera and scaled sprite routines.
+
+The renderer reads the frame flag at `FighterFrameInfo+0x0C` as a byte.
+The frame assignment copies the entire 16-byte header, including the
+three bytes following the flag. Both operations use the same layout.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

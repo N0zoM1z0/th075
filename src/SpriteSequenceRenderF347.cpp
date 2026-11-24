@@ -28,9 +28,9 @@ public:
     void DrawProjectedQuad(int texture, const SpriteQuad40CA80& quad, const RECT* rectangle,
                            DWORD scaleXBits, DWORD scaleYBits, DWORD scaleZBits, DWORD tint);
 };
-extern const float g_SequenceBaseXAt00671404;
+extern float g_CombatViewOffsetX;
 extern const float g_SequenceBaseOffsetAt00657834;
-extern const float g_SequenceBaseYAt006713C4;
+extern float g_CombatViewOffsetY;
 extern const float g_SequenceYOffsetAt00657830;
 extern const float g_SequenceDefaultScaleAt0065782C;
 struct NativeQuadCarrierF331 {
@@ -69,8 +69,8 @@ void SpriteSequenceF261::RenderElements()
         SequenceIteratorF261 it=LIST->begin();
         NativeSequenceStateF331 state;
         LIST->End(&state.end);
-        state.x=g_SequenceBaseXAt00671404-g_SequenceBaseOffsetAt00657834;
-        float y=g_SequenceBaseYAt006713C4;
+        state.x=g_CombatViewOffsetX-g_SequenceBaseOffsetAt00657834;
+        float y=g_CombatViewOffsetY;
         state.quad.Construct();
         {
         state.counter=0;

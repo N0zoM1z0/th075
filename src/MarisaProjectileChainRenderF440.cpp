@@ -26,8 +26,8 @@ extern const float g_MarisaPhaseDivisorBAt0065788C;
 extern const float g_MarisaPhaseMultiplierAt00657878;
 extern const float g_MarisaCameraOffsetXAt00657834;
 extern const float g_MarisaCameraOffsetYAt00657830;
-extern const float g_MarisaCameraXAt00671404;
-extern const float g_MarisaCameraYAt006713C4;
+extern float g_CombatViewOffsetX;
+extern float g_CombatViewOffsetY;
 struct NativeMarisaQuadF362 { DWORD words[34]; void Construct(); };
 typedef char ConfirmMarisaQuadNativeF438[(sizeof(NativeMarisaQuadF362)==136)?1:-1];
 struct NativeMarisaStateF358 {
@@ -55,8 +55,8 @@ void MarisaFighter::RenderChain() {
 #define phaseB state.phaseB
 #define angle state.angle
 #define radius state.radius
-    xShift=g_MarisaCameraXAt00671404-g_MarisaCameraOffsetXAt00657834;
-    yOrigin=g_MarisaCameraYAt006713C4;
+    xShift=g_CombatViewOffsetX-g_MarisaCameraOffsetXAt00657834;
+    yOrigin=g_CombatViewOffsetY;
     DRAWER->SetBlendMode(2);
     for(i=1;i<=8;++i) {
         phaseA=static_cast<short>(i*0x150%40-20);

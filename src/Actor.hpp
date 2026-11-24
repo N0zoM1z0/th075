@@ -35,7 +35,8 @@ struct FighterFrameInfoHeader {
     short unknown04;          // +0x04
     short textureIndex;       // +0x06
     ActorPose* pose;           // +0x08
-    unsigned long field0C;    // +0x0C
+    unsigned char field0C;    // +0x0C
+    unsigned char unknown0D[3];
 };
 
 // RECT-compatible body bounds. The Windows RECT view is used only at the
@@ -59,7 +60,8 @@ struct FighterFrameInfo {
             short unknown04;
             short textureIndex;
             ActorPose* pose;
-            unsigned long field0C;
+            unsigned char field0C;
+            unsigned char unknown0D[3];
         };
     };
     short damage;             // +0x10

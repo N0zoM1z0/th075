@@ -24,8 +24,8 @@ public:
 };
 extern float g_ZeroAngleF775;
 extern float g_AngleUnitF775;
-float __cdecl CosAt0040D900(float);
-float __cdecl SinAt0040D940(float);
+float __cdecl CameraCosineAt0040D900(float);
+float __cdecl CameraSineAt0040D940(float);
 #define ENTRY_AT(fld) (*reinterpret_cast<int*>(reinterpret_cast<char*>(reinterpret_cast<SpriteScaledListF775*>(reinterpret_cast<char*>(this)+8)->At(texture))+(fld)))
 void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scaleX,float scaleY,float angle,unsigned char flags) {
@@ -43,8 +43,8 @@ void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
              (region.right-pivotX)*scaleX+x,
              (region.bottom-pivotY)*scaleY+y);
     } else {
-        float cosine=CosAt0040D900(angle*g_AngleUnitF775);
-        float sine=SinAt0040D940(angle*g_AngleUnitF775);
+        float cosine=CameraCosineAt0040D900(angle*g_AngleUnitF775);
+        float sine=CameraSineAt0040D940(angle*g_AngleUnitF775);
         quad.first.x=(x-pivotX*scaleX*cosine)+pivotY*sine;
         quad.first.y=(y-pivotX*scaleX*sine)-pivotY*cosine;
         quad.fourth.x=(x-pivotX*scaleX*cosine)-(region.bottom-pivotY)*scaleY*sine;

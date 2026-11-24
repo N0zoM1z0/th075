@@ -28,8 +28,8 @@ public:
     void DrawTriangleStrip(int, Graphics::ScreenVertex*, int);
 };
 extern "C" double __cdecl sin(double);
-extern float g_EffectCameraX;
-extern float g_EffectCameraY;
+extern float g_CombatViewOffsetX;
+extern float g_CombatViewOffsetY;
 #define OWNER_INT(offset) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this) + (offset)))
 #define DRAWING reinterpret_cast<EffectDrawingF127*>(reinterpret_cast<char*>(this) + 0x18)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
@@ -51,8 +51,8 @@ class EffectPattern00450EE0 { public: void Render(); };
 class EffectPattern00451440 { public: void Render(); };
 
 void EffectPattern00449EE0::Render() {
-    int cameraX = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 320.0, cameraY + 280, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 0);
@@ -67,8 +67,8 @@ void EffectPattern00449EE0::Render() {
 }
 
 void EffectPattern0044B630::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetDepthMode(0);
     DRAWING->SetBlendMode(0);
     RECT spriteRectFirst;
@@ -89,8 +89,8 @@ void EffectPattern0044B630::Render() {
 }
 
 void EffectPattern0044BB50::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetDepthMode(0);
     DRAWING->SetBlendMode(0);
     RECT spriteRectFirst;
@@ -111,8 +111,8 @@ void EffectPattern0044BB50::Render() {
 }
 
 void EffectPattern0044C070::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetDepthMode(0);
     DRAWING->SetBlendMode(0);
     RECT spriteRectFirst;
@@ -133,8 +133,8 @@ void EffectPattern0044C070::Render() {
 }
 
 void EffectPattern0044D620::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     Graphics::ScreenVertex stripVertices[6];
     stripVertices[0].x = cameraHorizontal + 280.0;
     stripVertices[0].y = cameraY + -512.0;
@@ -180,8 +180,8 @@ void EffectPattern0044D620::Render() {
 }
 
 void EffectPattern0044DA90::Render() {
-    int cameraX = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetDepthMode(0);
     DRAWING->DrawSprite(0, cameraX + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0, 0);
     DRAWING->SetBlendMode(2);
@@ -196,8 +196,8 @@ void EffectPattern0044DA90::Render() {
 }
 
 void EffectPattern0044E3D0::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetDepthMode(0);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraHorizontal * 0.6 + 320.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
@@ -218,8 +218,8 @@ void EffectPattern0044E3D0::Render() {
 }
 
 void EffectPattern0044F850::Render() {
-    int cameraX = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetDepthMode(0);
     DRAWING->DrawSprite(0, cameraX + 320, cameraY + 240, 0xFFFFFFFF, 700.0f, 620.0f, 1.0f, 0, 0);
     DRAWING->SetBlendMode(2);
@@ -234,8 +234,8 @@ void EffectPattern0044F850::Render() {
 }
 
 void EffectPattern0044FAF0::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     RECT imageRect;
     imageRect.left = 0; imageRect.top = 0; imageRect.right = 256; imageRect.bottom = 256;
     RectQuadF127 spriteQuadFirst(&imageRect);
@@ -256,8 +256,8 @@ void EffectPattern0044FAF0::Render() {
 }
 
 void EffectPattern0044FD40::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     RECT imageRect;
     imageRect.left = 0; imageRect.top = 0; imageRect.right = 256; imageRect.bottom = 128;
     SpriteQuad40CA80 spriteQuadFirst;
@@ -283,8 +283,8 @@ void EffectPattern0044FD40::Render() {
 }
 
 void EffectPattern00450420::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     RECT clearRect;
     SetRect(&clearRect, 0, 0, 960, 720);
     DRAWING->SetBlendMode(0);
@@ -308,8 +308,8 @@ void EffectPattern00450420::Render() {
 }
 
 void EffectPattern00450C10::Render() {
-    int cameraX = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraX = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     DRAWING->SetBlendMode(0);
     DRAWING->DrawSprite(2, cameraX * 0.6 + 384.0, cameraY * 0.6 + 200.0, 0xFFFFFFFF, 768.0f, 384.0f, 3.0f, 0, 0);
     DRAWING->DrawSprite(1, cameraX * 0.75 + 320.0, cameraY + 280, 0xFFFFFFFF, 700.0f, 350.0f, 1.0f, 0, 0);
@@ -325,8 +325,8 @@ void EffectPattern00450C10::Render() {
 }
 
 void EffectPattern00450EE0::Render() {
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     RECT imageRect;
     imageRect.left = 0; imageRect.top = 0; imageRect.right = 64; imageRect.bottom = 256;
     SpriteQuad40CA80 spriteQuadFirst;
@@ -344,8 +344,8 @@ void EffectPattern00450EE0::Render() {
 void EffectPattern00451440::Render() {
     int currentVertexPair;
     unsigned int greenColor;
-    int cameraHorizontal = static_cast<int>(g_EffectCameraX + 160.0f);
-    int cameraY = static_cast<int>(g_EffectCameraY);
+    int cameraHorizontal = static_cast<int>(g_CombatViewOffsetX + 160.0f);
+    int cameraY = static_cast<int>(g_CombatViewOffsetY);
     unsigned int redChannelWave = static_cast<int>(sin(OWNER_INT(0x68) / 0.017453288659453392f * 0.0003) * 128.0 + 127.0);
     greenColor = static_cast<int>(sin(OWNER_INT(0x68) / 0.017453288659453392f * 0.0002) * 64.0 + 191.0);
     unsigned int tintBlue = static_cast<int>(sin(OWNER_INT(0x68) / 0.017453288659453392f * 0.0005) * 64.0 + 191.0);
@@ -355,8 +355,8 @@ void EffectPattern00451440::Render() {
     DRAWING->DrawSprite(0, cameraHorizontal * 0.1 + 464.0, cameraY + 240, 0xFFFFFFFF, 512.0f, 232.0f, 1.0f, 0, 0);
     DRAWING->SetBlendMode(2);
     for (currentVertexPair = 0; currentVertexPair <= 128; currentVertexPair += 2) {
-        STRIP(currentVertexPair).x = currentVertexPair * g_EffectCameraX / 128.0f + -60.0f - (currentVertexPair * 160) / 128.0f;
-        STRIP(currentVertexPair + 1).x = currentVertexPair * g_EffectCameraX / 128.0f + 1020.0f + (currentVertexPair * 160) / 128.0f;
+        STRIP(currentVertexPair).x = currentVertexPair * g_CombatViewOffsetX / 128.0f + -60.0f - (currentVertexPair * 160) / 128.0f;
+        STRIP(currentVertexPair + 1).x = currentVertexPair * g_CombatViewOffsetX / 128.0f + 1020.0f + (currentVertexPair * 160) / 128.0f;
         STRIP(currentVertexPair + 1).y = cameraY + 264 + currentVertexPair * 2;
         STRIP(currentVertexPair).y = STRIP(currentVertexPair + 1).y;
         STRIP(currentVertexPair).u = 0;

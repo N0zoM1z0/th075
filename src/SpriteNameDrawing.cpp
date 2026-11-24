@@ -12,8 +12,8 @@ public:
     void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
     void DrawProjectedQuad(int, const SpriteQuad40CA80&, const RECT*, float, float, float, DWORD);
 };
-extern float g_NodeCameraX;
-extern float g_NodeCameraY;
+extern float g_CombatViewOffsetX;
+extern float g_CombatViewOffsetY;
 #define DRAWING reinterpret_cast<NodeDrawingF129*>(drawing)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 // Object vtable slot 2: draw relative to the battle camera.
@@ -24,8 +24,8 @@ void CharacterObject::Render() {
     DWORD drawColor;
     float cameraY;
     SpriteQuad40CA80 transformedQuad;
-    cameraHorizontal = g_NodeCameraX - 160.0f;
-    cameraY = g_NodeCameraY;
+    cameraHorizontal = g_CombatViewOffsetX - 160.0f;
+    cameraY = g_CombatViewOffsetY;
     DRAWING->GetTextureRect(drawFrame->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (drawFrame->pose != 0) {
