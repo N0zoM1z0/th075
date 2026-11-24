@@ -1,4 +1,4 @@
-# TH075 handoff (2026-11-20)
+# TH075 reconstruction handoff
 
 Follow [AGENTS.md](../AGENTS.md) first. This file is the concise live
 handoff; [GIANTS.md](GIANTS.md) keeps the complete-parent table, detailed
@@ -12,29 +12,8 @@ Run this command for authoritative current counts:
 
     scripts/repo-python scripts/report-reconstruction-status.py --summary
 
-Snapshot checked on 2026-11-20:
-
-- 4,351 candidate functions: 1,008 authored, 90 origin-review candidates,
-  and 3,253 excluded.
-- 988 accepted exact functions cover 933,442 authored CODE bytes.
-- The authored denominator is 1,973,772 bytes: 47.29% exact, or 47.21%
-  conservative when the 3,315 pending-origin bytes are included.
-- 20 authored functions remain, totaling 1,040,330 CODE bytes. All are
-  slot-1 `Advance` methods: 11 fighter vtables and nine character-object
-  vtables.
-- Thirteen whole-function parents are available: 11 remain nonexact and
-  two object parents are already exact (Alice `004EBDA0`, Remilia
-  `0055AC80`). Nine remaining functions do not yet have a complete parent.
-- The 98% authored-byte goal is not met.
-
-`config/function-origins.csv` is the live origin authority. The 97-row /
-3,608-byte R263 review matrix is historical; the live queue is 90 candidates /
-3,315 bytes. Do not use the historical count as the current backlog.
-
-The reconstruction baseline before this documentation pass was
-`43a36a53` (`gpt-web: align Yuyuko object case dispatch`); the worktree was
-clean and `main` matched `origin/main`. Recheck `git status --short --branch`
-and `git log` before editing.
+The report includes pending-origin bytes in the conservative coverage
+denominator. `config/function-origins.csv` is the live origin authority.
 
 Target: the user-supplied Japanese TH075 v1.11 executable
 `resources/th075.exe`, SHA-256
@@ -110,6 +89,14 @@ seven jump tables, four remap arrays and 1,491 relocations. The
 `0x136` and `0x201` animation paths close the later register differences.
 The ledger credits 46,755 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--youmus-fighter-advance-cold-replays-exactly)
+
+### Reimu object Advance is exact
+
+`reimu-object-advance-00476a40` cold-replays 51,378 bytes with all
+1,152 relocations. The dispatch separates 65 behavior-specific actions
+from the shared animation handler. Action 997's in-progress path
+restores the entry register in 998. The ledger credits 50,915 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--reimus-object-advance-cold-replays-exactly)
 
 ### Reimu fighter Advance is exact
 
@@ -242,10 +229,9 @@ complete function.
 
 ## Remaining giant parents
 
-All complete parents now cold-replay exactly. The remaining nine functions have partial or unstarted parents.
+The remaining functions have partial or unstarted parents.
 
-- Objects: Reimu `00476A40` (50,915 bytes), Marisa `0049C8F0`
-  (46,596 bytes).
+- Object: Marisa `0049C8F0` (46,596 bytes).
 - Fighters: Marisa `00486550` (50,735 bytes), Alice `004D7E70`
   (43,601 bytes), Patchouli `004F7130` (44,211 bytes), Yuyuko `00564BE0`
   (61,872 bytes), Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0`

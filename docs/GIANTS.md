@@ -2,8 +2,8 @@
 
 The unmatched authored functions are slot-1 `Advance` methods from
 the fighter and character-object vtables. They are per-frame state
-machines with large `switch (action)` bodies. The Sakuya, Alice, Patchouli,
-Youmu, Remilia, Yukari, Suika and Meiling object parents have exact replay units.
+machines with large `switch (action)` bodies. The Reimu, Sakuya, Alice, Patchouli, Youmu, Remilia, Yuyuko, Yukari,
+Suika and Meiling object parents have exact replay units.
 Use the live reconstruction report for the authored backlog and the
 table below for complete source parents.
 
@@ -74,6 +74,7 @@ rows have complete replay units.
 | Original | Character | Size | Parent | GPR debt | Widths | First GPR difference |
 | --- | --- | ---: | --- | ---: | ---: | --- |
 | 0045DD70 | Reimu fighter | 60,999 | `ReimuFighterAdvanceF1183.cpp` (cold exact) | 0 | 0 | — |
+| 00476A40 | Reimu object | 50,915 | `ReimuObjectAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 004AC040 | Sakuya fighter | 82,796 | `SakuyaFighterAdvanceF1020.cpp` (cold exact, `/GX`) | 0 | 0 | — |
 | 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` (cold exact) | 0 | 0 | — |
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` (cold exact) | 0 | 0 | — |
@@ -937,7 +938,7 @@ are unchanged. This is source/interface recovery, not giant exact credit.
 
 ## Without a complete parent
 
-Objects 00476A40 (Reimu, 50,915 B) and 0049C8F0 (Marisa, 46,596 B); fighters
+Object 0049C8F0 (Marisa, 46,596 B); fighters
 00486550 (Marisa, 50,735 B), 004D7E70 (Alice, 43,601 B), 004F7130
 (Patchouli, 44,211 B), 00564BE0 (Yuyuko, 61,872 B), 0058AF60 (Yukari,
 49,230 B), 005AEEC0 (Suika, 71,616 B) and 005D73C0 (Meiling, 43,282 B).
@@ -2163,4 +2164,44 @@ accepted source with:
 
 ```sh
 scripts/repo-python scripts/replay-exact-units.py --unit sakuya-fighter-advance-004ac040
+```
+
+
+## 2026-11-24 — Reimu's object Advance cold-replays exactly
+
+The native dispatch at `00476AEB` maps actions 800–998 to 66 distinct
+entry blocks. Fifteen actions grouped in the partial parent have
+separate native bodies. Splitting the groups recovered their differing
+effect IDs, limits, and float scales. The entry also decrements
+`field082` before returning during hit stop. The 134 remap aliases
+share the animation-update default, including actions outside the table.
+
+The VC7.1 `/FAcs` listing compares byte-for-byte with the normal object
+and maps 59 jumps to their source statements. Explicit returns after
+those statements restore the native direct jumps to the shared
+epilogue. In 931 and 932, compound updates of the owner's signed
+short at `+0xF24` retain its destination in ESI across `__ftol2`
+and recover the original stack frame and saved registers.
+
+The first register divergence in 913 appears after the stage-2 speed
+update. Expressing the fade-stage speed hold aligns the movement, then
+the active-contact path aligns the subsequent stage-reset guard. The
+same pair of joins applies to 927–930 and 940. In 933, the later
+startup frames retain the launch velocity. Finally, the in-progress
+animation path in 997 restores ECX at the first reload in 998.
+
+| Action 997 comparison | CODE / complete bytes | Relocated byte differences | Action 998 |
+| --- | ---: | ---: | --- |
+| In-progress animation | 50,915 / 51,378 | 0 | ECX at `00482E6F` |
+| Omit only the in-progress arm | 50,912 / 51,375 | 1,203 | EAX at `00482E6F`, 142 register and 5 width differences |
+
+Both builds resolve all 1,152 relocation fields and preserve the 1,273
+direct branch destinations and 199 dispatch destinations by instruction.
+The omission moves ten relocation fields and 134 action entry offsets.
+The accepted cold replay compares the 264-byte table at `00483123`
+and the 199-byte remap at `0048322B` along with the CODE extent.
+
+```sh
+scripts/repo-python scripts/replay-exact-units.py --unit reimu-object-advance-00476a40
+scripts/repo-python .analysis/reimu-object-advance/continue-control.py
 ```

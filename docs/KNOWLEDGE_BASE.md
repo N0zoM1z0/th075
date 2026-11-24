@@ -2,8 +2,8 @@
 
 Reusable findings about the original `th075.exe` (Japanese 1.11) and the
 VC7.1 build 3077 compiler that rebuilds it. Current work and blockers are in
-the [handoff](RE_HANDOFF.md); the 22 remaining giant functions have their own
-page, [GIANTS.md](GIANTS.md). Everything here was observed on the original PE
+the [handoff](RE_HANDOFF.md). [GIANTS.md](GIANTS.md) records the
+Advance parents and compiler evidence. Everything here was observed on the original PE
 or in a cold build; checkpoint numbers (Fnnn) point to the commit history.
 
 The journal this page replaces (per-checkpoint notes F179–F1239, about 17,000
@@ -47,8 +47,7 @@ dumps them):
   destructor. `<Char>Object` constructors are in
   `src/CharacterObjectConstructorsF422.cpp`.
 
-Slot 1 of the 22 character tables is the per-character `Advance`. These are
-exactly the 22 authored functions still not exact:
+Slot 1 of each character table is the per-character `Advance`.
 
 | Character | Fighter Advance | Object Advance |
 | --- | --- | --- |
@@ -228,6 +227,13 @@ before adding the base, in a different instruction order.
   the second, and the second yields matching table offsets while 106
   instruction bytes still differ in 929. Compare the complete extent
   after each change. [Suika controls](GIANTS.md#2026-11-24--suikas-three-startup-joins-cold-replay-exactly)
+- VC7.1's `/FAcs` listing ties otherwise identical epilogue jumps to
+  source lines. In Reimu's object Advance, 59 direct jumps to the shared
+  return had been routed through individual case tails. Explicit
+  returns restore their destinations without changing instruction
+  counts. Check the listing build's section and relocations against the
+  ordinary object before using its line labels.
+  [Reimu object comparison](GIANTS.md#2026-11-24--reimus-object-advance-cold-replays-exactly)
 - An eliminated condition can change registers between two consecutive
   statements. Sakuya's explicit later startup frames in action 808
   restore the first reload for the bounds check after a matching

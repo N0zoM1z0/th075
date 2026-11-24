@@ -951,3 +951,4 @@ address,name,module,confidence,evidence
 0x005214B0,YoumuFighter::Advance,YoumuFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x0045DD70,ReimuFighter::AdvanceActionStatesAt0045DD70,ReimuFighter,inferred,Fighter vtable slot 1 and complete cold replay; R063
 0x004AC040,SakuyaFighter::Advance,SakuyaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
+0x00476A40,ReimuObject::Advance,ReimuObject,inferred,Character-object vtable slot 1 and complete cold replay; R048

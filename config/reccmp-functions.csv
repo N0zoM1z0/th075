@@ -1000,3 +1000,4 @@ YoumuObject::Advance,0x00536400,function
 YuyukoObject::Advance,0x0057D580,function
 RemiliaFighter::Advance,0x00543210,function
 YoumuFighter::Advance,0x005214B0,function
+ReimuObject::Advance,0x00476A40,function
