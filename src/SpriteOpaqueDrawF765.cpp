@@ -3,16 +3,12 @@
 #include "GraphicsTexturedDraw.hpp"
 #include "SpriteGeometryF211.hpp"
 #include <windows.h>
-class SpriteDrawingF765 {
-public:
-    void DrawOpaqueSprite(int texture,int x,int y,DWORD color);
-};
-void SpriteDrawingF765::DrawOpaqueSprite(int texture,int x,int y,DWORD color) {
+void TextureManagerF198::DrawOpaqueSprite(int texture,int x,int y,DWORD color) {
     RECT textureBounds;
     textureBounds.left=0;
     textureBounds.top=0;
-    textureBounds.right=reinterpret_cast<TextureManagerF198*>(this)->entries[texture].storedWidth;
-    textureBounds.bottom=reinterpret_cast<TextureManagerF198*>(this)->entries[texture].storedHeight;
+    textureBounds.right=entries[texture].storedWidth;
+    textureBounds.bottom=entries[texture].storedHeight;
     {RECT destination;
     destination.left=x;
     destination.right=x+textureBounds.right;
@@ -21,6 +17,6 @@ void SpriteDrawingF765::DrawOpaqueSprite(int texture,int x,int y,DWORD color) {
     Graphics::SetBlendMode(0);
     Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(
         &static_cast<const SpriteRectF211&>(SpriteRectF211(&destination))),
-        &textureBounds, color, reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
+        &textureBounds, color, GetTexture(texture));
     }
 }

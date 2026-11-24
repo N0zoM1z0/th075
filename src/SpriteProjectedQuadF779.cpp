@@ -17,5 +17,5 @@ void TextureManagerF198::DrawProjectedQuad(int texture,
 {
     ProjectedQuadCopyF779 drawQuad(reinterpret_cast<const ProjectedQuadCopyF779&>(quad));
     Graphics::DrawProjectedTexturedQuad(drawQuad.positions,
-        rect, x, y, z, color, reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
+        rect, x, y, z, color, GetTexture(texture));
 }

@@ -6,7 +6,7 @@
 // Private owners are pointer-only; their complete layouts remain unknown.
 class QuadDrawingF121 { public: void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD); };
 
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(drawing)
+#define DRAWING reinterpret_cast<TextureManagerF198*>(drawing)
 #define QUAD_DRAWING reinterpret_cast<QuadDrawingF121*>(stageDrawing)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 

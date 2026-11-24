@@ -5,7 +5,7 @@
 
 #define WHITE(a) D3DCOLOR_ARGB(a, 255, 255, 255)
 
-#define DRAW (reinterpret_cast<TimelineDrawing438D00*>(texture))
+#define DRAW (texture)
 
 void StaffRollScene::Render() {
     DWORD begin, end;

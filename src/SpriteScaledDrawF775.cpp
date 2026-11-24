@@ -9,16 +9,10 @@
 // cosine/sine rotation and genuine quad vector swapping. Three x87
 // source evaluation orders were independently decoded from original PE.
 // Historical owner/private payload meanings remain provisional.
-class SpriteDrawingF775 {
-public:
-    void DrawScaled(int texture,float x,float y,DWORD color,
-         float pivotX,float pivotY,float scaleX,float scaleY,
-         float angle,unsigned char flags);
-};
 float __cdecl CameraCosineAt0040D900(float);
 float __cdecl CameraSineAt0040D940(float);
-#define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
-void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
+#define ENTRY entries[texture]
+void TextureManagerF198::DrawScaled(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scaleX,float scaleY,float angle,unsigned char flags) {
     SpriteQuad40CA80 quad;
     { RECT region;
@@ -55,7 +49,7 @@ void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
         quad.third=temp;
     }
     Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&quad),
-         &region,color,reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
+         &region,color,GetTexture(texture));
     }
 }
 #undef ENTRY

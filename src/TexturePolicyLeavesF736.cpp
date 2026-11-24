@@ -3,15 +3,11 @@
 #include "Graphics.hpp"
 #include "GraphicsTexturedDraw.hpp"
 
-class TextureManagerSlotsF736 {
-public:
-    void ClearSlots();
-};
 
-void TextureManagerSlotsF736::ClearSlots()
+void TextureManagerF198::ClearSlots()
 {
-    reinterpret_cast<TextureManagerF198*>(this)->entries.clear();
-    reinterpret_cast<TextureManagerF198*>(this)->textures.clear();
+    entries.clear();
+    textures.clear();
 }
 
 void TextureManagerF198::SetBlendMode(int mode) {
@@ -22,12 +18,8 @@ void TextureManagerF198::SetBlendMode(int mode) {
     Graphics::SetBlendMode(mode);
 }
 
-class SpriteTexturesF736 {
-public:
-    void DrawProjectedTriangleStrip(int index, Graphics::ScreenVertex* vertices, int count);
-};
-void SpriteTexturesF736::DrawProjectedTriangleStrip(
+void TextureManagerF198::DrawProjectedTriangleStrip(
     int index, Graphics::ScreenVertex* vertices, int count) {
     Graphics::DrawProjectedTriangleStrip(vertices, count,
-        reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(index));
+        GetTexture(index));
 }

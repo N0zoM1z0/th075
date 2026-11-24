@@ -14,7 +14,7 @@ extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671428;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(textures)
+#define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 #define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF124*>(textures)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 #define POSITIONS(value) reinterpret_cast<const float (*)[4]>(&(value))

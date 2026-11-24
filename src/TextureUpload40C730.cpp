@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "TextureUpload40C730.hpp"
 #include "TextureManagerBorrowedF925.hpp"
 
@@ -22,7 +23,7 @@ void TextureUpload40C730::Upload(TextureEntryStorageF769* bitmap, IDirect3DTextu
 }
 
 void TextureUpload40C730::UploadByHandle(TextureEntryStorageF769* bitmap, int index) {
-    IDirect3DTexture8* texture = reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(index);
+    IDirect3DTexture8* texture = reinterpret_cast<TextureManagerF198*>(this)->GetTexture(index);
     if (!texture)
         return;
     Upload(bitmap, &texture);

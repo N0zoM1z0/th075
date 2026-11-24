@@ -9,20 +9,14 @@
 // scale/no-angle path, cosine/sine rotation and actual vector swapping.
 // Branch-source order is native: scale!=1 & angle==0 first, then rotation.
 // Historical owner/private payload meanings remain provisional.
-class SpriteDrawingF776 {
-public:
-    void DrawVariant(int texture,float x,float y,DWORD color,
-         float pivotX,float pivotY,float scale,float angle,
-         unsigned char flags,unsigned char mode);
-};
 float __cdecl CameraCosineAt0040D900(float);
 float __cdecl CameraSineAt0040D940(float);
-#define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
-void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
+#define ENTRY entries[texture]
+void TextureManagerF198::DrawSpriteVariant(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scale,float angle,
     unsigned char flags,unsigned char mode) {
     if (mode == 0) {
-        reinterpret_cast<TimelineDrawing438D00*>(this)->DrawSprite(texture,x,y,color,pivotX,pivotY,scale,angle,flags);
+        DrawSprite(texture,x,y,color,pivotX,pivotY,scale,angle,flags);
     } else {
     SpriteQuad40CA80 quad;
     { RECT region;
@@ -59,7 +53,7 @@ void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
         quad.third=temp;
     }
     Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&quad),
-         &region,color,reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
+         &region,color,GetTexture(texture));
     }
     }
 }

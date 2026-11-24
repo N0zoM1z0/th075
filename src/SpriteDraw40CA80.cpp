@@ -2,9 +2,9 @@
 #include "TextureManagerF198.hpp"
 #include <string.h>
 
-#define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
+#define ENTRY entries[texture]
 
-void TimelineDrawing438D00::DrawSprite(int texture, float x, float y, DWORD color,
+void TextureManagerF198::DrawSprite(int texture, float x, float y, DWORD color,
     float pivotX, float pivotY, float scale, float angle, unsigned char flags) {
     SpriteQuad40CA80 quad;
     {
@@ -50,7 +50,7 @@ void TimelineDrawing438D00::DrawSprite(int texture, float x, float y, DWORD colo
             quad.third = swap;
         }
         Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&quad), &region,
-            color, reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
+            color, GetTexture(texture));
     }
 }
 

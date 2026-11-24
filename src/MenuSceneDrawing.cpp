@@ -23,7 +23,7 @@ struct ResultRowF119 {
 typedef char ResultRowStrideF119[(sizeof(ResultRowF119) == 16) ? 1 : -1];
 typedef char ResultRowScoreF119[(offsetof(ResultRowF119, score) == 12) ? 1 : -1];
 #define SCENE_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + offset))
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(SCENE_FIELD(void*, 8))
+#define DRAWING reinterpret_cast<TextureManagerF198*>(SCENE_FIELD(void*, 8))
 #define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF119*>(SCENE_FIELD(void*, 8))
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 #define POSITIONS(value) reinterpret_cast<const float (*)[4]>(&(value))
@@ -129,7 +129,7 @@ void MusicRoomScene::Render() {
 #undef DRAWING
 #undef QUAD_DRAWING
 #undef DATA
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(mainTexture)
+#define DRAWING reinterpret_cast<TextureManagerF198*>(mainTexture)
 #define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF119*>(mainTexture)
 #define DATA reinterpret_cast<char*>(selectedRecord)
 

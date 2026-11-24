@@ -28,13 +28,13 @@ BattleScene::BattleScene()
     static_cast<TextureManagerF198*>(textures)->LoadDefault(
         g_BattleTextureDataAt0065831C, g_BattleTextureRootAt00658314);
     digitAtlas = new DigitAtlas(
-        static_cast<SpriteTextures40CA80*>(textures)->GetTexture(1),
-        static_cast<SpriteTextures40CA80*>(textures)->GetTexture(8),
-        static_cast<SpriteTextures40CA80*>(textures)->GetTexture(9));
+        static_cast<TextureManagerF198*>(textures)->GetTexture(1),
+        static_cast<TextureManagerF198*>(textures)->GetTexture(8),
+        static_cast<TextureManagerF198*>(textures)->GetTexture(9));
     comboDisplays[0] =
-        new ComboDisplay(static_cast<SpriteTextures40CA80*>(textures)->GetTexture(0), 1);
+        new ComboDisplay(static_cast<TextureManagerF198*>(textures)->GetTexture(0), 1);
     comboDisplays[1] =
-        new ComboDisplay(static_cast<SpriteTextures40CA80*>(textures)->GetTexture(0), -1);
+        new ComboDisplay(static_cast<TextureManagerF198*>(textures)->GetTexture(0), -1);
     fighters[0] = reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0]);
     fighters[1] = reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1]);
     field060 = 0;

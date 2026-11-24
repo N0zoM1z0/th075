@@ -19,7 +19,7 @@ class QuadDrawingF122 { public: void DrawQuad(int, const SpriteQuad40CA80&, cons
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(drawing)
+#define DRAWING reinterpret_cast<TextureManagerF198*>(drawing)
 #define QUAD_DRAWING reinterpret_cast<QuadDrawingF122*>(stageDrawing)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 

@@ -17515,118 +17515,118 @@ relocations = [
   { offset = 0xD, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x25, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x32, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x8F, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0xD7, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xF1, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x110, type = "DIR32", symbol = "__real@42c80000", target = 0x00657888 },
   { offset = 0x14D, type = "DIR32", symbol = "__real@43820000", target = 0x006582E4 },
-  { offset = 0x161, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x161, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x19F, type = "DIR32", symbol = "__real@43960000", target = 0x0065784C },
-  { offset = 0x1B3, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x203, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x22F, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1B3, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x203, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x22F, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x28C, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x292, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x297, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x2E4, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x32E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x37E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x2E4, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x32E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x37E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x3DD, type = "DIR32", symbol = "__real@42800000", target = 0x006582E0 },
   { offset = 0x3E3, type = "DIR32", symbol = "__real@41800000", target = 0x00657CC0 },
   { offset = 0x3E9, type = "DIR32", symbol = "__real@40800000", target = 0x00657D14 },
   { offset = 0x3F9, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x414, type = "DIR32", symbol = "__real@43f00000", target = 0x00657D10 },
-  { offset = 0x42A, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x42A, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x445, type = "DIR32", symbol = "__real@43f00000", target = 0x00657D10 },
   { offset = 0x44B, type = "DIR32", symbol = "__real@44800000", target = 0x00658258 },
-  { offset = 0x461, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x461, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x47C, type = "DIR32", symbol = "__real@43f00000", target = 0x00657D10 },
   { offset = 0x482, type = "DIR32", symbol = "__real@45000000", target = 0x006582DC },
-  { offset = 0x498, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x498, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x4B3, type = "DIR32", symbol = "__real@43f00000", target = 0x00657D10 },
   { offset = 0x4B9, type = "DIR32", symbol = "__real@45400000", target = 0x006582D8 },
-  { offset = 0x4CF, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x4CF, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x4DC, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x539, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x55C, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x570, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x570, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x590, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x5A4, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x5F4, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x620, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x5A4, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x5F4, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x620, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x67D, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x683, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x6A6, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x6BA, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x6BA, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x6DA, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x6EE, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x6EE, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x74B, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x76E, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x782, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x782, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x7A2, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x7B6, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x806, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x832, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x7B6, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x806, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x832, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x89E, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x8A4, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x8C7, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x8DB, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x8DB, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x8FB, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x90F, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x90F, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x972, type = "DIR32", symbol = "__real@41a00000", target = 0x0065786C },
   { offset = 0x978, type = "DIR32", symbol = "__real@43f00000", target = 0x00657D10 },
-  { offset = 0x98E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x98E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x9C5, type = "DIR32", symbol = "__real@41980000", target = 0x00657F78 },
   { offset = 0x9CB, type = "DIR32", symbol = "__real@44580000", target = 0x006582D4 },
-  { offset = 0x9E1, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x9E1, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xA18, type = "DIR32", symbol = "__real@41980000", target = 0x00657F78 },
   { offset = 0xA1E, type = "DIR32", symbol = "__real@44ac0000", target = 0x006582D0 },
-  { offset = 0xA34, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xA34, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xA6B, type = "DIR32", symbol = "__real@41980000", target = 0x00657F78 },
   { offset = 0xA71, type = "DIR32", symbol = "__real@44e40000", target = 0x006582CC },
-  { offset = 0xA87, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xA87, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xABE, type = "DIR32", symbol = "__real@41980000", target = 0x00657F78 },
   { offset = 0xAC4, type = "DIR32", symbol = "__real@45040000", target = 0x006582C8 },
-  { offset = 0xADA, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xADA, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB49, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xB4E, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0xB9B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0xBE0, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB9B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xBE0, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xC4F, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xC54, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0xCA1, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0xCF1, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCA1, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCF1, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xD60, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xD66, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xD6B, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0xDB8, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xDB8, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xE27, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0xE4A, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0xE5E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xE5E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xE7E, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0xE92, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xE92, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xEB2, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0xEC6, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0xF1E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0xF4A, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0xF76, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xEC6, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xF1E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xF4A, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xF76, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xFE5, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0xFEB, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x100E, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x1022, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1022, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1042, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x1056, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1056, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1076, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x108A, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x108A, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x10F5, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x1118, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0x112C, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x1171, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x112C, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1171, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x11C2, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x11E5, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x122E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x1273, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x122E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1273, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1280, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x1285, type = "REL32", symbol = "?EndFrame@Graphics@@YAXXZ", target = 0x004027D0 },
 ]
@@ -17636,7 +17636,7 @@ source = "src/SpriteDraw40CA80.cpp"
 object = "build/matching/SpriteDraw40CA80.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["TimelineDrawing438D00::DrawSprite"]
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target_address = 0x0040CA80
 size = 1132
 compare_size = 1132
@@ -17655,7 +17655,7 @@ relocations = [
   { offset = 0x237, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
   { offset = 0x240, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
   { offset = 0x36A, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
-  { offset = 0x445, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+  { offset = 0x445, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
   { offset = 0x45D, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
 
@@ -17682,20 +17682,20 @@ source = "src/TextureHandle40C8C0.cpp"
 object = "build/matching/TextureHandle40C8C0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SpriteTextures40CA80::GetTexture"]
-symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z"
 target_address = 0x0040C8C0
 size = 162
 compare_size = 162
 relocations = [
-  { offset = 0x8, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
-  { offset = 0x13, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
-  { offset = 0x1C, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
-  { offset = 0x25, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
+  { offset = 0x8, type = "DIR32", symbol = "?$S1@?1??GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
+  { offset = 0x13, type = "DIR32", symbol = "?$S1@?1??GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
+  { offset = 0x1C, type = "DIR32", symbol = "?$S1@?1??GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
+  { offset = 0x25, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
   { offset = 0x36, type = "REL32", symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ", target = 0x0040DD20 },
   { offset = 0x4E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x5C, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
+  { offset = 0x5C, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
   { offset = 0x6D, type = "REL32", symbol = "?Refresh@TextureManagerF198@@QAEXH@Z", target = 0x0040C590 },
-  { offset = 0x76, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
+  { offset = 0x76, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
   { offset = 0x83, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
   { offset = 0x96, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
 ]
@@ -17770,7 +17770,7 @@ target_address = 0x0040C6F0
 size = 54
 compare_size = 54
 relocations = [
-  { offset = 0x11, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+  { offset = 0x11, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
   { offset = 0x2C, type = "REL32", symbol = "?Upload@TextureUpload40C730@@QAEXPAUTextureEntryStorageF769@@PAPAUIDirect3DTexture8@@@Z", target = 0x0040C730 },
 ]
 
@@ -20958,64 +20958,64 @@ relocations = [
   { offset = 0x26, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x47, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x57, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
-  { offset = 0xB0, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB0, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xC0, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x11A, type = "DIR32", symbol = "__real@44600000", target = 0x00657D74 },
   { offset = 0x164, type = "DIR32", symbol = "__real@41000000", target = 0x00657D70 },
   { offset = 0x16A, type = "DIR32", symbol = "__real@43c00000", target = 0x00657D6C },
-  { offset = 0x17E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x17E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1A4, type = "DIR32", symbol = "__real@41000000", target = 0x00657D70 },
   { offset = 0x1AA, type = "DIR32", symbol = "__real@44600000", target = 0x00657D74 },
-  { offset = 0x1BE, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1BE, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x218, type = "DIR32", symbol = "__real@443e0000", target = 0x00657D68 },
   { offset = 0x262, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
   { offset = 0x268, type = "DIR32", symbol = "__real@42500000", target = 0x00657D64 },
-  { offset = 0x27C, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x27C, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x2A2, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
   { offset = 0x2A8, type = "DIR32", symbol = "__real@440d0000", target = 0x00657D60 },
-  { offset = 0x2BC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x2BC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x2E2, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
   { offset = 0x2E8, type = "DIR32", symbol = "__real@44868000", target = 0x00657D5C },
-  { offset = 0x2FC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x2FC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x356, type = "DIR32", symbol = "__real@44600000", target = 0x00657D74 },
   { offset = 0x39A, type = "DIR32", symbol = "__real@c4d00000", target = 0x00657D58 },
-  { offset = 0x3B4, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x3B4, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x3D4, type = "DIR32", symbol = "__real@c4900000", target = 0x00657D54 },
-  { offset = 0x3EE, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x3EE, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x40E, type = "DIR32", symbol = "__real@c4200000", target = 0x00657D50 },
-  { offset = 0x428, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x428, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x448, type = "DIR32", symbol = "__real@c3000000", target = 0x00657D4C },
-  { offset = 0x462, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x462, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x482, type = "DIR32", symbol = "__real@43c00000", target = 0x00657D6C },
-  { offset = 0x49C, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x49C, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x4BC, type = "DIR32", symbol = "__real@44600000", target = 0x00657D74 },
-  { offset = 0x4D6, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x4D6, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x530, type = "DIR32", symbol = "__real@44b00000", target = 0x00657D48 },
   { offset = 0x577, type = "DIR32", symbol = "__real@c4f00000", target = 0x00657D44 },
-  { offset = 0x591, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x591, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x5B4, type = "DIR32", symbol = "__real@c4a9999a", target = 0x00657D40 },
-  { offset = 0x5CE, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x5CE, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x5F1, type = "DIR32", symbol = "__real@c4466667", target = 0x00657D3C },
-  { offset = 0x60B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x60B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x62E, type = "DIR32", symbol = "__real@c3666668", target = 0x00657D38 },
-  { offset = 0x648, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x648, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x66B, type = "DIR32", symbol = "__real@43a66666", target = 0x00657D34 },
-  { offset = 0x685, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x685, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x6A8, type = "DIR32", symbol = "__real@44600000", target = 0x00657D74 },
-  { offset = 0x6C2, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x6C2, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x71C, type = "DIR32", symbol = "__real@44f00000", target = 0x00657D30 },
   { offset = 0x763, type = "DIR32", symbol = "__real@c5080000", target = 0x00657D2C },
-  { offset = 0x77D, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x77D, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x7A0, type = "DIR32", symbol = "__real@c4c33334", target = 0x00657D28 },
-  { offset = 0x7BA, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x7BA, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x7DD, type = "DIR32", symbol = "__real@c46cccce", target = 0x00657D24 },
-  { offset = 0x7F7, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x7F7, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x81A, type = "DIR32", symbol = "__real@c3a66668", target = 0x00657D20 },
-  { offset = 0x834, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x834, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x857, type = "DIR32", symbol = "__real@438ccccc", target = 0x00657D1C },
-  { offset = 0x871, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x871, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x894, type = "DIR32", symbol = "__real@44600000", target = 0x00657D74 },
-  { offset = 0x8AE, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x8AE, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x9B9, type = "DIR32", symbol = "__real@44380000", target = 0x00657D18 },
   { offset = 0x9F3, type = "DIR32", symbol = "__real@40800000", target = 0x00657D14 },
   { offset = 0x9F9, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
@@ -21025,7 +21025,7 @@ relocations = [
   { offset = 0xA33, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
   { offset = 0xA39, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0xA45, type = "DIR32", symbol = "__real@43f00000", target = 0x00657D10 },
-  { offset = 0xA64, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xA64, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xA6C, type = "DIR32", symbol = "__real@41a00000", target = 0x0065786C },
   { offset = 0xA78, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
   { offset = 0xA88, type = "DIR32", symbol = "__real@3ff8000000000000", target = 0x00657D08 },
@@ -21037,7 +21037,7 @@ relocations = [
   { offset = 0xAC6, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
   { offset = 0xACC, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0xAD8, type = "DIR32", symbol = "__real@44780000", target = 0x00657CF4 },
-  { offset = 0xAF7, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xAF7, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB7F, type = "REL32", symbol = "?MagnitudeAt00428D20@@YAMM@Z", target = 0x00428D20 },
   { offset = 0xB88, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
   { offset = 0xB98, type = "REL32", symbol = "?MagnitudeAt00428D20@@YAMM@Z", target = 0x00428D20 },
@@ -21046,37 +21046,37 @@ relocations = [
   { offset = 0xBB7, type = "REL32", symbol = "?MagnitudeAt00428D20@@YAMM@Z", target = 0x00428D20 },
   { offset = 0xBC0, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
   { offset = 0xBC6, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
-  { offset = 0xBE6, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0xC3F, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xBE6, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xC3F, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xC99, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xCBC, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0xD12, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xD12, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xD6C, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xD8F, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0xDE5, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xDE5, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xE3F, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xE62, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0xEB8, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xEB8, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xF12, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0xF35, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0xF8B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xF8B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xFE5, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x1008, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x105E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x10B4, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x10E3, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x105E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x10B4, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x10E3, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1180, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x11A3, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1215, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x1292, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1215, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1292, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1325, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x132B, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x1330, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x13A1, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x13A1, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1400, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
   { offset = 0x1423, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
-  { offset = 0x1475, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x14CE, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1475, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x14CE, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x14D3, type = "REL32", symbol = "?EndFrame@Graphics@@YAXXZ", target = 0x004027D0 },
 ]
 
@@ -22886,12 +22886,12 @@ relocations = [
   { offset = 0x1DC, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x1F2, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x1F8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x212, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x212, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x230, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x236, type = "DIR32", symbol = "__real@4062c00000000000", target = 0x00658AF8 },
   { offset = 0x24C, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x252, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x26C, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x26C, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x27B, type = "DIR32", symbol = "__real@3fd999999999999a", target = 0x00658AF0 },
   { offset = 0x281, type = "DIR32", symbol = "__real@4098000000000000", target = 0x00658AE8 },
   { offset = 0x287, type = "DIR32", symbol = "__real@4078000000000000", target = 0x00658AE0 },
@@ -22914,20 +22914,20 @@ relocations = [
   { offset = 0x475, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x485, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x495, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
-  { offset = 0x4FE, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x564, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x4FE, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x564, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x574, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x584, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
-  { offset = 0x5DD, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x5DD, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x5ED, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x5FD, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
-  { offset = 0x666, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x6CC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x734, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x79A, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x803, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x86B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x8D1, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x666, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x6CC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x734, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x79A, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x803, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x86B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x8D1, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x8E1, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x8F1, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
 ]
@@ -22952,27 +22952,27 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xFD, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x103, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x16B, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x178, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x18A, type = "DIR32", symbol = "__real@3fbc28f5c28f5c29", target = 0x006584D0 },
   { offset = 0x195, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x19E, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x1A4, type = "DIR32", symbol = "__real@4004000000000000", target = 0x006584C0 },
-  { offset = 0x1E7, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x1E7, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x1F9, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x1FF, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
   { offset = 0x20A, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x213, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x219, type = "DIR32", symbol = "__real@4004000000000000", target = 0x006584C0 },
-  { offset = 0x25E, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x25E, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x26B, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x278, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
 ]
@@ -23004,13 +23004,13 @@ relocations = [
   { offset = 0x1E8, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x1FE, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x204, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x21E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x21E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x23F, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x245, type = "DIR32", symbol = "__real@4081d00000000000", target = 0x00658700 },
   { offset = 0x25B, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x261, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x27B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x2D8, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x27B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x2D8, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x307, type = "REL32", symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z", target = 0x0040CA20 },
   { offset = 0x336, type = "REL32", symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z", target = 0x0040CA20 },
 ]
@@ -23042,13 +23042,13 @@ relocations = [
   { offset = 0x1E8, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x1FE, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x204, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x21E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x21E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x23F, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x245, type = "DIR32", symbol = "__real@4081d00000000000", target = 0x00658700 },
   { offset = 0x25B, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x261, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x27B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x2D8, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x27B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x2D8, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x307, type = "REL32", symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z", target = 0x0040CA20 },
   { offset = 0x336, type = "REL32", symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z", target = 0x0040CA20 },
 ]
@@ -23080,13 +23080,13 @@ relocations = [
   { offset = 0x1E8, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x1FE, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x204, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x21E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x21E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x23F, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x245, type = "DIR32", symbol = "__real@4081d00000000000", target = 0x00658700 },
   { offset = 0x25B, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x261, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x27B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x2D8, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x27B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x2D8, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x307, type = "REL32", symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z", target = 0x0040CA20 },
   { offset = 0x336, type = "REL32", symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z", target = 0x0040CA20 },
 ]
@@ -23129,9 +23129,9 @@ relocations = [
   { offset = 0x219, type = "DIR32", symbol = "__real@3f3a36e2eb1c432d", target = 0x006589A8 },
   { offset = 0x21F, type = "DIR32", symbol = "__real@3ff0000000000000", target = 0x00657D00 },
   { offset = 0x232, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
-  { offset = 0x28B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x28B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x29B, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
-  { offset = 0x2B4, type = "REL32", symbol = "?DrawTriangleStrip@EffectDrawingF127@@QAEXHPAUScreenVertex@Graphics@@H@Z", target = 0x0040C970 },
+  { offset = 0x2B4, type = "REL32", symbol = "?DrawProjectedTriangleStrip@TextureManagerF198@@QAEXHPAUScreenVertex@Graphics@@H@Z", target = 0x0040C970 },
   { offset = 0x2C4, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
 ]
 
@@ -23151,38 +23151,38 @@ relocations = [
   { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
-  { offset = 0x7B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x7B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x88, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x95, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0xA7, type = "DIR32", symbol = "__real@3fbc28f5c28f5c29", target = 0x006584D0 },
   { offset = 0xB2, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0xBB, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0xC1, type = "DIR32", symbol = "__real@3ff8000000000000", target = 0x00657D08 },
-  { offset = 0x107, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x107, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x119, type = "DIR32", symbol = "__real@3fb70a3d70a3d70a", target = 0x00658A18 },
   { offset = 0x11F, type = "DIR32", symbol = "__real@3ff0000000000000", target = 0x00657D00 },
   { offset = 0x12A, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x133, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0x139, type = "DIR32", symbol = "__real@3fe6666660000000", target = 0x00658A10 },
-  { offset = 0x17F, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x17F, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x191, type = "DIR32", symbol = "__real@3fbeb851eb851eb8", target = 0x00658A08 },
   { offset = 0x197, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
   { offset = 0x1A2, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x1AB, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0x1B1, type = "DIR32", symbol = "__real@3fe6666660000000", target = 0x00658A10 },
-  { offset = 0x1F9, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x1F9, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x20B, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x211, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
   { offset = 0x21C, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x225, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0x22B, type = "DIR32", symbol = "__real@3ff0000000000000", target = 0x00657D00 },
-  { offset = 0x271, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x271, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x283, type = "DIR32", symbol = "__real@3fb70a3d70a3d70a", target = 0x00658A18 },
   { offset = 0x289, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
   { offset = 0x294, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x29D, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0x2A3, type = "DIR32", symbol = "__real@3ffb333340000000", target = 0x00658A00 },
-  { offset = 0x2EB, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x2EB, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x2F8, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x305, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
 ]
@@ -23208,12 +23208,12 @@ relocations = [
   { offset = 0x74, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x8A, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x90, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xAA, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xAA, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xC8, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xCE, type = "DIR32", symbol = "__real@4062c00000000000", target = 0x00658AF8 },
   { offset = 0xE4, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xEA, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x104, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x104, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x113, type = "DIR32", symbol = "__real@3fd999999999999a", target = 0x00658AF0 },
   { offset = 0x119, type = "DIR32", symbol = "__real@4098000000000000", target = 0x00658AE8 },
   { offset = 0x11F, type = "DIR32", symbol = "__real@4078000000000000", target = 0x00658AE0 },
@@ -23234,7 +23234,7 @@ relocations = [
   { offset = 0x2CB, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x2F7, type = "REL32", symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z", target = 0x0040CA20 },
   { offset = 0x307, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
-  { offset = 0x360, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x360, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."effect-render-pattern09-0044f850"]
@@ -23253,32 +23253,32 @@ relocations = [
   { offset = 0x1F, type = "DIR32", symbol = "?g_CombatViewOffsetY@@3MA", target = 0x006713C4 },
   { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0x34, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
-  { offset = 0x7B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x7B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x88, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x95, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0xA7, type = "DIR32", symbol = "__real@3fbc28f5c28f5c29", target = 0x006584D0 },
   { offset = 0xB2, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0xBB, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0xC1, type = "DIR32", symbol = "__real@3ff3333340000000", target = 0x00658C20 },
-  { offset = 0x104, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x104, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x116, type = "DIR32", symbol = "__real@3fb70a3d70a3d70a", target = 0x00658A18 },
   { offset = 0x11C, type = "DIR32", symbol = "__real@3ff0000000000000", target = 0x00657D00 },
   { offset = 0x127, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x130, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0x136, type = "DIR32", symbol = "__real@3fe99999a0000000", target = 0x00658C18 },
-  { offset = 0x17B, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x17B, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x18D, type = "DIR32", symbol = "__real@3fbeb851eb851eb8", target = 0x00658A08 },
   { offset = 0x193, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
   { offset = 0x19E, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x1A7, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0x1AD, type = "DIR32", symbol = "__real@3fe99999a0000000", target = 0x00658C18 },
-  { offset = 0x1F2, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x1F2, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x204, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x20A, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
   { offset = 0x215, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x21E, type = "DIR32", symbol = "__real@3fa999999999999a", target = 0x00658A20 },
   { offset = 0x224, type = "DIR32", symbol = "__real@3ff3333340000000", target = 0x00658C20 },
-  { offset = 0x267, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x267, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
   { offset = 0x274, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x281, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x28E, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
@@ -23377,7 +23377,7 @@ relocations = [
   { offset = 0x93, type = "DIR32", symbol = "__real@406e000000000000", target = 0x00658CD0 },
   { offset = 0xA9, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xAF, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xC9, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xC9, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xD8, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0xDE, type = "DIR32", symbol = "__real@40a8000000000000", target = 0x00658CC8 },
   { offset = 0xE4, type = "DIR32", symbol = "__real@4088000000000000", target = 0x00658CC0 },
@@ -23400,11 +23400,11 @@ relocations = [
   { offset = 0x2D8, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x2F6, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x2FC, type = "DIR32", symbol = "__real@404e000000000000", target = 0x00658CB0 },
-  { offset = 0x332, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x332, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x350, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x356, type = "DIR32", symbol = "__real@404e000000000000", target = 0x00658CB0 },
-  { offset = 0x38B, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x3E5, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x38B, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x3E5, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."effect-render-pattern13-00450c10"]
@@ -23427,14 +23427,14 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4078000000000000", target = 0x00658AE0 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xFD, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x103, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x16B, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x178, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x18A, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
@@ -23442,9 +23442,9 @@ relocations = [
   { offset = 0x19B, type = "REL32", symbol = "_sin", target = 0x00641804 },
   { offset = 0x1A4, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x1AA, type = "DIR32", symbol = "__real@4004000000000000", target = 0x006584C0 },
-  { offset = 0x1EF, type = "REL32", symbol = "?DrawSpriteVariant@EffectDrawingF127@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
-  { offset = 0x244, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x299, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1EF, type = "REL32", symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z", target = 0x0040CEF0 },
+  { offset = 0x244, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x299, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x2A6, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x2B3, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
 ]
@@ -23513,13 +23513,13 @@ relocations = [
   { offset = 0xE9, type = "REL32", symbol = "?SetTextureFilter@TextureManagerF198@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x132, type = "DIR32", symbol = "__real@3fe999999999999a", target = 0x006583B8 },
   { offset = 0x138, type = "DIR32", symbol = "__real@406e000000000000", target = 0x00658CD0 },
-  { offset = 0x157, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x157, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x175, type = "DIR32", symbol = "__real@3fe999999999999a", target = 0x006583B8 },
   { offset = 0x17B, type = "DIR32", symbol = "__real@4064000000000000", target = 0x00658978 },
-  { offset = 0x19A, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x19A, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x1D3, type = "DIR32", symbol = "__real@3fb999999999999a", target = 0x006584C8 },
   { offset = 0x1D9, type = "DIR32", symbol = "__real@407d000000000000", target = 0x00658DF8 },
-  { offset = 0x1F3, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x1F3, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0x203, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x23A, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x240, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
@@ -23530,7 +23530,7 @@ relocations = [
   { offset = 0x294, type = "DIR32", symbol = "__real@447f0000", target = 0x00658DF0 },
   { offset = 0x2B2, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
   { offset = 0x383, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
-  { offset = 0x45F, type = "REL32", symbol = "?DrawTriangleStrip@EffectDrawingF127@@QAEXHPAUScreenVertex@Graphics@@H@Z", target = 0x0040C970 },
+  { offset = 0x45F, type = "REL32", symbol = "?DrawProjectedTriangleStrip@TextureManagerF198@@QAEXHPAUScreenVertex@Graphics@@H@Z", target = 0x0040C970 },
   { offset = 0x486, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x499, type = "DIR32", symbol = "__real@3fe999999999999a", target = 0x006583B8 },
   { offset = 0x49F, type = "DIR32", symbol = "__real@c010000000000000", target = 0x00658DE8 },
@@ -23816,14 +23816,14 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xFD, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x103, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."effect-layer-0044a2e0"]
@@ -23846,14 +23846,14 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xFD, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0x103, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."effect-layer-0044ac60"]
@@ -23876,11 +23876,11 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4075900000000000", target = 0x00658608 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."effect-layer-0044af00"]
@@ -23903,11 +23903,11 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4075900000000000", target = 0x00658608 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."effect-layer-0044cc20"]
@@ -23930,11 +23930,11 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."effect-layer-0044cec0"]
@@ -23957,11 +23957,11 @@ relocations = [
   { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
   { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
   { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
   { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
   { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
-  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
-  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
 ]
 
 [units."sprite-node-camera-0040fc70"]
@@ -25478,12 +25478,12 @@ size = 378
 [[units.fighter-render-side-effect-00454840.relocations]]
 offset = 193
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.fighter-render-side-effect-00454840.relocations]]
 offset = 370
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.fighter-draw-facing-sprite-004549c0]
@@ -25512,7 +25512,7 @@ target = 0x00657834
 [[units.fighter-draw-facing-sprite-004549c0.relocations]]
 offset = 82
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.fighter-draw-facing-sprite-004549c0.relocations]]
 offset = 111
@@ -25537,7 +25537,7 @@ target = 0x00657834
 [[units.fighter-draw-facing-sprite-004549c0.relocations]]
 offset = 155
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.fighter-render-fade-overlay-00454aa0]
@@ -25556,12 +25556,12 @@ target = 0x00641DAA
 [[units.fighter-render-fade-overlay-00454aa0.relocations]]
 offset = 168
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.fighter-render-fade-overlay-00454aa0.relocations]]
 offset = 272
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.fighter-camera-offset-00453eb0]
@@ -27606,12 +27606,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044a5c0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044a5c0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044a6a0]
@@ -27669,12 +27669,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044a7f0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044a7f0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044a8d0]
@@ -27732,12 +27732,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044aa20.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044aa20.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044ab00]
@@ -27833,12 +27833,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044b190.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044b190.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044b270]
@@ -27896,12 +27896,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044b3c0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044b3c0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044b4a0]
@@ -28016,12 +28016,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044c560.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044c560.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044c640]
@@ -28079,12 +28079,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044c7a0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044c7a0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044c880]
@@ -28142,12 +28142,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044c9e0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044c9e0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044cac0]
@@ -28243,12 +28243,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044d160.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044d160.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044d240]
@@ -28306,12 +28306,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044d3a0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044d3a0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044d480]
@@ -28407,12 +28407,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044df20.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044df20.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044e000]
@@ -28470,12 +28470,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044e160.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044e160.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044e240]
@@ -28571,12 +28571,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044f3b0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044f3b0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044f490]
@@ -28634,12 +28634,12 @@ target = 0x006406AC
 [[units.background-side-pair-0044f5f0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-0044f5f0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-0044f6d0]
@@ -28716,12 +28716,12 @@ target = 0x006406AC
 [[units.background-side-pair-004501a0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-004501a0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-00450280]
@@ -28798,12 +28798,12 @@ target = 0x006406AC
 [[units.background-side-pair-00450990.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-00450990.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-00450a70]
@@ -28880,12 +28880,12 @@ target = 0x006406AC
 [[units.background-side-pair-004511e0.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-004511e0.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-004512c0]
@@ -28962,12 +28962,12 @@ target = 0x006406AC
 [[units.background-side-pair-00451d20.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 [[units.background-side-pair-00451d20.relocations]]
 offset = 178
 type = "REL32"
-symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z"
 target = 0x0040CA80
 
 [units.background-transform-00451e00]
@@ -33319,17 +33319,17 @@ target = 0x0064159D
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 234
 type = "REL32"
-symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 248
 type = "REL32"
-symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 262
 type = "REL32"
-symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 271
@@ -33344,7 +33344,7 @@ target = 0x0064159D
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 340
 type = "REL32"
-symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 349
@@ -33359,7 +33359,7 @@ target = 0x0064159D
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 418
 type = "REL32"
-symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 427
@@ -43093,7 +43093,7 @@ target = 0x0064159D
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 255
 type = "REL32"
-symbol = "??0FighterTextureF282@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 314
@@ -43103,12 +43103,12 @@ target = 0x0064159D
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 350
 type = "REL32"
-symbol = "??0FighterTextureF282@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 433
 type = "REL32"
-symbol = "?AllocateSlots@FighterTextureF282@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 451
@@ -43148,7 +43148,7 @@ target = 0x00658F0C
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 569
 type = "REL32"
-symbol = "?Load@FighterTextureF282@@QAEXPBDH0@Z"
+symbol = "?Load@TextureManagerF198@@QAEXPBDC0@Z"
 target = 0x0040BBA0
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 576
@@ -43158,12 +43158,12 @@ target = 0x00658F14
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 614
 type = "REL32"
-symbol = "?Load@FighterTextureF282@@QAEXPBDH0@Z"
+symbol = "?Load@TextureManagerF198@@QAEXPBDC0@Z"
 target = 0x0040BBA0
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 645
 type = "REL32"
-symbol = "?AllocateSlots@FighterTextureF282@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 663
@@ -43243,7 +43243,7 @@ target = 0x00658F68
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 889
 type = "REL32"
-symbol = "?LoadDefault@FighterTextureF282@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 896
@@ -43253,7 +43253,7 @@ target = 0x00658F70
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 920
 type = "REL32"
-symbol = "?LoadDefault@FighterTextureF282@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 950
@@ -44244,7 +44244,7 @@ target = 0x0041CC50
 [[units.effects-load-resources-005f70e0.relocations]]
 offset = 42
 type = "REL32"
-symbol = "?AllocatePages@EffectsTextureF293@@QAEXHH@Z"
+symbol = "?AllocateTextureSlots@TextureManagerF198@@QAEXIE@Z"
 target = 0x0040B110
 [[units.effects-load-resources-005f70e0.relocations]]
 offset = 47
@@ -44259,7 +44259,7 @@ target = 0x0065A090
 [[units.effects-load-resources-005f70e0.relocations]]
 offset = 63
 type = "REL32"
-symbol = "?LoadFromArchive@EffectsTextureF293@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.effects-load-resources-005f70e0.relocations]]
 offset = 68
@@ -55381,7 +55381,7 @@ target = 0x00641C78
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 65
 type = "REL32"
-symbol = "??0EffectTexture80F431@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 80
@@ -55841,7 +55841,7 @@ target = 0x00411500
 [[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
 offset = 1278
 type = "REL32"
-symbol = "?DrawProjectileChain@MarisaRendererF356@@QAEXHPBXH@Z"
+symbol = "?DrawProjectedTriangleStrip@TextureManagerF198@@QAEXHPAUScreenVertex@Graphics@@H@Z"
 target = 0x0040C970
 
 
@@ -60538,7 +60538,7 @@ source = "src/TexturePolicyLeavesF736.cpp"
 object = "build/matching/TexturePolicyLeavesF736.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["TextureManagerSlotsF736::ClearSlots"]
-symbol = "?ClearSlots@TextureManagerSlotsF736@@QAEXXZ"
+symbol = "?ClearSlots@TextureManagerF198@@QAEXXZ"
 target_address = 0x0040B250
 size = 33
 relocations = [
@@ -60565,11 +60565,11 @@ source = "src/TexturePolicyLeavesF736.cpp"
 object = "build/matching/TexturePolicyLeavesF736.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SpriteTexturesF736::DrawProjectedTriangleStrip"]
-symbol = "?DrawProjectedTriangleStrip@SpriteTexturesF736@@QAEXHPAUScreenVertex@Graphics@@H@Z"
+symbol = "?DrawProjectedTriangleStrip@TextureManagerF198@@QAEXHPAUScreenVertex@Graphics@@H@Z"
 target_address = 0x0040C970
 size = 42
 relocations = [
-  { offset = 0xF, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+  { offset = 0xF, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
   { offset = 0x1D, type = "REL32", symbol = "?DrawProjectedTriangleStrip@Graphics@@YAXPAUScreenVertex@1@HPAUIDirect3DTexture8@@@Z", target = 0x00403200 },
 ]
 
@@ -60578,11 +60578,11 @@ source = "src/SpriteDrawLeavesF736.cpp"
 object = "build/matching/SpriteDrawLeavesF736.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SpriteDrawingF736::DrawOpaqueSpriteWhite"]
-symbol = "?DrawOpaqueSpriteWhite@SpriteDrawingF736@@QAEXHHH@Z"
+symbol = "?DrawOpaqueSpriteWhite@TextureManagerF198@@QAEXHHH@Z"
 target_address = 0x0040D840
 size = 35
 relocations = [
-  { offset = 0x19, type = "REL32", symbol = "?DrawOpaqueSprite@SpriteDrawingF736@@QAEXHHHH@Z", target = 0x0040D790 },
+  { offset = 0x19, type = "REL32", symbol = "?DrawOpaqueSprite@TextureManagerF198@@QAEXHHHK@Z", target = 0x0040D790 },
 ]
 
 [units.sprite-drawing-texture-rect-0040d870]
@@ -60963,14 +60963,14 @@ source = "src/SpriteOpaqueDrawF765.cpp"
 object = "build/matching/SpriteOpaqueDrawF765.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SpriteDrawingF765::DrawOpaqueSprite"]
-symbol = "?DrawOpaqueSprite@SpriteDrawingF765@@QAEXHHHK@Z"
+symbol = "?DrawOpaqueSprite@TextureManagerF198@@QAEXHHHK@Z"
 target_address = 0x0040D790
 size = 171
 relocations = [
  { offset = 0x2B, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x43, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x6E, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
- { offset = 0x80, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x80, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x98, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
  { offset = 0x9E, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
@@ -60982,14 +60982,14 @@ source = "src/SpriteOpaqueMirroredF766.cpp"
 object = "build/matching/SpriteOpaqueMirroredF766.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SpriteDrawingF765::DrawOpaqueSpriteMirrored"]
-symbol = "?DrawOpaqueSpriteMirrored@SpriteDrawingF765@@QAEXHHHKE@Z"
+symbol = "?DrawOpaqueSpriteMirrored@TextureManagerF198@@QAEXHHHKE@Z"
 target_address = 0x0040D6B0
 size = 212
 relocations = [
  { offset = 0x2B, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x43, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x97, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
- { offset = 0xA9, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0xA9, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0xC1, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
  { offset = 0xC7, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
@@ -61001,11 +61001,11 @@ source = "src/TextureSlotsF769.cpp"
 object = "build/matching/TextureSlotsF769.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
 functions = ["TextureManagerF769::AllocateTextureSlots"]
-symbol = "?AllocateTextureSlots@TextureManagerF769@@QAEXIE@Z"
+symbol = "?AllocateTextureSlots@TextureManagerF198@@QAEXIE@Z"
 target_address = 0x0040B110
 size = 184
 relocations = [
- { offset = 0x6, type = "DIR32", symbol = "__ehhandler$?AllocateTextureSlots@TextureManagerF769@@QAEXIE@Z", target = 0x00654F36 },
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$?AllocateTextureSlots@TextureManagerF198@@QAEXIE@Z", target = 0x00654F36 },
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x22, type = "REL32", symbol = "??0NativeTextureElementF769@@QAE@XZ", target = 0x0040D8C0 },
@@ -61046,7 +61046,7 @@ source = "src/SpriteScaledDrawF775.cpp"
 object = "build/matching/SpriteScaledDrawF775.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SpriteDrawingF775::DrawScaled"]
-symbol = "?DrawScaled@SpriteDrawingF775@@QAEXHMMKMMMMME@Z"
+symbol = "?DrawScaled@TextureManagerF198@@QAEXHMMKMMMMME@Z"
 target_address = 0x0040D2E0
 size = 970
 relocations = [
@@ -61062,7 +61062,7 @@ relocations = [
  { offset = 0x16E, type = "DIR32", symbol = "?RadiansPerDegree@GeometryConstants@@3MB", target = 0x00657828 },
  { offset = 0x177, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
  { offset = 0x2C8, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
- { offset = 0x3A3, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x3A3, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x3BB, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
 
@@ -61073,11 +61073,11 @@ source = "src/SpriteVariantDrawF776.cpp"
 object = "build/matching/SpriteVariantDrawF776.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SpriteDrawingF776::DrawVariant"]
-symbol = "?DrawVariant@SpriteDrawingF776@@QAEXHMMKMMMMEE@Z"
+symbol = "?DrawSpriteVariant@TextureManagerF198@@QAEXHMMKMMMMEE@Z"
 target_address = 0x0040CEF0
 size = 994
 relocations = [
- { offset = 0x44, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+ { offset = 0x44, type = "REL32", symbol = "?DrawSprite@TextureManagerF198@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
  { offset = 0x54, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
  { offset = 0x7A, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x95, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
@@ -61090,7 +61090,7 @@ relocations = [
  { offset = 0x1AD, type = "DIR32", symbol = "?RadiansPerDegree@GeometryConstants@@3MB", target = 0x00657828 },
  { offset = 0x1B6, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
  { offset = 0x2E0, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
- { offset = 0x3BB, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x3BB, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x3D3, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
 
@@ -61105,7 +61105,7 @@ symbol = "?DrawProjectedQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUta
 target_address = 0x0040CA20
 size = 92
 relocations = [
- { offset = 0x2C, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x2C, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x4D, type = "REL32", symbol = "?DrawProjectedTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@MMMKPAUIDirect3DTexture8@@@Z", target = 0x00402D50 },
 ]
 
@@ -61120,9 +61120,9 @@ symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@
 target_address = 0x0040C9A0
 size = 115
 relocations = [
- { offset = 0x1C, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x1C, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x2D, type = "REL32", symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ", target = 0x0040DD20 },
- { offset = 0x4F, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x4F, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x64, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
 

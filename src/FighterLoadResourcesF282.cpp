@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "DiagnosticLog.hpp"
 #include <windows.h>
 #include <stdio.h>
@@ -6,17 +7,7 @@
 #include "Fighter.hpp"
 #include "SoundBank.hpp"
 
-// Interfaces of the objects a fighter loads; the 80- and 24-byte classes
-// carry the allocation sizes the original uses.
-class FighterTextureF282 {
-    unsigned char observedBytes[80];
-public:
-    FighterTextureF282();
-    void AllocateSlots(int count);
-    void Load(const char* filename,int pages,const char* root);
-    void LoadDefault(const char* filename,const char* root);
-};
-typedef char VerifyFighterTextureF282[(sizeof(FighterTextureF282)==80)?1:-1];
+// The command container has its own observed 24-byte allocation.
 class FighterCommandsF282 {
     unsigned char observedBytes[24];
 public: FighterCommandsF282(FighterTextureF282* texture);
@@ -61,15 +52,15 @@ void Fighter::LoadResources()
     DiagnosticLog::AppendString(g_LogPatternsAt00658EBC);
     LoadPattern();
     DiagnosticLog::AppendString(g_LogPicturesAt00658ED0);
-    drawing=new FighterTextureF282();
-    field534Texture=new FighterTextureF282();
-    static_cast<FighterTextureF282*>(drawing)->AllocateSlots(field478);
+    drawing=new TextureManagerF198();
+    field534Texture=reinterpret_cast<FighterTextureF282*>(new TextureManagerF198());
+    static_cast<TextureManagerF198*>(drawing)->AllocateUnformattedSlots(field478);
     sprintf(filename,g_MainTextureFormatAt00658EE4,tag);
     if (strcmp(name,g_CharacterAliceAt00658EFC)==0 || strcmp(name,g_CharacterMeiling2At00658F04)==0)
-        static_cast<FighterTextureF282*>(drawing)->Load(filename,field2CE+1,g_MainTextureArchiveAltAt00658F0C);
+        static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(field2CE+1),g_MainTextureArchiveAltAt00658F0C);
     else
-        static_cast<FighterTextureF282*>(drawing)->Load(filename,field2CE+1,g_MainTextureArchiveDefaultAt00658F14);
-    field534Texture->AllocateSlots(field532);
+        static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(field2CE+1),g_MainTextureArchiveDefaultAt00658F14);
+    reinterpret_cast<TextureManagerF198*>(field534Texture)->AllocateUnformattedSlots(field532);
     sprintf(filename,g_SecondaryTextureFormatAt00658F1C,tag);
     if (strcmp(name,g_CharacterPatchouliAt00658F34)==0 ||
         strcmp(name,g_CharacterYuyukoAt00658F40)==0 ||
@@ -77,9 +68,9 @@ void Fighter::LoadResources()
         strcmp(name,g_CharacterYukariAt00658F50)==0 ||
         strcmp(name,g_CharacterYoumuAt00658F58)==0 ||
         strcmp(name,g_CharacterMeiling3At00658F60)==0)
-        field534Texture->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
+        reinterpret_cast<TextureManagerF198*>(field534Texture)->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
     else
-        field534Texture->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
+        reinterpret_cast<TextureManagerF198*>(field534Texture)->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
     sprintf(filename,g_ScriptFormatAt00658F78,name,name);
     reinterpret_cast<FighterScriptsF282*>(&script)->LoadFile(filename,2,0);
     reinterpret_cast<FighterScriptsF282*>(&script)->LoadArchive(filename,g_ScriptArchiveAt00658F94);

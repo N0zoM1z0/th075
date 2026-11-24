@@ -1,12 +1,7 @@
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 
-class SpriteDrawingF736 {
-public:
-    void DrawOpaqueSprite(int a, int b, int c, int tint);
-    void DrawOpaqueSpriteWhite(int a, int b, int c);
-};
-void SpriteDrawingF736::DrawOpaqueSpriteWhite(int a, int b, int c) {
+void TextureManagerF198::DrawOpaqueSpriteWhite(int a, int b, int c) {
     DrawOpaqueSprite(a, b, c, -1);
 }
 void TextureManagerF198::GetTextureRect(int index,RECT* rectangle) {

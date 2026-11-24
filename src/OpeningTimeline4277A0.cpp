@@ -4,7 +4,7 @@
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 
-#define DRAWING (reinterpret_cast<TimelineDrawing438D00*>(texture))
+#define DRAWING (texture)
 
 void OpeningScene::Render() {
     if (Graphics::BeginFrame()) {

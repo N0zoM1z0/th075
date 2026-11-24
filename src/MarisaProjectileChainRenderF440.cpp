@@ -15,10 +15,6 @@
 // Borrowed receiver/texture/record field ABIs only, not full owner classes.
 // Borrowed receiver, texture manager, record fields and exact 132-byte quad.
 // No complete original fighter/auxiliary owner layout is asserted.
-class MarisaRendererF356 {
-public:
-    void DrawProjectileChain(int texture, const void* records, int count);
-};
 extern const float g_MarisaPhaseDivisorAAt00659310;
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
@@ -35,7 +31,7 @@ struct NativeMarisaStateF358 {
     short angle;
     __declspec(align(4)) short radius;
 };
-#define DRAWER reinterpret_cast<MarisaRendererF356*>(drawing)
+#define DRAWER reinterpret_cast<TextureManagerF198*>(drawing)
 void MarisaFighter::RenderChain() {
     if (!field1006) return;
     NativeMarisaStateF358 state;
@@ -51,7 +47,7 @@ void MarisaFighter::RenderChain() {
 #define radius state.radius
     xShift=g_CombatViewOffsetX-GeometryConstants::HundredSixty;
     yOrigin=g_CombatViewOffsetY;
-    reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(2);
+    DRAWER->SetBlendMode(2);
     for(i=1;i<=8;++i) {
         phaseA=static_cast<short>(i*0x150%40-20);
         phaseB=static_cast<short>(i*0x104%60-30);
@@ -81,7 +77,7 @@ void MarisaFighter::RenderChain() {
         }
         chain[72].x=chain[0].x;chain[72].y=chain[0].y;chain[72].z=chain[0].z;
         chain[73].x=chain[1].x;chain[73].y=chain[1].y;chain[73].z=chain[1].z;
-        DRAWER->DrawProjectileChain(0x277,&chain[0],0x4a);
+        DRAWER->DrawProjectedTriangleStrip(0x277, reinterpret_cast<Graphics::ScreenVertex*>(chain), 0x4a);
     }
 }
 #undef radius

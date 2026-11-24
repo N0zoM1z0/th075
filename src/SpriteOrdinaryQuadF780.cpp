@@ -15,9 +15,9 @@ void TextureManagerF198::DrawQuad(int texture,
     const SpriteQuad40CA80& quad, const RECT* rect, DWORD color)
 {
     LocalDrawContextF780 scratch;
-    scratch.texture = reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture);
+    scratch.texture = GetTexture(texture);
     scratch.count = entries.size();
     scratch.quad = reinterpret_cast<const LocalDrawContextF780::QuadCopy&>(quad);
     Graphics::DrawTexturedQuad(scratch.quad.positions,
-        rect, color, reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(texture));
+        rect, color, GetTexture(texture));
 }

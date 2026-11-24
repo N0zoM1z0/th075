@@ -1,7 +1,8 @@
 #include "FighterOverlayDrawingF163.hpp"
+#include "TextureManagerF198.hpp"
 #include <stdlib.h>
 
-#define DRAWING field534
+#define DRAWING reinterpret_cast<TextureManagerF198*>(field534)
 
 void Fighter::RenderSideEffect()
 {

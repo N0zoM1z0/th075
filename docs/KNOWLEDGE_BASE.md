@@ -391,6 +391,13 @@ interface. The blend method selects depth state before forwarding the
 blend mode, and the depth, filter, shader, and color methods forward
 to the shared graphics state.
 
+Texture lookup, sprite drawing, and projected triangle strips use the
+same 80-byte texture manager as allocation. The stage renderers pass its
+member at offset `0x18`, while the static effect resource loader uses the
+member at `0x28`. The fighter loader constructs both texture managers
+with the shared constructor and passes a signed byte to archive loading.
+The lookup keeps one palette index cache across the drawing paths.
+
 The ordinary draw at `0x0040C9A0` and projected draw at `0x0040CA20`
 copy all 132 bytes of the sprite quad before calling the graphics
 renderer. The ordinary draw also stores a texture lookup and the size
