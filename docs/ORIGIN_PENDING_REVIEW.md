@@ -121,6 +121,21 @@ valid for callers without a typed source reference.
     scripts/repo-python scripts/replay-exact-units.py --unit std-vector-rect-assignment --unit fighter-frame-info-assignment
     scripts/repo-python .analysis/rect-vector-clear/compare.py
 
+### R276 — RECT const iterator increment
+
+The pinned VC7.1 `std::vector<RECT>` copy constructor at `0x00459390`
+reaches the 27-byte prefix increment at `0x0045B6F0` through
+`_Ucopy`, `_Uninitialized_copy`, and `_Uninit_copy`. The relocation
+at `0x0045B33E` in the last function names
+`std::vector<RECT>::const_iterator::operator++`. All nine sections
+in this chain, including both exception handlers and their unwind
+and catch data, reproduce 696 original bytes and 38 relocations.
+The R209 placements come from its generic element model. The new
+build verifies them with the frame's concrete RECT type.
+
+Build the frame-copy probe with `/DEXPLICIT_COPY=0` as above, then
+run `scripts/repo-python .analysis/rect-vector-copy/compare.py`.
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
