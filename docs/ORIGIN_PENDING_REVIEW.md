@@ -408,6 +408,7 @@ The current direct-call scan is in
 | `0x00438A60` | R310 preserves all 14 native caller edges with a deferred standard overload and a late ordinary wrapper. Both call the `labs` body identified by R294. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R308 matches the complete collision interval with the precompiled header, two ordinary functions, and an ordinary function calling the header worker. |
+| `0x00458650` | R315 matches the complete loader interval and all three vtables with implicit and explicit Actor definitions when `/Gy` is omitted. |
 | `0x00458670` | The R306 linked resource-loader interval matches with both implicit and explicit rendering base constructors. |
 | `0x00458770` | R308 matches the complete cleanup interval with implicit, late inline and separately defined list owner destructors. |
 
@@ -959,8 +960,10 @@ exact CharacterObject constructor also calls the Actor constructor.
 Making Actor implicit emits its constructor at `-0x20` from the
 loader. The same displacement occurs when the Fighter constructor
 and loader share a compile unit with a precompiled header. The
-linked order supports authored origin for `0x00458650`. Both
-rendering base definitions survive the full comparison.
+linked order initially supported authored origin for `0x00458650`.
+Both rendering base definitions survive the full comparison.
+R315 supersedes the Actor decision with a byte-equal implicit
+control that omits `/Gy` and includes the complete Fighter vtable.
 
 The Battle End control retains the early deleting destructor with
 `/Z7` and with linked `/GL /LTCG` code. The `/Z7` bodies and
@@ -1211,6 +1214,28 @@ wrapper slot, instead of its target `+0x340`.
     scripts/repo-python .analysis/final-origin-review/sprite-constructor-spine/compare.py no-gy-implicit no-gy-typed-implicit no-gy-explicit
     bash .analysis/final-origin-review/ctor-pch-order/build-no-gy.sh stage-split-constants stage-implicit-dtor-constants
     scripts/repo-python .analysis/final-origin-review/ctor-pch-order/compare-no-gy.py stage-split-constants stage-implicit-dtor-constants
+
+### R315 — The complete Fighter vtable permits an implicit Actor constructor
+
+The Fighter constructor and stage resource loader share the
+ordinary `.text` section when compiled without `/Gy`. The
+earlier partial Fighter declaration added a deleting wrapper
+between the loader and the Actor constructor. The native
+20-slot Fighter table has `_purecall` at the destructor slot.
+Declaring that slot pure and restoring the remaining observed
+virtuals removes the extra wrapper.
+
+An implicit Actor constructor and the out-of-line definition then
+both reproduce the 439-byte linked loader and constructor interval
+`0x004584D0..0x00458686`, with the Actor and rendering base at
+`+0x180` and `+0x1A0`. Both comparisons include all 120 linked
+vtable bytes, the complete earlier Fighter caller and all three
+exception records. The linker binds the same earlier texture
+wrapper. This reopens the origin of `0x00458650`; commit
+`3651617b` records the earlier decision.
+
+    bash .analysis/final-origin-review/actor-no-gy/build.sh
+    scripts/repo-python .analysis/final-origin-review/actor-no-gy/compare.py both-explicit implicit-actor
 
 ## Historical R263 inventory
 

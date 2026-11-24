@@ -184,8 +184,8 @@ ledger credits 43,282 CODE bytes.
 ## Authored coverage and pending origin review
 
 Coverage exceeds the 98% goal even with the pending origin candidates
-in the denominator. The texture entry lifetimes, stage base constructor
-and Actor constructor from R304–R306 await exact source adoption.
+in the denominator. The texture entry lifetimes and stage base
+constructor from R304–R305 await exact source adoption.
 Use the live report for current counts and
 `config/function-origins.csv` for the remaining provenance decisions.
 
@@ -240,11 +240,10 @@ returns to review. The precompiled stage constructor still has an
 explicit-only match across its full code and readonly intervals.
 [Function packaging controls](ORIGIN_PENDING_REVIEW.md#r314--omitting-function-packaging-restores-the-native-scene-order)
 
-R306 attributes the Actor constructor through the linked stage resource
-loader and both complete base constructors. The compiler emits the
-implicit Actor before the loader even when both Fighter callers share
-a precompiled header. Both rendering base forms match the linked interval.
-[Actor constructor controls](ORIGIN_PENDING_REVIEW.md#r306--actor-constructor-follows-the-stage-resource-loader)
+R315 returns the Actor constructor to review. Omitting `/Gy` and
+using the full native Fighter vtable leaves both implicit and
+explicit Actor definitions in the original slot after the loader.
+[Actor constructor controls](ORIGIN_PENDING_REVIEW.md#r315--the-complete-fighter-vtable-permits-an-implicit-actor-constructor)
 
 R305 identifies the stage base constructor through the complete BG00a
 code interval and both adjacent vtables. R311 matches the scene's

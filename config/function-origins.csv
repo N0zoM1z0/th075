@@ -1916,7 +1916,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004574D0,authored,BattleState,authored,target-observed,R054
 0x00457660,authored,FighterState,authored,target-observed,R045
 0x004584D0,authored,FighterState,authored,target-observed,R045
-0x00458650,authored,Actor,authored,inferred-from-linked-actor-constructor-order-and-typed-callers,R306
+0x00458650,unknown,Actor,review,explicit-implicit-source-ambiguity,R315
 0x00458670,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00458690,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x004586C0,authored,GameLifetime,authored,inferred-whole-explicit-cleanup-with-coherent-construction-provider-eh-and-independent-game-allocation-context,R256
