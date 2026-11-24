@@ -401,14 +401,14 @@ The current direct-call scan is in
 
 | Candidates | Evidence gap |
 | --- | --- |
-| `0x0040D900`, `0x0040D940` | Both R163 forms bind to the R292 cosine and sine workers. R303 rules out the decorated definitions in the older SDK shape archive, which compute results with x87 instructions directly. |
+| `0x0040D900`, `0x0040D940` | R308 matches the complete sprite drawing interval with the precompiled standard overloads and ordinary wrappers. R303 rules out the x87 bodies in the older SDK shape archive. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
 | `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers both Battle End destructors together. The R306 debug and link-time code generation controls leave the deleting destructor early. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
-| `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
+| `0x00449A60`, `0x00449A80` | R308 matches the complete collision interval with the precompiled header, two ordinary functions, and an ordinary function calling the header worker. |
 | `0x00458670` | The R306 linked resource-loader interval matches with both implicit and explicit rendering base constructors. |
-| `0x00458770` | The R299 fighter cleanup retains the original destructor order with implicit and explicit base destructors. |
+| `0x00458770` | R308 matches the complete cleanup interval with implicit, late inline and separately defined list owner destructors. |
 
 The pinned PE has an RSDS record for `東方萃夢想.pdb` with GUID
 `9306058f-6d68-4650-b80b-1e0d05dd1e18` and age 3. Its COFF symbol
@@ -1001,6 +1001,45 @@ implicit displacement support authored origin for the constructor.
 
     bash .analysis/final-origin-review/sprite-constructor-spine/build.sh explicit implicit inline pch-implicit pch-inline typed-implicit typed-explicit no-gy-implicit no-gy-typed-implicit no-gy-explicit pch-typed-implicit pch-typed-inline
     scripts/repo-python .analysis/final-origin-review/sprite-constructor-spine/compare.py explicit implicit inline pch-implicit pch-inline typed-implicit typed-explicit no-gy-implicit no-gy-typed-implicit no-gy-explicit pch-typed-implicit pch-typed-inline
+
+### R308 — Complete math and cleanup intervals retain multiple origins
+
+VC7.1 links the standard `cos(float)` and `sin(float)` overloads at
+their native offsets when their original header is precompiled.
+Late ordinary wrappers around `cosf` and `sinf` also match the
+whole 3,836-byte interval `0x0040CA80..0x0040D97B`. It contains
+all three original calling draw bodies, the remaining drawing
+methods, both texture entry lifetimes and all four math bodies.
+The comparison verifies 66 relocation operands and the referenced
+compiler floating-point constants. Without the precompiled header,
+the overloads appear after the first draw method and move
+`0x0040CEF0` forward by 128 bytes.
+
+The precompiled standard `ceil(float)` and `ceilf` reproduce the
+complete 2,236-byte interval `0x004491E0..0x00449A9B`. So do two
+late ordinary functions and an ordinary function that calls the
+header worker. The comparison covers all three collision methods,
+both math functions, the two constants and 53 relocation operands.
+An early header include puts both math bodies before `TestOverlap`.
+
+The fighter cleanup produces the complete 481-byte interval
+`0x00458690..0x00458870` with an implicit list owner destructor,
+a late inline destructor, or an out-of-line destructor in the next
+object. The genuine auxiliary record destructor fills its slot
+between the first two deleting wrappers. The earlier LoadingScene
+object supplies the texture deleting wrapper. The comparison also
+checks the full Fighter destructor, its exception records, the
+exception records of both neighboring lifetimes and the native
+`std::list` destructor body. Defining the list owner destructor
+inside the class moves it ahead of `0x00458740`. The other three
+forms preserve the original offsets and all bytes.
+
+    bash .analysis/final-origin-review/ceil-link-order/build.sh header-early header-pch ordinary-late header-worker header-deferred
+    scripts/repo-python .analysis/final-origin-review/ceil-link-order/compare.py header-early header-pch ordinary-late header-worker header-deferred
+    bash .analysis/final-origin-review/trig-link-order/build.sh header-early header-pch ordinary-late header-deferred
+    scripts/repo-python .analysis/final-origin-review/trig-link-order/compare.py header-early header-pch ordinary-late header-deferred
+    bash .analysis/final-origin-review/history-dtor-spine/build.sh implicit inline out-of-line in-class
+    scripts/repo-python .analysis/final-origin-review/history-dtor-spine/compare.py implicit inline out-of-line in-class
 
 ## Historical R263 inventory
 

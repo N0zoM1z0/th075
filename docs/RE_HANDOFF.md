@@ -223,6 +223,12 @@ record found in either package.
 [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 [Publisher patch check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
 
+R308 reproduces the complete trigonometry and collision intervals
+with both standard headers and ordinary wrappers. It also reproduces
+the complete fighter cleanup interval with three list owner destructor
+forms. These candidates retain multiple origins.
+[Linked math and cleanup comparisons](ORIGIN_PENDING_REVIEW.md#r308--complete-math-and-cleanup-intervals-retain-multiple-origins)
+
 R307 attributes the sprite history element constructor through a
 3,113-byte interval starting at `AppendElement`. The implicit
 constructor occupies the next native method's slot even with real
