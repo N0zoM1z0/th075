@@ -337,6 +337,36 @@ destructor declarations are unknown.
     scripts/compile-probe.sh .analysis/final-origin-review/global-destructor.cpp build/probes/ProgressDestructor-1.obj /Od /Ob0 /Gy /GR- /GX- /Zi /DEXPLICIT_DTOR=1
     scripts/repo-python .analysis/final-origin-review/compare-global-destructor.py
 
+### R286 — Sound buffer and replay and script deque helpers
+
+The complete 367-byte wave directory loader matches with a typed
+`std::vector<IDirectSoundBuffer8*>`. It releases each buffer, then
+calls the 19-byte vector clear at `0x00409490`. The complete clear,
+`_Tidy`, range destruction dispatch and deallocator match.
+
+The 613-byte replay file scan matches with a deque of the 60-byte
+file header it reads, then pushes. The independently cold-replayed
+scene destructor supplies the lifetime call. The typed deque's
+destructor and pop path reach the five-byte header destruction at
+`0x0042E580`.
+
+The typed script parser matches its 2,429-byte extent, including the
+switch table and all 119 relocations. Its push of the 20-byte script
+sequence identifies the deque whose cleanup reaches `0x004229C0`.
+The complete scalar-deleting callee calls the verified script
+sequence destructor at `0x004212A0`. With that same concrete type,
+both the implicit sequence copy constructor and the explicit
+member-copy form reproduce `0x004229D0` and its deque copy call.
+The original copy declaration remains unresolved.
+
+    scripts/compile-probe.sh .analysis/final-origin-review/sound-vector.cpp build/probes/sound-vector.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
+    scripts/compile-probe.sh .analysis/final-origin-review/replay-deque.cpp build/probes/replay-deque.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
+    scripts/repo-python scripts/replay-exact-units.py --unit replay-browser-destroy-owned-files-0042c560
+    scripts/repo-python .analysis/final-origin-review/compare-sound-replay.py
+    scripts/compile-probe.sh .analysis/final-origin-review/script-deques.cpp build/probes/ScriptDequeOrigin.obj /Od /Ob0 /Gy /GR- /GX /GS /Zi /I src
+    scripts/compile-probe.sh .analysis/final-origin-review/script-deques-explicit.cpp build/probes/ScriptDequeExplicitCopy.obj /Od /Ob0 /Gy /GR- /GX /GS /Zi /I src
+    scripts/repo-python .analysis/final-origin-review/compare-script-deque.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

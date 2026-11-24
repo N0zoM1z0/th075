@@ -210,6 +210,8 @@ identifies five pattern and effect vector cleanup helpers through
 the complete typed loader and sequence lifetime calls. R285
 cold-matches the empty sound and staff-roll hooks and the progress
 destructor through their respective live receivers and startup lifetime.
+R286 identifies the sound buffer vector clear and the replay header
+and script sequence deque destruction helpers.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
