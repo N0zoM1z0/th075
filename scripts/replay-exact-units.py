@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path
+import runpy
+import struct
 import subprocess
 import sys
 import tomllib
@@ -13,18 +14,10 @@ import tomllib
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def compare(name):
-    completed = subprocess.run(
-        [str(ROOT / "scripts/repo-python"), "scripts/compare-coff-function.py", "--unit", name, "--json"],
-        cwd=ROOT, capture_output=True, text=True,
-    )
-    return json.loads(completed.stdout), completed.returncode
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--unit", action="append", help="unit to replay; repeatable; defaults to all")
-    parser.add_argument("--batch", action="store_true", help="compile profile groups and compare up to four units concurrently")
+    parser.add_argument("--batch", action="store_true", help="compile all selected objects in profile groups")
     args = parser.parse_args()
     try:
         with (ROOT / "config/match-units.toml").open("rb") as stream:
@@ -51,16 +44,21 @@ def main() -> int:
         else:
             for _, name in groups.values():
                 subprocess.run([*build, "--unit", name], cwd=ROOT, check=True)
+        comparator = runpy.run_path(str(ROOT / "scripts/compare-coff-function.py"))
+        inputs = comparator["load_unit_comparison"]()
         results = []
         exact = 0
-        with ThreadPoolExecutor(max_workers=4 if args.batch else 1) as comparisons:
-            for name, (report, status) in zip(selected, comparisons.map(compare, selected), strict=True):
-                results.append(report)
-                # Fixed numeric filenames avoid treating manifest unit names as paths.
-                (reports / f"unit-{len(results):04d}.json").write_text(json.dumps(report, indent=2) + "\n")
-                passed = status == 0 and report.get("result") == "exact"
-                exact += passed
-                print(f"{name}: {'exact' if passed else 'FAILED'}; {report.get('size', 0)} coverage bytes")
+        for name in selected:
+            try:
+                report = comparator["compare_configured_unit"](name, *inputs)
+            except (OSError, KeyError, TypeError, ValueError, struct.error) as exc:
+                report = {"result": "error", "error": str(exc)}
+            results.append(report)
+            # Fixed numeric filenames avoid treating manifest unit names as paths.
+            (reports / f"unit-{len(results):04d}.json").write_text(json.dumps(report, indent=2) + "\n")
+            passed = report.get("result") == "exact"
+            exact += passed
+            print(f"{name}: {'exact' if passed else 'FAILED'}; {report.get('size', 0)} coverage bytes")
         summary.write_text(json.dumps(results, indent=2) + "\n")
         print(f"Cold replay: {exact}/{len(results)} exact units across {len(groups)} objects")
         return 0 if exact == len(results) else 1

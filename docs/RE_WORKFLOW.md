@@ -14,7 +14,8 @@ ledgers give the current authored backlog and separate pending origins.
 For a batch of related edits, pass `--batch` and the affected `--unit`
 arguments to `scripts/repo-python scripts/replay-exact-units.py`.
 VC7.1 compiles each flag group serially using a response file. The
-same complete comparator can check up to four units concurrently.
+comparison phase reads the manifest and verifies the target image once,
+then checks every compared byte and relocation for each unit.
 
 Write source against the shared classes (`Actor`, `Fighter`,
 `<Char>Fighter`, `CharacterObject`): name a member once in the layout instead

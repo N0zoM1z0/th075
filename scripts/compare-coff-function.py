@@ -145,9 +145,10 @@ def object_function(
     return code, relocations
 
 
-def verified_target() -> bytes:
-    with TARGET_MANIFEST.open("rb") as stream:
-        expected = tomllib.load(stream)["target"]
+def verified_target(expected: dict[str, object] | None = None) -> bytes:
+    if expected is None:
+        with TARGET_MANIFEST.open("rb") as stream:
+            expected = tomllib.load(stream)["target"]
     data = TARGET.read_bytes()
     digest = hashlib.sha256(data).hexdigest()
     if len(data) != int(expected["size"]) or digest != expected["sha256"]:
@@ -255,7 +256,7 @@ def relocation_symbol_key(symbol: str) -> str:
     return f"${match.group(1)}#" if match else symbol
 
 
-def compare_unit(name: str) -> dict[str, object]:
+def load_unit_comparison() -> tuple[dict[str, object], str, bytes]:
     with UNITS_MANIFEST.open("rb") as stream:
         manifest = tomllib.load(stream)
     with TARGET_MANIFEST.open("rb") as stream:
@@ -263,7 +264,19 @@ def compare_unit(name: str) -> dict[str, object]:
     if manifest.get("schema_version") != 1 or manifest.get("target_sha256") != expected_target["sha256"]:
         raise ValueError("match-unit schema or target identity mismatch")
     units = manifest.get("units", {})
-    if not isinstance(units, dict) or name not in units:
+    if not isinstance(units, dict):
+        raise ValueError("match-unit manifest units must be a table")
+    return units, expected_target["sha256"], verified_target(expected_target)
+
+
+def compare_unit(name: str) -> dict[str, object]:
+    return compare_configured_unit(name, *load_unit_comparison())
+
+
+def compare_configured_unit(
+    name: str, units: dict[str, object], target_sha256: str, target_image: bytes
+) -> dict[str, object]:
+    if name not in units:
         raise ValueError(f"unknown match unit {name!r}")
     unit = units[name]
     if not isinstance(unit, dict):
@@ -286,7 +299,7 @@ def compare_unit(name: str) -> dict[str, object]:
             f"object function size {len(code):#x} differs from manifest "
             f"comparison extent {compare_size:#x}"
         )
-    target = pe_bytes_at(verified_target(), address, compare_size)
+    target = pe_bytes_at(target_image, address, compare_size)
 
     expected = list(unit.get("relocations", []))
     normalized_expected = []
@@ -358,7 +371,7 @@ def compare_unit(name: str) -> dict[str, object]:
     coverage_differences = sum(int(row["offset"], 0) < size for row in differences)
     return {
         "unit": name,
-        "target_sha256": expected_target["sha256"],
+        "target_sha256": target_sha256,
         "source_sha256": hashlib.sha256((ROOT / str(unit["source"])).read_bytes()).hexdigest(),
         "object_sha256": hashlib.sha256(object_path.read_bytes()).hexdigest(),
         "profile": unit["profile"],
