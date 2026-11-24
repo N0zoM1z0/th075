@@ -2,8 +2,8 @@
 
 The unmatched authored functions are slot-1 `Advance` methods from
 the fighter and character-object vtables. They are per-frame state
-machines with large `switch (action)` bodies. The Alice, Remilia and
-Meiling object parents now have exact replay units. Use the live
+machines with large `switch (action)` bodies. The Alice, Remilia,
+Meiling and Suika object parents now have exact replay units. Use the live
 reconstruction report for the authored backlog and the table below
 for complete source parents.
 
@@ -83,7 +83,7 @@ rows have complete replay units.
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` | 914 | 6 | 00583489 (#6565) |
 | 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` | 613 | 11 | 005A88A8 (#7965) |
-| 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` | 935 | 1 | 005D2558 (#9213) |
+| 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` (cold exact) | 0 | 0 | — |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
@@ -1825,4 +1825,33 @@ targets match. The unit credits the 34,434 bytes of authored code.
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit meiling-object-advance-005eb520
 scripts/repo-python .analysis/meiling-allocator/trace-run.py stage-exact
+```
+
+## 2026-11-24 — Suika's three startup joins cold-replay exactly
+
+Actions 918, 928 and 929 initialize the transform on the first frame
+of stage zero. Each now explicitly keeps the initialized transform on
+later frames of that stage. The same condition
+`animationStage == 0 && animationFrame != 0` restores the original
+register choice at each join without emitting an extra instruction.
+The stage-1 update and later motion and completion paths retain their
+original effects and control flow.
+
+Successive whole-function builds isolate the three joins under VC7.1
+3077 with the recorded `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` profile.
+
+| Explicit later startup frames | First differing register use | GPR differences | Complete relocated byte differences |
+| --- | --- | ---: | ---: |
+| Baseline | `005D2558` in 918 | 935 | 7,698 |
+| 918 | `005D38D2` in 928 | 572 | 1,631 |
+| 918 and 928 | `005D3B75` in 929 | 106 | 106 |
+| 918, 928 and 929 | — | 0 | 0 |
+
+The accepted unit cold-replays 43,971 bytes, including the 272-byte
+jump table at `005D46AD`, the 198-byte remap at `005D47BD` and all
+991 relocation fields. All 198 mapped action offsets and 1,001 direct
+branch destinations match. The exact ledger credits 43,501 code bytes.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit suika-object-advance-005c9cc0
 ```

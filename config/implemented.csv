@@ -989,3 +989,4 @@ WindowOverlayF212::~WindowOverlayF212At004170B0
 SakuyaFighter::Advance
 ReimuFighter::AdvanceActionStatesAt0045DD70
 MeilingObject::Advance
+SuikaObject::Advance

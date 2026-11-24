@@ -222,11 +222,12 @@ before adding the base, in a different instruction order.
   997 restores the original EAX at action 998 with the original frame,
   calls, and exits. Both functions cold-replay exactly.
   [Measured controls and complete comparison](GIANTS.md#cross-check-with-alices-eliminated-stage-test)
-- At a handful of joins the original instead takes the register state of the
-  **first** conditional jump into the join (for `A && B`, the state after
-  testing `A`). Those joins sit exactly where each giant's register debt
-  starts. No source spelling, flag or context reproduces them yet; see
-  [GIANTS.md](GIANTS.md).
+- A complete object can have multiple independent joins with the same
+  symptom. Suika's later startup frames in actions 918, 928 and 929
+  restore three successive register choices. The first change exposes
+  the second, and the second yields matching table offsets while 106
+  instruction bytes still differ in 929. Compare the complete extent
+  after each change. [Suika controls](GIANTS.md#2026-11-24--suikas-three-startup-joins-cold-replay-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

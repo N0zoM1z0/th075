@@ -49,7 +49,6 @@ rebuilt COFF function size.
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | Yuyuko | `0057D580` | 43,845 | 44,327 | 23 | 28 | 897 | `00583489` (#6565) |
 | Yukari | `005A1600` | 43,599 | 44,104 | 0 | 11 | 613 | `005A88A8` (#7965) |
-| Suika | `005C9CC0` | 43,501 | 43,972 | 0 | 1 | 935 | `005D2558` (#9213) |
 
 The nonexact parents and their compiler flags are in
 `config/frontiers.toml`. The other parent measurements are summarized in
@@ -63,6 +62,13 @@ relocations. The in-progress animation path in action 997 restores EAX
 at the first reload of action 998 and preserves the original stack,
 rotation update and exits. Coverage increases by 34,434 authored bytes.
 [Compiler evidence and replay command](GIANTS.md#meiling-now-cold-replays-exactly)
+
+### Suika object Advance is exact
+
+`suika-object-advance-005c9cc0` cold-replays 43,971 bytes with all 991
+relocations. Explicit later frames of the startup stage in actions
+918, 928 and 929 restore all three register joins. The replay adds
+43,501 authored code bytes. [Whole-function controls and replay](GIANTS.md#2026-11-24--suikas-three-startup-joins-cold-replay-exactly)
 
 ### Latest Yuyuko improvement
 
@@ -209,7 +215,7 @@ The complete but nonexact parents are:
 - Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
   Remilia `00543210`.
 - Objects: Sakuya `004CA6E0`, Patchouli `0050A580`, Youmu `00536400`,
-  Yuyuko `0057D580`, Yukari `005A1600`, Suika `005C9CC0`.
+  Yuyuko `0057D580`, Yukari `005A1600`.
 
 The nine remaining functions without a complete parent are:
 

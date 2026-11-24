@@ -941,3 +941,4 @@ address,name,module,confidence,evidence
 0x0045B850,CharacterObject::NoOpAt0045B850,BattleEffect,inferred,"13 native bytes; 11 PE direct game-owned callers; original private class name provisional; pure C++ empty thiscall RET 4; targeted cold exact"
 0x0055AC80,CharacterObject::AdvanceAt0055AC80,CharacterObject,inferred,R048; complete cold exact 28432-byte Remilia object Advance; original private owner identity/layout remain provisional
 0x005EB520,MeilingObject::Advance,MeilingObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
+0x005C9CC0,SuikaObject::Advance,SuikaObject,inferred,Character-object vtable slot 1 and complete cold replay; R048

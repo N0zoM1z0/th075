@@ -1,6 +1,6 @@
 // Natural-C++ reconstruction of SuikaObject::Advance at 005C9CC0.
-// The 43,501-byte object state machine is represented in full, but remains
-// NONEXACT; no exact replacement or original private-layout claim.
+// Replays 43,501 code bytes plus 470 bytes of switch data with VC7.1 build 3077.
+// Compiler profile and relocation bindings are in config/match-units.toml.
 #include "CharacterObject.hpp"
 #include "SuikaFighter.hpp"
 #include "EffectServices.hpp"
@@ -2165,6 +2165,8 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
+            } else if (animationStage == 0 && animationFrame != 0) {
+                // Keep the transform established on the first frame.
             }
             if (animationStage == 1) {
                 scaleX += 0.033f;
@@ -2549,6 +2551,8 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
+            } else if (animationStage == 0 && animationFrame != 0) {
+                // Keep the transform established on the first frame.
             }
             if (animationStage == 1) {
                 scaleX += 0.033f;
@@ -2601,6 +2605,8 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
+            } else if (animationStage == 0 && animationFrame != 0) {
+                // Keep the transform established on the first frame.
             }
             if (animationStage == 1) {
                 scaleX += 0.033f;
