@@ -199,9 +199,14 @@ def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
                 "dinput8", "winmm", "d3dx8", "d3d8", "dxguid", "dsound",
                 "kernel32", "user32", "gdi32", "advapi32", "ole32", "uuid",
             )]
-            run("link.exe", [response("link.rsp", args, [*objects, *libs])], link_log)
-            if not (ROOT / executable).is_file() or not (ROOT / link_map).is_file():
-                raise ValueError(f"linker did not produce {executable} and {link_map}")
+            try:
+                run("link.exe", [response("link.rsp", args, [*objects, *libs])], link_log)
+                if not (ROOT / executable).is_file() or not (ROOT / link_map).is_file():
+                    raise ValueError(f"linker did not produce {executable} and {link_map}")
+            except (OSError, ValueError, KeyboardInterrupt):
+                (ROOT / executable).unlink(missing_ok=True)
+                (ROOT / link_map).unlink(missing_ok=True)
+                raise
             print(f"Built {executable} and {link_map}")
 
 
