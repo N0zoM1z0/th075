@@ -18,5 +18,5 @@ class FrameAuxEffects { public: void AdvanceAndPrune(); };
 // Bounded copied value: seven observed dwords, no enclosing owner layout.
 extern signed char g_FrameClockMode;
 extern unsigned char g_FramePresentToggle;
-extern unsigned char g_FramePresentEveryTick;
+extern unsigned char g_OptionsFlagAt00671430;
 #endif

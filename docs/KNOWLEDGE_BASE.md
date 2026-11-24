@@ -37,11 +37,17 @@ array at `0x006711FC`, the device at `0x00671230` and the D3D8 interface
 at `0x0067122C`. VC7.1 constructs the two DirectInput joystick vectors
 in the order recorded by the target's R024 startup records.
 
-WinMain passes the three display flags through the shared one-byte settings
-used by the config loader, writer and defaults. The `bool` display flags and
+WinMain reads the same three one-byte display flags as the config loader,
+writer and defaults. The `bool` display flags and
 the unsigned-short dimensions in `Graphics::Initialize` preserve WinMain's
 call and comparison bytes. The presentation aliases at `0x004028F0` and
 filled-rectangle aliases at `0x00403910` now use the existing graphics APIs.
+
+The config loader owns the initially zeroed 80-byte key binding block at
+`0x00671440` and the ten following serialized setting bytes. The defaults
+and the configuration writer use the same storage. A headless executable
+linked from the aggregate library saved a 90-byte `config.ini`, cleared
+the test state and loaded the stored key bytes, display flags and volumes.
 
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the

@@ -43,7 +43,7 @@ short BattleScene::Update()
             --field01A;
         }
         if (g_FramePresentToggle) Present();
-        if (g_FramePresentEveryTick) g_FramePresentToggle = 1;
+        if (g_OptionsFlagAt00671430) g_FramePresentToggle = 1;
         else g_FramePresentToggle = static_cast<int>(!g_FramePresentToggle);
         return AdvanceState();
     } else {
@@ -54,7 +54,7 @@ short BattleScene::Update()
             if (field0A1 > 0) field0A1 -= 5;
         }
         if (g_FramePresentToggle) Present();
-        if (g_FramePresentEveryTick) g_FramePresentToggle = 1;
+        if (g_OptionsFlagAt00671430) g_FramePresentToggle = 1;
         else g_FramePresentToggle = static_cast<int>(!g_FramePresentToggle);
         if (!field0A0 && !field0A1) {
             fighters[0]->inputBindings.state = inputSnapshots[0];

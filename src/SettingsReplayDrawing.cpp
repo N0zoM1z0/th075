@@ -14,9 +14,9 @@ class ReplayBrowser42CA60 { public: void RenderList(); void DrawFilename(float, 
 };
 class SceneQuadDrawingF124 { public: void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD); };
 extern signed char g_SettingsDifficulty;
-extern unsigned char g_SettingsByte00671604;
-extern unsigned char g_SettingsByte00671430;
-extern unsigned char g_SettingsByte00671428;
+extern unsigned char g_OptionsFlagAt00671604;
+extern unsigned char g_OptionsFlagAt00671430;
+extern unsigned char g_OptionsFlagAt00671428;
 extern signed char g_SettingsVolume006714B7;
 extern signed char g_SettingsVolume006714B6;
 
@@ -58,15 +58,15 @@ void OptionsScene::Render() {
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(240.0f, 64.0f, 0);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
-        SetRect(&region, 0, g_SettingsByte00671604 * 32 + 32, 64, g_SettingsByte00671604 * 32 + 64);
+        SetRect(&region, 0, g_OptionsFlagAt00671604 * 32 + 32, 64, g_OptionsFlagAt00671604 * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 96.0f, 0);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
-        SetRect(&region, 0, g_SettingsByte00671430 * 32 + 32, 64, g_SettingsByte00671430 * 32 + 64);
+        SetRect(&region, 0, g_OptionsFlagAt00671430 * 32 + 32, 64, g_OptionsFlagAt00671430 * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 128.0f, 0);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
-        SetRect(&region, 0, (1 - g_SettingsByte00671428) * 32 + 32, 64, (1 - g_SettingsByte00671428) * 32 + 64);
+        SetRect(&region, 0, (1 - g_OptionsFlagAt00671428) * 32 + 32, 64, (1 - g_OptionsFlagAt00671428) * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 160.0f, 0);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));

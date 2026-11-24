@@ -264,7 +264,7 @@ private:
 typedef char VerifyStageBG02cF389[(sizeof(StageBG02cF389)==240)?1:-1];
 extern BattleStageF389* g_CurrentBattleStageAt00671424;
 extern signed char g_StageIdAt0067161D;
-extern unsigned char g_StageVariantAt00671604;
+extern unsigned char g_OptionsFlagAt00671604;
 extern signed char g_BattleModeAt006714B4;
 extern signed char g_ReplayModeAt0066C238;
 extern const char g_StartStageLogAt00657A4C[];
@@ -282,75 +282,75 @@ void BattleStageLoaderF389::LoadStage() {
     }
     switch(g_StageIdAt0067161D) {
     case 0:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG00aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG00aF389;
         else g_CurrentBattleStageAt00671424=new StageBG00xF389;
         break;
     case 1:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG01aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG01aF389;
         else g_CurrentBattleStageAt00671424=new StageBG01xF389;
         break;
     case 2:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG02aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG02aF389;
         else g_CurrentBattleStageAt00671424=new StageBG02xF389;
         break;
     case 3:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG03aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG03aF389;
         else g_CurrentBattleStageAt00671424=new StageBG03xF389;
         break;
     case 4:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG04aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG04aF389;
         else g_CurrentBattleStageAt00671424=new StageBG04xF389;
         break;
     case 5:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG05aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG05aF389;
         else g_CurrentBattleStageAt00671424=new StageBG05xF389;
         break;
     case 6:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG06aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG06aF389;
         else g_CurrentBattleStageAt00671424=new StageBG06xF389;
         break;
     case 7:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG07aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG07aF389;
         else g_CurrentBattleStageAt00671424=new StageBG07xF389;
         break;
     case 8:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG08aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG08aF389;
         else g_CurrentBattleStageAt00671424=new StageBG08xF389;
         break;
     case 9:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG09aF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG09aF389;
         else g_CurrentBattleStageAt00671424=new StageBG09xF389;
         break;
     case 10:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG00bF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG00bF389;
         else g_CurrentBattleStageAt00671424=new StageBG00yF389;
         break;
     case 11:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG01bF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG01bF389;
         else g_CurrentBattleStageAt00671424=new StageBG01yF389;
         break;
     case 12:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG02bF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG02bF389;
         else g_CurrentBattleStageAt00671424=new StageBG02yF389;
         break;
     case 13:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG03bF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG03bF389;
         else g_CurrentBattleStageAt00671424=new StageBG03yF389;
         break;
     case 14:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG04bF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG04bF389;
         else g_CurrentBattleStageAt00671424=new StageBG04yF389;
         break;
     case 15:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG05bF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG05bF389;
         else g_CurrentBattleStageAt00671424=new StageBG05yF389;
         break;
     case 20:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG00cF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG00cF389;
         else g_CurrentBattleStageAt00671424=new StageBG00zF389;
         break;
     case 22:
-        if(g_StageVariantAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG02cF389;
+        if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG02cF389;
         else g_CurrentBattleStageAt00671424=new StageBG02zF389;
         break;
     }

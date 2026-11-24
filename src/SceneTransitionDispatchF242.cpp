@@ -21,11 +21,11 @@ extern void __cdecl RenderTransition1000F242(IDirect3DTexture8**);
 extern void __cdecl RenderTransition2000F242(IDirect3DTexture8**);
 extern void __cdecl RenderTransition3000F242(IDirect3DTexture8**);
 extern int g_TransitionCountAt0066C240;
-extern unsigned char g_TransitionRemapAt006714D2;
+extern unsigned char g_SettingsByteAt006714D2;
 unsigned short TransitionDispatcherF242::DispatchMode(unsigned short mode)
 {
     if (g_TransitionCountAt0066C240 < 0) {
-        if (!g_TransitionRemapAt006714D2 && ((mode & 0xf00)>0))
+        if (!g_SettingsByteAt006714D2 && ((mode & 0xf00)>0))
             mode = (mode & 0xf0ff) | 0x200;
         switch (mode & 0xf00) {
         case 0x200:
@@ -51,7 +51,7 @@ unsigned short TransitionDispatcherF242::DispatchMode(unsigned short mode)
             g_TransitionCountAt0066C240 = 0;
             break;
         case 0:
-            if (!g_TransitionRemapAt006714D2 && ((mode & 0xf000)>0))
+            if (!g_SettingsByteAt006714D2 && ((mode & 0xf000)>0))
                 mode = (mode & 0x0fff) | 0x2000;
             switch (mode & 0xf000) {
             case 0x2000:

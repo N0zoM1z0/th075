@@ -37,5 +37,5 @@ public:
 extern unsigned char g_FramePresentToggle;
 extern unsigned char g_StateFadeAlpha;
 extern int g_StateResetCounter;
-extern unsigned char g_RenderDamageFlashAt00671428;
+extern unsigned char g_OptionsFlagAt00671428;
 extern signed char g_RenderOrderAt0068C860;

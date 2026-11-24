@@ -69,7 +69,7 @@ void BattleScene::Render() {
             g_DrawDispatcher->Slot2();
             STYLE->SetColorMultiplier(1.0f);
             STYLE->SetDepthMode(0);
-            if (g_RenderDamageFlashAt00671428)
+            if (g_OptionsFlagAt00671428)
                 RenderDamageFlash();
         }
         Graphics::SetDrawTransform(1.0f, 0.0f, 0.0f);

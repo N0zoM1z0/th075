@@ -2,13 +2,6 @@
 #include <windows.h>
 #include <string.h>
 
-namespace DisplayOptions
-{
-    bool startFullscreen;
-    bool squareTextures;
-    bool use16BitBackBuffer;
-}
-
 // Borrowed global storage anchors only; these do not define or allocate any
 // original data or assert a complete settings structure layout.
 extern unsigned int g_GameDefaultsUseCountAt00671614;
@@ -16,10 +9,10 @@ extern unsigned char g_KeyBindingsAt00671440[];
 extern unsigned char g_CharacterNamesAt006714D8[];
 extern DWORD g_SelectedCharacterAAt00671418;
 extern DWORD g_SelectedCharacterBAt0067141C;
-extern unsigned char g_OptionFlagAt00671430;
-extern unsigned char g_OptionFlagAt00671604;
-extern unsigned char g_OptionFlagAt006714D2;
-extern unsigned char g_OptionVolumeAt006714B6;
+extern unsigned char g_OptionsFlagAt00671430;
+extern unsigned char g_OptionsFlagAt00671604;
+extern unsigned char g_SettingsByteAt006714D2;
+extern unsigned char g_SoundVolumeAt006714B6;
 extern unsigned char g_OptionModeAt006714D0;
 extern unsigned char g_GameSettingAt00671435;
 extern unsigned char g_GameSettingAt00671434;
@@ -68,13 +61,13 @@ GameDefaultsF193::GameDefaultsF193()
         strcpy(NAME(8), "yukari");
         strcpy(NAME(9), "suika");
         strcpy(NAME(10), "meiling");
-        g_OptionFlagAt00671430 = 1;
-        g_OptionFlagAt00671604 = 1;
-        g_OptionFlagAt006714D2 = 1;
+        g_OptionsFlagAt00671430 = 1;
+        g_OptionsFlagAt00671604 = 1;
+        g_SettingsByteAt006714D2 = 1;
         DisplayOptions::startFullscreen = false;
         DisplayOptions::squareTextures = false;
         DisplayOptions::use16BitBackBuffer = false;
-        g_OptionVolumeAt006714B6 = 100;
+        g_SoundVolumeAt006714B6 = 100;
         g_OptionModeAt006714D0 = 1;
         g_GameSettingAt00671435 = 2;
         g_GameSettingAt00671434 = g_GameSettingAt00671435;

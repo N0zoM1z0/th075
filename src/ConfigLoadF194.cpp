@@ -1,16 +1,21 @@
 #include "DisplayOptions.hpp"
 #include <windows.h>
 
-// Independently observed config bytes, not a source-level complete data
-// owner. Extern declarations allocate no storage.
-extern BYTE g_SettingsBlockAt00671440[];
-extern BYTE g_OptionsFlagAt00671604;
-extern BYTE g_SettingsByteAt006714D2;
-extern BYTE g_OptionsFlagAt00671430;
-extern BYTE g_OptionsModeAt006714D0;
-extern BYTE g_OptionsFlagAt00671428;
-extern BYTE g_StreamVolumeAt006714B7;
-extern BYTE g_SoundVolumeAt006714B6;
+namespace DisplayOptions
+{
+    bool startFullscreen;
+    bool squareTextures;
+    bool use16BitBackBuffer;
+}
+
+BYTE g_KeyBindingsAt00671440[0x50];
+BYTE g_OptionsFlagAt00671604;
+BYTE g_SettingsByteAt006714D2;
+BYTE g_OptionsFlagAt00671430;
+BYTE g_OptionsModeAt006714D0;
+BYTE g_OptionsFlagAt00671428;
+BYTE g_StreamVolumeAt006714B7;
+BYTE g_SoundVolumeAt006714B6;
 
 namespace GameConfigF193 {
 void ReadIni()
@@ -21,7 +26,7 @@ void ReadIni()
     if (file == INVALID_HANDLE_VALUE)
         return;
     SetFilePointer(file, 0, 0, FILE_BEGIN);
-    ReadFile(file, g_SettingsBlockAt00671440, 0x50, &readSize, 0);
+    ReadFile(file, g_KeyBindingsAt00671440, 0x50, &readSize, 0);
     ReadFile(file, &g_OptionsFlagAt00671604, 1, &readSize, 0);
     ReadFile(file, &g_SettingsByteAt006714D2, 1, &readSize, 0);
     g_SettingsByteAt006714D2 = 1;
