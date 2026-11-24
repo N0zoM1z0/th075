@@ -68,7 +68,6 @@ extern short g_ReplayScoreAt0067189C;
 extern unsigned int g_ReplayRoundAt006718A0;
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
-extern unsigned char CanChooseCharacterAt00419E10(signed char,int);
 extern void CameraAttachAt00412660(float*,float*,float*,float*);
 
 class EffectCollectionsF398 {public:void ClearEntries();};
@@ -91,7 +90,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
             while((1 << selection & state.seen)!=0) selection=static_cast<signed char>(rand()%6);
             state.seen |= 1 << selection;
          }
-         if(CanChooseCharacterAt00419E10(selection,0)) {
+         if(GameProgressF203::CheckSelection(selection,0)) {
             g_StoryRosterAt00671490[j]=selection;
             ++state.count;
          }

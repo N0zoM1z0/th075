@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "GameSharedState.hpp"
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
@@ -99,10 +100,10 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     case 3: attacker->score += 500; break;
     }
     if (g_CombatMode == 3 && attacker->field2CC == 0) {
-        if (attacker->comboDamage > g_BattleRecords.GetComboDamage())
-            g_BattleRecords.SetComboDamage(attacker->comboDamage);
-        if (attacker->comboCount > g_BattleRecords.GetComboCount())
-            g_BattleRecords.SetComboCount(attacker->comboCount);
+        if (attacker->comboDamage > g_GameProgress.GetSelectedValue12())
+            g_GameProgress.SetSelectedValue12(attacker->comboDamage);
+        if (attacker->comboCount > g_GameProgress.GetSelectedValue8())
+            g_GameProgress.SetSelectedValue8(attacker->comboCount);
         if (attacker->comboCount > g_MaxComboCount)
             g_MaxComboCount = attacker->comboCount;
         if (attacker->score > g_MaxCombatScore)
@@ -191,10 +192,10 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         case 3: attacker->score += 500; break;
         }
         if (g_CombatMode == 3 && attacker->field2CC == 0) {
-            if (attacker->comboDamage > g_BattleRecords.GetComboDamage())
-                g_BattleRecords.SetComboDamage(attacker->comboDamage);
-            if (attacker->comboCount > g_BattleRecords.GetComboCount())
-                g_BattleRecords.SetComboCount(attacker->comboCount);
+            if (attacker->comboDamage > g_GameProgress.GetSelectedValue12())
+                g_GameProgress.SetSelectedValue12(attacker->comboDamage);
+            if (attacker->comboCount > g_GameProgress.GetSelectedValue8())
+                g_GameProgress.SetSelectedValue8(attacker->comboCount);
             if (attacker->comboCount > g_MaxComboCount)
                 g_MaxComboCount = attacker->comboCount;
             if (attacker->score > g_MaxCombatScore)

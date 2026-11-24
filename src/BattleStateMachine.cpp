@@ -3,6 +3,7 @@
 #include "AudioControl.hpp"
 #include "BattleScene.hpp"
 #include "BattleStateMachine.hpp"
+#include "GameProgress.hpp"
 #include "WindowOverlayF212.hpp"
 #define STATE field018
 #define TIMER field00C
@@ -42,7 +43,7 @@ short BattleScene::AdvanceState()
                 reinterpret_cast<StatePatternActor *>(fighters[WINNER])->ChoosePattern();
                 g_TextRenderer->RenderTextToTexture(STATE_TEXT, 120, 120, 255, 24, 2, false);
                 fighters[WINNER]->noticeBadge = fighters[WINNER]->quoteBadges[LINE];
-                reinterpret_cast<StateRecords *>(&g_BattleRecords)->IncrementCounter(g_StatePlayerIds[WINNER], g_StatePlayerIds[1 - WINNER]);
+                g_GameProgress.IncrementModeCounter(g_StatePlayerIds[WINNER], g_StatePlayerIds[1 - WINNER]);
                 STATE = 5; TIMER = 160;
             }
         }

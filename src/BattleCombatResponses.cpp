@@ -3,7 +3,7 @@
 
 bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    signed char response = reinterpret_cast<CombatResponseActor *>(defender)->ClassifyResponse(attack->savedFrameInfo->attackFlags);
+    signed char response = static_cast<signed char>(defender->SelectHitResponse(attack->savedFrameInfo->attackFlags));
     if (response > 0) {
         short damage = 0;
         switch (response) {

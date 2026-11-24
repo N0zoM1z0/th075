@@ -497,9 +497,11 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
 
 ## Game progress (save data)
 
-The progress object (`g_BattleRecords`, 26 methods on about 18 alias
-classes such as `ProgressRecordsF274`, `CardProgressF172`,
-`SelectedProgressF174`) has a regular layout:
+The progress object `g_GameProgress` at `0x006718F8` serves battle combo
+records, mode counters, the status display and character selection.
+Combo count and damage use fields `+0x008` and `+0x00C` of the selected
+difficulty. The status display reads the words at `+0x268` and `+0x394`
+from difficulty zero for the selected character. The layout is:
 
 - 15 character blocks of 0x17F0 bytes from +0, each 4 difficulty blocks of
   0x5FC bytes. A difficulty block ends with 10 ranked scores of 16 bytes at
@@ -518,6 +520,12 @@ left-to-right sum `this + f*0x17F0 + d*0x5FC + off`, but not like
 `this + (d*0x5FC + f*0x17F0)`: VC7.1 evaluates a parenthesized offset sum
 before adding the base, in a different instruction order.
 `IncrementSelectedRecordCount` (0041A270) needs that grouping and keeps it.
+
+The selected-record accessors and mode counter live with the other
+record methods in `ProgressSelectionF274.cpp`. A headless consumer
+linked their archive member and exercised separate difficulty fields,
+zero extension of both card counters, mode counter writes and the
+selection check.
 
 ## VC7.1 `/Od` code generation
 

@@ -32,14 +32,6 @@ class DigitAtlas {
 public:
     DigitAtlas(IDirect3DTexture8* digits, IDirect3DTexture8* small, IDirect3DTexture8* large);
 };
-class BattleRecords {
-public:
-    int GetComboDamage();
-    int GetComboCount();
-    void SetComboDamage(int value);
-    void SetComboCount(int value);
-};
-class CombatResponseActor { public: signed char ClassifyResponse(unsigned long flags); };
 class CombatEffects { public: void Spawn(short, float, float, unsigned char, signed char, unsigned char, unsigned char); };
 
 // The battle scene (vtable 00658334, constructor 0043AD10, destructor
@@ -160,7 +152,6 @@ public:
 
 extern short g_MaxComboCount;
 extern unsigned long g_MaxCombatScore;
-extern BattleRecords g_BattleRecords;
 extern CombatEffects g_CombatEffects;
 // Existing float wrapper; original declaration and ownership remain unresolved.
 float __cdecl CeilCollisionCoordinate(float value);

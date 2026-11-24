@@ -1554,14 +1554,14 @@ relocations = [
   { offset = 0x66F, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x68F, type = "DIR32", symbol = "$L1155", target = 0x0044398E },
   { offset = 0x6F9, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x723, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x728, type = "REL32", symbol = "?GetComboDamage@BattleRecords@@QAEHXZ", target = 0x00445290 },
-  { offset = 0x73C, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x741, type = "REL32", symbol = "?SetComboDamage@BattleRecords@@QAEXH@Z", target = 0x00445210 },
-  { offset = 0x750, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x755, type = "REL32", symbol = "?GetComboCount@BattleRecords@@QAEHXZ", target = 0x00445250 },
-  { offset = 0x769, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x76E, type = "REL32", symbol = "?SetComboCount@BattleRecords@@QAEXH@Z", target = 0x004451D0 },
+  { offset = 0x723, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x728, type = "REL32", symbol = "?GetSelectedValue12@GameProgress@@QAEHXZ", target = 0x00445290 },
+  { offset = 0x73C, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x741, type = "REL32", symbol = "?SetSelectedValue12@GameProgress@@QAEXH@Z", target = 0x00445210 },
+  { offset = 0x750, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x755, type = "REL32", symbol = "?GetSelectedValue8@GameProgress@@QAEHXZ", target = 0x00445250 },
+  { offset = 0x769, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x76E, type = "REL32", symbol = "?SetSelectedValue8@GameProgress@@QAEXH@Z", target = 0x004451D0 },
   { offset = 0x77F, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
   { offset = 0x794, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
   { offset = 0x7A3, type = "DIR32", symbol = "?g_MaxCombatScore@@3KA", target = 0x006714B0 },
@@ -1628,14 +1628,14 @@ relocations = [
   { offset = 0x603, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x623, type = "DIR32", symbol = "$L1167", target = 0x00444FA5 },
   { offset = 0x68A, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x6B4, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x6B9, type = "REL32", symbol = "?GetComboDamage@BattleRecords@@QAEHXZ", target = 0x00445290 },
-  { offset = 0x6CD, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x6D2, type = "REL32", symbol = "?SetComboDamage@BattleRecords@@QAEXH@Z", target = 0x00445210 },
-  { offset = 0x6E1, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x6E6, type = "REL32", symbol = "?GetComboCount@BattleRecords@@QAEHXZ", target = 0x00445250 },
-  { offset = 0x6FA, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x6FF, type = "REL32", symbol = "?SetComboCount@BattleRecords@@QAEXH@Z", target = 0x004451D0 },
+  { offset = 0x6B4, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x6B9, type = "REL32", symbol = "?GetSelectedValue12@GameProgress@@QAEHXZ", target = 0x00445290 },
+  { offset = 0x6CD, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x6D2, type = "REL32", symbol = "?SetSelectedValue12@GameProgress@@QAEXH@Z", target = 0x00445210 },
+  { offset = 0x6E1, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x6E6, type = "REL32", symbol = "?GetSelectedValue8@GameProgress@@QAEHXZ", target = 0x00445250 },
+  { offset = 0x6FA, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x6FF, type = "REL32", symbol = "?SetSelectedValue8@GameProgress@@QAEXH@Z", target = 0x004451D0 },
   { offset = 0x710, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
   { offset = 0x724, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
   { offset = 0x733, type = "DIR32", symbol = "?g_MaxCombatScore@@3KA", target = 0x006714B0 },
@@ -1686,7 +1686,7 @@ target_address = 0x004439A0
 size = 1185
 compare_size = 1252
 relocations = [
-  { offset = 0x1B, type = "REL32", symbol = "?ClassifyResponse@CombatResponseActor@@QAECK@Z", target = 0x00455140 },
+  { offset = 0x1B, type = "REL32", symbol = "?SelectHitResponse@Fighter@@QAEEI@Z", target = 0x00455140 },
   { offset = 0x54, type = "DIR32", symbol = "$L1078", target = 0x00443E65 },
   { offset = 0x5B, type = "DIR32", symbol = "$L1080", target = 0x00443E41 },
   { offset = 0xC5, type = "REL32", symbol = "?StartHitSequence@BattleScene@@QAEXPAVFighter@@F@Z", target = 0x00443FC0 },
@@ -2291,8 +2291,8 @@ relocations = [
   { offset = 0x214, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x258, type = "DIR32", symbol = "?g_StatePlayerIds@@3PACA", target = 0x006714C8 },
   { offset = 0x266, type = "DIR32", symbol = "?g_StatePlayerIds@@3PACA", target = 0x006714C8 },
-  { offset = 0x26C, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x271, type = "REL32", symbol = "?IncrementCounter@StateRecords@@QAEXCC@Z", target = 0x0043D360 },
+  { offset = 0x26C, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x271, type = "REL32", symbol = "?IncrementModeCounter@GameProgress@@QAEXCC@Z", target = 0x0043D360 },
   { offset = 0x306, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0x469, type = "DIR32", symbol = "__real@c3480000", target = 0x00658344 },
   { offset = 0x47F, type = "DIR32", symbol = "__real@40a00000", target = 0x00657874 },
@@ -16382,14 +16382,14 @@ relocations = [
   { offset = 0x478, type = "REL32", symbol = "?RenderHud@BattleScene@@QAEXXZ", target = 0x0043E040 },
   { offset = 0x48B, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
   { offset = 0x49E, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
-  { offset = 0x4BA, type = "REL32", symbol = "?RenderFadeOverlay@RenderActor43D9D0@@QAEXXZ", target = 0x00454AA0 },
-  { offset = 0x4D6, type = "REL32", symbol = "?RenderFadeOverlay@RenderActor43D9D0@@QAEXXZ", target = 0x00454AA0 },
+  { offset = 0x4BA, type = "REL32", symbol = "?RenderFadeOverlay@Fighter@@QAEXXZ", target = 0x00454AA0 },
+  { offset = 0x4D6, type = "REL32", symbol = "?RenderFadeOverlay@Fighter@@QAEXXZ", target = 0x00454AA0 },
   { offset = 0x4DE, type = "REL32", symbol = "?RenderStatus@BattleScene@@QAEXXZ", target = 0x00440B50 },
   { offset = 0x4F2, type = "REL32", symbol = "?DrawSelectedNotice@BattleScene@@QAEXXZ", target = 0x00440B00 },
-  { offset = 0x534, type = "REL32", symbol = "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ", target = 0x00454840 },
-  { offset = 0x550, type = "REL32", symbol = "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ", target = 0x00454840 },
-  { offset = 0x56E, type = "REL32", symbol = "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ", target = 0x00454840 },
-  { offset = 0x58A, type = "REL32", symbol = "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ", target = 0x00454840 },
+  { offset = 0x534, type = "REL32", symbol = "?RenderSideEffect@Fighter@@QAEXXZ", target = 0x00454840 },
+  { offset = 0x550, type = "REL32", symbol = "?RenderSideEffect@Fighter@@QAEXXZ", target = 0x00454840 },
+  { offset = 0x56E, type = "REL32", symbol = "?RenderSideEffect@Fighter@@QAEXXZ", target = 0x00454840 },
+  { offset = 0x58A, type = "REL32", symbol = "?RenderSideEffect@Fighter@@QAEXXZ", target = 0x00454840 },
   { offset = 0x5A1, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
   { offset = 0x5A6, type = "REL32", symbol = "?DrawBox@TextOverlay@@QAEXXZ", target = 0x00412EB0 },
   { offset = 0x5AC, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
@@ -16737,12 +16737,12 @@ relocations = [
   { offset = 0x786, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x7FC, type = "DIR32", symbol = "__real@42000000", target = 0x006583AC },
   { offset = 0x80A, type = "REL32", symbol = "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z", target = 0x00446B90 },
-  { offset = 0x845, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x84A, type = "REL32", symbol = "?GetValueAt0268@StatusRecords440B50@@QAEHC@Z", target = 0x00441FE0 },
+  { offset = 0x845, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x84A, type = "REL32", symbol = "?ReadSelectedWord268@GameProgress@@QAEIC@Z", target = 0x00441FE0 },
   { offset = 0x8A6, type = "DIR32", symbol = "__real@41f80000", target = 0x006583A8 },
   { offset = 0x8B4, type = "REL32", symbol = "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z", target = 0x00446B90 },
-  { offset = 0x8EF, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x8F4, type = "REL32", symbol = "?GetValueAt0394@StatusRecords440B50@@QAEHC@Z", target = 0x00442010 },
+  { offset = 0x8EF, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x8F4, type = "REL32", symbol = "?ReadSelectedWord394@GameProgress@@QAEIC@Z", target = 0x00442010 },
   { offset = 0x94C, type = "DIR32", symbol = "__real@42040000", target = 0x006583A4 },
   { offset = 0x95A, type = "REL32", symbol = "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z", target = 0x00446B90 },
   { offset = 0x975, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
@@ -26453,8 +26453,8 @@ size = 599
 relocations = []
 
 [units.progress-increment-mode-counter-0043d360]
-source = "src/RoundEndHudF173.cpp"
-object = "build/matching/RoundEndHudF173.obj"
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameProgress::IncrementModeCounter"]
 symbol = "?IncrementModeCounter@GameProgress@@QAEXCC@Z"
@@ -26497,8 +26497,8 @@ symbol = "__real@43480000"
 target = 0x0065835C
 
 [units.progress-read-selected-word268-00441fe0]
-source = "src/ProgressPauseF174.cpp"
-object = "build/matching/ProgressPauseF174.obj"
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameProgress::ReadSelectedWord268"]
 symbol = "?ReadSelectedWord268@GameProgress@@QAEIC@Z"
@@ -26507,8 +26507,8 @@ size = 44
 relocations = []
 
 [units.progress-read-selected-word394-00442010]
-source = "src/ProgressPauseF174.cpp"
-object = "build/matching/ProgressPauseF174.obj"
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameProgress::ReadSelectedWord394"]
 symbol = "?ReadSelectedWord394@GameProgress@@QAEIC@Z"
@@ -26517,8 +26517,8 @@ size = 44
 relocations = []
 
 [units.progress-set-selected-value8-004451d0]
-source = "src/ProgressPauseF174.cpp"
-object = "build/matching/ProgressPauseF174.obj"
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameProgress::SetSelectedValue8"]
 symbol = "?SetSelectedValue8@GameProgress@@QAEXH@Z"
@@ -26527,8 +26527,8 @@ size = 55
 relocations = []
 
 [units.progress-set-selected-value12-00445210]
-source = "src/ProgressPauseF174.cpp"
-object = "build/matching/ProgressPauseF174.obj"
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameProgress::SetSelectedValue12"]
 symbol = "?SetSelectedValue12@GameProgress@@QAEXH@Z"
@@ -26537,8 +26537,8 @@ size = 55
 relocations = []
 
 [units.progress-get-selected-value8-00445250]
-source = "src/ProgressPauseF174.cpp"
-object = "build/matching/ProgressPauseF174.obj"
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameProgress::GetSelectedValue8"]
 symbol = "?GetSelectedValue8@GameProgress@@QAEHXZ"
@@ -26547,8 +26547,8 @@ size = 50
 relocations = []
 
 [units.progress-get-selected-value12-00445290]
-source = "src/ProgressPauseF174.cpp"
-object = "build/matching/ProgressPauseF174.obj"
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameProgress::GetSelectedValue12"]
 symbol = "?GetSelectedValue12@GameProgress@@QAEHXZ"
@@ -26691,7 +26691,7 @@ target = 0x00453A10
 [[units.battle-update-player-effects-00445830.relocations]]
 offset = 309
 type = "REL32"
-symbol = "?PackDirectionBits@FighterControlCallsF174@@QAEXXZ"
+symbol = "?PackDirectionBits@Fighter@@QAEXXZ"
 target = 0x00455B30
 [[units.battle-update-player-effects-00445830.relocations]]
 offset = 426
@@ -41649,7 +41649,7 @@ target = 0x00401C20
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 305
 type = "REL32"
-symbol = "?CheckSelection@ResultRecordsF264@@YAEEH@Z"
+symbol = "?CheckSelection@GameProgressF203@@YAECC@Z"
 target = 0x00419E10
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 330
@@ -53334,7 +53334,7 @@ target = 0x006418AB
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 236
 type = "REL32"
-symbol = "?CanChooseCharacterAt00419E10@@YAECH@Z"
+symbol = "?CheckSelection@GameProgressF203@@YAECC@Z"
 target = 0x00419E10
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 258

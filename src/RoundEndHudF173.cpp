@@ -1,4 +1,3 @@
-#include "GameProgress.hpp"
 #include "BattleScene.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
@@ -57,11 +56,6 @@ void BattleScene::EnterRoundEnd()
             }
         }
     }
-}
-
-void GameProgress::IncrementModeCounter(signed char category, signed char key)
-{
-    modeCounts[category][key]++;
 }
 
 ComboDisplay::ComboDisplay(IDirect3DTexture8* texture, signed char side)

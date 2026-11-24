@@ -2,15 +2,15 @@
 #include "SpriteTransform.hpp"
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
-#include "BattleStatus440B50.hpp"
+#include "BattleHud43E040.hpp"
 #include "BattleStatusFloatPairF1096.hpp"
+#include "GameProgress.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define ACTOR(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x44 + i * 4) + (offset)))
 #define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 #define ACTOR_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[i]->drawing)
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
-#define RECORDS reinterpret_cast<StatusRecords440B50*>(&g_BattleRecords)
 
 void BattleScene::RenderStatus() {
     float nameSlide;
@@ -69,10 +69,10 @@ void BattleScene::RenderStatus() {
                             D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), fighters[i]->field3A4, 4, 7);
                         DrawAtlasNumberAt00446B90(610.0f,
                             F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 31.0f,
-                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), RECORDS->GetValueAt0268(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
+                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), g_GameProgress.ReadSelectedWord268(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
                         DrawAtlasNumberAt00446B90(639.0f,
                             F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 33.0f,
-                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), RECORDS->GetValueAt0394(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
+                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), g_GameProgress.ReadSelectedWord394(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
                         SetRect(&rect, 0, 0, 256, 32);
                         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(-nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f,
                             256.0f - nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f + 32.0f);
@@ -104,7 +104,6 @@ void BattleScene::RenderStatus() {
 }
 
 #undef reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]
-#undef RECORDS
 #undef QUAD
 #undef ACTOR_DRAWING
 #undef DRAWING

@@ -1,5 +1,4 @@
 #include "GameSharedState.hpp"
-#include "GameProgress.hpp"
 #include "BattleScene.hpp"
 #include "ProgressPauseF174.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -10,36 +9,6 @@
 extern unsigned char g_RenderByte0067161C;
 
 #define HELD_BUTTON g_InputMappings[i].held.counts[2 + j]
-
-unsigned int GameProgress::ReadSelectedWord268(signed char key)
-{
-    return characters[selectedFighter].difficulties[0].cardCounters[key];
-}
-
-unsigned int GameProgress::ReadSelectedWord394(signed char key)
-{
-    return characters[selectedFighter].difficulties[0].cardCounters2[key];
-}
-
-void GameProgress::SetSelectedValue8(int value)
-{
-    characters[selectedFighter].difficulties[selectedDifficulty].field008 = value;
-}
-
-void GameProgress::SetSelectedValue12(int value)
-{
-    characters[selectedFighter].difficulties[selectedDifficulty].field00C = value;
-}
-
-int GameProgress::GetSelectedValue8()
-{
-    return characters[selectedFighter].difficulties[selectedDifficulty].field008;
-}
-
-int GameProgress::GetSelectedValue12()
-{
-    return characters[selectedFighter].difficulties[selectedDifficulty].field00C;
-}
 
 void BattleScene::PollPauseShortcut()
 {
@@ -92,7 +61,7 @@ void BattleScene::UpdatePlayerEffects()
                 fighters[i]->inputD = 0;
                 fighters[i]->inputX = 0;
                 fighters[i]->inputY = 0;
-                reinterpret_cast<FighterControlCallsF174*>(fighters[i])->PackDirectionBits();
+                fighters[i]->PackDirectionBits();
                 fighters[i]->aiCommand = 0;
             }
             if (fighters[i]->aiCommand >= 10

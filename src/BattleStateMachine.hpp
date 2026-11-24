@@ -8,7 +8,6 @@
 // Partial interfaces, used only on existing receivers.
 class StatePatternActor { public: void ChoosePattern(); };
 class StateReplay { public: void AppendRecord(); bool IsInputEmpty(); };
-class StateRecords { public: void IncrementCounter(signed char first, signed char second); };
 class StateEffects { public: void ReleaseEntries(); };
 extern StateReplay g_StateReplay;
 extern signed char g_StateReplayLimit;

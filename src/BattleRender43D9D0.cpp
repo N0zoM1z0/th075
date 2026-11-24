@@ -40,8 +40,8 @@ void BattleScene::Render() {
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(3);
             fighters[0]->field2EC->DispatchAll();
             fighters[1]->field2EC->DispatchAll();
-            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMirrored();
-            reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMirrored();
+            fighters[0]->RenderMirroredNode();
+            fighters[1]->RenderMirroredNode();
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
             g_DrawDispatcher->Slot3();
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
@@ -56,15 +56,15 @@ void BattleScene::Render() {
             fighters[0]->field2EC->DispatchSelected(0);
             fighters[1]->field2EC->DispatchSelected(0);
             if (g_RenderOrderAt0068C860 != 0) {
-                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMain();
-                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMain();
-                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawAuxiliary();
-                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawAuxiliary();
+                fighters[0]->Render();
+                fighters[1]->Render();
+                fighters[0]->RenderChain();
+                fighters[1]->RenderChain();
             } else {
-                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMain();
-                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMain();
-                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawAuxiliary();
-                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawAuxiliary();
+                fighters[1]->Render();
+                fighters[0]->Render();
+                fighters[1]->RenderChain();
+                fighters[0]->RenderChain();
             }
             fighters[0]->field2EC->DispatchSelected(1);
             fighters[1]->field2EC->DispatchSelected(1);
@@ -88,27 +88,27 @@ void BattleScene::Render() {
         fighters[0]->field2EC->DispatchSelected(3);
         fighters[1]->field2EC->DispatchSelected(3);
         if (fighters[0]->fadeAlpha > 0)
-            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderFadeOverlay();
+            fighters[0]->RenderFadeOverlay();
         if (fighters[1]->fadeAlpha > 0)
-            reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderFadeOverlay();
+            fighters[1]->RenderFadeOverlay();
         RenderStatus();
         if (field018 == 5) {
             DrawSelectedNotice();
         } else if (field018 == 7) {
             if ((fighters[0]->noticeFirst) == 0) {
                 if ((fighters[0]->noticeBadge) >= 0)
-                    reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderSideEffect();
+                    fighters[0]->RenderSideEffect();
                 if ((fighters[1]->noticeBadge) >= 0)
-                    reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderSideEffect();
+                    fighters[1]->RenderSideEffect();
             } else {
                 if ((fighters[1]->noticeBadge) >= 0)
-                    reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderSideEffect();
+                    fighters[1]->RenderSideEffect();
                 if ((fighters[0]->noticeBadge) >= 0)
-                    reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderSideEffect();
+                    fighters[0]->RenderSideEffect();
             }
             if ((fighters[0]->noticeEnabled))
                 g_TextRenderer->DrawBox();
-            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderStage(g_StageAt0067161E);
+            fighters[0]->RenderStage(g_StageAt0067161E);
         }
         if (field060 > 0)
             RenderOverlayTimeline();
