@@ -400,7 +400,7 @@ The current direct-call scan is in
 
 | Candidates | Evidence gap |
 | --- | --- |
-| `0x0040D8C0`, `0x0040D8E0` | The typed texture cleanup reaches the bitmap-containing entry's destructor. The R108 implicit and explicit member lifetime forms both match the constructor and destructor with their bitmap calls. |
+| `0x0040D8C0`, `0x0040D8E0` | R295 matches both declaration forms across all three callers, their unwind data and both leaves. The forms differ in COFF function records that are absent from the PE. |
 | `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
 | `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
 | `0x004138D0`, `0x00441FD0` | Neither empty body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. The original owners are unknown. |
@@ -622,6 +622,31 @@ at `0x00438A60` has both R163 declarations and remains unresolved.
 
     bash .analysis/final-origin-review/crt-request-order/link.sh
     scripts/repo-python .analysis/final-origin-review/crt-request-order/compare.py
+
+### R295 — Texture entry construction and unwind
+
+The three texture allocators at `0x0040B000`, `0x0040B110` and
+`0x0040B1D0` construct and destroy one 44-byte entry. The bitmap
+constructor and destructor receive that entry at offset zero. The
+explicit inline and implicit outer declarations each reproduce
+the three complete allocator bodies, all three handlers and their
+unwind maps. Both also reproduce the 22-byte constructor and
+19-byte destructor. The comparison covers 776 bytes and 44
+relocation operands per layout.
+
+Placement `new T` and `new T()` each emit 62 bytes and the same
+two relocation operands for both declarations on VC7.1. The
+scratch layout separates the last four bytes to observe whether
+the compiler zeroes a scalar outside the modeled bitmap subobject.
+Neither placement form emits a distinct zeroing operation.
+
+Both declarations use selection ANY for the two lifetime COMDATs.
+The explicit inline form emits function auxiliary records under
+the caller's `/Zi` profile. The implicit form has no function
+auxiliary record. The PE has no COFF symbol table to retain this
+distinction.
+
+    scripts/repo-python .analysis/final-origin-review/texture-lifetime/replay.py
 
 ## Historical R263 inventory
 
