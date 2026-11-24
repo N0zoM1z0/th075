@@ -91,6 +91,7 @@ rows have complete replay units.
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` (cold exact) | 0 | 0 | — |
 | 0058AF60 | Yukari fighter | 49,230 | `YukariFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` (cold exact) | 0 | 0 | — |
+| 005AEEC0 | Suika fighter | 71,616 | `SuikaFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` (cold exact) | 0 | 0 | — |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
 
@@ -2205,3 +2206,41 @@ complete linked comparison to zero. Run both comparisons with
 `scripts/repo-python .analysis/yukari-fighter-advance/recovery-control.py`.
 
     scripts/repo-python scripts/replay-exact-units.py --unit yukari-fighter-advance-0058af60
+
+
+## 2026-11-24 — Suika's fighter Advance cold-replays exactly
+
+`SuikaFighter::Advance` at `0x005AEEC0` covers 71,616 CODE bytes.
+The 72,683-byte comparison includes 2,120 relocations, 2,037 direct
+branches, 164 jump words in seven tables and four remaps. The fighter
+vtable at `0x00659E30` points to this body at slot 1. The 158 actions
+include the four throws in `0x2BC`, `0x2D0`, `0x303` and `0x305`.
+The matching throws preserve the original opponent receivers for the
+position, animation resets, transform and launch. Actions 0, 2, 4
+and 5 share the frame-advance tail at `0x005C0674`.
+
+The two-shot and three-shot loops in `0x2EF` run in the original
+difficulty branches. Their source order places the three-shot
+counter at `[ebp-0x1c]` and the two-shot counter at `[ebp-0x20]`.
+The full 13-loop body restores the `0x4c0` frame, with `this` at
+`[ebp-0x38]`.
+
+Later landing frames in `0x5E` and `0x61` restore the following action
+entries. The continuation after the nested frame call in `0x130` restores
+ECX at `0x005B4019`. The corresponding continuation inside `0x1F4`
+restores EAX at `0x005B5C0E` and the following group of action bodies.
+
+Removing only the `0x1F4` continuation changes the receiver reload
+at `0x005B5C0E` to EDX. The complete control shows 2,352 differing
+bytes, 2,134 differing register operands, six moved relocation fields
+and one moved action entry. The checked source reproduces the whole
+extent exactly. Run the paired comparison with
+`scripts/repo-python .analysis/suika-fighter-advance/animation-control.py`.
+
+The four original call sites at `0x005BF187`, `0x005BF9E0`,
+`0x005C027F` and `0x005C02A9` are the complete reference set to the
+flagged effect helper at `0x00453BE0`. Moving the helper definition
+from its call-only view to `SuikaFighter` preserves all 145 helper
+bytes and both of its relocations.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit suika-fighter-advance-005aeec0 --unit fighter-spawn-tracked-effect-flags-00453be0

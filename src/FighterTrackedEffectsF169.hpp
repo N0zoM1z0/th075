@@ -8,8 +8,4 @@ class FighterTrackedEffectsF169 : public Fighter {
 public:
     void SpawnTrackedEffect(short effect, float x, float y, signed char facing,
                             signed char layer, unsigned char linked);
-    void SpawnTrackedEffectWithFlags(short effect, float x, float y,
-                                     signed char facing, signed char layer,
-                                     unsigned char flagA, unsigned char flagB,
-                                     unsigned char linked);
 };

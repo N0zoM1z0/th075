@@ -9,6 +9,11 @@ class SuikaFighter : public Fighter {
 public:
     SuikaFighter();
     virtual ~SuikaFighter();
+    virtual void Advance(); // Slot 1 at 005AEEC0.
+    void SpawnTrackedEffectWithFlags(short effect, float x, float y,
+                                     signed char facing, signed char layer,
+                                     unsigned char flagA, unsigned char flagB,
+                                     unsigned char linked);
     void ConfigureStage();
     void ChooseCardAction();
     static int cardCountdown;

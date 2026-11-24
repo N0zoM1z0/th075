@@ -374,7 +374,7 @@ address,name,module,confidence,evidence
 0x00454C20,Fighter::ApplyMode5DirectionAt00454C20 [provisional],FighterState,inferred,F167; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004483F0,BattleScene::HandleMode5Options,BattleScene,inferred,F168; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00453AC0,Fighter::SpawnTrackedEffectAt00453AC0,FighterState,inferred,F169; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x00453BE0,Fighter::SpawnTrackedEffectAt00453BE0,FighterState,inferred,F169; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00453BE0,Fighter::SpawnTrackedEffectAt00453BE0,FighterState,inferred,R102 and F169. Four native callers in SuikaFighter::Advance use the exact typed Suika receiver.
 0x00452C10,Fighter::ApplyOpponentGaugeChange,FighterState,inferred,F170; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00406E10,InputMapping::SetBindings,InputMapping,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00457490,Fighter::SetBindingsAt00457490,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
@@ -958,3 +958,4 @@ address,name,module,confidence,evidence
 0x004D7E70,AliceFighter::Advance,AliceFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x004F7130,PatchouliFighter::Advance,PatchouliFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x0058AF60,YukariFighter::Advance,YukariFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
+0x005AEEC0,SuikaFighter::Advance,SuikaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048

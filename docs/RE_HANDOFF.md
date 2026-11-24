@@ -165,13 +165,20 @@ and stage-14 recovery path in `0x2DB` restore the exit and following
 action entry. The ledger credits 49,230 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--yukaris-fighter-advance-cold-replays-exactly)
 
+### Suika fighter Advance is exact
+
+`suika-fighter-advance-005aeec0` cold-replays 72,683 bytes with the
+original seven jump tables, four remaps and 2,120 relocations. Its four
+calls to the flagged effect helper use the typed `SuikaFighter`
+receiver. The ledger credits 71,616 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--suikas-fighter-advance-cold-replays-exactly)
+
 ## Remaining giant parents
 
 The remaining authored functions are fighter `Advance` methods with
 partial or unstarted parents.
 
-- Suika `005AEEC0` (71,616 bytes) is the next fighter to reconstruct.
-- Meiling `005D73C0` (43,282 bytes) remains after Suika.
+- Meiling `005D73C0` (43,282 bytes) is the remaining authored giant.
 
 `docs/GIANTS.md` records the full sources, original extents and
 previous experiments.

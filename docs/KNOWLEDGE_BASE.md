@@ -322,6 +322,12 @@ before adding the base, in a different instruction order.
   firing provides the evidence needed to restore it.
   [Yukari's complete comparison](GIANTS.md#2026-11-24--yukaris-fighter-advance-cold-replays-exactly)
 
+- In Suika's `0x2EF`, the three-shot and two-shot loops are allocated
+  consecutive locals in emitted block order. The signed difficulty
+  test puts the three-shot arm first. Check both loop counts and their
+  stack slots when a decompiler reverses the arms.
+  [Suika's complete comparison](GIANTS.md#2026-11-24--suikas-fighter-advance-cold-replays-exactly)
+
 - The compiler keeps comparison constants literally: `i < 37` emits
   `cmp 37 / jge`, while an original `cmp 36 / jg` needs `i <= 36`.
 - An unsigned `Count() <= 0` emits `ja`; `Count() == 0` emits `jne`.
