@@ -39,7 +39,7 @@ case 0x35E: {
         field0DA=0;
         field0DE=0;
         field0DC=short(field0C8);
-        rotationZ=F1057_FloatAtan2At00483300(
+        rotationZ=AngleAt00483300(
             velocityY,velocityX)/g_F1057_AngleDivAt00657828;
         SetPolarVelocity(float(field0DC),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4);
@@ -54,9 +54,9 @@ case 0x35E: {
             return;
         }
         field0D8=short(field0D8+2);
-        rotationZ=F1057_FloatAtan2At00483300(
+        rotationZ=AngleAt00483300(
             velocityY,velocityX)/g_F1057_AngleDivAt00657828;
-        field0DA=short(F1057_FloatAtan2At00483300(
+        field0DA=short(AngleAt00483300(
             owner->opponent->y-y+g_F1057_YOffsetAt00657888,
             (owner->opponent->x-x)*int(facing)) /
             g_F1057_AngleDivAt00657828);

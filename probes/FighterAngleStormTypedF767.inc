@@ -68,7 +68,7 @@ case 0x2F9: {
             }
             if ((animationStage)==11 && (animationFrame)==0) {
                 scriptCounterF02=
-                    CalculateAngleAt483300(
+                    AngleAt00483300(
                         (*(&(opponent->y))-*(&y)),
                         ((opponent->x-x))
                            *static_cast<float>(facing))
@@ -82,7 +82,7 @@ case 0x2F9: {
             }
             if ((animationStage)==14 && (animationFrame)==0) {
                 scriptCounterF02=
-                    CalculateAngleAt483300(
+                    AngleAt00483300(
                         (*(&(opponent->y))-*(&y)),
                         ((opponent->x-x))
                            *static_cast<float>(facing))

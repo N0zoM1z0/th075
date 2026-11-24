@@ -48,7 +48,7 @@ case F1057_CASE: {
         field0DC=short(field0C8);
     }
     if (animationStage<=1) {
-        field0DA=short(F1057_FloatAtan2At00483300(
+        field0DA=short(AngleAt00483300(
             (owner->opponent->y-y)+g_F1057_YOffsetAt00657888,
             (owner->opponent->x-x)*float(facing)) /
             g_F1057_AngleDivAt00657828);

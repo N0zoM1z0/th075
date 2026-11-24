@@ -45,7 +45,7 @@ case F1111_CASE: {
     }
     if (animationStage>0) {
         field0D8=short(field0D8+2);
-        field0DA=short(F1057_FloatAtan2At00483300(
+        field0DA=short(AngleAt00483300(
             (owner->opponent->y-y)+g_F1057_YOffsetAt00657888,
             (owner->opponent->x-x)*int(facing)) /
             g_F1057_AngleDivAt00657828);

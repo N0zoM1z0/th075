@@ -20,18 +20,18 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
     --aiWaitTimer;
     if (action > 49 &&
         action < 150) {
-        if (aiCardTimer < 0) aiCardTimer = ChooseIntegerRange(30, 90);
+        if (aiCardTimer < 0) aiCardTimer = this->ChooseIntegerRange(30, 90);
         aiStep = 0;
         aiWaitTimer = 0;
-        if (ChooseIntegerRange(0, 100) < 50) inputX = 1;
+        if (this->ChooseIntegerRange(0, 100) < 50) inputX = 1;
         else inputX = -1;
-        if (ChooseIntegerRange(0, 100) < 5) inputA = 1;
+        if (this->ChooseIntegerRange(0, 100) < 5) inputA = 1;
         return;
     }
     if (CARD_TYPE == 4 && field3A0 > 0) {
         --aiCardTimer;
-        if (ChooseIntegerRange(0, 100) < 10) {
-            aiCommand = ChooseIntegerRange(0, 2) + 205;
+        if (this->ChooseIntegerRange(0, 100) < 10) {
+            aiCommand = this->ChooseIntegerRange(0, 2) + 205;
             if (x < 320.0f) {
                 aiCommand = 205 + (facing == -1);
             }
@@ -51,11 +51,11 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
             aiCommand = 210;
             return;
         }
-        if (ChooseIntegerRange(0, 100) < 10) {
-            aiCommand = (ChooseIntegerRange(0, 100) > 50) + 207;
+        if (this->ChooseIntegerRange(0, 100) < 10) {
+            aiCommand = (this->ChooseIntegerRange(0, 100) > 50) + 207;
             return;
         }
-        aiCommand = (ChooseIntegerRange(0, 100) > 50) + 205;
+        aiCommand = (this->ChooseIntegerRange(0, 100) > 50) + 205;
         if (x < 320.0f) {
             aiCommand = 205 + (facing == -1);
         }
@@ -70,8 +70,8 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
     if (CARD_TYPE == 0 && field3A0 > 0) {
         --aiCardTimer;
         if (aiCardTimer <= 0) aiCommand = 200;
-        if (ChooseIntegerRange(0, 100) < 2) {
-            aiCommand = ChooseIntegerRange(0, 2) + 205;
+        if (this->ChooseIntegerRange(0, 100) < 2) {
+            aiCommand = this->ChooseIntegerRange(0, 2) + 205;
             if (x < 320.0f) {
                 aiCommand = 205 + (facing == -1);
             }
@@ -239,7 +239,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (action == 307 &&
             rand() < 10000 &&
             spirit > 250) {
-            aiWaitTimer = ChooseIntegerRange(0, 45);
+            aiWaitTimer = this->ChooseIntegerRange(0, 45);
             aiStep = 6;
             inputC = 1;
             return;
@@ -275,7 +275,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
             action == 307 &&
             rand() < 5000 &&
             spirit > 300) {
-            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiWaitTimer = this->ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
             return;
@@ -387,7 +387,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
             action == 303 &&
             rand() < 5000 &&
             spirit > 300) {
-            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiWaitTimer = this->ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
             return;
@@ -395,7 +395,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (action == 308 &&
             rand() < 10000 &&
             spirit > 300) {
-            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiWaitTimer = this->ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
             return;
@@ -420,7 +420,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
     if (rand() < spirit * 0.8f + 0.0f &&
         distance.x > 320.0f &&
         spirit > 350) {
-        aiWaitTimer = ChooseIntegerRange(0, 45);
+        aiWaitTimer = this->ChooseIntegerRange(0, 45);
         aiStep = 1;
         inputC = 1;
         if (rand() < 1000) inputX = facing;
@@ -432,7 +432,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         spirit > 250 &&
         distance.y < 100.0f) {
         aiStep = 6;
-        aiWaitTimer = ChooseIntegerRange(0, 45);
+        aiWaitTimer = this->ChooseIntegerRange(0, 45);
         inputA = 1;
         if (rand() < 2000) inputX = facing;
         if (rand() < 2000) inputY = 1;

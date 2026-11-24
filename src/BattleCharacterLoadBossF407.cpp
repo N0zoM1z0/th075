@@ -2,6 +2,7 @@
 #include "GameSharedState.hpp"
 #include "DiagnosticLog.hpp"
 #include "GameProgress.hpp"
+#include "GameSnapshot.hpp"
 #include <stdlib.h>
 // Independently native-confirmed complete R065 3,232-CODE-byte battle character
 // loader, plus both originally owned post-RET switch tables (11+5 case entries
@@ -74,17 +75,15 @@ extern unsigned int g_ReplayRoundAt006718A0;
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
 extern unsigned char g_StageParametersAt00671440[];
-extern void LoadReplaySelectionAt004195B0();
 extern unsigned char CanChooseCharacterAt00419E10(signed char,int);
 extern void CameraAttachAt00412660(float*,float*,float*,float*);
 
-extern void SaveReplayStateAt00419920();
 class EffectCollectionsF398 {public:void ClearEntries();};
 extern EffectCollectionsF398 g_EffectCollectionsAt006716C8;
 #define F(T,f,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(f)+(o)))
 void BattleCharacterLoaderF398::LoadCharacters() {
  DiagnosticLog::AppendString(g_LoadCharacterLogAt00657A30);
- if (g_ReplayModeAt0066C238==2) LoadReplaySelectionAt004195B0();
+ if (g_ReplayModeAt0066C238==2) GameStateF202::RestoreFromSnapshot();
  else if (g_CombatMode==4) {
    ++g_StageAt0067161E;
    if (g_StageAt0067161E==1) {
@@ -216,7 +215,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
    F(short,g_BattleFightersAt00671418[1],0x326)=10000;F(short,g_BattleFightersAt00671418[1],0x324)=10000;
  }
  g_EffectCollectionsAt006716C8.ClearEntries();
- if(g_ReplayModeAt0066C238==1) SaveReplayStateAt00419920();
+ if(g_ReplayModeAt0066C238==1) GameStateF201::SaveSnapshot();
  DiagnosticLog::AppendString(g_LoadCharactersDoneAt00657A44);
 }
 #undef F

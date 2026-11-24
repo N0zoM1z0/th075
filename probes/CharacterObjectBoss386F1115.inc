@@ -31,7 +31,7 @@ case 0x386: {
         scaleX=float(RecordedRange(0,4))*
             g_F1057_SpeedScaleAt006590B4+g_F1115_RandomDoubleAt006583B8;
         scaleY=scaleX;
-        if (F1115_AbsFloatAt00412D90(x-
+        if (AbsFloatAt00412D90(x-
             owner->opponent->x)<g_F1115_DistanceAt0065786C) {
             velocityX=0.0f;
             scaleX=1.0f;

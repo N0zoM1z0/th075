@@ -18,7 +18,7 @@ case 0x33A: {
     if (field0D8<4)
         field0D8=4;
     SetPolarVelocity(float(field0DA),float(field0D8));
-    rotationZ=F1057_FloatAtan2At00483300(
+    rotationZ=AngleAt00483300(
         velocityY,velocityX)/g_F1057_AngleDivAt00657828;
     x=float(facing)*velocityX + x;
     y=y-velocityY;

@@ -91,7 +91,7 @@
                 velocityX=30.0f;
                 velocityY=-30.0f;
                 fieldF04=static_cast<short>(
-                    CalculateAngleAt483300(
+                    AngleAt00483300(
                         *(&(opponent->y))-y,
                         (opponent->x-x)
                           *static_cast<float>(facing))
@@ -100,7 +100,7 @@
                     fieldF04=-15;
                 SetPolarVelocity(static_cast<float>(-static_cast<int>(fieldF04)),28.0f);
                 ResetTransform(0.0f,80.0f,0.0f);
-                rotationZ=-(CalculateAngleAt483300(velocityY,*(&velocityX))
+                rotationZ=-(AngleAt00483300(velocityY,*(&velocityX))
                              /g_StormAngleDenominatorAt00657828
                               +g_F731_AimOffsetAt00657CBC);
             }

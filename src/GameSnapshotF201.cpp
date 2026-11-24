@@ -1,4 +1,5 @@
 #include "GameSharedState.hpp"
+#include "GameSnapshot.hpp"
 #include <windows.h>
 #include "Fighter.hpp"
 

@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YoumuFighter::Advance at 005214B0.
 #include "YoumuFighter.hpp"
@@ -9,7 +10,6 @@ extern float g_F894RandomHeightAt006592A0;
 extern float g_F893FloatFallAt00657478;
 extern float g_F893VerticalStageAt006598B0;
 extern float g_F892DistAt0065787C;
-extern float F892AbsAt00412D90(float);
 extern float g_F890GravityAt006581E0;
 extern float g_F890Phase0YAt0065835C;
 extern float g_F890Phase0AltYAt006591E4;

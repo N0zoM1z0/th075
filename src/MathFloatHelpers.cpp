@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include <math.h>
 
 // Shared game-side floating-point wrappers used by fighter/object policy.

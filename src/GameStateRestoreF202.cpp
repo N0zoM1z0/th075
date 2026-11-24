@@ -1,4 +1,5 @@
 #include "GameSharedState.hpp"
+#include "GameSnapshot.hpp"
 #include <windows.h>
 
 // The archive receiver and global player/snapshot bytes are borrowed anchor

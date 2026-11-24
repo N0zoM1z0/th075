@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 #include "SakuyaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
@@ -58,7 +59,6 @@ extern float g_F1009_LeftAt0065787C;
 extern float g_F1009_RightAt0065920C;
 extern float g_F1012_ArcYAt006591EC;
 extern float g_F1012_AngleDivisorAt00657828;
-extern float __cdecl F1012_AngleAt00483300(float,float);
 extern float g_F1016_RingYAt00659460;
 extern float g_F1017_StartYAt00658268;
 extern float g_F1017_VolleyYAt0065908C;

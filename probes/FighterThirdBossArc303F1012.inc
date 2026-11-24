@@ -67,7 +67,7 @@ case 0x303: {
     }
     if ((animationStage)==7 && (animationFrame)==0) {
         fieldF04=static_cast<short>(
-            F1012_AngleAt00483300(
+            AngleAt00483300(
                 -((opponent->y)+
                     g_ContactProjectionAt00657888-y+
                     g_F1012_ArcYAt006591EC),

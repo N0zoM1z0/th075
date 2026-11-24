@@ -1,6 +1,7 @@
 #include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "BattleScene.hpp"
+#include "GameLeafHelpers.hpp"
 // Complete original R065 1,958-CODE-byte battle input/replay dispatcher.
 // The separately owned 28-byte native 7-entry switch table is validated in
 // compare_size=1986 but earns zero additional authored CODE credit.
@@ -23,7 +24,6 @@ extern unsigned char g_InputCanCancelAt00671632;
 extern const float g_LevelStepAt00657850;
 extern const float g_LevelMaxAt00657B28;
 extern const float g_LevelZeroAt0065782C;
-extern void NativeActionAt00423C60(int);
 void BattleScene::ApplySequence() {
     if(g_CombatMode==5) {
         ProcessDebugKeys();
@@ -118,13 +118,13 @@ void BattleScene::ApplySequence() {
             }
         }
         if(g_ReplayModeAt0066C238==2 && (g_InputMappings[0].IsKeyDown(0x1D) || g_InputMappings[0].IsKeyDown(0x9D))) {
-            if(g_InputMappings[0].IsKeyDown(3)) NativeActionAt00423C60(8);
-            else if(g_InputMappings[0].IsKeyDown(4)) NativeActionAt00423C60(6);
-            else if(g_InputMappings[0].IsKeyDown(5)) NativeActionAt00423C60(4);
-            else if(g_InputMappings[0].IsKeyDown(6)) NativeActionAt00423C60(3);
-            else if(g_InputMappings[0].IsKeyDown(7)) NativeActionAt00423C60(2);
-            else if(g_InputMappings[0].IsKeyDown(8)) NativeActionAt00423C60(1);
-            else NativeActionAt00423C60(0x10);
+            if(g_InputMappings[0].IsKeyDown(3)) SetClampedGameValue(8);
+            else if(g_InputMappings[0].IsKeyDown(4)) SetClampedGameValue(6);
+            else if(g_InputMappings[0].IsKeyDown(5)) SetClampedGameValue(4);
+            else if(g_InputMappings[0].IsKeyDown(6)) SetClampedGameValue(3);
+            else if(g_InputMappings[0].IsKeyDown(7)) SetClampedGameValue(2);
+            else if(g_InputMappings[0].IsKeyDown(8)) SetClampedGameValue(1);
+            else SetClampedGameValue(0x10);
         }
         if(g_ReplayModeAt0066C238==1 || g_ReplayModeAt0066C238==3) {
             if(g_InputMappings[0].IsKeyDown(0x1D) || g_InputMappings[0].IsKeyDown(0x9D) || static_cast<unsigned int>(g_InputMappings[0].held.counts[5])>5) g_InputCanCancelAt00671632=1;

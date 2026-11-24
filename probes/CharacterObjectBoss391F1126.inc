@@ -51,7 +51,7 @@ case 0x391: {
     if (field0DA==0 &&
         scaleX==g_F1051_ScaleCeilingAt0065747C) {
         if (owner->opponent->y<y &&
-            F1115_AbsFloatAt00412D90(x-
+            AbsFloatAt00412D90(x-
                 owner->opponent->x)<g_F1126_XDistanceAt00657850) {
             field0DA=1;
             velocityX=0.0f;

@@ -26,7 +26,7 @@
             }
             if ((animationStage)==11 && (animationFrame)==0) {
                 PlaySound(0x12);
-                field314=CalculateAngleAt483300(
+                field314=AngleAt00483300(
                     opponent->y-y,
                     (opponent->x-x)
                         *static_cast<float>(facing))

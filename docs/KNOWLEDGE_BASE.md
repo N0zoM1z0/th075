@@ -65,6 +65,14 @@ When reusing a cold-replayed object in the aggregate build, route it by
 the translation unit's filename stem. The configured comparison object
 `RemiliaObjectAdvance.obj` is archived as `CharacterObjectWhole0055AC80F1194.obj`.
 
+The AI policy templates inherit the `Fighter` integer range at
+`0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
+Both entries still compare over 44 bytes with their CRT `rand` relocation.
+The existing `Fighter` notice setter writes `sequencePhase` at `0x6E4`.
+The floating-point call sites share the VC7.1 wrappers declared in
+`MathFloatHelpers.hpp`, and character loading uses the same snapshot
+entry points as the replay code.
+
 `Graphics::BeginFrame` returns the status from `BeginTarget` on both
 branches. The native caller tests AL, and the bool declaration preserves
 all 36 bytes of the wrapper. The application and scene drawing callers

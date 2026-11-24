@@ -52,7 +52,7 @@
                 break;
             }
             if ((animationStage)==3 && (animationFrame)==0) {
-                if (F699AbsAt00412D90(x-opponent->x)
+                if (AbsFloatAt00412D90(x-opponent->x)
                     <g_F699_DistanceAt0065787C) {
                     if (RecordedRange(0,100)<50)
                         facing=1;

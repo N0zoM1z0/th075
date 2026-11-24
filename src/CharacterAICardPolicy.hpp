@@ -10,7 +10,6 @@ struct AI5E9620CardPolicy { static int countdown; };
 template<class Policy> class CharacterAICardPolicy : public Fighter {
 public:
     void ChooseCardAction();
-    int ChooseIntegerRange(int lower, int upper);
 };
 typedef CharacterAICardPolicy<AI474B40CardPolicy> CharacterAI474B40;
 typedef CharacterAICardPolicy<AI5E9620CardPolicy> CharacterAI5E9620;

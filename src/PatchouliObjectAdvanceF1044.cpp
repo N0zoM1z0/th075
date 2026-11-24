@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 #include "CharacterObject.hpp"
 #include "PatchouliFighter.hpp"
@@ -85,9 +86,7 @@ extern double g_F1115_RandomDoubleAt006583B8;
 extern float g_F1115_DistanceAt0065786C;
 extern float g_F1116_YOffsetAt00659888;
 extern float g_F1116_AngleOffsetAt0065786C;
-extern float __cdecl F1115_AbsFloatAt00412D90(float);
 
-extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
 void PatchouliObject::Advance() {
     if (owner->opponent->field3BA != 0)

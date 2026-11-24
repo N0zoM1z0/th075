@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of SuikaObject::Advance at 005C9CC0.
 // Replays 43,501 code bytes plus 470 bytes of switch data with VC7.1 build 3077.
@@ -9,7 +10,6 @@
 
 float __cdecl AngleAt00483300(float, float);
 float __cdecl AbsFloatAt00412D90(float);
-float __cdecl ScalarAt00428D20(float);
 extern float g_F1057_NudgeAt00657480;
 extern float g_F1211_AngleDivAt00657828;
 
@@ -1597,7 +1597,7 @@ void SuikaObject::Advance()
             }
             if (owner->animationStage < 2) {
                 --field0DE;
-                if (field0DE <= 0 && owner->opponent->health > 0 && ScalarAt00428D20(
+                if (field0DE <= 0 && owner->opponent->health > 0 && MagnitudeAt00428D20(
                     (owner->opponent->x - x) * (owner->opponent->x - x) +
                     (owner->opponent->y - y) * (owner->opponent->y - y)) > 256 - g_OptionsModeAt006714D0 * 48 &&
                     y > 0.0f && x > 0.0f && x < 1280.0f) {
@@ -1640,7 +1640,7 @@ void SuikaObject::Advance()
             }
             if (owner->animationStage > 1) {
                 --field0DE;
-                if (field0DE <= 0 && ScalarAt00428D20(
+                if (field0DE <= 0 && MagnitudeAt00428D20(
                     (owner->opponent->x - x) * (owner->opponent->x - x) +
                     (owner->opponent->y - y) * (owner->opponent->y - y)) > 128.0f &&
                     y > 0.0f && x > 0.0f && x < 1280.0f) {

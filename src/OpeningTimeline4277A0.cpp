@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -5,7 +6,6 @@
 // Pointer-only scene view; never instantiate or embed this incomplete owner.
 class OpeningTimeline4277A0 { public: void RenderTimeline(); };
 // Independently observed float-carrier chain; its origin remains unknown.
-float __cdecl OpeningScalar428D20(float);
 #define DRAWING (*reinterpret_cast<TimelineDrawing438D00**>(reinterpret_cast<char*>(this) + 8))
 #define TIME (*reinterpret_cast<DWORD*>(reinterpret_cast<char*>(this) + 12))
 
@@ -97,9 +97,9 @@ void OpeningTimeline4277A0::RenderTimeline() {
         if (TIME >= begin && TIME < rangeEnd) {
             scrollPosition = static_cast<float>(TIME - begin) / (rangeEnd - begin);
             DRAWING->DrawSprite(14, 320.0f, 480.0f, 0xFFFFFFFF,
-                (2.0f - OpeningScalar428D20(scrollPosition)) * 320.0f,
-                (2.0f - OpeningScalar428D20(scrollPosition)) * 480.0f,
-                2.0f - OpeningScalar428D20(scrollPosition), 0, 0);
+                (2.0f - MagnitudeAt00428D20(scrollPosition)) * 320.0f,
+                (2.0f - MagnitudeAt00428D20(scrollPosition)) * 480.0f,
+                2.0f - MagnitudeAt00428D20(scrollPosition), 0, 0);
         }
         begin = 48200;
         rangeEnd = 53400;

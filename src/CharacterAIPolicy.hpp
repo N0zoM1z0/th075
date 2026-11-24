@@ -44,7 +44,6 @@ struct AI5E7370Policy {
 template<class Policy> class CharacterAIPolicy : public Fighter {
 public:
     void ChooseAction();
-    int ChooseIntegerRange(int lower, int upper);
 };
 typedef CharacterAIPolicy<AI472890Policy> CharacterAI472890;
 typedef CharacterAIPolicy<AI4E7DE0Policy> CharacterAI4E7DE0;

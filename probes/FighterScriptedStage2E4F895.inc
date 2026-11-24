@@ -11,7 +11,7 @@ case 0x2E4: {
         ClearMotionFields();
     }
     if ((animationStage)>1 && (animationStage)<10) {
-        if (F892AbsAt00412D90(
+        if (AbsFloatAt00412D90(
                 opponent->x-
                 x)
                     <g_F895AbsThresholdAt006591F4) {

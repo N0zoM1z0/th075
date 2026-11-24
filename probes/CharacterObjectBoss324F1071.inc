@@ -32,7 +32,7 @@ case 0x324: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        rotationZ=F1057_FloatAtan2At00483300(
+        rotationZ=AngleAt00483300(
             velocityY,velocityX)/g_F1057_AngleDivAt00657828;
     }
     ++field0D8;

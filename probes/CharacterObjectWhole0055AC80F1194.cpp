@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 #include "CharacterObject.hpp"
 #include "RemiliaFighter.hpp"
@@ -9,7 +10,6 @@
 // Caller-cleaned two-float/ST0 used-contract hypothesis, shared with the
 // independently retained004AC040 draft. Origin and nominal return type remain
 // unknown; this declaration supplies no ownership or callee exact credit.
-float __cdecl Unknown483300(float first, float second);
 
 // Same observed signed-byte view used by the accepted response policy.
 
@@ -267,7 +267,7 @@ case 804: {
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
     if ((field07C == 1 || field07C == 2 ||
          field07C == 4) && animationStage < 2) {
@@ -561,7 +561,7 @@ case 816: {
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
     if ((field07C == 1 || field07C == 2 ||
          field07C == 4) && animationStage < 2) {
@@ -620,7 +620,7 @@ case 817: {
         SetPolarVelocity(field0DC, field0D8 * 0.1f + 10.0f);
     }
     if (animationStage < 5) {
-        field0DA = Unknown483300(
+        field0DA = AngleAt00483300(
             owner->opponent->y - y + 100.0f,
             (owner->opponent->x - x) * facing) / 0.01745328866f;
         if (field0DA > field0DC + 10)
@@ -740,7 +740,7 @@ case 821: {
         color[3] = 255;
     }
     SetPolarVelocity(field0DA, 25.0f);
-    rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     if (field07C == 4 && field080 > 0)
         field07C = 0;
     // Preserve both independently observed nonzero flag reads.
@@ -1211,7 +1211,7 @@ case 838: {
         color[3] = 255;
     }
     SetPolarVelocity(field0DA, 3.0f);
-    rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     if (field07C == 4 && field080 > 0)
         field07C = 0;
     x = facing * velocityX + x;
@@ -1356,7 +1356,7 @@ case 900:
         field080 = 1;
         field07C = 0;
         SetPolarVelocity(field0C8, 40.0f);
-        rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
     x = facing * velocityX + x;
     y = y - velocityY;
@@ -1504,7 +1504,7 @@ case 904:
         field080 = 1;
         field07C = 0;
         SetPolarVelocity(field0C8, 40.0f);
-        rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
     x = facing * velocityX + x;
     y = y - velocityY;
@@ -1571,7 +1571,7 @@ case 905:
     if (animationFrame == 0) field07C = 0;
     if (animationStage == 2 && animationFrame == 0) {
         owner->PlaySound(17);
-        SetPolarVelocity(Unknown483300(
+        SetPolarVelocity(AngleAt00483300(
             owner->opponent->y + 100.0f - y,
             (owner->opponent->x - x) * facing) / 0.01745328866f, 20.0f);
     }
@@ -1836,7 +1836,7 @@ case 912:
         color[2] = 255;
         color[3] = 255;
         SetPolarVelocity(field0D8, 30.0f);
-        rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
     x = facing * velocityX + x;
     y = y - velocityY;
@@ -2044,7 +2044,7 @@ case 916:
         field0DA = RecordedRange(0, 40) + field0C8 - 20.0f;
         SetPolarVelocity(
             field0DA, field0D8 * 0.05f);
-        rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
         field07C = 0;
         field080 = 1;
     }
@@ -2108,7 +2108,7 @@ case 995:
             field0D8, field0DA * 0.8f);
     }
     if (animationStage == 1) {
-        field0D8 = Unknown483300(
+        field0D8 = AngleAt00483300(
             owner->opponent->y + 100.0f - y,
             owner->opponent->x - x) / 0.01745328866f;
         SetPolarVelocity(field0D8, 20.0f);
@@ -2155,7 +2155,7 @@ case 996:
             field0D8, field0DA * 0.8f);
     }
     if (animationStage == 1) {
-        field0D8 = Unknown483300(
+        field0D8 = AngleAt00483300(
             owner->opponent->y + 100.0f - y,
             owner->opponent->x - x) / 0.01745328866f;
         SetPolarVelocity(field0D8, 20.0f);

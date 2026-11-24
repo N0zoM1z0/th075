@@ -51,9 +51,9 @@ case 0x346: {
         scaleY=(scaleY)*g_F1076_ScaleMulAt00659450;
         SetPolarVelocity(float(field0DC),
                                      float(field0D8));
-        rotationZ=F1057_FloatAtan2At00483300(
+        rotationZ=AngleAt00483300(
             velocityY,velocityX)/g_F1057_AngleDivAt00657828;
-        owner->field310=F1057_FloatAtan2At00483300(
+        owner->field310=AngleAt00483300(
             velocityY,velocityX)/g_F1057_AngleDivAt00657828;
     }
     if (animationStage==3) {
@@ -62,7 +62,7 @@ case 0x346: {
         scaleY=(scaleY)*g_F1076_ScaleMulAt00659450;
         SetPolarVelocity(float(field0DC),
                                      float(field0D8));
-        rotationZ=F1057_FloatAtan2At00483300(
+        rotationZ=AngleAt00483300(
             velocityY,velocityX)/g_F1057_AngleDivAt00657828;
         if (color[0]>10)
             color[0]-=10;
@@ -85,7 +85,7 @@ case 0x346: {
     if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==2 && animationFrame==0) {
-        field0DC=short(F1057_FloatAtan2At00483300(
+        field0DC=short(AngleAt00483300(
           ((*(&owner->opponent->y))+g_F1076_TargetYOffsetAt00658398-y),
           (owner->opponent->x-x)*int(facing)) /
           g_F1057_AngleDivAt00657828);

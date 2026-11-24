@@ -272,7 +272,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (action == 307 &&
             rand() < 10000 &&
             spirit > 250) {
-            aiWaitTimer = ChooseIntegerRange(0, 45);
+            aiWaitTimer = this->ChooseIntegerRange(0, 45);
             aiStep = 6;
             inputC = 1;
             return;
@@ -308,7 +308,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             action == 307 &&
             rand() < 5000 &&
             spirit > 300) {
-            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiWaitTimer = this->ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
             return;
@@ -420,7 +420,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             action == 303 &&
             rand() < 5000 &&
             spirit > 300) {
-            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiWaitTimer = this->ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
             return;
@@ -428,7 +428,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (action == 308 &&
             rand() < 10000 &&
             spirit > 300) {
-            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiWaitTimer = this->ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
             return;
@@ -453,7 +453,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (rand() < spirit * 0.8f + 0.0f &&
         distance.x > 320.0f &&
         spirit > 350) {
-        aiWaitTimer = ChooseIntegerRange(0, 45);
+        aiWaitTimer = this->ChooseIntegerRange(0, 45);
         aiStep = 1;
         inputC = 1;
         if (rand() < 1000) inputX = facing;
@@ -465,7 +465,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         spirit > 250 &&
         distance.y < 100.0f) {
         aiStep = 6;
-        aiWaitTimer = ChooseIntegerRange(0, 45);
+        aiWaitTimer = this->ChooseIntegerRange(0, 45);
         inputA = 1;
         if (rand() < 2000) inputX = facing;
         if (rand() < 2000) inputY = 1;

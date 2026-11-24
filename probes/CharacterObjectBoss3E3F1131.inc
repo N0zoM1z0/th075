@@ -23,7 +23,7 @@ case 0x3E3: {
             float(field0DA)*g_F1120_XBrakingAt00659090);
     }
     if (animationStage==1) {
-        field0D8=short(F1057_FloatAtan2At00483300(
+        field0D8=short(AngleAt00483300(
             (*(&owner->opponent->y))+g_F1057_YOffsetAt00657888-y,
             owner->opponent->x-x) /
             g_F1057_AngleDivAt00657828);

@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
 #include "RemiliaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
@@ -10,7 +11,6 @@ extern float g_F701_VolleyYAt00658268;
 extern float g_F699_SideOffsetAt00657874;
 extern float g_F699_SideEdgeAt00657884;
 extern float g_F699_DistanceAt0065787C;
-extern "C" float __cdecl F699AbsAt00412D90(float);
 extern float g_AnimationDeltaAt0065747C;
 extern float g_AnimationMaximumAt006583B4;
 extern float g_JumpGroundCorrectionAt00658058;
@@ -72,7 +72,6 @@ extern float g_CloudShotYAt006591E4;
 extern float g_StormAngleShotYAt00659A18;
 extern float g_StormMotionAt00658348;
 extern float g_StormAngleDenominatorAt00657828;
-extern "C" float __cdecl CalculateAngleAt483300(float,float);
 extern float g_StormYAt0065948C;
 extern float g_BurstXAt00659238;
 extern float g_BurstXAt00658400;
