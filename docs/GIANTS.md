@@ -89,6 +89,7 @@ rows have complete replay units.
 | 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` (cold exact) | 0 | 0 | — |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
 | 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` (cold exact) | 0 | 0 | — |
+| 0058AF60 | Yukari fighter | 49,230 | `YukariFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` (cold exact) | 0 | 0 | — |
 | 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` (cold exact) | 0 | 0 | — |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
@@ -2172,3 +2173,35 @@ Run both comparisons with
 `scripts/repo-python .analysis/patchouli-fighter-advance/landing-control.py`.
 
     scripts/repo-python scripts/replay-exact-units.py --unit patchouli-fighter-advance-004f7130
+
+
+## 2026-11-24 — Yukari's fighter Advance cold-replays exactly
+
+`YukariFighter::Advance` at `0x0058AF60` covers 49,230 CODE bytes.
+The 50,196-byte comparison includes 1,576 relocations, 1,503 direct
+branches, 154 jump words in seven tables and five remaps. Fighter
+vtable `0x00659CC0` points directly to the function in slot 1. All
+146 action entries resolve to their original bodies. Actions 0, 2, 4
+and 5 use the shared frame-advance tail at `0x00596FA2`.
+
+The original loops occupy ten separate four-byte slots at
+`[ebp-0x4]` through `[ebp-0x28]`. Action `0x19F` also emits an
+x87 comparison for its airborne path even though that path performs
+no movement update. Keeping the guard restores the seven instructions
+between the contact and firing blocks.
+
+The first aligned candidate for `0x2DB` routes the stage-10 exit
+through the end of the case with a short jump. Returning there
+directly restores the five-byte jump at `0x0059548A`. The stage-14
+recovery continuation restores the EDX receiver reload at
+`0x005954B5` in `0x2DC`. The earlier incomplete-frame path within
+`0x2DB` independently restores the ECX reload at `0x0059510D`.
+
+Removing only the stage-14 continuation changes the receiver reload
+at `0x005954B5` to ECX and leaves 491 differing bytes and 480 differing
+register operands. The branch edges, table positions and relocation
+positions agree in both builds. Restoring the continuation brings the
+complete linked comparison to zero. Run both comparisons with
+`scripts/repo-python .analysis/yukari-fighter-advance/recovery-control.py`.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit yukari-fighter-advance-0058af60

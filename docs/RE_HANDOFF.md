@@ -157,14 +157,21 @@ in `0x31B` restore the original register choices. The ledger credits
 44,211 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--patchoulis-fighter-advance-cold-replays-exactly)
 
+### Yukari fighter Advance is exact
+
+`yukari-fighter-advance-0058af60` cold-replays 50,196 bytes with seven
+jump tables, five remaps and 1,576 relocations. The explicit return
+and stage-14 recovery path in `0x2DB` restore the exit and following
+action entry. The ledger credits 49,230 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--yukaris-fighter-advance-cold-replays-exactly)
+
 ## Remaining giant parents
 
 The remaining authored functions are fighter `Advance` methods with
 partial or unstarted parents.
 
-- Yukari `0058AF60` (49,230 bytes) is the next fighter to reconstruct.
-- Suika `005AEEC0` (71,616 bytes) and Meiling `005D73C0` (43,282 bytes)
-  remain after Yukari.
+- Suika `005AEEC0` (71,616 bytes) is the next fighter to reconstruct.
+- Meiling `005D73C0` (43,282 bytes) remains after Suika.
 
 `docs/GIANTS.md` records the full sources, original extents and
 previous experiments.

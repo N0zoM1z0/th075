@@ -316,6 +316,12 @@ before adding the base, in a different instruction order.
 
 ### Conditions and loops
 
+- Yukari's `0x19F` has a stage gate and an x87 comparison with no
+  status-word read before the next source condition. The decompiled
+  case omits that guard. The instruction interval between contact and
+  firing provides the evidence needed to restore it.
+  [Yukari's complete comparison](GIANTS.md#2026-11-24--yukaris-fighter-advance-cold-replays-exactly)
+
 - The compiler keeps comparison constants literally: `i < 37` emits
   `cmp 37 / jge`, while an original `cmp 36 / jg` needs `i <= 36`.
 - An unsigned `Count() <= 0` emits `ja`; `Count() == 0` emits `jne`.

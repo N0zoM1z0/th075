@@ -957,3 +957,4 @@ address,name,module,confidence,evidence
 0x00486550,MarisaFighter::Advance,MarisaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x004D7E70,AliceFighter::Advance,AliceFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x004F7130,PatchouliFighter::Advance,PatchouliFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
+0x0058AF60,YukariFighter::Advance,YukariFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
