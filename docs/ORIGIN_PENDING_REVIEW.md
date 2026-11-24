@@ -285,6 +285,30 @@ helpers and 85 library bytes.
     scripts/compile-probe.sh .analysis/final-origin-review/texture-vectors.cpp build/probes/TextureVectorsOriginDirect.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src
     scripts/repo-python .analysis/final-origin-review/compare-textures.py
 
+### R284 — Pattern and effect vector cleanup
+
+The typed fighter pattern loader matches the complete 3,696-byte
+function and all 171 relocations. It clears the 116-byte record
+vector at `0x00458B50` before deleting each sequence, then clears
+the pointer vector at `0x00458C20`. Their `_Tidy` sections dispatch
+to the nontrivial and scalar pointer range paths respectively.
+The typed frame allocator reaches `std::_Destroy` at
+`0x0045B6B0`, whose scalar-deleting callee calls the independently
+known record destructor at `0x004588E0`.
+
+The cold-exact effect loader parses the 16-byte prefix record and
+calls the sequence clear at `0x005F8020`. The same concrete record in
+the typed sequence constructor and destructor reproduces the full
+vector cleanup through `std::_Destroy` at `0x005FAAD0` and the
+prefix destructor at `0x004588B0`. The two typed objects reproduce
+32 complete functions, 4,990 bytes and 226 relocations. The five
+newly attributed helpers account for 87 library bytes.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit fighter-pattern-load-00457660 --unit record16-construct-clear-005f7f20 --unit record16-clear-then-destroy-005f7ed0 --unit effects-load-pattern-catalog-005f71f0
+    scripts/compile-probe.sh .analysis/final-origin-review/fighter-pattern-vectors.cpp build/probes/FighterPatternVectorsOrigin.obj /Od /Ob0 /Gy /GR- /GX /GS /Zi /I src
+    scripts/compile-probe.sh .analysis/final-origin-review/effect-pattern-vectors.cpp build/probes/EffectPatternVectorsOrigin.obj /Od /Ob0 /Gy /GR- /GX /GS /Zi /I src
+    scripts/repo-python .analysis/final-origin-review/compare-pattern-vectors.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
