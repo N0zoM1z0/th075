@@ -19,7 +19,6 @@ class MarisaRendererF356 {
 public:
     void DrawProjectileChain(int texture, const void* records, int count);
 };
-extern const float g_MarisaParticleDepthAt006582E0;
 extern const float g_MarisaPhaseDivisorAAt00659310;
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
@@ -64,7 +63,7 @@ void MarisaFighter::RenderChain() {
             quad.first.z=0.0f;
             quad.fourth.x=CameraCosineAt0040D900(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
             quad.fourth.y=CameraSineAt0040D940(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
-            quad.fourth.z=g_MarisaParticleDepthAt006582E0*field1010/FloatConstants::Two;
+            quad.fourth.z=GeometryConstants::SixtyFour*field1010/FloatConstants::Two;
             reinterpret_cast<SpriteTransform*>(&quad)->RotateQuad(
               0.0f,0.0f,0.0f,
               float(phaseA)+CameraSineAt0040D940(float(i*6)+float(fieldEF8)/GeometryConstants::Fifty)*GeometryConstants::Thirty,

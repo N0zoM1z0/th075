@@ -16,22 +16,22 @@ case 0x2F8: {
             SpawnAuxEffect(0x3E,
                 x-
                     float((facing)*40),
-                (*(&y))+g_F898ShotYAt0065839C,1,1);
+                (*(&y))+GeometryConstants::ThirtyFive,1,1);
             scriptCounterF02=0;
         }
     }
     if ((animationStage)>13) {
-        velocityX=(velocityX)-g_F884DoubleDropAt00657D00;
+        velocityX=(velocityX)-FloatConstants::OneDouble;
         if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
     if ((animationStage)==7) {
         scaleX=(scaleX)+FloatConstants::OneFifth;
-        scaleY=(scaleY)-g_F884PhaseYAt006598B8;
+        scaleY=(scaleY)-FloatConstants::NineteenHundredths;
     }
     if ((animationStage)==9) {
         scaleX=(scaleX)-FloatConstants::OneFifth;
-        scaleY=(scaleY)+g_F884PhaseYAt006598B8;
+        scaleY=(scaleY)+FloatConstants::NineteenHundredths;
         velocityX=2.0f;
     }
     if ((animationStage)==8 && (animationFrame)==0) {

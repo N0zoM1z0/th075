@@ -8,7 +8,6 @@
 
 
 float __cdecl AngleAt00483300(float, float);
-extern const float g_SakuyaObjectMaxXAt006583D8;
 extern const float g_SakuyaObjectMinXAt006595E0;
 
 void SakuyaObject::Advance()
@@ -540,7 +539,7 @@ void SakuyaObject::Advance()
             if (animationStage == 0 && animationFrame != 0) {
                 // Later startup frames proceed to the same arena bounds check.
             }
-            if (x > g_SakuyaObjectMaxXAt006583D8 || x < g_SakuyaObjectMinXAt006595E0 || y > GeometryConstants::Thousand || y < GeometryConstants::NegativeHundredSixty) {
+            if (x > GeometryConstants::TwoThousand || x < g_SakuyaObjectMinXAt006595E0 || y > GeometryConstants::Thousand || y < GeometryConstants::NegativeHundredSixty) {
                 ClearFrameInfo();
                 return;
             }

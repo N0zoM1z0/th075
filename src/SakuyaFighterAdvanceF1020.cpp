@@ -6,25 +6,17 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of SakuyaFighter::Advance at 004AC040.
 
-extern float g_F747_BounceXAt006590BC;
-extern float g_F748_SpeedScaleAt006590B8;
-extern float g_F948_C8UpperAt00657854;
-extern float g_F964_LateFallAt00658048;
 extern float g_F968_RoundY190At00659294;
 extern float g_F968_RoundY191At00659498;
 extern float g_F971_YAt00659494;
 extern float g_F971_YAt00659490;
 extern float g_F971_YAt00659294;
 extern float g_F971_YAt0065948C;
-extern float g_F971_YAt00659488;
 extern float g_F971_YAt00659484;
 extern float g_F971_YAt00659480;
 extern float g_F971_YAt00659498;
 extern float g_F971_YAt0065947C;
 extern float g_F971_YAt00659478;
-extern float g_F972_YAt00657860;
-extern float g_F972_YAt00658364;
-extern float g_F972_YAt0065836C;
 extern float g_F972_YAt00659284;
 extern float g_F972_YAt00659464;
 extern float g_F972_YAt00659468;
@@ -34,12 +26,7 @@ extern float g_F972_YAt00659474;
 extern float g_F974_ShotYAt00659294;
 extern float g_F974_ShotYAt00659498;
 extern float g_F983_BurstYAt00659490;
-extern double g_F982_Scale1F6At006583E0;
-extern double g_F982_Scale1F7At006584C8;
-extern float g_F1007_RightBoundAt0065945C;
 extern float g_F1017_VolleyYAt0065908C;
-extern float g_F1018_ThirdYAt0065784C;
-extern float g_F1019_FallAt00658354;
 extern float g_F1019_VolleyYAt0065908C;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;

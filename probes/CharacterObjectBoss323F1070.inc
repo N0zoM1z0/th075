@@ -58,8 +58,8 @@ case 0x323: {
             color[0]-=25;
             color[1]-=25;
             color[2]-=25;
-            scaleX=(scaleX)*g_F1070_FadeScaleAt00659454;
-            scaleY=(scaleY)*g_F1070_FadeScaleAt00659454;
+            scaleX=(scaleX)*FloatConstants::EightyFiveHundredths;
+            scaleY=(scaleY)*FloatConstants::EightyFiveHundredths;
         } else {
             color[0]=0;
             ClearFrameInfo();

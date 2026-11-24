@@ -35,7 +35,7 @@ case 0x196: {
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*59)+(x),
-            (*(&y))+g_F971_YAt00659488,
+            (*(&y))+GeometryConstants::EightySix,
             facing,1);
         UpdateGaugeTimer(0x96);
     }

@@ -14,7 +14,7 @@ case 0x12F: {
         }
     }
     if ((animationStage)>3) {
-        velocityX=(velocityX)-g_FallingLateDragAt00659240;
+        velocityX=(velocityX)-FloatConstants::NineTenths;
         if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);

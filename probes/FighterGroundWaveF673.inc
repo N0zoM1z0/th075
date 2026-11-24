@@ -15,7 +15,7 @@
                     facing,1);
             }
             if ((animationStage)>3 && (animationStage)<11) {
-                velocityY=velocityY-g_FallDecelerationAt00659888;
+                velocityY=velocityY-FloatConstants::FortyFiveHundredths;
                 if (velocityY<FloatConstants::Zero) velocityY=0.0f;
             }
             if ((animationStage)>10 && (animationStage)<14) {

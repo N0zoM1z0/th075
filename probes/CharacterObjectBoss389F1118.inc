@@ -5,7 +5,7 @@ case 0x389: {
     if (x>GeometryConstants::ThirteenHundredEighty ||
         x<GeometryConstants::NegativeHundred ||
         y>GeometryConstants::Thousand ||
-        y<g_F1057_LowerBoundAt00658374) {
+        y<GeometryConstants::NegativeTwoHundredForty) {
         ClearFrameInfo();
         return;
     }
@@ -38,7 +38,7 @@ case 0x389: {
             0x33C,x,y,
             facing,1);
         scaleX=float(double(RecordedRange(0,4)-2)*
-            g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
+            FloatConstants::OneTwentiethDouble+FloatConstants::OneDouble);
         scaleY=scaleX;
         // Native ordinal-101 JG skips the entire signed-speed decay:
         // only action stages <=1 decrement/clamp speed +0xD8.

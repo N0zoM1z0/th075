@@ -27,7 +27,7 @@ case 0x199: {
         field318=20.0f;
         SpawnBattleEffect(0x328,
             float((facing)*76)+(x),
-            (*(&y))+g_F972_YAt0065836C,
+            (*(&y))+GeometryConstants::HundredThirtySix,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*81)+(x),
@@ -35,7 +35,7 @@ case 0x199: {
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*86)+(x),
-            (*(&y))+g_F972_YAt00657860,
+            (*(&y))+GeometryConstants::HundredSeven,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*91)+(x),
@@ -74,7 +74,7 @@ case 0x19A: {
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*92)+(x),
-            (*(&y))+g_F972_YAt00658364,
+            (*(&y))+GeometryConstants::SixtySeven,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*86)+(x),

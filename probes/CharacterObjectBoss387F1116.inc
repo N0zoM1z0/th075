@@ -4,7 +4,7 @@ case 0x387: {
     if (x>GeometryConstants::ThirteenHundredEighty ||
         x<GeometryConstants::NegativeHundred ||
         y>GeometryConstants::Thousand ||
-        y<g_F1057_LowerBoundAt00658374) {
+        y<GeometryConstants::NegativeTwoHundredForty) {
         ClearFrameInfo();
         return;
     }
@@ -29,7 +29,7 @@ case 0x387: {
     }
     // The native stage-zero guard jumps to ordinal 92: BOTH the
     // velocity decrement and angle nudge run on every frame.
-    velocityY=velocityY-g_F1116_YOffsetAt00659888;
+    velocityY=velocityY-FloatConstants::FortyFiveHundredths;
     rotationZ=(rotationZ)+GeometryConstants::Twenty;
     x=float(facing)*velocityX+x;
     y=y+velocityY;

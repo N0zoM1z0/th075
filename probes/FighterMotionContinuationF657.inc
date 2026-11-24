@@ -70,7 +70,7 @@
                 velocityY=0.0f;
                 velocityX=15.0f;
             }
-            if ((velocityX)>FloatConstants::Zero) velocityX=(velocityX)-g_SlowPositiveDragAt006578C0;
+            if ((velocityX)>FloatConstants::Zero) velocityX=(velocityX)-FloatConstants::OneTwentieth;
             if (y>FloatConstants::Zero && (animationStage)>6 && (animationStage)<9) {
                 velocityY=velocityY-field05C;
                 if (velocityY+y<=FloatConstants::Zero) {

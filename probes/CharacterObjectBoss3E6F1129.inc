@@ -22,8 +22,8 @@ case 0x3E6: {
         rotationY=0.0f;
         rotationZ=0.0f;
     }
-    scaleX=(scaleX)-g_F1057_SpeedBaseAt006590BC;
-    scaleY=(scaleY)-g_F1057_SpeedBaseAt006590BC;
+    scaleX=(scaleX)-FloatConstants::OneFourHundredth;
+    scaleY=(scaleY)-FloatConstants::OneFourHundredth;
     rotationZ=(rotationZ)+FloatConstants::One;
     if (animationStage==2)
         color[0]=unsigned char(color[0]-12);

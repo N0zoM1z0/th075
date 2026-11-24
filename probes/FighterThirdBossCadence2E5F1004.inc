@@ -24,13 +24,13 @@ case 0x2E5: {
             SpawnBattleEffect(0x387,
                 x -
                     float((facing)*16),
-                (*(&y))+g_F972_YAt0065836C,
+                (*(&y))+GeometryConstants::HundredThirtySix,
                 facing,1);
             field314=float((scriptCounterF02)*5+180);
             SpawnBattleEffect(0x387,
                 x -
                     float((facing)*16),
-                (*(&y))+g_F972_YAt0065836C,
+                (*(&y))+GeometryConstants::HundredThirtySix,
                 facing,1);
             ++scriptCounterF02;
         }

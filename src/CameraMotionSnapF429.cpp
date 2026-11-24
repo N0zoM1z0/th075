@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "CameraMotion.hpp"
 
 // Independent complete original game camera snap policy: true camera mode,
@@ -14,17 +15,16 @@ extern float g_CameraVerticalAt00671408;
 extern float g_CameraZoomOverrideAt006713F4;
 extern float g_CameraZoomTargetAt006713C0;
 extern float g_CombatViewSpan;
-extern const float g_CameraYOffsetAt0065784C = 300.0f;
 void CameraSnapF429::Snap() {
  if (g_CameraOverrideEnabledAt00671414) {
    g_CombatViewOffsetX=g_CameraHorizontalOverrideAt006713E8;
-   g_CombatViewOffsetY=g_CameraVerticalOverrideAt006713BC+g_CameraYOffsetAt0065784C;
+   g_CombatViewOffsetY=g_CameraVerticalOverrideAt006713BC+GeometryConstants::ThreeHundred;
    g_CameraHorizontalAt006713E4=g_CameraHorizontalOverrideAt006713E8;
    g_CameraVerticalAt00671408=g_CameraVerticalOverrideAt006713BC;
    g_CombatViewSpan=g_CameraZoomOverrideAt006713F4;
  } else {
    g_CombatViewOffsetX=g_CameraHorizontalTargetAt006713F0;
-   g_CombatViewOffsetY=g_CameraVerticalTargetAt00671400+g_CameraYOffsetAt0065784C;
+   g_CombatViewOffsetY=g_CameraVerticalTargetAt00671400+GeometryConstants::ThreeHundred;
    g_CameraHorizontalAt006713E4=g_CameraHorizontalTargetAt006713F0;
    g_CameraVerticalAt00671408=g_CameraVerticalTargetAt00671400;
    g_CombatViewSpan=g_CameraZoomTargetAt006713C0;

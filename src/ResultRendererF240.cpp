@@ -25,14 +25,12 @@ public:
 class ResultRawScaleF240 {
 public: void ScaleQuad(float x,float y,float z,DWORD sxBits,DWORD syBits,DWORD szBits);
 };
-extern const float g_ResultAlphaOriginAt00658048;
-extern const float g_ResultFullAlphaMultiplierAt00657CF0;
 
 #define DRAWER reinterpret_cast<ResultSpriteDrawingF240*>(textures)
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
 #define RESULT_COLOR D3DCOLOR_ARGB(field018,255,255,255)
 #define OFFSET_X(i) (static_cast<float>(offsets[i]+300))
-#define PERCENT ((((field014) - g_ResultAlphaOriginAt00658048)/FloatConstants::ThreeFifths)*GeometryConstants::DegreesPerTurn)
+#define PERCENT ((((field014) - FloatConstants::TwoFifths)/FloatConstants::ThreeFifths)*GeometryConstants::DegreesPerTurn)
 void ResultScene::Render()
 {
     if (Graphics::BeginFrame()) {
@@ -49,7 +47,7 @@ void ResultScene::Render()
         TRANSFORM(quad)->BuildQuadFromRect(&region);
         TRANSFORM(quad)->RotateQuad(320.0f,240.0f,0.0f,PERCENT,PERCENT,PERCENT);
         reinterpret_cast<ResultRawScaleF240*>(&quad)->ScaleQuad(520.0f,360.0f,0.0f,reinterpret_cast<unsigned long&>(field014),reinterpret_cast<unsigned long&>(field014),reinterpret_cast<unsigned long&>(field014));
-        g_WindowOverlayAt006714C4->DrawIfEnabled(quad,&region,D3DCOLOR_ARGB(static_cast<unsigned char>(g_ResultFullAlphaMultiplierAt00657CF0*field014),255,255,255));
+        g_WindowOverlayAt006714C4->DrawIfEnabled(quad,&region,D3DCOLOR_ARGB(static_cast<unsigned char>(GeometryConstants::TwoHundredFiftyFive*field014),255,255,255));
         reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(1);
         SetRect(&region,0,0,256,256);
         TRANSFORM(quad)->BuildQuadFromRect(&region);

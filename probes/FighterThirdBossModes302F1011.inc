@@ -49,7 +49,7 @@ case 0x302: {
                 SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
-                    (*(&y))+g_F972_YAt0065836C,
+                    (*(&y))+GeometryConstants::HundredThirtySix,
                     facing,1);
             }
         }
@@ -60,7 +60,7 @@ case 0x302: {
                 SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
-                    (*(&y))+g_F972_YAt0065836C,
+                    (*(&y))+GeometryConstants::HundredThirtySix,
                     facing,1);
             }
         }
@@ -71,7 +71,7 @@ case 0x302: {
                 SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
-                    (*(&y))+g_F972_YAt0065836C,
+                    (*(&y))+GeometryConstants::HundredThirtySix,
                     facing,1);
             }
         }
@@ -82,7 +82,7 @@ case 0x302: {
                 SpawnBattleEffect(0x389,
                     x -
                         float((facing)*16),
-                    (*(&y))+g_F972_YAt0065836C,
+                    (*(&y))+GeometryConstants::HundredThirtySix,
                     facing,1);
             }
         }

@@ -39,13 +39,13 @@ case 0x2BC: {
         SpawnBattleEffect(0x323,
             x
                 - float((facing)*16),
-            (*(&y))+g_F972_YAt0065836C,
+            (*(&y))+GeometryConstants::HundredThirtySix,
             facing,1);
         field314=float((scriptCounterF02)*5+180);
         SpawnBattleEffect(0x323,
             x
                 - float((facing)*16),
-            (*(&y))+g_F972_YAt0065836C,
+            (*(&y))+GeometryConstants::HundredThirtySix,
             facing,1);
         ++scriptCounterF02;
         ++fieldF04;
@@ -90,13 +90,13 @@ case 0x2BD: {
         SpawnBattleEffect(0x32B,
             x
                 - float((facing)*16),
-            (*(&y))+g_F972_YAt0065836C,
+            (*(&y))+GeometryConstants::HundredThirtySix,
             facing,1);
         field314=float((scriptCounterF02)*5+180);
         SpawnBattleEffect(0x32B,
             x
                 - float((facing)*16),
-            (*(&y))+g_F972_YAt0065836C,
+            (*(&y))+GeometryConstants::HundredThirtySix,
             facing,1);
         ++scriptCounterF02;
     }

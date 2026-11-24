@@ -30,11 +30,11 @@
             if ((animationStage)<4) {
                 SpawnBattleEffect(0x329,
                     float(facing*62)+(x),
-                    (*(&y))+g_F714_ShotYAt00657868,
+                    (*(&y))+GeometryConstants::EightyThree,
                     facing,1);
                 SpawnBattleEffect(0x387,
                     float(facing*62)+(x),
-                    (*(&y))+g_F714_ShotYAt00657868,
+                    (*(&y))+GeometryConstants::EightyThree,
                     facing,1);
             }
             if (AdvanceNestedFrame()==(animationStageCount)) {
@@ -92,7 +92,7 @@
             if ((animationStage)>6 && (animationStage)<16) {
                 SpawnBattleEffect(0x329,
                     float(facing*62)+(x),
-                    (*(&y))+g_F714_ShotYAt00657868,
+                    (*(&y))+GeometryConstants::EightyThree,
                     facing,1);
             }
             if ((animationStage)==16 && (animationFrame)==0 && (scriptCounterF00)<3) {

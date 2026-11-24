@@ -15,7 +15,7 @@ case R1191_ACTION: {
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(R1191_AUX);
     if ((animationStage)==2 && (animationFrame)==0) {
 #if R1191_REVERSE_X
-        velocityX=g_ReimuReverseDriftAt0065907C-float(RecordedRange(0,3));
+        velocityX=GeometryConstants::NegativeSix-float(RecordedRange(0,3));
 #else
         velocityX=float(RecordedRange(0,3))+GeometryConstants::Six;
 #endif

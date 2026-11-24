@@ -31,7 +31,7 @@ case 0x356: {
         field080=0;
         field07C=0;
     }
-    velocityX=velocityX-g_F1093_XStepAt00658048;
+    velocityX=velocityX-FloatConstants::TwoFifths;
     velocityY=(*(&velocityY))+FloatConstants::Quarter;
     if (velocityX<FloatConstants::Two)
         velocityX=2.0f;

@@ -14,7 +14,7 @@ case 0x2E4: {
         if (AbsFloatAt00412D90(
                 opponent->x-
                 x)
-                    <g_F895AbsThresholdAt006591F4) {
+                    <GeometryConstants::FourHundred) {
             ResetPrimaryCounters(RecordedRange(0,4)+0x2E4);
             return;
         }

@@ -12,9 +12,6 @@
 // Main character-select update and transition loop.
 // The native input controller repeats a physically observed 0x48-byte record.
 // This borrowed indexed view is not instantiated or used to infer its fields.
-extern const float g_ChoiceFadeAt00658260;
-extern const float g_ChoiceClockStepAt0065825C;
-extern const float g_ChoiceLoopLimitAt00658258;
 #define PLAY(id) g_SoundBank->Play(id)
 unsigned short CharacterSelectScene::Update()
 {
@@ -22,8 +19,8 @@ unsigned short CharacterSelectScene::Update()
     Render();
     Graphics::Present();
     if (FloatConstants::Five < (choiceOscillation))
-        (choiceOscillation) = (choiceOscillation) * g_ChoiceFadeAt00658260;
-    (choiceRotation) = (choiceRotation) + g_ChoiceClockStepAt0065825C;
+        (choiceOscillation) = (choiceOscillation) * FloatConstants::NinetySevenHundredths;
+    (choiceRotation) = (choiceRotation) + FloatConstants::EightHundredths;
     if ((playerState[0]) >= 4 && (playerState[1]) >= 4) {
         if ((transitionAlpha) < 255)
             (transitionAlpha) = (transitionAlpha) + 5;
@@ -105,8 +102,8 @@ unsigned short CharacterSelectScene::Update()
         return 0x2201;
     } else {
         (animationPhase) = (animationPhase) + FloatConstants::One;
-        if (g_ChoiceLoopLimitAt00658258 < (animationPhase))
-            (animationPhase) -= g_ChoiceLoopLimitAt00658258;
+        if (GeometryConstants::ThousandTwentyFour < (animationPhase))
+            (animationPhase) -= GeometryConstants::ThousandTwentyFour;
         return 3;
     }
 }

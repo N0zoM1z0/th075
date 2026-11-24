@@ -31,8 +31,8 @@ case 0x354: {
         field080=0;
         field07C=0;
     }
-    velocityX=velocityX-g_F1093_XStepAt00658048;
-    velocityY=(*(&velocityY))+g_F1062_ScaleStepAt006583F8;
+    velocityX=velocityX-FloatConstants::TwoFifths;
+    velocityY=(*(&velocityY))+FloatConstants::FifteenHundredths;
     if (velocityX<FloatConstants::Two)
         velocityX=2.0f;
     if (field0D8==0) {

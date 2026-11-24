@@ -17,14 +17,14 @@ case 0x339: {
     }
     scaleX =
         (FloatConstants::ThreeTenths -
-            float(field0D8)*g_F1061_StepAt0065972C *
+            float(field0D8)*FloatConstants::ThreeHundredths *
             int(field0D8<10)) +
-        g_F1061_OffsetAt00658354 + scaleX;
+        FloatConstants::TwoHundredths + scaleX;
     scaleY =
         (FloatConstants::ThreeTenths -
-            float(field0D8)*g_F1061_StepAt0065972C *
+            float(field0D8)*FloatConstants::ThreeHundredths *
             int(field0D8<10)) +
-        g_F1061_OffsetAt00658354 + scaleY;
+        FloatConstants::TwoHundredths + scaleY;
     if (animationStage>1) {
         if (color[0]>20)
             color[0]-=20;

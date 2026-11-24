@@ -44,8 +44,8 @@
                 if ((field3CF)==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==3 && (animationFrame)==0) {
-                velocityX=static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
-                velocityY=static_cast<float>(-scriptCounterF02)*g_F748_SpeedScaleAt006590B8;
+                velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
+                velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
                 field05C=2.0f;
             }
             break;
@@ -85,8 +85,8 @@
                 if ((field3CF)==0)
                     ResetPrimaryCounters(0x63);
             } else if ((animationStage)==3 && (animationFrame)==0) {
-                velocityX=static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
-                velocityY=static_cast<float>(-scriptCounterF02)*g_F748_SpeedScaleAt006590B8;
+                velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
+                velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
                 field05C=2.0f;
             } else if (animationStage == 3 && animationFrame != 0) {
                 // Keep the launch speed on later frames.

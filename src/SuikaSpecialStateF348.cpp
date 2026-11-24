@@ -8,9 +8,6 @@
 // literals with a direct float-lvalue macro reproduces the native x87
 // evaluation order at each comparison and projectile launch. This is the
 // complete original function, not a cropped or masked reconstruction.
-extern const float g_RightLimitAt00659134;
-extern const float g_LeftLimitAt00659130;
-extern const float g_OuterLeftAt00657880;
 class SuikaSoundF313 {public: void Play(int index);};
 #define F(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(off)))
 #define O(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(F(void*,0x2e8))+(off)))
@@ -59,11 +56,11 @@ void SuikaFighter::AdvanceAuxiliary()
         if(O(short,0x324)<=0 || F(short,0x3a0)<=0)
             F(short,0xf1e)=0;
     }
-    if(g_RightLimitAt00659134<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
-       FLOAT(0x44)-OPPONENT_FLOAT(0x44)<g_LeftLimitAt00659130)
+    if(GeometryConstants::FiveHundredForty<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
+       FLOAT(0x44)-OPPONENT_FLOAT(0x44)<GeometryConstants::NegativeFiveHundredForty)
         F(short,0xf26)=60;
     if(GeometryConstants::ThreeHundredTwenty<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
-       FLOAT(0x44)-OPPONENT_FLOAT(0x44)<g_OuterLeftAt00657880) {
+       FLOAT(0x44)-OPPONENT_FLOAT(0x44)<GeometryConstants::NegativeThreeHundredTwenty) {
         F(short,0xf26)=F(short,0xf26)+1;
         if(F(short,0xf26)>60) F(short,0xf26)=60;
     } else {

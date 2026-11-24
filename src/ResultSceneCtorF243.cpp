@@ -10,7 +10,6 @@ extern const char g_ResultTexturePathAt0065801C[];
 extern const char g_ResultTextureRootAt00658014[];
 extern int g_ResultScoreTotalAt0067160C;
 extern short g_ResultBonusAt006714C0;
-extern const float g_ResultTenThousandAt00658034;
 ResultScene::ResultScene()
 {
     textures = new TextureManagerF198();
@@ -25,7 +24,7 @@ ResultScene::ResultScene()
     values[1]=g_ResultBonusAt006714C0;
     field02C=static_cast<float>(g_ResultBonusAt006714C0)/GeometryConstants::Hundred+FloatConstants::One;
     values[3]=static_cast<int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health)+(static_cast<int>(static_cast<signed char>(g_SequenceCounterAt00671622))-1+static_cast<int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field39D))*10000;
-    field034=static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health)/g_ResultTenThousandAt00658034+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field39D)-FloatConstants::One;
+    field034=static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health)/GeometryConstants::TenThousand+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field39D)-FloatConstants::One;
     field038=0;
     field03C=0;
     field040=0;

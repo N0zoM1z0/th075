@@ -30,7 +30,7 @@ case 0x135: {
         }
     }
     if ((animationStage)>4) {
-        velocityX=(velocityX)-g_F964_LateFallAt00658048;
+        velocityX=(velocityX)-FloatConstants::TwoFifths;
         if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }

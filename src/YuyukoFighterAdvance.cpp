@@ -5,24 +5,15 @@
 
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_BounceXAt006590BC;
-extern float g_BarrageOffsetAt00658DF4;
-extern float g_F748_SpeedScaleAt006590B8;
-extern float g_BarrageYAt00659B70;
 extern float g_BarrageYAt00659298;
-extern double g_RepeatScaleAt006583E0;
 // Shared PE constants keep the names already used by their other consumers.
 extern float g_MarisaCardFallAt00659264; // Yuyuko 0x1F4 horizontal drag
-extern float g_SpecialMoveDragAt00659888;
 extern float g_RadialPatternYOffsetAt00659274;
 extern float g_Stage2BFY2At00659B6C;
 extern float g_Stage2DAEffectYOffsetAt0065908C;
 extern float g_YuyukoFanRightXAt00659B68;
-extern float g_YuyukoFanSpawnXOffsetAt0065784C;
-extern float g_YuyukoAngleUpperWrapAt006595E4;
 extern float g_CardGaugeStepAt0065747C;
 
-extern float g_F747_BounceXAt006590BC;
 
 void YuyukoFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -757,7 +748,7 @@ void YuyukoFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(3);
         else if (animationStage == 3 && animationFrame == 0) {
-            velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;
+            velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneFourHundredth;
             velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(0.0f, 95.0f, 0.0f);
@@ -877,8 +868,8 @@ void YuyukoFighter::Advance() {
                 ResetPrimaryCounters(99);
             }
         } else if (animationStage == 2 && animationFrame == 0) {
-            velocityX = scriptCounterF00 * g_F748_SpeedScaleAt006590B8;
-            velocityY = -scriptCounterF02 * g_F748_SpeedScaleAt006590B8;
+            velocityX = scriptCounterF00 * FloatConstants::OneTwoHundredth;
+            velocityY = -scriptCounterF02 * FloatConstants::OneTwoHundredth;
             field05C = 2.0f;
         }
         break;
@@ -913,8 +904,8 @@ void YuyukoFighter::Advance() {
                 ResetPrimaryCounters(99);
             }
         } else if (animationStage == 2 && animationFrame == 0) {
-            velocityX = scriptCounterF00 * g_F748_SpeedScaleAt006590B8;
-            velocityY = -scriptCounterF02 * g_F748_SpeedScaleAt006590B8;
+            velocityX = scriptCounterF00 * FloatConstants::OneTwoHundredth;
+            velocityY = -scriptCounterF02 * FloatConstants::OneTwoHundredth;
             field05C = 2.0f;
         } else if (animationStage == 2 && animationFrame != 0) {
             // The launch velocity is applied only on the first frame.
@@ -2276,8 +2267,8 @@ void YuyukoFighter::Advance() {
     case 0x194:
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_RepeatScaleAt006583E0;
-            velocityY = (velocityY) * g_RepeatScaleAt006583E0;
+            velocityX = (velocityX) * FloatConstants::QuarterDouble;
+            velocityY = (velocityY) * FloatConstants::QuarterDouble;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
         }
@@ -2321,7 +2312,7 @@ void YuyukoFighter::Advance() {
             field314 = static_cast<float>(10 - scriptCounterF02 * 10);
             field318 = 10.0f;
             SpawnBattleEffect(0x342, static_cast<float>(static_cast<int>(facing) * 0x69) + x,
-                (y) + g_BarrageYAt00659B70, facing, 1);
+                (y) + GeometryConstants::HundredFortyFive, facing, 1);
             UpdateGaugeTimer(30);
             scriptCounterF00 = 5;
             ++scriptCounterF02;
@@ -2473,7 +2464,7 @@ void YuyukoFighter::Advance() {
                 field318 = 2.0f;
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x320,
-                    (g_BarrageOffsetAt00658DF4 + velocityX) *
+                    (GeometryConstants::NegativeSixty + velocityX) *
                         static_cast<float>(facing) + x,
                     y - velocityY, facing, 1);
 
@@ -2481,7 +2472,7 @@ void YuyukoFighter::Advance() {
                 field318 = 6.0f;
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x321,
-                    (g_BarrageOffsetAt00658DF4 + velocityX) *
+                    (GeometryConstants::NegativeSixty + velocityX) *
                         static_cast<float>(facing) + x,
                     y - velocityY, facing, 1);
 
@@ -2489,7 +2480,7 @@ void YuyukoFighter::Advance() {
                 field318 = 10.0f;
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x322,
-                    (g_BarrageOffsetAt00658DF4 + velocityX) *
+                    (GeometryConstants::NegativeSixty + velocityX) *
                         static_cast<float>(facing) + x,
                     y - velocityY, facing, 1);
             }
@@ -2506,8 +2497,8 @@ void YuyukoFighter::Advance() {
     case 0x1A0:
         if (animationStage == 0 && animationFrame == 0) {
             field07C = 1;
-            velocityX = (velocityX) * g_RepeatScaleAt006583E0;
-            velocityY = (velocityY) * g_RepeatScaleAt006583E0;
+            velocityX = (velocityX) * FloatConstants::QuarterDouble;
+            velocityY = (velocityY) * FloatConstants::QuarterDouble;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
         }
@@ -2581,7 +2572,7 @@ void YuyukoFighter::Advance() {
             fieldF04 = 0;
         }
         if ((velocityX) > FloatConstants::Zero && animationStage > 5) {
-            velocityX -= g_SpecialMoveDragAt00659888;
+            velocityX -= FloatConstants::FortyFiveHundredths;
             if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
@@ -2809,7 +2800,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x336, static_cast<float>(static_cast<int>(facing) * 0x69) + x,
-                (y) + g_BarrageYAt00659B70, facing, 1);
+                (y) + GeometryConstants::HundredFortyFive, facing, 1);
             PlaySound(2);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -2825,7 +2816,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             UpdateGaugeTimer(250);
             SpawnBattleEffect(0x339, static_cast<float>(static_cast<int>(facing) * 0x69) + x,
-                (y) + g_BarrageYAt00659B70, facing, 1);
+                (y) + GeometryConstants::HundredFortyFive, facing, 1);
             PlaySound(2);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3599,7 +3590,7 @@ void YuyukoFighter::Advance() {
                     for (int burstIndex2F9A = 0; burstIndex2F9A < 6; ++burstIndex2F9A) {
                         field314 = static_cast<float>(burstIndex2F9A * 60);
                         SpawnBattleEffect(0x38D,
-                            x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
+                            x + field318 - GeometryConstants::ThreeHundred,
                             y + field31C, facing, 1);
                     }
                 }
@@ -3610,7 +3601,7 @@ void YuyukoFighter::Advance() {
                     for (int burstIndex2F9B = 0; burstIndex2F9B < 6; ++burstIndex2F9B) {
                         field314 = static_cast<float>(burstIndex2F9B * 60);
                         SpawnBattleEffect(0x38D,
-                            x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
+                            x + field318 - GeometryConstants::ThreeHundred,
                             y + field31C, facing, 1);
                     }
                 }
@@ -3621,7 +3612,7 @@ void YuyukoFighter::Advance() {
                     for (int burstIndex2F9C = 0; burstIndex2F9C < 6; ++burstIndex2F9C) {
                         field314 = static_cast<float>(burstIndex2F9C * 60);
                         SpawnBattleEffect(0x38D,
-                            x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
+                            x + field318 - GeometryConstants::ThreeHundred,
                             y + field31C, facing, 1);
                     }
                 }
@@ -3632,7 +3623,7 @@ void YuyukoFighter::Advance() {
                     for (int burstIndex2F9D = 0; burstIndex2F9D < 6; ++burstIndex2F9D) {
                         field314 = static_cast<float>(burstIndex2F9D * 60);
                         SpawnBattleEffect(0x38D,
-                            x + field318 - g_YuyukoFanSpawnXOffsetAt0065784C,
+                            x + field318 - GeometryConstants::ThreeHundred,
                             y + field31C, facing, 1);
                     }
                 }
@@ -3728,7 +3719,7 @@ void YuyukoFighter::Advance() {
                         field318 -= GeometryConstants::DegreesPerTurn;
                     SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(scriptCounterF02 - 180);
-                    if (field318 <= g_YuyukoAngleUpperWrapAt006595E4)
+                    if (field318 <= GeometryConstants::NegativeHundredEighty)
                         field318 = (field318) + GeometryConstants::DegreesPerTurn;
                     SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
                 }
@@ -3738,7 +3729,7 @@ void YuyukoFighter::Advance() {
                         field318 -= GeometryConstants::DegreesPerTurn;
                     SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(scriptCounterF02 - 120);
-                    if (field318 <= g_YuyukoAngleUpperWrapAt006595E4)
+                    if (field318 <= GeometryConstants::NegativeHundredEighty)
                         field318 = (field318) + GeometryConstants::DegreesPerTurn;
                     SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(fieldF04 + 240);
@@ -3746,7 +3737,7 @@ void YuyukoFighter::Advance() {
                         field318 -= GeometryConstants::DegreesPerTurn;
                     SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
                     field318 = static_cast<float>(scriptCounterF02 - 240);
-                    if (field318 <= g_YuyukoAngleUpperWrapAt006595E4)
+                    if (field318 <= GeometryConstants::NegativeHundredEighty)
                         field318 = (field318) + GeometryConstants::DegreesPerTurn;
                     SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
                 }

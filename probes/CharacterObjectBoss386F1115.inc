@@ -5,7 +5,7 @@ case 0x386: {
     if (x>GeometryConstants::ThirteenHundredEighty ||
         x<GeometryConstants::NegativeHundred ||
         y>GeometryConstants::Thousand ||
-        y<g_F1057_LowerBoundAt00658374) {
+        y<GeometryConstants::NegativeTwoHundredForty) {
         ClearFrameInfo();
         return;
     }
@@ -29,7 +29,7 @@ case 0x386: {
     }
     if (animationStage==1) {
         scaleX=float(RecordedRange(0,4))*
-            FloatConstants::OneTenth+g_F1115_RandomDoubleAt006583B8;
+            FloatConstants::OneTenth+FloatConstants::FourFifthsDouble;
         scaleY=scaleX;
         if (AbsFloatAt00412D90(x-
             owner->opponent->x)<GeometryConstants::Twenty) {

@@ -140,7 +140,7 @@ case 0x2F0: {
         field080=99;
     }
     if (y>FloatConstants::Zero && (animationStage)<22)
-        velocityY=velocityY-g_F1019_FallAt00658354;
+        velocityY=velocityY-FloatConstants::TwoHundredths;
     if (y>FloatConstants::Zero && (animationStage)>23) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {

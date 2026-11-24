@@ -4,7 +4,6 @@
 #include "ReimuFighter.hpp"
 // Natural-C++ reconstruction of ReimuFighter::Advance at 0045DD70.
 
-extern float g_ReimuReverseDriftAt0065907C;
 extern float g_ReimuMeterNearYAt00659088;
 extern float g_ReimuMeterInitialYAt00659084;
 extern float g_ReimuMeterShotYAt00659080;
@@ -14,8 +13,6 @@ extern float g_ReimuAirVolleyYAt00659098;
 extern float g_ReimuLowVolleyYAt006590A0;
 extern float g_ReimuHighVolleyYAt0065909C;
 extern float g_ReimuC8ClampAt006590B0;
-extern float g_ReimuBounceXAt006590BC;
-extern float g_ReimuRecoveryScaleAt006590B8;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_ReimuStormPairYBaseAt00657CBC;

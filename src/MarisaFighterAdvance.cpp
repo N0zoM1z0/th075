@@ -3,9 +3,7 @@
 #include "GameSharedState.hpp"
 #include "MarisaFighter.hpp"
 
-extern float g_F748_SpeedScaleAt006590B8;
 extern float g_MarisaCommandSpeedUpperAt006592A0;
-extern float g_MarisaSpecialDriftAt006578C0;
 extern float g_MarisaHorizontalSlowdownAt00659094;
 extern float g_MarisaResourceYAt00659298;
 extern float g_MarisaResourceYAt00659294;
@@ -20,7 +18,6 @@ extern float g_MarisaMinimumDriftAt00659278;
 extern float g_MarisaHighBoundaryAt0065926C;
 extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaNegativeCardDriftAt00659268;
-extern float g_F747_BounceXAt006590BC;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 void MarisaFighter::Advance() {
@@ -782,7 +779,7 @@ void MarisaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(3);
         else if ((animationStage) == 3 && (animationFrame) == 0) {
-            velocityX = static_cast<float>(scriptCounterF00)*g_F747_BounceXAt006590BC;
+            velocityX = static_cast<float>(scriptCounterF00)*FloatConstants::OneFourHundredth;
             velocityY = static_cast<float>(-scriptCounterF02)*FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(0.0f,95.0f,0.0f);
@@ -910,8 +907,8 @@ void MarisaFighter::Advance() {
             if (field3CF == 0)
                 ResetPrimaryCounters(99);
         } else if (animationStage == 3 && animationFrame == 0) {
-            velocityX = static_cast<float>(scriptCounterF00) * g_F748_SpeedScaleAt006590B8;
-            velocityY = static_cast<float>(-scriptCounterF02) * g_F748_SpeedScaleAt006590B8;
+            velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneTwoHundredth;
+            velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneTwoHundredth;
             field05C = 2.0f;
         }
         return;
@@ -952,8 +949,8 @@ void MarisaFighter::Advance() {
             if (field3CF == 0)
                 ResetPrimaryCounters(99);
         } else if (animationStage == 3 && animationFrame == 0) {
-            velocityX = static_cast<float>(scriptCounterF00) * g_F748_SpeedScaleAt006590B8;
-            velocityY = static_cast<float>(-scriptCounterF02) * g_F748_SpeedScaleAt006590B8;
+            velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneTwoHundredth;
+            velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneTwoHundredth;
             field05C = 2.0f;
         } else if (animationStage == 3 && animationFrame != 0) {
             // Continue the launch animation.
@@ -2010,7 +2007,7 @@ void MarisaFighter::Advance() {
             field07C = 0;
         }
         if (velocityX > FloatConstants::Zero)
-            velocityX -= g_MarisaSpecialDriftAt006578C0;
+            velocityX -= FloatConstants::OneTwentieth;
         if (y > FloatConstants::Zero &&
             animationStage > 6 && animationStage < 9) {
             velocityY -= field05C;
@@ -2196,7 +2193,7 @@ void MarisaFighter::Advance() {
             velocityX = 12.5f;
         }
         if (velocityX > FloatConstants::Zero)
-            velocityX -= g_MarisaSpecialDriftAt006578C0;
+            velocityX -= FloatConstants::OneTwentieth;
         if (y > FloatConstants::Zero &&
             animationStage > 6 && animationStage < 9) {
             velocityY -= field05C;

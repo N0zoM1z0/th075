@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
@@ -13,7 +14,6 @@
 // firstRecord is physically read and stored in the original even though
 // another front() reads the active command before dispatch.
 // Observed original call ABIs and field offsets only, not a whole battle class.
-extern const float g_LevelMaxAt00657B28;
 void BattleScene::ApplySequence() {
     if(g_CombatMode==5) {
         ProcessDebugKeys();
@@ -37,8 +37,8 @@ void BattleScene::ApplySequence() {
                     case 6:
                         fighters[0]->field36C=(fighters[0]->field36C)+FloatConstants::Ten;
                         fighters[1]->field36C=(fighters[1]->field36C)+FloatConstants::Ten;
-                        if((fighters[0]->field36C)>g_LevelMaxAt00657B28) fighters[0]->field36C=900.0f;
-                        if((fighters[1]->field36C)>g_LevelMaxAt00657B28) fighters[1]->field36C=900.0f;
+                        if((fighters[0]->field36C)>GeometryConstants::NineHundred) fighters[0]->field36C=900.0f;
+                        if((fighters[1]->field36C)>GeometryConstants::NineHundred) fighters[1]->field36C=900.0f;
                         break;
                     case 7:
                         fighters[0]->field36C=(fighters[0]->field36C)-FloatConstants::Ten;
@@ -92,8 +92,8 @@ void BattleScene::ApplySequence() {
                     }
                     fighters[0]->field36C=(fighters[0]->field36C)+FloatConstants::Ten;
                     fighters[1]->field36C=(fighters[1]->field36C)+FloatConstants::Ten;
-                    if((fighters[0]->field36C)>g_LevelMaxAt00657B28) fighters[0]->field36C=900.0f;
-                    if((fighters[1]->field36C)>g_LevelMaxAt00657B28) fighters[1]->field36C=900.0f;
+                    if((fighters[0]->field36C)>GeometryConstants::NineHundred) fighters[0]->field36C=900.0f;
+                    if((fighters[1]->field36C)>GeometryConstants::NineHundred) fighters[1]->field36C=900.0f;
                 }
                 if(g_InputMappings[0].IsKeyDown(0x41)) {
                     if(g_ReplayModeAt0066C238==1) {

@@ -9,7 +9,7 @@ case F1057_CASE: {
     if (x>GeometryConstants::ThirteenHundredEighty ||
         x<GeometryConstants::NegativeHundred ||
         y>GeometryConstants::Thousand ||
-        y<g_F1057_LowerBoundAt00658374) {
+        y<GeometryConstants::NegativeTwoHundredForty) {
         ClearFrameInfo();
         return;
     }
@@ -69,7 +69,7 @@ case F1057_CASE: {
             F1057_NEXT_CASE, x,y,
             facing,1);
         scaleX=float(double(RecordedRange(0,4)-2)*
-            g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
+            FloatConstants::OneTwentiethDouble+FloatConstants::OneDouble);
         scaleY=scaleX;
     }
     field0D8=short(field0D8+2);

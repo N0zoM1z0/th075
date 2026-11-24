@@ -8,21 +8,8 @@
 extern float __cdecl AngleAt00483300(float y, float x);
 
 // Read-only data shared by the projectile and effect actions.
-extern const float g_ReimuObjectDirectionMarker7At00659254;
-extern const float g_ReimuObjectRightBoundAt00659250;
-extern const float g_ReimuObjectLeftBoundAt00658344;
-extern const float g_ReimuObjectLowerBoundAt00657880;
-extern const float g_ReimuObjectLowerBoundAt00658374;
 extern const float g_ReimuObjectOwnerYOffsetAt00659080;
-extern const float g_ReimuObjectRightBoundAt00659248;
 extern const float g_ReimuObjectLowerOscillationLimitAt00659234;
-extern const float g_ReimuObjectScalarAt0065839C;
-extern const float g_ReimuObjectVerticalSpringAt00658354;
-extern const float g_ReimuObjectHorizontalDriftAt006578C0;
-extern const float g_ReimuObjectScaleBaseAt00659240;
-extern const float g_ReimuObjectScaleFadeAt0065923C;
-extern const float g_ReimuObjectVerticalLowerLimitAt00659244;
-extern const double g_ReimuObjectSpiritGaugeLimitAt00659228;
 
 void ReimuObject::Advance()
 {
@@ -39,7 +26,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374) {
+            y < GeometryConstants::NegativeTwoHundredForty) {
             ClearFrameInfo();
             return;
         }
@@ -346,7 +333,7 @@ void ReimuObject::Advance()
                 if (field0C8 == GeometryConstants::Six) {
                     field0DC = 0x10E;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker7At00659254) {
+                if (field0C8 == GeometryConstants::Seven) {
                     field0DC = 0x13B;
                 }
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -417,10 +404,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880) {
+                y < GeometryConstants::NegativeThreeHundredTwenty) {
                 ClearFrameInfo();
                 return;
             }
@@ -502,7 +489,7 @@ void ReimuObject::Advance()
                 if (field0C8 == GeometryConstants::Six) {
                     field0DC = 0x10E;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker7At00659254) {
+                if (field0C8 == GeometryConstants::Seven) {
                     field0DC = 0x13B;
                 }
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -573,10 +560,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880) {
+                y < GeometryConstants::NegativeThreeHundredTwenty) {
                 ClearFrameInfo();
                 return;
             }
@@ -620,7 +607,7 @@ void ReimuObject::Advance()
                 if (field0C8 == GeometryConstants::Six) {
                     field0DC = 0x10E;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker7At00659254) {
+                if (field0C8 == GeometryConstants::Seven) {
                     field0DC = 0x13B;
                 }
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -691,10 +678,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880) {
+                y < GeometryConstants::NegativeThreeHundredTwenty) {
                 ClearFrameInfo();
                 return;
             }
@@ -788,7 +775,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374) {
+            y < GeometryConstants::NegativeTwoHundredForty) {
             ClearFrameInfo();
             return;
         }
@@ -1095,8 +1082,8 @@ void ReimuObject::Advance()
         }
         x = facing * velocityX + x;
         y = y + velocityY;
-        if (x < g_ReimuObjectLowerBoundAt00657880 ||
-            x > g_ReimuObjectRightBoundAt00659248) {
+        if (x < GeometryConstants::NegativeThreeHundredTwenty ||
+            x > GeometryConstants::SixteenHundred) {
             ClearFrameInfo();
             static_cast<ReimuFighter*>(owner)->fieldF22 = 0;
             return;
@@ -1609,7 +1596,7 @@ void ReimuObject::Advance()
                 if (field0C8 == GeometryConstants::Six) {
                     field0DC = 0x10E;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker7At00659254) {
+                if (field0C8 == GeometryConstants::Seven) {
                     field0DC = 0x13B;
                 }
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1675,10 +1662,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880) {
+                y < GeometryConstants::NegativeThreeHundredTwenty) {
                 ClearFrameInfo();
                 return;
             }
@@ -1736,7 +1723,7 @@ void ReimuObject::Advance()
                 if (field0C8 == GeometryConstants::Six) {
                     field0DC = 0x10E;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker7At00659254) {
+                if (field0C8 == GeometryConstants::Seven) {
                     field0DC = 0x13B;
                 }
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1802,10 +1789,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880) {
+                y < GeometryConstants::NegativeThreeHundredTwenty) {
                 ClearFrameInfo();
                 return;
             }
@@ -1863,7 +1850,7 @@ void ReimuObject::Advance()
                 if (field0C8 == GeometryConstants::Six) {
                     field0DC = 0x10E;
                 }
-                if (field0C8 == g_ReimuObjectDirectionMarker7At00659254) {
+                if (field0C8 == GeometryConstants::Seven) {
                     field0DC = 0x13B;
                 }
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1929,10 +1916,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880) {
+                y < GeometryConstants::NegativeThreeHundredTwenty) {
                 ClearFrameInfo();
                 return;
             }
@@ -2056,18 +2043,18 @@ void ReimuObject::Advance()
             field07C = 0;
         }
         if ((owner->opponent->y) + GeometryConstants::Hundred < y) {
-            velocityY = velocityY - g_ReimuObjectVerticalSpringAt00658354;
+            velocityY = velocityY - FloatConstants::TwoHundredths;
         }
         if (y <= (owner->opponent->y) + GeometryConstants::Hundred) {
-            velocityY = (velocityY) + g_ReimuObjectVerticalSpringAt00658354;
+            velocityY = (velocityY) + FloatConstants::TwoHundredths;
         }
         if (velocityY > FloatConstants::Two) {
             velocityY = 2.0f;
         }
-        if (velocityY < g_ReimuObjectVerticalLowerLimitAt00659244) {
+        if (velocityY < GeometryConstants::NegativeTwo) {
             velocityY = -2.0f;
         }
-        velocityX = (velocityX) + g_ReimuObjectHorizontalDriftAt006578C0;
+        velocityX = (velocityX) + FloatConstants::OneTwentieth;
         if (field0D8 <= 0) {
             field07C = 0;
             field0D8 = 10;
@@ -2083,9 +2070,9 @@ void ReimuObject::Advance()
         if (animationFrame == 0) {
             field0DA = static_cast<short>(RecordedRange(0, 0x14));
             scaleX = static_cast<float>(field0DA) * FloatConstants::OneHundredth +
-                g_ReimuObjectScaleBaseAt00659240;
+                FloatConstants::NineTenths;
             scaleY = static_cast<float>(field0DA) * FloatConstants::OneHundredth +
-                g_ReimuObjectScaleBaseAt00659240;
+                FloatConstants::NineTenths;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             if (field0DC < 0x3C && field080 > 0) {
@@ -2120,8 +2107,8 @@ void ReimuObject::Advance()
         } else {
             color[0] = 0;
         }
-        scaleX = (scaleX) * g_ReimuObjectScaleFadeAt0065923C;
-        scaleY = (scaleY) * g_ReimuObjectScaleFadeAt0065923C;
+        scaleX = (scaleX) * FloatConstants::NinetyFourHundredths;
+        scaleY = (scaleY) * FloatConstants::NinetyFourHundredths;
         if (AdvanceNestedFrame() == animationStageCount) {
             ClearFrameInfo();
         }
@@ -2131,7 +2118,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374) {
+            y < GeometryConstants::NegativeTwoHundredForty) {
             ClearFrameInfo();
             return;
         }
@@ -2289,10 +2276,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880 ||
+                y < GeometryConstants::NegativeThreeHundredTwenty ||
                 owner->field3A0 == 0) {
                 ClearFrameInfo();
                 return;
@@ -2381,10 +2368,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880 ||
+                y < GeometryConstants::NegativeThreeHundredTwenty ||
                 owner->field3A0 == 0) {
                 ClearFrameInfo();
                 return;
@@ -2473,10 +2460,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880 ||
+                y < GeometryConstants::NegativeThreeHundredTwenty ||
                 owner->field3A0 == 0) {
                 ClearFrameInfo();
                 return;
@@ -2557,10 +2544,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880 ||
+                y < GeometryConstants::NegativeThreeHundredTwenty ||
                 owner->field3A0 == 0) {
                 ClearFrameInfo();
                 return;
@@ -2641,10 +2628,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880 ||
+                y < GeometryConstants::NegativeThreeHundredTwenty ||
                 owner->field3A0 == 0) {
                 ClearFrameInfo();
                 return;
@@ -2725,10 +2712,10 @@ void ReimuObject::Advance()
             x = facing * velocityX + x;
             y = y - velocityY;
             rotationZ = (rotationZ) + FloatConstants::Ten;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 y > GeometryConstants::TwelveHundredEighty ||
-                y < g_ReimuObjectLowerBoundAt00657880 ||
+                y < GeometryConstants::NegativeThreeHundredTwenty ||
                 owner->field3A0 == 0) {
                 ClearFrameInfo();
                 return;
@@ -2828,8 +2815,8 @@ void ReimuObject::Advance()
         }
         else {
             x = facing * velocityX + x;
-            if (x > g_ReimuObjectRightBoundAt00659250 ||
-                x < g_ReimuObjectLeftBoundAt00658344 ||
+            if (x > GeometryConstants::FourteenHundredEighty ||
+                x < GeometryConstants::NegativeTwoHundred ||
                 owner->field3A0 == 0) {
                 ClearFrameInfo();
                 return;
@@ -2844,7 +2831,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 == 0) {
             ClearFrameInfo();
             return;
@@ -2913,7 +2900,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 == 0) {
             ClearFrameInfo();
             return;
@@ -2988,7 +2975,7 @@ void ReimuObject::Advance()
             }
             if (animationStage > 0x13) {
                 rotationZ = rotationZ - FloatConstants::Four;
-                velocityX = (velocityX) + g_ReimuObjectHorizontalDriftAt006578C0;
+                velocityX = (velocityX) + FloatConstants::OneTwentieth;
             }
             x = facing * velocityX + x;
             y = y + velocityY;
@@ -3002,8 +2989,8 @@ void ReimuObject::Advance()
                     field07C = 0;
                 }
             }
-            if (x < g_ReimuObjectLowerBoundAt00657880 ||
-                x > g_ReimuObjectRightBoundAt00659248) {
+            if (x < GeometryConstants::NegativeThreeHundredTwenty ||
+                x > GeometryConstants::SixteenHundred) {
                 ClearFrameInfo();
                 return;
             }
@@ -3038,7 +3025,7 @@ void ReimuObject::Advance()
             }
             if (animationStage > 0x13) {
                 rotationZ = rotationZ - FloatConstants::Four;
-                velocityX = (velocityX) + g_ReimuObjectVerticalSpringAt00658354;
+                velocityX = (velocityX) + FloatConstants::TwoHundredths;
             }
             if (field07C != 0) {
                 ++field0D8;
@@ -3052,8 +3039,8 @@ void ReimuObject::Advance()
             }
             x = facing * velocityX + x;
             y = y + velocityY;
-            if (x < g_ReimuObjectLowerBoundAt00657880 ||
-                x > g_ReimuObjectRightBoundAt00659248) {
+            if (x < GeometryConstants::NegativeThreeHundredTwenty ||
+                x > GeometryConstants::SixteenHundred) {
                 ClearFrameInfo();
                 return;
             }
@@ -3142,7 +3129,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 == 0) {
             ClearFrameInfo();
             return;
@@ -3212,7 +3199,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 == 0) {
             ClearFrameInfo();
             return;
@@ -3237,7 +3224,7 @@ void ReimuObject::Advance()
                 field0DE = 0;
                 field0DC = static_cast<short>(field0C8);
                 SetPolarVelocity(static_cast<float>(field0DC),
-                    static_cast<float>(field0D8) * g_ReimuObjectHorizontalDriftAt006578C0);
+                    static_cast<float>(field0D8) * FloatConstants::OneTwentieth);
             }
             if (animationStage == 1) {
                 if (field0D8 > 1) {
@@ -3282,7 +3269,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 == 0) {
             ClearFrameInfo();
             return;
@@ -3352,7 +3339,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 == 0) {
             ClearFrameInfo();
             return;
@@ -3575,7 +3562,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 <= 0) {
             ClearFrameInfo();
             return;
@@ -3652,7 +3639,7 @@ void ReimuObject::Advance()
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
             y > GeometryConstants::Thousand ||
-            y < g_ReimuObjectLowerBoundAt00658374 ||
+            y < GeometryConstants::NegativeTwoHundredForty ||
             owner->field3A0 == 0) {
             ClearFrameInfo();
             return;
@@ -3875,7 +3862,7 @@ void ReimuObject::Advance()
             field080 = 1;
             velocityY = 15.0f;
         }
-        rotationZ = rotationZ - g_ReimuObjectScalarAt0065839C;
+        rotationZ = rotationZ - GeometryConstants::ThirtyFive;
         y = y + velocityY;
         if (y > GeometryConstants::Thousand) {
             ClearFrameInfo();
@@ -3952,7 +3939,7 @@ void ReimuObject::Advance()
                     y = (owner->y) + GeometryConstants::Hundred;
                 }
                 if (animationStage == 0 || animationStage == 7) {
-                    rotationZ = rotationZ - g_ReimuObjectScalarAt0065839C;
+                    rotationZ = rotationZ - GeometryConstants::ThirtyFive;
                 }
                 if (AdvanceNestedFrame() == animationStageCount) {
                     ClearFrameInfo();
@@ -4064,7 +4051,7 @@ void ReimuObject::Advance()
                 else {
                     owner->opponent->spirit = 1000;
                     if (owner->opponent->field39C == 0) {
-                        if (owner->opponent->field36C < g_ReimuObjectSpiritGaugeLimitAt00659228) {
+                        if (owner->opponent->field36C < FloatConstants::NineHundredNinetyEightAndNineTenths) {
                             owner->opponent->field36C = (owner->opponent->field36C) +
                                 FloatConstants::Half;
                         }

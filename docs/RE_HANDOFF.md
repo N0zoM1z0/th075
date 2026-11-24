@@ -24,11 +24,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,049 unresolved externals. All fifteen scene
-allocations in WinMain call their existing constructors through
+stops at `LNK1120` with 919 unresolved externals. The latest batch
+resolved 130 names and cold-replayed 196 units across 119 objects.
+Projected drawing and camera snap share the existing read-only values.
+The round-field writer uses the same signed declaration as its callers.
+All fifteen scene allocations in WinMain call their constructors through
 `SceneBase`-derived types. The replay browser uses three VC7.1 deques
-for filenames, file headers and secondary mode bytes. Its latest
-cold replay covered 11 units across eight objects. The virtual table,
+for filenames, file headers and secondary mode bytes. Its virtual table,
 deleting destructor and exception cleanup also match.
 The character selection
 constructor and destructor use the same three texture-manager members.

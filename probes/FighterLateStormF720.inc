@@ -30,12 +30,12 @@
             if ((animationStage)<4) {
                 SpawnBattleEffect(0x333,
                     float(facing*62)+(x),
-                    (*(&y))+g_F714_ShotYAt00657868,
+                    (*(&y))+GeometryConstants::EightyThree,
                     facing,1);
                 if (g_OptionsModeAt006714D0>1)
                     SpawnBattleEffect(0x387,
                         float(facing*62)+(x),
-                        (*(&y))+g_F714_ShotYAt00657868,
+                        (*(&y))+GeometryConstants::EightyThree,
                         facing,1);
             }
             if ((animationStage)>3 && (velocityX)>FloatConstants::Zero) {

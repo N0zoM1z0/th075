@@ -15,25 +15,11 @@
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
 extern float gAddAt00659738;
-extern double gMulDoubleAt00659730;
 extern float gSubtractAt00659728;
-extern float gVelocityDragAt00659454;
-extern float gMaxPositionAt0065912C;
-extern float gScatterRateAt006578C0;
 extern float gShrinkAt00659094;
-extern double gDoubleTouchAt00659228;
-extern float gLengthDivisorAt006583A0;
-extern float gLengthFactorAt00659720;
 extern float MagnitudeAt00428D20(float value);
 extern float AngleAt00483300(float first, float second);
-extern float gCurveAt0065972C;
-extern float gFadeAt006583F8;
-extern float gFadeAt00659428;
-extern float gAbsScaleAt00659724;
 extern float gParentYAt006590A0;
-extern float gBoundRightAt00659248;
-extern float gBoundLowerAt0065930C;
-extern float gFadeAt0065825C;
 extern float AbsFloatAt00412D90(float value);
 
 void AliceObject::Advance() {
@@ -109,7 +95,7 @@ void AliceObject::Advance() {
             break;
         }
         if ((animationStage) > 4) {
-            scaleX = (scaleX)*gMulDoubleAt00659730;
+            scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -187,7 +173,7 @@ void AliceObject::Advance() {
             break;
         }
         if ((animationStage) > 4) {
-            scaleX = (scaleX)*gMulDoubleAt00659730;
+            scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -265,7 +251,7 @@ void AliceObject::Advance() {
             break;
         }
         if ((animationStage) > 4) {
-            scaleX = (scaleX)*gMulDoubleAt00659730;
+            scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -378,8 +364,8 @@ void AliceObject::Advance() {
         rotationZ = 0.0f;
         owner->SetCameraShake(5.0f);
     }
-    scaleX = (float)(5 - (animationFrame)) * gCurveAt0065972C * ((animationFrame) < 5) + FloatConstants::OneHundredth + (scaleX);
-    scaleY = (float)(5 - (animationFrame)) * gCurveAt0065972C * ((animationFrame) < 5) + FloatConstants::OneHundredth + (scaleY);
+    scaleX = (float)(5 - (animationFrame)) * FloatConstants::ThreeHundredths * ((animationFrame) < 5) + FloatConstants::OneHundredth + (scaleX);
+    scaleY = (float)(5 - (animationFrame)) * FloatConstants::ThreeHundredths * ((animationFrame) < 5) + FloatConstants::OneHundredth + (scaleY);
     if ((animationStage) > 1) {
         if ((color[0]) >= 10)
             color[0] -= 10;
@@ -449,8 +435,8 @@ void AliceObject::Advance() {
         field01A = 0x4E2;
         rotationX = -75.0f;
     }
-    scaleX = (scaleX) + gFadeAt006583F8;
-    scaleY = (scaleY) + gFadeAt006583F8;
+    scaleX = (scaleX) + FloatConstants::FifteenHundredths;
+    scaleY = (scaleY) + FloatConstants::FifteenHundredths;
     if ((animationStage) > 1) {
         if ((color[0]) > 20)
             color[0] -= 20;
@@ -481,8 +467,8 @@ void AliceObject::Advance() {
         rotationY = 0.0f;
         rotationZ = 0.0f;
     }
-    scaleX = (scaleX) + gFadeAt00659428;
-    scaleY = (scaleY) + gFadeAt00659428;
+    scaleX = (scaleX) + FloatConstants::SevenHundredths;
+    scaleY = (scaleY) + FloatConstants::SevenHundredths;
     color[0] -= 10;
     if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
@@ -526,7 +512,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - FloatConstants::ThreeTenths;
         }
         if ((animationStage) == 11) {
-            scaleX = (scaleX) * gMulDoubleAt00659730;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -601,7 +587,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - FloatConstants::FourFifths;
         }
         if ((animationStage) == 11) {
-            scaleX = (scaleX) * gMulDoubleAt00659730;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -676,7 +662,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - FloatConstants::ThreeTenths;
         }
         if ((animationStage) == 11) {
-            scaleX = (scaleX) * gMulDoubleAt00659730;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -760,7 +746,7 @@ void AliceObject::Advance() {
         if ((animationStage) > 10 && (field0D8) > 2) {
             velocityX = 0.0f;
             velocityY = 0.0f;
-            scaleX = (scaleX) * gMulDoubleAt00659730;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -816,8 +802,8 @@ void AliceObject::Advance() {
         field07C = 0;
         ++field080;
     }
-    scaleX = (scaleX) + gFadeAt00659428;
-    scaleY = (scaleY) + gFadeAt00659428;
+    scaleX = (scaleX) + FloatConstants::SevenHundredths;
+    scaleY = (scaleY) + FloatConstants::SevenHundredths;
     if ((animationStage) > 1) {
         if ((color[0]) >= 20)
             color[0] -= 20;
@@ -851,8 +837,8 @@ void AliceObject::Advance() {
         rotationY = 0.0f;
         rotationZ = 0.0f;
     }
-    scaleX = (scaleX) + gFadeAt00659428;
-    scaleY = (scaleY) + gFadeAt00659428;
+    scaleX = (scaleX) + FloatConstants::SevenHundredths;
+    scaleY = (scaleY) + FloatConstants::SevenHundredths;
     if ((animationStage) > 1) {
         if ((color[0]) >= 40)
             color[0] -= 40;
@@ -906,9 +892,9 @@ void AliceObject::Advance() {
     }
     x += facing * (velocityX);
     y = y + velocityY;
-    velocityY = (velocityY) - gVelocityDragAt00659454;
+    velocityY = (velocityY) - FloatConstants::EightyFiveHundredths;
     rotationZ = (rotationZ) + GeometryConstants::Fifteen;
-    if ((y) < gMaxPositionAt0065912C) {
+    if ((y) < GeometryConstants::NegativeFourHundredEighty) {
         ClearFrameInfo();
         break;
     }
@@ -946,7 +932,7 @@ void AliceObject::Advance() {
             color[0] = 0xFF;
     }
     if ((field0D8) == 1) {
-        scaleX = (scaleX) * gMulDoubleAt00659730;
+        scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
         scaleY = (scaleY) + FloatConstants::ThreeTenths;
         if ((color[0]) >= 10)
             color[0] -= 10;
@@ -991,7 +977,7 @@ void AliceObject::Advance() {
             color[0] = 0xFF;
     }
     if ((field0D8) == 1) {
-        scaleX = (scaleX) * gMulDoubleAt00659730;
+        scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
         scaleY = (scaleY) + FloatConstants::ThreeTenths;
         if ((color[0]) >= 10)
             color[0] -= 10;
@@ -1032,7 +1018,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 6)
         scaleY = static_cast<float>(RecordedRange(0,4) - 2)
-                  * gScatterRateAt006578C0 + FloatConstants::OneAndHalf;
+                  * FloatConstants::OneTwentieth + FloatConstants::OneAndHalf;
     if ((animationStage) == 7)
         scaleY = (scaleY) * gShrinkAt00659094;
     if (AdvanceNestedFrame() == (animationStageCount))
@@ -1086,7 +1072,7 @@ void AliceObject::Advance() {
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
             owner->x + (owner->facing) * 90 - (owner->opponent->x)
-        ) * gAbsScaleAt00659724;
+        ) * FloatConstants::FourHundredths;
         if ((velocityX) < FloatConstants::Four)
             velocityX = 4.0f;
         velocityY = 20.0f;
@@ -1129,7 +1115,7 @@ void AliceObject::Advance() {
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
             owner->x + (owner->facing) * 90 - (owner->opponent->x)
-        ) * gAbsScaleAt00659724;
+        ) * FloatConstants::FourHundredths;
         if ((velocityX) < FloatConstants::Four)
             velocityX = 4.0f;
         velocityY = 20.0f;
@@ -1208,8 +1194,8 @@ void AliceObject::Advance() {
         rotationY = 0.0f;
         rotationZ = 0.0f;
     }
-    scaleX = (scaleX) + gFadeAt0065825C;
-    scaleY = (scaleY) + gFadeAt0065825C;
+    scaleX = (scaleX) + FloatConstants::EightHundredths;
+    scaleY = (scaleY) + FloatConstants::EightHundredths;
     if ((animationStage) > -1) {
         if ((color[0]) >= 20)
             color[0] -= 20;
@@ -1264,9 +1250,9 @@ void AliceObject::Advance() {
     if ((animationStage) > 5) {
         x += facing * (velocityX);
         y = y + velocityY;
-        if ((x) > gBoundRightAt00659248 ||
-            (x) < gBoundLowerAt0065930C ||
-            (y) < gBoundLowerAt0065930C ||
+        if ((x) > GeometryConstants::SixteenHundred ||
+            (x) < GeometryConstants::NegativeFourHundred ||
+            (y) < GeometryConstants::NegativeFourHundred ||
             (y) > GeometryConstants::TwelveHundredEighty) {
             ClearFrameInfo();
             break;
@@ -1359,9 +1345,9 @@ void AliceObject::Advance() {
     if ((animationStage) > 5) {
         x += facing * (velocityX);
         y = y + velocityY;
-        if ((x) > gBoundRightAt00659248 ||
-            (x) < gBoundLowerAt0065930C ||
-            (y) < gBoundLowerAt0065930C ||
+        if ((x) > GeometryConstants::SixteenHundred ||
+            (x) < GeometryConstants::NegativeFourHundred ||
+            (y) < GeometryConstants::NegativeFourHundred ||
             (y) > GeometryConstants::TwelveHundredEighty) {
             ClearFrameInfo();
             break;
@@ -1423,9 +1409,9 @@ void AliceObject::Advance() {
     if ((animationStage) > 5) {
         x += facing * (velocityX);
         y = y + velocityY;
-        if ((x) > gBoundRightAt00659248 ||
-            (x) < gBoundLowerAt0065930C ||
-            (y) < gBoundLowerAt0065930C ||
+        if ((x) > GeometryConstants::SixteenHundred ||
+            (x) < GeometryConstants::NegativeFourHundred ||
+            (y) < GeometryConstants::NegativeFourHundred ||
             (y) > GeometryConstants::TwelveHundredEighty) {
             ClearFrameInfo();
             break;
@@ -1550,7 +1536,7 @@ void AliceObject::Advance() {
             }
         }
         if ((animationStage) == 11) {
-            scaleX = (scaleX) * gMulDoubleAt00659730;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -1624,7 +1610,7 @@ void AliceObject::Advance() {
             velocityY = (velocityY) - FloatConstants::Half;
         }
         if ((animationStage) == 11) {
-            scaleX = (scaleX) * gMulDoubleAt00659730;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -1696,7 +1682,7 @@ void AliceObject::Advance() {
             field0DA = 0;
         }
         if ((animationStage) == 5) {
-            scaleX = (scaleX)*gMulDoubleAt00659730;
+            scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY) + FloatConstants::ThreeTenths;
             if ((color[0]) >= 10)
                 color[0] -= 10;
@@ -1816,7 +1802,7 @@ void AliceObject::Advance() {
             field080=1;
         }
         if ((field0D8)>2) {
-            scaleX = (scaleX)*gMulDoubleAt00659730;
+            scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY)+FloatConstants::ThreeTenths;
             if ((color[0])>=10)
                 color[0]-=10;
@@ -1866,7 +1852,7 @@ void AliceObject::Advance() {
             field080=1;
         }
         if ((field0D8)>1) {
-            scaleX = (scaleX)*gMulDoubleAt00659730;
+            scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
             scaleY = (scaleY)+FloatConstants::ThreeTenths;
             if ((color[0])>=10)
                 color[0]-=10;
@@ -2010,8 +1996,8 @@ void AliceObject::Advance() {
         field07C=0;
         ++field080;
     }
-    scaleX = (scaleX)+gAbsScaleAt00659724;
-    scaleY = (scaleY)+gAbsScaleAt00659724;
+    scaleX = (scaleX)+FloatConstants::FourHundredths;
+    scaleY = (scaleY)+FloatConstants::FourHundredths;
     if ((animationStage)>1) {
         if ((color[0])>=40)
             color[0]-=40;
@@ -2049,8 +2035,8 @@ void AliceObject::Advance() {
         rotationY = 0.0f;
         rotationZ = 0.0f;
     }
-    scaleX = (scaleX)+gAbsScaleAt00659724;
-    scaleY = (scaleY)+gAbsScaleAt00659724;
+    scaleX = (scaleX)+FloatConstants::FourHundredths;
+    scaleY = (scaleY)+FloatConstants::FourHundredths;
     if ((color[0])>=20)
         color[0]-=20;
     else {
@@ -2078,8 +2064,8 @@ void AliceObject::Advance() {
         field01A=0x4E2;
         rotationX=-75.0f;
     }
-    scaleX = (scaleX)+gFadeAt006583F8;
-    scaleY = (scaleY)+gFadeAt006583F8;
+    scaleX = (scaleX)+FloatConstants::FifteenHundredths;
+    scaleY = (scaleY)+FloatConstants::FifteenHundredths;
     if ((animationStage)>1) {
         if ((color[0])>20)
             color[0]-=20;
@@ -2110,9 +2096,9 @@ void AliceObject::Advance() {
     }
     x += facing*(velocityX);
     y = y+velocityY;
-    velocityY = (velocityY)-gVelocityDragAt00659454;
+    velocityY = (velocityY)-FloatConstants::EightyFiveHundredths;
     rotationZ = (rotationZ)+GeometryConstants::Fifteen;
-    if ((y)<gMaxPositionAt0065912C) {
+    if ((y)<GeometryConstants::NegativeFourHundredEighty) {
         ClearFrameInfo();
         break;
     }
@@ -2159,7 +2145,7 @@ void AliceObject::Advance() {
         break;
     }
     if ((animationStage)>7) {
-        scaleX=(scaleX)*gMulDoubleAt00659730;
+        scaleX=(scaleX)*FloatConstants::EightyFiveHundredthsDouble;
         scaleY=(scaleY)+FloatConstants::ThreeTenths;
         if ((color[0])>=10)
             color[0]-=10;
@@ -2269,7 +2255,7 @@ void AliceObject::Advance() {
         velocityY=(velocityY)-FloatConstants::ThreeFifths;
     }
     if ((animationStage)==12) {
-        scaleX=(scaleX)*gMulDoubleAt00659730;
+        scaleX=(scaleX)*FloatConstants::EightyFiveHundredthsDouble;
         scaleY=(scaleY)+FloatConstants::ThreeTenths;
         if ((color[0])>=10)
             color[0]-=10;
@@ -2319,7 +2305,7 @@ void AliceObject::Advance() {
         ResetTransform(0.0f,0.0f,0.0f);
         scaleX = MagnitudeAt00428D20(
             field0C8* field0C8 + field0D0* field0D0)
-            / gLengthDivisorAt006583A0 * gLengthFactorAt00659720;
+            / GeometryConstants::TwoHundredFiftySix * FloatConstants::OneAndOneTenth;
         scaleY=1.0f;
         color[0]=0xFF;
         color[1]=0xFF;
@@ -2327,7 +2313,7 @@ void AliceObject::Advance() {
         color[3]=0xFF;
         rotationZ = AngleAt00483300(field0D0,field0C8) / GeometryConstants::RadiansPerDegree;
     }
-    scaleY=(scaleY)*gMulDoubleAt00659730;
+    scaleY=(scaleY)*FloatConstants::EightyFiveHundredthsDouble;
     if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
@@ -2358,8 +2344,8 @@ void AliceObject::Advance() {
     if ((animationStage)==3 && (animationFrame)==0)
         owner->SpawnBattleEffect(0x343,x,y,facing,1);
     if ((animationStage)<3) {
-        scaleX=(scaleX)+gFadeAt00659428;
-        scaleY=(scaleY)+gFadeAt00659428;
+        scaleX=(scaleX)+FloatConstants::SevenHundredths;
+        scaleY=(scaleY)+FloatConstants::SevenHundredths;
     } else if ((animationStage)==3) {
         // Stage 3 deliberately leaves the scale unchanged.
     }
@@ -2507,7 +2493,7 @@ void AliceObject::Advance() {
             else {
                 (owner->opponent->spirit)=1000;
                 if ((owner->opponent->field39C)==0) {
-                    if ((owner->opponent->field36C)<gDoubleTouchAt00659228)
+                    if ((owner->opponent->field36C)<FloatConstants::NineHundredNinetyEightAndNineTenths)
                         (owner->opponent->field36C)=(owner->opponent->field36C)+FloatConstants::Half;
                     else
                         (owner->opponent->field36C)=900.0f;

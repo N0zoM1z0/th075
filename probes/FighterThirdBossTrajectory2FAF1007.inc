@@ -47,7 +47,7 @@ case 0x2FA: {
         field05C=0.5f;
         velocityX=float(RecordedRange(0,6)+12);
         if ((facing==1 &&
-             (x)>g_F1007_RightBoundAt0065945C) ||
+             (x)>GeometryConstants::ElevenHundredEighty) ||
             (facing==-1 &&
              (x)<GeometryConstants::Hundred))
             velocityX=-(velocityX);

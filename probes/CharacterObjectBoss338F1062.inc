@@ -32,8 +32,8 @@ case 0x338: {
         field07C=0;
     }
     if (animationStage==1) {
-        scaleX=(scaleX)+g_F1062_ScaleStepAt006583F8;
-        scaleY=(scaleY)+g_F1062_ScaleStepAt006583F8;
+        scaleX=(scaleX)+FloatConstants::FifteenHundredths;
+        scaleY=(scaleY)+FloatConstants::FifteenHundredths;
     }
     if (animationStage==2 && animationFrame==0)
         owner->SpawnBattleEffect(

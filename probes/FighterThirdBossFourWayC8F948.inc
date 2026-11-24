@@ -13,9 +13,9 @@ case 0xC8: {
         velocityX=0.0f;
         scriptCounterF00=0;
     }
-    if ((velocityX)>g_F948_C8UpperAt00657854) {
+    if ((velocityX)>GeometryConstants::Eleven) {
         velocityX=(velocityX)-FloatConstants::ThreeQuarters;
-        if ((velocityX)<g_F948_C8UpperAt00657854)
+        if ((velocityX)<GeometryConstants::Eleven)
             velocityX=11.0f;
     }
     if (inputY<0) {

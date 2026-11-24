@@ -19,12 +19,12 @@ case 0x347: {
         (FloatConstants::ThreeFifths -
             float(field0D8)*g_F1075_StepAt006598A0 *
             int(field0D8<10)) +
-        g_F1061_OffsetAt00658354 + scaleX;
+        FloatConstants::TwoHundredths + scaleX;
     scaleY =
         (FloatConstants::ThreeFifths -
             float(field0D8)*g_F1075_StepAt006598A0 *
             int(field0D8<10)) +
-        g_F1061_OffsetAt00658354 + scaleY;
+        FloatConstants::TwoHundredths + scaleY;
     if (animationStage>1) {
         if (color[0]>20)
             color[0]-=20;

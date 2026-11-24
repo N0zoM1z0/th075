@@ -45,12 +45,12 @@ case 0x355: {
             velocityX=0.5f;
     }
     if (field0DC==0) {
-        velocityY=velocityY-g_F1062_ScaleStepAt006583F8;
+        velocityY=velocityY-FloatConstants::FifteenHundredths;
         if (velocityY<g_F1095_LowerYAt00659894)
             field0DC=1;
     }
     if (field0DC==1) {
-        velocityY=(*(&velocityY))+g_F1062_ScaleStepAt006583F8;
+        velocityY=(*(&velocityY))+FloatConstants::FifteenHundredths;
         if (velocityY>g_F1095_UpperYAt00659890)
             field0DC=0;
     }

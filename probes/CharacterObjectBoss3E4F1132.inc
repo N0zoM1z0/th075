@@ -53,7 +53,7 @@ case 0x3E4: {
             else {
                 owner->opponent->spirit=1000;
                 if (owner->opponent->field39C==0) {
-                    if (owner->opponent->field36C<g_F1132_DoubleAt00659228)
+                    if (owner->opponent->field36C<FloatConstants::NineHundredNinetyEightAndNineTenths)
                         owner->opponent->field36C=
                             (*(&owner->opponent->field36C))+FloatConstants::Half;
                     else

@@ -108,6 +108,13 @@ target. The angle conversion uses the program's stored single-precision
 value for radians per degree. The new declarations preserve 2,265
 `DIR32` fields across 286 previous extern names.
 
+The projected quad uses the shared half, one and two values for its
+pixel offset and depth calculation. Camera snap and other position
+calculations share the existing 300.0f value. Callers of
+`Fighter::RecordRoundFields` use signed byte and integer parameters.
+Compiling the implementation with that declaration preserves its
+389-byte body at `0x004574D0` and resolves the existing callers.
+
 The paired and family stage pack constructors inherit the existing
 `NativeBackgroundBaseF479` layout. The embedded texture manager begins at
 `+0x18`, and the first trailing stage member starts at `+0x68`. The

@@ -3,17 +3,12 @@
 #include "GameSharedState.hpp"
 #include "AliceFighter.hpp"
 
-extern float g_AliceEffectYAt006582E0;
-extern float g_AliceEffectYAt00658364;
-extern float g_AliceEffectYAt00658368;
 extern float g_AliceEffectYAt0065909C;
 extern float g_AliceEffectYAt006590A0;
 extern float g_AliceEffectYAt00659478;
 extern float g_AliceEffectYAt006595F4;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_F747_BounceXAt006590BC;
-extern float g_F748_SpeedScaleAt006590B8;
 extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaResourceYAt00659280;
 extern float g_OneShotYAt0065928C;
@@ -771,7 +766,7 @@ void AliceFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(3);
         else if (animationStage == 3 && animationFrame == 0) {
-            velocityX = static_cast<float>(scriptCounterF00)*g_F747_BounceXAt006590BC;
+            velocityX = static_cast<float>(scriptCounterF00)*FloatConstants::OneFourHundredth;
             velocityY = static_cast<float>(-scriptCounterF02)*FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(0.0f,95.0f,0.0f);
@@ -888,8 +883,8 @@ void AliceFighter::Advance() {
             if ((field3CF) == 0)
                 ResetPrimaryCounters(0x63);
         } else if (animationStage == 3 && animationFrame == 0) {
-            velocityX = static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
-            velocityY = static_cast<float>(-scriptCounterF02)*g_F748_SpeedScaleAt006590B8;
+            velocityX = static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
+            velocityY = static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
             field05C = 2.0f;
         }
         break;
@@ -930,8 +925,8 @@ void AliceFighter::Advance() {
             if ((field3CF) == 0)
                 ResetPrimaryCounters(0x63);
         } else if (animationStage == 3 && animationFrame == 0) {
-            velocityX = static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
-            velocityY = static_cast<float>(-scriptCounterF02)*g_F748_SpeedScaleAt006590B8;
+            velocityX = static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
+            velocityY = static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
             field05C = 2.0f;
         } else if (animationStage == 3 && animationFrame != 0) {
 
@@ -2291,7 +2286,7 @@ void AliceFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x332, static_cast<float>(facing * 93) + x,
-                (y) + g_AliceEffectYAt006582E0, facing, 1);
+                (y) + GeometryConstants::SixtyFour, facing, 1);
             PlaySound(0);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2313,7 +2308,7 @@ void AliceFighter::Advance() {
             field05C = 0.5f;
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x34A, static_cast<float>(facing * 26) + x,
-                (y) + g_AliceEffectYAt00658364, facing, 1);
+                (y) + GeometryConstants::SixtySeven, facing, 1);
             PlaySound(0);
         }
         return;
@@ -3290,7 +3285,7 @@ void AliceFighter::Advance() {
                     field314 = static_cast<float>(shot * 80 - 80);
                     field318 = 10.0f;
                     SpawnBattleEffect(900, static_cast<float>(facing * 27) + x,
-                        (y) + g_AliceEffectYAt00658368, facing, 1);
+                        (y) + GeometryConstants::SixtyFive, facing, 1);
                 }
             }
             if (g_OptionsModeAt006714D0 == 1) {
@@ -3298,7 +3293,7 @@ void AliceFighter::Advance() {
                     field314 = static_cast<float>(shot * 80 - 120);
                     field318 = 10.0f;
                     SpawnBattleEffect(900, static_cast<float>(facing * 27) + x,
-                        (y) + g_AliceEffectYAt00658368, facing, 1);
+                        (y) + GeometryConstants::SixtyFive, facing, 1);
                 }
             }
             if (g_OptionsModeAt006714D0 == 2) {
@@ -3306,7 +3301,7 @@ void AliceFighter::Advance() {
                     field314 = static_cast<float>(shot * 80 - 160);
                     field318 = 10.0f;
                     SpawnBattleEffect(900, static_cast<float>(facing * 27) + x,
-                        (y) + g_AliceEffectYAt00658368, facing, 1);
+                        (y) + GeometryConstants::SixtyFive, facing, 1);
                 }
             }
             if (g_OptionsModeAt006714D0 == 3) {
@@ -3314,7 +3309,7 @@ void AliceFighter::Advance() {
                     field314 = static_cast<float>(shot * 80 - 200);
                     field318 = 10.0f;
                     SpawnBattleEffect(900, static_cast<float>(facing * 27) + x,
-                        (y) + g_AliceEffectYAt00658368, facing, 1);
+                        (y) + GeometryConstants::SixtyFive, facing, 1);
                 }
             }
             PlaySound(7);

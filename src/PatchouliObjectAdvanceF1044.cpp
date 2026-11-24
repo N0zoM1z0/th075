@@ -15,33 +15,17 @@
 // The native 0046D000 gauge timer is shared by Fighter owners, so case
 // 0x35D now invokes Fighter::UpdateGaugeTimer directly.
 extern float g_F1055_FadeScaleAt006598A4;
-extern float g_F1057_LowerBoundAt00658374;
-extern double g_F1057_RandomDoubleAt00658A20;
-extern double g_F1057_RandomBaseAt00657D00;
 extern float g_F1059_ScaleFadeAt006598A8;
-extern float g_F1061_StepAt0065972C;
-extern float g_F1061_OffsetAt00658354;
 extern float g_F1075_StepAt006598A0;
-extern float g_F1076_ScaleMulAt00659450;
 extern float g_F1085_ParentMultiplierAt0065989C;
 extern float g_F1085_LastYAt006592A4;
-extern float g_F1062_ScaleStepAt006583F8;
 extern float g_F1070_AnimSpeedAt006592A4;
-extern float g_F1070_FadeScaleAt00659454;
-extern float g_F1093_XStepAt00658048;
 extern float g_F1095_ScaleCeilingAt00659898;
 extern float g_F1095_LowerYAt00659894;
 extern float g_F1095_UpperYAt00659890;
-extern float g_F1110_NativeSpeedAt006578C0;
 extern float g_F1113_DivisorAt0065988C;
-extern float g_F1057_SpeedBaseAt006590BC;
 extern float g_F1126_RightAt00659884;
-extern float g_F1126_LeftAt006595E4;
-extern double g_F1132_DoubleAt00659228;
 extern float g_F1114_RandomOffsetAt00659094;
-extern float g_F1114_FadeAt00659240;
-extern double g_F1115_RandomDoubleAt006583B8;
-extern float g_F1116_YOffsetAt00659888;
 
 
 void PatchouliObject::Advance() {

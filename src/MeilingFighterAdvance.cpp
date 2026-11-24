@@ -5,13 +5,9 @@
 
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_BounceXAt006590BC;
-extern float g_LandingSpeedScaleAt006590B8;
 extern float g_MeilingAirShotYAt00659288;
 extern float g_MeilingAirVolleyYAt0065908C;
-extern float g_MeilingAttackDragAt006598B0;
 extern float g_MeilingDoubleShotYAt00659F3C;
-extern float g_MeilingLateAttackDragAt006595E8;
 extern float g_MeilingLotusEffectYAt00659F38;
 extern float g_MeilingLowVolleyYAt006590A0;
 extern float g_MeilingParticleOffsetYAt0065927C;
@@ -766,7 +762,7 @@ void MeilingFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetSecondaryCounter(3);
         else if (animationStage == 3 && animationFrame == 0) {
-            velocityX = float(int(scriptCounterF00)) * g_BounceXAt006590BC;
+            velocityX = float(int(scriptCounterF00)) * FloatConstants::OneFourHundredth;
             velocityY = float(-int(scriptCounterF02)) * FloatConstants::OneHundredth;
             field05C = 0.7f;
             ResetTransform(-7.0f, 75.0f, 0.0f);
@@ -890,8 +886,8 @@ void MeilingFighter::Advance() {
             }
         } else {
             if (animationStage == 2 && animationFrame == 0) {
-                velocityX = scriptCounterF00 * g_LandingSpeedScaleAt006590B8;
-                velocityY = -scriptCounterF02 * g_LandingSpeedScaleAt006590B8;
+                velocityX = scriptCounterF00 * FloatConstants::OneTwoHundredth;
+                velocityY = -scriptCounterF02 * FloatConstants::OneTwoHundredth;
                 field05C = 2.0f;
             }
             if (animationStage == 5 && animationFrame == 0) {
@@ -2029,7 +2025,7 @@ void MeilingFighter::Advance() {
             }
         }
         if (animationStage > 4 && velocityX > FloatConstants::Zero) {
-            velocityX = (velocityX) - g_MeilingLateAttackDragAt006595E8;
+            velocityX = (velocityX) - FloatConstants::OneAndSevenTenths;
             if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
             }
@@ -2277,7 +2273,7 @@ void MeilingFighter::Advance() {
             field07C = 0;
             velocityX = 12.0f;
         }
-        velocityX = (velocityX) - g_MeilingAttackDragAt006598B0;
+        velocityX = (velocityX) - FloatConstants::SixtyFiveHundredths;
         if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
         }
@@ -2347,7 +2343,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
         }
-        velocityX = (velocityX) - g_MeilingAttackDragAt006598B0;
+        velocityX = (velocityX) - FloatConstants::SixtyFiveHundredths;
         if (velocityX < FloatConstants::Zero) {
             velocityX = 0.0f;
             field3AC = 0;

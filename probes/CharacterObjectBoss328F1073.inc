@@ -18,7 +18,7 @@ case 0x328: {
     if (x>GeometryConstants::ThirteenHundredEighty ||
         x<GeometryConstants::NegativeHundred ||
         y>GeometryConstants::Thousand ||
-        y<g_F1057_LowerBoundAt00658374) {
+        y<GeometryConstants::NegativeTwoHundredForty) {
         ClearFrameInfo();
         return;
     }

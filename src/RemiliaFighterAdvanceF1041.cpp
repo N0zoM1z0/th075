@@ -6,9 +6,6 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of RemiliaFighter::Advance at 00543210.
 
-extern float g_F759_C8DecelAt006593E8;
-extern float g_FallingLateDragAt00659240;
-extern float g_SlowPositiveDragAt006578C0;
 extern float g_ShotPositiveDragAt00659A10;
 extern float g_F734_RoundY0At00659A30;
 extern float g_F734_RoundY1At00659A2C;
@@ -24,13 +21,7 @@ extern float g_BarrageY3At0065908C;
 extern float g_OneShotYAt0065928C;
 extern float g_ApproachUpperAt006592A4;
 extern float g_F711_ReverseRandomAt00659A0C;
-extern float g_F714_ShotYAt00657868;
 extern float g_F722_LowYAt00659A10;
-extern float g_F724_ShotYAt00659488;
-extern float g_F747_BounceXAt006590BC;
-extern float g_F748_SpeedScaleAt006590B8;
-extern float g_FallDecelerationAt00659888;
-extern float g_CloudGravityAt0065785C;
 extern float g_StormAngleShotYAt00659A18;
 extern float g_StormYAt0065948C;
 extern float g_BounceThresholdAt006590C0;
@@ -759,7 +750,7 @@ void RemiliaFighter::Advance() {
             if (animationStage>6 && animationStage<15) {
                 SpawnBattleEffect(0x329,
                     float(facing*62)+(x),
-                    (*(&y))+g_F714_ShotYAt00657868,
+                    (*(&y))+GeometryConstants::EightyThree,
                     facing,1);
             }
             if (animationStage==15 && animationFrame==0 && (scriptCounterF00)<3) {
@@ -905,7 +896,7 @@ void RemiliaFighter::Advance() {
                     facing,1);
                 SpawnBattleEffect(0x344,
                     float(facing*55)+(x),
-                    (*(&y))+g_F724_ShotYAt00659488,
+                    (*(&y))+GeometryConstants::EightySix,
                     facing,1);
                 UpdateGaugeTimer(500);
                 PlaySound(15);
@@ -916,7 +907,7 @@ void RemiliaFighter::Advance() {
             if (animationStage>6 && animationStage<15) {
                 SpawnBattleEffect(0x32E,
                     float(facing*62)+(x),
-                    (*(&y))+g_F714_ShotYAt00657868,
+                    (*(&y))+GeometryConstants::EightyThree,
                     facing,1);
             }
             if (animationStage==15 && animationFrame==0 && (scriptCounterF00)<5) {

@@ -29,7 +29,7 @@ case 0x35B: {
         field080=0;
         field07C=0;
     }
-    velocityX=velocityX-g_F1093_XStepAt00658048;
+    velocityX=velocityX-FloatConstants::TwoFifths;
     if (velocityX<FloatConstants::One)
         velocityX=1.0f;
     if (field0D8==0) {

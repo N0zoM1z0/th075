@@ -5,20 +5,13 @@
 // Natural-C++ reconstruction of YoumuFighter::Advance at 005214B0.
 #include "YoumuFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-extern float g_F898ShotYAt0065839C;
-extern float g_F895AbsThresholdAt006591F4;
 extern float g_F894RandomHeightAt006592A0;
-extern float g_F893VerticalStageAt006598B0;
 extern float g_F890Phase4OtherYAt006598B4;
-extern double g_F884DoubleDropAt00657D00;
-extern float g_F884PhaseYAt006598B8;
 extern float g_F884Stage5YAt00659470;
 extern float g_F872Volley1F9YAt006598BC;
 extern float g_F872Volley1FAYAt00659310;
 extern float g_F857ShotYAt00659298;
 extern float g_F834_LowerAt006590B0;
-extern float g_F748_SpeedScaleAt006590B8;
-extern float g_F747_BounceXAt006590BC;
 // Owner motion clearing now invokes the inherited Fighter method.
 // F1197 complete original-shaped 005214B0 parent, continued from F901/F1040.
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
@@ -333,7 +326,7 @@ void YoumuFighter::Advance() {
             if (AdvanceNestedFrame() == animationStageCount)
                 ResetSecondaryCounter(3);
             else if (animationStage == 3 && animationFrame == 0) {
-                velocityX = static_cast<float>(scriptCounterF00) * g_F747_BounceXAt006590BC;
+                velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneFourHundredth;
                 velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneHundredth;
                 field05C = 0.7f;
                 ResetTransform(0.0f, 95.0f, 0.0f);

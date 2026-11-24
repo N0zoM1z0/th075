@@ -4,7 +4,6 @@
 // Complete 855-byte native projectile-behaviour branch of AliceObject.
 // Called by the seven projectile action states of AliceObject::Advance.
 extern float AngleAt00483300(float,float);
-extern const float g_ProjectScaleF379At00659454;
 void AliceObject::AdvanceProjectileBehavior() {
     if (field07C==5) {
         ClearFrameInfo();
@@ -44,7 +43,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             }
             if(animationStage==2) {
                 // Parenthesized operand keeps the original x87 order (fld scaleX first).
-                scaleX=(scaleX)*g_ProjectScaleF379At00659454;
+                scaleX=(scaleX)*FloatConstants::EightyFiveHundredths;
                 scaleY=scaleX;
             }
             if(x>GeometryConstants::FourteenHundred || x<GeometryConstants::NegativeHundredSixty || y>GeometryConstants::Thousand || y<GeometryConstants::NegativeHundredSixty)

@@ -6,42 +6,25 @@
 #include "MarisaFighter.hpp"
 
 extern const float g_MarisaBeamYOffsetAt00659294;
-extern const float g_MarisaBeamFadeAt00659454;
-extern const float g_MarisaAuraGrowthAt006590B8;
-extern const float g_MarisaAuraGrowthAt006583F8;
-extern const float g_MarisaAuraHeightDecayAt00659450;
-extern const float g_MarisaAuraHeightScaleAt00659060;
-extern const double g_MarisaAuraJitterAt00659448;
 
-extern const double g_MarisaSpiritSpiritGaugeLimitAt00659228;
 extern float __cdecl AngleAt00483300(float y, float x);
 
-extern const float g_MarisaFollowShrinkAt006590BC;
 extern const double g_MarisaSparkBaseGrowthAt00659430;
 extern const double g_MarisaSparkInitialGrowthAt00659438;
 extern const double g_MarisaSparkGrowthLossAt00659440;
 
-extern const float g_MarisaFragmentGrowthAt00659428;
-extern const float g_MarisaStreakLeftLimitAt00658344;
-extern const float g_MarisaStreakRightLimitAt006583D8;
 extern const float g_MarisaStreakLeftLimitAt0065941C;
 extern const float g_MarisaStreakRightLimitAt00659418;
 extern const float g_MarisaStreakLeftLimitAt00659414;
 
-extern const float g_MarisaTrackingRightLimitAt00659410;
-extern const float g_MarisaTrackingLeftLimitAt00658404;
-extern const float g_MarisaTrackingFadeGrowthAt006578C0;
 extern const double g_MarisaChainJitterAt00659408;
 
 extern const double g_MarisaDustGrowthAt006593F8;
-extern const double g_MarisaDustDecayAt00659400;
 extern const float g_MarisaFollowYOffsetAt00659280;
-extern const float g_MarisaStarScaleAt006593F4;
 
 extern const float g_MarisaVolleyLeftLimitAt006593F0;
 extern const float g_MarisaVolleyRightLimitAt006593EC;
 extern const float g_MarisaStormLeftSpeedAt00659268;
-extern const float g_MarisaStormScaleLimitAt006593E8;
 
 void MarisaObject::Advance()
 {
@@ -129,7 +112,7 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage > 19) {
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
         }
         if (animationStage > 19) {
             if (color[0] > 20) {
@@ -222,7 +205,7 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage > 19) {
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
         }
         if (animationStage > 19) {
             if (color[0] > 20) {
@@ -315,7 +298,7 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage > 19) {
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
         }
         if (animationStage > 19) {
             if (color[0] > 20) {
@@ -440,15 +423,15 @@ void MarisaObject::Advance()
             field07C = 0;
         }
         if (animationStage < 10) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
-            field0DA = static_cast<short>(field0DA * g_MarisaAuraHeightDecayAt00659450);
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
+            field0DA = static_cast<short>(field0DA * FloatConstants::NinetyEightHundredths);
             --field0DC;
-            scaleY = field0DC * g_MarisaAuraHeightScaleAt00659060 +
-                field0DA * g_MarisaAuraJitterAt00659448;
+            scaleY = field0DC * FloatConstants::OneThousandth +
+                field0DA * FloatConstants::OneHundredthDouble;
         }
         if (animationStage > 9) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) + FloatConstants::FifteenHundredths;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             color[0] -= 5;
             if (color[0] < 10) {
                 ClearFrameInfo();
@@ -1020,15 +1003,15 @@ void MarisaObject::Advance()
             field07C = 0;
         }
         if (animationStage < 25) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
-            field0DA = static_cast<short>(field0DA * g_MarisaAuraHeightDecayAt00659450);
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
+            field0DA = static_cast<short>(field0DA * FloatConstants::NinetyEightHundredths);
             --field0DC;
-            scaleY = field0DC * g_MarisaAuraHeightScaleAt00659060 +
-                field0DA * g_MarisaAuraJitterAt00659448;
+            scaleY = field0DC * FloatConstants::OneThousandth +
+                field0DA * FloatConstants::OneHundredthDouble;
         }
         if (animationStage > 9) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) + FloatConstants::FifteenHundredths;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             color[0] -= 5;
             if (color[0] < 10) {
                 ClearFrameInfo();
@@ -1069,8 +1052,8 @@ void MarisaObject::Advance()
             rotationZ = 0.0f;
             NoOpAt0045B850(9);
         }
-        scaleX = (scaleX) + g_MarisaFragmentGrowthAt00659428;
-        scaleY = (scaleY) + g_MarisaFragmentGrowthAt00659428;
+        scaleX = (scaleX) + FloatConstants::SevenHundredths;
+        scaleY = (scaleY) + FloatConstants::SevenHundredths;
         color[0] -= 10;
         if (AdvanceNestedFrame() == animationStageCount) {
             ClearFrameInfo();
@@ -1107,7 +1090,7 @@ void MarisaObject::Advance()
         }
         scaleX = (scaleX) + FloatConstants::OneHundredth;
         if (animationStage == 4) {
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
         }
         if (animationStage > 3 && color[0] > 3) {
             color[0] -= 3;
@@ -1138,7 +1121,7 @@ void MarisaObject::Advance()
         }
         x = facing * velocityX + x;
         y = y + velocityY;
-        if (x > GeometryConstants::FourteenHundred || x < g_MarisaStreakLeftLimitAt00658344) {
+        if (x > GeometryConstants::FourteenHundred || x < GeometryConstants::NegativeTwoHundred) {
             ClearFrameInfo();
         }
         velocityY = velocityY - field05C;
@@ -1175,7 +1158,7 @@ void MarisaObject::Advance()
         }
         x = facing * velocityX + x;
         y = y + velocityY;
-        if (x > g_MarisaStreakRightLimitAt006583D8 || x < g_MarisaStreakLeftLimitAt0065941C ||
+        if (x > GeometryConstants::TwoThousand || x < g_MarisaStreakLeftLimitAt0065941C ||
             owner->animationStage > 4) {
             ClearFrameInfo();
             owner->scriptCounterF02 = 1;
@@ -1322,7 +1305,7 @@ void MarisaObject::Advance()
         }
         if (animationStage == 5) {
             static_cast<MarisaFighter*>(owner)->fieldF12 = 2;
-            if (x > g_MarisaTrackingRightLimitAt00659410 || x < g_MarisaTrackingLeftLimitAt00658404) {
+            if (x > GeometryConstants::FifteenHundredEighty || x < GeometryConstants::NegativeThreeHundred) {
                 static_cast<MarisaFighter*>(owner)->fieldF12 = 99;
                 ResetSecondaryCounter(7);
                 return;
@@ -1445,9 +1428,9 @@ void MarisaObject::Advance()
         }
         if (animationStage == 7) {
             static_cast<MarisaFighter*>(owner)->fieldF12 = 6;
-            if (((x > g_MarisaTrackingRightLimitAt00659410 && facing * velocityX > FloatConstants::Zero) ||
-                 (x < g_MarisaTrackingLeftLimitAt00658404 && facing * velocityX < FloatConstants::Zero) ||
-                 (y < g_MarisaTrackingLeftLimitAt00658404 && velocityY > FloatConstants::Zero) ||
+            if (((x > GeometryConstants::FifteenHundredEighty && facing * velocityX > FloatConstants::Zero) ||
+                 (x < GeometryConstants::NegativeThreeHundred && facing * velocityX < FloatConstants::Zero) ||
+                 (y < GeometryConstants::NegativeThreeHundred && velocityY > FloatConstants::Zero) ||
                  (y > GeometryConstants::TwelveHundredEighty && velocityY < FloatConstants::Zero)) &&
                 field0DE > 0) {
                 static_cast<MarisaFighter*>(owner)->fieldF12 = 99;
@@ -1508,8 +1491,8 @@ void MarisaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        scaleX = (scaleX) + g_MarisaTrackingFadeGrowthAt006578C0;
-        scaleY = (scaleY) + g_MarisaTrackingFadeGrowthAt006578C0;
+        scaleX = (scaleX) + FloatConstants::OneTwentieth;
+        scaleY = (scaleY) + FloatConstants::OneTwentieth;
         if (color[0] > 20) {
             color[0] -= 20;
             color[1] -= 20;
@@ -1560,16 +1543,16 @@ void MarisaObject::Advance()
             field07C = 0;
         }
         if (animationStage < 25) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
-            field0DA = static_cast<short>(field0DA * g_MarisaAuraHeightDecayAt00659450);
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
+            field0DA = static_cast<short>(field0DA * FloatConstants::NinetyEightHundredths);
             --field0DC;
-            scaleY = field0DC * g_MarisaAuraHeightScaleAt00659060 +
+            scaleY = field0DC * FloatConstants::OneThousandth +
                 field0DA * g_MarisaChainJitterAt00659408;
             static_cast<MarisaFighter*>(owner)->field1010 = scaleY;
         }
         if (animationStage > 9) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) + FloatConstants::FifteenHundredths;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             color[0] -= 5;
             static_cast<MarisaFighter*>(owner)->field1010 = scaleY;
             if (color[0] < 10) {
@@ -1720,7 +1703,7 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage > 19) {
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
         }
         if (animationStage > 19) {
             if (color[0] > 20) {
@@ -1808,9 +1791,9 @@ void MarisaObject::Advance()
         }
         ++field0D8;
         rotationZ = (rotationZ) + FloatConstants::One;
-        scaleX = (g_MarisaDustGrowthAt006593F8 - field0D8 * g_MarisaDustDecayAt00659400) *
+        scaleX = (g_MarisaDustGrowthAt006593F8 - field0D8 * FloatConstants::ThreeHundredthsDouble) *
             (field0D8 < 13) + g_MarisaSparkBaseGrowthAt00659430 + scaleX;
-        scaleY = (g_MarisaDustGrowthAt006593F8 - field0D8 * g_MarisaDustDecayAt00659400) *
+        scaleY = (g_MarisaDustGrowthAt006593F8 - field0D8 * FloatConstants::ThreeHundredthsDouble) *
             (field0D8 < 13) + g_MarisaSparkBaseGrowthAt00659430 + scaleY;
         if (animationStage > 0) {
             if (color[0] > 10) {
@@ -1883,7 +1866,7 @@ void MarisaObject::Advance()
             field080 = 1;
             field07C = 0;
             SetPolarVelocity(field0C8, field0D8 * FloatConstants::Half + FloatConstants::Five);
-            scaleX = RecordedRange(0, 10) * g_MarisaStarScaleAt006593F4 + FloatConstants::Half;
+            scaleX = RecordedRange(0, 10) * FloatConstants::OneFortieth + FloatConstants::Half;
             scaleY = scaleX;
             color[0] = 255;
             color[1] = 255;
@@ -1957,7 +1940,7 @@ void MarisaObject::Advance()
             rotationZ = static_cast<float>(RecordedRange(0, 360));
             field0D8 = 10;
         }
-        scaleX = field0D8 * FloatConstants::OneHundredth + g_MarisaTrackingFadeGrowthAt006578C0 + scaleX;
+        scaleX = field0D8 * FloatConstants::OneHundredth + FloatConstants::OneTwentieth + scaleX;
         scaleY = scaleX;
         if (field0D8 > 0) {
             --field0D8;
@@ -1982,7 +1965,7 @@ void MarisaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
+        scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
         scaleY = scaleX;
         if (field0D8 > 0) {
             --field0D8;
@@ -2102,7 +2085,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            SetPolarVelocity(field0C8 + field0CC, field0D8 * g_MarisaTrackingFadeGrowthAt006578C0 + field0D0);
+            SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
@@ -2115,8 +2098,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2143,7 +2126,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            SetPolarVelocity(field0C8 + field0CC, field0D8 * g_MarisaTrackingFadeGrowthAt006578C0 + field0D0);
+            SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
@@ -2156,8 +2139,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2184,7 +2167,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            SetPolarVelocity(field0C8 + field0CC, field0D8 * g_MarisaTrackingFadeGrowthAt006578C0 + field0D0);
+            SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
@@ -2197,8 +2180,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2225,7 +2208,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            SetPolarVelocity(field0C8 + field0CC, field0D8 * g_MarisaTrackingFadeGrowthAt006578C0 + field0D0);
+            SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
@@ -2238,8 +2221,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2291,15 +2274,15 @@ void MarisaObject::Advance()
             field07C = 0;
         }
         if (animationStage < 25) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
-            field0DA = static_cast<short>(field0DA * g_MarisaAuraHeightDecayAt00659450);
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
+            field0DA = static_cast<short>(field0DA * FloatConstants::NinetyEightHundredths);
             --field0DC;
-            scaleY = field0DC * g_MarisaAuraHeightScaleAt00659060 +
-                field0DA * g_MarisaAuraJitterAt00659448;
+            scaleY = field0DC * FloatConstants::OneThousandth +
+                field0DA * FloatConstants::OneHundredthDouble;
         }
         if (animationStage > 9) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) + FloatConstants::FifteenHundredths;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             color[0] -= 5;
             if (color[0] < 10) {
                 ClearFrameInfo();
@@ -2355,16 +2338,16 @@ void MarisaObject::Advance()
             field07C = 0;
         }
         if (animationStage < 25) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
-            field0DA = static_cast<short>(field0DA * g_MarisaAuraHeightDecayAt00659450);
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
+            field0DA = static_cast<short>(field0DA * FloatConstants::NinetyEightHundredths);
             --field0DC;
-            scaleY = field0DC * g_MarisaAuraHeightScaleAt00659060 +
+            scaleY = field0DC * FloatConstants::OneThousandth +
                 field0DA * g_MarisaChainJitterAt00659408;
             static_cast<MarisaFighter*>(owner)->field1010 = scaleY;
         }
         if (animationStage > 9) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
-            scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) + FloatConstants::FifteenHundredths;
+            scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             color[0] -= 5;
             static_cast<MarisaFighter*>(owner)->field1010 = scaleY;
             if (color[0] < 10) {
@@ -2413,8 +2396,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2441,7 +2424,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * g_MarisaTrackingFadeGrowthAt006578C0 + field0D0);
+            SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
@@ -2456,8 +2439,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2484,7 +2467,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * g_MarisaTrackingFadeGrowthAt006578C0 + field0D0);
+            SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
@@ -2499,8 +2482,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2527,7 +2510,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * g_MarisaTrackingFadeGrowthAt006578C0 + field0D0);
+            SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
@@ -2542,8 +2525,8 @@ void MarisaObject::Advance()
         if (animationStage > 1) {
             if (color[0] > 10) {
                 color[0] -= 10;
-                scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
-                scaleY = (scaleY) * g_MarisaBeamFadeAt00659454;
+                scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
+                scaleY = (scaleY) * FloatConstants::EightyFiveHundredths;
             } else {
                 ClearFrameInfo();
                 return;
@@ -2583,15 +2566,15 @@ void MarisaObject::Advance()
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
-        if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
+        if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
             field080 = 256;
         }
         if (field0D8 > 120 && field0D8 < 241) {
             if (scaleX < FloatConstants::OneAndHalf) {
-                scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
+                scaleX = (scaleX) + FloatConstants::FifteenHundredths;
             }
             owner->SetCameraShake(4.0f);
             owner->field314 = -90.0f;
@@ -2609,7 +2592,7 @@ void MarisaObject::Advance()
         if (field0D8 > 240) {
             velocityX = 0.0f;
             field080 = 0;
-            scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;
             } else {
@@ -2646,15 +2629,15 @@ void MarisaObject::Advance()
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
-        if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
+        if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
             field080 = 256;
         }
         if (field0D8 > 120 && field0D8 < 321) {
             if (scaleX < FloatConstants::OneAndHalf) {
-                scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
+                scaleX = (scaleX) + FloatConstants::FifteenHundredths;
             }
             owner->SetCameraShake(4.0f);
             owner->field314 = -90.0f;
@@ -2672,7 +2655,7 @@ void MarisaObject::Advance()
         if (field0D8 > 320) {
             velocityX = 0.0f;
             field080 = 0;
-            scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;
             } else {
@@ -2709,15 +2692,15 @@ void MarisaObject::Advance()
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
-        if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
+        if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
             field080 = 256;
         }
         if (field0D8 > 120 && field0D8 < 321) {
             if (scaleX < FloatConstants::OneAndHalf) {
-                scaleX = (scaleX) + g_MarisaAuraGrowthAt006583F8;
+                scaleX = (scaleX) + FloatConstants::FifteenHundredths;
             }
             owner->SetCameraShake(4.0f);
             owner->field314 = -90.0f;
@@ -2735,7 +2718,7 @@ void MarisaObject::Advance()
         if (field0D8 > 320) {
             velocityX = 0.0f;
             field080 = 0;
-            scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;
             } else {
@@ -2772,14 +2755,14 @@ void MarisaObject::Advance()
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
-        if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
-            scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
+        if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
+            scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
             field080 = 256;
         }
         if (field0D8 > 120 && field0D8 < 341) {
-            if (scaleX < g_MarisaStormScaleLimitAt006593E8) {
+            if (scaleX < FloatConstants::TwoAndHalf) {
                 scaleX = (scaleX) + FloatConstants::OneFifth;
             }
             owner->SetCameraShake(4.0f);
@@ -2798,7 +2781,7 @@ void MarisaObject::Advance()
         if (field0D8 > 340) {
             velocityX = 0.0f;
             field080 = 0;
-            scaleX = (scaleX) * g_MarisaBeamFadeAt00659454;
+            scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;
             } else {
@@ -2966,7 +2949,7 @@ void MarisaObject::Advance()
                 else {
                     owner->opponent->spirit = 1000;
                     if (owner->opponent->field39C == 0) {
-                        if (owner->opponent->field36C < g_MarisaSpiritSpiritGaugeLimitAt00659228) {
+                        if (owner->opponent->field36C < FloatConstants::NineHundredNinetyEightAndNineTenths) {
                             owner->opponent->field36C = (owner->opponent->field36C) +
                                 FloatConstants::Half;
                         }
@@ -3087,7 +3070,7 @@ void MarisaObject::Advance()
                 else {
                     owner->opponent->spirit = 1000;
                     if (owner->opponent->field39C == 0) {
-                        if (owner->opponent->field36C < g_MarisaSpiritSpiritGaugeLimitAt00659228) {
+                        if (owner->opponent->field36C < FloatConstants::NineHundredNinetyEightAndNineTenths) {
                             owner->opponent->field36C = (owner->opponent->field36C) +
                                 FloatConstants::Half;
                         }
@@ -3160,8 +3143,8 @@ void MarisaObject::Advance()
             rotationY = 0.0f;
             rotationZ = 0.0f;
         }
-        scaleX = (scaleX) - g_MarisaFollowShrinkAt006590BC;
-        scaleY = (scaleY) - g_MarisaFollowShrinkAt006590BC;
+        scaleX = (scaleX) - FloatConstants::OneFourHundredth;
+        scaleY = (scaleY) - FloatConstants::OneFourHundredth;
         rotationZ = (rotationZ) + FloatConstants::One;
         if (animationStage == 2) {
             color[0] -= 12;

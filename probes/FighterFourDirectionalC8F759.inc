@@ -7,7 +7,7 @@ case 0xC8: {
         scriptCounterF00=0;
     }
     if (y>FloatConstants::Zero && (animationStage)<7) {
-        velocityY=velocityY-g_F759_C8DecelAt006593E8;
+        velocityY=velocityY-FloatConstants::TwoAndHalf;
         if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();

@@ -10,17 +10,17 @@ case 0x2BC: {
         ClearMotionFields();
     }
     if ((animationStage)>8) {
-        velocityX=(velocityX)-g_F884DoubleDropAt00657D00;
+        velocityX=(velocityX)-FloatConstants::OneDouble;
         if ((velocityX)<FloatConstants::Zero)
             velocityX=0.0f;
     }
     if ((animationStage)==7) {
         scaleX=(scaleX)+FloatConstants::OneFifth;
-        scaleY=(scaleY)-g_F884PhaseYAt006598B8;
+        scaleY=(scaleY)-FloatConstants::NineteenHundredths;
     }
     if ((animationStage)==9) {
         scaleX=(scaleX)-FloatConstants::OneFifth;
-        scaleY=(scaleY)+g_F884PhaseYAt006598B8;
+        scaleY=(scaleY)+FloatConstants::NineteenHundredths;
     }
     if ((scriptCounterF00)==0 && field07C!=0) {
         ++scriptCounterF00;

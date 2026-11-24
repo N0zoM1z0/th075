@@ -15,7 +15,7 @@ case 0x59: {
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(3);
     else if ((animationStage)==3 && (animationFrame)==0) {
-        velocityX=float(int(scriptCounterF00))*g_ReimuBounceXAt006590BC;
+        velocityX=float(int(scriptCounterF00))*FloatConstants::OneFourHundredth;
         velocityY=float(-int(scriptCounterF02))*FloatConstants::OneHundredth;
         field05C=0.7f;
         ResetTransform(-7.0f,75.0f,0.0f);
@@ -93,8 +93,8 @@ case 0x61: {
     } else {
         // Original 00460409 jumps over BOTH stage-specific updates.
         if ((animationStage)==3 && (animationFrame)==0) {
-            velocityX=float(int(scriptCounterF00))*g_ReimuRecoveryScaleAt006590B8;
-            velocityY=float(-int(scriptCounterF02))*g_ReimuRecoveryScaleAt006590B8;
+            velocityX=float(int(scriptCounterF00))*FloatConstants::OneTwoHundredth;
+            velocityY=float(-int(scriptCounterF02))*FloatConstants::OneTwoHundredth;
             field05C=2.0f;
         }
         if (animationStage == 4 && animationFrame == 0)

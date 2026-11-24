@@ -29,12 +29,12 @@ case 0x391: {
         scaleY=1.0f;
     }
     if (field0DC==0) {
-        velocityY=velocityY-g_F1062_ScaleStepAt006583F8;
+        velocityY=velocityY-FloatConstants::FifteenHundredths;
         if (velocityY<g_F1095_LowerYAt00659894)
             field0DC=1;
     }
     if (field0DC==1) {
-        velocityY=(*(&velocityY))+g_F1062_ScaleStepAt006583F8;
+        velocityY=(*(&velocityY))+FloatConstants::FifteenHundredths;
         if (velocityY>g_F1095_UpperYAt00659890)
             field0DC=0;
     }
@@ -70,7 +70,7 @@ case 0x391: {
         }
     }
     if (x>g_F1126_RightAt00659884 ||
-        x<g_F1126_LeftAt006595E4) {
+        x<GeometryConstants::NegativeHundredEighty) {
         ClearFrameInfo();
         return;
     }

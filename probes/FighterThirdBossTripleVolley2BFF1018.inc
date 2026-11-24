@@ -58,7 +58,7 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
+            ((*(&y))+GeometryConstants::ThreeHundred)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
@@ -75,7 +75,7 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
+            ((*(&y))+GeometryConstants::ThreeHundred)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
@@ -92,7 +92,7 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
+            ((*(&y))+GeometryConstants::ThreeHundred)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
@@ -109,7 +109,7 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
+            ((*(&y))+GeometryConstants::ThreeHundred)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);
@@ -126,7 +126,7 @@ case 0x2BF: {
         SpawnBattleEffect(0x341,
             x -
                 float((facing)*640),
-            ((*(&y))+g_F1018_ThirdYAt0065784C)-float(RecordedRange(0,400)),
+            ((*(&y))+GeometryConstants::ThreeHundred)-float(RecordedRange(0,400)),
             facing,1);
         UpdateGaugeTimer(0xC);
         PlaySound(7);

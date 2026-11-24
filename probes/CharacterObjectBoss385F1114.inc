@@ -28,7 +28,7 @@ case 0x385: {
         scaleY=(*(&scaleX))+FloatConstants::One;
     }
     if (animationStage>2)
-        scaleX=(scaleX)*g_F1114_FadeAt00659240;
+        scaleX=(scaleX)*FloatConstants::NineTenths;
     if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();
     if (animationStage==3 && animationFrame==0) {

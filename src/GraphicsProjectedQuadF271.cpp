@@ -1,3 +1,4 @@
+#include "FloatConstants.hpp"
 #include "GraphicsTexturedDraw.hpp"
 
 namespace Graphics {
@@ -7,9 +8,6 @@ extern float g_ColorMultiplier;
 extern float g_DrawScale;
 extern float g_DrawOriginX;
 extern float g_DrawOriginY;
-extern const float g_HalfPixelOffsetAt00657478;
-extern const float g_UnitDepthAt0065747C;
-extern const float g_DepthClipAt00657480;
 
 // Four complete native 28-byte vertices and borrowed Direct3D8 interfaces.
 // Caller quad has four 16-byte position records; no original owner extent
@@ -33,28 +31,28 @@ void DrawProjectedTexturedQuad(const float (*positions)[4], const RECT* textureR
         {
         float projection;
         projection=projectionZ/(projectionZ-positions[0][2]);
-        if (projection >= g_DepthClipAt00657480) return;
-            vertices[0].x=((positions[0][0]-originX)*projection+originX)-g_HalfPixelOffsetAt00657478;
-            vertices[0].y=((positions[0][1]-originY)*projection+originY)-g_HalfPixelOffsetAt00657478;
-            vertices[0].z=g_UnitDepthAt0065747C-projection/g_DepthClipAt00657480;
+        if (projection >= FloatConstants::Two) return;
+            vertices[0].x=((positions[0][0]-originX)*projection+originX)-FloatConstants::Half;
+            vertices[0].y=((positions[0][1]-originY)*projection+originY)-FloatConstants::Half;
+            vertices[0].z=FloatConstants::One-projection/FloatConstants::Two;
             vertices[0].rhw=projection;
             projection=projectionZ/(projectionZ-positions[1][2]);
-            if (projection >= g_DepthClipAt00657480) return;
-                vertices[1].x=((positions[1][0]-originX)*projection+originX)-g_HalfPixelOffsetAt00657478;
-                vertices[1].y=((positions[1][1]-originY)*projection+originY)-g_HalfPixelOffsetAt00657478;
-                vertices[1].z=g_UnitDepthAt0065747C-projection/g_DepthClipAt00657480;
+            if (projection >= FloatConstants::Two) return;
+                vertices[1].x=((positions[1][0]-originX)*projection+originX)-FloatConstants::Half;
+                vertices[1].y=((positions[1][1]-originY)*projection+originY)-FloatConstants::Half;
+                vertices[1].z=FloatConstants::One-projection/FloatConstants::Two;
             vertices[1].rhw=projection;
                 projection=projectionZ/(projectionZ-positions[2][2]);
-                if (projection >= g_DepthClipAt00657480) return;
-                    vertices[2].x=((positions[2][0]-originX)*projection+originX)-g_HalfPixelOffsetAt00657478;
-                    vertices[2].y=((positions[2][1]-originY)*projection+originY)-g_HalfPixelOffsetAt00657478;
-                    vertices[2].z=g_UnitDepthAt0065747C-projection/g_DepthClipAt00657480;
+                if (projection >= FloatConstants::Two) return;
+                    vertices[2].x=((positions[2][0]-originX)*projection+originX)-FloatConstants::Half;
+                    vertices[2].y=((positions[2][1]-originY)*projection+originY)-FloatConstants::Half;
+                    vertices[2].z=FloatConstants::One-projection/FloatConstants::Two;
             vertices[2].rhw=projection;
                     projection=projectionZ/(projectionZ-positions[3][2]);
-                    if (projection >= g_DepthClipAt00657480) return;
-                        vertices[3].x=((positions[3][0]-originX)*projection+originX)-g_HalfPixelOffsetAt00657478;
-                        vertices[3].y=((positions[3][1]-originY)*projection+originY)-g_HalfPixelOffsetAt00657478;
-                        vertices[3].z=g_UnitDepthAt0065747C-projection/g_DepthClipAt00657480;
+                    if (projection >= FloatConstants::Two) return;
+                        vertices[3].x=((positions[3][0]-originX)*projection+originX)-FloatConstants::Half;
+                        vertices[3].y=((positions[3][1]-originY)*projection+originY)-FloatConstants::Half;
+                        vertices[3].z=FloatConstants::One-projection/FloatConstants::Two;
             vertices[3].rhw=projection;
                         vertices[0].u=static_cast<float>(textureRectangle->left)/width;
                         vertices[0].v=static_cast<float>(textureRectangle->top)/height;

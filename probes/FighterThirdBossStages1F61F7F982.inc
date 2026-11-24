@@ -8,8 +8,8 @@
 // F982 original native 004AC040 0x1F6 double-scaled fighter action
 case 0x1F6: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        velocityX=(velocityX)*g_F982_Scale1F6At006583E0;
-        velocityY=(velocityY)*g_F982_Scale1F6At006583E0;
+        velocityX=(velocityX)*FloatConstants::QuarterDouble;
+        velocityY=(velocityY)*FloatConstants::QuarterDouble;
         field080=99;
         field07C=0;
         field3AC=0;
@@ -70,8 +70,8 @@ case 0x1F6: {
 // F982 original native 004AC040 0x1F7 double-scaled fighter action
 case 0x1F7: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        velocityX=(velocityX)*g_F982_Scale1F7At006584C8;
-        velocityY=(velocityY)*g_F982_Scale1F7At006584C8;
+        velocityX=(velocityX)*FloatConstants::OneTenthDouble;
+        velocityY=(velocityY)*FloatConstants::OneTenthDouble;
         field080=99;
         field07C=0;
         field3AC=0;

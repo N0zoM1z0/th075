@@ -11,9 +11,6 @@
 #include "ResultScene.hpp"
 extern unsigned int g_ResultBestAt006714B0;
 extern unsigned char g_ResultLeaveAt006714CE;
-extern const double g_ResultFactor1At00657D00;
-extern const double g_ResultFactor2At00657D08;
-extern const float g_ResultMinAlphaAt00658048;
 namespace ResultPresentationF244 {
 }
 unsigned short ResultScene::Update()
@@ -34,8 +31,8 @@ unsigned short ResultScene::Update()
             field038=static_cast<int>((field038)*(field034));
             switch (g_OptionsModeAt006714D0) {
             case 0: field038=static_cast<int>((field038)*FloatConstants::HalfDouble);break;
-            case 1: field038=static_cast<int>((field038)*g_ResultFactor1At00657D00);break;
-            case 2: field038=static_cast<int>((field038)*g_ResultFactor2At00657D08);break;
+            case 1: field038=static_cast<int>((field038)*FloatConstants::OneDouble);break;
+            case 2: field038=static_cast<int>((field038)*FloatConstants::OneAndHalfDouble);break;
             case 3: field038=static_cast<int>((field038)*2.0);break;
             }
             reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
@@ -74,7 +71,7 @@ unsigned short ResultScene::Update()
     }
     if ((reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field713)==10) {
         field014=1.0f;
-    } else if ((field014)>g_ResultMinAlphaAt00658048) {
+    } else if ((field014)>FloatConstants::TwoFifths) {
         field014=(field014)-FloatConstants::OneHundredth;
     } else {
         field014=0.4f;
@@ -112,8 +109,8 @@ unsigned short ResultScene::Update()
         g_SoundBank->Play(0x28);
         switch (g_OptionsModeAt006714D0) {
         case 0: field038=static_cast<int>((field038)*FloatConstants::HalfDouble);break;
-        case 1: field038=static_cast<int>((field038)*g_ResultFactor1At00657D00);break;
-        case 2: field038=static_cast<int>((field038)*g_ResultFactor2At00657D08);break;
+        case 1: field038=static_cast<int>((field038)*FloatConstants::OneDouble);break;
+        case 2: field038=static_cast<int>((field038)*FloatConstants::OneAndHalfDouble);break;
         case 3: field038=static_cast<int>((field038)*2.0);break;
         }
         break;

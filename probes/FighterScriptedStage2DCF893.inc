@@ -29,7 +29,7 @@ case 0x2DC: {
             velocityX=0.0f;
     }
     if (y>FloatConstants::Zero && (animationStage)<24) {
-        velocityY=velocityY-g_F893VerticalStageAt006598B0;
+        velocityY=velocityY-FloatConstants::SixtyFiveHundredths;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetSecondaryCounter(24);
             velocityX=0.0f;
