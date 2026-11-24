@@ -12,7 +12,6 @@ public:
     virtual void Advance(); // slot 1, 0045DD70 (nonexact giant research parent)
 
     void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
     void PollCommands();
     void AdvanceSequence();
     void ConfigureStage();

@@ -8,7 +8,6 @@
 // literals with a direct float-lvalue macro reproduces the native x87
 // evaluation order at each comparison and projectile launch. This is the
 // complete original function, not a cropped or masked reconstruction.
-class SuikaSoundF313 {public: void Play(int index);};
 #define F(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(off)))
 #define O(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(F(void*,0x2e8))+(off)))
 
@@ -16,8 +15,8 @@ class SuikaSoundF313 {public: void Play(int index);};
 #define OPPONENT_FLOAT(off) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(F(void*,0x2e8)) + (off))
 
 #define SHOT(n) SpawnProjectile((n), \
- (OPPONENT_FLOAT(0x44)+20.0f)-static_cast<float>(Rand(0,40)), \
- (O(float,0x48)+GeometryConstants::Forty)+static_cast<float>(Rand(0,100)), \
+ (OPPONENT_FLOAT(0x44)+20.0f)-static_cast<float>(RecordedRange(0,40)), \
+ (O(float,0x48)+GeometryConstants::Forty)+static_cast<float>(RecordedRange(0,100)), \
  F(unsigned char,0x66),1)
 void SuikaFighter::AdvanceAuxiliary()
 {
@@ -25,12 +24,12 @@ void SuikaFighter::AdvanceAuxiliary()
         F(unsigned char,0x3ac)=0;
     if (F(short,0xf1c)>0) {
         --F(short,0xf1c);
-        reinterpret_cast<SuikaSoundF313*>(F(void*,0x2e8))->Play(3);
-        if(F(signed char,0x39d)==2 && Rand(0,100)<25) {
+        opponent->UpdateGaugeTimer(3);
+        if(F(signed char,0x39d)==2 && RecordedRange(0,100)<25) {
             SHOT(0x336);
         }
         if(F(signed char,0x39d)==1) {
-            if(Rand(0,100)<25) {
+            if(RecordedRange(0,100)<25) {
                 SHOT(0x337);
             }
             if (F(short,0x3b6)>0) {
@@ -48,9 +47,9 @@ void SuikaFighter::AdvanceAuxiliary()
     }
     if(F(short,0xf1e)>0) {
         if(F(short,0x3b0)>4) {
-            reinterpret_cast<SuikaSoundF313*>(this)->Play(4);
+            UpdateGaugeTimer(4);
         } else {
-            reinterpret_cast<SuikaSoundF313*>(this)->Play(F(short,0x3b0)-1);
+            UpdateGaugeTimer(F(short,0x3b0)-1);
             F(short,0xf1e)=0;
         }
         if(O(short,0x324)<=0 || F(short,0x3a0)<=0)

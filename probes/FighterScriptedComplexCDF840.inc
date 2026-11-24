@@ -4,7 +4,7 @@
 // Original game interior, not independently callable exact CODE.
 case 0xCD: {
     if (y==FloatConstants::Zero || velocityY>FloatConstants::Zero) {
-        SetupCollisionAt454BC0(3,4,0xFF);
+        SetCommandSelection(3,4,0xFF);
         field088=2;
     }
     if (animationStage==0 && (field3AC)==0)

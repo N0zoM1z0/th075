@@ -1,5 +1,6 @@
 #include "ArchiveCatalog.hpp"
 #include "SoundBank.hpp"
+#include "ScriptResource4205F0.hpp"
 #include "DataArchive.hpp"
 #include <windows.h>
 #include <mmsystem.h>
@@ -8,12 +9,6 @@
 struct IDirectSoundBuffer8;
 // Pointer-only owner interfaces; never instantiate or embed these incomplete
 // owners. The only local structured value is the complete SDK WAVEFORMATEX.
-class ScriptResource4205F0 {
-public:
-    void LoadArchive(const char*, const char*);
-    void LoadFile(const char*, signed char, const char*);
-    void Parse(char*, unsigned int);
-};
 namespace SoundCreation406A20 {
     bool __cdecl Create(const WAVEFORMATEX*, const void*, DWORD, IDirectSoundBuffer8**, DWORD);
 }

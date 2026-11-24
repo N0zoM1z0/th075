@@ -24,9 +24,11 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 873 unresolved externals. The latest batch
-resolved 12 texture symbols and cold-replayed 329 units across 118
-objects. Stage drawing, fighter texture loads, and the static effect
+stops at `LNK1120` with 852 unresolved externals. The latest batch
+resolved 21 symbols and cold-replayed 493 units across 226 objects.
+Character effects, command selection, and mode 5 input call the shared
+fighter methods. Fighter resource loads use the existing script stream
+methods. Stage drawing, fighter texture loads, and the static effect
 resources use the shared texture manager. Battle and results share
 the score and flow state. The title menu,
 replay browser and audio reader have their original startup values.

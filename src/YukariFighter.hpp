@@ -24,7 +24,6 @@ public:
     void ResetBaseRound();
     void ResetRound();
     void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
 
     // Fields after the shared Fighter layout.
     short fieldF10;

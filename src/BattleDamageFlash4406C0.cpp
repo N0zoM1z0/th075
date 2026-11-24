@@ -1,9 +1,7 @@
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
-#include "BattleDamageFlash4406C0.hpp"
+#include "BattleHud43E040.hpp"
 
-#define LEFT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(fighters[0])
-#define RIGHT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(fighters[1])
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 
 void BattleScene::RenderDamageFlash() {
@@ -17,7 +15,7 @@ void BattleScene::RenderDamageFlash() {
     screenY = g_CombatViewOffsetY;
     if ((fighters[0]->frameInfo->flags & 0x100000) == 0 && fighters[0]->health > 0 &&
         fighters[0]->IsState50To149() && fighters[0]->y > 0.0f &&
-        fighters[0]->flashGauge < 75 && !LEFT_PREDICATE->IsState95To99()) {
+        fighters[0]->flashGauge < 75 && !fighters[0]->IsState95To99()) {
         if (fighters[0]->flashGauge > 40) {
             component = static_cast<unsigned char>((float(fighters[0]->flashGauge) - 40.0f) / 35.0f * 255.0f);
             color = D3DCOLOR_ARGB(255, 255 - component, 255, 0);
@@ -39,7 +37,7 @@ void BattleScene::RenderDamageFlash() {
     }
     if ((fighters[1]->frameInfo->flags & 0x100000) == 0 && fighters[1]->health > 0 &&
         fighters[1]->IsState50To149() && fighters[1]->y > 0.0f &&
-        fighters[1]->flashGauge < 75 && !RIGHT_PREDICATE->IsState95To99()) {
+        fighters[1]->flashGauge < 75 && !fighters[1]->IsState95To99()) {
         if (fighters[1]->flashGauge > 40) {
             component = static_cast<unsigned char>((float(fighters[1]->flashGauge) - 40.0f) / 35.0f * 255.0f);
             color = D3DCOLOR_ARGB(255, 255 - component, 255, 0);
@@ -62,7 +60,5 @@ void BattleScene::RenderDamageFlash() {
 }
 
 #undef STYLE
-#undef RIGHT_PREDICATE
-#undef LEFT_PREDICATE
 #undef fighters[1]->frameInfo->flags
 #undef fighters[0]->frameInfo->flags

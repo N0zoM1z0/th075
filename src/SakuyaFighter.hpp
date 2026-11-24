@@ -18,9 +18,7 @@ public:
     static int cardCountdown;
     void DispatchActions();
     void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short,float,float,signed char,signed char,unsigned char);
     void EnableRoundSound(int);
-    void InterruptSpecial(int);
     void PollCommands();
     void AdvanceSequence();
     void ResetRound();

@@ -16,11 +16,11 @@ void SakuyaFighter::AdvanceAuxiliary() {
         fieldF0C=spirit;
         if(action!=0x2C1 && action!=0x2C3) {
             if(field39D==2) {
-                if(spirit>8) InterruptSpecial(8);
+                if(spirit>8) UpdateGaugeTimer(8);
                 else fieldF0C=0;
             }
             if(field39D==1) {
-                if(spirit>4) InterruptSpecial(4);
+                if(spirit>4) UpdateGaugeTimer(4);
                 else fieldF0C=0;
             }
         }
@@ -37,11 +37,11 @@ void SakuyaFighter::AdvanceAuxiliary() {
             fieldF10=spirit;
             field3B8=2;
             if(field39D==2) {
-                if(spirit>8) InterruptSpecial(8);
+                if(spirit>8) UpdateGaugeTimer(8);
                 else fieldF10=0;
             }
             if(field39D==1) {
-                if(spirit>5) InterruptSpecial(5);
+                if(spirit>5) UpdateGaugeTimer(5);
                 else fieldF10=0;
             }
             opponent->ResetTransform(0,0,0);

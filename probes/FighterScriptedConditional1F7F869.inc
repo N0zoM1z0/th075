@@ -16,7 +16,7 @@ case 0x1F7: {
     if ((animationStage)>3 && (animationStage)<7 && (aiCommand)==0x14) {
         ResetPrimaryCounters(0x1F8);
         ClearMotionFields();
-        NativeGameEffectAt455B30();
+        PackDirectionBits();
         return;
     }
     if (AdvanceNestedFrame()==(animationStageCount))

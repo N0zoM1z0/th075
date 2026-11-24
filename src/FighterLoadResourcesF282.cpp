@@ -6,6 +6,7 @@
 #include <new>
 #include "Fighter.hpp"
 #include "SoundBank.hpp"
+#include "ScriptResource4205F0.hpp"
 
 // The command container has its own observed 24-byte allocation.
 class FighterCommandsF282 {
@@ -13,10 +14,6 @@ class FighterCommandsF282 {
 public: FighterCommandsF282(FighterTextureF282* texture);
 };
 typedef char VerifyFighterCommandsF282[(sizeof(FighterCommandsF282)==24)?1:-1];
-class FighterScriptsF282 {
-public: void LoadFile(const char* filename,int mode,int submode);
-        void LoadArchive(const char* filename,const char* root);
-};
 extern const char g_LogSoundsAt00658E84[];
 extern const char g_SoundFileFormatAt00658E94[];
 extern const char g_CharacterMeilingAt00658EA4[];
@@ -72,8 +69,8 @@ void Fighter::LoadResources()
     else
         reinterpret_cast<TextureManagerF198*>(field534Texture)->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
     sprintf(filename,g_ScriptFormatAt00658F78,name,name);
-    reinterpret_cast<FighterScriptsF282*>(&script)->LoadFile(filename,2,0);
-    reinterpret_cast<FighterScriptsF282*>(&script)->LoadArchive(filename,g_ScriptArchiveAt00658F94);
+    reinterpret_cast<ScriptResource4205F0*>(&script)->LoadFile(filename,2,0);
+    reinterpret_cast<ScriptResource4205F0*>(&script)->LoadArchive(filename,g_ScriptArchiveAt00658F94);
     field480=new FighterCommandsF282(static_cast<FighterTextureF282*>(drawing));
     SetNoticeMode(0);
     ResetRound();

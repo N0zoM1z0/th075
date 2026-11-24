@@ -16,8 +16,6 @@ public:
     static int cardCountdown;
     void DispatchActions();
     void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
-    int Rand(int,int);
     void SpawnProjectile(int,float,float,unsigned char,int);
     void PollCommands();
     void AdvanceSequence();

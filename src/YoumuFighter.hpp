@@ -12,11 +12,6 @@ public:
     virtual ~YoumuFighter();
     virtual void Advance(); // slot 1, native 005214B0, nonexact natural-C++ parent in YoumuFighterAdvanceF1040.cpp
 
-    // Remaining nonshared call-shape probes. The 00453B50 and 00453C80
-    // effects use Fighter's inherited typed methods.
-    void SetupCollisionAt454BC0(int,int,int);
-    void NativeGameEffectAt455B30();
-
     void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;
@@ -25,9 +20,7 @@ public:
     static int cardCountdown;
     void DispatchActions();
     void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short,float,float,signed char,signed char,unsigned char);
     void PollCommands();
-    signed char CheckPattern(const char*, int, int);
     void AdvanceSequence();
     void CreateOwnedObject(YoumuGeneratedF224** output);
     void ForwardBaseAction();

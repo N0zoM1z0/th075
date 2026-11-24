@@ -110,8 +110,6 @@ public:
     virtual void UpdatePracticeDirections();
     virtual void FinishInput();
     void UpdateControls();
-    void ClearAuxiliaryWords();
-    void ApplyMode5Direction();
 public:
     // Observed fields; meanings not yet known.
     unsigned char unknown004[0x060 - 0x004];
@@ -151,7 +149,7 @@ void FighterControlsF130::UpdateControls() {
     unsigned char relativeBits = 0;
     unsigned char physicalInputBits = 0;
     if (field2CD != 0) {
-        ClearAuxiliaryWords();
+        reinterpret_cast<Fighter*>(this)->ClearAuxiliaryWords();
         field4DC = 0;
         field4E0 = 0;
         field4E8 = 0;
@@ -173,7 +171,7 @@ void FighterControlsF130::UpdateControls() {
             if (relativeBits & 0x80) field4F4 = 1;
         } else if (g_ReplayModeAt0066C238 == 1) {
             if (g_CombatMode == 3) UpdatePracticeDirections();
-            else if (g_CombatMode == 5) ApplyMode5Direction();
+            else if (g_CombatMode == 5) reinterpret_cast<Fighter*>(this)->ApplyMode5Direction();
             else UpdateOrdinaryDirections();
             if (g_OptionsModeAt006714D0 < 2 && rand() > (g_OptionsModeAt006714D0 * 3 + 1) * 2048) {
                 field4E8 = 0;
@@ -273,7 +271,7 @@ void FighterControlsF130::UpdateControls() {
             field50C = field4F4 == 1;
         }
         if (field060 < 300 || field510 <= 0) {
-            ClearAuxiliaryWords();
+            reinterpret_cast<Fighter*>(this)->ClearAuxiliaryWords();
             field510 = 0;
         }
         if (field510 > 0) --field510;

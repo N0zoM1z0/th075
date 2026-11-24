@@ -1,9 +1,8 @@
 #include "SuikaFighter.hpp"
 #include "EffectManagerLifetimeF161.hpp"
-#include "FighterTrackedEffectsF169.hpp"
 
 
-void FighterTrackedEffectsF169::SpawnTrackedEffect(
+void Fighter::SpawnTrackedEffect(
     short effect, float x, float y, signed char facing, signed char layer,
     unsigned char linked)
 {

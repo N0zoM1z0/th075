@@ -74,6 +74,7 @@ public:
     void LoadResources();                                           // 00456B60
     void LoadPattern();                                             // 00457660
     void SelectResourceParameters();                                // 00452B30
+    void ApplyMode5Direction();                                      // 00454C20
     void SetCommandSelection(int selection, unsigned char mode, unsigned int mask);  // 00454BC0
     void ClearField47CAt00454C00();                                  // 00454C00
     void LoadStageResource();                                       // 004584D0
@@ -93,6 +94,7 @@ public:
     void RecordRoundFields(signed char index, short value, unsigned char first, unsigned char second, unsigned char third, unsigned int payloadA, unsigned int payloadB, unsigned int payloadC);
     void AdjustCameraOffset(signed char alternate);
     void SpawnBattleEffect(short effect, float x, float y, signed char facing, signed char layer);
+    void SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer, unsigned char linked);
     void SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer, unsigned char linked, unsigned char mode);
     void SpawnAuxEffect(short effect, float x, float y, signed char facing, signed char layer);
     void PlaySound(short sound);

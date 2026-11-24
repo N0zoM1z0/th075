@@ -27,7 +27,6 @@ public:
     void SelectVariant();
     void ResetBaseRound();
     void ResetRound();
-    int Rand(int min,int max);
     void SpawnProjectile(int pattern,float x,float y,unsigned char direction,int group);
     void AdvanceAuxiliary();
 

@@ -413,6 +413,14 @@ the three slot allocators with `/GS`. Omitting that option for those
 three units reproduced the native prologues and their full unwind
 records with the typed vectors.
 
+The six-argument tracked effect helper at `0x00453AC0` is a
+`Fighter` overload shared by the character callers. Mode 5 input at
+`0x00454C20` uses the fighter's input fields and calls virtual slot 11
+through `ChooseAction`. The Youmu callers use the signed-byte pattern
+arguments and the existing command selection and direction packers.
+Fighter resource loading uses the parser's two stream methods on the
+script object at `+0x714`.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

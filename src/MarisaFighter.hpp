@@ -29,7 +29,6 @@ public:
     static int cardCountdown;
     void DispatchActions();
     void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
     void PollCommands();
     void AdvanceSequence();
     void PlaySharedSound(short sound);

@@ -1,3 +1,4 @@
+#include "ScriptResource4205F0.hpp"
 #include <deque>
 #include <new>
 #include <stddef.h>
@@ -25,13 +26,6 @@ typedef char RecordSize[(sizeof(ScriptRecord421200) == 8) ? 1 : -1];
 typedef char RecordValueOffset[(offsetof(ScriptRecord421200, value) == 2) ? 1 : -1];
 typedef char RecordTextOffset[(offsetof(ScriptRecord421200, text) == 4) ? 1 : -1];
 typedef char SequenceSize[(sizeof(ScriptSequence421250) == 20) ? 1 : -1];
-// Identical pointer-only owner interface to the accepted stream loaders.
-class ScriptResource4205F0 {
-public:
-    void LoadArchive(const char*, const char*);
-    void LoadFile(const char*, signed char, const char*);
-    void Parse(char*, unsigned int);
-};
 class ScriptGroups4215F0 {
 public:
     ScriptSequence421250& Back();
