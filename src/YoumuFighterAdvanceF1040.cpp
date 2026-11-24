@@ -11,13 +11,11 @@ extern float g_F884Stage5YAt00659470;
 extern float g_F872Volley1F9YAt006598BC;
 extern float g_F872Volley1FAYAt00659310;
 extern float g_F857ShotYAt00659298;
-extern float g_F834_LowerAt006590B0;
 // Owner motion clearing now invokes the inherited Fighter method.
 // F1197 complete original-shaped 005214B0 parent, continued from F901/F1040.
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
 // five instruction widths remain NONEXACT. No whole CODE credit.
 
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 void YoumuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -217,7 +215,7 @@ void YoumuFighter::Advance() {
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
-#define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
+#define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::TwentyFive
 #define TRAJECTORY_MINIMUM_SPEED 6.0f
 #define TRAJECTORY_MAXIMUM_SPEED 25.0f
 #define TRAJECTORY_STAGE_THRESHOLD 3

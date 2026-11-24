@@ -4,16 +4,12 @@
 #include "GameSharedState.hpp"
 #include "SuikaFighter.hpp"
 
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_SuikaOffsetAt00659094;
 extern float g_SuikaOffsetAt0065927C;
 extern float g_SuikaOffsetAt00659280;
 extern float g_SuikaOffsetAt00659B68;
 extern float g_SuikaOffsetAt00659E14;
-extern float g_SuikaOffsetAt00659E18;
-extern float g_SuikaOffsetAt00659E1C;
-extern float g_SuikaOffsetAt00659E20;
 
 void SuikaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -535,7 +531,7 @@ void SuikaFighter::Advance() {
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
-            if (velocityY > g_ApproachUpperAt006592A4)
+            if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
             field07C = 0;
         }
@@ -3026,9 +3022,9 @@ void SuikaFighter::Advance() {
         if (animationStage == 11 && field07C == 1 && field3CF == 1) {
             ResetPrimaryCounters(0x2BF);
             opponent->ResetPrimaryCounters(0x66);
-            if (x > g_SuikaOffsetAt00659E20 && facing == 1)
+            if (x > GeometryConstants::SevenHundredFifty && facing == 1)
                 x = 750.0f;
-            if (x < g_SuikaOffsetAt00659E1C && facing == -1)
+            if (x < GeometryConstants::FiveHundredFifty && facing == -1)
                 x = 550.0f;
             opponent->x = static_cast<float>(facing * 510) + x;
             opponent->velocityX = 0.0f;
@@ -3630,9 +3626,9 @@ void SuikaFighter::Advance() {
         if (animationStage == 11 && field07C == 1 && field3CF == 1) {
             ResetPrimaryCounters(0x2D3);
             opponent->ResetPrimaryCounters(0x66);
-            if (x > g_SuikaOffsetAt00659E20 && facing == 1)
+            if (x > GeometryConstants::SevenHundredFifty && facing == 1)
                 x = 750.0f;
-            if (x < g_SuikaOffsetAt00659E1C && facing == -1)
+            if (x < GeometryConstants::FiveHundredFifty && facing == -1)
                 x = 550.0f;
             opponent->x = static_cast<float>(facing * 510) + x;
             opponent->velocityX = 0.0f;
@@ -3984,7 +3980,7 @@ void SuikaFighter::Advance() {
             fieldF1E = 0;
         }
         if (animationStage == 0) {
-            if (scaleX > g_SuikaOffsetAt00659E18) {
+            if (scaleX > FloatConstants::SuikaMinimumScale) {
                 scaleX -= FloatConstants::OneFortieth;
                 scaleY -= FloatConstants::OneFortieth;
             } else {
@@ -4052,7 +4048,7 @@ void SuikaFighter::Advance() {
             PlaySound(0x10);
         }
         if (animationStage == 6) {
-            if (scaleX > g_SuikaOffsetAt00659E18) {
+            if (scaleX > FloatConstants::SuikaMinimumScale) {
                 scaleX -= FloatConstants::OneFortieth;
                 scaleY -= FloatConstants::OneFortieth;
             } else {

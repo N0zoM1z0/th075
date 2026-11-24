@@ -89,6 +89,12 @@ patterns, resource identifiers, and one cooperative-level diagnostic.
 Each complete null-terminated value matches the target data. The new
 definitions retain the distinct symbols used by the original relocations.
 
+Seven read-only floats use values already assigned by the corresponding
+clamp and scale branches. The 40 external loads still resolve to the same
+seven native addresses. The original assignments still use immediate
+operands. The name-entry constructor uses the existing `datab` archive
+root, with the full six bytes matching at `0x00657F7C`.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

@@ -3,7 +3,6 @@
 #include "GameSharedState.hpp"
 #include "YuyukoFighter.hpp"
 
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_BarrageYAt00659298;
 // Shared PE constants keep the names already used by their other consumers.
@@ -519,7 +518,7 @@ void YuyukoFighter::Advance() {
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
-            if ((velocityY) > g_ApproachUpperAt006592A4)
+            if ((velocityY) > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
             field07C = 0;
         }

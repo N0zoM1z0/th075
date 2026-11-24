@@ -3,7 +3,6 @@
 #include "GameSharedState.hpp"
 #include "PatchouliFighter.hpp"
 
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_PatchouliEffectYAt00659084;
 extern float g_PatchouliEffectYAt00659470;
@@ -544,7 +543,7 @@ void PatchouliFighter::Advance() {
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
-            if (velocityY > g_ApproachUpperAt006592A4)
+            if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
             field07C = 0;
         }

@@ -19,7 +19,6 @@ extern float g_F743_Y19CAt00659A14;
 extern float g_F743_Y1A0At00659288;
 extern float g_BarrageY3At0065908C;
 extern float g_OneShotYAt0065928C;
-extern float g_ApproachUpperAt006592A4;
 extern float g_F711_ReverseRandomAt00659A0C;
 extern float g_F722_LowYAt00659A10;
 extern float g_StormAngleShotYAt00659A18;
@@ -245,7 +244,7 @@ void RemiliaFighter::Advance() {
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
-#define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
+#define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::TwentyFive
 #define TRAJECTORY_MINIMUM_SPEED 6.0f
 #define TRAJECTORY_MAXIMUM_SPEED 25.0f
 #define TRAJECTORY_STAGE_THRESHOLD 1

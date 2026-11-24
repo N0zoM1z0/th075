@@ -3,7 +3,6 @@
 #include "GameSharedState.hpp"
 #include "MeilingFighter.hpp"
 
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_MeilingAirShotYAt00659288;
 extern float g_MeilingAirVolleyYAt0065908C;
@@ -1811,7 +1810,7 @@ void MeilingFighter::Advance() {
             field07C = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            velocityX = (velocityX) - g_ApproachUpperAt006592A4;
+            velocityX = (velocityX) - GeometryConstants::TwentyFive;
             if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
             }
@@ -1834,7 +1833,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            velocityX = (velocityX) + g_ApproachUpperAt006592A4;
+            velocityX = (velocityX) + GeometryConstants::TwentyFive;
         }
         if (animationStage == 4 && animationFrame == 0) {
             PlaySharedSound(0x1C);
@@ -2076,7 +2075,7 @@ void MeilingFighter::Advance() {
             field07C = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            velocityX = (velocityX) - g_ApproachUpperAt006592A4;
+            velocityX = (velocityX) - GeometryConstants::TwentyFive;
             if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
             }
@@ -2099,7 +2098,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            velocityX = (velocityX) + g_ApproachUpperAt006592A4;
+            velocityX = (velocityX) + GeometryConstants::TwentyFive;
         }
         if (animationStage == 4 && animationFrame == 0) {
             PlaySharedSound(0x1C);
@@ -2278,7 +2277,7 @@ void MeilingFighter::Advance() {
             velocityX = 0.0f;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            velocityX = (velocityX) - g_ApproachUpperAt006592A4;
+            velocityX = (velocityX) - GeometryConstants::TwentyFive;
             if (velocityX < FloatConstants::Zero) {
                 velocityX = 0.0f;
             }
@@ -2294,7 +2293,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            velocityX = (velocityX) + g_ApproachUpperAt006592A4;
+            velocityX = (velocityX) + GeometryConstants::TwentyFive;
         }
         if (animationStage == 4 && animationFrame == 0) {
             PlaySharedSound(0x1C);

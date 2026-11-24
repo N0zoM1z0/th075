@@ -12,8 +12,6 @@ extern float g_ReimuChargeFallAt00659094;
 extern float g_ReimuAirVolleyYAt00659098;
 extern float g_ReimuLowVolleyYAt006590A0;
 extern float g_ReimuHighVolleyYAt0065909C;
-extern float g_ReimuC8ClampAt006590B0;
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_ReimuStormPairYBaseAt00657CBC;
 extern float g_ReimuStormPairXBaseAt00658264;

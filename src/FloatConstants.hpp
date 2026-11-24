@@ -54,4 +54,5 @@ extern const double EightyFiveHundredthsDouble;
 extern const double OneDouble;
 extern const double OneAndHalfDouble;
 extern const double NineHundredNinetyEightAndNineTenths;
+extern const float SuikaMinimumScale;
 }

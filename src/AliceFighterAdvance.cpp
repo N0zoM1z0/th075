@@ -7,12 +7,10 @@ extern float g_AliceEffectYAt0065909C;
 extern float g_AliceEffectYAt006590A0;
 extern float g_AliceEffectYAt00659478;
 extern float g_AliceEffectYAt006595F4;
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaResourceYAt00659280;
 extern float g_OneShotYAt0065928C;
-extern float g_ReimuC8ClampAt006590B0;
 
 void AliceFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -529,7 +527,7 @@ void AliceFighter::Advance() {
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
-            if (velocityY > g_ApproachUpperAt006592A4)
+            if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
             field07C = 0;
         }
@@ -1506,9 +1504,9 @@ void AliceFighter::Advance() {
         field3AC = 1;
         SetCommandSelection(3,4,0xFF);
         if (animationStage == 0 && animationFrame == 0) { velocityX=0.0f; scriptCounterF00=0; }
-        if ((velocityX) > g_ReimuC8ClampAt006590B0) {
+        if ((velocityX) > GeometryConstants::Nine) {
             velocityX = (velocityX)-FloatConstants::Half;
-            if ((velocityX) < g_ReimuC8ClampAt006590B0) velocityX=9.0f;
+            if ((velocityX) < GeometryConstants::Nine) velocityX=9.0f;
         }
         if (inputY < 0) {
             if (facing*inputX > 0) {

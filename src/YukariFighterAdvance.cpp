@@ -4,7 +4,6 @@
 #include "YukariFighter.hpp"
 
 extern float g_BounceThresholdAt006590C0;
-extern float g_ReimuC8ClampAt006590B0;
 extern float g_YukariOffsetAt0065927C;
 extern float g_YukariOffsetAt00659284;
 extern float g_YukariOffsetAt0065974C;
@@ -1530,7 +1529,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) { velocityX = 0.0f; scriptCounterF00 = 0; }
         if ((velocityX) > GeometryConstants::Eight) {
             velocityX = (velocityX) - FloatConstants::Half;
-            if ((velocityX) < g_ReimuC8ClampAt006590B0) velocityX = 9.0f;
+            if ((velocityX) < GeometryConstants::Nine) velocityX = 9.0f;
         }
         if (inputY < 0) {
             if (facing * inputX > 0) {

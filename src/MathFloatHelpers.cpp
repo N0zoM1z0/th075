@@ -85,6 +85,7 @@ const double EightyFiveHundredthsDouble = 0.85;
 const double OneDouble = 1.0;
 const double OneAndHalfDouble = 1.5;
 const double NineHundredNinetyEightAndNineTenths = 998.9;
+const float SuikaMinimumScale = 0.333f;
 }
 
 namespace GeometryConstants {
@@ -175,4 +176,10 @@ const float SixteenHundred = 1600.0f;
 const float TwoThousand = 2000.0f;
 const float TenThousand = 10000.0f;
 const float ThreeHundred = 300.0f;
+const float Nine = 9.0f;
+const float NineHundredTwenty = 920.0f;
+const float NegativeFive = -5.0f;
+const float TwentyFive = 25.0f;
+const float FiveHundredFifty = 550.0f;
+const float SevenHundredFifty = 750.0f;
 }

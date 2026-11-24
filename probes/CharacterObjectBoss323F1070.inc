@@ -26,7 +26,7 @@ case 0x323: {
     if (animationStage<2) {
         SetPolarVelocity(field0C8,
             float(field0D8)*FloatConstants::OneTenth+
-            g_F1070_AnimSpeedAt006592A4);
+            GeometryConstants::TwentyFive);
         if (scaleX<FloatConstants::One) {
             scaleX=(scaleX)+FloatConstants::OneTenth;
             scaleY=(scaleY)+FloatConstants::OneTenth;

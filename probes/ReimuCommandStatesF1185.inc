@@ -6,7 +6,7 @@ case 0xC8: {
     if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; scriptCounterF00=0; }
     if ((velocityX)>GeometryConstants::Eight) {
         velocityX=(velocityX)-FloatConstants::Half;
-        if ((velocityX)<g_ReimuC8ClampAt006590B0) velocityX=9.0f;
+        if ((velocityX)<GeometryConstants::Nine) velocityX=9.0f;
     }
     if (inputY<0) {
         if ((facing)*inputX>0) {

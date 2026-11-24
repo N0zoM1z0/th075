@@ -23,8 +23,14 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 382 unresolved externals. Battle rendering calls the
-history renderer through the same list owner that stores its samples.
+stops at `LNK1120` with 371 unresolved externals. Seven shared float
+definitions use values already present in the clamp and scale branches.
+The replay name-entry scene uses the existing archive root. These changes
+resolved eleven symbols and cold-replayed 192 units across 118 objects.
+A headless archive consumer checked all seven float values.
+
+Battle rendering calls the history renderer through the same list owner
+that stores its samples.
 The history and music path changes resolved eleven symbols and cold-replayed
 43 units across 25 objects. A headless archive consumer constructed and
 cleared the history owner. The renderer's runtime test still depends on

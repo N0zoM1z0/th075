@@ -94,7 +94,7 @@ case 0x2C2: {
                 -((facing)),1);
             SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*125),
-                (opponent->y)-g_ApproachUpperAt006592A4,
+                (opponent->y)-GeometryConstants::TwentyFive,
                 (facing),1);
         }
         if ((scriptCounterF00)==6) {
@@ -105,7 +105,7 @@ case 0x2C2: {
                 -((facing)),1);
             SpawnBattleEffect(0x329,
                 opponent->x+float(((facing))*125),
-                (opponent->y)-g_ApproachUpperAt006592A4,
+                (opponent->y)-GeometryConstants::TwentyFive,
                 (facing),1);
         }
         if ((scriptCounterF00)==7) {

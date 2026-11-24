@@ -77,7 +77,6 @@ extern float g_AnimationMaximumAt006583B4;
 extern float g_JumpGroundCorrectionAt00658058;
 extern double g_JumpReflectionAt006583E8;
 extern float g_ApproachLowerAt00658290;
-extern float g_ApproachUpperAt006592A4;
 extern float g_StopThresholdAt00657480;
 extern float g_TrajectoryUpperAt006590C4;
 extern float g_ContactProjectionAt00657888;
@@ -312,7 +311,7 @@ void SakuyaFighter::Advance() {
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD g_ApproachLowerAt00658290
-#define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
+#define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::TwentyFive
 #define TRAJECTORY_MINIMUM_SPEED 6.0f
 #define TRAJECTORY_MAXIMUM_SPEED 25.0f
 #define TRAJECTORY_STAGE_THRESHOLD 3

@@ -13,7 +13,7 @@ case 0xC8: {
     }
     if ((velocityX)>GeometryConstants::Fifteen) {
         velocityX=(velocityX)-FloatConstants::Half;
-        if ((velocityX)<g_F834_LowerAt006590B0)
+        if ((velocityX)<GeometryConstants::Nine)
             velocityX=9.0f;
     }
     if (inputY<0) {

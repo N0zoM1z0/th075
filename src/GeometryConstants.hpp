@@ -88,4 +88,10 @@ extern const float SixteenHundred;
 extern const float TwoThousand;
 extern const float TenThousand;
 extern const float ThreeHundred;
+extern const float Nine;
+extern const float NineHundredTwenty;
+extern const float NegativeFive;
+extern const float TwentyFive;
+extern const float FiveHundredFifty;
+extern const float SevenHundredFifty;
 }

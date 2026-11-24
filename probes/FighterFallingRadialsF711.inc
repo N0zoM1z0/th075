@@ -22,7 +22,7 @@
                 break;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                velocityX=float(RecordedRange(0,15))+g_ApproachUpperAt006592A4;
+                velocityX=float(RecordedRange(0,15))+GeometryConstants::TwentyFive;
                 velocityY=40.0f;
                 field05C=6.0f;
                 SpawnAuxEffect(0x7D,

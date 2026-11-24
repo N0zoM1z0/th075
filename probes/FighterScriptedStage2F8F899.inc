@@ -67,7 +67,7 @@ case 0x2F8: {
         scaleX=3.0f;
         scaleY=0.05f;
         velocityX=float(RecordedRange(0,60))+
-            g_ApproachUpperAt006592A4;
+            GeometryConstants::TwentyFive;
         SpawnAuxEffect(0x80,
             float((facing)*150)+(x),
             y,(facing),1);

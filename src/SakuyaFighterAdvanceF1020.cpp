@@ -28,7 +28,6 @@ extern float g_F974_ShotYAt00659498;
 extern float g_F983_BurstYAt00659490;
 extern float g_F1017_VolleyYAt0065908C;
 extern float g_F1019_VolleyYAt0065908C;
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 void SakuyaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -250,7 +249,7 @@ void SakuyaFighter::Advance() {
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
-#define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
+#define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::TwentyFive
 #define TRAJECTORY_MINIMUM_SPEED 6.0f
 #define TRAJECTORY_MAXIMUM_SPEED 25.0f
 #define TRAJECTORY_STAGE_THRESHOLD 3

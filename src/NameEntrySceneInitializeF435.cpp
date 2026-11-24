@@ -3,7 +3,7 @@
 #include "TextureManagerF198.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 extern char g_ReplayDataPathAt00657F84[];
-extern char g_ReplayArchiveRootAt00657F7C[];
+extern const char g_ReplayArchiveRootAt00657F7C[] = "datab";
 
 SharedNameEntryScene::SharedNameEntryScene() {
     texture = new TextureManagerF198;

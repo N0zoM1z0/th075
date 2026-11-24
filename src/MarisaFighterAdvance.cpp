@@ -14,11 +14,8 @@ extern float g_MarisaResourceYAt0065927C;
 extern float g_MarisaResourceYAt0065908C;
 extern float g_MarisaCardFallAt00659264;
 extern float g_MarisaResourceYAt00659280;
-extern float g_MarisaMinimumDriftAt00659278;
-extern float g_MarisaHighBoundaryAt0065926C;
 extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaNegativeCardDriftAt00659268;
-extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 void MarisaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -542,7 +539,7 @@ void MarisaFighter::Advance() {
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
-            if (velocityY > g_ApproachUpperAt006592A4)
+            if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
             field07C = 0;
         }
@@ -3831,7 +3828,7 @@ void MarisaFighter::Advance() {
         if (y > FloatConstants::Zero && animationStage > 16) {
             velocityY -= field05C;
             velocityX = (velocityX) + FloatConstants::Half;
-            if (velocityX > g_MarisaMinimumDriftAt00659278)
+            if (velocityX > GeometryConstants::NegativeFive)
                 velocityX = -5.0f;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
@@ -4129,7 +4126,7 @@ void MarisaFighter::Advance() {
                 (x) + GeometryConstants::Thirty - static_cast<float>(RecordedRange(0, 0x3C)),
                 (y) + GeometryConstants::Forty + static_cast<float>(RecordedRange(0, 0x8C)), facing, 1);
         }
-        if (animationStage == 7 && y > g_MarisaHighBoundaryAt0065926C) {
+        if (animationStage == 7 && y > GeometryConstants::NineHundredTwenty) {
             y = 920.0f;
             ResetPrimaryCounters(0x2F9);
             ClearMotionFields();
@@ -4175,7 +4172,7 @@ void MarisaFighter::Advance() {
             velocityX = g_MarisaNegativeCardDriftAt00659268 -
                 static_cast<float>(g_OptionsModeAt006714D0) *
                 FloatConstants::Half;
-        if (animationStage == 1 && y > g_MarisaHighBoundaryAt0065926C) {
+        if (animationStage == 1 && y > GeometryConstants::NineHundredTwenty) {
             y = 920.0f;
             ResetPrimaryCounters(0x2F9);
             return;
