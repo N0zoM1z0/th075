@@ -253,7 +253,7 @@ SuikaFighter::ConfigureStage
 OpeningTimeline4277A0::RenderTimeline
 MusicScene425C80::RenderList
 ResultListScene::Render
-AuxiliaryActor4A80F0::Update
+MarisaObject::UpdateTrackingNode
 PatchouliFighter::ChooseAction
 PatchouliFighter::RenderStage
 PatchouliFighter::PollCommands
@@ -998,3 +998,4 @@ YuyukoObject::Advance
 RemiliaFighter::Advance
 YoumuFighter::Advance
 ReimuObject::Advance
+MarisaObject::Advance

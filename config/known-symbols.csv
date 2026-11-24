@@ -235,7 +235,7 @@ address,name,module,confidence,evidence
 0x004277A0,OpeningTimeline4277A0::RenderTimeline,OpeningTimeline4277A0,inferred,"F118; whole cold exact / all CPU-x87 joins, actual draw packets and native floating order; full owner layouts and original names provisional"
 0x00425C80,MusicScene425C80::RenderList,MenuSceneDrawing,inferred,"F119; own whole cold exact / complete CPU-x87 joins, true drawing receivers and bounded SDK-row views; original layouts and names provisional"
 0x00430080,ResultListScene::Render,MenuSceneDrawing,inferred,"F119; own whole cold exact / complete CPU-x87 joins, true drawing receivers and bounded SDK-row views; original layouts and names provisional"
-0x004A80F0,AuxiliaryActor4A80F0::Update,ActorAuxiliary,inferred,"F120; own whole cold exact / complete CPU-x87 joins, true owner/opponent receivers and scalar conversions; original layouts and names provisional"
+0x004A80F0,MarisaObject::UpdateTrackingNode,ActorAuxiliary,inferred,"F120; own whole cold exact / complete CPU-x87 joins, true owner/opponent receivers and scalar conversions; original layouts and names provisional"
 0x00507B20,PatchouliFighter::ChooseAction,ActorAuxiliary,inferred,"F120; own whole cold exact / complete CPU-x87 joins, true owner/opponent receivers and scalar conversions; original layouts and names provisional"
 0x00507040,PatchouliFighter::RenderStage,CharacterSpecial507040,inferred,"F121; own whole cold exact / complete CPU-x87 joins, full switch/selector and true draw/input packets; original layouts and names provisional"
 0x005076F0,PatchouliFighter::PollCommands,CharacterSpecial507040,inferred,"F121; own whole cold exact / complete CPU-x87 joins, full switch/selector and true draw/input packets; original layouts and names provisional"
@@ -952,3 +952,4 @@ address,name,module,confidence,evidence
 0x0045DD70,ReimuFighter::AdvanceActionStatesAt0045DD70,ReimuFighter,inferred,Fighter vtable slot 1 and complete cold replay; R063
 0x004AC040,SakuyaFighter::Advance,SakuyaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x00476A40,ReimuObject::Advance,ReimuObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
+0x0049C8F0,MarisaObject::Advance,MarisaObject,inferred,Character-object vtable slot 1 and complete cold replay; R048

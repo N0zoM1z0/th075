@@ -1,27 +1,18 @@
 #include "PatchouliFighter.hpp"
+#include "MarisaFighter.hpp"
 #include "Fighter.hpp"
 #include "CharacterObject.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "CharacterAuxAction.hpp"
 #include "CharacterAIPolicy.hpp"
 
-class AuxiliaryActor4A80F0 : public CharacterObject {
-public:
-    void Update();
-};
-class EffectEmitterF120 {
-public:
-    void Spawn(short effect, float x, float y, signed char facing, signed char layer);
-};
 extern int g_AI507B20Countdown;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner) + (offset)))
 #define OWNER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(owner) + (offset))
-#define OTHER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(OWNER(void*, 0x2E8)) + (offset))
-#define SPAWN(id, x, y, f, l) reinterpret_cast<EffectEmitterF120*>(owner)->Spawn(id, x, y, f, l)
 
-void AuxiliaryActor4A80F0::Update()
+void MarisaObject::UpdateTrackingNode()
 {
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
@@ -40,84 +31,84 @@ void AuxiliaryActor4A80F0::Update()
         color[3] = 255;
     }
     if (action == 828) {
-        OWNER(short, 0xF1A) = static_cast<short>(x);
-        OWNER(short, 0xF26) = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->fieldF1A = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->fieldF26 = static_cast<short>(y);
     }
     if (action == 829) {
-        OWNER(short, 0xF1C) = static_cast<short>(x);
-        OWNER(short, 0xF28) = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->fieldF1C = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->fieldF28 = static_cast<short>(y);
     }
     if (action == 830) {
-        OWNER(short, 0xF1E) = static_cast<short>(x);
-        OWNER(short, 0xF2A) = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->fieldF1E = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->fieldF2A = static_cast<short>(y);
     }
     if (action == 831) {
-        OWNER(short, 0xF20) = static_cast<short>(x);
-        OWNER(short, 0xF2C) = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->fieldF20 = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->fieldF2C = static_cast<short>(y);
     }
     if (action == 832) {
-        OWNER(short, 0xF22) = static_cast<short>(x);
-        OWNER(short, 0xF2E) = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->fieldF22 = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->fieldF2E = static_cast<short>(y);
     }
     if (action == 833) {
-        OWNER(short, 0xF24) = static_cast<short>(x);
-        OWNER(short, 0xF30) = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->fieldF24 = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->fieldF30 = static_cast<short>(y);
     }
-    if ((OWNER(short, 0x60) == 709 || OWNER(short, 0x60) == 710) &&
+    if ((owner->action == 709 || owner->action == 710) &&
         owner->animationStage == 5 && owner->animationFrame == 0 &&
         field0DC == 0 && animationStage == 1 &&
-        ((action == 833 && OWNER(short, 0xF16) == 6) ||
-         (action == 832 && OWNER(short, 0xF16) == 5) ||
-         (action == 831 && OWNER(short, 0xF16) == 4) ||
-         (action == 830 && OWNER(short, 0xF16) == 3) ||
-         (action == 829 && OWNER(short, 0xF16) == 2) ||
-         (action == 828 && OWNER(short, 0xF16) == 1))) {
+        ((action == 833 && static_cast<MarisaFighter*>(owner)->fieldF16 == 6) ||
+         (action == 832 && static_cast<MarisaFighter*>(owner)->fieldF16 == 5) ||
+         (action == 831 && static_cast<MarisaFighter*>(owner)->fieldF16 == 4) ||
+         (action == 830 && static_cast<MarisaFighter*>(owner)->fieldF16 == 3) ||
+         (action == 829 && static_cast<MarisaFighter*>(owner)->fieldF16 == 2) ||
+         (action == 828 && static_cast<MarisaFighter*>(owner)->fieldF16 == 1))) {
         field0DC = 1;
         field0DE = static_cast<short>(AngleAt00483300(
-            OTHER_FLOAT(0x48) + 100.0f - y,
-            (OTHER_FLOAT(0x44) - x) * facing) / 0.017453288659453392f);
+            owner->opponent->y + 100.0f - y,
+            (owner->opponent->x - x) * facing) / 0.017453288659453392f);
         ResetSecondaryCounter(2);
-        --OWNER(short, 0xF14);
-        --OWNER(short, 0xF16);
+        --static_cast<MarisaFighter*>(owner)->fieldF14;
+        --static_cast<MarisaFighter*>(owner)->fieldF16;
     }
-    if ((OWNER(short, 0x60) == 716 || OWNER(short, 0x60) == 717) &&
+    if ((owner->action == 716 || owner->action == 717) &&
         owner->animationStage == 5 && owner->animationFrame == 0 &&
         (animationStage == 1 || animationStage == 2) &&
-        ((action == 833 && OWNER(short, 0xF16) == 6) ||
-         (action == 832 && OWNER(short, 0xF16) == 5) ||
-         (action == 831 && OWNER(short, 0xF16) == 4) ||
-         (action == 830 && OWNER(short, 0xF16) == 3) ||
-         (action == 829 && OWNER(short, 0xF16) == 2) ||
-         (action == 828 && OWNER(short, 0xF16) == 1))) {
+        ((action == 833 && static_cast<MarisaFighter*>(owner)->fieldF16 == 6) ||
+         (action == 832 && static_cast<MarisaFighter*>(owner)->fieldF16 == 5) ||
+         (action == 831 && static_cast<MarisaFighter*>(owner)->fieldF16 == 4) ||
+         (action == 830 && static_cast<MarisaFighter*>(owner)->fieldF16 == 3) ||
+         (action == 829 && static_cast<MarisaFighter*>(owner)->fieldF16 == 2) ||
+         (action == 828 && static_cast<MarisaFighter*>(owner)->fieldF16 == 1))) {
         ResetSecondaryCounter(3);
-        --OWNER(short, 0xF16);
+        --static_cast<MarisaFighter*>(owner)->fieldF16;
         velocityX = 0.0f;
         velocityY = 0.0f;
     }
-    if (OWNER(short, 0xF12) == 2) {
-        SPAWN(836, x, y, 1, 0);
+    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 2) {
+        owner->SpawnBattleEffect(836, x, y, 1, 0);
     }
-    if (OWNER(short, 0xF12) == 99 && animationStage < 7 && field0DC == 0) ResetSecondaryCounter(7);
-    if (OWNER(short, 0xF12) == 3 && animationStage < 2) ResetSecondaryCounter(2);
-    field0D8 = static_cast<short>((OWNER(short, 0xF10) - 180) + field0C8);
+    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 99 && animationStage < 7 && field0DC == 0) ResetSecondaryCounter(7);
+    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 3 && animationStage < 2) ResetSecondaryCounter(2);
+    field0D8 = static_cast<short>((static_cast<MarisaFighter*>(owner)->fieldF10 - 180) + field0C8);
     if (field0D8 > 180) field0D8 -= 360;
     if (field0D8 < -180) field0D8 += 360;
     field0DA += 5;
-    if (OWNER(short, 0xF12) != 6 && OWNER(signed char, 0x39D) > 1 && field0DA > 120) field0DA = 120;
-    if (OWNER(signed char, 0x39D) == 1 && field0DA > 140) field0DA = 140;
-    if (OWNER(short, 0xF12) == 6 && field0DA > 180) field0DA = 180;
+    if (static_cast<MarisaFighter*>(owner)->fieldF12 != 6 && owner->field39D > 1 && field0DA > 120) field0DA = 120;
+    if (owner->field39D == 1 && field0DA > 140) field0DA = 140;
+    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 6 && field0DA > 180) field0DA = 180;
     if (animationStage == 1) {
         SetPolarVelocity(field0D8, field0DA);
-        x = static_cast<int>(OWNER(short, 0xF0C) + facing * velocityX);
-        y = static_cast<int>(OWNER(short, 0xF0E) + velocityY);
+        x = static_cast<int>(owner->fieldF0C + facing * velocityX);
+        y = static_cast<int>(owner->fieldF0E + velocityY);
         field080 = 1;
         field07C = 0;
     }
-    if (animationStage == 2 && OWNER(short, 0xF12) == 3 && field0DC == 0) {
+    if (animationStage == 2 && static_cast<MarisaFighter*>(owner)->fieldF12 == 3 && field0DC == 0) {
         SetPolarVelocity(field0D8, field0DA);
-        x = static_cast<int>(OWNER(short, 0xF0C) + facing * velocityX);
-        y = static_cast<int>(OWNER(short, 0xF0E) + velocityY);
-        SPAWN(836, x, y, 1, 0);
+        x = static_cast<int>(owner->fieldF0C + facing * velocityX);
+        y = static_cast<int>(owner->fieldF0E + velocityY);
+        owner->SpawnBattleEffect(836, x, y, 1, 0);
         if (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6) { ResetSecondaryCounter(7); return; }
         if (field07C == 4 || field07C == 5 || field07C == 6) {
             field080 = 1;
@@ -130,7 +121,7 @@ void AuxiliaryActor4A80F0::Update()
         field0E0 = 1;
         x = facing * velocityX + x;
         y = y - velocityY;
-        SPAWN(836, x, y, 1, 0);
+        owner->SpawnBattleEffect(836, x, y, 1, 0);
         if (field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { ResetSecondaryCounter(7); return; }
         if (field07C == 5 || field07C == 6) {
             field080 = 1;
@@ -139,10 +130,10 @@ void AuxiliaryActor4A80F0::Update()
     }
     if (animationStage == 3) {
         SetPolarVelocity(field0D8, field0DA);
-        x = static_cast<int>(OWNER(short, 0xF0C) + facing * velocityX);
-        y = static_cast<int>(OWNER(short, 0xF0E) + velocityY);
-        OWNER_FLOAT(0x314) = action - 828;
-        if (field0DC == 0) SPAWN(841, OWNER(signed char, 0x66) * 20 + x, y, OWNER(signed char, 0x66), 1);
+        x = static_cast<int>(owner->fieldF0C + facing * velocityX);
+        y = static_cast<int>(owner->fieldF0E + velocityY);
+        owner->field314 = action - 828;
+        if (field0DC == 0) owner->SpawnBattleEffect(841, owner->facing * 20 + x, y, owner->facing, 1);
         if (field0DC > 120 || field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) {
             ResetSecondaryCounter(7);
             field0DC = 0;
@@ -152,16 +143,16 @@ void AuxiliaryActor4A80F0::Update()
         field0E0 = 1;
     }
     if (animationStage == 4) {
-        if (field0DC == 1) SPAWN(841, OWNER(signed char, 0x66) * 20 + x, y, OWNER(signed char, 0x66), 1);
+        if (field0DC == 1) owner->SpawnBattleEffect(841, owner->facing * 20 + x, y, owner->facing, 1);
         if (field0DC > 120 || field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { ResetSecondaryCounter(7); return; }
         ++field0DC;
     }
     if (animationStage == 7) color[0] = color[0] - 25;
-    if (OWNER(short, 0xF12) == 6) SPAWN(843, x, y, 1, 1);
+    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 6) owner->SpawnBattleEffect(843, x, y, 1, 1);
     if (AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
-        if (field0DC == 0) --OWNER(short, 0xF14);
-        if (field0E0 == 0) --OWNER(short, 0xF16);
+        if (field0DC == 0) --static_cast<MarisaFighter*>(owner)->fieldF14;
+        if (field0E0 == 0) --static_cast<MarisaFighter*>(owner)->fieldF16;
     } else {
         if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
@@ -172,7 +163,6 @@ void AuxiliaryActor4A80F0::Update()
     }
 }
 
-#undef SPAWN
 #undef OWNER
 #undef FIELD
 

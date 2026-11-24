@@ -254,7 +254,7 @@ SuikaFighter::ConfigureStage,0x005C43D0,function
 OpeningTimeline4277A0::RenderTimeline,0x004277A0,function
 MusicScene425C80::RenderList,0x00425C80,function
 ResultListScene::Render,0x00430080,function
-AuxiliaryActor4A80F0::Update,0x004A80F0,function
+MarisaObject::UpdateTrackingNode,0x004A80F0,function
 PatchouliFighter::ChooseAction,0x00507B20,function
 PatchouliFighter::RenderStage,0x00507040,function
 PatchouliFighter::PollCommands,0x005076F0,function
@@ -1001,3 +1001,4 @@ YuyukoObject::Advance,0x0057D580,function
 RemiliaFighter::Advance,0x00543210,function
 YoumuFighter::Advance,0x005214B0,function
 ReimuObject::Advance,0x00476A40,function
+MarisaObject::Advance,0x0049C8F0,function

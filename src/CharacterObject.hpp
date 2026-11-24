@@ -31,9 +31,14 @@ public:
 class ReimuObject : public CharacterObject {
 public:
     ReimuObject(void* ownerFighter);
-    virtual void Advance(); // 00476A40, partial natural-C++ research parent
+    virtual void Advance(); // 00476A40
 };
-class MarisaObject : public CharacterObject { public: MarisaObject(void* ownerFighter); };
+class MarisaObject : public CharacterObject {
+public:
+    MarisaObject(void* ownerFighter);
+    virtual void Advance();     // 0049C8F0
+    void UpdateTrackingNode();   // 004A80F0
+};
 class SakuyaObject : public CharacterObject {
 public:
     SakuyaObject(void* ownerFighter);

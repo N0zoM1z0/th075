@@ -227,6 +227,12 @@ before adding the base, in a different instruction order.
   the second, and the second yields matching table offsets while 106
   instruction bytes still differ in 929. Compare the complete extent
   after each change. [Suika controls](GIANTS.md#2026-11-24--suikas-three-startup-joins-cold-replay-exactly)
+- The native dispatch can reveal repeated calls and distinct state
+  bodies even when the decompiler flattens their control flow. Marisa
+  object action 812 has 13 identical clear effects, and actions
+  828–833 each dispatch to their own three-instruction call block.
+  Match the call count and switch targets before comparing registers.
+  [Marisa object replay](GIANTS.md#2026-11-24--marisas-object-advance-cold-replays-exactly)
 - VC7.1's `/FAcs` listing ties otherwise identical epilogue jumps to
   source lines. In Reimu's object Advance, 59 direct jumps to the shared
   return had been routed through individual case tails. Explicit

@@ -90,6 +90,14 @@ seven jump tables, four remap arrays and 1,491 relocations. The
 The ledger credits 46,755 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--youmus-fighter-advance-cold-replays-exactly)
 
+### Marisa object Advance is exact
+
+`marisa-object-advance-0049c8f0` cold-replays 47,099 bytes with all
+1,021 relocations. The 75 independent actions and the default match
+every dispatch offset. Actions 828–833 call the typed
+`MarisaObject::UpdateTrackingNode`. The ledger credits 46,596 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--marisas-object-advance-cold-replays-exactly)
+
 ### Reimu object Advance is exact
 
 `reimu-object-advance-00476a40` cold-replays 51,378 bytes with all
@@ -229,13 +237,13 @@ complete function.
 
 ## Remaining giant parents
 
-The remaining functions have partial or unstarted parents.
+The remaining authored functions are fighter `Advance` methods with
+partial or unstarted parents.
 
-- Object: Marisa `0049C8F0` (46,596 bytes).
-- Fighters: Marisa `00486550` (50,735 bytes), Alice `004D7E70`
-  (43,601 bytes), Patchouli `004F7130` (44,211 bytes), Yuyuko `00564BE0`
-  (61,872 bytes), Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0`
-  (71,616 bytes), Meiling `005D73C0` (43,282 bytes).
+- Marisa `00486550` (50,735 bytes), Alice `004D7E70` (43,601 bytes),
+  Patchouli `004F7130` (44,211 bytes), Yuyuko `00564BE0` (61,872 bytes).
+- Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0` (71,616 bytes),
+  Meiling `005D73C0` (43,282 bytes).
 
 `docs/GIANTS.md` records the full sources, original extents and
 previous experiments.
