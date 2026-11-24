@@ -1,16 +1,14 @@
+#include "GameConfigStorage.hpp"
 #include "GameSharedState.hpp"
 #include "DisplayOptions.hpp"
 #include <windows.h>
 
 // These are independently observed slices of settings, not a synthesized
 // complete owner, and this translation unit defines no target data.
-extern BYTE g_KeyBindingsAt00671440[];
 extern BYTE g_OptionsFlagAt00671604;
 extern BYTE g_SettingsByteAt006714D2;
 extern BYTE g_OptionsFlagAt00671430;
 extern BYTE g_OptionsFlagAt00671428;
-extern BYTE g_StreamVolumeAt006714B7;
-extern BYTE g_SoundVolumeAt006714B6;
 
 namespace OptionsSettingsF186 {
 void SaveConfiguration()

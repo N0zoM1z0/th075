@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
@@ -11,7 +12,6 @@ public:
 };
 // Reference-only observed byte views. No original names or ownership claimed.
 extern signed char g_BackgroundPadFrameAt00671620;
-extern unsigned char g_BackgroundPadNoticeAt00671621;
 
 // All used animation and overlay fields share the scene layout.
 #define QUAD reinterpret_cast<SpriteTransform*>(&spriteQuad)
@@ -179,7 +179,7 @@ void CharacterSelectScene::Render()
             characterTextures->DrawQuad((chosenCharacter[0]) * 2 + 1, spriteQuad, &clipRect,
                                  INVERSE_ALPHA(portraitReturn[0], 100.0f, 255));
         }
-        if (g_BackgroundPadNoticeAt00671621 != 0) {
+        if (g_StoryResultAt00671621 != 0) {
             SetRect(&clipRect, 144, g_BackgroundPadFrameAt00671620 * 32 - 32,
                     224, g_BackgroundPadFrameAt00671620 * 32);
             QUAD->BuildQuad(0.0f, 0.0f, 80.0f, 32.0f);

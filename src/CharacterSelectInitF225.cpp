@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameProgress.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
@@ -20,9 +21,7 @@ extern const char g_CharacterTextureDataAt0065820C[];
 extern const char g_CharacterTextureRootAt00658204[];
 extern const char g_BackgroundTextureDataAt00658230[];
 extern const char g_BackgroundTextureRootAt00658228[];
-extern unsigned char g_SelectionModeAt0066C238;
 extern unsigned char g_FramePadAt00671620;
-extern unsigned char g_ContinueUsedAt00671624;
 namespace GameConfigF193 { void ReadIni(); }
 CharacterSelectScene::CharacterSelectScene()
 {
@@ -43,7 +42,7 @@ CharacterSelectScene::CharacterSelectScene()
     (backgroundTextures)=new TextureManagerF198();
     (backgroundTextures)->AllocateUnformattedSlots(17);
     (backgroundTextures)->LoadDefault(g_BackgroundTextureDataAt00658230,g_BackgroundTextureRootAt00658228);
-    g_SelectionModeAt0066C238=1;
+    g_ReplayModeAt0066C238=1;
     g_FramePadAt00671620=0;
     g_ContinueUsedAt00671624=0;
     GameConfigF193::ReadIni();

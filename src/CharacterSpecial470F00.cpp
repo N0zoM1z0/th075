@@ -1,9 +1,9 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "CameraMotion.hpp"
 #include "ReimuFighter.hpp"
 #include "GameLeafHelpers.hpp"
 
-extern signed char stageIntroCharacter;
 
 void ReimuFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
@@ -13,7 +13,7 @@ void ReimuFighter::ConfigureStage() {
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
-        stageIntroCharacter = 1;
+        g_StageSelectionAt0067161D = 1;
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
@@ -32,7 +32,7 @@ void ReimuFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         sequencePhase = 10;
-        stageIntroCharacter = 13;
+        g_StageSelectionAt0067161D = 13;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -52,7 +52,7 @@ void ReimuFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         sequencePhase = 20;
-        stageIntroCharacter = 0;
+        g_StageSelectionAt0067161D = 0;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -74,7 +74,7 @@ void ReimuFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         sequencePhase = 30;
-        stageIntroCharacter = 6;
+        g_StageSelectionAt0067161D = 6;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -96,7 +96,7 @@ void ReimuFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         sequencePhase = 40;
-        stageIntroCharacter = 6;
+        g_StageSelectionAt0067161D = 6;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -119,7 +119,7 @@ void ReimuFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -141,7 +141,7 @@ void ReimuFighter::ConfigureStage() {
     case 7:
         opponent->field460 = 1000000;
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;

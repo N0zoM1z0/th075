@@ -1,3 +1,4 @@
+#include "GameConfigStorage.hpp"
 #include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
@@ -19,8 +20,6 @@ class SceneQuadDrawingF124 { public: void DrawQuad(int, const SpriteQuad40CA80&,
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671428;
-extern signed char g_SettingsVolume006714B7;
-extern signed char g_SettingsVolume006714B6;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define DRAWING reinterpret_cast<TimelineDrawing438D00*>(textures)
@@ -82,7 +81,7 @@ void OptionsScene::Render() {
         reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 79, 45, 241, 51);
         TRANSFORM(quadValue)->BuildQuad(15.0f, 13.0f, 177.0f, 19.0f);
-        TRANSFORM(quadValue)->ScaleQuad(15.0f, 13.0f, 0, static_cast<float>(g_SettingsVolume006714B7) / 100.0f, 1.0f, 1.0f);
+        TRANSFORM(quadValue)->ScaleQuad(15.0f, 13.0f, 0, static_cast<float>(static_cast<signed char>(g_StreamVolumeAt006714B7)) / 100.0f, 1.0f, 1.0f);
         TRANSFORM(quadValue)->TranslateQuad(304.0f, 192.0f, 0);
         reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 79, 109, 241, 115);
@@ -91,7 +90,7 @@ void OptionsScene::Render() {
         reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 79, 77, 241, 83);
         TRANSFORM(quadValue)->BuildQuad(15.0f, 45.0f, 177.0f, 51.0f);
-        TRANSFORM(quadValue)->ScaleQuad(15.0f, 45.0f, 0, static_cast<float>(g_SettingsVolume006714B6) / 100.0f, 1.0f, 1.0f);
+        TRANSFORM(quadValue)->ScaleQuad(15.0f, 45.0f, 0, static_cast<float>(static_cast<signed char>(g_SoundVolumeAt006714B6)) / 100.0f, 1.0f, 1.0f);
         TRANSFORM(quadValue)->TranslateQuad(304.0f, 192.0f, 0);
         reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 0, 96, 64, 128);

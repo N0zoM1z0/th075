@@ -32,7 +32,7 @@ short BattleScene::AdvanceState()
         if (TIMER == 10) {
             fighters[0]->field3A0 = 0; fighters[1]->field3A0 = 0;
             fighters[0]->field39C = 0; fighters[1]->field39C = 0;
-            if (g_FrameClockMode == 2) {
+            if (g_ReplayModeAt0066C238 == 2) {
                 if (g_StageAt0067161E == g_StateReplayLimit || g_CombatMode == 1 || g_CombatMode == 2) { STATE = 6; break; }
                 AudioControl407CA0::ScheduleFade(-10000, -200, true, false);
                 return 0x2201;
@@ -78,15 +78,15 @@ short BattleScene::AdvanceState()
                 fighters[WINNER]->noticeBadge = fighters[WINNER]->quoteBadges[LINE];
             } else if (g_CombatMode == 4) {
                 if (fighters[0]->field3CE.signedAt3CE != 0) {
-                    if (g_FrameClockMode == 2) STATE = 6;
+                    if (g_ReplayModeAt0066C238 == 2) STATE = 6;
                     else { field0A0 = 1; field118 = 1; break; }
                 } else {
-                    if (g_FrameClockMode == 2) {
+                    if (g_ReplayModeAt0066C238 == 2) {
                         if (g_StageAt0067161E == g_StateReplayLimit) { STATE = 6; break; }
                         AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
                     } else {
                         g_StateReplay.AppendRecord();
-                        if (g_StageAt0067161E == g_StateRecordLimit) {
+                        if (g_StageAt0067161E == g_CharacterCountAt0067161F) {
                             MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
                             g_StateReturnFlag = -1; return 0x2207;
                         }
@@ -94,31 +94,31 @@ short BattleScene::AdvanceState()
                     }
                 }
             } else {
-                if (g_FrameClockMode == 2) STATE = 6;
+                if (g_ReplayModeAt0066C238 == 2) STATE = 6;
                 else { field0A0 = 1; field118 = 1; }
             }
         }
         break;
     case 6:
         MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
-        if (g_FrameClockMode == 2 || g_FrameClockMode == 4) return 0x2205;
+        if (g_ReplayModeAt0066C238 == 2 || g_ReplayModeAt0066C238 == 4) return 0x2205;
         return 0x2203;
     case 7:
         if (fighters[0]->field6EF) {
             fighters[0]->field6EF = 0; ++field05C;
             if (field05C == 1) {
                 TIMER = 200; STATE = 0;
-                if (g_FrameClockMode == 4) { g_FrameClockMode = 2; g_StateReplayChanged = 1; }
-                if (g_FrameClockMode == 3) g_FrameClockMode = 1;
+                if (g_ReplayModeAt0066C238 == 4) { g_ReplayModeAt0066C238 = 2; g_InputCanCancelAt00671632 = 1; }
+                if (g_ReplayModeAt0066C238 == 3) g_ReplayModeAt0066C238 = 1;
             } else if (field05C == 2) {
                 AudioControl407CA0::ScheduleFade(-10000, -160, true, false);
                 g_WindowOverlayAt006714C4->InstallPresentCallback();
                 Render();
                 g_WindowOverlayAt006714C4->EnableDirectDraw();
                 g_WindowOverlayAt006714C4->CapturePrimary();
-                if (g_FrameClockMode == 4) { g_FrameClockMode = 2; g_StateReplayChanged = 1; }
-                else if (g_FrameClockMode == 3) g_FrameClockMode = 1;
-                if (g_FrameClockMode == 1) g_StateReplay.AppendRecord();
+                if (g_ReplayModeAt0066C238 == 4) { g_ReplayModeAt0066C238 = 2; g_InputCanCancelAt00671632 = 1; }
+                else if (g_ReplayModeAt0066C238 == 3) g_ReplayModeAt0066C238 = 1;
+                if (g_ReplayModeAt0066C238 == 1) g_StateReplay.AppendRecord();
                 return static_cast<short>(0xFF06);
             }
         }
@@ -127,7 +127,7 @@ short BattleScene::AdvanceState()
         MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); g_StateReplay.AppendRecord(); return 0x2207;
     case 14:
         MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
-        if (g_FrameClockMode == 2 || g_FrameClockMode == 4) return 0x2205;
+        if (g_ReplayModeAt0066C238 == 2 || g_ReplayModeAt0066C238 == 4) return 0x2205;
         if (g_StateReturnFlag) g_StateReplay.AppendRecord();
         if (g_CombatMode == 3 && fighters[0]->score > g_StateScoreThreshold) return 0x220A;
         return 0x2203;
@@ -163,22 +163,22 @@ short BattleScene::AdvanceState()
         if (TIMER == 10) {
             fighters[0]->field3A0 = 0; fighters[1]->field3A0 = 0;
             fighters[0]->field39C = 0; fighters[1]->field39C = 0;
-            if (g_FrameClockMode == 2) {
+            if (g_ReplayModeAt0066C238 == 2) {
                 if (fighters[0]->field3CE.signedAt3CE) STATE = 6;
-                else { STATE = 7; g_FrameClockMode = 4; g_StateReplayChanged = 1; }
+                else { STATE = 7; g_ReplayModeAt0066C238 = 4; g_InputCanCancelAt00671632 = 1; }
             } else if (fighters[0]->field3CE.signedAt3CE) {
                 STATE = 12;
-                if (g_StateContinueCount > 0) field118 = 0;
+                if (g_ContinueCountAt00671623 > 0) field118 = 0;
                 else field118 = 1;
                 TIMER = 100;
             } else {
                 STATE = 7;
-                if (g_FrameClockMode == 1) g_FrameClockMode = 3;
+                if (g_ReplayModeAt0066C238 == 1) g_ReplayModeAt0066C238 = 3;
             }
         }
         break;
     case 12:
-        if (g_FrameClockMode == 2) STATE = 6;
+        if (g_ReplayModeAt0066C238 == 2) STATE = 6;
         else if (TIMER <= 1) field0A0 = 1;
         break;
     case 13:
@@ -199,9 +199,9 @@ short BattleScene::AdvanceState()
                 fighters[1]->recoverableHealth = 1;
                 fighters[1]->recoverableHealth = MAX_HEALTH;
                 reinterpret_cast<StateEffects *>(&g_CombatEffects)->ReleaseEntries();
-                g_StateStageTotal = 0;
+                g_CumulativeScoreAt006714BC = 0;
                 for (resetPlayer = 1; resetPlayer <= fighters[1]->field39E; ++resetPlayer)
-                    g_StateStageTotal += static_cast<int>(fighters[1]->field400[resetPlayer]);
+                    g_CumulativeScoreAt006714BC += static_cast<int>(fighters[1]->field400[resetPlayer]);
             }
         } else if (TIMER < 50) {
             g_StateFadeAlpha = static_cast<unsigned char>(TIMER * 5.1f);
@@ -241,7 +241,7 @@ short BattleScene::AdvanceState()
         if (fighters[1]->field39D == 2) field099 = 128;
         else if (field099 < 255) ++field099;
     }
-    if (g_FrameClockMode == 2 && g_StateReplay.IsInputEmpty()) {
+    if (g_ReplayModeAt0066C238 == 2 && g_StateReplay.IsInputEmpty()) {
         if (g_CombatMode != 3 && g_CombatMode != 4) STATE = 6;
         else if (g_StageAt0067161E >= g_StateReplayLimit) STATE = 6;
     }

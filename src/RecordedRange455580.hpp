@@ -1,4 +1,5 @@
 #pragma once
+#include "BattleSessionState.hpp"
 
 // Declaration-only receiver views. Their complete layouts remain unknown.
 // Never construct or embed either owner; use only the observed call contracts.
@@ -10,6 +11,5 @@ public:
     void PushBack(const short& sample);
 };
 
-extern signed char g_FrameClockMode;
 // External storage view only; the original container type and extent are unknown.
 extern unsigned char g_RecordedSamplesAt006718B8[];

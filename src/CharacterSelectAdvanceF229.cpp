@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "AudioControl.hpp"
@@ -5,11 +6,9 @@
 #include "SoundBank.hpp"
 #include "CharacterSelectScene.hpp"
 // Main character-select update and transition loop.
-extern signed char g_ChoiceFocusAt006714B8;
 // The native input controller repeats a physically observed 0x48-byte record.
 // This borrowed indexed view is not instantiated or used to infer its fields.
 extern signed char g_SelectedFightersAt006714C8[2];
-extern signed char g_SequencePhaseAt0067161D;
 extern unsigned char g_ModeLeftAt006714AC;
 extern unsigned char g_ModeRightAt006714AD;
 extern const float g_ChoiceZeroAt0065782C;
@@ -46,20 +45,20 @@ unsigned short CharacterSelectScene::Update()
             (portraitFade[1]) -= g_ChoiceHalfStepAt00657874;
     }
     if (g_CombatMode==1 || g_CombatMode==5) {
-        if (g_InputMappings[g_ChoiceFocusAt006714B8].held.counts[3]==1 || (cancellationRequested)==1) {
+        if (g_InputMappings[g_SelectedSideAt006714B8].held.counts[3]==1 || (cancellationRequested)==1) {
             PLAY(0x28);
-            if ((optionsOpen[g_ChoiceFocusAt006714B8])!=0) {
-                (optionsOpen[g_ChoiceFocusAt006714B8])=0;
+            if ((optionsOpen[g_SelectedSideAt006714B8])!=0) {
+                (optionsOpen[g_SelectedSideAt006714B8])=0;
             } else if (((playerState[0])==0 && (playerState[1])==0) || (cancellationRequested)==1) {
                 return 0x2202;
             }
         }
-        if ((input[1-g_ChoiceFocusAt006714B8].cancel)==1) {
+        if ((input[1-g_SelectedSideAt006714B8].cancel)==1) {
             PLAY(0x28);
-            if ((optionsOpen[1-g_ChoiceFocusAt006714B8]) != 0) {
-                (optionsOpen[1-g_ChoiceFocusAt006714B8]) = 0;
-            } else if ((playerState[1-g_ChoiceFocusAt006714B8]) == 0) {
-                (input[g_ChoiceFocusAt006714B8].cancel)=1;
+            if ((optionsOpen[1-g_SelectedSideAt006714B8]) != 0) {
+                (optionsOpen[1-g_SelectedSideAt006714B8]) = 0;
+            } else if ((playerState[1-g_SelectedSideAt006714B8]) == 0) {
+                (input[g_SelectedSideAt006714B8].cancel)=1;
             }
         }
     } else if (g_CombatMode==3 || g_CombatMode==4) {
@@ -100,8 +99,8 @@ unsigned short CharacterSelectScene::Update()
     }
     if ((playerState[0])==8 && (playerState[1])==8) {
         g_StageAt0067161E=0;
-        if ((g_SelectedFightersAt006714C8[0]==6 || g_SelectedFightersAt006714C8[1]==6) && g_SequencePhaseAt0067161D <6)
-            g_SequencePhaseAt0067161D += 10;
+        if ((g_SelectedFightersAt006714C8[0]==6 || g_SelectedFightersAt006714C8[1]==6) && g_StageSelectionAt0067161D <6)
+            g_StageSelectionAt0067161D += 10;
         if (g_CombatMode==3) {
             g_ModeLeftAt006714AC=0;
             g_ModeRightAt006714AD=0;

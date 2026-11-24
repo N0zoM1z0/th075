@@ -1,10 +1,10 @@
+#include "BattleSessionState.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
 // Borrowed player editor, sound device and score persistence receiver. The
 // original parent layout remains unproven and is not instantiated.
 class NameScoreF251 { public: void SaveCurrent(); };
 extern NameScoreF251 g_NameScoreAt00671750;
-extern signed char g_NameModeAt0066C238;
 extern unsigned char g_NameLettersAt00671858[8];
 extern unsigned char g_NameLastLetterAt0067185F;
 class NameSharedSceneF251 {
@@ -31,7 +31,7 @@ unsigned short NameSharedSceneF251::UpdateShared()
                 else
                     g_NameLettersAt00671858[SHORT(0x12)]=100;
             } else if (SELECTED==0x5c) {
-                if (g_NameModeAt0066C238==1)
+                if (g_ReplayModeAt0066C238==1)
                     g_NameScoreAt00671750.SaveCurrent();
                 return 0x2202;
             } else {

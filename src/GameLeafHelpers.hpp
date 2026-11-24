@@ -66,7 +66,6 @@ public:
 
 
 
-extern int g_ClampedGameValue;
 void SetClampedGameValue(int value);
 
 #endif

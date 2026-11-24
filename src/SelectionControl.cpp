@@ -171,7 +171,7 @@ void FighterControlsF130::UpdateControls() {
         field4F0 = 0;
         field4F4 = 0;
         field511 = 0;
-        if (g_FrameClockMode == 2) {
+        if (g_ReplayModeAt0066C238 == 2) {
             if (PRESS->Count() > 0) { relativeBits = PRESS->Front(); PRESS->PopFront(); }
             if (AUXILIARY->Count() > 0) { field511 = AUXILIARY->Front(); AUXILIARY->PopFront(); }
             if (SAMPLES->Count() > 0) { field516 = SAMPLES->Front(); SAMPLES->PopFront(); }
@@ -183,7 +183,7 @@ void FighterControlsF130::UpdateControls() {
             if (relativeBits & 0x20) field4EC = 1;
             if (relativeBits & 0x40) field4F0 = 1;
             if (relativeBits & 0x80) field4F4 = 1;
-        } else if (g_FrameClockMode == 1) {
+        } else if (g_ReplayModeAt0066C238 == 1) {
             if (g_CombatMode == 3) UpdatePracticeDirections();
             else if (g_CombatMode == 5) ApplyMode5Direction();
             else UpdateOrdinaryDirections();
@@ -211,7 +211,7 @@ void FighterControlsF130::UpdateControls() {
             SAMPLES->PushBack(field516);
         }
     } else {
-        if (g_FrameClockMode == 2) {
+        if (g_ReplayModeAt0066C238 == 2) {
             if (PRESS->Count() > 0) { physicalInputBits = PRESS->Front(); PRESS->PopFront(); }
             if (physicalInputBits & 0x1) {
                 if (field4C0 > 0) field4C0 = 0;
@@ -273,7 +273,7 @@ void FighterControlsF130::UpdateControls() {
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4EC) > 0) << 5;
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F0) > 0) << 6;
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F4) > 0) << 7;
-            if (g_FrameClockMode == 1) PRESS->PushBack(physicalInputBits);
+            if (g_ReplayModeAt0066C238 == 1) PRESS->PushBack(physicalInputBits);
         }
         if (field060 >= 300 && (field4E8 == 1 || field4EC == 1 || field4F0 == 1 || field4F4 == 1)) {
             field510 = 10;

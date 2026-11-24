@@ -61,6 +61,23 @@ and the round trip from signed `-91` to byte `0xA5` at offset `0x56` and back.
 The loading scene calls the existing character loader at `0x004176F0`.
 Loading and sequence dispatch call the same stage loader at `0x004183D0`.
 
+`BattleSessionState.hpp` declares the shared presentation, replay,
+selection and continue state. The four bytes at `0x0066C237` through
+`0x0066C23A` each start at one. The remaining nine definitions in the
+same header are zero-initialized. The config loader, saver, input-binding
+callers and settings display share the key and volume bytes declared in
+`GameConfigStorage.hpp`. The display reads volume as signed, while the
+serialized format preserves the raw byte. An archive-linked test checked
+all 13 startup values and saved and reloaded high-bit key and volume
+bytes in the 90-byte configuration file.
+
+The character loader stores the roster selection at `0x006714C9` and
+copies it to the stage byte at `0x0067161D`. Its next comparison reads
+the stage byte. The former manifest mapped the symbol for `0x006714C9`
+to both addresses in the same function. The comparison now uses the
+shared stage symbol and the other references still use the roster byte.
+The clamping helper writes the worker's wait time at `0x0066C23C`.
+
 When reusing a cold-replayed object in the aggregate build, route it by
 the translation unit's filename stem. The configured comparison object
 `RemiliaObjectAdvance.obj` is archived as `CharacterObjectWhole0055AC80F1194.obj`.

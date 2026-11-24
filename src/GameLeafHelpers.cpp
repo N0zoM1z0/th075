@@ -1,3 +1,4 @@
+#include "EventQueue.hpp"
 #include "CharacterObject.hpp"
 #include "GameLeafHelpers.hpp"
 #include "CharacterAuxAction.hpp"
@@ -36,7 +37,7 @@ void AuxEffect::ClearField8()
 
 void SetClampedGameValue(int value)
 {
-    g_ClampedGameValue = value;
-    if (g_ClampedGameValue < 0)
-        g_ClampedGameValue = 0;
+    g_EventWaitMsAt0066C23C = value;
+    if (g_EventWaitMsAt0066C23C < 0)
+        g_EventWaitMsAt0066C23C = 0;
 }

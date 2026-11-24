@@ -534,7 +534,7 @@ void YuyukoFighter::AdvanceSequence()
         }
         break;
     case 46:
-        if (g_StateContinueCount < 3) {
+        if (g_ContinueCountAt00671623 < 3) {
             if (sequenceTimer < 120) {
                 ++sequenceTimer;
                 break;
@@ -647,7 +647,7 @@ void YuyukoFighter::AdvanceSequence()
         if (sequenceTimer > 30 && sequenceTimer < 90) {
             if (sequenceTimer == 60) {
                 ConfigureNoticeText(0);
-                g_SequenceStageAt0067161D = 8;
+                g_StageSelectionAt0067161D = 8;
                 BattleStageLoaderF389::LoadStage();
                 OPPONENT_ACTOR->ResetPrimaryCounters(0);
                 opponent->x = 800.0f;
@@ -688,7 +688,7 @@ void YuyukoFighter::AdvanceSequence()
         }
         break;
     case 56:
-        if (g_StateContinueCount < 3) {
+        if (g_ContinueCountAt00671623 < 3) {
             if (sequenceTimer < 120) {
                 ++sequenceTimer;
                 break;

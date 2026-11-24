@@ -11,7 +11,7 @@ void MeilingFighter::ConfigureStage() {
         g_StateFadeAlpha = 255;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
-        g_SequenceStageAt0067161D = 1;
+        g_StageSelectionAt0067161D = 1;
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
@@ -30,7 +30,7 @@ void MeilingFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
         sequencePhase = 10;
-        g_SequenceStageAt0067161D = 13;
+        g_StageSelectionAt0067161D = 13;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -50,7 +50,7 @@ void MeilingFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
         sequencePhase = 20;
-        g_SequenceStageAt0067161D = 0;
+        g_StageSelectionAt0067161D = 0;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -72,7 +72,7 @@ void MeilingFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
         sequencePhase = 30;
-        g_SequenceStageAt0067161D = 6;
+        g_StageSelectionAt0067161D = 6;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -94,7 +94,7 @@ void MeilingFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
         sequencePhase = 40;
-        g_SequenceStageAt0067161D = 6;
+        g_StageSelectionAt0067161D = 6;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -117,7 +117,7 @@ void MeilingFighter::ConfigureStage() {
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 255;
         sequencePhase = 50;
-        g_SequenceStageAt0067161D = 20;
+        g_StageSelectionAt0067161D = 20;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
@@ -139,7 +139,7 @@ void MeilingFighter::ConfigureStage() {
     case 7:
         opponent->field460 = 1000000;
         sequencePhase = 60;
-        g_SequenceStageAt0067161D = 9;
+        g_StageSelectionAt0067161D = 9;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;

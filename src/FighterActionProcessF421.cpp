@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "AudioControl.hpp"
 #include "Fighter.hpp"
 // Independently verified complete R065-authored 1,926-byte fighter-script
@@ -11,7 +12,6 @@
 // behavior was independently decoded before comparison.
 extern signed char g_ActionLastIndexAt0066C24F;
 extern signed char g_ActionLastBitAt0066C24E;
-extern unsigned char g_InputCanCancelAt00671632;
 unsigned char Fighter::ProcessAction() {
   signed char mask,number,bit;
   if(scriptIndex>=script.CountPatternEntries(scriptId) || scriptIndex<0) {

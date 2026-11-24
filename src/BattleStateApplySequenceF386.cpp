@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "BattleScene.hpp"
@@ -18,9 +19,6 @@ public:
     void Append(const int* item);
 };
 extern ReplayQueueF385 g_ReplayEventsAt006718E0;
-extern signed char g_ReplayModeAt0066C238;
-extern signed char g_StageIdAt0067161D;
-extern unsigned char g_InputCanCancelAt00671632;
 extern const float g_LevelStepAt00657850;
 extern const float g_LevelMaxAt00657B28;
 extern const float g_LevelZeroAt0065782C;

@@ -1,4 +1,5 @@
 #pragma once
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "GraphicsDraw.hpp"
@@ -32,6 +33,5 @@ public:
     void RenderSideEffect();
     void RenderFadeOverlay();
 };
-extern unsigned char g_FramePresentToggle;
 extern unsigned char g_OptionsFlagAt00671428;
 extern signed char g_RenderOrderAt0068C860;

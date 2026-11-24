@@ -1,3 +1,4 @@
+#include "GameConfigStorage.hpp"
 #include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #include "OptionsScene.hpp"
@@ -15,8 +16,6 @@ namespace OptionsSettingsF186 { void SaveConfiguration(); }
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671428;
-extern unsigned char g_StreamVolumeAt006714B7;
-extern unsigned char g_SoundVolumeAt006714B6;
 
 #define SOUND(value) g_SoundBank->Play(value)
 

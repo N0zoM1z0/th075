@@ -30,7 +30,7 @@ unsigned short TitleScene::Update()
 
     for (i = 0; i < 2; ++i) {
         if (SIDE_HELD(2, i) == 1 && field00C < 57000U) {
-            g_SelectActiveSideAt006714B8 = static_cast<signed char>(i);
+            g_SelectedSideAt006714B8 = static_cast<signed char>(i);
             switch (menuIndex) {
             case 0:
                 if (i == 0) {
@@ -63,7 +63,7 @@ unsigned short TitleScene::Update()
                 break;
             case 5:
                 g_SoundBank->Play(45);
-                g_SelectActiveSideAt006714B8 = 0;
+                g_SelectedSideAt006714B8 = 0;
                 return 0x2205;
             case 6:
                 g_SoundBank->Play(45);
@@ -136,7 +136,7 @@ unsigned short TitleScene::Update()
         }
         if (g_StatePlayerIds[0] == g_StatePlayerIds[1])
             g_StatePlayerIds[1] = static_cast<signed char>((g_StatePlayerIds[1] + 1) % 6);
-        g_SequenceStageAt0067161D = static_cast<unsigned char>(rand() % 6 + (rand() % 2) * 10);
+        g_StageSelectionAt0067161D = static_cast<unsigned char>(rand() % 6 + (rand() % 2) * 10);
         g_CombatMode = 6;
         ++g_TitleAttractSwitchAt00671633;
         AudioControl407CA0::ScheduleFade(-10000, -300, 1, 0);

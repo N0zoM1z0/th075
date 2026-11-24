@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "TextureManagerF198.hpp"
 #include "Fighter.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -15,7 +16,6 @@ public:
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
 extern unsigned char g_RenderByte0067161C;
-extern unsigned char g_RenderByte0066C237;
 
 #define DRAWING reinterpret_cast<FighterDrawingF126*>(drawing)
 #define HISTORY reinterpret_cast<FighterHistoryF126*>(field480)
@@ -71,7 +71,7 @@ void Fighter::Render() {
     TRANSFORM(transformedQuad)->TranslateQuad(x - facing * (frameInfo->originX), -y - (frameInfo->originY), 0);
     if (g_RenderByte0067161C == 0) {
         HISTORY->AppendElement(frameInfo->textureIndex, x, y, transformedQuad, spriteOffset, drawColor, 1);
-        if (g_RenderByte0066C237 != 0 && field47C <= 0) {
+        if (g_FramePresentToggle != 0 && field47C <= 0) {
             HISTORY->RemoveFrontIfPresent();
             HISTORY->RemoveFrontIfPresent();
         }

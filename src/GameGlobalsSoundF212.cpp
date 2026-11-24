@@ -1,3 +1,4 @@
+#include "GameConfigStorage.hpp"
 #include "TextOverlay.hpp"
 #include "SelectionInput4388D0.hpp"
 #include <windows.h>
@@ -5,10 +6,7 @@
 #include "SoundBank.hpp"
 #include "WindowOverlayF212.hpp"
 
-extern BYTE g_KeyBindingsAt00671440[];
 
-extern unsigned char g_SoundVolumeAt006714B6;
-extern unsigned char g_StreamVolumeAt006714B7;
 extern const char g_WaveArchivePathAt00657A24[];
 extern const char g_WaveArchiveIndexAt00657A1C[];
 

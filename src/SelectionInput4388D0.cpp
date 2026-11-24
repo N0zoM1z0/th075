@@ -17,9 +17,9 @@ void CharacterSelectScene::PollInput() {
             || g_InputMappings[0].IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     if ((g_CombatMode == 5 || g_CombatMode == 1 || g_CombatMode == 3)
-        && (playerState[g_SelectActiveSideAt006714B8]) >= 4) {
-        memcpy(&input[1 - g_SelectActiveSideAt006714B8], &input[g_SelectActiveSideAt006714B8], sizeof(SelectInputFrame));
-        memset(&input[g_SelectActiveSideAt006714B8], 0, sizeof(SelectInputFrame));
+        && (playerState[g_SelectedSideAt006714B8]) >= 4) {
+        memcpy(&input[1 - g_SelectedSideAt006714B8], &input[g_SelectedSideAt006714B8], sizeof(SelectInputFrame));
+        memset(&input[g_SelectedSideAt006714B8], 0, sizeof(SelectInputFrame));
     }
     if (g_InputMappings[0].IsKeyDown(1))
         cancellationRequested = cancellationRequested + 1;

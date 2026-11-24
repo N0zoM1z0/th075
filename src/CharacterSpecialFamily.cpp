@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "CameraMotion.hpp"
 #include "MarisaFighter.hpp"
@@ -11,7 +12,6 @@
 #include "SuikaFighter.hpp"
 #include "GameLeafHelpers.hpp"
 
-extern signed char stageIntroCharacter;
 
 void MarisaFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
@@ -21,7 +21,7 @@ void MarisaFighter::ConfigureStage() {
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
-        stageIntroCharacter = 3;
+        g_StageSelectionAt0067161D = 3;
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
@@ -37,7 +37,7 @@ void MarisaFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 10;
+        g_StageSelectionAt0067161D = 10;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -57,7 +57,7 @@ void MarisaFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 4;
+        g_StageSelectionAt0067161D = 4;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -79,7 +79,7 @@ void MarisaFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 6;
+        g_StageSelectionAt0067161D = 6;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -101,7 +101,7 @@ void MarisaFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 0;
+        g_StageSelectionAt0067161D = 0;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -124,7 +124,7 @@ void MarisaFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -148,7 +148,7 @@ void MarisaFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0;
@@ -199,7 +199,7 @@ void SakuyaFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
         sequencePhase = 0;
-        stageIntroCharacter = 0;
+        g_StageSelectionAt0067161D = 0;
         opponent->field460 = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -219,7 +219,7 @@ void SakuyaFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 13;
+        g_StageSelectionAt0067161D = 13;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -239,7 +239,7 @@ void SakuyaFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 1;
+        g_StageSelectionAt0067161D = 1;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -261,7 +261,7 @@ void SakuyaFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 15;
+        g_StageSelectionAt0067161D = 15;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -283,7 +283,7 @@ void SakuyaFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 7;
+        g_StageSelectionAt0067161D = 7;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -306,7 +306,7 @@ void SakuyaFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -330,7 +330,7 @@ void SakuyaFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
@@ -379,7 +379,7 @@ void AliceFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
         sequencePhase = 0;
-        stageIntroCharacter = 1;
+        g_StageSelectionAt0067161D = 1;
         opponent->field460 = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -399,7 +399,7 @@ void AliceFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 10;
+        g_StageSelectionAt0067161D = 10;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -419,7 +419,7 @@ void AliceFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 2;
+        g_StageSelectionAt0067161D = 2;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -441,7 +441,7 @@ void AliceFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 14;
+        g_StageSelectionAt0067161D = 14;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -463,7 +463,7 @@ void AliceFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 5;
+        g_StageSelectionAt0067161D = 5;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -486,7 +486,7 @@ void AliceFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -510,7 +510,7 @@ void AliceFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
@@ -559,7 +559,7 @@ void PatchouliFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
         sequencePhase = 0;
-        stageIntroCharacter = 4;
+        g_StageSelectionAt0067161D = 4;
         opponent->field460 = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -579,7 +579,7 @@ void PatchouliFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 14;
+        g_StageSelectionAt0067161D = 14;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -599,7 +599,7 @@ void PatchouliFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 4;
+        g_StageSelectionAt0067161D = 4;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -621,7 +621,7 @@ void PatchouliFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 15;
+        g_StageSelectionAt0067161D = 15;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -643,7 +643,7 @@ void PatchouliFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 7;
+        g_StageSelectionAt0067161D = 7;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -666,7 +666,7 @@ void PatchouliFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -690,7 +690,7 @@ void PatchouliFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         opponent->field460 = 1000000;
         CameraSnapF429::Snap();
@@ -739,7 +739,7 @@ void YoumuFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
         sequencePhase = 0;
-        stageIntroCharacter = 0;
+        g_StageSelectionAt0067161D = 0;
         opponent->field460 = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -759,7 +759,7 @@ void YoumuFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 11;
+        g_StageSelectionAt0067161D = 11;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -779,7 +779,7 @@ void YoumuFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 4;
+        g_StageSelectionAt0067161D = 4;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -801,7 +801,7 @@ void YoumuFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 12;
+        g_StageSelectionAt0067161D = 12;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -823,7 +823,7 @@ void YoumuFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 6;
+        g_StageSelectionAt0067161D = 6;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -846,7 +846,7 @@ void YoumuFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -870,7 +870,7 @@ void YoumuFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
@@ -920,7 +920,7 @@ void RemiliaFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
         sequencePhase = 0;
-        stageIntroCharacter = 22;
+        g_StageSelectionAt0067161D = 22;
         opponent->field460 = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -940,7 +940,7 @@ void RemiliaFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 11;
+        g_StageSelectionAt0067161D = 11;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -960,7 +960,7 @@ void RemiliaFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 10;
+        g_StageSelectionAt0067161D = 10;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -982,7 +982,7 @@ void RemiliaFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 15;
+        g_StageSelectionAt0067161D = 15;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1004,7 +1004,7 @@ void RemiliaFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 7;
+        g_StageSelectionAt0067161D = 7;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1027,7 +1027,7 @@ void RemiliaFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1051,7 +1051,7 @@ void RemiliaFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
@@ -1100,7 +1100,7 @@ void YuyukoFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
         sequencePhase = 0;
-        stageIntroCharacter = 5;
+        g_StageSelectionAt0067161D = 5;
         opponent->field460 = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1120,7 +1120,7 @@ void YuyukoFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 0;
+        g_StageSelectionAt0067161D = 0;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1140,7 +1140,7 @@ void YuyukoFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 0;
+        g_StageSelectionAt0067161D = 0;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1162,7 +1162,7 @@ void YuyukoFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 12;
+        g_StageSelectionAt0067161D = 12;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1184,7 +1184,7 @@ void YuyukoFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 6;
+        g_StageSelectionAt0067161D = 6;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1207,7 +1207,7 @@ void YuyukoFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 20;
+        g_StageSelectionAt0067161D = 20;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1231,7 +1231,7 @@ void YuyukoFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
@@ -1284,7 +1284,7 @@ void YukariFighter::ConfigureStage() {
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
-        stageIntroCharacter = 6;
+        g_StageSelectionAt0067161D = 6;
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
@@ -1300,7 +1300,7 @@ void YukariFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 3;
+        g_StageSelectionAt0067161D = 3;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1320,7 +1320,7 @@ void YukariFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 5;
+        g_StageSelectionAt0067161D = 5;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1342,7 +1342,7 @@ void YukariFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 1;
+        g_StageSelectionAt0067161D = 1;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1364,7 +1364,7 @@ void YukariFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 0;
+        g_StageSelectionAt0067161D = 0;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1387,7 +1387,7 @@ void YukariFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 8;
+        g_StageSelectionAt0067161D = 8;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1411,7 +1411,7 @@ void YukariFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
@@ -1464,7 +1464,7 @@ void SuikaFighter::ConfigureStage() {
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         sequencePhase = 0;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
@@ -1480,7 +1480,7 @@ void SuikaFighter::ConfigureStage() {
         break;
     case 2:
         sequencePhase = 10;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1500,7 +1500,7 @@ void SuikaFighter::ConfigureStage() {
         break;
     case 3:
         sequencePhase = 20;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1522,7 +1522,7 @@ void SuikaFighter::ConfigureStage() {
         break;
     case 4:
         sequencePhase = 30;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1544,7 +1544,7 @@ void SuikaFighter::ConfigureStage() {
         break;
     case 5:
         sequencePhase = 40;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1567,7 +1567,7 @@ void SuikaFighter::ConfigureStage() {
         break;
     case 6:
         sequencePhase = 50;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
@@ -1591,7 +1591,7 @@ void SuikaFighter::ConfigureStage() {
         break;
     case 7:
         sequencePhase = 60;
-        stageIntroCharacter = 9;
+        g_StageSelectionAt0067161D = 9;
         opponent->field460 = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();

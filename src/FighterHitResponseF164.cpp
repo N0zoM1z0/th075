@@ -40,14 +40,14 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
             }
         } else {
             unsigned char choice = 0;
-            if (g_InputReplayModeAt0066C238 == 2) {
+            if (g_ReplayModeAt0066C238 == 2) {
                 choice = g_ReplayChoicesAt006718CC.front();
                 g_ReplayChoicesAt006718CC.pop_front();
             } else {
                 if (g_OptionsModeAt006714D0 == 1) choice = std::rand() % 10 + 9;
                 else if (g_OptionsModeAt006714D0 == 0) choice = std::rand() % 10 + 5;
                 else choice = 16;
-                if (g_InputReplayModeAt0066C238 == 1) g_ReplayChoicesAt006718CC.push_back(choice);
+                if (g_ReplayModeAt0066C238 == 1) g_ReplayChoicesAt006718CC.push_back(choice);
             }
             if (choice < 10) return 0;
             if (OPPONENT_X - x > 0.0f) inputX = -1;

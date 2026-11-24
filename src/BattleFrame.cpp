@@ -10,7 +10,7 @@ unsigned short BattleScene::Update()
     Render();
     if (!field0A0 && !field0A1) {
         ++field010;
-        if (g_FrameClockMode == 2 || g_FrameClockMode == 1) ++field014;
+        if (g_ReplayModeAt0066C238 == 2 || g_ReplayModeAt0066C238 == 1) ++field014;
         UpdatePlayerEffects();
         ApplySequence();
         if (field01A <= 0) {

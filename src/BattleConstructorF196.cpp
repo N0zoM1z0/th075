@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "CameraMotion.hpp"
@@ -10,11 +11,6 @@
 
 extern void* g_CombatActorAAt00671418;
 extern void* g_CombatActorBAt0067141C;
-extern signed char g_FrameClockModeAt0066C238;
-extern unsigned char g_FramePresentToggleAt0066C237;
-extern unsigned char g_SequenceStageAt00671632;
-extern unsigned char g_SequenceByteAt0066C239;
-extern unsigned char g_SequenceByteAt0066C23A;
 extern const char g_BattleTextureDataAt0065831C[];
 extern const char g_BattleTextureRootAt00658314[];
 namespace StateAudioF196 {
@@ -51,24 +47,24 @@ BattleScene::BattleScene()
     field0A0 = 0;
     field0A1 = 0;
     field09C = 1.0f;
-    g_FramePresentToggleAt0066C237 = 1;
+    g_FramePresentToggle = 1;
     field05C = 0;
     field020 = 0;
     field024 = 0;
     field028 = timeGetTime();
     field01C = 0;
-    g_SequenceStageAt00671632 = 0;
+    g_InputCanCancelAt00671632 = 0;
     if (g_CombatMode == 3) {
         g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
         fighters[0]->noticeEnabled = 0;
         field08C = -200.0f;
         field018 = 7;
-        if (g_FrameClockModeAt0066C238 == 2) {
-            g_FrameClockModeAt0066C238 = 4;
-            g_SequenceStageAt00671632 = 1;
+        if (g_ReplayModeAt0066C238 == 2) {
+            g_ReplayModeAt0066C238 = 4;
+            g_InputCanCancelAt00671632 = 1;
         }
-        if (g_FrameClockModeAt0066C238 == 1)
-            g_FrameClockModeAt0066C238 = 3;
+        if (g_ReplayModeAt0066C238 == 1)
+            g_ReplayModeAt0066C238 = 3;
     } else {
         CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
         field08C = 0.0f;

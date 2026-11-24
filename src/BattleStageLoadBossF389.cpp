@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "BattleResourceLoaders.hpp"
 #include "GameSharedState.hpp"
 #include "DiagnosticLog.hpp"
@@ -268,9 +269,7 @@ private:
 };
 typedef char VerifyStageBG02cF389[(sizeof(StageBG02cF389)==240)?1:-1];
 extern BattleStageF389* g_CurrentBattleStageAt00671424;
-extern signed char g_StageIdAt0067161D;
 extern unsigned char g_OptionsFlagAt00671604;
-extern signed char g_ReplayModeAt0066C238;
 extern const char g_StartStageLogAt00657A4C[];
 extern const char g_EndStageLogAt00657A5C[];
 void BattleStageLoaderF389::LoadStage() {
@@ -279,7 +278,7 @@ void BattleStageLoaderF389::LoadStage() {
         delete g_CurrentBattleStageAt00671424;
         g_CurrentBattleStageAt00671424=0;
     }
-    switch(g_StageIdAt0067161D) {
+    switch(g_StageSelectionAt0067161D) {
     case 0:
         if(g_OptionsFlagAt00671604!=0) g_CurrentBattleStageAt00671424=new StageBG00aF389;
         else g_CurrentBattleStageAt00671424=new StageBG00xF389;
@@ -353,8 +352,8 @@ void BattleStageLoaderF389::LoadStage() {
         else g_CurrentBattleStageAt00671424=new StageBG02zF389;
         break;
     }
-    if(g_CombatMode!=3) MusicF204::PlayTrackByIndex(int(g_StageIdAt0067161D));
+    if(g_CombatMode!=3) MusicF204::PlayTrackByIndex(int(g_StageSelectionAt0067161D));
     if(g_ReplayModeAt0066C238!=2 && g_ReplayModeAt0066C238!=4)
-        g_GameProgress.SetUnlockBit(int(g_StageIdAt0067161D)+200);
+        g_GameProgress.SetUnlockBit(int(g_StageSelectionAt0067161D)+200);
     DiagnosticLog::AppendString(g_EndStageLogAt00657A5C);
 }

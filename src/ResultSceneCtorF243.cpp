@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 #include "Fighter.hpp"
@@ -7,9 +8,7 @@ extern const char g_ResultTextureRootAt00658014[];
 extern Fighter* g_ResultActorPrimaryAt00671418;
 extern void* g_ResultActorSecondaryAt0067141C;
 extern int g_ResultScoreTotalAt0067160C;
-extern int g_ResultTotalDenominatorAt006714BC;
 extern short g_ResultBonusAt006714C0;
-extern signed char g_ResultSequenceAt00671622;
 extern const float g_ResultOneAt0065747C;
 extern const float g_ResultHundredAt00657888;
 extern const float g_ResultTenThousandAt00658034;
@@ -23,11 +22,11 @@ ResultScene::ResultScene()
     field019=0;
     values[0]=static_cast<Fighter*>(g_ResultActorSecondaryAt0067141C)->field460;
     values[2]=g_ResultScoreTotalAt0067160C;
-    field030=static_cast<float>(g_ResultScoreTotalAt0067160C)/static_cast<float>(g_ResultTotalDenominatorAt006714BC)+g_ResultOneAt0065747C;
+    field030=static_cast<float>(g_ResultScoreTotalAt0067160C)/static_cast<float>(g_CumulativeScoreAt006714BC)+g_ResultOneAt0065747C;
     values[1]=g_ResultBonusAt006714C0;
     field02C=static_cast<float>(g_ResultBonusAt006714C0)/g_ResultHundredAt00657888+g_ResultOneAt0065747C;
-    values[3]=static_cast<int>(g_ResultActorPrimaryAt00671418->health)+(static_cast<int>(g_ResultSequenceAt00671622)-1+static_cast<int>(g_ResultActorPrimaryAt00671418->field39D))*10000;
-    field034=static_cast<float>(g_ResultActorPrimaryAt00671418->health)/g_ResultTenThousandAt00658034+static_cast<float>(g_ResultSequenceAt00671622)+static_cast<float>(g_ResultActorPrimaryAt00671418->field39D)-g_ResultOneAt0065747C;
+    values[3]=static_cast<int>(g_ResultActorPrimaryAt00671418->health)+(static_cast<int>(static_cast<signed char>(g_SequenceCounterAt00671622))-1+static_cast<int>(g_ResultActorPrimaryAt00671418->field39D))*10000;
+    field034=static_cast<float>(g_ResultActorPrimaryAt00671418->health)/g_ResultTenThousandAt00658034+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(g_ResultActorPrimaryAt00671418->field39D)-g_ResultOneAt0065747C;
     field038=0;
     field03C=0;
     field040=0;

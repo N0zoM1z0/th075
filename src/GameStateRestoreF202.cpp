@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "GameSnapshot.hpp"
 #include <windows.h>
@@ -10,7 +11,6 @@ public:
     void LoadRecord(int number);
 };
 extern SnapshotArchiveF202 g_SnapshotArchiveAt00671750;
-extern signed char g_SelectedSideAt006714B8;
 extern short g_RecordSequenceAt006714A4;
 extern unsigned char g_PlayerIdAt006714C8[];
 extern unsigned char g_PlayerAltAt00671610[];
@@ -19,8 +19,6 @@ extern unsigned char g_PlayerRoundAt006714AC[];
 extern unsigned char g_PlayerDifficultyAt00671438[];
 extern unsigned char g_PlayerSettingsAt00671434[];
 extern unsigned char g_SnapshotAt00671862[];
-extern unsigned char g_StageAt0067161D;
-extern unsigned char g_StageFlagAt00671622;
 
 #define SNAP(off) g_SnapshotAt00671862[(off)]
 namespace GameStateF202 {
@@ -59,7 +57,7 @@ void RestoreFromSnapshot()
             g_PlayerDifficultyAt00671438[1] = SNAP(0x36);
             g_PlayerSettingsAt00671434[1] = SNAP(0x37);
         }
-        g_StageAt0067161D = SNAP(0x38);
+        g_StageSelectionAt0067161D = SNAP(0x38);
     } else if (static_cast<signed char>(SNAP(3)) >= 5) {
         g_SnapshotArchiveAt00671750.LoadRecord(g_RecordSequenceAt006714A4 - 1);
         ++g_RecordSequenceAt006714A4;
@@ -78,7 +76,7 @@ void RestoreFromSnapshot()
         g_PlayerRoundAt006714AC[1] = SNAP(0x35);
         g_PlayerDifficultyAt00671438[1] = SNAP(0x36);
         g_PlayerSettingsAt00671434[1] = SNAP(0x37);
-        g_StageAt0067161D = SNAP(0x38);
+        g_StageSelectionAt0067161D = SNAP(0x38);
     } else {
         g_SelectedSideAt006714B8 = 0;
         g_SnapshotArchiveAt00671750.LoadRecord(g_RecordSequenceAt006714A4 - 1);
@@ -90,7 +88,7 @@ void RestoreFromSnapshot()
         g_PlayerOtherAt006714CC[0] = SNAP(2);
         g_PlayerRoundAt006714AC[0] = SNAP(6);
         g_StageAt0067161E = SNAP(0x38);
-        g_StageFlagAt00671622 = SNAP(0x3c);
+        g_SequenceCounterAt00671622 = SNAP(0x3c);
     }
 }
 }

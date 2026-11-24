@@ -1,3 +1,4 @@
+#include "GameConfigStorage.hpp"
 #include "GameSharedState.hpp"
 #include "DisplayOptions.hpp"
 #include "GameDefaultsF193.hpp"
@@ -5,14 +6,12 @@
 #include <string.h>
 
 unsigned int g_GameDefaultsUseCountAt00671614;
-extern unsigned char g_KeyBindingsAt00671440[];
 extern unsigned char g_CharacterNamesAt006714D8[];
 extern DWORD g_SelectedCharacterAAt00671418;
 extern DWORD g_SelectedCharacterBAt0067141C;
 extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_SettingsByteAt006714D2;
-extern unsigned char g_SoundVolumeAt006714B6;
 extern unsigned char g_GameSettingAt00671435;
 extern unsigned char g_GameSettingAt00671434;
 extern unsigned char g_GameSettingAt00671438;

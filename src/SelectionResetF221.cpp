@@ -1,10 +1,10 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "CharacterSelectScene.hpp"
 // Restore the initial two-player character-select state.
 extern signed char g_PlayerSelectionAt006714C8;
 extern unsigned char g_SecondPlayerAt006714C9;
-extern signed char g_StageSelectionAt0067161D;
 void CharacterSelectScene::ResetSelection()
 {
     (choiceRandom[1])=1;

@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameProgress.hpp"
 #include "AudioControl.hpp"
 #include <windows.h>
@@ -13,7 +14,6 @@ extern const char g_WaveEndingAt00657AD0[];
 extern const char g_WaveFormatDefaultAt00657AE8[];
 extern const char g_NormalSoundFolderAt00657AFC[];
 extern const char g_EndingSoundFolderAt00657B04[];
-extern signed char g_FrameClockModeAt0066C238;
 
 
 namespace MusicF204 {
@@ -40,8 +40,8 @@ void PlayTrackByIndex(int track)
     else
         AudioQueueArchiveF760::QueueArchiveEntry(wavePath, 0, g_EndingSoundFolderAt00657B04);
 
-    if (g_FrameClockModeAt0066C238 != 2 &&
-        g_FrameClockModeAt0066C238 != 4)
+    if (g_ReplayModeAt0066C238 != 2 &&
+        g_ReplayModeAt0066C238 != 4)
         g_GameProgress.SetUnlockBit(track + 100);
 }
 }

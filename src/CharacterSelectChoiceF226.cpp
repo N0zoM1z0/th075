@@ -1,10 +1,10 @@
+#include "BattleSessionState.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
 #include <stdlib.h>
 // Per-player choice transitions share the scene layout and the 28-byte
 // input snapshots with the confirmation and option handlers.
 extern unsigned char g_ChoiceRandomModeAt00671610[];
-extern unsigned char g_ChoiceStageAt00671621;
 extern const float g_ChoiceMinimumAt0065782C;
 extern const float g_ChoiceBackStepAt00657874;
 extern const float g_ChoiceRiseBoundAt00658268;
@@ -50,7 +50,7 @@ void CharacterSelectScene::UpdatePlayerChoice(signed char player)
     }
     if ((input[player].cancel)==1) {
         g_SoundBank->Play(0x28);
-        g_ChoiceStageAt00671621=0;
+        g_StoryResultAt00671621=0;
         optionsCursor[0]=0;
         (playerState[player])=0;
         (portraitEnterX[player])=80.0f;

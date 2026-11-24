@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
 #include "Graphics.hpp"
@@ -6,7 +7,6 @@
 
 // Partial pointer-only interfaces; no private owner is instantiated or embedded.
 int __cdecl AbsoluteSelectionInputF130(int);
-extern signed char g_SelectionStageF131;
 void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
     signed char horizontalDirection;
     int verticalDirection;
@@ -33,36 +33,36 @@ void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
         (stageCountdown[0] > 0 && side == 0)) {
         stagePage[1] = (stagePage[1] + 10 + horizontalDirection) % 10;
         if (stagePage[1] == 8 && stagePage[0] == 1)
-            g_SelectionStageF131 = 20;
+            g_StageSelectionAt0067161D = 20;
         else if (stagePage[1] < 6)
-            g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
+            g_StageSelectionAt0067161D = stagePage[1] + stagePage[0] * 10;
         else
-            g_SelectionStageF131 = stagePage[1];
-        while ((stageAvailable[g_SelectionStageF131]) == 0) {
+            g_StageSelectionAt0067161D = stagePage[1];
+        while ((stageAvailable[g_StageSelectionAt0067161D]) == 0) {
             stagePage[1] = (stagePage[1] + 10 + horizontalDirection) % 10;
             if (stagePage[1] == 8 && stagePage[0] == 1)
-                g_SelectionStageF131 = 20;
+                g_StageSelectionAt0067161D = 20;
             else if (stagePage[1] < 6)
-                g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
+                g_StageSelectionAt0067161D = stagePage[1] + stagePage[0] * 10;
             else
-                g_SelectionStageF131 = stagePage[1];
+                g_StageSelectionAt0067161D = stagePage[1];
         }
         if (stageCountdown[0] > 0) {
             stagePage[0] = rand() % 2;
             if (stagePage[1] == 8 && stagePage[0] == 1)
-                g_SelectionStageF131 = 20;
+                g_StageSelectionAt0067161D = 20;
             else if (stagePage[1] < 6)
-                g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
+                g_StageSelectionAt0067161D = stagePage[1] + stagePage[0] * 10;
             else
-                g_SelectionStageF131 = stagePage[1];
-            while ((stageAvailable[g_SelectionStageF131]) == 0) {
+                g_StageSelectionAt0067161D = stagePage[1];
+            while ((stageAvailable[g_StageSelectionAt0067161D]) == 0) {
                 stagePage[0] = rand() % 2;
                 if (stagePage[1] == 8 && stagePage[0] == 1)
-                    g_SelectionStageF131 = 20;
+                    g_StageSelectionAt0067161D = 20;
                 else if (stagePage[1] < 6)
-                    g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
+                    g_StageSelectionAt0067161D = stagePage[1] + stagePage[0] * 10;
                 else
-                    g_SelectionStageF131 = stagePage[1];
+                    g_StageSelectionAt0067161D = stagePage[1];
             }
         }
     } else if (AbsoluteSelectionInputF130((input[side].vertical)) == 1 || (input[side].toggle) == 1 ||
@@ -70,19 +70,19 @@ void CharacterSelectScene::UpdateChoiceAnimation(signed char side) {
         verticalDirection = ((input[side].vertical) > 0) * 2 - 1;
         stagePage[0] = (stagePage[0] + 2 + verticalDirection) % 2;
         if (stagePage[1] == 8 && stagePage[0] == 1)
-            g_SelectionStageF131 = 20;
+            g_StageSelectionAt0067161D = 20;
         else if (stagePage[1] < 6)
-            g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
+            g_StageSelectionAt0067161D = stagePage[1] + stagePage[0] * 10;
         else
-            g_SelectionStageF131 = stagePage[1];
-        while ((stageAvailable[g_SelectionStageF131]) == 0) {
+            g_StageSelectionAt0067161D = stagePage[1];
+        while ((stageAvailable[g_StageSelectionAt0067161D]) == 0) {
             stagePage[0] = (stagePage[0] + 2 + verticalDirection) % 2;
             if (stagePage[1] == 8 && stagePage[0] == 1)
-                g_SelectionStageF131 = 20;
+                g_StageSelectionAt0067161D = 20;
             else if (stagePage[1] < 6)
-                g_SelectionStageF131 = stagePage[1] + stagePage[0] * 10;
+                g_StageSelectionAt0067161D = stagePage[1] + stagePage[0] * 10;
             else
-                g_SelectionStageF131 = stagePage[1];
+                g_StageSelectionAt0067161D = stagePage[1];
         }
         g_SoundBank->Play(39);
     }

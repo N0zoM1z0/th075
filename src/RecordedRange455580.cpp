@@ -6,14 +6,14 @@
 
 int Actor::RecordedRange(int lower, int upper) {
     short sample = 0;
-    if (g_FrameClockMode == 2) {
+    if (g_ReplayModeAt0066C238 == 2) {
         if (SAMPLES->Count() > 0) {
             sample = SAMPLES->Front();
             SAMPLES->PopFront();
         }
     } else {
         sample = static_cast<short>(std::rand());
-        if (g_FrameClockMode == 1)
+        if (g_ReplayModeAt0066C238 == 1)
             SAMPLES->PushBack(sample);
     }
     return (upper - lower) * sample / 32768 + lower;

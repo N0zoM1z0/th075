@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
@@ -18,7 +19,6 @@ class ReplayItemsF226 {
 public:
     ReplayItemF226* Entry(int index);
 };
-extern unsigned char g_ReplayModeAt0066C238;
 extern unsigned short g_SelectedReplayVariantAt006714A4;
 extern char g_ReplayPathAt00671754[];
 namespace BrowserSceneStepsF226 {

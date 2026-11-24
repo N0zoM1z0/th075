@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "BattleScene.hpp"
 #include "PauseDebugF175.hpp"
@@ -6,11 +7,8 @@
 #include "GameLeafHelpers.hpp"
 #include "FighterHitResponseF164.hpp"
 
-extern unsigned char g_SequenceCounterAt00671622;
 // Reference-only byte views from complete native accesses; no allocation or
 // original global identity is established by these provisional names.
-extern signed char g_ContinueCountAt00671623;
-extern unsigned char g_ContinueUsedAt00671624;
 extern unsigned char g_RoundSelectionAt006714CE;
 // The dword lies in the PE's uninitialized virtual data tail. No file payload
 // is asserted; native comparisons/increments/stores establish this used view.
@@ -70,7 +68,7 @@ void BattleScene::HandlePauseMenu()
             g_SoundBank->Play(39);
             field118--;
         }
-        if (g_InputReplayModeAt0066C238 == 2) {
+        if (g_ReplayModeAt0066C238 == 2) {
             if (field118 < 0)
                 field118 = 1;
             if (field118 > 1)

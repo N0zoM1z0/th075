@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "SuikaFighter.hpp"
 
@@ -24,11 +25,7 @@ extern float g_MarisaSpecialProjectileYAt0065929C;
 extern float g_ProjectileFallAt006590B4;
 extern float g_RepeatScaleAt00658348;
 extern double g_RiseAt00658050;
-extern unsigned char g_SequenceByteAt0066C239;
-extern unsigned char g_SequenceByteAt0066C23A;
-extern unsigned char g_SequenceCounterAt00671622;
 extern float g_StopThresholdAt00657480;
-extern unsigned char g_StoryStatusAt00671623;
 extern float g_SubtractAt00657478;
 extern float g_SuikaOffsetAt00657834;
 extern float g_SuikaOffsetAt00657850;
@@ -5309,7 +5306,7 @@ void SuikaFighter::Advance() {
         }
         if (sequenceTimer > 40) {
             g_SequenceByteAt0066C239 = 0;
-            g_StoryStatusAt00671623 = 0;
+            g_ContinueCountAt00671623 = 0;
             g_SequenceCounterAt00671622 = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)

@@ -1,3 +1,5 @@
+#include "GameConfigStorage.hpp"
+#include "BattleSessionState.hpp"
 #include "BattleResourceLoaders.hpp"
 #include "GameSharedState.hpp"
 #include "DiagnosticLog.hpp"
@@ -49,24 +51,16 @@ extern signed char g_BattleChosenLevelAt00671610[2];
 extern signed char g_BattleSelectionFlagsAt006714CC[2];
 extern signed char g_BattleLevelAt00671434[2];
 extern signed char g_BattleSoundSettingAt00671438[2];
-extern signed char g_ReplayModeAt0066C238;
-extern signed char g_CharacterCountAt0067161F;
 extern signed char g_RosterAt0067148F[];
 extern signed char g_StoryRosterAt00671490[];
-extern signed char g_StageSelectionAt0067161D;
 extern signed char g_SelectedCharacterAt006714C9;
 extern signed char g_PlayerDefaultAt006714C8;
 extern signed char g_CpuDefaultAt006714C9;
 extern signed char g_SelectedSkinAt006714AD;
 extern signed char g_BattleDifficultyAt00671611;
 extern signed char g_EnemyDifficultyAt006714CD;
-extern signed char g_PlaySideAt006714B8;
 extern signed char g_StoryChoiceAt00671620;
-extern unsigned char g_StoryResultAt00671621;
-extern unsigned char g_StoryStatusAt00671623;
-extern unsigned char g_StoryCurrentAt00671622;
 extern short g_StoryCounterAt006714C0;
-extern int g_CumulativeScoreAt006714BC;
 extern int g_StoryTransitionsAt0067160C;
 extern unsigned int g_PlayerScoreAt006714B0;
 extern unsigned int g_RankAt00671420;
@@ -74,7 +68,6 @@ extern short g_ReplayScoreAt0067189C;
 extern unsigned int g_ReplayRoundAt006718A0;
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
-extern unsigned char g_StageParametersAt00671440[];
 extern unsigned char CanChooseCharacterAt00419E10(signed char,int);
 extern void CameraAttachAt00412660(float*,float*,float*,float*);
 
@@ -107,7 +100,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
    }
    g_SelectedCharacterAt006714C9=g_RosterAt0067148F[g_StageAt0067161E];
    g_StageSelectionAt0067161D=g_SelectedCharacterAt006714C9;
-   if(g_SelectedCharacterAt006714C9<6) {
+   if(g_StageSelectionAt0067161D<6) {
       g_StageSelectionAt0067161D+=((rand()<0x4000 || g_PlayerDefaultAt006714C8==6)?1:0)*10;
    }
    g_SelectedSkinAt006714AD=0;
@@ -137,7 +130,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        F(short,g_BattleFightersAt00671418[side],0x398)=g_BattleChosenLevelAt00671610[side];
        F(short,g_BattleFightersAt00671418[side],0x39A)=g_BattleSelectionFlagsAt006714CC[side];
        g_BattleFightersAt00671418[side]->ResetControlState();
-       g_BattleFightersAt00671418[side]->InitializeResources(g_StageParametersAt00671440+side*0x28);
+       g_BattleFightersAt00671418[side]->InitializeResources(g_KeyBindingsAt00671440+side*0x28);
        if (g_CombatMode==3 || (g_CombatMode==4 && side==1)) {
           F(float,g_BattleFightersAt00671418[side],0xA4)=1.0f;
           F(unsigned char,g_BattleFightersAt00671418[side],0x465)=static_cast<int>(g_OptionsModeAt006714D0==0);
@@ -157,8 +150,8 @@ void BattleCharacterLoaderF398::LoadCharacters() {
           g_StoryResultAt00671621=0;
           if(g_StoryChoiceAt00671620!=0) {
              g_StoryResultAt00671621=1;
-             g_StoryStatusAt00671623=0;
-             g_StoryCurrentAt00671622=2;
+             g_ContinueCountAt00671623=0;
+             g_SequenceCounterAt00671622=2;
              F(signed char,g_BattleFightersAt00671418[0],0x713)=g_StoryChoiceAt00671620;
              g_StoryChoiceAt00671620=0;
              F(int,g_BattleFightersAt00671418[0],0x2D0)=0;
@@ -173,7 +166,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
     g_BattleFightersAt00671418[side]->InitializeAction();
  }
  if(g_CombatMode==5 || g_CombatMode==1 || g_CombatMode==3 || g_CombatMode==4) {
-   if(g_PlaySideAt006714B8==0) {F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=0;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=1;}
+   if(g_SelectedSideAt006714B8==0) {F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=0;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=1;}
    else {F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=1;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=0;}
  } else if (g_CombatMode==6) {
    F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=1;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=1;
@@ -188,9 +181,9 @@ void BattleCharacterLoaderF398::LoadCharacters() {
    F(short,g_BattleFightersAt00671418[1],0x324)=F(short,g_BattleFightersAt00671418[1],0x33E+F(signed char,g_BattleFightersAt00671418[1],0x39D)*2);
    F(short,g_BattleFightersAt00671418[1],0x326)=F(short,g_BattleFightersAt00671418[1],0x324);
    if(g_StageAt0067161E==1 || g_StageAt0067161E>=8 || g_StoryResultAt00671621!=0) {
-       if(g_StoryResultAt00671621!=0) g_StoryStatusAt00671623=0;
-       else g_StoryStatusAt00671623=3;
-       g_StoryCurrentAt00671622=2;
+       if(g_StoryResultAt00671621!=0) g_ContinueCountAt00671623=0;
+       else g_ContinueCountAt00671623=3;
+       g_SequenceCounterAt00671622=2;
        g_GameProgress.SetSelection(g_PlayerDefaultAt006714C8,g_OptionsModeAt006714D0);
        F(int,g_BattleFightersAt00671418[0],0x2D0)=0;
        g_PlayerScoreAt006714B0=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;

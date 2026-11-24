@@ -1021,9 +1021,9 @@ symbol = "?SetClampedGameValue@@YAXH@Z"
 target_address = 0x00423C60
 size = 32
 relocations = [
-  { offset = 0x7, type = "DIR32", symbol = "?g_ClampedGameValue@@3HA", target = 0x0066C23C },
-  { offset = 0xD, type = "DIR32", symbol = "?g_ClampedGameValue@@3HA", target = 0x0066C23C },
-  { offset = 0x16, type = "DIR32", symbol = "?g_ClampedGameValue@@3HA", target = 0x0066C23C },
+  { offset = 0x7, type = "DIR32", symbol = "?g_EventWaitMsAt0066C23C@@3HA", target = 0x0066C23C },
+  { offset = 0xD, type = "DIR32", symbol = "?g_EventWaitMsAt0066C23C@@3HA", target = 0x0066C23C },
+  { offset = 0x16, type = "DIR32", symbol = "?g_EventWaitMsAt0066C23C@@3HA", target = 0x0066C23C },
 ]
 
 [units.battle-effect-clear-field74]
@@ -2066,8 +2066,8 @@ target_address = 0x0043B1B0
 size = 859
 relocations = [
   { offset = 0xD, type = "REL32", symbol = "?PollPauseShortcut@BattleScene@@QAEXXZ", target = 0x004456F0 },
-  { offset = 0x52, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x5E, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x52, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x5E, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x7A, type = "REL32", symbol = "?UpdatePlayerEffects@BattleScene@@QAEXXZ", target = 0x00445830 },
   { offset = 0x82, type = "REL32", symbol = "?ApplySequence@BattleScene@@QAEXXZ", target = 0x00445A00 },
   { offset = 0x9C, type = "REL32", symbol = "?AdvanceGuardedState@Fighter@@QAEXXZ", target = 0x004521A0 },
@@ -2278,7 +2278,7 @@ relocations = [
   { offset = 0xA0, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0xCB, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0x100, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
-  { offset = 0x14C, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x14C, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x158, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x15F, type = "DIR32", symbol = "?g_StateReplayLimit@@3CA", target = 0x00671866 },
   { offset = 0x16A, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
@@ -2301,29 +2301,29 @@ relocations = [
   { offset = 0x53E, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
   { offset = 0x543, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x57F, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x5A0, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x5D3, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x5A0, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x5D3, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x5DF, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x5E6, type = "DIR32", symbol = "?g_StateReplayLimit@@3CA", target = 0x00671866 },
   { offset = 0x609, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x61A, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x61F, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
   { offset = 0x626, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
-  { offset = 0x62D, type = "DIR32", symbol = "?g_StateRecordLimit@@3CA", target = 0x0067161F },
+  { offset = 0x62D, type = "DIR32", symbol = "?g_CharacterCountAt0067161F@@3CA", target = 0x0067161F },
   { offset = 0x638, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
   { offset = 0x64E, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x657, type = "DIR32", symbol = "?g_StateReturnFlag@@3CA", target = 0x006714CE },
   { offset = 0x674, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
-  { offset = 0x689, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x689, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x6B7, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
   { offset = 0x6CD, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
-  { offset = 0x6D7, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x6E3, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x74F, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x75A, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x761, type = "DIR32", symbol = "?g_StateReplayChanged@@3EA", target = 0x00671632 },
-  { offset = 0x769, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x774, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x6D7, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x6E3, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x74F, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x75A, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x761, type = "DIR32", symbol = "?g_InputCanCancelAt00671632@@3EA", target = 0x00671632 },
+  { offset = 0x769, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x774, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x79D, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x7A6, type = "DIR32", symbol = "?g_WindowOverlayAt006714C4@@3PAVWindowOverlayF212@@A", target = 0x006714C4 },
   { offset = 0x7AB, type = "REL32", symbol = "?InstallPresentCallback@WindowOverlayF212@@QAEXXZ", target = 0x00417120 },
@@ -2331,12 +2331,12 @@ relocations = [
   { offset = 0x7C1, type = "REL32", symbol = "?EnableDirectDraw@WindowOverlayF212@@QAEXXZ", target = 0x00417140 },
   { offset = 0x7C7, type = "DIR32", symbol = "?g_WindowOverlayAt006714C4@@3PAVWindowOverlayF212@@A", target = 0x006714C4 },
   { offset = 0x7CC, type = "REL32", symbol = "?CapturePrimary@WindowOverlayF212@@QAEXXZ", target = 0x004170D0 },
-  { offset = 0x7D3, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x7DE, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x7E5, type = "DIR32", symbol = "?g_StateReplayChanged@@3EA", target = 0x00671632 },
-  { offset = 0x7EF, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x7FA, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x802, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x7D3, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x7DE, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x7E5, type = "DIR32", symbol = "?g_InputCanCancelAt00671632@@3EA", target = 0x00671632 },
+  { offset = 0x7EF, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x7FA, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x802, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x80C, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x811, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
   { offset = 0x826, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
@@ -2345,8 +2345,8 @@ relocations = [
   { offset = 0x849, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
   { offset = 0x859, type = "REL32", symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z", target = 0x00419CB0 },
   { offset = 0x86F, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
-  { offset = 0x879, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x885, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x879, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x885, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x89A, type = "DIR32", symbol = "?g_StateReturnFlag@@3CA", target = 0x006714CE },
   { offset = 0x8A3, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x8A8, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
@@ -2355,13 +2355,13 @@ relocations = [
   { offset = 0x92A, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0xBA1, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0xBD6, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
-  { offset = 0xC22, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0xC4E, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0xC55, type = "DIR32", symbol = "?g_StateReplayChanged@@3EA", target = 0x00671632 },
-  { offset = 0xC77, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
-  { offset = 0xCAB, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0xCB6, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0xCC3, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0xC22, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0xC4E, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0xC55, type = "DIR32", symbol = "?g_InputCanCancelAt00671632@@3EA", target = 0x00671632 },
+  { offset = 0xC77, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
+  { offset = 0xCAB, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0xCB6, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0xCC3, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0xCFF, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0xD43, type = "DIR32", symbol = "__real@40a33333", target = 0x00658340 },
   { offset = 0xD49, type = "DIR32", symbol = "__real@437f0000", target = 0x00657CF0 },
@@ -2370,9 +2370,9 @@ relocations = [
   { offset = 0xD59, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0xE81, type = "DIR32", symbol = "?g_CombatEffects@@3VCombatEffects@@A", target = 0x006716C8 },
   { offset = 0xE86, type = "REL32", symbol = "?ReleaseEntries@StateEffects@@QAEXXZ", target = 0x005F7140 },
-  { offset = 0xE8C, type = "DIR32", symbol = "?g_StateStageTotal@@3HA", target = 0x006714BC },
-  { offset = 0xEC3, type = "DIR32", symbol = "?g_StateStageTotal@@3HA", target = 0x006714BC },
-  { offset = 0xED0, type = "DIR32", symbol = "?g_StateStageTotal@@3HA", target = 0x006714BC },
+  { offset = 0xE8C, type = "DIR32", symbol = "?g_CumulativeScoreAt006714BC@@3HA", target = 0x006714BC },
+  { offset = 0xEC3, type = "DIR32", symbol = "?g_CumulativeScoreAt006714BC@@3HA", target = 0x006714BC },
+  { offset = 0xED0, type = "DIR32", symbol = "?g_CumulativeScoreAt006714BC@@3HA", target = 0x006714BC },
   { offset = 0xEF6, type = "DIR32", symbol = "__real@40a33333", target = 0x00658340 },
   { offset = 0xEFB, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
   { offset = 0xF00, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -2392,7 +2392,7 @@ relocations = [
   { offset = 0x113E, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x114B, type = "DIR32", symbol = "?g_StateFadeValue@@3MA", target = 0x00671628 },
   { offset = 0x119B, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x11EB, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x11EB, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x11F5, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x11FA, type = "REL32", symbol = "?IsInputEmpty@StateReplay@@QAE_NXZ", target = 0x004142D0 },
   { offset = 0x1208, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
@@ -10439,7 +10439,7 @@ relocations = [
   { offset = 0x1AF0, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1B07, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1B14, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1B49, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1B49, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1B84, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1BB7, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1BC9, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -10474,7 +10474,7 @@ relocations = [
   { offset = 0x2036, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x203E, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2088, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x208E, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x208E, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x2094, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x20DC, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x20E8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -10490,7 +10490,7 @@ relocations = [
   { offset = 0x219D, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x21B4, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x21C1, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x21F6, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x21F6, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x2231, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x2264, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x2276, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -10819,7 +10819,7 @@ relocations = [
   { offset = 0x15E4, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x15ED, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x15F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x1629, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x1629, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x162F, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x165F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x166B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -10871,7 +10871,7 @@ relocations = [
   { offset = 0x1CC9, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1CE0, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1CED, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1D22, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1D22, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1D5D, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1D90, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1DA2, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -10906,7 +10906,7 @@ relocations = [
   { offset = 0x220F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2217, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2261, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2267, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x2267, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x226D, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x22B5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x22C1, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -10922,7 +10922,7 @@ relocations = [
   { offset = 0x2376, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x238D, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x239A, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x23CF, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x23CF, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x240A, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x243D, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x244F, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -11310,7 +11310,7 @@ relocations = [
   { offset = 0x1AB2, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1AC9, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1AD6, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1B0B, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1B0B, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1B46, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1B79, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1B8B, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -11346,7 +11346,7 @@ relocations = [
   { offset = 0x2002, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x200A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2055, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x205B, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x205B, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x206C, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x2071, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x20B9, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -11363,7 +11363,7 @@ relocations = [
   { offset = 0x217A, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2191, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x219E, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x21D3, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x21D3, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x220E, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x2241, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x2253, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -11704,7 +11704,7 @@ relocations = [
   { offset = 0x1763, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x177A, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1787, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x17BC, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x17BC, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x17F7, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x182A, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x183C, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -11740,7 +11740,7 @@ relocations = [
   { offset = 0x1CB3, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1CBB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1D06, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x1D0C, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x1D0C, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1D12, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x1D32, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x1D6A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -11757,7 +11757,7 @@ relocations = [
   { offset = 0x1E2B, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1E42, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1E4F, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1E84, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1E84, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1EBF, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1EF2, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1F04, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -12094,7 +12094,7 @@ relocations = [
   { offset = 0x1879, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1890, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x189D, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x18D2, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x18D2, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x190D, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1940, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1952, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -12135,7 +12135,7 @@ relocations = [
   { offset = 0x1EB0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1EB8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1F03, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x1F09, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x1F09, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1F0F, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x1F1F, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x1F67, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -12152,7 +12152,7 @@ relocations = [
   { offset = 0x2028, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x203F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x204C, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x2081, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x2081, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x20BC, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x20EF, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x2101, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -12505,7 +12505,7 @@ relocations = [
   { offset = 0x1A53, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1A6A, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1A77, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1AAC, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1AAC, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1AE7, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1B1A, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1B2C, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -12541,7 +12541,7 @@ relocations = [
   { offset = 0x1FA9, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1FB1, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1FFB, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2001, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x2001, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x2007, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x2017, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x205F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -12558,7 +12558,7 @@ relocations = [
   { offset = 0x2129, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2140, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x214D, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x2182, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x2182, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x21BD, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x21F0, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x2202, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -12903,7 +12903,7 @@ relocations = [
   { offset = 0x18D9, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x18F0, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x18FD, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1932, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1932, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x196D, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x19A0, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x19B2, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -12941,7 +12941,7 @@ relocations = [
   { offset = 0x1ED9, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1EE1, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1F2C, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x1F32, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x1F32, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1F38, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x1F48, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x1F90, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -12958,7 +12958,7 @@ relocations = [
   { offset = 0x2051, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2068, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x2075, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x20AA, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x20AA, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x20E5, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x2118, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x212A, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -13289,7 +13289,7 @@ relocations = [
   { offset = 0x17BD, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x17D4, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x17E1, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1816, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1816, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1851, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1884, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1896, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -13325,7 +13325,7 @@ relocations = [
   { offset = 0x1D0D, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1D15, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1D60, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x1D66, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x1D66, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1D6C, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x1D7C, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x1DC4, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -13342,7 +13342,7 @@ relocations = [
   { offset = 0x1E85, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1E9C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1EA9, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1EDE, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1EDE, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1F19, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1F4C, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1F5E, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -14418,7 +14418,7 @@ relocations = [
   { offset = 0x15E4, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x15ED, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x15F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x1629, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x1629, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x162F, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x165F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x166B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -14470,7 +14470,7 @@ relocations = [
   { offset = 0x1CC9, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x1CE0, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1CED, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x1D22, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x1D22, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x1D5D, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x1D90, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x1DA2, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -14505,7 +14505,7 @@ relocations = [
   { offset = 0x220F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2217, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2261, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
-  { offset = 0x2267, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x2267, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x226D, type = "REL32", symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ", target = 0x004183D0 },
   { offset = 0x22B5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x22C1, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -14521,7 +14521,7 @@ relocations = [
   { offset = 0x2376, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x238D, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x239A, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
-  { offset = 0x23CF, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x23CF, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x240A, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x243D, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
   { offset = 0x244F, type = "REL32", symbol = "?BeginNoticeTransition@Fighter@@QAEXEE@Z", target = 0x0045D6A0 },
@@ -15694,7 +15694,7 @@ relocations = [
   { offset = 0x45, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x4F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x63, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
-  { offset = 0x76, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x76, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x7C, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xD3, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xDA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
@@ -15708,7 +15708,7 @@ relocations = [
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x1B0, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1BA, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x1CB, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x1CB, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1E7, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x23E, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -15723,7 +15723,7 @@ relocations = [
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x320, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x32A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x33B, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x33B, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x357, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x3AE, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -15743,7 +15743,7 @@ relocations = [
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x4FD, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x507, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x518, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x518, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x534, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x58B, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -15763,7 +15763,7 @@ relocations = [
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x6DA, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6E4, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x6F5, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x6F5, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x711, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x768, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -15787,7 +15787,7 @@ relocations = [
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x909, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x913, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x924, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0x924, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x940, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x997, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -15813,7 +15813,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6C, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB94, type = "DIR32", symbol = "?g_SequenceStageAt0067161D@@3EA", target = 0x0067161D },
+  { offset = 0xB94, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBA8, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB0, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC07, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -16017,7 +16017,7 @@ target_address = 0x00455580
 size = 139
 compare_size = 139
 relocations = [
-  { offset = 0x12, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x12, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x1C, type = "DIR32", symbol = "?g_RecordedSamplesAt006718B8@@3PAEA", target = 0x006718B8 },
   { offset = 0x21, type = "REL32", symbol = "?Count@RecordedSamples455580View@@QBEIXZ", target = 0x00414620 },
   { offset = 0x2A, type = "DIR32", symbol = "?g_RecordedSamplesAt006718B8@@3PAEA", target = 0x006718B8 },
@@ -16025,7 +16025,7 @@ relocations = [
   { offset = 0x3B, type = "DIR32", symbol = "?g_RecordedSamplesAt006718B8@@3PAEA", target = 0x006718B8 },
   { offset = 0x40, type = "REL32", symbol = "?PopFront@RecordedSamples455580View@@QAEXXZ", target = 0x00454E30 },
   { offset = 0x47, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x52, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x52, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x60, type = "DIR32", symbol = "?g_RecordedSamplesAt006718B8@@3PAEA", target = 0x006718B8 },
   { offset = 0x65, type = "REL32", symbol = "?PushBack@RecordedSamples455580View@@QAEXABF@Z", target = 0x00414640 },
 ]
@@ -16940,7 +16940,7 @@ relocations = [
   { offset = 0x42, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x5D, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x80, type = "REL32", symbol = "?DrawFilledRectangle@Graphics@@YAXPBUtagRECT@@K@Z", target = 0x00403910 },
-  { offset = 0xB7, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0xB7, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0xDB, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0xED, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
   { offset = 0x134, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
@@ -16951,24 +16951,24 @@ relocations = [
   { offset = 0x220, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x239, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x271, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x28B, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x28B, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x2B4, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x2D3, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x2F3, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x2FA, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
-  { offset = 0x30F, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x2FA, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
+  { offset = 0x30F, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x328, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x347, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x367, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x390, type = "DIR32", symbol = "?g_StateContinueCount@@3CA", target = 0x00671623 },
+  { offset = 0x390, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x3E8, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x407, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x427, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x47E, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x49D, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x4BD, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x4C4, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
-  { offset = 0x4D4, type = "DIR32", symbol = "?g_EndOverlayFlagAt00671624@@3EA", target = 0x00671624 },
+  { offset = 0x4C4, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
+  { offset = 0x4D4, type = "DIR32", symbol = "?g_ContinueUsedAt00671624@@3EA", target = 0x00671624 },
   { offset = 0x53F, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x55E, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x57E, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
@@ -17408,11 +17408,11 @@ relocations = [
   { offset = 0x9B, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0xA7, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0xB3, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0xBF, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
-  { offset = 0xD8, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
-  { offset = 0xEA, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0xBF, type = "DIR32", symbol = "?g_SelectedSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0xD8, type = "DIR32", symbol = "?g_SelectedSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0xEA, type = "DIR32", symbol = "?g_SelectedSideAt006714B8@@3CA", target = 0x006714B8 },
   { offset = 0x101, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
-  { offset = 0x10F, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0x10F, type = "DIR32", symbol = "?g_SelectedSideAt006714B8@@3CA", target = 0x006714B8 },
   { offset = 0x11F, type = "REL32", symbol = "_memset", target = 0x00640490 },
   { offset = 0x129, type = "DIR32", symbol = "?g_InputMappings@@3PAVInputMapping4388D0@@A", target = 0x00671638 },
   { offset = 0x12E, type = "REL32", symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z", target = 0x00407170 },
@@ -19196,7 +19196,7 @@ relocations = [
   { offset = 0x45, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x4F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x63, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
-  { offset = 0x76, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x76, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x7C, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xD3, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xDA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
@@ -19210,7 +19210,7 @@ relocations = [
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x1B0, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1BA, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x1CB, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1CB, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x1E7, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x23E, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19225,7 +19225,7 @@ relocations = [
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x320, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x32A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x33B, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x33B, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x357, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x3AE, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19245,7 +19245,7 @@ relocations = [
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x4FD, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x507, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x518, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x518, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x534, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x58B, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19265,7 +19265,7 @@ relocations = [
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x6DA, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6E4, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x6F5, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6F5, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x711, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x768, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19289,7 +19289,7 @@ relocations = [
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
   { offset = 0x909, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x913, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
-  { offset = 0x924, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x924, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0x940, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0x997, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19315,7 +19315,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6C, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB94, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB94, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBA8, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB0, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC07, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19372,7 +19372,7 @@ relocations = [
   { offset = 0x45, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x4F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x63, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
-  { offset = 0x76, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x76, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x7C, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xD3, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xDA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
@@ -19384,7 +19384,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19399,7 +19399,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19419,7 +19419,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19439,7 +19439,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19463,7 +19463,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19491,7 +19491,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6C, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB81, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB81, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xB9B, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0xBA5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0xBB9, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19547,7 +19547,7 @@ compare_size = 3840
 relocations = [
   { offset = 0xC, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x2C, type = "DIR32", symbol = "$L2440", target = 0x004C6028 },
-  { offset = 0x3C, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x56, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x60, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x74, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19562,7 +19562,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19577,7 +19577,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19597,7 +19597,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19617,7 +19617,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19641,7 +19641,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19669,7 +19669,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6F, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB84, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB84, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBAB, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB3, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC0A, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19723,7 +19723,7 @@ compare_size = 3840
 relocations = [
   { offset = 0xC, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x2C, type = "DIR32", symbol = "$L2443", target = 0x004E7328 },
-  { offset = 0x3C, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x56, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x60, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x74, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19738,7 +19738,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19753,7 +19753,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19773,7 +19773,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19793,7 +19793,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19817,7 +19817,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19845,7 +19845,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6F, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB84, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB84, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBAB, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB3, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC0A, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -19899,7 +19899,7 @@ compare_size = 3840
 relocations = [
   { offset = 0xC, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x2C, type = "DIR32", symbol = "$L2446", target = 0x00507018 },
-  { offset = 0x3C, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x56, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x60, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x74, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19914,7 +19914,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19929,7 +19929,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19949,7 +19949,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19969,7 +19969,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -19993,7 +19993,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20021,7 +20021,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6F, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB84, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB84, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xB98, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB3, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC0A, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -20075,7 +20075,7 @@ compare_size = 3862
 relocations = [
   { offset = 0xC, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x2C, type = "DIR32", symbol = "$L2449", target = 0x0053153E },
-  { offset = 0x3C, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x56, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x60, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x74, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20090,7 +20090,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20105,7 +20105,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20125,7 +20125,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20145,7 +20145,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20169,7 +20169,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20197,7 +20197,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6F, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB84, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB84, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBAB, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBC1, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBC9, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
@@ -20252,7 +20252,7 @@ compare_size = 3840
 relocations = [
   { offset = 0xC, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x2C, type = "DIR32", symbol = "$L2452", target = 0x005568C8 },
-  { offset = 0x3C, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x56, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x60, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x74, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20267,7 +20267,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20282,7 +20282,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20302,7 +20302,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20322,7 +20322,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20346,7 +20346,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20374,7 +20374,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6F, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB84, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB84, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBAB, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB3, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC0A, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -20428,7 +20428,7 @@ compare_size = 3840
 relocations = [
   { offset = 0xC, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
   { offset = 0x2C, type = "DIR32", symbol = "$L2455", target = 0x00578B48 },
-  { offset = 0x3C, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x56, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x60, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x74, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20443,7 +20443,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20458,7 +20458,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20478,7 +20478,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20498,7 +20498,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20522,7 +20522,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20550,7 +20550,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6F, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB84, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB84, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBAB, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB3, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC0A, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -20607,7 +20607,7 @@ relocations = [
   { offset = 0x45, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x4F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x63, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
-  { offset = 0x76, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x76, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x7C, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xD3, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xDA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
@@ -20619,7 +20619,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20634,7 +20634,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20654,7 +20654,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20674,7 +20674,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20698,7 +20698,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20726,7 +20726,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6C, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB81, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB81, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBA8, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB0, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC07, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -20783,7 +20783,7 @@ relocations = [
   { offset = 0x45, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x4F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x63, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
-  { offset = 0x76, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x76, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x7C, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xD3, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xDA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
@@ -20795,7 +20795,7 @@ relocations = [
   { offset = 0x15D, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x172, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x192, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x1A7, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x1A7, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x1C1, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x1CB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x1DF, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20810,7 +20810,7 @@ relocations = [
   { offset = 0x2CD, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x2E2, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x302, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x317, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x317, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x331, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x33B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x34F, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20830,7 +20830,7 @@ relocations = [
   { offset = 0x4AA, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x4BF, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x4DF, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x4F4, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x50E, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x518, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x52C, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20850,7 +20850,7 @@ relocations = [
   { offset = 0x687, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x69C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x6BC, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x6D1, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x6D1, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6EB, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x6F5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x709, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20874,7 +20874,7 @@ relocations = [
   { offset = 0x8B6, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0x8CB, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0x8EB, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0x900, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0x900, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x91A, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0x924, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x938, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -20902,7 +20902,7 @@ relocations = [
   { offset = 0xB37, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
   { offset = 0xB4C, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
   { offset = 0xB6C, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },
-  { offset = 0xB81, type = "DIR32", symbol = "?stageIntroCharacter@@3CA", target = 0x0067161D },
+  { offset = 0xB81, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0xBA8, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
   { offset = 0xBB0, type = "REL32", symbol = "?Snap@CameraSnapF429@@YAXXZ", target = 0x00412CF0 },
   { offset = 0xC07, type = "REL32", symbol = "?RecordRoundFields@Fighter@@QAEXCFCCCHHH@Z", target = 0x004574D0 },
@@ -22632,7 +22632,7 @@ relocations = [
   { offset = 0x65E, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x676, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x695, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
-  { offset = 0x6A6, type = "DIR32", symbol = "?g_SettingsVolume006714B7@@3CA", target = 0x006714B7 },
+  { offset = 0x6A6, type = "DIR32", symbol = "?g_StreamVolumeAt006714B7@@3EA", target = 0x006714B7 },
   { offset = 0x6B8, type = "DIR32", symbol = "__real@42c80000", target = 0x00657888 },
   { offset = 0x6D3, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
   { offset = 0x6EA, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
@@ -22643,7 +22643,7 @@ relocations = [
   { offset = 0x7C0, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x7D8, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x7F7, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
-  { offset = 0x808, type = "DIR32", symbol = "?g_SettingsVolume006714B6@@3CA", target = 0x006714B6 },
+  { offset = 0x808, type = "DIR32", symbol = "?g_SoundVolumeAt006714B6@@3EA", target = 0x006714B6 },
   { offset = 0x81A, type = "DIR32", symbol = "__real@42c80000", target = 0x00657888 },
   { offset = 0x835, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
   { offset = 0x84C, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
@@ -22826,7 +22826,7 @@ relocations = [
   { offset = 0x63B, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x642, type = "DIR32", symbol = "?g_RenderByte0067161C@@3EA", target = 0x0067161C },
   { offset = 0x6BA, type = "REL32", symbol = "?AppendElement@FighterHistoryF126@@QAEXFMMVSpriteQuad40CA80@@U_D3DVECTOR@@KC@Z", target = 0x00411000 },
-  { offset = 0x6C1, type = "DIR32", symbol = "?g_RenderByte0066C237@@3EA", target = 0x0066C237 },
+  { offset = 0x6C1, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x6E5, type = "REL32", symbol = "?RemoveFrontIfPresent@FighterHistoryF126@@QAEXXZ", target = 0x004110C0 },
   { offset = 0x6F6, type = "REL32", symbol = "?RemoveFrontIfPresent@FighterHistoryF126@@QAEXXZ", target = 0x004110C0 },
   { offset = 0x701, type = "DIR32", symbol = "__real@43d20000", target = 0x00657830 },
@@ -24231,7 +24231,7 @@ size = 2815
 compare_size = 2815
 relocations = [
   { offset = 0x27, type = "REL32", symbol = "?ClearAuxiliaryWords@FighterControlsF130@@QAEXXZ", target = 0x00453A10 },
-  { offset = 0x86, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x86, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x94, type = "DIR32", symbol = "?g_ControlRecordedPress@@3PAEA", target = 0x006718A4 },
   { offset = 0x99, type = "REL32", symbol = "?Count@RecordedBytesF130@@QBEIXZ", target = 0x00414430 },
   { offset = 0xA2, type = "DIR32", symbol = "?g_ControlRecordedPress@@3PAEA", target = 0x006718A4 },
@@ -24250,7 +24250,7 @@ relocations = [
   { offset = 0xFB, type = "REL32", symbol = "?Front@RecordedSamples455580View@@QAEAAFXZ", target = 0x00454E10 },
   { offset = 0x10D, type = "DIR32", symbol = "?g_RecordedSamplesAt006718B8@@3PAEA", target = 0x006718B8 },
   { offset = 0x112, type = "REL32", symbol = "?PopFront@RecordedSamples455580View@@QAEXXZ", target = 0x00454E30 },
-  { offset = 0x1D1, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x1D1, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x1E1, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x1FA, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x207, type = "REL32", symbol = "?ApplyMode5Direction@FighterControlsF130@@QAEXXZ", target = 0x00454C20 },
@@ -24263,7 +24263,7 @@ relocations = [
   { offset = 0x3D0, type = "REL32", symbol = "?PushBack@RecordedBytesF130@@QAEXABE@Z", target = 0x00414450 },
   { offset = 0x3DF, type = "DIR32", symbol = "?g_RecordedSamplesAt006718B8@@3PAEA", target = 0x006718B8 },
   { offset = 0x3E4, type = "REL32", symbol = "?PushBack@RecordedSamples455580View@@QAEXABF@Z", target = 0x00414640 },
-  { offset = 0x3F0, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x3F0, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x3FE, type = "DIR32", symbol = "?g_ControlRecordedPress@@3PAEA", target = 0x006718A4 },
   { offset = 0x403, type = "REL32", symbol = "?Count@RecordedBytesF130@@QBEIXZ", target = 0x00414430 },
   { offset = 0x40C, type = "DIR32", symbol = "?g_ControlRecordedPress@@3PAEA", target = 0x006718A4 },
@@ -24271,7 +24271,7 @@ relocations = [
   { offset = 0x41B, type = "DIR32", symbol = "?g_ControlRecordedPress@@3PAEA", target = 0x006718A4 },
   { offset = 0x420, type = "REL32", symbol = "?PopFront@RecordedBytesF130@@QAEXXZ", target = 0x00454D70 },
   { offset = 0x739, type = "REL32", symbol = "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ", target = 0x00406E80 },
-  { offset = 0x964, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x964, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x972, type = "DIR32", symbol = "?g_ControlRecordedPress@@3PAEA", target = 0x006718A4 },
   { offset = 0x977, type = "REL32", symbol = "?PushBack@RecordedBytesF130@@QAEXABE@Z", target = 0x00414450 },
   { offset = 0xA70, type = "REL32", symbol = "?ClearAuxiliaryWords@FighterControlsF130@@QAEXXZ", target = 0x00453A10 },
@@ -24305,32 +24305,32 @@ relocations = [
   { offset = 0x24C, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
   { offset = 0x268, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
   { offset = 0x284, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
-  { offset = 0x2F8, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x329, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x339, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x340, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x397, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x3C8, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x3D8, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
+  { offset = 0x2F8, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x329, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x339, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x340, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x397, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x3C8, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x3D8, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x3F4, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x42D, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x45D, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x46E, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x475, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
+  { offset = 0x42D, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x45D, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x46E, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x475, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x48A, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x4C3, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x4F4, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x505, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
+  { offset = 0x4C3, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x4F4, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x505, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x523, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
   { offset = 0x550, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
   { offset = 0x577, type = "REL32", symbol = "?AbsoluteSelectionInputF130@@YAHH@Z", target = 0x00438A60 },
-  { offset = 0x5E8, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x618, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x629, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x630, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x68B, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x6BC, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
-  { offset = 0x6CC, type = "DIR32", symbol = "?g_SelectionStageF131@@3CA", target = 0x0067161D },
+  { offset = 0x5E8, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x618, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x629, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x630, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x68B, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x6BC, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
+  { offset = 0x6CC, type = "DIR32", symbol = "?g_StageSelectionAt0067161D@@3CA", target = 0x0067161D },
   { offset = 0x6D9, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
   { offset = 0x6DE, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0x71F, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
@@ -24610,7 +24610,7 @@ target = 0x006714B4
 [[units.fighter-resource-parameters-00452b30.relocations]]
 offset = 118
 type = "DIR32"
-symbol = "?g_FrameClockMode@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.fighter-resource-parameters-00452b30.relocations]]
 offset = 149
@@ -25660,7 +25660,7 @@ target = 0x0065782C
 [[units.fighter-select-hit-response-00455140.relocations]]
 offset = 401
 type = "DIR32"
-symbol = "?g_InputReplayModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.fighter-select-hit-response-00455140.relocations]]
 offset = 411
@@ -25705,7 +25705,7 @@ target = 0x006418AB
 [[units.fighter-select-hit-response-00455140.relocations]]
 offset = 509
 type = "DIR32"
-symbol = "?g_InputReplayModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.fighter-select-hit-response-00455140.relocations]]
 offset = 523
@@ -26324,7 +26324,7 @@ size = 1150
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 77
 type = "DIR32"
-symbol = "?g_FrameClockMode@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 135
@@ -26825,7 +26825,7 @@ target = 0x004079C0
 [[units.battle-handle-pause-menu-004461d0.relocations]]
 offset = 449
 type = "DIR32"
-symbol = "?g_InputReplayModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.battle-handle-pause-menu-004461d0.relocations]]
 offset = 589
@@ -30120,7 +30120,7 @@ target = 0x0040C9A0
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6218
 type = "DIR32"
-symbol = "?g_BackgroundPadNoticeAt00671621@@3EA"
+symbol = "?g_StoryResultAt00671621@@3EA"
 target = 0x00671621
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6233
@@ -31202,7 +31202,7 @@ target = 0x00671638
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 101
 type = "DIR32"
-symbol = "?g_SelectActiveSideAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 131
@@ -31297,7 +31297,7 @@ target = 0x004079C0
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 325
 type = "DIR32"
-symbol = "?g_SelectActiveSideAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 343
@@ -31477,7 +31477,7 @@ target = 0x006418AB
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 1160
 type = "DIR32"
-symbol = "?g_SequenceStageAt0067161D@@3EA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 1166
@@ -33379,7 +33379,7 @@ target = 0x0067141C
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 589
 type = "DIR32"
-symbol = "?g_FramePresentToggleAt0066C237@@3EA"
+symbol = "?g_FramePresentToggle@@3EA"
 target = 0x0066C237
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 623
@@ -33389,7 +33389,7 @@ target = 0x00657264
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 642
 type = "DIR32"
-symbol = "?g_SequenceStageAt00671632@@3EA"
+symbol = "?g_InputCanCancelAt00671632@@3EA"
 target = 0x00671632
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 650
@@ -33409,27 +33409,27 @@ target = 0x00413420
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 718
 type = "DIR32"
-symbol = "?g_FrameClockModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 729
 type = "DIR32"
-symbol = "?g_FrameClockModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 736
 type = "DIR32"
-symbol = "?g_SequenceStageAt00671632@@3EA"
+symbol = "?g_InputCanCancelAt00671632@@3EA"
 target = 0x00671632
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 744
 type = "DIR32"
-symbol = "?g_FrameClockModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 755
 type = "DIR32"
-symbol = "?g_FrameClockModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 771
@@ -33543,7 +33543,7 @@ target = 0x006714C8
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 396
 type = "DIR32"
-symbol = "?g_SequenceStageAt0067161D@@3EA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 427
@@ -34004,7 +34004,7 @@ target = 0x00671862
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 308
 type = "DIR32"
-symbol = "?g_StageAt0067161D@@3EA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 314
@@ -34149,7 +34149,7 @@ target = 0x00671862
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 491
 type = "DIR32"
-symbol = "?g_StageAt0067161D@@3EA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 497
@@ -34309,7 +34309,7 @@ target = 0x00671862
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 699
 type = "DIR32"
-symbol = "?g_StageAt0067161D@@3EA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 704
@@ -34429,7 +34429,7 @@ target = 0x00671862
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 863
 type = "DIR32"
-symbol = "?g_StageFlagAt00671622@@3EA"
+symbol = "?g_SequenceCounterAt00671622@@3EA"
 target = 0x00671622
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 869
@@ -34823,7 +34823,7 @@ target = 0x00671862
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 496
 type = "DIR32"
-symbol = "?g_StageAt0067161D@@3EA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 508
@@ -35003,7 +35003,7 @@ target = 0x00671862
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 732
 type = "DIR32"
-symbol = "?g_StageAt0067161D@@3EA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 743
@@ -35108,7 +35108,7 @@ target = 0x00671862
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 874
 type = "DIR32"
-symbol = "?g_StageFlagAt00671622@@3EA"
+symbol = "?g_SequenceCounterAt00671622@@3EA"
 target = 0x00671622
 
 [units.game-progress-check-selection-00419e10]
@@ -35497,12 +35497,12 @@ target = 0x00407B80
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 268
 type = "DIR32"
-symbol = "?g_FrameClockModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 280
 type = "DIR32"
-symbol = "?g_FrameClockModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 297
@@ -36929,7 +36929,7 @@ target = 0x0040BB80
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 473
 type = "DIR32"
-symbol = "?g_SelectionModeAt0066C238@@3EA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 480
@@ -37114,7 +37114,7 @@ target = 0x006714A4
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 692
 type = "DIR32"
-symbol = "?g_ReplayModeAt0066C238@@3EA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 712
@@ -37144,7 +37144,7 @@ target = 0x006714A4
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 781
 type = "DIR32"
-symbol = "?g_ReplayModeAt0066C238@@3EA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 801
@@ -37179,7 +37179,7 @@ target = 0x004079C0
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 866
 type = "DIR32"
-symbol = "?g_ReplayModeAt0066C238@@3EA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.replay-browser-update-selection-0042c670.relocations]]
 offset = 886
@@ -37369,7 +37369,7 @@ target = 0x004079C0
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 736
 type = "DIR32"
-symbol = "?g_ChoiceStageAt00671621@@3EA"
+symbol = "?g_StoryResultAt00671621@@3EA"
 target = 0x00671621
 [[units.character-select-scene-update-player-choice-004348e0.relocations]]
 offset = 922
@@ -37770,7 +37770,7 @@ target = 0x006714B4
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 438
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 447
@@ -37790,17 +37790,17 @@ target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 479
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 501
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 567
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 595
@@ -37815,22 +37815,22 @@ target = 0x004079C0
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 607
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 636
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 663
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 692
 type = "DIR32"
-symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 718
@@ -37970,17 +37970,17 @@ target = 0x006714C8
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1279
 type = "DIR32"
-symbol = "?g_SequencePhaseAt0067161D@@3CA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1291
 type = "DIR32"
-symbol = "?g_SequencePhaseAt0067161D@@3CA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1299
 type = "DIR32"
-symbol = "?g_SequencePhaseAt0067161D@@3CA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.character-select-scene-advance-00433470.relocations]]
 offset = 1306
@@ -38240,7 +38240,7 @@ target = 0x00671620
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 156
 type = "DIR32"
-symbol = "?g_SelectStageAt00671621@@3EA"
+symbol = "?g_StoryResultAt00671621@@3EA"
 target = 0x00671621
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 163
@@ -39575,7 +39575,7 @@ target = 0x0067160C
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 212
 type = "DIR32"
-symbol = "?g_ResultTotalDenominatorAt006714BC@@3HA"
+symbol = "?g_CumulativeScoreAt006714BC@@3HA"
 target = 0x006714BC
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 218
@@ -39610,7 +39610,7 @@ target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 288
 type = "DIR32"
-symbol = "?g_ResultSequenceAt00671622@@3CA"
+symbol = "?g_SequenceCounterAt00671622@@3EA"
 target = 0x00671622
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 294
@@ -39630,7 +39630,7 @@ target = 0x00658034
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 351
 type = "DIR32"
-symbol = "?g_ResultSequenceAt00671622@@3CA"
+symbol = "?g_SequenceCounterAt00671622@@3EA"
 target = 0x00671622
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 363
@@ -39791,7 +39791,7 @@ target = 0x006714B0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 486
 type = "DIR32"
-symbol = "?g_ResultModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 498
@@ -39816,7 +39816,7 @@ target = 0x00407E60
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 557
 type = "DIR32"
-symbol = "?g_ResultContinueAt00671621@@3EA"
+symbol = "?g_StoryResultAt00671621@@3EA"
 target = 0x00671621
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 568
@@ -39841,7 +39841,7 @@ target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 634
 type = "DIR32"
-symbol = "?g_ResultModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 646
@@ -40416,7 +40416,7 @@ target = 0x00671858
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 147
 type = "DIR32"
-symbol = "?g_NameModeAt0066C238@@3CA"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
 target = 0x0066C238
 [[units.name-entry-scene-update-shared-0042b380.relocations]]
 offset = 157
@@ -45282,12 +45282,12 @@ size = 261
 [[units.suika-fighter-reset-round-005c0c30.relocations]]
 offset = 213
 type = "DIR32"
-symbol = "?g_SuikaGlobalMarkerAt0066C23A@@3EA"
+symbol = "?g_SequenceByteAt0066C23A@@3EA"
 target = 0x0066C23A
 [[units.suika-fighter-reset-round-005c0c30.relocations]]
 offset = 220
 type = "DIR32"
-symbol = "?g_SuikaGlobalModeAt0066C239@@3EA"
+symbol = "?g_SequenceByteAt0066C239@@3EA"
 target = 0x0066C239
 [[units.suika-fighter-reset-round-005c0c30.relocations]]
 offset = 229
@@ -52265,7 +52265,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 115
 type = "DIR32"
-symbol = "?g_StageIdAt0067161D@@3CA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 147
@@ -52910,7 +52910,7 @@ target = 0x006714B4
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3677
 type = "DIR32"
-symbol = "?g_StageIdAt0067161D@@3CA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3683
@@ -52930,7 +52930,7 @@ target = 0x0066C238
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3717
 type = "DIR32"
-symbol = "?g_StageIdAt0067161D@@3CA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3729
@@ -53374,7 +53374,7 @@ target = 0x0067161D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 319
 type = "DIR32"
-symbol = "?g_SelectedCharacterAt006714C9@@3CA"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
 target = 0x0067161D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 329
@@ -53689,7 +53689,7 @@ target = 0x00456B60
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1769
 type = "DIR32"
-symbol = "?g_StageParametersAt00671440@@3PAEA"
+symbol = "?g_KeyBindingsAt00671440@@3PAEA"
 target = 0x00671440
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1780
@@ -53799,12 +53799,12 @@ target = 0x00671621
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2108
 type = "DIR32"
-symbol = "?g_StoryStatusAt00671623@@3EA"
+symbol = "?g_ContinueCountAt00671623@@3CA"
 target = 0x00671623
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2115
 type = "DIR32"
-symbol = "?g_StoryCurrentAt00671622@@3EA"
+symbol = "?g_SequenceCounterAt00671622@@3EA"
 target = 0x00671622
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2121
@@ -53899,7 +53899,7 @@ target = 0x006714B4
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2321
 type = "DIR32"
-symbol = "?g_PlaySideAt006714B8@@3CA"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
 target = 0x006714B8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2331
@@ -54079,17 +54079,17 @@ target = 0x00671621
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2696
 type = "DIR32"
-symbol = "?g_StoryStatusAt00671623@@3EA"
+symbol = "?g_ContinueCountAt00671623@@3CA"
 target = 0x00671623
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2705
 type = "DIR32"
-symbol = "?g_StoryStatusAt00671623@@3EA"
+symbol = "?g_ContinueCountAt00671623@@3CA"
 target = 0x00671623
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2712
 type = "DIR32"
-symbol = "?g_StoryCurrentAt00671622@@3EA"
+symbol = "?g_SequenceCounterAt00671622@@3EA"
 target = 0x00671622
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2718
@@ -60232,7 +60232,7 @@ target = 0x00671418
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 120
 type = "DIR32"
-symbol = "?g_StaffRollCompletionAt00671623@@3CA"
+symbol = "?g_ContinueCountAt00671623@@3CA"
 target = 0x00671623
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 131
@@ -61168,7 +61168,7 @@ relocations = [
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x23, type = "DIR32", symbol = "??_7BattleScene@@6B@", target = 0x00658334 },
- { offset = 0x31, type = "DIR32", symbol = "?g_FrameClockModeAt0066C238@@3CA", target = 0x0066C238 },
+ { offset = 0x31, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
  { offset = 0x46, type = "REL32", symbol = "?SetClampedGameValue@@YAXH@Z", target = 0x00423C60 },
  { offset = 0x71, type = "REL32", symbol = "??_GTextureManagerF198@@QAEPAXI@Z", target = 0x00425460 },
  { offset = 0x98, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
@@ -92862,7 +92862,7 @@ relocations = [
   { offset = 0x112EE, type = "DIR32", symbol = "?g_SequenceByteAt0066C23A@@3EA", target = 0x0066C23A },
   { offset = 0x11312, type = "REL32", symbol = "?UpdateGaugeTimer@Fighter@@QAEXH@Z", target = 0x0046D000 },
   { offset = 0x11327, type = "DIR32", symbol = "?g_SequenceByteAt0066C239@@3EA", target = 0x0066C239 },
-  { offset = 0x1132E, type = "DIR32", symbol = "?g_StoryStatusAt00671623@@3EA", target = 0x00671623 },
+  { offset = 0x1132E, type = "DIR32", symbol = "?g_ContinueCountAt00671623@@3CA", target = 0x00671623 },
   { offset = 0x11335, type = "DIR32", symbol = "?g_SequenceCounterAt00671622@@3EA", target = 0x00671622 },
   { offset = 0x1133E, type = "REL32", symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ", target = 0x0040FA30 },
   { offset = 0x11356, type = "REL32", symbol = "?ResetPrimaryCounters@Actor@@QAEXF@Z", target = 0x0040FAC0 },

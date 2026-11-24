@@ -24,7 +24,7 @@ void BattleScene::RenderEndOverlay() {
                 return;
             if (field0A0 == 0)
                 return;
-            if (g_FrameClockMode != 2) {
+            if (g_ReplayModeAt0066C238 != 2) {
                 SetRect(&rect, 0, 0, 256, 256);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&rect);
                 if (fighters[0]->field2CD == 0 && fighters[1]->field2CD == 0) {
@@ -40,16 +40,16 @@ void BattleScene::RenderEndOverlay() {
                     LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, packet, &rect, 0xFFFFFFFF);
                 }
             }
-            if (field018 == 12 && g_StateContinueCount > 0) {
+            if (field018 == 12 && g_ContinueCountAt00671623 > 0) {
                 SetRect(&rect, 288, 192, 512, 224);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(176.0f, 230.0f, 400.0f, 262.0f);
                 DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
-                SetRect(&rect, 512, g_StateContinueCount * 32 + 96, 576, g_StateContinueCount * 32 + 128);
+                SetRect(&rect, 512, g_ContinueCountAt00671623 * 32 + 96, 576, g_ContinueCountAt00671623 * 32 + 128);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(390.0f, 230.0f, 454.0f, 262.0f);
                 DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
             }
             if (field018 != 5 &&
-                (field018 != 12 || g_StateContinueCount != 0)) {
+                (field018 != 12 || g_ContinueCountAt00671623 != 0)) {
                 SetRect(&rect, 384, (field118 != 0) * 32 + 128,
                     512, (field118 != 0) * 32 + 160);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(256.0f, 140.0f, 384.0f, 172.0f);
@@ -59,7 +59,7 @@ void BattleScene::RenderEndOverlay() {
                 384, (field118 != 1) * 32 + 160);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(256.0f, 170.0f, 384.0f, 202.0f);
             DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
-            if (g_FrameClockMode != 2 && g_EndOverlayFlagAt00671624 == 0 && field018 != 7) {
+            if (g_ReplayModeAt0066C238 != 2 && g_ContinueUsedAt00671624 == 0 && field018 != 7) {
                 SetRect(&rect, 0, (field118 != 2) * 32 + 128,
                     256, (field118 != 2) * 32 + 155);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(192.0f, 200.0f, 448.0f, 227.0f);

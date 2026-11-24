@@ -1,3 +1,5 @@
+#include "GameConfigStorage.hpp"
+#include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "DisplayOptions.hpp"
 #include <windows.h>
@@ -22,6 +24,20 @@ signed char g_CombatMode;
 signed char g_StageAt0067161E;
 unsigned char g_StateFadeAlpha;
 int g_StateResetCounter;
+
+unsigned char g_FramePresentToggle = 1;
+signed char g_ReplayModeAt0066C238 = 1;
+unsigned char g_SequenceByteAt0066C239 = 1;
+unsigned char g_SequenceByteAt0066C23A = 1;
+signed char g_SelectedSideAt006714B8;
+int g_CumulativeScoreAt006714BC;
+signed char g_StageSelectionAt0067161D;
+signed char g_CharacterCountAt0067161F;
+unsigned char g_StoryResultAt00671621;
+unsigned char g_SequenceCounterAt00671622;
+signed char g_ContinueCountAt00671623;
+unsigned char g_ContinueUsedAt00671624;
+unsigned char g_InputCanCancelAt00671632;
 
 namespace GameConfigF193 {
 void ReadIni()

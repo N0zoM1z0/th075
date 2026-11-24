@@ -1,3 +1,4 @@
+#include "BattleSessionState.hpp"
 #include "GameProgress.hpp"
 #include "KnockoutProgressF172.hpp"
 #include "BattleScene.hpp"
@@ -5,7 +6,6 @@
 
 // Existing byte storage keeps its canonical unsigned carrier. The continuation
 // test below explicitly uses the signed byte interpretation observed here.
-extern unsigned char g_SequenceCounterAt00671622;
 // Observed dword accumulation; original name and signedness remain unknown.
 extern unsigned int g_KnockoutAccumulationAt0067160C;
 
@@ -37,7 +37,7 @@ void BattleScene::ResolveKnockout()
         fighters[0]->field3CE.unsignedAt3CE = 0;
         fighters[1]->field3CE.unsignedAt3CE = 1;
         if (fighters[1]->field3A4 > 0) {
-            if (g_FrameClockMode == 1) {
+            if (g_ReplayModeAt0066C238 == 1) {
                 if (fighters[0]->field464 != 0)
                     CARD_RECORDS->MarkCardFlag(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);

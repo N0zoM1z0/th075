@@ -1,7 +1,6 @@
+#include "BattleSessionState.hpp"
 #include "SuikaFighter.hpp"
 #include "Fighter.hpp"
-extern unsigned char g_SuikaGlobalMarkerAt0066C23A;
-extern unsigned char g_SuikaGlobalModeAt0066C239;
 void SuikaFighter::ResetRound()
 {
     sequenceTimer=0;
@@ -21,8 +20,8 @@ void SuikaFighter::ResetRound()
     aiWaitTimer=0;
     aiStep=0;
     aiCardTimer=0;
-    g_SuikaGlobalMarkerAt0066C23A=0xff;
-    g_SuikaGlobalModeAt0066C239=0xff;
+    g_SequenceByteAt0066C23A=0xff;
+    g_SequenceByteAt0066C239=0xff;
     ResetBaseRound();
     fieldF28=0;
     fieldF2A=0;
