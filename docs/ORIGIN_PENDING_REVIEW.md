@@ -403,7 +403,7 @@ The current direct-call scan is in
 | `0x0040D8C0`, `0x0040D8E0` | The typed texture cleanup reaches the bitmap-containing entry's destructor. The R108 implicit and explicit member lifetime forms both match the constructor and destructor with their bitmap calls. |
 | `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
 | `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
-| `0x004138D0`, `0x00441FD0` | Complete empty bodies with zero recorded Ghidra references. The current static scan finds no direct caller or absolute pointer literal for either entry. |
+| `0x004138D0`, `0x00441FD0` | Neither empty body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. The original owners are unknown. |
 | `0x004229D0` | R286 uses the actual script sequence layout. Both copy forms reproduce all 28 bytes and the relocation to the same deque copy constructor. |
 | `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
 | `0x00438A60`, `0x00641FB8` | The R163 long absolute-value overload and ordinary wrapper match. The underlying 11-byte body also matches both pinned CRT members. R263 independently places the separate `abs.obj` contribution at `0x00641DAA`. |
@@ -422,6 +422,7 @@ C++ forms produce identical code.
     scripts/repo-python .analysis/pending-origin-2026-11-24/inbounds.py
     scripts/repo-python scripts/ghidra.py query .analysis/final-origin-review/004138d0-xrefs.txt xrefs_to 30 0x004138D0
     scripts/repo-python scripts/ghidra.py query .analysis/final-origin-review/00441fd0-xrefs.txt xrefs_to 30 0x00441FD0
+    scripts/repo-python .analysis/final-origin-review/empty-hooks/archive.py
     scripts/compile-probe.sh .analysis/final-origin-review/lifetime-alternatives.cpp build/probes/LifetimeFinal-0.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src /DEXPLICIT_MEMBERS=0
     scripts/compile-probe.sh .analysis/final-origin-review/lifetime-alternatives.cpp build/probes/LifetimeFinal-1.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src /DEXPLICIT_MEMBERS=1
     scripts/compile-probe.sh .analysis/final-origin-review/sprite-list-explicit.cpp build/probes/SpriteHistoryListExplicitCtor.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
