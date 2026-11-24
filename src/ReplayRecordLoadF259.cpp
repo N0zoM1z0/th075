@@ -21,7 +21,7 @@ void ReplayRecords::LoadRecord(signed char slot)
     {
     handle = CreateFileA(filePath, GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
     entries = 0;
-    SetFilePointer(handle, recordOffsets[slot] + 0x3c, 0, FILE_BEGIN);
+    SetFilePointer(handle, fileHeader.recordOffsets[slot] + 0x3c, 0, FILE_BEGIN);
     ReadFile(handle,&header.field144,1,&bytesRead,0);
     ReadFile(handle,&header.field145,1,&bytesRead,0);
     ReadFile(handle,&header.field146,1,&bytesRead,0);

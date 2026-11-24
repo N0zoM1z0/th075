@@ -39,6 +39,18 @@ struct ReplayRecordHeaderF219 {
 };
 typedef char ReplayRecordHeaderSizeF219[(sizeof(ReplayRecordHeaderF219)==0x10)?1:-1];
 
+// The prefix written at the start of a replay file.
+struct ReplayFileHeaderF219 {
+    unsigned char playerName[8];
+    unsigned char month;
+    unsigned char day;
+    unsigned char unknown112[4];
+    signed char recordCount;
+    unsigned char unknown117[5];
+    DWORD recordOffsets[10];
+};
+typedef char ReplayFileHeaderSizeF219[(sizeof(ReplayFileHeaderF219) == 0x3C) ? 1 : -1];
+
 // The replay reader and input handlers share the native four-queue layout.
 // The writer still uses this layout with its iterator call declarations.
 template<class ByteQueue, class WordQueue, class DwordQueue>
@@ -48,12 +60,14 @@ struct ReplayRecordsLayoutF219 {
     void LoadRecord(signed char slot);
     void ClearFourQueues();
     unsigned char IsPrimaryInputQueueEmpty();
+    void BeginCapture();
+    void FinalizeFile();
+    int FindAvailablePath(char* path);
+    void ReadSnapshotHeader();
 
     HANDLE fileHandle;                   // +0x000
-    char filePath[0x112];                // +0x004 .. +0x115
-    signed char field116;                // +0x116 next record-offset slot
-    unsigned char unknown117[5];         // +0x117 .. +0x11B
-    DWORD recordOffsets[10];             // +0x11C ten file offsets
+    char filePath[MAX_PATH];             // +0x004 .. +0x107
+    ReplayFileHeaderF219 fileHeader;     // +0x108 .. +0x143
     ReplayRecordHeaderF219 header;       // +0x144 .. +0x153
     ByteQueue byteInputs;                // +0x154
     WordQueue wordInputs;                // +0x168
@@ -68,6 +82,7 @@ typedef ReplayRecordsLayoutF219<ReplayByteQueue, ReplayWordQueue, ReplayDwordQue
 
 typedef char ReplayRecordsNativeLayout[(
     sizeof(ReplayRecords) == 0x1A4 &&
+    offsetof(ReplayRecords, fileHeader) == 0x108 &&
     offsetof(ReplayRecords, byteInputs) == 0x154 &&
     offsetof(ReplayRecords, wordInputs) == 0x168 &&
     offsetof(ReplayRecords, secondaryInputs) == 0x17C &&

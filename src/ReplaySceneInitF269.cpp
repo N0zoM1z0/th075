@@ -1,5 +1,7 @@
 #include "GameSharedState.hpp"
 #include "GameProgress.hpp"
+#include "Fighter.hpp"
+#include "ReplaySegmentedQueueF219.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 
@@ -11,36 +13,35 @@ public:
     ReplayBaseF269();
     virtual ~ReplayBaseF269();
 };
-class ReplaySavePathsF269 {
-public:
-    int FindAvailablePath(char* filename);
-};
-extern ReplaySavePathsF269 g_ReplaySavePathsAt00671750;
 extern unsigned char g_CurrentFighterAt006714C8;
 extern unsigned char* g_SelectedFighterAt00671418;
 extern const char g_ReplaySceneRootAt00657F44[];
 extern const char g_ReplaySceneFileAt00657F4C[];
 class ReplaySceneInitF269 : public ReplayBaseF269 {
     TextureManagerF198* texture;
+    ProgressDifficulty* selectedRecord;
+    short field010;
+    short field012;
+    short field014;
+    unsigned char unknown016[2];
+    int pathIndex;
+    char replayPath[MAX_PATH];
+    unsigned char rank;
 public:
     ReplaySceneInitF269();
     virtual ~ReplaySceneInitF269();
 };
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 ReplaySceneInitF269::ReplaySceneInitF269()
 {
     texture=new TextureManagerF198();
     texture->AllocateUnformattedSlots(3);
     texture->LoadDefault(g_ReplaySceneFileAt00657F4C,g_ReplaySceneRootAt00657F44);
-    FIELD(short,0x10)=0;
-    FIELD(short,0x12)=0;
-    FIELD(short,0x14)=0;
+    field010 = 0;
+    field012 = 0;
+    field014 = 0;
     g_GameProgress.SetSelection(g_CurrentFighterAt006714C8,static_cast<unsigned char>(g_OptionsModeAt006714D0));
-    FIELD(void*,0x0c)=g_GameProgress.GetSelectedRecordAddress();
-    FIELD(unsigned char,0x120)=static_cast<ProgressDifficulty*>(FIELD(void*,0x0c))->InsertRankedScore(
-        *reinterpret_cast<int*>(g_SelectedFighterAt00671418+0x2d0));
-    g_GameProgress.StoreWorkingEightBytes(FIELD(unsigned char,0x120));
-    FIELD(int,0x18)=g_ReplaySavePathsAt00671750.FindAvailablePath(
-        reinterpret_cast<char*>(this)+0x1c);
+    selectedRecord = g_GameProgress.GetSelectedRecordAddress();
+    rank = selectedRecord->InsertRankedScore(reinterpret_cast<Fighter*>(g_SelectedFighterAt00671418)->score);
+    g_GameProgress.StoreWorkingEightBytes(rank);
+    pathIndex = g_ReplayRecords.FindAvailablePath(replayPath);
 }
-#undef FIELD

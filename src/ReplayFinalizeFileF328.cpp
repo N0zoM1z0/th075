@@ -1,9 +1,7 @@
-#include <windows.h>
+#include "ReplaySegmentedQueueF219.hpp"
 #include <new>
 #include <stdlib.h>
 
-// This method only borrows the physical existing replay handle and
-// 60-byte record header; complete owner and archive formats remain unknown.
 extern const char g_ReplayTemporaryFileAt00657904[];
 struct NativeFinalizeWorkF328 {
     void* releasedData;
@@ -18,34 +16,27 @@ typedef char CheckNativeFrame280F328[(sizeof(NativeFinalizeWorkF328)==280)?1:-1]
 // This contains only used game state, no synthetic stack filler.
 struct ActualFileStateF328 { HANDLE output; DWORD size; unsigned int i; };
 typedef char CheckActualFileState12F328[(sizeof(ActualFileStateF328)==12)?1:-1];
-class ReplayFinalizeF218 {
-public:
-    void FinalizeFile();
-    void MakeArchivePath(char* output);
-public:
-    // Observed fields; meanings not yet known.
-    HANDLE field000;
-};
-void ReplayFinalizeF218::FinalizeFile()
+template<>
+void ReplayRecords::FinalizeFile()
 {
     NativeFinalizeWorkF328 state;
     ActualFileStateF328 io;
-    MakeArchivePath(state.path);
+    FindAvailablePath(state.path);
     io.output = CreateFileA(state.path,GENERIC_WRITE,0,0,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,0);
-    WriteFile(io.output,reinterpret_cast<unsigned char*>(this)+0x108,0x3c,&state.written,0);
-    CloseHandle(field000);
-    field000 = CreateFileA(g_ReplayTemporaryFileAt00657904,
+    WriteFile(io.output,&fileHeader, sizeof(fileHeader),&state.written,0);
+    CloseHandle(fileHandle);
+    fileHandle = CreateFileA(g_ReplayTemporaryFileAt00657904,
                      GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
-    io.size=GetFileSize(field000,0);
+    io.size=GetFileSize(fileHandle,0);
     state.allocation = ::operator new(io.size);
     state.data = static_cast<char*>(state.allocation);
     for (io.i=0;io.i<io.size;++io.i) {
-        ReadFile(field000,state.data,1,&state.written,0);
+        ReadFile(fileHandle,state.data,1,&state.written,0);
         WriteFile(io.output,state.data,1,&state.written,0);
     }
     state.releasedData = state.data;
     free(state.releasedData);
-    CloseHandle(field000);
-    field000 = 0;
+    CloseHandle(fileHandle);
+    fileHandle = 0;
     CloseHandle(io.output);
 }

@@ -1,16 +1,9 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "GameSnapshot.hpp"
 #include <windows.h>
 
-// The archive receiver and global player/snapshot bytes are borrowed anchor
-// declarations only. No complete original scene or serialization layout.
-class SnapshotArchiveF202 {
-public:
-    void ReadSnapshotHeader();
-    void LoadRecord(int number);
-};
-extern SnapshotArchiveF202 g_SnapshotArchiveAt00671750;
 extern short g_RecordSequenceAt006714A4;
 extern unsigned char g_PlayerIdAt006714C8[];
 extern unsigned char g_PlayerAltAt00671610[];
@@ -24,9 +17,9 @@ extern unsigned char g_SnapshotAt00671862[];
 namespace GameStateF202 {
 void RestoreFromSnapshot()
 {
-    g_SnapshotArchiveAt00671750.ReadSnapshotHeader();
+    g_ReplayRecords.ReadSnapshotHeader();
     if (static_cast<signed char>(SNAP(3)) == 0) {
-        g_SnapshotArchiveAt00671750.LoadRecord(0);
+        g_ReplayRecords.LoadRecord(0);
         if (static_cast<signed char>(SNAP(5)) >= 0) {
             g_CombatMode = 1;
             g_SelectedSideAt006714B8 = SNAP(5);
@@ -59,7 +52,7 @@ void RestoreFromSnapshot()
         }
         g_StageSelectionAt0067161D = SNAP(0x38);
     } else if (static_cast<signed char>(SNAP(3)) >= 5) {
-        g_SnapshotArchiveAt00671750.LoadRecord(g_RecordSequenceAt006714A4 - 1);
+        g_ReplayRecords.LoadRecord(g_RecordSequenceAt006714A4 - 1);
         ++g_RecordSequenceAt006714A4;
         g_OptionsModeAt006714D0 = static_cast<signed char>(SNAP(3)) - 5;
         g_CombatMode = 4;
@@ -79,7 +72,7 @@ void RestoreFromSnapshot()
         g_StageSelectionAt0067161D = SNAP(0x38);
     } else {
         g_SelectedSideAt006714B8 = 0;
-        g_SnapshotArchiveAt00671750.LoadRecord(g_RecordSequenceAt006714A4 - 1);
+        g_ReplayRecords.LoadRecord(g_RecordSequenceAt006714A4 - 1);
         ++g_RecordSequenceAt006714A4;
         g_CombatMode = 3;
         g_OptionsModeAt006714D0 = static_cast<signed char>(SNAP(3)) - 1;

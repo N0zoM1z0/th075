@@ -7,7 +7,7 @@
 #include "BattleScene.hpp"
 // Partial interfaces, used only on existing receivers.
 class StatePatternActor { public: void ChoosePattern(); };
-class StateReplay { public: void AppendRecord(); bool IsInputEmpty(); };
+class StateReplay { public: void AppendRecord(); };
 class StateEffects { public: void ReleaseEntries(); };
 extern StateReplay g_StateReplay;
 extern signed char g_StateReplayLimit;

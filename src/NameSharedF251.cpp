@@ -1,12 +1,9 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
 // Borrowed player editor, sound device and score persistence receiver. The
 // original parent layout remains unproven and is not instantiated.
-class NameScoreF251 { public: void SaveCurrent(); };
-extern NameScoreF251 g_NameScoreAt00671750;
-extern unsigned char g_NameLettersAt00671858[8];
-extern unsigned char g_NameLastLetterAt0067185F;
 class NameSharedSceneF251 {
 public:
     virtual void SlotZero();
@@ -27,18 +24,18 @@ unsigned short NameSharedSceneF251::UpdateShared()
             g_SoundBank->Play(0x2d);
             if (SELECTED==0x5b) {
                 if (SHORT(0x12)>7)
-                    g_NameLastLetterAt0067185F=100;
+                    g_ReplayRecords.fileHeader.playerName[7]=100;
                 else
-                    g_NameLettersAt00671858[SHORT(0x12)]=100;
+                    g_ReplayRecords.fileHeader.playerName[SHORT(0x12)]=100;
             } else if (SELECTED==0x5c) {
                 if (g_ReplayModeAt0066C238==1)
-                    g_NameScoreAt00671750.SaveCurrent();
+                    g_ReplayRecords.FinalizeFile();
                 return 0x2202;
             } else {
                 if (SHORT(0x12)>7)
-                    g_NameLastLetterAt0067185F=static_cast<unsigned char>(SELECTED);
+                    g_ReplayRecords.fileHeader.playerName[7]=static_cast<unsigned char>(SELECTED);
                 else
-                    g_NameLettersAt00671858[SHORT(0x12)]=static_cast<unsigned char>(SELECTED);
+                    g_ReplayRecords.fileHeader.playerName[SHORT(0x12)]=static_cast<unsigned char>(SELECTED);
             }
             ++SHORT(0x12);
             if (SHORT(0x12)>8)
@@ -51,7 +48,7 @@ unsigned short NameSharedSceneF251::UpdateShared()
         if (SHORT(0x16)==2) {
             g_SoundBank->Play(0x28);
             --SHORT(0x12);
-            g_NameLettersAt00671858[SHORT(0x12)]=100;
+            g_ReplayRecords.fileHeader.playerName[SHORT(0x12)]=100;
             if (SHORT(0x12)<0) {
                 BYTE(0xc)=1;
                 SHORT(0x12)=0;

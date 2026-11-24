@@ -1,3 +1,4 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "AudioControl.hpp"
@@ -242,7 +243,7 @@ short BattleScene::AdvanceState()
         if (fighters[1]->field39D == 2) field099 = 128;
         else if (field099 < 255) ++field099;
     }
-    if (g_ReplayModeAt0066C238 == 2 && g_StateReplay.IsInputEmpty()) {
+    if (g_ReplayModeAt0066C238 == 2 && g_ReplayRecords.IsPrimaryInputQueueEmpty()) {
         if (g_CombatMode != 3 && g_CombatMode != 4) STATE = 6;
         else if (g_StageAt0067161E >= g_StateReplayLimit) STATE = 6;
     }

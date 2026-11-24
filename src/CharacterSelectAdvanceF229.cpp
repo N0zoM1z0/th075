@@ -1,3 +1,4 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -18,8 +19,6 @@ extern const float g_ChoiceClockStepAt0065825C;
 extern const float g_ChoiceRiseLimitAt0065788C;
 extern const float g_ChoiceLoopLimitAt00658258;
 extern const float g_ChoiceReturnStepAt0065747C;
-class SelectionReplayF229 {public: void BeginCapture();};
-extern SelectionReplayF229 g_ReplayCaptureAt00671750;
 #define PLAY(id) g_SoundBank->Play(id)
 unsigned short CharacterSelectScene::Update()
 {
@@ -106,7 +105,7 @@ unsigned short CharacterSelectScene::Update()
             g_ModeRightAt006714AD=0;
         }
         AudioControl407CA0::ScheduleFade(-10000,-60,1,0);
-        g_ReplayCaptureAt00671750.BeginCapture();
+        g_ReplayRecords.BeginCapture();
         return 0x2201;
     } else {
         (animationPhase) = (animationPhase) + g_ChoiceReturnStepAt0065747C;

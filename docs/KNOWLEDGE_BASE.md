@@ -115,6 +115,19 @@ A headless archive consumer loaded a test record into all four queues,
 checked the signed sample and high-bit values, cleared the queues, and
 confirmed that destruction closed the owned Windows handle.
 
+The owner has a 260-byte path at `+0x04` and a 60-byte file header at
+`+0x108`. The header holds the name, date and ten record offsets. Capture,
+snapshot loading, finalization and both path-selection callers use the
+same owner. A headless archive consumer read the header and one record
+from a single test file.
+
+Standard iterators reproduce the append writer's 1,252-byte size,
+379 instructions and 50 relocation fields. The remaining differences
+are stack operands for the iterator locals. Changing names, declaration
+order and local lifetimes left at least 19 differing bytes under the
+pinned profile. The existing writer body still uses its established
+56-byte local frame with separate iterator declarations.
+
 `Graphics::BeginFrame` returns the status from `BeginTarget` on both
 branches. The native caller tests AL, and the bool declaration preserves
 all 36 bytes of the wrapper. The application and scene drawing callers

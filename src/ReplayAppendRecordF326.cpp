@@ -62,7 +62,7 @@ public:
     void AppendRecord();
     void ClearQueues();
 };
-typedef char ReplayRecordOffsetsCheckF326[(offsetof(ReplayAppendOwnerLayoutF326,recordOffsets)==0x11c)?1:-1];
+typedef char ReplayRecordOffsetsCheckF326[((offsetof(ReplayAppendOwnerLayoutF326, fileHeader) + offsetof(ReplayFileHeaderF219, recordOffsets))==0x11c)?1:-1];
 typedef char ReplayRecordHeaderCheckF326[(offsetof(ReplayAppendOwnerLayoutF326,header)==0x144)?1:-1];
 typedef char ReplayByteInputsCheckF326[(offsetof(ReplayAppendOwnerLayoutF326,byteInputs)==0x154)?1:-1];
 typedef char ReplayWordInputsCheckF326[(offsetof(ReplayAppendOwnerLayoutF326,wordInputs)==0x168)?1:-1];
@@ -91,7 +91,7 @@ void ReplayAppendF219::AppendRecord()
     frame.wordIndexEnd.Initialize();
     frame.dwordHead.Initialize();
     frame.dwordIndexEnd.Initialize();
-    recordOffsets[field116] = SetFilePointer(fileHandle,0,0,FILE_CURRENT);
+    fileHeader.recordOffsets[fileHeader.recordCount] = SetFilePointer(fileHandle,0,0,FILE_CURRENT);
     WriteFile(fileHandle,&header.field144,1,&frame.written,0);
     WriteFile(fileHandle,&header.field145,1,&frame.written,0);
     WriteFile(fileHandle,&header.field146,1,&frame.written,0);
@@ -127,5 +127,5 @@ void ReplayAppendF219::AppendRecord()
     for (; frame.dwordHead!=frame.dwordIndexEnd; frame.dwordHead++)
         WriteFile(fileHandle,&*frame.dwordHead,4,&frame.written,0);
     ClearQueues();
-    ++field116;
+    ++fileHeader.recordCount;
 }
