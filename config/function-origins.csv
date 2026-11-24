@@ -1873,7 +1873,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00454E10,library,VC7STL,exclude,complete-vc7-front-graph-and-whole-game-consumer-widths,R172
 0x00454E30,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
 0x00454EE0,authored,FighterState,authored,complete-game-policy-with-batch-context,R103
-0x00454F70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00454F70,authored,ActorState,authored,exact-game-frame-flag-policy-with-independent-action-dispatch,R281
 0x00454F90,authored,FighterState,authored,complete-game-policy-with-batch-context,R103
 0x00454FD0,authored,FighterState,authored,complete-game-policy-with-batch-context,R103
 0x00455010,authored,FighterState,authored,complete-game-policy-with-batch-context,R104

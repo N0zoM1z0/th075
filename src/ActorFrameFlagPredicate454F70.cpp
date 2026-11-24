@@ -1,7 +1,6 @@
 #include "Actor.hpp"
 
-// Provisional natural C++ reconstruction of the unreferenced 00454F70 leaf.
-// Its owner/original role remains unclassified; retain the address in the name.
+// The target takes the actor in ECX and returns the tested bit as an int.
 int __fastcall FrameFlag20PredicateAt00454F70(Actor* actor)
 {
     return (actor->frameInfo->flags & 0x20) > 0;

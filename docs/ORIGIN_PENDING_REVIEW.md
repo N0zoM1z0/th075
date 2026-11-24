@@ -229,6 +229,22 @@ explicit declaration forms.
     scripts/compile-probe.sh .analysis/final-origin-review/sprite-list.cpp build/probes/SpriteHistoryListOrigin.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
     scripts/repo-python .analysis/final-origin-review/compare-sprite.py
 
+### R281 — Actor frame flag predicate
+
+The 31-byte predicate at `0x00454F70` follows the animation frame
+pointer at `Actor+0x74`, reads the DWORD at frame offset `0x3C` and
+returns whether bit `0x20` is set. The exact Meiling action dispatcher
+independently follows the same pointer and tests the same bit at
+`0x005E248B` before taking the action branch. This identifies the
+predicate as game-specific frame logic. The original symbol and C++
+declaration remain unknown.
+
+The existing natural source uses the shared Actor layout and takes the
+only observed argument in ECX. It cold-replays all 31 bytes with zero
+relocation fields.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit actor-frame-flag20-predicate-00454f70 --unit character-action-dispatch-005e2310
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

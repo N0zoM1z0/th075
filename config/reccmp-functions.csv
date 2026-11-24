@@ -1010,3 +1010,4 @@ YukariFighter::Advance,0x0058AF60,function
 SuikaFighter::Advance,0x005AEEC0,function
 MeilingFighter::Advance,0x005D73C0,function
 RecordPrefix16F738::~RecordPrefix16F738,0x004588B0,function
+FrameFlag20PredicateAt00454F70,0x00454F70,function

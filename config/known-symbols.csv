@@ -961,3 +961,4 @@ address,name,module,confidence,evidence
 0x005AEEC0,SuikaFighter::Advance,SuikaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x005D73C0,MeilingFighter::Advance,MeilingFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x004588B0,RecordPrefix16F738::~RecordPrefix16F738,GameLifetime,inferred,"R274; same-prefix original constructor, allocation and destruction paths"
+0x00454F70,FrameFlag20PredicateAt00454F70,ActorState,inferred,R281; same frame pointer and flag test in the exact action dispatcher

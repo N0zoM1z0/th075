@@ -1007,3 +1007,4 @@ YukariFighter::Advance
 SuikaFighter::Advance
 MeilingFighter::Advance
 RecordPrefix16F738::~RecordPrefix16F738
+FrameFlag20PredicateAt00454F70

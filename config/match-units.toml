@@ -94468,3 +94468,13 @@ size = 43
 relocations = [
   { offset = 0x20, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
 ]
+
+[units.actor-frame-flag20-predicate-00454f70]
+source = "src/ActorFrameFlagPredicate454F70.cpp"
+object = "build/matching/ActorFrameFlagPredicate454F70.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FrameFlag20PredicateAt00454F70"]
+symbol = "?FrameFlag20PredicateAt00454F70@@YIHPAVActor@@@Z"
+target_address = 0x00454F70
+size = 31
+relocations = []
