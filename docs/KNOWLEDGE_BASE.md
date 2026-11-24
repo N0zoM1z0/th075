@@ -307,6 +307,13 @@ before adding the base, in a different instruction order.
   continuation in `0x59` preserves the bounce bytes but changes the next
   two action entries. [Alice's paired comparisons](GIANTS.md#2026-11-24--alices-fighter-advance-cold-replays-exactly)
 
+- In Patchouli's fighter `Advance`, the startup continuation in
+  `0x2BC` affects the register used after the next call within the same
+  action. The landing continuation in `0x5E` affects the next case entry.
+  Compare the first register mismatch with both the preceding condition
+  and the preceding action before rewriting the differing instruction.
+  [Patchouli's complete comparison](GIANTS.md#2026-11-24--patchoulis-fighter-advance-cold-replays-exactly)
+
 ### Conditions and loops
 
 - The compiler keeps comparison constants literally: `i < 37` emits

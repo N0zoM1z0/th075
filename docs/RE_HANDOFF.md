@@ -148,14 +148,23 @@ path in `0x5E` restores the entry state of `0x5F`. The ledger credits
 43,601 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--alices-fighter-advance-cold-replays-exactly)
 
+### Patchouli fighter Advance is exact
+
+`patchouli-fighter-advance-004f7130` cold-replays 45,186 bytes with seven
+jump tables, four remaps and 1,418 relocations. The landing continuation
+in `0x5E`, the startup continuation in `0x2BC` and the repeat continuation
+in `0x31B` restore the original register choices. The ledger credits
+44,211 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--patchoulis-fighter-advance-cold-replays-exactly)
+
 ## Remaining giant parents
 
 The remaining authored functions are fighter `Advance` methods with
 partial or unstarted parents.
 
-- Patchouli `004F7130` (44,211 bytes).
-- Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0` (71,616 bytes),
-  Meiling `005D73C0` (43,282 bytes).
+- Yukari `0058AF60` (49,230 bytes) is the next fighter to reconstruct.
+- Suika `005AEEC0` (71,616 bytes) and Meiling `005D73C0` (43,282 bytes)
+  remain after Yukari.
 
 `docs/GIANTS.md` records the full sources, original extents and
 previous experiments.

@@ -84,6 +84,7 @@ rows have complete replay units.
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
 | 004D7E70 | Alice fighter | 43,601 | `AliceFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
+| 004F7130 | Patchouli fighter | 44,211 | `PatchouliFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` (cold exact) | 0 | 0 | — |
 | 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` (cold exact) | 0 | 0 | — |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
@@ -2140,3 +2141,34 @@ relocation field. Run the full linked comparisons with
 after cold replay.
 
     scripts/repo-python scripts/replay-exact-units.py --unit alice-fighter-advance-004d7e70
+
+
+## 2026-11-24 — Patchouli's fighter Advance cold-replays exactly
+
+`PatchouliFighter::Advance` at `0x004F7130` covers 44,211 CODE bytes.
+The 45,186-byte comparison includes 1,418 relocations, 1,350 direct
+branches, 141 jump words in seven tables and four remaps. Vtable
+`0x00659768` points directly to the function in slot 1. The 133
+action entries include separate bodies for `0x5D` and `0x5E`. Both
+spawn effect `0x353` on every frame, evaluating the random Y offset
+before the X offset. Actions 0, 2, 4 and 5 share the frame-advance
+tail at `0x00501DD7`.
+
+Once all instruction mnemonics aligned, three instruction widths and
+675 register operands still differed. Explicit later frames of stage 6
+in `0x5E` restore ECX at `0x004F9438` in the next action. The startup
+continuation in `0x2BC` restores EAX at `0x004FFE0B` within that action,
+and the repeat continuation in `0x31B` restores the entry registers of
+`0x31C`. Action 7 clears the motion flag only on its fast launch path.
+That nested assignment determines where the preceding conditional jump
+lands.
+
+Removing only the stage-6 continuation changes that first AX extension
+to EAX at `0x004F9438`. The action destinations by instruction and all
+1,350 direct edges still agree. The three changed instruction widths
+move 941 relocation fields and leave 32,546 differing bytes including
+the size increase. The cold-built positive control has zero differences.
+Run both comparisons with
+`scripts/repo-python .analysis/patchouli-fighter-advance/landing-control.py`.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit patchouli-fighter-advance-004f7130

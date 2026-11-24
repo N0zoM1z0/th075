@@ -287,3 +287,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00564BE0,CharacterMove::AdvanceAt00564BE0,YuyukoFighter::Advance,R048,yuyuko-fighter-advance-00564be0
 0x00486550,CharacterMove::AdvanceAt00486550,MarisaFighter::Advance,R048,marisa-fighter-advance-00486550
 0x004D7E70,CharacterMove::AdvanceAt004D7E70,AliceFighter::Advance,R048,alice-fighter-advance-004d7e70
+0x004F7130,CharacterMove::AdvanceAt004F7130,PatchouliFighter::Advance,R048,patchouli-fighter-advance-004f7130

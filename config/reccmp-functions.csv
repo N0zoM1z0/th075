@@ -1005,3 +1005,4 @@ MarisaObject::Advance,0x0049C8F0,function
 YuyukoFighter::Advance,0x00564BE0,function
 MarisaFighter::Advance,0x00486550,function
 AliceFighter::Advance,0x004D7E70,function
+PatchouliFighter::Advance,0x004F7130,function
