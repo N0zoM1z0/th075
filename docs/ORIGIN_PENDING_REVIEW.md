@@ -433,6 +433,35 @@ C++ forms produce identical code.
     scripts/repo-python .analysis/final-origin-review/check-residual-controls.py
     scripts/repo-python .analysis/frame-copy-origin/compare.py
 
+### R289 — Link order and the CRT absolute-value candidate
+
+The native window at `0x00641F00` contains the full 184-byte `memcmp`,
+the 11-byte candidate at `0x00641FB8`, 13 alignment bytes, and the
+complete 336-byte `log10.obj` code section. The pinned VC7.1 linker
+places the CRT `labs.obj` body at the same relative offset when the
+probe links against `libcmt.lib`. The scratch and native 544-byte
+windows match their source objects with all 18 `log10` relocation
+fields bound separately in each image.
+
+Linking the same ordinary 11-byte function as a separate object before
+the library, or in a separate archive on either side of it, moves it
+outside the interval. Supplying the original `memcmp.obj` and
+`log10.obj` as explicit inputs around the ordinary function restores
+all 544 bytes and fields in the same relative layout. These builds
+use the linker's automatic alignment. The original input order is
+unknown, so the interval cannot independently identify the 11-byte
+body as `labs.obj`.
+
+In `.analysis/final-origin-review/crt-link-order/`, the two entry
+objects use `/MT /Od /Ob0 /Oi- /Gy /GR- /GX- /Zl` and
+`/DORDINARY=0` or `/DORDINARY=1`. The ordinary function uses
+`/MT /O1 /Ob0 /Gy /GR- /GX- /Zl`. The `crt-*.obj` files are the
+unchanged members `memcmp.obj`, `labs.obj`, `log10.obj` and
+`abs.obj` from the pinned `libcmt.lib`.
+
+    bash .analysis/final-origin-review/crt-link-order/link.sh
+    scripts/repo-python .analysis/final-origin-review/crt-link-order/compare.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
