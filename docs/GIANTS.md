@@ -2274,4 +2274,17 @@ instruction, and all 1,395 direct branch edges. The byte counts include
 any difference in extent size. Run the full comparisons with
 `scripts/repo-python .analysis/meiling-fighter-advance/follow-through-control.py`.
 
+Read-only hardware breakpoints in the pinned VC7.1 back end locate the
+change between the reload at `+0x6081` and the entry reload at `+0x6090`.
+Both builds choose EAX for the earlier reload and leave the search cursor
+at `108A973C` (ECX). The accepted stage-1 continuation then makes four
+requests with opcodes `1, C5, 1, C5` before its condition is removed.
+The cursor reaches `108A9740` (EDX) before action `0x187`. With the
+continuation omitted, that reload takes the ECX entry directly. The
+debugger builds reproduce their ordinary sections and relocations.
+The trace uses the pinned addresses verified in the
+[Meiling object investigation](#2026-11-23--meiling-action-998-inherits-the-scratch-register-cursor).
+After the control builds, run
+`scripts/repo-python .analysis/meiling-fighter-advance/trace-run.py exact without-follow-through`.
+
     scripts/repo-python scripts/replay-exact-units.py --unit meiling-fighter-advance-005d73c0
