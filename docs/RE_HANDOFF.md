@@ -201,6 +201,8 @@ writer, reset and member lifetime. R278 identifies the matching
 value accessor through the object Advance's history read. R279
 identifies seven archive list helpers through the concrete 108-byte
 entry in the complete append and lookup functions and member lifetime.
+R280 identifies six sprite history list helpers through the existing
+164-byte sprite element and the complete typed append and render paths.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH

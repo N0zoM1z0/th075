@@ -207,6 +207,28 @@ remain useful for comparing ambiguous bodies in isolation.
     scripts/compile-probe.sh .analysis/pending-origin-2026-11-24/archive-list.cpp build/probes/ArchiveListOrigin.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
     scripts/repo-python .analysis/pending-origin-2026-11-24/compare-archive.py
 
+### R280 — Sprite history list helpers
+
+The 164-byte `SpriteHistoryElementF325` accounts for the fields read
+by the render loop and written by the append routine. Substituting the
+concrete `std::list` at `this+4` reproduces all 183 bytes of the
+append routine at `0x00411000`, including all four relocations. Its
+typed push and pop calls reach insertion and erase through the same
+node links. The cold-exact render loop calls the same list's
+iterator arrow, which reaches the complete value accessor.
+
+Three existing caller units cold-replay. The typed list's 28 complete
+sections reproduce 1,146 original bytes and all 50 relocation fields.
+The six newly attributed helpers account for 56 library bytes. The
+same object also emits the complete 25-byte element constructor at
+`0x00411C10`, including its quad constructor call. This establishes
+the element lifetime and allows a separate comparison of implicit and
+explicit declaration forms.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit sprite-sequence-render-elements-00411110 --unit command-list-initialize-defaults-00410f30 --unit command-list-clear-entries-004110f0
+    scripts/compile-probe.sh .analysis/final-origin-review/sprite-list.cpp build/probes/SpriteHistoryListOrigin.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
+    scripts/repo-python .analysis/final-origin-review/compare-sprite.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
