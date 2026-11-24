@@ -404,7 +404,7 @@ The current direct-call scan is in
 | `0x0040D900`, `0x0040D940` | R308 matches the complete sprite drawing interval with the precompiled standard overloads and ordinary wrappers. R303 rules out the x87 bodies in the older SDK shape archive. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
 | `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers both Battle End destructors together. R306 and R309 leave the deleting destructor early with debug, inlining and template controls. |
-| `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
+| `0x00438A60` | R310 preserves all 14 native caller edges with a deferred standard overload and a late ordinary wrapper. Both call the `labs` body identified by R294. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R308 matches the complete collision interval with the precompiled header, two ordinary functions, and an ordinary function calling the header worker. |
 | `0x00458670` | The R306 linked resource-loader interval matches with both implicit and explicit rendering base constructors. |
@@ -1059,6 +1059,32 @@ comparison is the native order of the two Battle End destructors.
 
     bash .analysis/final-origin-review/scene-ctor-variants/build.sh inclass-dtor inclass-dtor-implicit inline-ob1 template-implicit template-extern
     scripts/repo-python .analysis/final-origin-review/scene-ctor-variants/compare.py inclass-dtor inclass-dtor-implicit inline-ob1 template-implicit template-extern
+
+### R310 — Absolute-value declarations share all fourteen caller edges
+
+Twelve complete character selection methods reproduce the 20,458-byte
+linked interval `0x00433A40..0x00438A29` when the standard `abs(long)`
+definition is visible after the methods. An ordinary out-of-line
+wrapper around the same `labs` reproduces that interval and the whole
+17-byte wrapper. The two comparisons bind 582 real COFF fields,
+including the wrapper's call to the R294 CRT body.
+
+The standard overload and ordinary wrapper also preserve the separate
+`0x004483F0` caller, including its six-entry jump table and all 28
+relocation fields. The scratch linker resolves all fourteen calls from
+both objects to the same implementation with folding disabled. In the
+native image, a scalar deleting destructor lies between the selection
+methods and the wrapper. Its 48-byte aligned slot accounts for the
+displacement of the wrapper in the scratch link.
+
+An early include emits the overload before `ProcessSubselection`.
+With the original header precompiled it instead appears just before
+`UpdatePlayerChoice`. Both controls retain the individual bodies.
+The declaration-only header control delays just the pinned overload
+definition and recovers the complete selection interval.
+
+    bash .analysis/final-origin-review/abs-caller-order/build.sh header-early header-pch ordinary-late header-deferred
+    scripts/repo-python .analysis/final-origin-review/abs-caller-order/compare.py header-early header-pch ordinary-late header-deferred
 
 ## Historical R263 inventory
 

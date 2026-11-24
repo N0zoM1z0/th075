@@ -254,8 +254,10 @@ ordinary wrapper. Both link at the native offset.
 
 R294 identifies `0x00641FB8` as the inferred CRT `labs` contribution
 from the native request order and the full 1,140-byte linked interval.
-The outer wrapper remains unresolved.
+R310 finds that both outer wrappers preserve fourteen calls across
+the complete character selection methods and the battle switch.
 [CRT request order](ORIGIN_PENDING_REVIEW.md#r294--crt-absolute-value-archive-request-order)
+[Absolute-value caller comparison](ORIGIN_PENDING_REVIEW.md#r310--absolute-value-declarations-share-all-fourteen-caller-edges)
 
 R290 uses the original C++
 startup table to distinguish the event service pulse at
