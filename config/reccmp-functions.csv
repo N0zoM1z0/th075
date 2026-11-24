@@ -1003,3 +1003,4 @@ YoumuFighter::Advance,0x005214B0,function
 ReimuObject::Advance,0x00476A40,function
 MarisaObject::Advance,0x0049C8F0,function
 YuyukoFighter::Advance,0x00564BE0,function
+MarisaFighter::Advance,0x00486550,function

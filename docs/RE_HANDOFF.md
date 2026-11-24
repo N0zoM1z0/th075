@@ -131,13 +131,21 @@ The three loop counters scoped to the countdown branches in `0x303`
 restore the native stack slots. The ledger credits 61,872 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--yuyukos-fighter-advance-cold-replays-exactly)
 
+### Marisa fighter Advance is exact
+
+`marisa-fighter-advance-00486550` cold-replays 51,799 bytes with seven
+jump tables, four remaps and 1,683 relocations. A single switch restores
+the native dispatch and stack slots. The drift continuation in `0x208`
+and the firing continuation in `0x2BF` close the final register joins.
+The ledger credits 50,735 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--marisas-fighter-advance-cold-replays-exactly)
+
 ## Remaining giant parents
 
 The remaining authored functions are fighter `Advance` methods with
 partial or unstarted parents.
 
-- Marisa `00486550` (50,735 bytes), Alice `004D7E70` (43,601 bytes),
-  Patchouli `004F7130` (44,211 bytes).
+- Alice `004D7E70` (43,601 bytes), Patchouli `004F7130` (44,211 bytes).
 - Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0` (71,616 bytes),
   Meiling `005D73C0` (43,282 bytes).
 
@@ -253,61 +261,6 @@ are container/proxy-management paths, including a call to the VC7
 `allocator<std::_Container_proxy>::destroy`; this narrows the context but does
 not prove the original receiver type or STL/game ownership boundary. It remains
 unclassified and receives no exact credit.
-
-
-Marisa fighter `Advance` (`00486550`) now retains its 158 recovered action
-bodies in the original six inclusive action bands instead of one flat switch.
-The low `0x00..0x0A` switch, the `0x32` branch, and the five boundary actions
-`0x8C`, `0x12C`, `0x186`, `0x1F4`, and `0x2C2` are separated; the normal
-high-range cases share the original nested-frame fallback. Range-crossing case
-includes were split into ordinary C++ source units so each switch covers only
-its native range. The pinned VC7.1 probe compiles and tracking validation passes;
-this is a control-flow/source-organization advance, not an exact-byte claim.
-The large function still needs stack-frame, register-allocation and byte-level
-work. No full cold replay was run.
-
-
-The random-offset effect paths now reuse `actionSnapshot` as the shared integer
-scratch after the `switch` has already selected its case. This mirrors the
-original decompiler's reuse of `iVar5`, avoids introducing extra floating-point
-locals, and keeps the Y random draw before the X random draw. The change remains
-a natural C++ candidate and is validated by the targeted VC7.1 probe only.
-
-
-The low Marisa actions `0x04` and `0x05` now branch to one shared
-`advanceNestedAndReturn` C++ tail rather than emitting duplicate calls. The
-pinned VC7.1 candidate places that tail at `00492B2E`; its body is the same
-three-instruction shape as the original `00492B73` tail (load `this`, call
-`Actor::AdvanceNestedFrame`, return). Their two handler bodies now end in a
-jump to that shared tail, matching the original control-flow sharing. The
-remaining stack-base offset and call-relocation differences are still open.
-
-
-The low Marisa dispatch now lays out the `0x32` special edge as the positive
-`JE` arm, with the ordinary `0x00..0x0A` switch on the fallthrough path. This
-replaces the previous `JNE` plus unconditional jump sequence and matches the
-original branch polarity at `00486597`. The source-coverage verifier now counts
-natural `goto` edges to the out-of-line boundary bodies, so action `0x32` stays
-covered without a fake switch case. The current candidate still has a different
-local layout (`this` at `EBP-0x1C`, action at `EBP-4`, plus a switch temporary at
-`EBP-0x20`); the original uses `this` at `EBP-0x18` and one action local at
-`EBP-0x1C`. No exact-byte claim is made.
-
-
-The late card-tail case order was checked against the original handler-address
-map rather than inferred from numeric action IDs. The original PE emits
-`0x2BC`, `0x2BD`, `0x2BF`, `0x2C0`, then `0x2C1` (addresses `0048FA35`,
-`0048FC34`, `0048FD1C`, `004901AA`, `004904C0`). An intermediate reorder that
-moved `0x2C1` ahead of `0x2BF`/`0x2C0` was therefore reversed. The source order
-now follows the verified PE handler layout; the focused VC7.1 build and the
-158-action coverage check pass.
-
-
-The Marisa source-coverage verifier now also enforces the `0x2BC..0x2C1` card
-tail's source order against the original PE handler addresses. This catches a
-case reorder that preserves action coverage but changes emitted handler layout.
-The validator reports the source/PE order separately from its 158-action
-coverage result.
 
 
 Yukari object `005A1600` action `900` remains at its committed baseline. A

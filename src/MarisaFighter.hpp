@@ -21,6 +21,7 @@ class MarisaFighter : public Fighter {
 public:
     MarisaFighter();
     virtual ~MarisaFighter();
+    virtual void Advance(); // Slot 1 at 00486550.
     void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;

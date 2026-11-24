@@ -954,3 +954,4 @@ address,name,module,confidence,evidence
 0x00476A40,ReimuObject::Advance,ReimuObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
 0x0049C8F0,MarisaObject::Advance,MarisaObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
 0x00564BE0,YuyukoFighter::Advance,YuyukoFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
+0x00486550,MarisaFighter::Advance,MarisaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048

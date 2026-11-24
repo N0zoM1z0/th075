@@ -75,6 +75,7 @@ rows have complete replay units.
 | --- | --- | ---: | --- | ---: | ---: | --- |
 | 0045DD70 | Reimu fighter | 60,999 | `ReimuFighterAdvanceF1183.cpp` (cold exact) | 0 | 0 | — |
 | 00476A40 | Reimu object | 50,915 | `ReimuObjectAdvance.cpp` (cold exact) | 0 | 0 | — |
+| 00486550 | Marisa fighter | 50,735 | `MarisaFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 0049C8F0 | Marisa object | 46,596 | `MarisaObjectAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 004AC040 | Sakuya fighter | 82,796 | `SakuyaFighterAdvanceF1020.cpp` (cold exact, `/GX`) | 0 | 0 | — |
 | 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` (cold exact) | 0 | 0 | — |
@@ -91,103 +92,6 @@ rows have complete replay units.
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
-
-Marisa fighter `Advance` (`0x00486550`, 50,735 CODE bytes) now has a
-tracked, natural-C++ partial parent probe. It derives from the real
-`MarisaFighter`, uses named inherited `Actor`/`Fighter` fields and methods,
-and contains 158 recovered action-state bodies. Recent batches added states
-`0x46`–`0x4C`, `0x58`, `0x5D`–`0x62`, `0x8F`/`0x90`, `0x97`–`0xA8`,
-`0xC8`–`0xD2`, `0x12C`–`0x136`, `0x186`–`0x18B`, `0x190`–`0x1A3`,
-`0x1F4`/`0x1F5`,
-`0x208`/`0x20A`–`0x20E`, `0x252`–`0x25D`, `0x270`–`0x271`,
-`0x2BC`–`0x2D1`, and the late `0x2E5`–`0x2F9` / `0x31B`–`0x31C`
-resource tails. The latest three nested handler bodies (`0x12C`, `0x1F4`,
-`0x2C2`) add 1,147 original bytes. A follow-up machine-code audit corrected
-38 landing comparisons from inclusive `<= 0` to strict `< 0` where the
-original x87 `FCOMP`/status-word `JP` branch requires it, while retaining the
-separate inclusive stage-exit guards in `0x133` and `0x189`. It also fixed
-`0x2F9`'s 50-unit opponent spacing and 870-unit reset height. The probe and its Marisa-specific
-counter fragments contain no raw offset casts, ASM, padding, or synthetic
-marker cases. The expanded source covers all 141 unique top-level Ghidra
-action labels and all 158 explicit in-parent handler groups; the shared
-default handler is retained as a real default path. This inventory is
-repeatable with `scripts/validate-marisa-advance-cases.py`. VC7.1 compiles it
-to 51,920 CODE bytes / 14,840 instructions; the original is 50,735 bytes /
-14,260 instructions. This remains deliberately NONEXACT and is not entered
-into the complete-parent frontier: the 1,185-byte / 580-instruction code
-generation difference is real and unaccepted. The 468-value original
-dispatch map and its 153 unique handler addresses remain the authority for
-further case work.
-Three shared fighter fragments required a context-sensitive terminator:
-ground boost 0x9E, landing siblings 0xA3-0xA5, and motion restart 0xB4/0xB5.
-Their original top-level fighter parents correctly use switch-break exits,
-but Marisa's partial parent nests them inside a sparse switch followed by
-switchDefault. Each fragment now accepts a local exit macro defaulting to
-break; Marisa explicitly selects return for its nested uses. This preserves
-the existing complete Reimu/Sakuya/Remilia parent source semantics while
-preventing Marisa from falling through to an extra frame advance. Rebuilt
-complete-parent measurements are unchanged: Reimu 60,999/62,090 bytes and
-6,311 GPR/5 width differences; Sakuya 82,796/83,922 bytes and 6,958/12;
-Remilia 58,294/59,236 bytes and 1,741/3. Marisa's partial parent compiles and
-the source-coverage validator remains 141/141 labels and 158/158 handlers.
-
-Marisa action 0x62's resource selector, the 0xA7/0xA8 projectile-launch
-pair, and the 0x97/0x98/0x9A-0xA1 landing-timer siblings now return after
-their native nested-frame/counter update. Their three former breaks entered
-the partial default handler despite the original Ghidra cases returning.
-The per-fragment validator now checks these terminal edges too.
-
-The same original-return audit fixed four more Marisa state fragments:
-scripted bounce 0x59, recovery 0x4C, jump landings 0x8F/0x90, and landing
-timer 0x96. Their six old switch breaks now return on the native contact,
-counter-completion, or timer-update paths. The validator now enforces these
-per-fragment terminal edges as well.
-
-The remaining early trajectory handlers 0x46, 0x49, 0x4A and 0x58 now
-also preserve their original return paths. Their 15 switch breaks covered
-the stage-threshold exits, landing/contact transitions, bounce redirect,
-and stage-one resource follow-up branches; the original decompilation returns
-from each of those paths. All 15 now return from the parent rather than
-falling into the partial switchDefault frame handler. The Marisa validator
-guards the per-fragment exit counts, and the full partial parent still
-compiles with all action/handler coverage intact.
-
-Marisa trajectory follow-ups 0x47/0x48 now preserve six additional native
-returns. The original handlers return after their stage-3 early reset, after
-the ground-contact transition into action 0x61, and after the ordinary nested
-frame/secondary-counter update. Replacing the partial parent's six switch
-breaks prevents these paths from reaching switchDefault and advancing another
-frame. The validator checks all six exits; the partial parent compiles and
-retains complete source-label/handler coverage.
-
-Marisa's resource volleys 0x60/0x61 also had four incorrect switch breaks.
-The original handlers return both when the stage-3 ground boundary is hit
-and after the ordinary nested-frame/volley-counter update. The partial parent
-now returns on those four paths instead of entering switchDefault and
-advancing another frame. The Marisa validator guards all four exits, and the
-parent still compiles with full source-label/handler coverage.
-
-The same nested-switch return audit now covers Marisa actions 0x5D-0x5F
-and 0x91. Original Ghidra control flow confirms seven terminal exits in the
-early-bounce/facing group and three in the arc-trajectory action. Their old
-break statements fell through to the partial parent's common default frame
-handler; all ten now return directly, matching the original transition,
-landing, and frame-completion paths. The validator guards these exit counts,
-and the full Marisa partial parent compiles with all 141/141 top-level labels
-and 158/158 explicit in-parent handlers still covered. This remains a
-semantic correction to the partial parent, not whole-function exactness.
-
-Marisa's eleven contact actions 0x33-0x41 in F600 now preserve the native
-return edges instead of breaking out of the partial parent's nested action
-switch. Ghidra's original parent has no switch breaks in these eleven cases:
-each ordinary contact path returns after AdvanceNestedFrame/ResetPrimaryCounters,
-and the 0x35/0x3B/0x41 repeat paths return after their stage-7 counter update.
-The old 14 breaks fell through to switchDefault and could advance the frame a
-second time. All 14 terminal exits are now returns; the Marisa validator
-guards this structure along with action 0x63. The complete partial parent
-recompiles and still covers 141/141 top-level labels and 158/158 explicit
-in-parent handler addresses. This is a runtime-semantic correction, not a
-whole-function exactness claim.
 
 The BG02a/BG02b/BG02c load constructors now use the same native
 NativeBackgroundBaseF479 layout as their destructor views. Each has a real
@@ -232,20 +136,6 @@ and 0xF10, and five focused units (Spawn, both tracked-effect forwarders,
 their shared Fighter forwarder, and ResetTransform) replay 5/5 exact. The
 Sakuya object parent and Actor rendering consumer also compile against the
 overlaid declarations. No full cold replay was run.
-
-Marisa fighter partial parent action 0x63 now preserves all five native
-terminal paths as returns, including the ordinary nested-frame completion
-after its three conditional mode-3 transitions and one mode-not-3 transition.
-terminal transitions as return statements. The partial parent places this
-case inside a nested sparse switch(actionSnapshot) followed by the shared
-switchDefault frame path; the previous break statements exited only that
-inner switch and incorrectly advanced the common frame after a transition.
-The original action has three mode-3 transitions and one mode-not-3 transition
-that return immediately. The focused parent compile succeeds, and
-validate-marisa-advance-cases.py still reports all 141/141 top-level labels
-and 158/158 explicit in-parent handler addresses covered. The validator now
-guards the four-return/one-break structure. This is a semantic correction to
-the partial natural-C++ parent, not a whole-function exactness claim.
 
 Patchouli object's 81,539-byte giant now calls native typed C++
 helpers in place of its last random/angle/sound alias methods:
@@ -876,7 +766,7 @@ are unchanged. This is source/interface recovery, not giant exact credit.
 
 ## Without a complete parent
 
-Fighters 00486550 (Marisa, 50,735 B), 004D7E70 (Alice, 43,601 B), 004F7130
+Fighters 004D7E70 (Alice, 43,601 B), 004F7130
 (Patchouli, 44,211 B), 0058AF60 (Yukari,
 49,230 B), 005AEEC0 (Suika, 71,616 B) and 005D73C0 (Meiling, 43,282 B).
 `config/fighter-boss-dispatch-fingerprints.json` has their extents and jump
@@ -2180,3 +2070,43 @@ last 24 differing bytes. The original opponent resets in `0x2F9` and
 `0x303`, signed input projections and x87 operand order are preserved.
 
     scripts/repo-python scripts/replay-exact-units.py --unit yuyuko-fighter-advance-00564be0
+
+
+## 2026-11-24 — Marisa's fighter Advance cold-replays exactly
+
+`MarisaFighter::Advance` at `0x00486550` covers 50,735 CODE bytes.
+The 51,799-byte complete comparison includes 1,683 relocations, 1,645
+direct branches, 163 jump words in seven tables, and four remaps. All
+468 dispatch values, including the six singleton checks, resolve to the
+original entries. Actions 0, 2, 4 and 5 use the shared nested-frame call
+at `0x00492B73`.
+
+The former nested-switch parent cold-builds 50,693 CODE bytes and puts
+`this` at `[ebp-0x1c]`. One flat switch over the actual action member
+restores the compiler's dispatch tree, `this` at `[ebp-0x18]` and the
+switch temporary at `[ebp-0x1c]`. The double multiply in action `0x32`
+removes a float temporary and recovers the `0x21c` frame. The source
+keeps distinct cases for `0x2CE` through `0x2D1` and preserves the
+original exits in `0xC8` and `0x130`. The x87 comparison at each
+landing site determines whether contact includes equality. Action
+`0x2C0` writes height 1600, and `0x2F8` and `0x2F9` reset to 920.
+
+The impact and landing continuations in `0x58`, `0x59`, `0x5D` and
+`0x5E` restore the entry phases through `0x5F`. The later launch
+frames in `0x61` restore EAX at the entry of `0x62`. The firing paths
+in `0x190` and `0x194` then recover the following two groups.
+Within `0x208`, the stage-6 continuation before drift starts restores
+EAX at `0x0048E364`. Combining the decay guard with a short-circuit
+expression leaves EDX at that instruction. The empty floating-point
+comparison for positive drift emits an extra comparison and adds
+14 CODE bytes.
+
+Removing only the action `0x2BF` firing continuation changes the first
+reload at `0x004900AC` from EDX to ECX. It leaves the seven tables and
+all relocation positions intact, with 808 instructions with differing registers
+and 810 differing bytes through the end of the function. Restoring that
+path yields zero differences. Run the two full comparisons with
+`scripts/repo-python .analysis/marisa-fighter-advance/firing-control.py`
+after cold replay.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit marisa-fighter-advance-00486550

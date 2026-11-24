@@ -294,6 +294,13 @@ before adding the base, in a different instruction order.
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.
 
+- Marisa action `0x208` separates two ways to express the drift guard.
+  Combining the update with a short-circuit condition preserves the GPR
+  difference. Expressing the later frames of stage 6 before the drift
+  begins restores EAX after `AdvanceNestedFrame`. A control with an
+  extra x87 comparison emits 14 additional bytes.
+  [Marisa fighter controls](GIANTS.md#2026-11-24--marisas-fighter-advance-cold-replays-exactly)
+
 ### Conditions and loops
 
 - The compiler keeps comparison constants literally: `i < 37` emits
