@@ -17,6 +17,5 @@ public:
     void SetDepthMode(int);
     void SetColorMultiplier(float);
 };
-class RenderSequence43D9D0 { public: void RenderElements(); };
 extern unsigned char g_OptionsFlagAt00671428;
 extern signed char g_RenderOrderAt0068C860;

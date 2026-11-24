@@ -498,6 +498,13 @@ deleting entry to each scalar deleting destructor. Their texture
 cleanup calls the 44-byte manager deleting wrapper at `0x00425460`,
 which calls the manager destructor at `0x0040AE40`.
 
+Battle rendering uses `CommandListF283::RenderElements` on the same
+164-byte history elements that the append method inserts. The full
+rendering body and the six VC7.1 list entry points match. Declaring
+`renderY` before the first iterator and assigning it after the
+horizontal offset calculation restores the native slots at EBP-8
+and EBP-4. Initializing it at the assignment swapped those two slots.
+
 At `819f57a4`, linking the archive with WinMain and the seven
 `.CRT$XCU` objects omitted 34 externals from the full-object link
 diagnostic. Twenty-two came from the replay append object and seven

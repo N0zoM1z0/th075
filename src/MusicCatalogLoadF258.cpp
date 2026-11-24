@@ -13,7 +13,7 @@
 // VC7.1 reuses distinct native stack slots for all four allocations and
 // the final buffer release. This file owns no CRT/archive helper bodies.
 extern const char g_MusicCatalogDirectoryAt00657C78[] = "datab";
-extern const char g_MusicCatalogFilenameAt00657C80[];
+extern const char g_MusicCatalogFilenameAt00657C80[] = "musicroom.dat";
 void MusicRoomScene::LoadCatalog()
 {
     HANDLE file;

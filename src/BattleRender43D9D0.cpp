@@ -6,6 +6,7 @@
 #include "BattleScene.hpp"
 #include "CombatEffects.hpp"
 #include "BattleRender43D9D0.hpp"
+#include "CommandListF283.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
@@ -52,8 +53,8 @@ void BattleScene::Render() {
             fighters[1]->field2EC->DispatchSelected(2);
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(1);
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(2);
-            reinterpret_cast<RenderSequence43D9D0*>(fighters[0]->field480)->RenderElements();
-            reinterpret_cast<RenderSequence43D9D0*>(fighters[1]->field480)->RenderElements();
+            fighters[0]->field480->RenderElements();
+            fighters[1]->field480->RenderElements();
             g_CombatEffects.DispatchSelectedList(0);
             fighters[0]->field2EC->DispatchSelected(0);
             fighters[1]->field2EC->DispatchSelected(0);

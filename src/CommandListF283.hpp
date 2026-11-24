@@ -32,6 +32,7 @@ public:
     void AppendElement(short texture, float x, float y, SpriteQuad40CA80 quad,
                        D3DVECTOR offset, DWORD tint, signed char blend);
     void RemoveFrontIfPresent();
+    void RenderElements();
 };
 
 typedef char SpriteHistoryElementSizeCheck[(sizeof(SpriteHistoryElementF325) == 164) ? 1 : -1];

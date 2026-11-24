@@ -4,8 +4,8 @@
 
 // Only the observed game-specific file converter and borrowed thiscall ABI
 // are reconstructed here; the complete music-room scene layout is unknown.
-extern const char g_MusicCatalogPlainAt00657C90[];
-extern const char g_MusicCatalogEncodedAt00657CA0[];
+extern const char g_MusicCatalogPlainAt00657C90[] = "musicroom.csv";
+extern const char g_MusicCatalogEncodedAt00657CA0[] = "musicroom.dat";
 class MusicCatalogEncoderF257 {
 public:
     void EncodeCatalogFile();

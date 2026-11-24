@@ -16354,8 +16354,8 @@ relocations = [
   { offset = 0x279, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
   { offset = 0x286, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x293, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
-  { offset = 0x2A4, type = "REL32", symbol = "?RenderElements@RenderSequence43D9D0@@QAEXXZ", target = 0x00411110 },
-  { offset = 0x2B5, type = "REL32", symbol = "?RenderElements@RenderSequence43D9D0@@QAEXXZ", target = 0x00411110 },
+  { offset = 0x2A4, type = "REL32", symbol = "?RenderElements@CommandListF283@@QAEXXZ", target = 0x00411110 },
+  { offset = 0x2B5, type = "REL32", symbol = "?RenderElements@CommandListF283@@QAEXXZ", target = 0x00411110 },
   { offset = 0x2BC, type = "DIR32", symbol = "?g_CombatEffects@@3VCombatEffects@@A", target = 0x006716C8 },
   { offset = 0x2C1, type = "REL32", symbol = "?DispatchSelectedList@CombatEffects@@QAEXC@Z", target = 0x005F7D00 },
   { offset = 0x2D4, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
@@ -46951,23 +46951,23 @@ source = "src/SpriteSequenceRenderF347.cpp"
 object = "build/matching/SpriteSequenceRenderF347.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SpriteSequence::RenderElements"]
-symbol = "?RenderElements@SpriteSequenceF261@@QAEXXZ"
+symbol = "?RenderElements@CommandListF283@@QAEXXZ"
 target_address = 0x00411110
 size = 746
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 27
 type = "REL32"
-symbol = "?size@SequenceListF261@@QBEIXZ"
+symbol = "?size@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEIXZ"
 target = 0x00411CE0
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 73
 type = "REL32"
-symbol = "?begin@SequenceListF261@@QAE?AVSequenceIteratorF261@@XZ"
+symbol = "?begin@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00411C90
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 94
 type = "REL32"
-symbol = "?End@SequenceListF261@@QAEXPAVSequenceIteratorF261@@@Z"
+symbol = "?end@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x00411CC0
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 100
@@ -46987,22 +46987,22 @@ target = 0x006713C4
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 132
 type = "REL32"
-symbol = "?Construct@NativeQuadCarrierF331@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 161
 type = "REL32"
-symbol = "??ESequenceIteratorF261@@QAE?AV0@H@Z"
+symbol = "??Eiterator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x00411E20
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 191
 type = "REL32"
-symbol = "??9SequenceIteratorF261@@QBE_NABV0@@Z"
+symbol = "??9const_iterator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x00411E50
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 257
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 274
@@ -47012,7 +47012,7 @@ target = 0x0040D870
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 282
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 338
@@ -47032,17 +47032,17 @@ target = 0x0040C7F0
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 380
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 406
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 449
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 483
@@ -47057,7 +47057,7 @@ target = 0x00411500
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 513
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 519
@@ -47067,7 +47067,7 @@ target = 0x0065782C
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 542
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 548
@@ -47077,7 +47077,7 @@ target = 0x0065782C
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 571
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 577
@@ -47087,22 +47087,22 @@ target = 0x0065782C
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 607
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 622
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 637
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 666
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 683
@@ -47112,7 +47112,7 @@ target = 0x0040CA20
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 714
 type = "REL32"
-symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+symbol = "??Citerator@?$list@USpriteHistoryElementF325@@V?$allocator@USpriteHistoryElementF325@@@std@@@std@@QBEPAUSpriteHistoryElementF325@@XZ"
 target = 0x00411E00
 [[units.sprite-sequence-render-elements-00411110.relocations]]
 offset = 731
