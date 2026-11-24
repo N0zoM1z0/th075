@@ -15,6 +15,23 @@ with SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The publisher's Japanese 1.11 patch yields the same executable.
 [Target cross-check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
 
+## Windows x86 build
+
+Run `scripts/repo-python scripts/build.py --library` to compile the
+configured translation units and archive them as `build/program/th075.lib`.
+`--program` also passes the objects to the VC7.1 linker using the Windows
+CRT startup. Both paths use the serial, headless Factory Wine runtime.
+Compiler, librarian and strict linker logs are under `build/program/`.
+
+All configured sources compile and archive. The first strict executable
+link stopped at `LNK1120` with 2,730 unresolved externals. Representative
+blockers are the scene constructor names used by WinMain and the missing
+storage for `DiagnosticLog::g_Path` and `MathLookup::g_CosineTable`.
+Start from `build/program/link.log` and the call sites in
+`src/WinMainF1171.cpp`. Use the relocation targets to find candidate
+definitions, then check signatures and storage before changing bindings.
+[Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
+
 ## Origin review
 
 The live `review` rows are in `config/function-origins.csv`. Every pending

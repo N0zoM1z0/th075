@@ -3,7 +3,7 @@
 // message handlers and actual stdcall 4-param ABI, not a guessed owner.
 // Complete original 83-byte WinMain application window class callback.
 // This is the actual native Win32 stdcall four-argument WndProc.
-extern unsigned char g_AppInitializedAt0068D674;
+unsigned char g_AppInitializedAt0068D674;
 LRESULT CALLBACK AppWindowProcF468(HWND window,UINT message,WPARAM key,LPARAM mouse) {
     switch(message) {
     case WM_CREATE:

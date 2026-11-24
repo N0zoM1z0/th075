@@ -11,6 +11,31 @@ lines) is in Git: `git show 430a06a4:docs/KNOWLEDGE_BASE.md`. Most of it
 described what each accepted function does, which the source and ledgers now
 record. Consult it only for the full history of a specific checkpoint.
 
+## Windows link
+
+WinMain at `0x00602A60` reads the same byte its window callback at
+`0x00603650` sets on `WM_CREATE`. The byte at `0x0068D674` lies beyond the
+raw contents of the target's writable `.data` section, so the callback
+translation unit defines it with zero-initialized storage. WinMain's
+existing relocations to `0x0041CAE0`, `0x0041CC00`, and `0x0041CC50`
+bind to the cosine table builder and the shared diagnostic log functions.
+
+VC7.1 accepts multi-source response files with one output directory and a
+PDB per compiler profile. Keep two-token switches such as `/I src` on the
+same line. Splitting the switch from its argument across lines produces
+`D2004`. Pass `link.exe /lib` before the response file because VC7.1
+selects librarian mode before it expands the file. The pinned D3DX8 archive
+requests the VC6 library `libci.lib`, which the VC7.1 install lacks.
+`/NODEFAULTLIB:libci.lib` bypasses that directive. A headless PE32 smoke
+called the rebuilt window callback and allocated a D3DX8 buffer successfully.
+
+The first strict link reported 677 missing symbols whose unique manifest
+target already has an accepted function definition. The address gives a
+place to check the ABI and source owner. For example, WinMain's
+`InitGraphicsAt00401110` declares integer dimensions and a void return,
+while `Graphics::Initialize` takes unsigned-short dimensions and returns
+`bool`. Keep the full link diagnostics in `build/program/link.log`.
+
 ## Class structure
 
 The PE vtables give the real hierarchy (`.analysis/layout-tools/vtables.json`

@@ -12,6 +12,8 @@
 #include <objbase.h>
 #include <string.h>
 #include <stdlib.h>
+#include "DiagnosticLog.hpp"
+#include "MathLookup.hpp"
 // Complete startup lifecycle: anchored to every
 // original window/resource/scene native call and all 15 scene allocations.
 // Only actually observed scene allocation footprints and interface calls.
@@ -51,13 +53,10 @@ extern const char g_ArchiveRootAt0065A1B0[];
 extern unsigned char g_AppWindowModeAt00671605;
 extern unsigned char g_WindowGraphModeAt006714B5;
 extern unsigned char g_WindowGraphAlphaAt006714A0;
-extern unsigned char g_AppReadyAt0068D674;
+extern unsigned char g_AppInitializedAt0068D674;
 extern HWND g_GameMainWindowAt00671608;
 extern ReplayGlobalF1171 g_ReplayGlobalAt006718F8;
 extern void __cdecl ConfigureEventAt00423C80(HANDLE*);
-extern void __cdecl InitializeArchivesAt0041CAE0();
-extern void __cdecl OpenAppLogAt0041CC00(const char*);
-extern void __cdecl AppLogAt0041CC50(const char*);
 extern void __cdecl InitGraphicsAt00401110(HWND,int,int,int,unsigned char,unsigned char);
 extern void __cdecl InitDirectInputAt00403D20(HWND,HINSTANCE);
 extern void __cdecl InitDirectSoundAt004066E0(HWND);
@@ -65,7 +64,7 @@ extern void __cdecl InitJoystickAt00403EB0();
 extern void __cdecl InitKeyboardAt00403D80();
 extern void __cdecl ChangeScreenAt004018A0();
 extern void __cdecl InitializeGameDataAt004175A0();
-extern LRESULT CALLBACK NativeWinProcAt00603650(HWND,UINT,WPARAM,LPARAM);
+extern LRESULT CALLBACK AppWindowProcF468(HWND,UINT,WPARAM,LPARAM);
 extern const char g_ArchiveTh075At0065A1B8[];
 extern const char g_ArchiveBgmAt0065A1CC[];
 extern const char g_BgmRootAt0065A1C4[];
@@ -107,7 +106,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     winClass.cbSize=sizeof(WNDCLASSEXA);
     winClass.hInstance=instance;
     winClass.lpszClassName=g_AppWindowClassAt0065A104;
-    winClass.lpfnWndProc=NativeWinProcAt00603650;
+    winClass.lpfnWndProc=AppWindowProcF468;
     winClass.style=0;
     winClass.hIcon=LoadIconA(instance,g_AppIconAt0065A138);
     winClass.hIconSm=LoadIconA(instance,g_AppIconAt0065A140);
@@ -123,43 +122,43 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     UpdateWindow(hWndMain);
     srand(timeGetTime());
     if(FAILED(CoInitialize(0))) { return 0; }
-    while(!g_AppReadyAt0068D674) {}
+    while(!g_AppInitializedAt0068D674) {}
     HANDLE eventReady=CreateEventA(0,FALSE,FALSE,0);
     ConfigureEventAt00423C80(&eventReady);
-    InitializeArchivesAt0041CAE0();
+    MathLookup::BuildCosTable();
     ArchiveCatalogF1171 archiveOwner;
     OpenArchiveFileAt0041CF80(g_ArchiveTh075At0065A1B8,g_ArchiveRootAt0065A1B0);
     OpenArchiveFileAt0041CF80(g_ArchiveBgmAt0065A1CC,g_BgmRootAt0065A1C4);
     OpenArchiveFileAt0041CF80(g_ArchiveTh075BAt0065A1E4,g_ArchiveDatabAt0065A1DC);
-    OpenAppLogAt0041CC00(g_LogFileAt0065A1F0);
-    AppLogAt0041CC50(g_LogTextAt0065A1F8);
+    DiagnosticLog::InitializeFile(g_LogFileAt0065A1F0);
+    DiagnosticLog::AppendString(g_LogTextAt0065A1F8);
     GameDataResourcesF1171 gameSettings;
     g_GameMainWindowAt00671608=hWndMain;
-    AppLogAt0041CC50(g_LogOKAt0065A210);
-    AppLogAt0041CC50(g_DirectGraphicsTextAt0065A218);
+    DiagnosticLog::AppendString(g_LogOKAt0065A210);
+    DiagnosticLog::AppendString(g_DirectGraphicsTextAt0065A218);
     InitGraphicsAt00401110(hWndMain,640,480,1,g_WindowGraphModeAt006714B5,g_WindowGraphAlphaAt006714A0);
-    AppLogAt0041CC50(g_LogOKAt0065A230);
-    AppLogAt0041CC50(g_DirectInputTextAt0065A238);
+    DiagnosticLog::AppendString(g_LogOKAt0065A230);
+    DiagnosticLog::AppendString(g_DirectInputTextAt0065A238);
     InitDirectInputAt00403D20(hWndMain,instance);
-    AppLogAt0041CC50(g_LogOKAt0065A250);
-    AppLogAt0041CC50(g_DirectSoundTextAt0065A258);
+    DiagnosticLog::AppendString(g_LogOKAt0065A250);
+    DiagnosticLog::AppendString(g_DirectSoundTextAt0065A258);
     InitDirectSoundAt004066E0(hWndMain);
-    AppLogAt0041CC50(g_LogOKAt0065A270);
-    AppLogAt0041CC50(g_JoystickTextAt0065A278);
+    DiagnosticLog::AppendString(g_LogOKAt0065A270);
+    DiagnosticLog::AppendString(g_JoystickTextAt0065A278);
     InitJoystickAt00403EB0();
-    AppLogAt0041CC50(g_LogOKAt0065A28C);
-    AppLogAt0041CC50(g_KeyboardTextAt0065A294);
+    DiagnosticLog::AppendString(g_LogOKAt0065A28C);
+    DiagnosticLog::AppendString(g_KeyboardTextAt0065A294);
     InitKeyboardAt00403D80();
-    AppLogAt0041CC50(g_LogOKAt0065A2A8);
+    DiagnosticLog::AppendString(g_LogOKAt0065A2A8);
     if (g_AppWindowModeAt00671605) {
         Sleep(50);
-        AppLogAt0041CC50(g_ChangeScreenTextAt0065A2B0);
+        DiagnosticLog::AppendString(g_ChangeScreenTextAt0065A2B0);
         ChangeScreenAt004018A0();
-        AppLogAt0041CC50(g_LogOKAt0065A2C8);
+        DiagnosticLog::AppendString(g_LogOKAt0065A2C8);
     }
-    AppLogAt0041CC50(g_SystemDataTextAt0065A2D0);
+    DiagnosticLog::AppendString(g_SystemDataTextAt0065A2D0);
     InitializeGameDataAt004175A0();
-    AppLogAt0041CC50(g_LogOKAt0065A2E4);
+    DiagnosticLog::AppendString(g_LogOKAt0065A2E4);
     currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene4F1171);
     unsigned short activeSceneState=0x2004;
     activeSceneState=currentSceneOwner->TranslateState(activeSceneState);

@@ -3,8 +3,8 @@
 factory_repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 export PATH="$factory_repo_root/.tools/factory-bin:$PATH"
 # The common launcher selects this game's configured prefix and architecture.
-unset WINEPREFIX WINEARCH
-export DISPLAY= WAYLAND_DISPLAY=
+unset WINEPREFIX WINEARCH DISPLAY WAYLAND_DISPLAY
+export WINEDLLOVERRIDES='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d'
 set -euo pipefail
 
 repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)

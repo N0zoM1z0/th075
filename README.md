@@ -6,8 +6,8 @@ Agent workflow: follow the highest-priority requirements in [AGENTS.md](AGENTS.m
 <p align="center"><img src="resources/progress.svg" alt="Original authored-byte reconstruction progress"></p>
 
 A function-by-function C++ reconstruction of the Japanese TH075 v1.11
-executable, rebuilt with the original VC7.1 compiler. It is not a playable
-game. A function counts only when its whole callable body, including every
+executable, rebuilt with the original VC7.1 compiler. A function counts only
+when its whole callable body, including every
 relocation, cold-builds byte-identical to the original.
 
 ## Status
@@ -30,6 +30,24 @@ The C++ sources are in `src/` and `probes/`. `config/match-units.toml`
 records the exact units, compiler flags, extents and relocations. The target
 is the Japanese TH075 v1.11 `resources/th075.exe` supplied by the user. See
 the handoff for its pinned identity.
+
+## Build
+
+Build the configured translation units as a Windows x86 COFF library:
+
+    scripts/repo-python scripts/build.py --library
+
+This writes `build/program/th075.lib` and the compiler and librarian logs
+under `build/program/`. The build uses the manifest's per-source flags,
+the pinned VC7.1 toolchain and the game's headless Factory Wine prefix.
+
+To check whether those objects can link into a Windows executable:
+
+    scripts/repo-python scripts/build.py --program
+
+This also builds the library and records strict linker diagnostics in
+`build/program/link.log`. An executable and map require all link-time
+definitions. See the [handoff](docs/RE_HANDOFF.md) for current blockers.
 
 ## Checks
 
