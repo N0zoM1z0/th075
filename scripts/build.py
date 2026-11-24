@@ -9,6 +9,7 @@ import fcntl
 import hashlib
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 from tempfile import TemporaryDirectory
@@ -55,6 +56,7 @@ def parse_args() -> argparse.Namespace:
     group.add_argument("--check", action="store_true")
     group.add_argument("--object-name")
     group.add_argument("--unit")
+    group.add_argument("--batch-unit", action="append", help="build selected comparison objects in profile groups")
     group.add_argument("--library", action="store_true", help="archive all configured translation units")
     group.add_argument("--program", action="store_true", help="build the library and attempt a strict Windows link")
     return parser.parse_args()
@@ -87,7 +89,7 @@ def program_sources(units):
     return profiles
 
 
-def build_program(units, link_program: bool) -> None:
+def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
     sources = program_sources(units)
     groups = defaultdict(list)
     for source, profile in sorted(sources.items()):
@@ -110,8 +112,16 @@ def build_program(units, link_program: bool) -> None:
         "winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d"
     ))
     runtime = [sys.executable, str(ROOT / "scripts/shared_runtime.py")]
-    object_dir = PROGRAM / "obj"
+    output_dir = Path("build/replay-batch") if comparison_batch else PROGRAM
+    object_dir = output_dir / "obj"
     objects = [object_dir / (source.stem + ".obj") for source in sorted(sources)]
+    matching = {}
+    if comparison_batch:
+        for unit in units.values():
+            output = (ROOT / unit["object"]).resolve()
+            obj = object_dir / (Path(unit["source"]).stem + ".obj")
+            if matching.setdefault(output, obj) != obj:
+                raise ValueError(f"conflicting comparison object destinations: {output}")
     library = PROGRAM / "th075.lib"
     executable = PROGRAM / "th075.exe"
     link_map = PROGRAM / "th075.map"
@@ -133,7 +143,7 @@ def build_program(units, link_program: bool) -> None:
             raise ValueError(f"{tool} exited with status {result.returncode}. See {log}")
 
     def response(name, options, inputs):
-        path = PROGRAM / name
+        path = output_dir / name
         # Keep two-token switches such as /I src on one response-file line.
         lines = [subprocess.list2cmdline(options)]
         lines.extend(subprocess.list2cmdline([str(p).replace("/", "\\")]) for p in inputs)
@@ -146,17 +156,19 @@ def build_program(units, link_program: bool) -> None:
         vc_win = wine_path(tools)
         env["INCLUDE"] = rf"{vc_win}\include;{vc_win}\PlatformSDK\Include"
         env["LIB"] = rf"{vc_win}\lib;{vc_win}\PlatformSDK\Lib"
-        logs = [PROGRAM / f"{stage}.log" for stage in ("compile", "library", "link")]
+        logs = [output_dir / f"{stage}.log" for stage in ("compile", "library", "link")]
         compile_log, library_log, link_log = logs
-        outputs = [library, compile_log, library_log, *objects]
+        outputs = [compile_log, *objects]
+        if not comparison_batch:
+            outputs.extend([library, library_log])
         if link_program:
             outputs.extend([executable, link_map, link_log])
         for path in outputs:
             (ROOT / path).unlink(missing_ok=True)
-        with TemporaryDirectory(prefix="vc7-", dir=ROOT / PROGRAM) as scratch:
+        with TemporaryDirectory(prefix="vc7-", dir=ROOT / output_dir) as scratch:
             env["TMP"] = env["TEMP"] = wine_path(scratch)
             for index, (profile, inputs) in enumerate(groups.items()):
-                pdb = PROGRAM / f"profile-{index}.pdb"
+                pdb = output_dir / f"profile-{index}.pdb"
                 (ROOT / pdb).unlink(missing_ok=True)
                 args = ["/nologo", "/c", *profile, f"/Fo{object_dir}/", f"/Fd{pdb}"]
                 print(f"Compiling {len(inputs)} translation units. See {compile_log}", flush=True)
@@ -165,6 +177,12 @@ def build_program(units, link_program: bool) -> None:
         for obj in objects:
             if not (ROOT / obj).is_file():
                 raise ValueError(f"compiler did not produce {obj}")
+        if comparison_batch:
+            for destination, obj in matching.items():
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(ROOT / obj, destination)
+            print(f"Built {len(objects)} comparison objects in {len(groups)} compiler groups", flush=True)
+            return
         args = ["/nologo", f"/out:{library}"]
         run("link.exe", ["/lib", response("library.rsp", args, objects)], library_log)
         if not (ROOT / library).is_file():
@@ -198,6 +216,11 @@ def main() -> int:
         if args.program or args.library:
             verify_target()
             build_program(units, link_program=args.program)
+            return 0
+        if args.batch_unit:
+            selected = {name: units[name] for name in args.batch_unit}
+            verify_target()
+            build_program(selected, link_program=False, comparison_batch=True)
             return 0
         if args.unit is not None:
             matches = [(args.unit, units[args.unit])] if args.unit in units else []

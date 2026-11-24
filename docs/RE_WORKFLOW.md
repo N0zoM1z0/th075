@@ -11,6 +11,11 @@ Use the [current handoff](RE_HANDOFF.md) for live priorities.
 units and their archived research. The status report and canonical
 ledgers give the current authored backlog and separate pending origins.
 
+For a batch of related edits, pass `--batch` and the affected `--unit`
+arguments to `scripts/repo-python scripts/replay-exact-units.py`.
+VC7.1 compiles each flag group serially using a response file. The
+same complete comparator can check up to four units concurrently.
+
 Write source against the shared classes (`Actor`, `Fighter`,
 `<Char>Fighter`, `CharacterObject`): name a member once in the layout instead
 of using raw offsets, and check a method's vtable slot before naming it.
