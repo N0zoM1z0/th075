@@ -64,6 +64,14 @@ constructors and an explicit zero return. Its current whole-function
 comparison retains the borrowed iterator bindings while those local
 slots are investigated.
 
+Archive registration, lookup and release use the two VC7.1 deques at
+`0x0068BE08` and `0x0068BE1C`. The registered object is 16 bytes and
+contains a Windows handle followed by a list of 108-byte index records.
+The reader and the two lifetime functions share one translation unit.
+With `/GX`, all three preserve their complete native bytes and relocations.
+A headless library consumer registered a synthetic empty archive, found it
+by name, released its handle and deleted the file.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

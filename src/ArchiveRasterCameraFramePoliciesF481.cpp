@@ -1,26 +1,6 @@
 #include "CameraResetF481.hpp"
 #include <windows.h>
 #include <d3d8.h>
-// Five individually native-verified original complete R-origin functions.
-// Real archive list ctor and dtor lifetimes, original HWND and D3D8
-// resource state and genuine five camera globals; only physical borrowed
-// owner field offsets are declared, not original complete classes.
-// Actual native archive small owned list plus Windows native handle ABI.
-class ArchiveEntryListF481 {public: ArchiveEntryListF481(); ~ArchiveEntryListF481(); void Clear();};
-class DataArchiveF481 {
-    HANDLE originalHandle;
-    ArchiveEntryListF481 entries;
-public:
-    DataArchiveF481(); ~DataArchiveF481();
-};
-DataArchiveF481::DataArchiveF481() {
-    originalHandle=0;
-    entries.Clear();
-}
-DataArchiveF481::~DataArchiveF481() {
-    if(originalHandle) CloseHandle(originalHandle);
-    entries.Clear();
-}
 // Original C++ receiver is the private raster device owner; only the
 // independently observed field stores in the original initializer.
 class RasterStateF481 {

@@ -36231,22 +36231,22 @@ size = 113
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 23
 type = "DIR32"
-symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF217@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 28
 type = "REL32"
-symbol = "?Size@ArchiveNameRegistryF217@@QAEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 46
 type = "DIR32"
-symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF217@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 51
 type = "REL32"
-symbol = "?At@ArchiveNameRegistryF217@@QAEPAPBDI@Z"
+symbol = "?at@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z"
 target = 0x0041DD70
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 59
@@ -36256,22 +36256,22 @@ target = 0x006416B0
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 75
 type = "DIR32"
-symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF217@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 80
 type = "REL32"
-symbol = "?Size@ArchiveNameRegistryF217@@QAEIXZ"
+symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ"
 target = 0x0041DD50
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 98
 type = "DIR32"
-symbol = "?g_ArchiveObjectsAt0068BE08@@3VArchiveObjectRegistryF217@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.resource-lookup-find-by-name-0041cf00.relocations]]
 offset = 103
 type = "REL32"
-symbol = "?At@ArchiveObjectRegistryF217@@QAEPAPAXI@Z"
+symbol = "?at@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAEAAPAVDataArchiveF481@@I@Z"
 target = 0x0041DAF0
 
 
@@ -46395,9 +46395,9 @@ target = 0x005F82D0
 [units.archive-open-and-read-index-0041d510]
 source = "src/ArchiveOpenReadIndexF338.cpp"
 object = "build/matching/ArchiveOpenReadIndexF338.obj"
-profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["DataArchive::OpenAndReadIndex"]
-symbol = "?OpenAndReadIndex@ArchiveIndexF250@@QAEXPBD@Z"
+symbol = "?OpenAndReadIndex@DataArchiveF481@@QAEXPBD@Z"
 target_address = 0x0041D510
 size = 429
 [[units.archive-open-and-read-index-0041d510.relocations]]
@@ -46423,7 +46423,7 @@ target = 0x0065712C
 [[units.archive-open-and-read-index-0041d510.relocations]]
 offset = 137
 type = "REL32"
-symbol = "??2@YAPAXI@Z"
+symbol = "??_U@YAPAXI@Z"
 target = 0x006416A2
 [[units.archive-open-and-read-index-0041d510.relocations]]
 offset = 194
@@ -46438,12 +46438,12 @@ target = 0x00641B80
 [[units.archive-open-and-read-index-0041d510.relocations]]
 offset = 385
 type = "REL32"
-symbol = "?AddEntry@ArchiveIndexListF250@@QAEXABUArchiveWireEntryF250@@@Z"
+symbol = "?push_back@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXABUArchiveWireEntryF250@@@Z"
 target = 0x0041D9C0
 [[units.archive-open-and-read-index-0041d510.relocations]]
 offset = 408
 type = "REL32"
-symbol = "??3@YAXPAX@Z"
+symbol = "??_V@YAXPAX@Z"
 target = 0x0064169D
 [[units.archive-open-and-read-index-0041d510.relocations]]
 offset = 419
@@ -47257,12 +47257,12 @@ target = 0x00000000
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 39
 type = "DIR32"
-symbol = "?g_ArchiveObjectsF353@@3VArchiveResourceDequeF353@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 44
 type = "REL32"
-symbol = "?Append@ArchiveResourceDequeF353@@QAEXABQBVArchiveOpenContextF353@@@Z"
+symbol = "?push_back@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAEXABQAVDataArchiveF481@@@Z"
 target = 0x0041DBB0
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 51
@@ -47272,42 +47272,42 @@ target = 0x0064159D
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 78
 type = "REL32"
-symbol = "??0ArchiveOpenContextF353@@QAE@XZ"
+symbol = "??0DataArchiveF481@@QAE@XZ"
 target = 0x0041D190
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 108
 type = "DIR32"
-symbol = "?g_ArchiveObjectsF353@@3VArchiveResourceDequeF353@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 113
 type = "REL32"
-symbol = "?Back@ArchiveResourceDequeF353@@QAEPAPAVArchiveOpenContextF353@@XZ"
+symbol = "?back@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAEAAPAVDataArchiveF481@@XZ"
 target = 0x0041DB80
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 127
 type = "DIR32"
-symbol = "?g_ArchiveObjectsF353@@3VArchiveResourceDequeF353@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 132
 type = "REL32"
-symbol = "?Back@ArchiveResourceDequeF353@@QAEPAPAVArchiveOpenContextF353@@XZ"
+symbol = "?back@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAEAAPAVDataArchiveF481@@XZ"
 target = 0x0041DB80
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 139
 type = "REL32"
-symbol = "?OpenAndReadIndex@ArchiveOpenContextF353@@QAEXPBD@Z"
+symbol = "?OpenAndReadIndex@DataArchiveF481@@QAEXPBD@Z"
 target = 0x0041D510
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 155
 type = "DIR32"
-symbol = "?g_ArchiveNamesF353@@3VArchiveNameDequeF353@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 160
 type = "REL32"
-symbol = "?Append@ArchiveNameDequeF353@@QAEXABQBD@Z"
+symbol = "?push_back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEXABQAD@Z"
 target = 0x0041DE30
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 169
@@ -47317,27 +47317,27 @@ target = 0x00640620
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 181
 type = "REL32"
-symbol = "??2@YAPAXI@Z"
+symbol = "??_U@YAPAXI@Z"
 target = 0x006416A2
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 192
 type = "DIR32"
-symbol = "?g_ArchiveNamesF353@@3VArchiveNameDequeF353@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 197
 type = "REL32"
-symbol = "?Back@ArchiveNameDequeF353@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 211
 type = "DIR32"
-symbol = "?g_ArchiveNamesF353@@3VArchiveNameDequeF353@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 216
 type = "REL32"
-symbol = "?Back@ArchiveNameDequeF353@@QAEPAPADXZ"
+symbol = "?back@?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADXZ"
 target = 0x0041DE00
 [[units.archive-catalog-open-and-register-0041cf80.relocations]]
 offset = 224
@@ -53125,22 +53125,22 @@ target = 0x0068BE04
 [[units.archive-catalog-begin-use-0041ce10.relocations]]
 offset = 17
 type = "DIR32"
-symbol = "?g_ArchiveResourcesAt0068BE08@@3VArchiveResourceRegistryF392@@A"
+symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A"
 target = 0x0068BE08
 [[units.archive-catalog-begin-use-0041ce10.relocations]]
 offset = 22
 type = "REL32"
-symbol = "?Clear@ArchiveResourceRegistryF392@@QAEXXZ"
+symbol = "?clear@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAEXXZ"
 target = 0x0041DCD0
 [[units.archive-catalog-begin-use-0041ce10.relocations]]
 offset = 27
 type = "DIR32"
-symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF392@@A"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A"
 target = 0x0068BE1C
 [[units.archive-catalog-begin-use-0041ce10.relocations]]
 offset = 32
 type = "REL32"
-symbol = "?Clear@ArchiveNameRegistryF392@@QAEXXZ"
+symbol = "?clear@?$deque@PADV?$allocator@PAD@std@@@std@@QAEXXZ"
 target = 0x0041DF50
 [[units.archive-catalog-begin-use-0041ce10.relocations]]
 offset = 37
@@ -58294,8 +58294,8 @@ symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
 target = 0x00449D40
 
 [units.data-archive-initialize-state-0041d190]
-source = "src/ArchiveRasterCameraFramePoliciesF481.cpp"
-object = "build/matching/ArchiveRasterCameraFramePoliciesF481.obj"
+source = "src/ArchiveOpenReadIndexF338.cpp"
+object = "build/matching/ArchiveOpenReadIndexF338.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["DataArchive::InitializeStateAndClearListAt0041D190"]
 symbol = "??0DataArchiveF481@@QAE@XZ"
@@ -58319,12 +58319,12 @@ target = 0x00000000
 [[units.data-archive-initialize-state-0041d190.relocations]]
 offset = 35
 type = "REL32"
-symbol = "??0ArchiveEntryListF481@@QAE@XZ"
+symbol = "??0?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE@XZ"
 target = 0x0041D8F0
 [[units.data-archive-initialize-state-0041d190.relocations]]
 offset = 62
 type = "REL32"
-symbol = "?Clear@ArchiveEntryListF481@@QAEXXZ"
+symbol = "?clear@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXXZ"
 target = 0x0041D9F0
 [[units.data-archive-initialize-state-0041d190.relocations]]
 offset = 82
@@ -58334,8 +58334,8 @@ target = 0x00000000
 
 
 [units.data-archive-close-entries-0041d1f0]
-source = "src/ArchiveRasterCameraFramePoliciesF481.cpp"
-object = "build/matching/ArchiveRasterCameraFramePoliciesF481.obj"
+source = "src/ArchiveOpenReadIndexF338.cpp"
+object = "build/matching/ArchiveOpenReadIndexF338.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0"]
 symbol = "??1DataArchiveF481@@QAE@XZ"
@@ -58364,12 +58364,12 @@ target = 0x00657138
 [[units.data-archive-close-entries-0041d1f0.relocations]]
 offset = 62
 type = "REL32"
-symbol = "?Clear@ArchiveEntryListF481@@QAEXXZ"
+symbol = "?clear@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXXZ"
 target = 0x0041D9F0
 [[units.data-archive-close-entries-0041d1f0.relocations]]
 offset = 80
 type = "REL32"
-symbol = "??1ArchiveEntryListF481@@QAE@XZ"
+symbol = "??1?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE@XZ"
 target = 0x0041D930
 [[units.data-archive-close-entries-0041d1f0.relocations]]
 offset = 90
@@ -61139,18 +61139,18 @@ size = 171
 relocations = [
  { offset = 0xA, type = "DIR32", symbol = "?g_ArchiveUseCountAt0068BE04@@3IA", target = 0x0068BE04 },
  { offset = 0x12, type = "DIR32", symbol = "?g_ArchiveUseCountAt0068BE04@@3IA", target = 0x0068BE04 },
- { offset = 0x2F, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNamesF343@@A", target = 0x0068BE1C },
- { offset = 0x34, type = "REL32", symbol = "?Size@ArchiveNamesF343@@QAEIXZ", target = 0x0041DD50 },
- { offset = 0x42, type = "DIR32", symbol = "?g_ArchiveResourcesAt0068BE08@@3VArchiveResourcesF343@@A", target = 0x0068BE08 },
- { offset = 0x47, type = "REL32", symbol = "?At@ArchiveResourcesF343@@QAEPAPAVArchiveResourceF343@@I@Z", target = 0x0041DB40 },
- { offset = 0x62, type = "REL32", symbol = "??_GArchiveResourceF343@@QAEPAXI@Z", target = 0x0041D8C0 },
- { offset = 0x77, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNamesF343@@A", target = 0x0068BE1C },
- { offset = 0x7C, type = "REL32", symbol = "?At@ArchiveNamesF343@@QAEPAPADI@Z", target = 0x0041DDC0 },
+ { offset = 0x2F, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A", target = 0x0068BE1C },
+ { offset = 0x34, type = "REL32", symbol = "?size@?$deque@PADV?$allocator@PAD@std@@@std@@QBEIXZ", target = 0x0041DD50 },
+ { offset = 0x42, type = "DIR32", symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A", target = 0x0068BE08 },
+ { offset = 0x47, type = "REL32", symbol = "??A?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAEAAPAVDataArchiveF481@@I@Z", target = 0x0041DB40 },
+ { offset = 0x62, type = "REL32", symbol = "??_GDataArchiveF481@@QAEPAXI@Z", target = 0x0041D8C0 },
+ { offset = 0x77, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A", target = 0x0068BE1C },
+ { offset = 0x7C, type = "REL32", symbol = "??A?$deque@PADV?$allocator@PAD@std@@@std@@QAEAAPADI@Z", target = 0x0041DDC0 },
  { offset = 0x8A, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
- { offset = 0x94, type = "DIR32", symbol = "?g_ArchiveResourcesAt0068BE08@@3VArchiveResourcesF343@@A", target = 0x0068BE08 },
- { offset = 0x99, type = "REL32", symbol = "?Clear@ArchiveResourcesF343@@QAEXXZ", target = 0x0041DCD0 },
- { offset = 0x9E, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNamesF343@@A", target = 0x0068BE1C },
- { offset = 0xA3, type = "REL32", symbol = "?Clear@ArchiveNamesF343@@QAEXXZ", target = 0x0041DF50 },
+ { offset = 0x94, type = "DIR32", symbol = "?g_ArchiveObjectsAt0068BE08@@3V?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@A", target = 0x0068BE08 },
+ { offset = 0x99, type = "REL32", symbol = "?clear@?$deque@PAVDataArchiveF481@@V?$allocator@PAVDataArchiveF481@@@std@@@std@@QAEXXZ", target = 0x0041DCD0 },
+ { offset = 0x9E, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3V?$deque@PADV?$allocator@PAD@std@@@std@@A", target = 0x0068BE1C },
+ { offset = 0xA3, type = "REL32", symbol = "?clear@?$deque@PADV?$allocator@PAD@std@@@std@@QAEXXZ", target = 0x0041DF50 },
 ]
 
 # F1157: complete original 248-B/75-x86 virtual BattleScene destructor.
