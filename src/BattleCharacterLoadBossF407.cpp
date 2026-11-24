@@ -1,3 +1,4 @@
+#include "DiagnosticLog.hpp"
 #include "GameProgress.hpp"
 #include <stdlib.h>
 // Independently native-confirmed complete R065 3,232-CODE-byte battle character
@@ -75,7 +76,6 @@ extern unsigned int g_ReplayRoundAt006718A0;
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
 extern unsigned char g_StageParametersAt00671440[];
-extern void BattleLogAt0041CC50(const char*);
 extern void LoadReplaySelectionAt004195B0();
 extern unsigned char CanChooseCharacterAt00419E10(signed char,int);
 extern void CameraAttachAt00412660(float*,float*,float*,float*);
@@ -86,7 +86,7 @@ extern EffectCollectionsF398 g_EffectCollectionsAt006716C8;
 #define F(T,f,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(f)+(o)))
 namespace BattleCharacterLoaderF398 { void LoadCharacters(); }
 void BattleCharacterLoaderF398::LoadCharacters() {
- BattleLogAt0041CC50(g_LoadCharacterLogAt00657A30);
+ DiagnosticLog::AppendString(g_LoadCharacterLogAt00657A30);
  if (g_ReplayModeAt0066C238==2) LoadReplaySelectionAt004195B0();
  else if (g_BattleModeAt006714B4==4) {
    ++g_CharacterProgressAt0067161E;
@@ -220,6 +220,6 @@ void BattleCharacterLoaderF398::LoadCharacters() {
  }
  g_EffectCollectionsAt006716C8.ClearEntries();
  if(g_ReplayModeAt0066C238==1) SaveReplayStateAt00419920();
- BattleLogAt0041CC50(g_LoadCharactersDoneAt00657A44);
+ DiagnosticLog::AppendString(g_LoadCharactersDoneAt00657A44);
 }
 #undef F

@@ -1,3 +1,4 @@
+#include "DiagnosticLog.hpp"
 #include "GameProgress.hpp"
 #include "AudioControl.hpp"
 // Complete original 3,765-CODE-byte R065 battle stage constructor dispatcher.
@@ -271,10 +272,9 @@ extern signed char g_BattleModeAt006714B4;
 extern signed char g_ReplayModeAt0066C238;
 extern const char g_StartStageLogAt00657A4C[];
 extern const char g_EndStageLogAt00657A5C[];
-extern void BattleLogAt0041CC50(const char*);
 namespace BattleStageLoaderF389 {void LoadStage();}
 void BattleStageLoaderF389::LoadStage() {
-    BattleLogAt0041CC50(g_StartStageLogAt00657A4C);
+    DiagnosticLog::AppendString(g_StartStageLogAt00657A4C);
     if(g_CurrentBattleStageAt00671424) {
         delete g_CurrentBattleStageAt00671424;
         g_CurrentBattleStageAt00671424=0;
@@ -356,5 +356,5 @@ void BattleStageLoaderF389::LoadStage() {
     if(g_BattleModeAt006714B4!=3) MusicF204::PlayTrackByIndex(int(g_StageIdAt0067161D));
     if(g_ReplayModeAt0066C238!=2 && g_ReplayModeAt0066C238!=4)
         g_GameProgress.SetUnlockBit(int(g_StageIdAt0067161D)+200);
-    BattleLogAt0041CC50(g_EndStageLogAt00657A5C);
+    DiagnosticLog::AppendString(g_EndStageLogAt00657A5C);
 }

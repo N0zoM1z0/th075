@@ -3,12 +3,6 @@
 #include "CharacterSpecial5E68C0.hpp"
 #include "BattleRender43D9D0.hpp"
 
-// Declaration-only views. Never construct or embed these partial owners.
-class HudQuadOperations43E040 {
-public:
-    void Translate(float, float, float);
-    void Scale(float, float, float, float, float, float);
-};
 // At returns a borrowed record address; only native shorts at +0/+6 are read.
 // The underlying records have stride116; no complete record layout is claimed.
 class HudRecordGroup43E040 { public: short* At(unsigned int); };

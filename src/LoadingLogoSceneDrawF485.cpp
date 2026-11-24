@@ -1,6 +1,7 @@
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteQuad.hpp"
+#include "SpriteTransform.hpp"
 #include <windows.h>
 // Independently complete original native Loading/Logo scene draw routines.
 // The borrowed DrawQuad::ConstructNative() is the original 0040D990
@@ -17,11 +18,9 @@ class DrawQuadF470 {
   unsigned int physicalStorage[34];
 public:
   void ConstructNative();
-  void BuildQuadFromRect(const RECT* rectangle);
 };
 struct DrawFrameF470 {RECT rectangle; DrawQuadF470 quad;};
 typedef char CheckFrame152F470[(sizeof(DrawFrameF470)==152)?1:-1];
-extern void __cdecl GraphicsAdvanceAt004027D0();
 class LoadingSceneDrawF470 {
   unsigned char borrowedNativeBase[8];
   TextureManagerF198* drawer;
@@ -39,9 +38,9 @@ void LoadingSceneDrawF470::Draw() {
     drawer->SetDepthMode(0);
     drawer->SetBlendMode(0);
     SetRect(&frame.rectangle,0,0,640,480);
-    frame.quad.BuildQuadFromRect(&frame.rectangle);
+    reinterpret_cast<SpriteTransform*>(&frame.quad)->BuildQuadFromRect(&frame.rectangle);
     drawer->DrawQuad(0, reinterpret_cast<const SpriteQuad40CA80&>(frame.quad),&frame.rectangle,0xffffffff);
-    GraphicsAdvanceAt004027D0();
+    Graphics::EndFrame();
  }
 }
 void LogoSceneDrawF470::Draw() {
@@ -51,8 +50,8 @@ void LogoSceneDrawF470::Draw() {
     drawer->SetDepthMode(0);
     drawer->SetBlendMode(0);
     SetRect(&frame.rectangle,0,0,640,480);
-    frame.quad.BuildQuadFromRect(&frame.rectangle);
+    reinterpret_cast<SpriteTransform*>(&frame.quad)->BuildQuadFromRect(&frame.rectangle);
     drawer->DrawQuad(0, reinterpret_cast<const SpriteQuad40CA80&>(frame.quad),&frame.rectangle,0xffffffff);
-    GraphicsAdvanceAt004027D0();
+    Graphics::EndFrame();
  }
 }

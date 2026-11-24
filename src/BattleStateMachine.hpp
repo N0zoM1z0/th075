@@ -6,11 +6,9 @@
 // Partial interfaces, used only on existing receivers.
 class StatePatternActor { public: void ChoosePattern(); };
 class StateReplay { public: void AppendRecord(); bool IsInputEmpty(); };
-class StateCapture { public: void InstallCallback(); void EnableDirectDraw(); void CapturePrimary(); };
 class StateRecords { public: void IncrementCounter(signed char first, signed char second); };
 class StateEffects { public: void ReleaseEntries(); };
 extern StateReplay g_StateReplay;
-extern StateCapture *g_StateCapture;
 extern signed char g_StateReplayLimit;
 extern signed char g_StateRecordLimit;
 extern signed char g_StateContinueCount;

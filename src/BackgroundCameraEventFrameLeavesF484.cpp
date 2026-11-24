@@ -2,6 +2,7 @@
 #include "Graphics.hpp"
 #include "CameraMotion.hpp"
 #include "TextureManagerF198.hpp"
+#include "WindowOverlayF212.hpp"
 // Native actual background base lifetime: vtable and borrowed +0x18
 // resource member destroyed by the compiler, no guessed private fields.
 class BackgroundBaseF484 {
@@ -44,18 +45,13 @@ void __cdecl PulseEventServiceAt00423B20()
 namespace FrameCapturePresentF461 {
     void PresentPrimary(IDirect3DTexture8** texture);
 }
-class FrameCapturePolicyF484 {
- IDirect3DTexture8* target;
- unsigned char directDrawEnabled;
-public:void InstallPresentCallback();void EnableDirectDraw();
-};
-void FrameCapturePolicyF484::InstallPresentCallback() {
+void WindowOverlayF212::InstallPresentCallback() {
  Graphics::SetPresentCallback(FrameCapturePresentF461::PresentPrimary);
- directDrawEnabled=0;
+ enabled=0;
 }
-void FrameCapturePolicyF484::EnableDirectDraw() {
+void WindowOverlayF212::EnableDirectDraw() {
  Graphics::SetPresentCallback(0);
- directDrawEnabled=1;
+ enabled=1;
 }
 class NativeSceneBaseF484 {public:virtual ~NativeSceneBaseF484();};
 class BattleEndSceneF484: public NativeSceneBaseF484 {public:virtual ~BattleEndSceneF484();};

@@ -170,6 +170,13 @@ column table and the amplitude and phase fields are zero-filled in the
 writable section's virtual tail. Transition dispatch and frame capture
 register their callbacks through `Graphics::SetPresentCallback`.
 
+The eight-byte frame texture owner has a D3D8 texture at offset zero and
+a direct-draw flag at `+4`. Its pointer at `0x006714C4` starts null.
+Startup, cleanup, and the battle and result callers share the owner.
+Capture at `0x004170D0` passes its texture member to
+`Graphics::CopyTextureOpaque` and reads the source texture through
+`Graphics::GetPrimaryTargetTexture`.
+
 The rectangle and default quad constructors use four `D3DXVECTOR4`
 members, a `D3DXMATRIX` at `+0x40`, and an unknown dword at `+0x80`.
 The rectangle constructor was exercised by a headless library consumer.
@@ -177,6 +184,13 @@ The capture callback still uses a borrowed rectangle constructor binding.
 A trial with separate C++ locals placed the RECT at `[ebp-0x10]`. The
 native function places it at `[ebp-0x98]`.
 [SDK matrix evidence](ORIGIN_PENDING_REVIEW.md#r293--sprite-matrix-constructor-selection)
+
+The HUD and timeline callers use the shared quad translation, scaling, and
+rotation methods. The loading and logo draws also use the shared rectangle
+transform and `Graphics::EndFrame`. Declaring the quad and RECT separately
+made VC7.1 place the RECT at `[ebp-0x10]` in both declaration orders. The
+156-byte native draws use `[ebp-0x98]`; their constructor call still relies
+on the existing combined stack carrier.
 
 The texture manager stores a VC7.1 vector of 44-byte entries at `+0x08`
 and two vectors of texture pointers at `+0x18` and `+0x28`. Texture

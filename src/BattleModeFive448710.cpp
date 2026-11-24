@@ -6,7 +6,7 @@
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 #define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 #define PORTRAIT reinterpret_cast<TextureManagerF198*>(fighters[0]->field534)
-#define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
+#define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 
 void BattleScene::RenderModeFive() {
     int i;
@@ -25,8 +25,8 @@ void BattleScene::RenderModeFive() {
             SetRect(&region, 0, i * 24, 240, i * 24 + 24);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&region);
             if (i > 5)
-                QUAD->Translate(0.0f, 24.0f, 0.0f);
-            QUAD->Translate(10.0f, 90.0f, 0.0f);
+                QUAD->TranslateQuad(0.0f, 24.0f, 0.0f);
+            QUAD->TranslateQuad(10.0f, 90.0f, 0.0f);
             DRAWING->DrawQuad(10, packet, &region, color);
         }
         for (i = 0; i < 6; i = i + 1) {
@@ -34,7 +34,7 @@ void BattleScene::RenderModeFive() {
             else color = 0xFF808080;
             SetRect(&region, i % 3 * 72, i / 3 * 24 + 216, i % 3 * 72 + 72, i / 3 * 24 + 240);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
-            QUAD->Translate(float(i * 60 + 260), 90.0f, 0.0f);
+            QUAD->TranslateQuad(float(i * 60 + 260), 90.0f, 0.0f);
             DRAWING->DrawQuad(10, packet, &region, color);
         }
         for (i = 0; i < 10; i = i + 1) {
@@ -42,80 +42,80 @@ void BattleScene::RenderModeFive() {
             else color = 0xFF808080;
             SetRect(&region, i * 24, 264, i * 24 + 24, 288);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(i * 24), 0.0f, float(i * 24 + 24), 24.0f);
-            QUAD->Translate(260.0f, 114.0f, 0.0f);
+            QUAD->TranslateQuad(260.0f, 114.0f, 0.0f);
             DRAWING->DrawQuad(10, packet, &region, color);
         }
         if (fighters[1]->field52F == 0) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 288, 72, 312);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
-        QUAD->Translate(260.0f, 138.0f, 0.0f);
+        QUAD->TranslateQuad(260.0f, 138.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field52F == 1) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 72, 288, 168, 312);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 96.0f, 24.0f);
-        QUAD->Translate(332.0f, 138.0f, 0.0f);
+        QUAD->TranslateQuad(332.0f, 138.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field52F == 2) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 312, 120, 336);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 120.0f, 24.0f);
-        QUAD->Translate(428.0f, 138.0f, 0.0f);
+        QUAD->TranslateQuad(428.0f, 138.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field52F == 3) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 120, 312, 168, 336);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 48.0f, 24.0f);
-        QUAD->Translate(548.0f, 138.0f, 0.0f);
+        QUAD->TranslateQuad(548.0f, 138.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         for (i = 0; i < 2; i = i + 1) {
             if (i == fighters[1]->field52E) color = 0xFFFFFFFF;
             else color = 0xFF808080;
             SetRect(&region, i * 72, 336, i * 72 + 72, 360);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
-            QUAD->Translate(float(i * 72 + 260), 162.0f, 0.0f);
+            QUAD->TranslateQuad(float(i * 72 + 260), 162.0f, 0.0f);
             DRAWING->DrawQuad(10, packet, &region, color);
         }
         if (fighters[1]->field530 == 0) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 360, 72, 384);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
-        QUAD->Translate(260.0f, 186.0f, 0.0f);
+        QUAD->TranslateQuad(260.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field530 == 1) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 72, 360, 168, 384);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 96.0f, 24.0f);
-        QUAD->Translate(332.0f, 186.0f, 0.0f);
+        QUAD->TranslateQuad(332.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field530 == 2) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 384, 72, 408);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
-        QUAD->Translate(428.0f, 186.0f, 0.0f);
+        QUAD->TranslateQuad(428.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field530 == 3) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 72, 384, 168, 408);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 96.0f, 24.0f);
-        QUAD->Translate(500.0f, 186.0f, 0.0f);
+        QUAD->TranslateQuad(500.0f, 186.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field531 == 0) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 0, 408, 72, 432);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 72.0f, 24.0f);
-        QUAD->Translate(260.0f, 210.0f, 0.0f);
+        QUAD->TranslateQuad(260.0f, 210.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         if (fighters[1]->field531 == 1) color = 0xFFFFFFFF;
         else color = 0xFF808080;
         SetRect(&region, 72, 408, 168, 432);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 96.0f, 24.0f);
-        QUAD->Translate(332.0f, 210.0f, 0.0f);
+        QUAD->TranslateQuad(332.0f, 210.0f, 0.0f);
         DRAWING->DrawQuad(10, packet, &region, color);
         SetRect(&region, 0, 0, 256, 256);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&region);
-        QUAD->Translate(340.0f, 280.0f, 0.0f);
+        QUAD->TranslateQuad(340.0f, 280.0f, 0.0f);
         PORTRAIT->DrawQuad(fighters[0]->field532 - 1, packet, &region, 0xFFFFFFFF);
     }
 }

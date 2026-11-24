@@ -25,7 +25,6 @@ extern unsigned int g_GameDefaultsUseCountAt00671614;
 extern SceneCombatActorF195* g_CombatActorAAt00671418;
 extern SceneCombatActorF195* g_CombatActorBAt0067141C;
 extern SceneThirdOwnerF195* g_SceneOwnerAt00671424;
-extern WindowOverlayF212* g_WindowOverlayAt006714C4;
 
 GameDefaultsF193::~GameDefaultsF193()
 {

@@ -2,6 +2,7 @@
 #include "AudioControl.hpp"
 #include "BattleScene.hpp"
 #include "BattleStateMachine.hpp"
+#include "WindowOverlayF212.hpp"
 #define STATE field018
 #define TIMER field00C
 #define WINNER field05D
@@ -110,7 +111,10 @@ short BattleScene::AdvanceState()
                 if (g_FrameClockMode == 3) g_FrameClockMode = 1;
             } else if (field05C == 2) {
                 AudioControl407CA0::ScheduleFade(-10000, -160, true, false);
-                g_StateCapture->InstallCallback(); Render(); g_StateCapture->EnableDirectDraw(); g_StateCapture->CapturePrimary();
+                g_WindowOverlayAt006714C4->InstallPresentCallback();
+                Render();
+                g_WindowOverlayAt006714C4->EnableDirectDraw();
+                g_WindowOverlayAt006714C4->CapturePrimary();
                 if (g_FrameClockMode == 4) { g_FrameClockMode = 2; g_StateReplayChanged = 1; }
                 else if (g_FrameClockMode == 3) g_FrameClockMode = 1;
                 if (g_FrameClockMode == 1) g_StateReplay.AppendRecord();

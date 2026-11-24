@@ -1,3 +1,4 @@
+#include "DiagnosticLog.hpp"
 #include <windows.h>
 #include <stdio.h>
 #include <string.h>
@@ -25,7 +26,6 @@ class FighterScriptsF282 {
 public: void LoadFile(const char* filename,int mode,int submode);
         void LoadArchive(const char* filename,const char* root);
 };
-namespace FighterLogF282 {void __cdecl Append(const char* text);}
 extern const char g_LogSoundsAt00658E84[];
 extern const char g_SoundFileFormatAt00658E94[];
 extern const char g_CharacterMeilingAt00658EA4[];
@@ -52,15 +52,15 @@ extern const char g_ScriptArchiveAt00658F94[];
 void Fighter::LoadResources()
 {
     char filename[524];
-    FighterLogF282::Append(g_LogSoundsAt00658E84);
+    DiagnosticLog::AppendString(g_LogSoundsAt00658E84);
     sprintf(filename,g_SoundFileFormatAt00658E94,tag);
     if (strcmp(name,g_CharacterMeilingAt00658EA4)==0)
         reinterpret_cast<SoundBank*>(&soundResources)->LoadArchive(filename,g_SoundArchiveMeilingAt00658EAC);
     else
         reinterpret_cast<SoundBank*>(&soundResources)->LoadArchive(filename,g_SoundArchiveDefaultAt00658EB4);
-    FighterLogF282::Append(g_LogPatternsAt00658EBC);
+    DiagnosticLog::AppendString(g_LogPatternsAt00658EBC);
     LoadPattern();
-    FighterLogF282::Append(g_LogPicturesAt00658ED0);
+    DiagnosticLog::AppendString(g_LogPicturesAt00658ED0);
     drawing=new FighterTextureF282();
     field534Texture=new FighterTextureF282();
     static_cast<FighterTextureF282*>(drawing)->AllocateSlots(field478);

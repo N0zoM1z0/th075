@@ -1,6 +1,8 @@
 #include "WindowOverlayF212.hpp"
 #include "GraphicsTexture.hpp"
 
+WindowOverlayF212* g_WindowOverlayAt006714C4;
+
 // Native constructor at 00417000. It creates a 1024x512 texture, clears the
 // visible 640x480 region to opaque black, then disables the overlay.
 WindowOverlayF212::WindowOverlayF212()

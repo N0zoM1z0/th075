@@ -8,7 +8,7 @@
 #define ACTOR(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x44 + i * 4) + (offset)))
 #define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 #define ACTOR_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[i]->drawing)
-#define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
+#define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 #define RECORDS reinterpret_cast<StatusRecords440B50*>(&g_BattleRecords)
 
 void BattleScene::RenderStatus() {
@@ -51,7 +51,7 @@ void BattleScene::RenderStatus() {
                     SetRect(&rect, 0, 0, 256, 32);
                     reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(-nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f,
                         256.0f - nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f + 32.0f);
-                    QUAD->Scale(10.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + 16.0f, 0.0f,
+                    QUAD->ScaleQuad(10.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + 16.0f, 0.0f,
                         F1096_STATUS_FLOAT(this, 0xE4, i), F1096_STATUS_FLOAT(this, 0xE4, i), 1.0f);
                     ACTOR_DRAWING->DrawQuad(texture, packet, &rect, D3DCOLOR_ARGB(field0DE[i], 255, 255, 255));
                 } else {
@@ -75,7 +75,7 @@ void BattleScene::RenderStatus() {
                         SetRect(&rect, 0, 0, 256, 32);
                         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(-nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f,
                             256.0f - nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f + 32.0f);
-                        QUAD->Scale(630.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + 16.0f, 0.0f,
+                        QUAD->ScaleQuad(630.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + 16.0f, 0.0f,
                             F1096_STATUS_FLOAT(this, 0xE4, i), F1096_STATUS_FLOAT(this, 0xE4, i), 1.0f);
                         ACTOR_DRAWING->DrawQuad(texture, packet, &rect, D3DCOLOR_ARGB(field0DE[i], 255, 255, 255));
                     } else {
@@ -92,7 +92,7 @@ void BattleScene::RenderStatus() {
                         SetRect(&rect, 0, 0, 256, 32);
                         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(-nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f,
                             256.0f - nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f + 32.0f);
-                        QUAD->Scale(630.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + 16.0f, 0.0f,
+                        QUAD->ScaleQuad(630.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + 16.0f, 0.0f,
                             F1096_STATUS_FLOAT(this, 0xE4, i), F1096_STATUS_FLOAT(this, 0xE4, i), 1.0f);
                         ACTOR_DRAWING->DrawQuad(texture, packet, &rect, D3DCOLOR_ARGB(field0DE[i], 255, 255, 255));
                     }

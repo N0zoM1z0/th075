@@ -7,7 +7,7 @@
 #define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 #define LEFT_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[0]->field534)
 #define RIGHT_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[1]->field534)
-#define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
+#define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 
 void BattleScene::RenderEndOverlay() {
     if (g_CombatMode == 5) {
@@ -27,15 +27,15 @@ void BattleScene::RenderEndOverlay() {
                 SetRect(&rect, 0, 0, 256, 256);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&rect);
                 if (fighters[0]->field2CD == 0 && fighters[1]->field2CD == 0) {
-                    QUAD->Translate(32.0f, 280.0f, 0.0f);
+                    QUAD->TranslateQuad(32.0f, 280.0f, 0.0f);
                     LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, packet, &rect, 0xFFFFFFFF);
-                    QUAD->Translate(320.0f, 0.0f, 0.0f);
+                    QUAD->TranslateQuad(320.0f, 0.0f, 0.0f);
                     RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, packet, &rect, 0xFFFFFFFF);
                 } else if (fighters[0]->field2CD != 0) {
-                    QUAD->Translate(192.0f, 280.0f, 0.0f);
+                    QUAD->TranslateQuad(192.0f, 280.0f, 0.0f);
                     RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, packet, &rect, 0xFFFFFFFF);
                 } else {
-                    QUAD->Translate(192.0f, 280.0f, 0.0f);
+                    QUAD->TranslateQuad(192.0f, 280.0f, 0.0f);
                     LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, packet, &rect, 0xFFFFFFFF);
                 }
             }

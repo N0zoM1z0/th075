@@ -7,7 +7,6 @@
 
 extern BYTE g_KeyBindingsAt00671440[];
 
-extern WindowOverlayF212* g_WindowOverlayAt006714C4;
 extern unsigned char g_SoundVolumeAt006714B6;
 extern unsigned char g_StreamVolumeAt006714B7;
 extern const char g_WaveArchivePathAt00657A24[];
