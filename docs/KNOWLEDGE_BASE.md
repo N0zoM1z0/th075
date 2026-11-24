@@ -126,6 +126,12 @@ The three strings occupy distinct native locations. Four graphics and
 input diagnostics use the existing SDK operation names and failure
 wording.
 
+The older Sakuya object probe supplies the negative X bound. The
+older Reimu five-shot fragment supplies two effect offsets, and
+historical source also contains the two Marisa decimal literals. The
+effect callers share the 92.0f definition. The Marisa definitions use
+the double widths read by their callers.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

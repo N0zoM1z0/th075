@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
@@ -10,13 +11,11 @@ extern float __cdecl AngleAt00483300(float y, float x);
 
 extern const double g_MarisaSparkBaseGrowthAt00659430;
 extern const double g_MarisaSparkInitialGrowthAt00659438;
-extern const double g_MarisaSparkGrowthLossAt00659440;
 
 extern const float g_MarisaStreakLeftLimitAt0065941C;
 extern const float g_MarisaStreakRightLimitAt00659418;
 extern const float g_MarisaStreakLeftLimitAt00659414;
 
-extern const double g_MarisaChainJitterAt00659408;
 
 extern const double g_MarisaDustGrowthAt006593F8;
 

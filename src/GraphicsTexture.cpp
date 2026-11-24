@@ -5,9 +5,9 @@ namespace Graphics
 {
     extern IDirect3DDevice8 *g_Device;
     extern bool g_RequireSquareTextures;
-    extern const char g_Create16BitTextureError[];
+    extern const char g_Create16BitTextureError[] = "\x83\x65\x83\x4e\x83\x58\x83\x60\x83\x83\x82\xcc\x90\xb6\x90\xac\x82\xc9\x8e\xb8\x94\x73";
     extern const char g_UnsupportedTextureDepthError[];
-    extern const char g_CreateTextureError[];
+    extern const char g_CreateTextureError[] = "\x83\x65\x83\x4e\x83\x58\x83\x60\x83\x83\x82\xcc\x90\xb6\x90\xac\x82\xc9\x8e\xb8\x94\x73";
     extern const char g_ResetDeviceError[];
     extern D3DPRESENT_PARAMETERS g_PresentationParameters;
     extern IDirect3DTexture8 *g_TargetTextures[1];

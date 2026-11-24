@@ -28,7 +28,7 @@ case 0x2BC: {
         SpawnAuxEffect(0x73,
             x
                 - float((facing)*18),
-            (*(&y))+g_F972_YAt00659284,
+            (*(&y))+g_EffectOffsetNinetyTwo,
             facing,1);
     }
     if ((fieldF04)>0)
@@ -78,7 +78,7 @@ case 0x2BD: {
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
-            (*(&y))+g_F972_YAt00659284,
+            (*(&y))+g_EffectOffsetNinetyTwo,
             facing,1);
     }
     if ((fieldF04)>0)

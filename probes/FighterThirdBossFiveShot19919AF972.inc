@@ -39,7 +39,7 @@ case 0x199: {
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*91)+(x),
-            (*(&y))+g_F972_YAt00659284,
+            (*(&y))+g_EffectOffsetNinetyTwo,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*96)+(x),

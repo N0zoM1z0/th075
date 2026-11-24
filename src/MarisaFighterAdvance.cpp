@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
@@ -5,7 +6,6 @@
 
 extern float g_MarisaResourceYAt00659298;
 extern float g_MarisaResourceYAt0065928C;
-extern float g_MarisaResourceYAt00659284;
 extern float g_MarisaResourceYAt00659274;
 void MarisaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -3208,7 +3208,7 @@ void MarisaFighter::Advance() {
             field314 = -30.0f;
             SpawnBattleEffect(0x32C,
                 static_cast<float>(facing * 64) + x,
-                (y) + g_MarisaResourceYAt00659284, facing, 1);
+                (y) + g_EffectOffsetNinetyTwo, facing, 1);
             PlaySound(4);
             UpdateGaugeTimer(200);
         }
@@ -3299,7 +3299,7 @@ void MarisaFighter::Advance() {
             Fighter::PlaySharedSound(0x17);
             SpawnAuxEffect(0x73,
                 x - static_cast<float>(facing * 18),
-                (y) + g_MarisaResourceYAt00659284, facing, 1);
+                (y) + g_EffectOffsetNinetyTwo, facing, 1);
         }
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x334,
@@ -3627,7 +3627,7 @@ void MarisaFighter::Advance() {
             Fighter::PlaySharedSound(0x17);
             SpawnAuxEffect(0x74,
                 x - static_cast<float>(facing * 18),
-                (y) + g_MarisaResourceYAt00659284, facing, 1);
+                (y) + g_EffectOffsetNinetyTwo, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
             ResetPrimaryCounters(0x2C9);

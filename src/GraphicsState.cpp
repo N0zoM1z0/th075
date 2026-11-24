@@ -31,7 +31,7 @@ namespace Graphics
     bool g_Use16BitBackBuffer;
     bool g_RequireSquareTextures;
     DWORD g_PixelShader = 0xFFFFFFFF;
-    extern const char g_TextureLoadError[];
+    extern const char g_TextureLoadError[] = "\x83\x65\x83\x4e\x83\x58\x83\x60\x83\x83\x82\xcc\x83\x8d\x81\x5b\x83\x68\x82\xc9\x8e\xb8\x94\x73";
     extern const char g_TargetBeginError[];
     // Reset is implemented separately in GraphicsTexture.cpp (F003).
     extern void ResetDevice();

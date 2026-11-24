@@ -221,3 +221,9 @@ const float EightHundred = 800.0f;
 const float HundredThirtySeven = 137.0f;
 const float HundredSixtyEight = 168.0f;
 }
+
+const float g_EffectOffsetNinetyTwo = 92.0f;
+const float g_F972_YAt00659474 = 122.0f;
+const float g_SakuyaObjectMinXAt006595E0 = -1000.0f;
+const double g_MarisaChainJitterAt00659408 = 0.005;
+const double g_MarisaSparkGrowthLossAt00659440 = 0.07;

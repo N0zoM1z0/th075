@@ -37,7 +37,7 @@ case 0x2C2: {
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
-            (*(&y))+g_F972_YAt00659284,
+            (*(&y))+g_EffectOffsetNinetyTwo,
             facing,1);
         Fighter::SpawnTrackedEffect(0x330,640.0f,320.0f,1,2,0,1);
         fieldF10=spirit;
@@ -79,7 +79,7 @@ case 0x2C3: {
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
-            (*(&y))+g_F972_YAt00659284,
+            (*(&y))+g_EffectOffsetNinetyTwo,
             facing,1);
         Fighter::SpawnTrackedEffect(0x32E,640.0f,320.0f,1,2,0,1);
         fieldF0C=spirit;

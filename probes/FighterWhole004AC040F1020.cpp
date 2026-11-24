@@ -1,3 +1,4 @@
+#include "../src/MathFloatHelpers.hpp"
 #include "../src/GeometryConstants.hpp"
 #include "../src/FloatConstants.hpp"
 #include "SakuyaFighter.hpp"
@@ -38,11 +39,9 @@ extern float g_F972_GravityAt00657F74;
 extern float g_F972_YAt00657860;
 extern float g_F972_YAt00658364;
 extern float g_F972_YAt0065836C;
-extern float g_F972_YAt00659284;
 extern float g_F972_YAt00659464;
 extern float g_F972_YAt00659468;
 extern float g_F972_YAt0065946C;
-extern float g_F972_YAt00659474;
 extern float g_F974_ShotYAt00659498;
 extern float g_F976_RandomYAt0065786C;
 extern float g_F979_RandomYAt00657858;

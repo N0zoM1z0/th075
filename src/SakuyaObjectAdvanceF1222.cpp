@@ -1,3 +1,4 @@
+#include "MathFloatHelpers.hpp"
 #include "GeometryConstants.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of SakuyaObject::Advance at 004CA6E0.
@@ -8,7 +9,6 @@
 
 
 float __cdecl AngleAt00483300(float, float);
-extern const float g_SakuyaObjectMinXAt006595E0;
 
 void SakuyaObject::Advance()
 {

@@ -23,7 +23,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 117 unresolved data symbols. The startup window
+stops at `LNK1120` with 106 unresolved data symbols. Five values from
+tracked source history and four input and texture diagnostics resolved
+eleven names. All 42 affected units cold-replayed exactly, and a headless
+archive consumer checked all five floating-point values.
+
+The startup window
 names, SDK diagnostics and text defaults resolved ten symbols. All eight
 affected units cold-replayed exactly.
 

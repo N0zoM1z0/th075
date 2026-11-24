@@ -14,11 +14,9 @@ extern float g_F971_YAt00659480;
 extern float g_F971_YAt00659498;
 extern float g_F971_YAt0065947C;
 extern float g_F971_YAt00659478;
-extern float g_F972_YAt00659284;
 extern float g_F972_YAt00659464;
 extern float g_F972_YAt00659468;
 extern float g_F972_YAt0065946C;
-extern float g_F972_YAt00659474;
 extern float g_F974_ShotYAt00659498;
 void SakuyaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)

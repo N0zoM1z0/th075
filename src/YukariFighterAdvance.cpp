@@ -1,9 +1,9 @@
+#include "MathFloatHelpers.hpp"
 #include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "YukariFighter.hpp"
 
-extern float g_YukariOffsetAt00659284;
 extern float g_YukariOffsetAt00659A14;
 extern float g_YukariOffsetAt00659CA4;
 extern float g_YukariOffsetAt00659CAC;
@@ -2560,7 +2560,7 @@ void YukariFighter::Advance() {
                 field314 = static_cast<float>(20 - shot * 10);
                 field318 = 10.0f;
                 SetPolarVelocity(field314, 40.0f);
-                SpawnBattleEffect(800, (g_YukariOffsetAt00659284 + velocityX) * facing + x,
+                SpawnBattleEffect(800, (g_EffectOffsetNinetyTwo + velocityX) * facing + x,
                     ((y) + GeometryConstants::Seventy) - velocityY, facing, 1);
             }
             velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneHundredth;
@@ -2604,7 +2604,7 @@ void YukariFighter::Advance() {
                 field314 = static_cast<float>(20 - shot * 10);
                 field318 = 10.0f;
                 SetPolarVelocity(field314, 40.0f);
-                SpawnBattleEffect(800, (g_YukariOffsetAt00659284 + velocityX) * facing + x,
+                SpawnBattleEffect(800, (g_EffectOffsetNinetyTwo + velocityX) * facing + x,
                     ((y) + GeometryConstants::HundredFive) - velocityY, facing, 1);
             }
             velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneHundredth;
@@ -3204,7 +3204,7 @@ void YukariFighter::Advance() {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, x - static_cast<float>(facing * 18),
-                (y) + g_YukariOffsetAt00659284, facing, 1);
+                (y) + g_EffectOffsetNinetyTwo, facing, 1);
             field36C -= GeometryConstants::Hundred;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3273,7 +3273,7 @@ void YukariFighter::Advance() {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x74, x - static_cast<float>(facing * 18),
-                (y) + g_YukariOffsetAt00659284, facing, 1);
+                (y) + g_EffectOffsetNinetyTwo, facing, 1);
             field36C -= GeometryConstants::Hundred;
         }
         if (AdvanceNestedFrame() == animationStageCount)
