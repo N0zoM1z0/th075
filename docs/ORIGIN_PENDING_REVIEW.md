@@ -1257,6 +1257,20 @@ remain in commit `2f07989c`.
     bash .analysis/final-origin-review/texture-no-gy/build.sh implicit out-of-line-last
     scripts/repo-python .analysis/final-origin-review/texture-no-gy/compare.py implicit out-of-line-last
 
+### R317 — The implicit sequence and frame copy matches survive without function packaging
+
+Removing `/Gy` preserves the R296 implicit script copy's complete
+401-byte window and 36 relocation fields. The in-class explicit
+copy still appears before both destroy dispatchers. The R297
+implicit frame copy retains its complete 688-byte window and 53
+relocation fields. Its explicit control still places both copies
+before the allocator anchors. The complete code and exception
+comparisons preserve both prior compiler origin decisions.
+
+    bash .analysis/final-origin-review/copy-no-gy/build.sh
+    scripts/repo-python .analysis/final-origin-review/copy-no-gy/compare-script.py
+    scripts/repo-python .analysis/final-origin-review/copy-no-gy/compare-frame.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
