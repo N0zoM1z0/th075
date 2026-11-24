@@ -7,6 +7,7 @@
 class SakuyaFighter : public Fighter {
 public:
     SakuyaFighter();
+    void RenderStage(signed char stage);
     virtual void Advance(); // slot 1: nonexact giant at 004AC040
 
     void ConfigureStage();
@@ -45,6 +46,7 @@ public:
     unsigned char fieldFE1;
     unsigned char fieldFE2;
     unsigned char fieldFE3;
+    unsigned char unknownFE4[0xFEC - 0xFE4];
 };
 
 #endif

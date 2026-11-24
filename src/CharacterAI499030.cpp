@@ -1,5 +1,7 @@
 #include "CharacterAI499030.hpp"
 
+int MarisaFighter::actionCountdown;
+
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
 #define OPPONENT_GUARD static_cast<Fighter*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))

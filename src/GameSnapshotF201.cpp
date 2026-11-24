@@ -60,7 +60,7 @@ void SaveSnapshot()
         g_ReplayRecords.header.field148 = g_PlayerDifficultyAt00671438[1];
         g_ReplayRecords.header.field149 = g_PlayerSettingsAt00671434[1];
         g_ReplayRecords.header.field150 =
-            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
+            g_BattleFightersAt00671418[0]->score;
         g_ReplayRecords.header.field14A = g_StageSelectionAt0067161D;
     } else if (g_CombatMode == 3) {
         g_ReplayRecords.fileHeader.mode = static_cast<unsigned char>(g_OptionsModeAt006714D0 + 1);
@@ -74,10 +74,10 @@ void SaveSnapshot()
         g_ReplayRecords.header.field147 = g_PlayerRoundAt006714AC[1];
         g_ReplayRecords.fileHeader.activeSide = static_cast<unsigned char>(-1);
         g_ReplayRecords.header.field14C =
-            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health;
+            g_BattleFightersAt00671418[0]->health;
         g_ReplayRecords.header.field14E = g_SequenceCounterAt00671622;
         g_ReplayRecords.header.field150 =
-            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
+            g_BattleFightersAt00671418[0]->score;
         g_ReplayRecords.header.field14A = g_StageAt0067161E;
     }
 }

@@ -14,8 +14,8 @@ GameDefaultsF193::~GameDefaultsF193()
 {
     --g_GameDefaultsUseCountAt00671614;
     if (g_GameDefaultsUseCountAt00671614 == 0) {
-        if (g_BattleFightersAt00671418[0]) delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0]);
-        if (g_BattleFightersAt00671418[1]) delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1]);
+        if (g_BattleFightersAt00671418[0]) delete g_BattleFightersAt00671418[0];
+        if (g_BattleFightersAt00671418[1]) delete g_BattleFightersAt00671418[1];
         if (g_CurrentBattleStageAt00671424) delete g_CurrentBattleStageAt00671424;
         g_BattleFightersAt00671418[0] = 0;
         g_BattleFightersAt00671418[1] = 0;

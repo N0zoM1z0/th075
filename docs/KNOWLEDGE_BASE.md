@@ -586,6 +586,12 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   sequence, history and texture owners. Native slot 5 of the Fighter
   base table is pure while the class supplies the base destructor body
   for derived teardown.
+- The battle loader at `0x004176F0` allocates eleven concrete fighter
+  types and stores them in the two shared `Fighter*` entries. Its
+  complete allocation switch and unwind records match. Each fighter
+  table has twenty slots, including action and card choice at 11 and 12
+  and stage rendering at 17. Their 22 independent AI countdowns occupy
+  zero-initialized storage from `0x0068D61C` through `0x0068D670`.
 - The 24-byte command history owner begins with its texture pointer.
   Its 12-byte VC7.1 list at `+0x04` stores 164-byte sprite records.
   The constructor, append, trim, reset and deleting destructor now

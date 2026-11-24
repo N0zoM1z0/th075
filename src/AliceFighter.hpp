@@ -7,6 +7,9 @@
 class AliceFighter : public Fighter {
 public:
     AliceFighter();
+    void ChooseAction();
+    static int actionCountdown;
+    void RenderStage(signed char stage);
     virtual void Advance(); // Slot 1 at 004D7E70.
     void ConfigureStage();
     void CreateOwnedObject(CharacterObject** output);
@@ -41,6 +44,7 @@ public:
     unsigned char fieldFE1;
     unsigned char fieldFE2;
     unsigned char fieldFE3;
+    unsigned char unknownFE4[0xFEC - 0xFE4];
 };
 
 #endif

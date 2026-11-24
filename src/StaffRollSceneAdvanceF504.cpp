@@ -27,7 +27,7 @@ unsigned short StaffRollScene::Update() {
             if (g_BattleFightersAt00671418[0]) {
             if (g_ContinueCountAt00671623<3) g_StateReturnFlag=0;
             else g_StateReturnFlag=-1;
-            if (reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score>g_StateScoreThreshold)
+            if (g_BattleFightersAt00671418[0]->score>g_StateScoreThreshold)
                 return 0x110A;
             return 0x1107;
         }

@@ -7,6 +7,9 @@
 class YukariFighter : public Fighter {
 public:
     YukariFighter();
+    void ChooseAction();
+    static int actionCountdown;
+    void RenderStage(signed char stage);
     virtual void Advance(); // Slot 1 at 0058AF60.
     void ConfigureStage();
     void ChooseCardAction();
@@ -47,6 +50,7 @@ public:
     unsigned char fieldFFD;
     unsigned char fieldFFE;
     unsigned char fieldFFF;
+    unsigned char unknown1000[0x1008 - 0x1000];
 };
 
 #endif

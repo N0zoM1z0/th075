@@ -23,8 +23,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 656 unresolved externals. The fighter lifetime
-batch resolved 72 symbols and cold-replayed 745 units across 269 objects.
+stops at `LNK1120` with 618 unresolved externals. The character-loader
+batch resolved 38 symbols and cold-replayed 331 units across 191 objects.
+The loader allocates the eleven concrete fighter types at the native sizes.
+All twenty slots match for each fighter table. The complete loader, both
+switch tables and the constructor cleanup records match.
+
+The fighter lifetime batch resolved 72 symbols.
 The two Actor base constructors and Fighter use shared member layouts.
 Both Actor tables, the Fighter base table, and all eleven character
 deleting destructors match. Youmu clears its owned lists and the other
@@ -35,9 +40,7 @@ Script parsing, field access and cleanup share the nested deques.
 A headless consumer of the static library exercised all three with a
 synthetic script and verified that missing IDs return an empty count.
 Fighter slot 7 constructs the eleven typed character objects, and all
-five slots match for their base and derived object tables. The battle
-loader still needs the remaining fighter virtual slot bindings before it
-can allocate the typed fighter classes.
+five slots match for their base and derived object tables.
 Character effects, command selection, and mode 5 input call the shared
 fighter methods. Fighter resource loads use the existing script stream
 methods. Stage drawing, fighter texture loads, and the static effect
@@ -149,9 +152,10 @@ scoped comparison for a new origin decision.
 
 1. Read [AGENTS.md](../AGENTS.md) and inspect Git and the target preflight.
    Use the existing headless Ghidra project and serialize compiler builds.
-2. Bind slots 11, 12 and 17 to the existing AI and stage-render bodies.
-   Verify each complete fighter table and its observed allocation size,
-   then switch the loader to the derived fighter types.
+2. Bind the stage texture allocation to the shared texture manager.
+   The loader's effect cleanup at `0x005F7140` also has an exact body.
+   Its callers share the static effect owner at `0x006716C8`, whose
+   container lifetimes still need to be connected.
 3. For origin review, look for observations that distinguish the remaining
    byte-equal alternatives. Keep the origin and exactness ledgers separate.
    Replay commands and their dependencies are in the linked evidence notes.

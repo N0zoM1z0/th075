@@ -34,18 +34,18 @@ unsigned short ResultScene::Update()
             case 2: field038=static_cast<int>((field038)*FloatConstants::OneAndHalfDouble);break;
             case 3: field038=static_cast<int>((field038)*2.0);break;
             }
-            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
+            g_BattleFightersAt00671418[0]->score+=field038;
             field038=0;
             field040=7;
             field03C=400;
         } else if ((field040)==6) {
-            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
+            g_BattleFightersAt00671418[0]->score+=field038;
             field03C=400;
             field038=0;
             field040=7;
         } else {
-            if (static_cast<unsigned int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score)>g_MaxCombatScore)
-                g_MaxCombatScore=reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
+            if (static_cast<unsigned int>(g_BattleFightersAt00671418[0]->score)>g_MaxCombatScore)
+                g_MaxCombatScore=g_BattleFightersAt00671418[0]->score;
             if (g_ReplayModeAt0066C238==2 && g_StageAt0067161E>=g_ReplayRecords.fileHeader.recordCount) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
@@ -57,7 +57,7 @@ unsigned short ResultScene::Update()
                 g_StateReturnFlag=-1;
                 return 0x2207;
             }
-            if ((reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field713)>=8) {
+            if ((g_BattleFightersAt00671418[0]->field713)>=8) {
                 if (g_ReplayModeAt0066C238==2) {
                     MusicF204::PlayTrackByIndex(0x28);
                     AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
@@ -68,7 +68,7 @@ unsigned short ResultScene::Update()
             return 0x2301;
         }
     }
-    if ((reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field713)==10) {
+    if ((g_BattleFightersAt00671418[0]->field713)==10) {
         field014=1.0f;
     } else if ((field014)>FloatConstants::TwoFifths) {
         field014=(field014)-FloatConstants::OneHundredth;
@@ -122,12 +122,12 @@ unsigned short ResultScene::Update()
     if ((field040)==6) {
         if ((field038)>(field010)) {
             field038=(field038)-(field010);
-            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field010;
+            g_BattleFightersAt00671418[0]->score+=field010;
             field019=((field019)+1)%3;
             if ((field019)==0)
                 g_SoundBank->Play(0x31);
         } else {
-            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
+            g_BattleFightersAt00671418[0]->score+=field038;
             field038=0;
             field040=7;
         }

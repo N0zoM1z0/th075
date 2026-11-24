@@ -17,11 +17,11 @@ namespace GameConfigF193 { void ReadIni(); }
 CharacterSelectScene::CharacterSelectScene()
 {
     if (g_BattleFightersAt00671418[0]) {
-        delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0]);
+        delete g_BattleFightersAt00671418[0];
         g_BattleFightersAt00671418[0]=0;
     }
     if (g_BattleFightersAt00671418[1]) {
-        delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1]);
+        delete g_BattleFightersAt00671418[1];
         g_BattleFightersAt00671418[1]=0;
     }
     (menuTextures)=new TextureManagerF198();

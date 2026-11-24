@@ -9,53 +9,38 @@
 #include "GameProgress.hpp"
 #include "GameSnapshot.hpp"
 #include <stdlib.h>
-// Independently native-confirmed complete R065 3,232-CODE-byte battle character
-// loader, plus both originally owned post-RET switch tables (11+5 case entries
-// = 64 bytes DATA only). This is a natural VC7.1 game source reconstruction:
-// all 11 original fighter ctor addresses and observed allocation sizes,
-// four story/record modes, real virtual scalar deleting destructor at vtbl
-// +0x14, genuine signed 8-byte selection tracker layout and original float/
-// byte/short game fields are compared across the *entire* function.
-// No complete private fighter class or constructor body is asserted.
-// Fighter allocations are opaque *observed footprints*, not inferred layouts.
-// The actual two-field SelectionTrackerF408 has both original useful values:
-// low stack count first, upper stack seen bits second. Initialize seen first
-// then count to reproduce real physical native EBP slots.
-// All borrowed game methods have only their observed C++ caller ABI.
-class FighterNativeF398 {
-public:
- virtual void V00();virtual void V04();virtual void V08();virtual void V0C();virtual void V10();
- virtual ~FighterNativeF398();
- virtual void InitializeAction();
- virtual void V1C();virtual void V20();virtual void V24();virtual void V28();virtual void V2C();virtual void V30();virtual void V34();
- virtual void SelectVariant();
- virtual void ConfigureStory();
- void ResetControlState();
- void InitializeResources(void* controls);
- void SetOpponent(FighterNativeF398* other);
- void ActivateStoryStage();
-};
-#define FIGHTER(T) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+0))
-class Fighter0F398 : public FighterNativeF398 {public:Fighter0F398(); private:unsigned char observedNativeAllocation[0x1000-sizeof(FighterNativeF398)];};
-class Fighter1F398 : public FighterNativeF398 {public:Fighter1F398(); private:unsigned char observedNativeAllocation[0x1830-sizeof(FighterNativeF398)];};
-class Fighter2F398 : public FighterNativeF398 {public:Fighter2F398(); private:unsigned char observedNativeAllocation[0x0FEC-sizeof(FighterNativeF398)];};
-class Fighter3F398 : public FighterNativeF398 {public:Fighter3F398(); private:unsigned char observedNativeAllocation[0x0FEC-sizeof(FighterNativeF398)];};
-class Fighter4F398 : public FighterNativeF398 {public:Fighter4F398(); private:unsigned char observedNativeAllocation[0x0FE8-sizeof(FighterNativeF398)];};
-class Fighter5F398 : public FighterNativeF398 {public:Fighter5F398(); private:unsigned char observedNativeAllocation[0x0FF8-sizeof(FighterNativeF398)];};
-class Fighter6F398 : public FighterNativeF398 {public:Fighter6F398(); private:unsigned char observedNativeAllocation[0x0FE4-sizeof(FighterNativeF398)];};
-class Fighter7F398 : public FighterNativeF398 {public:Fighter7F398(); private:unsigned char observedNativeAllocation[0x0FE8-sizeof(FighterNativeF398)];};
-class Fighter8F398 : public FighterNativeF398 {public:Fighter8F398(); private:unsigned char observedNativeAllocation[0x1008-sizeof(FighterNativeF398)];};
-class Fighter9F398 : public FighterNativeF398 {public:Fighter9F398(); private:unsigned char observedNativeAllocation[0x1000-sizeof(FighterNativeF398)];};
-class Fighter10F398: public FighterNativeF398 {public:Fighter10F398(); private:unsigned char observedNativeAllocation[0x1000-sizeof(FighterNativeF398)];};
+#include "CameraInputs412660.hpp"
+#include "ReimuFighter.hpp"
+#include "MarisaFighter.hpp"
+#include "SakuyaFighter.hpp"
+#include "AliceFighter.hpp"
+#include "PatchouliFighter.hpp"
+#include "YoumuFighter.hpp"
+#include "RemiliaFighter.hpp"
+#include "YuyukoFighter.hpp"
+#include "YukariFighter.hpp"
+#include "SuikaFighter.hpp"
+#include "MeilingFighter.hpp"
+
+typedef char ReimuFighterAllocationSize[sizeof(ReimuFighter) == 0x1000 ? 1 : -1];
+typedef char MarisaFighterAllocationSize[sizeof(MarisaFighter) == 0x1830 ? 1 : -1];
+typedef char SakuyaFighterAllocationSize[sizeof(SakuyaFighter) == 0xFEC ? 1 : -1];
+typedef char AliceFighterAllocationSize[sizeof(AliceFighter) == 0xFEC ? 1 : -1];
+typedef char PatchouliFighterAllocationSize[sizeof(PatchouliFighter) == 0xFE8 ? 1 : -1];
+typedef char YoumuFighterAllocationSize[sizeof(YoumuFighter) == 0xFF8 ? 1 : -1];
+typedef char RemiliaFighterAllocationSize[sizeof(RemiliaFighter) == 0xFE4 ? 1 : -1];
+typedef char YuyukoFighterAllocationSize[sizeof(YuyukoFighter) == 0xFE8 ? 1 : -1];
+typedef char YukariFighterAllocationSize[sizeof(YukariFighter) == 0x1008 ? 1 : -1];
+typedef char SuikaFighterAllocationSize[sizeof(SuikaFighter) == 0x1000 ? 1 : -1];
+typedef char MeilingFighterAllocationSize[sizeof(MeilingFighter) == 0x1000 ? 1 : -1];
+
 extern signed char g_RosterAt0067148F[];
 extern signed char g_StoryRosterAt00671490[];
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
-extern void CameraAttachAt00412660(float*,float*,float*,float*);
 
 class EffectCollectionsF398 {public:void ClearEntries();};
 extern EffectCollectionsF398 g_EffectCollectionsAt006716C8;
-#define F(T,f,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(f)+(o)))
 void BattleCharacterLoaderF398::LoadCharacters() {
  DiagnosticLog::AppendString(g_LoadCharacterLogAt00657A30);
  if (g_ReplayModeAt0066C238==2) GameStateF202::RestoreFromSnapshot();
@@ -95,36 +80,36 @@ void BattleCharacterLoaderF398::LoadCharacters() {
     if ((g_CombatMode!=3 && g_CombatMode!=4) || side!=0 || !g_BattleFightersAt00671418[side]) {
        if(g_BattleFightersAt00671418[side]) delete g_BattleFightersAt00671418[side];
        switch(g_PlayerIdAt006714C8[side]) {
-         case 0:g_BattleFightersAt00671418[side]=new Fighter0F398;break;
-         case 1:g_BattleFightersAt00671418[side]=new Fighter1F398;break;
-         case 2:g_BattleFightersAt00671418[side]=new Fighter2F398;break;
-         case 3:g_BattleFightersAt00671418[side]=new Fighter3F398;break;
-         case 4:g_BattleFightersAt00671418[side]=new Fighter4F398;break;
-         case 5:g_BattleFightersAt00671418[side]=new Fighter5F398;break;
-         case 6:g_BattleFightersAt00671418[side]=new Fighter6F398;break;
-         case 7:g_BattleFightersAt00671418[side]=new Fighter7F398;break;
-         case 8:g_BattleFightersAt00671418[side]=new Fighter8F398;break;
-         case 9:g_BattleFightersAt00671418[side]=new Fighter9F398;break;
-         case 10:g_BattleFightersAt00671418[side]=new Fighter10F398;break;
+         case 0:g_BattleFightersAt00671418[side]=new ReimuFighter;break;
+         case 1:g_BattleFightersAt00671418[side]=new MarisaFighter;break;
+         case 2:g_BattleFightersAt00671418[side]=new SakuyaFighter;break;
+         case 3:g_BattleFightersAt00671418[side]=new AliceFighter;break;
+         case 4:g_BattleFightersAt00671418[side]=new PatchouliFighter;break;
+         case 5:g_BattleFightersAt00671418[side]=new YoumuFighter;break;
+         case 6:g_BattleFightersAt00671418[side]=new RemiliaFighter;break;
+         case 7:g_BattleFightersAt00671418[side]=new YuyukoFighter;break;
+         case 8:g_BattleFightersAt00671418[side]=new YukariFighter;break;
+         case 9:g_BattleFightersAt00671418[side]=new SuikaFighter;break;
+         case 10:g_BattleFightersAt00671418[side]=new MeilingFighter;break;
        }
-       F(unsigned char,g_BattleFightersAt00671418[side],0x2CC)=static_cast<unsigned char>(side);
-       F(unsigned char,g_BattleFightersAt00671418[side],0x2CE)=g_PlayerRoundAt006714AC[side];
-       F(short,g_BattleFightersAt00671418[side],0x398)=g_PlayerAltAt00671610[side];
-       F(short,g_BattleFightersAt00671418[side],0x39A)=g_PlayerOtherAt006714CC[side];
-       g_BattleFightersAt00671418[side]->ResetControlState();
-       g_BattleFightersAt00671418[side]->InitializeResources(g_KeyBindingsAt00671440+side*0x28);
+       g_BattleFightersAt00671418[side]->field2CC=static_cast<signed char>(side);
+       g_BattleFightersAt00671418[side]->field2CE=g_PlayerRoundAt006714AC[side];
+       g_BattleFightersAt00671418[side]->field398[0]=g_PlayerAltAt00671610[side];
+       g_BattleFightersAt00671418[side]->field398[1]=g_PlayerOtherAt006714CC[side];
+       g_BattleFightersAt00671418[side]->LoadResources();
+       g_BattleFightersAt00671418[side]->SetBindings(g_KeyBindingsAt00671440+side*0x28);
        if (g_CombatMode==3 || (g_CombatMode==4 && side==1)) {
-          F(float,g_BattleFightersAt00671418[side],0xA4)=1.0f;
-          F(unsigned char,g_BattleFightersAt00671418[side],0x465)=static_cast<int>(g_OptionsModeAt006714D0==0);
+          g_BattleFightersAt00671418[side]->field0A4=1.0f;
+          g_BattleFightersAt00671418[side]->field465=static_cast<int>(g_OptionsModeAt006714D0==0);
        } else {
           switch(g_PlayerSettingsAt00671434[side]) {
-             case 0:F(float,g_BattleFightersAt00671418[side],0xA4)=0.5f;break;
-             case 1:F(float,g_BattleFightersAt00671418[side],0xA4)=0.75f;break;
-             case 2:F(float,g_BattleFightersAt00671418[side],0xA4)=1.0f;break;
-             case 3:F(float,g_BattleFightersAt00671418[side],0xA4)=1.5f;break;
-             case 4:F(float,g_BattleFightersAt00671418[side],0xA4)=2.0f;break;
+             case 0:g_BattleFightersAt00671418[side]->field0A4=0.5f;break;
+             case 1:g_BattleFightersAt00671418[side]->field0A4=0.75f;break;
+             case 2:g_BattleFightersAt00671418[side]->field0A4=1.0f;break;
+             case 3:g_BattleFightersAt00671418[side]->field0A4=1.5f;break;
+             case 4:g_BattleFightersAt00671418[side]->field0A4=2.0f;break;
           }
-          F(unsigned char,g_BattleFightersAt00671418[side],0x465)=g_PlayerDifficultyAt00671438[side];
+          g_BattleFightersAt00671418[side]->field465=g_PlayerDifficultyAt00671438[side];
        }
     }
     if(side==0 && g_CombatMode==3) {
@@ -134,63 +119,62 @@ void BattleCharacterLoaderF398::LoadCharacters() {
              g_StoryResultAt00671621=1;
              g_ContinueCountAt00671623=0;
              g_SequenceCounterAt00671622=2;
-             F(signed char,g_BattleFightersAt00671418[0],0x713)=g_StoryChoiceAt00671620;
+             g_BattleFightersAt00671418[0]->field713=g_StoryChoiceAt00671620;
              g_StoryChoiceAt00671620=0;
-             F(int,g_BattleFightersAt00671418[0],0x2D0)=0;
-             F(short,g_BattleFightersAt00671418[0],0x326)=10000;
-             F(short,g_BattleFightersAt00671418[0],0x324)=10000;
+             g_BattleFightersAt00671418[0]->score=0;
+             g_BattleFightersAt00671418[0]->recoverableHealth=10000;
+             g_BattleFightersAt00671418[0]->health=10000;
           }
-          g_StageAt0067161E=F(signed char,g_BattleFightersAt00671418[0],0x713);
+          g_StageAt0067161E=g_BattleFightersAt00671418[0]->field713;
        }
        g_BattleFightersAt00671418[0]->SelectVariant();
-       g_PlayerIdAt006714C8[1]=F(signed char,g_BattleFightersAt00671418[0],0x6E5);
+       g_PlayerIdAt006714C8[1]=static_cast<signed char>(g_BattleFightersAt00671418[0]->field6E5);
     }
-    g_BattleFightersAt00671418[side]->InitializeAction();
+    g_BattleFightersAt00671418[side]->ResetRound();
  }
  if(g_CombatMode==5 || g_CombatMode==1 || g_CombatMode==3 || g_CombatMode==4) {
-   if(g_SelectedSideAt006714B8==0) {F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=0;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=1;}
-   else {F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=1;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=0;}
+   if(g_SelectedSideAt006714B8==0) {g_BattleFightersAt00671418[0]->field2CD=0;g_BattleFightersAt00671418[1]->field2CD=1;}
+   else {g_BattleFightersAt00671418[0]->field2CD=1;g_BattleFightersAt00671418[1]->field2CD=0;}
  } else if (g_CombatMode==6) {
-   F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=1;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=1;
- } else {F(unsigned char,g_BattleFightersAt00671418[0],0x2CD)=0;F(unsigned char,g_BattleFightersAt00671418[1],0x2CD)=0;}
- g_BattleFightersAt00671418[0]->SetOpponent(g_BattleFightersAt00671418[1]);
- g_BattleFightersAt00671418[1]->SetOpponent(g_BattleFightersAt00671418[0]);
- CameraAttachAt00412660(&F(float,g_BattleFightersAt00671418[0],0x44),&F(float,g_BattleFightersAt00671418[0],0x48),&F(float,g_BattleFightersAt00671418[1],0x44),&F(float,g_BattleFightersAt00671418[1],0x48));
+   g_BattleFightersAt00671418[0]->field2CD=1;g_BattleFightersAt00671418[1]->field2CD=1;
+ } else {g_BattleFightersAt00671418[0]->field2CD=0;g_BattleFightersAt00671418[1]->field2CD=0;}
+ g_BattleFightersAt00671418[0]->BindOpponent(g_BattleFightersAt00671418[1]);
+ g_BattleFightersAt00671418[1]->BindOpponent(g_BattleFightersAt00671418[0]);
+ CameraInputs412660::Initialize(&g_BattleFightersAt00671418[0]->x,&g_BattleFightersAt00671418[0]->y,&g_BattleFightersAt00671418[1]->x,&g_BattleFightersAt00671418[1]->y);
  if(g_CombatMode==3) {
    g_StateFadeAlpha=0;
-   g_BattleFightersAt00671418[0]->ConfigureStory();
-   g_BattleFightersAt00671418[0]->ActivateStoryStage();
-   F(short,g_BattleFightersAt00671418[1],0x324)=F(short,g_BattleFightersAt00671418[1],0x33E+F(signed char,g_BattleFightersAt00671418[1],0x39D)*2);
-   F(short,g_BattleFightersAt00671418[1],0x326)=F(short,g_BattleFightersAt00671418[1],0x324);
+   g_BattleFightersAt00671418[0]->ConfigureStage();
+   g_BattleFightersAt00671418[0]->LoadStageResource();
+   g_BattleFightersAt00671418[1]->health=g_BattleFightersAt00671418[1]->healthLimits[g_BattleFightersAt00671418[1]->field39D];
+   g_BattleFightersAt00671418[1]->recoverableHealth=g_BattleFightersAt00671418[1]->health;
    if(g_StageAt0067161E==1 || g_StageAt0067161E>=8 || g_StoryResultAt00671621!=0) {
        if(g_StoryResultAt00671621!=0) g_ContinueCountAt00671623=0;
        else g_ContinueCountAt00671623=3;
        g_SequenceCounterAt00671622=2;
        g_GameProgress.SetSelection(g_PlayerIdAt006714C8[0],g_OptionsModeAt006714D0);
-       F(int,g_BattleFightersAt00671418[0],0x2D0)=0;
+       g_BattleFightersAt00671418[0]->score=0;
        g_MaxCombatScore=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;
        g_StateScoreThreshold=g_GameProgress.GetSelectedRecordAddress()->scores[9].score;
        if(g_ReplayModeAt0066C238!=2) g_GameProgress.IncrementSelectedRecordCount();
-       F(short,g_BattleFightersAt00671418[0],0x326)=10000;
-       F(short,g_BattleFightersAt00671418[0],0x324)=10000;
+       g_BattleFightersAt00671418[0]->recoverableHealth=10000;
+       g_BattleFightersAt00671418[0]->health=10000;
    }
    g_MaxComboCount=0;g_ResultScoreTotalAt0067160C=0;g_CumulativeScoreAt006714BC=0;
-   for(int k=1;k<=F(signed char,g_BattleFightersAt00671418[1],0x39D);++k)
-     g_CumulativeScoreAt006714BC+=F(int,g_BattleFightersAt00671418[1],0x400+k*4);
+   for(int k=1;k<=g_BattleFightersAt00671418[1]->field39D;++k)
+     g_CumulativeScoreAt006714BC+=g_BattleFightersAt00671418[1]->field400[k];
    if(g_ReplayModeAt0066C238==2) {
      g_MaxCombatScore=0;g_StateScoreThreshold=0;
-     F(short,g_BattleFightersAt00671418[0],0x326)=g_ReplayRecords.header.field14C;
-     F(short,g_BattleFightersAt00671418[0],0x324)=g_ReplayRecords.header.field14C;
-     F(unsigned int,g_BattleFightersAt00671418[0],0x2D0)=g_ReplayRecords.header.field150;
+     g_BattleFightersAt00671418[0]->recoverableHealth=g_ReplayRecords.header.field14C;
+     g_BattleFightersAt00671418[0]->health=g_ReplayRecords.header.field14C;
+     g_BattleFightersAt00671418[0]->score=g_ReplayRecords.header.field150;
    } else {g_GameProgress.RaiseSelectedValue(g_StageAt0067161E);g_GameProgress.SaveScoreFile();}
  } else {
-   F(int,g_BattleFightersAt00671418[0],0x2D0)=0;F(int,g_BattleFightersAt00671418[1],0x2D0)=0;
+   g_BattleFightersAt00671418[0]->score=0;g_BattleFightersAt00671418[1]->score=0;
    g_MaxCombatScore=0;g_StateScoreThreshold=0;g_StateFadeAlpha=0;
-   F(short,g_BattleFightersAt00671418[0],0x326)=10000;F(short,g_BattleFightersAt00671418[0],0x324)=10000;
-   F(short,g_BattleFightersAt00671418[1],0x326)=10000;F(short,g_BattleFightersAt00671418[1],0x324)=10000;
+   g_BattleFightersAt00671418[0]->recoverableHealth=10000;g_BattleFightersAt00671418[0]->health=10000;
+   g_BattleFightersAt00671418[1]->recoverableHealth=10000;g_BattleFightersAt00671418[1]->health=10000;
  }
  g_EffectCollectionsAt006716C8.ClearEntries();
  if(g_ReplayModeAt0066C238==1) GameStateF201::SaveSnapshot();
  DiagnosticLog::AppendString(g_LoadCharactersDoneAt00657A44);
 }
-#undef F

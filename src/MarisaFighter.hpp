@@ -19,6 +19,7 @@ struct MarisaChainVertex {
 class MarisaFighter : public Fighter {
 public:
     MarisaFighter();
+    void RenderStage(signed char stage);
     virtual void Advance(); // Slot 1 at 00486550.
     void ConfigureStage();
     void ChooseAction();

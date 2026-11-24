@@ -42,6 +42,7 @@ public:
     unsigned char fieldFDD;
     unsigned char fieldFDE;
     unsigned char fieldFDF;
+    unsigned char unknownFE0[0xFE8 - 0xFE0];
 };
 
 #endif

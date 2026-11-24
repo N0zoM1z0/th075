@@ -7,6 +7,11 @@
 class ReimuFighter : public Fighter {
 public:
     ReimuFighter();
+    void ChooseAction();
+    static int actionCountdown;
+    void ChooseCardAction();
+    static int cardCountdown;
+    void RenderStage(signed char stage);
     virtual void Advance(); // slot 1, 0045DD70 (nonexact giant research parent)
 
     void AdvanceAuxiliary();
@@ -42,6 +47,7 @@ public:
     unsigned char fieldFF5;
     unsigned char fieldFF6;
     unsigned char fieldFF7;
+    unsigned char unknownFF8[0x1000 - 0xFF8];
 };
 
 #endif

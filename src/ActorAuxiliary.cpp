@@ -6,7 +6,7 @@
 #include "CharacterAuxAction.hpp"
 #include "CharacterAIPolicy.hpp"
 
-extern int g_AI507B20Countdown;
+int g_AI507B20Countdown;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner) + (offset)))

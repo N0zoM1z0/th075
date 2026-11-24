@@ -35,8 +35,8 @@ BattleScene::BattleScene()
         new ComboDisplay(static_cast<TextureManagerF198*>(textures)->GetTexture(0), 1);
     comboDisplays[1] =
         new ComboDisplay(static_cast<TextureManagerF198*>(textures)->GetTexture(0), -1);
-    fighters[0] = reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0]);
-    fighters[1] = reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1]);
+    fighters[0] = g_BattleFightersAt00671418[0];
+    fighters[1] = g_BattleFightersAt00671418[1];
     field060 = 0;
     field08C = 0.0f;
     field094 = 0;

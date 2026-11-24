@@ -5660,7 +5660,7 @@ source = "src/CharacterAIPolicy.cpp"
 object = "build/matching/CharacterAIPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI472890::ChooseAction"]
-symbol = "?ChooseAction@?$CharacterAIPolicy@UAI472890Policy@@@@UAEXXZ"
+symbol = "?ChooseAction@ReimuFighter@@UAEXXZ"
 target_address = 0x00472890
 size = 8871
 relocations = [
@@ -5880,15 +5880,15 @@ relocations = [
   { offset = 0x21DD, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x21E9, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2205, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x2223, type = "DIR32", symbol = "?countdown@AI472890Policy@@2HA", target = 0x0068D61C },
-  { offset = 0x2239, type = "DIR32", symbol = "?countdown@AI472890Policy@@2HA", target = 0x0068D61C },
-  { offset = 0x2242, type = "DIR32", symbol = "?countdown@AI472890Policy@@2HA", target = 0x0068D61C },
-  { offset = 0x224A, type = "DIR32", symbol = "?countdown@AI472890Policy@@2HA", target = 0x0068D61C },
-  { offset = 0x225F, type = "DIR32", symbol = "?countdown@AI472890Policy@@2HA", target = 0x0068D61C },
-  { offset = 0x2267, type = "DIR32", symbol = "?countdown@AI472890Policy@@2HA", target = 0x0068D61C },
+  { offset = 0x2223, type = "DIR32", symbol = "?actionCountdown@ReimuFighter@@2HA", target = 0x0068D61C },
+  { offset = 0x2239, type = "DIR32", symbol = "?actionCountdown@ReimuFighter@@2HA", target = 0x0068D61C },
+  { offset = 0x2242, type = "DIR32", symbol = "?actionCountdown@ReimuFighter@@2HA", target = 0x0068D61C },
+  { offset = 0x224A, type = "DIR32", symbol = "?actionCountdown@ReimuFighter@@2HA", target = 0x0068D61C },
+  { offset = 0x225F, type = "DIR32", symbol = "?actionCountdown@ReimuFighter@@2HA", target = 0x0068D61C },
+  { offset = 0x2267, type = "DIR32", symbol = "?actionCountdown@ReimuFighter@@2HA", target = 0x0068D61C },
   { offset = 0x226E, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2280, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x229E, type = "DIR32", symbol = "?countdown@AI472890Policy@@2HA", target = 0x0068D61C },
+  { offset = 0x229E, type = "DIR32", symbol = "?actionCountdown@ReimuFighter@@2HA", target = 0x0068D61C },
 ]
 
 [units.character-ai-004e7de0]
@@ -5896,7 +5896,7 @@ source = "src/CharacterAIPolicy.cpp"
 object = "build/matching/CharacterAIPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI4E7DE0::ChooseAction"]
-symbol = "?ChooseAction@?$CharacterAIPolicy@UAI4E7DE0Policy@@@@UAEXXZ"
+symbol = "?ChooseAction@AliceFighter@@UAEXXZ"
 target_address = 0x004E7DE0
 size = 8871
 relocations = [
@@ -6116,15 +6116,15 @@ relocations = [
   { offset = 0x21DD, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x21E9, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2205, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x2223, type = "DIR32", symbol = "?countdown@AI4E7DE0Policy@@2HA", target = 0x0068D634 },
-  { offset = 0x2239, type = "DIR32", symbol = "?countdown@AI4E7DE0Policy@@2HA", target = 0x0068D634 },
-  { offset = 0x2242, type = "DIR32", symbol = "?countdown@AI4E7DE0Policy@@2HA", target = 0x0068D634 },
-  { offset = 0x224A, type = "DIR32", symbol = "?countdown@AI4E7DE0Policy@@2HA", target = 0x0068D634 },
-  { offset = 0x225F, type = "DIR32", symbol = "?countdown@AI4E7DE0Policy@@2HA", target = 0x0068D634 },
-  { offset = 0x2267, type = "DIR32", symbol = "?countdown@AI4E7DE0Policy@@2HA", target = 0x0068D634 },
+  { offset = 0x2223, type = "DIR32", symbol = "?actionCountdown@AliceFighter@@2HA", target = 0x0068D634 },
+  { offset = 0x2239, type = "DIR32", symbol = "?actionCountdown@AliceFighter@@2HA", target = 0x0068D634 },
+  { offset = 0x2242, type = "DIR32", symbol = "?actionCountdown@AliceFighter@@2HA", target = 0x0068D634 },
+  { offset = 0x224A, type = "DIR32", symbol = "?actionCountdown@AliceFighter@@2HA", target = 0x0068D634 },
+  { offset = 0x225F, type = "DIR32", symbol = "?actionCountdown@AliceFighter@@2HA", target = 0x0068D634 },
+  { offset = 0x2267, type = "DIR32", symbol = "?actionCountdown@AliceFighter@@2HA", target = 0x0068D634 },
   { offset = 0x226E, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2280, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x229E, type = "DIR32", symbol = "?countdown@AI4E7DE0Policy@@2HA", target = 0x0068D634 },
+  { offset = 0x229E, type = "DIR32", symbol = "?actionCountdown@AliceFighter@@2HA", target = 0x0068D634 },
 ]
 
 [units.character-ai-00579650]
@@ -6132,7 +6132,7 @@ source = "src/CharacterAIPolicy.cpp"
 object = "build/matching/CharacterAIPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI579650::ChooseAction"]
-symbol = "?ChooseAction@?$CharacterAIPolicy@UAI579650Policy@@@@UAEXXZ"
+symbol = "?ChooseAction@YuyukoFighter@@UAEXXZ"
 target_address = 0x00579650
 size = 8871
 relocations = [
@@ -6352,15 +6352,15 @@ relocations = [
   { offset = 0x21DD, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x21E9, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2205, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x2223, type = "DIR32", symbol = "?countdown@AI579650Policy@@2HA", target = 0x0068D654 },
-  { offset = 0x2239, type = "DIR32", symbol = "?countdown@AI579650Policy@@2HA", target = 0x0068D654 },
-  { offset = 0x2242, type = "DIR32", symbol = "?countdown@AI579650Policy@@2HA", target = 0x0068D654 },
-  { offset = 0x224A, type = "DIR32", symbol = "?countdown@AI579650Policy@@2HA", target = 0x0068D654 },
-  { offset = 0x225F, type = "DIR32", symbol = "?countdown@AI579650Policy@@2HA", target = 0x0068D654 },
-  { offset = 0x2267, type = "DIR32", symbol = "?countdown@AI579650Policy@@2HA", target = 0x0068D654 },
+  { offset = 0x2223, type = "DIR32", symbol = "?actionCountdown@YuyukoFighter@@2HA", target = 0x0068D654 },
+  { offset = 0x2239, type = "DIR32", symbol = "?actionCountdown@YuyukoFighter@@2HA", target = 0x0068D654 },
+  { offset = 0x2242, type = "DIR32", symbol = "?actionCountdown@YuyukoFighter@@2HA", target = 0x0068D654 },
+  { offset = 0x224A, type = "DIR32", symbol = "?actionCountdown@YuyukoFighter@@2HA", target = 0x0068D654 },
+  { offset = 0x225F, type = "DIR32", symbol = "?actionCountdown@YuyukoFighter@@2HA", target = 0x0068D654 },
+  { offset = 0x2267, type = "DIR32", symbol = "?actionCountdown@YuyukoFighter@@2HA", target = 0x0068D654 },
   { offset = 0x226E, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2280, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x229E, type = "DIR32", symbol = "?countdown@AI579650Policy@@2HA", target = 0x0068D654 },
+  { offset = 0x229E, type = "DIR32", symbol = "?actionCountdown@YuyukoFighter@@2HA", target = 0x0068D654 },
 ]
 
 [units.character-ai-0059d240]
@@ -6368,7 +6368,7 @@ source = "src/CharacterAIPolicy.cpp"
 object = "build/matching/CharacterAIPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI59D240::ChooseAction"]
-symbol = "?ChooseAction@?$CharacterAIPolicy@UAI59D240Policy@@@@UAEXXZ"
+symbol = "?ChooseAction@YukariFighter@@UAEXXZ"
 target_address = 0x0059D240
 size = 8871
 relocations = [
@@ -6588,15 +6588,15 @@ relocations = [
   { offset = 0x21DD, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x21E9, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2205, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x2223, type = "DIR32", symbol = "?countdown@AI59D240Policy@@2HA", target = 0x0068D65C },
-  { offset = 0x2239, type = "DIR32", symbol = "?countdown@AI59D240Policy@@2HA", target = 0x0068D65C },
-  { offset = 0x2242, type = "DIR32", symbol = "?countdown@AI59D240Policy@@2HA", target = 0x0068D65C },
-  { offset = 0x224A, type = "DIR32", symbol = "?countdown@AI59D240Policy@@2HA", target = 0x0068D65C },
-  { offset = 0x225F, type = "DIR32", symbol = "?countdown@AI59D240Policy@@2HA", target = 0x0068D65C },
-  { offset = 0x2267, type = "DIR32", symbol = "?countdown@AI59D240Policy@@2HA", target = 0x0068D65C },
+  { offset = 0x2223, type = "DIR32", symbol = "?actionCountdown@YukariFighter@@2HA", target = 0x0068D65C },
+  { offset = 0x2239, type = "DIR32", symbol = "?actionCountdown@YukariFighter@@2HA", target = 0x0068D65C },
+  { offset = 0x2242, type = "DIR32", symbol = "?actionCountdown@YukariFighter@@2HA", target = 0x0068D65C },
+  { offset = 0x224A, type = "DIR32", symbol = "?actionCountdown@YukariFighter@@2HA", target = 0x0068D65C },
+  { offset = 0x225F, type = "DIR32", symbol = "?actionCountdown@YukariFighter@@2HA", target = 0x0068D65C },
+  { offset = 0x2267, type = "DIR32", symbol = "?actionCountdown@YukariFighter@@2HA", target = 0x0068D65C },
   { offset = 0x226E, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2280, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x229E, type = "DIR32", symbol = "?countdown@AI59D240Policy@@2HA", target = 0x0068D65C },
+  { offset = 0x229E, type = "DIR32", symbol = "?actionCountdown@YukariFighter@@2HA", target = 0x0068D65C },
 ]
 
 [units.character-ai-005c5d10]
@@ -6604,7 +6604,7 @@ source = "src/CharacterAIPolicy.cpp"
 object = "build/matching/CharacterAIPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI5C5D10::ChooseAction"]
-symbol = "?ChooseAction@?$CharacterAIPolicy@UAI5C5D10Policy@@@@UAEXXZ"
+symbol = "?ChooseAction@SuikaFighter@@UAEXXZ"
 target_address = 0x005C5D10
 size = 8871
 relocations = [
@@ -6824,15 +6824,15 @@ relocations = [
   { offset = 0x21DD, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x21E9, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2205, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x2223, type = "DIR32", symbol = "?countdown@AI5C5D10Policy@@2HA", target = 0x0068D664 },
-  { offset = 0x2239, type = "DIR32", symbol = "?countdown@AI5C5D10Policy@@2HA", target = 0x0068D664 },
-  { offset = 0x2242, type = "DIR32", symbol = "?countdown@AI5C5D10Policy@@2HA", target = 0x0068D664 },
-  { offset = 0x224A, type = "DIR32", symbol = "?countdown@AI5C5D10Policy@@2HA", target = 0x0068D664 },
-  { offset = 0x225F, type = "DIR32", symbol = "?countdown@AI5C5D10Policy@@2HA", target = 0x0068D664 },
-  { offset = 0x2267, type = "DIR32", symbol = "?countdown@AI5C5D10Policy@@2HA", target = 0x0068D664 },
+  { offset = 0x2223, type = "DIR32", symbol = "?actionCountdown@SuikaFighter@@2HA", target = 0x0068D664 },
+  { offset = 0x2239, type = "DIR32", symbol = "?actionCountdown@SuikaFighter@@2HA", target = 0x0068D664 },
+  { offset = 0x2242, type = "DIR32", symbol = "?actionCountdown@SuikaFighter@@2HA", target = 0x0068D664 },
+  { offset = 0x224A, type = "DIR32", symbol = "?actionCountdown@SuikaFighter@@2HA", target = 0x0068D664 },
+  { offset = 0x225F, type = "DIR32", symbol = "?actionCountdown@SuikaFighter@@2HA", target = 0x0068D664 },
+  { offset = 0x2267, type = "DIR32", symbol = "?actionCountdown@SuikaFighter@@2HA", target = 0x0068D664 },
   { offset = 0x226E, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2280, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x229E, type = "DIR32", symbol = "?countdown@AI5C5D10Policy@@2HA", target = 0x0068D664 },
+  { offset = 0x229E, type = "DIR32", symbol = "?actionCountdown@SuikaFighter@@2HA", target = 0x0068D664 },
 ]
 
 [units.character-ai-005e7370]
@@ -6840,7 +6840,7 @@ source = "src/CharacterAIPolicy.cpp"
 object = "build/matching/CharacterAIPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI5E7370::ChooseAction"]
-symbol = "?ChooseAction@?$CharacterAIPolicy@UAI5E7370Policy@@@@UAEXXZ"
+symbol = "?ChooseAction@MeilingFighter@@UAEXXZ"
 target_address = 0x005E7370
 size = 8871
 relocations = [
@@ -7060,15 +7060,15 @@ relocations = [
   { offset = 0x21DD, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x21E9, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2205, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x2223, type = "DIR32", symbol = "?countdown@AI5E7370Policy@@2HA", target = 0x0068D66C },
-  { offset = 0x2239, type = "DIR32", symbol = "?countdown@AI5E7370Policy@@2HA", target = 0x0068D66C },
-  { offset = 0x2242, type = "DIR32", symbol = "?countdown@AI5E7370Policy@@2HA", target = 0x0068D66C },
-  { offset = 0x224A, type = "DIR32", symbol = "?countdown@AI5E7370Policy@@2HA", target = 0x0068D66C },
-  { offset = 0x225F, type = "DIR32", symbol = "?countdown@AI5E7370Policy@@2HA", target = 0x0068D66C },
-  { offset = 0x2267, type = "DIR32", symbol = "?countdown@AI5E7370Policy@@2HA", target = 0x0068D66C },
+  { offset = 0x2223, type = "DIR32", symbol = "?actionCountdown@MeilingFighter@@2HA", target = 0x0068D66C },
+  { offset = 0x2239, type = "DIR32", symbol = "?actionCountdown@MeilingFighter@@2HA", target = 0x0068D66C },
+  { offset = 0x2242, type = "DIR32", symbol = "?actionCountdown@MeilingFighter@@2HA", target = 0x0068D66C },
+  { offset = 0x224A, type = "DIR32", symbol = "?actionCountdown@MeilingFighter@@2HA", target = 0x0068D66C },
+  { offset = 0x225F, type = "DIR32", symbol = "?actionCountdown@MeilingFighter@@2HA", target = 0x0068D66C },
+  { offset = 0x2267, type = "DIR32", symbol = "?actionCountdown@MeilingFighter@@2HA", target = 0x0068D66C },
   { offset = 0x226E, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x2280, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x229E, type = "DIR32", symbol = "?countdown@AI5E7370Policy@@2HA", target = 0x0068D66C },
+  { offset = 0x229E, type = "DIR32", symbol = "?actionCountdown@MeilingFighter@@2HA", target = 0x0068D66C },
 ]
 
 [units.character-ai-004c6b50]
@@ -7991,7 +7991,7 @@ source = "src/CharacterAICardPolicy.cpp"
 object = "build/matching/CharacterAICardPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI474B40::ChooseAction"]
-symbol = "?ChooseCardAction@?$CharacterAICardPolicy@UAI474B40CardPolicy@@@@UAEXXZ"
+symbol = "?ChooseCardAction@ReimuFighter@@UAEXXZ"
 target_address = 0x00474B40
 size = 7780
 relocations = [
@@ -8190,15 +8190,15 @@ relocations = [
   { offset = 0x1D9A, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x1DA6, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x1DC2, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x1DE0, type = "DIR32", symbol = "?countdown@AI474B40CardPolicy@@2HA", target = 0x0068D620 },
-  { offset = 0x1DF6, type = "DIR32", symbol = "?countdown@AI474B40CardPolicy@@2HA", target = 0x0068D620 },
-  { offset = 0x1DFF, type = "DIR32", symbol = "?countdown@AI474B40CardPolicy@@2HA", target = 0x0068D620 },
-  { offset = 0x1E07, type = "DIR32", symbol = "?countdown@AI474B40CardPolicy@@2HA", target = 0x0068D620 },
-  { offset = 0x1E1C, type = "DIR32", symbol = "?countdown@AI474B40CardPolicy@@2HA", target = 0x0068D620 },
-  { offset = 0x1E24, type = "DIR32", symbol = "?countdown@AI474B40CardPolicy@@2HA", target = 0x0068D620 },
+  { offset = 0x1DE0, type = "DIR32", symbol = "?cardCountdown@ReimuFighter@@2HA", target = 0x0068D620 },
+  { offset = 0x1DF6, type = "DIR32", symbol = "?cardCountdown@ReimuFighter@@2HA", target = 0x0068D620 },
+  { offset = 0x1DFF, type = "DIR32", symbol = "?cardCountdown@ReimuFighter@@2HA", target = 0x0068D620 },
+  { offset = 0x1E07, type = "DIR32", symbol = "?cardCountdown@ReimuFighter@@2HA", target = 0x0068D620 },
+  { offset = 0x1E1C, type = "DIR32", symbol = "?cardCountdown@ReimuFighter@@2HA", target = 0x0068D620 },
+  { offset = 0x1E24, type = "DIR32", symbol = "?cardCountdown@ReimuFighter@@2HA", target = 0x0068D620 },
   { offset = 0x1E2B, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x1E3D, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x1E5B, type = "DIR32", symbol = "?countdown@AI474B40CardPolicy@@2HA", target = 0x0068D620 },
+  { offset = 0x1E5B, type = "DIR32", symbol = "?cardCountdown@ReimuFighter@@2HA", target = 0x0068D620 },
 ]
 
 [units.character-ai-005e9620]
@@ -8206,7 +8206,7 @@ source = "src/CharacterAICardPolicy.cpp"
 object = "build/matching/CharacterAICardPolicy.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAI5E9620::ChooseAction"]
-symbol = "?ChooseCardAction@?$CharacterAICardPolicy@UAI5E9620CardPolicy@@@@UAEXXZ"
+symbol = "?ChooseCardAction@MeilingFighter@@UAEXXZ"
 target_address = 0x005E9620
 size = 7780
 relocations = [
@@ -8405,15 +8405,15 @@ relocations = [
   { offset = 0x1D9A, type = "DIR32", symbol = "__real@43c80000", target = 0x006591F4 },
   { offset = 0x1DA6, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x1DC2, type = "DIR32", symbol = "__real@3dcccccd", target = 0x006590B4 },
-  { offset = 0x1DE0, type = "DIR32", symbol = "?countdown@AI5E9620CardPolicy@@2HA", target = 0x0068D670 },
-  { offset = 0x1DF6, type = "DIR32", symbol = "?countdown@AI5E9620CardPolicy@@2HA", target = 0x0068D670 },
-  { offset = 0x1DFF, type = "DIR32", symbol = "?countdown@AI5E9620CardPolicy@@2HA", target = 0x0068D670 },
-  { offset = 0x1E07, type = "DIR32", symbol = "?countdown@AI5E9620CardPolicy@@2HA", target = 0x0068D670 },
-  { offset = 0x1E1C, type = "DIR32", symbol = "?countdown@AI5E9620CardPolicy@@2HA", target = 0x0068D670 },
-  { offset = 0x1E24, type = "DIR32", symbol = "?countdown@AI5E9620CardPolicy@@2HA", target = 0x0068D670 },
+  { offset = 0x1DE0, type = "DIR32", symbol = "?cardCountdown@MeilingFighter@@2HA", target = 0x0068D670 },
+  { offset = 0x1DF6, type = "DIR32", symbol = "?cardCountdown@MeilingFighter@@2HA", target = 0x0068D670 },
+  { offset = 0x1DFF, type = "DIR32", symbol = "?cardCountdown@MeilingFighter@@2HA", target = 0x0068D670 },
+  { offset = 0x1E07, type = "DIR32", symbol = "?cardCountdown@MeilingFighter@@2HA", target = 0x0068D670 },
+  { offset = 0x1E1C, type = "DIR32", symbol = "?cardCountdown@MeilingFighter@@2HA", target = 0x0068D670 },
+  { offset = 0x1E24, type = "DIR32", symbol = "?cardCountdown@MeilingFighter@@2HA", target = 0x0068D670 },
   { offset = 0x1E2B, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0x1E3D, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0x1E5B, type = "DIR32", symbol = "?countdown@AI5E9620CardPolicy@@2HA", target = 0x0068D670 },
+  { offset = 0x1E5B, type = "DIR32", symbol = "?cardCountdown@MeilingFighter@@2HA", target = 0x0068D670 },
 ]
 
 [units.character-ai-005086e0]
@@ -21583,7 +21583,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender471E00Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender471E00Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@ReimuFighter@@UAEXC@Z"
 target_address = 0x00471E00
 size = 1584
 compare_size = 1606
@@ -21635,7 +21635,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender498540Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender498540Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@MarisaFighter@@UAEXC@Z"
 target_address = 0x00498540
 size = 1584
 compare_size = 1606
@@ -21687,7 +21687,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender4C6050Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender4C6050Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@SakuyaFighter@@UAEXC@Z"
 target_address = 0x004C6050
 size = 1584
 compare_size = 1606
@@ -21739,7 +21739,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender4E7350Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender4E7350Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@AliceFighter@@UAEXC@Z"
 target_address = 0x004E7350
 size = 1584
 compare_size = 1606
@@ -21791,7 +21791,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender531570Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender531570Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@YoumuFighter@@UAEXC@Z"
 target_address = 0x00531570
 size = 1584
 compare_size = 1606
@@ -21843,7 +21843,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender5568F0Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender5568F0Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@RemiliaFighter@@UAEXC@Z"
 target_address = 0x005568F0
 size = 1584
 compare_size = 1606
@@ -21895,7 +21895,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender578B70Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender578B70Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@YuyukoFighter@@UAEXC@Z"
 target_address = 0x00578B70
 size = 1584
 compare_size = 1606
@@ -21947,7 +21947,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender59C6F0Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender59C6F0Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@YukariFighter@@UAEXC@Z"
 target_address = 0x0059C6F0
 size = 1584
 compare_size = 1606
@@ -21999,7 +21999,7 @@ source = "src/CharacterStageRendering.cpp"
 object = "build/matching/CharacterStageRendering.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterStageRendererF122<StageRender5C52D0Policy>::Render"]
-symbol = "?Render@?$CharacterStageRendererF122@UStageRender5C52D0Policy@@@@QAEXC@Z"
+symbol = "?RenderStage@SuikaFighter@@UAEXC@Z"
 target_address = 0x005C52D0
 size = 1584
 compare_size = 1606
@@ -32742,12 +32742,12 @@ target = 0x00671440
 [[units.game-globals-initialize-00417210.relocations]]
 offset = 196
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-initialize-00417210.relocations]]
 offset = 206
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-initialize-00417210.relocations]]
 offset = 215
@@ -33165,22 +33165,22 @@ target = 0x00671614
 [[units.game-globals-release-00417430.relocations]]
 offset = 30
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-release-00417430.relocations]]
 offset = 39
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-release-00417430.relocations]]
 offset = 85
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-release-00417430.relocations]]
 offset = 93
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-release-00417430.relocations]]
 offset = 139
@@ -33195,12 +33195,12 @@ target = 0x00671424
 [[units.game-globals-release-00417430.relocations]]
 offset = 193
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-release-00417430.relocations]]
 offset = 203
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-globals-release-00417430.relocations]]
 offset = 213
@@ -33369,12 +33369,12 @@ target = 0x0043D490
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 467
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 479
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 589
@@ -34299,7 +34299,7 @@ target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 682
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 694
@@ -34419,7 +34419,7 @@ target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 844
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 857
@@ -34439,7 +34439,7 @@ target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 875
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 886
@@ -36809,32 +36809,32 @@ target = 0x0065824C
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 56
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 65
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 111
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 121
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 129
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 175
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 186
@@ -39280,7 +39280,7 @@ target = 0x0042F530
 [[units.result-scene-render-counters-0042ef10.relocations]]
 offset = 1265
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-render-counters-0042ef10.relocations]]
 offset = 1331
@@ -39560,7 +39560,7 @@ target = 0x0040BB80
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 179
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 197
@@ -39605,7 +39605,7 @@ target = 0x0065747C
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 274
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 288
@@ -39615,12 +39615,12 @@ target = 0x00671622
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 294
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 325
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 344
@@ -39635,7 +39635,7 @@ target = 0x00671622
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 363
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 382
@@ -39645,22 +39645,22 @@ target = 0x0065747C
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 466
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 484
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 496
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 510
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 539
@@ -39751,27 +39751,27 @@ target = 0x006406AC
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 313
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 331
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 387
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 405
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 448
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 460
@@ -39781,7 +39781,7 @@ target = 0x006714B0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 468
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 479
@@ -39836,7 +39836,7 @@ target = 0x006714CE
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 615
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 634
@@ -39856,7 +39856,7 @@ target = 0x00407E60
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 704
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 740
@@ -39981,12 +39981,12 @@ target = 0x006406AC
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1399
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1416
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1465
@@ -40001,12 +40001,12 @@ target = 0x004079C0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1477
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1494
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 1529
@@ -41812,32 +41812,32 @@ target = 0x0040BB80
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 208
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 216
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 262
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 272
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 281
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 327
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 339
@@ -42179,7 +42179,7 @@ target = 0x0041A240
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 217
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 235
@@ -43866,12 +43866,12 @@ target = 0x00413460
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 108
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 121
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 132
@@ -43881,17 +43881,17 @@ target = 0x0067161E
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 138
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 146
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 155
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 160
@@ -53454,17 +53454,17 @@ target = 0x006714B4
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 544
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 561
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 574
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 630
@@ -53484,12 +53484,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 699
 type = "REL32"
-symbol = "??0Fighter0F398@@QAE@XZ"
+symbol = "??0ReimuFighter@@QAE@XZ"
 target = 0x0046D080
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 746
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 761
@@ -53499,12 +53499,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 788
 type = "REL32"
-symbol = "??0Fighter1F398@@QAE@XZ"
+symbol = "??0MarisaFighter@@QAE@XZ"
 target = 0x00492FB0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 835
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 850
@@ -53514,12 +53514,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 877
 type = "REL32"
-symbol = "??0Fighter2F398@@QAE@XZ"
+symbol = "??0SakuyaFighter@@QAE@XZ"
 target = 0x004C0820
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 924
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 939
@@ -53529,12 +53529,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 966
 type = "REL32"
-symbol = "??0Fighter3F398@@QAE@XZ"
+symbol = "??0AliceFighter@@QAE@XZ"
 target = 0x004E2C90
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1013
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1028
@@ -53544,12 +53544,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1055
 type = "REL32"
-symbol = "??0Fighter4F398@@QAE@XZ"
+symbol = "??0PatchouliFighter@@QAE@XZ"
 target = 0x005021C0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1102
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1117
@@ -53559,12 +53559,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1144
 type = "REL32"
-symbol = "??0Fighter5F398@@QAE@XZ"
+symbol = "??0YoumuFighter@@QAE@XZ"
 target = 0x0052CEE0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1191
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1206
@@ -53574,12 +53574,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1233
 type = "REL32"
-symbol = "??0Fighter6F398@@QAE@XZ"
+symbol = "??0RemiliaFighter@@QAE@XZ"
 target = 0x00551980
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1280
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1295
@@ -53589,12 +53589,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1322
 type = "REL32"
-symbol = "??0Fighter7F398@@QAE@XZ"
+symbol = "??0YuyukoFighter@@QAE@XZ"
 target = 0x00574100
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1369
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1384
@@ -53604,12 +53604,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1411
 type = "REL32"
-symbol = "??0Fighter8F398@@QAE@XZ"
+symbol = "??0YukariFighter@@QAE@XZ"
 target = 0x00597380
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1458
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1473
@@ -53619,12 +53619,12 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1500
 type = "REL32"
-symbol = "??0Fighter9F398@@QAE@XZ"
+symbol = "??0SuikaFighter@@QAE@XZ"
 target = 0x005C0AB0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1547
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1559
@@ -53634,22 +53634,22 @@ target = 0x0064159D
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1595
 type = "REL32"
-symbol = "??0Fighter10F398@@QAE@XZ"
+symbol = "??0MeilingFighter@@QAE@XZ"
 target = 0x005E2090
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1642
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1652
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1671
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1680
@@ -53664,7 +53664,7 @@ target = 0x00671610
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1707
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1725
@@ -53674,17 +53674,17 @@ target = 0x006714CC
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1735
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1752
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1757
 type = "REL32"
-symbol = "?ResetControlState@FighterNativeF398@@QAEXXZ"
+symbol = "?LoadResources@Fighter@@QAEXXZ"
 target = 0x00456B60
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1769
@@ -53694,12 +53694,12 @@ target = 0x00671440
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1780
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1785
 type = "REL32"
-symbol = "?InitializeResources@FighterNativeF398@@QAEXPAX@Z"
+symbol = "?SetBindings@Fighter@@QAEXPBX@Z"
 target = 0x00457490
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1792
@@ -53714,7 +53714,7 @@ target = 0x006714B4
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1825
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1842
@@ -53724,7 +53724,7 @@ target = 0x006714D0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1857
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1878
@@ -53739,32 +53739,32 @@ target = 0x004183BC
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1916
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1938
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1960
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 1982
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2004
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2024
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2033
@@ -53809,7 +53809,7 @@ target = 0x00671622
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2121
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2127
@@ -53824,22 +53824,22 @@ target = 0x00671620
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2146
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2161
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2176
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2191
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2202
@@ -53849,17 +53849,17 @@ target = 0x0067161E
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2208
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2216
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2224
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2236
@@ -53869,12 +53869,12 @@ target = 0x006714C8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2246
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2256
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2273
@@ -53904,22 +53904,22 @@ target = 0x006714B8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2331
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2343
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2358
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2371
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2387
@@ -53929,77 +53929,77 @@ target = 0x006714B4
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2398
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2411
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2425
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2438
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2451
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2458
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2463
 type = "REL32"
-symbol = "?SetOpponent@FighterNativeF398@@QAEXPAV1@@Z"
+symbol = "?BindOpponent@Fighter@@QAEXPAX@Z"
 target = 0x004574B0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2468
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2475
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2480
 type = "REL32"
-symbol = "?SetOpponent@FighterNativeF398@@QAEXPAV1@@Z"
+symbol = "?BindOpponent@Fighter@@QAEXPAX@Z"
 target = 0x004574B0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2486
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2496
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2505
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2515
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2524
 type = "REL32"
-symbol = "?CameraAttachAt00412660@@YAXPAM000@Z"
+symbol = "?Initialize@CameraInputs412660@@YAXPAM000@Z"
 target = 0x00412660
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2534
@@ -54014,47 +54014,47 @@ target = 0x006714D1
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2555
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2563
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2572
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2577
 type = "REL32"
-symbol = "?ActivateStoryStage@FighterNativeF398@@QAEXXZ"
+symbol = "?LoadStageResource@Fighter@@QAEXXZ"
 target = 0x004584D0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2582
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2595
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2600
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2621
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2626
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2647
@@ -54114,7 +54114,7 @@ target = 0x0041A1A0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2742
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2757
@@ -54164,12 +54164,12 @@ target = 0x0041A270
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2822
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2837
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2853
@@ -54189,12 +54189,12 @@ target = 0x006714BC
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2898
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2918
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2924
@@ -54224,7 +54224,7 @@ target = 0x00671420
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2976
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2983
@@ -54234,7 +54234,7 @@ target = 0x00671750
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2996
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3002
@@ -54244,7 +54244,7 @@ target = 0x00671750
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3015
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3021
@@ -54279,12 +54279,12 @@ target = 0x004169E0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3063
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3079
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3095
@@ -54304,22 +54304,22 @@ target = 0x006714D1
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3121
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3136
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3151
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3165
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3179
@@ -56632,12 +56632,12 @@ target = 0x004250C0
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 27
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 43
@@ -56647,7 +56647,7 @@ target = 0x004028F0
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 48
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 66
@@ -56667,7 +56667,7 @@ target = 0x00407E60
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 114
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 120
@@ -56692,7 +56692,7 @@ target = 0x00402660
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 29
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 37
@@ -56702,7 +56702,7 @@ target = 0x0040C840
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 45
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 53
@@ -56717,17 +56717,17 @@ target = 0x0067161E
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 65
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 73
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 81
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 98
@@ -56802,7 +56802,7 @@ target = 0x00406E80
 [[units.battle-end-scene-poll-input-004250c0.relocations]]
 offset = 29
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.battle-end-scene-poll-input-004250c0.relocations]]
 offset = 34
@@ -60227,7 +60227,7 @@ target = 0x00407E60
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 110
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 120
@@ -60247,7 +60247,7 @@ target = 0x006714CE
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 146
 type = "DIR32"
-symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighter@@A"
 target = 0x00671418
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 158

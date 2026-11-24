@@ -7,6 +7,9 @@
 class SuikaFighter : public Fighter {
 public:
     SuikaFighter();
+    void ChooseAction();
+    static int actionCountdown;
+    void RenderStage(signed char stage);
     virtual void Advance(); // Slot 1 at 005AEEC0.
     void SpawnTrackedEffectWithFlags(short effect, float x, float y,
                                      signed char facing, signed char layer,
@@ -52,6 +55,7 @@ public:
     unsigned char fieldFF5;
     unsigned char fieldFF6;
     unsigned char fieldFF7;
+    unsigned char unknownFF8[0x1000 - 0xFF8];
 };
 
 #endif

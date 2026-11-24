@@ -48,7 +48,7 @@ signed char g_PlayerRoundAt006714AC[2];
 unsigned char g_PlayerDifficultyAt00671438[2];
 signed char g_PlayerSettingsAt00671434[2];
 short g_RecordSequenceAt006714A4;
-FighterNativeF398* g_BattleFightersAt00671418[2];
+Fighter* g_BattleFightersAt00671418[2];
 
 unsigned long g_StateScoreThreshold;
 unsigned long g_MaxCombatScore;

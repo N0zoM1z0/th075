@@ -7,6 +7,10 @@
 class MeilingFighter : public Fighter {
 public:
     MeilingFighter();
+    void ChooseAction();
+    static int actionCountdown;
+    void ChooseCardAction();
+    static int cardCountdown;
     virtual void Advance(); // Slot 1 at 005D73C0.
     void DispatchActions();
     void AdvanceAuxiliary();
@@ -42,6 +46,7 @@ public:
     unsigned char fieldFF5;
     unsigned char fieldFF6;
     unsigned char fieldFF7;
+    unsigned char unknownFF8[0x1000 - 0xFF8];
 };
 
 #endif

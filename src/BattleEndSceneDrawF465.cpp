@@ -12,7 +12,7 @@
 // added a nonnative PUSH and changed complete code length by two bytes.
 // Complete native R053 battle-end drawing sequence, original fighter actor
 // render modes, 18th virtual call and 640x480 alpha-tinted screen overlay.
-#define ACTOR reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])
+#define ACTOR g_BattleFightersAt00671418[0]
 #define ACTOR_DRAWER static_cast<TextureManagerF198*>(ACTOR->drawing)
 void BattleEndScene::Render() {
     if(Graphics::BeginFrame()) {

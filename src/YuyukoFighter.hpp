@@ -7,6 +7,9 @@
 class YuyukoFighter : public Fighter {
 public:
     YuyukoFighter();
+    void ChooseAction();
+    static int actionCountdown;
+    void RenderStage(signed char stage);
     virtual void Advance(); // slot 1: partial native move-state reconstruction at 00564BE0
     void ConfigureStage();
     void ChooseCardAction();
@@ -39,6 +42,7 @@ public:
     unsigned char fieldFDD;
     unsigned char fieldFDE;
     unsigned char fieldFDF;
+    unsigned char unknownFE0[0xFE8 - 0xFE0];
 };
 
 #endif

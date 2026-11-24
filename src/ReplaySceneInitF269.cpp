@@ -20,7 +20,7 @@ PlayerNameEntryScene::PlayerNameEntryScene()
     field014 = 0;
     g_GameProgress.SetSelection(g_PlayerIdAt006714C8[0],static_cast<unsigned char>(g_OptionsModeAt006714D0));
     selectedRecord = g_GameProgress.GetSelectedRecordAddress();
-    rank = selectedRecord->InsertRankedScore(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score);
+    rank = selectedRecord->InsertRankedScore(g_BattleFightersAt00671418[0]->score);
     g_GameProgress.StoreWorkingEightBytes(rank);
     pathIndex = g_ReplayRecords.FindAvailablePath(replayPath);
 }
