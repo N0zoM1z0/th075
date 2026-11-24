@@ -183,6 +183,30 @@ all seven relocations with the concrete snapshot type.
     scripts/repo-python scripts/replay-exact-units.py --unit youmu-object-advance-00536400
     scripts/repo-python .analysis/pending-origin-2026-11-24/compare-youmu-front.py
 
+### R279 — Archive entry list helpers
+
+The append routine at `0x0041D6C0` builds a 108-byte entry with a
+100-byte filename and two DWORDs. The lookup at `0x0041D800` reads
+those same fields through the iterator. The typed scratch build uses
+`std::list<ArchiveWireEntryF342>` at `this+4` in both methods. It
+reproduces all 313 bytes of the two complete functions and all 17
+relocations, including the original `push_back` at `0x0041D9C0`,
+`begin` at `0x0041D950` and iterator arrow at `0x0041E060`.
+
+The archive constructor and destructor cold-replay their calls on
+that same member, including `clear` at `0x0041D9F0`. Compiling
+construction and destruction of the concrete list also reaches the
+allocator constructor and both `std::_Destroy` specializations. In
+total, 28 library sections match all 978 original bytes and 39
+relocations. The chain attributes seven helpers and 70 library bytes.
+The typed build uses the wire layout already observed by the game
+callers. The generic source alternatives in R169, R175, R181 and R242
+remain useful for comparing ambiguous bodies in isolation.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit data-archive-initialize-state-0041d190 --unit data-archive-close-entries-0041d1f0
+    scripts/compile-probe.sh .analysis/pending-origin-2026-11-24/archive-list.cpp build/probes/ArchiveListOrigin.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
+    scripts/repo-python .analysis/pending-origin-2026-11-24/compare-archive.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

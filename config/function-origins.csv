@@ -875,14 +875,14 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041E080,library,VC7STL,exclude,whole-vc71-archive-iterator-source-chain-with-independent-container-provenance-and-file-iteration-context,R242
 0x0041E0B0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0041E0D0,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0041E100,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041E110,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041E100,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R279
+0x0041E110,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R279
 0x0041E120,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
 0x0041E1A0,library,VC7STL,exclude,complete-header-owned-default-list-code-data-and-shared-catch-graph,R181
 0x0041E22F,library,VC7STL,exclude,complete-header-owned-default-list-code-data-and-shared-catch-graph,R181
 0x0041E280,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175
 0x0041E2F0,library,VC7STL,exclude,complete-header-owned-default-list-code-data-and-shared-catch-graph,R181
-0x0041E330,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041E330,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R279
 0x0041E340,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0041E360,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175
 0x0041E380,library,VC7STL,exclude,complete-closed-source-typed-erase-graph,R111
@@ -948,8 +948,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041F770,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0041F790,library,VC7STL,exclude,whole-vc71-archive-iterator-source-chain-with-independent-container-provenance-and-file-iteration-context,R242
 0x0041F7B0,library,VC7STL,exclude,whole-vc71-archive-iterator-source-chain-with-independent-container-provenance-and-file-iteration-context,R242
-0x0041F7E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041F7F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041F7E0,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R279
+0x0041F7F0,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R279
 0x0041F800,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
 0x0041F820,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0041F840,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
@@ -960,7 +960,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041F930,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x0041F980,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
 0x0041F9C0,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
-0x0041F9F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041F9F0,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R279
 0x0041FA00,library,vc7-stl-deque-algorithms,exclude,high,R085
 0x0041FA50,library,vc7-stl-deque-algorithms,exclude,high,R085
 0x0041FAA0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -978,7 +978,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041FD80,library,vc7-stl-deque-helpers,exclude,high,R087
 0x0041FD90,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
 0x0041FDB0,library,vc7-stl-vector-operations,exclude,high,R091
-0x0041FDF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041FDF0,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R279
 0x0041FE00,library,VC7STL,exclude,complete-vc7-deque-allocation-family,R075
 0x0041FE20,library,vc7-stl-deque-helpers,exclude,high,R088
 0x0041FE30,library,VC7STL,exclude,complete-vc7-deque-allocation-family,R075
