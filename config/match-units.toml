@@ -33289,12 +33289,12 @@ target = 0x0064159D
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 133
 type = "REL32"
-symbol = "??0TextureManagerAllocF196@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 177
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@TextureManagerAllocF196@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 182
@@ -33309,7 +33309,7 @@ target = 0x0065831C
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 198
 type = "REL32"
-symbol = "?LoadDefault@TextureManagerAllocF196@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 205
@@ -33319,17 +33319,17 @@ target = 0x0064159D
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 234
 type = "REL32"
-symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 248
 type = "REL32"
-symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 262
 type = "REL32"
-symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 271
@@ -33344,7 +33344,7 @@ target = 0x0064159D
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 340
 type = "REL32"
-symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 349
@@ -33359,7 +33359,7 @@ target = 0x0064159D
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 418
 type = "REL32"
-symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
 target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 427
@@ -33503,12 +33503,12 @@ target = 0x0064159D
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 111
 type = "REL32"
-symbol = "??0TextureManagerAllocF197@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 155
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@TextureManagerAllocF197@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 160
@@ -33523,7 +33523,7 @@ target = 0x006582F0
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 176
 type = "REL32"
-symbol = "?LoadDefault@TextureManagerAllocF197@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 233
@@ -33577,7 +33577,7 @@ target = 0x00000000
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0TextureRefCountF198@@QAE@XZ"
+symbol = "??0GraphicsResourceClient@@QAE@XZ"
 target = 0x00401000
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 50
@@ -33597,7 +33597,7 @@ target = 0x0040DE50
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 95
 type = "REL32"
-symbol = "??0TextureQueueF198@@QAE@XZ"
+symbol = "??0?$deque@UTextureQueueEntryF198@@V?$allocator@UTextureQueueEntryF198@@@std@@@std@@QAE@XZ"
 target = 0x0040DF60
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 110
@@ -33765,7 +33765,7 @@ target = 0x0040DE30
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 356
 type = "REL32"
-symbol = "??1TextureQueueF198@@QAE@XZ"
+symbol = "??1?$deque@UTextureQueueEntryF198@@V?$allocator@UTextureQueueEntryF198@@@std@@@std@@QAE@XZ"
 target = 0x0040DFB0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 371
@@ -33785,7 +33785,7 @@ target = 0x0040DCC0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 416
 type = "REL32"
-symbol = "??1TextureRefCountF198@@QAE@XZ"
+symbol = "??1GraphicsResourceClient@@QAE@XZ"
 target = 0x00401020
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 426
@@ -36844,12 +36844,12 @@ target = 0x0064159D
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 210
 type = "REL32"
-symbol = "??0TextureAllocF225@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 254
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@TextureAllocF225@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 259
@@ -36864,7 +36864,7 @@ target = 0x006581EC
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 275
 type = "REL32"
-symbol = "?LoadDefault@TextureAllocF225@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 282
@@ -36874,12 +36874,12 @@ target = 0x0064159D
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 306
 type = "REL32"
-symbol = "??0TextureAllocF225@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 350
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@TextureAllocF225@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 355
@@ -36894,7 +36894,7 @@ target = 0x0065820C
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 371
 type = "REL32"
-symbol = "?LoadDefault@TextureAllocF225@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 378
@@ -36904,12 +36904,12 @@ target = 0x0064159D
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 402
 type = "REL32"
-symbol = "??0TextureAllocF225@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 446
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@TextureAllocF225@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 451
@@ -36924,7 +36924,7 @@ target = 0x00658230
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 467
 type = "REL32"
-symbol = "?LoadDefault@TextureAllocF225@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 473
@@ -39535,12 +39535,12 @@ target = 0x0064159D
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 81
 type = "REL32"
-symbol = "??0TextureManagerF243@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 125
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@TextureManagerF243@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 130
@@ -39555,7 +39555,7 @@ target = 0x0065801C
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 146
 type = "REL32"
-symbol = "?LoadDefault@TextureManagerF243@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 179
@@ -40806,7 +40806,7 @@ target = 0x0066FE30
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 92
 type = "REL32"
-symbol = "??_GResultListTexture@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 129
@@ -40826,12 +40826,12 @@ target = 0x0064159D
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 184
 type = "REL32"
-symbol = "??0ResultListTexture@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 252
 type = "REL32"
-symbol = "?AllocateSlots@ResultListTexture@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 257
@@ -40841,7 +40841,7 @@ target = 0x0065809C
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 275
 type = "REL32"
-symbol = "?Load@ResultListTexture@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 298
@@ -41436,12 +41436,12 @@ target = 0x0064159D
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 111
 type = "REL32"
-symbol = "??0MusicTextureManagerF262@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 155
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@MusicTextureManagerF262@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 160
@@ -41456,7 +41456,7 @@ target = 0x00657BF4
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 176
 type = "REL32"
-symbol = "?LoadDefault@MusicTextureManagerF262@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 200
@@ -41619,12 +41619,12 @@ target = 0x0064159D
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 116
 type = "REL32"
-symbol = "??0ResultListTexture@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 160
 type = "REL32"
-symbol = "?AllocateSlots@ResultListTexture@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 165
@@ -41639,7 +41639,7 @@ target = 0x00658064
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 181
 type = "REL32"
-symbol = "?Load@ResultListTexture@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 205
@@ -41703,12 +41703,12 @@ target = 0x00431940
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 90
 type = "REL32"
-symbol = "??_GResultListTexture@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 142
 type = "REL32"
-symbol = "??_GResultListTexture@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.result-list-scene-release-0042f880.relocations]]
 offset = 196
@@ -41787,12 +41787,12 @@ target = 0x0064159D
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 137
 type = "REL32"
-symbol = "??0ReplayTextureF266@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 181
 type = "REL32"
-symbol = "?AllocateSlots@ReplayTextureF266@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 186
@@ -41807,7 +41807,7 @@ target = 0x00657FC0
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 202
 type = "REL32"
-symbol = "?LoadDefault@ReplayTextureF266@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.replay-playback-scene-initialize-0042c3d0.relocations]]
 offset = 208
@@ -42124,12 +42124,12 @@ target = 0x0064159D
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 81
 type = "REL32"
-symbol = "??0ReplayTextureF269@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 125
 type = "REL32"
-symbol = "?AllocateSlots@ReplayTextureF269@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 130
@@ -42144,7 +42144,7 @@ target = 0x00657F4C
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 146
 type = "REL32"
-symbol = "?LoadDefault@ReplayTextureF269@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 178
@@ -55496,12 +55496,12 @@ target = 0x0064159D
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 81
 type = "REL32"
-symbol = "??0NameEntryTextureF435@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 125
 type = "REL32"
-symbol = "?AllocateSlots@NameEntryTextureF435@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 130
@@ -55516,7 +55516,7 @@ target = 0x00657F84
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 146
 type = "REL32"
-symbol = "?LoadArchive@NameEntryTextureF435@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 189
@@ -55886,12 +55886,12 @@ target = 0x0064159D
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 91
 type = "REL32"
-symbol = "??0OptionsTextureF445@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 135
 type = "REL32"
-symbol = "?AllocateSlots@OptionsTextureF445@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 140
@@ -55906,7 +55906,7 @@ target = 0x00657D80
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 156
 type = "REL32"
-symbol = "?LoadArchive@OptionsTextureF445@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 180
@@ -55966,12 +55966,12 @@ target = 0x0064159D
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 81
 type = "REL32"
-symbol = "??0NativeSmallTextureF446@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 125
 type = "REL32"
-symbol = "?AllocateSlots@NativeSmallTextureF446@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 130
@@ -55986,7 +55986,7 @@ target = 0x00657B9C
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 146
 type = "REL32"
-symbol = "?LoadArchive@NativeSmallTextureF446@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 173
@@ -56036,12 +56036,12 @@ target = 0x0064159D
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 81
 type = "REL32"
-symbol = "??0NativeSmallTextureF446@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 125
 type = "REL32"
-symbol = "?AllocateSlots@NativeSmallTextureF446@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 130
@@ -56056,7 +56056,7 @@ target = 0x00657BC8
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 146
 type = "REL32"
-symbol = "?LoadArchive@NativeSmallTextureF446@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 175
@@ -56106,12 +56106,12 @@ target = 0x0064159D
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 81
 type = "REL32"
-symbol = "??0TextureManagerF446@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 125
 type = "REL32"
-symbol = "?AllocateSlots@TextureManagerF446@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 130
@@ -56126,7 +56126,7 @@ target = 0x00657CCC
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 146
 type = "REL32"
-symbol = "?LoadArchive@TextureManagerF446@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 153
@@ -56206,12 +56206,12 @@ target = 0x0064159D
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 96
 type = "REL32"
-symbol = "??0TextureManagerF446@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 140
 type = "REL32"
-symbol = "?AllocateSlots@TextureManagerF446@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 145
@@ -56226,7 +56226,7 @@ target = 0x006582A0
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 161
 type = "REL32"
-symbol = "?LoadArchive@TextureManagerF446@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 167
@@ -56400,7 +56400,7 @@ source = "src/GraphicsResourceGlobalReleaseF454.cpp"
 object = "build/matching/GraphicsResourceGlobalReleaseF454.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GraphicsResourceClient::~GraphicsResourceClientAt00401020"]
-symbol = "??1GraphicsResourceClientF453@@QAE@XZ"
+symbol = "??1GraphicsResourceClient@@QAE@XZ"
 target_address = 0x00401020
 size = 239
 [[units.graphics-resource-client-release-global-00401020.relocations]]
@@ -58922,12 +58922,12 @@ target = 0x00000000
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 35
 type = "REL32"
-symbol = "??0WindowTextureArchiveF489@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 55
 type = "REL32"
-symbol = "?AllocateSlots@WindowTextureArchiveF489@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 60
@@ -58942,7 +58942,7 @@ target = 0x00657898
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 76
 type = "REL32"
-symbol = "?LoadArchive@WindowTextureArchiveF489@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 97
@@ -61191,7 +61191,7 @@ compare_size = 3047
 relocations = [
  { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
  { offset = 0x18, type = "REL32", symbol = "??0AppModeF1171@@QAE@H@Z", target = 0x004239F0 },
- { offset = 0x2D, type = "REL32", symbol = "??0GraphicsClientF1171@@QAE@XZ", target = 0x00401000 },
+ { offset = 0x2D, type = "REL32", symbol = "??0GraphicsResourceClient@@QAE@XZ", target = 0x00401000 },
  { offset = 0x35, type = "REL32", symbol = "??0InputClientF1171@@QAE@XZ", target = 0x00403B90 },
  { offset = 0x3D, type = "REL32", symbol = "??0SoundClientF1171@@QAE@XZ", target = 0x00406610 },
  { offset = 0x51, type = "DIR32", symbol = "__imp__GetModuleFileNameA@12", target = 0x00657074 },
@@ -61215,14 +61215,14 @@ relocations = [
  { offset = 0x14F, type = "DIR32", symbol = "__imp__RegisterClassExA@4", target = 0x0065724C },
  { offset = 0x168, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
  { offset = 0x170, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
- { offset = 0x17B, type = "REL32", symbol = "??1GraphicsClientF1171@@QAE@XZ", target = 0x00401020 },
+ { offset = 0x17B, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
  { offset = 0x183, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
  { offset = 0x1B4, type = "DIR32", symbol = "?g_AppWindowTitleAt0065A148@@3QBDB", target = 0x0065A148 },
  { offset = 0x1B9, type = "DIR32", symbol = "?g_AppWindowClassAltAt0065A17C@@3QBDB", target = 0x0065A17C },
  { offset = 0x1C4, type = "DIR32", symbol = "__imp__CreateWindowExA@48", target = 0x00657250 },
  { offset = 0x1E5, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
  { offset = 0x1ED, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
- { offset = 0x1F8, type = "REL32", symbol = "??1GraphicsClientF1171@@QAE@XZ", target = 0x00401020 },
+ { offset = 0x1F8, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
  { offset = 0x200, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
  { offset = 0x21C, type = "DIR32", symbol = "__imp__ShowWindow@8", target = 0x00657254 },
  { offset = 0x229, type = "DIR32", symbol = "__imp__UpdateWindow@4", target = 0x00657230 },
@@ -61231,7 +61231,7 @@ relocations = [
  { offset = 0x240, type = "DIR32", symbol = "__imp__CoInitialize@4", target = 0x00657284 },
  { offset = 0x256, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
  { offset = 0x25E, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
- { offset = 0x269, type = "REL32", symbol = "??1GraphicsClientF1171@@QAE@XZ", target = 0x00401020 },
+ { offset = 0x269, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
  { offset = 0x271, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
  { offset = 0x283, type = "DIR32", symbol = "?g_AppInitializedAt0068D674@@3EA", target = 0x0068D674 },
  { offset = 0x297, type = "DIR32", symbol = "__imp__CreateEventA@16", target = 0x00657054 },
@@ -61344,7 +61344,7 @@ relocations = [
  { offset = 0xB6F, type = "REL32", symbol = "??1ArchiveCatalogF1171@@QAE@XZ", target = 0x0041CE50 },
  { offset = 0xB77, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
  { offset = 0xB7F, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
- { offset = 0xB8A, type = "REL32", symbol = "??1GraphicsClientF1171@@QAE@XZ", target = 0x00401020 },
+ { offset = 0xB8A, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
  { offset = 0xB92, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
  { offset = 0xBA0, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
  { offset = 0xBAB, type = "DIR32", symbol = "$L55677", target = 0x006030A5 },

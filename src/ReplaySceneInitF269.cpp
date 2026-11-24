@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 
 // Only physical scene-base boundary, game globals and observed file/texture
@@ -8,14 +9,6 @@ public:
     ReplayBaseF269();
     virtual ~ReplayBaseF269();
 };
-class ReplayTextureF269 {
-    unsigned char actualBytes[80];
-public:
-    ReplayTextureF269();
-    void AllocateSlots(int slots);
-    void LoadDefault(const char* file,const char* directory);
-};
-typedef char AssertReplayTextureF269[(sizeof(ReplayTextureF269)==80)?1:-1];
 class ProgressRecordsF269 {
 public:
     void SetSelection(signed char player,signed char difficulty);
@@ -35,7 +28,7 @@ extern unsigned char* g_SelectedFighterAt00671418;
 extern const char g_ReplaySceneRootAt00657F44[];
 extern const char g_ReplaySceneFileAt00657F4C[];
 class ReplaySceneInitF269 : public ReplayBaseF269 {
-    ReplayTextureF269* texture;
+    TextureManagerF198* texture;
 public:
     ReplaySceneInitF269();
     virtual ~ReplaySceneInitF269();
@@ -43,8 +36,8 @@ public:
 #define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 ReplaySceneInitF269::ReplaySceneInitF269()
 {
-    texture=new ReplayTextureF269();
-    texture->AllocateSlots(3);
+    texture=new TextureManagerF198();
+    texture->AllocateUnformattedSlots(3);
     texture->LoadDefault(g_ReplaySceneFileAt00657F4C,g_ReplaySceneRootAt00657F44);
     FIELD(short,0x10)=0;
     FIELD(short,0x12)=0;

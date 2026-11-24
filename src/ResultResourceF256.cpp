@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 #include <stdio.h>
 #include "ResultListScene.hpp"
@@ -14,9 +15,9 @@ void ResultListScene::LoadSelectedCharacterResources()
         delete (auxiliaryTexture);
     char file[104];
     sprintf(file,g_ResultCharacterTexturePatternAt00658080,static_cast<int>((selectedCharacter)));
-    (auxiliaryTexture)=new ResultListTexture();
-    (auxiliaryTexture)->AllocateSlots(1);
-    (auxiliaryTexture)->Load(file,g_ResultTextureRootAt0065809C);
+    (auxiliaryTexture)=new TextureManagerF198();
+    (auxiliaryTexture)->AllocateUnformattedSlots(1);
+    (auxiliaryTexture)->LoadDefault(file,g_ResultTextureRootAt0065809C);
     if ((selectedCharacter)==3)
         LoadEncodedCards(g_CharacterCardListsAt006714D8 + static_cast<int>((selectedCharacter))*20,g_CardSpecialAt006580A4);
     else

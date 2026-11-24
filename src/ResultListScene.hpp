@@ -3,15 +3,7 @@
 #include "SceneBase.hpp"
 #include <d3d8.h>
 struct IDirect3DTexture8;
-// All result-list texture views allocate the same observed 80-byte manager.
-class ResultListTexture {
-    unsigned char observedNativeBytes[80];
-public:
-    ResultListTexture();
-    ~ResultListTexture();
-    void AllocateSlots(int count);
-    void Load(const char* filename, const char* root);
-};
+class TextureManagerF198;
 
 // The replay/result browser keeps a five-DWORD VC7 deque at +0x18.
 // Its element representation remains unknown; only Count's call contract
@@ -27,7 +19,6 @@ public:
 };
 
 typedef char ResultListDequePhysicalSize[(sizeof(ResultListRecords) == 20) ? 1 : -1];
-typedef char ResultListTexturePhysicalSize[(sizeof(ResultListTexture) == 80) ? 1 : -1];
 
 // Result-list browser (separate from the match-scoring ResultScene).
 // Only observed fields are declared; never instantiate or infer its full size.
@@ -47,8 +38,8 @@ public:
     void DrawNameGlyphs(float x, float y, DWORD color, const signed char* name);
     void DrawRankLabel(float x, float y, unsigned int color, signed char rank);
 
-    ResultListTexture* mainTexture;     // +008
-    ResultListTexture* auxiliaryTexture; // +00C
+    TextureManagerF198* mainTexture;     // +008
+    TextureManagerF198* auxiliaryTexture; // +00C
     IDirect3DTexture8* canvas;        // +010
     void* selectedRecord;              // +014
     ResultListRecords records;         // +018, five native DWORDs

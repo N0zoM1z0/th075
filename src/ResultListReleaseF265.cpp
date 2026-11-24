@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 #include <d3d8.h>
 #include "ResultListScene.hpp"

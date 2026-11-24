@@ -16,13 +16,13 @@
 #include "DiagnosticLog.hpp"
 #include "EventQueue.hpp"
 #include "GraphicsDevice.hpp"
+#include "GraphicsResourceClient.hpp"
 #include "InputJoystick.hpp"
 #include "MathLookup.hpp"
 // Complete startup lifecycle: anchored to every
 // original window/resource/scene native call and all 15 scene allocations.
 // Only actually observed scene allocation footprints and interface calls.
 class AppModeF1171 {public:~AppModeF1171();AppModeF1171(int);};
-class GraphicsClientF1171 {public:~GraphicsClientF1171();GraphicsClientF1171();};
 class InputClientF1171 {public:~InputClientF1171();InputClientF1171();};
 class SoundClientF1171 {public:~SoundClientF1171();SoundClientF1171();};
 class ArchiveCatalogF1171 {public:ArchiveCatalogF1171();~ArchiveCatalogF1171();};
@@ -88,7 +88,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     char path[260];
     WNDCLASSEXA winClass;
     unsigned short oldSceneState;
-    GraphicsClientF1171 renderContext;
+    GraphicsResourceClient renderContext;
     InputClientF1171 inputContext;
     SoundClientF1171 sound;
     MSG msg;

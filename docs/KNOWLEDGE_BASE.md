@@ -111,8 +111,14 @@ The texture manager stores a VC7.1 vector of 44-byte entries at `+0x08`
 and two vectors of texture pointers at `+0x18` and `+0x28`. Texture
 lookup, pack I/O, sprite dimensions, and resource release use those same
 members. The entry's bitmap fields extend through the pixels pointer
-at `+0x1C`. The bitmap subobject's full extent and the element type of
-the deque at manager offset `+0x38` remain open.
+at `+0x1C`. The bitmap subobject's full extent remains open.
+
+WinMain's graphics client occupies a standalone byte and both lifetime
+methods update a shared count. A client member at manager offset zero
+preserves the native palette offset and 80-byte extent. VC7.1 eliminated
+the client storage when declared as an empty base. The deque at `+0x38`
+uses four-byte entries with trivial destruction. Its constructor,
+destructor, cleanup, and back removal match with the pinned VC7.1 deque.
 
 Naming the entry's byte arrays caused VC7.1 to emit a stack cookie in
 the three slot allocators with `/GS`. Omitting that option for those

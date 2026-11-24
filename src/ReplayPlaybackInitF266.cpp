@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 
 // Three real 20-byte VC7 deque members are evidenced by original
@@ -26,14 +27,6 @@ public:
     ~ReplayDequeRecordsF266();
 };
 typedef char AssertReplayDeque20F266[(sizeof(ReplayDequeBaseF266)==20)?1:-1];
-class ReplayTextureF266 {
-    unsigned char nativeObservedBytes[80];
-public:
-    ReplayTextureF266();
-    void AllocateSlots(int);
-    void LoadDefault(const char* file,const char* root);
-};
-typedef char AssertReplayTexture80F266[(sizeof(ReplayTextureF266)==80)?1:-1];
 class ReplayActorF266 {
 public:
     virtual void Slot0(); virtual void Slot1(); virtual void Slot2();
@@ -45,7 +38,7 @@ extern const char g_ReplayCatalogFileAt00657FC0[];
 extern const char g_ReplayCatalogRootAt00657FB8[];
 extern unsigned short g_ReplayControllerAt0067162C;
 class ReplayPlaybackInitF266 : public ReplayBaseF266 {
-    ReplayTextureF266* texture;
+    TextureManagerF198* texture;
     ReplayDequeNamesF266 names;
     ReplayDequeFilesF266 files;
     ReplayDequeRecordsF266 records;
@@ -58,8 +51,8 @@ public:
 ReplayPlaybackInitF266::ReplayPlaybackInitF266()
 {
     names.Clear();
-    texture=new ReplayTextureF266();
-    texture->AllocateSlots(3);
+    texture=new TextureManagerF198();
+    texture->AllocateUnformattedSlots(3);
     texture->LoadDefault(g_ReplayCatalogFileAt00657FC0,g_ReplayCatalogRootAt00657FB8);
     if (g_ReplayActorAAt00671418) {
         delete g_ReplayActorAAt00671418;

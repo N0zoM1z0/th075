@@ -1,3 +1,4 @@
+#include "GraphicsResourceClient.hpp"
 #include <windows.h>
 #include <d3dx8.h>
 // Complete original R056 239-byte global graphics client teardown. The
@@ -16,8 +17,7 @@ namespace Graphics {
     extern IDirect3D8 *g_Direct3D;
 }
 
-class GraphicsResourceClientF453 {public:~GraphicsResourceClientF453();};
-GraphicsResourceClientF453::~GraphicsResourceClientF453() {
+GraphicsResourceClient::~GraphicsResourceClient() {
     if (--g_GraphicsResourceClientCount == 0) {
         for(int index=0;index<1;++index) {
             if(Graphics::g_TargetTextures[index]) {

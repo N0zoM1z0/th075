@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include "MusicCatalogRecordF261.hpp"
 #include "GraphicsTexture.hpp"
 #include <windows.h>
@@ -11,18 +12,10 @@ public:
     MusicBaseSceneF262();
     virtual ~MusicBaseSceneF262();
 };
-class MusicTextureManagerF262 {
-    unsigned char physicalBytes[80];
-public:
-    MusicTextureManagerF262();
-    void AllocateUnformattedSlots(int slots);
-    void LoadDefault(const char* filename, const char* root);
-};
-typedef char AssertMusicTexSizeF262[(sizeof(MusicTextureManagerF262)==80)?1:-1];
 extern const char g_MusicTextureFileAt00657BF4[];
 extern const char g_MusicTextureRootAt00657BEC[];
 class MusicRoomInitializeF262 : public MusicBaseSceneF262 {
-    MusicTextureManagerF262* texture;
+    TextureManagerF198* texture;
     IDirect3DTexture8* canvasA;
     IDirect3DTexture8* canvasB;
     IDirect3DTexture8* canvasC;
@@ -42,7 +35,7 @@ public:
 };
 MusicRoomInitializeF262::MusicRoomInitializeF262()
 {
-    texture=new MusicTextureManagerF262();
+    texture=new TextureManagerF198();
     texture->AllocateUnformattedSlots(2);
     texture->LoadDefault(g_MusicTextureFileAt00657BF4,g_MusicTextureRootAt00657BEC);
     Graphics::CreateTexture(512,512,&canvasA,32);

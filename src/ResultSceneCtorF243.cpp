@@ -1,14 +1,7 @@
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 #include "Fighter.hpp"
 #include "ResultScene.hpp"
-class TextureManagerF243 {
-    unsigned char allocatedBytes[80];
-public:
-    TextureManagerF243();
-    void AllocateUnformattedSlots(int count);
-    void LoadDefault(const char* filename, const char* root);
-};
-typedef char VerifyTextureSizeF243[(sizeof(TextureManagerF243)==80)?1:-1];
 extern const char g_ResultTexturePathAt0065801C[];
 extern const char g_ResultTextureRootAt00658014[];
 extern Fighter* g_ResultActorPrimaryAt00671418;
@@ -22,9 +15,9 @@ extern const float g_ResultHundredAt00657888;
 extern const float g_ResultTenThousandAt00658034;
 ResultScene::ResultScene()
 {
-    textures = new TextureManagerF243();
-    static_cast<TextureManagerF243*>(textures)->AllocateUnformattedSlots(3);
-    static_cast<TextureManagerF243*>(textures)->LoadDefault(g_ResultTexturePathAt0065801C,g_ResultTextureRootAt00658014);
+    textures = new TextureManagerF198();
+    static_cast<TextureManagerF198*>(textures)->AllocateUnformattedSlots(3);
+    static_cast<TextureManagerF198*>(textures)->LoadDefault(g_ResultTexturePathAt0065801C,g_ResultTextureRootAt00658014);
     field014=1.0f;
     field018=0;
     field019=0;

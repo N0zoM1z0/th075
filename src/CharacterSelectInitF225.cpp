@@ -1,3 +1,4 @@
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 #include "CharacterSelectScene.hpp"
 // The original scene constructs three 80-byte texture manager instances.
@@ -10,14 +11,6 @@ public:
     virtual void Reserved4();
     virtual ~ActorResourceF225(); // Native deleting destructor in slot five.
 };
-class TextureAllocF225 {
-    unsigned char observedBytes[80];
-public:
-    TextureAllocF225();
-    void AllocateUnformattedSlots(int count);
-    void LoadDefault(const char* filename, const char* root);
-};
-typedef char VerifyTexture80F225[(sizeof(TextureAllocF225)==80)?1:-1];
 extern ActorResourceF225* g_ActorAAt00671418;
 extern ActorResourceF225* g_ActorBAt0067141C;
 extern const char g_SelectTextureDataAt006581EC[];
@@ -44,13 +37,13 @@ CharacterSelectScene::CharacterSelectScene()
         delete g_ActorBAt0067141C;
         g_ActorBAt0067141C=0;
     }
-    (menuTextures)=new TextureAllocF225();
+    (menuTextures)=new TextureManagerF198();
     (menuTextures)->AllocateUnformattedSlots(8);
     (menuTextures)->LoadDefault(g_SelectTextureDataAt006581EC,g_SelectTextureRootAt006581E4);
-    (characterTextures)=new TextureAllocF225();
+    (characterTextures)=new TextureManagerF198();
     (characterTextures)->AllocateUnformattedSlots(22);
     (characterTextures)->LoadDefault(g_CharacterTextureDataAt0065820C,g_CharacterTextureRootAt00658204);
-    (backgroundTextures)=new TextureAllocF225();
+    (backgroundTextures)=new TextureManagerF198();
     (backgroundTextures)->AllocateUnformattedSlots(17);
     (backgroundTextures)->LoadDefault(g_BackgroundTextureDataAt00658230,g_BackgroundTextureRootAt00658228);
     g_SelectionModeAt0066C238=1;

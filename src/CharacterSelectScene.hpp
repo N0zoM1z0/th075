@@ -2,7 +2,7 @@
 #define TH075_CHARACTER_SELECT_SCENE_HPP
 
 #include "SceneBase.hpp"
-class TextureAllocF225;
+class TextureManagerF198;
 
 // One 28-byte snapshot for each player's directional and button repeat counters.
 // The stride and all seven DWORD slots are observed in the select input code.
@@ -37,10 +37,10 @@ public:
     void RenderOptions();                // 00438240
     void RenderSinglePlayerOptions();    // 00438670
 
-    TextureAllocF225* menuTextures;                    // +008
+    TextureManagerF198* menuTextures;                    // +008
     SelectInputFrame input[2];             // +00C, +028 (0x1C per player)
-    TextureAllocF225* characterTextures;               // +044
-    TextureAllocF225* backgroundTextures;              // +048
+    TextureManagerF198* characterTextures;               // +044
+    TextureManagerF198* backgroundTextures;              // +048
     int cancellationRequested;              // +04C
     unsigned char leftCharacterAvailable[20];  // +050
     unsigned char rightCharacterAvailable[20]; // +064
