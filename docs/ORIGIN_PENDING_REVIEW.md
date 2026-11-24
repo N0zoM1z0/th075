@@ -407,7 +407,6 @@ The current direct-call scan is in
 | `0x00412DB0`, `0x00428D40` | The authored caller units reach the same CRT fabs and sqrt operations with the R163 header and ordinary worker forms. |
 | `0x004138D0`, `0x00441FD0` | Complete empty bodies with zero recorded Ghidra references. The current static scan finds no direct caller or absolute pointer literal for either entry. |
 | `0x004229D0` | R286 uses the actual script sequence layout. Both copy forms reproduce all 28 bytes and the relocation to the same deque copy constructor. |
-| `0x00423B20` | The complete 26-byte scope calls the event service constructor with 16 and then its destructor on the same stack receiver. The R114 ordinary and generated initializer forms match. |
 | `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
 | `0x00438A60`, `0x00641FB8` | The R163 long absolute-value overload and ordinary wrapper match. The underlying 11-byte body also matches both pinned CRT members. R263 independently places the separate `abs.obj` contribution at `0x00641DAA`. |
 | `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
@@ -447,8 +446,9 @@ Linking the same ordinary 11-byte function as a separate object before
 the library, or in a separate archive on either side of it, moves it
 outside the interval. Supplying the original `memcmp.obj` and
 `log10.obj` as explicit inputs around the ordinary function restores
-all 544 bytes and fields in the same relative layout. These builds
-use the linker's automatic alignment. The original input order is
+all 544 bytes and fields in the same relative layout. The result
+holds in fresh links with and without `/DEBUG`, using the linker's
+automatic alignment. The original input order is
 unknown, so the interval cannot independently identify the 11-byte
 body as `labs.obj`.
 
@@ -461,6 +461,38 @@ unchanged members `memcmp.obj`, `labs.obj`, `log10.obj` and
 
     bash .analysis/final-origin-review/crt-link-order/link.sh
     scripts/repo-python .analysis/final-origin-review/crt-link-order/compare.py
+    bash .analysis/final-origin-review/crt-link-order/link.sh debug
+    scripts/repo-python .analysis/final-origin-review/crt-link-order/compare.py release-debug
+
+### R290 — Event service pulse and startup registration
+
+`0x00423B20` constructs a local event service with the argument 16
+and destroys it on return. The ordinary scope and the generated
+initializer both reproduce its complete 26 bytes and both calls.
+The generated object also has a four-byte `.CRT$XCU` contribution
+that relocates to the initializer. The linker carries that pointer
+into the C++ initialization table with both `/OPT:REF` and
+`/OPT:NOREF`. The ordinary control with `/OPT:NOREF` retains the
+same body without a registration.
+
+The original table from `0x0066C000` through `0x0066C034` has 14
+slots including its boundaries. None points to `0x00423B20`, and
+the whole PE contains no absolute pointer to that address. A scan
+of mapped executable bytes finds no raw rel32 reference into the
+26-byte extent. The registration distinguishes the R114 alternatives
+and supports the ordinary game function. Its original name remains
+unknown.
+
+The shared game source uses the same local event-service type as
+`0x004239C0`. All eight units from that source cold-replay exactly.
+The control source uses `/MT /Od /Ob0 /Gy /GR- /GX /GS /Zl` and
+`/DGENERATE_STARTUP=0` or `/DGENERATE_STARTUP=1`, producing
+`ordinary.obj` and `startup.obj` in the control directory.
+
+    bash .analysis/final-origin-review/event-pulse-registration/link.sh
+    scripts/repo-python .analysis/final-origin-review/event-pulse-registration/compare.py
+    scripts/repo-python .analysis/final-origin-review/crt-link-order/scan-unowned-entries.py
+    scripts/repo-python scripts/replay-exact-units.py --unit event-service-pulse-00423b20 --unit background-base-virtual-destroy-00449d40 --unit camera-motion-set-override-00412cc0 --unit sprite-sequence-remove-front-if-present-004110c0 --unit event-queue-local-acquire-release-004239c0 --unit frame-capture-install-present-callback-00417120 --unit frame-capture-enable-direct-draw-00417140 --unit battle-end-scene-destroy-00424f40
 
 ## Historical R263 inventory
 

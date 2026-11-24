@@ -39,6 +39,11 @@ EventContextF484* EventContextF484::AcquireAndRelease() {
  { EventLocalServiceF484 service(16); }
  return this;
 }
+
+void __cdecl PulseEventServiceAt00423B20()
+{
+    EventLocalServiceF484 service(16);
+}
 extern void __cdecl FramePresentPrimaryAt00417160(IDirect3DTexture8**);
 extern void __cdecl RegisterFrameCallbackAt004028A0(void (__cdecl*)(IDirect3DTexture8**));
 class FrameCapturePolicyF484 {

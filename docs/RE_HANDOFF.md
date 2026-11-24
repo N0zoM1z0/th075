@@ -220,6 +220,11 @@ complete byte-equal alternatives. The PE's RSDS record identifies
 the original debug database, which is absent from the supplied
 archive. [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 
+R289 reproduces the complete CRT interval around `0x00641FB8` with
+both CRT and ordinary input objects. R290 uses the original C++
+startup table to distinguish the event service pulse at
+`0x00423B20`, which cold-replays all 26 bytes and both relocations.
+
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
 sections, so the origin remains unresolved. R272 and R273 attribute the

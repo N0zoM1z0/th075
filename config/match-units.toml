@@ -94528,3 +94528,16 @@ symbol = "?SetRasterParametersAt004135F0@TextOverlay@@QAEXEMM@Z"
 target_address = 0x004135F0
 size = 40
 relocations = []
+
+[units.event-service-pulse-00423b20]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["PulseEventServiceAt00423B20"]
+symbol = "?PulseEventServiceAt00423B20@@YAXXZ"
+target_address = 0x00423B20
+size = 26
+relocations = [
+  { offset = 10, type = "REL32", symbol = "??0EventLocalServiceF484@@QAE@H@Z", target = 0x004239F0 },
+  { offset = 18, type = "REL32", symbol = "??1EventLocalServiceF484@@QAE@XZ", target = 0x00423A90 },
+]

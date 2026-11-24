@@ -1170,7 +1170,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004239C0,authored,EventQueue,authored,complete-game-policy-with-independent-context-and-lifetime-controls,R114
 0x004239F0,authored,EventQueue,authored,complete-game-policy-with-independent-context-and-lifetime-controls,R114
 0x00423A90,authored,EventQueue,authored,complete-game-policy-with-independent-context-and-lifetime-controls,R114
-0x00423B20,unknown,,review,authored-generated-initializer-ambiguity,R114
+0x00423B20,authored,EventQueue,authored,whole-game-event-pulse-with-rejected-generated-startup-registration,R290
 0x00423B40,authored,EventQueue,authored,complete-game-policy-with-independent-controls,R112
 0x00423C60,authored,GameState,authored,complete-game-policy-with-batch-context,R104
 0x00423C80,authored,EventQueue,authored,complete-game-policy-with-independent-context,R113

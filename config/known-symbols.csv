@@ -967,3 +967,4 @@ address,name,module,confidence,evidence
 0x00438CF0,StaffRollAdvanceF450::AdvanceHookAt00438CF0,StaffRollScene,inferred,R285; The native staff-roll advance calls this empty hook on its live scene at 00438C42 and continues to use the receiver for time and result policy.
 0x00410FC0,CommandListF283::SetCapacityAt00410FC0,SpriteSequence,inferred,R287; The exact constructor initializes the same +12 word to 15. Exact sprite append and render read the signed short for the list cap and fade factor.
 0x004135F0,TextOverlay::SetRasterParametersAt004135F0,FontSurface,inferred,R287; The adjacent exact renderer independently stores the same byte and two float fields in the same order and uses them in the rasterizer calls.
+0x00423B20,PulseEventServiceAt00423B20,EventQueue,inferred,"R290; The complete local service acquire and release matches both source controls. Only the compiler-generated startup control requires a table entry, absent from the original PE."

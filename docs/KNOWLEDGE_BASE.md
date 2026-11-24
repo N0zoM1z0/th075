@@ -195,6 +195,13 @@ registration. A nontrivial implicit member lifetime can instead emit
 the same calls as an explicit empty destructor, as the sprite list
 owner demonstrates. [Comparisons and replay](ORIGIN_PENDING_REVIEW.md#r285--empty-sound-and-staff-roll-hooks-and-the-progress-destructor)
 
+An ordinary scope and a compiler-generated global initializer can
+have the same body. The initializer also emits a `.CRT$XCU` pointer.
+Link both controls and check the full original startup table.
+For the event service pulse, the pointer survives both linker
+retention settings in the generated control and is absent from
+the original PE. [Registration evidence](ORIGIN_PENDING_REVIEW.md#r290--event-service-pulse-and-startup-registration)
+
 ### x87 operand order
 
 - The compiler orders x87 loads by expression shape. In `x = x * g` with a
