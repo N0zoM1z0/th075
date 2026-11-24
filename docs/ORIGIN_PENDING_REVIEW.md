@@ -1,5 +1,33 @@
 # Pending origin review matrix (R263 historical snapshot)
 
+## Current follow-up
+
+For `0x004591E0`, the real frame-header fields and two
+`std::vector<tagRECT>` members reproduce the complete copy when the
+16-byte prefix has a destructor. A probe using the existing trivial
+`FighterFrameInfo` header layout instead emits 491 CODE bytes and omits
+the prefix cleanup. The three native callers are `0x00458E70`,
+`0x00459CB0`, and `0x0045B640`. The last caller allocates a
+`0x74`-byte record before invoking the copy.
+
+An implicit copy constructor and an explicit initializer-list constructor
+both reproduce 417 CODE bytes at `0x004591E0`, the 29-byte EH carrier at
+`0x00656260`, and 44 bytes of unwind map and FuncInfo at `0x00669824`.
+All 13 relocation fields resolve to their original destinations in both
+builds. The prefix cleanup calls `0x004588B0` and the completed first
+vector cleans up through `0x004589F0`. The two fully matching source
+forms leave the original declaration and attribution unresolved.
+
+The two VC7.1 builds use `/Od /Ob0 /Gy /GR- /GX /GS /Zi /I src` on
+`.analysis/frame-copy-origin/owned-copy.cpp` with `/DEXPLICIT_COPY=0`
+and `/DEXPLICIT_COPY=1`, producing
+`build/probes/FrameCopyOriginOwnedImplicit.obj` and
+`build/probes/FrameCopyOriginOwnedExplicit.obj`. Run
+`scripts/repo-python .analysis/frame-copy-origin/compare.py` for the
+complete comparisons.
+
+## Historical R263 inventory
+
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
 retained as original research evidence, not the live 2026-10-30 inventory.
 F536 subsequently classified and cold-exactly reconstructed `00455770`
