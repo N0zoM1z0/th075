@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include <string.h>
 // Borrowed physical interfaces. Original scene, list and item layouts remain
 // unproved; none of these interfaces creates/embeds an original owner object.
@@ -25,7 +26,6 @@ extern unsigned short g_SelectedReplayVariantAt006714A4;
 extern char g_ReplayPathAt00671754[];
 namespace BrowserSceneStepsF226 {
     void PollInputs();
-    void ResetInputState();
     void BeginSelectedReplay(int x, int y, int flag, int mode);
 }
 class ReplayBrowserF226 {
@@ -58,7 +58,7 @@ unsigned short ReplayBrowserF226::UpdateSelection()
 {
     ReadInput();
     DrawCurrent();
-    BrowserSceneStepsF226::ResetInputState();
+    Graphics::Present();
     if (field051 == 0) {
         if (field04E < 0) {
             PLAY(0x27);

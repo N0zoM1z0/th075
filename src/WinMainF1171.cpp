@@ -1,3 +1,4 @@
+#include "DisplayOptions.hpp"
 // Complete original Japanese TH075 1.11 WinMain, 00602A60..0060360A.
 // The 15-entry post-RET scene table is compared separately from CODE coverage.
 // Scene names are provisional. Their complete allocation carriers use the
@@ -52,14 +53,10 @@ extern const char g_AppWindowTitleAt0065A148[];
 extern const char g_AppIconAt0065A138[];
 extern const char g_AppIconAt0065A140[];
 extern const char g_ArchiveRootAt0065A1B0[];
-extern unsigned char g_AppWindowModeAt00671605;
-extern unsigned char g_WindowGraphModeAt006714B5;
-extern unsigned char g_WindowGraphAlphaAt006714A0;
 extern unsigned char g_AppInitializedAt0068D674;
 extern HWND g_GameMainWindowAt00671608;
 extern ReplayGlobalF1171 g_ReplayGlobalAt006718F8;
 extern void __cdecl ConfigureEventAt00423C80(HANDLE*);
-extern void __cdecl InitGraphicsAt00401110(HWND,int,int,int,unsigned char,unsigned char);
 namespace SharedSound4066C0 { bool Initialize(HWND); }
 namespace GameGlobalsF212 { void InitializeSound(); }
 extern LRESULT CALLBACK AppWindowProcF468(HWND,UINT,WPARAM,LPARAM);
@@ -134,7 +131,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     g_GameMainWindowAt00671608=hWndMain;
     DiagnosticLog::AppendString(g_LogOKAt0065A210);
     DiagnosticLog::AppendString(g_DirectGraphicsTextAt0065A218);
-    InitGraphicsAt00401110(hWndMain,640,480,1,g_WindowGraphModeAt006714B5,g_WindowGraphAlphaAt006714A0);
+    Graphics::Initialize(hWndMain,640,480,true,DisplayOptions::squareTextures,DisplayOptions::use16BitBackBuffer);
     DiagnosticLog::AppendString(g_LogOKAt0065A230);
     DiagnosticLog::AppendString(g_DirectInputTextAt0065A238);
     Input::Initialize(hWndMain,instance);
@@ -148,7 +145,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     DiagnosticLog::AppendString(g_KeyboardTextAt0065A294);
     Input::CreateKeyboard();
     DiagnosticLog::AppendString(g_LogOKAt0065A2A8);
-    if (g_AppWindowModeAt00671605) {
+    if (DisplayOptions::startFullscreen) {
         Sleep(50);
         DiagnosticLog::AppendString(g_ChangeScreenTextAt0065A2B0);
         Graphics::ToggleWindowMode();

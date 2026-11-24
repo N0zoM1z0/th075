@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 // Entire original 152-byte battle end scene state policy, including the
 // real fighter virtual action and mode-specific score return value.
 class BattleEndFighterF463 {
@@ -17,7 +18,6 @@ public:
 extern BattleEndFighterF463* g_CurrentFighterAt00671418;
 extern unsigned int g_BestResultScoreAt00671420;
 extern signed char g_EndCharacterAt0067161E;
-extern void __cdecl RefreshGraphicsAt004028F0();
 extern void __cdecl ChooseStageAt00419CB0(int);
 extern void __cdecl ConfigureViewportAt00407E60(int,int,int,int);
 #define FIGHTER(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(g_CurrentFighterAt00671418)+(off)))
@@ -25,7 +25,7 @@ unsigned short BattleEndSceneF463::Update() {
     PollInput();
     AdvanceVisuals();
     g_CurrentFighterAt00671418->AdvanceEndAction();
-    RefreshGraphicsAt004028F0();
+    Graphics::Present();
     if (FIGHTER(unsigned char,0x6EF)) {
         if (g_EndCharacterAt0067161E==10) return 0x110B;
         ChooseStageAt00419CB0(40);

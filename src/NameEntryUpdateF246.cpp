@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 // Borrowed record/scene side-only interfaces, not a complete original owner.
 class NameEntrySoundF246 {public: void Play(int id);};
 extern NameEntrySoundF246* g_NameEntrySoundAt00671618;
@@ -8,7 +9,6 @@ public:
 };
 extern NameEntryProgressF246 g_NameEntryProgressAt006718F8;
 extern signed char g_NameEntryExtraFlagAt006714CE;
-namespace NameEntryGraphicsF246 {void Present();}
 class NameEntryUpdateF246 {
 public:
     virtual void SlotZero();
@@ -68,7 +68,7 @@ unsigned short NameEntryUpdateF246::UpdatePlayer()
         CHAR_FIELD(field014)=100;
     }
     DrawCurrent();
-    NameEntryGraphicsF246::Present();
+    Graphics::Present();
     return 10;
 }
 #undef LAST_CHAR

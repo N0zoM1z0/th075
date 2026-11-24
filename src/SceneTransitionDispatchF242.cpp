@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include <windows.h>
 #include <d3d8.h>
 
@@ -11,7 +12,6 @@ public:
 };
 typedef void (__cdecl *TransitionCallbackF242)(IDirect3DTexture8**);
 namespace ScenePresentationF242 {
-    void Present();
     void SetCallback(TransitionCallbackF242 callback);
 }
 extern void __cdecl RenderTransition100F242(IDirect3DTexture8**);
@@ -78,7 +78,7 @@ unsigned short TransitionDispatcherF242::DispatchMode(unsigned short mode)
         }
     } else {
         DrawCurrent();
-        ScenePresentationF242::Present();
+        Graphics::Present();
         --g_TransitionCountAt0066C240;
         if (g_TransitionCountAt0066C240 < 0) {
             ScenePresentationF242::SetCallback(0);

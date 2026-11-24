@@ -1,5 +1,13 @@
+#include "DisplayOptions.hpp"
 #include <windows.h>
 #include <string.h>
+
+namespace DisplayOptions
+{
+    bool startFullscreen;
+    bool squareTextures;
+    bool use16BitBackBuffer;
+}
 
 // Borrowed global storage anchors only; these do not define or allocate any
 // original data or assert a complete settings structure layout.
@@ -11,9 +19,6 @@ extern DWORD g_SelectedCharacterBAt0067141C;
 extern unsigned char g_OptionFlagAt00671430;
 extern unsigned char g_OptionFlagAt00671604;
 extern unsigned char g_OptionFlagAt006714D2;
-extern unsigned char g_OptionFlagAt00671605;
-extern unsigned char g_OptionFlagAt006714B5;
-extern unsigned char g_OptionFlagAt006714A0;
 extern unsigned char g_OptionVolumeAt006714B6;
 extern unsigned char g_OptionModeAt006714D0;
 extern unsigned char g_GameSettingAt00671435;
@@ -66,9 +71,9 @@ GameDefaultsF193::GameDefaultsF193()
         g_OptionFlagAt00671430 = 1;
         g_OptionFlagAt00671604 = 1;
         g_OptionFlagAt006714D2 = 1;
-        g_OptionFlagAt00671605 = 0;
-        g_OptionFlagAt006714B5 = 0;
-        g_OptionFlagAt006714A0 = 0;
+        DisplayOptions::startFullscreen = false;
+        DisplayOptions::squareTextures = false;
+        DisplayOptions::use16BitBackBuffer = false;
         g_OptionVolumeAt006714B6 = 100;
         g_OptionModeAt006714D0 = 1;
         g_GameSettingAt00671435 = 2;

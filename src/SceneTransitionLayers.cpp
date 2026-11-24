@@ -1,3 +1,4 @@
+#include "GraphicsDraw.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <stdlib.h>
@@ -10,7 +11,6 @@ public:
     RectTransitionQuadF128(const RECT*);
 };
 typedef char RectTransitionQuadSizeF128[(sizeof(RectTransitionQuadF128) == 132) ? 1 : -1];
-void __cdecl FillTransitionRectangleF128(const RECT*, DWORD);
 extern int g_TransitionFrame;
 extern float g_TransitionColumns[];
 extern float g_TransitionPhase;
@@ -28,7 +28,7 @@ void __cdecl DrawTransition00432200(IDirect3DTexture8* const* texture) {
     DWORD drawColor = D3DCOLOR_ARGB(255 - g_TransitionFrame * 6, 255, 255, 255);
     Graphics::DrawTexturedQuad(POSITIONS(transformedQuad), &textureRect, 0xFFFFFFFF, *texture);
     Graphics::SetBlendMode(2);
-    FillTransitionRectangleF128(&textureRect, drawColor);
+    Graphics::DrawFilledRectangle(&textureRect, drawColor);
 }
 
 void __cdecl DrawTransition004322B0(IDirect3DTexture8* const* texture) {
@@ -39,7 +39,7 @@ void __cdecl DrawTransition004322B0(IDirect3DTexture8* const* texture) {
     DWORD drawColor = D3DCOLOR_ARGB(g_TransitionFrame * 6, 255, 255, 255);
     Graphics::DrawTexturedQuad(POSITIONS(transformedQuad), &textureRect, 0xFFFFFFFF, *texture);
     Graphics::SetBlendMode(2);
-    FillTransitionRectangleF128(&textureRect, drawColor);
+    Graphics::DrawFilledRectangle(&textureRect, drawColor);
 }
 
 void __cdecl DrawTransition00432360(IDirect3DTexture8* const* texture) {

@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 // Physical per-track byte records (16-byte stride), not a recovered nominal
 // scene or collection type. All external receivers are existing callees.
 class MusicTrackStateF234 {
@@ -19,7 +20,6 @@ extern int g_MusicCancelAltAt006716B8;
 namespace MusicAudioF234 {
     void PlayMusic(int trackId);
     void Transition(int x,int y,int one,int mode);
-    void EndInput();
 }
 class MusicRoomSelectionF234 {
 public:
@@ -39,7 +39,7 @@ unsigned short MusicRoomSelectionF234::UpdateSelection()
 {
     PollInput();
     DrawCurrent();
-    MusicAudioF234::EndInput();
+    Graphics::Present();
     if (g_MusicUpAt00671668==1 || g_MusicUpAltAt006716B0==1) {
         ++S(0x3de);
         if (S(0x3de)>=S(0x3dc)) B(0x3de)=0;

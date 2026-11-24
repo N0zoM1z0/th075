@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include <windows.h>
 #include <mmsystem.h>
 #include "Fighter.hpp"
@@ -15,7 +16,6 @@ extern signed char g_ReplayNameModeAt006714CE;
 extern unsigned int g_StaffRollBestScoreAt00671420;
 extern void SetStageAt00419CB0(int);
 extern void __cdecl ConfigureStaffViewportAt00407E60(int,int,int,int);
-extern void BeforeStaffAdvanceAt004028F0();
 class StaffRollAdvanceF450 {
 public:
     virtual void V00();
@@ -33,7 +33,7 @@ public:
 unsigned short StaffRollAdvanceF450::Advance() {
     UpdateStaffControls();
     AdvanceVirtual();
-    BeforeStaffAdvanceAt004028F0();
+    Graphics::Present();
     AdvanceHookAt00438CF0();
     if (g_StaffRollPhaseAt0067166C==1) {
         if (field00C>0x14C08 || field00C<0x13880) {

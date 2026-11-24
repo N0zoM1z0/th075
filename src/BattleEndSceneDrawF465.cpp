@@ -1,3 +1,4 @@
+#include "GraphicsDraw.hpp"
 #include <windows.h>
 // Independently exact entire native R053 scene draw. Original borrowed
 // overlay helper 00412EB0 has zero arguments; a made-up mode argument
@@ -25,7 +26,6 @@ extern unsigned int g_BattleOverlayColorAt0067149C;
 extern ActorDrawerF464* g_BattleEndOverlayDrawerAt0067143C;
 extern unsigned char __cdecl GraphicsBeginAt00402660();
 extern void __cdecl GraphicsAdvanceAt004027D0();
-extern void __cdecl GraphicsClearOverlayAt00403910(const RECT*,unsigned int);
 class BattleEndDrawF464 {public:void Draw();};
 #define ACTOR_FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(g_BattleEndActorAt00671418)+(o)))
 #define ACTOR_DRAWER (*reinterpret_cast<ActorDrawerF464**>(reinterpret_cast<unsigned char*>(g_BattleEndActorAt00671418)+4))
@@ -39,7 +39,7 @@ void BattleEndDrawF464::Draw() {
         if (g_BattleOverlayAlphaAt006714D1>0) {
             RECT region;
             SetRect(&region,0,0,640,480);
-            GraphicsClearOverlayAt00403910(&region, (static_cast<unsigned int>(g_BattleOverlayAlphaAt006714D1)<<24) | g_BattleOverlayColorAt0067149C);
+            Graphics::DrawFilledRectangle(&region, (static_cast<unsigned int>(g_BattleOverlayAlphaAt006714D1)<<24) | g_BattleOverlayColorAt0067149C);
         }
         GraphicsAdvanceAt004027D0();
     }

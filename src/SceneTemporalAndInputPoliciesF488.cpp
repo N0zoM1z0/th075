@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "GraphicsDevice.hpp"
 #include "InputJoystick.hpp"
 #include <windows.h>
@@ -11,7 +12,6 @@ extern unsigned int g_OpeningPhaseAt0067166C;
 extern unsigned int g_OpeningAlternateAt006716B4;
 extern signed char g_LoadModeAt006714B4;
 extern signed char g_LoadCharacterAt0067161E;
-extern void __cdecl NativeGraphicsBeforeAt004028F0();
 extern void __cdecl LoadFightersAt004176F0();
 extern void __cdecl LoadStageAt004183D0();
 class SceneAdvanceBaseF488 {
@@ -41,7 +41,7 @@ public:
     unsigned short field00C;
 };
 unsigned short OpeningSceneAdvanceF488::Advance(){
- PollInput(); VAdvance(); NativeGraphicsBeforeAt004028F0();
+ PollInput(); VAdvance(); Graphics::Present();
  if(g_OpeningPhaseAt0067166C==1 || g_OpeningAlternateAt006716B4==1) return 0x2202;
  if(field00C>0xC15C) return 0xFF02;
  field00C=timeGetTime()-field010;
@@ -59,7 +59,7 @@ unsigned short LoadingSceneAdvanceF488::Advance(){
  return 0x2000;
 }
 unsigned short TimedSceneAdvanceF488::Advance(){
- PollInput();VAdvance();NativeGraphicsBeforeAt004028F0();
+ PollInput();VAdvance();Graphics::Present();
  field00C++;
  if(field00C>180)return 0x220D;
  return 4;

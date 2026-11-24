@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 // Borrowed player editor, sound device and score persistence receiver. The
 // original parent layout remains unproven and is not instantiated.
 class NameSharedSoundF251 { public: void Play(int sound); };
@@ -7,7 +8,6 @@ extern NameScoreF251 g_NameScoreAt00671750;
 extern signed char g_NameModeAt0066C238;
 extern unsigned char g_NameLettersAt00671858[8];
 extern unsigned char g_NameLastLetterAt0067185F;
-namespace NameSharedGraphicsF251 { void Present(); }
 class NameSharedSceneF251 {
 public:
     virtual void SlotZero();
@@ -69,7 +69,7 @@ unsigned short NameSharedSceneF251::UpdateShared()
         }
     }
     DrawCurrent();
-    NameSharedGraphicsF251::Present();
+    Graphics::Present();
     return 7;
 }
 #undef SELECTED

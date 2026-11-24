@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "CharacterSelectScene.hpp"
 // Main character-select update and transition loop.
 class SceneSelectionSoundF229 {public: void Play(int sound);};
@@ -22,7 +23,6 @@ extern const float g_ChoiceRiseLimitAt0065788C;
 extern const float g_ChoiceLoopLimitAt00658258;
 extern const float g_ChoiceReturnStepAt0065747C;
 namespace SelectionGlobalF229 {
-    void ResetInput();
     void ChangeScene(int x, int y, int one, int zero);
 }
 class SelectionReplayF229 {public: void BeginCapture();};
@@ -32,7 +32,7 @@ unsigned short CharacterSelectScene::Advance()
 {
     PollInput();
     DrawCurrent();
-    SelectionGlobalF229::ResetInput();
+    Graphics::Present();
     if (g_ChoiceHalfStepAt00657874 < (choiceOscillation))
         (choiceOscillation) = (choiceOscillation) * g_ChoiceFadeAt00658260;
     (choiceRotation) = (choiceRotation) + g_ChoiceClockStepAt0065825C;

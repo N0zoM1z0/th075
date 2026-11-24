@@ -1,3 +1,4 @@
+#include "GraphicsDraw.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "GraphicsVertex.hpp"
@@ -29,7 +30,6 @@ public:
 extern "C" double __cdecl sin(double);
 extern float g_EffectCameraX;
 extern float g_EffectCameraY;
-void __cdecl FillRectangleF127(const RECT*, DWORD);
 #define OWNER_INT(offset) (*reinterpret_cast<int*>(reinterpret_cast<char*>(this) + (offset)))
 #define DRAWING reinterpret_cast<EffectDrawingF127*>(reinterpret_cast<char*>(this) + 0x18)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
@@ -288,7 +288,7 @@ void EffectPattern00450420::Render() {
     RECT clearRect;
     SetRect(&clearRect, 0, 0, 960, 720);
     DRAWING->SetBlendMode(0);
-    FillRectangleF127(&clearRect, 0xFF21212C);
+    Graphics::DrawFilledRectangle(&clearRect, 0xFF21212C);
     DRAWING->DrawSprite(3, cameraHorizontal * 0.75 + 320.0, cameraY * 0.75 + 240.0, 0xFFFFFFFF, 64.0f, 64.0f, 1.0f, 0, 0);
     int atlasSliceCount = static_cast<int>((3072.0 - OWNER_INT(0x68) * 0.1) / 768.0);
     RECT imageRect;

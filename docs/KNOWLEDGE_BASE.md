@@ -37,6 +37,12 @@ array at `0x006711FC`, the device at `0x00671230` and the D3D8 interface
 at `0x0067122C`. VC7.1 constructs the two DirectInput joystick vectors
 in the order recorded by the target's R024 startup records.
 
+WinMain passes the three display flags through the shared one-byte settings
+used by the config loader, writer and defaults. The `bool` display flags and
+the unsigned-short dimensions in `Graphics::Initialize` preserve WinMain's
+call and comparison bytes. The presentation aliases at `0x004028F0` and
+filled-rectangle aliases at `0x00403910` now use the existing graphics APIs.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces
@@ -48,10 +54,8 @@ called the rebuilt window callback and allocated a D3DX8 buffer successfully.
 
 The first strict link reported 677 missing symbols whose unique manifest
 target already has an accepted function definition. The address gives a
-place to check the ABI and source owner. For example, WinMain's
-`InitGraphicsAt00401110` declares integer dimensions and a void return,
-while `Graphics::Initialize` takes unsigned-short dimensions and returns
-`bool`. Keep the full link diagnostics in `build/program/link.log`.
+place to check the ABI and source owner. Keep the full link diagnostics in
+`build/program/link.log`.
 
 ## Class structure
 

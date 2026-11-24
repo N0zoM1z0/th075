@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include <windows.h>
 #include "Fighter.hpp"
 #include "ResultScene.hpp"
@@ -17,7 +18,6 @@ extern const double g_ResultFactor2At00657D08;
 extern const float g_ResultMinAlphaAt00658048;
 extern const float g_ResultAlphaStepAt00658044;
 namespace ResultPresentationF244 {
-    void Present();
     void MusicCue(int id);
     void ChangeScene(int x,int y,int one,int mode);
 }
@@ -25,7 +25,7 @@ unsigned short ResultScene::Update()
 {
     PollInput();
     Render();
-    ResultPresentationF244::Present();
+    Graphics::Present();
     if ((field00C)==1) {
         if ((field040)<6) {
             offsets[4]=0;
