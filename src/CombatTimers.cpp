@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "CombatTimers.hpp"
 void Fighter::UpdateCounters()
 {

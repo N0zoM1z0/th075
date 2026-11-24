@@ -119,7 +119,7 @@ case 0x2EF: {
         velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
         velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
-        if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
+        if ((fieldF04)<g_OptionsModeAt006714D0*2+8) {
             ++fieldF04;
             ResetSecondaryCounter(15);
         }
@@ -241,7 +241,7 @@ case 0x2F0: {
         velocityX=float(scriptCounterF00)*g_F747_BounceYAt00658044;
         velocityY=float(scriptCounterF02)*g_F747_BounceYAt00658044;
         PlaySound(7);
-        if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
+        if ((fieldF04)<g_OptionsModeAt006714D0*2+8) {
             ++fieldF04;
             ResetSecondaryCounter(15);
         }

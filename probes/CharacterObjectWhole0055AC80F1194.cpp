@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "CharacterObject.hpp"
 #include "RemiliaFighter.hpp"
 #include "GameLeafHelpers.hpp"
@@ -11,7 +12,6 @@
 float __cdecl Unknown483300(float first, float second);
 
 // Same observed signed-byte view used by the accepted response policy.
-extern signed char g_StateRepeatLevelAt006714D0;
 
 #undef PlaySound
 
@@ -1765,7 +1765,7 @@ case 910:
         if (AdvanceNestedFrame() == animationStageCount)
             ClearFrameInfo();
         if (animationStage == 38 && animationFrame == 0 &&
-            field0DA < (3 - g_StateRepeatLevelAt006714D0) * 2) {
+            field0DA < (3 - g_OptionsModeAt006714D0) * 2) {
             field0DA++;
             ResetSecondaryCounter(37);
         }
@@ -1823,7 +1823,7 @@ case 912:
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = -RecordedRange(
-            0, g_StateRepeatLevelAt006714D0 * 3 + 40) - 20;
+            0, g_OptionsModeAt006714D0 * 3 + 40) - 20;
         velocityX = 0.0f;
         velocityY = 0.0f;
         ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1954,16 +1954,16 @@ case 915:
     x = facing * velocityX + x;
     y = y - velocityY;
     field0D8--;
-    if (g_StateRepeatLevelAt006714D0 == 3 && ++field0DA > 180)
+    if (g_OptionsModeAt006714D0 == 3 && ++field0DA > 180)
         field0DA = field0DA - 360;
     SetPolarVelocity(field0DA, 7.0f);
     if (field0D8 <= 0) {
         owner->field314 = field0DA;
         owner->SpawnBattleEffect(
             916, x, y, facing, 1);
-        field0D8 = 10 - g_StateRepeatLevelAt006714D0;
+        field0D8 = 10 - g_OptionsModeAt006714D0;
     }
-    if (g_StateRepeatLevelAt006714D0 > 0) {
+    if (g_OptionsModeAt006714D0 > 0) {
         if (y > owner->field2E0 && field0DC < 1 && velocityY < 0.0f) {
             owner->PlaySound(11);
             field0DA = -field0DA;

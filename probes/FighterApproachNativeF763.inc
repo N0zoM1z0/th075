@@ -45,13 +45,13 @@
                 }
             }
             if (AdvanceNestedFrame()==(animationStageCount)) {
-                if ((scriptCounterF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                if ((scriptCounterF00)<3-static_cast<int>(g_OptionsModeAt006714D0)) {
                     ++scriptCounterF00;
                     ResetSecondaryCounter(12);
                     break;
                 }
                 scriptCounterF00=0;
-                if (g_CloudOpponentAt006714D0==3) {
+                if (g_OptionsModeAt006714D0==3) {
                     ResetPrimaryCounters(0x2DF);
                     break;
                 }

@@ -1,8 +1,8 @@
+#include "GameSharedState.hpp"
 #include "TextureManagerF198.hpp"
 #include "CharacterSelectScene.hpp"
 #include "BattleHud43E040.hpp"
 #include "SpriteTransform.hpp"
-extern signed char g_CombatMode;
 extern signed char g_SelectOptionAt00671434[];
 extern unsigned char g_SelectOptionAt00671438[];
 

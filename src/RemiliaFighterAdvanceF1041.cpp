@@ -1,8 +1,8 @@
+#include "GameSharedState.hpp"
 #include "RemiliaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of RemiliaFighter::Advance at 00543210.
 
-extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
 extern float g_F759_C8DecelAt006593E8;
 extern float g_F759_C9DecelAt00658290;
@@ -79,7 +79,6 @@ extern float g_BurstXAt00658400;
 extern float g_BurstXAt00659420;
 extern float g_BurstXAt00658370;
 extern float g_BurstXAt006590A8;
-extern signed char g_CloudOpponentAt006714D0;
 extern float g_ProjectileFallAt006590B4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_BounceScaleAt00657F74;

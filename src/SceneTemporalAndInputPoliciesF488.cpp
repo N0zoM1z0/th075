@@ -1,3 +1,5 @@
+#include "BattleResourceLoaders.hpp"
+#include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "Graphics.hpp"
 #include "GraphicsDevice.hpp"
@@ -9,10 +11,6 @@
 // original 32-bit/16-bit elapsed-frame counters are preserved.
 // Three complete native scene update policies and two independent original
 // game-scene input paths. These own only borrowed native base call ABIs.
-extern signed char g_LoadModeAt006714B4;
-extern signed char g_LoadCharacterAt0067161E;
-extern void __cdecl LoadFightersAt004176F0();
-extern void __cdecl LoadStageAt004183D0();
 class SceneAdvanceBaseF488 {
 public:virtual void F0();virtual void F1();virtual void VAdvance();
 };
@@ -49,10 +47,10 @@ unsigned short OpeningSceneAdvanceF488::Advance(){
 unsigned short LoadingSceneAdvanceF488::Advance(){
  VAdvance();
  if(!field00C){
-   LoadFightersAt004176F0();
-   if(g_LoadModeAt006714B4==3 && g_LoadCharacterAt0067161E>=8)
+   BattleCharacterLoaderF398::LoadCharacters();
+   if(g_CombatMode==3 && g_StageAt0067161E>=8)
       return 0x1108;
-   LoadStageAt004183D0();
+   BattleStageLoaderF389::LoadStage();
    field00C=1;
  }
  return 0x2000;

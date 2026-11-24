@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "AliceFighter.hpp"
 
 extern float g_AliceArenaLeftAt00658370;
@@ -37,7 +38,6 @@ extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaResourceYAt00659280;
 extern float g_MarisaSpecialProjectileYAt00658400;
 extern float g_MarisaSpecialProjectileYAt0065929C;
-extern signed char g_ModeAt006714B4;
 extern float g_OneShotYAt0065928C;
 extern float g_ProjectileFallAt006590B4;
 extern float g_ReimuC8ClampAt006590B0;
@@ -46,7 +46,6 @@ extern float g_ReimuLeapDragAt006583FC;
 extern float g_ReimuRepeatDragAt00659090;
 extern float g_RepeatScaleAt00658348;
 extern double g_RiseAt00658050;
-extern signed char g_StateRepeatLevelAt006714D0;
 extern float g_StopThresholdAt00657480;
 extern float g_SubtractAt00657478;
 extern float g_ThresholdAt0065782C;
@@ -996,7 +995,7 @@ void AliceFighter::Advance() {
     }
 
     case 0x63: {
-        if (g_ModeAt006714B4 != 3 ||
+        if (g_CombatMode != 3 ||
             field2CD == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
@@ -3318,7 +3317,7 @@ void AliceFighter::Advance() {
             field05C = 0.4f;
         }
         if (animationStage == 10 && animationFrame == 0) {
-            if (g_StateRepeatLevelAt006714D0 == 0) {
+            if (g_OptionsModeAt006714D0 == 0) {
                 for (int shot = 0; shot < 3; ++shot) {
                     field314 = static_cast<float>(shot * 80 - 80);
                     field318 = 10.0f;
@@ -3326,7 +3325,7 @@ void AliceFighter::Advance() {
                         (y) + g_AliceEffectYAt00658368, facing, 1);
                 }
             }
-            if (g_StateRepeatLevelAt006714D0 == 1) {
+            if (g_OptionsModeAt006714D0 == 1) {
                 for (int shot = 0; shot < 4; ++shot) {
                     field314 = static_cast<float>(shot * 80 - 120);
                     field318 = 10.0f;
@@ -3334,7 +3333,7 @@ void AliceFighter::Advance() {
                         (y) + g_AliceEffectYAt00658368, facing, 1);
                 }
             }
-            if (g_StateRepeatLevelAt006714D0 == 2) {
+            if (g_OptionsModeAt006714D0 == 2) {
                 for (int shot = 0; shot < 5; ++shot) {
                     field314 = static_cast<float>(shot * 80 - 160);
                     field318 = 10.0f;
@@ -3342,7 +3341,7 @@ void AliceFighter::Advance() {
                         (y) + g_AliceEffectYAt00658368, facing, 1);
                 }
             }
-            if (g_StateRepeatLevelAt006714D0 == 3) {
+            if (g_OptionsModeAt006714D0 == 3) {
                 for (int shot = 0; shot < 6; ++shot) {
                     field314 = static_cast<float>(shot * 80 - 200);
                     field318 = 10.0f;
@@ -3364,7 +3363,7 @@ void AliceFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 14 && animationFrame == 0) {
-            if (g_StateRepeatLevelAt006714D0 == 0) {
+            if (g_OptionsModeAt006714D0 == 0) {
                 for (int shot = 0; shot < 3; ++shot) {
                     field314 = static_cast<float>(shot * 40 + 20);
                     field318 = 200.0f;
@@ -3372,7 +3371,7 @@ void AliceFighter::Advance() {
                         (y) + g_MarisaResourceYAt00659274, facing, 1);
                 }
             }
-            if (g_StateRepeatLevelAt006714D0 == 1) {
+            if (g_OptionsModeAt006714D0 == 1) {
                 for (int shot = 0; shot < 4; ++shot) {
                     field314 = static_cast<float>(shot * 40 + 20);
                     field318 = 200.0f;
@@ -3380,7 +3379,7 @@ void AliceFighter::Advance() {
                         (y) + g_MarisaResourceYAt00659274, facing, 1);
                 }
             }
-            if (g_StateRepeatLevelAt006714D0 == 2) {
+            if (g_OptionsModeAt006714D0 == 2) {
                 for (int shot = 0; shot < 5; ++shot) {
                     field314 = static_cast<float>(shot * 40 + 20);
                     field318 = 200.0f;
@@ -3388,7 +3387,7 @@ void AliceFighter::Advance() {
                         (y) + g_MarisaResourceYAt00659274, facing, 1);
                 }
             }
-            if (g_StateRepeatLevelAt006714D0 == 3) {
+            if (g_OptionsModeAt006714D0 == 3) {
                 for (int shot = 0; shot < 6; ++shot) {
                     field314 = static_cast<float>(shot * 40 + 20);
                     field318 = 200.0f;
@@ -3422,7 +3421,7 @@ void AliceFighter::Advance() {
             field05C = -0.5f;
         }
         if (animationStage == 8 && animationFrame == 0 &&
-                scriptCounterF00 < g_StateRepeatLevelAt006714D0 * 2 + 2) {
+                scriptCounterF00 < g_OptionsModeAt006714D0 * 2 + 2) {
             field314 = static_cast<float>(scriptCounterF00 * 20);
             field318 = static_cast<float>(scriptCounterF00 * 30);
             SpawnBattleEffect(900, static_cast<float>(facing * 10) + x,
@@ -3450,7 +3449,7 @@ void AliceFighter::Advance() {
                 static_cast<float>((16 - RecordedRange(0, 10)) * facing) + x,
                 ((y) + g_AliceEffectYAt00659478) + static_cast<float>(RecordedRange(0, 10)),
                 facing, 1);
-            aiCardTimer = static_cast<short>(360 - g_StateRepeatLevelAt006714D0 * 60);
+            aiCardTimer = static_cast<short>(360 - g_OptionsModeAt006714D0 * 60);
         }
         if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 5) {
             ++scriptCounterF00;
@@ -3488,7 +3487,7 @@ void AliceFighter::Advance() {
         }
         if (animationStage == 6 && animationFrame == 0) {
             PlaySound(3);
-            for (int shot = 0; shot < g_StateRepeatLevelAt006714D0 * 3 + 6; ++shot) {
+            for (int shot = 0; shot < g_OptionsModeAt006714D0 * 3 + 6; ++shot) {
                 field314 = static_cast<float>(RecordedRange(0, 180) - 90);
                 field318 = static_cast<float>(RecordedRange(0, 80) + 150);
                 SpawnBattleEffect(0x38B, static_cast<float>(facing * 10) + x,

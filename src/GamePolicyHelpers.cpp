@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "FontSurface.hpp"
 #include "BattleScene.hpp"
@@ -41,7 +42,7 @@ bool Fighter::IsGroundedStateWindow()
 void Fighter::ConfigureNoticeText(u8 enabled)
 {
     if (enabled) {
-        g_TextRenderer->ConfigureText(35.0f, 360.0f, g_NoticeSelection < 8);
+        g_TextRenderer->ConfigureText(35.0f, 360.0f, g_StageAt0067161E < 8);
         noticeEnabled = 1;
     } else {
         noticeEnabled = 0;

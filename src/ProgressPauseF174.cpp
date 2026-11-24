@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "BattleScene.hpp"
 #include "ProgressPauseF174.hpp"

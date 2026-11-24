@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
@@ -16,7 +17,6 @@ public:
 };
 extern ReplaySavePathsF269 g_ReplaySavePathsAt00671750;
 extern unsigned char g_CurrentFighterAt006714C8;
-extern unsigned char g_CurrentDifficultyAt006714D0;
 extern unsigned char* g_SelectedFighterAt00671418;
 extern const char g_ReplaySceneRootAt00657F44[];
 extern const char g_ReplaySceneFileAt00657F4C[];
@@ -35,7 +35,7 @@ ReplaySceneInitF269::ReplaySceneInitF269()
     FIELD(short,0x10)=0;
     FIELD(short,0x12)=0;
     FIELD(short,0x14)=0;
-    g_GameProgress.SetSelection(g_CurrentFighterAt006714C8,g_CurrentDifficultyAt006714D0);
+    g_GameProgress.SetSelection(g_CurrentFighterAt006714C8,static_cast<unsigned char>(g_OptionsModeAt006714D0));
     FIELD(void*,0x0c)=g_GameProgress.GetSelectedRecordAddress();
     FIELD(unsigned char,0x120)=static_cast<ProgressDifficulty*>(FIELD(void*,0x0c))->InsertRankedScore(
         *reinterpret_cast<int*>(g_SelectedFighterAt00671418+0x2d0));

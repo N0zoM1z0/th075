@@ -64,7 +64,7 @@ case 0x2E6: {
             1,1,0,1);
     if ((animationStage)>10 && (animationStage)<17 && (scriptCounterF02)==0) {
         ++scriptCounterF02;
-        if (g_F1004_ModeAt006714D0==0) {
+        if (g_OptionsModeAt006714D0==0) {
             for (int shot=0;shot<12;++shot) {
                 field314=float(shot*30);
                 SpawnBattleEffect(0x387,
@@ -74,7 +74,7 @@ case 0x2E6: {
                     facing,1);
             }
         }
-        if (g_F1004_ModeAt006714D0==1) {
+        if (g_OptionsModeAt006714D0==1) {
             for (int shot=0;shot<20;++shot) {
                 field314=float(shot*18);
                 SpawnBattleEffect(0x387,
@@ -84,7 +84,7 @@ case 0x2E6: {
                     facing,1);
             }
         }
-        if (g_F1004_ModeAt006714D0==2) {
+        if (g_OptionsModeAt006714D0==2) {
             for (int shot=0;shot<30;++shot) {
                 field314=float(shot*12);
                 SpawnBattleEffect(0x387,
@@ -94,7 +94,7 @@ case 0x2E6: {
                     facing,1);
             }
         }
-        if (g_F1004_ModeAt006714D0==3) {
+        if (g_OptionsModeAt006714D0==3) {
             for (int shot=0;shot<40;++shot) {
                 field314=float(shot*9);
                 SpawnBattleEffect(0x387,
@@ -108,7 +108,7 @@ case 0x2E6: {
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_OptionsModeAt006714D0*20);
     }
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "ReimuFighter.hpp"
 // Natural-C++ reconstruction of ReimuFighter::Advance at 0045DD70.
 
@@ -5,7 +6,6 @@ extern float g_ReimuStormFallAt00658044;
 extern float g_ReimuWarpSpreadAt006583B4;
 extern float g_ReimuWarpSpeedAt00657CF8;
 extern float g_ReimuArenaCenterAt00657884;
-extern signed char g_ReimuRepeatSettingAt006714D0;
 extern float g_ReimuReverseDriftAt0065907C;
 extern float g_ReimuRandomLiftAt00657850;
 extern float g_ReimuMeterTrailYAt0065835C;
@@ -32,7 +32,6 @@ extern float g_ReimuRotationStepAt00657858;
 extern float g_ReimuBounceXAt006590BC;
 extern float g_ReimuBounceYAt00658044;
 extern float g_ReimuRecoveryScaleAt006590B8;
-extern signed char g_ModeAt006714B4;
 extern float g_ReimuAirDragAt00658348;
 extern float g_ReimuGroundDragAt00658350;
 extern float g_ReimuLateDragAt006581E0;

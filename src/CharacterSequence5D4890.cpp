@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence5D4890.hpp"

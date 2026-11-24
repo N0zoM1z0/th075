@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "YoumuFighter.hpp"
 #include "Fighter.hpp"
 #include "YoumuHistoryQueueF378.hpp"
@@ -8,7 +9,6 @@
 // stack, not an invented local or full private fighter layout.
 // The snapshot is a genuine physically observed 16-byte command structure,
 // not an inferred complete character class or artificial padding.
-extern signed char g_CharacterSpecialModeAt006714B4;
 void YoumuFighter::AdvanceAuxiliary() {
     if (field082==0 && field3B8==0) {
         ObservedInputSnapshotF378 snapshot;
@@ -33,10 +33,10 @@ void YoumuFighter::AdvanceAuxiliary() {
         field2F2=255;
         field2F3=255;
         field2F4=255;
-        if (g_CharacterSpecialModeAt006714B4 != 3) {
+        if (g_CombatMode != 3) {
             SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
             ++fieldF0E;
-        } else if (g_CharacterSpecialModeAt006714B4 == 3) {
+        } else if (g_CombatMode == 3) {
             if (fieldF0C==1) {
                 SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
                 ++fieldF0E;

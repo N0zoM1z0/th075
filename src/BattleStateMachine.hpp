@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #ifndef TH075_BATTLE_STATE_MACHINE_HPP
 #define TH075_BATTLE_STATE_MACHINE_HPP
@@ -15,9 +16,7 @@ extern signed char g_StateContinueCount;
 extern signed char g_StateReturnFlag;
 extern signed char g_StatePlayerIds[2];
 extern unsigned char g_StateReplayChanged;
-extern unsigned char g_StateFadeAlpha;
 extern unsigned long g_StateScoreThreshold;
 extern int g_StateStageTotal;
-extern int g_StateResetCounter;
 extern float g_StateFadeValue;
 #endif

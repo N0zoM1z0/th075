@@ -49,6 +49,22 @@ and the configuration writer use the same storage. A headless executable
 linked from the aggregate library saved a 90-byte `config.ini`, cleared
 the test state and loaded the stored key bytes, display flags and volumes.
 
+The options setting at `0x006714D0` has one signed byte definition and
+still occupies one byte in `config.ini`. The combat mode at `0x006714B4`,
+stage byte at `0x0067161E`, fade byte at `0x006714D1`, and transition
+counter at `0x0067149C` each have one zero-initialized definition. The
+2,166 COFF references in the comparison units use zero addends for
+these locations. `ConfigLoadF194.cpp` defines all five variables and
+lets archive consumers access them independently of resource initialization.
+A headless archive-linked smoke test verified all five startup zeros
+and the round trip from signed `-91` to byte `0xA5` at offset `0x56` and back.
+The loading scene calls the existing character loader at `0x004176F0`.
+Loading and sequence dispatch call the same stage loader at `0x004183D0`.
+
+When reusing a cold-replayed object in the aggregate build, route it by
+the translation unit's filename stem. The configured comparison object
+`RemiliaObjectAdvance.obj` is archived as `CharacterObjectWhole0055AC80F1194.obj`.
+
 `Graphics::BeginFrame` returns the status from `BeginTarget` on both
 branches. The native caller tests AL, and the bool declaration preserves
 all 36 bytes of the wrapper. The application and scene drawing callers

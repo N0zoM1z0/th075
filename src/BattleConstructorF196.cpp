@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "CameraMotion.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -9,7 +10,6 @@
 
 extern void* g_CombatActorAAt00671418;
 extern void* g_CombatActorBAt0067141C;
-extern signed char g_CombatModeAt006714B4;
 extern signed char g_FrameClockModeAt0066C238;
 extern unsigned char g_FramePresentToggleAt0066C237;
 extern unsigned char g_SequenceStageAt00671632;
@@ -58,7 +58,7 @@ BattleScene::BattleScene()
     field028 = timeGetTime();
     field01C = 0;
     g_SequenceStageAt00671632 = 0;
-    if (g_CombatModeAt006714B4 == 3) {
+    if (g_CombatMode == 3) {
         g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
         fighters[0]->noticeEnabled = 0;
         field08C = -200.0f;

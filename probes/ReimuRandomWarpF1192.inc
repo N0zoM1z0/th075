@@ -16,7 +16,7 @@ case 0x2EF: {
             break;
         }
     }
-    if ((scriptCounterF00)<g_ReimuRepeatSettingAt006714D0*2+3 && (animationFrame)==0 &&
+    if ((scriptCounterF00)<g_OptionsModeAt006714D0*2+3 && (animationFrame)==0 &&
         ((animationStage)==7 || (animationStage)==8)) {
         ++scriptCounterF00;
         PlaySound(12);
@@ -27,7 +27,7 @@ case 0x2EF: {
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=RecordedRange(0,60)+120-g_ReimuRepeatSettingAt006714D0*40;
+        aiCardTimer=RecordedRange(0,60)+120-g_OptionsModeAt006714D0*40;
     }
     if ((animationStage)==3 && (animationFrame)==0) {
         x=((*(&opponent->x))+g_ReimuWarpSpreadAt006583B4)-float(RecordedRange(0,2000));

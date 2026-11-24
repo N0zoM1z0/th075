@@ -31,7 +31,7 @@
                 PlaySound(18);
                 aiCardTimer=120;
                 fieldF04=static_cast<short>(RecordedRange(0,359));
-                if (g_CloudOpponentAt006714D0==0) {
+                if (g_OptionsModeAt006714D0==0) {
                     for (int i=0; i<6; ++i) {
                         field314=static_cast<float>(i*60+(fieldF04));
                         SpawnBattleEffect(0x393,
@@ -40,7 +40,7 @@
                             facing,1);
                     }
                 }
-                if (g_CloudOpponentAt006714D0==1) {
+                if (g_OptionsModeAt006714D0==1) {
                     for (int i=0; i<6; ++i) {
                         field314=static_cast<float>(i*60+(fieldF04));
                         SpawnBattleEffect(0x393,
@@ -49,7 +49,7 @@
                             facing,1);
                     }
                 }
-                if (g_CloudOpponentAt006714D0==2) {
+                if (g_OptionsModeAt006714D0==2) {
                     for (int i=0; i<8; ++i) {
                         field314=static_cast<float>(i*45+(fieldF04));
                         SpawnBattleEffect(0x393,
@@ -58,7 +58,7 @@
                             facing,1);
                     }
                 }
-                if (g_CloudOpponentAt006714D0==3) {
+                if (g_OptionsModeAt006714D0==3) {
                     for (int i=0; i<8; ++i) {
                         field314=static_cast<float>(i*45+(fieldF04));
                         SpawnBattleEffect(0x393,

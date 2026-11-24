@@ -1,8 +1,8 @@
+#include "GameSharedState.hpp"
 #include "TextureManagerF198.hpp"
 #include "CharacterSelectScene.hpp"
 #include "BattleHud43E040.hpp"
 #include "SpriteTransform.hpp"
-extern signed char g_CombatMode;
 
 #define ANGLE choiceStop[i]
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)

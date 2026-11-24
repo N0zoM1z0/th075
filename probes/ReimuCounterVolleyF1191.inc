@@ -24,7 +24,7 @@ case R1191_ACTION: {
 #include "ReimuCounterShotF1191.inc"
     }
     if ((animationStage)==R1191_FIRST_STAGE+2 && (animationFrame)==0 &&
-        (scriptCounterF00)<g_ReimuRepeatSettingAt006714D0*3+1) {
+        (scriptCounterF00)<g_OptionsModeAt006714D0*3+1) {
 #include "ReimuCounterShotF1191.inc"
         ResetSecondaryCounter(R1191_FIRST_STAGE);
     }

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
 // Entire original 152-byte battle end scene state policy, including the
@@ -18,7 +19,6 @@ public:
 };
 extern BattleEndFighterF463* g_CurrentFighterAt00671418;
 extern unsigned int g_BestResultScoreAt00671420;
-extern signed char g_EndCharacterAt0067161E;
 #define FIGHTER(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(g_CurrentFighterAt00671418)+(off)))
 unsigned short BattleEndSceneF463::Update() {
     PollInput();
@@ -26,7 +26,7 @@ unsigned short BattleEndSceneF463::Update() {
     g_CurrentFighterAt00671418->AdvanceEndAction();
     Graphics::Present();
     if (FIGHTER(unsigned char,0x6EF)) {
-        if (g_EndCharacterAt0067161E==10) return 0x110B;
+        if (g_StageAt0067161E==10) return 0x110B;
         MusicF204::PlayTrackByIndex(40);
         AudioControl407CA0::ScheduleFade(-10000,-300,1,1);
         if (g_BestResultScoreAt00671420 < FIGHTER(unsigned int,0x2D0)) return 0x220A;

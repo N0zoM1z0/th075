@@ -1,4 +1,5 @@
 #pragma once
+#include "GameSharedState.hpp"
 #include "BattleHud43E040.hpp"
 
 // Pointer-only view. The complete native getters return a zero-extended word
@@ -9,4 +10,3 @@ public:
     int GetValueAt0268(signed char);
     int GetValueAt0394(signed char);
 };
-extern signed char g_StateRepeatLevelAt006714D0;

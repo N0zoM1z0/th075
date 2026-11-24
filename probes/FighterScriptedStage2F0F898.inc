@@ -56,7 +56,7 @@ case 0x2F0: {
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         aiCardTimer=static_cast<short>(
-            static_cast<int>(g_CloudOpponentAt006714D0)*30+240);
+            static_cast<int>(g_OptionsModeAt006714D0)*30+240);
         ResetTransform(100.0f,60.0f,0.0f);
         scaleX=3.0f;
         scaleY=0.05f;

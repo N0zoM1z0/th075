@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "BattleScene.hpp"
 #include <stdlib.h>
 #include "Graphics.hpp"

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "PatchouliFighter.hpp"
 
 extern float g_AliceEffectYAt00658264;
@@ -30,7 +31,6 @@ extern float g_MarisaResourceYAt006581DC;
 extern float g_MarisaResourceYAt006590AC;
 extern float g_MarisaSpecialProjectileYAt00658400;
 extern float g_MarisaSpecialProjectileYAt0065929C;
-extern signed char g_ModeAt006714B4;
 extern float g_PatchouliEffectYAt00657860;
 extern float g_PatchouliEffectYAt00658294;
 extern float g_PatchouliEffectYAt00658400;
@@ -47,7 +47,6 @@ extern float g_ProjectileFallAt006590B4;
 extern float g_ReimuLeapDragAt006583FC;
 extern float g_RepeatScaleAt00658348;
 extern double g_RiseAt00658050;
-extern signed char g_StateRepeatLevelAt006714D0;
 extern float g_StopThresholdAt00657480;
 extern float g_SubtractAt00657478;
 extern float g_ThresholdAt0065782C;
@@ -986,7 +985,7 @@ void PatchouliFighter::Advance() {
     }
 
     case 0x63: {
-        if (g_ModeAt006714B4 != 3 ||
+        if (g_CombatMode != 3 ||
             field2CD == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
@@ -3355,7 +3354,7 @@ void PatchouliFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            aiCardTimer = static_cast<short>(RecordedRange(0, 60) + 180 - g_StateRepeatLevelAt006714D0 * 30);
+            aiCardTimer = static_cast<short>(RecordedRange(0, 60) + 180 - g_OptionsModeAt006714D0 * 30);
         }
         if (animationStage == 4 && animationFrame == 0) {
             Fighter::SpawnTrackedEffect(800, static_cast<float>(facing * 66) + x,
@@ -3389,7 +3388,7 @@ void PatchouliFighter::Advance() {
             }
         }
         if (animationStage > 7 && animationStage < 11 &&
-                fieldF04 < g_StateRepeatLevelAt006714D0 * 2 + 3) {
+                fieldF04 < g_OptionsModeAt006714D0 * 2 + 3) {
             --fieldF06;
             if (fieldF06 <= 0) {
                 SpawnBattleEffect(0x391, static_cast<float>(facing * 77) + x,
@@ -3401,7 +3400,7 @@ void PatchouliFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            aiCardTimer = static_cast<short>(RecordedRange(60, 90) - g_StateRepeatLevelAt006714D0 * 20);
+            aiCardTimer = static_cast<short>(RecordedRange(60, 90) - g_OptionsModeAt006714D0 * 20);
         }
         if (animationStage == 2 && animationFrame == 0) {
             velocityX = -4.0f;
@@ -3440,7 +3439,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(0);
             if (y > g_ThresholdAt0065782C)
                 ResetPrimaryCounters(9);
-            aiCardTimer = static_cast<short>(RecordedRange(60, 90) - g_StateRepeatLevelAt006714D0 * 30);
+            aiCardTimer = static_cast<short>(RecordedRange(60, 90) - g_OptionsModeAt006714D0 * 30);
         }
         if (animationStage == 7 && animationFrame == 0) {
             field314 = static_cast<float>(RecordedRange(0, 40) - 20);
@@ -3495,7 +3494,7 @@ void PatchouliFighter::Advance() {
                     SpawnBattleEffect(0x38B, (field2DC) + g_ContactProjectionAt00657888,
                         static_cast<float>(RecordedRange(0, 280)), facing, 1);
                 }
-                fieldF04 = static_cast<short>(35 - g_StateRepeatLevelAt006714D0 * 8);
+                fieldF04 = static_cast<short>(35 - g_OptionsModeAt006714D0 * 8);
             }
             if (RecordedRange(0, 100) < 50) {
                 SpawnBattleEffect(0x38C, static_cast<float>(RecordedRange(0, 640) * facing) + x,
@@ -3507,7 +3506,7 @@ void PatchouliFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            aiCardTimer = static_cast<short>(180 - g_StateRepeatLevelAt006714D0 * 30);
+            aiCardTimer = static_cast<short>(180 - g_OptionsModeAt006714D0 * 30);
         }
         if (animationStage == 5 && animationFrame == 0)
             scriptCounterF00 = 100;

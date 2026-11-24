@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "FighterResourceParameters452B30.hpp"
 #include "GameProgress.hpp"
 

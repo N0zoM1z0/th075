@@ -1,4 +1,5 @@
 #pragma once
+#include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "GraphicsDraw.hpp"
 #include "GameLeafHelpers.hpp"
@@ -32,7 +33,5 @@ public:
     void RenderFadeOverlay();
 };
 extern unsigned char g_FramePresentToggle;
-extern unsigned char g_StateFadeAlpha;
-extern int g_StateResetCounter;
 extern unsigned char g_OptionsFlagAt00671428;
 extern signed char g_RenderOrderAt0068C860;

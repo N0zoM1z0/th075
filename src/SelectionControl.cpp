@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "SoundBank.hpp"
@@ -9,7 +10,6 @@
 int __cdecl AbsoluteSelectionInputF130(int);
 extern signed char g_SelectionCharacters[];
 extern signed char g_SelectionPalettes[];
-extern signed char g_SelectionDifficulty;
 void CharacterSelectScene::UpdateSelect(signed char side) {
     if (portraitReturn[side] > 0.0f) portraitReturn[side] = portraitReturn[side] - 5.0f;
     if (portraitEnterX[side] > 0.0f) portraitEnterX[side] = portraitEnterX[side] - 4.0f;
@@ -61,7 +61,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
                 if ((chosenCharacter[side]) == 6 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
             }
         }
-        g_GameProgress.SetSelection(chosenCharacter[0], g_SelectionDifficulty);
+        g_GameProgress.SetSelection(chosenCharacter[0], g_OptionsModeAt006714D0);
     }
     if ((input[side].confirm) == 1 || (input[side].toggle) == 1 || (stageCountdown[side]) == 1) {
         g_SoundBank->Play(45);
@@ -187,7 +187,7 @@ void FighterControlsF130::UpdateControls() {
             if (g_CombatMode == 3) UpdatePracticeDirections();
             else if (g_CombatMode == 5) ApplyMode5Direction();
             else UpdateOrdinaryDirections();
-            if (g_SelectionDifficulty < 2 && rand() > (g_SelectionDifficulty * 3 + 1) * 2048) {
+            if (g_OptionsModeAt006714D0 < 2 && rand() > (g_OptionsModeAt006714D0 * 3 + 1) * 2048) {
                 field4E8 = 0;
                 field4EC = 0;
                 field4F0 = 0;

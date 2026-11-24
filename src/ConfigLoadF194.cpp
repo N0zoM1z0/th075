@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "DisplayOptions.hpp"
 #include <windows.h>
 
@@ -12,10 +13,15 @@ BYTE g_KeyBindingsAt00671440[0x50];
 BYTE g_OptionsFlagAt00671604;
 BYTE g_SettingsByteAt006714D2;
 BYTE g_OptionsFlagAt00671430;
-BYTE g_OptionsModeAt006714D0;
+signed char g_OptionsModeAt006714D0;
 BYTE g_OptionsFlagAt00671428;
 BYTE g_StreamVolumeAt006714B7;
 BYTE g_SoundVolumeAt006714B6;
+
+signed char g_CombatMode;
+signed char g_StageAt0067161E;
+unsigned char g_StateFadeAlpha;
+int g_StateResetCounter;
 
 namespace GameConfigF193 {
 void ReadIni()

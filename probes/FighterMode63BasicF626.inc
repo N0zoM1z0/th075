@@ -6,7 +6,7 @@ case 0x63: {
     // Two real short-circuit PE edges: mode != 3 jumps into the
     // stage-two path, while (mode == 3 && this+0x2CD != 0) jumps to
     // the other three action transitions. This is NOT a simple if(mode).
-    if (g_ModeAt006714B4 != 3 ||
+    if (g_CombatMode != 3 ||
         field2CD==0) {
         if (animationStage==2 &&
             field39D>0 &&

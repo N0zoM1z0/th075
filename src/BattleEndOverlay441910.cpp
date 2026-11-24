@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "SpriteTransform.hpp"
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"

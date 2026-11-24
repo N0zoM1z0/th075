@@ -1,6 +1,6 @@
+#include "GameSharedState.hpp"
 #include "MarisaFighter.hpp"
 
-extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_MarisaCommandSpeedUpperAt006592A0;
@@ -35,7 +35,6 @@ extern float g_MarisaMinimumDriftAt00659278;
 extern float g_MarisaHighBoundaryAt0065926C;
 extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaNegativeCardDriftAt00659268;
-extern signed char g_MarisaDifficultyAt006714D0;
 extern float g_MarisaCardVelocityScaleAt006590B4;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
@@ -1020,7 +1019,7 @@ void MarisaFighter::Advance() {
     }
 
     case 0x63: {
-        if (g_ModeAt006714B4 != 3 ||
+        if (g_CombatMode != 3 ||
             field2CD == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
@@ -3863,7 +3862,7 @@ void MarisaFighter::Advance() {
                 SpawnBattleEffect(0x385,
                     x - static_cast<float>(facing * 140),
                     (y) + g_MarisaResourceYAt006590AC, facing, 1);
-                scriptCounterF02 = -(g_MarisaDifficultyAt006714D0 - 3);
+                scriptCounterF02 = -(g_OptionsModeAt006714D0 - 3);
             }
         }
         if (y > g_ThresholdAt0065782C && animationStage > 16) {
@@ -3881,7 +3880,7 @@ void MarisaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             aiCardTimer = static_cast<short>(RecordedRange(0, 60) + 180 -
-                g_MarisaDifficultyAt006714D0 * 30);
+                g_OptionsModeAt006714D0 * 30);
         }
         if (animationStage == 9 && animationFrame == 0) {
             velocityX = 25.0f;
@@ -3909,7 +3908,7 @@ void MarisaFighter::Advance() {
         if (animationStage > 5 && animationStage < 8 && animationFrame == 0) {
             scriptCounterF02 = static_cast<short>(RecordedRange(0, 4));
             field314 = static_cast<float>(RecordedRange(0, 0x167));
-            for (int i = 0; i < static_cast<int>(g_MarisaDifficultyAt006714D0) + 1; ++i) {
+            for (int i = 0; i < static_cast<int>(g_OptionsModeAt006714D0) + 1; ++i) {
                 PlaySound(0x14);
                 field31C = 3.0f;
                 field318 = static_cast<float>(i * 7);
@@ -3922,10 +3921,10 @@ void MarisaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             aiCardTimer = static_cast<short>(RecordedRange(60, 120) -
-                g_MarisaDifficultyAt006714D0 * 20);
+                g_OptionsModeAt006714D0 * 20);
         }
         if (animationStage == 8 && animationFrame == 0 &&
-            scriptCounterF00 < g_MarisaDifficultyAt006714D0 * 3 + 10) {
+            scriptCounterF00 < g_OptionsModeAt006714D0 * 3 + 10) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
         }
@@ -3946,7 +3945,7 @@ void MarisaFighter::Advance() {
         if (animationStage > 17 && animationStage < 22 && animationFrame == 0) {
             scriptCounterF02 = static_cast<short>(RecordedRange(0, 4));
             field314 = static_cast<float>(RecordedRange(0, 0x167));
-            for (int i = 0; i < static_cast<int>(g_MarisaDifficultyAt006714D0) + 1; ++i) {
+            for (int i = 0; i < static_cast<int>(g_OptionsModeAt006714D0) + 1; ++i) {
                 PlaySound(0x14);
                 field318 = static_cast<float>(i * 5);
                 field31C = 3.0f;
@@ -3968,7 +3967,7 @@ void MarisaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             aiCardTimer = static_cast<short>(RecordedRange(60, 180) -
-                g_MarisaDifficultyAt006714D0 * 20);
+                g_OptionsModeAt006714D0 * 20);
         }
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = static_cast<float>(RecordedRange(0, 8)) +
@@ -3978,7 +3977,7 @@ void MarisaFighter::Advance() {
             field05C = 0.2f;
         }
         if (animationStage == 0x16 && animationFrame == 0 &&
-            scriptCounterF00 < g_MarisaDifficultyAt006714D0 * 3 + 10) {
+            scriptCounterF00 < g_OptionsModeAt006714D0 * 3 + 10) {
             ++scriptCounterF00;
             ResetSecondaryCounter(0x15);
         }
@@ -4043,7 +4042,7 @@ void MarisaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             aiCardTimer = static_cast<short>(RecordedRange(0x78, 0xB4) -
-                g_MarisaDifficultyAt006714D0 * 20);
+                g_OptionsModeAt006714D0 * 20);
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x399,
@@ -4061,7 +4060,7 @@ void MarisaFighter::Advance() {
             PlaySound(0);
         }
         if (animationStage == 12 && animationFrame == 0 &&
-            scriptCounterF00 < g_MarisaDifficultyAt006714D0 * 2 + 4) {
+            scriptCounterF00 < g_OptionsModeAt006714D0 * 2 + 4) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
             SpawnBattleEffect(0x32A,
@@ -4097,7 +4096,7 @@ void MarisaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
             aiCardTimer = static_cast<short>(RecordedRange(0x78, 0xB4) -
-                g_MarisaDifficultyAt006714D0 * 20);
+                g_OptionsModeAt006714D0 * 20);
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x39A,
@@ -4115,7 +4114,7 @@ void MarisaFighter::Advance() {
             PlaySound(0);
         }
         if (animationStage == 12 && animationFrame == 0 &&
-            scriptCounterF00 < g_MarisaDifficultyAt006714D0 * 2 + 4) {
+            scriptCounterF00 < g_OptionsModeAt006714D0 * 2 + 4) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
             SpawnBattleEffect(0x32A,
@@ -4194,24 +4193,24 @@ void MarisaFighter::Advance() {
         }
         --scriptCounterF00;
         if (animationStage == 1 && animationFrame == 0) {
-            if (fieldF04 == 0 && g_MarisaDifficultyAt006714D0 < 2) {
+            if (fieldF04 == 0 && g_OptionsModeAt006714D0 < 2) {
                 SpawnBattleEffect(
-                    static_cast<short>(g_MarisaDifficultyAt006714D0 + 0x39F),
+                    static_cast<short>(g_OptionsModeAt006714D0 + 0x39F),
                     x, 0.0f, 1, 1);
             }
-            if (fieldF04 == 4 && g_MarisaDifficultyAt006714D0 > 1) {
+            if (fieldF04 == 4 && g_OptionsModeAt006714D0 > 1) {
                 SpawnBattleEffect(
-                    static_cast<short>(g_MarisaDifficultyAt006714D0 + 0x39F),
+                    static_cast<short>(g_OptionsModeAt006714D0 + 0x39F),
                     opponent->x, 0.0f, 1, 1);
             }
         }
         velocityX = 0.0f;
         if (x < opponent->x - g_MarisaPhaseDivisorBAt0065788C)
-            velocityX = static_cast<float>(g_MarisaDifficultyAt006714D0) *
+            velocityX = static_cast<float>(g_OptionsModeAt006714D0) *
                 g_SubtractAt00657478 + g_AnimationDeltaAt0065747C;
         if ((opponent->x) + g_MarisaPhaseDivisorBAt0065788C < x)
             velocityX = g_MarisaNegativeCardDriftAt00659268 -
-                static_cast<float>(g_MarisaDifficultyAt006714D0) *
+                static_cast<float>(g_OptionsModeAt006714D0) *
                 g_SubtractAt00657478;
         if (animationStage == 1 && y > g_MarisaHighBoundaryAt0065926C) {
             y = 920.0f;
@@ -4219,11 +4218,11 @@ void MarisaFighter::Advance() {
             return;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
-            if (scriptCounterF02 > 0 && g_MarisaDifficultyAt006714D0 < 2) {
+            if (scriptCounterF02 > 0 && g_OptionsModeAt006714D0 < 2) {
                 ResetPrimaryCounters(0x2FA);
                 return;
             }
-            if (scriptCounterF02 > 1 && g_MarisaDifficultyAt006714D0 > 1) {
+            if (scriptCounterF02 > 1 && g_OptionsModeAt006714D0 > 1) {
                 ResetPrimaryCounters(0x2FA);
                 return;
             }
@@ -4233,7 +4232,7 @@ void MarisaFighter::Advance() {
         }
         if (animationStage == 1 && animationFrame == 0) {
             SpawnBattleEffect(
-                static_cast<short>(g_MarisaDifficultyAt006714D0 + 0x39F),
+                static_cast<short>(g_OptionsModeAt006714D0 + 0x39F),
                 x, 0.0f, 1, 1);
         }
         return;

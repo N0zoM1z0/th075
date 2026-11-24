@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "CharacterActionDispatch493470.hpp"
 
 #define TARGET_PRIORITY(index) (static_cast<FighterSequenceInfo *>(sequenceSlots.At(index))->targetPriority)
@@ -105,7 +106,7 @@ void MarisaFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(742);
-        if (g_StateRepeatLevelAt006714D0 == 0) ResetPrimaryCounters(743);
+        if (g_OptionsModeAt006714D0 == 0) ResetPrimaryCounters(743);
         return;
     }
     if (field366 > 0 && y == 0.0f &&

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YuyukoObject::Advance at 0057D580.
 #include "CharacterObject.hpp"
 #include "YuyukoFighter.hpp"
@@ -9,9 +10,6 @@ float __cdecl AngleAt00483300(float, float);
 float __cdecl AbsFloatAt00412D90(float);
 
 extern float g_F1211_AngleDivAt00657828;
-extern signed char g_F1212_DifficultyAt006714D0;
-extern unsigned int g_F1239_DwordAt0067149C;
-extern unsigned char g_F1239_ByteAt006714D1;
 
 void YuyukoObject::Advance()
 {
@@ -1843,7 +1841,7 @@ case 900:
             field07C = 0;
             ResetSecondaryCounter(1);
         }
-        if (animationStage == 3 && animationFrame == 0 && field0D8 < g_F1212_DifficultyAt006714D0 * 2) {
+        if (animationStage == 3 && animationFrame == 0 && field0D8 < g_OptionsModeAt006714D0 * 2) {
             ResetSecondaryCounter(2);
             field07C = 0;
             ++field0D8;
@@ -1869,7 +1867,7 @@ case 902:
             owner->field318 = RecordedRange(0, 6) + 15;
             owner->SpawnBattleEffect(903, (10 - RecordedRange(0, 20)) * facing + x,
                 y, facing, 1);
-            if (g_F1212_DifficultyAt006714D0 == 3 && RecordedRange(0, 100) < 20)
+            if (g_OptionsModeAt006714D0 == 3 && RecordedRange(0, 100) < 20)
                 owner->SpawnBattleEffect(904, (10 - RecordedRange(0, 20)) * facing + x,
                     y, facing, 1);
             field0DA = 3;
@@ -2000,13 +1998,13 @@ case 905:
         }
         if (animationStage == 1 && animationFrame == 0) {
             NoOpAt0045B850(6);
-            if (g_F1212_DifficultyAt006714D0 <= 1 && field0D8 < 5)
+            if (g_OptionsModeAt006714D0 <= 1 && field0D8 < 5)
                 owner->SpawnBattleEffect(902, field0D8 * 300 + RecordedRange(0, 50),
                     0.0f, facing, 1);
-            if (g_F1212_DifficultyAt006714D0 == 2 && field0D8 < 5)
+            if (g_OptionsModeAt006714D0 == 2 && field0D8 < 5)
                 owner->SpawnBattleEffect(902, field0D8 * 270 + RecordedRange(0, 50),
                     0.0f, facing, 1);
-            if (g_F1212_DifficultyAt006714D0 == 3 && field0D8 < 6)
+            if (g_OptionsModeAt006714D0 == 3 && field0D8 < 6)
                 owner->SpawnBattleEffect(902, field0D8 * 240 + RecordedRange(0, 50),
                     0.0f, facing, 1);
         }
@@ -2038,15 +2036,15 @@ case 906:
             if (scaleX > 1.0f) scaleX = 1.0f;
         }
         if (animationStage == 0) {
-            g_F1239_DwordAt0067149C = 0xFFFFFF;
+            g_StateResetCounter = 0xFFFFFF;
             if (field0D8 == 0) {
-                g_F1239_ByteAt006714D1 = 255;
+                g_StateFadeAlpha = 255;
                 field0D8 = 1;
             }
             if (field0D8 == 1) {
-                if (g_F1239_ByteAt006714D1 > 15) g_F1239_ByteAt006714D1 -= 15;
+                if (g_StateFadeAlpha > 15) g_StateFadeAlpha -= 15;
                 else {
-                    g_F1239_ByteAt006714D1 = 0;
+                    g_StateFadeAlpha = 0;
                     field0D8 = 2;
                 }
             }
@@ -2424,7 +2422,7 @@ case 919:
             field07C = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
-            if (field0D8 < 2 - g_F1212_DifficultyAt006714D0) ++field0D8;
+            if (field0D8 < 2 - g_OptionsModeAt006714D0) ++field0D8;
             else {
                 owner->SpawnBattleEffect(904, RecordedRange(0, 1200) + 60, RecordedRange(0, 120) + 700,
                     1 - (RecordedRange(0, 100) < 50) * 2, 1);

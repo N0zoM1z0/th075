@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "BattleScene.hpp"
 #include "PauseDebugF175.hpp"
 #include "BattleMode5OptionsF168.hpp"

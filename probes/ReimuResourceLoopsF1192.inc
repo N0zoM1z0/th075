@@ -32,7 +32,7 @@ case 0x303: {
         aiCardTimer=0;
         field318=0.0f;
         SpawnBattleEffect(0x3A4,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
-        if (g_ReimuRepeatSettingAt006714D0==0) {
+        if (g_OptionsModeAt006714D0==0) {
 #define R1192_INDEX shotEasy
 #define R1192_COUNT 6
 #define R1192_STEP 60
@@ -41,7 +41,7 @@ case 0x303: {
 #undef R1192_COUNT
 #undef R1192_STEP
         }
-        if (g_ReimuRepeatSettingAt006714D0==1) {
+        if (g_OptionsModeAt006714D0==1) {
 #define R1192_INDEX shotNormal
 #define R1192_COUNT 6
 #define R1192_STEP 60
@@ -50,7 +50,7 @@ case 0x303: {
 #undef R1192_COUNT
 #undef R1192_STEP
         }
-        if (g_ReimuRepeatSettingAt006714D0==2) {
+        if (g_OptionsModeAt006714D0==2) {
 #define R1192_INDEX shotHard
 #define R1192_COUNT 8
 #define R1192_STEP 45
@@ -59,7 +59,7 @@ case 0x303: {
 #undef R1192_COUNT
 #undef R1192_STEP
         }
-        if (g_ReimuRepeatSettingAt006714D0==3) {
+        if (g_OptionsModeAt006714D0==3) {
 #define R1192_INDEX shotLunatic
 #define R1192_COUNT 8
 #define R1192_STEP 45
@@ -82,13 +82,13 @@ case 0x304: {
         break;
     }
     ++scriptCounterF00;
-    if ((scriptCounterF00)>300-(10000-(health)*2)/100-g_ReimuRepeatSettingAt006714D0*30) {
+    if ((scriptCounterF00)>300-(10000-(health)*2)/100-g_OptionsModeAt006714D0*30) {
         for (int burstOuter=0; burstOuter<30; ++burstOuter) {
             field314=float(burstOuter*12);
             field318=60.0f;
             SpawnBattleEffect(0x3A1,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
         }
-        if (g_ReimuRepeatSettingAt006714D0>1) {
+        if (g_OptionsModeAt006714D0>1) {
             for (int burstInner=0; burstInner<30; ++burstInner) {
                 field314=float(burstInner*12);
                 field318=100.0f;

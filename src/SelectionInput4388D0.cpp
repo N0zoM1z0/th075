@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "CharacterSelectScene.hpp"
 

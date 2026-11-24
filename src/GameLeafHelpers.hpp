@@ -1,5 +1,6 @@
 #ifndef TH075_GAME_LEAF_HELPERS_HPP
 #define TH075_GAME_LEAF_HELPERS_HPP
+#include "GameSharedState.hpp"
 
 #include "Fighter.hpp"
 #include "SoundBank.hpp"
@@ -36,7 +37,6 @@ public:
 
 extern DrawDispatcher *g_DrawDispatcher;
 
-extern signed char g_NoticeSelection;
 extern float g_ZeroFloat;
 
 class SpriteGeometry {

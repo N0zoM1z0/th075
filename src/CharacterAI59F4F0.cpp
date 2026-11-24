@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "CharacterAI59F4F0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
@@ -52,7 +53,7 @@ void YukariFighter::ChooseCardAction()
             aiCardTimer <= 0 &&
             y == 0.0f) {
             aiCommand = 221;
-            if (g_StateRepeatLevelAt006714D0 == 0) aiCommand = 222;
+            if (g_OptionsModeAt006714D0 == 0) aiCommand = 222;
             return;
         }
     }

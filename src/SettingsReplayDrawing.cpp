@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "OptionsScene.hpp"
@@ -15,7 +16,6 @@ class ReplayBrowser42CA60 { public: void RenderList(); void DrawFilename(float, 
     signed char field051;
 };
 class SceneQuadDrawingF124 { public: void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD); };
-extern signed char g_SettingsDifficulty;
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671428;
@@ -51,7 +51,7 @@ void OptionsScene::Render() {
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(240.0f, 64.0f, 0);
         reinterpret_cast<TextureManagerF198*>(QUAD_DRAWING)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 64, 64, 64));
-        switch (g_SettingsDifficulty) {
+        switch (g_OptionsModeAt006714D0) {
         case 0: SetRect(&region, 0, 0, 56, 32); break;
         case 1: SetRect(&region, 56, 0, 128, 32); break;
         case 2: SetRect(&region, 128, 0, 180, 32); break;

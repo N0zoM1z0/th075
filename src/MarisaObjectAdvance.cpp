@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 // Reconstruction of MarisaObject::Advance at 0049C8F0.
 #include "CharacterObject.hpp"
 #include "MarisaFighter.hpp"
@@ -73,7 +74,6 @@ extern const float g_MarisaStarUpperLimitAt00657884;
 extern const float g_MarisaStarLowerLimitAt0065924C;
 extern const float g_MarisaShowerSpreadAt00658268;
 extern const float g_MarisaShowerSpreadAt006590AC;
-extern signed char g_StateRepeatLevelAt006714D0;
 
 extern const float g_MarisaVolleyLeftLimitAt006593F0;
 extern const float g_MarisaVolleyRightLimitAt006593EC;
@@ -2106,7 +2106,7 @@ void MarisaObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            if (g_StateRepeatLevelAt006714D0 == 0) {
+            if (g_OptionsModeAt006714D0 == 0) {
                 field080 = 0;
             } else {
                 field080 = 1;
@@ -2621,10 +2621,10 @@ void MarisaObject::Advance()
         --field0DA;
         velocityX = 0.0f;
         if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
+            velocityX = g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
         }
         if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478;
+            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
             scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
@@ -2684,10 +2684,10 @@ void MarisaObject::Advance()
         --field0DA;
         velocityX = 0.0f;
         if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
+            velocityX = g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
         }
         if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478;
+            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
             scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
@@ -2747,10 +2747,10 @@ void MarisaObject::Advance()
         --field0DA;
         velocityX = 0.0f;
         if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
+            velocityX = g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
         }
         if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478;
+            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
             scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;
@@ -2810,10 +2810,10 @@ void MarisaObject::Advance()
         --field0DA;
         velocityX = 0.0f;
         if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
+            velocityX = g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478 + g_MarisaSparkTurnAt0065747C;
         }
         if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_StateRepeatLevelAt006714D0 * g_MarisaHalfAt00657478;
+            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * g_MarisaHalfAt00657478;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
             scaleX = (scaleX) + g_MarisaAuraGrowthAt006590B8;

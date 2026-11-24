@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "CharacterSelectScene.hpp"
@@ -11,7 +12,6 @@ public:
 // Reference-only observed byte views. No original names or ownership claimed.
 extern signed char g_BackgroundPadFrameAt00671620;
 extern unsigned char g_BackgroundPadNoticeAt00671621;
-extern signed char g_CombatMode;
 
 // All used animation and overlay fields share the scene layout.
 #define QUAD reinterpret_cast<SpriteTransform*>(&spriteQuad)

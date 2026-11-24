@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "YukariFighter.hpp"
 
 extern float g_AngleShiftAt00657878;
@@ -15,7 +16,6 @@ extern double g_JumpReflectionAt006583E8;
 extern float g_MarisaCommandYAt00658268;
 extern float g_MarisaSpecialProjectileYAt00658400;
 extern float g_MarisaSpecialProjectileYAt0065929C;
-extern signed char g_ModeAt006714B4;
 extern float g_ProjectileFallAt006590B4;
 extern float g_ReimuBounceXAt006590BC;
 extern float g_ReimuBounceYAt00658044;
@@ -29,7 +29,6 @@ extern float g_ReimuRecoveryScaleAt006590B8;
 extern float g_ReimuRotationStepAt00657858;
 extern float g_RepeatScaleAt00658348;
 extern double g_RiseAt00658050;
-extern signed char g_StateRepeatLevelAt006714D0;
 extern float g_StopThresholdAt00657480;
 extern float g_SubtractAt00657478;
 extern float g_ThresholdAt0065782C;
@@ -994,7 +993,7 @@ void YukariFighter::Advance() {
     }
 
     case 0x63: {
-        if (g_ModeAt006714B4 != 3 ||
+        if (g_CombatMode != 3 ||
             field2CD == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
@@ -3445,15 +3444,15 @@ void YukariFighter::Advance() {
         }
         if (animationStage == 8 && animationFrame == 0) {
             ResetTransform(8.0f, 135.0f, 0.0f);
-            if (g_StateRepeatLevelAt006714D0 < 2) {
+            if (g_OptionsModeAt006714D0 < 2) {
                 SpawnBattleEffect(0x38F, static_cast<float>(facing * 8) + x,
                     (y) + g_YukariOffsetAt00659CA8, 1, 1);
             }
-            if (g_StateRepeatLevelAt006714D0 == 2) {
+            if (g_OptionsModeAt006714D0 == 2) {
                 SpawnBattleEffect(0x39C, static_cast<float>(facing * 8) + x,
                     (y) + g_YukariOffsetAt00659CA8, 1, 1);
             }
-            if (g_StateRepeatLevelAt006714D0 == 3) {
+            if (g_OptionsModeAt006714D0 == 3) {
                 SpawnBattleEffect(0x39D, static_cast<float>(facing * 8) + x,
                     (y) + g_YukariOffsetAt00659CA8, 1, 1);
             }
@@ -3507,7 +3506,7 @@ void YukariFighter::Advance() {
                 return;
             }
             ResetTransform(0.0f, 0.0f, 0.0f);
-            if (g_StateRepeatLevelAt006714D0 > 0)
+            if (g_OptionsModeAt006714D0 > 0)
                 ResetPrimaryCounters(0x2DC);
             return;
         }
@@ -3652,7 +3651,7 @@ void YukariFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            aiCardTimer = static_cast<short>(120 - g_StateRepeatLevelAt006714D0 * 20);
+            aiCardTimer = static_cast<short>(120 - g_OptionsModeAt006714D0 * 20);
         }
         if (animationStage == 4 && animationFrame == 0) {
             velocityY = 11.0f;
@@ -3695,7 +3694,7 @@ void YukariFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(900, static_cast<float>(facing * 100) + x,
                 (y) + g_YukariOffsetAt006590A8, facing, 0);
-            if (g_StateRepeatLevelAt006714D0 > 1)
+            if (g_OptionsModeAt006714D0 > 1)
                 SpawnBattleEffect(0x388, static_cast<float>(facing * 100) + x,
                     (y) + g_YukariOffsetAt006590A8, facing, 0);
             PlaySound(7);
@@ -3810,19 +3809,19 @@ void YukariFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            aiCardTimer = static_cast<short>(180 - g_StateRepeatLevelAt006714D0 * 30);
+            aiCardTimer = static_cast<short>(180 - g_OptionsModeAt006714D0 * 30);
         }
         if (animationStage == 4 && animationFrame == 0) {
             PlaySound(0xF);
-            if (g_StateRepeatLevelAt006714D0 == 0) {
+            if (g_OptionsModeAt006714D0 == 0) {
                 SpawnBattleEffect(0x392, static_cast<float>((facing == -1) * 1280),
                     static_cast<float>(RecordedRange(0, 5) * 100 + 50), facing, 1);
             }
-            if (g_StateRepeatLevelAt006714D0 == 1) {
+            if (g_OptionsModeAt006714D0 == 1) {
                 SpawnBattleEffect(0x392, static_cast<float>((facing == -1) * 1280),
                     static_cast<float>(RecordedRange(0, 5) * 100 + 50), facing, 1);
             }
-            if (g_StateRepeatLevelAt006714D0 == 2) {
+            if (g_OptionsModeAt006714D0 == 2) {
                 if (fieldF04 == 0 || fieldF06 == 0) {
                     SpawnBattleEffect(0x392, static_cast<float>((facing == -1) * 1280),
                         50.0f, facing, 1);
@@ -3836,7 +3835,7 @@ void YukariFighter::Advance() {
                         350.0f, facing, 1);
                 }
             }
-            if (g_StateRepeatLevelAt006714D0 == 3) {
+            if (g_OptionsModeAt006714D0 == 3) {
                 if (fieldF04 == 0 || fieldF06 == 0) {
                     SpawnBattleEffect(0x392, static_cast<float>((facing == -1) * 1280),
                         50.0f, facing, 1);
@@ -3862,7 +3861,7 @@ void YukariFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            aiCardTimer = static_cast<short>(300 - g_StateRepeatLevelAt006714D0 * 40);
+            aiCardTimer = static_cast<short>(300 - g_OptionsModeAt006714D0 * 40);
         }
         return;
     }
@@ -3875,7 +3874,7 @@ void YukariFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
-            aiCardTimer = static_cast<short>(300 - g_StateRepeatLevelAt006714D0 * 40);
+            aiCardTimer = static_cast<short>(300 - g_OptionsModeAt006714D0 * 40);
         }
         return;
     }
@@ -3968,21 +3967,21 @@ void YukariFighter::Advance() {
                 fieldF14 = 440;
                 SpawnBattleEffect(0x398, opponent->x,
                     (opponent->y) + g_ContactProjectionAt00657888, 1, 1);
-                if (g_StateRepeatLevelAt006714D0 < 2) {
+                if (g_OptionsModeAt006714D0 < 2) {
                     for (int shot = 0; shot < 4; ++shot) {
                         field314 = static_cast<float>(shot * 90);
                         SpawnBattleEffect(0x396, opponent->x,
                             (opponent->y) + g_ContactProjectionAt00657888, 1, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 == 2) {
+                if (g_OptionsModeAt006714D0 == 2) {
                     for (int shot = 0; shot < 6; ++shot) {
                         field314 = static_cast<float>(shot * 60);
                         SpawnBattleEffect(0x396, opponent->x,
                             (opponent->y) + g_ContactProjectionAt00657888, 1, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 == 3) {
+                if (g_OptionsModeAt006714D0 == 3) {
                     for (int shot = 0; shot < 8; ++shot) {
                         field314 = static_cast<float>(shot * 45);
                         SpawnBattleEffect(0x396, opponent->x,

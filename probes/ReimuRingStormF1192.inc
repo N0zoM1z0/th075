@@ -21,7 +21,7 @@ case 0x2DB: {
             }
         }
     }
-    if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<g_ReimuRepeatSettingAt006714D0*3+4) {
+    if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<g_OptionsModeAt006714D0*3+4) {
         PlaySound(6);
         field314=float(RecordedRange(0,359));
         if ((scriptCounterF02)==0) {
@@ -44,7 +44,7 @@ case 0x2DB: {
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=300-g_ReimuRepeatSettingAt006714D0*20;
+        aiCardTimer=300-g_OptionsModeAt006714D0*20;
     }
     if ((animationStage)==4 && (animationFrame)==0) {
         Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+g_ThresholdAt0065782C,

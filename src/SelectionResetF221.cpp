@@ -1,9 +1,9 @@
+#include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "CharacterSelectScene.hpp"
 // Restore the initial two-player character-select state.
 extern signed char g_PlayerSelectionAt006714C8;
 extern unsigned char g_SecondPlayerAt006714C9;
-extern unsigned char g_OptionModeAt006714D0;
 extern signed char g_StageSelectionAt0067161D;
 void CharacterSelectScene::ResetSelection()
 {
@@ -53,5 +53,5 @@ void CharacterSelectScene::ResetSelection()
         (stagePage[0])=g_StageSelectionAt0067161D>=10;
     }
     g_GameProgress.SetSelection(
-        g_PlayerSelectionAt006714C8,g_OptionModeAt006714D0);
+        g_PlayerSelectionAt006714C8,static_cast<unsigned char>(g_OptionsModeAt006714D0));
 }

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence483350.hpp"
@@ -494,7 +495,7 @@ void ReimuFighter::AdvanceSequence()
             if (sequenceTimer > 30 && sequenceTimer < 90 &&
                 sequenceTimer == 60) {
                 g_SequenceStageAt0067161D = 12;
-                SequenceStage::Load();
+                BattleStageLoaderF389::LoadStage();
                 opponent->x = 800.0f;
                 x = 480.0f;
             }
@@ -775,7 +776,7 @@ void ReimuFighter::AdvanceSequence()
             if (sequenceTimer == 60) {
                 ConfigureNoticeText(0);
                 g_SequenceStageAt0067161D = 8;
-                SequenceStage::Load();
+                BattleStageLoaderF389::LoadStage();
                 opponent->x = 800.0f;
                 x = 480.0f;
             }

@@ -15,11 +15,11 @@ case 0x2E5: {
         scriptCounterF02=0;
         fieldF04=0;
         fieldF06=0;
-        fieldF08=g_F1004_ModeAt006714D0+2;
+        fieldF08=g_OptionsModeAt006714D0+2;
     }
     if ((animationStage)>4 && (animationStage)<11 && (fieldF08)>0) {
         --fieldF06;
-        if ((fieldF06)>3-g_F1004_ModeAt006714D0) {
+        if ((fieldF06)>3-g_OptionsModeAt006714D0) {
             field314=float((scriptCounterF02)*5);
             SpawnBattleEffect(0x387,
                 x -
@@ -42,7 +42,7 @@ case 0x2E5: {
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_OptionsModeAt006714D0*20);
     }
     if ((animationStage)==4 && (animationFrame)==0)
         fieldF06=10;

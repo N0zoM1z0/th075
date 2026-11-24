@@ -18,7 +18,7 @@
             if ((animationStage)>4 && (animationStage)<8) {
                 ++scriptCounterF02;
                 ++fieldF04;
-                if ((scriptCounterF02)>100-static_cast<int>(g_CloudOpponentAt006714D0)*20) {
+                if ((scriptCounterF02)>100-static_cast<int>(g_OptionsModeAt006714D0)*20) {
                     scriptCounterF02=0;
                     PlaySound(0x10);
                     SpawnBattleEffect(0x389,x,
@@ -39,7 +39,7 @@
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=RecordedRange(60,100)
-                           -static_cast<int>(g_CloudOpponentAt006714D0)*20;
+                           -static_cast<int>(g_OptionsModeAt006714D0)*20;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=16.5f;

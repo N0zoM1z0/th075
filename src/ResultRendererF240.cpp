@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -22,7 +23,6 @@ class ResultRawScaleF240 {
 public: void ScaleQuad(float x,float y,float z,DWORD sxBits,DWORD syBits,DWORD szBits);
 };
 extern Fighter* g_ActorAt00671418;
-extern signed char g_SelectionAt006714D0;
 extern const float g_ResultAlphaOriginAt00658048;
 extern const float g_ResultAlphaRangeAt00658058;
 extern const float g_ResultAlphaScaleAt00657864;
@@ -59,7 +59,7 @@ void ResultScene::Render()
         DrawDecimalDigits(OFFSET_X(1),94.0f,RESULT_COLOR,values[1],0,0);
         DrawDecimalDigits(OFFSET_X(2),118.0f,RESULT_COLOR,values[2],0,0);
         DrawDecimalDigits(OFFSET_X(3),142.0f,RESULT_COLOR,values[3],0,0);
-        SetRect(&region,0,g_SelectionAt006714D0*32,160,g_SelectionAt006714D0*32+32);
+        SetRect(&region,0,g_OptionsModeAt006714D0*32,160,g_OptionsModeAt006714D0*32+32);
         TRANSFORM(quad)->BuildQuad(156.0f,168.0f,316.0f,200.0f);
         TRANSFORM(quad)->TranslateQuad(static_cast<float>(offsets[4]),0.0f,0.0f);
         reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(2,quad,&region,RESULT_COLOR);

@@ -1,9 +1,8 @@
+#include "GameSharedState.hpp"
 #include "SakuyaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of SakuyaFighter::Advance at 004AC040.
 
-extern signed char g_F1004_ModeAt006714D0;
-extern signed char g_ModeAt006714B4;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F747_BounceYAt00658044;

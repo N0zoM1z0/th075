@@ -1,8 +1,8 @@
+#include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YoumuFighter::Advance at 005214B0.
 #include "YoumuFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 extern float g_F898ShotYAt0065839C;
-extern signed char g_CloudOpponentAt006714D0;
 extern float g_F895AbsThresholdAt006591F4;
 extern float g_F894VerticalStageAt00659090;
 extern float g_F894RandomHeightAt006592A0;
@@ -48,7 +48,6 @@ extern float g_F747_BounceYAt00658044;
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
 // five instruction widths remain NONEXACT. No whole CODE credit.
 
-extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
 extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "AliceFighter.hpp"
 #include "CharacterObject.hpp"
 // F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593/F596: selected natural VC7.1 source, original PE 004EBDA0.
@@ -53,7 +54,6 @@ extern float gAbsScaleAt00659724;
 extern float gStageContactAt0065786C;
 extern float gParentYAt006590A8;
 extern float gParentYAt006590A0;
-extern signed char gGlobalActorCountAt006714D0;
 extern float gParentYExtraAt00658264;
 extern float gBoundRightAt00659248;
 extern float gBoundLowerAt0065930C;
@@ -1996,7 +1996,7 @@ void AliceObject::Advance() {
             owner->SpawnBattleEffect(0x388,x,y,facing,0);
             owner->PlaySound(8);
             ResetPrimaryCounters(0x385);
-            if (gGlobalActorCountAt006714D0>1)
+            if (g_OptionsModeAt006714D0>1)
                 ResetPrimaryCounters(0x38E);
             y=0.0f;
             velocityY=0.0f;
@@ -2257,7 +2257,7 @@ void AliceObject::Advance() {
     x += facing*(velocityX);
     y = y - velocityY;
     if (AdvanceNestedFrame()==(animationStageCount)) {
-        if ((field0D8)<gGlobalActorCountAt006714D0*5+10) {
+        if ((field0D8)<g_OptionsModeAt006714D0*5+10) {
             ++field0D8;
             ResetSecondaryCounter(1);
             break;

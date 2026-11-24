@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "CharacterObject.hpp"
 #include "PatchouliFighter.hpp"
 #include "EffectServices.hpp"
@@ -67,7 +68,6 @@ extern float g_F1101_RightAt00659424;
 extern float g_F1101_LeftAt0065924C;
 extern float g_F1110_NativeSpeedAt006578C0;
 extern float g_F1110_NativeBaseAt00657CF8;
-extern signed char g_F1113_DifficultyAt006714D0;
 extern float g_F1113_DivisorAt0065988C;
 extern float g_F1057_SpeedBaseAt006590BC;
 extern float g_F1120_XBrakingAt00659090;

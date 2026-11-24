@@ -17,7 +17,7 @@ case 0x2FA: {
         scriptCounterF02=0;
         fieldF04=0;
         fieldF06=0;
-        fieldF08=g_F1004_ModeAt006714D0+2;
+        fieldF08=g_OptionsModeAt006714D0+2;
     }
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
@@ -40,7 +40,7 @@ case 0x2FA: {
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_OptionsModeAt006714D0*20);
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=16.0f;

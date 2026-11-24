@@ -1,5 +1,5 @@
+#include "GameSharedState.hpp"
 #include "FighterHitResponseF164.hpp"
-extern signed char g_CombatMode;
 #include <cstdlib>
 
 #define OPPONENT_X opponent->x
@@ -44,8 +44,8 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
                 choice = g_ReplayChoicesAt006718CC.front();
                 g_ReplayChoicesAt006718CC.pop_front();
             } else {
-                if (g_StateRepeatLevelAt006714D0 == 1) choice = std::rand() % 10 + 9;
-                else if (g_StateRepeatLevelAt006714D0 == 0) choice = std::rand() % 10 + 5;
+                if (g_OptionsModeAt006714D0 == 1) choice = std::rand() % 10 + 9;
+                else if (g_OptionsModeAt006714D0 == 0) choice = std::rand() % 10 + 5;
                 else choice = 16;
                 if (g_InputReplayModeAt0066C238 == 1) g_ReplayChoicesAt006718CC.push_back(choice);
             }

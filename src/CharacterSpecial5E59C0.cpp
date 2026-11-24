@@ -1,9 +1,10 @@
+#include "GameSharedState.hpp"
 #include "CharacterSpecial5E59C0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 void MeilingFighter::ConfigureStage() {
-    switch (g_NoticeSelection) {
+    switch (g_StageAt0067161E) {
     case 1:
         opponent->field460 = 50000;
         g_StateResetCounter = 0;
@@ -19,8 +20,8 @@ void MeilingFighter::ConfigureStage() {
         fieldFF6 = 0;
         fieldFF7 = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(2, 5000, 1, g_StateRepeatLevelAt006714D0, 0, g_StateRepeatLevelAt006714D0 * 25000 + 50000, 2400, (g_StateRepeatLevelAt006714D0 * 25000 + 50000) / 2400);
-        RecordRoundFields(1, 5000, 2, g_StateRepeatLevelAt006714D0 + 4, 1, g_StateRepeatLevelAt006714D0 * 25000 + 50000, 2400, (g_StateRepeatLevelAt006714D0 * 25000 + 50000) / 2400);
+        RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
+        RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         opponent->x = 1280.0f;
         opponent->ResetPrimaryCounters(0);
         break;
@@ -39,8 +40,8 @@ void MeilingFighter::ConfigureStage() {
         fieldFF6 = 0;
         fieldFF7 = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(2, 5000, 1, g_StateRepeatLevelAt006714D0 + 8, 0, g_StateRepeatLevelAt006714D0 * 50000 + 100000, 2400, (g_StateRepeatLevelAt006714D0 * 50000 + 100000) / 2400);
-        RecordRoundFields(1, 5000, 2, g_StateRepeatLevelAt006714D0 + 12, 1, g_StateRepeatLevelAt006714D0 * 50000 + 100000, 2400, (g_StateRepeatLevelAt006714D0 * 50000 + 100000) / 2400);
+        RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
+        RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         opponent->x = 1280.0f;
         opponent->ResetPrimaryCounters(0);
         break;
@@ -59,10 +60,10 @@ void MeilingFighter::ConfigureStage() {
         fieldFF6 = 0;
         fieldFF7 = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(4, 5000, 1, g_StateRepeatLevelAt006714D0 + 16, 0, g_StateRepeatLevelAt006714D0 * 75000 + 150000, 2400, (g_StateRepeatLevelAt006714D0 * 75000 + 150000) / 2400);
+        RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 5000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(2, 5000, 1, g_StateRepeatLevelAt006714D0 + 20, 1, g_StateRepeatLevelAt006714D0 * 75000 + 150000, 2400, (g_StateRepeatLevelAt006714D0 * 75000 + 150000) / 2400);
-        RecordRoundFields(1, 5000, 2, g_StateRepeatLevelAt006714D0 + 24, 2, g_StateRepeatLevelAt006714D0 * 75000 + 150000, 2400, (g_StateRepeatLevelAt006714D0 * 75000 + 150000) / 2400);
+        RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 20, 1, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
+        RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 24, 2, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         opponent->x = 1280.0f;
         opponent->ResetPrimaryCounters(0);
         break;
@@ -81,10 +82,10 @@ void MeilingFighter::ConfigureStage() {
         fieldFF6 = 0;
         fieldFF7 = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(4, 5000, 1, g_StateRepeatLevelAt006714D0 + 28, 0, g_StateRepeatLevelAt006714D0 * 100000 + 200000, 2400, (g_StateRepeatLevelAt006714D0 * 100000 + 200000) / 2400);
+        RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(2, 5000, 1, g_StateRepeatLevelAt006714D0 + 32, 1, g_StateRepeatLevelAt006714D0 * 100000 + 200000, 2400, (g_StateRepeatLevelAt006714D0 * 100000 + 200000) / 2400);
-        RecordRoundFields(1, 5000, 2, g_StateRepeatLevelAt006714D0 + 36, 2, g_StateRepeatLevelAt006714D0 * 100000 + 200000, 2400, (g_StateRepeatLevelAt006714D0 * 100000 + 200000) / 2400);
+        RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 32, 1, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
+        RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 36, 2, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         opponent->x = 1280.0f;
         opponent->ResetPrimaryCounters(0);
         break;
@@ -103,11 +104,11 @@ void MeilingFighter::ConfigureStage() {
         fieldFF6 = 0;
         fieldFF7 = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(5, 5000, 1, g_StateRepeatLevelAt006714D0 + 40, 0, g_StateRepeatLevelAt006714D0 * 150000 + 300000, 2400, (g_StateRepeatLevelAt006714D0 * 150000 + 300000) / 2400);
-        RecordRoundFields(4, 5000, 2, g_StateRepeatLevelAt006714D0 + 44, 1, g_StateRepeatLevelAt006714D0 * 150000 + 300000, 2400, (g_StateRepeatLevelAt006714D0 * 150000 + 300000) / 2400);
+        RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
+        RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(2, 5000, 1, g_StateRepeatLevelAt006714D0 + 48, 2, g_StateRepeatLevelAt006714D0 * 150000 + 300000, 2400, (g_StateRepeatLevelAt006714D0 * 150000 + 300000) / 2400);
-        RecordRoundFields(1, 5000, 2, g_StateRepeatLevelAt006714D0 + 52, 3, g_StateRepeatLevelAt006714D0 * 150000 + 300000, 2400, (g_StateRepeatLevelAt006714D0 * 150000 + 300000) / 2400);
+        RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 48, 2, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
+        RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 52, 3, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         opponent->x = 1280.0f;
         opponent->ResetPrimaryCounters(0);
         break;
@@ -126,12 +127,12 @@ void MeilingFighter::ConfigureStage() {
         fieldFF6 = 0;
         fieldFF7 = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(6, 5000, 1, g_StateRepeatLevelAt006714D0 + 56, 0, g_StateRepeatLevelAt006714D0 * 200000 + 400000, 2400, (g_StateRepeatLevelAt006714D0 * 200000 + 400000) / 2400);
-        RecordRoundFields(5, 5000, 2, g_StateRepeatLevelAt006714D0 + 60, 1, g_StateRepeatLevelAt006714D0 * 200000 + 400000, 2400, (g_StateRepeatLevelAt006714D0 * 200000 + 400000) / 2400);
+        RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
+        RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(4, 6000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(3, 5000, 1, g_StateRepeatLevelAt006714D0 + 64, 2, g_StateRepeatLevelAt006714D0 * 200000 + 400000, 2400, (g_StateRepeatLevelAt006714D0 * 200000 + 400000) / 2400);
-        RecordRoundFields(2, 5000, 2, g_StateRepeatLevelAt006714D0 + 68, 3, g_StateRepeatLevelAt006714D0 * 200000 + 400000, 2400, (g_StateRepeatLevelAt006714D0 * 200000 + 400000) / 2400);
-        RecordRoundFields(1, 5000, 2, g_StateRepeatLevelAt006714D0 + 72, 4, g_StateRepeatLevelAt006714D0 * 200000 + 400000, 2400, (g_StateRepeatLevelAt006714D0 * 200000 + 400000) / 2400);
+        RecordRoundFields(3, 5000, 1, g_OptionsModeAt006714D0 + 64, 2, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
+        RecordRoundFields(2, 5000, 2, g_OptionsModeAt006714D0 + 68, 3, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
+        RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 72, 4, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         opponent->x = 1280.0f;
         opponent->ResetPrimaryCounters(0);
         break;
@@ -148,13 +149,13 @@ void MeilingFighter::ConfigureStage() {
         fieldFF6 = 0;
         fieldFF7 = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(7, 5000, 1, g_StateRepeatLevelAt006714D0 + 76, 0, g_StateRepeatLevelAt006714D0 * 250000 + 500000, 2400, (g_StateRepeatLevelAt006714D0 * 250000 + 500000) / 2400);
-        RecordRoundFields(6, 2500, 2, g_StateRepeatLevelAt006714D0 + 80, 1, g_StateRepeatLevelAt006714D0 * 250000 + 500000, 2400, (g_StateRepeatLevelAt006714D0 * 250000 + 500000) / 2400);
+        RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
+        RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(5, 6000, 0, 0, 0, 0, 0, 0);
-        RecordRoundFields(4, 5000, 1, g_StateRepeatLevelAt006714D0 + 84, 2, g_StateRepeatLevelAt006714D0 * 250000 + 500000, 2400, (g_StateRepeatLevelAt006714D0 * 250000 + 500000) / 2400);
-        RecordRoundFields(3, 5000, 2, g_StateRepeatLevelAt006714D0 + 88, 3, g_StateRepeatLevelAt006714D0 * 250000 + 500000, 2400, (g_StateRepeatLevelAt006714D0 * 250000 + 500000) / 2400);
-        RecordRoundFields(2, 5000, 2, g_StateRepeatLevelAt006714D0 + 92, 4, g_StateRepeatLevelAt006714D0 * 250000 + 500000, 2400, (g_StateRepeatLevelAt006714D0 * 250000 + 500000) / 2400);
-        RecordRoundFields(1, 10000, 2, g_StateRepeatLevelAt006714D0 + 96, 5, g_StateRepeatLevelAt006714D0 * 250000 + 500000, 4800, (g_StateRepeatLevelAt006714D0 * 250000 + 500000) / 4800);
+        RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 84, 2, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
+        RecordRoundFields(3, 5000, 2, g_OptionsModeAt006714D0 + 88, 3, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
+        RecordRoundFields(2, 5000, 2, g_OptionsModeAt006714D0 + 92, 4, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
+        RecordRoundFields(1, 10000, 2, g_OptionsModeAt006714D0 + 96, 5, g_OptionsModeAt006714D0 * 250000 + 500000, 4800, (g_OptionsModeAt006714D0 * 250000 + 500000) / 4800);
         opponent->x = 800.0f;
         opponent->ResetPrimaryCounters(0);
         break;

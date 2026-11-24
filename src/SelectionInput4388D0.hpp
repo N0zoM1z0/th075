@@ -1,4 +1,5 @@
 #pragma once
+#include "GameSharedState.hpp"
 #include "InputJoystick.hpp"
 #include <string.h>
 
@@ -28,6 +29,6 @@ public:
 typedef char InputMappingSize[(sizeof(InputMapping4388D0) == 72) ? 1 : -1];
 
 extern InputMapping4388D0 g_InputMappings[2];
-extern signed char g_CombatMode, g_SelectActiveSideAt006714B8;
+extern signed char g_SelectActiveSideAt006714B8;
 namespace Input { extern unsigned char g_KeyboardState[256]; }
 namespace Graphics { void ToggleWindowMode(); }

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #include "TitleScene.hpp"
 #include "MenuInputF184.hpp"

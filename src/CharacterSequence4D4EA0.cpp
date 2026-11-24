@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence4D4EA0.hpp"
@@ -722,7 +723,7 @@ void SakuyaFighter::AdvanceSequence()
                 ConfigureNoticeText(0);
                 g_SequenceStageAt0067161D = 8;
                 OPPONENT_ACTOR->ResetPrimaryCounters(0);
-            SequenceStage::Load();
+            BattleStageLoaderF389::LoadStage();
                 opponent->x = 800.0f;
                 x = 480.0f;
             }

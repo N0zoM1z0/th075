@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "SpriteTransform.hpp"
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
@@ -23,8 +24,8 @@ void BattleScene::RenderStatus() {
             if (fighters[i]->field3A0 > 0) {
                 if (g_CombatMode == 3 && i == 1) {
                     group = fighters[1]->field370[fighters[1]->field39D] + 42;
-                    nameSlide = float(reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(g_StateRepeatLevelAt006714D0 + 5)[0]);
-                    texture = reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(g_StateRepeatLevelAt006714D0 + 5)[3];
+                    nameSlide = float(reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(g_OptionsModeAt006714D0 + 5)[0]);
+                    texture = reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(g_OptionsModeAt006714D0 + 5)[3];
                 } else {
                     if (fighters[i]->field39D == 2)
                         group = fighters[i]->field398[0] + 42;

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "YuyukoFighter.hpp"
 
 extern float g_ThresholdAt0065782C;
@@ -18,7 +19,6 @@ extern float g_BounceXAt006590BC;
 extern float g_BounceYAt00658044;
 extern float g_BarrageOffsetAt00658DF4;
 extern float g_F748_SpeedScaleAt006590B8;
-extern signed char g_ModeAt006714B4;
 extern float g_ReimuLeapDragAt006583FC;
 extern float g_ReimuRepeatDragAt00659090;
 extern float g_ReimuCommandFrontYAt006590AC;
@@ -41,7 +41,6 @@ extern float g_RadialPatternYOffsetAt00659274;
 extern float g_Stage2BFYOffsetAt00658398;
 extern float g_Stage2BFY2At00659B6C;
 extern float g_Stage2DAEffectYOffsetAt0065908C;
-extern signed char g_StateRepeatLevelAt006714D0;
 extern float g_ThousandAt006583B4;
 extern float g_YuyukoChaseDivisorAt0065788C;
 extern float g_YuyukoFanUpperYAt006593D0;
@@ -983,7 +982,7 @@ void YuyukoFighter::Advance() {
     }
 
     case 0x63:
-        if (g_ModeAt006714B4 != 3 || field2CD == 0) {
+        if (g_CombatMode != 3 || field2CD == 0) {
             if (animationStage == 2 && field39D > 0 && opponent->action < 150) {
                 ResetPrimaryCounters(0x5F);
                 field3CF = 1;
@@ -3317,7 +3316,7 @@ void YuyukoFighter::Advance() {
             if (y > 0.0f)
                 ResetPrimaryCounters(9);
             aiCardTimer = static_cast<short>(
-                180 - g_StateRepeatLevelAt006714D0 * 40);
+                180 - g_OptionsModeAt006714D0 * 40);
         }
         if (animationStage == 4 && animationFrame == 0) {
             PlaySound(4);
@@ -3350,7 +3349,7 @@ void YuyukoFighter::Advance() {
             }
         }
         if (animationStage == 8 && animationFrame == 0 &&
-                g_StateRepeatLevelAt006714D0 > 1) {
+                g_OptionsModeAt006714D0 > 1) {
             PlaySound(4);
             for (int fanIndex2DA8 = 0; fanIndex2DA8 < 9; ++fanIndex2DA8) {
                 field314 = static_cast<float>(fanIndex2DA8 * 40);
@@ -3366,7 +3365,7 @@ void YuyukoFighter::Advance() {
             }
         }
         if (animationStage == 10 && animationFrame == 0 &&
-                g_StateRepeatLevelAt006714D0 > 2) {
+                g_OptionsModeAt006714D0 > 2) {
             PlaySound(4);
             for (int fanIndex2DA10 = 0; fanIndex2DA10 < 9; ++fanIndex2DA10) {
                 field314 = static_cast<float>(fanIndex2DA10 * 40);
@@ -3451,7 +3450,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 7 && animationFrame == 0)
             PlaySound(3);
         if (animationStage == 9 && animationFrame == 0) {
-            if (scriptCounterF00 < g_StateRepeatLevelAt006714D0 * 4 + 5) {
+            if (scriptCounterF00 < g_OptionsModeAt006714D0 * 4 + 5) {
                 ++scriptCounterF00;
                 ResetSecondaryCounter(7);
                 return;
@@ -3486,10 +3485,10 @@ void YuyukoFighter::Advance() {
             if (y > 0.0f)
                 ResetPrimaryCounters(9);
             aiCardTimer = static_cast<short>(
-                240 - g_StateRepeatLevelAt006714D0 * 30);
+                240 - g_OptionsModeAt006714D0 * 30);
         }
         if (animationStage == 11 && animationFrame == 0 &&
-                scriptCounterF00 < g_StateRepeatLevelAt006714D0 * 2 + 4) {
+                scriptCounterF00 < g_OptionsModeAt006714D0 * 2 + 4) {
             ResetSecondaryCounter(9);
         }
         if (animationStage == 13 && animationFrame == 0 && fieldF04 < 2) {
@@ -3511,7 +3510,7 @@ void YuyukoFighter::Advance() {
             if (y > 0.0f)
                 ResetPrimaryCounters(9);
             aiCardTimer = static_cast<short>(
-                240 - g_StateRepeatLevelAt006714D0 * 30);
+                240 - g_OptionsModeAt006714D0 * 30);
         }
         if (animationStage == 4 && animationFrame == 0) {
             SpawnBattleEffect(0x389, opponent->x, y, facing, 1);
@@ -3599,28 +3598,28 @@ void YuyukoFighter::Advance() {
             if (fieldF06 <= 0) {
                 PlaySound(13);
                 fieldF06 = 180;
-                if (g_StateRepeatLevelAt006714D0 == 0) {
+                if (g_OptionsModeAt006714D0 == 0) {
                     for (int radialIndex2F9A = 0; radialIndex2F9A < 6; ++radialIndex2F9A) {
                         field314 = static_cast<float>(radialIndex2F9A * 60);
                         SpawnBattleEffect(0x38C, x,
                             (y) + g_ContactProjectionAt00657888, facing, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 == 1) {
+                if (g_OptionsModeAt006714D0 == 1) {
                     for (int radialIndex2F9B = 0; radialIndex2F9B < 9; ++radialIndex2F9B) {
                         field314 = static_cast<float>(radialIndex2F9B * 40);
                         SpawnBattleEffect(0x38C, x,
                             (y) + g_ContactProjectionAt00657888, facing, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 == 2) {
+                if (g_OptionsModeAt006714D0 == 2) {
                     for (int radialIndex2F9C = 0; radialIndex2F9C < 12; ++radialIndex2F9C) {
                         field314 = static_cast<float>(radialIndex2F9C * 30);
                         SpawnBattleEffect(0x38C, x,
                             (y) + g_ContactProjectionAt00657888, facing, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 == 3) {
+                if (g_OptionsModeAt006714D0 == 3) {
                     for (int radialIndex2F9D = 0; radialIndex2F9D < 18; ++radialIndex2F9D) {
                         field314 = static_cast<float>(radialIndex2F9D * 20);
                         SpawnBattleEffect(0x38C, x,
@@ -3641,7 +3640,7 @@ void YuyukoFighter::Advance() {
                             y + field31C, facing, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 > 0 && fieldF08 == -20) {
+                if (g_OptionsModeAt006714D0 > 0 && fieldF08 == -20) {
                     field318 = static_cast<float>(RecordedRange(0, 600));
                     field31C = static_cast<float>(RecordedRange(0, 300));
                     PlaySound(0);
@@ -3652,7 +3651,7 @@ void YuyukoFighter::Advance() {
                             y + field31C, facing, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 > 1 && fieldF08 == -40) {
+                if (g_OptionsModeAt006714D0 > 1 && fieldF08 == -40) {
                     field318 = static_cast<float>(RecordedRange(0, 600));
                     field31C = static_cast<float>(RecordedRange(0, 300));
                     PlaySound(0);
@@ -3663,7 +3662,7 @@ void YuyukoFighter::Advance() {
                             y + field31C, facing, 1);
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 > 2 && fieldF08 == -60) {
+                if (g_OptionsModeAt006714D0 > 2 && fieldF08 == -60) {
                     field318 = static_cast<float>(RecordedRange(0, 600));
                     field31C = static_cast<float>(RecordedRange(0, 300));
                     PlaySound(0);
@@ -3675,7 +3674,7 @@ void YuyukoFighter::Advance() {
                     }
                 }
                 if (fieldF08 <= -60)
-                    fieldF08 = static_cast<short>(120 - g_StateRepeatLevelAt006714D0 * 10);
+                    fieldF08 = static_cast<short>(120 - g_OptionsModeAt006714D0 * 10);
             }
 
         }
@@ -3756,11 +3755,11 @@ void YuyukoFighter::Advance() {
                 PlaySound(0x0E);
                 field318 = static_cast<float>(scriptCounterF02);
                 SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
-                if (g_StateRepeatLevelAt006714D0 > 0) {
+                if (g_OptionsModeAt006714D0 > 0) {
                     field318 = static_cast<float>(fieldF04);
                     SpawnBattleEffect(0x391, 640.0f, 340.0f, 1, 0);
                 }
-                if (g_StateRepeatLevelAt006714D0 == 2) {
+                if (g_OptionsModeAt006714D0 == 2) {
                     field318 = static_cast<float>(fieldF04 + 180);
                     if ((field318) >= g_YuyukoFanLowerYAt00659238)
                         field318 -= g_YuyukoAnglePeriodAt00657864;
@@ -3770,7 +3769,7 @@ void YuyukoFighter::Advance() {
                         field318 = (field318) + g_YuyukoAnglePeriodAt00657864;
                     SpawnBattleEffect(0x38E, 640.0f, 340.0f, 1, 0);
                 }
-                if (g_StateRepeatLevelAt006714D0 == 3) {
+                if (g_OptionsModeAt006714D0 == 3) {
                     field318 = static_cast<float>(fieldF04 + 120);
                     if ((field318) >= g_YuyukoFanLowerYAt00659238)
                         field318 -= g_YuyukoAnglePeriodAt00657864;
@@ -3798,7 +3797,7 @@ void YuyukoFighter::Advance() {
                         field318 = 1.0f;
                         field31C = 1.0f;
                         SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
-                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                        if (g_OptionsModeAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303A * 18 + 9);
                             field318 = 3.0f;
                             SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
@@ -3809,7 +3808,7 @@ void YuyukoFighter::Advance() {
                         field318 = 1.0f;
                         field31C = -1.0f;
                         SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
-                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                        if (g_OptionsModeAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303A * 18 + 9);
                             field318 = 3.0f;
                             SpawnBattleEffect(0x394, 640.0f, 340.0f, 1, 1);
@@ -3824,7 +3823,7 @@ void YuyukoFighter::Advance() {
                         field318 = 1.0f;
                         field31C = 1.0f;
                         SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
-                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                        if (g_OptionsModeAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303C * 18 + 9);
                             field318 = 3.0f;
                             SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
@@ -3835,14 +3834,14 @@ void YuyukoFighter::Advance() {
                         field318 = 1.0f;
                         field31C = -1.0f;
                         SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
-                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                        if (g_OptionsModeAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303C * 18 + 9);
                             field318 = 3.0f;
                             SpawnBattleEffect(0x395, 640.0f, 340.0f, 1, 1);
                         }
                     }
                 }
-                if (g_StateRepeatLevelAt006714D0 > 1 && scriptCounterF00 == -60) {
+                if (g_OptionsModeAt006714D0 > 1 && scriptCounterF00 == -60) {
                     PlaySound(0);
                     int fanIndex303E;
                     for (fanIndex303E = 0; fanIndex303E < 20; ++fanIndex303E) {
@@ -3850,7 +3849,7 @@ void YuyukoFighter::Advance() {
                         field318 = 1.0f;
                         field31C = 1.0f;
                         SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
-                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                        if (g_OptionsModeAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303E * 18 + 9);
                             field318 = 3.0f;
                             SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
@@ -3861,7 +3860,7 @@ void YuyukoFighter::Advance() {
                         field318 = 1.0f;
                         field31C = -1.0f;
                         SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
-                        if (g_StateRepeatLevelAt006714D0 == 3) {
+                        if (g_OptionsModeAt006714D0 == 3) {
                             field314 = static_cast<float>(fanIndex303E * 18 + 9);
                             field318 = 3.0f;
                             SpawnBattleEffect(0x396, 640.0f, 340.0f, 1, 1);
@@ -3870,7 +3869,7 @@ void YuyukoFighter::Advance() {
                 }
                 if (scriptCounterF00 == -60) {
                     scriptCounterF00 = static_cast<short>(
-                        180 - g_StateRepeatLevelAt006714D0 * 10);
+                        180 - g_OptionsModeAt006714D0 * 10);
                 }
             }
         }

@@ -20,7 +20,7 @@ case 0x2E5: {
 #include "ReimuMeterInitF1190.inc"
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
-        aiCardTimer=240-g_ReimuRepeatSettingAt006714D0*30;
+        aiCardTimer=240-g_OptionsModeAt006714D0*30;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         Fighter::SpawnBattleEffect(0x38E,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,

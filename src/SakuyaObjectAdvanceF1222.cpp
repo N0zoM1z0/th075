@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 // Natural-C++ reconstruction of SakuyaObject::Advance at 004CA6E0.
 // Replays 42,511 code bytes plus 422 bytes of switch data with VC7.1 build 3077.
 // Compiler profile and relocation bindings are in config/match-units.toml.
@@ -7,7 +8,6 @@
 
 float __cdecl AngleAt00483300(float, float);
 extern float g_F1211_AngleDivAt00657828;
-extern signed char g_F1212_DifficultyAt006714D0;
 extern const float g_SakuyaObjectMaxXAt006583D8;
 extern const float g_SakuyaObjectMinXAt006595E0;
 extern const float g_SakuyaObjectMaxYAt006583B4;
@@ -2169,7 +2169,7 @@ void SakuyaObject::Advance()
                 owner->SpawnBattleEffect(909, x, y, facing, 1);
             }
             if (AdvanceNestedFrame() == animationStageCount) {
-                if (field0D8 < g_F1212_DifficultyAt006714D0 * 2 + 1) {
+                if (field0D8 < g_OptionsModeAt006714D0 * 2 + 1) {
                     ResetSecondaryCounter(1);
                     ++field0D8;
                     return;
@@ -2200,14 +2200,14 @@ void SakuyaObject::Advance()
             y -= velocityY;
             ++field0D8;
             if (animationStage < 5) {
-                if (y > owner->field2E0 && field0DA < g_F1212_DifficultyAt006714D0 && velocityY < 0.0f) {
+                if (y > owner->field2E0 && field0DA < g_OptionsModeAt006714D0 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     field07C = 0;
                     field080 = 1;
                 }
-                if (x < owner->field2D8 && field0DA < g_F1212_DifficultyAt006714D0 &&
+                if (x < owner->field2D8 && field0DA < g_OptionsModeAt006714D0 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -2217,7 +2217,7 @@ void SakuyaObject::Advance()
                     field07C = 0;
                     field080 = 1;
                 }
-                if (x > owner->field2DC && field0DA < g_F1212_DifficultyAt006714D0 &&
+                if (x > owner->field2DC && field0DA < g_OptionsModeAt006714D0 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
                     owner->PlaySound(11);

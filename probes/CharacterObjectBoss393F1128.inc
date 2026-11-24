@@ -19,7 +19,7 @@ case 0x393: {
         field07C=0;
     }
     if (AdvanceNestedFrame()==animationStageCount) {
-        if (field0D8<2-int(g_F1113_DifficultyAt006714D0))
+        if (field0D8<2-int(g_OptionsModeAt006714D0))
             ++field0D8;
         else if (field0DA==0) {
             owner->SpawnBattleEffect(

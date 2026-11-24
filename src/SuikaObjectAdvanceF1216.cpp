@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 // Natural-C++ reconstruction of SuikaObject::Advance at 005C9CC0.
 // Replays 43,501 code bytes plus 470 bytes of switch data with VC7.1 build 3077.
 // Compiler profile and relocation bindings are in config/match-units.toml.
@@ -11,7 +12,6 @@ float __cdecl AbsFloatAt00412D90(float);
 float __cdecl ScalarAt00428D20(float);
 extern float g_F1057_NudgeAt00657480;
 extern float g_F1211_AngleDivAt00657828;
-extern signed char g_F1212_DifficultyAt006714D0;
 
 void SuikaObject::Advance()
 {
@@ -1593,13 +1593,13 @@ void SuikaObject::Advance()
                 field0DA = 0;
                 field0DC = field0C8;
                 field0DE = 120;
-                field0E0 = g_F1212_DifficultyAt006714D0 * 2 + 1;
+                field0E0 = g_OptionsModeAt006714D0 * 2 + 1;
             }
             if (owner->animationStage < 2) {
                 --field0DE;
                 if (field0DE <= 0 && owner->opponent->health > 0 && ScalarAt00428D20(
                     (owner->opponent->x - x) * (owner->opponent->x - x) +
-                    (owner->opponent->y - y) * (owner->opponent->y - y)) > 256 - g_F1212_DifficultyAt006714D0 * 48 &&
+                    (owner->opponent->y - y) * (owner->opponent->y - y)) > 256 - g_OptionsModeAt006714D0 * 48 &&
                     y > 0.0f && x > 0.0f && x < 1280.0f) {
                     if (field0E0 > 0) {
                         owner->SpawnBattleEffect(906, x, y, facing, 1);
@@ -1610,8 +1610,8 @@ void SuikaObject::Advance()
                     else {
                         owner->SpawnBattleEffect(906, x, y, facing, 1);
                         owner->PlaySound(28);
-                        field0E0 = g_F1212_DifficultyAt006714D0 * 2 + 1;
-                        field0DE = 180 - g_F1212_DifficultyAt006714D0 * 30;
+                        field0E0 = g_OptionsModeAt006714D0 * 2 + 1;
+                        field0DE = 180 - g_OptionsModeAt006714D0 * 30;
                     }
                 }
                 field0DA = AngleAt00483300(
@@ -1654,7 +1654,7 @@ void SuikaObject::Advance()
                         owner->SpawnBattleEffect(906, x, y, facing, 1);
                         owner->PlaySound(28);
                         field0E0 = 5;
-                        field0DE = 180 - g_F1212_DifficultyAt006714D0 * 30;
+                        field0DE = 180 - g_OptionsModeAt006714D0 * 30;
                     }
                 }
                 field0DA = AngleAt00483300(
@@ -1952,7 +1952,7 @@ void SuikaObject::Advance()
                 field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
                     (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
-                SetPolarVelocity(field0DC, g_F1212_DifficultyAt006714D0 * 3 + 15);
+                SetPolarVelocity(field0DC, g_OptionsModeAt006714D0 * 3 + 15);
             }
             if (animationStage == 1 && y < 0.0f) {
                 owner->PlaySound(23);
@@ -2014,7 +2014,7 @@ void SuikaObject::Advance()
                     SetPolarVelocity(owner->field31C, 960.0f);
                     owner->SpawnBattleEffect(916, facing * velocityX + x,
                         y + velocityY, facing, 1);
-                    field0DC = 6 - g_F1212_DifficultyAt006714D0;
+                    field0DC = 6 - g_OptionsModeAt006714D0;
                 }
             }
             if (animationStage == 4) {
@@ -2028,7 +2028,7 @@ void SuikaObject::Advance()
                 velocityY = 0.0f;
             }
             if (animationStage == 3 && animationFrame == 0 &&
-                field0DA < g_F1212_DifficultyAt006714D0 + 2) {
+                field0DA < g_OptionsModeAt006714D0 + 2) {
                 ++field0DA;
                 ResetSecondaryCounter(2);
             }
@@ -2060,7 +2060,7 @@ void SuikaObject::Advance()
             }
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0 &&
-                field0DA < g_F1212_DifficultyAt006714D0 + 2) {
+                field0DA < g_OptionsModeAt006714D0 + 2) {
                 ++field0DA;
                 ResetSecondaryCounter(2);
             }
@@ -2284,7 +2284,7 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 owner->SpawnBattleEffect(921, x, y, facing, 0);
             }
-            if (field0D8 < g_F1212_DifficultyAt006714D0 * 8 + 10) ++field0D8;
+            if (field0D8 < g_OptionsModeAt006714D0 * 8 + 10) ++field0D8;
             --field0DC;
             rotationZ -= 5.0f;
             if (animationStage == 1) {

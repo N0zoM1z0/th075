@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "CharacterAI49B070.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
@@ -39,7 +40,7 @@ void MarisaFighter::ChooseCardAction()
             return;
         }
         aiCommand = 220;
-        if (g_StateRepeatLevelAt006714D0 == 3) aiCommand = 221;
+        if (g_OptionsModeAt006714D0 == 3) aiCommand = 221;
         return;
     }
     if (aiCardTimer < 0 && CARD_TYPE == 1 && field3A0 > 0) {

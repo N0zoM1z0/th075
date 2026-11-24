@@ -1,10 +1,9 @@
+#include "GameSharedState.hpp"
 #include "DisplayOptions.hpp"
 #include "GameDefaultsF193.hpp"
 #include <windows.h>
 #include <string.h>
 
-// Borrowed global storage anchors only; these do not define or allocate any
-// original data or assert a complete settings structure layout.
 unsigned int g_GameDefaultsUseCountAt00671614;
 extern unsigned char g_KeyBindingsAt00671440[];
 extern unsigned char g_CharacterNamesAt006714D8[];
@@ -14,7 +13,6 @@ extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_SettingsByteAt006714D2;
 extern unsigned char g_SoundVolumeAt006714B6;
-extern unsigned char g_OptionModeAt006714D0;
 extern unsigned char g_GameSettingAt00671435;
 extern unsigned char g_GameSettingAt00671434;
 extern unsigned char g_GameSettingAt00671438;
@@ -65,7 +63,7 @@ GameDefaultsF193::GameDefaultsF193()
         DisplayOptions::squareTextures = false;
         DisplayOptions::use16BitBackBuffer = false;
         g_SoundVolumeAt006714B6 = 100;
-        g_OptionModeAt006714D0 = 1;
+        g_OptionsModeAt006714D0 = 1;
         g_GameSettingAt00671435 = 2;
         g_GameSettingAt00671434 = g_GameSettingAt00671435;
         g_GameSettingAt00671438 = (g_GameSettingAt00671438 = 0);

@@ -1,4 +1,5 @@
 #pragma once
+#include "GameSharedState.hpp"
 
 #include "Fighter.hpp"
 #include <deque>
@@ -12,5 +13,4 @@ public:
 
 // Observed used byte/container views; original global names remain unknown.
 extern signed char g_InputReplayModeAt0066C238;
-extern signed char g_StateRepeatLevelAt006714D0;
 extern std::deque<unsigned char> g_ReplayChoicesAt006718CC;

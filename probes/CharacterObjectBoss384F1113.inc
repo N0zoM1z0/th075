@@ -34,14 +34,14 @@ case 0x384: {
             velocityX=0.0f;
             owner->PlaySound(11);
             ResetPrimaryCounters(0x385);
-            if (g_F1113_DifficultyAt006714D0>0) {
+            if (g_OptionsModeAt006714D0>0) {
                 owner->field314=3.0f;
                 owner->SpawnBattleEffect(
                     0x38E,x,y,1,1);
                 owner->SpawnBattleEffect(
                     0x38E,x,y,-1,1);
             }
-            if (g_F1113_DifficultyAt006714D0>1) {
+            if (g_OptionsModeAt006714D0>1) {
                     owner->field314=6.0f;
                     owner->SpawnBattleEffect(
                         0x38E,x,y,1,1);

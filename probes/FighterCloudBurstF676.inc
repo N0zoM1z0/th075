@@ -23,7 +23,7 @@
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=RecordedRange(60,100)
-                           -static_cast<int>(g_CloudOpponentAt006714D0)*20;
+                           -static_cast<int>(g_OptionsModeAt006714D0)*20;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=13.5f;
@@ -39,7 +39,7 @@
             if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<6) {
                 ResetSecondaryCounter(5);
                 ++scriptCounterF00;
-                if ((scriptCounterF00)==6-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                if ((scriptCounterF00)==6-static_cast<int>(g_OptionsModeAt006714D0)) {
                     Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))+g_ContactProjectionAt00657888,
                         30.0f,facing,0);
@@ -58,7 +58,7 @@
                     Fighter::SpawnBattleEffect(0x38D,
                         (*(&x))-g_BurstXAt00658400,
                         -30.0f,facing,1);
-                    if (static_cast<int>(g_CloudOpponentAt006714D0)>1) {
+                    if (static_cast<int>(g_OptionsModeAt006714D0)>1) {
                         Fighter::SpawnBattleEffect(0x38D,
                             (*(&x))+g_BurstXAt00659420,
                             50.0f,facing,0);
@@ -111,7 +111,7 @@
             if ((animationStage)>4 && (animationStage)<8 && (scriptCounterF00)>3) {
                 ++scriptCounterF02;
                 if ((scriptCounterF02)>2 &&
-                    (fieldF04)<static_cast<int>(g_CloudOpponentAt006714D0)*5+15) {
+                    (fieldF04)<static_cast<int>(g_OptionsModeAt006714D0)*5+15) {
                     scriptCounterF02=0;
                     ++fieldF04;
                     if (RecordedRange(0,100)>50)
@@ -132,7 +132,7 @@
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=RecordedRange(60,120)
-                           -static_cast<int>(g_CloudOpponentAt006714D0)*20;
+                           -static_cast<int>(g_OptionsModeAt006714D0)*20;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=16.5f;

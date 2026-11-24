@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "BattleScene.hpp"
@@ -32,7 +33,7 @@ short BattleScene::AdvanceState()
             fighters[0]->field3A0 = 0; fighters[1]->field3A0 = 0;
             fighters[0]->field39C = 0; fighters[1]->field39C = 0;
             if (g_FrameClockMode == 2) {
-                if (g_NoticeSelection == g_StateReplayLimit || g_CombatMode == 1 || g_CombatMode == 2) { STATE = 6; break; }
+                if (g_StageAt0067161E == g_StateReplayLimit || g_CombatMode == 1 || g_CombatMode == 2) { STATE = 6; break; }
                 AudioControl407CA0::ScheduleFade(-10000, -200, true, false);
                 return 0x2201;
             } else {
@@ -81,11 +82,11 @@ short BattleScene::AdvanceState()
                     else { field0A0 = 1; field118 = 1; break; }
                 } else {
                     if (g_FrameClockMode == 2) {
-                        if (g_NoticeSelection == g_StateReplayLimit) { STATE = 6; break; }
+                        if (g_StageAt0067161E == g_StateReplayLimit) { STATE = 6; break; }
                         AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
                     } else {
                         g_StateReplay.AppendRecord();
-                        if (g_NoticeSelection == g_StateRecordLimit) {
+                        if (g_StageAt0067161E == g_StateRecordLimit) {
                             MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
                             g_StateReturnFlag = -1; return 0x2207;
                         }
@@ -242,7 +243,7 @@ short BattleScene::AdvanceState()
     }
     if (g_FrameClockMode == 2 && g_StateReplay.IsInputEmpty()) {
         if (g_CombatMode != 3 && g_CombatMode != 4) STATE = 6;
-        else if (g_NoticeSelection >= g_StateReplayLimit) STATE = 6;
+        else if (g_StageAt0067161E >= g_StateReplayLimit) STATE = 6;
     }
     if (field0A0 || field0A1) {
         inputSnapshots[0] = fighters[0]->inputBindings.state;

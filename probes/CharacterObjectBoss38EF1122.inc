@@ -20,7 +20,7 @@ case 0x38E: {
     }
     x=float(facing)*velocityX+x;
     if (AdvanceNestedFrame()==animationStageCount) {
-        if (field0D8<int(g_F1113_DifficultyAt006714D0)*8+10) {
+        if (field0D8<int(g_OptionsModeAt006714D0)*8+10) {
             ++field0D8;
             ResetSecondaryCounter(1);
         }

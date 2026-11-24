@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YukariObject::Advance at 005A1600.
 // Replays 43,599 code bytes plus 508 bytes of switch data with VC7.1 build 3077.
 // Compiler profile and relocation bindings are in config/match-units.toml.
@@ -10,7 +11,6 @@ float __cdecl AngleAt00483300(float,float);
 float __cdecl AbsFloatAt00412D90(float);
 
 extern float g_F1211_AngleDivAt00657828;
-extern signed char g_F1212_DifficultyAt006714D0;
 
 void YukariObject::Advance()
 {
@@ -1677,7 +1677,7 @@ void YukariObject::Advance()
             }
             else {
                 if (animationStage == 5 && animationFrame == 0) {
-                    if (field0DC < 3 - g_F1212_DifficultyAt006714D0) {
+                    if (field0DC < 3 - g_OptionsModeAt006714D0) {
                         ResetSecondaryCounter(4);
                         ++field0DC;
                         return;
@@ -1836,7 +1836,7 @@ void YukariObject::Advance()
             }
             else {
                 if (animationStage == 5 && animationFrame == 0) {
-                    if (field0DC < 3 - g_F1212_DifficultyAt006714D0) {
+                    if (field0DC < 3 - g_OptionsModeAt006714D0) {
                         ResetSecondaryCounter(4);
                         ++field0DC;
                         return;
@@ -1981,7 +1981,7 @@ void YukariObject::Advance()
                 owner->PlaySound(16);
                 owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
                     (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
-                for (int effectIndex908 = 0; effectIndex908 < g_F1212_DifficultyAt006714D0 * 2 + 3; ++effectIndex908) {
+                for (int effectIndex908 = 0; effectIndex908 < g_OptionsModeAt006714D0 * 2 + 3; ++effectIndex908) {
                     if (field0DC == 0) {
                         owner->SpawnBattleEffect(907, effectIndex908 * velocityX + x,
                             effectIndex908 * velocityY + y, facing, 1);
@@ -2188,7 +2188,7 @@ void YukariObject::Advance()
             if (AdvanceNestedFrame() == animationStageCount) {
                 ClearFrameInfo();
                 owner->PlaySound(23);
-                if (g_F1212_DifficultyAt006714D0 == 0)
+                if (g_OptionsModeAt006714D0 == 0)
                     owner->SpawnBattleEffect(915, x, y, facing, 1);
                 else owner->SpawnBattleEffect(916, x, y, facing, 1);
             }
@@ -2264,7 +2264,7 @@ void YukariObject::Advance()
         else {
             if (owner->health < 3500) {
                 ++field0D8;
-                if (g_F1212_DifficultyAt006714D0 <= 1 && field0D8 > 140) {
+                if (g_OptionsModeAt006714D0 <= 1 && field0D8 > 140) {
                     owner->PlaySound(15);
                     owner->SpawnBattleEffect(914, (field0DA == -1) * 1280,
                         field0DC * 150 + 50, field0DA, 1);
@@ -2273,7 +2273,7 @@ void YukariObject::Advance()
                     field0D8 = 0;
                     field0DA = -field0DA;
                 }
-                if (g_F1212_DifficultyAt006714D0 == 2 && field0D8 > 120) {
+                if (g_OptionsModeAt006714D0 == 2 && field0D8 > 120) {
                     owner->PlaySound(15);
                     field0DA = -field0DA;
                     owner->SpawnBattleEffect(914, (field0DA == -1) * 1280,
@@ -2284,7 +2284,7 @@ void YukariObject::Advance()
                         field0E0 * 150 + 50, field0DA, 1);
                     field0D8 = 0;
                 }
-                if (g_F1212_DifficultyAt006714D0 == 3 && field0D8 > 90) {
+                if (g_OptionsModeAt006714D0 == 3 && field0D8 > 90) {
                     owner->PlaySound(15);
                     field0DA = -field0DA;
                     owner->SpawnBattleEffect(914, (field0DA == -1) * 1280,
@@ -2350,7 +2350,7 @@ void YukariObject::Advance()
             }
             if (static_cast<YukariFighter*>(owner)->fieldF16 == 2) {
                 owner->PlaySound(16);
-                for (int effectIndex918 = 0; effectIndex918 < g_F1212_DifficultyAt006714D0 * 2 + 4; ++effectIndex918) {
+                for (int effectIndex918 = 0; effectIndex918 < g_OptionsModeAt006714D0 * 2 + 4; ++effectIndex918) {
                     owner->field314 = -(static_cast<YukariFighter*>(owner)->fieldF12 + field0C8) * facing;
                     owner->field318 = 4.0f;
                     owner->SpawnBattleEffect(922, x, y, 1, 1);
@@ -2420,7 +2420,7 @@ void YukariObject::Advance()
             }
             if (field0DA == 300) static_cast<YukariFighter*>(owner)->fieldF16 = 3;
             if (field0DA == 301) {
-                field0DA = g_F1212_DifficultyAt006714D0 * 20 - 60;
+                field0DA = g_OptionsModeAt006714D0 * 20 - 60;
                 static_cast<YukariFighter*>(owner)->fieldF16 = 0;
             }
             if (field0DE > 0) {

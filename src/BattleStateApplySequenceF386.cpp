@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "BattleScene.hpp"
 // Complete original R065 1,958-CODE-byte battle input/replay dispatcher.
@@ -16,7 +17,6 @@ public:
     void Append(const int* item);
 };
 extern ReplayQueueF385 g_ReplayEventsAt006718E0;
-extern signed char g_BattleModeAt006714B4;
 extern signed char g_ReplayModeAt0066C238;
 extern signed char g_StageIdAt0067161D;
 extern unsigned char g_InputCanCancelAt00671632;
@@ -25,7 +25,7 @@ extern const float g_LevelMaxAt00657B28;
 extern const float g_LevelZeroAt0065782C;
 extern void NativeActionAt00423C60(int);
 void BattleScene::ApplySequence() {
-    if(g_BattleModeAt006714B4==5) {
+    if(g_CombatMode==5) {
         ProcessDebugKeys();
     } else {
         if(g_ReplayModeAt0066C238==2) {
@@ -62,7 +62,7 @@ void BattleScene::ApplySequence() {
             }
         } else {
             if(!g_InputMappings[0].IsKeyDown(0x3D)) field110=0;
-            if(g_BattleModeAt006714B4!=3 && g_BattleModeAt006714B4!=4) {
+            if(g_CombatMode!=3 && g_CombatMode!=4) {
                 if(g_InputMappings[0].IsKeyDown(0x3C)) {
                     if(g_ReplayModeAt0066C238==1) {
                         g_ReplayEventsAt006718E0.Append(&field014);

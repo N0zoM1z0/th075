@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "TextOverlay.hpp"
 #include "TextureManagerF198.hpp"
@@ -107,7 +108,7 @@ void BattleScene::Render() {
             }
             if ((fighters[0]->noticeEnabled))
                 g_TextRenderer->DrawBox();
-            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderStage(g_NoticeSelection);
+            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderStage(g_StageAt0067161E);
         }
         if (field060 > 0)
             RenderOverlayTimeline();

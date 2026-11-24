@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "CharacterActionDispatch52D230.hpp"
 
 #define TARGET_PRIORITY(index) (static_cast<FighterSequenceInfo *>(sequenceSlots.At(index))->targetPriority)
@@ -52,10 +53,10 @@ void YoumuFighter::DispatchActions()
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(745)) {
         PackDirectionBits();
-        if (g_StateRepeatLevelAt006714D0 == 0) ResetPrimaryCounters(746);
-        if (g_StateRepeatLevelAt006714D0 == 1) ResetPrimaryCounters(745);
-        if (g_StateRepeatLevelAt006714D0 == 2) ResetPrimaryCounters(744);
-        if (g_StateRepeatLevelAt006714D0 == 3) ResetPrimaryCounters(743);
+        if (g_OptionsModeAt006714D0 == 0) ResetPrimaryCounters(746);
+        if (g_OptionsModeAt006714D0 == 1) ResetPrimaryCounters(745);
+        if (g_OptionsModeAt006714D0 == 2) ResetPrimaryCounters(744);
+        if (g_OptionsModeAt006714D0 == 3) ResetPrimaryCounters(743);
         return;
     }
     if (aiCommand == 202 &&

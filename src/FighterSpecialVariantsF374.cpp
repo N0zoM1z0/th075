@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "MeilingFighter.hpp"
 #include "SuikaFighter.hpp"
 #include "YukariFighter.hpp"
@@ -13,9 +14,8 @@
 // Each independently retains its original seven semantic variant IDs.
 // A 40-byte native switch table is compared in each routine, NOT CODE credited.
 // Only borrowed +0x6E5 field and selected-effect-mode global are observed.
-extern signed char g_SelectedEffectModeAt0067161E;
 void ReimuFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=1;break;
   case 2: field6E5=3;break;
   case 3: field6E5=5;break;
@@ -26,7 +26,7 @@ void ReimuFighter::SelectVariant() {
   }
 }
 void MarisaFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=3;break;
   case 2: field6E5=2;break;
   case 3: field6E5=4;break;
@@ -37,7 +37,7 @@ void MarisaFighter::SelectVariant() {
   }
 }
 void SakuyaFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=0;break;
   case 2: field6E5=3;break;
   case 3: field6E5=1;break;
@@ -48,7 +48,7 @@ void SakuyaFighter::SelectVariant() {
   }
 }
 void AliceFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=1;break;
   case 2: field6E5=0;break;
   case 3: field6E5=2;break;
@@ -59,7 +59,7 @@ void AliceFighter::SelectVariant() {
   }
 }
 void PatchouliFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=1;break;
   case 2: field6E5=2;break;
   case 3: field6E5=3;break;
@@ -70,7 +70,7 @@ void PatchouliFighter::SelectVariant() {
   }
 }
 void YoumuFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=0;break;
   case 2: field6E5=1;break;
   case 3: field6E5=4;break;
@@ -81,7 +81,7 @@ void YoumuFighter::SelectVariant() {
   }
 }
 void RemiliaFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=2;break;
   case 2: field6E5=1;break;
   case 3: field6E5=0;break;
@@ -92,7 +92,7 @@ void RemiliaFighter::SelectVariant() {
   }
 }
 void YuyukoFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=5;break;
   case 2: field6E5=1;break;
   case 3: field6E5=0;break;
@@ -103,7 +103,7 @@ void YuyukoFighter::SelectVariant() {
   }
 }
 void YukariFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=6;break;
   case 2: field6E5=3;break;
   case 3: field6E5=5;break;
@@ -114,7 +114,7 @@ void YukariFighter::SelectVariant() {
   }
 }
 void SuikaFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=2;break;
   case 2: field6E5=3;break;
   case 3: field6E5=5;break;
@@ -125,7 +125,7 @@ void SuikaFighter::SelectVariant() {
   }
 }
 void MeilingFighter::SelectVariant() {
-  switch(g_SelectedEffectModeAt0067161E) {
+  switch(g_StageAt0067161E) {
   case 1: field6E5=1;break;
   case 2: field6E5=3;break;
   case 3: field6E5=5;break;

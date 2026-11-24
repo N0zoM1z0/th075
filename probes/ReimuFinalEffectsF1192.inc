@@ -27,7 +27,7 @@ case 0x31C: {
         if (field370[field39D]==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;
             SpawnBattleEffect(0x3A3,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
-            if (g_ReimuRepeatSettingAt006714D0==0) {
+            if (g_OptionsModeAt006714D0==0) {
 #define R1192_INDEX echoEasy
 #define R1192_COUNT 6
 #define R1192_STEP 60
@@ -36,7 +36,7 @@ case 0x31C: {
 #undef R1192_COUNT
 #undef R1192_STEP
             }
-            if (g_ReimuRepeatSettingAt006714D0==1) {
+            if (g_OptionsModeAt006714D0==1) {
 #define R1192_INDEX echoNormal
 #define R1192_COUNT 6
 #define R1192_STEP 60
@@ -45,7 +45,7 @@ case 0x31C: {
 #undef R1192_COUNT
 #undef R1192_STEP
             }
-            if (g_ReimuRepeatSettingAt006714D0==2) {
+            if (g_OptionsModeAt006714D0==2) {
 #define R1192_INDEX echoHard
 #define R1192_COUNT 8
 #define R1192_STEP 45
@@ -54,7 +54,7 @@ case 0x31C: {
 #undef R1192_COUNT
 #undef R1192_STEP
             }
-            if (g_ReimuRepeatSettingAt006714D0==3) {
+            if (g_OptionsModeAt006714D0==3) {
 #define R1192_INDEX echoLunatic
 #define R1192_COUNT 8
 #define R1192_STEP 45

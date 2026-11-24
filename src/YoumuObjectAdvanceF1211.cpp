@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YoumuObject::Advance at 00536400.
 // Replays 39,999 code bytes plus 467 bytes of switch data with VC7.1 build 3077.
 // Compiler profile and relocation bindings are in config/match-units.toml.
@@ -21,7 +22,6 @@ extern float g_F1211_RightBoundAt00659424;
 extern float g_F1211_LowerBoundAt006595EC;
 extern float g_F1211_UpperBoundAt006583B4;
 extern float g_F1211_AngleDivAt00657828;
-extern signed char g_F1212_DifficultyAt006714D0;
 
 
 void YoumuObject::Advance()
@@ -526,7 +526,7 @@ void YoumuObject::Advance()
                 velocityY = 0.0f;
                 field0C8 = 0.0f;
                 ResetPrimaryCounters(905);
-                if (g_F1212_DifficultyAt006714D0 == 3) {
+                if (g_OptionsModeAt006714D0 == 3) {
                     owner->field314 = 1.0f;
                     owner->SpawnBattleEffect(905, x, y, facing, 1);
                 }
@@ -1694,7 +1694,7 @@ case 0x331: {
         if (field0DE == 1) ClearFrameInfo();
         return;
     }
-    if (owner->action > 49 && owner->action < 150 && g_F1212_DifficultyAt006714D0 == 0) {
+    if (owner->action > 49 && owner->action < 150 && g_OptionsModeAt006714D0 == 0) {
         ResetPrimaryCounters(916);
         field0D8 = 0;
         field0DA = 0;
@@ -1762,7 +1762,7 @@ case 0x331: {
         if (field0DE == 1) ClearFrameInfo();
         return;
     }
-    if (owner->action > 49 && owner->action < 150 && g_F1212_DifficultyAt006714D0 == 0) {
+    if (owner->action > 49 && owner->action < 150 && g_OptionsModeAt006714D0 == 0) {
         ResetPrimaryCounters(916);
         field0D8 = 0;
         field0DA = 0;
@@ -1840,7 +1840,7 @@ case 0x331: {
         if (field0DE == 1) ClearFrameInfo();
         return;
     }
-    if (owner->action > 49 && owner->action < 150 && g_F1212_DifficultyAt006714D0 == 0) {
+    if (owner->action > 49 && owner->action < 150 && g_OptionsModeAt006714D0 == 0) {
         ResetPrimaryCounters(916);
         field0D8 = 0;
         field0DA = 0;
@@ -1905,7 +1905,7 @@ case 0x331: {
 
     case 903:
     static_cast<YoumuFighter*>(owner)->fieldF12 = 1;
-    if (owner->action > 49 && owner->action < 150 && g_F1212_DifficultyAt006714D0 == 0) {
+    if (owner->action > 49 && owner->action < 150 && g_OptionsModeAt006714D0 == 0) {
         ResetPrimaryCounters(916);
         field0D8 = 0;
         field0DA = 0;
@@ -1927,7 +1927,7 @@ case 0x331: {
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field0D8 = RecordedRange(0, 30) + 90 - g_F1212_DifficultyAt006714D0 * 30;
+        field0D8 = RecordedRange(0, 30) + 90 - g_OptionsModeAt006714D0 * 30;
         field0DA = 0;
         field0DC = 0;
         velocityX = 0.0f;
@@ -1965,7 +1965,7 @@ case 0x331: {
 
     case 904:
     static_cast<YoumuFighter*>(owner)->fieldF12 = 1;
-    if (owner->action > 49 && owner->action < 150 && g_F1212_DifficultyAt006714D0 == 0) {
+    if (owner->action > 49 && owner->action < 150 && g_OptionsModeAt006714D0 == 0) {
         ResetPrimaryCounters(916);
         field0D8 = 0;
         field0DA = 0;
@@ -2233,7 +2233,7 @@ case 0x331: {
             if (field0DC <= 0) {
                 owner->PlaySound(0);
                 owner->SpawnBattleEffect(912, x, y, facing, 1);
-                field0DC = 14 - g_F1212_DifficultyAt006714D0 * 2;
+                field0DC = 14 - g_OptionsModeAt006714D0 * 2;
             }
         }
         if (facing == 1)

@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "MeilingFighter.hpp"
 
 extern double g_ContactScaleAt006583E8;
@@ -39,8 +40,6 @@ extern float g_ProjectileFallAt006590B4;
 extern float g_StopThresholdAt00657480;
 extern float g_SubtractAt00657478;
 extern float g_ThresholdAt0065782C;
-extern signed char g_ModeAt006714B4;
-extern signed char g_RepeatSettingAt006714D0;
 
 void MeilingFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -951,7 +950,7 @@ void MeilingFighter::Advance() {
     }
 
     case 0x63: {
-        if (g_ModeAt006714B4 != 3 ||
+        if (g_CombatMode != 3 ||
             field2CD == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
@@ -3520,28 +3519,28 @@ void MeilingFighter::Advance() {
                 aiCardTimer = 0;
                 field318 = 0.0f;
                 SpawnBattleEffect(0x3A3, x, (y) + g_ContactProjectionAt00657888, 1, 1);
-                if (g_RepeatSettingAt006714D0 == 0) {
+                if (g_OptionsModeAt006714D0 == 0) {
 
             for (int echoEasy = 0; echoEasy < 6; ++echoEasy) {
                 field314 = float(echoEasy * 60);
                 SpawnBattleEffect(0x397, x, (y) + g_ContactProjectionAt00657888, 1, 1);
             }
                 }
-                if (g_RepeatSettingAt006714D0 == 1) {
+                if (g_OptionsModeAt006714D0 == 1) {
 
             for (int echoNormal = 0; echoNormal < 6; ++echoNormal) {
                 field314 = float(echoNormal * 60);
                 SpawnBattleEffect(0x397, x, (y) + g_ContactProjectionAt00657888, 1, 1);
             }
                 }
-                if (g_RepeatSettingAt006714D0 == 2) {
+                if (g_OptionsModeAt006714D0 == 2) {
 
             for (int echoHard = 0; echoHard < 8; ++echoHard) {
                 field314 = float(echoHard * 45);
                 SpawnBattleEffect(0x397, x, (y) + g_ContactProjectionAt00657888, 1, 1);
             }
                 }
-                if (g_RepeatSettingAt006714D0 == 3) {
+                if (g_OptionsModeAt006714D0 == 3) {
 
             for (int echoLunatic = 0; echoLunatic < 8; ++echoLunatic) {
                 field314 = float(echoLunatic * 45);

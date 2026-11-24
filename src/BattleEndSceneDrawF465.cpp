@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextureManagerF198.hpp"
 #include "Fighter.hpp"
 #include "Graphics.hpp"
@@ -18,9 +19,6 @@ public:
     virtual void V16(); virtual void DrawCharacter(unsigned char);
 };
 extern BattleActorF464* g_BattleEndActorAt00671418;
-extern signed char g_BattleEndCharacterAt0067161E;
-extern unsigned char g_BattleOverlayAlphaAt006714D1;
-extern unsigned int g_BattleOverlayColorAt0067149C;
 class BattleEndDrawF464 {public:void Draw();};
 #define ACTOR reinterpret_cast<Fighter*>(g_BattleEndActorAt00671418)
 #define ACTOR_DRAWER static_cast<TextureManagerF198*>(ACTOR->drawing)
@@ -28,13 +26,13 @@ void BattleEndDrawF464::Draw() {
     if(Graphics::BeginFrame()) {
         ACTOR_DRAWER->SetDepthMode(0);
         ACTOR_DRAWER->SetBlendMode(0);
-        g_BattleEndActorAt00671418->DrawCharacter(g_BattleEndCharacterAt0067161E);
+        g_BattleEndActorAt00671418->DrawCharacter(g_StageAt0067161E);
         if(ACTOR->noticeEnabled)
             g_TextRenderer->DrawBox();
-        if (g_BattleOverlayAlphaAt006714D1>0) {
+        if (g_StateFadeAlpha>0) {
             RECT region;
             SetRect(&region,0,0,640,480);
-            Graphics::DrawFilledRectangle(&region, (static_cast<unsigned int>(g_BattleOverlayAlphaAt006714D1)<<24) | g_BattleOverlayColorAt0067149C);
+            Graphics::DrawFilledRectangle(&region, (static_cast<unsigned int>(g_StateFadeAlpha)<<24) | static_cast<unsigned int>(g_StateResetCounter));
         }
         Graphics::EndFrame();
     }

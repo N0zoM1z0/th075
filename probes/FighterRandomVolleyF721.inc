@@ -15,7 +15,7 @@
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=static_cast<short>(RecordedRange(60,80)
-                   -static_cast<int>(g_CloudOpponentAt006714D0)*20);
+                   -static_cast<int>(g_OptionsModeAt006714D0)*20);
             }
             if ((animationStage)==3 && (animationFrame)==0)
                 PlaySound(9);
@@ -37,7 +37,7 @@
                     facing,1);
             }
             if ((animationStage)==10 && (animationFrame)==0
-                && (scriptCounterF02)<(3-static_cast<int>(g_CloudOpponentAt006714D0))*2) {
+                && (scriptCounterF02)<(3-static_cast<int>(g_OptionsModeAt006714D0))*2) {
                 ++scriptCounterF02;
                 ResetSecondaryCounter(9);
             }

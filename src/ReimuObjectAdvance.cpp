@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 // Reconstruction of ReimuObject::Advance at 00476A40.
 #include "CharacterObject.hpp"
 #include "ReimuFighter.hpp"
@@ -47,7 +48,6 @@ extern const float g_ReimuObjectScaleFadeAt0065923C;
 extern const float g_ReimuObjectVerticalLowerLimitAt00659244;
 extern const float g_ReimuObjectRotationStepAt00658290;
 extern const float g_ReimuObjectHalfTurnAt00659238;
-extern signed char g_StateRepeatLevelAt006714D0;
 extern float g_AngleShiftAt00657878;
 extern double g_RiseAt00658050;
 extern const float g_ReimuObjectContactProjectionAt00657888;
@@ -3135,7 +3135,7 @@ void ReimuObject::Advance()
             owner->field314 = 0.0f;
             owner->field318 = 60.0f;
             owner->SpawnBattleEffect(0x39F, x, y, owner->facing, 1);
-            field0E0 = static_cast<short>(5 - g_StateRepeatLevelAt006714D0);
+            field0E0 = static_cast<short>(5 - g_OptionsModeAt006714D0);
         }
         if (static_cast<ReimuFighter*>(owner)->fieldF28 == 2 && field0E0 <= 0) {
             owner->PlaySound(0);
@@ -3143,7 +3143,7 @@ void ReimuObject::Advance()
                 static_cast<float>(facing);
             owner->field318 = 60.0f;
             owner->SpawnBattleEffect(0x39F, x, y, 1, 1);
-            field0E0 = static_cast<short>(5 - g_StateRepeatLevelAt006714D0);
+            field0E0 = static_cast<short>(5 - g_OptionsModeAt006714D0);
         }
         if (static_cast<ReimuFighter*>(owner)->fieldF28 == 3 && field0DE <= 0) {
             owner->PlaySound(0x0D);
@@ -3507,16 +3507,16 @@ void ReimuObject::Advance()
             if (owner->aiCardTimer <= 0) {
                 if (RecordedRange(0, 100) < 0x32) {
                     owner->aiCardTimer =
-                        300 - g_StateRepeatLevelAt006714D0 * 0x14;
+                        300 - g_OptionsModeAt006714D0 * 0x14;
                     static_cast<ReimuFighter*>(owner)->fieldF28 = 1;
-                    field0DC = g_StateRepeatLevelAt006714D0 * 5 + 0x14;
+                    field0DC = g_OptionsModeAt006714D0 * 5 + 0x14;
                     return;
                 }
                 else {
                     owner->aiCardTimer =
-                        300 - g_StateRepeatLevelAt006714D0 * 0x14;
+                        300 - g_OptionsModeAt006714D0 * 0x14;
                     static_cast<ReimuFighter*>(owner)->fieldF28 = 2;
-                    field0DC = g_StateRepeatLevelAt006714D0 * 5 + 0x14;
+                    field0DC = g_OptionsModeAt006714D0 * 5 + 0x14;
                     return;
                 }
             }
@@ -3585,7 +3585,7 @@ void ReimuObject::Advance()
             }
             if (owner->aiCardTimer <= 0) {
                 owner->aiCardTimer =
-                    300 - g_StateRepeatLevelAt006714D0 * 0x1E;
+                    300 - g_OptionsModeAt006714D0 * 0x1E;
                 static_cast<ReimuFighter*>(owner)->fieldF28 = 3;
                 field0DC = 1;
                 return;

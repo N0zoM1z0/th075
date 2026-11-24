@@ -1,5 +1,5 @@
+#include "GameSharedState.hpp"
 #include "FighterOpponentGaugeF170.hpp"
-extern signed char g_CombatMode;
 
 void Fighter::ApplyOpponentGaugeChange(
     short base, short multiplier, short count)

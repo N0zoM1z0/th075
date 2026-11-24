@@ -35,7 +35,7 @@
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
                     facing,1);
-                for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+2;++i)
+                for (int i=0;i<static_cast<int>(g_OptionsModeAt006714D0)*2+2;++i)
                     SpawnBattleEffect(0x392,
                         float(facing*36)+(x),
                         (*(&y))+g_StormYAt0065948C,
@@ -44,7 +44,7 @@
             if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if ((animationStage)==13 && (animationFrame)==0 &&
-                (scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)+3) {
+                (scriptCounterF00)<static_cast<int>(g_OptionsModeAt006714D0)+3) {
                 ResetSecondaryCounter(0xB);
                 ++scriptCounterF00;
             }

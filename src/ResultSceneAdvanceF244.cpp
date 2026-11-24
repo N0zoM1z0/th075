@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
@@ -7,8 +8,6 @@
 extern Fighter* g_ResultActorAt00671418;
 extern unsigned int g_ResultBestAt006714B0;
 extern signed char g_ResultModeAt0066C238;
-extern signed char g_ResultFocusAt006714D0;
-extern signed char g_ResultFrameAt0067161E;
 extern signed char g_ResultThresholdAt00671866;
 extern unsigned char g_ResultContinueAt00671621;
 extern unsigned char g_ResultLeaveAt006714CE;
@@ -35,7 +34,7 @@ unsigned short ResultScene::Update()
             field038=static_cast<int>((field038)*(field02C));
             field038=static_cast<int>((field038)*(field030));
             field038=static_cast<int>((field038)*(field034));
-            switch (g_ResultFocusAt006714D0) {
+            switch (g_OptionsModeAt006714D0) {
             case 0: field038=static_cast<int>((field038)*g_ResultFactor0At00658050);break;
             case 1: field038=static_cast<int>((field038)*g_ResultFactor1At00657D00);break;
             case 2: field038=static_cast<int>((field038)*g_ResultFactor2At00657D08);break;
@@ -53,7 +52,7 @@ unsigned short ResultScene::Update()
         } else {
             if (static_cast<unsigned int>(g_ResultActorAt00671418->score)>g_ResultBestAt006714B0)
                 g_ResultBestAt006714B0=g_ResultActorAt00671418->score;
-            if (g_ResultModeAt0066C238==2 && g_ResultFrameAt0067161E>=g_ResultThresholdAt00671866) {
+            if (g_ResultModeAt0066C238==2 && g_StageAt0067161E>=g_ResultThresholdAt00671866) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
                 return 0x2205;
@@ -113,7 +112,7 @@ unsigned short ResultScene::Update()
     case 180:
         field040=5;
         g_SoundBank->Play(0x28);
-        switch (g_ResultFocusAt006714D0) {
+        switch (g_OptionsModeAt006714D0) {
         case 0: field038=static_cast<int>((field038)*g_ResultFactor0At00658050);break;
         case 1: field038=static_cast<int>((field038)*g_ResultFactor1At00657D00);break;
         case 2: field038=static_cast<int>((field038)*g_ResultFactor2At00657D08);break;

@@ -38,7 +38,7 @@ case 0x303: {
     if ((animationStage)==7 || (animationStage)==8) {
         if ((animationFrame)==0) {
             ++scriptCounterF00;
-            if ((scriptCounterF00)<g_F1004_ModeAt006714D0*5+10) {
+            if ((scriptCounterF00)<g_OptionsModeAt006714D0*5+10) {
                 PlaySound(0);
                 scriptCounterF02=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
                 fieldF08=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
@@ -58,7 +58,7 @@ case 0x303: {
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RecordedRange(60,120)-g_F1004_ModeAt006714D0*20);
+            RecordedRange(60,120)-g_OptionsModeAt006714D0*20);
     }
     if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=0.0f;

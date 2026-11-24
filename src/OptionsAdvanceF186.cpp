@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #include "OptionsScene.hpp"
 #include "MenuInputF184.hpp"
@@ -11,7 +12,6 @@ namespace AudioVolume4073B0 {
 }
 namespace OptionsSettingsF186 { void SaveConfiguration(); }
 
-extern signed char g_OptionsModeAt006714D0;
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671428;

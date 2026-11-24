@@ -1,5 +1,6 @@
 #ifndef TH075_BATTLE_SCENE_HPP
 #define TH075_BATTLE_SCENE_HPP
+#include "GameSharedState.hpp"
 #include <windows.h>
 #include "Fighter.hpp"
 #include "SceneBase.hpp"
@@ -157,7 +158,6 @@ public:
     signed char field118;               // +0x118 pause/Mode 5 menu selection
 };
 
-extern signed char g_CombatMode;
 extern short g_MaxComboCount;
 extern unsigned long g_MaxCombatScore;
 extern BattleRecords g_BattleRecords;

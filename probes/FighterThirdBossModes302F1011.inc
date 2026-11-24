@@ -16,7 +16,7 @@ case 0x302: {
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
-        fieldF08=g_F1004_ModeAt006714D0+2;
+        fieldF08=g_OptionsModeAt006714D0+2;
     }
     if ((animationStage)<13 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
@@ -34,7 +34,7 @@ case 0x302: {
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         aiCardTimer=static_cast<short>(
-            RecordedRange(0,60)+180-g_F1004_ModeAt006714D0*20);
+            RecordedRange(0,60)+180-g_OptionsModeAt006714D0*20);
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=13.5f;
@@ -42,7 +42,7 @@ case 0x302: {
     }
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(5);
-        if (g_F1004_ModeAt006714D0==0) {
+        if (g_OptionsModeAt006714D0==0) {
             for (int shot=0;shot<10;++shot) {
                 field314=float(shot*36);
                 field318=4.0f;
@@ -53,7 +53,7 @@ case 0x302: {
                     facing,1);
             }
         }
-        if (g_F1004_ModeAt006714D0==1) {
+        if (g_OptionsModeAt006714D0==1) {
             for (int shot=0;shot<12;++shot) {
                 field314=float(shot*30);
                 field318=4.0f;
@@ -64,7 +64,7 @@ case 0x302: {
                     facing,1);
             }
         }
-        if (g_F1004_ModeAt006714D0==2) {
+        if (g_OptionsModeAt006714D0==2) {
             for (int shot=0;shot<15;++shot) {
                 field314=float(shot*24);
                 field318=4.0f;
@@ -75,7 +75,7 @@ case 0x302: {
                     facing,1);
             }
         }
-        if (g_F1004_ModeAt006714D0==3) {
+        if (g_OptionsModeAt006714D0==3) {
             for (int shot=0;shot<20;++shot) {
                 field314=float(shot*18);
                 field318=4.0f;

@@ -27,7 +27,7 @@
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
-                if (g_CloudOpponentAt006714D0>1)
+                if (g_OptionsModeAt006714D0>1)
                     SpawnBattleEffect(0x387,
                         float(facing*62)+(x),
                         (*(&y))+g_F714_ShotYAt00657868,
@@ -41,7 +41,7 @@
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=static_cast<short>(RecordedRange(100,180)
-                    -static_cast<int>(g_CloudOpponentAt006714D0)*30);
+                    -static_cast<int>(g_OptionsModeAt006714D0)*30);
             }
             if ((animationFrame)==0)
                 field07C=0;

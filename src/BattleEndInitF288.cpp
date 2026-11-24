@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "TextOverlay.hpp"
 #include <windows.h>
@@ -19,7 +20,6 @@ public:
     void LoadStageResource();
 };
 extern FighterActorF288* g_FighterAt00671418;
-extern signed char g_StageAt0067161E;
 extern signed char g_CharacterAt006714C8;
 extern unsigned char g_StatusAt006714CE;
 extern const char g_EndTitleAt00657B7B[];

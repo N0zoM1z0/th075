@@ -1,15 +1,14 @@
+#include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
 #include "CharacterSelectScene.hpp"
 // Main character-select update and transition loop.
-extern signed char g_ChoiceGameModeAt006714B4;
 extern signed char g_ChoiceFocusAt006714B8;
 // The native input controller repeats a physically observed 0x48-byte record.
 // This borrowed indexed view is not instantiated or used to infer its fields.
 extern signed char g_SelectedFightersAt006714C8[2];
-extern unsigned char g_SequenceIdleAt0067161E;
 extern signed char g_SequencePhaseAt0067161D;
 extern unsigned char g_ModeLeftAt006714AC;
 extern unsigned char g_ModeRightAt006714AD;
@@ -46,7 +45,7 @@ unsigned short CharacterSelectScene::Update()
         if (g_ChoiceZeroAt0065782C < (portraitFade[1]))
             (portraitFade[1]) -= g_ChoiceHalfStepAt00657874;
     }
-    if (g_ChoiceGameModeAt006714B4==1 || g_ChoiceGameModeAt006714B4==5) {
+    if (g_CombatMode==1 || g_CombatMode==5) {
         if (g_InputMappings[g_ChoiceFocusAt006714B8].held.counts[3]==1 || (cancellationRequested)==1) {
             PLAY(0x28);
             if ((optionsOpen[g_ChoiceFocusAt006714B8])!=0) {
@@ -63,7 +62,7 @@ unsigned short CharacterSelectScene::Update()
                 (input[g_ChoiceFocusAt006714B8].cancel)=1;
             }
         }
-    } else if (g_ChoiceGameModeAt006714B4==3 || g_ChoiceGameModeAt006714B4==4) {
+    } else if (g_CombatMode==3 || g_CombatMode==4) {
         if ((g_InputMappings[0].held.counts[3]==1 && (playerState[0])==0) || (cancellationRequested)==1) {
             PLAY(0x28);
             if ((optionsOpen[0])!=0)
@@ -85,7 +84,7 @@ unsigned short CharacterSelectScene::Update()
     }
     for (int i=0;i<2;++i) {
         if ((optionsOpen[i])!=0) {
-            if (i==0 && g_ChoiceGameModeAt006714B4==3)
+            if (i==0 && g_CombatMode==3)
                 ProcessSubselection();
             else
                 ProcessPlayerOptions(static_cast<signed char>(i));
@@ -100,10 +99,10 @@ unsigned short CharacterSelectScene::Update()
         }
     }
     if ((playerState[0])==8 && (playerState[1])==8) {
-        g_SequenceIdleAt0067161E=0;
+        g_StageAt0067161E=0;
         if ((g_SelectedFightersAt006714C8[0]==6 || g_SelectedFightersAt006714C8[1]==6) && g_SequencePhaseAt0067161D <6)
             g_SequencePhaseAt0067161D += 10;
-        if (g_ChoiceGameModeAt006714B4==3) {
+        if (g_CombatMode==3) {
             g_ModeLeftAt006714AC=0;
             g_ModeRightAt006714AD=0;
         }

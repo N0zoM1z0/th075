@@ -39,7 +39,7 @@ case 0x391: {
             field0DC=0;
     }
     if (scaleX==g_F1051_ScaleCeilingAt0065747C &&
-        g_F1113_DifficultyAt006714D0>1) {
+        g_OptionsModeAt006714D0>1) {
         if (velocityX>g_F1044_GroundAt0065782C &&
             x>g_F1083_YBoundAt00658E80) {
             velocityX=-velocityX;

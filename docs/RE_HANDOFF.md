@@ -24,13 +24,14 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,859 unresolved externals. WinMain and the six
+stops at `LNK1120` with 1,809 unresolved externals. WinMain and the six
 existing scene types share `SceneBase`. The character selection
 constructor and destructor use the same three texture-manager members.
 Startup, capture, drawing, and cleanup share the frame texture owner.
-The latest batch cold-replayed 25 units across 17 objects and removed
-17 unresolved symbols. The frame entry forwards the native status and
-the score callers share the progress object.
+The latest batch cold-replayed 248 units across 137 objects and removed
+50 unresolved symbols by sharing five state variables and the existing
+character and stage loaders. The frame entry forwards the native status
+and the score callers share the progress object.
 
 Menu and results text use the same 56-byte GDI font surface. Startup,
 rendering and teardown use the same 120-byte text overlay.

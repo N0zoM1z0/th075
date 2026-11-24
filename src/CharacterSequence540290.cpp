@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence540290.hpp"
@@ -717,7 +718,7 @@ void YoumuFighter::AdvanceSequence()
             if (sequenceTimer == 60) {
                 ConfigureNoticeText(0);
                 g_SequenceStageAt0067161D = 8;
-                SequenceStage::Load();
+                BattleStageLoaderF389::LoadStage();
                 OPPONENT_ACTOR->ResetPrimaryCounters(0);
                 opponent->x = 800.0f;
                 x = 480.0f;

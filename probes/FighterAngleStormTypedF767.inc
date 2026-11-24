@@ -33,7 +33,7 @@ case 0x2F9: {
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
                     facing,1);
-                for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+4;++i)
+                for (int i=0;i<static_cast<int>(g_OptionsModeAt006714D0)*2+4;++i)
                     SpawnBattleEffect(0x392,
                         float(facing*30)+(x),
                         (*(&y))+g_StormAngleShotYAt00659A18,
@@ -46,7 +46,7 @@ case 0x2F9: {
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,
                     facing,1);
-                for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+4;++i)
+                for (int i=0;i<static_cast<int>(g_OptionsModeAt006714D0)*2+4;++i)
                     SpawnBattleEffect(0x392,
                         float(facing*30)+(x),
                         (*(&y))+g_StormAngleShotYAt00659A18,
@@ -55,7 +55,7 @@ case 0x2F9: {
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=RecordedRange(60,100)
-                       -static_cast<int>(g_CloudOpponentAt006714D0)*20;
+                       -static_cast<int>(g_OptionsModeAt006714D0)*20;
             }
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityY=12.5f;
@@ -75,7 +75,7 @@ case 0x2F9: {
                     /g_StormAngleDenominatorAt00657828;
             }
             if ((animationStage)==13 && (animationFrame)==0) {
-                if ((scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
+                if ((scriptCounterF00)<static_cast<int>(g_OptionsModeAt006714D0)*2+1) {
                     ResetSecondaryCounter(0xB);
                     ++scriptCounterF00;
                 } else scriptCounterF00=0;
@@ -89,7 +89,7 @@ case 0x2F9: {
                     /g_StormAngleDenominatorAt00657828;
             }
             if ((animationStage)==16 && (animationFrame)==0
-                && (scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
+                && (scriptCounterF00)<static_cast<int>(g_OptionsModeAt006714D0)*2+1) {
                 ResetSecondaryCounter(14);
                 ++scriptCounterF00;
             }

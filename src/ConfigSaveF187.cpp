@@ -1,3 +1,4 @@
+#include "GameSharedState.hpp"
 #include "DisplayOptions.hpp"
 #include <windows.h>
 
@@ -7,7 +8,6 @@ extern BYTE g_KeyBindingsAt00671440[];
 extern BYTE g_OptionsFlagAt00671604;
 extern BYTE g_SettingsByteAt006714D2;
 extern BYTE g_OptionsFlagAt00671430;
-extern BYTE g_OptionsModeAt006714D0;
 extern BYTE g_OptionsFlagAt00671428;
 extern BYTE g_StreamVolumeAt006714B7;
 extern BYTE g_SoundVolumeAt006714B6;

@@ -72,9 +72,9 @@ case 0x2F8: {
             float((facing)*150)+(x),
             y,(facing),1);
     }
-    if ((animationStage)==13-static_cast<int>(g_CloudOpponentAt006714D0)
+    if ((animationStage)==13-static_cast<int>(g_OptionsModeAt006714D0)
         && (animationFrame)==0
-        && (fieldF04)<static_cast<int>(g_CloudOpponentAt006714D0)+1) {
+        && (fieldF04)<static_cast<int>(g_OptionsModeAt006714D0)+1) {
         ++fieldF04;
         ResetSecondaryCounter(7);
         PlaySound(0xA);

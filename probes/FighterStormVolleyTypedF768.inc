@@ -30,7 +30,7 @@
                     float(facing*36)+(x),
                     (*(&y))+g_StormYAt0065948C,
                     facing,1);
-                for (int i=0; i<static_cast<int>(g_CloudOpponentAt006714D0)*2+2; ++i)
+                for (int i=0; i<static_cast<int>(g_OptionsModeAt006714D0)*2+2; ++i)
                     SpawnBattleEffect(0x392,
                         float(facing*36)+(x),
                         (*(&y))+g_StormYAt0065948C,
@@ -39,11 +39,11 @@
             if (AdvanceNestedFrame()==(animationStageCount)) {
                 ResetPrimaryCounters(0);
                 aiCardTimer=RecordedRange(60,100)
-                           -static_cast<int>(g_CloudOpponentAt006714D0)*20;
+                           -static_cast<int>(g_OptionsModeAt006714D0)*20;
             }
             if ((animationStage)==2 && (animationFrame)==0) PlaySound(0x15);
             if ((animationStage)==3 && (animationFrame)==0) {
-                if ((scriptCounterF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                if ((scriptCounterF00)<3-static_cast<int>(g_OptionsModeAt006714D0)) {
                     ++scriptCounterF00;
                     ResetSecondaryCounter(2);
                     break;
@@ -51,7 +51,7 @@
                 scriptCounterF00=0;
             }
             if ((animationStage)==4 && (animationFrame)==0) {
-                if ((scriptCounterF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                if ((scriptCounterF00)<3-static_cast<int>(g_OptionsModeAt006714D0)) {
                     ++scriptCounterF00;
                     ResetSecondaryCounter(3);
                     break;
@@ -59,12 +59,12 @@
                 scriptCounterF00=0;
             }
             if ((animationStage)==8 && (animationFrame)==0
-                && (scriptCounterF00)<static_cast<int>(g_CloudOpponentAt006714D0)+6) {
+                && (scriptCounterF00)<static_cast<int>(g_OptionsModeAt006714D0)+6) {
                 ResetSecondaryCounter(6);
                 ++scriptCounterF00;
             }
             if ((animationStage)==10 && (animationFrame)==0
-                && (scriptCounterF00)<10-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                && (scriptCounterF00)<10-static_cast<int>(g_OptionsModeAt006714D0)) {
                 ResetSecondaryCounter(8);
                 ++scriptCounterF00;
             }
