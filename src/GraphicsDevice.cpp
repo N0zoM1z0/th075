@@ -32,7 +32,6 @@ namespace Graphics
     extern const char g_CreateTargetRendererError[];
 
     void SetDefaultStates();
-    void ToggleWindowMode();
 
     bool Initialize(HWND window, unsigned short width, unsigned short height,
         bool windowed, bool squareTextures, bool use16BitBackBuffer)

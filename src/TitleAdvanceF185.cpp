@@ -12,7 +12,7 @@
 namespace Graphics { void Present(); }
 namespace AudioControlF185 { void __cdecl ScheduleFade(long first, long second, unsigned char third, unsigned char fourth); }
 
-extern HWND g_TitleWindowAt00671608;
+extern HWND g_GameMainWindowAt00671608;
 extern signed char g_TitleAttractSwitchAt00671633;
 extern signed char g_TitleRoundOptionAt006714AC[2];
 extern signed char g_TitleMiscOptionAt00671610[2];
@@ -74,14 +74,14 @@ unsigned short TitleScene::Update()
                 g_SoundBank->Play(45);
                 return 0x2209;
             case 9:
-                DestroyWindow(g_TitleWindowAt00671608);
+                DestroyWindow(g_GameMainWindowAt00671608);
                 return 2;
             }
         }
 
         if (SIDE_HELD(3, i) == 1) {
             if (menuIndex == 9) {
-                DestroyWindow(g_TitleWindowAt00671608);
+                DestroyWindow(g_GameMainWindowAt00671608);
                 return 2;
             }
             g_SoundBank->Play(40);
@@ -90,7 +90,7 @@ unsigned short TitleScene::Update()
     }
     if (field01C == 1) {
         if (menuIndex == 9) {
-            DestroyWindow(g_TitleWindowAt00671608);
+            DestroyWindow(g_GameMainWindowAt00671608);
             return 2;
         }
         g_SoundBank->Play(40);

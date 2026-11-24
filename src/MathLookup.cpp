@@ -4,9 +4,7 @@
 
 namespace MathLookup
 {
-    // Only the 3,600-entry used range is established. The original allocation
-    // and runtime contents are unknown; no replacement table is embedded here.
-    extern float g_CosineTable[];
+    float g_CosineTable[3600];
 
     void BuildCosTable()
     {

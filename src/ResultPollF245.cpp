@@ -1,3 +1,5 @@
+#include "GraphicsDevice.hpp"
+#include "InputJoystick.hpp"
 #include "ResultScene.hpp"
 // Borrowed controller entries and observed 32-bit button-state globals.
 // These pointer-only receiver declarations do not instantiate full owners.
@@ -16,15 +18,10 @@ extern int g_ResultChoicePrimaryAt00671674;
 extern int g_ResultChoiceSecondAt006716BC;
 extern int g_ResultSkipPrimaryAt00671678;
 extern int g_ResultSkipSecondAt006716C0;
-namespace InputProcessF245 {
-    void First();
-    void Second();
-    void OpenSpecialMenu();
-}
 void ResultScene::PollInput()
 {
-    InputProcessF245::First();
-    InputProcessF245::Second();
+    Input::PollKeyboard();
+    Input::PollJoysticks();
     field00C=0;
     field00D=0;
     g_ResultInputAt00671638.Update();
@@ -40,6 +37,6 @@ void ResultScene::PollInput()
     if (g_ResultInputAt00671638.IsKeyDown(0x1c)) {
         if (g_ResultInputAt00671638.IsKeyDown(0x38) ||
             g_ResultInputAt00671638.IsKeyDown(0xb8))
-            InputProcessF245::OpenSpecialMenu();
+            Graphics::ToggleWindowMode();
     }
 }

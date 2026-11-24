@@ -4,6 +4,7 @@
 // Complete original 83-byte WinMain application window class callback.
 // This is the actual native Win32 stdcall four-argument WndProc.
 unsigned char g_AppInitializedAt0068D674;
+HWND g_GameMainWindowAt00671608;
 LRESULT CALLBACK AppWindowProcF468(HWND window,UINT message,WPARAM key,LPARAM mouse) {
     switch(message) {
     case WM_CREATE:

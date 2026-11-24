@@ -1,3 +1,5 @@
+#include "GraphicsDevice.hpp"
+#include "InputJoystick.hpp"
 #include <windows.h>
 #include <mmsystem.h>
 // Five independently full original scene state and input-policy functions.
@@ -62,22 +64,19 @@ unsigned short TimedSceneAdvanceF488::Advance(){
  if(field00C>180)return 0x220D;
  return 4;
 }
-extern void __cdecl JoystickTickAt00403E50();
-extern void __cdecl KeyboardTickAt00403F40();
-extern void __cdecl FullscreenToggleAt004018A0();
 class InputStateF488 {public:void Advance();unsigned char CheckPressed(int);};
 extern InputStateF488 g_FirstInputAt00671638;
 class LoadingSceneInputF488 {public:void PollInput();};
 class StaffRollSceneInputF488 {public:void PollSkipInput();};
 void LoadingSceneInputF488::PollInput(){
- JoystickTickAt00403E50();KeyboardTickAt00403F40();
+ Input::PollKeyboard();Input::PollJoysticks();
  g_FirstInputAt00671638.Advance();
  if(g_FirstInputAt00671638.CheckPressed(0x1C) && (g_FirstInputAt00671638.CheckPressed(0x38) || g_FirstInputAt00671638.CheckPressed(0xB8)))
-   FullscreenToggleAt004018A0();
+   Graphics::ToggleWindowMode();
 }
 void StaffRollSceneInputF488::PollSkipInput(){
- JoystickTickAt00403E50();KeyboardTickAt00403F40();
+ Input::PollKeyboard();Input::PollJoysticks();
  g_FirstInputAt00671638.Advance();
  if(g_FirstInputAt00671638.CheckPressed(0x1C) && (g_FirstInputAt00671638.CheckPressed(0x38) || g_FirstInputAt00671638.CheckPressed(0xB8)))
-   FullscreenToggleAt004018A0();
+   Graphics::ToggleWindowMode();
 }

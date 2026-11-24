@@ -20,6 +20,14 @@ translation unit defines it with zero-initialized storage. WinMain's
 existing relocations to `0x0041CAE0`, `0x0041CC00`, and `0x0041CC50`
 bind to the cosine table builder and the shared diagnostic log functions.
 
+The consecutive zero-filled allocations at `0x006884C0` and `0x0068BD00`
+hold the 3,600-float lookup table and the diagnostic path. The table
+ends at the path. The `MAX_PATH` buffer ends at the archive use count
+at `0x0068BE04`. WinMain and the title update share the initially null
+`HWND` at `0x00671608`. The result, replay and scene input callers now
+use the existing keyboard poll at `0x00403E50`, joystick poll at
+`0x00403F40` and window mode toggle at `0x004018A0`.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

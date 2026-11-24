@@ -1,3 +1,5 @@
+#include "GraphicsDevice.hpp"
+#include "InputJoystick.hpp"
 #include <windows.h>
 
 // The complete replay-scene and shared input-frame private layouts remain
@@ -17,11 +19,6 @@ extern int g_ReplayPrimaryConfirmAt0067166C;
 extern int g_ReplaySecondaryConfirmAt006716B4;
 extern int g_ReplayPrimaryCancelAt00671670;
 extern int g_ReplaySecondaryCancelAt006716B8;
-namespace ReplayInputServiceF268 {
-    void __cdecl BeginFrame();
-    void __cdecl EndFrame();
-    void __cdecl ToggleWindowMode();
-}
 class ReplayInputPollF268 {
 public:
     void PollInput();
@@ -35,8 +32,8 @@ public:
 };
 void ReplayInputPollF268::PollInput()
 {
-    ReplayInputServiceF268::BeginFrame();
-    ReplayInputServiceF268::EndFrame();
+    Input::PollKeyboard();
+    Input::PollJoysticks();
     field04D=0;
     field04E=0;
     field04F=0;
@@ -59,6 +56,6 @@ void ReplayInputPollF268::PollInput()
         field050=1;
     if (g_ReplayInputPrimaryAt00671638.IsHeld(0x1c)) {
         if (g_ReplayInputPrimaryAt00671638.IsHeld(0x38) || g_ReplayInputPrimaryAt00671638.IsHeld(0xb8))
-            ReplayInputServiceF268::ToggleWindowMode();
+            Graphics::ToggleWindowMode();
     }
 }

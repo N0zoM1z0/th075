@@ -5,7 +5,7 @@
 
 namespace DiagnosticLog
 {
-    extern char g_Path[];
+    char g_Path[MAX_PATH];
 
     void InitializeFile(const char *path)
     {

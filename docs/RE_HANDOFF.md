@@ -23,13 +23,12 @@ configured translation units and archive them as `build/program/th075.lib`.
 CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
-All configured sources compile and archive. The first strict executable
-link stopped at `LNK1120` with 2,730 unresolved externals. Representative
-blockers are the scene constructor names used by WinMain and the missing
-storage for `DiagnosticLog::g_Path` and `MathLookup::g_CosineTable`.
-Start from `build/program/link.log` and the call sites in
-`src/WinMainF1171.cpp`. Use the relocation targets to find candidate
-definitions, then check signatures and storage before changing bindings.
+All configured sources compile and archive. The strict executable link
+stopped at `LNK1120` with 2,706 unresolved externals after reconciling startup
+and input calls and defining the diagnostic path, cosine table and main
+window handle. Use `build/program/link.log` and the relocation targets
+to find candidate definitions. The graphics, sound and input globals and
+WinMain's scene constructors still need shared definitions and ABI checks.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
 
 ## Origin review

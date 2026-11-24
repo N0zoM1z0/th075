@@ -1,3 +1,5 @@
+#include "GraphicsDevice.hpp"
+#include "InputJoystick.hpp"
 #include <windows.h>
 #include "ResultListScene.hpp"
 
@@ -18,15 +20,10 @@ extern int g_ResultPrimaryConfirmAt0067166C;
 extern int g_ResultSecondaryConfirmAt006716B4;
 extern int g_ResultPrimaryCancelAt00671670;
 extern int g_ResultSecondaryCancelAt006716B8;
-namespace ResultInputServiceF260 {
-    void __cdecl BeginFrame();
-    void __cdecl EndFrame();
-    void __cdecl ToggleWindowMode();
-}
 void ResultListScene::PollInput()
 {
-    ResultInputServiceF260::BeginFrame();
-    ResultInputServiceF260::EndFrame();
+    Input::PollKeyboard();
+    Input::PollJoysticks();
     horizontalInput=0;
     verticalInput=0;
     confirmInput=0;
@@ -49,6 +46,6 @@ void ResultListScene::PollInput()
         cancelInput=1;
     if (g_ResultInputPrimaryAt00671638.IsHeld(0x1c)) {
         if (g_ResultInputPrimaryAt00671638.IsHeld(0x38) || g_ResultInputPrimaryAt00671638.IsHeld(0xb8))
-            ResultInputServiceF260::ToggleWindowMode();
+            Graphics::ToggleWindowMode();
     }
 }

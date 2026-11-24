@@ -13,6 +13,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "DiagnosticLog.hpp"
+#include "GraphicsDevice.hpp"
+#include "InputJoystick.hpp"
 #include "MathLookup.hpp"
 // Complete startup lifecycle: anchored to every
 // original window/resource/scene native call and all 15 scene allocations.
@@ -23,7 +25,7 @@ class InputClientF1171 {public:~InputClientF1171();InputClientF1171();};
 class SoundClientF1171 {public:~SoundClientF1171();SoundClientF1171();};
 class ArchiveCatalogF1171 {public:ArchiveCatalogF1171();~ArchiveCatalogF1171();};
 class GameDataResourcesF1171 {public:GameDataResourcesF1171();~GameDataResourcesF1171();};
-extern void __cdecl OpenArchiveFileAt0041CF80(const char*,const char*);
+namespace ArchiveCatalogF353 { void OpenAndRegister(const char*, const char*); }
 class ReplayGlobalF1171 {public:void Initialize();void Finalize();};
 class SceneCountLifetimeF1171 {public:SceneCountLifetimeF1171();~SceneCountLifetimeF1171();};
 class GameScenesF1171 {SceneCountLifetimeF1171 sceneCount;public:virtual ~GameScenesF1171();virtual unsigned short Advance();unsigned short TranslateState(unsigned short);};
@@ -58,12 +60,8 @@ extern HWND g_GameMainWindowAt00671608;
 extern ReplayGlobalF1171 g_ReplayGlobalAt006718F8;
 extern void __cdecl ConfigureEventAt00423C80(HANDLE*);
 extern void __cdecl InitGraphicsAt00401110(HWND,int,int,int,unsigned char,unsigned char);
-extern void __cdecl InitDirectInputAt00403D20(HWND,HINSTANCE);
-extern void __cdecl InitDirectSoundAt004066E0(HWND);
-extern void __cdecl InitJoystickAt00403EB0();
-extern void __cdecl InitKeyboardAt00403D80();
-extern void __cdecl ChangeScreenAt004018A0();
-extern void __cdecl InitializeGameDataAt004175A0();
+namespace SharedSound4066C0 { bool Initialize(HWND); }
+namespace GameGlobalsF212 { void InitializeSound(); }
 extern LRESULT CALLBACK AppWindowProcF468(HWND,UINT,WPARAM,LPARAM);
 extern const char g_ArchiveTh075At0065A1B8[];
 extern const char g_ArchiveBgmAt0065A1CC[];
@@ -127,9 +125,9 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     ConfigureEventAt00423C80(&eventReady);
     MathLookup::BuildCosTable();
     ArchiveCatalogF1171 archiveOwner;
-    OpenArchiveFileAt0041CF80(g_ArchiveTh075At0065A1B8,g_ArchiveRootAt0065A1B0);
-    OpenArchiveFileAt0041CF80(g_ArchiveBgmAt0065A1CC,g_BgmRootAt0065A1C4);
-    OpenArchiveFileAt0041CF80(g_ArchiveTh075BAt0065A1E4,g_ArchiveDatabAt0065A1DC);
+    ArchiveCatalogF353::OpenAndRegister(g_ArchiveTh075At0065A1B8,g_ArchiveRootAt0065A1B0);
+    ArchiveCatalogF353::OpenAndRegister(g_ArchiveBgmAt0065A1CC,g_BgmRootAt0065A1C4);
+    ArchiveCatalogF353::OpenAndRegister(g_ArchiveTh075BAt0065A1E4,g_ArchiveDatabAt0065A1DC);
     DiagnosticLog::InitializeFile(g_LogFileAt0065A1F0);
     DiagnosticLog::AppendString(g_LogTextAt0065A1F8);
     GameDataResourcesF1171 gameSettings;
@@ -139,25 +137,25 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     InitGraphicsAt00401110(hWndMain,640,480,1,g_WindowGraphModeAt006714B5,g_WindowGraphAlphaAt006714A0);
     DiagnosticLog::AppendString(g_LogOKAt0065A230);
     DiagnosticLog::AppendString(g_DirectInputTextAt0065A238);
-    InitDirectInputAt00403D20(hWndMain,instance);
+    Input::Initialize(hWndMain,instance);
     DiagnosticLog::AppendString(g_LogOKAt0065A250);
     DiagnosticLog::AppendString(g_DirectSoundTextAt0065A258);
-    InitDirectSoundAt004066E0(hWndMain);
+    SharedSound4066C0::Initialize(hWndMain);
     DiagnosticLog::AppendString(g_LogOKAt0065A270);
     DiagnosticLog::AppendString(g_JoystickTextAt0065A278);
-    InitJoystickAt00403EB0();
+    Input::InitializeJoysticks();
     DiagnosticLog::AppendString(g_LogOKAt0065A28C);
     DiagnosticLog::AppendString(g_KeyboardTextAt0065A294);
-    InitKeyboardAt00403D80();
+    Input::CreateKeyboard();
     DiagnosticLog::AppendString(g_LogOKAt0065A2A8);
     if (g_AppWindowModeAt00671605) {
         Sleep(50);
         DiagnosticLog::AppendString(g_ChangeScreenTextAt0065A2B0);
-        ChangeScreenAt004018A0();
+        Graphics::ToggleWindowMode();
         DiagnosticLog::AppendString(g_LogOKAt0065A2C8);
     }
     DiagnosticLog::AppendString(g_SystemDataTextAt0065A2D0);
-    InitializeGameDataAt004175A0();
+    GameGlobalsF212::InitializeSound();
     DiagnosticLog::AppendString(g_LogOKAt0065A2E4);
     currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene4F1171);
     unsigned short activeSceneState=0x2004;
