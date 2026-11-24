@@ -104,6 +104,17 @@ A standalone link against the archive reached seven unresolved graphics
 data definitions after adding the program's Windows SDK libraries. Six
 are diagnostic strings and one is the pixel shader.
 
+The replay reader and input handlers share `g_ReplayRecords` at
+`0x00671750`. The 0x1A4-byte owner holds four 20-byte VC7.1 deques at
+`+0x154`, `+0x168`, `+0x17C`, and `+0x190`. Their element types are
+`unsigned char`, `short`, `unsigned char`, and `unsigned int`.
+The constructor and destructor retain native exception cleanup. The
+public VC7.1 `deque::clear()` and its destructor both use `_Tidy`, which
+accounts for their identical wrappers at the original call sites.
+A headless archive consumer loaded a test record into all four queues,
+checked the signed sample and high-bit values, cleared the queues, and
+confirmed that destruction closed the owned Windows handle.
+
 `Graphics::BeginFrame` returns the status from `BeginTarget` on both
 branches. The native caller tests AL, and the bool declaration preserves
 all 36 bytes of the wrapper. The application and scene drawing callers

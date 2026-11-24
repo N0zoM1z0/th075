@@ -1,30 +1,7 @@
 #include "ReplaySegmentedQueueF219.hpp"
 
-// The reader uses the same typed ReplayRecords owner and segmented queue
-// layout as AppendRecord. Nested local lifetimes preserve the native VC7.1
-// stack objects, including the unsigned file-word to signed queue insertion.
-class ReplayByteListF216 : public ReplaySegmentedQueueStorageF219<char> {
-public:
-    void Clear();
-    void Push(const char* item);
-};
-class ReplayWordListF216 : public ReplaySegmentedQueueStorageF219<short> {
-public:
-    void Clear();
-    void Push(const short& item);
-};
-class ReplayDwordListF216 : public ReplaySegmentedQueueStorageF219<unsigned int> {
-public:
-    void Clear();
-    void Push(const unsigned int* item);
-};
-typedef ReplayRecordsLayoutF219<ReplayByteListF216,ReplayWordListF216,ReplayDwordListF216> ReplayLoadOwnerLayoutF216;
-class ReplayRecordsF216 : public ReplayLoadOwnerLayoutF216 {
-public:
-    void LoadRecord(signed char slot);
-};
-typedef char ReplayLoadOwnerSizeF216[(sizeof(ReplayLoadOwnerLayoutF216)==0x1a4)?1:-1];
-void ReplayRecordsF216::LoadRecord(signed char slot)
+template<>
+void ReplayRecords::LoadRecord(signed char slot)
 {
     unsigned int i;
     {
@@ -38,7 +15,7 @@ void ReplayRecordsF216::LoadRecord(signed char slot)
     {
     HANDLE handle;
     {
-    char item;
+    unsigned char item;
     {
     DWORD bytesRead;
     {
@@ -56,28 +33,28 @@ void ReplayRecordsF216::LoadRecord(signed char slot)
     ReadFile(handle,&header.field14E,1,&bytesRead,0);
     ReadFile(handle,&header.field150,4,&bytesRead,0);
     ReadFile(handle,&entries,4,&bytesRead,0);
-    byteInputs.Clear();
+    byteInputs.clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&item,1,&bytesRead,0);
-        byteInputs.Push(&item);
+        byteInputs.push_back(item);
     }
     ReadFile(handle,&entries,4,&bytesRead,0);
-    wordInputs.Clear();
+    wordInputs.clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&rawWord,2,&bytesRead,0);
-        wordInputs.Push(static_cast<short>(rawWord));
+        wordInputs.push_back(static_cast<short>(rawWord));
     }
     ReadFile(handle,&entries,4,&bytesRead,0);
-    secondaryInputs.Clear();
+    secondaryInputs.clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&item,1,&bytesRead,0);
-        secondaryInputs.Push(&item);
+        secondaryInputs.push_back(item);
     }
     ReadFile(handle,&entries,4,&bytesRead,0);
-    dwordInputs.Clear();
+    dwordInputs.clear();
     for (i=0;i<entries;++i) {
         ReadFile(handle,&dwordItem,4,&bytesRead,0);
-        dwordInputs.Push(&dwordItem);
+        dwordInputs.push_back(dwordItem);
     }
     CloseHandle(handle);
     }

@@ -2,6 +2,7 @@
 #define TH075_REPLAY_SEGMENTED_QUEUE_F219_HPP
 #include <stddef.h>
 #include <windows.h>
+#include <deque>
 
 // Native replay queues are segmented circular collections. The first word
 // is an as-yet-unclassified control/allocator value; the remaining words are
@@ -38,11 +39,16 @@ struct ReplayRecordHeaderF219 {
 };
 typedef char ReplayRecordHeaderSizeF219[(sizeof(ReplayRecordHeaderF219)==0x10)?1:-1];
 
-// Shared ReplayRecords owner layout. Queue wrapper types are supplied by each
-// translation unit so their native member-call symbols remain independently
-// nameable while all four physical queue objects share the same proven ABI.
+// The replay reader and input handlers share the native four-queue layout.
+// The writer still uses this layout with its iterator call declarations.
 template<class ByteQueue, class WordQueue, class DwordQueue>
 struct ReplayRecordsLayoutF219 {
+    ReplayRecordsLayoutF219();
+    ~ReplayRecordsLayoutF219();
+    void LoadRecord(signed char slot);
+    void ClearFourQueues();
+    unsigned char IsPrimaryInputQueueEmpty();
+
     HANDLE fileHandle;                   // +0x000
     char filePath[0x112];                // +0x004 .. +0x115
     signed char field116;                // +0x116 next record-offset slot
@@ -54,5 +60,19 @@ struct ReplayRecordsLayoutF219 {
     ByteQueue secondaryInputs;           // +0x17C
     DwordQueue dwordInputs;              // +0x190
 };
+
+typedef std::deque<unsigned char> ReplayByteQueue;
+typedef std::deque<short> ReplayWordQueue;
+typedef std::deque<unsigned int> ReplayDwordQueue;
+typedef ReplayRecordsLayoutF219<ReplayByteQueue, ReplayWordQueue, ReplayDwordQueue> ReplayRecords;
+
+typedef char ReplayRecordsNativeLayout[(
+    sizeof(ReplayRecords) == 0x1A4 &&
+    offsetof(ReplayRecords, byteInputs) == 0x154 &&
+    offsetof(ReplayRecords, wordInputs) == 0x168 &&
+    offsetof(ReplayRecords, secondaryInputs) == 0x17C &&
+    offsetof(ReplayRecords, dwordInputs) == 0x190) ? 1 : -1];
+
+extern ReplayRecords g_ReplayRecords;
 
 #endif

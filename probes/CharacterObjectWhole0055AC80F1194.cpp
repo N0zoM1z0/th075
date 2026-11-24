@@ -4,7 +4,7 @@
 #include "RemiliaFighter.hpp"
 #include "GameLeafHelpers.hpp"
 #include "FighterEffectPolicies.hpp"
-#include "RecordedRange455580.hpp"
+#include "BattleSessionState.hpp"
 #include "EffectServices.hpp"
 
 // Caller-cleaned two-float/ST0 used-contract hypothesis, shared with the

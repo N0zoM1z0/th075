@@ -3,7 +3,9 @@
 #include "SelectionInput4388D0.hpp"
 #include "SoundBank.hpp"
 #include "CharacterSelectScene.hpp"
-#include "RecordedRange455580.hpp"
+#include "BattleSessionState.hpp"
+#include "ReplaySegmentedQueueF219.hpp"
+#include "Fighter.hpp"
 #include <stdlib.h>
 
 // Pointer-only interfaces. No complete scene/fighter/container layout is claimed.
@@ -90,15 +92,6 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     }
 }
 
-class RecordedBytesF130 {
-public:
-    unsigned int Count() const;
-    unsigned char& Front();
-    void PopFront();
-    void PushBack(const unsigned char&);
-};
-extern unsigned char g_ControlRecordedPress[];
-extern unsigned char g_ControlRecordedAuxiliary[];
 // Only actually invoked virtual slots11,12,13 have a recovered call contract.
 // Earlier entries are unknown unused interface positions. Never instantiate.
 class FighterControlsF130 {
@@ -154,10 +147,6 @@ public:
     unsigned char unknown512[0x516 - 0x512];
     short field516;
 };
-#define PRESS reinterpret_cast<RecordedBytesF130*>(g_ControlRecordedPress)
-#define AUXILIARY reinterpret_cast<RecordedBytesF130*>(g_ControlRecordedAuxiliary)
-#define SAMPLES reinterpret_cast<RecordedSamples455580View*>(g_RecordedSamplesAt006718B8)
-#define HISTORY reinterpret_cast<RecordedBytesF130*>(reinterpret_cast<char*>(this) + 0x518)
 #define INPUT_MAPPING reinterpret_cast<InputMapping4388D0*>(reinterpret_cast<char*>(this) + 0x494)
 void FighterControlsF130::UpdateControls() {
     unsigned char relativeBits = 0;
@@ -172,9 +161,9 @@ void FighterControlsF130::UpdateControls() {
         field4F4 = 0;
         field511 = 0;
         if (g_ReplayModeAt0066C238 == 2) {
-            if (PRESS->Count() > 0) { relativeBits = PRESS->Front(); PRESS->PopFront(); }
-            if (AUXILIARY->Count() > 0) { field511 = AUXILIARY->Front(); AUXILIARY->PopFront(); }
-            if (SAMPLES->Count() > 0) { field516 = SAMPLES->Front(); SAMPLES->PopFront(); }
+            if (g_ReplayRecords.byteInputs.size() > 0) { relativeBits = g_ReplayRecords.byteInputs.front(); g_ReplayRecords.byteInputs.pop_front(); }
+            if (g_ReplayRecords.secondaryInputs.size() > 0) { field511 = g_ReplayRecords.secondaryInputs.front(); g_ReplayRecords.secondaryInputs.pop_front(); }
+            if (g_ReplayRecords.wordInputs.size() > 0) { field516 = g_ReplayRecords.wordInputs.front(); g_ReplayRecords.wordInputs.pop_front(); }
             if (relativeBits & 0x1) field4DC = -1;
             if (relativeBits & 0x2) field4DC = 1;
             if (relativeBits & 0x4) field4E0 = -1;
@@ -206,13 +195,13 @@ void FighterControlsF130::UpdateControls() {
             relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4EC) > 0) << 5;
             relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F0) > 0) << 6;
             relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F4) > 0) << 7;
-            PRESS->PushBack(relativeBits);
-            AUXILIARY->PushBack(field511);
-            SAMPLES->PushBack(field516);
+            g_ReplayRecords.byteInputs.push_back(relativeBits);
+            g_ReplayRecords.secondaryInputs.push_back(field511);
+            g_ReplayRecords.wordInputs.push_back(field516);
         }
     } else {
         if (g_ReplayModeAt0066C238 == 2) {
-            if (PRESS->Count() > 0) { physicalInputBits = PRESS->Front(); PRESS->PopFront(); }
+            if (g_ReplayRecords.byteInputs.size() > 0) { physicalInputBits = g_ReplayRecords.byteInputs.front(); g_ReplayRecords.byteInputs.pop_front(); }
             if (physicalInputBits & 0x1) {
                 if (field4C0 > 0) field4C0 = 0;
                 field4C0 = field4C0 - 1;
@@ -273,7 +262,7 @@ void FighterControlsF130::UpdateControls() {
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4EC) > 0) << 5;
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F0) > 0) << 6;
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F4) > 0) << 7;
-            if (g_ReplayModeAt0066C238 == 1) PRESS->PushBack(physicalInputBits);
+            if (g_ReplayModeAt0066C238 == 1) g_ReplayRecords.byteInputs.push_back(physicalInputBits);
         }
         if (field060 >= 300 && (field4E8 == 1 || field4EC == 1 || field4F0 == 1 || field4F4 == 1)) {
             field510 = 10;
@@ -289,15 +278,11 @@ void FighterControlsF130::UpdateControls() {
             field510 = 0;
         }
         if (field510 > 0) --field510;
-        HISTORY->PushBack(relativeBits);
-        HISTORY->PopFront();
+        reinterpret_cast<Fighter*>(this)->inputHistory.push_back(relativeBits);
+        reinterpret_cast<Fighter*>(this)->inputHistory.pop_front();
         FinishInput();
     }
     if (field2CD == 0) field4E4 = field4E8;
     else field4E4 = 0;
 }
 #undef INPUT_MAPPING
-#undef HISTORY
-#undef SAMPLES
-#undef AUXILIARY
-#undef PRESS

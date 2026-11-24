@@ -1,3 +1,4 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -6,19 +7,11 @@
 // Complete original R065 1,958-CODE-byte battle input/replay dispatcher.
 // The separately owned 28-byte native 7-entry switch table is validated in
 // compare_size=1986 but earns zero additional authored CODE credit.
-// Actual source-side unsigned Count()>0 and <=0, real thiscall key scanner,
-// and positive cancel-flag condition preserve native original branch layout.
+// The deque size is unsigned. The thiscall key scanner
+// and positive cancel-flag condition preserve the native branch layout.
 // firstRecord is physically read and stored in the original even though
-// another Peek() reads the active command before dispatch.
+// another front() reads the active command before dispatch.
 // Observed original call ABIs and field offsets only, not a whole battle class.
-class ReplayQueueF385 {
-public:
-    unsigned int Count();
-    int* Peek();
-    void Pop();
-    void Append(const int* item);
-};
-extern ReplayQueueF385 g_ReplayEventsAt006718E0;
 extern const float g_LevelStepAt00657850;
 extern const float g_LevelMaxAt00657B28;
 extern const float g_LevelZeroAt0065782C;
@@ -27,12 +20,12 @@ void BattleScene::ApplySequence() {
         ProcessDebugKeys();
     } else {
         if(g_ReplayModeAt0066C238==2) {
-            if(g_ReplayEventsAt006718E0.Count()>0) {
-                int firstRecord=*g_ReplayEventsAt006718E0.Peek();
-                while(field014==*g_ReplayEventsAt006718E0.Peek()) {
-                    g_ReplayEventsAt006718E0.Pop();
-                    int command=*g_ReplayEventsAt006718E0.Peek();
-                    g_ReplayEventsAt006718E0.Pop();
+            if(g_ReplayRecords.dwordInputs.size()>0) {
+                int firstRecord=g_ReplayRecords.dwordInputs.front();
+                while(field014==g_ReplayRecords.dwordInputs.front()) {
+                    g_ReplayRecords.dwordInputs.pop_front();
+                    int command=g_ReplayRecords.dwordInputs.front();
+                    g_ReplayRecords.dwordInputs.pop_front();
                     switch(command) {
                     case 1: fighters[1]->health=1;break;
                     case 2: fighters[0]->field39D=2;fighters[1]->field39D=2;break;
@@ -55,7 +48,7 @@ void BattleScene::ApplySequence() {
                         if((fighters[1]->field36C)<g_LevelZeroAt0065782C) fighters[1]->field36C=0.0f;
                         break;
                     }
-                    if(g_ReplayEventsAt006718E0.Count()<=0) break;
+                    if(g_ReplayRecords.dwordInputs.size()<=0) break;
                 }
             }
         } else {
@@ -63,16 +56,16 @@ void BattleScene::ApplySequence() {
             if(g_CombatMode!=3 && g_CombatMode!=4) {
                 if(g_InputMappings[0].IsKeyDown(0x3C)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&field014);
-                        int action2=2;g_ReplayEventsAt006718E0.Append(&action2);
+                        g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
+                        int action2=2;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action2));
                     }
                     fighters[0]->field39D=2;fighters[1]->field39D=2;
                 }
                 if(g_InputMappings[0].IsKeyDown(0x3D)) {
                     if(field110==0) {
                         if(g_ReplayModeAt0066C238==1) {
-                            g_ReplayEventsAt006718E0.Append(&field014);
-                            int action3=3;g_ReplayEventsAt006718E0.Append(&action3);
+                            g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
+                            int action3=3;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action3));
                         }
                         if(fighters[0]->field39D>1) --fighters[0]->field39D;
                         if(fighters[1]->field39D>1) --fighters[1]->field39D;
@@ -81,22 +74,22 @@ void BattleScene::ApplySequence() {
                 }
                 if(g_InputMappings[0].IsKeyDown(0x3E)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&field014);
-                        int action4=4;g_ReplayEventsAt006718E0.Append(&action4);
+                        g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
+                        int action4=4;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action4));
                     }
                     field01C=0;
                 }
                 if(g_InputMappings[0].IsKeyDown(0x3F)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&field014);
-                        int action5=5;g_ReplayEventsAt006718E0.Append(&action5);
+                        g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
+                        int action5=5;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action5));
                     }
                     field01C=1;
                 }
                 if(g_InputMappings[0].IsKeyDown(0x40)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&field014);
-                        int action6=6;g_ReplayEventsAt006718E0.Append(&action6);
+                        g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
+                        int action6=6;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action6));
                     }
                     fighters[0]->field36C=(fighters[0]->field36C)+g_LevelStepAt00657850;
                     fighters[1]->field36C=(fighters[1]->field36C)+g_LevelStepAt00657850;
@@ -105,8 +98,8 @@ void BattleScene::ApplySequence() {
                 }
                 if(g_InputMappings[0].IsKeyDown(0x41)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&field014);
-                        int action7=7;g_ReplayEventsAt006718E0.Append(&action7);
+                        g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(field014));
+                        int action7=7;g_ReplayRecords.dwordInputs.push_back(reinterpret_cast<const unsigned int&>(action7));
                     }
                     fighters[0]->field36C=(fighters[0]->field36C)-g_LevelStepAt00657850;
                     fighters[1]->field36C=(fighters[1]->field36C)-g_LevelStepAt00657850;

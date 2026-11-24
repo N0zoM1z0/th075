@@ -82,7 +82,7 @@ address,name,module,confidence,evidence
 0x00671628,g_StateFadeValue,BattleScene,inferred,F019; float fading value; exact native reads/writes and bound relocations; original symbol unknown
 0x006714C8,g_StatePlayerIds,BattleScene,inferred,F019; two signed byte selected player IDs; exact native reads/writes and bound relocations; original symbol unknown
 0x0067161F,g_StateRecordLimit,BattleScene,inferred,F019; signed byte record selection limit; exact native reads/writes and bound relocations; original symbol unknown
-0x00671750,g_StateReplay,BattleScene,inferred,F019; existing replay receiver; complete owner extent unknown; exact native reads/writes and bound relocations; original symbol unknown
+0x00671750,g_ReplayRecords,ReplayRecords,inferred,F019/F216/F220/F414/F427; the initializer and finalizer own the same 0x1A4-byte replay record
 0x00671632,g_StateReplayChanged,BattleScene,inferred,F019; byte replay mode-change flag; exact native reads/writes and bound relocations; original symbol unknown
 0x00671866,g_StateReplayLimit,BattleScene,inferred,F019; signed byte replay selection limit; exact native reads/writes and bound relocations; original symbol unknown
 0x0067149C,g_StateResetCounter,BattleScene,inferred,F019; dword cleared during stage fade; exact native reads/writes and bound relocations; original symbol unknown
@@ -117,7 +117,7 @@ address,name,module,confidence,evidence
 0x0067161D,g_SequenceStageAt0067161D,CharacterSequence,inferred,"F049; narrow source byte view only; one byte write of 8 before the existing stage-load call; original declaration and semantic name unknown; no wider layout, ownership or data-byte exact credit"
 0x0066C239,g_SequenceByteAt0066C239,CharacterSequence,inferred,"F058; native unsigned byte guard/load/decrement/store in state64 and full cold relocation replay; narrow access view only; original symbol, declaration and data ownership unknown"
 0x0066C23A,g_SequenceByteAt0066C23A,CharacterSequence,inferred,"F058; native unsigned byte guard/load/decrement/store in state64 and full cold relocation replay; narrow access view only; original symbol, declaration and data ownership unknown"
-0x006718B8,g_RecordedSamplesAt006718B8,RecordedRange455580,inferred,F070; actual shared storage address passed to all four complete deque call contracts; unbounded external byte view only; original container type and extent remain unknown
+0x006718B8,g_ReplayRecords.wordInputs,ReplayRecords,inferred,F070/F216/F414; recorded random samples and control words share the second deque
 0x006713F8,g_CameraShakeAmountAt006713F8,CameraShake412CB0,inferred,F071; complete float-word setter/caller plus six actual x87 consumers in004126C0; original symbol unknown
 0x006713BC,g_CameraVerticalOverrideAt006713BC,CameraUpdate4126C0,inferred,F072; actual float scalar global in complete1520-byte camera policy; native operand widths/permissions and x87 consumers checked; original name/declaration and pointed owner extent unknown
 0x006713C0,g_CameraZoomTargetAt006713C0,CameraUpdate4126C0,inferred,F072; actual float scalar global in complete1520-byte camera policy; native operand widths/permissions and x87 consumers checked; original name/declaration and pointed owner extent unknown
