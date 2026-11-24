@@ -19,6 +19,6 @@ Fighter::~Fighter()
         delete static_cast<TextureManagerF198*>(drawing);
     if (field534)
         delete reinterpret_cast<TextureManagerF198*>(field534);
-    if (stageDrawing)
-        delete static_cast<TextureManagerF198*>(stageDrawing);
+    if (stageTexture)
+        delete stageTexture;
 }

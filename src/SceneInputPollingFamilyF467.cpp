@@ -2,6 +2,7 @@
 #include "BattleEndScene.hpp"
 #include "SequenceScenes.hpp"
 #include "PlayerState.hpp"
+#include "Fighter.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "GraphicsDevice.hpp"
 #include "InputJoystick.hpp"
@@ -11,12 +12,11 @@
 // !0x38 AND 0xB8; all native branches and physical callbacks match.
 // Complete native game input tick policies: two independent 106-byte
 // scene entrypoints and a 107-byte battle-end actor-specific variant.
-class FighterInputF466 {public:void AdvanceActorInput();};
 void BattleEndScene::PollInput() {
     Input::PollKeyboard();
     Input::PollJoysticks();
     g_InputMappings[0].UpdateHeldCounts();
-    reinterpret_cast<FighterInputF466*>(g_BattleFightersAt00671418[0])->AdvanceActorInput();
+    g_BattleFightersAt00671418[0]->UpdateControls();
     if (g_InputMappings[0].IsKeyDown(0x1C)) {
         if (g_InputMappings[0].IsKeyDown(0x38) || g_InputMappings[0].IsKeyDown(0xB8))
             Graphics::ToggleWindowMode();

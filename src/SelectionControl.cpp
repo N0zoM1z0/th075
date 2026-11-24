@@ -91,195 +91,140 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     }
 }
 
-// Only actually invoked virtual slots11,12,13 have a recovered call contract.
-// Earlier entries are unknown unused interface positions. Never instantiate.
-class FighterControlsF130 {
-public:
-    virtual void UnknownSlot0();
-    virtual void UnknownSlot1();
-    virtual void UnknownSlot2();
-    virtual void UnknownSlot3();
-    virtual void UnknownSlot4();
-    virtual void UnknownSlot5();
-    virtual void UnknownSlot6();
-    virtual void UnknownSlot7();
-    virtual void UnknownSlot8();
-    virtual void UnknownSlot9();
-    virtual void UnknownSlot10();
-    virtual void UpdateOrdinaryDirections();
-    virtual void UpdatePracticeDirections();
-    virtual void FinishInput();
-    void UpdateControls();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown004[0x060 - 0x004];
-    short field060;
-    unsigned char unknown062[0x066 - 0x062];
-    signed char field066;
-    unsigned char unknown067[0x2CD - 0x067];
-    signed char field2CD;
-    unsigned char unknown2CE[0x4C0 - 0x2CE];
-    int field4C0;
-    int field4C4;
-    int field4C8;
-    int field4CC;
-    int field4D0;
-    int field4D4;
-    unsigned char unknown4D8[0x4DC - 0x4D8];
-    int field4DC;
-    int field4E0;
-    int field4E4;
-    int field4E8;
-    int field4EC;
-    int field4F0;
-    int field4F4;
-    int field4F8;
-    int field4FC;
-    int field500;
-    int field504;
-    int field508;
-    int field50C;
-    signed char field510;
-    unsigned char field511;
-    unsigned char unknown512[0x516 - 0x512];
-    short field516;
-};
-#define INPUT_MAPPING reinterpret_cast<InputMapping4388D0*>(reinterpret_cast<char*>(this) + 0x494)
-void FighterControlsF130::UpdateControls() {
+void Fighter::UpdateControls() {
     unsigned char relativeBits = 0;
     unsigned char physicalInputBits = 0;
     if (field2CD != 0) {
-        reinterpret_cast<Fighter*>(this)->ClearAuxiliaryWords();
-        field4DC = 0;
-        field4E0 = 0;
-        field4E8 = 0;
-        field4EC = 0;
-        field4F0 = 0;
-        field4F4 = 0;
-        field511 = 0;
+        ClearAuxiliaryWords();
+        inputX = 0;
+        inputY = 0;
+        inputA = 0;
+        inputB = 0;
+        inputC = 0;
+        inputD = 0;
+        aiCommand = 0;
         if (g_ReplayModeAt0066C238 == 2) {
             if (g_ReplayRecords.byteInputs.size() > 0) { relativeBits = g_ReplayRecords.byteInputs.front(); g_ReplayRecords.byteInputs.pop_front(); }
-            if (g_ReplayRecords.secondaryInputs.size() > 0) { field511 = g_ReplayRecords.secondaryInputs.front(); g_ReplayRecords.secondaryInputs.pop_front(); }
-            if (g_ReplayRecords.wordInputs.size() > 0) { field516 = g_ReplayRecords.wordInputs.front(); g_ReplayRecords.wordInputs.pop_front(); }
-            if (relativeBits & 0x1) field4DC = -1;
-            if (relativeBits & 0x2) field4DC = 1;
-            if (relativeBits & 0x4) field4E0 = -1;
-            if (relativeBits & 0x8) field4E0 = 1;
-            if (relativeBits & 0x10) field4E8 = 1;
-            if (relativeBits & 0x20) field4EC = 1;
-            if (relativeBits & 0x40) field4F0 = 1;
-            if (relativeBits & 0x80) field4F4 = 1;
+            if (g_ReplayRecords.secondaryInputs.size() > 0) { aiCommand = g_ReplayRecords.secondaryInputs.front(); g_ReplayRecords.secondaryInputs.pop_front(); }
+            if (g_ReplayRecords.wordInputs.size() > 0) { aiCardTimer = g_ReplayRecords.wordInputs.front(); g_ReplayRecords.wordInputs.pop_front(); }
+            if (relativeBits & 0x1) inputX = -1;
+            if (relativeBits & 0x2) inputX = 1;
+            if (relativeBits & 0x4) inputY = -1;
+            if (relativeBits & 0x8) inputY = 1;
+            if (relativeBits & 0x10) inputA = 1;
+            if (relativeBits & 0x20) inputB = 1;
+            if (relativeBits & 0x40) inputC = 1;
+            if (relativeBits & 0x80) inputD = 1;
         } else if (g_ReplayModeAt0066C238 == 1) {
-            if (g_CombatMode == 3) UpdatePracticeDirections();
-            else if (g_CombatMode == 5) reinterpret_cast<Fighter*>(this)->ApplyMode5Direction();
-            else UpdateOrdinaryDirections();
+            if (g_CombatMode == 3) ChooseCardAction();
+            else if (g_CombatMode == 5) ApplyMode5Direction();
+            else ChooseAction();
             if (g_OptionsModeAt006714D0 < 2 && rand() > (g_OptionsModeAt006714D0 * 3 + 1) * 2048) {
-                field4E8 = 0;
-                field4EC = 0;
-                field4F0 = 0;
-                field4F4 = 0;
-                field511 = 0;
+                inputA = 0;
+                inputB = 0;
+                inputC = 0;
+                inputD = 0;
+                aiCommand = 0;
             }
-            if (field4E8 != 0) field4E8 = 1;
-            if (field4EC != 0) field4EC = 1;
-            if (field4F0 != 0) field4F0 = 1;
-            if (field4F4 != 0) field4F4 = 1;
-            relativeBits = field4DC < 0;
-            relativeBits |= static_cast<unsigned char>(field4DC > 0) << 1;
-            relativeBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
-            relativeBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
-            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4E8) > 0) << 4;
-            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4EC) > 0) << 5;
-            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F0) > 0) << 6;
-            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F4) > 0) << 7;
+            if (inputA != 0) inputA = 1;
+            if (inputB != 0) inputB = 1;
+            if (inputC != 0) inputC = 1;
+            if (inputD != 0) inputD = 1;
+            relativeBits = inputX < 0;
+            relativeBits |= static_cast<unsigned char>(inputX > 0) << 1;
+            relativeBits |= static_cast<unsigned char>(inputY < 0) << 2;
+            relativeBits |= static_cast<unsigned char>(inputY > 0) << 3;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputA) > 0) << 4;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputB) > 0) << 5;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputC) > 0) << 6;
+            relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputD) > 0) << 7;
             g_ReplayRecords.byteInputs.push_back(relativeBits);
-            g_ReplayRecords.secondaryInputs.push_back(field511);
-            g_ReplayRecords.wordInputs.push_back(field516);
+            g_ReplayRecords.secondaryInputs.push_back(aiCommand);
+            g_ReplayRecords.wordInputs.push_back(aiCardTimer);
         }
     } else {
         if (g_ReplayModeAt0066C238 == 2) {
             if (g_ReplayRecords.byteInputs.size() > 0) { physicalInputBits = g_ReplayRecords.byteInputs.front(); g_ReplayRecords.byteInputs.pop_front(); }
             if (physicalInputBits & 0x1) {
-                if (field4C0 > 0) field4C0 = 0;
-                field4C0 = field4C0 - 1;
+                if (inputBindings.held.counts[0] > 0) inputBindings.held.counts[0] = 0;
+                inputBindings.held.counts[0] = inputBindings.held.counts[0] - 1;
             } else if (physicalInputBits & 0x2) {
-                if (field4C0 < 0) field4C0 = 0;
-                field4C0 = field4C0 + 1;
-            } else field4C0 = 0;
+                if (inputBindings.held.counts[0] < 0) inputBindings.held.counts[0] = 0;
+                inputBindings.held.counts[0] = inputBindings.held.counts[0] + 1;
+            } else inputBindings.held.counts[0] = 0;
             if (physicalInputBits & 0x4) {
-                if (field4C4 > 0) field4C4 = 0;
-                field4C4 = field4C4 - 1;
+                if (inputBindings.held.counts[1] > 0) inputBindings.held.counts[1] = 0;
+                inputBindings.held.counts[1] = inputBindings.held.counts[1] - 1;
             } else if (physicalInputBits & 0x8) {
-                if (field4C4 < 0) field4C4 = 0;
-                field4C4 = field4C4 + 1;
-            } else field4C4 = 0;
-            if (physicalInputBits & 0x10) field4C8 = field4C8 + 1;
-            else field4C8 = 0;
-            if (physicalInputBits & 0x20) field4CC = field4CC + 1;
-            else field4CC = 0;
-            if (physicalInputBits & 0x40) field4D0 = field4D0 + 1;
-            else field4D0 = 0;
-            if (physicalInputBits & 0x80) field4D4 = field4D4 + 1;
-            else field4D4 = 0;
-            field4DC = field4C0;
-            field4E0 = field4C4;
-            field4E8 = field4C8;
-            field4EC = field4CC;
-            field4F0 = field4D0;
-            field4F4 = field4D4;
-            relativeBits = field066 * field4DC < 0;
-            relativeBits |= static_cast<unsigned char>(field066 * field4DC > 0) << 1;
-            relativeBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
-            relativeBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
-            relativeBits |= static_cast<unsigned char>(field4E8 == 1) << 4;
-            relativeBits |= static_cast<unsigned char>(field4EC == 1) << 5;
-            relativeBits |= static_cast<unsigned char>(field4F0 == 1) << 6;
-            relativeBits |= static_cast<unsigned char>(field4F4 == 1) << 7;
+                if (inputBindings.held.counts[1] < 0) inputBindings.held.counts[1] = 0;
+                inputBindings.held.counts[1] = inputBindings.held.counts[1] + 1;
+            } else inputBindings.held.counts[1] = 0;
+            if (physicalInputBits & 0x10) inputBindings.held.counts[2] = inputBindings.held.counts[2] + 1;
+            else inputBindings.held.counts[2] = 0;
+            if (physicalInputBits & 0x20) inputBindings.held.counts[3] = inputBindings.held.counts[3] + 1;
+            else inputBindings.held.counts[3] = 0;
+            if (physicalInputBits & 0x40) inputBindings.held.counts[4] = inputBindings.held.counts[4] + 1;
+            else inputBindings.held.counts[4] = 0;
+            if (physicalInputBits & 0x80) inputBindings.held.counts[5] = inputBindings.held.counts[5] + 1;
+            else inputBindings.held.counts[5] = 0;
+            inputX = inputBindings.held.counts[0];
+            inputY = inputBindings.held.counts[1];
+            inputA = inputBindings.held.counts[2];
+            inputB = inputBindings.held.counts[3];
+            inputC = inputBindings.held.counts[4];
+            inputD = inputBindings.held.counts[5];
+            relativeBits = facing * inputX < 0;
+            relativeBits |= static_cast<unsigned char>(facing * inputX > 0) << 1;
+            relativeBits |= static_cast<unsigned char>(inputY < 0) << 2;
+            relativeBits |= static_cast<unsigned char>(inputY > 0) << 3;
+            relativeBits |= static_cast<unsigned char>(inputA == 1) << 4;
+            relativeBits |= static_cast<unsigned char>(inputB == 1) << 5;
+            relativeBits |= static_cast<unsigned char>(inputC == 1) << 6;
+            relativeBits |= static_cast<unsigned char>(inputD == 1) << 7;
         } else {
-            INPUT_MAPPING->UpdateHeldCounts();
-            field4DC = field4C0;
-            field4E0 = field4C4;
-            field4E8 = field4C8;
-            field4EC = field4CC;
-            field4F0 = field4D0;
-            field4F4 = field4D4;
-            relativeBits = field066 * field4DC < 0;
-            relativeBits |= static_cast<unsigned char>(field066 * field4DC > 0) << 1;
-            relativeBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
-            relativeBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
-            physicalInputBits = field4DC < 0;
-            physicalInputBits |= static_cast<unsigned char>(field4DC > 0) << 1;
-            physicalInputBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
-            physicalInputBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
-            relativeBits |= static_cast<unsigned char>(field4E8 == 1) << 4;
-            relativeBits |= static_cast<unsigned char>(field4EC == 1) << 5;
-            relativeBits |= static_cast<unsigned char>(field4F0 == 1) << 6;
-            relativeBits |= static_cast<unsigned char>(field4F4 == 1) << 7;
-            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4E8) > 0) << 4;
-            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4EC) > 0) << 5;
-            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F0) > 0) << 6;
-            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(field4F4) > 0) << 7;
+            inputBindings.UpdateHeldCounts();
+            inputX = inputBindings.held.counts[0];
+            inputY = inputBindings.held.counts[1];
+            inputA = inputBindings.held.counts[2];
+            inputB = inputBindings.held.counts[3];
+            inputC = inputBindings.held.counts[4];
+            inputD = inputBindings.held.counts[5];
+            relativeBits = facing * inputX < 0;
+            relativeBits |= static_cast<unsigned char>(facing * inputX > 0) << 1;
+            relativeBits |= static_cast<unsigned char>(inputY < 0) << 2;
+            relativeBits |= static_cast<unsigned char>(inputY > 0) << 3;
+            physicalInputBits = inputX < 0;
+            physicalInputBits |= static_cast<unsigned char>(inputX > 0) << 1;
+            physicalInputBits |= static_cast<unsigned char>(inputY < 0) << 2;
+            physicalInputBits |= static_cast<unsigned char>(inputY > 0) << 3;
+            relativeBits |= static_cast<unsigned char>(inputA == 1) << 4;
+            relativeBits |= static_cast<unsigned char>(inputB == 1) << 5;
+            relativeBits |= static_cast<unsigned char>(inputC == 1) << 6;
+            relativeBits |= static_cast<unsigned char>(inputD == 1) << 7;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputA) > 0) << 4;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputB) > 0) << 5;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputC) > 0) << 6;
+            physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputD) > 0) << 7;
             if (g_ReplayModeAt0066C238 == 1) g_ReplayRecords.byteInputs.push_back(physicalInputBits);
         }
-        if (field060 >= 300 && (field4E8 == 1 || field4EC == 1 || field4F0 == 1 || field4F4 == 1)) {
+        if (action >= 300 && (inputA == 1 || inputB == 1 || inputC == 1 || inputD == 1)) {
             field510 = 10;
-            field4F8 = field4DC;
-            field4FC = field4E0;
-            field500 = field4E8 == 1;
-            field504 = field4EC == 1;
-            field508 = field4F0 == 1;
-            field50C = field4F4 == 1;
+            bufferedX = inputX;
+            bufferedY = inputY;
+            bufferedA = inputA == 1;
+            bufferedB = inputB == 1;
+            bufferedC = inputC == 1;
+            bufferedD = inputD == 1;
         }
-        if (field060 < 300 || field510 <= 0) {
-            reinterpret_cast<Fighter*>(this)->ClearAuxiliaryWords();
+        if (action < 300 || field510 <= 0) {
+            ClearAuxiliaryWords();
             field510 = 0;
         }
         if (field510 > 0) --field510;
-        reinterpret_cast<Fighter*>(this)->inputHistory.push_back(relativeBits);
-        reinterpret_cast<Fighter*>(this)->inputHistory.pop_front();
-        FinishInput();
+        inputHistory.push_back(relativeBits);
+        inputHistory.pop_front();
+        PollCommands();
     }
-    if (field2CD == 0) field4E4 = field4E8;
+    if (field2CD == 0) field4E4 = inputA;
     else field4E4 = 0;
 }
-#undef INPUT_MAPPING

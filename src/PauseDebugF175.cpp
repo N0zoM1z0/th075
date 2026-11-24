@@ -12,7 +12,7 @@
 // original global identity is established by these provisional names.
 // The dword lies in the PE's uninitialized virtual data tail. No file payload
 // is asserted; native comparisons/increments/stores establish this used view.
-extern unsigned int g_DebugKeyRepeatAt0068D618;
+unsigned int g_DebugKeyRepeatAt0068D618;
 
 
 void BattleScene::HandlePauseMenu()

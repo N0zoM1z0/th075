@@ -25,7 +25,7 @@ void YukariFighter::ResetRound()
     aiWaitTimer=0;
     aiStep=0;
     aiCardTimer=0;
-    ResetBaseRound();
+    Fighter::ResetRound();
     sequenceTimer=0;
     fieldEFE=0;
 }

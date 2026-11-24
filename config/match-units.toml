@@ -1098,7 +1098,7 @@ symbol = "?DrawSelectedNotice@BattleScene@@QAEXXZ"
 target_address = 0x00440B00
 size = 78
 relocations = [
-  { offset = 0x3B, type = "REL32", symbol = "?DrawFacingSprite@Fighter@@QAEXFMHH@Z", target = 0x004549C0 },
+  { offset = 0x3B, type = "REL32", symbol = "?DrawFacingSprite@Fighter@@QAEXFMMK@Z", target = 0x004549C0 },
   { offset = 0x41, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
   { offset = 0x46, type = "REL32", symbol = "?DrawBox@TextOverlay@@QAEXXZ", target = 0x00412EB0 },
 ]
@@ -2228,8 +2228,8 @@ relocations = [
   { offset = 0x32E, type = "DIR32", symbol = "__real@447a0000", target = 0x006583B4 },
   { offset = 0x349, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x370, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
-  { offset = 0x435, type = "REL32", symbol = "?PlaySharedSound@CombatTimerActor@@QAEXF@Z", target = 0x00453D60 },
-  { offset = 0x49F, type = "REL32", symbol = "?IsState150To199@CombatTimerActor@@QAE_NXZ", target = 0x00454FD0 },
+  { offset = 0x435, type = "REL32", symbol = "?PlaySharedSound@Fighter@@QAEXF@Z", target = 0x00453D60 },
+  { offset = 0x49F, type = "REL32", symbol = "?IsState150To199@Fighter@@QAE_NXZ", target = 0x00454FD0 },
   { offset = 0x5BA, type = "DIR32", symbol = "?g_CombatViewOffsetX@@3MA", target = 0x00671404 },
   { offset = 0x5C2, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
   { offset = 0x5C8, type = "DIR32", symbol = "__real@44200000", target = 0x00657884 },
@@ -2369,7 +2369,7 @@ relocations = [
   { offset = 0xD53, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0xD59, type = "DIR32", symbol = "?g_StateResetCounter@@3HA", target = 0x0067149C },
   { offset = 0xE81, type = "DIR32", symbol = "?g_CombatEffects@@3VCombatEffects@@A", target = 0x006716C8 },
-  { offset = 0xE86, type = "REL32", symbol = "?ReleaseEntries@StateEffects@@QAEXXZ", target = 0x005F7140 },
+  { offset = 0xE86, type = "REL32", symbol = "?ReleaseEntries@CombatEffects@@QAEXXZ", target = 0x005F7140 },
   { offset = 0xE8C, type = "DIR32", symbol = "?g_CumulativeScoreAt006714BC@@3HA", target = 0x006714BC },
   { offset = 0xEC3, type = "DIR32", symbol = "?g_CumulativeScoreAt006714BC@@3HA", target = 0x006714BC },
   { offset = 0xED0, type = "DIR32", symbol = "?g_CumulativeScoreAt006714BC@@3HA", target = 0x006714BC },
@@ -9709,7 +9709,7 @@ relocations = [
   { offset = 0x203, type = "REL32", symbol = "?ChooseIntegerRange@Fighter@@QAEHHH@Z", target = 0x00455610 },
   { offset = 0x26E, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x283, type = "DIR32", symbol = "__real@43700000", target = 0x006593D0 },
-  { offset = 0x296, type = "REL32", symbol = "?ChooseRecordedIntegerRange@YoumuFighter@@QAEHHH@Z", target = 0x00455580 },
+  { offset = 0x296, type = "REL32", symbol = "?RecordedRange@Actor@@QAEHHH@Z", target = 0x00455580 },
   { offset = 0x2F8, type = "REL32", symbol = "?ChooseIntegerRange@Fighter@@QAEHHH@Z", target = 0x00455610 },
   { offset = 0x31C, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x338, type = "REL32", symbol = "?ChooseIntegerRange@Fighter@@QAEHHH@Z", target = 0x00455610 },
@@ -10378,7 +10378,7 @@ relocations = [
   { offset = 0x10DC, type = "REL32", symbol = "?SetNoticeMode@Fighter@@QAEXE@Z", target = 0x0045CD50 },
   { offset = 0x10E1, type = "DIR32", symbol = "?g_SequenceCounterAt00671622@@3EA", target = 0x00671622 },
   { offset = 0x10E8, type = "DIR32", symbol = "?g_SequenceCounterAt00671622@@3EA", target = 0x00671622 },
-  { offset = 0x10F2, type = "REL32", symbol = "?PlaySharedSound@MarisaFighter@@QAEXF@Z", target = 0x00453D60 },
+  { offset = 0x10F2, type = "REL32", symbol = "?PlaySharedSound@Fighter@@QAEXF@Z", target = 0x00453D60 },
   { offset = 0x111F, type = "DIR32", symbol = "__real@3f000000", target = 0x00657478 },
   { offset = 0x1125, type = "DIR32", symbol = "__real@42f00000", target = 0x006590A8 },
   { offset = 0x114D, type = "REL32", symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z", target = 0x00412CC0 },
@@ -16357,14 +16357,14 @@ relocations = [
   { offset = 0x2A4, type = "REL32", symbol = "?RenderElements@RenderSequence43D9D0@@QAEXXZ", target = 0x00411110 },
   { offset = 0x2B5, type = "REL32", symbol = "?RenderElements@RenderSequence43D9D0@@QAEXXZ", target = 0x00411110 },
   { offset = 0x2BC, type = "DIR32", symbol = "?g_CombatEffects@@3VCombatEffects@@A", target = 0x006716C8 },
-  { offset = 0x2C1, type = "REL32", symbol = "?DispatchSelected@RenderAux43D9D0@@QAEXC@Z", target = 0x005F7D00 },
+  { offset = 0x2C1, type = "REL32", symbol = "?DispatchSelectedList@CombatEffects@@QAEXC@Z", target = 0x005F7D00 },
   { offset = 0x2D4, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
   { offset = 0x2E7, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
   { offset = 0x2EE, type = "DIR32", symbol = "?g_RenderOrderAt0068C860@@3CA", target = 0x0068C860 },
   { offset = 0x39D, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
   { offset = 0x3B0, type = "REL32", symbol = "?DispatchSelected@EffectManagerLifetimeF161@@QAEXC@Z", target = 0x0045BC30 },
   { offset = 0x3B7, type = "DIR32", symbol = "?g_CombatEffects@@3VCombatEffects@@A", target = 0x006716C8 },
-  { offset = 0x3BC, type = "REL32", symbol = "?DispatchSelected@RenderAux43D9D0@@QAEXC@Z", target = 0x005F7D00 },
+  { offset = 0x3BC, type = "REL32", symbol = "?DispatchSelectedList@CombatEffects@@QAEXC@Z", target = 0x005F7D00 },
   { offset = 0x3D1, type = "REL32", symbol = "?SetColorMultiplier@TextureManagerF198@@QAEXM@Z", target = 0x0040C8A0 },
   { offset = 0x3D7, type = "DIR32", symbol = "?g_CurrentBattleStageAt00671424@@3PAVNativeBackgroundBaseF479@@A", target = 0x00671424 },
   { offset = 0x3DF, type = "DIR32", symbol = "?g_CurrentBattleStageAt00671424@@3PAVNativeBackgroundBaseF479@@A", target = 0x00671424 },
@@ -24225,7 +24225,7 @@ source = "src/SelectionControl.cpp"
 object = "build/matching/SelectionControl.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["FighterControlsF130::UpdateControls"]
-symbol = "?UpdateControls@FighterControlsF130@@QAEXXZ"
+symbol = "?UpdateControls@Fighter@@QAEXXZ"
 target_address = 0x00452F10
 size = 2815
 compare_size = 2815
@@ -26681,7 +26681,7 @@ size = 457
 [[units.battle-update-player-effects-00445830.relocations]]
 offset = 48
 type = "REL32"
-symbol = "?UpdateControls@FighterControlCallsF174@@QAEXXZ"
+symbol = "?UpdateControls@Fighter@@QAEXXZ"
 target = 0x00452F10
 [[units.battle-update-player-effects-00445830.relocations]]
 offset = 139
@@ -33334,7 +33334,7 @@ target = 0x0040C8C0
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 271
 type = "REL32"
-symbol = "??0DigitAtlas@@QAE@PAUIDirect3DTexture8@@00@Z"
+symbol = "??0DigitAtlasesF177@@QAE@PAUIDirect3DTexture8@@00@Z"
 target = 0x00446590
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 309
@@ -36008,12 +36008,12 @@ target = 0x004076A0
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 311
 type = "DIR32"
-symbol = "?g_WorkerAt006716C8@@3VGameWorkerF212@@A"
+symbol = "?g_CombatEffects@@3VCombatEffects@@A"
 target = 0x006716C8
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 316
 type = "REL32"
-symbol = "?Initialize@GameWorkerF212@@QAEXXZ"
+symbol = "?LoadResources@CombatEffects@@QAEXXZ"
 target = 0x005F70E0
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 326
@@ -39175,7 +39175,7 @@ target = 0x004116F0
 [[units.result-scene-render-counters-0042ef10.relocations]]
 offset = 377
 type = "REL32"
-symbol = "?ScaleQuad@ResultRawScaleF240@@QAEXMMMKKK@Z"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
 target = 0x004115C0
 [[units.result-scene-render-counters-0042ef10.relocations]]
 offset = 389
@@ -43648,7 +43648,7 @@ target = 0x0067161E
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 123
 type = "REL32"
-symbol = "??_GFighterStageTextureF286@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 148
@@ -43658,7 +43658,7 @@ target = 0x0064159D
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 184
 type = "REL32"
-symbol = "??0FighterStageTextureF286@@QAE@XZ"
+symbol = "??0TextureManagerF198@@QAE@XZ"
 target = 0x0040AD80
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 246
@@ -43668,7 +43668,7 @@ target = 0x0067161E
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 278
 type = "REL32"
-symbol = "?AllocateSlots@FighterStageTextureF286@@QAEXH@Z"
+symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 285
@@ -43693,7 +43693,7 @@ target = 0x00658FE0
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 348
 type = "REL32"
-symbol = "?LoadDefault@FighterStageTextureF286@@QAEXPBD0@Z"
+symbol = "?LoadDefault@TextureManagerF198@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.fighter-state-load-stage-resource-004584d0.relocations]]
 offset = 358
@@ -44223,13 +44223,13 @@ source = "src/EffectsLoadF293.cpp"
 object = "build/matching/EffectsLoadF293.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["Effects::LoadResourcesAt005F70E0"]
-symbol = "?LoadResources@EffectsResourcesF293@@QAEXXZ"
+symbol = "?LoadResources@CombatEffects@@QAEXXZ"
 target_address = 0x005F70E0
 size = 84
 [[units.effects-load-resources-005f70e0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?LoadPatternCatalog@EffectsResourcesF293@@QAEXXZ"
+symbol = "?LoadPatternCatalog@CombatEffects@@QAEXXZ"
 target = 0x005F71F0
 [[units.effects-load-resources-005f70e0.relocations]]
 offset = 16
@@ -44318,15 +44318,15 @@ target = 0x00657214
 [units.effects-load-pattern-catalog-005f71f0]
 source = "src/EffectsLoadPatternCatalogF294.cpp"
 object = "build/matching/EffectsLoadPatternCatalogF294.obj"
-profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
 functions = ["Effects::LoadPatternCatalogAt005F71F0"]
-symbol = "?LoadPatternCatalog@EffectsCatalogF294@@QAEXXZ"
+symbol = "?LoadPatternCatalog@CombatEffects@@QAEXXZ"
 target_address = 0x005F71F0
 size = 1722
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?LoadPatternCatalog@EffectsCatalogF294@@QAEXXZ"
+symbol = "__ehhandler$?LoadPatternCatalog@CombatEffects@@QAEXXZ"
 target = 0x00656679
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 12
@@ -44341,7 +44341,7 @@ target = 0x00000000
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 37
 type = "REL32"
-symbol = "??0EffectScratchF294@@QAE@XZ"
+symbol = "??0FighterFrameInfoHeader@@QAE@XZ"
 target = 0x00458880
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 49
@@ -44366,37 +44366,37 @@ target = 0x0041D750
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 101
 type = "REL32"
-symbol = "?Size@EffectSlotsF294@@QAEIXZ"
+symbol = "?size@?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QBEIXZ"
 target = 0x005F8340
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 121
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 141
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 148
 type = "REL32"
-symbol = "?Clear@EffectSequenceF294@@QAEXXZ"
+symbol = "?clear@?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEXXZ"
 target = 0x005F8020
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 163
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 190
 type = "REL32"
-symbol = "??_GEffectSequenceF294@@QAEPAXI@Z"
+symbol = "??_GEffectPatternSequence@@QAEPAXI@Z"
 target = 0x005F7EA0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 215
 type = "REL32"
-symbol = "?Clear@EffectSlotsF294@@QAEXXZ"
+symbol = "?clear@?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEXXZ"
 target = 0x005F83E0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 237
@@ -44406,7 +44406,7 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 263
 type = "REL32"
-symbol = "?Resize@EffectSlotsF294@@QAEXIABQAVEffectSequenceF294@@@Z"
+symbol = "?assign@?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEXIABQAUEffectPatternSequence@@@Z"
 target = 0x005F83C0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 285
@@ -44421,7 +44421,7 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 352
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 364
@@ -44431,12 +44431,12 @@ target = 0x0064159D
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 388
 type = "REL32"
-symbol = "??0EffectSequenceF294@@QAE@XZ"
+symbol = "??0EffectPatternSequence@@QAE@XZ"
 target = 0x005F7F20
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 425
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 452
@@ -44446,22 +44446,22 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 475
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 482
 type = "REL32"
-symbol = "?Resize@EffectSequenceF294@@QAEXHABUEffectScratchF294@@@Z"
+symbol = "?assign@?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEXIABUFighterFrameInfoHeader@@@Z"
 target = 0x005F8000
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 539
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 546
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 560
@@ -44471,12 +44471,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 587
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 594
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 605
@@ -44486,12 +44486,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 632
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 639
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 653
@@ -44501,12 +44501,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 680
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 687
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 701
@@ -44521,47 +44521,47 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 750
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 757
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 794
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 801
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 842
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 849
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 856
 type = "REL32"
-symbol = "?InitializeGraphics@EffectRecordF294@@QAEXXZ"
+symbol = "?ResetExtension@FighterFrameInfoHeader@@QAEXXZ"
 target = 0x00458790
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 883
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 890
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 904
@@ -44571,12 +44571,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 931
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 938
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 955
@@ -44586,12 +44586,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 982
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 989
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1006
@@ -44601,12 +44601,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1033
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1040
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1057
@@ -44616,12 +44616,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1084
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1091
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1108
@@ -44641,12 +44641,12 @@ target = 0x00658044
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1168
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1175
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1200
@@ -44656,12 +44656,12 @@ target = 0x00658044
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1222
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1229
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1254
@@ -44671,22 +44671,22 @@ target = 0x00658044
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1276
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1283
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1319
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1326
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1343
@@ -44696,12 +44696,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1370
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1377
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1394
@@ -44711,12 +44711,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1421
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1428
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1445
@@ -44731,12 +44731,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1499
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1506
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1537
@@ -44746,12 +44746,12 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1578
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1585
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1619
@@ -44761,17 +44761,17 @@ target = 0x0065712C
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1660
 type = "REL32"
-symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1667
 type = "REL32"
-symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+symbol = "??A?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEAAUFighterFrameInfoHeader@@I@Z"
 target = 0x005F7FC0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1704
 type = "REL32"
-symbol = "??1EffectScratchF294@@QAE@XZ"
+symbol = "??1FighterFrameInfoHeader@@QAE@XZ"
 target = 0x004588B0
 [[units.effects-load-pattern-catalog-005f71f0.relocations]]
 offset = 1714
@@ -44832,13 +44832,13 @@ source = "src/StaticEffectReleaseF304.cpp"
 object = "build/matching/StaticEffectReleaseF304.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0"]
-symbol = "??1EffectCatalogF304@@QAE@XZ"
+symbol = "??1CombatEffects@@QAE@XZ"
 target_address = 0x005F6FF0
 size = 235
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1EffectCatalogF304@@QAE@XZ"
+symbol = "__ehhandler$??1CombatEffects@@QAE@XZ"
 target = 0x0065665C
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 12
@@ -44853,37 +44853,37 @@ target = 0x00000000
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 41
 type = "REL32"
-symbol = "?CleanupGraphics@EffectCatalogF304@@QAEXXZ"
+symbol = "?ReleaseEntries@CombatEffects@@QAEXXZ"
 target = 0x005F7140
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 70
 type = "REL32"
-symbol = "?Size@EffectRecordListF304@@QAEIXZ"
+symbol = "?size@?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QBEIXZ"
 target = 0x005F8340
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 90
 type = "REL32"
-symbol = "?At@EffectRecordListF304@@QAEPAPAXI@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 110
 type = "REL32"
-symbol = "?At@EffectRecordListF304@@QAEPAPAXI@Z"
+symbol = "??A?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEAAPAUEffectPatternSequence@@I@Z"
 target = 0x005F8380
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 137
 type = "REL32"
-symbol = "??_GEffectRecordF304@@QAEPAXI@Z"
+symbol = "??_GEffectPatternSequence@@QAEPAXI@Z"
 target = 0x005F7EA0
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 162
 type = "REL32"
-symbol = "?Clear@EffectRecordListF304@@QAEXXZ"
+symbol = "?clear@?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEXXZ"
 target = 0x005F83E0
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 177
 type = "REL32"
-symbol = "??1EffectRecordListF304@@QAE@XZ"
+symbol = "??1?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAE@XZ"
 target = 0x005F8320
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 192
@@ -44893,7 +44893,7 @@ target = 0x0040AE40
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 204
 type = "DIR32"
-symbol = "??1ResourceSideEffectsF304@@QAE@XZ"
+symbol = "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
 target = 0x005F8090
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 217
@@ -45268,7 +45268,7 @@ size = 295
 [[units.yukari-fighter-reset-round-00597500.relocations]]
 offset = 263
 type = "REL32"
-symbol = "?ResetBaseRound@YukariFighter@@QAEXXZ"
+symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.suika-fighter-reset-round-005c0c30]
@@ -45292,7 +45292,7 @@ target = 0x0066C239
 [[units.suika-fighter-reset-round-005c0c30.relocations]]
 offset = 229
 type = "REL32"
-symbol = "?ResetBaseRound@SuikaFighter@@QAEXXZ"
+symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.patchouli-fighter-reset-round-00502340]
@@ -46348,18 +46348,18 @@ source = "src/BattlePointerReleaseF337.cpp"
 object = "build/matching/BattlePointerReleaseF337.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["BattlePointerQueues::ReleaseEntriesAt005F7140"]
-symbol = "?ReleaseEntries@BattlePointerQueuesF337@@QAEXXZ"
+symbol = "?ReleaseEntries@CombatEffects@@QAEXXZ"
 target_address = 0x005F7140
 size = 162
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 31
 type = "REL32"
-symbol = "?Size@NativePointerListF337@@QAEIXZ"
+symbol = "?size@?$deque@PAXV?$allocator@PAX@std@@@std@@QBEIXZ"
 target = 0x005F8110
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 48
 type = "REL32"
-symbol = "?At@NativePointerListF337@@QAEPAPAXI@Z"
+symbol = "??A?$deque@PAXV?$allocator@PAX@std@@@std@@QAEAAPAXI@Z"
 target = 0x005F8130
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 62
@@ -46369,17 +46369,17 @@ target = 0x00640F15
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 75
 type = "REL32"
-symbol = "?Clear@NativePointerListF337@@QAEXXZ"
+symbol = "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ"
 target = 0x005F82D0
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 104
 type = "REL32"
-symbol = "?Size@NativePointerListF337@@QAEIXZ"
+symbol = "?size@?$deque@PAXV?$allocator@PAX@std@@@std@@QBEIXZ"
 target = 0x005F8110
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 124
 type = "REL32"
-symbol = "?At@NativePointerListF337@@QAEPAPAXI@Z"
+symbol = "??A?$deque@PAXV?$allocator@PAX@std@@@std@@QAEAAPAXI@Z"
 target = 0x005F8130
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 138
@@ -46389,7 +46389,7 @@ target = 0x00640F15
 [[units.battle-pointer-queues-release-entries-005f7140.relocations]]
 offset = 154
 type = "REL32"
-symbol = "?Clear@NativePointerListF337@@QAEXXZ"
+symbol = "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ"
 target = 0x005F82D0
 
 [units.archive-open-and-read-index-0041d510]
@@ -48187,7 +48187,7 @@ target = 0x0065782C
 [[units.character-aux-active-opponent-special-004c49c0.relocations]]
 offset = 92
 type = "REL32"
-symbol = "?EnableRoundSound@SakuyaFighter@@QAEXH@Z"
+symbol = "?SetNonnegativeWord@Fighter@@QAEXF@Z"
 target = 0x00453E80
 [[units.character-aux-active-opponent-special-004c49c0.relocations]]
 offset = 233
@@ -53211,33 +53211,33 @@ source = "src/AuxEffectSelectedDispatchF395.cpp"
 object = "build/matching/AuxEffectSelectedDispatchF395.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["AuxEffectManager::DispatchSelectedListAt005F7D00"]
-symbol = "?DispatchSelectedList@AuxEffectManagerF395@@QAEXC@Z"
+symbol = "?DispatchSelectedList@CombatEffects@@QAEXC@Z"
 target_address = 0x005F7D00
 size = 114
 [[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
 offset = 24
 type = "REL32"
-symbol = "?Begin@EffectListF395@@QAE?AVEffectIteratorF395@@XZ"
+symbol = "?begin@?$deque@PAXV?$allocator@PAX@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x005F80B0
 [[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
 offset = 43
 type = "REL32"
-symbol = "?End@EffectListF395@@QAE?AVEffectIteratorF395@@XZ"
+symbol = "?end@?$deque@PAXV?$allocator@PAX@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x005F80E0
 [[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
 offset = 59
 type = "REL32"
-symbol = "??EEffectIteratorF395@@QAE?AV0@H@Z"
+symbol = "??Eiterator@?$deque@PAXV?$allocator@PAX@std@@@std@@QAE?AV012@H@Z"
 target = 0x005F8420
 [[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
 offset = 71
 type = "REL32"
-symbol = "??9EffectIteratorF395@@QBE_NABV0@@Z"
+symbol = "??9const_iterator@?$deque@PAXV?$allocator@PAX@std@@@std@@QBE_NABV012@@Z"
 target = 0x005F8460
 [[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
 offset = 86
 type = "REL32"
-symbol = "??DEffectIteratorF395@@QBEAAPAVEffectChildF395@@XZ"
+symbol = "??Diterator@?$deque@PAXV?$allocator@PAX@std@@@std@@QBEAAPAXXZ"
 target = 0x005F8400
 
 
@@ -54324,12 +54324,12 @@ target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3179
 type = "DIR32"
-symbol = "?g_EffectCollectionsAt006716C8@@3VEffectCollectionsF398@@A"
+symbol = "?g_CombatEffects@@3VCombatEffects@@A"
 target = 0x006716C8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3184
 type = "REL32"
-symbol = "?ClearEntries@EffectCollectionsF398@@QAEXXZ"
+symbol = "?ReleaseEntries@CombatEffects@@QAEXXZ"
 target = 0x005F7140
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3191
@@ -55345,13 +55345,13 @@ source = "src/StaticBattleResourcesConstructF431.cpp"
 object = "build/matching/StaticBattleResourcesConstructF431.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["StaticBattleResources::ConstructAndClearContainersAt005F6F60"]
-symbol = "??0StaticBattleResourcesF431@@QAE@XZ"
+symbol = "??0CombatEffects@@QAE@XZ"
 target_address = 0x005F6F60
 size = 142
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0StaticBattleResourcesF431@@QAE@XZ"
+symbol = "__ehhandler$??0CombatEffects@@QAE@XZ"
 target = 0x00656629
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 12
@@ -55366,12 +55366,12 @@ target = 0x00000000
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 29
 type = "DIR32"
-symbol = "??1EffectList20F431@@QAE@XZ"
+symbol = "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
 target = 0x005F8090
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 34
 type = "DIR32"
-symbol = "??0EffectList20F431@@QAE@XZ"
+symbol = "??0?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
 target = 0x005F8040
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 47
@@ -55386,22 +55386,22 @@ target = 0x0040AD80
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 80
 type = "REL32"
-symbol = "??0EffectAuxiliaryF431@@QAE@XZ"
+symbol = "??0?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAE@XZ"
 target = 0x005F82F0
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 92
 type = "REL32"
-symbol = "?Clear@EffectList20F431@@QAEXXZ"
+symbol = "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ"
 target = 0x005F82D0
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 103
 type = "REL32"
-symbol = "?Clear@EffectList20F431@@QAEXXZ"
+symbol = "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ"
 target = 0x005F82D0
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 114
 type = "REL32"
-symbol = "?Reset@EffectAuxiliaryF431@@QAEXXZ"
+symbol = "?clear@?$vector@PAUEffectPatternSequence@@V?$allocator@PAUEffectPatternSequence@@@std@@@std@@QAEXXZ"
 target = 0x005F83E0
 [[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
 offset = 134
@@ -56807,7 +56807,7 @@ target = 0x00671418
 [[units.battle-end-scene-poll-input-004250c0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "?AdvanceActorInput@FighterInputF466@@QAEXXZ"
+symbol = "?UpdateControls@Fighter@@QAEXXZ"
 target = 0x00452F10
 [[units.battle-end-scene-poll-input-004250c0.relocations]]
 offset = 41
@@ -60679,15 +60679,15 @@ source = "src/StaticEffectReleaseF304.cpp"
 object = "build/matching/StaticEffectReleaseF304.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["Record16F739::Record16F739"]
-symbol = "??0Record16F739@@QAE@XZ"
+symbol = "??0EffectPatternSequence@@QAE@XZ"
 target_address = 0x005F7F20
 size = 75
 relocations = [
- { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0Record16F739@@QAE@XZ", target = 0x006566D8 },
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0EffectPatternSequence@@QAE@XZ", target = 0x006566D8 },
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
- { offset = 0x20, type = "REL32", symbol = "??0VectorBase16F739@@QAE@XZ", target = 0x005F7F70 },
- { offset = 0x2F, type = "REL32", symbol = "?Clear@VectorBase16F739@@QAEXXZ", target = 0x005F8020 },
+ { offset = 0x20, type = "REL32", symbol = "??0?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAE@XZ", target = 0x005F7F70 },
+ { offset = 0x2F, type = "REL32", symbol = "?clear@?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEXXZ", target = 0x005F8020 },
  { offset = 0x43, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
 
@@ -60696,15 +60696,15 @@ source = "src/StaticEffectReleaseF304.cpp"
 object = "build/matching/StaticEffectReleaseF304.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["Record16F739::~Record16F739"]
-symbol = "??1Record16F739@@QAE@XZ"
+symbol = "??1EffectPatternSequence@@QAE@XZ"
 target_address = 0x005F7ED0
 size = 72
 relocations = [
- { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1Record16F739@@QAE@XZ", target = 0x006566B8 },
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1EffectPatternSequence@@QAE@XZ", target = 0x006566B8 },
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
- { offset = 0x27, type = "REL32", symbol = "?Clear@VectorBase16F739@@QAEXXZ", target = 0x005F8020 },
- { offset = 0x36, type = "REL32", symbol = "??1VectorBase16F739@@QAE@XZ", target = 0x005F7FA0 },
+ { offset = 0x27, type = "REL32", symbol = "?clear@?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAEXXZ", target = 0x005F8020 },
+ { offset = 0x36, type = "REL32", symbol = "??1?$vector@UFighterFrameInfoHeader@@V?$allocator@UFighterFrameInfoHeader@@@std@@@std@@QAE@XZ", target = 0x005F7FA0 },
  { offset = 0x40, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
 

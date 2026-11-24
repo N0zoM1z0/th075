@@ -18,13 +18,6 @@
 class ResultSpriteDrawingF240 {
 public:
 };
-// The observed native call to the accepted ScaleQuad callee transfers its
-// float scale factors as three raw 32-bit IEEE754 values (MOV/PUSH). This
-// borrowed call-only facade preserves that ABI; no original class identity
-// or complete owner layout is asserted.
-class ResultRawScaleF240 {
-public: void ScaleQuad(float x,float y,float z,DWORD sxBits,DWORD syBits,DWORD szBits);
-};
 
 #define DRAWER reinterpret_cast<ResultSpriteDrawingF240*>(textures)
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
@@ -46,7 +39,7 @@ void ResultScene::Render()
         SetRect(&region,0,0,640,480);
         TRANSFORM(quad)->BuildQuadFromRect(&region);
         TRANSFORM(quad)->RotateQuad(320.0f,240.0f,0.0f,PERCENT,PERCENT,PERCENT);
-        reinterpret_cast<ResultRawScaleF240*>(&quad)->ScaleQuad(520.0f,360.0f,0.0f,reinterpret_cast<unsigned long&>(field014),reinterpret_cast<unsigned long&>(field014),reinterpret_cast<unsigned long&>(field014));
+        TRANSFORM(quad)->ScaleQuad(520.0f, 360.0f, 0.0f, field014, field014, field014);
         g_WindowOverlayAt006714C4->DrawIfEnabled(quad,&region,D3DCOLOR_ARGB(static_cast<unsigned char>(GeometryConstants::TwoHundredFiftyFive*field014),255,255,255));
         reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(1);
         SetRect(&region,0,0,256,256);

@@ -30,7 +30,6 @@ public:
     void AdvanceAuxiliary();
     void PollCommands();
     void AdvanceSequence();
-    void PlaySharedSound(short sound);
     void RenderChain();
     void CreateOwnedObject(CharacterObject** output);
     void ForwardBaseAction();

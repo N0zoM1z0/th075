@@ -1,6 +1,12 @@
 #include "DigitAtlasesF177.hpp"
 #include "BattleAtlasNumber446B90.hpp"
 
+short g_AtlasNumberAdvanceAt0068C868[14];
+IDirect3DTexture8* g_AtlasNumberTexturesAt0068C894[3];
+short g_AtlasNumberHeightAt0068C8A0[14];
+short g_AtlasNumberWidthAt0068C8CC[14];
+RECT g_AtlasNumberRegionsAt0068C8F8[14][10];
+
 DigitAtlasesF177::DigitAtlasesF177(IDirect3DTexture8* primary,
                                   IDirect3DTexture8* secondary,
                                   IDirect3DTexture8* auxiliary)

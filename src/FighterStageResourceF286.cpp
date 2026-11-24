@@ -1,23 +1,12 @@
 #include "GameSharedState.hpp"
 #include "Fighter.hpp"
+#include "TextureManagerF198.hpp"
 #include <windows.h>
 #include <stdio.h>
 #include <new>
 
-// Only the physically verified stage texture pointer, fighter name and
-// stage-page bytes are represented. No full private Fighter is claimed.
-class FighterStageTextureF286 {
-    unsigned char observedBytes[80];
-public:
-    FighterStageTextureF286();
-    ~FighterStageTextureF286();
-    void AllocateSlots(int count);
-    void LoadDefault(const char* filename,const char* root);
-};
-typedef char AssertStageTex80F286[(sizeof(FighterStageTextureF286)==80)?1:-1];
 extern const char g_StageTextureFormatAt00658FC0[];
 extern const char g_StageArchiveAt00658FE0[];
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 void Fighter::LoadStageResource()
 {
     char filename[260];
@@ -25,10 +14,9 @@ void Fighter::LoadStageResource()
     {
         if (stageTexture)
             delete stageTexture;
-        stageTexture = new FighterStageTextureF286();
-        stageTexture->AllocateSlots(FIELD(signed char,0x704+g_StageAt0067161E));
+        stageTexture = new TextureManagerF198();
+        stageTexture->AllocateUnformattedSlots(field705[g_StageAt0067161E - 1]);
         sprintf(filename,g_StageTextureFormatAt00658FC0,name,g_StageAt0067161E);
         stageTexture->LoadDefault(filename,g_StageArchiveAt00658FE0);
     }
 }
-#undef FIELD

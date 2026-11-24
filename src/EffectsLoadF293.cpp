@@ -1,19 +1,11 @@
-#include "TextureManagerF198.hpp"
+#include "CombatEffects.hpp"
 #include "DiagnosticLog.hpp"
 #include <windows.h>
 extern const char g_EffectsLogStartAt0065A078[];
 extern const char g_EffectsFileAt0065A090[];
 extern const char g_EffectsArchiveRootAt0065A088[];
 extern const char g_EffectsLogCompleteAt0065A0A8[];
-class EffectsResourcesF293 {
-public:
- void LoadPatternCatalog();
- void LoadResources();
-private:
- unsigned char unknown000[0x28];
- TextureManagerF198 texture;
-};
-void EffectsResourcesF293::LoadResources()
+void CombatEffects::LoadResources()
 {
  LoadPatternCatalog();
  DiagnosticLog::AppendString(g_EffectsLogStartAt0065A078);

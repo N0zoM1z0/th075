@@ -10,7 +10,7 @@
 void SakuyaFighter::AdvanceAuxiliary() {
     if(velocityX==0.0f && field3AC>0) field3AC=0;
     if(fieldF0C>0) {
-        if(fieldF0E<=0) { EnableRoundSound(1);fieldF0E=1; }
+        if(fieldF0E<=0) { SetNonnegativeWord(1);fieldF0E=1; }
         else { --fieldF0E; }
         field09C=0.75f;
         fieldF0C=spirit;

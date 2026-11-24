@@ -21,6 +21,7 @@
 #include "YukariFighter.hpp"
 #include "SuikaFighter.hpp"
 #include "MeilingFighter.hpp"
+#include "CombatEffects.hpp"
 
 typedef char ReimuFighterAllocationSize[sizeof(ReimuFighter) == 0x1000 ? 1 : -1];
 typedef char MarisaFighterAllocationSize[sizeof(MarisaFighter) == 0x1830 ? 1 : -1];
@@ -39,8 +40,6 @@ extern signed char g_StoryRosterAt00671490[];
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
 
-class EffectCollectionsF398 {public:void ClearEntries();};
-extern EffectCollectionsF398 g_EffectCollectionsAt006716C8;
 void BattleCharacterLoaderF398::LoadCharacters() {
  DiagnosticLog::AppendString(g_LoadCharacterLogAt00657A30);
  if (g_ReplayModeAt0066C238==2) GameStateF202::RestoreFromSnapshot();
@@ -174,7 +173,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
    g_BattleFightersAt00671418[0]->recoverableHealth=10000;g_BattleFightersAt00671418[0]->health=10000;
    g_BattleFightersAt00671418[1]->recoverableHealth=10000;g_BattleFightersAt00671418[1]->health=10000;
  }
- g_EffectCollectionsAt006716C8.ClearEntries();
+ g_CombatEffects.ReleaseEntries();
  if(g_ReplayModeAt0066C238==1) GameStateF201::SaveSnapshot();
  DiagnosticLog::AppendString(g_LoadCharactersDoneAt00657A44);
 }

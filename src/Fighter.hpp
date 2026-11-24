@@ -13,7 +13,7 @@ class EffectManagerLifetimeF161;
 class CharacterObject;
 class TimelineDrawing438D00;
 class FighterTextureF282;
-class FighterStageTextureF286;
+class TextureManagerF198;
 
 typedef std::vector<FighterSequenceInfo*> ActionSequenceSlots;
 typedef HeldInputBlock4388D0 InputState;
@@ -48,6 +48,7 @@ public:
 
     // Base fighter methods (0x451EB0-0x45D710).
     void SetBindings(const void* source);
+    void UpdateControls();                                     // 00452F10
     void BindAnimation();
     void Render();                        // slot 2 override for every fighter, 00453F70
     void SetNoticeFields(signed char value,unsigned char enabled,unsigned char alpha);
@@ -73,7 +74,6 @@ public:
     void RenderSideEffect();
     void DrawFacingSprite(short sprite, float position, float y, unsigned long color);
     void RenderFadeOverlay();
-    void DrawFacingSprite(short sprite, float position, int first, int second);
     bool IsState50To149();
     bool IsGroundedStateWindow();
     void AdvanceGuardedState();
@@ -212,7 +212,7 @@ public:
     unsigned long bufferedB;            // +0x504
     unsigned long bufferedC;            // +0x508
     unsigned long bufferedD;            // +0x50C
-    unsigned char field510;             // +0x510
+    signed char field510;               // +0x510
     unsigned char aiCommand;            // +0x511 AI command chosen for the current decision
     short aiWaitTimer;                  // +0x512
     short aiStep;                       // +0x514
@@ -256,12 +256,9 @@ public:
     short field6FA;                     // +0x6FA
     short field6FC;                     // +0x6FC
     unsigned char unknown6FE[0x700 - 0x6FE];
-    union {
-        void* stageDrawing;             // +0x700 other stage renderer views
-        FighterStageTextureF286* stageTexture; // F286 stage texture resource
-    };
+    TextureManagerF198* stageTexture;  // +0x700 stage texture resource
     unsigned char unknown704[0x705 - 0x704];
-    unsigned char field705[10];         // +0x705 per-character settings written by the constructors
+    signed char field705[10];           // +0x705 texture page counts for stages 1 through 10
     unsigned char unknown70F[0x713 - 0x70F];
     signed char field713;               // +0x713 signed character sequence state
     ScriptResource4205F0 script;       // +0x714 script indices and sequence deque

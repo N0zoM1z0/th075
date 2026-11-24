@@ -370,6 +370,23 @@ made VC7.1 place the RECT at `[ebp-0x10]` in both declaration orders. The
 156-byte native draws use `[ebp-0x98]`; their constructor call still relies
 on the existing combined stack carrier.
 
+The battle digit atlas takes a one-byte allocation. Its constructor
+initializes three texture pointers and fourteen sets of glyph rectangles,
+dimensions and advances. The HUD reads those same zero-initialized tables.
+The results renderer uses the shared `SpriteTransform::ScaleQuad` float
+interface.
+
+The static effect owner at `0x006716C8` holds two 20-byte VC7.1 deques, an
+80-byte texture manager at `+0x28`, and a vector of pattern pointers at
+`+0x78`. The pattern sequences hold 16-byte frame headers. The CRT
+initialization and teardown stubs and the sequence deleting destructor
+match. The typed catalog loader needs its per-unit profile to omit
+`/GS` to match the original exception frame. VC7.1 interprets `/GS-`
+as `/GS` followed by the unrecognized `/G-` option.
+The four shared D3D interface pointers are defined in the graphics
+teardown translation unit. The archive consumer for the atlas and effect
+lifetimes links with that cleanup and runs headless.
+
 The texture manager stores a VC7.1 vector of 44-byte entries at `+0x08`
 and two vectors of texture pointers at `+0x18` and `+0x28`. Both bitmap
 directory loaders use those vectors along with pack I/O, texture lookup,
@@ -574,7 +591,10 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   40 bytes at +4 and clears 28 at +0x2C, so the block spans 0x48 bytes and
   ends where `inputX` (+0x4DC) begins. Held input is at +0x4DC–0x4F4 (X, Y,
   ?, A, B, C, D) and a buffered copy at +0x4F8–0x50C. An attack press is
-  `inputA == 1 || bufferedA > 0`.
+  `inputA == 1 || bufferedA > 0`. The battle and ending scenes both call
+  `Fighter::UpdateControls` at `0x00452F10`. It reads the embedded
+  physical input counts and uses virtual slots 11, 12 and 13 for AI
+  selection and command polling.
 - +0x53A–0x6CC hold the win quote: the line count, two 200-byte lines from
   +0x53B and a notice badge per line from +0x6CB.
 - `Fighter::Fighter` at `0x004567B0` constructs the rendering and Actor

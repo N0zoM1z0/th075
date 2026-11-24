@@ -5,16 +5,12 @@
 #include "AudioControl.hpp"
 #include "SoundBank.hpp"
 #include "WindowOverlayF212.hpp"
+#include "CombatEffects.hpp"
 
 
 extern const char g_WaveArchivePathAt00657A24[];
 extern const char g_WaveArchiveIndexAt00657A1C[];
 
-class GameWorkerF212 {
-public:
-    void Initialize();
-};
-extern GameWorkerF212 g_WorkerAt006716C8;
 
 namespace GameGlobalsF212 {
 void InitializeSound()
@@ -28,6 +24,6 @@ void InitializeSound()
     AudioVolume4073B0::SetStreamVolume(g_StreamVolumeAt006714B7);
     g_SoundBank->LoadArchive(g_WaveArchivePathAt00657A24,
                              g_WaveArchiveIndexAt00657A1C);
-    g_WorkerAt006716C8.Initialize();
+    g_CombatEffects.LoadResources();
 }
 }

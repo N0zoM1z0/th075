@@ -23,17 +23,17 @@ void FighterType::RenderStage(signed char stage) \
         static_cast<TextureManagerF198*>(drawing)->SetTextureFilter(2); \
         SetRect(&region, 0, 0, 1024, 32); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuad(left0, top0, left0 + 1024.0f, top0 + 32.0f); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(alpha0, 255, 255, 255)); \
+        stageTexture->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(alpha0, 255, 255, 255)); \
         SetRect(&region, 0, 0, 1024, 32); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuad(left1, top1, left1 + 1024.0f, top1 + 32.0f); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(alpha1, 255, 255, 255)); \
+        stageTexture->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(alpha1, 255, 255, 255)); \
         static_cast<TextureManagerF198*>(drawing)->SetTextureFilter(1); \
         SetRect(&region, 0, 0, 640, 128); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuad(left2, top2, left2 + 640.0f, top2 + 128.0f); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(alpha2, 255, 255, 255)); \
+        stageTexture->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(alpha2, 255, 255, 255)); \
         SetRect(&region, 0, 0, 304, 80); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuad(left3, top3, left3 + 304.0f, top3 + 80.0f); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(3, quadValue, &region, D3DCOLOR_ARGB(alpha3, 255, 255, 255)); \
+        stageTexture->DrawQuad(3, quadValue, &region, D3DCOLOR_ARGB(alpha3, 255, 255, 255)); \
         if (field6F8 == 1 && alpha3 < 255 && fadeTimer == 0) { \
             if (alpha3 < 250) alpha3 += 5; \
             else alpha3 = 255; \
@@ -47,18 +47,18 @@ void FighterType::RenderStage(signed char stage) \
     case 8: case 9: \
         SetRect(&region, 0, 0, 640, 480); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuadFromRect(&region); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(alpha0, 255, 255, 255)); \
+        stageTexture->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(alpha0, 255, 255, 255)); \
         break; \
     case 10: \
         SetRect(&region, 0, 0, 640, 480); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuadFromRect(&region); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(alpha0, 255, 255, 255)); \
+        stageTexture->DrawQuad(0, quadValue, &region, D3DCOLOR_ARGB(alpha0, 255, 255, 255)); \
         SetRect(&region, 0, 0, 640, 480); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuadFromRect(&region); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(alpha1, 255, 255, 255)); \
+        stageTexture->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(alpha1, 255, 255, 255)); \
         SetRect(&region, 0, 0, 640, 480); \
         reinterpret_cast<SpriteTransform*>(&quadValue)->BuildQuadFromRect(&region); \
-        static_cast<TextureManagerF198*>(stageDrawing)->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(alpha2, 255, 255, 255)); \
+        stageTexture->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(alpha2, 255, 255, 255)); \
         break; \
     } \
 }

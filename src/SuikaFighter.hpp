@@ -26,7 +26,6 @@ public:
     void NoOpSlot18();
     void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
-    void ResetBaseRound();
     void ResetRound();
     void SpawnProjectile(int pattern,float x,float y,unsigned char direction,int group);
     void AdvanceAuxiliary();

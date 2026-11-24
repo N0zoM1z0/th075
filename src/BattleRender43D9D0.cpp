@@ -4,11 +4,12 @@
 #include "TextOverlay.hpp"
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
+#include "CombatEffects.hpp"
 #include "BattleRender43D9D0.hpp"
 #include "EffectManagerLifetimeF161.hpp"
 
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
-#define AUX reinterpret_cast<RenderAux43D9D0*>(&g_CombatEffects)
+signed char g_RenderOrderAt0068C860;
 
 void BattleScene::Render() {
     if (field0A0 == 0 && field0A1 == 0) {
@@ -53,7 +54,7 @@ void BattleScene::Render() {
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(2);
             reinterpret_cast<RenderSequence43D9D0*>(fighters[0]->field480)->RenderElements();
             reinterpret_cast<RenderSequence43D9D0*>(fighters[1]->field480)->RenderElements();
-            AUX->DispatchSelected(0);
+            g_CombatEffects.DispatchSelectedList(0);
             fighters[0]->field2EC->DispatchSelected(0);
             fighters[1]->field2EC->DispatchSelected(0);
             if (g_RenderOrderAt0068C860 != 0) {
@@ -69,7 +70,7 @@ void BattleScene::Render() {
             }
             fighters[0]->field2EC->DispatchSelected(1);
             fighters[1]->field2EC->DispatchSelected(1);
-            AUX->DispatchSelected(1);
+            g_CombatEffects.DispatchSelectedList(1);
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
             g_CurrentBattleStageAt00671424->Slot2();
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
@@ -129,5 +130,4 @@ void BattleScene::Render() {
     }
 }
 
-#undef AUX
 #undef STYLE

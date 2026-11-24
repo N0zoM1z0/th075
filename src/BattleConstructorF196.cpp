@@ -27,7 +27,7 @@ BattleScene::BattleScene()
     static_cast<TextureManagerF198*>(textures)->AllocateUnformattedSlots(11);
     static_cast<TextureManagerF198*>(textures)->LoadDefault(
         g_BattleTextureDataAt0065831C, g_BattleTextureRootAt00658314);
-    digitAtlas = new DigitAtlas(
+    digitAtlas = new DigitAtlasesF177(
         static_cast<TextureManagerF198*>(textures)->GetTexture(1),
         static_cast<TextureManagerF198*>(textures)->GetTexture(8),
         static_cast<TextureManagerF198*>(textures)->GetTexture(9));

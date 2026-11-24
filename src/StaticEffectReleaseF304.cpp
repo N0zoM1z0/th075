@@ -1,50 +1,21 @@
-#include "TextureManagerF198.hpp"
-// Physical subobject addresses and the actual lifetime-bearing owner are
-// borrowed from 0x005F6FF0, not an assertion of private gameplay contents.
-class ResourceSideEffectsF304 {
- unsigned int physicallyObservedWords[5];
-public: ~ResourceSideEffectsF304();
-};
-typedef char CheckResourceSide20F304[(sizeof(ResourceSideEffectsF304)==0x14)?1:-1];
-class EffectRecordListF304 {
-public:
-    ~EffectRecordListF304();
-    unsigned int Size();
-    void** At(unsigned int index);
-    void Clear();
-};
-class EffectCatalogF304 {
-public:
-    ~EffectCatalogF304();
-    void CleanupGraphics();
-private:
-    ResourceSideEffectsF304 sides[2];
-    TextureManagerF198 texture;
-    EffectRecordListF304 records;
-};
-class EffectRecordF304 {public: ~EffectRecordF304();};
-EffectCatalogF304::~EffectCatalogF304()
+#include "CombatEffects.hpp"
+
+CombatEffects::~CombatEffects()
 {
-    CleanupGraphics();
-    for (unsigned int index=0; index<records.Size(); ++index) {
-        if (*records.At(index))
-            delete static_cast<EffectRecordF304*>(*records.At(index));
+    ReleaseEntries();
+    for (unsigned int index = 0; index < patterns.size(); ++index) {
+        if (patterns[index])
+            delete patterns[index];
     }
-    records.Clear();
+    patterns.clear();
 }
 
-class VectorBase16F739 {
- unsigned int nativeWords[4];
-public:
- VectorBase16F739();
- ~VectorBase16F739();
- void Clear();
-};
-class Record16F739 {
- VectorBase16F739 child;
-public:
- Record16F739();
- ~Record16F739();
-};
-Record16F739::Record16F739() {child.Clear();}
-Record16F739::~Record16F739() {child.Clear();}
+EffectPatternSequence::EffectPatternSequence()
+{
+    frames.clear();
+}
+
+EffectPatternSequence::~EffectPatternSequence()
+{
+    frames.clear();
+}

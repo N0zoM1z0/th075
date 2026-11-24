@@ -51,7 +51,7 @@ void Fighter::UpdateCounters()
             spiritCooldown -= 2;
             spirit = 0;
             if (spiritCooldown <= 0) {
-                reinterpret_cast<CombatTimerActor *>(this)->PlaySharedSound(47);
+                PlaySharedSound(47);
                 spirit = 1000;
             }
         } else if (spirit < spiritPrevious) {
@@ -59,7 +59,7 @@ void Fighter::UpdateCounters()
         } else if (spiritWait > 0) {
             --spiritWait;
         } else {
-            if ((!reinterpret_cast<CombatTimerActor *>(this)->IsState150To199() ||
+            if ((!IsState150To199() ||
                 (action != 209 && action != 210)) && spiritWait == 0)
                 spirit += 3;
             if (spirit > 1000) spirit = 1000;

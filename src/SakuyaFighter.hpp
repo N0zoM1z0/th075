@@ -17,7 +17,6 @@ public:
     static int cardCountdown;
     void DispatchActions();
     void AdvanceAuxiliary();
-    void EnableRoundSound(int);
     void PollCommands();
     void AdvanceSequence();
     void ResetRound();

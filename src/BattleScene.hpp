@@ -4,6 +4,7 @@
 #include <windows.h>
 #include "Fighter.hpp"
 #include "SceneBase.hpp"
+#include "DigitAtlasesF177.hpp"
 
 struct IDirect3DTexture8;
 
@@ -27,12 +28,7 @@ public:
 };
 typedef char ComboDisplaySize[sizeof(ComboDisplay) == 20 ? 1 : -1];
 
-// The digit atlas the HUD draws numbers with (a one-byte allocation).
-class DigitAtlas {
-public:
-    DigitAtlas(IDirect3DTexture8* digits, IDirect3DTexture8* small, IDirect3DTexture8* large);
-};
-class CombatEffects { public: void Spawn(short, float, float, unsigned char, signed char, unsigned char, unsigned char); };
+class CombatEffects;
 
 // The battle scene (vtable 00658334, constructor 0043AD10, destructor
 // 0043B0B0). Its methods run from 0043AD10 to 00449310. The full extent
@@ -108,7 +104,7 @@ public:
     unsigned char unknown02C[0x034 - 0x02C];
     RECT hitBounds;                     // +0x034 overlap of the boxes that just hit
     Fighter* fighters[2];               // +0x044 the two fighters
-    DigitAtlas* digitAtlas;             // +0x04C
+    DigitAtlasesF177* digitAtlas;             // +0x04C
     ComboDisplay* comboDisplays[2];     // +0x050 each side's combo counter
     ComboDisplay* activeComboDisplay;   // +0x058 the attacker's counter while hits resolve
     signed char field05C;               // +0x05C

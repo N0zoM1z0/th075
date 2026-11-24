@@ -16,12 +16,12 @@ namespace Graphics
     float g_DrawOriginY;
     PresentCallback g_PresentCallback;
 
-    IDirect3D8 *g_Direct3D;
-    IDirect3DDevice8 *g_Device;
+    extern IDirect3D8 *g_Direct3D;
+    extern IDirect3DDevice8 *g_Device;
     D3DDISPLAYMODE g_DisplayMode;
     D3DPRESENT_PARAMETERS g_PresentationParameters;
-    IDirect3DTexture8 *g_TargetTextures[1];
-    ID3DXRenderToSurface *g_TargetRenderers[1];
+    extern IDirect3DTexture8 *g_TargetTextures[1];
+    extern ID3DXRenderToSurface *g_TargetRenderers[1];
     IDirect3DTexture8 *g_CachedTexture;
 
     signed char g_ActiveTarget = -1;

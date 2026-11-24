@@ -9,7 +9,6 @@
 #include "BattleScene.hpp"
 // Partial interfaces, used only on existing receivers.
 class StateReplay { public: void AppendRecord(); };
-class StateEffects { public: void ReleaseEntries(); };
 extern StateReplay g_StateReplay;
 extern float g_StateFadeValue;
 #endif

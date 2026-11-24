@@ -22,7 +22,6 @@ public:
     void NoOpSlot18();
     void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
-    void ResetBaseRound();
     void ResetRound();
     void AdvanceAuxiliary();
 

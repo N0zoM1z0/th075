@@ -1,4 +1,5 @@
 #include "BattleScene.hpp"
+#include "CombatEffects.hpp"
 #include "GameLeafHelpers.hpp"
 
 bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *defender)

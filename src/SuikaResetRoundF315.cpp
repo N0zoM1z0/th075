@@ -22,7 +22,7 @@ void SuikaFighter::ResetRound()
     aiCardTimer=0;
     g_SequenceByteAt0066C23A=0xff;
     g_SequenceByteAt0066C239=0xff;
-    ResetBaseRound();
+    Fighter::ResetRound();
     fieldF28=0;
     fieldF2A=0;
 }

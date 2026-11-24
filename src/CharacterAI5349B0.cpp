@@ -45,7 +45,7 @@ void YoumuFighter::ChooseCardAction()
     }
     if (CARD_TYPE == 1 && field3A0 > 0 &&
         --aiCardTimer <= 0 && y == 0.0f &&
-        distance.x < 240.0f && ChooseRecordedIntegerRange(0, 100) < 30) {
+        distance.x < 240.0f && RecordedRange(0, 100) < 30) {
         aiCommand = 210;
     }
     if (CARD_TYPE == 0 && field3A0 > 0) {

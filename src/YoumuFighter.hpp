@@ -16,7 +16,6 @@ public:
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();
-    int ChooseRecordedIntegerRange(int lower, int upper);
     static int cardCountdown;
     void DispatchActions();
     void AdvanceAuxiliary();

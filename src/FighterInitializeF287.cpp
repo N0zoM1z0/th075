@@ -26,5 +26,5 @@ Fighter::Fighter()
     field2EC->BindFighter(this);
     drawing = 0;
     field534 = 0;
-    stageDrawing = 0;
+    stageTexture = 0;
 }

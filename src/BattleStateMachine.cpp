@@ -3,6 +3,7 @@
 #include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "BattleScene.hpp"
+#include "CombatEffects.hpp"
 #include "BattleStateMachine.hpp"
 #include "GameProgress.hpp"
 #include "WindowOverlayF212.hpp"
@@ -200,7 +201,7 @@ short BattleScene::AdvanceState()
                 fighters[0]->field39D = 2; fighters[1]->field39D = fighters[1]->field39E;
                 fighters[1]->recoverableHealth = 1;
                 fighters[1]->recoverableHealth = MAX_HEALTH;
-                reinterpret_cast<StateEffects *>(&g_CombatEffects)->ReleaseEntries();
+                g_CombatEffects.ReleaseEntries();
                 g_CumulativeScoreAt006714BC = 0;
                 for (resetPlayer = 1; resetPlayer <= fighters[1]->field39E; ++resetPlayer)
                     g_CumulativeScoreAt006714BC += static_cast<int>(fighters[1]->field400[resetPlayer]);

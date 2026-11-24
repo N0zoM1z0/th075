@@ -11,10 +11,10 @@
 extern int g_GraphicsResourceClientCount;
 
 namespace Graphics {
-    extern IDirect3DTexture8 *g_TargetTextures[1];
-    extern ID3DXRenderToSurface *g_TargetRenderers[1];
-    extern IDirect3DDevice8 *g_Device;
-    extern IDirect3D8 *g_Direct3D;
+    IDirect3DTexture8 *g_TargetTextures[1];
+    ID3DXRenderToSurface *g_TargetRenderers[1];
+    IDirect3DDevice8 *g_Device;
+    IDirect3D8 *g_Direct3D;
 }
 
 GraphicsResourceClient::~GraphicsResourceClient() {

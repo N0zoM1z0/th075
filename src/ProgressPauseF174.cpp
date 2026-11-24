@@ -1,7 +1,6 @@
 #include "BattleResultState.hpp"
 #include "GameSharedState.hpp"
 #include "BattleScene.hpp"
-#include "ProgressPauseF174.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "GameLeafHelpers.hpp"
 #include "FighterVirtualActionsF159.hpp"
@@ -44,7 +43,7 @@ void BattleScene::UpdatePlayerEffects()
     int i;
     int j;
     for (i = 0; i < 2; i++) {
-        reinterpret_cast<FighterControlCallsF174*>(fighters[i])->UpdateControls();
+        fighters[i]->UpdateControls();
         if (field018 != 1) {
             fighters[i]->inputA = 0;
             fighters[i]->inputB = 0;

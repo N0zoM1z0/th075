@@ -3,7 +3,7 @@
 #include "CharacterSpecial5E68C0.hpp"
 
 #define TEXTURE reinterpret_cast<TextureManagerF198*>(drawing)
-#define DRAWING reinterpret_cast<TextureManagerF198*>(stageDrawing)
+#define DRAWING stageTexture
 
 void MeilingFighter::RenderStage(signed char stage) {
     RenderQuadPacket5E68C0 sprite;

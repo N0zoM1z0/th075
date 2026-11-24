@@ -23,8 +23,18 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 618 unresolved externals. The character-loader
-batch resolved 38 symbols and cold-replayed 331 units across 191 objects.
+stops at `LNK1120` with 551 unresolved externals. The battle resource
+batch resolved 67 symbols. The affected replay covered 477 units across
+242 objects, including the graphics lifetime dependencies.
+The battle and ending scenes share the typed fighter input update.
+Stage texture load, draw and teardown use the same texture manager.
+The HUD binds the digit atlas to its initialized tables. Startup, stage
+loading, battle transitions and rendering share the static effect owner.
+Its CRT stubs, container lifetimes, pattern loader and side dispatch match.
+A headless library consumer initialized the digit tables, released both
+effect queues and exercised pattern and texture-owner teardown.
+
+The character-loader batch resolved 38 symbols.
 The loader allocates the eleven concrete fighter types at the native sizes.
 All twenty slots match for each fighter table. The complete loader, both
 switch tables and the constructor cleanup records match.
@@ -152,10 +162,9 @@ scoped comparison for a new origin decision.
 
 1. Read [AGENTS.md](../AGENTS.md) and inspect Git and the target preflight.
    Use the existing headless Ghidra project and serialize compiler builds.
-2. Bind the stage texture allocation to the shared texture manager.
-   The loader's effect cleanup at `0x005F7140` also has an exact body.
-   Its callers share the static effect owner at `0x006716C8`, whose
-   container lifetimes still need to be connected.
+2. Bind battle-effect spawn and advance to the typed static effect owner
+   at `0x006716C8`. The sprite history draw and the remaining quad
+   constructors still need their native stack layouts reconciled.
 3. For origin review, look for observations that distinguish the remaining
    byte-equal alternatives. Keep the origin and exactness ledgers separate.
    Replay commands and their dependencies are in the linked evidence notes.
