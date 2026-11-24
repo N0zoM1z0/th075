@@ -100,6 +100,27 @@ and unwind observations and probe comparisons run with
 
     scripts/repo-python scripts/replay-exact-units.py --unit record-prefix-destroy-004588b0 --unit record-prefix-reset-allocation-00458790 --unit record-prefix-zero-flag-00458880
 
+### R275 — RECT vector clear and element destruction
+
+The cold-exact 381-byte `std::vector<RECT>::operator=` at `0x0045AC50`
+calls the real VC7.1 `clear()` symbol at `0x0045AC75` for an empty source.
+From the same object, the complete 19-byte clear at `0x00458A80` calls
+the 103-byte `_Tidy` at `0x00458DA0`. Its destruction path reaches
+`allocator<RECT>::destroy` at `0x0045B290`, whose typed relocation calls
+the complete five-byte `std::_Destroy<RECT>` at `0x0045B630`.
+
+The RECT type comes from the independently recovered collision layout
+and the exact whole vector assignment. The earlier R209 graph used a
+generic 16-byte element. Replaying those same source edges with the
+typed frame object matches nine cleanup sections and all nine
+relocation fields, including the range loop and allocator call. The
+clear and trivial destruction bodies therefore have independent
+library attribution. Their byte-equivalent ordinary controls remain
+valid for callers without a typed source reference.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit std-vector-rect-assignment --unit fighter-frame-info-assignment
+    scripts/repo-python .analysis/rect-vector-clear/compare.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

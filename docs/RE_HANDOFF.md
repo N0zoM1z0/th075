@@ -192,7 +192,9 @@ decisions.
 R274 identifies the guarded extension cleanup at `0x004588B0` through
 the game pattern parser, the original prefix lifetime calls, and the
 same-receiver unwind entry. The new destructor cold-replays 43 bytes
-and its scalar deallocation relocation.
+and its scalar deallocation relocation. R275 identifies two RECT vector
+cleanup leaves through the cold-exact vector assignment and its typed
+call chain.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
