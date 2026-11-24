@@ -25,8 +25,8 @@ namespace Graphics
     extern bool g_Use16BitBackBuffer;
 
     extern const char g_CreateDirect3DError[];
-    extern const char g_GetDeviceCapsError[];
-    extern const char g_GetDisplayModeError[];
+    extern const char g_GetDeviceCapsError[] = "\x83\x66\x83\x6f\x83\x43\x83\x58\x8f\xee\x95\xf1\x82\xcc\x8e\xe6\x93\xbe\x82\xc9\x8e\xb8\x94\x73";
+    extern const char g_GetDisplayModeError[] = "\x83\x66\x83\x42\x83\x58\x83\x76\x83\x8c\x83\x43\x83\x82\x81\x5b\x83\x68\x82\xcc\x8e\xe6\x93\xbe\x82\xc9\x8e\xb8\x94\x73";
     extern const char g_CreateDeviceError[];
     extern const char g_CreateTargetTextureError[];
     extern const char g_CreateTargetRendererError[];

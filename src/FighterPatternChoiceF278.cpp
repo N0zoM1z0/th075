@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-extern const char g_DefaultActionNameAt00659078[];
+extern const char g_DefaultActionNameAt00659078[] = "";
 void Fighter::ChoosePatternSequence()
 {
     unsigned int cursor;

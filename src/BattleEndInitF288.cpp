@@ -7,7 +7,7 @@
 #include "TextOverlay.hpp"
 #include <windows.h>
 
-extern const char g_EndTitleAt00657B7B[];
+extern const char g_EndTitleAt00657B7B[] = "";
 
 BattleEndScene::BattleEndScene()
 {

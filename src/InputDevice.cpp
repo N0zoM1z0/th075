@@ -8,9 +8,9 @@ namespace Input
     IDirectInput8A *g_DirectInput;
     IDirectInputDevice8A *g_Keyboard;
     unsigned char g_KeyboardState[256];
-    extern const char g_CreateDirectInputError[];
+    extern const char g_CreateDirectInputError[] = "DirectInput" "\x83\x49\x83\x75\x83\x57\x83\x46\x83\x4e\x83\x67\x82\xcc\x8d\xec\x90\xac\x82\xc9\x8e\xb8\x94\x73";
     extern const char g_CreateKeyboardError[];
-    extern const char g_KeyboardFormatError[];
+    extern const char g_KeyboardFormatError[] = "\x83\x66\x81\x5b\x83\x5e\x83\x74\x83\x48\x81\x5b\x83\x7d\x83\x62\x83\x67\x82\xcc\x90\xdd\x92\xe8\x82\xc9\x8e\xb8\x94\x73";
     extern const char g_KeyboardCooperativeLevelError[] = "\x8b\xa6\x92\xb2\x83\x8c\x83\x78\x83\x8b\x82\xcc\x90\xdd\x92\xe8\x82\xc9\x8e\xb8\x94\x73";
 
     bool Initialize(HWND window, HINSTANCE instance)

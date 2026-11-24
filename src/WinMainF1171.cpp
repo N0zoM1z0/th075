@@ -49,9 +49,13 @@ typedef char CharacterSelectSceneAllocationSize[(sizeof(CharacterSelectScene) ==
 typedef char ResultSceneAllocationSize[(sizeof(ResultScene) == 0x4C) ? 1 : -1];
 typedef char OptionsSceneAllocationSize[(sizeof(OptionsScene) == 0x1C) ? 1 : -1];
 typedef char ResultListSceneAllocationSize[(sizeof(ResultListScene) == 0x1D0) ? 1 : -1];
-extern const char g_AppWindowClassAt0065A104[];
-extern const char g_AppWindowClassAltAt0065A17C[];
-extern const char g_AppWindowTitleAt0065A148[];
+// The window title is passed to the ANSI Win32 API in CP932.
+#define TH075_WINDOW_TITLE \
+    "\x93\x8c\x95\xfb\xe4\xc2\x96\xb2\x91\x7a" " " "\x81\x60" " Immaterial and Missing Power. ver1.11"
+extern const char g_AppWindowClassAt0065A104[] = TH075_WINDOW_TITLE;
+extern const char g_AppWindowClassAltAt0065A17C[] = TH075_WINDOW_TITLE;
+extern const char g_AppWindowTitleAt0065A148[] = TH075_WINDOW_TITLE;
+#undef TH075_WINDOW_TITLE
 extern const char g_AppIconAt0065A138[] = "ICON1";
 extern const char g_AppIconAt0065A140[] = "ICON1";
 extern const char g_ArchiveRootAt0065A1B0[] = "data";

@@ -120,6 +120,12 @@ playback paths use that name. The music detail view formats two supplied
 strings after a two-digit track number. The empty music and results
 text defaults have independent one-byte definitions.
 
+The ANSI window registration and creation calls use the same CP932 window
+name as the title, with the configured name and Japanese 1.11 version.
+The three strings occupy distinct native locations. Four graphics and
+input diagnostics use the existing SDK operation names and failure
+wording.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.
