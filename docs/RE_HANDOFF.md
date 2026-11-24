@@ -227,6 +227,10 @@ startup table to distinguish the event service pulse at
 R291 matches the sprite quad constructors and two 132-byte copies
 with both payload layouts. The original type at `+0x40` still needs
 a typed use or build symbol.
+R292 identifies four inner float workers as VC7.1 header code
+through the original retention of unreferenced D3DX8 COMDATs and
+the absence of the four competing SDK bodies.
+[Worker selection evidence](ORIGIN_PENDING_REVIEW.md#r292--vc71-float-worker-selection)
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH

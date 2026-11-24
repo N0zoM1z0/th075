@@ -158,19 +158,14 @@ def main():
         if found_sites != item["call_site_count"]:
             raise ValueError("aggregate callsite count mismatch: " + address)
 
-        # The atan2f header worker has its own VC71CRT origin record; the
-        # fabsf/sqrtf workers remain unclassified under the preserved R163 cohort.
         worker_origin = unique(origins, "address", item["worker_address"])
         worker_function = unique(functions, "address", item["worker_address"])
-        if item["worker_address"] == "0x00483320":
-            if (worker_origin["origin"] != "library" or worker_origin["subsystem"] != "VC71CRT"
-                    or worker_origin["disposition"] != "exclude" or worker_origin["evidence_id"] != "R270"
-                    or worker_function["module"] != "VC71CRT" or worker_function["status"] != "excluded"
-                    or worker_function["owner"] != "library"):
-                raise ValueError("atan2f inline worker lost its separate VC71CRT origin")
-        elif (worker_origin["origin"] != "unknown" or worker_origin["disposition"] != "review"
-              or worker_function["status"] != "unclassified"):
-            raise ValueError("fabsf/sqrtf inline workers must remain uncredited: " + item["worker_address"])
+        worker_evidence = "R270" if item["worker_address"] == "0x00483320" else "R292"
+        if (worker_origin["origin"] != "library" or worker_origin["subsystem"] != "VC71CRT"
+                or worker_origin["disposition"] != "exclude" or worker_origin["evidence_id"] != worker_evidence
+                or worker_function["module"] != "VC71CRT" or worker_function["status"] != "excluded"
+                or worker_function["owner"] != "library"):
+            raise ValueError("inline worker lost its separate VC71CRT origin: " + item["worker_address"])
         if any(row["address"] == item["worker_address"] for row in matches):
             raise ValueError("SDK inline worker was incorrectly added as an exact unit")
 

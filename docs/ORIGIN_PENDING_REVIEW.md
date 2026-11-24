@@ -401,10 +401,9 @@ The current direct-call scan is in
 | Candidates | Evidence gap |
 | --- | --- |
 | `0x0040D8C0`, `0x0040D8E0` | The typed texture cleanup reaches the bitmap-containing entry's destructor. The R108 implicit and explicit member lifetime forms both match the constructor and destructor with their bitmap calls. |
-| `0x0040D900`, `0x0040D920`, `0x0040D940`, `0x0040D960` | Both R163 whole source chains reach the exact CRT cosine and sine entries with the same float argument and return behavior. Their header and ordinary forms differ in source ownership. |
+| `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
 | `0x0040D9F0` | Both R291 layouts match the empty leaf, all three callers and three complete drawing or copy functions. The original type of the subobject at `+0x40` is unknown. |
 | `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
-| `0x00412DB0`, `0x00428D40` | The authored caller units reach the same CRT fabs and sqrt operations with the R163 header and ordinary worker forms. |
 | `0x004138D0`, `0x00441FD0` | Complete empty bodies with zero recorded Ghidra references. The current static scan finds no direct caller or absolute pointer literal for either entry. |
 | `0x004229D0` | R286 uses the actual script sequence layout. Both copy forms reproduce all 28 bytes and the relocation to the same deque copy constructor. |
 | `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
@@ -522,6 +521,45 @@ constructor, so its optimized copies supply no typed call to this leaf.
 
     scripts/repo-python .analysis/final-origin-review/quad-payload/replay.py
     scripts/repo-python .analysis/final-origin-review/quad-payload/archive.py
+
+### R292 — VC7.1 float worker selection
+
+The original `CD3DXSprite::GetDevice` and `CD3DXSprite::End` match
+all 38 and 43 bytes of their defining sections in pinned
+`cd3dxsprite.obj`. The nine bytes between them contain three
+`mov eax, ecx; ret` bodies. The intervening source sections supply
+these three-byte constructors as inline COMDATs. A scan of the
+native PE finds no direct transfer or absolute pointer to the
+three entries.
+
+Pinned VC7.1 links with ordinary float workers and `/OPT:NOREF`
+retain the unreferenced sprite constructors and four seven-byte
+SDK COMDATs, one each for `_cosf`, `_sinf`, `_fabsf` and `_sqrtf`.
+Using the standard header workers replaces those four SDK bodies
+with the 28-byte VC7.1 header definitions. The ordinary and header
+workers match the same original bytes and their actual CRT call
+operands. With `/OPT:REF`, both forms lose every intervening
+constructor, and the ordinary form also loses the four SDK
+workers. The original retains the constructor contributions and
+contains none of the four seven-byte bodies. This combination
+supports selection of the header workers under the observed
+retention behavior. Only the four inner workers receive a
+VC71CRT exclusion.
+
+With the probe's archive input order, the two retained sprite
+constructors occupy six bytes and the ordinary control adds the
+seven-byte `_cosf` at the same site. Omitting the explicit retention
+flag under `/DEBUG` gives the same selection as `/OPT:NOREF`.
+
+| Native entry | Header worker | CRT callee |
+| --- | --- | --- |
+| `0x0040D920` | `cosf` | `0x00641754` |
+| `0x0040D960` | `sinf` | `0x00641804` |
+| `0x00412DB0` | `fabsf` | `0x006418CD` |
+| `0x00428D40` | `sqrtf` | `0x00641E54` |
+
+    bash .analysis/final-origin-review/sdk-math-selection/link.sh
+    scripts/repo-python .analysis/final-origin-review/sdk-math-selection/compare.py
 
 ## Historical R263 inventory
 
