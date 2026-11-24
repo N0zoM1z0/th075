@@ -357,7 +357,8 @@ The complete scalar-deleting callee calls the verified script
 sequence destructor at `0x004212A0`. With that same concrete type,
 both the implicit sequence copy constructor and the explicit
 member-copy form reproduce `0x004229D0` and its deque copy call.
-The original copy declaration remains unresolved.
+R296 distinguishes the two forms by the order of their linked
+code.
 
     scripts/compile-probe.sh .analysis/final-origin-review/sound-vector.cpp build/probes/sound-vector.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
     scripts/compile-probe.sh .analysis/final-origin-review/replay-deque.cpp build/probes/replay-deque.obj /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src
@@ -404,7 +405,6 @@ The current direct-call scan is in
 | `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
 | `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
 | `0x004138D0`, `0x00441FD0` | Neither empty body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. The original owners are unknown. |
-| `0x004229D0` | R286 uses the actual script sequence layout. Both copy forms reproduce all 28 bytes and the relocation to the same deque copy constructor. |
 | `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
@@ -647,6 +647,36 @@ auxiliary record. The PE has no COFF symbol table to retain this
 distinction.
 
     scripts/repo-python .analysis/final-origin-review/texture-lifetime/replay.py
+
+### R296 — Script sequence copy emission order
+
+The full linked window from `0x004229B0` to the end of the deque
+copy at `0x00422B41` matches with the implicit sequence copy. It
+contains the two typed `_Destroy` dispatchers, the 28-byte sequence
+copy, the two scalar-deleting destructors and the 241-byte deque
+copy, in that order. The pinned linker selects the earlier
+`_Allocate<char>` definition in the probe. The original allocator
+at `0x00405B00` calls the same 17-byte helper at `0x00405F60`.
+
+Explicit inline definitions in the class and at the end of the
+same source each cause VC7.1 to emit the sequence and deque copies
+before both `_Destroy` dispatchers. The out-of-line definition in
+that source moves them earlier again. At the native sequence
+copy's relative slot, those three links place the record deleting
+destructor. With the explicit copy in its own input object, linking
+that object first moves the copy ahead of both dispatchers. Linking
+it last puts the copy after both deleting destructors.
+
+All six links reproduce the individual code bodies, the 108-byte
+`_Construct` caller and both full exception frames. The
+comparison binds all 36 relocation operands in the PE and in
+each link. Only the implicit form reproduces the ordered
+401-byte window. This supports compiler origin for `0x004229D0`.
+
+    bash .analysis/final-origin-review/script-copy-order/build.sh
+    bash .analysis/final-origin-review/script-copy-order/link.sh
+    bash .analysis/final-origin-review/script-copy-order/split.sh
+    scripts/repo-python .analysis/final-origin-review/script-copy-order/compare.py
 
 ## Historical R263 inventory
 

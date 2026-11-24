@@ -1121,7 +1121,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004229A0,library,vc7-stl-deque-helpers,exclude,high,R088
 0x004229B0,library,VC7STL,exclude,complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance,R160
 0x004229C0,library,VC7STL,exclude,complete-vc7-container-template-and-typed-caller-chain,R286
-0x004229D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004229D0,compiler,VC71Compiler,exclude,inferred-implicit-copy-from-complete-native-vc71-emission-order,R296
 0x004229F0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00422A20,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00422A50,library,VC7STL,exclude,complete-vc7-deque-copy-insert-full-source-catch-policy-and-extent-provenance,R158
