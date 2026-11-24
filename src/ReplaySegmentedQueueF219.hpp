@@ -44,9 +44,16 @@ struct ReplayFileHeaderF219 {
     unsigned char playerName[8];
     unsigned char month;
     unsigned char day;
-    unsigned char unknown112[4];
+    unsigned char primaryFighter;
+    unsigned char primaryPalette;
+    unsigned char primaryFlags;
+    unsigned char mode;
     signed char recordCount;
-    unsigned char unknown117[5];
+    unsigned char activeSide;
+    unsigned char primaryRound;
+    unsigned char primaryDifficulty;
+    unsigned char primarySettings;
+    unsigned char unknown11B;
     DWORD recordOffsets[10];
 };
 typedef char ReplayFileHeaderSizeF219[(sizeof(ReplayFileHeaderF219) == 0x3C) ? 1 : -1];

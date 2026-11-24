@@ -84,7 +84,7 @@ address,name,module,confidence,evidence
 0x0067161F,g_StateRecordLimit,BattleScene,inferred,F019; signed byte record selection limit; exact native reads/writes and bound relocations; original symbol unknown
 0x00671750,g_ReplayRecords,ReplayRecords,inferred,F019/F216/F220/F414/F427; the initializer and finalizer own the same 0x1A4-byte replay record
 0x00671632,g_StateReplayChanged,BattleScene,inferred,F019; byte replay mode-change flag; exact native reads/writes and bound relocations; original symbol unknown
-0x00671866,g_StateReplayLimit,BattleScene,inferred,F019; signed byte replay selection limit; exact native reads/writes and bound relocations; original symbol unknown
+0x00671866,g_ReplayRecords.fileHeader.recordCount,ReplayRecords,inferred,F019/F218/F244/F326; file record count and playback limit share the same signed byte
 0x0067149C,g_StateResetCounter,BattleScene,inferred,F019; dword cleared during stage fade; exact native reads/writes and bound relocations; original symbol unknown
 0x006714CE,g_StateReturnFlag,BattleScene,inferred,F019; signed byte return/record flag; exact native reads/writes and bound relocations; original symbol unknown
 0x00671420,g_StateScoreThreshold,BattleScene,inferred,F019; unsigned dword score threshold; exact native reads/writes and bound relocations; original symbol unknown

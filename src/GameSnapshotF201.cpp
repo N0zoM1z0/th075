@@ -1,3 +1,4 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "GameSnapshot.hpp"
@@ -12,81 +13,78 @@ extern unsigned char g_PlayerOtherAt006714CC[];
 extern unsigned char g_PlayerRoundAt006714AC[];
 extern unsigned char g_PlayerDifficultyAt00671438[];
 extern unsigned char g_PlayerSettingsAt00671434[];
-extern unsigned char g_SnapshotAt00671862[];
 extern unsigned char* g_ActorAt00671418;
 
-#define DST(off) g_SnapshotAt00671862[(off)]
 namespace GameStateF201 {
 void SaveSnapshot()
 {
     if (g_CombatMode == 1) {
-        DST(3) = 0;
-        DST(5) = g_SelectedSideAt006714B8;
-        DST(0) = g_PlayerIdAt006714C8[g_SelectedSideAt006714B8];
-        DST(1) = g_PlayerAltAt00671610[g_SelectedSideAt006714B8];
-        DST(2) = g_PlayerOtherAt006714CC[g_SelectedSideAt006714B8];
-        DST(6) = g_PlayerRoundAt006714AC[g_SelectedSideAt006714B8];
-        DST(7) = g_PlayerDifficultyAt00671438[g_SelectedSideAt006714B8];
-        DST(8) = g_PlayerSettingsAt00671434[g_SelectedSideAt006714B8];
-        DST(0x32) = g_PlayerIdAt006714C8[1 - g_SelectedSideAt006714B8];
-        DST(0x33) = g_PlayerAltAt00671610[1 - g_SelectedSideAt006714B8];
-        DST(0x34) = g_PlayerOtherAt006714CC[1 - g_SelectedSideAt006714B8];
-        DST(0x35) = g_PlayerRoundAt006714AC[1 - g_SelectedSideAt006714B8];
-        DST(0x36) = g_PlayerDifficultyAt00671438[1 - g_SelectedSideAt006714B8];
-        DST(0x37) = g_PlayerSettingsAt00671434[1 - g_SelectedSideAt006714B8];
-        DST(0x38) = g_StageSelectionAt0067161D;
+        g_ReplayRecords.fileHeader.mode = 0;
+        g_ReplayRecords.fileHeader.activeSide = g_SelectedSideAt006714B8;
+        g_ReplayRecords.fileHeader.primaryFighter = g_PlayerIdAt006714C8[g_SelectedSideAt006714B8];
+        g_ReplayRecords.fileHeader.primaryPalette = g_PlayerAltAt00671610[g_SelectedSideAt006714B8];
+        g_ReplayRecords.fileHeader.primaryFlags = g_PlayerOtherAt006714CC[g_SelectedSideAt006714B8];
+        g_ReplayRecords.fileHeader.primaryRound = g_PlayerRoundAt006714AC[g_SelectedSideAt006714B8];
+        g_ReplayRecords.fileHeader.primaryDifficulty = g_PlayerDifficultyAt00671438[g_SelectedSideAt006714B8];
+        g_ReplayRecords.fileHeader.primarySettings = g_PlayerSettingsAt00671434[g_SelectedSideAt006714B8];
+        g_ReplayRecords.header.field144 = g_PlayerIdAt006714C8[1 - g_SelectedSideAt006714B8];
+        g_ReplayRecords.header.field145 = g_PlayerAltAt00671610[1 - g_SelectedSideAt006714B8];
+        g_ReplayRecords.header.field146 = g_PlayerOtherAt006714CC[1 - g_SelectedSideAt006714B8];
+        g_ReplayRecords.header.field147 = g_PlayerRoundAt006714AC[1 - g_SelectedSideAt006714B8];
+        g_ReplayRecords.header.field148 = g_PlayerDifficultyAt00671438[1 - g_SelectedSideAt006714B8];
+        g_ReplayRecords.header.field149 = g_PlayerSettingsAt00671434[1 - g_SelectedSideAt006714B8];
+        g_ReplayRecords.header.field14A = g_StageSelectionAt0067161D;
     } else if (g_CombatMode == 2) {
-        DST(3) = 0;
-        DST(0) = g_PlayerIdAt006714C8[0];
-        DST(1) = g_PlayerAltAt00671610[0];
-        DST(2) = g_PlayerOtherAt006714CC[0];
-        DST(6) = g_PlayerRoundAt006714AC[0];
-        DST(7) = g_PlayerDifficultyAt00671438[0];
-        DST(8) = g_PlayerSettingsAt00671434[0];
-        DST(0x32) = g_PlayerIdAt006714C8[1];
-        DST(0x33) = g_PlayerAltAt00671610[1];
-        DST(0x34) = g_PlayerOtherAt006714CC[1];
-        DST(0x35) = g_PlayerRoundAt006714AC[1];
-        DST(0x36) = g_PlayerDifficultyAt00671438[1];
-        DST(0x37) = g_PlayerSettingsAt00671434[1];
-        DST(5) = static_cast<unsigned char>(-1);
-        DST(0x38) = g_StageSelectionAt0067161D;
+        g_ReplayRecords.fileHeader.mode = 0;
+        g_ReplayRecords.fileHeader.primaryFighter = g_PlayerIdAt006714C8[0];
+        g_ReplayRecords.fileHeader.primaryPalette = g_PlayerAltAt00671610[0];
+        g_ReplayRecords.fileHeader.primaryFlags = g_PlayerOtherAt006714CC[0];
+        g_ReplayRecords.fileHeader.primaryRound = g_PlayerRoundAt006714AC[0];
+        g_ReplayRecords.fileHeader.primaryDifficulty = g_PlayerDifficultyAt00671438[0];
+        g_ReplayRecords.fileHeader.primarySettings = g_PlayerSettingsAt00671434[0];
+        g_ReplayRecords.header.field144 = g_PlayerIdAt006714C8[1];
+        g_ReplayRecords.header.field145 = g_PlayerAltAt00671610[1];
+        g_ReplayRecords.header.field146 = g_PlayerOtherAt006714CC[1];
+        g_ReplayRecords.header.field147 = g_PlayerRoundAt006714AC[1];
+        g_ReplayRecords.header.field148 = g_PlayerDifficultyAt00671438[1];
+        g_ReplayRecords.header.field149 = g_PlayerSettingsAt00671434[1];
+        g_ReplayRecords.fileHeader.activeSide = static_cast<unsigned char>(-1);
+        g_ReplayRecords.header.field14A = g_StageSelectionAt0067161D;
     } else if (g_CombatMode == 4) {
-        DST(3) = static_cast<unsigned char>(g_OptionsModeAt006714D0 + 5);
-        DST(5) = 0;
-        DST(0) = g_PlayerIdAt006714C8[0];
-        DST(1) = g_PlayerAltAt00671610[0];
-        DST(2) = g_PlayerOtherAt006714CC[0];
-        DST(6) = g_PlayerRoundAt006714AC[0];
-        DST(7) = g_PlayerDifficultyAt00671438[0];
-        DST(8) = g_PlayerSettingsAt00671434[0];
-        DST(0x32) = g_PlayerIdAt006714C8[1];
-        DST(0x33) = g_PlayerAltAt00671610[1];
-        DST(0x34) = g_PlayerOtherAt006714CC[1];
-        DST(0x35) = g_PlayerRoundAt006714AC[1];
-        DST(0x36) = g_PlayerDifficultyAt00671438[1];
-        DST(0x37) = g_PlayerSettingsAt00671434[1];
-        *reinterpret_cast<DWORD*>(&DST(0x3e)) =
+        g_ReplayRecords.fileHeader.mode = static_cast<unsigned char>(g_OptionsModeAt006714D0 + 5);
+        g_ReplayRecords.fileHeader.activeSide = 0;
+        g_ReplayRecords.fileHeader.primaryFighter = g_PlayerIdAt006714C8[0];
+        g_ReplayRecords.fileHeader.primaryPalette = g_PlayerAltAt00671610[0];
+        g_ReplayRecords.fileHeader.primaryFlags = g_PlayerOtherAt006714CC[0];
+        g_ReplayRecords.fileHeader.primaryRound = g_PlayerRoundAt006714AC[0];
+        g_ReplayRecords.fileHeader.primaryDifficulty = g_PlayerDifficultyAt00671438[0];
+        g_ReplayRecords.fileHeader.primarySettings = g_PlayerSettingsAt00671434[0];
+        g_ReplayRecords.header.field144 = g_PlayerIdAt006714C8[1];
+        g_ReplayRecords.header.field145 = g_PlayerAltAt00671610[1];
+        g_ReplayRecords.header.field146 = g_PlayerOtherAt006714CC[1];
+        g_ReplayRecords.header.field147 = g_PlayerRoundAt006714AC[1];
+        g_ReplayRecords.header.field148 = g_PlayerDifficultyAt00671438[1];
+        g_ReplayRecords.header.field149 = g_PlayerSettingsAt00671434[1];
+        g_ReplayRecords.header.field150 =
             reinterpret_cast<Fighter*>(g_ActorAt00671418)->score;
-        DST(0x38) = g_StageSelectionAt0067161D;
+        g_ReplayRecords.header.field14A = g_StageSelectionAt0067161D;
     } else if (g_CombatMode == 3) {
-        DST(3) = static_cast<unsigned char>(g_OptionsModeAt006714D0 + 1);
-        DST(0) = g_PlayerIdAt006714C8[0];
-        DST(1) = g_PlayerAltAt00671610[0];
-        DST(2) = g_PlayerOtherAt006714CC[0];
-        DST(6) = g_PlayerRoundAt006714AC[0];
-        DST(0x32) = g_PlayerIdAt006714C8[1];
-        DST(0x33) = g_PlayerAltAt00671610[1];
-        DST(0x34) = g_PlayerOtherAt006714CC[1];
-        DST(0x35) = g_PlayerRoundAt006714AC[1];
-        DST(5) = static_cast<unsigned char>(-1);
-        *reinterpret_cast<unsigned short*>(&DST(0x3a)) =
+        g_ReplayRecords.fileHeader.mode = static_cast<unsigned char>(g_OptionsModeAt006714D0 + 1);
+        g_ReplayRecords.fileHeader.primaryFighter = g_PlayerIdAt006714C8[0];
+        g_ReplayRecords.fileHeader.primaryPalette = g_PlayerAltAt00671610[0];
+        g_ReplayRecords.fileHeader.primaryFlags = g_PlayerOtherAt006714CC[0];
+        g_ReplayRecords.fileHeader.primaryRound = g_PlayerRoundAt006714AC[0];
+        g_ReplayRecords.header.field144 = g_PlayerIdAt006714C8[1];
+        g_ReplayRecords.header.field145 = g_PlayerAltAt00671610[1];
+        g_ReplayRecords.header.field146 = g_PlayerOtherAt006714CC[1];
+        g_ReplayRecords.header.field147 = g_PlayerRoundAt006714AC[1];
+        g_ReplayRecords.fileHeader.activeSide = static_cast<unsigned char>(-1);
+        g_ReplayRecords.header.field14C =
             reinterpret_cast<Fighter*>(g_ActorAt00671418)->health;
-        DST(0x3c) = g_SequenceCounterAt00671622;
-        *reinterpret_cast<DWORD*>(&DST(0x3e)) =
+        g_ReplayRecords.header.field14E = g_SequenceCounterAt00671622;
+        g_ReplayRecords.header.field150 =
             reinterpret_cast<Fighter*>(g_ActorAt00671418)->score;
-        DST(0x38) = g_StageAt0067161E;
+        g_ReplayRecords.header.field14A = g_StageAt0067161E;
     }
 }
 }
-#undef DST

@@ -1,3 +1,4 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "CharacterObject.hpp"
@@ -158,12 +159,6 @@ public:
     short field012;
     short field014;
 };
-extern signed char g_NameSharedGlyphs[];
-extern signed char g_NameSharedCodeOne;
-extern signed char g_NameSharedCodeTwo;
-extern signed char g_NameSharedType;
-extern signed char g_NameSharedFlag;
-extern unsigned char g_NameSharedAlternate;
 void NameEntryPlayerF129::Render() {
     if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 transformedQuad;
@@ -238,7 +233,7 @@ void NameEntrySharedF129::Render() {
             TRANSFORM(transformedQuad)->BuildQuad(64.0f, 100.0f, 576.0f, 120.0f);
             reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
             DrawFilename(50.0f, 130.0f, 0xFFFFFFFF, reinterpret_cast<const char*>(this) + 0x1C);
-            DrawName(160.0f, 130.0f, 0xFFFFFFFF, g_NameSharedGlyphs);
+            DrawName(160.0f, 130.0f, 0xFFFFFFFF, reinterpret_cast<signed char*>(g_ReplayRecords.fileHeader.playerName));
             if (field012 < 8 && field00E + field010 * 26 != 92) {
                 SetRect(&textureRect, field00E * 19, field010 * 20 + 160,
                     field00E * 19 + 19, field010 * 20 + 180);
@@ -247,21 +242,21 @@ void NameEntrySharedF129::Render() {
                 TRANSFORM(transformedQuad)->TranslateQuad(field012 * 14 + 160, 130.0f, 0);
                 reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             }
-            DrawNumber(330.0f, 130.0f, 0xFFFFFFFF, g_NameSharedCodeOne, 2);
+            DrawNumber(330.0f, 130.0f, 0xFFFFFFFF, static_cast<signed char>(g_ReplayRecords.fileHeader.month), 2);
             SetRect(&textureRect, 228, 40, 247, 60);
             TRANSFORM(transformedQuad)->BuildQuad(325.0f, 130.0f, 344.0f, 150.0f);
             reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
-            DrawNumber(370.0f, 130.0f, 0xFFFFFFFF, g_NameSharedCodeTwo, 2);
-            if (g_NameSharedFlag == 0) {
-                SetRect(&textureRect, 0, g_NameSharedAlternate * 20 + 20, 100, g_NameSharedAlternate * 20 + 40);
+            DrawNumber(370.0f, 130.0f, 0xFFFFFFFF, static_cast<signed char>(g_ReplayRecords.fileHeader.day), 2);
+            if (static_cast<signed char>(g_ReplayRecords.fileHeader.mode) == 0) {
+                SetRect(&textureRect, 0, g_ReplayRecords.header.field144 * 20 + 20, 100, g_ReplayRecords.header.field144 * 20 + 40);
                 TRANSFORM(transformedQuad)->BuildQuad(380.0f, 136.0f, 480.0f, 150.0f);
                 TRANSFORM(transformedQuad)->TranslateQuad(36.0f, 8.0f, 0);
                 reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFB0B0B0);
             }
-            SetRect(&textureRect, 0, g_NameSharedType * 20 + 20, 100, g_NameSharedType * 20 + 40);
+            SetRect(&textureRect, 0, static_cast<signed char>(g_ReplayRecords.fileHeader.primaryFighter) * 20 + 20, 100, static_cast<signed char>(g_ReplayRecords.fileHeader.primaryFighter) * 20 + 40);
             TRANSFORM(transformedQuad)->BuildQuad(380.0f, 130.0f, 480.0f, 150.0f);
             reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
-            SetRect(&textureRect, 100, g_NameSharedFlag * 20 + 20, 180, g_NameSharedFlag * 20 + 40);
+            SetRect(&textureRect, 100, static_cast<signed char>(g_ReplayRecords.fileHeader.mode) * 20 + 20, 180, static_cast<signed char>(g_ReplayRecords.fileHeader.mode) * 20 + 40);
             TRANSFORM(transformedQuad)->BuildQuad(500.0f, 130.0f, 580.0f, 150.0f);
             reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
         } else {

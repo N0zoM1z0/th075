@@ -121,11 +121,19 @@ snapshot loading, finalization and both path-selection callers use the
 same owner. A headless archive consumer read the header and one record
 from a single test file.
 
+The snapshot code uses the first player's fields in the file header and
+the second player's fields in the record header at `+0x144`. The replay
+limit read by the battle and result scenes is the same signed byte as
+`fileHeader.recordCount` at `+0x116`. The name screen reads the name and
+date from that file header. The battle loader reads two bytes at `+0x14C`
+and four at `+0x150` from the loaded record. The headless file test
+preserved high-bit values in the named snapshot fields.
+
 Standard iterators reproduce the append writer's 1,252-byte size,
 379 instructions and 50 relocation fields. The remaining differences
 are stack operands for the iterator locals. Changing names, declaration
-order and local lifetimes left at least 19 differing bytes under the
-pinned profile. The existing writer body still uses its established
+order, local lifetimes and same-width SDK element types left at least
+19 differing bytes under the pinned profile. The existing writer uses its
 56-byte local frame with separate iterator declarations.
 
 `Graphics::BeginFrame` returns the status from `BeginTarget` on both

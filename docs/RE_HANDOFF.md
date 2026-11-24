@@ -24,18 +24,18 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,654 unresolved externals. WinMain and the six
+stops at `LNK1120` with 1,643 unresolved externals. WinMain and the six
 existing scene types share `SceneBase`. The character selection
 constructor and destructor use the same three texture-manager members.
 Startup, capture, drawing, and cleanup share the frame texture owner.
 Startup sequences share five state variables and the existing character
 and stage loaders. Battle state, configuration bytes and the event worker's
-wait value use shared definitions. The latest batch cold-replayed 38 units
-across 32 objects and removed 16 unresolved symbols. Replay capture, file
-header I/O and path selection use the same owner as the four native deques.
-The replay append routine still needs the VC7.1 iterator stack layout.
-Battle records and selection
-use `GameProgress`, and rendering calls the existing `Fighter` methods.
+wait value use shared definitions. The latest batch cold-replayed 45 units
+across 36 objects and removed 11 unresolved symbols. Replay capture,
+snapshot fields, the name screen, path selection and playback limits use
+the same owner as the four native deques. The replay append routine still
+needs the VC7.1 iterator stack layout. Battle records and selection use
+`GameProgress`, and rendering calls the existing `Fighter` methods.
 Stage pack loading uses the embedded texture manager at `+0x18`, and
 battle scene teardown uses the same manager's deleting destructor. Stage
 base construction and the complete stage virtual tables remain open.

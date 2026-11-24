@@ -1,3 +1,4 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "AudioControl.hpp"
@@ -8,7 +9,6 @@
 #include "ResultScene.hpp"
 extern Fighter* g_ResultActorAt00671418;
 extern unsigned int g_ResultBestAt006714B0;
-extern signed char g_ResultThresholdAt00671866;
 extern unsigned char g_ResultLeaveAt006714CE;
 extern const double g_ResultFactor0At00658050;
 extern const double g_ResultFactor1At00657D00;
@@ -51,7 +51,7 @@ unsigned short ResultScene::Update()
         } else {
             if (static_cast<unsigned int>(g_ResultActorAt00671418->score)>g_ResultBestAt006714B0)
                 g_ResultBestAt006714B0=g_ResultActorAt00671418->score;
-            if (g_ReplayModeAt0066C238==2 && g_StageAt0067161E>=g_ResultThresholdAt00671866) {
+            if (g_ReplayModeAt0066C238==2 && g_StageAt0067161E>=g_ReplayRecords.fileHeader.recordCount) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
                 return 0x2205;

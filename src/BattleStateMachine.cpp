@@ -35,7 +35,7 @@ short BattleScene::AdvanceState()
             fighters[0]->field3A0 = 0; fighters[1]->field3A0 = 0;
             fighters[0]->field39C = 0; fighters[1]->field39C = 0;
             if (g_ReplayModeAt0066C238 == 2) {
-                if (g_StageAt0067161E == g_StateReplayLimit || g_CombatMode == 1 || g_CombatMode == 2) { STATE = 6; break; }
+                if (g_StageAt0067161E == g_ReplayRecords.fileHeader.recordCount || g_CombatMode == 1 || g_CombatMode == 2) { STATE = 6; break; }
                 AudioControl407CA0::ScheduleFade(-10000, -200, true, false);
                 return 0x2201;
             } else {
@@ -84,7 +84,7 @@ short BattleScene::AdvanceState()
                     else { field0A0 = 1; field118 = 1; break; }
                 } else {
                     if (g_ReplayModeAt0066C238 == 2) {
-                        if (g_StageAt0067161E == g_StateReplayLimit) { STATE = 6; break; }
+                        if (g_StageAt0067161E == g_ReplayRecords.fileHeader.recordCount) { STATE = 6; break; }
                         AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
                     } else {
                         g_StateReplay.AppendRecord();
@@ -245,7 +245,7 @@ short BattleScene::AdvanceState()
     }
     if (g_ReplayModeAt0066C238 == 2 && g_ReplayRecords.IsPrimaryInputQueueEmpty()) {
         if (g_CombatMode != 3 && g_CombatMode != 4) STATE = 6;
-        else if (g_StageAt0067161E >= g_StateReplayLimit) STATE = 6;
+        else if (g_StageAt0067161E >= g_ReplayRecords.fileHeader.recordCount) STATE = 6;
     }
     if (field0A0 || field0A1) {
         inputSnapshots[0] = fighters[0]->inputBindings.state;

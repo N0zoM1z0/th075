@@ -1,3 +1,4 @@
+#include "ReplaySegmentedQueueF219.hpp"
 #include "GameConfigStorage.hpp"
 #include "BattleSessionState.hpp"
 #include "BattleResourceLoaders.hpp"
@@ -64,8 +65,6 @@ extern short g_StoryCounterAt006714C0;
 extern int g_StoryTransitionsAt0067160C;
 extern unsigned int g_PlayerScoreAt006714B0;
 extern unsigned int g_RankAt00671420;
-extern short g_ReplayScoreAt0067189C;
-extern unsigned int g_ReplayRoundAt006718A0;
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
 extern void CameraAttachAt00412660(float*,float*,float*,float*);
@@ -196,9 +195,9 @@ void BattleCharacterLoaderF398::LoadCharacters() {
      g_CumulativeScoreAt006714BC+=F(int,g_BattleFightersAt00671418[1],0x400+k*4);
    if(g_ReplayModeAt0066C238==2) {
      g_PlayerScoreAt006714B0=0;g_RankAt00671420=0;
-     F(short,g_BattleFightersAt00671418[0],0x326)=g_ReplayScoreAt0067189C;
-     F(short,g_BattleFightersAt00671418[0],0x324)=g_ReplayScoreAt0067189C;
-     F(unsigned int,g_BattleFightersAt00671418[0],0x2D0)=g_ReplayRoundAt006718A0;
+     F(short,g_BattleFightersAt00671418[0],0x326)=g_ReplayRecords.header.field14C;
+     F(short,g_BattleFightersAt00671418[0],0x324)=g_ReplayRecords.header.field14C;
+     F(unsigned int,g_BattleFightersAt00671418[0],0x2D0)=g_ReplayRecords.header.field150;
    } else {g_GameProgress.RaiseSelectedValue(g_StageAt0067161E);g_GameProgress.SaveScoreFile();}
  } else {
    F(int,g_BattleFightersAt00671418[0],0x2D0)=0;F(int,g_BattleFightersAt00671418[1],0x2D0)=0;

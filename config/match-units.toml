@@ -2280,7 +2280,7 @@ relocations = [
   { offset = 0x100, type = "REL32", symbol = "?SetNotice@BattleScene@@QAEXE@Z", target = 0x00446D60 },
   { offset = 0x14C, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x158, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
-  { offset = 0x15F, type = "DIR32", symbol = "?g_StateReplayLimit@@3CA", target = 0x00671866 },
+  { offset = 0x15F, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x16A, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x176, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x19A, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
@@ -2304,7 +2304,7 @@ relocations = [
   { offset = 0x5A0, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x5D3, type = "DIR32", symbol = "?g_ReplayModeAt0066C238@@3CA", target = 0x0066C238 },
   { offset = 0x5DF, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
-  { offset = 0x5E6, type = "DIR32", symbol = "?g_StateReplayLimit@@3CA", target = 0x00671866 },
+  { offset = 0x5E6, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x609, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
   { offset = 0x61A, type = "DIR32", symbol = "?g_StateReplay@@3VStateReplay@@A", target = 0x00671750 },
   { offset = 0x61F, type = "REL32", symbol = "?AppendRecord@StateReplay@@QAEXXZ", target = 0x00413DE0 },
@@ -2398,7 +2398,7 @@ relocations = [
   { offset = 0x1208, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x1214, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x1229, type = "DIR32", symbol = "?g_StageAt0067161E@@3CA", target = 0x0067161E },
-  { offset = 0x1230, type = "DIR32", symbol = "?g_StateReplayLimit@@3CA", target = 0x00671866 },
+  { offset = 0x1230, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x129C, type = "DIR32", symbol = "$L55776", target = 0x0043B65F },
   { offset = 0x12A0, type = "DIR32", symbol = "$L55773", target = 0x0043C535 },
   { offset = 0x12A4, type = "DIR32", symbol = "$L55792", target = 0x0043B6C9 },
@@ -24121,34 +24121,34 @@ relocations = [
   { offset = 0x2D3, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x2F3, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x314, type = "REL32", symbol = "?DrawFilename@NameEntrySharedF129@@QAEXMMKPBD@Z", target = 0x0042C270 },
-  { offset = 0x319, type = "DIR32", symbol = "?g_NameSharedGlyphs@@3PACA", target = 0x00671858 },
+  { offset = 0x319, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x330, type = "REL32", symbol = "?DrawName@NameEntrySharedF129@@QAEXMMKPBC@Z", target = 0x0042C150 },
   { offset = 0x3B8, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x3D1, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x3F5, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
   { offset = 0x42A, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x44A, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x453, type = "DIR32", symbol = "?g_NameSharedCodeOne@@3CA", target = 0x00671860 },
+  { offset = 0x453, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x46B, type = "REL32", symbol = "?DrawNumber@NameEntrySharedF129@@QAEXMMKHH@Z", target = 0x0042BFD0 },
   { offset = 0x486, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x4A5, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x4C5, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x4CE, type = "DIR32", symbol = "?g_NameSharedCodeTwo@@3CA", target = 0x00671861 },
+  { offset = 0x4CE, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x4E6, type = "REL32", symbol = "?DrawNumber@NameEntrySharedF129@@QAEXMMKHH@Z", target = 0x0042BFD0 },
-  { offset = 0x4ED, type = "DIR32", symbol = "?g_NameSharedFlag@@3CA", target = 0x00671865 },
-  { offset = 0x4FC, type = "DIR32", symbol = "?g_NameSharedAlternate@@3EA", target = 0x00671894 },
-  { offset = 0x50C, type = "DIR32", symbol = "?g_NameSharedAlternate@@3EA", target = 0x00671894 },
+  { offset = 0x4ED, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
+  { offset = 0x4FC, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
+  { offset = 0x50C, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x522, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x541, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x558, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x57B, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x582, type = "DIR32", symbol = "?g_NameSharedType@@3CA", target = 0x00671862 },
-  { offset = 0x592, type = "DIR32", symbol = "?g_NameSharedType@@3CA", target = 0x00671862 },
+  { offset = 0x582, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
+  { offset = 0x592, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x5A8, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x5C7, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x5E7, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x5EE, type = "DIR32", symbol = "?g_NameSharedFlag@@3CA", target = 0x00671865 },
-  { offset = 0x601, type = "DIR32", symbol = "?g_NameSharedFlag@@3CA", target = 0x00671865 },
+  { offset = 0x5EE, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
+  { offset = 0x601, type = "DIR32", symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A", target = 0x00671750 },
   { offset = 0x617, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x636, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x656, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
@@ -33809,8 +33809,8 @@ target = 0x006714B4
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 21
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 28
 type = "DIR32"
@@ -33819,8 +33819,8 @@ target = 0x006714B8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 34
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 41
 type = "DIR32"
@@ -33834,8 +33834,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 52
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 59
 type = "DIR32"
@@ -33849,8 +33849,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 71
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 78
 type = "DIR32"
@@ -33864,8 +33864,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 90
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 97
 type = "DIR32"
@@ -33879,8 +33879,8 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 108
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 115
 type = "DIR32"
@@ -33894,8 +33894,8 @@ target = 0x00671438
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 127
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 134
 type = "DIR32"
@@ -33909,8 +33909,8 @@ target = 0x00671434
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 146
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 153
 type = "DIR32"
@@ -33924,8 +33924,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 172
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 179
 type = "DIR32"
@@ -33939,8 +33939,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 198
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 205
 type = "DIR32"
@@ -33954,8 +33954,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 224
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 231
 type = "DIR32"
@@ -33969,8 +33969,8 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 250
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 257
 type = "DIR32"
@@ -33984,8 +33984,8 @@ target = 0x00671438
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 276
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 283
 type = "DIR32"
@@ -33999,8 +33999,8 @@ target = 0x00671434
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 302
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 308
 type = "DIR32"
@@ -34009,8 +34009,8 @@ target = 0x0067161D
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 314
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 326
 type = "DIR32"
@@ -34019,8 +34019,8 @@ target = 0x006714B4
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 341
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 348
 type = "DIR32"
@@ -34029,8 +34029,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 354
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 360
 type = "DIR32"
@@ -34039,8 +34039,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 366
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 371
 type = "DIR32"
@@ -34049,8 +34049,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 376
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 382
 type = "DIR32"
@@ -34059,8 +34059,8 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 388
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 394
 type = "DIR32"
@@ -34069,8 +34069,8 @@ target = 0x00671438
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 400
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 405
 type = "DIR32"
@@ -34079,8 +34079,8 @@ target = 0x00671434
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 410
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 416
 type = "DIR32"
@@ -34089,8 +34089,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 422
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 428
 type = "DIR32"
@@ -34099,8 +34099,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 434
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 439
 type = "DIR32"
@@ -34109,8 +34109,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 444
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 450
 type = "DIR32"
@@ -34119,8 +34119,8 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 456
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 462
 type = "DIR32"
@@ -34129,8 +34129,8 @@ target = 0x00671438
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 468
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 473
 type = "DIR32"
@@ -34139,13 +34139,13 @@ target = 0x00671434
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 478
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 484
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 491
 type = "DIR32"
@@ -34154,8 +34154,8 @@ target = 0x0067161D
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 497
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 509
 type = "DIR32"
@@ -34169,13 +34169,13 @@ target = 0x006714D0
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 533
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 539
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 546
 type = "DIR32"
@@ -34184,8 +34184,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 552
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 558
 type = "DIR32"
@@ -34194,8 +34194,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 564
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 569
 type = "DIR32"
@@ -34204,8 +34204,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 574
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 580
 type = "DIR32"
@@ -34214,8 +34214,8 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 586
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 592
 type = "DIR32"
@@ -34224,8 +34224,8 @@ target = 0x00671438
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 598
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 603
 type = "DIR32"
@@ -34234,8 +34234,8 @@ target = 0x00671434
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 608
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 614
 type = "DIR32"
@@ -34244,8 +34244,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 620
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 626
 type = "DIR32"
@@ -34254,8 +34254,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 632
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 637
 type = "DIR32"
@@ -34264,8 +34264,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 642
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 648
 type = "DIR32"
@@ -34274,8 +34274,8 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 654
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 660
 type = "DIR32"
@@ -34284,8 +34284,8 @@ target = 0x00671438
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 666
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 671
 type = "DIR32"
@@ -34294,8 +34294,8 @@ target = 0x00671434
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 676
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 682
 type = "DIR32"
@@ -34304,8 +34304,8 @@ target = 0x00671418
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 694
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 699
 type = "DIR32"
@@ -34314,8 +34314,8 @@ target = 0x0067161D
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 704
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 716
 type = "DIR32"
@@ -34329,8 +34329,8 @@ target = 0x006714D0
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 741
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 746
 type = "DIR32"
@@ -34339,8 +34339,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 751
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 757
 type = "DIR32"
@@ -34349,8 +34349,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 763
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 769
 type = "DIR32"
@@ -34359,8 +34359,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 775
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 780
 type = "DIR32"
@@ -34369,8 +34369,8 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 785
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 791
 type = "DIR32"
@@ -34379,8 +34379,8 @@ target = 0x006714C8
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 797
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 803
 type = "DIR32"
@@ -34389,8 +34389,8 @@ target = 0x00671610
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 809
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 814
 type = "DIR32"
@@ -34399,8 +34399,8 @@ target = 0x006714CC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 819
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 825
 type = "DIR32"
@@ -34409,13 +34409,13 @@ target = 0x006714AC
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 831
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 837
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 844
 type = "DIR32"
@@ -34424,8 +34424,8 @@ target = 0x00671418
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 857
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 863
 type = "DIR32"
@@ -34434,8 +34434,8 @@ target = 0x00671622
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 869
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 875
 type = "DIR32"
@@ -34444,8 +34444,8 @@ target = 0x00671418
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 886
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 892
 type = "DIR32"
@@ -34454,8 +34454,8 @@ target = 0x0067161E
 [[units.game-state-save-snapshot-00419920.relocations]]
 offset = 898
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 
 [units.game-state-restore-snapshot-004195b0]
 source = "src/GameStateRestoreF202.cpp"
@@ -34478,8 +34478,8 @@ target = 0x00413A60
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 16
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 31
 type = "DIR32"
@@ -34493,8 +34493,8 @@ target = 0x00413AC0
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 43
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 57
 type = "DIR32"
@@ -34503,8 +34503,8 @@ target = 0x006714B4
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 64
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 70
 type = "DIR32"
@@ -34518,8 +34518,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 83
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 89
 type = "DIR32"
@@ -34533,8 +34533,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 101
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 107
 type = "DIR32"
@@ -34548,8 +34548,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 120
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 126
 type = "DIR32"
@@ -34563,8 +34563,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 139
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 145
 type = "DIR32"
@@ -34578,8 +34578,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 157
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 163
 type = "DIR32"
@@ -34593,8 +34593,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 176
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 182
 type = "DIR32"
@@ -34608,8 +34608,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 202
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 208
 type = "DIR32"
@@ -34623,8 +34623,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 228
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 234
 type = "DIR32"
@@ -34638,8 +34638,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 254
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 260
 type = "DIR32"
@@ -34653,8 +34653,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 280
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 286
 type = "DIR32"
@@ -34668,8 +34668,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 306
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 312
 type = "DIR32"
@@ -34683,8 +34683,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 332
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 338
 type = "DIR32"
@@ -34698,8 +34698,8 @@ target = 0x006714B4
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 355
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 360
 type = "DIR32"
@@ -34708,8 +34708,8 @@ target = 0x006714C8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 366
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 372
 type = "DIR32"
@@ -34718,8 +34718,8 @@ target = 0x00671610
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 378
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 384
 type = "DIR32"
@@ -34728,8 +34728,8 @@ target = 0x006714CC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 389
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 394
 type = "DIR32"
@@ -34738,8 +34738,8 @@ target = 0x006714AC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 400
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 406
 type = "DIR32"
@@ -34748,8 +34748,8 @@ target = 0x00671438
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 412
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 418
 type = "DIR32"
@@ -34758,8 +34758,8 @@ target = 0x00671434
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 423
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 428
 type = "DIR32"
@@ -34768,8 +34768,8 @@ target = 0x006714C8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 434
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 440
 type = "DIR32"
@@ -34778,8 +34778,8 @@ target = 0x00671610
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 446
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 452
 type = "DIR32"
@@ -34788,8 +34788,8 @@ target = 0x006714CC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 457
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 462
 type = "DIR32"
@@ -34798,8 +34798,8 @@ target = 0x006714AC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 468
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 474
 type = "DIR32"
@@ -34808,8 +34808,8 @@ target = 0x00671438
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 480
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 486
 type = "DIR32"
@@ -34818,8 +34818,8 @@ target = 0x00671434
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 491
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 496
 type = "DIR32"
@@ -34828,8 +34828,8 @@ target = 0x0067161D
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 508
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 524
 type = "DIR32"
@@ -34858,8 +34858,8 @@ target = 0x006714A4
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 561
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 570
 type = "DIR32"
@@ -34878,8 +34878,8 @@ target = 0x006714B8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 590
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 596
 type = "DIR32"
@@ -34888,8 +34888,8 @@ target = 0x006714C8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 601
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 606
 type = "DIR32"
@@ -34898,8 +34898,8 @@ target = 0x00671610
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 612
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 618
 type = "DIR32"
@@ -34908,8 +34908,8 @@ target = 0x006714CC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 624
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 630
 type = "DIR32"
@@ -34918,8 +34918,8 @@ target = 0x006714AC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 635
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 640
 type = "DIR32"
@@ -34928,8 +34928,8 @@ target = 0x00671438
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 646
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 652
 type = "DIR32"
@@ -34938,8 +34938,8 @@ target = 0x00671434
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 658
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 664
 type = "DIR32"
@@ -34948,8 +34948,8 @@ target = 0x006714C8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 669
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 674
 type = "DIR32"
@@ -34958,8 +34958,8 @@ target = 0x00671610
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 680
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 686
 type = "DIR32"
@@ -34968,8 +34968,8 @@ target = 0x006714CC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 692
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 698
 type = "DIR32"
@@ -34978,8 +34978,8 @@ target = 0x006714AC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 703
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 708
 type = "DIR32"
@@ -34988,8 +34988,8 @@ target = 0x00671438
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 714
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 720
 type = "DIR32"
@@ -34998,8 +34998,8 @@ target = 0x00671434
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 726
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 732
 type = "DIR32"
@@ -35043,8 +35043,8 @@ target = 0x006714B4
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 797
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 806
 type = "DIR32"
@@ -35053,8 +35053,8 @@ target = 0x006714D0
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 811
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 816
 type = "DIR32"
@@ -35063,8 +35063,8 @@ target = 0x006714C8
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 822
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 828
 type = "DIR32"
@@ -35073,8 +35073,8 @@ target = 0x00671610
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 834
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 840
 type = "DIR32"
@@ -35083,8 +35083,8 @@ target = 0x006714CC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 845
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 850
 type = "DIR32"
@@ -35093,8 +35093,8 @@ target = 0x006714AC
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 856
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 862
 type = "DIR32"
@@ -35103,8 +35103,8 @@ target = 0x0067161E
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 868
 type = "DIR32"
-symbol = "?g_SnapshotAt00671862@@3PAEA"
-target = 0x00671862
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.game-state-restore-snapshot-004195b0.relocations]]
 offset = 874
 type = "DIR32"
@@ -39801,8 +39801,8 @@ target = 0x0067161E
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 505
 type = "DIR32"
-symbol = "?g_ResultThresholdAt00671866@@3CA"
-target = 0x00671866
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 516
 type = "REL32"
@@ -54229,8 +54229,8 @@ target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2983
 type = "DIR32"
-symbol = "?g_ReplayScoreAt0067189C@@3FA"
-target = 0x0067189C
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2996
 type = "DIR32"
@@ -54239,8 +54239,8 @@ target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3002
 type = "DIR32"
-symbol = "?g_ReplayScoreAt0067189C@@3FA"
-target = 0x0067189C
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3015
 type = "DIR32"
@@ -54249,8 +54249,8 @@ target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3021
 type = "DIR32"
-symbol = "?g_ReplayRoundAt006718A0@@3IA"
-target = 0x006718A0
+symbol = "?g_ReplayRecords@@3U?$ReplayRecordsLayoutF219@V?$deque@EV?$allocator@E@std@@@std@@V?$deque@FV?$allocator@F@std@@@2@V?$deque@IV?$allocator@I@std@@@2@@@A"
+target = 0x00671750
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3034
 type = "DIR32"
