@@ -1,11 +1,9 @@
-# The remaining giants
+# Advance reconstruction
 
-The unmatched authored functions are slot-1 `Advance` methods from
-the fighter vtables. These are per-frame state machines with large
-`switch (action)` bodies. All character-object advances have exact
-replay units.
-Use the live reconstruction report for the authored backlog and the
-table below for complete source parents.
+All fighter and character-object slot-1 `Advance` methods have exact
+replay units. These are per-frame state machines with large action
+switches. The table below records the complete sources and comparison
+profiles. Use the live reconstruction report for current authored coverage.
 
 Measure a parent with
 
@@ -93,6 +91,7 @@ rows have complete replay units.
 | 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` (cold exact) | 0 | 0 | — |
 | 005AEEC0 | Suika fighter | 71,616 | `SuikaFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` (cold exact) | 0 | 0 | — |
+| 005D73C0 | Meiling fighter | 43,282 | `MeilingFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
 
 The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
@@ -2244,3 +2243,35 @@ from its call-only view to `SuikaFighter` preserves all 145 helper
 bytes and both of its relocations.
 
     scripts/repo-python scripts/replay-exact-units.py --unit suika-fighter-advance-005aeec0 --unit fighter-spawn-tracked-effect-flags-00453be0
+
+## 2026-11-24 — Meiling's fighter Advance cold-replays exactly
+
+`MeilingFighter::Advance` at `0x005D73C0` covers 43,282 CODE bytes.
+The comparison covers 44,237 bytes, 1,377 relocations, 1,395 direct
+branches, 126 jump words in seven tables, and six remaps. Slot 1 of
+the vtable at `0x00659F50` enters the function. All 126 action
+entries match, including the frame-advance tail at `0x005E1CC6` shared
+by actions 0, 2, 4 and 5.
+
+The first shape-aligned source diverged at `0x005D93CC`, the opening
+receiver reload of action `0x5D`. The later spinning frames in `0x59`
+restore ECX there. The later landing frames in `0x61` and recovery
+frames in `0x136` restore the original entries of `0x62` and `0x140`.
+In the final group, later frames of stage 1 in `0x186` restore EDX at
+`0x005DD450` in `0x187`. A stage-4 firing continuation in `0x190`
+can compensate for a missing earlier continuation. With both conditions
+in place, the first mismatch moves to the receiver reload of `0x192`.
+
+| Stage-1 continuation in `0x186` | Stage-4 continuation in `0x190` | First register difference | Complete byte differences | Moved relocation fields |
+| --- | --- | --- | ---: | ---: |
+| Present | Absent | — | 0 | 0 |
+| Absent | Absent | `005DD450` EDX → ECX | 15,769 | 402 |
+| Present | Present | `005DD899` EAX → ECX | 15,021 | 401 |
+| Absent | Present | `005DD450` EDX → ECX | 202 | 0 |
+
+All four builds preserve the dispatch map, each action's destination
+instruction, and all 1,395 direct branch edges. The byte counts include
+any difference in extent size. Run the full comparisons with
+`scripts/repo-python .analysis/meiling-fighter-advance/follow-through-control.py`.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit meiling-fighter-advance-005d73c0

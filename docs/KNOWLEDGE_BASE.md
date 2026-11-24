@@ -227,6 +227,13 @@ before adding the base, in a different instruction order.
   the second, and the second yields matching table offsets while 106
   instruction bytes still differ in 929. Compare the complete extent
   after each change. [Suika controls](GIANTS.md#2026-11-24--suikas-three-startup-joins-cold-replay-exactly)
+- A sibling action can carry a continuation that compensates for an
+  earlier mismatch in the new function. In Meiling's fighter Advance,
+  restoring the stage-1 continuation in `0x186` fixes the entry of
+  `0x187`. The borrowed stage-4 continuation in `0x190` then moves the
+  first difference to `0x192`. Keep changes isolated and check the
+  subsequent entries in the full switch.
+  [Meiling fighter controls](GIANTS.md#2026-11-24--meilings-fighter-advance-cold-replays-exactly)
 - The native dispatch can reveal repeated calls and distinct state
   bodies even when the decompiler flattens their control flow. Marisa
   object action 812 has 13 identical clear effects, and actions

@@ -1008,3 +1008,4 @@ AliceFighter::Advance,0x004D7E70,function
 PatchouliFighter::Advance,0x004F7130,function
 YukariFighter::Advance,0x0058AF60,function
 SuikaFighter::Advance,0x005AEEC0,function
+MeilingFighter::Advance,0x005D73C0,function

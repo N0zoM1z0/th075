@@ -959,3 +959,4 @@ address,name,module,confidence,evidence
 0x004F7130,PatchouliFighter::Advance,PatchouliFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x0058AF60,YukariFighter::Advance,YukariFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
 0x005AEEC0,SuikaFighter::Advance,SuikaFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048
+0x005D73C0,MeilingFighter::Advance,MeilingFighter,inferred,Fighter vtable slot 1 and complete cold replay; R048

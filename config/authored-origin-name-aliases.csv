@@ -292,3 +292,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005AEEC0,CharacterMove::AdvanceAt005AEEC0,SuikaFighter::Advance,R048,suika-fighter-advance-005aeec0
 0x00453AC0,FighterState::SpawnTrackedEffectAt00453AC0,Fighter::SpawnTrackedEffectAt00453AC0,R102,fighter-spawn-tracked-effect-00453ac0
 0x00453BE0,FighterState::SpawnTrackedEffectAt00453BE0,Fighter::SpawnTrackedEffectAt00453BE0,R102,fighter-spawn-tracked-effect-flags-00453be0
+0x005D73C0,CharacterMove::AdvanceAt005D73C0,MeilingFighter::Advance,R048,meiling-fighter-advance-005d73c0

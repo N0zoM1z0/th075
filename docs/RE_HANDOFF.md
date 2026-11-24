@@ -173,15 +173,21 @@ calls to the flagged effect helper use the typed `SuikaFighter`
 receiver. The ledger credits 71,616 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--suikas-fighter-advance-cold-replays-exactly)
 
-## Remaining giant parents
+### Meiling fighter Advance is exact
 
-The remaining authored functions are fighter `Advance` methods with
-partial or unstarted parents.
+`meiling-fighter-advance-005d73c0` cold-replays 44,237 bytes with
+seven tables, six remaps, and 1,377 relocations. The stage-1
+continuation in `0x186` restores the following action entry. The
+ledger credits 43,282 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--meilings-fighter-advance-cold-replays-exactly)
 
-- Meiling `005D73C0` (43,282 bytes) is the remaining authored giant.
+## Authored coverage and pending origin review
 
-`docs/GIANTS.md` records the full sources, original extents and
-previous experiments.
+Every independently attributed authored function now has a complete
+exact replay unit. Coverage exceeds the 98% goal even with the pending
+origin candidates in the denominator. Use the live report for current
+counts and `config/function-origins.csv` for the remaining provenance
+decisions.
 
 ## Recent source checkpoints
 
