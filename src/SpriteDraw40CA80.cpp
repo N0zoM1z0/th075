@@ -1,6 +1,5 @@
 #include "SpriteDraw40CA80.hpp"
 #include "TextureManagerF198.hpp"
-#include <string.h>
 
 #define ENTRY entries[texture]
 
@@ -55,7 +54,3 @@ void TextureManagerF198::DrawSprite(int texture, float x, float y, DWORD color,
 }
 
 #undef ENTRY
-
-SpriteQuad40CA80::SpriteQuad40CA80() {
-    memset(this, 0, sizeof(*this));
-}

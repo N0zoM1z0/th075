@@ -17,7 +17,7 @@
 // No complete original fighter/auxiliary owner layout is asserted.
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
-struct NativeMarisaQuadF362 { DWORD words[34]; void Construct(); };
+struct NativeMarisaQuadF362 { DWORD words[34]; };
 typedef char ConfirmMarisaQuadNativeF438[(sizeof(NativeMarisaQuadF362)==136)?1:-1];
 struct NativeMarisaStateF358 {
     int j;
@@ -34,8 +34,9 @@ struct NativeMarisaStateF358 {
 void MarisaFighter::RenderChain() {
     if (!field1006) return;
     NativeMarisaStateF358 state;
-    state.quad.Construct();
 #define quad (*reinterpret_cast<SpriteQuad40CA80*>(&state.quad))
+    // VC7.1 supports a direct constructor call on aligned storage.
+    quad.SpriteQuad40CA80::SpriteQuad40CA80();
 #define xShift state.xShift
 #define yOrigin state.yOrigin
 #define i state.i

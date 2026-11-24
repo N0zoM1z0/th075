@@ -23,7 +23,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 129 unresolved externals. The BGM registration and
+stops at `LNK1120` with 127 unresolved data symbols. The mirrored and chain
+renderers now call the shared quad constructor directly. All five
+affected units match. A headless archive consumer tested both storage
+sizes and the rectangle constructor.
+
+The BGM registration and
 lookup paths use the same archive name. The startup log filename, music
 format strings, and empty music and results text resolved 13 symbols.
 All eight affected units cold-replayed exactly. A headless consumer

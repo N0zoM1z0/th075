@@ -514,10 +514,13 @@ quad by reference and preserve the observed local copy layout. The
 four-float constructor at `0x0040DA00` uses the same quad layout as
 the default constructor at `0x0040D990`.
 
-Making the mirrored and chain renderers' local quads use the shared
-132-byte type moves existing stack slots in VC7.1. Placement construction
-in the existing storage emits an allocation call and null check under
-`/Ob0`. Both constructor references remain open.
+VC7.1 accepts a qualified constructor call on the quad view within the
+existing 140-byte and 136-byte DWORD carriers. This emits the three
+direct calls to the shared default constructor at `0x0040D990`. A byte
+array triggers the `/GS` cookie in these functions. Placement new adds an
+allocation call and null check under `/Ob0`. Both real quad constructors
+live in the same translation unit, so a headless archive consumer can
+exercise them without drawing dependencies.
 
 The loading and logo renderers match with a named quad outside the
 inner `RECT` scope. Rank rendering matches with the named `rankQuad`

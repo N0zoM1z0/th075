@@ -28,7 +28,7 @@ extern float g_CombatViewOffsetY;
 // Original stack layout has each independently constructed quad carrier at
 // a 140-byte interval, with 132 known rendered packet bytes and two unused
 // but physically reserved DWORDs. Only first 132 bytes are ever accessed.
-struct RawQuadCarrierF355 { DWORD words[35]; void Construct(); };
+struct RawQuadCarrierF355 { DWORD words[35]; };
 typedef char CheckCarrierSizeF355[(sizeof(RawQuadCarrierF355)==140)?1:-1];
 struct NativeMirrorFrameF355 {
     RECT sourceRect;
@@ -45,10 +45,11 @@ struct NativeMirrorFrameF355 {
 void ActorRenderingBase::RenderMirroredNode()
 {
     NativeMirrorFrameF355 state;
-    state.transformed.Construct();
-    state.composed.Construct();
 #define transformed (*reinterpret_cast<SpriteQuad40CA80*>(&state.transformed))
 #define composed (*reinterpret_cast<SpriteQuad40CA80*>(&state.composed))
+    // VC7.1 supports a direct constructor call on aligned storage.
+    transformed.SpriteQuad40CA80::SpriteQuad40CA80();
+    composed.SpriteQuad40CA80::SpriteQuad40CA80();
 #define xShift state.xShift
 #define yOrigin state.yOrigin
 #define sourceRect state.sourceRect

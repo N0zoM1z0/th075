@@ -17660,8 +17660,8 @@ relocations = [
 ]
 
 [units."sprite-quad-clear-0040d990"]
-source = "src/SpriteDraw40CA80.cpp"
-object = "build/matching/SpriteDraw40CA80.obj"
+source = "src/AtlasQuad40DA00.cpp"
+object = "build/matching/AtlasQuad40DA00.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SpriteQuad40CA80::SpriteQuad40CA80"]
 symbol = "??0SpriteQuad40CA80@@QAE@XZ"
@@ -55551,12 +55551,12 @@ size = 1268
 [[units.sprite-scene-render-mirrored-node-00410a00.relocations]]
 offset = 22
 type = "REL32"
-symbol = "?Construct@RawQuadCarrierF355@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.sprite-scene-render-mirrored-node-00410a00.relocations]]
 offset = 33
 type = "REL32"
-symbol = "?Construct@RawQuadCarrierF355@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.sprite-scene-render-mirrored-node-00410a00.relocations]]
 offset = 39
@@ -55691,7 +55691,7 @@ size = 1291
 [[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
 offset = 44
 type = "REL32"
-symbol = "?Construct@NativeMarisaQuadF362@@QAEXXZ"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
 target = 0x0040D990
 [[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
 offset = 50
