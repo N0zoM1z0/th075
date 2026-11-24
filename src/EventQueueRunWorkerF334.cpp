@@ -1,49 +1,24 @@
 #include "EventQueue.hpp"
-// All 28 bytes of the two live checked iterators' actual original state
-// are observed: three initialized tracking DWORDs and two 8-byte values.
-class QueueIteratorF334 {
-    DWORD physical[2];
-public:
-    void Initialize();
-    bool operator!=(const QueueIteratorF334&) const;
-    int*& operator*() const;
-    QueueIteratorF334 operator++(int);
-};
-struct LiveWorkerIteratorsF334 {
-    DWORD endCheckedA;
-    DWORD endCheckedB;
-    QueueIteratorF334 end;
-    DWORD beginChecked;
-    QueueIteratorF334 it;
-};
-typedef char CheckLiveWorker28F334[(sizeof(LiveWorkerIteratorsF334)==28)?1:-1];
-class QueueCollectionF334 {
-public:
-    QueueIteratorF334 Begin();
-    QueueIteratorF334 End();
-    QueueIteratorF334 Erase(QueueIteratorF334 it);
-    void** Front();
-};
-extern QueueCollectionF334 g_EventQueueAt0068BE44;
+
 DWORD WINAPI EventWorkerF334::RunWorker(LPVOID)
 {
-    LiveWorkerIteratorsF334 state;
-    state.beginChecked=0;
-    state.endCheckedB=0;
-    state.endCheckedA=0;
-    state.it.Initialize();
-    state.end.Initialize();
+    // The native worker zero-initializes these values before the two cursors.
+    DWORD firstState = 0;
+    DWORD endState = 0;
+    DWORD lastState = 0;
+    EventQueue::iterator queueEntry;
+    EventQueue::iterator endOfQueue;
     while (true) {
-        WaitForSingleObject(g_EventReadyAt0068BE34,g_EventWaitMsAt0066C23C);
-        state.it=g_EventQueueAt0068BE44.Begin();
-        state.end=g_EventQueueAt0068BE44.End();
-        while (state.it!=state.end) {
-            if (**state.it!=0) {
-                SetEvent(*reinterpret_cast<HANDLE*>(*g_EventQueueAt0068BE44.Front()));
-                state.it++;
+        WaitForSingleObject(g_EventReadyAt0068BE34, g_EventWaitMsAt0066C23C);
+        queueEntry = g_EventServiceQueueAt0068BE44.begin();
+        endOfQueue = g_EventServiceQueueAt0068BE44.end();
+        while (queueEntry != endOfQueue) {
+            if (**queueEntry) {
+                SetEvent(*g_EventServiceQueueAt0068BE44.front());
+                queueEntry++;
             } else {
-                state.it=g_EventQueueAt0068BE44.Erase(state.it);
-                state.end=g_EventQueueAt0068BE44.End();
+                queueEntry = g_EventServiceQueueAt0068BE44.erase(queueEntry);
+                endOfQueue = g_EventServiceQueueAt0068BE44.end();
             }
         }
     }

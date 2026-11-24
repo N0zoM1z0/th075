@@ -19,6 +19,7 @@ public:
     HANDLE SeekNamedEntry(const char* name);
     HANDLE SeekNamedEntryWithSize(const char* name, DWORD* size);
     void AppendReadableFile(const char* filename);
+    void Write(const char* filename);
 
 private:
     HANDLE originalHandle;

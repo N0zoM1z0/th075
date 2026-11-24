@@ -1,99 +1,65 @@
-#include <windows.h>
+#include "DataArchive.hpp"
 #include <string.h>
 
-// Physical four-byte VC7 archive-list iterators and borrowed owner interface.
-// First Begin/End calls directly use their real 4-byte hidden-sret destination
-// slots; later Begin/End calls return into genuine distinct compiler temporary
-// slots then copy to existing iterator instances. BeginInto/EndInto are ONLY
-// caller-side names for those same actual original native Begin/End entrypoints
-// (0041D950/0041D980), not different original methods or implementations.
-// Neither original node nor list class layout is inferred.
-class ArchiveIteratorF249 {
-    void* element;
-public:
-    bool operator!=(const ArchiveIteratorF249& other) const;
-    char* Entry();
-    ArchiveIteratorF249 operator++(int);
-};
-typedef char VerifyIteratorWidthF249[(sizeof(ArchiveIteratorF249)==4)?1:-1];
-class ArchiveEntryListF249 {
-public:
-    void BeginInto(ArchiveIteratorF249* out);
-    void EndInto(ArchiveIteratorF249* out);
-    ArchiveIteratorF249 Begin();
-    ArchiveIteratorF249 End();
-    int Count();
-};
-struct NativeArchiveWriteStateF339 {
-    unsigned char* bytes;
-    DWORD fileSize;
-    DWORD keyStorage;
-    DWORD nextOffset;
-    unsigned short headerLength;
-    unsigned char* header;
-    ArchiveIteratorF249 end;
-    DWORD stepStorage;
-    unsigned int index;
-    DWORD bytesWritten;
-    HANDLE output;
-    HANDLE input;
-    unsigned char* contents;
-    DWORD bytesRead;
-    ArchiveIteratorF249 it;
-};
-typedef char ArchiveWriteState60F339[(sizeof(NativeArchiveWriteStateF339)==60)?1:-1];
-class ArchiveWriterF249 {
-public:
-    void Write(const char* outputFilename);
-};
-#define ENTRIES (*reinterpret_cast<ArchiveEntryListF249*>(reinterpret_cast<unsigned char*>(this)+4))
-void ArchiveWriterF249::Write(const char* outputFilename)
+void DataArchiveF481::Write(const char* filename)
 {
-    NativeArchiveWriteStateF339 state;
-    state.output=CreateFileA(outputFilename,GENERIC_WRITE,0,0,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,0);
-    if (state.output==INVALID_HANDLE_VALUE) return;
-    SetFilePointer(state.output,0,0,FILE_BEGIN);
-    ENTRIES.BeginInto(&state.it);
-    ENTRIES.EndInto(&state.end);
-    state.headerLength=static_cast<unsigned short>(ENTRIES.Count()*108+2);
-    state.header=new unsigned char[state.headerLength];
-    state.contents=state.header+2;
-    *reinterpret_cast<unsigned short*>(state.header)=static_cast<unsigned short>(ENTRIES.Count());
-    state.nextOffset=state.headerLength;
-    state.index=0;
-    while (state.it!=state.end) {
-        *reinterpret_cast<DWORD*>(state.contents+state.index*108+104)=state.nextOffset;
-        *reinterpret_cast<DWORD*>(state.contents+state.index*108+100)=*reinterpret_cast<DWORD*>(state.it.Entry()+100);
-        strcpy(reinterpret_cast<char*>(state.contents+state.index*108),state.it.Entry());
-        state.nextOffset+=*reinterpret_cast<DWORD*>(state.it.Entry()+100);
-        state.it++;
-        ++state.index;
-    }
-    reinterpret_cast<unsigned char*>(&state.keyStorage)[3]=100;
-    reinterpret_cast<unsigned char*>(&state.stepStorage)[3]=100;
-    for (state.index=2;state.index<state.headerLength;++state.index) {
-        state.header[state.index]=state.header[state.index]^reinterpret_cast<unsigned char*>(&state.keyStorage)[3];
-        reinterpret_cast<unsigned char*>(&state.keyStorage)[3]+=reinterpret_cast<unsigned char*>(&state.stepStorage)[3];
-        reinterpret_cast<unsigned char*>(&state.stepStorage)[3]+=77;
+    DWORD cipherWord;
+    DWORD deltaWord;
+    HANDLE destinationFile;
+    HANDLE sourceMember;
+    DWORD membersSize;
+    unsigned char* dataBuffer;
+    DWORD bytesReceived;
+    destinationFile = CreateFileA(filename, GENERIC_WRITE, 0, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+    if (destinationFile == INVALID_HANDLE_VALUE)
+        return;
+
+    SetFilePointer(destinationFile, 0, 0, FILE_BEGIN);
+    std::list<ArchiveWireEntryF250>::iterator recordCursor = entries.begin();
+    std::list<ArchiveWireEntryF250>::iterator lastMember = entries.end();
+    unsigned short lengthHeader = static_cast<unsigned short>(entries.size() * sizeof(ArchiveWireEntryF250) + 2);
+    unsigned char* outHeader = new unsigned char[lengthHeader];
+    ArchiveWireEntryF250* memberRecords = reinterpret_cast<ArchiveWireEntryF250*>(outHeader + 2);
+    *reinterpret_cast<unsigned short*>(outHeader) = static_cast<unsigned short>(entries.size());
+    DWORD payloadOffset = lengthHeader;
+    unsigned int memberNumber = 0;
+
+    while (recordCursor != lastMember) {
+        memberRecords[memberNumber].sourceOffset = payloadOffset;
+        memberRecords[memberNumber].sourceSize = recordCursor->sourceSize;
+        strcpy(reinterpret_cast<char*>(memberRecords[memberNumber].filename),
+            reinterpret_cast<const char*>(recordCursor->filename));
+        payloadOffset += recordCursor->sourceSize;
+        recordCursor++;
+        ++memberNumber;
     }
 
-    WriteFile(state.output,state.header,state.headerLength,&state.bytesWritten,0);
-    delete[] state.header;
-    state.it=ENTRIES.Begin();
-    state.end=ENTRIES.End();
-    while (state.it!=state.end) {
-        state.input=CreateFileA(state.it.Entry(),GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
-        if (state.input!=INVALID_HANDLE_VALUE) {
-            state.fileSize=GetFileSize(state.input,0);
-            state.bytes=new unsigned char[state.fileSize];
+    // The archive cipher uses the high byte of each word.
+    reinterpret_cast<unsigned char*>(&cipherWord)[3] = 100;
+    reinterpret_cast<unsigned char*>(&deltaWord)[3] = 100;
+    for (memberNumber = 2; memberNumber < lengthHeader; ++memberNumber) {
+        outHeader[memberNumber] = outHeader[memberNumber] ^ reinterpret_cast<unsigned char*>(&cipherWord)[3];
+        reinterpret_cast<unsigned char*>(&cipherWord)[3] += reinterpret_cast<unsigned char*>(&deltaWord)[3];
+        reinterpret_cast<unsigned char*>(&deltaWord)[3] += 77;
+    }
 
-            ReadFile(state.input,state.bytes,state.fileSize,&state.bytesRead,0);
-            WriteFile(state.output,state.bytes,state.fileSize,&state.bytesWritten,0);
-            CloseHandle(state.input);
-            delete[] state.bytes;
+    DWORD fileWritten;
+    WriteFile(destinationFile, outHeader, lengthHeader, &fileWritten, 0);
+    delete[] outHeader;
+    recordCursor = entries.begin();
+    lastMember = entries.end();
+    while (recordCursor != lastMember) {
+        sourceMember = CreateFileA(reinterpret_cast<const char*>(recordCursor->filename),
+            GENERIC_READ, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+        if (sourceMember != INVALID_HANDLE_VALUE) {
+            membersSize = GetFileSize(sourceMember, 0);
+            dataBuffer = new unsigned char[membersSize];
+            ReadFile(sourceMember, dataBuffer, membersSize, &bytesReceived, 0);
+            WriteFile(destinationFile, dataBuffer, membersSize, &fileWritten, 0);
+            CloseHandle(sourceMember);
+            delete[] dataBuffer;
         }
-        state.it++;
+        recordCursor++;
     }
-    CloseHandle(state.output);
+    CloseHandle(destinationFile);
 }
-#undef ENTRIES

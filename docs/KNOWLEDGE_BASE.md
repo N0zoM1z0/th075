@@ -75,7 +75,7 @@ executable linked from the library checked the startup defaults and saved
 and reloaded a disposable `0x16BC4`-byte score file.
 
 WinMain registers the address of its event handle with the startup queue.
-The enqueue, acquire and release code now uses the same VC7.1
+The enqueue, acquire, worker, and release code uses the same VC7.1
 `std::deque<HANDLE*>` at `0x0068BE44`. The worker and lifecycle code also
 share the ready event and wait interval, which starts at 16 milliseconds.
 The worker's loop dereferences the queued address before calling
@@ -83,11 +83,11 @@ The worker's loop dereferences the queued address before calling
 by the different native load chain. A headless library consumer verified
 that enqueuing the same handle address twice leaves one entry.
 
-The worker's direct STL iterator trial emitted 250 of the native 273
-bytes. The target has three extra initialization stores before the iterator
-constructors and an explicit zero return. Its current whole-function
-comparison retains the borrowed iterator bindings while those local
-slots are investigated.
+The worker's ordinary iterator declarations reproduce all 273 bytes
+and 19 relocations with the three native zero-initialized locals and
+the explicit zero return. A headless library consumer queued an empty
+handle followed by a live event and verified that the worker signaled
+the live event.
 
 Archive registration, lookup and release use the two VC7.1 deques at
 `0x0068BE08` and `0x0068BE1C`. The registered object is 16 bytes and
@@ -110,6 +110,13 @@ first set of names. The current names reproduce the 264-byte function
 and all 19 relocation fields with ordinary iterator initialization.
 A headless library consumer appended an entry, closed the first of two
 registered archives and found the remaining archive by name.
+
+The archive writer constructs its two index iterators directly from
+`begin()` and `end()`, then reassigns them before writing payloads.
+Declaring the output handle before the input handle restores their
+native VC7.1 stack slots. The 686-byte writer and all 28 relocations
+match. A headless library consumer wrote a synthetic archive, reopened
+its index and read back the original payload.
 
 The 20-byte sound bank starts with a VC7.1 vector of DirectSound buffer
 pointers. Its count field is at `+0x10`. Startup and fighter initialization

@@ -24,12 +24,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,876 unresolved externals. WinMain and the six
+stops at `LNK1120` with 1,859 unresolved externals. WinMain and the six
 existing scene types share `SceneBase`. The character selection
 constructor and destructor use the same three texture-manager members.
 Startup, capture, drawing, and cleanup share the frame texture owner.
-The latest batch cold-replayed 286 units across 128 objects and removed
-38 unresolved symbols. The frame entry forwards the native status and
+The latest batch cold-replayed 25 units across 17 objects and removed
+17 unresolved symbols. The frame entry forwards the native status and
 the score callers share the progress object.
 
 Menu and results text use the same 56-byte GDI font surface. Startup,
@@ -59,17 +59,18 @@ Drawing callers use the same texture-manager state methods for blend,
 depth, filtering, shader mode, and color scaling. Ordinary and projected
 quad drawing and texture-rectangle lookup also share the manager. The
 default and four-float quad constructors use the same SDK-backed layout.
-Archive append and named close use the existing catalog deques and
-index list. Archive writing still uses borrowed iterator calls.
+Archive reading and writing use the same index list. Catalog close and
+the event worker use the same deques as their corresponding startup
+and insertion paths.
 Headless library consumers exercised both camera snap modes, the log,
 cosine table, sound defaults, configuration save and load, event queue
-insertion, archive registration, lookup, entry reads, and handle release,
+insertion and signaling, archive registration, lookup, a write/read round
+trip, and handle release,
 and the four corners produced by the RECT constructor.
 Use `build/program/link.log` and the relocation targets to find candidate
 definitions. Batch related exact units with `--batch` to compile each
 profile together. WinMain still needs the remaining scene and startup
 resource bindings.
-The event worker still uses borrowed iterator bindings.
 The graphics and DirectInput error strings and pixel shader are also
 unresolved.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
