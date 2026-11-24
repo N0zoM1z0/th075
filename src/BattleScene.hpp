@@ -48,7 +48,7 @@ class BattleScene : public SceneBase {
 public:
     BattleScene();                                                  // 0043AD10
     virtual ~BattleScene();                                         // slot 0, 0043B0B0
-    virtual short Update();                                         // slot 1, 0043B1B0
+    virtual unsigned short Update();                                         // slot 1, 0043B1B0
     virtual void Render();                                          // slot 2, 0043D9D0
 
     // Frame and round flow.

@@ -20,7 +20,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "DiagnosticLog.hpp"
-#include "ApplicationSceneF1171.hpp"
+#include "SceneBase.hpp"
 #include "ArchiveCatalog.hpp"
 #include "AudioControl.hpp"
 #include "EventQueue.hpp"
@@ -33,7 +33,7 @@
 // original window/resource/scene native call and all 15 scene allocations.
 // Only actually observed scene allocation footprints and interface calls.
 namespace ArchiveCatalogF353 { void OpenAndRegister(const char*, const char*); }
-#define DEF_SCENE(N,SIZE) class Scene##N##F1171 : public GameScenesF1171 { public:Scene##N##F1171();private:unsigned char observedSize[(SIZE)-sizeof(GameScenesF1171)];};
+#define DEF_SCENE(N,SIZE) class Scene##N##F1171 : public SceneBase { public:Scene##N##F1171();unsigned short Update();void Render();private:unsigned char observedSize[(SIZE)-sizeof(SceneBase)];};
 DEF_SCENE(1,0x10)
 DEF_SCENE(4,0x10)
 DEF_SCENE(5,0x54)
@@ -86,7 +86,7 @@ extern const char g_ChangeScreenTextAt0065A2B0[];
 extern const char g_SystemDataTextAt0065A2D0[];
 int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR commandLine,int showCommand) {
     EventServiceF335 applicationMode(16);
-    GameScenesF1171* currentSceneOwner = 0;
+    SceneBase* currentSceneOwner = 0;
     char path[260];
     WNDCLASSEXA winClass;
     unsigned short oldSceneState;
@@ -156,7 +156,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     DiagnosticLog::AppendString(g_SystemDataTextAt0065A2D0);
     GameGlobalsF212::InitializeSound();
     DiagnosticLog::AppendString(g_LogOKAt0065A2E4);
-    currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene4F1171);
+    currentSceneOwner=static_cast<SceneBase* const&>(new Scene4F1171);
     unsigned short activeSceneState=0x2004;
     activeSceneState=currentSceneOwner->TranslateState(activeSceneState);
     g_GameProgress.LoadScoreFile();
@@ -167,25 +167,25 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
         } else {
             oldSceneState=activeSceneState;
             if ((activeSceneState&0xFF00)>0) activeSceneState=currentSceneOwner->TranslateState(activeSceneState);
-            else activeSceneState=currentSceneOwner->Advance();
+            else activeSceneState=currentSceneOwner->Update();
             if(activeSceneState!=oldSceneState && (activeSceneState&0xF00)==0 && (activeSceneState&0xF000)>0) {
                 delete currentSceneOwner;
                 switch(activeSceneState&0xFF) {
-                case 4: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene4F1171); } break;
-                case 0: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new BattleScene)); } break;
-                case 1: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene1F1171); } break;
-                case 2: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new TitleScene)); } break;
-                case 3: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new CharacterSelectScene)); } break;
-                case 5: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene5F1171); } break;
-                case 6: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new ResultScene)); } break;
-                case 7: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene7F1171); } break;
-                case 8: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene8F1171); } break;
-                case 9: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new OptionsScene)); } break;
-                case 10: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene10F1171); } break;
-                case 11: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene11F1171); } break;
-                case 12: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene12F1171); } break;
-                case 13: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene13F1171); } break;
-                case 14: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new ResultListScene)); } break;
+                case 4: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene4F1171); } break;
+                case 0: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleScene)); } break;
+                case 1: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene1F1171); } break;
+                case 2: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new TitleScene)); } break;
+                case 3: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new CharacterSelectScene)); } break;
+                case 5: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene5F1171); } break;
+                case 6: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultScene)); } break;
+                case 7: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene7F1171); } break;
+                case 8: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene8F1171); } break;
+                case 9: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OptionsScene)); } break;
+                case 10: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene10F1171); } break;
+                case 11: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene11F1171); } break;
+                case 12: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene12F1171); } break;
+                case 13: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene13F1171); } break;
+                case 14: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultListScene)); } break;
                 }
             }
             WaitForSingleObject(eventReady,INFINITE);

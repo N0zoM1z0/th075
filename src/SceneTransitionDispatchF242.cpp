@@ -1,10 +1,10 @@
 #include "SceneTransitionLayers.hpp"
-#include "ApplicationSceneF1171.hpp"
+#include "SceneBase.hpp"
 #include <windows.h>
 #include <d3d8.h>
 
 extern unsigned char g_SettingsByteAt006714D2;
-unsigned short GameScenesF1171::TranslateState(unsigned short mode)
+unsigned short SceneBase::TranslateState(unsigned short mode)
 {
     if (g_TransitionFrame < 0) {
         if (!g_SettingsByteAt006714D2 && ((mode & 0xf00)>0))
@@ -17,17 +17,17 @@ unsigned short GameScenesF1171::TranslateState(unsigned short mode)
         case 0x700:
             g_TransitionFrame = 10;
             Graphics::SetPresentCallback(DrawTransition00432360);
-            DrawCurrent();
+            Render();
             break;
         case 0x100:
             g_TransitionFrame = 40;
             Graphics::SetPresentCallback(DrawTransition00432200);
-            DrawCurrent();
+            Render();
             break;
         case 0x300:
             g_TransitionFrame = 40;
             Graphics::SetPresentCallback(DrawTransition004324D0);
-            DrawCurrent();
+            Render();
             break;
         case 0xf00:
             g_TransitionFrame = 0;
@@ -40,17 +40,17 @@ unsigned short GameScenesF1171::TranslateState(unsigned short mode)
             case 0x6000:
                 g_TransitionFrame = 10;
                 Graphics::SetPresentCallback(DrawTransition00432410);
-                DrawCurrent();
+                Render();
                 break;
             case 0x1000:
                 g_TransitionFrame = 40;
                 Graphics::SetPresentCallback(DrawTransition004322B0);
-                DrawCurrent();
+                Render();
                 break;
             case 0x3000:
                 g_TransitionFrame = 40;
                 Graphics::SetPresentCallback(DrawTransition00432660);
-                DrawCurrent();
+                Render();
                 break;
             case 0xf000:
                 g_TransitionFrame = 0;
@@ -59,7 +59,7 @@ unsigned short GameScenesF1171::TranslateState(unsigned short mode)
             break;
         }
     } else {
-        DrawCurrent();
+        Render();
         Graphics::Present();
         --g_TransitionFrame;
         if (g_TransitionFrame < 0) {

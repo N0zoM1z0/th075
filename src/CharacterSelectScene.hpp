@@ -16,14 +16,14 @@ struct SelectInputFrame {
     int alternative;
 };
 
-// Character select scene, vtable 0065824C. The known fields run through +F3;
-// the full allocation extent is not established, so use only real scene pointers.
+// Character select scene, vtable 0065824C. WinMain allocates 0xF4 bytes.
+// The observed fields run through offset +F3.
 class CharacterSelectScene : public SceneBase {
 public:
     CharacterSelectScene();                // 00432EA0
     virtual ~CharacterSelectScene();       // slot 0
-    virtual unsigned short Advance();      // slot 1, 00433470
-    virtual void DrawCurrent();            // slot 2
+    virtual unsigned short Update();      // slot 1, 00433470
+    virtual void Render();            // slot 2
     void ResetSelection();                 // 00433230
     void PollInput();                      // 004388D0
     void ProcessPlayerOptions(signed char player);

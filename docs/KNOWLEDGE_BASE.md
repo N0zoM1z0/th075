@@ -59,6 +59,15 @@ lifetime functions. Six scene allocation sites use their existing scene
 types, with the native allocation sizes checked at compile time. The
 comparison covers the complete WinMain body and its 15-entry scene table.
 
+WinMain and those six scene types share the eight-byte `SceneBase`.
+Its constructor and destructor call the defaults lifetime at offset four.
+All three slots in the base vtable at `0x00657B88` resolve to `_purecall`.
+Derived tables use the deleting destructor, unsigned 16-bit update, and
+render slots. Character selection releases its three texture managers
+through the same class that constructs them. The base constructor at
+`0x004251C0` remains in origin review.
+[Constructor origin evidence](ORIGIN_PENDING_REVIEW.md#r314--omitting-function-packaging-restores-the-native-scene-order)
+
 The progress object occupies `0x16BC8` bytes from `0x006718F8` to the cosine
 table. Its startup and registered exit wrappers match the native code.
 WinMain and the progress callers share the same object. A headless

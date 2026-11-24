@@ -18,7 +18,7 @@ extern signed char g_CombatMode;
 #define INVERSE_ALPHA(offset, range, shade) D3DCOLOR_ARGB(255 - BYTE((offset) * 255.0f / (range)), shade, shade, shade)
 #define FORWARD_ALPHA(offset, range, shade) D3DCOLOR_ARGB(BYTE((offset) * 255.0f / (range)), shade, shade, shade)
 
-void CharacterSelectScene::DrawCurrent()
+void CharacterSelectScene::Render()
 {
     if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 spriteQuad;

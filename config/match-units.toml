@@ -2061,7 +2061,7 @@ source = "src/BattleFrame.cpp"
 object = "build/matching/BattleFrame.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BattleScene::Update"]
-symbol = "?Update@BattleScene@@UAEFXZ"
+symbol = "?Update@BattleScene@@UAEGXZ"
 target_address = 0x0043B1B0
 size = 859
 relocations = [
@@ -24343,7 +24343,7 @@ source = "src/SceneSelection.cpp"
 object = "build/matching/SceneSelection.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ResultListScene::Advance"]
-symbol = "?Advance@ResultListScene@@UAEGXZ"
+symbol = "?Update@ResultListScene@@UAEGXZ"
 target_address = 0x0042F970
 size = 1803
 compare_size = 1803
@@ -28994,7 +28994,7 @@ source = "src/RenderBackgroundF179.cpp"
 object = "build/matching/RenderBackgroundF179.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterSelectScene::DrawCurrent"]
-symbol = "?DrawCurrent@CharacterSelectScene@@UAEXXZ"
+symbol = "?Render@CharacterSelectScene@@UAEXXZ"
 target_address = 0x00435A70
 size = 6404
 [[units.battle-render-background-00435a70.relocations]]
@@ -32622,13 +32622,13 @@ source = "src/SceneBaseReleaseF192.cpp"
 object = "build/matching/SceneBaseReleaseF192.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SceneBase::ReleaseGameGlobalsAt00431F40"]
-symbol = "??1SceneBaseReleaseF192@@QAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target_address = 0x00431F40
 size = 31
 [[units.scene-base-release-00431f40.relocations]]
 offset = 12
 type = "DIR32"
-symbol = "?g_SceneBaseVirtualTableAt00657B88@@3PAPBXA"
+symbol = "??_7SceneBase@@6B@"
 target = 0x00657B88
 [[units.scene-base-release-00431f40.relocations]]
 offset = 23
@@ -37688,7 +37688,7 @@ source = "src/CharacterSelectAdvanceF229.cpp"
 object = "build/matching/CharacterSelectAdvanceF229.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterSelectScene::Advance"]
-symbol = "?Advance@CharacterSelectScene@@UAEGXZ"
+symbol = "?Update@CharacterSelectScene@@UAEGXZ"
 target_address = 0x00433470
 size = 1442
 compare_size = 1478
@@ -39354,7 +39354,7 @@ source = "src/SceneTransitionDispatchF242.cpp"
 object = "build/matching/SceneTransitionDispatchF242.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SceneTransition::DispatchMode"]
-symbol = "?TranslateState@GameScenesF1171@@QAEGG@Z"
+symbol = "?TranslateState@SceneBase@@QAEGG@Z"
 target_address = 0x00431F60
 size = 663
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
@@ -56345,13 +56345,13 @@ source = "src/SceneTripleTextureReleaseF448.cpp"
 object = "build/matching/SceneTripleTextureReleaseF448.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["SceneObject::ReleaseAt00433140"]
-symbol = "??1TripleTextureSceneF448@@UAE@XZ"
+symbol = "??1CharacterSelectScene@@UAE@XZ"
 target_address = 0x00433140
 size = 231
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1TripleTextureSceneF448@@UAE@XZ"
+symbol = "__ehhandler$??1CharacterSelectScene@@UAE@XZ"
 target = 0x00655ACB
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 12
@@ -56366,27 +56366,27 @@ target = 0x00000000
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7TripleTextureSceneF448@@6B@"
+symbol = "??_7CharacterSelectScene@@6B@"
 target = 0x0065824C
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GTextureF448@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 134
 type = "REL32"
-symbol = "??_GTextureF448@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 186
 type = "REL32"
-symbol = "??_GTextureF448@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 213
 type = "REL32"
-symbol = "??1SceneBaseF448@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.scene-object-triple-texture-release-00433140.relocations]]
 offset = 223
@@ -61296,14 +61296,14 @@ relocations = [
  { offset = 0x448, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
  { offset = 0x452, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x46F, type = "REL32", symbol = "??0Scene4F1171@@QAE@XZ", target = 0x00425490 },
- { offset = 0x4AF, type = "REL32", symbol = "?TranslateState@GameScenesF1171@@QAEGG@Z", target = 0x00431F60 },
+ { offset = 0x4AF, type = "REL32", symbol = "?TranslateState@SceneBase@@QAEGG@Z", target = 0x00431F60 },
  { offset = 0x4B8, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
  { offset = 0x4BD, type = "REL32", symbol = "?LoadScoreFile@GameProgress@@QAEXXZ", target = 0x00416B10 },
  { offset = 0x4DC, type = "DIR32", symbol = "__imp__PeekMessageA@20", target = 0x0065722C },
  { offset = 0x4F0, type = "DIR32", symbol = "__imp__GetMessageA@16", target = 0x00657228 },
  { offset = 0x503, type = "DIR32", symbol = "__imp__TranslateMessage@4", target = 0x00657224 },
  { offset = 0x50D, type = "DIR32", symbol = "__imp__DispatchMessageA@4", target = 0x00657220 },
- { offset = 0x536, type = "REL32", symbol = "?TranslateState@GameScenesF1171@@QAEGG@Z", target = 0x00431F60 },
+ { offset = 0x536, type = "REL32", symbol = "?TranslateState@SceneBase@@QAEGG@Z", target = 0x00431F60 },
  { offset = 0x5EE, type = "DIR32", symbol = "$L55877", target = 0x0060360B },
  { offset = 0x5F5, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x612, type = "REL32", symbol = "??0Scene4F1171@@QAE@XZ", target = 0x00425490 },

@@ -1,14 +1,18 @@
 #ifndef TH075_SCENE_BASE_HPP
 #define TH075_SCENE_BASE_HPP
 
-// Base of every scene: the vtable pointer and a shared counter at +4. Each
-// scene's vtable has three slots: the deleting destructor, Update and Render.
+#include "GameDefaultsF193.hpp"
+
 class SceneBase {
 public:
     SceneBase();
-    virtual ~SceneBase();               // 00431F40
+    virtual ~SceneBase() = 0;
+    virtual unsigned short Update() = 0;
+    virtual void Render() = 0;
+    unsigned short TranslateState(unsigned short mode);
+
 private:
-    unsigned int sharedCounter;
+    GameDefaultsF193 defaults;
 };
 typedef char SceneBaseSize[sizeof(SceneBase) == 8 ? 1 : -1];
 #endif

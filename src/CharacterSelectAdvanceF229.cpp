@@ -23,10 +23,10 @@ extern const float g_ChoiceReturnStepAt0065747C;
 class SelectionReplayF229 {public: void BeginCapture();};
 extern SelectionReplayF229 g_ReplayCaptureAt00671750;
 #define PLAY(id) g_SoundBank->Play(id)
-unsigned short CharacterSelectScene::Advance()
+unsigned short CharacterSelectScene::Update()
 {
     PollInput();
-    DrawCurrent();
+    Render();
     Graphics::Present();
     if (g_ChoiceHalfStepAt00657874 < (choiceOscillation))
         (choiceOscillation) = (choiceOscillation) * g_ChoiceFadeAt00658260;

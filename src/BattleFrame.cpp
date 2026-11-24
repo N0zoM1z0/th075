@@ -3,7 +3,7 @@
 #include "Graphics.hpp"
 #include "BattleFrame.hpp"
 #include "EffectManagerLifetimeF161.hpp"
-short BattleScene::Update()
+unsigned short BattleScene::Update()
 {
     PollPauseShortcut();
     Render();
