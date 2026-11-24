@@ -80,6 +80,13 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
 
 ## Layout facts
 
+- The 164-byte sprite history element at `0x00411C10` constructs its
+  quad at `+4`. The full linked interval distinguishes implicit
+  emission at the first append caller from explicit definitions after
+  the draw and transform methods. Both definitions occupied the same
+  slot in the earlier probe that omitted those methods.
+  [Sprite history constructor comparison](ORIGIN_PENDING_REVIEW.md#r307--sprite-history-element-follows-the-drawing-and-transform-methods)
+
 - The Actor constructor at `0x00458650` calls the rendering base
   constructor and installs the five-slot Actor vtable. Across the
   complete VC7.1 loader interval, making Actor implicit moves it to

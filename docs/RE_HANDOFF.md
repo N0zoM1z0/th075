@@ -184,10 +184,10 @@ ledger credits 43,282 CODE bytes.
 ## Authored coverage and pending origin review
 
 Coverage exceeds the 98% goal even with the pending origin candidates
-in the denominator. The R304 texture entry lifetimes, R305 stage base
-constructor and R306 Actor constructor await exact source adoption. Use the live report
-for current counts and `config/function-origins.csv` for the remaining
-provenance decisions.
+in the denominator. The texture entry lifetimes, stage base constructor,
+Actor constructor and sprite history element constructor from R304–R307
+await exact source adoption. Use the live report for current counts and
+`config/function-origins.csv` for the remaining provenance decisions.
 
 R274 identifies the guarded extension cleanup at `0x004588B0` through
 the game pattern parser, the original prefix lifetime calls, and the
@@ -222,6 +222,12 @@ supplied archive. The PE's RSDS record remains the only original debug
 record found in either package.
 [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 [Publisher patch check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
+
+R307 attributes the sprite history element constructor through a
+3,113-byte interval starting at `AppendElement`. The implicit
+constructor occupies the next native method's slot even with real
+list instantiations and precompiled declarations.
+[Sprite history constructor controls](ORIGIN_PENDING_REVIEW.md#r307--sprite-history-element-follows-the-drawing-and-transform-methods)
 
 R306 attributes the Actor constructor through the linked stage resource
 loader and both complete base constructors. The compiler emits the

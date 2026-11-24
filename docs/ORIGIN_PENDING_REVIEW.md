@@ -402,7 +402,6 @@ The current direct-call scan is in
 | Candidates | Evidence gap |
 | --- | --- |
 | `0x0040D900`, `0x0040D940` | Both R163 forms bind to the R292 cosine and sine workers. R303 rules out the decorated definitions in the older SDK shape archive, which compute results with x87 instructions directly. |
-| `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
 | `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers both Battle End destructors together. The R306 debug and link-time code generation controls leave the deleting destructor early. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
@@ -977,6 +976,31 @@ the ordinary destructor early and the deleting destructor late.
     scripts/repo-python .analysis/final-origin-review/actor-base-split/compare-tail.py
     bash .analysis/final-origin-review/scene-emission-profiles/build.sh
     scripts/repo-python .analysis/final-origin-review/scene-emission-profiles/compare.py
+
+### R307 — Sprite history element follows the drawing and transform methods
+
+An explicit constructor at `0x00411C10` reproduces the complete
+3,113-byte interval `0x00411000..0x00411C28`. The comparison covers
+eleven bodies, their alignment, and all 57 COFF operands. The
+out-of-line definition also matches with the pinned
+`std::list<SpriteHistoryElementF325>`. That build independently
+matches the complete `push_back`, `size` and `pop_front` bodies.
+The SDK vector constructors preceding the interval are external
+in the probe. Their call operands retain the native bindings.
+
+In the R298 append-only context an implicit constructor followed
+`AppendElement`, as did both explicit inline forms. Adding the
+intervening functions leaves the implicit constructor at `+0xC0`,
+where the native interval starts `RemoveFrontIfPresent`. The
+implicit build shifts that method to `+0xE0` with the typed list,
+precompiled declarations or `/Gy-`. A late explicit inline
+definition also matches the full interval. Moving the inline
+definition into the precompiled header with the real list defers
+it past the native slot. The explicit matches and consistent
+implicit displacement support authored origin for the constructor.
+
+    bash .analysis/final-origin-review/sprite-constructor-spine/build.sh explicit implicit inline pch-implicit pch-inline typed-implicit typed-explicit no-gy-implicit no-gy-typed-implicit no-gy-explicit pch-typed-implicit pch-typed-inline
+    scripts/repo-python .analysis/final-origin-review/sprite-constructor-spine/compare.py explicit implicit inline pch-implicit pch-inline typed-implicit typed-explicit no-gy-implicit no-gy-typed-implicit no-gy-explicit pch-typed-implicit pch-typed-inline
 
 ## Historical R263 inventory
 
