@@ -1,5 +1,7 @@
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
+#include <math.h>
+
 void BattleScene::ApplyImpact(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     attack->field07C = 2;
@@ -60,4 +62,9 @@ void BattleScene::TransformBounds(RECT *destination, const RECT *source, Actor *
     }
     destination->top = static_cast<long>(CeilCollisionCoordinate(actor->y) - source->bottom);
     destination->bottom = static_cast<long>(CeilCollisionCoordinate(actor->y) - source->top);
+}
+
+float CeilCollisionCoordinate(float value)
+{
+    return ::ceilf(value);
 }

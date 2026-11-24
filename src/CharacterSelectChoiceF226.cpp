@@ -4,10 +4,9 @@
 #include "BattleSessionState.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
-#include <stdlib.h>
+#include <math.h>
 // Per-player choice transitions share the scene layout and the 28-byte
 // input snapshots with the confirmation and option handlers.
-namespace ChoiceInputF226 { int __cdecl TestAction(int key); }
 void CharacterSelectScene::UpdatePlayerChoice(signed char player)
 {
     if (FloatConstants::Zero < (portraitReturn[player]))
@@ -30,7 +29,7 @@ void CharacterSelectScene::UpdatePlayerChoice(signed char player)
     if ((input[player].vertical)==-1) {
         g_SoundBank->Play(0x27);
         (chosenPalette[player])=0;
-    } else if (ChoiceInputF226::TestAction((input[player].horizontal))==1) {
+    } else if (::abs(static_cast<long>((input[player].horizontal)))==1) {
         g_SoundBank->Play(0x27);
         (chosenPalette[player])=1;
     } else if ((input[player].vertical)==1) {

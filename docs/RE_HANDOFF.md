@@ -23,7 +23,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 496 unresolved externals. The result-list batch
+stops at `LNK1120` with 488 unresolved externals. The selection and math
+batch resolved eight symbols and cold-replayed 123 units across 36 objects.
+Selection uses the SDK long absolute-value overload, the round banner
+uses `log10f`, and the collision wrapper uses `ceilf`. Suika's projectile
+calls use the shared fighter effect entry.
+
+The result-list batch
 resolved 20 symbols and cold-replayed 151 units across 80 objects. Both
 card loaders, list rendering, and scene teardown use the same deque of
 owned card names. Startup and resource selection share the eleven name rows.

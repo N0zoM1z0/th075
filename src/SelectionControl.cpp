@@ -7,10 +7,9 @@
 #include "BattleSessionState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "Fighter.hpp"
-#include <stdlib.h>
+#include <math.h>
 
 // Pointer-only interfaces. No complete scene/fighter/container layout is claimed.
-int __cdecl AbsoluteSelectionInputF130(int);
 void CharacterSelectScene::UpdateSelect(signed char side) {
     if (portraitReturn[side] > 0.0f) portraitReturn[side] = portraitReturn[side] - 5.0f;
     if (portraitEnterX[side] > 0.0f) portraitEnterX[side] = portraitEnterX[side] - 4.0f;
@@ -20,7 +19,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     else (playerReady[side]) = 0;
     if (choiceStop[side] > 0.0f) choiceStop[side] = choiceStop[side] - 1.0f;
     if (choiceStop[side] == 60.0f) choiceStop[side] = 0;
-    if (AbsoluteSelectionInputF130((input[side].horizontal)) == 1 || AbsoluteSelectionInputF130((input[side].horizontal)) % 15 == 1 || (stageCountdown[side]) > 0) {
+    if (::abs(static_cast<long>((input[side].horizontal))) == 1 || ::abs(static_cast<long>((input[side].horizontal))) % 15 == 1 || (stageCountdown[side]) > 0) {
         if ((stageCountdown[side]) == 0) g_SoundBank->Play(39);
         portraitReturn[side] = 100.0f;
         portraitFade[side] = 100.0f;

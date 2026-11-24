@@ -1,71 +1,57 @@
 #include "GeometryConstants.hpp"
 #include "SuikaFighter.hpp"
-#include <windows.h>
-// Native-bounded borrowed state only. Original random/gfx and sound method
-// bodies, full fighter layout and owned objects are all external.
-// F348: native zero and +20.0f operands have real float-constant fields at
-// 0065782C / 0065786C, not mutable state globals. Using natural float
-// literals with a direct float-lvalue macro reproduces the native x87
-// evaluation order at each comparison and projectile launch. This is the
-// complete original function, not a cropped or masked reconstruction.
-#define F(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define O(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(F(void*,0x2e8))+(off)))
 
-#define FLOAT(off) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this) + (off))
-#define OPPONENT_FLOAT(off) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(F(void*,0x2e8)) + (off))
+#define SHOT(pattern) SpawnBattleEffect((pattern), \
+ (opponent->x + 20.0f) - static_cast<float>(RecordedRange(0,40)), \
+ (opponent->y + 40.0f) + static_cast<float>(RecordedRange(0,100)), \
+ static_cast<unsigned char>(facing),1)
 
-#define SHOT(n) SpawnProjectile((n), \
- (OPPONENT_FLOAT(0x44)+20.0f)-static_cast<float>(RecordedRange(0,40)), \
- (O(float,0x48)+GeometryConstants::Forty)+static_cast<float>(RecordedRange(0,100)), \
- F(unsigned char,0x66),1)
 void SuikaFighter::AdvanceAuxiliary()
 {
-    if (FLOAT(0x50)==0.0f && F(signed char,0x3ac)>0)
-        F(unsigned char,0x3ac)=0;
-    if (F(short,0xf1c)>0) {
-        --F(short,0xf1c);
+    if (velocityX==0.0f && field3AC>0)
+        field3AC=0;
+    if (fieldF1C>0) {
+        --fieldF1C;
         opponent->UpdateGaugeTimer(3);
-        if(F(signed char,0x39d)==2 && RecordedRange(0,100)<25) {
+        if(field39D==2 && RecordedRange(0,100)<25) {
             SHOT(0x336);
         }
-        if(F(signed char,0x39d)==1) {
+        if(field39D==1) {
             if(RecordedRange(0,100)<25) {
                 SHOT(0x337);
             }
-            if (F(short,0x3b6)>0) {
-                if (F(short,0x3b6)>3) {
-                    F(short,0x3b6)-=3;
+            if (spiritCooldown>0) {
+                if (spiritCooldown>3) {
+                    spiritCooldown-=3;
                 } else {
-                    F(short,0x3b6)=0;
-                    F(short,0x3b0)=1000;
+                    spiritCooldown=0;
+                    spirit=1000;
                 }
                 return;
             }
-            if(F(short,0x3b0)<997) F(short,0x3b0)+=3;
-            else F(short,0x3b0)=1000;
+            if(spirit<997) spirit+=3;
+            else spirit=1000;
         }
     }
-    if(F(short,0xf1e)>0) {
-        if(F(short,0x3b0)>4) {
+    if(fieldF1E>0) {
+        if(spirit>4) {
             UpdateGaugeTimer(4);
         } else {
-            UpdateGaugeTimer(F(short,0x3b0)-1);
-            F(short,0xf1e)=0;
+            UpdateGaugeTimer(spirit-1);
+            fieldF1E=0;
         }
-        if(O(short,0x324)<=0 || F(short,0x3a0)<=0)
-            F(short,0xf1e)=0;
+        if(opponent->health<=0 || field3A0<=0)
+            fieldF1E=0;
     }
-    if(GeometryConstants::FiveHundredForty<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
-       FLOAT(0x44)-OPPONENT_FLOAT(0x44)<GeometryConstants::NegativeFiveHundredForty)
-        F(short,0xf26)=60;
-    if(GeometryConstants::ThreeHundredTwenty<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
-       FLOAT(0x44)-OPPONENT_FLOAT(0x44)<GeometryConstants::NegativeThreeHundredTwenty) {
-        F(short,0xf26)=F(short,0xf26)+1;
-        if(F(short,0xf26)>60) F(short,0xf26)=60;
+    if(GeometryConstants::FiveHundredForty<x-opponent->x ||
+       x-opponent->x<GeometryConstants::NegativeFiveHundredForty)
+        fieldF26=60;
+    if(GeometryConstants::ThreeHundredTwenty<x-opponent->x ||
+       x-opponent->x<GeometryConstants::NegativeThreeHundredTwenty) {
+        fieldF26=fieldF26+1;
+        if(fieldF26>60) fieldF26=60;
     } else {
-        F(short,0xf26)=0;
+        fieldF26=0;
     }
 }
 #undef SHOT
-#undef O
-#undef F

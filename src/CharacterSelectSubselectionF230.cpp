@@ -1,3 +1,4 @@
+#include <math.h>
 #include "BattleResultState.hpp"
 #include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
@@ -5,10 +6,9 @@
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
 // Subselection uses player zero of the scene and the native progress-card receiver.
-namespace ChoiceInputF230 {int __cdecl TestAction(int input);}
 void CharacterSelectScene::ProcessSubselection()
 {
-    if (ChoiceInputF230::TestAction((input[0].vertical))==1) {
+    if (::abs(static_cast<long>((input[0].vertical)))==1) {
         g_SoundBank->Play(0x27);
         (optionsCursor[0])=((optionsCursor[0])+(input[0].vertical)+g_GameProgress.GetSelectedValue())%g_GameProgress.GetSelectedValue();
     }

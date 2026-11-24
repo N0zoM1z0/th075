@@ -27,7 +27,6 @@ public:
     void CreateOwnedObject(CharacterObject** out);
     void SelectVariant();
     void ResetRound();
-    void SpawnProjectile(int pattern,float x,float y,unsigned char direction,int group);
     void AdvanceAuxiliary();
 
     // Fields after the shared Fighter layout.

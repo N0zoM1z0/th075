@@ -1,7 +1,8 @@
 #include "SpriteTransform.hpp"
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
-#include "BattleRoundBanner441EA0.hpp"
+#include "BattleHud43E040.hpp"
+#include <math.h>
 
 #define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 
@@ -10,7 +11,7 @@ void BattleScene::RenderRoundBanner() {
     RenderQuadPacket5E68C0 packet;
     opacity = 255;
     {
-        unsigned char count = static_cast<unsigned char>(BannerLog10At00442040(float(field068))) + 1;
+        unsigned char count = static_cast<unsigned char>(::log10f(float(field068))) + 1;
         if (field06C > 50) {
             opacity = 255;
         } else {

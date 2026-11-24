@@ -1,11 +1,8 @@
+#include <math.h>
 #include "BattleScene.hpp"
 #include "BattleMode5OptionsF168.hpp"
 #include "GameLeafHelpers.hpp"
 #include "SelectionInput4388D0.hpp"
-
-// Used caller-cleaned dword argument/EAX contract only. R163 retains unknown
-// ownership and original int/long overload spelling for this complete wrapper.
-int __cdecl Unknown438A60(int value);
 
 
 void BattleScene::HandleMode5Options()
@@ -13,7 +10,7 @@ void BattleScene::HandleMode5Options()
     if (field0A0 == 0)
         return;
 
-    if (Unknown438A60(g_InputMappings[0].held.counts[0]) == 1) {
+    if (::abs(static_cast<long>(g_InputMappings[0].held.counts[0])) == 1) {
         g_SoundBank->Play(39);
         signed char horizontal = *reinterpret_cast<signed char*>(&g_InputMappings[0].held);
         switch (field118) {

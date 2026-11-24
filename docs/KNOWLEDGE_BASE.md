@@ -168,6 +168,20 @@ pointer swapped that slot with the file buffer allocation in both loaders.
 The defaults constructor and the encoded loader share eleven resource name
 rows with a 20-byte stride at `0x006714D8`.
 
+The VC7.1 `abs(long)` overload binds all fourteen selection input calls
+at `0x00438A60`, with `labs` as its worker. The round banner uses the
+SDK's `log10f` at `0x00442040`. The collision wrapper at `0x00449A60`
+calls `ceilf`, whose float-to-double conversion and call to `ceil` match
+at `0x00449A80`. The compiled wrappers and workers match the complete
+native bodies and their call relocations. The origin ledger retains the
+alternative declarations from R163, R308 and R310.
+
+Suika's auxiliary action uses the same typed fighter effect call as
+Patchouli. In the Suika translation unit, the `40.0f` literal in the
+vertical argument preserves the native x87 load order. Passing the same
+value through `GeometryConstants::Forty` makes VC7.1 load the constant
+before the opponent's position.
+
 `PlayerState.hpp` declares the six byte pairs shared by selection, the
 battle loader and snapshot I/O. A direct reference to the second player
 uses the pair symbol with an addend of one. The record sequence at

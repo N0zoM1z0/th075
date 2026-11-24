@@ -4,10 +4,9 @@
 #include "GameSharedState.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
-#include <stdlib.h>
+#include <math.h>
 // CharacterSelectScene shares its physical input and animation fields with
 // the other character-select methods.
-namespace ChoiceInputF228 { int __cdecl TestAction(int key); }
 void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
 {
     if (FloatConstants::Zero < (portraitReturn[player]))
@@ -27,7 +26,7 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
     if ((input[player].vertical)==-1) {
         g_SoundBank->Play(0x27);
         (chosenPalette[player])=0;
-    } else if (ChoiceInputF228::TestAction((input[player].horizontal))==1) {
+    } else if (::abs(static_cast<long>((input[player].horizontal)))==1) {
         g_SoundBank->Play(0x27);
         (chosenPalette[player])=1;
     } else if ((input[player].vertical)==1) {

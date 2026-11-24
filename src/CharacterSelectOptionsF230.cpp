@@ -1,17 +1,17 @@
+#include <math.h>
 #include "PlayerState.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
 // Option handling uses the same signed selectors and input snapshots as
 // the scene update.
-namespace ChoiceInputF230 {int __cdecl TestAction(int input);}
 void CharacterSelectScene::ProcessPlayerOptions(signed char player)
 {
-    if (ChoiceInputF230::TestAction((input[player].vertical))==1) {
+    if (::abs(static_cast<long>((input[player].vertical)))==1) {
         g_SoundBank->Play(0x27);
         (optionsCursor[player])=1-(optionsCursor[player]);
     }
     if ((optionsCursor[player])==0) {
-        if ((input[player].confirm)==1 || ChoiceInputF230::TestAction((input[player].horizontal))==1) {
+        if ((input[player].confirm)==1 || ::abs(static_cast<long>((input[player].horizontal)))==1) {
             g_SoundBank->Play(0x2d);
             g_PlayerDifficultyAt00671438[player]=(static_cast<int>(g_PlayerDifficultyAt00671438[player])?0:1);
         }
