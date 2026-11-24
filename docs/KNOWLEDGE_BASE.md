@@ -137,6 +137,11 @@ line break. The music list, result counters and record fields use this
 escape. The diagnostic logger writes CRLF bytes directly to its file.
 The startup and loader messages use the same `...OK` completion marker.
 
+The detailed resource-loader log lines start with a tab. The graphics
+back-buffer diagnostics use numbered messages for the texture and
+render-to-surface calls. The restoration and device enumeration
+diagnostics use the existing CP932 device terminology.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

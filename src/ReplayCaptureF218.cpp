@@ -1,7 +1,7 @@
 #include "ReplaySegmentedQueueF219.hpp"
 #include <time.h>
 extern const char g_ReplayTempAt006578C4[] = "replay\\replay.tmp";
-extern const char g_ReplayErrorCaptionAt006578D8[];
+extern const char g_ReplayErrorCaptionAt006578D8[] = "\x83\x47\x83\x89\x81\x5b";
 extern const char g_ReplayErrorTextAt006578E0[];
 template<>
 void ReplayRecords::BeginCapture()

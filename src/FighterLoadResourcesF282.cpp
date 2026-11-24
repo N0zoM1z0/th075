@@ -10,13 +10,13 @@
 
 #include "CommandListF283.hpp"
 
-extern const char g_LogSoundsAt00658E84[];
+extern const char g_LogSoundsAt00658E84[] = "\tLoadSE...\r\n";
 extern const char g_SoundFileFormatAt00658E94[] = "wave\\se%s.dat";
 extern const char g_CharacterMeilingAt00658EA4[] = "meiling";
 extern const char g_SoundArchiveMeilingAt00658EAC[] = "datab";
 extern const char g_SoundArchiveDefaultAt00658EB4[] = "data";
-extern const char g_LogPatternsAt00658EBC[];
-extern const char g_LogPicturesAt00658ED0[];
+extern const char g_LogPatternsAt00658EBC[] = "\tLoadPattern...\r\n";
+extern const char g_LogPicturesAt00658ED0[] = "\tLoadPicture...\r\n";
 extern const char g_MainTextureFormatAt00658EE4[] = "data\\character\\%s.dat";
 extern const char g_CharacterAliceAt00658EFC[] = "alice";
 extern const char g_CharacterMeiling2At00658F04[] = "meiling";

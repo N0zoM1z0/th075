@@ -32,7 +32,7 @@ namespace Graphics
     bool g_RequireSquareTextures;
     DWORD g_PixelShader = 0xFFFFFFFF;
     extern const char g_TextureLoadError[] = "\x83\x65\x83\x4e\x83\x58\x83\x60\x83\x83\x82\xcc\x83\x8d\x81\x5b\x83\x68\x82\xc9\x8e\xb8\x94\x73";
-    extern const char g_TargetBeginError[];
+    extern const char g_TargetBeginError[] = "\x83\x8c\x83\x93\x83\x5f\x83\x8a\x83\x93\x83\x4f\x8f\x89\x8a\xfa\x89\xbb\x8e\xb8\x94\x73";
     // Reset is implemented separately in GraphicsTexture.cpp (F003).
     extern void ResetDevice();
 

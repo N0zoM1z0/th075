@@ -13,7 +13,7 @@ namespace Input
     std::vector<IDirectInputDevice8A *> g_Joysticks;
     std::vector<DIJOYSTATE> g_JoystickStates;
     unsigned char g_JoystickCount;
-    extern const char g_EnumerateJoysticksError[];
+    extern const char g_EnumerateJoysticksError[] = "\x83\x66\x83\x6f\x83\x43\x83\x58\x82\xcc\x97\xf1\x8b\x93\x82\xc9\x8e\xb8\x94\x73";
 
     bool InitializeJoysticks()
     {
