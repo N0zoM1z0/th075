@@ -49,6 +49,9 @@ typedef char AssertInputStateF287[(
     offsetof(FighterInputStateF287, quoteBadges) == 0x1B3 &&
     sizeof(FighterInputStateF287) == 0x1B8) ? 1 : -1];
 class FighterSoundF287 {unsigned char physicalBytes[0x44];public: FighterSoundF287(); ~FighterSoundF287(); void Configure();};
+void FighterSoundF287::Configure()
+{
+}
 class FighterScriptF287 { public: FighterScriptF287(); ~FighterScriptF287(); };
 
 typedef char AssertPropsF287[(sizeof(FighterActorPropertiesF287)==0x194)?1:-1];

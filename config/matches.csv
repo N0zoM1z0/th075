@@ -1011,3 +1011,6 @@ address,name,size,status,match_percent,unit,evidence
 0x005D73C0,MeilingFighter::Advance,43282,matching,100.00,meiling-fighter-advance-005d73c0,"R048; scripts/repo-python scripts/replay-exact-units.py --unit meiling-fighter-advance-005d73c0; 43282 CODE bytes, 44237 comparison bytes, 1377 relocations"
 0x004588B0,RecordPrefix16F738::~RecordPrefix16F738,43,matching,100.00,record-prefix-destroy-004588b0,R274; scripts/repo-python scripts/replay-exact-units.py --unit record-prefix-destroy-004588b0
 0x00454F70,FrameFlag20PredicateAt00454F70,31,matching,100.00,actor-frame-flag20-predicate-00454f70,R281; scripts/repo-python scripts/replay-exact-units.py --unit actor-frame-flag20-predicate-00454f70
+0x004073A0,FighterSoundF287::Configure,11,matching,100.00,fighter-sound-configure-004073a0,R285; scripts/repo-python scripts/replay-exact-units.py --unit fighter-sound-configure-004073a0
+0x004169D0,ProgressLifetime4169D0::~ProgressLifetime4169D0,11,matching,100.00,progress-records-destructor-004169d0,R285; scripts/repo-python scripts/replay-exact-units.py --unit progress-records-destructor-004169d0
+0x00438CF0,StaffRollAdvanceF450::AdvanceHookAt00438CF0,11,matching,100.00,staffroll-advance-hook-00438cf0,R285; scripts/repo-python scripts/replay-exact-units.py --unit staffroll-advance-hook-00438cf0

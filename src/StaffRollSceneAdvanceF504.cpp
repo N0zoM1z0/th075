@@ -23,7 +23,7 @@ public:
     virtual void AdvanceVirtual();
     unsigned short Advance();
     void UpdateStaffControls();
-    void TickStaffTime();
+    void AdvanceHookAt00438CF0();
 public:
     // Observed fields; meanings not yet known.
     unsigned char unknown004[0x00C - 0x004];
@@ -34,7 +34,7 @@ unsigned short StaffRollAdvanceF450::Advance() {
     UpdateStaffControls();
     AdvanceVirtual();
     BeforeStaffAdvanceAt004028F0();
-    TickStaffTime();
+    AdvanceHookAt00438CF0();
     if (g_StaffRollPhaseAt0067166C==1) {
         if (field00C>0x14C08 || field00C<0x13880) {
             SetStageAt00419CB0(40);
@@ -51,4 +51,8 @@ unsigned short StaffRollAdvanceF450::Advance() {
     }
     field00C=timeGetTime()-field010;
     return 0xB;
+}
+
+void StaffRollAdvanceF450::AdvanceHookAt00438CF0()
+{
 }

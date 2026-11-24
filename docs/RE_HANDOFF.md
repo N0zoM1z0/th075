@@ -207,7 +207,9 @@ R282 identifies the D3DXVECTOR4 constructor through the exact quad
 constructors and scaled draw. R283 identifies five texture vector
 helpers through the concrete slot and interface pointer types. R284
 identifies five pattern and effect vector cleanup helpers through
-the complete typed loader and sequence lifetime calls.
+the complete typed loader and sequence lifetime calls. R285
+cold-matches the empty sound and staff-roll hooks and the progress
+destructor through their respective live receivers and startup lifetime.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH

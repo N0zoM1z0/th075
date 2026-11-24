@@ -60207,7 +60207,7 @@ target = 0x004028F0
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 35
 type = "REL32"
-symbol = "?TickStaffTime@StaffRollAdvanceF450@@QAEXXZ"
+symbol = "?AdvanceHookAt00438CF0@StaffRollAdvanceF450@@QAEXXZ"
 target = 0x00438CF0
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 41
@@ -94477,4 +94477,34 @@ functions = ["FrameFlag20PredicateAt00454F70"]
 symbol = "?FrameFlag20PredicateAt00454F70@@YIHPAVActor@@@Z"
 target_address = 0x00454F70
 size = 31
+relocations = []
+
+[units.fighter-sound-configure-004073a0]
+source = "src/FighterInitializeF287.cpp"
+object = "build/matching/FighterInitializeF287.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterSoundF287::Configure"]
+symbol = "?Configure@FighterSoundF287@@QAEXXZ"
+target_address = 0x004073A0
+size = 11
+relocations = []
+
+[units.progress-records-destructor-004169d0]
+source = "src/ProgressLifetime4169D0.cpp"
+object = "build/matching/ProgressLifetime4169D0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["ProgressLifetime4169D0::~ProgressLifetime4169D0"]
+symbol = "??1ProgressLifetime4169D0@@QAE@XZ"
+target_address = 0x004169D0
+size = 11
+relocations = []
+
+[units.staffroll-advance-hook-00438cf0]
+source = "src/StaffRollSceneAdvanceF504.cpp"
+object = "build/matching/StaffRollSceneAdvanceF504.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["StaffRollAdvanceF450::AdvanceHookAt00438CF0"]
+symbol = "?AdvanceHookAt00438CF0@StaffRollAdvanceF450@@QAEXXZ"
+target_address = 0x00438CF0
+size = 11
 relocations = []

@@ -309,6 +309,34 @@ newly attributed helpers account for 87 library bytes.
     scripts/compile-probe.sh .analysis/final-origin-review/effect-pattern-vectors.cpp build/probes/EffectPatternVectorsOrigin.obj /Od /Ob0 /Gy /GR- /GX /GS /Zi /I src
     scripts/repo-python .analysis/final-origin-review/compare-pattern-vectors.py
 
+### R285 — Empty sound and staff-roll hooks and the progress destructor
+
+The fighter constructor constructs the sound member at `this+0x6D0`
+at `0x0045682F` and calls the empty `0x004073A0` on that same live
+member at `0x00456853`. Its explicit constructor and destructor are
+already known. The staff-roll advance calls the empty `0x00438CF0`
+on its live scene at `0x00438C42` and then continues the scene's time
+and result logic. Both original call sites identify game hooks.
+
+The startup table at `0x0066C024` invokes the initializer at
+`0x00656DE0`, which constructs the progress records at `0x006718F8`
+and registers `0x00656ED0` with `atexit`. The finalizer packs the
+same receiver into ECX and calls `0x004169D0`. With a user-defined
+empty destructor the pinned compiler produces the complete 28-byte
+initializer, 15-byte finalizer and 11-byte destructor with matching
+bytes and all six fields. The otherwise identical control with a
+trivial implicit destructor emits only the 15-byte initializer and
+constructor call.
+
+All three new 11-byte functions and both modified caller units
+cold-replay exactly. The historical spellings of the hook and
+destructor declarations are unknown.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit fighter-sound-configure-004073a0 --unit progress-records-destructor-004169d0 --unit staffroll-advance-hook-00438cf0 --unit fighter-state-initialize-004567b0 --unit staffroll-scene-complete-advance-00438c20
+    scripts/compile-probe.sh .analysis/final-origin-review/global-destructor.cpp build/probes/ProgressDestructor-0.obj /Od /Ob0 /Gy /GR- /GX- /Zi /DEXPLICIT_DTOR=0
+    scripts/compile-probe.sh .analysis/final-origin-review/global-destructor.cpp build/probes/ProgressDestructor-1.obj /Od /Ob0 /Gy /GR- /GX- /Zi /DEXPLICIT_DTOR=1
+    scripts/repo-python .analysis/final-origin-review/compare-global-destructor.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
