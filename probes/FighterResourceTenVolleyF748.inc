@@ -1,8 +1,7 @@
 // F748 genuine original 00543210 C++ resource-ten-volley actions.
 // 060 native 0054559F..005457BC 541 B/154 original x86,
 // 061 native 005457BC..005459E5 553 B/158 original x86.
-// Source is full meaningful case semantics within ONE 58KB giant,
-// not whole-function byte-exact CODE or a stand-alone function.
+// Both actions are part of RemiliaFighter::Advance.
         case 0x60: {
             if (static_cast<int>(facing) * inputX>0
                 && (static_cast<unsigned int>(inputA)>0
@@ -82,6 +81,8 @@
                 velocityX=static_cast<float>(scriptCounterF00)*g_F748_SpeedScaleAt006590B8;
                 velocityY=static_cast<float>(-scriptCounterF02)*g_F748_SpeedScaleAt006590B8;
                 field05C=2.0f;
+            } else if (animationStage == 2 && animationFrame != 0) {
+                // Keep the launch speed on later frames of stage two.
             }
             break;
         }

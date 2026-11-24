@@ -40,7 +40,7 @@ Target: the user-supplied Japanese TH075 v1.11 executable
 `resources/th075.exe`, SHA-256
 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 
-## Exact object Advance units
+## Exact Advance units
 
 ### Meiling object Advance is exact
 
@@ -93,6 +93,14 @@ front and the ledger credits 39,999 bytes.
 paths in 837 and 903 and the stage-3 holds in 911 and 914 restore the
 register choices and complete switch layout.
 [Comparison and replay](GIANTS.md#2026-11-24--yuyukos-object-advance-cold-replays-exactly)
+
+### Remilia fighter Advance is exact
+
+`remilia-fighter-advance-00543210` cold-replays 59,237 bytes, including
+all seven jump tables, three remap arrays and 1,863 relocations. The
+stage paths in actions `0x58`, `0x5E`, `0x61` and `0x2F0` restore the
+register joins. The ledger credits 58,294 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--remilias-fighter-advance-cold-replays-exactly)
 
 ### Yuyuko fighter Advance partial reconstruction
 
@@ -211,8 +219,7 @@ complete function.
 
 The complete but nonexact parents are:
 
-- Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
-  Remilia `00543210`.
+- Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`.
 
 The nine remaining functions without a complete parent are:
 

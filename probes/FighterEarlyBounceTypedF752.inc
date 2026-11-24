@@ -89,5 +89,8 @@
             }
             if ((animationStage)==8 && (animationFrame)==0)
                 ResetSecondaryCounter(6);
+            else if (animationStage == 8 && animationFrame != 0) {
+                // Continue the landing animation.
+            }
             break;
         }

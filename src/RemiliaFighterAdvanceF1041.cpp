@@ -1,8 +1,6 @@
 #include "RemiliaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of RemiliaFighter::Advance at 00543210.
-// The complete 58,294-byte fighter state machine remains NONEXACT:
-// 1,741 GPR positions and three instruction widths still differ.
 
 extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
@@ -360,15 +358,46 @@ void RemiliaFighter::Advance() {
 #define F613_COUNTER 0xF00
 #include "FighterTrajectoryRecovery4CF613.inc"
 #undef F613_COUNTER
-#define F614_COUNTER 0xF00
-#define F614_STAGE1_SPAWN 0
-#define F614_PROJECTILE 0x3E7
-#define F614_SIDE 0
-#include "FighterTrajectoryBurst58F614.inc"
-#undef F614_COUNTER
-#undef F614_STAGE1_SPAWN
-#undef F614_PROJECTILE
-#undef F614_SIDE
+        case 0x58: {
+            if (animationStage == 0 && animationFrame == 0) {
+                velocityX = -field094;
+                velocityY = field098;
+                field05C = 0.8f;
+                field07C = 0;
+            }
+            if (velocityY + y <= g_ThresholdAt0065782C) {
+                scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
+                scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+                ClearMotionFields();
+                y = 0.0f;
+                ResetPrimaryCounters(0x59);
+                SetCameraShake(3.0f);
+                PlaySharedSound(0x16);
+                for (int burst = 0; burst < 10; ++burst)
+                    SpawnBattleEffect(0x3E4, x, y, 1, 1);
+                if (fieldEFA > 25) {
+                    fieldEFA = 0;
+                    SpawnBattleEffect(0x3E3, x, y, 1, 1);
+                }
+                break;
+            }
+            if (AdvanceNestedFrame() == animationStageCount)
+                ResetSecondaryCounter(animationStage - 1);
+            if (animationStage == 1 && animationFrame == 0) {
+                if (velocityY != g_ThresholdAt0065782C) {
+                    if (velocityX == g_ThresholdAt0065782C) {
+                        ResetSecondaryCounter(3);
+                        break;
+                    } else {
+                        ResetSecondaryCounter(2);
+                        break;
+                    }
+                }
+            } else if (animationStage == 1 && animationFrame != 0) {
+                // Continue the current trajectory.
+            }
+            break;
+        }
 #include "FighterEarlyBounceTypedF752.inc"
 
 

@@ -255,6 +255,12 @@ before adding the base, in a different instruction order.
   914. Before that pattern surfaced, the ongoing animation path in
   Yuyuko action 837 restored instruction widths and all dispatch offsets.
   [Yuyuko controls](GIANTS.md#2026-11-24--yuyukos-object-advance-cold-replays-exactly)
+- An empty stage branch can affect register choices in later cases. In
+  Remilia's fighter `Advance`, the preparation branch before the
+  descent test in `0x2F0` restores the last 1,203 GPR operands after
+  three earlier action joins are fixed. Confirm later cases before
+  changing them individually.
+  [Remilia controls](GIANTS.md#2026-11-24--remilias-fighter-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

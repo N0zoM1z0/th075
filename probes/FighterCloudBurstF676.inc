@@ -1,7 +1,4 @@
-// F676: full original giant 00543210 native case 2F0/2F1 C++ grammar.
-// Original 342/274 x86, 1,169/977 CODE B and all 42/23 typed fields;
-// these remain NONSTRICT because real original GPR phases do not agree.
-// Historic source class and native float/raw argument ABIs are provisional.
+// Remilia's cloud-burst actions 0x2F0 and 0x2F1 inside 0x00543210.
         case 0x2F0: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 scriptCounterF00=0;
@@ -13,6 +10,8 @@
             if ((animationStage)>3 && (animationStage)<11) {
                 velocityY=velocityY-g_CloudGravityAt0065785C;
                 if (velocityY<g_ThresholdAt0065782C) velocityY=0.0f;
+            } else if (animationStage >= 0 && animationStage < 4) {
+                // The preparation stages keep their current vertical speed.
             }
             if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;

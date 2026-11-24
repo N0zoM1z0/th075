@@ -76,7 +76,7 @@ rows have complete replay units.
 | 0045DD70 | Reimu fighter | 60,999 | `FighterWhole0045DD70F1183.cpp` | 6,311 | 5 | 0045FDA9 (#2292) |
 | 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
 | 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
-| 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
+| 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` (cold exact) | 0 | 0 | — |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` (cold exact) | 0 | 0 | — |
@@ -1999,4 +1999,45 @@ The local controls and complete comparison are in
 
 ```sh
 scripts/repo-python scripts/replay-exact-units.py --unit yuyuko-object-advance-0057d580
+```
+
+## 2026-11-24 — Remilia's fighter Advance cold-replays exactly
+
+Remilia's fighter `Advance` at `0x00543210` matches all 58,294 CODE
+bytes and the 943 bytes of owned dispatch data at `0x005515C6`.
+The complete replay resolves 1,863 relocations and compares all seven
+jump tables, three remap arrays, 380 dispatch entries, and 1,905
+direct branch edges.
+
+The first divergence was the receiver load at the entry to action
+`0x59`. The preceding action `0x58` emits the same instructions when
+its later stage-one frames are explicit, and VC7.1 then selects EAX
+at the next action entry. A control for the stage before stage one at
+the same source position selected ECX. The stage continuations in
+`0x5E` and `0x61` correct the next two divergences. After those three
+changes, the only remaining differences begin in `0x2F0`, at the
+transition from reduced gravity to the descent test. An explicit
+preparation phase with no speed update fixes that join and the
+instructions through the shared epilogue.
+
+| Cumulative source variant | GPR differences | Width differences | First GPR difference | Relocated byte differences |
+| --- | ---: | ---: | --- | ---: |
+| Parent at `33d81615` | 1,741 | 3 | `0x00545109` | 45,834 |
+| Later stage-one frames in `0x58` | 1,722 | 3 | `0x00545517` | 45,815 |
+| Later landing frames in `0x5E` | 1,495 | 2 | `0x005459E5` | 1,610 |
+| Later launch frames in `0x61` | 1,203 | 0 | `0x0054F906` | 1,241 |
+| Preparation stages in `0x2F0` | 0 | 0 | — | 0 |
+
+The velocity operands in the two `0x58` contact-counter products retain
+their parentheses. Removing them reversed the order of the memory operands
+in both x87 products and moved their relocations by three bytes. The
+complete section still had the same size, and the cold comparison
+rejected it.
+
+The local comparison log is
+`.analysis/remilia-fighter-advance/whole-function-audit.log`. Replay the
+accepted source with:
+
+```sh
+scripts/repo-python scripts/replay-exact-units.py --unit remilia-fighter-advance-00543210
 ```
