@@ -1,6 +1,6 @@
 #include "SuikaFighter.hpp"
 #include <string.h>
-extern const char g_SuikaNameAt00659E24[];
+extern const char g_SuikaNameAt00659E24[] = "suika";
 extern const char g_SuikaTagAt00659E2C[];
 SuikaFighter::SuikaFighter()
 {

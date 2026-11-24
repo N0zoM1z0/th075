@@ -1,6 +1,6 @@
 #include "MarisaFighter.hpp"
 #include <string.h>
-extern const char g_MarisaNameAt006592A8[];
+extern const char g_MarisaNameAt006592A8[] = "marisa";
 extern const char g_MarisaTagAt006592B0[];
 MarisaFighter::MarisaFighter()
 {

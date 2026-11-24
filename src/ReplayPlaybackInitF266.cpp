@@ -5,7 +5,7 @@
 #include <windows.h>
 
 extern const char g_ReplayCatalogFileAt00657FC0[];
-extern const char g_ReplayCatalogRootAt00657FB8[];
+extern const char g_ReplayCatalogRootAt00657FB8[] = "datab";
 unsigned short g_ReplayControllerAt0067162C;
 
 ReplayBrowserScene::ReplayBrowserScene()

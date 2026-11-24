@@ -12,27 +12,27 @@
 
 extern const char g_LogSoundsAt00658E84[];
 extern const char g_SoundFileFormatAt00658E94[];
-extern const char g_CharacterMeilingAt00658EA4[];
-extern const char g_SoundArchiveMeilingAt00658EAC[];
+extern const char g_CharacterMeilingAt00658EA4[] = "meiling";
+extern const char g_SoundArchiveMeilingAt00658EAC[] = "datab";
 extern const char g_SoundArchiveDefaultAt00658EB4[];
 extern const char g_LogPatternsAt00658EBC[];
 extern const char g_LogPicturesAt00658ED0[];
 extern const char g_MainTextureFormatAt00658EE4[];
-extern const char g_CharacterAliceAt00658EFC[];
-extern const char g_CharacterMeiling2At00658F04[];
-extern const char g_MainTextureArchiveAltAt00658F0C[];
+extern const char g_CharacterAliceAt00658EFC[] = "alice";
+extern const char g_CharacterMeiling2At00658F04[] = "meiling";
+extern const char g_MainTextureArchiveAltAt00658F0C[] = "datab";
 extern const char g_MainTextureArchiveDefaultAt00658F14[];
 extern const char g_SecondaryTextureFormatAt00658F1C[];
-extern const char g_CharacterPatchouliAt00658F34[];
-extern const char g_CharacterYuyukoAt00658F40[];
-extern const char g_CharacterRemiliaAt00658F48[];
-extern const char g_CharacterYukariAt00658F50[];
-extern const char g_CharacterYoumuAt00658F58[];
-extern const char g_CharacterMeiling3At00658F60[];
-extern const char g_SecondaryTextureArchiveAltAt00658F68[];
+extern const char g_CharacterPatchouliAt00658F34[] = "patchouli";
+extern const char g_CharacterYuyukoAt00658F40[] = "yuyuko";
+extern const char g_CharacterRemiliaAt00658F48[] = "remilia";
+extern const char g_CharacterYukariAt00658F50[] = "yukari";
+extern const char g_CharacterYoumuAt00658F58[] = "youmu";
+extern const char g_CharacterMeiling3At00658F60[] = "meiling";
+extern const char g_SecondaryTextureArchiveAltAt00658F68[] = "datab";
 extern const char g_SecondaryTextureArchiveDefaultAt00658F70[];
 extern const char g_ScriptFormatAt00658F78[];
-extern const char g_ScriptArchiveAt00658F94[];
+extern const char g_ScriptArchiveAt00658F94[] = "datab";
 void Fighter::LoadResources()
 {
     char filename[524];

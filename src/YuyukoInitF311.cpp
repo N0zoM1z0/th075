@@ -1,6 +1,6 @@
 #include "YuyukoFighter.hpp"
 #include <string.h>
-extern const char g_YuyukoNameAt00659B74[];
+extern const char g_YuyukoNameAt00659B74[] = "yuyuko";
 extern const char g_YuyukoTagAt00659B7C[];
 YuyukoFighter::YuyukoFighter()
 {

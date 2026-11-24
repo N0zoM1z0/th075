@@ -1,6 +1,6 @@
 #include "MeilingFighter.hpp"
 #include <string.h>
-extern const char g_MeilingNameAt00659F40[];
+extern const char g_MeilingNameAt00659F40[] = "meiling";
 extern const char g_MeilingTagAt00659F48[];
 MeilingFighter::MeilingFighter()
 {

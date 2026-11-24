@@ -64,7 +64,7 @@ extern const char g_ArchiveTh075At0065A1B8[];
 extern const char g_ArchiveBgmAt0065A1CC[];
 extern const char g_BgmRootAt0065A1C4[];
 extern const char g_ArchiveTh075BAt0065A1E4[];
-extern const char g_ArchiveDatabAt0065A1DC[];
+extern const char g_ArchiveDatabAt0065A1DC[] = "datab";
 extern const char g_LogFileAt0065A1F0[];
 extern const char g_LogTextAt0065A1F8[];
 extern const char g_LogOKAt0065A210[];

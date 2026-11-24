@@ -1,6 +1,6 @@
 #include "ReimuFighter.hpp"
 #include <string.h>
-extern const char g_ReimuNameAt006590C8[];
+extern const char g_ReimuNameAt006590C8[] = "reimu";
 extern const char g_ReimuTagAt006590D0[];
 ReimuFighter::ReimuFighter()
 {

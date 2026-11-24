@@ -23,7 +23,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 450 unresolved externals. The replay writer batch
+stops at `LNK1120` with 393 unresolved externals. The readonly data batch
+resolved 57 symbols using literals already present in the source.
+All 353 bytes of the new definitions match their native destinations,
+and 21 comparison units across 19 objects cold-replay exactly.
+
+The replay writer batch
 resolved 24 symbols and cold-replayed 56 units across 44 objects. Battle
 state appends through the shared replay object and its four VC7.1 deques.
 A headless archive consumer wrote two records and verified the payload,

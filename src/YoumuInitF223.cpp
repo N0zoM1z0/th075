@@ -1,7 +1,7 @@
 #include "YoumuFighter.hpp"
 #include <string.h>
 // The native +0xFEC list is constructed as the final derived member.
-extern const char g_YoumuNameAt006598C0[];
+extern const char g_YoumuNameAt006598C0[] = "youmu";
 extern const char g_YoumuTagAt006598C8[];
 YoumuFighter::YoumuFighter()
 {

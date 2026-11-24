@@ -82,6 +82,13 @@ When reusing a cold-replayed object in the aggregate build, route it by
 the translation unit's filename stem. The configured comparison object
 `RemiliaObjectAdvance.obj` is archived as `CharacterObjectWhole0055AC80F1194.obj`.
 
+Local `$SG` symbols in VC7.1 objects carry existing literals that are
+missing under their named external declarations. The supplied objects
+and source literals provided 57 readonly definitions for command
+patterns, resource identifiers, and one cooperative-level diagnostic.
+Each complete null-terminated value matches the target data. The new
+definitions retain the distinct symbols used by the original relocations.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

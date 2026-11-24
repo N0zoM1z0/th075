@@ -11,7 +11,7 @@ namespace Input
     extern const char g_CreateDirectInputError[];
     extern const char g_CreateKeyboardError[];
     extern const char g_KeyboardFormatError[];
-    extern const char g_KeyboardCooperativeLevelError[];
+    extern const char g_KeyboardCooperativeLevelError[] = "\x8b\xa6\x92\xb2\x83\x8c\x83\x78\x83\x8b\x82\xcc\x90\xdd\x92\xe8\x82\xc9\x8e\xb8\x94\x73";
 
     bool Initialize(HWND window, HINSTANCE instance)
     {

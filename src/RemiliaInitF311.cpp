@@ -1,6 +1,6 @@
 #include "RemiliaFighter.hpp"
 #include <string.h>
-extern const char g_RemiliaNameAt00659A34[];
+extern const char g_RemiliaNameAt00659A34[] = "remilia";
 extern const char g_RemiliaTagAt00659A3C[];
 RemiliaFighter::RemiliaFighter()
 {
