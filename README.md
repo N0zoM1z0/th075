@@ -13,31 +13,23 @@ relocation, cold-builds byte-identical to the original.
 ## Status
 
 `scripts/repo-python scripts/report-reconstruction-status.py --summary`
-prints the live numbers. Snapshot: 2026-11-20. Re-run the command for live numbers:
-
-| | |
-| --- | --- |
-| Target | user-supplied `resources/th075.exe` v1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
-| Exact functions | 988 (933,442 authored CODE bytes) |
-| Authored coverage | 47.29% of 1,973,772 bytes (47.21% conservative, including 90 origin-review candidates / 3,315 pending bytes) |
-| Remaining authored functions | 20 giant per-character `Advance` state machines (1,040,330 bytes; 11 fighters and nine objects) |
-
-The 98% authored-byte goal is not met.
+prints the live exact coverage and origin counts. The conservative
+coverage exceeds the 98% authored-byte goal. All per-character fighter
+and object `Advance` methods have exact units. The stage base constructor
+is the remaining independently authored function awaiting a cold exact
+source unit. Pending function origins are reviewed separately.
 
 ## Where to start
 
-- [Handoff](docs/RE_HANDOFF.md): current work and next steps.
-- [Giants](docs/GIANTS.md): the 20 remaining functions, their research
-  parents and measured register debt.
-- [Knowledge base](docs/KNOWLEDGE_BASE.md): class structure, layouts and
-  VC7.1 code-generation rules.
-- [Workflow](docs/RE_WORKFLOW.md) and [storage policy](docs/STORAGE_HYGIENE.md).
+- [Handoff](docs/RE_HANDOFF.md) with current work and blockers
+- [Advance reconstruction](docs/GIANTS.md) with the accepted source index and compiler evidence
+- [Pending origin evidence](docs/ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
+- [Knowledge base](docs/KNOWLEDGE_BASE.md), [workflow](docs/RE_WORKFLOW.md) and [storage policy](docs/STORAGE_HYGIENE.md)
 
-Source is in `src/`, organised around the classes recovered from the PE
-vtables: `Actor`, `Fighter`, one `<Char>Fighter` per character and
-`CharacterObject`. Research parents for the giants are in `probes/`, and
-`config/match-units.toml` records every accepted unit's source, flags, extent
-and relocations.
+The C++ sources are in `src/` and `probes/`. `config/match-units.toml`
+records the exact units, compiler flags, extents and relocations. The target
+is the Japanese TH075 v1.11 `resources/th075.exe` supplied by the user. See
+the handoff for its pinned identity.
 
 ## Checks
 

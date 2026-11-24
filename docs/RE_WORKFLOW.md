@@ -6,13 +6,10 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
-Use the [current handoff](RE_HANDOFF.md) for live priorities and the
-[giants page](GIANTS.md) for the 22 remaining authored functions, all of them
-nonexact slot-1 `Advance` methods. Thirteen have complete research parents in
-`probes/`; complete source is not exactness. Measure a parent with
-`scripts/repo-python scripts/measure-giant.py ADDRESS` and keep it from
-regressing with `scripts/check-frontier.py`. Historical documents
-and tentative Ghidra labels remain leads, not evidence.
+Use the [current handoff](RE_HANDOFF.md) for live priorities.
+[GIANTS.md](GIANTS.md) indexes the accepted per-character `Advance`
+units and their archived research. The status report and canonical
+ledgers give the current authored backlog and separate pending origins.
 
 Write source against the shared classes (`Actor`, `Fighter`,
 `<Char>Fighter`, `CharacterObject`): name a member once in the layout instead
@@ -43,9 +40,8 @@ Do not re-import the existing Ghidra project or reset unpushed Git progress.
 
 Pick a real authored candidate from `config/functions.csv`, then cross-check
 its `config/function-origins.csv` classification against native control flow
-and library/compiler origin evidence. The 95 origin-unknown functions remain
-**uncredited**. A correct name or structural match does not prove authored
-ownership.
+and library/compiler origin evidence. Keep pending origins out of
+authored credit until independent evidence supports a decision.
 
 Example read-only Ghidra CLI operations:
 
@@ -88,7 +84,10 @@ scripts/repo-python scripts/compare-coff-function.py \
 ```
 
 Compiler flags are **per-function evidence**, not a universal recipe:
-use `/GX` where the native EH lifetime needs it. Names, scopes,
+use `/GX` where the native EH lifetime needs it. Omit `/Gy` when testing
+ordinary code without function packaging. VC7.1 ignores `/Gy-` with
+warning D4002 and honors any earlier `/Gy`. Inspect the COFF sections
+before drawing conclusions from linked order. Names, scopes,
 integer signedness, `<` versus `<=`, dimensional array indexing,
 object temporaries, new/delete lifetimes and pointer expression order
 can change VC7.1 bytes. Reproduce native behavior naturally; do not
@@ -116,13 +115,11 @@ relocation byte. A prior `build/probes` preview is not fresh cold
 proof. Adopt only a `result=exact`, with no difference and with
 authored origin already supported independently.
 
-Update `config/functions.csv` (source/match state), then
-`implemented.csv`, `matches.csv`, `reccmp-functions.csv`,
-`known-symbols.csv` and the progress card. Append rows; do not
-rewrite earlier ledger rows, which older origin verifiers read as
-frozen prefixes. Source hashes are not pinned: the cold replay is the
-evidence, so readable source edits stay possible. Do **not** count other callees, data,
-CRT/SDK code, EH helpers, or functions with uncertain ownership.
+Update `config/functions.csv`, the source and exact ledgers, and
+the progress card for the affected unit. Keep historical receipts
+in Git and revise a live origin if new evidence overturns it. Cold
+replay verifies the current source and its owned bytes. Authored
+CODE credit comes from the accepted extent and independent provenance.
 
 ## 5. Validate, commit and hand off
 

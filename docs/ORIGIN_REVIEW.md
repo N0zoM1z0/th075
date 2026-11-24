@@ -1,10 +1,10 @@
 # Origin review journal
 
-**Historical origin evidence, not live goal/status.** This journal preserves
-R-series origin review as it occurred through R268. Its older 95% and
-other historic goal statements do **not** override the current **98% authored
-byte goal**, which is still incomplete. The live original target, origin
-ledger and [current handoff](RE_HANDOFF.md) determine present status.
+This journal preserves origin review through R268. Its goal and count
+statements describe their individual checkpoints. See the
+[current handoff](RE_HANDOFF.md) for live coverage and
+[pending origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
+for the cases still under review.
 
 On 2026-10-22 the user then resumed authored exact reconstruction with a
 95% byte target. The 97 unresolved

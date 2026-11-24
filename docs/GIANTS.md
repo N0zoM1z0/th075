@@ -1,29 +1,17 @@
 # Advance reconstruction
 
-All fighter and character-object slot-1 `Advance` methods have exact
-replay units. These are per-frame state machines with large action
-switches. The table below records the complete sources and comparison
-profiles. Use the live reconstruction report for current authored coverage.
+All 22 fighter and character-object slot-1 `Advance` methods have exact
+replay units. Find each current source, compiler profile, extent and
+relocation map in [the match manifest](../config/match-units.toml).
+Cold-replay an affected unit with
+`scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
 
-Measure a parent with
+[The frontier manifest](../config/frontiers.toml) has no open parents.
+The notes below record earlier comparisons, including instruction widths,
+register allocation and shared-tail placement, as well as the complete
+replays that closed these methods.
 
-    scripts/repo-python scripts/measure-giant.py [ADDRESS ...]
-
-It cold-builds the parent with its recorded flags and compares its
-`Advance` with the original instruction by instruction: mnemonic and width
-differences, and positions whose general-purpose registers differ ("GPR
-debt"), with the first such position. It is a diagnostic only. A giant
-becomes exact only through a complete replay unit in `config/match-units.toml`.
-
-`config/frontiers.toml` lists the parents (source, flags, symbol, original
-extent and its SHA-256) with the byte offsets that still differ after
-relocation fields are masked. After editing a parent, run
-
-    scripts/repo-python scripts/check-frontier.py [NAME ...]
-
-It fails if the body size changes or a byte that matched now differs.
-Record an improvement with `--update NAME` and commit the file with the
-source change.
+## Shared layout checkpoints
 
 The Youmu object parent now reads the native `std::list` front through
 `YoumuFighter::historyQueue` (+0xFEC), the same list appended and pruned by
@@ -65,9 +53,8 @@ including all 938 relocation records at that checkpoint.
 
 ## Complete research parents
 
-The table lists the complete parents and their recorded comparisons.
-Instruction and width counts describe the nonexact builds. The exact
-rows have complete replay units.
+The table gives the recorded source for each method. The individual
+replay notes below describe the comparisons that led to acceptance.
 
 | Original | Character | Size | Parent | GPR debt | Widths | First GPR difference |
 | --- | --- | ---: | --- | ---: | ---: | --- |
@@ -93,8 +80,6 @@ rows have complete replay units.
 | 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` (cold exact) | 0 | 0 | — |
 | 005D73C0 | Meiling fighter | 43,282 | `MeilingFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
-
-The flags are `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src /I probes` unless noted.
 
 The BG02a/BG02b/BG02c load constructors now use the same native
 NativeBackgroundBaseF479 layout as their destructor views. Each has a real

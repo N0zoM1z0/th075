@@ -58,37 +58,23 @@ assigned scope. The user reports **no other active sessions**: all dirty source,
 config and local evidence is ours to inspect, preserve, finish and commit.
 Never skip, reset or label it as another session's responsibility.
 Commit substantial verified progress promptly with the session's requested prefix.
-The 98% authored-byte objective remains incomplete; do not declare completion
-without a verified build.
+Use the canonical status report for progress and `docs/RE_HANDOFF.md`
+for the current work. All character slot-1 `Advance` methods have
+accepted exact units. Their reconstruction history is in `docs/GIANTS.md`.
 
 Use the existing Ghidra wrapper and local tools; do not use REA.
 Preserve **all** accepted exact units and origin evidence, including
-the historical R268 checkpoint and every later verified adoption. The live
-origin ledger has 90 origin-review candidates (3,315 pending bytes); the
-97-row / 3,608-byte R263 matrix is historical only. These candidates remain
-unknown until independently attributed; they do not block reconstruction of
-independently reviewed authored functions. Include all pending bytes in the
-conservative goal denominator. For the still-unmatched authored backlog,
-count provenance via `config/function-origins.csv` (currently 20 giant, zero
-small/medium), not by assuming every unknown candidate is authored.
-The 11 independently authored, formerly owner-blank copy/audio/sprite
-candidates have now all been accepted in F755–F780. Remaining origin-
-unknown candidates require independent attribution; an exact source-
-generated machine function does not itself prove authored ownership.
-Start with the live cohort in `docs/RE_HANDOFF.md` and `docs/GIANTS.md`;
-historical experiments must not override current evidence. The 20 remaining
-authored functions are slot-1 `Advance` methods of 11 fighter and nine
-character-object vtables. Eleven have complete but nonexact research parents
-in `probes/`; nine have no complete parent. Alice object `004EBDA0` and
-Remilia object `0055AC80` are already exact and are not part of the remaining
-count. Measure a parent with `scripts/repo-python scripts/measure-giant.py
-ADDRESS`. Never count partial switch states as whole-function exact. Matching
-branch destinations or external PE targets does not prove relocation offsets
-or byte equality.
-Never restart at obsolete F938 marker-only giant source. **Only cold-replay new/affected units**,
-never all units. Keep compiler builds serial. Remove obsolete outputs, duplicate
-evidence and historical archives; retain current source, canonical ledgers,
-inputs, shared tools and useful findings.
+the historical R268 checkpoint and later verified adoptions. The live
+origin ledger is `config/function-origins.csv`; the R263 matrix is
+historical. Include all pending bytes in the conservative denominator.
+Pending origins do not block independently authored work. Attribute a
+candidate independently before awarding authored credit.
+
+Never count partial switch states as whole-function exact. Check the
+complete extents, physical relocation fields and resolved targets.
+Only cold-replay new or affected units. Keep compiler builds serial.
+Remove obsolete outputs, duplicate evidence and historical archives;
+retain current source, canonical ledgers, inputs, tools and useful findings.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
 Use `gpt-web: ...` for reconstruction commits unless the user specifies another prefix.
@@ -100,8 +86,9 @@ do not replace it with a shell-dependent Python or silent fallback.
 
 Use only the supplied Japanese `th075.exe`, self-reporting version 1.11:
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-Its identity is pinned to the user's archive, not independently corroborated
-against an official distribution. Never substitute `th075c.exe`.
+The publisher's Japanese 1.11 patch yields the same executable, as
+recorded in R300 of `docs/ORIGIN_PENDING_REVIEW.md`. Never substitute
+`th075c.exe`.
 
 At session start, read `docs/RE_HANDOFF.md` and `docs/RE_WORKFLOW.md`;
 consult relevant `docs/KNOWLEDGE_BASE.md` entries and source. Before changing

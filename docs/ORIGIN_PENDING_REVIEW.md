@@ -1,6 +1,10 @@
-# Pending origin review matrix (R263 historical snapshot)
+# Origin evidence after R263
 
-## Current follow-up
+The [remaining origin evidence](#r288--remaining-origin-evidence) table
+tracks open cases against the live origin ledger. The R263 matrix at the
+end records the starting inventory.
+
+## Frame copy groundwork
 
 For `0x004591E0`, the real frame-header fields and two
 `std::vector<tagRECT>` members reproduce the complete copy when the

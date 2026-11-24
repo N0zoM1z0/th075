@@ -13,11 +13,11 @@ Preserve the inputs and contexts needed to continue reconstruction:
 - Concise current findings and failed approaches in `docs/`; the canonical
   ledgers and Git history retain accepted state and tracked-source history.
 
-`build/` is disposable compiler output: COFF objects, PDBs, probe products,
-matching intermediates and replay scratch. It is not canonical evidence.
-Repository scripts recreate it. Clear its contents when no compiler or
-debugger is using them; do not retain old objects merely because a document
-once linked to them.
+Repository scripts can rebuild the exact-unit objects, PDBs and replay
+scratch in `build/`. Clear obsolete output while the compiler and debugger
+are idle. Preserve response files and any staged objects still consumed by
+an open experiment. The pending-origin scripts in
+`.analysis/final-origin-review/` use inputs from `build/probes/`.
 
 The `.analysis/` tree is mixed. Remove session-local trial variants after the
 winning source change and useful negative results have been recorded. Remove
@@ -28,11 +28,6 @@ file, check whether it is the only retained original-PE observation or
 compiler context for an unresolved parent. A document reference alone does
 not justify retaining a disposable output, but a valuable research context
 should not be discarded just to make the directory smaller.
-
-At the 2026-11-20 handoff, the generated build tree and completed trial/replay
-scratch were cleared, saving approximately 218 MB. The remaining `.analysis/`
-research contexts, shared tools, Ghidra project, Wine prefix and original
-executable were preserved. No deletion receipt or cleanup report is needed.
 
 Keep binaries, tools, Wine prefixes, analyzer databases, generated decompiles
 and secrets out of Git. A fresh clone requires private inputs/runtime
