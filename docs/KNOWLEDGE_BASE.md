@@ -170,11 +170,11 @@ all 36 bytes of the wrapper. The application and scene drawing callers
 share that interface.
 
 WinMain uses the shared event, input, sound, archive and game-default
-lifetime functions. Six scene allocation sites use their existing scene
-types, with the native allocation sizes checked at compile time. The
-comparison covers the complete WinMain body and its 15-entry scene table.
+lifetime functions. Eleven scene types have compile-time checks for the
+native allocation sizes. The comparison covers the complete WinMain
+body and its 15-entry scene table.
 
-WinMain and those six scene types share the eight-byte `SceneBase`.
+WinMain and those scene types share the eight-byte `SceneBase`.
 Its constructor and destructor call the defaults lifetime at offset four.
 All three slots in the base vtable at `0x00657B88` resolve to `_purecall`.
 Derived tables use the deleting destructor, unsigned 16-bit update, and
@@ -182,6 +182,15 @@ render slots. Character selection releases its three texture managers
 through the same class that constructs them. The base constructor at
 `0x004251C0` remains in origin review.
 [Constructor origin evidence](ORIGIN_PENDING_REVIEW.md#r314--omitting-function-packaging-restores-the-native-scene-order)
+
+Loading and logo scenes share an allocation size of 16 bytes. Their
+state at offset 12 is an unsigned byte for loading and an unsigned
+short for elapsed logo frames. Opening and staff-roll scenes share the
+20-byte allocation size and keep their elapsed time and initial ticks
+at offsets 12 and 16. Battle-end uses a 12-byte allocation. For all
+five types, both the constructor and the destructor objects emit the
+same three virtual table entries and the native 44-byte deleting
+destructor. Exception cleanup calls the shared base destructor.
 
 The progress object occupies `0x16BC8` bytes from `0x006718F8` to the cosine
 table. Its startup and registered exit wrappers match the native code.

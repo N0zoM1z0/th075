@@ -1,3 +1,4 @@
+#include "BattleEndScene.hpp"
 #include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "TextureManagerF198.hpp"
@@ -11,10 +12,9 @@
 // added a nonnative PUSH and changed complete code length by two bytes.
 // Complete native R053 battle-end drawing sequence, original fighter actor
 // render modes, 18th virtual call and 640x480 alpha-tinted screen overlay.
-class BattleEndDrawF464 {public:void Draw();};
 #define ACTOR reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])
 #define ACTOR_DRAWER static_cast<TextureManagerF198*>(ACTOR->drawing)
-void BattleEndDrawF464::Draw() {
+void BattleEndScene::Render() {
     if(Graphics::BeginFrame()) {
         ACTOR_DRAWER->SetDepthMode(0);
         ACTOR_DRAWER->SetBlendMode(0);

@@ -1,25 +1,15 @@
+#include "BattleEndScene.hpp"
 #include "Fighter.hpp"
 #include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "TextOverlay.hpp"
 #include <windows.h>
-// Scene base, character actor, renderer and profile owner are limited to
-// independently observed method ABI and game globals; no full layout.
-class SceneBaseF288 {
-    void* nativeConfiguration;
-public:
-    SceneBaseF288();
-    virtual ~SceneBaseF288();
-};
+
 extern unsigned char g_StatusAt006714CE;
 extern const char g_EndTitleAt00657B7B[];
-class BattleEndInitF288 : public SceneBaseF288 {
-public:
-    BattleEndInitF288();
-    virtual ~BattleEndInitF288();
-};
-BattleEndInitF288::BattleEndInitF288()
+
+BattleEndScene::BattleEndScene()
 {
     g_TextRenderer->ConfigureText(35.0f,360.0f,1);
     g_TextRenderer->RenderTextToTexture(g_EndTitleAt00657B7B,120,120,255,16,1,0);

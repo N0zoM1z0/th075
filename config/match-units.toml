@@ -17507,7 +17507,7 @@ source = "src/StaffTimeline438D00.cpp"
 object = "build/matching/StaffTimeline438D00.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["StaffTimeline438D00::RenderTimeline"]
-symbol = "?RenderTimeline@StaffTimeline438D00@@QAEXXZ"
+symbol = "?Render@StaffRollScene@@UAEXXZ"
 target_address = 0x00438D00
 size = 4749
 compare_size = 4749
@@ -20949,7 +20949,7 @@ source = "src/OpeningTimeline4277A0.cpp"
 object = "build/matching/OpeningTimeline4277A0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["OpeningTimeline4277A0::RenderTimeline"]
-symbol = "?RenderTimeline@OpeningTimeline4277A0@@QAEXXZ"
+symbol = "?Render@OpeningScene@@UAEXXZ"
 target_address = 0x004277A0
 size = 5339
 compare_size = 5339
@@ -43810,13 +43810,13 @@ source = "src/BattleEndInitF288.cpp"
 object = "build/matching/BattleEndInitF288.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["BattleEndScene::Initialize"]
-symbol = "??0BattleEndInitF288@@QAE@XZ"
+symbol = "??0BattleEndScene@@QAE@XZ"
 target_address = 0x00424E00
 size = 308
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0BattleEndInitF288@@QAE@XZ"
+symbol = "__ehhandler$??0BattleEndScene@@QAE@XZ"
 target = 0x00655718
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 12
@@ -43831,12 +43831,12 @@ target = 0x00000000
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0SceneBaseF288@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 48
 type = "DIR32"
-symbol = "??_7BattleEndInitF288@@6B@"
+symbol = "??_7BattleEndScene@@6B@"
 target = 0x00657B7C
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 66
@@ -55930,13 +55930,13 @@ source = "src/LoadingLogoSceneConstructorsF446.cpp"
 object = "build/matching/LoadingLogoSceneConstructorsF446.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["LoadingScene::InitializeAt004251F0"]
-symbol = "??0LoadingSceneInitF446@@QAE@XZ"
+symbol = "??0LoadingScene@@QAE@XZ"
 target_address = 0x004251F0
 size = 181
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0LoadingSceneInitF446@@QAE@XZ"
+symbol = "__ehhandler$??0LoadingScene@@QAE@XZ"
 target = 0x00655743
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 12
@@ -55951,12 +55951,12 @@ target = 0x00000000
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0NativeSceneBaseF446@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7LoadingSceneInitF446@@6B@"
+symbol = "??_7LoadingScene@@6B@"
 target = 0x00657BB4
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 57
@@ -56000,13 +56000,13 @@ source = "src/LoadingLogoSceneConstructorsF446.cpp"
 object = "build/matching/LoadingLogoSceneConstructorsF446.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["LogoScene::InitializeAt00425490"]
-symbol = "??0LogoSceneInitF446@@QAE@XZ"
+symbol = "??0LogoScene@@QAE@XZ"
 target_address = 0x00425490
 size = 183
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0LogoSceneInitF446@@QAE@XZ"
+symbol = "__ehhandler$??0LogoScene@@QAE@XZ"
 target = 0x00655773
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 12
@@ -56021,12 +56021,12 @@ target = 0x00000000
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0NativeSceneBaseF446@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7LogoSceneInitF446@@6B@"
+symbol = "??_7LogoScene@@6B@"
 target = 0x00657BE0
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 57
@@ -56070,13 +56070,13 @@ source = "src/SceneSequenceConstructorsF446.cpp"
 object = "build/matching/SceneSequenceConstructorsF446.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["OpeningScene::InitializeAt004275D0"]
-symbol = "??0OpeningSceneF446@@QAE@XZ"
+symbol = "??0OpeningScene@@QAE@XZ"
 target_address = 0x004275D0
 size = 219
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0OpeningSceneF446@@QAE@XZ"
+symbol = "__ehhandler$??0OpeningScene@@QAE@XZ"
 target = 0x00655863
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 12
@@ -56091,12 +56091,12 @@ target = 0x00000000
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0SceneBaseF446@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7OpeningSceneF446@@6B@"
+symbol = "??_7OpeningScene@@6B@"
 target = 0x00657CE4
 [[units.opening-scene-initialize-004275d0.relocations]]
 offset = 57
@@ -56160,13 +56160,13 @@ source = "src/SceneSequenceConstructorsF446.cpp"
 object = "build/matching/SceneSequenceConstructorsF446.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["StaffRollScene::InitializeAt00438AC0"]
-symbol = "??0StaffRollSceneF446@@QAE@XZ"
+symbol = "??0StaffRollScene@@QAE@XZ"
 target_address = 0x00438AC0
 size = 224
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0StaffRollSceneF446@@QAE@XZ"
+symbol = "__ehhandler$??0StaffRollScene@@QAE@XZ"
 target = 0x00655AF3
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 12
@@ -56181,12 +56181,12 @@ target = 0x00000000
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0SceneBaseF446@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7StaffRollSceneF446@@6B@"
+symbol = "??_7StaffRollScene@@6B@"
 target = 0x006582BC
 [[units.staff-roll-scene-initialize-00438ac0.relocations]]
 offset = 55
@@ -56255,13 +56255,13 @@ source = "src/LoadingLogoSceneDestructorsF447.cpp"
 object = "build/matching/LoadingLogoSceneDestructorsF447.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["LoadingScene::ReleaseSceneResourceAt004252B0"]
-symbol = "??1LoadingSceneReleaseF447@@UAE@XZ"
+symbol = "??1LoadingScene@@UAE@XZ"
 target_address = 0x004252B0
 size = 127
 [[units.loading-scene-release-resource-004252b0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1LoadingSceneReleaseF447@@UAE@XZ"
+symbol = "__ehhandler$??1LoadingScene@@UAE@XZ"
 target = 0x00655755
 [[units.loading-scene-release-resource-004252b0.relocations]]
 offset = 12
@@ -56276,17 +56276,17 @@ target = 0x00000000
 [[units.loading-scene-release-resource-004252b0.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7LoadingSceneReleaseF447@@6B@"
+symbol = "??_7LoadingScene@@6B@"
 target = 0x00657BB4
 [[units.loading-scene-release-resource-004252b0.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GNativeSmallTextureF447@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.loading-scene-release-resource-004252b0.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??1NativeSceneBaseF447@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.loading-scene-release-resource-004252b0.relocations]]
 offset = 119
@@ -56300,13 +56300,13 @@ source = "src/LoadingLogoSceneDestructorsF447.cpp"
 object = "build/matching/LoadingLogoSceneDestructorsF447.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["LogoScene::ReleaseSceneResourceAt00425550"]
-symbol = "??1LogoSceneReleaseF447@@UAE@XZ"
+symbol = "??1LogoScene@@UAE@XZ"
 target_address = 0x00425550
 size = 127
 [[units.logo-scene-release-resource-00425550.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1LogoSceneReleaseF447@@UAE@XZ"
+symbol = "__ehhandler$??1LogoScene@@UAE@XZ"
 target = 0x00655785
 [[units.logo-scene-release-resource-00425550.relocations]]
 offset = 12
@@ -56321,17 +56321,17 @@ target = 0x00000000
 [[units.logo-scene-release-resource-00425550.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7LogoSceneReleaseF447@@6B@"
+symbol = "??_7LogoScene@@6B@"
 target = 0x00657BE0
 [[units.logo-scene-release-resource-00425550.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GNativeSmallTextureF447@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.logo-scene-release-resource-00425550.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??1NativeSceneBaseF447@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.logo-scene-release-resource-00425550.relocations]]
 offset = 119
@@ -56621,13 +56621,13 @@ source = "src/BattleEndSceneUpdateF463.cpp"
 object = "build/matching/BattleEndSceneUpdateF463.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BattleEndScene::UpdateAt00424F60"]
-symbol = "?Update@BattleEndSceneF463@@QAEGXZ"
+symbol = "?Update@BattleEndScene@@UAEGXZ"
 target_address = 0x00424F60
 size = 152
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?PollInput@BattleEndSceneF463@@QAEXXZ"
+symbol = "?PollInput@BattleEndScene@@AAEXXZ"
 target = 0x004250C0
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 27
@@ -56681,7 +56681,7 @@ source = "src/BattleEndSceneDrawF465.cpp"
 object = "build/matching/BattleEndSceneDrawF465.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BattleEndScene::DrawAt00425000"]
-symbol = "?Draw@BattleEndDrawF464@@QAEXXZ"
+symbol = "?Render@BattleEndScene@@UAEXXZ"
 target_address = 0x00425000
 size = 180
 [[units.battle-end-scene-draw-00425000.relocations]]
@@ -56776,7 +56776,7 @@ source = "src/SceneInputPollingFamilyF467.cpp"
 object = "build/matching/SceneInputPollingFamilyF467.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BattleEndScene::PollInputAt004250C0"]
-symbol = "?PollInput@BattleEndInputF466@@QAEXXZ"
+symbol = "?PollInput@BattleEndScene@@AAEXXZ"
 target_address = 0x004250C0
 size = 107
 [[units.battle-end-scene-poll-input-004250c0.relocations]]
@@ -56926,7 +56926,7 @@ source = "src/SceneInputPollingFamilyF467.cpp"
 object = "build/matching/SceneInputPollingFamilyF467.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["OpeningScene::ProcessInputAt00428C80"]
-symbol = "?ProcessInput@OpeningInputF466@@QAEXXZ"
+symbol = "?PollInput@OpeningScene@@AAEXXZ"
 target_address = 0x00428C80
 size = 106
 [[units.opening-scene-process-input-00428c80.relocations]]
@@ -57305,13 +57305,13 @@ source = "src/SceneResourceDestructorsF474.cpp"
 object = "build/matching/SceneResourceDestructorsF474.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["OpeningScene::ReleaseResourcesAt004276B0"]
-symbol = "??1OpeningSceneReleaseF474@@UAE@XZ"
+symbol = "??1OpeningScene@@UAE@XZ"
 target_address = 0x004276B0
 size = 127
 [[units.opening-scene-release-resource-004276b0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1OpeningSceneReleaseF474@@UAE@XZ"
+symbol = "__ehhandler$??1OpeningScene@@UAE@XZ"
 target = 0x00655875
 [[units.opening-scene-release-resource-004276b0.relocations]]
 offset = 12
@@ -57326,17 +57326,17 @@ target = 0x00000000
 [[units.opening-scene-release-resource-004276b0.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7OpeningSceneReleaseF474@@6B@"
+symbol = "??_7OpeningScene@@6B@"
 target = 0x00657CE4
 [[units.opening-scene-release-resource-004276b0.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.opening-scene-release-resource-004276b0.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.opening-scene-release-resource-004276b0.relocations]]
 offset = 119
@@ -57485,13 +57485,13 @@ source = "src/SceneResourceDestructorsF474.cpp"
 object = "build/matching/SceneResourceDestructorsF474.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["StaffRollScene::ReleaseResourcesAt00438BA0"]
-symbol = "??1StaffRollSceneReleaseF474@@UAE@XZ"
+symbol = "??1StaffRollScene@@UAE@XZ"
 target_address = 0x00438BA0
 size = 127
 [[units.staffroll-scene-release-resource-00438ba0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1StaffRollSceneReleaseF474@@UAE@XZ"
+symbol = "__ehhandler$??1StaffRollScene@@UAE@XZ"
 target = 0x00655B05
 [[units.staffroll-scene-release-resource-00438ba0.relocations]]
 offset = 12
@@ -57506,17 +57506,17 @@ target = 0x00000000
 [[units.staffroll-scene-release-resource-00438ba0.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7StaffRollSceneReleaseF474@@6B@"
+symbol = "??_7StaffRollScene@@6B@"
 target = 0x006582BC
 [[units.staffroll-scene-release-resource-00438ba0.relocations]]
 offset = 82
 type = "REL32"
-symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+symbol = "??_GTextureManagerF198@@QAEPAXI@Z"
 target = 0x00425460
 [[units.staffroll-scene-release-resource-00438ba0.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.staffroll-scene-release-resource-00438ba0.relocations]]
 offset = 119
@@ -58568,18 +58568,18 @@ source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
 object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["BattleEndScene::DestroyAt00424F40"]
-symbol = "??1BattleEndSceneF484@@UAE@XZ"
+symbol = "??1BattleEndScene@@UAE@XZ"
 target_address = 0x00424F40
 size = 28
 [[units.battle-end-scene-destroy-00424f40.relocations]]
 offset = 12
 type = "DIR32"
-symbol = "??_7BattleEndSceneF484@@6B@"
+symbol = "??_7BattleEndScene@@6B@"
 target = 0x00657B7C
 [[units.battle-end-scene-destroy-00424f40.relocations]]
 offset = 20
 type = "REL32"
-symbol = "??1NativeSceneBaseF484@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 
 [units.loading-scene-draw-complete-00425390]
@@ -58587,7 +58587,7 @@ source = "src/LoadingLogoSceneDrawF485.cpp"
 object = "build/matching/LoadingLogoSceneDrawF485.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["LoadingScene::DrawAt00425390"]
-symbol = "?Draw@LoadingSceneDrawF470@@QAEXXZ"
+symbol = "?Render@LoadingScene@@UAEXXZ"
 target_address = 0x00425390
 size = 156
 [[units.loading-scene-draw-complete-00425390.relocations]]
@@ -58637,7 +58637,7 @@ source = "src/LoadingLogoSceneDrawF485.cpp"
 object = "build/matching/LoadingLogoSceneDrawF485.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["LogoScene::DrawAt00425620"]
-symbol = "?Draw@LogoSceneDrawF470@@QAEXXZ"
+symbol = "?Render@LogoScene@@UAEXXZ"
 target_address = 0x00425620
 size = 156
 [[units.logo-scene-draw-complete-00425620.relocations]]
@@ -58686,13 +58686,13 @@ source = "src/SceneTemporalAndInputPoliciesF488.cpp"
 object = "build/matching/SceneTemporalAndInputPoliciesF488.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["OpeningScene::AdvanceAt00427730"]
-symbol = "?Advance@OpeningSceneAdvanceF488@@QAEGXZ"
+symbol = "?Update@OpeningScene@@UAEGXZ"
 target_address = 0x00427730
 size = 99
 [[units.opening-scene-advance-state-00427730.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?PollInput@OpeningSceneAdvanceF488@@QAEXXZ"
+symbol = "?PollInput@OpeningScene@@AAEXXZ"
 target = 0x00428C80
 [[units.opening-scene-advance-state-00427730.relocations]]
 offset = 27
@@ -58721,7 +58721,7 @@ source = "src/SceneTemporalAndInputPoliciesF488.cpp"
 object = "build/matching/SceneTemporalAndInputPoliciesF488.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["LoadingScene::AdvanceAt00425330"]
-symbol = "?Advance@LoadingSceneAdvanceF488@@QAEGXZ"
+symbol = "?Update@LoadingScene@@UAEGXZ"
 target_address = 0x00425330
 size = 84
 [[units.loading-scene-advance-state-00425330.relocations]]
@@ -58751,13 +58751,13 @@ source = "src/SceneTemporalAndInputPoliciesF488.cpp"
 object = "build/matching/SceneTemporalAndInputPoliciesF488.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["TimedScene::AdvanceAt004255D0"]
-symbol = "?Advance@TimedSceneAdvanceF488@@QAEGXZ"
+symbol = "?Update@LogoScene@@UAEGXZ"
 target_address = 0x004255D0
 size = 78
 [[units.timed-scene-advance-state-004255d0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?PollInput@TimedSceneAdvanceF488@@QAEXXZ"
+symbol = "?PollInput@LogoScene@@AAEXXZ"
 target = 0x004256C0
 [[units.timed-scene-advance-state-004255d0.relocations]]
 offset = 27
@@ -58771,7 +58771,7 @@ source = "src/SceneTemporalAndInputPoliciesF488.cpp"
 object = "build/matching/SceneTemporalAndInputPoliciesF488.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SceneInput::PollAt004256C0"]
-symbol = "?PollInput@LoadingSceneInputF488@@QAEXXZ"
+symbol = "?PollInput@LogoScene@@AAEXXZ"
 target_address = 0x004256C0
 size = 96
 [[units.loading-scene-input-poll-004256c0.relocations]]
@@ -58836,7 +58836,7 @@ source = "src/SceneTemporalAndInputPoliciesF488.cpp"
 object = "build/matching/SceneTemporalAndInputPoliciesF488.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["StaffRollScene::PollSkipInputAt00439F90"]
-symbol = "?PollSkipInput@StaffRollSceneInputF488@@QAEXXZ"
+symbol = "?PollSkipInput@StaffRollScene@@AAEXXZ"
 target_address = 0x00439F90
 size = 96
 [[units.staffroll-scene-poll-skip-input-00439f90.relocations]]
@@ -60191,13 +60191,13 @@ source = "src/StaffRollSceneAdvanceF504.cpp"
 object = "build/matching/StaffRollSceneAdvanceF504.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["StaffRollScene::AdvanceAt00438C20"]
-symbol = "?Advance@StaffRollAdvanceF450@@QAEGXZ"
+symbol = "?Update@StaffRollScene@@UAEGXZ"
 target_address = 0x00438C20
 size = 208
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 11
 type = "REL32"
-symbol = "?UpdateStaffControls@StaffRollAdvanceF450@@QAEXXZ"
+symbol = "?PollSkipInput@StaffRollScene@@AAEXXZ"
 target = 0x00439F90
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 27
@@ -60207,7 +60207,7 @@ target = 0x004028F0
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 35
 type = "REL32"
-symbol = "?AdvanceHookAt00438CF0@StaffRollAdvanceF450@@QAEXXZ"
+symbol = "?AdvanceHookAt00438CF0@StaffRollScene@@AAEXXZ"
 target = 0x00438CF0
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 41
@@ -61295,7 +61295,7 @@ relocations = [
  { offset = 0x443, type = "DIR32", symbol = "?g_LogOKAt0065A2E4@@3QBDB", target = 0x0065A2E4 },
  { offset = 0x448, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
  { offset = 0x452, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x46F, type = "REL32", symbol = "??0Scene4F1171@@QAE@XZ", target = 0x00425490 },
+ { offset = 0x46F, type = "REL32", symbol = "??0LogoScene@@QAE@XZ", target = 0x00425490 },
  { offset = 0x4AF, type = "REL32", symbol = "?TranslateState@SceneBase@@QAEGG@Z", target = 0x00431F60 },
  { offset = 0x4B8, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
  { offset = 0x4BD, type = "REL32", symbol = "?LoadScoreFile@GameProgress@@QAEXXZ", target = 0x00416B10 },
@@ -61306,11 +61306,11 @@ relocations = [
  { offset = 0x536, type = "REL32", symbol = "?TranslateState@SceneBase@@QAEGG@Z", target = 0x00431F60 },
  { offset = 0x5EE, type = "DIR32", symbol = "$L55877", target = 0x0060360B },
  { offset = 0x5F5, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x612, type = "REL32", symbol = "??0Scene4F1171@@QAE@XZ", target = 0x00425490 },
+ { offset = 0x612, type = "REL32", symbol = "??0LogoScene@@QAE@XZ", target = 0x00425490 },
  { offset = 0x64B, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x668, type = "REL32", symbol = "??0BattleScene@@QAE@XZ", target = 0x0043AD10 },
  { offset = 0x69E, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x6BB, type = "REL32", symbol = "??0Scene1F1171@@QAE@XZ", target = 0x004251F0 },
+ { offset = 0x6BB, type = "REL32", symbol = "??0LoadingScene@@QAE@XZ", target = 0x004251F0 },
  { offset = 0x6F1, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x70E, type = "REL32", symbol = "??0TitleScene@@QAE@XZ", target = 0x0043A020 },
  { offset = 0x747, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
@@ -61322,17 +61322,17 @@ relocations = [
  { offset = 0x843, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x860, type = "REL32", symbol = "??0Scene7F1171@@QAE@XZ", target = 0x0042B1F0 },
  { offset = 0x896, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x8B3, type = "REL32", symbol = "??0Scene8F1171@@QAE@XZ", target = 0x00424E00 },
+ { offset = 0x8B3, type = "REL32", symbol = "??0BattleEndScene@@QAE@XZ", target = 0x00424E00 },
  { offset = 0x8E9, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x906, type = "REL32", symbol = "??0OptionsScene@@QAE@XZ", target = 0x00428D60 },
  { offset = 0x93F, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x95C, type = "REL32", symbol = "??0Scene10F1171@@QAE@XZ", target = 0x0042A180 },
  { offset = 0x992, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x9AF, type = "REL32", symbol = "??0Scene11F1171@@QAE@XZ", target = 0x00438AC0 },
+ { offset = 0x9AF, type = "REL32", symbol = "??0StaffRollScene@@QAE@XZ", target = 0x00438AC0 },
  { offset = 0x9E8, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0xA05, type = "REL32", symbol = "??0Scene12F1171@@QAE@XZ", target = 0x00425750 },
  { offset = 0xA3B, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0xA58, type = "REL32", symbol = "??0Scene13F1171@@QAE@XZ", target = 0x004275D0 },
+ { offset = 0xA58, type = "REL32", symbol = "??0OpeningScene@@QAE@XZ", target = 0x004275D0 },
  { offset = 0xA8E, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0xAAB, type = "REL32", symbol = "??0ResultListScene@@QAE@XZ", target = 0x0042F710 },
  { offset = 0xAE1, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657120 },
@@ -94504,7 +94504,7 @@ source = "src/StaffRollSceneAdvanceF504.cpp"
 object = "build/matching/StaffRollSceneAdvanceF504.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["StaffRollAdvanceF450::AdvanceHookAt00438CF0"]
-symbol = "?AdvanceHookAt00438CF0@StaffRollAdvanceF450@@QAEXXZ"
+symbol = "?AdvanceHookAt00438CF0@StaffRollScene@@AAEXXZ"
 target_address = 0x00438CF0
 size = 11
 relocations = []

@@ -1,3 +1,4 @@
+#include "SequenceScenes.hpp"
 #include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -15,27 +16,13 @@
 // Borrowed native stage, time and fighter score ABIs only.
 extern signed char g_ReplayNameModeAt006714CE;
 extern unsigned int g_StaffRollBestScoreAt00671420;
-class StaffRollAdvanceF450 {
-public:
-    virtual void V00();
-    virtual void V04();
-    virtual void AdvanceVirtual();
-    unsigned short Advance();
-    void UpdateStaffControls();
-    void AdvanceHookAt00438CF0();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown004[0x00C - 0x004];
-    unsigned int field00C;
-    unsigned int field010;
-};
-unsigned short StaffRollAdvanceF450::Advance() {
-    UpdateStaffControls();
-    AdvanceVirtual();
+unsigned short StaffRollScene::Update() {
+    PollSkipInput();
+    Render();
     Graphics::Present();
     AdvanceHookAt00438CF0();
     if (static_cast<unsigned int>(g_InputMappings[0].held.counts[2])==1) {
-        if (field00C>0x14C08 || field00C<0x13880) {
+        if (elapsed>0x14C08 || elapsed<0x13880) {
             MusicF204::PlayTrackByIndex(40);
             AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
             if (g_BattleFightersAt00671418[0]) {
@@ -48,10 +35,10 @@ unsigned short StaffRollAdvanceF450::Advance() {
             return 0x1102;
         }
     }
-    field00C=timeGetTime()-field010;
+    elapsed=timeGetTime()-startTicks;
     return 0xB;
 }
 
-void StaffRollAdvanceF450::AdvanceHookAt00438CF0()
+void StaffRollScene::AdvanceHookAt00438CF0()
 {
 }

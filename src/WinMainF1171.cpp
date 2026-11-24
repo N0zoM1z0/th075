@@ -1,3 +1,6 @@
+#include "LoadingLogoScenes.hpp"
+#include "BattleEndScene.hpp"
+#include "SequenceScenes.hpp"
 #include "ResultListScene.hpp"
 #include "OptionsScene.hpp"
 #include "ResultScene.hpp"
@@ -34,17 +37,17 @@
 // Only actually observed scene allocation footprints and interface calls.
 namespace ArchiveCatalogF353 { void OpenAndRegister(const char*, const char*); }
 #define DEF_SCENE(N,SIZE) class Scene##N##F1171 : public SceneBase { public:Scene##N##F1171();unsigned short Update();void Render();private:unsigned char observedSize[(SIZE)-sizeof(SceneBase)];};
-DEF_SCENE(1,0x10)
-DEF_SCENE(4,0x10)
 DEF_SCENE(5,0x54)
 DEF_SCENE(7,0x120)
-DEF_SCENE(8,0xC)
 DEF_SCENE(10,0x124)
-DEF_SCENE(11,0x14)
 DEF_SCENE(12,0x3E0)
-DEF_SCENE(13,0x14)
 #undef DEF_SCENE
 
+typedef char LoadingSceneAllocationSize[(sizeof(LoadingScene) == 0x10) ? 1 : -1];
+typedef char LogoSceneAllocationSize[(sizeof(LogoScene) == 0x10) ? 1 : -1];
+typedef char BattleEndSceneAllocationSize[(sizeof(BattleEndScene) == 0xC) ? 1 : -1];
+typedef char StaffRollSceneAllocationSize[(sizeof(StaffRollScene) == 0x14) ? 1 : -1];
+typedef char OpeningSceneAllocationSize[(sizeof(OpeningScene) == 0x14) ? 1 : -1];
 typedef char BattleSceneAllocationSize[(sizeof(BattleScene) == 0x11C) ? 1 : -1];
 typedef char TitleSceneAllocationSize[(sizeof(TitleScene) == 0x3C) ? 1 : -1];
 typedef char CharacterSelectSceneAllocationSize[(sizeof(CharacterSelectScene) == 0xF4) ? 1 : -1];
@@ -156,7 +159,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     DiagnosticLog::AppendString(g_SystemDataTextAt0065A2D0);
     GameGlobalsF212::InitializeSound();
     DiagnosticLog::AppendString(g_LogOKAt0065A2E4);
-    currentSceneOwner=static_cast<SceneBase* const&>(new Scene4F1171);
+    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LogoScene));
     unsigned short activeSceneState=0x2004;
     activeSceneState=currentSceneOwner->TranslateState(activeSceneState);
     g_GameProgress.LoadScoreFile();
@@ -171,20 +174,20 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
             if(activeSceneState!=oldSceneState && (activeSceneState&0xF00)==0 && (activeSceneState&0xF000)>0) {
                 delete currentSceneOwner;
                 switch(activeSceneState&0xFF) {
-                case 4: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene4F1171); } break;
+                case 4: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LogoScene)); } break;
                 case 0: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleScene)); } break;
-                case 1: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene1F1171); } break;
+                case 1: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LoadingScene)); } break;
                 case 2: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new TitleScene)); } break;
                 case 3: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new CharacterSelectScene)); } break;
                 case 5: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene5F1171); } break;
                 case 6: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultScene)); } break;
                 case 7: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene7F1171); } break;
-                case 8: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene8F1171); } break;
+                case 8: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleEndScene)); } break;
                 case 9: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OptionsScene)); } break;
                 case 10: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene10F1171); } break;
-                case 11: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene11F1171); } break;
+                case 11: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new StaffRollScene)); } break;
                 case 12: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene12F1171); } break;
-                case 13: { currentSceneOwner=static_cast<SceneBase* const&>(new Scene13F1171); } break;
+                case 13: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OpeningScene)); } break;
                 case 14: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultListScene)); } break;
                 }
             }

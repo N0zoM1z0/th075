@@ -1,3 +1,4 @@
+#include "LoadingLogoScenes.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteQuad.hpp"
@@ -21,37 +22,27 @@ public:
 };
 struct DrawFrameF470 {RECT rectangle; DrawQuadF470 quad;};
 typedef char CheckFrame152F470[(sizeof(DrawFrameF470)==152)?1:-1];
-class LoadingSceneDrawF470 {
-  unsigned char borrowedNativeBase[8];
-  TextureManagerF198* drawer;
-public: void Draw();
-};
-class LogoSceneDrawF470 {
-  unsigned char borrowedNativeBase[8];
-  TextureManagerF198* drawer;
-public: void Draw();
-};
-void LoadingSceneDrawF470::Draw() {
+void LoadingScene::Render() {
  if(Graphics::BeginFrame()) {
     DrawFrameF470 frame;
     frame.quad.ConstructNative();
-    drawer->SetDepthMode(0);
-    drawer->SetBlendMode(0);
+    texture->SetDepthMode(0);
+    texture->SetBlendMode(0);
     SetRect(&frame.rectangle,0,0,640,480);
     reinterpret_cast<SpriteTransform*>(&frame.quad)->BuildQuadFromRect(&frame.rectangle);
-    drawer->DrawQuad(0, reinterpret_cast<const SpriteQuad40CA80&>(frame.quad),&frame.rectangle,0xffffffff);
+    texture->DrawQuad(0, reinterpret_cast<const SpriteQuad40CA80&>(frame.quad),&frame.rectangle,0xffffffff);
     Graphics::EndFrame();
  }
 }
-void LogoSceneDrawF470::Draw() {
+void LogoScene::Render() {
  if(Graphics::BeginFrame()) {
     DrawFrameF470 frame;
     frame.quad.ConstructNative();
-    drawer->SetDepthMode(0);
-    drawer->SetBlendMode(0);
+    texture->SetDepthMode(0);
+    texture->SetBlendMode(0);
     SetRect(&frame.rectangle,0,0,640,480);
     reinterpret_cast<SpriteTransform*>(&frame.quad)->BuildQuadFromRect(&frame.rectangle);
-    drawer->DrawQuad(0, reinterpret_cast<const SpriteQuad40CA80&>(frame.quad),&frame.rectangle,0xffffffff);
+    texture->DrawQuad(0, reinterpret_cast<const SpriteQuad40CA80&>(frame.quad),&frame.rectangle,0xffffffff);
     Graphics::EndFrame();
  }
 }

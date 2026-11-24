@@ -1,3 +1,4 @@
+#include "BattleEndScene.hpp"
 #include "EventQueue.hpp"
 #include "Graphics.hpp"
 #include "CameraMotion.hpp"
@@ -50,6 +51,7 @@ void WindowOverlayF212::EnableDirectDraw() {
  Graphics::SetPresentCallback(0);
  enabled=1;
 }
-class NativeSceneBaseF484 {public:virtual ~NativeSceneBaseF484();};
-class BattleEndSceneF484: public NativeSceneBaseF484 {public:virtual ~BattleEndSceneF484();};
-BattleEndSceneF484::~BattleEndSceneF484(){}
+
+BattleEndScene::~BattleEndScene()
+{
+}

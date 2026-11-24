@@ -1,3 +1,5 @@
+#include "LoadingLogoScenes.hpp"
+#include "SequenceScenes.hpp"
 #include "BattleResourceLoaders.hpp"
 #include "GameSharedState.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -6,70 +8,37 @@
 #include "InputJoystick.hpp"
 #include <windows.h>
 #include <mmsystem.h>
-// Five independently full original scene state and input-policy functions.
-// Native sign-extension on global loading mode 006714B4 and exact
-// original 32-bit/16-bit elapsed-frame counters are preserved.
-// Three complete native scene update policies and two independent original
-// game-scene input paths. These own only borrowed native base call ABIs.
-class SceneAdvanceBaseF488 {
-public:virtual void F0();virtual void F1();virtual void VAdvance();
-};
-class OpeningSceneAdvanceF488:public SceneAdvanceBaseF488 {
-public:
- unsigned short Advance();void PollInput();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown004[0x00C - 0x004];
-    unsigned int field00C;
-    unsigned int field010;
-};
-class LoadingSceneAdvanceF488:public SceneAdvanceBaseF488 {
-public:unsigned short Advance();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown004[0x00C - 0x004];
-    unsigned char field00C;
-};
-class TimedSceneAdvanceF488:public SceneAdvanceBaseF488 {
-public:unsigned short Advance();void PollInput();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown004[0x00C - 0x004];
-    unsigned short field00C;
-};
-unsigned short OpeningSceneAdvanceF488::Advance(){
- PollInput(); VAdvance(); Graphics::Present();
+unsigned short OpeningScene::Update(){
+ PollInput(); Render(); Graphics::Present();
  if(g_InputMappings[0].held.counts[2]==1 || g_InputMappings[1].held.counts[2]==1) return 0x2202;
- if(field00C>0xC15C) return 0xFF02;
- field00C=timeGetTime()-field010;
+ if(elapsed>0xC15C) return 0xFF02;
+ elapsed=timeGetTime()-startTicks;
  return 0xD;
 }
-unsigned short LoadingSceneAdvanceF488::Advance(){
- VAdvance();
- if(!field00C){
+unsigned short LoadingScene::Update(){
+ Render();
+ if(!loaded){
    BattleCharacterLoaderF398::LoadCharacters();
    if(g_CombatMode==3 && g_StageAt0067161E>=8)
       return 0x1108;
    BattleStageLoaderF389::LoadStage();
-   field00C=1;
+   loaded=1;
  }
  return 0x2000;
 }
-unsigned short TimedSceneAdvanceF488::Advance(){
- PollInput();VAdvance();Graphics::Present();
- field00C++;
- if(field00C>180)return 0x220D;
+unsigned short LogoScene::Update(){
+ PollInput();Render();Graphics::Present();
+ elapsedFrames++;
+ if(elapsedFrames>180)return 0x220D;
  return 4;
 }
-class LoadingSceneInputF488 {public:void PollInput();};
-class StaffRollSceneInputF488 {public:void PollSkipInput();};
-void LoadingSceneInputF488::PollInput(){
+void LogoScene::PollInput(){
  Input::PollKeyboard();Input::PollJoysticks();
  g_InputMappings[0].UpdateHeldCounts();
  if(g_InputMappings[0].IsKeyDown(0x1C) && (g_InputMappings[0].IsKeyDown(0x38) || g_InputMappings[0].IsKeyDown(0xB8)))
    Graphics::ToggleWindowMode();
 }
-void StaffRollSceneInputF488::PollSkipInput(){
+void StaffRollScene::PollSkipInput(){
  Input::PollKeyboard();Input::PollJoysticks();
  g_InputMappings[0].UpdateHeldCounts();
  if(g_InputMappings[0].IsKeyDown(0x1C) && (g_InputMappings[0].IsKeyDown(0x38) || g_InputMappings[0].IsKeyDown(0xB8)))
