@@ -16419,11 +16419,11 @@ relocations = [
   { offset = 0x7B, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
   { offset = 0x87, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0xB2, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
-  { offset = 0xCA, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0xD1, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
+  { offset = 0xCA, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0xD1, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
   { offset = 0x104, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x11C, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x123, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
+  { offset = 0x11C, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x123, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
   { offset = 0x14E, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
   { offset = 0x179, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x191, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
@@ -16508,10 +16508,10 @@ relocations = [
   { offset = 0x104A, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x1051, type = "DIR32", symbol = "?g_SequenceByteAt0066C239@@3EA", target = 0x0066C239 },
   { offset = 0x10BE, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x10D6, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x10DD, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
-  { offset = 0x10FD, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x1104, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
+  { offset = 0x10D6, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x10DD, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
+  { offset = 0x10FD, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x1104, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
   { offset = 0x112E, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x1139, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
   { offset = 0x114B, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
@@ -16519,10 +16519,10 @@ relocations = [
   { offset = 0x1169, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x1194, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x11BF, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x11D7, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x11DE, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
-  { offset = 0x11FE, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x1205, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
+  { offset = 0x11D7, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x11DE, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
+  { offset = 0x11FE, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x1205, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
   { offset = 0x122F, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x123A, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
   { offset = 0x124C, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
@@ -16692,15 +16692,15 @@ relocations = [
   { offset = 0x17, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x65, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0xAC, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
-  { offset = 0xD2, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0xD9, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
+  { offset = 0xD2, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0xD9, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
   { offset = 0xF2, type = "DIR32", symbol = "?g_OptionsModeAt006714D0@@3CA", target = 0x006714D0 },
-  { offset = 0x118, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x11F, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
-  { offset = 0x1B6, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x1BD, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
-  { offset = 0x1F3, type = "REL32", symbol = "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z", target = 0x004420B0 },
-  { offset = 0x1FA, type = "REL32", symbol = "?At@HudRecordGroup43E040@@QAEPAFI@Z", target = 0x00442060 },
+  { offset = 0x118, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x11F, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
+  { offset = 0x1B6, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x1BD, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
+  { offset = 0x1F3, type = "REL32", symbol = "?at@?$vector@PAUFighterSequenceInfo@@V?$allocator@PAUFighterSequenceInfo@@@std@@@std@@QAEAAPAUFighterSequenceInfo@@I@Z", target = 0x004420B0 },
+  { offset = 0x1FA, type = "REL32", symbol = "?at@?$vector@UFighterFrameInfo@@V?$allocator@UFighterFrameInfo@@@std@@@std@@QAEAAUFighterFrameInfo@@I@Z", target = 0x00442060 },
   { offset = 0x233, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x24C, type = "DIR32", symbol = "__real@42280000", target = 0x006583B0 },
   { offset = 0x276, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
@@ -44824,7 +44824,7 @@ target = 0x00640490
 [[units.battle-input-pack-direction-bits-00455b30.relocations]]
 offset = 252
 type = "REL32"
-symbol = "?Queue@FighterCommandQueueF303@@QAEXHPBE@Z"
+symbol = "?assign@?$deque@EV?$allocator@E@std@@@std@@QAEXIABE@Z"
 target = 0x00455C40
 
 [units.static-battle-resources-release-owned-005f6ff0]
@@ -53354,8 +53354,8 @@ target = 0x0067161E
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 294
 type = "DIR32"
-symbol = "?g_RosterAt0067148F@@3PACA"
-target = 0x0067148F
+symbol = "?g_StoryRosterAt00671490@@3PACA"
+target = 0x00671490
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 300
 type = "DIR32"

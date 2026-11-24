@@ -23,7 +23,14 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 488 unresolved externals. The selection and math
+stops at `LNK1120` with 481 unresolved externals. The container and
+storage batch resolved seven symbols and cold-replayed 20 units across
+16 objects. The HUD and status views share the typed frame vectors, and
+the direction-bit writer uses the typed input deque. The character loader
+uses the same ten-byte roster for reads and writes. The coordinate
+outputs have zero-initialized storage.
+
+The selection and math
 batch resolved eight symbols and cold-replayed 123 units across 36 objects.
 Selection uses the SDK long absolute-value overload, the round banner
 uses `log10f`, and the collision wrapper uses `ceilf`. Suika's projectile

@@ -182,6 +182,19 @@ vertical argument preserves the native x87 load order. Passing the same
 value through `GeometryConstants::Forty` makes VC7.1 load the constant
 before the opponent's position.
 
+The battle HUD and status renderer access the existing sequence and
+frame vectors through `at()`. The entries at `0x004420B0` and
+`0x00442060` match the complete VC7.1 instantiations for
+`FighterSequenceInfo*` and `FighterFrameInfo`. The direction-bit writer
+uses the input history deque's `assign(90, bits)` at `0x00455C40`.
+
+The battle loader writes ten roster bytes from `0x00671490`.
+Reading the one-based stage as `roster[stage - 1]` emits a minus-one
+relocation addend to the same array. The apparent base at `0x0067148F`
+is the last byte of the preceding key bindings, so it does not define a
+second roster. The coordinate output floats at `0x0067142C` and
+`0x006714A8` both start at zero.
+
 `PlayerState.hpp` declares the six byte pairs shared by selection, the
 battle loader and snapshot I/O. A direct reference to the second player
 uses the pair symbol with an addend of one. The record sequence at

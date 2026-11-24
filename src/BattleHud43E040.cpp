@@ -30,9 +30,9 @@ void BattleScene::RenderHud() {
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&region);
         if (field08C != 0.0f)
             QUAD->TranslateQuad(0.0f, field08C, 0.0f);
-        tex = reinterpret_cast<HudDirectory43E040*>(&fighters[0]->sequenceSlots)->At(41)->At(0)[3];
+        tex = fighters[0]->sequenceSlots.at(41)->frames.at(0).textureIndex;
         LEFT_DRAWING->DrawQuad(tex, packet, &region, color);
-        tex = reinterpret_cast<HudDirectory43E040*>(&fighters[1]->sequenceSlots)->At(41)->At(0)[3];
+        tex = fighters[1]->sequenceSlots.at(41)->frames.at(0).textureIndex;
         QUAD->ScaleQuad(320.0f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f);
         RIGHT_DRAWING->DrawQuad(tex, packet, &region, color);
 
@@ -136,15 +136,15 @@ void BattleScene::RenderHud() {
                 field099, field099, field099));
         }
 
-        tex = reinterpret_cast<HudDirectory43E040*>(&fighters[0]->sequenceSlots)->At(40)->At(0)[3];
-        nameSlide = float(reinterpret_cast<HudDirectory43E040*>(&fighters[0]->sequenceSlots)->At(40)->At(0)[0]);
+        tex = fighters[0]->sequenceSlots.at(40)->frames.at(0).textureIndex;
+        nameSlide = float(fighters[0]->sequenceSlots.at(40)->frames.at(0).originX);
         SetRect(&region, 0, 0, 128, 16);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f - nameSlide, 72.0f, 128.0f - nameSlide, 88.0f);
         if (field08C != 0.0f)
             QUAD->TranslateQuad(0.0f, field08C, 0.0f);
         LEFT_DRAWING->DrawQuad(tex, packet, &region, color);
-        tex = reinterpret_cast<HudDirectory43E040*>(&fighters[1]->sequenceSlots)->At(40)->At(0)[3];
-        nameSlide = float(reinterpret_cast<HudDirectory43E040*>(&fighters[1]->sequenceSlots)->At(40)->At(1)[0]);
+        tex = fighters[1]->sequenceSlots.at(40)->frames.at(0).textureIndex;
+        nameSlide = float(fighters[1]->sequenceSlots.at(40)->frames.at(1).originX);
         SetRect(&region, 0, 0, 128, 16);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f - nameSlide, 72.0f, 128.0f - nameSlide, 88.0f);
         if (field08C != 0.0f)

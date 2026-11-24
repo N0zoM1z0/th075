@@ -35,8 +35,7 @@ typedef char YukariFighterAllocationSize[sizeof(YukariFighter) == 0x1008 ? 1 : -
 typedef char SuikaFighterAllocationSize[sizeof(SuikaFighter) == 0x1000 ? 1 : -1];
 typedef char MeilingFighterAllocationSize[sizeof(MeilingFighter) == 0x1000 ? 1 : -1];
 
-extern signed char g_RosterAt0067148F[];
-extern signed char g_StoryRosterAt00671490[];
+signed char g_StoryRosterAt00671490[10];
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
 
@@ -64,7 +63,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
       }
       g_CharacterCountAt0067161F=static_cast<signed char>(state.count);
    }
-   g_PlayerIdAt006714C8[1]=g_RosterAt0067148F[g_StageAt0067161E];
+   g_PlayerIdAt006714C8[1]=g_StoryRosterAt00671490[g_StageAt0067161E - 1];
    g_StageSelectionAt0067161D=g_PlayerIdAt006714C8[1];
    if(g_StageSelectionAt0067161D<6) {
       g_StageSelectionAt0067161D+=((rand()<0x4000 || g_PlayerIdAt006714C8[0]==6)?1:0)*10;

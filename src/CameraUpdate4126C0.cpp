@@ -25,6 +25,8 @@ float g_CameraZoomOverrideAt006713F4;
 float g_CombatViewSpan;
 float g_CombatViewOffsetX;
 float g_CombatViewOffsetY;
+float g_CombatOutputXAt006714A8;
+float g_CombatOutputYAt0067142C;
 
 void CameraUpdate4126C0::Advance() {
     g_CameraHorizontalTargetAt006713F0 = 640.0f -

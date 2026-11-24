@@ -24,15 +24,15 @@ void BattleScene::RenderStatus() {
             if (fighters[i]->field3A0 > 0) {
                 if (g_CombatMode == 3 && i == 1) {
                     group = fighters[1]->field370[fighters[1]->field39D] + 42;
-                    nameSlide = float(reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(g_OptionsModeAt006714D0 + 5)[0]);
-                    texture = reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(g_OptionsModeAt006714D0 + 5)[3];
+                    nameSlide = float(fighters[i]->sequenceSlots.at(group)->frames.at(g_OptionsModeAt006714D0 + 5).originX);
+                    texture = fighters[i]->sequenceSlots.at(group)->frames.at(g_OptionsModeAt006714D0 + 5).textureIndex;
                 } else {
                     if (fighters[i]->field39D == 2)
                         group = fighters[i]->field398[0] + 42;
                     else
                         group = fighters[i]->field398[1] + 45;
-                    nameSlide = float(reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(i)[0]);
-                    texture = reinterpret_cast<HudDirectory43E040*>(&fighters[i]->sequenceSlots)->At(group)->At(0)[3];
+                    nameSlide = float(fighters[i]->sequenceSlots.at(group)->frames.at(i).originX);
+                    texture = fighters[i]->sequenceSlots.at(group)->frames.at(0).textureIndex;
                 }
 
                 if (i == 0) {
