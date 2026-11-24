@@ -403,7 +403,7 @@ The current direct-call scan is in
 | --- | --- |
 | `0x0040D8C0`, `0x0040D8E0` | R295 matches both declaration forms across all three callers, their unwind data and both leaves. The forms differ in COFF function records that are absent from the PE. |
 | `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
-| `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
+| `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
 | `0x004138D0`, `0x00441FD0` | Neither empty body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. The original owners are unknown. |
 | `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
@@ -702,6 +702,26 @@ to the input order. The whole native window distinguishes
     bash .analysis/final-origin-review/frame-copy-order/build.sh
     bash .analysis/final-origin-review/frame-copy-order/link.sh
     scripts/repo-python .analysis/final-origin-review/frame-copy-order/compare.py
+
+### R298 — Sprite history constructor emission order
+
+The non-inline constructor definition moves ahead of
+`AppendElement` in the R280 translation unit. An explicit
+constructor in the class and an inline definition outside the class
+both follow `AppendElement` at the same position as the implicit
+constructor. The latter three builds produce the same 89 ordered
+code sections, bytes and relocation records. The comparison checks
+local labels through their defining offsets.
+
+All four builds reproduce the complete append and element
+constructor functions and the 28 typed list helpers. The native
+list context therefore allows either inline form or the implicit
+form. In this case the first construction is in a game function
+that creates a local entry. The two template-led copy cases in
+R296 and R297 placed explicit definitions at different positions.
+
+    bash .analysis/final-origin-review/sprite-constructor-order/replay.sh
+    scripts/repo-python .analysis/final-origin-review/sprite-constructor-order/order.py
 
 ## Historical R263 inventory
 
