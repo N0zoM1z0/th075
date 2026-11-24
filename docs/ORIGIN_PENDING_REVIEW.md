@@ -404,7 +404,7 @@ The current direct-call scan is in
 | `0x0040D8C0`, `0x0040D8E0` | R295 matches both declaration forms across all three callers, their unwind data and both leaves. The forms differ in COFF function records that are absent from the PE. |
 | `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
 | `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
-| `0x004138D0`, `0x00441FD0` | Neither empty body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. The original owners are unknown. |
+| `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
 | `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
@@ -770,7 +770,25 @@ entries and no separately named symbol, map or object file.
     7z l -slt /path/to/th075_111s.exe
     7z t /path/to/th075_111s.exe
     7z x -so /path/to/th075_111s.exe th075.exe | sha256sum
-    scripts/repo-python .analysis/final-origin-review/official-patch-symbols/audit.py
+    scripts/repo-python .analysis/final-origin-review/official-patch-symbols/audit.py /path/to/th075_111s.exe
+
+### R301 — Uncalled empty functions survive debug link retention
+
+An out-of-line destructor and a template member each emit all 11
+bytes at `0x004138D0`. An ordinary function, a static member and
+the pinned STL `_Destroy<unsigned long>` each emit all five bytes
+at `0x00441FD0`. The `_Destroy` instance takes a pointer, so the
+five-byte body also leaves the argument list ambiguous. None of the
+five complete code sections has relocations.
+
+The VC7.1 linker retains all five at distinct addresses with `/DEBUG`
+and `/OPT:NOICF`, both at the default retention setting and with
+`/OPT:NOREF`. `/OPT:REF` removes them all. R292 observes unreferenced
+COMDAT retention in the same target image. The absence of callers
+therefore leaves both ordinary and template origins possible.
+
+    bash .analysis/final-origin-review/empty-hooks/build.sh
+    scripts/repo-python .analysis/final-origin-review/empty-hooks/compare.py
 
 ## Historical R263 inventory
 
