@@ -142,6 +142,14 @@ back-buffer diagnostics use numbered messages for the texture and
 render-to-surface calls. The restoration and device enumeration
 diagnostics use the existing CP932 device terminology.
 
+The compact grayscale shader source assembles to all 104 bytes produced
+by the pinned D3DX8 assembler from the supplied shader. It multiplies
+the texture and vertex colors, computes luminance and preserves their
+combined alpha. The horizontal clipping bounds follow from the
+1280-unit span and the existing opposite bounds. VC7.1 emits startup
+initializers when definitions refer to other float objects. The verified
+literal values keep both definitions in read-only storage.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

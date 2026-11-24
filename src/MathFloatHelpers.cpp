@@ -227,3 +227,8 @@ const float g_F972_YAt00659474 = 122.0f;
 const float g_SakuyaObjectMinXAt006595E0 = -1000.0f;
 const double g_MarisaChainJitterAt00659408 = 0.005;
 const double g_MarisaSparkGrowthLossAt00659440 = 0.07;
+
+// The volley uses an 80-unit margin at each edge of the 1280-unit span.
+extern const float g_MarisaVolleyRightLimitAt006593EC = 1360.0f;
+// The left streak bound mirrors the 2000-unit right bound across that span.
+extern const float g_MarisaStreakLeftLimitAt0065941C = -720.0f;

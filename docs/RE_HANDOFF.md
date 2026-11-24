@@ -23,9 +23,14 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 65 unresolved data symbols. Graphics, input, replay
-and resource-loader diagnostics resolved nine names. All 34 affected
-units cold-replayed exactly.
+stops at `LNK1120` with 60 unresolved data symbols. The grayscale shader,
+two clipping bounds and the texture and replay error definitions resolved
+five names. All nine affected units cold-replayed exactly. A headless
+archive consumer assembled the linked shader, checked the bounds and
+created the replay temporary file.
+
+Graphics, input, replay and resource-loader diagnostics resolved nine
+names. All 34 affected units cold-replayed exactly.
 
 The startup and loader
 logs, record and counter formats, and two D3D diagnostics resolved 32
@@ -78,8 +83,8 @@ Battle rendering calls the history renderer through the same list owner
 that stores its samples.
 The history and music path changes resolved eleven symbols and cold-replayed
 43 units across 25 objects. A headless archive consumer constructed and
-cleared the history owner. The renderer's runtime test still depends on
-unresolved graphics data.
+cleared the history owner. After the graphics data were linked, another
+consumer exercised the empty, skipped-sample and disabled rendering paths.
 
 The readonly data batch
 resolved 57 symbols using literals already present in the source.
@@ -218,10 +223,8 @@ trip, and handle release,
 and the four corners produced by the RECT constructor.
 Use `build/program/link.log` and the relocation targets to find candidate
 definitions. Batch related exact units with `--batch` to compile each
-profile together. Startup resource bindings and transitive scene
-dependencies remain open.
-The graphics and DirectInput error strings and pixel shader are also
-unresolved.
+profile together. The unresolved set contains 51 floating-point symbols
+and nine option or command strings.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
 
 ## Origin review

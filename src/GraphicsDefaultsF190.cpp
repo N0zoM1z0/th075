@@ -6,7 +6,12 @@ namespace Graphics {
 extern IDirect3DDevice8 *g_Device;
 extern signed char g_PixelShaderSupport;
 extern DWORD g_PixelShader;
-extern char g_GrayPixelShaderCodeAt0066C090[];
+char g_GrayPixelShaderCodeAt0066C090[] =
+    "ps.1.0\n"
+    "tex t0\n"
+    "mul r1, v0, t0\n"
+    "dp3 r0, r1, c0\n"
+    "mul r0.a, v0.a, t0.a\n";
 void SetBlendMode(int);
 void SetDepthMode(int);
 void SetTextureFilter(int);
