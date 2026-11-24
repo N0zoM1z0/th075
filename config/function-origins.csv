@@ -2295,8 +2295,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00531C80,library,VC71STL,exclude,complete-original-list-head-and-single-erase-source-owned-graph,R216
 0x00531CB0,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x00531CE0,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175
-0x00531D80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00531D90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00531D80,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R277
+0x00531D90,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R277
 0x00531DA0,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x00531DD0,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x00531DF0,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
@@ -2318,7 +2318,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005322E0,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175
 0x00532300,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x00532320,library,VC71STL,exclude,complete-original-list-head-and-single-erase-source-owned-graph,R216
-0x00532350,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00532350,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R277
 0x00532360,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x00532380,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x005323A0,library,VC71STL,exclude,complete-original-list-head-and-single-erase-source-owned-graph,R216
@@ -2326,11 +2326,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005323E0,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x00532420,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x00532450,library,VC71STL,exclude,complete-original-list-head-and-single-erase-source-owned-graph,R216
-0x00532480,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00532480,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R277
 0x00532490,library,vc7-stl-deque-helpers,exclude,high,R087
 0x005324A0,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x005324C0,library,vc7-stl-vector-operations,exclude,high,R091
-0x00532500,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00532500,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R277
 0x00532510,library,vc7-stl-deque-helpers,exclude,high,R088
 0x00532520,authored,CharacterAux,authored,target-observed,R049
 0x00532950,authored,CharacterAI,authored,target-observed,R047

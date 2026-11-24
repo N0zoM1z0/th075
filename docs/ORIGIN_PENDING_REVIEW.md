@@ -136,6 +136,38 @@ build verifies them with the frame's concrete RECT type.
 Build the frame-copy probe with `/DEXPLICIT_COPY=0` as above, then
 run `scripts/repo-python .analysis/rect-vector-copy/compare.py`.
 
+### R277 — Youmu history list helpers
+
+Youmu's constructor, auxiliary update and round reset reach the same
+`std::list<ObservedInputSnapshotF378>` at `this+0xFEC`. The exact
+auxiliary update calls `push_back` at `0x00530225` and `pop_front`
+at `0x00530246`. The round reset calls `clear` at `0x0052D1E8`.
+The exact resource destructor at `0x0052D020` clears that member and
+then calls its destructor at `0x0052D067`.
+
+The typed `clear` COMDAT calls the complete link accessors at
+`0x00531D80` and `0x00531D90`. The typed `_Insert` and `erase`
+call `const_iterator::_Mynode` at `0x00532350`. The
+node allocator reached from `clear` calls `std::_Destroy` at
+`0x00532480`. Compiling the same list's destructor reproduces the
+path through `_Tidy` and the node-pointer allocator to the second
+`std::_Destroy` specialization at `0x00532500`.
+
+Four authored callers cold-replay exactly. With the concrete snapshot
+type substituted for the generic R216 carrier, 17 complete VC7.1
+sections match the original 879 bytes and all 42 relocation fields.
+The five newly attributed helpers account for 45 library bytes.
+R216's ordinary getter and destruction controls still explain why
+isolated bodies of these sizes cannot establish origin.
+
+The destructor probe invokes `history.~SnapshotList()` on a reference
+to the existing list type. Run these commands from the repository root
+with the headless Wine settings in [SHARED_TOOLS.md](SHARED_TOOLS.md).
+
+    scripts/repo-python scripts/replay-exact-units.py --unit youmu-fighter-initialize-0052cee0 --unit youmu-fighter-reset-round-0052d110 --unit character-aux-queue-and-mode-effects-005301b0 --unit character-resources-clear-and-release-base-0052d020
+    scripts/compile-probe.sh .analysis/pending-origin-2026-11-24/youmu-destroy.cpp build/probes/YoumuListDestroyOrigin.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src
+    scripts/repo-python .analysis/pending-origin-2026-11-24/compare-youmu.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
