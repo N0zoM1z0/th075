@@ -1,6 +1,6 @@
 // Natural-C++ reconstruction of SakuyaObject::Advance at 004CA6E0.
-// All native states are represented; the 42,511-byte body remains NONEXACT.
-// Keep its guarded switch/remap data separately evidenced; no exactness credit.
+// Replays 42,511 code bytes plus 422 bytes of switch data with VC7.1 build 3077.
+// Compiler profile and relocation bindings are in config/match-units.toml.
 #include "CharacterObject.hpp"
 #include "SakuyaFighter.hpp"
 
@@ -539,6 +539,9 @@ void SakuyaObject::Advance()
             x = facing * velocityX + x;
             y -= velocityY;
             ++field0D8;
+            if (animationStage == 0 && animationFrame != 0) {
+                // Later startup frames proceed to the same arena bounds check.
+            }
             if (x > g_SakuyaObjectMaxXAt006583D8 || x < g_SakuyaObjectMinXAt006595E0 || y > g_SakuyaObjectMaxYAt006583B4 || y < g_SakuyaObjectMinYAt006595EC) {
                 ClearFrameInfo();
                 return;

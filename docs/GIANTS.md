@@ -2,7 +2,7 @@
 
 The unmatched authored functions are slot-1 `Advance` methods from
 the fighter and character-object vtables. They are per-frame state
-machines with large `switch (action)` bodies. The Alice, Remilia,
+machines with large `switch (action)` bodies. The Sakuya, Alice, Remilia,
 Meiling and Suika object parents now have exact replay units. Use the live
 reconstruction report for the authored backlog and the table below
 for complete source parents.
@@ -76,7 +76,7 @@ rows have complete replay units.
 | 004AC040 | Sakuya fighter | 82,796 | `FighterWhole004AC040F1020.cpp` (`/GX`) | 6,958 | 12 | 004ADEFA (#2180) |
 | 005214B0 | Youmu fighter | 46,755 | `YoumuFighterAdvanceF1040.cpp` | 2,736 | 5 | 0052327A (#2103) |
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` | 1,741 | 3 | 00545109 (#2198) |
-| 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` | 447 | 12 | 004CCBD7 (#2526) |
+| 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` | 522 | 5 | 00515C0E (#10128) |
 | 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` | 913 | 10 | 005392F8 (#3223) |
@@ -1854,4 +1854,32 @@ branch destinations match. The exact ledger credits 43,501 code bytes.
 
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit suika-object-advance-005c9cc0
+```
+
+## 2026-11-24 — Sakuya's arena bounds check cold-replays exactly
+
+Action 808 explicitly lets later frames of the startup stage proceed
+to the same arena bounds check. The condition
+`animationStage == 0 && animationFrame != 0` follows the movement
+counter update. VC7.1 build 3077 emits no instructions for the empty
+path and restores ECX at the receiver reload at `004CCBD7`. The
+counter increment and four strict arena comparisons match their
+original instructions, order and operand widths.
+
+In the baseline, the first receiver reload for the bounds used EAX.
+The resulting register difference carried through actions 809–811.
+Writing the counter as a postfix increment gave the same baseline.
+A separate empty test for equality at the right edge emitted two x87
+loads and `fucompp`, adding ten code bytes. The later-startup
+condition removes all 447 register and twelve width differences
+in the complete function.
+
+The cold replay compares 42,933 bytes with zero differences and
+matches all 929 relocation fields. This covers 42,511 code bytes,
+the 224-byte jump table at `004D4CEF` and the 198-byte remap at
+`004D4DCF`. The full audit also checks all 198 action offsets and
+1,014 direct branch destinations.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit sakuya-object-advance-004ca6e0
 ```

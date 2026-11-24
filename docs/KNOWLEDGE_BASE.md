@@ -228,6 +228,12 @@ before adding the base, in a different instruction order.
   the second, and the second yields matching table offsets while 106
   instruction bytes still differ in 929. Compare the complete extent
   after each change. [Suika controls](GIANTS.md#2026-11-24--suikas-three-startup-joins-cold-replay-exactly)
+- An eliminated condition can change registers between two consecutive
+  statements. Sakuya's explicit later startup frames in action 808
+  restore the first reload for the bounds check after a matching
+  counter increment. An empty floating-point boundary test at that
+  position still emits its x87 comparison.
+  [Sakuya controls](GIANTS.md#2026-11-24--sakuyas-arena-bounds-check-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

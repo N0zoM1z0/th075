@@ -70,6 +70,13 @@ relocations. Explicit later frames of the startup stage in actions
 918, 928 and 929 restore all three register joins. The replay adds
 43,501 authored code bytes. [Whole-function controls and replay](GIANTS.md#2026-11-24--suikas-three-startup-joins-cold-replay-exactly)
 
+### Sakuya object Advance is exact
+
+`sakuya-object-advance-004ca6e0` cold-replays 42,933 bytes with all 929
+relocations. Explicitly handling later startup frames in action 808
+restores the original registers at the arena bounds check and adds
+42,511 authored code bytes. [Comparison and replay](GIANTS.md#2026-11-24--sakuyas-arena-bounds-check-cold-replays-exactly)
+
 ### Latest Yuyuko improvement
 
 In `probes/CharacterObjectActions0057D580F1237.cpp`, state 838's condition
@@ -214,7 +221,7 @@ The complete but nonexact parents are:
 
 - Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
   Remilia `00543210`.
-- Objects: Sakuya `004CA6E0`, Patchouli `0050A580`, Youmu `00536400`,
+- Objects: Patchouli `0050A580`, Youmu `00536400`,
   Yuyuko `0057D580`, Yukari `005A1600`.
 
 The nine remaining functions without a complete parent are:
@@ -227,7 +234,7 @@ The nine remaining functions without a complete parent are:
   (71,616 bytes), Meiling `005D73C0` (43,282 bytes).
 
 `docs/GIANTS.md` records the full sources, original extents and
-previous experiments, including the rejected Sakuya 809/810 variants.
+previous experiments.
 
 ## Recent source checkpoints
 

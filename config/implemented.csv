@@ -990,3 +990,4 @@ SakuyaFighter::Advance
 ReimuFighter::AdvanceActionStatesAt0045DD70
 MeilingObject::Advance
 SuikaObject::Advance
+SakuyaObject::Advance
