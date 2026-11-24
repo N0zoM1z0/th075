@@ -405,7 +405,7 @@ The current direct-call scan is in
 | `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
 | `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
-| `0x004251C0`, `0x00449DE0` | The original scene and stage vtable stores and the real member calls identify constructor contexts. Both R108 declaration forms reproduce them. |
+| `0x004251C0`, `0x00449DE0` | R302 matches both constructors, their first complete derived callers, and the adjacent vtables and unwind records. Late explicit definitions restore the native constructor offsets. The deleting destructors still occupy different linked slots. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
 | `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
@@ -789,6 +789,43 @@ therefore leaves both ordinary and template origins possible.
 
     bash .analysis/final-origin-review/empty-hooks/build.sh
     scripts/repo-python .analysis/final-origin-review/empty-hooks/compare.py
+
+### R302 — Scene and stage constructor order through the first derived class
+
+The first scene caller is the Battle End constructor at `0x00424E00`.
+The probe includes every complete code body from that entry through the
+next derived constructor at `0x004251F0`, all three vtables and both
+complete exception records. Five base declaration forms reproduce
+1,289 bytes and bind 113 relocation operands to the native destinations.
+The original scene base table has three `_purecall` slots. A pure
+virtual destructor reproduces that table while the exception paths
+call the separate destructor body at `0x00431F40`.
+
+The stage probe includes every complete code body from the first BG00a
+constructor at `0x00449AA0` through the base constructor at `0x00449DE0`,
+both six-slot vtables and the complete BG00a exception record. The five
+declaration forms reproduce 927 bytes and bind 59 relocation operands.
+The pinned linker resolves the weak vector-deleting names in the
+vtables to the corresponding scalar-deleting functions.
+
+The scratch links use unresolved externals solely to read section order
+from the maps. Byte comparisons bind the object relocations separately.
+In both windows the implicit constructor moves ahead of the next native
+derived method. A late explicit definition puts it back at the native
+relative offset (`+0x3C0` in Scene and `+0x340` in Stage). The first code
+order mismatch in those links is the slot immediately after the first
+derived constructor. Each link puts a deleting destructor there. The
+native windows start that slot with the Battle End destructor and the
+BG00a no-op virtual, respectively. Switching the stage probe to `/Gy-`
+or `/Z7` preserves these offsets. Reproducing the placement of the
+deleting destructors remains the missing control for an origin decision.
+
+    bash .analysis/final-origin-review/scene-ctor-order/build.sh
+    scripts/repo-python .analysis/final-origin-review/scene-ctor-order/compare.py
+    bash .analysis/final-origin-review/stage-ctor-order/build.sh
+    bash .analysis/final-origin-review/stage-ctor-order/build.sh packed
+    bash .analysis/final-origin-review/stage-ctor-order/build.sh embedded
+    scripts/repo-python .analysis/final-origin-review/stage-ctor-order/compare.py
 
 ## Historical R263 inventory
 

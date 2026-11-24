@@ -223,6 +223,11 @@ record found in either package.
 [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 [Publisher patch check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
 
+R302 places both scene and stage base constructors at their native
+offsets with late explicit definitions. The adjacent deleting
+destructors still link early in both probes.
+[Constructor order controls](ORIGIN_PENDING_REVIEW.md#r302--scene-and-stage-constructor-order-through-the-first-derived-class)
+
 R294 identifies `0x00641FB8` as the inferred CRT `labs` contribution
 from the native request order and the full 1,140-byte linked interval.
 The outer wrapper remains unresolved.
