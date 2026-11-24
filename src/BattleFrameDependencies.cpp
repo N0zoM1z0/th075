@@ -2,6 +2,9 @@
 #include "BattleFrameDependencies.hpp"
 #include "BattleStatusFloatPairF1096.hpp"
 #define COLLISION reinterpret_cast<BattleScene *>(this)
+signed char g_LeftBoundaryOwner = -1;
+signed char g_RightBoundaryOwner = -1;
+
 void BattleScene::ResolveBodySeparation()
 {
     float vx1 = fighters[0]->velocityX;

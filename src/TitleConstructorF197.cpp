@@ -8,7 +8,6 @@
 
 extern const char g_TitleTextureDataAt006582F0[];
 extern const char g_TitleTextureRootAt006582E8[];
-extern unsigned char g_TitleMenuSelectionAt00671630;
 
 TitleScene::TitleScene()
 {
@@ -24,7 +23,7 @@ TitleScene::TitleScene()
     field021 = 5;
     field022 = 5;
     field023 = 5;
-    menuIndex = g_TitleMenuSelectionAt00671630;
+    menuIndex = reinterpret_cast<const unsigned char&>(g_TitleSelectionAt00671630);
     itemDelay[0] = 0;
     itemDelay[1] = 15;
     itemDelay[2] = 30;

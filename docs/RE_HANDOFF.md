@@ -24,8 +24,10 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 919 unresolved externals. The latest batch
-resolved 130 names and cold-replayed 196 units across 119 objects.
+stops at `LNK1120` with 885 unresolved externals. The latest batch
+resolved 34 state names and cold-replayed 62 units across 42 objects.
+Battle and results share the score and flow state. The title menu,
+replay browser and audio reader have their original startup values.
 Projected drawing and camera snap share the existing read-only values.
 The round-field writer uses the same signed declaration as its callers.
 All fifteen scene allocations in WinMain call their constructors through

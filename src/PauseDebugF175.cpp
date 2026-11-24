@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "BattleScene.hpp"
@@ -9,7 +10,6 @@
 
 // Reference-only byte views from complete native accesses; no allocation or
 // original global identity is established by these provisional names.
-extern unsigned char g_RoundSelectionAt006714CE;
 // The dword lies in the PE's uninitialized virtual data tail. No file payload
 // is asserted; native comparisons/increments/stores establish this used view.
 extern unsigned int g_DebugKeyRepeatAt0068D618;
@@ -38,7 +38,7 @@ void BattleScene::HandlePauseMenu()
                 break;
             case 1:
                 if (field018 == 12) {
-                    g_RoundSelectionAt006714CE = 0;
+                    g_StateReturnFlag = 0;
                     field018 = 14;
                     break;
                 }
@@ -46,7 +46,7 @@ void BattleScene::HandlePauseMenu()
                 break;
             case 2:
                 if (field018 == 12) {
-                    g_RoundSelectionAt006714CE = 1;
+                    g_StateReturnFlag = 1;
                     field018 = 14;
                 } else {
                     field018 = 8;

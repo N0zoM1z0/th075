@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "GameSharedState.hpp"
 #include "BattleScene.hpp"
 #include "ProgressPauseF174.hpp"
@@ -6,7 +7,6 @@
 #include "FighterVirtualActionsF159.hpp"
 
 // Existing unsigned byte view, written from the observed scene pause byte.
-extern unsigned char g_RenderByte0067161C;
 
 #define HELD_BUTTON g_InputMappings[i].held.counts[2 + j]
 

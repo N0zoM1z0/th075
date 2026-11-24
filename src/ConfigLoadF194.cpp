@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "PlayerState.hpp"
 #include "GameConfigStorage.hpp"
 #include "BattleSessionState.hpp"
@@ -48,6 +49,14 @@ unsigned char g_PlayerDifficultyAt00671438[2];
 signed char g_PlayerSettingsAt00671434[2];
 short g_RecordSequenceAt006714A4;
 FighterNativeF398* g_BattleFightersAt00671418[2];
+
+unsigned long g_StateScoreThreshold;
+unsigned long g_MaxCombatScore;
+short g_MaxComboCount;
+signed char g_StateReturnFlag;
+unsigned int g_ResultScoreTotalAt0067160C;
+unsigned char g_RenderByte0067161C;
+signed char g_StoryChoiceAt00671620;
 
 namespace GameConfigF193 {
 void ReadIni()

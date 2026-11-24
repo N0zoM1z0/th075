@@ -10,8 +10,8 @@
 // their native stack allocations after saved this and script-kind.
 // The full mode, notice, stage-change, event-bit, and original active-input
 // behavior was independently decoded before comparison.
-extern signed char g_ActionLastIndexAt0066C24F;
-extern signed char g_ActionLastBitAt0066C24E;
+signed char g_ActionLastIndexAt0066C24F = -1;
+signed char g_ActionLastBitAt0066C24E = -1;
 unsigned char Fighter::ProcessAction() {
   signed char mask,number,bit;
   if(scriptIndex>=script.CountPatternEntries(scriptId) || scriptIndex<0) {

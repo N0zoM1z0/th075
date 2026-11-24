@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "BattleSessionState.hpp"
 #include "GameProgress.hpp"
 #include "KnockoutProgressF172.hpp"
@@ -7,7 +8,6 @@
 // Existing byte storage keeps its canonical unsigned carrier. The continuation
 // test below explicitly uses the signed byte interpretation observed here.
 // Observed dword accumulation; original name and signedness remain unknown.
-extern unsigned int g_KnockoutAccumulationAt0067160C;
 
 #define CARD_RECORDS (&g_GameProgress)
 
@@ -50,7 +50,7 @@ void BattleScene::ResolveKnockout()
                         fighters[1]->field3A4);
                 }
             }
-            g_KnockoutAccumulationAt0067160C += fighters[1]->field3A8;
+            g_ResultScoreTotalAt0067160C += fighters[1]->field3A8;
             fighters[0]->score = static_cast<int>(
                 static_cast<unsigned long>(fighters[0]->score) + fighters[1]->field3A4);
             if (fighters[0]->score > g_MaxCombatScore)

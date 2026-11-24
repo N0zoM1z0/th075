@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "Graphics.hpp"
@@ -11,7 +12,6 @@ class BackgroundDrawingF179 {
 public:
 };
 // Reference-only observed byte views. No original names or ownership claimed.
-extern signed char g_BackgroundPadFrameAt00671620;
 
 // All used animation and overlay fields share the scene layout.
 #define QUAD reinterpret_cast<SpriteTransform*>(&spriteQuad)
@@ -180,8 +180,8 @@ void CharacterSelectScene::Render()
                                  INVERSE_ALPHA(portraitReturn[0], 100.0f, 255));
         }
         if (g_StoryResultAt00671621 != 0) {
-            SetRect(&clipRect, 144, g_BackgroundPadFrameAt00671620 * 32 - 32,
-                    224, g_BackgroundPadFrameAt00671620 * 32);
+            SetRect(&clipRect, 144, g_StoryChoiceAt00671620 * 32 - 32,
+                    224, g_StoryChoiceAt00671620 * 32);
             QUAD->BuildQuad(0.0f, 0.0f, 80.0f, 32.0f);
             QUAD->TranslateQuad(530.0f, 400.0f, 0.0f);
             menuTextures->DrawQuad(6, spriteQuad, &clipRect, 0xFFFFFFFF);

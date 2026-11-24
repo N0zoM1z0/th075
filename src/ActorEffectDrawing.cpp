@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "BattleSessionState.hpp"
 #include "TextureManagerF198.hpp"
 #include "Fighter.hpp"
@@ -15,7 +16,6 @@ public:
 };
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
-extern unsigned char g_RenderByte0067161C;
 
 #define DRAWING reinterpret_cast<FighterDrawingF126*>(drawing)
 #define HISTORY reinterpret_cast<FighterHistoryF126*>(field480)

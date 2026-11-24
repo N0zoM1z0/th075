@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "GameConfigStorage.hpp"
@@ -48,11 +49,6 @@ class Fighter9F398 : public FighterNativeF398 {public:Fighter9F398(); private:un
 class Fighter10F398: public FighterNativeF398 {public:Fighter10F398(); private:unsigned char observedNativeAllocation[0x1000-sizeof(FighterNativeF398)];};
 extern signed char g_RosterAt0067148F[];
 extern signed char g_StoryRosterAt00671490[];
-extern signed char g_StoryChoiceAt00671620;
-extern short g_StoryCounterAt006714C0;
-extern int g_StoryTransitionsAt0067160C;
-extern unsigned int g_PlayerScoreAt006714B0;
-extern unsigned int g_RankAt00671420;
 extern const char g_LoadCharacterLogAt00657A30[];
 extern const char g_LoadCharactersDoneAt00657A44[];
 extern void CameraAttachAt00412660(float*,float*,float*,float*);
@@ -172,24 +168,24 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        g_SequenceCounterAt00671622=2;
        g_GameProgress.SetSelection(g_PlayerIdAt006714C8[0],g_OptionsModeAt006714D0);
        F(int,g_BattleFightersAt00671418[0],0x2D0)=0;
-       g_PlayerScoreAt006714B0=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;
-       g_RankAt00671420=g_GameProgress.GetSelectedRecordAddress()->scores[9].score;
+       g_MaxCombatScore=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;
+       g_StateScoreThreshold=g_GameProgress.GetSelectedRecordAddress()->scores[9].score;
        if(g_ReplayModeAt0066C238!=2) g_GameProgress.IncrementSelectedRecordCount();
        F(short,g_BattleFightersAt00671418[0],0x326)=10000;
        F(short,g_BattleFightersAt00671418[0],0x324)=10000;
    }
-   g_StoryCounterAt006714C0=0;g_StoryTransitionsAt0067160C=0;g_CumulativeScoreAt006714BC=0;
+   g_MaxComboCount=0;g_ResultScoreTotalAt0067160C=0;g_CumulativeScoreAt006714BC=0;
    for(int k=1;k<=F(signed char,g_BattleFightersAt00671418[1],0x39D);++k)
      g_CumulativeScoreAt006714BC+=F(int,g_BattleFightersAt00671418[1],0x400+k*4);
    if(g_ReplayModeAt0066C238==2) {
-     g_PlayerScoreAt006714B0=0;g_RankAt00671420=0;
+     g_MaxCombatScore=0;g_StateScoreThreshold=0;
      F(short,g_BattleFightersAt00671418[0],0x326)=g_ReplayRecords.header.field14C;
      F(short,g_BattleFightersAt00671418[0],0x324)=g_ReplayRecords.header.field14C;
      F(unsigned int,g_BattleFightersAt00671418[0],0x2D0)=g_ReplayRecords.header.field150;
    } else {g_GameProgress.RaiseSelectedValue(g_StageAt0067161E);g_GameProgress.SaveScoreFile();}
  } else {
    F(int,g_BattleFightersAt00671418[0],0x2D0)=0;F(int,g_BattleFightersAt00671418[1],0x2D0)=0;
-   g_PlayerScoreAt006714B0=0;g_RankAt00671420=0;g_StateFadeAlpha=0;
+   g_MaxCombatScore=0;g_StateScoreThreshold=0;g_StateFadeAlpha=0;
    F(short,g_BattleFightersAt00671418[0],0x326)=10000;F(short,g_BattleFightersAt00671418[0],0x324)=10000;
    F(short,g_BattleFightersAt00671418[1],0x326)=10000;F(short,g_BattleFightersAt00671418[1],0x324)=10000;
  }

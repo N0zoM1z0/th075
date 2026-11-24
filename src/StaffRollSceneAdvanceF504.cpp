@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "SequenceScenes.hpp"
 #include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
@@ -14,8 +15,6 @@
 // native JAE at 0x4A to the time-reset block at 0xB6, without jumps.
 // Complete original game staff-roll scene advancement / ending score policy.
 // Borrowed native stage, time and fighter score ABIs only.
-extern signed char g_ReplayNameModeAt006714CE;
-extern unsigned int g_StaffRollBestScoreAt00671420;
 unsigned short StaffRollScene::Update() {
     PollSkipInput();
     Render();
@@ -26,9 +25,9 @@ unsigned short StaffRollScene::Update() {
             MusicF204::PlayTrackByIndex(40);
             AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
             if (g_BattleFightersAt00671418[0]) {
-            if (g_ContinueCountAt00671623<3) g_ReplayNameModeAt006714CE=0;
-            else g_ReplayNameModeAt006714CE=-1;
-            if (reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score>g_StaffRollBestScoreAt00671420)
+            if (g_ContinueCountAt00671623<3) g_StateReturnFlag=0;
+            else g_StateReturnFlag=-1;
+            if (reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score>g_StateScoreThreshold)
                 return 0x110A;
             return 0x1107;
         }

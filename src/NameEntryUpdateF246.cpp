@@ -1,8 +1,8 @@
+#include "BattleResultState.hpp"
 #include "NameEntryScenes.hpp"
 #include "GameProgress.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
-extern signed char g_NameEntryExtraFlagAt006714CE;
 #define SELECTION_CODE (static_cast<int>(field010)+static_cast<int>(field012)*26)
 unsigned short PlayerNameEntryScene::Update()
 {
@@ -17,7 +17,7 @@ unsigned short PlayerNameEntryScene::Update()
         } else if (SELECTION_CODE==0x5c) {
             g_GameProgress.SaveScoreFile();
             g_GameProgress.LoadWorkingEightBytes(rank);
-            if (g_NameEntryExtraFlagAt006714CE) return 0x2207;
+            if (g_StateReturnFlag) return 0x2207;
             return 0x2202;
         } else {
             if (field014>7)

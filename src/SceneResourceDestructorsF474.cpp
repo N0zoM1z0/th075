@@ -12,7 +12,7 @@ ResultScene::~ResultScene() { if(textures) delete static_cast<SceneTextureF474*>
 StaffRollScene::~StaffRollScene() { if(texture) delete texture; }
 
 // The title scene keeps its menu selection for the next visit.
-extern short g_TitleSelectionAt00671630;
+short g_TitleSelectionAt00671630;
 TitleScene::~TitleScene() {
   g_TitleSelectionAt00671630=menuIndex;
   if(textures) delete static_cast<SceneTextureF474*>(textures);

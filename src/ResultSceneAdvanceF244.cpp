@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "FloatConstants.hpp"
 #include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
@@ -9,8 +10,6 @@
 #include <windows.h>
 #include "Fighter.hpp"
 #include "ResultScene.hpp"
-extern unsigned int g_ResultBestAt006714B0;
-extern unsigned char g_ResultLeaveAt006714CE;
 namespace ResultPresentationF244 {
 }
 unsigned short ResultScene::Update()
@@ -45,8 +44,8 @@ unsigned short ResultScene::Update()
             field038=0;
             field040=7;
         } else {
-            if (static_cast<unsigned int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score)>g_ResultBestAt006714B0)
-                g_ResultBestAt006714B0=reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
+            if (static_cast<unsigned int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score)>g_MaxCombatScore)
+                g_MaxCombatScore=reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
             if (g_ReplayModeAt0066C238==2 && g_StageAt0067161E>=g_ReplayRecords.fileHeader.recordCount) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
@@ -55,7 +54,7 @@ unsigned short ResultScene::Update()
             if (g_StoryResultAt00671621) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
-                g_ResultLeaveAt006714CE=0xff;
+                g_StateReturnFlag=-1;
                 return 0x2207;
             }
             if ((reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field713)>=8) {

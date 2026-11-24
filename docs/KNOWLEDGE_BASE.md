@@ -164,6 +164,15 @@ the deleting destructor in fighter vtable slot five. A headless consumer
 saved a two-player snapshot, cleared both players' state, and restored
 all twelve bytes and the stage selection from the test file.
 
+`BattleResultState.hpp` declares the shared score, combo and scene-flow
+storage. The battle code accumulates the value at `0x0067160C` as an
+unsigned 32-bit integer and the result constructor interprets it as
+signed before the floating-point conversion. The title scene writes the
+16-bit cursor at `0x00671630` on exit and reads its low byte on entry.
+The four signed boundary and action sentinels at `0x0066C24C` through
+`0x0066C24F` start at minus one. The remaining definitions in this batch
+start at zero.
+
 Standard iterators reproduce the append writer's 1,252-byte size,
 379 instructions and 50 relocation fields. The remaining differences
 are stack operands for the iterator locals. Changing names, declaration

@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "Fighter.hpp"
 #include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
@@ -12,7 +13,6 @@ extern const char g_CharacterTextureDataAt0065820C[];
 extern const char g_CharacterTextureRootAt00658204[];
 extern const char g_BackgroundTextureDataAt00658230[];
 extern const char g_BackgroundTextureRootAt00658228[];
-extern unsigned char g_FramePadAt00671620;
 namespace GameConfigF193 { void ReadIni(); }
 CharacterSelectScene::CharacterSelectScene()
 {
@@ -34,7 +34,7 @@ CharacterSelectScene::CharacterSelectScene()
     (backgroundTextures)->AllocateUnformattedSlots(17);
     (backgroundTextures)->LoadDefault(g_BackgroundTextureDataAt00658230,g_BackgroundTextureRootAt00658228);
     g_ReplayModeAt0066C238=1;
-    g_FramePadAt00671620=0;
+    g_StoryChoiceAt00671620=0;
     g_ContinueUsedAt00671624=0;
     GameConfigF193::ReadIni();
     int i;

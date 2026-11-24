@@ -1,3 +1,4 @@
+#include "BattleResultState.hpp"
 #include "BattleEndScene.hpp"
 #include "Fighter.hpp"
 #include "PlayerState.hpp"
@@ -6,7 +7,6 @@
 #include "TextOverlay.hpp"
 #include <windows.h>
 
-extern unsigned char g_StatusAt006714CE;
 extern const char g_EndTitleAt00657B7B[];
 
 BattleEndScene::BattleEndScene()
@@ -18,13 +18,13 @@ BattleEndScene::BattleEndScene()
     reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->ConfigureStage();
     reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->LoadStageResource();
     if (g_StageAt0067161E==8) {
-        g_StatusAt006714CE=0;
+        g_StateReturnFlag=0;
         g_GameProgress.SetUnlockBit(g_PlayerIdAt006714C8[0]);
     } else if (g_StageAt0067161E==9) {
-        g_StatusAt006714CE=0;
+        g_StateReturnFlag=0;
         g_GameProgress.SetUnlockBit(g_PlayerIdAt006714C8[0]+20);
     } else {
-        g_StatusAt006714CE=0xff;
+        g_StateReturnFlag=-1;
         g_GameProgress.IncrementSelectedRecord();
         g_GameProgress.SetUnlockBit(g_PlayerIdAt006714C8[0]+40);
     }

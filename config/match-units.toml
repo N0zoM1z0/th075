@@ -26369,12 +26369,12 @@ target = 0x0043D3B0
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 290
 type = "DIR32"
-symbol = "?g_KnockoutAccumulationAt0067160C@@3IA"
+symbol = "?g_ResultScoreTotalAt0067160C@@3IA"
 target = 0x0067160C
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 302
 type = "DIR32"
-symbol = "?g_KnockoutAccumulationAt0067160C@@3IA"
+symbol = "?g_ResultScoreTotalAt0067160C@@3IA"
 target = 0x0067160C
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 356
@@ -26765,12 +26765,12 @@ target = 0x00671622
 [[units.battle-handle-pause-menu-004461d0.relocations]]
 offset = 232
 type = "DIR32"
-symbol = "?g_RoundSelectionAt006714CE@@3EA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.battle-handle-pause-menu-004461d0.relocations]]
 offset = 269
 type = "DIR32"
-symbol = "?g_RoundSelectionAt006714CE@@3EA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.battle-handle-pause-menu-004461d0.relocations]]
 offset = 316
@@ -30125,12 +30125,12 @@ target = 0x00671621
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6233
 type = "DIR32"
-symbol = "?g_BackgroundPadFrameAt00671620@@3CA"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
 target = 0x00671620
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6249
 type = "DIR32"
-symbol = "?g_BackgroundPadFrameAt00671620@@3CA"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
 target = 0x00671620
 [[units.battle-render-background-00435a70.relocations]]
 offset = 6274
@@ -33528,7 +33528,7 @@ target = 0x0040BB80
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 233
 type = "DIR32"
-symbol = "?g_TitleMenuSelectionAt00671630@@3EA"
+symbol = "?g_TitleSelectionAt00671630@@3FA"
 target = 0x00671630
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 382
@@ -36934,7 +36934,7 @@ target = 0x0066C238
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 480
 type = "DIR32"
-symbol = "?g_FramePadAt00671620@@3EA"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
 target = 0x00671620
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 487
@@ -38235,7 +38235,7 @@ target = 0x006714C8
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 150
 type = "DIR32"
-symbol = "?g_PlayerPadAt00671620@@3EA"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
 target = 0x00671620
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 156
@@ -38250,7 +38250,7 @@ target = 0x006714AC
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 221
 type = "DIR32"
-symbol = "?g_PlayerPadAt00671620@@3EA"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
 target = 0x00671620
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 230
@@ -39565,12 +39565,12 @@ target = 0x00671418
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 197
 type = "DIR32"
-symbol = "?g_ResultScoreTotalAt0067160C@@3HA"
+symbol = "?g_ResultScoreTotalAt0067160C@@3IA"
 target = 0x0067160C
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 206
 type = "DIR32"
-symbol = "?g_ResultScoreTotalAt0067160C@@3HA"
+symbol = "?g_ResultScoreTotalAt0067160C@@3IA"
 target = 0x0067160C
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 212
@@ -39585,12 +39585,12 @@ target = 0x0065747C
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 231
 type = "DIR32"
-symbol = "?g_ResultBonusAt006714C0@@3FA"
+symbol = "?g_MaxComboCount@@3FA"
 target = 0x006714C0
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 244
 type = "DIR32"
-symbol = "?g_ResultBonusAt006714C0@@3FA"
+symbol = "?g_MaxComboCount@@3FA"
 target = 0x006714C0
 [[units.result-scene-initialize-0042e640.relocations]]
 offset = 256
@@ -39776,7 +39776,7 @@ target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 460
 type = "DIR32"
-symbol = "?g_ResultBestAt006714B0@@3IA"
+symbol = "?g_MaxCombatScore@@3KA"
 target = 0x006714B0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 468
@@ -39786,7 +39786,7 @@ target = 0x00671418
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 479
 type = "DIR32"
-symbol = "?g_ResultBestAt006714B0@@3IA"
+symbol = "?g_MaxCombatScore@@3KA"
 target = 0x006714B0
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 486
@@ -39831,7 +39831,7 @@ target = 0x00407E60
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 599
 type = "DIR32"
-symbol = "?g_ResultLeaveAt006714CE@@3EA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.result-scene-advance-0042e8f0.relocations]]
 offset = 615
@@ -40211,7 +40211,7 @@ target = 0x00416E80
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 208
 type = "DIR32"
-symbol = "?g_NameEntryExtraFlagAt006714CE@@3CA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 433
@@ -43906,7 +43906,7 @@ target = 0x0067161E
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 178
 type = "DIR32"
-symbol = "?g_StatusAt006714CE@@3EA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 187
@@ -43931,7 +43931,7 @@ target = 0x0067161E
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 218
 type = "DIR32"
-symbol = "?g_StatusAt006714CE@@3EA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 226
@@ -43951,7 +43951,7 @@ target = 0x00416CE0
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 248
 type = "DIR32"
-symbol = "?g_StatusAt006714CE@@3EA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 254
@@ -54129,7 +54129,7 @@ target = 0x0041A240
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2773
 type = "DIR32"
-symbol = "?g_PlayerScoreAt006714B0@@3IA"
+symbol = "?g_MaxCombatScore@@3KA"
 target = 0x006714B0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2778
@@ -54144,7 +54144,7 @@ target = 0x0041A240
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2795
 type = "DIR32"
-symbol = "?g_RankAt00671420@@3IA"
+symbol = "?g_StateScoreThreshold@@3KA"
 target = 0x00671420
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2802
@@ -54174,12 +54174,12 @@ target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2853
 type = "DIR32"
-symbol = "?g_StoryCounterAt006714C0@@3FA"
+symbol = "?g_MaxComboCount@@3FA"
 target = 0x006714C0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2861
 type = "DIR32"
-symbol = "?g_StoryTransitionsAt0067160C@@3HA"
+symbol = "?g_ResultScoreTotalAt0067160C@@3IA"
 target = 0x0067160C
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2871
@@ -54214,12 +54214,12 @@ target = 0x0066C238
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2957
 type = "DIR32"
-symbol = "?g_PlayerScoreAt006714B0@@3IA"
+symbol = "?g_MaxCombatScore@@3KA"
 target = 0x006714B0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2967
 type = "DIR32"
-symbol = "?g_RankAt00671420@@3IA"
+symbol = "?g_StateScoreThreshold@@3KA"
 target = 0x00671420
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2976
@@ -54289,12 +54289,12 @@ target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3095
 type = "DIR32"
-symbol = "?g_PlayerScoreAt006714B0@@3IA"
+symbol = "?g_MaxCombatScore@@3KA"
 target = 0x006714B0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3105
 type = "DIR32"
-symbol = "?g_RankAt00671420@@3IA"
+symbol = "?g_StateScoreThreshold@@3KA"
 target = 0x00671420
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3115
@@ -55521,7 +55521,7 @@ target = 0x0040BB80
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 189
 type = "DIR32"
-symbol = "?g_ReplayNameModeAt006714CE@@3CA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 221
@@ -56672,7 +56672,7 @@ target = 0x00671418
 [[units.battle-end-scene-update-00424f60.relocations]]
 offset = 120
 type = "DIR32"
-symbol = "?g_BestResultScoreAt00671420@@3IA"
+symbol = "?g_StateScoreThreshold@@3KA"
 target = 0x00671420
 
 
@@ -60237,12 +60237,12 @@ target = 0x00671623
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 131
 type = "DIR32"
-symbol = "?g_ReplayNameModeAt006714CE@@3CA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 140
 type = "DIR32"
-symbol = "?g_ReplayNameModeAt006714CE@@3CA"
+symbol = "?g_StateReturnFlag@@3CA"
 target = 0x006714CE
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 146
@@ -60252,7 +60252,7 @@ target = 0x00671418
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 158
 type = "DIR32"
-symbol = "?g_StaffRollBestScoreAt00671420@@3IA"
+symbol = "?g_StateScoreThreshold@@3KA"
 target = 0x00671420
 [[units.staffroll-scene-complete-advance-00438c20.relocations]]
 offset = 184

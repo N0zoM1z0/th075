@@ -26,4 +26,6 @@ public:
     unsigned char itemDelay[10];        // +0x02E per menu item, frames before it slides in
     signed char menuIndex;              // +0x038 the selected item
 };
+extern short g_TitleSelectionAt00671630;
+extern signed char g_TitleAttractSwitchAt00671633;
 #endif

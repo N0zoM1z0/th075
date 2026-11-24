@@ -11,8 +11,8 @@
 namespace SoundCreation406A20 {
     bool __cdecl Create(const WAVEFORMATEX*, const void*, DWORD, IDirectSoundBuffer8**, DWORD);
 }
-extern BYTE archiveReadRequested;
-extern BYTE archiveReadActive;
+BYTE archiveReadRequested;
+BYTE archiveReadActive;
 typedef char WaveFormatSize[(sizeof(WAVEFORMATEX) == 18) ? 1 : -1];
 #define LOOP_VALUE_AT(i) (static_cast<DWORD>(header[(i) + 16]) + \
     (static_cast<DWORD>(header[(i) + 17]) << 8) + \

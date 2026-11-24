@@ -15,7 +15,7 @@
 namespace Graphics { void Present(); }
 
 extern HWND g_GameMainWindowAt00671608;
-extern signed char g_TitleAttractSwitchAt00671633;
+signed char g_TitleAttractSwitchAt00671633;
 
 #define SIDE_HELD(button, i) g_InputMappings[i].held.counts[button]
 
