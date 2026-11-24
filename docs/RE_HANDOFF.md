@@ -191,8 +191,9 @@ decisions.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
-sections, so the origin remains unresolved. R272 identifies
-`0x00620132` and `0x006200DA` from the original D3DX8 archive member.
+sections, so the origin remains unresolved. R272 and R273 attribute the
+R265 SDK lifetime cohort through complete original D3DX8 archive sections,
+typed caller references, and unmasked target comparisons.
 [Evidence and replay](ORIGIN_PENDING_REVIEW.md#current-follow-up)
 
 ## Recent source checkpoints

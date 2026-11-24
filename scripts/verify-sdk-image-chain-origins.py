@@ -17,6 +17,7 @@ module=BASE.module
 digest=BASE.digest
 contains=BASE.contains
 check_probe=BASE.check_probe
+matches_sdk_ownership=BASE.matches_sdk_ownership
 
 
 def metadata_digest(value):
@@ -251,7 +252,7 @@ def replay(m, evidence_only=False):
                     assign(d['symbol'],a+d['offset'])
             if r['kind']=='code':
                 row=selected.get(r['base']); f=row[state+'_function'] if row else r['function']; o=row[state+'_origin'] if row else r['origin']
-                if functions.get(r['base'])!=f or origins.get(r['base'])!=o:
+                if not matches_sdk_ownership(r, f, o, functions.get(r['base']), origins.get(r['base'])):
                     raise ValueError('Graphics SDK changes a selected/retained ownership snapshot')
                 inner=[z for z in m['interiors'] if z['owner']==r['base']]
                 if {z['function']['address'] for z in inner}!={k for k in functions if a<int(k,16)<a+r['size']} or any(functions[z['function']['address']]!=z['function'] or origins[z['function']['address']]!=z['origin'] or z['origin']['origin']!='compiler' for z in inner):

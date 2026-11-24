@@ -41,6 +41,46 @@ def contains(tree, record):
     return isinstance(tree, list) and any(contains(v, record) for v in tree)
 
 
+def matches_sdk_ownership(record, expected_function, expected_origin, function, origin):
+    if function == expected_function and origin == expected_origin:
+        return True
+    if not function or not origin or expected_origin['origin'] != 'unknown':
+        return False
+    evidence = origin['evidence_id']
+    if evidence not in ('R272', 'R273'):
+        return False
+    # The rest of replay still checks this complete source section and each
+    # linked field. Keep the historical snapshot as the predecessor.
+    witness = json.loads((ROOT/'config/sdk-compilation-witness-audit-evidence.json').read_text())
+    if not any(
+        candidate['function'] == expected_function
+        and candidate['origin'] == expected_origin
+        and candidate['member_offset'] == record['member_offset']
+        and candidate['section'] == record['source']['section']
+        and candidate['symbol'] == record['symbol']
+        and candidate['body_sha256'] == record['body_sha256']
+        for candidate in witness['candidates']
+    ):
+        return False
+    symbol = record['symbol']
+    owner = symbol[3:symbol.index('@@')]
+    role = owner + '::' + ('~' if symbol[2] == '1' else '') + owner
+    edits = {'proposed_name', 'module', 'status', 'owner', 'evidence', 'notes'}
+    return (
+        origin == dict(expected_origin, origin='library', subsystem='D3DX8',
+                       disposition='exclude',
+                       confidence='complete-pinned-d3dx8-archive-contribution',
+                       evidence_id=evidence)
+        and function['proposed_name'] == role
+        and function['module'] == 'D3DX8'
+        and function['status'] == 'excluded'
+        and function['owner'] == 'library'
+        and function['evidence'].startswith(evidence + '; ')
+        and all(function.get(key) == value for key, value in expected_function.items()
+                if key not in edits)
+    )
+
+
 def check_probe(body, emission, flow):
     expected = {'ProbeDeviceTexture':[80], 'ProbeDeviceContext':[24,28,32,36],
                 'ProbeDeviceFormat':[40], 'ProbeBufferData':[12], 'ProbeBufferSize':[16], 'ProbeRelease':[8]}
@@ -234,7 +274,7 @@ def replay(m, evidence_only=False):
                     assign(d['symbol'],a+d['offset'])
             if r['kind']=='code':
                 row=selected.get(r['base']); f=row[state+'_function'] if row else r['function']; o=row[state+'_origin'] if row else r['origin']
-                if functions.get(r['base'])!=f or origins.get(r['base'])!=o:
+                if not matches_sdk_ownership(r, f, o, functions.get(r['base']), origins.get(r['base'])):
                     raise ValueError('Graphics SDK changes a selected/retained ownership snapshot')
                 inner=[z for z in m['interiors'] if z['owner']==r['base']]
                 if {z['function']['address'] for z in inner}!={k for k in functions if a<int(k,16)<a+r['size']} or any(functions[z['function']['address']]!=z['function'] or origins[z['function']['address']]!=z['origin'] or z['origin']['origin']!='compiler' for z in inner):

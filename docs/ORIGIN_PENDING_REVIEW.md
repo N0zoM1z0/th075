@@ -48,6 +48,28 @@ records the archive and member identities, all section placements and
 the relocation bindings. The local replay is
 `scripts/repo-python .analysis/sdk-string-buffer-origin/verify-contribution.py`.
 
+### R273 — remaining D3DX8 lifetime bodies
+
+The other 17 R265 SDK candidates account for 1,269 CODE bytes. Each
+complete defining section in the pinned D3DX8 archive now compares
+unmasked with the PE, including all 65 relocation fields. Whole
+incoming SDK code sections also match and name the candidate through
+a typed COFF reference. The replay compares each candidate's original
+section, AUX records, fields, and linked bytes with the archived
+shader/font, presentation, image, lifetime, blit, or graphics graph.
+It derives relocation destinations from those source layouts, the
+previous provider records, and the PE imports.
+
+The canonical rows now record D3DX8 library provenance. The retained
+R265 alternatives still describe uncertainty about private C++
+declarations. The historical source graphs retain their original
+snapshots and verify the complete linked sections when the current
+origin row supersedes an unknown one.
+
+[R265 defines the archive member and section of every candidate.](../config/sdk-compilation-witness-audit-evidence.json)
+Run `scripts/repo-python .analysis/sdk-lifetime-origin/native-replay.py`
+to replay the current set, or pass one address to check its scope.
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
@@ -73,8 +95,8 @@ pure-virtual vtable, and six mixed game/STL callers of
 `004588B0`; those remain unknown. See
 [small leaf/call graph F595](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
 
-The **current live** pending set is **90 functions /3,315 bytes**;
-use `config/function-origins.csv` for the authoritative current
+The pending set reached **90 functions /3,315 bytes** at a later checkpoint.
+Use `config/function-origins.csv` for the authoritative current
 classification and `docs/RE_HANDOFF.md` for the active tasks.
 F595–F691 ordinary VC7.1 source research now matches **85 distinct
 complete original unknown-origin functions /1,949 machine CODE B**,
