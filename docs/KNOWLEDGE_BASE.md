@@ -72,6 +72,12 @@ With `/GX`, all three preserve their complete native bytes and relocations.
 A headless library consumer registered a synthetic empty archive, found it
 by name, released its handle and deleted the file.
 
+The archive lookup now returns the typed object. Audio, script, texture,
+and other loaders call its two seek methods, which use the index record's
+named size and offset fields. A headless consumer opened a synthetic
+archive containing one encoded index record, sought to its payload with
+both methods and read the expected bytes.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

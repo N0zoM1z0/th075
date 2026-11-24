@@ -1,3 +1,5 @@
+#include "ArchiveCatalog.hpp"
+#include "DataArchive.hpp"
 #include <windows.h>
 #include <new>
 // This full-function probe borrows only ABI/physical offsets independently
@@ -27,8 +29,6 @@ public:
  void Clear();
  void Resize(unsigned int count,EffectSequenceF294* const& defaultEntry);
 };
-class EffectArchiveF294 {public: HANDLE OpenEntry(const char* name);};
-extern "C" EffectArchiveF294* __cdecl FindEffectArchiveF294(const char* archiveName);
 extern const char g_ArchiveRootAt0065A0B8[];
 extern const char g_EffectPatPathAt0065A0C0[];
 extern const float g_EffectShortScaleAt00658044;
@@ -54,7 +54,7 @@ void EffectsCatalogF294::LoadPatternCatalog()
 
     EffectVarsGroupF294 values;
     EffectScratchF294 scratch;
-    values.file=FindEffectArchiveF294(g_ArchiveRootAt0065A0B8)->OpenEntry(g_EffectPatPathAt0065A0C0);
+    values.file=ResourceLookupF217::FindByName(g_ArchiveRootAt0065A0B8)->SeekNamedEntry(g_EffectPatPathAt0065A0C0);
     values.slot=0;
     for (;values.slot<SLOTS->Size();++values.slot) {
         if (*SLOTS->At(values.slot)) {

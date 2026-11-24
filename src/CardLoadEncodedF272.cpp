@@ -1,3 +1,5 @@
+#include "ArchiveCatalog.hpp"
+#include "DataArchive.hpp"
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,8 +8,6 @@
 
 // Borrowed native game call interfaces; full scene and archive layouts
 // are deliberately not inferred from this controller.
-class CardArchiveF272 {public: HANDLE OpenEntry(const char* filename,DWORD* fileBytes);};
-namespace CardArchiveLookupF272 {CardArchiveF272* __cdecl FindDirectory(const char* directory);}
 class CardNameDequeF272 {public: void push_back(char* const& value); char** back();};
 extern const char g_CardEncodedPatternAt00658170[];
 class CardListEncodedF272 {public: void ClearEntries(); void LoadEncodedCharacterFile(const char*,const char*);};
@@ -33,7 +33,7 @@ void CardListEncodedF272::LoadEncodedCharacterFile(const char* character,const c
     char filename[260];
     ClearEntries();
     sprintf(filename,g_CardEncodedPatternAt00658170,character);
-    file=CardArchiveLookupF272::FindDirectory(directory)->OpenEntry(filename,&fileBytes);
+    file=ResourceLookupF217::FindByName(directory)->SeekNamedEntryWithSize(filename,&fileBytes);
     if(file==INVALID_HANDLE_VALUE) return;
     {
     unsigned int i;

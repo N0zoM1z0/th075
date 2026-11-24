@@ -1,22 +1,10 @@
+#include "ArchiveCatalog.hpp"
+#include "DataArchive.hpp"
 #include <windows.h>
 #include <mmsystem.h>
 #include <new>
 
 struct IDirectSoundBuffer8;
-class ArchiveContextWithSize41D800 {
-public:
-    HANDLE Seek(const char*, DWORD*);
-};
-class ArchiveContextWithoutSize41D750 {
-public:
-    HANDLE Seek(const char*);
-};
-namespace SizedArchiveLookup41CF00 {
-    ArchiveContextWithSize41D800* __cdecl Find(const char*);
-}
-namespace SoundArchiveLookup41CF00 {
-    ArchiveContextWithoutSize41D750* __cdecl Find(const char*);
-}
 // Pointer-only owner interfaces; never instantiate or embed these incomplete
 // owners. The only local structured value is the complete SDK WAVEFORMATEX.
 class ScriptResource4205F0 {
@@ -45,7 +33,7 @@ void ScriptResource4205F0::LoadArchive(const char* filename, const char* archive
     DWORD readBytes;
     BYTE step;
     HANDLE sourceFile;
-    sourceFile = SizedArchiveLookup41CF00::Find(archive)->Seek(filename, &size);
+    sourceFile = ResourceLookupF217::FindByName(archive)->SeekNamedEntryWithSize(filename, &size);
     if (sourceFile == INVALID_HANDLE_VALUE)
         return;
     data = new char[size];
@@ -108,7 +96,7 @@ void SoundArchive4076A0::Load(const char* filename, const char* archive) {
     int sampleIndex;
     HANDLE file;
     DWORD inputBytesRead;
-    file = SoundArchiveLookup41CF00::Find(archive)->Seek(filename);
+    file = ResourceLookupF217::FindByName(archive)->SeekNamedEntry(filename);
     if (file == INVALID_HANDLE_VALUE)
         return;
     ReadFile(file, &sampleCount, 4, &inputBytesRead, 0);

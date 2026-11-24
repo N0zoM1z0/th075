@@ -1,3 +1,5 @@
+#include "ArchiveCatalog.hpp"
+#include "DataArchive.hpp"
 #include <windows.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,8 +11,6 @@
 // Real source-level lifetimes and allocation transfers are kept separate:
 // VC7.1 reuses distinct native stack slots for all four allocations and
 // the final buffer release. This file owns no CRT/archive helper bodies.
-class MusicArchiveF215 { public: HANDLE OpenEntry(const char* filename, DWORD* bytes); };
-namespace ArchiveLookupF215 { MusicArchiveF215* __cdecl FindDirectory(const char* directory); }
 extern const char g_MusicCatalogDirectoryAt00657C78[];
 extern const char g_MusicCatalogFilenameAt00657C80[];
 class MusicCatalogF215 {public: void LoadCatalog();public:
@@ -33,8 +33,8 @@ void MusicCatalogF215::LoadCatalog()
     unsigned int begin;
     {
     DWORD fileBytes;
-    file = ArchiveLookupF215::FindDirectory(g_MusicCatalogDirectoryAt00657C78)
-           ->OpenEntry(g_MusicCatalogFilenameAt00657C80, &fileBytes);
+    file = ResourceLookupF217::FindByName(g_MusicCatalogDirectoryAt00657C78)
+           ->SeekNamedEntryWithSize(g_MusicCatalogFilenameAt00657C80, &fileBytes);
     if (file == INVALID_HANDLE_VALUE) return;
     {
     char* buffer;

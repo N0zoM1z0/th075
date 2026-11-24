@@ -13,5 +13,5 @@ extern unsigned int g_ArchiveUseCountAt0068BE04;
 
 namespace ResourceLookupF217
 {
-    void* FindByName(const char* name);
+    DataArchiveF481* FindByName(const char* name);
 }

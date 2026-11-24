@@ -1,3 +1,5 @@
+#include "ArchiveCatalog.hpp"
+#include "DataArchive.hpp"
 #include <windows.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -50,8 +52,6 @@ public:
     void Assign(unsigned int, PatternSequence20* const&);
 };
 class PatternBoxWriter458A10 { public: void Append(const BYTE*); };
-class ArchiveContext41D750 { public: HANDLE SeekNamedEntry(const char*); };
-namespace ArchiveLookup41CF00 { ArchiveContext41D750* __cdecl Find(const char*); }
 class FighterPattern457660 { public: void Load(); };
 #define NAME (reinterpret_cast<const char*>(this) + 196)
 #define SLOTS reinterpret_cast<PatternSlots457660*>(reinterpret_cast<char*>(this) + 1128)
@@ -75,7 +75,7 @@ void FighterPattern457660::Load() {
     int iItem;
 
     sprintf(szFilename, "data\\character\\%s\\%s.pat", NAME, NAME);
-    sourceFile = ArchiveLookup41CF00::Find("datab")->SeekNamedEntry(szFilename);
+    sourceFile = ResourceLookupF217::FindByName("datab")->SeekNamedEntry(szFilename);
     for (patternId = 0; patternId < SLOTS->Size(); patternId++) {
         if (SLOTS->At(patternId)) {
             SLOTS->At(patternId)->Clear();

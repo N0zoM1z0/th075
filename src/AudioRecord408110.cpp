@@ -1,3 +1,5 @@
+#include "ArchiveCatalog.hpp"
+#include "DataArchive.hpp"
 #include "AudioStream.hpp"
 #include <windows.h>
 #include <mmsystem.h>
@@ -6,20 +8,6 @@
 #include <string.h>
 
 // Partial interfaces and field views only; never instantiate these owners.
-class ArchiveContextWithSize41D800 {
-public:
-    HANDLE Seek(const char*, DWORD*);
-};
-class ArchiveContextWithoutSize41D750 {
-public:
-    HANDLE Seek(const char*);
-};
-namespace SizedArchiveLookup41CF00 {
-    ArchiveContextWithSize41D800* __cdecl Find(const char*);
-}
-namespace SoundArchiveLookup41CF00 {
-    ArchiveContextWithoutSize41D750* __cdecl Find(const char*);
-}
 namespace SoundCreation406A20 {
     bool __cdecl Create(const WAVEFORMATEX*, const void*, DWORD, IDirectSoundBuffer8**, DWORD);
 }
@@ -85,7 +73,7 @@ void AudioStream::OpenArchiveEntry(const char* filename, DWORD requestedBytes, c
         WaitForSingleObject(waitEvent, 20);
     CloseHandle(waitEvent);
     archiveReadRequested = 1;
-    file = SoundArchiveLookup41CF00::Find(archive)->Seek(filename);
+    file = ResourceLookupF217::FindByName(archive)->SeekNamedEntry(filename);
     if (file == INVALID_HANDLE_VALUE) {
         archiveReadRequested = 0;
         return;
@@ -177,7 +165,7 @@ void AudioStream::ReadLoopPointsFromArchive(const char* filename, const char* ar
         WaitForSingleObject(hWaitEvent, 20);
     CloseHandle(hWaitEvent);
     archiveReadRequested = 1;
-    HANDLE sourceFile = SizedArchiveLookup41CF00::Find(archive)->Seek(filename, &size);
+    HANDLE sourceFile = ResourceLookupF217::FindByName(archive)->SeekNamedEntryWithSize(filename, &size);
     if (sourceFile == INVALID_HANDLE_VALUE || GetFileSize(sourceFile, 0) == 0) {
         loopEnd = 0;
         loopLength = 0;

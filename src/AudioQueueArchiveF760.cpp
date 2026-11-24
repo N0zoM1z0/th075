@@ -1,3 +1,5 @@
+#include "ArchiveCatalog.hpp"
+#include "DataArchive.hpp"
 #include <windows.h>
 #include <stddef.h>
 // Original R016 00407B80 entire authored archive audio queue. The local
@@ -25,15 +27,13 @@ struct SharedAudioRegistryF760 {
     AudioRecordF760* Back();
 };
 extern SharedAudioRegistryF760 g_SharedAudioRegistryF760;
-class ArchiveContextF760 {public: HANDLE SeekNamedEntry(const char*);};
-namespace ResourceLookupF760 {ArchiveContextF760* __cdecl FindByName(const char*);}
 extern const char g_DefaultAudioArchiveNameF760[];
 namespace AudioQueueArchiveF760 {
 void __cdecl QueueArchiveEntry(const char* filename,int mode,const char* archive) {
     HANDLE handle;
     if (g_SharedAudioRegistryF760.Size() >= 2)
         g_SharedAudioRegistryF760.PopBack();
-    handle=ResourceLookupF760::FindByName(g_DefaultAudioArchiveNameF760)->SeekNamedEntry(filename);
+    handle=ResourceLookupF217::FindByName(g_DefaultAudioArchiveNameF760)->SeekNamedEntry(filename);
     if (handle != INVALID_HANDLE_VALUE) {
         AudioRecordF760 record;
         g_SharedAudioRegistryF760.PushBack(record);

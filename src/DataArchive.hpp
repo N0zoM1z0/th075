@@ -16,6 +16,8 @@ public:
     DataArchiveF481();
     ~DataArchiveF481();
     void OpenAndReadIndex(const char* filename);
+    HANDLE SeekNamedEntry(const char* name);
+    HANDLE SeekNamedEntryWithSize(const char* name, DWORD* size);
 
 private:
     HANDLE originalHandle;
