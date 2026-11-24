@@ -197,7 +197,8 @@ cleanup leaves through the cold-exact vector assignment and its typed
 call chain. R276 identifies the RECT const iterator increment through
 the complete vector copy path and its exception sections. R277
 identifies five VC7.1 list helpers through the typed Youmu history
-writer, reset and member lifetime.
+writer, reset and member lifetime. R278 identifies the matching
+value accessor through the object Advance's history read.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH

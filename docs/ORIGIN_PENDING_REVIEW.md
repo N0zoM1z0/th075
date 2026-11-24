@@ -168,6 +168,21 @@ with the headless Wine settings in [SHARED_TOOLS.md](SHARED_TOOLS.md).
     scripts/compile-probe.sh .analysis/pending-origin-2026-11-24/youmu-destroy.cpp build/probes/YoumuListDestroyOrigin.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src
     scripts/repo-python .analysis/pending-origin-2026-11-24/compare-youmu.py
 
+### R278 — Youmu history list value accessor
+
+The exact `YoumuObject::Advance` reads the same queue through its
+typed `front()` call at `0x005365FF`. The cold build covers all 40,466
+bytes of the comparison, including the switch table. That object
+also emits the complete R243 front chain through mutable and const
+iterator dereference. The latter calls the 11-byte `_Myval` at
+`0x00540280` from `0x0054026D`. The branch through `begin` rejoins
+the same constructor and next-link sections seen in the writer.
+All eight sections in the front chain match 189 original bytes and
+all seven relocations with the concrete snapshot type.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit youmu-object-advance-00536400
+    scripts/repo-python .analysis/pending-origin-2026-11-24/compare-youmu-front.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

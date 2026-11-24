@@ -2340,7 +2340,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00540220,library,VC7STL,exclude,whole-vc71-character-list-front-source-chain-with-independent-container-provenance-and-record-consumption,R243
 0x00540240,library,VC7STL,exclude,whole-vc71-character-list-front-source-chain-with-independent-container-provenance-and-record-consumption,R243
 0x00540260,library,VC7STL,exclude,whole-vc71-character-list-front-source-chain-with-independent-container-provenance-and-record-consumption,R243
-0x00540280,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00540280,library,VC7STL,exclude,complete-vc7-list-template-and-typed-caller-chain,R278
 0x00540290,authored,CharacterSequence,authored,target-observed,R048
 0x00543210,authored,CharacterMove,authored,target-observed,R048
 0x00551980,authored,RemiliaFighter,authored,target-observed,R050
