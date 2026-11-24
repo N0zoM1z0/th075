@@ -48,7 +48,7 @@ case 0x2BD: {
         SpawnAuxEffect(0x74,
             x-
                  float((facing)*64),
-            (*(&y))+g_F884Stage5YAt00659470,
+            (*(&y))+GeometryConstants::SeventySeven,
             (facing),1);
     }
     if ((animationStage)==7 && (animationFrame)==0) {

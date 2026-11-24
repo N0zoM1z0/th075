@@ -1,9 +1,9 @@
+#include "GeometryConstants.hpp"
 #include "MarisaFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
 // Physical script-defined field view only: no complete owner allocation.
 // R050 original x87: FILD dword stack signed index; FDIV dword [0x659308].
-extern const float g_MarisaSequenceScaleAt00659308;
 void MarisaFighter::ResetRound()
 {
     scriptCounterF00=0;
@@ -45,14 +45,14 @@ void MarisaFighter::ResetRound()
        chain[i*2].rawZ=0;
        chain[i*2].alpha=1.0f;
        chain[i*2].flags=0xffffffffu;
-       chain[i*2].phase=static_cast<float>(i)/g_MarisaSequenceScaleAt00659308;
+       chain[i*2].phase=static_cast<float>(i)/GeometryConstants::ThirtySix;
        chain[i*2].tail=0;
        chain[i*2+1].rawX=0;
        chain[i*2+1].rawY=0;
        chain[i*2+1].rawZ=0;
        chain[i*2+1].alpha=1.0f;
        chain[i*2+1].flags=0xffffffffu;
-       chain[i*2+1].phase=static_cast<float>(i)/g_MarisaSequenceScaleAt00659308;
+       chain[i*2+1].phase=static_cast<float>(i)/GeometryConstants::ThirtySix;
        chain[i*2+1].tail=1.0f;
     }
     Fighter::ResetRound();

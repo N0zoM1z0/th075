@@ -50,11 +50,11 @@ case 0x2BE: {
         UpdateGaugeTimer(0xC);
         SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         PlaySound(7);
     }
@@ -62,11 +62,11 @@ case 0x2BE: {
         UpdateGaugeTimer(0xC);
         SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         PlaySound(7);
     }
@@ -74,11 +74,11 @@ case 0x2BE: {
         UpdateGaugeTimer(0xC);
         SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         PlaySound(7);
     }
@@ -86,11 +86,11 @@ case 0x2BE: {
         UpdateGaugeTimer(0xC);
         SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         PlaySound(7);
     }
@@ -98,11 +98,11 @@ case 0x2BE: {
         UpdateGaugeTimer(0xC);
         SpawnBattleEffect(0x321+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x33F,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         PlaySound(7);
         if ((scriptCounterF00)<6) {

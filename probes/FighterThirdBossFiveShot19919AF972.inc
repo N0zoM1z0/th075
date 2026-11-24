@@ -43,7 +43,7 @@ case 0x199: {
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*96)+(x),
-            (*(&y))+g_F972_YAt00659470,
+            (*(&y))+GeometryConstants::SeventySeven,
             facing,1);
         UpdateGaugeTimer(0x96);
     }
@@ -70,7 +70,7 @@ case 0x19A: {
         field318=20.0f;
         SpawnBattleEffect(0x328,
             float((facing)*98)+(x),
-            (*(&y))+g_F972_YAt00659470,
+            (*(&y))+GeometryConstants::SeventySeven,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*92)+(x),

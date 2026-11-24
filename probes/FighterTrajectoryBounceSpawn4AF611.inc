@@ -17,7 +17,7 @@ case 0x4A: {
         ResetSecondaryCounter(F610_EARLY);
         break;
     }
-    if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
+    if (CheckHorizontalLimits() && (velocityX) <= GeometryConstants::NegativeFifteen) {
         if (fieldF0C==0) {
             fieldF0C=1;
             SpawnBattleEffect(F611_PROJECTILE,x,y,

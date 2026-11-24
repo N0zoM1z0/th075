@@ -83,7 +83,7 @@
                 scriptCounterF00=0;
             }
             if ((animationStage)<18 && y>FloatConstants::Zero && (animationStage)>7) {
-                velocityX=(velocityX)-g_ShotPositiveDragAt00659A10;
+                velocityX=(velocityX)-FloatConstants::ThirtyFiveHundredths;
                 velocityY=velocityY-field05C;
                 if ((velocityX)<FloatConstants::Three) velocityX=3.0f;
                 if (y+velocityY<=FloatConstants::Zero) {
@@ -122,7 +122,7 @@
                 scriptCounterF00=0;
             }
             if ((animationStage)<22 && y>FloatConstants::Zero && (animationStage)>12) {
-                velocityX=(velocityX)-g_ShotPositiveDragAt00659A10;
+                velocityX=(velocityX)-FloatConstants::ThirtyFiveHundredths;
                 velocityY=velocityY-field05C;
                 if ((velocityX)<FloatConstants::Three) velocityX=3.0f;
                 if (y+velocityY<=FloatConstants::Zero) {

@@ -9,7 +9,6 @@ extern float __cdecl AngleAt00483300(float y, float x);
 
 // Read-only data shared by the projectile and effect actions.
 extern const float g_ReimuObjectOwnerYOffsetAt00659080;
-extern const float g_ReimuObjectLowerOscillationLimitAt00659234;
 
 void ReimuObject::Advance()
 {
@@ -3438,7 +3437,7 @@ void ReimuObject::Advance()
             }
             if (field0DA == -1) {
                 field0CC = field0CC - FloatConstants::OneTenth;
-                if (field0CC <= g_ReimuObjectLowerOscillationLimitAt00659234) {
+                if (field0CC <= GeometryConstants::NegativeTen) {
                     field0DA = 1;
                 }
             }

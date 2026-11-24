@@ -14,7 +14,7 @@ case 0x391: {
         color[2]=0xFF;
         color[3]=0xFF;
         velocityX=3.0f;
-        velocityY=g_F1095_UpperYAt00659890-float(RecordedRange(0,9));
+        velocityY=FloatConstants::FourAndHalf-float(RecordedRange(0,9));
         field0D8=0;
         field0DA=0;
         field0DC=0;
@@ -30,12 +30,12 @@ case 0x391: {
     }
     if (field0DC==0) {
         velocityY=velocityY-FloatConstants::FifteenHundredths;
-        if (velocityY<g_F1095_LowerYAt00659894)
+        if (velocityY<FloatConstants::NegativeFourAndHalf)
             field0DC=1;
     }
     if (field0DC==1) {
         velocityY=(*(&velocityY))+FloatConstants::FifteenHundredths;
-        if (velocityY>g_F1095_UpperYAt00659890)
+        if (velocityY>FloatConstants::FourAndHalf)
             field0DC=0;
     }
     if (scaleX==FloatConstants::One &&

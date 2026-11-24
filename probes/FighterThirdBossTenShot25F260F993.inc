@@ -26,7 +26,7 @@ case 0x25F: {
             field318=15.0f;
             SpawnBattleEffect(0x346,
                 float((facing)*49)+(x),
-                (*(&y))+g_F968_RoundY190At00659294,
+                (*(&y))+GeometryConstants::HundredSixteen,
                 facing,1);
         }
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
@@ -55,7 +55,7 @@ case 0x260: {
             field318=15.0f;
             SpawnBattleEffect(0x347,
                 float((facing)*49)+(x),
-                (*(&y))+g_F968_RoundY190At00659294,
+                (*(&y))+GeometryConstants::HundredSixteen,
                 facing,1);
         }
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;

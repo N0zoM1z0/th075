@@ -24,7 +24,7 @@ case 0x2BF: {
         SpawnAuxEffect(0x74,
             x-
                 float((facing)*64),
-            (*(&y))+g_F884Stage5YAt00659470,
+            (*(&y))+GeometryConstants::SeventySeven,
             (facing),1);
         scriptCounterF00=(x);
         scriptCounterF02=(y);

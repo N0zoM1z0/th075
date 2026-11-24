@@ -44,7 +44,7 @@
 #define R1187_ANGLE_BIAS1 2
 #define R1187_ANGLE_BIAS2 2
 #define R1187_X_OFFSET 114
-#define R1187_Y_OFFSET g_ReimuLowVolleyYAt006590A0
+#define R1187_Y_OFFSET GeometryConstants::NinetySix
 #define R1187_SPEED 25.0f
 #define R1187_EFFECT 0x33b
 #define R1187_REPEAT_LIMIT 4
@@ -199,7 +199,7 @@
 #define R1187_ANGLE_BIAS1 5
 #define R1187_ANGLE_BIAS2 5
 #define R1187_X_OFFSET 114
-#define R1187_Y_OFFSET g_ReimuLowVolleyYAt006590A0
+#define R1187_Y_OFFSET GeometryConstants::NinetySix
 #define R1187_SPEED 10.0f
 #define R1187_EFFECT 0x342
 #define R1187_REPEAT_LIMIT 3

@@ -11,7 +11,7 @@ case 0x1FA: {
     if ((animationStage)==2 && field07C==3) {
         SpawnAuxEffect(0x32,
             float((facing)*36)+(x),
-            (*(&y))+g_F872Volley1FAYAt00659310,
+            (*(&y))+GeometryConstants::FortyOne,
             (facing),1);
         PlaySharedSound(0x14);
         opponent->field082=0x1E;

@@ -21,19 +21,19 @@ case 0x190: {
         field318=7.0f;
         SpawnBattleEffect(0x320,
            float((facing)*49)+(x),
-           (*(&y))+g_F968_RoundY190At00659294,
+           (*(&y))+GeometryConstants::HundredSixteen,
            facing,1);
         field314=float((scriptCounterF02)*4-4);
         field318=7.0f;
         SpawnBattleEffect(0x320,
            float((facing)*49)+(x),
-           (*(&y))+g_F968_RoundY190At00659294,
+           (*(&y))+GeometryConstants::HundredSixteen,
            facing,1);
         field314=float((scriptCounterF02)*4-12);
         field318=7.0f;
         SpawnBattleEffect(0x320,
            float((facing)*49)+(x),
-           (*(&y))+g_F968_RoundY190At00659294,
+           (*(&y))+GeometryConstants::HundredSixteen,
            facing,1);
         scriptCounterF00=2;
         ++scriptCounterF02;

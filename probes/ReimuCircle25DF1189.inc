@@ -9,27 +9,27 @@ case 0x25D:
         field314 = 20.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x1E),
-            (y) + g_ReimuSpecialYAt0065908C, facing, 1);
+            (y) + GeometryConstants::HundredThirty, facing, 1);
         field314 = 40.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x1E),
-            (y) + g_ReimuSpecialYAt0065908C, facing, 1);
+            (y) + GeometryConstants::HundredThirty, facing, 1);
         field314 = 70.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x1E),
-            (y) + g_ReimuSpecialYAt0065908C, facing, 1);
+            (y) + GeometryConstants::HundredThirty, facing, 1);
         field314 = -20.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x1E),
-            (y) + g_ReimuSpecialYAt0065908C, facing, 1);
+            (y) + GeometryConstants::HundredThirty, facing, 1);
         field314 = -40.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x1E),
-            (y) + g_ReimuSpecialYAt0065908C, facing, 1);
+            (y) + GeometryConstants::HundredThirty, facing, 1);
         field314 = -70.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x1E),
-            (y) + g_ReimuSpecialYAt0065908C, facing, 1);
+            (y) + GeometryConstants::HundredThirty, facing, 1);
         UpdateGaugeTimer(0xFA);
         PlaySound(5);
     }

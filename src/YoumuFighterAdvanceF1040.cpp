@@ -5,18 +5,14 @@
 // Natural-C++ reconstruction of YoumuFighter::Advance at 005214B0.
 #include "YoumuFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-extern float g_F894RandomHeightAt006592A0;
 extern float g_F890Phase4OtherYAt006598B4;
-extern float g_F884Stage5YAt00659470;
 extern float g_F872Volley1F9YAt006598BC;
-extern float g_F872Volley1FAYAt00659310;
 extern float g_F857ShotYAt00659298;
 // Owner motion clearing now invokes the inherited Fighter method.
 // F1197 complete original-shaped 005214B0 parent, continued from F901/F1040.
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
 // five instruction widths remain NONEXACT. No whole CODE credit.
 
-extern float g_BounceThresholdAt006590C0;
 void YoumuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;

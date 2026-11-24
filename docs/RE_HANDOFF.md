@@ -23,8 +23,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 219 unresolved externals. The numbered resource and
-replay paths, fighter tags, and startup icon names resolved 33 symbols.
+stops at `LNK1120` with 142 unresolved externals. Thirty-eight shared
+read-only floats resolved 77 names and preserved all 403 relocation
+fields. All 192 affected units cold-replayed exactly, and a headless
+archive consumer checked the linked values.
+
+The numbered resource and replay paths, fighter tags, and startup icon
+names resolved 33 symbols.
 All 23 affected units cold-replayed exactly. A headless archive consumer
 verified numbered replay path selection with one occupied slot.
 

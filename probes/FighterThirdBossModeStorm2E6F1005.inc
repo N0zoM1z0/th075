@@ -115,32 +115,32 @@ case 0x2E6: {
         Fighter::SpawnTrackedEffect(0x338,
             x -
                 float((facing)*7),
-            (*(&y))+g_F983_BurstYAt00659490,
+            (*(&y))+GeometryConstants::HundredThirtyOne,
             1,1,0,1);
         Fighter::SpawnTrackedEffect(0x339,
             x -
                 float((facing)*7),
-            (*(&y))+g_F983_BurstYAt00659490,
+            (*(&y))+GeometryConstants::HundredThirtyOne,
             1,1,0,1);
         Fighter::SpawnTrackedEffect(0x33A,
             x -
                 float((facing)*7),
-            (*(&y))+g_F983_BurstYAt00659490,
+            (*(&y))+GeometryConstants::HundredThirtyOne,
             1,1,0,1);
         Fighter::SpawnTrackedEffect(0x33B,
             x -
                 float((facing)*7),
-            (*(&y))+g_F983_BurstYAt00659490,
+            (*(&y))+GeometryConstants::HundredThirtyOne,
             1,1,0,1);
         Fighter::SpawnTrackedEffect(0x33C,
             x -
                 float((facing)*7),
-            (*(&y))+g_F983_BurstYAt00659490,
+            (*(&y))+GeometryConstants::HundredThirtyOne,
             1,1,0,1);
         Fighter::SpawnTrackedEffect(0x33D,
             x -
                 float((facing)*7),
-            (*(&y))+g_F983_BurstYAt00659490,
+            (*(&y))+GeometryConstants::HundredThirtyOne,
             1,1,0,1);
         ResetTransform(0.0f,0.0f,0.0f);
         color[0]=255;

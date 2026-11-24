@@ -32,11 +32,11 @@
                 field314=-6.0f;
                 SpawnBattleEffect(0x321,
                     float(facing*75)+(x),
-                    (*(&y))+g_BarrageY3At0065908C,
+                    (*(&y))+GeometryConstants::HundredThirty,
                     facing,1);
                 SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
-                    (*(&y))+g_BarrageY3At0065908C,
+                    (*(&y))+GeometryConstants::HundredThirty,
                     facing,1);
                 field314=6.0f;
                 SpawnBattleEffect(0x321,

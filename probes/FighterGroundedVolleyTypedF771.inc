@@ -33,7 +33,7 @@
                     /GeometryConstants::RadiansPerDegree;
                 SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
-                    (*(&y))+g_StormAngleShotYAt00659A18,
+                    (*(&y))+GeometryConstants::EightySeven,
                     facing,1);
                 for (int i=0;i<static_cast<int>(g_OptionsModeAt006714D0)*2+2;++i)
                     SpawnBattleEffect(0x392,

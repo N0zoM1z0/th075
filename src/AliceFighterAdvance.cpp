@@ -4,12 +4,8 @@
 #include "AliceFighter.hpp"
 
 extern float g_AliceEffectYAt0065909C;
-extern float g_AliceEffectYAt006590A0;
 extern float g_AliceEffectYAt00659478;
-extern float g_AliceEffectYAt006595F4;
-extern float g_BounceThresholdAt006590C0;
 extern float g_MarisaResourceYAt00659274;
-extern float g_MarisaResourceYAt00659280;
 extern float g_OneShotYAt0065928C;
 
 void AliceFighter::Advance() {
@@ -648,7 +644,7 @@ void AliceFighter::Advance() {
             ResetSecondaryCounter(3);
             return;
         }
-        if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
+        if (CheckHorizontalLimits() && (velocityX) <= GeometryConstants::NegativeFifteen) {
             ResetPrimaryCounters(0x4C);
             velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
@@ -2003,7 +1999,7 @@ void AliceFighter::Advance() {
             PlaySharedSound(0x1c);
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x370, static_cast<float>(facing * 260) + x,
-                (y) + g_AliceEffectYAt006590A0, facing, 1);
+                (y) + GeometryConstants::NinetySix, facing, 1);
         }
         return;
     }
@@ -2270,7 +2266,7 @@ void AliceFighter::Advance() {
             UpdateGaugeTimer(200);
             velocityX = 41.0f;
             SpawnBattleEffect(0x331, static_cast<float>(facing * 51) + x,
-                (y) + g_AliceEffectYAt006595F4, facing, 1);
+                (y) + GeometryConstants::HundredNinety, facing, 1);
             PlaySound(0);
         }
         return;
@@ -2749,7 +2745,7 @@ void AliceFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x327, static_cast<float>(facing * 10) + x,
-                (y) + g_MarisaResourceYAt00659280, facing, 1);
+                (y) + GeometryConstants::NinetyFive, facing, 1);
             PlaySound(1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2765,7 +2761,7 @@ void AliceFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x328, static_cast<float>(facing * 10) + x,
-                (y) + g_MarisaResourceYAt00659280, facing, 1);
+                (y) + GeometryConstants::NinetyFive, facing, 1);
             PlaySound(1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2781,7 +2777,7 @@ void AliceFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x329, static_cast<float>(facing * 10) + x,
-                (y) + g_MarisaResourceYAt00659280, facing, 1);
+                (y) + GeometryConstants::NinetyFive, facing, 1);
             PlaySound(1);
         }
         if (AdvanceNestedFrame() == animationStageCount)

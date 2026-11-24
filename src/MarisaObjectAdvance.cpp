@@ -5,7 +5,6 @@
 #include "CharacterObject.hpp"
 #include "MarisaFighter.hpp"
 
-extern const float g_MarisaBeamYOffsetAt00659294;
 
 extern float __cdecl AngleAt00483300(float y, float x);
 
@@ -20,11 +19,8 @@ extern const float g_MarisaStreakLeftLimitAt00659414;
 extern const double g_MarisaChainJitterAt00659408;
 
 extern const double g_MarisaDustGrowthAt006593F8;
-extern const float g_MarisaFollowYOffsetAt00659280;
 
-extern const float g_MarisaVolleyLeftLimitAt006593F0;
 extern const float g_MarisaVolleyRightLimitAt006593EC;
-extern const float g_MarisaStormLeftSpeedAt00659268;
 
 void MarisaObject::Advance()
 {
@@ -228,7 +224,7 @@ void MarisaObject::Advance()
     case 802:
         if (owner->action == 404 && field0D8 == 0) {
             x = owner->x + static_cast<float>(facing * 70);
-            y = (owner->y) + g_MarisaBeamYOffsetAt00659294;
+            y = (owner->y) + GeometryConstants::HundredSixteen;
         }
         if (owner->action > 49 && owner->action < 150 && animationStage < 20) {
             ResetSecondaryCounter(20);
@@ -1813,7 +1809,7 @@ void MarisaObject::Advance()
         if (owner->action == 703 && owner->animationStage > 14 &&
             owner->animationStage < 23) {
             x = owner->x - static_cast<float>(facing * 110);
-            y = (owner->y) + g_MarisaFollowYOffsetAt00659280;
+            y = (owner->y) + GeometryConstants::NinetyFive;
         } else {
             ClearFrameInfo();
             return;
@@ -2018,7 +2014,7 @@ void MarisaObject::Advance()
         if (owner->action == 731 && owner->animationStage > 8 &&
             owner->animationStage < 17) {
             x = owner->x - static_cast<float>(facing * 110);
-            y = (owner->y) + g_MarisaFollowYOffsetAt00659280;
+            y = (owner->y) + GeometryConstants::NinetyFive;
         } else {
             ClearFrameInfo();
             return;
@@ -2105,7 +2101,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2146,7 +2142,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2187,7 +2183,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2228,7 +2224,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2403,7 +2399,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2446,7 +2442,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2489,7 +2485,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2532,7 +2528,7 @@ void MarisaObject::Advance()
                 return;
             }
         }
-        if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
+        if (x < GeometryConstants::NegativeEighty || x > g_MarisaVolleyRightLimitAt006593EC ||
             y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
@@ -2564,7 +2560,7 @@ void MarisaObject::Advance()
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
+            velocityX = GeometryConstants::NegativeOne - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -2627,7 +2623,7 @@ void MarisaObject::Advance()
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
+            velocityX = GeometryConstants::NegativeOne - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -2690,7 +2686,7 @@ void MarisaObject::Advance()
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
+            velocityX = GeometryConstants::NegativeOne - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -2753,7 +2749,7 @@ void MarisaObject::Advance()
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
         if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
-            velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
+            velocityX = GeometryConstants::NegativeOne - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < FloatConstants::OneFortieth) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;

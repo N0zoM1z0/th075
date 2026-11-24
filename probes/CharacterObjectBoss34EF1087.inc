@@ -15,7 +15,7 @@ case 0x34E: {
     }
     SetPolarVelocity(
         float(owner->fieldF0C)+
-            g_F1085_ParentMultiplierAt0065989C*static_cast<const float&>(field0C8),
+            GeometryConstants::SeventyTwo*static_cast<const float&>(field0C8),
         float(field0D8));
     x=velocityX+owner->x;
     y=(*(&velocityY))*FloatConstants::Quarter+

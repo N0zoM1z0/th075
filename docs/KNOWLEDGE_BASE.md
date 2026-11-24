@@ -95,6 +95,11 @@ seven native addresses. The original assignments still use immediate
 operands. The name-entry constructor uses the existing `datab` archive
 root, with the full six bytes matching at `0x00657F7C`.
 
+The same constant can appear as a named read-only load in one function
+and as an immediate in another. The 38 shared float definitions use
+source literals also present in compiled immediate operands. The 403
+loads retain their original relocation fields and native destinations.
+
 The Japanese package beside the repository contains the pinned executable
 and three data archives. Its outer member names and the directory records
 read by `DataArchiveF481::OpenAndReadIndex` provide the startup archive

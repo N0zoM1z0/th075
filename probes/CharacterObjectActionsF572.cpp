@@ -14,12 +14,8 @@
 // split-case CODE/DATA acceptance is claimed.
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-extern float gAddAt00659738;
-extern float gSubtractAt00659728;
-extern float gShrinkAt00659094;
 extern float MagnitudeAt00428D20(float value);
 extern float AngleAt00483300(float first, float second);
-extern float gParentYAt006590A0;
 extern float AbsFloatAt00412D90(float value);
 
 void AliceObject::Advance() {
@@ -79,7 +75,7 @@ void AliceObject::Advance() {
                             field0DA*FloatConstants::OneTenth);
             field0DA -= 5;
             field0D8 += 3;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -157,7 +153,7 @@ void AliceObject::Advance() {
                             field0DA*FloatConstants::OneTenth);
             field0DA -= 5;
             field0D8 -= 2;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -235,7 +231,7 @@ void AliceObject::Advance() {
                             field0DA*FloatConstants::OneTenth);
             field0DA -= 5;
             field0D8 += 4;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -508,7 +504,7 @@ void AliceObject::Advance() {
                 color[0] += 20;
             else
                 color[0] = 0xFF;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             velocityY = (velocityY) - FloatConstants::ThreeTenths;
         }
         if ((animationStage) == 11) {
@@ -583,7 +579,7 @@ void AliceObject::Advance() {
                 color[0] += 20;
             else
                 color[0] = 0xFF;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             velocityY = (velocityY) - FloatConstants::FourFifths;
         }
         if ((animationStage) == 11) {
@@ -658,7 +654,7 @@ void AliceObject::Advance() {
                 color[0] += 20;
             else
                 color[0] = 0xFF;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             velocityY = (velocityY) - FloatConstants::ThreeTenths;
         }
         if ((animationStage) == 11) {
@@ -888,7 +884,7 @@ void AliceObject::Advance() {
         color[2] = 0xFF;
         color[3] = 0xFF;
         SetPolarVelocity(-(RecordedRange(0,45)
-                - gSubtractAt00659728 + GeometryConstants::Ninety),18.0f);
+                - FloatConstants::TwentyTwoAndHalf + GeometryConstants::Ninety),18.0f);
     }
     x += facing * (velocityX);
     y = y + velocityY;
@@ -1020,7 +1016,7 @@ void AliceObject::Advance() {
         scaleY = static_cast<float>(RecordedRange(0,4) - 2)
                   * FloatConstants::OneTwentieth + FloatConstants::OneAndHalf;
     if ((animationStage) == 7)
-        scaleY = (scaleY) * gShrinkAt00659094;
+        scaleY = (scaleY) * FloatConstants::SevenTenths;
     if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     if ((animationStage) == 7 && (animationFrame) == 0 && (field0D8) < 10) {
@@ -1523,7 +1519,7 @@ void AliceObject::Advance() {
                 color[0] += 20;
             else
                 color[0] = 0xFF;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             velocityY = (velocityY) - FloatConstants::ThreeTenths;
             if (y + velocityY <= GeometryConstants::Twenty) {
                 y = 20.0f;
@@ -1606,7 +1602,7 @@ void AliceObject::Advance() {
                 color[0] += 20;
             else
                 color[0] = 0xFF;
-            rotationZ = (rotationZ) + gAddAt00659738;
+            rotationZ = (rotationZ) + GeometryConstants::Eighteen;
             velocityY = (velocityY) - FloatConstants::Half;
         }
         if ((animationStage) == 11) {
@@ -1890,7 +1886,7 @@ void AliceObject::Advance() {
         case 0x370: {
     if ((owner->action)==0x133) {
         x = owner->x + (facing) * 260;
-        y = (owner->y) + gParentYAt006590A0;
+        y = (owner->y) + GeometryConstants::NinetySix;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         ResetTransform(0.0f,0.0f,0.0f);
@@ -1925,7 +1921,7 @@ void AliceObject::Advance() {
         field01A=0x4E2;
         rotationX=-65.0f;
     }
-    rotationZ = (rotationZ)-gSubtractAt00659728;
+    rotationZ = (rotationZ)-FloatConstants::TwentyTwoAndHalf;
     if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();
     break;
@@ -2092,7 +2088,7 @@ void AliceObject::Advance() {
         color[2]=0xFF;
         color[3]=0xFF;
         SetPolarVelocity(-(RecordedRange(0,45)
-             - gSubtractAt00659728 + GeometryConstants::Ninety),18.0f);
+             - FloatConstants::TwentyTwoAndHalf + GeometryConstants::Ninety),18.0f);
     }
     x += facing*(velocityX);
     y = y+velocityY;
@@ -2251,7 +2247,7 @@ void AliceObject::Advance() {
             color[0]+=20;
         else
             color[0]=0xFF;
-        rotationZ=(rotationZ)+gAddAt00659738;
+        rotationZ=(rotationZ)+GeometryConstants::Eighteen;
         velocityY=(velocityY)-FloatConstants::ThreeFifths;
     }
     if ((animationStage)==12) {

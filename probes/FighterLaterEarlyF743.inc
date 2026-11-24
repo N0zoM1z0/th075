@@ -75,7 +75,7 @@
                 UpdateGaugeTimer(200);
                 SpawnBattleEffect(0x335,
                     float(facing*45)+(x),
-                    (*(&y))+g_F743_Y1A0At00659288,
+                    (*(&y))+GeometryConstants::HundredFifteen,
                     facing,1);
             }
             if (AdvanceNestedFrame()==(animationStageCount))

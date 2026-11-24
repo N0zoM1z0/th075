@@ -3,20 +3,10 @@
 #include "GameSharedState.hpp"
 #include "MarisaFighter.hpp"
 
-extern float g_MarisaCommandSpeedUpperAt006592A0;
-extern float g_MarisaHorizontalSlowdownAt00659094;
 extern float g_MarisaResourceYAt00659298;
-extern float g_MarisaResourceYAt00659294;
 extern float g_MarisaResourceYAt0065928C;
-extern float g_MarisaResourceYAt00659288;
 extern float g_MarisaResourceYAt00659284;
-extern float g_MarisaResourceYAt0065927C;
-extern float g_MarisaResourceYAt0065908C;
-extern float g_MarisaCardFallAt00659264;
-extern float g_MarisaResourceYAt00659280;
 extern float g_MarisaResourceYAt00659274;
-extern float g_MarisaNegativeCardDriftAt00659268;
-extern float g_BounceThresholdAt006590C0;
 void MarisaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -660,7 +650,7 @@ void MarisaFighter::Advance() {
             ResetSecondaryCounter(4);
             return;
         }
-        if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
+        if (CheckHorizontalLimits() && (velocityX) <= GeometryConstants::NegativeFifteen) {
             ResetPrimaryCounters(0x4C);
             velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
@@ -1530,7 +1520,7 @@ void MarisaFighter::Advance() {
             velocityX = 0.0f;
             scriptCounterF00 = 0;
         }
-        if (velocityX > g_MarisaCommandSpeedUpperAt006592A0) {
+        if (velocityX > FloatConstants::TenAndHalf) {
             velocityX -= FloatConstants::Half;
             if (velocityX < FloatConstants::Ten)
                 velocityX = 10.0f;
@@ -2332,7 +2322,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x322,
                 static_cast<float>(facing * 70) + x,
-                (y) + g_MarisaResourceYAt00659294, facing, 1);
+                (y) + GeometryConstants::HundredSixteen, facing, 1);
             UpdateGaugeTimer(0x96);
             PlaySound(6);
         } else if (animationStage == 5 && animationFrame != 0) {
@@ -2791,7 +2781,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationStage > 6) {
-            velocityX -= g_MarisaHorizontalSlowdownAt00659094;
+            velocityX -= FloatConstants::SevenTenths;
             if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         } else if (animationStage == 6 && animationFrame != 0) {
@@ -3198,7 +3188,7 @@ void MarisaFighter::Advance() {
             field314 = 0.0f;
             SpawnBattleEffect(0x32C,
                 static_cast<float>(facing * 74) + x,
-                (y) + g_MarisaResourceYAt00659288, facing, 1);
+                (y) + GeometryConstants::HundredFifteen, facing, 1);
             PlaySound(4);
             UpdateGaugeTimer(200);
         }
@@ -3325,7 +3315,7 @@ void MarisaFighter::Advance() {
             ResetPrimaryCounters(0x2BD);
             SpawnBattleEffect(0x34F,
                 x - static_cast<float>(facing * 80),
-                (y) + g_MarisaResourceYAt0065908C, facing, 0);
+                (y) + GeometryConstants::HundredThirty, facing, 0);
             PlaySound(0);
         }
         return;
@@ -3377,7 +3367,7 @@ void MarisaFighter::Advance() {
         if (animationStage > 14 && animationStage < 23) {
             SpawnBattleEffect(0x34C,
                 x - static_cast<float>(facing * 90),
-                (y) + g_MarisaResourceYAt00659280, -facing, 1);
+                (y) + GeometryConstants::NinetyFive, -facing, 1);
         }
         if (y > FloatConstants::Zero && animationStage > 22 &&
             animationStage < 35) {
@@ -3406,7 +3396,7 @@ void MarisaFighter::Advance() {
             SpawnBattleEffect(0x33B, x - FloatConstants::Zero, y, facing, 1);
             SpawnBattleEffect(0x34E,
                 x - static_cast<float>(facing * 110),
-                (y) + g_MarisaResourceYAt00659280, facing, 1);
+                (y) + GeometryConstants::NinetyFive, facing, 1);
             if (y == FloatConstants::Zero)
                 SpawnAuxEffect(0x7F, x, 0.0f, facing, 1);
         } else if (animationStage == 15 && animationFrame != 0) {
@@ -3579,7 +3569,7 @@ void MarisaFighter::Advance() {
             Fighter::PlaySharedSound(0x17);
             SpawnAuxEffect(0x73,
                 x - static_cast<float>(facing * 20),
-                (y) + g_MarisaResourceYAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
         }
         if (animationStage == 5 && animationFrame == 0) {
             PlaySound(0x0F);
@@ -3643,7 +3633,7 @@ void MarisaFighter::Advance() {
             ResetPrimaryCounters(0x2C9);
             SpawnBattleEffect(0x34F,
                 x - static_cast<float>(facing * 80),
-                (y) + g_MarisaResourceYAt0065908C, facing, 0);
+                (y) + GeometryConstants::HundredThirty, facing, 0);
             PlaySound(0x11);
         }
         return;
@@ -3711,7 +3701,7 @@ void MarisaFighter::Advance() {
             Fighter::PlaySharedSound(0x17);
             SpawnAuxEffect(0x74,
                 x - static_cast<float>(facing * 20),
-                (y) + g_MarisaResourceYAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
         }
         if (animationStage == 5 && animationFrame == 0) {
             PlaySound(6);
@@ -3912,7 +3902,7 @@ void MarisaFighter::Advance() {
                 SpawnBattleEffect(
                     static_cast<short>(scriptCounterF02 + 0x38E),
                     static_cast<float>(facing * 65) + x,
-                    (y) + g_MarisaResourceYAt0065927C, facing, 1);
+                    (y) + GeometryConstants::EightyFive, facing, 1);
             }
         }
         if (y > FloatConstants::Zero) {
@@ -4007,10 +3997,10 @@ void MarisaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x399,
                 x - static_cast<float>(facing * 80),
-                (y) + g_MarisaResourceYAt0065908C, facing, 0);
+                (y) + GeometryConstants::HundredThirty, facing, 0);
             SpawnBattleEffect(0x329,
                 x - static_cast<float>(facing * 80),
-                (y) + g_MarisaResourceYAt0065908C, facing, 0);
+                (y) + GeometryConstants::HundredThirty, facing, 0);
             SpawnBattleEffect(0x32A,
                 static_cast<float>(facing * 64) + x,
                 (y) + GeometryConstants::Ninety, facing, 1);
@@ -4061,10 +4051,10 @@ void MarisaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x39A,
                 x - static_cast<float>(facing * 80),
-                (y) + g_MarisaResourceYAt0065908C, facing, 0);
+                (y) + GeometryConstants::HundredThirty, facing, 0);
             SpawnBattleEffect(0x329,
                 x - static_cast<float>(facing * 80),
-                (y) + g_MarisaResourceYAt0065908C, facing, 0);
+                (y) + GeometryConstants::HundredThirty, facing, 0);
             SpawnBattleEffect(0x32A,
                 static_cast<float>(facing * 64) + x,
                 (y) + GeometryConstants::Ninety, facing, 1);
@@ -4169,7 +4159,7 @@ void MarisaFighter::Advance() {
             velocityX = static_cast<float>(g_OptionsModeAt006714D0) *
                 FloatConstants::Half + FloatConstants::One;
         if ((opponent->x) + GeometryConstants::Fifty < x)
-            velocityX = g_MarisaNegativeCardDriftAt00659268 -
+            velocityX = GeometryConstants::NegativeOne -
                 static_cast<float>(g_OptionsModeAt006714D0) *
                 FloatConstants::Half;
         if (animationStage == 1 && y > GeometryConstants::NineHundredTwenty) {
@@ -4207,7 +4197,7 @@ void MarisaFighter::Advance() {
         }
         --scriptCounterF00;
         if (animationStage < 2) {
-            velocityY -= g_MarisaCardFallAt00659264;
+            velocityY -= FloatConstants::FiftyFiveHundredths;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();

@@ -50,7 +50,7 @@ case 0x2EF: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -66,7 +66,7 @@ case 0x2EF: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -82,7 +82,7 @@ case 0x2EF: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -98,7 +98,7 @@ case 0x2EF: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -114,7 +114,7 @@ case 0x2EF: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -172,7 +172,7 @@ case 0x2F0: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -188,7 +188,7 @@ case 0x2F0: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -204,7 +204,7 @@ case 0x2F0: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -220,7 +220,7 @@ case 0x2F0: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;
@@ -236,7 +236,7 @@ case 0x2F0: {
             ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
-            ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
+            ((*(&y))+GeometryConstants::HundredThirty)-velocityY,
             facing,1);
         velocityX=float(scriptCounterF00)*FloatConstants::OneHundredth;
         velocityY=float(scriptCounterF02)*FloatConstants::OneHundredth;

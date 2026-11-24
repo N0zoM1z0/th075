@@ -49,11 +49,11 @@ case 0x2BF: {
     if ((animationStage)==15 && (animationFrame)==0) {
         SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x341,
             x -
@@ -66,11 +66,11 @@ case 0x2BF: {
     if ((animationStage)==17 && (animationFrame)==0) {
         SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x341,
             x -
@@ -83,11 +83,11 @@ case 0x2BF: {
     if ((animationStage)==19 && (animationFrame)==0) {
         SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x341,
             x -
@@ -100,11 +100,11 @@ case 0x2BF: {
     if ((animationStage)==21 && (animationFrame)==0) {
         SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x341,
             x -
@@ -117,11 +117,11 @@ case 0x2BF: {
     if ((animationStage)==23 && (animationFrame)==0) {
         SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x340,
             float((facing)*60)+(x),
-            (*(&y))+g_F1017_VolleyYAt0065908C,
+            (*(&y))+GeometryConstants::HundredThirty,
             facing,1);
         SpawnBattleEffect(0x341,
             x -

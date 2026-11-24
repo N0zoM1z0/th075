@@ -16,7 +16,7 @@
                 field314=0.0f;
                 SpawnBattleEffect(0x330,
                     float(facing*60)+(x),
-                    (*(&y))+g_F740_ShotY0At00659A1C,
+                    (*(&y))+GeometryConstants::HundredTwelve,
                     facing,1);
                 UpdateGaugeTimer(100);
             }
@@ -26,7 +26,7 @@
                 field314=0.0f;
                 SpawnBattleEffect(0x330,
                     float(facing*60)+(x),
-                    (*(&y))+g_F740_ShotY0At00659A1C,
+                    (*(&y))+GeometryConstants::HundredTwelve,
                     facing,1);
                 UpdateGaugeTimer(10);
                 ResetSecondaryCounter(6);
@@ -77,7 +77,7 @@
                 UpdateGaugeTimer(250);
                 SpawnBattleEffect(0x347,
                     float(facing*28)+(x),
-                    (*(&y))+g_F740_ShotY2At00659A18,
+                    (*(&y))+GeometryConstants::EightySeven,
                     facing,1);
             }
             if (AdvanceNestedFrame()==(animationStageCount))

@@ -12,7 +12,7 @@ case 0x1FD: {
     if ((animationStage)==2 && field07C==1) {
         SpawnAuxEffect(0x50,
             float((facing)*80)+(x),
-            (*(&y))+g_F872Volley1FAYAt00659310,
+            (*(&y))+GeometryConstants::FortyOne,
             (facing),1);
         opponent->ResetPrimaryCounters(0x66);
         opponent->ClearMotionFields();

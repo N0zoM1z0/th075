@@ -3,14 +3,8 @@
 #include "GameSharedState.hpp"
 #include "YuyukoFighter.hpp"
 
-extern float g_BounceThresholdAt006590C0;
 extern float g_BarrageYAt00659298;
-// Shared PE constants keep the names already used by their other consumers.
-extern float g_MarisaCardFallAt00659264; // Yuyuko 0x1F4 horizontal drag
 extern float g_RadialPatternYOffsetAt00659274;
-extern float g_Stage2BFY2At00659B6C;
-extern float g_Stage2DAEffectYOffsetAt0065908C;
-extern float g_YuyukoFanRightXAt00659B68;
 extern float g_CardGaugeStepAt0065747C;
 
 
@@ -636,7 +630,7 @@ void YuyukoFighter::Advance() {
             ResetSecondaryCounter(2);
             return;
         }
-        if (CheckHorizontalLimits() && velocityX <= g_BounceThresholdAt006590C0) {
+        if (CheckHorizontalLimits() && velocityX <= GeometryConstants::NegativeFifteen) {
             ResetPrimaryCounters(0x4C);
             velocityX = -velocityX * FloatConstants::Quarter;
             velocityY = 15.0f;
@@ -2533,7 +2527,7 @@ void YuyukoFighter::Advance() {
             fieldF04 = 0;
         }
         if ((velocityX) > FloatConstants::Zero && animationStage > 5) {
-            velocityX -= g_MarisaCardFallAt00659264;
+            velocityX -= FloatConstants::FiftyFiveHundredths;
             if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }
@@ -3119,7 +3113,7 @@ void YuyukoFighter::Advance() {
             PlaySound(8);
             UpdateGaugeTimer(500);
             SpawnBattleEffect(0x328, static_cast<float>(static_cast<int>(facing) * 0x53) + x,
-                (y) + g_Stage2BFY2At00659B6C, facing, 1);
+                (y) + GeometryConstants::HundredThirtySeven, facing, 1);
         }
         break;
 
@@ -3245,7 +3239,7 @@ void YuyukoFighter::Advance() {
             PlaySound(13);
             UpdateGaugeTimer(500);
             SpawnBattleEffect(0x34B, static_cast<float>(static_cast<int>(facing) * 0x53) + x,
-                (y) + g_Stage2BFY2At00659B6C, facing, 1);
+                (y) + GeometryConstants::HundredThirtySeven, facing, 1);
         }
         break;
 
@@ -3260,7 +3254,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 2 && animationFrame < 30) {
             ++fieldF04;
             if (fieldF04 > 4) {
-                SpawnAuxEffect(0x3E, x, (y) + g_Stage2DAEffectYOffsetAt0065908C, 1, 1);
+                SpawnAuxEffect(0x3E, x, (y) + GeometryConstants::HundredThirty, 1, 1);
                 fieldF04 = 0;
             }
         }
@@ -3479,7 +3473,7 @@ void YuyukoFighter::Advance() {
         if (animationStage < 3 && scriptCounterF00 < 3 && animationFrame < 70) {
             ++scriptCounterF02;
             if (scriptCounterF02 > 4) {
-                SpawnAuxEffect(0x40, x, (y) + g_Stage2DAEffectYOffsetAt0065908C, 1, 1);
+                SpawnAuxEffect(0x40, x, (y) + GeometryConstants::HundredThirty, 1, 1);
                 scriptCounterF02 = 0;
             }
         }
@@ -3536,7 +3530,7 @@ void YuyukoFighter::Advance() {
                         }
                     }
                 } else if ((y) > GeometryConstants::HundredEighty) {
-                    if ((x) > g_YuyukoFanRightXAt00659B68) {
+                    if ((x) > GeometryConstants::EightHundred) {
                         fieldF04 = 175;
                     } else {
                         fieldF04 = 5;

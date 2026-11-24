@@ -6,24 +6,14 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of RemiliaFighter::Advance at 00543210.
 
-extern float g_ShotPositiveDragAt00659A10;
-extern float g_F734_RoundY0At00659A30;
 extern float g_F734_RoundY1At00659A2C;
 extern float g_F734_RoundY2At00659A28;
 extern float g_F737_RoundY0At00659A24;
 extern float g_F737_RoundY1At00659A20;
-extern float g_F740_ShotY0At00659A1C;
 extern float g_F740_ShotY1At0065928C;
-extern float g_F740_ShotY2At00659A18;
 extern float g_F743_Y19CAt00659A14;
-extern float g_F743_Y1A0At00659288;
-extern float g_BarrageY3At0065908C;
 extern float g_OneShotYAt0065928C;
-extern float g_F711_ReverseRandomAt00659A0C;
-extern float g_F722_LowYAt00659A10;
-extern float g_StormAngleShotYAt00659A18;
 extern float g_StormYAt0065948C;
-extern float g_BounceThresholdAt006590C0;
 void RemiliaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -774,7 +764,7 @@ void RemiliaFighter::Advance() {
                 field36C=(field36C)-GeometryConstants::Hundred;
             }
             if (animationStage>3 && animationStage<11) {
-                velocityY=velocityY-g_F722_LowYAt00659A10;
+                velocityY=velocityY-FloatConstants::ThirtyFiveHundredths;
                 if (velocityY<FloatConstants::Zero)
                     velocityY=0.0f;
             }

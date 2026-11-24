@@ -4,7 +4,7 @@ case R1190_ACTION: {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
         SpawnAuxEffect(R1190_AUX_EFFECT,float(facing*24)+(x),
-            (*(&y))+g_ReimuMeterInitialYAt00659084,facing,1);
+            (*(&y))+GeometryConstants::HundredFortyFour,facing,1);
         field36C=(field36C)-GeometryConstants::Hundred;
 #if R1190_HAS_ANIMATION
         UpdateGaugeTimer(500);

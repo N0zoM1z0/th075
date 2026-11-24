@@ -32,7 +32,7 @@ case 0x355: {
         field080=0;
         field07C=0;
     }
-    if (scaleX<g_F1095_ScaleCeilingAt00659898) {
+    if (scaleX<FloatConstants::OneAndThreeTenths) {
         scaleX=(scaleX)+FloatConstants::OneTenth;
         scaleY=(scaleY)+FloatConstants::OneTenth;
     } else if (field0D8==0) {
@@ -46,12 +46,12 @@ case 0x355: {
     }
     if (field0DC==0) {
         velocityY=velocityY-FloatConstants::FifteenHundredths;
-        if (velocityY<g_F1095_LowerYAt00659894)
+        if (velocityY<FloatConstants::NegativeFourAndHalf)
             field0DC=1;
     }
     if (field0DC==1) {
         velocityY=(*(&velocityY))+FloatConstants::FifteenHundredths;
-        if (velocityY>g_F1095_UpperYAt00659890)
+        if (velocityY>FloatConstants::FourAndHalf)
             field0DC=0;
     }
     if (field07C==4 && field080>0)

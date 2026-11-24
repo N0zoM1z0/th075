@@ -11,7 +11,7 @@ case 0x4A: {
         ResetSecondaryCounter(F610_EARLY);
         break;
     }
-    if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
+    if (CheckHorizontalLimits() && (velocityX) <= GeometryConstants::NegativeFifteen) {
         ResetPrimaryCounters(0x4C);
         velocityX = -(velocityX) * FloatConstants::Quarter;
         velocityY = 15.0f;

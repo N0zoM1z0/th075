@@ -3,12 +3,7 @@
 #include "GameSharedState.hpp"
 #include "YukariFighter.hpp"
 
-extern float g_BounceThresholdAt006590C0;
-extern float g_YukariOffsetAt0065927C;
 extern float g_YukariOffsetAt00659284;
-extern float g_YukariOffsetAt0065974C;
-extern float g_YukariOffsetAt006599EC;
-extern float g_YukariOffsetAt00659A10;
 extern float g_YukariOffsetAt00659A14;
 extern float g_YukariOffsetAt00659CA4;
 extern float g_YukariOffsetAt00659CAC;
@@ -675,7 +670,7 @@ void YukariFighter::Advance() {
             ResetSecondaryCounter(3);
             break;
         }
-        if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
+        if (CheckHorizontalLimits() && (velocityX) <= GeometryConstants::NegativeFifteen) {
             if (fieldF0C == 0) {
                 fieldF0C = 1;
                 SpawnBattleEffect(999, x, y,
@@ -2297,27 +2292,27 @@ void YukariFighter::Advance() {
             field318 = 0.0f;
             field31C = 0.0f;
             SpawnBattleEffect(0x326, static_cast<float>(facing * 180) + x,
-                (y) + g_YukariOffsetAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
             field314 = 90.0f;
             field318 = 4.0f;
             field31C = 0.0f;
             SpawnBattleEffect(0x326, static_cast<float>(facing * 180) + x,
-                (y) + g_YukariOffsetAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
             field314 = -90.0f;
             field318 = 4.0f;
             field31C = 0.0f;
             SpawnBattleEffect(0x326, static_cast<float>(facing * 180) + x,
-                (y) + g_YukariOffsetAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
             field314 = 90.0f;
             field318 = 8.0f;
             field31C = 0.0f;
             SpawnBattleEffect(0x326, static_cast<float>(facing * 180) + x,
-                (y) + g_YukariOffsetAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
             field314 = -90.0f;
             field318 = 8.0f;
             field31C = 0.0f;
             SpawnBattleEffect(0x326, static_cast<float>(facing * 180) + x,
-                (y) + g_YukariOffsetAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
             PlaySound(0);
             UpdateGaugeTimer(200);
         }
@@ -2610,7 +2605,7 @@ void YukariFighter::Advance() {
                 field318 = 10.0f;
                 SetPolarVelocity(field314, 40.0f);
                 SpawnBattleEffect(800, (g_YukariOffsetAt00659284 + velocityX) * facing + x,
-                    ((y) + g_YukariOffsetAt0065974C) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFive) - velocityY, facing, 1);
             }
             velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneHundredth;
             velocityY = static_cast<float>(scriptCounterF02) * FloatConstants::OneHundredth;
@@ -2635,7 +2630,7 @@ void YukariFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 4 && animationFrame == 0) {
             SpawnBattleEffect(0x33F, x - static_cast<float>(facing * 640),
-                (y) + g_YukariOffsetAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
             SpawnBattleEffect(0x33F, x - static_cast<float>(facing * 640),
                 (y) + GeometryConstants::HundredTwentyFive, facing, 1);
             SpawnBattleEffect(0x33F, x - static_cast<float>(facing * 640),
@@ -2685,7 +2680,7 @@ void YukariFighter::Advance() {
         }
         if (animationStage == 7 && animationFrame == 0) {
             SpawnBattleEffect(0x33F, x - static_cast<float>(facing * 640),
-                (y) + g_YukariOffsetAt0065927C, facing, 1);
+                (y) + GeometryConstants::EightyFive, facing, 1);
             SpawnBattleEffect(0x33F, x - static_cast<float>(facing * 640),
                 (y) + GeometryConstants::FortyFive, facing, 1);
             SpawnBattleEffect(0x33F, x - static_cast<float>(facing * 640),
@@ -3050,7 +3045,7 @@ void YukariFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(250);
             SpawnBattleEffect(0x32A, static_cast<float>(facing * 160) + x,
-                (y) + g_YukariOffsetAt006599EC, facing, 1);
+                (y) + GeometryConstants::ThreeHundredEighty, facing, 1);
             PlaySound(4);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3066,7 +3061,7 @@ void YukariFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(250);
             SpawnBattleEffect(0x32A, static_cast<float>(facing * 320) + x,
-                (y) + g_YukariOffsetAt006599EC, facing, 1);
+                (y) + GeometryConstants::ThreeHundredEighty, facing, 1);
             PlaySound(4);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3082,7 +3077,7 @@ void YukariFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             UpdateGaugeTimer(250);
             SpawnBattleEffect(0x32A, static_cast<float>(facing * 480) + x,
-                (y) + g_YukariOffsetAt006599EC, facing, 1);
+                (y) + GeometryConstants::ThreeHundredEighty, facing, 1);
             PlaySound(4);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3259,7 +3254,7 @@ void YukariFighter::Advance() {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, static_cast<float>(facing * 65) + x,
-                (y) + g_YukariOffsetAt0065974C, facing, 1);
+                (y) + GeometryConstants::HundredFive, facing, 1);
             field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -3354,7 +3349,7 @@ void YukariFighter::Advance() {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x74, static_cast<float>(facing * 65) + x,
-                (y) + g_YukariOffsetAt0065974C, facing, 1);
+                (y) + GeometryConstants::HundredFive, facing, 1);
             field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -3379,7 +3374,7 @@ void YukariFighter::Advance() {
         if (animationStage == 8 || animationStage == 9)
             rotationZ = (rotationZ) + GeometryConstants::FortyFive;
         if (animationStage == 8) {
-            velocityX -= g_YukariOffsetAt00659A10;
+            velocityX -= FloatConstants::ThirtyFiveHundredths;
             if (velocityX < FloatConstants::Zero)
                 velocityX = 0.0f;
         }

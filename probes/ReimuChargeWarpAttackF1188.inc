@@ -8,7 +8,7 @@ case R1188_ACTION: {
 #if R1188_HAS_GRAVITY_MIN
         && (animationStage)>3
 #endif
-    ) velocityY=velocityY-g_ReimuChargeFallAt00659094;
+    ) velocityY=velocityY-FloatConstants::SevenTenths;
     if ((animationStage)==R1188_LAND_STAGE || (animationStage)==R1188_LAND_STAGE+1) {
         if (y+velocityY<FloatConstants::Zero) {
             y=0.0f; velocityX=0.0f; velocityY=0.0f;

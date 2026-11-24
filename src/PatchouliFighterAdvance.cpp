@@ -3,14 +3,8 @@
 #include "GameSharedState.hpp"
 #include "PatchouliFighter.hpp"
 
-extern float g_BounceThresholdAt006590C0;
-extern float g_PatchouliEffectYAt00659084;
-extern float g_PatchouliEffectYAt00659470;
 extern float g_PatchouliEffectYAt00659740;
-extern float g_PatchouliEffectYAt00659744;
 extern float g_PatchouliEffectYAt00659748;
-extern float g_PatchouliEffectYAt0065974C;
-extern float g_PatchouliEffectYAt00659750;
 
 void PatchouliFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -663,7 +657,7 @@ void PatchouliFighter::Advance() {
             ResetSecondaryCounter(4);
             return;
         }
-        if (CheckHorizontalLimits() && (velocityX) <= g_BounceThresholdAt006590C0) {
+        if (CheckHorizontalLimits() && (velocityX) <= GeometryConstants::NegativeFifteen) {
             ResetPrimaryCounters(0x4C);
             velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
@@ -2262,16 +2256,16 @@ void PatchouliFighter::Advance() {
             UpdateGaugeTimer(100);
             field314 = 5.0f;
             SpawnBattleEffect(0x33b, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -5.0f;
             SpawnBattleEffect(0x33b, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = 20.0f;
             SpawnBattleEffect(0x33b, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -20.0f;
             SpawnBattleEffect(0x33b, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             PlaySound(0);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2289,16 +2283,16 @@ void PatchouliFighter::Advance() {
             UpdateGaugeTimer(100);
             field314 = 45.0f;
             SpawnBattleEffect(0x33d, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -25.0f;
             SpawnBattleEffect(0x33d, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = 25.0f;
             SpawnBattleEffect(0x33d, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -45.0f;
             SpawnBattleEffect(0x33d, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             PlaySound(0);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2348,16 +2342,16 @@ void PatchouliFighter::Advance() {
             UpdateGaugeTimer(100);
             field314 = 5.0f;
             SpawnBattleEffect(0x341, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -5.0f;
             SpawnBattleEffect(0x341, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = 20.0f;
             SpawnBattleEffect(0x341, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -20.0f;
             SpawnBattleEffect(0x341, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             PlaySound(0);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2380,16 +2374,16 @@ void PatchouliFighter::Advance() {
             UpdateGaugeTimer(100);
             field314 = 45.0f;
             SpawnBattleEffect(0x33f, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -35.0f;
             SpawnBattleEffect(0x33f, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = 25.0f;
             SpawnBattleEffect(0x33f, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             field314 = -45.0f;
             SpawnBattleEffect(0x33f, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             PlaySound(0);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2420,7 +2414,7 @@ void PatchouliFighter::Advance() {
             for (int shot = 0; shot < 8; ++shot) {
                 field314 = static_cast<float>(shot * 45);
                 SpawnBattleEffect(0x35E, static_cast<float>(facing * 106) + x,
-                    (y) + g_PatchouliEffectYAt00659084, facing, 1);
+                    (y) + GeometryConstants::HundredFortyFour, facing, 1);
             }
             PlaySound(2);
         }
@@ -2489,7 +2483,7 @@ void PatchouliFighter::Advance() {
             for (int shot = 0; shot < 8; ++shot) {
                 field314 = static_cast<float>(shot * 45);
                 SpawnBattleEffect(0x35E, static_cast<float>(facing * 78) + x,
-                    (y) + g_PatchouliEffectYAt0065974C, facing, 1);
+                    (y) + GeometryConstants::HundredFive, facing, 1);
             }
             PlaySound(2);
         }
@@ -2511,7 +2505,7 @@ void PatchouliFighter::Advance() {
             PlaySound(0x16);
             field314 = static_cast<float>(10 - RecordedRange(0, 20));
             SpawnBattleEffect(0x324, static_cast<float>(facing * 65) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             ++scriptCounterF02;
             scriptCounterF00 = 2;
         }
@@ -2553,7 +2547,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             UpdateGaugeTimer(150);
             SpawnBattleEffect(0x355, static_cast<float>(facing * 77) + x,
-                (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                (y) + GeometryConstants::HundredEighteen, facing, 1);
             PlaySound(0x18);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2580,7 +2574,7 @@ void PatchouliFighter::Advance() {
             PlaySound(0x16);
             field314 = static_cast<float>(RecordedRange(0, 20) - 10);
             SpawnBattleEffect(0x324, static_cast<float>(facing * 78) + x,
-                (y) + g_PatchouliEffectYAt0065974C, facing, 1);
+                (y) + GeometryConstants::HundredFive, facing, 1);
             ++scriptCounterF02;
             scriptCounterF00 = 2;
         }
@@ -2924,23 +2918,23 @@ void PatchouliFighter::Advance() {
             PlaySound(10);
             field314 = 75.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = -75.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = 45.0f;
             field314 = 60.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = -60.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = 45.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = -45.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
         }
         return;
     }
@@ -2957,28 +2951,28 @@ void PatchouliFighter::Advance() {
             PlaySound(10);
             field314 = 105.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = 90.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = 75.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = 60.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = -105.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = -90.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = -75.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
             field314 = -60.0f;
             SpawnBattleEffect(0x346, static_cast<float>(facing * 100) + x,
-                (y) + g_PatchouliEffectYAt00659470, facing, 1);
+                (y) + GeometryConstants::SeventySeven, facing, 1);
         }
         return;
     }
@@ -3053,7 +3047,7 @@ void PatchouliFighter::Advance() {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, static_cast<float>(facing * 30) + x,
-                (y) + g_PatchouliEffectYAt00659744, facing, 1);
+                (y) + GeometryConstants::HundredSeventySeven, facing, 1);
             field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3351,7 +3345,7 @@ void PatchouliFighter::Advance() {
             --fieldF06;
             if (fieldF06 <= 0) {
                 SpawnBattleEffect(0x391, static_cast<float>(facing * 77) + x,
-                    (y) + g_PatchouliEffectYAt00659750, facing, 1);
+                    (y) + GeometryConstants::HundredEighteen, facing, 1);
                 PlaySound(0x18);
                 fieldF06 = 15;
                 ++fieldF04;

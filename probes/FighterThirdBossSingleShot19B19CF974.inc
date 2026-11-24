@@ -20,7 +20,7 @@ case 0x19B: {
         field318=15.0f;
         SpawnBattleEffect(0x326,
             float((facing)*49)+(x),
-            (*(&y))+g_F974_ShotYAt00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         scriptCounterF00=2;
         ++scriptCounterF02;

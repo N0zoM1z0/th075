@@ -26,7 +26,7 @@ case 0x258: {
                 field318=4.0f;
                 SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
-                    (*(&y))+g_BarrageY3At0065908C,
+                    (*(&y))+GeometryConstants::HundredThirty,
                     facing,1);
                 field314=70.0f;
                 field318=4.0f;

@@ -60,7 +60,7 @@ case 0x384: {
     if (owner->animationStage==9 && animationStage<6) {
         ResetSecondaryCounter(animationStage+5);
         velocityX=float(facing) *
-            (owner->opponent->x-x)/g_F1113_DivisorAt0065988C;
+            (owner->opponent->x-x)/GeometryConstants::TwentyFour;
         if (velocityX<GeometryConstants::Six)
             velocityX=6.0f;
         velocityY=-12.0f;

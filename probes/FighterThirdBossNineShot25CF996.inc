@@ -22,55 +22,55 @@ case 0x25C: {
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=-21.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=-14.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=-7.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=0.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=7.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=14.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=21.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         field314=28.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,
             float((facing)*49)+(x),
-            (*(&y))+g_F968_RoundY190At00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
     }
     break;

@@ -19,7 +19,7 @@
                 for (int shot=0; shot<8; ++shot) {
                     SpawnBattleEffect(0x324,
                         float(facing*70)+(x),
-                        (*(&y))+g_F734_RoundY0At00659A30,
+                        (*(&y))+GeometryConstants::HundredSix,
                         facing,1);
                 }
             }

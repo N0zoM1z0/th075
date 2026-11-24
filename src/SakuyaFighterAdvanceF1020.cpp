@@ -6,11 +6,8 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of SakuyaFighter::Advance at 004AC040.
 
-extern float g_F968_RoundY190At00659294;
 extern float g_F968_RoundY191At00659498;
 extern float g_F971_YAt00659494;
-extern float g_F971_YAt00659490;
-extern float g_F971_YAt00659294;
 extern float g_F971_YAt0065948C;
 extern float g_F971_YAt00659484;
 extern float g_F971_YAt00659480;
@@ -21,14 +18,8 @@ extern float g_F972_YAt00659284;
 extern float g_F972_YAt00659464;
 extern float g_F972_YAt00659468;
 extern float g_F972_YAt0065946C;
-extern float g_F972_YAt00659470;
 extern float g_F972_YAt00659474;
-extern float g_F974_ShotYAt00659294;
 extern float g_F974_ShotYAt00659498;
-extern float g_F983_BurstYAt00659490;
-extern float g_F1017_VolleyYAt0065908C;
-extern float g_F1019_VolleyYAt0065908C;
-extern float g_BounceThresholdAt006590C0;
 void SakuyaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;

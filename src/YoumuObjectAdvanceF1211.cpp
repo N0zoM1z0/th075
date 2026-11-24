@@ -12,7 +12,6 @@
 
 
 
-extern float g_F1211_SplitAltitudeAt006599EC;
 
 
 void YoumuObject::Advance()
@@ -2280,7 +2279,7 @@ case 0x331: {
                     }
                 }
                 if (animationStage == 2 && owner->action == 752 &&
-                    owner->animationStage == 8 && y < g_F1211_SplitAltitudeAt006599EC) {
+                    owner->animationStage == 8 && y < GeometryConstants::ThreeHundredEighty) {
                     ClearFrameInfo();
                     field0D8 = RecordedRange(0, 3) + 3;
                     for (burstIndex = 0; burstIndex < field0D8; burstIndex++) {

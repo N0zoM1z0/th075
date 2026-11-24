@@ -31,12 +31,12 @@ case 0x2F9: {
                 field314=float((scriptCounterF02)+(scriptCounterF00)*10);
                 SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
-                    (*(&y))+g_StormAngleShotYAt00659A18,
+                    (*(&y))+GeometryConstants::EightySeven,
                     facing,1);
                 for (int i=0;i<static_cast<int>(g_OptionsModeAt006714D0)*2+4;++i)
                     SpawnBattleEffect(0x392,
                         float(facing*30)+(x),
-                        (*(&y))+g_StormAngleShotYAt00659A18,
+                        (*(&y))+GeometryConstants::EightySeven,
                         facing,1);
             }
             if ((animationStage)==14 && (animationFrame)==0) {
@@ -44,12 +44,12 @@ case 0x2F9: {
                 field314=float((scriptCounterF02)-(scriptCounterF00)*10);
                 SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
-                    (*(&y))+g_StormAngleShotYAt00659A18,
+                    (*(&y))+GeometryConstants::EightySeven,
                     facing,1);
                 for (int i=0;i<static_cast<int>(g_OptionsModeAt006714D0)*2+4;++i)
                     SpawnBattleEffect(0x392,
                         float(facing*30)+(x),
-                        (*(&y))+g_StormAngleShotYAt00659A18,
+                        (*(&y))+GeometryConstants::EightySeven,
                         facing,1);
             }
             if (AdvanceNestedFrame()==(animationStageCount)) {

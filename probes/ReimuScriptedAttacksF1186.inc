@@ -99,7 +99,7 @@ case 0x189: {
 #define R1186_ANGLE3 10.0f
 #define R1186_ANGLE4 20.0f
 #define R1186_X_OFFSET 114
-#define R1186_Y_OFFSET g_ReimuLowVolleyYAt006590A0
+#define R1186_Y_OFFSET GeometryConstants::NinetySix
 #include "ReimuFiveShotAttackF1186.inc"
 #undef R1186_ACTION
 #undef R1186_ANGLE0

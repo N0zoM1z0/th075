@@ -56,7 +56,7 @@
                 break;
             }
             if ((animationStage)==3 && (animationFrame)==0) {
-                velocityX=g_F711_ReverseRandomAt00659A0C-float(RecordedRange(0,15));
+                velocityX=GeometryConstants::NegativeTwentyFive-float(RecordedRange(0,15));
                 velocityY=40.0f;
                 field05C=6.0f;
                 SpawnAuxEffect(0x7D,

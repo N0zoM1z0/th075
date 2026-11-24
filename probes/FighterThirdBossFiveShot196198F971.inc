@@ -23,11 +23,11 @@ case 0x196: {
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*44)+(x),
-            (*(&y))+g_F971_YAt00659490,
+            (*(&y))+GeometryConstants::HundredThirtyOne,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*49)+(x),
-            (*(&y))+g_F971_YAt00659294,
+            (*(&y))+GeometryConstants::HundredSixteen,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*54)+(x),

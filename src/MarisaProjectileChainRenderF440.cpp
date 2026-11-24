@@ -15,7 +15,6 @@
 // Borrowed receiver/texture/record field ABIs only, not full owner classes.
 // Borrowed receiver, texture manager, record fields and exact 132-byte quad.
 // No complete original fighter/auxiliary owner layout is asserted.
-extern const float g_MarisaPhaseDivisorAAt00659310;
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
 struct NativeMarisaQuadF362 { DWORD words[34]; void Construct(); };
@@ -63,7 +62,7 @@ void MarisaFighter::RenderChain() {
             reinterpret_cast<SpriteTransform*>(&quad)->RotateQuad(
               0.0f,0.0f,0.0f,
               float(phaseA)+CameraSineAt0040D940(float(i*6)+float(fieldEF8)/GeometryConstants::Fifty)*GeometryConstants::Thirty,
-              float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(fieldEF8)/g_MarisaPhaseDivisorAAt00659310)*GeometryConstants::Thirty,
+              float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(fieldEF8)/GeometryConstants::FortyOne)*GeometryConstants::Thirty,
               float((fieldEF8)*5+i*5));
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(
               float((field1014)*angle)+(field1008),-(field100C),0.0f);

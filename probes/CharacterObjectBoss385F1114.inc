@@ -24,7 +24,7 @@ case 0x385: {
     }
     if (animationStage==2) {
         scaleX=float(RecordedRange(0,6))*
-            FloatConstants::OneTenth+g_F1114_RandomOffsetAt00659094;
+            FloatConstants::OneTenth+FloatConstants::SevenTenths;
         scaleY=(*(&scaleX))+FloatConstants::One;
     }
     if (animationStage>2)

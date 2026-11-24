@@ -31,7 +31,7 @@ case 0x2DD: {
     if ((animationStage)==3 && (animationFrame)==0) {
         SpawnAuxEffect(0x7F,x,y,
             (facing),1);
-        velocityX=float(RecordedRange(0,6))+g_F894RandomHeightAt006592A0;
+        velocityX=float(RecordedRange(0,6))+FloatConstants::TenAndHalf;
         velocityY=16.0f;
         field07C=0;
         field080=1;
