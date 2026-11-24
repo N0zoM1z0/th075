@@ -80,6 +80,13 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
 
 ## Layout facts
 
+- The stage base constructor at `0x00449DE0` installs its six-slot
+  vtable, then constructs the camera at `+4` and texture manager at
+  `+0x18`. The precompiled derived destructor defers its deleting
+  wrapper, making the first constructor-order difference observable
+  through the complete BG00a interval.
+  [Stage lifetime order](ORIGIN_PENDING_REVIEW.md#r305--stage-base-constructor-follows-the-deleting-destructors)
+
 - The texture entry constructed by `0x0040B000`, `0x0040B110`, and
   `0x0040B1D0` occupies 44 bytes. Its explicitly declared lifetime
   methods call the bitmap lifetime at offset zero. The bitmap

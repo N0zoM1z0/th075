@@ -184,10 +184,10 @@ ledger credits 43,282 CODE bytes.
 ## Authored coverage and pending origin review
 
 Coverage exceeds the 98% goal even with the pending origin candidates
-in the denominator. The R304 texture entry lifetime definitions await
-exact source adoption once the bitmap layout is established. Use the
-live report for current counts and `config/function-origins.csv` for
-the remaining provenance decisions.
+in the denominator. The R304 texture entry lifetimes and R305 stage
+base constructor await exact source adoption. Use the live report
+for current counts and `config/function-origins.csv` for the remaining
+provenance decisions.
 
 R274 identifies the guarded extension cleanup at `0x004588B0` through
 the game pattern parser, the original prefix lifetime calls, and the
@@ -223,10 +223,11 @@ record found in either package.
 [Remaining origin evidence](ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 [Publisher patch check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
 
-R302 places both scene and stage base constructors at their native
-offsets with late explicit definitions. The adjacent deleting
-destructors still link early in both probes.
-[Constructor order controls](ORIGIN_PENDING_REVIEW.md#r302--scene-and-stage-constructor-order-through-the-first-derived-class)
+R305 identifies the stage base constructor through the complete BG00a
+code interval and both adjacent vtables. For the scene, precompiling
+the destructor moves it along with the deleting wrapper. The original
+places those two functions on opposite sides of the authored methods.
+[Precompiled constructor controls](ORIGIN_PENDING_REVIEW.md#r305--stage-base-constructor-follows-the-deleting-destructors)
 
 R303 reproduces the full banner interval with the genuine `log10f`
 definition deferred past the progress accessors and with a late

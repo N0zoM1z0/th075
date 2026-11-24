@@ -1555,7 +1555,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00449D60,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00449D90,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00449DC0,authored,BackgroundStage,authored,target-observed,R057
-0x00449DE0,unknown,,review,explicit-implicit-source-ambiguity,R108
+0x00449DE0,authored,BackgroundStage,authored,inferred-from-complete-linked-stage-constructor-order,R305
 0x00449E10,authored,BackgroundStage,authored,target-observed,R055
 0x00449EC0,authored,BackgroundStage,authored,whole-background-counter-callback-and-independent-asset-vtable-render-context,R220
 0x00449EE0,authored,BattleEffect,authored,target-observed,R042

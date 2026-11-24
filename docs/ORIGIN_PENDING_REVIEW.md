@@ -404,7 +404,7 @@ The current direct-call scan is in
 | `0x0040D900`, `0x0040D940` | Both R163 forms bind to the R292 cosine and sine workers. R303 rules out the decorated definitions in the older SDK shape archive, which compute results with x87 instructions directly. |
 | `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
-| `0x004251C0`, `0x00449DE0` | R302 matches both constructors, their first complete derived callers, and the adjacent vtables and unwind records. Late explicit definitions restore the native constructor offsets. The deleting destructors still occupy different linked slots. |
+| `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers the deleting destructor with a precompiled header, but moves the ordinary Battle End destructor from its native slot. |
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
@@ -907,6 +907,40 @@ declaration spelling remain open. Exact source adoption is pending.
     bash .analysis/final-origin-review/texture-emission-order/link-folding.sh
     bash .analysis/final-origin-review/texture-emission-order/link-sdk-icf.sh
     scripts/repo-python .analysis/final-origin-review/texture-emission-order/check-alternatives.py
+
+### R305 — Stage base constructor follows the deleting destructors
+
+The VC7.1 split build reproduces the full 877-byte code interval
+`0x00449AA0..0x00449E0C`, including BG00a's virtuals and both deleting
+destructors. It also reproduces the 76-byte readonly interval
+`0x00658434..0x0065847F` with the two adjacent six-slot vtables,
+alignment and three double constants. The comparison binds 59
+operands across the complete code bodies, tables, BG00a handler
+and unwind map. Named readonly definitions in the second object
+keep the draw constants after the vtables while preserving their
+values and every reference in the original draw body.
+
+With the derived destructor definition in a `/Yc` header, `/Yu`
+defers the generated wrapper until after the authored virtuals.
+The base destructor and its deleting wrapper then precede the
+derived wrapper and destructor. Defining the base constructor in
+the second object places it at the original `+0x340`. Removing the
+explicit declaration and definition from otherwise identical inputs
+keeps the readonly interval exact and inserts the implicit constructor
+at `+0xA0`, the original slot of the first BG00a virtual. The full
+code and data comparison supports authored origin for `0x00449DE0`.
+The original source partition remains open.
+
+The same precompiled destructor control for Battle End defers its
+deleting wrapper and ordinary destructor together. The native
+ordinary destructor immediately follows the derived constructor.
+An inline declaration alone keeps the deleting wrapper early. The
+scene constructor at `0x004251C0` remains unresolved.
+
+    scripts/repo-python .analysis/final-origin-review/stage-ctor-order/make.py
+    scripts/repo-python .analysis/final-origin-review/scene-ctor-order/make.py
+    bash .analysis/final-origin-review/ctor-pch-order/build.sh stage-split-constants stage-implicit-dtor-constants scene-late scene-header-dtor scene-inline-declaration
+    scripts/repo-python .analysis/final-origin-review/ctor-pch-order/compare.py stage-split-constants stage-implicit-dtor-constants scene-late scene-header-dtor scene-inline-declaration
 
 ## Historical R263 inventory
 

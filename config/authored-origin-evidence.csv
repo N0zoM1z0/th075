@@ -915,3 +915,4 @@ address,size,body_sha256,inferred_role,return_count,internal_branch_count,extern
 0x00423B20,26,8e3a75e1b2aff3304bbedbe96d33912dfe948fa190fd871c00dabe1c6ae064aa,PulseEventServiceAt00423B20,1,0,0,R290
 0x0040D8C0,22,1535be9b644deb6f88da68ff06cc11786c711fdfbb97302067b3d43758f079ae,TextureEntry::TextureEntry,1,0,0,R304
 0x0040D8E0,19,37746225131fdffa9b1ebd4b9457eae2d85941fedc717f5f12eb86ba781e6d8a,TextureEntry::~TextureEntry,1,0,0,R304
+0x00449DE0,45,f6846d1d15b3f92075ec3c3bee3ee6e9ef8f279e72a70068fde90fabc2c83529,BackgroundBase::BackgroundBase,1,0,0,R305
