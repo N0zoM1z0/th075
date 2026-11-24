@@ -402,8 +402,9 @@ The current direct-call scan is in
 | Candidates | Evidence gap |
 | --- | --- |
 | `0x0040D900`, `0x0040D940` | R308 matches the complete sprite drawing interval with the precompiled standard overloads and ordinary wrappers. R303 rules out the x87 bodies in the older SDK shape archive. |
+| `0x00411C10` | R314 reproduces the full 3,113-byte linked interval with implicit and explicit constructors by omitting `/Gy`. |
 | `0x004138D0`, `0x00441FD0` | R313 reproduces both complete surrounding intervals with ordinary functions and template instantiations. Neither body has a direct caller or an absolute pointer literal. |
-| `0x004251C0` | R311 matches the 229-byte constructor suffix with explicit definitions and the 68-byte readonly interval with both forms. In R312 the first Battle End constructor object still supplies the deleting wrapper when the ordinary destructor is defined elsewhere. |
+| `0x004251C0` | R314 reproduces the complete 1,189-byte Battle End and LoadingScene constructor interval and the 68-byte readonly interval with both base definitions by omitting `/Gy`. |
 | `0x00438A60` | R310 preserves all 14 native caller edges with a deferred standard overload and a late ordinary wrapper. Both call the `labs` body identified by R294. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R308 matches the complete collision interval with the precompiled header, two ordinary functions, and an ordinary function calling the header worker. |
@@ -815,9 +816,9 @@ relative offset (`+0x3C0` in Scene and `+0x340` in Stage). The first code
 order mismatch in those links is the slot immediately after the first
 derived constructor. Each link puts a deleting destructor there. The
 native windows start that slot with the Battle End destructor and the
-BG00a no-op virtual, respectively. Switching the stage probe to `/Gy-`
-or `/Z7` preserves these offsets. Reproducing the placement of the
-deleting destructors remains the missing control for an origin decision.
+BG00a no-op virtual, respectively. `/Z7` preserves these offsets.
+R314 records the effect of omitting `/Gy`; the earlier `/Gy-` trial
+raised warning D4002 and left function packaging enabled.
 
     bash .analysis/final-origin-review/scene-ctor-order/build.sh
     scripts/repo-python .analysis/final-origin-review/scene-ctor-order/compare.py
@@ -992,12 +993,14 @@ In the R298 append-only context an implicit constructor followed
 `AppendElement`, as did both explicit inline forms. Adding the
 intervening functions leaves the implicit constructor at `+0xC0`,
 where the native interval starts `RemoveFrontIfPresent`. The
-implicit build shifts that method to `+0xE0` with the typed list,
-precompiled declarations or `/Gy-`. A late explicit inline
+implicit build shifts that method to `+0xE0` with the typed list
+and with precompiled declarations under `/Gy`. A late explicit inline
 definition also matches the full interval. Moving the inline
 definition into the precompiled header with the real list defers
 it past the native slot. The explicit matches and consistent
-implicit displacement support authored origin for the constructor.
+implicit displacement originally supported authored origin for the
+constructor. R314 supersedes that decision with a corrected
+compiler flag control.
 
     bash .analysis/final-origin-review/sprite-constructor-spine/build.sh explicit implicit inline pch-implicit pch-inline typed-implicit typed-explicit no-gy-implicit no-gy-typed-implicit no-gy-explicit pch-typed-implicit pch-typed-inline
     scripts/repo-python .analysis/final-origin-review/sprite-constructor-spine/compare.py explicit implicit inline pch-implicit pch-inline typed-implicit typed-explicit no-gy-implicit no-gy-typed-implicit no-gy-explicit pch-typed-implicit pch-typed-inline
@@ -1166,6 +1169,48 @@ installation and do not contain the target GUID in either byte order.
     bash .analysis/final-origin-review/empty-hook-windows/build.sh
     scripts/repo-python .analysis/final-origin-review/empty-hook-windows/compare.py
     scripts/repo-python scripts/audit-local-pdb-identities.py --root /home/pentester/coding/codex_ida --output .analysis/final-origin-review/current-pdb-identities.json
+
+### R314 — Omitting function packaging restores the native Scene order
+
+VC7.1 build 3077 warns about `/G-` when passed `/Gy-`. The old
+probe passed that spelling after `/Gy`, leaving the original flag
+in effect. Omitting `/Gy` places the ordinary methods in a shared
+`.text` section. Generated deleting wrappers retain their own
+COMDATs, which follow that section in the link.
+
+For LoadingScene, this restores both deleting wrappers after
+`Draw`. All 668 linked code bytes and the full 44-byte string and
+vtable interval match. The two complete exception records also
+match. Applying the same flag omission to the preceding Battle End
+object gives the complete 1,189-byte interval
+`0x00424E00..0x004252A4`, including the original deleting wrapper,
+and all 68 readonly bytes. Both an implicit base constructor and
+an explicit definition in a subsequent object reproduce the
+entire comparison, including both exception records.
+
+The corrected SpriteHistory control places the implicit
+constructor at its native `+0xC10` and matches all 3,113 linked
+bytes and 57 code relocations. The real typed list build retains
+that match and the three compared list helpers. The out-of-line
+constructor still matches. This reopens the origin of
+`0x00411C10`. The R307 code and ownership record is in commit
+`c1680891`.
+
+With the flag omitted, the R305 precompiled stage builds still
+distinguish the stage base constructor. The explicit form gives
+all 877 linked code bytes, the 76-byte readonly interval and
+the complete exception record with 59 relocation fields. The
+implicit constructor moves to `+0x2C0`, the native base deleting
+wrapper slot, instead of its target `+0x340`.
+
+    bash .analysis/final-origin-review/loading-wrapper-order/build.sh ordinary packed
+    scripts/repo-python .analysis/final-origin-review/loading-wrapper-order/compare.py ordinary packed
+    bash .analysis/final-origin-review/scene-no-gy/build.sh separate implicit
+    scripts/repo-python .analysis/final-origin-review/scene-no-gy/compare.py separate implicit
+    bash .analysis/final-origin-review/sprite-constructor-spine/build.sh no-gy-implicit no-gy-typed-implicit no-gy-explicit
+    scripts/repo-python .analysis/final-origin-review/sprite-constructor-spine/compare.py no-gy-implicit no-gy-typed-implicit no-gy-explicit
+    bash .analysis/final-origin-review/ctor-pch-order/build-no-gy.sh stage-split-constants stage-implicit-dtor-constants
+    scripts/repo-python .analysis/final-origin-review/ctor-pch-order/compare-no-gy.py stage-split-constants stage-implicit-dtor-constants
 
 ## Historical R263 inventory
 

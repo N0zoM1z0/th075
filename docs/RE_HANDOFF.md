@@ -184,9 +184,9 @@ ledger credits 43,282 CODE bytes.
 ## Authored coverage and pending origin review
 
 Coverage exceeds the 98% goal even with the pending origin candidates
-in the denominator. The texture entry lifetimes, stage base constructor,
-Actor constructor and sprite history element constructor from R304–R307
-await exact source adoption. Use the live report for current counts and
+in the denominator. The texture entry lifetimes, stage base constructor
+and Actor constructor from R304–R306 await exact source adoption.
+Use the live report for current counts and
 `config/function-origins.csv` for the remaining provenance decisions.
 
 R274 identifies the guarded extension cleanup at `0x004588B0` through
@@ -233,11 +233,12 @@ R313 links the complete replay and banner intervals with both ordinary
 and template alternatives for the two uncalled bodies.
 [Uncalled function comparisons](ORIGIN_PENDING_REVIEW.md#r313--uncalled-functions-retain-byte-equal-linked-alternatives)
 
-R307 attributes the sprite history element constructor through a
-3,113-byte interval starting at `AppendElement`. The implicit
-constructor occupies the next native method's slot even with real
-list instantiations and precompiled declarations.
-[Sprite history constructor controls](ORIGIN_PENDING_REVIEW.md#r307--sprite-history-element-follows-the-drawing-and-transform-methods)
+R314 omits the unsupported `/Gy-` spelling and removes `/Gy` from
+the profile. The Scene and SpriteHistory intervals then match with
+both implicit and explicit constructors. The SpriteHistory origin
+returns to review. The precompiled stage constructor still has an
+explicit-only match across its full code and readonly intervals.
+[Function packaging controls](ORIGIN_PENDING_REVIEW.md#r314--omitting-function-packaging-restores-the-native-scene-order)
 
 R306 attributes the Actor constructor through the linked stage resource
 loader and both complete base constructors. The compiler emits the

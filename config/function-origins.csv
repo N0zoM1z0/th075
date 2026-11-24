@@ -543,7 +543,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004116F0,authored,SpriteTransform,authored,target-observed,R035
 0x00411BB0,authored,SpriteScene,authored,complete-game-policy-with-batch-context,R104
 0x00411BE0,authored,SpriteScene,authored,complete-game-policy-with-batch-context,R104
-0x00411C10,authored,SpriteSequence,authored,inferred-from-linked-sprite-history-constructor-order,R307
+0x00411C10,unknown,SpriteSequence,review,explicit-implicit-source-ambiguity,R314
 0x00411C30,library,VC7STL,exclude,complete-vc7-list-dependency-with-whole-parent-source-eh-graph,R167
 0x00411C70,library,VC7STL,exclude,complete-vc7-list-dependency-with-whole-parent-source-eh-graph,R167
 0x00411C90,library,VC7STL,exclude,complete-vc7-list-iterator-with-whole-game-parents-and-closed-source-eh-graph,R168

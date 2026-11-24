@@ -81,11 +81,10 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
 ## Layout facts
 
 - The 164-byte sprite history element at `0x00411C10` constructs its
-  quad at `+4`. The full linked interval distinguishes implicit
-  emission at the first append caller from explicit definitions after
-  the draw and transform methods. Both definitions occupied the same
-  slot in the earlier probe that omitted those methods.
-  [Sprite history constructor comparison](ORIGIN_PENDING_REVIEW.md#r307--sprite-history-element-follows-the-drawing-and-transform-methods)
+  quad at `+4`. Omitting `/Gy` makes the implicit and explicit
+  definitions occupy the same native slot after the draw and
+  transform methods. VC7.1 warns about `/G-` when passed `/Gy-`.
+  [Sprite history constructor comparison](ORIGIN_PENDING_REVIEW.md#r314--omitting-function-packaging-restores-the-native-scene-order)
 
 - The Actor constructor at `0x00458650` calls the rendering base
   constructor and installs the five-slot Actor vtable. Across the
