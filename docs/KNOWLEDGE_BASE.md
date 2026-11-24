@@ -250,6 +250,11 @@ before adding the base, in a different instruction order.
   continuation in action 829 exposes the corresponding join in 906.
   Both changes together reproduce the full function and switch layout.
   [Youmu controls](GIANTS.md#2026-11-24--youmus-object-advance-cold-replays-exactly)
+- Recheck similar growth and fade actions after the first register join
+  is fixed. Alice's stage-3 hold also matches Yuyuko actions 911 and
+  914. Before that pattern surfaced, the ongoing animation path in
+  Yuyuko action 837 restored instruction widths and all dispatch offsets.
+  [Yuyuko controls](GIANTS.md#2026-11-24--yuyukos-object-advance-cold-replays-exactly)
 - `/ZI` (Edit and Continue) restarts the cycle at every statement but changes
   thousands of other instructions, so it is not the originals' setting. `/Z7`,
   `/RTC1`, `/Oy-` and `/GX` do not affect the cycle.

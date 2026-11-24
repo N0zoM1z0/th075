@@ -946,3 +946,4 @@ address,name,module,confidence,evidence
 0x0050A580,PatchouliObject::Advance,PatchouliObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
 0x005A1600,YukariObject::Advance,YukariObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
 0x00536400,YoumuObject::Advance,YoumuObject,inferred,Character-object vtable slot 1 and complete cold replay; R048
+0x0057D580,YuyukoObject::Advance,YuyukoObject,inferred,Character-object vtable slot 1 and complete cold replay; R048

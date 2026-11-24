@@ -82,7 +82,7 @@ rows have complete replay units.
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` (cold exact) | 0 | 0 | — |
 | 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` (cold exact) | 0 | 0 | — |
 | 0055AC80 | Remilia object | 28,432 | `CharacterObjectWhole0055AC80F1194.cpp` (cold exact) | 0 | 0 | — |
-| 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` | 914 | 6 | 00583489 (#6565) |
+| 0057D580 | Yuyuko object | 43,845 | `YuyukoObjectAdvanceF1237.cpp` (cold exact) | 0 | 0 | — |
 | 005A1600 | Yukari object | 43,599 | `YukariObjectAdvanceF1231.cpp` (cold exact) | 0 | 0 | — |
 | 005C9CC0 | Suika object | 43,501 | `SuikaObjectAdvanceF1216.cpp` (cold exact) | 0 | 0 | — |
 | 005EB520 | Meiling object | 34,434 | `MeilingObjectAdvanceF1207.cpp` (cold exact, no `/GS`) | 0 | 0 | — |
@@ -1963,4 +1963,40 @@ The match ledger credits 39,999 code bytes.
 
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit youmu-object-advance-00536400
+```
+
+## 2026-11-24 — Yuyuko's object Advance cold-replays exactly
+
+Yuyuko's object `Advance` at `0x0057D580` reproduces 43,845 CODE bytes,
+the 284-byte jump table at `0x005880C5`, and the 198-byte remap table at
+`0x005881E1`. The cold replay compares all 44,327 bytes with 1,043
+relocations.
+
+The first divergence was the stage-3 test after `AdvanceNestedFrame`
+and `ClearFrameInfo` in action 837. Expressing the ongoing animation
+path moved the first difference to the corresponding test in action
+903 and restored all 198 dispatch offsets. A control that only tested
+`animationStage < 3` at the same location loaded ECX where the target
+loaded EAX and left seven instruction-width differences. The matching
+completion path compares the two short animation fields.
+
+After fixing both completion paths, the next divergence was inside
+action 911. Its stage-3 hold between growth and fade follows the same
+pattern as Alice's exact object action 909 at `0x004F344C`. Action
+914 has the same growth and fade structure. Full builds changing one
+path at a time produced these results:
+
+| Source variant | GPR differences | Width differences | First GPR difference | Relocated byte differences |
+| --- | ---: | ---: | --- | ---: |
+| Parent at `c1739059` | 914 | 6 | `0x00583489` | 19,193 |
+| Ongoing animation in 837 | 740 | 0 | `0x00585753` | 752 |
+| Also in 903 | 619 | 0 | `0x00586A25` | 629 |
+| Stage-3 hold in 911 | 379 | 0 | `0x00586EAC` | 385 |
+| Also in 914 | 0 | 0 | — | 0 |
+
+The local controls and complete comparison are in
+`.analysis/yuyuko-object-advance/`. To repeat acceptance, run:
+
+```sh
+scripts/repo-python scripts/replay-exact-units.py --unit yuyuko-object-advance-0057d580
 ```

@@ -1,6 +1,4 @@
 // Natural-C++ reconstruction of YuyukoObject::Advance at 0057D580.
-// The 43,845-byte object state machine is represented in full, but remains
-// NONEXACT; no exact replacement or original private-layout claim.
 #include "CharacterObject.hpp"
 #include "YuyukoFighter.hpp"
 #include "EffectServices.hpp"
@@ -1415,6 +1413,9 @@ case 837:
             scaleY = field0DA * 0.01f + 0.5f;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
+        else if (animationStage < animationStageCount) {
+            // Continue the current animation.
+        }
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
             ++field0D8;
@@ -1920,6 +1921,9 @@ case 903:
             scaleY = field0DA * 0.01f + 1.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
+        else if (animationStage < animationStageCount) {
+            // Continue the current animation.
+        }
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
             ResetSecondaryCounter(2);
             ++field0D8;
@@ -2205,6 +2209,9 @@ case 911:
             scaleX += 0.07f;
             scaleY += 0.07f;
         }
+        else if (animationStage == 3) {
+            // Hold the scale reached during the growth stages.
+        }
         if (animationStage == 4) {
             scaleX *= 0.85f;
             if (color[0] >= 15) color[0] -= 15;
@@ -2290,6 +2297,9 @@ case 914:
         if (animationStage < 3) {
             scaleX += 0.07f;
             scaleY += 0.07f;
+        }
+        else if (animationStage == 3) {
+            // Hold the scale reached during the growth stages.
         }
         if (animationStage == 4) {
             scaleX *= 0.85f;

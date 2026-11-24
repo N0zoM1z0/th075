@@ -40,19 +40,7 @@ Target: the user-supplied Japanese TH075 v1.11 executable
 `resources/th075.exe`, SHA-256
 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 
-## Previously measured object frontiers
-
-These object parents were measured on 2026-11-20. `section` is the
-rebuilt COFF function size.
-
-| Character | Address | Original CODE | COFF section | Mnemonic differences | Width differences | GPR differences | First GPR difference |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Yuyuko | `0057D580` | 43,845 | 44,327 | 23 | 28 | 897 | `00583489` (#6565) |
-
-The nonexact parents and their compiler flags are in
-`config/frontiers.toml`. The other parent measurements are summarized in
-[GIANTS.md](GIANTS.md). A passing `check-frontier.py` is a nonregression
-result, not whole-function exactness.
+## Exact object Advance units
 
 ### Meiling object Advance is exact
 
@@ -98,30 +86,13 @@ register joins. The typed history reader binds to the native list
 front and the ledger credits 39,999 bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--youmus-object-advance-cold-replays-exactly)
 
-### Latest Yuyuko improvement
+### Yuyuko object Advance is exact
 
-In `probes/CharacterObjectActions0057D580F1237.cpp`, state 838's condition
-now evaluates the `animationStage == 0` / owner-action 611–613 arm before the
-independent `field080` / owner-action exclusions. The expression is
-Boolean-equivalent to the previous one; it only reorders plain field reads
-and lets VC7.1 choose a different natural register layout. No assembly,
-padding or machine-code literals were added.
-
-- The COFF section shrank from 44,331 to 44,327 bytes.
-- The frontier fell from 17,739 to 1,697 differing bytes: 16,120 formerly
-  differing bytes now match, with 78 previously matching offsets displaced.
-- All 198 switch-table entries for actions 800–997 now point to the same
-  relative state-entry offsets as the original.
-- The current instruction diagnostic is 23 mnemonic, 28 width and 897 GPR
-  differences. The first GPR mismatch is `00583489` (#6565), at the action
-  837/838 join: both versions test stage 3, but VC7.1 assigns the receiver and
-  loaded stage to different scratch registers. Nested-if, early-break and
-  local-temporary source variants did not improve the whole-object comparison.
-
-This is substantial progress in a complete boss function, not an exactness
-claim. Treat `00583489` as a register-allocation mismatch unless new evidence
-shows a different state transition; do not rewrite action 837 merely to change
-its source spelling.
+`yuyuko-object-advance-0057d580` cold-replays 44,327 bytes with all
+1,043 relocations and credits 43,845 CODE bytes. The ongoing animation
+paths in 837 and 903 and the stage-3 holds in 911 and 914 restore the
+register choices and complete switch layout.
+[Comparison and replay](GIANTS.md#2026-11-24--yuyukos-object-advance-cold-replays-exactly)
 
 ### Yuyuko fighter Advance partial reconstruction
 
@@ -242,7 +213,6 @@ The complete but nonexact parents are:
 
 - Fighters: Reimu `0045DD70`, Sakuya `004AC040`, Youmu `005214B0`,
   Remilia `00543210`.
-- Object: Yuyuko `0057D580`.
 
 The nine remaining functions without a complete parent are:
 
@@ -258,8 +228,6 @@ previous experiments.
 
 ## Recent source checkpoints
 
-Earlier checkpoints improve Yuyuko's complete object `Advance` parent and
-replace raw Fighter and NameEntry offsets with shared typed members.
 Inspect `git log -10 --oneline` for the checkpoint sequence. Use the
 requested `gpt-6.2-sol: ...` prefix for new commits.
 
