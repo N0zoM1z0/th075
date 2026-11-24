@@ -1,4 +1,5 @@
 #include "SpriteDraw40CA80.hpp"
+#include "TextureManagerF198.hpp"
 #include "GraphicsTexturedDraw.hpp"
 #include <windows.h>
 // R011 0040CEF0: full original 994-B variant source, native ctor/copy
@@ -14,7 +15,6 @@ public:
     SpriteScaledQuadF776(float,float,float,float);
 };
 typedef char ScaledQuadSizeF776[(sizeof(SpriteScaledQuadF776)==132)?1:-1];
-class SpriteScaledListF776 {public: void* At(unsigned int);};
 class SpriteDrawingF776 {
 public:
     IDirect3DTexture8* GetTexture(int);
@@ -28,7 +28,7 @@ extern float g_ZeroAngleF776;
 extern float g_AngleUnitF776;
 float __cdecl CameraCosineAt0040D900(float);
 float __cdecl CameraSineAt0040D940(float);
-#define ENTRY_AT(fld) (*reinterpret_cast<int*>(reinterpret_cast<char*>(reinterpret_cast<SpriteScaledListF776*>(reinterpret_cast<char*>(this)+8)->At(texture))+(fld)))
+#define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
 void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scale,float angle,
     unsigned char flags,unsigned char mode) {
@@ -39,8 +39,8 @@ void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
     { RECT region;
     region.left=0;
     region.top=0;
-    region.right=ENTRY_AT(4);
-    region.bottom=ENTRY_AT(8);
+    region.right=ENTRY.storedWidth;
+    region.bottom=ENTRY.storedHeight;
     if (scale==1.0f && angle==g_ZeroAngleF776) {
         quad=SpriteScaledQuadF776(x-pivotX,y-pivotY,
              x-pivotX+region.right,y-pivotY+region.bottom);
@@ -74,4 +74,4 @@ void SpriteDrawingF776::DrawVariant(int texture,float x,float y,DWORD color,
     }
     }
 }
-#undef ENTRY_AT
+#undef ENTRY

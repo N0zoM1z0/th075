@@ -1,4 +1,5 @@
 #include "GraphicsTexture.hpp"
+#include "TextureManagerF198.hpp"
 #include <stddef.h>
 #include <new>
 
@@ -16,9 +17,6 @@ typedef char LoadRecordEncoded40B7C0[(offsetof(TextureRecordSnapshot40BF60, enco
 typedef char LoadRecordData40B7C0[(offsetof(TextureRecordSnapshot40BF60, data) == 20) ? 1 : -1];
 
 // These owner/container interfaces are pointer-only and never instantiated.
-class TextureEntryCount40C8C0 { public: unsigned int Size(); };
-class SpriteEntries40CA80 { public: void* At(unsigned int); };
-class TextureHandles40C8C0 { public: IDirect3DTexture8*& At(unsigned int); };
 class TexturePalette40C8C0 { public: void Refresh(int); };
 class BitmapSerialized41B2B0 { public: void Load(const TextureRecordSnapshot40BF60*); };
 class TexturePackLoad40B7C0 {
@@ -27,22 +25,15 @@ public:
     void LoadDefault(const char*);
 };
 
-#define COUNTS reinterpret_cast<TextureEntryCount40C8C0*>(reinterpret_cast<char*>(this) + 8)
-#define ENTRIES reinterpret_cast<SpriteEntries40CA80*>(reinterpret_cast<char*>(this) + 8)
-#define HANDLES reinterpret_cast<TextureHandles40C8C0*>(reinterpret_cast<char*>(this) + 24)
-#define PALETTE (*reinterpret_cast<WORD**>(reinterpret_cast<char*>(this) + 4))
-#define FORMAT (*reinterpret_cast<BYTE*>(reinterpret_cast<char*>(this) + 76))
-#define ENTRY_BYTE(offset) (*reinterpret_cast<BYTE*>(reinterpret_cast<char*>(ENTRIES->At(index)) + (offset)))
-#define ENTRY_WORD(offset) (*reinterpret_cast<WORD*>(reinterpret_cast<char*>(ENTRIES->At(index)) + (offset)))
-#define ENTRY_PALETTE (*reinterpret_cast<WORD**>(reinterpret_cast<char*>(ENTRIES->At(index)) + 20))
-#define ENTRY_PIXELS (*reinterpret_cast<BYTE**>(reinterpret_cast<char*>(ENTRIES->At(index)) + 28))
+#define MANAGER reinterpret_cast<TextureManagerF198*>(this)
+#define ENTRY MANAGER->entries[index]
 
 void TexturePackLoad40B7C0::LoadDefault(const char* filename) {
     Load(filename, 0);
 }
 
 void TexturePackLoad40B7C0::Load(const char* filename, signed char selectedPalette) {
-    int nEntriesCount = COUNTS->Size();
+    int nEntriesCount = MANAGER->entries.size();
     HANDLE sourceFile = CreateFileA(filename, GENERIC_READ, 0, 0, OPEN_EXISTING,
                                     FILE_ATTRIBUTE_NORMAL, 0);
     int index;
@@ -53,25 +44,25 @@ void TexturePackLoad40B7C0::Load(const char* filename, signed char selectedPalet
         return;
     SetFilePointer(sourceFile, 0, 0, FILE_BEGIN);
     ReadFile(sourceFile, &paletteHeaderCount, 1, &dwRead, 0);
-    if (PALETTE)
-        delete[] PALETTE;
+    if (MANAGER->palette)
+        delete[] MANAGER->palette;
     if (paletteHeaderCount > 0) {
-        PALETTE = new WORD[256];
+        MANAGER->palette = new WORD[256];
         if (selectedPalette <= paletteHeaderCount) {
             SetFilePointer(sourceFile, (selectedPalette - 1) * 512, 0, FILE_CURRENT);
-            ReadFile(sourceFile, PALETTE, 512, &dwRead, 0);
+            ReadFile(sourceFile, MANAGER->palette, 512, &dwRead, 0);
             SetFilePointer(sourceFile, (paletteHeaderCount - selectedPalette) * 512, 0, FILE_CURRENT);
         } else {
-            ReadFile(sourceFile, PALETTE, 512, &dwRead, 0);
+            ReadFile(sourceFile, MANAGER->palette, 512, &dwRead, 0);
             SetFilePointer(sourceFile, (paletteHeaderCount - 1) * 512, 0, FILE_CURRENT);
         }
     } else {
-        PALETTE = 0;
+        MANAGER->palette = 0;
     }
     for (index = 0; index < nEntriesCount; index++) {
-        ENTRY_BYTE(0) = FORMAT;
-        ENTRY_PALETTE = PALETTE;
-        ENTRY_BYTE(40) = 0;
+        ENTRY.uploadFormat = MANAGER->textureDepth;
+        ENTRY.palette = MANAGER->palette;
+        ENTRY.paletteFlag = 0;
         ReadFile(sourceFile, &record.width, 4, &dwRead, 0);
         ReadFile(sourceFile, &record.height, 4, &dwRead, 0);
         ReadFile(sourceFile, &record.stride, 4, &dwRead, 0);
@@ -87,22 +78,15 @@ void TexturePackLoad40B7C0::Load(const char* filename, signed char selectedPalet
             record.data = new BYTE[(static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3];
             ReadFile(sourceFile, record.data, (static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3, &dwRead, 0);
         }
-        reinterpret_cast<BitmapSerialized41B2B0*>(ENTRIES->At(index))->Load(&record);
+        reinterpret_cast<BitmapSerialized41B2B0*>(&ENTRY)->Load(&record);
         delete[] static_cast<BYTE*>(record.data);
-        Graphics::CreateTexture(ENTRY_WORD(4), ENTRY_WORD(8), &HANDLES->At(index), ENTRY_BYTE(0));
+        Graphics::CreateTexture(static_cast<unsigned short>(ENTRY.storedWidth), static_cast<unsigned short>(ENTRY.storedHeight), &MANAGER->textures[index], ENTRY.uploadFormat);
         reinterpret_cast<TexturePalette40C8C0*>(this)->Refresh(index);
-        delete[] ENTRY_PIXELS;
-        ENTRY_PIXELS = 0;
+        delete[] ENTRY.pixels;
+        ENTRY.pixels = 0;
     }
     CloseHandle(sourceFile);
 }
 
-#undef ENTRY_PIXELS
-#undef ENTRY_PALETTE
-#undef ENTRY_WORD
-#undef ENTRY_BYTE
-#undef FORMAT
-#undef PALETTE
-#undef HANDLES
-#undef ENTRIES
-#undef COUNTS
+#undef ENTRY
+#undef MANAGER

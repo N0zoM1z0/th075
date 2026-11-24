@@ -17,7 +17,5 @@ public:
 typedef char SpriteQuadSize40CA80[(sizeof(SpriteQuad40CA80) == 132) ? 1 : -1];
 typedef char SpriteQuadMatrix40CA80[(offsetof(SpriteQuad40CA80, matrix) == 64) ? 1 : -1];
 
-// Pointer-only entry/manager interfaces: never instantiate or embed these owners.
-// At returns the observed entry address; its complete record layout is unknown.
-class SpriteEntries40CA80 { public: void* At(unsigned int); };
+// Pointer-only interface for the texture lookup entry.
 class SpriteTextures40CA80 { public: IDirect3DTexture8* GetTexture(int); };

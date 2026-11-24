@@ -1,10 +1,10 @@
 #include "Graphics.hpp"
+#include "TextureManagerF198.hpp"
 // Native actual background base lifetime: vtable and borrowed +0x18
 // resource member destroyed by the compiler, no guessed private fields.
-class BackgroundResourceF484 {public:~BackgroundResourceF484();};
 class BackgroundBaseF484 {
   unsigned char untypedOwnerBytes[0x14];
-  BackgroundResourceF484 resource;
+  TextureManagerF198 resource;
 public:virtual ~BackgroundBaseF484();
 };
 BackgroundBaseF484::~BackgroundBaseF484() {}

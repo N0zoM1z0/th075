@@ -2,9 +2,9 @@
 
 TextureManagerF198::TextureManagerF198()
 {
-    firstSlotVector.ClearCachedEntries();
-    secondSlotVector.ClearCachedEntries();
-    nameVector.ClearCachedEntries();
-    allocatedResourceAt4 = 0;
-    defaultDepthAt76 = 16;
+    textures.clear();
+    paletteTextures.clear();
+    entries.clear();
+    palette = 0;
+    textureDepth = 16;
 }

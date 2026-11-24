@@ -4,7 +4,6 @@
 
 // Pointer-only views; complete original owner and bitmap layouts are unknown.
 class BitmapPalette40C380 { public: void Load(const char*); };
-class TextureEntryCount40C8C0 { public: unsigned int Size(); };
 class BitmapPackSource40BF60 { public: bool LoadFile(const char*); void Encode(); };
 class TexturePack40BF60 {
 public:

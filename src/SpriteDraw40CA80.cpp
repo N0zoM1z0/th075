@@ -1,8 +1,8 @@
 #include "SpriteDraw40CA80.hpp"
+#include "TextureManagerF198.hpp"
 #include <string.h>
 
-#define ENTRIES reinterpret_cast<SpriteEntries40CA80*>(reinterpret_cast<char*>(this) + 8)
-#define ENTRY_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(ENTRIES->At(texture)) + (offset)))
+#define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
 
 void TimelineDrawing438D00::DrawSprite(int texture, float x, float y, DWORD color,
     float pivotX, float pivotY, float scale, float angle, unsigned char flags) {
@@ -11,8 +11,8 @@ void TimelineDrawing438D00::DrawSprite(int texture, float x, float y, DWORD colo
         RECT region;
         region.left = 0;
         region.top = 0;
-        region.right = ENTRY_FIELD(int, 4);
-        region.bottom = ENTRY_FIELD(int, 8);
+        region.right = ENTRY.storedWidth;
+        region.bottom = ENTRY.storedHeight;
         if (scale == 1.0f && angle == 0.0f) {
             if (flags & 1)
                 quad = SpriteQuad40CA80(x + pivotX - region.right, y - pivotY,
@@ -54,8 +54,7 @@ void TimelineDrawing438D00::DrawSprite(int texture, float x, float y, DWORD colo
     }
 }
 
-#undef ENTRY_FIELD
-#undef ENTRIES
+#undef ENTRY
 
 SpriteQuad40CA80::SpriteQuad40CA80() {
     memset(this, 0, sizeof(*this));

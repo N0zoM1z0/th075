@@ -1,33 +1,22 @@
 #include "SpriteDraw40CA80.hpp"
-#include "TextureEntryBorrowedF922.hpp"
+#include "TextureManagerF198.hpp"
 
-// Pointer-only count/handle/refresh interfaces; complete owner layouts unknown.
-class TextureEntryCount40C8C0 { public: unsigned int Size(); };
-class TextureHandles40C8C0 { public: IDirect3DTexture8*& At(unsigned int); };
 class TexturePalette40C8C0 { public: void Refresh(int); };
 
-#define COUNT reinterpret_cast<TextureEntryCount40C8C0*>(reinterpret_cast<char*>(this) + 8)
-#define ENTRIES reinterpret_cast<SpriteEntries40CA80*>(reinterpret_cast<char*>(this) + 8)
-#define PALETTE reinterpret_cast<TexturePalette40C8C0*>(this)
-#define PALETTE_HANDLES reinterpret_cast<TextureHandles40C8C0*>(reinterpret_cast<char*>(this) + 0x28)
-#define HANDLES reinterpret_cast<TextureHandles40C8C0*>(reinterpret_cast<char*>(this) + 0x18)
+#define MANAGER reinterpret_cast<TextureManagerF198*>(this)
 
 IDirect3DTexture8* SpriteTextures40CA80::GetTexture(int index) {
     static int cachedIndex = index;
-    if (index < 0 || index >= static_cast<int>(COUNT->Size()))
+    if (index < 0 || index >= static_cast<int>(MANAGER->entries.size()))
         return 0;
-    if (reinterpret_cast<const NativeSpriteEntryViewF920*>(ENTRIES->At(index))->paletteFlagAt28) {
+    if (MANAGER->entries[index].paletteFlag) {
         if (cachedIndex != index) {
-            PALETTE->Refresh(index);
+            reinterpret_cast<TexturePalette40C8C0*>(this)->Refresh(index);
             cachedIndex = index;
         }
-        return PALETTE_HANDLES->At(0);
+        return MANAGER->paletteTextures[0];
     }
-    return HANDLES->At(index);
+    return MANAGER->textures[index];
 }
 
-#undef HANDLES
-#undef PALETTE_HANDLES
-#undef PALETTE
-#undef ENTRIES
-#undef COUNT
+#undef MANAGER

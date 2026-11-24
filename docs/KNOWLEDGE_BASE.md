@@ -107,6 +107,18 @@ A trial with separate C++ locals placed the RECT at `[ebp-0x10]`. The
 native function places it at `[ebp-0x98]`.
 [SDK matrix evidence](ORIGIN_PENDING_REVIEW.md#r293--sprite-matrix-constructor-selection)
 
+The texture manager stores a VC7.1 vector of 44-byte entries at `+0x08`
+and two vectors of texture pointers at `+0x18` and `+0x28`. Texture
+lookup, pack I/O, sprite dimensions, and resource release use those same
+members. The entry's bitmap fields extend through the pixels pointer
+at `+0x1C`. The bitmap subobject's full extent and the element type of
+the deque at manager offset `+0x38` remain open.
+
+Naming the entry's byte arrays caused VC7.1 to emit a stack cookie in
+the three slot allocators with `/GS`. Omitting that option for those
+three units reproduced the native prologues and their full unwind
+records with the typed vectors.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

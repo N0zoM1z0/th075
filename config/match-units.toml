@@ -17642,8 +17642,8 @@ size = 1132
 compare_size = 1132
 relocations = [
   { offset = 0x18, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
-  { offset = 0x3E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x59, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x3E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x59, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x75, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0xCD, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z", target = 0x0040DA00 },
   { offset = 0x11D, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z", target = 0x0040DA00 },
@@ -17691,13 +17691,13 @@ relocations = [
   { offset = 0x13, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
   { offset = 0x1C, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
   { offset = 0x25, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
-  { offset = 0x36, type = "REL32", symbol = "?Size@TextureEntryCount40C8C0@@QAEIXZ", target = 0x0040DD20 },
-  { offset = 0x4E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x36, type = "REL32", symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ", target = 0x0040DD20 },
+  { offset = 0x4E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x5C, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
   { offset = 0x6D, type = "REL32", symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z", target = 0x0040C590 },
   { offset = 0x76, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
-  { offset = 0x83, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
-  { offset = 0x96, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0x83, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0x96, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
 ]
 
 [units."texture-palette-refresh-0040c590"]
@@ -17710,16 +17710,16 @@ target_address = 0x0040C590
 size = 340
 compare_size = 340
 relocations = [
-  { offset = 0x16, type = "REL32", symbol = "?Size@TextureHandleCount40C590@@QAEIXZ", target = 0x0040DEA0 },
-  { offset = 0x2F, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x44, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x59, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x6E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x8A, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
-  { offset = 0xA0, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
-  { offset = 0xDC, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
-  { offset = 0x11F, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x135, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x16, type = "REL32", symbol = "?size@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QBEIXZ", target = 0x0040DEA0 },
+  { offset = 0x2F, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x44, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x59, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x6E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x8A, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0xA0, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0xDC, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0x11F, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x135, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x13C, type = "REL32", symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z", target = 0x0041B990 },
 ]
 
@@ -17805,38 +17805,38 @@ size = 1046
 compare_size = 1046
 relocations = [
   { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
-  { offset = 0x21, type = "REL32", symbol = "?Size@TextureEntryCount40C8C0@@QAEIXZ", target = 0x0040DD20 },
+  { offset = 0x21, type = "REL32", symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ", target = 0x0040DD20 },
   { offset = 0x43, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
   { offset = 0x61, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
   { offset = 0xA3, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0xC5, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0xFC, type = "DIR32", symbol = "$SG62500", target = 0x0065780C },
+  { offset = 0xFC, type = "DIR32", symbol = "$SG68785", target = 0x0065780C },
   { offset = 0x108, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
   { offset = 0x11D, type = "REL32", symbol = "?Load@BitmapPalette40C380@@QAEXPBD@Z", target = 0x0040C380 },
   { offset = 0x13F, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x166, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x188, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x1AD, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0x1E0, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x1FD, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x216, type = "DIR32", symbol = "$SG62523", target = 0x0065781C },
+  { offset = 0x1E0, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x1FD, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x216, type = "DIR32", symbol = "$SG68798", target = 0x0065781C },
   { offset = 0x222, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
-  { offset = 0x23E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x23E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x245, type = "REL32", symbol = "?LoadFile@BitmapPackSource40BF60@@QAE_NPBD@Z", target = 0x0041A3D0 },
-  { offset = 0x257, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x257, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x25E, type = "REL32", symbol = "?Encode@BitmapPackSource40BF60@@QAEXXZ", target = 0x0041B400 },
-  { offset = 0x270, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x288, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x2A0, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x2B8, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x2CF, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x2E7, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x270, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x288, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x2A0, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x2B8, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x2CF, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x2E7, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x306, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x31F, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x338, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x351, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x36A, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
-  { offset = 0x38F, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x38F, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x39D, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x3CA, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x3F5, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
@@ -17954,7 +17954,7 @@ target_address = 0x0040B7C0
 size = 949
 compare_size = 949
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?Size@TextureEntryCount40C8C0@@QAEIXZ", target = 0x0040DD20 },
+  { offset = 0x10, type = "REL32", symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ", target = 0x0040DD20 },
   { offset = 0x2F, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
   { offset = 0x4D, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
   { offset = 0x63, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
@@ -17965,9 +17965,9 @@ relocations = [
   { offset = 0x103, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
   { offset = 0x121, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x13A, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
-  { offset = 0x173, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x18A, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x1A2, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x173, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x18A, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x1A2, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x1BC, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x1D2, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x1E8, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
@@ -17979,18 +17979,18 @@ relocations = [
   { offset = 0x290, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x2A9, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0x2DB, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
-  { offset = 0x2EE, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x2EE, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x2F5, type = "REL32", symbol = "?Load@BitmapSerialized41B2B0@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
   { offset = 0x304, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
-  { offset = 0x316, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x328, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
-  { offset = 0x338, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x34C, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x316, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x328, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0x338, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x34C, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x356, type = "REL32", symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z", target = 0x00401C20 },
   { offset = 0x365, type = "REL32", symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z", target = 0x0040C590 },
-  { offset = 0x374, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x374, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x383, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
-  { offset = 0x395, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x395, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x3AB, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
 ]
 
@@ -18017,7 +18017,7 @@ target_address = 0x0040BBA0
 size = 918
 compare_size = 918
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?Size@TextureEntryCount40C8C0@@QAEIXZ", target = 0x0040DD20 },
+  { offset = 0x10, type = "REL32", symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ", target = 0x0040DD20 },
   { offset = 0x20, type = "REL32", symbol = "?FindByName@ResourceLookupF217@@YAPAVDataArchiveF481@@PBD@Z", target = 0x0041CF00 },
   { offset = 0x2A, type = "REL32", symbol = "?SeekNamedEntry@DataArchiveF481@@QAEPAXPBD@Z", target = 0x0041D750 },
   { offset = 0x4E, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
@@ -18028,9 +18028,9 @@ relocations = [
   { offset = 0xEE, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
   { offset = 0x10C, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x125, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
-  { offset = 0x15E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x175, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x18D, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x15E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x175, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x18D, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x1A7, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x1BD, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x1D3, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
@@ -18042,18 +18042,18 @@ relocations = [
   { offset = 0x27B, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x294, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0x2C6, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
-  { offset = 0x2D9, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x2D9, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x2E0, type = "REL32", symbol = "?Load@BitmapSerialized41B2B0@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
   { offset = 0x2EF, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
-  { offset = 0x301, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x313, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
-  { offset = 0x323, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
-  { offset = 0x337, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x301, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x313, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0x323, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x337, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x341, type = "REL32", symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z", target = 0x00401C20 },
   { offset = 0x350, type = "REL32", symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z", target = 0x0040C590 },
-  { offset = 0x35F, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x35F, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x36E, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
-  { offset = 0x380, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x380, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
 ]
 
 [units."texture-pack-archive-default-0040bb80"]
@@ -33582,17 +33582,17 @@ target = 0x00401000
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 50
 type = "REL32"
-symbol = "??0TextureNameVectorF198@@QAE@XZ"
+symbol = "??0?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE@XZ"
 target = 0x0040DC90
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 65
 type = "REL32"
-symbol = "??0TextureSlotVectorF198@@QAE@XZ"
+symbol = "??0?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAE@XZ"
 target = 0x0040DE50
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 80
 type = "REL32"
-symbol = "??0TextureSlotVectorF198@@QAE@XZ"
+symbol = "??0?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAE@XZ"
 target = 0x0040DE50
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 95
@@ -33602,17 +33602,17 @@ target = 0x0040DF60
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 110
 type = "REL32"
-symbol = "?ClearCachedEntries@TextureSlotVectorF198@@QAEXXZ"
+symbol = "?clear@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXXZ"
 target = 0x0040DF40
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 121
 type = "REL32"
-symbol = "?ClearCachedEntries@TextureSlotVectorF198@@QAEXXZ"
+symbol = "?clear@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXXZ"
 target = 0x0040DF40
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 132
 type = "REL32"
-symbol = "?ClearCachedEntries@TextureNameVectorF198@@QAEXXZ"
+symbol = "?clear@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEXXZ"
 target = 0x0040DE30
 [[units.texture-manager-construct-0040ad80.relocations]]
 offset = 169
@@ -33623,7 +33623,7 @@ target = 0x00000000
 [units.texture-manager-allocate-unformatted-slots-0040b1d0]
 source = "src/TextureSlotsF198.cpp"
 object = "build/matching/TextureSlotsF198.obj"
-profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
 functions = ["TextureManager::AllocateUnformattedSlots"]
 symbol = "?AllocateUnformattedSlots@TextureManagerF198@@QAEXH@Z"
 target_address = 0x0040B1D0
@@ -33646,22 +33646,22 @@ target = 0x00000000
 [[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0TemporaryTextureSlotF198@@QAE@XZ"
+symbol = "??0NativeTextureElementF769@@QAE@XZ"
 target = 0x0040D8C0
 [[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
 offset = 67
 type = "REL32"
-symbol = "?InitializeSlots@TextureNameSlotsF198@@QAEXHABVTemporaryTextureSlotF198@@@Z"
+symbol = "?assign@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEXIABUNativeTextureElementF769@@@Z"
 target = 0x0040DDA0
 [[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?InitializeSlots@TexturePayloadSlotsF198@@QAEXHPAI@Z"
+symbol = "?assign@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXIABQAUIDirect3DTexture8@@@Z"
 target = 0x0040DF20
 [[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
 offset = 108
 type = "REL32"
-symbol = "??1TemporaryTextureSlotF198@@QAE@XZ"
+symbol = "??1NativeTextureElementF769@@QAE@XZ"
 target = 0x0040D8E0
 [[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
 offset = 118
@@ -33674,13 +33674,13 @@ source = "src/TextureManagerDtorF199.cpp"
 object = "build/matching/TextureManagerDtorF199.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["TextureManager::ReleaseResources"]
-symbol = "??1TextureManagerF199@@QAE@XZ"
+symbol = "??1TextureManagerF198@@QAE@XZ"
 target_address = 0x0040AE40
 size = 434
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1TextureManagerF199@@QAE@XZ"
+symbol = "__ehhandler$??1TextureManagerF198@@QAE@XZ"
 target = 0x00654F12
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 12
@@ -33695,97 +33695,97 @@ target = 0x00000000
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 60
 type = "REL32"
-symbol = "??3@YAXPAX@Z"
+symbol = "??_V@YAXPAX@Z"
 target = 0x0064169D
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 74
 type = "REL32"
-symbol = "?Count@TexturePointerVectorF199@@QAEIXZ"
+symbol = "?size@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QBEIXZ"
 target = 0x0040DEA0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 107
 type = "REL32"
-symbol = "?Count@TexturePointerVectorF199@@QAEIXZ"
+symbol = "?size@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QBEIXZ"
 target = 0x0040DEA0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 127
 type = "REL32"
-symbol = "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z"
+symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z"
 target = 0x0040DEE0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 147
 type = "REL32"
-symbol = "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z"
+symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z"
 target = 0x0040DEE0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 182
 type = "REL32"
-symbol = "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z"
+symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z"
 target = 0x0040DEE0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 201
 type = "REL32"
-symbol = "?ClearStorage@TexturePointerVectorF199@@QAEXXZ"
+symbol = "?clear@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXXZ"
 target = 0x0040DF40
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 212
 type = "REL32"
-symbol = "?Count@TexturePointerVectorF199@@QAEIXZ"
+symbol = "?size@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QBEIXZ"
 target = 0x0040DEA0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 245
 type = "REL32"
-symbol = "?Count@TexturePointerVectorF199@@QAEIXZ"
+symbol = "?size@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QBEIXZ"
 target = 0x0040DEA0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 265
 type = "REL32"
-symbol = "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z"
+symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z"
 target = 0x0040DEE0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 285
 type = "REL32"
-symbol = "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z"
+symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z"
 target = 0x0040DEE0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 315
 type = "REL32"
-symbol = "?ClearStorage@TexturePointerVectorF199@@QAEXXZ"
+symbol = "?clear@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXXZ"
 target = 0x0040DF40
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 326
 type = "REL32"
-symbol = "?Count@TextureNameVectorF199@@QAEIXZ"
+symbol = "?size@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QBEIXZ"
 target = 0x0040DD20
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 341
 type = "REL32"
-symbol = "?ClearStorage@TextureNameVectorF199@@QAEXXZ"
+symbol = "?clear@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEXXZ"
 target = 0x0040DE30
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 356
 type = "REL32"
-symbol = "??1TextureQueueF199@@QAE@XZ"
+symbol = "??1TextureQueueF198@@QAE@XZ"
 target = 0x0040DFB0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 371
 type = "REL32"
-symbol = "??1TexturePointerVectorF199@@QAE@XZ"
+symbol = "??1?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAE@XZ"
 target = 0x0040DE80
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 386
 type = "REL32"
-symbol = "??1TexturePointerVectorF199@@QAE@XZ"
+symbol = "??1?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAE@XZ"
 target = 0x0040DE80
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 401
 type = "REL32"
-symbol = "??1TextureNameVectorF199@@QAE@XZ"
+symbol = "??1?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAE@XZ"
 target = 0x0040DCC0
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 416
 type = "REL32"
-symbol = "??1TextureCountBaseF199@@QAE@XZ"
+symbol = "??1TextureRefCountF198@@QAE@XZ"
 target = 0x00401020
 [[units.texture-manager-release-resources-0040ae40.relocations]]
 offset = 426
@@ -44888,7 +44888,7 @@ target = 0x005F8320
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 192
 type = "REL32"
-symbol = "??1ResourceTextureF304@@QAE@XZ"
+symbol = "??1TextureManagerF198@@QAE@XZ"
 target = 0x0040AE40
 [[units.static-battle-resources-release-owned-005f6ff0.relocations]]
 offset = 204
@@ -58454,7 +58454,7 @@ target = 0x0065844C
 [[units.background-base-virtual-destroy-00449d40.relocations]]
 offset = 23
 type = "REL32"
-symbol = "??1BackgroundResourceF484@@QAE@XZ"
+symbol = "??1TextureManagerF198@@QAE@XZ"
 target = 0x0040AE40
 
 
@@ -59056,7 +59056,7 @@ target = 0x00000000
 [[units.shared-window-resource-release-00412e50.relocations]]
 offset = 65
 type = "REL32"
-symbol = "??1D3DSharedResourceF491@@QAE@XZ"
+symbol = "??1TextureManagerF198@@QAE@XZ"
 target = 0x0040AE40
 [[units.shared-window-resource-release-00412e50.relocations]]
 offset = 75
@@ -60542,8 +60542,8 @@ symbol = "?ClearSlots@TextureManagerSlotsF736@@QAEXXZ"
 target_address = 0x0040B250
 size = 33
 relocations = [
-  { offset = 0xE, type = "REL32", symbol = "?Clear@NativeTextureNamesF736@@QAEXXZ", target = 0x0040DE30 },
-  { offset = 0x19, type = "REL32", symbol = "?Clear@NativeTextureSlotsF736@@QAEXXZ", target = 0x0040DF40 },
+  { offset = 0xE, type = "REL32", symbol = "?clear@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEXXZ", target = 0x0040DE30 },
+  { offset = 0x19, type = "REL32", symbol = "?clear@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXXZ", target = 0x0040DF40 },
 ]
 
 [units.texture-manager-blend-policy-0040c7f0]
@@ -60569,7 +60569,7 @@ symbol = "?DrawProjectedTriangleStrip@SpriteTexturesF736@@QAEXHPAUScreenVertex@G
 target_address = 0x0040C970
 size = 42
 relocations = [
-  { offset = 0xF, type = "REL32", symbol = "?GetTexture@SpriteTexturesF736@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+  { offset = 0xF, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
   { offset = 0x1D, type = "REL32", symbol = "?DrawProjectedTriangleStrip@Graphics@@YAXPAUScreenVertex@1@HPAUIDirect3DTexture8@@@Z", target = 0x00403200 },
 ]
 
@@ -60594,8 +60594,8 @@ symbol = "?GetTextureRect@SpriteDrawingF736@@QAEXHPAUtagRECT@@@Z"
 target_address = 0x0040D870
 size = 80
 relocations = [
-  { offset = 0x25, type = "REL32", symbol = "?At@NativeSpriteRectListF736@@QAEPAUNativeSpriteRectRecordF736@@H@Z", target = 0x0040DD60 },
-  { offset = 0x3D, type = "REL32", symbol = "?At@NativeSpriteRectListF736@@QAEPAUNativeSpriteRectRecordF736@@H@Z", target = 0x0040DD60 },
+  { offset = 0x25, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+  { offset = 0x3D, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
 ]
 
 [units.progress-record-check-encoded-item-0041a0e0]
@@ -60967,8 +60967,8 @@ symbol = "?DrawOpaqueSprite@SpriteDrawingF765@@QAEXHHHK@Z"
 target_address = 0x0040D790
 size = 171
 relocations = [
- { offset = 0x2B, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
- { offset = 0x43, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
+ { offset = 0x2B, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+ { offset = 0x43, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x6E, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
  { offset = 0x80, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x98, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
@@ -60986,8 +60986,8 @@ symbol = "?DrawOpaqueSpriteMirrored@SpriteDrawingF765@@QAEXHHHKE@Z"
 target_address = 0x0040D6B0
 size = 212
 relocations = [
- { offset = 0x2B, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
- { offset = 0x43, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
+ { offset = 0x2B, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+ { offset = 0x43, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x97, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
  { offset = 0xA9, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0xC1, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
@@ -60999,7 +60999,7 @@ relocations = [
 [units.texture-manager-allocate-slots-native-0040b110]
 source = "src/TextureSlotsF769.cpp"
 object = "build/matching/TextureSlotsF769.obj"
-profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
 functions = ["TextureManagerF769::AllocateTextureSlots"]
 symbol = "?AllocateTextureSlots@TextureManagerF769@@QAEXIE@Z"
 target_address = 0x0040B110
@@ -61009,8 +61009,8 @@ relocations = [
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x22, type = "REL32", symbol = "??0NativeTextureElementF769@@QAE@XZ", target = 0x0040D8C0 },
- { offset = 0x7B, type = "REL32", symbol = "?Assign@TextureSlotVectorF769@@QAEXIABUNativeTextureElementF769@@@Z", target = 0x0040DDA0 },
- { offset = 0x95, type = "REL32", symbol = "?Assign@TexturePointerVectorF769@@QAEXIABK@Z", target = 0x0040DF20 },
+ { offset = 0x7B, type = "REL32", symbol = "?assign@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEXIABUNativeTextureElementF769@@@Z", target = 0x0040DDA0 },
+ { offset = 0x95, type = "REL32", symbol = "?assign@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXIABQAUIDirect3DTexture8@@@Z", target = 0x0040DF20 },
  { offset = 0xA4, type = "REL32", symbol = "??1NativeTextureElementF769@@QAE@XZ", target = 0x0040D8E0 },
  { offset = 0xAE, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
@@ -61020,7 +61020,7 @@ relocations = [
 [units.texture-manager-allocate-shared-native-0040b000]
 source = "src/TextureSharedF770.cpp"
 object = "build/matching/TextureSharedF770.obj"
-profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
 functions = ["TextureManagerF770::AllocateSharedTextures"]
 symbol = "?AllocateSharedTextures@TextureManagerF770@@QAEXIIE@Z"
 target_address = 0x0040B000
@@ -61030,10 +61030,10 @@ relocations = [
  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
  { offset = 0x22, type = "REL32", symbol = "??0NativeTextureElementF769@@QAE@XZ", target = 0x0040D8C0 },
- { offset = 0x70, type = "REL32", symbol = "?Assign@TextureSlotVectorF769@@QAEXIABUNativeTextureElementF769@@@Z", target = 0x0040DDA0 },
- { offset = 0x8A, type = "REL32", symbol = "?Assign@TexturePointerVectorF769@@QAEXIABK@Z", target = 0x0040DF20 },
- { offset = 0xA4, type = "REL32", symbol = "?Assign@TexturePointerVectorF769@@QAEXIABK@Z", target = 0x0040DF20 },
- { offset = 0xCD, type = "REL32", symbol = "?At@TexturePointerVectorF769@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+ { offset = 0x70, type = "REL32", symbol = "?assign@?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEXIABUNativeTextureElementF769@@@Z", target = 0x0040DDA0 },
+ { offset = 0x8A, type = "REL32", symbol = "?assign@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXIABQAUIDirect3DTexture8@@@Z", target = 0x0040DF20 },
+ { offset = 0xA4, type = "REL32", symbol = "?assign@?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEXIABQAUIDirect3DTexture8@@@Z", target = 0x0040DF20 },
+ { offset = 0xCD, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
  { offset = 0xDD, type = "REL32", symbol = "?Create16BitTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@@Z", target = 0x00401B20 },
  { offset = 0xF1, type = "REL32", symbol = "??1NativeTextureElementF769@@QAE@XZ", target = 0x0040D8E0 },
  { offset = 0xFB, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
@@ -61051,8 +61051,8 @@ target_address = 0x0040D2E0
 size = 970
 relocations = [
  { offset = 0x18, type = "REL32", symbol = "??0SpriteScaledQuadF775@@QAE@XZ", target = 0x0040D990 },
- { offset = 0x3E, type = "REL32", symbol = "?At@SpriteScaledListF775@@QAEPAXI@Z", target = 0x0040DD60 },
- { offset = 0x59, type = "REL32", symbol = "?At@SpriteScaledListF775@@QAEPAXI@Z", target = 0x0040DD60 },
+ { offset = 0x3E, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+ { offset = 0x59, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0x7A, type = "DIR32", symbol = "?g_ZeroAngleF775@@3MA", target = 0x0065782C },
  { offset = 0xC5, type = "REL32", symbol = "??0SpriteScaledQuadF775@@QAE@MMMM@Z", target = 0x0040DA00 },
  { offset = 0xDF, type = "DIR32", symbol = "?g_ZeroAngleF775@@3MA", target = 0x0065782C },
@@ -61079,8 +61079,8 @@ size = 994
 relocations = [
  { offset = 0x44, type = "REL32", symbol = "?DrawBase@SpriteDrawingF776@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
  { offset = 0x54, type = "REL32", symbol = "??0SpriteScaledQuadF776@@QAE@XZ", target = 0x0040D990 },
- { offset = 0x7A, type = "REL32", symbol = "?At@SpriteScaledListF776@@QAEPAXI@Z", target = 0x0040DD60 },
- { offset = 0x95, type = "REL32", symbol = "?At@SpriteScaledListF776@@QAEPAXI@Z", target = 0x0040DD60 },
+ { offset = 0x7A, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
+ { offset = 0x95, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
  { offset = 0xAD, type = "DIR32", symbol = "?g_ZeroAngleF776@@3MA", target = 0x0065782C },
  { offset = 0xF8, type = "REL32", symbol = "??0SpriteScaledQuadF776@@QAE@MMMM@Z", target = 0x0040DA00 },
  { offset = 0x11B, type = "DIR32", symbol = "?g_ZeroAngleF776@@3MA", target = 0x0065782C },

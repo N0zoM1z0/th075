@@ -1,4 +1,7 @@
 #pragma once
+#include "TextureManagerBorrowedF925.hpp"
+#include <d3d8.h>
+#include <vector>
 
 // The independently reconstructed 80-byte TextureManager receiver.
 // Constructor storage is grounded by 0040AD80; the F199 destruction view
@@ -10,22 +13,6 @@ public:
     ~TextureRefCountF198();
 };
 
-class TextureNameVectorF198 {
-    unsigned int observedStorage[4];
-public:
-    TextureNameVectorF198();
-    ~TextureNameVectorF198();
-    void ClearCachedEntries();
-};
-
-class TextureSlotVectorF198 {
-    unsigned int observedStorage[4];
-public:
-    TextureSlotVectorF198();
-    ~TextureSlotVectorF198();
-    void ClearCachedEntries();
-};
-
 class TextureQueueF198 {
     unsigned int observedStorage[5];
 public:
@@ -34,14 +21,17 @@ public:
 };
 
 class TextureManagerF198 : public TextureRefCountF198 {
-    unsigned int allocatedResourceAt4;
-    TextureNameVectorF198 nameVector;
-    TextureSlotVectorF198 firstSlotVector;
-    TextureSlotVectorF198 secondSlotVector;
-    TextureQueueF198 resourceQueue;
-    unsigned char defaultDepthAt76;
 public:
+    WORD* palette;
+    std::vector<NativeTextureElementF769> entries;
+    std::vector<IDirect3DTexture8*> textures;
+    std::vector<IDirect3DTexture8*> paletteTextures;
+private:
+    TextureQueueF198 resourceQueue;
+public:
+    unsigned char textureDepth;
     TextureManagerF198();
+    ~TextureManagerF198();
     void AllocateUnformattedSlots(int count);
     void LoadDefault(const char* filename, const char* archiveName);
     void Load(const char* filename, signed char selectedPalette, const char* archiveName);

@@ -1,27 +1,17 @@
+#include "SpriteDraw40CA80.hpp"
 #include "TextureManagerF198.hpp"
 #include "Graphics.hpp"
 #include "GraphicsTexturedDraw.hpp"
 
-// F736: three R014/R019 authored texture wrappers. Real original
-// vector storage +8/+24, policy routing, and projected vertex forwarding.
-// Layout names are provisional; neither native callee receives extra CODE.
-class NativeTextureNamesF736 {
-    unsigned int nativeStorage[4];
-public: void Clear();
-};
-class NativeTextureSlotsF736 {
-    unsigned int nativeStorage[4];
-public: void Clear();
-};
-struct TextureManagerSlotsF736 {
-    unsigned int existingPrefix[2];
-    NativeTextureNamesF736 names;
-    NativeTextureSlotsF736 textures;
+class TextureManagerSlotsF736 {
+public:
     void ClearSlots();
 };
-void TextureManagerSlotsF736::ClearSlots() {
-    names.Clear();
-    textures.Clear();
+
+void TextureManagerSlotsF736::ClearSlots()
+{
+    reinterpret_cast<TextureManagerF198*>(this)->entries.clear();
+    reinterpret_cast<TextureManagerF198*>(this)->textures.clear();
 }
 
 void TextureManagerF198::SetBlendMode(int mode) {
@@ -34,10 +24,10 @@ void TextureManagerF198::SetBlendMode(int mode) {
 
 class SpriteTexturesF736 {
 public:
-    IDirect3DTexture8* GetTexture(int index);
     void DrawProjectedTriangleStrip(int index, Graphics::ScreenVertex* vertices, int count);
 };
 void SpriteTexturesF736::DrawProjectedTriangleStrip(
     int index, Graphics::ScreenVertex* vertices, int count) {
-    Graphics::DrawProjectedTriangleStrip(vertices, count, GetTexture(index));
+    Graphics::DrawProjectedTriangleStrip(vertices, count,
+        reinterpret_cast<SpriteTextures40CA80*>(this)->GetTexture(index));
 }

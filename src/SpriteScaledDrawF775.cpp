@@ -1,4 +1,5 @@
 #include "SpriteDraw40CA80.hpp"
+#include "TextureManagerF198.hpp"
 #include "GraphicsTexturedDraw.hpp"
 #include <windows.h>
 // R011 0040D2E0: original complete 970-B source. Native ctor/copy
@@ -14,7 +15,6 @@ public:
     SpriteScaledQuadF775(float,float,float,float);
 };
 typedef char ScaledQuadSizeF775[(sizeof(SpriteScaledQuadF775)==132)?1:-1];
-class SpriteScaledListF775 {public: void* At(unsigned int);};
 class SpriteDrawingF775 {
 public:
     IDirect3DTexture8* GetTexture(int);
@@ -26,15 +26,15 @@ extern float g_ZeroAngleF775;
 extern float g_AngleUnitF775;
 float __cdecl CameraCosineAt0040D900(float);
 float __cdecl CameraSineAt0040D940(float);
-#define ENTRY_AT(fld) (*reinterpret_cast<int*>(reinterpret_cast<char*>(reinterpret_cast<SpriteScaledListF775*>(reinterpret_cast<char*>(this)+8)->At(texture))+(fld)))
+#define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
 void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
     float pivotX,float pivotY,float scaleX,float scaleY,float angle,unsigned char flags) {
     SpriteScaledQuadF775 quad;
     { RECT region;
     region.left=0;
     region.top=0;
-    region.right=ENTRY_AT(4);
-    region.bottom=ENTRY_AT(8);
+    region.right=ENTRY.storedWidth;
+    region.bottom=ENTRY.storedHeight;
     if (scaleX==1.0f && scaleY==1.0f && angle==g_ZeroAngleF775) {
         quad=SpriteScaledQuadF775(x-pivotX,y-pivotY,
              x-pivotX+region.right,y-pivotY+region.bottom);
@@ -67,4 +67,4 @@ void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
          &region,color,GetTexture(texture));
     }
 }
-#undef ENTRY_AT
+#undef ENTRY

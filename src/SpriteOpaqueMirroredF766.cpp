@@ -1,9 +1,8 @@
 #include "SpriteDraw40CA80.hpp"
+#include "TextureManagerF198.hpp"
 #include "GraphicsTexturedDraw.hpp"
 #include "SpriteGeometryF211.hpp"
 #include <windows.h>
-struct SpriteEntryF765 {DWORD unknown0;int rightAt4;int bottomAt8;};
-class SpriteRecordListF765 {public: SpriteEntryF765* At(int);};
 class SpriteDrawingF765 {
 public:
     void DrawOpaqueSpriteMirrored(int texture,int x,int y,DWORD color,unsigned char flip);
@@ -12,8 +11,8 @@ void SpriteDrawingF765::DrawOpaqueSpriteMirrored(int texture,int x,int y,DWORD c
     RECT textureBounds;
     textureBounds.left=0;
     textureBounds.top=0;
-    textureBounds.right=reinterpret_cast<SpriteRecordListF765*>(reinterpret_cast<char*>(this)+8)->At(texture)->rightAt4;
-    textureBounds.bottom=reinterpret_cast<SpriteRecordListF765*>(reinterpret_cast<char*>(this)+8)->At(texture)->bottomAt8;
+    textureBounds.right=reinterpret_cast<TextureManagerF198*>(this)->entries[texture].storedWidth;
+    textureBounds.bottom=reinterpret_cast<TextureManagerF198*>(this)->entries[texture].storedHeight;
     {RECT destination;
     if (flip & 1) {
         destination.right=x;

@@ -2,12 +2,22 @@
 #include <windows.h>
 #include <stddef.h>
 
-// The original two native allocations both construct/destruct one complete
-// 44-byte texture slot VALUE. The original element's internal fields remain
-// unknown: physicalWords describes observed occupied storage, not a
-// reconstructed historical vendor/private element class.
+// The native vector stores complete 44-byte entries. The bitmap methods
+// receive the entry address and access the first group of fields.
 struct NativeTextureElementF769 {
-    DWORD physicalWords[11];
+    BYTE uploadFormat;
+    BYTE unknown01[3];
+    int storedWidth;
+    int storedHeight;
+    int storedStride;
+    DWORD encodedSize;
+    WORD* palette;
+    BYTE ownsPalette;
+    BYTE unknown19[3];
+    BYTE* pixels;
+    BYTE unknown20[8];
+    BYTE paletteFlag;
+    BYTE unknown29[3];
     NativeTextureElementF769();
     ~NativeTextureElementF769();
 };
