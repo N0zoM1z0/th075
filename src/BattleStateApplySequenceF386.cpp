@@ -1,3 +1,4 @@
+#include "SelectionInput4388D0.hpp"
 #include "BattleScene.hpp"
 // Complete original R065 1,958-CODE-byte battle input/replay dispatcher.
 // The separately owned 28-byte native 7-entry switch table is validated in
@@ -18,13 +19,10 @@ extern ReplayQueueF385 g_ReplayEventsAt006718E0;
 extern signed char g_BattleModeAt006714B4;
 extern signed char g_ReplayModeAt0066C238;
 extern signed char g_StageIdAt0067161D;
-extern unsigned int g_InputGateAt00671678;
 extern unsigned char g_InputCanCancelAt00671632;
 extern const float g_LevelStepAt00657850;
 extern const float g_LevelMaxAt00657B28;
 extern const float g_LevelZeroAt0065782C;
-class NativeKeyScannerF386 {public: unsigned char CheckKey(int);};
-extern NativeKeyScannerF386 g_KeyScannerAt00671638;
 extern void NativeActionAt00423C60(int);
 void BattleScene::ApplySequence() {
     if(g_BattleModeAt006714B4==5) {
@@ -63,16 +61,16 @@ void BattleScene::ApplySequence() {
                 }
             }
         } else {
-            if(!g_KeyScannerAt00671638.CheckKey(0x3D)) field110=0;
+            if(!g_InputMappings[0].IsKeyDown(0x3D)) field110=0;
             if(g_BattleModeAt006714B4!=3 && g_BattleModeAt006714B4!=4) {
-                if(g_KeyScannerAt00671638.CheckKey(0x3C)) {
+                if(g_InputMappings[0].IsKeyDown(0x3C)) {
                     if(g_ReplayModeAt0066C238==1) {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action2=2;g_ReplayEventsAt006718E0.Append(&action2);
                     }
                     fighters[0]->field39D=2;fighters[1]->field39D=2;
                 }
-                if(g_KeyScannerAt00671638.CheckKey(0x3D)) {
+                if(g_InputMappings[0].IsKeyDown(0x3D)) {
                     if(field110==0) {
                         if(g_ReplayModeAt0066C238==1) {
                             g_ReplayEventsAt006718E0.Append(&field014);
@@ -83,21 +81,21 @@ void BattleScene::ApplySequence() {
                     }
                     field110=field110+1;
                 }
-                if(g_KeyScannerAt00671638.CheckKey(0x3E)) {
+                if(g_InputMappings[0].IsKeyDown(0x3E)) {
                     if(g_ReplayModeAt0066C238==1) {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action4=4;g_ReplayEventsAt006718E0.Append(&action4);
                     }
                     field01C=0;
                 }
-                if(g_KeyScannerAt00671638.CheckKey(0x3F)) {
+                if(g_InputMappings[0].IsKeyDown(0x3F)) {
                     if(g_ReplayModeAt0066C238==1) {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action5=5;g_ReplayEventsAt006718E0.Append(&action5);
                     }
                     field01C=1;
                 }
-                if(g_KeyScannerAt00671638.CheckKey(0x40)) {
+                if(g_InputMappings[0].IsKeyDown(0x40)) {
                     if(g_ReplayModeAt0066C238==1) {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action6=6;g_ReplayEventsAt006718E0.Append(&action6);
@@ -107,7 +105,7 @@ void BattleScene::ApplySequence() {
                     if((fighters[0]->field36C)>g_LevelMaxAt00657B28) fighters[0]->field36C=900.0f;
                     if((fighters[1]->field36C)>g_LevelMaxAt00657B28) fighters[1]->field36C=900.0f;
                 }
-                if(g_KeyScannerAt00671638.CheckKey(0x41)) {
+                if(g_InputMappings[0].IsKeyDown(0x41)) {
                     if(g_ReplayModeAt0066C238==1) {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action7=7;g_ReplayEventsAt006718E0.Append(&action7);
@@ -119,17 +117,17 @@ void BattleScene::ApplySequence() {
                 }
             }
         }
-        if(g_ReplayModeAt0066C238==2 && (g_KeyScannerAt00671638.CheckKey(0x1D) || g_KeyScannerAt00671638.CheckKey(0x9D))) {
-            if(g_KeyScannerAt00671638.CheckKey(3)) NativeActionAt00423C60(8);
-            else if(g_KeyScannerAt00671638.CheckKey(4)) NativeActionAt00423C60(6);
-            else if(g_KeyScannerAt00671638.CheckKey(5)) NativeActionAt00423C60(4);
-            else if(g_KeyScannerAt00671638.CheckKey(6)) NativeActionAt00423C60(3);
-            else if(g_KeyScannerAt00671638.CheckKey(7)) NativeActionAt00423C60(2);
-            else if(g_KeyScannerAt00671638.CheckKey(8)) NativeActionAt00423C60(1);
+        if(g_ReplayModeAt0066C238==2 && (g_InputMappings[0].IsKeyDown(0x1D) || g_InputMappings[0].IsKeyDown(0x9D))) {
+            if(g_InputMappings[0].IsKeyDown(3)) NativeActionAt00423C60(8);
+            else if(g_InputMappings[0].IsKeyDown(4)) NativeActionAt00423C60(6);
+            else if(g_InputMappings[0].IsKeyDown(5)) NativeActionAt00423C60(4);
+            else if(g_InputMappings[0].IsKeyDown(6)) NativeActionAt00423C60(3);
+            else if(g_InputMappings[0].IsKeyDown(7)) NativeActionAt00423C60(2);
+            else if(g_InputMappings[0].IsKeyDown(8)) NativeActionAt00423C60(1);
             else NativeActionAt00423C60(0x10);
         }
         if(g_ReplayModeAt0066C238==1 || g_ReplayModeAt0066C238==3) {
-            if(g_KeyScannerAt00671638.CheckKey(0x1D) || g_KeyScannerAt00671638.CheckKey(0x9D) || g_InputGateAt00671678>5) g_InputCanCancelAt00671632=1;
+            if(g_InputMappings[0].IsKeyDown(0x1D) || g_InputMappings[0].IsKeyDown(0x9D) || static_cast<unsigned int>(g_InputMappings[0].held.counts[5])>5) g_InputCanCancelAt00671632=1;
             else g_InputCanCancelAt00671632=0;
         }
     }

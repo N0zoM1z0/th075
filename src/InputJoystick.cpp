@@ -1,4 +1,5 @@
 #include "InputJoystick.hpp"
+#include "SelectionInput4388D0.hpp"
 #include <vector>
 #include <string.h>
 
@@ -130,3 +131,5 @@ InputResourceClient::~InputResourceClient()
         }
     }
 }
+
+InputMapping4388D0 g_InputMappings[2];

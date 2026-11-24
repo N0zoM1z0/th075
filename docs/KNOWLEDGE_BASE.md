@@ -93,6 +93,21 @@ callers formerly labeled these operations as stage or viewport changes.
 The complete caller comparisons preserve the original destinations.
 [Sound vector evidence](ORIGIN_PENDING_REVIEW.md#r286--sound-buffer-and-replay-and-script-deque-helpers)
 
+The 20-byte deque at `0x006713A0` holds 64-byte `AudioStream` records.
+File and archive loading push records into it. Playback reads the front,
+and the sound bank clears it at the first and last client. VC7.1 emits
+the same 19-byte `_Tidy` caller for `clear()` and the destructor. Native
+startup and exit use the separate construction and destruction entries
+at `0x0040AC80` and `0x0040AD60`. Both wrappers and the queue operations
+were compared with the actual record type.
+
+The initializer at `0x00656D60` constructs two 72-byte input mappings
+at `0x00671638`. Each holds a 40-byte key configuration at `+0x04` and
+seven signed held counts at `+0x2C`. Scene callers read the shared array
+with the observed COFF addends. `/GX` gives VC7.1 the same constructor
+and destructor iterators at startup and exit. The fighter also uses those
+mapping lifetime methods for its input member at `+0x494`.
+
 Camera initialization, motion, and drawing share the initially zeroed
 camera state at `0x006713BC` through `0x00671414`. The combat view offsets
 at `0x00671404` and `0x006713C4` are written by the camera and read by the

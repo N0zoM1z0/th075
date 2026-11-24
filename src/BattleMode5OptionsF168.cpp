@@ -13,9 +13,9 @@ void BattleScene::HandleMode5Options()
     if (field0A0 == 0)
         return;
 
-    if (Unknown438A60(g_HeldInputAt00671664.counts[0]) == 1) {
+    if (Unknown438A60(g_InputMappings[0].held.counts[0]) == 1) {
         g_SoundBank->Play(39);
-        signed char horizontal = *reinterpret_cast<signed char*>(&g_HeldInputAt00671664);
+        signed char horizontal = *reinterpret_cast<signed char*>(&g_InputMappings[0].held);
         switch (field118) {
         case 0:
             fighters[1]->field52C = (fighters[1]->field52C + 6 + horizontal) % 6;
@@ -38,7 +38,7 @@ void BattleScene::HandleMode5Options()
         }
     }
 
-    if (g_HeldInputAt00671664.counts[2] == 1) {
+    if (g_InputMappings[0].held.counts[2] == 1) {
         switch (field118) {
         case 6:
             fighters[0]->field3A0 = 1;
@@ -55,13 +55,13 @@ void BattleScene::HandleMode5Options()
             break;
         }
     }
-    if (g_HeldInputAt00671664.counts[3] == 1)
+    if (g_InputMappings[0].held.counts[3] == 1)
         field0A0 = 0;
-    if (g_HeldInputAt00671664.counts[1] == 1 || g_HeldInputAt006716AC.counts[1] == 1) {
+    if (g_InputMappings[0].held.counts[1] == 1 || g_InputMappings[1].held.counts[1] == 1) {
         g_SoundBank->Play(39);
         field118 = (field118 + 1) % 9;
     }
-    if (g_HeldInputAt00671664.counts[1] == -1 || g_HeldInputAt006716AC.counts[1] == -1) {
+    if (g_InputMappings[0].held.counts[1] == -1 || g_InputMappings[1].held.counts[1] == -1) {
         g_SoundBank->Play(39);
         field118 = (field118 + 8) % 9;
     }

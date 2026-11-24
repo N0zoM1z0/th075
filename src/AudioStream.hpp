@@ -1,6 +1,7 @@
 #ifndef TH075_AUDIO_STREAM_HPP
 #define TH075_AUDIO_STREAM_HPP
 #include <windows.h>
+#include <deque>
 
 struct IDirectSoundBuffer8;
 
@@ -38,6 +39,10 @@ public:
     HANDLE file;                        // +0x3C
 };
 
+typedef std::deque<AudioStream> AudioQueue;
+typedef char AudioQueueSize[(sizeof(AudioQueue) == 20) ? 1 : -1];
+
+extern AudioQueue audioQueue;
 extern int audioClientCount;
 extern BYTE audioPlaying;
 extern BYTE audioFading;

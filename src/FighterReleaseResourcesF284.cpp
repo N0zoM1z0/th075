@@ -1,3 +1,4 @@
+#include "SelectionInput4388D0.hpp"
 #include "SoundBank.hpp"
 
 // Physical, independently x86-observed fighter member boundaries and
@@ -15,10 +16,6 @@ public:
     void Clear();
     ~FighterVectorF284();
 };
-class FighterInputF284 {
-    unsigned char physicalExtent[0x84];
-public: ~FighterInputF284();
-};
 class FighterDequeF284 {
     unsigned char physicalExtent[0x1b8];
 public:
@@ -32,14 +29,14 @@ public:
 private:
     unsigned char observedFighterHeaderAndState[0x464];
     FighterVectorF284 actors;
-    FighterInputF284 input;
+    InputMapping4388D0 input;
+    unsigned char remainingFighterState4DC[0x3C];
     FighterDequeF284 replay;
     SoundBank sounds;
     unsigned char remainingFighterState6E4[0x30];
     FighterScriptF284 scripts;
 };
 typedef char AssertFighterActorsF284[(sizeof(FighterVectorF284)==0x2c)?1:-1];
-typedef char AssertFighterInputF284[(sizeof(FighterInputF284)==0x84)?1:-1];
 typedef char AssertFighterDequeF284[(sizeof(FighterDequeF284)==0x1b8)?1:-1];
 #define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 FighterResourceReleaseF284::~FighterResourceReleaseF284()

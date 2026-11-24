@@ -1,3 +1,4 @@
+#include "SelectionInput4388D0.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
 #include <windows.h>
@@ -10,7 +11,6 @@
 // native JAE at 0x4A to the time-reset block at 0xB6, without jumps.
 // Complete original game staff-roll scene advancement / ending score policy.
 // Borrowed native stage, time and fighter score ABIs only.
-extern unsigned int g_StaffRollPhaseAt0067166C;
 extern void* g_StaffRollFighterAt00671418;
 extern signed char g_StaffRollCompletionAt00671623;
 extern signed char g_ReplayNameModeAt006714CE;
@@ -34,7 +34,7 @@ unsigned short StaffRollAdvanceF450::Advance() {
     AdvanceVirtual();
     Graphics::Present();
     AdvanceHookAt00438CF0();
-    if (g_StaffRollPhaseAt0067166C==1) {
+    if (static_cast<unsigned int>(g_InputMappings[0].held.counts[2])==1) {
         if (field00C>0x14C08 || field00C<0x13880) {
             MusicF204::PlayTrackByIndex(40);
             AudioControl407CA0::ScheduleFade(-10000,-160,1,1);

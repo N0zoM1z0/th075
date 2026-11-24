@@ -5,22 +5,22 @@
 void CharacterSelectScene::PollInput() {
     Input::PollKeyboard();
     Input::PollJoysticks();
-    g_InputMappingAt00671638.UpdateHeldCounts();
-    (input[0]) = *reinterpret_cast<SelectInputFrame*>(&g_HeldInputAt00671664);
+    g_InputMappings[0].UpdateHeldCounts();
+    (input[0]) = *reinterpret_cast<SelectInputFrame*>(&g_InputMappings[0].held);
     if (g_CombatMode != 3) {
-        g_InputMappingAt00671680.UpdateHeldCounts();
-        (input[1]) = *reinterpret_cast<SelectInputFrame*>(&g_HeldInputAt006716AC);
+        g_InputMappings[1].UpdateHeldCounts();
+        (input[1]) = *reinterpret_cast<SelectInputFrame*>(&g_InputMappings[1].held);
     }
-    if (g_InputMappingAt00671638.IsKeyDown(0x1C)
-        && (g_InputMappingAt00671638.IsKeyDown(0x38)
-            || g_InputMappingAt00671638.IsKeyDown(0xB8)))
+    if (g_InputMappings[0].IsKeyDown(0x1C)
+        && (g_InputMappings[0].IsKeyDown(0x38)
+            || g_InputMappings[0].IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     if ((g_CombatMode == 5 || g_CombatMode == 1 || g_CombatMode == 3)
         && (playerState[g_SelectActiveSideAt006714B8]) >= 4) {
         memcpy(&input[1 - g_SelectActiveSideAt006714B8], &input[g_SelectActiveSideAt006714B8], sizeof(SelectInputFrame));
         memset(&input[g_SelectActiveSideAt006714B8], 0, sizeof(SelectInputFrame));
     }
-    if (g_InputMappingAt00671638.IsKeyDown(1))
+    if (g_InputMappings[0].IsKeyDown(1))
         cancellationRequested = cancellationRequested + 1;
     else
         cancellationRequested = 0;

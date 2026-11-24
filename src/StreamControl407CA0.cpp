@@ -4,17 +4,6 @@
 #include <mmsystem.h>
 #include <dsound.h>
 
-// These interfaces are pointer-only views. Their complete owners are unknown;
-// never instantiate or embed them.
-class AudioQueue407CA0 {
-public:
-    unsigned int Size();
-    AudioStream& Front();
-    void PopFront();
-    void Clear();
-};
-// An external unsized object-representation anchor declares no queue storage.
-extern BYTE audioQueueStorage[];
 extern signed char masterVolume;
 int audioClientCount;
 BYTE audioPlaying;
@@ -22,50 +11,50 @@ BYTE audioFading;
 HANDLE audioWorkerEvent;
 HANDLE audioWorkerHandle;
 DWORD audioWorkerId;
-#define QUEUE reinterpret_cast<AudioQueue407CA0*>(audioQueueStorage)
+AudioQueue audioQueue;
 
 namespace AudioControl407CA0 {
 void __cdecl ClearPlayback() {
     audioPlaying = 0;
     audioFading = 0;
-    QUEUE->Clear();
+    audioQueue.clear();
 }
 void __cdecl Start() {
-    if (QUEUE->Size() > 0 && QUEUE->Front().buffer) {
+    if (audioQueue.size() > 0 && audioQueue.front().buffer) {
         if (masterVolume == 0)
-            QUEUE->Front().buffer->SetVolume(DSBVOLUME_MIN);
+            audioQueue.front().buffer->SetVolume(DSBVOLUME_MIN);
         else
-            QUEUE->Front().buffer->SetVolume((masterVolume - 100) * 50);
-        QUEUE->Front().buffer->Play(0, 0, DSBPLAY_LOOPING);
+            audioQueue.front().buffer->SetVolume((masterVolume - 100) * 50);
+        audioQueue.front().buffer->Play(0, 0, DSBPLAY_LOOPING);
         audioPlaying = 1;
     }
 }
 void __cdecl Stop() {
     audioPlaying = 0;
     audioFading = 0;
-    if (QUEUE->Size() > 0 && QUEUE->Front().buffer) {
-        QUEUE->Front().buffer->Stop();
-        QUEUE->PopFront();
+    if (audioQueue.size() > 0 && audioQueue.front().buffer) {
+        audioQueue.front().buffer->Stop();
+        audioQueue.pop_front();
     }
 }
 void __cdecl ApplyVolumeOffset(LONG offset) {
-    if (QUEUE->Size() > 0 && QUEUE->Front().buffer) {
+    if (audioQueue.size() > 0 && audioQueue.front().buffer) {
         LONG volume = (masterVolume - 100) * 50 + offset;
         if (volume < DSBVOLUME_MIN || masterVolume == 0)
             volume = DSBVOLUME_MIN;
         if (volume > DSBVOLUME_MAX)
             volume = DSBVOLUME_MAX;
-        QUEUE->Front().buffer->SetVolume(volume);
+        audioQueue.front().buffer->SetVolume(volume);
     }
 }
 void __cdecl ScheduleFade(LONG target, LONG step, BYTE stopAfter, BYTE startNext) {
-    if (QUEUE->Size() > 0) {
+    if (audioQueue.size() > 0) {
         if (audioPlaying) {
-            if (QUEUE->Front().buffer) {
-                QUEUE->Front().fadeLimit = target;
-                QUEUE->Front().fadeStep = step;
-                QUEUE->Front().field038 = stopAfter;
-                QUEUE->Front().field039 = startNext;
+            if (audioQueue.front().buffer) {
+                audioQueue.front().fadeLimit = target;
+                audioQueue.front().fadeStep = step;
+                audioQueue.front().field038 = stopAfter;
+                audioQueue.front().field039 = startNext;
                 audioFading = 1;
             }
         } else {
@@ -82,9 +71,9 @@ DWORD WINAPI Worker(LPVOID) {
         audioWorkerEvent = CreateEventA(0, 0, 0, 0);
     while (1) {
         if (audioPlaying) {
-            if (QUEUE->Size() > 0) {
-                if (QUEUE->Front().buffer) {
-                    AudioStream* record = &QUEUE->Front();
+            if (audioQueue.size() > 0) {
+                if (audioQueue.front().buffer) {
+                    AudioStream* record = &audioQueue.front();
                     if (record->bufferBytes > 0) {
                         record->Refill(0x20000);
                         record->buffer->GetStatus(&status);

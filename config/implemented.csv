@@ -942,7 +942,7 @@ ResultListScene::DrawRankLabel
 GameProgress::IncrementSelectedRecord
 CombatCoordinateView::MapWorldToScreenAt00455770
 FontSurface::IsDoubleByteAt0041CA30
-InputMappingF735::ReleaseClient
+InputMapping4388D0::~InputMapping4388D0
 TextureManagerF198::Present
 TextureManagerF198::SetDepthMode
 TextureManagerF198::SetTextureFilter
@@ -962,7 +962,7 @@ Record16F739::~Record16F739
 Record16F739::Record16F739
 NestedRecord116F741::NestedRecord116F741
 NestedRecord116F741::~NestedRecord116F741
-InputMappingF742::InputMappingF742
+InputMapping4388D0::InputMapping4388D0
 GameProgress::ClearUnlockBit
 BackgroundCountersF746::AdvanceBG05bCounters
 CharacterAuxFrameF750::RefreshSelectedFrame

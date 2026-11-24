@@ -943,7 +943,7 @@ ResultListScene::DrawRankLabel,0x00431890,function
 GameProgress::IncrementSelectedRecord,0x00425130,function
 CombatCoordinateView::MapWorldToScreenAt00455770,0x00455770,function
 FontSurface::IsDoubleByteAt0041CA30,0x0041CA30,function
-InputMappingF735::ReleaseClient,0x00406DF0,function
+InputMapping4388D0::~InputMapping4388D0,0x00406DF0,function
 TextureManagerF198::Present,0x0040C7E0,function
 TextureManagerF198::SetDepthMode,0x0040C840,function
 TextureManagerF198::SetTextureFilter,0x0040C860,function
@@ -963,7 +963,7 @@ Record16F739::~Record16F739,0x005F7ED0,function
 Record16F739::Record16F739,0x005F7F20,function
 NestedRecord116F741::NestedRecord116F741,0x004587E0,function
 NestedRecord116F741::~NestedRecord116F741,0x004588E0,function
-InputMappingF742::InputMappingF742,0x00406DB0,function
+InputMapping4388D0::InputMapping4388D0,0x00406DB0,function
 GameProgress::ClearUnlockBit,0x00416D50,function
 BackgroundCountersF746::AdvanceBG05bCounters,0x0044E8D0,function
 CharacterAuxFrameF750::RefreshSelectedFrame,0x005FAC60,function

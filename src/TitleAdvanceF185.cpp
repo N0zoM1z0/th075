@@ -18,7 +18,7 @@ extern signed char g_TitleRoundOptionAt006714AC[2];
 extern signed char g_TitleMiscOptionAt00671610[2];
 extern signed char g_TitleOtherOptionAt006714CC[2];
 
-#define SIDE_HELD(button, i) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(&g_HeldInputAt00671664) + (i) * 0x48 + (button) * 4))
+#define SIDE_HELD(button, i) g_InputMappings[i].held.counts[button]
 
 unsigned short TitleScene::Update()
 {

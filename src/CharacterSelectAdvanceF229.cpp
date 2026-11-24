@@ -1,3 +1,4 @@
+#include "SelectionInput4388D0.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
@@ -7,9 +8,6 @@ extern signed char g_ChoiceGameModeAt006714B4;
 extern signed char g_ChoiceFocusAt006714B8;
 // The native input controller repeats a physically observed 0x48-byte record.
 // This borrowed indexed view is not instantiated or used to infer its fields.
-struct InputCancelRecordF229 {int cancellation; unsigned char otherNativeBytes[68];};
-typedef char InputCancelStride72F229[(sizeof(InputCancelRecordF229)==72)?1:-1];
-extern InputCancelRecordF229 g_SelectInputCancelAt00671670[2];
 extern signed char g_SelectedFightersAt006714C8[2];
 extern unsigned char g_SequenceIdleAt0067161E;
 extern signed char g_SequencePhaseAt0067161D;
@@ -49,7 +47,7 @@ unsigned short CharacterSelectScene::Advance()
             (portraitFade[1]) -= g_ChoiceHalfStepAt00657874;
     }
     if (g_ChoiceGameModeAt006714B4==1 || g_ChoiceGameModeAt006714B4==5) {
-        if (g_SelectInputCancelAt00671670[g_ChoiceFocusAt006714B8].cancellation==1 || (cancellationRequested)==1) {
+        if (g_InputMappings[g_ChoiceFocusAt006714B8].held.counts[3]==1 || (cancellationRequested)==1) {
             PLAY(0x28);
             if ((optionsOpen[g_ChoiceFocusAt006714B8])!=0) {
                 (optionsOpen[g_ChoiceFocusAt006714B8])=0;
@@ -66,7 +64,7 @@ unsigned short CharacterSelectScene::Advance()
             }
         }
     } else if (g_ChoiceGameModeAt006714B4==3 || g_ChoiceGameModeAt006714B4==4) {
-        if ((g_SelectInputCancelAt00671670[0].cancellation==1 && (playerState[0])==0) || (cancellationRequested)==1) {
+        if ((g_InputMappings[0].held.counts[3]==1 && (playerState[0])==0) || (cancellationRequested)==1) {
             PLAY(0x28);
             if ((optionsOpen[0])!=0)
                 (optionsOpen[0])=0;
@@ -74,13 +72,13 @@ unsigned short CharacterSelectScene::Advance()
                 return 0x2202;
         }
         (playerState[1])=8;
-    } else if (g_SelectInputCancelAt00671670[0].cancellation==1 && (optionsOpen[0])!=0) {
+    } else if (g_InputMappings[0].held.counts[3]==1 && (optionsOpen[0])!=0) {
         PLAY(0x28);
         (optionsOpen[0])=0;
-    } else if (g_SelectInputCancelAt00671670[1].cancellation==1 && (optionsOpen[1])!=0) {
+    } else if (g_InputMappings[1].held.counts[3]==1 && (optionsOpen[1])!=0) {
         PLAY(0x28);
         (optionsOpen[1])=0;
-    } else if ((g_SelectInputCancelAt00671670[0].cancellation==1 || g_SelectInputCancelAt00671670[1].cancellation==1 || (cancellationRequested)==1)
+    } else if ((g_InputMappings[0].held.counts[3]==1 || g_InputMappings[1].held.counts[3]==1 || (cancellationRequested)==1)
                && (((playerState[0])==0 && (playerState[1])==0) || (cancellationRequested)==1)) {
         PLAY(0x28);
         return 0x2202;

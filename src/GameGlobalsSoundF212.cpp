@@ -1,17 +1,11 @@
+#include "SelectionInput4388D0.hpp"
 #include <windows.h>
 #include "AudioControl.hpp"
 #include "SoundBank.hpp"
 #include "WindowOverlayF212.hpp"
 
 // The display view carries the observed 120-byte allocation size.
-class InputBindingF212 {
-public:
-    void Configure(void* keymap);
-};
-extern InputBindingF212 g_InputBindingAAt00671638;
-extern InputBindingF212 g_InputBindingBAt00671680;
-extern BYTE g_KeymapAAt00671440[];
-extern BYTE g_KeymapBAt00671468[];
+extern BYTE g_KeyBindingsAt00671440[];
 
 class WindowDisplayF212 {
     unsigned char nativePhysicalStorage[120];
@@ -36,8 +30,8 @@ extern GameWorkerF212 g_WorkerAt006716C8;
 namespace GameGlobalsF212 {
 void InitializeSound()
 {
-    g_InputBindingAAt00671638.Configure(g_KeymapAAt00671440);
-    g_InputBindingBAt00671680.Configure(g_KeymapBAt00671468);
+    g_InputMappings[0].SetBindings(g_KeyBindingsAt00671440);
+    g_InputMappings[1].SetBindings(g_KeyBindingsAt00671440 + sizeof(InputBindingKeys));
     g_WindowDisplayAt0067143C = new WindowDisplayF212();
     g_WindowOverlayAt006714C4 = new WindowOverlayF212();
     g_SoundBank = new SoundBank();

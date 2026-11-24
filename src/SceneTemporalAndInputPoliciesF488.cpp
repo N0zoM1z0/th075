@@ -1,3 +1,4 @@
+#include "SelectionInput4388D0.hpp"
 #include "Graphics.hpp"
 #include "GraphicsDevice.hpp"
 #include "InputJoystick.hpp"
@@ -8,8 +9,6 @@
 // original 32-bit/16-bit elapsed-frame counters are preserved.
 // Three complete native scene update policies and two independent original
 // game-scene input paths. These own only borrowed native base call ABIs.
-extern unsigned int g_OpeningPhaseAt0067166C;
-extern unsigned int g_OpeningAlternateAt006716B4;
 extern signed char g_LoadModeAt006714B4;
 extern signed char g_LoadCharacterAt0067161E;
 extern void __cdecl LoadFightersAt004176F0();
@@ -42,7 +41,7 @@ public:
 };
 unsigned short OpeningSceneAdvanceF488::Advance(){
  PollInput(); VAdvance(); Graphics::Present();
- if(g_OpeningPhaseAt0067166C==1 || g_OpeningAlternateAt006716B4==1) return 0x2202;
+ if(g_InputMappings[0].held.counts[2]==1 || g_InputMappings[1].held.counts[2]==1) return 0x2202;
  if(field00C>0xC15C) return 0xFF02;
  field00C=timeGetTime()-field010;
  return 0xD;
@@ -64,19 +63,17 @@ unsigned short TimedSceneAdvanceF488::Advance(){
  if(field00C>180)return 0x220D;
  return 4;
 }
-class InputStateF488 {public:void Advance();unsigned char CheckPressed(int);};
-extern InputStateF488 g_FirstInputAt00671638;
 class LoadingSceneInputF488 {public:void PollInput();};
 class StaffRollSceneInputF488 {public:void PollSkipInput();};
 void LoadingSceneInputF488::PollInput(){
  Input::PollKeyboard();Input::PollJoysticks();
- g_FirstInputAt00671638.Advance();
- if(g_FirstInputAt00671638.CheckPressed(0x1C) && (g_FirstInputAt00671638.CheckPressed(0x38) || g_FirstInputAt00671638.CheckPressed(0xB8)))
+ g_InputMappings[0].UpdateHeldCounts();
+ if(g_InputMappings[0].IsKeyDown(0x1C) && (g_InputMappings[0].IsKeyDown(0x38) || g_InputMappings[0].IsKeyDown(0xB8)))
    Graphics::ToggleWindowMode();
 }
 void StaffRollSceneInputF488::PollSkipInput(){
  Input::PollKeyboard();Input::PollJoysticks();
- g_FirstInputAt00671638.Advance();
- if(g_FirstInputAt00671638.CheckPressed(0x1C) && (g_FirstInputAt00671638.CheckPressed(0x38) || g_FirstInputAt00671638.CheckPressed(0xB8)))
+ g_InputMappings[0].UpdateHeldCounts();
+ if(g_InputMappings[0].IsKeyDown(0x1C) && (g_InputMappings[0].IsKeyDown(0x38) || g_InputMappings[0].IsKeyDown(0xB8)))
    Graphics::ToggleWindowMode();
 }

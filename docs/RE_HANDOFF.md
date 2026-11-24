@@ -24,15 +24,15 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 2,169 unresolved externals. Sound bank lifetime,
-archive loading, and playback share the 20-byte DirectSound buffer owner.
-Music callers share the playback and fade entries. This batch replayed
-112 units and resolved 97 linker symbols. The streaming queue still uses
-borrowed deque bindings.
+stops at `LNK1120` with 2,072 unresolved externals. The input callers share
+the two 72-byte mappings. Stream loading and playback share the VC7.1
+deque of 64-byte audio records. The input and stream batch replayed 73
+units and resolved 97 linker symbols. Sound bank lifetime, archive loading,
+and playback share the 20-byte DirectSound buffer owner.
+Music callers share the playback and fade entries.
 
-Camera initialization,
-update, snap, and rendering share state. Scene and sequence callers share
-the camera override and snap entries. The music, options,
+Camera initialization, update, snap, and rendering share state. Scene
+and sequence callers share the camera override and snap entries. The music, options,
 results, and window constructors share the D3D8 texture allocator.
 Transition dispatch and frame capture share the presentation callback
 API. Transition and opaque sprite drawing share the SDK-backed RECT

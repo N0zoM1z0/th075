@@ -21,8 +21,8 @@ void BattleScene::HandlePauseMenu()
     if (g_CombatMode == 5) {
         HandleMode5Options();
     } else {
-        if (g_HeldInputAt00671664.counts[2] == 1
-            || g_HeldInputAt006716AC.counts[2] == 1) {
+        if (g_InputMappings[0].held.counts[2] == 1
+            || g_InputMappings[1].held.counts[2] == 1) {
             field0A0 = 0;
             g_SoundBank->Play(45);
             switch (field118) {
@@ -56,16 +56,16 @@ void BattleScene::HandlePauseMenu()
             }
         }
         if (field018 != 5 && field018 != 12
-            && (g_HeldInputAt00671664.counts[3] == 1
-                || g_HeldInputAt006716AC.counts[3] == 1))
+            && (g_InputMappings[0].held.counts[3] == 1
+                || g_InputMappings[1].held.counts[3] == 1))
             field0A0 = 0;
-        if (g_HeldInputAt00671664.counts[1] == 1
-            || g_HeldInputAt006716AC.counts[1] == 1) {
+        if (g_InputMappings[0].held.counts[1] == 1
+            || g_InputMappings[1].held.counts[1] == 1) {
             g_SoundBank->Play(39);
             field118++;
         }
-        if (g_HeldInputAt00671664.counts[1] == -1
-            || g_HeldInputAt006716AC.counts[1] == -1) {
+        if (g_InputMappings[0].held.counts[1] == -1
+            || g_InputMappings[1].held.counts[1] == -1) {
             g_SoundBank->Play(39);
             field118--;
         }
@@ -99,35 +99,35 @@ void BattleScene::HandlePauseMenu()
 
 void BattleScene::ProcessDebugKeys()
 {
-    if (g_InputMappingAt00671638.IsKeyDown(0x3B)) {
+    if (g_InputMappings[0].IsKeyDown(0x3B)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[1]->field52C = (fighters[1]->field52C + 1) % 6;
         g_DebugKeyRepeatAt0068D618++;
-    } else if (g_InputMappingAt00671638.IsKeyDown(0x3C)) {
+    } else if (g_InputMappings[0].IsKeyDown(0x3C)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[1]->field52D = (fighters[1]->field52D + 9) % 10;
         g_DebugKeyRepeatAt0068D618++;
-    } else if (g_InputMappingAt00671638.IsKeyDown(0x3D)) {
+    } else if (g_InputMappings[0].IsKeyDown(0x3D)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[1]->field52D = (fighters[1]->field52D + 1) % 10;
         g_DebugKeyRepeatAt0068D618++;
-    } else if (g_InputMappingAt00671638.IsKeyDown(0x3E)) {
+    } else if (g_InputMappings[0].IsKeyDown(0x3E)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[1]->field52F = (fighters[1]->field52F + 1) % 4;
         g_DebugKeyRepeatAt0068D618++;
-    } else if (g_InputMappingAt00671638.IsKeyDown(0x3F)) {
+    } else if (g_InputMappings[0].IsKeyDown(0x3F)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[1]->field52E = (fighters[1]->field52E + 1) % 2;
         g_DebugKeyRepeatAt0068D618++;
-    } else if (g_InputMappingAt00671638.IsKeyDown(0x40)) {
+    } else if (g_InputMappings[0].IsKeyDown(0x40)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[1]->field530 = (fighters[1]->field530 + 1) % 4;
         g_DebugKeyRepeatAt0068D618++;
-    } else if (g_InputMappingAt00671638.IsKeyDown(0x41)) {
+    } else if (g_InputMappings[0].IsKeyDown(0x41)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[1]->field531 = (fighters[1]->field531 + 1) % 2;
         g_DebugKeyRepeatAt0068D618++;
-    } else if (g_InputMappingAt00671638.IsKeyDown(0x42)) {
+    } else if (g_InputMappings[0].IsKeyDown(0x42)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
             fighters[0]->field3A0 = 1;
         g_DebugKeyRepeatAt0068D618++;

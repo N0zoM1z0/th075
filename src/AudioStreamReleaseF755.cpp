@@ -7,8 +7,6 @@
 // The global call at 00409740 is a VC7 deque destructor (R077), not
 // an independently owned game helper. These class names are provisional.
 // Direct COM Stop/Release calls reproduce naturally generated MSVC temps.
-struct GlobalAudioBuffersF755 { void ReleaseSharedDequeAt409740(); };
-extern GlobalAudioBuffersF755 g_GlobalAudioBuffersF755;
 SoundBank::~SoundBank() {
     if (--audioClientCount == 0) {
         audioPlaying = 0;
@@ -17,7 +15,7 @@ SoundBank::~SoundBank() {
         CloseHandle(audioWorkerHandle);
         audioWorkerEvent = 0;
         audioWorkerHandle = 0;
-        g_GlobalAudioBuffersF755.ReleaseSharedDequeAt409740();
+        audioQueue.clear();
     }
     for (unsigned int index = 0; index < buffers.size(); ++index) {
         if (buffers[index] != 0) {

@@ -1,3 +1,4 @@
+#include "SelectionInput4388D0.hpp"
 #include <windows.h>
 #include <string.h>
 #include <new>
@@ -16,7 +17,6 @@ class FighterActorVectorF287 {
     unsigned char physicalBytes[0x2c];
 public: FighterActorVectorF287(); ~FighterActorVectorF287();
 };
-class FighterInputF287 { unsigned char physicalBytes[0x84]; public: FighterInputF287(); ~FighterInputF287(); };
 // The +0x518..+0x6CF input-state subobject starts with the native
 // VC7.1 command deque, followed by the fighter's input/quote state.
 class FighterInputStateF287 {
@@ -56,12 +56,12 @@ class FighterScriptF287 { public: FighterScriptF287(); ~FighterScriptF287(); };
 
 typedef char AssertPropsF287[(sizeof(FighterActorPropertiesF287)==0x194)?1:-1];
 typedef char AssertVectorF287[(sizeof(FighterActorVectorF287)==0x2c)?1:-1];
-typedef char AssertInputF287[(sizeof(FighterInputF287)==0x84)?1:-1];
 class FighterInitF287 : public FighterBaseF287 {
     unsigned char observedBaseGameState[0x2d0];
     FighterActorPropertiesF287 properties;
     FighterActorVectorF287 actors;
-    FighterInputF287 input;
+    InputMapping4388D0 input;
+    unsigned char remainingFighterState4DC[0x3C];
     FighterInputStateF287 replay;
     SoundBank sounds;
     unsigned char remainingFighterState6E4[0x30];

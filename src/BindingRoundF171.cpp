@@ -1,25 +1,26 @@
 #include "BindingRoundF171.hpp"
 #include "Input.hpp"
+#include "SelectionInput4388D0.hpp"
 #include <string.h>
 
 namespace Input { extern unsigned char g_JoystickCount; }
 
 
-void InputBindingsF171::SetBindings(const void* source)
+void InputMapping4388D0::SetBindings(const void* source)
 {
-    memcpy(&device, source, 40);
-    if (device >= Input::g_JoystickCount) {
+    memcpy(&keys, source, sizeof(keys));
+    if (keys.device >= Input::g_JoystickCount) {
         // Original CP932 message: パッドが見つかりません
         Input::ShowError("\x83\x70\x83\x62\x83\x68\x82\xaa\x8c\xa9\x82\xc2\x82\xa9\x82\xe8\x82\xdc\x82\xb9\x82\xf1");
-        memset(&device, 0, 40);
-        device = -1;
+        memset(&keys, 0, sizeof(keys));
+        keys.device = -1;
     }
-    memset(&state, 0, 28);
+    memset(&held, 0, sizeof(held));
 }
 
 void Fighter::SetBindings(const void* source)
 {
-    inputBindings.SetBindings(source);
+    reinterpret_cast<InputMapping4388D0*>(&inputBindings)->SetBindings(source);
 }
 
 void Fighter::BindOpponent(void* other)
