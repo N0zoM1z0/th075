@@ -402,7 +402,6 @@ The current direct-call scan is in
 | --- | --- |
 | `0x0040D8C0`, `0x0040D8E0` | The typed texture cleanup reaches the bitmap-containing entry's destructor. The R108 implicit and explicit member lifetime forms both match the constructor and destructor with their bitmap calls. |
 | `0x0040D900`, `0x0040D940` | Both R163 forms of the outer wrappers call the R292 cosine and sine workers with the same arguments and return behavior. The link evidence identifies the inner workers. |
-| `0x0040D9F0` | Both R291 layouts match the empty leaf, all three callers and three complete drawing or copy functions. The original type of the subobject at `+0x40` is unknown. |
 | `0x00411C10` | Both the implicit and explicit constructors of the concrete sprite history entry reproduce all 25 bytes and the call to the quad constructor. |
 | `0x004138D0`, `0x00441FD0` | Complete empty bodies with zero recorded Ghidra references. The current static scan finds no direct caller or absolute pointer literal for either entry. |
 | `0x004229D0` | R286 uses the actual script sequence layout. Both copy forms reproduce all 28 bytes and the relocation to the same deque copy constructor. |
@@ -510,9 +509,8 @@ unit's canonical VC7.1 profile. Each layout reproduces the complete
 14-byte leaf, its three caller constructors, the 1,132-byte sprite
 draw and both copies. All 2,069 bytes and 46 relocation operands
 compare per layout. The three constructor calls bind to the
-corresponding COFF symbol at the same native entry. Identifying the
-original type requires an operation that uses the tail as a typed
-value or a matching build symbol.
+corresponding COFF symbol at the same native entry. R293 uses
+the original linker layout to distinguish the two types.
 
 All eight `D3DXMATRIX` default constructor definitions in the pinned
 D3DX8 archive contain the same three bytes as several other default
@@ -560,6 +558,38 @@ flag under `/DEBUG` gives the same selection as `/OPT:NOREF`.
 
     bash .analysis/final-origin-review/sdk-math-selection/link.sh
     scripts/repo-python .analysis/final-origin-review/sdk-math-selection/compare.py
+
+### R293 — Sprite matrix constructor selection
+
+The R291 constructor bodies and their three callers match for both
+payload layouts. The archived `D3DXMATRIX` symbol supplies a
+separate observation. In the native image, `d3dx8tex.obj` code
+precedes `cd3dxsprite.obj` and `d3dxmath.obj`. The two vector default
+constructors retained in the texture code remove duplicate vector
+sections from the sprite interval. The earlier 14-byte
+`D3DXVECTOR4` constructor is independently identified by R282.
+
+Links starting from the public texture and sprite APIs retain the
+same packed SDK code. With the matrix member, the earlier
+14-byte definition supersedes the three-byte archived matrix
+constructor. The 90-byte sprite interval contains the
+two sprite vertex constructors and the quaternion constructor.
+The aligned matrix and plane constructors occupy the two
+three-byte intervals in the math code. With the ordinary member,
+the archive contributes an extra three-byte matrix constructor
+at the start of the sprite interval, just after `GetDevice`.
+
+The four complete windows start at `0x006053D2`, `0x00609058`,
+`0x0061B158` and `0x0061B263`. The matrix control reproduces all
+506 bytes with 14 relocation operands bound to the actual symbols
+in each image. The ordinary control reproduces three windows and
+adds three bytes to the fourth. The result holds under explicit
+`/OPT:NOREF` and the retention default under `/DEBUG`.
+This identifies `0x0040D9F0` as the D3DX8 `D3DXMATRIX` default
+constructor. The role of the final dword at `+0x80` remains unknown.
+
+    bash .analysis/final-origin-review/quad-comdat-selection/link.sh
+    scripts/repo-python .analysis/final-origin-review/quad-comdat-selection/compare.py
 
 ## Historical R263 inventory
 

@@ -224,13 +224,14 @@ R289 reproduces the complete CRT interval around `0x00641FB8` with
 both CRT and ordinary input objects. R290 uses the original C++
 startup table to distinguish the event service pulse at
 `0x00423B20`, which cold-replays all 26 bytes and both relocations.
-R291 matches the sprite quad constructors and two 132-byte copies
-with both payload layouts. The original type at `+0x40` still needs
-a typed use or build symbol.
 R292 identifies four inner float workers as VC7.1 header code
 through the original retention of unreferenced D3DX8 COMDATs and
 the absence of the four competing SDK bodies.
 [Worker selection evidence](ORIGIN_PENDING_REVIEW.md#r292--vc71-float-worker-selection)
+R293 identifies the sprite quad's `D3DXMATRIX` constructor at
+`0x0040D9F0` through four full SDK code windows. The ordinary
+payload adds three bytes in the original sprite interval.
+[Matrix selection evidence](ORIGIN_PENDING_REVIEW.md#r293--sprite-matrix-constructor-selection)
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
