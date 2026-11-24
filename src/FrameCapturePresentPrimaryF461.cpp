@@ -1,3 +1,5 @@
+#include "Graphics.hpp"
+#include "GraphicsTexturedDraw.hpp"
 #include <windows.h>
 #include <d3d8.h>
 // Independently exact native R100 authored 98-byte D3D8 presentation.
@@ -14,13 +16,12 @@ struct NativePresentFrameF461 {
     NativeQuadF461 quad;
 };
 typedef char Frame152F461[(sizeof(NativePresentFrameF461)==152)?1:-1];
-extern void __cdecl SetGraphicsModeAt00401F50(int);
-extern void __cdecl DrawTexturedQuadAt004029F0(const NativeQuadF461*,const RECT*,unsigned int,IDirect3DTexture8*);
 namespace FrameCapturePresentF461 { void PresentPrimary(IDirect3DTexture8** texture); }
 void FrameCapturePresentF461::PresentPrimary(IDirect3DTexture8** texture) {
     NativePresentFrameF461 frame;
     SetRect(&frame.rectangle,0,0,640,480);
     frame.quad.InitializeFromRectangle(&frame.rectangle);
-    SetGraphicsModeAt00401F50(0);
-    DrawTexturedQuadAt004029F0(&frame.quad,&frame.rectangle,0xffffffff,*texture);
+    Graphics::SetBlendMode(0);
+    Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&frame.quad),
+        &frame.rectangle, 0xffffffff, *texture);
 }

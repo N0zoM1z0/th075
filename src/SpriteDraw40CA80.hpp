@@ -9,12 +9,13 @@
 class SpriteQuad40CA80 {
 public:
     D3DXVECTOR4 first, second, third, fourth;
-    RenderQuadPayload5E68C0 payload;
+    D3DXMATRIX matrix;
+    DWORD unknown80;
     SpriteQuad40CA80();
     SpriteQuad40CA80(float, float, float, float);
 };
 typedef char SpriteQuadSize40CA80[(sizeof(SpriteQuad40CA80) == 132) ? 1 : -1];
-typedef char SpriteQuadPayload40CA80[(offsetof(SpriteQuad40CA80, payload) == 64) ? 1 : -1];
+typedef char SpriteQuadMatrix40CA80[(offsetof(SpriteQuad40CA80, matrix) == 64) ? 1 : -1];
 
 // Pointer-only entry/manager interfaces: never instantiate or embed these owners.
 // At returns the observed entry address; its complete record layout is unknown.

@@ -1,29 +1,23 @@
 #include "GraphicsDraw.hpp"
+#include "SceneTransitionLayers.hpp"
 #include "SpriteDraw40CA80.hpp"
+#include "SpriteGeometryF211.hpp"
 #include "SpriteTransform.hpp"
 #include <stdlib.h>
 
-// Complete physical132byte SDK packet; original identity remains unknown.
-class RectTransitionQuadF128 {
-public:
-    D3DXVECTOR4 first, second, third, fourth;
-    RenderQuadPayload5E68C0 payload;
-    RectTransitionQuadF128(const RECT*);
-};
-typedef char RectTransitionQuadSizeF128[(sizeof(RectTransitionQuadF128) == 132) ? 1 : -1];
-extern int g_TransitionFrame;
-extern float g_TransitionColumns[];
-extern float g_TransitionPhase;
-extern float g_TransitionAmplitude;
-extern float g_TransitionDirectionOne;
-extern float g_TransitionDirectionTwo;
+int g_TransitionFrame = -1;
+float g_TransitionColumns[640];
+float g_TransitionPhase;
+float g_TransitionAmplitude;
+float g_TransitionDirectionOne = 1.0f;
+float g_TransitionDirectionTwo = 1.0f;
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 #define POSITIONS(value) reinterpret_cast<const float (*)[4]>(&(value))
 
-void __cdecl DrawTransition00432200(IDirect3DTexture8* const* texture) {
+void __cdecl DrawTransition00432200(IDirect3DTexture8** texture) {
     RECT textureRect;
     SetRect(&textureRect, 0, 0, 640, 480);
-    RectTransitionQuadF128 transformedQuad(&textureRect);
+    SpriteRectF211 transformedQuad(&textureRect);
     Graphics::SetBlendMode(1);
     DWORD drawColor = D3DCOLOR_ARGB(255 - g_TransitionFrame * 6, 255, 255, 255);
     Graphics::DrawTexturedQuad(POSITIONS(transformedQuad), &textureRect, 0xFFFFFFFF, *texture);
@@ -31,10 +25,10 @@ void __cdecl DrawTransition00432200(IDirect3DTexture8* const* texture) {
     Graphics::DrawFilledRectangle(&textureRect, drawColor);
 }
 
-void __cdecl DrawTransition004322B0(IDirect3DTexture8* const* texture) {
+void __cdecl DrawTransition004322B0(IDirect3DTexture8** texture) {
     RECT textureRect;
     SetRect(&textureRect, 0, 0, 640, 480);
-    RectTransitionQuadF128 transformedQuad(&textureRect);
+    SpriteRectF211 transformedQuad(&textureRect);
     Graphics::SetBlendMode(1);
     DWORD drawColor = D3DCOLOR_ARGB(g_TransitionFrame * 6, 255, 255, 255);
     Graphics::DrawTexturedQuad(POSITIONS(transformedQuad), &textureRect, 0xFFFFFFFF, *texture);
@@ -42,25 +36,25 @@ void __cdecl DrawTransition004322B0(IDirect3DTexture8* const* texture) {
     Graphics::DrawFilledRectangle(&textureRect, drawColor);
 }
 
-void __cdecl DrawTransition00432360(IDirect3DTexture8* const* texture) {
+void __cdecl DrawTransition00432360(IDirect3DTexture8** texture) {
     RECT textureRect;
     SetRect(&textureRect, 0, 0, 640, 480);
-    RectTransitionQuadF128 transformedQuad(&textureRect);
+    SpriteRectF211 transformedQuad(&textureRect);
     Graphics::SetBlendMode(1);
     DWORD drawColor = D3DCOLOR_ARGB(255, g_TransitionFrame * 24, g_TransitionFrame * 24, g_TransitionFrame * 24);
     Graphics::DrawTexturedQuad(POSITIONS(transformedQuad), &textureRect, drawColor, *texture);
 }
 
-void __cdecl DrawTransition00432410(IDirect3DTexture8* const* texture) {
+void __cdecl DrawTransition00432410(IDirect3DTexture8** texture) {
     RECT textureRect;
     SetRect(&textureRect, 0, 0, 640, 480);
-    RectTransitionQuadF128 transformedQuad(&textureRect);
+    SpriteRectF211 transformedQuad(&textureRect);
     Graphics::SetBlendMode(1);
     DWORD drawColor = D3DCOLOR_ARGB(255, 255 - g_TransitionFrame * 24, 255 - g_TransitionFrame * 24, 255 - g_TransitionFrame * 24);
     Graphics::DrawTexturedQuad(POSITIONS(transformedQuad), &textureRect, drawColor, *texture);
 }
 
-void __cdecl DrawTransition004324D0(IDirect3DTexture8* const* texture) {
+void __cdecl DrawTransition004324D0(IDirect3DTexture8** texture) {
     SpriteQuad40CA80 transformedQuad;
     Graphics::SetBlendMode(0);
     DWORD drawColor = D3DCOLOR_ARGB(g_TransitionFrame * 2 + 135, 255, 255, 255);
@@ -75,7 +69,7 @@ void __cdecl DrawTransition004324D0(IDirect3DTexture8* const* texture) {
     }
 }
 
-void __cdecl DrawTransition00432660(IDirect3DTexture8* const* texture) {
+void __cdecl DrawTransition00432660(IDirect3DTexture8** texture) {
     SpriteQuad40CA80 transformedQuad;
     Graphics::SetBlendMode(0);
     DWORD drawColor = D3DCOLOR_ARGB(255 - g_TransitionFrame * 2, 255, 255, 255);

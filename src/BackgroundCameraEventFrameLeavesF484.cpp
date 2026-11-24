@@ -1,5 +1,4 @@
-#include <windows.h>
-#include <d3d8.h>
+#include "Graphics.hpp"
 // Native actual background base lifetime: vtable and borrowed +0x18
 // resource member destroyed by the compiler, no guessed private fields.
 class BackgroundResourceF484 {public:~BackgroundResourceF484();};
@@ -44,19 +43,20 @@ void __cdecl PulseEventServiceAt00423B20()
 {
     EventLocalServiceF484 service(16);
 }
-extern void __cdecl FramePresentPrimaryAt00417160(IDirect3DTexture8**);
-extern void __cdecl RegisterFrameCallbackAt004028A0(void (__cdecl*)(IDirect3DTexture8**));
+namespace FrameCapturePresentF461 {
+    void PresentPrimary(IDirect3DTexture8** texture);
+}
 class FrameCapturePolicyF484 {
  IDirect3DTexture8* target;
  unsigned char directDrawEnabled;
 public:void InstallPresentCallback();void EnableDirectDraw();
 };
 void FrameCapturePolicyF484::InstallPresentCallback() {
- RegisterFrameCallbackAt004028A0(FramePresentPrimaryAt00417160);
+ Graphics::SetPresentCallback(FrameCapturePresentF461::PresentPrimary);
  directDrawEnabled=0;
 }
 void FrameCapturePolicyF484::EnableDirectDraw() {
- RegisterFrameCallbackAt004028A0(0);
+ Graphics::SetPresentCallback(0);
  directDrawEnabled=1;
 }
 class NativeSceneBaseF484 {public:virtual ~NativeSceneBaseF484();};

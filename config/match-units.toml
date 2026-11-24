@@ -17673,7 +17673,7 @@ relocations = [
   { offset = 0x16, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
   { offset = 0x21, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
   { offset = 0x2C, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
-  { offset = 0x37, type = "REL32", symbol = "??0RenderQuadPayload5E68C0@@QAE@XZ", target = 0x0040D9F0 },
+  { offset = 0x37, type = "REL32", symbol = "??0D3DXMATRIX@@QAE@XZ", target = 0x0040D9F0 },
   { offset = 0x47, type = "REL32", symbol = "_memset", target = 0x00640490 },
 ]
 
@@ -23552,13 +23552,13 @@ source = "src/SceneTransitionLayers.cpp"
 object = "build/matching/SceneTransitionLayers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["DrawTransition00432200"]
-symbol = "?DrawTransition00432200@@YAXPBQAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432200@@YAXPAPAUIDirect3DTexture8@@@Z"
 target_address = 0x00432200
 size = 175
 compare_size = 175
 relocations = [
   { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
-  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x32, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
   { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
   { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
   { offset = 0x84, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
@@ -23571,13 +23571,13 @@ source = "src/SceneTransitionLayers.cpp"
 object = "build/matching/SceneTransitionLayers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["DrawTransition004322B0"]
-symbol = "?DrawTransition004322B0@@YAXPBQAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition004322B0@@YAXPAPAUIDirect3DTexture8@@@Z"
 target_address = 0x004322B0
 size = 172
 compare_size = 172
 relocations = [
   { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
-  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x32, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
   { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
   { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
   { offset = 0x81, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
@@ -23590,13 +23590,13 @@ source = "src/SceneTransitionLayers.cpp"
 object = "build/matching/SceneTransitionLayers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["DrawTransition00432360"]
-symbol = "?DrawTransition00432360@@YAXPBQAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432360@@YAXPAPAUIDirect3DTexture8@@@Z"
 target_address = 0x00432360
 size = 168
 compare_size = 168
 relocations = [
   { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
-  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x32, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
   { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
   { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
   { offset = 0x59, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
@@ -23609,13 +23609,13 @@ source = "src/SceneTransitionLayers.cpp"
 object = "build/matching/SceneTransitionLayers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["DrawTransition00432410"]
-symbol = "?DrawTransition00432410@@YAXPBQAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432410@@YAXPAPAUIDirect3DTexture8@@@Z"
 target_address = 0x00432410
 size = 189
 compare_size = 189
 relocations = [
   { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
-  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x32, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
   { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
   { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
   { offset = 0x5F, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
@@ -23628,7 +23628,7 @@ source = "src/SceneTransitionLayers.cpp"
 object = "build/matching/SceneTransitionLayers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["DrawTransition004324D0"]
-symbol = "?DrawTransition004324D0@@YAXPBQAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition004324D0@@YAXPAPAUIDirect3DTexture8@@@Z"
 target_address = 0x004324D0
 size = 389
 compare_size = 389
@@ -23651,7 +23651,7 @@ source = "src/SceneTransitionLayers.cpp"
 object = "build/matching/SceneTransitionLayers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["DrawTransition00432660"]
-symbol = "?DrawTransition00432660@@YAXPBQAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432660@@YAXPAPAUIDirect3DTexture8@@@Z"
 target_address = 0x00432660
 size = 396
 compare_size = 396
@@ -35824,47 +35824,47 @@ size = 305
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 13
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@XZ"
+symbol = "??0D3DXVECTOR4@@QAE@XZ"
 target = 0x0040D980
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 24
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@XZ"
+symbol = "??0D3DXVECTOR4@@QAE@XZ"
 target = 0x0040D980
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 35
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@XZ"
+symbol = "??0D3DXVECTOR4@@QAE@XZ"
 target = 0x0040D980
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 46
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@XZ"
+symbol = "??0D3DXVECTOR4@@QAE@XZ"
 target = 0x0040D980
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 57
 type = "REL32"
-symbol = "??0SpriteExtraF211@@QAE@XZ"
+symbol = "??0D3DXMATRIX@@QAE@XZ"
 target = 0x0040D9F0
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 88
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+symbol = "??0D3DXVECTOR4@@QAE@MMMM@Z"
 target = 0x0040DB10
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 145
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+symbol = "??0D3DXVECTOR4@@QAE@MMMM@Z"
 target = 0x0040DB10
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 205
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+symbol = "??0D3DXVECTOR4@@QAE@MMMM@Z"
 target = 0x0040DB10
 [[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
 offset = 264
 type = "REL32"
-symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+symbol = "??0D3DXVECTOR4@@QAE@MMMM@Z"
 target = 0x0040DB10
 
 [units.game-globals-initialize-sound-004175a0]
@@ -39360,7 +39360,7 @@ size = 663
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 11
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 25
@@ -39370,52 +39370,52 @@ target = 0x006714D2
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 212
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 221
 type = "DIR32"
-symbol = "?RenderTransitionGroupF242@@YAXPAPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432360@@YAXPAPAUIDirect3DTexture8@@@Z"
 target = 0x00432360
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 226
 type = "REL32"
-symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 251
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 260
 type = "DIR32"
-symbol = "?RenderTransition100F242@@YAXPAPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432200@@YAXPAPAUIDirect3DTexture8@@@Z"
 target = 0x00432200
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 265
 type = "REL32"
-symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 290
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 299
 type = "DIR32"
-symbol = "?RenderTransition300F242@@YAXPAPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition004324D0@@YAXPAPAUIDirect3DTexture8@@@Z"
 target = 0x004324D0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 304
 type = "REL32"
-symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 329
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 345
@@ -39425,52 +39425,52 @@ target = 0x006714D2
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 460
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 469
 type = "DIR32"
-symbol = "?RenderTransition2000F242@@YAXPAPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432410@@YAXPAPAUIDirect3DTexture8@@@Z"
 target = 0x00432410
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 474
 type = "REL32"
-symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 496
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 505
 type = "DIR32"
-symbol = "?RenderTransition1000F242@@YAXPAPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition004322B0@@YAXPAPAUIDirect3DTexture8@@@Z"
 target = 0x004322B0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 510
 type = "REL32"
-symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 532
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 541
 type = "DIR32"
-symbol = "?RenderTransition3000F242@@YAXPAPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTransition00432660@@YAXPAPAUIDirect3DTexture8@@@Z"
 target = 0x00432660
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 546
 type = "REL32"
-symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 568
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 590
@@ -39480,17 +39480,17 @@ target = 0x004028F0
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 595
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 603
 type = "DIR32"
-symbol = "?g_TransitionCountAt0066C240@@3HA"
+symbol = "?g_TransitionFrame@@3HA"
 target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 612
 type = "REL32"
-symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 
 
@@ -56607,12 +56607,12 @@ target = 0x0040DB50
 [[units.frame-capture-present-primary-00417160.relocations]]
 offset = 57
 type = "REL32"
-symbol = "?SetGraphicsModeAt00401F50@@YAXH@Z"
+symbol = "?SetBlendMode@Graphics@@YAXH@Z"
 target = 0x00401F50
 [[units.frame-capture-present-primary-00417160.relocations]]
 offset = 87
 type = "REL32"
-symbol = "?DrawTexturedQuadAt004029F0@@YAXPBVNativeQuadF461@@PBUtagRECT@@IPAUIDirect3DTexture8@@@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 
 
@@ -58539,12 +58539,12 @@ size = 31
 [[units.frame-capture-install-present-callback-00417120.relocations]]
 offset = 8
 type = "DIR32"
-symbol = "?FramePresentPrimaryAt00417160@@YAXPAPAUIDirect3DTexture8@@@Z"
+symbol = "?PresentPrimary@FrameCapturePresentF461@@YAXPAPAUIDirect3DTexture8@@@Z"
 target = 0x00417160
 [[units.frame-capture-install-present-callback-00417120.relocations]]
 offset = 13
 type = "REL32"
-symbol = "?RegisterFrameCallbackAt004028A0@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 
 
@@ -58559,7 +58559,7 @@ size = 28
 [[units.frame-capture-enable-direct-draw-00417140.relocations]]
 offset = 10
 type = "REL32"
-symbol = "?RegisterFrameCallbackAt004028A0@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+symbol = "?SetPresentCallback@Graphics@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
 
 
@@ -60970,9 +60970,9 @@ relocations = [
  { offset = 0x2B, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
  { offset = 0x43, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
  { offset = 0x6E, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
- { offset = 0x80, type = "REL32", symbol = "?GetTexture@SpriteDrawingF765@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
- { offset = 0x98, type = "REL32", symbol = "??0RectQuadF765@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
- { offset = 0x9E, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXABVRectQuadF765@@PBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+ { offset = 0x80, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x98, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+ { offset = 0x9E, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
 
 # F766 original R011 212-byte complete mirrored sprite uses same genuine
@@ -60989,9 +60989,9 @@ relocations = [
  { offset = 0x2B, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
  { offset = 0x43, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
  { offset = 0x97, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
- { offset = 0xA9, type = "REL32", symbol = "?GetTexture@SpriteDrawingF765@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
- { offset = 0xC1, type = "REL32", symbol = "??0RectQuadF765@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
- { offset = 0xC7, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXABVRectQuadF765@@PBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+ { offset = 0xA9, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0xC1, type = "REL32", symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+ { offset = 0xC7, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
 
 # F769: complete native R017-authored 184-B texture slot policy with

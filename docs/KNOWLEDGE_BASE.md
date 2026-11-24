@@ -93,6 +93,20 @@ canvases through `Graphics::CreateTexture` at `0x00401C20`. Its output
 is an `IDirect3DTexture8**`. The window resource constructor passes the
 address of its first member, which precedes the archive member at `+0x28`.
 
+Transition dispatch and drawing share the countdown at `0x0066C240`,
+which starts at -1. The two direction fields start at 1.0. The 640-float
+column table and the amplitude and phase fields are zero-filled in the
+writable section's virtual tail. Transition dispatch and frame capture
+register their callbacks through `Graphics::SetPresentCallback`.
+
+The rectangle and default quad constructors use four `D3DXVECTOR4`
+members, a `D3DXMATRIX` at `+0x40`, and an unknown dword at `+0x80`.
+The rectangle constructor was exercised by a headless library consumer.
+The capture callback still uses a borrowed rectangle constructor binding.
+A trial with separate C++ locals placed the RECT at `[ebp-0x10]`. The
+native function places it at `[ebp-0x98]`.
+[SDK matrix evidence](ORIGIN_PENDING_REVIEW.md#r293--sprite-matrix-constructor-selection)
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces
