@@ -39,3 +39,10 @@ void TextOverlay::RenderTextToTexture(const char* text,unsigned char r,unsigned 
     }
     field00C=5;
 }
+
+void TextOverlay::SetRasterParametersAt004135F0(unsigned char color, float rasterX, float rasterY)
+{
+    field024 = color;
+    field01C = rasterX;
+    field020 = rasterY;
+}

@@ -211,7 +211,8 @@ the complete typed loader and sequence lifetime calls. R285
 cold-matches the empty sound and staff-roll hooks and the progress
 destructor through their respective live receivers and startup lifetime.
 R286 identifies the sound buffer vector clear and the replay header
-and script sequence deque destruction helpers.
+and script sequence deque destruction helpers. R287 cold-matches
+two setters through the existing sprite and text rendering layouts.
 
 The pending review now has a complete explicit-versus-implicit control
 for the frame copy at `0x004591E0`. Both forms match its CODE and EH
@@ -308,24 +309,6 @@ nonrelocation byte matches, and its two REL32 fields resolve to `004170B0` and
 owner or interface; the existing explicit-interface-destructor alternative
 remains byte-equivalent. Both functions therefore retain their prior origin and
 exactness dispositions.
-
-
-The orphaned 40-byte setter at `004135F0` now has a second natural-C++
-alternative in `probes/UnknownParameterStoreAt004135F0.cpp`. Its pinned VC7.1
-probe matches all 40 original bytes with zero relocations: one byte is stored
-at receiver +0x24 and two raw DWORD arguments at +0x1C/+0x20. The receiver's
-preceding 0x1C bytes are deliberately untyped; the evidence's FontSurface
-context does not yet prove the owner or whether the DWORDs are floats or raw
-integer bit patterns. It remains unclassified and receives no exact credit.
-
-
-The 16-byte getter at `004124B0` now has a natural C++ pointer-holder
-alternative in `probes/UnknownPointerHolderGetterAt004124B0.cpp`. It cold-compiles
-byte-for-byte with zero relocations. Its two callers (`00411EA0` and `00411F20`)
-are container/proxy-management paths, including a call to the VC7
-`allocator<std::_Container_proxy>::destroy`; this narrows the context but does
-not prove the original receiver type or STL/game ownership boundary. It remains
-unclassified and receives no exact credit.
 
 
 Yukari object `005A1600` action `900` remains at its committed baseline. A

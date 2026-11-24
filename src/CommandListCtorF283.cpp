@@ -15,6 +15,7 @@ class CommandListF283 {
 public:
     CommandListF283(void* source);
     void Reset();
+    void SetCapacityAt00410FC0(short maximumEntries);
 };
 CommandListF283::CommandListF283(void* source)
 {
@@ -22,4 +23,9 @@ CommandListF283::CommandListF283(void* source)
     capacity=15;
     mode=5;
     Reset();
+}
+
+void CommandListF283::SetCapacityAt00410FC0(short maximumEntries)
+{
+    capacity = maximumEntries;
 }

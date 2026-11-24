@@ -1014,3 +1014,5 @@ FrameFlag20PredicateAt00454F70,0x00454F70,function
 FighterSoundF287::Configure,0x004073A0,function
 ProgressLifetime4169D0::~ProgressLifetime4169D0,0x004169D0,function
 StaffRollAdvanceF450::AdvanceHookAt00438CF0,0x00438CF0,function
+CommandListF283::SetCapacityAt00410FC0,0x00410FC0,function
+TextOverlay::SetRasterParametersAt004135F0,0x004135F0,function

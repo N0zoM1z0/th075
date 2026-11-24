@@ -94508,3 +94508,23 @@ symbol = "?AdvanceHookAt00438CF0@StaffRollAdvanceF450@@QAEXXZ"
 target_address = 0x00438CF0
 size = 11
 relocations = []
+
+[units.sprite-sequence-set-capacity-00410fc0]
+source = "src/CommandListCtorF283.cpp"
+object = "build/matching/CommandListCtorF283.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["CommandListF283::SetCapacityAt00410FC0"]
+symbol = "?SetCapacityAt00410FC0@CommandListF283@@QAEXF@Z"
+target_address = 0x00410FC0
+size = 24
+relocations = []
+
+[units.text-overlay-set-raster-parameters-004135f0]
+source = "src/FontRenderTextureF317.cpp"
+object = "build/matching/FontRenderTextureF317.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["TextOverlay::SetRasterParametersAt004135F0"]
+symbol = "?SetRasterParametersAt004135F0@TextOverlay@@QAEXEMM@Z"
+target_address = 0x004135F0
+size = 40
+relocations = []

@@ -367,6 +367,29 @@ The original copy declaration remains unresolved.
     scripts/compile-probe.sh .analysis/final-origin-review/script-deques-explicit.cpp build/probes/ScriptDequeExplicitCopy.obj /Od /Ob0 /Gy /GR- /GX /GS /Zi /I src
     scripts/repo-python .analysis/final-origin-review/compare-script-deque.py
 
+### R287 — Sprite capacity and text raster setters
+
+The sprite sequence constructor writes the signed short at `this+0x12`
+at `0x00410F69`. The append routine reads it as the list limit at
+`0x00411099`, and the render routine divides by it when computing
+fade at `0x004112C0`. The setter at `0x00410FC0` reproduces all 24
+bytes using the already named capacity field in the constructor's
+class.
+
+The complete text renderer writes the color byte and raster offsets
+at `0x004134D0`, `0x004134D6` and `0x004134E0`. It consumes the color
+in the tint call and loads both offsets with x87 for rasterization.
+The adjacent setter at `0x004135F0` writes the same three fields in
+the same order. Keeping the two offsets as floats in the shared
+TextOverlay layout reproduces all 40 bytes. The standalone raw-word
+control also matches. The game context identifies the fields, and
+the original parameter declaration remains unknown.
+
+Both setters have zero relocations. The constructor and every source
+unit using the shared TextOverlay header cold-replay exactly.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit sprite-sequence-set-capacity-00410fc0 --unit command-list-initialize-defaults-00410f30 --unit text-overlay-set-raster-parameters-004135f0 --unit overlay-text-draw-box-00412eb0 --unit font-surface-configure-text-00413420 --unit font-surface-render-text-to-texture-00413460
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is

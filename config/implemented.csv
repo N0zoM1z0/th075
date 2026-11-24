@@ -1011,3 +1011,5 @@ FrameFlag20PredicateAt00454F70
 FighterSoundF287::Configure
 ProgressLifetime4169D0::~ProgressLifetime4169D0
 StaffRollAdvanceF450::AdvanceHookAt00438CF0
+CommandListF283::SetCapacityAt00410FC0
+TextOverlay::SetRasterParametersAt004135F0

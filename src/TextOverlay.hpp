@@ -15,6 +15,7 @@ public:
     void RenderTextToTexture(const char* text, unsigned char r, unsigned char g,
                              unsigned char b, unsigned char color, unsigned char depth,
                              unsigned char restore);                // 00413460
+    void SetRasterParametersAt004135F0(unsigned char color, float rasterX, float rasterY);
 
     union {
         IDirect3DTexture8* texture;     // +0x00 texture pointer view
