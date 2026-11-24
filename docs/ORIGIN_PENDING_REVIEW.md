@@ -409,7 +409,7 @@ The current direct-call scan is in
 | `0x00438A60` | The R163 long absolute-value overload and an ordinary wrapper both call the `labs` body identified by R294. The wrapper's original declaration is unknown. |
 | `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
 | `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
-| `0x00458650`, `0x00458670`, `0x00458770` | The two vtable constructors and the sprite list member destructor match complete explicit and implicit forms. The destructor's scalar-deleting caller also matches, including both calls. |
+| `0x00458650`, `0x00458670`, `0x00458770` | R299 reproduces the two constructors and both five-slot vtables in the original order with implicit and explicit declarations. The fighter cleanup also retains the original destructor order with both forms. |
 
 The pinned PE has an RSDS record for `東方萃夢想.pdb` with GUID
 `9306058f-6d68-4650-b80b-1e0d05dd1e18` and age 3. Its COFF symbol
@@ -722,6 +722,38 @@ R296 and R297 placed explicit definitions at different positions.
 
     bash .analysis/final-origin-review/sprite-constructor-order/replay.sh
     scripts/repo-python .analysis/final-origin-review/sprite-constructor-order/order.py
+
+### R299 — Fighter cleanup and paired base construction
+
+The typed fighter cleanup at `0x00456910` reproduces all 588 code
+bytes, 148 bytes of exception and unwind data, and the four
+44-byte scalar-deleting destructors. The list owner destructor at
+`0x00458770` reproduces its full 22 bytes and the library destructor
+call. These checks bind 45 relocation operands in every build.
+
+An explicit destructor defined in the class moves ahead of the
+next deleting destructor at `0x00458740`. An explicit inline
+definition outside the class and an out-of-line definition after
+the fighter cleanup body both follow that deleting destructor.
+The implicit declaration has the same order as those two explicit
+forms.
+
+The fighter initialization probe at `0x004567B0` matches all 345
+bytes. Its two base constructors match the 31-byte
+`0x00458650` and 23-byte `0x00458670`. The five slots at
+`0x00659038` and `0x0065904C` contain two pure calls and the same
+three render functions. The probe emits two separate vtable
+sections and matches all 31 operands across the constructor and
+vtable sections. The implicit, in-class, inline and derived-first
+out-of-line forms all emit the derived constructor and its table
+first, as in the PE. A base-first out-of-line definition reverses
+both orders. The retained explicit forms leave the three
+declarations unresolved.
+
+    bash .analysis/final-origin-review/history-dtor-order/build.sh
+    scripts/repo-python .analysis/final-origin-review/history-dtor-order/compare.py
+    bash .analysis/final-origin-review/actor-ctor-order/build.sh
+    scripts/repo-python .analysis/final-origin-review/actor-ctor-order/compare.py
 
 ## Historical R263 inventory
 
