@@ -301,6 +301,12 @@ before adding the base, in a different instruction order.
   extra x87 comparison emits 14 additional bytes.
   [Marisa fighter controls](GIANTS.md#2026-11-24--marisas-fighter-advance-cold-replays-exactly)
 
+- Alice and Marisa have the same emitted bounce body in action `0x59`.
+  Alice's following entries match when the continuation is expressed
+  in `0x5E`, at the frame after its speed reset. Transferring Marisa's
+  continuation in `0x59` preserves the bounce bytes but changes the next
+  two action entries. [Alice's paired comparisons](GIANTS.md#2026-11-24--alices-fighter-advance-cold-replays-exactly)
+
 ### Conditions and loops
 
 - The compiler keeps comparison constants literally: `i < 37` emits

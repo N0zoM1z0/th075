@@ -286,3 +286,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00476A40,CharacterObject::AdvanceAt00476A40,ReimuObject::Advance,R048,reimu-object-advance-00476a40
 0x00564BE0,CharacterMove::AdvanceAt00564BE0,YuyukoFighter::Advance,R048,yuyuko-fighter-advance-00564be0
 0x00486550,CharacterMove::AdvanceAt00486550,MarisaFighter::Advance,R048,marisa-fighter-advance-00486550
+0x004D7E70,CharacterMove::AdvanceAt004D7E70,AliceFighter::Advance,R048,alice-fighter-advance-004d7e70

@@ -140,12 +140,20 @@ and the firing continuation in `0x2BF` close the final register joins.
 The ledger credits 50,735 CODE bytes.
 [Comparison and replay](GIANTS.md#2026-11-24--marisas-fighter-advance-cold-replays-exactly)
 
+### Alice fighter Advance is exact
+
+`alice-fighter-advance-004d7e70` cold-replays 44,570 bytes with seven
+jump tables, four remaps and 1,427 relocations. The original stage-8
+path in `0x5E` restores the entry state of `0x5F`. The ledger credits
+43,601 CODE bytes.
+[Comparison and replay](GIANTS.md#2026-11-24--alices-fighter-advance-cold-replays-exactly)
+
 ## Remaining giant parents
 
 The remaining authored functions are fighter `Advance` methods with
 partial or unstarted parents.
 
-- Alice `004D7E70` (43,601 bytes), Patchouli `004F7130` (44,211 bytes).
+- Patchouli `004F7130` (44,211 bytes).
 - Yukari `0058AF60` (49,230 bytes), Suika `005AEEC0` (71,616 bytes),
   Meiling `005D73C0` (43,282 bytes).
 

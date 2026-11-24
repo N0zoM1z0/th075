@@ -82,6 +82,7 @@ rows have complete replay units.
 | 00543210 | Remilia fighter | 58,294 | `RemiliaFighterAdvanceF1041.cpp` (cold exact) | 0 | 0 | — |
 | 00564BE0 | Yuyuko fighter | 61,872 | `YuyukoFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 004CA6E0 | Sakuya object | 42,511 | `SakuyaObjectAdvanceF1222.cpp` (cold exact) | 0 | 0 | — |
+| 004D7E70 | Alice fighter | 43,601 | `AliceFighterAdvance.cpp` (cold exact) | 0 | 0 | — |
 | 004EBDA0 | Alice object | 33,293 | `CharacterObjectActionsF572.cpp` (exact replay) | 0 | 0 | — |
 | 0050A580 | Patchouli object | 81,539 | `PatchouliObjectAdvanceF1044.cpp` (cold exact) | 0 | 0 | — |
 | 00536400 | Youmu object | 39,999 | `YoumuObjectAdvanceF1211.cpp` (cold exact) | 0 | 0 | — |
@@ -766,7 +767,7 @@ are unchanged. This is source/interface recovery, not giant exact credit.
 
 ## Without a complete parent
 
-Fighters 004D7E70 (Alice, 43,601 B), 004F7130
+Fighters 004F7130
 (Patchouli, 44,211 B), 0058AF60 (Yukari,
 49,230 B), 005AEEC0 (Suika, 71,616 B) and 005D73C0 (Meiling, 43,282 B).
 `config/fighter-boss-dispatch-fingerprints.json` has their extents and jump
@@ -2110,3 +2111,32 @@ path yields zero differences. Run the two full comparisons with
 after cold replay.
 
     scripts/repo-python scripts/replay-exact-units.py --unit marisa-fighter-advance-00486550
+
+
+## 2026-11-24 — Alice's fighter Advance cold-replays exactly
+
+`AliceFighter::Advance` at `0x004D7E70` covers 43,601 CODE bytes. The
+44,570-byte comparison includes 1,427 relocations, 1,359 direct branches,
+140 jump words in seven tables and four remaps. The 131 source cases keep
+their observed entry order, including `0x25D` after `0x265`. Actions 0,
+2, 4 and 5 share the nested-frame tail at `0x004E28B5`.
+
+Action `0x25A` emits one effect on stage 3. Replacing the borrowed
+burst loop with that path removes a loop counter and restores the
+`0x240` frame, `this` at `[ebp-0x34]` and the switch temporary at
+`[ebp-0x38]`. The three resource actions `0x252`–`0x254` sign-extend
+the byte at `0x366` before subtracting, play the shared sound before
+spawning, and clear the opponent's effect counter.
+
+The first complete shape had 118 differing register operands, confined
+to `0x5D` and `0x5E`. Removing the continuation copied into `0x59`
+restores EAX at `0x004D9E77` and EDX at `0x004D9FB3`. The first
+remaining register difference moves to `0x004DA0F7` in `0x5F`, where
+the candidate extends AX into ECX. Handling later frames of stage 8 in
+`0x5E` restores EDX there and closes the whole function. The negative
+control that removes only that arm has 595 differing bytes and one moved
+relocation field. Run the full linked comparisons with
+`scripts/repo-python .analysis/alice-fighter-advance/landing-control.py`
+after cold replay.
+
+    scripts/repo-python scripts/replay-exact-units.py --unit alice-fighter-advance-004d7e70
