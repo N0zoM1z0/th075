@@ -10,12 +10,6 @@
 // compiler register state at the F0E timer depends on authentic compound
 // += (not a semantically equivalent ordinary assignment). The direction
 // boolean is naturally inlined, not stored in an invented helper local.
-// Declaration-only receiver view: full original fighter layout is unknown.
-
-
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-
-// Names are provisional. Only these field accesses and receiver ABI are observed.
 void PatchouliFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
@@ -32,9 +26,9 @@ void PatchouliFighter::AdvanceAuxiliary() {
         field490 = float(fieldF10+20) * FloatConstants::OneTenth * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
         fieldF10 = fieldF10-2;
         if (RecordedRange(0,100)<50)
-            SpawnProjectile(0x38c, float(RecordedRange(0,640)*facing)+x,0.0f,facing,1);
+            SpawnBattleEffect(0x38c, float(RecordedRange(0,640)*facing)+x,0.0f,facing,1);
         else
-            SpawnProjectile(0x38c, x-float(RecordedRange(0,640)*facing),0.0f,-facing,1);
+            SpawnBattleEffect(0x38c, x-float(RecordedRange(0,640)*facing),0.0f,-facing,1);
         if (fieldF10<0) fieldF10=0;
     }
     if (fieldF0A != 1) {
@@ -98,5 +92,3 @@ void PatchouliFighter::AdvanceAuxiliary() {
         fieldF12 = 0;
     }
 }
-
-#undef FIELD

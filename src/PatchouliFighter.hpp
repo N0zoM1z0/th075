@@ -14,7 +14,6 @@ public:
     static int cardCountdown;
     void DispatchActions();
     void AdvanceAuxiliary();
-    void SpawnProjectile(int,float,float,unsigned char,int);
     void PollCommands();
     void AdvanceSequence();
     void RenderStage(signed char stage);

@@ -138,13 +138,13 @@ unsigned short ResultListScene::Update() {
         if (verticalInput < 0) {
             g_SoundBank->Play(39);
             --(pageIndex);
-            if ((pageIndex) < 0) (pageIndex) = (records.Count() - 1) / 10;
+            if ((pageIndex) < 0) (pageIndex) = (records.size() - 1) / 10;
             BuildRecordPage();
         }
         if (verticalInput > 0) {
             g_SoundBank->Play(39);
             ++(pageIndex);
-            if ((pageIndex) > (static_cast<int>(records.Count()) - 1) / 10) (pageIndex) = 0;
+            if ((pageIndex) > (static_cast<int>(records.size()) - 1) / 10) (pageIndex) = 0;
             BuildRecordPage();
         }
         if (horizontalInput < 0) {

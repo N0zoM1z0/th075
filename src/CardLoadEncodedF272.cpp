@@ -1,3 +1,4 @@
+#include "ResultListScene.hpp"
 #include "ArchiveCatalog.hpp"
 #include "DataArchive.hpp"
 #include <windows.h>
@@ -6,13 +7,9 @@
 #include <string.h>
 #include <new>
 
-// Borrowed native game call interfaces; full scene and archive layouts
-// are deliberately not inferred from this controller.
-class CardNameDequeF272 {public: void push_back(char* const& value); char** back();};
 extern const char g_CardEncodedPatternAt00658170[];
-class CardListEncodedF272 {public: void ClearEntries(); void LoadEncodedCharacterFile(const char*,const char*);};
-#define ENTRIES (*reinterpret_cast<CardNameDequeF272*>(reinterpret_cast<unsigned char*>(this)+0x18))
-void CardListEncodedF272::LoadEncodedCharacterFile(const char* character,const char* directory)
+
+void ResultListScene::LoadEncodedCards(const char* character,const char* directory)
 {
     HANDLE file;
     {
@@ -39,10 +36,7 @@ void CardListEncodedF272::LoadEncodedCharacterFile(const char* character,const c
     unsigned int i;
     {
     char* appended;
-    {
-    char* allocatedContent=reinterpret_cast<char*>(::operator new(fileBytes));
-    content=allocatedContent;
-    }
+    content = new char[fileBytes];
     ReadFile(file,content,fileBytes,&readBytes,0);
     key=0x60;
     delta=0x61;
@@ -55,23 +49,16 @@ void CardListEncodedF272::LoadEncodedCharacterFile(const char* character,const c
     index=0;
     while(index<fileBytes) {
         if(content[index]=='\n') {
-            char* empty=0;
-            ENTRIES.push_back(empty);
-            {
-            char* allocatedName=reinterpret_cast<char*>(::operator new(index-begin+1));
-            *ENTRIES.back()=allocatedName;
-            }
-            appended=*ENTRIES.back();
+            records.push_back(0);
+            records.back() = new char[index - begin + 1];
+            appended=records.back();
             memcpy(appended,content+begin,index-begin);
             appended[index-begin-1]=0;
             begin=index+1;
         }
         ++index;
     }
-    {
-       void* completedBuffer=content;
-       free(completedBuffer);
-    }
+    delete[] content;
     }
     }
     }
@@ -83,4 +70,3 @@ void CardListEncodedF272::LoadEncodedCharacterFile(const char* character,const c
 }
 }
 }
-#undef ENTRIES

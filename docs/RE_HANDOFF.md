@@ -23,8 +23,16 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 516 unresolved externals. The auxiliary effect
-batch resolved 35 symbols and cold-replayed 487 units across 255 objects.
+stops at `LNK1120` with 496 unresolved externals. The result-list batch
+resolved 20 symbols and cold-replayed 151 units across 80 objects. Both
+card loaders, list rendering, and scene teardown use the same deque of
+owned card names. Startup and resource selection share the eleven name rows.
+An archive-linked headless smoke exercised the defaults constructor and
+checked that it initialized all eleven rows.
+Patchouli's projectile calls use the shared fighter effect entry.
+
+The auxiliary effect batch resolved 35 symbols and cold-replayed 487 units
+across 255 objects.
 Both spawn entries create the 148-byte auxiliary object. Its five virtual
 slots match, and frame binding and peer spawning use the shared effect
 owner. Advance, prune and teardown use the two native deques. Mirrored

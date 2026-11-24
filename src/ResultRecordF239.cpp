@@ -26,11 +26,11 @@ void ResultListScene::BuildRecordPage()
             char message[2000];
             strcpy(message,g_RecordEmptyAt006580B1);
             for (int i=(pageIndex)*10;
-                 i<(pageIndex)*10+10 && i<records.Size(); ++i) {
+                 i<(pageIndex)*10+10 && i<static_cast<int>(records.size()); ++i) {
                 if (META(i,0x394)==0)
                     sprintf(line,g_RecordMissingFormatAt006580D8,i+1,g_RecordEmptyNameAt006580B4,0,0);
                 else
-                    sprintf(line,g_RecordFullFormatAt006580F4,i+1,*records.Entry(i),
+                    sprintf(line,g_RecordFullFormatAt006580F4,i+1,records[i],
                             static_cast<unsigned int>(META(i,0x268)),static_cast<unsigned int>(META(i,0x394)));
                 strcat(message,line);
             }

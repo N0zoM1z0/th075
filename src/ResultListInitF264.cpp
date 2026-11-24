@@ -5,8 +5,6 @@
 #include "GraphicsTexture.hpp"
 #include "GameProgress.hpp"
 
-// Source-level scene view supports only independently observed fields.
-// The queue has the complete physical five-DWORD VC7 deque boundary.
 extern const char g_ResultListFileAt00658064[];
 extern const char g_ResultListRootAt0065805C[];
 ResultListScene::ResultListScene()

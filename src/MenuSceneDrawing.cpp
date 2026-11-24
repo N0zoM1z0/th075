@@ -220,7 +220,7 @@ void ResultListScene::Render() {
             rowLimit = 0;
             SetRect(&region, 0, 144, 24, 168);
             for (entry = (pageIndex) * 10;
-                 entry < (pageIndex) * 10 + 10 && entry < static_cast<int>(records.Size()); entry++) {
+                 entry < (pageIndex) * 10 + 10 && entry < static_cast<int>(records.size()); entry++) {
                 DrawCounter(540.0f, static_cast<float>(rowLimit * 32 + 63), 0xFF8080FF,
                             reinterpret_cast<const int*>(DATA + 16)[entry], 0);
                 if (reinterpret_cast<const BYTE*>(DATA)[0x4C0 + entry]) {

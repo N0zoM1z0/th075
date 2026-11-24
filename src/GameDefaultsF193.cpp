@@ -7,7 +7,7 @@
 #include <string.h>
 
 unsigned int g_GameDefaultsUseCountAt00671614;
-extern unsigned char g_CharacterNamesAt006714D8[];
+char g_CharacterNamesAt006714D8[11][20];
 extern unsigned char g_OptionsFlagAt00671430;
 extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_SettingsByteAt006714D2;
@@ -15,7 +15,6 @@ namespace GameConfigF193 { void ReadIni(); }
 
 #define SET_DWORD(off,val) (*reinterpret_cast<DWORD*>(g_KeyBindingsAt00671440 + (off)) = (val))
 #define SET_BYTE(off,val) (g_KeyBindingsAt00671440[(off)] = (val))
-#define NAME(i) (reinterpret_cast<char*>(g_CharacterNamesAt006714D8+(i)*20))
 
 GameDefaultsF193::GameDefaultsF193()
 {
@@ -40,17 +39,17 @@ GameDefaultsF193::GameDefaultsF193()
         SET_DWORD(64, 0x1b);
         g_BattleFightersAt00671418[0] = 0;
         g_BattleFightersAt00671418[1] = 0;
-        strcpy(NAME(0), "reimu");
-        strcpy(NAME(1), "marisa");
-        strcpy(NAME(2), "sakuya");
-        strcpy(NAME(3), "alice");
-        strcpy(NAME(4), "patchouli");
-        strcpy(NAME(5), "youmu");
-        strcpy(NAME(6), "remilia");
-        strcpy(NAME(7), "yuyuko");
-        strcpy(NAME(8), "yukari");
-        strcpy(NAME(9), "suika");
-        strcpy(NAME(10), "meiling");
+        strcpy(g_CharacterNamesAt006714D8[0], "reimu");
+        strcpy(g_CharacterNamesAt006714D8[1], "marisa");
+        strcpy(g_CharacterNamesAt006714D8[2], "sakuya");
+        strcpy(g_CharacterNamesAt006714D8[3], "alice");
+        strcpy(g_CharacterNamesAt006714D8[4], "patchouli");
+        strcpy(g_CharacterNamesAt006714D8[5], "youmu");
+        strcpy(g_CharacterNamesAt006714D8[6], "remilia");
+        strcpy(g_CharacterNamesAt006714D8[7], "yuyuko");
+        strcpy(g_CharacterNamesAt006714D8[8], "yukari");
+        strcpy(g_CharacterNamesAt006714D8[9], "suika");
+        strcpy(g_CharacterNamesAt006714D8[10], "meiling");
         g_OptionsFlagAt00671430 = 1;
         g_OptionsFlagAt00671604 = 1;
         g_SettingsByteAt006714D2 = 1;
@@ -66,6 +65,5 @@ GameDefaultsF193::GameDefaultsF193()
     }
     ++g_GameDefaultsUseCountAt00671614;
 }
-#undef NAME
 #undef SET_BYTE
 #undef SET_DWORD

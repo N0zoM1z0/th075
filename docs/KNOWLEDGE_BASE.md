@@ -160,6 +160,14 @@ date from that file header. The battle loader reads two bytes at `+0x14C`
 and four at `+0x150` from the loaded record. The headless file test
 preserved high-bit values in the named snapshot fields.
 
+The result-list scene owns a 20-byte VC7.1 `std::deque<char*>` at
+`+0x18`. Both card loaders append a null entry with `push_back(0)`,
+then allocate its name with array new. Passing the null literal places the
+temporary in the native stack slot under `/Od /GX- /GS`. A named null
+pointer swapped that slot with the file buffer allocation in both loaders.
+The defaults constructor and the encoded loader share eleven resource name
+rows with a 20-byte stride at `0x006714D8`.
+
 `PlayerState.hpp` declares the six byte pairs shared by selection, the
 battle loader and snapshot I/O. A direct reference to the second player
 uses the pair symbol with an addend of one. The record sequence at

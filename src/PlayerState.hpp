@@ -10,3 +10,5 @@ extern unsigned char g_PlayerDifficultyAt00671438[2];
 extern signed char g_PlayerSettingsAt00671434[2];
 extern short g_RecordSequenceAt006714A4;
 extern Fighter* g_BattleFightersAt00671418[2];
+
+extern char g_CharacterNamesAt006714D8[11][20];
