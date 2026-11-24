@@ -1,7 +1,7 @@
 #include "ReplaySegmentedQueueF219.hpp"
 #include <stdio.h>
 #include <io.h>
-extern const char g_ReplayPathFormatAt00657918[];
+extern const char g_ReplayPathFormatAt00657918[] = "replay\\replay%03d.rep";
 template<>
 int ReplayRecords::FindAvailablePath(char* path)
 {

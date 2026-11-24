@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <new>
 
-extern const char g_StageTextureFormatAt00658FC0[];
+extern const char g_StageTextureFormatAt00658FC0[] = "data\\character\\%s\\stage%d.dat";
 extern const char g_StageArchiveAt00658FE0[] = "data";
 void Fighter::LoadStageResource()
 {

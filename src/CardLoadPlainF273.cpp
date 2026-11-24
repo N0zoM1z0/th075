@@ -5,7 +5,7 @@
 #include <string.h>
 #include <new>
 
-extern const char g_CardPlainPathAt00658150[];
+extern const char g_CardPlainPathAt00658150[] = "data\\character\\%s\\cardlist.txt";
 
 void ResultListScene::LoadPlainCards(const char* character)
 {

@@ -1,7 +1,7 @@
 #include "SakuyaFighter.hpp"
 #include <string.h>
 extern const char g_SakuyaNameAt0065949C[] = "sakuya";
-extern const char g_SakuyaTagAt006594A4[];
+extern const char g_SakuyaTagAt006594A4[] = "02";
 SakuyaFighter::SakuyaFighter()
 {
     sequenceTimer=0;

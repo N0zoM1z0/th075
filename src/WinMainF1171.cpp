@@ -52,8 +52,8 @@ typedef char ResultListSceneAllocationSize[(sizeof(ResultListScene) == 0x1D0) ? 
 extern const char g_AppWindowClassAt0065A104[];
 extern const char g_AppWindowClassAltAt0065A17C[];
 extern const char g_AppWindowTitleAt0065A148[];
-extern const char g_AppIconAt0065A138[];
-extern const char g_AppIconAt0065A140[];
+extern const char g_AppIconAt0065A138[] = "ICON1";
+extern const char g_AppIconAt0065A140[] = "ICON1";
 extern const char g_ArchiveRootAt0065A1B0[] = "data";
 extern unsigned char g_AppInitializedAt0068D674;
 extern HWND g_GameMainWindowAt00671608;

@@ -1,6 +1,6 @@
 #include "ReplaySegmentedQueueF219.hpp"
 #include <time.h>
-extern const char g_ReplayTempAt006578C4[];
+extern const char g_ReplayTempAt006578C4[] = "replay\\replay.tmp";
 extern const char g_ReplayErrorCaptionAt006578D8[];
 extern const char g_ReplayErrorTextAt006578E0[];
 template<>

@@ -1,7 +1,7 @@
 #include "YuyukoFighter.hpp"
 #include <string.h>
 extern const char g_YuyukoNameAt00659B74[] = "yuyuko";
-extern const char g_YuyukoTagAt00659B7C[];
+extern const char g_YuyukoTagAt00659B7C[] = "07";
 YuyukoFighter::YuyukoFighter()
 {
     sequenceTimer=0;

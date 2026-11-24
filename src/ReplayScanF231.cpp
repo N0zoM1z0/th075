@@ -2,9 +2,9 @@
 #include <windows.h>
 #include <string.h>
 
-extern const char g_ReplayFindPatternAt00657FD8[];
-extern const char g_ReplayFirstRootAt00657FE8[];
-extern const char g_ReplayNextRootAt00657FF0[];
+extern const char g_ReplayFindPatternAt00657FD8[] = "replay\\*.rep";
+extern const char g_ReplayFirstRootAt00657FE8[] = "replay\\";
+extern const char g_ReplayNextRootAt00657FF0[] = "replay\\";
 void ReplayBrowserScene::ScanFiles()
 {
     WIN32_FIND_DATAA findData;

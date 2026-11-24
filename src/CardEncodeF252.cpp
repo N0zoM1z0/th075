@@ -3,8 +3,8 @@
 
 // Observed CardList file converter: original scene ownership is borrowed,
 // no complete class or record layout is inferred.
-extern const char g_CardSourceTextPatternAt00658190[];
-extern const char g_CardEncodedPatternAt006581B0[];
+extern const char g_CardSourceTextPatternAt00658190[] = "data\\character\\%s\\cardlist.txt";
+extern const char g_CardEncodedPatternAt006581B0[] = "data\\character\\%s\\cardlist.dat";
 class CardEncoderF252 {
 public:
     void EncodeCharacterFile(const char* character);

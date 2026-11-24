@@ -1,7 +1,7 @@
 #include "YukariFighter.hpp"
 #include <string.h>
 extern const char g_YukariNameAt00659CB0[] = "yukari";
-extern const char g_YukariTagAt00659CB8[];
+extern const char g_YukariTagAt00659CB8[] = "08";
 YukariFighter::YukariFighter()
 {
     sequenceTimer=0;

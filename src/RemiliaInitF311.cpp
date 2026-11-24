@@ -1,7 +1,7 @@
 #include "RemiliaFighter.hpp"
 #include <string.h>
 extern const char g_RemiliaNameAt00659A34[] = "remilia";
-extern const char g_RemiliaTagAt00659A3C[];
+extern const char g_RemiliaTagAt00659A3C[] = "06";
 RemiliaFighter::RemiliaFighter()
 {
     sequenceTimer=0;

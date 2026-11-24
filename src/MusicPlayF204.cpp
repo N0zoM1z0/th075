@@ -4,14 +4,12 @@
 #include <windows.h>
 #include <stdio.h>
 
-// External, target-anchored format/path strings. This file does not define
-// the filename data or the audio/progress resource owners.
-extern const char g_WaveFormatAAt00657A7C[];
-extern const char g_WaveFormatBAt00657A90[];
-extern const char g_WaveFormatCAt00657AA4[];
+extern const char g_WaveFormatAAt00657A7C[] = "wave\\bgm\\%02da.wav";
+extern const char g_WaveFormatBAt00657A90[] = "wave\\bgm\\%02db.wav";
+extern const char g_WaveFormatCAt00657AA4[] = "wave\\bgm\\%02dc.wav";
 extern const char g_WaveOpeningAt00657AB8[] = "wave\\bgm\\sys00_op.wav";
 extern const char g_WaveEndingAt00657AD0[] = "wave\\bgm\\sys99_ed.wav";
-extern const char g_WaveFormatDefaultAt00657AE8[];
+extern const char g_WaveFormatDefaultAt00657AE8[] = "wave\\bgm\\%02d.wav";
 extern const char g_NormalSoundFolderAt00657AFC[];
 extern const char g_EndingSoundFolderAt00657B04[];
 

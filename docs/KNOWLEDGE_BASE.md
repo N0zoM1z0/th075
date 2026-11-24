@@ -104,6 +104,12 @@ accept constant paths, and the new declarations preserve the native
 addresses. Identical path or root text has a definition at each distinct
 native destination.
 
+The existing fighter loader order agrees with the numbered texture and
+sound entries in the supplied archives. Those entries also confirm the
+resource path formats. The replay and plain card paths use spellings
+already recorded in the origin review. Both startup icon lookups name
+`ICON1`, which is present in the supplied PE's icon-group directory.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.
@@ -497,6 +503,11 @@ draw's stack layout under VC7.1. The entry points accept that shared
 quad by reference and preserve the observed local copy layout. The
 four-float constructor at `0x0040DA00` uses the same quad layout as
 the default constructor at `0x0040D990`.
+
+Making the mirrored and chain renderers' local quads use the shared
+132-byte type moves existing stack slots in VC7.1. Placement construction
+in the existing storage emits an allocation call and null check under
+`/Ob0`. Both constructor references remain open.
 
 The loading and logo renderers match with a named quad outside the
 inner `RECT` scope. Rank rendering matches with the named `rankQuad`

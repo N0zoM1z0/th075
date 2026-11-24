@@ -1,7 +1,7 @@
 #include "PatchouliFighter.hpp"
 #include <string.h>
 extern const char g_PatchouliNameAt00659754[] = "patchouli";
-extern const char g_PatchouliTagAt00659760[];
+extern const char g_PatchouliTagAt00659760[] = "04";
 PatchouliFighter::PatchouliFighter()
 {
     sequenceTimer=0;

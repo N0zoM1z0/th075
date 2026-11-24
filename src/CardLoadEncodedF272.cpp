@@ -7,7 +7,7 @@
 #include <string.h>
 #include <new>
 
-extern const char g_CardEncodedPatternAt00658170[];
+extern const char g_CardEncodedPatternAt00658170[] = "data\\character\\%s\\cardlist.dat";
 
 void ResultListScene::LoadEncodedCards(const char* character,const char* directory)
 {

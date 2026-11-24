@@ -1,7 +1,7 @@
 #include "ReimuFighter.hpp"
 #include <string.h>
 extern const char g_ReimuNameAt006590C8[] = "reimu";
-extern const char g_ReimuTagAt006590D0[];
+extern const char g_ReimuTagAt006590D0[] = "00";
 ReimuFighter::ReimuFighter()
 {
     field713=1;

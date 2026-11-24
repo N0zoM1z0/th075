@@ -2,7 +2,7 @@
 #include <new>
 #include <stdlib.h>
 
-extern const char g_ReplayTemporaryFileAt00657904[];
+extern const char g_ReplayTemporaryFileAt00657904[] = "replay\\replay.tmp";
 struct NativeFinalizeWorkF328 {
     void* releasedData;
     void* allocation;

@@ -1,7 +1,7 @@
 #include "AliceFighter.hpp"
 #include <string.h>
 extern const char g_AliceNameAt006595F8[] = "alice";
-extern const char g_AliceTagAt00659600[];
+extern const char g_AliceTagAt00659600[] = "03";
 AliceFighter::AliceFighter()
 {
     sequenceTimer=0;
