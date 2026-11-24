@@ -183,11 +183,11 @@ ledger credits 43,282 CODE bytes.
 
 ## Authored coverage and pending origin review
 
-Every independently attributed authored function now has a complete
-exact replay unit. Coverage exceeds the 98% goal even with the pending
-origin candidates in the denominator. Use the live report for current
-counts and `config/function-origins.csv` for the remaining provenance
-decisions.
+Coverage exceeds the 98% goal even with the pending origin candidates
+in the denominator. The R304 texture entry lifetime definitions await
+exact source adoption once the bitmap layout is established. Use the
+live report for current counts and `config/function-origins.csv` for
+the remaining provenance decisions.
 
 R274 identifies the guarded extension cleanup at `0x004588B0` through
 the game pattern parser, the original prefix lifetime calls, and the
@@ -250,8 +250,11 @@ R293 identifies the sprite quad's `D3DXMATRIX` constructor at
 payload adds three bytes in the original sprite interval.
 [Matrix selection evidence](ORIGIN_PENDING_REVIEW.md#r293--sprite-matrix-constructor-selection)
 
-R295 reproduces both declarations for the texture entry's two
-lifetime leaves and all three allocators with their unwind records.
+R304 identifies the two texture entry lifetime definitions through the
+complete allocation and drawing interval. The implicit declarations
+move both leaves ahead of the second allocator.
+[Texture lifetime order](ORIGIN_PENDING_REVIEW.md#r304--texture-entry-lifetime-definitions-follow-the-drawing-methods)
+
 R296 distinguishes the implicit copy at
 `0x004229D0` by its position in the complete linked script deque
 window.

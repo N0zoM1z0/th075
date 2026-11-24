@@ -401,7 +401,6 @@ The current direct-call scan is in
 
 | Candidates | Evidence gap |
 | --- | --- |
-| `0x0040D8C0`, `0x0040D8E0` | R295 matches both declaration forms across all three callers, their unwind data and both leaves. The forms differ in COFF function records that are absent from the PE. |
 | `0x0040D900`, `0x0040D940` | Both R163 forms bind to the R292 cosine and sine workers. R303 rules out the decorated definitions in the older SDK shape archive, which compute results with x87 instructions directly. |
 | `0x00411C10` | R298 matches the element and its typed callers with implicit and explicit inline constructors. Both forms also produce the same code section order. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
@@ -860,6 +859,54 @@ unresolved.
     scripts/repo-python .analysis/final-origin-review/math-wrapper-order/scan.py
     bash .analysis/final-origin-review/math-wrapper-order/build-banner.sh
     scripts/repo-python .analysis/final-origin-review/math-wrapper-order/compare-banner.py
+
+### R304 — Texture entry lifetime definitions follow the drawing methods
+
+Explicit definitions of the texture entry constructor and destructor
+reproduce the complete 10,483-byte interval `0x0040B000..0x0040D8F2`.
+The linked window covers all 35 bodies, inter-function alignment and
+308 code relocation operands. The three allocators' complete exception
+handlers and unwind maps compare through their object sections. The
+three draw methods retain the native call to the separate `D3DXVECTOR4` constructor at `0x0040D980`.
+Their scratch header exposes that constructor's declaration so the
+link window only contains the functions owned by the interval. The
+comparison checks the physical object fields and binds the external
+operands to the original PE destinations.
+
+The implicit variant emits both leaves after the first allocator.
+Its first mismatch is `0x0040B110`, where the second allocator moves
+from `+0x110` to `+0x150`. Public inheritance and template specialization
+keep that same early placement. VC7.1 also emits the implicit template
+members in the caller under `extern template`. With the genuine
+`std::vector` assignment and its complete exception context, both
+versions match 1,165 body and EH bytes and 65 fields, while the implicit
+variant still moves the allocation block. `std::pair` controls store
+zero at `+0x28` and produce 32- and 38-byte constructors.
+
+Precompiling the header with `/Yc` and consuming it with `/Yu` defers
+the explicit inline definitions past the drawing methods. The implicit
+members remain early. Folding two independently named 44-byte types
+moves the selected constructor past the third allocator and leaves the
+destructor before the second. The independent D3DX8 link shows that
+this `/OPT:ICF` setting collapses seven separate native SDK entries and
+shrinks the original 90-byte sprite interval to 81 bytes.
+
+The full linked order and the three independently reviewed texture
+callers support authored origin for `0x0040D8C0` and `0x0040D8E0`.
+The entry occupies 44 bytes and calls the native bitmap lifetime at
+offset zero. The bitmap's extent inside the entry and the original
+declaration spelling remain open. Exact source adoption is pending.
+
+    scripts/repo-python .analysis/final-origin-review/texture-lifetime/replay.py
+    bash .analysis/final-origin-review/texture-emission-order/build.sh
+    bash .analysis/final-origin-review/texture-emission-order/build.sh implicit-pch header-inline-pch implicit-vector inline-last-vector implicit-inherited implicit-template implicit-template-caller implicit-template-definition pair-scalar pair-tag
+    scripts/repo-python .analysis/final-origin-review/texture-emission-order/compare.py
+    scripts/repo-python .analysis/final-origin-review/texture-emission-order/build-spine.py --cold
+    scripts/repo-python .analysis/final-origin-review/texture-emission-order/compare-spine.py
+    bash .analysis/final-origin-review/quad-comdat-selection/link.sh
+    bash .analysis/final-origin-review/texture-emission-order/link-folding.sh
+    bash .analysis/final-origin-review/texture-emission-order/link-sdk-icf.sh
+    scripts/repo-python .analysis/final-origin-review/texture-emission-order/check-alternatives.py
 
 ## Historical R263 inventory
 

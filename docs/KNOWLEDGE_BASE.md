@@ -80,6 +80,14 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
 
 ## Layout facts
 
+- The texture entry constructed by `0x0040B000`, `0x0040B110`, and
+  `0x0040B1D0` occupies 44 bytes. Its explicitly declared lifetime
+  methods call the bitmap lifetime at offset zero. The bitmap
+  methods establish fields through the pixel pointer at `+0x1C`.
+  Texture loaders access a separate byte at entry offset `+0x28`.
+  The bitmap extent within that entry remains open.
+  [Linked lifetime evidence](ORIGIN_PENDING_REVIEW.md#r304--texture-entry-lifetime-definitions-follow-the-drawing-methods)
+
 - Youmu has an independently observed 0xFF8-byte fighter allocation
   (`BattleCharacterLoaderF398`, character 5). The VC7.1 12-byte
   `std::list<ObservedInputSnapshotF378>` member at +0xFEC is the final
