@@ -23,7 +23,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 371 unresolved externals. Seven shared float
+stops at `LNK1120` with 252 unresolved externals. The supplied Japanese
+package provided the three archive filenames and 116 resource paths and
+roots. All 59 affected exact units and their exception records matched.
+A headless archive consumer opened the supplied primary archive and reached
+four resource entries.
+
+Seven shared float
 definitions use values already present in the clamp and scale branches.
 The replay name-entry scene uses the existing archive root. These changes
 resolved eleven symbols and cold-replayed 192 units across 118 objects.

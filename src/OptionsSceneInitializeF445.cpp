@@ -5,8 +5,8 @@
 #include <d3d8.h>
 #include "OptionsScene.hpp"
 #include "GraphicsTexture.hpp"
-extern const char g_OptionsDataPathAt00657D80[];
-extern const char g_OptionsArchiveRootAt00657D78[];
+extern const char g_OptionsDataPathAt00657D80[] = "data\\system\\option.dat";
+extern const char g_OptionsArchiveRootAt00657D78[] = "data";
 OptionsScene::OptionsScene() {
     canvas=0;
     textures=new TextureManagerF198;

@@ -55511,7 +55511,7 @@ target = 0x00657F7C
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 135
 type = "DIR32"
-symbol = "?g_ReplayDataPathAt00657F84@@3PADA"
+symbol = "?g_ReplayDataPathAt00657F84@@3QBDB"
 target = 0x00657F84
 [[units.name-entry-scene-initialize-0042b1f0.relocations]]
 offset = 146
@@ -55976,12 +55976,12 @@ target = 0x0040B1D0
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 130
 type = "DIR32"
-symbol = "?g_LoadArchiveRootAt00657B94@@3PADA"
+symbol = "?g_LoadArchiveRootAt00657B94@@3QBDB"
 target = 0x00657B94
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 135
 type = "DIR32"
-symbol = "?g_LoadArchivePathAt00657B9C@@3PADA"
+symbol = "?g_LoadArchivePathAt00657B9C@@3QBDB"
 target = 0x00657B9C
 [[units.loading-scene-initialize-004251f0.relocations]]
 offset = 146
@@ -56046,12 +56046,12 @@ target = 0x0040B1D0
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 130
 type = "DIR32"
-symbol = "?g_LogoArchiveRootAt00657BC0@@3PADA"
+symbol = "?g_LogoArchiveRootAt00657BC0@@3QBDB"
 target = 0x00657BC0
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 135
 type = "DIR32"
-symbol = "?g_LogoArchivePathAt00657BC8@@3PADA"
+symbol = "?g_LogoArchivePathAt00657BC8@@3QBDB"
 target = 0x00657BC8
 [[units.logo-scene-initialize-00425490.relocations]]
 offset = 146

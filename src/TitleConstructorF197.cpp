@@ -6,8 +6,8 @@
 #include <mmsystem.h>
 #include <d3d8.h>
 
-extern const char g_TitleTextureDataAt006582F0[];
-extern const char g_TitleTextureRootAt006582E8[];
+extern const char g_TitleTextureDataAt006582F0[] = "data\\system\\title.dat";
+extern const char g_TitleTextureRootAt006582E8[] = "data";
 
 TitleScene::TitleScene()
 {

@@ -7,8 +7,8 @@
 #include <windows.h>
 #include "Fighter.hpp"
 #include "ResultScene.hpp"
-extern const char g_ResultTexturePathAt0065801C[];
-extern const char g_ResultTextureRootAt00658014[];
+extern const char g_ResultTexturePathAt0065801C[] = "data\\system\\result.dat";
+extern const char g_ResultTextureRootAt00658014[] = "data";
 ResultScene::ResultScene()
 {
     textures = new TextureManagerF198();

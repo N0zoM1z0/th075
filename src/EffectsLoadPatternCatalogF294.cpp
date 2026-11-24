@@ -4,8 +4,8 @@
 #include "DataArchive.hpp"
 #include <windows.h>
 #include <new>
-extern const char g_ArchiveRootAt0065A0B8[];
-extern const char g_EffectPatPathAt0065A0C0[];
+extern const char g_ArchiveRootAt0065A0B8[] = "data";
+extern const char g_EffectPatPathAt0065A0C0[] = "data\\system\\effect\\effect.pat";
 struct EffectVarsGroupF294 {
     short number;
     int entryCount;

@@ -7,11 +7,11 @@
 #include <windows.h>
 #include "CharacterSelectScene.hpp"
 // The original scene constructs three 80-byte texture manager instances.
-extern const char g_SelectTextureDataAt006581EC[];
+extern const char g_SelectTextureDataAt006581EC[] = "data\\system\\select.dat";
 extern const char g_SelectTextureRootAt006581E4[] = "datab";
-extern const char g_CharacterTextureDataAt0065820C[];
+extern const char g_CharacterTextureDataAt0065820C[] = "data\\system\\selectchar.dat";
 extern const char g_CharacterTextureRootAt00658204[] = "datab";
-extern const char g_BackgroundTextureDataAt00658230[];
+extern const char g_BackgroundTextureDataAt00658230[] = "data\\system\\selectbg.dat";
 extern const char g_BackgroundTextureRootAt00658228[] = "datab";
 namespace GameConfigF193 { void ReadIni(); }
 CharacterSelectScene::CharacterSelectScene()

@@ -95,6 +95,15 @@ seven native addresses. The original assignments still use immediate
 operands. The name-entry constructor uses the existing `datab` archive
 root, with the full six bytes matching at `0x00657F7C`.
 
+The Japanese package beside the repository contains the pinned executable
+and three data archives. Its outer member names and the directory records
+read by `DataArchiveF481::OpenAndReadIndex` provide the startup archive
+filenames and 116 resource paths and roots. The five existing mutable
+array declarations in this group point to read-only data. Their loaders
+accept constant paths, and the new declarations preserve the native
+addresses. Identical path or root text has a definition at each distinct
+native destination.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

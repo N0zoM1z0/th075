@@ -2,7 +2,7 @@
 #include "NameEntryScenes.hpp"
 #include "TextureManagerF198.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
-extern char g_ReplayDataPathAt00657F84[];
+extern const char g_ReplayDataPathAt00657F84[] = "data\\system\\replay.dat";
 extern const char g_ReplayArchiveRootAt00657F7C[] = "datab";
 
 SharedNameEntryScene::SharedNameEntryScene() {

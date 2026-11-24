@@ -1,9 +1,9 @@
 #include "BackgroundStages.hpp"
 
-extern const char g_BGDirectory00aF376[];
-extern const char g_BGFilename00aF376[];
-extern const char g_BGDirectory00bF376[];
-extern const char g_BGFilename00bF376[];
+extern const char g_BGDirectory00aF376[] = "data";
+extern const char g_BGFilename00aF376[] = "data\\background\\BG00a.dat";
+extern const char g_BGDirectory00bF376[] = "data";
+extern const char g_BGFilename00bF376[] = "data\\background\\BG00b.dat";
 Background00aF376::Background00aF376()
 {
     textureManager.AllocateUnformattedSlots(3);

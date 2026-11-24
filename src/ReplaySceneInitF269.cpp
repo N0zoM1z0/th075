@@ -7,8 +7,8 @@
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 
-extern const char g_ReplaySceneRootAt00657F44[];
-extern const char g_ReplaySceneFileAt00657F4C[];
+extern const char g_ReplaySceneRootAt00657F44[] = "data";
+extern const char g_ReplaySceneFileAt00657F4C[] = "data\\system\\replay.dat";
 
 PlayerNameEntryScene::PlayerNameEntryScene()
 {

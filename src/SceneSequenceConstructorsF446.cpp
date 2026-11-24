@@ -4,10 +4,10 @@
 #include <windows.h>
 #include <mmsystem.h>
 
-extern const char g_OpeningPathAt00657CCC[];
-extern const char g_OpeningRootAt00657CC4[];
-extern const char g_StaffPathAt006582A0[];
-extern const char g_StaffRootAt00658298[];
+extern const char g_OpeningPathAt00657CCC[] = "data\\system\\opening.dat";
+extern const char g_OpeningRootAt00657CC4[] = "data";
+extern const char g_StaffPathAt006582A0[] = "data\\system\\staffroll.dat";
+extern const char g_StaffRootAt00658298[] = "data";
 
 OpeningScene::OpeningScene() {
     texture=new TextureManagerF198;

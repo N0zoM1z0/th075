@@ -10,8 +10,8 @@
 #include <d3d8.h>
 #include "BattleScene.hpp"
 
-extern const char g_BattleTextureDataAt0065831C[];
-extern const char g_BattleTextureRootAt00658314[];
+extern const char g_BattleTextureDataAt0065831C[] = "data\\system\\battle.dat";
+extern const char g_BattleTextureRootAt00658314[] = "data";
 namespace StateAudioF196 {
 }
 

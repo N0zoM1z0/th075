@@ -5,8 +5,8 @@
 #include "GraphicsTexture.hpp"
 #include "GameProgress.hpp"
 
-extern const char g_ResultListFileAt00658064[];
-extern const char g_ResultListRootAt0065805C[];
+extern const char g_ResultListFileAt00658064[] = "data\\system\\resultlist.dat";
+extern const char g_ResultListRootAt0065805C[] = "data";
 ResultListScene::ResultListScene()
 {
     canvas=0;

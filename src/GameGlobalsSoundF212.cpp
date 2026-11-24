@@ -8,8 +8,8 @@
 #include "CombatEffects.hpp"
 
 
-extern const char g_WaveArchivePathAt00657A24[];
-extern const char g_WaveArchiveIndexAt00657A1C[];
+extern const char g_WaveArchivePathAt00657A24[] = "wave\\se.dat";
+extern const char g_WaveArchiveIndexAt00657A1C[] = "data";
 
 
 namespace GameGlobalsF212 {

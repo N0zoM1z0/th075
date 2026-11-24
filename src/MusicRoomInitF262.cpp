@@ -5,8 +5,8 @@
 #include <windows.h>
 #include <new>
 
-extern const char g_MusicTextureFileAt00657BF4[];
-extern const char g_MusicTextureRootAt00657BEC[];
+extern const char g_MusicTextureFileAt00657BF4[] = "data\\system\\music.dat";
+extern const char g_MusicTextureRootAt00657BEC[] = "data";
 MusicRoomScene::MusicRoomScene()
 {
     texture=new TextureManagerF198();

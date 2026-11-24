@@ -54,16 +54,16 @@ extern const char g_AppWindowClassAltAt0065A17C[];
 extern const char g_AppWindowTitleAt0065A148[];
 extern const char g_AppIconAt0065A138[];
 extern const char g_AppIconAt0065A140[];
-extern const char g_ArchiveRootAt0065A1B0[];
+extern const char g_ArchiveRootAt0065A1B0[] = "data";
 extern unsigned char g_AppInitializedAt0068D674;
 extern HWND g_GameMainWindowAt00671608;
 namespace SharedSound4066C0 { bool Initialize(HWND); }
 namespace GameGlobalsF212 { void InitializeSound(); }
 extern LRESULT CALLBACK AppWindowProcF468(HWND,UINT,WPARAM,LPARAM);
-extern const char g_ArchiveTh075At0065A1B8[];
-extern const char g_ArchiveBgmAt0065A1CC[];
+extern const char g_ArchiveTh075At0065A1B8[] = "th075.dat";
+extern const char g_ArchiveBgmAt0065A1CC[] = "th075bgm.dat";
 extern const char g_BgmRootAt0065A1C4[];
-extern const char g_ArchiveTh075BAt0065A1E4[];
+extern const char g_ArchiveTh075BAt0065A1E4[] = "th075b.dat";
 extern const char g_ArchiveDatabAt0065A1DC[] = "datab";
 extern const char g_LogFileAt0065A1F0[];
 extern const char g_LogTextAt0065A1F8[];

@@ -2,8 +2,8 @@
 #include "DiagnosticLog.hpp"
 #include <windows.h>
 extern const char g_EffectsLogStartAt0065A078[];
-extern const char g_EffectsFileAt0065A090[];
-extern const char g_EffectsArchiveRootAt0065A088[];
+extern const char g_EffectsFileAt0065A090[] = "data\\system\\effect.dat";
+extern const char g_EffectsArchiveRootAt0065A088[] = "data";
 extern const char g_EffectsLogCompleteAt0065A0A8[];
 void CombatEffects::LoadResources()
 {

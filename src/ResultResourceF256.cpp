@@ -6,9 +6,9 @@
 
 // ResultListTexture is the shared 80-byte VC7.1 resource manager.
 extern const char g_ResultCharacterTexturePatternAt00658080[];
-extern const char g_ResultTextureRootAt0065809C[];
+extern const char g_ResultTextureRootAt0065809C[] = "data";
 extern const char g_CardSpecialAt006580A4[] = "datab";
-extern const char g_CardNormalAt006580AC[];
+extern const char g_CardNormalAt006580AC[] = "data";
 void ResultListScene::LoadSelectedCharacterResources()
 {
     if ((auxiliaryTexture))
