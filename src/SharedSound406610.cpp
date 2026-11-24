@@ -9,10 +9,10 @@ public:
     SharedSoundClient406610();
     ~SharedSoundClient406610();
 };
-extern unsigned int sharedSoundClients;
-extern HWND sharedSoundWindow;
-extern IDirectSound8* sharedSoundDevice;
-extern IDirectSoundBuffer* sharedSoundPrimary;
+unsigned int sharedSoundClients;
+HWND sharedSoundWindow;
+IDirectSound8* sharedSoundDevice;
+IDirectSoundBuffer* sharedSoundPrimary;
 namespace SharedSound4066C0 {
     void __cdecl ShowError(const char*);
     bool __cdecl Initialize(HWND);

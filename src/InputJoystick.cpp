@@ -2,16 +2,16 @@
 #include <vector>
 #include <string.h>
 
-extern int g_InputResourceClientCount;
+int g_InputResourceClientCount;
 
 namespace Input
 {
     extern HWND g_Window;
     extern IDirectInput8A *g_DirectInput;
     extern IDirectInputDevice8A *g_Keyboard;
-    extern std::vector<IDirectInputDevice8A *> g_Joysticks;
-    extern std::vector<DIJOYSTATE> g_JoystickStates;
-    extern unsigned char g_JoystickCount;
+    std::vector<IDirectInputDevice8A *> g_Joysticks;
+    std::vector<DIJOYSTATE> g_JoystickStates;
+    unsigned char g_JoystickCount;
     extern const char g_EnumerateJoysticksError[];
 
     bool InitializeJoysticks()

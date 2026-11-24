@@ -3,11 +3,11 @@
 
 namespace Input
 {
-    extern HWND g_Window;
-    extern HINSTANCE g_Instance;
-    extern IDirectInput8A *g_DirectInput;
-    extern IDirectInputDevice8A *g_Keyboard;
-    extern unsigned char g_KeyboardState[256];
+    HWND g_Window;
+    HINSTANCE g_Instance;
+    IDirectInput8A *g_DirectInput;
+    IDirectInputDevice8A *g_Keyboard;
+    unsigned char g_KeyboardState[256];
     extern const char g_CreateDirectInputError[];
     extern const char g_CreateKeyboardError[];
     extern const char g_KeyboardFormatError[];

@@ -3,24 +3,34 @@
 
 namespace Graphics
 {
-    extern HWND g_Window;
-    extern RECT g_PresentationDestinationRect;
-    extern RECT g_PresentationSourceRect;
-    extern D3DVIEWPORT8 g_TargetViewport;
-    extern D3DCOLOR g_ClearColor;
-    extern float g_ColorMultiplier;
-    extern float g_DrawScale;
-    extern float g_DrawOriginX;
-    extern float g_DrawOriginY;
-    extern PresentCallback g_PresentCallback;
-    extern IDirect3DTexture8 *g_TargetTextures[1];
-    extern ID3DXRenderToSurface *g_TargetRenderers[1];
-    extern IDirect3DDevice8 *g_Device;
-    extern signed char g_ActiveTarget;
-    extern signed char g_PixelShaderSupport;
-    extern bool g_PixelShaderEnabled;
-    extern bool g_Windowed;
-    extern DWORD g_PixelShader;
+    HWND g_Window;
+    int g_ClientWidth;
+    int g_ClientHeight;
+    RECT g_PresentationDestinationRect;
+    RECT g_PresentationSourceRect;
+    D3DVIEWPORT8 g_TargetViewport;
+    D3DCOLOR g_ClearColor;
+    float g_ColorMultiplier = 1.0f;
+    float g_DrawScale = 1.0f;
+    float g_DrawOriginX;
+    float g_DrawOriginY;
+    PresentCallback g_PresentCallback;
+
+    IDirect3D8 *g_Direct3D;
+    IDirect3DDevice8 *g_Device;
+    D3DDISPLAYMODE g_DisplayMode;
+    D3DPRESENT_PARAMETERS g_PresentationParameters;
+    IDirect3DTexture8 *g_TargetTextures[1];
+    ID3DXRenderToSurface *g_TargetRenderers[1];
+    IDirect3DTexture8 *g_CachedTexture;
+
+    signed char g_ActiveTarget = -1;
+    signed char g_PixelShaderSupport;
+    bool g_PixelShaderEnabled;
+    bool g_Windowed;
+    bool g_Use16BitBackBuffer;
+    bool g_RequireSquareTextures;
+    DWORD g_PixelShader = 0xFFFFFFFF;
     extern const char g_TextureLoadError[];
     extern const char g_TargetBeginError[];
     // Reset is implemented separately in GraphicsTexture.cpp (F003).

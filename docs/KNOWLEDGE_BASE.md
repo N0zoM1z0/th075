@@ -28,6 +28,15 @@ at `0x0068BE04`. WinMain and the title update share the initially null
 use the existing keyboard poll at `0x00403E50`, joystick poll at
 `0x00403F40` and window mode toggle at `0x004018A0`.
 
+The D3D8, DirectInput and DirectSound state between `0x00671180` and
+`0x0067139F` starts as zero-filled data. The nonzero graphics defaults
+live at `0x0066C080`, `0x0066C084`, `0x0066C088` and `0x0066C1B8`.
+The graphics teardown at `0x00401020` now releases the pointers set
+by the initialization and reset routines, including the render-to-surface
+array at `0x006711FC`, the device at `0x00671230` and the D3D8 interface
+at `0x0067122C`. VC7.1 constructs the two DirectInput joystick vectors
+in the order recorded by the target's R024 startup records.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

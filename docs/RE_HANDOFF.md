@@ -24,11 +24,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All configured sources compile and archive. The strict executable link
-stopped at `LNK1120` with 2,706 unresolved externals after reconciling startup
-and input calls and defining the diagnostic path, cosine table and main
-window handle. Use `build/program/link.log` and the relocation targets
-to find candidate definitions. The graphics, sound and input globals and
-WinMain's scene constructors still need shared definitions and ABI checks.
+stopped at `LNK1120` with 2,661 unresolved externals after reconciling startup
+and input calls and defining shared graphics, input and sound state.
+Use `build/program/link.log` and the relocation targets to find candidate
+definitions. WinMain still needs compatible scene and lifetime declarations.
+The graphics and DirectInput error strings and pixel shader are also
+unresolved.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
 
 ## Origin review
