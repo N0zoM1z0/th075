@@ -260,6 +260,31 @@ and declaration remain open.
     scripts/repo-python scripts/replay-exact-units.py --unit sprite-drawing-scaled-native-0040d2e0 --unit sprite-quad-clear-0040d990 --unit atlas-quad-rectangle-constructor-0040da00
     scripts/repo-python .analysis/final-origin-review/compare-d3dx-vector.py
 
+### R283 — Texture vector clear, dereference and destruction
+
+The texture slot reset at `0x0040B250` and texture resolution at
+`0x0040C8C0` exactly reproduce their complete 33- and 162-byte bodies
+with the real vectors at `this+8` and `this+0x18`. The first
+vector holds 44-byte entries. The second holds texture interface
+pointers, and the resolver returns an element of that type. A local
+reference to the entry adds a stack store and changes the resolver
+to 169 bytes. Reading the field directly matches the native body.
+
+The typed `clear` sections reach the two different `_Tidy` sections.
+The two index functions reach the const dereference specializations.
+The 44-byte entry's cleanup also follows `_Destroy_range` and the
+allocator method to `std::_Destroy` at `0x0040F9F0`. Its complete
+scalar-deleting target calls the entry destructor at `0x0040D8E0`
+with the proper lifetime semantics. Whether the entry destructor
+was declared explicitly remains open.
+
+Eighteen complete sections, including the two game callers,
+reproduce all 820 bytes and 35 relocations. This attributes five
+helpers and 85 library bytes.
+
+    scripts/compile-probe.sh .analysis/final-origin-review/texture-vectors.cpp build/probes/TextureVectorsOriginDirect.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src
+    scripts/repo-python .analysis/final-origin-review/compare-textures.py
+
 ## Historical R263 inventory
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
