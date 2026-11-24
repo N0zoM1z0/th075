@@ -88,7 +88,7 @@ short BattleScene::AdvanceState()
                         if (g_StageAt0067161E == g_ReplayRecords.fileHeader.recordCount) { STATE = 6; break; }
                         AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
                     } else {
-                        g_StateReplay.AppendRecord();
+                        g_ReplayRecords.AppendRecord();
                         if (g_StageAt0067161E == g_CharacterCountAt0067161F) {
                             MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
                             g_StateReturnFlag = -1; return 0x2207;
@@ -121,17 +121,17 @@ short BattleScene::AdvanceState()
                 g_WindowOverlayAt006714C4->CapturePrimary();
                 if (g_ReplayModeAt0066C238 == 4) { g_ReplayModeAt0066C238 = 2; g_InputCanCancelAt00671632 = 1; }
                 else if (g_ReplayModeAt0066C238 == 3) g_ReplayModeAt0066C238 = 1;
-                if (g_ReplayModeAt0066C238 == 1) g_StateReplay.AppendRecord();
+                if (g_ReplayModeAt0066C238 == 1) g_ReplayRecords.AppendRecord();
                 return static_cast<short>(0xFF06);
             }
         }
         break;
     case 8:
-        MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); g_StateReplay.AppendRecord(); return 0x2207;
+        MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); g_ReplayRecords.AppendRecord(); return 0x2207;
     case 14:
         MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
         if (g_ReplayModeAt0066C238 == 2 || g_ReplayModeAt0066C238 == 4) return 0x2205;
-        if (g_StateReturnFlag) g_StateReplay.AppendRecord();
+        if (g_StateReturnFlag) g_ReplayRecords.AppendRecord();
         if (g_CombatMode == 3 && fighters[0]->score > g_StateScoreThreshold) return 0x220A;
         return 0x2203;
     case 9:

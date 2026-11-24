@@ -214,12 +214,15 @@ The four signed boundary and action sentinels at `0x0066C24C` through
 `0x0066C24F` start at minus one. The remaining definitions in this batch
 start at zero.
 
-Standard iterators reproduce the append writer's 1,252-byte size,
-379 instructions and 50 relocation fields. The remaining differences
-are stack operands for the iterator locals. Changing names, declaration
-order, local lifetimes and same-width SDK element types left at least
-19 differing bytes under the pinned profile. The existing writer uses its
-56-byte local frame with separate iterator declarations.
+Replay append uses the shared byte, short, and unsigned-int deques.
+The six named VC7.1 iterators match all 1,252 bytes and 50 relocations.
+Declaration order gives the constructor call order, while local names
+can change the stack slots at that same order. The matched iterator
+offsets are `-0x38`, `-0x2C`, `-0x1C`, `-0x24`, `-0x08`, and
+`-0x10` from EBP under `/Od /Ob0 /GX- /GS`. The three deque families
+also reproduce the complete 21 SDK entry points called by the writer.
+The unsigned byte queue supplies both byte runs, and the shared clear
+method empties all four queues once the record is written.
 
 `Graphics::BeginFrame` returns the status from `BeginTarget` on both
 branches. The native caller tests AL, and the bool declaration preserves

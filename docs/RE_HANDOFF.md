@@ -23,7 +23,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 474 unresolved externals. The scene cleanup and
+stops at `LNK1120` with 450 unresolved externals. The replay writer batch
+resolved 24 symbols and cold-replayed 56 units across 44 objects. Battle
+state appends through the shared replay object and its four VC7.1 deques.
+A headless archive consumer wrote two records and verified the payload,
+file offsets, count, and queue cleanup.
+
+The scene cleanup and
 quad batch resolved seven symbols and cold-replayed 29 units across 20
 objects. Options, results and title share the texture manager type from
 construction through destruction. The loading, logo, capture, rank and
@@ -104,9 +110,10 @@ wait value use shared definitions. Selection, snapshots
 and the battle loader share six player byte pairs and two fighter pointers.
 Scene setup and teardown use those same pointers. Replay capture,
 snapshot fields, the name screen, path selection and playback limits use
-the same owner as the four native deques. The replay append routine still
-needs the VC7.1 iterator stack layout. Battle records and selection use
-`GameProgress`, and rendering calls the existing `Fighter` methods.
+the same owner as the four native deques. The append routine uses the
+same queues and clears them after writing each record. Battle records
+and selection use `GameProgress`, and rendering calls the existing
+`Fighter` methods.
 Stage loading and teardown share the active stage pointer with frame
 updates and rendering. All 36 stage classes use their native allocation
 sizes and share the base camera and texture members. The six-slot

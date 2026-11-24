@@ -4,24 +4,6 @@
 #include <windows.h>
 #include <deque>
 
-// Native replay queues are segmented circular collections. The first word
-// is an as-yet-unclassified control/allocator value; the remaining words are
-// the block map, map length, logical first index, and element count.
-template<class T> struct ReplaySegmentedQueueStorageF219 {
-    unsigned int unknown000;
-    T** blockMap;
-    unsigned int blockCount;
-    unsigned int firstIndex;
-    unsigned int size;
-};
-typedef char ReplayQueueByteSizeF219[(sizeof(ReplaySegmentedQueueStorageF219<char>)==0x14)?1:-1];
-typedef char ReplayQueueWordSizeF219[(sizeof(ReplaySegmentedQueueStorageF219<short>)==0x14)?1:-1];
-typedef char ReplayQueueDwordSizeF219[(sizeof(ReplaySegmentedQueueStorageF219<unsigned int>)==0x14)?1:-1];
-typedef char ReplayQueueMapOffsetF219[(offsetof(ReplaySegmentedQueueStorageF219<char>,blockMap)==0x04)?1:-1];
-typedef char ReplayQueueBlockCountOffsetF219[(offsetof(ReplaySegmentedQueueStorageF219<char>,blockCount)==0x08)?1:-1];
-typedef char ReplayQueueFirstIndexOffsetF219[(offsetof(ReplaySegmentedQueueStorageF219<char>,firstIndex)==0x0C)?1:-1];
-typedef char ReplayQueueSizeOffsetF219[(offsetof(ReplaySegmentedQueueStorageF219<char>,size)==0x10)?1:-1];
-
 // Serialized record header observed at ReplayRecords+0x144.
 struct ReplayRecordHeaderF219 {
     unsigned char field144;
@@ -58,13 +40,13 @@ struct ReplayFileHeaderF219 {
 };
 typedef char ReplayFileHeaderSizeF219[(sizeof(ReplayFileHeaderF219) == 0x3C) ? 1 : -1];
 
-// The replay reader and input handlers share the native four-queue layout.
-// The writer still uses this layout with its iterator call declarations.
+// The replay reader, writer, and input handlers share the native four-queue layout.
 template<class ByteQueue, class WordQueue, class DwordQueue>
 struct ReplayRecordsLayoutF219 {
     ReplayRecordsLayoutF219();
     ~ReplayRecordsLayoutF219();
     void LoadRecord(signed char slot);
+    void AppendRecord();
     void ClearFourQueues();
     unsigned char IsPrimaryInputQueueEmpty();
     void BeginCapture();
