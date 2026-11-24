@@ -1,30 +1,10 @@
+#include "FontSurface.hpp"
 #include <windows.h>
 #include <d3d8.h>
 #include <stdio.h>
 #include <string.h>
 #include "ResultListScene.hpp"
 
-class GlyphSurfaceF239 {
-public:
-    HWND window;
-    HDC deviceContext;
-    HFONT font;
-    HGDIOBJ previouslySelectedFont;
-    int fontHeight;
-    BYTE *glyphBitmap;
-    DWORD unresolvedWordAt24;
-    DWORD glyphHeight;
-    DWORD glyphWidth;
-    DWORD glyphPitch;
-    BYTE red, green, blue;
-    int ascent;
-    LONG glyphX, glyphY;
-    GlyphSurfaceF239(HWND);
-    ~GlyphSurfaceF239();
-    void ConfigureFont(const char*, int, BYTE, BYTE, BYTE);
-    void Rasterize(const char*, void*, int, int, int, int, int, BYTE, char);
-};
-typedef char GlyphSizeCheckF239[(sizeof(GlyphSurfaceF239)==56)?1:-1];
 
 // Borrowed original record selection and deque access interfaces. No full
 // nominal class/allocator ownership layout is reconstructed in this source.
@@ -59,9 +39,9 @@ void ResultListScene::BuildRecordPage()
                 strcat(message,line);
             }
             if ((canvas)->LockRect(0,&locked,0,0)==D3D_OK) {
-                GlyphSurfaceF239* glyph=new GlyphSurfaceF239(0);
+                FontSurface* glyph=new FontSurface(0);
                 glyph->ConfigureFont(g_RecordFontAt00658110,16,120,120,255);
-                glyph->Rasterize(message,locked.pBits,1024,512,640,0,16,4,40);
+                glyph->RasterizeText(message,locked.pBits,1024,512,640,0,16,4,40);
                 delete glyph;
                 (canvas)->UnlockRect(0);
             }

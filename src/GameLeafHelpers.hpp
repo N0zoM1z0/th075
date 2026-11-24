@@ -36,18 +36,6 @@ public:
 
 extern DrawDispatcher *g_DrawDispatcher;
 
-class TextRasterizer {
-public:
-    u8 DecodeHexDigit(u8 value);
-};
-
-class TextRenderer {
-public:
-    void DrawBox();
-    void ConfigureText(float x, float y, bool compact);
-};
-
-extern TextRenderer *g_TextRenderer;
 extern signed char g_NoticeSelection;
 extern float g_ZeroFloat;
 

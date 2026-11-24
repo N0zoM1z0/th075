@@ -108,6 +108,19 @@ with the observed COFF addends. `/GX` gives VC7.1 the same constructor
 and destructor iterators at startup and exit. The fighter also uses those
 mapping lifetime methods for its input member at `+0x494`.
 
+The font surface allocates 56 bytes. Its GDI context, font, previous
+selection, glyph bitmap and color fields are shared by the constructor,
+rasterizer and both cleanup paths. The font argument at `0x006578B0`
+is the CP932 GDI face name, the same name used by the menu and results
+callers. The compiler-emitted deleting destructor calls the full cleanup
+at `0x0041BFD0`.
+
+The shared text overlay at `0x0067143C` allocates 120 bytes, with the
+canvas at offset zero and the embedded texture manager at `+0x28`.
+Its outline drawing uses the SDK-backed RECT quad. Direct construction
+of that quad reproduced the complete draw function, including the
+native RECT and quad stack locations.
+
 Camera initialization, motion, and drawing share the initially zeroed
 camera state at `0x006713BC` through `0x00671414`. The combat view offsets
 at `0x00671404` and `0x006713C4` are written by the camera and read by the

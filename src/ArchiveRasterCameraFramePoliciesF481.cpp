@@ -1,24 +1,14 @@
+#include "FontSurface.hpp"
 #include "GraphicsTexturedDraw.hpp"
 #include "CameraResetF481.hpp"
 #include <windows.h>
 #include <d3d8.h>
-// Original C++ receiver is the private raster device owner; only the
-// independently observed field stores in the original initializer.
-class RasterStateF481 {
- HWND originalWindow;
- void* selectedDevice;
- unsigned int stateA,stateB;
- unsigned int otherOwner;
- void* rawBuffer;
-public: RasterStateF481* Initialize(HWND window);
-};
-RasterStateF481* RasterStateF481::Initialize(HWND window) {
- originalWindow=window;
- selectedDevice=0;
- stateA=0;
- stateB=0;
- rawBuffer=0;
- return this;
+FontSurface::FontSurface(HWND ownerWindow) {
+ window=ownerWindow;
+ deviceContext=0;
+ font=0;
+ previouslySelectedFont=0;
+ glyphBitmap=0;
 }
 extern float g_CameraHorizontalBiasAt006713EC;
 extern float g_CameraVerticalBiasAt0067140C;

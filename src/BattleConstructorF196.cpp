@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "CameraMotion.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "TextureManagerF198.hpp"
@@ -6,11 +7,6 @@
 #include <d3d8.h>
 #include "BattleScene.hpp"
 
-class CombatTextConfiguratorF196 {
-public:
-    void Configure(float,float,int);
-};
-extern CombatTextConfiguratorF196* g_CombatTextAt0067143C;
 extern void* g_CombatActorAAt00671418;
 extern void* g_CombatActorBAt0067141C;
 extern signed char g_CombatModeAt006714B4;
@@ -63,7 +59,7 @@ BattleScene::BattleScene()
     field01C = 0;
     g_SequenceStageAt00671632 = 0;
     if (g_CombatModeAt006714B4 == 3) {
-        g_CombatTextAt0067143C->Configure(35.0f, 360.0f, 1);
+        g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
         fighters[0]->noticeEnabled = 0;
         field08C = -200.0f;
         field018 = 7;

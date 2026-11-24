@@ -1,23 +1,8 @@
+#include "FontSurface.hpp"
 #include <windows.h>
 #include <string.h>
-// Borrowed original font glyph raster/decoder interfaces, not an assertion
-// of the private FontSurface class or underlying Win32/GDI implementation.
-class FontRasterF299 {
-public:
- unsigned char DecodeUnit(const char* bytes,int* value);
- unsigned char DecodeNibble(char digit);
- void PrepareGlyphSurface();
- void LoadGlyphOutline(unsigned int glyph);
- void ReleaseRasterResources();
- void RasterizeText(const char* text,void* pixels,int width,int height,
-                   int maxWidth,int spaceX,int spaceY,
-                   unsigned char depth,signed char lines);
-};
-#define R(type,p,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(p)+(off)))
-#define F(type,off) R(type,this,off)
-#define FONT_BITMAP (F(unsigned char*,0x14))
-#define CHAR_STEP ((F(int,0x10)/2)*state.unitSize+spaceX)
-#define ROW_STEP (F(int,0x10)+spaceY)
+#define CHAR_STEP ((fontHeight/2)*state.unitSize+spaceX)
+#define ROW_STEP (fontHeight+spaceY)
 // Exactly 48 original frame bytes: two output pointers, row/byte counters,
 // 4-byte source color packets, decoded text, and actual glyph position.
 // Every member holds data used by the original function. The original RGB
@@ -37,16 +22,16 @@ struct NativeTextStateF319 {
  DWORD greenStorage;
 };
 typedef char AssertNativeTextState48F319[(sizeof(NativeTextStateF319)==48)?1:-1];
-void FontRasterF299::RasterizeText(const char* text,void* pixels,int width,int height,
+void FontSurface::RasterizeText(const char* text,void* pixels,int width,int height,
                                   int maxWidth,int spaceX,int spaceY,
                                   unsigned char depth,signed char lines)
 {
  NativeTextStateF319 state;
- if(!F(void*,8)) return;
+ if(!font) return;
  memset(pixels,0,width*height*static_cast<unsigned int>(depth));
- reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]=F(unsigned char,0x28);
- reinterpret_cast<unsigned char*>(&state.greenStorage)[3]=F(unsigned char,0x29);
- reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]=F(unsigned char,0x2a);
+ reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]=red;
+ reinterpret_cast<unsigned char*>(&state.greenStorage)[3]=green;
+ reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]=blue;
  state.x=1;
  state.y=1;
  state.offset=0;
@@ -54,7 +39,7 @@ void FontRasterF299::RasterizeText(const char* text,void* pixels,int width,int h
 
 
  state.length=strlen(text);
- PrepareGlyphSurface();
+ SelectFont();
  if(depth==4) {
      state.output32=reinterpret_cast<DWORD*>(pixels);
      while(static_cast<int>(state.length)>state.offset) {
@@ -74,16 +59,16 @@ void FontRasterF299::RasterizeText(const char* text,void* pixels,int width,int h
                break;
                }
                case 99: {
-                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]=static_cast<unsigned char>(DecodeNibble(text[state.offset+1])*16+DecodeNibble(text[state.offset+2]));
-                 reinterpret_cast<unsigned char*>(&state.greenStorage)[3]=static_cast<unsigned char>(DecodeNibble(text[state.offset+3])*16+DecodeNibble(text[state.offset+4]));
-                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]=static_cast<unsigned char>(DecodeNibble(text[state.offset+5])*16+DecodeNibble(text[state.offset+6]));
+                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]=static_cast<unsigned char>(DecodeHexDigit(text[state.offset+1])*16+DecodeHexDigit(text[state.offset+2]));
+                 reinterpret_cast<unsigned char*>(&state.greenStorage)[3]=static_cast<unsigned char>(DecodeHexDigit(text[state.offset+3])*16+DecodeHexDigit(text[state.offset+4]));
+                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]=static_cast<unsigned char>(DecodeHexDigit(text[state.offset+5])*16+DecodeHexDigit(text[state.offset+6]));
                  state.offset+=7;
                break;
                }
                case 0x65: {
-                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]=F(unsigned char,0x28);
-                 reinterpret_cast<unsigned char*>(&state.greenStorage)[3]=F(unsigned char,0x29);
-                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]=F(unsigned char,0x2a);
+                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]=red;
+                 reinterpret_cast<unsigned char*>(&state.greenStorage)[3]=green;
+                 reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]=blue;
                  state.offset+=1;
                break;
                }
@@ -116,13 +101,13 @@ void FontRasterF299::RasterizeText(const char* text,void* pixels,int width,int h
                  --lines;
                  if(lines<=0) {state.length=0; break;}
              }
-             for(state.ix=0;state.ix<F(int,0x20);++state.ix) {
-                 for(state.iy=0;state.iy<F(int,0x1c);++state.iy) {
-                     if(FONT_BITMAP[state.iy*F(int,0x24)+state.ix]!=0) {
-                         state.output32[(state.x+F(int,0x30)+state.ix+(state.y+F(int,0x34)+state.iy)*width)]=(static_cast<unsigned int>(FONT_BITMAP[state.iy*F(int,0x24)+state.ix])<<1)*0x07000000 | 0x03000000 |
-                           (255-static_cast<unsigned char>((F(int,0x34)+state.iy)*(255-static_cast<int>(reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]))/F(int,0x10)))*0x10000 |
-                           (255-static_cast<unsigned char>((F(int,0x34)+state.iy)*(255-static_cast<int>(reinterpret_cast<unsigned char*>(&state.greenStorage)[3]))/F(int,0x10)))*0x100 |
-                           (255-static_cast<unsigned char>((F(int,0x34)+state.iy)*(255-static_cast<int>(reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]))/F(int,0x10)));
+             for(state.ix=0;state.ix<glyphWidth;++state.ix) {
+                 for(state.iy=0;state.iy<glyphHeight;++state.iy) {
+                     if(glyphBitmap[state.iy*glyphPitch+state.ix]!=0) {
+                         state.output32[(state.x+glyphX+state.ix+(state.y+glyphY+state.iy)*width)]=(static_cast<unsigned int>(glyphBitmap[state.iy*glyphPitch+state.ix])<<1)*0x07000000 | 0x03000000 |
+                           (255-static_cast<unsigned char>((glyphY+state.iy)*(255-static_cast<int>(reinterpret_cast<unsigned char*>(&state.redBlueStorage)[2]))/fontHeight))*0x10000 |
+                           (255-static_cast<unsigned char>((glyphY+state.iy)*(255-static_cast<int>(reinterpret_cast<unsigned char*>(&state.greenStorage)[3]))/fontHeight))*0x100 |
+                           (255-static_cast<unsigned char>((glyphY+state.iy)*(255-static_cast<int>(reinterpret_cast<unsigned char*>(&state.redBlueStorage)[3]))/fontHeight));
 
                      }
                  }
@@ -146,11 +131,11 @@ void FontRasterF299::RasterizeText(const char* text,void* pixels,int width,int h
                  if(height-state.y<ROW_STEP) {state.length=0; break;}
                  state.y+=ROW_STEP;
              }
-             for(state.ix=0;state.ix<F(int,0x20);++state.ix) {
-                 for(state.iy=0;state.iy<F(int,0x1c);++state.iy) {
-                     if(FONT_BITMAP[state.iy*F(int,0x24)+state.ix]!=0) {
-                         state.output16[state.x+F(int,0x30)+state.ix+(state.y+F(int,0x34)+state.iy)*width]=
-                           static_cast<unsigned short>((static_cast<unsigned short>(FONT_BITMAP[state.iy*F(int,0x24)+state.ix])*2-1)*0x421 |0x8000);
+             for(state.ix=0;state.ix<glyphWidth;++state.ix) {
+                 for(state.iy=0;state.iy<glyphHeight;++state.iy) {
+                     if(glyphBitmap[state.iy*glyphPitch+state.ix]!=0) {
+                         state.output16[state.x+glyphX+state.ix+(state.y+glyphY+state.iy)*width]=
+                           static_cast<unsigned short>((static_cast<unsigned short>(glyphBitmap[state.iy*glyphPitch+state.ix])*2-1)*0x421 |0x8000);
                      }
                  }
              }
@@ -162,6 +147,3 @@ void FontRasterF299::RasterizeText(const char* text,void* pixels,int width,int h
 }
 #undef ROW_STEP
 #undef CHAR_STEP
-#undef FONT_BITMAP
-#undef F
-#undef R

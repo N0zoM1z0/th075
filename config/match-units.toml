@@ -1084,7 +1084,7 @@ source = "src/GamePolicyHelpers.cpp"
 object = "build/matching/GamePolicyHelpers.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["TextRasterizer::DecodeHexDigit"]
-symbol = "?DecodeHexDigit@TextRasterizer@@QAEEE@Z"
+symbol = "?DecodeHexDigit@FontSurface@@AAEED@Z"
 target_address = 0x0041CA80
 size = 96
 relocations = []
@@ -1099,8 +1099,8 @@ target_address = 0x00440B00
 size = 78
 relocations = [
   { offset = 0x3B, type = "REL32", symbol = "?DrawFacingSprite@Fighter@@QAEXFMHH@Z", target = 0x004549C0 },
-  { offset = 0x41, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x46, type = "REL32", symbol = "?DrawBox@TextRenderer@@QAEXXZ", target = 0x00412EB0 },
+  { offset = 0x41, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x46, type = "REL32", symbol = "?DrawBox@TextOverlay@@QAEXXZ", target = 0x00412EB0 },
 ]
 
 [units.fighter-is-grounded-state-window]
@@ -1126,8 +1126,8 @@ target_address = 0x0045D650
 size = 78
 relocations = [
   { offset = 0x12, type = "DIR32", symbol = "?g_NoticeSelection@@3CA", target = 0x0067161E },
-  { offset = 0x29, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2E, type = "REL32", symbol = "?ConfigureText@TextRenderer@@QAEXMM_N@Z", target = 0x00413420 },
+  { offset = 0x29, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2E, type = "REL32", symbol = "?ConfigureText@TextOverlay@@QAEXMME@Z", target = 0x00413420 },
 ]
 
 [units.fighter-begin-notice-transition]
@@ -2284,11 +2284,11 @@ relocations = [
   { offset = 0x16A, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x176, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x19A, type = "REL32", symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z", target = 0x00407E60 },
-  { offset = 0x1BF, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x1C4, type = "REL32", symbol = "?Configure@StateTextSurface@@QAEXMME@Z", target = 0x00413420 },
+  { offset = 0x1BF, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x1C4, type = "REL32", symbol = "?ConfigureText@TextOverlay@@QAEXMME@Z", target = 0x00413420 },
   { offset = 0x1D7, type = "REL32", symbol = "?ChoosePattern@StatePatternActor@@QAEXXZ", target = 0x0045D810 },
-  { offset = 0x20F, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x214, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x20F, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x214, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x258, type = "DIR32", symbol = "?g_StatePlayerIds@@3PACA", target = 0x006714C8 },
   { offset = 0x266, type = "DIR32", symbol = "?g_StatePlayerIds@@3PACA", target = 0x006714C8 },
   { offset = 0x26C, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
@@ -2298,8 +2298,8 @@ relocations = [
   { offset = 0x47F, type = "DIR32", symbol = "__real@40a00000", target = 0x00657874 },
   { offset = 0x497, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
   { offset = 0x4AD, type = "DIR32", symbol = "__real@41200000", target = 0x00657850 },
-  { offset = 0x53E, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x543, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x53E, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x543, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x57F, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x5A0, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
   { offset = 0x5D3, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
@@ -10560,8 +10560,8 @@ relocations = [
   { offset = 0x2B57, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B7D, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2B91, type = "DIR32", symbol = "$SG57158", target = 0x00659458 },
-  { offset = 0x2B97, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2B9C, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2B97, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2B9C, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2BD2, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2BDE, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2BE6, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -10577,8 +10577,8 @@ relocations = [
   { offset = 0x2C80, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2CA6, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2CBA, type = "DIR32", symbol = "$SG57188", target = 0x00659459 },
-  { offset = 0x2CC0, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2CC5, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2CC0, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2CC5, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2CFB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D07, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D10, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -10993,8 +10993,8 @@ relocations = [
   { offset = 0x2D51, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D77, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2D8B, type = "DIR32", symbol = "$SG57216", target = 0x00659260 },
-  { offset = 0x2D91, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2D96, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2D91, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2D96, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2DCC, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DD8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DE0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -11010,8 +11010,8 @@ relocations = [
   { offset = 0x2E7A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2EA0, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2EB4, type = "DIR32", symbol = "$SG57246", target = 0x00659261 },
-  { offset = 0x2EBA, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2EBF, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2EBA, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2EBF, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2EF5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2F01, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2F0A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -11433,8 +11433,8 @@ relocations = [
   { offset = 0x2B34, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B5A, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2B6E, type = "DIR32", symbol = "$SG57153", target = 0x006595F0 },
-  { offset = 0x2B74, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2B79, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2B74, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2B79, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2BAF, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2BBB, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2BC3, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -11450,8 +11450,8 @@ relocations = [
   { offset = 0x2C5D, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C83, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2C97, type = "DIR32", symbol = "$SG57183", target = 0x006595F1 },
-  { offset = 0x2C9D, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2CA2, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2C9D, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2CA2, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2CD8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2CE4, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2CED, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -11827,8 +11827,8 @@ relocations = [
   { offset = 0x27E5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x280B, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x281F, type = "DIR32", symbol = "$SG57012", target = 0x0065973C },
-  { offset = 0x2825, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x282A, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2825, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x282A, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2860, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x286C, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2874, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -11844,8 +11844,8 @@ relocations = [
   { offset = 0x290E, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2934, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2948, type = "DIR32", symbol = "$SG57042", target = 0x0065973D },
-  { offset = 0x294E, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2953, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x294E, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2953, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2989, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2995, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x299E, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -12222,8 +12222,8 @@ relocations = [
   { offset = 0x29E2, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A08, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2A1C, type = "DIR32", symbol = "$SG57103", target = 0x006598AC },
-  { offset = 0x2A22, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2A27, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2A22, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2A27, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2A5D, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A69, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A71, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -12239,8 +12239,8 @@ relocations = [
   { offset = 0x2B0B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B31, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2B45, type = "DIR32", symbol = "$SG57133", target = 0x006598AD },
-  { offset = 0x2B4B, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2B50, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2B4B, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2B50, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2B86, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B92, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B9B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -12628,8 +12628,8 @@ relocations = [
   { offset = 0x2AEC, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B12, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2B26, type = "DIR32", symbol = "$SG57142", target = 0x00659A08 },
-  { offset = 0x2B2C, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2B31, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2B2C, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2B31, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2B67, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B73, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B7B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -12645,8 +12645,8 @@ relocations = [
   { offset = 0x2C15, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C3B, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2C4F, type = "DIR32", symbol = "$SG57172", target = 0x00659A09 },
-  { offset = 0x2C55, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2C5A, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2C55, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2C5A, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2C90, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2C9C, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2CA5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -13028,8 +13028,8 @@ relocations = [
   { offset = 0x2A10, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A36, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2A4A, type = "DIR32", symbol = "$SG57115", target = 0x00659B64 },
-  { offset = 0x2A50, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2A55, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2A50, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2A55, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2A8B, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2A97, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2AA0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -13045,8 +13045,8 @@ relocations = [
   { offset = 0x2B3A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2B60, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2B74, type = "DIR32", symbol = "$SG57145", target = 0x00659B65 },
-  { offset = 0x2B7A, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2B7F, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2B7A, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2B7F, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2BB5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2BC1, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2BCA, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -13412,8 +13412,8 @@ relocations = [
   { offset = 0x283F, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2865, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2879, type = "DIR32", symbol = "$SG57038", target = 0x00659CA0 },
-  { offset = 0x287F, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2884, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x287F, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2884, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x28BA, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x28C6, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x28CE, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -13429,8 +13429,8 @@ relocations = [
   { offset = 0x2968, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x298E, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x29A2, type = "DIR32", symbol = "$SG57068", target = 0x00659CA1 },
-  { offset = 0x29A8, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x29AD, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x29A8, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x29AD, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x29E3, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x29EF, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x29F8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -13790,8 +13790,8 @@ relocations = [
   { offset = 0x27D6, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x27FC, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2810, type = "DIR32", symbol = "$SG57036", target = 0x00659E10 },
-  { offset = 0x2816, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x281B, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2816, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x281B, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2851, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x285D, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2866, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -13807,8 +13807,8 @@ relocations = [
   { offset = 0x2901, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2927, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x293B, type = "DIR32", symbol = "$SG57066", target = 0x00659E11 },
-  { offset = 0x2941, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2946, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2941, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2946, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x297C, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2988, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2990, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -14169,8 +14169,8 @@ relocations = [
   { offset = 0x26B9, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x26DF, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x26F3, type = "DIR32", symbol = "$SG57019", target = 0x00659F34 },
-  { offset = 0x26F9, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x26FE, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x26F9, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x26FE, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2734, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2740, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2748, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -14186,8 +14186,8 @@ relocations = [
   { offset = 0x27E2, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2808, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x281C, type = "DIR32", symbol = "$SG57049", target = 0x00659F35 },
-  { offset = 0x2822, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2827, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2822, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2827, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x285D, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2869, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2872, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -14592,8 +14592,8 @@ relocations = [
   { offset = 0x2D51, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2D77, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2D8B, type = "DIR32", symbol = "$SG57217", target = 0x0065A074 },
-  { offset = 0x2D91, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2D96, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2D91, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2D96, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2DCC, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DD8, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2DE0, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -14609,8 +14609,8 @@ relocations = [
   { offset = 0x2E7A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2EA0, type = "REL32", symbol = "?ConfigureNoticeText@Fighter@@QAEXE@Z", target = 0x0045D650 },
   { offset = 0x2EB4, type = "DIR32", symbol = "$SG57247", target = 0x0065A075 },
-  { offset = 0x2EBA, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x2EBF, type = "REL32", symbol = "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z", target = 0x00413460 },
+  { offset = 0x2EBA, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x2EBF, type = "REL32", symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z", target = 0x00413460 },
   { offset = 0x2EF5, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2F01, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
   { offset = 0x2F0A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -16390,8 +16390,8 @@ relocations = [
   { offset = 0x550, type = "REL32", symbol = "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ", target = 0x00454840 },
   { offset = 0x56E, type = "REL32", symbol = "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ", target = 0x00454840 },
   { offset = 0x58A, type = "REL32", symbol = "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ", target = 0x00454840 },
-  { offset = 0x5A1, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
-  { offset = 0x5A6, type = "REL32", symbol = "?DrawBox@TextRenderer@@QAEXXZ", target = 0x00412EB0 },
+  { offset = 0x5A1, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextOverlay@@A", target = 0x0067143C },
+  { offset = 0x5A6, type = "REL32", symbol = "?DrawBox@TextOverlay@@QAEXXZ", target = 0x00412EB0 },
   { offset = 0x5AC, type = "DIR32", symbol = "?g_NoticeSelection@@3CA", target = 0x0067161E },
   { offset = 0x5CF, type = "REL32", symbol = "?RenderOverlayTimeline@BattleScene@@QAEXXZ", target = 0x00447340 },
   { offset = 0x5E0, type = "REL32", symbol = "?RenderRoundBanner@BattleScene@@QAEXXZ", target = 0x00441EA0 },
@@ -32181,7 +32181,7 @@ target = 0x0064159D
 [[units.options-select-apply-00429f00.relocations]]
 offset = 318
 type = "REL32"
-symbol = "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.options-select-apply-00429f00.relocations]]
 offset = 389
@@ -32191,17 +32191,17 @@ target = 0x00657F28
 [[units.options-select-apply-00429f00.relocations]]
 offset = 400
 type = "REL32"
-symbol = "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.options-select-apply-00429f00.relocations]]
 offset = 445
 type = "REL32"
-symbol = "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.options-select-apply-00429f00.relocations]]
 offset = 491
 type = "REL32"
-symbol = "??_GGlyphSurfaceF188@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.options-select-apply-00429f00.relocations]]
 offset = 545
@@ -32534,7 +32534,7 @@ target = 0x0064159D
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 211
 type = "REL32"
-symbol = "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 276
@@ -32544,17 +32544,17 @@ target = 0x00657C48
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 287
 type = "REL32"
-symbol = "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 332
 type = "REL32"
-symbol = "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 378
 type = "REL32"
-symbol = "??_GGlyphSurfaceF188@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 456
@@ -32584,7 +32584,7 @@ target = 0x0064159D
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 624
 type = "REL32"
-symbol = "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 689
@@ -32594,17 +32594,17 @@ target = 0x00657C68
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 700
 type = "REL32"
-symbol = "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 742
 type = "REL32"
-symbol = "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 788
 type = "REL32"
-symbol = "??_GGlyphSurfaceF188@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.music-room-render-selected-details-00426a70.relocations]]
 offset = 842
@@ -33215,12 +33215,12 @@ target = 0x00407CA0
 [[units.game-globals-release-00417430.relocations]]
 offset = 227
 type = "DIR32"
-symbol = "?g_ResourceOwnerAAt0067143C@@3PAVSceneResourceOwnerAF195@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.game-globals-release-00417430.relocations]]
 offset = 252
 type = "REL32"
-symbol = "??_GSceneResourceOwnerAF195@@QAEPAXI@Z"
+symbol = "??_GTextOverlay@@QAEPAXI@Z"
 target = 0x0041A110
 [[units.game-globals-release-00417430.relocations]]
 offset = 270
@@ -33399,12 +33399,12 @@ target = 0x006714B4
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 673
 type = "DIR32"
-symbol = "?g_CombatTextAt0067143C@@3PAVCombatTextConfiguratorF196@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 678
 type = "REL32"
-symbol = "?Configure@CombatTextConfiguratorF196@@QAEXMMH@Z"
+symbol = "?ConfigureText@TextOverlay@@QAEXMME@Z"
 target = 0x00413420
 [[units.battle-scene-initialize-0043ad10.relocations]]
 offset = 718
@@ -35928,12 +35928,12 @@ target = 0x0064159D
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 87
 type = "REL32"
-symbol = "??0WindowDisplayF212@@QAE@XZ"
+symbol = "??0TextOverlay@@QAE@XZ"
 target = 0x00412DD0
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 121
 type = "DIR32"
-symbol = "?g_WindowDisplayAt0067143C@@3PAVWindowDisplayF212@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.game-globals-initialize-sound-004175a0.relocations]]
 offset = 128
@@ -38640,7 +38640,7 @@ target = 0x0064159D
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 318
 type = "REL32"
-symbol = "??0GlyphSurfaceF235@@QAE@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 383
@@ -38650,17 +38650,17 @@ target = 0x00657C24
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 394
 type = "REL32"
-symbol = "?ConfigureFont@GlyphSurfaceF235@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 439
 type = "REL32"
-symbol = "?Rasterize@GlyphSurfaceF235@@QAEXPBDPAXHHHHHED@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 485
 type = "REL32"
-symbol = "??_GGlyphSurfaceF235@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 539
@@ -38730,7 +38730,7 @@ target = 0x0064159D
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 216
 type = "REL32"
-symbol = "??0GlyphSurfaceF235@@QAE@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 281
@@ -38740,17 +38740,17 @@ target = 0x00657C38
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 292
 type = "REL32"
-symbol = "?ConfigureFont@GlyphSurfaceF235@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 334
 type = "REL32"
-symbol = "?Rasterize@GlyphSurfaceF235@@QAEXPBDPAXHHHHHED@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 380
 type = "REL32"
-symbol = "??_GGlyphSurfaceF235@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.music-room-render-selected-title-004268a0.relocations]]
 offset = 434
@@ -38890,7 +38890,7 @@ target = 0x0064159D
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 421
 type = "REL32"
-symbol = "??0GlyphSurfaceF238@@QAE@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 492
@@ -38900,17 +38900,17 @@ target = 0x00658140
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 503
 type = "REL32"
-symbol = "?ConfigureFont@GlyphSurfaceF238@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 548
 type = "REL32"
-symbol = "?Rasterize@GlyphSurfaceF238@@QAEXPBDPAXHHHHHED@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 594
 type = "REL32"
-symbol = "??_GGlyphSurfaceF238@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 648
@@ -39030,7 +39030,7 @@ target = 0x0064159D
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 484
 type = "REL32"
-symbol = "??0GlyphSurfaceF239@@QAE@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 549
@@ -39040,17 +39040,17 @@ target = 0x00658110
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 560
 type = "REL32"
-symbol = "?ConfigureFont@GlyphSurfaceF239@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 605
 type = "REL32"
-symbol = "?Rasterize@GlyphSurfaceF239@@QAEXPBDPAXHHHHHED@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 651
 type = "REL32"
-symbol = "??_GGlyphSurfaceF239@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 705
@@ -43841,12 +43841,12 @@ target = 0x00657B7C
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 66
 type = "DIR32"
-symbol = "?g_FontAt0067143C@@3PAVNativeFontRendererF288@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 71
 type = "REL32"
-symbol = "?Configure@NativeFontRendererF288@@QAEXMMH@Z"
+symbol = "?ConfigureText@TextOverlay@@QAEXMME@Z"
 target = 0x00413420
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 91
@@ -43856,12 +43856,12 @@ target = 0x00657B7B
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 97
 type = "DIR32"
-symbol = "?g_FontAt0067143C@@3PAVNativeFontRendererF288@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 102
 type = "REL32"
-symbol = "?DrawTextA@NativeFontRendererF288@@QAEXPBDHHHHHH@Z"
+symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z"
 target = 0x00413460
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 108
@@ -44000,32 +44000,32 @@ target = 0x00657210
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 53
 type = "REL32"
-symbol = "?AssignRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z"
+symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z"
 target = 0x0040DB50
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
 target = 0x004115C0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 126
 type = "REL32"
-symbol = "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 172
 type = "REL32"
-symbol = "?ApplyMode@OverlayTextureF292@@QAEXHPAVOverlayQuadF292@@PBUtagRECT@@K@Z"
+symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
 target = 0x0040C9A0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 202
 type = "DIR32"
-symbol = "?g_OverlayMinScaleAt0065747C@@3MB"
+symbol = "__real@3f800000"
 target = 0x0065747C
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 224
 type = "DIR32"
-symbol = "?g_OverlayScaleDeltaAt006578C0@@3MB"
+symbol = "__real@3d4ccccd"
 target = 0x006578C0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 287
@@ -44035,87 +44035,87 @@ target = 0x00657210
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 305
 type = "REL32"
-symbol = "?BuildFromRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z"
+symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z"
 target = 0x00411400
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 345
 type = "REL32"
-symbol = "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
 target = 0x004115C0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 378
 type = "REL32"
-symbol = "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 401
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 421
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 454
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 477
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 497
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 530
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 553
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 573
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 606
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 629
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 649
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 682
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 705
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 735
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 790
@@ -44125,87 +44125,87 @@ target = 0x00657210
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 808
 type = "REL32"
-symbol = "?BuildFromRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z"
+symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z"
 target = 0x00411400
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 848
 type = "REL32"
-symbol = "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
 target = 0x004115C0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 881
 type = "REL32"
-symbol = "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 944
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 964
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1012
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1035
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1055
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1103
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1126
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1146
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1194
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1217
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1237
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1285
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1308
 type = "REL32"
-symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
 [[units.overlay-text-draw-box-00412eb0.relocations]]
 offset = 1374
 type = "REL32"
-symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
 
 [units.font-surface-configure-text-00413420]
@@ -44213,7 +44213,7 @@ source = "src/FontConfigureF293.cpp"
 object = "build/matching/FontConfigureF293.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["TextOverlay::ConfigureText"]
-symbol = "?ConfigureText@TextOverlay@@QAEXKKE@Z"
+symbol = "?ConfigureText@TextOverlay@@QAEXMME@Z"
 target_address = 0x00413420
 size = 64
 relocations = []
@@ -44277,13 +44277,13 @@ source = "src/FontDecodeF293.cpp"
 object = "build/matching/FontDecodeF293.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["FontSurface::DecodePackedTextUnitAt0041C9D0"]
-symbol = "?DecodeUnit@PackedFontUnitF293@@QAEEPBIPAI@Z"
+symbol = "?DecodeUnit@FontSurface@@AAEEPBDPAH@Z"
 target_address = 0x0041C9D0
 size = 85
 [[units.font-surface-decode-packed-text-0041c9d0.relocations]]
 offset = 17
 type = "REL32"
-symbol = "?IsDoubleByte@PackedFontUnitF293@@QAE_ND@Z"
+symbol = "?IsDoubleByte@FontSurface@@AAE_ND@Z"
 target = 0x0041CA30
 
 [units.font-surface-release-raster-0041c130]
@@ -44291,7 +44291,7 @@ source = "src/FontReleaseF293.cpp"
 object = "build/matching/FontReleaseF293.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["FontSurface::ReleaseRasterResourcesAt0041C130"]
-symbol = "?ReleaseRasterResources@FontReleaseF293@@QAEXXZ"
+symbol = "?ReleaseRasterResources@FontSurface@@AAEXXZ"
 target_address = 0x0041C130
 size = 119
 [[units.font-surface-release-raster-0041c130.relocations]]
@@ -45382,17 +45382,17 @@ target = 0x0064159D
 [[units.font-surface-render-text-to-texture-00413460.relocations]]
 offset = 167
 type = "REL32"
-symbol = "??0FontGlyphRasterF317@@QAE@H@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target = 0x0041BF90
 [[units.font-surface-render-text-to-texture-00413460.relocations]]
 offset = 226
 type = "DIR32"
-symbol = "?g_FontRasterScaleAt006578B0@@3MB"
+symbol = "?g_OverlayFontFaceAt006578B0@@3QBDB"
 target = 0x006578B0
 [[units.font-surface-render-text-to-texture-00413460.relocations]]
 offset = 237
 type = "REL32"
-symbol = "?ConfigureTint@FontGlyphRasterF317@@QAEXPBMIEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target = 0x0041C060
 [[units.font-surface-render-text-to-texture-00413460.relocations]]
 offset = 254
@@ -45407,12 +45407,12 @@ target = 0x006406AC
 [[units.font-surface-render-text-to-texture-00413460.relocations]]
 offset = 301
 type = "REL32"
-symbol = "?RasterizeText@FontGlyphRasterF317@@QAEXPBDPAXHHHHHEC@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target = 0x0041C2E0
 [[units.font-surface-render-text-to-texture-00413460.relocations]]
 offset = 332
 type = "REL32"
-symbol = "??_GFontGlyphRasterF317@@QAEPAXI@Z"
+symbol = "??_GFontSurface@@QAEPAXI@Z"
 target = 0x00413620
 [[units.font-surface-render-text-to-texture-00413460.relocations]]
 offset = 388
@@ -45425,7 +45425,7 @@ source = "src/FontLoadGlyphOutlineF318.cpp"
 object = "build/matching/FontLoadGlyphOutlineF318.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["FontSurface::LoadGlyphOutline"]
-symbol = "?LoadGlyphOutline@GlyphFontF318@@QAEXI@Z"
+symbol = "?LoadGlyphOutline@FontSurface@@AAEXI@Z"
 target_address = 0x0041C1B0
 size = 301
 [[units.font-surface-load-glyph-outline-0041c1b0.relocations]]
@@ -45459,7 +45459,7 @@ source = "src/FontRasterizeTextF319.cpp"
 object = "build/matching/FontRasterizeTextF319.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["FontSurface::RasterizeText"]
-symbol = "?RasterizeText@FontRasterF299@@QAEXPBDPAXHHHHHEC@Z"
+symbol = "?RasterizeText@FontSurface@@QAEXPBDPAXHHHHHEC@Z"
 target_address = 0x0041C2E0
 size = 1766
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
@@ -45475,67 +45475,67 @@ target = 0x00640620
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 121
 type = "REL32"
-symbol = "?PrepareGlyphSurface@FontRasterF299@@QAEXXZ"
+symbol = "?SelectFont@FontSurface@@AAEXXZ"
 target = 0x0041C0D0
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 171
 type = "REL32"
-symbol = "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z"
+symbol = "?DecodeUnit@FontSurface@@AAEEPBDPAH@Z"
 target = 0x0041C9D0
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 226
 type = "REL32"
-symbol = "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z"
+symbol = "?DecodeUnit@FontSurface@@AAEEPBDPAH@Z"
 target = 0x0041C9D0
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 355
 type = "REL32"
-symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+symbol = "?DecodeHexDigit@FontSurface@@AAEED@Z"
 target = 0x0041CA80
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 379
 type = "REL32"
-symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+symbol = "?DecodeHexDigit@FontSurface@@AAEED@Z"
 target = 0x0041CA80
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 405
 type = "REL32"
-symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+symbol = "?DecodeHexDigit@FontSurface@@AAEED@Z"
 target = 0x0041CA80
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 429
 type = "REL32"
-symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+symbol = "?DecodeHexDigit@FontSurface@@AAEED@Z"
 target = 0x0041CA80
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 455
 type = "REL32"
-symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+symbol = "?DecodeHexDigit@FontSurface@@AAEED@Z"
 target = 0x0041CA80
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 479
 type = "REL32"
-symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+symbol = "?DecodeHexDigit@FontSurface@@AAEED@Z"
 target = 0x0041CA80
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 859
 type = "REL32"
-symbol = "?LoadGlyphOutline@FontRasterF299@@QAEXI@Z"
+symbol = "?LoadGlyphOutline@FontSurface@@AAEXI@Z"
 target = 0x0041C1B0
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 1365
 type = "REL32"
-symbol = "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z"
+symbol = "?DecodeUnit@FontSurface@@AAEEPBDPAH@Z"
 target = 0x0041C9D0
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 1465
 type = "REL32"
-symbol = "?LoadGlyphOutline@FontRasterF299@@QAEXI@Z"
+symbol = "?LoadGlyphOutline@FontSurface@@AAEXI@Z"
 target = 0x0041C1B0
 [[units.font-surface-rasterize-text-0041c2e0.relocations]]
 offset = 1754
 type = "REL32"
-symbol = "?ReleaseRasterResources@FontRasterF299@@QAEXXZ"
+symbol = "?ReleaseRasterResources@FontSurface@@AAEXXZ"
 target = 0x0041C130
 
 [units.text-rasterizer-select-font-0041c0d0]
@@ -45543,7 +45543,7 @@ source = "src/FontSelectF320.cpp"
 object = "build/matching/FontSelectF320.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["TextRasterizer::SelectFontAt0041C0D0"]
-symbol = "?SelectFont@FontSelectF320@@QAEXXZ"
+symbol = "?SelectFont@FontSurface@@AAEXXZ"
 target_address = 0x0041C0D0
 size = 83
 [[units.text-rasterizer-select-font-0041c0d0.relocations]]
@@ -54515,22 +54515,22 @@ target = 0x0067161E
 [[units.fighter-render-notice-0045d5d0.relocations]]
 offset = 53
 type = "DIR32"
-symbol = "?g_NoticeRendererAt0067143C@@3PAVNoticeDrawingF414@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.fighter-render-notice-0045d5d0.relocations]]
 offset = 58
 type = "REL32"
-symbol = "?DrawNotice@NoticeDrawingF414@@QAEXPAXEEEHEE@Z"
+symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z"
 target = 0x00413460
 [[units.fighter-render-notice-0045d5d0.relocations]]
 offset = 98
 type = "DIR32"
-symbol = "?g_NoticeRendererAt0067143C@@3PAVNoticeDrawingF414@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.fighter-render-notice-0045d5d0.relocations]]
 offset = 103
 type = "REL32"
-symbol = "?DrawNotice@NoticeDrawingF414@@QAEXPAXEEEHEE@Z"
+symbol = "?RenderTextToTexture@TextOverlay@@QAEXPBDEEEEEE@Z"
 target = 0x00413460
 
 
@@ -55150,7 +55150,7 @@ source = "src/RasterResourcesReleaseF428.cpp"
 object = "build/matching/RasterResourcesReleaseF428.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["RasterResources::ReleaseAndResetAt0041BFD0"]
-symbol = "?ReleaseAndReset@RasterResourcesF428@@QAEXXZ"
+symbol = "??1FontSurface@@QAE@XZ"
 target_address = 0x0041BFD0
 size = 129
 [[units.raster-resources-release-reset-0041bfd0.relocations]]
@@ -56732,12 +56732,12 @@ target = 0x00671418
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 98
 type = "DIR32"
-symbol = "?g_BattleEndOverlayDrawerAt0067143C@@3PAVActorDrawerF464@@A"
+symbol = "?g_TextRenderer@@3PAVTextOverlay@@A"
 target = 0x0067143C
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 103
 type = "REL32"
-symbol = "?DrawOverlay@ActorDrawerF464@@QAEXXZ"
+symbol = "?DrawBox@TextOverlay@@QAEXXZ"
 target = 0x00412EB0
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 110
@@ -56767,7 +56767,7 @@ target = 0x00403910
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 172
 type = "REL32"
-symbol = "?GraphicsAdvanceAt004027D0@@YAXXZ"
+symbol = "?EndFrame@Graphics@@YAXXZ"
 target = 0x004027D0
 
 
@@ -58383,7 +58383,7 @@ source = "src/ArchiveRasterCameraFramePoliciesF481.cpp"
 object = "build/matching/ArchiveRasterCameraFramePoliciesF481.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90"]
-symbol = "?Initialize@RasterStateF481@@QAEPAV1@PAUHWND__@@@Z"
+symbol = "??0FontSurface@@QAE@PAUHWND__@@@Z"
 target_address = 0x0041BF90
 size = 64
 relocations = []
@@ -58901,13 +58901,13 @@ source = "src/WindowResourceTextureInitializeF489.cpp"
 object = "build/matching/WindowResourceTextureInitializeF489.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["WindowResource::InitializeAt00412DD0"]
-symbol = "??0WindowResourceF489@@QAE@XZ"
+symbol = "??0TextOverlay@@QAE@XZ"
 target_address = 0x00412DD0
 size = 128
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0WindowResourceF489@@QAE@XZ"
+symbol = "__ehhandler$??0TextOverlay@@QAE@XZ"
 target = 0x0065508B
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 12
@@ -59035,13 +59035,13 @@ source = "src/FighterSharedResourceDestructorsF491.cpp"
 object = "build/matching/FighterSharedResourceDestructorsF491.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["SharedResource::ReleaseInterfaceAndTexturesAt00412E50"]
-symbol = "??1SharedWindowResourceF491@@QAE@XZ"
+symbol = "??1TextOverlay@@QAE@XZ"
 target_address = 0x00412E50
 size = 83
 [[units.shared-window-resource-release-00412e50.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1SharedWindowResourceF491@@QAE@XZ"
+symbol = "__ehhandler$??1TextOverlay@@QAE@XZ"
 target = 0x006550A0
 [[units.shared-window-resource-release-00412e50.relocations]]
 offset = 12
@@ -59120,7 +59120,7 @@ source = "src/TextRasterizerCreateFontF494.cpp"
 object = "build/matching/TextRasterizerCreateFontF494.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["TextRasterizer::CreateFontAt0041C060"]
-symbol = "?CreateFont@TextRasterizerF494@@QAEXPBDHEEE@Z"
+symbol = "?ConfigureFont@FontSurface@@QAEXPBDHEEE@Z"
 target_address = 0x0041C060
 size = 99
 [[units.text-rasterizer-create-font-0041c060.relocations]]
@@ -60452,7 +60452,7 @@ source = "src/FontLeadByteF555.cpp"
 object = "build/matching/FontLeadByteF555.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["FontSurface::IsDoubleByteAt0041CA30"]
-symbol = "?IsDoubleByte@PackedFontUnitF293@@QAE_ND@Z"
+symbol = "?IsDoubleByte@FontSurface@@AAE_ND@Z"
 target_address = 0x0041CA30
 size = 77
 relocations = []

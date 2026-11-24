@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence4A9050.hpp"
 
@@ -999,7 +1000,7 @@ void MarisaFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFFC = 0;
                 fieldFFD = 255;
                 sequenceTimer = 2;
@@ -1031,7 +1032,7 @@ void MarisaFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFFD = 0;
                 fieldFFE = 255;
                 sequenceTimer = 2;

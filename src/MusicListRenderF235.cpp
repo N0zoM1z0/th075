@@ -1,29 +1,9 @@
+#include "FontSurface.hpp"
 #include <windows.h>
 #include <d3d8.h>
 #include <stdio.h>
 #include <string.h>
 
-class GlyphSurfaceF235 {
-public:
-    HWND window;
-    HDC deviceContext;
-    HFONT font;
-    HGDIOBJ previouslySelectedFont;
-    int fontHeight;
-    BYTE *glyphBitmap;
-    DWORD unresolvedWordAt24;
-    DWORD glyphHeight;
-    DWORD glyphWidth;
-    DWORD glyphPitch;
-    BYTE red, green, blue;
-    int ascent;
-    LONG glyphX, glyphY;
-    GlyphSurfaceF235(HWND);
-    ~GlyphSurfaceF235();
-    void ConfigureFont(const char*, int, BYTE, BYTE, BYTE);
-    void Rasterize(const char*, void*, int, int, int, int, int, BYTE, char);
-};
-typedef char GlyphSizeCheckF235[(sizeof(GlyphSurfaceF235)==56)?1:-1];
 
 // Observed independent PE string addresses, including the literal 2-byte
 // escape sequence used as the line suffix. No complete scene class embedded.
@@ -56,9 +36,9 @@ void MusicListRenderF235::RenderTrackCatalogText()
     }
     D3DLOCKED_RECT locked;
     if (field010->LockRect(0,&locked,0,0)==D3D_OK) {
-        GlyphSurfaceF235 *glyph = new GlyphSurfaceF235(0);
+        FontSurface *glyph = new FontSurface(0);
         glyph->ConfigureFont(g_MusicListFontAt00657C24,16,120,120,255);
-        glyph->Rasterize(message,locked.pBits,1024,1024,560,0,2,4,40);
+        glyph->RasterizeText(message,locked.pBits,1024,1024,560,0,2,4,40);
         delete glyph;
         field010->UnlockRect(0);
     }

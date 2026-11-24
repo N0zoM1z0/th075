@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence4D4EA0.hpp"
 
@@ -994,7 +995,7 @@ void SakuyaFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFE0 = 0;
                 fieldFE1 = 255;
                 sequenceTimer = 2;
@@ -1026,7 +1027,7 @@ void SakuyaFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFE1 = 0;
                 fieldFE2 = 255;
                 sequenceTimer = 2;

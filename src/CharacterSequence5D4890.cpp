@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence5D4890.hpp"
 
@@ -875,7 +876,7 @@ void SuikaFighter::AdvanceSequence()
             }
             if (fieldF28 == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFF4 = 0;
                 fieldFF5 = 255;
                 fieldF28 = 2;
@@ -907,7 +908,7 @@ void SuikaFighter::AdvanceSequence()
             }
             if (fieldF28 == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFF5 = 0;
                 fieldFF6 = 255;
                 fieldF28 = 2;

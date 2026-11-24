@@ -1,3 +1,5 @@
+#include "TextOverlay.hpp"
+#include "FontSurface.hpp"
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 
@@ -11,14 +13,14 @@ void SpriteScene::DispatchGlobalDraw(int first, int second, int third)
     g_DrawDispatcher->Draw(first, second, third);
 }
 
-u8 TextRasterizer::DecodeHexDigit(u8 value)
+u8 FontSurface::DecodeHexDigit(char digit)
 {
-    if (value >= 'a' && value <= 'f')
-        return value - 'a' + 10;
-    if (value >= 'A' && value <= 'F')
-        return value - 'A' + 10;
-    if (value >= '0' && value <= '9')
-        return value - '0';
+    if (static_cast<unsigned char>(digit) >= 'a' && static_cast<unsigned char>(digit) <= 'f')
+        return static_cast<unsigned char>(digit) - 'a' + 10;
+    if (static_cast<unsigned char>(digit) >= 'A' && static_cast<unsigned char>(digit) <= 'F')
+        return static_cast<unsigned char>(digit) - 'A' + 10;
+    if (static_cast<unsigned char>(digit) >= '0' && static_cast<unsigned char>(digit) <= '9')
+        return static_cast<unsigned char>(digit) - '0';
     return 0;
 }
 

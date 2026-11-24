@@ -1,20 +1,12 @@
+#include "TextOverlay.hpp"
 #include "SelectionInput4388D0.hpp"
 #include <windows.h>
 #include "AudioControl.hpp"
 #include "SoundBank.hpp"
 #include "WindowOverlayF212.hpp"
 
-// The display view carries the observed 120-byte allocation size.
 extern BYTE g_KeyBindingsAt00671440[];
 
-class WindowDisplayF212 {
-    unsigned char nativePhysicalStorage[120];
-public:
-    WindowDisplayF212();
-};
-typedef char AssertWindow120F212[(sizeof(WindowDisplayF212)==120)?1:-1];
-
-extern WindowDisplayF212* g_WindowDisplayAt0067143C;
 extern WindowOverlayF212* g_WindowOverlayAt006714C4;
 extern unsigned char g_SoundVolumeAt006714B6;
 extern unsigned char g_StreamVolumeAt006714B7;
@@ -32,7 +24,7 @@ void InitializeSound()
 {
     g_InputMappings[0].SetBindings(g_KeyBindingsAt00671440);
     g_InputMappings[1].SetBindings(g_KeyBindingsAt00671440 + sizeof(InputBindingKeys));
-    g_WindowDisplayAt0067143C = new WindowDisplayF212();
+    g_TextRenderer = new TextOverlay();
     g_WindowOverlayAt006714C4 = new WindowOverlayF212();
     g_SoundBank = new SoundBank();
     AudioVolume4073B0::SetSoundBankVolume(g_SoundVolumeAt006714B6);

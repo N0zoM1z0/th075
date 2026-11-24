@@ -24,11 +24,14 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 2,072 unresolved externals. The input callers share
-the two 72-byte mappings. Stream loading and playback share the VC7.1
-deque of 64-byte audio records. The input and stream batch replayed 73
-units and resolved 97 linker symbols. Sound bank lifetime, archive loading,
-and playback share the 20-byte DirectSound buffer owner.
+stops at `LNK1120` with 2,012 unresolved externals. Menu and results text
+use the same 56-byte GDI font surface. Startup, rendering and teardown
+use the same 120-byte text overlay. The text batch replayed 52 units and
+resolved 60 linker symbols.
+
+Input callers share the two 72-byte mappings. Stream loading and playback
+share the VC7.1 deque of 64-byte audio records. Sound bank lifetime,
+archive loading and playback share the 20-byte DirectSound buffer owner.
 Music callers share the playback and fade entries.
 
 Camera initialization, update, snap, and rendering share state. Scene

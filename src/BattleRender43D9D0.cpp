@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
 #include "BattleRender43D9D0.hpp"

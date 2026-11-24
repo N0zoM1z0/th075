@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "MeilingSequence.hpp"
 
@@ -1050,7 +1051,7 @@ void MeilingFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFF4 = 0;
                 fieldFF5 = 255;
                 sequenceTimer = 2;
@@ -1082,7 +1083,7 @@ void MeilingFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFF5 = 0;
                 fieldFF6 = 255;
                 sequenceTimer = 2;

@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence561D40.hpp"
 
@@ -966,7 +967,7 @@ void RemiliaFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFD8 = 0;
                 fieldFD9 = 255;
                 sequenceTimer = 2;
@@ -998,7 +999,7 @@ void RemiliaFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFD9 = 0;
                 fieldFDA = 255;
                 sequenceTimer = 2;

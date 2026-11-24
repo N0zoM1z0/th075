@@ -1,15 +1,14 @@
 #include "TextureManagerF198.hpp"
+#include "Fighter.hpp"
+#include "Graphics.hpp"
 #include "GraphicsDraw.hpp"
+#include "TextOverlay.hpp"
 #include <windows.h>
 // Independently exact entire native R053 scene draw. Original borrowed
 // overlay helper 00412EB0 has zero arguments; a made-up mode argument
 // added a nonnative PUSH and changed complete code length by two bytes.
 // Complete native R053 battle-end drawing sequence, original fighter actor
 // render modes, 18th virtual call and 640x480 alpha-tinted screen overlay.
-class ActorDrawerF464 {
-public:
-    void DrawOverlay();
-};
 class BattleActorF464 {
 public:
     virtual void V0(); virtual void V1(); virtual void V2(); virtual void V3();
@@ -22,26 +21,24 @@ extern BattleActorF464* g_BattleEndActorAt00671418;
 extern signed char g_BattleEndCharacterAt0067161E;
 extern unsigned char g_BattleOverlayAlphaAt006714D1;
 extern unsigned int g_BattleOverlayColorAt0067149C;
-extern ActorDrawerF464* g_BattleEndOverlayDrawerAt0067143C;
 extern unsigned char __cdecl GraphicsBeginAt00402660();
-extern void __cdecl GraphicsAdvanceAt004027D0();
 class BattleEndDrawF464 {public:void Draw();};
-#define ACTOR_FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(g_BattleEndActorAt00671418)+(o)))
-#define ACTOR_DRAWER (*reinterpret_cast<ActorDrawerF464**>(reinterpret_cast<unsigned char*>(g_BattleEndActorAt00671418)+4))
+#define ACTOR reinterpret_cast<Fighter*>(g_BattleEndActorAt00671418)
+#define ACTOR_DRAWER static_cast<TextureManagerF198*>(ACTOR->drawing)
 void BattleEndDrawF464::Draw() {
     if(GraphicsBeginAt00402660()) {
-        reinterpret_cast<TextureManagerF198*>(ACTOR_DRAWER)->SetDepthMode(0);
-        reinterpret_cast<TextureManagerF198*>(ACTOR_DRAWER)->SetBlendMode(0);
+        ACTOR_DRAWER->SetDepthMode(0);
+        ACTOR_DRAWER->SetBlendMode(0);
         g_BattleEndActorAt00671418->DrawCharacter(g_BattleEndCharacterAt0067161E);
-        if(ACTOR_FIELD(unsigned char,0x6EE))
-            g_BattleEndOverlayDrawerAt0067143C->DrawOverlay();
+        if(ACTOR->noticeEnabled)
+            g_TextRenderer->DrawBox();
         if (g_BattleOverlayAlphaAt006714D1>0) {
             RECT region;
             SetRect(&region,0,0,640,480);
             Graphics::DrawFilledRectangle(&region, (static_cast<unsigned int>(g_BattleOverlayAlphaAt006714D1)<<24) | g_BattleOverlayColorAt0067149C);
         }
-        GraphicsAdvanceAt004027D0();
+        Graphics::EndFrame();
     }
 }
-#undef ACTOR_FIELD
+#undef ACTOR
 #undef ACTOR_DRAWER

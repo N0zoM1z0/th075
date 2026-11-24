@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "CharacterSequence51E640.hpp"
 
@@ -966,7 +967,7 @@ void PatchouliFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFDC = 0;
                 fieldFDD = 255;
                 sequenceTimer = 2;
@@ -998,7 +999,7 @@ void PatchouliFighter::AdvanceSequence()
             }
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render("", 120, 120, 255, 16, 1, false);
+                g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
                 fieldFDD = 0;
                 fieldFDE = 255;
                 sequenceTimer = 2;

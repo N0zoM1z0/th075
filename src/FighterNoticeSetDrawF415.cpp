@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "Fighter.hpp"
 // Two complete original fighter notice policies. Actual index guard only
 // controls the first notice byte: subsequent state/color byte writes
@@ -5,12 +6,7 @@
 // takes real unsigned byte arguments, not int-promoted surrogates.
 // Two physically complete native fighter notice policies; only borrowed
 // owner offsets and the original notice-drawing renderer ABI are asserted.
-class NoticeDrawingF414 {
-public:
-    void DrawNotice(void* text,unsigned char r,unsigned char g,unsigned char b,int depth,unsigned char step,unsigned char highlighted);
-};
 extern signed char g_BattleCharacterNumberAt0067161E;
-extern NoticeDrawingF414* g_NoticeRendererAt0067143C;
 void Fighter::SetNoticeFields(signed char notice,unsigned char first,unsigned char second) {
     if(notice>=0 && notice<=field532)
         noticeBadge=notice;
@@ -19,7 +15,7 @@ void Fighter::SetNoticeFields(signed char notice,unsigned char first,unsigned ch
 }
 void Fighter::RenderNotice(void* text,unsigned char r,unsigned char g,unsigned char b,unsigned char highlighted) {
     if(g_BattleCharacterNumberAt0067161E<8)
-        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,24,scriptStep,highlighted);
+        g_TextRenderer->RenderTextToTexture(static_cast<const char*>(text),r,g,b,24,scriptStep,highlighted);
     else
-        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,16,scriptStep,highlighted);
+        g_TextRenderer->RenderTextToTexture(static_cast<const char*>(text),r,g,b,16,scriptStep,highlighted);
 }

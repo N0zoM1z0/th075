@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include "AudioControl.hpp"
 #include "BattleScene.hpp"
 #include "BattleStateMachine.hpp"
@@ -35,9 +36,9 @@ short BattleScene::AdvanceState()
                 return 0x2201;
             } else {
                 LINE = 0;
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Configure(35.0f, 360.0f, 1);
+                g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
                 reinterpret_cast<StatePatternActor *>(fighters[WINNER])->ChoosePattern();
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render(STATE_TEXT, 120, 120, 255, 24, 2, false);
+                g_TextRenderer->RenderTextToTexture(STATE_TEXT, 120, 120, 255, 24, 2, false);
                 fighters[WINNER]->noticeBadge = fighters[WINNER]->quoteBadges[LINE];
                 reinterpret_cast<StateRecords *>(&g_BattleRecords)->IncrementCounter(g_StatePlayerIds[WINNER], g_StatePlayerIds[1 - WINNER]);
                 STATE = 5; TIMER = 160;
@@ -71,7 +72,7 @@ short BattleScene::AdvanceState()
         if (fighters[0]->field4E4 == 1 || fighters[1]->field4E4 == 1) {
             ++LINE;
             if (LINE < fighters[WINNER]->quoteLineCount) {
-                reinterpret_cast<StateTextSurface *>(g_TextRenderer)->Render(STATE_TEXT, 120, 120, 255, 24, 2, false);
+                g_TextRenderer->RenderTextToTexture(STATE_TEXT, 120, 120, 255, 24, 2, false);
                 fighters[WINNER]->noticeBadge = fighters[WINNER]->quoteBadges[LINE];
             } else if (g_CombatMode == 4) {
                 if (fighters[0]->field3CE.signedAt3CE != 0) {

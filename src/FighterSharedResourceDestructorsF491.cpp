@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include <windows.h>
 #include <d3d8.h>
 #include "TextureManagerF198.hpp"
@@ -12,10 +13,4 @@ class FighterResourcesF491 {
 public:~FighterResourcesF491();
 };
 FighterResourcesF491::~FighterResourcesF491() { patterns.Clear(); }
-class SharedWindowResourceF491 {
- IDirect3DTexture8* originalInterface;
- unsigned char opaqueObservedOwnerBytes[0x24];
- TextureManagerF198 resources;
-public:~SharedWindowResourceF491();
-};
-SharedWindowResourceF491::~SharedWindowResourceF491() { originalInterface->Release(); }
+TextOverlay::~TextOverlay() { texture->Release(); }

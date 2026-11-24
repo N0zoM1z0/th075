@@ -1,3 +1,4 @@
+#include "TextOverlay.hpp"
 #include <windows.h>
 #include "AudioControl.hpp"
 #include "SoundBank.hpp"
@@ -18,13 +19,11 @@ class SceneThirdOwnerF195 {
 public:
     virtual ~SceneThirdOwnerF195();
 };
-class SceneResourceOwnerAF195 { public: ~SceneResourceOwnerAF195(); };
 
 extern unsigned int g_GameDefaultsUseCountAt00671614;
 extern SceneCombatActorF195* g_CombatActorAAt00671418;
 extern SceneCombatActorF195* g_CombatActorBAt0067141C;
 extern SceneThirdOwnerF195* g_SceneOwnerAt00671424;
-extern SceneResourceOwnerAF195* g_ResourceOwnerAAt0067143C;
 extern WindowOverlayF212* g_WindowOverlayAt006714C4;
 
 class GameGlobalsReleaseF195 {
@@ -42,7 +41,7 @@ void GameGlobalsReleaseF195::Release()
         g_CombatActorBAt0067141C = 0;
         g_SceneOwnerAt00671424 = 0;
         AudioControl407CA0::ClearPlayback();
-        delete g_ResourceOwnerAAt0067143C;
+        delete g_TextRenderer;
         delete g_WindowOverlayAt006714C4;
         delete g_SoundBank;
     }

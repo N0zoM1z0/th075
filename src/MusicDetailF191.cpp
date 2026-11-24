@@ -1,3 +1,4 @@
+#include "FontSurface.hpp"
 #include <windows.h>
 #include <d3d8.h>
 #include <stdio.h>
@@ -6,27 +7,6 @@
 // Single-use, 56-byte allocation view, established by the independent
 // constructor/deleter calls and native allocation length; full original
 // class identity and the +0x18 word's purpose remain unknown.
-class GlyphSurfaceF188 {
-public:
-    HWND window;
-    HDC deviceContext;
-    HFONT font;
-    HGDIOBJ previouslySelectedFont;
-    int fontHeight;
-    BYTE *glyphBitmap;
-    DWORD unresolvedWordAt24;
-    DWORD glyphHeight;
-    DWORD glyphWidth;
-    DWORD glyphPitch;
-    BYTE red, green, blue;
-    int ascent;
-    LONG glyphX, glyphY;
-    GlyphSurfaceF188(HWND);
-    ~GlyphSurfaceF188();
-    void ConfigureFont(const char*, int, BYTE, BYTE, BYTE);
-    void Rasterize(const char*, void*, int, int, int, int, int, BYTE, char);
-};
-typedef char GlyphSizeCheckF191[(sizeof(GlyphSurfaceF188)==56)?1:-1];
 
 extern const char g_MusicUnknownTrackAt00657C46[];
 extern const char g_MusicUnknownTitleAt00657C56[];
@@ -50,9 +30,9 @@ void MusicDetailsF191::RenderSelectedDetails(signed char selected)
 
     D3DLOCKED_RECT locked;
     if (AT(IDirect3DTexture8*, 0x0C)->LockRect(0, &locked, 0, 0) == D3D_OK) {
-        GlyphSurfaceF188 *glyph = new GlyphSurfaceF188(0);
+        FontSurface *glyph = new FontSurface(0);
         glyph->ConfigureFont(g_MusicSelectedFontAt00657C48, 16, 120, 120, 255);
-        glyph->Rasterize(message, locked.pBits, 512, 512, 528, 0, 2, 4, 40);
+        glyph->RasterizeText(message, locked.pBits, 512, 512, 528, 0, 2, 4, 40);
         delete glyph;
         AT(IDirect3DTexture8*, 0x0C)->UnlockRect(0);
     }
@@ -64,9 +44,9 @@ void MusicDetailsF191::RenderSelectedDetails(signed char selected)
                 selected+1, TRACK_FIELD(const char*, 0x24), TRACK_FIELD(const char*, 0x20));
 
     if (AT(IDirect3DTexture8*, 0x18)->LockRect(0, &locked, 0, 0) == D3D_OK) {
-        GlyphSurfaceF188 *glyph = new GlyphSurfaceF188(0);
+        FontSurface *glyph = new FontSurface(0);
         glyph->ConfigureFont(g_MusicNumberedFontAt00657C68, 16, 120, 120, 255);
-        glyph->Rasterize(message, locked.pBits, 512, 32, 528, 0, 2, 4, 40);
+        glyph->RasterizeText(message, locked.pBits, 512, 32, 528, 0, 2, 4, 40);
         delete glyph;
         AT(IDirect3DTexture8*, 0x18)->UnlockRect(0);
     }

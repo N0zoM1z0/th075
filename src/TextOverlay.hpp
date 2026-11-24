@@ -1,17 +1,17 @@
 #ifndef TH075_TEXT_OVERLAY_HPP
 #define TH075_TEXT_OVERLAY_HPP
 #include <windows.h>
+#include "TextureManagerF198.hpp"
 
 struct IDirect3DTexture8;
-class FontGlyphRasterF317;
+class FontSurface;
 
-// The text overlay that menus and the battle notices draw through
-// (g_TextRenderer). Callers still use their own declarations of these three
-// methods, whose parameter types the original call sites need.
 class TextOverlay {
 public:
+    TextOverlay();
+    ~TextOverlay();
     void DrawBox();                                                 // 00412EB0
-    void ConfigureText(DWORD xBits, DWORD yBits, unsigned char mode);  // 00413420 x and y arrive as raw float bits
+    void ConfigureText(float positionX, float positionY, unsigned char mode);
     void RenderTextToTexture(const char* text, unsigned char r, unsigned char g,
                              unsigned char b, unsigned char color, unsigned char depth,
                              unsigned char restore);                // 00413460
@@ -38,10 +38,16 @@ public:
     unsigned char field014;             // +0x14
     signed char field015;               // +0x15
     unsigned char unknown016[0x018 - 0x016];
-    FontGlyphRasterF317* raster;        // +0x18
+    FontSurface* raster;        // +0x18
     float field01C;                     // +0x1C
     float field020;                     // +0x20
     unsigned char field024;             // +0x24
     unsigned char mode;                 // +0x25
+    unsigned char unknown026[2];
+    TextureManagerF198 textureManager;  // +0x28
 };
+
+typedef char TextOverlaySize[(sizeof(TextOverlay) == 120) ? 1 : -1];
+
+extern TextOverlay* g_TextRenderer;
 #endif

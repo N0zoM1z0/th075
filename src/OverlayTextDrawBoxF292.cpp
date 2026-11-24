@@ -1,50 +1,33 @@
 #include "TextOverlay.hpp"
-#include <windows.h>
+#include "GraphicsTexturedDraw.hpp"
+#include "SpriteGeometryF211.hpp"
+#include "SpriteQuad.hpp"
+#include "SpriteTransform.hpp"
 
-// 136 bytes are the actual native observed quad transformation extent on the
-// stack. Its private geometry members are not asserted from caller accesses.
-class OverlayQuadF292 {
-    unsigned int observedPhysicalWords[34];
-public:
-    void AssignRect(const RECT* rect);
-    void BuildFromRect(const RECT* rect);
-    void Scale(float,float,float,float,DWORD,float);
-    void Translate(float,float,float);
-    void TranslateRaw(DWORD,DWORD,DWORD);
-};
-typedef char AssertOverlayQuadF292[(sizeof(OverlayQuadF292)==136)?1:-1];
-namespace OverlayDrawerF292 {
-    void DrawQuad(OverlayQuadF292* transformed,const RECT* source,DWORD tint,DWORD image);
-}
-class OverlayTextureF292 {public:
-    void ApplyMode(int style,OverlayQuadF292* quad,const RECT* source,DWORD tint);
-};
-extern const float g_OverlayMinScaleAt0065747C;
-extern const float g_OverlayScaleDeltaAt006578C0;
-#define TRANSLATE(x,y) quad.Translate((x),(y),0.0f)
-#define DRAW(color) OverlayDrawerF292::DrawQuad(&quad,&source,(color),textureBits)
-#define SCALE() quad.Scale(0.0f,39.0f,0.0f,1.0f,field010Bits,1.0f)
+#define TRANSFORM reinterpret_cast<SpriteTransform*>(&quad)
+#define TRANSLATE(x,y) TRANSFORM->TranslateQuad((x),(y),0.0f)
+#define DRAW(color) Graphics::DrawTexturedQuad(reinterpret_cast<const float (*)[4]>(&quad), &source, (color), texture)
+#define SCALE() TRANSFORM->ScaleQuad(0.0f,39.0f,0.0f,1.0f,field010,1.0f)
 void TextOverlay::DrawBox()
 {
     RECT source;
-    OverlayQuadF292 quad;
     SetRect(&source,0,0,571,78);
-    quad.AssignRect(&source);
+    SpriteRectF211 quad(&source);
     SCALE();
-    quad.TranslateRaw((xBits),(yBits),0);
+    TRANSFORM->TranslateQuad(x,y,0.0f);
     if ((mode))
-        reinterpret_cast<OverlayTextureF292*>(reinterpret_cast<unsigned char*>(this)+0x28)->ApplyMode(0,&quad,&source,0xffffffff);
+        textureManager.DrawQuad(0, reinterpret_cast<const SpriteQuad40CA80&>(quad), &source, 0xffffffff);
     else
         (field010)=1.0f;
-    if ((field010)<g_OverlayMinScaleAt0065747C) {
-        (field010)=(field010)+g_OverlayScaleDeltaAt006578C0;
+    if ((field010)<1.0f) {
+        (field010)=(field010)+0.05f;
         return;
     }
     {
         SetRect(&source,0,0,571,((field024)+6)*(field015));
-        quad.BuildFromRect(&source);
+        TRANSFORM->BuildQuadFromRect(&source);
         SCALE();
-        quad.TranslateRaw((xBits),(yBits),0);
+        TRANSFORM->TranslateQuad(x,y,0.0f);
         TRANSLATE(9.0f,9.0f);
         TRANSLATE(-1.0f,0.0f);
         DRAW(0xff000000);
@@ -60,9 +43,9 @@ void TextOverlay::DrawBox()
         TRANSLATE(-1.0f,0.0f);
         DRAW(0xffffffff);
         SetRect(&source,0,((field024)+6)*(field015),571,128);
-        quad.BuildFromRect(&source);
+        TRANSFORM->BuildQuadFromRect(&source);
         SCALE();
-        quad.TranslateRaw((xBits),(yBits),0);
+        TRANSFORM->TranslateQuad(x,y,0.0f);
         if ((field00C)<0xff)
             (field00C)+=10;
         TRANSLATE(9.0f,9.0f);
@@ -84,3 +67,4 @@ void TextOverlay::DrawBox()
 #undef SCALE
 #undef DRAW
 #undef TRANSLATE
+#undef TRANSFORM

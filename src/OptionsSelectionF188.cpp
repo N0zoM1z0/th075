@@ -1,35 +1,9 @@
+#include "FontSurface.hpp"
 #include "OptionsScene.hpp"
 #include <windows.h>
 #include <d3d8.h>
 #include <stdio.h>
 
-// Physical 56-byte GDI glyph allocation view derived from native caller size and
-// the FontSurface constructor/font/rasterizer/destructor accesses. Names and
-// the unobserved +0x18 data word remain provisional; no original class identity.
-// This is used only for the native ephemeral new/delete lifetime, never embedded.
-class GlyphSurfaceF188 {
-public:
-    HWND window;
-    HDC deviceContext;
-    HFONT font;
-    HGDIOBJ previouslySelectedFont;
-    int fontHeight;
-    BYTE *glyphBitmap;
-    DWORD unresolvedWordAt24;
-    DWORD glyphHeight;
-    DWORD glyphWidth;
-    DWORD glyphPitch;
-    BYTE red, green, blue;
-    int ascent;
-    LONG glyphX;
-    LONG glyphY;
-
-    GlyphSurfaceF188(HWND);
-    ~GlyphSurfaceF188();
-    void ConfigureFont(const char*, int, BYTE, BYTE, BYTE);
-    void Rasterize(const char*, void*, int, int, int, int, int, BYTE, char);
-};
-typedef char GlyphSizeCheckF188[(sizeof(GlyphSurfaceF188) == 56) ? 1 : -1];
 extern const char g_OptionsMessage0[];
 extern const char g_OptionsMessage1[];
 extern const char g_OptionsMessage2[];
@@ -54,9 +28,9 @@ void OptionsScene::Apply(unsigned char index)
     }
     D3DLOCKED_RECT lock;
     if (canvas->LockRect(0, &lock, 0, 0) == D3D_OK) {
-        GlyphSurfaceF188* glyph = new GlyphSurfaceF188(0);
+        FontSurface* glyph = new FontSurface(0);
         glyph->ConfigureFont(g_OptionsFontFamily, 16, 255, 255, 255);
-        glyph->Rasterize(message, lock.pBits, 1024, 512, 560, 0, 10, 4, 40);
+        glyph->RasterizeText(message, lock.pBits, 1024, 512, 560, 0, 10, 4, 40);
         delete glyph;
         canvas->UnlockRect(0);
     }
