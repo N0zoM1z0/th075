@@ -19,7 +19,7 @@ case 0x390: {
         color[2]=0xFF;
         color[3]=0xFF;
         rotationZ=AngleAt00483300(
-            velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+            velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
     }
     ++field0D8;
     if (animationStage<2) {
@@ -40,10 +40,10 @@ case 0x390: {
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1125_YUpperAt00657884 ||
-        y<g_F1101_LeftAt0065924C) {
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::SixHundredForty ||
+        y<GeometryConstants::NegativeHundredTwenty) {
         ClearFrameInfo();
         return;
     }

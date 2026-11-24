@@ -15,7 +15,7 @@ case 0xD2: {
         PlaySharedSound(0x2C);
 #endif
         SpawnBattleEffect(F652_SPRITE,x,
-                (y)+g_ContactProjectionAt00657888,
+                (y)+GeometryConstants::Hundred,
                 facing,1);
 #if !F652_SCALE_BEFORE
         velocityX=(velocityX)*FloatConstants::Quarter;

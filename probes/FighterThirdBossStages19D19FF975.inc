@@ -22,7 +22,7 @@ case 0x19D: {
         field318=15.0f;
         SpawnBattleEffect(0x326,
             float((47-(scriptCounterF02)*10)*(facing))+(x),
-            (*(&y))+g_F969_RoundY192At00658264+(scriptCounterF02)*20,
+            (*(&y))+GeometryConstants::Sixty+(scriptCounterF02)*20,
             facing,1);
         scriptCounterF00=2;
         ++scriptCounterF02;
@@ -47,7 +47,7 @@ case 0x19E: {
         field314=float(0-(scriptCounterF02)*4);
         field318=15.0f;
         SpawnBattleEffect(0x326,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         scriptCounterF00=2;
         ++scriptCounterF02;
@@ -81,7 +81,7 @@ case 0x19F: {
         field314=float(-45-(scriptCounterF02)*4);
         field318=15.0f;
         SpawnBattleEffect(0x326,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         scriptCounterF00=2;
         ++scriptCounterF02;

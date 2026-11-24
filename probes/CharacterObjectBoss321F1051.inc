@@ -52,8 +52,8 @@ case 0x321: {
         velocityX=
             float(facing) *
             (owner->opponent->x-x) /
-            g_F1051_TrajectoryUpperAt006590C4;
-        if (velocityX<g_F1051_TrajectoryLowerAt00658290)
+            GeometryConstants::Twelve;
+        if (velocityX<GeometryConstants::Six)
             velocityX=6.0f;
         velocityY=-24.0f;
     }

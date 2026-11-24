@@ -20,7 +20,7 @@ case 0x2C2: {
         ResetPrimaryCounters(0);
         fieldF12=1;
         Fighter::SpawnTrackedEffect(0x332,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             1,1,0,1);
         break;
     }
@@ -33,7 +33,7 @@ case 0x2C2: {
         SetNonnegativeWord(0x64);
         PlaySharedSound(0x17);
         PlaySound(9);
-        field36C=(field36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
@@ -63,7 +63,7 @@ case 0x2C3: {
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
         Fighter::SpawnTrackedEffect(0x32F,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             1,1,0,1);
     }
     if ((animationStage)==5 && (animationFrame)==0) {
@@ -75,7 +75,7 @@ case 0x2C3: {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         PlaySound(0xA);
-        field36C=(field36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),

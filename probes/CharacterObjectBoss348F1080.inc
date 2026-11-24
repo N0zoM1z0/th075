@@ -14,14 +14,14 @@ case 0x348: {
     }
     SetPolarVelocity(
         float(owner->fieldF0E)+
-             g_F1080_ParentScaleAt006590A8*static_cast<const float&>(field0C8),
+             GeometryConstants::HundredTwenty*static_cast<const float&>(field0C8),
         float(field0D8));
     if (field0D8<120)
         field0D8=short(field0D8+20);
     if (field0D8>120)
         field0D8=120;
     x=velocityX+owner->x;
-    y=velocityY+owner->y+g_F1057_YOffsetAt00657888;
+    y=velocityY+owner->y+GeometryConstants::Hundred;
     rotationZ=(rotationZ)+FloatConstants::Ten;
     if (animationStage==1) {
         if (owner->action!=0x2BE ||

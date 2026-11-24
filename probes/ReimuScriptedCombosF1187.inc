@@ -26,7 +26,7 @@
 #define R1186_ANGLE3 -60.0f
 #define R1186_ANGLE4 -70.0f
 #define R1186_X_OFFSET 67
-#define R1186_Y_OFFSET g_ReimuDownVolleyYAt0065826C
+#define R1186_Y_OFFSET GeometryConstants::SeventyFive
 #include "ReimuAirFiveShotAttackF1187.inc"
 #undef R1187_ACTION
 #undef R1186_ANGLE0
@@ -162,7 +162,7 @@
 #define R1187_ANGLE_BIAS1 -28
 #define R1187_ANGLE_BIAS2 -28
 #define R1187_X_OFFSET 67
-#define R1187_Y_OFFSET g_ReimuDownVolleyYAt0065826C
+#define R1187_Y_OFFSET GeometryConstants::SeventyFive
 #define R1187_SPEED 25.0f
 #define R1187_EFFECT 0x33b
 #define R1187_REPEAT_LIMIT 4
@@ -302,7 +302,7 @@ case 0x1A1: {
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=30.0f; field318=8.0f;
         SpawnBattleEffect(0x32C,float(facing*12)+(x),
-            (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
+            (*(&y))+GeometryConstants::HundredTwenty,facing,1);
         PlaySound(1);
         UpdateGaugeTimer(200);
     }

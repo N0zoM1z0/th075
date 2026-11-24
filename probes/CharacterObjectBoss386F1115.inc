@@ -2,9 +2,9 @@
 // PE 0051B21D..0051B5AF, 914 native CODE B /195 ordered x86.
 // One true state of ONE still-NONEXACT 81KB CharacterObject::Advance.
 case 0x386: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
@@ -32,7 +32,7 @@ case 0x386: {
             FloatConstants::OneTenth+g_F1115_RandomDoubleAt006583B8;
         scaleY=scaleX;
         if (AbsFloatAt00412D90(x-
-            owner->opponent->x)<g_F1115_DistanceAt0065786C) {
+            owner->opponent->x)<GeometryConstants::Twenty) {
             velocityX=0.0f;
             scaleX=1.0f;
             scaleY=1.0f;
@@ -48,7 +48,7 @@ case 0x386: {
         for (int shot=0;shot<12;++shot) {
             owner->SpawnBattleEffect(
                 0x387,
-                (*(&x))+g_F1069_ParentYSecondAt00658264-float(RecordedRange(0,80)),
+                (*(&x))+GeometryConstants::Sixty-float(RecordedRange(0,80)),
                 float(RecordedRange(0,320)),
                 facing,1);
         }

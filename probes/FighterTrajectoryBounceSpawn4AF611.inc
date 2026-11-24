@@ -37,8 +37,8 @@ case 0x4A: {
 #if F610_PREPARE_BEFORE
         PlaySharedSound(0x16);
 #endif
-        scriptCounterF00=static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX) * GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY) * GeometryConstants::Hundred);
         ClearMotionFields();
         y=0.0f;
         ResetPrimaryCounters(0x61);

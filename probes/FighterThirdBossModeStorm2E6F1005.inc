@@ -59,8 +59,8 @@ case 0x2E6: {
     }
     if ((animationStage)<8 && (animationStage)>1)
         Fighter::SpawnTrackedEffect(0x33E,
-            float(RecordedRange(0,120))+(x)-g_F983_XOffsetAt00658264,
-            ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RecordedRange(0,90)),
+            float(RecordedRange(0,120))+(x)-GeometryConstants::Sixty,
+            ((*(&y))-GeometryConstants::Fifteen)+float(RecordedRange(0,90)),
             1,1,0,1);
     if ((animationStage)>10 && (animationStage)<17 && (scriptCounterF02)==0) {
         ++scriptCounterF02;

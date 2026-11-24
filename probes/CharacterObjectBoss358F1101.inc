@@ -25,8 +25,8 @@ case 0x358: {
             0x359,x,y,
             facing,1);
     }
-    if (x>g_F1101_RightAt00659424 ||
-        x<g_F1101_LeftAt0065924C) {
+    if (x>GeometryConstants::FourteenHundred ||
+        x<GeometryConstants::NegativeHundredTwenty) {
         ClearFrameInfo();
         return;
     }

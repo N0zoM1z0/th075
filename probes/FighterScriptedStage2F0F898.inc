@@ -35,7 +35,7 @@ case 0x2F0: {
     if ((animationStage)==8 && (animationFrame)==0) {
         PlaySound(0xD);
         SpawnBattleEffect(0x38D,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             (facing),1);
     }
     if (AdvanceNestedFrame()==(animationStageCount))

@@ -9,7 +9,7 @@ case 0x3E6: {
         return;
     }
     x = owner->x;
-    y=(*(&owner->y))+g_F1057_YOffsetAt00657888;
+    y=(*(&owner->y))+GeometryConstants::Hundred;
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;

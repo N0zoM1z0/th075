@@ -1,44 +1,28 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 // Reconstruction of MarisaObject::Advance at 0049C8F0.
 #include "CharacterObject.hpp"
 #include "MarisaFighter.hpp"
 
-extern const float g_MarisaEffectYOffsetAt00657888;
-extern const float g_MarisaBeamYOffsetAt006590A4;
 extern const float g_MarisaBeamYOffsetAt00659294;
 extern const float g_MarisaBeamFadeAt00659454;
-extern const float g_MarisaAuraYOffsetAt0065929C;
-extern const float g_MarisaAuraYOffsetAt00658400;
-extern const float g_MarisaAuraYOffsetAt006581DC;
 extern const float g_MarisaAuraGrowthAt006590B8;
 extern const float g_MarisaAuraGrowthAt006583F8;
 extern const float g_MarisaAuraHeightDecayAt00659450;
 extern const float g_MarisaAuraHeightScaleAt00659060;
 extern const double g_MarisaAuraJitterAt00659448;
 
-extern const float g_MarisaSpiritHorizontalHitLowerAt00659230;
-extern const float g_MarisaSpiritHorizontalHitUpperAt0065786C;
 extern const double g_MarisaSpiritSpiritGaugeLimitAt00659228;
-extern const float g_MarisaSpiritVerticalHitLowerAt00658268;
-extern const float g_MarisaSpiritVerticalHitUpperAt006590A8;
 extern float __cdecl AngleAt00483300(float y, float x);
 
 extern const float g_MarisaFollowShrinkAt006590BC;
-extern const float g_MarisaAngleUnitAt00657828;
-extern const float g_MarisaShotRightLimitAt0065925C;
-extern const float g_MarisaShotLeftLimitAt00659258;
-extern const float g_MarisaShotUpperLimitAt006583B4;
 extern const double g_MarisaSparkBaseGrowthAt00659430;
 extern const double g_MarisaSparkInitialGrowthAt00659438;
 extern const double g_MarisaSparkGrowthLossAt00659440;
-extern const float g_MarisaFollowYOffsetAt00659138;
-extern const float g_MarisaFollowYOffsetAt00658264;
 
 extern const float g_MarisaFragmentGrowthAt00659428;
-extern const float g_MarisaStreakRightLimitAt00659424;
 extern const float g_MarisaStreakLeftLimitAt00658344;
-extern const float g_MarisaStreakYOffsetAt00659420;
 extern const float g_MarisaStreakRightLimitAt006583D8;
 extern const float g_MarisaStreakLeftLimitAt0065941C;
 extern const float g_MarisaStreakRightLimitAt00659418;
@@ -46,29 +30,18 @@ extern const float g_MarisaStreakLeftLimitAt00659414;
 
 extern const float g_MarisaTrackingRightLimitAt00659410;
 extern const float g_MarisaTrackingLeftLimitAt00658404;
-extern const float g_MarisaTrackingUpperLimitAt00658E80;
 extern const float g_MarisaTrackingFadeGrowthAt006578C0;
 extern const double g_MarisaChainJitterAt00659408;
 
 extern const double g_MarisaDustGrowthAt006593F8;
 extern const double g_MarisaDustDecayAt00659400;
 extern const float g_MarisaFollowYOffsetAt00659280;
-extern const float g_MarisaFollowYOffsetAt00659270;
 extern const float g_MarisaStarScaleAt006593F4;
-extern const float g_MarisaStarUpperLimitAt00657884;
-extern const float g_MarisaStarLowerLimitAt0065924C;
-extern const float g_MarisaShowerSpreadAt00658268;
-extern const float g_MarisaShowerSpreadAt006590AC;
 
 extern const float g_MarisaVolleyLeftLimitAt006593F0;
 extern const float g_MarisaVolleyRightLimitAt006593EC;
-extern const float g_MarisaVolleyUpperLimitAt0065920C;
-extern const float g_MarisaBeamContactForceAt00658290;
-extern const float g_MarisaShowerAngleOffsetAt0065786C;
-extern const float g_MarisaStormTargetSpacingAt0065788C;
 extern const float g_MarisaStormLeftSpeedAt00659268;
 extern const float g_MarisaStormScaleLimitAt006593E8;
-extern const float g_MarisaStormSpreadAt006590A8;
 
 void MarisaObject::Advance()
 {
@@ -86,7 +59,7 @@ void MarisaObject::Advance()
     case 800:
         if (owner->action == 400 && field0D8 == 0) {
             x = owner->x + static_cast<float>(facing * 100);
-            y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+            y = (owner->y) + GeometryConstants::Hundred;
         }
         if (owner->action > 49 && owner->action < 150 && animationStage < 20) {
             ResetSecondaryCounter(20);
@@ -179,7 +152,7 @@ void MarisaObject::Advance()
     case 801:
         if (owner->action == 402 && field0D8 == 0) {
             x = owner->x + static_cast<float>(facing * 100);
-            y = (owner->y) + g_MarisaBeamYOffsetAt006590A4;
+            y = (owner->y) + GeometryConstants::SixtySix;
         }
         if (owner->action > 49 && owner->action < 150 && animationStage < 20) {
             ResetSecondaryCounter(20);
@@ -436,7 +409,7 @@ void MarisaObject::Advance()
     case 806:
         if ((owner->action == 700 && animationStage < 6) || owner->action == 701) {
             x = owner->x + static_cast<float>(facing * 32);
-            y = (owner->y) + g_MarisaAuraYOffsetAt006581DC;
+            y = (owner->y) + GeometryConstants::Ninety;
         }
         if (owner->action != 701 &&
             (owner->action != 700 || owner->animationStage >= 6) &&
@@ -494,7 +467,7 @@ void MarisaObject::Advance()
     case 807:
         if (owner->action == 394) {
             x = owner->x + static_cast<float>(facing * 151);
-            y = (owner->y) + g_MarisaAuraYOffsetAt0065929C;
+            y = (owner->y) + GeometryConstants::HundredFour;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -518,7 +491,7 @@ void MarisaObject::Advance()
     case 808:
         if (owner->action == 395) {
             x = owner->x + static_cast<float>(facing * 128);
-            y = (owner->y) + g_MarisaAuraYOffsetAt00658400;
+            y = (owner->y) + GeometryConstants::Seventy;
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -544,7 +517,7 @@ void MarisaObject::Advance()
             (owner->action == 751 && owner->animationStage < 12) ||
             (owner->action == 752 && owner->animationStage < 12)) {
             x = owner->x + static_cast<float>(facing * 64);
-            y = (owner->y) + g_MarisaAuraYOffsetAt006581DC;
+            y = (owner->y) + GeometryConstants::Ninety;
         }
         if (owner->action != 701 &&
             (owner->action != 700 || owner->animationStage >= 6) &&
@@ -627,7 +600,7 @@ void MarisaObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            rotationZ = AngleAt00483300(velocityY, velocityX) / g_MarisaAngleUnitAt00657828;
+            rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         }
         if (field07C == 5) {
             ClearFrameInfo();
@@ -649,8 +622,8 @@ void MarisaObject::Advance()
         SetPolarVelocity(static_cast<float>(field0DC), field0DA * FloatConstants::OneHundredth);
         x = facing * velocityX + x;
         y = y - velocityY;
-        if (x > g_MarisaShotRightLimitAt0065925C || x < g_MarisaShotLeftLimitAt00659258 ||
-            y > g_MarisaShotUpperLimitAt006583B4) {
+        if (x > GeometryConstants::ThirteenHundredEighty || x < GeometryConstants::NegativeHundred ||
+            y > GeometryConstants::Thousand) {
             ClearFrameInfo();
             return;
         }
@@ -723,8 +696,8 @@ void MarisaObject::Advance()
         SetPolarVelocity(static_cast<float>(field0DC), field0DA * FloatConstants::OneHundredth);
         x = facing * velocityX + x;
         y = y - velocityY;
-        if (x > g_MarisaShotRightLimitAt0065925C || x < g_MarisaShotLeftLimitAt00659258 ||
-            y > g_MarisaShotUpperLimitAt006583B4) {
+        if (x > GeometryConstants::ThirteenHundredEighty || x < GeometryConstants::NegativeHundred ||
+            y > GeometryConstants::Thousand) {
             ClearFrameInfo();
             return;
         }
@@ -774,7 +747,7 @@ void MarisaObject::Advance()
             field080 = 1;
             field07C = 0;
             field0D8 = static_cast<short>(
-                AngleAt00483300(velocityY, velocityX) / g_MarisaAngleUnitAt00657828);
+                AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree);
             SetPolarVelocity(static_cast<float>(field0D8 - 20 + RecordedRange(0, 40)), 2.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
@@ -858,16 +831,16 @@ void MarisaObject::Advance()
         if (owner->action > 0x95 && owner->action < 0x9A &&
             animationStage == 0) {
             x = owner->x + static_cast<float>(facing * 0x39);
-            y = (owner->y) + g_MarisaFollowYOffsetAt00659138;
+            y = (owner->y) + GeometryConstants::NinetyFour;
         }
         if (owner->action > 0x99 && owner->action < 0x9E &&
             animationStage == 0) {
             x = owner->x + static_cast<float>(facing * 0x39);
-            y = (owner->y) + g_MarisaFollowYOffsetAt00658264;
+            y = (owner->y) + GeometryConstants::Sixty;
         }
         if (owner->action == 0x9E && animationStage == 0) {
             x = owner->x + static_cast<float>(facing * 0x39);
-            y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+            y = (owner->y) + GeometryConstants::Hundred;
         }
         if ((owner->action < 0x96 || owner->action > 0x9E) &&
             animationStage == 0) {
@@ -1016,7 +989,7 @@ void MarisaObject::Advance()
     case 820:
         if ((owner->action == 700 && owner->animationStage < 6) || owner->action == 701) {
             x = owner->x + static_cast<float>(facing * 32);
-            y = (owner->y) + g_MarisaAuraYOffsetAt006581DC;
+            y = (owner->y) + GeometryConstants::Ninety;
         }
         if (owner->action != 701 &&
             (owner->action != 700 || owner->animationStage >= 6) &&
@@ -1107,7 +1080,7 @@ void MarisaObject::Advance()
     case 823:
         if (owner->action == 400 && field0D8 == 0) {
             x = owner->x + static_cast<float>(facing * 120);
-            y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+            y = (owner->y) + GeometryConstants::Hundred;
         }
         if (field07C == 6) {
             field07C = 0;
@@ -1165,7 +1138,7 @@ void MarisaObject::Advance()
         }
         x = facing * velocityX + x;
         y = y + velocityY;
-        if (x > g_MarisaStreakRightLimitAt00659424 || x < g_MarisaStreakLeftLimitAt00658344) {
+        if (x > GeometryConstants::FourteenHundred || x < g_MarisaStreakLeftLimitAt00658344) {
             ClearFrameInfo();
         }
         velocityY = velocityY - field05C;
@@ -1190,9 +1163,9 @@ void MarisaObject::Advance()
             velocityY = 0.0f;
         }
         owner->SpawnBattleEffect(844, x - static_cast<float>(facing * 75),
-            (y) + g_MarisaStreakYOffsetAt00659420, -facing, 1);
+            (y) + GeometryConstants::TwoHundredTwenty, -facing, 1);
         owner->SpawnBattleEffect(844, x - static_cast<float>(facing * 75),
-            (y) + g_MarisaStreakYOffsetAt00659420, -facing, 1);
+            (y) + GeometryConstants::TwoHundredTwenty, -facing, 1);
         owner->SpawnAuxEffect(130, x, 0.0f, facing, 1);
         if (facing > 0 && owner->x < x && owner->animationStage == 4 && owner->action == 704) {
             owner->velocityX = 80.0f;
@@ -1288,7 +1261,7 @@ void MarisaObject::Advance()
             x = owner->x;
         }
         if (animationStage < 5 || animationStage == 6) {
-            y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+            y = (owner->y) + GeometryConstants::Hundred;
         }
         owner->fieldF0C = static_cast<short>(x);
         owner->fieldF0E = static_cast<short>(y);
@@ -1392,7 +1365,7 @@ void MarisaObject::Advance()
             x = owner->x;
         }
         if (animationStage < 7 || animationStage == 8) {
-            y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+            y = (owner->y) + GeometryConstants::Hundred;
         }
         owner->fieldF0C = static_cast<short>(x);
         owner->fieldF0E = static_cast<short>(y);
@@ -1455,8 +1428,8 @@ void MarisaObject::Advance()
             static_cast<MarisaFighter*>(owner)->fieldF12 = 6;
             facing = owner->facing;
             field0DC = static_cast<short>(AngleAt00483300(
-                ((owner->opponent->y) + g_MarisaEffectYOffsetAt00657888) - y,
-                (owner->opponent->x - x) * facing) / g_MarisaAngleUnitAt00657828);
+                ((owner->opponent->y) + GeometryConstants::Hundred) - y,
+                (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree);
             field0DA = 80;
         }
         if (animationStage == 6 && owner->action == 715 &&
@@ -1475,7 +1448,7 @@ void MarisaObject::Advance()
             if (((x > g_MarisaTrackingRightLimitAt00659410 && facing * velocityX > FloatConstants::Zero) ||
                  (x < g_MarisaTrackingLeftLimitAt00658404 && facing * velocityX < FloatConstants::Zero) ||
                  (y < g_MarisaTrackingLeftLimitAt00658404 && velocityY > FloatConstants::Zero) ||
-                 (y > g_MarisaTrackingUpperLimitAt00658E80 && velocityY < FloatConstants::Zero)) &&
+                 (y > GeometryConstants::TwelveHundredEighty && velocityY < FloatConstants::Zero)) &&
                 field0DE > 0) {
                 static_cast<MarisaFighter*>(owner)->fieldF12 = 99;
                 ResetSecondaryCounter(9);
@@ -1486,8 +1459,8 @@ void MarisaObject::Advance()
             }
             if (field0DA == 0) {
                 field0DC = static_cast<short>(AngleAt00483300(
-                    ((owner->opponent->y) + g_MarisaEffectYOffsetAt00657888) - y,
-                    (owner->opponent->x - x) * facing) / g_MarisaAngleUnitAt00657828);
+                    ((owner->opponent->y) + GeometryConstants::Hundred) - y,
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree);
                 field0DE = 1;
             }
             --field0DA;
@@ -1552,7 +1525,7 @@ void MarisaObject::Advance()
     case 837:
         if ((owner->action == 712 && owner->animationStage < 6) || owner->action == 713) {
             x = owner->x + static_cast<float>(facing * 32);
-            y = (owner->y) + g_MarisaAuraYOffsetAt006581DC;
+            y = (owner->y) + GeometryConstants::Ninety;
         }
         if (owner->action != 713 &&
             (owner->action != 712 || owner->animationStage >= 6) &&
@@ -1617,7 +1590,7 @@ void MarisaObject::Advance()
     case 838:
         if ((owner->action == 712 && animationStage < 6) || owner->action == 713) {
             x = owner->x + static_cast<float>(facing * 64);
-            y = (owner->y) + g_MarisaAuraYOffsetAt006581DC;
+            y = (owner->y) + GeometryConstants::Ninety;
         }
         if (owner->action != 712 &&
             (owner->action != 713 || owner->animationStage >= 6) &&
@@ -1883,7 +1856,7 @@ void MarisaObject::Advance()
         }
         if (owner->action == 701 || owner->action == 713) {
             x = owner->x - static_cast<float>(facing * 82);
-            y = (owner->y) + g_MarisaFollowYOffsetAt00659270;
+            y = (owner->y) + GeometryConstants::HundredThirtyTwo;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(0);
@@ -1916,7 +1889,7 @@ void MarisaObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            rotationZ = AngleAt00483300(velocityY, velocityX) / g_MarisaAngleUnitAt00657828;
+            rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         }
         ++field0D8;
         if (animationStage < 2) {
@@ -1939,8 +1912,8 @@ void MarisaObject::Advance()
             y = 0.0f;
             return;
         }
-        if (x > g_MarisaShotRightLimitAt0065925C || x < g_MarisaShotLeftLimitAt00659258 ||
-            y > g_MarisaStarUpperLimitAt00657884 || y < g_MarisaStarLowerLimitAt0065924C) {
+        if (x > GeometryConstants::ThirteenHundredEighty || x < GeometryConstants::NegativeHundred ||
+            y > GeometryConstants::SixHundredForty || y < GeometryConstants::NegativeHundredTwenty) {
             ClearFrameInfo();
             return;
         }
@@ -1965,7 +1938,7 @@ void MarisaObject::Advance()
         if ((owner->action == 751 && owner->animationStage < 12) ||
             (owner->action == 752 && owner->animationStage < 12)) {
             x = owner->x - static_cast<float>(facing * 82);
-            y = (owner->y) + g_MarisaFollowYOffsetAt00659270;
+            y = (owner->y) + GeometryConstants::HundredThirtyTwo;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(0);
@@ -2042,11 +2015,11 @@ void MarisaObject::Advance()
         }
         if (animationStage == 1 && animationFrame == 0) {
             owner->SpawnBattleEffect(852,
-                static_cast<float>(RecordedRange(0, 160)) + x - g_MarisaShowerSpreadAt00658268,
-                static_cast<float>(RecordedRange(0, 160)) + y - g_MarisaShowerSpreadAt00658268, facing, 1);
+                static_cast<float>(RecordedRange(0, 160)) + x - GeometryConstants::Eighty,
+                static_cast<float>(RecordedRange(0, 160)) + y - GeometryConstants::Eighty, facing, 1);
             owner->SpawnBattleEffect(853,
-                static_cast<float>(RecordedRange(0, 220)) + x - g_MarisaShowerSpreadAt006590AC,
-                static_cast<float>(RecordedRange(0, 220)) + y - g_MarisaShowerSpreadAt006590AC, facing, 1);
+                static_cast<float>(RecordedRange(0, 220)) + x - GeometryConstants::HundredTen,
+                static_cast<float>(RecordedRange(0, 220)) + y - GeometryConstants::HundredTen, facing, 1);
             ++field0D8;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -2150,7 +2123,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2191,7 +2164,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2232,7 +2205,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2273,7 +2246,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2285,8 +2258,8 @@ void MarisaObject::Advance()
     case 921:
         if (owner->action == 751 && owner->animationStage < 12) {
             x = owner->x + static_cast<float>(facing * 32);
-            y = (owner->y) + g_MarisaAuraYOffsetAt006581DC;
-            owner->field490 = (facing * owner->opponent->facing) * g_MarisaBeamContactForceAt00658290 *
+            y = (owner->y) + GeometryConstants::Ninety;
+            owner->field490 = (facing * owner->opponent->facing) * GeometryConstants::Six *
                 (2 * ((owner->opponent->x - owner->x) * facing > FloatConstants::Zero ? 1 : 0) - 1);
             owner->SetCameraShake(3.0f);
         }
@@ -2345,8 +2318,8 @@ void MarisaObject::Advance()
     case 922:
         if (owner->action == 752 && owner->animationStage < 12) {
             x = owner->x + static_cast<float>(facing * 32);
-            y = (owner->y) + g_MarisaAuraYOffsetAt006581DC;
-            owner->field490 = (facing * owner->opponent->facing) * g_MarisaBeamContactForceAt00658290 *
+            y = (owner->y) + GeometryConstants::Ninety;
+            owner->field490 = (facing * owner->opponent->facing) * GeometryConstants::Six *
                 (2 * ((owner->opponent->x - owner->x) * facing > FloatConstants::Zero ? 1 : 0) - 1);
             owner->SetCameraShake(3.0f);
         }
@@ -2420,7 +2393,7 @@ void MarisaObject::Advance()
             field07C = 0;
             field080 = 1;
             field0D8 = 0;
-            field0DA = static_cast<short>(field0C8 - RecordedRange(0, 40) + g_MarisaShowerAngleOffsetAt0065786C);
+            field0DA = static_cast<short>(field0C8 - RecordedRange(0, 40) + GeometryConstants::Twenty);
             field0DC = RecordedRange(0, 60) + 150;
         }
         SetPolarVelocity(static_cast<float>(field0DA), field0DC * FloatConstants::OneTenth);
@@ -2448,7 +2421,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2491,7 +2464,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2534,7 +2507,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2577,7 +2550,7 @@ void MarisaObject::Advance()
             }
         }
         if (x < g_MarisaVolleyLeftLimitAt006593F0 || x > g_MarisaVolleyRightLimitAt006593EC ||
-            y < FloatConstants::Zero || y > g_MarisaVolleyUpperLimitAt0065920C) {
+            y < FloatConstants::Zero || y > GeometryConstants::NineHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2604,10 +2577,10 @@ void MarisaObject::Advance()
         ++field0D8;
         --field0DA;
         velocityX = 0.0f;
-        if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
+        if (x < owner->opponent->x - GeometryConstants::Fifty) {
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
-        if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
+        if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
@@ -2623,7 +2596,7 @@ void MarisaObject::Advance()
             owner->SetCameraShake(4.0f);
             owner->field314 = -90.0f;
             owner->SpawnBattleEffect(923,
-                ((x) + g_MarisaStormSpreadAt006590A8) - static_cast<float>(RecordedRange(0, 240)),
+                ((x) + GeometryConstants::HundredTwenty) - static_cast<float>(RecordedRange(0, 240)),
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
@@ -2667,10 +2640,10 @@ void MarisaObject::Advance()
         ++field0D8;
         --field0DA;
         velocityX = 0.0f;
-        if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
+        if (x < owner->opponent->x - GeometryConstants::Fifty) {
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
-        if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
+        if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
@@ -2686,7 +2659,7 @@ void MarisaObject::Advance()
             owner->SetCameraShake(4.0f);
             owner->field314 = -90.0f;
             owner->SpawnBattleEffect(923,
-                ((x) + g_MarisaStormSpreadAt006590A8) - static_cast<float>(RecordedRange(0, 240)),
+                ((x) + GeometryConstants::HundredTwenty) - static_cast<float>(RecordedRange(0, 240)),
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
@@ -2730,10 +2703,10 @@ void MarisaObject::Advance()
         ++field0D8;
         --field0DA;
         velocityX = 0.0f;
-        if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
+        if (x < owner->opponent->x - GeometryConstants::Fifty) {
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
-        if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
+        if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
@@ -2749,7 +2722,7 @@ void MarisaObject::Advance()
             owner->SetCameraShake(4.0f);
             owner->field314 = -90.0f;
             owner->SpawnBattleEffect(923,
-                ((x) + g_MarisaStormSpreadAt006590A8) - static_cast<float>(RecordedRange(0, 240)),
+                ((x) + GeometryConstants::HundredTwenty) - static_cast<float>(RecordedRange(0, 240)),
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
@@ -2793,10 +2766,10 @@ void MarisaObject::Advance()
         ++field0D8;
         --field0DA;
         velocityX = 0.0f;
-        if (x < owner->opponent->x - g_MarisaStormTargetSpacingAt0065788C) {
+        if (x < owner->opponent->x - GeometryConstants::Fifty) {
             velocityX = g_OptionsModeAt006714D0 * FloatConstants::Half + FloatConstants::One;
         }
-        if (x > (owner->opponent->x) + g_MarisaStormTargetSpacingAt0065788C) {
+        if (x > (owner->opponent->x) + GeometryConstants::Fifty) {
             velocityX = g_MarisaStormLeftSpeedAt00659268 - g_OptionsModeAt006714D0 * FloatConstants::Half;
         }
         if (field0D8 < 120 && scaleX < g_MarisaStarScaleAt006593F4) {
@@ -2812,7 +2785,7 @@ void MarisaObject::Advance()
             owner->SetCameraShake(4.0f);
             owner->field314 = -90.0f;
             owner->SpawnBattleEffect(923,
-                ((x) + g_MarisaStormSpreadAt006590A8) - static_cast<float>(RecordedRange(0, 240)),
+                ((x) + GeometryConstants::HundredTwenty) - static_cast<float>(RecordedRange(0, 240)),
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
@@ -2845,7 +2818,7 @@ void MarisaObject::Advance()
         }
         else {
             x = owner->x;
-            y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+            y = (owner->y) + GeometryConstants::Hundred;
             field08A = 1;
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -2896,7 +2869,7 @@ void MarisaObject::Advance()
         }
         else {
             x = owner->x;
-            y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+            y = (owner->y) + GeometryConstants::Hundred;
             field08A = 1;
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
@@ -2908,7 +2881,7 @@ void MarisaObject::Advance()
                 color[3] = 0xFF;
             }
             scaleX = static_cast<float>(static_cast<MarisaFighter*>(owner)->fieldF32) /
-                g_MarisaFollowYOffsetAt00658264;
+                GeometryConstants::Sixty;
             scaleY = scaleX;
             if (animationStage == 0) {
                 if (color[0] < 0xE6) {
@@ -2967,13 +2940,13 @@ void MarisaObject::Advance()
         }
         if (animationStage == 1) {
             field0D8 = static_cast<short>(AngleAt00483300(
-                ((owner->opponent->y) + g_MarisaEffectYOffsetAt00657888) - y,
-                owner->opponent->x - x) / g_MarisaAngleUnitAt00657828);
+                ((owner->opponent->y) + GeometryConstants::Hundred) - y,
+                owner->opponent->x - x) / GeometryConstants::RadiansPerDegree);
             SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
-            if (x - owner->opponent->x < g_MarisaSpiritHorizontalHitUpperAt0065786C &&
-                x - owner->opponent->x > g_MarisaSpiritHorizontalHitLowerAt00659230 &&
-                y - owner->opponent->y < g_MarisaSpiritVerticalHitUpperAt006590A8 &&
-                y - owner->opponent->y > g_MarisaSpiritVerticalHitLowerAt00658268) {
+            if (x - owner->opponent->x < GeometryConstants::Twenty &&
+                x - owner->opponent->x > GeometryConstants::NegativeTwenty &&
+                y - owner->opponent->y < GeometryConstants::HundredTwenty &&
+                y - owner->opponent->y > GeometryConstants::Eighty) {
                 ++owner->fieldEFA;
                 PlaySharedSound(0x2E);
                 ClearFrameInfo();
@@ -3037,13 +3010,13 @@ void MarisaObject::Advance()
         }
         if (animationStage == 1) {
             field0D8 = static_cast<short>(AngleAt00483300(
-                ((owner->opponent->y) + g_MarisaEffectYOffsetAt00657888) - y,
-                owner->opponent->x - x) / g_MarisaAngleUnitAt00657828);
+                ((owner->opponent->y) + GeometryConstants::Hundred) - y,
+                owner->opponent->x - x) / GeometryConstants::RadiansPerDegree);
             SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
-            if (x - owner->opponent->x < g_MarisaSpiritHorizontalHitUpperAt0065786C &&
-                x - owner->opponent->x > g_MarisaSpiritHorizontalHitLowerAt00659230 &&
-                y - owner->opponent->y < g_MarisaSpiritVerticalHitUpperAt006590A8 &&
-                y - owner->opponent->y > g_MarisaSpiritVerticalHitLowerAt00658268) {
+            if (x - owner->opponent->x < GeometryConstants::Twenty &&
+                x - owner->opponent->x > GeometryConstants::NegativeTwenty &&
+                y - owner->opponent->y < GeometryConstants::HundredTwenty &&
+                y - owner->opponent->y > GeometryConstants::Eighty) {
                 ClearFrameInfo();
                 if (owner->opponent->field366 < 2) {
                     ++owner->opponent->field366;
@@ -3087,13 +3060,13 @@ void MarisaObject::Advance()
         }
         if (animationStage == 1) {
             field0D8 = static_cast<short>(AngleAt00483300(
-                ((owner->opponent->y) + g_MarisaEffectYOffsetAt00657888) - y,
-                owner->opponent->x - x) / g_MarisaAngleUnitAt00657828);
+                ((owner->opponent->y) + GeometryConstants::Hundred) - y,
+                owner->opponent->x - x) / GeometryConstants::RadiansPerDegree);
             SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
-            if (x - owner->opponent->x < g_MarisaSpiritHorizontalHitUpperAt0065786C &&
-                x - owner->opponent->x > g_MarisaSpiritHorizontalHitLowerAt00659230 &&
-                y - owner->opponent->y < g_MarisaSpiritVerticalHitUpperAt006590A8 &&
-                y - owner->opponent->y > g_MarisaSpiritVerticalHitLowerAt00658268) {
+            if (x - owner->opponent->x < GeometryConstants::Twenty &&
+                x - owner->opponent->x > GeometryConstants::NegativeTwenty &&
+                y - owner->opponent->y < GeometryConstants::HundredTwenty &&
+                y - owner->opponent->y > GeometryConstants::Eighty) {
                 ++owner->fieldEFA;
                 PlaySharedSound(0x2E);
                 ClearFrameInfo();
@@ -3174,7 +3147,7 @@ void MarisaObject::Advance()
             return;
         }
         x = owner->x;
-        y = (owner->y) + g_MarisaEffectYOffsetAt00657888;
+        y = (owner->y) + GeometryConstants::Hundred;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;

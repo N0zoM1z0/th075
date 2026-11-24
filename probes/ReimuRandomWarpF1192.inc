@@ -22,7 +22,7 @@ case 0x2EF: {
         PlaySound(12);
         field314=float(scriptCounterF00);
         SpawnBattleEffect(0x394,float(facing*80)+(x),
-            (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
+            (*(&y))+GeometryConstants::HundredTwenty,facing,1);
         aiCardTimer=120;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
@@ -30,7 +30,7 @@ case 0x2EF: {
         aiCardTimer=RecordedRange(0,60)+120-g_OptionsModeAt006714D0*40;
     }
     if ((animationStage)==3 && (animationFrame)==0) {
-        x=((*(&opponent->x))+g_ReimuWarpSpreadAt006583B4)-float(RecordedRange(0,2000));
+        x=((*(&opponent->x))+GeometryConstants::Thousand)-float(RecordedRange(0,2000));
         y=200.0f;
         velocityX=FloatConstants::Three-float(RecordedRange(0,6));
         velocityY=6.0f;

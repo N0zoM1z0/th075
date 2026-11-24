@@ -17,7 +17,7 @@ case 0x31B: {
         SelectResourceParameters();
         PlaySharedSound(0x17);
         SpawnBattleEffect(0x3E5,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             facing,1);
     }
     if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)<8) {

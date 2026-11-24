@@ -6,9 +6,9 @@
 // The C++ source declares real per-case values; no fake locals/ASM.
 // Original actor X/Y, target grandparent X/Y and actual native game calls.
 case F1057_CASE: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
@@ -49,9 +49,9 @@ case F1057_CASE: {
     }
     if (animationStage<=1) {
         field0DA=short(AngleAt00483300(
-            (owner->opponent->y-y)+g_F1057_YOffsetAt00657888,
+            (owner->opponent->y-y)+GeometryConstants::Hundred,
             (owner->opponent->x-x)*float(facing)) /
-            g_F1057_AngleDivAt00657828);
+            GeometryConstants::RadiansPerDegree);
         if (field0DA>field0DC+10)
             field0DC=short(field0DC+1);
         if (field0DA<field0DC-10)
@@ -64,7 +64,7 @@ case F1057_CASE: {
     if (animationStage<=1) {
         SetPolarVelocity(
             float(field0DC),
-            float(field0D8)*FloatConstants::OneTenth+g_F1057_SpeedBaseAt00657CBC);
+            float(field0D8)*FloatConstants::OneTenth+GeometryConstants::Fifteen);
         owner->SpawnBattleEffect(
             F1057_NEXT_CASE, x,y,
             facing,1);
@@ -74,9 +74,9 @@ case F1057_CASE: {
     }
     field0D8=short(field0D8+2);
     if (animationStage>0 && field0DA<60) {
-        if ((*(&owner->opponent->y))+g_F1057_YOffsetAt00657888<y)
+        if ((*(&owner->opponent->y))+GeometryConstants::Hundred<y)
             field0C8=(field0C8)+FloatConstants::Two;
-        if ((*(&owner->opponent->y))+g_F1057_YOffsetAt00657888>y)
+        if ((*(&owner->opponent->y))+GeometryConstants::Hundred>y)
             field0C8=(field0C8)-FloatConstants::Two;
         ++field0DA;
     }

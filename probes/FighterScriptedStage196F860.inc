@@ -14,7 +14,7 @@ case 0x196: {
         PlaySound(3);
         SpawnBattleEffect(0x353,
             float((facing)*100)+(x),
-            (*(&y))+g_F860ShotYAt006581DC,
+            (*(&y))+GeometryConstants::Ninety,
             (facing),1);
         UpdateGaugeTimer(0xC8);
     }

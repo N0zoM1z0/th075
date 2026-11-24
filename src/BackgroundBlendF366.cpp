@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "BackgroundStageBaseF479.hpp"
 
 // Three separately addressed BG02 stage overrides share the same original
@@ -11,22 +12,21 @@ public:
 
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
-extern const float g_BGOffsetXAt00657834;
 
 void BackgroundBlendF366::ApplyBG02aBlend() {
-    int x = static_cast<int>(g_CombatViewOffsetX + g_BGOffsetXAt00657834);
+    int x = static_cast<int>(g_CombatViewOffsetX + GeometryConstants::HundredSixty);
     int y = static_cast<int>(g_CombatViewOffsetY);
     textureManager.SetBlendMode(0);
 }
 
 void BackgroundBlendF366::ApplyBG02bBlend() {
-    int x = static_cast<int>(g_CombatViewOffsetX + g_BGOffsetXAt00657834);
+    int x = static_cast<int>(g_CombatViewOffsetX + GeometryConstants::HundredSixty);
     int y = static_cast<int>(g_CombatViewOffsetY);
     textureManager.SetBlendMode(0);
 }
 
 void BackgroundBlendF366::ApplyBG02cBlend() {
-    int x = static_cast<int>(g_CombatViewOffsetX + g_BGOffsetXAt00657834);
+    int x = static_cast<int>(g_CombatViewOffsetX + GeometryConstants::HundredSixty);
     int y = static_cast<int>(g_CombatViewOffsetY);
     textureManager.SetBlendMode(0);
 }

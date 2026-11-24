@@ -19,17 +19,17 @@ case 0x194: {
         field314=float((scriptCounterF02)*4-8);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
-             (*(&y))+g_F970_YAt006590AC,
+             (*(&y))+GeometryConstants::HundredTen,
              facing,1);
         field314=float((scriptCounterF02)*4-4);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
-             (*(&y))+g_F970_YAt006590AC,
+             (*(&y))+GeometryConstants::HundredTen,
              facing,1);
         field314=float((scriptCounterF02)*4-12);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
-             (*(&y))+g_F970_YAt006590AC,
+             (*(&y))+GeometryConstants::HundredTen,
              facing,1);
         scriptCounterF00=2;
         ++scriptCounterF02;
@@ -61,17 +61,17 @@ case 0x195: {
         field314=float((scriptCounterF02)*4-45);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
-             (*(&y))+g_F970_YAt006590AC,
+             (*(&y))+GeometryConstants::HundredTen,
              facing,1);
         field314=float((scriptCounterF02)*4-41);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
-             (*(&y))+g_F970_YAt006590AC,
+             (*(&y))+GeometryConstants::HundredTen,
              facing,1);
         field314=float((scriptCounterF02)*4-49);
         field318=7.0f;
         SpawnBattleEffect(0x320,x,
-             (*(&y))+g_F970_YAt006590AC,
+             (*(&y))+GeometryConstants::HundredTen,
              facing,1);
         scriptCounterF00=2;
         ++scriptCounterF02;

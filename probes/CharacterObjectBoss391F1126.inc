@@ -41,7 +41,7 @@ case 0x391: {
     if (scaleX==FloatConstants::One &&
         g_OptionsModeAt006714D0>1) {
         if (velocityX>FloatConstants::Zero &&
-            x>g_F1083_YBoundAt00658E80) {
+            x>GeometryConstants::TwelveHundredEighty) {
             velocityX=-velocityX;
         }
         if (velocityX<FloatConstants::Zero &&

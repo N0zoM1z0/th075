@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
@@ -6,15 +7,9 @@
 // Natural-C++ reconstruction of RemiliaFighter::Advance at 00543210.
 
 extern float g_F759_C8DecelAt006593E8;
-extern float g_F759_C9DecelAt00658290;
-extern float g_F701_VolleyYAt00658268;
-extern float g_F699_SideEdgeAt00657884;
-extern float g_F699_DistanceAt0065787C;
-extern float g_AnimationMaximumAt006583B4;
 extern float g_FallingLateDragAt00659240;
 extern float g_SlowPositiveDragAt006578C0;
 extern float g_ShotPositiveDragAt00659A10;
-extern float g_FloatAddAt00657CBC;
 extern float g_F734_RoundY0At00659A30;
 extern float g_F734_RoundY1At00659A2C;
 extern float g_F734_RoundY2At00659A28;
@@ -25,43 +20,20 @@ extern float g_F740_ShotY1At0065928C;
 extern float g_F740_ShotY2At00659A18;
 extern float g_F743_Y19CAt00659A14;
 extern float g_F743_Y1A0At00659288;
-extern float g_YPlusAt0065929C;
-extern float g_YPlusAt00658400;
-extern float g_BarrageY1At006591EC;
-extern float g_BarrageY2At006581DC;
 extern float g_BarrageY3At0065908C;
-extern float g_EightShotY0At006591F8;
-extern float g_EightShotY1At00658264;
-extern float g_EightShotY2At00658268;
 extern float g_OneShotYAt0065928C;
-extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
 extern float g_F711_ReverseRandomAt00659A0C;
 extern float g_F714_ShotYAt00657868;
-extern float g_F715_DecisionHeightAt006593D0;
-extern float g_F722_BurstYAt0065826C;
 extern float g_F722_LowYAt00659A10;
 extern float g_F724_ShotYAt00659488;
-extern float g_F728_RandomOffsetXAt00657878;
-extern float g_F728_RandomOffsetYAt00657858;
-extern float g_F731_AimOffsetAt00657CBC;
-extern float g_TrajectoryUpperAt006590C4;
-extern float g_ContactProjectionAt00657888;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_FallDecelerationAt00659888;
 extern float g_CloudGravityAt0065785C;
-extern float g_CloudShotYAt006591E4;
 extern float g_StormAngleShotYAt00659A18;
-extern float g_StormAngleDenominatorAt00657828;
 extern float g_StormYAt0065948C;
-extern float g_BurstXAt00659238;
-extern float g_BurstXAt00658400;
-extern float g_BurstXAt00659420;
-extern float g_BurstXAt00658370;
-extern float g_BurstXAt006590A8;
 extern float g_BounceThresholdAt006590C0;
-extern float g_AngleShiftAt00657878;
 void RemiliaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -281,7 +253,7 @@ void RemiliaFighter::Advance() {
 #define CONTACT_STAGE_OFFSET 0xF00
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
-#define TRAJECTORY_LOWER_THRESHOLD g_ApproachLowerAt00658290
+#define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
 #define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
 #define TRAJECTORY_MINIMUM_SPEED 6.0f
 #define TRAJECTORY_MAXIMUM_SPEED 25.0f
@@ -339,8 +311,8 @@ void RemiliaFighter::Advance() {
                 field07C = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
-                scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-                scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+                scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+                scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x59);
@@ -708,13 +680,13 @@ void RemiliaFighter::Advance() {
                 scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
-                field36C=(field36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 PlaySound(9);
                 SpawnAuxEffect(0x73,
                     x-float(facing*20),
-                    (*(&y))+g_BurstXAt00659238,
+                    (*(&y))+GeometryConstants::HundredEighty,
                     facing,1);
                 Fighter::SpawnTrackedEffect(0x334,x,y,
                     facing,1,0,1);
@@ -724,11 +696,11 @@ void RemiliaFighter::Advance() {
             if (animationStage==12 && animationFrame==0) {
                 SpawnBattleEffect(0x328,
                     float(facing*65)+(x),
-                    (*(&y))+g_BarrageY1At006591EC,
+                    (*(&y))+GeometryConstants::HundredForty,
                     facing,1);
                 SpawnBattleEffect(0x33C,
                     float(facing*65)+(x),
-                    (*(&y))+g_BarrageY1At006591EC,
+                    (*(&y))+GeometryConstants::HundredForty,
                     facing,1);
                 UpdateGaugeTimer(500);
                 PlaySound(10);
@@ -767,12 +739,12 @@ void RemiliaFighter::Advance() {
             if (animationFrame==0)
                 field07C=0;
             if (animationStage==1 && animationFrame==0) {
-                field36C=(field36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 SpawnAuxEffect(0x73,
                     x-float(facing*46),
-                    (*(&y))+g_F722_BurstYAt0065826C,
+                    (*(&y))+GeometryConstants::SeventyFive,
                     facing,1);
             }
             if (animationStage==7 && animationFrame==0) {
@@ -807,9 +779,9 @@ void RemiliaFighter::Advance() {
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 SpawnAuxEffect(0x74,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
-                field36C=(field36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-GeometryConstants::Hundred;
             }
             if (animationStage>3 && animationStage<11) {
                 velocityY=velocityY-g_F722_LowYAt00659A10;
@@ -859,13 +831,13 @@ void RemiliaFighter::Advance() {
                 scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
-                field36C=(field36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
                 PlaySound(13);
                 SpawnAuxEffect(0x74,
                     x-float(facing*20),
-                    (*(&y))+g_BurstXAt00659238,
+                    (*(&y))+GeometryConstants::HundredEighty,
                     facing,1);
                 Fighter::SpawnTrackedEffect(0x334,x,y,
                     facing,1,0,1);
@@ -876,11 +848,11 @@ void RemiliaFighter::Advance() {
                 UpdateGaugeTimer(750);
                 SpawnBattleEffect(0x32B,
                     float(facing*65)+(x),
-                    (*(&y))+g_BarrageY1At006591EC,
+                    (*(&y))+GeometryConstants::HundredForty,
                     facing,1);
                 SpawnBattleEffect(0x33D,
                     float(facing*65)+(x),
-                    (*(&y))+g_BarrageY1At006591EC,
+                    (*(&y))+GeometryConstants::HundredForty,
                     facing,1);
                 PlaySound(14);
             }
@@ -924,9 +896,9 @@ void RemiliaFighter::Advance() {
                 PlaySharedSound(23);
                 SpawnAuxEffect(0x74,
                     x-float(facing*46),
-                    (*(&y))+g_F722_BurstYAt0065826C,
+                    (*(&y))+GeometryConstants::SeventyFive,
                     facing,1);
-                field36C=(field36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-GeometryConstants::Hundred;
             }
             if (animationStage==7 && animationFrame==0) {
                 SpawnAuxEffect(0x3C,x,y,

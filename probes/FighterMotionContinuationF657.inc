@@ -22,7 +22,7 @@
                 SetCameraShake(2.0f);
                 SpawnBattleEffect(0x325,
                     float(facing*170)+(x),
-                    (y)-g_ApproachLowerAt00658290,
+                    (y)-GeometryConstants::Six,
                     facing,0);
             }
             break;

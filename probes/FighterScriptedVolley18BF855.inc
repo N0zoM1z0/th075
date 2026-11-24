@@ -26,7 +26,7 @@ case 0x18B: {
     if ((animationStage)==6 && (animationFrame)==0) {
         SpawnBattleEffect(0x328,
             float((facing)*128)+(x),
-            (*(&y))+g_F855ShotYAt00658400,
+            (*(&y))+GeometryConstants::Seventy,
             (facing),1);
     }
     return;

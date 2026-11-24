@@ -18,9 +18,9 @@ case F1074_CASE: {
         }
         return;
     }
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
@@ -48,8 +48,8 @@ case F1074_CASE: {
     // argument is evaluated first under original MSVC7.1 /Od.
     owner->SpawnBattleEffect(
         0x32B,
-        float(RecordedRange(0,60))+x-g_F1068_ActionSpeedAt00657878,
-        float(RecordedRange(0,60))+y-g_F1068_ActionSpeedAt00657878,
+        float(RecordedRange(0,60))+x-GeometryConstants::Thirty,
+        float(RecordedRange(0,60))+y-GeometryConstants::Thirty,
         facing,0);
     if (field080==0) {
         ClearFrameInfo();

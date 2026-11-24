@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "MarisaFighter.hpp"
@@ -18,13 +19,8 @@ class MarisaRendererF356 {
 public:
     void DrawProjectileChain(int texture, const void* records, int count);
 };
-extern const float g_MarisaAngleStepAt00657828;
 extern const float g_MarisaParticleDepthAt006582E0;
 extern const float g_MarisaPhaseDivisorAAt00659310;
-extern const float g_MarisaPhaseDivisorBAt0065788C;
-extern const float g_MarisaPhaseMultiplierAt00657878;
-extern const float g_MarisaCameraOffsetXAt00657834;
-extern const float g_MarisaCameraOffsetYAt00657830;
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
 struct NativeMarisaQuadF362 { DWORD words[34]; void Construct(); };
@@ -54,7 +50,7 @@ void MarisaFighter::RenderChain() {
 #define phaseB state.phaseB
 #define angle state.angle
 #define radius state.radius
-    xShift=g_CombatViewOffsetX-g_MarisaCameraOffsetXAt00657834;
+    xShift=g_CombatViewOffsetX-GeometryConstants::HundredSixty;
     yOrigin=g_CombatViewOffsetY;
     reinterpret_cast<TextureManagerF198*>(DRAWER)->SetBlendMode(2);
     for(i=1;i<=8;++i) {
@@ -63,20 +59,20 @@ void MarisaFighter::RenderChain() {
         angle=static_cast<short>(i*100);
         radius=static_cast<short>(static_cast<float>(i*10+50)*(field1010));
         for(j=0;j<36;++j) {
-            quad.first.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
-            quad.first.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
+            quad.first.x=CameraCosineAt0040D900(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
+            quad.first.y=CameraSineAt0040D940(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
             quad.first.z=0.0f;
-            quad.fourth.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
-            quad.fourth.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*FloatConstants::Ten)*radius;
+            quad.fourth.x=CameraCosineAt0040D900(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
+            quad.fourth.y=CameraSineAt0040D940(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
             quad.fourth.z=g_MarisaParticleDepthAt006582E0*field1010/FloatConstants::Two;
             reinterpret_cast<SpriteTransform*>(&quad)->RotateQuad(
               0.0f,0.0f,0.0f,
-              float(phaseA)+CameraSineAt0040D940(float(i*6)+float(fieldEF8)/g_MarisaPhaseDivisorBAt0065788C)*g_MarisaPhaseMultiplierAt00657878,
-              float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(fieldEF8)/g_MarisaPhaseDivisorAAt00659310)*g_MarisaPhaseMultiplierAt00657878,
+              float(phaseA)+CameraSineAt0040D940(float(i*6)+float(fieldEF8)/GeometryConstants::Fifty)*GeometryConstants::Thirty,
+              float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(fieldEF8)/g_MarisaPhaseDivisorAAt00659310)*GeometryConstants::Thirty,
               float((fieldEF8)*5+i*5));
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(
               float((field1014)*angle)+(field1008),-(field100C),0.0f);
-            reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(xShift,yOrigin+g_MarisaCameraOffsetYAt00657830,0.0f);
+            reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(xShift,yOrigin+GeometryConstants::FourHundredTwenty,0.0f);
             chain[j*2].x=quad.first.x;
             chain[j*2].y=quad.first.y;
             chain[j*2].z=quad.first.z;

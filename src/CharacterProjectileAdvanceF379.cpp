@@ -1,12 +1,9 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "CharacterObject.hpp"
 // Complete 855-byte native projectile-behaviour branch of AliceObject.
 // Called by the seven projectile action states of AliceObject::Advance.
 extern float AngleAt00483300(float,float);
-extern const float g_AngleUnitAt00657828;
-extern const float g_ProjectMinXAt006595EC;
-extern const float g_ProjectMaxXAt00659424;
-extern const float g_ProjectMaxYAt006583B4;
 extern const float g_ProjectScaleF379At00659454;
 void AliceObject::AdvanceProjectileBehavior() {
     if (field07C==5) {
@@ -33,7 +30,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             color[1]=255;
             color[2]=255;
             color[3]=255;
-            rotationZ=AngleAt00483300(velocityY,velocityX)/g_AngleUnitAt00657828;
+            rotationZ=AngleAt00483300(velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
         }
         if ((field07C==1 || field07C==2 || field07C==4 || field07C==6) && animationStage<2) {
             ResetSecondaryCounter(2);
@@ -50,7 +47,7 @@ void AliceObject::AdvanceProjectileBehavior() {
                 scaleX=(scaleX)*g_ProjectScaleF379At00659454;
                 scaleY=scaleX;
             }
-            if(x>g_ProjectMaxXAt00659424 || x<g_ProjectMinXAt006595EC || y>g_ProjectMaxYAt006583B4 || y<g_ProjectMinXAt006595EC)
+            if(x>GeometryConstants::FourteenHundred || x<GeometryConstants::NegativeHundredSixty || y>GeometryConstants::Thousand || y<GeometryConstants::NegativeHundredSixty)
                 ClearFrameInfo();
             else if (AdvanceNestedFrame()==animationStageCount) ClearFrameInfo();
         }

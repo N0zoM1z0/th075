@@ -19,10 +19,10 @@ case 0xCA: {
         field05C=0.6f;
         SpawnAuxEffect(0x7D,
             float((facing)*80)+(x),
-            (*(&y))+g_F950_CAVolleyYAt00658400,
+            (*(&y))+GeometryConstants::Seventy,
             facing,1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_F950_CAVolleyYAt00658400,
+            (*(&y))+GeometryConstants::Seventy,
             facing,1);
         PlaySharedSound(31);
     }

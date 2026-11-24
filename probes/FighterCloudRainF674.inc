@@ -22,10 +22,10 @@
                     scriptCounterF02=0;
                     PlaySound(0x10);
                     SpawnBattleEffect(0x389,x,
-                        (*(&y))+g_CloudShotYAt006591E4,
+                        (*(&y))+GeometryConstants::TwoHundredFifty,
                         facing,1);
                     SpawnBattleEffect(0x38A,x,
-                        (*(&y))+g_CloudShotYAt006591E4,
+                        (*(&y))+GeometryConstants::TwoHundredFifty,
                         facing,1);
                 }
             }
@@ -48,7 +48,7 @@
             }
             if ((animationStage)==5 && (animationFrame)==0)
                 SpawnBattleEffect(0x38B,x,
-                    (*(&y))+g_CloudShotYAt006591E4,
+                    (*(&y))+GeometryConstants::TwoHundredFifty,
                     facing,1);
             if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<25) {
                 ResetSecondaryCounter(5);

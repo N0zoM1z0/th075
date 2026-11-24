@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include <math.h>
@@ -50,4 +51,58 @@ const float Five = 5.0f;
 const float Ten = 10.0f;
 const double HalfDouble = 0.5;
 const double ThreeQuartersDouble = 0.75;
+}
+
+namespace GeometryConstants {
+const float Six = 6.0f;
+const float Eight = 8.0f;
+const float Twelve = 12.0f;
+const float Fifteen = 15.0f;
+const float Sixteen = 16.0f;
+const float Nineteen = 19.0f;
+const float Twenty = 20.0f;
+const float Thirty = 30.0f;
+const float Forty = 40.0f;
+const float FortyFive = 45.0f;
+const float Fifty = 50.0f;
+const float Sixty = 60.0f;
+const float SixtySix = 66.0f;
+const float Seventy = 70.0f;
+const float SeventyFive = 75.0f;
+const float Eighty = 80.0f;
+const float Ninety = 90.0f;
+const float NinetyFour = 94.0f;
+const float Hundred = 100.0f;
+const float HundredFour = 104.0f;
+const float HundredTen = 110.0f;
+const float HundredFourteen = 114.0f;
+const float HundredTwenty = 120.0f;
+const float HundredTwentyFive = 125.0f;
+const float HundredTwentyEight = 128.0f;
+const float HundredThirtyTwo = 132.0f;
+const float HundredForty = 140.0f;
+const float HundredFifty = 150.0f;
+const float HundredSixty = 160.0f;
+const float HundredSeventy = 170.0f;
+const float HundredEighty = 180.0f;
+const float TwoHundred = 200.0f;
+const float TwoHundredTwenty = 220.0f;
+const float TwoHundredForty = 240.0f;
+const float TwoHundredFifty = 250.0f;
+const float TwoHundredEighty = 280.0f;
+const float ThreeHundredTwenty = 320.0f;
+const float DegreesPerTurn = 360.0f;
+const float FourHundredTwenty = 420.0f;
+const float FourHundredEighty = 480.0f;
+const float SixHundredForty = 640.0f;
+const float NineHundredSixty = 960.0f;
+const float Thousand = 1000.0f;
+const float TwelveHundredEighty = 1280.0f;
+const float ThirteenHundredEighty = 1380.0f;
+const float FourteenHundred = 1400.0f;
+const float NegativeTwenty = -20.0f;
+const float NegativeHundred = -100.0f;
+const float NegativeHundredTwenty = -120.0f;
+const float NegativeHundredSixty = -160.0f;
+const float RadiansPerDegree = 0.0174532887f;
 }

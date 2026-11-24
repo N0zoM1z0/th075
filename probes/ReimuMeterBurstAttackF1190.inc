@@ -17,13 +17,13 @@ case R1190_ACTION: {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
         SpawnAuxEffect(R1190_AUX_EFFECT,x-float(facing*2),
-            (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
-        field36C=(field36C)-g_ContactProjectionAt00657888;
+            (*(&y))+GeometryConstants::HundredTwenty,facing,1);
+        field36C=(field36C)-GeometryConstants::Hundred;
         UpdateGaugeTimer(500);
     }
     if ((animationStage)==4 && (animationFrame)==0) {
         Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+FloatConstants::Zero,
-            (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
+            (*(&y))+GeometryConstants::TwoHundred,facing,1,0,1);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<13) {
         ++scriptCounterF00;

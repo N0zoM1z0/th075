@@ -7,11 +7,11 @@
                 scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
-                field36C=(field36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
                 PlaySharedSound(0x17);
                 SpawnAuxEffect(0x73,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
             }
             if ((animationStage)>3 && (animationStage)<11) {

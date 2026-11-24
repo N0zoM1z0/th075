@@ -30,7 +30,7 @@
                     opponent->y-y,
                     (opponent->x-x)
                         *static_cast<float>(facing))
-                    /g_StormAngleDenominatorAt00657828;
+                    /GeometryConstants::RadiansPerDegree;
                 SpawnBattleEffect(0x391,
                     float(facing*30)+(x),
                     (*(&y))+g_StormAngleShotYAt00659A18,

@@ -13,7 +13,7 @@ case 0x349: {
         field0D8=0;
     }
     x = owner->x;
-    y=(*(&owner->y))+g_F1081_ParentYOffsetAt00658268;
+    y=(*(&owner->y))+GeometryConstants::Eighty;
     rotationZ=(rotationZ)-FloatConstants::Five;
     if (animationStage==1) {
         if (owner->action!=0x2BE ||

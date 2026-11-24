@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
@@ -11,7 +12,6 @@
 
 float __cdecl AngleAt00483300(float, float);
 float __cdecl AbsFloatAt00412D90(float);
-extern float g_F1211_AngleDivAt00657828;
 
 void SuikaObject::Advance()
 {
@@ -667,7 +667,7 @@ void SuikaObject::Advance()
             rotationZ = RecordedRange(0, 359);
             field0DC = AngleAt00483300(
                 owner->opponent->y + 20.0f - y,
-                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
             SetPolarVelocity(field0DC, 36.0f);
         }
         x = facing * velocityX + x;
@@ -808,7 +808,7 @@ void SuikaObject::Advance()
             rotationZ = RecordedRange(0, 359);
             field0DC = AngleAt00483300(
                 owner->opponent->y + 20.0f - y,
-                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
             SetPolarVelocity(field0DC, 36.0f);
         }
         x = facing * velocityX + x;
@@ -972,7 +972,7 @@ void SuikaObject::Advance()
         }
         if (animationStage == 1) {
             field0D8 = AngleAt00483300(
-                owner->y + 100.0f - y, owner->x - x) / g_F1211_AngleDivAt00657828;
+                owner->y + 100.0f - y, owner->x - x) / GeometryConstants::RadiansPerDegree;
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->x < 20.0f && x - owner->x > -20.0f &&
                 y - owner->y < 120.0f && y - owner->y > 80.0f) {
@@ -1015,7 +1015,7 @@ void SuikaObject::Advance()
                 color[3] = 255;
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, 30.0f);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 field07C = 0;
                 field080 = 1;
             }
@@ -1616,7 +1616,7 @@ void SuikaObject::Advance()
                 }
                 field0DA = AngleAt00483300(
                     owner->opponent->y - y + 100.0f,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 if (field0DC > field0DA) {
                     if (field0DC - field0DA <= 180) {
                         field0DC = field0DC - 1;
@@ -1659,7 +1659,7 @@ void SuikaObject::Advance()
                 }
                 field0DA = AngleAt00483300(
                     owner->y - y,
-                    (owner->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 if (field0DC > field0DA) {
                     if (field0DC - field0DA <= 180) {
                         field0DC = field0DC - 3;
@@ -1750,8 +1750,8 @@ void SuikaObject::Advance()
                     }
                     else if (animationStage == 1 && animationFrame == 0) {
                         SetPolarVelocity(AngleAt00483300(owner->opponent->y + 100.0f - y,
-                            (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828, 6.0f);
-                        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                            (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree, 6.0f);
+                        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                         field07C = 0;
                         field080 = 1;
                     }
@@ -1840,7 +1840,7 @@ void SuikaObject::Advance()
                         rotationZ = RecordedRange(0, 359);
                         field0DC = AngleAt00483300(
                             static_cast<SuikaFighter*>(owner)->fieldF24 - y,
-                            (static_cast<SuikaFighter*>(owner)->fieldF22 - x) * facing) / g_F1211_AngleDivAt00657828;
+                            (static_cast<SuikaFighter*>(owner)->fieldF22 - x) * facing) / GeometryConstants::RadiansPerDegree;
                         SetPolarVelocity(field0DC, 36.0f);
                     }
                     x = facing * velocityX + x;
@@ -1951,7 +1951,7 @@ void SuikaObject::Advance()
                 ResetSecondaryCounter(1);
                 field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 SetPolarVelocity(field0DC, g_OptionsModeAt006714D0 * 3 + 15);
             }
             if (animationStage == 1 && y < 0.0f) {
@@ -2124,7 +2124,7 @@ void SuikaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
                 SetPolarVelocity(-field0D0 + 180.0f, 30.0f);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             x = facing * velocityX + x;
             y -= velocityY;
@@ -2196,7 +2196,7 @@ void SuikaObject::Advance()
                 else if (animationStage == 3 && animationFrame == 0) {
                     owner->PlaySound(16);
                     SetPolarVelocity(AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828, 5.0f);
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree, 5.0f);
                 }
             }
         }
@@ -2258,7 +2258,7 @@ void SuikaObject::Advance()
                     }
                     else if (animationStage == 1 && animationFrame == 0) {
                         SetPolarVelocity(field0C8, 20.0f);
-                        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     }
                 }
             }
@@ -2582,7 +2582,7 @@ void SuikaObject::Advance()
                 else if (animationStage == 3 && animationFrame == 0) {
                     owner->PlaySound(16);
                     SetPolarVelocity(AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828, 5.0f);
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree, 5.0f);
                 }
             }
         }
@@ -2636,7 +2636,7 @@ void SuikaObject::Advance()
                 else if (animationStage == 3 && animationFrame == 0) {
                     owner->PlaySound(16);
                     SetPolarVelocity(AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828, 5.0f);
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree, 5.0f);
                 }
             }
         }

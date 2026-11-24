@@ -33,7 +33,7 @@
                 field314=scriptCounterF00;
                 SpawnBattleEffect(0x386,
                     float(facing*65)+(x),
-                    (*(&y))+g_BarrageY1At006591EC,
+                    (*(&y))+GeometryConstants::HundredForty,
                     facing,1);
             }
             if ((animationStage)==10 && (animationFrame)==0
@@ -46,12 +46,12 @@
                 if ((scriptCounterF00)==0)
                     SpawnBattleEffect(0x384,
                         float(facing*65)+(x),
-                        (*(&y))+g_BarrageY1At006591EC,
+                        (*(&y))+GeometryConstants::HundredForty,
                         facing,1);
                 if ((scriptCounterF00)==20)
                     SpawnBattleEffect(0x388,
                         float(facing*65)+(x),
-                        (*(&y))+g_BarrageY1At006591EC,
+                        (*(&y))+GeometryConstants::HundredForty,
                         facing,1);
                 PlaySound(10);
             }

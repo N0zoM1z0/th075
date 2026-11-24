@@ -43,7 +43,7 @@
 #define R1191_FIRST_STAGE 4
 #define R1191_ANGLE_EXPR (-30-(scriptCounterF00)*9)
 #define R1191_X_OFFSET 67
-#define R1191_Y_OFFSET g_ReimuDownVolleyYAt0065826C
+#define R1191_Y_OFFSET GeometryConstants::SeventyFive
 #include "ReimuCounterVolleyF1191.inc"
 #undef R1191_ACTION
 #undef R1191_AIR

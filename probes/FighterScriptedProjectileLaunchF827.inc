@@ -4,7 +4,7 @@
 // is a case INSIDE one currently NONEXACT fighter giant function.
 case F642_CASE: {
     cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>g_AnimationMaximumAt006583B4)
+    if ((cardGauge)>GeometryConstants::Thousand)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
         UpdateGaugeTimer(0xFA);
@@ -15,7 +15,7 @@ case F642_CASE: {
             // VC7.1's real member y lvalue forces the native
             // FLD member / FADD global x87 order. y alias gives
             // the opposite physical operand sequence in this context.
-            (y)+g_ContactProjectionAt00657888,
+            (y)+GeometryConstants::Hundred,
             facing,1);
     }
     if ((velocityX)<FloatConstants::Zero) {

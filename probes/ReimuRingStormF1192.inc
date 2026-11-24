@@ -26,17 +26,17 @@ case 0x2DB: {
         field314=float(RecordedRange(0,359));
         if ((scriptCounterF02)==0) {
             SpawnBattleEffect(0x384,float(facing*18)+(x),
-                (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
+                (*(&y))+GeometryConstants::HundredTwenty,facing,1);
             field314=float(RecordedRange(0,359));
         }
         if ((scriptCounterF02)==1) {
             SpawnBattleEffect(0x385,float(facing*18)+(x),
-                (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
+                (*(&y))+GeometryConstants::HundredTwenty,facing,1);
             field314=float(RecordedRange(0,359));
         }
         if ((scriptCounterF02)==2) {
             SpawnBattleEffect(0x386,float(facing*18)+(x),
-                (*(&y))+g_ReimuCommandBackYAt006590A8,facing,1);
+                (*(&y))+GeometryConstants::HundredTwenty,facing,1);
             field314=float(RecordedRange(0,359));
         }
         ++scriptCounterF02;
@@ -48,7 +48,7 @@ case 0x2DB: {
     }
     if ((animationStage)==4 && (animationFrame)==0) {
         Fighter::SpawnTrackedEffect(0x3B6,(*(&x))+FloatConstants::Zero,
-            (*(&y))+g_ReimuMeterTrailYAt0065835C,facing,1,0,1);
+            (*(&y))+GeometryConstants::TwoHundred,facing,1,0,1);
     }
     if ((animationStage)==12 && (animationFrame)==0 && (scriptCounterF00)<30) {
         ++scriptCounterF00;

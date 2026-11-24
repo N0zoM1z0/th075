@@ -52,7 +52,7 @@ case 0x12E: {
         SetCameraShake(2.0f);
         SpawnBattleEffect(0x325,
             float(facing*170)+(x),
-            y-g_ApproachLowerAt00658290,
+            y-GeometryConstants::Six,
             facing,0);
     }
     break;
@@ -114,7 +114,7 @@ case 0x131: {
     if ((animationStage)==2 && (animationFrame)==0)
         SpawnBattleEffect(0x328,
             float(facing*145)+(x),
-            (*(&y))+g_ReimuShotYAt006590A4,facing,1);
+            (*(&y))+GeometryConstants::SixtySix,facing,1);
     if ((animationStage)==4 && (animationFrame)==0 && (scriptCounterF00)<2) {
         ++scriptCounterF00;
         ResetSecondaryCounter(2);

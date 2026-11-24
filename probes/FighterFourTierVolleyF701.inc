@@ -36,7 +36,7 @@
                         field314=static_cast<float>(i*60+(fieldF04));
                         SpawnBattleEffect(0x393,
                             (x)+FloatConstants::Zero,
-                            (*(&y))+g_F701_VolleyYAt00658268,
+                            (*(&y))+GeometryConstants::Eighty,
                             facing,1);
                     }
                 }
@@ -45,7 +45,7 @@
                         field314=static_cast<float>(i*60+(fieldF04));
                         SpawnBattleEffect(0x393,
                             (x)+FloatConstants::Zero,
-                            (*(&y))+g_F701_VolleyYAt00658268,
+                            (*(&y))+GeometryConstants::Eighty,
                             facing,1);
                     }
                 }
@@ -54,7 +54,7 @@
                         field314=static_cast<float>(i*45+(fieldF04));
                         SpawnBattleEffect(0x393,
                             (x)+FloatConstants::Zero,
-                            (*(&y))+g_F701_VolleyYAt00658268,
+                            (*(&y))+GeometryConstants::Eighty,
                             facing,1);
                     }
                 }
@@ -63,7 +63,7 @@
                         field314=static_cast<float>(i*45+(fieldF04));
                         SpawnBattleEffect(0x393,
                             (x)+FloatConstants::Zero,
-                            (*(&y))+g_F701_VolleyYAt00658268,
+                            (*(&y))+GeometryConstants::Eighty,
                             facing,1);
                     }
                 }

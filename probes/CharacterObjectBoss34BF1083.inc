@@ -16,7 +16,7 @@ case 0x34B: {
         velocityY=0.0f;
     }
     scaleY=(scaleY)+FloatConstants::OneTenth;
-    if (y>g_F1083_YBoundAt00658E80) {
+    if (y>GeometryConstants::TwelveHundredEighty) {
         ClearFrameInfo();
         return;
     }

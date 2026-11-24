@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include <windows.h>
 #include <string.h>
 // Entire original R043 replay filename sprite/glyph draw, full 303 CODE.
@@ -12,8 +13,6 @@
 // The quad is the separately accepted 132-byte native source packet.
 // Entire observed replay filename glyph range and actual 8-byte glyph styles.
 // SpriteQuad is the independently accepted physical 132-byte game packet.
-extern const float g_ReplayWidthAt00657F78;
-extern const float g_ReplayHeightAt0065786C;
 struct ReplayGlyphStyleF425 {
     unsigned char b0,b1,b2,b3,b4,b5,b6,b7;
 };
@@ -31,7 +30,7 @@ class ReplayFilenameF424 {public:
 void ReplayFilenameF424::DrawSaveFilename(float x,float y,unsigned int tint,const signed char* filename) {
   ReplayFrameF511 frame;
   unsigned char glyphs[8];
-  frame.quad.ConstructNative(x,y,x+g_ReplayWidthAt00657F78,y+g_ReplayHeightAt0065786C);
+  frame.quad.ConstructNative(x,y,x+GeometryConstants::Nineteen,y+GeometryConstants::Twenty);
   frame.prefix.part0=g_OriginalReplayPrefixAt00657F9C.part0;
   frame.prefix.part1=g_OriginalReplayPrefixAt00657F9C.part1;
   frame.prefix.part2=g_OriginalReplayPrefixAt00657F9C.part2;

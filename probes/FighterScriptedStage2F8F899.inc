@@ -41,9 +41,9 @@ case 0x2F8: {
     }
     if ((animationStage)>6 && (animationStage)<13) {
         SpawnBattleEffect(0x392,
-            (x)+g_ContactProjectionAt00657888-
+            (x)+GeometryConstants::Hundred-
                 float(RecordedRange(0,200)),
-            (*(&y))+g_F701_VolleyYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,
             (facing),1);
     }
     if (AdvanceNestedFrame()==(animationStageCount))

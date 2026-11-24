@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "PlayerState.hpp"
 #include "GameSharedState.hpp"
@@ -6,25 +7,22 @@
 #include <stdlib.h>
 // CharacterSelectScene shares its physical input and animation fields with
 // the other character-select methods.
-extern const float g_ChoiceRiseBoundAt00658268;
-extern const float g_ChoiceDropBoundAt00657858;
-extern const float g_ChoiceReadyBoundAt0065826C;
 namespace ChoiceInputF228 { int __cdecl TestAction(int key); }
 void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
 {
     if (FloatConstants::Zero < (portraitReturn[player]))
         (portraitReturn[player]) -= FloatConstants::Five;
-    if ((portraitEnterX[player]) < g_ChoiceRiseBoundAt00658268)
+    if ((portraitEnterX[player]) < GeometryConstants::Eighty)
         (portraitEnterX[player]) = (portraitEnterX[player]) + FloatConstants::Four;
-    if ((portraitEnterY[player]) < g_ChoiceDropBoundAt00657858)
+    if ((portraitEnterY[player]) < GeometryConstants::Forty)
         (portraitEnterY[player]) = (portraitEnterY[player]) + FloatConstants::Two;
-    if ((portraitExitX[player]) < g_ChoiceRiseBoundAt00658268)
+    if ((portraitExitX[player]) < GeometryConstants::Eighty)
         (portraitExitX[player]) = (portraitExitX[player]) + FloatConstants::Four;
-    if ((portraitExitY[player]) < g_ChoiceDropBoundAt00657858)
+    if ((portraitExitY[player]) < GeometryConstants::Forty)
         (portraitExitY[player]) = (portraitExitY[player]) + FloatConstants::Two;
-    if ((choiceStop[player])<g_ChoiceReadyBoundAt0065826C &&
+    if ((choiceStop[player])<GeometryConstants::SeventyFive &&
        ((choiceStop[player])=(choiceStop[player])+FloatConstants::Two,
-        g_ChoiceReadyBoundAt0065826C<(choiceStop[player])))
+        GeometryConstants::SeventyFive<(choiceStop[player])))
         (choiceStop[player])=75.0f;
     if ((input[player].vertical)==-1) {
         g_SoundBank->Play(0x27);
@@ -37,7 +35,7 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
         (chosenPalette[player])=2;
     }
     if ((input[player].confirm)==1) {
-        if ((choiceStop[player])<g_ChoiceReadyBoundAt0065826C)
+        if ((choiceStop[player])<GeometryConstants::SeventyFive)
             (choiceStop[player])=75.0f;
         g_PlayerOtherAt006714CC[player]=(chosenPalette[player]);
         (playerState[player])=4;

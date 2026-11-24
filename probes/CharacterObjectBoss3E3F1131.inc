@@ -24,14 +24,14 @@ case 0x3E3: {
     }
     if (animationStage==1) {
         field0D8=short(AngleAt00483300(
-            (*(&owner->opponent->y))+g_F1057_YOffsetAt00657888-y,
+            (*(&owner->opponent->y))+GeometryConstants::Hundred-y,
             owner->opponent->x-x) /
-            g_F1057_AngleDivAt00657828);
+            GeometryConstants::RadiansPerDegree);
         SetPolarVelocity(float(field0D8),20.0f);
-        if (x-owner->opponent->x<g_F1115_DistanceAt0065786C &&
-            x-owner->opponent->x>g_F1131_LeftHitAt00659230 &&
-            y-owner->opponent->y<g_F1131_TopHitAt006590A8 &&
-            y-owner->opponent->y>g_F1131_BottomHitAt00658268) {
+        if (x-owner->opponent->x<GeometryConstants::Twenty &&
+            x-owner->opponent->x>GeometryConstants::NegativeTwenty &&
+            y-owner->opponent->y<GeometryConstants::HundredTwenty &&
+            y-owner->opponent->y>GeometryConstants::Eighty) {
             ClearFrameInfo();
             if (owner->opponent->field366<2)
                 ++owner->opponent->field366;

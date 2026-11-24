@@ -1,30 +1,20 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "MeilingFighter.hpp"
 
-extern float g_AngleShiftAt00657878;
-extern float g_AnimationMaximumAt006583B4;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
 extern float g_BounceXAt006590BC;
-extern float g_ContactProjectionAt00657888;
 extern float g_LandingSpeedScaleAt006590B8;
-extern float g_MeilingActivationEffectYAt0065788C;
 extern float g_MeilingAirShotYAt00659288;
 extern float g_MeilingAirVolleyYAt0065908C;
 extern float g_MeilingAttackDragAt006598B0;
-extern float g_MeilingBounceSpeedLimitAt006590C4;
-extern float g_MeilingCommandEffectYAt00658268;
 extern float g_MeilingDoubleShotYAt00659F3C;
-extern float g_MeilingDownVolleyYAt0065826C;
-extern float g_MeilingEffectYAt006590A8;
-extern float g_MeilingEffectYAt006590AC;
 extern float g_MeilingLateAttackDragAt006595E8;
 extern float g_MeilingLotusEffectYAt00659F38;
 extern float g_MeilingLowVolleyYAt006590A0;
 extern float g_MeilingParticleOffsetYAt0065927C;
-extern float g_MeilingParticleRadiusAt0065835C;
-extern float g_MeilingRisingEffectYAt00657858;
 extern float g_MeilingStageSixSpeedAt00659308;
 extern float g_MeilingStandingShotYAt00659280;
 
@@ -545,7 +535,7 @@ void MeilingFighter::Advance() {
             if (velocityY < FloatConstants::Two)
                 velocityY = 2.0f;
             field05C = 0.8f;
-            if (velocityY > g_MeilingBounceSpeedLimitAt006590C4)
+            if (velocityY > GeometryConstants::Twelve)
                 velocityY = 12.0f;
             field07C = 0;
         }
@@ -555,8 +545,8 @@ void MeilingFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -582,8 +572,8 @@ void MeilingFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -609,8 +599,8 @@ void MeilingFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -631,8 +621,8 @@ void MeilingFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -677,8 +667,8 @@ void MeilingFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -697,12 +687,12 @@ void MeilingFighter::Advance() {
             ResetTransform(0.0f, 95.0f, 0.0f);
         }
 
-        rotationZ = (rotationZ) + g_AngleShiftAt00657878;
+        rotationZ = (rotationZ) + GeometryConstants::Thirty;
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
             PlaySharedSound(0x16);
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -724,8 +714,8 @@ void MeilingFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x59);
@@ -759,11 +749,11 @@ void MeilingFighter::Advance() {
 
     case 0x59: {
         if (animationStage == 3) {
-            rotationZ = (rotationZ) + g_MeilingRisingEffectYAt00657858;
+            rotationZ = (rotationZ) + GeometryConstants::Forty;
             velocityY = velocityY - field05C;
             if (velocityY + y <= FloatConstants::Zero) {
-                scriptCounterF00 = (velocityX) * g_ContactProjectionAt00657888;
-                scriptCounterF02 = (velocityY) * g_ContactProjectionAt00657888;
+                scriptCounterF00 = (velocityX) * GeometryConstants::Hundred;
+                scriptCounterF02 = (velocityY) * GeometryConstants::Hundred;
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x61);
@@ -1066,8 +1056,8 @@ void MeilingFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -1081,7 +1071,7 @@ void MeilingFighter::Advance() {
 
     case 0x96: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1103,7 +1093,7 @@ void MeilingFighter::Advance() {
 
     case 0x97: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1125,7 +1115,7 @@ void MeilingFighter::Advance() {
 
     case 0x98: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1147,7 +1137,7 @@ void MeilingFighter::Advance() {
 
     case 0x9A: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1169,7 +1159,7 @@ void MeilingFighter::Advance() {
 
     case 0x9B: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1191,7 +1181,7 @@ void MeilingFighter::Advance() {
 
     case 0x9C: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1213,7 +1203,7 @@ void MeilingFighter::Advance() {
 
     case 0x9E: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1239,7 +1229,7 @@ void MeilingFighter::Advance() {
 
     case 0x9F: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1261,7 +1251,7 @@ void MeilingFighter::Advance() {
 
     case 0xA0: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1283,7 +1273,7 @@ void MeilingFighter::Advance() {
 
     case 0xA1: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1305,7 +1295,7 @@ void MeilingFighter::Advance() {
 
     case 0xA3: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
@@ -1326,7 +1316,7 @@ void MeilingFighter::Advance() {
 
     case 0xA4: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
@@ -1347,7 +1337,7 @@ void MeilingFighter::Advance() {
 
     case 0xA5: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
@@ -1368,7 +1358,7 @@ void MeilingFighter::Advance() {
 
     case 0xA7: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1377,7 +1367,7 @@ void MeilingFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing) * 30) + (x),
 
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1395,7 +1385,7 @@ void MeilingFighter::Advance() {
 
     case 0xA8: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1404,7 +1394,7 @@ void MeilingFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing) * 30) + (x),
 
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1507,9 +1497,9 @@ void MeilingFighter::Advance() {
             velocityX = 13.0f;
             SpawnAuxEffect(0x7D,
                 static_cast<float>(facing * 80) + x,
-                (y) + g_MeilingCommandEffectYAt00658268, facing, 1);
+                (y) + GeometryConstants::Eighty, facing, 1);
             SpawnAuxEffect(0x7E, x,
-                (y) + g_MeilingCommandEffectYAt00658268, facing, 1);
+                (y) + GeometryConstants::Eighty, facing, 1);
             PlaySharedSound(0x1F);
         }
         return;
@@ -1539,8 +1529,8 @@ void MeilingFighter::Advance() {
             velocityY = 7.0f;
             field05C = 0.7f;
             SpawnAuxEffect(0x7D, x,
-                (y) + g_MeilingCommandEffectYAt00658268, -facing, 1);
-            SpawnAuxEffect(0x7E, x, (y) + g_MeilingCommandEffectYAt00658268, -facing, 1);
+                (y) + GeometryConstants::Eighty, -facing, 1);
+            SpawnAuxEffect(0x7E, x, (y) + GeometryConstants::Eighty, -facing, 1);
             PlaySharedSound(0x1F);
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -1557,8 +1547,8 @@ void MeilingFighter::Advance() {
             velocityY = 5.0f;
             field05C = 0.45f;
             SpawnAuxEffect(0x7D, float(facing * 80) + (x),
-                (y) + g_MeilingEffectYAt006590AC, facing, 1);
-            SpawnAuxEffect(0x7E, x, (y) + g_MeilingEffectYAt006590AC,
+                (y) + GeometryConstants::HundredTen, facing, 1);
+            SpawnAuxEffect(0x7E, x, (y) + GeometryConstants::HundredTen,
                 facing, 1);
             PlaySharedSound(31);
         }
@@ -1596,9 +1586,9 @@ void MeilingFighter::Advance() {
             velocityX = -11.0f;
             velocityY = 5.0f;
             field05C = 0.45f;
-            SpawnAuxEffect(0x7D, x, (y) + g_MeilingEffectYAt006590A8,
+            SpawnAuxEffect(0x7D, x, (y) + GeometryConstants::HundredTwenty,
                 -facing, 1);
-            SpawnAuxEffect(0x7E, x, (y) + g_MeilingEffectYAt006590A8,
+            SpawnAuxEffect(0x7E, x, (y) + GeometryConstants::HundredTwenty,
                 -facing, 1);
             PlaySharedSound(31);
         }
@@ -1756,7 +1746,7 @@ void MeilingFighter::Advance() {
             ClearMotionFields();
             PlaySharedSound(0x2C);
             SpawnBattleEffect(0x3e5, x,
-                    (y) + g_ContactProjectionAt00657888,
+                    (y) + GeometryConstants::Hundred,
                     facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -1781,7 +1771,7 @@ void MeilingFighter::Advance() {
             PlaySharedSound(0x2C);
 
             SpawnBattleEffect(0x3e5, x,
-                    (y) + g_ContactProjectionAt00657888,
+                    (y) + GeometryConstants::Hundred,
                     facing, 1);
         }
 
@@ -2442,23 +2432,23 @@ void MeilingFighter::Advance() {
             field314 = -30.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -40.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -50.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -60.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -70.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
 
             PlaySound(0);
             UpdateGaugeTimer(100);
@@ -2469,23 +2459,23 @@ void MeilingFighter::Advance() {
             field314 = -30.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -40.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -50.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -60.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
             field314 = -70.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x32B, float(facing * 67) + (x),
-                (y) + g_MeilingDownVolleyYAt0065826C, facing, 1);
+                (y) + GeometryConstants::SeventyFive, facing, 1);
 
             PlaySound(0);
             UpdateGaugeTimer(25);
@@ -2510,7 +2500,7 @@ void MeilingFighter::Advance() {
                 field318 = 13.0f;
                 field314 = static_cast<float>(36 - shot * 12);
                 SpawnBattleEffect(shot + 0x32B, (x) + FloatConstants::Zero,
-                    (y) + g_ContactProjectionAt00657888, facing, 1);
+                    (y) + GeometryConstants::Hundred, facing, 1);
                 PlaySound(5);
             }
         }
@@ -2532,7 +2522,7 @@ void MeilingFighter::Advance() {
                 field318 = 13.0f;
                 field314 = static_cast<float>(15 - shot * 5);
                 SpawnBattleEffect(shot + 0x32B, (x) + FloatConstants::Zero,
-                    (y) + g_ContactProjectionAt00657888, facing, 1);
+                    (y) + GeometryConstants::Hundred, facing, 1);
                 PlaySound(5);
             }
         }
@@ -2662,7 +2652,7 @@ void MeilingFighter::Advance() {
             field05C = 0.4f;
         }
         if (animationStage == 4 && animationFrame == 0) {
-            SpawnBattleEffect(0x33B, static_cast<float>(facing * 50) + x, (y) + g_MeilingRisingEffectYAt00657858, facing, 1);
+            SpawnBattleEffect(0x33B, static_cast<float>(facing * 50) + x, (y) + GeometryConstants::Forty, facing, 1);
             PlaySound(6);
             UpdateGaugeTimer(250);
         }
@@ -2718,7 +2708,7 @@ void MeilingFighter::Advance() {
             field314 = 30.0f;
             field318 = 8.0f;
             SpawnBattleEffect(0x32C, float(facing * 12) + (x),
-                (y) + g_MeilingEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
             PlaySound(1);
             UpdateGaugeTimer(200);
         }
@@ -2752,7 +2742,7 @@ void MeilingFighter::Advance() {
         if (animationStage > 7 && animationStage < 11 && RecordedRange(0, 100) < 80) {
             SpawnBattleEffect(RecordedRange(0, 7) + 0x332, static_cast<float>((RecordedRange(0, 75) + 90) * facing) + x,
                 ((y) + g_MeilingParticleOffsetYAt0065927C) + static_cast<float>(RecordedRange(0, 70)), facing, 1);
-            SpawnBattleEffect(0x352, static_cast<float>(facing * 130) + x, (y) + g_MeilingEffectYAt006590A8, facing, 1);
+            SpawnBattleEffect(0x352, static_cast<float>(facing * 130) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (y > FloatConstants::Zero && animationStage < 11) {
             velocityY -= field05C;
@@ -2779,7 +2769,7 @@ void MeilingFighter::Advance() {
             velocityX = 11.0f;
             velocityY = 3.0f;
             field05C = 0.3f;
-            SpawnBattleEffect(0x34F, static_cast<float>(facing * 110) + x, (y) + g_MeilingEffectYAt006590A8, facing, 1);
+            SpawnBattleEffect(0x34F, static_cast<float>(facing * 110) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
             SpawnAuxEffect(0x7F, x, y, facing, 1);
             PlaySound(0);
         }
@@ -2816,7 +2806,7 @@ void MeilingFighter::Advance() {
         if (animationStage > 7 && animationStage < 11 && RecordedRange(0, 100) < 80) {
             SpawnBattleEffect(RecordedRange(0, 7) + 0x332, static_cast<float>((RecordedRange(0, 75) + 90) * facing) + x,
                 ((y) + g_MeilingParticleOffsetYAt0065927C) + static_cast<float>(RecordedRange(0, 70)), facing, 1);
-            SpawnBattleEffect(0x352, static_cast<float>(facing * 130) + x, (y) + g_MeilingEffectYAt006590A8, facing, 1);
+            SpawnBattleEffect(0x352, static_cast<float>(facing * 130) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (y > FloatConstants::Zero && animationStage < 11) {
             velocityY -= field05C;
@@ -2843,7 +2833,7 @@ void MeilingFighter::Advance() {
             velocityX = 13.0f;
             velocityY = 3.0f;
             field05C = 0.2f;
-            SpawnBattleEffect(0x34F, static_cast<float>(facing * 110) + x, (y) + g_MeilingEffectYAt006590A8, facing, 1);
+            SpawnBattleEffect(0x34F, static_cast<float>(facing * 110) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
             SpawnAuxEffect(0x7F, x, y, facing, 1);
             PlaySound(0);
         }
@@ -2923,8 +2913,8 @@ void MeilingFighter::Advance() {
             }
         }
         if (animationStage > 2 && animationStage < 12 && RecordedRange(0, 100) < 60) {
-            SpawnBattleEffect(RecordedRange(0, 7) + 0x332, ((x) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)),
-                ((y) + g_MeilingParticleRadiusAt0065835C) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
+            SpawnBattleEffect(RecordedRange(0, 7) + 0x332, ((x) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)),
+                ((y) + GeometryConstants::TwoHundred) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -2978,8 +2968,8 @@ void MeilingFighter::Advance() {
             }
         }
         if (animationStage > 5 && animationStage < 16 && RecordedRange(0, 100) < 80) {
-            SpawnBattleEffect(RecordedRange(0, 7) + 0x332, ((x) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)),
-                ((y) + g_MeilingParticleRadiusAt0065835C) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
+            SpawnBattleEffect(RecordedRange(0, 7) + 0x332, ((x) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)),
+                ((y) + GeometryConstants::TwoHundred) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -3025,7 +3015,7 @@ void MeilingFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 2 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
         }
@@ -3047,7 +3037,7 @@ void MeilingFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 2 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
         }
@@ -3067,7 +3057,7 @@ void MeilingFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 2 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
         }
@@ -3084,7 +3074,7 @@ void MeilingFighter::Advance() {
             ResetPrimaryCounters(0);
         }
         if (animationStage == 2 && animationFrame == 0) {
-            SpawnBattleEffect(0x323, static_cast<float>(facing * 80) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1);
+            SpawnBattleEffect(0x323, static_cast<float>(facing * 80) + x, (y) + GeometryConstants::HundredTen, facing, 1);
             UpdateGaugeTimer(0);
         }
         if (animationStage == 8 && animationFrame == 0) {
@@ -3095,7 +3085,7 @@ void MeilingFighter::Advance() {
                 field314 = 3.0f;
             if (scriptCounterF00 > 10)
                 field314 = 5.0f;
-            SpawnBattleEffect(0x324, static_cast<float>(facing * 120) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1);
+            SpawnBattleEffect(0x324, static_cast<float>(facing * 120) + x, (y) + GeometryConstants::HundredTen, facing, 1);
         }
         break;
     }
@@ -3179,10 +3169,10 @@ void MeilingFighter::Advance() {
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
-            SpawnBattleEffect(0x326, x, (y) + g_ContactProjectionAt00657888, -facing, 1);
+            SpawnBattleEffect(0x326, x, (y) + GeometryConstants::Hundred, -facing, 1);
         }
         if (animationStage == 7 && animationFrame == 0) {
-            SpawnBattleEffect(0x326, x, (y) + g_ContactProjectionAt00657888, -facing, 1);
+            SpawnBattleEffect(0x326, x, (y) + GeometryConstants::Hundred, -facing, 1);
         }
         if (animationStage > 10 && animationStage < 18) {
             velocityY = (velocityY) - FloatConstants::Half;
@@ -3201,8 +3191,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, x - static_cast<float>(facing * 18), (y) + g_MeilingActivationEffectYAt0065788C, facing, 1);
-            field36C = (field36C) - g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, x - static_cast<float>(facing * 18), (y) + GeometryConstants::Fifty, facing, 1);
+            field36C = (field36C) - GeometryConstants::Hundred;
             UpdateGaugeTimer(500);
         }
         if (animationStage == 6 && animationFrame == 0) {
@@ -3228,14 +3218,14 @@ void MeilingFighter::Advance() {
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, -facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, -facing, 1);
         }
         if (animationStage == 7 && animationFrame == 0) {
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, -facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, -facing, 1);
         }
         if (animationStage > 6 && animationStage < 11 && RecordedRange(0, 100) < 75) {
-            SpawnBattleEffect(RecordedRange(0, 7) + 0x332, ((x) + g_MeilingParticleRadiusAt0065835C) - static_cast<float>(RecordedRange(0, 401)),
-                ((y) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
+            SpawnBattleEffect(RecordedRange(0, 7) + 0x332, ((x) + GeometryConstants::TwoHundred) - static_cast<float>(RecordedRange(0, 401)),
+                ((y) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
         }
         if (animationStage > 10 && animationStage < 18) {
             velocityY = (velocityY) - FloatConstants::Half;
@@ -3254,8 +3244,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x74, x - static_cast<float>(facing * 18), (y) + g_MeilingActivationEffectYAt0065788C, facing, 1);
-            field36C = (field36C) - g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, x - static_cast<float>(facing * 18), (y) + GeometryConstants::Fifty, facing, 1);
+            field36C = (field36C) - GeometryConstants::Hundred;
             UpdateGaugeTimer(500);
         }
         if (animationStage == 6 && animationFrame == 0) {
@@ -3282,21 +3272,21 @@ void MeilingFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1);
-            field36C = (field36C) - g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1);
+            field36C = (field36C) - GeometryConstants::Hundred;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
         }
         if (animationStage == 2 && animationFrame == 0) {
-            Fighter::SpawnTrackedEffect(0x327, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1, 0, 1);
+            Fighter::SpawnTrackedEffect(0x327, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1, 0, 1);
             PlaySound(12);
         }
         if (animationStage == 3 && animationFrame == 0) {
-            Fighter::SpawnTrackedEffect(0x328, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1, 0, 1);
+            Fighter::SpawnTrackedEffect(0x328, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1, 0, 1);
         }
         if (animationStage == 4 && animationFrame == 0) {
-            Fighter::SpawnTrackedEffect(0x329, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1, 0, 1);
+            Fighter::SpawnTrackedEffect(0x329, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1, 0, 1);
         }
         if (animationStage == 15 && animationFrame == 0) {
             PlaySound(13);
@@ -3316,8 +3306,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x74, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1);
-            field36C = (field36C) - g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1);
+            field36C = (field36C) - GeometryConstants::Hundred;
         }
         if (animationStage > 11 && animationStage < 27 && inputD <= 0) {
             ResetSecondaryCounter(27);
@@ -3327,14 +3317,14 @@ void MeilingFighter::Advance() {
             ResetPrimaryCounters(0);
         }
         if (animationStage == 2 && animationFrame == 0) {
-            Fighter::SpawnTrackedEffect(0x349, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1, 0, 1);
+            Fighter::SpawnTrackedEffect(0x349, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1, 0, 1);
             PlaySound(14);
         }
         if (animationStage == 3 && animationFrame == 0) {
-            Fighter::SpawnTrackedEffect(0x34A, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1, 0, 1);
+            Fighter::SpawnTrackedEffect(0x34A, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1, 0, 1);
         }
         if (animationStage == 4 && animationFrame == 0) {
-            Fighter::SpawnTrackedEffect(0x34B, static_cast<float>(facing * 100) + x, (y) + g_MeilingEffectYAt006590AC, facing, 1, 0, 1);
+            Fighter::SpawnTrackedEffect(0x34B, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::HundredTen, facing, 1, 0, 1);
         }
         if (animationStage == 29 && animationFrame == 0) {
             PlaySound(15);
@@ -3351,8 +3341,8 @@ void MeilingFighter::Advance() {
             ClearMotionFields();
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, static_cast<float>(facing * 20) + x, (y) + g_MeilingEffectYAt006590A8, facing, 1);
-            field36C = (field36C) - g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, static_cast<float>(facing * 20) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
+            field36C = (field36C) - GeometryConstants::Hundred;
             field080 = 1;
             UpdateGaugeTimer(500);
             field07C = 0;
@@ -3409,8 +3399,8 @@ void MeilingFighter::Advance() {
             ClearMotionFields();
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x74, static_cast<float>(facing * 20) + x, (y) + g_MeilingEffectYAt006590A8, facing, 1);
-            field36C = (field36C) - g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, static_cast<float>(facing * 20) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
+            field36C = (field36C) - GeometryConstants::Hundred;
             field080 = 1;
             UpdateGaugeTimer(500);
             field07C = 0;
@@ -3418,7 +3408,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 14 && field07C == 1) {
             PlaySound(18);
             ResetPrimaryCounters(0x2C3);
-            SpawnBattleEffect(0x350, static_cast<float>(facing * 94) + x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x350, static_cast<float>(facing * 94) + x, (y) + GeometryConstants::Hundred, facing, 1);
             break;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3441,7 +3431,7 @@ void MeilingFighter::Advance() {
         }
         if (animationStage == 7 && field07C == 1) {
             PlaySound(19);
-            SpawnBattleEffect(0x351, static_cast<float>(facing * 45) + x, (y) + g_MeilingEffectYAt006590A8, facing, 1);
+            SpawnBattleEffect(0x351, static_cast<float>(facing * 45) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (velocityX > FloatConstants::Zero) {
             velocityX = (velocityX) - FloatConstants::ThreeQuarters;
@@ -3484,7 +3474,7 @@ void MeilingFighter::Advance() {
             SelectResourceParameters();
             PlaySharedSound(0x17);
             SpawnBattleEffect(0x3E5, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0 && scriptCounterF00 < 8) {
             ++scriptCounterF00;
@@ -3505,33 +3495,33 @@ void MeilingFighter::Advance() {
                 fieldF26 = 0;
                 aiCardTimer = 0;
                 field318 = 0.0f;
-                SpawnBattleEffect(0x3A3, x, (y) + g_ContactProjectionAt00657888, 1, 1);
+                SpawnBattleEffect(0x3A3, x, (y) + GeometryConstants::Hundred, 1, 1);
                 if (g_OptionsModeAt006714D0 == 0) {
 
             for (int echoEasy = 0; echoEasy < 6; ++echoEasy) {
                 field314 = float(echoEasy * 60);
-                SpawnBattleEffect(0x397, x, (y) + g_ContactProjectionAt00657888, 1, 1);
+                SpawnBattleEffect(0x397, x, (y) + GeometryConstants::Hundred, 1, 1);
             }
                 }
                 if (g_OptionsModeAt006714D0 == 1) {
 
             for (int echoNormal = 0; echoNormal < 6; ++echoNormal) {
                 field314 = float(echoNormal * 60);
-                SpawnBattleEffect(0x397, x, (y) + g_ContactProjectionAt00657888, 1, 1);
+                SpawnBattleEffect(0x397, x, (y) + GeometryConstants::Hundred, 1, 1);
             }
                 }
                 if (g_OptionsModeAt006714D0 == 2) {
 
             for (int echoHard = 0; echoHard < 8; ++echoHard) {
                 field314 = float(echoHard * 45);
-                SpawnBattleEffect(0x397, x, (y) + g_ContactProjectionAt00657888, 1, 1);
+                SpawnBattleEffect(0x397, x, (y) + GeometryConstants::Hundred, 1, 1);
             }
                 }
                 if (g_OptionsModeAt006714D0 == 3) {
 
             for (int echoLunatic = 0; echoLunatic < 8; ++echoLunatic) {
                 field314 = float(echoLunatic * 45);
-                SpawnBattleEffect(0x397, x, (y) + g_ContactProjectionAt00657888, 1, 1);
+                SpawnBattleEffect(0x397, x, (y) + GeometryConstants::Hundred, 1, 1);
             }
                 }
             }

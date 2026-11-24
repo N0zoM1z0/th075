@@ -16,25 +16,25 @@ case 0x2F9: {
     }
     if ((animationFrame)==0 && ((animationStage)==9 || (animationStage)==10)) {
         SpawnBattleEffect(0x38B,
-            (x)+g_F1008_CenterXAt006593D0
+            (x)+GeometryConstants::TwoHundredForty
                 - float(RecordedRange(0,480)),
             float(RecordedRange(0,200)+((fieldF06)>50)*200),
             facing,1);
         if (g_OptionsModeAt006714D0>0)
             SpawnBattleEffect(0x38B,
-                (x)+g_F1008_AlternateXAt00658370
+                (x)+GeometryConstants::TwoHundredEighty
                     - float(RecordedRange(0,560)),
                 float(RecordedRange(0,250)+((fieldF06)>50)*250),
                 facing,1);
         if ((animationStage)==9 && (animationFrame)==0 && g_OptionsModeAt006714D0>1)
             Fighter::SpawnTrackedEffect(0x38A,
-                (x)+g_F1008_CenterXAt006593D0
+                (x)+GeometryConstants::TwoHundredForty
                     - float(RecordedRange(0,480)),
                 float(RecordedRange(0,200)+((fieldF06)>50)*200),
                 facing,1,0,1);
         if ((animationStage)==10 && (animationFrame)==0 && g_OptionsModeAt006714D0>2)
             Fighter::SpawnTrackedEffect(0x38A,
-                (x)+g_F1008_AlternateXAt00658370
+                (x)+GeometryConstants::TwoHundredEighty
                     - float(RecordedRange(0,560)),
                 float(RecordedRange(0,250)+((fieldF06)>50)*250),
                 facing,1,0,1);

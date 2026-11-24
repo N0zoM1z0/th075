@@ -2,11 +2,11 @@
 // Native boundaries and actor-specific policies are checked in the whole parent.
 case 0x59: {
     if ((animationStage)==3) {
-        rotationZ=(rotationZ)+g_ReimuRotationStepAt00657858;
+        rotationZ=(rotationZ)+GeometryConstants::Forty;
         velocityY=velocityY-field05C;
         if (velocityY+y<=FloatConstants::Zero) {
-            scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-            scriptCounterF02=(*(&velocityY))*g_ContactProjectionAt00657888;
+            scriptCounterF00=(velocityX)*GeometryConstants::Hundred;
+            scriptCounterF02=(*(&velocityY))*GeometryConstants::Hundred;
             ClearMotionFields(); y=0.0f; ResetPrimaryCounters(0x61);
             rotationZ=0.0f;
             SetCameraShake(2.0f); ClearTransformFlag(); PlaySharedSound(0x16);

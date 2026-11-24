@@ -10,18 +10,18 @@ case 0x25B:
         ResetPrimaryCounters(9);
     if (animationStage == 3 && animationFrame == 0) {
         field314 = 0.0f;
-        field318 = (y) + g_ReimuCommandBackYAt006590A8;
+        field318 = (y) + GeometryConstants::HundredTwenty;
         SpawnBattleEffect(0x322, x + static_cast<float>(facing * 0x0C),
-            (y) + g_ReimuCommandBackYAt006590A8, facing, 1);
+            (y) + GeometryConstants::HundredTwenty, facing, 1);
         field314 = 1.0f;
         SpawnBattleEffect(0x322, x + static_cast<float>(facing * 0x0C),
-            (y) + g_ReimuCommandBackYAt006590A8, facing, 1);
+            (y) + GeometryConstants::HundredTwenty, facing, 1);
         field314 = 2.0f;
         SpawnBattleEffect(0x322, x + static_cast<float>(facing * 0x0C),
-            (y) + g_ReimuCommandBackYAt006590A8, facing, 1);
+            (y) + GeometryConstants::HundredTwenty, facing, 1);
         field314 = 3.0f;
         SpawnBattleEffect(0x322, x + static_cast<float>(facing * 0x0C),
-            (y) + g_ReimuCommandBackYAt006590A8, facing, 1);
+            (y) + GeometryConstants::HundredTwenty, facing, 1);
         UpdateGaugeTimer(0xFA);
         PlaySound(4);
     }

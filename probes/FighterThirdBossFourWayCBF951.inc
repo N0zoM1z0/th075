@@ -34,11 +34,11 @@ case 0xCB: {
         field05C=0.6f;
         SpawnAuxEffect(0x7D,
             float((facing)*68)+(x),
-            (*(&y))+g_F950_CAVolleyYAt00658400,
+            (*(&y))+GeometryConstants::Seventy,
             -(facing),1);
         SpawnAuxEffect(0x7E,
             float((facing)*68)+(x),
-            (*(&y))+g_F950_CAVolleyYAt00658400,
+            (*(&y))+GeometryConstants::Seventy,
             -(facing),1);
         PlaySharedSound(31);
     }

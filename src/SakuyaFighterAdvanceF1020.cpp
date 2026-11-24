@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
@@ -5,17 +6,12 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Natural-C++ reconstruction of SakuyaFighter::Advance at 004AC040.
 
-extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F948_C8UpperAt00657854;
-extern float g_F948_C8VolleyYAt00658268;
-extern float g_F950_CAVolleyYAt00658400;
 extern float g_F964_LateFallAt00658048;
 extern float g_F968_RoundY190At00659294;
 extern float g_F968_RoundY191At00659498;
-extern float g_F969_RoundY192At00658264;
-extern float g_F970_YAt006590AC;
 extern float g_F971_YAt00659494;
 extern float g_F971_YAt00659490;
 extern float g_F971_YAt00659294;
@@ -26,11 +22,6 @@ extern float g_F971_YAt00659480;
 extern float g_F971_YAt00659498;
 extern float g_F971_YAt0065947C;
 extern float g_F971_YAt00659478;
-extern float g_F971_YAt0065826C;
-extern float g_F971_YAt00658264;
-extern float g_F971_YAt00658294;
-extern float g_F971_YAt00657878;
-extern float g_F971_YAt00657CBC;
 extern float g_F972_YAt00657860;
 extern float g_F972_YAt00658364;
 extern float g_F972_YAt0065836C;
@@ -42,34 +33,16 @@ extern float g_F972_YAt00659470;
 extern float g_F972_YAt00659474;
 extern float g_F974_ShotYAt00659294;
 extern float g_F974_ShotYAt00659498;
-extern float g_F976_RandomYAt0065786C;
-extern float g_F979_RandomYAt00657858;
-extern float g_F981_YAt00659270;
 extern float g_F983_BurstYAt00659490;
 extern double g_F982_Scale1F6At006583E0;
 extern double g_F982_Scale1F7At006584C8;
-extern float g_F983_XOffsetAt00658264;
-extern float g_F983_YOffsetAt00657CBC;
 extern float g_F1007_RightBoundAt0065945C;
-extern float g_F1008_CenterXAt006593D0;
-extern float g_F1008_AlternateXAt00658370;
-extern float g_F1009_LeftAt0065787C;
-extern float g_F1009_RightAt0065920C;
-extern float g_F1012_ArcYAt006591EC;
-extern float g_F1012_AngleDivisorAt00657828;
-extern float g_F1016_RingYAt00659460;
-extern float g_F1017_StartYAt00658268;
 extern float g_F1017_VolleyYAt0065908C;
 extern float g_F1018_ThirdYAt0065784C;
 extern float g_F1019_FallAt00658354;
 extern float g_F1019_VolleyYAt0065908C;
-extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_TrajectoryUpperAt006590C4;
-extern float g_ContactProjectionAt00657888;
 extern float g_BounceThresholdAt006590C0;
-extern float g_AngleShiftAt00657878;
 void SakuyaFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -289,7 +262,7 @@ void SakuyaFighter::Advance() {
 #define CONTACT_STAGE_OFFSET 0xF00
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
-#define TRAJECTORY_LOWER_THRESHOLD g_ApproachLowerAt00658290
+#define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
 #define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
 #define TRAJECTORY_MINIMUM_SPEED 6.0f
 #define TRAJECTORY_MAXIMUM_SPEED 25.0f
@@ -347,8 +320,8 @@ void SakuyaFighter::Advance() {
                 field07C = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
-                scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-                scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+                scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+                scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x59);

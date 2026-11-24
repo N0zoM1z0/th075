@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YukariObject::Advance at 005A1600.
 // Replays 43,599 code bytes plus 508 bytes of switch data with VC7.1 build 3077.
@@ -10,7 +11,6 @@
 float __cdecl AngleAt00483300(float,float);
 float __cdecl AbsFloatAt00412D90(float);
 
-extern float g_F1211_AngleDivAt00657828;
 
 void YukariObject::Advance()
 {
@@ -46,7 +46,7 @@ void YukariObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             if (animationStage < 2)
@@ -1342,7 +1342,7 @@ void YukariObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             if (animationStage < 2) {
@@ -1687,7 +1687,7 @@ void YukariObject::Advance()
                 if (animationStage == 5 && animationFrame == 0) {
                     owner->PlaySound(15);
                     field0DA = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828 ;
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree ;
                     owner->field314 = field0DA;
                     owner->SpawnBattleEffect(903, x, y, facing, 1);
                 }
@@ -1709,7 +1709,7 @@ void YukariObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
             if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
@@ -1747,7 +1747,7 @@ void YukariObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
                 SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
@@ -1846,7 +1846,7 @@ void YukariObject::Advance()
                 if (animationStage == 5 && animationFrame == 0) {
                     owner->PlaySound(15);
                     field0DA = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828 + RecordedRange(0, 30) - 15.0f ;
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree + RecordedRange(0, 30) - 15.0f ;
                     owner->field314 = field0DA;
                     owner->SpawnBattleEffect(913, x, y, facing, 1);
                 }
@@ -1937,7 +1937,7 @@ void YukariObject::Advance()
                 color[3] = 255;
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, 7.0f);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 field07C = 0;
                 field080 = 1;
             }
@@ -1980,7 +1980,7 @@ void YukariObject::Advance()
                 else SetPolarVelocity(field0DA - 90, 40.0f);
                 owner->PlaySound(16);
                 owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 for (int effectIndex908 = 0; effectIndex908 < g_OptionsModeAt006714D0 * 2 + 3; ++effectIndex908) {
                     if (field0DC == 0) {
                         owner->SpawnBattleEffect(907, effectIndex908 * velocityX + x,
@@ -2054,7 +2054,7 @@ void YukariObject::Advance()
                 color[3] = 255;
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, 7.0f);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 field07C = 0;
                 field080 = 1;
             }
@@ -2453,7 +2453,7 @@ void YukariObject::Advance()
                 color[3] = 255;
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 field07C = 0;
                 field080 = 1;
             }
@@ -2488,7 +2488,7 @@ void YukariObject::Advance()
                 field0D8 = 0;
                 field0DA = RecordedRange(0, 359);
                 SetPolarVelocity(field0DA, field0D8 * 0.05f);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 field07C = 0;
                 field080 = 1;
             }

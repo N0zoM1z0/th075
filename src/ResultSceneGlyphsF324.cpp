@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -5,12 +6,10 @@
 #include "ResultListScene.hpp"
 // Borrows the complete 132-byte physical quad and the observed renderer
 // receiver at +8 only, not a speculative complete scene layout.
-extern const float g_CharacterGlyphWidthAt00657F78;
-extern const float g_CharacterGlyphHeightAt0065786C;
 struct GlyphIndexRectF324 { int index; RECT rect; };
 void ResultListScene::DrawNameGlyphs(float x,float y,DWORD tint,const signed char* name)
 {
-    SpriteQuad40CA80 quad(x,y,x+g_CharacterGlyphWidthAt00657F78,y+g_CharacterGlyphHeightAt0065786C);
+    SpriteQuad40CA80 quad(x,y,x+GeometryConstants::Nineteen,y+GeometryConstants::Twenty);
     GlyphIndexRectF324 state;
     state.index=0;
     for(;state.index<8;++state.index) {

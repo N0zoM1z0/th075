@@ -9,7 +9,7 @@ case 0x331: {
         x=owner->x+
             float(facing*57);
         y=(*(&owner->y))+
-            g_F1069_ParentYFirstAt00659138;
+            GeometryConstants::NinetyFour;
     }
     if (owner->action>0x99 &&
         owner->action<0x9E &&
@@ -17,14 +17,14 @@ case 0x331: {
         x=owner->x+
             float(facing*57);
         y=(*(&owner->y))+
-            g_F1069_ParentYSecondAt00658264;
+            GeometryConstants::Sixty;
     }
     if (owner->action==0x9E &&
         animationStage==0) {
         x=owner->x+
             float(facing*57);
         y=(*(&owner->y))+
-            g_F1057_YOffsetAt00657888;
+            GeometryConstants::Hundred;
     }
     if ((owner->action<0x96 ||
          owner->action>0x9E) &&

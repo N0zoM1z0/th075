@@ -10,7 +10,7 @@ case 0xD1: {
         ClearMotionFields();
         PlaySharedSound(0x2C);
         SpawnBattleEffect(F651_SPRITE,x,
-                (y)+g_ContactProjectionAt00657888,
+                (y)+GeometryConstants::Hundred,
                 facing,1);
     }
     if (AdvanceNestedFrame()==animationStageCount) {

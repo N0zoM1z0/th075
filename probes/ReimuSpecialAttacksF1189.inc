@@ -73,7 +73,7 @@
 #define R1189_ANGLE 0.0f
 #define R1189_SPEED 8.0f
 #define R1189_X_OFFSET 12
-#define R1189_Y_OFFSET g_ReimuCommandBackYAt006590A8
+#define R1189_Y_OFFSET GeometryConstants::HundredTwenty
 #define R1189_EFFECT 0x32C
 #define R1189_HAS_PREPARATION 1
 #include "ReimuSingleSpecialAttackF1189.inc"
@@ -93,7 +93,7 @@
 #define R1189_ANGLE 45.0f
 #define R1189_SPEED 8.0f
 #define R1189_X_OFFSET 12
-#define R1189_Y_OFFSET g_ReimuCommandBackYAt006590A8
+#define R1189_Y_OFFSET GeometryConstants::HundredTwenty
 #define R1189_EFFECT 0x32C
 #define R1189_HAS_PREPARATION 1
 #include "ReimuSingleSpecialAttackF1189.inc"

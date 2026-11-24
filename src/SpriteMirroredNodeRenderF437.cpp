@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "Actor.hpp"
@@ -14,8 +15,6 @@ class SpriteCameraF254 { public: void CopyVector(float* out); };
 extern SpriteCameraF254* g_ActiveCameraAt00671424;
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
-extern const float g_CameraOffsetXAt00657834;
-extern const float g_CameraOffsetYAt00657830;
 
 namespace SpriteDispatchF254 {
     void Combine(SpriteQuad40CA80* destination,DWORD* color,SpriteQuad40CA80* source);
@@ -76,7 +75,7 @@ void Actor::RenderMirroredNode()
 #define sourceRect state.sourceRect
 #define color state.color
 #define tint state.tint
-    xShift = g_CombatViewOffsetX - g_CameraOffsetXAt00657834;
+    xShift = g_CombatViewOffsetX - GeometryConstants::HundredSixty;
     yOrigin = g_CombatViewOffsetY;
     reinterpret_cast<TextureManagerF198*>(DRAWER)->GetTextureRect(drawFrame->textureIndex,&sourceRect);
     TRANSFORM(transformed)->BuildQuadFromRect(&sourceRect);
@@ -101,7 +100,7 @@ void Actor::RenderMirroredNode()
     TRANSFORM(transformed)->TranslateQuad(x-(facing)*(drawFrame->originX),
                                          -(y)-static_cast<float>(drawFrame->originY),0.0f);
     SpriteDispatchF254::Combine(&composed,&color,&transformed);
-    TRANSFORM(composed)->TranslateQuad(xShift,yOrigin+g_CameraOffsetYAt00657830+(field06C),0.0f);
+    TRANSFORM(composed)->TranslateQuad(xShift,yOrigin+GeometryConstants::FourHundredTwenty+(field06C),0.0f);
     g_ActiveCameraAt00671424->CopyVector(tint);
     reinterpret_cast<TextureManagerF198*>(DRAWER)->SetTextureFilter(2);
     if (tint[0] != FloatConstants::Zero || tint[1] != FloatConstants::Zero || tint[2] != FloatConstants::Zero) {

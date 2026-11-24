@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -8,8 +9,6 @@
 class MusicNumberF253Drawer {
 public: void DrawQuad(int texture,const SpriteQuad40CA80&, const RECT*, DWORD);
 };
-extern const float g_ResultDigitWidthAt00657CBC;
-extern const float g_ResultDigitHeightAt00657CC0;
 class MusicNumberF253 {
 public:
     void DrawNumber(float x, float y, DWORD color, int number,
@@ -25,7 +24,7 @@ void MusicNumberF253::DrawNumber(float x, float y, DWORD color,
 {
     int remaining=number;
     {
-    SpriteQuad40CA80 quad(x - g_ResultDigitWidthAt00657CBC,y,x,y + g_ResultDigitHeightAt00657CC0);
+    SpriteQuad40CA80 quad(x - GeometryConstants::Fifteen,y,x,y + GeometryConstants::Sixteen);
     {
         RECT rect;
         if (minDigits > 0) {

@@ -13,7 +13,7 @@ case 0x198: {
         PlaySound(3);
         SpawnBattleEffect(0x351,
             float((facing)*90)+(x),
-            (*(&y))+g_F861ShotYAt00659460,
+            (*(&y))+GeometryConstants::HundredTwentyFive,
             (facing),1);
         UpdateGaugeTimer(0xC8);
     }

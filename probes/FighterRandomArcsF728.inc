@@ -15,9 +15,9 @@
             }
             if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
                 SpawnBattleEffect(0x330,
-                    ((x)+g_F728_RandomOffsetXAt00657878)
+                    ((x)+GeometryConstants::Thirty)
                         -float(RecordedRange(0,60)),
-                    ((*(&y))+g_F728_RandomOffsetYAt00657858)
+                    ((*(&y))+GeometryConstants::Forty)
                         +float(RecordedRange(0,140)),
                     facing,1);
             }
@@ -61,9 +61,9 @@
             }
             if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
                 SpawnBattleEffect(0x330,
-                    ((x)+g_F728_RandomOffsetXAt00657878)
+                    ((x)+GeometryConstants::Thirty)
                         -float(RecordedRange(0,60)),
-                    ((*(&y))+g_F728_RandomOffsetYAt00657858)
+                    ((*(&y))+GeometryConstants::Forty)
                         +float(RecordedRange(0,140)),
                     facing,1);
             }

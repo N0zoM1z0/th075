@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YuyukoObject::Advance at 0057D580.
 #include "CharacterObject.hpp"
@@ -9,7 +10,6 @@
 float __cdecl AngleAt00483300(float, float);
 float __cdecl AbsFloatAt00412D90(float);
 
-extern float g_F1211_AngleDivAt00657828;
 
 void YuyukoObject::Advance()
 {
@@ -45,7 +45,7 @@ case 800:
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
@@ -92,7 +92,7 @@ case 801:
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
@@ -139,7 +139,7 @@ case 802:
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
@@ -183,7 +183,7 @@ case 803:
         }
         if (animationStage < 2) field0C8 = field0D0 * 0.1f + field0C8;
         SetPolarVelocity(field0C8, field0CC);
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         x = facing * velocityX + x;
         y -= velocityY;
         if (animationStage > 1) {
@@ -324,7 +324,7 @@ case 808:
             field080 = 1;
             field07C = 0;
             field0DC = AngleAt00483300(owner->opponent->y + 128.0f - y,
-                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
             if (field0DC < -20) field0DC = -20;
             if (field0DC > 20) field0DC = 20;
         }
@@ -459,7 +459,7 @@ case 812:
                 for (int collisionIndex812 = 0; collisionIndex812 < 1; ++collisionIndex812) {
                     owner->field318 = collisionIndex812 * 2 + 1;
                     owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                     owner->SpawnBattleEffect(813, x, y, facing, 1);
                 }
                 ClearFrameInfo();
@@ -505,7 +505,7 @@ case 813:
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
@@ -595,7 +595,7 @@ case 816:
                 for (int collisionIndex816 = 0; collisionIndex816 < 1; ++collisionIndex816) {
                     owner->field318 = collisionIndex816 * 2 + 1;
                     owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                     owner->SpawnBattleEffect(818, x, y, facing, 1);
                 }
                 ClearFrameInfo();
@@ -643,7 +643,7 @@ case 817:
                 for (int collisionIndex817 = 0; collisionIndex817 < 1; ++collisionIndex817) {
                     owner->field318 = collisionIndex817 * 2 + 1;
                     owner->field314 = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                     owner->SpawnBattleEffect(819, x, y, facing, 1);
                 }
                 ClearFrameInfo();
@@ -690,7 +690,7 @@ case 818:
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
@@ -737,7 +737,7 @@ case 819:
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
@@ -1215,7 +1215,7 @@ case 832:
         }
         if (animationStage < 2) field0C8 = field0D0 * 0.1f + field0C8;
         SetPolarVelocity(field0C8, field0CC);
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         x = facing * velocityX + x;
         y -= velocityY;
         if (animationStage > 1) {
@@ -1252,7 +1252,7 @@ case 833:
         }
         if (animationStage < 2) field0C8 = field0D0 * 0.1f + field0C8;
         SetPolarVelocity(field0C8, field0CC);
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         x = facing * velocityX + x;
         y -= velocityY;
         if (animationStage > 1) {
@@ -1292,7 +1292,7 @@ case 834:
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             ++field0D8;
             if (animationStage < 38) SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
@@ -1652,7 +1652,7 @@ case 843:
             field080 = 1;
             field07C = 0;
             field0DC = AngleAt00483300(owner->opponent->y + 128.0f - y,
-                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
             if (field0DC < -40) field0DC = -40;
             if (field0DC > 40) field0DC = 40;
         }
@@ -1821,7 +1821,7 @@ case 900:
             color[3] = 255;
         }
         SetPolarVelocity(field0C8, field0CC);
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         if (field0D8 == 0) {
             field0CC -= 0.2f;
             if (field0CC < 1.0) {
@@ -2144,7 +2144,7 @@ case 909:
         if (animationStage == 1) SetPolarVelocity(field0C8, 1.0f);
         x = facing * velocityX + x;
         y -= velocityY;
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
         if (field07C != 0 && animationStage < 3) { ResetSecondaryCounter(3); return; }
         if (color[0] > 20 && animationStage == 3) color[0] -= 20;
@@ -2153,7 +2153,7 @@ case 909:
             field07C = 0;
             field0D8 = 0;
             field0C8 = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
         }
         break;
 
@@ -2349,7 +2349,7 @@ case 916:
         ++field0D8;
         field0C8 += field0D0;
         SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         x = facing * velocityX + x;
         y -= velocityY;
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
@@ -2374,7 +2374,7 @@ case 917:
         ++field0D8;
         field0C8 += field0D0;
         SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         x = facing * velocityX + x;
         y -= velocityY;
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
@@ -2399,7 +2399,7 @@ case 918:
         ++field0D8;
         field0C8 += field0D0;
         SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         x = facing * velocityX + x;
         y -= velocityY;
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }

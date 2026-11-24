@@ -41,13 +41,13 @@ case 0x2EF: {
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -57,13 +57,13 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -73,13 +73,13 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -89,13 +89,13 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -105,13 +105,13 @@ case 0x2EF: {
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-50);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -163,13 +163,13 @@ case 0x2F0: {
         field05C=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -179,13 +179,13 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==17 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -195,13 +195,13 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==19 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -211,13 +211,13 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==21 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,
@@ -227,13 +227,13 @@ case 0x2F0: {
         PlaySound(7);
     }
     if ((animationStage)==23 && (animationFrame)==0) {
-        scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-        scriptCounterF02=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+        scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+        scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);
         field314=float(RecordedRange(0,100)-70);
         field318=float(RecordedRange(0,10)+5);
         SetPolarVelocity(field314,100.0f);
         SpawnBattleEffect(0x38F,
-            ((g_F983_XOffsetAt00658264+
+            ((GeometryConstants::Sixty+
                 velocityX)*
                 (facing))+(x),
             ((*(&y))+g_F1019_VolleyYAt0065908C)-velocityY,

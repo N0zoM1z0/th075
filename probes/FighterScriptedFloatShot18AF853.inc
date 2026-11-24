@@ -18,7 +18,7 @@ case 0x18A: {
     if ((animationStage)==5 && (animationFrame)==0)
         SpawnBattleEffect(0x327,
             float((facing)*151)+(x),
-            (*(&y))+g_F853OffsetYAt0065929C,
+            (*(&y))+GeometryConstants::HundredFour,
             (facing),1);
     return;
 }

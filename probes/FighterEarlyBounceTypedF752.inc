@@ -6,11 +6,11 @@
 // 05E 005453BE..0054550F 337 B/101 x86.
         case 0x59: {
             if ((animationStage)>1) {
-                rotationZ=(rotationZ)+g_F728_RandomOffsetYAt00657858;
+                rotationZ=(rotationZ)+GeometryConstants::Forty;
                 velocityY=velocityY-field05C;
                 if (velocityY+y<=FloatConstants::Zero) {
-                    scriptCounterF00=(velocityX)*g_ContactProjectionAt00657888;
-                    scriptCounterF02=(*(&velocityY))*g_ContactProjectionAt00657888;
+                    scriptCounterF00=(velocityX)*GeometryConstants::Hundred;
+                    scriptCounterF02=(*(&velocityY))*GeometryConstants::Hundred;
                     ClearMotionFields();
                     y=0.0f;
                     ResetPrimaryCounters(0x61);

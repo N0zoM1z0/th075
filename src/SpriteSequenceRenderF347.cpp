@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -22,9 +23,7 @@ public:
     void End(SequenceIteratorF261* out);
 };
 extern float g_CombatViewOffsetX;
-extern const float g_SequenceBaseOffsetAt00657834;
 extern float g_CombatViewOffsetY;
-extern const float g_SequenceYOffsetAt00657830;
 extern const float g_SequenceDefaultScaleAt0065782C;
 struct NativeQuadCarrierF331 {
     DWORD words[33];
@@ -71,7 +70,7 @@ void SpriteSequenceF261::RenderElements()
         SequenceIteratorF261 it=LIST->begin();
         NativeSequenceStateF331 state;
         LIST->End(&state.end);
-        state.x=g_CombatViewOffsetX-g_SequenceBaseOffsetAt00657834;
+        state.x=g_CombatViewOffsetX-GeometryConstants::HundredSixty;
         float y=g_CombatViewOffsetY;
         state.quad.Construct();
         {
@@ -88,7 +87,7 @@ void SpriteSequenceF261::RenderElements()
                 QUAD=DRAW_RECORD->quad;
                 state.tint=(((DRAW_RECORD->tint>>24)*state.counter)/field012<<24)
                     | (field014&DRAW_RECORD->tint);
-                TRANSLATE(QUAD)->TranslateQuad(state.x,y+g_SequenceYOffsetAt00657830,0.0f);
+                TRANSLATE(QUAD)->TranslateQuad(state.x,y+GeometryConstants::FourHundredTwenty,0.0f);
                 if (DRAW_RECORD->projection.x!=0.0f ||
                     DRAW_RECORD->projection.y!=0.0f ||
                     DRAW_RECORD->projection.z!=0.0f) {

@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of SakuyaObject::Advance at 004CA6E0.
 // Replays 42,511 code bytes plus 422 bytes of switch data with VC7.1 build 3077.
@@ -7,11 +8,8 @@
 
 
 float __cdecl AngleAt00483300(float, float);
-extern float g_F1211_AngleDivAt00657828;
 extern const float g_SakuyaObjectMaxXAt006583D8;
 extern const float g_SakuyaObjectMinXAt006595E0;
-extern const float g_SakuyaObjectMaxYAt006583B4;
-extern const float g_SakuyaObjectMinYAt006595EC;
 
 void SakuyaObject::Advance()
 {
@@ -53,8 +51,8 @@ void SakuyaObject::Advance()
             ++field0D8;
             if (animationStage < 4) {
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
@@ -155,7 +153,7 @@ void SakuyaObject::Advance()
                 field080 = 1;
                 field07C = 0;
                 field0DC = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 ++field0D8;
             }
             if (animationStage < 2) {
@@ -165,7 +163,7 @@ void SakuyaObject::Advance()
             if (animationStage > 1) {
                 ++field0DA;
                 SetPolarVelocity(field0DC, field0DA);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 scaleX += 0.5f;
             }
             x = facing * velocityX + x;
@@ -233,11 +231,11 @@ void SakuyaObject::Advance()
             if (field0D8 > 10) field0D8 = 10;
             if (animationStage == 0) {
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field314 = rotationZ;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
@@ -336,11 +334,11 @@ void SakuyaObject::Advance()
             if (field0D8 > 10) field0D8 = 10;
             if (animationStage == 0) {
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field314 = rotationZ;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
@@ -459,7 +457,7 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
@@ -476,7 +474,7 @@ void SakuyaObject::Advance()
                 }
                 if (animationStage == 0 || animationStage == 2) {
                     SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-                    rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 }
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -494,10 +492,10 @@ void SakuyaObject::Advance()
                         field080 = 1;
                         field07C = 0;
                         field0C8 = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                            (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                            (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                         field0CC = 17.5f;
                         SetPolarVelocity(field0C8, field0CC);
-                        rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                        rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     }
                 }
             }
@@ -534,7 +532,7 @@ void SakuyaObject::Advance()
             }
             if (animationStage > 0) {
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             x = facing * velocityX + x;
             y -= velocityY;
@@ -542,7 +540,7 @@ void SakuyaObject::Advance()
             if (animationStage == 0 && animationFrame != 0) {
                 // Later startup frames proceed to the same arena bounds check.
             }
-            if (x > g_SakuyaObjectMaxXAt006583D8 || x < g_SakuyaObjectMinXAt006595E0 || y > g_SakuyaObjectMaxYAt006583B4 || y < g_SakuyaObjectMinYAt006595EC) {
+            if (x > g_SakuyaObjectMaxXAt006583D8 || x < g_SakuyaObjectMinXAt006595E0 || y > GeometryConstants::Thousand || y < GeometryConstants::NegativeHundredSixty) {
                 ClearFrameInfo();
                 return;
             }
@@ -649,13 +647,13 @@ void SakuyaObject::Advance()
             if (animationStage > 1 && animationStage < 6) {
                 ++field0DA;
                 SetPolarVelocity(field0C8, field0DA);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 scaleX += 0.5f;
             }
             if (animationStage > 5 && animationStage < 10) {
                 ++field0DA;
                 SetPolarVelocity(field0DC, field0DA);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 scaleX += 0.5f;
             }
             if (animationStage < 2) {
@@ -685,7 +683,7 @@ void SakuyaObject::Advance()
                     field080 = 1;
                     field07C = 0;
                     field0DC = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                        (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                        (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 }
             }
         }
@@ -1235,7 +1233,7 @@ void SakuyaObject::Advance()
         if (animationStage > 0) {
             ++field0DA;
             SetPolarVelocity(field0DC, field0DA);
-            rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+            rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             scaleX += 0.5f;
             scaleY *= 0.98f;
         }
@@ -1280,8 +1278,8 @@ void SakuyaObject::Advance()
             if (field0D8 > 10) field0D8 = 10;
             if (animationStage < 5 && animationFrame == 0) {
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
@@ -1370,9 +1368,9 @@ void SakuyaObject::Advance()
             ++field0D8;
             if (animationStage < 6) {
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 if (animationStage > 0) {
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
@@ -1448,7 +1446,7 @@ void SakuyaObject::Advance()
             ++field0D8;
             if (animationStage < 5) {
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 if (y > owner->field2E0 && field0DA < 2 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
@@ -1484,7 +1482,7 @@ void SakuyaObject::Advance()
                     field080 = 1;
                 }
                 if (animationStage > 0) {
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
@@ -1577,7 +1575,7 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 0);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
@@ -1657,7 +1655,7 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 0);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
@@ -1711,8 +1709,8 @@ void SakuyaObject::Advance()
             ++field0D8;
             if (animationStage < 5) {
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
@@ -1767,7 +1765,7 @@ void SakuyaObject::Advance()
                 field080 = 1;
                 field07C = 0;
                 field0DC = AngleAt00483300(owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 ++field0D8;
             }
             if (animationStage < 2) {
@@ -1777,7 +1775,7 @@ void SakuyaObject::Advance()
             if (animationStage > 1) {
                 ++field0DA;
                 SetPolarVelocity(field0DC, field0DA);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 scaleX += 0.5f;
             }
             x = facing * velocityX + x;
@@ -1800,7 +1798,7 @@ void SakuyaObject::Advance()
                 field0CC = 15.0f;
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1819,12 +1817,12 @@ void SakuyaObject::Advance()
             if (field0D8 > 5) field0D8 = 5;
             if (animationStage == 1) {
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 if (field07C == 0) {
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
@@ -1903,7 +1901,7 @@ void SakuyaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1922,12 +1920,12 @@ void SakuyaObject::Advance()
             if (field0D8 > 5) field0D8 = 5;
             if (animationStage == 1) {
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 if (field07C == 0) {
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                     owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
@@ -2014,7 +2012,7 @@ void SakuyaObject::Advance()
                 field0DA = RecordedRange(0, 30) - 15;
                 field0D8 = RecordedRange(0, 50);
                 SetPolarVelocity(field0DA, field0DC * 0.01f);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -2122,8 +2120,8 @@ void SakuyaObject::Advance()
             ++field0D8;
             if (animationStage < 5) {
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
@@ -2228,8 +2226,8 @@ void SakuyaObject::Advance()
                     field080 = 1;
                 }
                 SetPolarVelocity(field0C8, field0CC);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;

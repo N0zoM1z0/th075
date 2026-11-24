@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -8,8 +9,6 @@
 class ReplaySlotNumberF253Drawer {
 public: void DrawQuad(int texture,const SpriteQuad40CA80&, const RECT*, DWORD);
 };
-extern const float g_ResultDigitWidthAt00657F78;
-extern const float g_ResultDigitHeightAt0065786C;
 class ReplaySlotNumberF253 {
 public:
     void DrawNumber(float x, float y, DWORD color, int number,
@@ -25,7 +24,7 @@ void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
 {
     int remaining=number;
     {
-    SpriteQuad40CA80 quad(x - g_ResultDigitWidthAt00657F78,y,x,y + g_ResultDigitHeightAt0065786C);
+    SpriteQuad40CA80 quad(x - GeometryConstants::Nineteen,y,x,y + GeometryConstants::Twenty);
     {
         RECT rect;
         if (minDigits > 0) {

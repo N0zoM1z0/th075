@@ -101,6 +101,13 @@ unit's top level so switch fragments can use them inside function bodies.
 A headless consumer linked against the library and checked all nineteen
 values alongside the existing absolute-value and square-root wrappers.
 
+`GeometryConstants.hpp` declares 51 single-precision values used in
+coordinates, bounds and angle calculations. Each definition matches the
+existing VC7.1 literal and the original `.rdata` bytes at its relocation
+target. The angle conversion uses the program's stored single-precision
+value for radians per degree. The new declarations preserve 2,265
+`DIR32` fields across 286 previous extern names.
+
 The paired and family stage pack constructors inherit the existing
 `NativeBackgroundBaseF479` layout. The embedded texture manager begins at
 `+0x18`, and the first trailing stage member starts at `+0x68`. The

@@ -40,14 +40,14 @@ case 0x303: {
             ++scriptCounterF00;
             if ((scriptCounterF00)<g_OptionsModeAt006714D0*5+10) {
                 PlaySound(0);
-                scriptCounterF02=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-                fieldF08=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+                scriptCounterF02=static_cast<short>((velocityX)*GeometryConstants::Hundred);
+                fieldF08=static_cast<short>((velocityY)*GeometryConstants::Hundred);
                 field314=float(fieldF04);
                 field318=10.0f;
                 SetPolarVelocity(float(fieldF04),100.0f);
                 SpawnBattleEffect(0x388,
                     float(facing)*(velocityX)+(x),
-                    (*(&y))+g_F1012_ArcYAt006591EC-velocityY,
+                    (*(&y))+GeometryConstants::HundredForty-velocityY,
                     facing,1);
                 velocityX=float(scriptCounterF02)*FloatConstants::OneHundredth;
                 velocityY=float(fieldF08)*FloatConstants::OneHundredth;
@@ -69,12 +69,12 @@ case 0x303: {
         fieldF04=static_cast<short>(
             AngleAt00483300(
                 -((opponent->y)+
-                    g_ContactProjectionAt00657888-y+
-                    g_F1012_ArcYAt006591EC),
+                    GeometryConstants::Hundred-y+
+                    GeometryConstants::HundredForty),
                 (opponent->x -
                     x) *
                     (facing))/
-                g_F1012_AngleDivisorAt00657828);
+                GeometryConstants::RadiansPerDegree);
     }
     if ((animationStage)==9 && (animationFrame)==0 && (scriptCounterF00)<25)
         ResetSecondaryCounter(7);

@@ -31,9 +31,9 @@
                     x=(field2DC)-FloatConstants::Five;
             }
             if ((animationStage)>7 && (animationStage)<10 && y>FloatConstants::Zero) {
-                if ((CheckHorizontalLimits() && (((x)<g_F699_SideEdgeAt00657884
+                if ((CheckHorizontalLimits() && (((x)<GeometryConstants::SixHundredForty
                      && facing==1)
-                    || ((x)>g_F699_SideEdgeAt00657884
+                    || ((x)>GeometryConstants::SixHundredForty
                         && facing==-1)))
                     || (((field2D8)+FloatConstants::Five)>=x
                         && facing==1)
@@ -55,7 +55,7 @@
                     ResetPrimaryCounters(0x2DF);
                     break;
                 }
-                if (y>g_F715_DecisionHeightAt006593D0)
+                if (y>GeometryConstants::TwoHundredForty)
                     ResetPrimaryCounters(0x2DC);
                 else
                     ResetPrimaryCounters(0x2DC);
@@ -63,7 +63,7 @@
             }
             if ((animationStage)==3 && (animationFrame)==0) {
                 if (AbsFloatAt00412D90(x-opponent->x)
-                    <g_F699_DistanceAt0065787C) {
+                    <GeometryConstants::ThreeHundredTwenty) {
                     if (RecordedRange(0,100)<50)
                         facing=1;
                     else
@@ -72,10 +72,10 @@
                 PlaySound(5);
                 SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
                 SpawnAuxEffect(0x7E,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
                 velocityX=-20.0f;
                 velocityY=20.0f;

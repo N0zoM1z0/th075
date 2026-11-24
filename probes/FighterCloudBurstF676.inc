@@ -41,41 +41,41 @@
                 ++scriptCounterF00;
                 if ((scriptCounterF00)==6-static_cast<int>(g_OptionsModeAt006714D0)) {
                     Fighter::SpawnBattleEffect(0x38D,
-                        (*(&x))+g_ContactProjectionAt00657888,
+                        (*(&x))+GeometryConstants::Hundred,
                         30.0f,facing,0);
                     Fighter::SpawnBattleEffect(0x38D,
-                        (*(&x))-g_ContactProjectionAt00657888,
+                        (*(&x))-GeometryConstants::Hundred,
                         30.0f,facing,0);
                     Fighter::SpawnBattleEffect(0x38D,
-                        (*(&x))+g_BurstXAt00659238,
+                        (*(&x))+GeometryConstants::HundredEighty,
                         0.0f,facing,1);
                     Fighter::SpawnBattleEffect(0x38D,
-                        (*(&x))-g_BurstXAt00659238,
+                        (*(&x))-GeometryConstants::HundredEighty,
                         0.0f,facing,1);
                     Fighter::SpawnBattleEffect(0x38D,
-                        (*(&x))+g_BurstXAt00658400,
+                        (*(&x))+GeometryConstants::Seventy,
                         -30.0f,facing,1);
                     Fighter::SpawnBattleEffect(0x38D,
-                        (*(&x))-g_BurstXAt00658400,
+                        (*(&x))-GeometryConstants::Seventy,
                         -30.0f,facing,1);
                     if (static_cast<int>(g_OptionsModeAt006714D0)>1) {
                         Fighter::SpawnBattleEffect(0x38D,
-                            (*(&x))+g_BurstXAt00659420,
+                            (*(&x))+GeometryConstants::TwoHundredTwenty,
                             50.0f,facing,0);
                         Fighter::SpawnBattleEffect(0x38D,
-                            (*(&x))-g_BurstXAt00659420,
+                            (*(&x))-GeometryConstants::TwoHundredTwenty,
                             50.0f,facing,0);
                         Fighter::SpawnBattleEffect(0x38D,
-                            (*(&x))+g_BurstXAt00658370,
+                            (*(&x))+GeometryConstants::TwoHundredEighty,
                             0.0f,facing,1);
                         Fighter::SpawnBattleEffect(0x38D,
-                            (*(&x))-g_BurstXAt00658370,
+                            (*(&x))-GeometryConstants::TwoHundredEighty,
                             0.0f,facing,1);
                         Fighter::SpawnBattleEffect(0x38D,
-                            (*(&x))+g_BurstXAt006590A8,
+                            (*(&x))+GeometryConstants::HundredTwenty,
                             -50.0f,facing,1);
                         Fighter::SpawnBattleEffect(0x38D,
-                            (*(&x))-g_BurstXAt006590A8,
+                            (*(&x))-GeometryConstants::HundredTwenty,
                             -50.0f,facing,1);
                     }
                     SetCameraShake(20.0f);
@@ -104,7 +104,7 @@
                 ++scriptCounterF02;
                 if ((scriptCounterF02)>4) {
                     SpawnAuxEffect(0x40,x,
-                       (*(&y))+g_CloudShotYAt006591E4,1,1);
+                       (*(&y))+GeometryConstants::TwoHundredFifty,1,1);
                     scriptCounterF02=0;
                 }
             }
@@ -116,10 +116,10 @@
                     ++fieldF04;
                     if (RecordedRange(0,100)>50)
                         SpawnBattleEffect(0x390,x,
-                            (*(&y))+g_CloudShotYAt006591E4,1,1);
+                            (*(&y))+GeometryConstants::TwoHundredFifty,1,1);
                     else
                         SpawnBattleEffect(0x390,x,
-                            (*(&y))+g_CloudShotYAt006591E4,-1,1);
+                            (*(&y))+GeometryConstants::TwoHundredFifty,-1,1);
                 }
             }
             if ((animationStage)>10 && (animationStage)<14) {
@@ -140,7 +140,7 @@
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x38B,x,
-                    (*(&y))+g_CloudShotYAt006591E4,
+                    (*(&y))+GeometryConstants::TwoHundredFifty,
                     facing,1);
                 PlaySound(0x15);
             }

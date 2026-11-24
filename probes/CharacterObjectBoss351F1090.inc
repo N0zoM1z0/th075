@@ -24,7 +24,7 @@ case 0x351: {
     }
     if (animationStage>5 && animationStage<11) {
         velocityY=0.0f;
-        if (scaleX>=g_F1070_InitSpeedAt00657858) {
+        if (scaleX>=GeometryConstants::Forty) {
             ResetSecondaryCounter(animationStage+5);
             return;
         }

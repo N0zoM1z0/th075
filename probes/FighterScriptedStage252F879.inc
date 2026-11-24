@@ -16,7 +16,7 @@ case 0x252: {
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             (facing),1);
         PlaySharedSound(0x21);
         opponent->fieldEFA=0;

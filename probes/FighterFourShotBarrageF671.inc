@@ -14,13 +14,13 @@ case 0x258: {
                 field318=5.0f;
                 SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
-                    (*(&y))+g_BarrageY1At006591EC,
+                    (*(&y))+GeometryConstants::HundredForty,
                     facing,1);
                 field314=110.0f;
                 field318=5.0f;
                 SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
-                    (*(&y))+g_BarrageY2At006581DC,
+                    (*(&y))+GeometryConstants::Ninety,
                     facing,1);
                 field314=-70.0f;
                 field318=4.0f;
@@ -32,7 +32,7 @@ case 0x258: {
                 field318=4.0f;
                 SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
             }
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);

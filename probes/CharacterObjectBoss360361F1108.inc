@@ -41,12 +41,12 @@ case F1108_CASE: {
         --field0D8;
         if (field0D8<0)
             field0D8=0;
-        rotationZ=(rotationZ)+g_F1068_ActionSpeedAt00657878;
+        rotationZ=(rotationZ)+GeometryConstants::Thirty;
     }
-    if (x>g_F1101_RightAt00659424 ||
-        x<g_F1076_LeftAt006595EC ||
-        y>g_F1057_UpperBoundAt006583B4 ||
-        y<g_F1076_LeftAt006595EC) {
+    if (x>GeometryConstants::FourteenHundred ||
+        x<GeometryConstants::NegativeHundredSixty ||
+        y>GeometryConstants::Thousand ||
+        y<GeometryConstants::NegativeHundredSixty) {
         ClearFrameInfo();
         return;
     }

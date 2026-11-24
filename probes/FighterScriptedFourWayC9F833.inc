@@ -8,10 +8,10 @@ case 0xC9: {
         velocityX=-15.0f;
         SpawnAuxEffect(0x7D,
             x-float((facing)*80),
-            (*(&y))+g_F701_VolleyYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,
             -(facing),1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_F701_VolleyYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,
             -(facing),1);
         PlaySharedSound(31);
     }

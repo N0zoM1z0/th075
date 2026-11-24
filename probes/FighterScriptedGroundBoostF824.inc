@@ -4,7 +4,7 @@
 // not an accepted whole original function or ASM byte substitution.
 case 0x9E: {
     cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>g_AnimationMaximumAt006583B4)
+    if ((cardGauge)>GeometryConstants::Thousand)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
 #if F637_EXTRA_FLAG && F637_EXTRA_BEFORE

@@ -1,3 +1,4 @@
+#include "../src/GeometryConstants.hpp"
 #include "../src/FloatConstants.hpp"
 #include "ReimuFighter.hpp"
 // F1183 live whole original 0045DD70 parent, continued from the existing

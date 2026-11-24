@@ -19,7 +19,7 @@
                 if ((scriptCounterF02)>4) {
                     SpawnAuxEffect(0x40,
                         x-float(facing*3),
-                        (*(&y))+g_YPlusAt0065929C,1,1);
+                        (*(&y))+GeometryConstants::HundredFour,1,1);
                     scriptCounterF02=0;
                 }
             }

@@ -13,11 +13,11 @@ case 0x25E:
         field314 = -30.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
-            (y) + g_ReimuCommandBackYAt006590A8, facing, 1);
+            (y) + GeometryConstants::HundredTwenty, facing, 1);
         field314 = 30.0f;
         field318 = 10.0f;
         SpawnBattleEffect(0x320, x + static_cast<float>(facing * 0x0C),
-            (y) + g_ReimuCommandBackYAt006590A8, facing, 1);
+            (y) + GeometryConstants::HundredTwenty, facing, 1);
         UpdateGaugeTimer(100);
         PlaySound(5);
     }

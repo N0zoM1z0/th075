@@ -30,10 +30,10 @@ case 0xCB: {
         field05C=0.6f;
         SpawnAuxEffect(0x7D,
             x-float((facing)*80),
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             -(facing),1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             -(facing),1);
         PlaySharedSound(31);
     }

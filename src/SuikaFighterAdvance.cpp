@@ -1,47 +1,19 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "SuikaFighter.hpp"
 
-extern float g_AngleShiftAt00657878;
-extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_ContactProjectionAt00657888;
-extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F748_SpeedScaleAt006590B8;
-extern float g_MarisaSpecialProjectileYAt00658400;
-extern float g_MarisaSpecialProjectileYAt0065929C;
-extern float g_SuikaOffsetAt00657834;
-extern float g_SuikaOffsetAt00657884;
-extern float g_SuikaOffsetAt00657888;
-extern float g_SuikaOffsetAt0065788C;
-extern float g_SuikaOffsetAt00657D10;
-extern float g_SuikaOffsetAt006581DC;
-extern float g_SuikaOffsetAt00658264;
-extern float g_SuikaOffsetAt00658268;
 extern float g_SuikaOffsetAt00658368;
-extern float g_SuikaOffsetAt00658398;
 extern float g_SuikaOffsetAt006583F8;
-extern float g_SuikaOffsetAt00658400;
 extern float g_SuikaOffsetAt00659094;
-extern float g_SuikaOffsetAt006590A4;
-extern float g_SuikaOffsetAt006590A8;
-extern float g_SuikaOffsetAt006590AC;
-extern float g_SuikaOffsetAt00659138;
-extern float g_SuikaOffsetAt006591E4;
-extern float g_SuikaOffsetAt006591EC;
-extern float g_SuikaOffsetAt006591F8;
-extern float g_SuikaOffsetAt0065920C;
-extern float g_SuikaOffsetAt00659238;
 extern float g_SuikaOffsetAt0065927C;
 extern float g_SuikaOffsetAt00659280;
-extern float g_SuikaOffsetAt00659290;
-extern float g_SuikaOffsetAt0065929C;
 extern float g_SuikaOffsetAt006593F4;
-extern float g_SuikaOffsetAt006595B4;
 extern float g_SuikaOffsetAt00659B68;
 extern float g_SuikaOffsetAt00659B70;
 extern float g_SuikaOffsetAt00659E14;
@@ -566,7 +538,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(field094);
             velocityY += field098;
-            if (velocityY < g_ApproachLowerAt00658290)
+            if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
             if (velocityY > g_ApproachUpperAt006592A4)
@@ -579,8 +551,8 @@ void SuikaFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -606,8 +578,8 @@ void SuikaFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -633,8 +605,8 @@ void SuikaFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -655,8 +627,8 @@ void SuikaFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -704,8 +676,8 @@ void SuikaFighter::Advance() {
 
             Fighter::PlaySharedSound(0x16);
 
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -724,12 +696,12 @@ void SuikaFighter::Advance() {
             ResetTransform(0.0f, 95.0f, 0.0f);
         }
 
-        rotationZ = (rotationZ) + g_AngleShiftAt00657878;
+        rotationZ = (rotationZ) + GeometryConstants::Thirty;
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -751,8 +723,8 @@ void SuikaFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x59);
@@ -786,11 +758,11 @@ void SuikaFighter::Advance() {
 
     case 0x59: {
         if (animationStage == 3) {
-            rotationZ = (rotationZ) + g_F728_RandomOffsetYAt00657858;
+            rotationZ = (rotationZ) + GeometryConstants::Forty;
             velocityY = velocityY - field05C;
             if (velocityY + y <= FloatConstants::Zero) {
-                sequenceTimer = (velocityX) * g_ContactProjectionAt00657888;
-                fieldEFE = (velocityY) * g_ContactProjectionAt00657888;
+                sequenceTimer = (velocityX) * GeometryConstants::Hundred;
+                fieldEFE = (velocityY) * GeometryConstants::Hundred;
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x61);
@@ -1095,8 +1067,8 @@ void SuikaFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            sequenceTimer = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            fieldEFE = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            fieldEFE = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -1110,7 +1082,7 @@ void SuikaFighter::Advance() {
 
     case 0x96: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1132,7 +1104,7 @@ void SuikaFighter::Advance() {
 
     case 0x97: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1154,7 +1126,7 @@ void SuikaFighter::Advance() {
 
     case 0x98: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1176,7 +1148,7 @@ void SuikaFighter::Advance() {
 
     case 0x9A: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1198,7 +1170,7 @@ void SuikaFighter::Advance() {
 
     case 0x9B: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1220,7 +1192,7 @@ void SuikaFighter::Advance() {
 
     case 0x9C: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1242,7 +1214,7 @@ void SuikaFighter::Advance() {
 
     case 0x9E: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1268,7 +1240,7 @@ void SuikaFighter::Advance() {
 
     case 0x9F: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1290,7 +1262,7 @@ void SuikaFighter::Advance() {
 
     case 0xA0: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1312,7 +1284,7 @@ void SuikaFighter::Advance() {
 
     case 0xA1: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             sequenceTimer = 0;
@@ -1334,7 +1306,7 @@ void SuikaFighter::Advance() {
 
     case 0xA3: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
@@ -1355,7 +1327,7 @@ void SuikaFighter::Advance() {
 
     case 0xA4: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
@@ -1376,7 +1348,7 @@ void SuikaFighter::Advance() {
 
     case 0xA5: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
@@ -1397,7 +1369,7 @@ void SuikaFighter::Advance() {
 
     case 0xA7: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1406,7 +1378,7 @@ void SuikaFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing) * 30) + (x),
 
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1424,7 +1396,7 @@ void SuikaFighter::Advance() {
 
     case 0xA8: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1433,7 +1405,7 @@ void SuikaFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing) * 30) + (x),
 
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1808,7 +1780,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(800, static_cast<float>(facing * 128) + x,
-                y - g_SuikaOffsetAt006590A4, facing, 1);
+                y - GeometryConstants::SixtySix, facing, 1);
             PlaySound(10);
         }
         return;
@@ -1913,8 +1885,8 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 3 && animationFrame == 0) {
             SetCameraShake(5.0f);
-            SpawnBattleEffect(0x342, static_cast<float>(facing * 90) + x, (y) + g_SuikaOffsetAt00658268, facing, 1);
-            SpawnBattleEffect(0x343, static_cast<float>(facing * 90) + x, (y) + g_SuikaOffsetAt00658268, facing, 1);
+            SpawnBattleEffect(0x342, static_cast<float>(facing * 90) + x, (y) + GeometryConstants::Eighty, facing, 1);
+            SpawnBattleEffect(0x343, static_cast<float>(facing * 90) + x, (y) + GeometryConstants::Eighty, facing, 1);
             PlaySound(0x18);
         }
         return;
@@ -2220,7 +2192,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x327,
                 static_cast<float>(facing * 151) + x,
-                (y) + g_MarisaSpecialProjectileYAt0065929C, facing, 1);
+                (y) + GeometryConstants::HundredFour, facing, 1);
         }
         return;
     }
@@ -2250,7 +2222,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x328,
                 static_cast<float>(static_cast<int>(facing) << 7) + x,
-                (y) + g_MarisaSpecialProjectileYAt00658400, facing, 1);
+                (y) + GeometryConstants::Seventy, facing, 1);
         }
         return;
     }
@@ -2263,7 +2235,7 @@ void SuikaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
-            SpawnBattleEffect(0x323, static_cast<float>(facing * 100) + x, (y) + g_SuikaOffsetAt00657888, facing, 1);
+            SpawnBattleEffect(0x323, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::Hundred, facing, 1);
             UpdateGaugeTimer(150);
             PlaySound(0);
         }
@@ -2278,7 +2250,7 @@ void SuikaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
-            SpawnBattleEffect(0x327, static_cast<float>(facing * 100) + x, (y) + g_SuikaOffsetAt00657888, facing, 1);
+            SpawnBattleEffect(0x327, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::Hundred, facing, 1);
             UpdateGaugeTimer(150);
             PlaySound(0);
         }
@@ -2293,7 +2265,7 @@ void SuikaFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         if (animationStage == 3 && animationFrame == 0) {
-            SpawnBattleEffect(0x328, static_cast<float>(facing * 20) + x, (y) + g_SuikaOffsetAt006581DC, facing, 1);
+            SpawnBattleEffect(0x328, static_cast<float>(facing * 20) + x, (y) + GeometryConstants::Ninety, facing, 1);
             UpdateGaugeTimer(150);
             PlaySound(0);
         }
@@ -2341,7 +2313,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
             field314 = 0.0f;
-            SpawnBattleEffect(0x338, static_cast<float>(facing * 100) + x, (y) + g_SuikaOffsetAt00657888, facing, 1);
+            SpawnBattleEffect(0x338, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::Hundred, facing, 1);
             UpdateGaugeTimer(200);
             PlaySound(0);
         }
@@ -2357,7 +2329,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
             field314 = 30.0f;
-            SpawnBattleEffect(0x338, static_cast<float>(facing * 100) + x, (y) + g_SuikaOffsetAt00657888, facing, 1);
+            SpawnBattleEffect(0x338, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::Hundred, facing, 1);
             UpdateGaugeTimer(200);
             PlaySound(0);
         }
@@ -2373,7 +2345,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(2);
         if (animationStage == 3 && animationFrame == 0) {
             field314 = 20.0f;
-            SpawnBattleEffect(0x339, static_cast<float>(facing * 20) + x, (y) + g_SuikaOffsetAt006581DC, facing, 0);
+            SpawnBattleEffect(0x339, static_cast<float>(facing * 20) + x, (y) + GeometryConstants::Ninety, facing, 0);
             UpdateGaugeTimer(300);
             PlaySound(0);
         }
@@ -2428,7 +2400,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
             field314 = 0.0f;
-            SpawnBattleEffect(0x33D, static_cast<float>(facing * 100) + x, (y) + g_SuikaOffsetAt00657888, facing, 1);
+            SpawnBattleEffect(0x33D, static_cast<float>(facing * 100) + x, (y) + GeometryConstants::Hundred, facing, 1);
             UpdateGaugeTimer(100);
             PlaySound(0);
         }
@@ -2444,7 +2416,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(2);
         if (animationStage == 3 && animationFrame == 0) {
             field314 = 35.0f;
-            SpawnBattleEffect(0x33C, static_cast<float>(facing * 20) + x, (y) + g_SuikaOffsetAt006581DC, facing, 0);
+            SpawnBattleEffect(0x33C, static_cast<float>(facing * 20) + x, (y) + GeometryConstants::Ninety, facing, 0);
             UpdateGaugeTimer(300);
             PlaySound(0);
         }
@@ -2494,7 +2466,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 11 && animationFrame == 0) {
             field314 = 0.0f;
-            SpawnBattleEffect(0x32B, static_cast<float>(facing * 130) + x, (y) + g_SuikaOffsetAt00658400, facing, 1);
+            SpawnBattleEffect(0x32B, static_cast<float>(facing * 130) + x, (y) + GeometryConstants::Seventy, facing, 1);
             UpdateGaugeTimer(250);
             SetCameraShake(5.0f);
             PlaySound(1);
@@ -2527,7 +2499,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 7 && animationFrame == 0) {
             field314 = 75.0f;
-            SpawnBattleEffect(0x32B, static_cast<float>(facing * 83) + x, (y) + g_SuikaOffsetAt006595B4, facing, 1);
+            SpawnBattleEffect(0x32B, static_cast<float>(facing * 83) + x, (y) + GeometryConstants::HundredSeventy, facing, 1);
             UpdateGaugeTimer(250);
             SetCameraShake(5.0f);
             PlaySound(1);
@@ -2633,7 +2605,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
             PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
@@ -2656,7 +2628,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
             PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
@@ -2677,7 +2649,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
             PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
@@ -2697,7 +2669,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if (animationStage == 8 && animationFrame == 0 && sequenceTimer < 1) {
@@ -2719,7 +2691,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
 
@@ -2738,7 +2710,7 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if (animationStage == 8 && animationFrame == 0 && sequenceTimer < 1) {
@@ -2858,7 +2830,7 @@ void SuikaFighter::Advance() {
                 opponent->velocityX = 0.0f;
                 opponent->velocityY = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
             velocityY -= field05C;
@@ -2877,7 +2849,7 @@ void SuikaFighter::Advance() {
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
             }
             if (animationStage > 20 && animationStage < 31) {
                 AdjustCameraOffset(0);
@@ -2886,29 +2858,29 @@ void SuikaFighter::Advance() {
                 if (scriptCounterF00 < 60) {
                     if (fieldEFE <= 0) {
                         SpawnBattleEffect(0x331, x - static_cast<float>(facing * 960),
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         fieldEFE = 8;
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 2) {
                         SpawnBattleEffect(0x331, static_cast<float>(facing * 960) + x,
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 4) {
                         SpawnBattleEffect(0x331, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            (y) + g_SuikaOffsetAt0065920C, facing, 1);
+                            (y) + GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 6) {
                         SpawnBattleEffect(0x331, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            y - g_SuikaOffsetAt0065920C, facing, 1);
+                            y - GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                 }
                 if (animationStage < 23) {
                     opponent->x = static_cast<float>(facing * 45) + x;
-                    opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                    opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 }
             }
         }
@@ -2930,8 +2902,8 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + g_SuikaOffsetAt00657834, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + GeometryConstants::HundredSixty, facing, 1);
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 8 && animationFrame == 0) {
             velocityX = 15.0f;
@@ -2962,14 +2934,14 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
             opponent->ResetPrimaryCounters(0x6D);
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591EC;
+            opponent->y = (y) + GeometryConstants::HundredForty;
             opponent->facing = facing;
         }
         if (animationStage == 24 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 45.0f;
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt00658398;
+            opponent->y = (y) + GeometryConstants::HundredTwentyEight;
         }
         if (animationStage == 25 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -2987,13 +2959,13 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 85.0f;
             opponent->x = x - static_cast<float>(facing * 20);
-            opponent->y = (y) + g_SuikaOffsetAt0065788C;
+            opponent->y = (y) + GeometryConstants::Fifty;
         }
         if (animationStage == 28 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 160.0f;
             opponent->x = x - static_cast<float>(facing * 60);
-            opponent->y = (y) + g_SuikaOffsetAt006581DC;
+            opponent->y = (y) + GeometryConstants::Ninety;
         }
         if (animationStage == 29 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -3005,7 +2977,7 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = -110.0f;
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591F8;
+            opponent->y = (y) + GeometryConstants::HundredFifty;
         }
         if (animationStage == 31 && animationFrame == 0) {
             if (sequenceTimer < 11) {
@@ -3014,11 +2986,11 @@ void SuikaFighter::Advance() {
                 opponent->ResetTransform(0.0f, 0.0f, 0.0f);
                 opponent->rotationZ = -45.0f;
                 opponent->x = static_cast<float>(facing * 44) + x;
-                opponent->y = (y) + g_SuikaOffsetAt00658398;
+                opponent->y = (y) + GeometryConstants::HundredTwentyEight;
                 return;
             }
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt006590AC;
+            opponent->y = (y) + GeometryConstants::HundredTen;
         }
         if (animationStage == 32 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -3075,8 +3047,8 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + g_SuikaOffsetAt00657834, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + GeometryConstants::HundredSixty, facing, 1);
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 5 && animationFrame == 0) {
             PlaySound(6);
@@ -3147,8 +3119,8 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + g_SuikaOffsetAt00657834, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + GeometryConstants::HundredSixty, facing, 1);
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 6 && animationFrame == 0) {
             PlaySound(0xB);
@@ -3462,7 +3434,7 @@ void SuikaFighter::Advance() {
                 opponent->velocityX = 0.0f;
                 opponent->velocityY = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
             velocityY -= field05C;
@@ -3481,7 +3453,7 @@ void SuikaFighter::Advance() {
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
             }
             if (animationStage > 20 && animationStage < 31) {
                 AdjustCameraOffset(0);
@@ -3490,29 +3462,29 @@ void SuikaFighter::Advance() {
                 if (scriptCounterF00 < 60) {
                     if (fieldEFE <= 0) {
                         SpawnBattleEffect(0x334, x - static_cast<float>(facing * 960),
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         fieldEFE = 8;
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 2) {
                         SpawnBattleEffect(0x334, static_cast<float>(facing * 960) + x,
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 4) {
                         SpawnBattleEffect(0x334, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            (y) + g_SuikaOffsetAt0065920C, facing, 1);
+                            (y) + GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 6) {
                         SpawnBattleEffect(0x334, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            y - g_SuikaOffsetAt0065920C, facing, 1);
+                            y - GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                 }
                 if (animationStage < 23) {
                     opponent->x = static_cast<float>(facing * 45) + x;
-                    opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                    opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 }
             }
         }
@@ -3534,8 +3506,8 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x74, static_cast<float>(facing * 52) + x, (y) + g_SuikaOffsetAt00657834, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, static_cast<float>(facing * 52) + x, (y) + GeometryConstants::HundredSixty, facing, 1);
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 8 && animationFrame == 0) {
             velocityX = 15.0f;
@@ -3566,14 +3538,14 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
             opponent->ResetPrimaryCounters(0x6D);
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591EC;
+            opponent->y = (y) + GeometryConstants::HundredForty;
             opponent->facing = facing;
         }
         if (animationStage == 24 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 45.0f;
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt00658398;
+            opponent->y = (y) + GeometryConstants::HundredTwentyEight;
         }
         if (animationStage == 25 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -3591,13 +3563,13 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 85.0f;
             opponent->x = x - static_cast<float>(facing * 20);
-            opponent->y = (y) + g_SuikaOffsetAt0065788C;
+            opponent->y = (y) + GeometryConstants::Fifty;
         }
         if (animationStage == 28 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 160.0f;
             opponent->x = x - static_cast<float>(facing * 60);
-            opponent->y = (y) + g_SuikaOffsetAt006581DC;
+            opponent->y = (y) + GeometryConstants::Ninety;
         }
         if (animationStage == 29 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -3609,7 +3581,7 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = -110.0f;
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591F8;
+            opponent->y = (y) + GeometryConstants::HundredFifty;
         }
         if (animationStage == 31 && animationFrame == 0) {
             if (sequenceTimer < 33) {
@@ -3618,11 +3590,11 @@ void SuikaFighter::Advance() {
                 opponent->ResetTransform(0.0f, 0.0f, 0.0f);
                 opponent->rotationZ = -45.0f;
                 opponent->x = static_cast<float>(facing * 44) + x;
-                opponent->y = (y) + g_SuikaOffsetAt00658398;
+                opponent->y = (y) + GeometryConstants::HundredTwentyEight;
                 return;
             }
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt006590AC;
+            opponent->y = (y) + GeometryConstants::HundredTen;
         }
         if (animationStage == 32 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -3679,8 +3651,8 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x74, static_cast<float>(facing * 52) + x, (y) + g_SuikaOffsetAt00657834, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, static_cast<float>(facing * 52) + x, (y) + GeometryConstants::HundredSixty, facing, 1);
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 5 && animationFrame == 0) {
             PlaySound(6);
@@ -3706,7 +3678,7 @@ void SuikaFighter::Advance() {
             opponent->x = static_cast<float>(facing * 470) + x;
             SpawnBattleEffect(0x335, x, y, facing, 1);
             SpawnBattleEffect(0x33F, opponent->x,
-                (opponent->y) + g_ContactProjectionAt00657888, facing, 1);
+                (opponent->y) + GeometryConstants::Hundred, facing, 1);
             PlaySound(8);
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -3749,8 +3721,8 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x74, static_cast<float>(facing * 52) + x, (y) + g_SuikaOffsetAt00657834, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x74, static_cast<float>(facing * 52) + x, (y) + GeometryConstants::HundredSixty, facing, 1);
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 6 && animationFrame == 0) {
             PlaySound(0xB);
@@ -4115,8 +4087,8 @@ void SuikaFighter::Advance() {
             else
                 color[0] = 0;
             if (RecordedRange(0, 100) < 50) {
-                SpawnBattleEffect(0x388, ((x) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)),
-                    ((y) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
+                SpawnBattleEffect(0x388, ((x) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)),
+                    ((y) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
             }
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -4171,8 +4143,8 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 1 && animationFrame == 0) {
             fieldEFE = static_cast<short>(RecordedRange(0, 60) + 100);
-            if (y < g_SuikaOffsetAt00659238) {
-                if (x < g_SuikaOffsetAt00657D10) {
+            if (y < GeometryConstants::HundredEighty) {
+                if (x < GeometryConstants::FourHundredEighty) {
                     if (facing == 1)
                         scriptCounterF00 = -15;
                     else
@@ -4183,7 +4155,7 @@ void SuikaFighter::Advance() {
                     scriptCounterF00 = -15;
                 }
             }
-            if (y > g_SuikaOffsetAt006591E4) {
+            if (y > GeometryConstants::TwoHundredFifty) {
                 if (x > g_SuikaOffsetAt00659B68) {
                     if (facing == 1)
                         scriptCounterF00 = 165;
@@ -4223,8 +4195,8 @@ void SuikaFighter::Advance() {
         }
         if (animationStage < 5 && RecordedRange(0, 100) < 50) {
             SpawnBattleEffect(0x388,
-                ((x) + g_SuikaOffsetAt0065788C) - static_cast<float>(RecordedRange(0, 100)),
-                ((y) + g_SuikaOffsetAt0065788C) - static_cast<float>(RecordedRange(0, 100)), facing, 1);
+                ((x) + GeometryConstants::Fifty) - static_cast<float>(RecordedRange(0, 100)),
+                ((y) + GeometryConstants::Fifty) - static_cast<float>(RecordedRange(0, 100)), facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -4262,7 +4234,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 6 && animationFrame == 0) {
             PlaySound(5);
-            SpawnBattleEffect(0x393, static_cast<float>(facing * 107) + x, (y) + g_SuikaOffsetAt00659138, facing, 1);
+            SpawnBattleEffect(0x393, static_cast<float>(facing * 107) + x, (y) + GeometryConstants::NinetyFour, facing, 1);
         }
         return;
     }
@@ -4288,7 +4260,7 @@ void SuikaFighter::Advance() {
             ++fieldF04;
             if (fieldF04 > 4) {
                 SpawnAuxEffect(0x40, x - static_cast<float>(facing * 3),
-                    (y) + g_SuikaOffsetAt0065929C, 1, 1);
+                    (y) + GeometryConstants::HundredFour, 1, 1);
                 fieldF04 = 0;
             }
         }
@@ -4304,7 +4276,7 @@ void SuikaFighter::Advance() {
                 opponent->velocityX = 0.0f;
                 opponent->velocityY = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
             velocityY -= field05C;
@@ -4323,7 +4295,7 @@ void SuikaFighter::Advance() {
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
             }
             if (animationStage > 20 && animationStage < 31) {
                 AdjustCameraOffset(0);
@@ -4332,29 +4304,29 @@ void SuikaFighter::Advance() {
                 if (scriptCounterF00 < 60) {
                     if (fieldEFE <= 0) {
                         SpawnBattleEffect(0x331, x - static_cast<float>(facing * 960),
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         fieldEFE = 8;
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 2) {
                         SpawnBattleEffect(0x331, static_cast<float>(facing * 960) + x,
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 4) {
                         SpawnBattleEffect(0x331, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            (y) + g_SuikaOffsetAt0065920C, facing, 1);
+                            (y) + GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 6) {
                         SpawnBattleEffect(0x331, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            y - g_SuikaOffsetAt0065920C, facing, 1);
+                            y - GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                 }
                 if (animationStage < 23) {
                     opponent->x = static_cast<float>(facing * 45) + x;
-                    opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                    opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 }
             }
         }
@@ -4404,14 +4376,14 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
             opponent->ResetPrimaryCounters(0x6D);
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591EC;
+            opponent->y = (y) + GeometryConstants::HundredForty;
             opponent->facing = facing;
         }
         if (animationStage == 24 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 45.0f;
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt00658398;
+            opponent->y = (y) + GeometryConstants::HundredTwentyEight;
         }
         if (animationStage == 25 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -4429,13 +4401,13 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 85.0f;
             opponent->x = x - static_cast<float>(facing * 20);
-            opponent->y = (y) + g_SuikaOffsetAt0065788C;
+            opponent->y = (y) + GeometryConstants::Fifty;
         }
         if (animationStage == 28 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 160.0f;
             opponent->x = x - static_cast<float>(facing * 60);
-            opponent->y = (y) + g_SuikaOffsetAt006581DC;
+            opponent->y = (y) + GeometryConstants::Ninety;
         }
         if (animationStage == 29 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -4447,7 +4419,7 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = -110.0f;
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591F8;
+            opponent->y = (y) + GeometryConstants::HundredFifty;
         }
         if (animationStage == 31 && animationFrame == 0) {
             if (sequenceTimer < 11) {
@@ -4456,11 +4428,11 @@ void SuikaFighter::Advance() {
                 opponent->ResetTransform(0.0f, 0.0f, 0.0f);
                 opponent->rotationZ = -45.0f;
                 opponent->x = static_cast<float>(facing * 44) + x;
-                opponent->y = (y) + g_SuikaOffsetAt00658398;
+                opponent->y = (y) + GeometryConstants::HundredTwentyEight;
                 return;
             }
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt006590AC;
+            opponent->y = (y) + GeometryConstants::HundredTen;
         }
         if (animationStage == 32 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -4523,7 +4495,7 @@ void SuikaFighter::Advance() {
                 opponent->velocityX = 0.0f;
                 opponent->velocityY = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
             velocityY -= field05C;
@@ -4542,7 +4514,7 @@ void SuikaFighter::Advance() {
                     velocityY = 0.0f;
                 velocityX = 0.0f;
                 opponent->x = static_cast<float>(facing * 45) + x;
-                opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
             }
             if (animationStage > 20 && animationStage < 31) {
                 AdjustCameraOffset(0);
@@ -4551,29 +4523,29 @@ void SuikaFighter::Advance() {
                 if (scriptCounterF00 < 60) {
                     if (fieldEFE <= 0) {
                         SpawnBattleEffect(0x334, x - static_cast<float>(facing * 960),
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         fieldEFE = 8;
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 2) {
                         SpawnBattleEffect(0x334, static_cast<float>(facing * 960) + x,
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 4) {
                         SpawnBattleEffect(0x334, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            (y) + g_SuikaOffsetAt0065920C, facing, 1);
+                            (y) + GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 6) {
                         SpawnBattleEffect(0x334, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            y - g_SuikaOffsetAt0065920C, facing, 1);
+                            y - GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                 }
                 if (animationStage < 23) {
                     opponent->x = static_cast<float>(facing * 45) + x;
-                    opponent->y = (y) + g_SuikaOffsetAt006590A8 + velocityY;
+                    opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 }
             }
         }
@@ -4595,8 +4567,8 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + g_SuikaOffsetAt00657834, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            SpawnAuxEffect(0x73, static_cast<float>(facing * 52) + x, (y) + GeometryConstants::HundredSixty, facing, 1);
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 8 && animationFrame == 0) {
             velocityX = 10.0f;
@@ -4627,14 +4599,14 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
             opponent->ResetPrimaryCounters(0x6D);
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591EC;
+            opponent->y = (y) + GeometryConstants::HundredForty;
             opponent->facing = facing;
         }
         if (animationStage == 24 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 45.0f;
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt00658398;
+            opponent->y = (y) + GeometryConstants::HundredTwentyEight;
         }
         if (animationStage == 25 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -4652,13 +4624,13 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 85.0f;
             opponent->x = x - static_cast<float>(facing * 20);
-            opponent->y = (y) + g_SuikaOffsetAt0065788C;
+            opponent->y = (y) + GeometryConstants::Fifty;
         }
         if (animationStage == 28 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = 160.0f;
             opponent->x = x - static_cast<float>(facing * 60);
-            opponent->y = (y) + g_SuikaOffsetAt006581DC;
+            opponent->y = (y) + GeometryConstants::Ninety;
         }
         if (animationStage == 29 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -4670,7 +4642,7 @@ void SuikaFighter::Advance() {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
             opponent->rotationZ = -110.0f;
             opponent->x = x;
-            opponent->y = (y) + g_SuikaOffsetAt006591F8;
+            opponent->y = (y) + GeometryConstants::HundredFifty;
         }
         if (animationStage == 31 && animationFrame == 0) {
             if (sequenceTimer < 33) {
@@ -4679,11 +4651,11 @@ void SuikaFighter::Advance() {
                 opponent->ResetTransform(0.0f, 0.0f, 0.0f);
                 opponent->rotationZ = -45.0f;
                 opponent->x = static_cast<float>(facing * 44) + x;
-                opponent->y = (y) + g_SuikaOffsetAt00658398;
+                opponent->y = (y) + GeometryConstants::HundredTwentyEight;
                 return;
             }
             opponent->x = static_cast<float>(facing * 44) + x;
-            opponent->y = (y) + g_SuikaOffsetAt006590AC;
+            opponent->y = (y) + GeometryConstants::HundredTen;
         }
         if (animationStage == 32 && animationFrame == 0) {
             opponent->ResetTransform(0.0f, 0.0f, 0.0f);
@@ -4734,23 +4706,23 @@ void SuikaFighter::Advance() {
                 if (scriptCounterF00 < 45) {
                     if (fieldEFE <= 0) {
                         SpawnBattleEffect(0x38F, x - static_cast<float>(facing * 960),
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         fieldEFE = 8;
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 2) {
                         SpawnBattleEffect(0x38F, static_cast<float>(facing * 960) + x,
-                            ((y) + g_SuikaOffsetAt0065920C) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
+                            ((y) + GeometryConstants::NineHundredSixty) - static_cast<float>(RecordedRange(0, 1920)), facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 4) {
                         SpawnBattleEffect(0x38F, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            (y) + g_SuikaOffsetAt0065920C, facing, 1);
+                            (y) + GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                     if (fieldEFE == 6) {
                         SpawnBattleEffect(0x38F, static_cast<float>((960 - RecordedRange(0, 1920)) * facing) + x,
-                            y - g_SuikaOffsetAt0065920C, facing, 1);
+                            y - GeometryConstants::NineHundredSixty, facing, 1);
                         ++scriptCounterF00;
                     }
                 }
@@ -4774,12 +4746,12 @@ void SuikaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             sequenceTimer = 0;
             fieldF22 = static_cast<short>(x);
-            fieldF24 = static_cast<short>((y) + g_SuikaOffsetAt006591EC);
+            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredForty);
             PlaySound(0x13);
         }
         if (animationStage == 7 && animationFrame == 0) {
             fieldF22 = static_cast<short>(static_cast<float>(facing * 44) + x);
-            fieldF24 = static_cast<short>((y) + g_SuikaOffsetAt00658398);
+            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredTwentyEight);
         }
         if (animationStage == 8 && animationFrame == 0) {
             fieldF22 = static_cast<short>(static_cast<float>(facing * 50) + x);
@@ -4791,11 +4763,11 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 10 && animationFrame == 0) {
             fieldF22 = static_cast<short>(x - static_cast<float>(facing * 20));
-            fieldF24 = static_cast<short>((y) + g_SuikaOffsetAt0065788C);
+            fieldF24 = static_cast<short>((y) + GeometryConstants::Fifty);
         }
         if (animationStage == 11 && animationFrame == 0) {
             fieldF22 = static_cast<short>(x - static_cast<float>(facing * 60));
-            fieldF24 = static_cast<short>((y) + g_SuikaOffsetAt006581DC);
+            fieldF24 = static_cast<short>((y) + GeometryConstants::Ninety);
         }
         if (animationStage == 12 && animationFrame == 0) {
             fieldF22 = static_cast<short>(x - static_cast<float>(facing * 45));
@@ -4803,18 +4775,18 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 13 && animationFrame == 0) {
             fieldF22 = static_cast<short>(x);
-            fieldF24 = static_cast<short>((y) + g_SuikaOffsetAt006591F8);
+            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredFifty);
         }
         if (animationStage == 14 && animationFrame == 0) {
             if (sequenceTimer < 11) {
                 ++sequenceTimer;
                 ResetSecondaryCounter(7);
                 fieldF22 = static_cast<short>(static_cast<float>(facing * 44) + x);
-                fieldF24 = static_cast<short>((y) + g_SuikaOffsetAt00658398);
+                fieldF24 = static_cast<short>((y) + GeometryConstants::HundredTwentyEight);
                 return;
             }
             fieldF22 = static_cast<short>(static_cast<float>(facing * 44) + x);
-            fieldF24 = static_cast<short>((y) + g_SuikaOffsetAt006590AC);
+            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredTen);
         }
         if (animationStage == 15 && animationFrame == 0) {
             fieldF22 = static_cast<short>(static_cast<float>(facing * 80) + x);
@@ -4854,59 +4826,59 @@ void SuikaFighter::Advance() {
             PlaySound(5);
             SetCameraShake(15.0f);
             if (g_OptionsModeAt006714D0 == 3) {
-                SpawnBattleEffect(0x39B, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39B, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39B, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39B, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39B, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39B, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39B, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39B, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 2) {
-                SpawnBattleEffect(0x39B, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39B, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39B, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39B, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 1) {
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39F, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39F, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39F, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39F, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 0) {
-                SpawnBattleEffect(0x39F, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39F, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39F, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39F, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39F, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39F, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39F, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39F, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
-                SpawnBattleEffect(0x39D, ((opponent->x) + g_SuikaOffsetAt006591F8)
+                SpawnBattleEffect(0x39D, ((opponent->x) + GeometryConstants::HundredFifty)
                     - static_cast<float>(RecordedRange(0, 300)), y, facing, 1);
             }
         }
@@ -4932,8 +4904,8 @@ void SuikaFighter::Advance() {
         }
         if (animationStage < 2) {
             if (RecordedRange(0, 100) < 50) {
-                SpawnBattleEffect(0x388, ((x) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)),
-                    ((y) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
+                SpawnBattleEffect(0x388, ((x) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)),
+                    ((y) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
             }
             if (color[0] < 255) {
                 color[0] += 5;
@@ -4948,7 +4920,7 @@ void SuikaFighter::Advance() {
             ++fieldEFE;
             ++scriptCounterF00;
             if (fieldEFE > 4) {
-                SpawnAuxEffect(0x3E, x, (y) + g_SuikaOffsetAt006581DC, 1, 1);
+                SpawnAuxEffect(0x3E, x, (y) + GeometryConstants::Ninety, 1, 1);
                 fieldEFE = 0;
             }
             if (health < 7500) {
@@ -4961,7 +4933,7 @@ void SuikaFighter::Advance() {
                 for (int shot = 0; shot < 18; ++shot) {
                     field314 = static_cast<float>(shot * 20);
                     field318 = 12.0f;
-                    SpawnBattleEffect(0x38B, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+                    SpawnBattleEffect(0x38B, x, (y) + GeometryConstants::Hundred, facing, 1);
                 }
                 scriptCounterF00 = 0;
             }
@@ -4986,7 +4958,7 @@ void SuikaFighter::Advance() {
             return;
         }
         if (fieldEFE > 4) {
-            SpawnAuxEffect(0x40, x, (y) + g_SuikaOffsetAt006581DC, 1, 1);
+            SpawnAuxEffect(0x40, x, (y) + GeometryConstants::Ninety, 1, 1);
             fieldEFE = 0;
         }
         if (animationStage == 0 && animationFrame == 0) {
@@ -5005,7 +4977,7 @@ void SuikaFighter::Advance() {
                 for (int shot = 0; shot < 18; ++shot) {
                     field314 = static_cast<float>(shot * 20);
                     field318 = 12.0f;
-                    SpawnBattleEffect(0x38B, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+                    SpawnBattleEffect(0x38B, x, (y) + GeometryConstants::Hundred, facing, 1);
                 }
                 scriptCounterF00 = 0;
             }
@@ -5015,36 +4987,36 @@ void SuikaFighter::Advance() {
                 field318 = 15.0f;
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 if (g_OptionsModeAt006714D0 == 1) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 2) {
                     field314 = static_cast<float>(scriptCounterF02 + 120);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 120);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 3) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 + 90);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 90);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 }
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -5079,7 +5051,7 @@ void SuikaFighter::Advance() {
             return;
         }
         if (fieldEFE > 4) {
-            SpawnAuxEffect(0x3E, x, (y) + g_SuikaOffsetAt006581DC, 1, 1);
+            SpawnAuxEffect(0x3E, x, (y) + GeometryConstants::Ninety, 1, 1);
             fieldEFE = 0;
         }
         g_SequenceByteAt0066C23A = 0;
@@ -5092,7 +5064,7 @@ void SuikaFighter::Advance() {
             g_SequenceByteAt0066C239 = 0;
             if (health < 2500) {
                 ResetPrimaryCounters(0x319);
-                SpawnBattleEffect(0x398, x, (y) + g_ContactProjectionAt00657888, 1, 0);
+                SpawnBattleEffect(0x398, x, (y) + GeometryConstants::Hundred, 1, 0);
                 sequenceTimer = 0;
                 return;
             }
@@ -5101,22 +5073,22 @@ void SuikaFighter::Advance() {
                 for (int shot = 0; shot < 18; ++shot) {
                     field314 = static_cast<float>(shot * 20);
                     field318 = 12.0f;
-                    SpawnBattleEffect(0x38B, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+                    SpawnBattleEffect(0x38B, x, (y) + GeometryConstants::Hundred, facing, 1);
                 }
                 scriptCounterF00 = 0;
             }
             if (fieldF04 > 360 - g_OptionsModeAt006714D0 * 40) {
                 if (g_OptionsModeAt006714D0 < 2) {
                     SpawnBattleEffect(0x3A1, x,
-                        (y) + g_SuikaOffsetAt006591E4, facing, 1);
+                        (y) + GeometryConstants::TwoHundredFifty, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 2) {
                     SpawnBattleEffect(0x3A0, x,
-                        (y) + g_SuikaOffsetAt006591E4, facing, 1);
+                        (y) + GeometryConstants::TwoHundredFifty, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 3) {
                     SpawnBattleEffect(0x396, x,
-                        (y) + g_SuikaOffsetAt006591E4, facing, 1);
+                        (y) + GeometryConstants::TwoHundredFifty, facing, 1);
                 }
                 fieldF04 = 0;
             }
@@ -5126,36 +5098,36 @@ void SuikaFighter::Advance() {
                 field318 = 15.0f;
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 if (g_OptionsModeAt006714D0 == 1) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 2) {
                     field314 = static_cast<float>(scriptCounterF02 + 120);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 120);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 }
                 if (g_OptionsModeAt006714D0 == 3) {
                     field314 = static_cast<float>(scriptCounterF02 + 180);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 + 90);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                     field314 = static_cast<float>(scriptCounterF02 - 90);
                     SetPolarVelocity(field314, 200.0f);
                     SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                        ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                        ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 }
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -5192,7 +5164,7 @@ void SuikaFighter::Advance() {
             return;
         }
         if (fieldEFE > 4) {
-            SpawnAuxEffect(0x3E, x, (y) + g_SuikaOffsetAt006581DC, 1, 1);
+            SpawnAuxEffect(0x3E, x, (y) + GeometryConstants::Ninety, 1, 1);
             fieldEFE = 0;
         }
         if (scriptCounterF00 > 240 - g_OptionsModeAt006714D0 * 30) {
@@ -5200,22 +5172,22 @@ void SuikaFighter::Advance() {
             for (int shot = 0; shot < 18; ++shot) {
                 field314 = static_cast<float>(shot * 20);
                 field318 = 12.0f;
-                SpawnBattleEffect(0x38B, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+                SpawnBattleEffect(0x38B, x, (y) + GeometryConstants::Hundred, facing, 1);
             }
             scriptCounterF00 = 0;
         }
         if (fieldF04 > 360 - g_OptionsModeAt006714D0 * 40) {
             if (g_OptionsModeAt006714D0 < 2) {
                 SpawnBattleEffect(0x3A1, x,
-                    (y) + g_SuikaOffsetAt006591E4, facing, 1);
+                    (y) + GeometryConstants::TwoHundredFifty, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 2) {
                 SpawnBattleEffect(0x3A0, x,
-                    (y) + g_SuikaOffsetAt006591E4, facing, 1);
+                    (y) + GeometryConstants::TwoHundredFifty, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 3) {
                 SpawnBattleEffect(0x396, x,
-                    (y) + g_SuikaOffsetAt006591E4, facing, 1);
+                    (y) + GeometryConstants::TwoHundredFifty, facing, 1);
             }
             fieldF04 = 0;
         }
@@ -5225,36 +5197,36 @@ void SuikaFighter::Advance() {
             field318 = 15.0f;
             SetPolarVelocity(field314, 200.0f);
             SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
             if (g_OptionsModeAt006714D0 == 1) {
                 field314 = static_cast<float>(scriptCounterF02 + 180);
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 2) {
                 field314 = static_cast<float>(scriptCounterF02 + 120);
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 field314 = static_cast<float>(scriptCounterF02 - 120);
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
             }
             if (g_OptionsModeAt006714D0 == 3) {
                 field314 = static_cast<float>(scriptCounterF02 + 180);
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 field314 = static_cast<float>(scriptCounterF02 + 90);
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
                 field314 = static_cast<float>(scriptCounterF02 - 90);
                 SetPolarVelocity(field314, 200.0f);
                 SpawnBattleEffect(0x397, (FloatConstants::Five + velocityX) * facing + x,
-                    ((y) + g_SuikaOffsetAt00659290) - velocityY, facing, 1);
+                    ((y) + GeometryConstants::HundredFourteen) - velocityY, facing, 1);
             }
             velocityX = 0.0f;
             velocityY = 0.0f;
@@ -5360,8 +5332,8 @@ void SuikaFighter::Advance() {
                 color[0] = 0;
         }
         if (animationStage > 0 && RecordedRange(0, 100) < 50) {
-            SpawnBattleEffect(0x388, ((x) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)),
-                    ((y) + g_ContactProjectionAt00657888) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
+            SpawnBattleEffect(0x388, ((x) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)),
+                    ((y) + GeometryConstants::Hundred) - static_cast<float>(RecordedRange(0, 200)), facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x316);
@@ -5377,7 +5349,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 3 && animationFrame == 0) {
             facing = 1;
-            velocityX = (g_SuikaOffsetAt00657884 - x) / g_SuikaOffsetAt00658264;
+            velocityX = (GeometryConstants::SixHundredForty - x) / GeometryConstants::Sixty;
             velocityY = 3.0f;
         }
         return;

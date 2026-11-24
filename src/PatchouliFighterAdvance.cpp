@@ -1,41 +1,23 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "PatchouliFighter.hpp"
 
-extern float g_AliceEffectYAt00658264;
 extern float g_AliceEffectYAt00658364;
-extern float g_AliceEffectYAt006590A8;
-extern float g_AngleShiftAt00657878;
-extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_ContactProjectionAt00657888;
-extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F964_LateFallAt00658048;
-extern float g_F970_YAt006590AC;
 extern float g_FallingLateDragAt00659240;
-extern float g_MarisaCommandYAt00658268;
-extern float g_MarisaResourceYAt006581DC;
-extern float g_MarisaResourceYAt006590AC;
-extern float g_MarisaSpecialProjectileYAt00658400;
-extern float g_MarisaSpecialProjectileYAt0065929C;
 extern float g_PatchouliEffectYAt00657860;
-extern float g_PatchouliEffectYAt00658294;
-extern float g_PatchouliEffectYAt00658400;
 extern float g_PatchouliEffectYAt00659084;
-extern float g_PatchouliEffectYAt006593D0;
 extern float g_PatchouliEffectYAt00659470;
-extern float g_PatchouliEffectYAt006595B4;
 extern float g_PatchouliEffectYAt00659740;
 extern float g_PatchouliEffectYAt00659744;
 extern float g_PatchouliEffectYAt00659748;
 extern float g_PatchouliEffectYAt0065974C;
 extern float g_PatchouliEffectYAt00659750;
-extern float g_TrajectoryUpperAt006590C4;
-extern float g_YuyukoFanLowerYAt00659238;
 
 void PatchouliFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -565,7 +547,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(field094);
             velocityY += field098;
-            if (velocityY < g_ApproachLowerAt00658290)
+            if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
             if (velocityY > g_ApproachUpperAt006592A4)
@@ -578,8 +560,8 @@ void PatchouliFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -605,8 +587,8 @@ void PatchouliFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -632,8 +614,8 @@ void PatchouliFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -654,8 +636,8 @@ void PatchouliFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -703,8 +685,8 @@ void PatchouliFighter::Advance() {
 
             Fighter::PlaySharedSound(0x16);
 
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -723,12 +705,12 @@ void PatchouliFighter::Advance() {
             ResetTransform(0.0f, 95.0f, 0.0f);
         }
 
-        rotationZ = (rotationZ) + g_AngleShiftAt00657878;
+        rotationZ = (rotationZ) + GeometryConstants::Thirty;
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -750,8 +732,8 @@ void PatchouliFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x59);
@@ -785,11 +767,11 @@ void PatchouliFighter::Advance() {
 
     case 0x59: {
         if (animationStage > 2) {
-            rotationZ = (rotationZ) + g_F728_RandomOffsetYAt00657858;
+            rotationZ = (rotationZ) + GeometryConstants::Forty;
             velocityY = velocityY - field05C;
             if (velocityY + y <= FloatConstants::Zero) {
-                scriptCounterF00 = (velocityX) * g_ContactProjectionAt00657888;
-                scriptCounterF02 = (velocityY) * g_ContactProjectionAt00657888;
+                scriptCounterF00 = (velocityX) * GeometryConstants::Hundred;
+                scriptCounterF02 = (velocityY) * GeometryConstants::Hundred;
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x61);
@@ -814,7 +796,7 @@ void PatchouliFighter::Advance() {
     case 0x5D: {
         if (animationStage == 0 && animationFrame == 0)
             velocityX = 11.0f;
-        SpawnBattleEffect(0x353, (x) + g_PatchouliEffectYAt00658400 - static_cast<float>(RecordedRange(0, 140)),
+        SpawnBattleEffect(0x353, (x) + GeometryConstants::Seventy - static_cast<float>(RecordedRange(0, 140)),
             y - static_cast<float>(RecordedRange(0, 20)), facing, 1);
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -835,7 +817,7 @@ void PatchouliFighter::Advance() {
     case 0x5E: {
         if (animationStage == 0 && animationFrame == 0)
             velocityX = -11.0f;
-        SpawnBattleEffect(0x353, (x) + g_PatchouliEffectYAt00658400 - static_cast<float>(RecordedRange(0, 140)),
+        SpawnBattleEffect(0x353, (x) + GeometryConstants::Seventy - static_cast<float>(RecordedRange(0, 140)),
             y - static_cast<float>(RecordedRange(0, 20)), facing, 1);
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -1090,8 +1072,8 @@ void PatchouliFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -1105,7 +1087,7 @@ void PatchouliFighter::Advance() {
 
     case 0x96: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1127,7 +1109,7 @@ void PatchouliFighter::Advance() {
 
     case 0x97: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1149,7 +1131,7 @@ void PatchouliFighter::Advance() {
 
     case 0x98: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1171,7 +1153,7 @@ void PatchouliFighter::Advance() {
 
     case 0x9A: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1193,7 +1175,7 @@ void PatchouliFighter::Advance() {
 
     case 0x9B: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1215,7 +1197,7 @@ void PatchouliFighter::Advance() {
 
     case 0x9C: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1237,7 +1219,7 @@ void PatchouliFighter::Advance() {
 
     case 0x9E: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1263,7 +1245,7 @@ void PatchouliFighter::Advance() {
 
     case 0x9F: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1285,7 +1267,7 @@ void PatchouliFighter::Advance() {
 
     case 0xA0: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1307,7 +1289,7 @@ void PatchouliFighter::Advance() {
 
     case 0xA1: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -1329,7 +1311,7 @@ void PatchouliFighter::Advance() {
 
     case 0xA3: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
@@ -1350,7 +1332,7 @@ void PatchouliFighter::Advance() {
 
     case 0xA4: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
@@ -1371,7 +1353,7 @@ void PatchouliFighter::Advance() {
 
     case 0xA5: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
@@ -1392,7 +1374,7 @@ void PatchouliFighter::Advance() {
 
     case 0xA7: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1401,7 +1383,7 @@ void PatchouliFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing) * 30) + (x),
 
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1419,7 +1401,7 @@ void PatchouliFighter::Advance() {
 
     case 0xA8: {
         cardGauge = (cardGauge) + FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1428,7 +1410,7 @@ void PatchouliFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing) * 30) + (x),
 
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1531,9 +1513,9 @@ void PatchouliFighter::Advance() {
             velocityX = 8.5f;
             SpawnAuxEffect(0x7D,
                 static_cast<float>(facing * 80) + x,
-                (y) + g_MarisaCommandYAt00658268, facing, 1);
+                (y) + GeometryConstants::Eighty, facing, 1);
             SpawnAuxEffect(0x7E, x,
-                (y) + g_MarisaCommandYAt00658268, facing, 1);
+                (y) + GeometryConstants::Eighty, facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
         return;
@@ -1549,9 +1531,9 @@ void PatchouliFighter::Advance() {
             field05C = 0.3f;
             SpawnAuxEffect(0x7D,
                 x - static_cast<float>(facing * 80),
-                (y) + g_MarisaCommandYAt00658268, -facing, 1);
+                (y) + GeometryConstants::Eighty, -facing, 1);
             SpawnAuxEffect(0x7E, x,
-                (y) + g_MarisaCommandYAt00658268, -facing, 1);
+                (y) + GeometryConstants::Eighty, -facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
         if (y > FloatConstants::Zero && animationStage > 0 && animationStage < 9) {
@@ -1587,9 +1569,9 @@ void PatchouliFighter::Advance() {
             field05C = 0.4f;
             SpawnAuxEffect(0x7D,
                 static_cast<float>(facing * 80) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             SpawnAuxEffect(0x7E, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
         if (y > FloatConstants::Zero && animationStage > 1) {
@@ -1637,9 +1619,9 @@ void PatchouliFighter::Advance() {
             field05C = 0.4f;
             SpawnAuxEffect(0x7D,
                 x - static_cast<float>(facing * 80),
-                (y) + g_ContactProjectionAt00657888, -facing, 1);
+                (y) + GeometryConstants::Hundred, -facing, 1);
             SpawnAuxEffect(0x7E, x,
-                (y) + g_ContactProjectionAt00657888, -facing, 1);
+                (y) + GeometryConstants::Hundred, -facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
         return;
@@ -1797,7 +1779,7 @@ void PatchouliFighter::Advance() {
             ClearMotionFields();
             Fighter::PlaySharedSound(0x2C);
             SpawnBattleEffect(0x3E6, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             if (static_cast<unsigned int>(inputD) > 0)
@@ -1821,7 +1803,7 @@ void PatchouliFighter::Advance() {
             PlaySharedSound(0x2C);
 
             SpawnBattleEffect(0x3e6, x,
-                    (y) + g_ContactProjectionAt00657888,
+                    (y) + GeometryConstants::Hundred,
                     facing, 1);
         }
 
@@ -2214,7 +2196,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x32F, x, y, facing, 1);
             SpawnBattleEffect(0x357, static_cast<float>(facing * 120) + x,
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
             PlaySound(6);
         }
         if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 2) {
@@ -2242,7 +2224,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x327,
                 static_cast<float>(facing * 151) + x,
-                (y) + g_MarisaSpecialProjectileYAt0065929C, facing, 1);
+                (y) + GeometryConstants::HundredFour, facing, 1);
         }
         return;
     }
@@ -2272,7 +2254,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x328,
                 static_cast<float>(static_cast<int>(facing) << 7) + x,
-                (y) + g_MarisaSpecialProjectileYAt00658400, facing, 1);
+                (y) + GeometryConstants::Seventy, facing, 1);
         }
         return;
     }
@@ -2341,16 +2323,16 @@ void PatchouliFighter::Advance() {
             UpdateGaugeTimer(100);
             field314 = 55.0f;
             SpawnBattleEffect(0x343, static_cast<float>(facing * 115) + x,
-                (y) + g_AliceEffectYAt00658264, facing, 1);
+                (y) + GeometryConstants::Sixty, facing, 1);
             field314 = 65.0f;
             SpawnBattleEffect(0x343, static_cast<float>(facing * 115) + x,
-                (y) + g_AliceEffectYAt00658264, facing, 1);
+                (y) + GeometryConstants::Sixty, facing, 1);
             field314 = 45.0f;
             SpawnBattleEffect(0x343, static_cast<float>(facing * 115) + x,
-                (y) + g_AliceEffectYAt00658264, facing, 1);
+                (y) + GeometryConstants::Sixty, facing, 1);
             field314 = 75.0f;
             SpawnBattleEffect(0x343, static_cast<float>(facing * 115) + x,
-                (y) + g_AliceEffectYAt00658264, facing, 1);
+                (y) + GeometryConstants::Sixty, facing, 1);
             PlaySound(0);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2488,7 +2470,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             UpdateGaugeTimer(100);
             SpawnBattleEffect(0x358, static_cast<float>(facing * 115) + x,
-                (y) + g_AliceEffectYAt00658264, facing, 1);
+                (y) + GeometryConstants::Sixty, facing, 1);
             PlaySound(0x18);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2554,7 +2536,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             UpdateGaugeTimer(150);
             SpawnBattleEffect(0x355, static_cast<float>(facing * 115) + x,
-                (y) + g_AliceEffectYAt00658264, facing, 1);
+                (y) + GeometryConstants::Sixty, facing, 1);
             PlaySound(0x18);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2644,7 +2626,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationFrame == 0)
             field07C = 0;
-        if (animationStage == 13 && animationFrame == 0 && velocityY > g_TrajectoryUpperAt006590C4) {
+        if (animationStage == 13 && animationFrame == 0 && velocityY > GeometryConstants::Twelve) {
             ResetSecondaryCounter(6);
             field07C = 0;
         }
@@ -2704,7 +2686,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             Fighter::PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
         }
@@ -2726,7 +2708,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             Fighter::PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
         }
@@ -2746,7 +2728,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             Fighter::PlaySharedSound(0x21);
             opponent->fieldEFA = 0;
         }
@@ -2765,7 +2747,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 1) {
@@ -2787,7 +2769,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
 
@@ -2806,7 +2788,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37, x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing, 1);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 1) {
@@ -2824,7 +2806,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 7 && animationFrame == 0) {
             UpdateGaugeTimer(100);
             SpawnBattleEffect(0x32A, static_cast<float>(facing * 100) + x,
-                (y) + g_F970_YAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
             SpawnBattleEffect(0x332, x, y, facing, 1);
             SpawnAuxEffect(0x7F, x - static_cast<float>(facing * 60), 0.0f, facing, 1);
             PlaySound(2);
@@ -2842,7 +2824,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 7 && animationFrame == 0) {
             UpdateGaugeTimer(100);
             SpawnBattleEffect(0x329, static_cast<float>(facing * 100) + x,
-                (y) + g_F970_YAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
             SpawnBattleEffect(0x332, x, y, facing, 1);
             SpawnAuxEffect(0x7F, x - static_cast<float>(facing * 60), 0.0f, facing, 1);
             PlaySound(2);
@@ -2862,7 +2844,7 @@ void PatchouliFighter::Advance() {
             UpdateGaugeTimer(100);
             field314 = static_cast<float>(fieldF04);
             SpawnBattleEffect(0x328, static_cast<float>(facing * 40) + x,
-                (y) + g_PatchouliEffectYAt00658294, facing, 1);
+                (y) + GeometryConstants::FortyFive, facing, 1);
             PlaySound(2);
             velocityX = -8.0f;
             velocityY = 8.0f;
@@ -3023,7 +3005,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 6 && animationFrame == 0) {
             velocityX = 8.0f;
-            SpawnBattleEffect(0x329, x, (y) + g_MarisaResourceYAt006581DC, facing, 1);
+            SpawnBattleEffect(0x329, x, (y) + GeometryConstants::Ninety, facing, 1);
         }
         if (animationStage == 13 && animationFrame == 0 && scriptCounterF00 < 1) {
             ResetSecondaryCounter(6);
@@ -3045,9 +3027,9 @@ void PatchouliFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SpawnAuxEffect(0x73, x - static_cast<float>(facing * 33),
-                (y) + g_PatchouliEffectYAt006595B4, facing, 1);
+                (y) + GeometryConstants::HundredSeventy, facing, 1);
         }
         if (animationStage == 4 && animationFrame == 0) {
             Fighter::SpawnTrackedEffect(800, static_cast<float>(facing * 66) + x,
@@ -3079,7 +3061,7 @@ void PatchouliFighter::Advance() {
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, static_cast<float>(facing * 30) + x,
                 (y) + g_PatchouliEffectYAt00659744, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 7 && animationFrame == 0) {
             if (facing * inputX > 0)
@@ -3093,7 +3075,7 @@ void PatchouliFighter::Advance() {
             field314 = static_cast<float>(RecordedRange(0, scriptCounterF02 * 2) - scriptCounterF02);
             PlaySound(12);
             SpawnBattleEffect(0x323, static_cast<float>(facing * 70) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
             UpdateGaugeTimer(10);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 12) {
@@ -3109,7 +3091,7 @@ void PatchouliFighter::Advance() {
             field314 = static_cast<float>(RecordedRange(0, scriptCounterF02 * 2) - scriptCounterF02);
             PlaySound(12);
             SpawnBattleEffect(0x323, static_cast<float>(facing * 70) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
             ResetSecondaryCounter(6);
             UpdateGaugeTimer(10);
         }
@@ -3141,17 +3123,17 @@ void PatchouliFighter::Advance() {
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, x - static_cast<float>(facing * 62),
                 (y) + g_PatchouliEffectYAt00657860, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
         }
         if (animationStage == 7 && animationFrame == 0) {
             velocityX = 2.0f;
             velocityY = 3.5f;
             field05C = 0.05f;
             UpdateGaugeTimer(250);
-            SpawnBattleEffect(0x349, x, (y) + g_MarisaCommandYAt00658268, facing, 0);
+            SpawnBattleEffect(0x349, x, (y) + GeometryConstants::Eighty, facing, 0);
             for (int shot = 0; shot < 3; ++shot) {
                 field314 = static_cast<float>(shot);
-                SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+                SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, facing, 1);
             }
         }
         if (animationStage == 9 && animationFrame == 0) {
@@ -3181,14 +3163,14 @@ void PatchouliFighter::Advance() {
                 UpdateGaugeTimer(spirit - 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             PlaySound(14);
             SpawnAuxEffect(0x74, static_cast<float>(facing * 20) + x,
-                (y) + g_PatchouliEffectYAt006593D0, facing, 1);
+                (y) + GeometryConstants::TwoHundredForty, facing, 1);
             Fighter::SpawnTrackedEffect(0x351, static_cast<float>(facing * 20) + x,
-                (y) + g_PatchouliEffectYAt006593D0, facing, 1, 0, 1);
+                (y) + GeometryConstants::TwoHundredForty, facing, 1, 0, 1);
         }
         if (animationStage == 9 && animationFrame == 0 && spirit > 5)
             ResetSecondaryCounter(7);
@@ -3206,11 +3188,11 @@ void PatchouliFighter::Advance() {
             fieldF04 = 0;
             field07C = 1;
             ClearMotionFields();
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x74, static_cast<float>(facing * 12) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             Fighter::SpawnTrackedEffect(0x34A, x, y, facing, 0, 0, 1);
         }
         --scriptCounterF02;
@@ -3256,8 +3238,8 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage == 1 && animationFrame == 0) {
             SpawnAuxEffect(0x74, static_cast<float>(facing * 12) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
-            field36C -= g_ContactProjectionAt00657888;
+                (y) + GeometryConstants::Hundred, facing, 1);
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
         }
@@ -3415,7 +3397,7 @@ void PatchouliFighter::Advance() {
             ++scriptCounterF02;
             if (scriptCounterF02 > 3) {
                 SpawnAuxEffect(0x3E, x - static_cast<float>(facing * 28),
-                    (y) + g_YuyukoFanLowerYAt00659238, 1, 1);
+                    (y) + GeometryConstants::HundredEighty, 1, 1);
                 scriptCounterF02 = 0;
             }
         }
@@ -3429,14 +3411,14 @@ void PatchouliFighter::Advance() {
             field314 = static_cast<float>(RecordedRange(0, 40) - 20);
             PlaySound(12);
             SpawnBattleEffect(0x390, static_cast<float>(facing * 70) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 8) {
             ++scriptCounterF00;
             field314 = static_cast<float>(RecordedRange(0, 20) - 10);
             PlaySound(12);
             SpawnBattleEffect(0x390, static_cast<float>(facing * 70) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
             ResetSecondaryCounter(6);
         }
         return;
@@ -3471,11 +3453,11 @@ void PatchouliFighter::Advance() {
                 scriptCounterF00 = 40;
             if (fieldF04 <= 0) {
                 if (facing == 1) {
-                    SpawnBattleEffect(0x38B, field2D8 - g_ContactProjectionAt00657888,
+                    SpawnBattleEffect(0x38B, field2D8 - GeometryConstants::Hundred,
                         static_cast<float>(RecordedRange(0, 280)), facing, 1);
                 }
                 if (facing == -1) {
-                    SpawnBattleEffect(0x38B, (field2DC) + g_ContactProjectionAt00657888,
+                    SpawnBattleEffect(0x38B, (field2DC) + GeometryConstants::Hundred,
                         static_cast<float>(RecordedRange(0, 280)), facing, 1);
                 }
                 fieldF04 = static_cast<short>(35 - g_OptionsModeAt006714D0 * 8);

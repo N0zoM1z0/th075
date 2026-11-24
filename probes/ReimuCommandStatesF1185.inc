@@ -4,7 +4,7 @@ case 0xC8: {
     field3AC=1;
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; scriptCounterF00=0; }
-    if ((velocityX)>g_ReimuC8BrakeAt00657D70) {
+    if ((velocityX)>GeometryConstants::Eight) {
         velocityX=(velocityX)-FloatConstants::Half;
         if ((velocityX)<g_ReimuC8ClampAt006590B0) velocityX=9.0f;
     }
@@ -32,8 +32,8 @@ case 0xC8: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=11.0f;
         SpawnAuxEffect(0x7D,float(facing*80)+(x),
-            (*(&y))+g_ReimuCommandYAt00658268,facing,1);
-        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,facing,1);
+        SpawnAuxEffect(0x7E,x,(*(&y))+GeometryConstants::Eighty,
             facing,1);
         PlaySharedSound(31);
     }
@@ -44,9 +44,9 @@ case 0xC9: {
     if ((animationStage)==0 && (animationFrame)==0) velocityX=0.0f;
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=-10.0f; velocityY=5.0f; field05C=0.6f;
-        SpawnAuxEffect(0x7D,x,(*(&y))+g_ReimuCommandYAt00658268,
+        SpawnAuxEffect(0x7D,x,(*(&y))+GeometryConstants::Eighty,
             -facing,1);
-        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandYAt00658268,
+        SpawnAuxEffect(0x7E,x,(*(&y))+GeometryConstants::Eighty,
             -facing,1);
         PlaySharedSound(31);
     }
@@ -68,8 +68,8 @@ case 0xCA: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=9.0f; velocityY=5.0f; field05C=0.45f;
         SpawnAuxEffect(0x7D,float(facing*80)+(x),
-            (*(&y))+g_ReimuCommandFrontYAt006590AC,facing,1);
-        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandFrontYAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,facing,1);
+        SpawnAuxEffect(0x7E,x,(*(&y))+GeometryConstants::HundredTen,
             facing,1);
         PlaySharedSound(31);
     }
@@ -98,9 +98,9 @@ case 0xCB: {
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(8);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=-9.0f; velocityY=5.0f; field05C=0.45f;
-        SpawnAuxEffect(0x7D,x,(*(&y))+g_ReimuCommandBackYAt006590A8,
+        SpawnAuxEffect(0x7D,x,(*(&y))+GeometryConstants::HundredTwenty,
             -facing,1);
-        SpawnAuxEffect(0x7E,x,(*(&y))+g_ReimuCommandBackYAt006590A8,
+        SpawnAuxEffect(0x7E,x,(*(&y))+GeometryConstants::HundredTwenty,
             -facing,1);
         PlaySharedSound(31);
     }

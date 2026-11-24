@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "MathFloatHelpers.hpp"
 #include "GameSharedState.hpp"
@@ -8,41 +9,23 @@ extern float g_F898ShotYAt0065839C;
 extern float g_F895AbsThresholdAt006591F4;
 extern float g_F894RandomHeightAt006592A0;
 extern float g_F893VerticalStageAt006598B0;
-extern float g_F892DistAt0065787C;
-extern float g_F890Phase0YAt0065835C;
-extern float g_F890Phase0AltYAt006591E4;
-extern float g_F890Phase1LowYAt0065788C;
-extern float g_F890Phase4HiYAt00659420;
 extern float g_F890Phase4OtherYAt006598B4;
-extern float g_F890Phase5YAt0065786C;
 extern double g_F884DoubleDropAt00657D00;
 extern float g_F884PhaseYAt006598B8;
 extern float g_F884Stage5YAt00659470;
 extern float g_F872Volley1F9YAt006598BC;
 extern float g_F872Volley1FAYAt00659310;
-extern float g_F861ShotYAt00659460;
-extern float g_F860ShotYAt006581DC;
 extern float g_F857ShotYAt00659298;
-extern float g_F855ShotYAt00658400;
-extern float g_F853OffsetYAt0065929C;
-extern float g_F834_UpperAt00657CBC;
 extern float g_F834_LowerAt006590B0;
-extern float g_F701_VolleyYAt00658268;
-extern float g_AnimationMaximumAt006583B4;
 extern float g_F748_SpeedScaleAt006590B8;
-extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 // Owner motion clearing now invokes the inherited Fighter method.
 // F1197 complete original-shaped 005214B0 parent, continued from F901/F1040.
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
 // five instruction widths remain NONEXACT. No whole CODE credit.
 
-extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_TrajectoryUpperAt006590C4;
-extern float g_ContactProjectionAt00657888;
 extern float g_BounceThresholdAt006590C0;
-extern float g_AngleShiftAt00657878;
 void YoumuFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
         return;
@@ -240,7 +223,7 @@ void YoumuFighter::Advance() {
 #define CONTACT_STAGE_OFFSET 0xF00
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
-#define TRAJECTORY_LOWER_THRESHOLD g_ApproachLowerAt00658290
+#define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
 #define TRAJECTORY_UPPER_THRESHOLD g_ApproachUpperAt006592A4
 #define TRAJECTORY_MINIMUM_SPEED 6.0f
 #define TRAJECTORY_MAXIMUM_SPEED 25.0f
@@ -298,8 +281,8 @@ void YoumuFighter::Advance() {
                 field07C = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
-                scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-                scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+                scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+                scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x59);
@@ -332,11 +315,11 @@ void YoumuFighter::Advance() {
         }
         case 0x59: {
             if (animationStage == 3) {
-                rotationZ = (rotationZ) + g_F728_RandomOffsetYAt00657858;
+                rotationZ = (rotationZ) + GeometryConstants::Forty;
                 velocityY = velocityY - field05C;
                 if (velocityY + y <= FloatConstants::Zero) {
-                    scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-                    scriptCounterF02 = static_cast<short>((*(&velocityY)) * g_ContactProjectionAt00657888);
+                    scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+                    scriptCounterF02 = static_cast<short>((*(&velocityY)) * GeometryConstants::Hundred);
                     ClearMotionFields();
                     y = 0.0f;
                     ResetPrimaryCounters(0x61);

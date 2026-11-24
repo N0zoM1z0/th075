@@ -33,13 +33,13 @@ case 0x324: {
         color[2]=0xFF;
         color[3]=0xFF;
         rotationZ=AngleAt00483300(
-            velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+            velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
     }
     ++field0D8;
     if (animationStage<2) {
         SetPolarVelocity(field0C8,
             float(field0D8)*FloatConstants::OneTenth+
-            g_F1068_ActionSpeedAt00657878);
+            GeometryConstants::Thirty);
         if (scaleX<FloatConstants::One) {
             scaleX=(scaleX)+FloatConstants::OneTenth;
             scaleY=(scaleY)+FloatConstants::OneTenth;
@@ -62,10 +62,10 @@ case 0x324: {
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1059_UpperBoundAt00657884 ||
-        y<g_F1059_LowerBoundAt0065924C) {
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::SixHundredForty ||
+        y<GeometryConstants::NegativeHundredTwenty) {
         ClearFrameInfo();
         return;
     }

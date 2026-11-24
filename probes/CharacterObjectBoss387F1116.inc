@@ -1,9 +1,9 @@
 // F1116: original Japanese action 0x387, PE 0051B5AF..0051B89F,
 // 752 native CODE bytes/167 x86 within ONE still-NONEXACT 81KB boss.
 case 0x387: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
@@ -30,7 +30,7 @@ case 0x387: {
     // The native stage-zero guard jumps to ordinal 92: BOTH the
     // velocity decrement and angle nudge run on every frame.
     velocityY=velocityY-g_F1116_YOffsetAt00659888;
-    rotationZ=(rotationZ)+g_F1116_AngleOffsetAt0065786C;
+    rotationZ=(rotationZ)+GeometryConstants::Twenty;
     x=float(facing)*velocityX+x;
     y=y+velocityY;
     if (animationStage==1) {

@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "SuikaFighter.hpp"
 #include <windows.h>
 // Native-bounded borrowed state only. Original random/gfx and sound method
@@ -7,10 +8,8 @@
 // literals with a direct float-lvalue macro reproduces the native x87
 // evaluation order at each comparison and projectile launch. This is the
 // complete original function, not a cropped or masked reconstruction.
-extern const float g_SpawnYOffsetAt00657858;
 extern const float g_RightLimitAt00659134;
 extern const float g_LeftLimitAt00659130;
-extern const float g_OuterRightAt0065787C;
 extern const float g_OuterLeftAt00657880;
 class SuikaSoundF313 {public: void Play(int index);};
 #define F(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(off)))
@@ -21,7 +20,7 @@ class SuikaSoundF313 {public: void Play(int index);};
 
 #define SHOT(n) SpawnProjectile((n), \
  (OPPONENT_FLOAT(0x44)+20.0f)-static_cast<float>(Rand(0,40)), \
- (O(float,0x48)+g_SpawnYOffsetAt00657858)+static_cast<float>(Rand(0,100)), \
+ (O(float,0x48)+GeometryConstants::Forty)+static_cast<float>(Rand(0,100)), \
  F(unsigned char,0x66),1)
 void SuikaFighter::AdvanceAuxiliary()
 {
@@ -63,7 +62,7 @@ void SuikaFighter::AdvanceAuxiliary()
     if(g_RightLimitAt00659134<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
        FLOAT(0x44)-OPPONENT_FLOAT(0x44)<g_LeftLimitAt00659130)
         F(short,0xf26)=60;
-    if(g_OuterRightAt0065787C<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
+    if(GeometryConstants::ThreeHundredTwenty<FLOAT(0x44)-OPPONENT_FLOAT(0x44) ||
        FLOAT(0x44)-OPPONENT_FLOAT(0x44)<g_OuterLeftAt00657880) {
         F(short,0xf26)=F(short,0xf26)+1;
         if(F(short,0xf26)>60) F(short,0xf26)=60;

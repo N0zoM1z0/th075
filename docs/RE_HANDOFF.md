@@ -24,11 +24,11 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 1,429 unresolved externals. Nineteen read-only
-floating-point constants replace 147 unresolved names. The batch
-cold-replayed 170 units across 99 objects and verified that each refreshed
-library member matches its replayed object. WinMain and the six existing
-scene types share `SceneBase`. The character selection
+stops at `LNK1120` with 1,143 unresolved externals. The latest batch
+bound 286 names to 51 read-only geometry constants and cold-replayed
+51 units across 46 objects. A headless archive consumer checked the
+linked values. WinMain and the six existing scene types share
+`SceneBase`. The character selection
 constructor and destructor use the same three texture-manager members.
 Startup, capture, drawing, and cleanup share the frame texture owner.
 Startup sequences share five state variables and the existing character

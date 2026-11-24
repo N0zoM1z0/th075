@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include <windows.h>
 #include "ResultListScene.hpp"
 // Independently original R109 and R043 complete rank glyph labels.
@@ -13,8 +14,6 @@ public:void ConstructNative(float x,float y,float width,float height);
 };
 struct RankGlyphFrameF472 { RankQuadF472 quad; };
 
-extern const float g_RankWidthAt00657F78;
-extern const float g_RankHeightAt0065786C;
 class NameEntryLabelF472 {
 public:
  void DrawRankLabel(float x,float y,unsigned int tint,signed char rank);
@@ -23,7 +22,7 @@ public:
 void NameEntryLabelF472::DrawRankLabel(float x,float y,unsigned int tint,signed char rank) {
  unsigned char glyphs[8];
  RankGlyphFrameF472 frame;
- frame.quad.ConstructNative(x,y,x+g_RankWidthAt00657F78,y+g_RankHeightAt0065786C);
+ frame.quad.ConstructNative(x,y,x+GeometryConstants::Nineteen,y+GeometryConstants::Twenty);
  glyphs[0]=13;glyphs[1]=40;glyphs[2]=71;
  glyphs[3]=rank/10+52;glyphs[4]=rank%10+52;
  glyphs[5]=100;glyphs[6]=100;glyphs[7]=100;
@@ -32,7 +31,7 @@ void NameEntryLabelF472::DrawRankLabel(float x,float y,unsigned int tint,signed 
 void ResultListScene::DrawRankLabel(float x,float y,unsigned int tint,signed char rank) {
  unsigned char glyphs[8];
  RankGlyphFrameF472 frame;
- frame.quad.ConstructNative(x,y,x+g_RankWidthAt00657F78,y+g_RankHeightAt0065786C);
+ frame.quad.ConstructNative(x,y,x+GeometryConstants::Nineteen,y+GeometryConstants::Twenty);
  glyphs[0]=13;glyphs[1]=40;glyphs[2]=71;
  glyphs[3]=rank/10+52;glyphs[4]=rank%10+52;
  glyphs[5]=100;glyphs[6]=100;glyphs[7]=100;

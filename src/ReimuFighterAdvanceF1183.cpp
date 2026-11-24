@@ -1,37 +1,23 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "ReimuFighter.hpp"
 // Natural-C++ reconstruction of ReimuFighter::Advance at 0045DD70.
 
-extern float g_ReimuWarpSpreadAt006583B4;
-extern float g_ReimuArenaCenterAt00657884;
 extern float g_ReimuReverseDriftAt0065907C;
-extern float g_ReimuMeterTrailYAt0065835C;
 extern float g_ReimuMeterNearYAt00659088;
 extern float g_ReimuMeterInitialYAt00659084;
 extern float g_ReimuMeterShotYAt00659080;
 extern float g_ReimuSpecialYAt0065908C;
 extern float g_ReimuChargeFallAt00659094;
 extern float g_ReimuAirVolleyYAt00659098;
-extern float g_ReimuDownVolleyYAt0065826C;
 extern float g_ReimuLowVolleyYAt006590A0;
 extern float g_ReimuHighVolleyYAt0065909C;
-extern float g_ReimuC8BrakeAt00657D70;
 extern float g_ReimuC8ClampAt006590B0;
-extern float g_ReimuCommandYAt00658268;
-extern float g_ReimuCommandFrontYAt006590AC;
-extern float g_ReimuCommandBackYAt006590A8;
-extern float g_ReimuShotYAt006590A4;
-extern float g_ReimuRotationStepAt00657858;
 extern float g_ReimuBounceXAt006590BC;
 extern float g_ReimuRecoveryScaleAt006590B8;
-extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
-extern float g_TrajectoryUpperAt006590C4;
-extern float g_ContactProjectionAt00657888;
 extern float g_BounceThresholdAt006590C0;
-extern float g_AngleShiftAt00657878;
 extern float g_ReimuStormPairYBaseAt00657CBC;
 extern float g_ReimuStormPairXBaseAt00658264;
 extern float g_ReimuStormRingYOffsetAt0065836C;
@@ -258,7 +244,7 @@ void ReimuFighter::Advance() {
 #include "FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD FloatConstants::Two
-#define TRAJECTORY_UPPER_THRESHOLD g_TrajectoryUpperAt006590C4
+#define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::Twelve
 #define TRAJECTORY_MINIMUM_SPEED 2.0f
 #define TRAJECTORY_MAXIMUM_SPEED 12.0f
 #define TRAJECTORY_STAGE_THRESHOLD 3
@@ -312,8 +298,8 @@ case 0x48: {
     }
     velocityY = velocityY - field05C;
     if (velocityY + y <= FloatConstants::Zero) {
-        scriptCounterF00 = (velocityX) * g_ContactProjectionAt00657888;
-        scriptCounterF02 = (velocityY) * g_ContactProjectionAt00657888;
+        scriptCounterF00 = (velocityX) * GeometryConstants::Hundred;
+        scriptCounterF02 = (velocityY) * GeometryConstants::Hundred;
         ClearMotionFields();
         y = 0.0f;
         ResetPrimaryCounters(0x61);
@@ -362,8 +348,8 @@ case 0x48: {
                 field07C = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
-                scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-                scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+                scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+                scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x59);

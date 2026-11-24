@@ -1,9 +1,9 @@
 // F1107 native original Japanese 0x35E at 00516646..00516CE4:
 // 1694 original CODE B/350 x86 inside ONE still-NONEXACT 81KB Boss.
 case 0x35E: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
@@ -40,7 +40,7 @@ case 0x35E: {
         field0DE=0;
         field0DC=short(field0C8);
         rotationZ=AngleAt00483300(
-            velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+            velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
         SetPolarVelocity(float(field0DC),
             float(field0D8)*FloatConstants::OneTenth);
     }
@@ -55,11 +55,11 @@ case 0x35E: {
         }
         field0D8=short(field0D8+2);
         rotationZ=AngleAt00483300(
-            velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+            velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
         field0DA=short(AngleAt00483300(
-            owner->opponent->y-y+g_F1057_YOffsetAt00657888,
+            owner->opponent->y-y+GeometryConstants::Hundred,
             (owner->opponent->x-x)*int(facing)) /
-            g_F1057_AngleDivAt00657828);
+            GeometryConstants::RadiansPerDegree);
         if (field0DC>field0DA) {
             if (field0DC-field0DA<=180) {
                 field0DC=short(field0DC-2);

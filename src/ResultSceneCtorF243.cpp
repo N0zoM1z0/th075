@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
@@ -9,7 +10,6 @@ extern const char g_ResultTexturePathAt0065801C[];
 extern const char g_ResultTextureRootAt00658014[];
 extern int g_ResultScoreTotalAt0067160C;
 extern short g_ResultBonusAt006714C0;
-extern const float g_ResultHundredAt00657888;
 extern const float g_ResultTenThousandAt00658034;
 ResultScene::ResultScene()
 {
@@ -23,7 +23,7 @@ ResultScene::ResultScene()
     values[2]=g_ResultScoreTotalAt0067160C;
     field030=static_cast<float>(g_ResultScoreTotalAt0067160C)/static_cast<float>(g_CumulativeScoreAt006714BC)+FloatConstants::One;
     values[1]=g_ResultBonusAt006714C0;
-    field02C=static_cast<float>(g_ResultBonusAt006714C0)/g_ResultHundredAt00657888+FloatConstants::One;
+    field02C=static_cast<float>(g_ResultBonusAt006714C0)/GeometryConstants::Hundred+FloatConstants::One;
     values[3]=static_cast<int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health)+(static_cast<int>(static_cast<signed char>(g_SequenceCounterAt00671622))-1+static_cast<int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field39D))*10000;
     field034=static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health)/g_ResultTenThousandAt00658034+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field39D)-FloatConstants::One;
     field038=0;

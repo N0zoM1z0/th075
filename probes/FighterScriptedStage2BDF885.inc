@@ -30,7 +30,7 @@ case 0x2BD: {
         ++scriptCounterF00;
         if (field07C==1) {
             Fighter::SpawnTrackedEffect(0x346,x,
-                (*(&y))+g_ContactProjectionAt00657888,
+                (*(&y))+GeometryConstants::Hundred,
                 (facing),1,0,1);
             PlaySound(0xD);
             ResetPrimaryCounters(0x2C2);
@@ -44,7 +44,7 @@ case 0x2BD: {
     if ((animationStage)==5 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
-        field36C=(field36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x-
                  float((facing)*64),

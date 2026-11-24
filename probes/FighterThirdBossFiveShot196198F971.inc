@@ -91,23 +91,23 @@ case 0x198: {
         field318=20.0f;
         SpawnBattleEffect(0x328,
             float((facing)*92)+(x),
-            (*(&y))+g_F971_YAt0065826C,
+            (*(&y))+GeometryConstants::SeventyFive,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*98)+(x),
-            (*(&y))+g_F971_YAt00658264,
+            (*(&y))+GeometryConstants::Sixty,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*104)+(x),
-            (*(&y))+g_F971_YAt00658294,
+            (*(&y))+GeometryConstants::FortyFive,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*110)+(x),
-            (*(&y))+g_F971_YAt00657878,
+            (*(&y))+GeometryConstants::Thirty,
             facing,1);
         SpawnBattleEffect(0x328,
             float((facing)*116)+(x),
-            (*(&y))+g_F971_YAt00657CBC,
+            (*(&y))+GeometryConstants::Fifteen,
             facing,1);
         UpdateGaugeTimer(0x96);
     }

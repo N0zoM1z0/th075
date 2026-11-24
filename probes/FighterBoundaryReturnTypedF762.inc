@@ -33,9 +33,9 @@
             }
             if ((animationStage)>8 && (animationStage)<11
                 && y>FloatConstants::Zero) {
-                if ((CheckHorizontalLimits() && (((x)<g_F699_SideEdgeAt00657884
+                if ((CheckHorizontalLimits() && (((x)<GeometryConstants::SixHundredForty
                         && facing==1)
-                    || ((x)>g_F699_SideEdgeAt00657884
+                    || ((x)>GeometryConstants::SixHundredForty
                         && facing==-1)))
                     || (((field2D8)+FloatConstants::Five)>=x
                         && facing==1)
@@ -70,10 +70,10 @@
                 PlaySound(5);
                 SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     -facing,1);
                 SpawnAuxEffect(0x7E,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     -facing,1);
                 velocityX=-20.0f;
                 velocityY=20.0f;

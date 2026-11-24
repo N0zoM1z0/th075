@@ -7,7 +7,7 @@ case 0x35D: {
         owner->UpdateGaugeTimer(20);
         owner->SpawnBattleEffect(
             0x330,
-            (*(&x))+g_F1057_YOffsetAt00657888-
+            (*(&x))+GeometryConstants::Hundred-
                 float(RecordedRange(0,200)),
             0.0f,facing,1);
         ++field0D8;

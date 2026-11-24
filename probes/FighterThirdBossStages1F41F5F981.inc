@@ -48,22 +48,22 @@ case 0x1F4: {
         field31C=-60.0f;
         Fighter::SpawnTrackedEffect(0x32A,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
         Fighter::SpawnTrackedEffect(0x32A,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
     }
     if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<1) {
@@ -116,22 +116,22 @@ case 0x1F5: {
         field31C=-60.0f;
         Fighter::SpawnTrackedEffect(0x32A,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
         field314=10.0f;
         field318=-135.0f;
         field31C=-30.0f;
         Fighter::SpawnTrackedEffect(0x32A,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
         Fighter::SpawnTrackedEffect(0x329,
             (x)+FloatConstants::Zero,
-            (*(&y))+g_F981_YAt00659270,
+            (*(&y))+GeometryConstants::HundredThirtyTwo,
             facing,1,0,1);
     }
     if ((animationStage)==10 && (animationFrame)==0 && (scriptCounterF00)<3) {

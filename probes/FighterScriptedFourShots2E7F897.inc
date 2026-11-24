@@ -15,7 +15,7 @@ case F897_CASE: {
             SpawnAuxEffect(0x3E,
                 x-
                     float((facing)*65),
-                (*(&y))+g_F860ShotYAt006581DC,1,1);
+                (*(&y))+GeometryConstants::Ninety,1,1);
             scriptCounterF02=0;
         }
     }

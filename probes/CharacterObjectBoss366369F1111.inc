@@ -3,9 +3,9 @@
 // Four native distinct physical game cases, with original spawned IDs
 // 0x33E/0x340/0x342/0x344. Original 0x365 source is tracked separately.
 case F1111_CASE: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
@@ -46,9 +46,9 @@ case F1111_CASE: {
     if (animationStage>0) {
         field0D8=short(field0D8+2);
         field0DA=short(AngleAt00483300(
-            (owner->opponent->y-y)+g_F1057_YOffsetAt00657888,
+            (owner->opponent->y-y)+GeometryConstants::Hundred,
             (owner->opponent->x-x)*int(facing)) /
-            g_F1057_AngleDivAt00657828);
+            GeometryConstants::RadiansPerDegree);
         if (field0DC>field0DA) {
             if (field0DC-field0DA<=180) {
                 field0DC=short(field0DC-2);
@@ -85,9 +85,9 @@ case F1111_CASE: {
     }
     field0D8=short(field0D8+2);
     if (animationStage>0 && field0DA<60) {
-        if ((*(&owner->opponent->y))+g_F1057_YOffsetAt00657888<y)
+        if ((*(&owner->opponent->y))+GeometryConstants::Hundred<y)
             field0C8=(field0C8)+FloatConstants::Two;
-        if ((*(&owner->opponent->y))+g_F1057_YOffsetAt00657888>y)
+        if ((*(&owner->opponent->y))+GeometryConstants::Hundred>y)
             field0C8=(field0C8)-FloatConstants::Two;
         ++field0DA;
     }

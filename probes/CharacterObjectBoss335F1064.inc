@@ -1,9 +1,9 @@
 // F1064: actual Japanese PE 0050E274..0050E518 action 0x335,
 // 676 native CODE B /149 x86 of ONE nonexact 81KB CharacterObject.
 case 0x335: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;

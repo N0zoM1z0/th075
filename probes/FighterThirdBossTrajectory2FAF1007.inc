@@ -33,7 +33,7 @@ case 0x2FA: {
         scriptCounterF00=0;
         field314=-45.0f;
         SpawnBattleEffect(0x38E,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             facing,1);
         PlaySound(12);
     }
@@ -49,7 +49,7 @@ case 0x2FA: {
         if ((facing==1 &&
              (x)>g_F1007_RightBoundAt0065945C) ||
             (facing==-1 &&
-             (x)<g_ContactProjectionAt00657888))
+             (x)<GeometryConstants::Hundred))
             velocityX=-(velocityX);
     }
     if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF02)<1) {

@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
@@ -6,27 +7,24 @@
 #include <stdlib.h>
 // Per-player choice transitions share the scene layout and the 28-byte
 // input snapshots with the confirmation and option handlers.
-extern const float g_ChoiceRiseBoundAt00658268;
-extern const float g_ChoiceDropBoundAt00657858;
-extern const float g_ChoiceZeroAt00657CBC;
 namespace ChoiceInputF226 { int __cdecl TestAction(int key); }
 void CharacterSelectScene::UpdatePlayerChoice(signed char player)
 {
     if (FloatConstants::Zero < (portraitReturn[player]))
         (portraitReturn[player]) -= FloatConstants::Five;
-    if ((portraitEnterX[player]) < g_ChoiceRiseBoundAt00658268)
+    if ((portraitEnterX[player]) < GeometryConstants::Eighty)
         (portraitEnterX[player]) = (portraitEnterX[player]) + FloatConstants::Four;
-    if ((portraitEnterY[player]) < g_ChoiceDropBoundAt00657858)
+    if ((portraitEnterY[player]) < GeometryConstants::Forty)
         (portraitEnterY[player]) = (portraitEnterY[player]) + FloatConstants::Two;
-    if ((portraitExitX[player]) < g_ChoiceRiseBoundAt00658268)
+    if ((portraitExitX[player]) < GeometryConstants::Eighty)
         (portraitExitX[player]) = (portraitExitX[player]) + FloatConstants::Four;
-    if ((portraitExitY[player]) < g_ChoiceDropBoundAt00657858)
+    if ((portraitExitY[player]) < GeometryConstants::Forty)
         (portraitExitY[player]) = (portraitExitY[player]) + FloatConstants::Two;
-    if ((choiceStop[player]) < g_ChoiceZeroAt00657CBC)
+    if ((choiceStop[player]) < GeometryConstants::Fifteen)
         (choiceStop[player]) = (choiceStop[player]) + FloatConstants::One;
-    else if (g_ChoiceZeroAt00657CBC < (choiceStop[player])) {
+    else if (GeometryConstants::Fifteen < (choiceStop[player])) {
         (choiceStop[player]) -= FloatConstants::Two;
-        if ((choiceStop[player]) < g_ChoiceZeroAt00657CBC)
+        if ((choiceStop[player]) < GeometryConstants::Fifteen)
             (choiceStop[player])=0.0f;
     }
     if ((input[player].vertical)==-1) {

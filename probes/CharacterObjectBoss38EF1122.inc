@@ -13,8 +13,8 @@ case 0x38E: {
         owner->SpawnBattleEffect(
             0x38F,x,y,
             facing,1);
-    if (x>g_F1101_RightAt00659424 ||
-        x<g_F1101_LeftAt0065924C) {
+    if (x>GeometryConstants::FourteenHundred ||
+        x<GeometryConstants::NegativeHundredTwenty) {
         ClearFrameInfo();
         return;
     }

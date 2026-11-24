@@ -1,9 +1,9 @@
 // F1120: original Japanese 0x38B, PE 0051C3ED..0051C82D:
 // 1,088 original CODE B /226 native x86 in ONE NONEXACT 81KB Boss.
 case 0x38B: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;

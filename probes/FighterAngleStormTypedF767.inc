@@ -72,7 +72,7 @@ case 0x2F9: {
                         (*(&(opponent->y))-*(&y)),
                         ((opponent->x-x))
                            *static_cast<float>(facing))
-                    /g_StormAngleDenominatorAt00657828;
+                    /GeometryConstants::RadiansPerDegree;
             }
             if ((animationStage)==13 && (animationFrame)==0) {
                 if ((scriptCounterF00)<static_cast<int>(g_OptionsModeAt006714D0)*2+1) {
@@ -86,7 +86,7 @@ case 0x2F9: {
                         (*(&(opponent->y))-*(&y)),
                         ((opponent->x-x))
                            *static_cast<float>(facing))
-                    /g_StormAngleDenominatorAt00657828;
+                    /GeometryConstants::RadiansPerDegree;
             }
             if ((animationStage)==16 && (animationFrame)==0
                 && (scriptCounterF00)<static_cast<int>(g_OptionsModeAt006714D0)*2+1) {

@@ -13,7 +13,7 @@ case 0x255: {
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             (facing),1);
         PlaySharedSound(0x21);
     }

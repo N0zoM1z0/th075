@@ -36,9 +36,9 @@
             }
             if ((animationStage)>8 && (animationStage)<11
                 && y>FloatConstants::Zero) {
-                if ((CheckHorizontalLimits() && (((x)<g_F699_SideEdgeAt00657884
+                if ((CheckHorizontalLimits() && (((x)<GeometryConstants::SixHundredForty
                         && facing==1)
-                    || ((x)>g_F699_SideEdgeAt00657884
+                    || ((x)>GeometryConstants::SixHundredForty
                         && facing==-1)))
                     || (((field2D8)+FloatConstants::Five)>=x
                         && facing==1)
@@ -75,10 +75,10 @@
                 PlaySound(5);
                 SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     -facing,1);
                 SpawnAuxEffect(0x7E,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     -facing,1);
                 velocityX=-20.0f;
                 velocityY=20.0f;
@@ -95,14 +95,14 @@
                         *(&(opponent->y))-y,
                         (opponent->x-x)
                           *static_cast<float>(facing))
-                      /g_StormAngleDenominatorAt00657828);
+                      /GeometryConstants::RadiansPerDegree);
                 if ((fieldF04)>-15)
                     fieldF04=-15;
                 SetPolarVelocity(static_cast<float>(-static_cast<int>(fieldF04)),28.0f);
                 ResetTransform(0.0f,80.0f,0.0f);
                 rotationZ=-(AngleAt00483300(velocityY,*(&velocityX))
-                             /g_StormAngleDenominatorAt00657828
-                              +g_F731_AimOffsetAt00657CBC);
+                             /GeometryConstants::RadiansPerDegree
+                              +GeometryConstants::Fifteen);
             }
             if ((animationStage)==15 && (animationFrame)==0) {
                 field314=static_cast<float>(fieldF04);

@@ -1,39 +1,23 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 #include "AliceFighter.hpp"
 
-extern float g_AliceArenaLeftAt00658370;
-extern float g_AliceEffectYAt00658264;
 extern float g_AliceEffectYAt006582E0;
 extern float g_AliceEffectYAt00658364;
 extern float g_AliceEffectYAt00658368;
 extern float g_AliceEffectYAt0065909C;
 extern float g_AliceEffectYAt006590A0;
-extern float g_AliceEffectYAt006590A8;
-extern float g_AliceEffectYAt006591F8;
 extern float g_AliceEffectYAt00659478;
 extern float g_AliceEffectYAt006595F4;
-extern float g_AngleShiftAt00657878;
-extern float g_AnimationMaximumAt006583B4;
-extern float g_ApproachLowerAt00658290;
 extern float g_ApproachUpperAt006592A4;
 extern float g_BounceThresholdAt006590C0;
-extern float g_ContactProjectionAt00657888;
-extern float g_EightShotY1At00658264;
-extern float g_F728_RandomOffsetXAt00657878;
-extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F748_SpeedScaleAt006590B8;
-extern float g_MarisaCommandYAt00658268;
-extern float g_MarisaResourceYAt006590AC;
 extern float g_MarisaResourceYAt00659274;
 extern float g_MarisaResourceYAt00659280;
-extern float g_MarisaSpecialProjectileYAt00658400;
-extern float g_MarisaSpecialProjectileYAt0065929C;
 extern float g_OneShotYAt0065928C;
 extern float g_ReimuC8ClampAt006590B0;
-extern float g_ReimuCommandYAt00658268;
-extern float g_YPlusAt00658400;
 
 void AliceFighter::Advance() {
     if (field082 != 0 || opponent->field3BA != 0)
@@ -547,7 +531,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(field094);
             velocityY += field098;
-            if (velocityY < g_ApproachLowerAt00658290)
+            if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
             if (velocityY > g_ApproachUpperAt006592A4)
@@ -560,8 +544,8 @@ void AliceFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -587,8 +571,8 @@ void AliceFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -614,8 +598,8 @@ void AliceFighter::Advance() {
         }
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -636,8 +620,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -686,8 +670,8 @@ void AliceFighter::Advance() {
 
             Fighter::PlaySharedSound(0x16);
 
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -706,12 +690,12 @@ void AliceFighter::Advance() {
             ResetTransform(0.0f,95.0f,0.0f);
         }
 
-        rotationZ = (rotationZ) + g_AngleShiftAt00657878;
+        rotationZ = (rotationZ) + GeometryConstants::Thirty;
         velocityY = velocityY - field05C;
         if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
-            scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -733,8 +717,8 @@ void AliceFighter::Advance() {
             field07C = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX)*GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY)*GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x59);
@@ -769,11 +753,11 @@ void AliceFighter::Advance() {
 
     case 0x59: {
         if (animationStage == 3) {
-            rotationZ = (rotationZ)+g_F728_RandomOffsetYAt00657858;
+            rotationZ = (rotationZ)+GeometryConstants::Forty;
             velocityY = velocityY-field05C;
             if (velocityY+y <= FloatConstants::Zero) {
-                scriptCounterF00 = (velocityX)*g_ContactProjectionAt00657888;
-                scriptCounterF02 = (velocityY)*g_ContactProjectionAt00657888;
+                scriptCounterF00 = (velocityX)*GeometryConstants::Hundred;
+                scriptCounterF02 = (velocityY)*GeometryConstants::Hundred;
                 ClearMotionFields();
                 y = 0.0f;
                 ResetPrimaryCounters(0x61);
@@ -1100,8 +1084,8 @@ void AliceFighter::Advance() {
         }
         velocityY = velocityY-field05C;
         if (velocityY+y <= FloatConstants::Zero) {
-            scriptCounterF00 = static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
-            scriptCounterF02 = static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
+            scriptCounterF00 = static_cast<short>((velocityX)*GeometryConstants::Hundred);
+            scriptCounterF02 = static_cast<short>((velocityY)*GeometryConstants::Hundred);
             ClearMotionFields();
             y = 0.0f;
             ResetPrimaryCounters(0x61);
@@ -1115,7 +1099,7 @@ void AliceFighter::Advance() {
 
     case 0x96: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1139,7 +1123,7 @@ void AliceFighter::Advance() {
 
     case 0x97: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1163,7 +1147,7 @@ void AliceFighter::Advance() {
 
     case 0x98: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1187,7 +1171,7 @@ void AliceFighter::Advance() {
 
     case 0x9A: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1211,7 +1195,7 @@ void AliceFighter::Advance() {
 
     case 0x9B: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1235,7 +1219,7 @@ void AliceFighter::Advance() {
 
     case 0x9C: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1259,7 +1243,7 @@ void AliceFighter::Advance() {
 
     case 0x9E: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1286,7 +1270,7 @@ void AliceFighter::Advance() {
 
     case 0x9F: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1310,7 +1294,7 @@ void AliceFighter::Advance() {
 
     case 0xA0: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1334,7 +1318,7 @@ void AliceFighter::Advance() {
 
     case 0xA1: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
 
@@ -1358,7 +1342,7 @@ void AliceFighter::Advance() {
 
     case 0xA3: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
@@ -1379,7 +1363,7 @@ void AliceFighter::Advance() {
 
     case 0xA4: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
@@ -1400,7 +1384,7 @@ void AliceFighter::Advance() {
 
     case 0xA5: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
@@ -1421,7 +1405,7 @@ void AliceFighter::Advance() {
 
     case 0xA7: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1430,7 +1414,7 @@ void AliceFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing)*30)+(x),
 
-                (y)+g_ContactProjectionAt00657888,
+                (y)+GeometryConstants::Hundred,
                 facing,1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1448,7 +1432,7 @@ void AliceFighter::Advance() {
 
     case 0xA8: {
         cardGauge = (cardGauge)+FloatConstants::One;
-        if ((cardGauge) > g_AnimationMaximumAt006583B4)
+        if ((cardGauge) > GeometryConstants::Thousand)
             cardGauge = 1000.0f;
         if (animationStage == 0 && animationFrame == 0) {
             UpdateGaugeTimer(0xFA);
@@ -1457,7 +1441,7 @@ void AliceFighter::Advance() {
             SpawnAuxEffect(0x38,
                 static_cast<float>(static_cast<int>(facing)*30)+(x),
 
-                (y)+g_ContactProjectionAt00657888,
+                (y)+GeometryConstants::Hundred,
                 facing,1);
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1555,8 +1539,8 @@ void AliceFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             velocityX = 10.0f;
             SpawnAuxEffect(0x7D,float(facing*80)+(x),
-                (y)+g_ReimuCommandYAt00658268,facing,1);
-            SpawnAuxEffect(0x7E,x,(y)+g_ReimuCommandYAt00658268,
+                (y)+GeometryConstants::Eighty,facing,1);
+            SpawnAuxEffect(0x7E,x,(y)+GeometryConstants::Eighty,
                 facing,1);
             PlaySharedSound(31);
         }
@@ -1586,8 +1570,8 @@ void AliceFighter::Advance() {
             velocityY = 4.5f;
             field05C = 0.6f;
             SpawnAuxEffect(0x7D, x - static_cast<float>(facing * 80),
-                (y) + g_MarisaCommandYAt00658268, -facing, 1);
-            SpawnAuxEffect(0x7E, x, (y) + g_MarisaCommandYAt00658268, -facing, 1);
+                (y) + GeometryConstants::Eighty, -facing, 1);
+            SpawnAuxEffect(0x7E, x, (y) + GeometryConstants::Eighty, -facing, 1);
             PlaySharedSound(0x1F);
         }
         if (animationStage == 11 && animationFrame == 0)
@@ -1608,9 +1592,9 @@ void AliceFighter::Advance() {
             field05C = 0.6f;
             SpawnAuxEffect(0x7D,
                 static_cast<float>(facing * 80) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             SpawnAuxEffect(0x7E, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
         if (y > FloatConstants::Zero && animationStage > 1) {
@@ -1658,9 +1642,9 @@ void AliceFighter::Advance() {
             field05C = 0.6f;
             SpawnAuxEffect(0x7D,
                 x - static_cast<float>(facing * 80),
-                (y) + g_ContactProjectionAt00657888, -facing, 1);
+                (y) + GeometryConstants::Hundred, -facing, 1);
             SpawnAuxEffect(0x7E, x,
-                (y) + g_ContactProjectionAt00657888, -facing, 1);
+                (y) + GeometryConstants::Hundred, -facing, 1);
             Fighter::PlaySharedSound(0x1F);
         }
         if (animationStage == 4 && scriptCounterF00 < 1) {
@@ -1819,7 +1803,7 @@ void AliceFighter::Advance() {
             ClearMotionFields();
             Fighter::PlaySharedSound(0x2C);
             SpawnBattleEffect(0x3E6, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             if (static_cast<unsigned int>(inputD) > 0)
@@ -1838,7 +1822,7 @@ void AliceFighter::Advance() {
         spirit = static_cast<short>(spirit - 3);
         if (animationStage == 0 && animationFrame == 0) {
             SpawnBattleEffect(0x3E6, x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             velocityX *= 0.25f;
             velocityY *= 0.25f;
             Fighter::PlaySharedSound(0x2C);
@@ -2075,11 +2059,11 @@ void AliceFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             PlaySharedSound(0x1D);
             SpawnBattleEffect(0x34F, x, y, facing, 1);
-            SpawnBattleEffect(0x34E, (x) + g_YPlusAt00658400,
+            SpawnBattleEffect(0x34E, (x) + GeometryConstants::Seventy,
                 (y) + FloatConstants::Ten, facing, 1);
-            SpawnBattleEffect(0x34E, x - g_YPlusAt00658400,
+            SpawnBattleEffect(0x34E, x - GeometryConstants::Seventy,
                 (y) + FloatConstants::Ten, facing, 1);
-            SpawnBattleEffect(0x34E, x, (y) + g_AngleShiftAt00657878, facing, 0);
+            SpawnBattleEffect(0x34E, x, (y) + GeometryConstants::Thirty, facing, 0);
         }
         return;
     }
@@ -2229,7 +2213,7 @@ void AliceFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x327,
                 static_cast<float>(facing * 151) + x,
-                (y) + g_MarisaSpecialProjectileYAt0065929C, facing, 1);
+                (y) + GeometryConstants::HundredFour, facing, 1);
         }
         return;
     }
@@ -2259,7 +2243,7 @@ void AliceFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x328,
                 static_cast<float>(static_cast<int>(facing) << 7) + x,
-                (y) + g_MarisaSpecialProjectileYAt00658400, facing, 1);
+                (y) + GeometryConstants::Seventy, facing, 1);
         }
         return;
     }
@@ -2272,7 +2256,7 @@ void AliceFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x330, static_cast<float>(facing * 7) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             PlaySound(0);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2367,7 +2351,7 @@ void AliceFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             UpdateGaugeTimer(100);
             SpawnBattleEffect(0x34C, static_cast<float>(facing * 60) + x,
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2389,7 +2373,7 @@ void AliceFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             UpdateGaugeTimer(100);
             SpawnBattleEffect(0x34C, static_cast<float>(facing * 60) + x,
-                (y) + g_AliceEffectYAt00658264, facing, 1);
+                (y) + GeometryConstants::Sixty, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
@@ -2412,7 +2396,7 @@ void AliceFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             UpdateGaugeTimer(100);
             SpawnBattleEffect(0x34C, static_cast<float>(facing * 60) + x,
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2434,7 +2418,7 @@ void AliceFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             UpdateGaugeTimer(100);
             SpawnBattleEffect(0x34C, static_cast<float>(facing * 60) + x,
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2545,15 +2529,15 @@ void AliceFighter::Advance() {
             field314 = 6.0f;
             field318 = 8.0f;
             SpawnBattleEffect(0x34D, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 8.0f;
             field318 = 10.0f;
             SpawnBattleEffect(0x34D, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 10.0f;
             field318 = 12.0f;
             SpawnBattleEffect(0x34D, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2571,8 +2555,8 @@ void AliceFighter::Advance() {
         }
         if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
             SpawnBattleEffect(0x330,
-                (x) + g_F728_RandomOffsetXAt00657878 - static_cast<float>(RecordedRange(0, 60)),
-                (y) + g_F728_RandomOffsetYAt00657858 + static_cast<float>(RecordedRange(0, 140)),
+                (x) + GeometryConstants::Thirty - static_cast<float>(RecordedRange(0, 60)),
+                (y) + GeometryConstants::Forty + static_cast<float>(RecordedRange(0, 140)),
                 facing, 1);
         }
         if (velocityX > FloatConstants::Zero) {
@@ -2615,8 +2599,8 @@ void AliceFighter::Advance() {
         }
         if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
             SpawnBattleEffect(0x330,
-                (x) + g_F728_RandomOffsetXAt00657878 - static_cast<float>(RecordedRange(0, 60)),
-                (y) + g_F728_RandomOffsetYAt00657858 + static_cast<float>(RecordedRange(0, 140)),
+                (x) + GeometryConstants::Thirty - static_cast<float>(RecordedRange(0, 60)),
+                (y) + GeometryConstants::Forty + static_cast<float>(RecordedRange(0, 140)),
                 facing, 1);
         }
         if (y > FloatConstants::Zero) {
@@ -2655,7 +2639,7 @@ void AliceFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 5 && animationFrame == 0) {
             PlaySharedSound(0x21);
-            SpawnAuxEffect(0x37, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnAuxEffect(0x37, x, (y) + GeometryConstants::Hundred, facing, 1);
             opponent->fieldEFA = 0;
         }
         return;
@@ -2676,7 +2660,7 @@ void AliceFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 5 && animationFrame == 0) {
             PlaySharedSound(0x21);
-            SpawnAuxEffect(0x37, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnAuxEffect(0x37, x, (y) + GeometryConstants::Hundred, facing, 1);
             opponent->fieldEFA = 0;
         }
         return;
@@ -2695,7 +2679,7 @@ void AliceFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 5 && animationFrame == 0) {
             PlaySharedSound(0x21);
-            SpawnAuxEffect(0x37, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnAuxEffect(0x37, x, (y) + GeometryConstants::Hundred, facing, 1);
             opponent->fieldEFA = 0;
         }
         return;
@@ -2713,7 +2697,7 @@ void AliceFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37,x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing,1);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 1) {
@@ -2735,7 +2719,7 @@ void AliceFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37,x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing,1);
         }
 
@@ -2754,7 +2738,7 @@ void AliceFighter::Advance() {
             ResetPrimaryCounters(9);
         if (animationStage == 5 && animationFrame == 0) {
             SpawnAuxEffect(0x37,x,
-                (y) + g_ContactProjectionAt00657888,
+                (y) + GeometryConstants::Hundred,
                 facing,1);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 1) {
@@ -2821,7 +2805,7 @@ void AliceFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x32D,
                 float(facing*100)+(x),
-                (y)+g_EightShotY1At00658264,
+                (y)+GeometryConstants::Sixty,
                 facing,1);
         }
         if (AdvanceNestedFrame()==animationStageCount)
@@ -2978,16 +2962,16 @@ void AliceFighter::Advance() {
             UpdateGaugeTimer(250);
             field314 = 0.0f;
             SpawnBattleEffect(0x32A, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             velocityX = -8.0f;
             velocityY = 16.0f;
             field05C = -1.2f;
             field314 = 1.0f;
             SpawnBattleEffect(0x32A, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 2.0f;
             SpawnBattleEffect(0x32A, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -3020,7 +3004,7 @@ void AliceFighter::Advance() {
             UpdateGaugeTimer(30);
             field314 = static_cast<float>(70 - scriptCounterF00 * 15);
             SpawnBattleEffect(0x32C, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             PlaySound(3);
             ++scriptCounterF00;
         }
@@ -3056,11 +3040,11 @@ void AliceFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 1 && animationFrame == 0) {
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, x - static_cast<float>(facing * 40),
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (animationStage == 14 && animationFrame == 0) {
             UpdateGaugeTimer(250);
@@ -3080,27 +3064,27 @@ void AliceFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 1 && animationFrame == 0) {
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, x - static_cast<float>(facing * 40),
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
             UpdateGaugeTimer(500);
             field314 = 180.0f;
-            SpawnBattleEffect(0x345, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x345, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 120.0f;
-            SpawnBattleEffect(0x345, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x345, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 60.0f;
-            SpawnBattleEffect(0x345, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x345, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 0.0f;
-            SpawnBattleEffect(0x345, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x345, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = -60.0f;
-            SpawnBattleEffect(0x345, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x345, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = -120.0f;
-            SpawnBattleEffect(0x345, x, (y) + g_ContactProjectionAt00657888, facing, 1);
-            SpawnBattleEffect(0x346, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x345, x, (y) + GeometryConstants::Hundred, facing, 1);
+            SpawnBattleEffect(0x346, x, (y) + GeometryConstants::Hundred, facing, 1);
             PlaySound(11);
         }
         return;
@@ -3114,22 +3098,22 @@ void AliceFighter::Advance() {
         }
         if (animationStage == 4 && animationFrame == 0) {
             SpawnBattleEffect(0x33c, static_cast<float>(facing * 65) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 2 && animationFrame == 0) {
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, x - static_cast<float>(facing * 61),
-                (y) + g_AliceEffectYAt006591F8, facing, 1);
+                (y) + GeometryConstants::HundredFifty, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
             UpdateGaugeTimer(500);
             PlaySound(13);
             SpawnBattleEffect(0x33e, static_cast<float>(facing * 140) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 6) {
             ++scriptCounterF00;
@@ -3147,11 +3131,11 @@ void AliceFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 1 && animationFrame == 0) {
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x74, x - static_cast<float>(facing * 40),
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (animationStage == 14 && animationFrame == 0) {
             UpdateGaugeTimer(500);
@@ -3171,40 +3155,40 @@ void AliceFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 1 && animationFrame == 0) {
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x74, x - static_cast<float>(facing * 40),
-                (y) + g_AliceEffectYAt006590A8, facing, 1);
+                (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
             PlaySound(12);
             UpdateGaugeTimer(500);
             field314 = 180.0f;
-            SpawnBattleEffect(0x347, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x347, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 120.0f;
-            SpawnBattleEffect(0x347, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x347, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 60.0f;
-            SpawnBattleEffect(0x347, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x347, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 0.0f;
-            SpawnBattleEffect(0x347, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x347, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = -60.0f;
-            SpawnBattleEffect(0x347, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x347, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = -120.0f;
-            SpawnBattleEffect(0x347, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x347, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 180.0f;
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 120.0f;
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 60.0f;
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = 0.0f;
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = -60.0f;
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, facing, 1);
             field314 = -120.0f;
-            SpawnBattleEffect(0x348, x, (y) + g_ContactProjectionAt00657888, facing, 1);
-            SpawnBattleEffect(0x349, x, (y) + g_ContactProjectionAt00657888, facing, 1);
+            SpawnBattleEffect(0x348, x, (y) + GeometryConstants::Hundred, facing, 1);
+            SpawnBattleEffect(0x349, x, (y) + GeometryConstants::Hundred, facing, 1);
         }
         return;
     }
@@ -3217,21 +3201,21 @@ void AliceFighter::Advance() {
         }
         if (animationStage == 4 && animationFrame == 0) {
             SpawnBattleEffect(0x33d, static_cast<float>(facing * 65) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 2 && animationFrame == 0) {
             UpdateGaugeTimer(500);
-            field36C -= g_ContactProjectionAt00657888;
+            field36C -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x74, x - static_cast<float>(facing * 61),
-                (y) + g_AliceEffectYAt006591F8, facing, 1);
+                (y) + GeometryConstants::HundredFifty, facing, 1);
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x33f, static_cast<float>(facing * 180) + x,
-                (y) + g_MarisaResourceYAt006590AC, facing, 1);
+                (y) + GeometryConstants::HundredTen, facing, 1);
             PlaySound(14);
         }
         if (animationStage == 8 && animationFrame == 0 && scriptCounterF00 < 10) {
@@ -3264,9 +3248,9 @@ void AliceFighter::Advance() {
                     velocityX = 12.0f;
                 else
                     velocityX = -12.0f;
-                if (facing == 1 && x > g_AnimationMaximumAt006583B4)
+                if (facing == 1 && x > GeometryConstants::Thousand)
                     velocityX = -12.0f;
-                if (facing == -1 && x < g_AliceArenaLeftAt00658370)
+                if (facing == -1 && x < GeometryConstants::TwoHundredEighty)
                     velocityX = -12.0f;
                 velocityY = 17.0f;
                 field05C = 0.65f;
@@ -3409,7 +3393,7 @@ void AliceFighter::Advance() {
             field314 = static_cast<float>(scriptCounterF00 * 20);
             field318 = static_cast<float>(scriptCounterF00 * 30);
             SpawnBattleEffect(900, static_cast<float>(facing * 10) + x,
-                (y) + g_ContactProjectionAt00657888, facing, 1);
+                (y) + GeometryConstants::Hundred, facing, 1);
             PlaySound(3);
             ++scriptCounterF00;
         }
@@ -3458,8 +3442,8 @@ void AliceFighter::Advance() {
             }
         }
         if (animationStage == 5 && animationFrame == 0) {
-            if ((x > g_AnimationMaximumAt006583B4 && facing == -1) ||
-                    (x < g_AliceArenaLeftAt00658370 && facing == 1)) {
+            if ((x > GeometryConstants::Thousand && facing == -1) ||
+                    (x < GeometryConstants::TwoHundredEighty && facing == 1)) {
                 velocityX = 10.0f;
                 velocityY = 15.0f;
                 field05C = -0.4f;
@@ -3475,7 +3459,7 @@ void AliceFighter::Advance() {
                 field314 = static_cast<float>(RecordedRange(0, 180) - 90);
                 field318 = static_cast<float>(RecordedRange(0, 80) + 150);
                 SpawnBattleEffect(0x38B, static_cast<float>(facing * 10) + x,
-                    (y) + g_ContactProjectionAt00657888, facing, 1);
+                    (y) + GeometryConstants::Hundred, facing, 1);
             }
         }
         if (AdvanceNestedFrame() == animationStageCount)

@@ -17,7 +17,7 @@ case R1191_ACTION: {
 #if R1191_REVERSE_X
         velocityX=g_ReimuReverseDriftAt0065907C-float(RecordedRange(0,3));
 #else
-        velocityX=float(RecordedRange(0,3))+g_ApproachLowerAt00658290;
+        velocityX=float(RecordedRange(0,3))+GeometryConstants::Six;
 #endif
         velocityY=float(RecordedRange(0,R1191_LIFT_RANGE))+FloatConstants::Ten;
         field05C=0.3f;

@@ -12,9 +12,9 @@ case 0x2C1: {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         PlaySound(9);
-        field36C=(field36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             (facing),1);
     }
 
@@ -22,7 +22,7 @@ case 0x2C1: {
         fieldF10=0x1A4;
         ResetPrimaryCounters(0);
         Fighter::SpawnTrackedEffect(0x345,x,
-        (*(&y))+g_ContactProjectionAt00657888,1,1,0,1);
+        (*(&y))+GeometryConstants::Hundred,1,1,0,1);
     }
     return;
 }

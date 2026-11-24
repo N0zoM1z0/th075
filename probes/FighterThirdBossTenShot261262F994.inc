@@ -30,7 +30,7 @@ case 0x261: {
             field314=float(30-shot*6);
             field318=15.0f;
             SpawnBattleEffect(0x346,x,
-                (*(&y))+g_F970_YAt006590AC,facing,1);
+                (*(&y))+GeometryConstants::HundredTen,facing,1);
         }
     }
     break;
@@ -58,7 +58,7 @@ case 0x262: {
             field314=float(30-shot*6);
             field318=15.0f;
             SpawnBattleEffect(0x347,x,
-                (*(&y))+g_F970_YAt006590AC,facing,1);
+                (*(&y))+GeometryConstants::HundredTen,facing,1);
         }
     }
     break;

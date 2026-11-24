@@ -4,7 +4,7 @@
 // projectile counter. Entire giant fighter Advance() is NONEXACT.
 case 0x96: {
     cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>g_AnimationMaximumAt006583B4)
+    if ((cardGauge)>GeometryConstants::Thousand)
         cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
 #if F631_EXTRA_FLAG && F631_EXTRA_BEFORE

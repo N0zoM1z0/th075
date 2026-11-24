@@ -23,7 +23,7 @@ case 0x2C2: {
     if ((animationStage)==9 && (scriptCounterF02)==0) {
         ++scriptCounterF02;
         SpawnBattleEffect(0x34C,x,
-            (opponent->y)+g_ContactProjectionAt00657888,
+            (opponent->y)+GeometryConstants::Hundred,
             (facing),1);
         PlaySound(0xE);
     }
@@ -31,16 +31,16 @@ case 0x2C2: {
         ResetSecondaryCounter(0x10);
     if ((animationStage)<9 && (animationFrame)==0) {
         SpawnBattleEffect(0x34B,opponent->x,
-            (opponent->y)+g_ContactProjectionAt00657888,
+            (opponent->y)+GeometryConstants::Hundred,
             (facing),1);
         if ((scriptCounterF00)==0) {
             field314=0.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*100),
-                (opponent->y)+g_F890Phase0YAt0065835C,
+                (opponent->y)+GeometryConstants::TwoHundred,
                 (facing),1);
             SpawnBattleEffect(0x329,opponent->x,
-                (opponent->y)+g_F890Phase0AltYAt006591E4,
+                (opponent->y)+GeometryConstants::TwoHundredFifty,
                 -((facing)),1);
         }
         if ((scriptCounterF00)==1) {
@@ -50,18 +50,18 @@ case 0x2C2: {
                 opponent->y,
                 -((facing)),1);
             SpawnBattleEffect(0x329,opponent->x,
-                (opponent->y)-g_F890Phase1LowYAt0065788C,
+                (opponent->y)-GeometryConstants::Fifty,
                 -((facing)),1);
         }
         if ((scriptCounterF00)==2) {
             field314=90.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*100),
-                (opponent->y)+g_F890Phase0YAt0065835C,
+                (opponent->y)+GeometryConstants::TwoHundred,
                 (facing),1);
             SpawnBattleEffect(0x329,
                 opponent->x+float(((facing))*150),
-                (opponent->y)+g_ContactProjectionAt00657888,
+                (opponent->y)+GeometryConstants::Hundred,
                 -((facing)),1);
         }
         if ((scriptCounterF00)==3) {
@@ -72,14 +72,14 @@ case 0x2C2: {
                 (facing),1);
             SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*150),
-                (opponent->y)+g_ContactProjectionAt00657888,
+                (opponent->y)+GeometryConstants::Hundred,
                 -((facing)),1);
         }
         if ((scriptCounterF00)==4) {
             field314=45.0f;
             SpawnBattleEffect(0x34A,
                 (opponent->x)+FloatConstants::Zero,
-                (opponent->y)+g_F890Phase4HiYAt00659420,
+                (opponent->y)+GeometryConstants::TwoHundredTwenty,
                 (facing),1);
             SpawnBattleEffect(0x329,
                 opponent->x+float(((facing))*125),
@@ -90,7 +90,7 @@ case 0x2C2: {
             field314=-45.0f;
             SpawnBattleEffect(0x34A,
                 (opponent->x)+FloatConstants::Zero,
-                (opponent->y)-g_F890Phase5YAt0065786C,
+                (opponent->y)-GeometryConstants::Twenty,
                 -((facing)),1);
             SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*125),
@@ -101,7 +101,7 @@ case 0x2C2: {
             field314=45.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x+float(((facing))*120),
-                (opponent->y)+g_ContactProjectionAt00657888,
+                (opponent->y)+GeometryConstants::Hundred,
                 -((facing)),1);
             SpawnBattleEffect(0x329,
                 opponent->x+float(((facing))*125),
@@ -112,7 +112,7 @@ case 0x2C2: {
             field314=-45.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*120),
-                (opponent->y)+g_ContactProjectionAt00657888,
+                (opponent->y)+GeometryConstants::Hundred,
                 (facing),1);
             SpawnBattleEffect(0x329,
                 opponent->x-float(((facing))*125),
@@ -127,10 +127,10 @@ case 0x2C2: {
             field314=0.0f;
             SpawnBattleEffect(0x34A,
                 opponent->x-float(((facing))*100),
-                (opponent->y)+g_F890Phase0YAt0065835C,
+                (opponent->y)+GeometryConstants::TwoHundred,
                 (facing),1);
             SpawnBattleEffect(0x329,opponent->x,
-                (opponent->y)+g_F890Phase0AltYAt006591E4,
+                (opponent->y)+GeometryConstants::TwoHundredFifty,
                 -((facing)),1);
         }
     }

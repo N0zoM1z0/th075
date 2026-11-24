@@ -8,7 +8,7 @@ case 0x31B: {
         BeginFadeParameters(0);
         SelectResourceParameters();
         PlaySharedSound(0x17);
-        SpawnBattleEffect(0x3E5,x,(*(&y))+g_ContactProjectionAt00657888,
+        SpawnBattleEffect(0x3E5,x,(*(&y))+GeometryConstants::Hundred,
             facing,1);
     }
     if ((animationStage)==9 && (animationFrame)==0 && (scriptCounterF00)<8) {
@@ -26,7 +26,7 @@ case 0x31C: {
         ResetPrimaryCounters(0);
         if (field370[field39D]==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;
-            SpawnBattleEffect(0x3A3,x,(*(&y))+g_ContactProjectionAt00657888,1,1);
+            SpawnBattleEffect(0x3A3,x,(*(&y))+GeometryConstants::Hundred,1,1);
             if (g_OptionsModeAt006714D0==0) {
 #define R1192_INDEX echoEasy
 #define R1192_COUNT 6

@@ -2,9 +2,9 @@
 // 0051BB8B..0051BFE2: 1111 CODE B/238 x86, within ONE
 // still-NONEXACT 81KB CharacterObject::Advance.
 case 0x389: {
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1057_UpperBoundAt006583B4 ||
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::Thousand ||
         y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;

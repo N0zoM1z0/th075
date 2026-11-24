@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "TextureManagerF198.hpp"
@@ -14,7 +15,6 @@ public:
          float pivotX,float pivotY,float scaleX,float scaleY,
          float angle,unsigned char flags);
 };
-extern float g_AngleUnitF775;
 float __cdecl CameraCosineAt0040D900(float);
 float __cdecl CameraSineAt0040D940(float);
 #define ENTRY reinterpret_cast<TextureManagerF198*>(this)->entries[texture]
@@ -34,8 +34,8 @@ void SpriteDrawingF775::DrawScaled(int texture,float x,float y,DWORD color,
              (region.right-pivotX)*scaleX+x,
              (region.bottom-pivotY)*scaleY+y);
     } else {
-        float cosine=CameraCosineAt0040D900(angle*g_AngleUnitF775);
-        float sine=CameraSineAt0040D940(angle*g_AngleUnitF775);
+        float cosine=CameraCosineAt0040D900(angle*GeometryConstants::RadiansPerDegree);
+        float sine=CameraSineAt0040D940(angle*GeometryConstants::RadiansPerDegree);
         quad.first.x=(x-pivotX*scaleX*cosine)+pivotY*sine;
         quad.first.y=(y-pivotX*scaleX*sine)-pivotY*cosine;
         quad.fourth.x=(x-pivotX*scaleX*cosine)-(region.bottom-pivotY)*scaleY*sine;

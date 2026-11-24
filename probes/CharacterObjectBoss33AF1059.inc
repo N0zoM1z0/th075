@@ -19,15 +19,15 @@ case 0x33A: {
         field0D8=4;
     SetPolarVelocity(float(field0DA),float(field0D8));
     rotationZ=AngleAt00483300(
-        velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+        velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
     x=float(facing)*velocityX + x;
     y=y-velocityY;
     scaleX=(scaleX)*g_F1059_ScaleFadeAt006598A8;
     scaleY=(scaleY)*g_F1059_ScaleFadeAt006598A8;
-    if (x>g_F1057_RightBoundAt0065925C ||
-        x<g_F1057_LeftBoundAt00659258 ||
-        y>g_F1059_UpperBoundAt00657884 ||
-        y<g_F1059_LowerBoundAt0065924C) {
+    if (x>GeometryConstants::ThirteenHundredEighty ||
+        x<GeometryConstants::NegativeHundred ||
+        y>GeometryConstants::SixHundredForty ||
+        y<GeometryConstants::NegativeHundredTwenty) {
         ClearFrameInfo();
         return;
     }

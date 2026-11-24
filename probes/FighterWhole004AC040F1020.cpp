@@ -1,3 +1,4 @@
+#include "../src/GeometryConstants.hpp"
 #include "../src/FloatConstants.hpp"
 #include "SakuyaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"

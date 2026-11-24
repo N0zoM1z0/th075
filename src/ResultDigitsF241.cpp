@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -9,15 +10,13 @@
 class ResultDigitDrawerF241 {
 public: void DrawQuad(int texture,const SpriteQuad40CA80&, const RECT*, DWORD);
 };
-extern const float g_ResultDigitWidthAt00657CC0;
-extern const float g_ResultDigitHeightAt0065786C;
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
 void ResultScene::DrawDecimalDigits(float x, float y, DWORD color,
                                         int number, signed char style, int minDigits)
 {
     int remaining=number;
     {
-    SpriteQuad40CA80 quad(x - g_ResultDigitWidthAt00657CC0,y,x,y + g_ResultDigitHeightAt0065786C);
+    SpriteQuad40CA80 quad(x - GeometryConstants::Sixteen,y,x,y + GeometryConstants::Twenty);
     {
         RECT rect;
         if (minDigits > 0) {

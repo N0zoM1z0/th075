@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "GameSharedState.hpp"
 // Natural-C++ reconstruction of YoumuObject::Advance at 00536400.
@@ -11,16 +12,8 @@
 
 
 
-extern float g_F1069_ParentYFirstAt00659138;
-extern float g_F1069_ParentYSecondAt00658264;
-extern float g_F1057_YOffsetAt00657888;
 extern float g_F1057_SpeedBaseAt006590BC;
 extern float g_F1211_SplitAltitudeAt006599EC;
-extern float g_F1211_HalfSpreadAt00657878;
-extern float g_F1211_RightBoundAt00659424;
-extern float g_F1211_LowerBoundAt006595EC;
-extern float g_F1211_UpperBoundAt006583B4;
-extern float g_F1211_AngleDivAt00657828;
 
 
 void YoumuObject::Advance()
@@ -238,7 +231,7 @@ void YoumuObject::Advance()
                 field07C = 0;
                 field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 if (field0DC < -20) field0DC = 10;
                 if (field0DC > 20) field0DC = -10;
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
@@ -248,7 +241,7 @@ void YoumuObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             if ((field07C == 1 || field07C == 2 || field07C == 4) && animationStage < 2) {
                 ResetSecondaryCounter(2);
@@ -259,10 +252,10 @@ void YoumuObject::Advance()
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (x > g_F1211_RightBoundAt00659424 ||
-                    x < g_F1211_LowerBoundAt006595EC ||
-                    y > g_F1211_UpperBoundAt006583B4 ||
-                    y < g_F1211_LowerBoundAt006595EC) {
+                if (x > GeometryConstants::FourteenHundred ||
+                    x < GeometryConstants::NegativeHundredSixty ||
+                    y > GeometryConstants::Thousand ||
+                    y < GeometryConstants::NegativeHundredSixty) {
                     ClearFrameInfo();
                     return;
                 }
@@ -335,7 +328,7 @@ void YoumuObject::Advance()
                 field07C = 0;
                 field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 if (field0DC < -65) field0DC = -55;
                 if (field0DC > -25) field0DC = -15;
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
@@ -345,7 +338,7 @@ void YoumuObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             if ((field07C == 1 || field07C == 2 || field07C == 4) && animationStage < 2) {
                 ResetSecondaryCounter(2);
@@ -356,10 +349,10 @@ void YoumuObject::Advance()
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (x > g_F1211_RightBoundAt00659424 ||
-                    x < g_F1211_LowerBoundAt006595EC ||
-                    y > g_F1211_UpperBoundAt006583B4 ||
-                    y < g_F1211_LowerBoundAt006595EC) {
+                if (x > GeometryConstants::FourteenHundred ||
+                    x < GeometryConstants::NegativeHundredSixty ||
+                    y > GeometryConstants::Thousand ||
+                    y < GeometryConstants::NegativeHundredSixty) {
                     ClearFrameInfo();
                     return;
                 }
@@ -432,7 +425,7 @@ void YoumuObject::Advance()
                 field07C = 0;
                 field0DC = AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
-                    (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
+                    (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 if (field0DC < 25) field0DC = 35;
                 if (field0DC > 65) field0DC = 55;
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
@@ -442,7 +435,7 @@ void YoumuObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             if ((field07C == 1 || field07C == 2 || field07C == 4) && animationStage < 2) {
                 ResetSecondaryCounter(2);
@@ -453,10 +446,10 @@ void YoumuObject::Advance()
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (x > g_F1211_RightBoundAt00659424 ||
-                    x < g_F1211_LowerBoundAt006595EC ||
-                    y > g_F1211_UpperBoundAt006583B4 ||
-                    y < g_F1211_LowerBoundAt006595EC) {
+                if (x > GeometryConstants::FourteenHundred ||
+                    x < GeometryConstants::NegativeHundredSixty ||
+                    y > GeometryConstants::Thousand ||
+                    y < GeometryConstants::NegativeHundredSixty) {
                     ClearFrameInfo();
                     return;
                 }
@@ -632,7 +625,7 @@ case 0x331: {
         x=owner->x+
             float(facing*57);
         y=(*(&owner->y))+
-            g_F1069_ParentYFirstAt00659138;
+            GeometryConstants::NinetyFour;
     }
     if (owner->action>0x99 &&
         owner->action<0x9E &&
@@ -640,14 +633,14 @@ case 0x331: {
         x=owner->x+
             float(facing*57);
         y=(*(&owner->y))+
-            g_F1069_ParentYSecondAt00658264;
+            GeometryConstants::Sixty;
     }
     if (owner->action==0x9E &&
         animationStage==0) {
         x=owner->x+
             float(facing*57);
         y=(*(&owner->y))+
-            g_F1057_YOffsetAt00657888;
+            GeometryConstants::Hundred;
     }
     if ((owner->action<0x96 ||
          owner->action>0x9E) &&
@@ -973,7 +966,7 @@ case 0x331: {
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 2) {
                 ResetSecondaryCounter(2);
@@ -983,10 +976,10 @@ case 0x331: {
                 SetPolarVelocity(field0DC, field0DA * 0.01f);
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (x > g_F1211_RightBoundAt00659424 ||
-                    x < g_F1211_LowerBoundAt006595EC ||
-                    y > g_F1211_UpperBoundAt006583B4 ||
-                    y < g_F1211_LowerBoundAt006595EC) {
+                if (x > GeometryConstants::FourteenHundred ||
+                    x < GeometryConstants::NegativeHundredSixty ||
+                    y > GeometryConstants::Thousand ||
+                    y < GeometryConstants::NegativeHundredSixty) {
                     ClearFrameInfo();
                     return;
                 }
@@ -1125,7 +1118,7 @@ case 0x331: {
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             if ((field07C == 1 || field07C == 2 || field07C == 4) && animationStage < 2) {
                 ResetSecondaryCounter(2);
@@ -1134,10 +1127,10 @@ case 0x331: {
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (x > g_F1211_RightBoundAt00659424 ||
-                    x < g_F1211_LowerBoundAt006595EC ||
-                    y > g_F1211_UpperBoundAt006583B4 ||
-                    y < g_F1211_LowerBoundAt006595EC) {
+                if (x > GeometryConstants::FourteenHundred ||
+                    x < GeometryConstants::NegativeHundredSixty ||
+                    y > GeometryConstants::Thousand ||
+                    y < GeometryConstants::NegativeHundredSixty) {
                     ClearFrameInfo();
                     return;
                 }
@@ -1531,10 +1524,10 @@ case 0x331: {
         SetPolarVelocity(20.0f, field0DA);
         x = facing * velocityX + x;
         y -= velocityY;
-        if (x > g_F1211_RightBoundAt00659424 ||
-        x < g_F1211_LowerBoundAt006595EC ||
-        y > g_F1211_UpperBoundAt006583B4 ||
-        y < g_F1211_LowerBoundAt006595EC) {
+        if (x > GeometryConstants::FourteenHundred ||
+        x < GeometryConstants::NegativeHundredSixty ||
+        y > GeometryConstants::Thousand ||
+        y < GeometryConstants::NegativeHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -1600,10 +1593,10 @@ case 0x331: {
         SetPolarVelocity(-30.0f, field0DA);
         x = facing * velocityX + x;
         y -= velocityY;
-        if (x > g_F1211_RightBoundAt00659424 ||
-        x < g_F1211_LowerBoundAt006595EC ||
-        y > g_F1211_UpperBoundAt006583B4 ||
-        y < g_F1211_LowerBoundAt006595EC) {
+        if (x > GeometryConstants::FourteenHundred ||
+        x < GeometryConstants::NegativeHundredSixty ||
+        y > GeometryConstants::Thousand ||
+        y < GeometryConstants::NegativeHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -1669,10 +1662,10 @@ case 0x331: {
         SetPolarVelocity(0.0f, field0DA);
         x = facing * velocityX + x;
         y -= velocityY;
-        if (x > g_F1211_RightBoundAt00659424 ||
-        x < g_F1211_LowerBoundAt006595EC ||
-        y > g_F1211_UpperBoundAt006583B4 ||
-        y < g_F1211_LowerBoundAt006595EC) {
+        if (x > GeometryConstants::FourteenHundred ||
+        x < GeometryConstants::NegativeHundredSixty ||
+        y > GeometryConstants::Thousand ||
+        y < GeometryConstants::NegativeHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2271,7 +2264,7 @@ case 0x331: {
                 color[2] = 255;
                 color[3] = 255;
                 SetPolarVelocity(-RecordedRange(0, 120), 5.0f);
-                rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+                rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             if ((field07C == 6 || field07C == 1 ||
                  field07C == 2 || field07C == 4) && animationStage < 3) {
@@ -2293,17 +2286,17 @@ case 0x331: {
                     field0D8 = RecordedRange(0, 3) + 3;
                     for (burstIndex = 0; burstIndex < field0D8; burstIndex++) {
                         owner->SpawnBattleEffect(913,
-                            (RecordedRange(0, 60) + x) - g_F1211_HalfSpreadAt00657878,
-                            (RecordedRange(0, 60) + y) - g_F1211_HalfSpreadAt00657878,
+                            (RecordedRange(0, 60) + x) - GeometryConstants::Thirty,
+                            (RecordedRange(0, 60) + y) - GeometryConstants::Thirty,
                             owner->facing, 1);
                     }
                 }
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (x > g_F1211_RightBoundAt00659424 ||
-                    x < g_F1211_LowerBoundAt006595EC ||
-                    y > g_F1211_UpperBoundAt006583B4 ||
-                    y < g_F1211_LowerBoundAt006595EC) {
+                if (x > GeometryConstants::FourteenHundred ||
+                    x < GeometryConstants::NegativeHundredSixty ||
+                    y > GeometryConstants::Thousand ||
+                    y < GeometryConstants::NegativeHundredSixty) {
                     ClearFrameInfo();
                     return;
                 }
@@ -2339,7 +2332,7 @@ case 0x331: {
             ++field0DA;
             SetPolarVelocity(field0D8 - 15,
             field0DC * 0.2f + field0DA * 0.1f);
-            rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
+            rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         }
         if (field07C != 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
@@ -2350,10 +2343,10 @@ case 0x331: {
         else {
             x = facing * velocityX + x;
             y -= velocityY;
-            if (x > g_F1211_RightBoundAt00659424 ||
-            x < g_F1211_LowerBoundAt006595EC ||
-            y > g_F1211_UpperBoundAt006583B4 ||
-            y < g_F1211_LowerBoundAt006595EC) {
+            if (x > GeometryConstants::FourteenHundred ||
+            x < GeometryConstants::NegativeHundredSixty ||
+            y > GeometryConstants::Thousand ||
+            y < GeometryConstants::NegativeHundredSixty) {
                 ClearFrameInfo();
                 return;
             }
@@ -2400,10 +2393,10 @@ case 0x331: {
         if (field0DA < 20) field0DA = 20;
         if (color[0] > 5) color[0] -= 5;
         else { ClearFrameInfo(); return; }
-        if (x > g_F1211_RightBoundAt00659424 ||
-        x < g_F1211_LowerBoundAt006595EC ||
-        y > g_F1211_UpperBoundAt006583B4 ||
-        y < g_F1211_LowerBoundAt006595EC) {
+        if (x > GeometryConstants::FourteenHundred ||
+        x < GeometryConstants::NegativeHundredSixty ||
+        y > GeometryConstants::Thousand ||
+        y < GeometryConstants::NegativeHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2446,8 +2439,8 @@ case 0x331: {
         y -= velocityY;
         if (x > 1600.0f ||
         x < -360.0f ||
-        y > g_F1211_UpperBoundAt006583B4 ||
-        y < g_F1211_LowerBoundAt006595EC) {
+        y > GeometryConstants::Thousand ||
+        y < GeometryConstants::NegativeHundredSixty) {
             ClearFrameInfo();
             return;
         }
@@ -2765,7 +2758,7 @@ case 0x3E6: {
         return;
     }
     x = owner->x;
-    y=(*(&owner->y))+g_F1057_YOffsetAt00657888;
+    y=(*(&owner->y))+GeometryConstants::Hundred;
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;

@@ -9,7 +9,7 @@
                 scriptCounterF00=0;
             }
             if (y>FloatConstants::Zero && (animationStage)<7) {
-                velocityY=velocityY-g_ApproachLowerAt00658290;
+                velocityY=velocityY-GeometryConstants::Six;
                 if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -27,10 +27,10 @@
                 field05C=6.0f;
                 SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
-                    (*(&y))+g_EightShotY2At00658268,
+                    (*(&y))+GeometryConstants::Eighty,
                     facing,1);
                 SpawnAuxEffect(0x7E,x,
-                    (*(&y))+g_EightShotY2At00658268,
+                    (*(&y))+GeometryConstants::Eighty,
                     facing,1);
                 PlaySharedSound(31);
             }
@@ -43,7 +43,7 @@
                 scriptCounterF00=0;
             }
             if (y>FloatConstants::Zero && (animationStage)<6) {
-                velocityY=velocityY-g_ApproachLowerAt00658290;
+                velocityY=velocityY-GeometryConstants::Six;
                 if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -61,10 +61,10 @@
                 field05C=6.0f;
                 SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
-                    (*(&y))+g_EightShotY2At00658268,
+                    (*(&y))+GeometryConstants::Eighty,
                     facing,1);
                 SpawnAuxEffect(0x7E,x,
-                    (*(&y))+g_EightShotY2At00658268,
+                    (*(&y))+GeometryConstants::Eighty,
                     facing,1);
                 PlaySharedSound(31);
             }

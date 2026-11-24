@@ -33,10 +33,10 @@ case 0x2BE: {
     if ((animationStage)==4 && (animationFrame)==0) {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
-        field36C=(field36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x73,
             float((facing)*30)+(x),
-            (*(&y))+g_F1017_StartYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,
             facing,1);
     }
     if ((animationStage)==13 && (animationFrame)==0) {

@@ -1,3 +1,4 @@
+#include "GeometryConstants.hpp"
 #include "FloatConstants.hpp"
 #include "PlayerState.hpp"
 #include "GameSharedState.hpp"
@@ -25,14 +26,13 @@ class ResultRawScaleF240 {
 public: void ScaleQuad(float x,float y,float z,DWORD sxBits,DWORD syBits,DWORD szBits);
 };
 extern const float g_ResultAlphaOriginAt00658048;
-extern const float g_ResultAlphaScaleAt00657864;
 extern const float g_ResultFullAlphaMultiplierAt00657CF0;
 
 #define DRAWER reinterpret_cast<ResultSpriteDrawingF240*>(textures)
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
 #define RESULT_COLOR D3DCOLOR_ARGB(field018,255,255,255)
 #define OFFSET_X(i) (static_cast<float>(offsets[i]+300))
-#define PERCENT ((((field014) - g_ResultAlphaOriginAt00658048)/FloatConstants::ThreeFifths)*g_ResultAlphaScaleAt00657864)
+#define PERCENT ((((field014) - g_ResultAlphaOriginAt00658048)/FloatConstants::ThreeFifths)*GeometryConstants::DegreesPerTurn)
 void ResultScene::Render()
 {
     if (Graphics::BeginFrame()) {

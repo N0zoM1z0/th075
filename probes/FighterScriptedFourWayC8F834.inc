@@ -11,7 +11,7 @@ case 0xC8: {
         velocityX=0.0f;
         scriptCounterF00=0;
     }
-    if ((velocityX)>g_F834_UpperAt00657CBC) {
+    if ((velocityX)>GeometryConstants::Fifteen) {
         velocityX=(velocityX)-FloatConstants::Half;
         if ((velocityX)<g_F834_LowerAt006590B0)
             velocityX=9.0f;
@@ -51,10 +51,10 @@ case 0xC8: {
         velocityX=11.5f;
         SpawnAuxEffect(0x7D,
             float((facing)*80)+(x),
-            (*(&y))+g_F701_VolleyYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,
             (facing),1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_F701_VolleyYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,
             (facing),1);
     }
     if ((animationStage)==4 && (animationFrame)==0)

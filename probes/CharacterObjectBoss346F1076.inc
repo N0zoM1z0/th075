@@ -43,7 +43,7 @@ case 0x346: {
         --field0D8;
         if (field0D8<0)
             field0D8=0;
-        rotationZ=(rotationZ)+g_F1076_AngleNudgeAt00658294;
+        rotationZ=(rotationZ)+GeometryConstants::FortyFive;
     }
     if (animationStage==2) {
         ++field0D8;
@@ -52,9 +52,9 @@ case 0x346: {
         SetPolarVelocity(float(field0DC),
                                      float(field0D8));
         rotationZ=AngleAt00483300(
-            velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+            velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
         owner->field310=AngleAt00483300(
-            velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+            velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
     }
     if (animationStage==3) {
         ++field0D8;
@@ -63,7 +63,7 @@ case 0x346: {
         SetPolarVelocity(float(field0DC),
                                      float(field0D8));
         rotationZ=AngleAt00483300(
-            velocityY,velocityX)/g_F1057_AngleDivAt00657828;
+            velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
         if (color[0]>10)
             color[0]-=10;
         else {
@@ -75,10 +75,10 @@ case 0x346: {
         ResetSecondaryCounter(3);
         return;
     }
-    if (x>g_F1076_RightAt00659424 ||
-        x<g_F1076_LeftAt006595EC ||
-        y>g_F1057_UpperBoundAt006583B4 ||
-        y<g_F1076_LeftAt006595EC) {
+    if (x>GeometryConstants::FourteenHundred ||
+        x<GeometryConstants::NegativeHundredSixty ||
+        y>GeometryConstants::Thousand ||
+        y<GeometryConstants::NegativeHundredSixty) {
         ClearFrameInfo();
         return;
     }
@@ -86,9 +86,9 @@ case 0x346: {
         ClearFrameInfo();
     if (animationStage==2 && animationFrame==0) {
         field0DC=short(AngleAt00483300(
-          ((*(&owner->opponent->y))+g_F1076_TargetYOffsetAt00658398-y),
+          ((*(&owner->opponent->y))+GeometryConstants::HundredTwentyEight-y),
           (owner->opponent->x-x)*int(facing)) /
-          g_F1057_AngleDivAt00657828);
+          GeometryConstants::RadiansPerDegree);
     }
     if (animationStage==3 && animationFrame==0)
         ClearFrameInfo();

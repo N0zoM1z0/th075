@@ -32,9 +32,9 @@ case 0xC8: {
         velocityY=25.0f;
         field05C=2.5f;
         SpawnAuxEffect(0x7D,float((facing)*80)+(x),
-            (*(&y))+g_F701_VolleyYAt00658268,(facing),1);
+            (*(&y))+GeometryConstants::Eighty,(facing),1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_F701_VolleyYAt00658268,(facing),1);
+            (*(&y))+GeometryConstants::Eighty,(facing),1);
         SpawnAuxEffect(0x81,x,0.0f,(facing),0);
         PlaySharedSound(31);
     }
@@ -47,7 +47,7 @@ case 0xC9: {
         scriptCounterF00=0;
     }
     if (y>FloatConstants::Zero && (animationStage)<6) {
-        velocityY=velocityY-g_F759_C9DecelAt00658290;
+        velocityY=velocityY-GeometryConstants::Six;
         if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
@@ -64,9 +64,9 @@ case 0xC9: {
         velocityY=40.0f;
         field05C=6.0f;
         SpawnAuxEffect(0x7D,x-float((facing)*80),
-            (*(&y))+g_F701_VolleyYAt00658268,-(facing),1);
+            (*(&y))+GeometryConstants::Eighty,-(facing),1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_F701_VolleyYAt00658268,-(facing),1);
+            (*(&y))+GeometryConstants::Eighty,-(facing),1);
         SpawnAuxEffect(0x81,x,0.0f,-(facing),0);
         PlaySharedSound(31);
     }
@@ -93,9 +93,9 @@ case 0xCA: {
         velocityY=-4.0f;
         field05C=0.6f;
         SpawnAuxEffect(0x7D,float((facing)*80)+(x),
-            (*(&y))+g_ContactProjectionAt00657888,(facing),1);
+            (*(&y))+GeometryConstants::Hundred,(facing),1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_ContactProjectionAt00657888,(facing),1);
+            (*(&y))+GeometryConstants::Hundred,(facing),1);
         PlaySharedSound(31);
     }
     if ((animationStage)==6 && (animationFrame)==0) {
@@ -125,9 +125,9 @@ case 0xCB: {
         velocityY=2.0f;
         field05C=0.6f;
         SpawnAuxEffect(0x7D,x-float((facing)*80),
-            (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
+            (*(&y))+GeometryConstants::Hundred,-(facing),1);
         SpawnAuxEffect(0x7E,x,
-            (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
+            (*(&y))+GeometryConstants::Hundred,-(facing),1);
         PlaySharedSound(31);
     }
     if ((animationStage)==5 && (animationFrame)==0) {

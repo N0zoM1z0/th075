@@ -29,47 +29,47 @@ case 0x25E: {
         field314=-28.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=-21.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=-14.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=-7.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=0.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=7.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=14.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=21.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
         field314=28.0f;
         field318=10.0f;
         SpawnBattleEffect(0x342,x,
-            (*(&y))+g_F970_YAt006590AC,
+            (*(&y))+GeometryConstants::HundredTen,
             facing,1);
     }
     break;

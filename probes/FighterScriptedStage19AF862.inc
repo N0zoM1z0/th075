@@ -16,7 +16,7 @@ case 0x19A: {
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnBattleEffect(0x352,
             float((facing)*60)+(x),
-            (*(&y))+g_F701_VolleyYAt00658268,
+            (*(&y))+GeometryConstants::Eighty,
             (facing),1);
         UpdateGaugeTimer(0xC8);
         PlaySound(3);

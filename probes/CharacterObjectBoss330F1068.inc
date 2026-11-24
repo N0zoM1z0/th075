@@ -39,7 +39,7 @@ case 0x330: {
     }
     y=y+velocityY;
     if (animationStage==1) {
-        rotationZ=(rotationZ)+g_F1068_ActionSpeedAt00657878;
+        rotationZ=(rotationZ)+GeometryConstants::Thirty;
         velocityY=velocityY-FloatConstants::One;
         if (velocityY<FloatConstants::Zero)
             velocityY=0.0f;

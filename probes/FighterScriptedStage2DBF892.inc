@@ -14,7 +14,7 @@ case 0x2DB: {
     if ((animationStage)>1 && (animationStage)<10) {
         if (AbsFloatAt00412D90(
                 opponent->x-x)
-                <g_F892DistAt0065787C) {
+                <GeometryConstants::ThreeHundredTwenty) {
             ResetSecondaryCounter(10);
             return;
         }

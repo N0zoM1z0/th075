@@ -24,7 +24,7 @@ case 0x1A0: {
                 field318=10.0f;
                 Fighter::SpawnTrackedEffect(0x344,
                     float((RecordedRange(0,80)+30)*(facing))+(x),
-                    ((*(&y))+g_F976_RandomYAt0065786C+shot*40)+float(RecordedRange(0,20)),
+                    ((*(&y))+GeometryConstants::Twenty+shot*40)+float(RecordedRange(0,20)),
                     facing,1,0,1);
             }
         } else {
@@ -33,7 +33,7 @@ case 0x1A0: {
                 field318=10.0f;
                 Fighter::SpawnTrackedEffect(0x344,
                     float((RecordedRange(0,100)+20)*(facing))+(x),
-                    ((*(&y))+g_F976_RandomYAt0065786C+shot*30)+float(RecordedRange(0,20)),
+                    ((*(&y))+GeometryConstants::Twenty+shot*30)+float(RecordedRange(0,20)),
                     facing,1,0,1);
             }
         }

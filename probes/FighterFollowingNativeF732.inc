@@ -9,7 +9,7 @@
         case 0x1FA: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=-5.0f;
-                velocityY=static_cast<float>((scriptCounterF00)==1)*FloatConstants::Five+g_FloatAddAt00657CBC;
+                velocityY=static_cast<float>((scriptCounterF00)==1)*FloatConstants::Five+GeometryConstants::Fifteen;
                 field05C=-0.8f;
                 field07C=0;
                 field3AC=0;

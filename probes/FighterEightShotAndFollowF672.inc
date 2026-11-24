@@ -14,20 +14,20 @@
                 field314=-10.0f;
                 SpawnBattleEffect(0x321,
                     float(facing*40)+(x),
-                    (*(&y))+g_EightShotY0At006591F8,
+                    (*(&y))+GeometryConstants::HundredFifty,
                     facing,1);
                 SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
-                    (*(&y))+g_EightShotY0At006591F8,
+                    (*(&y))+GeometryConstants::HundredFifty,
                     facing,1);
                 field314=10.0f;
                 SpawnBattleEffect(0x321,
                     float(facing*40)+(x),
-                    (*(&y))+g_EightShotY1At00658264,
+                    (*(&y))+GeometryConstants::Sixty,
                     facing,1);
                 SpawnBattleEffect(0x322,
                     float(facing*40)+(x),
-                    (*(&y))+g_EightShotY1At00658264,
+                    (*(&y))+GeometryConstants::Sixty,
                     facing,1);
                 field314=-6.0f;
                 SpawnBattleEffect(0x321,
@@ -41,11 +41,11 @@
                 field314=6.0f;
                 SpawnBattleEffect(0x321,
                     float(facing*75)+(x),
-                    (*(&y))+g_EightShotY2At00658268,
+                    (*(&y))+GeometryConstants::Eighty,
                     facing,1);
                 SpawnBattleEffect(0x322,
                     float(facing*75)+(x),
-                    (*(&y))+g_EightShotY2At00658268,
+                    (*(&y))+GeometryConstants::Eighty,
                     facing,1);
             }
             break;
@@ -59,7 +59,7 @@
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x32B,
                     float(facing*100)+(x),
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
             }
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
@@ -74,7 +74,7 @@
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x32D,
                     float(facing*100)+(x),
-                    (*(&y))+g_EightShotY1At00658264,
+                    (*(&y))+GeometryConstants::Sixty,
                     facing,1);
             }
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);

@@ -18,7 +18,7 @@
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x327,
                     float(facing*151)+(x),
-                    (y)+g_YPlusAt0065929C,
+                    (y)+GeometryConstants::HundredFour,
                     facing,1);
             }
             break;
@@ -47,7 +47,7 @@
             if ((animationStage)==6 && (animationFrame)==0) {
                 SpawnBattleEffect(0x328,
                     float(facing*128)+(x),
-                    (y)+g_YPlusAt00658400,
+                    (y)+GeometryConstants::Seventy,
                     facing,1);
             }
             break;

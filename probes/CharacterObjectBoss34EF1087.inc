@@ -19,7 +19,7 @@ case 0x34E: {
         float(field0D8));
     x=velocityX+owner->x;
     y=(*(&velocityY))*FloatConstants::Quarter+
-        owner->y+g_F1085_YOffsetAt0065835C;
+        owner->y+GeometryConstants::TwoHundred;
     if (field0D8<140)
         field0D8=short(field0D8+5);
     else

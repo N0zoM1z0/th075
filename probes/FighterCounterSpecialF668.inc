@@ -17,7 +17,7 @@ case 0x252: {
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
                 PlaySharedSound(0x21);
                 opponent->fieldEFA=0;
@@ -37,7 +37,7 @@ case 0x252: {
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
                 PlaySharedSound(0x21);
                 opponent->fieldEFA=0;
@@ -57,7 +57,7 @@ case 0x252: {
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
-                    (*(&y))+g_ContactProjectionAt00657888,
+                    (*(&y))+GeometryConstants::Hundred,
                     facing,1);
                 PlaySharedSound(0x21);
                 opponent->fieldEFA=0;

@@ -19,7 +19,7 @@ case 0x255: {
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             facing,1);
         PlaySharedSound(0x21);
     }
@@ -42,7 +42,7 @@ case 0x256: {
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             facing,1);
     }
     break;
@@ -60,7 +60,7 @@ case 0x257: {
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnAuxEffect(0x37,x,
-            (*(&y))+g_ContactProjectionAt00657888,
+            (*(&y))+GeometryConstants::Hundred,
             facing,1);
     }
     if ((animationStage)==8 && (animationFrame)==0 && (scriptCounterF00)<1) {
