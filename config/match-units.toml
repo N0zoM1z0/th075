@@ -335,7 +335,7 @@ source = "src/GraphicsState.cpp"
 object = "build/matching/GraphicsState.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["Graphics::BeginFrame"]
-symbol = "?BeginFrame@Graphics@@YAXXZ"
+symbol = "?BeginFrame@Graphics@@YA_NXZ"
 target_address = 0x00402660
 size = 36
 relocations = [
@@ -16336,7 +16336,7 @@ relocations = [
   { offset = 0x15F, type = "DIR32", symbol = "__real@40400000", target = 0x00657CF8 },
   { offset = 0x165, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
   { offset = 0x16E, type = "REL32", symbol = "?SetDrawTransform@Graphics@@YAXMMM@Z", target = 0x00401B00 },
-  { offset = 0x176, type = "REL32", symbol = "?BeginGraphicsFrameWithStatusAt00402660@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x176, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x188, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x1A5, type = "REL32", symbol = "?SetColorMultiplier@TextureManagerF198@@QAEXM@Z", target = 0x0040C8A0 },
   { offset = 0x1AB, type = "DIR32", symbol = "?g_DrawDispatcher@@3PAVDrawDispatcher@@A", target = 0x00671424 },
@@ -17346,18 +17346,18 @@ relocations = [
   { offset = 0x59, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
   { offset = 0x70, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x90, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x95, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x95, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
   { offset = 0x9A, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0xBA, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
-  { offset = 0xBF, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0xBF, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
   { offset = 0xC4, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0xEE, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x105, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x125, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x134, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x134, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
   { offset = 0x139, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0x152, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
-  { offset = 0x161, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x161, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
   { offset = 0x166, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0x189, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x1A0, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
@@ -17512,7 +17512,7 @@ target_address = 0x00438D00
 size = 4749
 compare_size = 4749
 relocations = [
-  { offset = 0xD, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0xD, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x25, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x32, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
   { offset = 0x82, type = "REL32", symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
@@ -20954,7 +20954,7 @@ target_address = 0x004277A0
 size = 5339
 compare_size = 5339
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x10, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x26, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x47, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x57, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
@@ -21090,7 +21090,7 @@ target_address = 0x00425C80
 size = 2429
 compare_size = 2429
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x10, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x26, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x31, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x41, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
@@ -21177,7 +21177,7 @@ target_address = 0x00430080
 size = 3314
 compare_size = 3314
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x10, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x26, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x36, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x46, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
@@ -22574,7 +22574,7 @@ target_address = 0x004292E0
 size = 2759
 compare_size = 2775
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x10, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x26, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x36, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x46, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
@@ -22681,7 +22681,7 @@ target_address = 0x0042CA60
 size = 2246
 compare_size = 2246
 relocations = [
-  { offset = 0x11, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x11, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x27, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x37, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
   { offset = 0x47, type = "REL32", symbol = "?SetBlendMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C7F0 },
@@ -24045,7 +24045,7 @@ target_address = 0x0042A560
 size = 1581
 compare_size = 1581
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x10, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x26, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x2C, type = "DIR32", symbol = "__imp__timeGetTime@0", target = 0x00657264 },
   { offset = 0x48, type = "DIR32", symbol = "__real@42c80000", target = 0x00657888 },
@@ -24094,7 +24094,7 @@ target_address = 0x0042B570
 size = 1875
 compare_size = 1875
 relocations = [
-  { offset = 0x10, type = "REL32", symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ", target = 0x00402660 },
+  { offset = 0x10, type = "REL32", symbol = "?BeginFrame@Graphics@@YA_NXZ", target = 0x00402660 },
   { offset = 0x26, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
   { offset = 0x2C, type = "DIR32", symbol = "__imp__timeGetTime@0", target = 0x00657264 },
   { offset = 0x48, type = "DIR32", symbol = "__real@42c80000", target = 0x00657888 },
@@ -24192,8 +24192,8 @@ relocations = [
   { offset = 0x2EC, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x672, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0x98F, type = "DIR32", symbol = "?g_SelectionDifficulty@@3CA", target = 0x006714D0 },
-  { offset = 0x99F, type = "DIR32", symbol = "?g_SelectionProgress@@3PAEA", target = 0x006718F8 },
-  { offset = 0x9A4, type = "REL32", symbol = "?SetSelection@SelectionProgressF130@@QAEXCC@Z", target = 0x0041A1A0 },
+  { offset = 0x99F, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x9A4, type = "REL32", symbol = "?SetSelection@GameProgress@@QAEXCC@Z", target = 0x0041A1A0 },
   { offset = 0x9E6, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
   { offset = 0x9EB, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
   { offset = 0xA03, type = "DIR32", symbol = "?g_SelectionCharacters@@3PACA", target = 0x006714C8 },
@@ -24209,8 +24209,8 @@ relocations = [
   { offset = 0xAC7, type = "DIR32", symbol = "?g_SelectionPalettes@@3PACA", target = 0x006714AC },
   { offset = 0xACE, type = "DIR32", symbol = "?g_SelectionPalettes@@3PACA", target = 0x006714AC },
   { offset = 0xAE5, type = "REL32", symbol = "_rand", target = 0x006418AB },
-  { offset = 0xB4A, type = "DIR32", symbol = "?g_SelectionProgress@@3PAEA", target = 0x006718F8 },
-  { offset = 0xB4F, type = "REL32", symbol = "?GetSelectedValue@SelectionProgressF130@@QAECXZ", target = 0x00438A80 },
+  { offset = 0xB4A, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0xB4F, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0xB5D, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
   { offset = 0xB6A, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
   { offset = 0xB6F, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
@@ -24615,7 +24615,7 @@ target = 0x0066C238
 [[units.fighter-resource-parameters-00452b30.relocations]]
 offset = 149
 type = "DIR32"
-symbol = "?g_ProfileSelectionAt006718F8@@3PAEA"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.fighter-resource-parameters-00452b30.relocations]]
 offset = 154
@@ -26329,7 +26329,7 @@ target = 0x0066C238
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 135
 type = "DIR32"
-symbol = "?g_BattleRecords@@3VBattleRecords@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 140
@@ -26339,7 +26339,7 @@ target = 0x0043D430
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 172
 type = "DIR32"
-symbol = "?g_BattleRecords@@3VBattleRecords@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 177
@@ -26349,7 +26349,7 @@ target = 0x0043D3E0
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 215
 type = "DIR32"
-symbol = "?g_BattleRecords@@3VBattleRecords@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 220
@@ -26359,7 +26359,7 @@ target = 0x0043D460
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 273
 type = "DIR32"
-symbol = "?g_BattleRecords@@3VBattleRecords@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 278
@@ -29000,7 +29000,7 @@ size = 6404
 [[units.battle-render-background-00435a70.relocations]]
 offset = 17
 type = "REL32"
-symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ"
+symbol = "?BeginFrame@Graphics@@YA_NXZ"
 target = 0x00402660
 [[units.battle-render-background-00435a70.relocations]]
 offset = 39
@@ -30799,7 +30799,7 @@ size = 1089
 [[units.title-render-menu-0043a7a0.relocations]]
 offset = 16
 type = "REL32"
-symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ"
+symbol = "?BeginFrame@Graphics@@YA_NXZ"
 target = 0x00402660
 [[units.title-render-menu-0043a7a0.relocations]]
 offset = 38
@@ -32633,7 +32633,7 @@ target = 0x00657B88
 [[units.scene-base-release-00431f40.relocations]]
 offset = 23
 type = "REL32"
-symbol = "?ReleaseDefaults@SceneDefaultConfigF192@@QAEXXZ"
+symbol = "??1GameDefaultsF193@@QAE@XZ"
 target = 0x00417430
 
 [units.game-globals-initialize-00417210]
@@ -33149,7 +33149,7 @@ source = "src/GameGlobalsReleaseF195.cpp"
 object = "build/matching/GameGlobalsReleaseF195.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["GameGlobals::Release"]
-symbol = "?Release@GameGlobalsReleaseF195@@QAEXXZ"
+symbol = "??1GameDefaultsF193@@QAE@XZ"
 target_address = 0x00417430
 size = 358
 [[units.game-globals-release-00417430.relocations]]
@@ -35128,182 +35128,182 @@ target = 0x0041A0AF
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 71
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 76
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 86
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 91
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 103
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 108
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 129
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 134
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 144
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 149
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 161
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 166
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 187
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 192
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 202
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 207
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 219
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 224
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 254
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 259
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 269
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 274
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 286
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 291
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 312
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 317
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 327
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 332
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 344
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 349
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 408
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 413
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 428
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 433
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 491
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 496
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 543
@@ -35313,42 +35313,42 @@ target = 0x0041A0C3
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 583
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 588
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 607
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 612
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 622
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 627
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 644
 type = "DIR32"
-symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 649
 type = "REL32"
-symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.game-progress-check-selection-00419e10.relocations]]
 offset = 671
@@ -35507,12 +35507,12 @@ target = 0x0066C238
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 297
 type = "DIR32"
-symbol = "?g_MusicProgressAt006718F8@@3VMusicProgressArchiveF204@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 302
 type = "REL32"
-symbol = "?MarkPlayed@MusicProgressArchiveF204@@QAEXH@Z"
+symbol = "?SetUnlockBit@GameProgress@@QAEXF@Z"
 target = 0x00416CE0
 [[units.music-play-track-by-index-00419cb0.relocations]]
 offset = 310
@@ -36538,12 +36538,12 @@ target = 0x006714C8
 [[units.character-select-reset-selection-00433230.relocations]]
 offset = 556
 type = "DIR32"
-symbol = "?g_ProgressSelectionAt006718F8@@3VProgressSelectionF221@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.character-select-reset-selection-00433230.relocations]]
 offset = 561
 type = "REL32"
-symbol = "?RegisterSelection@ProgressSelectionF221@@QAEXEE@Z"
+symbol = "?SetSelection@GameProgress@@QAEXCC@Z"
 target = 0x0041A1A0
 
 [units.marisa-fighter-reset-round-00493130]
@@ -36944,22 +36944,22 @@ target = 0x00671624
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 493
 type = "REL32"
-symbol = "?Load@GameSettingsF225@@YAXXZ"
+symbol = "?ReadIni@GameConfigF193@@YAXXZ"
 target = 0x004192F0
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 526
 type = "REL32"
-symbol = "?ReadDefault@GameSettingsF225@@YAEE@Z"
+symbol = "?CheckEncodedItem@ProgressRecordsF736@@YAEC@Z"
 target = 0x0041A0E0
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 575
 type = "REL32"
-symbol = "?ReadControls@GameSettingsF225@@YAEEE@Z"
+symbol = "?CheckSelection@GameProgressF203@@YAECC@Z"
 target = 0x00419E10
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 598
 type = "REL32"
-symbol = "?ReadControls@GameSettingsF225@@YAEEE@Z"
+symbol = "?CheckSelection@GameProgressF203@@YAECC@Z"
 target = 0x00419E10
 [[units.character-select-scene-initialize-00432ea0.relocations]]
 offset = 640
@@ -38200,22 +38200,22 @@ target = 0x004079C0
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 58
 type = "DIR32"
-symbol = "?g_SelectedCardAt006718F8@@3VProgressCardViewF230@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 63
 type = "REL32"
-symbol = "?GetSelectedValue@ProgressCardViewF230@@QAECXZ"
+symbol = "?GetSelectedValue@GameProgress@@QAECXZ"
 target = 0x00438A80
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 73
 type = "DIR32"
-symbol = "?g_SelectedCardAt006718F8@@3VProgressCardViewF230@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 78
 type = "REL32"
-symbol = "?GetSelectedValue@ProgressCardViewF230@@QAECXZ"
+symbol = "?GetSelectedValue@GameProgress@@QAECXZ"
 target = 0x00438A80
 [[units.character-select-scene-process-subselection-00433be0.relocations]]
 offset = 112
@@ -38460,12 +38460,12 @@ target = 0x00671638
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 130
 type = "DIR32"
-symbol = "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 135
 type = "REL32"
-symbol = "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 160
@@ -38485,12 +38485,12 @@ target = 0x00671638
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 270
 type = "DIR32"
-symbol = "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 275
 type = "REL32"
-symbol = "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 300
@@ -38510,12 +38510,12 @@ target = 0x00671638
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 457
 type = "DIR32"
-symbol = "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 462
 type = "REL32"
-symbol = "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.music-room-scene-update-selection-004259d0.relocations]]
 offset = 487
@@ -38600,12 +38600,12 @@ target = 0x00641B80
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 137
 type = "DIR32"
-symbol = "?g_MusicProgressAt006718F8@@3VMusicTrackProgressF235@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 142
 type = "REL32"
-symbol = "?IsUnlocked@MusicTrackProgressF235@@QAEEH@Z"
+symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z"
 target = 0x00416DC0
 [[units.music-room-render-track-catalog-text-00426670.relocations]]
 offset = 181
@@ -38795,22 +38795,22 @@ target = 0x0066FE30
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 71
 type = "DIR32"
-symbol = "?g_ResultProgressAt006718F8@@3VResultProgressF238@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 76
 type = "REL32"
-symbol = "?Select@ResultProgressF238@@QAEXEE@Z"
+symbol = "?SetSelection@GameProgress@@QAEXCC@Z"
 target = 0x0041A1A0
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 81
 type = "DIR32"
-symbol = "?g_ResultProgressAt006718F8@@3VResultProgressF238@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 86
 type = "REL32"
-symbol = "?Counters@ResultProgressF238@@QAEPAHXZ"
+symbol = "?GetSelectedRecordAddress@GameProgress@@QAEPAUProgressDifficulty@@XZ"
 target = 0x0041A240
 [[units.result-scene-build-counter-page-00431350.relocations]]
 offset = 100
@@ -38955,22 +38955,22 @@ target = 0x0066FE30
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 60
 type = "DIR32"
-symbol = "?g_RecordProgressAt006718F8@@3VResultRecordProgressF239@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 65
 type = "REL32"
-symbol = "?Select@ResultRecordProgressF239@@QAEXEE@Z"
+symbol = "?SetSelection@GameProgress@@QAEXCC@Z"
 target = 0x0041A1A0
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 70
 type = "DIR32"
-symbol = "?g_RecordProgressAt006718F8@@3VResultRecordProgressF239@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 75
 type = "REL32"
-symbol = "?GetSelectedRecordAddress@ResultRecordProgressF239@@QAEPAXXZ"
+symbol = "?GetSelectedRecordAddress@GameProgress@@QAEPAUProgressDifficulty@@XZ"
 target = 0x0041A240
 [[units.result-scene-build-record-page-00431070.relocations]]
 offset = 89
@@ -39075,7 +39075,7 @@ size = 1344
 [[units.result-scene-render-counters-0042ef10.relocations]]
 offset = 16
 type = "REL32"
-symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ"
+symbol = "?BeginFrame@Graphics@@YA_NXZ"
 target = 0x00402660
 [[units.result-scene-render-counters-0042ef10.relocations]]
 offset = 38
@@ -39354,7 +39354,7 @@ source = "src/SceneTransitionDispatchF242.cpp"
 object = "build/matching/SceneTransitionDispatchF242.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SceneTransition::DispatchMode"]
-symbol = "?DispatchMode@TransitionDispatcherF242@@QAEGG@Z"
+symbol = "?TranslateState@GameScenesF1171@@QAEGG@Z"
 target_address = 0x00431F60
 size = 663
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
@@ -40191,22 +40191,22 @@ target = 0x004079C0
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 176
 type = "DIR32"
-symbol = "?g_NameEntryProgressAt006718F8@@3VNameEntryProgressF246@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 181
 type = "REL32"
-symbol = "?SaveScore@NameEntryProgressF246@@QAEXXZ"
+symbol = "?SaveScoreFile@GameProgress@@QAEXXZ"
 target = 0x004169E0
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 196
 type = "DIR32"
-symbol = "?g_NameEntryProgressAt006718F8@@3VNameEntryProgressF246@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 201
 type = "REL32"
-symbol = "?LoadWorkingEightBytes@NameEntryProgressF246@@QAEXE@Z"
+symbol = "?LoadWorkingEightBytes@GameProgress@@QAEXC@Z"
 target = 0x00416E80
 [[units.name-entry-scene-update-player-0042a340.relocations]]
 offset = 208
@@ -42159,22 +42159,22 @@ target = 0x006714C8
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 191
 type = "DIR32"
-symbol = "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 196
 type = "REL32"
-symbol = "?SetSelection@ProgressRecordsF269@@QAEXCC@Z"
+symbol = "?SetSelection@GameProgress@@QAEXCC@Z"
 target = 0x0041A1A0
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 201
 type = "DIR32"
-symbol = "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 206
 type = "REL32"
-symbol = "?GetSelectedRecordAddress@ProgressRecordsF269@@QAEPAXXZ"
+symbol = "?GetSelectedRecordAddress@GameProgress@@QAEPAUProgressDifficulty@@XZ"
 target = 0x0041A240
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 217
@@ -42184,17 +42184,17 @@ target = 0x00671418
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 235
 type = "REL32"
-symbol = "?InsertRankedScore@ProgressRecordsF269@@QAEEH@Z"
+symbol = "?InsertRankedScore@ProgressDifficulty@@QAEEI@Z"
 target = 0x00416EE0
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 259
 type = "DIR32"
-symbol = "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 264
 type = "REL32"
-symbol = "?StoreWorkingScore@ProgressRecordsF269@@QAEXE@Z"
+symbol = "?StoreWorkingEightBytes@GameProgress@@QAEXC@Z"
 target = 0x00416E20
 [[units.replay-scene-initialize-0042a180.relocations]]
 offset = 276
@@ -43916,12 +43916,12 @@ target = 0x006714C8
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 193
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 198
 type = "REL32"
-symbol = "?SelectRecord@ProgressTableF288@@QAEXF@Z"
+symbol = "?SetUnlockBit@GameProgress@@QAEXF@Z"
 target = 0x00416CE0
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 207
@@ -43941,12 +43941,12 @@ target = 0x006714C8
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 235
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 240
 type = "REL32"
-symbol = "?SelectRecord@ProgressTableF288@@QAEXF@Z"
+symbol = "?SetUnlockBit@GameProgress@@QAEXF@Z"
 target = 0x00416CE0
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 248
@@ -43956,12 +43956,12 @@ target = 0x006714CE
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 254
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 259
 type = "REL32"
-symbol = "?ResetCurrent@ProgressTableF288@@QAEXXZ"
+symbol = "?IncrementSelectedRecord@GameProgress@@QAEXXZ"
 target = 0x00425130
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 266
@@ -43971,12 +43971,12 @@ target = 0x006714C8
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 275
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 280
 type = "REL32"
-symbol = "?SelectRecord@ProgressTableF288@@QAEXF@Z"
+symbol = "?SetUnlockBit@GameProgress@@QAEXF@Z"
 target = 0x00416CE0
 [[units.battle-end-scene-initialize-00424e00.relocations]]
 offset = 300
@@ -46160,7 +46160,7 @@ source = "src/EventServiceAcquireF335.cpp"
 object = "build/matching/EventServiceAcquireF335.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["EventQueue::AcquireSharedServiceAt004239F0"]
-symbol = "?AcquireSharedService@EventServiceF335@@QAEPAV1@H@Z"
+symbol = "??0EventServiceF335@@QAE@H@Z"
 target_address = 0x004239F0
 size = 155
 [[units.event-service-acquire-shared-004239f0.relocations]]
@@ -46259,7 +46259,7 @@ source = "src/EventServiceReleaseF335.cpp"
 object = "build/matching/EventServiceReleaseF335.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["EventQueue::ReleaseSharedServiceAt00423A90"]
-symbol = "?ReleaseSharedService@EventServiceF335@@QAEXXZ"
+symbol = "??1EventServiceF335@@QAE@XZ"
 target_address = 0x00423A90
 size = 143
 [[units.event-service-release-shared-00423a90.relocations]]
@@ -52935,12 +52935,12 @@ target = 0x0067161D
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3729
 type = "DIR32"
-symbol = "?g_AudioStageAt006718F8@@3VAudioStageF389@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3734
 type = "REL32"
-symbol = "?BeginStage@AudioStageF389@@QAEXH@Z"
+symbol = "?SetUnlockBit@GameProgress@@QAEXF@Z"
 target = 0x00416CE0
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3739
@@ -53114,7 +53114,7 @@ source = "src/ArchiveBeginUseF392.cpp"
 object = "build/matching/ArchiveBeginUseF392.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ArchiveCatalog::BeginUseAt0041CE10"]
-symbol = "?BeginUse@ArchiveCatalogF392@@QAEPAV1@XZ"
+symbol = "??0ArchiveCatalog@@QAE@XZ"
 target_address = 0x0041CE10
 size = 56
 [[units.archive-catalog-begin-use-0041ce10.relocations]]
@@ -54104,12 +54104,12 @@ target = 0x006714C8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2731
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2736
 type = "REL32"
-symbol = "?SelectScore@GameProgressRecordsF398@@QAEXCC@Z"
+symbol = "?SetSelection@GameProgress@@QAEXCC@Z"
 target = 0x0041A1A0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2742
@@ -54119,12 +54119,12 @@ target = 0x00671418
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2757
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2762
 type = "REL32"
-symbol = "?CurrentRecord@GameProgressRecordsF398@@QAEPAEXZ"
+symbol = "?GetSelectedRecordAddress@GameProgress@@QAEPAUProgressDifficulty@@XZ"
 target = 0x0041A240
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2773
@@ -54134,12 +54134,12 @@ target = 0x006714B0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2778
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2783
 type = "REL32"
-symbol = "?CurrentRecord@GameProgressRecordsF398@@QAEPAEXZ"
+symbol = "?GetSelectedRecordAddress@GameProgress@@QAEPAUProgressDifficulty@@XZ"
 target = 0x0041A240
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2795
@@ -54154,12 +54154,12 @@ target = 0x0066C238
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2812
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2817
 type = "REL32"
-symbol = "?WriteSelection@GameProgressRecordsF398@@QAEXXZ"
+symbol = "?IncrementSelectedRecordCount@GameProgress@@QAEXXZ"
 target = 0x0041A270
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 2822
@@ -54259,22 +54259,22 @@ target = 0x0067161E
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3040
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3045
 type = "REL32"
-symbol = "?SaveSelectedCharacter@GameProgressRecordsF398@@QAEXC@Z"
+symbol = "?RaiseSelectedValue@GameProgress@@QAEXC@Z"
 target = 0x0041A1D0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3050
 type = "DIR32"
-symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+symbol = "?g_GameProgress@@3VGameProgress@@A"
 target = 0x006718F8
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3055
 type = "REL32"
-symbol = "?SaveScoreFile@GameProgressRecordsF398@@QAEXXZ"
+symbol = "?SaveScoreFile@GameProgress@@QAEXXZ"
 target = 0x004169E0
 [[units.battle-loader-load-characters-004176f0.relocations]]
 offset = 3063
@@ -56687,7 +56687,7 @@ size = 180
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 10
 type = "REL32"
-symbol = "?GraphicsBeginAt00402660@@YAEXZ"
+symbol = "?BeginFrame@Graphics@@YA_NXZ"
 target = 0x00402660
 [[units.battle-end-scene-draw-00425000.relocations]]
 offset = 29
@@ -58519,12 +58519,12 @@ size = 34
 [[units.event-queue-local-acquire-release-004239c0.relocations]]
 offset = 15
 type = "REL32"
-symbol = "??0EventLocalServiceF484@@QAE@H@Z"
+symbol = "??0EventServiceF335@@QAE@H@Z"
 target = 0x004239F0
 [[units.event-queue-local-acquire-release-004239c0.relocations]]
 offset = 23
 type = "REL32"
-symbol = "??1EventLocalServiceF484@@QAE@XZ"
+symbol = "??1EventServiceF335@@QAE@XZ"
 target = 0x00423A90
 
 
@@ -58593,7 +58593,7 @@ size = 156
 [[units.loading-scene-draw-complete-00425390.relocations]]
 offset = 16
 type = "REL32"
-symbol = "?GraphicsBeginAt00402660@@YAEXZ"
+symbol = "?BeginFrame@Graphics@@YA_NXZ"
 target = 0x00402660
 [[units.loading-scene-draw-complete-00425390.relocations]]
 offset = 34
@@ -58643,7 +58643,7 @@ size = 156
 [[units.logo-scene-draw-complete-00425620.relocations]]
 offset = 16
 type = "REL32"
-symbol = "?GraphicsBeginAt00402660@@YAEXZ"
+symbol = "?BeginFrame@Graphics@@YA_NXZ"
 target = 0x00402660
 [[units.logo-scene-draw-complete-00425620.relocations]]
 offset = 34
@@ -60603,12 +60603,12 @@ source = "src/ProgressEncodedItemF736.cpp"
 object = "build/matching/ProgressEncodedItemF736.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ProgressRecordsF736::CheckEncodedItem"]
-symbol = "?CheckEncodedItem@ProgressRecordsF736@@YA_NC@Z"
+symbol = "?CheckEncodedItem@ProgressRecordsF736@@YAEC@Z"
 target_address = 0x0041A0E0
 size = 47
 relocations = [
-  { offset = 0x24, type = "DIR32", symbol = "?g_GameProgressCatalogAt006718F8@@3VGameProgressCatalogF736@@A", target = 0x006718F8 },
-  { offset = 0x29, type = "REL32", symbol = "?CheckEncodedSlot@GameProgressCatalogF736@@QAE_NH@Z", target = 0x00416DC0 },
+  { offset = 0x24, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+  { offset = 0x29, type = "REL32", symbol = "?TestUnlockBit@GameProgress@@QAEEF@Z", target = 0x00416DC0 },
 ]
 
 # F738: native R210/R211 independently authored complete 16-byte record policies.
@@ -61133,7 +61133,7 @@ source = "src/ArchiveCatalogReleaseF1155.cpp"
 object = "build/matching/ArchiveCatalogReleaseF1155.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
 functions = ["ArchiveCatalog::Release"]
-symbol = "??1ArchiveCatalogF343@@QAE@XZ"
+symbol = "??1ArchiveCatalog@@QAE@XZ"
 target_address = 0x0041CE50
 size = 171
 relocations = [
@@ -61190,10 +61190,10 @@ size = 2987
 compare_size = 3047
 relocations = [
  { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
- { offset = 0x18, type = "REL32", symbol = "??0AppModeF1171@@QAE@H@Z", target = 0x004239F0 },
+ { offset = 0x18, type = "REL32", symbol = "??0EventServiceF335@@QAE@H@Z", target = 0x004239F0 },
  { offset = 0x2D, type = "REL32", symbol = "??0GraphicsResourceClient@@QAE@XZ", target = 0x00401000 },
- { offset = 0x35, type = "REL32", symbol = "??0InputClientF1171@@QAE@XZ", target = 0x00403B90 },
- { offset = 0x3D, type = "REL32", symbol = "??0SoundClientF1171@@QAE@XZ", target = 0x00406610 },
+ { offset = 0x35, type = "REL32", symbol = "??0InputResourceClient@@QAE@XZ", target = 0x00403B90 },
+ { offset = 0x3D, type = "REL32", symbol = "??0SharedSoundClient406610@@QAE@XZ", target = 0x00406610 },
  { offset = 0x51, type = "DIR32", symbol = "__imp__GetModuleFileNameA@12", target = 0x00657074 },
  { offset = 0x5F, type = "REL32", symbol = "_strrchr", target = 0x00642260 },
  { offset = 0x79, type = "DIR32", symbol = "__imp__SetCurrentDirectoryA@4", target = 0x00657070 },
@@ -61213,31 +61213,31 @@ relocations = [
  { offset = 0x122, type = "DIR32", symbol = "__imp__LoadCursorA@8", target = 0x00657248 },
  { offset = 0x142, type = "DIR32", symbol = "__imp__GetStockObject@4", target = 0x00657038 },
  { offset = 0x14F, type = "DIR32", symbol = "__imp__RegisterClassExA@4", target = 0x0065724C },
- { offset = 0x168, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
- { offset = 0x170, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
+ { offset = 0x168, type = "REL32", symbol = "??1SharedSoundClient406610@@QAE@XZ", target = 0x00406650 },
+ { offset = 0x170, type = "REL32", symbol = "??1InputResourceClient@@QAE@XZ", target = 0x00403BE0 },
  { offset = 0x17B, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
- { offset = 0x183, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
+ { offset = 0x183, type = "REL32", symbol = "??1EventServiceF335@@QAE@XZ", target = 0x00423A90 },
  { offset = 0x1B4, type = "DIR32", symbol = "?g_AppWindowTitleAt0065A148@@3QBDB", target = 0x0065A148 },
  { offset = 0x1B9, type = "DIR32", symbol = "?g_AppWindowClassAltAt0065A17C@@3QBDB", target = 0x0065A17C },
  { offset = 0x1C4, type = "DIR32", symbol = "__imp__CreateWindowExA@48", target = 0x00657250 },
- { offset = 0x1E5, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
- { offset = 0x1ED, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
+ { offset = 0x1E5, type = "REL32", symbol = "??1SharedSoundClient406610@@QAE@XZ", target = 0x00406650 },
+ { offset = 0x1ED, type = "REL32", symbol = "??1InputResourceClient@@QAE@XZ", target = 0x00403BE0 },
  { offset = 0x1F8, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
- { offset = 0x200, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
+ { offset = 0x200, type = "REL32", symbol = "??1EventServiceF335@@QAE@XZ", target = 0x00423A90 },
  { offset = 0x21C, type = "DIR32", symbol = "__imp__ShowWindow@8", target = 0x00657254 },
  { offset = 0x229, type = "DIR32", symbol = "__imp__UpdateWindow@4", target = 0x00657230 },
  { offset = 0x22F, type = "DIR32", symbol = "__imp__timeGetTime@0", target = 0x00657264 },
  { offset = 0x235, type = "REL32", symbol = "_srand", target = 0x0064189E },
  { offset = 0x240, type = "DIR32", symbol = "__imp__CoInitialize@4", target = 0x00657284 },
- { offset = 0x256, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
- { offset = 0x25E, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
+ { offset = 0x256, type = "REL32", symbol = "??1SharedSoundClient406610@@QAE@XZ", target = 0x00406650 },
+ { offset = 0x25E, type = "REL32", symbol = "??1InputResourceClient@@QAE@XZ", target = 0x00403BE0 },
  { offset = 0x269, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
- { offset = 0x271, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
+ { offset = 0x271, type = "REL32", symbol = "??1EventServiceF335@@QAE@XZ", target = 0x00423A90 },
  { offset = 0x283, type = "DIR32", symbol = "?g_AppInitializedAt0068D674@@3EA", target = 0x0068D674 },
  { offset = 0x297, type = "DIR32", symbol = "__imp__CreateEventA@16", target = 0x00657054 },
  { offset = 0x2A3, type = "REL32", symbol = "?AppendUnique@EventQueueGuardF457@@YAXPAPAX@Z", target = 0x00423C80 },
  { offset = 0x2AB, type = "REL32", symbol = "?BuildCosTable@MathLookup@@YAXXZ", target = 0x0041CAE0 },
- { offset = 0x2B3, type = "REL32", symbol = "??0ArchiveCatalogF1171@@QAE@XZ", target = 0x0041CE10 },
+ { offset = 0x2B3, type = "REL32", symbol = "??0ArchiveCatalog@@QAE@XZ", target = 0x0041CE10 },
  { offset = 0x2B8, type = "DIR32", symbol = "?g_ArchiveRootAt0065A1B0@@3QBDB", target = 0x0065A1B0 },
  { offset = 0x2BD, type = "DIR32", symbol = "?g_ArchiveTh075At0065A1B8@@3QBDB", target = 0x0065A1B8 },
  { offset = 0x2C2, type = "REL32", symbol = "?OpenAndRegister@ArchiveCatalogF353@@YAXPBD0@Z", target = 0x0041CF80 },
@@ -61251,7 +61251,7 @@ relocations = [
  { offset = 0x2F3, type = "REL32", symbol = "?InitializeFile@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC00 },
  { offset = 0x2FB, type = "DIR32", symbol = "?g_LogTextAt0065A1F8@@3QBDB", target = 0x0065A1F8 },
  { offset = 0x300, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
- { offset = 0x30B, type = "REL32", symbol = "??0GameDataResourcesF1171@@QAE@XZ", target = 0x00417210 },
+ { offset = 0x30B, type = "REL32", symbol = "??0GameDefaultsF193@@QAE@XZ", target = 0x00417210 },
  { offset = 0x317, type = "DIR32", symbol = "?g_GameMainWindowAt00671608@@3PAUHWND__@@A", target = 0x00671608 },
  { offset = 0x31C, type = "DIR32", symbol = "?g_LogOKAt0065A210@@3QBDB", target = 0x0065A210 },
  { offset = 0x321, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
@@ -61297,8 +61297,8 @@ relocations = [
  { offset = 0x452, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x46F, type = "REL32", symbol = "??0Scene4F1171@@QAE@XZ", target = 0x00425490 },
  { offset = 0x4AF, type = "REL32", symbol = "?TranslateState@GameScenesF1171@@QAEGG@Z", target = 0x00431F60 },
- { offset = 0x4B8, type = "DIR32", symbol = "?g_ReplayGlobalAt006718F8@@3VReplayGlobalF1171@@A", target = 0x006718F8 },
- { offset = 0x4BD, type = "REL32", symbol = "?Initialize@ReplayGlobalF1171@@QAEXXZ", target = 0x00416B10 },
+ { offset = 0x4B8, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+ { offset = 0x4BD, type = "REL32", symbol = "?LoadScoreFile@GameProgress@@QAEXXZ", target = 0x00416B10 },
  { offset = 0x4DC, type = "DIR32", symbol = "__imp__PeekMessageA@20", target = 0x0065722C },
  { offset = 0x4F0, type = "DIR32", symbol = "__imp__GetMessageA@16", target = 0x00657228 },
  { offset = 0x503, type = "DIR32", symbol = "__imp__TranslateMessage@4", target = 0x00657224 },
@@ -61308,23 +61308,23 @@ relocations = [
  { offset = 0x5F5, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x612, type = "REL32", symbol = "??0Scene4F1171@@QAE@XZ", target = 0x00425490 },
  { offset = 0x64B, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x668, type = "REL32", symbol = "??0Scene0F1171@@QAE@XZ", target = 0x0043AD10 },
+ { offset = 0x668, type = "REL32", symbol = "??0BattleScene@@QAE@XZ", target = 0x0043AD10 },
  { offset = 0x69E, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x6BB, type = "REL32", symbol = "??0Scene1F1171@@QAE@XZ", target = 0x004251F0 },
  { offset = 0x6F1, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x70E, type = "REL32", symbol = "??0Scene2F1171@@QAE@XZ", target = 0x0043A020 },
+ { offset = 0x70E, type = "REL32", symbol = "??0TitleScene@@QAE@XZ", target = 0x0043A020 },
  { offset = 0x747, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x764, type = "REL32", symbol = "??0Scene3F1171@@QAE@XZ", target = 0x00432EA0 },
+ { offset = 0x764, type = "REL32", symbol = "??0CharacterSelectScene@@QAE@XZ", target = 0x00432EA0 },
  { offset = 0x79A, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x7B7, type = "REL32", symbol = "??0Scene5F1171@@QAE@XZ", target = 0x0042C3D0 },
  { offset = 0x7ED, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x80A, type = "REL32", symbol = "??0Scene6F1171@@QAE@XZ", target = 0x0042E640 },
+ { offset = 0x80A, type = "REL32", symbol = "??0ResultScene@@QAE@XZ", target = 0x0042E640 },
  { offset = 0x843, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x860, type = "REL32", symbol = "??0Scene7F1171@@QAE@XZ", target = 0x0042B1F0 },
  { offset = 0x896, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x8B3, type = "REL32", symbol = "??0Scene8F1171@@QAE@XZ", target = 0x00424E00 },
  { offset = 0x8E9, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0x906, type = "REL32", symbol = "??0Scene9F1171@@QAE@XZ", target = 0x00428D60 },
+ { offset = 0x906, type = "REL32", symbol = "??0OptionsScene@@QAE@XZ", target = 0x00428D60 },
  { offset = 0x93F, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0x95C, type = "REL32", symbol = "??0Scene10F1171@@QAE@XZ", target = 0x0042A180 },
  { offset = 0x992, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
@@ -61334,18 +61334,18 @@ relocations = [
  { offset = 0xA3B, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
  { offset = 0xA58, type = "REL32", symbol = "??0Scene13F1171@@QAE@XZ", target = 0x004275D0 },
  { offset = 0xA8E, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
- { offset = 0xAAB, type = "REL32", symbol = "??0Scene14F1171@@QAE@XZ", target = 0x0042F710 },
+ { offset = 0xAAB, type = "REL32", symbol = "??0ResultListScene@@QAE@XZ", target = 0x0042F710 },
  { offset = 0xAE1, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657120 },
- { offset = 0xAEB, type = "DIR32", symbol = "?g_ReplayGlobalAt006718F8@@3VReplayGlobalF1171@@A", target = 0x006718F8 },
- { offset = 0xAF0, type = "REL32", symbol = "?Finalize@ReplayGlobalF1171@@QAEXXZ", target = 0x004169E0 },
+ { offset = 0xAEB, type = "DIR32", symbol = "?g_GameProgress@@3VGameProgress@@A", target = 0x006718F8 },
+ { offset = 0xAF0, type = "REL32", symbol = "?SaveScoreFile@GameProgress@@QAEXXZ", target = 0x004169E0 },
  { offset = 0xAFA, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
  { offset = 0xB55, type = "DIR32", symbol = "__imp__CoUninitialize@0", target = 0x0065728C },
- { offset = 0xB67, type = "REL32", symbol = "??1GameDataResourcesF1171@@QAE@XZ", target = 0x00417430 },
- { offset = 0xB6F, type = "REL32", symbol = "??1ArchiveCatalogF1171@@QAE@XZ", target = 0x0041CE50 },
- { offset = 0xB77, type = "REL32", symbol = "??1SoundClientF1171@@QAE@XZ", target = 0x00406650 },
- { offset = 0xB7F, type = "REL32", symbol = "??1InputClientF1171@@QAE@XZ", target = 0x00403BE0 },
+ { offset = 0xB67, type = "REL32", symbol = "??1GameDefaultsF193@@QAE@XZ", target = 0x00417430 },
+ { offset = 0xB6F, type = "REL32", symbol = "??1ArchiveCatalog@@QAE@XZ", target = 0x0041CE50 },
+ { offset = 0xB77, type = "REL32", symbol = "??1SharedSoundClient406610@@QAE@XZ", target = 0x00406650 },
+ { offset = 0xB7F, type = "REL32", symbol = "??1InputResourceClient@@QAE@XZ", target = 0x00403BE0 },
  { offset = 0xB8A, type = "REL32", symbol = "??1GraphicsResourceClient@@QAE@XZ", target = 0x00401020 },
- { offset = 0xB92, type = "REL32", symbol = "??1AppModeF1171@@QAE@XZ", target = 0x00423A90 },
+ { offset = 0xB92, type = "REL32", symbol = "??1EventServiceF335@@QAE@XZ", target = 0x00423A90 },
  { offset = 0xBA0, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
  { offset = 0xBAB, type = "DIR32", symbol = "$L55677", target = 0x006030A5 },
  { offset = 0xBAF, type = "DIR32", symbol = "$L55683", target = 0x006030FB },
@@ -94494,7 +94494,7 @@ source = "src/ProgressLifetime4169D0.cpp"
 object = "build/matching/ProgressLifetime4169D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["ProgressLifetime4169D0::~ProgressLifetime4169D0"]
-symbol = "??1ProgressLifetime4169D0@@QAE@XZ"
+symbol = "??1GameProgress@@QAE@XZ"
 target_address = 0x004169D0
 size = 11
 relocations = []
@@ -94538,6 +94538,6 @@ symbol = "?PulseEventServiceAt00423B20@@YAXXZ"
 target_address = 0x00423B20
 size = 26
 relocations = [
-  { offset = 10, type = "REL32", symbol = "??0EventLocalServiceF484@@QAE@H@Z", target = 0x004239F0 },
-  { offset = 18, type = "REL32", symbol = "??1EventLocalServiceF484@@QAE@XZ", target = 0x00423A90 },
+  { offset = 10, type = "REL32", symbol = "??0EventServiceF335@@QAE@H@Z", target = 0x004239F0 },
+  { offset = 18, type = "REL32", symbol = "??1EventServiceF335@@QAE@XZ", target = 0x00423A90 },
 ]

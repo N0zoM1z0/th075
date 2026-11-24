@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -36,7 +37,7 @@ typedef char ResultRowScoreF119[(offsetof(ResultRowF119, score) == 12) ? 1 : -1]
 #define RECORDS reinterpret_cast<SceneRecordContainerF119*>(reinterpret_cast<char*>(this) + 24)
 
 void MusicScene425C80::RenderList() {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 quadValue;
         SpriteQuad40CA80 iconQuad;
         RECT region;
@@ -137,7 +138,7 @@ void MusicScene425C80::RenderList() {
 #define DATA reinterpret_cast<char*>(selectedRecord)
 
 void ResultListScene::Render() {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 spriteQuad;
         RECT region;
         int rankIndex;

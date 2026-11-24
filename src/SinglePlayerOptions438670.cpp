@@ -6,7 +6,7 @@
 
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 #define DRAW reinterpret_cast<TextureManagerF198*>(menuTextures)
-#define VALUE reinterpret_cast<GameProgress*>(&g_BattleRecords)->GetSelectedValue()
+#define VALUE g_GameProgress.GetSelectedValue()
 
 void CharacterSelectScene::RenderSinglePlayerOptions() {
     if (optionsOpen[0] == 0)

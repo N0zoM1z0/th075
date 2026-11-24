@@ -1,6 +1,6 @@
 #include <windows.h>
 #include "GameProgress.hpp"
-extern const char g_ScoreFilenameAt006579B4[];
+extern const char g_ScoreFilenameAt006579B4[] = "score.dat";
 void GameProgress::LoadScoreFile()
 {
     HANDLE file=CreateFileA(g_ScoreFilenameAt006579B4,GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);

@@ -6,9 +6,6 @@
 #include "CameraUpdate4126C0.hpp"
 #include <mmsystem.h>
 
-// Actual AL status is forwarded by the full native wrapper. This declaration-only
-// consumed-result view does not change the older accepted ignored-result body.
-bool __cdecl BeginGraphicsFrameWithStatusAt00402660();
 void __cdecl DrawAtlasNumberDefaultAt00446B60(float, float, D3DCOLOR, int, signed char);
 
 // Pointer-only interfaces; never construct or embed these partial receivers.

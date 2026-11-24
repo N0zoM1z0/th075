@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 #include "CharacterSelectScene.hpp"
@@ -22,11 +23,7 @@ extern const char g_BackgroundTextureRootAt00658228[];
 extern unsigned char g_SelectionModeAt0066C238;
 extern unsigned char g_FramePadAt00671620;
 extern unsigned char g_ContinueUsedAt00671624;
-namespace GameSettingsF225 {
-    void Load();
-    unsigned char ReadDefault(unsigned char index);
-    unsigned char ReadControls(unsigned char index, unsigned char player);
-}
+namespace GameConfigF193 { void ReadIni(); }
 CharacterSelectScene::CharacterSelectScene()
 {
     if (g_ActorAAt00671418) {
@@ -49,13 +46,13 @@ CharacterSelectScene::CharacterSelectScene()
     g_SelectionModeAt0066C238=1;
     g_FramePadAt00671620=0;
     g_ContinueUsedAt00671624=0;
-    GameSettingsF225::Load();
+    GameConfigF193::ReadIni();
     int i;
     for (i=0;i<30;++i)
-        (stageAvailable[i]) = GameSettingsF225::ReadDefault(static_cast<unsigned char>(i));
+        (stageAvailable[i]) = ProgressRecordsF736::CheckEncodedItem(static_cast<unsigned char>(i));
     for (i=0;i<15;++i) {
-        (leftCharacterAvailable[i]) = GameSettingsF225::ReadControls(static_cast<unsigned char>(i),0);
-        (rightCharacterAvailable[i]) = GameSettingsF225::ReadControls(static_cast<unsigned char>(i),1);
+        (leftCharacterAvailable[i]) = GameProgressF203::CheckSelection(static_cast<unsigned char>(i),0);
+        (rightCharacterAvailable[i]) = GameProgressF203::CheckSelection(static_cast<unsigned char>(i),1);
     }
     (stageCountdown[0])=0;
     (stageCountdown[1])=0;

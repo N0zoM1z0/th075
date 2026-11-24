@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "AudioControl.hpp"
 #include <windows.h>
 #include <stdio.h>
@@ -14,11 +15,6 @@ extern const char g_NormalSoundFolderAt00657AFC[];
 extern const char g_EndingSoundFolderAt00657B04[];
 extern signed char g_FrameClockModeAt0066C238;
 
-class MusicProgressArchiveF204 {
-public:
-    void MarkPlayed(int item);
-};
-extern MusicProgressArchiveF204 g_MusicProgressAt006718F8;
 
 namespace MusicF204 {
 void PlayTrackByIndex(int track)
@@ -46,6 +42,6 @@ void PlayTrackByIndex(int track)
 
     if (g_FrameClockModeAt0066C238 != 2 &&
         g_FrameClockModeAt0066C238 != 4)
-        g_MusicProgressAt006718F8.MarkPlayed(track + 100);
+        g_GameProgress.SetUnlockBit(track + 100);
 }
 }

@@ -27,6 +27,6 @@ public:
 class EventServiceF335
 {
 public:
-    EventServiceF335* AcquireSharedService(int delay);
-    void ReleaseSharedService();
+    explicit EventServiceF335(int delay);
+    ~EventServiceF335();
 };

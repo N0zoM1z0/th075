@@ -21,12 +21,11 @@ extern BattleActorF464* g_BattleEndActorAt00671418;
 extern signed char g_BattleEndCharacterAt0067161E;
 extern unsigned char g_BattleOverlayAlphaAt006714D1;
 extern unsigned int g_BattleOverlayColorAt0067149C;
-extern unsigned char __cdecl GraphicsBeginAt00402660();
 class BattleEndDrawF464 {public:void Draw();};
 #define ACTOR reinterpret_cast<Fighter*>(g_BattleEndActorAt00671418)
 #define ACTOR_DRAWER static_cast<TextureManagerF198*>(ACTOR->drawing)
 void BattleEndDrawF464::Draw() {
-    if(GraphicsBeginAt00402660()) {
+    if(Graphics::BeginFrame()) {
         ACTOR_DRAWER->SetDepthMode(0);
         ACTOR_DRAWER->SetBlendMode(0);
         g_BattleEndActorAt00671418->DrawCharacter(g_BattleEndCharacterAt0067161E);

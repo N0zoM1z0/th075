@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "SoundBank.hpp"
 #include "CharacterSelectScene.hpp"
@@ -5,17 +6,10 @@
 #include <stdlib.h>
 
 // Pointer-only interfaces. No complete scene/fighter/container layout is claimed.
-class SelectionProgressF130 {
-public:
-    void SetSelection(signed char, signed char);
-    signed char GetSelectedValue();
-};
 int __cdecl AbsoluteSelectionInputF130(int);
-extern unsigned char g_SelectionProgress[];
 extern signed char g_SelectionCharacters[];
 extern signed char g_SelectionPalettes[];
 extern signed char g_SelectionDifficulty;
-#define PROGRESS reinterpret_cast<SelectionProgressF130*>(g_SelectionProgress)
 void CharacterSelectScene::UpdateSelect(signed char side) {
     if (portraitReturn[side] > 0.0f) portraitReturn[side] = portraitReturn[side] - 5.0f;
     if (portraitEnterX[side] > 0.0f) portraitEnterX[side] = portraitEnterX[side] - 4.0f;
@@ -67,7 +61,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
                 if ((chosenCharacter[side]) == 6 && (leftCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
             }
         }
-        PROGRESS->SetSelection(chosenCharacter[0], g_SelectionDifficulty);
+        g_GameProgress.SetSelection(chosenCharacter[0], g_SelectionDifficulty);
     }
     if ((input[side].confirm) == 1 || (input[side].toggle) == 1 || (stageCountdown[side]) == 1) {
         g_SoundBank->Play(45);
@@ -85,7 +79,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     if ((input[side].special) == 1) (stageCountdown[side]) = rand() % 10 + 30;
     if ((stageCountdown[side]) > 0) --(stageCountdown[side]);
     if ((input[side].alternative) == 1) {
-        if (PROGRESS->GetSelectedValue() > 0 && g_CombatMode == 3) {
+        if (g_GameProgress.GetSelectedValue() > 0 && g_CombatMode == 3) {
             g_SoundBank->Play(45);
             (optionsOpen[side]) = !(optionsOpen[side]);
         }
@@ -95,7 +89,6 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
         }
     }
 }
-#undef PROGRESS
 
 class RecordedBytesF130 {
 public:

@@ -1,4 +1,5 @@
 #include "TextOverlay.hpp"
+#include "GameDefaultsF193.hpp"
 #include <windows.h>
 #include "AudioControl.hpp"
 #include "SoundBank.hpp"
@@ -26,11 +27,7 @@ extern SceneCombatActorF195* g_CombatActorBAt0067141C;
 extern SceneThirdOwnerF195* g_SceneOwnerAt00671424;
 extern WindowOverlayF212* g_WindowOverlayAt006714C4;
 
-class GameGlobalsReleaseF195 {
-public:
-    void Release();
-};
-void GameGlobalsReleaseF195::Release()
+GameDefaultsF193::~GameDefaultsF193()
 {
     --g_GameDefaultsUseCountAt00671614;
     if (g_GameDefaultsUseCountAt00671614 == 0) {

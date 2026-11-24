@@ -1,12 +1,7 @@
+#include "GameProgress.hpp"
 #include "Graphics.hpp"
 #include "SoundBank.hpp"
 // Borrowed record/scene side-only interfaces, not a complete original owner.
-class NameEntryProgressF246 {
-public:
-    void SaveScore();
-    void LoadWorkingEightBytes(unsigned char player);
-};
-extern NameEntryProgressF246 g_NameEntryProgressAt006718F8;
 extern signed char g_NameEntryExtraFlagAt006714CE;
 class NameEntryUpdateF246 {
 public:
@@ -41,8 +36,8 @@ unsigned short NameEntryUpdateF246::UpdatePlayer()
             else
                 CHAR_FIELD(field014)=100;
         } else if (SELECTION_CODE==0x5c) {
-            g_NameEntryProgressAt006718F8.SaveScore();
-            g_NameEntryProgressAt006718F8.LoadWorkingEightBytes(field120);
+            g_GameProgress.SaveScoreFile();
+            g_GameProgress.LoadWorkingEightBytes(field120);
             if (g_NameEntryExtraFlagAt006714CE) return 0x2207;
             return 0x2202;
         } else {

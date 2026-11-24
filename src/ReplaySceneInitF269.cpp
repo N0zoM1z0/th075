@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 
@@ -9,18 +10,10 @@ public:
     ReplayBaseF269();
     virtual ~ReplayBaseF269();
 };
-class ProgressRecordsF269 {
-public:
-    void SetSelection(signed char player,signed char difficulty);
-    void* GetSelectedRecordAddress();
-    unsigned char InsertRankedScore(int selectedFighterValue);
-    void StoreWorkingScore(unsigned char value);
-};
 class ReplaySavePathsF269 {
 public:
     int FindAvailablePath(char* filename);
 };
-extern ProgressRecordsF269 g_ProgressRecordsAt006718F8;
 extern ReplaySavePathsF269 g_ReplaySavePathsAt00671750;
 extern unsigned char g_CurrentFighterAt006714C8;
 extern unsigned char g_CurrentDifficultyAt006714D0;
@@ -42,11 +35,11 @@ ReplaySceneInitF269::ReplaySceneInitF269()
     FIELD(short,0x10)=0;
     FIELD(short,0x12)=0;
     FIELD(short,0x14)=0;
-    g_ProgressRecordsAt006718F8.SetSelection(g_CurrentFighterAt006714C8,g_CurrentDifficultyAt006714D0);
-    FIELD(void*,0x0c)=g_ProgressRecordsAt006718F8.GetSelectedRecordAddress();
-    FIELD(unsigned char,0x120)=reinterpret_cast<ProgressRecordsF269*>(FIELD(void*,0x0c))->InsertRankedScore(
+    g_GameProgress.SetSelection(g_CurrentFighterAt006714C8,g_CurrentDifficultyAt006714D0);
+    FIELD(void*,0x0c)=g_GameProgress.GetSelectedRecordAddress();
+    FIELD(unsigned char,0x120)=static_cast<ProgressDifficulty*>(FIELD(void*,0x0c))->InsertRankedScore(
         *reinterpret_cast<int*>(g_SelectedFighterAt00671418+0x2d0));
-    g_ProgressRecordsAt006718F8.StoreWorkingScore(FIELD(unsigned char,0x120));
+    g_GameProgress.StoreWorkingEightBytes(FIELD(unsigned char,0x120));
     FIELD(int,0x18)=g_ReplaySavePathsAt00671750.FindAvailablePath(
         reinterpret_cast<char*>(this)+0x1c);
 }

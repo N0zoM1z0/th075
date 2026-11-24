@@ -2,7 +2,7 @@
 #include "GameProgress.hpp"
 #include <stdlib.h>
 
-extern const char g_ScoreFilenameAt006579A8[];
+extern const char g_ScoreFilenameAt006579A8[] = "score.dat";
 void GameProgress::SaveScoreFile()
 {
     HANDLE file=CreateFileA(g_ScoreFilenameAt006579A8,GENERIC_WRITE,0,0,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,0);

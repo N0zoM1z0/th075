@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 
@@ -9,7 +10,7 @@ float __cdecl OpeningScalar428D20(float);
 #define TIME (*reinterpret_cast<DWORD*>(reinterpret_cast<char*>(this) + 12))
 
 void OpeningTimeline4277A0::RenderTimeline() {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         // The native routine actually constructs this complete SDK-based value,
         // even though its later drawing calls do not read it.
         SpriteQuad40CA80 localQuad;

@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteQuad.hpp"
 #include <windows.h>
@@ -20,7 +21,6 @@ public:
 };
 struct DrawFrameF470 {RECT rectangle; DrawQuadF470 quad;};
 typedef char CheckFrame152F470[(sizeof(DrawFrameF470)==152)?1:-1];
-extern unsigned char __cdecl GraphicsBeginAt00402660();
 extern void __cdecl GraphicsAdvanceAt004027D0();
 class LoadingSceneDrawF470 {
   unsigned char borrowedNativeBase[8];
@@ -33,7 +33,7 @@ class LogoSceneDrawF470 {
 public: void Draw();
 };
 void LoadingSceneDrawF470::Draw() {
- if(GraphicsBeginAt00402660()) {
+ if(Graphics::BeginFrame()) {
     DrawFrameF470 frame;
     frame.quad.ConstructNative();
     drawer->SetDepthMode(0);
@@ -45,7 +45,7 @@ void LoadingSceneDrawF470::Draw() {
  }
 }
 void LogoSceneDrawF470::Draw() {
- if(GraphicsBeginAt00402660()) {
+ if(Graphics::BeginFrame()) {
     DrawFrameF470 frame;
     frame.quad.ConstructNative();
     drawer->SetDepthMode(0);

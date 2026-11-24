@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextOverlay.hpp"
 #include "TextureManagerF198.hpp"
 #include "BattleScene.hpp"
@@ -30,7 +31,7 @@ void BattleScene::Render() {
         (320.0f - g_CombatViewSpan) * 0.5f - 160.0f,
         (g_CombatViewSpan / 320.0f) * -240.0f - 60.0f +
         ((((320.0f - g_CombatViewSpan) * 0.0f) / 320.0f) * 280.0f) / 2.0f);
-    if (BeginGraphicsFrameWithStatusAt00402660()) {
+    if (Graphics::BeginFrame()) {
         if (g_FramePresentToggle) {
             reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
             g_DrawDispatcher->Slot4();

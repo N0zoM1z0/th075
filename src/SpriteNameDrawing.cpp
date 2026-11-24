@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "CharacterObject.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -164,7 +165,7 @@ extern signed char g_NameSharedType;
 extern signed char g_NameSharedFlag;
 extern unsigned char g_NameSharedAlternate;
 void NameEntryPlayerF129::Render() {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 transformedQuad;
         float pulseScale = CameraSineAt0040D940(timeGetTime() / 100.0f) * 0.25f + 1.25f;
         reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->SetDepthMode(0);
@@ -211,7 +212,7 @@ void NameEntryPlayerF129::Render() {
 }
 
 void NameEntrySharedF129::Render() {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 transformedQuad;
         float pulseScale = CameraSineAt0040D940(timeGetTime() / 100.0f) * 0.25f + 1.25f;
         reinterpret_cast<TextureManagerF198*>(NAME_DRAWING)->SetDepthMode(0);

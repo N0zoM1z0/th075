@@ -1,8 +1,7 @@
+#include "GameProgress.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
 // Subselection uses player zero of the scene and the native progress-card receiver.
-class ProgressCardViewF230 {public: signed char GetSelectedValue();};
-extern ProgressCardViewF230 g_SelectedCardAt006718F8;
 extern unsigned char g_SelectedFighterAt006714C8;
 extern unsigned char g_PlayerPadAt00671620;
 extern unsigned char g_SelectStageAt00671621;
@@ -12,7 +11,7 @@ void CharacterSelectScene::ProcessSubselection()
 {
     if (ChoiceInputF230::TestAction((input[0].vertical))==1) {
         g_SoundBank->Play(0x27);
-        (optionsCursor[0])=((optionsCursor[0])+(input[0].vertical)+g_SelectedCardAt006718F8.GetSelectedValue())%g_SelectedCardAt006718F8.GetSelectedValue();
+        (optionsCursor[0])=((optionsCursor[0])+(input[0].vertical)+g_GameProgress.GetSelectedValue())%g_GameProgress.GetSelectedValue();
     }
     if ((input[0].confirm)==1) {
         g_SoundBank->Play(0x2d);

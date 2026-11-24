@@ -104,10 +104,10 @@ namespace Graphics
         return true;
     }
 
-    void BeginFrame()
+    bool BeginFrame()
     {
-        if (g_PresentCallback) BeginTarget(0);
-        else BeginTarget(-1);
+        if (g_PresentCallback) return BeginTarget(0);
+        else return BeginTarget(-1);
     }
 
     void SetPresentCallback(PresentCallback callback)

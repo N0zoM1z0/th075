@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -19,7 +20,7 @@ extern signed char g_CombatMode;
 
 void CharacterSelectScene::DrawCurrent()
 {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 spriteQuad;
         BYTE tint[2];
         tint[0] = 255 - (optionsOpen[0]) * 128;

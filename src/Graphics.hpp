@@ -16,7 +16,7 @@ void SetClearColor(unsigned char red, unsigned char green, unsigned char blue);
 void SetColorMultiplier(float multiplier);
 void SetDrawTransform(float scale, float originX, float originY);
 bool BeginTarget(signed char index);
-void BeginFrame();
+bool BeginFrame();
 void SetPresentCallback(PresentCallback callback);
 IDirect3DTexture8 *GetPrimaryTargetTexture();
 IDirect3DTexture8 *GetTargetTexture(signed char index);

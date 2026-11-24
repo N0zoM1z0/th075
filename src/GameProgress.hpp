@@ -32,11 +32,11 @@ struct ProgressCharacter {
     ProgressDifficulty difficulties[4];
 };
 
-// The game's progress and score records (the global g_BattleRecords).
-// The extent past +0x16BC6 is unknown.
+// The progress records end before the cosine table in the native image.
 class GameProgress {
 public:
     GameProgress();                                                 // 00416640 the defaults
+    ~GameProgress();                                                // 004169D0
     void SetUnlockBit(short bit);                                   // 00416CE0
     void ClearUnlockBit(short bit);                                 // 00416D50
     unsigned char TestUnlockBit(short bit);                         // 00416DC0
@@ -74,4 +74,14 @@ public:
 
 typedef char ProgressSizes[(sizeof(ProgressScore) == 16 && sizeof(ProgressDifficulty) == 0x5FC &&
                             sizeof(ProgressCharacter) == 0x17F0) ? 1 : -1];
+typedef char ProgressTotalSize[(sizeof(GameProgress) == 0x16BC8) ? 1 : -1];
+extern GameProgress g_GameProgress;
+
+namespace GameProgressF203 {
+    unsigned char CheckSelection(signed char selection, signed char mode);
+}
+
+namespace ProgressRecordsF736 {
+    unsigned char CheckEncodedItem(signed char code);
+}
 #endif

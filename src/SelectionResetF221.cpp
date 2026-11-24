@@ -1,14 +1,10 @@
+#include "GameProgress.hpp"
 #include "CharacterSelectScene.hpp"
 // Restore the initial two-player character-select state.
 extern signed char g_PlayerSelectionAt006714C8;
 extern unsigned char g_SecondPlayerAt006714C9;
 extern unsigned char g_OptionModeAt006714D0;
 extern signed char g_StageSelectionAt0067161D;
-class ProgressSelectionF221 {
-public:
-    void RegisterSelection(unsigned char player, unsigned char mode);
-};
-extern ProgressSelectionF221 g_ProgressSelectionAt006718F8;
 void CharacterSelectScene::ResetSelection()
 {
     (choiceRandom[1])=1;
@@ -56,6 +52,6 @@ void CharacterSelectScene::ResetSelection()
         (stagePage[1])=g_StageSelectionAt0067161D%10;
         (stagePage[0])=g_StageSelectionAt0067161D>=10;
     }
-    g_ProgressSelectionAt006718F8.RegisterSelection(
+    g_GameProgress.SetSelection(
         g_PlayerSelectionAt006714C8,g_OptionModeAt006714D0);
 }

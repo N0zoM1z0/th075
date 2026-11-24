@@ -1,3 +1,4 @@
+#include "EventQueue.hpp"
 #include "Graphics.hpp"
 #include "CameraMotion.hpp"
 #include "TextureManagerF198.hpp"
@@ -30,16 +31,15 @@ public:void RemoveFrontIfPresent();
 void SpriteSequenceF484::RemoveFrontIfPresent() {
  if(deque.Size()>0) deque.PopFront();
 }
-class EventLocalServiceF484 {public:EventLocalServiceF484(int);~EventLocalServiceF484();};
 class EventContextF484 {public:EventContextF484* AcquireAndRelease();};
 EventContextF484* EventContextF484::AcquireAndRelease() {
- { EventLocalServiceF484 service(16); }
+ { EventServiceF335 service(16); }
  return this;
 }
 
 void __cdecl PulseEventServiceAt00423B20()
 {
-    EventLocalServiceF484 service(16);
+    EventServiceF335 service(16);
 }
 namespace FrameCapturePresentF461 {
     void PresentPrimary(IDirect3DTexture8** texture);

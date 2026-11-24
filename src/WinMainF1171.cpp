@@ -1,3 +1,9 @@
+#include "ResultListScene.hpp"
+#include "OptionsScene.hpp"
+#include "ResultScene.hpp"
+#include "CharacterSelectScene.hpp"
+#include "TitleScene.hpp"
+#include "BattleScene.hpp"
 #include "DisplayOptions.hpp"
 // Complete original Japanese TH075 1.11 WinMain, 00602A60..0060360A.
 // The 15-entry post-RET scene table is compared separately from CODE coverage.
@@ -14,7 +20,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include "DiagnosticLog.hpp"
+#include "ApplicationSceneF1171.hpp"
+#include "ArchiveCatalog.hpp"
+#include "AudioControl.hpp"
 #include "EventQueue.hpp"
+#include "GameProgress.hpp"
 #include "GraphicsDevice.hpp"
 #include "GraphicsResourceClient.hpp"
 #include "InputJoystick.hpp"
@@ -22,32 +32,25 @@
 // Complete startup lifecycle: anchored to every
 // original window/resource/scene native call and all 15 scene allocations.
 // Only actually observed scene allocation footprints and interface calls.
-class AppModeF1171 {public:~AppModeF1171();AppModeF1171(int);};
-class InputClientF1171 {public:~InputClientF1171();InputClientF1171();};
-class SoundClientF1171 {public:~SoundClientF1171();SoundClientF1171();};
-class ArchiveCatalogF1171 {public:ArchiveCatalogF1171();~ArchiveCatalogF1171();};
-class GameDataResourcesF1171 {public:GameDataResourcesF1171();~GameDataResourcesF1171();};
 namespace ArchiveCatalogF353 { void OpenAndRegister(const char*, const char*); }
-class ReplayGlobalF1171 {public:void Initialize();void Finalize();};
-class SceneCountLifetimeF1171 {public:SceneCountLifetimeF1171();~SceneCountLifetimeF1171();};
-class GameScenesF1171 {SceneCountLifetimeF1171 sceneCount;public:virtual ~GameScenesF1171();virtual unsigned short Advance();unsigned short TranslateState(unsigned short);};
 #define DEF_SCENE(N,SIZE) class Scene##N##F1171 : public GameScenesF1171 { public:Scene##N##F1171();private:unsigned char observedSize[(SIZE)-sizeof(GameScenesF1171)];};
-DEF_SCENE(0,0x11C)
 DEF_SCENE(1,0x10)
-DEF_SCENE(2,0x3C)
-DEF_SCENE(3,0xF4)
 DEF_SCENE(4,0x10)
 DEF_SCENE(5,0x54)
-DEF_SCENE(6,0x4C)
 DEF_SCENE(7,0x120)
 DEF_SCENE(8,0xC)
-DEF_SCENE(9,0x1C)
 DEF_SCENE(10,0x124)
 DEF_SCENE(11,0x14)
 DEF_SCENE(12,0x3E0)
 DEF_SCENE(13,0x14)
-DEF_SCENE(14,0x1D0)
 #undef DEF_SCENE
+
+typedef char BattleSceneAllocationSize[(sizeof(BattleScene) == 0x11C) ? 1 : -1];
+typedef char TitleSceneAllocationSize[(sizeof(TitleScene) == 0x3C) ? 1 : -1];
+typedef char CharacterSelectSceneAllocationSize[(sizeof(CharacterSelectScene) == 0xF4) ? 1 : -1];
+typedef char ResultSceneAllocationSize[(sizeof(ResultScene) == 0x4C) ? 1 : -1];
+typedef char OptionsSceneAllocationSize[(sizeof(OptionsScene) == 0x1C) ? 1 : -1];
+typedef char ResultListSceneAllocationSize[(sizeof(ResultListScene) == 0x1D0) ? 1 : -1];
 extern const char g_AppWindowClassAt0065A104[];
 extern const char g_AppWindowClassAltAt0065A17C[];
 extern const char g_AppWindowTitleAt0065A148[];
@@ -56,7 +59,6 @@ extern const char g_AppIconAt0065A140[];
 extern const char g_ArchiveRootAt0065A1B0[];
 extern unsigned char g_AppInitializedAt0068D674;
 extern HWND g_GameMainWindowAt00671608;
-extern ReplayGlobalF1171 g_ReplayGlobalAt006718F8;
 namespace SharedSound4066C0 { bool Initialize(HWND); }
 namespace GameGlobalsF212 { void InitializeSound(); }
 extern LRESULT CALLBACK AppWindowProcF468(HWND,UINT,WPARAM,LPARAM);
@@ -83,14 +85,14 @@ extern const char g_KeyboardTextAt0065A294[];
 extern const char g_ChangeScreenTextAt0065A2B0[];
 extern const char g_SystemDataTextAt0065A2D0[];
 int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR commandLine,int showCommand) {
-    AppModeF1171 applicationMode(16);
+    EventServiceF335 applicationMode(16);
     GameScenesF1171* currentSceneOwner = 0;
     char path[260];
     WNDCLASSEXA winClass;
     unsigned short oldSceneState;
     GraphicsResourceClient renderContext;
-    InputClientF1171 inputContext;
-    SoundClientF1171 sound;
+    InputResourceClient inputContext;
+    SharedSoundClient406610 sound;
     MSG msg;
     GetModuleFileNameA(0,path,260);
     char* directoryEnd=strrchr(path,'\\');
@@ -121,13 +123,13 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     HANDLE eventReady=CreateEventA(0,FALSE,FALSE,0);
     EventQueueGuardF457::AppendUnique(&eventReady);
     MathLookup::BuildCosTable();
-    ArchiveCatalogF1171 archiveOwner;
+    ArchiveCatalog archiveOwner;
     ArchiveCatalogF353::OpenAndRegister(g_ArchiveTh075At0065A1B8,g_ArchiveRootAt0065A1B0);
     ArchiveCatalogF353::OpenAndRegister(g_ArchiveBgmAt0065A1CC,g_BgmRootAt0065A1C4);
     ArchiveCatalogF353::OpenAndRegister(g_ArchiveTh075BAt0065A1E4,g_ArchiveDatabAt0065A1DC);
     DiagnosticLog::InitializeFile(g_LogFileAt0065A1F0);
     DiagnosticLog::AppendString(g_LogTextAt0065A1F8);
-    GameDataResourcesF1171 gameSettings;
+    GameDefaultsF193 gameSettings;
     g_GameMainWindowAt00671608=hWndMain;
     DiagnosticLog::AppendString(g_LogOKAt0065A210);
     DiagnosticLog::AppendString(g_DirectGraphicsTextAt0065A218);
@@ -157,7 +159,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene4F1171);
     unsigned short activeSceneState=0x2004;
     activeSceneState=currentSceneOwner->TranslateState(activeSceneState);
-    g_ReplayGlobalAt006718F8.Initialize();
+    g_GameProgress.LoadScoreFile();
     while(1) {
         if(PeekMessageA(&msg,0,0,0,PM_NOREMOVE)) {
             if(GetMessageA(&msg,0,0,0)==0) break;
@@ -170,26 +172,26 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
                 delete currentSceneOwner;
                 switch(activeSceneState&0xFF) {
                 case 4: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene4F1171); } break;
-                case 0: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene0F1171); } break;
+                case 0: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new BattleScene)); } break;
                 case 1: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene1F1171); } break;
-                case 2: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene2F1171); } break;
-                case 3: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene3F1171); } break;
+                case 2: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new TitleScene)); } break;
+                case 3: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new CharacterSelectScene)); } break;
                 case 5: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene5F1171); } break;
-                case 6: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene6F1171); } break;
+                case 6: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new ResultScene)); } break;
                 case 7: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene7F1171); } break;
                 case 8: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene8F1171); } break;
-                case 9: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene9F1171); } break;
+                case 9: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new OptionsScene)); } break;
                 case 10: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene10F1171); } break;
                 case 11: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene11F1171); } break;
                 case 12: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene12F1171); } break;
                 case 13: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene13F1171); } break;
-                case 14: { currentSceneOwner=static_cast<GameScenesF1171* const&>(new Scene14F1171); } break;
+                case 14: { currentSceneOwner=static_cast<GameScenesF1171* const&>(reinterpret_cast<GameScenesF1171*>(new ResultListScene)); } break;
                 }
             }
             WaitForSingleObject(eventReady,INFINITE);
         }
     }
-    g_ReplayGlobalAt006718F8.Finalize();
+    g_GameProgress.SaveScoreFile();
     CloseHandle(eventReady);
     eventReady=0;
     if(currentSceneOwner) delete currentSceneOwner;

@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "OptionsScene.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -28,7 +29,7 @@ extern signed char g_SettingsVolume006714B6;
 #define POSITIONS(value) reinterpret_cast<const float (*)[4]>(&(value))
 
 void OptionsScene::Render() {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 quadValue;
         RECT region;
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetDepthMode(0);
@@ -133,7 +134,7 @@ class ReplayModesF124 { public: unsigned char* At(unsigned int); };
 #define RECORD_BYTE(index, offset) (*(static_cast<signed char*>(RECORDS->At(index)) + (offset)))
 
 void ReplayBrowser42CA60::RenderList() {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 quadValue;
         RECT region;
         int firstRow;

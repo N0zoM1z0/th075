@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "FontSurface.hpp"
 #include <windows.h>
 #include <d3d8.h>
@@ -8,11 +9,6 @@
 
 // Borrowed original record selection and deque access interfaces. No full
 // nominal class/allocator ownership layout is reconstructed in this source.
-class ResultRecordProgressF239 {public:
-    void Select(unsigned char first, unsigned char second);
-    void* GetSelectedRecordAddress();
-};
-extern ResultRecordProgressF239 g_RecordProgressAt006718F8;
 extern const char g_RecordEmptyAt006580B1[];
 extern const char g_RecordEmptyNameAt006580B4[];
 extern const char g_RecordMissingFormatAt006580D8[];
@@ -21,8 +17,8 @@ extern const char g_RecordFontAt00658110[];
 #define META(index,offset) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(selectedRecord)+(offset)+2*(index)))
 void ResultListScene::BuildRecordPage()
 {
-    g_RecordProgressAt006718F8.Select((static_cast<unsigned char>(selectedCharacter)),0);
-    (selectedRecord)=g_RecordProgressAt006718F8.GetSelectedRecordAddress();
+    g_GameProgress.SetSelection((static_cast<unsigned char>(selectedCharacter)),0);
+    (selectedRecord)=g_GameProgress.GetSelectedRecordAddress();
     D3DLOCKED_RECT locked;
     {
         char line[200];

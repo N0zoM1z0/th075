@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "StaffTimeline438D00.hpp"
 
@@ -8,7 +9,7 @@
 
 void StaffTimeline438D00::RenderTimeline() {
     DWORD begin, end;
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         float offset;
         {
             unsigned char alpha;

@@ -8,7 +8,7 @@ HANDLE g_EventThreadAt0068BE38;
 DWORD g_EventThreadIdAt0068BE3C;
 unsigned char g_EventRunningAt0068BE40;
 
-EventServiceF335* EventServiceF335::AcquireSharedService(int delay)
+EventServiceF335::EventServiceF335(int delay)
 {
     if(g_EventUsersAt0068BE30==0) {
         g_EventWaitMsAt0066C23C=delay;
@@ -24,5 +24,4 @@ EventServiceF335* EventServiceF335::AcquireSharedService(int delay)
         g_EventRunningAt0068BE40=1;
     }
     ++g_EventUsersAt0068BE30;
-    return this;
 }

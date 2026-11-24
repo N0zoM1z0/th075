@@ -1,17 +1,10 @@
 #include "SceneTransitionLayers.hpp"
+#include "ApplicationSceneF1171.hpp"
 #include <windows.h>
 #include <d3d8.h>
 
-// Borrow only the observed scene virtual call slots. No scene is embedded.
-class TransitionDispatcherF242 {
-public:
-    virtual void SlotZero();
-    virtual void SlotOne();
-    virtual void DrawCurrent();
-    unsigned short DispatchMode(unsigned short mode);
-};
 extern unsigned char g_SettingsByteAt006714D2;
-unsigned short TransitionDispatcherF242::DispatchMode(unsigned short mode)
+unsigned short GameScenesF1171::TranslateState(unsigned short mode)
 {
     if (g_TransitionFrame < 0) {
         if (!g_SettingsByteAt006714D2 && ((mode & 0xf00)>0))

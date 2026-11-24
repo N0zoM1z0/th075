@@ -24,10 +24,13 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 2,012 unresolved externals. Menu and results text
-use the same 56-byte GDI font surface. Startup, rendering and teardown
-use the same 120-byte text overlay. The text batch replayed 52 units and
-resolved 60 linker symbols.
+stops at `LNK1120` with 1,937 unresolved externals. WinMain uses shared
+resource lifetimes and six existing scene types. The frame entry forwards
+the native status and the score callers share the progress object.
+This batch replayed 90 units and resolved 75 linker symbols.
+
+Menu and results text use the same 56-byte GDI font surface. Startup,
+rendering and teardown use the same 120-byte text overlay.
 
 Input callers share the two 72-byte mappings. Stream loading and playback
 share the VC7.1 deque of 64-byte audio records. Sound bank lifetime,
@@ -56,7 +59,8 @@ insertion, archive registration, lookup, entry reads, and handle release,
 and the four corners produced by the RECT constructor.
 Use `build/program/link.log` and the relocation targets to find candidate
 definitions. Batch related exact units with `--batch` to compile each
-profile together. WinMain still needs compatible scene and lifetime declarations.
+profile together. WinMain still needs the remaining scene and startup
+resource bindings.
 The event worker still uses borrowed iterator bindings.
 The graphics and DirectInput error strings and pixel shader are also
 unresolved.

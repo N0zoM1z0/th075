@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "FontSurface.hpp"
 #include <windows.h>
 #include <d3d8.h>
@@ -11,8 +12,6 @@ extern const char g_MusicListEmptyAt00657C0A[];
 extern const char g_MusicListHiddenAt00657C0C[];
 extern const char g_MusicListBreakAt00657C20[];
 extern const char g_MusicListFontAt00657C24[];
-class MusicTrackProgressF235 {public: unsigned char IsUnlocked(int track);};
-extern MusicTrackProgressF235 g_MusicProgressAt006718F8;
 class MusicListRenderF235 {public: void RenderTrackCatalogText();public:
     // Observed fields; meanings not yet known.
     unsigned char unknown000[0x010 - 0x000];
@@ -26,7 +25,7 @@ void MusicListRenderF235::RenderTrackCatalogText()
     char message[2000];
     strcpy(message,g_MusicListEmptyAt00657C0A);
     for(int i=0;i<field3DC;++i) {
-        if (g_MusicProgressAt006718F8.IsUnlocked(
+        if (g_GameProgress.TestUnlockBit(
                 FIELD(signed char,0x1c + i*16)+100)) {
             strcat(message,FIELD(const char*,0x24 + i*16));
         } else {

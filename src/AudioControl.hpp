@@ -2,6 +2,13 @@
 
 #include <windows.h>
 
+class SharedSoundClient406610
+{
+public:
+    SharedSoundClient406610();
+    ~SharedSoundClient406610();
+};
+
 namespace AudioVolume4073B0 {
     void SetSoundBankVolume(signed char volume);
     void SetStreamVolume(signed char volume);

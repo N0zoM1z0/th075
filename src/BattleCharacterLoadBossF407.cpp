@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include <stdlib.h>
 // Independently native-confirmed complete R065 3,232-CODE-byte battle character
 // loader, plus both originally owned post-RET switch tables (11+5 case entries
@@ -82,14 +83,6 @@ extern void CameraAttachAt00412660(float*,float*,float*,float*);
 extern void SaveReplayStateAt00419920();
 class EffectCollectionsF398 {public:void ClearEntries();};
 extern EffectCollectionsF398 g_EffectCollectionsAt006716C8;
-class GameProgressRecordsF398 {public:
- void SelectScore(signed char,signed char);
- void SaveSelectedCharacter(signed char);
- unsigned char* CurrentRecord();
- void WriteSelection();
- void SaveScoreFile();
-};
-extern GameProgressRecordsF398 g_ProgressAt006718F8;
 #define F(T,f,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(f)+(o)))
 namespace BattleCharacterLoaderF398 { void LoadCharacters(); }
 void BattleCharacterLoaderF398::LoadCharacters() {
@@ -202,11 +195,11 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        if(g_StoryResultAt00671621!=0) g_StoryStatusAt00671623=0;
        else g_StoryStatusAt00671623=3;
        g_StoryCurrentAt00671622=2;
-       g_ProgressAt006718F8.SelectScore(g_PlayerDefaultAt006714C8,g_StoryFlagsAt006714D0);
+       g_GameProgress.SetSelection(g_PlayerDefaultAt006714C8,g_StoryFlagsAt006714D0);
        F(int,g_BattleFightersAt00671418[0],0x2D0)=0;
-       g_PlayerScoreAt006714B0=*reinterpret_cast<unsigned int*>(g_ProgressAt006718F8.CurrentRecord()+0x568);
-       g_RankAt00671420=*reinterpret_cast<unsigned int*>(g_ProgressAt006718F8.CurrentRecord()+0x5F8);
-       if(g_ReplayModeAt0066C238!=2) g_ProgressAt006718F8.WriteSelection();
+       g_PlayerScoreAt006714B0=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;
+       g_RankAt00671420=g_GameProgress.GetSelectedRecordAddress()->scores[9].score;
+       if(g_ReplayModeAt0066C238!=2) g_GameProgress.IncrementSelectedRecordCount();
        F(short,g_BattleFightersAt00671418[0],0x326)=10000;
        F(short,g_BattleFightersAt00671418[0],0x324)=10000;
    }
@@ -218,7 +211,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
      F(short,g_BattleFightersAt00671418[0],0x326)=g_ReplayScoreAt0067189C;
      F(short,g_BattleFightersAt00671418[0],0x324)=g_ReplayScoreAt0067189C;
      F(unsigned int,g_BattleFightersAt00671418[0],0x2D0)=g_ReplayRoundAt006718A0;
-   } else {g_ProgressAt006718F8.SaveSelectedCharacter(g_CharacterProgressAt0067161E);g_ProgressAt006718F8.SaveScoreFile();}
+   } else {g_GameProgress.RaiseSelectedValue(g_CharacterProgressAt0067161E);g_GameProgress.SaveScoreFile();}
  } else {
    F(int,g_BattleFightersAt00671418[0],0x2D0)=0;F(int,g_BattleFightersAt00671418[1],0x2D0)=0;
    g_PlayerScoreAt006714B0=0;g_RankAt00671420=0;g_StoryLoadingAt006714D1=0;

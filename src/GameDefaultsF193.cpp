@@ -1,10 +1,11 @@
 #include "DisplayOptions.hpp"
+#include "GameDefaultsF193.hpp"
 #include <windows.h>
 #include <string.h>
 
 // Borrowed global storage anchors only; these do not define or allocate any
 // original data or assert a complete settings structure layout.
-extern unsigned int g_GameDefaultsUseCountAt00671614;
+unsigned int g_GameDefaultsUseCountAt00671614;
 extern unsigned char g_KeyBindingsAt00671440[];
 extern unsigned char g_CharacterNamesAt006714D8[];
 extern DWORD g_SelectedCharacterAAt00671418;
@@ -19,10 +20,6 @@ extern unsigned char g_GameSettingAt00671434;
 extern unsigned char g_GameSettingAt00671438;
 namespace GameConfigF193 { void ReadIni(); }
 
-class GameDefaultsF193 {
-public:
-    GameDefaultsF193();
-};
 #define SET_DWORD(off,val) (*reinterpret_cast<DWORD*>(g_KeyBindingsAt00671440 + (off)) = (val))
 #define SET_BYTE(off,val) (g_KeyBindingsAt00671440[(off)] = (val))
 #define NAME(i) (reinterpret_cast<char*>(g_CharacterNamesAt006714D8+(i)*20))

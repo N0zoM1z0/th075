@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "TitleScene.hpp"
 #include "SpriteDraw40CA80.hpp"
@@ -15,7 +16,7 @@ public:
 
 void TitleScene::Render()
 {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 spriteQuad;
         RECT region;
         reinterpret_cast<TextureManagerF198*>(DRAW)->SetDepthMode(0);

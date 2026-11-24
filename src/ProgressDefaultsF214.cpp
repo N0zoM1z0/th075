@@ -1,6 +1,8 @@
 #include "GameProgress.hpp"
 #include <string.h>
 
+GameProgress g_GameProgress;
+
 // The progress defaults: every ranking starts at 10000..1000 points.
 // The body also initializes ten 9-byte local names that are never used.
 GameProgress::GameProgress()

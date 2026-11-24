@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "FontSurface.hpp"
 #include <windows.h>
 #include <d3d8.h>
@@ -8,12 +9,6 @@
 
 // This side-only view represents observed calls and physical fields, not a
 // complete original game scene or named original class layout.
-class ResultProgressF238 {
-public:
-    void Select(unsigned char a, unsigned char b);
-    int* Counters();
-};
-extern ResultProgressF238 g_ResultProgressAt006718F8;
 extern const char g_ResultCounterEmptyAt0065811E[];
 extern const char g_ResultCounterFormat0At00658120[];
 extern const char g_ResultCounterFormat1At00658128[];
@@ -22,8 +17,8 @@ extern const char g_ResultCounterFormat3At00658138[];
 extern const char g_ResultCounterFontAt00658140[];
 void ResultListScene::BuildCounterPage()
 {
-    g_ResultProgressAt006718F8.Select((static_cast<unsigned char>(selectedCharacter)),(static_cast<unsigned char>(difficultyIndex)));
-    selectedRecord=g_ResultProgressAt006718F8.Counters();
+    g_GameProgress.SetSelection((static_cast<unsigned char>(selectedCharacter)),(static_cast<unsigned char>(difficultyIndex)));
+    selectedRecord=&g_GameProgress.GetSelectedRecordAddress()->field000;
     D3DLOCKED_RECT locked;
     {
         char line[200];

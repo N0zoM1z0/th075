@@ -1,6 +1,6 @@
 #include "EventQueue.hpp"
 
-void EventServiceF335::ReleaseSharedService()
+EventServiceF335::~EventServiceF335()
 {
     --g_EventUsersAt0068BE30;
     if (g_EventUsersAt0068BE30==0) {

@@ -1,14 +1,9 @@
 #include <windows.h>
+#include "AudioControl.hpp"
 #include <mmsystem.h>
 #include <dsound.h>
 #include <string.h>
 
-// Partial lifetime interface only. Never instantiate or embed this owner.
-class SharedSoundClient406610 {
-public:
-    SharedSoundClient406610();
-    ~SharedSoundClient406610();
-};
 unsigned int sharedSoundClients;
 HWND sharedSoundWindow;
 IDirectSound8* sharedSoundDevice;

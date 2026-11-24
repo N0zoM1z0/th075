@@ -1,3 +1,4 @@
+#include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
@@ -38,7 +39,7 @@ extern const float g_ResultFullAlphaMultiplierAt00657CF0;
 #define PERCENT ((((field014) - g_ResultAlphaOriginAt00658048)/g_ResultAlphaRangeAt00658058)*g_ResultAlphaScaleAt00657864)
 void ResultScene::Render()
 {
-    if (Graphics::BeginFrameValueAt00402660()) {
+    if (Graphics::BeginFrame()) {
         SpriteQuad40CA80 quad;
         {
         RECT region;

@@ -1,3 +1,4 @@
+#include "GameProgress.hpp"
 #include "TextOverlay.hpp"
 #include <windows.h>
 // Scene base, character actor, renderer and profile owner are limited to
@@ -17,13 +18,7 @@ public:
     virtual void UpdateStage();
     void LoadStageResource();
 };
-class ProgressTableF288 {
-public:
-    void ResetCurrent();
-    void SelectRecord(short index);
-};
 extern FighterActorF288* g_FighterAt00671418;
-extern ProgressTableF288 g_ProgressAt006718F8;
 extern signed char g_StageAt0067161E;
 extern signed char g_CharacterAt006714C8;
 extern unsigned char g_StatusAt006714CE;
@@ -44,14 +39,14 @@ BattleEndInitF288::BattleEndInitF288()
     g_FighterAt00671418->LoadStageResource();
     if (g_StageAt0067161E==8) {
         g_StatusAt006714CE=0;
-        g_ProgressAt006718F8.SelectRecord(g_CharacterAt006714C8);
+        g_GameProgress.SetUnlockBit(g_CharacterAt006714C8);
     } else if (g_StageAt0067161E==9) {
         g_StatusAt006714CE=0;
-        g_ProgressAt006718F8.SelectRecord(g_CharacterAt006714C8+20);
+        g_GameProgress.SetUnlockBit(g_CharacterAt006714C8+20);
     } else {
         g_StatusAt006714CE=0xff;
-        g_ProgressAt006718F8.ResetCurrent();
-        g_ProgressAt006718F8.SelectRecord(g_CharacterAt006714C8+40);
+        g_GameProgress.IncrementSelectedRecord();
+        g_GameProgress.SetUnlockBit(g_CharacterAt006714C8+40);
     }
 }
 #undef FIELD

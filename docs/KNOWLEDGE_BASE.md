@@ -49,6 +49,22 @@ and the configuration writer use the same storage. A headless executable
 linked from the aggregate library saved a 90-byte `config.ini`, cleared
 the test state and loaded the stored key bytes, display flags and volumes.
 
+`Graphics::BeginFrame` returns the status from `BeginTarget` on both
+branches. The native caller tests AL, and the bool declaration preserves
+all 36 bytes of the wrapper. The application and scene drawing callers
+share that interface.
+
+WinMain uses the shared event, input, sound, archive and game-default
+lifetime functions. Six scene allocation sites use their existing scene
+types, with the native allocation sizes checked at compile time. The
+comparison covers the complete WinMain body and its 15-entry scene table.
+
+The progress object occupies `0x16BC8` bytes from `0x006718F8` to the cosine
+table. Its startup and registered exit wrappers match the native code.
+WinMain and the progress callers share the same object. A headless
+executable linked from the library checked the startup defaults and saved
+and reloaded a disposable `0x16BC4`-byte score file.
+
 WinMain registers the address of its event handle with the startup queue.
 The enqueue, acquire and release code now uses the same VC7.1
 `std::deque<HANDLE*>` at `0x0068BE44`. The worker and lifecycle code also

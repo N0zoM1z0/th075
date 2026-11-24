@@ -11,7 +11,7 @@ void Fighter::SelectResourceParameters()
         field3A8 =
             field400[field39D];
         if (g_FrameClockMode == 1)
-            reinterpret_cast<GameProgress*>(g_ProfileSelectionAt006718F8)->IncrementSelectedWordCounter(
+            g_GameProgress.IncrementSelectedWordCounter(
                 reinterpret_cast<signed char*>(field384)[field39D]);
     } else {
         field3A0 = static_cast<short>(static_cast<int>(field36C * 8800.0f / 900.0f) + 1201);

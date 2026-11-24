@@ -9,7 +9,7 @@ extern unsigned char g_SequenceCounterAt00671622;
 // Observed dword accumulation; original name and signedness remain unknown.
 extern unsigned int g_KnockoutAccumulationAt0067160C;
 
-#define CARD_RECORDS reinterpret_cast<GameProgress*>(&g_BattleRecords)
+#define CARD_RECORDS (&g_GameProgress)
 
 void GameProgress::MarkCardFlag(signed char key)
 {
