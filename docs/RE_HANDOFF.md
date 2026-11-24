@@ -242,10 +242,12 @@ a precompiled header. Both rendering base forms match the linked interval.
 [Actor constructor controls](ORIGIN_PENDING_REVIEW.md#r306--actor-constructor-follows-the-stage-resource-loader)
 
 R305 identifies the stage base constructor through the complete BG00a
-code interval and both adjacent vtables. For the scene, precompiling
-the destructor moves it along with the deleting wrapper. The original
-places those two functions on opposite sides of the authored methods.
+code interval and both adjacent vtables. R311 matches the scene's
+constructor suffix and readonly data across separate objects. Its
+member specializations also restore the ordinary destructor slot.
+The deleting wrapper remains the first mismatch in that comparison.
 [Precompiled constructor controls](ORIGIN_PENDING_REVIEW.md#r305--stage-base-constructor-follows-the-deleting-destructors)
+[Scene data and constructor order](ORIGIN_PENDING_REVIEW.md#r311--scene-constructor-suffix-matches-across-object-boundaries)
 
 R303 reproduces the full banner interval with the genuine `log10f`
 definition deferred past the progress accessors and with a late

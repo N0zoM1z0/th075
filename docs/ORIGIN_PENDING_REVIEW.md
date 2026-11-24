@@ -403,7 +403,7 @@ The current direct-call scan is in
 | --- | --- |
 | `0x0040D900`, `0x0040D940` | R308 matches the complete sprite drawing interval with the precompiled standard overloads and ordinary wrappers. R303 rules out the x87 bodies in the older SDK shape archive. |
 | `0x004138D0`, `0x00441FD0` | R301 reproduces both bodies with distinct C++ declarations and retains them without callers under the native retention behavior. Neither body has a direct caller, an absolute pointer literal, or an exact entry among the pinned CRT, STL and D3DX8 archive symbols. |
-| `0x004251C0` | R302 matches the scene constructor, both derived callers, vtables and unwind records. R305 defers both Battle End destructors together. R306 and R309 leave the deleting destructor early with debug, inlining and template controls. |
+| `0x004251C0` | R311 matches the 229-byte constructor suffix with explicit definitions and the 68-byte readonly interval with both forms. The full code comparison still places the Battle End deleting wrapper in the wrong slot. |
 | `0x00438A60` | R310 preserves all 14 native caller edges with a deferred standard overload and a late ordinary wrapper. Both call the `labs` body identified by R294. |
 | `0x00442040` | R303 matches the full 444-byte banner window with both the pinned `log10f` and an ordinary float wrapper when their definitions follow the two progress accessors. |
 | `0x00449A60`, `0x00449A80` | R308 matches the complete collision interval with the precompiled header, two ordinary functions, and an ordinary function calling the header worker. |
@@ -1085,6 +1085,39 @@ definition and recovers the complete selection interval.
 
     bash .analysis/final-origin-review/abs-caller-order/build.sh header-early header-pch ordinary-late header-deferred
     scripts/repo-python .analysis/final-origin-review/abs-caller-order/compare.py header-early header-pch ordinary-late header-deferred
+
+### R311 — Scene constructor suffix matches across object boundaries
+
+Building LoadingScene in a separate object with its two actual
+archive strings reproduces the complete 68-byte readonly interval
+`0x00657B7C..0x00657BBF`. It includes all three vtables, both strings,
+and their alignment. The complete constructors and both unwind
+records still match. Both the implicit and explicit base declarations
+preserve this data order.
+
+Two explicit definitions, one in the Battle End object and one
+in a separate object, reproduce all 229 bytes from the base
+constructor through the LoadingScene constructor. The implicit
+form emits the base constructor in the earlier Battle End caller
+and breaks that interval. The explicit builds still produce the
+Battle End deleting wrapper at `+0x140` instead of `+0x390`.
+
+Explicit member specializations on the derived class place the
+ordinary destructor at its native `+0x140`. This reproduces the
+complete 348-byte prefix, the 556-byte run of methods at a shifted
+address, and the original readonly interval and constructor suffix.
+The first full-interval difference is now `+0x160`, where the
+deleting wrapper occupies the native `Update` slot. An external
+class instantiation and precompiled declarations preserve that
+order. Precompiling the ordinary destructor definition moves both
+destructors after the authored methods. A member instantiation
+moves the ordinary destructor late while leaving the wrapper early.
+Neither arrangement recovers the full native order.
+
+    bash .analysis/final-origin-review/scene-data-order/build.sh implicit defined-late separate separate-dtor-pch
+    scripts/repo-python .analysis/final-origin-review/scene-data-order/compare.py implicit defined-late separate separate-dtor-pch
+    bash .analysis/final-origin-review/scene-derived-template/build.sh specialized extern-deferred specialized-implicit specialized-decl-pch specialized-dtor-pch member-dtor
+    scripts/repo-python .analysis/final-origin-review/scene-derived-template/compare.py specialized extern-deferred specialized-implicit specialized-decl-pch specialized-dtor-pch member-dtor
 
 ## Historical R263 inventory
 
