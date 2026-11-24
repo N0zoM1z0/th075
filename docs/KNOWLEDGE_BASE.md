@@ -88,6 +88,11 @@ The renderer reads the frame flag at `FighterFrameInfo+0x0C` as a byte.
 The frame assignment copies the entire 16-byte header, including the
 three bytes following the flag. Both operations use the same layout.
 
+The music, options, results, and window constructors allocate their
+canvases through `Graphics::CreateTexture` at `0x00401C20`. Its output
+is an `IDirect3DTexture8**`. The window resource constructor passes the
+address of its first member, which precedes the archive member at `+0x28`.
+
 VC7.1 accepts multi-source response files with one output directory and a
 PDB per compiler profile. Keep two-token switches such as `/I src` on the
 same line. Splitting the switch from its argument across lines produces

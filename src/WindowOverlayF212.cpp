@@ -1,13 +1,11 @@
 #include "WindowOverlayF212.hpp"
-
-extern void __cdecl CreateBlackSurfaceAt00401C20(
-    int width, int height, IDirect3DTexture8** output, int format);
+#include "GraphicsTexture.hpp"
 
 // Native constructor at 00417000. It creates a 1024x512 texture, clears the
 // visible 640x480 region to opaque black, then disables the overlay.
 WindowOverlayF212::WindowOverlayF212()
 {
-    CreateBlackSurfaceAt00401C20(1024, 512, &texture, 32);
+    Graphics::CreateTexture(1024, 512, &texture, 32);
 
     D3DLOCKED_RECT locked;
     texture->LockRect(0, &locked, 0, 0);

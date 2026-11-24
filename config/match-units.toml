@@ -41461,22 +41461,22 @@ target = 0x0040BB80
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 200
 type = "REL32"
-symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 227
 type = "REL32"
-symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 251
 type = "REL32"
-symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 275
 type = "REL32"
-symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 [[units.music-room-scene-initialize-00425750.relocations]]
 offset = 306
@@ -41644,7 +41644,7 @@ target = 0x0040BB80
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 205
 type = "REL32"
-symbol = "?Allocate@ResultBitmapF264@@YAXHHPAPAXH@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 305
@@ -55911,7 +55911,7 @@ target = 0x0040BB80
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 180
 type = "REL32"
-symbol = "?OptionsCreateSurfaceAt00401C20@@YAXHHPAPAUIDirect3DTexture8@@H@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 223
@@ -56546,7 +56546,7 @@ size = 168
 [[units.game-globals-initialize-black-surface-00417000.relocations]]
 offset = 26
 type = "REL32"
-symbol = "?CreateBlackSurfaceAt00401C20@@YAXHHPAPAUIDirect3DTexture8@@H@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 
 
@@ -58947,7 +58947,7 @@ target = 0x0040BB80
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 97
 type = "REL32"
-symbol = "?CreateWindowDrawingSurfaceAt00401C20@@YAXHHPAVWindowResourceF489@@H@Z"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
 target = 0x00401C20
 [[units.window-resource-initialize-texture-00412dd0.relocations]]
 offset = 120

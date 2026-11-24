@@ -24,11 +24,12 @@ CRT startup. Both paths use the serial, headless Factory Wine runtime.
 Compiler, librarian and strict linker logs are under `build/program/`.
 
 All 441 configured sources compile and archive. The strict executable link
-stops at `LNK1120` with 2,477 unresolved externals. Camera initialization,
-update, snap, and rendering now use shared state. Headless library
-consumers exercised both camera snap modes, the log, cosine table, sound
-defaults, configuration save and load, event queue insertion, and archive
-registration, lookup, entry reads, and handle release.
+stops at `LNK1120` with 2,472 unresolved externals. Camera initialization,
+update, snap, and rendering now use shared state. The music, options,
+results, and window constructors share the D3D8 texture allocator.
+Headless library consumers exercised both camera snap modes, the log,
+cosine table, sound defaults, configuration save and load, event queue
+insertion, and archive registration, lookup, entry reads, and handle release.
 Use `build/program/link.log` and the relocation targets to find candidate
 definitions. WinMain still needs compatible scene and lifetime declarations.
 The event worker still uses borrowed iterator bindings.

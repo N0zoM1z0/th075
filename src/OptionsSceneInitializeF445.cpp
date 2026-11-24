@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <d3d8.h>
 #include "OptionsScene.hpp"
+#include "GraphicsTexture.hpp"
 class OptionsTextureF445 {
     unsigned char observedStorage[80];
 public:OptionsTextureF445();void AllocateSlots(int);void LoadArchive(const char*,const char*);
@@ -10,13 +11,12 @@ public:OptionsTextureF445();void AllocateSlots(int);void LoadArchive(const char*
 typedef char VerifyOptionsTexture80F445[(sizeof(OptionsTextureF445)==80)?1:-1];
 extern const char g_OptionsDataPathAt00657D80[];
 extern const char g_OptionsArchiveRootAt00657D78[];
-extern void __cdecl OptionsCreateSurfaceAt00401C20(int width,int height,IDirect3DTexture8** output,int format);
 OptionsScene::OptionsScene() {
     canvas=0;
     textures=new OptionsTextureF445;
     static_cast<OptionsTextureF445*>(textures)->AllocateSlots(3);
     static_cast<OptionsTextureF445*>(textures)->LoadArchive(g_OptionsDataPathAt00657D80,g_OptionsArchiveRootAt00657D78);
-    OptionsCreateSurfaceAt00401C20(0x400,0x200,&canvas,0x20);
+    Graphics::CreateTexture(0x400, 0x200, &canvas, 0x20);
     field014=5;
     currentItem=0;
     pressedItem=0;

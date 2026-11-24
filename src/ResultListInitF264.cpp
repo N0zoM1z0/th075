@@ -1,10 +1,10 @@
 #include <windows.h>
 #include <new>
 #include "ResultListScene.hpp"
+#include "GraphicsTexture.hpp"
 
 // Source-level scene view supports only independently observed fields.
 // The queue has the complete physical five-DWORD VC7 deque boundary.
-namespace ResultBitmapF264 { void __cdecl Allocate(int width,int height,void** slot,int depth); }
 namespace ResultRecordsF264 { unsigned char __cdecl CheckSelection(unsigned char row,int mode); }
 extern const char g_ResultListFileAt00658064[];
 extern const char g_ResultListRootAt0065805C[];
@@ -15,7 +15,7 @@ ResultListScene::ResultListScene()
     mainTexture=new ResultListTexture();
     mainTexture->AllocateSlots(4);
     mainTexture->Load(g_ResultListFileAt00658064,g_ResultListRootAt0065805C);
-    ResultBitmapF264::Allocate(1024,512,reinterpret_cast<void**>(&canvas),32);
+    Graphics::CreateTexture(1024, 512, &canvas, 32);
     auxiliaryTexture=0;
     (showingRecords)=0;
     (selectedCharacter)=0;
