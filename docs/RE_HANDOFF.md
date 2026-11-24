@@ -237,14 +237,15 @@ R293 identifies the sprite quad's `D3DXMATRIX` constructor at
 payload adds three bytes in the original sprite interval.
 [Matrix selection evidence](ORIGIN_PENDING_REVIEW.md#r293--sprite-matrix-constructor-selection)
 
-The pending review now has a complete explicit-versus-implicit control
-for the frame copy at `0x004591E0`. Both forms match its CODE and EH
-sections, so the origin remains unresolved. R295 gives the same result
-for the texture entry's two lifetime leaves and three allocators with
-their unwind records. R296 distinguishes the implicit copy at
+R295 reproduces both declarations for the texture entry's two
+lifetime leaves and all three allocators with their unwind records.
+R296 distinguishes the implicit copy at
 `0x004229D0` by its position in the complete linked script deque
 window.
 [Copy emission evidence](ORIGIN_PENDING_REVIEW.md#r296--script-sequence-copy-emission-order)
+R297 uses the ordered 688-byte vector window to identify the implicit
+frame copy at `0x004591E0`.
+[Frame emission evidence](ORIGIN_PENDING_REVIEW.md#r297--fighter-frame-copy-emission-order)
 
 R272 and R273 attribute the
 R265 SDK lifetime cohort through complete original D3DX8 archive sections,

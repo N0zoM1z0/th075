@@ -15,8 +15,8 @@ both reproduce 417 CODE bytes at `0x004591E0`, the 29-byte EH carrier at
 `0x00656260`, and 44 bytes of unwind map and FuncInfo at `0x00669824`.
 All 13 relocation fields resolve to their original destinations in both
 builds. The prefix cleanup calls `0x004588B0` and the completed first
-vector cleans up through `0x004589F0`. The two fully matching source
-forms leave the original declaration and attribution unresolved.
+vector cleans up through `0x004589F0`. R297 distinguishes the forms
+through their linked order inside the typed vector code.
 
 The two VC7.1 builds use `/Od /Ob0 /Gy /GR- /GX /GS /Zi /I src` on
 `.analysis/frame-copy-origin/owned-copy.cpp` with `/DEXPLICIT_COPY=0`
@@ -410,7 +410,6 @@ The current direct-call scan is in
 | `0x00442040` | The cold-exact round banner calls the worker at `0x00441ECB`. Both `log10f` from the pinned header and an ordinary float wrapper match the full 28 bytes and the call to CRT `_log10`. |
 | `0x00449A60`, `0x00449A80` | R163 matches both the header and the ordinary float ceil chains, including the calls to the same CRT function. |
 | `0x00458650`, `0x00458670`, `0x00458770` | The two vtable constructors and the sprite list member destructor match complete explicit and implicit forms. The destructor's scalar-deleting caller also matches, including both calls. |
-| `0x004591E0` | The typed frame copy still matches both implicit and explicit forms through all 417 code bytes, the 29-byte handler and 44-byte exception data, including all 13 relocations. |
 
 The pinned PE has an RSDS record for `東方萃夢想.pdb` with GUID
 `9306058f-6d68-4650-b80b-1e0d05dd1e18` and age 3. Its COFF symbol
@@ -650,8 +649,8 @@ distinction.
 
 ### R296 — Script sequence copy emission order
 
-The full linked window from `0x004229B0` to the end of the deque
-copy at `0x00422B41` matches with the implicit sequence copy. It
+The full linked window from `0x004229B0` through `0x00422B40`
+matches with the implicit sequence copy. It
 contains the two typed `_Destroy` dispatchers, the 28-byte sequence
 copy, the two scalar-deleting destructors and the 241-byte deque
 copy, in that order. The pinned linker selects the earlier
@@ -677,6 +676,32 @@ each link. Only the implicit form reproduces the ordered
     bash .analysis/final-origin-review/script-copy-order/link.sh
     bash .analysis/final-origin-review/script-copy-order/split.sh
     scripts/repo-python .analysis/final-origin-review/script-copy-order/compare.py
+
+### R297 — Fighter frame copy emission order
+
+The cold VC7.1 probe uses the 116-byte frame with its destructible
+prefix, rectangle vectors and the explicit cleanup already observed
+at `0x004588E0`. The native `vector<Frame>::assign` and default
+constructor compare completely. The default constructor binds the
+two allocator helpers at `0x004591B0` and `0x004591D0`. The 195-byte
+`_Assign_n` calls the frame copy and reproduces its full handler and
+unwind map.
+
+The implicit copy and all four explicit links reproduce the
+individual code and exception sections with 53 bound relocation
+operands. The implicit link reproduces the complete 688-byte
+native window from `0x004591B0` through `0x0045945F`, including the
+allocator helpers, the 417-byte frame copy, and the 208-byte
+rectangle-vector copy. In-class and out-of-line explicit copies in
+the same object emit both copies before the two allocator helpers.
+Putting the explicit definition in a separate object moves both
+copies before or after the vector object's contributions according
+to the input order. The whole native window distinguishes
+`0x004591E0` as an implicit compiler-generated copy.
+
+    bash .analysis/final-origin-review/frame-copy-order/build.sh
+    bash .analysis/final-origin-review/frame-copy-order/link.sh
+    scripts/repo-python .analysis/final-origin-review/frame-copy-order/compare.py
 
 ## Historical R263 inventory
 
