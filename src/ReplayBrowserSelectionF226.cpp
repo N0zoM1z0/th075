@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
@@ -19,7 +20,6 @@ class ReplayItemsF226 {
 public:
     ReplayItemF226* Entry(int index);
 };
-extern unsigned short g_SelectedReplayVariantAt006714A4;
 extern char g_ReplayPathAt00671754[];
 namespace BrowserSceneStepsF226 {
     void PollInputs();
@@ -104,13 +104,13 @@ unsigned short ReplayBrowserF226::UpdateSelection()
                     field051 = 1;
                     field04A = 0;
                 } else {
-                    g_SelectedReplayVariantAt006714A4 = 1;
+                    g_RecordSequenceAt006714A4 = 1;
                     g_ReplayModeAt0066C238 = 2;
                     TRANSITION();
                     return 0x2201;
                 }
             } else {
-                g_SelectedReplayVariantAt006714A4 = field04A + 1;
+                g_RecordSequenceAt006714A4 = field04A + 1;
                 g_ReplayModeAt0066C238 = 2;
                 TRANSITION();
                 return 0x2201;

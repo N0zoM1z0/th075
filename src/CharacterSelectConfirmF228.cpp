@@ -1,10 +1,10 @@
+#include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "CharacterSelectScene.hpp"
 #include "SoundBank.hpp"
 #include <stdlib.h>
 // CharacterSelectScene shares its physical input and animation fields with
 // the other character-select methods.
-extern unsigned char g_ChoiceSelectedPairAt006714CC[];
 extern const float g_ChoiceMinimumAt0065782C;
 extern const float g_ChoiceBackStepAt00657874;
 extern const float g_ChoiceRiseBoundAt00658268;
@@ -42,7 +42,7 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
     if ((input[player].confirm)==1) {
         if ((choiceStop[player])<g_ChoiceReadyBoundAt0065826C)
             (choiceStop[player])=75.0f;
-        g_ChoiceSelectedPairAt006714CC[player]=(chosenPalette[player]);
+        g_PlayerOtherAt006714CC[player]=(chosenPalette[player]);
         (playerState[player])=4;
         if (g_CombatMode==3 || g_CombatMode==4) {
             playerState[0]=8;
@@ -56,7 +56,7 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
     }
     if ((input[player].toggle)==1) (choiceRandom[player])=static_cast<unsigned int>(!(choiceRandom[player]));
     if ((input[player].special)==1) {
-        g_ChoiceSelectedPairAt006714CC[player]=static_cast<unsigned char>(rand()%3);
+        g_PlayerOtherAt006714CC[player]=static_cast<unsigned char>(rand()%3);
         (playerState[player])=4;
         if (g_CombatMode==3 || g_CombatMode==4) {
             playerState[0]=8;

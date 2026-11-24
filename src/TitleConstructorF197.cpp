@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
 #include "TextureManagerF198.hpp"
 #include "TitleScene.hpp"
@@ -8,7 +9,6 @@
 extern const char g_TitleTextureDataAt006582F0[];
 extern const char g_TitleTextureRootAt006582E8[];
 extern unsigned char g_TitleMenuSelectionAt00671630;
-extern signed char g_ChosenPlayersAt006714C8[2];
 
 TitleScene::TitleScene()
 {
@@ -45,8 +45,8 @@ TitleScene::TitleScene()
     itemAlpha[7] = 0;
     itemAlpha[8] = 0;
     itemAlpha[9] = 0;
-    g_ChosenPlayersAt006714C8[0] = 0;
-    g_ChosenPlayersAt006714C8[1] = 0;
+    g_PlayerIdAt006714C8[0] = 0;
+    g_PlayerIdAt006714C8[1] = 0;
     g_StageSelectionAt0067161D = 0;
     field01C = 0;
 }

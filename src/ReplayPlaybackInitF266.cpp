@@ -1,3 +1,5 @@
+#include "Fighter.hpp"
+#include "PlayerState.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 
@@ -27,13 +29,6 @@ public:
     ~ReplayDequeRecordsF266();
 };
 typedef char AssertReplayDeque20F266[(sizeof(ReplayDequeBaseF266)==20)?1:-1];
-class ReplayActorF266 {
-public:
-    virtual void Slot0(); virtual void Slot1(); virtual void Slot2();
-    virtual void Slot3(); virtual void Slot4(); virtual ~ReplayActorF266();
-};
-extern ReplayActorF266* g_ReplayActorAAt00671418;
-extern ReplayActorF266* g_ReplayActorBAt0067141C;
 extern const char g_ReplayCatalogFileAt00657FC0[];
 extern const char g_ReplayCatalogRootAt00657FB8[];
 extern unsigned short g_ReplayControllerAt0067162C;
@@ -54,13 +49,13 @@ ReplayPlaybackInitF266::ReplayPlaybackInitF266()
     texture=new TextureManagerF198();
     texture->AllocateUnformattedSlots(3);
     texture->LoadDefault(g_ReplayCatalogFileAt00657FC0,g_ReplayCatalogRootAt00657FB8);
-    if (g_ReplayActorAAt00671418) {
-        delete g_ReplayActorAAt00671418;
-        g_ReplayActorAAt00671418=0;
+    if (g_BattleFightersAt00671418[0]) {
+        delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0]);
+        g_BattleFightersAt00671418[0]=0;
     }
-    if (g_ReplayActorBAt0067141C) {
-        delete g_ReplayActorBAt0067141C;
-        g_ReplayActorBAt0067141C=0;
+    if (g_BattleFightersAt00671418[1]) {
+        delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1]);
+        g_BattleFightersAt00671418[1]=0;
     }
     ScanFiles();
     FIELD(unsigned char,0x51)=0;

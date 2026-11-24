@@ -129,6 +129,16 @@ date from that file header. The battle loader reads two bytes at `+0x14C`
 and four at `+0x150` from the loaded record. The headless file test
 preserved high-bit values in the named snapshot fields.
 
+`PlayerState.hpp` declares the six byte pairs shared by selection, the
+battle loader and snapshot I/O. A direct reference to the second player
+uses the pair symbol with an addend of one. The record sequence at
+`0x006714A4` is a separate 16-bit value. The loader writes the two fighter
+pointers at `0x00671418` and `0x0067141C`, and the scene constructors,
+display and cleanup paths use the same slots. The cleanup calls retain
+the deleting destructor in fighter vtable slot five. A headless consumer
+saved a two-player snapshot, cleared both players' state, and restored
+all twelve bytes and the stage selection from the test file.
+
 Standard iterators reproduce the append writer's 1,252-byte size,
 379 instructions and 50 relocation fields. The remaining differences
 are stack operands for the iterator locals. Changing names, declaration

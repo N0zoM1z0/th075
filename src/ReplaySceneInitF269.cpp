@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "Fighter.hpp"
@@ -13,8 +14,6 @@ public:
     ReplayBaseF269();
     virtual ~ReplayBaseF269();
 };
-extern unsigned char g_CurrentFighterAt006714C8;
-extern unsigned char* g_SelectedFighterAt00671418;
 extern const char g_ReplaySceneRootAt00657F44[];
 extern const char g_ReplaySceneFileAt00657F4C[];
 class ReplaySceneInitF269 : public ReplayBaseF269 {
@@ -39,9 +38,9 @@ ReplaySceneInitF269::ReplaySceneInitF269()
     field010 = 0;
     field012 = 0;
     field014 = 0;
-    g_GameProgress.SetSelection(g_CurrentFighterAt006714C8,static_cast<unsigned char>(g_OptionsModeAt006714D0));
+    g_GameProgress.SetSelection(g_PlayerIdAt006714C8[0],static_cast<unsigned char>(g_OptionsModeAt006714D0));
     selectedRecord = g_GameProgress.GetSelectedRecordAddress();
-    rank = selectedRecord->InsertRankedScore(reinterpret_cast<Fighter*>(g_SelectedFighterAt00671418)->score);
+    rank = selectedRecord->InsertRankedScore(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score);
     g_GameProgress.StoreWorkingEightBytes(rank);
     pathIndex = g_ReplayRecords.FindAvailablePath(replayPath);
 }

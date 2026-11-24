@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "TextOverlay.hpp"
@@ -9,8 +10,6 @@
 #include <d3d8.h>
 #include "BattleScene.hpp"
 
-extern void* g_CombatActorAAt00671418;
-extern void* g_CombatActorBAt0067141C;
 extern const char g_BattleTextureDataAt0065831C[];
 extern const char g_BattleTextureRootAt00658314[];
 namespace StateAudioF196 {
@@ -36,8 +35,8 @@ BattleScene::BattleScene()
         new ComboDisplay(static_cast<SpriteTextures40CA80*>(textures)->GetTexture(0), 1);
     comboDisplays[1] =
         new ComboDisplay(static_cast<SpriteTextures40CA80*>(textures)->GetTexture(0), -1);
-    fighters[0] = static_cast<Fighter*>(g_CombatActorAAt00671418);
-    fighters[1] = static_cast<Fighter*>(g_CombatActorBAt0067141C);
+    fighters[0] = reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0]);
+    fighters[1] = reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1]);
     field060 = 0;
     field08C = 0.0f;
     field094 = 0;

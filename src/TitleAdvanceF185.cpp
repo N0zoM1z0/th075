@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #include "TitleScene.hpp"
@@ -15,9 +16,6 @@ namespace Graphics { void Present(); }
 
 extern HWND g_GameMainWindowAt00671608;
 extern signed char g_TitleAttractSwitchAt00671633;
-extern signed char g_TitleRoundOptionAt006714AC[2];
-extern signed char g_TitleMiscOptionAt00671610[2];
-extern signed char g_TitleOtherOptionAt006714CC[2];
 
 #define SIDE_HELD(button, i) g_InputMappings[i].held.counts[button]
 
@@ -129,13 +127,13 @@ unsigned short TitleScene::Update()
     if (field00C > 60000U) {
       if (!g_TitleAttractSwitchAt00671633) {
         for (i = 0; i < 2; ++i) {
-            g_StatePlayerIds[i] = static_cast<signed char>(rand() % 6);
-            g_TitleRoundOptionAt006714AC[i] = 0;
-            g_TitleMiscOptionAt00671610[i] = static_cast<signed char>(rand() % 3);
-            g_TitleOtherOptionAt006714CC[i] = static_cast<signed char>(rand() % 3);
+            g_PlayerIdAt006714C8[i] = static_cast<signed char>(rand() % 6);
+            g_PlayerRoundAt006714AC[i] = 0;
+            g_PlayerAltAt00671610[i] = static_cast<signed char>(rand() % 3);
+            g_PlayerOtherAt006714CC[i] = static_cast<signed char>(rand() % 3);
         }
-        if (g_StatePlayerIds[0] == g_StatePlayerIds[1])
-            g_StatePlayerIds[1] = static_cast<signed char>((g_StatePlayerIds[1] + 1) % 6);
+        if (g_PlayerIdAt006714C8[0] == g_PlayerIdAt006714C8[1])
+            g_PlayerIdAt006714C8[1] = static_cast<signed char>((g_PlayerIdAt006714C8[1] + 1) % 6);
         g_StageSelectionAt0067161D = static_cast<unsigned char>(rand() % 6 + (rand() % 2) * 10);
         g_CombatMode = 6;
         ++g_TitleAttractSwitchAt00671633;

@@ -1,16 +1,10 @@
+#include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "GameSnapshot.hpp"
 #include <windows.h>
 
-extern short g_RecordSequenceAt006714A4;
-extern unsigned char g_PlayerIdAt006714C8[];
-extern unsigned char g_PlayerAltAt00671610[];
-extern unsigned char g_PlayerOtherAt006714CC[];
-extern unsigned char g_PlayerRoundAt006714AC[];
-extern unsigned char g_PlayerDifficultyAt00671438[];
-extern unsigned char g_PlayerSettingsAt00671434[];
 
 namespace GameStateF202 {
 void RestoreFromSnapshot()

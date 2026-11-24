@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
@@ -9,9 +10,6 @@
 // Main character-select update and transition loop.
 // The native input controller repeats a physically observed 0x48-byte record.
 // This borrowed indexed view is not instantiated or used to infer its fields.
-extern signed char g_SelectedFightersAt006714C8[2];
-extern unsigned char g_ModeLeftAt006714AC;
-extern unsigned char g_ModeRightAt006714AD;
 extern const float g_ChoiceZeroAt0065782C;
 extern const float g_ChoiceHalfStepAt00657874;
 extern const float g_ChoiceFadeAt00658260;
@@ -98,11 +96,11 @@ unsigned short CharacterSelectScene::Update()
     }
     if ((playerState[0])==8 && (playerState[1])==8) {
         g_StageAt0067161E=0;
-        if ((g_SelectedFightersAt006714C8[0]==6 || g_SelectedFightersAt006714C8[1]==6) && g_StageSelectionAt0067161D <6)
+        if ((g_PlayerIdAt006714C8[0]==6 || g_PlayerIdAt006714C8[1]==6) && g_StageSelectionAt0067161D <6)
             g_StageSelectionAt0067161D += 10;
         if (g_CombatMode==3) {
-            g_ModeLeftAt006714AC=0;
-            g_ModeRightAt006714AD=0;
+            g_PlayerRoundAt006714AC[0]=0;
+            g_PlayerRoundAt006714AC[1]=0;
         }
         AudioControl407CA0::ScheduleFade(-10000,-60,1,0);
         g_ReplayRecords.BeginCapture();

@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -10,8 +11,6 @@
 
 // Pointer-only interfaces. No complete scene/fighter/container layout is claimed.
 int __cdecl AbsoluteSelectionInputF130(int);
-extern signed char g_SelectionCharacters[];
-extern signed char g_SelectionPalettes[];
 void CharacterSelectScene::UpdateSelect(signed char side) {
     if (portraitReturn[side] > 0.0f) portraitReturn[side] = portraitReturn[side] - 5.0f;
     if (portraitEnterX[side] > 0.0f) portraitEnterX[side] = portraitEnterX[side] - 4.0f;
@@ -67,15 +66,15 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     }
     if ((input[side].confirm) == 1 || (input[side].toggle) == 1 || (stageCountdown[side]) == 1) {
         g_SoundBank->Play(45);
-        g_SelectionCharacters[side] = (chosenCharacter[side]);
-        g_SelectionPalettes[side] = (input[side].toggle) == 1;
+        g_PlayerIdAt006714C8[side] = (chosenCharacter[side]);
+        g_PlayerRoundAt006714AC[side] = (input[side].toggle) == 1;
         (playerState[side]) = 1;
         choiceStop[side] = 0;
-        if (g_CombatMode != 4 && (playerState[1 - side]) != 0 && g_SelectionCharacters[0] == g_SelectionCharacters[1] && g_SelectionPalettes[side] == g_SelectionPalettes[1 - side])
-            g_SelectionPalettes[side] = 1 - g_SelectionPalettes[side];
+        if (g_CombatMode != 4 && (playerState[1 - side]) != 0 && g_PlayerIdAt006714C8[0] == g_PlayerIdAt006714C8[1] && g_PlayerRoundAt006714AC[side] == g_PlayerRoundAt006714AC[1 - side])
+            g_PlayerRoundAt006714AC[side] = 1 - g_PlayerRoundAt006714AC[side];
         if (g_CombatMode == 3) {
-            g_SelectionPalettes[0] = 0;
-            g_SelectionPalettes[1] = 0;
+            g_PlayerRoundAt006714AC[0] = 0;
+            g_PlayerRoundAt006714AC[1] = 0;
         }
     }
     if ((input[side].special) == 1) (stageCountdown[side]) = rand() % 10 + 30;

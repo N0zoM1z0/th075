@@ -1,37 +1,28 @@
+#include "Fighter.hpp"
+#include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "AudioControl.hpp"
 #include "Graphics.hpp"
 // Entire original 152-byte battle end scene state policy, including the
 // real fighter virtual action and mode-specific score return value.
-class BattleEndFighterF463 {
-public:
-    virtual void F0(); virtual void F1(); virtual void F2(); virtual void F3();
-    virtual void F4(); virtual void F5(); virtual void F6(); virtual void F7();
-    virtual void F8(); virtual void F9(); virtual void F10();virtual void F11();
-    virtual void F12();virtual void F13();virtual void F14();virtual void F15();
-    virtual void AdvanceEndAction();
-};
 class BattleEndSceneF463 {
 public:
     virtual void V0();virtual void V4();virtual void AdvanceVisuals();
     unsigned short Update();
     void PollInput();
 };
-extern BattleEndFighterF463* g_CurrentFighterAt00671418;
 extern unsigned int g_BestResultScoreAt00671420;
-#define FIGHTER(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(g_CurrentFighterAt00671418)+(off)))
 unsigned short BattleEndSceneF463::Update() {
     PollInput();
     AdvanceVisuals();
-    g_CurrentFighterAt00671418->AdvanceEndAction();
+    reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->AdvanceSequence();
     Graphics::Present();
-    if (FIGHTER(unsigned char,0x6EF)) {
+    if (reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field6EF) {
         if (g_StageAt0067161E==10) return 0x110B;
         MusicF204::PlayTrackByIndex(40);
         AudioControl407CA0::ScheduleFade(-10000,-300,1,1);
-        if (g_BestResultScoreAt00671420 < FIGHTER(unsigned int,0x2D0)) return 0x220A;
+        if (g_BestResultScoreAt00671420 < reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score) return 0x220A;
         return 0x1102;
     }
     return 8;
 }
-#undef FIGHTER

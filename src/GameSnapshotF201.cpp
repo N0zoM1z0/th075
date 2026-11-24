@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
@@ -7,13 +8,6 @@
 
 // Storage anchors are only address-compatible borrowed views. This function
 // never constructs or embeds an assumed original game-state owner.
-extern unsigned char g_PlayerIdAt006714C8[];
-extern unsigned char g_PlayerAltAt00671610[];
-extern unsigned char g_PlayerOtherAt006714CC[];
-extern unsigned char g_PlayerRoundAt006714AC[];
-extern unsigned char g_PlayerDifficultyAt00671438[];
-extern unsigned char g_PlayerSettingsAt00671434[];
-extern unsigned char* g_ActorAt00671418;
 
 namespace GameStateF201 {
 void SaveSnapshot()
@@ -66,7 +60,7 @@ void SaveSnapshot()
         g_ReplayRecords.header.field148 = g_PlayerDifficultyAt00671438[1];
         g_ReplayRecords.header.field149 = g_PlayerSettingsAt00671434[1];
         g_ReplayRecords.header.field150 =
-            reinterpret_cast<Fighter*>(g_ActorAt00671418)->score;
+            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
         g_ReplayRecords.header.field14A = g_StageSelectionAt0067161D;
     } else if (g_CombatMode == 3) {
         g_ReplayRecords.fileHeader.mode = static_cast<unsigned char>(g_OptionsModeAt006714D0 + 1);
@@ -80,10 +74,10 @@ void SaveSnapshot()
         g_ReplayRecords.header.field147 = g_PlayerRoundAt006714AC[1];
         g_ReplayRecords.fileHeader.activeSide = static_cast<unsigned char>(-1);
         g_ReplayRecords.header.field14C =
-            reinterpret_cast<Fighter*>(g_ActorAt00671418)->health;
+            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health;
         g_ReplayRecords.header.field14E = g_SequenceCounterAt00671622;
         g_ReplayRecords.header.field150 =
-            reinterpret_cast<Fighter*>(g_ActorAt00671418)->score;
+            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
         g_ReplayRecords.header.field14A = g_StageAt0067161E;
     }
 }

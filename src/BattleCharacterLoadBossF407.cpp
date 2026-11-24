@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "GameConfigStorage.hpp"
 #include "BattleSessionState.hpp"
@@ -45,21 +46,8 @@ class Fighter7F398 : public FighterNativeF398 {public:Fighter7F398(); private:un
 class Fighter8F398 : public FighterNativeF398 {public:Fighter8F398(); private:unsigned char observedNativeAllocation[0x1008-sizeof(FighterNativeF398)];};
 class Fighter9F398 : public FighterNativeF398 {public:Fighter9F398(); private:unsigned char observedNativeAllocation[0x1000-sizeof(FighterNativeF398)];};
 class Fighter10F398: public FighterNativeF398 {public:Fighter10F398(); private:unsigned char observedNativeAllocation[0x1000-sizeof(FighterNativeF398)];};
-extern FighterNativeF398* g_BattleFightersAt00671418[2];
-extern signed char g_BattleCharactersAt006714C8[2];
-extern signed char g_BattleSkinAt006714AC[2];
-extern signed char g_BattleChosenLevelAt00671610[2];
-extern signed char g_BattleSelectionFlagsAt006714CC[2];
-extern signed char g_BattleLevelAt00671434[2];
-extern signed char g_BattleSoundSettingAt00671438[2];
 extern signed char g_RosterAt0067148F[];
 extern signed char g_StoryRosterAt00671490[];
-extern signed char g_SelectedCharacterAt006714C9;
-extern signed char g_PlayerDefaultAt006714C8;
-extern signed char g_CpuDefaultAt006714C9;
-extern signed char g_SelectedSkinAt006714AD;
-extern signed char g_BattleDifficultyAt00671611;
-extern signed char g_EnemyDifficultyAt006714CD;
 extern signed char g_StoryChoiceAt00671620;
 extern short g_StoryCounterAt006714C0;
 extern int g_StoryTransitionsAt0067160C;
@@ -96,21 +84,21 @@ void BattleCharacterLoaderF398::LoadCharacters() {
       }
       g_CharacterCountAt0067161F=static_cast<signed char>(state.count);
    }
-   g_SelectedCharacterAt006714C9=g_RosterAt0067148F[g_StageAt0067161E];
-   g_StageSelectionAt0067161D=g_SelectedCharacterAt006714C9;
+   g_PlayerIdAt006714C8[1]=g_RosterAt0067148F[g_StageAt0067161E];
+   g_StageSelectionAt0067161D=g_PlayerIdAt006714C8[1];
    if(g_StageSelectionAt0067161D<6) {
-      g_StageSelectionAt0067161D+=((rand()<0x4000 || g_PlayerDefaultAt006714C8==6)?1:0)*10;
+      g_StageSelectionAt0067161D+=((rand()<0x4000 || g_PlayerIdAt006714C8[0]==6)?1:0)*10;
    }
-   g_SelectedSkinAt006714AD=0;
-   if(g_PlayerDefaultAt006714C8==g_SelectedCharacterAt006714C9)
-      g_SelectedSkinAt006714AD=1-g_BattleSkinAt006714AC[0];
-   g_BattleDifficultyAt00671611=static_cast<signed char>(rand()%3);
-   g_EnemyDifficultyAt006714CD=static_cast<signed char>(rand()%3);
+   g_PlayerRoundAt006714AC[1]=0;
+   if(g_PlayerIdAt006714C8[0]==g_PlayerIdAt006714C8[1])
+      g_PlayerRoundAt006714AC[1]=1-g_PlayerRoundAt006714AC[0];
+   g_PlayerAltAt00671610[1]=static_cast<signed char>(rand()%3);
+   g_PlayerOtherAt006714CC[1]=static_cast<signed char>(rand()%3);
  }
  for(int side=0;side<2;++side) {
     if ((g_CombatMode!=3 && g_CombatMode!=4) || side!=0 || !g_BattleFightersAt00671418[side]) {
        if(g_BattleFightersAt00671418[side]) delete g_BattleFightersAt00671418[side];
-       switch(g_BattleCharactersAt006714C8[side]) {
+       switch(g_PlayerIdAt006714C8[side]) {
          case 0:g_BattleFightersAt00671418[side]=new Fighter0F398;break;
          case 1:g_BattleFightersAt00671418[side]=new Fighter1F398;break;
          case 2:g_BattleFightersAt00671418[side]=new Fighter2F398;break;
@@ -124,23 +112,23 @@ void BattleCharacterLoaderF398::LoadCharacters() {
          case 10:g_BattleFightersAt00671418[side]=new Fighter10F398;break;
        }
        F(unsigned char,g_BattleFightersAt00671418[side],0x2CC)=static_cast<unsigned char>(side);
-       F(unsigned char,g_BattleFightersAt00671418[side],0x2CE)=g_BattleSkinAt006714AC[side];
-       F(short,g_BattleFightersAt00671418[side],0x398)=g_BattleChosenLevelAt00671610[side];
-       F(short,g_BattleFightersAt00671418[side],0x39A)=g_BattleSelectionFlagsAt006714CC[side];
+       F(unsigned char,g_BattleFightersAt00671418[side],0x2CE)=g_PlayerRoundAt006714AC[side];
+       F(short,g_BattleFightersAt00671418[side],0x398)=g_PlayerAltAt00671610[side];
+       F(short,g_BattleFightersAt00671418[side],0x39A)=g_PlayerOtherAt006714CC[side];
        g_BattleFightersAt00671418[side]->ResetControlState();
        g_BattleFightersAt00671418[side]->InitializeResources(g_KeyBindingsAt00671440+side*0x28);
        if (g_CombatMode==3 || (g_CombatMode==4 && side==1)) {
           F(float,g_BattleFightersAt00671418[side],0xA4)=1.0f;
           F(unsigned char,g_BattleFightersAt00671418[side],0x465)=static_cast<int>(g_OptionsModeAt006714D0==0);
        } else {
-          switch(g_BattleLevelAt00671434[side]) {
+          switch(g_PlayerSettingsAt00671434[side]) {
              case 0:F(float,g_BattleFightersAt00671418[side],0xA4)=0.5f;break;
              case 1:F(float,g_BattleFightersAt00671418[side],0xA4)=0.75f;break;
              case 2:F(float,g_BattleFightersAt00671418[side],0xA4)=1.0f;break;
              case 3:F(float,g_BattleFightersAt00671418[side],0xA4)=1.5f;break;
              case 4:F(float,g_BattleFightersAt00671418[side],0xA4)=2.0f;break;
           }
-          F(unsigned char,g_BattleFightersAt00671418[side],0x465)=g_BattleSoundSettingAt00671438[side];
+          F(unsigned char,g_BattleFightersAt00671418[side],0x465)=g_PlayerDifficultyAt00671438[side];
        }
     }
     if(side==0 && g_CombatMode==3) {
@@ -159,7 +147,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
           g_StageAt0067161E=F(signed char,g_BattleFightersAt00671418[0],0x713);
        }
        g_BattleFightersAt00671418[0]->SelectVariant();
-       g_SelectedCharacterAt006714C9=F(signed char,g_BattleFightersAt00671418[0],0x6E5);
+       g_PlayerIdAt006714C8[1]=F(signed char,g_BattleFightersAt00671418[0],0x6E5);
     }
     g_BattleFightersAt00671418[side]->InitializeAction();
  }
@@ -182,7 +170,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        if(g_StoryResultAt00671621!=0) g_ContinueCountAt00671623=0;
        else g_ContinueCountAt00671623=3;
        g_SequenceCounterAt00671622=2;
-       g_GameProgress.SetSelection(g_PlayerDefaultAt006714C8,g_OptionsModeAt006714D0);
+       g_GameProgress.SetSelection(g_PlayerIdAt006714C8[0],g_OptionsModeAt006714D0);
        F(int,g_BattleFightersAt00671418[0],0x2D0)=0;
        g_PlayerScoreAt006714B0=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;
        g_RankAt00671420=g_GameProgress.GetSelectedRecordAddress()->scores[9].score;

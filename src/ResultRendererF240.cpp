@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "Graphics.hpp"
 #include "TextureManagerF198.hpp"
@@ -22,7 +23,6 @@ public:
 class ResultRawScaleF240 {
 public: void ScaleQuad(float x,float y,float z,DWORD sxBits,DWORD syBits,DWORD szBits);
 };
-extern Fighter* g_ActorAt00671418;
 extern const float g_ResultAlphaOriginAt00658048;
 extern const float g_ResultAlphaRangeAt00658058;
 extern const float g_ResultAlphaScaleAt00657864;
@@ -64,7 +64,7 @@ void ResultScene::Render()
         TRANSFORM(quad)->TranslateQuad(static_cast<float>(offsets[4]),0.0f,0.0f);
         reinterpret_cast<TextureManagerF198*>(DRAWER)->DrawQuad(2,quad,&region,RESULT_COLOR);
         DrawDecimalDigits(300.0f,221.0f,RESULT_COLOR,field038,1,0);
-        DrawDecimalDigits(300.0f,245.0f,RESULT_COLOR,g_ActorAt00671418->score,1,0);
+        DrawDecimalDigits(300.0f,245.0f,RESULT_COLOR,reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score,1,0);
         Graphics::EndFrame();
         }
     }

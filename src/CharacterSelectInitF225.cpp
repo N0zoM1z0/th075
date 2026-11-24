@@ -1,20 +1,11 @@
+#include "Fighter.hpp"
+#include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
 #include "GameProgress.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
 #include "CharacterSelectScene.hpp"
 // The original scene constructs three 80-byte texture manager instances.
-class ActorResourceF225 {
-public:
-    virtual void Reserved0();
-    virtual void Reserved1();
-    virtual void Reserved2();
-    virtual void Reserved3();
-    virtual void Reserved4();
-    virtual ~ActorResourceF225(); // Native deleting destructor in slot five.
-};
-extern ActorResourceF225* g_ActorAAt00671418;
-extern ActorResourceF225* g_ActorBAt0067141C;
 extern const char g_SelectTextureDataAt006581EC[];
 extern const char g_SelectTextureRootAt006581E4[];
 extern const char g_CharacterTextureDataAt0065820C[];
@@ -25,13 +16,13 @@ extern unsigned char g_FramePadAt00671620;
 namespace GameConfigF193 { void ReadIni(); }
 CharacterSelectScene::CharacterSelectScene()
 {
-    if (g_ActorAAt00671418) {
-        delete g_ActorAAt00671418;
-        g_ActorAAt00671418=0;
+    if (g_BattleFightersAt00671418[0]) {
+        delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0]);
+        g_BattleFightersAt00671418[0]=0;
     }
-    if (g_ActorBAt0067141C) {
-        delete g_ActorBAt0067141C;
-        g_ActorBAt0067141C=0;
+    if (g_BattleFightersAt00671418[1]) {
+        delete reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1]);
+        g_BattleFightersAt00671418[1]=0;
     }
     (menuTextures)=new TextureManagerF198();
     (menuTextures)->AllocateUnformattedSlots(8);

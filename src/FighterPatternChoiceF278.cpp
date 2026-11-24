@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include <stdlib.h>
 #include <string.h>
 
@@ -10,7 +11,6 @@ public:
     signed char Flag(short sequence,short index);
     const char* Name(short sequence,short index);
 };
-extern signed char g_SecondFighterCharacterAt006714C8[];
 extern const char g_DefaultActionNameAt00659078[];
 class FighterPatternChoiceF277 {
 public:
@@ -30,7 +30,7 @@ void FighterPatternChoiceF277::ChoosePatternSequence()
     short target = static_cast<short>(rand()%256);
     accumulated=0;
     INDEX=0;
-    short sequence=static_cast<short>(g_SecondFighterCharacterAt006714C8[1-FIELD(signed char,0x2cc)]+200);
+    short sequence=static_cast<short>(g_PlayerIdAt006714C8[1-FIELD(signed char,0x2cc)]+200);
     cursor=0;
     while(static_cast<int>(cursor)<static_cast<int>(PATTERN->Count(sequence))) {
         accumulated+=PATTERN->Weight(sequence,static_cast<short>(cursor));

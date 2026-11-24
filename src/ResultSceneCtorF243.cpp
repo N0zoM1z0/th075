@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
 #include "TextureManagerF198.hpp"
 #include <windows.h>
@@ -5,8 +6,6 @@
 #include "ResultScene.hpp"
 extern const char g_ResultTexturePathAt0065801C[];
 extern const char g_ResultTextureRootAt00658014[];
-extern Fighter* g_ResultActorPrimaryAt00671418;
-extern void* g_ResultActorSecondaryAt0067141C;
 extern int g_ResultScoreTotalAt0067160C;
 extern short g_ResultBonusAt006714C0;
 extern const float g_ResultOneAt0065747C;
@@ -20,13 +19,13 @@ ResultScene::ResultScene()
     field014=1.0f;
     field018=0;
     field019=0;
-    values[0]=static_cast<Fighter*>(g_ResultActorSecondaryAt0067141C)->field460;
+    values[0]=reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[1])->field460;
     values[2]=g_ResultScoreTotalAt0067160C;
     field030=static_cast<float>(g_ResultScoreTotalAt0067160C)/static_cast<float>(g_CumulativeScoreAt006714BC)+g_ResultOneAt0065747C;
     values[1]=g_ResultBonusAt006714C0;
     field02C=static_cast<float>(g_ResultBonusAt006714C0)/g_ResultHundredAt00657888+g_ResultOneAt0065747C;
-    values[3]=static_cast<int>(g_ResultActorPrimaryAt00671418->health)+(static_cast<int>(static_cast<signed char>(g_SequenceCounterAt00671622))-1+static_cast<int>(g_ResultActorPrimaryAt00671418->field39D))*10000;
-    field034=static_cast<float>(g_ResultActorPrimaryAt00671418->health)/g_ResultTenThousandAt00658034+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(g_ResultActorPrimaryAt00671418->field39D)-g_ResultOneAt0065747C;
+    values[3]=static_cast<int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health)+(static_cast<int>(static_cast<signed char>(g_SequenceCounterAt00671622))-1+static_cast<int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field39D))*10000;
+    field034=static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health)/g_ResultTenThousandAt00658034+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field39D)-g_ResultOneAt0065747C;
     field038=0;
     field03C=0;
     field040=0;
@@ -35,7 +34,7 @@ ResultScene::ResultScene()
     offsets[1]=900;
     offsets[0]=900;
     offsets[4]=1800;
-    g_ResultActorPrimaryAt00671418->score+=field038;
-    g_ResultActorPrimaryAt00671418->health=10000;
-    g_ResultActorPrimaryAt00671418->recoverableHealth=10000;
+    reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
+    reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->health=10000;
+    reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->recoverableHealth=10000;
 }

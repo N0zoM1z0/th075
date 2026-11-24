@@ -1,10 +1,9 @@
+#include "PlayerState.hpp"
 #include "GameSharedState.hpp"
 #include "TextureManagerF198.hpp"
 #include "CharacterSelectScene.hpp"
 #include "BattleHud43E040.hpp"
 #include "SpriteTransform.hpp"
-extern signed char g_SelectOptionAt00671434[];
-extern unsigned char g_SelectOptionAt00671438[];
 
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 #define DRAW reinterpret_cast<TextureManagerF198*>(menuTextures)
@@ -20,7 +19,7 @@ void CharacterSelectScene::RenderOptions() {
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&region);
             QUAD->TranslateQuad(float(i * 320 + 32), 120.0f, 0.0f);
             DRAW->DrawQuad(5, packet, &region, 0xFFFFFFFF);
-            SetRect(&region, 208, 144 - g_SelectOptionAt00671438[i] * 32, 256, 176 - g_SelectOptionAt00671438[i] * 32);
+            SetRect(&region, 208, 144 - g_PlayerDifficultyAt00671438[i] * 32, 256, 176 - g_PlayerDifficultyAt00671438[i] * 32);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(208.0f, 0.0f, 256.0f, 32.0f);
             QUAD->TranslateQuad(float(i * 320 + 32), 120.0f, 0.0f);
             DRAW->DrawQuad(5, packet, &region, 0xFFFFFFFF);
@@ -28,8 +27,8 @@ void CharacterSelectScene::RenderOptions() {
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(77.0f, 56.0f, 202.0f, 88.0f);
             QUAD->TranslateQuad(float(i * 320 + 32), 120.0f, 0.0f);
             DRAW->DrawQuad(5, packet, &region, 0xFFFFFFFF);
-            SetRect(&region, 77, 112, g_SelectOptionAt00671434[i] * 25 + 102, 144);
-            reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(77.0f, 56.0f, float(g_SelectOptionAt00671434[i] * 25 + 102), 88.0f);
+            SetRect(&region, 77, 112, g_PlayerSettingsAt00671434[i] * 25 + 102, 144);
+            reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(77.0f, 56.0f, float(g_PlayerSettingsAt00671434[i] * 25 + 102), 88.0f);
             QUAD->TranslateQuad(float(i * 320 + 32), 120.0f, 0.0f);
             DRAW->DrawQuad(5, packet, &region, 0xFFFFFFFF);
             SetRect(&region, 0, 112, 64, 144);

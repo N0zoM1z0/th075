@@ -1,10 +1,9 @@
+#include "PlayerState.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
 #include "GameProgress.hpp"
 #include "CharacterSelectScene.hpp"
 // Restore the initial two-player character-select state.
-extern signed char g_PlayerSelectionAt006714C8;
-extern unsigned char g_SecondPlayerAt006714C9;
 void CharacterSelectScene::ResetSelection()
 {
     (choiceRandom[1])=1;
@@ -39,10 +38,10 @@ void CharacterSelectScene::ResetSelection()
     // Native field +0xDC stores IEEE-754 0x4096CBE2; 4.712388f is the
     // meaningful rounded float literal, unlike 4.712389f (0x4096CBE4).
     (choiceRotation)=4.712388f;
-    (chosenCharacter[0])=g_PlayerSelectionAt006714C8;
-    (chosenCharacter[1])=g_SecondPlayerAt006714C9;
-    (alternateCharacter[0])=(g_PlayerSelectionAt006714C8+1)%10;
-    (alternateCharacter[1])=(g_PlayerSelectionAt006714C8+1)%10;
+    (chosenCharacter[0])=g_PlayerIdAt006714C8[0];
+    (chosenCharacter[1])=g_PlayerIdAt006714C8[1];
+    (alternateCharacter[0])=(g_PlayerIdAt006714C8[0]+1)%10;
+    (alternateCharacter[1])=(g_PlayerIdAt006714C8[0]+1)%10;
     (playerReady[1])=1;
     (playerReady[0])=1;
     if (g_StageSelectionAt0067161D==20) {
@@ -53,5 +52,5 @@ void CharacterSelectScene::ResetSelection()
         (stagePage[0])=g_StageSelectionAt0067161D>=10;
     }
     g_GameProgress.SetSelection(
-        g_PlayerSelectionAt006714C8,static_cast<unsigned char>(g_OptionsModeAt006714D0));
+        g_PlayerIdAt006714C8[0],static_cast<unsigned char>(g_OptionsModeAt006714D0));
 }

@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "GameConfigStorage.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
@@ -38,6 +39,15 @@ unsigned char g_SequenceCounterAt00671622;
 signed char g_ContinueCountAt00671623;
 unsigned char g_ContinueUsedAt00671624;
 unsigned char g_InputCanCancelAt00671632;
+
+signed char g_PlayerIdAt006714C8[2];
+signed char g_PlayerAltAt00671610[2];
+signed char g_PlayerOtherAt006714CC[2];
+signed char g_PlayerRoundAt006714AC[2];
+unsigned char g_PlayerDifficultyAt00671438[2];
+signed char g_PlayerSettingsAt00671434[2];
+short g_RecordSequenceAt006714A4;
+FighterNativeF398* g_BattleFightersAt00671418[2];
 
 namespace GameConfigF193 {
 void ReadIni()

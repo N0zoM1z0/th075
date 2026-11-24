@@ -1,3 +1,4 @@
+#include "PlayerState.hpp"
 #include "ReplaySegmentedQueueF219.hpp"
 #include "BattleSessionState.hpp"
 #include "GameSharedState.hpp"
@@ -7,7 +8,6 @@
 #include <windows.h>
 #include "Fighter.hpp"
 #include "ResultScene.hpp"
-extern Fighter* g_ResultActorAt00671418;
 extern unsigned int g_ResultBestAt006714B0;
 extern unsigned char g_ResultLeaveAt006714CE;
 extern const double g_ResultFactor0At00658050;
@@ -39,18 +39,18 @@ unsigned short ResultScene::Update()
             case 2: field038=static_cast<int>((field038)*g_ResultFactor2At00657D08);break;
             case 3: field038=static_cast<int>((field038)*2.0);break;
             }
-            g_ResultActorAt00671418->score+=field038;
+            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
             field038=0;
             field040=7;
             field03C=400;
         } else if ((field040)==6) {
-            g_ResultActorAt00671418->score+=field038;
+            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
             field03C=400;
             field038=0;
             field040=7;
         } else {
-            if (static_cast<unsigned int>(g_ResultActorAt00671418->score)>g_ResultBestAt006714B0)
-                g_ResultBestAt006714B0=g_ResultActorAt00671418->score;
+            if (static_cast<unsigned int>(reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score)>g_ResultBestAt006714B0)
+                g_ResultBestAt006714B0=reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score;
             if (g_ReplayModeAt0066C238==2 && g_StageAt0067161E>=g_ReplayRecords.fileHeader.recordCount) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
@@ -62,7 +62,7 @@ unsigned short ResultScene::Update()
                 g_ResultLeaveAt006714CE=0xff;
                 return 0x2207;
             }
-            if ((g_ResultActorAt00671418->field713)>=8) {
+            if ((reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field713)>=8) {
                 if (g_ReplayModeAt0066C238==2) {
                     MusicF204::PlayTrackByIndex(0x28);
                     AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
@@ -73,7 +73,7 @@ unsigned short ResultScene::Update()
             return 0x2301;
         }
     }
-    if ((g_ResultActorAt00671418->field713)==10) {
+    if ((reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->field713)==10) {
         field014=1.0f;
     } else if ((field014)>g_ResultMinAlphaAt00658048) {
         field014=(field014)-g_ResultAlphaStepAt00658044;
@@ -127,12 +127,12 @@ unsigned short ResultScene::Update()
     if ((field040)==6) {
         if ((field038)>(field010)) {
             field038=(field038)-(field010);
-            g_ResultActorAt00671418->score+=field010;
+            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field010;
             field019=((field019)+1)%3;
             if ((field019)==0)
                 g_SoundBank->Play(0x31);
         } else {
-            g_ResultActorAt00671418->score+=field038;
+            reinterpret_cast<Fighter*>(g_BattleFightersAt00671418[0])->score+=field038;
             field038=0;
             field040=7;
         }
