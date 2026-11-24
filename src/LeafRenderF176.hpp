@@ -12,5 +12,5 @@ public:
 public:
     // Observed fields; meanings not yet known.
     unsigned char unknown000[0x314 - 0x000];
-    float field314;
+    float effectParameters[4];
 };

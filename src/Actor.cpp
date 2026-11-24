@@ -7,7 +7,7 @@
 
 // Advances the frame counter through the current stage; returns the stage
 // reached when one completes, animationStageCount when the action wraps, else 0.
-short Actor::AdvanceNestedFrame() {
+short ActorRenderingBase::AdvanceNestedFrame() {
     ++animationFrame;
     if (animationFrame >= animationFrameCount) {
         animationFrame = 0;
@@ -24,7 +24,7 @@ short Actor::AdvanceNestedFrame() {
 }
 
 // The action counters change together and slot 0 rebinds the animation.
-void Actor::ResetPrimaryCounters(short value)
+void ActorRenderingBase::ResetPrimaryCounters(short value)
 {
     animationFrame = 0;
     animationStage = 0;
@@ -32,7 +32,7 @@ void Actor::ResetPrimaryCounters(short value)
     BindAnimation();
 }
 
-void Actor::SetThreeCounters(short first, short second, short third)
+void ActorRenderingBase::SetThreeCounters(short first, short second, short third)
 {
     animationFrame = third;
     animationStage = second;
@@ -40,21 +40,21 @@ void Actor::SetThreeCounters(short first, short second, short third)
     BindAnimation();
 }
 
-void Actor::ResetSecondaryCounter(short value)
+void ActorRenderingBase::ResetSecondaryCounter(short value)
 {
     animationFrame = 0;
     animationStage = value;
     BindAnimation();
 }
 
-void Actor::SetPolarVelocity(float angle, float speed) {
+void ActorRenderingBase::SetPolarVelocity(float angle, float speed) {
     velocityX = MathLookup::ReadCosTable(angle) * speed;
     velocityY = -MathLookup::ReadPhaseTable(angle) * speed;
 }
 
 // Enables the sprite transform around a pivot with unit scale, no rotation
 // and opaque colours.
-void Actor::ResetTransform(float x, float y, float z) {
+void ActorRenderingBase::ResetTransform(float x, float y, float z) {
     field040 = 1;
     pivotX = x;
     pivotY = y;
@@ -73,7 +73,7 @@ void Actor::ResetTransform(float x, float y, float z) {
     field010 = 0;
 }
 
-void Actor::ClearTransformFlag()
+void ActorRenderingBase::ClearTransformFlag()
 {
     field040 = 0;
 }

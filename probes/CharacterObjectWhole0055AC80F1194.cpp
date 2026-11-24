@@ -3,7 +3,6 @@
 #include "CharacterObject.hpp"
 #include "RemiliaFighter.hpp"
 #include "GameLeafHelpers.hpp"
-#include "FighterEffectPolicies.hpp"
 #include "BattleSessionState.hpp"
 #include "EffectServices.hpp"
 

@@ -16,19 +16,6 @@ public:
 extern float g_CombatViewOffsetX;
 extern float g_CombatViewOffsetY;
 
-class RawSpriteScaleF254 {
-public: void ScaleQuad(float,float,float,DWORD,DWORD,DWORD);
-};
-class FloatSpriteScaleF254 {
-public: void ScaleQuad(float,float,float,float,DWORD,DWORD);
-};
-class RawSpriteRotateF254 {
-public: void RotateQuad(float,float,float,DWORD,DWORD,DWORD);
-};
-class RawZSpriteScaleF381 {public:void ScaleQuad(float,float,DWORD,DWORD,DWORD,DWORD);};
-class FloatSpriteRotateF254 {
-public: void RotateQuad(float,float,DWORD,DWORD,DWORD,float);
-};
 // Only genuine live native fields are represented, no private scene owner.
 // F437 independently reconstructed entire 1,268-byte R035 mirrored-node
 // sprite renderer; the native stack has two *observed* 140-byte allocation
@@ -54,11 +41,6 @@ struct NativeMirrorFrameF355 {
 };
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
 #define DRAWER reinterpret_cast<SpriteRenderDeviceF254*>(drawing)
-#define SCALE(q,x,y,z,sx,sy,sz) reinterpret_cast<RawSpriteScaleF254*>(&(q))->ScaleQuad(x,y,z,sx,sy,sz)
-#define SCALE_RAWZ(q,x,y,z,sx,sy,sz) reinterpret_cast<RawZSpriteScaleF381*>(&(q))->ScaleQuad(x,y,z,sx,sy,sz)
-#define SCALE_FLOAT(q,x,y,z,sx,sy,sz) reinterpret_cast<FloatSpriteScaleF254*>(&(q))->ScaleQuad(x,y,z,sx,sy,sz)
-#define ROTATE_FLOAT(q,x,y,z,sx,sy,sz) reinterpret_cast<FloatSpriteRotateF254*>(&(q))->RotateQuad(x,y,z,sx,sy,sz)
-#define ROTATE(q,x,y,z,sx,sy,sz) reinterpret_cast<RawSpriteRotateF254*>(&(q))->RotateQuad(x,y,z,sx,sy,sz)
 // Actor vtable slot 4: the reflection drawn below an actor.
 void ActorRenderingBase::RenderMirroredNode()
 {
@@ -77,21 +59,21 @@ void ActorRenderingBase::RenderMirroredNode()
     reinterpret_cast<TextureManagerF198*>(DRAWER)->GetTextureRect(drawFrame->textureIndex,&sourceRect);
     TRANSFORM(transformed)->BuildQuadFromRect(&sourceRect);
     if (drawFrame->pose) {
-        SCALE(transformed,static_cast<float>(drawFrame->originX),static_cast<float>(drawFrame->originY),0.0f,
-              reinterpret_cast<DWORD&>(drawFrame->pose->scaleX),
-              reinterpret_cast<DWORD&>(drawFrame->pose->scaleY),
-              reinterpret_cast<DWORD&>(drawFrame->pose->scaleZ));
-        ROTATE(transformed,static_cast<float>(drawFrame->originX),static_cast<float>(drawFrame->originY),0.0f,
-              reinterpret_cast<DWORD&>(drawFrame->pose->rotationX),
-              reinterpret_cast<DWORD&>(drawFrame->pose->rotationY),
-              reinterpret_cast<DWORD&>(drawFrame->pose->rotationZ));
-        SCALE_FLOAT(transformed,0.0f,0.0f,0.0f,static_cast<float>(facing),0x3f800000,0x3f800000);
+        TRANSFORM(transformed)->ScaleQuad(static_cast<float>(drawFrame->originX),static_cast<float>(drawFrame->originY),0.0f,
+              drawFrame->pose->scaleX,
+              drawFrame->pose->scaleY,
+              drawFrame->pose->scaleZ);
+        TRANSFORM(transformed)->RotateQuad(static_cast<float>(drawFrame->originX),static_cast<float>(drawFrame->originY),0.0f,
+              drawFrame->pose->rotationX,
+              drawFrame->pose->rotationY,
+              drawFrame->pose->rotationZ);
+        TRANSFORM(transformed)->ScaleQuad(0.0f,0.0f,0.0f,static_cast<float>(facing),1.0f,1.0f);
     } else if (drawFrame->field0C) {
-        SCALE_FLOAT(transformed,0.0f,0.0f,0.0f,static_cast<float>(static_cast<int>(facing)<<1),0x40000000,0x40000000);
+        TRANSFORM(transformed)->ScaleQuad(0.0f,0.0f,0.0f,static_cast<float>(static_cast<int>(facing)<<1),2.0f,2.0f);
     }
     if (field040) {
-        SCALE_RAWZ(transformed,static_cast<float>(facing)*(static_cast<float>(drawFrame->originX)+(pivotX)),static_cast<float>(drawFrame->originY)-(pivotY),reinterpret_cast<DWORD&>(pivotZ),reinterpret_cast<DWORD&>(scaleX),reinterpret_cast<DWORD&>(scaleY),reinterpret_cast<DWORD&>(scaleZ));
-        ROTATE_FLOAT(transformed,static_cast<float>(facing)*(static_cast<float>(drawFrame->originX)+(pivotX)),static_cast<float>(drawFrame->originY)-(pivotY),reinterpret_cast<DWORD&>(pivotZ),reinterpret_cast<DWORD&>(rotationX),reinterpret_cast<DWORD&>(rotationY),
+        TRANSFORM(transformed)->ScaleQuad(static_cast<float>(facing)*(static_cast<float>(drawFrame->originX)+(pivotX)),static_cast<float>(drawFrame->originY)-(pivotY),pivotZ,scaleX,scaleY,scaleZ);
+        TRANSFORM(transformed)->RotateQuad(static_cast<float>(facing)*(static_cast<float>(drawFrame->originX)+(pivotX)),static_cast<float>(drawFrame->originY)-(pivotY),pivotZ,rotationX,rotationY,
                static_cast<float>(facing)*(rotationZ));
     }
     TRANSFORM(transformed)->TranslateQuad(x-(facing)*(drawFrame->originX),
@@ -114,10 +96,5 @@ void ActorRenderingBase::RenderMirroredNode()
 #undef xShift
 #undef composed
 #undef transformed
-#undef ROTATE
-#undef SCALE_RAWZ
-#undef SCALE
-#undef SCALE_FLOAT
-#undef ROTATE_FLOAT
 #undef DRAWER
 #undef TRANSFORM

@@ -3,7 +3,6 @@
 #include "Actor.hpp"
 #include <deque>
 #include "FighterOutcomeByteF992.hpp"
-#include "FighterEffectPolicies.hpp"
 #include "ScriptResource4205F0.hpp"
 #include "CameraResetF481.hpp"
 #include "InputMapping4388D0.hpp"
@@ -136,10 +135,15 @@ public:
         };
         TransformRecordF136 effectTransformRecord;
     };
-    float field314;                     // +0x314
-    float field318;                     // +0x318
-    float field31C;                     // +0x31C
-    float field320;                     // +0x320
+    union {
+        struct {
+            float field314;
+            float field318;
+            float field31C;
+            float field320;
+        };
+        float effectParameters[4];     // +0x314
+    };
     short health;                       // +0x324 F999 and F1112 both read these as life
     short recoverableHealth;            // +0x326
     short field328;                     // +0x328

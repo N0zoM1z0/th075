@@ -383,6 +383,13 @@ initialization and teardown stubs and the sequence deleting destructor
 match. The typed catalog loader needs its per-unit profile to omit
 `/GS` to match the original exception frame. VC7.1 interprets `/GS-`
 as `/GS` followed by the unrecognized `/G-` option.
+The two spawn paths allocate a 148-byte `CharacterAuxObject` with a
+116-byte shared rendering base. The effect stores its pattern vector
+pointer at `+0x7C`, spawn parameters at `+0x80` and owner at `+0x90`.
+The update and release loops use scalar `delete` for objects with
+trivial destructors. VC7.1 emits a pointer temporary for the delete expression,
+which places the deque's end iterator and deletion temporary at the
+native stack offsets.
 The four shared D3D interface pointers are defined in the graphics
 teardown translation unit. The archive consumer for the atlas and effect
 lifetimes links with that cleanup and runs headless.

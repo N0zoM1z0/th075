@@ -105,12 +105,8 @@ struct FighterSequenceInfo {
     short priority;           // +0x12
 };
 
-// Common head of every animated battle object: fighters, their projectiles
-// and effect objects use 0x00-0xC3 with the same field widths and share
-// vtable slots 0-4 (the vtable pointer is at +0). Derived classes add their
-// own members from 0xC4. unknownNNN regions are unobserved;
-// fieldNNN members are observed but not yet understood. The full object size
-// is unknown, so these classes are only reached through the game's pointers.
+// The rendering and animation fields shared by fighters, projectiles and
+// auxiliary effects. The concrete classes own their state after offset 0x74.
 class ActorRenderingBase {
 public:
     ActorRenderingBase();                                                        // 00458670
@@ -125,7 +121,7 @@ public:
     virtual void RenderMirroredNode();    // slot 4, 00410A00
 
     void* drawing;                      // +0x004 sprite drawing context, shared with the owner's objects
-    FighterFrameInfo* drawFrame;        // +0x008 frame record the node renderers draw
+    FighterFrameInfoHeader* drawFrame;        // +0x008 frame record the node renderers draw
     unsigned char unknown00C[0x010 - 0x00C];
     // The transform packet at +0x10 is also copied as a 36-byte record
     // when a fighter spawns a linked effect. Keep the individual Actor
@@ -175,9 +171,24 @@ public:
         short field072;                 // +0x072 native frame-count word
         short animationFrameCount;     // semantic alias
     };
-    // +0x074..0x07B is the animation binding that slot 0 maintains: fighters
-    // and character objects keep two record pointers here, auxiliary
-    // effects (CharacterAuxObject) keep four counters.
+    // Helpers shared by every actor (src/Actor.cpp).
+    short AdvanceNestedFrame();                                     // 0040FA30
+    void ResetPrimaryCounters(short state);                         // 0040FAC0
+    void SetThreeCounters(short action, short stage, short frame);  // 0040FB00
+    void ResetSecondaryCounter(short stage);                        // 0040FB40
+    void SetPolarVelocity(float angle, float speed);                // 0040FB70
+    void ResetTransform(float pivotX, float pivotY, float pivotZ);  // 0040FBB0
+    void ClearTransformFlag();                                      // 0040FC50
+};
+
+class Actor : public ActorRenderingBase {
+public:
+    Actor();                                                        // 00458650
+
+    int RecordedRange(int lower, int upper);                         // 00455580: recorded/native random sample
+    void SaveCollisionFields();                                     // 00455500 snapshot for the hit tests
+
+    // The frame and sequence bindings used by fighters and their projectiles.
     union {
         struct {
             FighterFrameInfo* frameInfo;        // +0x074 current animation frame record
@@ -191,15 +202,8 @@ public:
         };
     };
     int field07C;                       // +0x07C
-    // Ordinary actors use the two signed hit-stop words. Character auxiliary
-    // angle actions overlay the same four bytes with one float value.
-    union {
-        struct {
-            short field080;             // +0x080
-            short field082;             // +0x082 nonzero: skip this frame and count down
-        };
-        float field080Angle;            // +0x080 CharacterAuxObject angle state
-    };
+    short field080;                     // +0x080
+    short field082;                     // +0x082 nonzero: skip this frame and count down
     short field084;                     // +0x084
     short field086;                     // +0x086
     short field088;                     // +0x088
@@ -224,23 +228,8 @@ public:
     unsigned char unknown0C1[0x0C4 - 0x0C1];
 };
 
-class Actor : public ActorRenderingBase {
-public:
-    Actor();                                                        // 00458650
-
-    // Helpers shared by every actor (src/Actor.cpp).
-    short AdvanceNestedFrame();                                     // 0040FA30
-    void ResetPrimaryCounters(short state);                         // 0040FAC0
-    void SetThreeCounters(short action, short stage, short frame);  // 0040FB00
-    void ResetSecondaryCounter(short stage);                        // 0040FB40
-    void SetPolarVelocity(float angle, float speed);                // 0040FB70
-    void ResetTransform(float pivotX, float pivotY, float pivotZ);  // 0040FBB0
-    void ClearTransformFlag();                                      // 0040FC50
-    int RecordedRange(int lower, int upper);                         // 00455580: recorded/native random sample
-    void SaveCollisionFields();                                     // 00455500 snapshot for the hit tests
-};
-
 typedef char ActorLayoutCheck[(
+    sizeof(ActorRenderingBase) == 0x074 &&
     offsetof(Actor, x) == 0x044 &&
     offsetof(Actor, transformRecord) == 0x010 &&
     offsetof(Actor, action) == 0x060 &&

@@ -1,6 +1,5 @@
 #include "BackgroundStages.hpp"
 #include "BattleHud43E040.hpp"
-#include "FighterEffectPolicies.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <math.h>

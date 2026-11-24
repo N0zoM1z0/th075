@@ -16,10 +16,13 @@ public:
     ~CombatEffects();
     void ReleaseEntries();
     void DispatchSelectedList(signed char side);
+    void AdvanceAndPrune();
     void LoadResources();
     void LoadPatternCatalog();
     void Spawn(short effect, float x, float y, unsigned char kind,
                signed char side, unsigned char flags, unsigned char mode);
+    void SpawnConfigured(short effect, float x, float y, signed char facing, signed char side,
+                         unsigned char flags, unsigned char mode, const float* parameters);
 
     std::deque<void*> sides[2];
     TextureManagerF198 texture;

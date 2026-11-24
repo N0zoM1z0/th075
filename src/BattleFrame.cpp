@@ -5,6 +5,7 @@
 #include "Graphics.hpp"
 #include "BattleFrame.hpp"
 #include "EffectManagerLifetimeF161.hpp"
+#include "CombatEffects.hpp"
 unsigned short BattleScene::Update()
 {
     PollPauseShortcut();
@@ -39,7 +40,7 @@ unsigned short BattleScene::Update()
             UpdatePlayerCounters();
             fighters[0]->AdvanceAuxiliary();
             fighters[1]->AdvanceAuxiliary();
-            reinterpret_cast<FrameAuxEffects *>(&g_CombatEffects)->AdvanceAndPrune();
+            g_CombatEffects.AdvanceAndPrune();
             g_CurrentBattleStageAt00671424->Advance();
         } else {
             --field01A;
