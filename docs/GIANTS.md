@@ -7,9 +7,10 @@ Cold-replay an affected unit with
 `scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
 
 [The frontier manifest](../config/frontiers.toml) has no open parents.
-The notes below record earlier comparisons, including instruction widths,
-register allocation and shared-tail placement, as well as the complete
-replays that closed these methods.
+The notes below and some included `probes/*.inc` fragments retain results
+from earlier partial comparisons, including instruction widths, register
+allocation and shared-tail placement. The complete replays recorded here
+closed those comparisons.
 
 ## Shared layout checkpoints
 
@@ -82,10 +83,9 @@ NativeBackgroundBaseF479 layout as their destructor views. Each has a real
 SpriteQuad40CA80 member at +0x6C and the preceding +0x68 word; the base
 TextureManager at +0x18 and the three stage words at +0x0C..+0x14 are direct
 members. TextureManagerF198 now owns its unformatted-slot allocation,
-archive load/default and blend methods instead of three independent
-call-only receiver aliases. The three BG02 constructors and the three
-TextureManager helpers replay exact (6/6); the remaining stage constructors
-still need their individual derived layouts recovered.
+archive load/default and blend methods. The three BG02 constructors and
+the three TextureManager helpers have complete exact units. The manifest
+also lists the other accepted `background-stage-load-*` units.
 
 The BG02a/BG02b/BG02c 60-byte blend methods now access the original
 embedded TextureManager member directly. BackgroundStage's native base
@@ -94,9 +94,9 @@ the three stage-specific words at +0x0C..+0x14, and the 80-byte
 TextureManager at +0x18. The constructor at 00449DE0 and destructor at
 00449D40 independently establish the same embedded object lifetime; the
 80-byte TextureManager layout is also asserted by its own constructor and
-destructor views. The three blend bodies and the 65-byte SetBlendMode leaf
-remain structurally exact. Unknown camera-state words and historical class
-spelling remain provisional; this does not claim a complete stage owner.
+destructor views. All three blend bodies and the 65-byte `SetBlendMode`
+leaf have complete exact units. Some camera-state words and class names
+remain provisional.
 
 The 162-byte BattlePointerQueues::ReleaseEntries leaf now exposes its two
 side lists as named adjacent NativePointerListF337 members instead of

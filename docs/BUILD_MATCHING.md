@@ -13,8 +13,7 @@ MCP `run_command` requests. It runs the ignored `.tools/python` environment in
 isolated mode, checks Python 3.12, and verifies Capstone 5.0.6's Python binding,
 x86 binding/constants, and native library against four SHA-256 pins. It never
 falls back to conda, a system decoder, PYTHONPATH, or user site-packages.
-The installed patch version is currently 3.12.3; the supported interpreter
-contract is the 3.12 series. Decoder bytes are pinned independently.
+The Python 3.12 patch version can vary. Decoder bytes are pinned independently.
 
 ```bash
 scripts/bootstrap-python.sh
@@ -51,22 +50,13 @@ canonical byte comparator itself uses Python's standard library and PE bytes.
 | Temurin JDK | 21.0.12.1+1 | Headless Ghidra runtime |
 | Bash + Ghidra bridge | Commit `60e18377b558fb62451230a393cd6a37f947a3f9` | Independent TH075 checkout/build |
 
-On this machine, the native tool installations are shared read-only symlinks
-to TH095. Recreate those links and the independent bridge with:
-
-```bash
-scripts/bootstrap-tools.sh /path/to/th095
-```
-
-That helper requires an already installed TH095 tool tree. It does not install
-or modify a shared compiler. The C/C++ frontends, optimizer, and PDB backend are also hash-pinned and
-checked before compilation. Their installed files were compared with the
-locked compiler repository commit. The compiler repository revision and tool archive
-URLs/hashes are recorded in `config/tools.lock.toml`; downloaded binaries are
-private operator inputs. Install Wine, winepath, Git, curl, Node/npm, and flock
-before native work. The current bridge uses Node 22.19.0. The current exact
-workflow does not require objdiff or reccmp executables; their reference pins
-are retained as optional diagnostics.
+Use [the shared Factory runtime](SHARED_TOOLS.md) for Ghidra, JDK, Wine and
+winepath. The matching and program builds select the read-only VC7.1
+installation through `.tools/msvc710` or `TH075_MSVC71_ROOT`. They check
+the compiler, C/C++ frontends, optimizer and PDB backend against
+`config/tools.lock.toml`. That file also records the compiler repository
+revision and tool archive identities. The MCP bridge is a separate checkout
+for TH075. The objdiff and reccmp pins are available for optional diagnostics.
 
 TH105 is a useful engine reference, but its VC8/LTCG and D3D9 configuration is
 not the TH075 compiler profile. TH075's accepted functions reproduce with VC7.1
@@ -77,13 +67,15 @@ and the per-unit profiles recorded in `config/match-units.toml`.
 ```bash
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/build.py --check
-scripts/repo-python scripts/replay-exact-units.py
+scripts/repo-python scripts/replay-exact-units.py --unit text-overlay-set-raster-parameters-004135f0
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 ```
 
-Replay clears each object's previous output and compiles each shared source
-object once, serially, with its explicit unit profile. `compile-probe.sh` also
+Select the new or affected units. For several affected translation units,
+pass `--batch` with repeated `--unit` flags to group compilations by profile.
+Replay cold-compiles each shared source object once, serially, with its
+explicit unit profile. `compile-probe.sh` also
 holds a compiler lock across Wine invocation/path conversion, so CLI and
 public Bash compilations cannot launch VC7 concurrently. Keep the entire
 reconstruction session single-writer; this compiler lock does not authorize
@@ -112,7 +104,7 @@ Public invocation uses the same entry point:
 
 ```bash
 scripts/repo-python scripts/public-mcp-client.py <<'JSON'
-{"name":"run_command","arguments":{"command":"scripts/repo-python scripts/replay-exact-units.py","timeout_ms":120000}}
+{"name":"run_command","arguments":{"command":"scripts/repo-python scripts/replay-exact-units.py --unit text-overlay-set-raster-parameters-004135f0","timeout_ms":120000}}
 JSON
 ```
 

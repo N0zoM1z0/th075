@@ -84,6 +84,7 @@ def load() -> tuple[list[dict[str, object]], dict[str, object]]:
     authored_upper_bound = authored_bytes + pending_bytes
     summary.update({
         "reviewed": summary["authored"] + summary["excluded"],
+        "exact_authored_functions": sum(row["category"] == "authored" and row["exact"] for row in result),
         "authored_bytes": authored_bytes,
         "exact_authored_bytes": exact_authored_bytes,
         "authored_exact_percent": 100.0 * exact_authored_bytes / authored_bytes if authored_bytes else None,

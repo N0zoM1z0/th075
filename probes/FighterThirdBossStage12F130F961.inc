@@ -1,9 +1,4 @@
-// F961 real original Japanese 004AC040 stages 12F/130.
- // 12F: 004B12F1..004B13C0, 207 CODE B /59 x86 /6 original PE fields.
- // 130: 004B13C0..004B14C9, 265 CODE B /81 x86 /6 original PE fields.
- // Both are native GPR/mnemonic/width-complete INTERNAL cases,
- // not separate whole game functions; parent 82KB remains NONEXACT.
-// Genuine original 004AC040 12F: native 207B/59x86.
+// Sakuya actions 0x12F and 0x130 start at 0x004B12F1 and 0x004B13C0.
 case 0x12F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)

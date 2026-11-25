@@ -1,6 +1,4 @@
-// F872 original game 0x1FA, whole 227B/65-x86, original physical fields.
-// Stage2 motion3 float X facing*original mult, Y original global, owner+0x82.
-// Complete father NONEXACT, no independent case exact CODE.
+// Youmu action 0x1FA uses a facing-relative X offset for the stage 2 volley.
 case 0x1FA: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();

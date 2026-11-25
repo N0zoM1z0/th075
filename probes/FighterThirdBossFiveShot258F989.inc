@@ -1,12 +1,5 @@
-// F989 SHA-pinned Japanese original TH075 004AC040 action258:
- // physical 004B7BB0..004B7EF2, 834B/212 native x86, 15 real
- // original typed PE/COFF external fields. Five genuine separate
- // 0x325 shots with F02*3+100/95/90/85/80 and signed facing*97,
- // true Y global00659498, followed by animation0x64 and real
- // signed-short counters. Full-partial father source mnemonics and
- // instruction widths align, but 137 GPR roles still wrong.
- // Original 82KB whole game father remains NONEXACT.
-// F989 original Japanese TH075 fighter 004AC040 action258
+// Sakuya action 0x258 at 0x004B7BB0 fires five 0x325 shots with script-relative
+// angles, then sets the gauge timer to 100.
 case 0x258: {
     if ((animationStage)==0 && (animationFrame)==0) {
         collisionResult=1;

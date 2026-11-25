@@ -1,11 +1,5 @@
-// F997 original Japanese 004AC040 fighter state 25D:
- // 2799B/749 native x86, 78 actual original PE external fields.
- // All original mnemonic and instruction widths align; 477
- // original 25D GPR operand roles still wrong in partial father.
- // Crucial real preceding 36-shot source restores ALL FOUR later
- // 25F/260/261/262 native GPR phases (73/73/65/65 -> 0 each).
- // Original full 82KB GAME callable remains NONEXACT.
-// F997 real original Japanese 004AC040 state25D full 360-degree 36 shots
+// Sakuya action 0x25D emits a 36-shot ring. This case also affects register
+// allocation in actions 0x25F–0x262 under VC7.1.
 case 0x25D: {
     if ((animationStage)==0 && (animationFrame)==0) {
         collisionResult=1;

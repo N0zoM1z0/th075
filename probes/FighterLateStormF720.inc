@@ -1,12 +1,5 @@
-// F720: original native 00543210 action 0x2DF: 602B/169 x86.
-// Natural C++ source of a genuinely distinct original native action.
-// The original 2DF X clamp uses strict `<`, restoring real TEST AH,5
-// and JP rather than older nonnative TEST AH,0x41.
-// Whole original giant remains NONEXACT.
-// F714: original physical native 00543210 action 2DC, complete 602B/169-x86.
-// Real bounded handler: startup, floor motion, two native 0x333/0x387
-// float projectiles, difficulty gate, terminal counter and state 4.
-// Source-backed nonexact giant; never accept this as a whole game function.
+// Remilia action 0x2DF clamps horizontal velocity after it drops below zero.
+// VC7.1 emits TEST AH,5 and JP for that comparison.
         case 0x2DF: {
             SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0 && (scriptCounterF00)==0) {

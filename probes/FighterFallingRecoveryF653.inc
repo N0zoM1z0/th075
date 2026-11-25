@@ -1,6 +1,5 @@
-// Original fighter 00543210 falling-recovery handlers 0x12C..0x12E.
-// This is one native switch case in the still-NONEXACT whole Advance().
-// The F653_* parameters reflect the three distinct original action states.
+// Shared falling recovery for actions 0x12C–0x12E. The F653_* parameters
+// select each action's sound cue and transition.
 case F653_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();

@@ -18,6 +18,8 @@ coverage exceeds the 98% authored-byte goal. Every function currently
 classified as independently authored has an accepted exact comparison,
 including the fighter and object `Advance` methods and the stage base
 constructor. The conservative coverage includes all pending-origin bytes.
+The progress card reads the same ledgers. Regenerate it with
+`scripts/repo-python scripts/update-progress.py`.
 
 ## Where to start
 

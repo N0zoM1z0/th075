@@ -1,5 +1,4 @@
-// F1052: native 0050B654..0050B821, action 0x325, 461 real CODE B /100 x86.
-// This is a case of the ONE original 81KB CharacterObject, still nonexact.
+// Patchouli object action 0x325 at 0x0050B654–0x0050B821 (461 bytes).
 case 0x325: {
     if (owner->action>49 &&
         owner->action<150 &&

@@ -1287,48 +1287,29 @@ and fresh 1/1 77-byte cold exact source compilation. The historical R183
 unknown-provenance row in the R263 matrix remains as original negative
 source evidence, not as a current pending classification. Original source
 owner/type naming and possible vendored origin remain *provisional*.
-F595 independently compiled one of the original pending leaves,
-`004135F0`, into **40/40 byte-for-byte identical ordinary VC7.1
-C++** with complete 16-instruction/RET12 shape and 0 COFF fields.
-However, none of the 4,351 registered native functions calls it
-directly, and its absolute address never appears as a literal
-DWORD in the pinned PE file, so this is **source-shape proof,
-NOT authored-origin proof**. It stays unknown and uncredited.
-F595 also independently counted 36 original exact BackgroundStage
-loader calls of R108 origin-unknown constructor `00449DE0`, its
-pure-virtual vtable, and six mixed game/STL callers of
-`004588B0`; those remain unknown. See
-[small leaf/call graph F595](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
+F595 reproduced all 40 bytes of the setter at `004135F0` with VC7.1.
+The initial call graph supplied no direct caller or literal pointer.
+R287 later identified the receiver and fields through the text renderer.
+F595 also recorded the original callers and vtable for the constructor
+at `00449DE0`, which R305 resolved, and callers of the destructor at
+`004588B0`, which R274 resolved.
+[F595 observations and current replay](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md)
 
-The pending set reached **90 functions /3,315 bytes** at a later checkpoint.
-Use `config/function-origins.csv` for the authoritative current
-classification and `docs/RE_HANDOFF.md` for the active tasks.
-F595–F691 ordinary VC7.1 source research now matches **85 distinct
-complete original unknown-origin functions /1,949 machine CODE B**,
+The pending set reached 90 functions and 3,315 bytes at a later checkpoint.
+The F595–F691 VC7.1 source controls matched 85 complete functions
+and 1,949 code bytes whose origins were still unresolved at that point,
 including F686's 19-byte destructor, F687's 58/64-byte COM owners and
-F691's substantial **249-byte COM manager cleanup**. All 85 remain
-historically **source-UNKNOWN**, no game-authored exact credit:
+F691's 249-byte COM manager cleanup.
 [F691 whole native proof](SDK_NATIVE_COM_MANAGER_CLEANUP_F691.md),
 [F687 complete COM destructor source](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
-Do not interpret `00455770` or `0041CA30` rows in the *historical*
-R263 table as still pending. A byte-perfect compiler product alone
-never resolves authored-vs-library provenance.
 
-**Historical R263 table only:** the following 97 rows / 3,608 bytes
-record what was unresolved **at the time of R263**, not today's live
-90-row/3,315-byte queue. Some old rows have since been resolved by
-F536 and F555; `004135F0` is byte-reproduced by F595 but still has
-unknown provenance. Treat each row's evidence and needed witness as a
-historical research lead; use live `config/function-origins.csv` for
-present classification. This matrix does **not** mark the
-complete-origin milestone achieved.
+The 97 rows below cover 3,608 bytes that were unresolved at R263.
+At that checkpoint, the exact baseline was 60 functions and 9,883 bytes.
+Use the [origin ledger](../config/function-origins.csv) for current
+classifications and the [handoff](RE_HANDOFF.md) for active work.
 
 The target remains the supplied Japanese `th075.exe`, self-reporting version
 1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-**At the older R263 checkpoint**, the exact baseline was 60 functions
-/9,883 bytes /60 units across eleven objects; the *current* accepted whole register is **986 exact
-functions /871,717 CODE bytes** (live snapshot 2026-11-19). No new source, mapping or exact ledger credit is awarded by
-this archived provenance matrix.
 
 The original R251 audit covered all116 whole target bodies,114 RET-based
 CFGs and both complete11-/5-byte native tail cases. R253 classifies two19-byte
