@@ -1,6 +1,5 @@
-// F1051: native original 0050A80F..0050AC27 (1048B/229 x86), ONE case
-// inside the nonexact 81KB original CharacterObject::Advance.
-// Parent +0xE4, target grandparent +0x2E8 are borrowed, not embedded owners.
+// F1051: the case at 0x0050A80F waits for the fighter's 0x2BC stage 9
+// and changes to 0x322 on landing.
 case 0x321: {
     if (owner->action != 0x2BC) {
         ClearFrameInfo();

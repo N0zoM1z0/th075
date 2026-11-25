@@ -1,3 +1,4 @@
+#include "battle/FighterFrameFlags.hpp"
 #include "engine/FloatConstants.hpp"
 #include "engine/GameSharedState.hpp"
 #include "graphics/TextOverlay.hpp"
@@ -38,7 +39,7 @@ bool Fighter::IsGroundedStateWindow()
     return y > FloatConstants::Zero
         && flashGauge == 0
         && IsState50To149()
-        && (frameInfo->flags & 0x100000) == 0;
+        && (frameInfo->flags & FrameFlags::DisablesAirRecovery) == 0;
 }
 
 void Fighter::ConfigureNoticeText(u8 enabled)

@@ -22,12 +22,12 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     } else {
         if (attack->savedFrameInfo->groundHitAction)
             defender->ResetPrimaryCounters(attack->savedFrameInfo->groundHitAction);
-        else if (defender->savedFrameInfo->flags & 1) {
-            if (attack->savedFrameInfo->attackFlags & 1)
+        else if (defender->savedFrameInfo->flags & FrameFlags::StandingHitReaction) {
+            if (attack->savedFrameInfo->attackFlags & AttackFlags::AlternateStandingHitReaction)
                 defender->ResetPrimaryCounters(attack->savedFrameInfo->reactionVariant + 56);
             else
                 defender->ResetPrimaryCounters(attack->savedFrameInfo->reactionVariant + 50);
-        } else if (defender->savedFrameInfo->flags & 2)
+        } else if (defender->savedFrameInfo->flags & FrameFlags::CrouchingHitReaction)
             defender->ResetPrimaryCounters(attack->savedFrameInfo->reactionVariant + 62);
     }
     --attack->remainingHits;

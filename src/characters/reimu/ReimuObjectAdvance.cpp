@@ -1021,7 +1021,7 @@ void ReimuObject::Advance()
         }
         break;
 
-    // 0x332 drains the owner spirit gauge after stage 0x13.
+    // Fighter action 0x2C1 spawns 0x332. Both removal paths below clear its recast gate.
     case 818:
         static_cast<ReimuFighter*>(owner)->spiritDrainObjectActive = 1;
         if (owner->action == 0x2C1 && animationStage < 0x13) {

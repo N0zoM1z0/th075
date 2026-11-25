@@ -995,19 +995,40 @@ counter update at inherited +0xF0C, where other fighters store different
 values. That shared offset keeps its provisional name.
 [Meiling auxiliary update](../src/characters/meiling/CharacterAux5E5500.cpp) · [Meiling object reader](../src/characters/meiling/MeilingObjectAdvanceF1207.cpp) · [Remilia auxiliary update](../src/characters/remilia/CharacterAux00555530F363.cpp)
 
+| Fighter | `longRangeFrames` offset |
+| --- | --- |
+| Alice | +0xF14 |
+| Marisa | +0xF32 |
+| Meiling | +0xF2A |
+| Patchouli | +0xF12 |
+| Reimu | +0xF2A |
+| Sakuya | +0xF16 |
+| Suika | +0xF26 |
+| Youmu | +0xF14 |
+| Yukari | +0xF32 |
+| Yuyuko | +0xF10 |
+
 | Fighter | Extension fields and evidence |
 | --- | --- |
 | Alice | Objects 0x346 and 0x349 update the orbit angle and phase read by 0x345, 0x347 and 0x348. Dispatch checks for a zero phase before starting the related card. |
 | Marisa | Objects 0x33C–0x341 publish six X/Y pairs for 0x349. The chain producer separately sets the visible flag, origin, facing and scale read by the renderer. |
 | Patchouli | 0x1F4 and 0x1F5 seed a pull toward the fighter. The auxiliary update reduces the pull strength by two each tick. |
 | Reimu | Object 0x332 sets and clears the active flag that gates action 0x2C1. |
-| Suika | A timed drain ticks on the opponent. A separate mode drains the fighter's own spirit and can end on spirit depletion, knockout or spell expiration. |
+| Suika | A timed drain ticks on the opponent. A separate mode drains the fighter's own spirit and can end on depletion, knockout or spell expiration. |
 | Yukari | 0x32F sets the active flag that gates the related cast. 0x398 publishes the center and firing phase read by 0x396, which uses the angle and radius to place its child effects. |
 
-The other examined fields still include reset-only words and slots
-repurposed across actions or stage phases. Suika's +0xF28, for example,
-acts as both an elapsed count and a stage substate in `AdvanceSequence`.
-[Per-fighter source index](GIANTS.md#complete-research-parents) · [Chain renderer](../src/characters/marisa/MarisaProjectileChainRenderF440.cpp)
+In Suika's 0x306, the fighter drives the spell anchor from animation
+stages 6–16. Object 0x390 takes over the anchor on launch and object
+0x38F approaches and follows it. Yukari's objects 0x328 and 0x329 bank
+preserved-hit clashes up to ten. Object 0x341, 0x342 or 0x344 consumes
+the count to size a later volley.
+
+Meiling's reset zeros +0xF22, +0xF24, +0xF26 and +0xF28. The only
+other direct access found in Meiling's native functions clears +0xF26
+at 0x005E1A30. Suika's +0xF20 likewise has a round-reset store and no
+confirmed reader. Suika's +0xF28 in `AdvanceSequence` counts time in
+phase 0 and selects fade-in, layer switch or fade-out in phase 93.
+[Meiling reset](../src/characters/meiling/MeilingResetF314.cpp) · [Suika reset](../src/characters/suika/SuikaResetRoundF315.cpp) · [Suika sequence](../src/characters/suika/CharacterSequence5D4890.cpp) · [Suika spell objects](../src/characters/suika/SuikaObjectAdvanceF1216.cpp) · [Yukari object state](../src/characters/yukari/YukariObjectAdvanceF1231.cpp) · [Chain renderer](../src/characters/marisa/MarisaProjectileChainRenderF440.cpp)
 
 ### Shared auxiliary effects
 
@@ -1027,6 +1048,47 @@ angle. +0x78 stores the randomized initial scale percentage used by
 recovered access uses +0x7A. The angle passed to 0x3F/0x41 occupies the
 first float in the spawn parameter block.
 [Auxiliary action switch](../src/characters/CharacterAuxAction.cpp)
+
+### Selected action lifecycles
+
+- Marisa's fighter action 0x190 spawns object 0x320 at stage 5. The
+  object follows the fighter early, enters its fade at stage 20 when
+  the owner enters a hit reaction, and clears its frame when alpha
+  runs out. While the fighter is still in the firing window, stage 20
+  can return to stage 12.
+  [Fighter](../src/characters/marisa/MarisaFighterAdvance.cpp) · [Object](../src/characters/marisa/MarisaObjectAdvance.cpp)
+- Marisa's 0x2C1 and 0x2C2 spawn orbit controllers 0x342 and 0x343.
+  They seed four or six nodes and set the 420-frame lifetime. Nodes
+  0x33C–0x341 publish their positions for 0x349, which uses its first
+  spawn parameter as the node index. A controller moves to its
+  dismissal stage when the node count or lifetime is exhausted, then
+  clears the stored phase and node count on completion.
+  [Fighter](../src/characters/marisa/MarisaFighterAdvance.cpp) · [Object](../src/characters/marisa/MarisaObjectAdvance.cpp) · [Node updates](../src/battle/ActorAuxiliary.cpp)
+- Reimu's 0x2C1 creates 0x332 at stage 7. The object follows its owner
+  during startup, then drains the owner's spirit after stage 0x13.
+  Depleted spirit starts the fade and disables remaining hits. The
+  fade and horizontal bounds exits both clear the recast gate.
+  [Fighter action binding](../probes/ReimuMeterAttacksF1190.inc) · [Object](../src/characters/reimu/ReimuObjectAdvance.cpp) · [Recast gate](../src/characters/reimu/ReimuActionDispatch.cpp)
+- Patchouli's 0x190 produces four 0x33B shots with different initial
+  headings. Each spawns the 0x33C trail while steering and transitions
+  to stage 2 on impact or when a clash uses its last hit. Bounds, a
+  preserved-hit clash, an early owner hit, and animation completion
+  can remove it. In 0x2BC the
+  linked 0x321 object instead waits for the owner's stage 9 to launch.
+  Landing changes it to action 0x322 and spawns its impact effects.
+  It clears early if the owner leaves 0x2BC during 0x321.
+  [Fighter](../src/characters/patchouli/PatchouliFighterAdvance.cpp) · [Homing shot](../probes/CharacterObjectBossLongF1057.inc) · [Spell object](../probes/CharacterObjectBoss321F1051.inc)
+- Alice's 0x2BD spawns six 0x345 orbiters and the 0x346 controller.
+  Action 0x2C0 spawns six each of 0x347 and 0x348 with controller
+  0x349. Each controller publishes angle and center and advances
+  the orbit phase, which tells the orbiters when to leave their
+  orbit. The controller clears the phase when its animation ends.
+  [Fighter](../src/characters/alice/AliceFighterAdvance.cpp) · [Objects](../src/characters/alice/CharacterObjectActionsF572.cpp)
+- A spell startup can spawn the shared 0x73 or 0x74 auxiliary effect.
+  0x73 emits 25 instances of 0x7A and one each of 0x8D–0x91 on its
+  first frame. Each child binds its own pattern. A finished
+  animation clears the draw-frame pointer for the owner to prune.
+  [Auxiliary switch](../src/characters/CharacterAuxAction.cpp) · [Pruning](../src/battle/AuxEffectPruneF354.cpp)
 
 ### Shared motion and conditional hits
 
@@ -1061,30 +1123,46 @@ actor is defending. The second travels with the attack into the
 collision and guard handlers.
 [Frame loader](../src/battle/FighterPattern457660.cpp) · [Flag values](../src/battle/FighterFrameFlags.hpp)
 
+After the eligibility and hitbox checks, dispatch tries the paired
+special contact, conditional hit and posture contact in that order.
+It then tries graze on attacks with 0x400000 set, followed by guard
+input, ground stagger and the default hit. Each successful handler
+ends dispatch for that contact.
+
 | Word and mask | Observed behavior |
 | --- | --- |
+| Frame 0x01, 0x02 | Without an explicit ground reaction, `ApplyHit` chooses the standing group at 0x32 or the crouching group at 0x3E, plus the reaction variant. In all 11 update patterns, idle 0x00 has 0x01 and crouch 0x01 has 0x02. Airborne reaction takes precedence. |
 | Frame 0x04, 0x10, 0x20 | Treat the defender as airborne for hit and guard reactions, allow guard input, and permit action cancels subject to the usual priority and input checks, respectively. |
 | Frame 0x40 / attack 0x400 | The pair gives the counter-hit reaction and 1.25× damage. |
 | Frame 0x80, 0x100 / attack 0x20 | The first frame bit selects the conditional hit path. The second selects it while the defender has conditional hits remaining. The attack bit bypasses both. |
 | Frame 0x800, 0x1000 / attack 0x80 | The attack bit performs the throw-invulnerability checks. Both frame bits reject that contact, and 0x1000 also refreshes the six-frame timer. |
 | Frame 0x2000 / attack 0x400000 | The frame bit blocks hitbox resolution. The attack bit bypasses both this flag and the hit-invulnerability timer, and enables the graze check. |
 | Frame 0x4000 / attack 0x40000 | The frame bit makes a defender eligible for graze even with a zero graze timer. The attack bit bypasses graze. |
+| Attack 0x01 | Substitutes the standing reaction group at 0x38. It can coexist with either guard-height bit. Reimu 0x188 and Alice 0x188 carry it on multiple frames. |
 | Attack 0x02, 0x04, 0x08, 0x10 | Match standing, crouching and air guard, or suppress guard selection. |
 | Attack 0x100 | Use fixed hitstun values of 15,000 on a regular hit and 30,000 on a conditional hit. |
 | Attack 0x80000, 0x200000 | Empty spirit on wrong standing or crouching guard. The second bit permits guard response 41 when spirit is already depleted. |
+| Attack 0x100000 | `ApplyAttackHit` selects ground stagger 0x8C when the defender is at or below ground level and the counter-hit pair is absent. Patchouli 0x351 and Meiling 0x343 carry the bit. |
+| Frame 0x100000 | Skips air recovery input and its countdown, hides the air recovery gauge, and makes the defender ineligible for the recovery window that would suppress hitbox dispatch. Appears on knockdown sequences such as Yukari 0x5D. |
 
-The special-contact attack masks 0x2000, 0x4000 and 0x8000 match frame
-masks 0x8000, 0x10000 and 0x20000, respectively, giving result 3 to both
-actors. The 25,469 frames in the installed update archive's 11 fighter
-patterns carry these frame masks once each. Remilia has 0x8000 on
-action 0x2BC, frame 6. Youmu has 0x10000 and 0x20000 on frame 2 of
-0x1F9 and 0x1FA. Youmu uses result 3 there to freeze the opponent and
-change to 0x1FB or 0x1FC. The attack categories remain provisional.
-The same archive has no frame with mask 0x100 set.
+[Attack dispatch](../src/battle/BattleCollisionDispatch.cpp) · [Hit and conditional hit](../src/battle/BattleCombat.cpp) · [Ground stagger](../src/battle/BattleCombatResponses.cpp) · [Guard selection](../src/battle/FighterHitResponseF164.cpp)
 
-Frame 0x100000 gates movement, damage flashes and another frame
-predicate. Attack 0x100000 selects ground reaction 140 in one branch.
-[Attack dispatch](../src/battle/BattleCollisionDispatch.cpp) · [Contact pairs](../src/battle/BattleActiveCollision.cpp) · [Hit and conditional hit](../src/battle/BattleCombat.cpp) · [Guard selection](../src/battle/FighterHitResponseF164.cpp)
+#### Unresolved frame and attack masks
+
+Distribution observations come from the 10 fighter patterns in the
+installed base archive and 11 in the update archive. The update
+patterns contain 25,469 frames. Frame 0x100 has a recovered consumer
+and no occurrence in the update patterns.
+
+| Word and mask | Condition and effect | Resource evidence or open question |
+| --- | --- | --- |
+| Frame 0x200, 0x400 | `ResolveContact` pairs these with attack 0x02 and 0x04. Either pair sets result 3, spends a hit and calls `ApplyImpact`, which changes the result to blocked and spends a second hit. | Neither bit occurs in either archive's fighter patterns. Which conditions were meant to enable the contact path remains unknown. |
+| Frame 0x8000 / attack 0x2000 | `ResolveSpecialHit` gives both actors result 3 and spends a hit. | Remilia 0x2BC frame 6 carries the frame bit. Patchouli 0x2EF is one attack example. The category's gameplay name is unknown. |
+| Frame 0x10000 / attack 0x4000 | Same dispatch result for the second pair. | Youmu 0x1F9 frame 2 uses result 3 to freeze the opponent and enter 0x1FB. Remilia 0x2C5 carries the attack bit. |
+| Frame 0x20000 / attack 0x8000 | Same dispatch result for the third pair. | Youmu 0x1FA frame 2 uses result 3 to enter 0x1FC. Yukari 0x12F carries the attack bit. |
+| Frame 0x08 / attack 0x40, 0x200, 0x800, 0x1000, 0x10000, 0x20000 | The recovered frame loader and copy carry these values. No recovered combat code tests the individual bits. | Frame 0x08 appears in knockdown sequences such as Yukari 0x5D. Attack 0x200 appears on 0x189 in four characters. |
+
+[Contact pairs](../src/battle/BattleActiveCollision.cpp) · [Impact](../src/battle/BattleCollision.cpp) · [Recovery update](../src/battle/BattleFrame.cpp) · [Recovery gauge](../src/battle/BattleDamageFlash4406C0.cpp) · [Recovery predicate](../src/engine/GamePolicyHelpers.cpp)
 
 ### Combat camera bounds and linked effects
 

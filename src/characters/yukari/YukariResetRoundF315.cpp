@@ -21,7 +21,7 @@ void YukariFighter::ResetRound()
     fieldEFA=0;
     fieldF0A=0;
     longRangeFrames=0;
-    fieldF30=0;
+    storedClashCount=0;
     aiWaitTimer=0;
     aiStep=0;
     aiCardTimer=0;

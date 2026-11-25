@@ -285,8 +285,8 @@ void YukariObject::Advance()
         }
         if (animationStage > 5 && collisionResult == 5) {
             collisionResult = 0;
-            ++static_cast<YukariFighter*>(owner)->fieldF30;
-            if (static_cast<YukariFighter*>(owner)->fieldF30 > 10) static_cast<YukariFighter*>(owner)->fieldF30 = 10;
+            ++static_cast<YukariFighter*>(owner)->storedClashCount;
+            if (static_cast<YukariFighter*>(owner)->storedClashCount > 10) static_cast<YukariFighter*>(owner)->storedClashCount = 10;
         }
         if (remainingHits == 0) {
             if (scaleX > 0.15f) scaleX -= 0.15f;
@@ -318,8 +318,8 @@ void YukariObject::Advance()
         }
         if (animationStage > 5 && collisionResult == 5) {
             collisionResult = 0;
-            ++static_cast<YukariFighter*>(owner)->fieldF30;
-            if (static_cast<YukariFighter*>(owner)->fieldF30 > 10) static_cast<YukariFighter*>(owner)->fieldF30 = 10;
+            ++static_cast<YukariFighter*>(owner)->storedClashCount;
+            if (static_cast<YukariFighter*>(owner)->storedClashCount > 10) static_cast<YukariFighter*>(owner)->storedClashCount = 10;
         }
         if (remainingHits == 0) {
             if (scaleX > 0.15f) scaleX -= 0.15f;
@@ -1267,8 +1267,8 @@ void YukariObject::Advance()
             color[3] = 255;
             remainingHits = 255;
             collisionResult = 0;
-            field0D8 = static_cast<YukariFighter*>(owner)->fieldF30 + 3;
-            static_cast<YukariFighter*>(owner)->fieldF30 = 0;
+            field0D8 = static_cast<YukariFighter*>(owner)->storedClashCount + 3;
+            static_cast<YukariFighter*>(owner)->storedClashCount = 0;
         }
         if (animationStage < 6) {
             scaleX += 0.2f;
@@ -1300,8 +1300,8 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field0D8 = static_cast<YukariFighter*>(owner)->fieldF30 * 2 + 6;
-            static_cast<YukariFighter*>(owner)->fieldF30 = 0;
+            field0D8 = static_cast<YukariFighter*>(owner)->storedClashCount * 2 + 6;
+            static_cast<YukariFighter*>(owner)->storedClashCount = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
         else {
@@ -1388,8 +1388,8 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field0D8 = static_cast<YukariFighter*>(owner)->fieldF30 + 3;
-            static_cast<YukariFighter*>(owner)->fieldF30 = 0;
+            field0D8 = static_cast<YukariFighter*>(owner)->storedClashCount + 3;
+            static_cast<YukariFighter*>(owner)->storedClashCount = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) { ClearFrameInfo(); return; }
         else {

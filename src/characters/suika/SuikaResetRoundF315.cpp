@@ -15,8 +15,8 @@ void SuikaFighter::ResetRound()
     opponentSpiritDrainFrames=0;
     selfSpiritDrainMode=0;
     fieldF20=0;
-    fieldF22=0;
-    fieldF24=0;
+    spellAnchorX=0;
+    spellAnchorY=0;
     aiWaitTimer=0;
     aiStep=0;
     aiCardTimer=0;

@@ -27,26 +27,29 @@ and the conditional-hit count and combo window. The accepted comparisons
 cover all affected units.
 [Shared motion and conditional hits](KNOWLEDGE_BASE.md#shared-motion-and-conditional-hits)
 
-Combat now names the verified frame and attack masks separately.
-The collision notes retain the unresolved special-contact pairs.
-[Flag behavior](KNOWLEDGE_BASE.md#frame-and-attack-flags)
+Combat names the standing, crouching and alternate standing hit
+reactions, the ground stagger attack and the air recovery frame flag.
+The unmapped masks have their collision branches and installed-pattern
+evidence recorded together.
+[Flag behavior](KNOWLEDGE_BASE.md#frame-and-attack-flags) · [Unresolved masks](KNOWLEDGE_BASE.md#unresolved-frame-and-attack-masks)
 
 The object notes show how all eleven characters reuse their shared
-slots. Marisa, Reimu, Patchouli and Alice have action guides in the
-selected large fighter and object methods. The separate shared auxiliary
-switch also has an action guide and a documented spawn and prune cycle.
-Keep the native action order and function extent when extending these guides.
-[Character-object slots](KNOWLEDGE_BASE.md#character-object-storage-by-action) · [Auxiliary effects](KNOWLEDGE_BASE.md#shared-auxiliary-effects)
+slots. The six guided state machines are linked below.
+[Character-object slots](KNOWLEDGE_BASE.md#character-object-storage-by-action) · [Action lifecycles](KNOWLEDGE_BASE.md#selected-action-lifecycles)
 
-The fighter extension review followed each character's own writers and
-readers. The knowledge base records the long-range counters, Marisa's
-tracking nodes and chain, and the spell and object state recovered for
-other fighters. Future work can start with the remaining reset-only
-words and stage-local slots.
+- Marisa [fighter](../src/characters/marisa/MarisaFighterAdvance.cpp) and [object](../src/characters/marisa/MarisaObjectAdvance.cpp)
+- Reimu [object](../src/characters/reimu/ReimuObjectAdvance.cpp)
+- Patchouli [fighter](../src/characters/patchouli/PatchouliFighterAdvance.cpp)
+- Alice [fighter](../src/characters/alice/AliceFighterAdvance.cpp)
+- Shared [auxiliary-object switch](../src/characters/CharacterAuxAction.cpp)
+
+The fighter extension notes give the long-range offsets and record
+Suika's shared spell anchor and Yukari's stored clash count. Several
+Meiling and Suika reset fields still lack a confirmed reader.
 [Fighter extensions](KNOWLEDGE_BASE.md#fighter-extension-fields)
 
 All affected units cold-replayed after the review. The normal Windows
-link matches the executable built at `df766b0f` except for the COFF
+link matches the executable built at `1ad79522` except for the COFF
 timestamp.
 
 ## Windows x86 build

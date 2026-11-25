@@ -1839,21 +1839,21 @@ void SuikaObject::Advance()
                         scaleY = scaleX;
                         rotationZ = RecordedRange(0, 359);
                         field0DC = AngleAt00483300(
-                            static_cast<SuikaFighter*>(owner)->fieldF24 - y,
-                            (static_cast<SuikaFighter*>(owner)->fieldF22 - x) * facing) / GeometryConstants::RadiansPerDegree;
+                            static_cast<SuikaFighter*>(owner)->spellAnchorY - y,
+                            (static_cast<SuikaFighter*>(owner)->spellAnchorX - x) * facing) / GeometryConstants::RadiansPerDegree;
                         SetPolarVelocity(field0DC, 36.0f);
                     }
                     x = facing * velocityX + x;
                     y -= velocityY;
                     if (animationStage < 2) {
                         rotationZ += 5.0f;
-                        if (AbsFloatAt00412D90(x - static_cast<SuikaFighter*>(owner)->fieldF22) < 60.0f &&
-                            AbsFloatAt00412D90(y - static_cast<SuikaFighter*>(owner)->fieldF24) < 60.0f) {
+                        if (AbsFloatAt00412D90(x - static_cast<SuikaFighter*>(owner)->spellAnchorX) < 60.0f &&
+                            AbsFloatAt00412D90(y - static_cast<SuikaFighter*>(owner)->spellAnchorY) < 60.0f) {
                             velocityX = 0.0f;
                             velocityY = 0.0f;
                             owner->PlaySharedSound(4);
-                            field0D8 = x - static_cast<SuikaFighter*>(owner)->fieldF22;
-                            field0DA = y - static_cast<SuikaFighter*>(owner)->fieldF24;
+                            field0D8 = x - static_cast<SuikaFighter*>(owner)->spellAnchorX;
+                            field0DA = y - static_cast<SuikaFighter*>(owner)->spellAnchorY;
                             ResetSecondaryCounter(2);
                         }
                     }
@@ -1906,9 +1906,9 @@ void SuikaObject::Advance()
                             ClearFrameInfo();
                             return;
                         }
-                        x = static_cast<SuikaFighter*>(owner)->fieldF22 + field0D8 * facing;
-                        y = static_cast<SuikaFighter*>(owner)->fieldF24 + field0DA;
-                        if (static_cast<SuikaFighter*>(owner)->fieldF24 <= 0) {
+                        x = static_cast<SuikaFighter*>(owner)->spellAnchorX + field0D8 * facing;
+                        y = static_cast<SuikaFighter*>(owner)->spellAnchorY + field0DA;
+                        if (static_cast<SuikaFighter*>(owner)->spellAnchorY <= 0) {
                             ResetSecondaryCounter(4);
                             velocityX = RecordedRange(0, 20) - 10;
                             velocityY = -RecordedRange(5, 20);
@@ -1932,8 +1932,8 @@ void SuikaObject::Advance()
             return;
         }
         else {
-            static_cast<SuikaFighter*>(owner)->fieldF22 = x;
-            static_cast<SuikaFighter*>(owner)->fieldF24 = y;
+            static_cast<SuikaFighter*>(owner)->spellAnchorX = x;
+            static_cast<SuikaFighter*>(owner)->spellAnchorY = y;
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;

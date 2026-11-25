@@ -1,3 +1,4 @@
+#include "battle/FighterFrameFlags.hpp"
 #include "config/DisplayOptions.hpp"
 #include "replay/ReplayMode.hpp"
 #include "battle/CombatMode.hpp"
@@ -122,7 +123,7 @@ signed char Fighter::CheckHorizontalLimits()
 }
 void Fighter::ChooseFrameAction()
 {
-    if (frameInfo->flags & 0x100000) return;
+    if (frameInfo->flags & FrameFlags::DisablesAirRecovery) return;
     if (health <= 0) return;
     if (flashGauge > 0) {
         if (y > 0.0f) --flashGauge;

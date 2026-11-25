@@ -2264,7 +2264,7 @@ void MarisaFighter::Advance() {
         return;
     }
 
-    // Projectile startup. 0x190 creates object 0x320 at stage 5.
+    // 0x190 spawns 0x320 at stage 5. MarisaObject handles its owner-linked fade.
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
             collisionResult = 1;
@@ -3489,6 +3489,7 @@ void MarisaFighter::Advance() {
         return;
     }
 
+    // The 0x342/0x343 object controllers grow the four/six-node orbit.
     case 0x2C1: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;

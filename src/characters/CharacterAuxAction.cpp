@@ -1224,7 +1224,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
-    // 0x73–0x74. Spell activation emitters spawn the particle groups below.
+    // Spell activation. 0x73 emits 0x7A and 0x8D-0x91. 0x74 emits 0x83-0x88.
     case 115:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);

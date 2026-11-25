@@ -1,5 +1,5 @@
-// F1057: each of 33B/33D/33F/341/343 is 1908 ORIGINAL CODE B /402 x86
-// in the ONE nonexact 0050A580 original CharacterObject Advance.
+// F1057: each homing action here occupies 1908 code bytes in PatchouliObject::Advance.
+// See the fighter's 0x190 projectile startup for the source of 0x33B.
 // Original PE proves the five share opcode, width, GPR, field/call policy.
 // Only physical native stack scratch owners differ per independent case,
 // and the native next-state sprite IDs are 33C/33E/340/342/344.

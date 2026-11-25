@@ -33,7 +33,7 @@ public:
     short spellOrbitCenterX;  // +0xF18
     short spellOrbitCenterY;  // +0xF1A
     unsigned char unknownF1C[0xF30 - 0xF1C];
-    short fieldF30;
+    short storedClashCount;  // +0xF30
     short longRangeFrames;  // +0xF32
     float stageLayerX[4];  // +0xF34
     unsigned char unknownF44[0xF5C - 0xF44];

@@ -2249,7 +2249,7 @@ void PatchouliFighter::Advance() {
         return;
     }
 
-    // Projectile startup. 0x190 fires four 0x33B objects at the angles in effect parameter 0.
+    // 0x190 sets initial headings for four 0x33B shots. See CharacterObjectBossLongF1057.inc.
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
             collisionResult = 1;
@@ -3007,7 +3007,7 @@ void PatchouliFighter::Advance() {
         return;
     }
 
-    // Spell-card actions. 0x2BC spends stock at stage 3 and creates 0x320/0x321 in stages 4/5.
+    // 0x2BC creates 0x320/0x321 in stages 4/5. The latter waits for this action's stage 9.
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;

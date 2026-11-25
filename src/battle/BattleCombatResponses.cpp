@@ -83,7 +83,7 @@ bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *de
 bool BattleScene::ApplyAttackHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if ((!(attack->savedFrameInfo->attackFlags & AttackFlags::CanCounterHit) || !(defender->savedFrameInfo->flags & FrameFlags::CounterHitVulnerable)) &&
-        (attack->savedFrameInfo->attackFlags & 0x100000) && defender->y <= 0.0f) {
+        (attack->savedFrameInfo->attackFlags & AttackFlags::ForcesGroundStagger) && defender->y <= 0.0f) {
     if (defender->action < 50 || defender->action >= 143) {
         attacker->comboCount = 0;
         attacker->comboDamage = 0;

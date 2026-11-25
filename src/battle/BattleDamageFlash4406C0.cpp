@@ -1,3 +1,4 @@
+#include "battle/FighterFrameFlags.hpp"
 #include "graphics/TextureManagerF198.hpp"
 #include "battle/BattleScene.hpp"
 #include "battle/BattleHud43E040.hpp"
@@ -12,7 +13,7 @@ void BattleScene::RenderDamageFlash() {
     textureManager->SetBlendMode(0);
     x = g_CombatViewOffsetX - 160.0f;
     screenY = g_CombatViewOffsetY;
-    if ((fighters[0]->frameInfo->flags & 0x100000) == 0 && fighters[0]->health > 0 &&
+    if ((fighters[0]->frameInfo->flags & FrameFlags::DisablesAirRecovery) == 0 && fighters[0]->health > 0 &&
         fighters[0]->IsState50To149() && fighters[0]->y > 0.0f &&
         fighters[0]->flashGauge < 75 && !fighters[0]->IsState95To99()) {
         if (fighters[0]->flashGauge > 40) {
@@ -34,7 +35,7 @@ void BattleScene::RenderDamageFlash() {
         region.bottom += 1;
         Graphics::DrawFilledRectangle(&region, 0xFF000000);
     }
-    if ((fighters[1]->frameInfo->flags & 0x100000) == 0 && fighters[1]->health > 0 &&
+    if ((fighters[1]->frameInfo->flags & FrameFlags::DisablesAirRecovery) == 0 && fighters[1]->health > 0 &&
         fighters[1]->IsState50To149() && fighters[1]->y > 0.0f &&
         fighters[1]->flashGauge < 75 && !fighters[1]->IsState95To99()) {
         if (fighters[1]->flashGauge > 40) {

@@ -34,8 +34,8 @@ public:
     short opponentSpiritDrainFrames;  // +0xF1C
     short selfSpiritDrainMode;  // +0xF1E
     short fieldF20;
-    short fieldF22;
-    short fieldF24;
+    short spellAnchorX;  // +0xF22
+    short spellAnchorY;  // +0xF24
     short longRangeFrames;  // +0xF26
     short fieldF28;
     short suikaStageBannerHoldFrames;

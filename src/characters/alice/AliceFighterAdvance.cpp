@@ -3049,6 +3049,7 @@ void AliceFighter::Advance() {
         return;
     }
 
+    // AliceObject 0x346 controls the 0x345 orbiters through objectOrbitPhase.
     case 0x2BD: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -3140,6 +3141,7 @@ void AliceFighter::Advance() {
         return;
     }
 
+    // The 0x349 controller shares its phase with orbiters 0x347 and 0x348.
     case 0x2C0: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;

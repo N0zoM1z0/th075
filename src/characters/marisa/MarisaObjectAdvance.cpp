@@ -34,7 +34,7 @@ void MarisaObject::Advance()
         return;
     }
     switch (action) {
-    // 0x320–0x322 share the owner-action check and projectile impact effects.
+    // The 0x190-0x192 and 0x194 fighter actions spawn these shots. A hit on the owner can start the fade.
     case 800:
         if (owner->action == 400 && field0D8 == 0) {
             x = owner->x + static_cast<float>(facing * 100);
@@ -1236,7 +1236,7 @@ void MarisaObject::Advance()
         UpdateTrackingNode();
         break;
 
-    // 0x342 and 0x343 update the shared angle and phase used by the orbiting objects.
+    // Fighter actions 0x2C1 and 0x2C2 spawn these controllers for nodes 0x33C-0x341.
     case 834:
         if (animationStage < 5 || animationStage == 6) {
             x = owner->x;
@@ -1642,6 +1642,7 @@ void MarisaObject::Advance()
         }
         break;
 
+    // Effect 0x349 follows the indexed position published by UpdateTrackingNode.
     case 841:
         if (field0C8 == FloatConstants::Zero) {
             x = static_cast<float>(static_cast<MarisaFighter*>(owner)->trackingNodeX[0]);

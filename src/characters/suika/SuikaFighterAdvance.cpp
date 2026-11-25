@@ -4731,56 +4731,56 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 6 && animationFrame == 0) {
             sequenceTimer = 0;
-            fieldF22 = static_cast<short>(x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredForty);
+            spellAnchorX = static_cast<short>(x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::HundredForty);
             PlaySound(0x13);
         }
         if (animationStage == 7 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(static_cast<float>(facing * 44) + x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredTwentyEight);
+            spellAnchorX = static_cast<short>(static_cast<float>(facing * 44) + x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::HundredTwentyEight);
         }
         if (animationStage == 8 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(static_cast<float>(facing * 50) + x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::EightyFive);
+            spellAnchorX = static_cast<short>(static_cast<float>(facing * 50) + x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::EightyFive);
         }
         if (animationStage == 9 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(static_cast<float>(facing * 25) + x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::SixtyFive);
+            spellAnchorX = static_cast<short>(static_cast<float>(facing * 25) + x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::SixtyFive);
         }
         if (animationStage == 10 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(x - static_cast<float>(facing * 20));
-            fieldF24 = static_cast<short>((y) + GeometryConstants::Fifty);
+            spellAnchorX = static_cast<short>(x - static_cast<float>(facing * 20));
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::Fifty);
         }
         if (animationStage == 11 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(x - static_cast<float>(facing * 60));
-            fieldF24 = static_cast<short>((y) + GeometryConstants::Ninety);
+            spellAnchorX = static_cast<short>(x - static_cast<float>(facing * 60));
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::Ninety);
         }
         if (animationStage == 12 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(x - static_cast<float>(facing * 45));
-            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredFortyFive);
+            spellAnchorX = static_cast<short>(x - static_cast<float>(facing * 45));
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::HundredFortyFive);
         }
         if (animationStage == 13 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredFifty);
+            spellAnchorX = static_cast<short>(x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::HundredFifty);
         }
         if (animationStage == 14 && animationFrame == 0) {
             if (sequenceTimer < 11) {
                 ++sequenceTimer;
                 ResetSecondaryCounter(7);
-                fieldF22 = static_cast<short>(static_cast<float>(facing * 44) + x);
-                fieldF24 = static_cast<short>((y) + GeometryConstants::HundredTwentyEight);
+                spellAnchorX = static_cast<short>(static_cast<float>(facing * 44) + x);
+                spellAnchorY = static_cast<short>((y) + GeometryConstants::HundredTwentyEight);
                 return;
             }
-            fieldF22 = static_cast<short>(static_cast<float>(facing * 44) + x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::HundredTen);
+            spellAnchorX = static_cast<short>(static_cast<float>(facing * 44) + x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::HundredTen);
         }
         if (animationStage == 15 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(static_cast<float>(facing * 80) + x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::EightyFive);
+            spellAnchorX = static_cast<short>(static_cast<float>(facing * 80) + x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::EightyFive);
         }
         if (animationStage == 16 && animationFrame == 0) {
-            fieldF22 = static_cast<short>(static_cast<float>(facing * 80) + x);
-            fieldF24 = static_cast<short>((y) + GeometryConstants::EightyFive);
+            spellAnchorX = static_cast<short>(static_cast<float>(facing * 80) + x);
+            spellAnchorY = static_cast<short>((y) + GeometryConstants::EightyFive);
             PlaySound(0x14);
             SpawnBattleEffect(0x390, static_cast<float>(facing * 80) + x, (y) + GeometryConstants::EightyFive, facing, 1);
         }

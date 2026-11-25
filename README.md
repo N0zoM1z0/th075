@@ -29,7 +29,7 @@ constructor. The conservative coverage includes all pending-origin bytes.
 | Subsystem | Entry point |
 | --- | --- |
 | [Battle](src/battle/) | [Scene phases and HUD state](src/battle/BattleScene.hpp), [shared fighter layout](src/battle/Fighter.hpp) |
-| [Characters](src/characters/) | [Shared Actor](src/battle/Actor.hpp), [fighter-owned objects](src/characters/CharacterObject.hpp), [object manager](src/battle/EffectManagerLifetimeF161.hpp), [shared auxiliary effects](src/characters/CharacterAuxAction.hpp), [per-fighter entry points](docs/GIANTS.md) |
+| [Characters](src/characters/) | [Shared Actor](src/battle/Actor.hpp), [fighter-owned objects](src/characters/CharacterObject.hpp), [object manager](src/battle/EffectManagerLifetimeF161.hpp), auxiliary effects ([layout](src/characters/CharacterAuxAction.hpp), [state machine](src/characters/CharacterAuxAction.cpp)), [per-fighter entry points](docs/GIANTS.md) |
 | [Replay](src/replay/) | [File header, record header and input streams](src/replay/ReplayRecords.hpp) |
 | [Input](src/input/) | [Device mapping and held controls](src/input/InputMapping4388D0.hpp) |
 | [Configuration](src/config/) | [Saved key bindings](src/config/GameConfigStorage.hpp), [display options](src/config/DisplayOptions.hpp) |
