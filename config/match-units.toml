@@ -60423,7 +60423,7 @@ source = "src/battle/CombatCoordinateViewF536.cpp"
 object = "build/matching/CombatCoordinateViewF536.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CombatCoordinateView::MapWorldToScreenAt00455770"]
-symbol = "?MapWorldToScreen@CombatCoordinateViewF536@@QAEXMM@Z"
+symbol = "?MapWorldToScreen@Fighter@@QAEXMM@Z"
 target_address = 0x00455770
 size = 111
 [[units.combat-coordinate-view-map-world-to-screen-00455770.relocations]]
@@ -61417,7 +61417,7 @@ symbol = "_sqrtf"
 target = 0x00428D40
 
 [units.alice-object-advance-004ebda0]
-source = "probes/CharacterObjectActionsF572.cpp"
+source = "src/characters/alice/CharacterObjectActionsF572.cpp"
 object = "build/matching/CharacterObjectActionsF572.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["CharacterObject::AdvanceAt004EBDA0"]
@@ -62111,7 +62111,7 @@ relocations = [
 ]
 
 [units.remilia-object-advance-0055ac80]
-source = "probes/CharacterObjectWhole0055AC80F1194.cpp"
+source = "src/characters/remilia/CharacterObjectWhole0055AC80F1194.cpp"
 object = "build/matching/RemiliaObjectAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["CharacterObject::AdvanceAt0055AC80"]

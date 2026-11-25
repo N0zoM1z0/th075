@@ -144,7 +144,7 @@ void Fighter::ResetRound()
     opponentFreezeSnapshot = 0;
     field08A = 0;
     spellTimer = 0;
-    field040 = 0;
+    transformEnabled = 0;
     fieldEF8 = 0;
     facing = 1 - (playerSide == 1) * 2;
     storySequenceFinished = 0;

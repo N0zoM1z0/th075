@@ -55,11 +55,11 @@ void ActorRenderingBase::SetPolarVelocity(float angle, float speed) {
 // Enables the sprite transform around a pivot with unit scale, no rotation
 // and opaque colours.
 void ActorRenderingBase::ResetTransform(float x, float y, float z) {
-    field040 = 1;
+    transformEnabled = 1;
     pivotX = x;
     pivotY = y;
     pivotZ = z;
-    std::memset(&field010, 0, 0x24);   // field010 through rotationZ
+    std::memset(&transformRecord, 0, sizeof(transformRecord));
     scaleX = 1.0f;
     scaleY = 1.0f;
     scaleZ = 1.0f;
@@ -67,13 +67,13 @@ void ActorRenderingBase::ResetTransform(float x, float y, float z) {
     color[1] = 255;
     color[2] = 255;
     color[3] = 255;
-    field016 = 0;
-    field018 = 0;
-    field01A = 0;
-    field010 = 0;
+    spriteOffsetX = 0;
+    spriteOffsetY = 0;
+    spriteOffsetZ = 0;
+    transformFlags = 0;
 }
 
 void ActorRenderingBase::ClearTransformFlag()
 {
-    field040 = 0;
+    transformEnabled = 0;
 }

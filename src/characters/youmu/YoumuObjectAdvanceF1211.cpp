@@ -46,7 +46,7 @@ void YoumuObject::Advance()
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field010 = 0x82;
+        transformFlags = 0x82;
         if (owner->hitstopFrames != 0) return;
 
         entry = &static_cast<YoumuFighter*>(owner)->historyQueue.front();
@@ -2169,7 +2169,7 @@ case 0x331: {
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field01A = 1250;
+        spriteOffsetZ = 1250;
         rotationX = 0.0f;
         rotationY = 0.0f;
         rotationZ = 0.0f;
@@ -2728,7 +2728,7 @@ case 0x331: {
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;

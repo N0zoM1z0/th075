@@ -55,7 +55,7 @@ case 0x2F9: {
         Fighter::SpawnTrackedEffect(0x330,640.0f,320.0f,1,2,0,1);
         fieldF10=1;
         opponent->ResetTransform(0.0f,0.0f,0.0f);
-        opponent->field010=0x82;
+        opponent->transformFlags=0x82;
     }
     if ((animationStage)==11 && (animationFrame)==0) {
         if ((scriptCounterF00)<10) {
@@ -63,7 +63,7 @@ case 0x2F9: {
             ResetSecondaryCounter(9);
         } else {
             fieldF10=0;
-            opponent->field010=0;
+            opponent->transformFlags=0;
             scriptCounterF00=0;
         }
     }

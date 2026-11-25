@@ -30,7 +30,7 @@ void SakuyaFighter::AdvanceAuxiliary() {
         if(fieldF10<=0) {
             fieldF10=0;fieldF12=0;
             opponent->guardResponseCooldown=0;
-            opponent->field010=0;
+            opponent->transformFlags=0;
         }
         if(fieldF10>0 && action!=0x2C0 && action!=0x2C2) {
             fieldF10=spirit;
@@ -44,54 +44,54 @@ void SakuyaFighter::AdvanceAuxiliary() {
                 else fieldF10=0;
             }
             opponent->ResetTransform(0,0,0);
-            opponent->field010=0x82;
+            opponent->transformFlags=0x82;
         }
     }
     if (action > 149 && action < 154 && animationStage==0 && animationFrame==0 && fieldF0A==0) {
-            field2F6 = 0;
-            field2F8 = 0;
-            field2FA = 0;
-            field2FC = 1.0f;
-            field300 = 1.0f;
-            field2F1 = 255;
-            field2F2 = 255;
-            field2F3 = 255;
-            field2F4 = 255;
-            field308 = 0.0f;
-            field30C = 50.0f;
-            field310 = 0.0f;
+            effectTransformRecord.offsetX = 0;
+            effectTransformRecord.offsetY = 0;
+            effectTransformRecord.offsetZ = 0;
+            effectTransformRecord.scaleX = 1.0f;
+            effectTransformRecord.scaleY = 1.0f;
+            effectTransformRecord.alpha = 255;
+            effectTransformRecord.red = 255;
+            effectTransformRecord.green = 255;
+            effectTransformRecord.blue = 255;
+            effectTransformRecord.rotationX = 0.0f;
+            effectTransformRecord.rotationY = 50.0f;
+            effectTransformRecord.rotationZ = 0.0f;
             SpawnTrackedEffect(817, facing * 30 + x, y + 94.0f, facing, 1, 1);
             fieldF0A = 1;
         }
     if (action > 153 && action < 158 && animationStage==0 && animationFrame==0 && fieldF0A==0) {
-            field2F6 = 0;
-            field2F8 = 0;
-            field2FA = 0;
-            field2FC = 1.0f;
-            field300 = 1.0f;
-            field2F1 = 255;
-            field2F2 = 255;
-            field2F3 = 255;
-            field2F4 = 255;
-            field308 = 0.0f;
-            field30C = 50.0f;
-            field310 = 0.0f;
+            effectTransformRecord.offsetX = 0;
+            effectTransformRecord.offsetY = 0;
+            effectTransformRecord.offsetZ = 0;
+            effectTransformRecord.scaleX = 1.0f;
+            effectTransformRecord.scaleY = 1.0f;
+            effectTransformRecord.alpha = 255;
+            effectTransformRecord.red = 255;
+            effectTransformRecord.green = 255;
+            effectTransformRecord.blue = 255;
+            effectTransformRecord.rotationX = 0.0f;
+            effectTransformRecord.rotationY = 50.0f;
+            effectTransformRecord.rotationZ = 0.0f;
             SpawnTrackedEffect(817, facing * 70 + x, y + 60.0f, facing, 1, 1);
             fieldF0A = 1;
         }
     if (action == 158 && animationStage==0 && animationFrame==0 && fieldF0A==0) {
-            field2F6 = 0;
-            field2F8 = 0;
-            field2FA = 0;
-            field2FC = 1.0f;
-            field300 = 1.0f;
-            field2F1 = 255;
-            field2F2 = 255;
-            field2F3 = 255;
-            field2F4 = 255;
-            field308 = 0.0f;
-            field30C = 50.0f;
-            field310 = 0.0f;
+            effectTransformRecord.offsetX = 0;
+            effectTransformRecord.offsetY = 0;
+            effectTransformRecord.offsetZ = 0;
+            effectTransformRecord.scaleX = 1.0f;
+            effectTransformRecord.scaleY = 1.0f;
+            effectTransformRecord.alpha = 255;
+            effectTransformRecord.red = 255;
+            effectTransformRecord.green = 255;
+            effectTransformRecord.blue = 255;
+            effectTransformRecord.rotationX = 0.0f;
+            effectTransformRecord.rotationY = 50.0f;
+            effectTransformRecord.rotationZ = 0.0f;
             SpawnTrackedEffect(817, facing * 57 + x, y + 100.0f, facing, 1, 1);
             fieldF0A = 1;
         }

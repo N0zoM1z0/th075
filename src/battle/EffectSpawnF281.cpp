@@ -23,7 +23,7 @@ void CombatEffects::SpawnConfigured(short pattern, float x, float y, signed char
         EFFECT->facing = kind;
         EFFECT->field067 = flags;
         EFFECT->field068 = mode;
-        EFFECT->field040 = 0;
+        EFFECT->transformEnabled = 0;
         EFFECT->spawnParameters[0] = extra[0];
         EFFECT->spawnParameters[1] = extra[1];
         EFFECT->spawnParameters[2] = extra[2];

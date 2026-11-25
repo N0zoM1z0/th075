@@ -58,11 +58,11 @@ replay notes below describe the comparisons that led to acceptance.
 | 00564BE0 | Yuyuko fighter | 61,872 | [YuyukoFighterAdvance.cpp](../src/characters/yuyuko/YuyukoFighterAdvance.cpp) |
 | 004CA6E0 | Sakuya object | 42,511 | [SakuyaObjectAdvanceF1222.cpp](../src/characters/sakuya/SakuyaObjectAdvanceF1222.cpp) |
 | 004D7E70 | Alice fighter | 43,601 | [AliceFighterAdvance.cpp](../src/characters/alice/AliceFighterAdvance.cpp) |
-| 004EBDA0 | Alice object | 33,293 | [CharacterObjectActionsF572.cpp](../probes/CharacterObjectActionsF572.cpp) |
+| 004EBDA0 | Alice object | 33,293 | [CharacterObjectActionsF572.cpp](../src/characters/alice/CharacterObjectActionsF572.cpp) |
 | 004F7130 | Patchouli fighter | 44,211 | [PatchouliFighterAdvance.cpp](../src/characters/patchouli/PatchouliFighterAdvance.cpp) |
 | 0050A580 | Patchouli object | 81,539 | [PatchouliObjectAdvanceF1044.cpp](../src/characters/patchouli/PatchouliObjectAdvanceF1044.cpp) |
 | 00536400 | Youmu object | 39,999 | [YoumuObjectAdvanceF1211.cpp](../src/characters/youmu/YoumuObjectAdvanceF1211.cpp) |
-| 0055AC80 | Remilia object | 28,432 | [CharacterObjectWhole0055AC80F1194.cpp](../probes/CharacterObjectWhole0055AC80F1194.cpp) |
+| 0055AC80 | Remilia object | 28,432 | [CharacterObjectWhole0055AC80F1194.cpp](../src/characters/remilia/CharacterObjectWhole0055AC80F1194.cpp) |
 | 0057D580 | Yuyuko object | 43,845 | [YuyukoObjectAdvanceF1237.cpp](../src/characters/yuyuko/YuyukoObjectAdvanceF1237.cpp) |
 | 0058AF60 | Yukari fighter | 49,230 | [YukariFighterAdvance.cpp](../src/characters/yukari/YukariFighterAdvance.cpp) |
 | 005A1600 | Yukari object | 43,599 | [YukariObjectAdvanceF1231.cpp](../src/characters/yukari/YukariObjectAdvanceF1231.cpp) |

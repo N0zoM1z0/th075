@@ -142,12 +142,12 @@ public:
     // fields and the packet view over exactly the same native storage.
     union {
         struct {
-            unsigned char field010;     // +0x010 transform enabled
+            unsigned char transformFlags; // +0x010 draw flags
             unsigned char color[4];     // +0x011 four colour channels
             unsigned char unknown015[0x016 - 0x015];
-            short field016;             // +0x016
-            short field018;             // +0x018
-            short field01A;             // +0x01A
+            short spriteOffsetX;             // +0x016
+            short spriteOffsetY;             // +0x018
+            short spriteOffsetZ;             // +0x01A
             float scaleX;               // +0x01C
             float scaleY;               // +0x020
             float scaleZ;               // +0x024
@@ -160,7 +160,7 @@ public:
     float pivotX;                       // +0x034
     float pivotY;                       // +0x038
     float pivotZ;                       // +0x03C
-    unsigned char field040;             // +0x040
+    unsigned char transformEnabled;             // +0x040
     unsigned char unknown041[0x044 - 0x041];
     float x;                            // +0x044
     float y;                            // +0x048

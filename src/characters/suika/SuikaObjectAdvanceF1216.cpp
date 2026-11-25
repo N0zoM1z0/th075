@@ -352,13 +352,13 @@ void SuikaObject::Advance()
             return;
         }
         else {
-            if (x < owner->cameraState.field04 && field0D8 == 0 &&
+            if (x < owner->cameraState.viewLeft && field0D8 == 0 &&
                 ((facing == -1 && velocityX > 0.0f) ||
                  (facing == 1 && velocityX < 0.0f))) {
                 facing = -facing;
                 ++field0D8;
             }
-            if (x > owner->field2DC && field0D8 == 0 &&
+            if (x > owner->viewRight && field0D8 == 0 &&
                 ((facing == -1 && velocityX < 0.0f) ||
                  (facing == 1 && velocityX > 0.0f))) {
                 facing = -facing;
@@ -2757,7 +2757,7 @@ void SuikaObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;

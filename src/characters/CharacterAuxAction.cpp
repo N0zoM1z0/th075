@@ -648,7 +648,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             rotationX = 75.0f;
-            field01A = facing * 350;
+            spriteOffsetZ = facing * 350;
             field074 = 0;
         }
         ++field074;
@@ -1285,8 +1285,8 @@ void CharacterAuxObject::Advance()
             rotationX = -80.0f;
             field074 = 0;
         }
-        field01A = 1500;
-        field016 = 0;
+        spriteOffsetZ = 1500;
+        spriteOffsetX = 0;
         rotationZ += 3.0f;
         scaleX += 0.02f;
         scaleY += 0.02f;
@@ -1305,8 +1305,8 @@ void CharacterAuxObject::Advance()
             rotationX = -80.0f;
             field074 = 0;
         }
-        field01A = 1500;
-        field016 = 0;
+        spriteOffsetZ = 1500;
+        spriteOffsetX = 0;
         rotationZ += 3.0f;
         scaleX += 0.02f;
         scaleY += 0.02f;
@@ -1489,7 +1489,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             rotationY = 65.0f;
-            field01A = facing * 350;
+            spriteOffsetZ = facing * 350;
             field074 = 0;
         }
         ++field074;
@@ -1765,7 +1765,7 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             rotationY = -40.0f;
-            field01A = facing * 350;
+            spriteOffsetZ = facing * 350;
             field074 = 0;
         }
         ++field074;

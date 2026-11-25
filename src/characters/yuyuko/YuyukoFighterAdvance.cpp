@@ -3663,7 +3663,7 @@ void YuyukoFighter::Advance() {
 
     case 0x303: {
         facing = 1;
-        field010 = 0x82;
+        transformFlags = 0x82;
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 120;
             scriptCounterF02 = -90;

@@ -25,15 +25,15 @@ void YoumuFighter::AdvanceAuxiliary() {
     if (fieldF10>0) --fieldF10;
     if (velocityX==0.0f && field3AC>0) field3AC=0;
     if (fieldF0E==0) {
-        field2F6=0;
-        field2F8=0;
-        field2FA=0;
-        field2FC=1.0f;
-        field300=1.0f;
-        field2F1=255;
-        field2F2=255;
-        field2F3=255;
-        field2F4=255;
+        effectTransformRecord.offsetX=0;
+        effectTransformRecord.offsetY=0;
+        effectTransformRecord.offsetZ=0;
+        effectTransformRecord.scaleX=1.0f;
+        effectTransformRecord.scaleY=1.0f;
+        effectTransformRecord.alpha=255;
+        effectTransformRecord.red=255;
+        effectTransformRecord.green=255;
+        effectTransformRecord.blue=255;
         if (g_CombatMode != CombatMode::Story) {
             SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
             ++fieldF0E;

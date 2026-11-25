@@ -42,7 +42,8 @@ constructor. The conservative coverage includes all pending-origin bytes.
 
 Each playable fighter has a subdirectory under `src/characters/`.
 The parent directory contains shared character code.
-`probes/` contains sources included by accepted exact units.
+The Windows build compiles translation units from `src/`. Some of those
+units include shared reconstruction fragments from `probes/`.
 
 `config/match-units.toml` records the compiler profiles, extents and
 relocations. The target is the user-supplied Japanese TH075 v1.11
@@ -64,9 +65,10 @@ Build the Windows x86 executable:
 
 This writes `build/program/th075.exe`, `build/program/th075.map` and
 `build/program/link.log`. Both aggregate builds use the pinned original
-executable in `resources/` to supply read-only data. The linked executable
-and the original completed the same four external replay recordings with
-matching battle checkpoints. [Build and replay evidence](docs/RE_HANDOFF.md)
+executable in `resources/` to supply read-only data. A Windows build and
+the original completed four external replay recordings with matching
+battle checkpoints before the semantic pass.
+[Build and replay evidence](docs/RE_HANDOFF.md)
 
 For a runtime check, stage the executable beside `th075.dat`,
 `th075bgm.dat`, and `th075b.dat` from the Japanese installation.

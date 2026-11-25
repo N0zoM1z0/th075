@@ -16,7 +16,7 @@ void EffectManagerLifetimeF161::Spawn(short effect, float x, float y, signed cha
     node->facing = facing;
     node->field067 = flagA;
     node->field068 = flagB;
-    node->field040 = 0;
+    node->transformEnabled = 0;
     node->field0C8 = parameters[0];
     node->field0CC = parameters[1];
     node->field0D0 = parameters[2];

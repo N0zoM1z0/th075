@@ -26,18 +26,18 @@
             }
             if ((animationStage)>9 && (animationStage)<13 && !CheckHorizontalLimits()) {
                 if (facing==1)
-                    x=(cameraState.field04)+FloatConstants::Five;
+                    x=(cameraState.viewLeft)+FloatConstants::Five;
                 if (facing==-1)
-                    x=(field2DC)-FloatConstants::Five;
+                    x=(viewRight)-FloatConstants::Five;
             }
             if ((animationStage)>7 && (animationStage)<10 && y>FloatConstants::Zero) {
                 if ((CheckHorizontalLimits() && (((x)<GeometryConstants::SixHundredForty
                      && facing==1)
                     || ((x)>GeometryConstants::SixHundredForty
                         && facing==-1)))
-                    || (((cameraState.field04)+FloatConstants::Five)>=x
+                    || (((cameraState.viewLeft)+FloatConstants::Five)>=x
                         && facing==1)
-                    || (((field2DC)-FloatConstants::Five)<=x
+                    || (((viewRight)-FloatConstants::Five)<=x
                         && facing==-1)) {
                     ResetSecondaryCounter(10);
                     ClearMotionFields();

@@ -77,6 +77,7 @@ public:
     void AdvanceGuardedState();
     void AdvancePosition();
     void UpdateCounters();
+    void MapWorldToScreen(float x, float y);
     void ChooseFrameAction();
     signed char CheckHorizontalLimits();
 
@@ -107,33 +108,12 @@ public:
     unsigned char unknown2CF[0x2D0 - 0x2CF];
     int score;                          // +0x2D0 raised by 100-500 per hit
     CameraResetF481 cameraState;        // +0x2D4
-    float field2DC;                     // +0x2DC
-    float field2E0;                     // +0x2E0
-    float field2E4;                     // +0x2E4
+    float viewRight;                    // +0x2DC
+    float viewTop;                      // +0x2E0
+    float viewBottom;                   // +0x2E4
     Fighter* opponent;                  // +0x2E8 the other player
     EffectManagerLifetimeF161* ownedObjects; // +0x2EC owned effect-manager object
-    // Linked effects copy this exact 36-byte fighter packet into Actor+0x10.
-    // Retain all existing field names while exposing its shared transform type.
-    union {
-        struct {
-            unsigned char field2F0;     // +0x2F0 transform enabled
-            unsigned char field2F1;     // +0x2F1 alpha
-            unsigned char field2F2;     // +0x2F2 red
-            unsigned char field2F3;     // +0x2F3 green
-            unsigned char field2F4;     // +0x2F4 blue
-            unsigned char unknown2F5[0x2F6 - 0x2F5];
-            short field2F6;             // +0x2F6
-            short field2F8;             // +0x2F8
-            short field2FA;             // +0x2FA
-            float field2FC;             // +0x2FC
-            float field300;             // +0x300
-            unsigned char unknown304[0x308 - 0x304];
-            float field308;             // +0x308
-            float field30C;             // +0x30C
-            float field310;             // +0x310
-        };
-        TransformRecordF136 effectTransformRecord;
-    };
+    TransformRecordF136 effectTransformRecord; // +0x2F0 linked effects copy this into their actor transform
     union {
         struct {
             float field314;
@@ -277,7 +257,10 @@ public:
 };
 
 typedef char FighterLayoutCheck[(
-    offsetof(Fighter, cameraState) == 0x2D4 &&
+    offsetof(Fighter, cameraState) + offsetof(CameraResetF481, viewLeft) == 0x2D8 &&
+    offsetof(Fighter, viewRight) == 0x2DC &&
+    offsetof(Fighter, viewTop) == 0x2E0 &&
+    offsetof(Fighter, viewBottom) == 0x2E4 &&
     offsetof(Fighter, soundBank) == 0x6D0 &&
     offsetof(Fighter, opponent) == 0x2E8 &&
     offsetof(Fighter, playerSide) == 0x2CC &&

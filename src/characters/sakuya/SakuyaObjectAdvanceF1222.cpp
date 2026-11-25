@@ -51,19 +51,19 @@ void SakuyaObject::Advance()
             if (animationStage < 4) {
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field2F0 = 0;
-                owner->field2F6 = 0;
-                owner->field2F8 = 0;
-                owner->field2FA = 0;
-                owner->field2FC = 1.0f;
-                owner->field300 = 1.0f;
-                owner->field2F1 = 255;
-                owner->field2F2 = 255;
-                owner->field2F3 = 255;
-                owner->field2F4 = 255;
-                owner->field308 = 0.0f;
-                owner->field30C = 0.0f;
+                owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->effectTransformRecord.flags = 0;
+                owner->effectTransformRecord.offsetX = 0;
+                owner->effectTransformRecord.offsetY = 0;
+                owner->effectTransformRecord.offsetZ = 0;
+                owner->effectTransformRecord.scaleX = 1.0f;
+                owner->effectTransformRecord.scaleY = 1.0f;
+                owner->effectTransformRecord.alpha = 255;
+                owner->effectTransformRecord.red = 255;
+                owner->effectTransformRecord.green = 255;
+                owner->effectTransformRecord.blue = 255;
+                owner->effectTransformRecord.rotationX = 0.0f;
+                owner->effectTransformRecord.rotationY = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
             }
             if ((collisionResult == 2 || collisionResult == 4) && animationStage == 0) {
@@ -234,28 +234,28 @@ void SakuyaObject::Advance()
                 owner->field314 = rotationZ;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field2F0 = 0;
-                owner->field2F6 = 0;
-                owner->field2F8 = 0;
-                owner->field2FA = 0;
-                owner->field2FC = 1.0f;
-                owner->field300 = 1.0f;
-                owner->field2F1 = 255;
-                owner->field2F2 = 255;
-                owner->field2F3 = 255;
-                owner->field2F4 = 255;
-                owner->field308 = 0.0f;
-                owner->field30C = 0.0f;
+                owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->effectTransformRecord.flags = 0;
+                owner->effectTransformRecord.offsetX = 0;
+                owner->effectTransformRecord.offsetY = 0;
+                owner->effectTransformRecord.offsetZ = 0;
+                owner->effectTransformRecord.scaleX = 1.0f;
+                owner->effectTransformRecord.scaleY = 1.0f;
+                owner->effectTransformRecord.alpha = 255;
+                owner->effectTransformRecord.red = 255;
+                owner->effectTransformRecord.green = 255;
+                owner->effectTransformRecord.blue = 255;
+                owner->effectTransformRecord.rotationX = 0.0f;
+                owner->effectTransformRecord.rotationY = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
-                if (y > owner->field2E0 && field0DA < 2 && velocityY < 0.0f) {
+                if (y > owner->viewTop && field0DA < 2 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x < owner->cameraState.field04 && field0DA < 2 &&
+                if (x < owner->cameraState.viewLeft && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -265,7 +265,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x > owner->field2DC && field0DA < 2 &&
+                if (x > owner->viewRight && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
                     owner->PlaySound(11);
@@ -337,21 +337,21 @@ void SakuyaObject::Advance()
                 owner->field314 = rotationZ;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field2F0 = 0;
-                owner->field2F6 = 0;
-                owner->field2F8 = 0;
-                owner->field2FA = 0;
-                owner->field2FC = 1.0f;
-                owner->field300 = 1.0f;
-                owner->field2F1 = 255;
-                owner->field2F2 = 255;
-                owner->field2F3 = 255;
-                owner->field2F4 = 255;
-                owner->field308 = 0.0f;
-                owner->field30C = 0.0f;
+                owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->effectTransformRecord.flags = 0;
+                owner->effectTransformRecord.offsetX = 0;
+                owner->effectTransformRecord.offsetY = 0;
+                owner->effectTransformRecord.offsetZ = 0;
+                owner->effectTransformRecord.scaleX = 1.0f;
+                owner->effectTransformRecord.scaleY = 1.0f;
+                owner->effectTransformRecord.alpha = 255;
+                owner->effectTransformRecord.red = 255;
+                owner->effectTransformRecord.green = 255;
+                owner->effectTransformRecord.blue = 255;
+                owner->effectTransformRecord.rotationX = 0.0f;
+                owner->effectTransformRecord.rotationY = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
-                if (y > owner->field2E0 && field0DA < 1 && velocityY < 0.0f) {
+                if (y > owner->viewTop && field0DA < 1 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
@@ -365,7 +365,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x < owner->cameraState.field04 && field0DA < 1 &&
+                if (x < owner->cameraState.viewLeft && field0DA < 1 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -375,7 +375,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x > owner->field2DC && field0DA < 1 &&
+                if (x > owner->viewRight && field0DA < 1 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
                     owner->PlaySound(11);
@@ -456,19 +456,19 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                    owner->field2F0 = 0;
-                    owner->field2F6 = 0;
-                    owner->field2F8 = 0;
-                    owner->field2FA = 0;
-                    owner->field2FC = 1.0f;
-                    owner->field300 = 1.0f;
-                    owner->field2F1 = 255;
-                    owner->field2F2 = 255;
-                    owner->field2F3 = 255;
-                    owner->field2F4 = 255;
-                    owner->field308 = 0.0f;
-                    owner->field30C = 0.0f;
+                    owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                    owner->effectTransformRecord.flags = 0;
+                    owner->effectTransformRecord.offsetX = 0;
+                    owner->effectTransformRecord.offsetY = 0;
+                    owner->effectTransformRecord.offsetZ = 0;
+                    owner->effectTransformRecord.scaleX = 1.0f;
+                    owner->effectTransformRecord.scaleY = 1.0f;
+                    owner->effectTransformRecord.alpha = 255;
+                    owner->effectTransformRecord.red = 255;
+                    owner->effectTransformRecord.green = 255;
+                    owner->effectTransformRecord.blue = 255;
+                    owner->effectTransformRecord.rotationX = 0.0f;
+                    owner->effectTransformRecord.rotationY = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if (animationStage == 0 || animationStage == 2) {
@@ -579,7 +579,7 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field01A = 1250;
+                spriteOffsetZ = 1250;
                 rotationX = 0.0f;
                 rotationY = facing * field0CC;
                 rotationZ = 0.0f;
@@ -613,7 +613,7 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field01A = 1250;
+                spriteOffsetZ = 1250;
                 rotationX = 0.0f;
                 rotationY = facing * field0CC;
                 rotationZ = 0.0f;
@@ -1278,19 +1278,19 @@ void SakuyaObject::Advance()
             if (animationStage < 5 && animationFrame == 0) {
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field2F0 = 0;
-                owner->field2F6 = 0;
-                owner->field2F8 = 0;
-                owner->field2FA = 0;
-                owner->field2FC = 1.0f;
-                owner->field300 = 1.0f;
-                owner->field2F1 = 255;
-                owner->field2F2 = 255;
-                owner->field2F3 = 255;
-                owner->field2F4 = 255;
-                owner->field308 = 0.0f;
-                owner->field30C = 0.0f;
+                owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->effectTransformRecord.flags = 0;
+                owner->effectTransformRecord.offsetX = 0;
+                owner->effectTransformRecord.offsetY = 0;
+                owner->effectTransformRecord.offsetZ = 0;
+                owner->effectTransformRecord.scaleX = 1.0f;
+                owner->effectTransformRecord.scaleY = 1.0f;
+                owner->effectTransformRecord.alpha = 255;
+                owner->effectTransformRecord.red = 255;
+                owner->effectTransformRecord.green = 255;
+                owner->effectTransformRecord.blue = 255;
+                owner->effectTransformRecord.rotationX = 0.0f;
+                owner->effectTransformRecord.rotationY = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 ++field0DC;
                 ++field0DA;
@@ -1369,19 +1369,19 @@ void SakuyaObject::Advance()
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
                 if (animationStage > 0) {
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                    owner->field2F0 = 0;
-                    owner->field2F6 = 0;
-                    owner->field2F8 = 0;
-                    owner->field2FA = 0;
-                    owner->field2FC = 1.0f;
-                    owner->field300 = 1.0f;
-                    owner->field2F1 = 255;
-                    owner->field2F2 = 255;
-                    owner->field2F3 = 255;
-                    owner->field2F4 = 255;
-                    owner->field308 = 0.0f;
-                    owner->field30C = 0.0f;
+                    owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                    owner->effectTransformRecord.flags = 0;
+                    owner->effectTransformRecord.offsetX = 0;
+                    owner->effectTransformRecord.offsetY = 0;
+                    owner->effectTransformRecord.offsetZ = 0;
+                    owner->effectTransformRecord.scaleX = 1.0f;
+                    owner->effectTransformRecord.scaleY = 1.0f;
+                    owner->effectTransformRecord.alpha = 255;
+                    owner->effectTransformRecord.red = 255;
+                    owner->effectTransformRecord.green = 255;
+                    owner->effectTransformRecord.blue = 255;
+                    owner->effectTransformRecord.rotationX = 0.0f;
+                    owner->effectTransformRecord.rotationY = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 }
             }
@@ -1446,7 +1446,7 @@ void SakuyaObject::Advance()
             if (animationStage < 5) {
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                if (y > owner->field2E0 && field0DA < 2 && velocityY < 0.0f) {
+                if (y > owner->viewTop && field0DA < 2 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
@@ -1460,7 +1460,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x < owner->cameraState.field04 && field0DA < 2 &&
+                if (x < owner->cameraState.viewLeft && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -1470,7 +1470,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x > owner->field2DC && field0DA < 2 &&
+                if (x > owner->viewRight && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
                     owner->PlaySound(11);
@@ -1481,19 +1481,19 @@ void SakuyaObject::Advance()
                     remainingHits = 1;
                 }
                 if (animationStage > 0) {
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                    owner->field2F0 = 0;
-                    owner->field2F6 = 0;
-                    owner->field2F8 = 0;
-                    owner->field2FA = 0;
-                    owner->field2FC = 1.0f;
-                    owner->field300 = 1.0f;
-                    owner->field2F1 = 255;
-                    owner->field2F2 = 255;
-                    owner->field2F3 = 255;
-                    owner->field2F4 = 255;
-                    owner->field308 = 0.0f;
-                    owner->field30C = 0.0f;
+                    owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                    owner->effectTransformRecord.flags = 0;
+                    owner->effectTransformRecord.offsetX = 0;
+                    owner->effectTransformRecord.offsetY = 0;
+                    owner->effectTransformRecord.offsetZ = 0;
+                    owner->effectTransformRecord.scaleX = 1.0f;
+                    owner->effectTransformRecord.scaleY = 1.0f;
+                    owner->effectTransformRecord.alpha = 255;
+                    owner->effectTransformRecord.red = 255;
+                    owner->effectTransformRecord.green = 255;
+                    owner->effectTransformRecord.blue = 255;
+                    owner->effectTransformRecord.rotationX = 0.0f;
+                    owner->effectTransformRecord.rotationY = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 }
             }
@@ -1574,19 +1574,19 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 0);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                    owner->field2F0 = 0;
-                    owner->field2F6 = 0;
-                    owner->field2F8 = 0;
-                    owner->field2FA = 0;
-                    owner->field2FC = 1.0f;
-                    owner->field300 = 1.0f;
-                    owner->field2F1 = 255;
-                    owner->field2F2 = 255;
-                    owner->field2F3 = 255;
-                    owner->field2F4 = 255;
-                    owner->field308 = 0.0f;
-                    owner->field30C = 0.0f;
+                    owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                    owner->effectTransformRecord.flags = 0;
+                    owner->effectTransformRecord.offsetX = 0;
+                    owner->effectTransformRecord.offsetY = 0;
+                    owner->effectTransformRecord.offsetZ = 0;
+                    owner->effectTransformRecord.scaleX = 1.0f;
+                    owner->effectTransformRecord.scaleY = 1.0f;
+                    owner->effectTransformRecord.alpha = 255;
+                    owner->effectTransformRecord.red = 255;
+                    owner->effectTransformRecord.green = 255;
+                    owner->effectTransformRecord.blue = 255;
+                    owner->effectTransformRecord.rotationX = 0.0f;
+                    owner->effectTransformRecord.rotationY = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if ((collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage < 4) {
@@ -1654,19 +1654,19 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 0);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                    owner->field2F0 = 0;
-                    owner->field2F6 = 0;
-                    owner->field2F8 = 0;
-                    owner->field2FA = 0;
-                    owner->field2FC = 1.0f;
-                    owner->field300 = 1.0f;
-                    owner->field2F1 = 255;
-                    owner->field2F2 = 255;
-                    owner->field2F3 = 255;
-                    owner->field2F4 = 255;
-                    owner->field308 = 0.0f;
-                    owner->field30C = 0.0f;
+                    owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                    owner->effectTransformRecord.flags = 0;
+                    owner->effectTransformRecord.offsetX = 0;
+                    owner->effectTransformRecord.offsetY = 0;
+                    owner->effectTransformRecord.offsetZ = 0;
+                    owner->effectTransformRecord.scaleX = 1.0f;
+                    owner->effectTransformRecord.scaleY = 1.0f;
+                    owner->effectTransformRecord.alpha = 255;
+                    owner->effectTransformRecord.red = 255;
+                    owner->effectTransformRecord.green = 255;
+                    owner->effectTransformRecord.blue = 255;
+                    owner->effectTransformRecord.rotationX = 0.0f;
+                    owner->effectTransformRecord.rotationY = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
                 if ((collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage < 4) {
@@ -1709,19 +1709,19 @@ void SakuyaObject::Advance()
             if (animationStage < 5) {
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field2F0 = 0;
-                owner->field2F6 = 0;
-                owner->field2F8 = 0;
-                owner->field2FA = 0;
-                owner->field2FC = 1.0f;
-                owner->field300 = 1.0f;
-                owner->field2F1 = 255;
-                owner->field2F2 = 255;
-                owner->field2F3 = 255;
-                owner->field2F4 = 255;
-                owner->field308 = 0.0f;
-                owner->field30C = 0.0f;
+                owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->effectTransformRecord.flags = 0;
+                owner->effectTransformRecord.offsetX = 0;
+                owner->effectTransformRecord.offsetY = 0;
+                owner->effectTransformRecord.offsetZ = 0;
+                owner->effectTransformRecord.scaleX = 1.0f;
+                owner->effectTransformRecord.scaleY = 1.0f;
+                owner->effectTransformRecord.alpha = 255;
+                owner->effectTransformRecord.red = 255;
+                owner->effectTransformRecord.green = 255;
+                owner->effectTransformRecord.blue = 255;
+                owner->effectTransformRecord.rotationX = 0.0f;
+                owner->effectTransformRecord.rotationY = 0.0f;
             }
             if (collisionResult == 6) remainingHits = 1;
             if ((collisionResult == 2 || collisionResult == 4) && animationStage < 5) {
@@ -1821,22 +1821,22 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                    owner->field2F0 = 0;
-                    owner->field2F6 = 0;
-                    owner->field2F8 = 0;
-                    owner->field2FA = 0;
-                    owner->field2FC = 1.0f;
-                    owner->field300 = 1.0f;
-                    owner->field2F1 = 255;
-                    owner->field2F2 = 255;
-                    owner->field2F3 = 255;
-                    owner->field2F4 = 255;
-                    owner->field308 = 0.0f;
-                    owner->field30C = 0.0f;
+                    owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                    owner->effectTransformRecord.flags = 0;
+                    owner->effectTransformRecord.offsetX = 0;
+                    owner->effectTransformRecord.offsetY = 0;
+                    owner->effectTransformRecord.offsetZ = 0;
+                    owner->effectTransformRecord.scaleX = 1.0f;
+                    owner->effectTransformRecord.scaleY = 1.0f;
+                    owner->effectTransformRecord.alpha = 255;
+                    owner->effectTransformRecord.red = 255;
+                    owner->effectTransformRecord.green = 255;
+                    owner->effectTransformRecord.blue = 255;
+                    owner->effectTransformRecord.rotationX = 0.0f;
+                    owner->effectTransformRecord.rotationY = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
-                if (y > owner->field2E0 && field0DA < 1 && velocityY < 0.0f) {
+                if (y > owner->viewTop && field0DA < 1 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
@@ -1852,7 +1852,7 @@ void SakuyaObject::Advance()
                     remainingHits = 1;
                     field0CC = 4.0f;
                 }
-                if (x < owner->cameraState.field04 && field0DA < 1 &&
+                if (x < owner->cameraState.viewLeft && field0DA < 1 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -1863,7 +1863,7 @@ void SakuyaObject::Advance()
                     remainingHits = 1;
                     field0CC = 4.0f;
                 }
-                if (x > owner->field2DC && field0DA < 1 &&
+                if (x > owner->viewRight && field0DA < 1 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
                     owner->PlaySound(11);
@@ -1924,22 +1924,22 @@ void SakuyaObject::Advance()
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
-                    owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                    owner->field2F0 = 0;
-                    owner->field2F6 = 0;
-                    owner->field2F8 = 0;
-                    owner->field2FA = 0;
-                    owner->field2FC = 1.0f;
-                    owner->field300 = 1.0f;
-                    owner->field2F1 = 255;
-                    owner->field2F2 = 255;
-                    owner->field2F3 = 255;
-                    owner->field2F4 = 255;
-                    owner->field308 = 0.0f;
-                    owner->field30C = 0.0f;
+                    owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                    owner->effectTransformRecord.flags = 0;
+                    owner->effectTransformRecord.offsetX = 0;
+                    owner->effectTransformRecord.offsetY = 0;
+                    owner->effectTransformRecord.offsetZ = 0;
+                    owner->effectTransformRecord.scaleX = 1.0f;
+                    owner->effectTransformRecord.scaleY = 1.0f;
+                    owner->effectTransformRecord.alpha = 255;
+                    owner->effectTransformRecord.red = 255;
+                    owner->effectTransformRecord.green = 255;
+                    owner->effectTransformRecord.blue = 255;
+                    owner->effectTransformRecord.rotationX = 0.0f;
+                    owner->effectTransformRecord.rotationY = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
-                if (y > owner->field2E0 && field0DA < 2 && velocityY < 0.0f) {
+                if (y > owner->viewTop && field0DA < 2 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
@@ -1953,7 +1953,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x < owner->cameraState.field04 && field0DA < 2 &&
+                if (x < owner->cameraState.viewLeft && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -1963,7 +1963,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x > owner->field2DC && field0DA < 2 &&
+                if (x > owner->viewRight && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
                     owner->PlaySound(11);
@@ -2120,19 +2120,19 @@ void SakuyaObject::Advance()
             if (animationStage < 5) {
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field2F0 = 0;
-                owner->field2F6 = 0;
-                owner->field2F8 = 0;
-                owner->field2FA = 0;
-                owner->field2FC = 1.0f;
-                owner->field300 = 1.0f;
-                owner->field2F1 = 255;
-                owner->field2F2 = 255;
-                owner->field2F3 = 255;
-                owner->field2F4 = 255;
-                owner->field308 = 0.0f;
-                owner->field30C = 0.0f;
+                owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->effectTransformRecord.flags = 0;
+                owner->effectTransformRecord.offsetX = 0;
+                owner->effectTransformRecord.offsetY = 0;
+                owner->effectTransformRecord.offsetZ = 0;
+                owner->effectTransformRecord.scaleX = 1.0f;
+                owner->effectTransformRecord.scaleY = 1.0f;
+                owner->effectTransformRecord.alpha = 255;
+                owner->effectTransformRecord.red = 255;
+                owner->effectTransformRecord.green = 255;
+                owner->effectTransformRecord.blue = 255;
+                owner->effectTransformRecord.rotationX = 0.0f;
+                owner->effectTransformRecord.rotationY = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
             }
             if ((collisionResult == 2 || collisionResult == 4) && animationStage < 5) {
@@ -2197,14 +2197,14 @@ void SakuyaObject::Advance()
             y -= velocityY;
             ++field0D8;
             if (animationStage < 5) {
-                if (y > owner->field2E0 && field0DA < g_OptionsModeAt006714D0 && velocityY < 0.0f) {
+                if (y > owner->viewTop && field0DA < g_OptionsModeAt006714D0 && velocityY < 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x < owner->cameraState.field04 && field0DA < g_OptionsModeAt006714D0 &&
+                if (x < owner->cameraState.viewLeft && field0DA < g_OptionsModeAt006714D0 &&
                     ((facing == -1 && velocityX > 0.0f) ||
                      (facing == 1 && velocityX < 0.0f))) {
                     owner->PlaySound(11);
@@ -2214,7 +2214,7 @@ void SakuyaObject::Advance()
                     collisionResult = 0;
                     remainingHits = 1;
                 }
-                if (x > owner->field2DC && field0DA < g_OptionsModeAt006714D0 &&
+                if (x > owner->viewRight && field0DA < g_OptionsModeAt006714D0 &&
                     ((facing == -1 && velocityX < 0.0f) ||
                      (facing == 1 && velocityX > 0.0f))) {
                     owner->PlaySound(11);
@@ -2226,19 +2226,19 @@ void SakuyaObject::Advance()
                 }
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                owner->field2F0 = 0;
-                owner->field2F6 = 0;
-                owner->field2F8 = 0;
-                owner->field2FA = 0;
-                owner->field2FC = 1.0f;
-                owner->field300 = 1.0f;
-                owner->field2F1 = 255;
-                owner->field2F2 = 255;
-                owner->field2F3 = 255;
-                owner->field2F4 = 255;
-                owner->field308 = 0.0f;
-                owner->field30C = 0.0f;
+                owner->effectTransformRecord.rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
+                owner->effectTransformRecord.flags = 0;
+                owner->effectTransformRecord.offsetX = 0;
+                owner->effectTransformRecord.offsetY = 0;
+                owner->effectTransformRecord.offsetZ = 0;
+                owner->effectTransformRecord.scaleX = 1.0f;
+                owner->effectTransformRecord.scaleY = 1.0f;
+                owner->effectTransformRecord.alpha = 255;
+                owner->effectTransformRecord.red = 255;
+                owner->effectTransformRecord.green = 255;
+                owner->effectTransformRecord.blue = 255;
+                owner->effectTransformRecord.rotationX = 0.0f;
+                owner->effectTransformRecord.rotationY = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 owner->field314 = rotationZ;
                 owner->field318 = field0CC;
@@ -2483,7 +2483,7 @@ void SakuyaObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = 0.0f;

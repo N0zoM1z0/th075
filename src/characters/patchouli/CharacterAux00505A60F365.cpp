@@ -33,50 +33,50 @@ void PatchouliFighter::AdvanceAuxiliary() {
     }
     if (fieldF0A != 1) {
         if (action > 149 && action < 154) {
-            field2F6 = 0;
-            field2F8 = 0;
-            field2FA = 0;
-            field2FC = 1.0f;
-            field300 = 1.0f;
-            field2F1 = 255;
-            field2F2 = 255;
-            field2F3 = 255;
-            field2F4 = 255;
-            field308 = 0.0f;
-            field30C = 50.0f;
-            field310 = 0.0f;
+            effectTransformRecord.offsetX = 0;
+            effectTransformRecord.offsetY = 0;
+            effectTransformRecord.offsetZ = 0;
+            effectTransformRecord.scaleX = 1.0f;
+            effectTransformRecord.scaleY = 1.0f;
+            effectTransformRecord.alpha = 255;
+            effectTransformRecord.red = 255;
+            effectTransformRecord.green = 255;
+            effectTransformRecord.blue = 255;
+            effectTransformRecord.rotationX = 0.0f;
+            effectTransformRecord.rotationY = 50.0f;
+            effectTransformRecord.rotationZ = 0.0f;
             SpawnTrackedEffect(817, facing * 57 + x, y + 94.0f, facing, 1, 1);
             fieldF0A = 1;
         }
         if (action > 153 && action < 158) {
-            field2F6 = 0;
-            field2F8 = 0;
-            field2FA = 0;
-            field2FC = 1.0f;
-            field300 = 1.0f;
-            field2F1 = 255;
-            field2F2 = 255;
-            field2F3 = 255;
-            field2F4 = 255;
-            field308 = 0.0f;
-            field30C = 50.0f;
-            field310 = 0.0f;
+            effectTransformRecord.offsetX = 0;
+            effectTransformRecord.offsetY = 0;
+            effectTransformRecord.offsetZ = 0;
+            effectTransformRecord.scaleX = 1.0f;
+            effectTransformRecord.scaleY = 1.0f;
+            effectTransformRecord.alpha = 255;
+            effectTransformRecord.red = 255;
+            effectTransformRecord.green = 255;
+            effectTransformRecord.blue = 255;
+            effectTransformRecord.rotationX = 0.0f;
+            effectTransformRecord.rotationY = 50.0f;
+            effectTransformRecord.rotationZ = 0.0f;
             SpawnTrackedEffect(817, facing * 57 + x, y + 60.0f, facing, 1, 1);
             fieldF0A = 1;
         }
         if (action == 158) {
-            field2F6 = 0;
-            field2F8 = 0;
-            field2FA = 0;
-            field2FC = 1.0f;
-            field300 = 1.0f;
-            field2F1 = 255;
-            field2F2 = 255;
-            field2F3 = 255;
-            field2F4 = 255;
-            field308 = 0.0f;
-            field30C = 50.0f;
-            field310 = 0.0f;
+            effectTransformRecord.offsetX = 0;
+            effectTransformRecord.offsetY = 0;
+            effectTransformRecord.offsetZ = 0;
+            effectTransformRecord.scaleX = 1.0f;
+            effectTransformRecord.scaleY = 1.0f;
+            effectTransformRecord.alpha = 255;
+            effectTransformRecord.red = 255;
+            effectTransformRecord.green = 255;
+            effectTransformRecord.blue = 255;
+            effectTransformRecord.rotationX = 0.0f;
+            effectTransformRecord.rotationY = 50.0f;
+            effectTransformRecord.rotationZ = 0.0f;
             SpawnTrackedEffect(817, facing * 57 + x, y + 100.0f, facing, 1, 1);
             fieldF0A = 1;
         }

@@ -552,11 +552,11 @@ void YukariObject::Advance()
         }
         if (animationStage > 1) {
             if ((facing == 1 &&
-                 ((velocityX > 0.0f && x > owner->field2DC) ||
-                  (velocityX < 0.0f && x < owner->cameraState.field04))) ||
+                 ((velocityX > 0.0f && x > owner->viewRight) ||
+                  (velocityX < 0.0f && x < owner->cameraState.viewLeft))) ||
                 (facing == -1 &&
-                 ((velocityX < 0.0f && x > owner->field2DC) ||
-                  (velocityX > 0.0f && x < owner->cameraState.field04))))
+                 ((velocityX < 0.0f && x > owner->viewRight) ||
+                  (velocityX > 0.0f && x < owner->cameraState.viewLeft))))
                 velocityX = -velocityX;
             rotationZ -= 30.0f;
             velocityY -= 0.8f;
@@ -702,13 +702,13 @@ void YukariObject::Advance()
         }
         if (field0C8 == 0.0f) y = 0.0f;
         if (field0C8 == -90.0f) {
-            if (facing == 1) x = owner->field2DC;
-            if (facing == -1) x = owner->cameraState.field04;
+            if (facing == 1) x = owner->viewRight;
+            if (facing == -1) x = owner->cameraState.viewLeft;
         }
-        if (field0C8 == -180.0f) y = owner->field2E0;
+        if (field0C8 == -180.0f) y = owner->viewTop;
         if (field0C8 == 90.0f) {
-            if (facing == -1) x = owner->field2DC;
-            if (facing == 1) x = owner->cameraState.field04;
+            if (facing == -1) x = owner->viewRight;
+            if (facing == 1) x = owner->cameraState.viewLeft;
         }
         x = facing * velocityX + x;
         y += velocityY;
@@ -741,8 +741,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 12.0f;
                 y = 0.0f;
-                if ((x < owner->cameraState.field04 && facing == -1) ||
-                    (x > owner->field2DC && facing == 1)) {
+                if ((x < owner->cameraState.viewLeft && facing == -1) ||
+                    (x > owner->viewRight && facing == 1)) {
                     ResetSecondaryCounter(2);
                     ++field0D8;
                     collisionResult = 0;
@@ -756,9 +756,9 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = 12.0f;
-                if (facing == 1) x = owner->field2DC;
-                if (facing == -1) x = owner->cameraState.field04;
-                if (y > owner->field2E0) {
+                if (facing == 1) x = owner->viewRight;
+                if (facing == -1) x = owner->cameraState.viewLeft;
+                if (y > owner->viewTop) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
                     collisionResult = 0;
@@ -772,9 +772,9 @@ void YukariObject::Advance()
                 }
                 velocityX = -12.0f;
                 velocityY = 0.0f;
-                y = owner->field2E0;
-                if ((x < owner->cameraState.field04 && facing == 1) ||
-                    (x > owner->field2DC && facing == -1)) {
+                y = owner->viewTop;
+                if ((x < owner->cameraState.viewLeft && facing == 1) ||
+                    (x > owner->viewRight && facing == -1)) {
                     ResetSecondaryCounter(4);
                     ++field0D8;
                     collisionResult = 0;
@@ -788,8 +788,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = -12.0f;
-                if (facing == -1) x = owner->field2DC;
-                if (facing == 1) x = owner->cameraState.field04;
+                if (facing == -1) x = owner->viewRight;
+                if (facing == 1) x = owner->cameraState.viewLeft;
                 if (y < 0.0f) {
                     ResetSecondaryCounter(1);
                     velocityX = 8.0f;
@@ -827,13 +827,13 @@ void YukariObject::Advance()
         }
         if (field0C8 == 0.0f) y = 0.0f;
         if (field0C8 == -90.0f) {
-            if (facing == 1) x = owner->field2DC;
-            if (facing == -1) x = owner->cameraState.field04;
+            if (facing == 1) x = owner->viewRight;
+            if (facing == -1) x = owner->cameraState.viewLeft;
         }
-        if (field0C8 == -180.0f) y = owner->field2E0;
+        if (field0C8 == -180.0f) y = owner->viewTop;
         if (field0C8 == 90.0f) {
-            if (facing == -1) x = owner->field2DC;
-            if (facing == 1) x = owner->cameraState.field04;
+            if (facing == -1) x = owner->viewRight;
+            if (facing == 1) x = owner->cameraState.viewLeft;
         }
         x = facing * velocityX + x;
         y += velocityY;
@@ -866,8 +866,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 12.0f;
                 y = 0.0f;
-                if ((x < owner->cameraState.field04 && facing == -1) ||
-                    (x > owner->field2DC && facing == 1)) {
+                if ((x < owner->cameraState.viewLeft && facing == -1) ||
+                    (x > owner->viewRight && facing == 1)) {
                     ResetSecondaryCounter(2);
                     ++field0D8;
                     collisionResult = 0;
@@ -881,9 +881,9 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = 12.0f;
-                if (facing == 1) x = owner->field2DC;
-                if (facing == -1) x = owner->cameraState.field04;
-                if (y > owner->field2E0) {
+                if (facing == 1) x = owner->viewRight;
+                if (facing == -1) x = owner->cameraState.viewLeft;
+                if (y > owner->viewTop) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
                     collisionResult = 0;
@@ -897,9 +897,9 @@ void YukariObject::Advance()
                 }
                 velocityX = -12.0f;
                 velocityY = 0.0f;
-                y = owner->field2E0;
-                if ((x < owner->cameraState.field04 && facing == 1) ||
-                    (x > owner->field2DC && facing == -1)) {
+                y = owner->viewTop;
+                if ((x < owner->cameraState.viewLeft && facing == 1) ||
+                    (x > owner->viewRight && facing == -1)) {
                     ResetSecondaryCounter(4);
                     ++field0D8;
                     collisionResult = 0;
@@ -913,8 +913,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = -12.0f;
-                if (facing == -1) x = owner->field2DC;
-                if (facing == 1) x = owner->cameraState.field04;
+                if (facing == -1) x = owner->viewRight;
+                if (facing == 1) x = owner->cameraState.viewLeft;
                 if (y < 0.0f) {
                     ResetSecondaryCounter(1);
                     velocityX = 8.0f;
@@ -952,13 +952,13 @@ void YukariObject::Advance()
         }
         if (field0C8 == 0.0f) y = 0.0f;
         if (field0C8 == -90.0f) {
-            if (facing == 1) x = owner->field2DC;
-            if (facing == -1) x = owner->cameraState.field04;
+            if (facing == 1) x = owner->viewRight;
+            if (facing == -1) x = owner->cameraState.viewLeft;
         }
-        if (field0C8 == -180.0f) y = owner->field2E0;
+        if (field0C8 == -180.0f) y = owner->viewTop;
         if (field0C8 == 90.0f) {
-            if (facing == -1) x = owner->field2DC;
-            if (facing == 1) x = owner->cameraState.field04;
+            if (facing == -1) x = owner->viewRight;
+            if (facing == 1) x = owner->cameraState.viewLeft;
         }
         x = facing * velocityX + x;
         y += velocityY;
@@ -991,8 +991,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 16.0f;
                 y = 0.0f;
-                if ((x < owner->cameraState.field04 && facing == -1) ||
-                    (x > owner->field2DC && facing == 1)) {
+                if ((x < owner->cameraState.viewLeft && facing == -1) ||
+                    (x > owner->viewRight && facing == 1)) {
                     ResetSecondaryCounter(2);
                     ++field0D8;
                     collisionResult = 0;
@@ -1006,9 +1006,9 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = 16.0f;
-                if (facing == 1) x = owner->field2DC;
-                if (facing == -1) x = owner->cameraState.field04;
-                if (y > owner->field2E0) {
+                if (facing == 1) x = owner->viewRight;
+                if (facing == -1) x = owner->cameraState.viewLeft;
+                if (y > owner->viewTop) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
                     collisionResult = 0;
@@ -1022,9 +1022,9 @@ void YukariObject::Advance()
                 }
                 velocityX = -16.0f;
                 velocityY = 0.0f;
-                y = owner->field2E0;
-                if ((x < owner->cameraState.field04 && facing == 1) ||
-                    (x > owner->field2DC && facing == -1)) {
+                y = owner->viewTop;
+                if ((x < owner->cameraState.viewLeft && facing == 1) ||
+                    (x > owner->viewRight && facing == -1)) {
                     ResetSecondaryCounter(4);
                     ++field0D8;
                     collisionResult = 0;
@@ -1038,8 +1038,8 @@ void YukariObject::Advance()
                 }
                 velocityX = 0.0f;
                 velocityY = -16.0f;
-                if (facing == -1) x = owner->field2DC;
-                if (facing == 1) x = owner->cameraState.field04;
+                if (facing == -1) x = owner->viewRight;
+                if (facing == 1) x = owner->cameraState.viewLeft;
                 if (y < 0.0f) {
                     ResetSecondaryCounter(1);
                     velocityX = 8.0f;
@@ -2798,7 +2798,7 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;

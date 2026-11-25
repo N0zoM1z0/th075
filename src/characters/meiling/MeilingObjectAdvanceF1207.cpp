@@ -2345,7 +2345,7 @@ void MeilingObject::Advance() {
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;
@@ -2562,7 +2562,7 @@ void MeilingObject::Advance() {
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;

@@ -53,7 +53,7 @@ case 0x346: {
                                      float(field0D8));
         rotationZ=AngleAt00483300(
             velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
-        owner->field310=AngleAt00483300(
+        owner->effectTransformRecord.rotationZ=AngleAt00483300(
             velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
     }
     if (animationStage==3) {

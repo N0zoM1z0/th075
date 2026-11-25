@@ -3820,7 +3820,7 @@ void ReimuObject::Advance()
             color[1] = 0xFF;
             color[2] = 0xFF;
             color[3] = 0xFF;
-            field01A = 0x4E2;
+            spriteOffsetZ = 0x4E2;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;
@@ -4081,7 +4081,7 @@ void ReimuObject::Advance()
             color[1] = 0xFF;
             color[2] = 0xFF;
             color[3] = 0xFF;
-            field01A = 0x4E2;
+            spriteOffsetZ = 0x4E2;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;

@@ -22,7 +22,7 @@ void CombatEffects::Spawn(short pattern, float x, float y, unsigned char kind,
         EFFECT->facing = kind;
         EFFECT->field067 = flags;
         EFFECT->field068 = mode;
-        EFFECT->field040 = 0;
+        EFFECT->transformEnabled = 0;
         EFFECT->BindAnimation();
         EFFECT->Advance();
     }

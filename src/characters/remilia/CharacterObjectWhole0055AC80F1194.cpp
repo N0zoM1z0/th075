@@ -6,14 +6,6 @@
 #include "battle/BattleSessionState.hpp"
 #include "battle/EffectServices.hpp"
 
-// Caller-cleaned two-float/ST0 used-contract hypothesis, shared with the
-// independently retained004AC040 draft. Origin and nominal return type remain
-// unknown; this declaration supplies no ownership or callee exact credit.
-
-// Same observed signed-byte view used by the accepted response policy.
-
-#undef PlaySound
-
 // F1194: complete natural C++ reconstruction of RemiliaObject::Advance.
 // The 28,432-byte native CODE body and its 232-byte jump table plus 198-byte
 // remap are compared in one complete extent; table bytes are not CODE credit.
@@ -1963,7 +1955,7 @@ case 915:
         field0D8 = 10 - g_OptionsModeAt006714D0;
     }
     if (g_OptionsModeAt006714D0 > 0) {
-        if (y > owner->field2E0 && field0DC < 1 && velocityY < 0.0f) {
+        if (y > owner->viewTop && field0DC < 1 && velocityY < 0.0f) {
             owner->PlaySound(11);
             field0DA = -field0DA;
             field0DC++;
@@ -1979,7 +1971,7 @@ case 915:
             remainingHits = 1;
             field0CC = 4.0f;
         }
-        if (x < owner->cameraState.field04 && field0DC < 1 &&
+        if (x < owner->cameraState.viewLeft && field0DC < 1 &&
             ((facing == -1 && velocityX > 0.0f) ||
              (facing == 1 && velocityX < 0.0f))) {
             owner->PlaySound(11);
@@ -1992,7 +1984,7 @@ case 915:
             remainingHits = 1;
             field0CC = 4.0f;
         }
-        if (x > owner->field2DC && field0DC < 1 &&
+        if (x > owner->viewRight && field0DC < 1 &&
             ((facing == -1 && velocityX < 0.0f) ||
              (facing == 1 && velocityX > 0.0f))) {
             owner->PlaySound(11);
@@ -2208,7 +2200,7 @@ case 997:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field01A = 1250;
+        spriteOffsetZ = 1250;
         rotationY = 0.0f;
         rotationZ = 0.0f;
         rotationX = -80.0f;

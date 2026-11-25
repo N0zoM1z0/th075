@@ -450,10 +450,10 @@ case 812:
         owner->SpawnBattleEffect(827, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationStage == 1) {
-            if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
+            if (y > owner->viewTop && velocityY < 0.0f) field0D8 = 1;
             if (y < 0.0f && velocityY > 0.0f) field0D8 = 1;
-            if (x < owner->cameraState.field04 && facing * velocityX < 0.0f) field0D8 = 1;
-            if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
+            if (x < owner->cameraState.viewLeft && facing * velocityX < 0.0f) field0D8 = 1;
+            if (x > owner->viewRight && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
                 owner->PlaySound(0);
                 for (int collisionIndex812 = 0; collisionIndex812 < 1; ++collisionIndex812) {
@@ -541,7 +541,7 @@ case 814:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationX = 110.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
@@ -561,7 +561,7 @@ case 815:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationX = 110.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
@@ -586,10 +586,10 @@ case 816:
         owner->SpawnBattleEffect(828, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationStage == 1) {
-            if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
+            if (y > owner->viewTop && velocityY < 0.0f) field0D8 = 1;
             if (y < 0.0f && velocityY > 0.0f) field0D8 = 1;
-            if (x < owner->cameraState.field04 && facing * velocityX < 0.0f) field0D8 = 1;
-            if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
+            if (x < owner->cameraState.viewLeft && facing * velocityX < 0.0f) field0D8 = 1;
+            if (x > owner->viewRight && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
                 owner->PlaySound(0);
                 for (int collisionIndex816 = 0; collisionIndex816 < 1; ++collisionIndex816) {
@@ -634,10 +634,10 @@ case 817:
         owner->SpawnBattleEffect(829, x - 10.0f + RecordedRange(0, 20),
             y - 10.0f + RecordedRange(0, 20), facing, 1);
         if (animationStage == 1) {
-            if (y > owner->field2E0 && velocityY < 0.0f) field0D8 = 1;
+            if (y > owner->viewTop && velocityY < 0.0f) field0D8 = 1;
             if (y < 0.0f && velocityY > 0.0f) field0D8 = 1;
-            if (x < owner->cameraState.field04 && facing * velocityX < 0.0f) field0D8 = 1;
-            if (x > owner->field2DC && facing * velocityX > 0.0f) field0D8 = 1;
+            if (x < owner->cameraState.viewLeft && facing * velocityX < 0.0f) field0D8 = 1;
+            if (x > owner->viewRight && facing * velocityX > 0.0f) field0D8 = 1;
             if (field0D8 == 1) {
                 owner->PlaySound(0);
                 for (int collisionIndex817 = 0; collisionIndex817 < 1; ++collisionIndex817) {
@@ -803,7 +803,7 @@ case 821:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationX = 140.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
@@ -902,7 +902,7 @@ case 824:
             color[2] = 255;
             color[3] = 255;
             rotationY = 70.0f;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationZ = RecordedRange(0, 359);
         }
         scaleX += 0.2f;
@@ -1587,7 +1587,7 @@ case 841:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationX = -70.0f;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
@@ -2235,7 +2235,7 @@ case 912:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationX = -75.0f;
         }
         scaleX += 0.15f;
@@ -2319,7 +2319,7 @@ case 915:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationX = -75.0f;
         }
         scaleX += 0.15f;
@@ -2551,7 +2551,7 @@ case 997:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field01A = 1250;
+            spriteOffsetZ = 1250;
             rotationY = 0.0f;
             rotationZ = 0.0f;
             rotationX = -80.0f;

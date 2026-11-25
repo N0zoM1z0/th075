@@ -2,11 +2,11 @@
 
 // The background base constructs its camera subobject at +0x04.
 // The next independently observed base fields begin at +0x0C, bounding this
-// state object to eight bytes; the two member meanings remain unknown.
+// state object to eight bytes. Only the fighter uses its left view bound.
 class CameraResetF481 {
     unsigned int unknown00;
 public:
-    float field04;
+    float viewLeft;
     CameraResetF481();
 };
 

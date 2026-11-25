@@ -960,6 +960,21 @@ action and a reflection count in another. Keep those meanings with their
 action when recovering more of the object layout.
 [Sakuya object actions](../src/characters/sakuya/SakuyaObjectAdvanceF1222.cpp)
 
+### Combat camera bounds and linked effects
+
+`Fighter::UpdateCounters` writes the left, right, top and bottom view
+bounds at `+0x2D8..+0x2E4`. Character objects use the same fields to
+reflect or change direction at the screen edges. The coordinate mapper
+at `0x00455770` reads those four fields to map world coordinates into
+the 640×480 view. Its original callers remain unknown.
+[Counter update](../src/battle/CombatTimers.cpp) · [Coordinate mapper](../src/battle/CombatCoordinateViewF536.cpp)
+
+A tracked effect can copy the 36-byte transform from its fighter at
+`+0x2F0` into the spawned actor at `+0x10`. The sprite renderers use
+its offsets in projected drawing and read the scale, rotations, color
+and draw flags from the same record.
+[Transform layout](../src/engine/TransformRecordF136.hpp) · [Effect spawn](../src/battle/EffectManagerSpawnF161.cpp) · [Sprite rendering](../src/graphics/SpriteNameDrawing.cpp)
+
 ## Scene commands and archive files
 
 The Windows loop consumes a 16-bit scene command. The low byte selects the

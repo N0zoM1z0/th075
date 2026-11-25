@@ -53,15 +53,15 @@ void Fighter::Render() {
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
-    if (field040 != 0) {
-        if (field010 & 0x80) reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(0);
+    if (transformEnabled != 0) {
+        if (transformFlags & 0x80) reinterpret_cast<TextureManagerF198*>(DRAWING)->SetPixelShaderMode(0);
         TRANSFORM(transformedQuad)->ScaleQuad(facing * ((frameInfo->originX) + pivotX),
             (frameInfo->originY) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
         TRANSFORM(transformedQuad)->RotateQuad(facing * ((frameInfo->originX) + pivotX),
             (frameInfo->originY) - pivotY, pivotZ, rotationX, rotationY, facing * rotationZ);
-        spriteOffset.x = field016;
-        spriteOffset.y = field018;
-        spriteOffset.z = field01A;
+        spriteOffset.x = spriteOffsetX;
+        spriteOffset.y = spriteOffsetY;
+        spriteOffset.z = spriteOffsetZ;
         drawColor = D3DCOLOR_ARGB(color[0], color[1], color[2], color[3]);
     }
     TRANSFORM(transformedQuad)->TranslateQuad(x - facing * (frameInfo->originX), -y - (frameInfo->originY), 0);

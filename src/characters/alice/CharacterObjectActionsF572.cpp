@@ -3,17 +3,8 @@
 #include "engine/GameSharedState.hpp"
 #include "characters/alice/AliceFighter.hpp"
 #include "characters/CharacterObject.hpp"
-// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593/F596: selected natural VC7.1 source, original PE 004EBDA0.
-// Original entire 33,293-byte CODE + 438 post-RET DATA now have the
-// exact physical native layout and all 8,789 original x86 instruction
-// offsets/lengths; all 8,789 mnemonic ordinals now match. 137 original
-// non-COFF bytes in three GPR contexts still differ: NONEXACT.
-// All real native action cases and the original 0040FA30 default are
-// present as normal C++; three case bodies still have wrong GPR roles.
-// No target ASM, injected filler, machine-byte graft or independent
-// split-case CODE/DATA acceptance is claimed.
-// F539 natural switch *probe*, not original fighter source or CODE credit.
-// This file is regenerable from the original PE under ignored .analysis.
+// The exact unit compares the full 33,293-byte function and its
+// 438-byte switch table extent at 0x004EBDA0.
 extern float MagnitudeAt00428D20(float value);
 extern float AngleAt00483300(float first, float second);
 extern float AbsFloatAt00412D90(float value);
@@ -428,7 +419,7 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        field01A = 0x4E2;
+        spriteOffsetZ = 0x4E2;
         rotationX = -75.0f;
     }
     scaleX = (scaleX) + FloatConstants::FifteenHundredths;
@@ -857,7 +848,7 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        field01A = 0x4E2;
+        spriteOffsetZ = 0x4E2;
         rotationX = -75.0f;
     }
     scaleX = (scaleX) + FloatConstants::ThreeTenths;
@@ -1214,7 +1205,7 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        field01A = 0x4E2;
+        spriteOffsetZ = 0x4E2;
         rotationX = -75.0f;
     }
     scaleX = (scaleX) + FloatConstants::ThreeTenths;
@@ -1918,7 +1909,7 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field01A=0x4E2;
+        spriteOffsetZ=0x4E2;
         rotationX=-65.0f;
     }
     rotationZ = (rotationZ)-FloatConstants::TwentyTwoAndHalf;
@@ -2057,7 +2048,7 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field01A=0x4E2;
+        spriteOffsetZ=0x4E2;
         rotationX=-75.0f;
     }
     scaleX = (scaleX)+FloatConstants::FifteenHundredths;
@@ -2516,7 +2507,7 @@ void AliceObject::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field01A=0x4E2;
+        spriteOffsetZ=0x4E2;
         rotationY = 0.0f;
         rotationZ = 0.0f;
         rotationX=-80.0f;

@@ -103,6 +103,20 @@ units passed. The normal link matched the preceding build except for
 the COFF timestamp.
 [Fighter and object sources](GIANTS.md#complete-research-parents) · [Text overlay](../src/graphics/TextOverlay.hpp) · [Name entry](../src/ui/NameEntryScenes.hpp)
 
+The coordinate mapper reads the same named view bounds as the fighter
+counter update and character-object actions. Tracked effects use the
+shared sprite transform record. The Alice and Remilia object methods
+now live alongside their fighters, so the Windows build compiles all
+translation units from `src/`. All 724 affected units passed.
+[Camera and transform evidence](KNOWLEDGE_BASE.md#combat-camera-bounds-and-linked-effects)
+
+The current Windows executable linked without diagnostics. The normal
+and reversed retained links both checked all configured units, 56,374
+linked relocations, 80 vtables and ten initializer pointers. Headless
+probes round-tripped five replay files and the 90-byte playtest config
+byte for byte. The full battle playback comparison below records the
+playable baseline before the semantic changes.
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build
