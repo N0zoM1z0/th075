@@ -45,7 +45,10 @@ isolated Xvfb. Both layouts also loaded and rendered the first battle
 with the installation's `replay/` directory staged. The command-history
 matcher now uses the native iterator subtraction, and both layouts
 completed 60 battle updates after the fix. The PI notes record which
-symbols moved and which relocations were verified in both layouts.
+symbols moved. With linker reference elimination disabled, both layouts
+also verified all configured unit extents, 80 vtables and the C++
+initializer array. Separate console probes round-tripped the same
+configuration in both object orders.
 [Windows position independence](POSITION_INDEPENDENCE.md)
 
 ### Selected earlier link checkpoints
