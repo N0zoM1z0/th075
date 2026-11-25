@@ -83,6 +83,12 @@ of four translation units. The playtest uses VC7.1 objects and a native
 Windows link. The console probe checked both players' health and healing.
 Use the normal executable for reference replay comparisons.
 
+The playtest directory has its own 90-byte `config.ini`. The built-in 1P
+bindings use Q to confirm and Y/N for menu movement. The playtest file
+maps 1P to the arrow keys, Z/X/C/A and F11, and 2P to G/J/Y/N, Q/W/E/D
+and F12. The native Windows console probe loaded the file with the game's
+configuration reader and checked all 18 scan codes with the input mapper.
+
 ## Origin review
 
 The live `review` rows are in `config/function-origins.csv`. Every pending
