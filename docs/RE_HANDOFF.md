@@ -39,6 +39,12 @@ The audio client and event-service destructors now bind the shared
 and a strict relink used the refreshed objects.
 [Import evidence](KNOWLEDGE_BASE.md#windows-link)
 
+The ordinary and reverse-order Windows links both ran from the title
+through character selection and back to title before exiting under
+isolated Xvfb. The PI notes record which symbols moved and which
+relocations were verified in both layouts.
+[Windows position independence](POSITION_INDEPENDENCE.md)
+
 ### Selected earlier link checkpoints
 
 The grayscale shader, two clipping bounds and the texture and replay
