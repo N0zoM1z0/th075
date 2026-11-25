@@ -1,7 +1,7 @@
 // F1071: original Japanese PE 0050B150..0050B654; 1,284 original CODE
 // B /278 x86. True stage-specific gameplay inside ONE nonexact 81KB Boss.
 case 0x324: {
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
@@ -22,8 +22,8 @@ case 0x324: {
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field0D8=0;
         SetPolarVelocity(field0C8,15.0f);
         scaleX=0.1f;
@@ -45,7 +45,7 @@ case 0x324: {
             scaleY=(scaleY)+FloatConstants::OneTenth;
         }
     }
-    if (field07C!=0 && animationStage==1) {
+    if (collisionResult!=0 && animationStage==1) {
         ResetSecondaryCounter(2);
         scaleX=4.0f;
         scaleY=4.0f;

@@ -1,16 +1,16 @@
 case R1191_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
 #if !R1191_AIR
         ClearMotionFields();
 #endif
         scriptCounterF00=0;
     }
 #if R1191_AIR
-    if ((animationStage)>=0) velocityY=velocityY-field05C;
+    if ((animationStage)>=0) velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
-        y=0.0f; field05C=0.0f; velocityY=0.0f;
+        y=0.0f; verticalAcceleration=0.0f; velocityY=0.0f;
         break;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(9);

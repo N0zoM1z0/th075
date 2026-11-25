@@ -1,14 +1,14 @@
 // F1119: real original TH075 game action 0x38A at PE
 // 0051BFE2..0051C3ED, 1035 native CODE B/226 x86. Whole 81KB NONEXACT.
 case 0x38A: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field0D8=0;
         scaleX=0.0f;
         scaleY=0.0f;

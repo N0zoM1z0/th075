@@ -4,15 +4,15 @@
 case 0x2C1: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         ClearMotionFields();
     }
     if ((animationStage)==1 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         PlaySound(9);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,x,
             (*(&y))+GeometryConstants::Hundred,
             (facing),1);

@@ -6,12 +6,12 @@
         case 0x19A: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 scriptCounterF00=0;
-                field07C=1;
+                collisionResult=1;
                 velocityX=(velocityX)*FloatConstants::Quarter;
                 velocityY=(*(&velocityY))*FloatConstants::Quarter;
             }
             if ((animationStage)>5) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     y=0.0f;
@@ -53,12 +53,12 @@
         case 0x19B: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 scriptCounterF00=0;
-                field07C=1;
+                collisionResult=1;
                 velocityX=(velocityX)*FloatConstants::Quarter;
                 velocityY=(*(&velocityY))*FloatConstants::Quarter;
             }
             if ((animationStage)>5) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     y=0.0f;

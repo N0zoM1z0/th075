@@ -5,7 +5,7 @@
 // Original complete fighter CODE remains NONEXACT; no fake locals.
         case 0x196: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
@@ -36,7 +36,7 @@
         }
         case 0x197: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
@@ -67,7 +67,7 @@
         }
         case 0x198: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 scriptCounterF00=0;
             }

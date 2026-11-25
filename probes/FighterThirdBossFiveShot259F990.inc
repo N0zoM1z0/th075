@@ -9,7 +9,7 @@
  // Whole original 82KB game callable NONEXACT.
 case 0x259: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;

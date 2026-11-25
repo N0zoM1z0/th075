@@ -1,7 +1,7 @@
 // Sakuya landing actions 0x5D and 0x5E in 0x004AC040.
         case 0x5D: {
             if ((animationStage)<12 && y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -23,7 +23,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=8.0f;
                 velocityX=12.5f;
-                field05C=0.7f;
+                verticalAcceleration=0.7f;
             }
             if (animationStage == 12 && animationFrame == 0)
                 ResetSecondaryCounter(10);
@@ -34,7 +34,7 @@
         }
         case 0x5E: {
             if ((animationStage)<9 && y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -56,7 +56,7 @@
             if ((animationStage)==6 && (animationFrame)==0) {
                 velocityY=8.0f;
                 velocityX=-12.5f;
-                field05C=0.7f;
+                verticalAcceleration=0.7f;
             }
             if (animationStage == 9 && animationFrame == 0)
                 ResetSecondaryCounter(8);

@@ -5,11 +5,11 @@
 case 0x1FE: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=0;
-        field07C=0;
+        remainingHits=0;
+        collisionResult=0;
         field3AC=0;
     }
-    if ((animationStage)==2 && field07C==1) {
+    if ((animationStage)==2 && collisionResult==1) {
         SpawnAuxEffect(0x50,
             float((facing)*80)+(x),
             (*(&y))+GeometryConstants::FortyOne,
@@ -26,9 +26,9 @@ case 0x1FE: {
         if (opponent->y==FloatConstants::Zero &&
            (opponent->action<0x32 ||
             opponent->action>0x95)) {
-            field080=1;
+            remainingHits=1;
         } else {
-            field080=0;
+            remainingHits=0;
         }
     }
     return;

@@ -10,13 +10,13 @@ case 0xCA: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
         scriptCounterF00=0;
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=11.0f;
         velocityY=5.0f;
-        field05C=0.6f;
+        verticalAcceleration=0.6f;
         SpawnAuxEffect(0x7D,
             float((facing)*80)+(x),
             (*(&y))+GeometryConstants::Seventy,
@@ -27,11 +27,11 @@ case 0xCA: {
         PlaySharedSound(31);
     }
     if (y>FloatConstants::Zero && (animationStage)>1) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
-            field05C=0.0f;
+            verticalAcceleration=0.0f;
             y=0.0f;
             animationFrame=0;
             ResetPrimaryCounters(0xA);

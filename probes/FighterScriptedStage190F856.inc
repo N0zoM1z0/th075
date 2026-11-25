@@ -3,8 +3,8 @@
 // Normal C++ whole original game interior, source GPR not exact.
 case 0x190: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))
@@ -17,6 +17,6 @@ case 0x190: {
         PlaySound(0);
     }
     if ((animationStage)==4 && (animationFrame)==0)
-        field07C=1;
+        collisionResult=1;
     return;
 }

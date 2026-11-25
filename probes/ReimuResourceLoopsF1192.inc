@@ -1,11 +1,11 @@
 case 0x303: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        scriptCounterF00=0; field07C=1;
+        scriptCounterF00=0; collisionResult=1;
         ClearMotionFields();
     }
-    field490=0.0f;
-    opponent->field490=0.0f;
-    if ((animationStage)<15 && y>FloatConstants::Zero) velocityY=velocityY-field05C;
+    opponentVelocityDeltaX=0.0f;
+    opponent->opponentVelocityDeltaX=0.0f;
+    if ((animationStage)<15 && y>FloatConstants::Zero) velocityY=velocityY-verticalAcceleration;
     if ((animationStage)>14) fieldF26=(fieldF26)+5;
     if (AdvanceNestedFrame()==(animationStageCount)) {
         if ((scriptCounterF00)<8) {
@@ -20,9 +20,9 @@ case 0x303: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=(GeometryConstants::SixHundredForty-x)/GeometryConstants::Thirty*
             (facing);
-        velocityY=12.0f; field05C=0.5f;
-        field490=0.0f;
-        opponent->field490=0.0f;
+        velocityY=12.0f; verticalAcceleration=0.5f;
+        opponentVelocityDeltaX=0.0f;
+        opponent->opponentVelocityDeltaX=0.0f;
     }
     if ((animationStage)==13 && (animationFrame)==0) ClearMotionFields();
     if ((animationStage)==15 && (animationFrame)==0) {
@@ -73,10 +73,10 @@ case 0x303: {
 }
 case 0x304: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1; ClearMotionFields(); scriptCounterF00=0;
+        collisionResult=1; ClearMotionFields(); scriptCounterF00=0;
     }
     if (opponent->health>0 && opponent->animationStage==2 &&
-        opponent->field39D>0 && opponent->action==0x63) {
+        opponent->roundsRemaining>0 && opponent->action==0x63) {
         reinterpret_cast<ReimuFighter*>(opponent)->ResetPrimaryCounters(0x5F);
         opponent->field3CF=1;
         break;
@@ -97,8 +97,8 @@ case 0x304: {
         }
         scriptCounterF00=0;
     }
-    field490=0.0f;
-    opponent->field490=0.0f;
+    opponentVelocityDeltaX=0.0f;
+    opponent->opponentVelocityDeltaX=0.0f;
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(1);
     break;
 }

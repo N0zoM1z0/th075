@@ -2,10 +2,10 @@
 // Whole source remains a nonexact giant; this is an inner case only.
 case 0x49: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
-        field05C = 0.8f;
-        field07C = 0;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
+        verticalAcceleration = 0.8f;
+        collisionResult = 0;
     }
     if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00=static_cast<short>((velocityX) * GeometryConstants::Hundred);

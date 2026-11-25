@@ -33,12 +33,12 @@ case 0x328: {
         SetPolarVelocity(field0C8,13.0f);
         rotationZ=field0C8;
         field0D8=0;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
-    if (field07C==6) {
-        field07C=0;
-        ++field080;
+    if (collisionResult==6) {
+        collisionResult=0;
+        ++remainingHits;
     }
     x=float(facing)*velocityX+x;
     y=y+velocityY;
@@ -49,7 +49,7 @@ case 0x328: {
         float(RecordedRange(0,60))+x-GeometryConstants::Thirty,
         float(RecordedRange(0,60))+y-GeometryConstants::Thirty,
         facing,0);
-    if (field080==0 ||
+    if (remainingHits==0 ||
         y+velocityY<=FloatConstants::Zero) {
         ClearFrameInfo();
         owner->SetCameraShake(5.0f);

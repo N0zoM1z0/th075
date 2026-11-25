@@ -6,8 +6,8 @@
         case 0x186: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 if ((field3AC)==0) ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 velocityX=10.0f;
             }
             if ((animationStage)>0) {
@@ -30,8 +30,8 @@
         case 0x187: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 if ((field3AC)==0) ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 velocityX=10.0f;
             }
             if ((animationStage)>0) {
@@ -47,8 +47,8 @@
         case 0x188: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 if ((field3AC)==0) ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 velocityX=15.0f;
             }
             if ((animationStage)>0) {
@@ -64,19 +64,19 @@
         case 0x189: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field3AC=0;
-                field080=1;
-                field07C=0;
-                field05C=0.0f;
+                remainingHits=1;
+                collisionResult=0;
+                verticalAcceleration=0.0f;
                 velocityY=0.0f;
                 velocityX=15.0f;
             }
             if ((velocityX)>FloatConstants::Zero) velocityX=(velocityX)-FloatConstants::OneTwentieth;
             if (y>FloatConstants::Zero && (animationStage)>6 && (animationStage)<9) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (velocityY+y<=FloatConstants::Zero) {
                     velocityX=0.0f;
                     velocityY=0.0f;
-                    field05C=0.0f;
+                    verticalAcceleration=0.0f;
                     y=0.0f;
                     animationFrame=0;
                     ResetSecondaryCounter(9);
@@ -86,7 +86,7 @@
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==7 && (animationFrame)==0) {
                 velocityY=9.0f;
-                field05C=0.9f;
+                verticalAcceleration=0.9f;
             }
             if ((animationStage)==9 && y>FloatConstants::Zero)
                 ResetSecondaryCounter((animationStage)-2);

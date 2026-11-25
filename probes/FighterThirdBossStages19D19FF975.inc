@@ -10,7 +10,7 @@
 // F975 true original Japanese 004AC040 19D stage, 400B/97 native x86.
 case 0x19D: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
@@ -35,7 +35,7 @@ case 0x19D: {
 // F975 true original Japanese 004AC040 19E, float-scaled single native shot.
 case 0x19E: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         velocityX=(velocityX)*FloatConstants::Quarter;
@@ -69,7 +69,7 @@ case 0x19E: {
 // F975 true original Japanese 004AC040 19E, float-scaled single native shot.
 case 0x19F: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         velocityX=(velocityX)*FloatConstants::Quarter;

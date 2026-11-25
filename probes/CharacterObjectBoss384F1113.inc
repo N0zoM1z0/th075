@@ -1,14 +1,14 @@
 // F1113: genuine original TH075 Japanese action 0x384 inside ONE still
 // NONEXACT CharacterObject Advance. PE 0051AAFD..0051AFF0: 1267B/277 x86.
 case 0x384: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field0D8=0;
         scaleX=0.0f;
         scaleY=0.0f;

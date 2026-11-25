@@ -3,7 +3,7 @@
 case 0x34F: {
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field07C=0;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -26,7 +26,7 @@ case 0x34F: {
         field0D8=140;
     if ((owner->opponent->health<=0 ||
         owner->health<=0 ||
-        owner->field3A0<=0) &&
+        owner->spellTimer<=0) &&
         animationStage<2)
         ResetSecondaryCounter(2);
     if (owner->action==0x2C1 &&
@@ -68,7 +68,7 @@ case 0x34F: {
     }
     if (animationStage==2 && animationFrame==0) {
         ResetSecondaryCounter(0);
-        owner->field36C=(owner->field36C)-GeometryConstants::TwentyFive;
+        owner->spellPower=(owner->spellPower)-GeometryConstants::TwentyFive;
         owner->PlaySound(20);
     }
     return;

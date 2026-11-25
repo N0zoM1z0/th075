@@ -5,12 +5,12 @@
 case 0xCC: {
     if (y==FloatConstants::Zero || velocityY>FloatConstants::Zero) {
         SetCommandSelection(3,4,0xFF);
-        field088=2;
+        grazeFrames=2;
     }
     if (animationStage==0 && (field3AC)==0)
         ClearMotionFields();
     if (animationStage>2) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;
@@ -27,7 +27,7 @@ case 0xCC: {
         if (animationStage==3) {
             velocityX=0.0f;
             velocityY=23.0f;
-            field05C=0.75f;
+            verticalAcceleration=0.75f;
             SpawnAuxEffect(0x3C,x,y,1,1);
             field3AC=0;
         }

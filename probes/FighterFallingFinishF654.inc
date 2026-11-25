@@ -3,8 +3,8 @@
 case 0x12F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0 && (animationStage)<4) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -26,17 +26,17 @@ case 0x12F: {
 }
 // Original 0x130: ground contact, motion reset, and stage-3 projectile.
 case 0x130: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
         y=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
         velocityY=0.0f;
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1D);

@@ -29,14 +29,14 @@ case 0x355: {
         field0D8=0;
         field0DA=0;
         field0DC=0;
-        field080=0;
-        field07C=0;
+        remainingHits=0;
+        collisionResult=0;
     }
     if (scaleX<FloatConstants::OneAndThreeTenths) {
         scaleX=(scaleX)+FloatConstants::OneTenth;
         scaleY=(scaleY)+FloatConstants::OneTenth;
     } else if (field0D8==0) {
-        field080=10;
+        remainingHits=10;
         ++field0D8;
     }
     if (velocityX>FloatConstants::Half) {
@@ -54,9 +54,9 @@ case 0x355: {
         if (velocityY>FloatConstants::FourAndHalf)
             field0DC=0;
     }
-    if (field07C==4 && field080>0)
-        field07C=0;
-    if (field07C!=0 && animationStage<0x1F) {
+    if (collisionResult==4 && remainingHits>0)
+        collisionResult=0;
+    if (collisionResult!=0 && animationStage<0x1F) {
         ResetSecondaryCounter(0x1F);
         velocityX=0.0f;
         velocityY=0.0f;

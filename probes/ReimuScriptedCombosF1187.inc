@@ -231,7 +231,7 @@
 
 
 case 0x19D: {
-    if ((animationStage)==0 && (animationFrame)==0) { field07C=1; ClearMotionFields(); }
+    if ((animationStage)==0 && (animationFrame)==0) { collisionResult=1; ClearMotionFields(); }
     if ((animationStage)==6 && (animationFrame)==0) {
         field314=-30.0f; field318=8.0f;
         SpawnBattleEffect(0x32C,float(facing*37)+(x),
@@ -290,13 +290,13 @@ case 0x19D: {
 case 0x1A1: {
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
-        y=0.0f; field05C=0.0f; velocityY=0.0f;
+        y=0.0f; verticalAcceleration=0.0f; velocityY=0.0f;
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*FloatConstants::OneTenth;
         velocityY=(*(&velocityY))*FloatConstants::OneTenth;
-        field07C=1;
+        collisionResult=1;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==3 && (animationFrame)==0) {

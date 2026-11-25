@@ -7,7 +7,7 @@
 // Distinct stage, floor/velocity and actual 0x335 shots are NOT stubs.
         case 0x19C: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
@@ -26,12 +26,12 @@
         }
         case 0x19E: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
             if (y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     y=0.0f;
@@ -44,7 +44,7 @@
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityX=-6.0f;
                 velocityY=17.5f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(3);
@@ -59,8 +59,8 @@
         }
         case 0x1A0: {
             if ((animationStage)==0 && (animationFrame)==0)
-                field07C=1;
-            velocityY=velocityY-field05C;
+                collisionResult=1;
+            velocityY=velocityY-verticalAcceleration;
             if (y+velocityY<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
@@ -70,7 +70,7 @@
                 PlaySound(3);
                 velocityX=-8.0f;
                 velocityY=10.0f;
-                field05C=0.65f;
+                verticalAcceleration=0.65f;
                 field314=0.0f;
                 UpdateGaugeTimer(200);
                 SpawnBattleEffect(0x335,
@@ -84,8 +84,8 @@
         }
         case 0x1A1: {
             if ((animationStage)==0 && (animationFrame)==0)
-                field07C=1;
-            velocityY=velocityY-field05C;
+                collisionResult=1;
+            velocityY=velocityY-verticalAcceleration;
             if (y+velocityY<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
@@ -95,7 +95,7 @@
                 PlaySound(3);
                 velocityX=-8.0f;
                 velocityY=10.0f;
-                field05C=0.65f;
+                verticalAcceleration=0.65f;
                 field314=-20.0f;
                 UpdateGaugeTimer(200);
                 SpawnBattleEffect(0x335,

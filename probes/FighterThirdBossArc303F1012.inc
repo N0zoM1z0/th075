@@ -23,12 +23,12 @@ case 0x303: {
             fieldF06=-5;
     }
     if ((animationStage)<9 && y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY<FloatConstants::One)
             velocityY=1.0f;
     }
     if ((animationStage)>8 && y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
@@ -63,7 +63,7 @@ case 0x303: {
     if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=6.5f;
-        field05C=0.25f;
+        verticalAcceleration=0.25f;
     }
     if ((animationStage)==7 && (animationFrame)==0) {
         fieldF04=static_cast<short>(

@@ -8,8 +8,8 @@ case 0x133: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ClearMotionFields();
-                    field080=1;
-        field07C=0;
+                    remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -34,9 +34,9 @@ case 0x134: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=0.0f;
-        field05C=0.0f;
-        field080=1;
-        field07C=0;
+        verticalAcceleration=0.0f;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((velocityX)>FloatConstants::Zero)
         velocityX=(velocityX)-FloatConstants::Half;
@@ -44,11 +44,11 @@ case 0x134: {
         y>FloatConstants::Zero)
         velocityX=2.0f;
     if (y>FloatConstants::Zero && (animationStage)<14) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
-            field05C=0.0f;
+            verticalAcceleration=0.0f;
             y=0.0f;
             ResetSecondaryCounter(0xE);
             break;
@@ -59,7 +59,7 @@ case 0x134: {
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=12.5f;
         velocityY=8.5f;
-        field05C=0.65f;
+        verticalAcceleration=0.65f;
     }
     if ((animationStage)==7 && (animationFrame)==0)
         Fighter::SpawnTrackedEffect(0x336,x,y,

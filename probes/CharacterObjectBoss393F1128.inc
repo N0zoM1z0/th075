@@ -1,7 +1,7 @@
 // F1128 original Japanese action 0x393 at PE
 // 0051D4F1..0051D70F: 542 native CODE B /110 x86, same NONEXACT boss.
 case 0x393: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }
@@ -15,8 +15,8 @@ case 0x393: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==animationStageCount) {
         if (field0D8<2-int(g_OptionsModeAt006714D0))

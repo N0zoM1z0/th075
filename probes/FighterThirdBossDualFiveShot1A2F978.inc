@@ -8,14 +8,14 @@
 // F978 physical original 004AC040 game action1A2: two 5-shot branches.
 case 0x1A2: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
             }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(2);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
-        if (field39D==2) {
+        if (roundsRemaining==2) {
             field314=65.0f;
             field318=10.0f;
             Fighter::SpawnTrackedEffect(0x344,

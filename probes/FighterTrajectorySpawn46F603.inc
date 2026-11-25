@@ -4,14 +4,14 @@
 // internal case source, NOT independent/accepted exact game CODE.
 case 0x46: {
     if (animationStage == 0 && animationFrame == 0) {
-        velocityX = -(field094);
-        velocityY += field098;
+        velocityX = -(hitReactionVelocityX);
+        velocityY += hitReactionVelocityY;
         if (velocityY < TRAJECTORY_LOWER_THRESHOLD)
             velocityY = TRAJECTORY_MINIMUM_SPEED;
-        field05C = 0.8f;
+        verticalAcceleration = 0.8f;
         if (velocityY > TRAJECTORY_UPPER_THRESHOLD)
             velocityY = TRAJECTORY_MAXIMUM_SPEED;
-        field07C = 0;
+        collisionResult = 0;
     }
     // Native 131-instruction owners alone have this real one-shot
     // stage-one projectile branch (+0xF0C is the original flag).
@@ -24,7 +24,7 @@ case 0x46: {
         ResetSecondaryCounter(TRAJECTORY_EARLY_STATE);
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
         scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);

@@ -1,0 +1,23 @@
+#include "characters/patchouli/PatchouliFighter.hpp"
+#include "battle/Fighter.hpp"
+#include "battle/FighterVirtualActionsF159.hpp"
+void PatchouliFighter::ResetRound()
+{
+    scriptCounterF00=0;
+    scriptCounterF02=0;
+    fieldF04=0;
+    fieldF06=0;
+    fieldF08=0;
+    fieldF0A=0;
+    sequenceTimer=0;
+    stageBannerHoldFrames=0;
+    fieldEFA=0;
+    longRangeFrames=0;
+    fieldF0E=0;
+    fieldF0C=0;
+    opponentPullStrength=0;
+    aiWaitTimer=0;
+    aiStep=0;
+    aiCardTimer=0;
+    reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
+}

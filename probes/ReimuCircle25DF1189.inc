@@ -2,7 +2,7 @@
 // Six 0x320 shots at stage 6 with the original nonuniform angle fan.
 case 0x25D:
     if (animationStage == 0 && animationFrame == 0) {
-        field07C = 1;
+        collisionResult = 1;
         ClearMotionFields();
     }
     if (animationStage == 6 && animationFrame == 0) {

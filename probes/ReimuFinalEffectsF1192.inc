@@ -1,6 +1,6 @@
 case 0x31B: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        scriptCounterF00=0; field07C=1;
+        scriptCounterF00=0; collisionResult=1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
@@ -19,12 +19,12 @@ case 0x31B: {
 }
 case 0x31C: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        scriptCounterF00=0; field07C=1;
+        scriptCounterF00=0; collisionResult=1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
-        if (field370[field39D]==4) {
+        if (roundSpellVariants[roundsRemaining]==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;
             SpawnBattleEffect(0x3A3,x,(*(&y))+GeometryConstants::Hundred,1,1);
             if (g_OptionsModeAt006714D0==0) {

@@ -24,7 +24,7 @@
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityX=float(RecordedRange(0,15))+GeometryConstants::TwentyFive;
                 velocityY=40.0f;
-                field05C=6.0f;
+                verticalAcceleration=6.0f;
                 SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
                     (*(&y))+GeometryConstants::Eighty,
@@ -58,7 +58,7 @@
             if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=GeometryConstants::NegativeTwentyFive-float(RecordedRange(0,15));
                 velocityY=40.0f;
-                field05C=6.0f;
+                verticalAcceleration=6.0f;
                 SpawnAuxEffect(0x7D,
                     float(facing*80)+(x),
                     (*(&y))+GeometryConstants::Eighty,

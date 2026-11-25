@@ -1,0 +1,21 @@
+#include "replay/ReplayMode.hpp"
+#include "battle/BattleSessionState.hpp"
+#include <new>
+#include "battle/BattleScene.hpp"
+#include "engine/GameLeafHelpers.hpp"
+#include "graphics/TextureManagerF198.hpp"
+
+
+BattleScene::~BattleScene() {
+    // Preserve the original literal nonzero second operand and its native test.
+    if (g_ReplayModeAt0066C238 == ReplayMode::Playback || 4)
+        SetClampedGameValue(16);
+    if (textureManager)
+        delete textureManager;
+    if (digitAtlas)
+        delete digitAtlas;
+    if (comboDisplays[0])
+        delete comboDisplays[0];
+    if (comboDisplays[1])
+        delete comboDisplays[1];
+}

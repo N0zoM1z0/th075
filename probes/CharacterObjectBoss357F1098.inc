@@ -35,10 +35,10 @@ case 0x357: {
         }
         if (color[0]==0xFF && field0D8==0) {
             ++field0D8;
-            field080=1;
+            remainingHits=1;
         }
     }
-    if (owner->field082==0 &&
+    if (owner->hitstopFrames==0 &&
         AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;

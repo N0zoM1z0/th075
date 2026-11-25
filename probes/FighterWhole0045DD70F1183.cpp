@@ -1,6 +1,7 @@
-#include "../src/GeometryConstants.hpp"
-#include "../src/FloatConstants.hpp"
-#include "ReimuFighter.hpp"
+#include "battle/CombatMode.hpp"
+#include "engine/GeometryConstants.hpp"
+#include "engine/FloatConstants.hpp"
+#include "characters/reimu/ReimuFighter.hpp"
 // F1183 live whole original 0045DD70 parent, continued from the existing
 // F652 native D1/D2 source. The complete 60,999B callable is NONEXACT.
 // All state bodies, native stack slots, CFG and PE targets are verified; GPR/width debt remains.
@@ -64,7 +65,7 @@ extern float g_ReimuStormRightBoundaryAt0065920C;
 extern float g_ReimuApproachRightBoundAt0065945C;
 
 void ReimuFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:
@@ -162,7 +163,7 @@ void ReimuFighter::Advance() {
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -177,7 +178,7 @@ void ReimuFighter::Advance() {
                 if ((animationStage) == 2) {
                     velocityX = 0.0f;
                     velocityY = 12.5f;
-                    field05C = 0.55f;
+                    verticalAcceleration = 0.55f;
                     field3AC = 0;
                 }
                 if ((animationStage) >= (animationStageCount))
@@ -194,7 +195,7 @@ void ReimuFighter::Advance() {
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -209,7 +210,7 @@ void ReimuFighter::Advance() {
                 if ((animationStage) == 2) {
                     velocityX = 4.0f;
                     velocityY = 12.5f;
-                    field05C = 0.55f;
+                    verticalAcceleration = 0.55f;
                     field3AC = 0;
                 }
                 if ((animationStage) >= (animationStageCount))
@@ -226,7 +227,7 @@ void ReimuFighter::Advance() {
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -241,7 +242,7 @@ void ReimuFighter::Advance() {
                 if ((animationStage) == 2) {
                     velocityX = -4.0f;
                     velocityY = 12.5f;
-                    field05C = 0.55f;
+                    verticalAcceleration = 0.55f;
                     field3AC = 0;
                 }
                 if ((animationStage) >= (animationStageCount))
@@ -250,9 +251,9 @@ void ReimuFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == g_ThresholdAt0065782C)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == g_ThresholdAt0065782C)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= g_ThresholdAt0065782C) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -322,16 +323,16 @@ void ReimuFighter::Advance() {
 #define F605_LATE48 5
 case 0x48: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -field094;
-        velocityY = field098;
-        field05C = 1.3f;
-        field07C = 0;
+        velocityX = -hitReactionVelocityX;
+        velocityY = hitReactionVelocityY;
+        verticalAcceleration = 1.3f;
+        collisionResult = 0;
     }
     if (animationStage==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
         ResetSecondaryCounter(F605_EARLY48);
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= g_ThresholdAt0065782C) {
         scriptCounterF00 = (velocityX) * g_ContactProjectionAt00657888;
         scriptCounterF02 = (velocityY) * g_ContactProjectionAt00657888;

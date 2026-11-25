@@ -28,8 +28,8 @@ case 0x354: {
         velocityY=0.0f;
         field0D8=0;
         field0DA=0;
-        field080=0;
-        field07C=0;
+        remainingHits=0;
+        collisionResult=0;
     }
     velocityX=velocityX-FloatConstants::TwoFifths;
     velocityY=(*(&velocityY))+FloatConstants::FifteenHundredths;
@@ -47,22 +47,22 @@ case 0x354: {
         }
         if (color[0]==0xFF && field0D8==0) {
             ++field0D8;
-            field080=5;
+            remainingHits=5;
         }
     }
-    if (field07C==6) {
-        field07C=0;
-        ++field080;
+    if (collisionResult==6) {
+        collisionResult=0;
+        ++remainingHits;
     }
-    if (field07C==4 && field080>0)
-        field07C=0;
-    if (field07C!=0) {
+    if (collisionResult==4 && remainingHits>0)
+        collisionResult=0;
+    if (collisionResult!=0) {
         ++field0D8;
-        field080=0;
+        remainingHits=0;
     }
     x=float(facing)*velocityX+x;
     y=y+velocityY;
-    if (field080==0 && animationStage<0x17 &&
+    if (remainingHits==0 && animationStage<0x17 &&
         field0D8>0) {
         ResetSecondaryCounter(0x17);
         return;

@@ -21,6 +21,20 @@ Write source against the shared classes (`Actor`, `Fighter`,
 `<Char>Fighter`, `CharacterObject`): name a member once in the layout instead
 of using raw offsets, and check a method's vtable slot before naming it.
 
+## Semantic reconstruction
+
+Start with a shared owner or a protocol. Trace its writers, readers and
+reset points before naming its fields or values. Keep storage widths,
+signedness, constructor order, serialization and relocation targets tied
+to the Japanese v1.11 evidence. Use layout assertions for offsets that
+callers or file I/O depend on. Leave genuinely unknown bytes opaque.
+
+Cold-replay the affected exact units, including users of shared headers.
+For a build change, compare the resulting PE with the replay-tested link.
+For a serialization or state transition change, use the smallest relevant
+headless round trip or runtime observation. Record the field evidence in
+the knowledge base and link it from the handoff.
+
 ## 1. Start safely
 
 Inspect Git and continue **all** pre-existing dirty work in scope.

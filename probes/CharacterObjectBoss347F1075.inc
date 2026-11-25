@@ -10,7 +10,7 @@ case 0x347: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field01A=0x4E2;
+        spriteOffsetZ=0x4E2;
         rotationX=-30.0f;
         rotationY=float(int(facing) * 25);
         field0D8=0;

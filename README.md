@@ -26,10 +26,29 @@ constructor. The conservative coverage includes all pending-origin bytes.
 - [Pending origin evidence](docs/ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 - [Knowledge base](docs/KNOWLEDGE_BASE.md), [workflow](docs/RE_WORKFLOW.md) and [storage policy](docs/STORAGE_HYGIENE.md)
 
-The C++ sources are in `src/` and `probes/`. `config/match-units.toml`
-records the exact units, compiler flags, extents and relocations. The target
-is the Japanese TH075 v1.11 `resources/th075.exe` supplied by the user. See
-the handoff for its pinned identity.
+| Subsystem | Entry point |
+| --- | --- |
+| [Battle](src/battle/) | [Scene phases and HUD state](src/battle/BattleScene.hpp), [shared fighter layout](src/battle/Fighter.hpp) |
+| [Characters](src/characters/) | [Shared Actor](src/battle/Actor.hpp), [fighter-owned objects](src/characters/CharacterObject.hpp), [object manager](src/battle/EffectManagerLifetimeF161.hpp), auxiliary effects ([layout](src/characters/CharacterAuxAction.hpp), [state machine](src/characters/CharacterAuxAction.cpp)), [per-fighter entry points](docs/GIANTS.md) |
+| [Replay](src/replay/) | [File header, record header and input streams](src/replay/ReplayRecords.hpp) |
+| [Input](src/input/) | [Device mapping and held controls](src/input/InputMapping4388D0.hpp) |
+| [Configuration](src/config/) | [Saved key bindings](src/config/GameConfigStorage.hpp), [display options](src/config/DisplayOptions.hpp) |
+| [Engine](src/engine/) | [Scene commands](src/engine/SceneTransition.hpp), [score data](src/engine/GameProgress.hpp) |
+| [Menus](src/ui/) | [Character selection](src/ui/CharacterSelectScene.hpp), [results browser](src/ui/ResultListScene.hpp) |
+| [Resources](src/assets/) | [Archive index](src/assets/DataArchive.hpp), [story script records](src/assets/ScriptResource4205F0.hpp) |
+| [Graphics](src/graphics/) | [Texture management](src/graphics/TextureManagerF198.hpp), [bitmap entry layout](src/graphics/TextureEntry.hpp) |
+| [Audio](src/audio/) | [Streaming](src/audio/AudioStream.hpp), [sound effects](src/audio/SoundBank.hpp) |
+| [Platform](src/platform/) | [Windows startup and main loop](src/platform/WinMainF1171.cpp) |
+
+Each playable fighter has a subdirectory under `src/characters/`.
+The parent directory contains shared character code.
+The Windows build compiles translation units from `src/`. Included
+`probes/*.inc` fragments are build inputs. Cold-replay their complete
+owning functions after edits. Use `.analysis/` for experiments.
+
+`config/match-units.toml` records the compiler profiles, extents and
+relocations. The target is the user-supplied Japanese TH075 v1.11
+`resources/th075.exe`. [Pinned executable identity](docs/RE_HANDOFF.md)
 
 ## Build
 
@@ -47,9 +66,10 @@ Build the Windows x86 executable:
 
 This writes `build/program/th075.exe`, `build/program/th075.map` and
 `build/program/link.log`. Both aggregate builds use the pinned original
-executable in `resources/` to supply read-only data. The linked executable
-and the original completed the same four external replay recordings with
-matching battle checkpoints. [Build and replay evidence](docs/RE_HANDOFF.md)
+executable in `resources/` to supply read-only data. A Windows build and
+the original completed four external replay recordings with matching
+battle checkpoints before the semantic pass.
+[Build and replay evidence](docs/RE_HANDOFF.md)
 
 For a runtime check, stage the executable beside `th075.dat`,
 `th075bgm.dat`, and `th075b.dat` from the Japanese installation.

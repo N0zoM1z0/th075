@@ -8,8 +8,8 @@ case 0x12F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ClearMotionFields();
-                    field080=1;
-        field07C=0;
+                    remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -26,17 +26,17 @@ case 0x12F: {
 }
 // Genuine original 004AC040 130: native 265B/81 x86, original sprite334.
 case 0x130: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
         velocityY=0.0f;
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);

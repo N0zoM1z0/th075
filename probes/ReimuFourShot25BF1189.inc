@@ -4,7 +4,7 @@ case 0x25B:
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = (velocityX) * FloatConstants::Quarter;
         velocityY = (velocityY) * FloatConstants::Quarter;
-        field07C = 1;
+        collisionResult = 1;
     }
     if (AdvanceNestedFrame() == animationStageCount)
         ResetPrimaryCounters(9);

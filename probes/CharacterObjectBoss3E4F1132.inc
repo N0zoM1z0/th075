@@ -52,12 +52,12 @@ case 0x3E4: {
                     short(owner->opponent->spirit+10);
             else {
                 owner->opponent->spirit=1000;
-                if (owner->opponent->field39C==0) {
-                    if (owner->opponent->field36C<FloatConstants::NineHundredNinetyEightAndNineTenths)
-                        owner->opponent->field36C=
-                            (*(&owner->opponent->field36C))+FloatConstants::Half;
+                if (owner->opponent->spellDeclarationExpired==0) {
+                    if (owner->opponent->spellPower<FloatConstants::NineHundredNinetyEightAndNineTenths)
+                        owner->opponent->spellPower=
+                            (*(&owner->opponent->spellPower))+FloatConstants::Half;
                     else
-                        owner->opponent->field36C=900.0f;
+                        owner->opponent->spellPower=900.0f;
                 }
             }
             return;

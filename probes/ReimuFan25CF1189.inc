@@ -2,7 +2,7 @@
 // Two opposite 0x320 shots at stage 6, then the native 100-point gauge/reset-5 tail.
 case 0x25C:
     if (animationStage == 0 && animationFrame == 0) {
-        field07C = 1;
+        collisionResult = 1;
         ClearMotionFields();
     }
     if (animationStage == 6 && animationFrame == 0) {

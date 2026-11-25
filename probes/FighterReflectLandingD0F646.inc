@@ -7,9 +7,9 @@ case 0xD0: {
             -facing;
         velocityX=-(velocityX);
     }
-    if (*(&field05C)==FloatConstants::Zero)
-        field05C=0.6f;
-    velocityY=velocityY-field05C;
+    if (*(&verticalAcceleration)==FloatConstants::Zero)
+        verticalAcceleration=0.6f;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;

@@ -9,13 +9,13 @@ case 0x1FC: {
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field3AC=0;
     }
     if ((animationStage)==6 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field3AC=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount))

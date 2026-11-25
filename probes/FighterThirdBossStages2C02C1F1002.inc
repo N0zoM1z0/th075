@@ -13,9 +13,9 @@ case 0x2C0: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
         scriptCounterF02=0;
-        field07C=0;
+        collisionResult=0;
         ClearMotionFields();
-        field080=99;
+        remainingHits=99;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
@@ -32,7 +32,7 @@ case 0x2C0: {
         SetNonnegativeWord(0x64);
         PlaySharedSound(0x17);
         PlaySound(9);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x73,
             x
                 - float((facing)*18),
@@ -53,9 +53,9 @@ case 0x2C1: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
         scriptCounterF02=0;
-        field07C=0;
+        collisionResult=0;
         ClearMotionFields();
-        field080=99;
+        remainingHits=99;
     }
     if ((animationStage)>=5)
         fieldF0C=180;
@@ -74,7 +74,7 @@ case 0x2C1: {
         SetNonnegativeWord(0x28);
         PlaySound(0xA);
         PlaySharedSound(0x17);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x73,
             x
                 - float((facing)*18),

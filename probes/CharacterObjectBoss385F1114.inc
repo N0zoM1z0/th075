@@ -1,18 +1,18 @@
 // F1114: genuine original Japanese action 0x385 at 0051AFF0..0051B21D:
 // 557 original CODE bytes/114 x86, in ONE NONEXACT 81KB game callable.
 case 0x385: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }
-    if (field07C==6) {
-        ++field080;
-        field07C=0;
+    if (collisionResult==6) {
+        ++remainingHits;
+        collisionResult=0;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field0D8=0;
         scaleX=1.0f;
         scaleY=2.0f;

@@ -2,7 +2,7 @@
 // Four ordered 0x322 projectiles at stage 8; this sibling differs by effect ID.
 case 0x259:
     if (animationStage == 0 && animationFrame == 0) {
-        field07C = 1;
+        collisionResult = 1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame() == animationStageCount) {

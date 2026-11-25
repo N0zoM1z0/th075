@@ -43,9 +43,15 @@ class ExactCheckpointTests(unittest.TestCase):
             units = tomllib.load(stream)["units"]
         with (E.ROOT / "config/matches.csv").open(newline="") as stream:
             rows = list(csv.DictReader(stream))
+        with (E.ROOT / "config/function-origins.csv").open(newline="") as stream:
+            origins = {int(row["address"], 0): row for row in csv.DictReader(stream)}
         mapped = [row["unit"] for row in rows]
         self.assertEqual(len(set(mapped)), len(mapped))
-        self.assertEqual(set(mapped), set(units))
+        self.assertLessEqual(set(mapped), set(units))
+        for name in set(units) - set(mapped):
+            origin = origins[int(units[name]["target_address"])]
+            self.assertEqual(origin["disposition"], "exclude", name)
+            self.assertIn(origin["origin"], {"compiler", "library"}, name)
         extents = [(int(item["target_address"]), int(item["size"]),
                     int(item.get("compare_size", item["size"])))
                    for item in units.values()]

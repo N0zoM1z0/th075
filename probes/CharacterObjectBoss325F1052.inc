@@ -24,8 +24,8 @@ case 0x325: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         owner->PlaySound(0x17);
     }
     if (AdvanceNestedFrame()==animationStageCount)

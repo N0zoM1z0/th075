@@ -4,8 +4,8 @@
 case 0x1F4: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field3AC=0;
     }
     if ((velocityX)>FloatConstants::Zero) {
@@ -14,7 +14,7 @@ case 0x1F4: {
             velocityX=0.0f;
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(0xD);
@@ -31,7 +31,7 @@ case 0x1F4: {
         PlaySound(1);
         velocityX=8.0f;
         velocityY=9.5f;
-        field05C=0.65f;
+        verticalAcceleration=0.65f;
         SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }

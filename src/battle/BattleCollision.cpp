@@ -1,0 +1,70 @@
+#include "battle/BattleScene.hpp"
+#include "engine/GameLeafHelpers.hpp"
+#include <math.h>
+
+void BattleScene::ApplyImpact(Actor *attack, Fighter *attacker, Fighter *defender)
+{
+    attack->collisionResult = CollisionResult::Blocked;
+    --attack->remainingHits;
+    attack->hitstopFrames = attack->savedFrameInfo->guardAttackerHitStop;
+    defender->hitstopFrames = attack->savedFrameInfo->guardDefenderHitStop;
+    defender->hitReactionVelocityX = attack->savedFrameInfo->reactionVelocityX;
+    defender->hitReactionVelocityY = attack->savedFrameInfo->reactionVelocityY;
+    if (defender->health <= 0) defender->health = 1;
+    if (defender->spellTimer > 0 || defender->spellDeclarationExpired)
+        defender->recoverableHealth = defender->health;
+    attacker->pendingSpellCharge += attack->savedFrameInfo->guardSpellCharge;
+    if (attacker->pendingSpellCharge > 2000.0f) attacker->pendingSpellCharge = 2000.0f;
+    defender->UpdateFacingFromOpponent();
+    g_SoundBank->Play(20);
+}
+
+
+void BattleScene::ClearBounds()
+{
+    hitBounds.left = -10000;
+    hitBounds.top = -10000;
+    hitBounds.right = 10000;
+    hitBounds.bottom = 10000;
+}
+void BattleScene::IncludePair(const RECT *first, const RECT *second)
+{
+    if (hitBounds.left < first->left)
+        hitBounds.left = first->left;
+    if (hitBounds.left < second->left)
+        hitBounds.left = second->left;
+    if (hitBounds.top < first->top)
+        hitBounds.top = first->top;
+    if (hitBounds.top < second->top)
+        hitBounds.top = second->top;
+    if (hitBounds.right > first->right)
+        hitBounds.right = first->right;
+    if (hitBounds.right > second->right)
+        hitBounds.right = second->right;
+    if (hitBounds.bottom > first->bottom)
+        hitBounds.bottom = first->bottom;
+    if (hitBounds.bottom > second->bottom)
+        hitBounds.bottom = second->bottom;
+}
+int BattleScene::TestOverlap(const RECT *first, const RECT *second)
+{
+    return ((second->left - first->right) & (first->left - second->right) &
+            (second->top - first->bottom) & (first->top - second->bottom)) >> 31;
+}
+void BattleScene::TransformBounds(RECT *destination, const RECT *source, Actor *actor)
+{
+    if (actor->facing == 1) {
+        destination->left = static_cast<long>(CeilCollisionCoordinate(actor->x) + source->left);
+        destination->right = static_cast<long>(CeilCollisionCoordinate(actor->x) + source->right);
+    } else {
+        destination->left = static_cast<long>(CeilCollisionCoordinate(actor->x) - source->right);
+        destination->right = static_cast<long>(CeilCollisionCoordinate(actor->x) - source->left);
+    }
+    destination->top = static_cast<long>(CeilCollisionCoordinate(actor->y) - source->bottom);
+    destination->bottom = static_cast<long>(CeilCollisionCoordinate(actor->y) - source->top);
+}
+
+float CeilCollisionCoordinate(float value)
+{
+    return ::ceilf(value);
+}

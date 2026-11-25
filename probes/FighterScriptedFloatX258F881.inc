@@ -5,8 +5,8 @@
 case 0x258: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1;
-        field07C=1;
+        remainingHits=1;
+        collisionResult=1;
         field3AC=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount))

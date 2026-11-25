@@ -4,8 +4,8 @@
 // Stage15 two real projectile methods; whole original 46755B fighter NONEXACT.
 case 0x2DB: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;

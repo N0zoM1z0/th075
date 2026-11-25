@@ -5,8 +5,8 @@
 case 0x1F5: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field3AC=0;
     }
     if ((velocityX)>FloatConstants::Zero) {
@@ -15,7 +15,7 @@ case 0x1F5: {
             velocityX=2.0f;
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(0x18);
@@ -41,13 +41,13 @@ case 0x1F5: {
         PlaySound(1);
     }
     if ((animationStage)==0xE && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((animationStage)==0xF && (animationFrame)==0) {
         velocityX=10.0f;
         velocityY=15.0f;
-        field05C=0.65f;
+        verticalAcceleration=0.65f;
         SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }

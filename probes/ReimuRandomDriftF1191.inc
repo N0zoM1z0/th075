@@ -1,10 +1,10 @@
 case R1191_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1; scriptCounterF00=0; scriptCounterF02=0;
+        collisionResult=1; scriptCounterF00=0; scriptCounterF02=0;
         ClearMotionFields();
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y=0.0f;
@@ -20,7 +20,7 @@ case R1191_ACTION: {
         velocityX=float(RecordedRange(0,3))+GeometryConstants::Six;
 #endif
         velocityY=float(RecordedRange(0,R1191_LIFT_RANGE))+FloatConstants::Ten;
-        field05C=0.3f;
+        verticalAcceleration=0.3f;
     }
     break;
 }

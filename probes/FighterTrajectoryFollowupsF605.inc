@@ -4,16 +4,16 @@
 case 0x47: {
     // Original copying +0x98 to +0x54 is MOV dword, not FLD/FSTP.
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
-        field05C = 0.8f;
-        field07C = 0;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
+        verticalAcceleration = 0.8f;
+        collisionResult = 0;
     }
     if (animationStage==F605_STAGE47 && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F605_EARLY47);
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
         scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -30,16 +30,16 @@ case 0x47: {
 }
 case 0x48: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
-        field05C = 1.3f;
-        field07C = 0;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
+        verticalAcceleration = 1.3f;
+        collisionResult = 0;
     }
     if (animationStage==F605_STAGE48 && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F605_EARLY48);
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
         scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);

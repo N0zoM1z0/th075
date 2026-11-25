@@ -1,0 +1,98 @@
+#include "config/DisplayOptions.hpp"
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
+#include "battle/BattleSessionState.hpp"
+#include "battle/BattleResourceLoaders.hpp"
+#include "engine/GameSharedState.hpp"
+#include "platform/DiagnosticLog.hpp"
+#include "engine/GameProgress.hpp"
+#include "audio/AudioControl.hpp"
+#include "battle/BackgroundStages.hpp"
+
+extern const char g_StartStageLogAt00657A4C[] = "LoadStage...\r\n";
+extern const char g_EndStageLogAt00657A5C[] = "...OK\r\n";
+void BattleStageLoaderF389::LoadStage() {
+    DiagnosticLog::AppendString(g_StartStageLogAt00657A4C);
+    if(g_CurrentBattleStageAt00671424) {
+        delete g_CurrentBattleStageAt00671424;
+        g_CurrentBattleStageAt00671424=0;
+    }
+    switch(g_StageSelectionAt0067161D) {
+    case 0:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new Background00aF376;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG00xF377;
+        break;
+    case 1:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG01aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG01xF377;
+        break;
+    case 2:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG02aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG02xF377;
+        break;
+    case 3:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG03aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG03xF377;
+        break;
+    case 4:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG04aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG04xF377;
+        break;
+    case 5:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG05aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG05xF377;
+        break;
+    case 6:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG06aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG06xF377;
+        break;
+    case 7:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG07aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG07xF377;
+        break;
+    case 8:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG08aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG08xF377;
+        break;
+    case 9:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG09aF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG09xF377;
+        break;
+    case 10:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new Background00bF376;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG00yF377;
+        break;
+    case 11:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG01bF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG01yF377;
+        break;
+    case 12:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG02bF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG02yF377;
+        break;
+    case 13:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG03bF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG03yF377;
+        break;
+    case 14:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG04bF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG04yF377;
+        break;
+    case 15:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG05bF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG05yF377;
+        break;
+    case 20:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG00cF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG00zF377;
+        break;
+    case 22:
+        if(DisplayOptions::animatedBackgrounds!=0) g_CurrentBattleStageAt00671424=new BackgroundBG02cF377;
+        else g_CurrentBattleStageAt00671424=new BackgroundBG02zF377;
+        break;
+    }
+    if(g_CombatMode!=CombatMode::Story) MusicF204::PlayTrackByIndex(int(g_StageSelectionAt0067161D));
+    if(g_ReplayModeAt0066C238!=ReplayMode::Playback && g_ReplayModeAt0066C238!=ReplayMode::ReplayDialogue)
+        g_GameProgress.SetUnlockBit(int(g_StageSelectionAt0067161D)+200);
+    DiagnosticLog::AppendString(g_EndStageLogAt00657A5C);
+}

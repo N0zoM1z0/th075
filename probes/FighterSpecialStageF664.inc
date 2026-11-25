@@ -6,8 +6,8 @@
         case 0x200: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
@@ -15,7 +15,7 @@
                 velocityX=(velocityX)-FloatConstants::NineTenths;
                 if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
             }
-            if ((animationStage)==7 && field07C==2) {
+            if ((animationStage)==7 && collisionResult==2) {
                 ResetSecondaryCounter(8);
                 velocityX=10.0f;
             }
@@ -33,8 +33,8 @@
         case 0x201: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
@@ -42,7 +42,7 @@
                 velocityX=(velocityX)-FloatConstants::NineTenths;
                 if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
             }
-            if ((animationStage)==7 && field07C==2) {
+            if ((animationStage)==7 && collisionResult==2) {
                 ResetSecondaryCounter(8);
                 velocityX=10.0f;
             }
@@ -57,8 +57,8 @@
             if ((animationStage)==11 && (animationFrame)==0 && (scriptCounterF00)==0) {
                 ++scriptCounterF00;
                 ResetSecondaryCounter(2);
-                field07C=0;
-                field080=1;
+                collisionResult=0;
+                remainingHits=1;
             }
             break;
         }

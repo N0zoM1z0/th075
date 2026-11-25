@@ -9,7 +9,7 @@
 // Native original Japanese TH075 fighter 004AC040 stage 0x194, 644B/168x86.
 case 0x194: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
     }
@@ -35,7 +35,7 @@ case 0x194: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
@@ -44,14 +44,14 @@ case 0x194: {
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-6.0f;
         velocityY=9.0f;
-        field05C=0.7f;
+        verticalAcceleration=0.7f;
     }
     break;
 }
 // Native original Japanese TH075 fighter 004AC040 stage 0x195, 644B/168x86.
 case 0x195: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
     }
@@ -77,7 +77,7 @@ case 0x195: {
         ++scriptCounterF02;
     }
     --scriptCounterF00;
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
@@ -86,7 +86,7 @@ case 0x195: {
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-6.0f;
         velocityY=9.0f;
-        field05C=0.7f;
+        verticalAcceleration=0.7f;
     }
     break;
 }

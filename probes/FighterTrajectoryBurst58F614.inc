@@ -3,10 +3,10 @@
 // stage-one shot. NOT independent game function or exact whole CODE credit.
 case 0x58: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
-        field05C = 0.8f;
-        field07C = 0;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
+        verticalAcceleration = 0.8f;
+        collisionResult = 0;
     }
     if (velocityY + y <= g_ThresholdAt0065782C) {
         scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);

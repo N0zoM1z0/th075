@@ -3,8 +3,8 @@
 case 0x33A: {
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field0D8=short(RecordedRange(0,13)+12);
         field0DA=short(RecordedRange(0,0x167));
         scaleX=float(RecordedRange(0,30)+20)*FloatConstants::OneTenth;

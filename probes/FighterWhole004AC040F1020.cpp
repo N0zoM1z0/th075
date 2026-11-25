@@ -1,8 +1,8 @@
-#include "../src/MathFloatHelpers.hpp"
-#include "../src/GeometryConstants.hpp"
-#include "../src/FloatConstants.hpp"
-#include "SakuyaFighter.hpp"
-#include "FighterAnimationPhaseBorrowedF1024.hpp"
+#include "battle/CombatMode.hpp"
+#include "engine/MathFloatHelpers.hpp"
+#include "engine/GeometryConstants.hpp"
+#include "engine/FloatConstants.hpp"
+#include "characters/sakuya/SakuyaFighter.hpp"
 // F1203 complete original-shaped 004AC040 parent, continued from F1020.
 // Native frame 0x720, saved-this, all EBP operands and narrow call ABIs are verified.
 // All direct branch targets and non-GPR operands are verified. Remaining
@@ -82,7 +82,7 @@ extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 void SakuyaFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:
@@ -180,7 +180,7 @@ void SakuyaFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -197,7 +197,7 @@ void SakuyaFighter::Advance() {
                 if (animationStage == 2) {
                     velocityX = 0.0f;
                     velocityY = 15.0f;
-                    field05C = 0.7f;
+                    verticalAcceleration = 0.7f;
                     field3AC = 0;
                 }
                 if (animationStage >= (field070))
@@ -214,7 +214,7 @@ void SakuyaFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -232,7 +232,7 @@ void SakuyaFighter::Advance() {
                     field3AC = 0;
                     velocityX = 5.0f;
                     velocityY = 15.0f;
-                    field05C = 0.7f;
+                    verticalAcceleration = 0.7f;
                 }
                 if (animationStage >= (field070))
                     animationStage -= 2;
@@ -248,7 +248,7 @@ void SakuyaFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -264,7 +264,7 @@ void SakuyaFighter::Advance() {
                     field3AC = 0;
                     velocityX = -4.0f;
                     velocityY = 15.0f;
-                    field05C = 0.7f;
+                    verticalAcceleration = 0.7f;
                 }
                 if (animationStage >= (field070))
                     animationStage -= 2;
@@ -272,9 +272,9 @@ void SakuyaFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == g_ThresholdAt0065782C)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == g_ThresholdAt0065782C)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= g_ThresholdAt0065782C) {
             ResetPrimaryCounters(10);
             y = 0.0f;

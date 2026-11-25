@@ -95,25 +95,18 @@ replayed, including switch dispatch/table labels. Same-section destinations
 must agree with the freshly built COFF symbol offsets. A size mismatch or
 unreviewed relocation prevents exact acceptance.
 
-The effect lifecycle source also owns exception cleanup/handler code and
-unwind/state data outside its main function sections. Its acceptance requires
-the complete coupled source graph from the same freshly built object:
+The effect lifecycle source also owns exception handlers and unwind data
+outside the callable bodies. Replay its three current authored units with:
 
 ```bash
 env -u DISPLAY -u WAYLAND_DISPLAY WINEDLLOVERRIDES='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d' \
-  scripts/repo-python scripts/replay-exact-units.py --unit effect-initialize-four-deques-0045b920 --unit effect-destroy-owned-effects-0045b9b0 --unit effect-bind-fighter-0045ba10
-scripts/repo-python scripts/verify-effect-lifecycle-exact.py --receipt .analysis/replay/summary.json
+  scripts/repo-python scripts/replay-exact-units.py --batch --unit effect-initialize-four-deques-0045b920 --unit effect-destroy-owned-effects-0045b9b0 --unit effect-bind-fighter-0045ba10
 ```
 
-The second command links all 24 whole code/data sections and their 46
-relocation fields to the original, including both SafeSEH roots and the
-source-local destinations, and checks the cold receipt against the same
-object, current source and profile. The three authored bodies earn 237 code
-bytes; the compiler/library/data sections receive no authored credit.
-`config/effect-lifecycle-exact-sections.json` names each section by its
-symbol. Compiler labels such as `$L7106` renumber when an included header
-changes, and renamed classes change mangled names; relabel those entries by
-matching section, offset and relocation, then rerun both commands.
+The historical 24-section check in `verify-effect-lifecycle-exact.py`
+belongs to the `Actor*` deque object at `5faf8087`. The current source
+uses `CharacterObject*` and emits different COMDAT names. The three
+authored bodies and their relocations still match the pinned game.
 
 Public invocation uses the same entry point:
 

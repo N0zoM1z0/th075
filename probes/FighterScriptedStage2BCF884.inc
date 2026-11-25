@@ -5,8 +5,8 @@
 case 0x2BC: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         ClearMotionFields();
     }
     if ((animationStage)>8) {
@@ -22,9 +22,9 @@ case 0x2BC: {
         scaleX=(scaleX)-FloatConstants::OneFifth;
         scaleY=(scaleY)+FloatConstants::NineteenHundredths;
     }
-    if ((scriptCounterF00)==0 && field07C!=0) {
+    if ((scriptCounterF00)==0 && collisionResult!=0) {
         ++scriptCounterF00;
-        if (field07C==1) {
+        if (collisionResult==1) {
             PlaySound(0xD);
             Fighter::SpawnTrackedEffect(0x346,x,
                 (*(&y))+GeometryConstants::Hundred,
@@ -35,7 +35,7 @@ case 0x2BC: {
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         PlaySharedSound(0x17);
         SpawnAuxEffect(0x73,
             x-

@@ -10,20 +10,20 @@
         case 0x2DF: {
             SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0 && (scriptCounterF00)==0) {
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 scriptCounterF00=1;
                 PlaySound(11);
                 velocityY=-10.0f;
                 velocityX=30.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)<4 && y>FloatConstants::Zero) {
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(4);
                     y=0.0f;
                     velocityY=0.0f;
-                    field05C=0.0f;
+                    verticalAcceleration=0.0f;
                     break;
                 }
             }
@@ -49,7 +49,7 @@
                     -static_cast<int>(g_OptionsModeAt006714D0)*30);
             }
             if ((animationFrame)==0)
-                field07C=0;
+                collisionResult=0;
             if ((animationStage)==4 && (animationFrame)==0)
                 ResetSecondaryCounter(0);
             break;

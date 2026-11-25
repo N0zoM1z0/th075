@@ -6,10 +6,10 @@ case 0x63: {
     // Two real short-circuit PE edges: mode != 3 jumps into the
     // stage-two path, while (mode == 3 && this+0x2CD != 0) jumps to
     // the other three action transitions. This is NOT a simple if(mode).
-    if (g_CombatMode != 3 ||
-        field2CD==0) {
+    if (g_CombatMode != CombatMode::Story ||
+        cpuControlled==0) {
         if (animationStage==2 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150) {
             ResetPrimaryCounters(0x5F);
             field3CF=1;
@@ -17,25 +17,25 @@ case 0x63: {
         }
     } else {
         if (animationStage>1 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150 &&
-            static_cast<signed char>(field32A[field39D])==2) {
+            static_cast<signed char>(roundKind[roundsRemaining])==2) {
             ResetPrimaryCounters(0x31C);
             // Unlike the special F624 fighter, the actual native
             // stage-two action ends immediately: no bonus offset+0x370.
             break;
         }
         if (animationStage>0 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150 &&
-            static_cast<signed char>(field32A[field39D])==1) {
+            static_cast<signed char>(roundKind[roundsRemaining])==1) {
             ResetPrimaryCounters(0x31C);
             break;
         }
         if (animationStage>1 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150 &&
-            static_cast<signed char>(field32A[field39D])==0) {
+            static_cast<signed char>(roundKind[roundsRemaining])==0) {
             ResetPrimaryCounters(0x5F);
             field3CF=1;
             break;

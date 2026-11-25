@@ -5,7 +5,7 @@
 // Original PE global 00658264 is shared by 259 and 25B.
         case 0x259: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
@@ -54,7 +54,7 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=(velocityX)*FloatConstants::Quarter;
                 velocityY=(*(&velocityY))*FloatConstants::Quarter;
-                field07C=1;
+                collisionResult=1;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x32B,
@@ -69,7 +69,7 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=(velocityX)*FloatConstants::Quarter;
                 velocityY=(*(&velocityY))*FloatConstants::Quarter;
-                field07C=1;
+                collisionResult=1;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x32D,
@@ -82,7 +82,7 @@
         }
         case 0x25C: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)==5 && (animationFrame)==0) {
@@ -96,7 +96,7 @@
         }
         case 0x25D: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)==5 && (animationFrame)==0) {

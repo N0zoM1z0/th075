@@ -12,18 +12,18 @@ case 0x3E5: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field01A=0x4E2;
+        spriteOffsetZ=0x4E2;
         rotationY=0.0f;
         rotationZ=0.0f;
         rotationX=-80.0f;
-        field0D8=owner->field3A0;
+        field0D8=owner->spellTimer;
     }
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }
-    scaleX=float(owner->field3A0)/field0D8*2.0f;
-    scaleY=float(owner->field3A0)/field0D8*2.0f;
+    scaleX=float(owner->spellTimer)/field0D8*2.0f;
+    scaleY=float(owner->spellTimer)/field0D8*2.0f;
     rotationZ=(rotationZ)+FloatConstants::One;
     if (AdvanceNestedFrame()==animationStageCount) {
         ResetSecondaryCounter(10);

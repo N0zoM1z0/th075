@@ -6,7 +6,7 @@
 // These interiors are NOT separate original game functions.
         case 0x190: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
@@ -29,7 +29,7 @@
         }
         case 0x191: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 scriptCounterF00=0;
             }
@@ -52,7 +52,7 @@
         }
         case 0x192: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)==4 && (animationFrame)==0) {

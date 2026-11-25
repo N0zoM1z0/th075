@@ -17,9 +17,9 @@ case 0x330: {
         }
         return;
     }
-    if (field07C==6) {
-        ++field080;
-        field07C=0;
+    if (collisionResult==6) {
+        ++remainingHits;
+        collisionResult=0;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,60.0f,0);
@@ -29,8 +29,8 @@ case 0x330: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityY=26.5f;
         owner->PlaySound(3);
         owner->SpawnBattleEffect(
@@ -50,7 +50,7 @@ case 0x330: {
         // Real native 0x330 TEST AH,0x41; JNP enters impact handling
         // directly, then checks collision status 0/6 on the other path.
         if (y+velocityY<=FloatConstants::Zero ||
-            (field07C!=0 && field07C!=6)) {
+            (collisionResult!=0 && collisionResult!=6)) {
             velocityY=0.0f;
             ResetSecondaryCounter(3);
             owner->PlaySound(5);

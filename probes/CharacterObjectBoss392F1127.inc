@@ -1,7 +1,7 @@
 // F1127 original Japanese action 0x392, original PE
 // 0051D413..0051D4F1, 222 native CODE B /47 x86 in ONE 81KB boss.
 case 0x392: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }
@@ -13,8 +13,8 @@ case 0x392: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();

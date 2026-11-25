@@ -10,7 +10,7 @@
 // F976 original 004AC040 real action 1A0 natural random 5/8 loop.
 case 0x1A0: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
             }
     --scriptCounterF00;
@@ -18,7 +18,7 @@ case 0x1A0: {
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
-        if (field39D==2) {
+        if (roundsRemaining==2) {
             for (int shot=0;shot<5;++shot) {
                 field314=0.0f;
                 field318=10.0f;

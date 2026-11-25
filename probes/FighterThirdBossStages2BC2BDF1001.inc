@@ -12,7 +12,7 @@
 case 0x2BC: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
@@ -24,7 +24,7 @@ case 0x2BC: {
     if ((animationStage)==3 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x73,
             x
                 - float((facing)*18),
@@ -62,7 +62,7 @@ case 0x2BC: {
 case 0x2BD: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
@@ -74,7 +74,7 @@ case 0x2BD: {
     if ((animationStage)==3 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),

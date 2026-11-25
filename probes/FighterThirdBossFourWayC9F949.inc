@@ -14,11 +14,11 @@ case 0xC9: {
     if ((animationStage)==4 && (animationFrame)==0)
         velocityX=-10.0f;
     if (y>FloatConstants::Zero && (animationStage)>3 && (animationStage)<6) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
-            field05C=0.0f;
+            verticalAcceleration=0.0f;
             y=0.0f;
             animationFrame=0;
             ResetSecondaryCounter(6);
@@ -31,7 +31,7 @@ case 0xC9: {
         velocityX=-50.0f;
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityY=4.0f;
-        field05C=0.6f;
+        verticalAcceleration=0.6f;
         velocityX=-30.0f;
         SpawnAuxEffect(0x7D,x,
             (*(&y))+GeometryConstants::Hundred,

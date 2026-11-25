@@ -4,7 +4,7 @@
 // complete original function or adopted exact CODE.
 case F617_CASE: {
     if (animationStage<F617_THRESHOLD && y>FloatConstants::Zero) {
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
@@ -30,7 +30,7 @@ case F617_CASE: {
     if (animationStage==F617_BEGIN_STAGE && animationFrame==0) {
         velocityY=F617_START_SPEED;
         velocityX=F617_START_POS;
-        field05C=F617_FRICTION;
+        verticalAcceleration=F617_FRICTION;
     }
     if (animationStage==F617_THRESHOLD && animationFrame==0)
         ResetSecondaryCounter(F617_FINISH_STATE);

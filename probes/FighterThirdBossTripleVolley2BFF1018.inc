@@ -13,12 +13,12 @@
 case 0x2BF: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
+        collisionResult=0;
         ClearMotionFields();
-        field080=99;
+        remainingHits=99;
     }
     if (y>FloatConstants::Zero && (animationStage)>23) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {
             ResetSecondaryCounter(34);
             ClearMotionFields();
@@ -27,13 +27,13 @@ case 0x2BF: {
         }
     }
     if ((animationFrame)==0)
-        field07C=0;
+        collisionResult=0;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationStage)==4 && (animationFrame)==0) {
         SetNonnegativeWord(40);
         PlaySharedSound(0x17);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             float((facing)*30)+(x),
             (*(&y))+GeometryConstants::Eighty,
@@ -43,8 +43,8 @@ case 0x2BF: {
         PlaySound(7);
         velocityX=0.5f;
         velocityY=0.9f;
-        field05C=0.5f;
-        field084=20;
+        verticalAcceleration=0.5f;
+        hitInvulnerabilityFrames=20;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         SpawnBattleEffect(0x322+(RecordedRange(0,100)>200),

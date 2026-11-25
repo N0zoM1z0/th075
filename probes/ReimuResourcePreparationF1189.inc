@@ -1,11 +1,11 @@
 case R1189_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        --field366;
+        --bombCount;
         ClearMotionFields();
-        field080=1; field07C=0; field3AC=0; scriptCounterF00=0;
+        remainingHits=1; collisionResult=0; field3AC=0; scriptCounterF00=0;
     }
 #if R1189_HAS_BONUS
-    if ((spiritCooldown)==0 && field07C==1) spirit=1000;
+    if ((spiritCooldown)==0 && collisionResult==1) spirit=1000;
 #endif
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {

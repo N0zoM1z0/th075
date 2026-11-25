@@ -1,5 +1,5 @@
 // F1013 original Japanese 004AC040 final states 31B and 31C.
-// Entry resets F00, sets field07C and calls native 00453E20 to clear the
+// Entry resets F00, sets collisionResult and calls native 00453E20 to clear the
 // four motion fields. State 31B transitions at stage 5 and repeats at stage
 // 11/counter 9; state 31C transitions at stage 16 and repeats at stage 21/
 // counter 19 while setting byte +0x3CF.
@@ -7,7 +7,7 @@
 case 0x31B: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))
@@ -30,7 +30,7 @@ case 0x31B: {
 case 0x31C: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))

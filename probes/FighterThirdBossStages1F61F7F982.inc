@@ -10,14 +10,14 @@ case 0x1F6: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*FloatConstants::QuarterDouble;
         velocityY=(velocityY)*FloatConstants::QuarterDouble;
-        field080=99;
-        field07C=0;
+        remainingHits=99;
+        collisionResult=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if ((animationStage)>3 && (animationStage)<6) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(6);
@@ -25,11 +25,11 @@ case 0x1F6: {
             break;
         }
     }
-    if (field07C!=0) {
+    if (collisionResult!=0) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
             reinterpret_cast<signed short&>(scriptCounterF02)=0;
-            field07C=0;
+            collisionResult=0;
         }
     }
     if (AdvanceNestedFrame()==(field070))
@@ -72,14 +72,14 @@ case 0x1F7: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*FloatConstants::OneTenthDouble;
         velocityY=(velocityY)*FloatConstants::OneTenthDouble;
-        field080=99;
-        field07C=0;
+        remainingHits=99;
+        collisionResult=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if ((animationStage)>3 && (animationStage)<6) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(6);
@@ -87,11 +87,11 @@ case 0x1F7: {
             break;
         }
     }
-    if (field07C!=0) {
+    if (collisionResult!=0) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
             reinterpret_cast<signed short&>(scriptCounterF02)=0;
-            field07C=0;
+            collisionResult=0;
         }
     }
     if (AdvanceNestedFrame()==(field070))

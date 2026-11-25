@@ -1,14 +1,14 @@
 // F1125 original Japanese action 0x390 at 0051CB4A..0051CF28:
 // 990 native CODE B /212 x86 inside ONE still-NONEXACT 81KB boss.
 case 0x390: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field0D8=0;
         SetPolarVelocity(field0C8,
             float(field0D8)*FloatConstants::OneTenth+GeometryConstants::TwentyFive);
@@ -30,7 +30,7 @@ case 0x390: {
             scaleY=(scaleY)+FloatConstants::OneTenth;
         }
     }
-    if (field07C!=0 && animationStage==1) {
+    if (collisionResult!=0 && animationStage==1) {
         ResetSecondaryCounter(2);
         scaleX=4.0f;
         scaleY=4.0f;

@@ -2,10 +2,10 @@
 // incomplete giant Advance() C++ source; not an independent function.
 case 0x4A: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
-        field05C = 0.8f;
-        field07C = 0;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
+        verticalAcceleration = 0.8f;
+        collisionResult = 0;
     }
     if (animationStage==F610_STAGE && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F610_EARLY);
@@ -15,13 +15,13 @@ case 0x4A: {
         ResetPrimaryCounters(0x4C);
         velocityX = -(velocityX) * FloatConstants::Quarter;
         velocityY = 15.0f;
-        field05C = 0.5f;
+        verticalAcceleration = 0.5f;
         SetCameraShake(2.0f);
         PlaySharedSound(0x16);
         scriptCounterF00 = 0;
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
 #if F610_PREPARE_BEFORE
         PlaySharedSound(0x16);

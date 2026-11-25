@@ -7,8 +7,8 @@
         case 0x2FA: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
@@ -24,18 +24,18 @@
             }
             if ((animationStage)>9 && (animationStage)<13 && !CheckHorizontalLimits()) {
                 if (facing==1)
-                    x=(cameraState.field04)+FloatConstants::Five;
+                    x=(cameraState.viewLeft)+FloatConstants::Five;
                 if (facing==-1)
-                    x=(field2DC)-FloatConstants::Five;
+                    x=(viewRight)-FloatConstants::Five;
             }
             if ((animationStage)>7 && (animationStage)<10 && y>FloatConstants::Zero) {
                 if ((CheckHorizontalLimits() && (((x)<GeometryConstants::SixHundredForty
                      && facing==1)
                     || ((x)>GeometryConstants::SixHundredForty
                         && facing==-1)))
-                    || (((cameraState.field04)+FloatConstants::Five)>=x
+                    || (((cameraState.viewLeft)+FloatConstants::Five)>=x
                         && facing==1)
-                    || (((field2DC)-FloatConstants::Five)<=x
+                    || (((viewRight)-FloatConstants::Five)<=x
                         && facing==-1)) {
                     ResetSecondaryCounter(10);
                     ClearMotionFields();
@@ -71,7 +71,7 @@
                 velocityY=17.5f;
                 if (RecordedRange(0,100)<50)
                     velocityY=15.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==10 && (animationFrame)==0)
                 ResetSecondaryCounter(8);

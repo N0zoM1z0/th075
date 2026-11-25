@@ -9,8 +9,8 @@
         case 0x1F4: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
             }
             if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
@@ -27,7 +27,7 @@
                     velocityX=0.0f;
             }
             if (y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
@@ -41,7 +41,7 @@
                 PlaySound(4);
                 velocityX=8.0f;
                 velocityY=14.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==18 && (animationFrame)==0)
                 ResetSecondaryCounter(16);
@@ -50,8 +50,8 @@
         case 0x1F5: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
             }
             if ((velocityX)>FloatConstants::Zero) {
@@ -68,7 +68,7 @@
                     facing,1);
             }
             if (y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     ResetSecondaryCounter(12);
@@ -82,7 +82,7 @@
                 PlaySound(4);
                 velocityX=18.0f;
                 velocityY=16.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==12 && (animationFrame)==0)
                 ResetSecondaryCounter(10);

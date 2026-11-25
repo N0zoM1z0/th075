@@ -4,7 +4,7 @@
                 scriptCounterF00=0;
                 scriptCounterF02=0;
                 fieldF04=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)>3 && (animationStage)<11) {
@@ -14,7 +14,7 @@
                 // The preparation stages keep their current vertical speed.
             }
             if ((animationStage)>10 && (animationStage)<14) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0xE);
                     break;
@@ -27,7 +27,7 @@
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=13.5f;
-                field05C=0.15f;
+                verticalAcceleration=0.15f;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x38C,x,0.0f,
@@ -93,7 +93,7 @@
                 scriptCounterF00=0;
                 scriptCounterF02=0;
                 fieldF04=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)>3 && (animationStage)<11) {
@@ -123,7 +123,7 @@
                 }
             }
             if ((animationStage)>10 && (animationStage)<14) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0xE);
                     break;
@@ -136,7 +136,7 @@
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=16.5f;
-                field05C=0.15f;
+                verticalAcceleration=0.15f;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x38B,x,

@@ -4,17 +4,17 @@
 case 0x1FA: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field3AC=0;
     }
-    if ((animationStage)==2 && field07C==3) {
+    if ((animationStage)==2 && collisionResult==3) {
         SpawnAuxEffect(0x32,
             float((facing)*36)+(x),
             (*(&y))+GeometryConstants::FortyOne,
             (facing),1);
         PlaySharedSound(0x14);
-        opponent->field082=0x1E;
+        opponent->hitstopFrames=0x1E;
         ResetPrimaryCounters(0x1FC);
         return;
     }

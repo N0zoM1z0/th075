@@ -1,13 +1,13 @@
 // Native 194/195 airborne five-shot policy, with explicit per-shot values.
 case R1187_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
     }
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0) {
-        velocityX=-3.0f; velocityY=8.0f; field05C=0.55f;
+        velocityX=-3.0f; velocityY=8.0f; verticalAcceleration=0.55f;
 #include "ReimuFiveShotVolleyF1186.inc"
         PlaySound(0);
         UpdateGaugeTimer(100);

@@ -9,14 +9,14 @@ case 0x389: {
         ClearFrameInfo();
         return;
     }
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -48,7 +48,7 @@ case 0x389: {
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;
-    if (field07C!=0 && field07C!=6 && animationStage==1) {
+    if (collisionResult!=0 && collisionResult!=6 && animationStage==1) {
         velocityX=0.0f;
         velocityY=0.0f;
         ResetSecondaryCounter(2);

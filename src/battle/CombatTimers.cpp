@@ -1,0 +1,82 @@
+#include "battle/CombatMode.hpp"
+#include "battle/FighterFrameFlags.hpp"
+#include "engine/GameSharedState.hpp"
+#include "battle/CombatTimers.hpp"
+void Fighter::UpdateCounters()
+{
+    // Opponent freeze suspends counters but not view bounds and the frame count.
+    if (opponent->opponentFreezeSnapshot > 0) goto updateViewBounds;
+    {
+        if (hitstopFrames > 0) --hitstopFrames;
+        else if (conditionalHitComboWindow > 0) --conditionalHitComboWindow;
+        opponentVelocityDeltaX = 0.0f;
+        opponent->opponentVelocityDeltaX = 0.0f;
+        if (hitInvulnerabilityFrames > 0) --hitInvulnerabilityFrames;
+        if (throwInvulnerabilityFrames > 0) --throwInvulnerabilityFrames;
+        if (frameInfo->flags & FrameFlags::RefreshesThrowInvulnerability) throwInvulnerabilityFrames = 6;
+        if (grazeFrames > 0) --grazeFrames;
+        if (guardResponseCooldown > 0) --guardResponseCooldown;
+        if (spellTimer > 0) {
+            if (cpuControlled == 0 || g_CombatMode != CombatMode::Story) {
+                spellTimer -= 2;
+                if (spellTimer <= 0) {
+                    spellTimer = 0;
+                    spellDeclarationExpired = 1;
+                    spellPower = 0.0f;
+                }
+            } else {
+                remainingSpellBonus -= static_cast<int>(roundSpellBonusDecay[roundsRemaining]);
+                if (remainingSpellBonus < 0) remainingSpellBonus = 0;
+                --remainingSpellBonusFrames;
+                if (remainingSpellBonusFrames < 0) remainingSpellBonusFrames = 0;
+            }
+        }
+        if (pendingSpellCharge > 0.0f && spellDeclarationExpired == 0) {
+            if (spellTimer != 0) {
+                pendingSpellCharge -= 0.4f;
+                spellPower += 0.02f;
+            } else {
+                pendingSpellCharge -= 4.0f;
+                spellPower += 0.2f;
+            }
+        }
+        if (spellPower < 0.0f) spellPower = 0.0f;
+        if (spellPower > 900.0f) spellPower = 900.0f;
+        if (pendingSpellCharge < 0.0f) pendingSpellCharge = 0.0f;
+        if (pendingSpellCharge > 1000.0f) pendingSpellCharge = 1000.0f;
+        if (g_CombatMode == CombatMode::Story && cpuControlled != 0) spellPower = 900.0f;
+        if (g_CombatMode != CombatMode::Story || cpuControlled == 0) {
+            if (spellTimer > 0 && recoverableHealth > health) health += 100;
+            if (recoverableHealth < health) health = recoverableHealth;
+        }
+        if (spiritCooldown > 0) {
+            spiritCooldown -= 2;
+            spirit = 0;
+            if (spiritCooldown <= 0) {
+                PlaySharedSound(47);
+                spirit = 1000;
+            }
+        } else if (spirit < spiritPrevious) {
+            spiritWait = 60;
+        } else if (spiritWait > 0) {
+            --spiritWait;
+        } else {
+            if ((!IsState150To199() ||
+                (action != 209 && action != 210)) && spiritWait == 0)
+                spirit += 3;
+            if (spirit > 1000) spirit = 1000;
+        }
+        spiritPrevious = spirit;
+    }
+updateViewBounds:
+    if (health < 0) health = 0;
+    if (recoverableHealth < 0) recoverableHealth = 0;
+    if (spriteHistoryRetentionFrames > 0) --spriteHistoryRetentionFrames;
+    if (hitFlashFrames > 0) --hitFlashFrames;
+    if (fadeAlpha > 0) fadeAlpha -= 3;
+    cameraState.viewLeft = (-g_CombatViewOffsetX - 320.0f + 640.0f) - (320.0f - g_CombatViewSpan) * 0.5f;
+    viewRight = (-g_CombatViewOffsetX + 320.0f + 640.0f) + (320.0f - g_CombatViewSpan) * 0.5f;
+    viewTop = (g_CombatViewOffsetY - 300.0f + 420.0f) + (320.0f - g_CombatViewSpan) * 210.0f / 320.0f;
+    viewBottom = (g_CombatViewOffsetY - 300.0f - 60.0f) - (320.0f - g_CombatViewSpan) * 30.0f / 320.0f;
+    ++fieldEF8;
+}

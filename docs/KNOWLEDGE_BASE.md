@@ -431,6 +431,12 @@ startup and exit use the separate construction and destruction entries
 at `0x0040AC80` and `0x0040AD60`. Both wrappers and the queue operations
 were compared with the actual record type.
 
+The refill uses the DirectSound write cursor and the previous and next
+refill offsets at +0x18 and +0x1C. `ScheduleFade` stores the two flags
+at +0x38 and +0x39. At fade completion the worker can stop the current
+track and optionally start the next queued one.
+[Stream state](../src/audio/AudioStream.hpp) · [DirectSound cursor API](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ee418062(v=vs.85))
+
 The initializer at `0x00656D60` constructs two 72-byte input mappings
 at `0x00671638`. Each holds a 40-byte key configuration at `+0x04` and
 seven signed held counts at `+0x2C`. Scene callers read the shared array
@@ -647,12 +653,12 @@ place to check the ABI and source owner. Keep the full link diagnostics in
 The PE vtables give the real hierarchy (`.analysis/layout-tools/vtables.json`
 dumps them):
 
-- `Actor` (`src/Actor.hpp`, 0x00–0xC3) is the base of every animated battle
+- `Actor` (`src/battle/Actor.hpp`, 0x00–0xC3) is the base of every animated battle
   object; its shared helpers (0040FA30–0040FC50 and 00455500) are in
-  `src/Actor.cpp`. Slots: 0 `BindAnimation` (fighters 00453D80), 1 `Advance` (pure),
+  `src/battle/Actor.cpp`. Slots: 0 `BindAnimation` (fighters 00453D80), 1 `Advance` (pure),
   2 `Render` (fighters 00453F70), 3 `RenderNode` 00410350, 4
   `RenderMirroredNode` 00410A00. The vtable pointer is at +0.
-- `Fighter : Actor` (`src/Fighter.hpp`, up to 0xF0F, `sizeof` 0xF10).
+- `Fighter : Actor` (`src/battle/Fighter.hpp`, up to 0xF0F, `sizeof` 0xF10).
   Constructor 004567B0; the base table at 00658FE8 uses `_purecall`
   00641E19 for pure slots. Slots 5–19: 5 `~Fighter`, 6 `ResetRound` (base
   00457010), 7 `CreateOwnedObject`, 8 `ForwardBaseAction` (base 00451EB0),
@@ -660,23 +666,23 @@ dumps them):
   `ChooseCardAction`, 13 `PollCommands`, 14 `SelectVariant`, 15
   `ConfigureStage`, 16 `AdvanceSequence`, 17 `RenderStage`, 18
   `NoOpSlot18`, 19 `AdvanceAuxiliary`.
-- `<Char>Fighter : Fighter` (`src/<Char>Fighter.hpp`, 11 classes) holds each
+- `<Char>Fighter : Fighter` (`src/characters/`, 11 classes) holds each
   character's overrides and its own members from +0xF10 (shorts in some
   characters, floats in others). The constructors live in
-  `src/<Char>Init*.cpp`.
-- Fighter command-selection state uses `field47C` (+0x47C) and the
-  associated sprite-sequence pointer at +0x480. `SetCommandSelection`
-  (00454BC0) writes the selection and updates the sequence sampling/color
-  policy. The adjacent 24-byte leaf at 00454C00 is now reconstructed as
-  `Fighter::ClearField47CAt00454C00`; it is a natural member store of zero
-  to +0x47C and cold-replays exactly. Its address-anchored name is retained
-  because no static references to this leaf were found.
-- `CharacterObject : Actor` (`src/CharacterObject.hpp`, constructor
+  `src/characters/<Char>Init*.cpp`.
+- `SetCommandSelection` (00454BC0) sets `spriteHistoryRetentionFrames`
+  (+0x47C) along with the sampling mode and mask on `spriteHistory`
+  (+0x480). `UpdateCounters` decrements positive values, even while the
+  opponent freezes combat counters. The fighter renderer can drop the
+  two oldest samples only when this count reaches zero or below.
+  `ClearField47CAt00454C00` clears the count. Its address-anchored name
+  follows the lack of known static callers.
+- `CharacterObject : Actor` (`src/characters/CharacterObject.hpp`, constructor
   0045B760, base table 00659064, `sizeof` 0xE8) is each character's effect
   object: `sequences` at +0xC4, floats +0xC8–0xD0, shorts +0xD8–0xE2 and
   the owning `Fighter*` at +0xE4. Object tables have five slots and no
   destructor. `<Char>Object` constructors are in
-  `src/CharacterObjectConstructorsF422.cpp`.
+  `src/characters/CharacterObjectConstructorsF422.cpp`.
 
 Slot 1 of each character table is the per-character `Advance`.
 
@@ -699,7 +705,7 @@ Several old labels were wrong: "Boss 0050A580" is Patchouli's object, and
 attributed one emit the same bytes, so check the vtable slot before naming
 a method.
 
-`BattleScene` (`src/BattleScene.hpp`, vtable 00658334: slot 0 the
+`BattleScene` (`src/battle/BattleScene.hpp`, vtable 00658334: slot 0 the
 deleting destructor, 1 `Update` 0043B1B0, 2 `Render` 0043D9D0) owns the
 match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   helpers of the progress records and combo counters. Members: +0x08 the
@@ -787,10 +793,12 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   The constructor, append, trim, reset and deleting destructor now
   share that class. The renderer still uses a borrowed iterator view.
   [Command history destructor evidence](ORIGIN_PENDING_REVIEW.md#r299--fighter-cleanup-and-paired-base-construction)
-- `RecordRoundFields` (004574D0) fills arrays at 0x32A, 0x33E, 0x370 and
-  0x384 (20 entries each) and at 0x3D0, 0x400 and 0x430 (12 each), and raises
-  +0x39D to the highest index used. +0x39D is therefore not a selected card,
-  as an older macro name claimed.
+- `RecordRoundFields` at `0x004574D0` prepares the opponent's health,
+  round kind, spell variant, record ID and scoring values. It initializes
+  `roundsRemaining` to the highest configured round. A knockout decrements
+  it, and a story continue restores it from `startingRoundCount`. The
+  round kind, health, variant and record ID have 20 slots each. The
+  spell bonus, duration and decay arrays have 12 slots each.
 - +0x74/+0x78 point to the current frame record (`flags` at +0x3C; bit 0x20
   gates action changes) and the current sequence record (`priority` at
   +0x12). Candidates from `sequenceSlots.At()` (004420B0) compare
@@ -824,46 +832,418 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   to 0045AC50. The 381-byte `std::vector<RECT>::operator=` at 0045AC50
   also cold-replays with all 17 relocations. These compiler/library-origin
   functions remain excluded from authored exact coverage.
-- Fighter gauges: +0x3B0 `spirit` (specials need it, guarding drains it, at
-  0 the fighter is guard-crushed into state 143), +0x368 `cardGauge` (float,
-  filled by hits, capped at 2000), +0x3C0 `comboRate` (each hit multiplies
-  it by the frame's factor), +0x2D0 `score` (100–500 per hit). Older names
-  called +0x3B0 a meter.
+- Fighter gauges include `spirit` at +0x3B0, `comboRate` at +0x3C0 and
+  `score` at +0x2D0. Guarding drains spirit. At zero, a guard crush enters
+  action 143. Each hit multiplies the combo rate by the animation frame's
+  factor.
 - In combat functions the attack is an `Actor` (fighter or object) and the
   attacker and defender are `Fighter`s; `Fighter::CalculateDamage(attack)`
   (00455640) is the attacker's damage against its opponent.
 
+### Spell cards and collision health
+
+`BattleScene::ResolveActiveCollisions` snapshots both fighters' health
+into `healthBeforeCollision` (+0x328) before resolving any hits.
+`Fighter::CalculateDamage` and `Fighter::ApplyOpponentGaugeChange` use
+that value for damage scaling through the whole pass.
+
+The hit handlers add to `pendingSpellCharge` (+0x368). `UpdateCounters`
+converts it into `spellPower` (+0x36C), with a slower conversion during a
+declaration. The HUD draws one stock per 100 points, and each of
+Patchouli's six spell actions consumes 100. Her command reader recognizes
+`2N2D` to declare, then `236D` to cast the chosen card. Character select
+copies the choices into `selectedSpellCards[2]` (+0x398) through the
+battle loader. The positive `spellTimer` (+0x3A0) enables spell actions and
+drives the HUD countdown. On normal expiration, `UpdateCounters` clears
+the power and sets `spellDeclarationExpired` (+0x39C) until the next reset.
+`bombCount` (+0x366) is the separate Spirit Strike stock. The HUD draws an
+icon per unit, and the `22C` action consumes one.
+
+[Fighter layout](../src/battle/Fighter.hpp) · [Timers](../src/battle/CombatTimers.cpp) · [Patchouli's spell dispatch](../src/characters/patchouli/CharacterActionDispatch502450.cpp)
+
+### Battle modes, controls, and replay data
+
+The combat mode byte selects CPU duel, local duel, Story, Arcade,
+Practice, or the title demo. The replay state byte distinguishes live
+recording and playback from their Story dialogue states. The replay
+file has its own mode encoding. `SaveSnapshot` and `RestoreFromSnapshot`
+translate between these representations.
+
+Replay snapshots hold the two selected spell cards separately from the
+palette index and record each player's auto-guard and damage settings.
+Story snapshots carry the starting health, score and remaining lives.
+The file starts with a 60-byte header. The record reader and writer
+transfer 14 bytes of metadata per record before the four streams.
+Those streams hold input masks, interleaved random samples and AI timers,
+AI commands and guard choices, and frame-indexed battle commands. Actor
+random sampling and guard selection consume their values from the same
+ordered streams as the AI control update.
+
+The seven input counters hold a signed duration on each axis and held
+durations for A, B, C, D and pause. Scene-specific actions such as menu
+confirmation read the same button slots as fighter controls.
+[Replay layout](../src/replay/ReplayRecords.hpp) · [Input slots](../src/input/InputControl.hpp) · [Combat modes](../src/battle/CombatMode.hpp)
+
+The fighter loader sets `playerSide` before reset and assigns
+`cpuControlled` according to the combat mode and selected human player.
+`paletteIndex` comes from character selection and selects the texture
+variant during resource loading. The battle tick snapshots each fighter's
+`opponentFreezeTimer` before decrementing it. Character and projectile
+updates later in that frame read `opponentFreezeSnapshot`, so the final
+freeze frame still applies consistently.
+
+Practice uses six bytes on the dummy fighter for spell choice and stock,
+air recovery, guard, movement and return to center. The menu and debug
+keys write those bytes. Fighter input dispatch consumes the guard and
+movement settings, and the battle frame uses the spell settings for the
+player's spell stock and selected card.
+
+The keyboard config starts with two 40-byte `InputBindingKeys` records.
+The settings reader, defaults, menu input and fighter input share that
+type. The signed device byte uses `-1` for the keyboard. Native initialization
+leaves the pause scancode at its zero-initialized value unless a saved
+configuration supplies one.
+[Fighter layout](../src/battle/Fighter.hpp) · [Config storage](../src/config/GameConfigStorage.hpp) · [Practice settings](../src/battle/BattleMode5OptionsF168.cpp)
+
+### Battle frame and overlays
+
+`BattleScene::Update` advances the scene clock when the pause overlay is
+closed. The replay clock advances during recording and playback, including
+knockout freeze frames. Timed replay commands use that clock for round-stock
+changes, resource restoration and direct spell-power adjustments.
+
+The battle phase byte distinguishes the introduction and active fight
+from versus round recovery, the victory quote and the story sequence.
+Story knockout has separate paths for round recovery, a continue prompt
+and the reset that follows a continue. The pause menu saves both input
+snapshots and restores them when it finishes closing.
+
+Spell overlay fields are parallel arrays indexed by fighter side. The
+update and draw paths share named members for panel position, rise speed,
+title scale, the numeric readout and their alphas.
+[Phase values](../src/battle/BattlePhase.hpp) · [Scene layout](../src/battle/BattleScene.hpp) · [Battle update](../src/battle/BattleFrame.cpp)
+
+### Story scripts and character stage layers
+
+Story scripts keep one command byte, a 16-bit argument and a dialogue
+pointer per record. The fighter dispatch interprets the three speaker
+commands, the stage banner flag, immediate and queued music, and dialogue
+step flags. In victory-quote tables, command 13 also marks the end of
+a quote group. The parser and both consumers use the same command names.
+
+All playable fighters have four stage-layer positions and alphas. Their
+offsets vary by character. Stage setup and sequence animation write the
+arrays that the renderers read. The fourth layer is the stage banner and
+starts fading out after its full-alpha timer exceeds 180 frames.
+[Script format](../src/assets/ScriptResource4205F0.hpp) · [Round setup](../src/battle/BindingRoundF171.cpp) · [Stage rendering](../src/characters/CharacterStageRendering.cpp)
+
+### Actor collision and sprite resources
+
+The collision pass snapshots both fighters and the character objects in
+the first two lists of each owned object manager. It resolves object
+clashes before hits against each fighter. All four lists remain available
+to object update and rendering. The collision result and remaining hit
+count belong to the actor, and object state machines use them to decide
+whether to keep or replace the current action.
+
+The frame record carries both hitstop pairs, guard damage and spell
+charge, ground and air reaction actions, reaction velocities and the hit
+sound. Pattern loaders, combat and drawing share that layout. Frames
+without a pose can select the doubled sprite scale. The secondary
+fighter texture pack supplies portraits and notice badges, and the
+sprite history records the drawn fighter frames for its trail.
+[Actor and frame layout](../src/battle/Actor.hpp) · [Collision pass](../src/battle/BattleActiveCollision.cpp) · [Fighter resources](../src/battle/FighterLoadResourcesF282.cpp)
+
+### Character-object storage by action
+
+The fighter's object manager initializes +0xC8, +0xCC, +0xD0 and +0xD4
+from four spawn parameters after resetting the action. The first three
+floats can then become working state. The recovered code writes +0xD4
+at spawn and has no reader for it. Constructors clear some of the shorts
+at +0xD8 through +0xE2. The action initializes and updates the shorts
+it uses. +0xE2 has recovered constructor stores only. A cleared
+`frameInfo` signals the object manager to remove the object.
+[Spawn](../src/battle/EffectManagerSpawnF161.cpp) · [Constructors](../src/characters/CharacterObjectConstructorsF422.cpp) · [Update and removal](../src/battle/BattleEffectAdvance.cpp)
+
+| Object | Action | Observed use of the shared slots |
+| --- | --- | --- |
+| Alice | 0x327 | +0xD8 is a heading and +0xDA is speed in tenths. +0xDC counts phase repeats. |
+| Marisa | 0x320 | +0xD8 and +0xDA track the short transitions around projectile startup and contact. Some later shots add +0xD0 to speed. |
+| Meiling | 0x321 | +0xC8 sets the initial Z rotation. +0xD8 supplies its per-update step, which decays to one. |
+| Patchouli | 0x323 | +0xC8 supplies the heading and the increasing +0xD8 raises speed. |
+| Reimu | 0x320, 0x327 | +0xDA holds a target heading in 0x320 and speed in hundredths in 0x327. +0xC8 changes from initial heading to an eight-way direction selector. |
+| Remilia | 0x320 | +0xD8 selects the repeated launch stage, hit count and speed. |
+| Sakuya | 0x321, 0x38F | +0xDA selects a lateral move in 0x321 and counts reflections in 0x38F. |
+| Suika | 0x321 | +0xC8 and +0xCC initialize polar motion. +0xD8 selects the direction of the vertical speed adjustment. |
+| Youmu | 0x320 | +0xC8 selects the emission pattern. +0xD8 indexes both the spawn position and the child parameter. |
+| Yukari | 0x320, 0x326 | +0xCC is initial speed in 0x320 and an animation-frame threshold in 0x326. |
+| Yuyuko | 0x320 | +0xC8 and +0xCC are heading and initial speed. +0xD8 adds a growing speed term. |
+
+The per-character action code is linked in the [Advance index](GIANTS.md#complete-research-parents).
+Reimu increments +0xDE in 0x320. In 0x332, +0xE0 is a flag
+for the end of the owner's spirit drain. Definitions stay tied to
+the particular action, since the next action can repurpose the slots.
+
+### Fighter extension fields
+
+Ten fighter extensions have a `longRangeFrames` counter at their own
+offset. Their auxiliary updates clear it at horizontal separation of
+320 or less, count up to 60 above 320, and immediately reach that cap
+above 540. Several object actions read the count to set scale or begin
+a phase. Their higher thresholds remain native. Remilia runs the same
+counter update at inherited +0xF0C, where other fighters store different
+values. That shared offset keeps its provisional name.
+[Meiling auxiliary update](../src/characters/meiling/CharacterAux5E5500.cpp) · [Meiling object reader](../src/characters/meiling/MeilingObjectAdvanceF1207.cpp) · [Remilia auxiliary update](../src/characters/remilia/CharacterAux00555530F363.cpp)
+
+| Fighter | `longRangeFrames` offset |
+| --- | --- |
+| Alice | +0xF14 |
+| Marisa | +0xF32 |
+| Meiling | +0xF2A |
+| Patchouli | +0xF12 |
+| Reimu | +0xF2A |
+| Sakuya | +0xF16 |
+| Suika | +0xF26 |
+| Youmu | +0xF14 |
+| Yukari | +0xF32 |
+| Yuyuko | +0xF10 |
+
+| Fighter | Extension fields and evidence |
+| --- | --- |
+| Alice | Objects 0x346 and 0x349 update the orbit angle and phase read by 0x345, 0x347 and 0x348. Dispatch checks for a zero phase before starting the related card. |
+| Marisa | Objects 0x33C–0x341 publish six X/Y pairs for 0x349. The chain producer separately sets the visible flag, origin, facing and scale read by the renderer. |
+| Patchouli | 0x1F4 and 0x1F5 seed a pull toward the fighter. The auxiliary update reduces the pull strength by two each tick. |
+| Reimu | Object 0x332 sets and clears the active flag that gates action 0x2C1. |
+| Suika | A timed drain ticks on the opponent. A separate mode drains the fighter's own spirit and can end on depletion, knockout or spell expiration. |
+| Yukari | 0x32F sets the active flag that gates the related cast. 0x398 publishes the center and firing phase read by 0x396, which uses the angle and radius to place its child effects. |
+
+In Suika's 0x306, the fighter drives the spell anchor from animation
+stages 6–16. Object 0x390 takes over the anchor on launch and object
+0x38F approaches and follows it. Yukari's objects 0x328 and 0x329 bank
+preserved-hit clashes up to ten. Object 0x341, 0x342 or 0x344 consumes
+the count to size a later volley.
+
+Meiling's reset zeros +0xF22, +0xF24, +0xF26 and +0xF28. The only
+other direct access found in Meiling's native functions clears +0xF26
+at 0x005E1A30. Suika's +0xF20 likewise has a round-reset store and no
+confirmed reader. Suika's +0xF28 in `AdvanceSequence` counts time in
+phase 0 and selects fade-in, layer switch or fade-out in phase 93.
+[Meiling reset](../src/characters/meiling/MeilingResetF314.cpp) · [Suika reset](../src/characters/suika/SuikaResetRoundF315.cpp) · [Suika sequence](../src/characters/suika/CharacterSequence5D4890.cpp) · [Suika spell objects](../src/characters/suika/SuikaObjectAdvanceF1216.cpp) · [Yukari object state](../src/characters/yukari/YukariObjectAdvanceF1231.cpp) · [Chain renderer](../src/characters/marisa/MarisaProjectileChainRenderF440.cpp)
+
+### Shared auxiliary effects
+
+`CombatEffects` owns a pattern catalog and two lists of auxiliary
+effects. A child borrows its owner's catalog and binds
+`patterns[action]->frames[animationStage]`. The spawn methods bind and
+advance it immediately. `SpawnConfigured` copies four float parameters.
+`SpawnPeer` forwards those same slots to the child. The owner advances
+each list's starting count and prunes entries with a cleared `drawFrame`.
+[Spawn](../src/battle/EffectSpawnF281.cpp) · [Pattern binding](../src/characters/CharacterAuxFrameF750.cpp) · [Pruning](../src/battle/AuxEffectPruneF354.cpp)
+
+The shared switch uses +0x74 for elapsed updates in 0x01 and speed in
+hundredths in 0x66. In 0x3E the initial value supplies an angle. In 0x3F
+the slot tracks alpha state. +0x76 supplies the decelerating particle
+angle. +0x78 stores the randomized initial scale percentage used by
+0x6B. 0x6E also writes +0x78 and initializes both scales to one. No
+recovered access uses +0x7A. The angle passed to 0x3F/0x41 occupies the
+first float in the spawn parameter block.
+[Auxiliary action switch](../src/characters/CharacterAuxAction.cpp)
+
+### Selected action lifecycles
+
+- Marisa's fighter action 0x190 spawns object 0x320 at stage 5. The
+  object follows the fighter early, enters its fade at stage 20 when
+  the owner enters a hit reaction, and clears its frame when alpha
+  runs out. While the fighter is still in the firing window, stage 20
+  can return to stage 12.
+  [Fighter](../src/characters/marisa/MarisaFighterAdvance.cpp) · [Object](../src/characters/marisa/MarisaObjectAdvance.cpp)
+- Marisa's 0x2C1 and 0x2C2 spawn orbit controllers 0x342 and 0x343.
+  They seed four or six nodes and set the 420-frame lifetime. Nodes
+  0x33C–0x341 publish their positions for 0x349, which uses its first
+  spawn parameter as the node index. A controller moves to its
+  dismissal stage when the node count or lifetime is exhausted, then
+  clears the stored phase and node count on completion.
+  [Fighter](../src/characters/marisa/MarisaFighterAdvance.cpp) · [Object](../src/characters/marisa/MarisaObjectAdvance.cpp) · [Node updates](../src/battle/ActorAuxiliary.cpp)
+- Reimu's 0x2C1 creates 0x332 at stage 7. The object follows its owner
+  during startup, then drains the owner's spirit after stage 0x13.
+  Depleted spirit starts the fade and disables remaining hits. The
+  fade and horizontal bounds exits both clear the recast gate.
+  [Fighter action binding](../probes/ReimuMeterAttacksF1190.inc) · [Object](../src/characters/reimu/ReimuObjectAdvance.cpp) · [Recast gate](../src/characters/reimu/ReimuActionDispatch.cpp)
+- Patchouli's 0x190 produces four 0x33B shots with different initial
+  headings. Each spawns the 0x33C trail while steering and transitions
+  to stage 2 on impact or when a clash uses its last hit. Bounds, a
+  preserved-hit clash, an early owner hit, and animation completion
+  can remove it. In 0x2BC the
+  linked 0x321 object instead waits for the owner's stage 9 to launch.
+  Landing changes it to action 0x322 and spawns its impact effects.
+  It clears early if the owner leaves 0x2BC during 0x321.
+  [Fighter](../src/characters/patchouli/PatchouliFighterAdvance.cpp) · [Homing shot](../probes/CharacterObjectBossLongF1057.inc) · [Spell object](../probes/CharacterObjectBoss321F1051.inc)
+- Alice's 0x2BD spawns six 0x345 orbiters and the 0x346 controller.
+  Action 0x2C0 spawns six each of 0x347 and 0x348 with controller
+  0x349. Each controller publishes angle and center and advances
+  the orbit phase, which tells the orbiters when to leave their
+  orbit. The controller clears the phase when its animation ends.
+  [Fighter](../src/characters/alice/AliceFighterAdvance.cpp) · [Objects](../src/characters/alice/CharacterObjectActionsF572.cpp)
+- A spell startup can spawn the shared 0x73 or 0x74 auxiliary effect.
+  0x73 emits 25 instances of 0x7A and one each of 0x8D–0x91 on its
+  first frame. Each child binds its own pattern. A finished
+  animation clears the draw-frame pointer for the owner to prune.
+  [Auxiliary switch](../src/characters/CharacterAuxAction.cpp) · [Pruning](../src/battle/AuxEffectPruneF354.cpp)
+
+### Shared motion and conditional hits
+
+`ActorRenderingBase::verticalAcceleration` (+0x05C) changes vertical
+velocity in fighter and object movement. Most airborne actions subtract
+a positive value. Reimu's object adds a negative value during the
+stage-7 launch, and Alice's action 0x2DD also uses addition.
+`Fighter::ClearMotionFields` clears the slot with both velocity components.
+[Reimu object motion](../src/characters/reimu/ReimuObjectAdvance.cpp) · [Alice fighter motion](../src/characters/alice/AliceFighterAdvance.cpp)
+
+`ResolveBodySeparation` clears and then writes `bodySeparationVelocityX`
+(+0x488) as the correction from each fighter's current speed to the
+resolved body speed. The other fighter's `opponentVelocityDeltaX`
+(+0x490) is a separate contribution in `AdvancePosition`. Fighter
+landings and Marisa's objects can write it, and the active counter
+update clears both fighters' contributions.
+[Body separation](../src/battle/BattleFrameDependencies.cpp) · [Position update](../src/battle/BattleFrame.cpp)
+
+`ApplyConditionalHit` consumes one positive `conditionalHitsRemaining`
+(+0x3CA) for each accepted conditional hit. The common initialization
+sets it to zero, and a positive refill source is still unconfirmed.
+The hit opens a 15-tick `conditionalHitComboWindow` (+0x3CC). The next
+conditional hit starts a new combo when the window has expired, and
+hitstop pauses its countdown.
+[Conditional hit](../src/battle/BattleCombat.cpp) · [Counter update](../src/battle/CombatTimers.cpp)
+
+### Frame and attack flags
+
+The pattern loader reads two independent 32-bit words at +0x3C and
++0x40. The first describes the actor's current frame, even when the
+actor is defending. The second travels with the attack into the
+collision and guard handlers.
+[Frame loader](../src/battle/FighterPattern457660.cpp) · [Flag values](../src/battle/FighterFrameFlags.hpp)
+
+After the eligibility and hitbox checks, dispatch tries the paired
+special contact, conditional hit and posture contact in that order.
+It then tries graze on attacks with 0x400000 set, followed by guard
+input, ground stagger and the default hit. Each successful handler
+ends dispatch for that contact.
+
+| Word and mask | Observed behavior |
+| --- | --- |
+| Frame 0x01, 0x02 | Without an explicit ground reaction, `ApplyHit` chooses the standing group at 0x32 or the crouching group at 0x3E, plus the reaction variant. In all 11 update patterns, idle 0x00 has 0x01 and crouch 0x01 has 0x02. Airborne reaction takes precedence. |
+| Frame 0x04, 0x10, 0x20 | Treat the defender as airborne for hit and guard reactions, allow guard input, and permit action cancels subject to the usual priority and input checks, respectively. |
+| Frame 0x40 / attack 0x400 | The pair gives the counter-hit reaction and 1.25× damage. |
+| Frame 0x80, 0x100 / attack 0x20 | The first frame bit selects the conditional hit path. The second selects it while the defender has conditional hits remaining. The attack bit bypasses both. |
+| Frame 0x800, 0x1000 / attack 0x80 | The attack bit performs the throw-invulnerability checks. Both frame bits reject that contact, and 0x1000 also refreshes the six-frame timer. |
+| Frame 0x2000 / attack 0x400000 | The frame bit blocks hitbox resolution. The attack bit bypasses both this flag and the hit-invulnerability timer, and enables the graze check. |
+| Frame 0x4000 / attack 0x40000 | The frame bit makes a defender eligible for graze even with a zero graze timer. The attack bit bypasses graze. |
+| Attack 0x01 | Substitutes the standing reaction group at 0x38. It can coexist with either guard-height bit. Reimu 0x188 and Alice 0x188 carry it on multiple frames. |
+| Attack 0x02, 0x04, 0x08, 0x10 | Match standing, crouching and air guard, or suppress guard selection. |
+| Attack 0x100 | Use fixed hitstun values of 15,000 on a regular hit and 30,000 on a conditional hit. |
+| Attack 0x80000, 0x200000 | Empty spirit on wrong standing or crouching guard. The second bit permits guard response 41 when spirit is already depleted. |
+| Attack 0x100000 | `ApplyAttackHit` selects ground stagger 0x8C when the defender is at or below ground level and the counter-hit pair is absent. Patchouli 0x351 and Meiling 0x343 carry the bit. |
+| Frame 0x100000 | Skips air recovery input and its countdown, hides the air recovery gauge, and makes the defender ineligible for the recovery window that would suppress hitbox dispatch. Appears on knockdown sequences such as Yukari 0x5D. |
+
+[Attack dispatch](../src/battle/BattleCollisionDispatch.cpp) · [Hit and conditional hit](../src/battle/BattleCombat.cpp) · [Ground stagger](../src/battle/BattleCombatResponses.cpp) · [Guard selection](../src/battle/FighterHitResponseF164.cpp)
+
+#### Unresolved frame and attack masks
+
+Distribution observations come from the 10 fighter patterns in the
+installed base archive and 11 in the update archive. The update
+patterns contain 25,469 frames. Frame 0x100 has a recovered consumer
+and no occurrence in the update patterns.
+
+| Word and mask | Condition and effect | Resource evidence or open question |
+| --- | --- | --- |
+| Frame 0x200, 0x400 | `ResolveContact` pairs these with attack 0x02 and 0x04. Either pair sets result 3, spends a hit and calls `ApplyImpact`, which changes the result to blocked and spends a second hit. | Neither bit occurs in either archive's fighter patterns. Which conditions were meant to enable the contact path remains unknown. |
+| Frame 0x8000 / attack 0x2000 | `ResolveSpecialHit` gives both actors result 3 and spends a hit. | Remilia 0x2BC frame 6 carries the frame bit. Patchouli 0x2EF is one attack example. The category's gameplay name is unknown. |
+| Frame 0x10000 / attack 0x4000 | Same dispatch result for the second pair. | Youmu 0x1F9 frame 2 uses result 3 to freeze the opponent and enter 0x1FB. Remilia 0x2C5 carries the attack bit. |
+| Frame 0x20000 / attack 0x8000 | Same dispatch result for the third pair. | Youmu 0x1FA frame 2 uses result 3 to enter 0x1FC. Yukari 0x12F carries the attack bit. |
+| Frame 0x08 / attack 0x40, 0x200, 0x800, 0x1000, 0x10000, 0x20000 | The recovered frame loader and copy carry these values. No recovered combat code tests the individual bits. | Frame 0x08 appears in knockdown sequences such as Yukari 0x5D. Attack 0x200 appears on 0x189 in four characters. |
+
+[Contact pairs](../src/battle/BattleActiveCollision.cpp) · [Impact](../src/battle/BattleCollision.cpp) · [Recovery update](../src/battle/BattleFrame.cpp) · [Recovery gauge](../src/battle/BattleDamageFlash4406C0.cpp) · [Recovery predicate](../src/engine/GamePolicyHelpers.cpp)
+
+### Combat camera bounds and linked effects
+
+`Fighter::UpdateCounters` writes the left, right, top and bottom view
+bounds at `+0x2D8..+0x2E4`. Character objects use the same fields to
+reflect or change direction at the screen edges. The coordinate mapper
+at `0x00455770` reads those four fields to map world coordinates into
+the 640×480 view. Its original callers remain unknown.
+[Counter update](../src/battle/CombatTimers.cpp) · [Coordinate mapper](../src/battle/CombatCoordinateViewF536.cpp)
+
+A tracked effect can copy the 36-byte transform from its fighter at
+`+0x2F0` into the spawned actor at `+0x10`. The sprite renderers use
+its offsets in projected drawing and read the scale, rotations, color
+and draw flags from the same record.
+[Transform layout](../src/engine/TransformRecordF136.hpp) · [Effect spawn](../src/battle/EffectManagerSpawnF161.cpp) · [Sprite rendering](../src/graphics/SpriteNameDrawing.cpp)
+
+## Scene commands and archive files
+
+The Windows loop consumes a 16-bit scene command. The low byte selects the
+scene, bits 8–11 select the outgoing animation, and bits 12–15 select the
+incoming animation. The scene dispatcher removes the outgoing field first.
+The loop allocates the new scene before the incoming animation runs.
+The title and replay browser retain their own selection and fade state.
+[Scene command](../src/engine/SceneTransition.hpp) · [Dispatcher](../src/engine/SceneTransitionDispatchF242.cpp) · [Windows loop](../src/platform/WinMainF1171.cpp)
+
+A game archive begins with a 16-bit entry count followed by 108-byte
+index entries. Each entry holds a 100-byte filename, a 32-bit payload size
+and a 32-bit absolute file offset. The reader and writer use the same
+evolving mask over the index. The runtime archive check round-tripped two
+sample members and read the installed `data\system\battle.dat` member at
+the offset resolved from its original index.
+[Index entry](../src/assets/DataArchive.hpp) · [Reader](../src/assets/ArchiveOpenReadIndexF338.cpp) · [Writer](../src/assets/ArchiveWriteF339.cpp)
+
+### Texture packs and display options
+
+The file and archive texture loaders use the manager's allocated slot
+count. The pack starts with a palette count and a 512-byte block per
+palette. Each image writes width, height, row stride in pixels, a format
+byte and the compressed length before the payload. A zero compressed
+length selects raw pixels. Formats 24 and 32 both store raw pixels in
+four-byte elements.
+
+The texture manager owns the pack file methods and the bitmap upload
+methods. Its 44-byte bitmap entry carries the row stride, compressed
+length and shared-palette texture flag.
+[Texture manager](../src/graphics/TextureManagerF198.hpp) · [Pack record](../src/assets/TexturePackRecord.hpp) · [Bitmap entry](../src/graphics/TextureEntry.hpp)
+
+The config reader and options menu share the animated-background,
+per-frame rendering and damage-flash settings. The scene dispatcher uses
+the requested animation when the transition setting is enabled and
+selects the short black fade otherwise. The native reader sets this
+setting to one after reading its saved byte.
+[Display settings](../src/config/DisplayOptions.hpp) · [Config reader](../src/config/ConfigLoadF194.cpp)
+
 ## Game progress (save data)
 
-The progress object `g_GameProgress` at `0x006718F8` serves battle combo
-records, mode counters, the status display and character selection.
-Combo count and damage use fields `+0x008` and `+0x00C` of the selected
-difficulty. The status display reads the words at `+0x268` and `+0x394`
-from difficulty zero for the selected character. The layout is:
+The progress object at `0x006718F8` holds 15 character records, each
+containing four 0x5FC-byte difficulty records. The story loader counts
+attempts and advances the highest-stage limit for the character selection
+menu. The normal story ending increments the clear counter. Combat updates
+the longest combo and highest combo damage in the same difficulty record.
+The ranking at `+0x55C` holds ten 16-byte entries with an eight-byte encoded
+name, a month, a day and a score at `+0xC`.
 
-- 15 character blocks of 0x17F0 bytes from +0, each 4 difficulty blocks of
-  0x5FC bytes. A difficulty block ends with 10 ranked scores of 16 bytes at
-  +0x55C (8 name bytes, a DWORD, the score at +0xC; the lowest score sits
-  at +0x5F8). `ProgressRankingF375::InsertRankedScore` (00416EE0) works on
-  one difficulty block. +0x04 of a block counts selections and +0x556 is
-  read by the single-player options.
-- +0x16710: a 15×15 int table of mode counters; +0x16A94: 8 bytes (100
-  each by default); +0x16A9C: 40 bytes of unlock bits; +0x16AC4/+0x16AC5:
-  the selected fighter and difficulty; +0x16AC6: 256 bytes saved with the
-  scores.
+Story spell records use difficulty slot zero for the selected character.
+A CPU declaration increments the attempt count at `+0x394`. A knockout
+with a positive spell bonus increments the count at `+0x268` and can
+update the best bonus and capture flag. The battle HUD and results browser
+read those fields. The win matrix at `+0x16710` is indexed by winner and
+opponent, in that order. The name-entry flow copies between its ranked
+slot and the working name at `+0x16A94`.
 
-`src/GameProgress.hpp` declares this layout and 27 of its methods.
-Nested indexing `characters[f].difficulties[d].x` compiles exactly like the
-left-to-right sum `this + f*0x17F0 + d*0x5FC + off`, but not like
-`this + (d*0x5FC + f*0x17F0)`: VC7.1 evaluates a parenthesized offset sum
-before adding the base, in a different instruction order.
-`IncrementSelectedRecordCount` (0041A270) needs that grouping and keeps it.
+The loader accepts the older, smaller `score.dat` layout. The writer
+uses all 15 character records and refreshes part of the 256-byte tail with
+random bytes before writing. The selection fields are runtime state.
+[Record layout](../src/engine/GameProgress.hpp) · [Reader](../src/engine/ScoreLoadF248.cpp) · [Writer](../src/engine/ProgressSaveF247.cpp)
 
-The selected-record accessors and mode counter live with the other
-record methods in `ProgressSelectionF274.cpp`. A headless consumer
-linked their archive member and exercised separate difficulty fields,
-zero extension of both card counters, mode counter writes and the
-selection check.
+`RecordStoryAttempt` at `0x0041A270` calculates the two byte strides
+before dereferencing the selected difficulty. The parenthesized sum
+preserves VC7.1's instruction order and selects the named member from the
+shared record. Nested array indexing evaluates the character stride first.
 
 ## VC7.1 `/Od` code generation
 

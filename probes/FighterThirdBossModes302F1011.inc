@@ -19,12 +19,12 @@ case 0x302: {
         fieldF08=g_OptionsModeAt006714D0+2;
     }
     if ((animationStage)<13 && y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY<FloatConstants::One)
             velocityY=1.0f;
     }
     if ((animationStage)>12 && y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
@@ -38,7 +38,7 @@ case 0x302: {
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=13.5f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
     }
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(5);

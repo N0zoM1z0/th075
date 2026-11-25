@@ -4,8 +4,8 @@
 // NOT standalone original game functions or accepted exact CODE.
         case 0x194: {
             if ((animationStage)==0 && (animationFrame)==0)
-                field07C=1;
-            velocityY=velocityY-field05C;
+                collisionResult=1;
+            velocityY=velocityY-verticalAcceleration;
             if ((y+velocityY)<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
@@ -15,7 +15,7 @@
                 PlaySound(0);
                 velocityX=-4.0f;
                 velocityY=9.0f;
-                field05C=0.65f;
+                verticalAcceleration=0.65f;
                 field314=0.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0;shot<8;++shot) {
@@ -31,8 +31,8 @@
         }
         case 0x195: {
             if ((animationStage)==0 && (animationFrame)==0)
-                field07C=1;
-            velocityY=velocityY-field05C;
+                collisionResult=1;
+            velocityY=velocityY-verticalAcceleration;
             if ((y+velocityY)<=FloatConstants::Zero) {
                 velocityY=0.0f;
                 velocityX=0.0f;
@@ -42,7 +42,7 @@
                 PlaySound(0);
                 velocityX=-4.0f;
                 velocityY=9.0f;
-                field05C=0.65f;
+                verticalAcceleration=0.65f;
                 field314=-30.0f;
                 UpdateGaugeTimer(200);
                 for (int shot=0;shot<8;++shot) {

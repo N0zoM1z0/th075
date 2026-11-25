@@ -3,16 +3,16 @@
 // This is a case within a still NONEXACT huge fighter Advance(),
 // not an accepted whole original function or ASM byte substitution.
 case 0x9E: {
-    cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>GeometryConstants::Thousand)
-        cardGauge=1000.0f;
+    pendingSpellCharge=(pendingSpellCharge)+FloatConstants::One;
+    if ((pendingSpellCharge)>GeometryConstants::Thousand)
+        pendingSpellCharge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
 #if F637_EXTRA_FLAG && F637_EXTRA_BEFORE
         fieldF0A=0;
 #endif
         velocityX=-6.0f;
         velocityY=8.0f;
-        field05C=0.75f;
+        verticalAcceleration=0.75f;
 #if F637_EXTRA_FLAG && !F637_EXTRA_BEFORE
         fieldF0A=0;
 #endif
@@ -25,7 +25,7 @@ case 0x9E: {
 #else
     if (y>=FloatConstants::Zero) {
 #endif
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;

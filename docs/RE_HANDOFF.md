@@ -14,6 +14,44 @@ with SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The publisher's Japanese 1.11 patch yields the same executable.
 [Target cross-check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
 
+## Semantic reconstruction
+
+The [source map](../README.md#where-to-start) leads to shared battle,
+input, replay, resource and renderer layouts. The [Advance index](GIANTS.md)
+links to each playable fighter and object. The [knowledge base](KNOWLEDGE_BASE.md#layout-facts)
+records the source evidence for names and native field layouts.
+
+The shared-field review recovered the sprite history retention count, signed
+vertical acceleration, body separation and opponent motion contributions,
+and the conditional-hit count and combo window. The accepted comparisons
+cover all affected units.
+[Shared motion and conditional hits](KNOWLEDGE_BASE.md#shared-motion-and-conditional-hits)
+
+Combat names the standing, crouching and alternate standing hit
+reactions, the ground stagger attack and the air recovery frame flag.
+The unmapped masks have their collision branches and installed-pattern
+evidence recorded together.
+[Flag behavior](KNOWLEDGE_BASE.md#frame-and-attack-flags) · [Unresolved masks](KNOWLEDGE_BASE.md#unresolved-frame-and-attack-masks)
+
+The object notes show how all eleven characters reuse their shared
+slots. The six guided state machines are linked below.
+[Character-object slots](KNOWLEDGE_BASE.md#character-object-storage-by-action) · [Action lifecycles](KNOWLEDGE_BASE.md#selected-action-lifecycles)
+
+- Marisa [fighter](../src/characters/marisa/MarisaFighterAdvance.cpp) and [object](../src/characters/marisa/MarisaObjectAdvance.cpp)
+- Reimu [object](../src/characters/reimu/ReimuObjectAdvance.cpp)
+- Patchouli [fighter](../src/characters/patchouli/PatchouliFighterAdvance.cpp)
+- Alice [fighter](../src/characters/alice/AliceFighterAdvance.cpp)
+- Shared [auxiliary-object switch](../src/characters/CharacterAuxAction.cpp)
+
+The fighter extension notes give the long-range offsets and record
+Suika's shared spell anchor and Yukari's stored clash count. Several
+Meiling and Suika reset fields still lack a confirmed reader.
+[Fighter extensions](KNOWLEDGE_BASE.md#fighter-extension-fields)
+
+All affected units cold-replayed after the review. The normal Windows
+link matches the executable built at `1ad79522` except for the COFF
+timestamp.
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build
@@ -28,51 +66,18 @@ null-terminated string values from that supplied image and includes a
 data-only COFF object in the archive and link. Names for the same address
 share one object offset.
 
-A clean build compiled all 441 translation units and linked a Windows
-PE32 executable with an empty linker log. All 16 affected match units
-passed complete comparisons on the freshly compiled objects. The linked
-image matched all 47 supplied data ranges, and all 237 code references
-resolved to the corresponding symbols.
+The normal and reversed retained links after the first semantic pass both
+checked all configured units, 56,374 linked relocations, 80 vtables and
+ten initializer pointers. Headless probes round-tripped five replay
+files and the 90-byte playtest config byte for byte.
+[Position independence](POSITION_INDEPENDENCE.md) · [Link evidence](KNOWLEDGE_BASE.md#windows-link)
 
-The audio client and event-service destructors now bind the shared
-`TerminateThread` import. Both units cold-replayed over their full extents,
-and a strict relink used the refreshed objects.
-[Import evidence](KNOWLEDGE_BASE.md#windows-link)
-
-The ordinary and reverse-order Windows links both ran from the title
-through character selection and back to title before exiting under
-isolated Xvfb. Both layouts also loaded and rendered the first battle
-with the installation's `replay/` directory staged. The command-history
-matcher now uses the native iterator subtraction, and both layouts
-completed 60 battle updates after the fix. The PI notes record which
-symbols moved. With linker reference elimination disabled, both layouts
-also verified all configured unit extents, 80 vtables and the C++
-initializer array. Separate console probes round-tripped the same
-configuration in both object orders.
-[Windows position independence](POSITION_INDEPENDENCE.md)
-
-The Japanese 1.11 reference and the normal executable both played the
-same Coolier Youmu versus Marisa recording and returned to the replay
-browser. The test added 12 zero bytes to expand the downloaded file's
-header from `0x30` to `0x3C`. The record and its four input streams
-were byte-identical. The battle phase, both positions, actions, and
-health values agreed at all nine checkpoints through update 240.
-Both runs used isolated Xvfb sessions. The local logs and checkpoint CSV
-are under `build/program/external-replay/`.
-[Coolier replay](https://coolier.net/th_up4/index.php?id=6736)
-
-Four more Coolier recordings tested the normal link against the Japanese
-1.11 executable. All four pairs returned to the replay browser at the
-same update. The suite covered 28,417 battle updates per executable.
-All 544 observations at battle entry, hit handlers and replay exit
-agreed on the update counter, phase, timer, and both fighters' positions,
-actions, animation state, health, spirit, and scores. The test adapted
-only the replay headers as above. The local fixture hashes, traces and
-comparison report are under `build/program/replay-suite/`.
+The pre-semantic Windows build and the Japanese 1.11 original completed
+four Coolier recordings with matching results at all 544 checkpoints
+over 28,417 battle updates per executable. The playback fixture expands
+the file header from `0x30` to `0x3C` with twelve zero bytes. The local
+fixture hashes, logs and comparison are under `build/program/replay-suite/`.
 [Coolier replay pack](https://coolier.net/th_up4/index.php?id=6739)
-
-Earlier executable link work and compiler findings are indexed in the
-[knowledge base](KNOWLEDGE_BASE.md#windows-link).
 
 ### Local 1P playtest
 

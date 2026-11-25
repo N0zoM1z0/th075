@@ -10,12 +10,12 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=-5.0f;
                 velocityY=static_cast<float>((scriptCounterF00)==1)*FloatConstants::Five+GeometryConstants::Fifteen;
-                field05C=-0.8f;
-                field07C=0;
+                verticalAcceleration=-0.8f;
+                collisionResult=0;
                 field3AC=0;
             }
             if (y>FloatConstants::Zero && (animationStage)<8) {
-                velocityY=velocityY+field05C;
+                velocityY=velocityY+verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     ResetSecondaryCounter(8);
@@ -30,15 +30,15 @@
         case 0x1FB: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
             if ((animationStage)<8 && y>FloatConstants::Zero && (animationStage)>2)
                 velocityY=velocityY-FloatConstants::One;
             if ((animationStage)==10) {
-                if (field07C!=0 && field07C!=3 && field07C!=1) {
+                if (collisionResult!=0 && collisionResult!=3 && collisionResult!=1) {
                     ResetPrimaryCounters(0x1FA);
                     break;
                 }
@@ -59,7 +59,7 @@
                 SpawnAuxEffect(0x3C,x,y,
                     facing,1);
                 velocityY=22.0f;
-                field05C=0.7f;
+                verticalAcceleration=0.7f;
             }
             if ((animationStage)==8 && (animationFrame)==0) ClearMotionFields();
             if ((animationStage)==10 && (animationFrame)==0) {
@@ -77,14 +77,14 @@
         case 0x1FE: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
             if ((animationStage)<18 && y>FloatConstants::Zero && (animationStage)>7) {
                 velocityX=(velocityX)-FloatConstants::ThirtyFiveHundredths;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if ((velocityX)<FloatConstants::Three) velocityX=3.0f;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(18);
@@ -100,7 +100,7 @@
                 PlaySound(4);
                 velocityY=6.0f;
                 velocityX=4.5f;
-                field05C=0.65f;
+                verticalAcceleration=0.65f;
                 SpawnBattleEffect(0x33A,x,y,
                         facing,1);
             }
@@ -116,14 +116,14 @@
         case 0x1FF: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
             if ((animationStage)<22 && y>FloatConstants::Zero && (animationStage)>12) {
                 velocityX=(velocityX)-FloatConstants::ThirtyFiveHundredths;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if ((velocityX)<FloatConstants::Three) velocityX=3.0f;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(22);
@@ -139,7 +139,7 @@
                         facing,1);
                 velocityY=8.0f;
                 velocityX=12.0f;
-                field05C=0.5f;
+                verticalAcceleration=0.5f;
                 SpawnBattleEffect(0x33A,x,y,
                         facing,1);
             }

@@ -25,13 +25,13 @@
 case 0x2DB: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-                field07C=0;
+                collisionResult=0;
         field3AC=0;
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;
         fieldF06=0;
-        field05C=0.2f;
+        verticalAcceleration=0.2f;
     }
     if ((animationStage)==6 || (animationStage)==7) {
         if ((color[0])>30)
@@ -71,7 +71,7 @@ case 0x2DB: {
         }
     }
     if ((animationStage)==18 || (animationStage)==19) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((color[0])<235)
             color[0]=(color[0])+20;
         else {
@@ -80,7 +80,7 @@ case 0x2DB: {
         }
     }
     if ((animationStage)==20 || (animationStage)==21) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             color[0]=255;
             ClearMotionFields();

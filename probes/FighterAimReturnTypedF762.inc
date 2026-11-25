@@ -14,8 +14,8 @@
         case 0x1F8: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
             }
             if ((animationStage)<11 && y>FloatConstants::Zero && (animationStage)>2) {
@@ -30,9 +30,9 @@
             }
             if ((animationStage)>10 && (animationStage)<14 && !CheckHorizontalLimits()) {
                 if (facing==1)
-                    x=(cameraState.field04)+FloatConstants::Five;
+                    x=(cameraState.viewLeft)+FloatConstants::Five;
                 if (facing==-1)
-                    x=(field2DC)-FloatConstants::Five;
+                    x=(viewRight)-FloatConstants::Five;
             }
             if ((animationStage)>8 && (animationStage)<11
                 && y>FloatConstants::Zero) {
@@ -40,9 +40,9 @@
                         && facing==1)
                     || ((x)>GeometryConstants::SixHundredForty
                         && facing==-1)))
-                    || (((cameraState.field04)+FloatConstants::Five)>=x
+                    || (((cameraState.viewLeft)+FloatConstants::Five)>=x
                         && facing==1)
-                    || (((field2DC)-FloatConstants::Five)<=x
+                    || (((viewRight)-FloatConstants::Five)<=x
                         && facing==-1)) {
                     ResetSecondaryCounter(11);
                     ClearMotionFields();
@@ -50,7 +50,7 @@
                 }
             }
             if ((animationStage)==14 || (animationStage)==15) {
-                if (field07C!=0 && field07C!=3 && field07C!=1) {
+                if (collisionResult!=0 && collisionResult!=3 && collisionResult!=1) {
                     ResetTransform(0.0f,0.0f,0.0f);
                     ResetPrimaryCounters(0x1FA);
                     break;
@@ -84,7 +84,7 @@
                 velocityY=20.0f;
                 if (y>FloatConstants::Zero)
                     velocityY=8.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==14 && (animationFrame)==0) {
                 PlaySound(6);

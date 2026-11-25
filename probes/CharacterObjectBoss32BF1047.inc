@@ -2,8 +2,8 @@
 case 0x32B: {
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0,0,0);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         scaleX = 2.0f;
         scaleY = 2.0f;
         color[0] = 0xFF;

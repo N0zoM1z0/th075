@@ -2,7 +2,7 @@
 // The repeated expression evaluations are present in the original callable.
 case R1186_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
         scriptCounterF00=0;
     }

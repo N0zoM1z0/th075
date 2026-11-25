@@ -5,18 +5,18 @@
 case 0x2BE: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=6;
+        collisionResult=0;
+        remainingHits=6;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationFrame)==0)
-        field07C=0;
+        collisionResult=0;
     if ((animationStage)==2 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x73,
             x-
                 float((facing)*64),

@@ -87,13 +87,13 @@ def main():
         fail('authored destructor whole-body evidence row differs')
     functions=rows('functions.csv');f=functions['0x004170B0']
     if (f['status']!='matching' or float(f['match_percent'])!=100.0
-            or f['owner']!='authored' or f['source_file']!='src/WindowOverlayF212.cpp'):
+            or f['owner']!='authored' or f['source_file']!='src/ui/WindowOverlayF212.cpp'):
         fail('authored destructor source/match ledger differs')
     matches=rows('matches.csv');m=matches['0x004170B0']
     if (m['status']!='matching' or float(m['match_percent'])!=100.0
             or int(m['size'],0)!=27 or m['unit']!='game-globals-black-surface-destructor-004170b0'):
         fail('authored destructor exact match row differs')
-    source=(ROOT/'src/WindowOverlayF212.cpp').read_text()
+    source=(ROOT/'src/ui/WindowOverlayF212.cpp').read_text()
     if 'WindowOverlayF212::~WindowOverlayF212()' not in source or 'texture->Release();' not in source:
         fail('natural C++ owner destructor source differs')
     print('R107 black-surface owner origin OK: complete 27-byte authored COM destructor; 8-byte allocation/constructor/release chain; compiler deleting wrapper excluded; nominal class identity and private layout remain inferred.')

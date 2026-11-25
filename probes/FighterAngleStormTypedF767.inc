@@ -12,12 +12,12 @@ case 0x2F9: {
                 scriptCounterF00=0;
                 scriptCounterF02=0;
                 fieldF04=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)>1 && (animationStage)<20) {
                 if ((animationStage)>15 || (animationStage)<10) {
-                    velocityY=velocityY-field05C;
+                    velocityY=velocityY-verticalAcceleration;
                 }
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0x14);
@@ -60,7 +60,7 @@ case 0x2F9: {
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityY=12.5f;
                 velocityX=-8.0f;
-                field05C=0.4f;
+                verticalAcceleration=0.4f;
             }
             if ((animationStage)==10 && (animationFrame)==0) {
                 velocityX=(*(&velocityX))*FloatConstants::OneFifth;

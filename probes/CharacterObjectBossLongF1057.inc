@@ -1,5 +1,5 @@
-// F1057: each of 33B/33D/33F/341/343 is 1908 ORIGINAL CODE B /402 x86
-// in the ONE nonexact 0050A580 original CharacterObject Advance.
+// F1057: each homing action here occupies 1908 code bytes in PatchouliObject::Advance.
+// See the fighter's 0x190 projectile startup for the source of 0x33B.
 // Original PE proves the five share opcode, width, GPR, field/call policy.
 // Only physical native stack scratch owners differ per independent case,
 // and the native next-state sprite IDs are 33C/33E/340/342/344.
@@ -28,14 +28,14 @@ case F1057_CASE: {
         }
         return;
     }
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0,0);
-        field080=3;
-        field07C=0;
+        remainingHits=3;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -82,8 +82,8 @@ case F1057_CASE: {
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;
-    if (field07C!=0 && field07C!=6 && animationStage==1) {
-        if (field080==0 || field07C!=4) {
+    if (collisionResult!=0 && collisionResult!=6 && animationStage==1) {
+        if (remainingHits==0 || collisionResult!=4) {
             velocityX=0.0f;
             velocityY=0.0f;
             ResetSecondaryCounter(2);
@@ -91,8 +91,8 @@ case F1057_CASE: {
             scaleY=2.5f;
             return;
         }
-        if (field080>0 && field07C==4 && field080>0)
-            field07C=0;
+        if (remainingHits>0 && collisionResult==4 && remainingHits>0)
+            collisionResult=0;
     }
     if (animationStage>1) {
         scaleX=(scaleX)*g_F1055_FadeScaleAt006598A4;

@@ -6,14 +6,14 @@
 // This branch uses the inherited Fighter::SpawnAuxEffect(float,float) ABI.
 case 0x252: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                --field366;
+                --bombCount;
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
-            if ((spiritCooldown)==0 && field07C==1) spirit=1000;
+            if ((spiritCooldown)==0 && collisionResult==1) spirit=1000;
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
@@ -26,14 +26,14 @@ case 0x252: {
         }
         case 0x253: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                --field366;
+                --bombCount;
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
-            if ((spiritCooldown)==0 && field07C==1) spirit=1000;
+            if ((spiritCooldown)==0 && collisionResult==1) spirit=1000;
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnAuxEffect(0x37,x,
@@ -47,10 +47,10 @@ case 0x252: {
 
         case 0x254: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                --field366;
+                --bombCount;
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }

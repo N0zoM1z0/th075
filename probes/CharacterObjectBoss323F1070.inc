@@ -1,14 +1,14 @@
 // F1070: original Japanese PE 0050AD46..0050B150, 1034 CODE B /220 x86.
 // Genuine gameplay inside ONE nonexact 81KB CharacterObject advance.
 case 0x323: {
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field0D8=0;
         SetPolarVelocity(field0C8,
             float(field0D8)*FloatConstants::OneTenth+
@@ -32,11 +32,11 @@ case 0x323: {
             scaleY=(scaleY)+FloatConstants::OneTenth;
         }
     }
-    if (field07C==6) {
-        field07C=0;
-        ++field080;
+    if (collisionResult==6) {
+        collisionResult=0;
+        ++remainingHits;
     }
-    if (field07C!=0 && animationStage==1) {
+    if (collisionResult!=0 && animationStage==1) {
         ResetSecondaryCounter(2);
         scaleX=4.0f;
         scaleY=4.0f;

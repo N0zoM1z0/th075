@@ -3,11 +3,11 @@
 // function interior while deceptively making last 302B match GPRs.
 // Real ground fall, sprite352 facing*60, stage5 motion, stage6 flag.
 case 0x19A: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
         velocityY=0.0f;
         return;
     }
@@ -22,9 +22,9 @@ case 0x19A: {
         PlaySound(3);
         velocityX=-5.0f;
         velocityY=12.0f;
-        field05C=0.65f;
+        verticalAcceleration=0.65f;
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        field07C=1;
+        collisionResult=1;
     return;
 }
