@@ -1,4 +1,5 @@
 #include "battle/BattleScene.hpp"
+#include "battle/FighterFrameFlags.hpp"
 #include "battle/CombatEffects.hpp"
 #include "engine/GameLeafHelpers.hpp"
 
@@ -21,7 +22,7 @@ bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *de
         case 12:
             damage = attack->savedFrameInfo->guardDamage;
             defender->spirit -= attack->savedFrameInfo->damage / 2;
-            if (attack->savedFrameInfo->attackFlags & 0x80000) defender->spirit = 0;
+            if (attack->savedFrameInfo->attackFlags & AttackFlags::CrushesWrongGroundGuard) defender->spirit = 0;
             if (defender->spirit <= 0)
                 StartHitSequence(defender, 143);
             else
@@ -46,7 +47,7 @@ bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *de
         case 22:
             damage = attack->savedFrameInfo->guardDamage;
             defender->spirit -= attack->savedFrameInfo->damage / 2;
-            if (attack->savedFrameInfo->attackFlags & 0x80000) defender->spirit = 0;
+            if (attack->savedFrameInfo->attackFlags & AttackFlags::CrushesWrongGroundGuard) defender->spirit = 0;
             if (defender->spirit <= 0)
                 StartHitSequence(defender, 144);
             else
@@ -81,7 +82,7 @@ bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *de
 
 bool BattleScene::ApplyAttackHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if ((!(attack->savedFrameInfo->attackFlags & 0x400) || !(defender->savedFrameInfo->flags & 0x40)) &&
+    if ((!(attack->savedFrameInfo->attackFlags & AttackFlags::CanCounterHit) || !(defender->savedFrameInfo->flags & FrameFlags::CounterHitVulnerable)) &&
         (attack->savedFrameInfo->attackFlags & 0x100000) && defender->y <= 0.0f) {
     if (defender->action < 50 || defender->action >= 143) {
         attacker->comboCount = 0;

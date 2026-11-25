@@ -985,6 +985,34 @@ conditional hit starts a new combo when the window has expired, and
 hitstop pauses its countdown.
 [Conditional hit](../src/battle/BattleCombat.cpp) · [Counter update](../src/battle/CombatTimers.cpp)
 
+### Frame and attack flags
+
+The pattern loader reads two independent 32-bit words at +0x3C and
++0x40. The first describes the actor's current frame, even when the
+actor is defending. The second travels with the attack into the
+collision and guard handlers.
+[Frame loader](../src/battle/FighterPattern457660.cpp) · [Flag values](../src/battle/FighterFrameFlags.hpp)
+
+| Word and mask | Observed behavior |
+| --- | --- |
+| Frame 0x04, 0x10, 0x20 | Treat the defender as airborne for hit and guard reactions, allow guard input, and permit action cancels subject to the usual priority and input checks, respectively. |
+| Frame 0x40 / attack 0x400 | The pair gives the counter-hit reaction and 1.25× damage. |
+| Frame 0x80, 0x100 / attack 0x20 | The first frame bit selects the conditional hit path. The second selects it while the defender has conditional hits remaining. The attack bit bypasses both. |
+| Frame 0x800, 0x1000 / attack 0x80 | The attack bit performs the throw-invulnerability checks. Both frame bits reject that contact, and 0x1000 also refreshes the six-frame timer. |
+| Frame 0x2000 / attack 0x400000 | The frame bit blocks hitbox resolution. The attack bit bypasses both this flag and the hit-invulnerability timer, and enables the graze check. |
+| Frame 0x4000 / attack 0x40000 | The frame bit makes a defender eligible for graze even with a zero graze timer. The attack bit bypasses graze. |
+| Attack 0x02, 0x04, 0x08, 0x10 | Match standing, crouching and air guard, or suppress guard selection. |
+| Attack 0x100 | Use fixed hitstun values of 15,000 on a regular hit and 30,000 on a conditional hit. |
+| Attack 0x80000, 0x200000 | Empty spirit on wrong standing or crouching guard. The second bit permits guard response 41 when spirit is already depleted. |
+
+The special-contact attack masks 0x2000, 0x4000 and 0x8000 match frame
+masks 0x8000, 0x10000 and 0x20000, respectively, giving result 3 to both
+actors. The concrete categories are still unknown. Frame 0x100000 also
+remains numeric because it gates movement, damage flashes and another
+frame predicate. Attack 0x100000 selects ground reaction 140 in one
+branch. The two flags have independent meanings.
+[Attack dispatch](../src/battle/BattleCollisionDispatch.cpp) · [Contact pairs](../src/battle/BattleActiveCollision.cpp) · [Hit and conditional hit](../src/battle/BattleCombat.cpp) · [Guard selection](../src/battle/FighterHitResponseF164.cpp)
+
 ### Combat camera bounds and linked effects
 
 `Fighter::UpdateCounters` writes the left, right, top and bottom view

@@ -1,4 +1,5 @@
 #include "battle/CombatMode.hpp"
+#include "battle/FighterFrameFlags.hpp"
 #include "engine/GameProgress.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/BattleScene.hpp"
@@ -13,7 +14,7 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
         attacker->comboRate = 1.0f;
     }
     defender->ClearTransformFlag();
-    if (defender->y > 0.0f || (defender->savedFrameInfo->flags & 4)) {
+    if (defender->y > 0.0f || (defender->savedFrameInfo->flags & FrameFlags::AirborneReaction)) {
         if (attack->savedFrameInfo->airHitAction)
             defender->ResetPrimaryCounters(attack->savedFrameInfo->airHitAction);
         else
@@ -40,11 +41,11 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     defender->pendingSpellCharge += attacker->CalculateDamage(attack) * 0.5f;
     if (defender->pendingSpellCharge > 2000.0f)
         defender->pendingSpellCharge = 2000.0f;
-    if ((attack->savedFrameInfo->attackFlags & 0x100) > 0)
+    if ((attack->savedFrameInfo->attackFlags & AttackFlags::FixedHitstun) > 0)
         defender->flashGauge = 15000;
     else
         defender->flashGauge = static_cast<short>(attack->savedFrameInfo->baseHitstun * attacker->comboRate);
-    if ((attack->savedFrameInfo->attackFlags & 0x400) && (defender->savedFrameInfo->flags & 0x40)) {
+    if ((attack->savedFrameInfo->attackFlags & AttackFlags::CanCounterHit) && (defender->savedFrameInfo->flags & FrameFlags::CounterHitVulnerable)) {
         attacker->comboDamage += attacker->CalculateDamage(attack) * 1.25;
         if (attacker->field3CE.signedAt3CE == 0) {
             defender->health -= attacker->CalculateDamage(attack) * 1.25;
@@ -109,9 +110,9 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
 
 bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if (!(attack->savedFrameInfo->attackFlags & 0x20) &&
-        ((defender->savedFrameInfo->flags & 0x80) ||
-         ((defender->savedFrameInfo->flags & 0x100) && defender->conditionalHitsRemaining > 0))) {
+    if (!(attack->savedFrameInfo->attackFlags & AttackFlags::BypassesConditionalHit) &&
+        ((defender->savedFrameInfo->flags & FrameFlags::AlwaysAllowsConditionalHit) ||
+         ((defender->savedFrameInfo->flags & FrameFlags::AllowsConditionalHitWithStock) && defender->conditionalHitsRemaining > 0))) {
         if (defender->conditionalHitsRemaining > 0)
             --defender->conditionalHitsRemaining;
         if (defender->conditionalHitComboWindow == 0) {
@@ -127,11 +128,11 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         defender->hitReactionVelocityY = attack->savedFrameInfo->reactionVelocityY;
         defender->conditionalHitComboWindow = 15;
         defender->hitFlashFrames = 8;
-        if ((attack->savedFrameInfo->attackFlags & 0x100) > 0)
+        if ((attack->savedFrameInfo->attackFlags & AttackFlags::FixedHitstun) > 0)
             defender->flashGauge = 30000;
         else
             defender->flashGauge = static_cast<short>(attack->savedFrameInfo->baseHitstun * attacker->comboRate);
-        if ((attack->savedFrameInfo->attackFlags & 0x400) && (defender->savedFrameInfo->flags & 0x40)) {
+        if ((attack->savedFrameInfo->attackFlags & AttackFlags::CanCounterHit) && (defender->savedFrameInfo->flags & FrameFlags::CounterHitVulnerable)) {
             attacker->comboDamage += attacker->CalculateDamage(attack) * 1.25 / 2.0;
             if (attacker->field3CE.signedAt3CE == 0) {
                 defender->health -= attacker->CalculateDamage(attack) * 1.25 / 2.0;

@@ -1,4 +1,5 @@
 #include "battle/BattleScene.hpp"
+#include "battle/FighterFrameFlags.hpp"
 #include "battle/EffectManagerLifetimeF161.hpp"
 #include "characters/CharacterObject.hpp"
 #include "engine/GameLeafHelpers.hpp"
@@ -57,9 +58,9 @@ bool Fighter::IsState50To149()
 
 bool BattleScene::ResolveGuard(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if (!(attack->savedFrameInfo->attackFlags & 0x40000) &&
+    if (!(attack->savedFrameInfo->attackFlags & AttackFlags::BypassesGraze) &&
         !defender->IsState50To149() &&
-        (defender->grazeFrames != 0 || (defender->savedFrameInfo->flags & 0x4000))) {
+        (defender->grazeFrames != 0 || (defender->savedFrameInfo->flags & FrameFlags::Grazing))) {
         attack->collisionResult = CollisionResult::Grazed;
         --attack->remainingHits;
         defender->spellPower += 0.5f;
@@ -96,14 +97,14 @@ bool BattleScene::ResolveSpecialHit(Actor *attack, Fighter *attacker, Fighter *d
 
 bool BattleScene::ResolveContact(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if ((attack->savedFrameInfo->attackFlags & 2) && (defender->savedFrameInfo->flags & 0x200)) {
+    if ((attack->savedFrameInfo->attackFlags & AttackFlags::MatchesStandingGuard) && (defender->savedFrameInfo->flags & 0x200)) {
         attack->collisionResult = CollisionResult::SpecialContact;
         --attack->remainingHits;
         SpawnMidpointEffect(51, defender->facing);
         ApplyImpact(attack, attacker, defender);
         return true;
     }
-    if ((attack->savedFrameInfo->attackFlags & 4) && (defender->savedFrameInfo->flags & 0x400)) {
+    if ((attack->savedFrameInfo->attackFlags & AttackFlags::MatchesCrouchingGuard) && (defender->savedFrameInfo->flags & 0x400)) {
         attack->collisionResult = CollisionResult::SpecialContact;
         --attack->remainingHits;
         SpawnMidpointEffect(51, defender->facing);

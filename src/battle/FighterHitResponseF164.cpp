@@ -1,4 +1,5 @@
 #include "replay/ReplayMode.hpp"
+#include "battle/FighterFrameFlags.hpp"
 #include "battle/CombatMode.hpp"
 #include "replay/ReplayRecords.hpp"
 #include "engine/GameSharedState.hpp"
@@ -16,8 +17,8 @@ bool Fighter::IsState95To99() {
 }
 
 unsigned char Fighter::SelectHitResponse(unsigned int flags) {
-    if (!(savedFrameInfo->flags & 0x10)) return 0;
-    if (flags & 0x10) return 0;
+    if (!(savedFrameInfo->flags & FrameFlags::CanGuard)) return 0;
+    if (flags & AttackFlags::Unguardable) return 0;
     if (guardResponseCooldown > 0) return 0;
     if (cpuControlled != 0) {
         if (g_CombatMode == CombatMode::Practice) {
@@ -37,7 +38,7 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
             case 3:
                 if (OPPONENT_X - x > 0.0f) inputX = -1;
                 else inputX = 1;
-                if (!(flags & 2)) inputY = 1;
+                if (!(flags & AttackFlags::MatchesStandingGuard)) inputY = 1;
                 else inputY = 0;
                 break;
             }
@@ -55,7 +56,7 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
             if (choice < 10) return 0;
             if (OPPONENT_X - x > 0.0f) inputX = -1;
             else inputX = 1;
-            if (!(flags & 2)) inputY = 1;
+            if (!(flags & AttackFlags::MatchesStandingGuard)) inputY = 1;
             else inputY = 0;
         }
     }
@@ -64,25 +65,25 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
         if ((OPPONENT_X - x) * inputX > 0.0f || inputX == 0) return 0;
     }
 classifyResponse:
-    if (y > 0.0f || (savedFrameInfo->flags & 4)) {
-        if ((flags & 8) && spirit > 0) return 31;
+    if (y > 0.0f || (savedFrameInfo->flags & FrameFlags::AirborneReaction)) {
+        if ((flags & AttackFlags::MatchesAirGuard) && spirit > 0) return 31;
     } else {
         if (inputY > 0) {
             if (spirit > 0) {
-                if (flags & 4) return 21;
+                if (flags & AttackFlags::MatchesCrouchingGuard) return 21;
                 return 22;
             } else {
-                if (flags & 4) return 23;
-                if (flags & 0x200000) return 41;
+                if (flags & AttackFlags::MatchesCrouchingGuard) return 23;
+                if (flags & AttackFlags::GuardableWithDepletedSpirit) return 41;
                 return 0;
             }
         } else {
             if (spirit > 0) {
-                if (flags & 2) return 11;
+                if (flags & AttackFlags::MatchesStandingGuard) return 11;
                 return 12;
             } else {
-                if (flags & 2) return 13;
-                if (flags & 0x200000) return 41;
+                if (flags & AttackFlags::MatchesStandingGuard) return 13;
+                if (flags & AttackFlags::GuardableWithDepletedSpirit) return 41;
                 return 0;
             }
         }

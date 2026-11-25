@@ -27,6 +27,10 @@ and the conditional-hit count and combo window. The accepted comparisons
 cover all affected units.
 [Shared motion and conditional hits](KNOWLEDGE_BASE.md#shared-motion-and-conditional-hits)
 
+Combat now names the verified frame and attack masks separately.
+The collision notes retain the unresolved special-contact pairs.
+[Flag behavior](KNOWLEDGE_BASE.md#frame-and-attack-flags)
+
 The reviewed action-local slots in `CharacterObject` and
 `CharacterAuxObject` can carry different values after a state transition.
 Further naming should follow their producers and consumers in each action.

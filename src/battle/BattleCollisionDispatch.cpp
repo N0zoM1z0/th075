@@ -1,18 +1,19 @@
 #include "battle/BattleScene.hpp"
+#include "battle/FighterFrameFlags.hpp"
 #include "engine/GameLeafHelpers.hpp"
 
 void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if (attack->savedCollisionResult != CollisionResult::None || attack->remainingHits <= 0) return;
     if (defender->IsGroundedStateWindow()) return;
-    if (!(attack->savedFrameInfo->attackFlags & 0x400000)) {
+    if (!(attack->savedFrameInfo->attackFlags & AttackFlags::BypassesHitInvulnerability)) {
         if (defender->hitInvulnerabilityFrames != 0) return;
-        if (defender->savedFrameInfo->flags & 0x2000) return;
+        if (defender->savedFrameInfo->flags & FrameFlags::HitInvulnerable) return;
     }
-    if ((attack->savedFrameInfo->attackFlags & 0x80) > 0) {
+    if ((attack->savedFrameInfo->attackFlags & AttackFlags::ChecksThrowInvulnerability) > 0) {
         if (defender->throwInvulnerabilityFrames > 0) return;
-        if (defender->savedFrameInfo->flags & 0x800) return;
-        if (defender->savedFrameInfo->flags & 0x1000) return;
+        if (defender->savedFrameInfo->flags & FrameFlags::RejectsThrow) return;
+        if (defender->savedFrameInfo->flags & FrameFlags::RefreshesThrowInvulnerability) return;
     }
     RECT bodyRectangle;
     RECT attackBounds[4];
@@ -39,7 +40,7 @@ void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighte
         }
     }
     if (hit) {
-        defender->field3BE = !(attack->savedFrameInfo->attackFlags & 0x400000);
+        defender->field3BE = !(attack->savedFrameInfo->attackFlags & AttackFlags::BypassesHitInvulnerability);
         if (ResolveSpecialHit(attack, attacker, defender)) return;
         if (ApplyConditionalHit(attack, attacker, defender)) return;
         if (ResolveContact(attack, attacker, defender)) return;

@@ -1,4 +1,5 @@
 #include "battle/CombatMode.hpp"
+#include "battle/FighterFrameFlags.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/CombatTimers.hpp"
 void Fighter::UpdateCounters()
@@ -12,7 +13,7 @@ void Fighter::UpdateCounters()
         opponent->opponentVelocityDeltaX = 0.0f;
         if (hitInvulnerabilityFrames > 0) --hitInvulnerabilityFrames;
         if (throwInvulnerabilityFrames > 0) --throwInvulnerabilityFrames;
-        if (frameInfo->flags & 0x1000) throwInvulnerabilityFrames = 6;
+        if (frameInfo->flags & FrameFlags::RefreshesThrowInvulnerability) throwInvulnerabilityFrames = 6;
         if (grazeFrames > 0) --grazeFrames;
         if (guardResponseCooldown > 0) --guardResponseCooldown;
         if (spellTimer > 0) {
