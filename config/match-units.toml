@@ -60858,7 +60858,7 @@ relocations = [
  { offset = 0x2E, type = "DIR32", symbol = "?audioClientCount@@3HA", target = 0x00671388 },
  { offset = 0x36, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
  { offset = 0x3F, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },
- { offset = 0x46, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657134 },
+ { offset = 0x46, type = "DIR32", symbol = "__imp__TerminateThread@8", target = 0x00657134 },
  { offset = 0x4C, type = "DIR32", symbol = "?audioWorkerEvent@@3PAXA", target = 0x00671394 },
  { offset = 0x53, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
  { offset = 0x58, type = "DIR32", symbol = "?audioWorkerHandle@@3PAXA", target = 0x00671398 },

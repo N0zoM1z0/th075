@@ -10,7 +10,7 @@
 SoundBank::~SoundBank() {
     if (--audioClientCount == 0) {
         audioPlaying = 0;
-        WaitForSingleObject(audioWorkerHandle, 0);
+        TerminateThread(audioWorkerHandle, 0);
         CloseHandle(audioWorkerEvent);
         CloseHandle(audioWorkerHandle);
         audioWorkerEvent = 0;

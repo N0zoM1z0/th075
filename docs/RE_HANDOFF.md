@@ -34,6 +34,11 @@ passed complete comparisons on the freshly compiled objects. The linked
 image matched all 47 supplied data ranges, and all 237 code references
 resolved to the corresponding symbols.
 
+The audio client and event-service destructors now bind the shared
+`TerminateThread` import. Both units cold-replayed over their full extents,
+and a strict relink used the refreshed objects.
+[Import evidence](KNOWLEDGE_BASE.md#windows-link)
+
 ### Selected earlier link checkpoints
 
 The grayscale shader, two clipping bounds and the texture and replay

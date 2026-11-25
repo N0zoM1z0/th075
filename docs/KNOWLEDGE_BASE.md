@@ -154,6 +154,14 @@ The Patchouli object has a left clipping edge of -180. Reflecting it
 across the 1280-unit span gives the right edge of 1460, which matches the
 four bytes at `0x00659884`.
 
+The audio destructor at `0x00407270` and the event-service destructor
+at `0x00423A90` both call `TerminateThread` through the original IAT
+slot `0x00657134`. The audio unit previously bound that operand to
+`WaitForSingleObject`. Both declarations take two 32-bit arguments,
+so the reconstructed source still passed the numeric relocation check.
+The original import directory identifies the API. Both destructor units
+cold-replay with the corrected symbol.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.
