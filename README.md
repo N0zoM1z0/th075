@@ -1,8 +1,9 @@
 # 東方萃夢想 ～ Immaterial and Missing Power
 
 > [!NOTE]
-> `main` builds a Windows x86 executable. [Build and play on Windows](#play-on-windows)
-> using files from your own Japanese TH075 v1.11 full-version installation.
+> The [Windows x86 reconstruction preview](https://github.com/N0zoM1z0/th075/releases)
+> uses data files from your own Japanese TH075 v1.11 installation.
+> [Play on Windows](#play-on-windows) covers the preview and source builds.
 > The footage below uses the standard reconstruction build with normal damage.
 
 Agent workflow: follow the highest-priority requirements in [AGENTS.md](AGENTS.md).
@@ -25,7 +26,24 @@ byte-identical to the original.
 
 ## Play on Windows
 
-### 1. Prepare the Japanese v1.11 game
+### Run the preview
+
+Download the Windows x86 ZIP from [Releases](https://github.com/N0zoM1z0/th075/releases)
+and extract it to a writable folder. Copy `th075.dat`, `th075bgm.dat` and
+`th075b.dat` from your Japanese v1.11 installation into that folder.
+Run `Play.bat` to create the `replay/` directory and start the game.
+Keep `config.ini`, `score.dat` and `replay/` when updating.
+
+To verify the ZIP, open PowerShell in the download folder and compare the
+hash below with `SHA256SUMS.txt`.
+
+```powershell
+Get-FileHash -Algorithm SHA256 .\th075-reconstruction-preview-windows-x86-2026.11.25.zip
+```
+
+### Build from source
+
+#### 1. Prepare the Japanese v1.11 game
 
 Install the Japanese full version and apply the publisher's v1.11 update
 if needed. The commands below use `C:\Games\TH075-original` as the
@@ -39,7 +57,7 @@ example path. Keep the original installation available for verification.
 | `th075bgm.dat` | Music for the playable build. |
 | `th075b.dat` | Additional resources for the playable build. |
 
-### 2. Set up the build environment
+#### 2. Set up the build environment
 
 Build in an x86-64 Ubuntu 24.04 WSL 2 terminal and run the result directly
 on Windows. Keep the clone in the WSL filesystem, for example under
@@ -80,7 +98,7 @@ Attach the shared Wine launcher using
 [the one-time Factory setup](docs/SHARED_TOOLS.md#wine-setup-for-a-standalone-build).
 An existing Factory-provisioned checkout can use its configured Wine prefix.
 
-### 3. Verify the input and build
+#### 3. Verify the input and build
 
 Run these commands from the checkout in WSL. Adjust the original path to
 match your installation. The import copies the selected executable only
@@ -99,7 +117,7 @@ and compiles serially with Wine graphics disabled. To build only the
 COFF library, use `scripts/repo-python scripts/build.py --library`.
 [Compiler and comparison setup](docs/BUILD_MATCHING.md)
 
-### 4. Stage the executable and start the game
+#### 4. Stage the executable and start the game
 
 From the same WSL terminal, copy the three game data files and the
 rebuilt executable into a separate writable Windows folder. Keep
