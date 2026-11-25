@@ -1023,7 +1023,7 @@ void ReimuObject::Advance()
 
     // 0x332 drains the owner spirit gauge after stage 0x13.
     case 818:
-        static_cast<ReimuFighter*>(owner)->fieldF22 = 1;
+        static_cast<ReimuFighter*>(owner)->spiritDrainObjectActive = 1;
         if (owner->action == 0x2C1 && animationStage < 0x13) {
             x = owner->x + static_cast<float>(facing * 0xE4);
             y = (owner->y) + g_ReimuObjectOwnerYOffsetAt00659080;
@@ -1061,7 +1061,7 @@ void ReimuObject::Advance()
                     color[0] -= 10;
                 } else {
                     ClearFrameInfo();
-                    static_cast<ReimuFighter*>(owner)->fieldF22 = 0;
+                    static_cast<ReimuFighter*>(owner)->spiritDrainObjectActive = 0;
                     return;
                 }
             }
@@ -1089,7 +1089,7 @@ void ReimuObject::Advance()
         if (x < GeometryConstants::NegativeThreeHundredTwenty ||
             x > GeometryConstants::SixteenHundred) {
             ClearFrameInfo();
-            static_cast<ReimuFighter*>(owner)->fieldF22 = 0;
+            static_cast<ReimuFighter*>(owner)->spiritDrainObjectActive = 0;
             return;
         }
         else {
@@ -3710,7 +3710,7 @@ void ReimuObject::Advance()
     }
 
     case 990: {
-        if (static_cast<ReimuFighter*>(owner)->fieldF2A == 0 && animationStage < 2) {
+        if (static_cast<ReimuFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -3735,7 +3735,7 @@ void ReimuObject::Advance()
                 else {
                     color[0] = 0xB4;
                 }
-                if (static_cast<ReimuFighter*>(owner)->fieldF2A >= 0x78) {
+                if (static_cast<ReimuFighter*>(owner)->longRangeFrames >= 0x78) {
                     ResetSecondaryCounter(1);
                     color[0] = 0xB4;
                     return;
@@ -3761,7 +3761,7 @@ void ReimuObject::Advance()
     }
 
     case 991: {
-        if (static_cast<ReimuFighter*>(owner)->fieldF2A == 0 && animationStage < 2) {
+        if (static_cast<ReimuFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -3778,7 +3778,7 @@ void ReimuObject::Advance()
                 color[2] = 0xFF;
                 color[3] = 0xFF;
             }
-            scaleX = static_cast<float>(static_cast<ReimuFighter*>(owner)->fieldF2A) /
+            scaleX = static_cast<float>(static_cast<ReimuFighter*>(owner)->longRangeFrames) /
                 GeometryConstants::FortyFive;
             scaleY = scaleX;
             if (animationStage == 0) {
@@ -3788,7 +3788,7 @@ void ReimuObject::Advance()
                 else {
                     color[0] = 0xFF;
                 }
-                if (static_cast<ReimuFighter*>(owner)->fieldF2A >= 0x78) {
+                if (static_cast<ReimuFighter*>(owner)->longRangeFrames >= 0x78) {
                     ResetSecondaryCounter(1);
                     color[0] = 0xFF;
                     return;

@@ -54,9 +54,9 @@ void YoumuFighter::AdvanceAuxiliary() {
             }
         }
     }
-    if (x-opponent->x>540.0f || x-opponent->x<-540.0f) fieldF14=60;
+    if (x-opponent->x>540.0f || x-opponent->x<-540.0f) longRangeFrames=60;
     if (x-opponent->x>320.0f || x-opponent->x<-320.0f) {
-        fieldF14=fieldF14+1;
-        if (fieldF14>60) fieldF14=60;
-    } else fieldF14=0;
+        longRangeFrames=longRangeFrames+1;
+        if (longRangeFrames>60) longRangeFrames=60;
+    } else longRangeFrames=0;
 }

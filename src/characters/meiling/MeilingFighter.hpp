@@ -31,7 +31,7 @@ public:
     short fieldF24;
     short fieldF26;
     short fieldF28;
-    short fieldF2A;
+    short longRangeFrames;  // +0xF2A
     float stageLayerX[4];  // +0xF2C
     unsigned char unknownF3C[0xF54 - 0xF3C];
     float stageLayerY[4];  // +0xF54

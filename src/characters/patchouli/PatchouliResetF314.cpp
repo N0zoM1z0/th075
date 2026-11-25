@@ -12,10 +12,10 @@ void PatchouliFighter::ResetRound()
     sequenceTimer=0;
     stageBannerHoldFrames=0;
     fieldEFA=0;
-    fieldF12=0;
+    longRangeFrames=0;
     fieldF0E=0;
     fieldF0C=0;
-    fieldF10=0;
+    opponentPullStrength=0;
     aiWaitTimer=0;
     aiStep=0;
     aiCardTimer=0;

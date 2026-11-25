@@ -3508,9 +3508,9 @@ void MarisaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x342, x - FloatConstants::Zero, y, facing, 1);
             UpdateGaugeTimer(500);
-            fieldF14 = 4;
-            fieldF16 = 4;
-            fieldF18 = 0x1A4;
+            orbitingNodesRemaining = 4;
+            trackingNodeDispatchSlot = 4;
+            trackingNodeLifetimeFrames = 0x1A4;
             PlaySound(0x0D);
         }
         return;
@@ -3535,9 +3535,9 @@ void MarisaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x343, x - FloatConstants::Zero, y, facing, 1);
             UpdateGaugeTimer(0x1F4);
-            fieldF14 = 6;
-            fieldF16 = 6;
-            fieldF18 = 0x1A4;
+            orbitingNodesRemaining = 6;
+            trackingNodeDispatchSlot = 6;
+            trackingNodeLifetimeFrames = 0x1A4;
             PlaySound(0x0D);
         }
         return;
@@ -3582,7 +3582,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             PlaySound(0x0F);
             UpdateGaugeTimer(500);
-            fieldF18 = 300;
+            trackingNodeLifetimeFrames = 300;
         }
         return;
     }
@@ -3714,7 +3714,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             PlaySound(6);
             UpdateGaugeTimer(500);
-            fieldF18 = 300;
+            trackingNodeLifetimeFrames = 300;
         }
         return;
     }

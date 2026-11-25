@@ -70,13 +70,13 @@ void YuyukoFighter::AdvanceAuxiliary() {
         }
     }
     if (x - opponent->x > 540.0f || x - opponent->x < -540.0f) {
-        fieldF10 = 60;
+        longRangeFrames = 60;
     }
     if (x - opponent->x > 320.0f || x - opponent->x < -320.0f) {
-        fieldF10 = fieldF10 + 1;
-        if (fieldF10 > 60) fieldF10 = 60;
+        longRangeFrames = longRangeFrames + 1;
+        if (longRangeFrames > 60) longRangeFrames = 60;
     }
     else {
-        fieldF10 = 0;
+        longRangeFrames = 0;
     }
 }

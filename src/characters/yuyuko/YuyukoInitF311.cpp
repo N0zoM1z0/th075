@@ -7,7 +7,7 @@ YuyukoFighter::YuyukoFighter()
     sequenceTimer=0;
     stageBannerHoldFrames=0;
     fieldEFA=0;
-    fieldF10=0;
+    longRangeFrames=0;
     field713=1;
     strcpy(name,g_YuyukoNameAt00659B74);
     strcpy(tag,g_YuyukoTagAt00659B7C);

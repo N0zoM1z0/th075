@@ -984,6 +984,31 @@ Reimu increments +0xDE in 0x320. In 0x332, +0xE0 is a flag
 for the end of the owner's spirit drain. Definitions stay tied to
 the particular action, since the next action can repurpose the slots.
 
+### Fighter extension fields
+
+Ten fighter extensions have a `longRangeFrames` counter at their own
+offset. Their auxiliary updates clear it at horizontal separation of
+320 or less, count up to 60 above 320, and immediately reach that cap
+above 540. Several object actions read the count to set scale or begin
+a phase. Their higher thresholds remain native. Remilia runs the same
+counter update at inherited +0xF0C, where other fighters store different
+values. That shared offset keeps its provisional name.
+[Meiling auxiliary update](../src/characters/meiling/CharacterAux5E5500.cpp) · [Meiling object reader](../src/characters/meiling/MeilingObjectAdvanceF1207.cpp) · [Remilia auxiliary update](../src/characters/remilia/CharacterAux00555530F363.cpp)
+
+| Fighter | Extension fields and evidence |
+| --- | --- |
+| Alice | Objects 0x346 and 0x349 update the orbit angle and phase read by 0x345, 0x347 and 0x348. Dispatch checks for a zero phase before starting the related card. |
+| Marisa | Objects 0x33C–0x341 publish six X/Y pairs for 0x349. The chain producer separately sets the visible flag, origin, facing and scale read by the renderer. |
+| Patchouli | 0x1F4 and 0x1F5 seed a pull toward the fighter. The auxiliary update reduces the pull strength by two each tick. |
+| Reimu | Object 0x332 sets and clears the active flag that gates action 0x2C1. |
+| Suika | A timed drain ticks on the opponent. A separate mode drains the fighter's own spirit and can end on spirit depletion, knockout or spell expiration. |
+| Yukari | 0x32F sets the active flag that gates the related cast. 0x398 publishes the center and firing phase read by 0x396, which uses the angle and radius to place its child effects. |
+
+The other examined fields still include reset-only words and slots
+repurposed across actions or stage phases. Suika's +0xF28, for example,
+acts as both an elapsed count and a stage substate in `AdvanceSequence`.
+[Per-fighter source index](GIANTS.md#complete-research-parents) · [Chain renderer](../src/characters/marisa/MarisaProjectileChainRenderF440.cpp)
+
 ### Shared auxiliary effects
 
 `CombatEffects` owns a pattern catalog and two lists of auxiliary

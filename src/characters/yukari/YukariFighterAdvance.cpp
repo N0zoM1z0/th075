@@ -3915,7 +3915,7 @@ void YukariFighter::Advance() {
             if (roundSpellVariants[roundsRemaining] == 3)
                 SpawnBattleEffect(0x395, x, y, 1, 0);
             if (roundSpellVariants[roundsRemaining] == 4) {
-                fieldF14 = 440;
+                spellOrbitRadius = 440;
                 SpawnBattleEffect(0x398, opponent->x,
                     (opponent->y) + GeometryConstants::Hundred, 1, 1);
                 if (g_OptionsModeAt006714D0 < 2) {

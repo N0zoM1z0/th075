@@ -38,6 +38,17 @@ switch also has an action guide and a documented spawn and prune cycle.
 Keep the native action order and function extent when extending these guides.
 [Character-object slots](KNOWLEDGE_BASE.md#character-object-storage-by-action) · [Auxiliary effects](KNOWLEDGE_BASE.md#shared-auxiliary-effects)
 
+The fighter extension review followed each character's own writers and
+readers. The knowledge base records the long-range counters, Marisa's
+tracking nodes and chain, and the spell and object state recovered for
+other fighters. Future work can start with the remaining reset-only
+words and stage-local slots.
+[Fighter extensions](KNOWLEDGE_BASE.md#fighter-extension-fields)
+
+All affected units cold-replayed after the review. The normal Windows
+link matches the executable built at `df766b0f` except for the COFF
+timestamp.
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

@@ -10,7 +10,7 @@
 // Quad has 132 known rendered bytes but 136 physically owned bytes on this
 // stack; no private meaning is asserted for its four-byte untyped tail.
 // Genuine align(4) short radius recreates original EBP-4 physical slot.
-// An unparenthesized field1010 lvalue recreates original x87 FLD
+// An unparenthesized chainScale lvalue recreates original x87 FLD
 // global-depth then FMUL fighter-field instruction evaluation order.
 // Borrowed receiver/texture/record field ABIs only, not full owner classes.
 // Borrowed receiver, texture manager, record fields and exact 132-byte quad.
@@ -32,7 +32,7 @@ struct NativeMarisaStateF358 {
 };
 #define DRAWER reinterpret_cast<TextureManagerF198*>(drawing)
 void MarisaFighter::RenderChain() {
-    if (!field1006) return;
+    if (!chainVisible) return;
     NativeMarisaStateF358 state;
 #define quad (*reinterpret_cast<SpriteQuad40CA80*>(&state.quad))
     // VC7.1 supports a direct constructor call on aligned storage.
@@ -52,21 +52,21 @@ void MarisaFighter::RenderChain() {
         phaseA=static_cast<short>(i*0x150%40-20);
         phaseB=static_cast<short>(i*0x104%60-30);
         angle=static_cast<short>(i*100);
-        radius=static_cast<short>(static_cast<float>(i*10+50)*(field1010));
+        radius=static_cast<short>(static_cast<float>(i*10+50)*(chainScale));
         for(j=0;j<36;++j) {
             quad.first.x=CameraCosineAt0040D900(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
             quad.first.y=CameraSineAt0040D940(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
             quad.first.z=0.0f;
             quad.fourth.x=CameraCosineAt0040D900(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
             quad.fourth.y=CameraSineAt0040D940(float(j)*GeometryConstants::RadiansPerDegree*FloatConstants::Ten)*radius;
-            quad.fourth.z=GeometryConstants::SixtyFour*field1010/FloatConstants::Two;
+            quad.fourth.z=GeometryConstants::SixtyFour*chainScale/FloatConstants::Two;
             reinterpret_cast<SpriteTransform*>(&quad)->RotateQuad(
               0.0f,0.0f,0.0f,
               float(phaseA)+CameraSineAt0040D940(float(i*6)+float(fieldEF8)/GeometryConstants::Fifty)*GeometryConstants::Thirty,
               float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(fieldEF8)/GeometryConstants::FortyOne)*GeometryConstants::Thirty,
               float((fieldEF8)*5+i*5));
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(
-              float((field1014)*angle)+(field1008),-(field100C),0.0f);
+              float((chainFacing)*angle)+(chainOriginX),-(chainOriginY),0.0f);
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(xShift,yOrigin+GeometryConstants::FourHundredTwenty,0.0f);
             chain[j*2].x=quad.first.x;
             chain[j*2].y=quad.first.y;

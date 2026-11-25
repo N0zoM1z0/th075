@@ -1250,7 +1250,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 1) {
         rotationZ = (rotationZ) + GeometryConstants::Fifteen;
-        if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
+        if ((static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1) {
             ResetSecondaryCounter(2);
             remainingHits = 99;
             rotationZ = 0.0f;
@@ -1258,15 +1258,15 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if ((static_cast<AliceFighter*>(owner)->fieldF12) == 2) {
+    if ((static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 2) {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
         SetPolarVelocity(field0D8,
                        field0DA);
     }
-    if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
-        field0D8 = (static_cast<AliceFighter*>(owner)->fieldF10) - 180 + (field0C8);
+    if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) < 2) {
+        field0D8 = (static_cast<AliceFighter*>(owner)->objectOrbitAngle) - 180 + (field0C8);
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
         SetPolarVelocity(field0D8,
@@ -1280,7 +1280,7 @@ void AliceObject::Advance() {
     }
     if (AdvanceNestedFrame() == (animationStageCount)) ResetSecondaryCounter(6);
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
-    if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
+    if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1) {
         ResetSecondaryCounter(2);
         collisionResult = 0;
     }
@@ -1295,11 +1295,11 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        (static_cast<AliceFighter*>(owner)->fieldF10) = 0;
+        (static_cast<AliceFighter*>(owner)->objectOrbitAngle) = 0;
         velocityX = 25.0f;
     }
     if ((animationStage) < 2) {
-        (static_cast<AliceFighter*>(owner)->fieldF10) -= 3;
+        (static_cast<AliceFighter*>(owner)->objectOrbitAngle) -= 3;
         (owner->fieldF0C) = x;
         (owner->fieldF0E) = y;
         velocityX = (velocityX) - FloatConstants::One;
@@ -1309,12 +1309,12 @@ void AliceObject::Advance() {
     x += facing * (velocityX);
     if (AdvanceNestedFrame() == (animationStageCount)) {
         ClearFrameInfo();
-        (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
+        (static_cast<AliceFighter*>(owner)->objectOrbitPhase) = 0;
     }
     if ((animationStage) == 1 && (animationFrame) == 0)
-        (static_cast<AliceFighter*>(owner)->fieldF12) = 1;
+        (static_cast<AliceFighter*>(owner)->objectOrbitPhase) = 1;
     if ((animationStage) == 2 && (animationFrame) == 0)
-        (static_cast<AliceFighter*>(owner)->fieldF12) = 2;
+        (static_cast<AliceFighter*>(owner)->objectOrbitPhase) = 2;
     break;
 }
         case 0x347: {
@@ -1345,7 +1345,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 1) {
         rotationZ = (rotationZ) + GeometryConstants::Fifteen;
-        if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
+        if ((static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1) {
             ResetSecondaryCounter(2);
             remainingHits = 99;
             rotationZ = 0.0f;
@@ -1353,15 +1353,15 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if ((static_cast<AliceFighter*>(owner)->fieldF12) == 2) {
+    if ((static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 2) {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
         SetPolarVelocity(field0D8,
                        field0DA);
     }
-    if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
-        field0D8 = (static_cast<AliceFighter*>(owner)->fieldF10) - 180 + (field0C8);
+    if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) < 2) {
+        field0D8 = (static_cast<AliceFighter*>(owner)->objectOrbitAngle) - 180 + (field0C8);
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
         SetPolarVelocity(field0D8,
@@ -1375,7 +1375,7 @@ void AliceObject::Advance() {
     }
     if (AdvanceNestedFrame() == (animationStageCount)) ResetSecondaryCounter(6);
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
-    if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
+    if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1) {
         ResetSecondaryCounter(2);
         collisionResult = 0;
     }
@@ -1409,7 +1409,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage) == 1) {
         rotationZ = (rotationZ) + GeometryConstants::Fifteen;
-        if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
+        if ((static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1) {
             ResetSecondaryCounter(2);
             remainingHits = 99;
             rotationZ = 0.0f;
@@ -1417,15 +1417,15 @@ void AliceObject::Advance() {
             break;
         }
     }
-    if ((static_cast<AliceFighter*>(owner)->fieldF12) == 2) {
+    if ((static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 2) {
         if ((animationStage) < 6)
             animationStage += 4;
         field0DA = 25;
         SetPolarVelocity(-(field0D8) + 180,
                        field0DA);
     }
-    if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->fieldF12) < 2) {
-        field0D8 = (static_cast<AliceFighter*>(owner)->fieldF10) - 180 + (field0C8);
+    if ((animationStage) < 6 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) < 2) {
+        field0D8 = (static_cast<AliceFighter*>(owner)->objectOrbitAngle) - 180 + (field0C8);
         if ((field0D8) > 180) field0D8 -= 360;
         if ((field0D8) < -180) field0D8 += 360;
         SetPolarVelocity(-(field0D8),
@@ -1439,7 +1439,7 @@ void AliceObject::Advance() {
     }
     if (AdvanceNestedFrame() == (animationStageCount)) ResetSecondaryCounter(6);
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
-    if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
+    if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->objectOrbitPhase) == 1) {
         ResetSecondaryCounter(2);
         collisionResult = 0;
     }
@@ -1454,11 +1454,11 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        (static_cast<AliceFighter*>(owner)->fieldF10) = 0;
+        (static_cast<AliceFighter*>(owner)->objectOrbitAngle) = 0;
         velocityX = 25.0f;
     }
     if ((animationStage) < 2) {
-        (static_cast<AliceFighter*>(owner)->fieldF10) -= 3;
+        (static_cast<AliceFighter*>(owner)->objectOrbitAngle) -= 3;
         (owner->fieldF0C) = x;
         (owner->fieldF0E) = y;
         velocityX = (velocityX) - FloatConstants::One;
@@ -1468,12 +1468,12 @@ void AliceObject::Advance() {
     x += facing * (velocityX);
     if (AdvanceNestedFrame() == (animationStageCount)) {
         ClearFrameInfo();
-        (static_cast<AliceFighter*>(owner)->fieldF12) = 0;
+        (static_cast<AliceFighter*>(owner)->objectOrbitPhase) = 0;
     }
     if ((animationStage) == 1 && (animationFrame) == 0)
-        (static_cast<AliceFighter*>(owner)->fieldF12) = 1;
+        (static_cast<AliceFighter*>(owner)->objectOrbitPhase) = 1;
     if ((animationStage) == 2 && (animationFrame) == 0)
-        (static_cast<AliceFighter*>(owner)->fieldF12) = 2;
+        (static_cast<AliceFighter*>(owner)->objectOrbitPhase) = 2;
     break;
 }
         case 0x34A: {

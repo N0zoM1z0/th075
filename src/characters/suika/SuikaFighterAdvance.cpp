@@ -3076,7 +3076,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             opponent->ResetPrimaryCounters(0x35);
             opponent->facing = facing;
-            fieldF1C = 450;
+            opponentSpiritDrainFrames = 450;
         }
         return;
     }
@@ -3099,7 +3099,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2C1);
-            fieldF1E = 900;
+            selfSpiritDrainMode = 900;
             return;
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -3127,7 +3127,7 @@ void SuikaFighter::Advance() {
             collisionResult = 0;
         }
         ClearMotionFields();
-        if (fieldF1E <= 0) {
+        if (selfSpiritDrainMode <= 0) {
             ResetPrimaryCounters(0x2C9);
             return;
         }
@@ -3167,7 +3167,7 @@ void SuikaFighter::Advance() {
     }
 
     case 0x2C2: {
-        if (fieldF1E <= 0) {
+        if (selfSpiritDrainMode <= 0) {
             ResetPrimaryCounters(0x2C9);
             return;
         }
@@ -3235,7 +3235,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2C1);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2C9);
             collisionResult = 0;
         }
@@ -3261,7 +3261,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2C1);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2C9);
             collisionResult = 0;
         }
@@ -3280,7 +3280,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2C1);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2C9);
             collisionResult = 0;
         }
@@ -3299,7 +3299,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2C1);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2C9);
             collisionResult = 0;
         }
@@ -3327,7 +3327,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2C1);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2C9);
             collisionResult = 0;
         }
@@ -3356,7 +3356,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2C1);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2C9);
             collisionResult = 0;
         }
@@ -3371,7 +3371,7 @@ void SuikaFighter::Advance() {
             remainingHits = 1;
             ResetTransform(0.0f, 0.0f, 0.0f);
             PlaySound(0x10);
-            fieldF1E = 0;
+            selfSpiritDrainMode = 0;
         }
         if (animationStage == 0) {
             if (scaleX > FloatConstants::Half) {
@@ -3679,7 +3679,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             opponent->ResetPrimaryCounters(0x35);
             opponent->facing = facing;
-            fieldF1C = 450;
+            opponentSpiritDrainFrames = 450;
         }
         return;
     }
@@ -3702,7 +3702,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2D5);
-            fieldF1E = 900;
+            selfSpiritDrainMode = 900;
         }
         if (animationStage == 4 && animationFrame == 0) {
             SetNonnegativeWord(40);
@@ -3729,7 +3729,7 @@ void SuikaFighter::Advance() {
             collisionResult = 0;
         }
         ClearMotionFields();
-        if (fieldF1E <= 0) {
+        if (selfSpiritDrainMode <= 0) {
             ResetPrimaryCounters(0x2DD);
             return;
         }
@@ -3769,7 +3769,7 @@ void SuikaFighter::Advance() {
     }
 
     case 0x2D6: {
-        if (fieldF1E <= 0) {
+        if (selfSpiritDrainMode <= 0) {
             ResetPrimaryCounters(0x2DD);
             return;
         }
@@ -3837,7 +3837,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2D5);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2DD);
             collisionResult = 0;
         }
@@ -3863,7 +3863,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2D5);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2DD);
             collisionResult = 0;
         }
@@ -3882,7 +3882,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2D5);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2DD);
             collisionResult = 0;
         }
@@ -3901,7 +3901,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2D5);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2DD);
             collisionResult = 0;
         }
@@ -3929,7 +3929,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2D5);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2DD);
             collisionResult = 0;
         }
@@ -3958,7 +3958,7 @@ void SuikaFighter::Advance() {
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0x2D5);
-            if (fieldF1E <= 0)
+            if (selfSpiritDrainMode <= 0)
                 ResetPrimaryCounters(0x2DD);
             collisionResult = 0;
         }
@@ -3973,7 +3973,7 @@ void SuikaFighter::Advance() {
             remainingHits = 1;
             ResetTransform(0.0f, 0.0f, 0.0f);
             PlaySound(0x10);
-            fieldF1E = 0;
+            selfSpiritDrainMode = 0;
         }
         if (animationStage == 0) {
             if (scaleX > FloatConstants::SuikaMinimumScale) {

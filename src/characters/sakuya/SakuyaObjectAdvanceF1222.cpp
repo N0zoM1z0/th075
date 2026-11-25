@@ -2266,7 +2266,7 @@ void SakuyaObject::Advance()
         break;
 
     case 990:
-        if (static_cast<SakuyaFighter*>(owner)->fieldF16 == 0 && animationStage < 2) {
+        if (static_cast<SakuyaFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2291,7 +2291,7 @@ void SakuyaObject::Advance()
                 else {
                     color[0] = 180;
                 }
-                if (static_cast<SakuyaFighter*>(owner)->fieldF16 >= 120) {
+                if (static_cast<SakuyaFighter*>(owner)->longRangeFrames >= 120) {
                     ResetSecondaryCounter(1);
                     color[0] = 180;
                     return;
@@ -2317,7 +2317,7 @@ void SakuyaObject::Advance()
         break;
 
     case 991:
-        if (static_cast<SakuyaFighter*>(owner)->fieldF16 == 0 && animationStage < 2) {
+        if (static_cast<SakuyaFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2334,7 +2334,7 @@ void SakuyaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            scaleX = static_cast<SakuyaFighter*>(owner)->fieldF16 / 60.0f;
+            scaleX = static_cast<SakuyaFighter*>(owner)->longRangeFrames / 60.0f;
             scaleY = scaleX;
             if (animationStage == 0) {
                 if (color[0] < 230) {
@@ -2343,7 +2343,7 @@ void SakuyaObject::Advance()
                 else {
                     color[0] = 255;
                 }
-                if (static_cast<SakuyaFighter*>(owner)->fieldF16 >= 120) {
+                if (static_cast<SakuyaFighter*>(owner)->longRangeFrames >= 120) {
                     ResetSecondaryCounter(1);
                     color[0] = 255;
                     return;

@@ -180,7 +180,7 @@ void MarisaFighter::DispatchActions()
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
         roundsRemaining == 1 &&
-        fieldF14 == 0 &&
+        orbitingNodesRemaining == 0 &&
         (frameInfo->flags & FrameFlags::CanCancel) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(706) &&
         ACTION_CHANGE_ALLOWED) {
@@ -191,8 +191,8 @@ void MarisaFighter::DispatchActions()
     if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
-        fieldF14 == 6 &&
-        fieldF12 == 1 &&
+        orbitingNodesRemaining == 6 &&
+        trackingNodeOrbitPhase == 1 &&
         selectedSpellCards[1] == 2 &&
         roundsRemaining == 1 &&
         (frameInfo->flags & FrameFlags::CanCancel) != 0 &&
@@ -205,8 +205,8 @@ void MarisaFighter::DispatchActions()
     if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
-        fieldF12 == 1 &&
-        fieldF14 == 6 &&
+        trackingNodeOrbitPhase == 1 &&
+        orbitingNodesRemaining == 6 &&
         selectedSpellCards[1] == 2 &&
         roundsRemaining == 1 &&
         (frameInfo->flags & FrameFlags::CanCancel) != 0 &&
@@ -250,7 +250,7 @@ void MarisaFighter::DispatchActions()
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 2 &&
         roundsRemaining == 2 &&
-        fieldF14 == 0 &&
+        orbitingNodesRemaining == 0 &&
         (frameInfo->flags & FrameFlags::CanCancel) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
         ACTION_CHANGE_ALLOWED) {
@@ -261,8 +261,8 @@ void MarisaFighter::DispatchActions()
     if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
-        fieldF14 == 4 &&
-        fieldF12 == 1 &&
+        orbitingNodesRemaining == 4 &&
+        trackingNodeOrbitPhase == 1 &&
         selectedSpellCards[0] == 2 &&
         roundsRemaining == 2 &&
         (frameInfo->flags & FrameFlags::CanCancel) != 0 &&
@@ -275,8 +275,8 @@ void MarisaFighter::DispatchActions()
     if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
-        fieldF12 == 1 &&
-        fieldF14 == 4 &&
+        trackingNodeOrbitPhase == 1 &&
+        orbitingNodesRemaining == 4 &&
         selectedSpellCards[0] == 2 &&
         roundsRemaining == 2 &&
         (frameInfo->flags & FrameFlags::CanCancel) != 0 &&

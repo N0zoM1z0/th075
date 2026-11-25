@@ -11,9 +11,9 @@ void SuikaFighter::ResetRound()
     fieldF06=0;
     fieldEFA=0;
     fieldF06=0;
-    fieldF26=0;
-    fieldF1C=0;
-    fieldF1E=0;
+    longRangeFrames=0;
+    opponentSpiritDrainFrames=0;
+    selfSpiritDrainMode=0;
     fieldF20=0;
     fieldF22=0;
     fieldF24=0;

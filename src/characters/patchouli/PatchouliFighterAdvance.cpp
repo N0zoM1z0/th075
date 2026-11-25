@@ -2611,7 +2611,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 6 && animationFrame == 0) {
             PlaySound(9);
             UpdateGaugeTimer(200);
-            fieldF10 = 90;
+            opponentPullStrength = 90;
             velocityY = 6.0f;
             verticalAcceleration = 0.6f;
             scriptCounterF00 = 100;
@@ -2647,7 +2647,7 @@ void PatchouliFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 6 && animationFrame == 0) {
             PlaySound(9);
-            fieldF10 = 120;
+            opponentPullStrength = 120;
             UpdateGaugeTimer(250);
             velocityY = 10.0f;
             verticalAcceleration = 0.5f;

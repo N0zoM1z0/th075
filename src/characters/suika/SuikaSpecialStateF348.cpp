@@ -10,8 +10,8 @@ void SuikaFighter::AdvanceAuxiliary()
 {
     if (velocityX==0.0f && field3AC>0)
         field3AC=0;
-    if (fieldF1C>0) {
-        --fieldF1C;
+    if (opponentSpiritDrainFrames>0) {
+        --opponentSpiritDrainFrames;
         opponent->UpdateGaugeTimer(3);
         if(roundsRemaining==2 && RecordedRange(0,100)<25) {
             SHOT(0x336);
@@ -33,25 +33,25 @@ void SuikaFighter::AdvanceAuxiliary()
             else spirit=1000;
         }
     }
-    if(fieldF1E>0) {
+    if(selfSpiritDrainMode>0) {
         if(spirit>4) {
             UpdateGaugeTimer(4);
         } else {
             UpdateGaugeTimer(spirit-1);
-            fieldF1E=0;
+            selfSpiritDrainMode=0;
         }
         if(opponent->health<=0 || spellTimer<=0)
-            fieldF1E=0;
+            selfSpiritDrainMode=0;
     }
     if(GeometryConstants::FiveHundredForty<x-opponent->x ||
        x-opponent->x<GeometryConstants::NegativeFiveHundredForty)
-        fieldF26=60;
+        longRangeFrames=60;
     if(GeometryConstants::ThreeHundredTwenty<x-opponent->x ||
        x-opponent->x<GeometryConstants::NegativeThreeHundredTwenty) {
-        fieldF26=fieldF26+1;
-        if(fieldF26>60) fieldF26=60;
+        longRangeFrames=longRangeFrames+1;
+        if(longRangeFrames>60) longRangeFrames=60;
     } else {
-        fieldF26=0;
+        longRangeFrames=0;
     }
 }
 #undef SHOT

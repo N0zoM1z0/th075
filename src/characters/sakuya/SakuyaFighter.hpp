@@ -30,7 +30,7 @@ public:
     short fieldF10;
     short fieldF12;
     short fieldF14;
-    short fieldF16;
+    short longRangeFrames;  // +0xF16
     float stageLayerX[4];  // +0xF18
     unsigned char unknownF28[0xF40 - 0xF28];
     float stageLayerY[4];  // +0xF40

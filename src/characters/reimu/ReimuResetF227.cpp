@@ -10,9 +10,9 @@ void ReimuFighter::ResetRound()
     fieldF08=0;
     fieldEFA=0;
     fieldF0A=0;
-    fieldF2A=0;
+    longRangeFrames=0;
     fieldF0C=0;
-    fieldF22=0;
+    spiritDrainObjectActive=0;
     fieldF24=0;
     fieldF26=0;
     fieldF28=0;

@@ -27,72 +27,72 @@ void MarisaObject::UpdateTrackingNode()
         color[3] = 255;
     }
     if (action == 828) {
-        static_cast<MarisaFighter*>(owner)->fieldF1A = static_cast<short>(x);
-        static_cast<MarisaFighter*>(owner)->fieldF26 = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->trackingNodeX[0] = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->trackingNodeY[0] = static_cast<short>(y);
     }
     if (action == 829) {
-        static_cast<MarisaFighter*>(owner)->fieldF1C = static_cast<short>(x);
-        static_cast<MarisaFighter*>(owner)->fieldF28 = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->trackingNodeX[1] = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->trackingNodeY[1] = static_cast<short>(y);
     }
     if (action == 830) {
-        static_cast<MarisaFighter*>(owner)->fieldF1E = static_cast<short>(x);
-        static_cast<MarisaFighter*>(owner)->fieldF2A = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->trackingNodeX[2] = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->trackingNodeY[2] = static_cast<short>(y);
     }
     if (action == 831) {
-        static_cast<MarisaFighter*>(owner)->fieldF20 = static_cast<short>(x);
-        static_cast<MarisaFighter*>(owner)->fieldF2C = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->trackingNodeX[3] = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->trackingNodeY[3] = static_cast<short>(y);
     }
     if (action == 832) {
-        static_cast<MarisaFighter*>(owner)->fieldF22 = static_cast<short>(x);
-        static_cast<MarisaFighter*>(owner)->fieldF2E = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->trackingNodeX[4] = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->trackingNodeY[4] = static_cast<short>(y);
     }
     if (action == 833) {
-        static_cast<MarisaFighter*>(owner)->fieldF24 = static_cast<short>(x);
-        static_cast<MarisaFighter*>(owner)->fieldF30 = static_cast<short>(y);
+        static_cast<MarisaFighter*>(owner)->trackingNodeX[5] = static_cast<short>(x);
+        static_cast<MarisaFighter*>(owner)->trackingNodeY[5] = static_cast<short>(y);
     }
     if ((owner->action == 709 || owner->action == 710) &&
         owner->animationStage == 5 && owner->animationFrame == 0 &&
         field0DC == 0 && animationStage == 1 &&
-        ((action == 833 && static_cast<MarisaFighter*>(owner)->fieldF16 == 6) ||
-         (action == 832 && static_cast<MarisaFighter*>(owner)->fieldF16 == 5) ||
-         (action == 831 && static_cast<MarisaFighter*>(owner)->fieldF16 == 4) ||
-         (action == 830 && static_cast<MarisaFighter*>(owner)->fieldF16 == 3) ||
-         (action == 829 && static_cast<MarisaFighter*>(owner)->fieldF16 == 2) ||
-         (action == 828 && static_cast<MarisaFighter*>(owner)->fieldF16 == 1))) {
+        ((action == 833 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 6) ||
+         (action == 832 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 5) ||
+         (action == 831 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 4) ||
+         (action == 830 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 3) ||
+         (action == 829 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 2) ||
+         (action == 828 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 1))) {
         field0DC = 1;
         field0DE = static_cast<short>(AngleAt00483300(
             owner->opponent->y + 100.0f - y,
             (owner->opponent->x - x) * facing) / 0.017453288659453392f);
         ResetSecondaryCounter(2);
-        --static_cast<MarisaFighter*>(owner)->fieldF14;
-        --static_cast<MarisaFighter*>(owner)->fieldF16;
+        --static_cast<MarisaFighter*>(owner)->orbitingNodesRemaining;
+        --static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot;
     }
     if ((owner->action == 716 || owner->action == 717) &&
         owner->animationStage == 5 && owner->animationFrame == 0 &&
         (animationStage == 1 || animationStage == 2) &&
-        ((action == 833 && static_cast<MarisaFighter*>(owner)->fieldF16 == 6) ||
-         (action == 832 && static_cast<MarisaFighter*>(owner)->fieldF16 == 5) ||
-         (action == 831 && static_cast<MarisaFighter*>(owner)->fieldF16 == 4) ||
-         (action == 830 && static_cast<MarisaFighter*>(owner)->fieldF16 == 3) ||
-         (action == 829 && static_cast<MarisaFighter*>(owner)->fieldF16 == 2) ||
-         (action == 828 && static_cast<MarisaFighter*>(owner)->fieldF16 == 1))) {
+        ((action == 833 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 6) ||
+         (action == 832 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 5) ||
+         (action == 831 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 4) ||
+         (action == 830 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 3) ||
+         (action == 829 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 2) ||
+         (action == 828 && static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot == 1))) {
         ResetSecondaryCounter(3);
-        --static_cast<MarisaFighter*>(owner)->fieldF16;
+        --static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot;
         velocityX = 0.0f;
         velocityY = 0.0f;
     }
-    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 2) {
+    if (static_cast<MarisaFighter*>(owner)->trackingNodeOrbitPhase == 2) {
         owner->SpawnBattleEffect(836, x, y, 1, 0);
     }
-    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 99 && animationStage < 7 && field0DC == 0) ResetSecondaryCounter(7);
-    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 3 && animationStage < 2) ResetSecondaryCounter(2);
-    field0D8 = static_cast<short>((static_cast<MarisaFighter*>(owner)->fieldF10 - 180) + field0C8);
+    if (static_cast<MarisaFighter*>(owner)->trackingNodeOrbitPhase == 99 && animationStage < 7 && field0DC == 0) ResetSecondaryCounter(7);
+    if (static_cast<MarisaFighter*>(owner)->trackingNodeOrbitPhase == 3 && animationStage < 2) ResetSecondaryCounter(2);
+    field0D8 = static_cast<short>((static_cast<MarisaFighter*>(owner)->trackingNodeOrbitAngle - 180) + field0C8);
     if (field0D8 > 180) field0D8 -= 360;
     if (field0D8 < -180) field0D8 += 360;
     field0DA += 5;
-    if (static_cast<MarisaFighter*>(owner)->fieldF12 != 6 && owner->roundsRemaining > 1 && field0DA > 120) field0DA = 120;
+    if (static_cast<MarisaFighter*>(owner)->trackingNodeOrbitPhase != 6 && owner->roundsRemaining > 1 && field0DA > 120) field0DA = 120;
     if (owner->roundsRemaining == 1 && field0DA > 140) field0DA = 140;
-    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 6 && field0DA > 180) field0DA = 180;
+    if (static_cast<MarisaFighter*>(owner)->trackingNodeOrbitPhase == 6 && field0DA > 180) field0DA = 180;
     if (animationStage == 1) {
         SetPolarVelocity(field0D8, field0DA);
         x = static_cast<int>(owner->fieldF0C + facing * velocityX);
@@ -100,7 +100,7 @@ void MarisaObject::UpdateTrackingNode()
         remainingHits = 1;
         collisionResult = CollisionResult::None;
     }
-    if (animationStage == 2 && static_cast<MarisaFighter*>(owner)->fieldF12 == 3 && field0DC == 0) {
+    if (animationStage == 2 && static_cast<MarisaFighter*>(owner)->trackingNodeOrbitPhase == 3 && field0DC == 0) {
         SetPolarVelocity(field0D8, field0DA);
         x = static_cast<int>(owner->fieldF0C + facing * velocityX);
         y = static_cast<int>(owner->fieldF0E + velocityY);
@@ -144,11 +144,11 @@ void MarisaObject::UpdateTrackingNode()
         ++field0DC;
     }
     if (animationStage == 7) color[0] = color[0] - 25;
-    if (static_cast<MarisaFighter*>(owner)->fieldF12 == 6) owner->SpawnBattleEffect(843, x, y, 1, 1);
+    if (static_cast<MarisaFighter*>(owner)->trackingNodeOrbitPhase == 6) owner->SpawnBattleEffect(843, x, y, 1, 1);
     if (AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
-        if (field0DC == 0) --static_cast<MarisaFighter*>(owner)->fieldF14;
-        if (field0E0 == 0) --static_cast<MarisaFighter*>(owner)->fieldF16;
+        if (field0DC == 0) --static_cast<MarisaFighter*>(owner)->orbitingNodesRemaining;
+        if (field0E0 == 0) --static_cast<MarisaFighter*>(owner)->trackingNodeDispatchSlot;
     } else {
         if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);

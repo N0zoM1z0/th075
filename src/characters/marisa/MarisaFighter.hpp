@@ -38,36 +38,26 @@ public:
     void ResetRound();
 
     // Fields after the shared Fighter layout.
-    short fieldF10;
-    short fieldF12;
-    short fieldF14;
-    short fieldF16;
-    short fieldF18;
-    short fieldF1A;
-    short fieldF1C;
-    short fieldF1E;
-    short fieldF20;
-    short fieldF22;
-    short fieldF24;
-    short fieldF26;
-    short fieldF28;
-    short fieldF2A;
-    short fieldF2C;
-    short fieldF2E;
-    short fieldF30;
-    short fieldF32;
+    short trackingNodeOrbitAngle;  // +0xF10
+    short trackingNodeOrbitPhase;  // +0xF12
+    short orbitingNodesRemaining;  // +0xF14
+    short trackingNodeDispatchSlot;  // +0xF16
+    short trackingNodeLifetimeFrames;  // +0xF18
+    short trackingNodeX[6];  // +0xF1A, actions 0x33C-0x341
+    short trackingNodeY[6];  // +0xF26, actions 0x33C-0x341
+    short longRangeFrames;  // +0xF32
     float stageLayerX[4];  // +0xF34
     unsigned char unknownF44[0xF5C - 0xF44];
     float stageLayerY[4];  // +0xF5C
     unsigned char unknownF6C[0xFFC - 0xF6C];
     unsigned char stageLayerAlpha[4];  // +0xFFC
     unsigned char unknown1000[0x1006 - 0x1000];
-    unsigned char field1006;            // nonzero while the chain is drawn
+    unsigned char chainVisible;  // +0x1006
     unsigned char unknown1007[0x1008 - 0x1007];
-    float field1008;
-    float field100C;
-    float field1010;
-    signed char field1014;
+    float chainOriginX;  // +0x1008
+    float chainOriginY;  // +0x100C
+    float chainScale;  // +0x1010
+    signed char chainFacing;  // +0x1014
     unsigned char unknown1015[0x1018 - 0x1015];
     MarisaChainVertex chain[74];        // +0x1018 37 segments, two vertices each
 };

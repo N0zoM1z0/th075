@@ -137,7 +137,7 @@ void ReimuFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (spirit > 0 && fieldF22 == 0 &&
+    if (spirit > 0 && spiritDrainObjectActive == 0 &&
         aiCommand == 13 && y == 0.0f &&
         spellTimer > 0 && spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 && roundsRemaining == 1 &&

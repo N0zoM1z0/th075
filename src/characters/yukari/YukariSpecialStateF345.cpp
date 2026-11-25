@@ -6,9 +6,9 @@
 
 void YukariFighter::AdvanceAuxiliary() {
     if (opponentFreezeTimer == 0)
-        fieldF12 = fieldF12 + 2;
-    if (fieldF12 >= 180)
-        fieldF12 = -180;
+        spellOrbitAngle = spellOrbitAngle + 2;
+    if (spellOrbitAngle >= 180)
+        spellOrbitAngle = -180;
     if (velocityX == 0.0f && field3AC > 0)
         field3AC = 0;
     if (animationStage == 0 && animationFrame == 0 && fieldF0A == 0) {
@@ -26,11 +26,11 @@ void YukariFighter::AdvanceAuxiliary() {
         }
     }
     if (x-opponent->x > 540.0f || x-opponent->x < -540.0f)
-        fieldF32=60;
+        longRangeFrames=60;
     if (x-opponent->x > 320.0f || x-opponent->x < -320.0f) {
-        fieldF32=fieldF32+1;
-        if (fieldF32>60) fieldF32=60;
+        longRangeFrames=longRangeFrames+1;
+        if (longRangeFrames>60) longRangeFrames=60;
     } else {
-        fieldF32=0;
+        longRangeFrames=0;
     }
 }

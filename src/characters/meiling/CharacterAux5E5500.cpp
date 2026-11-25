@@ -57,13 +57,13 @@ void MeilingFighter::AdvanceAuxiliary() {
         }
     }
     if (x - opponent->x > 540.0f || x - opponent->x < -540.0f) {
-        fieldF2A = 60;
+        longRangeFrames = 60;
     }
     if (x - opponent->x > 320.0f || x - opponent->x < -320.0f) {
-        fieldF2A = fieldF2A + 1;
-        if (fieldF2A > 60) fieldF2A = 60;
+        longRangeFrames = longRangeFrames + 1;
+        if (longRangeFrames > 60) longRangeFrames = 60;
     }
     else {
-        fieldF2A = 0;
+        longRangeFrames = 0;
     }
 }

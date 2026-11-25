@@ -95,9 +95,9 @@ void SakuyaFighter::AdvanceAuxiliary() {
             SpawnTrackedEffect(817, facing * 57 + x, y + 100.0f, facing, 1, 1);
             fieldF0A = 1;
         }
-    if(x-opponent->x>540.0f || x-opponent->x<-540.0f) fieldF16=60;
+    if(x-opponent->x>540.0f || x-opponent->x<-540.0f) longRangeFrames=60;
     if(x-opponent->x>320.0f || x-opponent->x<-320.0f) {
-        fieldF16=fieldF16+1;
-        if(fieldF16>60) fieldF16=60;
-    } else fieldF16=0;
+        longRangeFrames=longRangeFrames+1;
+        if(longRangeFrames>60) longRangeFrames=60;
+    } else longRangeFrames=0;
 }

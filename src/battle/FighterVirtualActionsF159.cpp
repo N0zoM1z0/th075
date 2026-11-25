@@ -54,7 +54,7 @@ void SakuyaFighter::ResetRound()
 {
     sequenceTimer = 0;
     stageBannerHoldFrames = 0;
-    fieldF16 = 0;
+    longRangeFrames = 0;
     scriptCounterF00 = 0;
     scriptCounterF02 = 0;
     fieldF04 = 0;
@@ -70,7 +70,7 @@ void SakuyaFighter::ResetRound()
     aiWaitTimer = 0;
     aiStep = 0;
     aiCardTimer = 0;
-    fieldF16 = 0;
+    longRangeFrames = 0;
     reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
 }
 

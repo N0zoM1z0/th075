@@ -31,12 +31,12 @@ public:
 
     // Fields after the shared Fighter layout.
     unsigned char unknownF10[0xF1C - 0xF10];
-    short fieldF1C;
-    short fieldF1E;
+    short opponentSpiritDrainFrames;  // +0xF1C
+    short selfSpiritDrainMode;  // +0xF1E
     short fieldF20;
     short fieldF22;
     short fieldF24;
-    short fieldF26;
+    short longRangeFrames;  // +0xF26
     short fieldF28;
     short suikaStageBannerHoldFrames;
     float stageLayerX[4];  // +0xF2C

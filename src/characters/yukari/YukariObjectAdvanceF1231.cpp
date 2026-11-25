@@ -530,7 +530,7 @@ void YukariObject::Advance()
         break;
 
     case 815:
-        static_cast<YukariFighter*>(owner)->fieldF10 = 1;
+        static_cast<YukariFighter*>(owner)->bouncingSpellObjectActive = 1;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
             remainingHits = 20;
@@ -571,12 +571,12 @@ void YukariObject::Advance()
         if (animationStage == 5) {
             rotationZ -= 30.0f;
             if (color[0] > 10) color[0] -= 10;
-            else { ClearFrameInfo(); static_cast<YukariFighter*>(owner)->fieldF10 = 0; return; }
+            else { ClearFrameInfo(); static_cast<YukariFighter*>(owner)->bouncingSpellObjectActive = 0; return; }
         }
         x = facing * velocityX + x;
         y += velocityY;
         if (AdvanceNestedFrame() == animationStageCount) {
-            ClearFrameInfo(); static_cast<YukariFighter*>(owner)->fieldF10 = 0; return;
+            ClearFrameInfo(); static_cast<YukariFighter*>(owner)->bouncingSpellObjectActive = 0; return;
         }
         else {
             if (animationStage == 2 && animationFrame == 0) {
@@ -2337,28 +2337,28 @@ void YukariObject::Advance()
                 field0E0 = 0;
             }
             --field0E0;
-            SetPolarVelocity(static_cast<YukariFighter*>(owner)->fieldF12 + field0C8, static_cast<YukariFighter*>(owner)->fieldF14);
-            x = static_cast<YukariFighter*>(owner)->fieldF18 + facing * velocityX;
-            y = static_cast<YukariFighter*>(owner)->fieldF1A + velocityY;
+            SetPolarVelocity(static_cast<YukariFighter*>(owner)->spellOrbitAngle + field0C8, static_cast<YukariFighter*>(owner)->spellOrbitRadius);
+            x = static_cast<YukariFighter*>(owner)->spellOrbitCenterX + facing * velocityX;
+            y = static_cast<YukariFighter*>(owner)->spellOrbitCenterY + velocityY;
             owner->SpawnBattleEffect(919, x, y, 1, 1);
             if (field0E0 <= 0) {
                 owner->PlaySound(18);
-                owner->field314 = -(static_cast<YukariFighter*>(owner)->fieldF12 + field0C8) * facing;
+                owner->field314 = -(static_cast<YukariFighter*>(owner)->spellOrbitAngle + field0C8) * facing;
                 owner->field318 = 5.0f;
                 owner->SpawnBattleEffect(921, x, y, 1, 1);
                 field0E0 = 4;
             }
-            if (static_cast<YukariFighter*>(owner)->fieldF16 == 2) {
+            if (static_cast<YukariFighter*>(owner)->spellOrbitPhase == 2) {
                 owner->PlaySound(16);
                 for (int effectIndex918 = 0; effectIndex918 < g_OptionsModeAt006714D0 * 2 + 4; ++effectIndex918) {
-                    owner->field314 = -(static_cast<YukariFighter*>(owner)->fieldF12 + field0C8) * facing;
+                    owner->field314 = -(static_cast<YukariFighter*>(owner)->spellOrbitAngle + field0C8) * facing;
                     owner->field318 = 4.0f;
                     owner->SpawnBattleEffect(922, x, y, 1, 1);
                 }
             }
-            if (static_cast<YukariFighter*>(owner)->fieldF16 == 3) {
+            if (static_cast<YukariFighter*>(owner)->spellOrbitPhase == 3) {
                 owner->PlaySound(18);
-                owner->field314 = -(static_cast<YukariFighter*>(owner)->fieldF12 + field0C8) + 180.0f;
+                owner->field314 = -(static_cast<YukariFighter*>(owner)->spellOrbitAngle + field0C8) + 180.0f;
                 owner->field318 = 5.0f;
                 owner->SpawnBattleEffect(923, x, y, 1, 1);
             }
@@ -2389,10 +2389,10 @@ void YukariObject::Advance()
         else {
             facing = 1;
             if (owner->opponentFreezeTimer == 0) {
-                static_cast<YukariFighter*>(owner)->fieldF18 = x;
-                static_cast<YukariFighter*>(owner)->fieldF1A = y;
+                static_cast<YukariFighter*>(owner)->spellOrbitCenterX = x;
+                static_cast<YukariFighter*>(owner)->spellOrbitCenterY = y;
             }
-            if (static_cast<YukariFighter*>(owner)->fieldF14 > 340) --static_cast<YukariFighter*>(owner)->fieldF14;
+            if (static_cast<YukariFighter*>(owner)->spellOrbitRadius > 340) --static_cast<YukariFighter*>(owner)->spellOrbitRadius;
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
@@ -2412,21 +2412,21 @@ void YukariObject::Advance()
             --field0E0;
             --field0DC;
             ++field0DA;
-            if (field0DC == 1) static_cast<YukariFighter*>(owner)->fieldF16 = 2;
+            if (field0DC == 1) static_cast<YukariFighter*>(owner)->spellOrbitPhase = 2;
             if (field0DC == 0) {
                 --field0DC;
                 field0DC = 260;
-                static_cast<YukariFighter*>(owner)->fieldF16 = 0;
+                static_cast<YukariFighter*>(owner)->spellOrbitPhase = 0;
             }
-            if (field0DA == 300) static_cast<YukariFighter*>(owner)->fieldF16 = 3;
+            if (field0DA == 300) static_cast<YukariFighter*>(owner)->spellOrbitPhase = 3;
             if (field0DA == 301) {
                 field0DA = g_OptionsModeAt006714D0 * 20 - 60;
-                static_cast<YukariFighter*>(owner)->fieldF16 = 0;
+                static_cast<YukariFighter*>(owner)->spellOrbitPhase = 0;
             }
             if (field0DE > 0) {
                 --field0DE;
-                static_cast<YukariFighter*>(owner)->fieldF16 = 1;
-                if (field0DE == 0) static_cast<YukariFighter*>(owner)->fieldF16 = 0;
+                static_cast<YukariFighter*>(owner)->spellOrbitPhase = 1;
+                if (field0DE == 0) static_cast<YukariFighter*>(owner)->spellOrbitPhase = 0;
             }
             velocityX = (owner->opponent->x - x) * 0.02f;
             if (velocityX < 0.25f && velocityX > -0.25f) velocityX = 0.0f;

@@ -2511,7 +2511,7 @@ case 0x331: {
     break;
 
     case 990:
-        if (static_cast<YoumuFighter*>(owner)->fieldF14 == 0 && animationStage < 2) {
+        if (static_cast<YoumuFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2536,7 +2536,7 @@ case 0x331: {
                 else {
                     color[0] = 180;
                 }
-                if (static_cast<YoumuFighter*>(owner)->fieldF14 >= 120) {
+                if (static_cast<YoumuFighter*>(owner)->longRangeFrames >= 120) {
                     ResetSecondaryCounter(1);
                     color[0] = 180;
                     return;
@@ -2562,7 +2562,7 @@ case 0x331: {
         break;
 
     case 991:
-        if (static_cast<YoumuFighter*>(owner)->fieldF14 == 0 && animationStage < 2) {
+        if (static_cast<YoumuFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2579,7 +2579,7 @@ case 0x331: {
                 color[2] = 255;
                 color[3] = 255;
             }
-            scaleX = static_cast<YoumuFighter*>(owner)->fieldF14 / 75.0f;
+            scaleX = static_cast<YoumuFighter*>(owner)->longRangeFrames / 75.0f;
             scaleY = scaleX;
             if (animationStage == 0) {
                 if (color[0] < 230) {
@@ -2588,7 +2588,7 @@ case 0x331: {
                 else {
                     color[0] = 255;
                 }
-                if (static_cast<YoumuFighter*>(owner)->fieldF14 >= 150) {
+                if (static_cast<YoumuFighter*>(owner)->longRangeFrames >= 150) {
                     ResetSecondaryCounter(1);
                     color[0] = 255;
                     return;

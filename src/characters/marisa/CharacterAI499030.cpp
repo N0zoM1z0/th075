@@ -217,7 +217,7 @@ void MarisaFighter::ChooseAction()
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 2 &&
             roundsRemaining == 1) {
-            if (fieldF14 == 0) {
+            if (orbitingNodesRemaining == 0) {
                 aiCommand = 13;
             } else {
                 if (rand() < 15000) aiCommand = 13;
@@ -231,7 +231,7 @@ void MarisaFighter::ChooseAction()
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 2 &&
             roundsRemaining == 2) {
-            if (fieldF14 == 0) {
+            if (orbitingNodesRemaining == 0) {
                 aiCommand = 13;
             } else {
                 if (rand() < 15000) aiCommand = 13;
@@ -548,7 +548,7 @@ void MarisaFighter::ChooseAction()
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
         roundsRemaining == 1 &&
-        fieldF14 == 0) {
+        orbitingNodesRemaining == 0) {
         aiCommand = 13;
         return;
     }
@@ -590,7 +590,7 @@ void MarisaFighter::ChooseAction()
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 2 &&
         roundsRemaining == 2 &&
-        fieldF14 == 0) {
+        orbitingNodesRemaining == 0) {
         aiCommand = 13;
         return;
     }

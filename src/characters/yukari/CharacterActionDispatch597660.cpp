@@ -219,7 +219,7 @@ void YukariFighter::DispatchActions()
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
         roundsRemaining == 1 &&
-        fieldF10 == 0 &&
+        bouncingSpellObjectActive == 0 &&
         (frameInfo->flags & FrameFlags::CanCancel) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
         ACTION_CHANGE_ALLOWED) {

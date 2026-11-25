@@ -2233,7 +2233,7 @@ void MeilingObject::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 990:
-        if (static_cast<MeilingFighter*>(owner)->fieldF2A == 0 && animationStage < 2) {
+        if (static_cast<MeilingFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2258,7 +2258,7 @@ void MeilingObject::Advance() {
                 else {
                     color[0] = 180;
                 }
-                if (static_cast<MeilingFighter*>(owner)->fieldF2A >= 120) {
+                if (static_cast<MeilingFighter*>(owner)->longRangeFrames >= 120) {
                     ResetSecondaryCounter(1);
                     color[0] = 180;
                     return;
@@ -2283,7 +2283,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 991:
-        if (static_cast<MeilingFighter*>(owner)->fieldF2A == 0 && animationStage < 2) {
+        if (static_cast<MeilingFighter*>(owner)->longRangeFrames == 0 && animationStage < 2) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2300,7 +2300,7 @@ void MeilingObject::Advance() {
                 color[2] = 255;
                 color[3] = 255;
             }
-            scaleX = static_cast<MeilingFighter*>(owner)->fieldF2A / 45.0f;
+            scaleX = static_cast<MeilingFighter*>(owner)->longRangeFrames / 45.0f;
             scaleY = scaleX;
             if (animationStage == 0) {
                 if (color[0] < 230) {
@@ -2309,7 +2309,7 @@ void MeilingObject::Advance() {
                 else {
                     color[0] = 255;
                 }
-                if (static_cast<MeilingFighter*>(owner)->fieldF2A >= 120) {
+                if (static_cast<MeilingFighter*>(owner)->longRangeFrames >= 120) {
                     ResetSecondaryCounter(1);
                     color[0] = 255;
                     return;

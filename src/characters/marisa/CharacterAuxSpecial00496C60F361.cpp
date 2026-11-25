@@ -64,13 +64,13 @@ void MarisaFighter::AdvanceAuxiliary() {
         }
     }
     if (x - opponent->x > 540.0f || x - opponent->x < -540.0f) {
-        fieldF32 = 60;
+        longRangeFrames = 60;
     }
     if (x - opponent->x > 320.0f || x - opponent->x < -320.0f) {
-        fieldF32 = fieldF32 + 1;
-        if (fieldF32 > 60) fieldF32 = 60;
+        longRangeFrames = longRangeFrames + 1;
+        if (longRangeFrames > 60) longRangeFrames = 60;
     }
     else {
-        fieldF32 = 0;
+        longRangeFrames = 0;
     }
 }

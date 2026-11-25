@@ -25,8 +25,8 @@ public:
     void ResetRound();
 
     // Fields after the shared Fighter layout.
-    short fieldF10;
-    short fieldF12;
+    short opponentPullStrength;  // +0xF10
+    short longRangeFrames;  // +0xF12
     float stageLayerX[4];  // +0xF14
     unsigned char unknownF24[0xF3C - 0xF24];
     float stageLayerY[4];  // +0xF3C

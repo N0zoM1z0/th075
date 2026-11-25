@@ -22,14 +22,14 @@ void PatchouliFighter::AdvanceAuxiliary() {
         fieldF0C = fieldF0C + 2;
     if (fieldF0C < 0) fieldF0C = 359;
     if (fieldF0C >= 360) fieldF0C = 0;
-    if (fieldF10 > 0) {
-        opponentVelocityDeltaX = float(fieldF10+20) * FloatConstants::OneTenth * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
-        fieldF10 = fieldF10-2;
+    if (opponentPullStrength > 0) {
+        opponentVelocityDeltaX = float(opponentPullStrength+20) * FloatConstants::OneTenth * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
+        opponentPullStrength = opponentPullStrength-2;
         if (RecordedRange(0,100)<50)
             SpawnBattleEffect(0x38c, float(RecordedRange(0,640)*facing)+x,0.0f,facing,1);
         else
             SpawnBattleEffect(0x38c, x-float(RecordedRange(0,640)*facing),0.0f,-facing,1);
-        if (fieldF10<0) fieldF10=0;
+        if (opponentPullStrength<0) opponentPullStrength=0;
     }
     if (fieldF0A != 1) {
         if (action > 149 && action < 154) {
@@ -82,13 +82,13 @@ void PatchouliFighter::AdvanceAuxiliary() {
         }
     }
     if (x - opponent->x > 540.0f || x - opponent->x < -540.0f) {
-        fieldF12 = 60;
+        longRangeFrames = 60;
     }
     if (x - opponent->x > 320.0f || x - opponent->x < -320.0f) {
-        fieldF12 = fieldF12 + 1;
-        if (fieldF12 > 60) fieldF12 = 60;
+        longRangeFrames = longRangeFrames + 1;
+        if (longRangeFrames > 60) longRangeFrames = 60;
     }
     else {
-        fieldF12 = 0;
+        longRangeFrames = 0;
     }
 }

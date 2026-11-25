@@ -145,7 +145,7 @@ void AliceFighter::DispatchActions()
         return;
     }
     if (spirit > 0 &&
-        fieldF12 == 0 &&
+        objectOrbitPhase == 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         spellTimer > 0 &&
@@ -188,7 +188,7 @@ void AliceFighter::DispatchActions()
         return;
     }
     if (spirit > 0 &&
-        fieldF12 == 0 &&
+        objectOrbitPhase == 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         spellTimer > 0 &&

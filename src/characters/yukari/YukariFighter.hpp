@@ -26,15 +26,15 @@ public:
     void AdvanceAuxiliary();
 
     // Fields after the shared Fighter layout.
-    short fieldF10;
-    short fieldF12;
-    short fieldF14;
-    short fieldF16;
-    short fieldF18;
-    short fieldF1A;
+    short bouncingSpellObjectActive;  // +0xF10
+    short spellOrbitAngle;  // +0xF12
+    short spellOrbitRadius;  // +0xF14
+    short spellOrbitPhase;  // +0xF16
+    short spellOrbitCenterX;  // +0xF18
+    short spellOrbitCenterY;  // +0xF1A
     unsigned char unknownF1C[0xF30 - 0xF1C];
     short fieldF30;
-    short fieldF32;
+    short longRangeFrames;  // +0xF32
     float stageLayerX[4];  // +0xF34
     unsigned char unknownF44[0xF5C - 0xF44];
     float stageLayerY[4];  // +0xF5C
