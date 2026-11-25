@@ -16,17 +16,25 @@ The publisher's Japanese 1.11 patch yields the same executable.
 
 ## Windows x86 build
 
-Run `scripts/repo-python scripts/build.py --library` to compile the
-configured translation units and archive them as `build/program/th075.lib`.
-`--program` also passes the objects to the VC7.1 linker using the Windows
-CRT startup. Both paths use the serial, headless Factory Wine runtime.
-Compiler, librarian and strict linker logs are under `build/program/`.
+Run `scripts/repo-python scripts/build.py --program` to build
+`build/program/th075.exe` and its linker map. `--library` builds only the
+COFF archive. Both paths compile serially with VC7.1 and use the headless
+Factory Wine runtime. Compiler, librarian and linker logs are under
+`build/program/`.
 
-A clean build at `98fde36a` compiled and archived all 441 x86 objects.
-The strict link reproduced the same 60 missing data symbols. The reflected
-right clipping bound resolved one of them. All four affected units
-cold-replayed exactly, and a headless archive consumer checked the bound.
-The updated strict link stops at `LNK1120` with 59 unresolved data symbols.
+The last 59 unresolved names refer to 47 read-only data addresses in
+the pinned Japanese PE. The build takes the float, double and
+null-terminated string values from that supplied image and includes a
+data-only COFF object in the archive and link. Names for the same address
+share one object offset.
+
+A clean build compiled all 441 translation units and linked a Windows
+PE32 executable with an empty linker log. All 16 affected match units
+passed complete comparisons on the freshly compiled objects. The linked
+image matched all 47 supplied data ranges, and all 237 code references
+resolved to the corresponding symbols.
+
+### Selected earlier link checkpoints
 
 The grayscale shader, two clipping bounds and the texture and replay
 error definitions resolved five names. All nine affected units cold-replayed
@@ -225,11 +233,6 @@ cosine table, sound defaults, configuration save and load, event queue
 insertion and signaling, archive registration, lookup, a write/read round
 trip, and handle release,
 and the four corners produced by the RECT constructor.
-Use `build/program/link.log` and the relocation targets to find candidate
-definitions. Batch related exact units with `--batch` to compile each
-profile together. Reuse the verified objects for the next archive and
-strict link when the remaining objects are current. The unresolved set
-contains 50 floating-point symbols and nine option or command strings.
 [Startup bindings and toolchain notes](KNOWLEDGE_BASE.md#windows-link)
 
 ## Origin review

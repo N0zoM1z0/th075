@@ -9,7 +9,9 @@ import fcntl
 import hashlib
 import os
 from pathlib import Path
+import runpy
 import shutil
+import struct
 import subprocess
 import sys
 from tempfile import TemporaryDirectory
@@ -20,6 +22,20 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "config" / "match-units.toml"
 TARGET = ROOT / "config" / "target.toml"
 PROGRAM = Path("build/program")
+# Read-only link data supplied by the pinned PE. Match units record the
+# consumers and decorated names, including names that alias one address.
+PROGRAM_DATA = {
+    0x00657D98, 0x00657DE4, 0x00657E18, 0x00657E70, 0x00657EBC,
+    0x00657EDC, 0x00657EFC, 0x00659080, 0x00659088, 0x00659098,
+    0x0065909C, 0x00659274, 0x0065928C, 0x00659298, 0x006593F8,
+    0x00659414, 0x00659418, 0x00659430, 0x00659438, 0x00659464,
+    0x00659468, 0x0065946C, 0x00659478, 0x0065947C, 0x00659480,
+    0x00659484, 0x0065948C, 0x00659494, 0x00659498, 0x00659740,
+    0x00659748, 0x006598A0, 0x006598A4, 0x006598A8, 0x006598B4,
+    0x006598BC, 0x00659920, 0x00659928, 0x00659A14, 0x00659A20,
+    0x00659A24, 0x00659A28, 0x00659A2C, 0x00659CA4, 0x00659CAC,
+    0x00659E14, 0x00659F3C,
+}
 
 
 def load() -> dict[str, object]:
@@ -58,7 +74,7 @@ def parse_args() -> argparse.Namespace:
     group.add_argument("--unit")
     group.add_argument("--batch-unit", action="append", help="build selected comparison objects in profile groups")
     group.add_argument("--library", action="store_true", help="archive all configured translation units")
-    group.add_argument("--program", action="store_true", help="build the library and attempt a strict Windows link")
+    group.add_argument("--program", action="store_true", help="build the library and link a Windows executable")
     return parser.parse_args()
 
 
@@ -87,6 +103,55 @@ def program_sources(units):
     if len({source.stem.casefold() for source in profiles}) != len(profiles):
         raise ValueError("translation units collide on a Windows object filename")
     return profiles
+
+
+def write_program_data(units, destination: Path) -> None:
+    """Provide the remaining external data from the user's original image."""
+    symbols_at = defaultdict(set)
+    for unit in units.values():
+        for relocation in unit.get("relocations", []):
+            address = relocation.get("target")
+            if address in PROGRAM_DATA and relocation["type"] == "DIR32":
+                symbols_at[address].add(relocation["symbol"])
+    if PROGRAM_DATA - symbols_at.keys():
+        raise ValueError("program data address missing from match-unit relocations")
+
+    compare = runpy.run_path(str(ROOT / "scripts/compare-coff-function.py"))
+    original = compare["verified_target"]()
+    read = compare["pe_bytes_at"]
+    data = bytearray()
+    symbols = bytearray()
+    strings = bytearray(4)
+    seen = set()
+    for address, names in sorted(symbols_at.items()):
+        sizes = []
+        for name in sorted(names):
+            decorated_type = name.rsplit("@@", 1)[-1]
+            if decorated_type == "3QBDB":
+                window = read(original, address, 128)
+                sizes.append(window.index(b"\0") + 1)
+            elif decorated_type in ("3MA", "3MB", "3NB"):
+                sizes.append(8 if decorated_type == "3NB" else 4)
+            else:
+                raise ValueError(f"unsupported program data symbol {name}")
+        if len(set(sizes)) != 1 or seen.intersection(names):
+            raise ValueError(f"conflicting program data symbols at {address:#x}")
+        seen.update(names)
+
+        # All names for the same native address must share one COFF offset.
+        data.extend(bytes(-len(data) % 8))
+        for name in sorted(names):
+            # Long symbol name, section 1, null type, external storage class.
+            symbols.extend(struct.pack("<IIIhHBB", 0, len(strings), len(data), 1, 0, 2, 0))
+            strings.extend(name.encode("ascii") + b"\0")
+        data.extend(read(original, address, sizes[0]))
+
+    # i386 COFF, one aligned, initialized read-only section and no relocations.
+    raw_offset = 20 + 40
+    header = struct.pack("<HHIIIHH", 0x014C, 1, 0, raw_offset + len(data), len(seen), 0, 0)
+    section = struct.pack("<8s6IHHI", b".rdata", 0, 0, len(data), raw_offset, 0, 0, 0, 0, 0x40400040)
+    struct.pack_into("<I", strings, 0, len(strings))
+    destination.write_bytes(header + section + data + symbols + strings)
 
 
 def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
@@ -125,6 +190,7 @@ def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
     library = PROGRAM / "th075.lib"
     executable = PROGRAM / "th075.exe"
     link_map = PROGRAM / "th075.map"
+    program_data = PROGRAM / "supplied-data.obj"
     lock_dir = ROOT / ".analysis/locks"
     lock_dir.mkdir(parents=True, exist_ok=True)
 
@@ -160,7 +226,7 @@ def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
         compile_log, library_log, link_log = logs
         outputs = [compile_log, *objects]
         if not comparison_batch:
-            outputs.extend([library, library_log])
+            outputs.extend([library, library_log, program_data])
         if link_program:
             outputs.extend([executable, link_map, link_log])
         for path in outputs:
@@ -183,6 +249,8 @@ def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
                 shutil.copy2(ROOT / obj, destination)
             print(f"Built {len(objects)} comparison objects in {len(groups)} compiler groups", flush=True)
             return
+        write_program_data(units, ROOT / program_data)
+        objects.append(program_data)
         args = ["/nologo", f"/out:{library}"]
         run("link.exe", ["/lib", response("library.rsp", args, objects)], library_log)
         if not (ROOT / library).is_file():

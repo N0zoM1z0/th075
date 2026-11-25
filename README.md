@@ -41,13 +41,14 @@ This writes `build/program/th075.lib` and the compiler and librarian logs
 under `build/program/`. The build uses the manifest's per-source flags,
 the pinned VC7.1 toolchain and the game's headless Factory Wine prefix.
 
-To check whether those objects can link into a Windows executable:
+Build the Windows x86 executable:
 
     scripts/repo-python scripts/build.py --program
 
-This also builds the library and records strict linker diagnostics in
-`build/program/link.log`. An executable and map require all link-time
-definitions. See the [handoff](docs/RE_HANDOFF.md) for current blockers.
+This writes `build/program/th075.exe`, `build/program/th075.map` and
+`build/program/link.log`. Both aggregate builds use the pinned original
+executable in `resources/` to supply the remaining read-only data. See
+the [handoff](docs/RE_HANDOFF.md) for build details.
 
 ## Checks
 
