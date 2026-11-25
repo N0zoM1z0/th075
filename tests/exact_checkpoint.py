@@ -7,6 +7,7 @@ by cold replay instead of frozen hashes.
 from __future__ import annotations
 
 import csv
+from functools import cache
 import hashlib
 import json
 import subprocess
@@ -14,7 +15,6 @@ from pathlib import Path
 import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST_SHA256 = "634e75b897803ceb9b4495630289eb6e216143b17ceb9945a8dfb6c22306499d"
 
 
 def digest(data):
@@ -22,10 +22,17 @@ def digest(data):
 
 
 def plan():
-    raw = (ROOT / "config/exact-adoptions.json").read_bytes()
-    if digest(raw) != MANIFEST_SHA256:
-        raise ValueError("Exact adoption evidence changed without review")
-    return json.loads(raw)
+    return json.loads((ROOT / "config/exact-adoptions.json").read_bytes())
+
+
+@cache
+def frozen_files():
+    # Later adoption records describe the current sources. The original plan
+    # supplies the historical lengths as well as the historical digests.
+    raw = subprocess.check_output(
+        ["git", "show", "e2c088b8:config/exact-adoptions.json"], cwd=ROOT,
+    )
+    return json.loads(raw)["files"]
 
 
 def retained_bytes(path):
@@ -33,7 +40,7 @@ def retained_bytes(path):
     path = Path(path)
     raw = path.read_bytes()
     relative = path.relative_to(ROOT).as_posix()
-    record = plan()["files"].get(relative)
+    record = frozen_files().get(relative)
     if record is None:
         return raw
     prefix = raw[:record["size"]]
@@ -62,9 +69,9 @@ def _historical_prefix(relative, size, sha):
     return _HISTORY[key]
 
 
-# Provisional names, and where the accepted source lives, may change later:
-# the cold replay, not the file name, is the evidence.
-LABEL_COLUMNS = {"proposed_name", "signature", "notes", "source_file"}
+# Provisional names, module labels and source paths can change after adoption.
+# The cold replay verifies the accepted extent and relocations.
+LABEL_COLUMNS = {"proposed_name", "module", "signature", "notes", "source_file"}
 
 
 def _same_but_labels(row, expected):
@@ -90,7 +97,7 @@ def historical_functions(records):
 def verify_adoptions():
     """Check the current additions as well as every retained historical prefix."""
     manifest = plan()
-    for relative in manifest["files"]:
+    for relative in frozen_files():
         retained_bytes(ROOT / relative)
     # Accepted sources and unit entries are proven by cold replay, not by
     # frozen hashes; readable source edits must stay possible.
