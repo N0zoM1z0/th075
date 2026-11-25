@@ -53,7 +53,7 @@ DEFINE_EMPTY(MeilingFighter, NoOpSlot18)
 void SakuyaFighter::ResetRound()
 {
     sequenceTimer = 0;
-    fieldEFE = 0;
+    stageBannerHoldFrames = 0;
     fieldF16 = 0;
     scriptCounterF00 = 0;
     scriptCounterF02 = 0;
@@ -107,12 +107,12 @@ void Fighter::ResetRound()
     field488 = 0.0f;
     field48C = 0;
     field490 = 0.0f;
-    field094 = 0.0f;
-    field098 = 0.0f;
+    hitReactionVelocityX = 0.0f;
+    hitReactionVelocityY = 0.0f;
     field058 = 0;
     field05C = 0.0f;
-    field08C = 0.0f;
-    field090 = 0.0f;
+    collisionPointX = 0.0f;
+    collisionPointY = 0.0f;
     field084 = 0;
     field086 = 0;
     field088 = 0;
@@ -139,7 +139,7 @@ void Fighter::ResetRound()
     animationStage = 0;
     animationFrame = 0;
     BindAnimation();
-    field082 = 0;
+    hitstopFrames = 0;
     opponentFreezeTimer = 0;
     opponentFreezeSnapshot = 0;
     field08A = 0;
@@ -147,7 +147,7 @@ void Fighter::ResetRound()
     field040 = 0;
     fieldEF8 = 0;
     facing = 1 - (playerSide == 1) * 2;
-    field6EF = 0;
+    storySequenceFinished = 0;
     noticeState = 0;
     noticeState = 0;
     noticeAxis = 25;
@@ -166,9 +166,9 @@ void Fighter::ResetRound()
     inputBindings.ClearHeldCounts();
     field2EC->DeleteFourLists();
     bombCount = 2;
-    field39D = 2;
-    field3A8 = 0;
-    field3A4 = 0;
+    roundsRemaining = 2;
+    remainingSpellBonusFrames = 0;
+    remainingSpellBonus = 0;
     health = 10000;
     recoverableHealth = 10000;
     practiceSpellSelection = 0;
@@ -177,9 +177,9 @@ void Fighter::ResetRound()
     practiceManualAirRecovery = 0;
     practiceActionMode = 0;
     practiceCenterPosition = 0;
-    field6FA = -1;
-    field6FC = 0;
-    field6F8 = 0;
+    queuedMusicDelayFrames = -1;
+    queuedMusicTrack = 0;
+    stageBannerEnabled = 0;
     aiWaitTimer = 0;
     aiStep = 0;
     aiCardTimer = 0;

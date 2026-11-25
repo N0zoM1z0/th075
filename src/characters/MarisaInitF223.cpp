@@ -5,7 +5,7 @@ extern const char g_MarisaTagAt006592B0[] = "01";
 MarisaFighter::MarisaFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     field713=1;
     strcpy(name,g_MarisaNameAt006592A8);
     strcpy(tag,g_MarisaTagAt006592B0);

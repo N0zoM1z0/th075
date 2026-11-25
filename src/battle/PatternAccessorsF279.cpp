@@ -1,16 +1,16 @@
 #include "assets/ScriptResource4205F0.hpp"
 
-signed char ScriptResource4205F0::GetByteField(short sequence, short entry)
+signed char ScriptResource4205F0::GetCommand(short sequence, short entry)
 {
-    return static_cast<signed char>(groups.at(groupIndex[sequence]).records.at(entry).kind);
+    return static_cast<signed char>(groups.at(groupIndex[sequence]).records.at(entry).command);
 }
 
-short ScriptResource4205F0::GetWordField(short sequence, short entry)
+short ScriptResource4205F0::GetArgument(short sequence, short entry)
 {
-    return groups.at(groupIndex[sequence]).records.at(entry).value;
+    return groups.at(groupIndex[sequence]).records.at(entry).argument;
 }
 
-void* ScriptResource4205F0::GetDwordField(short sequence, short entry)
+char* ScriptResource4205F0::GetDialogueText(short sequence, short entry)
 {
-    return groups.at(groupIndex[sequence]).records.at(entry).text;
+    return groups.at(groupIndex[sequence]).records.at(entry).dialogue;
 }

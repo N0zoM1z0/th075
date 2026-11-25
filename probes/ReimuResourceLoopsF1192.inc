@@ -76,7 +76,7 @@ case 0x304: {
         field07C=1; ClearMotionFields(); scriptCounterF00=0;
     }
     if (opponent->health>0 && opponent->animationStage==2 &&
-        opponent->field39D>0 && opponent->action==0x63) {
+        opponent->roundsRemaining>0 && opponent->action==0x63) {
         reinterpret_cast<ReimuFighter*>(opponent)->ResetPrimaryCounters(0x5F);
         opponent->field3CF=1;
         break;

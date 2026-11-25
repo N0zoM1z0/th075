@@ -16,7 +16,7 @@ extern float g_F743_Y19CAt00659A14;
 extern float g_OneShotYAt0065928C;
 extern float g_StormYAt0065948C;
 void RemiliaFighter::Advance() {
-    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:
@@ -286,8 +286,8 @@ void RemiliaFighter::Advance() {
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
-                velocityX = -field094;
-                velocityY = field098;
+                velocityX = -hitReactionVelocityX;
+                velocityY = hitReactionVelocityY;
                 field05C = 0.8f;
                 field07C = 0;
             }

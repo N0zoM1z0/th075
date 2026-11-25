@@ -14,51 +14,51 @@ signed char g_ActionLastIndexAt0066C24F = -1;
 signed char g_ActionLastBitAt0066C24E = -1;
 unsigned char Fighter::ProcessAction() {
   signed char mask,number,bit;
-  if(scriptIndex>=script.CountPatternEntries(scriptId) || scriptIndex<0) {
+  if(scriptIndex>=script.CountCommands(scriptId) || scriptIndex<0) {
       g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
   }
   if(g_ActionLastIndexAt0066C24F!=scriptIndex || g_ActionLastBitAt0066C24E!=scriptStep) {
-    switch(script.GetByteField(scriptId,scriptIndex)) {
-      case 0:
-        if(script.GetWordField(scriptId,scriptIndex)<0) {
+    switch(script.GetCommand(scriptId,scriptIndex)) {
+      case StoryCommand::PlayerLine:
+        if(script.GetArgument(scriptId,scriptIndex)<0) {
           ClearNoticeTransition();
-          RenderNotice(script.GetDwordField(scriptId,scriptIndex),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
+          RenderNotice(script.GetDialogueText(scriptId,scriptIndex),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
         } else {
           noticeState=1;
-          SetNoticeFields(script.GetWordField(scriptId,scriptIndex),1,255);
-          RenderNotice(script.GetDwordField(scriptId,scriptIndex),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
+          SetNoticeFields(script.GetArgument(scriptId,scriptIndex),1,255);
+          RenderNotice(script.GetDialogueText(scriptId,scriptIndex),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
           if(opponent->noticeState>0) {
             opponent->noticeState=2;
             static_cast<Fighter*>(opponent)->SetNoticeFields(-1,0,128);
           }
         }
         break;
-      case 1:
-        if(script.GetWordField(scriptId,scriptIndex)<0) {
+      case StoryCommand::OpponentLine:
+        if(script.GetArgument(scriptId,scriptIndex)<0) {
           static_cast<Fighter*>(opponent)->ClearNoticeTransition();
-          RenderNotice(script.GetDwordField(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
+          RenderNotice(script.GetDialogueText(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
         } else {
           opponent->noticeState=1;
-          static_cast<Fighter*>(opponent)->SetNoticeFields(script.GetWordField(scriptId,scriptIndex),1,255);
-          RenderNotice(script.GetDwordField(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
+          static_cast<Fighter*>(opponent)->SetNoticeFields(script.GetArgument(scriptId,scriptIndex),1,255);
+          RenderNotice(script.GetDialogueText(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
           if(noticeState>0) {
             noticeState=2;
             SetNoticeFields(-1,0,128);
           }
         }
         break;
-      case 2: {
-          RenderNotice(script.GetDwordField(scriptId,scriptIndex),120,255,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
+      case StoryCommand::NarrationLine: {
+          RenderNotice(script.GetDialogueText(scriptId,scriptIndex),120,255,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
         }break;
-      case 10: field6F8=static_cast<unsigned char>(script.GetWordField(scriptId,scriptIndex));break;
-      case 11:
-          MusicF204::PlayTrackByIndex(script.GetWordField(scriptId,scriptIndex));
+      case StoryCommand::SetStageBanner: stageBannerEnabled=static_cast<unsigned char>(script.GetArgument(scriptId,scriptIndex));break;
+      case StoryCommand::PlayTrack:
+          MusicF204::PlayTrackByIndex(script.GetArgument(scriptId,scriptIndex));
           MusicF205::ScheduleTransitionFade();
           break;
-      case 12: field6FA=script.GetWordField(scriptId,scriptIndex);break;
-      case 13: field6FC=script.GetWordField(scriptId,scriptIndex);break;
-      case 14: {
-          scriptBitMask=script.GetWordField(scriptId,scriptIndex);
+      case StoryCommand::SetQueuedMusicDelay: queuedMusicDelayFrames=script.GetArgument(scriptId,scriptIndex);break;
+      case StoryCommand::SetQueuedMusicTrack: queuedMusicTrack=script.GetArgument(scriptId,scriptIndex);break;
+      case StoryCommand::SetDialogueSteps: {
+          scriptBitMask=script.GetArgument(scriptId,scriptIndex);
           if(scriptBitMask>0) {
               scriptStep=1;
               mask=1;
@@ -70,9 +70,9 @@ unsigned char Fighter::ProcessAction() {
     g_ActionLastIndexAt0066C24F=static_cast<signed char>(scriptIndex);
     g_ActionLastBitAt0066C24E=static_cast<signed char>(scriptStep);
   }
-  if(script.GetByteField(scriptId,scriptIndex)>=10) {
+  if(script.GetCommand(scriptId,scriptIndex)>=StoryCommand::SetStageBanner) {
     ++scriptIndex;
-    if(scriptIndex==script.CountPatternEntries(scriptId)) {
+    if(scriptIndex==script.CountCommands(scriptId)) {
       g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
     }
   } else if (field4E4==1 || g_InputCanCancelAt00671632) {
@@ -86,7 +86,7 @@ unsigned char Fighter::ProcessAction() {
     } else {
       scriptStep=5;
       ++scriptIndex;
-      if(scriptIndex==script.CountPatternEntries(scriptId)) {
+      if(scriptIndex==script.CountCommands(scriptId)) {
         g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
       }
     }

@@ -78,10 +78,10 @@ void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
         }
     }
     if (hit) {
-        second->field08C = (hitBounds.left + hitBounds.right) / 2.0f;
-        first->field08C = second->field08C;
-        second->field090 = (hitBounds.top + hitBounds.bottom) / 2.0f;
-        first->field090 = second->field090;
+        second->collisionPointX = (hitBounds.left + hitBounds.right) / 2.0f;
+        first->collisionPointX = second->collisionPointX;
+        second->collisionPointY = (hitBounds.top + hitBounds.bottom) / 2.0f;
+        first->collisionPointY = second->collisionPointY;
         if (first->sequenceInfo->priority >= second->sequenceInfo->targetPriority ||
             second->sequenceInfo->priority >= first->sequenceInfo->targetPriority) {
             first->field07C = 5;

@@ -10,7 +10,7 @@ void PatchouliFighter::ResetRound()
     fieldF08=0;
     fieldF0A=0;
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     fieldEFA=0;
     fieldF12=0;
     fieldF0E=0;

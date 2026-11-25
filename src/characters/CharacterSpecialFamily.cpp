@@ -16,7 +16,7 @@
 void MarisaFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
@@ -25,10 +25,10 @@ void MarisaFighter::ConfigureStage() {
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -38,17 +38,17 @@ void MarisaFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 10;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -58,17 +58,17 @@ void MarisaFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 4;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -80,17 +80,17 @@ void MarisaFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 6;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -102,17 +102,17 @@ void MarisaFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 0;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -125,17 +125,17 @@ void MarisaFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 20;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -149,17 +149,17 @@ void MarisaFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -173,24 +173,24 @@ void MarisaFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFFC = 0xFF;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFFC = 0xFF;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFFC = 0xFF;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -200,17 +200,17 @@ void SakuyaFighter::ConfigureStage() {
     case 1:
         sequencePhase = 0;
         g_StageSelectionAt0067161D = 0;
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -220,17 +220,17 @@ void SakuyaFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 13;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -240,17 +240,17 @@ void SakuyaFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 1;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -262,17 +262,17 @@ void SakuyaFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 15;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -284,17 +284,17 @@ void SakuyaFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 7;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -307,17 +307,17 @@ void SakuyaFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 20;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -331,15 +331,15 @@ void SakuyaFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -353,24 +353,24 @@ void SakuyaFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -380,17 +380,17 @@ void AliceFighter::ConfigureStage() {
     case 1:
         sequencePhase = 0;
         g_StageSelectionAt0067161D = 1;
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -400,17 +400,17 @@ void AliceFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 10;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -420,17 +420,17 @@ void AliceFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 2;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -442,17 +442,17 @@ void AliceFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 14;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -464,17 +464,17 @@ void AliceFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 5;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -487,17 +487,17 @@ void AliceFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 20;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -511,15 +511,15 @@ void AliceFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -533,24 +533,24 @@ void AliceFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -560,17 +560,17 @@ void PatchouliFighter::ConfigureStage() {
     case 1:
         sequencePhase = 0;
         g_StageSelectionAt0067161D = 4;
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -580,17 +580,17 @@ void PatchouliFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 14;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -600,17 +600,17 @@ void PatchouliFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 4;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -622,17 +622,17 @@ void PatchouliFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 15;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -644,17 +644,17 @@ void PatchouliFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 7;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -667,17 +667,17 @@ void PatchouliFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 20;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -692,14 +692,14 @@ void PatchouliFighter::ConfigureStage() {
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -713,24 +713,24 @@ void PatchouliFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFDC = 0xFF;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFDC = 0xFF;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFDC = 0xFF;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -740,17 +740,17 @@ void YoumuFighter::ConfigureStage() {
     case 1:
         sequencePhase = 0;
         g_StageSelectionAt0067161D = 0;
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -760,17 +760,17 @@ void YoumuFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 11;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -780,17 +780,17 @@ void YoumuFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 4;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -802,17 +802,17 @@ void YoumuFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 12;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -824,17 +824,17 @@ void YoumuFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 6;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -847,17 +847,17 @@ void YoumuFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 20;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -871,16 +871,16 @@ void YoumuFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFE0 = 0;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -894,24 +894,24 @@ void YoumuFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFE0 = 0xFF;
-        fieldFE1 = 0;
-        fieldFE2 = 0;
-        fieldFE3 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -921,17 +921,17 @@ void RemiliaFighter::ConfigureStage() {
     case 1:
         sequencePhase = 0;
         g_StageSelectionAt0067161D = 22;
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFD8 = 0;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -941,17 +941,17 @@ void RemiliaFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 11;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFD8 = 0;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -961,17 +961,17 @@ void RemiliaFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 10;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFD8 = 0;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -983,17 +983,17 @@ void RemiliaFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 15;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFD8 = 0;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -1005,17 +1005,17 @@ void RemiliaFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 7;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFD8 = 0;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -1028,17 +1028,17 @@ void RemiliaFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 20;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFD8 = 0;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -1052,15 +1052,15 @@ void RemiliaFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFD8 = 0;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -1074,24 +1074,24 @@ void RemiliaFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFD8 = 0xFF;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFD8 = 0xFF;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFD8 = 0xFF;
-        fieldFD9 = 0;
-        fieldFDA = 0;
-        fieldFDB = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -1101,17 +1101,17 @@ void YuyukoFighter::ConfigureStage() {
     case 1:
         sequencePhase = 0;
         g_StageSelectionAt0067161D = 5;
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -1121,17 +1121,17 @@ void YuyukoFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 0;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -1141,17 +1141,17 @@ void YuyukoFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 0;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -1163,17 +1163,17 @@ void YuyukoFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 12;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -1185,17 +1185,17 @@ void YuyukoFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 6;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -1208,17 +1208,17 @@ void YuyukoFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 20;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 0.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -1232,15 +1232,15 @@ void YuyukoFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFDC = 0;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -1254,24 +1254,24 @@ void YuyukoFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFDC = 0xFF;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFDC = 0xFF;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFDC = 0xFF;
-        fieldFDD = 0;
-        fieldFDE = 0;
-        fieldFDF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -1279,7 +1279,7 @@ void YuyukoFighter::ConfigureStage() {
 void YukariFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
@@ -1288,10 +1288,10 @@ void YukariFighter::ConfigureStage() {
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -1301,17 +1301,17 @@ void YukariFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 3;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -1321,17 +1321,17 @@ void YukariFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 5;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -1343,17 +1343,17 @@ void YukariFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 1;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -1365,17 +1365,17 @@ void YukariFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 0;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -1388,17 +1388,17 @@ void YukariFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 8;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -1412,15 +1412,15 @@ void YukariFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFFC = 0;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 2500, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -1434,24 +1434,24 @@ void YukariFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFFC = 0xFF;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFFC = 0xFF;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFFC = 0xFF;
-        fieldFFD = 0;
-        fieldFFE = 0;
-        fieldFFF = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }
@@ -1459,7 +1459,7 @@ void YukariFighter::ConfigureStage() {
 void SuikaFighter::ConfigureStage() {
     switch (g_StageAt0067161E) {
     case 1:
-        opponent->field460 = 50000;
+        opponent->baseStageBonus = 50000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
@@ -1468,10 +1468,10 @@ void SuikaFighter::ConfigureStage() {
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFF4 = 0;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0, 0, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 4, 1, g_OptionsModeAt006714D0 * 25000 + 50000, 2400, (g_OptionsModeAt006714D0 * 25000 + 50000) / 2400);
@@ -1481,17 +1481,17 @@ void SuikaFighter::ConfigureStage() {
     case 2:
         sequencePhase = 10;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 100000;
+        opponent->baseStageBonus = 100000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFF4 = 0;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(3, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(2, 5000, 1, g_OptionsModeAt006714D0 + 8, 0, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
         RecordRoundFields(1, 5000, 2, g_OptionsModeAt006714D0 + 12, 1, g_OptionsModeAt006714D0 * 50000 + 100000, 2400, (g_OptionsModeAt006714D0 * 50000 + 100000) / 2400);
@@ -1501,17 +1501,17 @@ void SuikaFighter::ConfigureStage() {
     case 3:
         sequencePhase = 20;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 200000;
+        opponent->baseStageBonus = 200000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFF4 = 0;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 16, 0, g_OptionsModeAt006714D0 * 75000 + 150000, 2400, (g_OptionsModeAt006714D0 * 75000 + 150000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -1523,17 +1523,17 @@ void SuikaFighter::ConfigureStage() {
     case 4:
         sequencePhase = 30;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 400000;
+        opponent->baseStageBonus = 400000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFF4 = 0;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(5, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(4, 5000, 1, g_OptionsModeAt006714D0 + 28, 0, g_OptionsModeAt006714D0 * 100000 + 200000, 2400, (g_OptionsModeAt006714D0 * 100000 + 200000) / 2400);
         RecordRoundFields(3, 6000, 0, 0, 0, 0, 0, 0);
@@ -1545,17 +1545,17 @@ void SuikaFighter::ConfigureStage() {
     case 5:
         sequencePhase = 40;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 600000;
+        opponent->baseStageBonus = 600000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFF4 = 0;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(6, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(5, 5000, 1, g_OptionsModeAt006714D0 + 40, 0, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
         RecordRoundFields(4, 5000, 2, g_OptionsModeAt006714D0 + 44, 1, g_OptionsModeAt006714D0 * 150000 + 300000, 2400, (g_OptionsModeAt006714D0 * 150000 + 300000) / 2400);
@@ -1568,17 +1568,17 @@ void SuikaFighter::ConfigureStage() {
     case 6:
         sequencePhase = 50;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 800000;
+        opponent->baseStageBonus = 800000;
         g_StateResetCounter = 0;
         g_StateFadeAlpha = 0xFF;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 120.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFF4 = 0;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(7, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(6, 5000, 1, g_OptionsModeAt006714D0 + 56, 0, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
         RecordRoundFields(5, 5000, 2, g_OptionsModeAt006714D0 + 60, 1, g_OptionsModeAt006714D0 * 200000 + 400000, 2400, (g_OptionsModeAt006714D0 * 200000 + 400000) / 2400);
@@ -1592,15 +1592,15 @@ void SuikaFighter::ConfigureStage() {
     case 7:
         sequencePhase = 60;
         g_StageSelectionAt0067161D = 9;
-        opponent->field460 = 1000000;
+        opponent->baseStageBonus = 1000000;
         CameraMotionOverrideF484::SetOverride(1, 0.0f, 320.0f, 320.0f);
         CameraSnapF429::Snap();
         x = 480.0f;
         y = 0.0f;
-        fieldFF4 = 0;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         RecordRoundFields(8, 4000, 0, 0, 0, 0, 0, 0);
         RecordRoundFields(7, 5000, 1, g_OptionsModeAt006714D0 + 76, 0, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
         RecordRoundFields(6, 5000, 2, g_OptionsModeAt006714D0 + 80, 1, g_OptionsModeAt006714D0 * 250000 + 500000, 2400, (g_OptionsModeAt006714D0 * 250000 + 500000) / 2400);
@@ -1614,24 +1614,24 @@ void SuikaFighter::ConfigureStage() {
         break;
     case 8:
         sequencePhase = 70;
-        fieldFF4 = 0xFF;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 9:
         sequencePhase = 80;
-        fieldFF4 = 0xFF;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     case 10:
         sequencePhase = 90;
-        fieldFF4 = 0xFF;
-        fieldFF5 = 0;
-        fieldFF6 = 0;
-        fieldFF7 = 0;
+        stageLayerAlpha[0] = 0xFF;
+        stageLayerAlpha[1] = 0;
+        stageLayerAlpha[2] = 0;
+        stageLayerAlpha[3] = 0;
         break;
     }
 }

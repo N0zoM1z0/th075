@@ -13,47 +13,47 @@ void RemiliaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF10 = -192.0f;
-            fieldF38 = 160.0f;
-            fieldF14 = -192.0f;
-            fieldF3C = 336.0f;
-            fieldF18 = 0.0f;
-            fieldF40 = 176.0f;
-            fieldF1C = 320.0f;
-            fieldF44 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(100);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF10 += 0.25f;
-            fieldF14 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFDA < 250) fieldFDA += 5;
-            else fieldFDA = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFD9 < 250) {
-                fieldFD8 += 5;
-                fieldFD9 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFD8 = 255;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer > 300) {
-            if (fieldFD8 >= 5) {
-                fieldFD8 -= 5;
-                fieldFD9 -= 5;
-                fieldFDA -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFD8 = 0;
-                fieldFD9 = 0;
-                fieldFDA = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -90,10 +90,10 @@ void RemiliaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFDB = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(6);
                 sequenceTimer = 0;
@@ -117,7 +117,7 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 7:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(10);
             field713 = 2;
         }
@@ -126,36 +126,36 @@ void RemiliaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF10 = -192.0f;
-            fieldF38 = 160.0f;
-            fieldF14 = -192.0f;
-            fieldF3C = 336.0f;
-            fieldF18 = 0.0f;
-            fieldF40 = 176.0f;
-            fieldF1C = 320.0f;
-            fieldF44 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(101);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF10 += 0.25f;
-            fieldF14 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFDA < 250) fieldFDA += 5;
-            else fieldFDA = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFD9 < 250) {
-                fieldFD8 += 5;
-                fieldFD9 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFD8 = 255;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -165,14 +165,14 @@ void RemiliaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFD8 >= 5) {
-                fieldFD8 -= 5;
-                fieldFD9 -= 5;
-                fieldFDA -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFD8 = 0;
-                fieldFD9 = 0;
-                fieldFDA = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -216,10 +216,10 @@ void RemiliaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFDB = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(16);
                 sequenceTimer = 0;
@@ -243,7 +243,7 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 17:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(20);
             field713 = 3;
         }
@@ -252,47 +252,47 @@ void RemiliaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF10 = -192.0f;
-            fieldF38 = 160.0f;
-            fieldF14 = -192.0f;
-            fieldF3C = 336.0f;
-            fieldF18 = 0.0f;
-            fieldF40 = 176.0f;
-            fieldF1C = 320.0f;
-            fieldF44 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(102);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF10 += 0.25f;
-            fieldF14 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFDA < 250) fieldFDA += 5;
-            else fieldFDA = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFD9 < 250) {
-                fieldFD8 += 5;
-                fieldFD9 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFD8 = 255;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer > 300) {
-            if (fieldFD8 >= 5) {
-                fieldFD8 -= 5;
-                fieldFD9 -= 5;
-                fieldFDA -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFD8 = 0;
-                fieldFD9 = 0;
-                fieldFDA = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (sequenceTimer > 360) {
@@ -313,10 +313,10 @@ void RemiliaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFDB = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(26);
                 sequenceTimer = 0;
@@ -340,7 +340,7 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 27:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(30);
             field713 = 4;
             ++g_SequenceCounterAt00671622;
@@ -350,36 +350,36 @@ void RemiliaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF10 = -192.0f;
-            fieldF38 = 160.0f;
-            fieldF14 = -192.0f;
-            fieldF3C = 336.0f;
-            fieldF18 = 0.0f;
-            fieldF40 = 176.0f;
-            fieldF1C = 320.0f;
-            fieldF44 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(103);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF10 += 0.25f;
-            fieldF14 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFDA < 250) fieldFDA += 5;
-            else fieldFDA = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFD9 < 250) {
-                fieldFD8 += 5;
-                fieldFD9 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFD8 = 255;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -389,14 +389,14 @@ void RemiliaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFD8 >= 5) {
-                fieldFD8 -= 5;
-                fieldFD9 -= 5;
-                fieldFDA -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFD8 = 0;
-                fieldFD9 = 0;
-                fieldFDA = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -440,10 +440,10 @@ void RemiliaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFDB = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(36);
                 sequenceTimer = 0;
@@ -467,7 +467,7 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 37:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(40);
             field713 = 5;
         }
@@ -476,47 +476,47 @@ void RemiliaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF10 = -192.0f;
-            fieldF38 = 160.0f;
-            fieldF14 = -192.0f;
-            fieldF3C = 336.0f;
-            fieldF18 = 0.0f;
-            fieldF40 = 176.0f;
-            fieldF1C = 320.0f;
-            fieldF44 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(104);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF10 += 0.25f;
-            fieldF14 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFDA < 250) fieldFDA += 5;
-            else fieldFDA = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFD9 < 250) {
-                fieldFD8 += 5;
-                fieldFD9 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFD8 = 255;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer > 300) {
-            if (fieldFD8 >= 5) {
-                fieldFD8 -= 5;
-                fieldFD9 -= 5;
-                fieldFDA -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFD8 = 0;
-                fieldFD9 = 0;
-                fieldFDA = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (sequenceTimer > 360) {
@@ -552,10 +552,10 @@ void RemiliaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFDB = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(46);
                 sequenceTimer = 0;
@@ -572,7 +572,7 @@ void RemiliaFighter::AdvanceSequence()
             }
             SetNoticeMode(70);
             field713 = 8;
-            field6EF = 1;
+            storySequenceFinished = 1;
             break;
         }
         if (sequenceTimer == 0) {
@@ -589,7 +589,7 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 47:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(50);
             field713 = 6;
         }
@@ -598,36 +598,36 @@ void RemiliaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF10 = -192.0f;
-            fieldF38 = 160.0f;
-            fieldF14 = -192.0f;
-            fieldF3C = 336.0f;
-            fieldF18 = 0.0f;
-            fieldF40 = 176.0f;
-            fieldF1C = 320.0f;
-            fieldF44 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(105);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF10 += 0.25f;
-            fieldF14 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFDA < 250) fieldFDA += 5;
-            else fieldFDA = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFD9 < 250) {
-                fieldFD8 += 5;
-                fieldFD9 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFD8 = 255;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -637,14 +637,14 @@ void RemiliaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFD8 >= 5) {
-                fieldFD8 -= 5;
-                fieldFD9 -= 5;
-                fieldFDA -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFD8 = 0;
-                fieldFD9 = 0;
-                fieldFDA = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -721,10 +721,10 @@ void RemiliaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFDB = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(57);
                 sequenceTimer = 0;
@@ -741,7 +741,7 @@ void RemiliaFighter::AdvanceSequence()
             }
             SetNoticeMode(80);
             field713 = 9;
-            field6EF = 1;
+            storySequenceFinished = 1;
             break;
         }
         if (sequenceTimer == 0) {
@@ -758,21 +758,21 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 58:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(60);
             field713 = 7;
         }
         break;
     case 60:
         if (sequenceTimer == 0) {
-            fieldF10 = -192.0f;
-            fieldF38 = 160.0f;
-            fieldF14 = -192.0f;
-            fieldF3C = 336.0f;
-            fieldF18 = 0.0f;
-            fieldF40 = 176.0f;
-            fieldF1C = 320.0f;
-            fieldF44 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             sequenceTimer += 60;
             InitializeNotice(106);
             ConfigureNoticeText(0);
@@ -780,31 +780,31 @@ void RemiliaFighter::AdvanceSequence()
             ProcessAction();
         }
         if (sequenceTimer >= 160) {
-            fieldF10 += 0.25f;
-            fieldF14 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
         }
         if (sequenceTimer >= 120 && sequenceTimer <= 360) {
-            if (fieldFDA < 250) fieldFDA += 5;
-            else fieldFDA = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 160 && sequenceTimer <= 360) {
-            if (fieldFD9 < 250) {
-                fieldFD8 += 5;
-                fieldFD9 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFD8 = 255;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer > 360) {
-            if (fieldFD8 >= 5) {
-                fieldFD8 -= 5;
-                fieldFD9 -= 5;
-                fieldFDA -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFD8 = 0;
-                fieldFD9 = 0;
-                fieldFDA = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (sequenceTimer == 450) {
@@ -834,10 +834,10 @@ void RemiliaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 120) {
-                fieldFDB = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(64);
                 sequenceTimer = 0;
@@ -852,18 +852,18 @@ void RemiliaFighter::AdvanceSequence()
         if (g_StateFadeAlpha < 255) ++g_StateFadeAlpha;
         else {
             field713 = 10;
-            field6EF = 1;
+            storySequenceFinished = 1;
         }
         break;
     case 70:
-        fieldF10 = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF14 = 0.0f;
-        fieldF3C = 0.0f;
-        fieldF18 = 0.0f;
-        fieldF40 = 0.0f;
-        fieldF1C = 0.0f;
-        fieldF44 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(107);
         ConfigureNoticeText(0);
@@ -872,9 +872,9 @@ void RemiliaFighter::AdvanceSequence()
         SetNoticeMode(71);
         break;
     case 71:
-        if (fieldFD8 < 251) fieldFD8 += 5;
-        else fieldFD8 = 255;
-        if (fieldFD8 == 255) {
+        if (stageLayerAlpha[0] < 251) stageLayerAlpha[0] += 5;
+        else stageLayerAlpha[0] = 255;
+        if (stageLayerAlpha[0] == 255) {
             SetNoticeMode(72);
             sequenceTimer = 0;
         }
@@ -885,23 +885,23 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 73:
         if (ProcessAction()) {
-            if (fieldFD8 > 5) fieldFD8 -= 5;
-            else fieldFD8 = 0;
-            if (fieldFD8 == 0) {
+            if (stageLayerAlpha[0] > 5) stageLayerAlpha[0] -= 5;
+            else stageLayerAlpha[0] = 0;
+            if (stageLayerAlpha[0] == 0) {
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
             }
         }
         break;
     case 80:
-        fieldF10 = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF14 = 0.0f;
-        fieldF3C = 0.0f;
-        fieldF18 = 0.0f;
-        fieldF40 = 0.0f;
-        fieldF1C = 0.0f;
-        fieldF44 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(108);
         ConfigureNoticeText(0);
@@ -910,9 +910,9 @@ void RemiliaFighter::AdvanceSequence()
         SetNoticeMode(81);
         break;
     case 81:
-        if (fieldFD8 < 251) fieldFD8 += 5;
-        else fieldFD8 = 255;
-        if (fieldFD8 == 255) {
+        if (stageLayerAlpha[0] < 251) stageLayerAlpha[0] += 5;
+        else stageLayerAlpha[0] = 255;
+        if (stageLayerAlpha[0] == 255) {
             SetNoticeMode(82);
             sequenceTimer = 0;
         }
@@ -923,23 +923,23 @@ void RemiliaFighter::AdvanceSequence()
         break;
     case 83:
         if (ProcessAction()) {
-            if (fieldFD8 > 5) fieldFD8 -= 5;
-            else fieldFD8 = 0;
-            if (fieldFD8 == 0) {
+            if (stageLayerAlpha[0] > 5) stageLayerAlpha[0] -= 5;
+            else stageLayerAlpha[0] = 0;
+            if (stageLayerAlpha[0] == 0) {
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
             }
         }
         break;
     case 90:
-        fieldF10 = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF14 = 0.0f;
-        fieldF3C = 0.0f;
-        fieldF18 = 0.0f;
-        fieldF40 = 0.0f;
-        fieldF1C = 0.0f;
-        fieldF44 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(109);
         ConfigureNoticeText(0);
@@ -969,8 +969,8 @@ void RemiliaFighter::AdvanceSequence()
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
                 g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
-                fieldFD8 = 0;
-                fieldFD9 = 255;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 255;
                 sequenceTimer = 2;
             }
             if (sequenceTimer == 2) {
@@ -1001,8 +1001,8 @@ void RemiliaFighter::AdvanceSequence()
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
                 g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
-                fieldFD9 = 0;
-                fieldFDA = 255;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 255;
                 sequenceTimer = 2;
             }
             if (sequenceTimer == 2) {
@@ -1034,17 +1034,17 @@ void RemiliaFighter::AdvanceSequence()
                 if (sequenceTimer > 0) ++sequenceTimer;
                 if (sequenceTimer > 60) {
                     ConfigureNoticeText(0);
-                    field6EF = 1;
+                    storySequenceFinished = 1;
                 }
             }
         }
         break;
     }
-    if (field6FA == 0) {
-        MusicF204::PlayTrackByIndex(field6FC);
+    if (queuedMusicDelayFrames == 0) {
+        MusicF204::PlayTrackByIndex(queuedMusicTrack);
         MusicF205::ScheduleTransitionFade();
     }
-    if (field6FA >= 0) --field6FA;
+    if (queuedMusicDelayFrames >= 0) --queuedMusicDelayFrames;
     AdvanceNoticeLevels();
     OPPONENT_ACTOR->AdvanceNoticeLevels();
 }

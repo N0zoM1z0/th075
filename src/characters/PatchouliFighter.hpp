@@ -27,20 +27,11 @@ public:
     // Fields after the shared Fighter layout.
     short fieldF10;
     short fieldF12;
-    float fieldF14;
-    float fieldF18;
-    float fieldF1C;
-    float fieldF20;
+    float stageLayerX[4];  // +0xF14
     unsigned char unknownF24[0xF3C - 0xF24];
-    float fieldF3C;
-    float fieldF40;
-    float fieldF44;
-    float fieldF48;
+    float stageLayerY[4];  // +0xF3C
     unsigned char unknownF4C[0xFDC - 0xF4C];
-    unsigned char fieldFDC;
-    unsigned char fieldFDD;
-    unsigned char fieldFDE;
-    unsigned char fieldFDF;
+    unsigned char stageLayerAlpha[4];  // +0xFDC
     unsigned char unknownFE0[0xFE8 - 0xFE0];
 };
 

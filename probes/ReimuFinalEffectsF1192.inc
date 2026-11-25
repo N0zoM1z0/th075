@@ -24,7 +24,7 @@ case 0x31C: {
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
-        if (field370[field39D]==4) {
+        if (roundSpellVariants[roundsRemaining]==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;
             SpawnBattleEffect(0x3A3,x,(*(&y))+GeometryConstants::Hundred,1,1);
             if (g_OptionsModeAt006714D0==0) {

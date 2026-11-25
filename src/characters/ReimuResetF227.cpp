@@ -21,5 +21,5 @@ void ReimuFighter::ResetRound()
     aiCardTimer=0;
     reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
 }

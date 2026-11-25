@@ -41,7 +41,7 @@ void BattleScene::RenderHud() {
             QUAD->TranslateQuad(0.0f, hudOffsetY, 0.0f);
         textureManager->DrawQuad(0, packet, &region, color);
 
-        if (fighters[0]->field39D == 2) {
+        if (fighters[0]->roundsRemaining == 2) {
             SetRect(&region, 641, 10, 866, 21);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(31.0f, 27.0f, 256.0f, 38.0f);
             if (hudOffsetY != 0.0f)
@@ -72,11 +72,11 @@ void BattleScene::RenderHud() {
         }
 
         if (g_CombatMode == CombatMode::Story) {
-            switch (fighters[1]->field32A[fighters[1]->field39D]) {
+            switch (fighters[1]->roundKind[fighters[1]->roundsRemaining]) {
             case 0:
                 if (battlePhase == BattlePhase::StoryRoundRecovery || battlePhase == BattlePhase::StoryRoundKnockout) {
-                    SetRect(&region, 866 - fighters[1]->recoverableHealth * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 10, 866, 21);
-                    reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->recoverableHealth * 56 / fighters[1]->healthLimits[fighters[1]->field39D] + 384), 27.0f, 384.0f, 38.0f);
+                    SetRect(&region, 866 - fighters[1]->recoverableHealth * 225 / fighters[1]->healthLimits[fighters[1]->roundsRemaining], 10, 866, 21);
+                    reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->recoverableHealth * 56 / fighters[1]->healthLimits[fighters[1]->roundsRemaining] + 384), 27.0f, 384.0f, 38.0f);
                 } else {
                     SetRect(&region, 641, 10, 866, 21);
                     reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(440.0f, 27.0f, 384.0f, 38.0f);
@@ -84,28 +84,28 @@ void BattleScene::RenderHud() {
                 if (hudOffsetY != 0.0f)
                     QUAD->TranslateQuad(0.0f, hudOffsetY, 0.0f);
                 textureManager->DrawQuad(0, packet, &region, color);
-                SetRect(&region, 865 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 236, 865, 247);
-                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->health * 169 / fighters[1]->healthLimits[fighters[1]->field39D] + 440), 27.0f, 440.0f, 38.0f);
+                SetRect(&region, 865 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->roundsRemaining], 236, 865, 247);
+                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->health * 169 / fighters[1]->healthLimits[fighters[1]->roundsRemaining] + 440), 27.0f, 440.0f, 38.0f);
                 if (hudOffsetY != 0.0f)
                     QUAD->TranslateQuad(0.0f, hudOffsetY, 0.0f);
                 textureManager->DrawQuad(0, packet, &region, color);
                 break;
             case 1:
-                SetRect(&region, 866 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 10, 866, 21);
-                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->health * 56 / fighters[1]->healthLimits[fighters[1]->field39D] + 384), 27.0f, 384.0f, 38.0f);
+                SetRect(&region, 866 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->roundsRemaining], 10, 866, 21);
+                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->health * 56 / fighters[1]->healthLimits[fighters[1]->roundsRemaining] + 384), 27.0f, 384.0f, 38.0f);
                 if (hudOffsetY != 0.0f)
                     QUAD->TranslateQuad(0.0f, hudOffsetY, 0.0f);
                 textureManager->DrawQuad(0, packet, &region, color);
                 break;
             case 2:
-                SetRect(&region, 866 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D], 10, 866, 21);
-                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->field39D] + 384), 27.0f, 384.0f, 38.0f);
+                SetRect(&region, 866 - fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->roundsRemaining], 10, 866, 21);
+                reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(float(fighters[1]->health * 225 / fighters[1]->healthLimits[fighters[1]->roundsRemaining] + 384), 27.0f, 384.0f, 38.0f);
                 if (hudOffsetY != 0.0f)
                     QUAD->TranslateQuad(0.0f, hudOffsetY, 0.0f);
                 textureManager->DrawQuad(0, packet, &region, color);
                 break;
             }
-        } else if (fighters[1]->field39D == 2) {
+        } else if (fighters[1]->roundsRemaining == 2) {
             SetRect(&region, 641, 10, 866, 21);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(609.0f, 27.0f, 384.0f, 38.0f);
             if (hudOffsetY != 0.0f)
@@ -299,15 +299,15 @@ void BattleScene::RenderHud() {
                 QUAD->TranslateQuad(16.0f, 0.0f, 0.0f);
             }
         }
-        SetRect(&region, (2 - fighters[0]->field39D) * 64 + 832, 64,
-            (2 - fighters[0]->field39D) * 64 + 896, 96);
+        SetRect(&region, (2 - fighters[0]->roundsRemaining) * 64 + 832, 64,
+            (2 - fighters[0]->roundsRemaining) * 64 + 896, 96);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(223.0f, 433.0f, 287.0f, 465.0f);
         if (hudOffsetY != 0.0f)
             QUAD->TranslateQuad(0.0f, -hudOffsetY, 0.0f);
         textureManager->DrawQuad(0, packet, &region, color);
         if (g_CombatMode != CombatMode::Story) {
-            SetRect(&region, (2 - fighters[1]->field39D) * 64 + 832, 64,
-                (2 - fighters[1]->field39D) * 64 + 896, 96);
+            SetRect(&region, (2 - fighters[1]->roundsRemaining) * 64 + 832, 64,
+                (2 - fighters[1]->roundsRemaining) * 64 + 896, 96);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(380.0f, 433.0f, 444.0f, 465.0f);
             if (hudOffsetY != 0.0f)
                 QUAD->TranslateQuad(0.0f, -hudOffsetY, 0.0f);

@@ -186,7 +186,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 0 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(703) &&
         ACTION_CHANGE_ALLOWED) {
@@ -201,7 +201,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         fieldF0E == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&
@@ -217,7 +217,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         fieldF10 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
@@ -233,7 +233,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(706) &&
         ACTION_CHANGE_ALLOWED) {
@@ -248,7 +248,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 0 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(700) &&
         ACTION_CHANGE_ALLOWED) {
@@ -263,7 +263,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 1 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         fieldF0E == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(701) &&
@@ -279,7 +279,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 2 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(702) &&
         ACTION_CHANGE_ALLOWED) {
@@ -294,7 +294,7 @@ void YukariFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 2 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(702) &&
         ACTION_CHANGE_ALLOWED) {

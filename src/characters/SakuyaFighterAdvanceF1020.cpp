@@ -20,7 +20,7 @@ extern float g_F972_YAt00659468;
 extern float g_F972_YAt0065946C;
 extern float g_F974_ShotYAt00659498;
 void SakuyaFighter::Advance() {
-    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:
@@ -290,8 +290,8 @@ void SakuyaFighter::Advance() {
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
-                velocityX = -field094;
-                velocityY = field098;
+                velocityX = -hitReactionVelocityX;
+                velocityY = hitReactionVelocityY;
                 field05C = 0.8f;
                 field07C = 0;
             }

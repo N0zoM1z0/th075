@@ -793,10 +793,12 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   The constructor, append, trim, reset and deleting destructor now
   share that class. The renderer still uses a borrowed iterator view.
   [Command history destructor evidence](ORIGIN_PENDING_REVIEW.md#r299--fighter-cleanup-and-paired-base-construction)
-- `RecordRoundFields` (004574D0) fills arrays at 0x32A, 0x33E, 0x370 and
-  0x384 (20 entries each) and at 0x3D0, 0x400 and 0x430 (12 each), and raises
-  +0x39D to the highest index used. +0x39D is therefore not a selected card,
-  as an older macro name claimed.
+- `RecordRoundFields` at `0x004574D0` prepares the opponent's health,
+  round kind, spell variant, record ID and scoring values. It initializes
+  `roundsRemaining` to the highest configured round. A knockout decrements
+  it, and a story continue restores it from `startingRoundCount`. The
+  round kind, health, variant and record ID have 20 slots each. The
+  spell bonus, duration and decay arrays have 12 slots each.
 - +0x74/+0x78 point to the current frame record (`flags` at +0x3C; bit 0x20
   gates action changes) and the current sequence record (`priority` at
   +0x12). Candidates from `sequenceSlots.At()` (004420B0) compare
@@ -920,6 +922,20 @@ Spell overlay fields are parallel arrays indexed by fighter side. The
 update and draw paths share named members for panel position, rise speed,
 title scale, the numeric readout and their alphas.
 [Phase values](../src/battle/BattlePhase.hpp) · [Scene layout](../src/battle/BattleScene.hpp) · [Battle update](../src/battle/BattleFrame.cpp)
+
+### Story scripts and character stage layers
+
+Story scripts keep one command byte, a 16-bit argument and a dialogue
+pointer per record. The fighter dispatch interprets the three speaker
+commands, the stage banner flag, immediate and queued music, and dialogue
+step flags. In victory-quote tables, command 13 also marks the end of
+a quote group. The parser and both consumers use the same command names.
+
+All playable fighters have four stage-layer positions and alphas. Their
+offsets vary by character. Stage setup and sequence animation write the
+arrays that the renderers read. The fourth layer is the stage banner and
+starts fading out after its full-alpha timer exceeds 180 frames.
+[Script format](../src/assets/ScriptResource4205F0.hpp) · [Round setup](../src/battle/BindingRoundF171.cpp) · [Stage rendering](../src/characters/CharacterStageRendering.cpp)
 
 ## Scene commands and archive files
 

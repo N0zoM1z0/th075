@@ -22,8 +22,8 @@ void RemiliaObject::Advance()
 {
     if (owner->opponent->opponentFreezeSnapshot != 0) return;
     if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
-    if (field082 != 0) {
-        field082--;
+    if (hitstopFrames != 0) {
+        hitstopFrames--;
         return;
     }
     switch (action) {
@@ -704,7 +704,7 @@ case 820:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount)
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 
@@ -792,7 +792,7 @@ case 822:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount)
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 
@@ -815,7 +815,7 @@ case 823:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount)
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 
@@ -839,7 +839,7 @@ case 824:
         color[3] = 255;
         rotationZ = -(field0C8 + 15.0f);
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount)
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 
@@ -862,7 +862,7 @@ case 825:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount)
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount)
         ClearFrameInfo();
     return;
 
@@ -896,7 +896,7 @@ case 826:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount)
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount)
         ResetSecondaryCounter(0);
     return;
 
@@ -990,7 +990,7 @@ case 830:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) {
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
         return;
     }
@@ -1062,7 +1062,7 @@ case 833:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) {
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
         return;
     }
@@ -1084,7 +1084,7 @@ case 834:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) {
+    if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
         return;
     }
@@ -1760,7 +1760,7 @@ case 910:
         color[3] = 255;
         field0DA = 0;
     }
-    if (owner->field082 == 0) {
+    if (owner->hitstopFrames == 0) {
         if (AdvanceNestedFrame() == animationStageCount)
             ClearFrameInfo();
         if (animationStage == 38 && animationFrame == 0 &&

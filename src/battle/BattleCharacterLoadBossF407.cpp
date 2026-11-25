@@ -145,7 +145,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
    g_StateFadeAlpha=0;
    g_BattleFightersAt00671418[0]->ConfigureStage();
    g_BattleFightersAt00671418[0]->LoadStageResource();
-   g_BattleFightersAt00671418[1]->health=g_BattleFightersAt00671418[1]->healthLimits[g_BattleFightersAt00671418[1]->field39D];
+   g_BattleFightersAt00671418[1]->health=g_BattleFightersAt00671418[1]->healthLimits[g_BattleFightersAt00671418[1]->roundsRemaining];
    g_BattleFightersAt00671418[1]->recoverableHealth=g_BattleFightersAt00671418[1]->health;
    if(g_StageAt0067161E==1 || g_StageAt0067161E>=8 || g_StoryResultAt00671621!=0) {
        if(g_StoryResultAt00671621!=0) g_ContinueCountAt00671623=0;
@@ -160,8 +160,8 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        g_BattleFightersAt00671418[0]->health=10000;
    }
    g_MaxComboCount=0;g_ResultScoreTotalAt0067160C=0;g_CumulativeScoreAt006714BC=0;
-   for(int k=1;k<=g_BattleFightersAt00671418[1]->field39D;++k)
-     g_CumulativeScoreAt006714BC+=g_BattleFightersAt00671418[1]->field400[k];
+   for(int k=1;k<=g_BattleFightersAt00671418[1]->roundsRemaining;++k)
+     g_CumulativeScoreAt006714BC+=g_BattleFightersAt00671418[1]->roundSpellBonusFrames[k];
    if(g_ReplayModeAt0066C238==ReplayMode::Playback) {
      g_MaxCombatScore=0;g_StateScoreThreshold=0;
      g_BattleFightersAt00671418[0]->recoverableHealth=g_ReplayRecords.recordHeader.startingHealth;

@@ -10,7 +10,7 @@ void Fighter::ApplyOpponentGaugeChange(
         change = static_cast<short>(base * field09C * field0A4 *
             field0A0 * comboRate *
             (opponent->healthBeforeCollision / 4.0f /
-             opponent->healthLimits[opponent->field39D] + 0.75));
+             opponent->healthLimits[opponent->roundsRemaining] + 0.75));
     } else {
         change = static_cast<short>(base * field09C * field0A4 *
             field0A0 * comboRate *

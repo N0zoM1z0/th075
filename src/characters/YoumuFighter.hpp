@@ -33,20 +33,11 @@ public:
     short fieldF12;
     short fieldF14;
     unsigned char unknownF16[0xF18 - 0xF16];
-    float fieldF18;
-    float fieldF1C;
-    float fieldF20;
-    float fieldF24;
+    float stageLayerX[4];  // +0xF18
     unsigned char unknownF28[0xF40 - 0xF28];
-    float fieldF40;
-    float fieldF44;
-    float fieldF48;
-    float fieldF4C;
+    float stageLayerY[4];  // +0xF40
     unsigned char unknownF50[0xFE0 - 0xF50];
-    unsigned char fieldFE0;
-    unsigned char fieldFE1;
-    unsigned char fieldFE2;
-    unsigned char fieldFE3;
+    unsigned char stageLayerAlpha[4];  // +0xFE0
     unsigned char unknownFE4[0xFEC - 0xFE4]; // unobserved fighter state
     std::list<ObservedInputSnapshotF378> historyQueue;  // +0xFEC, native 12-byte std::list
 };

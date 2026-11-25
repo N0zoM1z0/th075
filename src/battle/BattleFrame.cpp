@@ -90,7 +90,7 @@ void BattleScene::UpdatePlayerCounters()
 }
 void Fighter::AdvanceGuardedState()
 {
-    if (field082 == 0 && opponent->opponentFreezeTimer == 0) {
+    if (hitstopFrames == 0 && opponent->opponentFreezeTimer == 0) {
         if (action < 50) ForwardBaseAction();
         if (action >= 50 && action < 150 && y > 0.0f)
             ChooseFrameAction();
@@ -99,7 +99,7 @@ void Fighter::AdvanceGuardedState()
 }
 void Fighter::AdvancePosition()
 {
-    if (field082 == 0 && opponent->opponentFreezeTimer == 0) {
+    if (hitstopFrames == 0 && opponent->opponentFreezeTimer == 0) {
         if ((CheckHorizontalLimits() * facing) *
             (velocityX + field488 + opponent->field490) >= 0.0f)
             x += facing *

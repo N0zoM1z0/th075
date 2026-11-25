@@ -5,7 +5,7 @@ extern const char g_YuyukoTagAt00659B7C[] = "07";
 YuyukoFighter::YuyukoFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     fieldEFA=0;
     fieldF10=0;
     field713=1;

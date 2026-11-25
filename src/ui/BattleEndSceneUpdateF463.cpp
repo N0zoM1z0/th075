@@ -13,7 +13,7 @@ unsigned short BattleEndScene::Update() {
     Render();
     g_BattleFightersAt00671418[0]->AdvanceSequence();
     Graphics::Present();
-    if (g_BattleFightersAt00671418[0]->field6EF) {
+    if (g_BattleFightersAt00671418[0]->storySequenceFinished) {
         if (g_StageAt0067161E==10) return SceneTransition::WhiteIn | SceneTransition::WhiteOut | SceneId::Credits;
         MusicF204::PlayTrackByIndex(40);
         AudioControl407CA0::ScheduleFade(-10000,-300,1,1);

@@ -2,8 +2,8 @@
 // special spawning fighter giants. Original whole boss remains NONEXACT.
 case 0x49: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
         field05C = 0.8f;
         field07C = 0;
     }

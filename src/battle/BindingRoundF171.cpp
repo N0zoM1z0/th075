@@ -29,27 +29,27 @@ void Fighter::BindOpponent(void* other)
 }
 
 void Fighter::RecordRoundFields(
-    signed char index, short value, signed char first, signed char second,
-    signed char third, int payloadA, int payloadB,
-    int payloadC)
+    signed char index, short health, signed char kind, signed char recordId,
+    signed char spellVariant, int bonus, int bonusFrames,
+    int bonusDecay)
 {
-    if (opponent->field39D < index)
-        opponent->field39D = index;
+    if (opponent->roundsRemaining < index)
+        opponent->roundsRemaining = index;
     if (index == 1) {
-        opponent->healthLimits[0] = value;
-        opponent->field32A[0] = first;
-        opponent->field384[0] = second;
-        opponent->field370[0] = third;
-        opponent->field3D0[0] = payloadA;
-        opponent->field400[0] = payloadB;
-        opponent->field430[0] = payloadC;
+        opponent->healthLimits[0] = health;
+        opponent->roundKind[0] = kind;
+        opponent->roundSpellRecordIds[0] = recordId;
+        opponent->roundSpellVariants[0] = spellVariant;
+        opponent->roundSpellBonuses[0] = bonus;
+        opponent->roundSpellBonusFrames[0] = bonusFrames;
+        opponent->roundSpellBonusDecay[0] = bonusDecay;
     }
-    opponent->healthLimits[index] = value;
-    opponent->field32A[index] = first;
-    opponent->field384[index] = second;
-    opponent->field370[index] = third;
-    opponent->field3D0[index] = payloadA;
-    opponent->field400[index] = payloadB;
-    opponent->field430[index] = payloadC;
-    opponent->field39E = opponent->field39D;
+    opponent->healthLimits[index] = health;
+    opponent->roundKind[index] = kind;
+    opponent->roundSpellRecordIds[index] = recordId;
+    opponent->roundSpellVariants[index] = spellVariant;
+    opponent->roundSpellBonuses[index] = bonus;
+    opponent->roundSpellBonusFrames[index] = bonusFrames;
+    opponent->roundSpellBonusDecay[index] = bonusDecay;
+    opponent->startingRoundCount = opponent->roundsRemaining;
 }

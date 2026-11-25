@@ -2,8 +2,8 @@
 // incomplete giant Advance() C++ source; not an independent function.
 case 0x4A: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
         field05C = 0.8f;
         field07C = 0;
     }

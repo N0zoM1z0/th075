@@ -17,13 +17,13 @@ ResultScene::ResultScene()
     backdropScale=1.0f;
     rowsAlpha=0;
     tallySoundCycle=0;
-    values[0]=g_BattleFightersAt00671418[1]->field460;
+    values[0]=g_BattleFightersAt00671418[1]->baseStageBonus;
     values[2]=static_cast<int>(g_ResultScoreTotalAt0067160C);
     spellTimeMultiplier=static_cast<float>(static_cast<int>(g_ResultScoreTotalAt0067160C))/static_cast<float>(g_CumulativeScoreAt006714BC)+FloatConstants::One;
     values[1]=g_MaxComboCount;
     comboMultiplier=static_cast<float>(g_MaxComboCount)/GeometryConstants::Hundred+FloatConstants::One;
-    values[3]=static_cast<int>(g_BattleFightersAt00671418[0]->health)+(static_cast<int>(static_cast<signed char>(g_SequenceCounterAt00671622))-1+static_cast<int>(g_BattleFightersAt00671418[0]->field39D))*10000;
-    remainingHealthMultiplier=static_cast<float>(g_BattleFightersAt00671418[0]->health)/GeometryConstants::TenThousand+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(g_BattleFightersAt00671418[0]->field39D)-FloatConstants::One;
+    values[3]=static_cast<int>(g_BattleFightersAt00671418[0]->health)+(static_cast<int>(static_cast<signed char>(g_SequenceCounterAt00671622))-1+static_cast<int>(g_BattleFightersAt00671418[0]->roundsRemaining))*10000;
+    remainingHealthMultiplier=static_cast<float>(g_BattleFightersAt00671418[0]->health)/GeometryConstants::TenThousand+static_cast<float>(static_cast<signed char>(g_SequenceCounterAt00671622))+static_cast<float>(g_BattleFightersAt00671418[0]->roundsRemaining)-FloatConstants::One;
     pendingBonus=0;
     tallyFrames=0;
     tallyStep=0;

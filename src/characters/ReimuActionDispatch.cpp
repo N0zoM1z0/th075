@@ -116,7 +116,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && spellTimer > 0 &&
         spellPower >= 100.0f && selectedSpellCards[1] == 0 &&
-        field39D == 1 && spirit > 0 &&
+        roundsRemaining == 1 && spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(701) &&
         ACTION_CHANGE_ALLOWED) {
@@ -127,7 +127,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && y == 0.0f &&
         spellTimer > 0 && spellPower >= 100.0f &&
-        selectedSpellCards[1] == 1 && field39D == 1 &&
+        selectedSpellCards[1] == 1 && roundsRemaining == 1 &&
         spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(703) &&
@@ -139,7 +139,7 @@ void ReimuFighter::DispatchActions()
     if (spirit > 0 && fieldF22 == 0 &&
         aiCommand == 13 && y == 0.0f &&
         spellTimer > 0 && spellPower >= 100.0f &&
-        selectedSpellCards[1] == 2 && field39D == 1 &&
+        selectedSpellCards[1] == 2 && roundsRemaining == 1 &&
         spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
@@ -150,7 +150,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && spellTimer > 0 &&
         spellPower >= 100.0f && selectedSpellCards[0] == 0 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(700) &&
@@ -162,7 +162,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && y == 0.0f &&
         spellTimer > 0 && spellPower >= 100.0f &&
-        selectedSpellCards[0] == 1 && field39D == 2 &&
+        selectedSpellCards[0] == 1 && roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(702) &&
@@ -173,7 +173,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && y == 0.0f &&
         spellTimer > 0 && spellPower >= 100.0f &&
-        selectedSpellCards[0] == 2 && field39D == 2 &&
+        selectedSpellCards[0] == 2 && roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&

@@ -10,7 +10,7 @@ extern float g_CardGaugeStepAt0065747C;
 
 
 void YuyukoFighter::Advance() {
-    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
 
     switch (action) {
@@ -508,8 +508,8 @@ void YuyukoFighter::Advance() {
 
     case 0x46:
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -field094;
-            velocityY += field098;
+            velocityX = -hitReactionVelocityX;
+            velocityY += hitReactionVelocityY;
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
             field05C = 0.8f;
@@ -538,8 +538,8 @@ void YuyukoFighter::Advance() {
 
     case 0x47:
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -field094;
-            velocityY = field098;
+            velocityX = -hitReactionVelocityX;
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -564,8 +564,8 @@ void YuyukoFighter::Advance() {
 
     case 0x48:
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -field094;
-            velocityY = field098;
+            velocityX = -hitReactionVelocityX;
+            velocityY = hitReactionVelocityY;
             field05C = 1.3f;
             field07C = 0;
         }
@@ -590,8 +590,8 @@ void YuyukoFighter::Advance() {
 
     case 0x49: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -(field094);
-            velocityY = field098;
+            velocityX = -(hitReactionVelocityX);
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -622,8 +622,8 @@ void YuyukoFighter::Advance() {
 
     case 0x4A:
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -field094;
-            velocityY = field098;
+            velocityX = -hitReactionVelocityX;
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -683,8 +683,8 @@ void YuyukoFighter::Advance() {
 
     case 0x58: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -field094;
-            velocityY = field098;
+            velocityX = -hitReactionVelocityX;
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -931,27 +931,27 @@ void YuyukoFighter::Advance() {
 
     case 0x63:
         if (g_CombatMode != CombatMode::Story || cpuControlled == 0) {
-            if (animationStage == 2 && field39D > 0 && opponent->action < 150) {
+            if (animationStage == 2 && roundsRemaining > 0 && opponent->action < 150) {
                 ResetPrimaryCounters(0x5F);
                 field3CF = 1;
                 return;
             }
         } else {
-            if (animationStage > 1 && field39D > 0 && opponent->action < 150 &&
-                    static_cast<signed char>(field32A[field39D]) == 2) {
+            if (animationStage > 1 && roundsRemaining > 0 && opponent->action < 150 &&
+                    static_cast<signed char>(roundKind[roundsRemaining]) == 2) {
                 ResetPrimaryCounters(0x31C);
-                if (field370[field39D] == 4) {
+                if (roundSpellVariants[roundsRemaining] == 4) {
                     ResetPrimaryCounters(0x302);
                 }
                 return;
             }
-            if (animationStage > 0 && field39D > 0 && opponent->action < 150 &&
-                    static_cast<signed char>(field32A[field39D]) == 1) {
+            if (animationStage > 0 && roundsRemaining > 0 && opponent->action < 150 &&
+                    static_cast<signed char>(roundKind[roundsRemaining]) == 1) {
                 ResetPrimaryCounters(0x31C);
                 return;
             }
-            if (animationStage > 1 && field39D > 0 && opponent->action < 150 &&
-                    static_cast<signed char>(field32A[field39D]) == 0) {
+            if (animationStage > 1 && roundsRemaining > 0 && opponent->action < 150 &&
+                    static_cast<signed char>(roundKind[roundsRemaining]) == 0) {
                 ResetPrimaryCounters(0x5F);
                 field3CF = 1;
                 return;
@@ -3510,7 +3510,7 @@ void YuyukoFighter::Advance() {
             fieldF08 = 60;
         }
         if (opponent->health > 0 && opponent->animationStage == 2 &&
-                opponent->field39D > 0 && opponent->action == 99) {
+                opponent->roundsRemaining > 0 && opponent->action == 99) {
             opponent->ResetPrimaryCounters(0x5F);
             opponent->field3CF = 1;
             return;
@@ -3673,7 +3673,7 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
         }
         if (opponent->health > 0 && opponent->animationStage == 2 &&
-                opponent->field39D > 0 && opponent->action == 99) {
+                opponent->roundsRemaining > 0 && opponent->action == 99) {
             opponent->ResetPrimaryCounters(0x5F);
             opponent->field3CF = 1;
             return;
@@ -3858,7 +3858,7 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
-            if (field370[field39D] == 1) {
+            if (roundSpellVariants[roundsRemaining] == 1) {
                 ResetPrimaryCounters(0x2E4);
                 return;
             }

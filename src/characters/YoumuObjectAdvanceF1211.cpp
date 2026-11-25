@@ -23,12 +23,12 @@ void YoumuObject::Advance()
 
     if (action < 800) {
         static_cast<YoumuFighter*>(owner)->fieldF12 = 1;
-        if (owner->field39D == 1) {
+        if (owner->roundsRemaining == 1) {
             owner->field09C = 0.5f;
             owner->UpdateGaugeTimer(5);
             static_cast<YoumuFighter*>(owner)->fieldF10 = owner->spirit;
         }
-        if (owner->field39D == 2) {
+        if (owner->roundsRemaining == 2) {
             owner->field09C = 0.4f;
             owner->UpdateGaugeTimer(7);
             static_cast<YoumuFighter*>(owner)->fieldF10 = owner->spirit;
@@ -48,7 +48,7 @@ void YoumuObject::Advance()
         color[2] = 255;
         color[3] = 255;
         field010 = 0x82;
-        if (owner->field082 != 0) return;
+        if (owner->hitstopFrames != 0) return;
 
         entry = &static_cast<YoumuFighter*>(owner)->historyQueue.front();
         if (action != entry->action)
@@ -61,8 +61,8 @@ void YoumuObject::Advance()
         facing = entry->facing;
         return;
     }
-    if (field082 != 0) {
-        --field082;
+    if (hitstopFrames != 0) {
+        --hitstopFrames;
         return;
     }
     switch (action) {
@@ -498,7 +498,7 @@ void YoumuObject::Advance()
         else {
             facing = owner->facing;
             if (owner->action == 796 && owner->animationStage == 17 &&
-                (owner->field370[owner->field39D]) == 2) {
+                (owner->roundSpellVariants[owner->roundsRemaining]) == 2) {
                 field0D8 = 0;
                 field0DA = 0;
                 field0DC = 0;
@@ -508,7 +508,7 @@ void YoumuObject::Advance()
                 return;
             }
             else if (owner->action == 796 && owner->animationStage == 17 &&
-                (owner->field370[owner->field39D]) == 0) {
+                (owner->roundSpellVariants[owner->roundsRemaining]) == 0) {
                 field0D8 = 0;
                 field0DA = 0;
                 field0DC = 0;
@@ -769,7 +769,7 @@ case 0x331: {
             ClearFrameInfo();
             return;
         }
-        if (owner->field082 == 0) {
+        if (owner->hitstopFrames == 0) {
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 14 && animationFrame == 0 && owner->animationStage < 4)
             ResetSecondaryCounter(6);
@@ -809,7 +809,7 @@ case 0x331: {
         ClearFrameInfo();
         return;
     }
-    if (owner->field082 == 0) {
+    if (owner->hitstopFrames == 0) {
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 14 && animationFrame == 0 && owner->animationStage < 4)
         ResetSecondaryCounter(6);
@@ -854,9 +854,9 @@ case 0x331: {
             rotationZ += 10.0f;
             if (field07C == 5) {
                 PlaySharedSound(37);
-                owner->SpawnBattleEffect(839, field08C, field090, facing, 1);
-                owner->SpawnBattleEffect(839, field08C, field090, facing, 1);
-                owner->SpawnBattleEffect(839, field08C, field090, facing, 1);
+                owner->SpawnBattleEffect(839, collisionPointX, collisionPointY, facing, 1);
+                owner->SpawnBattleEffect(839, collisionPointX, collisionPointY, facing, 1);
+                owner->SpawnBattleEffect(839, collisionPointX, collisionPointY, facing, 1);
                 field07C = 0;
             }
             if (field07C != 0) field07C = 0;
@@ -1281,9 +1281,9 @@ case 0x331: {
         rotationZ += 10.0f;
         if (field07C == 5) {
             PlaySharedSound(37);
-            owner->SpawnBattleEffect(839, field08C, field090, facing, 1);
-            owner->SpawnBattleEffect(839, field08C, field090, facing, 1);
-            owner->SpawnBattleEffect(839, field08C, field090, facing, 1);
+            owner->SpawnBattleEffect(839, collisionPointX, collisionPointY, facing, 1);
+            owner->SpawnBattleEffect(839, collisionPointX, collisionPointY, facing, 1);
+            owner->SpawnBattleEffect(839, collisionPointX, collisionPointY, facing, 1);
             field07C = 0;
         }
         if (field07C != 0) field07C = 0;
@@ -2119,7 +2119,7 @@ case 0x331: {
         ClearFrameInfo();
         return;
     }
-    if (owner->field082 == 0)
+    if (owner->hitstopFrames == 0)
     if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
     break;
 
@@ -2141,7 +2141,7 @@ case 0x331: {
         ClearFrameInfo();
         return;
     }
-    if (owner->field082 == 0)
+    if (owner->hitstopFrames == 0)
     if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
     break;
 

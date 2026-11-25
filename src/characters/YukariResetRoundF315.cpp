@@ -27,5 +27,5 @@ void YukariFighter::ResetRound()
     aiCardTimer=0;
     Fighter::ResetRound();
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
 }

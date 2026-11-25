@@ -26,7 +26,9 @@ public:
     int ChooseIntegerRange(int lower, int upper);                   // 00455610
     signed char MatchInputPattern(const char*, signed char, signed char);  // 00455800
     void PackDirectionBits();                                       // 00455B30
-    void RecordRoundFields(signed char, short, signed char, signed char, signed char, int, int, int);  // 004574D0
+    void RecordRoundFields(signed char index, short health, signed char kind,
+        signed char recordId, signed char spellVariant, int bonus, int bonusFrames,
+        int bonusDecay);                                           // 004574D0
     bool UpdateFacingFromOpponent();                                // 004550B0
     short CalculateDamage(Actor* attack);                           // 00455640 damage this fighter's attack deals
     void SetNoticeMode(unsigned char mode);                         // 0045CD50
@@ -53,7 +55,6 @@ public:
     void SetNoticeFields(signed char value,unsigned char enabled,unsigned char alpha);
     void RenderNotice(void* text,unsigned char red,unsigned char green,unsigned char blue,unsigned char highlighted);
     void BindOpponent(void* other);
-    void RecordRoundFields(signed char index, short value, unsigned char first, unsigned char second, unsigned char third, unsigned int payloadA, unsigned int payloadB, unsigned int payloadC);
     void AdjustCameraOffset(signed char alternate);
     void SpawnBattleEffect(short effect, float x, float y, signed char facing, signed char layer);
     void SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer, unsigned char linked);
@@ -147,23 +148,23 @@ public:
     short health;                       // +0x324 F999 and F1112 both read these as life
     short recoverableHealth;            // +0x326
     short healthBeforeCollision;        // +0x328 health used for damage scaling during collision
-    unsigned char field32A[20];         // +0x32A per-entry arrays written by RecordRoundFields (0x32A-0x45F);
+    unsigned char roundKind[20];             // +0x32A per-entry arrays written by RecordRoundFields (0x32A-0x45F);
     short healthLimits[20];             // +0x33E array lengths follow from where the next array starts
     signed char bombCount;              // +0x366 Spirit Strike stock
     unsigned char unknown367[0x368 - 0x367];
     float pendingSpellCharge;           // +0x368 accumulated gain that is converted into spell power
     float spellPower;                   // +0x36C 100 points per usable stock
-    signed char field370[20];           // +0x370
-    unsigned char field384[20];         // +0x384
+    signed char roundSpellVariants[20];      // +0x370
+    unsigned char roundSpellRecordIds[20];   // +0x384
     short selectedSpellCards[2];        // +0x398 zero-based choices for the first and second sets
     unsigned char spellDeclarationExpired; // +0x39C blocks another declaration until reset
-    signed char field39D;               // +0x39D highest entry index recorded so far
-    signed char field39E;               // +0x39E
+    signed char roundsRemaining;             // +0x39D decrements on knockout, indexes round data
+    signed char startingRoundCount;          // +0x39E
     unsigned char unknown39F[0x3A0 - 0x39F];
     short spellTimer;                   // +0x3A0 positive while a spell is declared
-    short field3A2;                     // +0x3A2
-    int field3A4;                       // +0x3A4 signed card/knockout countdown
-    int field3A8;                       // +0x3A8 signed card/knockout countdown
+    short spellElapsedFrames;                // +0x3A2
+    int remainingSpellBonus;                 // +0x3A4 decreases during a story spell
+    int remainingSpellBonusFrames;           // +0x3A8 decreases during a story spell
     signed char field3AC;               // +0x3AC
     signed char field3AD;               // +0x3AD
     unsigned char field3AE;             // +0x3AE
@@ -185,10 +186,10 @@ public:
     short field3CC;                     // +0x3CC
     FighterOutcomeByteF992 field3CE;    // +0x3CE signed/unsigned round outcome (F992)
     unsigned char field3CF;             // +0x3CF unsigned continuation/status byte
-    unsigned int field3D0[12];          // +0x3D0
-    unsigned int field400[12];          // +0x400
-    unsigned int field430[12];          // +0x430
-    int field460;                       // +0x460
+    unsigned int roundSpellBonuses[12];      // +0x3D0
+    unsigned int roundSpellBonusFrames[12];  // +0x400
+    unsigned int roundSpellBonusDecay[12];   // +0x430
+    int baseStageBonus;                      // +0x460
     unsigned char field464;             // +0x464 set while a knockout is being resolved
     unsigned char autoGuard;            // +0x465 bypass the manual guard direction check
     unsigned char unknown466[0x468 - 0x466];
@@ -250,15 +251,15 @@ public:
     short noticeAxis;                   // +0x6EA
     short noticeExtent;                 // +0x6EC
     unsigned char noticeEnabled;        // +0x6EE
-    unsigned char field6EF;             // +0x6EF
+    unsigned char storySequenceFinished;     // +0x6EF
     short scriptId;                     // +0x6F0
     short scriptBitMask;                // +0x6F2
     short scriptIndex;                  // +0x6F4
     short scriptStep;                   // +0x6F6
-    signed char field6F8;               // +0x6F8 signed stage-render gate
+    signed char stageBannerEnabled;          // +0x6F8 the script enables the stage banner
     unsigned char unknown6F9[0x6FA - 0x6F9];
-    short field6FA;                     // +0x6FA
-    short field6FC;                     // +0x6FC
+    short queuedMusicDelayFrames;            // +0x6FA
+    short queuedMusicTrack;                  // +0x6FC
     unsigned char unknown6FE[0x700 - 0x6FE];
     TextureManagerF198* stageTexture;  // +0x700 stage texture resource
     unsigned char unknown704[0x705 - 0x704];
@@ -269,7 +270,7 @@ public:
     unsigned short fieldEF8;            // +0xEF8 wrapping animation timer
     short fieldEFA;                     // +0xEFA signed per-owner projectile counter
     short sequenceTimer;                // +0xEFC
-    short fieldEFE;                     // +0xEFE signed stage fade timer
+    short stageBannerHoldFrames;             // +0xEFE frames since the stage banner reached full alpha
     short scriptCounterF00;              // +0xF00 signed 16-bit script state
     short scriptCounterF02;              // +0xF02 signed 16-bit script state
     short fieldF04;                     // +0xF04

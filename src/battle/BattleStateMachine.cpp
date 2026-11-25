@@ -10,7 +10,7 @@
 #include "battle/BattleStateMachine.hpp"
 #include "engine/GameProgress.hpp"
 #include "ui/WindowOverlayF212.hpp"
-#define MAX_HEALTH fighters[1]->healthLimits[fighters[1]->field39D]
+#define MAX_HEALTH fighters[1]->healthLimits[fighters[1]->roundsRemaining]
 short BattleScene::AdvanceState()
 {
     int i, j, k, resetPlayer;
@@ -105,8 +105,8 @@ short BattleScene::AdvanceState()
         if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::ReplayDialogue) return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayBrowser;
         return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
     case BattlePhase::StoryDialogue:
-        if (fighters[0]->field6EF) {
-            fighters[0]->field6EF = 0; ++storyDialogueEnds;
+        if (fighters[0]->storySequenceFinished) {
+            fighters[0]->storySequenceFinished = 0; ++storyDialogueEnds;
             if (storyDialogueEnds == 1) {
                 phaseFrames = 200; battlePhase = BattlePhase::RoundIntro;
                 if (g_ReplayModeAt0066C238 == ReplayMode::ReplayDialogue) { g_ReplayModeAt0066C238 = ReplayMode::Playback; g_InputCanCancelAt00671632 = 1; }
@@ -188,7 +188,7 @@ short BattleScene::AdvanceState()
             g_StateFadeAlpha = static_cast<unsigned char>(255.0f - (phaseFrames - 150) * 5.1f);
             g_StateResetCounter = 0;
             if (phaseFrames == 150) {
-                fighters[1]->field3A4 = 0; fighters[1]->field3A8 = 0;
+                fighters[1]->remainingSpellBonus = 0; fighters[1]->remainingSpellBonusFrames = 0;
                 fighters[1]->spellTimer = 0; fighters[1]->spellDeclarationExpired = 0;
                 for (resetPlayer = 0; resetPlayer < 2; ++resetPlayer) {
                     fighters[resetPlayer]->ResetRound();
@@ -196,13 +196,13 @@ short BattleScene::AdvanceState()
                     fighters[resetPlayer]->x = static_cast<float>(resetPlayer * 320 + 480);
                     fighters[resetPlayer]->y = 0.0f;
                 }
-                fighters[0]->field39D = 2; fighters[1]->field39D = fighters[1]->field39E;
+                fighters[0]->roundsRemaining = 2; fighters[1]->roundsRemaining = fighters[1]->startingRoundCount;
                 fighters[1]->recoverableHealth = 1;
                 fighters[1]->recoverableHealth = MAX_HEALTH;
                 g_CombatEffects.ReleaseEntries();
                 g_CumulativeScoreAt006714BC = 0;
-                for (resetPlayer = 1; resetPlayer <= fighters[1]->field39E; ++resetPlayer)
-                    g_CumulativeScoreAt006714BC += static_cast<int>(fighters[1]->field400[resetPlayer]);
+                for (resetPlayer = 1; resetPlayer <= fighters[1]->startingRoundCount; ++resetPlayer)
+                    g_CumulativeScoreAt006714BC += static_cast<int>(fighters[1]->roundSpellBonusFrames[resetPlayer]);
             }
         } else if (phaseFrames < 50) {
             g_StateFadeAlpha = static_cast<unsigned char>(phaseFrames * 5.1f);
@@ -236,10 +236,10 @@ short BattleScene::AdvanceState()
     if (phaseFrames > 0) --phaseFrames;
     if (spellBonusBannerFrames > 0) --spellBonusBannerFrames;
     if (g_StateFadeValue > 0.0f) { g_StateFadeValue -= 0.01f; if (g_StateFadeValue < 0.0f) g_StateFadeValue = 0.0f; }
-    if (fighters[0]->field39D == 2) healthBarTint[0] = 128;
+    if (fighters[0]->roundsRemaining == 2) healthBarTint[0] = 128;
     else if (healthBarTint[0] < 255) ++healthBarTint[0];
     if (g_CombatMode != CombatMode::Story) {
-        if (fighters[1]->field39D == 2) healthBarTint[1] = 128;
+        if (fighters[1]->roundsRemaining == 2) healthBarTint[1] = 128;
         else if (healthBarTint[1] < 255) ++healthBarTint[1];
     }
     if (g_ReplayModeAt0066C238 == ReplayMode::Playback && g_ReplayRecords.IsPrimaryInputQueueEmpty()) {

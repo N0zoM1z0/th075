@@ -20,7 +20,7 @@ extern float g_ReimuStormRightBoundaryAt0065920C;
 extern float g_ReimuApproachRightBoundAt0065945C;
 
 void ReimuFighter::Advance() {
-    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:
@@ -278,8 +278,8 @@ void ReimuFighter::Advance() {
 #define F605_LATE48 5
 case 0x48: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -field094;
-        velocityY = field098;
+        velocityX = -hitReactionVelocityX;
+        velocityY = hitReactionVelocityY;
         field05C = 1.3f;
         field07C = 0;
     }
@@ -333,8 +333,8 @@ case 0x48: {
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
-                velocityX = -field094;
-                velocityY = field098;
+                velocityX = -hitReactionVelocityX;
+                velocityY = hitReactionVelocityY;
                 field05C = 0.8f;
                 field07C = 0;
             }

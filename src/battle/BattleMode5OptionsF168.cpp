@@ -63,7 +63,7 @@ void BattleScene::HandleMode5Options()
         g_SoundBank->Play(39);
         pauseMenuRow = (pauseMenuRow + 8) % 9;
     }
-    fighters[0]->field39D = 2 - fighters[1]->practiceSpellSelection / 3;
+    fighters[0]->roundsRemaining = 2 - fighters[1]->practiceSpellSelection / 3;
     fighters[0]->selectedSpellCards[0] = fighters[1]->practiceSpellSelection % 3;
     fighters[0]->selectedSpellCards[1] = fighters[1]->practiceSpellSelection % 3;
 }

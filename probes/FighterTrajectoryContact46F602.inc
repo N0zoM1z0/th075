@@ -5,8 +5,8 @@
 // thresholds, event parameters and counters (validated separately).
 case 0x46: {
     if (animationStage == 0 && animationFrame == 0) {
-        velocityX = -(field094);
-        velocityY += field098;
+        velocityX = -(hitReactionVelocityX);
+        velocityY += hitReactionVelocityY;
         if (velocityY < TRAJECTORY_LOWER_THRESHOLD)
             velocityY = TRAJECTORY_MINIMUM_SPEED;
         field05C = 0.8f;

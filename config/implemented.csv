@@ -589,10 +589,10 @@ GameProgress::SetSelection
 GameProgress::GetSelectedDifficultyRecord
 GameProgress::CopyWorkingNameToRank
 Fighter::ChoosePatternSequence
-FighterScript::CountPatternEntries
-FighterScript::GetByteFieldAt00420530
-FighterScript::GetWordFieldAt00420570
-FighterScript::GetDwordFieldAt004205B0
+ScriptResource4205F0::CountCommands
+ScriptResource4205F0::GetCommand
+ScriptResource4205F0::GetArgument
+ScriptResource4205F0::GetDialogueText
 Effects::SpawnConfiguredAuxObjectAt005F7AA0
 Fighter::LoadResources
 Fighter::SetNoticeModeByteAt0045CD50

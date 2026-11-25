@@ -6,7 +6,7 @@ void Fighter::UpdateCounters()
     // Opponent freeze suspends counters but not view bounds and the frame count.
     if (opponent->opponentFreezeSnapshot > 0) goto updateViewBounds;
     {
-        if (field082 > 0) --field082;
+        if (hitstopFrames > 0) --hitstopFrames;
         else if (field3CC > 0) --field3CC;
         field490 = 0.0f;
         opponent->field490 = 0.0f;
@@ -24,10 +24,10 @@ void Fighter::UpdateCounters()
                     spellPower = 0.0f;
                 }
             } else {
-                field3A4 -= static_cast<int>(field430[field39D]);
-                if (field3A4 < 0) field3A4 = 0;
-                --field3A8;
-                if (field3A8 < 0) field3A8 = 0;
+                remainingSpellBonus -= static_cast<int>(roundSpellBonusDecay[roundsRemaining]);
+                if (remainingSpellBonus < 0) remainingSpellBonus = 0;
+                --remainingSpellBonusFrames;
+                if (remainingSpellBonusFrames < 0) remainingSpellBonusFrames = 0;
             }
         }
         if (pendingSpellCharge > 0.0f && spellDeclarationExpired == 0) {

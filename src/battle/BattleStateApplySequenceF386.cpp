@@ -36,10 +36,10 @@ void BattleScene::ApplySequence() {
                     g_ReplayRecords.timedBattleCommands.pop_front();
                     switch(command) {
                     case TimedBattleCommand::SetOpponentHealthToOne: fighters[1]->health=1;break;
-                    case TimedBattleCommand::RestoreRoundStock: fighters[0]->field39D=2;fighters[1]->field39D=2;break;
+                    case TimedBattleCommand::RestoreRoundStock: fighters[0]->roundsRemaining=2;fighters[1]->roundsRemaining=2;break;
                     case TimedBattleCommand::ReduceRoundStock:
-                        if(fighters[0]->field39D>1) --fighters[0]->field39D;
-                        if(fighters[1]->field39D>1) --fighters[1]->field39D;
+                        if(fighters[0]->roundsRemaining>1) --fighters[0]->roundsRemaining;
+                        if(fighters[1]->roundsRemaining>1) --fighters[1]->roundsRemaining;
                         break;
                     case TimedBattleCommand::DisableResourceRestore: restoreResources=0;break;
                     case TimedBattleCommand::EnableResourceRestore: restoreResources=1;break;
@@ -68,7 +68,7 @@ void BattleScene::ApplySequence() {
                         int command = TimedBattleCommand::RestoreRoundStock;
                         g_ReplayRecords.timedBattleCommands.push_back(reinterpret_cast<const unsigned int&>(command));
                     }
-                    fighters[0]->field39D=2;fighters[1]->field39D=2;
+                    fighters[0]->roundsRemaining=2;fighters[1]->roundsRemaining=2;
                 }
                 if(g_InputMappings[0].IsKeyDown(DIK_F3)) {
                     if(reduceRoundStockKeyHeldFrames==0) {
@@ -77,8 +77,8 @@ void BattleScene::ApplySequence() {
                             int command = TimedBattleCommand::ReduceRoundStock;
                             g_ReplayRecords.timedBattleCommands.push_back(reinterpret_cast<const unsigned int&>(command));
                         }
-                        if(fighters[0]->field39D>1) --fighters[0]->field39D;
-                        if(fighters[1]->field39D>1) --fighters[1]->field39D;
+                        if(fighters[0]->roundsRemaining>1) --fighters[0]->roundsRemaining;
+                        if(fighters[1]->roundsRemaining>1) --fighters[1]->roundsRemaining;
                     }
                     reduceRoundStockKeyHeldFrames=reduceRoundStockKeyHeldFrames+1;
                 }

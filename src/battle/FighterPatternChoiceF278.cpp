@@ -14,27 +14,27 @@ void Fighter::ChoosePatternSequence()
     quoteLineCount=0;
     short sequence=static_cast<short>(g_PlayerIdAt006714C8[1-playerSide]+200);
     cursor=0;
-    while(static_cast<int>(cursor)<static_cast<int>(script.CountPatternEntries(sequence))) {
-        accumulated+=script.GetWordField(sequence,static_cast<short>(cursor));
+    while(static_cast<int>(cursor)<static_cast<int>(script.CountCommands(sequence))) {
+        accumulated+=script.GetArgument(sequence,static_cast<short>(cursor));
         ++cursor;
         if(target<accumulated) {
-            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetWordField(sequence,static_cast<short>(cursor)));
-            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDwordField(sequence,static_cast<short>(cursor))));
+            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetArgument(sequence,static_cast<short>(cursor)));
+            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDialogueText(sequence,static_cast<short>(cursor))));
             ++cursor;
             ++quoteLineCount;
-            if (static_cast<int>(cursor)<static_cast<int>(script.CountPatternEntries(sequence))) {
-            if (script.GetByteField(sequence,static_cast<short>(cursor))==0) {
-            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetWordField(sequence,static_cast<short>(cursor)));
-            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDwordField(sequence,static_cast<short>(cursor))));
+            if (static_cast<int>(cursor)<static_cast<int>(script.CountCommands(sequence))) {
+            if (script.GetCommand(sequence,static_cast<short>(cursor))==StoryCommand::PlayerLine) {
+            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetArgument(sequence,static_cast<short>(cursor)));
+            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDialogueText(sequence,static_cast<short>(cursor))));
             ++quoteLineCount;
             }
             }
             return;
         }
-        if(cursor==static_cast<unsigned int>(script.CountPatternEntries(sequence))) break;
-        while(script.GetByteField(sequence,static_cast<short>(cursor))!='\r') {
+        if(cursor==static_cast<unsigned int>(script.CountCommands(sequence))) break;
+        while(script.GetCommand(sequence,static_cast<short>(cursor))!=StoryCommand::QuoteGroupEnd) {
             ++cursor;
-            if(cursor==static_cast<unsigned int>(script.CountPatternEntries(sequence))) break;
+            if(cursor==static_cast<unsigned int>(script.CountCommands(sequence))) break;
         }
     }
     target=static_cast<short>(rand()%256);
@@ -42,27 +42,27 @@ void Fighter::ChoosePatternSequence()
     sequence=300;
     quoteLineCount=0;
     cursor=0;
-    while (static_cast<int>(cursor)<static_cast<int>(script.CountPatternEntries(sequence))) {
-        accumulated+=script.GetWordField(sequence,static_cast<short>(cursor));
+    while (static_cast<int>(cursor)<static_cast<int>(script.CountCommands(sequence))) {
+        accumulated+=script.GetArgument(sequence,static_cast<short>(cursor));
         ++cursor;
         if (target<accumulated) {
-            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetWordField(sequence,static_cast<short>(cursor)));
-            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDwordField(sequence,static_cast<short>(cursor))));
+            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetArgument(sequence,static_cast<short>(cursor)));
+            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDialogueText(sequence,static_cast<short>(cursor))));
             ++cursor;
             ++quoteLineCount;
-            if (static_cast<int>(cursor)<static_cast<int>(script.CountPatternEntries(sequence))) {
-            if(script.GetByteField(sequence,static_cast<short>(cursor))==0) {
-            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetWordField(sequence,static_cast<short>(cursor)));
-            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDwordField(sequence,static_cast<short>(cursor))));
+            if (static_cast<int>(cursor)<static_cast<int>(script.CountCommands(sequence))) {
+            if(script.GetCommand(sequence,static_cast<short>(cursor))==StoryCommand::PlayerLine) {
+            quoteBadges[quoteLineCount]=static_cast<unsigned char>(script.GetArgument(sequence,static_cast<short>(cursor)));
+            strcpy(quoteLines[quoteLineCount],static_cast<const char*>(script.GetDialogueText(sequence,static_cast<short>(cursor))));
             ++quoteLineCount;
             }
             }
             return;
         }
-        if(cursor==static_cast<unsigned int>(script.CountPatternEntries(sequence))) break;
-        while(script.GetByteField(sequence,static_cast<short>(cursor))!='\r') {
+        if(cursor==static_cast<unsigned int>(script.CountCommands(sequence))) break;
+        while(script.GetCommand(sequence,static_cast<short>(cursor))!=StoryCommand::QuoteGroupEnd) {
             ++cursor;
-            if(cursor==static_cast<unsigned int>(script.CountPatternEntries(sequence))) break;
+            if(cursor==static_cast<unsigned int>(script.CountCommands(sequence))) break;
         }
     }
     quoteLineCount=0;

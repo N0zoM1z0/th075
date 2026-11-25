@@ -12,8 +12,8 @@ float __cdecl AngleAt00483300(float, float);
 void MeilingObject::Advance() {
     if (owner->opponent->opponentFreezeSnapshot != 0) return;
     if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
-    if (field082 != 0) {
-        --field082;
+    if (hitstopFrames != 0) {
+        --hitstopFrames;
         return;
     }
     switch (action) {
@@ -2103,7 +2103,7 @@ void MeilingObject::Advance() {
             ClearFrameInfo();
             return;
         }
-        if (owner->field082 == 0) {
+        if (owner->hitstopFrames == 0) {
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         }
         break;

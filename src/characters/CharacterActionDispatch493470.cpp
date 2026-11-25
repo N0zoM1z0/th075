@@ -151,7 +151,7 @@ void MarisaFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 0 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(712) &&
         ACTION_CHANGE_ALLOWED) {
@@ -164,7 +164,7 @@ void MarisaFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&
         ACTION_CHANGE_ALLOWED) {
@@ -178,7 +178,7 @@ void MarisaFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         fieldF14 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(706) &&
@@ -193,7 +193,7 @@ void MarisaFighter::DispatchActions()
         fieldF14 == 6 &&
         fieldF12 == 1 &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(715) &&
         ACTION_CHANGE_ALLOWED) {
@@ -207,7 +207,7 @@ void MarisaFighter::DispatchActions()
         fieldF12 == 1 &&
         fieldF14 == 6 &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(714) &&
         ACTION_CHANGE_ALLOWED) {
@@ -221,7 +221,7 @@ void MarisaFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 0 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(700) &&
         ACTION_CHANGE_ALLOWED) {
@@ -234,7 +234,7 @@ void MarisaFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 1 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(703) &&
         ACTION_CHANGE_ALLOWED) {
@@ -248,7 +248,7 @@ void MarisaFighter::DispatchActions()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 2 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         fieldF14 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
@@ -263,7 +263,7 @@ void MarisaFighter::DispatchActions()
         fieldF14 == 4 &&
         fieldF12 == 1 &&
         selectedSpellCards[0] == 2 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(708) &&
         ACTION_CHANGE_ALLOWED) {
@@ -277,7 +277,7 @@ void MarisaFighter::DispatchActions()
         fieldF12 == 1 &&
         fieldF14 == 4 &&
         selectedSpellCards[0] == 2 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(707) &&
         ACTION_CHANGE_ALLOWED) {

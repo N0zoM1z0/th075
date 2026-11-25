@@ -10,7 +10,7 @@ extern float g_YukariOffsetAt00659CA4;
 extern float g_YukariOffsetAt00659CAC;
 
 void YukariFighter::Advance() {
-    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
 
     switch (action) {
@@ -517,8 +517,8 @@ void YukariFighter::Advance() {
 
     case 0x46: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -(field094);
-            velocityY += field098;
+            velocityX = -(hitReactionVelocityX);
+            velocityY += hitReactionVelocityY;
             if (velocityY < FloatConstants::Two)
                 velocityY = 2.0f;
             field05C = 0.8f;
@@ -554,8 +554,8 @@ void YukariFighter::Advance() {
 
     case 0x47: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -(field094);
-            velocityY = field098;
+            velocityX = -(hitReactionVelocityX);
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -586,8 +586,8 @@ void YukariFighter::Advance() {
 
     case 0x48: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -(field094);
-            velocityY = field098;
+            velocityX = -(hitReactionVelocityX);
+            velocityY = hitReactionVelocityY;
             field05C = 1.3f;
             field07C = 0;
         }
@@ -619,8 +619,8 @@ void YukariFighter::Advance() {
 
     case 0x49: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -(field094);
-            velocityY = field098;
+            velocityX = -(hitReactionVelocityX);
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -657,8 +657,8 @@ void YukariFighter::Advance() {
 
     case 0x4A: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -(field094);
-            velocityY = field098;
+            velocityX = -(hitReactionVelocityX);
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -731,8 +731,8 @@ void YukariFighter::Advance() {
 
     case 0x58: {
         if (animationStage == 0 && animationFrame == 0) {
-            velocityX = -field094;
-            velocityY = field098;
+            velocityX = -hitReactionVelocityX;
+            velocityY = hitReactionVelocityY;
             field05C = 0.8f;
             field07C = 0;
         }
@@ -947,7 +947,7 @@ void YukariFighter::Advance() {
         if (g_CombatMode != CombatMode::Story ||
             cpuControlled == 0) {
             if (animationStage == 2 &&
-                field39D > 0 &&
+                roundsRemaining > 0 &&
                 opponent->action < 150) {
                 ResetPrimaryCounters(0x5F);
                 field3CF = 1;
@@ -955,24 +955,24 @@ void YukariFighter::Advance() {
             }
         } else {
             if (animationStage > 1 &&
-                field39D > 0 &&
+                roundsRemaining > 0 &&
                 opponent->action < 150 &&
-                static_cast<signed char>(field32A[field39D]) == 2) {
+                static_cast<signed char>(roundKind[roundsRemaining]) == 2) {
                 ResetPrimaryCounters(0x31C);
 
                 return;
             }
             if (animationStage > 0 &&
-                field39D > 0 &&
+                roundsRemaining > 0 &&
                 opponent->action < 150 &&
-                static_cast<signed char>(field32A[field39D]) == 1) {
+                static_cast<signed char>(roundKind[roundsRemaining]) == 1) {
                 ResetPrimaryCounters(0x31C);
                 return;
             }
             if (animationStage > 1 &&
-                field39D > 0 &&
+                roundsRemaining > 0 &&
                 opponent->action < 150 &&
-                static_cast<signed char>(field32A[field39D]) == 0) {
+                static_cast<signed char>(roundKind[roundsRemaining]) == 0) {
                 ResetPrimaryCounters(0x5F);
                 field3CF = 1;
                 return;
@@ -3908,13 +3908,13 @@ void YukariFighter::Advance() {
             SpawnBattleEffect(0x3DC, x, y, facing, 0);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
-            if (field370[field39D] == 2) {
+            if (roundSpellVariants[roundsRemaining] == 2) {
                 ResetPrimaryCounters(0x2EF);
                 return;
             }
-            if (field370[field39D] == 3)
+            if (roundSpellVariants[roundsRemaining] == 3)
                 SpawnBattleEffect(0x395, x, y, 1, 0);
-            if (field370[field39D] == 4) {
+            if (roundSpellVariants[roundsRemaining] == 4) {
                 fieldF14 = 440;
                 SpawnBattleEffect(0x398, opponent->x,
                     (opponent->y) + GeometryConstants::Hundred, 1, 1);

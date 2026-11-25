@@ -4,7 +4,7 @@
 void YoumuFighter::ResetRound()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     fieldEFA=0;
     fieldF14=0;
     scriptCounterF00=0;

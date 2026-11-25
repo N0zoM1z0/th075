@@ -30,20 +30,11 @@ public:
     void ResetRound();
 
     // Fields after the shared Fighter layout.
-    float fieldF10;
-    float fieldF14;
-    float fieldF18;
-    float fieldF1C;
+    float stageLayerX[4];  // +0xF10
     unsigned char unknownF20[0xF38 - 0xF20];
-    float fieldF38;
-    float fieldF3C;
-    float fieldF40;
-    float fieldF44;
+    float stageLayerY[4];  // +0xF38
     unsigned char unknownF48[0xFD8 - 0xF48];
-    unsigned char fieldFD8;
-    unsigned char fieldFD9;
-    unsigned char fieldFDA;
-    unsigned char fieldFDB;
+    unsigned char stageLayerAlpha[4];  // +0xFD8
     unsigned char unknownFDC[0xFE4 - 0xFDC];
 };
 

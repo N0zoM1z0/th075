@@ -4,7 +4,7 @@
 void YuyukoFighter::ResetRound()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     scriptCounterF00=0;
     scriptCounterF02=0;
     fieldF04=0;

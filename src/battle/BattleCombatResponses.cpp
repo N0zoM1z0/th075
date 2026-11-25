@@ -92,10 +92,10 @@ bool BattleScene::ApplyAttackHit(Actor *attack, Fighter *attacker, Fighter *defe
     defender->ClearTransformFlag();
     attack->field07C = 1;
     --attack->field080;
-    attack->field082 = attack->savedFrameInfo->attackerHitStop;
-    defender->field082 = attack->savedFrameInfo->defenderHitStop;
-    defender->field094 = attack->savedFrameInfo->field2C;
-    defender->field098 = attack->savedFrameInfo->field30;
+    attack->hitstopFrames = attack->savedFrameInfo->attackerHitStop;
+    defender->hitstopFrames = attack->savedFrameInfo->defenderHitStop;
+    defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
+    defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
     if (attacker->field3CE.signedAt3CE == 0)
         defender->health -= attacker->CalculateDamage(attack);
     if (defender->health <= 0) {
@@ -143,10 +143,10 @@ void BattleScene::ApplyGuardHit(Actor *attack, Fighter *attacker, Fighter *defen
     defender->ClearTransformFlag();
     attack->field07C = 1;
     --attack->field080;
-    attack->field082 = attack->savedFrameInfo->attackerHitStop;
-    defender->field082 = attack->savedFrameInfo->defenderHitStop;
-    defender->field094 = attack->savedFrameInfo->field2C;
-    defender->field098 = attack->savedFrameInfo->field30;
+    attack->hitstopFrames = attack->savedFrameInfo->attackerHitStop;
+    defender->hitstopFrames = attack->savedFrameInfo->defenderHitStop;
+    defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
+    defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
     ++attacker->comboCount;
     attacker->comboDamage += attacker->CalculateDamage(attack) / 2;
     attacker->comboRate *= attack->savedFrameInfo->comboRateScale;
@@ -172,8 +172,8 @@ void BattleScene::ApplyReactionMode(Actor *attack, Fighter *attacker, Fighter *d
     case 62: case 63: case 64: case 70: case 84:
         defender->ResetPrimaryCounters(defender->action + 1); break;
     case 71: case 72: case 74: case 77:
-        defender->field094 *= 1.25f;
-        defender->field098 *= 1.25f;
+        defender->hitReactionVelocityX *= 1.25f;
+        defender->hitReactionVelocityY *= 1.25f;
         defender->flashGauge = defender->flashGauge << 1; break;
     case 73:
         defender->flashGauge = 32767;

@@ -6,10 +6,10 @@ void BattleScene::ApplyImpact(Actor *attack, Fighter *attacker, Fighter *defende
 {
     attack->field07C = 2;
     --attack->field080;
-    attack->field082 = attack->savedFrameInfo->field20;
-    defender->field082 = attack->savedFrameInfo->field22;
-    defender->field094 = attack->savedFrameInfo->field2C;
-    defender->field098 = attack->savedFrameInfo->field30;
+    attack->hitstopFrames = attack->savedFrameInfo->field20;
+    defender->hitstopFrames = attack->savedFrameInfo->field22;
+    defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
+    defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
     if (defender->health <= 0) defender->health = 1;
     if (defender->spellTimer > 0 || defender->spellDeclarationExpired)
         defender->recoverableHealth = defender->health;

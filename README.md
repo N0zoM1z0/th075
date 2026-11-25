@@ -26,12 +26,21 @@ constructor. The conservative coverage includes all pending-origin bytes.
 - [Pending origin evidence](docs/ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 - [Knowledge base](docs/KNOWLEDGE_BASE.md), [workflow](docs/RE_WORKFLOW.md) and [storage policy](docs/STORAGE_HYGIENE.md)
 
-The C++ sources are grouped by subsystem under `src/`. Start in
-[`src/battle/`](src/battle/) for the fighter layout, combat and stages,
-[`src/characters/`](src/characters/) for character-specific actions, and
-[`src/ui/`](src/ui/) for menus and scenes. The other folders cover the
-engine, assets, audio, graphics, input, configuration, replay and Win32
-startup. `probes/` also contains sources included by accepted exact units.
+| Subsystem | Entry point |
+| --- | --- |
+| [Battle](src/battle/) | [Scene phases and HUD state](src/battle/BattleScene.hpp), [shared fighter layout](src/battle/Fighter.hpp) |
+| [Characters](src/characters/) | [Stage rendering](src/characters/CharacterStageRendering.cpp), [fighter and object entry points](docs/GIANTS.md) |
+| [Replay](src/replay/) | [File header, record header and input streams](src/replay/ReplayRecords.hpp) |
+| [Input](src/input/) | [Device mapping and held controls](src/input/InputMapping4388D0.hpp) |
+| [Configuration](src/config/) | [Saved key bindings](src/config/GameConfigStorage.hpp) |
+| [Engine](src/engine/) | [Scene commands](src/engine/SceneTransition.hpp), [score data](src/engine/GameProgress.hpp) |
+| [Menus](src/ui/) | [Character selection](src/ui/CharacterSelectScene.hpp), [results browser](src/ui/ResultListScene.hpp) |
+| [Resources](src/assets/) | [Archive index](src/assets/DataArchive.hpp), [story script records](src/assets/ScriptResource4205F0.hpp) |
+| [Graphics](src/graphics/) | [Texture management](src/graphics/TextureManagerF198.hpp) |
+| [Audio](src/audio/) | [Streaming](src/audio/AudioStream.hpp), [sound effects](src/audio/SoundBank.hpp) |
+| [Platform](src/platform/) | [Windows startup and main loop](src/platform/WinMainF1171.cpp) |
+
+`probes/` contains sources included by accepted exact units.
 
 `config/match-units.toml` records the compiler profiles, extents and
 relocations. The target is the user-supplied Japanese TH075 v1.11

@@ -590,10 +590,10 @@ GameProgress::SetSelection,0x0041A1A0,function
 GameProgress::GetSelectedDifficultyRecord,0x0041A240,function
 GameProgress::CopyWorkingNameToRank,0x00416E20,function
 Fighter::ChoosePatternSequence,0x0045D810,function
-FighterScript::CountPatternEntries,0x0045DD00,function
-FighterScript::GetByteFieldAt00420530,0x00420530,function
-FighterScript::GetWordFieldAt00420570,0x00420570,function
-FighterScript::GetDwordFieldAt004205B0,0x004205B0,function
+ScriptResource4205F0::CountCommands,0x0045DD00,function
+ScriptResource4205F0::GetCommand,0x00420530,function
+ScriptResource4205F0::GetArgument,0x00420570,function
+ScriptResource4205F0::GetDialogueText,0x004205B0,function
 Effects::SpawnConfiguredAuxObjectAt005F7AA0,0x005F7AA0,function
 Fighter::LoadResources,0x00456B60,function
 Fighter::SetNoticeModeByteAt0045CD50,0x0045CD50,function

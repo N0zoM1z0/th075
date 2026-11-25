@@ -203,15 +203,15 @@ public:
     };
     int field07C;                       // +0x07C
     short field080;                     // +0x080
-    short field082;                     // +0x082 nonzero: skip this frame and count down
+    short hitstopFrames;                     // +0x082 nonzero: skip this frame and count down
     short field084;                     // +0x084
     short field086;                     // +0x086
     short field088;                     // +0x088
     short field08A;                     // +0x08A
-    float field08C;                     // +0x08C
-    float field090;                     // +0x090
-    float field094;                     // +0x094 horizontal reaction velocity
-    float field098;                     // +0x098 vertical reaction velocity
+    float collisionPointX;                     // +0x08C
+    float collisionPointY;                     // +0x090
+    float hitReactionVelocityX;                     // +0x094 horizontal reaction velocity
+    float hitReactionVelocityY;                     // +0x098 vertical reaction velocity
     float field09C;                     // +0x09C
     float field0A0;                     // +0x0A0
     float field0A4;                     // +0x0A4

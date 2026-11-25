@@ -13,36 +13,36 @@ void SuikaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
-            fieldF2C = -192.0f;
-            fieldF54 = 160.0f;
-            fieldF30 = -192.0f;
-            fieldF58 = 336.0f;
-            fieldF34 = 0.0f;
-            fieldF5C = 176.0f;
-            fieldF38 = 320.0f;
-            fieldF60 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(100);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (fieldF28 >= 50) {
-            fieldF2C += 0.25f;
-            fieldF30 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (fieldF28 <= 300) {
-            if (fieldFF6 < 250) fieldFF6 += 5;
-            else fieldFF6 = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (fieldF28 >= 50 && fieldF28 <= 300) {
-            if (fieldFF5 < 250) {
-                fieldFF4 += 5;
-                fieldFF5 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFF4 = 255;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (fieldF28 == 230) {
@@ -52,14 +52,14 @@ void SuikaFighter::AdvanceSequence()
             opponent->field05C = 0.6f;
         }
         if (fieldF28 > 300) {
-            if (fieldFF4 >= 5) {
-                fieldFF4 -= 5;
-                fieldFF5 -= 5;
-                fieldFF6 -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFF4 = 0;
-                fieldFF5 = 0;
-                fieldFF6 = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (opponent->action != 9 && fieldF28 > 230) opponent->x = 800.0f;
@@ -81,10 +81,10 @@ void SuikaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (fieldF28 > 30) {
-                fieldFF7 = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(6);
                 fieldF28 = 0;
@@ -108,7 +108,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 7:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(10);
             field713 = 2;
         }
@@ -117,36 +117,36 @@ void SuikaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
-            fieldF2C = -192.0f;
-            fieldF54 = 160.0f;
-            fieldF30 = -192.0f;
-            fieldF58 = 336.0f;
-            fieldF34 = 0.0f;
-            fieldF5C = 176.0f;
-            fieldF38 = 320.0f;
-            fieldF60 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(101);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (fieldF28 >= 50) {
-            fieldF2C += 0.25f;
-            fieldF30 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (fieldF28 <= 300) {
-            if (fieldFF6 < 250) fieldFF6 += 5;
-            else fieldFF6 = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (fieldF28 >= 50 && fieldF28 <= 300) {
-            if (fieldFF5 < 250) {
-                fieldFF4 += 5;
-                fieldFF5 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFF4 = 255;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (fieldF28 == 230) {
@@ -156,14 +156,14 @@ void SuikaFighter::AdvanceSequence()
             opponent->field05C = 0.6f;
         }
         if (fieldF28 > 300) {
-            if (fieldFF4 >= 5) {
-                fieldFF4 -= 5;
-                fieldFF5 -= 5;
-                fieldFF6 -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFF4 = 0;
-                fieldFF5 = 0;
-                fieldFF6 = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (opponent->action != 9 && fieldF28 > 230) opponent->x = 800.0f;
@@ -185,10 +185,10 @@ void SuikaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (fieldF28 > 30) {
-                fieldFF7 = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(16);
                 fieldF28 = 0;
@@ -212,7 +212,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 17:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(20);
             field713 = 3;
         }
@@ -221,36 +221,36 @@ void SuikaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
-            fieldF2C = -192.0f;
-            fieldF54 = 160.0f;
-            fieldF30 = -192.0f;
-            fieldF58 = 336.0f;
-            fieldF34 = 0.0f;
-            fieldF5C = 176.0f;
-            fieldF38 = 320.0f;
-            fieldF60 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(102);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (fieldF28 >= 50) {
-            fieldF2C += 0.25f;
-            fieldF30 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (fieldF28 <= 300) {
-            if (fieldFF6 < 250) fieldFF6 += 5;
-            else fieldFF6 = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (fieldF28 >= 50 && fieldF28 <= 300) {
-            if (fieldFF5 < 250) {
-                fieldFF4 += 5;
-                fieldFF5 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFF4 = 255;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (fieldF28 == 230) {
@@ -260,14 +260,14 @@ void SuikaFighter::AdvanceSequence()
             opponent->field05C = 0.6f;
         }
         if (fieldF28 > 300) {
-            if (fieldFF4 >= 5) {
-                fieldFF4 -= 5;
-                fieldFF5 -= 5;
-                fieldFF6 -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFF4 = 0;
-                fieldFF5 = 0;
-                fieldFF6 = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (opponent->action != 9 && fieldF28 > 230) opponent->x = 800.0f;
@@ -289,10 +289,10 @@ void SuikaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (fieldF28 > 30) {
-                fieldFF7 = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(26);
                 fieldF28 = 0;
@@ -316,7 +316,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 27:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(30);
             field713 = 4;
             ++g_SequenceCounterAt00671622;
@@ -326,36 +326,36 @@ void SuikaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
-            fieldF2C = -192.0f;
-            fieldF54 = 160.0f;
-            fieldF30 = -192.0f;
-            fieldF58 = 336.0f;
-            fieldF34 = 0.0f;
-            fieldF5C = 176.0f;
-            fieldF38 = 320.0f;
-            fieldF60 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(103);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (fieldF28 >= 50) {
-            fieldF2C += 0.25f;
-            fieldF30 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (fieldF28 <= 300) {
-            if (fieldFF6 < 250) fieldFF6 += 5;
-            else fieldFF6 = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (fieldF28 >= 50 && fieldF28 <= 300) {
-            if (fieldFF5 < 250) {
-                fieldFF4 += 5;
-                fieldFF5 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFF4 = 255;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (fieldF28 == 230) {
@@ -365,14 +365,14 @@ void SuikaFighter::AdvanceSequence()
             opponent->field05C = 0.6f;
         }
         if (fieldF28 > 300) {
-            if (fieldFF4 >= 5) {
-                fieldFF4 -= 5;
-                fieldFF5 -= 5;
-                fieldFF6 -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFF4 = 0;
-                fieldFF5 = 0;
-                fieldFF6 = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (opponent->action != 9 && fieldF28 > 230) opponent->x = 800.0f;
@@ -394,10 +394,10 @@ void SuikaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (fieldF28 > 30) {
-                fieldFF7 = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(36);
                 fieldF28 = 0;
@@ -421,7 +421,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 37:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(40);
             field713 = 5;
         }
@@ -430,47 +430,47 @@ void SuikaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
-            fieldF2C = -192.0f;
-            fieldF54 = 160.0f;
-            fieldF30 = -192.0f;
-            fieldF58 = 336.0f;
-            fieldF34 = 0.0f;
-            fieldF5C = 176.0f;
-            fieldF38 = 320.0f;
-            fieldF60 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(104);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (fieldF28 >= 50) {
-            fieldF2C += 0.25f;
-            fieldF30 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (fieldF28 <= 300) {
-            if (fieldFF6 < 250) fieldFF6 += 5;
-            else fieldFF6 = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (fieldF28 >= 50 && fieldF28 <= 300) {
-            if (fieldFF5 < 250) {
-                fieldFF4 += 5;
-                fieldFF5 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFF4 = 255;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (fieldF28 > 300) {
-            if (fieldFF4 >= 5) {
-                fieldFF4 -= 5;
-                fieldFF5 -= 5;
-                fieldFF6 -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFF4 = 0;
-                fieldFF5 = 0;
-                fieldFF6 = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (fieldF28 > 360) {
@@ -516,10 +516,10 @@ void SuikaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (fieldF28 > 30) {
-                fieldFF7 = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(46);
                 fieldF28 = 0;
@@ -543,7 +543,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 47:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(50);
             field713 = 6;
         }
@@ -552,47 +552,47 @@ void SuikaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (fieldF28 - 50) * 0.5f) * (fieldF28 < 291), 320.0f);
         if (fieldF28 == 0) {
-            fieldF2C = -192.0f;
-            fieldF54 = 160.0f;
-            fieldF30 = -192.0f;
-            fieldF58 = 336.0f;
-            fieldF34 = 0.0f;
-            fieldF5C = 176.0f;
-            fieldF38 = 320.0f;
-            fieldF60 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(105);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (fieldF28 >= 50) {
-            fieldF2C += 0.25f;
-            fieldF30 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (fieldF28 <= 300) {
-            if (fieldFF6 < 250) fieldFF6 += 5;
-            else fieldFF6 = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (fieldF28 >= 50 && fieldF28 <= 300) {
-            if (fieldFF5 < 250) {
-                fieldFF4 += 5;
-                fieldFF5 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFF4 = 255;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (fieldF28 > 300) {
-            if (fieldFF4 >= 5) {
-                fieldFF4 -= 5;
-                fieldFF5 -= 5;
-                fieldFF6 -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFF4 = 0;
-                fieldFF5 = 0;
-                fieldFF6 = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (fieldF28 > 360) {
@@ -638,10 +638,10 @@ void SuikaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (fieldF28 > 30) {
-                fieldFF7 = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(56);
                 fieldF28 = 0;
@@ -665,7 +665,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 57:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(60);
             field713 = 7;
         }
@@ -676,42 +676,42 @@ void SuikaFighter::AdvanceSequence()
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
-            fieldF2C = -192.0f;
-            fieldF54 = 160.0f;
-            fieldF30 = -192.0f;
-            fieldF58 = 336.0f;
-            fieldF34 = 0.0f;
-            fieldF5C = 176.0f;
-            fieldF38 = 320.0f;
-            fieldF60 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             fieldF28 += 60;
         }
         if (fieldF28 >= 160) {
-            fieldF2C += 0.25f;
-            fieldF30 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
         }
         if (fieldF28 >= 120 && fieldF28 <= 360) {
-            if (fieldFF6 < 250) fieldFF6 += 5;
-            else fieldFF6 = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (fieldF28 >= 160 && fieldF28 <= 360) {
-            if (fieldFF5 < 250) {
-                fieldFF4 += 5;
-                fieldFF5 += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFF4 = 255;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (fieldF28 > 360) {
-            if (fieldFF4 >= 5) {
-                fieldFF4 -= 5;
-                fieldFF5 -= 5;
-                fieldFF6 -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFF4 = 0;
-                fieldFF5 = 0;
-                fieldFF6 = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (fieldF28 == 450) {
@@ -741,10 +741,10 @@ void SuikaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (fieldF28 > 120) {
-                fieldFF7 = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(64);
                 fieldF28 = 0;
@@ -761,18 +761,18 @@ void SuikaFighter::AdvanceSequence()
         if (g_StateFadeAlpha < 255) ++g_StateFadeAlpha;
         else {
             field713 = 10;
-            field6EF = 1;
+            storySequenceFinished = 1;
         }
         break;
     case 70:
-        fieldF2C = 0.0f;
-        fieldF54 = 0.0f;
-        fieldF30 = 0.0f;
-        fieldF58 = 0.0f;
-        fieldF34 = 0.0f;
-        fieldF5C = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF60 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(107);
         ConfigureNoticeText(0);
@@ -781,9 +781,9 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(71);
         break;
     case 71:
-        if (fieldFF4 < 251) fieldFF4 += 5;
-        else fieldFF4 = 255;
-        if (fieldFF4 == 255) {
+        if (stageLayerAlpha[0] < 251) stageLayerAlpha[0] += 5;
+        else stageLayerAlpha[0] = 255;
+        if (stageLayerAlpha[0] == 255) {
             SetNoticeMode(72);
             fieldF28 = 0;
         }
@@ -794,23 +794,23 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 73:
         if (ProcessAction()) {
-            if (fieldFF4 > 5) fieldFF4 -= 5;
-            else fieldFF4 = 0;
-            if (fieldFF4 == 0) {
+            if (stageLayerAlpha[0] > 5) stageLayerAlpha[0] -= 5;
+            else stageLayerAlpha[0] = 0;
+            if (stageLayerAlpha[0] == 0) {
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
             }
         }
         break;
     case 80:
-        fieldF2C = 0.0f;
-        fieldF54 = 0.0f;
-        fieldF30 = 0.0f;
-        fieldF58 = 0.0f;
-        fieldF34 = 0.0f;
-        fieldF5C = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF60 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(108);
         ConfigureNoticeText(0);
@@ -819,9 +819,9 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(81);
         break;
     case 81:
-        if (fieldFF4 < 251) fieldFF4 += 5;
-        else fieldFF4 = 255;
-        if (fieldFF4 == 255) {
+        if (stageLayerAlpha[0] < 251) stageLayerAlpha[0] += 5;
+        else stageLayerAlpha[0] = 255;
+        if (stageLayerAlpha[0] == 255) {
             SetNoticeMode(82);
             fieldF28 = 0;
         }
@@ -832,23 +832,23 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 83:
         if (ProcessAction()) {
-            if (fieldFF4 > 5) fieldFF4 -= 5;
-            else fieldFF4 = 0;
-            if (fieldFF4 == 0) {
+            if (stageLayerAlpha[0] > 5) stageLayerAlpha[0] -= 5;
+            else stageLayerAlpha[0] = 0;
+            if (stageLayerAlpha[0] == 0) {
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
             }
         }
         break;
     case 90:
-        fieldF2C = 0.0f;
-        fieldF54 = 0.0f;
-        fieldF30 = 0.0f;
-        fieldF58 = 0.0f;
-        fieldF34 = 0.0f;
-        fieldF5C = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF60 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(109);
         ConfigureNoticeText(0);
@@ -878,8 +878,8 @@ void SuikaFighter::AdvanceSequence()
             if (fieldF28 == 1) {
                 ConfigureNoticeText(0);
                 g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
-                fieldFF4 = 0;
-                fieldFF5 = 255;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 255;
                 fieldF28 = 2;
             }
             if (fieldF28 == 2) {
@@ -910,8 +910,8 @@ void SuikaFighter::AdvanceSequence()
             if (fieldF28 == 1) {
                 ConfigureNoticeText(0);
                 g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
-                fieldFF5 = 0;
-                fieldFF6 = 255;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 255;
                 fieldF28 = 2;
             }
             if (fieldF28 == 2) {
@@ -943,17 +943,17 @@ void SuikaFighter::AdvanceSequence()
                 if (fieldF28 > 0) ++fieldF28;
                 if (fieldF28 > 60) {
                     ConfigureNoticeText(0);
-                    field6EF = 1;
+                    storySequenceFinished = 1;
                 }
             }
         }
         break;
     }
-    if (field6FA == 0) {
-        MusicF204::PlayTrackByIndex(field6FC);
+    if (queuedMusicDelayFrames == 0) {
+        MusicF204::PlayTrackByIndex(queuedMusicTrack);
         MusicF205::ScheduleTransitionFade();
     }
-    if (field6FA >= 0) --field6FA;
+    if (queuedMusicDelayFrames >= 0) --queuedMusicDelayFrames;
     AdvanceNoticeLevels();
     OPPONENT_ACTOR->AdvanceNoticeLevels();
 }

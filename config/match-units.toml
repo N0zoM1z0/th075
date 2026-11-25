@@ -42634,22 +42634,22 @@ target = 0x006714C8
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 104
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 140
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 202
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 246
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 279
@@ -42659,22 +42659,22 @@ target = 0x00641B80
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 331
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 367
 type = "REL32"
-symbol = "?GetByteField@ScriptResource4205F0@@QAECFF@Z"
+symbol = "?GetCommand@ScriptResource4205F0@@QAECFF@Z"
 target = 0x00420530
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 398
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 442
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 475
@@ -42684,17 +42684,17 @@ target = 0x00641B80
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 522
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 556
 type = "REL32"
-symbol = "?GetByteField@ScriptResource4205F0@@QAECFF@Z"
+symbol = "?GetCommand@ScriptResource4205F0@@QAECFF@Z"
 target = 0x00420530
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 592
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 614
@@ -42704,22 +42704,22 @@ target = 0x006418AB
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 680
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 716
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 778
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 822
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 855
@@ -42729,22 +42729,22 @@ target = 0x00641B80
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 907
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 943
 type = "REL32"
-symbol = "?GetByteField@ScriptResource4205F0@@QAECFF@Z"
+symbol = "?GetCommand@ScriptResource4205F0@@QAECFF@Z"
 target = 0x00420530
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 974
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 1018
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 1051
@@ -42754,17 +42754,17 @@ target = 0x00641B80
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 1098
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 1132
 type = "REL32"
-symbol = "?GetByteField@ScriptResource4205F0@@QAECFF@Z"
+symbol = "?GetCommand@ScriptResource4205F0@@QAECFF@Z"
 target = 0x00420530
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 1168
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
 offset = 1221
@@ -42781,8 +42781,8 @@ target = 0x00641B80
 source = "src/battle/PatternCountF279.cpp"
 object = "build/matching/PatternCountF279.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["FighterScript::CountPatternEntries"]
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+functions = ["ScriptResource4205F0::CountCommands"]
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target_address = 0x0045DD00
 size = 66
 [[units.fighter-script-count-pattern-entries-0045dd00.relocations]]
@@ -42800,8 +42800,8 @@ target = 0x0045DD50
 source = "src/battle/PatternAccessorsF279.cpp"
 object = "build/matching/PatternAccessorsF279.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["FighterScript::GetByteFieldAt00420530"]
-symbol = "?GetByteField@ScriptResource4205F0@@QAECFF@Z"
+functions = ["ScriptResource4205F0::GetCommand"]
+symbol = "?GetCommand@ScriptResource4205F0@@QAECFF@Z"
 target_address = 0x00420530
 size = 53
 [[units.fighter-script-get-byte-field-00420530.relocations]]
@@ -42819,8 +42819,8 @@ target = 0x00421360
 source = "src/battle/PatternAccessorsF279.cpp"
 object = "build/matching/PatternAccessorsF279.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["FighterScript::GetWordFieldAt00420570"]
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+functions = ["ScriptResource4205F0::GetArgument"]
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target_address = 0x00420570
 size = 55
 [[units.fighter-script-get-word-field-00420570.relocations]]
@@ -42838,8 +42838,8 @@ target = 0x00421360
 source = "src/battle/PatternAccessorsF279.cpp"
 object = "build/matching/PatternAccessorsF279.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["FighterScript::GetDwordFieldAt004205B0"]
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+functions = ["ScriptResource4205F0::GetDialogueText"]
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target_address = 0x004205B0
 size = 54
 [[units.fighter-script-get-dword-field-004205b0.relocations]]
@@ -54546,7 +54546,7 @@ compare_size = 1977
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 41
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 68
@@ -54571,7 +54571,7 @@ target = 0x0066C24E
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 165
 type = "REL32"
-symbol = "?GetByteField@ScriptResource4205F0@@QAECFF@Z"
+symbol = "?GetCommand@ScriptResource4205F0@@QAECFF@Z"
 target = 0x00420530
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 191
@@ -54586,7 +54586,7 @@ target = 0x0045D596
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 234
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 249
@@ -54606,7 +54606,7 @@ target = 0x0066C24F
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 350
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 359
@@ -54616,7 +54616,7 @@ target = 0x0045D5D0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 417
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 426
@@ -54636,7 +54636,7 @@ target = 0x0066C24F
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 527
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 536
@@ -54651,7 +54651,7 @@ target = 0x0045CD70
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 636
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 661
@@ -54671,7 +54671,7 @@ target = 0x0066C24F
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 762
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 771
@@ -54681,7 +54681,7 @@ target = 0x0045D5D0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 835
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 850
@@ -54701,7 +54701,7 @@ target = 0x0066C24F
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 951
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 960
@@ -54726,7 +54726,7 @@ target = 0x0066C24F
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1107
 type = "REL32"
-symbol = "?GetDwordField@ScriptResource4205F0@@QAEPAXFF@Z"
+symbol = "?GetDialogueText@ScriptResource4205F0@@QAEPADFF@Z"
 target = 0x004205B0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1116
@@ -54736,12 +54736,12 @@ target = 0x0045D5D0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1157
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1207
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1216
@@ -54756,17 +54756,17 @@ target = 0x00419DF0
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1265
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1316
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1367
 type = "REL32"
-symbol = "?GetWordField@ScriptResource4205F0@@QAEFFF@Z"
+symbol = "?GetArgument@ScriptResource4205F0@@QAEFFF@Z"
 target = 0x00420570
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1513
@@ -54781,12 +54781,12 @@ target = 0x0066C24E
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1564
 type = "REL32"
-symbol = "?GetByteField@ScriptResource4205F0@@QAECFF@Z"
+symbol = "?GetCommand@ScriptResource4205F0@@QAECFF@Z"
 target = 0x00420530
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1631
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1644
@@ -54806,7 +54806,7 @@ target = 0x00671632
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1890
 type = "REL32"
-symbol = "?CountPatternEntries@ScriptResource4205F0@@QAEFF@Z"
+symbol = "?CountCommands@ScriptResource4205F0@@QAEFF@Z"
 target = 0x0045DD00
 [[units.fighter-state-process-action-0045ce10.relocations]]
 offset = 1903

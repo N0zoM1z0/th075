@@ -182,7 +182,7 @@ void YoumuFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 1 &&
-            field39D == 1) {
+            roundsRemaining == 1) {
             aiCommand = 13;
             return;
         }
@@ -191,7 +191,7 @@ void YoumuFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 1 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             aiCommand = 13;
             return;
         }
@@ -200,7 +200,7 @@ void YoumuFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 2 &&
-            field39D == 1 &&
+            roundsRemaining == 1 &&
             fieldF10 <= 0) {
             aiCommand = 13;
             return;
@@ -210,7 +210,7 @@ void YoumuFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 2 &&
-            field39D == 2 &&
+            roundsRemaining == 2 &&
             fieldF10 <= 0) {
             aiCommand = 13;
             return;
@@ -220,7 +220,7 @@ void YoumuFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 0 &&
-            field39D == 1) {
+            roundsRemaining == 1) {
             aiCommand = 13;
             return;
         }
@@ -229,7 +229,7 @@ void YoumuFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 0 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             aiCommand = 13;
             return;
         }
@@ -541,7 +541,7 @@ void YoumuFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         fieldF10 <= 0) {
         aiCommand = 13;
         return;
@@ -550,7 +550,7 @@ void YoumuFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
     }
     if (static_cast<float>(rand()) < 3000.0f - distance.x * 4.0f &&
@@ -559,7 +559,7 @@ void YoumuFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 0 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -567,7 +567,7 @@ void YoumuFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         fieldF10 <= 0) {
         aiCommand = 13;
         return;
@@ -578,7 +578,7 @@ void YoumuFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 0 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -586,7 +586,7 @@ void YoumuFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
-        field39D == 2) {
+        roundsRemaining == 2) {
         aiCommand = 13;
     }
     if (distance.y < 150.0f && distance.x < 110.0f) {

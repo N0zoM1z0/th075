@@ -14,8 +14,8 @@ void SakuyaObject::Advance()
 {
     if (owner->opponent->opponentFreezeSnapshot != 0) return;
     if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
-    if (field082 != 0) {
-        --field082;
+    if (hitstopFrames != 0) {
+        --hitstopFrames;
         return;
     }
     switch (action) {

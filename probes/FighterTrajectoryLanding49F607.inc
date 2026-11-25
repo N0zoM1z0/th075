@@ -2,8 +2,8 @@
 // Whole source remains a nonexact giant; this is an inner case only.
 case 0x49: {
     if (animationStage==0 && animationFrame==0) {
-        velocityX = -(field094);
-        velocityY = field098;
+        velocityX = -(hitReactionVelocityX);
+        velocityY = hitReactionVelocityY;
         field05C = 0.8f;
         field07C = 0;
     }

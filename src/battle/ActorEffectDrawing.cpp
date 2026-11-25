@@ -27,8 +27,8 @@ void Fighter::Render() {
     SpriteQuad40CA80 transformedQuad;
     cameraHorizontal = g_CombatViewOffsetX - 160.0f;
     cameraY = g_CombatViewOffsetY;
-    if (field082 > 0 && reinterpret_cast<Fighter*>(this)->IsState50To149())
-        cameraHorizontal += 2 - (field082 % 2) * 4;
+    if (hitstopFrames > 0 && reinterpret_cast<Fighter*>(this)->IsState50To149())
+        cameraHorizontal += 2 - (hitstopFrames % 2) * 4;
     reinterpret_cast<TextureManagerF198*>(DRAWING)->GetTextureRect(frameInfo->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (frameInfo->pose != 0) {

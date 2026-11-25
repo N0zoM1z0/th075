@@ -30,10 +30,10 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
             defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 62);
     }
     --attack->field080;
-    attack->field082 = attack->savedFrameInfo->attackerHitStop;
-    defender->field082 = attack->savedFrameInfo->defenderHitStop;
-    defender->field094 = attack->savedFrameInfo->field2C;
-    defender->field098 = attack->savedFrameInfo->field30;
+    attack->hitstopFrames = attack->savedFrameInfo->attackerHitStop;
+    defender->hitstopFrames = attack->savedFrameInfo->defenderHitStop;
+    defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
+    defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
     attacker->pendingSpellCharge += attack->savedFrameInfo->meterGain;
     if (attacker->pendingSpellCharge > 2000.0f)
         attacker->pendingSpellCharge = 2000.0f;
@@ -121,10 +121,10 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         }
         attack->field07C = 7;
         --attack->field080;
-        attack->field082 = attack->savedFrameInfo->attackerHitStop;
-        defender->field082 = attack->savedFrameInfo->defenderHitStop;
-        defender->field094 = attack->savedFrameInfo->field2C;
-        defender->field098 = attack->savedFrameInfo->field30;
+        attack->hitstopFrames = attack->savedFrameInfo->attackerHitStop;
+        defender->hitstopFrames = attack->savedFrameInfo->defenderHitStop;
+        defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
+        defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
         defender->field3CC = 15;
         defender->field484 = 8;
         if ((attack->savedFrameInfo->attackFlags & 0x100) > 0)
@@ -208,7 +208,7 @@ short Fighter::CalculateDamage(Actor *attack)
     if (opponent->cpuControlled != 0 && g_CombatMode == CombatMode::Story) {
         return static_cast<short>(attack->savedFrameInfo->damage * attack->field09C *
             attack->field0A4 * field0A0 * comboRate *
-            (opponent->healthBeforeCollision / 4.0f / opponent->healthLimits[opponent->field39D] + 0.75));
+            (opponent->healthBeforeCollision / 4.0f / opponent->healthLimits[opponent->roundsRemaining] + 0.75));
     } else {
         return static_cast<short>(attack->savedFrameInfo->damage * attack->field09C *
             attack->field0A4 * field0A0 * comboRate *

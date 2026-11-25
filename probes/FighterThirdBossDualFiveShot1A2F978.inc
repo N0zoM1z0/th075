@@ -15,7 +15,7 @@ case 0x1A2: {
         ResetPrimaryCounters(2);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
-        if (field39D==2) {
+        if (roundsRemaining==2) {
             field314=65.0f;
             field318=10.0f;
             Fighter::SpawnTrackedEffect(0x344,

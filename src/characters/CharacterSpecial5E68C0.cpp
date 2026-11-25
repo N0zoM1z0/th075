@@ -12,49 +12,49 @@ void MeilingFighter::RenderStage(signed char stage) {
     case 1: case 2: case 3: case 4: case 5: case 6: case 7:
         TEXTURE->SetTextureFilter(2);
         SetRect(&rect, 0, 0, 1024, 32);
-        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(fieldF2C, fieldF54, fieldF2C + 1024.0f, fieldF54 + 32.0f);
-        DRAWING->DrawQuad(0, sprite, &rect, D3DCOLOR_ARGB(fieldFF4, 255, 255, 255));
+        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(stageLayerX[0], stageLayerY[0], stageLayerX[0] + 1024.0f, stageLayerY[0] + 32.0f);
+        DRAWING->DrawQuad(0, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[0], 255, 255, 255));
         SetRect(&rect, 0, 0, 1024, 32);
-        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(fieldF30, fieldF58, fieldF30 + 1024.0f, fieldF58 + 32.0f);
-        DRAWING->DrawQuad(1, sprite, &rect, D3DCOLOR_ARGB(fieldFF5, 255, 255, 255));
+        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(stageLayerX[1], stageLayerY[1], stageLayerX[1] + 1024.0f, stageLayerY[1] + 32.0f);
+        DRAWING->DrawQuad(1, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[1], 255, 255, 255));
         TEXTURE->SetTextureFilter(1);
         SetRect(&rect, 0, 0, 640, 128);
-        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(fieldF34, fieldF5C, fieldF34 + 640.0f, fieldF5C + 128.0f);
-        DRAWING->DrawQuad(2, sprite, &rect, D3DCOLOR_ARGB(fieldFF6, 255, 255, 255));
+        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(stageLayerX[2], stageLayerY[2], stageLayerX[2] + 640.0f, stageLayerY[2] + 128.0f);
+        DRAWING->DrawQuad(2, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[2], 255, 255, 255));
         SetRect(&rect, 0, 0, 304, 80);
-        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(fieldF38, fieldF60, fieldF38 + 304.0f, fieldF60 + 80.0f);
-        DRAWING->DrawQuad(3, sprite, &rect, D3DCOLOR_ARGB(fieldFF7, 255, 255, 255));
-        if ((field6F8) == 1 && (fieldFF7) < 255 && (fieldEFE) == 0) {
-            if ((fieldFF7) < 250)
-                fieldFF7 = (fieldFF7) + 5;
+        reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuad(stageLayerX[3], stageLayerY[3], stageLayerX[3] + 304.0f, stageLayerY[3] + 80.0f);
+        DRAWING->DrawQuad(3, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[3], 255, 255, 255));
+        if ((stageBannerEnabled) == 1 && (stageLayerAlpha[3]) < 255 && (stageBannerHoldFrames) == 0) {
+            if ((stageLayerAlpha[3]) < 250)
+                stageLayerAlpha[3] = (stageLayerAlpha[3]) + 5;
             else
-                fieldFF7 = 255;
+                stageLayerAlpha[3] = 255;
         }
-        if ((fieldFF7) == 255)
-            ++fieldEFE;
-        if ((fieldEFE) > 180) {
-            if ((fieldFF7) > 0)
-                fieldFF7 = (fieldFF7) - 5;
+        if ((stageLayerAlpha[3]) == 255)
+            ++stageBannerHoldFrames;
+        if ((stageBannerHoldFrames) > 180) {
+            if ((stageLayerAlpha[3]) > 0)
+                stageLayerAlpha[3] = (stageLayerAlpha[3]) - 5;
             // Preserve the target's ineffective unsigned-alpha lower clamp.
-            if ((fieldFF7) < 0)
-                fieldFF7 = 0;
+            if ((stageLayerAlpha[3]) < 0)
+                stageLayerAlpha[3] = 0;
         }
         break;
     case 8: case 9:
         SetRect(&rect, 0, 0, 640, 480);
         reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuadFromRect(&rect);
-        DRAWING->DrawQuad(0, sprite, &rect, D3DCOLOR_ARGB(fieldFF4, 255, 255, 255));
+        DRAWING->DrawQuad(0, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[0], 255, 255, 255));
         break;
     case 10:
         SetRect(&rect, 0, 0, 640, 480);
         reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuadFromRect(&rect);
-        DRAWING->DrawQuad(0, sprite, &rect, D3DCOLOR_ARGB(fieldFF4, 255, 255, 255));
+        DRAWING->DrawQuad(0, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[0], 255, 255, 255));
         SetRect(&rect, 0, 0, 640, 480);
         reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuadFromRect(&rect);
-        DRAWING->DrawQuad(1, sprite, &rect, D3DCOLOR_ARGB(fieldFF5, 255, 255, 255));
+        DRAWING->DrawQuad(1, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[1], 255, 255, 255));
         SetRect(&rect, 0, 0, 640, 480);
         reinterpret_cast<SpriteTransform*>(&sprite)->BuildQuadFromRect(&rect);
-        DRAWING->DrawQuad(2, sprite, &rect, D3DCOLOR_ARGB(fieldFF6, 255, 255, 255));
+        DRAWING->DrawQuad(2, sprite, &rect, D3DCOLOR_ARGB(stageLayerAlpha[2], 255, 255, 255));
     }
 }
 

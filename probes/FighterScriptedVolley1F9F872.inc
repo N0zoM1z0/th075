@@ -14,7 +14,7 @@ case 0x1F9: {
             (*(&y))+g_F872Volley1F9YAt006598BC,
             (facing),1);
         PlaySharedSound(0x14);
-        opponent->field082=0x1E;
+        opponent->hitstopFrames=0x1E;
         ResetPrimaryCounters(0x1FB);
         return;
     }

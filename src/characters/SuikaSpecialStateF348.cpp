@@ -13,10 +13,10 @@ void SuikaFighter::AdvanceAuxiliary()
     if (fieldF1C>0) {
         --fieldF1C;
         opponent->UpdateGaugeTimer(3);
-        if(field39D==2 && RecordedRange(0,100)<25) {
+        if(roundsRemaining==2 && RecordedRange(0,100)<25) {
             SHOT(0x336);
         }
-        if(field39D==1) {
+        if(roundsRemaining==1) {
             if(RecordedRange(0,100)<25) {
                 SHOT(0x337);
             }

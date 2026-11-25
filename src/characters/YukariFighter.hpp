@@ -35,20 +35,11 @@ public:
     unsigned char unknownF1C[0xF30 - 0xF1C];
     short fieldF30;
     short fieldF32;
-    float fieldF34;
-    float fieldF38;
-    float fieldF3C;
-    float fieldF40;
+    float stageLayerX[4];  // +0xF34
     unsigned char unknownF44[0xF5C - 0xF44];
-    float fieldF5C;
-    float fieldF60;
-    float fieldF64;
-    float fieldF68;
+    float stageLayerY[4];  // +0xF5C
     unsigned char unknownF6C[0xFFC - 0xF6C];
-    unsigned char fieldFFC;
-    unsigned char fieldFFD;
-    unsigned char fieldFFE;
-    unsigned char fieldFFF;
+    unsigned char stageLayerAlpha[4];  // +0xFFC
     unsigned char unknown1000[0x1008 - 0x1000];
 };
 

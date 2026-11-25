@@ -6,7 +6,7 @@ extern const char g_YoumuTagAt006598C8[] = "05";
 YoumuFighter::YoumuFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     field713=1;
     strcpy(name,g_YoumuNameAt006598C0);
     strcpy(tag,g_YoumuTagAt006598C8);

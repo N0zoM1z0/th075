@@ -30,7 +30,7 @@ void BattleScene::HandlePauseMenu()
             switch (pauseMenuRow) {
             case 0:
                 if (battlePhase == BattlePhase::StoryContinuePrompt && g_ContinueCountAt00671623 > 0) {
-                    fighters[0]->field39D = 2;
+                    fighters[0]->roundsRemaining = 2;
                     fighters[0]->score = 0;
                     g_ContinueCountAt00671623--;
                     g_ContinueUsedAt00671624 = 1;
@@ -136,7 +136,7 @@ void BattleScene::ProcessDebugKeys()
     } else {
         g_DebugKeyRepeatAt0068D618 = 0;
     }
-    fighters[0]->field39D = 2 - fighters[1]->practiceSpellSelection / 3;
+    fighters[0]->roundsRemaining = 2 - fighters[1]->practiceSpellSelection / 3;
     fighters[0]->selectedSpellCards[0] = fighters[1]->practiceSpellSelection % 3;
     fighters[0]->selectedSpellCards[1] = fighters[1]->practiceSpellSelection % 3;
 }

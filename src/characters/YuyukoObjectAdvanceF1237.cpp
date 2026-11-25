@@ -15,8 +15,8 @@ void YuyukoObject::Advance()
 {
     if (owner->opponent->opponentFreezeSnapshot != 0) return;
     if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
-    if (field082 != 0) {
-        --field082;
+    if (hitstopFrames != 0) {
+        --hitstopFrames;
         return;
     }
     switch (action) {
@@ -308,7 +308,7 @@ case 807:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
+        if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
 
 case 808:
@@ -1705,7 +1705,7 @@ case 844:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
+        if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 case 845:
@@ -1723,7 +1723,7 @@ case 845:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
+        if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 
@@ -1742,7 +1742,7 @@ case 846:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
+        if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 case 847:
@@ -1760,7 +1760,7 @@ case 847:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
+        if (owner->hitstopFrames == 0 && AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         return;
 
 

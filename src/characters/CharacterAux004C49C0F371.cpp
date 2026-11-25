@@ -15,11 +15,11 @@ void SakuyaFighter::AdvanceAuxiliary() {
         field09C=0.75f;
         fieldF0C=spirit;
         if(action!=0x2C1 && action!=0x2C3) {
-            if(field39D==2) {
+            if(roundsRemaining==2) {
                 if(spirit>8) UpdateGaugeTimer(8);
                 else fieldF0C=0;
             }
-            if(field39D==1) {
+            if(roundsRemaining==1) {
                 if(spirit>4) UpdateGaugeTimer(4);
                 else fieldF0C=0;
             }
@@ -36,11 +36,11 @@ void SakuyaFighter::AdvanceAuxiliary() {
         if(fieldF10>0 && action!=0x2C0 && action!=0x2C2) {
             fieldF10=spirit;
             opponentFreezeTimer=2;
-            if(field39D==2) {
+            if(roundsRemaining==2) {
                 if(spirit>8) UpdateGaugeTimer(8);
                 else fieldF10=0;
             }
-            if(field39D==1) {
+            if(roundsRemaining==1) {
                 if(spirit>5) UpdateGaugeTimer(5);
                 else fieldF10=0;
             }

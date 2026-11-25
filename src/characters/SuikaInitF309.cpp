@@ -5,7 +5,7 @@ extern const char g_SuikaTagAt00659E2C[] = "09";
 SuikaFighter::SuikaFighter()
 {
     fieldF28=0;
-    fieldF2A=0;
+    suikaStageBannerHoldFrames=0;
     field713=1;
     strcpy(name,g_SuikaNameAt00659E24);
     strcpy(tag,g_SuikaTagAt00659E2C);

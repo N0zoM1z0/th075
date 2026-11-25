@@ -37,28 +37,28 @@ void BattleScene::ResolveKnockout()
     if (fighters[1]->health <= 0) {
         fighters[0]->field3CE.unsignedAt3CE = 0;
         fighters[1]->field3CE.unsignedAt3CE = 1;
-        if (fighters[1]->field3A4 > 0) {
+        if (fighters[1]->remainingSpellBonus > 0) {
             if (g_ReplayModeAt0066C238 == ReplayMode::Recording) {
                 if (fighters[0]->field464 != 0)
                     CARD_RECORDS->MarkSpellCapture(
-                        reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
+                        reinterpret_cast<signed char*>(fighters[1]->roundSpellRecordIds)[fighters[1]->roundsRemaining]);
                 CARD_RECORDS->RecordSpellBonusClear(
-                    reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
-                if (fighters[1]->field3A4 > CARD_RECORDS->GetBestSpellBonus(
-                        reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D])) {
+                    reinterpret_cast<signed char*>(fighters[1]->roundSpellRecordIds)[fighters[1]->roundsRemaining]);
+                if (fighters[1]->remainingSpellBonus > CARD_RECORDS->GetBestSpellBonus(
+                        reinterpret_cast<signed char*>(fighters[1]->roundSpellRecordIds)[fighters[1]->roundsRemaining])) {
                     CARD_RECORDS->SetBestSpellBonus(
-                        reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D],
-                        fighters[1]->field3A4);
+                        reinterpret_cast<signed char*>(fighters[1]->roundSpellRecordIds)[fighters[1]->roundsRemaining],
+                        fighters[1]->remainingSpellBonus);
                 }
             }
-            g_ResultScoreTotalAt0067160C += fighters[1]->field3A8;
+            g_ResultScoreTotalAt0067160C += fighters[1]->remainingSpellBonusFrames;
             fighters[0]->score = static_cast<int>(
-                static_cast<unsigned long>(fighters[0]->score) + fighters[1]->field3A4);
+                static_cast<unsigned long>(fighters[0]->score) + fighters[1]->remainingSpellBonus);
             if (fighters[0]->score > g_MaxCombatScore)
                 g_MaxCombatScore = fighters[0]->score;
             spellBonusBannerFrames = 120;
-            awardedSpellBonus = fighters[1]->field3A4;
-            fighters[1]->field3A4 = 0;
+            awardedSpellBonus = fighters[1]->remainingSpellBonus;
+            fighters[1]->remainingSpellBonus = 0;
         }
         if (fighters[0]->spellTimer > 0)
             fighters[0]->spellPower = 0.0f;
@@ -66,19 +66,19 @@ void BattleScene::ResolveKnockout()
         fighters[1]->spellTimer = 0;
         fighters[0]->spellDeclarationExpired = 0;
         fighters[1]->spellDeclarationExpired = 0;
-        fighters[1]->field39D--;
+        fighters[1]->roundsRemaining--;
         fighters[1]->field3CF = 0;
         fighters[1]->recoverableHealth = 0;
         fighters[0]->field464 = 1;
         if (fighters[0]->health <= 0)
             fighters[0]->health = 1;
-        if (fighters[1]->field39D > 0) {
+        if (fighters[1]->roundsRemaining > 0) {
             battlePhase = BattlePhase::StoryRoundRecovery;
             phaseFrames = 147;
-            if (reinterpret_cast<signed char*>(fighters[1]->field32A + 1)[fighters[1]->field39D] == 0) {
-                fighters[1]->health = fighters[1]->healthLimits[fighters[1]->field39D];
-                fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->field39D];
-                fighters[1]->field3A8 = 0;
+            if (reinterpret_cast<signed char*>(fighters[1]->roundKind + 1)[fighters[1]->roundsRemaining] == 0) {
+                fighters[1]->health = fighters[1]->healthLimits[fighters[1]->roundsRemaining];
+                fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->roundsRemaining];
+                fighters[1]->remainingSpellBonusFrames = 0;
             }
         } else {
             battlePhase = BattlePhase::StoryMatchKnockout;
@@ -86,15 +86,15 @@ void BattleScene::ResolveKnockout()
             knockoutFreezeFrames = 60;
         }
     } else if (fighters[0]->health <= 0) {
-        fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->field39D];
+        fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->roundsRemaining];
         fighters[0]->spellTimer = 0;
         fighters[0]->spellDeclarationExpired = 0;
-        fighters[0]->field39D--;
+        fighters[0]->roundsRemaining--;
         fighters[0]->field3CE.unsignedAt3CE = 1;
         fighters[1]->field3CE.unsignedAt3CE = 0;
         fighters[0]->field3CF = 0;
         fighters[0]->field464 = 0;
-        if (fighters[0]->field39D != 0) {
+        if (fighters[0]->roundsRemaining != 0) {
             fighters[0]->recoverableHealth = 10000;
             fighters[0]->health = 10000;
             battlePhase = BattlePhase::StoryRoundKnockout;
@@ -102,7 +102,7 @@ void BattleScene::ResolveKnockout()
             knockoutFreezeFrames = 60;
         } else if (static_cast<signed char>(g_SequenceCounterAt00671622) > 0) {
             g_SequenceCounterAt00671622--;
-            fighters[0]->field39D = 2;
+            fighters[0]->roundsRemaining = 2;
             battlePhase = BattlePhase::StoryRoundKnockout;
             phaseFrames = 300;
             knockoutFreezeFrames = 60;

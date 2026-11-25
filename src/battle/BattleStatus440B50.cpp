@@ -20,11 +20,11 @@ void BattleScene::RenderStatus() {
         for (i = 0; i < 2; i = i + 1) {
             if (fighters[i]->spellTimer > 0) {
                 if (g_CombatMode == CombatMode::Story && i == 1) {
-                    group = fighters[1]->field370[fighters[1]->field39D] + 42;
+                    group = fighters[1]->roundSpellVariants[fighters[1]->roundsRemaining] + 42;
                     nameSlide = float(fighters[i]->sequenceSlots.at(group)->frames.at(g_OptionsModeAt006714D0 + 5).originX);
                     texture = fighters[i]->sequenceSlots.at(group)->frames.at(g_OptionsModeAt006714D0 + 5).textureIndex;
                 } else {
-                    if (fighters[i]->field39D == 2)
+                    if (fighters[i]->roundsRemaining == 2)
                         group = fighters[i]->selectedSpellCards[0] + 42;
                     else
                         group = fighters[i]->selectedSpellCards[1] + 45;
@@ -63,13 +63,13 @@ void BattleScene::RenderStatus() {
                         textureManager->DrawQuad(0, packet, &rect, D3DCOLOR_ARGB(spellNumbersAlpha[i], 255, 255, 255));
                         DrawAtlasNumberAt00446B90(520.0f,
                             spellPanelY[i] + spellNumbersOffsetY[i] + 32.0f,
-                            D3DCOLOR_ARGB(spellNumbersAlpha[i], 255, 255, 255), fighters[i]->field3A4, 4, 7);
+                            D3DCOLOR_ARGB(spellNumbersAlpha[i], 255, 255, 255), fighters[i]->remainingSpellBonus, 4, 7);
                         DrawAtlasNumberAt00446B90(610.0f,
                             spellPanelY[i] + spellNumbersOffsetY[i] + 31.0f,
-                            D3DCOLOR_ARGB(spellNumbersAlpha[i], 255, 255, 255), g_GameProgress.GetSpellBonusClears(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
+                            D3DCOLOR_ARGB(spellNumbersAlpha[i], 255, 255, 255), g_GameProgress.GetSpellBonusClears(reinterpret_cast<signed char*>(fighters[i]->roundSpellRecordIds)[fighters[i]->roundsRemaining]), 4, 3);
                         DrawAtlasNumberAt00446B90(639.0f,
                             spellPanelY[i] + spellNumbersOffsetY[i] + 33.0f,
-                            D3DCOLOR_ARGB(spellNumbersAlpha[i], 255, 255, 255), g_GameProgress.GetSpellAttempts(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
+                            D3DCOLOR_ARGB(spellNumbersAlpha[i], 255, 255, 255), g_GameProgress.GetSpellAttempts(reinterpret_cast<signed char*>(fighters[i]->roundSpellRecordIds)[fighters[i]->roundsRemaining]), 4, 3);
                         SetRect(&rect, 0, 0, 256, 32);
                         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(-nameSlide, spellPanelY[i] + 5.0f,
                             256.0f - nameSlide, spellPanelY[i] + 5.0f + 32.0f);

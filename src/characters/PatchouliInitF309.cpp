@@ -5,7 +5,7 @@ extern const char g_PatchouliTagAt00659760[] = "04";
 PatchouliFighter::PatchouliFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     field713=1;
     strcpy(name,g_PatchouliNameAt00659754);
     strcpy(tag,g_PatchouliTagAt00659760);

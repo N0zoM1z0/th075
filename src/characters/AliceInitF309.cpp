@@ -5,7 +5,7 @@ extern const char g_AliceTagAt00659600[] = "03";
 AliceFighter::AliceFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     field713=1;
     strcpy(name,g_AliceNameAt006595F8);
     strcpy(tag,g_AliceTagAt00659600);

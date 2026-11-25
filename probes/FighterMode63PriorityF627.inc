@@ -10,7 +10,7 @@ case 0x63: {
     if (g_CombatMode != CombatMode::Story ||
         cpuControlled==0) {
         if (animationStage==2 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150) {
             ResetPrimaryCounters(0x5F);
             field3CF=1;
@@ -23,33 +23,33 @@ case 0x63: {
         // this is a separate original C++ early-exit, not a nested
         // optional bonus *after* setting action0x31C.
         if (animationStage>1 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150 &&
-            field370[field39D]==5 &&
-            static_cast<signed char>(field32A[field39D])==2) {
+            roundSpellVariants[roundsRemaining]==5 &&
+            static_cast<signed char>(roundKind[roundsRemaining])==2) {
             ResetPrimaryCounters(0x303);
             break;
         }
         if (animationStage>1 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150 &&
-            static_cast<signed char>(field32A[field39D])==2) {
+            static_cast<signed char>(roundKind[roundsRemaining])==2) {
             ResetPrimaryCounters(0x31C);
             // Unlike the special F624 fighter, the actual native
             // stage-two action ends immediately: no bonus offset+0x370.
             break;
         }
         if (animationStage>0 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150 &&
-            static_cast<signed char>(field32A[field39D])==1) {
+            static_cast<signed char>(roundKind[roundsRemaining])==1) {
             ResetPrimaryCounters(0x31C);
             break;
         }
         if (animationStage>1 &&
-            field39D>0 &&
+            roundsRemaining>0 &&
             opponent->action<150 &&
-            static_cast<signed char>(field32A[field39D])==0) {
+            static_cast<signed char>(roundKind[roundsRemaining])==0) {
             ResetPrimaryCounters(0x5F);
             field3CF=1;
             break;

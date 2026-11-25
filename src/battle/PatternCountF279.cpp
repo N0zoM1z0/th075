@@ -1,6 +1,6 @@
 #include "assets/ScriptResource4205F0.hpp"
 
-short ScriptResource4205F0::CountPatternEntries(short sequence)
+short ScriptResource4205F0::CountCommands(short sequence)
 {
     if (groupIndex[sequence] < 0)
         return 0;

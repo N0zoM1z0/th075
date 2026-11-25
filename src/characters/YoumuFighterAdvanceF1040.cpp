@@ -15,7 +15,7 @@ extern float g_F857ShotYAt00659298;
 // five instruction widths remain NONEXACT. No whole CODE credit.
 
 void YoumuFighter::Advance() {
-    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
+    if (hitstopFrames != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:
@@ -263,8 +263,8 @@ void YoumuFighter::Advance() {
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
-                velocityX = -field094;
-                velocityY = field098;
+                velocityX = -hitReactionVelocityX;
+                velocityY = hitReactionVelocityY;
                 field05C = 0.8f;
                 field07C = 0;
             }

@@ -5,10 +5,10 @@ extern const char g_RemiliaTagAt00659A3C[] = "06";
 RemiliaFighter::RemiliaFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
-    field6FA=0;
-    field6FC=0;
-    field6F8=0;
+    stageBannerHoldFrames=0;
+    queuedMusicDelayFrames=0;
+    queuedMusicTrack=0;
+    stageBannerEnabled=0;
     field713=1;
     strcpy(name,g_RemiliaNameAt00659A34);
     strcpy(tag,g_RemiliaTagAt00659A3C);

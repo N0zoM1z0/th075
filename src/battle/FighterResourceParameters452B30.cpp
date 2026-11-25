@@ -6,16 +6,16 @@
 
 void Fighter::SelectResourceParameters()
 {
-    field3A2 = 0;
+    spellElapsedFrames = 0;
     if (cpuControlled != 0 && g_CombatMode == CombatMode::Story) {
         spellTimer = 9999;
-        field3A4 =
-            field3D0[field39D];
-        field3A8 =
-            field400[field39D];
+        remainingSpellBonus =
+            roundSpellBonuses[roundsRemaining];
+        remainingSpellBonusFrames =
+            roundSpellBonusFrames[roundsRemaining];
         if (g_ReplayModeAt0066C238 == ReplayMode::Recording)
             g_GameProgress.RecordSpellAttempt(
-                reinterpret_cast<signed char*>(field384)[field39D]);
+                reinterpret_cast<signed char*>(roundSpellRecordIds)[roundsRemaining]);
     } else {
         spellTimer = static_cast<short>(static_cast<int>(spellPower * 8800.0f / 900.0f) + 1201);
         field464 = 0;

@@ -65,7 +65,7 @@ def main():
         record, function, origin = evidence[key], functions[key], origins[key]
         if (int(record["size"]) != size or int(function["size"]) != size
                 or int(function["span_end"], 16) != address + size - 1
-                or record["inferred_role"] != role or function["proposed_name"] != role
+                or record["inferred_role"] != role or not authored.role_matches(function, role)
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
                 or origin["evidence_id"] != "R076" or function["owner"] != "authored"):
             raise ValueError("fighter script accessor ledger differs: " + key)

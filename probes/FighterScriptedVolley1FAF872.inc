@@ -14,7 +14,7 @@ case 0x1FA: {
             (*(&y))+GeometryConstants::FortyOne,
             (facing),1);
         PlaySharedSound(0x14);
-        opponent->field082=0x1E;
+        opponent->hitstopFrames=0x1E;
         ResetPrimaryCounters(0x1FC);
         return;
     }

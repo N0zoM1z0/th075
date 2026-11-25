@@ -199,7 +199,7 @@ void MarisaFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 1 &&
-            field39D == 1) {
+            roundsRemaining == 1) {
             aiCommand = 13;
             return;
         }
@@ -208,7 +208,7 @@ void MarisaFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 1 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             aiCommand = 13;
             return;
         }
@@ -217,7 +217,7 @@ void MarisaFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 2 &&
-            field39D == 1) {
+            roundsRemaining == 1) {
             if (fieldF14 == 0) {
                 aiCommand = 13;
             } else {
@@ -231,7 +231,7 @@ void MarisaFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 2 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             if (fieldF14 == 0) {
                 aiCommand = 13;
             } else {
@@ -245,7 +245,7 @@ void MarisaFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 0 &&
-            field39D == 1) {
+            roundsRemaining == 1) {
             aiCommand = 13;
             return;
         }
@@ -254,7 +254,7 @@ void MarisaFighter::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 0 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             aiCommand = 13;
             return;
         }
@@ -548,7 +548,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1 &&
+        roundsRemaining == 1 &&
         fieldF14 == 0) {
         aiCommand = 13;
         return;
@@ -557,7 +557,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -565,7 +565,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 23;
         return;
     }
@@ -573,7 +573,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -581,7 +581,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 0 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -590,7 +590,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 2 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         fieldF14 == 0) {
         aiCommand = 13;
         return;
@@ -599,7 +599,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 2) {
+        roundsRemaining == 2) {
         aiCommand = 13;
         return;
     }
@@ -607,7 +607,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 2) {
+        roundsRemaining == 2) {
         aiCommand = 23;
         return;
     }
@@ -615,7 +615,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 0 &&
-        field39D == 2) {
+        roundsRemaining == 2) {
         aiCommand = 13;
         return;
     }
@@ -623,7 +623,7 @@ void MarisaFighter::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 1 &&
-        field39D == 2 &&
+        roundsRemaining == 2 &&
         distance.y < 100.0f) {
         aiCommand = 13;
         return;

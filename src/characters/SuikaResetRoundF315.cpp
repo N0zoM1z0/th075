@@ -4,7 +4,7 @@
 void SuikaFighter::ResetRound()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     scriptCounterF00=0;
     scriptCounterF02=0;
     fieldF04=0;
@@ -24,5 +24,5 @@ void SuikaFighter::ResetRound()
     g_SequenceByteAt0066C239=0xff;
     Fighter::ResetRound();
     fieldF28=0;
-    fieldF2A=0;
+    suikaStageBannerHoldFrames=0;
 }

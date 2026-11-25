@@ -208,7 +208,7 @@ void AI_FIGHTER::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[AI_POLICY::firstSelector] == 1 &&
-            field39D == AI_POLICY::firstMode) {
+            roundsRemaining == AI_POLICY::firstMode) {
             aiCommand = 13;
             return;
         }
@@ -217,7 +217,7 @@ void AI_FIGHTER::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[AI_POLICY::secondSelector] == 1 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             aiCommand = 13;
             return;
         }
@@ -226,7 +226,7 @@ void AI_FIGHTER::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 2 &&
-            field39D == 1) {
+            roundsRemaining == 1) {
             aiCommand = 13;
             return;
         }
@@ -235,7 +235,7 @@ void AI_FIGHTER::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[AI_POLICY::cancelSelector] == 2 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             aiCommand = 13;
             return;
         }
@@ -244,7 +244,7 @@ void AI_FIGHTER::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[1] == 0 &&
-            field39D == 1) {
+            roundsRemaining == 1) {
             aiCommand = 13;
             return;
         }
@@ -253,7 +253,7 @@ void AI_FIGHTER::ChooseAction()
             spellTimer > 0 &&
             spellPower >= 100.0f &&
             selectedSpellCards[AI_POLICY::cancelSelector] == 0 &&
-            field39D == 2) {
+            roundsRemaining == 2) {
             aiCommand = 13;
             return;
         }
@@ -600,7 +600,7 @@ void AI_FIGHTER::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 2 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -609,7 +609,7 @@ void AI_FIGHTER::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 1 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -617,7 +617,7 @@ void AI_FIGHTER::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[1] == 0 &&
-        field39D == 1) {
+        roundsRemaining == 1) {
         aiCommand = 13;
         return;
     }
@@ -626,7 +626,7 @@ void AI_FIGHTER::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[AI_POLICY::lateSelector] == 2 &&
-        field39D == 2) {
+        roundsRemaining == 2) {
         aiCommand = 13;
         return;
     }
@@ -634,7 +634,7 @@ void AI_FIGHTER::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 0 &&
-        field39D == 2) {
+        roundsRemaining == 2) {
         aiCommand = 13;
         return;
     }
@@ -643,7 +643,7 @@ void AI_FIGHTER::ChooseAction()
         spellTimer > 0 &&
         spellPower >= 100.0f &&
         selectedSpellCards[0] == 1 &&
-        field39D == 2) {
+        roundsRemaining == 2) {
         aiCommand = 13;
         return;
     }

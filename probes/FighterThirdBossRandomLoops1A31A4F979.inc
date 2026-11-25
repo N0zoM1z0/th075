@@ -15,7 +15,7 @@ case 0x1A3: {
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
-        if (field39D==2) {
+        if (roundsRemaining==2) {
             for (int shot=0;shot<5;++shot) {
                 field314=0.0f;
                 field318=10.0f;
@@ -46,7 +46,7 @@ case 0x1A4: {
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
-        if (field39D==2) {
+        if (roundsRemaining==2) {
             for (int shot=0;shot<5;++shot) {
                 field314=-30.0f;
                 field318=10.0f;

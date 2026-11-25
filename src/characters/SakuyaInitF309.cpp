@@ -5,7 +5,7 @@ extern const char g_SakuyaTagAt006594A4[] = "02";
 SakuyaFighter::SakuyaFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     field713=1;
     strcpy(name,g_SakuyaNameAt0065949C);
     strcpy(tag,g_SakuyaTagAt006594A4);

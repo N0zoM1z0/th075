@@ -38,7 +38,7 @@ case 0x357: {
             field080=1;
         }
     }
-    if (owner->field082==0 &&
+    if (owner->hitstopFrames==0 &&
         AdvanceNestedFrame()==animationStageCount) {
         ClearFrameInfo();
         return;

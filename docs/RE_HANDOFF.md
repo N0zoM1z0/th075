@@ -68,6 +68,15 @@ The headless archive check wrote and read a sample archive and recovered
 the same installed battle resource as an independent index reader.
 [Scene and archive evidence](KNOWLEDGE_BASE.md#scene-commands-and-archive-files)
 
+The fighter layout now names round stock, the story spell bonus and the
+queued music state. All eleven character classes expose the same stage
+layer names at their own native offsets. All 496 affected units passed,
+and the Windows link matched the preceding build except for its COFF
+timestamp. Headless runs of both versions produced matching command
+and dialogue summaries for Reimu, Patchouli and Meiling's scripts from
+the installed update archive.
+[Story script and stage layer evidence](KNOWLEDGE_BASE.md#story-scripts-and-character-stage-layers)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

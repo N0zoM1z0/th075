@@ -86,8 +86,8 @@ void BattleScene::UpdateTransition()
         spellBackgroundBrightness -= 0.02f;
     for (i = 0; i < 2; ++i) {
         if ((fighters[i]->spellTimer) > 0) {
-            if ((fighters[i]->field3A2) < 80) {
-                if ((fighters[i]->field3A2) == 0) {
+            if ((fighters[i]->spellElapsedFrames) < 80) {
+                if ((fighters[i]->spellElapsedFrames) == 0) {
                     spellPanelAlpha[i] = 15;
                     spellTitleAlpha[i] = 5;
                     spellNumbersAlpha[i] = 5;
@@ -97,20 +97,20 @@ void BattleScene::UpdateTransition()
                     spellPanelRiseSpeed[i] = 20.0f;
                     initialSpellTimer[i] = (fighters[i]->spellTimer);
                 }
-                if (spellPanelRiseSpeed[i] > 0.0f && (fighters[i]->field3A2) >= 40) {
+                if (spellPanelRiseSpeed[i] > 0.0f && (fighters[i]->spellElapsedFrames) >= 40) {
                     spellPanelY[i] -= spellPanelRiseSpeed[i];
                     spellPanelRiseSpeed[i] -= 0.75f;
                 }
                 if (spellPanelAlpha[i] < 255) spellPanelAlpha[i] += 12;
                 if (spellTitleAlpha[i] < 255) spellTitleAlpha[i] += 25;
-                if (spellNumbersAlpha[i] < 255 && (fighters[i]->field3A2) >= 20) spellNumbersAlpha[i] += 25;
-                if (spellNumbersOffsetY[i] > 0.0f && (fighters[i]->field3A2) >= 30) spellNumbersOffsetY[i] -= 1.2f;
+                if (spellNumbersAlpha[i] < 255 && (fighters[i]->spellElapsedFrames) >= 20) spellNumbersAlpha[i] += 25;
+                if (spellNumbersOffsetY[i] > 0.0f && (fighters[i]->spellElapsedFrames) >= 30) spellNumbersOffsetY[i] -= 1.2f;
                 if (spellTitleScale[i] > 1.0f) {
                     spellTitleScale[i] -= 0.2f;
                     if (spellTitleScale[i] < 1.0f) spellTitleScale[i] = 1.0f;
                 }
             }
-            ++(fighters[i]->field3A2);
+            ++(fighters[i]->spellElapsedFrames);
         }
     }
 }

@@ -7,11 +7,11 @@ CharacterObject::CharacterObject()
 {
     field080 = 0;
     field07C = 0;
-    field082 = 0;
-    field08C = 0.0f;
-    field090 = 0.0f;
-    field094 = 0;
-    field098 = 0;
+    hitstopFrames = 0;
+    collisionPointX = 0.0f;
+    collisionPointY = 0.0f;
+    hitReactionVelocityX = 0;
+    hitReactionVelocityY = 0;
     velocityX = 0.0f;
     velocityY = 0.0f;
     field058 = 0;

@@ -4,7 +4,7 @@
 void RemiliaFighter::ResetRound()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     fieldEFA=0;
     fieldF0C=0;
     scriptCounterF00=0;

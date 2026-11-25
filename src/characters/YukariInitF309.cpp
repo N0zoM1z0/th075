@@ -5,7 +5,7 @@ extern const char g_YukariTagAt00659CB8[] = "08";
 YukariFighter::YukariFighter()
 {
     sequenceTimer=0;
-    fieldEFE=0;
+    stageBannerHoldFrames=0;
     field713=1;
     strcpy(name,g_YukariNameAt00659CB0);
     strcpy(tag,g_YukariTagAt00659CB8);

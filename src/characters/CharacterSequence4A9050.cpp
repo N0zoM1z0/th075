@@ -13,36 +13,36 @@ void MarisaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF34 = -192.0f;
-            fieldF5C = 160.0f;
-            fieldF38 = -192.0f;
-            fieldF60 = 336.0f;
-            fieldF3C = 0.0f;
-            fieldF64 = 176.0f;
-            fieldF40 = 320.0f;
-            fieldF68 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(100);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF34 += 0.25f;
-            fieldF38 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFFE < 250) fieldFFE += 5;
-            else fieldFFE = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFFD < 250) {
-                fieldFFC += 5;
-                fieldFFD += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFFC = 255;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -52,14 +52,14 @@ void MarisaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFFC >= 5) {
-                fieldFFC -= 5;
-                fieldFFD -= 5;
-                fieldFFE -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFFC = 0;
-                fieldFFD = 0;
-                fieldFFE = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -103,10 +103,10 @@ void MarisaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFFF = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(6);
                 sequenceTimer = 0;
@@ -130,7 +130,7 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 7:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(10);
             field713 = 2;
         }
@@ -139,36 +139,36 @@ void MarisaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF34 = -192.0f;
-            fieldF5C = 160.0f;
-            fieldF38 = -192.0f;
-            fieldF60 = 336.0f;
-            fieldF3C = 0.0f;
-            fieldF64 = 176.0f;
-            fieldF40 = 320.0f;
-            fieldF68 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(101);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF34 += 0.25f;
-            fieldF38 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFFE < 250) fieldFFE += 5;
-            else fieldFFE = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFFD < 250) {
-                fieldFFC += 5;
-                fieldFFD += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFFC = 255;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -178,14 +178,14 @@ void MarisaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFFC >= 5) {
-                fieldFFC -= 5;
-                fieldFFD -= 5;
-                fieldFFE -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFFC = 0;
-                fieldFFD = 0;
-                fieldFFE = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -229,10 +229,10 @@ void MarisaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFFF = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(16);
                 sequenceTimer = 0;
@@ -256,7 +256,7 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 17:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(20);
             field713 = 3;
         }
@@ -265,36 +265,36 @@ void MarisaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF34 = -192.0f;
-            fieldF5C = 160.0f;
-            fieldF38 = -192.0f;
-            fieldF60 = 336.0f;
-            fieldF3C = 0.0f;
-            fieldF64 = 176.0f;
-            fieldF40 = 320.0f;
-            fieldF68 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(102);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF34 += 0.25f;
-            fieldF38 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFFE < 250) fieldFFE += 5;
-            else fieldFFE = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFFD < 250) {
-                fieldFFC += 5;
-                fieldFFD += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFFC = 255;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -304,14 +304,14 @@ void MarisaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFFC >= 5) {
-                fieldFFC -= 5;
-                fieldFFD -= 5;
-                fieldFFE -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFFC = 0;
-                fieldFFD = 0;
-                fieldFFE = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -355,10 +355,10 @@ void MarisaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFFF = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(26);
                 sequenceTimer = 0;
@@ -382,7 +382,7 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 27:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(30);
             ++g_SequenceCounterAt00671622;
             PlaySharedSound(50);
@@ -393,36 +393,36 @@ void MarisaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF34 = -192.0f;
-            fieldF5C = 160.0f;
-            fieldF38 = -192.0f;
-            fieldF60 = 336.0f;
-            fieldF3C = 0.0f;
-            fieldF64 = 176.0f;
-            fieldF40 = 320.0f;
-            fieldF68 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(103);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF34 += 0.25f;
-            fieldF38 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFFE < 250) fieldFFE += 5;
-            else fieldFFE = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFFD < 250) {
-                fieldFFC += 5;
-                fieldFFD += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFFC = 255;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -432,14 +432,14 @@ void MarisaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFFC >= 5) {
-                fieldFFC -= 5;
-                fieldFFD -= 5;
-                fieldFFE -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFFC = 0;
-                fieldFFD = 0;
-                fieldFFE = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -483,10 +483,10 @@ void MarisaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFFF = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(36);
                 sequenceTimer = 0;
@@ -510,7 +510,7 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 37:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(40);
             field713 = 5;
         }
@@ -519,36 +519,36 @@ void MarisaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF34 = -192.0f;
-            fieldF5C = 160.0f;
-            fieldF38 = -192.0f;
-            fieldF60 = 336.0f;
-            fieldF3C = 0.0f;
-            fieldF64 = 176.0f;
-            fieldF40 = 320.0f;
-            fieldF68 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(104);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF34 += 0.25f;
-            fieldF38 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFFE < 250) fieldFFE += 5;
-            else fieldFFE = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFFD < 250) {
-                fieldFFC += 5;
-                fieldFFD += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFFC = 255;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -558,14 +558,14 @@ void MarisaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFFC >= 5) {
-                fieldFFC -= 5;
-                fieldFFD -= 5;
-                fieldFFE -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFFC = 0;
-                fieldFFD = 0;
-                fieldFFE = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -602,10 +602,10 @@ void MarisaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFFF = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(46);
                 sequenceTimer = 0;
@@ -622,7 +622,7 @@ void MarisaFighter::AdvanceSequence()
             }
             SetNoticeMode(70);
             field713 = 8;
-            field6EF = 1;
+            storySequenceFinished = 1;
             break;
         }
         if (sequenceTimer == 0) {
@@ -639,7 +639,7 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 47:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(50);
             field713 = 6;
         }
@@ -648,36 +648,36 @@ void MarisaFighter::AdvanceSequence()
         CameraMotionOverrideF484::SetOverride(1, 0.0f,
             (120.0f - (sequenceTimer - 50) * 0.5f) * (sequenceTimer < 291), 320.0f);
         if (sequenceTimer == 0) {
-            fieldF34 = -192.0f;
-            fieldF5C = 160.0f;
-            fieldF38 = -192.0f;
-            fieldF60 = 336.0f;
-            fieldF3C = 0.0f;
-            fieldF64 = 176.0f;
-            fieldF40 = 320.0f;
-            fieldF68 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             InitializeNotice(105);
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
         }
         if (sequenceTimer >= 50) {
-            fieldF34 += 0.25f;
-            fieldF38 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
             if (g_StateFadeAlpha >= 5) g_StateFadeAlpha -= 5;
             else g_StateFadeAlpha = 0;
         }
         if (sequenceTimer <= 300) {
-            if (fieldFFE < 250) fieldFFE += 5;
-            else fieldFFE = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 50 && sequenceTimer <= 300) {
-            if (fieldFFD < 250) {
-                fieldFFC += 5;
-                fieldFFD += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFFC = 255;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer == 230) {
@@ -687,14 +687,14 @@ void MarisaFighter::AdvanceSequence()
             field05C = 0.6f;
         }
         if (sequenceTimer > 300) {
-            if (fieldFFC >= 5) {
-                fieldFFC -= 5;
-                fieldFFD -= 5;
-                fieldFFE -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFFC = 0;
-                fieldFFD = 0;
-                fieldFFE = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (action != 9 && sequenceTimer > 230) x = 480.0f;
@@ -754,10 +754,10 @@ void MarisaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 30) {
-                fieldFFF = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(56);
                 sequenceTimer = 0;
@@ -774,7 +774,7 @@ void MarisaFighter::AdvanceSequence()
             }
             SetNoticeMode(80);
             field713 = 9;
-            field6EF = 1;
+            storySequenceFinished = 1;
             break;
         }
         if (sequenceTimer == 0) {
@@ -791,7 +791,7 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 57:
         if (ProcessAction()) {
-            field6EF = 1;
+            storySequenceFinished = 1;
             SetNoticeMode(60);
             field713 = 7;
         }
@@ -802,42 +802,42 @@ void MarisaFighter::AdvanceSequence()
             ConfigureNoticeText(0);
             ProcessAction();
             ProcessAction();
-            fieldF34 = -192.0f;
-            fieldF5C = 160.0f;
-            fieldF38 = -192.0f;
-            fieldF60 = 336.0f;
-            fieldF3C = 0.0f;
-            fieldF64 = 176.0f;
-            fieldF40 = 320.0f;
-            fieldF68 = 280.0f;
+            stageLayerX[0] = -192.0f;
+            stageLayerY[0] = 160.0f;
+            stageLayerX[1] = -192.0f;
+            stageLayerY[1] = 336.0f;
+            stageLayerX[2] = 0.0f;
+            stageLayerY[2] = 176.0f;
+            stageLayerX[3] = 320.0f;
+            stageLayerY[3] = 280.0f;
             sequenceTimer += 60;
         }
         if (sequenceTimer >= 160) {
-            fieldF34 += 0.25f;
-            fieldF38 -= 0.25f;
+            stageLayerX[0] += 0.25f;
+            stageLayerX[1] -= 0.25f;
         }
         if (sequenceTimer >= 120 && sequenceTimer <= 360) {
-            if (fieldFFE < 250) fieldFFE += 5;
-            else fieldFFE = 255;
+            if (stageLayerAlpha[2] < 250) stageLayerAlpha[2] += 5;
+            else stageLayerAlpha[2] = 255;
         }
         if (sequenceTimer >= 160 && sequenceTimer <= 360) {
-            if (fieldFFD < 250) {
-                fieldFFC += 5;
-                fieldFFD += 5;
+            if (stageLayerAlpha[1] < 250) {
+                stageLayerAlpha[0] += 5;
+                stageLayerAlpha[1] += 5;
             } else {
-                fieldFFC = 255;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 255;
+                stageLayerAlpha[1] = 255;
             }
         }
         if (sequenceTimer > 360) {
-            if (fieldFFC >= 5) {
-                fieldFFC -= 5;
-                fieldFFD -= 5;
-                fieldFFE -= 5;
+            if (stageLayerAlpha[0] >= 5) {
+                stageLayerAlpha[0] -= 5;
+                stageLayerAlpha[1] -= 5;
+                stageLayerAlpha[2] -= 5;
             } else {
-                fieldFFC = 0;
-                fieldFFD = 0;
-                fieldFFE = 0;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 0;
             }
         }
         if (sequenceTimer == 450) {
@@ -867,10 +867,10 @@ void MarisaFighter::AdvanceSequence()
                 OPPONENT_ACTOR->ClearNoticeTransition();
             }
             if (sequenceTimer > 120) {
-                fieldFFF = 0;
-                field6F8 = 0;
+                stageLayerAlpha[3] = 0;
+                stageBannerEnabled = 0;
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
                 CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
                 SetNoticeMode(64);
                 sequenceTimer = 0;
@@ -885,18 +885,18 @@ void MarisaFighter::AdvanceSequence()
         if (g_StateFadeAlpha < 255) ++g_StateFadeAlpha;
         else {
             field713 = 10;
-            field6EF = 1;
+            storySequenceFinished = 1;
         }
         break;
     case 70:
-        fieldF34 = 0.0f;
-        fieldF5C = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF60 = 0.0f;
-        fieldF3C = 0.0f;
-        fieldF64 = 0.0f;
-        fieldF40 = 0.0f;
-        fieldF68 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(107);
         ConfigureNoticeText(0);
@@ -905,9 +905,9 @@ void MarisaFighter::AdvanceSequence()
         SetNoticeMode(71);
         break;
     case 71:
-        if (fieldFFC < 251) fieldFFC += 5;
-        else fieldFFC = 255;
-        if (fieldFFC == 255) {
+        if (stageLayerAlpha[0] < 251) stageLayerAlpha[0] += 5;
+        else stageLayerAlpha[0] = 255;
+        if (stageLayerAlpha[0] == 255) {
             SetNoticeMode(72);
             sequenceTimer = 0;
         }
@@ -918,23 +918,23 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 73:
         if (ProcessAction()) {
-            if (fieldFFC > 5) fieldFFC -= 5;
-            else fieldFFC = 0;
-            if (fieldFFC == 0) {
+            if (stageLayerAlpha[0] > 5) stageLayerAlpha[0] -= 5;
+            else stageLayerAlpha[0] = 0;
+            if (stageLayerAlpha[0] == 0) {
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
             }
         }
         break;
     case 80:
-        fieldF34 = 0.0f;
-        fieldF5C = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF60 = 0.0f;
-        fieldF3C = 0.0f;
-        fieldF64 = 0.0f;
-        fieldF40 = 0.0f;
-        fieldF68 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(108);
         ConfigureNoticeText(0);
@@ -943,9 +943,9 @@ void MarisaFighter::AdvanceSequence()
         SetNoticeMode(81);
         break;
     case 81:
-        if (fieldFFC < 251) fieldFFC += 5;
-        else fieldFFC = 255;
-        if (fieldFFC == 255) {
+        if (stageLayerAlpha[0] < 251) stageLayerAlpha[0] += 5;
+        else stageLayerAlpha[0] = 255;
+        if (stageLayerAlpha[0] == 255) {
             SetNoticeMode(82);
             sequenceTimer = 0;
         }
@@ -956,23 +956,23 @@ void MarisaFighter::AdvanceSequence()
         break;
     case 83:
         if (ProcessAction()) {
-            if (fieldFFC > 5) fieldFFC -= 5;
-            else fieldFFC = 0;
-            if (fieldFFC == 0) {
+            if (stageLayerAlpha[0] > 5) stageLayerAlpha[0] -= 5;
+            else stageLayerAlpha[0] = 0;
+            if (stageLayerAlpha[0] == 0) {
                 ConfigureNoticeText(0);
-                field6EF = 1;
+                storySequenceFinished = 1;
             }
         }
         break;
     case 90:
-        fieldF34 = 0.0f;
-        fieldF5C = 0.0f;
-        fieldF38 = 0.0f;
-        fieldF60 = 0.0f;
-        fieldF3C = 0.0f;
-        fieldF64 = 0.0f;
-        fieldF40 = 0.0f;
-        fieldF68 = 0.0f;
+        stageLayerX[0] = 0.0f;
+        stageLayerY[0] = 0.0f;
+        stageLayerX[1] = 0.0f;
+        stageLayerY[1] = 0.0f;
+        stageLayerX[2] = 0.0f;
+        stageLayerY[2] = 0.0f;
+        stageLayerX[3] = 0.0f;
+        stageLayerY[3] = 0.0f;
         g_StateFadeAlpha = 0;
         InitializeNotice(109);
         ConfigureNoticeText(0);
@@ -1002,8 +1002,8 @@ void MarisaFighter::AdvanceSequence()
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
                 g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
-                fieldFFC = 0;
-                fieldFFD = 255;
+                stageLayerAlpha[0] = 0;
+                stageLayerAlpha[1] = 255;
                 sequenceTimer = 2;
             }
             if (sequenceTimer == 2) {
@@ -1034,8 +1034,8 @@ void MarisaFighter::AdvanceSequence()
             if (sequenceTimer == 1) {
                 ConfigureNoticeText(0);
                 g_TextRenderer->RenderTextToTexture("", 120, 120, 255, 16, 1, false);
-                fieldFFD = 0;
-                fieldFFE = 255;
+                stageLayerAlpha[1] = 0;
+                stageLayerAlpha[2] = 255;
                 sequenceTimer = 2;
             }
             if (sequenceTimer == 2) {
@@ -1067,17 +1067,17 @@ void MarisaFighter::AdvanceSequence()
                 if (sequenceTimer > 0) ++sequenceTimer;
                 if (sequenceTimer > 60) {
                     ConfigureNoticeText(0);
-                    field6EF = 1;
+                    storySequenceFinished = 1;
                 }
             }
         }
         break;
     }
-    if (field6FA == 0) {
-        MusicF204::PlayTrackByIndex(field6FC);
+    if (queuedMusicDelayFrames == 0) {
+        MusicF204::PlayTrackByIndex(queuedMusicTrack);
         MusicF205::ScheduleTransitionFade();
     }
-    if (field6FA >= 0) --field6FA;
+    if (queuedMusicDelayFrames >= 0) --queuedMusicDelayFrames;
     AdvanceNoticeLevels();
     OPPONENT_ACTOR->AdvanceNoticeLevels();
 }

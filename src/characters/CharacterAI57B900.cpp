@@ -8,7 +8,7 @@ int YuyukoFighter::cardCountdown;
 #define AIR_FORWARD_COMMAND (2 - (facing == -1))
 #define AIR_BACK_COMMAND (1 + (facing == -1))
 
-#define CARD_TYPE field370[field39D]
+#define CARD_TYPE roundSpellVariants[roundsRemaining]
 
 // Source-defined local value; the original target declaration is unknown.
 // Both observed floating components are used; this is not an owner layout.

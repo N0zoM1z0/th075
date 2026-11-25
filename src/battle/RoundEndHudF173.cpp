@@ -12,8 +12,8 @@ void BattleScene::EnterRoundEnd()
         knockoutFreezeFrames = 60;
         if (fighters[0]->health <= 0) {
             if (fighters[1]->health <= 0) {
-                fighters[0]->field39D = 1;
-                fighters[1]->field39D = 1;
+                fighters[0]->roundsRemaining = 1;
+                fighters[1]->roundsRemaining = 1;
                 battlePhase = BattlePhase::VersusRoundKnockout;
                 fighters[0]->field3CF = 0;
                 fighters[1]->field3CF = 0;
@@ -21,12 +21,12 @@ void BattleScene::EnterRoundEnd()
                 fighters[1]->field3CE.unsignedAt3CE = 1;
                 phaseFrames = 300;
             } else {
-                fighters[0]->field39D--;
+                fighters[0]->roundsRemaining--;
                 fighters[0]->field3CF = 0;
                 fighters[0]->field3CE.unsignedAt3CE = 1;
                 fighters[1]->field3CE.unsignedAt3CE = 0;
                 knockoutFreezeFrames = 60;
-                if (fighters[0]->field39D != 0) {
+                if (fighters[0]->roundsRemaining != 0) {
                     fighters[0]->recoverableHealth = 10000;
                     fighters[0]->health = 10000;
                     battlePhase = BattlePhase::VersusRoundKnockout;
@@ -38,11 +38,11 @@ void BattleScene::EnterRoundEnd()
                 }
             }
         } else if (fighters[1]->health <= 0) {
-            fighters[1]->field39D--;
+            fighters[1]->roundsRemaining--;
             fighters[1]->field3CF = 0;
             fighters[0]->field3CE.unsignedAt3CE = 0;
             fighters[1]->field3CE.unsignedAt3CE = 1;
-            if (fighters[1]->field39D != 0) {
+            if (fighters[1]->roundsRemaining != 0) {
                 fighters[1]->recoverableHealth = 10000;
                 fighters[1]->health = 10000;
                 battlePhase = BattlePhase::VersusRoundKnockout;

@@ -94,8 +94,8 @@ void MarisaObject::UpdateTrackingNode()
     if (field0D8 > 180) field0D8 -= 360;
     if (field0D8 < -180) field0D8 += 360;
     field0DA += 5;
-    if (static_cast<MarisaFighter*>(owner)->fieldF12 != 6 && owner->field39D > 1 && field0DA > 120) field0DA = 120;
-    if (owner->field39D == 1 && field0DA > 140) field0DA = 140;
+    if (static_cast<MarisaFighter*>(owner)->fieldF12 != 6 && owner->roundsRemaining > 1 && field0DA > 120) field0DA = 120;
+    if (owner->roundsRemaining == 1 && field0DA > 140) field0DA = 140;
     if (static_cast<MarisaFighter*>(owner)->fieldF12 == 6 && field0DA > 180) field0DA = 180;
     if (animationStage == 1) {
         SetPolarVelocity(field0D8, field0DA);

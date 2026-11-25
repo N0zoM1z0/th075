@@ -16,8 +16,8 @@ void ReimuObject::Advance()
         return;
     if (owner->opponentFreezeSnapshot != 0 && field08A == 0)
         return;
-    if (field082 != 0) {
-        --field082;
+    if (hitstopFrames != 0) {
+        --hitstopFrames;
         return;
     }
     switch (action) {
@@ -839,7 +839,7 @@ void ReimuObject::Advance()
             x = owner->x;
             y = owner->y;
         }
-        if ((owner->action != 0x1FA || owner->field082 <= 0) &&
+        if ((owner->action != 0x1FA || owner->hitstopFrames <= 0) &&
             AdvanceNestedFrame() == animationStageCount) {
             ClearFrameInfo();
         }
