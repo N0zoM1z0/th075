@@ -77,8 +77,8 @@ struct FighterFrameInfo : public FighterFrameInfoHeader {
     short hitSound;            // +0x34
     short hitEffect;          // +0x36
     signed char reactionVariant;      // +0x38
-    unsigned long flags;      // +0x3C defence flags; bit 0x20 is tested before action changes
-    unsigned long attackFlags;// +0x40
+    unsigned long flags;      // +0x3C current animation-frame flags (FrameFlags)
+    unsigned long attackFlags;// +0x40 attack behavior flags (AttackFlags)
     CollisionBounds bodyBox;  // +0x44 RECT
     std::vector<tagRECT> hurtBoxes;  // +0x54
     std::vector<tagRECT> hitBoxes;   // +0x64

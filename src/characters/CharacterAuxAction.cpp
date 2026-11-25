@@ -3,7 +3,7 @@
 void CharacterAuxObject::Advance()
 {
     switch (action) {
-    // 0x01–0x0F. Expanding and fading sprites, some of which emit peers at stage 1.
+    // 0x01-0x03, 0x05-0x08, 0x0D-0x0F. Expanding and fading sprites, some with peer effects.
     case 1:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);

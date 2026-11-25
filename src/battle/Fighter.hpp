@@ -178,7 +178,7 @@ public:
     CommandListF283* spriteHistory;         // +0x480
     signed char hitFlashFrames;             // +0x484
     unsigned char unknown485[0x488 - 0x485];
-    float bodySeparationVelocityX;                     // +0x488
+    float bodySeparationVelocityX;       // +0x488 per-frame horizontal velocity correction
     unsigned int field48C;              // +0x48C
     float opponentVelocityDeltaX;                     // +0x490
     InputMapping4388D0 inputBindings;    // +0x494 controller binding block
