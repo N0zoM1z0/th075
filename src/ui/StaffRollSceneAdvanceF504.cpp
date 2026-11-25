@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "input/InputControl.hpp"
 #include "battle/BattleResultState.hpp"
 #include "engine/SequenceScenes.hpp"
@@ -29,10 +30,10 @@ unsigned short StaffRollScene::Update() {
             if (g_ContinueCountAt00671623<3) g_StateReturnFlag=0;
             else g_StateReturnFlag=-1;
             if (g_BattleFightersAt00671418[0]->score>g_StateScoreThreshold)
-                return 0x110A;
-            return 0x1107;
+                return SceneTransition::WhiteIn | SceneTransition::WhiteOut | SceneId::ScoreNameEntry;
+            return SceneTransition::WhiteIn | SceneTransition::WhiteOut | SceneId::ReplayNameEntry;
         }
-            return 0x1102;
+            return SceneTransition::WhiteIn | SceneTransition::WhiteOut | SceneId::Title;
         }
     }
     elapsed=timeGetTime()-startTicks;

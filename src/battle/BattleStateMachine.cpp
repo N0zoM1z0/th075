@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "replay/ReplayMode.hpp"
 #include "battle/CombatMode.hpp"
 #include "replay/ReplayRecords.hpp"
@@ -35,7 +36,7 @@ short BattleScene::AdvanceState()
             if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
                 if (g_StageAt0067161E == g_ReplayRecords.fileHeader.recordCount || g_CombatMode == CombatMode::DuelCpu || g_CombatMode == CombatMode::DuelHuman) { battlePhase = BattlePhase::LeaveBattle; break; }
                 AudioControl407CA0::ScheduleFade(-10000, -200, true, false);
-                return 0x2201;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
             } else {
                 victoryQuoteLine = 0;
                 g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
@@ -83,14 +84,14 @@ short BattleScene::AdvanceState()
                 } else {
                     if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
                         if (g_StageAt0067161E == g_ReplayRecords.fileHeader.recordCount) { battlePhase = BattlePhase::LeaveBattle; break; }
-                        AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
+                        AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
                     } else {
                         g_ReplayRecords.AppendRecord();
                         if (g_StageAt0067161E == g_CharacterCountAt0067161F) {
                             MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
-                            g_StateReturnFlag = -1; return 0x2207;
+                            g_StateReturnFlag = -1; return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayNameEntry;
                         }
-                        AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return 0x2201;
+                        AudioControl407CA0::ScheduleFade(-10000, -200, true, false); return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
                     }
                 }
             } else {
@@ -101,8 +102,8 @@ short BattleScene::AdvanceState()
         break;
     case BattlePhase::LeaveBattle:
         MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
-        if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::ReplayDialogue) return 0x2205;
-        return 0x2203;
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::ReplayDialogue) return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayBrowser;
+        return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
     case BattlePhase::StoryDialogue:
         if (fighters[0]->field6EF) {
             fighters[0]->field6EF = 0; ++storyDialogueEnds;
@@ -119,18 +120,18 @@ short BattleScene::AdvanceState()
                 if (g_ReplayModeAt0066C238 == ReplayMode::ReplayDialogue) { g_ReplayModeAt0066C238 = ReplayMode::Playback; g_InputCanCancelAt00671632 = 1; }
                 else if (g_ReplayModeAt0066C238 == ReplayMode::LiveDialogue) g_ReplayModeAt0066C238 = ReplayMode::Recording;
                 if (g_ReplayModeAt0066C238 == ReplayMode::Recording) g_ReplayRecords.AppendRecord();
-                return static_cast<short>(0xFF06);
+                return static_cast<short>(SceneTransition::SkipInAnimation | SceneTransition::SkipOutAnimation | SceneId::BattleResult);
             }
         }
         break;
     case BattlePhase::LeaveAndSaveReplay:
-        MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); g_ReplayRecords.AppendRecord(); return 0x2207;
+        MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); g_ReplayRecords.AppendRecord(); return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayNameEntry;
     case BattlePhase::LeaveStory:
         MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true);
-        if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::ReplayDialogue) return 0x2205;
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::ReplayDialogue) return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayBrowser;
         if (g_StateReturnFlag) g_ReplayRecords.AppendRecord();
-        if (g_CombatMode == CombatMode::Story && fighters[0]->score > g_StateScoreThreshold) return 0x220A;
-        return 0x2203;
+        if (g_CombatMode == CombatMode::Story && fighters[0]->score > g_StateScoreThreshold) return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ScoreNameEntry;
+        return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
     case BattlePhase::StoryRoundRecovery:
         if ((fighters[0]->field3CF == 0 || fighters[1]->field3CF == 0) && phaseFrames < 25) ++phaseFrames;
         if (phaseFrames == 150) SetNotice(0);
@@ -230,7 +231,7 @@ short BattleScene::AdvanceState()
     }
     if (g_CombatMode == CombatMode::Attract) {
         ++attractFrames;
-        if (attractFrames > 3600) { MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); return 0x2202; }
+        if (attractFrames > 3600) { MusicF204::PlayTrackByIndex(40); AudioControl407CA0::ScheduleFade(-10000, -160, true, true); return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title; }
     }
     if (phaseFrames > 0) --phaseFrames;
     if (spellBonusBannerFrames > 0) --spellBonusBannerFrames;

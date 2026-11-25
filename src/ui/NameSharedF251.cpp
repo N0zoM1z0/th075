@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "replay/ReplayMode.hpp"
 #include "ui/NameEntryScenes.hpp"
 #include "replay/ReplayRecords.hpp"
@@ -19,7 +20,7 @@ unsigned short SharedNameEntryScene::Update()
             } else if (SELECTED==0x5c) {
                 if (g_ReplayModeAt0066C238==ReplayMode::Recording)
                     g_ReplayRecords.FinalizeFile();
-                return 0x2202;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
             } else {
                 if (field012>7)
                     g_ReplayRecords.fileHeader.playerName[7]=static_cast<unsigned char>(SELECTED);
@@ -50,7 +51,7 @@ unsigned short SharedNameEntryScene::Update()
             field00E=0;
             field010=0;
         } else {
-            return 0x2202;
+            return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
         }
     }
     Render();

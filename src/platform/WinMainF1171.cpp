@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "replay/ReplayBrowserScene.hpp"
 #include "ui/NameEntryScenes.hpp"
 #include "ui/MusicRoomScene.hpp"
@@ -159,7 +160,7 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
     GameGlobalsF212::InitializeSound();
     DiagnosticLog::AppendString(g_LogOKAt0065A2E4);
     currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LogoScene));
-    unsigned short activeSceneState=0x2004;
+    unsigned short activeSceneState = SceneTransition::BlackIn | SceneId::Logo;
     activeSceneState=currentSceneOwner->TranslateState(activeSceneState);
     g_GameProgress.LoadScoreFile();
     while(1) {
@@ -168,26 +169,56 @@ int WINAPI GameApplicationRunF1171(HINSTANCE instance,HINSTANCE previous,LPSTR c
             TranslateMessage(&msg);DispatchMessageA(&msg);
         } else {
             oldSceneState=activeSceneState;
-            if ((activeSceneState&0xFF00)>0) activeSceneState=currentSceneOwner->TranslateState(activeSceneState);
+            if ((activeSceneState&SceneTransition::EffectsMask)>0) activeSceneState=currentSceneOwner->TranslateState(activeSceneState);
             else activeSceneState=currentSceneOwner->Update();
-            if(activeSceneState!=oldSceneState && (activeSceneState&0xF00)==0 && (activeSceneState&0xF000)>0) {
+            if(activeSceneState!=oldSceneState && (activeSceneState&SceneTransition::OutMask)==0 && (activeSceneState&SceneTransition::InMask)>0) {
                 delete currentSceneOwner;
-                switch(activeSceneState&0xFF) {
-                case 4: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LogoScene)); } break;
-                case 0: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleScene)); } break;
-                case 1: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LoadingScene)); } break;
-                case 2: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new TitleScene)); } break;
-                case 3: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new CharacterSelectScene)); } break;
-                case 5: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ReplayBrowserScene)); } break;
-                case 6: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultScene)); } break;
-                case 7: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new SharedNameEntryScene)); } break;
-                case 8: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleEndScene)); } break;
-                case 9: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OptionsScene)); } break;
-                case 10: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new PlayerNameEntryScene)); } break;
-                case 11: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new StaffRollScene)); } break;
-                case 12: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new MusicRoomScene)); } break;
-                case 13: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OpeningScene)); } break;
-                case 14: { currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultListScene)); } break;
+                switch(activeSceneState&SceneTransition::TargetMask) {
+                case SceneId::Logo: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LogoScene));
+                } break;
+                case SceneId::Battle: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleScene));
+                } break;
+                case SceneId::LoadBattle: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new LoadingScene));
+                } break;
+                case SceneId::Title: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new TitleScene));
+                } break;
+                case SceneId::CharacterSelect: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new CharacterSelectScene));
+                } break;
+                case SceneId::ReplayBrowser: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ReplayBrowserScene));
+                } break;
+                case SceneId::BattleResult: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultScene));
+                } break;
+                case SceneId::ReplayNameEntry: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new SharedNameEntryScene));
+                } break;
+                case SceneId::BattleEnding: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new BattleEndScene));
+                } break;
+                case SceneId::Options: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OptionsScene));
+                } break;
+                case SceneId::ScoreNameEntry: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new PlayerNameEntryScene));
+                } break;
+                case SceneId::Credits: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new StaffRollScene));
+                } break;
+                case SceneId::MusicRoom: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new MusicRoomScene));
+                } break;
+                case SceneId::Opening: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new OpeningScene));
+                } break;
+                case SceneId::RecordBrowser: {
+                    currentSceneOwner=static_cast<SceneBase* const&>(static_cast<SceneBase*>(new ResultListScene));
+                } break;
                 }
             }
             WaitForSingleObject(eventReady,INFINITE);

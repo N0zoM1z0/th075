@@ -2,48 +2,48 @@
 #include <string.h>
 
 DataArchiveF481::DataArchiveF481() {
-    originalHandle=0;
+    archiveHandle=0;
     entries.clear();
 }
 DataArchiveF481::~DataArchiveF481() {
-    if(originalHandle) CloseHandle(originalHandle);
+    if(archiveHandle) CloseHandle(archiveHandle);
     entries.clear();
 }
 
-struct ArchiveReadStateF338 {
+struct ArchiveIndexReadState {
     DWORD keyStorage;
-    unsigned char* decoded;
-    unsigned short count;
+    ArchiveIndexEntry* decoded;
+    unsigned short entryCount;
     DWORD stepStorage;
     unsigned int i;
     DWORD bytesRead;
     unsigned char* content;
 };
-typedef char CheckArchiveState28F338[(sizeof(ArchiveReadStateF338)==28)?1:-1];
+typedef char ArchiveIndexReadStateSize[(sizeof(ArchiveIndexReadState)==28)?1:-1];
 void DataArchiveF481::OpenAndReadIndex(const char* filename)
 {
-    if (originalHandle) CloseHandle(originalHandle);
-    originalHandle=CreateFileA(filename,GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
-    if (originalHandle==INVALID_HANDLE_VALUE) return;
-    ArchiveReadStateF338 state;
+    if (archiveHandle) CloseHandle(archiveHandle);
+    archiveHandle=CreateFileA(filename,GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
+    if (archiveHandle==INVALID_HANDLE_VALUE) return;
+    ArchiveIndexReadState state;
 
-    ReadFile(originalHandle,&state.count,2,&state.bytesRead,0);
-    state.content=new unsigned char[state.count*108];
-    state.decoded=state.content;
-    ReadFile(originalHandle,state.content,state.count*108,&state.bytesRead,0);
+    ReadFile(archiveHandle,&state.entryCount,2,&state.bytesRead,0);
+    state.content=new unsigned char[state.entryCount * static_cast<int>(sizeof(ArchiveIndexEntry))];
+    state.decoded = reinterpret_cast<ArchiveIndexEntry*>(state.content);
+    ReadFile(archiveHandle,state.content,state.entryCount * static_cast<int>(sizeof(ArchiveIndexEntry)),&state.bytesRead,0);
 
-    reinterpret_cast<unsigned char*>(&state.keyStorage)[3]=100;
-    reinterpret_cast<unsigned char*>(&state.stepStorage)[3]=100;
-    for (state.i=0;state.i<state.count*108;++state.i) {
+    reinterpret_cast<unsigned char*>(&state.keyStorage)[3]=ArchiveIndexCipher::InitialKey;
+    reinterpret_cast<unsigned char*>(&state.stepStorage)[3]=ArchiveIndexCipher::InitialStep;
+    for (state.i=0;state.i<state.entryCount * static_cast<int>(sizeof(ArchiveIndexEntry));++state.i) {
         state.content[state.i]=state.content[state.i]^reinterpret_cast<unsigned char*>(&state.keyStorage)[3];
         reinterpret_cast<unsigned char*>(&state.keyStorage)[3]+=reinterpret_cast<unsigned char*>(&state.stepStorage)[3];
-        reinterpret_cast<unsigned char*>(&state.stepStorage)[3]+=77;
+        reinterpret_cast<unsigned char*>(&state.stepStorage)[3]+=ArchiveIndexCipher::StepIncrement;
     }
-    for (state.i=0;state.i<state.count;++state.i) {
-        ArchiveWireEntryF250 record;
-        record.sourceSize=*reinterpret_cast<DWORD*>(state.decoded+state.i*108+100);
-        record.sourceOffset=*reinterpret_cast<DWORD*>(state.decoded+state.i*108+104);
-        strcpy(reinterpret_cast<char*>(record.filename),reinterpret_cast<char*>(state.decoded+state.i*108));
+    for (state.i=0;state.i<state.entryCount;++state.i) {
+        ArchiveIndexEntry record;
+        record.dataSize=state.decoded[state.i].dataSize;
+        record.dataOffset=state.decoded[state.i].dataOffset;
+        strcpy(record.filename,state.decoded[state.i].filename);
         entries.push_back(record);
     }
     delete[] state.content;

@@ -13,7 +13,7 @@ OptionsScene::OptionsScene() {
     textures->AllocateUnformattedSlots(3);
     textures->LoadDefault(g_OptionsDataPathAt00657D80,g_OptionsArchiveRootAt00657D78);
     Graphics::CreateTexture(0x400, 0x200, &canvas, 0x20);
-    field014=5;
+    displayAlpha=5;
     currentItem=0;
     pressedItem=0;
     Apply(static_cast<unsigned char>(currentItem));

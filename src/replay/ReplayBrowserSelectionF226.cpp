@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "replay/ReplayMode.hpp"
 #include "replay/ReplayBrowserScene.hpp"
 #include "battle/PlayerState.hpp"
@@ -8,7 +9,7 @@
 #include <string.h>
 #define PLAY(sound) g_SoundBank->Play(sound)
 #define TRANSITION() { \
-  strcpy(g_ReplayRecords.filePath, filenames[field048]); \
+  strcpy(g_ReplayRecords.filePath, filenames[selectedFile]); \
   AudioControl407CA0::ScheduleFade(-10000,-60,1,0); \
 }
 unsigned short ReplayBrowserScene::Update()
@@ -16,80 +17,80 @@ unsigned short ReplayBrowserScene::Update()
     PollInput();
     Render();
     Graphics::Present();
-    if (field051 == 0) {
-        if (field04E < 0) {
+    if (choosingRecord == 0) {
+        if (verticalInput < 0) {
             PLAY(0x27);
-            --field048;
-            if (field048 < 0)
-                field048 = 0;
+            --selectedFile;
+            if (selectedFile < 0)
+                selectedFile = 0;
         }
-        if (field04E > 0) {
+        if (verticalInput > 0) {
             PLAY(0x27);
-            ++field048;
-            if (field048 >= static_cast<int>(filenames.size()))
-                field048 = filenames.size() - 1;
+            ++selectedFile;
+            if (selectedFile >= static_cast<int>(filenames.size()))
+                selectedFile = filenames.size() - 1;
         }
-        if (field04D < 0) {
+        if (pageInput < 0) {
             PLAY(0x27);
-            field048 = field048 - 10;
-            if (field048 < 0)
-                field048 = 0;
+            selectedFile = selectedFile - 10;
+            if (selectedFile < 0)
+                selectedFile = 0;
         }
-        if (field04D > 0) {
+        if (pageInput > 0) {
             PLAY(0x27);
-            field048 = field048 + 10;
-            if (field048 >= static_cast<int>(filenames.size()))
-                field048 = filenames.size() - 1;
+            selectedFile = selectedFile + 10;
+            if (selectedFile >= static_cast<int>(filenames.size()))
+                selectedFile = filenames.size() - 1;
         }
     } else {
-        if (field04E < 0) {
+        if (verticalInput < 0) {
             PLAY(0x27);
-            --field04A;
-            if (field04A < 0)
-                field04A = headers[field048].recordCount - 1;
+            --selectedRecord;
+            if (selectedRecord < 0)
+                selectedRecord = headers[selectedFile].recordCount - 1;
         }
-        if (field04E > 0) {
+        if (verticalInput > 0) {
             PLAY(0x27);
-            ++field04A;
-            if (field04A >= static_cast<int>(headers[field048].recordCount))
-                field04A = 0;
+            ++selectedRecord;
+            if (selectedRecord >= static_cast<int>(headers[selectedFile].recordCount))
+                selectedRecord = 0;
         }
     }
-    if (field04C < 255)
-        field04C = field04C + 25;
-    if (field04F == 1 && filenames.size() > 0) {
-        if (static_cast<signed char>(headers[field048].mode) > 0) {
+    if (displayAlpha < 255)
+        displayAlpha = displayAlpha + 25;
+    if (confirmInput == 1 && filenames.size() > 0) {
+        if (static_cast<signed char>(headers[selectedFile].mode) > 0) {
             PLAY(0x2d);
-            if (field051 == 0) {
-                if (headers[field048].recordCount > 1) {
-                    field051 = 1;
-                    field04A = 0;
+            if (choosingRecord == 0) {
+                if (headers[selectedFile].recordCount > 1) {
+                    choosingRecord = 1;
+                    selectedRecord = 0;
                 } else {
                     g_RecordSequenceAt006714A4 = 1;
                     g_ReplayModeAt0066C238 = ReplayMode::Playback;
                     TRANSITION();
-                    return 0x2201;
+                    return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
                 }
             } else {
-                g_RecordSequenceAt006714A4 = field04A + 1;
+                g_RecordSequenceAt006714A4 = selectedRecord + 1;
                 g_ReplayModeAt0066C238 = ReplayMode::Playback;
                 TRANSITION();
-                return 0x2201;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
             }
         } else {
             PLAY(0x2d);
             g_ReplayModeAt0066C238 = ReplayMode::Playback;
             TRANSITION();
-            return 0x2201;
+            return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
         }
     }
-    if (field050 == 1) {
-        if (field051 == 1) {
+    if (cancelInput == 1) {
+        if (choosingRecord == 1) {
             PLAY(0x28);
-            field051 = 0;
+            choosingRecord = 0;
         } else {
             PLAY(0x28);
-            return 0x2202;
+            return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
         }
     }
     return 5;

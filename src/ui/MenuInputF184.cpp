@@ -9,7 +9,7 @@
 void TitleScene::PollMenuInput()
 {
     field014 = 0;
-    field018 = 0;
+    verticalInput = 0;
     Input::PollKeyboard();
     Input::PollJoysticks();
     g_InputMappings[0].UpdateHeldCounts();
@@ -19,39 +19,39 @@ void TitleScene::PollMenuInput()
             || g_InputMappings[0].IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     if (g_InputMappings[0].held.counts[InputControl::Vertical] == 1 || g_InputMappings[1].held.counts[InputControl::Vertical] == 1)
-        field018 = 1;
+        verticalInput = 1;
     if (g_InputMappings[0].held.counts[InputControl::Vertical] == -1 || g_InputMappings[1].held.counts[InputControl::Vertical] == -1)
-        field018 = -1;
+        verticalInput = -1;
     if (g_InputMappings[0].IsKeyDown(1))
-        field01C++;
+        escapeHeldFrames++;
     else
-        field01C = 0;
+        escapeHeldFrames = 0;
 }
 
 void OptionsScene::PollInput()
 {
     Input::PollKeyboard();
     Input::PollJoysticks();
-    field015 = 0;
-    field016 = 0;
-    field017 = 0;
-    field018 = 0;
+    horizontalInput = 0;
+    verticalInput = 0;
+    confirmInput = 0;
+    cancelInput = 0;
     g_InputMappings[0].UpdateHeldCounts();
     g_InputMappings[1].UpdateHeldCounts();
     if (g_InputMappings[0].held.counts[InputControl::Vertical] == 1 || g_InputMappings[1].held.counts[InputControl::Vertical] == 1)
-        field016 = 1;
+        verticalInput = 1;
     if (g_InputMappings[0].held.counts[InputControl::Vertical] == -1 || g_InputMappings[1].held.counts[InputControl::Vertical] == -1)
-        field016 = -1;
+        verticalInput = -1;
     if (g_InputMappings[0].held.counts[InputControl::Horizontal] == 1 || g_InputMappings[1].held.counts[InputControl::Horizontal] == 1)
-        field015 = 1;
+        horizontalInput = 1;
     if (g_InputMappings[0].held.counts[InputControl::Horizontal] == -1 || g_InputMappings[1].held.counts[InputControl::Horizontal] == -1)
-        field015 = -1;
+        horizontalInput = -1;
     if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonA] == 1)
-        field017 = 1;
+        confirmInput = 1;
     if (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonB] == 1)
-        field018 = 1;
+        cancelInput = 1;
     if (g_InputMappings[0].IsKeyDown(1))
-        field018 = 1;
+        cancelInput = 1;
     if (g_InputMappings[0].IsKeyDown(0x1C)
         && (g_InputMappings[0].IsKeyDown(0x38)
             || g_InputMappings[0].IsKeyDown(0xB8)))

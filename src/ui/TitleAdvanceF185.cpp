@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "input/InputControl.hpp"
 #include "battle/CombatMode.hpp"
 #include "battle/PlayerState.hpp"
@@ -29,51 +30,51 @@ unsigned short TitleScene::Update()
     Graphics::Present();
 
     for (i = 0; i < 2; ++i) {
-        if (SIDE_HELD(InputControl::ButtonA, i) == 1 && field00C < 57000U) {
+        if (SIDE_HELD(InputControl::ButtonA, i) == 1 && elapsedMs < 57000U) {
             g_SelectedSideAt006714B8 = static_cast<signed char>(i);
             switch (menuIndex) {
             case 0:
                 if (i == 0) {
                     g_SoundBank->Play(45);
                     g_CombatMode = CombatMode::Story;
-                    return 0x2203;
+                    return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
                 }
                 break;
             case 1:
                 if (i == 0) {
                     g_SoundBank->Play(45);
                     g_CombatMode = CombatMode::Arcade;
-                    return 0x2203;
+                    return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
                 }
                 break;
             case 2:
                 g_SoundBank->Play(45);
                 g_CombatMode = CombatMode::DuelHuman;
-                return 0x2203;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
             case 3:
                 g_SoundBank->Play(45);
                 g_CombatMode = CombatMode::DuelCpu;
-                return 0x2203;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
             case 4:
                 if (i == 0) {
                     g_SoundBank->Play(45);
                     g_CombatMode = CombatMode::Practice;
-                    return 0x2203;
+                    return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::CharacterSelect;
                 }
                 break;
             case 5:
                 g_SoundBank->Play(45);
                 g_SelectedSideAt006714B8 = 0;
-                return 0x2205;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayBrowser;
             case 6:
                 g_SoundBank->Play(45);
-                return 0x220C;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::MusicRoom;
             case 7:
                 g_SoundBank->Play(45);
-                return 0x220E;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::RecordBrowser;
             case 8:
                 g_SoundBank->Play(45);
-                return 0x2209;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Options;
             case 9:
                 DestroyWindow(g_GameMainWindowAt00671608);
                 return 2;
@@ -89,7 +90,7 @@ unsigned short TitleScene::Update()
             menuIndex = 9;
         }
     }
-    if (field01C == 1) {
+    if (escapeHeldFrames == 1) {
         if (menuIndex == 9) {
             DestroyWindow(g_GameMainWindowAt00671608);
             return 2;
@@ -97,12 +98,12 @@ unsigned short TitleScene::Update()
         g_SoundBank->Play(40);
         menuIndex = 9;
     }
-    if (field018 == 1) {
+    if (verticalInput == 1) {
         g_SoundBank->Play(39);
         menuIndex++;
         if (menuIndex > 9)
             menuIndex = 0;
-    } else if (field018 == -1) {
+    } else if (verticalInput == -1) {
         g_SoundBank->Play(39);
         menuIndex--;
         if (menuIndex < 0)
@@ -115,18 +116,18 @@ unsigned short TitleScene::Update()
             else
                 itemAlpha[i] = 0;
         } else {
-            itemAlpha[i] = field023;
+            itemAlpha[i] = menuAlpha;
         }
     }
-    if (field020 < 255)
-        field020 += 10;
-    if (field021 < 255 && field020 > 150)
-        field021 += 10;
-    if (field022 < 255 && field021 > 150)
-        field022 += 10;
-    if (field023 < 255 && field022 > 150)
-        field023 += 10;
-    if (field00C > 60000U) {
+    if (backgroundAlpha < 255)
+        backgroundAlpha += 10;
+    if (logoAlpha < 255 && backgroundAlpha > 150)
+        logoAlpha += 10;
+    if (footerAlpha < 255 && logoAlpha > 150)
+        footerAlpha += 10;
+    if (menuAlpha < 255 && footerAlpha > 150)
+        menuAlpha += 10;
+    if (elapsedMs > 60000U) {
       if (!g_TitleAttractSwitchAt00671633) {
         for (i = 0; i < 2; ++i) {
             g_PlayerIdAt006714C8[i] = static_cast<signed char>(rand() % 6);
@@ -140,13 +141,13 @@ unsigned short TitleScene::Update()
         g_CombatMode = CombatMode::Attract;
         ++g_TitleAttractSwitchAt00671633;
         AudioControl407CA0::ScheduleFade(-10000, -300, 1, 0);
-        return 0x2201;
+        return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
       }
       g_TitleAttractSwitchAt00671633 = 0;
       AudioControl407CA0::ScheduleFade(-10000, -35, 1, 0);
-      return 0x3304;
+      return SceneTransition::TilesIn | SceneTransition::TilesOut | SceneId::Logo;
     }
-    field00C = timeGetTime() - field010;
+    elapsedMs = timeGetTime() - openedAtMs;
     return 2;
 }
 

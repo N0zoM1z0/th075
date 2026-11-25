@@ -36286,22 +36286,22 @@ size = 180
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 20
 type = "REL32"
-symbol = "?begin@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?begin@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D950
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 35
 type = "REL32"
-symbol = "?end@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?end@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D980
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 47
 type = "REL32"
-symbol = "??9const_iterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??9const_iterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x0041E0D0
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 66
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 72
@@ -36311,17 +36311,17 @@ target = 0x006416B0
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 95
 type = "REL32"
-symbol = "??Eiterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AV012@H@Z"
+symbol = "??Eiterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x0041E080
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??8const_iterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??8const_iterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x0041E0B0
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 133
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 149
@@ -36331,7 +36331,7 @@ target = 0x00657128
 [[units.data-archive-seek-named-entry-0041d800.relocations]]
 offset = 157
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 
 [units.replay-capture-begin-00413790]
@@ -46438,7 +46438,7 @@ target = 0x00641B80
 [[units.archive-open-and-read-index-0041d510.relocations]]
 offset = 385
 type = "REL32"
-symbol = "?push_back@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXABUArchiveWireEntryF250@@@Z"
+symbol = "?push_back@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAEXABUArchiveIndexEntry@@@Z"
 target = 0x0041D9C0
 [[units.archive-open-and-read-index-0041d510.relocations]]
 offset = 408
@@ -46472,17 +46472,17 @@ target = 0x00657128
 [[units.data-archive-write-0041d260.relocations]]
 offset = 78
 type = "REL32"
-symbol = "?begin@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?begin@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D950
 [[units.data-archive-write-0041d260.relocations]]
 offset = 93
 type = "REL32"
-symbol = "?end@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?end@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D980
 [[units.data-archive-write-0041d260.relocations]]
 offset = 104
 type = "REL32"
-symbol = "?size@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEIXZ"
+symbol = "?size@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEIXZ"
 target = 0x0041D9A0
 [[units.data-archive-write-0041d260.relocations]]
 offset = 124
@@ -46492,22 +46492,22 @@ target = 0x006416A2
 [[units.data-archive-write-0041d260.relocations]]
 offset = 156
 type = "REL32"
-symbol = "?size@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEIXZ"
+symbol = "?size@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEIXZ"
 target = 0x0041D9A0
 [[units.data-archive-write-0041d260.relocations]]
 offset = 188
 type = "REL32"
-symbol = "??9const_iterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??9const_iterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x0041E0D0
 [[units.data-archive-write-0041d260.relocations]]
 offset = 219
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-write-0041d260.relocations]]
 offset = 243
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-write-0041d260.relocations]]
 offset = 259
@@ -46517,12 +46517,12 @@ target = 0x00641B80
 [[units.data-archive-write-0041d260.relocations]]
 offset = 270
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-write-0041d260.relocations]]
 offset = 293
 type = "REL32"
-symbol = "??Eiterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AV012@H@Z"
+symbol = "??Eiterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x0041E080
 [[units.data-archive-write-0041d260.relocations]]
 offset = 412
@@ -46537,22 +46537,22 @@ target = 0x0064169D
 [[units.data-archive-write-0041d260.relocations]]
 offset = 445
 type = "REL32"
-symbol = "?begin@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?begin@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D950
 [[units.data-archive-write-0041d260.relocations]]
 offset = 465
 type = "REL32"
-symbol = "?end@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?end@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D980
 [[units.data-archive-write-0041d260.relocations]]
 offset = 482
 type = "REL32"
-symbol = "??9const_iterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??9const_iterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x0041E0D0
 [[units.data-archive-write-0041d260.relocations]]
 offset = 519
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-write-0041d260.relocations]]
 offset = 526
@@ -46592,7 +46592,7 @@ target = 0x0064169D
 [[units.data-archive-write-0041d260.relocations]]
 offset = 661
 type = "REL32"
-symbol = "??Eiterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AV012@H@Z"
+symbol = "??Eiterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x0041E080
 [[units.data-archive-write-0041d260.relocations]]
 offset = 676
@@ -46612,22 +46612,22 @@ size = 164
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 20
 type = "REL32"
-symbol = "?begin@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?begin@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D950
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 35
 type = "REL32"
-symbol = "?end@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AViterator@12@XZ"
+symbol = "?end@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AViterator@12@XZ"
 target = 0x0041D980
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 47
 type = "REL32"
-symbol = "??9const_iterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??9const_iterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x0041E0D0
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 66
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 72
@@ -46637,17 +46637,17 @@ target = 0x006416B0
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 95
 type = "REL32"
-symbol = "??Eiterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE?AV012@H@Z"
+symbol = "??Eiterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE?AV012@H@Z"
 target = 0x0041E080
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 109
 type = "REL32"
-symbol = "??8const_iterator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBE_NABV012@@Z"
+symbol = "??8const_iterator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBE_NABV012@@Z"
 target = 0x0041E0B0
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 133
 type = "REL32"
-symbol = "??Citerator@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QBEPAUArchiveWireEntryF250@@XZ"
+symbol = "??Citerator@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QBEPAUArchiveIndexEntry@@XZ"
 target = 0x0041E060
 [[units.data-archive-seek-named-entry-0041d750.relocations]]
 offset = 149
@@ -46797,7 +46797,7 @@ target = 0x00657138
 [[units.data-archive-append-readable-file-0041d6c0.relocations]]
 offset = 115
 type = "REL32"
-symbol = "?push_back@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXABUArchiveWireEntryF250@@@Z"
+symbol = "?push_back@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAEXABUArchiveIndexEntry@@@Z"
 target = 0x0041D9C0
 [[units.data-archive-append-readable-file-0041d6c0.relocations]]
 offset = 123
@@ -58319,12 +58319,12 @@ target = 0x00000000
 [[units.data-archive-initialize-state-0041d190.relocations]]
 offset = 35
 type = "REL32"
-symbol = "??0?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE@XZ"
+symbol = "??0?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE@XZ"
 target = 0x0041D8F0
 [[units.data-archive-initialize-state-0041d190.relocations]]
 offset = 62
 type = "REL32"
-symbol = "?clear@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXXZ"
+symbol = "?clear@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAEXXZ"
 target = 0x0041D9F0
 [[units.data-archive-initialize-state-0041d190.relocations]]
 offset = 82
@@ -58364,12 +58364,12 @@ target = 0x00657138
 [[units.data-archive-close-entries-0041d1f0.relocations]]
 offset = 62
 type = "REL32"
-symbol = "?clear@?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAEXXZ"
+symbol = "?clear@?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAEXXZ"
 target = 0x0041D9F0
 [[units.data-archive-close-entries-0041d1f0.relocations]]
 offset = 80
 type = "REL32"
-symbol = "??1?$list@UArchiveWireEntryF250@@V?$allocator@UArchiveWireEntryF250@@@std@@@std@@QAE@XZ"
+symbol = "??1?$list@UArchiveIndexEntry@@V?$allocator@UArchiveIndexEntry@@@std@@@std@@QAE@XZ"
 target = 0x0041D930
 [[units.data-archive-close-entries-0041d1f0.relocations]]
 offset = 90

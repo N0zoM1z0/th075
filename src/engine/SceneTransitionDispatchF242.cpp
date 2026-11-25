@@ -1,16 +1,17 @@
+#include "engine/SceneTransition.hpp"
 #include "engine/SceneTransitionLayers.hpp"
 #include "engine/SceneBase.hpp"
 #include <windows.h>
 #include <d3d8.h>
 
 extern unsigned char g_SettingsByteAt006714D2;
-unsigned short SceneBase::TranslateState(unsigned short mode)
+unsigned short SceneBase::TranslateState(unsigned short command)
 {
     if (g_TransitionFrame < 0) {
-        if (!g_SettingsByteAt006714D2 && ((mode & 0xf00)>0))
-            mode = (mode & 0xf0ff) | 0x200;
-        switch (mode & 0xf00) {
-        case 0x200:
+        if (!g_SettingsByteAt006714D2 && ((command & SceneTransition::OutMask)>0))
+            command = (command & SceneTransition::KeepAfterOut) | SceneTransition::BlackOut;
+        switch (command & SceneTransition::OutMask) {
+        case SceneTransition::BlackOut:
         case 0x400:
         case 0x500:
         case 0x600:
@@ -19,40 +20,40 @@ unsigned short SceneBase::TranslateState(unsigned short mode)
             Graphics::SetPresentCallback(DrawTransition00432360);
             Render();
             break;
-        case 0x100:
+        case SceneTransition::WhiteOut:
             g_TransitionFrame = 40;
             Graphics::SetPresentCallback(DrawTransition00432200);
             Render();
             break;
-        case 0x300:
+        case SceneTransition::TilesOut:
             g_TransitionFrame = 40;
             Graphics::SetPresentCallback(DrawTransition004324D0);
             Render();
             break;
-        case 0xf00:
+        case SceneTransition::SkipOutAnimation:
             g_TransitionFrame = 0;
             break;
         case 0:
-            if (!g_SettingsByteAt006714D2 && ((mode & 0xf000)>0))
-                mode = (mode & 0x0fff) | 0x2000;
-            switch (mode & 0xf000) {
-            case 0x2000:
+            if (!g_SettingsByteAt006714D2 && ((command & SceneTransition::InMask)>0))
+                command = (command & SceneTransition::KeepBeforeIn) | SceneTransition::BlackIn;
+            switch (command & SceneTransition::InMask) {
+            case SceneTransition::BlackIn:
             case 0x6000:
                 g_TransitionFrame = 10;
                 Graphics::SetPresentCallback(DrawTransition00432410);
                 Render();
                 break;
-            case 0x1000:
+            case SceneTransition::WhiteIn:
                 g_TransitionFrame = 40;
                 Graphics::SetPresentCallback(DrawTransition004322B0);
                 Render();
                 break;
-            case 0x3000:
+            case SceneTransition::TilesIn:
                 g_TransitionFrame = 40;
                 Graphics::SetPresentCallback(DrawTransition00432660);
                 Render();
                 break;
-            case 0xf000:
+            case SceneTransition::SkipInAnimation:
                 g_TransitionFrame = 0;
                 break;
             }
@@ -64,10 +65,10 @@ unsigned short SceneBase::TranslateState(unsigned short mode)
         --g_TransitionFrame;
         if (g_TransitionFrame < 0) {
             Graphics::SetPresentCallback(0);
-            if (mode & 0xf00)
-                return mode & 0xf0ff;
-            return mode & 0xff;
+            if (command & SceneTransition::OutMask)
+                return command & SceneTransition::KeepAfterOut;
+            return command & SceneTransition::TargetMask;
         }
     }
-    return mode;
+    return command;
 }

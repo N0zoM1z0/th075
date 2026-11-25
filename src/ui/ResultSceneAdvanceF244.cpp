@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "replay/ReplayMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "engine/FloatConstants.hpp"
@@ -18,119 +19,119 @@ unsigned short ResultScene::Update()
     PollInput();
     Render();
     Graphics::Present();
-    if ((field00C)==1) {
-        if ((field040)<6) {
-            offsets[4]=0;
-            offsets[3]=0;
-            offsets[2]=0;
-            offsets[1]=0;
-            offsets[0]=0;
-            field038=values[0];
-            field038=static_cast<int>((field038)*(field02C));
-            field038=static_cast<int>((field038)*(field030));
-            field038=static_cast<int>((field038)*(field034));
+    if ((advanceInput)==1) {
+        if ((tallyStep)<6) {
+            rowSlideX[4]=0;
+            rowSlideX[3]=0;
+            rowSlideX[2]=0;
+            rowSlideX[1]=0;
+            rowSlideX[0]=0;
+            pendingBonus=values[0];
+            pendingBonus=static_cast<int>((pendingBonus)*(comboMultiplier));
+            pendingBonus=static_cast<int>((pendingBonus)*(spellTimeMultiplier));
+            pendingBonus=static_cast<int>((pendingBonus)*(remainingHealthMultiplier));
             switch (g_OptionsModeAt006714D0) {
-            case 0: field038=static_cast<int>((field038)*FloatConstants::HalfDouble);break;
-            case 1: field038=static_cast<int>((field038)*FloatConstants::OneDouble);break;
-            case 2: field038=static_cast<int>((field038)*FloatConstants::OneAndHalfDouble);break;
-            case 3: field038=static_cast<int>((field038)*2.0);break;
+            case 0: pendingBonus=static_cast<int>((pendingBonus)*FloatConstants::HalfDouble);break;
+            case 1: pendingBonus=static_cast<int>((pendingBonus)*FloatConstants::OneDouble);break;
+            case 2: pendingBonus=static_cast<int>((pendingBonus)*FloatConstants::OneAndHalfDouble);break;
+            case 3: pendingBonus=static_cast<int>((pendingBonus)*2.0);break;
             }
-            g_BattleFightersAt00671418[0]->score+=field038;
-            field038=0;
-            field040=7;
-            field03C=400;
-        } else if ((field040)==6) {
-            g_BattleFightersAt00671418[0]->score+=field038;
-            field03C=400;
-            field038=0;
-            field040=7;
+            g_BattleFightersAt00671418[0]->score+=pendingBonus;
+            pendingBonus=0;
+            tallyStep=7;
+            tallyFrames=400;
+        } else if ((tallyStep)==6) {
+            g_BattleFightersAt00671418[0]->score+=pendingBonus;
+            tallyFrames=400;
+            pendingBonus=0;
+            tallyStep=7;
         } else {
             if (static_cast<unsigned int>(g_BattleFightersAt00671418[0]->score)>g_MaxCombatScore)
                 g_MaxCombatScore=g_BattleFightersAt00671418[0]->score;
             if (g_ReplayModeAt0066C238==ReplayMode::Playback && g_StageAt0067161E>=g_ReplayRecords.fileHeader.recordCount) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
-                return 0x2205;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayBrowser;
             }
             if (g_StoryResultAt00671621) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
                 g_StateReturnFlag=-1;
-                return 0x2207;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayNameEntry;
             }
             if ((g_BattleFightersAt00671418[0]->field713)>=8) {
                 if (g_ReplayModeAt0066C238==ReplayMode::Playback) {
                     MusicF204::PlayTrackByIndex(0x28);
                     AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
-                    return 0x2205;
+                    return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayBrowser;
                 }
-                return 0x1108;
+                return SceneTransition::WhiteIn | SceneTransition::WhiteOut | SceneId::BattleEnding;
             }
-            return 0x2301;
+            return SceneTransition::BlackIn | SceneTransition::TilesOut | SceneId::LoadBattle;
         }
     }
     if ((g_BattleFightersAt00671418[0]->field713)==10) {
-        field014=1.0f;
-    } else if ((field014)>FloatConstants::TwoFifths) {
-        field014=(field014)-FloatConstants::OneHundredth;
+        backdropScale=1.0f;
+    } else if ((backdropScale)>FloatConstants::TwoFifths) {
+        backdropScale=(backdropScale)-FloatConstants::OneHundredth;
     } else {
-        field014=0.4f;
+        backdropScale=0.4f;
     }
-    if ((field018)<255) {
-        field018=(field018)+5;
+    if ((rowsAlpha)<255) {
+        rowsAlpha=(rowsAlpha)+5;
     } else {
-        field03C=(field03C)+1;
-        if ((field040)<5 && (offsets[static_cast<int>(field040)])>0)
-            offsets[static_cast<int>(field040)]=(offsets[static_cast<int>(field040)])-30;
+        tallyFrames=(tallyFrames)+1;
+        if ((tallyStep)<5 && (rowSlideX[static_cast<int>(tallyStep)])>0)
+            rowSlideX[static_cast<int>(tallyStep)]=(rowSlideX[static_cast<int>(tallyStep)])-30;
     }
-    switch (field03C) {
+    switch (tallyFrames) {
     case 30:
-        field040=1;
-        field038=(field038)+(values[0]);
+        tallyStep=1;
+        pendingBonus=(pendingBonus)+(values[0]);
         g_SoundBank->Play(0x2d);
         break;
     case 60:
-        field040=2;
-        field038=static_cast<int>((field038)*(field02C));
+        tallyStep=2;
+        pendingBonus=static_cast<int>((pendingBonus)*(comboMultiplier));
         g_SoundBank->Play(0x2d);
         break;
     case 90:
-        field040=3;
-        field038=static_cast<int>((field038)*(field030));
+        tallyStep=3;
+        pendingBonus=static_cast<int>((pendingBonus)*(spellTimeMultiplier));
         g_SoundBank->Play(0x2d);
         break;
     case 120:
-        field040=4;
-        field038=static_cast<int>((field038)*(field034));
+        tallyStep=4;
+        pendingBonus=static_cast<int>((pendingBonus)*(remainingHealthMultiplier));
         g_SoundBank->Play(0x2d);
         break;
     case 180:
-        field040=5;
+        tallyStep=5;
         g_SoundBank->Play(0x28);
         switch (g_OptionsModeAt006714D0) {
-        case 0: field038=static_cast<int>((field038)*FloatConstants::HalfDouble);break;
-        case 1: field038=static_cast<int>((field038)*FloatConstants::OneDouble);break;
-        case 2: field038=static_cast<int>((field038)*FloatConstants::OneAndHalfDouble);break;
-        case 3: field038=static_cast<int>((field038)*2.0);break;
+        case 0: pendingBonus=static_cast<int>((pendingBonus)*FloatConstants::HalfDouble);break;
+        case 1: pendingBonus=static_cast<int>((pendingBonus)*FloatConstants::OneDouble);break;
+        case 2: pendingBonus=static_cast<int>((pendingBonus)*FloatConstants::OneAndHalfDouble);break;
+        case 3: pendingBonus=static_cast<int>((pendingBonus)*2.0);break;
         }
         break;
     case 300:
-        field010=(field038)/600;
-        if ((field010)<1234) field010=1234;
-        field040=6;
+        pointsPerFrame=(pendingBonus)/600;
+        if ((pointsPerFrame)<1234) pointsPerFrame=1234;
+        tallyStep=6;
         break;
     }
-    if ((field040)==6) {
-        if ((field038)>(field010)) {
-            field038=(field038)-(field010);
-            g_BattleFightersAt00671418[0]->score+=field010;
-            field019=((field019)+1)%3;
-            if ((field019)==0)
+    if ((tallyStep)==6) {
+        if ((pendingBonus)>(pointsPerFrame)) {
+            pendingBonus=(pendingBonus)-(pointsPerFrame);
+            g_BattleFightersAt00671418[0]->score+=pointsPerFrame;
+            tallySoundCycle=((tallySoundCycle)+1)%3;
+            if ((tallySoundCycle)==0)
                 g_SoundBank->Play(0x31);
         } else {
-            g_BattleFightersAt00671418[0]->score+=field038;
-            field038=0;
-            field040=7;
+            g_BattleFightersAt00671418[0]->score+=pendingBonus;
+            pendingBonus=0;
+            tallyStep=7;
         }
     }
     return 6;

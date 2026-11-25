@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "ui/CharacterSelectScene.hpp"
 #include "audio/SoundBank.hpp"
@@ -186,7 +187,7 @@ unsigned short ResultListScene::Update() {
     }
     if (cancelInput == 1) {
         g_SoundBank->Play(40);
-        return 0x2202;
+        return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
     }
     return 0xE;
 }

@@ -59,6 +59,15 @@ affected units passed, and the Windows link matched the preceding build
 except for the COFF timestamp.
 [Battle phase and overlay evidence](KNOWLEDGE_BASE.md#battle-frame-and-overlays)
 
+The Windows loop and scene updates now share named destination and
+transition values. The title, options, replay browser and score tally
+use named input and display fields. The archive reader and writer share
+the typed index layout. All 71 affected units passed and the strict
+Windows link matches the preceding build except for its COFF timestamp.
+The headless archive check wrote and read a sample archive and recovered
+the same installed battle resource as an independent index reader.
+[Scene and archive evidence](KNOWLEDGE_BASE.md#scene-commands-and-archive-files)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

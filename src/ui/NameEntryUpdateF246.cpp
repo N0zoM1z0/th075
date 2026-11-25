@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "battle/BattleResultState.hpp"
 #include "ui/NameEntryScenes.hpp"
 #include "engine/GameProgress.hpp"
@@ -17,8 +18,8 @@ unsigned short PlayerNameEntryScene::Update()
         } else if (SELECTION_CODE==0x5c) {
             g_GameProgress.SaveScoreFile();
             g_GameProgress.CopyRankNameToWorking(rank);
-            if (g_StateReturnFlag) return 0x2207;
-            return 0x2202;
+            if (g_StateReturnFlag) return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayNameEntry;
+            return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
         } else {
             if (field014>7)
                 selectedRecord->scores[rank].name[7]=static_cast<unsigned char>(SELECTION_CODE);

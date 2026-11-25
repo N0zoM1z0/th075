@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "input/InputControl.hpp"
 #include "battle/CombatMode.hpp"
 #include "engine/GeometryConstants.hpp"
@@ -44,7 +45,7 @@ unsigned short CharacterSelectScene::Update()
             if ((optionsOpen[g_SelectedSideAt006714B8])!=0) {
                 (optionsOpen[g_SelectedSideAt006714B8])=0;
             } else if (((playerState[0])==0 && (playerState[1])==0) || (cancellationRequested)==1) {
-                return 0x2202;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
             }
         }
         if ((input[1-g_SelectedSideAt006714B8].cancel)==1) {
@@ -61,7 +62,7 @@ unsigned short CharacterSelectScene::Update()
             if ((optionsOpen[0])!=0)
                 (optionsOpen[0])=0;
             else
-                return 0x2202;
+                return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
         }
         (playerState[1])=8;
     } else if (g_InputMappings[0].held.counts[InputControl::ButtonB]==1 && (optionsOpen[0])!=0) {
@@ -73,7 +74,7 @@ unsigned short CharacterSelectScene::Update()
     } else if ((g_InputMappings[0].held.counts[InputControl::ButtonB]==1 || g_InputMappings[1].held.counts[InputControl::ButtonB]==1 || (cancellationRequested)==1)
                && (((playerState[0])==0 && (playerState[1])==0) || (cancellationRequested)==1)) {
         PLAY(0x28);
-        return 0x2202;
+        return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
     }
     for (int i=0;i<2;++i) {
         if ((optionsOpen[i])!=0) {
@@ -101,7 +102,7 @@ unsigned short CharacterSelectScene::Update()
         }
         AudioControl407CA0::ScheduleFade(-10000,-60,1,0);
         g_ReplayRecords.BeginCapture();
-        return 0x2201;
+        return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::LoadBattle;
     } else {
         (animationPhase) = (animationPhase) + FloatConstants::One;
         if (GeometryConstants::ThousandTwentyFour < (animationPhase))

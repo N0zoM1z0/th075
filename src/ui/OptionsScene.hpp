@@ -21,10 +21,10 @@ public:
     IDirect3DTexture8* canvas;          // +0x00C surface the option values are drawn on
     short currentItem;                  // +0x010
     short pressedItem;                  // +0x012
-    unsigned char field014;             // +0x014 alpha of the menu
-    signed char field015;               // +0x015 input this frame
-    signed char field016;               // +0x016
-    signed char field017;               // +0x017
-    signed char field018;               // +0x018
+    unsigned char displayAlpha;             // +0x014 alpha of the menu
+    signed char horizontalInput;               // +0x015 input this frame
+    signed char verticalInput;               // +0x016
+    signed char confirmInput;               // +0x017
+    signed char cancelInput;               // +0x018
 };
 #endif

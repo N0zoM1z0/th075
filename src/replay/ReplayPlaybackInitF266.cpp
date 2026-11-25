@@ -23,7 +23,7 @@ ReplayBrowserScene::ReplayBrowserScene()
         g_BattleFightersAt00671418[1]=0;
     }
     ScanFiles();
-    field051=0;
-    field048=g_ReplayControllerAt0067162C;
-    field04C=5;
+    choosingRecord=0;
+    selectedFile=g_ReplayControllerAt0067162C;
+    displayAlpha=5;
 }

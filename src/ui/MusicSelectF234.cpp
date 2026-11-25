@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "input/InputControl.hpp"
 #include "ui/MusicRoomScene.hpp"
 #include "engine/GameProgress.hpp"
@@ -33,7 +34,7 @@ unsigned short MusicRoomScene::Update()
     if (((g_InputMappings[0].held.counts[InputControl::ButtonB]==1 || g_InputMappings[1].held.counts[InputControl::ButtonB]==1) && inputCooldown==0) ||
         g_InputMappings[0].IsKeyDown(1)) {
         AudioControl407CA0::ScheduleFade(-10000,-160,1,0);
-        return 0x2202;
+        return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
     } else {
         if (inputCooldown>0) --inputCooldown;
         return 12;

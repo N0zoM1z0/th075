@@ -921,6 +921,23 @@ update and draw paths share named members for panel position, rise speed,
 title scale, the numeric readout and their alphas.
 [Phase values](../src/battle/BattlePhase.hpp) · [Scene layout](../src/battle/BattleScene.hpp) · [Battle update](../src/battle/BattleFrame.cpp)
 
+## Scene commands and archive files
+
+The Windows loop consumes a 16-bit scene command. The low byte selects the
+scene, bits 8–11 select the outgoing animation, and bits 12–15 select the
+incoming animation. The scene dispatcher removes the outgoing field first.
+The loop allocates the new scene before the incoming animation runs.
+The title and replay browser retain their own selection and fade state.
+[Scene command](../src/engine/SceneTransition.hpp) · [Dispatcher](../src/engine/SceneTransitionDispatchF242.cpp) · [Windows loop](../src/platform/WinMainF1171.cpp)
+
+A game archive begins with a 16-bit entry count followed by 108-byte
+index entries. Each entry holds a 100-byte filename, a 32-bit payload size
+and a 32-bit absolute file offset. The reader and writer use the same
+evolving mask over the index. The runtime archive check round-tripped two
+sample members and read the installed `data\system\battle.dat` member at
+the offset resolved from its original index.
+[Index entry](../src/assets/DataArchive.hpp) · [Reader](../src/assets/ArchiveOpenReadIndexF338.cpp) · [Writer](../src/assets/ArchiveWriteF339.cpp)
+
 ## Game progress (save data)
 
 The progress object at `0x006718F8` holds 15 character records, each

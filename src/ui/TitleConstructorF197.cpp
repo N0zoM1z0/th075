@@ -11,29 +11,29 @@ extern const char g_TitleTextureRootAt006582E8[] = "data";
 
 TitleScene::TitleScene()
 {
-    field010 = timeGetTime();
-    field00C = timeGetTime() - field010;
+    openedAtMs = timeGetTime();
+    elapsedMs = timeGetTime() - openedAtMs;
     textures = new TextureManagerF198();
     textures->AllocateUnformattedSlots(4);
     textures->LoadDefault(
         g_TitleTextureDataAt006582F0, g_TitleTextureRootAt006582E8);
     field014 = 0;
-    field018 = 0;
-    field020 = 255;
-    field021 = 5;
-    field022 = 5;
-    field023 = 5;
+    verticalInput = 0;
+    backgroundAlpha = 255;
+    logoAlpha = 5;
+    footerAlpha = 5;
+    menuAlpha = 5;
     menuIndex = reinterpret_cast<const unsigned char&>(g_TitleSelectionAt00671630);
-    itemDelay[0] = 0;
-    itemDelay[1] = 15;
-    itemDelay[2] = 30;
-    itemDelay[3] = 45;
-    itemDelay[4] = 60;
-    itemDelay[5] = 45;
-    itemDelay[6] = 60;
-    itemDelay[7] = 75;
-    itemDelay[8] = 90;
-    itemDelay[9] = 75;
+    itemSlideX[0] = 0;
+    itemSlideX[1] = 15;
+    itemSlideX[2] = 30;
+    itemSlideX[3] = 45;
+    itemSlideX[4] = 60;
+    itemSlideX[5] = 45;
+    itemSlideX[6] = 60;
+    itemSlideX[7] = 75;
+    itemSlideX[8] = 90;
+    itemSlideX[9] = 75;
     itemAlpha[0] = 0;
     itemAlpha[1] = 0;
     itemAlpha[2] = 0;
@@ -47,5 +47,5 @@ TitleScene::TitleScene()
     g_PlayerIdAt006714C8[0] = 0;
     g_PlayerIdAt006714C8[1] = 0;
     g_StageSelectionAt0067161D = 0;
-    field01C = 0;
+    escapeHeldFrames = 0;
 }

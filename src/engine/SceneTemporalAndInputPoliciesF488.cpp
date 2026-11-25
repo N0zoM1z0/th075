@@ -1,3 +1,4 @@
+#include "engine/SceneTransition.hpp"
 #include "input/InputControl.hpp"
 #include "battle/CombatMode.hpp"
 #include "ui/LoadingLogoScenes.hpp"
@@ -12,8 +13,8 @@
 #include <mmsystem.h>
 unsigned short OpeningScene::Update(){
  PollInput(); Render(); Graphics::Present();
- if(g_InputMappings[0].held.counts[InputControl::ButtonA]==1 || g_InputMappings[1].held.counts[InputControl::ButtonA]==1) return 0x2202;
- if(elapsed>0xC15C) return 0xFF02;
+ if(g_InputMappings[0].held.counts[InputControl::ButtonA]==1 || g_InputMappings[1].held.counts[InputControl::ButtonA]==1) return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
+ if(elapsed>0xC15C) return SceneTransition::SkipInAnimation | SceneTransition::SkipOutAnimation | SceneId::Title;
  elapsed=timeGetTime()-startTicks;
  return 0xD;
 }
@@ -22,16 +23,16 @@ unsigned short LoadingScene::Update(){
  if(!loaded){
    BattleCharacterLoaderF398::LoadCharacters();
    if(g_CombatMode==CombatMode::Story && g_StageAt0067161E>=8)
-      return 0x1108;
+      return SceneTransition::WhiteIn | SceneTransition::WhiteOut | SceneId::BattleEnding;
    BattleStageLoaderF389::LoadStage();
    loaded=1;
  }
- return 0x2000;
+ return SceneTransition::BlackIn | SceneId::Battle;
 }
 unsigned short LogoScene::Update(){
  PollInput();Render();Graphics::Present();
  elapsedFrames++;
- if(elapsedFrames>180)return 0x220D;
+ if(elapsedFrames>180)return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Opening;
  return 4;
 }
 void LogoScene::PollInput(){
