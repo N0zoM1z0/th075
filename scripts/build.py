@@ -156,9 +156,11 @@ def write_program_data(units, destination: Path) -> None:
 
 def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
     sources = program_sources(units)
+    # Keep the established link order when sources move into subsystem folders.
+    ordered_sources = sorted(sources, key=lambda source: (source.parts[0], source.name))
     groups = defaultdict(list)
-    for source, profile in sorted(sources.items()):
-        groups[profile].append(source)
+    for source in ordered_sources:
+        groups[sources[source]].append(source)
 
     tools = Path(os.environ.get("TH075_MSVC71_ROOT", ROOT / ".tools/msvc710")).resolve() / "Vc7"
     locked = tomllib.loads((ROOT / "config/tools.lock.toml").read_text())["msvc71"]
@@ -179,7 +181,7 @@ def build_program(units, link_program: bool, *, comparison_batch=False) -> None:
     runtime = [sys.executable, str(ROOT / "scripts/shared_runtime.py")]
     output_dir = Path("build/replay-batch") if comparison_batch else PROGRAM
     object_dir = output_dir / "obj"
-    objects = [object_dir / (source.stem + ".obj") for source in sorted(sources)]
+    objects = [object_dir / (source.stem + ".obj") for source in ordered_sources]
     matching = {}
     if comparison_batch:
         for unit in units.values():

@@ -647,12 +647,12 @@ place to check the ABI and source owner. Keep the full link diagnostics in
 The PE vtables give the real hierarchy (`.analysis/layout-tools/vtables.json`
 dumps them):
 
-- `Actor` (`src/Actor.hpp`, 0x00–0xC3) is the base of every animated battle
+- `Actor` (`src/battle/Actor.hpp`, 0x00–0xC3) is the base of every animated battle
   object; its shared helpers (0040FA30–0040FC50 and 00455500) are in
-  `src/Actor.cpp`. Slots: 0 `BindAnimation` (fighters 00453D80), 1 `Advance` (pure),
+  `src/battle/Actor.cpp`. Slots: 0 `BindAnimation` (fighters 00453D80), 1 `Advance` (pure),
   2 `Render` (fighters 00453F70), 3 `RenderNode` 00410350, 4
   `RenderMirroredNode` 00410A00. The vtable pointer is at +0.
-- `Fighter : Actor` (`src/Fighter.hpp`, up to 0xF0F, `sizeof` 0xF10).
+- `Fighter : Actor` (`src/battle/Fighter.hpp`, up to 0xF0F, `sizeof` 0xF10).
   Constructor 004567B0; the base table at 00658FE8 uses `_purecall`
   00641E19 for pure slots. Slots 5–19: 5 `~Fighter`, 6 `ResetRound` (base
   00457010), 7 `CreateOwnedObject`, 8 `ForwardBaseAction` (base 00451EB0),
@@ -660,10 +660,10 @@ dumps them):
   `ChooseCardAction`, 13 `PollCommands`, 14 `SelectVariant`, 15
   `ConfigureStage`, 16 `AdvanceSequence`, 17 `RenderStage`, 18
   `NoOpSlot18`, 19 `AdvanceAuxiliary`.
-- `<Char>Fighter : Fighter` (`src/<Char>Fighter.hpp`, 11 classes) holds each
+- `<Char>Fighter : Fighter` (`src/characters/`, 11 classes) holds each
   character's overrides and its own members from +0xF10 (shorts in some
   characters, floats in others). The constructors live in
-  `src/<Char>Init*.cpp`.
+  `src/characters/<Char>Init*.cpp`.
 - Fighter command-selection state uses `field47C` (+0x47C) and the
   associated sprite-sequence pointer at +0x480. `SetCommandSelection`
   (00454BC0) writes the selection and updates the sequence sampling/color
@@ -671,12 +671,12 @@ dumps them):
   `Fighter::ClearField47CAt00454C00`; it is a natural member store of zero
   to +0x47C and cold-replays exactly. Its address-anchored name is retained
   because no static references to this leaf were found.
-- `CharacterObject : Actor` (`src/CharacterObject.hpp`, constructor
+- `CharacterObject : Actor` (`src/characters/CharacterObject.hpp`, constructor
   0045B760, base table 00659064, `sizeof` 0xE8) is each character's effect
   object: `sequences` at +0xC4, floats +0xC8–0xD0, shorts +0xD8–0xE2 and
   the owning `Fighter*` at +0xE4. Object tables have five slots and no
   destructor. `<Char>Object` constructors are in
-  `src/CharacterObjectConstructorsF422.cpp`.
+  `src/characters/CharacterObjectConstructorsF422.cpp`.
 
 Slot 1 of each character table is the per-character `Advance`.
 
@@ -699,7 +699,7 @@ Several old labels were wrong: "Boss 0050A580" is Patchouli's object, and
 attributed one emit the same bytes, so check the vtable slot before naming
 a method.
 
-`BattleScene` (`src/BattleScene.hpp`, vtable 00658334: slot 0 the
+`BattleScene` (`src/battle/BattleScene.hpp`, vtable 00658334: slot 0 the
 deleting destructor, 1 `Update` 0043B1B0, 2 `Render` 0043D9D0) owns the
 match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   helpers of the progress records and combo counters. Members: +0x08 the
@@ -824,14 +824,34 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   to 0045AC50. The 381-byte `std::vector<RECT>::operator=` at 0045AC50
   also cold-replays with all 17 relocations. These compiler/library-origin
   functions remain excluded from authored exact coverage.
-- Fighter gauges: +0x3B0 `spirit` (specials need it, guarding drains it, at
-  0 the fighter is guard-crushed into state 143), +0x368 `cardGauge` (float,
-  filled by hits, capped at 2000), +0x3C0 `comboRate` (each hit multiplies
-  it by the frame's factor), +0x2D0 `score` (100–500 per hit). Older names
-  called +0x3B0 a meter.
+- Fighter gauges include `spirit` at +0x3B0, `comboRate` at +0x3C0 and
+  `score` at +0x2D0. Guarding drains spirit. At zero, a guard crush enters
+  action 143. Each hit multiplies the combo rate by the animation frame's
+  factor.
 - In combat functions the attack is an `Actor` (fighter or object) and the
   attacker and defender are `Fighter`s; `Fighter::CalculateDamage(attack)`
   (00455640) is the attacker's damage against its opponent.
+
+### Spell cards and collision health
+
+`BattleScene::ResolveActiveCollisions` snapshots both fighters' health
+into `healthBeforeCollision` (+0x328) before resolving any hits.
+`Fighter::CalculateDamage` and `Fighter::ApplyOpponentGaugeChange` use
+that value for damage scaling through the whole pass.
+
+The hit handlers add to `pendingSpellCharge` (+0x368). `UpdateCounters`
+converts it into `spellPower` (+0x36C), with a slower conversion during a
+declaration. The HUD draws one stock per 100 points, and each of
+Patchouli's six spell actions consumes 100. Her command reader recognizes
+`2N2D` to declare, then `236D` to cast the chosen card. Character select
+copies the choices into `selectedSpellCards[2]` (+0x398) through the
+battle loader. The positive `spellTimer` (+0x3A0) enables spell actions and
+drives the HUD countdown. On normal expiration, `UpdateCounters` clears
+the power and sets `spellDeclarationExpired` (+0x39C) until the next reset.
+`bombCount` (+0x366) is the separate Spirit Strike stock. The HUD draws an
+icon per unit, and the `22C` action consumes one.
+
+[Fighter layout](../src/battle/Fighter.hpp) · [Timers](../src/battle/CombatTimers.cpp) · [Patchouli's spell dispatch](../src/characters/CharacterActionDispatch502450.cpp)
 
 ## Game progress (save data)
 
@@ -852,7 +872,7 @@ from difficulty zero for the selected character. The layout is:
   the selected fighter and difficulty; +0x16AC6: 256 bytes saved with the
   scores.
 
-`src/GameProgress.hpp` declares this layout and 27 of its methods.
+`src/engine/GameProgress.hpp` declares this layout and 27 of its methods.
 Nested indexing `characters[f].difficulties[d].x` compiles exactly like the
 left-to-right sum `this + f*0x17F0 + d*0x5FC + off`, but not like
 `this + (d*0x5FC + f*0x17F0)`: VC7.1 evaluates a parenthesized offset sum

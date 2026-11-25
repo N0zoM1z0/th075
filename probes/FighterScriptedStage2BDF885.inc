@@ -44,7 +44,7 @@ case 0x2BD: {
     if ((animationStage)==5 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x-
                  float((facing)*64),

@@ -2,7 +2,7 @@
 // 0051B89F..0051BB8B, 748 native CODE B /160 x86. One inner
 // state of the still-NONEXACT 81KB CharacterObject Advance.
 case 0x388: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }

@@ -203,7 +203,7 @@ Four observed projectile X sources use `Actor::x` instead of a borrowed
 All 98 fighter-header-affected exact units cold-replayed (36/36, 31/31,
 31/31). The original 58,294 CODE bytes remain NONEXACT (1,741 GPR-role,
 three width differences). The complete natural-C++ source is now promoted to
-`src/RemiliaFighterAdvanceF1041.cpp`, with the ledger marked `reconstructed`,
+`src/characters/RemiliaFighterAdvanceF1041.cpp`, with the ledger marked `reconstructed`,
 not `matching`; the native vtable at `0x00659A40` confirms slot 1 points to
 `0x00543210`. Its three guarded dispatch tables/remaps are independently
 verified. No giant exact credit was claimed.
@@ -276,7 +276,7 @@ The two 47,655-byte whole COFF bodies have identical nonrelocation bytes
 and all 1,491 relocation offsets/types; its 46,755-byte original CODE
 remains nonexact (2,736 GPR-role and five width differences, frontier
 16,833 differing bytes). The complete natural-C++ source is now promoted to
-`src/YoumuFighterAdvanceF1040.cpp` and the ledger marks it `reconstructed`,
+`src/characters/YoumuFighterAdvanceF1040.cpp` and the ledger marks it `reconstructed`,
 not `matching`; the native vtable at `0x006598D0` confirms slot 1 points to
 `0x005214B0`. Its four guarded dispatch tables/remaps are independently
 verified. All 85 exact units depending on the real fighter header cold-replayed
@@ -950,7 +950,7 @@ inline assembly, padding, or synthetic instructions. Continue with natural
 C++ control-flow and object-model hypotheses only.
 
 Three shared math leaves now have complete natural C++ game wrappers in
-`src/MathFloatHelpers.cpp`: angle (`00483300`, 21 bytes), absolute value
+`src/engine/MathFloatHelpers.cpp`: angle (`00483300`, 21 bytes), absolute value
 (`00412D90`, 17 bytes), and magnitude (`00428D20`, 17 bytes). They are
 called from 16/30/3 independently authored game functions respectively
 (211/68/6 direct call sites). The angle's 37-byte `atan2f` worker is
@@ -1414,18 +1414,18 @@ The action-808 source now names the four read-only arena bounds as `extern const
 
 The complete natural-C++ parents for the large Sakuya, Patchouli, Youmu, Yuyuko, Meiling, Suika and Yukari object state machines are now promoted from `probes/` into `src/`. Their ledger status is `reconstructed`, not `matching`; original function extents, source-origin classification and exactness are kept independent. The promotion does not claim a byte-exact replacement.
 
-- `0x004CA6E0` — `src/SakuyaObjectAdvanceF1222.cpp`, 42,511 target CODE bytes. The focused VC7.1 frontier remains 0 mnemonic, 12 width and 447 GPR differences; first GPR difference `0x004CCBD7`. The 12 width differences are the action-500..503 comparisons in the adjacent object action blocks, where the same EAX/ECX/EDX register cycle changes the accumulator `cmp` encoding. A positive-outer-guard rewrite of action 809 regressed the frontier; keep the original natural predicate until a new allocation hypothesis exists.
-- `0x0050A580` — `src/PatchouliObjectAdvanceF1044.cpp`, 81,539 target CODE bytes. The focused frontier remains 0 mnemonic, 5 width and 522 GPR differences; first GPR difference `0x00515C0E`, in Patchouli case `0x354`. The target/source difference is the same three-register cycle. A local `Fighter*` alias and three action/stage predicate orderings all regressed the instruction frontier; retain the original source form.
+- `0x004CA6E0` — `src/characters/SakuyaObjectAdvanceF1222.cpp`, 42,511 target CODE bytes. The focused VC7.1 frontier remains 0 mnemonic, 12 width and 447 GPR differences; first GPR difference `0x004CCBD7`. The 12 width differences are the action-500..503 comparisons in the adjacent object action blocks, where the same EAX/ECX/EDX register cycle changes the accumulator `cmp` encoding. A positive-outer-guard rewrite of action 809 regressed the frontier; keep the original natural predicate until a new allocation hypothesis exists.
+- `0x0050A580` — `src/characters/PatchouliObjectAdvanceF1044.cpp`, 81,539 target CODE bytes. The focused frontier remains 0 mnemonic, 5 width and 522 GPR differences; first GPR difference `0x00515C0E`, in Patchouli case `0x354`. The target/source difference is the same three-register cycle. A local `Fighter*` alias and three action/stage predicate orderings all regressed the instruction frontier; retain the original source form.
 
-- `0x00536400` — `src/YoumuObjectAdvanceF1211.cpp`, 39,999 target CODE bytes, with its typed list-history declarations in `src/YoumuObjectHistoryF1211.hpp`. The focused frontier remains 0 mnemonic, 10 width and 913 GPR differences; first GPR difference `0x005392F8`. The 268-byte dispatch table at `0x0054003F` and 199-byte remap at `0x0054014B` were independently revalidated. The history-queue replay remains ordinary C++ and nonexact; no exactness credit is inferred.
+- `0x00536400` — `src/characters/YoumuObjectAdvanceF1211.cpp`, 39,999 target CODE bytes, with its typed list-history declarations in `src/characters/YoumuObjectHistoryF1211.hpp`. The focused frontier remains 0 mnemonic, 10 width and 913 GPR differences; first GPR difference `0x005392F8`. The 268-byte dispatch table at `0x0054003F` and 199-byte remap at `0x0054014B` were independently revalidated. The history-queue replay remains ordinary C++ and nonexact; no exactness credit is inferred.
 
-- `0x0057D580` — `src/YuyukoObjectAdvanceF1237.cpp`, 43,845 target CODE bytes. The focused frontier is 0 mnemonic, 6 width and 914 GPR differences; first GPR difference `0x00583489` at the `case 838` entry. Condition-order, nested-if, and scoped owner/stage alias trials did not improve the register frontier; the current natural-C++ condition remains unchanged. The guarded dispatch has a 284-byte jump table at `0x005880C5` and a 198-byte remap at `0x005881E1`, both independently revalidated against the original PE. The old frontier entry had not been refreshed after commit `13c5871b` reordered the equivalent `case 838` short-circuit terms: the code section grew from 44,327 to 44,331 bytes, width debt fell from 28 to 6, and GPR debt changed from 897 to 914. The byte-offset ratchet is now re-based to that already-committed instruction shape; its 17,739 differing offsets reflect shifted instruction encodings, not an exactness claim.
+- `0x0057D580` — `src/characters/YuyukoObjectAdvanceF1237.cpp`, 43,845 target CODE bytes. The focused frontier is 0 mnemonic, 6 width and 914 GPR differences; first GPR difference `0x00583489` at the `case 838` entry. Condition-order, nested-if, and scoped owner/stage alias trials did not improve the register frontier; the current natural-C++ condition remains unchanged. The guarded dispatch has a 284-byte jump table at `0x005880C5` and a 198-byte remap at `0x005881E1`, both independently revalidated against the original PE. The old frontier entry had not been refreshed after commit `13c5871b` reordered the equivalent `case 838` short-circuit terms: the code section grew from 44,327 to 44,331 bytes, width debt fell from 28 to 6, and GPR debt changed from 897 to 914. The byte-offset ratchet is now re-based to that already-committed instruction shape; its 17,739 differing offsets reflect shifted instruction encodings, not an exactness claim.
 
-- `0x005EB520` — `src/MeilingObjectAdvanceF1207.cpp`, 34,434 target CODE bytes. The focused frontier is 0 mnemonic, 6 width and 135 GPR differences; first GPR difference `0x005F3904`, all register differences in state 998. Its recorded VC7.1 profile intentionally omits `/GS`; do not silently add that flag. The guarded dispatch has a 244-byte table at `0x005F3BA2` and a 199-byte remap at `0x005F3C96`, both independently revalidated against the original PE.
+- `0x005EB520` — `src/characters/MeilingObjectAdvanceF1207.cpp`, 34,434 target CODE bytes. The focused frontier is 0 mnemonic, 6 width and 135 GPR differences; first GPR difference `0x005F3904`, all register differences in state 998. Its recorded VC7.1 profile intentionally omits `/GS`; do not silently add that flag. The guarded dispatch has a 244-byte table at `0x005F3BA2` and a 199-byte remap at `0x005F3C96`, both independently revalidated against the original PE.
 
-- `0x005C9CC0` — `src/SuikaObjectAdvanceF1216.cpp`, 43,501 target CODE bytes. The focused frontier is 0 mnemonic, 1 width and 935 GPR differences; first GPR difference `0x005D2558`. The guarded dispatch has a 272-byte table at `0x005D46AD` and a 198-byte remap at `0x005D47BD`, both independently revalidated against the original PE.
+- `0x005C9CC0` — `src/characters/SuikaObjectAdvanceF1216.cpp`, 43,501 target CODE bytes. The focused frontier is 0 mnemonic, 1 width and 935 GPR differences; first GPR difference `0x005D2558`. The guarded dispatch has a 272-byte table at `0x005D46AD` and a 198-byte remap at `0x005D47BD`, both independently revalidated against the original PE.
 
-- `0x005A1600` — `src/YukariObjectAdvanceF1231.cpp`, 43,599 target CODE bytes. The focused frontier is 0 mnemonic, 11 width and 613 GPR differences; first GPR difference `0x005A88A8`. The guarded dispatch has a 308-byte table at `0x005AC04F` and a 200-byte remap at `0x005AC183`, both independently revalidated against the original PE.
+- `0x005A1600` — `src/characters/YukariObjectAdvanceF1231.cpp`, 43,599 target CODE bytes. The focused frontier is 0 mnemonic, 11 width and 613 GPR differences; first GPR difference `0x005A88A8`. The guarded dispatch has a 308-byte table at `0x005AC04F` and a 200-byte remap at `0x005AC183`, both independently revalidated against the original PE.
 
 The COFF section extents include generated switch data and must not be mistaken for function padding. Sakuya's separately recorded guarded dispatch uses a 224-byte table at `0x004D4CEF` and a 198-byte remap at `0x004D4DCF`; Patchouli's uses a 368-byte table at `0x0051E403` and a 199-byte remap at `0x0051E573`; Youmu's uses a 268-byte table at `0x0054003F` and a 199-byte remap at `0x0054014B`; Yuyuko's uses a 284-byte table at `0x005880C5` and a 198-byte remap at `0x005881E1`; Meiling's uses a 244-byte table at `0x005F3BA2` and a 199-byte remap at `0x005F3C96`; Suika's uses a 272-byte table at `0x005D46AD` and a 198-byte remap at `0x005D47BD`; Yukari's uses a 308-byte table at `0x005AC04F` and a 200-byte remap at `0x005AC183`. All seven dispatch guards, complete tables and remaps were independently revalidated against the original PE. The extra COFF extent is not a license to extend the C++ body, add padding, or graft table bytes into source.
 
@@ -1437,10 +1437,10 @@ For Reimu fighter `0045DD70`, the first width difference at `004605C6` is `cmp e
 
 Four complete large fighter action-state bodies are now in `src/` as natural C++ reconstructions. Their `functions.csv` status is `reconstructed`, not `matching`; the independent `function-origins.csv` source-origin records remain unchanged, and no giant exact-match credit is inferred.
 
-- `0x004AC040` — `src/SakuyaFighterAdvanceF1020.cpp`, full 82,796-byte native body. The focused frontier preserves the full extent and CFG. Current byte debt is 18,253 bytes, with 6,958 GPR operand positions and 12 instruction-width differences; first GPR divergence is `0x004ADEFA`.
-- `0x0045DD70` — `src/ReimuFighterAdvanceF1183.cpp`, full 60,999-byte native body. The focused frontier preserves the full extent and switch/control-flow shape. The first GPR divergence is `0x0045FDA9`; the first width divergence is `0x004605C6`, after which linear instruction decoding loses alignment.
-- `0x00543210` — `src/RemiliaFighterAdvanceF1041.cpp`, full 58,294-byte native body. The focused frontier remains 0 mnemonic, 3 width and 1,741 GPR differences; first GPR divergence `0x00545109`. Original vtable `0x00659A40` slot 1 points directly to `0x00543210`; all three guarded dispatch tables/remaps were independently verified.
-- `0x005214B0` — `src/YoumuFighterAdvanceF1040.cpp`, full 46,755-byte native body. The focused frontier remains 0 mnemonic, 5 width and 2,736 GPR differences; first GPR divergence `0x0052327A`. Original vtable `0x006598D0` slot 1 points directly to `0x005214B0`; all four guarded dispatch tables/remaps were independently verified.
+- `0x004AC040` — `src/characters/SakuyaFighterAdvanceF1020.cpp`, full 82,796-byte native body. The focused frontier preserves the full extent and CFG. Current byte debt is 18,253 bytes, with 6,958 GPR operand positions and 12 instruction-width differences; first GPR divergence is `0x004ADEFA`.
+- `0x0045DD70` — `src/characters/ReimuFighterAdvanceF1183.cpp`, full 60,999-byte native body. The focused frontier preserves the full extent and switch/control-flow shape. The first GPR divergence is `0x0045FDA9`; the first width divergence is `0x004605C6`, after which linear instruction decoding loses alignment.
+- `0x00543210` — `src/characters/RemiliaFighterAdvanceF1041.cpp`, full 58,294-byte native body. The focused frontier remains 0 mnemonic, 3 width and 1,741 GPR differences; first GPR divergence `0x00545109`. Original vtable `0x00659A40` slot 1 points directly to `0x00543210`; all three guarded dispatch tables/remaps were independently verified.
+- `0x005214B0` — `src/characters/YoumuFighterAdvanceF1040.cpp`, full 46,755-byte native body. The focused frontier remains 0 mnemonic, 5 width and 2,736 GPR differences; first GPR divergence `0x0052327A`. Original vtable `0x006598D0` slot 1 points directly to `0x005214B0`; all four guarded dispatch tables/remaps were independently verified.
 
 All four bodies are ordinary C++ composed from action-specific source fragments. No inline assembly, emitted bytes, padding, raw-code grafts, masks, or truncated comparisons were introduced. Their remaining compiler/codegen debt stays explicit and is the next reconstruction target.
 
@@ -1520,7 +1520,7 @@ rotation and the match ledger remains at its previous state.
 
 Replay from the repository root with the scratch helpers in
 `.analysis/meiling-allocator/` and the current
-[Meiling source](../src/MeilingObjectAdvanceF1207.cpp). The positive
+[Meiling source](../src/characters/MeilingObjectAdvanceF1207.cpp). The positive
 control removes the rotation update between the scale stores and the
 frame-advance call in `case 997`. The local negative control replaces
 `facing = owner->facing;` with `this->facing = this->owner->facing;`.

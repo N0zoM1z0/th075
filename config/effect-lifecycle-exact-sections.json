@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
-  "source": "src/EffectManagerLifetimeF161.cpp",
+  "source": "src/battle/EffectManagerLifetimeF161.cpp",
   "object": "build/matching/EffectManagerLifetimeF161.obj",
   "profile": [
     "/Od",

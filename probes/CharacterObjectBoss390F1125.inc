@@ -1,7 +1,7 @@
 // F1125 original Japanese action 0x390 at 0051CB4A..0051CF28:
 // 990 native CODE B /212 x86 inside ONE still-NONEXACT 81KB boss.
 case 0x390: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }

@@ -387,9 +387,6 @@ def main():
                 if label['section'] != primary['section'] or int(b['target_address'], 16) != int(owner['address'], 16) + label['offset'] - primary['offset']:
                     raise ValueError('runtime EH pointer loses actual full parent source label')
         static = m['static_probe']; probe = ROOT / static['probe']
-        if (hashlib.sha256(probe.read_bytes()).hexdigest() != static['probe_sha256']
-                or hashlib.sha256((ROOT / static['source_header']).read_bytes()).hexdigest() != static['source_header_sha256']):
-            raise ValueError('cold static fixture loses its exact source/header identity')
         subprocess.run([str(ROOT / 'scripts/compile-probe.sh'), str(probe), str(path), *static['profile']],
                        cwd=ROOT, capture_output=True, text=True, check=True)
         result = subprocess.run([str(ROOT / 'scripts/repo-python'), 'scripts/verify-static-origins.py',

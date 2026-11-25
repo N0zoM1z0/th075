@@ -7,7 +7,7 @@
                 scriptCounterF00=0;
                 field07C=1;
                 ClearMotionFields();
-                field36C=(field36C)-GeometryConstants::Hundred;
+                spellPower=(spellPower)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
                 PlaySharedSound(0x17);
                 SpawnAuxEffect(0x73,x,

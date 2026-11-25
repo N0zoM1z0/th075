@@ -1,7 +1,7 @@
 // F1113: genuine original TH075 Japanese action 0x384 inside ONE still
 // NONEXACT CharacterObject Advance. PE 0051AAFD..0051AFF0: 1267B/277 x86.
 case 0x384: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }

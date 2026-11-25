@@ -6,7 +6,7 @@
 // This branch uses the inherited Fighter::SpawnAuxEffect(float,float) ABI.
 case 0x252: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                --field366;
+                --bombCount;
                 ClearMotionFields();
                 field080=1;
                 field07C=0;
@@ -26,7 +26,7 @@ case 0x252: {
         }
         case 0x253: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                --field366;
+                --bombCount;
                 ClearMotionFields();
                 field080=1;
                 field07C=0;
@@ -47,7 +47,7 @@ case 0x252: {
 
         case 0x254: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                --field366;
+                --bombCount;
                 ClearMotionFields();
                 field080=1;
                 field07C=0;

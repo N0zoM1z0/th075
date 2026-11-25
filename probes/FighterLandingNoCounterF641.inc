@@ -7,9 +7,9 @@
 // actions with NO trajectory counter reset, unlike the earlier F633
 // 73/75-x86 family. This is an inner case of a nonexact giant.
 case F641_CASE: {
-    cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>GeometryConstants::Thousand)
-        cardGauge=1000.0f;
+    pendingSpellCharge=(pendingSpellCharge)+FloatConstants::One;
+    if ((pendingSpellCharge)>GeometryConstants::Thousand)
+        pendingSpellCharge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
         velocityX=F641_START_HEIGHT;
         velocityY=0.0f;

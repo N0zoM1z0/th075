@@ -1,7 +1,7 @@
 // F1122: genuine Japanese original 0x38E 0051C91E..0051CAB0,
 // 402 native CODE B /91 x86 inside ONE NONEXACT 81KB parent.
 case 0x38E: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }

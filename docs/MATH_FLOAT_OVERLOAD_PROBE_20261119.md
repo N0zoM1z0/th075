@@ -4,7 +4,7 @@
 
 ## Accepted angle pair (R269/R270)
 
-`0x00483300` is the 21-byte game-owned `AngleAt00483300(float, float)` wrapper. Its 16 distinct callers are independently classified authored game functions and contain 211 direct calls in total. The shared source is `src/MathFloatHelpers.cpp`:
+`0x00483300` is the 21-byte game-owned `AngleAt00483300(float, float)` wrapper. Its 16 distinct callers are independently classified authored game functions and contain 211 direct calls in total. The shared source is `src/engine/MathFloatHelpers.cpp`:
 
 ```cpp
 float __cdecl AngleAt00483300(float y, float x)

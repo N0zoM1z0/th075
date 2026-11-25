@@ -1,6 +1,6 @@
 case R1189_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        --field366;
+        --bombCount;
         ClearMotionFields();
         field080=1; field07C=0; field3AC=0; scriptCounterF00=0;
     }

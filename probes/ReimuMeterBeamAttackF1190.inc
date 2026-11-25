@@ -5,7 +5,7 @@ case R1190_ACTION: {
         PlaySharedSound(0x17);
         SpawnAuxEffect(R1190_AUX_EFFECT,float(facing*7)+(x),
             (*(&y))+g_ReimuMeterNearYAt00659088,facing,1);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
     }
     if ((animationStage)==10 || (animationStage)==11) UpdateGaugeTimer(5);
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);

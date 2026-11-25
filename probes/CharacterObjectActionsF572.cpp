@@ -1,8 +1,8 @@
-#include "../src/GeometryConstants.hpp"
-#include "../src/FloatConstants.hpp"
-#include "GameSharedState.hpp"
-#include "AliceFighter.hpp"
-#include "CharacterObject.hpp"
+#include "engine/GeometryConstants.hpp"
+#include "engine/FloatConstants.hpp"
+#include "engine/GameSharedState.hpp"
+#include "characters/AliceFighter.hpp"
+#include "characters/CharacterObject.hpp"
 // F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593/F596: selected natural VC7.1 source, original PE 004EBDA0.
 // Original entire 33,293-byte CODE + 438 post-RET DATA now have the
 // exact physical native layout and all 8,789 original x86 instruction
@@ -1927,7 +1927,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x384: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -1965,7 +1965,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x385: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2010,7 +2010,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x386: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2045,7 +2045,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x387: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2075,7 +2075,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x388: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2103,7 +2103,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x389: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2163,7 +2163,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x38A: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2223,7 +2223,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x38B: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2293,7 +2293,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x38C: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2366,7 +2366,7 @@ void AliceObject::Advance() {
     break;
 }
         case 0x38E: {
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
@@ -2428,8 +2428,8 @@ void AliceObject::Advance() {
             (y - owner->opponent->y < GeometryConstants::HundredTwenty) &&
             (y - owner->opponent->y > GeometryConstants::Eighty)) {
             ClearFrameInfo();
-            if ((owner->opponent->field366)<2)
-                ++owner->opponent->field366;
+            if ((owner->opponent->bombCount)<2)
+                ++owner->opponent->bombCount;
             else
                 (owner->opponent->score)+=20000;
             PlaySharedSound(0x2E);
@@ -2488,11 +2488,11 @@ void AliceObject::Advance() {
                 (owner->opponent->spirit)+=10;
             else {
                 (owner->opponent->spirit)=1000;
-                if ((owner->opponent->field39C)==0) {
-                    if ((owner->opponent->field36C)<FloatConstants::NineHundredNinetyEightAndNineTenths)
-                        (owner->opponent->field36C)=(owner->opponent->field36C)+FloatConstants::Half;
+                if ((owner->opponent->spellDeclarationExpired)==0) {
+                    if ((owner->opponent->spellPower)<FloatConstants::NineHundredNinetyEightAndNineTenths)
+                        (owner->opponent->spellPower)=(owner->opponent->spellPower)+FloatConstants::Half;
                     else
-                        (owner->opponent->field36C)=900.0f;
+                        (owner->opponent->spellPower)=900.0f;
                 }
             }
             break;
@@ -2520,14 +2520,14 @@ void AliceObject::Advance() {
         rotationY = 0.0f;
         rotationZ = 0.0f;
         rotationX=-80.0f;
-        field0D8=(owner->field3A0);
+        field0D8=(owner->spellTimer);
     }
-    if ((owner->field3A0)<=0) {
+    if ((owner->spellTimer)<=0) {
         ClearFrameInfo();
         break;
     }
-    scaleX=static_cast<float>((owner->field3A0))/(field0D8)*2.0f;
-    scaleY=static_cast<float>((owner->field3A0))/(field0D8)*2.0f;
+    scaleX=static_cast<float>((owner->spellTimer))/(field0D8)*2.0f;
+    scaleY=static_cast<float>((owner->spellTimer))/(field0D8)*2.0f;
     rotationZ=(rotationZ)+FloatConstants::One;
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetSecondaryCounter(9);

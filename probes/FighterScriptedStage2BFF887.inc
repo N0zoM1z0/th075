@@ -20,7 +20,7 @@ case 0x2BF: {
     if ((animationStage)==2 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x-
                 float((facing)*64),

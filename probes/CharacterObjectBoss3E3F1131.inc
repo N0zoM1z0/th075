@@ -33,8 +33,8 @@ case 0x3E3: {
             y-owner->opponent->y<GeometryConstants::HundredTwenty &&
             y-owner->opponent->y>GeometryConstants::Eighty) {
             ClearFrameInfo();
-            if (owner->opponent->field366<2)
-                ++owner->opponent->field366;
+            if (owner->opponent->bombCount<2)
+                ++owner->opponent->bombCount;
             else {
                 owner->opponent->score+=0x4E20;
             }

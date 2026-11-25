@@ -1,0 +1,68 @@
+#include <math.h>
+#include "battle/BattleScene.hpp"
+#include "battle/BattleMode5OptionsF168.hpp"
+#include "engine/GameLeafHelpers.hpp"
+#include "ui/SelectionInput4388D0.hpp"
+
+
+void BattleScene::HandleMode5Options()
+{
+    if (field0A0 == 0)
+        return;
+
+    if (::abs(static_cast<long>(g_InputMappings[0].held.counts[0])) == 1) {
+        g_SoundBank->Play(39);
+        signed char horizontal = *reinterpret_cast<signed char*>(&g_InputMappings[0].held);
+        switch (field118) {
+        case 0:
+            fighters[1]->field52C = (fighters[1]->field52C + 6 + horizontal) % 6;
+            break;
+        case 1:
+            fighters[1]->field52D = (fighters[1]->field52D + 10 + horizontal) % 10;
+            break;
+        case 2:
+            fighters[1]->field52F = (fighters[1]->field52F + 4 + horizontal) % 4;
+            break;
+        case 3:
+            fighters[1]->field52E = (fighters[1]->field52E + 2 + horizontal) % 2;
+            break;
+        case 4:
+            fighters[1]->field530 = (fighters[1]->field530 + 4 + horizontal) % 4;
+            break;
+        case 5:
+            fighters[1]->field531 = (fighters[1]->field531 + 2 + horizontal) % 2;
+            break;
+        }
+    }
+
+    if (g_InputMappings[0].held.counts[2] == 1) {
+        switch (field118) {
+        case 6:
+            fighters[0]->spellTimer = 1;
+            g_SoundBank->Play(45);
+            break;
+        case 7:
+            field0A0 = 0;
+            g_SoundBank->Play(45);
+            break;
+        case 8:
+            field0A0 = 0;
+            g_SoundBank->Play(45);
+            field018 = 6;
+            break;
+        }
+    }
+    if (g_InputMappings[0].held.counts[3] == 1)
+        field0A0 = 0;
+    if (g_InputMappings[0].held.counts[1] == 1 || g_InputMappings[1].held.counts[1] == 1) {
+        g_SoundBank->Play(39);
+        field118 = (field118 + 1) % 9;
+    }
+    if (g_InputMappings[0].held.counts[1] == -1 || g_InputMappings[1].held.counts[1] == -1) {
+        g_SoundBank->Play(39);
+        field118 = (field118 + 8) % 9;
+    }
+    fighters[0]->field39D = 2 - fighters[1]->field52C / 3;
+    fighters[0]->selectedSpellCards[0] = fighters[1]->field52C % 3;
+    fighters[0]->selectedSpellCards[1] = fighters[1]->field52C % 3;
+}

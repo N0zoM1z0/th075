@@ -1,7 +1,7 @@
 // F1127 original Japanese action 0x392, original PE
 // 0051D413..0051D4F1, 222 native CODE B /47 x86 in ONE 81KB boss.
 case 0x392: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }

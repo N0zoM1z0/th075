@@ -3,9 +3,9 @@
 // This is a case within a still NONEXACT huge fighter Advance(),
 // not an accepted whole original function or ASM byte substitution.
 case 0x9E: {
-    cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>GeometryConstants::Thousand)
-        cardGauge=1000.0f;
+    pendingSpellCharge=(pendingSpellCharge)+FloatConstants::One;
+    if ((pendingSpellCharge)>GeometryConstants::Thousand)
+        pendingSpellCharge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
 #if F637_EXTRA_FLAG && F637_EXTRA_BEFORE
         fieldF0A=0;

@@ -14,6 +14,20 @@ with SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The publisher's Japanese 1.11 patch yields the same executable.
 [Target cross-check](ORIGIN_PENDING_REVIEW.md#r300--publisher-patch-reproduces-the-pinned-executable)
 
+## Semantic reconstruction
+
+The source tree is organized by subsystem. The first field review named
+the fighter's spell power, charge, declaration state, selected cards,
+Spirit Strike stock and collision-time health snapshot. Their names follow
+the battle loader, command dispatch, timers, and HUD. The existing class
+sizes and binary layouts are checked during compilation.
+[Source map](../README.md#where-to-start) · [Field evidence](KNOWLEDGE_BASE.md#spell-cards-and-collision-health)
+
+The directory move kept the original object order and added the `src`
+include root where a profile had relied on the flat tree. All configured
+units were cold-built and compared. The strict Windows relink matches the
+replay-tested executable byte for byte except for its COFF timestamp.
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

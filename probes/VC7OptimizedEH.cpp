@@ -1,5 +1,5 @@
 // Ordinary optimized allocation fixtures; origin evidence only.
-#include "InputDevice.hpp"
+#include "input/InputDevice.hpp"
 #include <string>
 
 std::string *ProbeCompilerAllocateString(const std::string &value)

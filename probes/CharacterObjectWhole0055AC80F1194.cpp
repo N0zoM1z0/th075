@@ -1,10 +1,10 @@
-#include "MathFloatHelpers.hpp"
-#include "GameSharedState.hpp"
-#include "CharacterObject.hpp"
-#include "RemiliaFighter.hpp"
-#include "GameLeafHelpers.hpp"
-#include "BattleSessionState.hpp"
-#include "EffectServices.hpp"
+#include "engine/MathFloatHelpers.hpp"
+#include "engine/GameSharedState.hpp"
+#include "characters/CharacterObject.hpp"
+#include "characters/RemiliaFighter.hpp"
+#include "engine/GameLeafHelpers.hpp"
+#include "battle/BattleSessionState.hpp"
+#include "battle/EffectServices.hpp"
 
 // Caller-cleaned two-float/ST0 used-contract hypothesis, shared with the
 // independently retained004AC040 draft. Origin and nominal return type remain
@@ -1340,7 +1340,7 @@ case 850:
 
 // Native0055ED0A..0055EF01 observation chunk; no standalone unit or credit.
 case 900:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1376,7 +1376,7 @@ case 900:
 
 // Native0055EF01..0055F14D observation chunk; no standalone unit or credit.
 case 901:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1421,7 +1421,7 @@ case 901:
 
 // Native0055F14D..0055F208 observation chunk; no standalone unit or credit.
 case 902:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1443,7 +1443,7 @@ case 902:
 
 // Native0055F208..0055F43A observation chunk; no standalone unit or credit.
 case 903:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1488,7 +1488,7 @@ case 903:
 
 // Native0055F43A..0055F631 observation chunk; no standalone unit or credit.
 case 904:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1524,7 +1524,7 @@ case 904:
 
 // Native0055F631..0055F8F2 observation chunk; no standalone unit or credit.
 case 905:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1578,7 +1578,7 @@ case 905:
 
 // Native0055F8F2..0055FA76 observation chunk; no standalone unit or credit.
 case 906:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1616,7 +1616,7 @@ case 906:
 
 // Native0055FA76..0055FD08 observation chunk; no standalone unit or credit.
 case 907:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1668,7 +1668,7 @@ case 907:
 
 // Native0055FD08..0055FEFA observation chunk; no standalone unit or credit.
 case 908:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1715,7 +1715,7 @@ case 908:
 
 // Native0055FEFA..0056001A observation chunk; no standalone unit or credit.
 case 909:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1773,7 +1773,7 @@ case 910:
 
 // Native00560140..0056030A observation chunk; no standalone unit or credit.
 case 911:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1816,7 +1816,7 @@ case 911:
 
 // Native0056030A..0056052B observation chunk; no standalone unit or credit.
 case 912:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1860,7 +1860,7 @@ case 912:
 
 // Native0056052B..005606D8 observation chunk; no standalone unit or credit.
 case 913:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1892,7 +1892,7 @@ case 913:
 
 // Native005606D8..005608E6 observation chunk; no standalone unit or credit.
 case 914:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -1931,7 +1931,7 @@ case 914:
 
 // Native005608E6..00560F35 observation chunk; no standalone unit or credit.
 case 915:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -2025,7 +2025,7 @@ case 915:
 
 // Native00560F35..00561265 observation chunk; no standalone unit or credit.
 case 916:
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
@@ -2116,8 +2116,8 @@ case 995:
             y - owner->opponent->y < 120.0f &&
             y - owner->opponent->y > 80.0f) {
             ClearFrameInfo();
-            if (owner->opponent->field366 < 2)
-                owner->opponent->field366++;
+            if (owner->opponent->bombCount < 2)
+                owner->opponent->bombCount++;
             else
                 owner->opponent->score = owner->opponent->score + 20000;
             PlaySharedSound(46);
@@ -2178,11 +2178,11 @@ case 996:
                     owner->opponent->spirit = owner->opponent->spirit + 10;
                 else {
                     owner->opponent->spirit = 1000;
-                    if (owner->opponent->field39C == 0) {
-                        if (owner->opponent->field36C < 998.9)
-                            owner->opponent->field36C = owner->opponent->field36C + 0.5f;
+                    if (owner->opponent->spellDeclarationExpired == 0) {
+                        if (owner->opponent->spellPower < 998.9)
+                            owner->opponent->spellPower = owner->opponent->spellPower + 0.5f;
                         else
-                            owner->opponent->field36C = 900.0f;
+                            owner->opponent->spellPower = 900.0f;
                     }
                 }
             }
@@ -2212,14 +2212,14 @@ case 997:
         rotationY = 0.0f;
         rotationZ = 0.0f;
         rotationX = -80.0f;
-        field0D8 = owner->field3A0;
+        field0D8 = owner->spellTimer;
     }
-    if (owner->field3A0 <= 0) {
+    if (owner->spellTimer <= 0) {
         ClearFrameInfo();
         return;
     }
-    scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2.0f;
-    scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2.0f;
+    scaleX = static_cast<float>(owner->spellTimer) / field0D8 * 2.0f;
+    scaleY = static_cast<float>(owner->spellTimer) / field0D8 * 2.0f;
     rotationZ = rotationZ + 1.0f;
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetSecondaryCounter(9);

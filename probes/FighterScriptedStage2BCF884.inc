@@ -35,7 +35,7 @@ case 0x2BC: {
         ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         PlaySharedSound(0x17);
         SpawnAuxEffect(0x73,
             x-

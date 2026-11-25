@@ -26,10 +26,16 @@ constructor. The conservative coverage includes all pending-origin bytes.
 - [Pending origin evidence](docs/ORIGIN_PENDING_REVIEW.md#r288--remaining-origin-evidence)
 - [Knowledge base](docs/KNOWLEDGE_BASE.md), [workflow](docs/RE_WORKFLOW.md) and [storage policy](docs/STORAGE_HYGIENE.md)
 
-The C++ sources are in `src/` and `probes/`. `config/match-units.toml`
-records the exact units, compiler flags, extents and relocations. The target
-is the Japanese TH075 v1.11 `resources/th075.exe` supplied by the user. See
-the handoff for its pinned identity.
+The C++ sources are grouped by subsystem under `src/`. Start in
+[`src/battle/`](src/battle/) for the fighter layout, combat and stages,
+[`src/characters/`](src/characters/) for character-specific actions, and
+[`src/ui/`](src/ui/) for menus and scenes. The other folders cover the
+engine, assets, audio, graphics, input, configuration, replay and Win32
+startup. `probes/` also contains sources included by accepted exact units.
+
+`config/match-units.toml` records the compiler profiles, extents and
+relocations. The target is the user-supplied Japanese TH075 v1.11
+`resources/th075.exe`. [Pinned executable identity](docs/RE_HANDOFF.md)
 
 ## Build
 

@@ -2,9 +2,9 @@
 // ground correction, contact rebound and optional extra stage-zero
 // projectile counter. Entire giant fighter Advance() is NONEXACT.
 case 0x96: {
-    cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>GeometryConstants::Thousand)
-        cardGauge=1000.0f;
+    pendingSpellCharge=(pendingSpellCharge)+FloatConstants::One;
+    if ((pendingSpellCharge)>GeometryConstants::Thousand)
+        pendingSpellCharge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
 #if F631_EXTRA_FLAG && F631_EXTRA_BEFORE
         // 0058AF60 alone clears this genuine extra flag BEFORE the

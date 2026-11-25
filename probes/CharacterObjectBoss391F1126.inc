@@ -1,7 +1,7 @@
 // F1126 genuine Japanese 0x391 at original PE 0051CF28..0051D413:
 // 1,259 native CODE B /277 x86 in one incomplete 81KB Boss.
 case 0x391: {
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }

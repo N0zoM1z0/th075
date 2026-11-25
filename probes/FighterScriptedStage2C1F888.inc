@@ -12,7 +12,7 @@ case 0x2C1: {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         PlaySound(9);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,x,
             (*(&y))+GeometryConstants::Hundred,
             (facing),1);

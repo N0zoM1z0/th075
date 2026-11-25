@@ -8,7 +8,7 @@ case 0x387: {
         ClearFrameInfo();
         return;
     }
-    if (owner->field3A0<=0) {
+    if (owner->spellTimer<=0) {
         ClearFrameInfo();
         return;
     }

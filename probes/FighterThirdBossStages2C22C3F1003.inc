@@ -33,7 +33,7 @@ case 0x2C2: {
         SetNonnegativeWord(0x64);
         PlaySharedSound(0x17);
         PlaySound(9);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),
@@ -75,7 +75,7 @@ case 0x2C3: {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);
         PlaySound(0xA);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
         SpawnAuxEffect(0x74,
             x
                 - float((facing)*18),

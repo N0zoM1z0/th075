@@ -1,6 +1,6 @@
-#include "../src/GeometryConstants.hpp"
-#include "../src/FloatConstants.hpp"
-#include "ReimuFighter.hpp"
+#include "engine/GeometryConstants.hpp"
+#include "engine/FloatConstants.hpp"
+#include "characters/ReimuFighter.hpp"
 // F1183 live whole original 0045DD70 parent, continued from the existing
 // F652 native D1/D2 source. The complete 60,999B callable is NONEXACT.
 // All state bodies, native stack slots, CFG and PE targets are verified; GPR/width debt remains.

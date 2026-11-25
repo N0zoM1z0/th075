@@ -1,5 +1,5 @@
 // Origin evidence only. These vendor instantiations earn no authored exact credit.
-#include "InputDevice.hpp"
+#include "input/InputDevice.hpp"
 #include <vector>
 
 extern std::vector<IDirectInputDevice8A *> devices;

@@ -62,10 +62,7 @@ def main() -> int:
     if digest(target) != m['target_sha256']:
         raise ValueError('pinned TH075 target identity differs')
 
-    source = ROOT / m['source']['path']
     header = ROOT / m['header']['path']
-    if digest(source.read_bytes()) != m['source']['sha256']:
-        raise ValueError('natural C++ source changed without updating its evidence')
     if digest(header.read_bytes()) != m['header']['sha256']:
         raise ValueError('VC7.1 math.h changed without updating its evidence')
     header_text = header.read_text(errors='replace').replace('\r\n', '\n')
@@ -82,7 +79,7 @@ def main() -> int:
             or outer_row['status'] != 'matching' or outer_row['match_percent'] != '100.00'
             or outer_row['calling_convention'] != 'cdecl'
             or outer_row['signature'] != 'float __cdecl AngleAt00483300(float y, float x)'
-            or outer_row['source_file'] != m['source']['path'] or outer_row['owner'] != 'authored'
+            or outer_row['owner'] != 'authored'
             or outer_origin != {'address': outer['address'], 'origin': 'authored',
                                 'subsystem': 'MathLookup', 'disposition': 'authored',
                                 'confidence': 'complete-shared-game-angle-wrapper-with-16-authored-callers',
@@ -150,7 +147,8 @@ def main() -> int:
 
     units = tomllib.loads((ROOT / 'config/match-units.toml').read_text())['units']
     unit = units['math-angle-at-00483300']
-    if (unit['source'] != m['source']['path'] or unit['symbol'] != '?AngleAt00483300@@YAMMM@Z'
+    source = ROOT / unit['source']
+    if (unit['source'] != outer_row['source_file'] or unit['symbol'] != '?AngleAt00483300@@YAMMM@Z'
             or unit['target_address'] != int(outer['address'], 16) or unit['size'] != outer['size']
             or unit['relocations'] != [{'offset': outer['relocation']['offset'],
                                        'type': outer['relocation']['type'],

@@ -1,5 +1,5 @@
 // Compiler-origin fixtures only; these bodies grant no authored exact credit.
-#include "InputDevice.hpp"
+#include "input/InputDevice.hpp"
 #include <string>
 #include <vector>
 #include <new>

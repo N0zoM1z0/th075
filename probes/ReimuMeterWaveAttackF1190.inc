@@ -5,7 +5,7 @@ case R1190_ACTION: {
         PlaySharedSound(0x17);
         SpawnAuxEffect(R1190_AUX_EFFECT,float(facing*24)+(x),
             (*(&y))+GeometryConstants::HundredFortyFour,facing,1);
-        field36C=(field36C)-GeometryConstants::Hundred;
+        spellPower=(spellPower)-GeometryConstants::Hundred;
 #if R1190_HAS_ANIMATION
         UpdateGaugeTimer(500);
 #endif

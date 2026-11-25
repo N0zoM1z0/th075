@@ -2,9 +2,9 @@
 // Real floating from signed direction and signed short counter; this
 // is a case INSIDE one currently NONEXACT fighter giant function.
 case F642_CASE: {
-    cardGauge=(cardGauge)+FloatConstants::One;
-    if ((cardGauge)>GeometryConstants::Thousand)
-        cardGauge=1000.0f;
+    pendingSpellCharge=(pendingSpellCharge)+FloatConstants::One;
+    if ((pendingSpellCharge)>GeometryConstants::Thousand)
+        pendingSpellCharge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
         UpdateGaugeTimer(0xFA);
         PlaySharedSound(0x2C);

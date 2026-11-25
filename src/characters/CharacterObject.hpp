@@ -1,0 +1,97 @@
+#ifndef TH075_CHARACTER_OBJECT_HPP
+#define TH075_CHARACTER_OBJECT_HPP
+#include "battle/Fighter.hpp"
+
+// Projectile or effect object owned by a fighter. Each character's object
+// vtable (5 slots, e.g. Reimu 00659210) shares Actor's slots; slot 1,
+// Advance, is that character's object state machine.
+class CharacterObject : public Actor {
+public:
+    CharacterObject();                  // 0045B760; object vtables have no destructor slot
+    void ClearFrameInfo();              // 0045B830
+    void PlaySharedSound(short sound);    // 0045B860, native sound-bank forwarding
+    void NoOpAt0045B850(int unused);    // 0045B850, observed native no-op RET 4
+    void BindAnimation();               // slot 0, 0045B880
+
+    ActionSequenceSlots* sequences;     // +0x0C4 the owner's sequence container (owner + 0x468)
+    float field0C8;                     // +0x0C8
+    float field0CC;                     // +0x0CC
+    float field0D0;                     // +0x0D0
+    float field0D4;                     // +0x0D4 fourth spawn parameter
+    short field0D8;                     // +0x0D8
+    short field0DA;                     // +0x0DA
+    short field0DC;                     // +0x0DC
+    short field0DE;                     // +0x0DE
+    short field0E0;                     // +0x0E0
+    short field0E2;                     // +0x0E2
+    Fighter* owner;                     // +0x0E4 fighter that spawned the object
+};
+
+// Each character's object class; its constructor takes the owning fighter.
+class ReimuObject : public CharacterObject {
+public:
+    ReimuObject(void* ownerFighter);
+    virtual void Advance(); // 00476A40
+};
+class MarisaObject : public CharacterObject {
+public:
+    MarisaObject(void* ownerFighter);
+    virtual void Advance();     // 0049C8F0
+    void UpdateTrackingNode();   // 004A80F0
+};
+class SakuyaObject : public CharacterObject {
+public:
+    SakuyaObject(void* ownerFighter);
+    virtual void Advance();    // 004CA6E0, nonexact natural-C++ parent in SakuyaObjectAdvanceF1222.cpp
+};
+class AliceObject : public CharacterObject {
+public:
+    AliceObject(void* ownerFighter);
+    virtual void Advance();   // 004EBDA0, whole nonexact research parent
+
+    // Call-shape declarations from the giant research source; actual
+    // implementations use the shared Actor and object helper addresses.
+    void AdvanceProjectileBehavior(); // 004F4170, original native helper
+};
+class PatchouliObject : public CharacterObject {
+public:
+    PatchouliObject(void* ownerFighter);
+    virtual void Advance();  // 0050A580, nonexact natural-C++ parent in PatchouliObjectAdvanceF1044.cpp
+};
+class YoumuObject : public CharacterObject {
+public:
+    YoumuObject(void* ownerFighter);
+    virtual void Advance(); // 00536400, nonexact natural-C++ parent in YoumuObjectAdvanceF1211.cpp
+};
+class RemiliaObject : public CharacterObject {
+public:
+    RemiliaObject(void* ownerFighter);
+    virtual void Advance();        // 0055AC80, nonexact complete research parent
+};
+class YuyukoObject : public CharacterObject {
+public:
+    YuyukoObject(void* ownerFighter);
+    virtual void Advance();   // 0057D580, nonexact natural-C++ parent in YuyukoObjectAdvanceF1237.cpp
+};
+class YukariObject : public CharacterObject {
+public:
+    YukariObject(void* ownerFighter);
+    virtual void Advance();  // 005A1600, nonexact natural-C++ parent in YukariObjectAdvanceF1231.cpp
+};
+class SuikaObject : public CharacterObject {
+public:
+    SuikaObject(void* ownerFighter);
+    virtual void Advance(); // 005C9CC0, nonexact natural-C++ parent in SuikaObjectAdvanceF1216.cpp
+};
+class MeilingObject : public CharacterObject {
+public:
+    MeilingObject(void* ownerFighter);
+    virtual void Advance();  // 005EB520, nonexact natural-C++ parent in MeilingObjectAdvanceF1207.cpp
+};
+
+typedef char CharacterObjectLayoutCheck[(
+    offsetof(CharacterObject, field0C8) == 0x0C8 &&
+    offsetof(CharacterObject, owner) == 0x0E4 &&
+    sizeof(CharacterObject) == 0x0E8) ? 1 : -1];
+
+#endif

@@ -1,4 +1,4 @@
-#include "InputDevice.hpp"
+#include "input/InputDevice.hpp"
 #include <string>
 #include <vector>
 
