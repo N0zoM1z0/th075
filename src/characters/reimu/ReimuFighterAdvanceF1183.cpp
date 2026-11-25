@@ -230,9 +230,9 @@ void ReimuFighter::Advance() {
                     ResetPrimaryCounters(2);
             }
             break;
-        #include "FighterSingletonContactF598.inc"
+        #include "characters/shared/actions/FighterSingletonContactF598.inc"
 #define CONTACT_STAGE_OFFSET 0xF00
-#include "FighterAdditionalContactF600.inc"
+#include "characters/shared/actions/FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD FloatConstants::Two
 #define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::Twelve
@@ -244,7 +244,7 @@ void ReimuFighter::Advance() {
 #define CONTACT_STAGE_OFFSET 0xF00
 #define TRAJECTORY_SPAWN_KIND 0x3B7
 #define TRAJECTORY_SPAWN_SIDE 1
-#include "FighterTrajectorySpawn46F603.inc"
+#include "actions/FighterTrajectorySpawn46F603.inc"
 #undef TRAJECTORY_SPAWN_KIND
 #undef TRAJECTORY_SPAWN_SIDE
 #undef TRAJECTORY_LOWER_THRESHOLD
@@ -264,7 +264,7 @@ void ReimuFighter::Advance() {
 #define F606_PROJECTILE 0x3B7
 #define F606_SIDE 1
 #define F606_COUNTER 0xF00
-#include "FighterTrajectoryFollowupSpawnF606.inc"
+#include "actions/FighterTrajectoryFollowupSpawnF606.inc"
 #undef F606_ACTION
 #undef F606_DRAG
 #undef F606_STAGE
@@ -309,7 +309,7 @@ case 0x48: {
 #define F608_PROJECTILE 0x3B7
 #define F608_SIDE 1
 #define F608_COUNTER 0xF00
-#include "FighterTrajectoryLandingSpawnF608.inc"
+#include "actions/FighterTrajectoryLandingSpawnF608.inc"
 #undef F608_PROJECTILE
 #undef F608_SIDE
 #undef F608_COUNTER
@@ -320,7 +320,7 @@ case 0x48: {
 #define F610_LATE 5
 #define F610_COUNTER 0xF00
 #define F610_PREPARE_BEFORE 0
-#include "FighterTrajectoryBounceSpawn4AF611.inc"
+#include "actions/FighterTrajectoryBounceSpawn4AF611.inc"
 #undef F611_PROJECTILE
 #undef F611_SIDE
 #undef F610_STAGE
@@ -329,7 +329,7 @@ case 0x48: {
 #undef F610_COUNTER
 #undef F610_PREPARE_BEFORE
 #define F613_COUNTER 0xF00
-#include "FighterTrajectoryRecovery4CF613.inc"
+#include "characters/shared/actions/FighterTrajectoryRecovery4CF613.inc"
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
@@ -375,7 +375,7 @@ case 0x48: {
             }
             break;
         }
-#include "ReimuEarlyRecoveryStatesF1184.inc"
+#include "actions/ReimuEarlyRecoveryStatesF1184.inc"
 
 
 
@@ -386,7 +386,7 @@ case 0x48: {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -11.0f
 #define F628_LIMIT 5
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -395,7 +395,7 @@ case 0x48: {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -404,7 +404,7 @@ case 0x48: {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -415,7 +415,7 @@ case 0x48: {
 #define F630_COUNTER 0xF00
 #define F630_PROJECTILE 0x3b7
 #define F630_SIDE 1
-#include "FighterArcSpawn91F630.inc"
+#include "actions/FighterArcSpawn91F630.inc"
 #undef F630_STAGE
 #undef F630_EARLY
 #undef F630_LATE
@@ -425,7 +425,7 @@ case 0x48: {
 #define F631_COUNTER 0xF00
 #define F631_EXTRA_FLAG 0
 #define F631_EXTRA_BEFORE 0
-#include "FighterLandingTimer96F631.inc"
+#include "characters/shared/actions/FighterLandingTimer96F631.inc"
 #undef F631_COUNTER
 #undef F631_EXTRA_FLAG
 #undef F631_EXTRA_BEFORE
@@ -435,7 +435,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -448,7 +448,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -461,7 +461,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -474,7 +474,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -487,7 +487,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -497,7 +497,7 @@ case 0x48: {
 #define F637_EXTRA_FLAG 0
 #define F637_EXTRA_BEFORE 0
 #define F637_STRICT_ABOVE 0
-#include "FighterGroundBoost9EF637.inc"
+#include "characters/shared/actions/FighterGroundBoost9EF637.inc"
 #undef F637_EXTRA_FLAG
 #undef F637_EXTRA_BEFORE
 #undef F637_STRICT_ABOVE
@@ -507,7 +507,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -520,7 +520,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -533,7 +533,7 @@ case 0x48: {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -543,53 +543,53 @@ case 0x48: {
 #define F641_CASE 0xA3
 #define F641_START_HEIGHT -9.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA4
 #define F641_START_HEIGHT -10.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA5
 #define F641_START_HEIGHT -13.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F642_CASE 0xA7
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 0
-#include "FighterProjectileLaunchF642.inc"
+#include "characters/shared/actions/FighterProjectileLaunchF642.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F642_CASE 0xA8
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 2
-#include "FighterProjectileLaunchF642.inc"
+#include "characters/shared/actions/FighterProjectileLaunchF642.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F645_CASE 0xB4
 #define F645_START_POS 8.0f
 #define F645_AUX_ACTION 7
-#include "FighterMotionRestartB4F645.inc"
+#include "characters/shared/actions/FighterMotionRestartB4F645.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
 #define F645_CASE 0xB5
 #define F645_START_POS -8.0f
 #define F645_AUX_ACTION 5
-#include "FighterMotionRestartB4F645.inc"
+#include "characters/shared/actions/FighterMotionRestartB4F645.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
-#include "ReimuCommandStatesF1185.inc"
+#include "actions/ReimuCommandStatesF1185.inc"
 
 
 
@@ -600,17 +600,17 @@ case 0x48: {
 
 #define F651_DECAY 3
 #define F651_SPRITE 0x3e5
-#include "FighterResourceShotD1F651.inc"
+#include "characters/shared/actions/FighterResourceShotD1F651.inc"
 #undef F651_DECAY
 #undef F651_SPRITE
 #define F652_DECAY 3
 #define F652_SPRITE 0x3e5
 #define F652_SCALE_BEFORE 1
-#include "FighterResourceShotD2F652.inc"
+#include "characters/shared/actions/FighterResourceShotD2F652.inc"
 #undef F652_DECAY
 #undef F652_SPRITE
 #undef F652_SCALE_BEFORE
-#include "ReimuFallingStatesF1183.inc"
+#include "actions/ReimuFallingStatesF1183.inc"
 
 
 
@@ -621,22 +621,22 @@ case 0x48: {
 
 
 
-#include "ReimuScriptedAttacksF1186.inc"
-#include "ReimuScriptedCombosF1187.inc"
-#include "ReimuChargedAttacksF1188.inc"
-#include "ReimuSpecialAttacksF1189.inc"
-#include "ReimuMeterAttacksF1190.inc"
-#include "ReimuCounterTailF1191.inc"
-#include "ReimuRingStormF1192.inc"
-#include "ReimuDriftTimerF1191.inc"
-#include "ReimuRandomWarpF1192.inc"
-#include "ReimuDifficultyShotF1191.inc"
-#include "ReimuResourceLoopsF1192.inc"
-#include "ReimuFinalEffectsF1192.inc"
+#include "actions/ReimuScriptedAttacksF1186.inc"
+#include "actions/ReimuScriptedCombosF1187.inc"
+#include "actions/ReimuChargedAttacksF1188.inc"
+#include "actions/ReimuSpecialAttacksF1189.inc"
+#include "actions/ReimuMeterAttacksF1190.inc"
+#include "actions/ReimuCounterTailF1191.inc"
+#include "actions/ReimuRingStormF1192.inc"
+#include "actions/ReimuDriftTimerF1191.inc"
+#include "actions/ReimuRandomWarpF1192.inc"
+#include "actions/ReimuDifficultyShotF1191.inc"
+#include "actions/ReimuResourceLoopsF1192.inc"
+#include "actions/ReimuFinalEffectsF1192.inc"
         default:
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             break;
-#include "ReimuSharedGetterTailF1192.inc"
+#include "actions/ReimuSharedGetterTailF1192.inc"
     }
 }
 #undef opponent

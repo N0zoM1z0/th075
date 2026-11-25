@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_REG_EAX
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x0064B635': ('__Getdays', 127), '0x0064B6B4': ('__Getmonths', 149), '0x0064B749': ('__Gettnames', 563), '0x0064274D': ('_isalpha', 63), '0x006428ED': ('_isalnum', 63)}
 LEDGER_SIZES = {'0x0064B635': 127, '0x0064B6B4': 149, '0x0064B749': 563, '0x0064274D': 63, '0x006428ED': 63}
 AUXILIARIES = {}
@@ -340,7 +343,7 @@ def main():
     scratch = ROOT / 'build/origin-locale-snapshot-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

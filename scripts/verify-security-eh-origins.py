@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -14,6 +15,8 @@ from capstone.x86 import X86_OP_IMM
 import importlib.util
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED={'0x00645238':'___security_init_cookie','0x0064FCF7':'__ValidateEH3RN',
           '0x00640B24':'__global_unwind2','0x00645414':'__SEH_prolog',
           '0x00640BF1':'__NLG_Notify1','0x00640BFA':'__NLG_Notify'}
@@ -224,7 +227,7 @@ def main():
     decoder=Cs(CS_ARCH_X86,CS_MODE_32);decoder.detail=True
     scratch=ROOT/'build/origin-security-eh-verification';scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
-        path=Path(temp)/'VendorMember.obj';layout=manifest['sdk_layout'];probe=ROOT/layout['probe']
+        path=Path(temp)/'VendorMember.obj';layout=manifest['sdk_layout'];probe=fixture_path(layout['probe'])
         if layout['profile']!=old.PROFILE or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']:raise ValueError('natural SDK probe identity/profile differs')
         for filename,digest in layout['headers'].items():
             if hashlib.sha256((ROOT/'.tools/msvc710/Vc7'/filename).read_bytes()).hexdigest()!=digest:raise ValueError('pinned SDK interpretation header differs')

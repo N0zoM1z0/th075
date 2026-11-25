@@ -5,11 +5,14 @@ import csv
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 
 
 def module(name, filename):
@@ -263,7 +266,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument('--evidence-only', action='store_true')
     args = parser.parse_args(); m = json.loads((ROOT / EVIDENCE).read_text()); verify_plan(m)
     for path, sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256'])]:
-        if digest((ROOT / path).read_bytes()) != sha: raise ValueError('Insertion immutable evidence/source differs: '+path)
+        if digest(fixture_path(path).read_bytes()) != sha: raise ValueError('Insertion immutable evidence/source differs: '+path)
     replay(m, args.evidence_only)
     print('R208 origins OK: six complete insertion carriers4866; twelve library catch interiors and two compiler shared '
           'epilogues19 each; 20 audited transitions; 263 complete scoped code/data sections15334/all638 actual fields; '

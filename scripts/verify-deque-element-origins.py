@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -11,6 +12,8 @@ import tempfile
 import importlib.util
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 MANIFEST_SHA256 = '889339904d8c194624a5b2ad59335cbefd96eb2f6ad6ae5545bdd91bcbee89ab'
 KEYS = {'0x004228A0': 20, '0x004228C0': 108, '0x0042E4D0': 20, '0x0042E4F0': 65}
 CONFIDENCE = 'complete-vc7-element-operation-typed-parent-and-ordinary-source-provenance'
@@ -119,7 +122,7 @@ def included_headers(output):
     for line in output.splitlines():
         if 'Note: including file:' in line:
             path = line.split('Note: including file:', 1)[1].strip().replace('\\', '/')
-            if path[:3].lower() == 'z:/' and path[2:] == str(ROOT / 'probes/VC7PairedDequeProducers.cpp'):
+            if path[:3].lower() == 'z:/' and path[2:] == str(fixture_path('probes/VC7PairedDequeProducers.cpp')):
                 local['probes/VC7PairedDequeProducers.cpp'] = PAIRED.digest(Path(path[2:]).read_bytes())
                 continue
         sdk.append(line)
@@ -135,7 +138,7 @@ def main():
     c = module('element_target', 'compare-coff-function.py'); coff = module('element_coff', 'coff_data.py')
     extent = module('element_extent', 'verify-vendor-record-origins.py')
     target = c.verified_target()
-    if PAIRED.digest(target) != m['target_sha256'] or PAIRED.digest((ROOT / m['probe']).read_bytes()) != m['probe_sha256']:
+    if PAIRED.digest(target) != m['target_sha256'] or PAIRED.digest(fixture_path(m['probe']).read_bytes()) != m['probe_sha256']:
         raise ValueError('element target/natural source differs')
     functions = {r['address']: r for r in PAIRED.BUFFER.PRIOR.PRIOR.rows('functions.csv')}
     origins = {r['address']: r for r in PAIRED.BUFFER.PRIOR.PRIOR.rows('function-origins.csv')}

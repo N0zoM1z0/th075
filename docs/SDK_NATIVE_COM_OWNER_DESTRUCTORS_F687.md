@@ -42,7 +42,7 @@ vtable `DIR32`.
 ## Real C++ source and VC7.1 optimization, not manufactured vtables
 
 The tracked ordinary C++ file
-[`SDKNativeCOMOwnerDestructorsF687.cpp`](../probes/SDKNativeCOMOwnerDestructorsF687.cpp)
+[`SDKNativeCOMOwnerDestructorsF687.cpp`](../tests/origin_probes/SDKNativeCOMOwnerDestructorsF687.cpp)
 uses *only the observed native member offsets* via explicit typed
 pointer accesses, and calls the actually observed native vtable
 slots `+8` and `+0xE0` directly using correct `__stdcall` function

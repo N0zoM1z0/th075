@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -14,6 +15,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 PROFILE = ['/Od', '/Ob0', '/Gy', '/GR-', '/GX', '/Zi', '/GS', '/I', 'src']
 ROLES = {'0x004239F0': 'EventQueue::AcquireSharedServiceAt004239F0',
          '0x00423A90': 'EventQueue::ReleaseSharedServiceAt00423A90',
@@ -241,7 +244,7 @@ def main():
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         objects = {}
         for probe in manifest['probes']:
-            source = ROOT / probe['path']
+            source = fixture_path(probe['path'])
             if hashlib.sha256(source.read_bytes()).hexdigest() != probe['sha256']:
                 raise ValueError('natural queue lifetime probe differs')
             path = Path(temporary) / (source.stem + '.obj')

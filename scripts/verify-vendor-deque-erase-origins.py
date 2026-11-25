@@ -8,12 +8,15 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 PROFILE = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/GS", "/I", "src"]
 RANGES = {"0x0041E380", "0x0041E800", "0x00424000", "0x00455D30", "0x0045C100"}
 WRAPPERS = {"0x0041DC90": ("0x0041EE20", "0x0041E380"),
@@ -145,7 +148,7 @@ def main():
             or manifest["target_sha256"] != hashlib.sha256(target).hexdigest()
             or manifest["probe"] != "probes/VC7DequeErase.cpp"):
         raise ValueError("R111 target or source profile differs")
-    probe = ROOT / manifest["probe"]
+    probe = fixture_path(manifest["probe"])
     if hashlib.sha256(probe.read_bytes()).hexdigest() != manifest["probe_sha256"]:
         raise ValueError("R111 independent source probe differs")
     for filename, expected in manifest["vendor_headers"].items():

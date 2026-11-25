@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x0064EC83': ('__lseek_lk', 116), '0x0064ECF7': ('__lseek', 171), '0x006523AC': ('__lseeki64_lk', 131), '0x0064EF70': ('__write', 171), '0x00653A81': ('__read', 171), '0x00654835': ('__close_lk', 131), '0x00652066': ('__get_osfhandle', 65), '0x00647FAA': ('__dosmaperr', 115), '0x006520A7': ('__lock_fhandle', 160), '0x00647FA1': ('___doserrno', 9), '0x00652147': ('__unlock_fhandle', 34), '0x0064EDA2': ('__write_lk', 462), '0x006538A6': ('__read_lk', 475), '0x00651FE7': ('__free_osfhnd', 127)}
 LEDGER_SIZES = {'0x0064EC83': 116, '0x0064ECF7': 171, '0x006523AC': 131, '0x0064EF70': 171, '0x00653A81': 171, '0x00654835': 131, '0x00652066': 65, '0x00647FAA': 115, '0x006520A7': 148, '0x00647FA1': 9, '0x00652147': 34, '0x0064EDA2': 462, '0x006538A6': 475, '0x00651FE7': 127}
 AUXILIARIES = {}
@@ -340,7 +343,7 @@ def main():
     scratch = ROOT / 'build/origin-low-io-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

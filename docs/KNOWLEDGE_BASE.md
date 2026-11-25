@@ -1068,7 +1068,7 @@ first float in the spawn parameter block.
   during startup, then drains the owner's spirit after stage 0x13.
   Depleted spirit starts the fade and disables remaining hits. The
   fade and horizontal bounds exits both clear the recast gate.
-  [Fighter action binding](../probes/ReimuMeterAttacksF1190.inc) · [Object](../src/characters/reimu/ReimuObjectAdvance.cpp) · [Recast gate](../src/characters/reimu/ReimuActionDispatch.cpp)
+  [Fighter action binding](../src/characters/reimu/actions/ReimuMeterAttacksF1190.inc) · [Object](../src/characters/reimu/ReimuObjectAdvance.cpp) · [Recast gate](../src/characters/reimu/ReimuActionDispatch.cpp)
 - Patchouli's 0x190 produces four 0x33B shots with different initial
   headings. Each spawns the 0x33C trail while steering and transitions
   to stage 2 on impact or when a clash uses its last hit. Bounds, a
@@ -1077,7 +1077,7 @@ first float in the spawn parameter block.
   linked 0x321 object instead waits for the owner's stage 9 to launch.
   Landing changes it to action 0x322 and spawns its impact effects.
   It clears early if the owner leaves 0x2BC during 0x321.
-  [Fighter](../src/characters/patchouli/PatchouliFighterAdvance.cpp) · [Homing shot](../probes/CharacterObjectBossLongF1057.inc) · [Spell object](../probes/CharacterObjectBoss321F1051.inc)
+  [Fighter](../src/characters/patchouli/PatchouliFighterAdvance.cpp) · [Homing shot](../src/characters/patchouli/actions/CharacterObjectBossLongF1057.inc) · [Spell object](../src/characters/patchouli/actions/CharacterObjectBoss321F1051.inc)
 - Alice's 0x2BD spawns six 0x345 orbiters and the 0x346 controller.
   Action 0x2C0 spawns six each of 0x347 and 0x348 with controller
   0x349. Each controller publishes angle and center and advances

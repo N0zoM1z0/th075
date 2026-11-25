@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
@@ -15,6 +16,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 CONFIDENCE = 'complete-vendor-jump-unwind-seh-scope-absolute-sdk-abi-provenance'
 ACCEPTED = {'0x00643604': ('_longjmp', 121), '0x0064DC10': ('__rt_probe_read4@4', 66)}
 LEDGER_SIZES = {'0x00643604': 120, '0x0064DC10': 66}
@@ -493,7 +496,7 @@ def main():
     scratch = ROOT / 'build/origin-jump-unwind-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src','/Zc:wchar_t']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

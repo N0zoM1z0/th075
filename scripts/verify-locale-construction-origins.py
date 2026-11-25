@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_REG_EAX
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x0064C25F': ('__get_lc_time', 871), '0x0064C847': ('___init_numeric', 461), '0x0064CB20': ('___init_monetary', 575), '0x0064CD5F': ('___init_ctype', 490), '0x00642EE5': ('__expandlocale', 348), '0x00643041': ('__setlocale_set_cat', 655), '0x0064D853': ('___get_qualified_locale', 437), '0x00642D9D': ('___lc_lctostr', 78), '0x0064D114': ('_TranslateName', 96), '0x0064D778': ('_GetLcidFromLangCountry', 134), '0x0064D7FE': ('_GetLcidFromLanguage', 85), '0x0064D741': ('_GetLcidFromCountry', 55), '0x0064D174': ('_GetLcidFromDefault', 26), '0x0064D18E': ('_ProcessCodePage', 118), '0x00651B15': ('__stricmp', 105), '0x0064D33A': ('_GetPrimaryLen', 29), '0x0064D222': ('_crtGetLocaleInfoA@16', 227), '0x0064D45C': ('_LangCountryEnumProc@4', 538), '0x00651B7E': ('__strnicmp', 127), '0x0064D204': ('_TestDefaultCountry', 30), '0x0064D3EB': ('_TestDefaultLanguage', 113), '0x0064D676': ('_LanguageEnumProc@4', 203), '0x0064D357': ('_CountryEnumProc@4', 148)}
 LEDGER_SIZES = {'0x0064C25F': 871, '0x0064C847': 461, '0x0064CB20': 575, '0x0064CD5F': 490, '0x00642EE5': 348, '0x00643041': 655, '0x0064D853': 437, '0x00642D9D': 78, '0x0064D114': 96, '0x0064D778': 134, '0x0064D7FE': 85, '0x0064D741': 55, '0x0064D174': 26, '0x0064D18E': 118, '0x00651B15': 105, '0x0064D33A': 29, '0x0064D222': 227, '0x0064D45C': 538, '0x00651B7E': 127, '0x0064D204': 30, '0x0064D3EB': 113, '0x0064D676': 203, '0x0064D357': 148}
 AUXILIARIES = {'0x00642C9A': ('___init_dummy', 3), '0x0064CF9A': ('___init_collate', 3), '0x0064C756': ('___init_time', 95)}
@@ -402,7 +405,7 @@ def main():
     scratch = ROOT / 'build/origin-locale-construction-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

@@ -3,7 +3,8 @@
 Preserve the inputs and contexts needed to continue reconstruction:
 
 - The pinned `resources/th075.exe`, tracked title-screen/progress assets,
-  `src/`, `probes/`, canonical `config/` ledgers and repository scripts.
+  `src/`, `tests/origin_probes/`, canonical `config/` ledgers and
+  repository scripts.
 - Shared `.tools/` installations, the TH075-specific Wine prefix and
   `ghidra-project/`. Shared tools may serve other repositories; do not trim
   them based only on TH075 usage.

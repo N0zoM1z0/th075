@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -13,6 +14,8 @@ import tempfile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 KEYS = {'0x00421550', '0x0045DD50'}
 CONFIDENCE = 'complete-nested-deque-code-data-eh-receiver-provenance'
 MANIFEST_SHA256 = '5e6ccb4a95135d5cdb202e2511dc4594cac09b672d545ae258d26ffa5729ed42'
@@ -272,7 +275,7 @@ def main():
     record = module('nested_record', 'verify-vendor-record-origins.py')
     coff = module('nested_coff', 'coff_data.py')
     target = comparison.verified_target()
-    if digest(target) != m['target_sha256'] or digest((ROOT / m['probe']).read_bytes()) != m['probe_sha256']:
+    if digest(target) != m['target_sha256'] or digest(fixture_path(m['probe']).read_bytes()) != m['probe_sha256']:
         raise ValueError('nested target or actual natural SDK probe identity differs')
     functions = {r['address']: r for r in PRIOR.rows('functions.csv')}
     origins = {r['address']: r for r in PRIOR.rows('function-origins.csv')}

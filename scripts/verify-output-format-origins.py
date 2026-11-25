@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_REG_EAX
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x006404F0': ('_sprintf', 88), '0x00640548': ('__scprintf', 49), '0x0064254D': ('__snprintf', 87), '0x006425C3': ('__vsnprintf', 86), '0x006445C4': ('__output', 2042), '0x00644517': ('_write_char', 51), '0x0064456E': ('_write_string', 55), '0x0064454A': ('_write_multi_char', 36), '0x0064F250': ('_wctomb', 39), '0x0064F1F0': ('___wctomb_mt', 96)}
 LEDGER_SIZES = {'0x006404F0': 88, '0x00640548': 49, '0x0064254D': 87, '0x006425C3': 86, '0x006445C4': 2010, '0x00644517': 51, '0x0064456E': 55, '0x0064454A': 36, '0x0064F250': 39, '0x0064F1F0': 96}
 AUXILIARIES = {'0x00644DFA': ('__cropzeros', 75), '0x00644DBE': ('__forcdecpt', 60), '0x00644E45': ('__positive', 26)}
@@ -235,7 +238,7 @@ def check_output_table(row, actual, instructions):
 
 
 def cold_locale_layout(m, directory, profile, coff, comparison):
-    layout=m['locale_layout'];probe=ROOT/layout['probe'];path=directory/'LocaleLayout.obj'
+    layout=m['locale_layout'];probe=fixture_path(layout['probe']);path=directory/'LocaleLayout.obj'
     if (layout['profile']!=profile or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']
             or set(layout['headers'])!=LOCALE_HEADERS):
         raise ValueError('locale control source/profile/headers differ')
@@ -394,7 +397,7 @@ def main():
     scratch = ROOT / 'build/origin-output-format-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

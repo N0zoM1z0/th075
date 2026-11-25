@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -11,6 +12,8 @@ import tempfile
 import importlib.util
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 MANIFEST_SHA256 = '6360156350feac7c88f7756e073b43dd1d5ab84abf6a3ac5f2bf2548119cb2b6'
 CONFIDENCE = 'complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance'
 KEYS = {'0x0042E3B0':44, '0x00423550':38, '0x00422480':27, '0x004229B0':15, '0x00412300':5}
@@ -123,7 +126,7 @@ def main():
     args = parser.parse_args(); m = manifest(); verify_plan(m)
     for path,expected in [('config/deque-leaf-origin-evidence.json',MANIFEST_SHA256),
                           (m['retained_manifest'],m['retained_sha256']),(m['endpoint_manifest'],m['endpoint_sha256']),(m['probe'],m['probe_sha256'])]:
-        if PAIRED.digest((ROOT / path).read_bytes()) != expected:
+        if PAIRED.digest(fixture_path(path).read_bytes()) != expected:
             raise ValueError('deque leaf immutable source/evidence differs: ' + path)
     c = module('leaf_target','compare-coff-function.py'); coff = module('leaf_coff','coff_data.py')
     extent = module('leaf_extent','verify-vendor-record-origins.py'); cfg = module('leaf_cfg','verify-authored-origins.py')

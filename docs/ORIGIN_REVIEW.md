@@ -212,12 +212,12 @@ source or exact credit.
 The real VC7 headers instantiate `std::vector<IDirectInputDevice8A *>` and
 `std::vector<DIJOYSTATE>`, their allocators/iterators, copy/fill/destruction
 algorithms, and the string/exception machinery used by vector length checks.
-The public probe is `probes/VC7InputContainers.cpp`; it calls vendor interfaces
+The public probe is `tests/origin_probes/VC7InputContainers.cpp`; it calls vendor interfaces
 and contains no copied implementation. A fresh compile with pinned VC7.1
 13.10.3077 reproduced each complete size and every non-relocation byte under:
 
 ```bash
-scripts/compile-probe.sh probes/VC7InputContainers.cpp build/probes/VC7InputContainers.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+scripts/compile-probe.sh tests/origin_probes/VC7InputContainers.cpp build/probes/VC7InputContainers.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
 ```
 
 The EH/GS profile is required by five fingerprints, including the 80-byte
@@ -1015,7 +1015,7 @@ Reviewed 2026-10-02. 303 complete cleanup bodies / 3,174 bytes are
 compiler/exclude. This decision uses compiler emission and actual exception
 metadata, not Ghidra's Unwind labels or small-function byte similarity.
 
-Fresh builds of `probes/VC7InputContainers.cpp` and `probes/VC7CompilerEH.cpp`
+Fresh builds of `tests/origin_probes/VC7InputContainers.cpp` and `tests/origin_probes/VC7CompilerEH.cpp`
 under the pinned VC7.1 /Od/EH/GS profile independently emit the compatible
 handler and metadata ABI. A whole generated handler section is ten bytes:
 load its FunctionInfo into EAX, then jump to the C++ personality endpoint.
@@ -1056,8 +1056,8 @@ and placement cleanup. Private survey/acceptance evidence is under
 pending. These origin records grant no authored, source, mapping or exact credit.
 
 ```bash
-scripts/compile-probe.sh probes/VC7InputContainers.cpp build/probes/CompilerEHOriginTemplates.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
-scripts/compile-probe.sh probes/VC7CompilerEH.cpp build/probes/CompilerEHParameterTemplates.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+scripts/compile-probe.sh tests/origin_probes/VC7InputContainers.cpp build/probes/CompilerEHOriginTemplates.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+scripts/compile-probe.sh tests/origin_probes/VC7CompilerEH.cpp build/probes/CompilerEHParameterTemplates.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
 scripts/repo-python scripts/verify-compiler-origins.py
 ```
 
@@ -1186,7 +1186,7 @@ https://github.com/N0zoM1z0/th075/actions/runs/37003418979.
 
 Reviewed 2026-10-02. All 39 previously deferred positive-slot cleanup bodies
 (390 bytes) are now compiler/exclude. An independent ordinary C++ fixture,
-`probes/VC7OptimizedEH.cpp`, selects between two real std::string allocations.
+`tests/origin_probes/VC7OptimizedEH.cpp`, selects between two real std::string allocations.
 A fresh /O1/Ob0/EH build naturally reuses its EBP+12 argument slot for allocation
 storage. The compiler emits two whole ten-byte cleanup bodies, each PUSH
 DWORD[EBP+12] / CALL operator delete / POP ECX / RET. COFF definition offsets
@@ -1210,7 +1210,7 @@ actual state references and independent optimized compiler emission support
 the exclusion of these cleanup funclets.
 
 ```bash
-scripts/compile-probe.sh probes/VC7OptimizedEH.cpp build/probes/CompilerEHOptimizedTemplates.obj /O1 /Ob0 /Gy /GR- /GX /Zi /GS- /I src
+scripts/compile-probe.sh tests/origin_probes/VC7OptimizedEH.cpp build/probes/CompilerEHOptimizedTemplates.obj /O1 /Ob0 /Gy /GR- /GX /Zi /GS- /I src
 scripts/repo-python scripts/verify-compiler-origins.py
 ```
 
@@ -1249,7 +1249,7 @@ emits separate, whole COFF code sections for the same four wrapper structures:
 42/24-byte array init/finalization, and a 15-byte init-only wrapper.
 `verify-static-origins.py` checks every fixture section's complete size,
 instruction pattern and relocation fields. Source lives in
-`probes/VC7StaticLifetime.cpp`; it does not declare the game's global types.
+`tests/origin_probes/VC7StaticLifetime.cpp`; it does not declare the game's global types.
 The array fixture uses a 28-byte string stride; the target's two-element array
 uses 72 bytes. That observed target stride is retained and does not imply the
 same object type. Compiler emission establishes the wrapper form only.
@@ -1274,7 +1274,7 @@ types and startup runner origin are not classified by inheritance.
 | Init only | 0x00656DB0 | — |
 
 ```bash
-scripts/compile-probe.sh probes/VC7StaticLifetime.cpp build/probes/StaticLifetimeOrigins.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+scripts/compile-probe.sh tests/origin_probes/VC7StaticLifetime.cpp build/probes/StaticLifetimeOrigins.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
 scripts/repo-python scripts/verify-static-origins.py
 ```
 
@@ -1535,7 +1535,7 @@ pending count.
 | `0x005FA960` | 162 | `_Uninit_copy` | 16 |
 
 The independent, ordinary VC7 probe in
-`probes/VC7OriginRecordContainers.cpp` instantiates `std::vector` on synthetic
+`tests/origin_probes/VC7OriginRecordContainers.cpp` instantiates `std::vector` on synthetic
 16-, 44- and 116-byte aggregates with the pinned `/Od /Ob0 /Gy /GR- /GX /Zi
 /GS /I src` profile. Each selected COFF primary definition has an auxiliary
 size equal to its entire COMDAT section. The compiler also emits a local
@@ -1645,7 +1645,7 @@ https://github.com/N0zoM1z0/th075/actions/runs/37008140937.
 
 Reviewed 2026-10-02. Thirty-one further complete VC7 STL helper bodies /
 1,685 bytes are excluded. The independent ordinary source probe in
-`probes/VC7AdditionalRecordContainers.cpp` instantiates `std::vector` for
+`tests/origin_probes/VC7AdditionalRecordContainers.cpp` instantiates `std::vector` for
 fourteen synthetic aggregate widths: 4, 8, 12, 20, 24, 28, 32, 40, 48, 64,
 72, 80, 96 and 128 bytes. The 31 accepted target bodies match complete source
 COMDATs selected from widths 4, 8, 20 and 64. Width agreement is evidence of
@@ -1750,7 +1750,7 @@ provisional 62,647-byte authored slice (14.23%).
 
 Reviewed 2026-10-02. Eighty more complete 44-byte bodies / 3,520 bytes are
 classified compiler/exclude. A new independent ordinary C++ fixture,
-`probes/VC7DeletingDestructor.cpp`, defines a synthetic class with a virtual
+`tests/origin_probes/VC7DeletingDestructor.cpp`, defines a synthetic class with a virtual
 destructor and invokes `delete`. A cold pinned VC7.1 build emits its generated
 scalar deleting destructor as the **sole** function in a complete 44-byte
 executable COMDAT. It has exactly two typed REL32 fields: the synthetic
@@ -2511,7 +2511,7 @@ https://github.com/N0zoM1z0/th075/actions/runs/37023216064.
 
 Thirty-four complete 28-byte background destructors / 952 bytes are
 classified authored. The independent synthetic VC7.1 fixture in
-`probes/VC7BackgroundDestructor.cpp` defines both an explicit empty
+`tests/origin_probes/VC7BackgroundDestructor.cpp` defines both an explicit empty
 derived virtual destructor and an implicit derived destructor. A cold
 `/Od /Ob0 /Gy /GR- /GX- /Zi /GS` build gives the explicit destructor one
 complete 28-byte code COMDAT with a typed vtable DIR32 field at `+12` and
@@ -2546,7 +2546,7 @@ passed at https://github.com/N0zoM1z0/th075/actions/runs/37024184101.
 ## R058 — background vtable no-op methods
 
 Eighty-six complete 11-byte bodies / 946 bytes are classified authored.
-The independent synthetic source in `probes/VC7BackgroundNoOp.cpp`
+The independent synthetic source in `tests/origin_probes/VC7BackgroundNoOp.cpp`
 defines an empty virtual member. A pinned VC7.1 cold build under
 `/Od /Ob0 /Gy /GR- /GX- /Zi /GS` emits it as the sole, relocation-free
 11-byte code COMDAT. All 86 target bodies match every source byte and
@@ -2614,7 +2614,7 @@ Marisa's slot 9 method was already reviewed in R049. Exact slots,
 constructor addresses, full body hashes and call targets are recorded in
 `config/fighter-virtual-origin-evidence.csv`.
 
-A cold pinned VC7.1 build of `probes/VC7FighterVirtuals.cpp` emits each
+A cold pinned VC7.1 build of `tests/origin_probes/VC7FighterVirtuals.cpp` emits each
 source method as a sole complete code COMDAT. The forward method has one
 typed REL32 call relocation at offset 11; the no-op has none.
 `scripts/repo-python scripts/verify-fighter-virtual-origins.py` checks
@@ -2635,7 +2635,7 @@ Private receipt: `.analysis/public-r060-origin-verification.json`.
 
 Ten complete 19-byte methods / 190 bytes are classified compiler-generated.
 They match every non-relocation byte of the implicit destructor emitted by
-a cold pinned VC7.1 build of `probes/VC7BackgroundDestructor.cpp`. That
+a cold pinned VC7.1 build of `tests/origin_probes/VC7BackgroundDestructor.cpp`. That
 probe declares a derived class without a destructor definition; the
 compiler emits a sole complete code COMDAT with one typed REL32 call to
 the base destructor. The target bodies each call the separately reviewed
@@ -6954,7 +6954,7 @@ to reconstructed game source. The entire R135 input/NLS graph and all retained
 output, stream, handle, locale, heap, security and initialization chains replay.
 
 **Compiler observations and verification.** The single natural probe
-`probes/VC7LocaleConstructionLayout.cpp` cold-builds the complete 340-byte layout
+`tests/origin_probes/VC7LocaleConstructionLayout.cpp` cold-builds the complete 340-byte layout
 array. Pinned CRT/SDK types establish LC_ID / 6, LC_STRINGS / 144, category / 12,
 name / 8, fallback record / 44, compatibility / 8, lconv / 48, time / 184,
 thread locale / 84, CPINFO / 20 and actual offsets/constants. Source-local
@@ -7080,7 +7080,7 @@ input/NLS/FP/SEH, output, stream, handle, heap, security and lifetime evidence
 replay. Reviewed children alone grant no parent or game-caller origin.
 
 **Compiler observations and local acceptance.** The natural probe
-`probes/VC7LocaleTimeParentLayout.cpp` cold-builds a full 260-byte layout array:
+`tests/origin_probes/VC7LocaleTimeParentLayout.cpp` cold-builds a full 260-byte layout array:
 tm / 36 and all nine fields, SYSTEMTIME / 16 and all fields, thread locale /
 84 and its full snapshot offsets, thread / 140 with locale pointer +100,
 time locale / 184 and fields, actual category/cache/lock and private format
@@ -7182,7 +7182,7 @@ category, enumeration, SDK, SEH, FP, stream, handle, heap and lifetime chains
 replay. Reviewed library children do not grant origin to game parents.
 
 **Compiler observations and local acceptance.** The natural probe
-`probes/VC7LocaleSnapshotLayout.cpp` cold-builds a complete 132-byte layout array.
+`tests/origin_probes/VC7LocaleSnapshotLayout.cpp` cold-builds a complete 132-byte layout array.
 It establishes the full time / 184 and every field/array size, all 43 pointers,
 thread locale / 84, thread / 140, actual locale/classification offsets,
 unsigned-short width / 2, distinct alpha/alnum masks and EOF / -1. The complete
@@ -7272,7 +7272,7 @@ target coverage. No eight-byte infinity prefix substitutes for its forty-byte
 owner. Source/target hashes, defining symbols and mutability are retained.
 
 **Compiler observations and acceptance.** The natural
-`probes/VC7FloatingOperationLayout.cpp` cold-builds a complete 108-byte layout
+`tests/origin_probes/VC7FloatingOperationLayout.cpp` cold-builds a complete 108-byte layout
 array using pinned math.h, float.h and fpieee.h. It establishes pointers/int /
 four, double and C long double / eight, complete SDK FP80 / ten, exception /
 32 with its offsets, and abstract CRT control/status macros. Those macros are
@@ -7369,7 +7369,7 @@ all helpers. No masked comparison, convenient prefix or imported database name
 supplies acceptance.
 
 **Compiler observations and local acceptance.** The natural
-`probes/VC7StreamFinalizationLayout.cpp` cold-builds a complete 112-byte layout
+`tests/origin_probes/VC7StreamFinalizationLayout.cpp` cold-builds a complete 112-byte layout
 array. It preserves complete FILE / 32 and actual ptr/count/base/flag/file/
 tmpfname offsets 0/4/8/12/16/28, char/wchar widths one/two, all ownership/error
 masks, DWORD attribute sentinel, distinct CRT/DOS errors and EOF. Five complete
@@ -7488,7 +7488,7 @@ frame.cpp/ehdata.h/ehhooks.h/trnsctrl.h files are unavailable in the supplied
 tree. Full pinned vendor COFF definitions establish ownership, extent, typed
 fields and scope provenance; they do not recover complete original private
 record identities or source. The real available exsup.inc supports exception
-constants. The cold natural `probes/VC7ExceptionFrameLayout.cpp` uses six actual
+constants. The cold natural `tests/origin_probes/VC7ExceptionFrameLayout.cpp` uses six actual
 SDK/CRT headers and a complete 128-byte layout array: EXCEPTION_RECORD / 80,
 EXCEPTION_POINTERS / eight, CONTEXT / 716 and _tiddata / 140 bytes, with translator/
 current-exception/context/frame-chain offsets 116/124/128/136. Filter results and
@@ -7628,7 +7628,7 @@ from complete initialized metadata or raw API identity.
 throw.cpp/stdexcpt.cpp/typinfo.cpp/trnsctrl.cpp implementation files are absent
 from the supplied tree. Real stdexcpt.h delegates to the supplied complete
 exception header; typeinfo.h supplies the real SDK type_info interface. The
-natural `probes/VC7StandardExceptionLayout.cpp` cold-builds an 88-byte layout
+natural `tests/origin_probes/VC7StandardExceptionLayout.cpp` cold-builds an 88-byte layout
 array and all 81 actual included headers are hash-pinned. SDK exception,
 type_info and the RTTI exception classes are twelve bytes; the independent
 complete message owner is twelve bytes with its own public +4/+8 fields.
@@ -7735,7 +7735,7 @@ the independent 53-body R038 cold proof. No compiler control is reclassified.
 **Compiler observations and acceptance.** The original stdexcpt.cpp is absent.
 The real supplied typeinfo.h declares complete SDK bad_cast and bad_typeid
 classes deriving from exception, and __non_rtti_object deriving from
-bad_typeid. The natural `probes/VC7DerivedExceptionLayout.cpp` uses those actual
+bad_typeid. The natural `tests/origin_probes/VC7DerivedExceptionLayout.cpp` uses those actual
 complete interfaces and separate complete inheritance models; it does not
 instantiate an incomplete reconstructed game owner. A cold 32-byte array
 reports four-byte pointers and twelve-byte SDK/model class sizes. All eleven
@@ -7838,7 +7838,7 @@ implementation files are unavailable. The supplied exsup.inc preserves the
 jump-buffer fields and VC20 cookie, while the real SDK setjmp.h supplies a
 complete 64-byte x86 `_JUMP_BUFFER`/jmp_buf and cdecl longjmp declaration.
 The probed cookie and old-unwind fallback do not establish the version or
-extent of a live original saved buffer. The natural `probes/VC7JumpUnwindLayout.cpp` cold-builds an 88-byte layout array
+extent of a live original saved buffer. The natural `tests/origin_probes/VC7JumpUnwindLayout.cpp` cold-builds an 88-byte layout array
 with all eleven buffer offsets, six-word unwind-data size, real NT_TIB FS
 exception-list offset and SDK exception/filter constants. All 72 actual
 included headers and the complete exsup.inc are hash-pinned. The probe uses
@@ -7922,7 +7922,7 @@ The complete source, winheap.h and all 72 actual included headers are pinned.
 These flags are per-control reproducibility settings, not an executable-wide
 compiler profile or a claim about original private declarations.
 
-The natural `probes/VC7SmallHeapIntegrityLayout.cpp` independently cold-builds
+The natural `tests/origin_probes/VC7SmallHeapIntegrityLayout.cpp` independently cold-builds
 a complete 152-byte layout array and six complete range/entry/class/commit
 controls / 217 bytes / three API fields. Every allocated probe code/data
 section is accounted for; no orphan data or no-AUX code carrier is present.
@@ -8020,7 +8020,7 @@ against every byte, unmasked. Every actual local/shared/direct edge is checked
 against complete source and target instruction starts.
 
 **Compiler observations and local acceptance.**
-`probes/VC7PowerMathLayout.cpp` uses complete actual SDK/vendor records and
+`tests/origin_probes/VC7PowerMathLayout.cpp` uses complete actual SDK/vendor records and
 public ABI/intrinsic controls. Its 104-byte layout includes the real 32-byte
 _exception, ten-byte FP80, full field offsets and math/exception/control-word
 constants. All 77 actual included headers are pinned. Five complete natural
@@ -8102,7 +8102,7 @@ storage and loader zero-fill are checked. Original handwritten acos source is
 unavailable; complete pinned archive COFF and independent SDK controls supply
 the evidence without claims about original external inputs or live state.
 
-**Compiler controls and acceptance.** `probes/VC7AcosMathLayout.cpp` uses
+**Compiler controls and acceptance.** `tests/origin_probes/VC7AcosMathLayout.cpp` uses
 complete actual SDK math/exception/FP80 records and public acos/matherr/
 controlfp declarations. Its 88-byte layout and five complete public ABI/range/
 NaN/control-word controls / 157 bytes / five fields cold-build. Both generated
@@ -8173,7 +8173,7 @@ therefore requires both the actual whole SSE operation and independently
 accepted default owner. A shared wrapper shape or reviewed child alone
 cannot substitute for the complete operation/source binding.
 
-**Cold controls and acceptance.** `probes/VC7FloorMathLayout.cpp` uses actual
+**Cold controls and acceptance.** `tests/origin_probes/VC7FloorMathLayout.cpp` uses actual
 complete SDK exception/FP80 records and public math/classification/control
 word/SSE declarations. The complete 84-byte layout and six natural controls
 cover 180 bytes and six fields; all 77 included headers are pinned. Every
@@ -8228,7 +8228,7 @@ No existing anchor is reclassified, renamed or assigned additional credit.
 The target caller observations remain separate from the natural complete
 SDK source controls and original-type inference.
 
-**Compiler controls and acceptance.** `probes/VC7DequeSizeContexts.cpp` uses
+**Compiler controls and acceptance.** `tests/origin_probes/VC7DequeSizeContexts.cpp` uses
 thirteen real complete SDK deque specializations and natural const-receiver
 size calls. All 26 emitted functions / 390 bytes cold-build with their own
 complete AUX, source hashes and every typed field retained. The complete
@@ -8317,7 +8317,7 @@ literal and type/throw data bind out_of_range independently. The existing
 library origin remains accepted, with the legacy name/source shape explicitly
 separate from the stronger new operation evidence.
 
-**Controls and acceptance.** `probes/VC7NestedDequeSizeContexts.cpp` cold-builds
+**Controls and acceptance.** `tests/origin_probes/VC7NestedDequeSizeContexts.cpp` cold-builds
 all 82 ordinary emitted functions and eighteen entire emitted data sections,
 including the complete 40-byte SDK/nested/iterator/observed-index-map layout.
 All 27 actual included headers are pinned; every code/data carrier is covered.
@@ -8351,7 +8351,7 @@ subtraction assignment `0x00422540` (27) and const iterator dereference
 `0x00422560` (83). All 174 bytes retain their original complete extents.
 Replay `scripts/repo-python scripts/verify-nested-deque-helper-origins.py`
 with `config/nested-deque-helper-origin-evidence.json` and the natural SDK
-controls in `probes/VC7NestedDequeHelpers.cpp`.
+controls in `tests/origin_probes/VC7NestedDequeHelpers.cpp`.
 
 Thirteen real SDK element families preserve four complete positive graphs:
 twenty-byte observation records and nested byte, word and pointer deques.
@@ -8470,7 +8470,7 @@ provisionally `FighterScript::ReleaseRecordBuffer`. Original extents, all
 returns/branches and following alignment remain intact. Replay
 `scripts/repo-python scripts/verify-script-buffer-origins.py` with
 `config/script-buffer-origin-evidence.json`. The natural source controls in
-`probes/VC7ScriptBufferLifetimes.cpp` are complete synthetic observation
+`tests/origin_probes/VC7ScriptBufferLifetimes.cpp` are complete synthetic observation
 records, not recovered game declarations; no game source or exact unit is added.
 
 **Independent game ownership context.** The entire independently authored
@@ -8566,7 +8566,7 @@ The full R120 allocation/handler/data/API/EH provenance and its retained cold
 source dependencies replay successfully, followed by the complete R153 buffer
 lifetime source profiles and independent whole parser/cleanup contexts.
 
-Natural controls in `probes/VC7AllocationCalls.cpp` cold-build eight complete
+Natural controls in `tests/origin_probes/VC7AllocationCalls.cpp` cold-build eight complete
 SDK allocation/release functions / 196 bytes. Three distinct primitive/complete
 observation array types route through array operations; explicitly declared
 scalar storage operations route through the different scalar owners. All nine
@@ -8650,7 +8650,7 @@ has no observed direct caller or independent owning context and remains
 pending. Both rows retain their original unknown origin records, empty owner
 and proposed-name fields, and full extents; only durable evidence/notes change.
 
-`probes/VC7ShortCrtCalls.cpp` cold-builds all eight complete SDK/source controls /
+`tests/origin_probes/VC7ShortCrtCalls.cpp` cold-builds all eight complete SDK/source controls /
 109 bytes and every one of nine entire ordinary code/data sections / 153 bytes.
 The complete 44-byte layout freezes real 64-byte jump buffers, saved-field
 offsets, actual primitive/observation sizes, JBLEN and floating exponent range;
@@ -8708,7 +8708,7 @@ independently complete source/data/SDK/runtime dependencies. The retained
 R150 nested-deque verifier also completes a fresh cold replay in this batch.
 A game caller or an accepted library child alone does not establish ownership.
 
-**Entire source and state.** `probes/VC7PairedDequeProducers.cpp` cold-builds
+**Entire source and state.** `tests/origin_probes/VC7PairedDequeProducers.cpp` cold-builds
 all 187 ordinary emission sections / 11917 bytes. The linked closure contains
 162 entire code/EH sections / 11016 bytes and 22 complete data sections /
 835 bytes. All 436 genuine typed fields resolve through complete independent
@@ -8791,7 +8791,7 @@ EH/runtime evidence cold-replays, including R154/R142 dependencies, unchanged
 game/growth context and independently authored R153 inner destruction.
 
 Four ordinary natural allocation and placement-copy controls in
-`probes/VC7DequeElementAlternatives.cpp` cold-emit all 213 identical bytes.
+`tests/origin_probes/VC7DequeElementAlternatives.cpp` cold-emit all 213 identical bytes.
 Every real field is linked and compared unmasked. Body equality alone thus
 cannot determine ownership. Library classification is an inference from
 the independently complete accepted SDK parents, their real source-typed
@@ -8919,7 +8919,7 @@ notes change; its origin row, empty name/owner/source/ABI fields and full
 extent remain unchanged. Do not revisit it from a library child, scanner rank
 or another same-shaped control without new independent ownership evidence.
 
-`probes/VC7DequeCopyAlternatives.cpp` cold-builds all 194 ordinary sections /
+`tests/origin_probes/VC7DequeCopyAlternatives.cpp` cold-builds all 194 ordinary sections /
 12303 bytes and the whole 48-byte SDK/observation layout
 `[8,20,60,20,20,4,8,8,20,20,20,8]`. Fourteen complete code/data/EH controls /
 2416 bytes and all 104 genuine typed fields compare unmasked. This includes
@@ -9012,7 +9012,7 @@ control is compared at its complete equal length and fails whole byte equality;
 it is not a masked or partial target association. These bounded alternatives
 do not exclude every possible original source/compiler variant.
 
-`probes/VC7DequeEndpointDispatch.cpp` cold-builds all 197 ordinary emission
+`tests/origin_probes/VC7DequeEndpointDispatch.cpp` cold-builds all 197 ordinary emission
 sections / 12245 bytes, twelve complete linked code controls / 2104 bytes and
 all 76 actual fields. Every linked owner has full positive own AUX. The entire
 72-byte SDK/traits layout is `[8,20,60,20,20,4,8,8,20,8,4,1,1,1,1,1,1,1]`;
@@ -9100,7 +9100,7 @@ exception outcome is observed. The whole R158 28-byte implicit/ordinary copy
 ambiguity remains unknown and unchanged; constructing its record does not
 establish the original constructor declaration.
 
-`probes/VC7DequeLeafAlternatives.cpp` cold-builds all 191 ordinary sections
+`tests/origin_probes/VC7DequeLeafAlternatives.cpp` cold-builds all 191 ordinary sections
 / 12034 bytes. Seventeen full linked controls contain sixteen code carriers
 / 2532 bytes, entire construction EH data / 36 bytes and 88 actual fields.
 All accepted leaves, ordinary alternatives and applicable SDK parents retain
@@ -9223,7 +9223,7 @@ second 15-byte candidate remains unknown and receives evidence notes only.
 Generated wrappers, authored policy and unknown policy remain separately
 classified. No library leaf is bound directly past the intervening wrapper.
 
-`probes/VC7VectorEndpointAlternatives.cpp` cold-builds all 176 ordinary
+`tests/origin_probes/VC7VectorEndpointAlternatives.cpp` cold-builds all 176 ordinary
 sections / 9404 bytes. Thirty-one full code controls / 1169 bytes and 41 actual
 fields compare unmasked, including four whole original erase/insert variants
 and six ordinary controls. Applicable owners have full positive own AUX;
@@ -9340,7 +9340,7 @@ The short endpoint shapes cannot distinguish those flag choices.
 
 Replay `scripts/repo-python scripts/verify-vector-producer-origins.py` with
 `config/vector-producer-origin-evidence.json` and natural complete source
-`probes/VC7VectorProducerContexts.cpp`. Forty-three full code/EH/state controls
+`tests/origin_probes/VC7VectorProducerContexts.cpp`. Forty-three full code/EH/state controls
 / 2039 bytes and 95 genuine fields compare unmasked. The primary cold inventory
 covers all 244 ordinary sections / 13520 bytes, and the `/GS` negative inventory
 covers all 244 sections / 13616 bytes. All 27 actual SDK headers and the complete
@@ -9446,7 +9446,7 @@ separate original R129 abs candidate `0x00641DAA` remains unknown and unchanged.
 Source spellings, int/long choice, library versus authored ownership and possible
 linker folding cannot be inferred from these byte-equal alternatives.
 
-Natural complete `probes/VC7MathOverloadContexts.cpp` emits genuine math.h
+Natural complete `tests/origin_probes/VC7MathOverloadContexts.cpp` emits genuine math.h
 float overloads / 17, C float workers / 28 and the long abs overload / 17.
 Separate ordinary C++ helpers with explicit double operations and ordinary
 outer wrappers reproduce every target byte and real call field in the five
@@ -11220,7 +11220,7 @@ SDK member, rather than retaining the wrong buffer association.
 | `0x00620093` | 71 | CD3DXBuffer::QueryInterface |
 | `0x0061FE1F` | 38 | CD3DXBuffer::Init |
 
-The natural probe `probes/VC7D3DXInterfaceGuids.cpp` includes actual initguid
+The natural probe `tests/origin_probes/VC7D3DXInterfaceGuids.cpp` includes actual initguid
 and d3dx8 headers. Cold compilation freezes all 47 ordinary readonly GUID
 sections / 752 bytes and all 84 actual included headers. The three entire
 interface GUID COMDATs / 48 bytes agree with their complete original readonly
@@ -11315,7 +11315,7 @@ then release the COM member through slot +8 and clear that member. The
 same-shaped render source bodies do not merge their distinct source symbols,
 vtable definitions or cleanup targets. All fields remain unmasked.
 
-The natural `probes/VC7SDKReleasePolicies.cpp` uses complete observer classes
+The natural `tests/origin_probes/VC7SDKReleasePolicies.cpp` uses complete observer classes
 and real public SDK interfaces, with no incomplete original owner instance.
 Cold VC7.1 compilation with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /showIncludes`
 retains eight entire ordinary sections / 205 bytes, seven full code controls

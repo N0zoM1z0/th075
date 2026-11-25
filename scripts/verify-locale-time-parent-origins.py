@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_REG_EAX
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x00642E26': ('__setlocale_get_all', 191), '0x006432D0': ('__setlocale_lk', 473), '0x006434A9': ('_setlocale', 346), '0x0064BCB1': ('__store_winword', 1162), '0x0064C13B': ('__Strftime_mt', 197), '0x0064C200': ('__Strftime', 50), '0x0064BA4B': ('__expandtime', 614)}
 LEDGER_SIZES = {'0x00642E26': 191, '0x006432D0': 473, '0x006434A9': 346, '0x0064BCB1': 1162, '0x0064C13B': 197, '0x0064C200': 50, '0x0064BA4B': 614}
 AUXILIARIES = {'0x00642C9A': ('___init_dummy', 3), '0x0064CF9A': ('___init_collate', 3), '0x0064C756': ('___init_time', 95)}
@@ -381,7 +384,7 @@ def main():
     scratch = ROOT / 'build/origin-locale-time-parent-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

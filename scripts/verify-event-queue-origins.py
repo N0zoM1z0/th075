@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -15,6 +16,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 PROFILE = ['/Od', '/Ob0', '/Gy', '/GR-', '/GX', '/Zi', '/GS', '/I', 'src']
 LIBRARY = {'0x00423F50': '??0iterator', '0x00424500': '??0const_iterator',
            '0x00423D40': '?size', '0x00423DB0': '??A?$deque', '0x00423DF0': '?front'}
@@ -138,7 +141,7 @@ def main():
             or manifest['target_sha256'] != hashlib.sha256(target).hexdigest()
             or manifest['probe'] != 'probes/VC7EventQueueDependencies.cpp'):
         raise ValueError('R113 pinned target or profile differs')
-    probe = ROOT / manifest['probe']
+    probe = fixture_path(manifest['probe'])
     if hashlib.sha256(probe.read_bytes()).hexdigest() != manifest['probe_sha256']:
         raise ValueError('R113 natural source probe differs')
     for filename, digest in manifest['vendor_headers'].items():

@@ -6,12 +6,15 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 import capstone
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 EVIDENCE = 'config/sdk-graphics-origin-evidence.json'
 MANIFEST_SHA256 = '922cd31ed6c986c5719c42d8a342b38b4ce0e0a722f11e3b6e42ed48e92a5998'
 CONFIDENCE = 'whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi'
@@ -326,7 +329,7 @@ def replay(m, evidence_only=False):
 
 def retained_digest_matches(path,expected):
     """Keep original pins; allow only frozen R198 End source-replay upgrades."""
-    actual=digest((ROOT/path).read_bytes())
+    actual=digest(fixture_path(path).read_bytes())
     if actual==expected:return True
     allowed={'scripts/verify-sdk-interface-origins.py': ('57f9ded32b394ddff62911e474b269da98c90152fff9a79c2c0a170059f1464c', '75b3979be88b4d60a24a67adc971c161f00086e310b162de4bf2ce2ff0fe42ae'), 'scripts/verify-sdk-destructor-origins.py': ('f48e108a3017def56fb2b69b1e54e72a9d6930277a41806ba7d301d45a58168a', '514f7aa683dc63f072ec4b8c21359619268e9ea4b570afb205d467b35a28b1a9')}
     return allowed.get(path)==(expected,actual)

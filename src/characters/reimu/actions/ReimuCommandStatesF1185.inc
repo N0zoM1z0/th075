@@ -133,7 +133,7 @@ case 0xCB: {
 #undef R1185_HAS_AUX
 #undef R1185_X_SPEED
 #undef R1185_Y_SPEED
-#include "FighterFallStateCFF647.inc"
+#include "characters/shared/actions/FighterFallStateCFF647.inc"
 case 0xD0: {
     if ((animationStage)==0 && (animationFrame)==0) {
         facing=-facing;

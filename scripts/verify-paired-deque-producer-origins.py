@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -13,6 +14,8 @@ import tempfile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 KEYS = {'0x004215F0': 211, '0x00421EE0': 27, '0x00421F00': 29,
         '0x0042DBE0': 211, '0x0042E000': 27, '0x0042E020': 29}
 CONFIDENCE = 'complete-vc7-paired-deque-producer-code-data-eh-typed-parent-provenance'
@@ -160,7 +163,7 @@ def main():
     authored = module('paired_authored', 'verify-authored-origins.py')
     eh = module('paired_eh', 'compiler_eh.py')
     target = c.verified_target()
-    if digest(target) != m['target_sha256'] or digest((ROOT / m['probe']).read_bytes()) != m['probe_sha256']:
+    if digest(target) != m['target_sha256'] or digest(fixture_path(m['probe']).read_bytes()) != m['probe_sha256']:
         raise ValueError('paired target or natural complete observation source differs')
     functions = {r['address']: r for r in BUFFER.PRIOR.PRIOR.rows('functions.csv')}
     origins = {r['address']: r for r in BUFFER.PRIOR.PRIOR.rows('function-origins.csv')}

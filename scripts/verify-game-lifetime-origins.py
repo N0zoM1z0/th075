@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 KEYS = {"0x0040D8C0", "0x0040D8E0", "0x00411C10", "0x004251C0", "0x00449D40", "0x00449DE0"}
 
 
@@ -145,7 +148,7 @@ def main():
     scratch.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary) / "VC7GameLifetimeAlternatives.obj"
-        subprocess.run([str(ROOT / "scripts/compile-probe.sh"), str(ROOT / manifest["probe"]),
+        subprocess.run([str(ROOT / "scripts/compile-probe.sh"), str(fixture_path(manifest["probe"])),
                         str(path), *manifest["profile"]], cwd=ROOT, capture_output=True, text=True, check=True)
         for row in records:
             for alternative in row["source_alternatives"]:

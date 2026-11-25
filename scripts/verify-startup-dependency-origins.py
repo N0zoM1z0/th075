@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import re
 import struct
 import subprocess
@@ -15,6 +16,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 PROFILE = ['/Od','/Ob0','/Gy','/GR-','/GX','/Zi','/GS','/I','src']
 ACCEPTED = {'0x0064544F':'__SEH_epilog','0x00649735':'__heap_init',
             '0x0064971B':'___heap_select','0x0064A6CD':'___sbh_heap_init'}
@@ -271,7 +274,7 @@ def main():
             if zero_fill_region(target,int(global_row['target_address'],16),4)!=global_row['zero_fill_region']:
                 raise ValueError('CRT global PE zero-fill geometry differs')
         layout=manifest['sdk_layout']
-        probe=ROOT/layout['probe']
+        probe=fixture_path(layout['probe'])
         if layout['profile']!=PROFILE or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']:
             raise ValueError('SDK layout natural probe/profile differs')
         for filename,digest in layout['headers'].items():

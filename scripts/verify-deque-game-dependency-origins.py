@@ -8,12 +8,15 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {"0x004453C0", "0x00445400", "0x00445530", "0x005F8110",
             "0x005F8290", "0x005F8420", "0x005F8680"}
 PARENTS = {"0x0045BA30", "0x005F7D80"}
@@ -114,7 +117,7 @@ def main():
             or manifest["target_sha256"] != hashlib.sha256(target).hexdigest()
             or manifest["probe"] != "probes/VC7GameDequeDependencies.cpp"):
         raise ValueError("R110 target or reproducibility profile differs")
-    probe = ROOT / manifest["probe"]
+    probe = fixture_path(manifest["probe"])
     if hashlib.sha256(probe.read_bytes()).hexdigest() != manifest["probe_sha256"]:
         raise ValueError("R110 independent natural source probe differs")
     for filename, expected in manifest["vendor_headers"].items():

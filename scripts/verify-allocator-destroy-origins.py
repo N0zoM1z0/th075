@@ -5,12 +5,17 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
+
+_fixtures = run_path(str(ROOT / "scripts/origin_fixtures.py"))
+fixture_path = _fixtures["fixture_path"]
+fixture_evidence_name = _fixtures["fixture_evidence_name"]
 spec=importlib.util.spec_from_file_location('allocator_sdk',ROOT/'scripts/verify-sdk-dependency-origins.py')
 SDK=importlib.util.module_from_spec(spec);spec.loader.exec_module(SDK)
 ENDPOINT=SDK.ENDPOINT;PAIRED=SDK.PAIRED;module=SDK.module;digest=SDK.digest
@@ -32,7 +37,7 @@ def included_headers(output):
         if 'Note: including file:' not in line:continue
         text=line.split('Note: including file:',1)[1].strip().replace('\\','/')
         if text[:3].lower()!='z:/':raise ValueError('allocator include lacks its actual host mapping')
-        path=Path(text[2:]);relative=str(path.relative_to(ROOT))
+        path=Path(text[2:]);relative=fixture_evidence_name(path)
         if relative!='probes/VC7SDKDependencyContexts.cpp' and not relative.startswith('.tools/msvc710/Vc7/include/'):
             raise ValueError('allocator source gains an unreviewed include owner')
         found[relative]=digest(path.read_bytes())
@@ -105,7 +110,7 @@ def accepted_snapshot(snapshot,function,origin):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
     for path,expected in [('config/allocator-destroy-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes())!=expected:raise ValueError('allocator destruction immutable source/prior evidence differs: '+path)
+        if digest(fixture_path(path).read_bytes())!=expected:raise ValueError('allocator destruction immutable source/prior evidence differs: '+path)
     c=module('allocator_target','compare-coff-function.py');coff=module('allocator_coff','coff_data.py');extent=module('allocator_extent','verify-vendor-record-origins.py');cfg=module('allocator_cfg','verify-authored-origins.py')
     target=c.verified_target();rows=PAIRED.BUFFER.PRIOR.PRIOR.rows
     functions={r['address']:r for r in rows('functions.csv')};origins={r['address']:r for r in rows('function-origins.csv')};records={r['address']:r for r in m['functions']}

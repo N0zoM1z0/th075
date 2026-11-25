@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -13,6 +14,8 @@ import tempfile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 KEYS = {'0x00421200': 24, '0x00421220': 43}
 CONFIDENCE = 'complete-script-buffer-policy-typed-array-delete-and-lifetime-controls'
 MANIFEST_SHA256 = '5cd6870dd2339ac7bd536914492765f22d5c3208789866d63113196bc6280329'
@@ -205,7 +208,7 @@ def main():
     coff = module('script_buffer_coff', 'coff_data.py')
     authored = module('script_buffer_cfg', 'verify-authored-origins.py')
     target = comparison.verified_target()
-    if digest(target) != m['target_sha256'] or digest((ROOT / m['probe']).read_bytes()) != m['probe_sha256']:
+    if digest(target) != m['target_sha256'] or digest(fixture_path(m['probe']).read_bytes()) != m['probe_sha256']:
         raise ValueError('script buffer target or natural observation source differs')
     functions = {r['address']: r for r in authored.rows('functions.csv')}
     origins = {r['address']: r for r in authored.rows('function-origins.csv')}

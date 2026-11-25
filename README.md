@@ -44,9 +44,12 @@ The progress card reads the same ledgers. Regenerate it with
 
 Each playable fighter has a subdirectory under `src/characters/`.
 The parent directory contains shared character code.
-The Windows build compiles translation units from `src/`. Included
-`probes/*.inc` fragments are build inputs. Cold-replay their complete
-owning functions after edits. Use `.analysis/` for experiments.
+The Windows build compiles translation units from `src/`. Character
+action fragments live alongside their owners and in
+[shared/actions](src/characters/shared/actions/). Cold-replay their
+complete owning functions after edits. Compiler controls used by the
+origin verifiers live in [tests/origin_probes](tests/origin_probes/).
+Use `.analysis/` for experiments.
 
 `config/match-units.toml` records the compiler profiles, extents and
 relocations. The target is the user-supplied Japanese TH075 v1.11

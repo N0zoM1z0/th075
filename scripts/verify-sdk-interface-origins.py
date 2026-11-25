@@ -5,12 +5,15 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 spec=importlib.util.spec_from_file_location('interface_shared',ROOT/'scripts/verify-sdk-file-image-origins.py')
 BASE=importlib.util.module_from_spec(spec);spec.loader.exec_module(BASE)
 module=BASE.module;digest=BASE.digest
@@ -130,7 +133,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     for path,h in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes())!=h:raise ValueError('SDK interface immutable prior/source evidence differs: '+path)
+        if digest(fixture_path(path).read_bytes())!=h:raise ValueError('SDK interface immutable prior/source evidence differs: '+path)
     c=module('interface_target','compare-coff-function.py');rt=module('interface_archive','verify-runtime-origins.py');coff=module('interface_coff','coff_data.py');sdk=module('interface_cfg','verify-sdk-origins.py')
     geometry=module('interface_geometry','verify-compiler-origins.py');weak=module('interface_weak','verify-standard-exception-origins.py');inventory=module('interface_inventory','verify-sdk-dependency-origins.py').PAIRED.BUFFER.inventory
     target=c.verified_target();functions={r['address']:r for r in BASE.rows('config/functions.csv')};origins={r['address']:r for r in BASE.rows('config/function-origins.csv')};primary={r['address']:r for r in m['functions']};catalog={k:int(v,16) for k,v in m['catalog'].items()}

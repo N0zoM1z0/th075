@@ -202,9 +202,9 @@ void YoumuFighter::Advance() {
                     ResetPrimaryCounters(1);
             }
             break;
-        #include "FighterSingletonContactF598.inc"
+        #include "characters/shared/actions/FighterSingletonContactF598.inc"
 #define CONTACT_STAGE_OFFSET 0xF00
-#include "FighterAdditionalContactF600.inc"
+#include "characters/shared/actions/FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
 #define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::TwentyFive
@@ -214,7 +214,7 @@ void YoumuFighter::Advance() {
 #define TRAJECTORY_EARLY_STATE 4
 #define TRAJECTORY_LATE_STATE 7
 #define CONTACT_STAGE_OFFSET 0xF00
-#include "FighterTrajectoryContact46F602.inc"
+#include "characters/shared/actions/FighterTrajectoryContact46F602.inc"
 #undef TRAJECTORY_LOWER_THRESHOLD
 #undef TRAJECTORY_UPPER_THRESHOLD
 #undef TRAJECTORY_MINIMUM_SPEED
@@ -231,7 +231,7 @@ void YoumuFighter::Advance() {
 #define F605_EARLY48 4
 #define F605_LATE48 7
 #define F605_COUNTER 0xF00
-#include "FighterTrajectoryFollowupsF605.inc"
+#include "characters/shared/actions/FighterTrajectoryFollowupsF605.inc"
 #undef F605_COUNTER
 #undef F605_STAGE47
 #undef F605_EARLY47
@@ -240,21 +240,21 @@ void YoumuFighter::Advance() {
 #undef F605_EARLY48
 #undef F605_LATE48
 #define F607_COUNTER 0xF00
-#include "FighterTrajectoryLanding49F607.inc"
+#include "characters/shared/actions/FighterTrajectoryLanding49F607.inc"
 #undef F607_COUNTER
 #define F610_STAGE 3
 #define F610_EARLY 4
 #define F610_LATE 7
 #define F610_COUNTER 0xF00
 #define F610_PREPARE_BEFORE 1
-#include "FighterTrajectoryBounce4AF610.inc"
+#include "characters/shared/actions/FighterTrajectoryBounce4AF610.inc"
 #undef F610_STAGE
 #undef F610_EARLY
 #undef F610_LATE
 #undef F610_COUNTER
 #undef F610_PREPARE_BEFORE
 #define F613_COUNTER 0xF00
-#include "FighterTrajectoryRecovery4CF613.inc"
+#include "characters/shared/actions/FighterTrajectoryRecovery4CF613.inc"
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
@@ -394,18 +394,18 @@ void YoumuFighter::Advance() {
         }
 #define F620_FIRST_ACTION 0
 #define F620_SECOND_ACTION 1
-#include "FighterScriptedFacingF816.inc"
+#include "actions/FighterScriptedFacingF816.inc"
 #undef F620_FIRST_ACTION
 #undef F620_SECOND_ACTION
-#include "FighterScriptedResourceVolleysF816.inc"
+#include "actions/FighterScriptedResourceVolleysF816.inc"
 
-#include "FighterScriptedResourceSelectorF817.inc"
-#include "FighterMode63BasicF626.inc"
+#include "actions/FighterScriptedResourceSelectorF817.inc"
+#include "characters/shared/actions/FighterMode63BasicF626.inc"
 #define F628_CASE 0x8C
 #define F628_COUNTER 0xF00
 #define F628_START_POS -11.0f
 #define F628_LIMIT 5
-#include "FighterScriptedJumpLandingF820.inc"
+#include "actions/FighterScriptedJumpLandingF820.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -414,7 +414,7 @@ void YoumuFighter::Advance() {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterScriptedJumpLandingF820.inc"
+#include "actions/FighterScriptedJumpLandingF820.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -423,7 +423,7 @@ void YoumuFighter::Advance() {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterScriptedJumpLandingF820.inc"
+#include "actions/FighterScriptedJumpLandingF820.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -432,7 +432,7 @@ void YoumuFighter::Advance() {
 #define F629_EARLY 4
 #define F629_LATE 7
 #define F629_COUNTER 0xF00
-#include "FighterScriptedArc91F821.inc"
+#include "actions/FighterScriptedArc91F821.inc"
 #undef F629_STAGE
 #undef F629_EARLY
 #undef F629_LATE
@@ -440,7 +440,7 @@ void YoumuFighter::Advance() {
 #define F631_COUNTER 0xF00
 #define F631_EXTRA_FLAG 0
 #define F631_EXTRA_BEFORE 0
-#include "FighterScriptedLanding96F822.inc"
+#include "actions/FighterScriptedLanding96F822.inc"
 #undef F631_COUNTER
 #undef F631_EXTRA_FLAG
 #undef F631_EXTRA_BEFORE
@@ -450,7 +450,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingSiblingsF822.inc"
+#include "actions/FighterScriptedLandingSiblingsF822.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -463,7 +463,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingSiblingsF822.inc"
+#include "actions/FighterScriptedLandingSiblingsF822.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -476,7 +476,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingSiblingsF822.inc"
+#include "actions/FighterScriptedLandingSiblingsF822.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -489,7 +489,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingPairF823.inc"
+#include "actions/FighterScriptedLandingPairF823.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -502,7 +502,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingPairF823.inc"
+#include "actions/FighterScriptedLandingPairF823.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -512,7 +512,7 @@ void YoumuFighter::Advance() {
 #define F637_EXTRA_FLAG 0
 #define F637_EXTRA_BEFORE 0
 #define F637_STRICT_ABOVE 0
-#include "FighterScriptedGroundBoostF824.inc"
+#include "actions/FighterScriptedGroundBoostF824.inc"
 #undef F637_EXTRA_FLAG
 #undef F637_EXTRA_BEFORE
 #undef F637_STRICT_ABOVE
@@ -522,7 +522,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingSiblingsF822.inc"
+#include "actions/FighterScriptedLandingSiblingsF822.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -535,7 +535,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingSiblingsF822.inc"
+#include "actions/FighterScriptedLandingSiblingsF822.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -548,7 +548,7 @@ void YoumuFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterScriptedLandingSiblingsF822.inc"
+#include "actions/FighterScriptedLandingSiblingsF822.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -558,70 +558,70 @@ void YoumuFighter::Advance() {
 #define F641_CASE 0xA3
 #define F641_START_HEIGHT -9.0f
 #define F641_NEXT_ACTION 2
-#include "FighterScriptedNoCounterF826.inc"
+#include "actions/FighterScriptedNoCounterF826.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA4
 #define F641_START_HEIGHT -10.0f
 #define F641_NEXT_ACTION 2
-#include "FighterScriptedNoCounterF826.inc"
+#include "actions/FighterScriptedNoCounterF826.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA5
 #define F641_START_HEIGHT -13.0f
 #define F641_NEXT_ACTION 2
-#include "FighterScriptedNoCounterF826.inc"
+#include "actions/FighterScriptedNoCounterF826.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F642_CASE 0xA7
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 0
-#include "FighterScriptedProjectileLaunchF827.inc"
+#include "actions/FighterScriptedProjectileLaunchF827.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F642_CASE 0xA8
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 2
-#include "FighterScriptedProjectileLaunchF827.inc"
+#include "actions/FighterScriptedProjectileLaunchF827.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F645_CASE 0xB4
 #define F645_START_POS 8.0f
 #define F645_AUX_ACTION 8
-#include "FighterScriptedMotionRestartF829.inc"
+#include "actions/FighterScriptedMotionRestartF829.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
 #define F645_CASE 0xB5
 #define F645_START_POS -8.0f
 #define F645_AUX_ACTION 10
-#include "FighterScriptedMotionRestartF829.inc"
+#include "actions/FighterScriptedMotionRestartF829.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
-#include "FighterScriptedFourWayC8F834.inc"
-#include "FighterScriptedFourWayC9F833.inc"
-#include "FighterScriptedFourWayCAF836.inc"
-#include "FighterScriptedFourWayCBF837.inc"
-#include "FighterScriptedComplexCCF839.inc"
-#include "FighterScriptedComplexCDF840.inc"
-#include "FighterScriptedComplexCEF841.inc"
-#include "FighterScriptedFallStateCFF831.inc"
-#include "FighterScriptedReflectD0F830.inc"
+#include "actions/FighterScriptedFourWayC8F834.inc"
+#include "actions/FighterScriptedFourWayC9F833.inc"
+#include "actions/FighterScriptedFourWayCAF836.inc"
+#include "actions/FighterScriptedFourWayCBF837.inc"
+#include "actions/FighterScriptedComplexCCF839.inc"
+#include "actions/FighterScriptedComplexCDF840.inc"
+#include "actions/FighterScriptedComplexCEF841.inc"
+#include "actions/FighterScriptedFallStateCFF831.inc"
+#include "actions/FighterScriptedReflectD0F830.inc"
 #define F651_DECAY 6
 #define F651_SPRITE 0x3E6
-#include "FighterScriptedResourceShotD1F832.inc"
+#include "actions/FighterScriptedResourceShotD1F832.inc"
 #undef F651_DECAY
 #undef F651_SPRITE
 #define F652_DECAY 6
 #define F652_SPRITE 0x3E6
 #define F652_SCALE_BEFORE 1
-#include "FighterScriptedResourceShotD2F832.inc"
+#include "actions/FighterScriptedResourceShotD2F832.inc"
 #undef F652_DECAY
 #undef F652_SPRITE
 #undef F652_SCALE_BEFORE
@@ -630,7 +630,7 @@ void YoumuFighter::Advance() {
 #define F653_PREPARE_FRAME 1
 #define F653_PREPARE_ANIM 0x1B
 #define F653_CLEAR_F00 0
-#include "FighterScriptedFallingRecoveryF842.inc"
+#include "actions/FighterScriptedFallingRecoveryF842.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
@@ -641,7 +641,7 @@ void YoumuFighter::Advance() {
 #define F653_PREPARE_FRAME 3
 #define F653_PREPARE_ANIM 0x1C
 #define F653_CLEAR_F00 1
-#include "FighterScriptedFallingRecoveryF842.inc"
+#include "actions/FighterScriptedFallingRecoveryF842.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
@@ -652,7 +652,7 @@ void YoumuFighter::Advance() {
 #define F653_PREPARE_FRAME 2
 #define F653_PREPARE_ANIM 0x1C
 #define F653_CLEAR_F00 0
-#include "FighterScriptedFallingRecoveryF842.inc"
+#include "actions/FighterScriptedFallingRecoveryF842.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
@@ -663,96 +663,96 @@ void YoumuFighter::Advance() {
 #define F653_PREPARE_FRAME 1
 #define F653_PREPARE_ANIM 0x1B
 #define F653_CLEAR_F00 0
-#include "FighterScriptedFallingRecoveryF842.inc"
+#include "actions/FighterScriptedFallingRecoveryF842.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
 #undef F653_PREPARE_ANIM
 #undef F653_CLEAR_F00
-#include "FighterScriptedGrounded130F844.inc"
-#include "FighterScriptedGrounded131F845.inc"
-#include "FighterScriptedSideStep133F846.inc"
-#include "FighterScriptedProjectile134F847.inc"
-#include "FighterScriptedProjectile135F847.inc"
-#include "FighterScriptedGroundPhysics136F849.inc"
-#include "FighterScriptedGround186F850.inc"
-#include "FighterScriptedGround187F850.inc"
-#include "FighterScriptedGround188F851.inc"
-#include "FighterScriptedBounce189F852.inc"
-#include "FighterScriptedFloatShot18AF853.inc"
-#include "FighterScriptedVolley18BF855.inc"
-#include "FighterScriptedStage190F856.inc"
-#include "FighterScriptedFloatShot191F857.inc"
-#include "FighterScriptedStage192F858.inc"
-#include "FighterScriptedGround194F859.inc"
-#include "FighterScriptedStage196F860.inc"
-#include "FighterScriptedStage198F861.inc"
-#include "FighterScriptedStage19AF862.inc"
-#include "FighterScriptedShort19CF863.inc"
-#include "FighterScriptedShort19EF863.inc"
-#include "FighterScriptedSustain1A0F865.inc"
-#include "FighterScriptedDoubleProjectile1F4F866.inc"
-#include "FighterScriptedStaged1F5F867.inc"
-#include "FighterScriptedConditional1F6F868.inc"
-#include "FighterScriptedConditional1F7F869.inc"
-#include "FighterScriptedGroundBounce1F8F870.inc"
-#include "FighterScriptedVolley1F9F872.inc"
-#include "FighterScriptedVolley1FAF872.inc"
-#include "FighterScriptedRecovery1FBF873.inc"
-#include "FighterScriptedRecovery1FCF873.inc"
-#include "FighterScriptedBorrowedOwner1FDF874.inc"
-#include "FighterScriptedBorrowedOwner1FEF874.inc"
-#include "FighterScriptedOwnerStages1FFF875.inc"
-#include "FighterScriptedOwnerWave200F877.inc"
-#include "FighterScriptedStage201F878.inc"
-#include "FighterScriptedStage252F879.inc"
-#include "FighterScriptedStage253F879.inc"
-#include "FighterScriptedStage254F879.inc"
-#include "FighterScriptedStage255F880.inc"
-#include "FighterScriptedStage256F880.inc"
-#include "FighterScriptedStage257F880.inc"
-#include "FighterScriptedFloatX258F881.inc"
-#include "FighterScriptedFloatX259F883.inc"
-#include "FighterScriptedStage2BCF884.inc"
-#include "FighterScriptedStage2BDF885.inc"
-#include "FighterScriptedStage2BEF886.inc"
-#include "FighterScriptedStage2BFF887.inc"
-#include "FighterScriptedStage2C0F888.inc"
-#include "FighterScriptedStage2C1F888.inc"
-#include "FighterScriptedFull2C2F890.inc"
-#include "FighterScriptedTransition2C3F891.inc"
-#include "FighterScriptedStage2DBF892.inc"
-#include "FighterScriptedStage2DCF893.inc"
-#include "FighterScriptedStage2DDF894.inc"
-#include "FighterScriptedStage2E4F895.inc"
-#include "FighterScriptedRandomPair2E5F896.inc"
-#include "FighterScriptedRandomPair2E6F896.inc"
+#include "actions/FighterScriptedGrounded130F844.inc"
+#include "actions/FighterScriptedGrounded131F845.inc"
+#include "actions/FighterScriptedSideStep133F846.inc"
+#include "actions/FighterScriptedProjectile134F847.inc"
+#include "actions/FighterScriptedProjectile135F847.inc"
+#include "actions/FighterScriptedGroundPhysics136F849.inc"
+#include "actions/FighterScriptedGround186F850.inc"
+#include "actions/FighterScriptedGround187F850.inc"
+#include "actions/FighterScriptedGround188F851.inc"
+#include "actions/FighterScriptedBounce189F852.inc"
+#include "actions/FighterScriptedFloatShot18AF853.inc"
+#include "actions/FighterScriptedVolley18BF855.inc"
+#include "actions/FighterScriptedStage190F856.inc"
+#include "actions/FighterScriptedFloatShot191F857.inc"
+#include "actions/FighterScriptedStage192F858.inc"
+#include "actions/FighterScriptedGround194F859.inc"
+#include "actions/FighterScriptedStage196F860.inc"
+#include "actions/FighterScriptedStage198F861.inc"
+#include "actions/FighterScriptedStage19AF862.inc"
+#include "actions/FighterScriptedShort19CF863.inc"
+#include "actions/FighterScriptedShort19EF863.inc"
+#include "actions/FighterScriptedSustain1A0F865.inc"
+#include "actions/FighterScriptedDoubleProjectile1F4F866.inc"
+#include "actions/FighterScriptedStaged1F5F867.inc"
+#include "actions/FighterScriptedConditional1F6F868.inc"
+#include "actions/FighterScriptedConditional1F7F869.inc"
+#include "actions/FighterScriptedGroundBounce1F8F870.inc"
+#include "actions/FighterScriptedVolley1F9F872.inc"
+#include "actions/FighterScriptedVolley1FAF872.inc"
+#include "actions/FighterScriptedRecovery1FBF873.inc"
+#include "actions/FighterScriptedRecovery1FCF873.inc"
+#include "actions/FighterScriptedBorrowedOwner1FDF874.inc"
+#include "actions/FighterScriptedBorrowedOwner1FEF874.inc"
+#include "actions/FighterScriptedOwnerStages1FFF875.inc"
+#include "actions/FighterScriptedOwnerWave200F877.inc"
+#include "actions/FighterScriptedStage201F878.inc"
+#include "actions/FighterScriptedStage252F879.inc"
+#include "actions/FighterScriptedStage253F879.inc"
+#include "actions/FighterScriptedStage254F879.inc"
+#include "actions/FighterScriptedStage255F880.inc"
+#include "actions/FighterScriptedStage256F880.inc"
+#include "actions/FighterScriptedStage257F880.inc"
+#include "actions/FighterScriptedFloatX258F881.inc"
+#include "actions/FighterScriptedFloatX259F883.inc"
+#include "actions/FighterScriptedStage2BCF884.inc"
+#include "actions/FighterScriptedStage2BDF885.inc"
+#include "actions/FighterScriptedStage2BEF886.inc"
+#include "actions/FighterScriptedStage2BFF887.inc"
+#include "actions/FighterScriptedStage2C0F888.inc"
+#include "actions/FighterScriptedStage2C1F888.inc"
+#include "actions/FighterScriptedFull2C2F890.inc"
+#include "actions/FighterScriptedTransition2C3F891.inc"
+#include "actions/FighterScriptedStage2DBF892.inc"
+#include "actions/FighterScriptedStage2DCF893.inc"
+#include "actions/FighterScriptedStage2DDF894.inc"
+#include "actions/FighterScriptedStage2E4F895.inc"
+#include "actions/FighterScriptedRandomPair2E5F896.inc"
+#include "actions/FighterScriptedRandomPair2E6F896.inc"
 #define F897_CASE 0x2E7
 #define F897_SECOND_SPRITE 0x38B
-#include "FighterScriptedFourShots2E7F897.inc"
+#include "actions/FighterScriptedFourShots2E7F897.inc"
 #undef F897_CASE
 #undef F897_SECOND_SPRITE
 #define F897_CASE 0x2E8
 #define F897_SECOND_SPRITE 0x38B
-#include "FighterScriptedFourShots2E7F897.inc"
+#include "actions/FighterScriptedFourShots2E7F897.inc"
 #undef F897_CASE
 #undef F897_SECOND_SPRITE
 #define F897_CASE 0x2E9
 #define F897_SECOND_SPRITE 0x38C
-#include "FighterScriptedFourShots2E7F897.inc"
+#include "actions/FighterScriptedFourShots2E7F897.inc"
 #undef F897_CASE
 #undef F897_SECOND_SPRITE
 #define F897_CASE 0x2EA
 #define F897_SECOND_SPRITE 0x38C
-#include "FighterScriptedFourShots2E7F897.inc"
+#include "actions/FighterScriptedFourShots2E7F897.inc"
 #undef F897_CASE
 #undef F897_SECOND_SPRITE
-#include "FighterScriptedStage2F0F898.inc"
-#include "FighterScriptedStage2F8F899.inc"
-#include "FighterScriptedTail31BF901.inc"
-#include "FighterScriptedTail31CF901.inc"
-#include "FighterScriptedNativeDefaultF806.inc"
-#include "FighterScriptedSharedGetter005214B0F1197.inc"
+#include "actions/FighterScriptedStage2F0F898.inc"
+#include "actions/FighterScriptedStage2F8F899.inc"
+#include "actions/FighterScriptedTail31BF901.inc"
+#include "actions/FighterScriptedTail31CF901.inc"
+#include "actions/FighterScriptedNativeDefaultF806.inc"
+#include "actions/FighterScriptedSharedGetter005214B0F1197.inc"
     }
 }
 #undef opponent

@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -14,6 +15,8 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32,CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED={'0x00646658':'__unlock','0x006440E7':'__initterm','0x006465BA':'__mtinitlocks',
           '0x0065053F':'___crtInitCritSecAndSpinCount','0x0065052F':'___crtInitCritSecNoSpinCount@8'}
 PENDING={'0x00644187':'crt-termination-lock-onexit-bindings-unresolved',
@@ -201,7 +204,7 @@ def main():
     decoder=Cs(CS_ARCH_X86,CS_MODE_32);decoder.detail=True
     scratch=ROOT/'build/origin-termination-lock-verification';scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
-        path=Path(temp)/'VendorMember.obj';layout=m['sdk_layout'];probe=ROOT/layout['probe']
+        path=Path(temp)/'VendorMember.obj';layout=m['sdk_layout'];probe=fixture_path(layout['probe'])
         if layout['profile']!=old.PROFILE or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']:raise ValueError('natural critical-section probe differs')
         for filename,digest in layout['headers'].items():
             if hashlib.sha256((ROOT/'.tools/msvc710/Vc7'/filename).read_bytes()).hexdigest()!=digest:raise ValueError('pinned SDK critical-section header differs')

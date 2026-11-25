@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x0064197E': ('_localtime', 384), '0x00647778': ('__tzset_lk', 680), '0x00647BD8': ('__isindst_lk', 391), '0x00647D5F': ('___tzset', 76), '0x00647DE0': ('__isindst', 62), '0x00647E1E': ('_gmtime', 263), '0x00647A20': ('_cvtdate', 440), '0x006506C5': ('__getenv_lk', 129), '0x00653816': ('___wtomb_environ', 144), '0x006537C8': ('__mbsnbicoll', 78), '0x00654660': ('___crtsetenv', 469), '0x0065422E': ('___crtCompareStringA', 900), '0x0065497E': ('__mbschr', 123), '0x006545FF': ('_copy_environ', 97), '0x006545B2': ('_findenv', 77), '0x00654212': ('_strncnt', 28), '0x00642AD2': ('__strdup', 43)}
 LEDGER_SIZES = {'0x0064197E': 384, '0x00647778': 680, '0x00647BD8': 391, '0x00647D5F': 67, '0x00647DE0': 53, '0x00647E1E': 263, '0x00647A20': 440, '0x006506C5': 129, '0x00653816': 144, '0x006537C8': 78, '0x00654660': 469, '0x0065422E': 900, '0x0065497E': 336, '0x006545FF': 97, '0x006545B2': 77, '0x00654212': 28, '0x00642AD2': 43}
 AUXILIARIES = {'0x00654A10': ('_strchr', 190), '0x00654A00': ('_$$$00001', 16)}
@@ -391,7 +394,7 @@ def main():
     scratch = ROOT / 'build/origin-time-zone-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

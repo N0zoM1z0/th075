@@ -5,6 +5,7 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -12,6 +13,8 @@ import tempfile
 from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 spec=importlib.util.spec_from_file_location('game_parent_sdk',ROOT/'scripts/verify-sdk-dependency-origins.py')
 SDK=importlib.util.module_from_spec(spec);spec.loader.exec_module(SDK)
 PAIRED=SDK.PAIRED;ENDPOINT=SDK.ENDPOINT;module=SDK.module;digest=SDK.digest
@@ -165,7 +168,7 @@ def preserved_snapshot(row,function,origin):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
     for path,expected in [('config/game-parent-policy-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes())!=expected:raise ValueError('game parent policy immutable probe/prior evidence differs: '+path)
+        if digest(fixture_path(path).read_bytes())!=expected:raise ValueError('game parent policy immutable probe/prior evidence differs: '+path)
     c=module('game_parent_target','compare-coff-function.py');coff=module('game_parent_coff','coff_data.py');cfg=module('game_parent_cfg','verify-authored-origins.py')
     extent=module('game_parent_extent','verify-vendor-record-origins.py');eh=module('game_parent_eh','compiler_eh.py');target=c.verified_target();rows=cfg.rows
     if digest(target)!=m['target_sha256']:raise ValueError('game parent policy target identity differs')

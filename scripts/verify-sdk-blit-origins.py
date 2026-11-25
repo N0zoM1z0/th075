@@ -5,12 +5,15 @@ import csv
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 import capstone
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 _SPEC = importlib.util.spec_from_file_location('blit_original_graphics',ROOT/'scripts/verify-sdk-graphics-origins.py')
 BASE = importlib.util.module_from_spec(_SPEC)
 _SPEC.loader.exec_module(BASE)
@@ -176,7 +179,7 @@ def main():
     args=parser.parse_args();m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     controls=[m['public_control'],m['constructor_control']]
     for path,sha in [(EVIDENCE,MANIFEST_SHA256),*[(q['probe'],q['probe_sha256']) for q in controls]]:
-        if digest((ROOT/path).read_bytes())!=sha:raise ValueError('Blit immutable complete source/provenance differs: '+path)
+        if digest(fixture_path(path).read_bytes())!=sha:raise ValueError('Blit immutable complete source/provenance differs: '+path)
     # Preserve the complete old floor carrier and all historical source evidence.
     for filename in ['verify-floor-math-origins.py','verify-sdk-x86-policy-origins.py','verify-sdk-mmx-origins.py','verify-sdk-resource-lock-origins.py']:
         result=subprocess.run([str(ROOT/'scripts/repo-python'),'scripts/'+filename],cwd=ROOT,capture_output=True,text=True,check=True)

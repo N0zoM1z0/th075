@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -14,6 +15,8 @@ import tempfile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 KEYS = {'0x004094B0', '0x00414430', '0x00414620', '0x00414810', '0x0041DD50', '0x0045BF50'}
 PENDING = {'0x00421550', '0x0045DD50'}
 PROFILE = ['/Od', '/Ob0', '/Gy', '/GR-', '/GX', '/Zi', '/GS', '/I', 'src', '/showIncludes']
@@ -180,7 +183,7 @@ def main():
     authored = module('size_authored', 'verify-authored-origins.py')
     coff = module('size_coff', 'coff_data.py')
     target = comparison.verified_target()
-    if digest(target) != m['target_sha256'] or digest((ROOT / m['probe']).read_bytes()) != m['probe_sha256']:
+    if digest(target) != m['target_sha256'] or digest(fixture_path(m['probe']).read_bytes()) != m['probe_sha256']:
         raise ValueError('size target or natural probe identity differs')
     for filename, expected in m['headers'].items():
         if digest((ROOT / filename).read_bytes()) != expected:

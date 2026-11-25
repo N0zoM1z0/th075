@@ -39,7 +39,7 @@ successor pointer into that actual link. This last original loop
 was critical to recovering the entire function exactness.
 
 The ordinary C++ source
-[`SDKNativeCOMManagerCleanupF691.cpp`](../probes/SDKNativeCOMManagerCleanupF691.cpp)
+[`SDKNativeCOMManagerCleanupF691.cpp`](../tests/origin_probes/SDKNativeCOMManagerCleanupF691.cpp)
 models only genuine observed resource pointer offsets, imported
 function ABI signatures, explicit vtable callback slots and the
 actual linked next-pointer offset. It does **not** create a fake

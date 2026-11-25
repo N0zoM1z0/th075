@@ -4,11 +4,14 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 import importlib.util
 spec=importlib.util.spec_from_file_location('sdk_debug_shared',ROOT/'scripts/verify-sdk-file-image-origins.py')
 BASE=importlib.util.module_from_spec(spec);spec.loader.exec_module(BASE)
@@ -45,7 +48,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     for path,h in [(EVIDENCE,MANIFEST_SHA256)]:
-        if BASE.digest((ROOT/path).read_bytes())!=h:raise ValueError('SDK debug immutable evidence differs: '+path)
+        if BASE.digest(fixture_path(path).read_bytes())!=h:raise ValueError('SDK debug immutable evidence differs: '+path)
     # Same retained source/ABI inputs: replay the complete R184 source archive graph
     # and original SDK typed short-owner evidence, without repeating cold chains.
     for filename in ('verify-sdk-file-image-origins.py','verify-sdk-origins.py'):

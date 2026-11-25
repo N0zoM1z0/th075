@@ -5,12 +5,15 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 MANIFEST_SHA256 = 'afe1d3136b9d1ce15d370b11234b8bfa4b6be877032c76ba4623df3ecb8a11fe'
 CONFIDENCE = 'complete-vc7-vector-endpoint-constructor-deque-operation-and-independent-lifetime-context'
 CANDIDATES = {'0x00409760':31,'0x00409E60':31,'0x0040E1F0':31,'0x0040E680':31,
@@ -162,7 +165,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument('--evidence-only',action='store_true')
     args = parser.parse_args(); m = manifest(); verify_plan(m)
     for path,expected in [('config/vector-endpoint-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
-        if PAIRED.digest((ROOT/path).read_bytes()) != expected:
+        if PAIRED.digest(fixture_path(path).read_bytes()) != expected:
             raise ValueError('vector endpoint immutable source/prior evidence differs: ' + path)
     c = module('vector_endpoint_target','compare-coff-function.py'); coff = module('vector_endpoint_coff','coff_data.py')
     extent = module('vector_endpoint_extent','verify-vendor-record-origins.py'); cfg = module('vector_endpoint_cfg','verify-authored-origins.py')

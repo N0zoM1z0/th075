@@ -6,11 +6,14 @@ import copy
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 
 
 def module(name, filename):
@@ -213,7 +216,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__); p.add_argument('--evidence-only', action='store_true'); args = p.parse_args()
     m = json.loads((ROOT / EVIDENCE).read_text()); verify_plan(m)
     for path, sha in [(EVIDENCE, MANIFEST_SHA256), (m['public_control']['probe'], m['public_control']['probe_sha256'])]:
-        if digest((ROOT / path).read_bytes()) != sha: raise ValueError('Vector at immutable source/evidence differs: ' + path)
+        if digest(fixture_path(path).read_bytes()) != sha: raise ValueError('Vector at immutable source/evidence differs: ' + path)
     replay(m, args.evidence_only)
     print('R205 origins OK:18 whole original public vector/iterator library policies615; '
           'four group-scoped source graphs52 sections1961/all92 fields,44 complete normal/EH CFGs; '

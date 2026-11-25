@@ -21,7 +21,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f687-native-com-owner-source'
-SOURCE=ROOT/'probes/SDKNativeCOMOwnerDestructorsF687.cpp'
+SOURCE=ROOT/'tests/origin_probes/SDKNativeCOMOwnerDestructorsF687.cpp'
 CASES={
     0x00608D8E:(58,22,'??1SDKResourceOwnerF687@@UAE@XZ',0x0065D348,
           {10:('DIR32','??_7SDKResourceOwnerF687@@6B@',0x0065D348),

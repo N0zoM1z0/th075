@@ -4,11 +4,14 @@ import csv
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 
 
 def module(name, filename):
@@ -136,7 +139,7 @@ def replay(m):
 def main():
     m = json.loads((ROOT / EVIDENCE).read_text()); verify_plan(m)
     for path, sha in [(EVIDENCE, MANIFEST_SHA256), (m['public_control']['probe'], m['public_control']['probe_sha256'])]:
-        if digest((ROOT / path).read_bytes()) != sha:
+        if digest(fixture_path(path).read_bytes()) != sha:
             raise ValueError('Leaf immutable source/evidence differs: ' + path)
     replay(m)
     print('R206 review OK: six complete opaque leaves96 remain unknown; seven whole typed retained parents588; '

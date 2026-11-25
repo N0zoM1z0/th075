@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_REG_EAX
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x006405C2': ('__fpmath', 30), '0x0064057A': ('__cfltcvt_init', 56), '0x0064520F': ('__ms_p5_mp_test_fdiv', 41), '0x006451BD': ('__setdefaultprecision', 18), '0x0064FBE8': ('__controlfp', 22), '0x0064516C': ('__cfltcvt', 81), '0x00644E5F': ('__fassign', 62), '0x00645070': ('__cftof', 98), '0x006450D2': ('__cftog', 154), '0x00644F68': ('__cftoe', 108), '0x0064F7B3': ('__atodbl', 61), '0x0064F82E': ('__atoflt', 61), '0x0064F3E5': ('_tolower', 34), '0x00642800': ('_isdigit', 58), '0x0064F31D': ('___tolower_mt', 200), '0x0064F99C': ('__fltout2', 108), '0x00644FD4': ('__cftof2', 156), '0x00644EBA': ('__cftoe2', 174), '0x00652CD1': ('___strgtold12', 1076), '0x0064F70B': ('__ld12tod', 22), '0x0064F721': ('__ld12tof', 22), '0x00653151': ('_$I10_OUTPUT', 654), '0x00652BF3': ('___mtold12', 222), '0x0065418C': ('___multtenpow12', 134), '0x00644E9D': ('__shift', 29), '0x00653F5A': ('___ld12mul', 562), '0x0064FA08': ('__fptrap', 9)}
 AUXILIARY = {'0x00644DFA': ('__cropzeros', 75), '0x00644DBE': ('__forcdecpt', 60), '0x00644E45': ('__positive', 26), '0x00640579': ('__fpclear', 1), '0x006496D7': ('__RTC_Terminate', 68)}
 PENDING = {'0x0064411D': 'crt-cinit-initializer-callback-dependencies-unresolved'}
@@ -265,7 +268,7 @@ def main():
         path = Path(temp) / 'VendorMember.obj'
         for layout_key,values,headers in [('sdk_layout',LAYOUT,{'crt/src/float.h','crt/src/fltintrn.h','crt/src/cruntime.h'}),
                 ('locale_layout',LOCALE_LAYOUT,{'crt/src/mtdll.h','crt/src/locale.h','crt/src/cruntime.h','PlatformSDK/Include/WinNT.h','PlatformSDK/Include/WinBase.h'})]:
-            layout=m[layout_key];probe=ROOT/layout['probe'];profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
+            layout=m[layout_key];probe=fixture_path(layout['probe']);profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
             if layout['profile']!=profile or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256'] or set(layout['headers'])!=headers:
                 raise ValueError('natural FP control loses its exact source/profile/headers')
             for filename,digest in layout['headers'].items():

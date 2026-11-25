@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x0064189E': ('_srand', 13), '0x006418AB': ('_rand', 34), '0x006418CD': ('_fabs', 177), '0x00641D4A': ('??_M@YGXPAXIHP6EX0@Z@Z', 96), '0x00641CEC': ('?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z', 94), '0x006473C1': ('__except1', 184), '0x0064730F': ('__handle_qnan1', 83), '0x00647271': ('__umatherr', 158)}
 LEDGER_SIZES = {'0x0064189E': 13, '0x006418AB': 34, '0x006418CD': 177, '0x00641D4A': 72, '0x00641CEC': 47, '0x006473C1': 184, '0x0064730F': 83, '0x00647271': 158}
 LABELS = {'0x00641D92': ('0x00641D4A', 24, 72, '$L18594')}
@@ -325,7 +328,7 @@ def main():
     scratch = ROOT / 'build/origin-fp-dispatch-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):
@@ -460,7 +463,7 @@ def main():
                     or hashlib.sha256(source).hexdigest()!=alternate['source_sha256']
                     or hashlib.sha256(actual).hexdigest()!=alternate['body_sha256']):
                 raise ValueError('whole abs/labs source alternatives differ')
-        control=m['abs_expression_controls']; probe=ROOT/control['probe']
+        control=m['abs_expression_controls']; probe=fixture_path(control['probe'])
         if hashlib.sha256(probe.read_bytes()).hexdigest()!=control['probe_sha256']:
             raise ValueError('natural abs alternative source differs')
         subprocess.run([str(ROOT/'scripts/compile-probe.sh'),str(probe),str(path),*control['profile']],cwd=ROOT,capture_output=True,text=True,check=True)

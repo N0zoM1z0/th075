@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x0064232C': ('_WinMainCRTStartup', 469), '0x00649327': ('___crtGetEnvironmentStringsA', 290), '0x00649285': ('__setargv', 162), '0x00649052': ('__setenvp', 199), '0x00648FF5': ('__wincmdln', 93), '0x00648E76': ('__XcptFilter', 356), '0x00649119': ('_parse_cmdline', 364), '0x006515F3': ('__ismbblead', 17), '0x0064424A': ('_exit', 17), '0x0064426C': ('__cexit', 15), '0x0065152C': ('_x_ismbbtype', 51)}
 AUXILIARY = {'0x0064427B': ('__c_exit', 15)}
 COMMON = {'__acmdln': ('0x0068FBC4', 4), '___mbctype_initialized': ('0x0068FBB4', 4), '___env_initialized': ('0x0068FBA8', 4), '__mbctype': ('0x0068E800', 257)}
@@ -292,7 +295,7 @@ def main():
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
         path = Path(temp) / 'VendorMember.obj'
         for layout_key,values,headers in [('sdk_layout',LAYOUT,LAYOUT_HEADERS)]:
-            layout=m[layout_key];probe=ROOT/layout['probe'];profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
+            layout=m[layout_key];probe=fixture_path(layout['probe']);profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
             if layout['profile']!=profile or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256'] or set(layout['headers'])!=headers:
                 raise ValueError('natural initializer control loses its exact source/profile/headers')
             for filename,digest in layout['headers'].items():

@@ -5,12 +5,15 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 spec=importlib.util.spec_from_file_location('sdk_destructor_parent',ROOT/'scripts/verify-sdk-interface-origins.py')
 PARENT=importlib.util.module_from_spec(spec);spec.loader.exec_module(PARENT)
 module=PARENT.module;digest=PARENT.digest
@@ -58,7 +61,7 @@ def verify_plan(m):
 
 
 def retained_digest_matches(path,expected):
-    actual=digest((ROOT/path).read_bytes())
+    actual=digest(fixture_path(path).read_bytes())
     if actual==expected:return True
     allowed={'scripts/verify-sdk-interface-origins.py': ('57f9ded32b394ddff62911e474b269da98c90152fff9a79c2c0a170059f1464c', '75b3979be88b4d60a24a67adc971c161f00086e310b162de4bf2ce2ff0fe42ae')}
     return allowed.get(path)==(expected,actual)

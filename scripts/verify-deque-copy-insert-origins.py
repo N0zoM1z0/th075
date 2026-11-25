@@ -5,6 +5,7 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -12,6 +13,8 @@ import tempfile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 MANIFEST_SHA256 = '52f3cdecfb551119616e920bbce11dd7bf795724b4bd0862046dbb5ebf8e5d81'
 CONFIDENCE = 'complete-vc7-deque-copy-insert-full-source-catch-policy-and-extent-provenance'
 KEYS = {'0x004229D0': ('pending', '0x004229D0', 28, 28),
@@ -139,7 +142,7 @@ def main():
     args = parser.parse_args(); m = manifest(); verify_plan(m)
     for path, expected in [('config/deque-copy-insert-origin-evidence.json', MANIFEST_SHA256),
                            (m['retained_manifest'], m['retained_sha256']), (m['element_manifest'], m['element_sha256']), (m['probe'], m['probe_sha256'])]:
-        if PAIRED.digest((ROOT / path).read_bytes()) != expected:
+        if PAIRED.digest(fixture_path(path).read_bytes()) != expected:
             raise ValueError('copy/insertion immutable source/evidence differs: ' + path)
     c = module('copy_target', 'compare-coff-function.py'); coff = module('copy_coff', 'coff_data.py')
     extent = module('copy_extent', 'verify-vendor-record-origins.py'); eh = module('copy_eh', 'compiler_eh.py')

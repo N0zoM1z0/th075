@@ -5,6 +5,7 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -12,6 +13,10 @@ import tempfile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
+
+_fixtures = run_path(str(ROOT / "scripts/origin_fixtures.py"))
+fixture_path = _fixtures["fixture_path"]
+fixture_evidence_name = _fixtures["fixture_evidence_name"]
 spec=importlib.util.spec_from_file_location('archive_list_prior',ROOT/'scripts/verify-list-iterator-policy-origins.py')
 PRIOR=importlib.util.module_from_spec(spec);spec.loader.exec_module(PRIOR)
 SDK=PRIOR.SDK;module=SDK.module;digest=SDK.digest
@@ -35,7 +40,7 @@ def included_headers(output):
         if 'Note: including file:' not in line:continue
         text=line.split('Note: including file:',1)[1].strip().replace('\\','/')
         if text[:3].lower()!='z:/':raise ValueError('iterator include loses its actual host mapping')
-        path=Path(text[2:]);relative=str(path.relative_to(ROOT))
+        path=Path(text[2:]);relative=fixture_evidence_name(path)
         if relative not in ('probes/VC7GameContextPolicies.cpp','probes/VC7ListPolicyDependencies.cpp','probes/VC7ListIteratorPolicies.cpp') and not relative.startswith('.tools/msvc710/Vc7/include/'):
             raise ValueError('iterator gains an unreviewed include owner')
         found[relative]=digest(path.read_bytes())
@@ -130,7 +135,7 @@ def verify_negative(raw,linked,actual,row):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
     for path,expected in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes())!=expected:raise ValueError('iterator immutable source/prior evidence differs: '+path)
+        if digest(fixture_path(path).read_bytes())!=expected:raise ValueError('iterator immutable source/prior evidence differs: '+path)
     c=module('iterator_target','compare-coff-function.py');coff=module('iterator_coff','coff_data.py');cfg=module('iterator_cfg','verify-authored-origins.py')
     extent=module('iterator_extent','verify-vendor-record-origins.py');eh=module('iterator_eh','compiler_eh.py');target=c.verified_target();rows=cfg.rows
     if digest(target)!=m['target_sha256']:raise ValueError('iterator target identity differs')

@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x006504F9': ('___initmbctable', 30), '0x006503A9': ('__setmbcp', 336), '0x00650209': ('__setmbcp_lk', 400), '0x0064FFE5': ('_setSBCS', 41), '0x0065000E': ('_setSBUpLow', 396), '0x0065019A': ('___updatetmbcinfo', 111), '0x0064DA08': ('___crtGetStringTypeA', 442), '0x0065275D': ('___crtLCMapStringA', 956), '0x006518B9': ('__resetstkoflw', 227), '0x00651D5F': ('___ansicp', 67), '0x00651DA2': ('___convertcp', 457), '0x00642619': ('_atol', 136), '0x00642DEB': ('___updatetlocinfo', 59), '0x0064980B': ('___isctype_mt', 119), '0x00642BD9': ('___updatetlocinfo_lk', 193)}
 CONFIDENCE = 'complete-vendor-codepage-nls-code-data-layout-api-eh-provenance'
 LABEL_CONFIDENCE = 'complete-interior-label-of-reviewed-vendor-parent'
@@ -252,7 +255,7 @@ def main():
     scratch.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
         path = Path(temp) / 'VendorMember.obj'
-        layout=m['sdk_layout'];probe=ROOT/layout['probe'];profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
+        layout=m['sdk_layout'];probe=fixture_path(layout['probe']);profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if layout['profile']!=profile or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']:
             raise ValueError('natural codepage layout probe differs')
         if set(layout['headers'])!={'crt/src/mtdll.h', 'PlatformSDK/Include/WinNT.h', 'crt/src/locale.h', 'crt/src/cruntime.h', 'PlatformSDK/Include/WinBase.h', 'PlatformSDK/Include/WinNls.h', 'crt/src/mbctype.c'}:

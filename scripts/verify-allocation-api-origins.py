@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -13,6 +14,8 @@ import tempfile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 KEYS = {'0x0064159D': ('??2@YAPAXI@Z', 14, 856822),
         '0x0064169D': ('??_V@YAXPAX@Z', 5, 854462),
         '0x006416A2': ('??_U@YAPAXI@Z', 5, 858348)}
@@ -100,7 +103,7 @@ def main():
     coff = module('allocation_coff', 'coff_data.py')
     archive_reader = module('allocation_archive', 'verify-runtime-origins.py')
     target = comparison.verified_target()
-    if digest(target) != m['target_sha256'] or digest((ROOT / m['probe']).read_bytes()) != m['probe_sha256']:
+    if digest(target) != m['target_sha256'] or digest(fixture_path(m['probe']).read_bytes()) != m['probe_sha256']:
         raise ValueError('allocation API target or natural SDK source differs')
     functions = {r['address']: r for r in record.rows('functions.csv')}
     origins = {r['address']: r for r in record.rows('function-origins.csv')}

@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x00646980': ('__trandisp1', 103), '0x006469E7': ('__trandisp2', 140), '0x00646B7C': ('__convertTOStoQNaN', 25), '0x00646BFB': ('__math_exit', 42), '0x00646CE0': ('__startTwoArgErrorHandling', 23), '0x006505CA': ('__87except', 248), '0x00646CF7': ('__startOneArgErrorHandling', 60), '0x006489F0': ('__cintrindisp2', 62), '0x00648A2E': ('__cintrindisp1', 61), '0x00648C01': ('__ctrandisp1', 51), '0x00648A6B': ('__ctrandisp2', 406), '0x00646FD8': ('__handle_exc', 548), '0x00646D33': ('__raise_exc', 677), '0x006471FC': ('__set_errno', 40), '0x006506C2': ('__matherr', 3), '0x00647722': ('__set_statfp', 86), '0x006476E7': ('__statfp', 11), '0x006476F2': ('__clrfp', 12), '0x00642240': ('_atan2', 10)}
 AUXILIARY = {'0x0064224A': ('__CIatan2', 10), '0x00646A73': ('_$$$00003', 215), '0x00648940': ('_$$$00001', 168)}
 LABELS = {'0x00646B43': ('0x00646A73', 7, 208, '__rtchsifneg'), '0x00648AB3': ('0x00648A6B', 7, 72, 'ctranexit'), '0x00648ABA': ('0x00648A6B', 327, 79, 'cintrinexit'), '0x006489AC': ('0x00648940', 9, 108, '__rtpiby2')}
@@ -268,7 +271,7 @@ def main():
     scratch = ROOT / 'build/origin-fp-dispatch-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

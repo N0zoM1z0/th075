@@ -3,11 +3,14 @@
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 EVIDENCE = 'config/sdk-string-buffer-review-evidence.json'
 MANIFEST_SHA256 = 'a4c52873a3608bdb30cf14a53b3f512d7ba817fdc36b7d08eeba9f0560f01893'
 SCHEMA = 'https://github.com/microsoft/microsoft-pdb/blob/master/include/cvinfo.h'
@@ -111,7 +114,7 @@ def inventory(body):
 
 
 def archive(path, sha):
-    raw = (ROOT / path).read_bytes()
+    raw = fixture_path(path).read_bytes()
     if digest(raw) != sha:
         raise ValueError('pinned source archive differs: ' + path)
     return {o: (n, b) for o, n, b in RT.archive_members(raw)}

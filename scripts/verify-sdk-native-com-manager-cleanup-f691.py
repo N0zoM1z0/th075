@@ -22,7 +22,7 @@ import sys
 from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=ROOT/'probes/SDKNativeCOMManagerCleanupF691.cpp'
+SOURCE=ROOT/'tests/origin_probes/SDKNativeCOMManagerCleanupF691.cpp'
 OUT=ROOT/'.analysis/f691-native-com-manager-cleanup'
 ADDR=0x0061F125
 SIZE=249

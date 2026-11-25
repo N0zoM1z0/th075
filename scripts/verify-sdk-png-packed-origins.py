@@ -5,10 +5,13 @@ import collections
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import capstone
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 _SPEC=importlib.util.spec_from_file_location('png_packed_prior',ROOT/'scripts/verify-sdk-presentation-origins.py')
 BASE=importlib.util.module_from_spec(_SPEC);_SPEC.loader.exec_module(BASE)
 module=BASE.module
@@ -120,7 +123,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--evidence-only',action='store_true');args=p.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes())!=sha:
+        if digest(fixture_path(path).read_bytes())!=sha:
             raise ValueError('PNG/packed immutable source or retained provenance differs: '+path)
     BASE.replay(m,args.evidence_only)
     c=module('png_packed_coff','compare-coff-function.py');coff=module('png_packed_data','coff_data.py')

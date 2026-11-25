@@ -5,7 +5,7 @@
 #define F653_PREPARE_FRAME 3
 #define F653_PREPARE_ANIM 0x1B
 #define F653_CLEAR_F00 0
-#include "FighterFallingRecoveryF653.inc"
+#include "characters/shared/actions/FighterFallingRecoveryF653.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
@@ -16,7 +16,7 @@
 #define F653_PREPARE_FRAME 2
 #define F653_PREPARE_ANIM 0x1C
 #define F653_CLEAR_F00 1
-#include "FighterFallingRecoveryF653.inc"
+#include "characters/shared/actions/FighterFallingRecoveryF653.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
@@ -160,7 +160,7 @@ case 0x133: {
 #define F653_PREPARE_FRAME 4
 #define F653_PREPARE_ANIM 0x1C
 #define F653_CLEAR_F00 0
-#include "FighterFallingRecoveryF653.inc"
+#include "characters/shared/actions/FighterFallingRecoveryF653.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME

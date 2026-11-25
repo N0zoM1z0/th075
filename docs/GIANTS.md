@@ -7,7 +7,7 @@ Cold-replay an affected unit with
 `scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
 
 [The frontier manifest](../config/frontiers.toml) has no open parents.
-The notes below and some included `probes/*.inc` fragments retain results
+The notes below and some included `actions/*.inc` fragments retain results
 from earlier partial comparisons, including instruction widths, register
 allocation and shared-tail placement. The complete replays recorded here
 closed those comparisons.

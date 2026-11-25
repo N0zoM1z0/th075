@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {
     '0x0064EC68': ('__callnewh', 27),
     '0x0064A715': ('___sbh_find_block', 43),
@@ -278,7 +281,7 @@ def main():
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
         path = Path(temp) / 'VendorMember.obj'
         layout = m['sdk_layout']
-        probe = ROOT / layout['probe']
+        probe = fixture_path(layout['probe'])
         profile = old.PROFILE + ['/D_CRTBLD', '/D_MT', '/I', '.tools/msvc710/Vc7/crt/src']
         if layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']:
             raise ValueError('natural CRT layout probe differs')

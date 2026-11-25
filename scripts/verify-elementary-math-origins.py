@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x00641740': ('__CIcos', 174), '0x006417F0': ('__CIsin', 174), '0x00641E40': ('__CIsqrt', 186)}
 AUXILIARY = {'0x00646BEE': ('__fast_exit', 13)}
 LABELS = {'0x00641754': ('0x00641740', 9, 20, '_cos'), '0x0064175D': ('0x00641740', 145, 29, None), '0x00641804': ('0x006417F0', 9, 20, '_sin'), '0x0064180D': ('0x006417F0', 145, 29, None), '0x00641E54': ('0x00641E40', 9, 20, '_sqrt'), '0x00641E5D': ('0x00641E40', 157, 29, None)}
@@ -290,7 +293,7 @@ def main():
     scratch = ROOT / 'build/origin-fp-dispatch-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

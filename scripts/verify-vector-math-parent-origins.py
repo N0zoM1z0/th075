@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x00641C78': ('??_L@YGXPAXIHP6EX0@Z1@Z', 98), '0x00647362': ('__handle_qnan2', 95), '0x00647479': ('__except2', 201), '0x00641FD0': ('_log10', 63), '0x00642120': ('_ceil', 64), '0x00648140': ('__CIlog10_pentium4', 644), '0x006485D7': ('___libm_error_support', 654), '0x00648865': ('__ceil_default', 211), '0x0064E81E': ('__powhlp', 354), '0x0064E7B0': ('__d_inttype', 110), '0x0065151B': ('__frnd', 17)}
 LEDGER_SIZES = {'0x00641C78': 74, '0x00647362': 95, '0x00647479': 201, '0x00641FD0': 152, '0x00642120': 285, '0x00648140': 24, '0x006485D7': 654, '0x00648865': 211, '0x0064E81E': 354, '0x0064E7B0': 110, '0x0065151B': 17}
 AUXILIARIES = {'0x00642010': ('__CIlog10', 59), '0x0064204B': ('__CIlog10_default', 213), '0x00642160': ('__ceil_pentium4', 221), '0x00646BEE': ('__fast_exit', 13), '0x00646A73': ('_$$$00003', 215), '0x006483D0': ('_$$$00001', 519), '0x00650F81': ('__safe_fdivr', 21), '0x00650790': ('_fdiv_main_routine', 279), '0x006508A7': ('__adj_fdiv_r', 1183)}
@@ -440,7 +443,7 @@ def main():
     scratch = ROOT / 'build/origin-fp-dispatch-verification'; scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temporary:
         path = Path(temporary)/'VendorMember.obj'
-        layout = m['sdk_layout']; probe = ROOT/layout['probe']
+        layout = m['sdk_layout']; probe = fixture_path(layout['probe'])
         profile = old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if (layout['profile'] != profile or hashlib.sha256(probe.read_bytes()).hexdigest() != layout['probe_sha256']
                 or set(layout['headers']) != LAYOUT_HEADERS):

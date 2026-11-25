@@ -229,9 +229,9 @@ void RemiliaFighter::Advance() {
                     ResetPrimaryCounters(2);
             }
             break;
-        #include "FighterSingletonContactF598.inc"
+        #include "characters/shared/actions/FighterSingletonContactF598.inc"
 #define CONTACT_STAGE_OFFSET 0xF00
-#include "FighterAdditionalContactF600.inc"
+#include "characters/shared/actions/FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
 #define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::TwentyFive
@@ -241,7 +241,7 @@ void RemiliaFighter::Advance() {
 #define TRAJECTORY_EARLY_STATE 2
 #define TRAJECTORY_LATE_STATE 7
 #define CONTACT_STAGE_OFFSET 0xF00
-#include "FighterTrajectoryContact46F602.inc"
+#include "characters/shared/actions/FighterTrajectoryContact46F602.inc"
 #undef TRAJECTORY_LOWER_THRESHOLD
 #undef TRAJECTORY_UPPER_THRESHOLD
 #undef TRAJECTORY_MINIMUM_SPEED
@@ -258,7 +258,7 @@ void RemiliaFighter::Advance() {
 #define F605_EARLY48 2
 #define F605_LATE48 7
 #define F605_COUNTER 0xF00
-#include "FighterTrajectoryFollowupsF605.inc"
+#include "characters/shared/actions/FighterTrajectoryFollowupsF605.inc"
 #undef F605_COUNTER
 #undef F605_STAGE47
 #undef F605_EARLY47
@@ -267,21 +267,21 @@ void RemiliaFighter::Advance() {
 #undef F605_EARLY48
 #undef F605_LATE48
 #define F607_COUNTER 0xF00
-#include "FighterTrajectoryLanding49F607.inc"
+#include "characters/shared/actions/FighterTrajectoryLanding49F607.inc"
 #undef F607_COUNTER
 #define F610_STAGE 1
 #define F610_EARLY 2
 #define F610_LATE 7
 #define F610_COUNTER 0xF00
 #define F610_PREPARE_BEFORE 1
-#include "FighterTrajectoryBounce4AF610.inc"
+#include "characters/shared/actions/FighterTrajectoryBounce4AF610.inc"
 #undef F610_STAGE
 #undef F610_EARLY
 #undef F610_LATE
 #undef F610_COUNTER
 #undef F610_PREPARE_BEFORE
 #define F613_COUNTER 0xF00
-#include "FighterTrajectoryRecovery4CF613.inc"
+#include "characters/shared/actions/FighterTrajectoryRecovery4CF613.inc"
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
@@ -323,19 +323,19 @@ void RemiliaFighter::Advance() {
             }
             break;
         }
-#include "FighterEarlyBounceTypedF752.inc"
+#include "actions/FighterEarlyBounceTypedF752.inc"
 
 
-#include "FighterFacing05FF762.inc"
-#include "FighterResourceTenVolleyF748.inc"
+#include "actions/FighterFacing05FF762.inc"
+#include "actions/FighterResourceTenVolleyF748.inc"
 
-#include "FighterResourceSelectorF749.inc"
-#include "FighterMode63BasicF626.inc"
+#include "actions/FighterResourceSelectorF749.inc"
+#include "characters/shared/actions/FighterMode63BasicF626.inc"
 #define F628_CASE 0x8C
 #define F628_COUNTER 0xF00
 #define F628_START_POS -11.0f
 #define F628_LIMIT 5
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -344,7 +344,7 @@ void RemiliaFighter::Advance() {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -353,7 +353,7 @@ void RemiliaFighter::Advance() {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -362,7 +362,7 @@ void RemiliaFighter::Advance() {
 #define F629_EARLY 2
 #define F629_LATE 7
 #define F629_COUNTER 0xF00
-#include "FighterArcTrajectory91F629.inc"
+#include "characters/shared/actions/FighterArcTrajectory91F629.inc"
 #undef F629_STAGE
 #undef F629_EARLY
 #undef F629_LATE
@@ -370,7 +370,7 @@ void RemiliaFighter::Advance() {
 #define F631_COUNTER 0xF00
 #define F631_EXTRA_FLAG 1
 #define F631_EXTRA_BEFORE 0
-#include "FighterLandingTimer96F631.inc"
+#include "characters/shared/actions/FighterLandingTimer96F631.inc"
 #undef F631_COUNTER
 #undef F631_EXTRA_FLAG
 #undef F631_EXTRA_BEFORE
@@ -380,7 +380,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 1
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -393,7 +393,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 1
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -406,7 +406,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 1
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -419,7 +419,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 1
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -432,7 +432,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 1
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -442,7 +442,7 @@ void RemiliaFighter::Advance() {
 #define F637_EXTRA_FLAG 1
 #define F637_EXTRA_BEFORE 0
 #define F637_STRICT_ABOVE 0
-#include "FighterGroundBoost9EF637.inc"
+#include "characters/shared/actions/FighterGroundBoost9EF637.inc"
 #undef F637_EXTRA_FLAG
 #undef F637_EXTRA_BEFORE
 #undef F637_STRICT_ABOVE
@@ -452,7 +452,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -465,7 +465,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -478,7 +478,7 @@ void RemiliaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -488,70 +488,70 @@ void RemiliaFighter::Advance() {
 #define F641_CASE 0xA3
 #define F641_START_HEIGHT -9.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA4
 #define F641_START_HEIGHT -10.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA5
 #define F641_START_HEIGHT -13.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F642_CASE 0xA7
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 0
-#include "FighterProjectileLaunchF642.inc"
+#include "characters/shared/actions/FighterProjectileLaunchF642.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F642_CASE 0xA8
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 2
-#include "FighterProjectileLaunchF642.inc"
+#include "characters/shared/actions/FighterProjectileLaunchF642.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F645_CASE 0xB4
 #define F645_START_POS 8.0f
 #define F645_AUX_ACTION 6
-#include "FighterMotionRestartB4F645.inc"
+#include "characters/shared/actions/FighterMotionRestartB4F645.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
 #define F645_CASE 0xB5
 #define F645_START_POS -8.0f
 #define F645_AUX_ACTION 6
-#include "FighterMotionRestartB4F645.inc"
+#include "characters/shared/actions/FighterMotionRestartB4F645.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
-#include "FighterFourDirectionalC8F759.inc"
+#include "actions/FighterFourDirectionalC8F759.inc"
 
 
 
-#include "FighterComplexStageCC_CE_F760.inc"
+#include "actions/FighterComplexStageCC_CE_F760.inc"
 
 
-#include "FighterFallStateCFF647.inc"
-#include "FighterReflectLandingD0F646.inc"
+#include "characters/shared/actions/FighterFallStateCFF647.inc"
+#include "characters/shared/actions/FighterReflectLandingD0F646.inc"
 #define F651_DECAY 3
 #define F651_SPRITE 0x3E6
-#include "FighterResourceShotD1F651.inc"
+#include "characters/shared/actions/FighterResourceShotD1F651.inc"
 #undef F651_DECAY
 #undef F651_SPRITE
 #define F652_DECAY 3
 #define F652_SPRITE 0x3E6
 #define F652_SCALE_BEFORE 0
-#include "FighterResourceShotD2F652.inc"
+#include "characters/shared/actions/FighterResourceShotD2F652.inc"
 #undef F652_DECAY
 #undef F652_SPRITE
 #undef F652_SCALE_BEFORE
@@ -560,7 +560,7 @@ void RemiliaFighter::Advance() {
 #define F653_PREPARE_FRAME 2
 #define F653_PREPARE_ANIM 0x1B
 #define F653_CLEAR_F00 0
-#include "FighterFallingRecoveryF653.inc"
+#include "characters/shared/actions/FighterFallingRecoveryF653.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
@@ -571,7 +571,7 @@ void RemiliaFighter::Advance() {
 #define F653_PREPARE_FRAME 4
 #define F653_PREPARE_ANIM 0x1D
 #define F653_CLEAR_F00 1
-#include "FighterFallingRecoveryF653.inc"
+#include "characters/shared/actions/FighterFallingRecoveryF653.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
@@ -582,46 +582,46 @@ void RemiliaFighter::Advance() {
 #define F653_PREPARE_FRAME 2
 #define F653_PREPARE_ANIM 0x1D
 #define F653_CLEAR_F00 0
-#include "FighterFallingRecoveryF653.inc"
+#include "characters/shared/actions/FighterFallingRecoveryF653.inc"
 #undef F653_ACTION
 #undef F653_NEXT_ACTION
 #undef F653_PREPARE_FRAME
 #undef F653_PREPARE_ANIM
 #undef F653_CLEAR_F00
-#include "FighterFallingFinishF654.inc"
+#include "actions/FighterFallingFinishF654.inc"
 
-#include "FighterLateGroundF656.inc"
-#include "FighterLateShotsF656.inc"
-
-
-
-#include "FighterMotionContinuationF657.inc"
+#include "actions/FighterLateGroundF656.inc"
+#include "actions/FighterLateShotsF656.inc"
 
 
 
-#include "FighterMotionShotsF661.inc"
-
-#include "FighterEightRoundF734.inc"
-
-
-#include "FighterEightGroundF737.inc"
-
-#include "FighterRepeatShotF740.inc"
-
-
-#include "FighterDoubleRepeatF744.inc"
-
-#include "FighterLaterEarlyF743.inc"
+#include "actions/FighterMotionContinuationF657.inc"
 
 
 
-#include "FighterRandomArcsF728.inc"
+#include "actions/FighterMotionShotsF661.inc"
+
+#include "actions/FighterEightRoundF734.inc"
+
+
+#include "actions/FighterEightGroundF737.inc"
+
+#include "actions/FighterRepeatShotF740.inc"
+
+
+#include "actions/FighterDoubleRepeatF744.inc"
+
+#include "actions/FighterLaterEarlyF743.inc"
+
+
+
+#include "actions/FighterRandomArcsF728.inc"
 
 #define F729_CASE 0x1F6
 #define F729_STAGE14_X 40.0f
 #define F729_STAGE14_Y -20.0f
 #define F729_STAGE15_SHOT 0x336
-#include "FighterBoundaryReturnTypedF762.inc"
+#include "actions/FighterBoundaryReturnTypedF762.inc"
 #undef F729_CASE
 #undef F729_STAGE14_X
 #undef F729_STAGE14_Y
@@ -630,31 +630,31 @@ void RemiliaFighter::Advance() {
 #define F729_STAGE14_X 30.0f
 #define F729_STAGE14_Y -30.0f
 #define F729_STAGE15_SHOT 0x337
-#include "FighterBoundaryReturnTypedF762.inc"
+#include "actions/FighterBoundaryReturnTypedF762.inc"
 #undef F729_CASE
 #undef F729_STAGE14_X
 #undef F729_STAGE14_Y
 #undef F729_STAGE15_SHOT
-#include "FighterAimReturnTypedF762.inc"
-#include "FighterFollowingNativeF732.inc"
+#include "actions/FighterAimReturnTypedF762.inc"
+#include "actions/FighterFollowingNativeF732.inc"
 
 
 
-#include "FighterSpecialStageF664.inc"
+#include "actions/FighterSpecialStageF664.inc"
 
-#include "FighterCounterSpecialF668.inc"
-
-
-#include "FighterPostCounterF669.inc"
+#include "actions/FighterCounterSpecialF668.inc"
 
 
-#include "FighterFourShotBarrageF671.inc"
-#include "FighterEightShotAndFollowF672.inc"
+#include "actions/FighterPostCounterF669.inc"
+
+
+#include "actions/FighterFourShotBarrageF671.inc"
+#include "actions/FighterEightShotAndFollowF672.inc"
 
 
 
 
-#include "FighterGroundWaveF673.inc"
+#include "actions/FighterGroundWaveF673.inc"
         case 0x2BF: {
             if (animationStage==0 && animationFrame==0) {
                 scriptCounterF00=0;
@@ -898,26 +898,26 @@ void RemiliaFighter::Advance() {
             break;
         }
 
-#include "FighterFallingRadialsF711.inc"
+#include "actions/FighterFallingRadialsF711.inc"
 
-#include "FighterApproachNativeF763.inc"
-#include "FighterBossMovementF714.inc"
-#include "FighterDoubleVolleyF718.inc"
+#include "actions/FighterApproachNativeF763.inc"
+#include "actions/FighterBossMovementF714.inc"
+#include "actions/FighterDoubleVolleyF718.inc"
 
-#include "FighterLateStormF720.inc"
-#include "FighterRandomVolleyF721.inc"
-#include "FighterCloudRainF674.inc"
-#include "FighterCloudBurstF676.inc"
+#include "actions/FighterLateStormF720.inc"
+#include "actions/FighterRandomVolleyF721.inc"
+#include "actions/FighterCloudRainF674.inc"
+#include "actions/FighterCloudBurstF676.inc"
 
-#include "FighterStormVolleyTypedF768.inc"
-#include "FighterAngleStormTypedF767.inc"
-#include "FighterApproachVolleyNativeF764.inc"
-#include "FighterGroundedVolleyTypedF771.inc"
-#include "FighterFourTierVolleyF701.inc"
-#include "FighterTerminalShotF681.inc"
-#include "FighterTerminalCounterF674.inc"
-#include "FighterNativeDefaultF778.inc"
-#include "FighterSharedGetterTail00543210F1196.inc"
+#include "actions/FighterStormVolleyTypedF768.inc"
+#include "actions/FighterAngleStormTypedF767.inc"
+#include "actions/FighterApproachVolleyNativeF764.inc"
+#include "actions/FighterGroundedVolleyTypedF771.inc"
+#include "actions/FighterFourTierVolleyF701.inc"
+#include "actions/FighterTerminalShotF681.inc"
+#include "actions/FighterTerminalCounterF674.inc"
+#include "actions/FighterNativeDefaultF778.inc"
+#include "actions/FighterSharedGetterTail00543210F1196.inc"
     }
 }
 #undef opponent

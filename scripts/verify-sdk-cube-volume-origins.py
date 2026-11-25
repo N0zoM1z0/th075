@@ -11,6 +11,7 @@ import tempfile
 import capstone
 
 ROOT=Path(__file__).resolve().parents[1]
+
 SPEC=importlib.util.spec_from_file_location('cube_volume_graphics',ROOT/'scripts/verify-sdk-graphics-origins.py')
 BASE=importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(BASE)
 EVIDENCE='config/sdk-cube-volume-origin-evidence.json'

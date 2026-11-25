@@ -5,12 +5,15 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 MANIFEST_SHA256 = '9dc0301feef6a7847244ef93221fb171ae4e488b91cc77d794b69c921dd3a6d4'
 CONFIDENCE = 'complete-vc7-endpoint-category-operation-typed-parent-and-alternative-provenance'
 KEYS = {'0x00422B50': 35, '0x00422B80': 41, '0x00422CB0': 67, '0x00423680': 55,
@@ -120,7 +123,7 @@ def main():
     args = parser.parse_args(); m = manifest(); verify_plan(m)
     for path, expected in [('config/deque-endpoint-dispatch-origin-evidence.json', MANIFEST_SHA256),
                            (m['retained_manifest'], m['retained_sha256']), (m['copy_manifest'], m['copy_sha256']), (m['probe'], m['probe_sha256'])]:
-        if PAIRED.digest((ROOT / path).read_bytes()) != expected:
+        if PAIRED.digest(fixture_path(path).read_bytes()) != expected:
             raise ValueError('endpoint/dispatch immutable source/evidence differs: ' + path)
     c = module('endpoint_target', 'compare-coff-function.py'); coff = module('endpoint_coff', 'coff_data.py')
     extent = module('endpoint_extent', 'verify-vendor-record-origins.py'); cfg = module('endpoint_cfg', 'verify-authored-origins.py')

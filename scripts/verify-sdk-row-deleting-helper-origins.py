@@ -4,10 +4,15 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 ROOT=Path(__file__).resolve().parents[1]
+
+_fixtures = run_path(str(ROOT / "scripts/origin_fixtures.py"))
+fixture_path = _fixtures["fixture_path"]
+fixture_evidence_name = _fixtures["fixture_evidence_name"]
 def module(name,filename):
     spec=importlib.util.spec_from_file_location(name,ROOT/'scripts'/filename)
     value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value
@@ -33,9 +38,9 @@ def included_headers(output):
         if 'Note: including file:' not in line:continue
         value=line.split('Note: including file:',1)[1].strip().replace('\\','/')
         if value[:3].lower()=='z:/':path=Path(value[2:])
-        elif value in ['probes/VC7GameContextPolicies.cpp']:path=ROOT/value
+        elif value in ['probes/VC7GameContextPolicies.cpp']:path=fixture_path(value)
         else:raise ValueError('Row deletion include loses its actual fixed host/cwd mapping')
-        relative=str(path.relative_to(ROOT))
+        relative=fixture_evidence_name(path)
         if relative not in ['probes/VC7GameContextPolicies.cpp'] and not relative.startswith('.tools/msvc710/Vc7/include/'):
             raise ValueError('Row deletion imports unrelated source')
         found[relative]=digest(path.read_bytes())

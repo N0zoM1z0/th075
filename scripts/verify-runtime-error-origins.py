@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -14,6 +15,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 PROFILE=['/Od','/Ob0','/Gy','/GR-','/GX','/Zi','/GS','/I','src']
 LIBRARY={'0x006440A5':'___crtExitProcess','0x0064FBFE':'___crtMessageBoxA','0x00641B80':'_strcpy'}
 PENDING={'0x00648C70':'crt-writer-cookie-chain-unresolved',
@@ -316,7 +319,7 @@ def main():
                         if (data_row['member_offset'],b['symbol'],b['target_address']) not in literals:
                             raise ValueError('error-table pointer lacks its complete vendor message')
         layout=manifest['sdk_layout']
-        probe=ROOT/layout['probe']
+        probe=fixture_path(layout['probe'])
         if layout['profile']!=PROFILE or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']:
             raise ValueError('natural SDK window-station probe differs')
         for filename,digest in layout['headers'].items():

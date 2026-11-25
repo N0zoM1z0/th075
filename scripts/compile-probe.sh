@@ -21,6 +21,15 @@ output_path=$2
 shift 2
 compiler="$msvc_root/Vc7/bin/cl.exe"
 
+# Frozen origin receipts refer to the former fixture path.
+legacy_source=${source_path#"$repo_root"/}
+if [[ ! -f "$source_path" && "$legacy_source" =~ ^probes/([a-zA-Z0-9_]+\.cpp)$ ]]; then
+  fixture="$repo_root/tests/origin_probes/${BASH_REMATCH[1]}"
+  if [[ -f "$fixture" ]]; then
+    source_path=$fixture
+  fi
+fi
+
 if [[ ! -f "$compiler" ]]; then
   echo "missing pinned VC7.1 compiler; run scripts/bootstrap-tools.sh" >&2
   exit 1

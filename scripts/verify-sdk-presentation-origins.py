@@ -5,12 +5,15 @@ import csv
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import tempfile
 import capstone
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 _SPEC=importlib.util.spec_from_file_location('presentation_prior',ROOT/'scripts/verify-sdk-image-chain-origins.py')
 BASE=importlib.util.module_from_spec(_SPEC);_SPEC.loader.exec_module(BASE)
 module=BASE.module
@@ -137,7 +140,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--evidence-only',action='store_true');args=p.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes())!=sha:
+        if digest(fixture_path(path).read_bytes())!=sha:
             raise ValueError('Presentation immutable source or retained provenance differs: '+path)
     replay(m,args.evidence_only)
     c=module('presentation_public_coff','compare-coff-function.py');coff=module('presentation_public_data','coff_data.py')

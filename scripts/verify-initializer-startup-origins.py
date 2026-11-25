@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {'0x0064411D': ('__cinit', 106), '0x00648052': ('___sse2_available_init', 206), '0x0064801D': ('_has_osfxsr_set', 53), '0x0064654C': ('?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z', 78), '0x00649693': ('__RTC_Initialize', 68), '0x00649449': ('__ioinit', 510), '0x00646478': ('?terminate@@YAXXZ', 53), '0x0064FF58': ('?_ValidateExecute@@YAHP6GHXZ@Z', 24), '0x00650517': ('_abort', 24), '0x0065364F': ('_raise', 377), '0x0065346E': ('_siglookup', 46)}
 AUXILIARY = {'0x0064F08F': ('___initstdio', 169), '0x0064659A': ('?__CxxSetUnhandledExceptionFilter@@YAHXZ', 19), '0x00640579': ('__fpclear', 1), '0x006496D7': ('__RTC_Terminate', 68)}
 COMMON = {'___sse2_available': ('0x0068FBA4', 4), '___use_sse2_mathfcns': ('0x0068FBA0', 4), '___pioinfo': ('0x0068FAA0', 256), '__nhandle': ('0x0068FA80', 4), '__nstream': ('0x0068FA40', 4), '___piob': ('0x0068EA20', 4), '__bufin': ('0x0068EA40', 4096)}
@@ -294,7 +297,7 @@ def main():
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
         path = Path(temp) / 'VendorMember.obj'
         for layout_key,values,headers in [('sdk_layout',LAYOUT,LAYOUT_HEADERS)]:
-            layout=m[layout_key];probe=ROOT/layout['probe'];profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
+            layout=m[layout_key];probe=fixture_path(layout['probe']);profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
             if layout['profile']!=profile or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256'] or set(layout['headers'])!=headers:
                 raise ValueError('natural initializer control loses its exact source/profile/headers')
             for filename,digest in layout['headers'].items():
@@ -386,7 +389,7 @@ def main():
                 label = next(d for d in defs if d['symbol'] == b['symbol'])
                 if label['section'] != primary['section'] or int(b['target_address'], 16) != int(owner['address'], 16) + label['offset'] - primary['offset']:
                     raise ValueError('runtime EH pointer loses actual full parent source label')
-        static = m['static_probe']; probe = ROOT / static['probe']
+        static = m['static_probe']; probe = fixture_path(static['probe'])
         subprocess.run([str(ROOT / 'scripts/compile-probe.sh'), str(probe), str(path), *static['profile']],
                        cwd=ROOT, capture_output=True, text=True, check=True)
         result = subprocess.run([str(ROOT / 'scripts/repo-python'), 'scripts/verify-static-origins.py',

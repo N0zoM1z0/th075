@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -16,6 +17,8 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 ACCEPTED = {
     '0x00642B09': ('___freetlocinfo', 208), '0x0064CA47': ('___free_lconv_mon', 217),
     '0x0064C7E8': ('___free_lconv_num', 95), '0x0064C5C6': ('___free_lc_time', 400),
@@ -302,7 +305,7 @@ def main():
     scratch.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
         path = Path(temp) / 'VendorMember.obj'
-        layout=m['sdk_layout'];probe=ROOT/layout['probe'];profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
+        layout=m['sdk_layout'];probe=fixture_path(layout['probe']);profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if layout['profile']!=profile or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']:
             raise ValueError('natural locale layout probe differs')
         if set(layout['headers'])!={'crt/src/mtdll.h','crt/src/locale.h','crt/src/cruntime.h','PlatformSDK/Include/WinNT.h'}:

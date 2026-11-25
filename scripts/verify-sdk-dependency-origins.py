@@ -5,6 +5,7 @@ import argparse
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
@@ -12,6 +13,8 @@ import tempfile
 from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 spec=importlib.util.spec_from_file_location('sdk_dependency_endpoint',ROOT/'scripts/verify-vector-endpoint-origins.py')
 ENDPOINT=importlib.util.module_from_spec(spec);spec.loader.exec_module(ENDPOINT)
 PAIRED=ENDPOINT.PAIRED;module=ENDPOINT.module;digest=PAIRED.digest
@@ -142,7 +145,7 @@ def accepted_snapshot(snapshot,function,origin):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
     for path,expected in [('config/sdk-dependency-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes())!=expected:raise ValueError('SDK dependency immutable probe/prior evidence differs: '+path)
+        if digest(fixture_path(path).read_bytes())!=expected:raise ValueError('SDK dependency immutable probe/prior evidence differs: '+path)
     c=module('sdk_target','compare-coff-function.py');coff=module('sdk_coff','coff_data.py');extent=module('sdk_extent','verify-vendor-record-origins.py')
     cfg=module('sdk_cfg','verify-authored-origins.py');eh=module('sdk_eh','compiler_eh.py');target=c.verified_target();rows=PAIRED.BUFFER.PRIOR.PRIOR.rows
     if digest(target)!=m['target_sha256']:raise ValueError('SDK dependency pinned target differs')

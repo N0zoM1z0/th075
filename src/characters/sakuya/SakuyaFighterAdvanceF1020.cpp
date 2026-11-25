@@ -233,9 +233,9 @@ void SakuyaFighter::Advance() {
                     ResetPrimaryCounters(1);
             }
             break;
-        #include "FighterSingletonContactF598.inc"
+        #include "characters/shared/actions/FighterSingletonContactF598.inc"
 #define CONTACT_STAGE_OFFSET 0xF00
-#include "FighterAdditionalContactF600.inc"
+#include "characters/shared/actions/FighterAdditionalContactF600.inc"
 #undef CONTACT_STAGE_OFFSET
 #define TRAJECTORY_LOWER_THRESHOLD GeometryConstants::Six
 #define TRAJECTORY_UPPER_THRESHOLD GeometryConstants::TwentyFive
@@ -245,7 +245,7 @@ void SakuyaFighter::Advance() {
 #define TRAJECTORY_EARLY_STATE 4
 #define TRAJECTORY_LATE_STATE 5
 #define CONTACT_STAGE_OFFSET 0xF00
-#include "FighterTrajectoryContact46F602.inc"
+#include "characters/shared/actions/FighterTrajectoryContact46F602.inc"
 #undef TRAJECTORY_LOWER_THRESHOLD
 #undef TRAJECTORY_UPPER_THRESHOLD
 #undef TRAJECTORY_MINIMUM_SPEED
@@ -262,7 +262,7 @@ void SakuyaFighter::Advance() {
 #define F605_EARLY48 2
 #define F605_LATE48 5
 #define F605_COUNTER 0xF00
-#include "FighterTrajectoryFollowupsF605.inc"
+#include "characters/shared/actions/FighterTrajectoryFollowupsF605.inc"
 #undef F605_COUNTER
 #undef F605_STAGE47
 #undef F605_EARLY47
@@ -271,21 +271,21 @@ void SakuyaFighter::Advance() {
 #undef F605_EARLY48
 #undef F605_LATE48
 #define F607_COUNTER 0xF00
-#include "FighterTrajectoryLanding49F607.inc"
+#include "characters/shared/actions/FighterTrajectoryLanding49F607.inc"
 #undef F607_COUNTER
 #define F610_STAGE 1
 #define F610_EARLY 2
 #define F610_LATE 5
 #define F610_COUNTER 0xF00
 #define F610_PREPARE_BEFORE 1
-#include "FighterTrajectoryBounce4AF610.inc"
+#include "characters/shared/actions/FighterTrajectoryBounce4AF610.inc"
 #undef F610_STAGE
 #undef F610_EARLY
 #undef F610_LATE
 #undef F610_COUNTER
 #undef F610_PREPARE_BEFORE
 #define F613_COUNTER 0xF00
-#include "FighterTrajectoryRecovery4CF613.inc"
+#include "characters/shared/actions/FighterTrajectoryRecovery4CF613.inc"
 #undef F613_COUNTER
         case 0x58: {
             if (animationStage == 0 && animationFrame == 0) {
@@ -327,20 +327,20 @@ void SakuyaFighter::Advance() {
             }
             break;
         }
-#include "FighterScriptedBounce59F813.inc"
+#include "actions/FighterScriptedBounce59F813.inc"
 
-#include "FighterThirdBossPair5D5EF939.inc"
+#include "actions/FighterThirdBossPair5D5EF939.inc"
 
-#include "FighterThirdBossFacing5FF941.inc"
-#include "FighterThirdBossVolley6061F942.inc"
+#include "actions/FighterThirdBossFacing5FF941.inc"
+#include "actions/FighterThirdBossVolley6061F942.inc"
 
-#include "FighterThirdBossSelector62F943.inc"
-#include "FighterMode63BasicF626.inc"
+#include "actions/FighterThirdBossSelector62F943.inc"
+#include "characters/shared/actions/FighterMode63BasicF626.inc"
 #define F628_CASE 0x8C
 #define F628_COUNTER 0xF00
 #define F628_START_POS -11.0f
 #define F628_LIMIT 5
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -349,7 +349,7 @@ void SakuyaFighter::Advance() {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -358,7 +358,7 @@ void SakuyaFighter::Advance() {
 #define F628_COUNTER 0xF00
 #define F628_START_POS -12.0f
 #define F628_LIMIT 7
-#include "FighterJumpLandingF628.inc"
+#include "characters/shared/actions/FighterJumpLandingF628.inc"
 #undef F628_CASE
 #undef F628_COUNTER
 #undef F628_START_POS
@@ -367,7 +367,7 @@ void SakuyaFighter::Advance() {
 #define F629_EARLY 2
 #define F629_LATE 5
 #define F629_COUNTER 0xF00
-#include "FighterArcTrajectory91F629.inc"
+#include "characters/shared/actions/FighterArcTrajectory91F629.inc"
 #undef F629_STAGE
 #undef F629_EARLY
 #undef F629_LATE
@@ -375,7 +375,7 @@ void SakuyaFighter::Advance() {
 #define F631_COUNTER 0xF00
 #define F631_EXTRA_FLAG 0
 #define F631_EXTRA_BEFORE 0
-#include "FighterLandingTimer96F631.inc"
+#include "characters/shared/actions/FighterLandingTimer96F631.inc"
 #undef F631_COUNTER
 #undef F631_EXTRA_FLAG
 #undef F631_EXTRA_BEFORE
@@ -385,7 +385,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -398,7 +398,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -411,7 +411,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -424,7 +424,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -437,7 +437,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 2
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -447,7 +447,7 @@ void SakuyaFighter::Advance() {
 #define F637_EXTRA_FLAG 0
 #define F637_EXTRA_BEFORE 0
 #define F637_STRICT_ABOVE 0
-#include "FighterGroundBoost9EF637.inc"
+#include "characters/shared/actions/FighterGroundBoost9EF637.inc"
 #undef F637_EXTRA_FLAG
 #undef F637_EXTRA_BEFORE
 #undef F637_STRICT_ABOVE
@@ -457,7 +457,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -470,7 +470,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -483,7 +483,7 @@ void SakuyaFighter::Advance() {
 #define F633_NEXT_ACTION 0
 #define F633_EXTRA_FLAG 0
 #define F633_EXTRA_BEFORE 0
-#include "FighterLandingTimerSiblingsF633.inc"
+#include "characters/shared/actions/FighterLandingTimerSiblingsF633.inc"
 #undef F633_CASE
 #undef F633_COUNTER
 #undef F633_START_HEIGHT
@@ -493,159 +493,159 @@ void SakuyaFighter::Advance() {
 #define F641_CASE 0xA3
 #define F641_START_HEIGHT -9.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA4
 #define F641_START_HEIGHT -10.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F641_CASE 0xA5
 #define F641_START_HEIGHT -13.0f
 #define F641_NEXT_ACTION 2
-#include "FighterLandingNoCounterF641.inc"
+#include "characters/shared/actions/FighterLandingNoCounterF641.inc"
 #undef F641_CASE
 #undef F641_START_HEIGHT
 #undef F641_NEXT_ACTION
 #define F642_CASE 0xA7
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 0
-#include "FighterProjectileLaunchF642.inc"
+#include "characters/shared/actions/FighterProjectileLaunchF642.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F642_CASE 0xA8
 #define F642_COUNTER 0xF00
 #define F642_NEXT_ACTION 2
-#include "FighterProjectileLaunchF642.inc"
+#include "characters/shared/actions/FighterProjectileLaunchF642.inc"
 #undef F642_CASE
 #undef F642_COUNTER
 #undef F642_NEXT_ACTION
 #define F645_CASE 0xB4
 #define F645_START_POS 8.0f
 #define F645_AUX_ACTION 8
-#include "FighterMotionRestartB4F645.inc"
+#include "characters/shared/actions/FighterMotionRestartB4F645.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
 #define F645_CASE 0xB5
 #define F645_START_POS -8.0f
 #define F645_AUX_ACTION 10
-#include "FighterMotionRestartB4F645.inc"
+#include "characters/shared/actions/FighterMotionRestartB4F645.inc"
 #undef F645_CASE
 #undef F645_START_POS
 #undef F645_AUX_ACTION
-#include "FighterThirdBossFourWayC8F948.inc"
-#include "FighterThirdBossFourWayC9F949.inc"
-#include "FighterThirdBossFourWayCAF950.inc"
-#include "FighterThirdBossFourWayCBF951.inc"
-#include "FighterThirdBossCCF953.inc"
-#include "FighterThirdBossCDF953.inc"
-#include "FighterThirdBossCEF955.inc"
-#include "FighterFallStateCFF647.inc"
-#include "FighterReflectLandingD0F646.inc"
+#include "actions/FighterThirdBossFourWayC8F948.inc"
+#include "actions/FighterThirdBossFourWayC9F949.inc"
+#include "actions/FighterThirdBossFourWayCAF950.inc"
+#include "actions/FighterThirdBossFourWayCBF951.inc"
+#include "actions/FighterThirdBossCCF953.inc"
+#include "actions/FighterThirdBossCDF953.inc"
+#include "actions/FighterThirdBossCEF955.inc"
+#include "characters/shared/actions/FighterFallStateCFF647.inc"
+#include "characters/shared/actions/FighterReflectLandingD0F646.inc"
 #define F651_DECAY 3
 #define F651_SPRITE 0x3e6
-#include "FighterResourceShotD1F651.inc"
+#include "characters/shared/actions/FighterResourceShotD1F651.inc"
 #undef F651_DECAY
 #undef F651_SPRITE
 #define F652_DECAY 3
 #define F652_SPRITE 0x3e6
 #define F652_SCALE_BEFORE 1
-#include "FighterResourceShotD2F652.inc"
+#include "characters/shared/actions/FighterResourceShotD2F652.inc"
 #undef F652_DECAY
 #undef F652_SPRITE
 #undef F652_SCALE_BEFORE
-#include "FighterThirdBossStage12C12DF958.inc"
+#include "actions/FighterThirdBossStage12C12DF958.inc"
 
-#include "FighterThirdBossStage12EF959.inc"
-#include "FighterThirdBossStage12F130F961.inc"
+#include "actions/FighterThirdBossStage12EF959.inc"
+#include "actions/FighterThirdBossStage12F130F961.inc"
 
-#include "FighterThirdBossStage131F962.inc"
-#include "FighterThirdBossStage133134F963.inc"
+#include "actions/FighterThirdBossStage131F962.inc"
+#include "actions/FighterThirdBossStage133134F963.inc"
 
-#include "FighterThirdBossStage135136F964.inc"
+#include "actions/FighterThirdBossStage135136F964.inc"
 
-#include "FighterThirdBossStages186187F965.inc"
+#include "actions/FighterThirdBossStages186187F965.inc"
 
-#include "FighterThirdBossStages188189F966.inc"
+#include "actions/FighterThirdBossStages188189F966.inc"
 
-#include "FighterThirdBossStages190191F968.inc"
+#include "actions/FighterThirdBossStages190191F968.inc"
 
-#include "FighterThirdBossStage192F969.inc"
-#include "FighterThirdBossStages194195F970.inc"
+#include "actions/FighterThirdBossStage192F969.inc"
+#include "actions/FighterThirdBossStages194195F970.inc"
 
-#include "FighterThirdBossFiveShot196198F971.inc"
-
-
-#include "FighterThirdBossFiveShot19919AF972.inc"
-
-#include "FighterThirdBossSingleShot19B19CF974.inc"
-
-#include "FighterThirdBossStages19D19FF975.inc"
+#include "actions/FighterThirdBossFiveShot196198F971.inc"
 
 
-#include "FighterThirdBossRandomLoop1A0F976.inc"
-#include "FighterThirdBossRandomLoop1A1F977.inc"
-#include "FighterThirdBossDualFiveShot1A2F978.inc"
-#include "FighterThirdBossRandomLoops1A31A4F979.inc"
+#include "actions/FighterThirdBossFiveShot19919AF972.inc"
 
-#include "FighterThirdBossStages1F41F5F981.inc"
+#include "actions/FighterThirdBossSingleShot19B19CF974.inc"
 
-#include "FighterThirdBossStages1F61F7F982.inc"
-
-#include "FighterThirdBossStages1F81F9F983.inc"
-
-#include "FighterThirdBossStage1FAF984.inc"
-#include "FighterThirdBossStages1FB1FDF985.inc"
+#include "actions/FighterThirdBossStages19D19FF975.inc"
 
 
-#include "FighterThirdBossStages252254F987.inc"
+#include "actions/FighterThirdBossRandomLoop1A0F976.inc"
+#include "actions/FighterThirdBossRandomLoop1A1F977.inc"
+#include "actions/FighterThirdBossDualFiveShot1A2F978.inc"
+#include "actions/FighterThirdBossRandomLoops1A31A4F979.inc"
+
+#include "actions/FighterThirdBossStages1F41F5F981.inc"
+
+#include "actions/FighterThirdBossStages1F61F7F982.inc"
+
+#include "actions/FighterThirdBossStages1F81F9F983.inc"
+
+#include "actions/FighterThirdBossStage1FAF984.inc"
+#include "actions/FighterThirdBossStages1FB1FDF985.inc"
 
 
-#include "FighterThirdBossStages255257F988.inc"
+#include "actions/FighterThirdBossStages252254F987.inc"
 
 
-#include "FighterThirdBossFiveShot258F989.inc"
-#include "FighterThirdBossFiveShot259F990.inc"
-#include "FighterThirdBossFiveShot25AF991.inc"
-#include "FighterThirdBossFullCircle25BF995.inc"
-#include "FighterThirdBossNineShot25CF996.inc"
-#include "FighterThirdBossFullCircle25DF997.inc"
-#include "FighterThirdBossNineShot25EF998.inc"
-#include "FighterThirdBossTenShot25F260F993.inc"
+#include "actions/FighterThirdBossStages255257F988.inc"
 
-#include "FighterThirdBossTenShot261262F994.inc"
 
-#include "FighterThirdBossStages2BC2BDF1001.inc"
+#include "actions/FighterThirdBossFiveShot258F989.inc"
+#include "actions/FighterThirdBossFiveShot259F990.inc"
+#include "actions/FighterThirdBossFiveShot25AF991.inc"
+#include "actions/FighterThirdBossFullCircle25BF995.inc"
+#include "actions/FighterThirdBossNineShot25CF996.inc"
+#include "actions/FighterThirdBossFullCircle25DF997.inc"
+#include "actions/FighterThirdBossNineShot25EF998.inc"
+#include "actions/FighterThirdBossTenShot25F260F993.inc"
 
-#include "FighterThirdBossVolley2BEF1017.inc"
-#include "FighterThirdBossTripleVolley2BFF1018.inc"
-#include "FighterThirdBossStages2C02C1F1002.inc"
+#include "actions/FighterThirdBossTenShot261262F994.inc"
 
-#include "FighterThirdBossStages2C22C3F1003.inc"
+#include "actions/FighterThirdBossStages2BC2BDF1001.inc"
 
-#include "FighterThirdBossRingSharedCounter2DBF1020.inc"
-#include "FighterThirdBossCadence2E5F1004.inc"
-#include "FighterThirdBossModeStorm2E6F1005.inc"
-#include "FighterThirdBossPairedArc2EF2F0F1019.inc"
+#include "actions/FighterThirdBossVolley2BEF1017.inc"
+#include "actions/FighterThirdBossTripleVolley2BFF1018.inc"
+#include "actions/FighterThirdBossStages2C02C1F1002.inc"
 
-#include "FighterThirdBossRandom2F9F1008.inc"
-#include "FighterThirdBossTrajectory2FAF1007.inc"
-#include "FighterThirdBossRebound2FBF1009.inc"
-#include "FighterThirdBossModes302F1011.inc"
-#include "FighterThirdBossArc303F1012.inc"
-#include "FighterThirdBossFinal31B31CF1013.inc"
+#include "actions/FighterThirdBossStages2C22C3F1003.inc"
+
+#include "actions/FighterThirdBossRingSharedCounter2DBF1020.inc"
+#include "actions/FighterThirdBossCadence2E5F1004.inc"
+#include "actions/FighterThirdBossModeStorm2E6F1005.inc"
+#include "actions/FighterThirdBossPairedArc2EF2F0F1019.inc"
+
+#include "actions/FighterThirdBossRandom2F9F1008.inc"
+#include "actions/FighterThirdBossTrajectory2FAF1007.inc"
+#include "actions/FighterThirdBossRebound2FBF1009.inc"
+#include "actions/FighterThirdBossModes302F1011.inc"
+#include "actions/FighterThirdBossArc303F1012.inc"
+#include "actions/FighterThirdBossFinal31B31CF1013.inc"
 
         default:
             if (AdvanceNestedFrame()==(field070))
                 ResetPrimaryCounters(0);
             break;
-#include "FighterThirdSharedGetter004AC040F1198.inc"
+#include "actions/FighterThirdSharedGetter004AC040F1198.inc"
     }
 }
 #undef opponent

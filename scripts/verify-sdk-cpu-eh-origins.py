@@ -7,12 +7,15 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from runpy import run_path
 import struct
 import subprocess
 import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+fixture_path = run_path(str(ROOT / "scripts/origin_fixtures.py"))["fixture_path"]
 EVIDENCE = 'config/sdk-cpu-eh-origin-evidence.json'
 MANIFEST_SHA256 = '9eaa1c1ae5d532e9982f9b582cb77b4f2a98839f5bd88eae078674576e54433c'
 KEYS = {'0x00620B41': 165, '0x00620B7B': 12, '0x00620B87': 95, '0x00620BE6': 180}
@@ -175,7 +178,7 @@ def main():
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     if digest((ROOT/EVIDENCE).read_bytes()) != MANIFEST_SHA256: raise ValueError('CPU immutable manifest differs')
     for path,h in [(m['probe'],m['probe_sha256'])]:
-        if digest((ROOT/path).read_bytes()) != h: raise ValueError('CPU retained source/evidence changes: '+path)
+        if digest(fixture_path(path).read_bytes()) != h: raise ValueError('CPU retained source/evidence changes: '+path)
     c=module('cpu_target','compare-coff-function.py'); rt=module('cpu_archive','verify-runtime-origins.py')
     coff=module('cpu_coff','coff_data.py');sdk=module('cpu_sdk','verify-sdk-origins.py')
     api=module('cpu_headers','verify-sdk-interface-origins.py')
