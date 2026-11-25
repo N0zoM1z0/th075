@@ -1,6 +1,4 @@
-// Native 0050A658..0050A80F (439 original CODE B, 91 x86) is action 0x320
-// of the ONE, still NONEXACT 81KB CharacterObject Advance. This body is a
-// natural C++ source reconstruction, not separately callable CODE or ASM.
+// Patchouli object action 0x320 at 0x0050A658–0x0050A80F (439 bytes).
 case 0x320: {
     // The actual original parent chain is this+E4. Its native action and
     // stage fields gate a real helper call before any local motion update.

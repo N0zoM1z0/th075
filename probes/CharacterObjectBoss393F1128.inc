@@ -1,5 +1,4 @@
-// F1128 original Japanese action 0x393 at PE
-// 0051D4F1..0051D70F: 542 native CODE B /110 x86, same NONEXACT boss.
+// Patchouli object action 0x393 at 0x0051D4F1–0x0051D70F (542 bytes).
 case 0x393: {
     if (owner->spellTimer<=0) {
         ClearFrameInfo();

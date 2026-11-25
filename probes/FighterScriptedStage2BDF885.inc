@@ -1,11 +1,5 @@
-// F885 original native 2BD 855B/239x86, original PE call topology.
-// Sprite346 THEN PrepareD, new action2C2/Reset/ownerX-copy and early return.
-// Stage5 sprite74, stage7 PrepareB, stage8 height30 and FILD-C8.
-// Entire 46,755B fighter still NONEXACT, not independent callable code.
-// F884 original game 2BC full 803B/228-x86, 22 original physical PE fields.
-// Actual double gravity + phases7/9, stage5 FILD+FSUBR and stage8 floatX.
-// Two actual native game motion(float,float,int) and full 901B afterRET tables.
-// Enclosing 46755B original fighter still NONEXACT, no split case CODE credit.
+// Youmu action 0x2BD spawns object 0x346 before preparing the transition to
+// 0x2C2. The transition copies the opponent's X position and returns early.
 case 0x2BD: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;

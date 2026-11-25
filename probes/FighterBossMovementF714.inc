@@ -1,7 +1,5 @@
-// F714: original physical native 00543210 action 2DC, complete 602B/169-x86.
-// Real bounded handler: startup, floor motion, two native 0x333/0x387
-// float projectiles, difficulty gate, terminal counter and state 4.
-// Source-backed nonexact giant; never accept this as a whole game function.
+// Remilia action 0x2DC moves along the floor and spawns objects 0x333 and
+// 0x387 before entering state 4.
         case 0x2DC: {
             SetCommandSelection(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0 && (scriptCounterF00)==0) {

@@ -1,5 +1,4 @@
-// F1085: genuine native Japanese action 0x34C, original
-// 00512D43..00513235 (1266 original CODE B /273 x86), one nonexact 81KB boss.
+// Patchouli object action 0x34C at 0x00512D43–0x00513235 (1,266 bytes).
 case 0x34C: {
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);

@@ -1,5 +1,4 @@
-// Native Reimu CC/CD/CE motion loop. Parameters are actual actor policies;
-// this source is included only by the live nonexact 0045DD70 parent.
+// Reimu actions 0xCC–0xCE share a motion loop with action-specific parameters.
 case R1185_ACTION: {
     if ((*(&y)==FloatConstants::Zero) || velocityY>FloatConstants::Zero) {
         SetCommandSelection(3,4,0xFF);

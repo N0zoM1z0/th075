@@ -1,5 +1,4 @@
-// F1091: actual Japanese original 0x352 at 0051497A..00514A9A,
-// 288 CODE B /64 x86 inside ONE still-NONEXACT 81KB boss.
+// Patchouli object action 0x352 at 0x0051497A–0x00514A9A (288 bytes).
 case 0x352: {
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);

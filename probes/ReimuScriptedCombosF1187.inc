@@ -1,4 +1,4 @@
-// Original Reimu 194..1A1 policies in the single NONEXACT whole parent.
+// Scripted Reimu combo actions 0x194–0x1A1.
 
 #define R1187_ACTION 0x194
 #define R1186_ANGLE0 -20.0f

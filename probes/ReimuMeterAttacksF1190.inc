@@ -1,4 +1,4 @@
-// Actual Reimu 2BC..2C3 spirit/effect policies in the single NONEXACT parent.
+// Reimu actions 0x2BC–0x2C3 spend spell power and spawn effects.
 
 #define R1190_ACTION 0x2bc
 #define R1190_AIR 0
