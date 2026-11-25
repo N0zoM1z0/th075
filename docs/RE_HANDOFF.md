@@ -89,6 +89,10 @@ maps 1P to the arrow keys, Z/X/C/A and F11, and 2P to G/J/Y/N, Q/W/E/D
 and F12. The native Windows console probe loaded the file with the game's
 configuration reader and checked all 18 scan codes with the input mapper.
 
+After the keyboard configuration was installed, the user reported playing
+Arcade versus CPU for an extended session on Windows with the 1P no-damage
+build and said it felt good to play. This was a manual playtest.
+
 ## Origin review
 
 The live `review` rows are in `config/function-origins.csv`. Every pending
