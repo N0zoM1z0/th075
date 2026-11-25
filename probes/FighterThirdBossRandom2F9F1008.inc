@@ -1,6 +1,6 @@
 // F1008 original Japanese 004AC040 state 2F9.
 // Entry initializes F00/F02/F04/F06, collisionResult and remainingHits, then calls
-// native 00453E20 to clear velocityX, velocityY, field058 and field05C.
+// native 00453E20 to clear velocityX, velocityY, field058 and verticalAcceleration.
 // Stages 9/10 emit mode-gated random 38B/38A effects; stage 5 delays three
 // times before opponent transform, then stages 11/13 repeat at counters 9/11.
 // F1008 true original Japanese 004AC040 case 2F9

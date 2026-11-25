@@ -17,7 +17,7 @@ case 0x1F8: {
         }
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(0xF);
@@ -30,7 +30,7 @@ case 0x1F8: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=8.0f;
         velocityY=12.0f;
-        field05C=0.8f;
+        verticalAcceleration=0.8f;
         SpawnAuxEffect(0x7F,x,y,
             (facing),1);
     }

@@ -3,9 +3,9 @@ case 0x303: {
         scriptCounterF00=0; collisionResult=1;
         ClearMotionFields();
     }
-    field490=0.0f;
-    opponent->field490=0.0f;
-    if ((animationStage)<15 && y>FloatConstants::Zero) velocityY=velocityY-field05C;
+    opponentVelocityDeltaX=0.0f;
+    opponent->opponentVelocityDeltaX=0.0f;
+    if ((animationStage)<15 && y>FloatConstants::Zero) velocityY=velocityY-verticalAcceleration;
     if ((animationStage)>14) fieldF26=(fieldF26)+5;
     if (AdvanceNestedFrame()==(animationStageCount)) {
         if ((scriptCounterF00)<8) {
@@ -20,9 +20,9 @@ case 0x303: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=(GeometryConstants::SixHundredForty-x)/GeometryConstants::Thirty*
             (facing);
-        velocityY=12.0f; field05C=0.5f;
-        field490=0.0f;
-        opponent->field490=0.0f;
+        velocityY=12.0f; verticalAcceleration=0.5f;
+        opponentVelocityDeltaX=0.0f;
+        opponent->opponentVelocityDeltaX=0.0f;
     }
     if ((animationStage)==13 && (animationFrame)==0) ClearMotionFields();
     if ((animationStage)==15 && (animationFrame)==0) {
@@ -97,8 +97,8 @@ case 0x304: {
         }
         scriptCounterF00=0;
     }
-    field490=0.0f;
-    opponent->field490=0.0f;
+    opponentVelocityDeltaX=0.0f;
+    opponent->opponentVelocityDeltaX=0.0f;
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(1);
     break;
 }

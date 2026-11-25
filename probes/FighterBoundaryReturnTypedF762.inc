@@ -79,7 +79,7 @@
                 velocityY=20.0f;
                 if (y>FloatConstants::Zero)
                     velocityY=8.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==14 && (animationFrame)==0) {
                 PlaySound(6);

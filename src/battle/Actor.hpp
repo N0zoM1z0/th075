@@ -168,7 +168,7 @@ public:
     float velocityX;                    // +0x050
     float velocityY;                    // +0x054
     unsigned int field058;              // +0x058
-    float field05C;                     // +0x05C
+    float verticalAcceleration;                     // +0x05C
     short action;                       // +0x060 action or state id
     short animationStage;               // +0x062
     short animationFrame;               // +0x064

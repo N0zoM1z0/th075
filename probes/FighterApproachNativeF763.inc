@@ -79,7 +79,7 @@
                     facing,1);
                 velocityX=-20.0f;
                 velocityY=20.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==10 && (animationFrame)==0)
                 ResetSecondaryCounter(8);

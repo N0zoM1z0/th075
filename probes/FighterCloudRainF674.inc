@@ -30,7 +30,7 @@
                 }
             }
             if ((animationStage)>10 && (animationStage)<14) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0xE);
                     break;
@@ -43,7 +43,7 @@
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=16.5f;
-                field05C=0.15f;
+                verticalAcceleration=0.15f;
                 PlaySound(0x15);
             }
             if ((animationStage)==5 && (animationFrame)==0)

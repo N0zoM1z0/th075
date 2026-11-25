@@ -23,7 +23,7 @@ void PatchouliFighter::AdvanceAuxiliary() {
     if (fieldF0C < 0) fieldF0C = 359;
     if (fieldF0C >= 360) fieldF0C = 0;
     if (fieldF10 > 0) {
-        field490 = float(fieldF10+20) * FloatConstants::OneTenth * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
+        opponentVelocityDeltaX = float(fieldF10+20) * FloatConstants::OneTenth * float(facing*opponent->facing) * float(int(((opponent->x - x) * facing > 0.0f))*2-1);
         fieldF10 = fieldF10-2;
         if (RecordedRange(0,100)<50)
             SpawnBattleEffect(0x38c, float(RecordedRange(0,640)*facing)+x,0.0f,facing,1);

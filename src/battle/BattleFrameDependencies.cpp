@@ -22,34 +22,34 @@ void BattleScene::ResolveBodySeparation()
     else if (boundary[1] == -1 && g_RightBoundaryOwner < 0) g_RightBoundaryOwner = 1;
     if (boundary[0] == 1 && g_LeftBoundaryOwner < 0) g_LeftBoundaryOwner = 0;
     else if (boundary[1] == 1 && g_LeftBoundaryOwner < 0) g_LeftBoundaryOwner = 1;
-    fighters[0]->field488 = 0.0f;
-    fighters[1]->field488 = 0.0f;
+    fighters[0]->bodySeparationVelocityX = 0.0f;
+    fighters[1]->bodySeparationVelocityX = 0.0f;
     COLLISION->TransformBounds(&firstBounds, reinterpret_cast<const RECT *>(&fighters[0]->frameInfo->bodyBox), reinterpret_cast<Actor *>(fighters[0]));
     COLLISION->TransformBounds(&bounds2, reinterpret_cast<const RECT *>(&fighters[1]->frameInfo->bodyBox), reinterpret_cast<Actor *>(fighters[1]));
     if (COLLISION->TestOverlap(&firstBounds, &bounds2)) {
         if (boundary[0] == -1 && g_RightBoundaryOwner == 0) {
             fighters[1]->x -= bounds2.right - firstBounds.left - 1;
             if (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed > 0.0f && fighters[1]->facing * secondSpeed > 0.0f) {
-                fighters[0]->field488 = -fighters[0]->velocityX;
-                fighters[1]->field488 = -fighters[1]->velocityX;
+                fighters[0]->bodySeparationVelocityX = -fighters[0]->velocityX;
+                fighters[1]->bodySeparationVelocityX = -fighters[1]->velocityX;
             }
         } else if (boundary[1] == -1 && g_RightBoundaryOwner == 1) {
             fighters[0]->x -= firstBounds.right - bounds2.left - 1;
             if (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed > 0.0f && fighters[0]->facing * vx1 > 0.0f) {
-                fighters[0]->field488 = -fighters[0]->velocityX;
-                fighters[1]->field488 = -fighters[1]->velocityX;
+                fighters[0]->bodySeparationVelocityX = -fighters[0]->velocityX;
+                fighters[1]->bodySeparationVelocityX = -fighters[1]->velocityX;
             }
         } else if (boundary[1] == 1 && g_LeftBoundaryOwner == 1) {
             fighters[0]->x += bounds2.right - firstBounds.left - 1;
             if (fighters[1]->facing * secondSpeed + fighters[0]->facing * vx1 < 0.0f && fighters[0]->facing * vx1 < 0.0f) {
-                fighters[0]->field488 = -fighters[0]->velocityX;
-                fighters[1]->field488 = -fighters[1]->velocityX;
+                fighters[0]->bodySeparationVelocityX = -fighters[0]->velocityX;
+                fighters[1]->bodySeparationVelocityX = -fighters[1]->velocityX;
             }
         } else if (boundary[0] == 1 && g_LeftBoundaryOwner == 0) {
             fighters[1]->x += firstBounds.right - bounds2.left - 1;
             if (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed < 0.0f && fighters[1]->facing * secondSpeed < 0.0f) {
-                fighters[0]->field488 = -fighters[0]->velocityX;
-                fighters[1]->field488 = -fighters[1]->velocityX;
+                fighters[0]->bodySeparationVelocityX = -fighters[0]->velocityX;
+                fighters[1]->bodySeparationVelocityX = -fighters[1]->velocityX;
             }
         } else if (firstBounds.left + firstBounds.right > bounds2.left + bounds2.right ||
                    (firstBounds.left + firstBounds.right == bounds2.left + bounds2.right && firstBounds.top + firstBounds.bottom < bounds2.top + bounds2.bottom)) {
@@ -60,8 +60,8 @@ void BattleScene::ResolveBodySeparation()
                 meanSpeed = (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed) / 2.0f;
                 vx1 = fighters[0]->facing * meanSpeed;
                 secondSpeed = fighters[1]->facing * meanSpeed;
-                fighters[0]->field488 = vx1 - fighters[0]->velocityX;
-                fighters[1]->field488 = secondSpeed - fighters[1]->velocityX;
+                fighters[0]->bodySeparationVelocityX = vx1 - fighters[0]->velocityX;
+                fighters[1]->bodySeparationVelocityX = secondSpeed - fighters[1]->velocityX;
             }
         } else {
             if (fighters[1]->velocityX * fighters[1]->facing <= fighters[0]->velocityX * fighters[0]->facing) {
@@ -71,8 +71,8 @@ void BattleScene::ResolveBodySeparation()
                 meanSpeed = (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed) / 2.0f;
                 vx1 = fighters[0]->facing * meanSpeed;
                 secondSpeed = fighters[1]->facing * meanSpeed;
-                fighters[0]->field488 = vx1 - fighters[0]->velocityX;
-                fighters[1]->field488 = secondSpeed - fighters[1]->velocityX;
+                fighters[0]->bodySeparationVelocityX = vx1 - fighters[0]->velocityX;
+                fighters[1]->bodySeparationVelocityX = secondSpeed - fighters[1]->velocityX;
             }
         }
     }

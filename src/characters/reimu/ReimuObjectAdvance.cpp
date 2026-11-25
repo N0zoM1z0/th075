@@ -3925,11 +3925,11 @@ void ReimuObject::Advance()
                 if (animationStage == 7 && animationFrame == 0 &&
                     owner->action != 0x303 && owner->action != 0x304) {
                     velocityY = 15.0f;
-                    field05C = -1.0f;
+                    verticalAcceleration = -1.0f;
                 }
                 if (animationStage == 7 &&
                     owner->action != 0x304 && owner->action != 0x303) {
-                    velocityY = velocityY + field05C;
+                    velocityY = velocityY + verticalAcceleration;
                     y = y + velocityY;
                 }
                 if (animationStage == 7 &&

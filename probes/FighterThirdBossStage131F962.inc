@@ -5,11 +5,11 @@
  // This case is INTERNAL to a still NONEXACT 82KB original fighter.
 // Genuine original 004AC040 131: 202B/58x86, stage5 Prepare0x1D.
 case 0x131: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
         velocityY=0.0f;
         break;
     }

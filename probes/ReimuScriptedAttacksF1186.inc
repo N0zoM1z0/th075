@@ -29,21 +29,21 @@ case 0x187: {
         if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        velocityX=9.0f; velocityY=0.0f; field05C=0.0f;
+        velocityX=9.0f; velocityY=0.0f; verticalAcceleration=0.0f;
         remainingHits=1; collisionResult=0;
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
         if (velocityY+y<=FloatConstants::Zero) {
-            velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f;
+            velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; y=0.0f;
             ResetSecondaryCounter(0xB);
             break;
         }
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        velocityX=10.0f; velocityY=12.5f; field05C=0.85f;
+        velocityX=10.0f; velocityY=12.5f; verticalAcceleration=0.85f;
         PlaySharedSound(0x1C);
     }
     break;

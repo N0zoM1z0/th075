@@ -6,7 +6,7 @@ case 0x91: {
     if (animationStage==0 && animationFrame==0) {
         velocityX=-10.0f;
         velocityY=14.0f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
         collisionResult=0;
     }
     if (animationStage==1 && animationFrame==0 && fieldF0C==0) {
@@ -18,7 +18,7 @@ case 0x91: {
         ResetSecondaryCounter(F630_EARLY);
         break;
     }
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (velocityY+y<=FloatConstants::Zero) {
         scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
         scriptCounterF02=static_cast<short>((velocityY)*GeometryConstants::Hundred);

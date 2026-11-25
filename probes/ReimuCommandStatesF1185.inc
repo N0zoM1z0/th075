@@ -43,7 +43,7 @@ case 0xC9: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) velocityX=0.0f;
     if ((animationStage)==2 && (animationFrame)==0) {
-        velocityX=-10.0f; velocityY=5.0f; field05C=0.6f;
+        velocityX=-10.0f; velocityY=5.0f; verticalAcceleration=0.6f;
         SpawnAuxEffect(0x7D,x,(*(&y))+GeometryConstants::Eighty,
             -facing,1);
         SpawnAuxEffect(0x7E,x,(*(&y))+GeometryConstants::Eighty,
@@ -51,9 +51,9 @@ case 0xC9: {
         PlaySharedSound(31);
     }
     if (y>FloatConstants::Zero && (animationStage)>1 && (animationStage)<5) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
-            velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
+            velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; y=0.0f; animationFrame=0;
             ResetSecondaryCounter(5);
             break;
         }
@@ -64,9 +64,9 @@ case 0xC9: {
 }
 case 0xCA: {
     SetCommandSelection(3,4,0xFF);
-    if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
+    if ((animationStage)==0 && (animationFrame)==0) { velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; }
     if ((animationStage)==3 && (animationFrame)==0) {
-        velocityX=9.0f; velocityY=5.0f; field05C=0.45f;
+        velocityX=9.0f; velocityY=5.0f; verticalAcceleration=0.45f;
         SpawnAuxEffect(0x7D,float(facing*80)+(x),
             (*(&y))+GeometryConstants::HundredTen,facing,1);
         SpawnAuxEffect(0x7E,x,(*(&y))+GeometryConstants::HundredTen,
@@ -74,9 +74,9 @@ case 0xCA: {
         PlaySharedSound(31);
     }
     if (y>FloatConstants::Zero && (animationStage)>1) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
-            velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
+            velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; y=0.0f; animationFrame=0;
             ResetPrimaryCounters(10);
             break;
         }
@@ -86,18 +86,18 @@ case 0xCA: {
 }
 case 0xCB: {
     SetCommandSelection(3,4,0xFF);
-    if ((animationStage)==0 && (animationFrame)==0) { scriptCounterF00=0; velocityX=0.0f; velocityY=0.0f; field05C=0.0f; }
+    if ((animationStage)==0 && (animationFrame)==0) { scriptCounterF00=0; velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; }
     if (y>FloatConstants::Zero && (animationStage)>0) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
-            velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f; animationFrame=0;
+            velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; y=0.0f; animationFrame=0;
             ResetPrimaryCounters(10);
             break;
         }
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetSecondaryCounter(8);
     if ((animationStage)==1 && (animationFrame)==0) {
-        velocityX=-9.0f; velocityY=5.0f; field05C=0.45f;
+        velocityX=-9.0f; velocityY=5.0f; verticalAcceleration=0.45f;
         SpawnAuxEffect(0x7D,x,(*(&y))+GeometryConstants::HundredTwenty,
             -facing,1);
         SpawnAuxEffect(0x7E,x,(*(&y))+GeometryConstants::HundredTwenty,
@@ -139,8 +139,8 @@ case 0xD0: {
         facing=-facing;
         velocityX=-(velocityX);
     }
-    if (*(&field05C)==FloatConstants::Zero) field05C=0.6f;
-    velocityY=velocityY-field05C;
+    if (*(&verticalAcceleration)==FloatConstants::Zero) verticalAcceleration=0.6f;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
         y=0.0f;

@@ -16,106 +16,21 @@ The publisher's Japanese 1.11 patch yields the same executable.
 
 ## Semantic reconstruction
 
-The source tree is organized by subsystem. The first field review named
-the fighter's spell power, charge, declaration state, selected cards,
-Spirit Strike stock and collision-time health snapshot. Their names follow
-the battle loader, command dispatch, timers, and HUD. The existing class
-sizes and binary layouts are checked during compilation.
-[Source map](../README.md#where-to-start) · [Field evidence](KNOWLEDGE_BASE.md#spell-cards-and-collision-health)
+The [source map](../README.md#where-to-start) leads to shared battle,
+input, replay, resource and renderer layouts. The [Advance index](GIANTS.md)
+links to each playable fighter and object. The [knowledge base](KNOWLEDGE_BASE.md#layout-facts)
+records the source evidence for names and native field layouts.
 
-The directory move kept the original object order and added the `src`
-include root where a profile had relied on the flat tree. All configured
-units were cold-built and compared. The strict Windows relink matches the
-replay-tested executable byte for byte except for its COFF timestamp.
+The shared-field review recovered the sprite history retention count, signed
+vertical acceleration, body separation and opponent motion contributions,
+and the conditional-hit count and combo window. The accepted comparisons
+cover all affected units.
+[Shared motion and conditional hits](KNOWLEDGE_BASE.md#shared-motion-and-conditional-hits)
 
-The next batch named the combat and replay mode values, replay metadata
-and streams, held-input indices, and DirectSound refill and fade state.
-All affected units replayed exactly and the strict relink matched the
-same executable. The headless replay reader and writer round-tripped
-the four external fixtures and one fixture with a timed battle command.
-[Mode and replay evidence](KNOWLEDGE_BASE.md#battle-modes-controls-and-replay-data)
-
-The fighter layout now identifies player and controller selection, palette,
-opponent freeze and practice settings. The configuration reader and both
-input consumers share two typed keyboard records. All 447 affected exact
-units passed. The strict relink moved uninitialized data, changing the
-data section's virtual size and the operands that point into it. The
-remaining linked bytes match after accounting for the COFF timestamp.
-The game configuration reader, writer and input mapper also round-tripped
-the 90-byte Windows playtest file and recovered all 18 expected scan codes.
-[Player and input evidence](KNOWLEDGE_BASE.md#battle-modes-controls-and-replay-data)
-
-The progress methods and results pages now use named story, combo, spell
-and ranking records. All 74 affected units passed. The normal Windows
-link matched the preceding build except for the COFF timestamp. With
-identical random seeds, headless runs of both versions produced identical
-93,124-byte score files from the Windows playtest save.
-[Save data and result fields](KNOWLEDGE_BASE.md#game-progress-save-data)
-
-The battle scene now has named phases for round recovery, the victory
-quote, story dialogue and continues. The replay dispatcher uses named
-commands, and the HUD reads the scene's typed spell panel fields. All 92
-affected units passed, and the Windows link matched the preceding build
-except for the COFF timestamp.
-[Battle phase and overlay evidence](KNOWLEDGE_BASE.md#battle-frame-and-overlays)
-
-The Windows loop and scene updates now share named destination and
-transition values. The title, options, replay browser and score tally
-use named input and display fields. The archive reader and writer share
-the typed index layout. All 71 affected units passed and the strict
-Windows link matches the preceding build except for its COFF timestamp.
-The headless archive check wrote and read a sample archive and recovered
-the same installed battle resource as an independent index reader.
-[Scene and archive evidence](KNOWLEDGE_BASE.md#scene-commands-and-archive-files)
-
-The fighter layout now names round stock, the story spell bonus and the
-queued music state. All eleven character classes expose the same stage
-layer names at their own native offsets. All 496 affected units passed,
-and the Windows link matched the preceding build except for its COFF
-timestamp. Headless runs of both versions produced matching command
-and dialogue summaries for Reimu, Patchouli and Meiling's scripts from
-the installed update archive.
-[Story script and stage layer evidence](KNOWLEDGE_BASE.md#story-scripts-and-character-stage-layers)
-
-Texture pack file methods now use the shared texture manager. The bitmap
-entry identifies stride, compression and shared-palette handling. The
-configuration fields identify their display options. All 491 affected
-units passed. The strict link changed the COFF timestamp and 1,949 linked
-operands for moved uninitialized data. Headless checks decoded raw and
-compressed bitmap rows and round-tripped two configurations and five
-replay files.
-[Texture and display evidence](KNOWLEDGE_BASE.md#texture-packs-and-display-options)
-
-The collision pass uses the actual character-object lists, and frame
-loaders and attack handlers share named collision and reaction fields.
-All 480 affected units passed. The typed deque lets the normal link
-choose different owners for its template instantiations, which moves
-code and data in the PE. The forward and reverse retained links both
-passed all 1,023 configured unit checks, 56,374 linked relocation checks,
-80 vtables and the initializer array.
-[Actor and collision evidence](KNOWLEDGE_BASE.md#actor-collision-and-sprite-resources)
-
-Each playable fighter now has its own source directory. The dialogue
-overlay names its raster settings and tracks the alpha and line count
-of newly revealed text. The result and replay name-entry scenes name
-the glyph grid position, text cursor and edit state. All 333 affected
-units passed. The normal link matched the preceding build except for
-the COFF timestamp.
-[Fighter and object sources](GIANTS.md#complete-research-parents) · [Text overlay](../src/graphics/TextOverlay.hpp) · [Name entry](../src/ui/NameEntryScenes.hpp)
-
-The coordinate mapper reads the same named view bounds as the fighter
-counter update and character-object actions. Tracked effects use the
-shared sprite transform record. The Alice and Remilia object methods
-now live alongside their fighters, so the Windows build compiles all
-translation units from `src/`. All 724 affected units passed.
-[Camera and transform evidence](KNOWLEDGE_BASE.md#combat-camera-bounds-and-linked-effects)
-
-The current Windows executable linked without diagnostics. The normal
-and reversed retained links both checked all configured units, 56,374
-linked relocations, 80 vtables and ten initializer pointers. Headless
-probes round-tripped five replay files and the 90-byte playtest config
-byte for byte. The full battle playback comparison below records the
-playable baseline before the semantic changes.
+The reviewed action-local slots in `CharacterObject` and
+`CharacterAuxObject` can carry different values after a state transition.
+Further naming should follow their producers and consumers in each action.
+Keep the native action order and function extent when adding source navigation.
 
 ## Windows x86 build
 
@@ -131,51 +46,18 @@ null-terminated string values from that supplied image and includes a
 data-only COFF object in the archive and link. Names for the same address
 share one object offset.
 
-A clean build compiled all 441 translation units and linked a Windows
-PE32 executable with an empty linker log. All 16 affected match units
-passed complete comparisons on the freshly compiled objects. The linked
-image matched all 47 supplied data ranges, and all 237 code references
-resolved to the corresponding symbols.
+The normal and reversed retained links after the first semantic pass both
+checked all configured units, 56,374 linked relocations, 80 vtables and
+ten initializer pointers. Headless probes round-tripped five replay
+files and the 90-byte playtest config byte for byte.
+[Position independence](POSITION_INDEPENDENCE.md) · [Link evidence](KNOWLEDGE_BASE.md#windows-link)
 
-The audio client and event-service destructors now bind the shared
-`TerminateThread` import. Both units cold-replayed over their full extents,
-and a strict relink used the refreshed objects.
-[Import evidence](KNOWLEDGE_BASE.md#windows-link)
-
-The ordinary and reverse-order Windows links both ran from the title
-through character selection and back to title before exiting under
-isolated Xvfb. Both layouts also loaded and rendered the first battle
-with the installation's `replay/` directory staged. The command-history
-matcher now uses the native iterator subtraction, and both layouts
-completed 60 battle updates after the fix. The PI notes record which
-symbols moved. With linker reference elimination disabled, both layouts
-also verified all configured unit extents, 80 vtables and the C++
-initializer array. Separate console probes round-tripped the same
-configuration in both object orders.
-[Windows position independence](POSITION_INDEPENDENCE.md)
-
-The Japanese 1.11 reference and the normal executable both played the
-same Coolier Youmu versus Marisa recording and returned to the replay
-browser. The test added 12 zero bytes to expand the downloaded file's
-header from `0x30` to `0x3C`. The record and its four input streams
-were byte-identical. The battle phase, both positions, actions, and
-health values agreed at all nine checkpoints through update 240.
-Both runs used isolated Xvfb sessions. The local logs and checkpoint CSV
-are under `build/program/external-replay/`.
-[Coolier replay](https://coolier.net/th_up4/index.php?id=6736)
-
-Four more Coolier recordings tested the normal link against the Japanese
-1.11 executable. All four pairs returned to the replay browser at the
-same update. The suite covered 28,417 battle updates per executable.
-All 544 observations at battle entry, hit handlers and replay exit
-agreed on the update counter, phase, timer, and both fighters' positions,
-actions, animation state, health, spirit, and scores. The test adapted
-only the replay headers as above. The local fixture hashes, traces and
-comparison report are under `build/program/replay-suite/`.
+The pre-semantic Windows build and the Japanese 1.11 original completed
+four Coolier recordings with matching results at all 544 checkpoints
+over 28,417 battle updates per executable. The playback fixture expands
+the file header from `0x30` to `0x3C` with twelve zero bytes. The local
+fixture hashes, logs and comparison are under `build/program/replay-suite/`.
 [Coolier replay pack](https://coolier.net/th_up4/index.php?id=6739)
-
-Earlier executable link work and compiler findings are indexed in the
-[knowledge base](KNOWLEDGE_BASE.md#windows-link).
 
 ### Local 1P playtest
 

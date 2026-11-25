@@ -23,7 +23,7 @@ case 0x1FB: {
 
     }
     if ((animationStage)>8 && (animationStage)<13) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((color[0])<235)
             color[0]=(color[0])+20;
         else
@@ -86,7 +86,7 @@ case 0x1FB: {
     if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=60.0f;
         velocityY=3.0f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
     }
     if ((animationStage)==13 && (animationFrame)==0)
         ResetSecondaryCounter(0xB);
@@ -109,7 +109,7 @@ case 0x1FC: {
 
     }
     if ((animationStage)>8 && (animationStage)<13) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((color[0])<235)
             color[0]=(color[0])+20;
         else
@@ -172,7 +172,7 @@ case 0x1FC: {
     if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=-60.0f;
         velocityY=3.0f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
     }
     if ((animationStage)==13 && (animationFrame)==0)
         ResetSecondaryCounter(0xB);
@@ -195,7 +195,7 @@ case 0x1FD: {
 
     }
     if ((animationStage)>8 && (animationStage)<13) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((color[0])<235)
             color[0]=(color[0])+20;
         else
@@ -258,7 +258,7 @@ case 0x1FD: {
     if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=120.0f;
         velocityY=3.0f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
     }
     if ((animationStage)==13 && (animationFrame)==0)
         ResetSecondaryCounter(0xB);

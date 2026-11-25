@@ -8,7 +8,7 @@ case 0x46: {
         velocityY += hitReactionVelocityY;
         if (velocityY < TRAJECTORY_LOWER_THRESHOLD)
             velocityY = TRAJECTORY_MINIMUM_SPEED;
-        field05C = 0.8f;
+        verticalAcceleration = 0.8f;
         if (velocityY > TRAJECTORY_UPPER_THRESHOLD)
             velocityY = TRAJECTORY_MAXIMUM_SPEED;
         collisionResult = 0;
@@ -24,7 +24,7 @@ case 0x46: {
         ResetSecondaryCounter(TRAJECTORY_EARLY_STATE);
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
         scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);

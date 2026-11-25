@@ -119,7 +119,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero &&
-            ((velocityY = velocityY - field05C), y + velocityY <= FloatConstants::Zero)) {
+            ((velocityY = velocityY - verticalAcceleration), y + velocityY <= FloatConstants::Zero)) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -134,7 +134,7 @@ void YuyukoFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = 0.0f;
                 velocityY = 12.0f;
-                field05C = 0.4f;
+                verticalAcceleration = 0.4f;
             }
             if (animationStage >= animationStageCount)
                 animationStage -= 2;
@@ -151,7 +151,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero &&
-            ((velocityY = velocityY - field05C), y + velocityY <= FloatConstants::Zero)) {
+            ((velocityY = velocityY - verticalAcceleration), y + velocityY <= FloatConstants::Zero)) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -166,7 +166,7 @@ void YuyukoFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = 4.0f;
                 velocityY = 12.0f;
-                field05C = 0.4f;
+                verticalAcceleration = 0.4f;
             }
             if (animationStage >= animationStageCount)
                 animationStage -= 2;
@@ -183,7 +183,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero &&
-            ((velocityY = velocityY - field05C), y + velocityY <= FloatConstants::Zero)) {
+            ((velocityY = velocityY - verticalAcceleration), y + velocityY <= FloatConstants::Zero)) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -196,7 +196,7 @@ void YuyukoFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = -4.0f;
                 velocityY = 12.0f;
-                field05C = 0.4f;
+                verticalAcceleration = 0.4f;
             }
             if (animationStage >= animationStageCount)
                 animationStage -= 2;
@@ -205,9 +205,9 @@ void YuyukoFighter::Advance() {
         break;
 
     case 0x9:
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -243,7 +243,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -264,7 +264,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -285,7 +285,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -307,7 +307,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -335,7 +335,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -356,7 +356,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -377,7 +377,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -399,7 +399,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -427,7 +427,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -448,7 +448,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -469,7 +469,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -491,7 +491,7 @@ void YuyukoFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -512,7 +512,7 @@ void YuyukoFighter::Advance() {
             velocityY += hitReactionVelocityY;
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             if ((velocityY) > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
             collisionResult = 0;
@@ -521,7 +521,7 @@ void YuyukoFighter::Advance() {
             ResetSecondaryCounter(2);
             return;
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -540,14 +540,14 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
             return;
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -566,14 +566,14 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
-            field05C = 1.3f;
+            verticalAcceleration = 1.3f;
             collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
             return;
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -592,7 +592,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
@@ -624,7 +624,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
@@ -635,13 +635,13 @@ void YuyukoFighter::Advance() {
             ResetPrimaryCounters(0x4C);
             velocityX = -velocityX * FloatConstants::Quarter;
             velocityY = 15.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
             SetCameraShake(2.0f);
             PlaySharedSound(0x16);
             scriptCounterF00 = 0;
             return;
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             PlaySharedSound(0x16);
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -663,7 +663,7 @@ void YuyukoFighter::Advance() {
         }
 
         rotationZ = (rotationZ) + GeometryConstants::Thirty;
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             PlaySharedSound(0x16);
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -685,7 +685,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
@@ -725,7 +725,7 @@ void YuyukoFighter::Advance() {
     case 0x59: {
         if (animationStage == 3) {
             rotationZ = (rotationZ) + GeometryConstants::Forty;
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
                 scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -744,7 +744,7 @@ void YuyukoFighter::Advance() {
         else if (animationStage == 3 && animationFrame == 0) {
             velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneFourHundredth;
             velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneHundredth;
-            field05C = 0.7f;
+            verticalAcceleration = 0.7f;
             ResetTransform(0.0f, 95.0f, 0.0f);
         } else if (animationStage == 3 && animationFrame != 0) {
 
@@ -754,7 +754,7 @@ void YuyukoFighter::Advance() {
 
     case 0x5D:
         if (animationStage < 7 && y > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -776,7 +776,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             velocityY = 8.0f;
             velocityX = 13.5f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (animationStage == 7 && animationFrame == 0) {
             ResetSecondaryCounter(5);
@@ -787,7 +787,7 @@ void YuyukoFighter::Advance() {
 
     case 0x5E:
         if (animationStage < 7 && y > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -809,7 +809,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             velocityY = 8.0f;
             velocityX = -11.5f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
         }
         if (animationStage == 7 && animationFrame == 0) {
             ResetSecondaryCounter(5);
@@ -848,7 +848,7 @@ void YuyukoFighter::Advance() {
             }
         }
         if (animationStage == 2 || animationStage == 3 || animationStage == 4) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -864,7 +864,7 @@ void YuyukoFighter::Advance() {
         } else if (animationStage == 2 && animationFrame == 0) {
             velocityX = scriptCounterF00 * FloatConstants::OneTwoHundredth;
             velocityY = -scriptCounterF02 * FloatConstants::OneTwoHundredth;
-            field05C = 2.0f;
+            verticalAcceleration = 2.0f;
         }
         break;
 
@@ -884,7 +884,7 @@ void YuyukoFighter::Advance() {
             }
         }
         if (animationStage == 2 || animationStage == 3 || animationStage == 4) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -900,7 +900,7 @@ void YuyukoFighter::Advance() {
         } else if (animationStage == 2 && animationFrame == 0) {
             velocityX = scriptCounterF00 * FloatConstants::OneTwoHundredth;
             velocityY = -scriptCounterF02 * FloatConstants::OneTwoHundredth;
-            field05C = 2.0f;
+            verticalAcceleration = 2.0f;
         } else if (animationStage == 2 && animationFrame != 0) {
             // The launch velocity is applied only on the first frame.
         }
@@ -974,7 +974,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 5) {
@@ -997,7 +997,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1020,7 +1020,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1034,14 +1034,14 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 14.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
             collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
             return;
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -1074,7 +1074,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1098,7 +1098,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1122,7 +1122,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1146,7 +1146,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1170,7 +1170,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1194,7 +1194,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1208,13 +1208,13 @@ void YuyukoFighter::Advance() {
 
             velocityX = -6.0f;
             velocityY = 8.0f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
 
         }
 
         if (y >= FloatConstants::Zero) {
 
-            velocityY = velocityY-field05C;
+            velocityY = velocityY-verticalAcceleration;
             if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1245,7 +1245,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1269,7 +1269,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1293,7 +1293,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1314,7 +1314,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1335,7 +1335,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1356,7 +1356,7 @@ void YuyukoFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX)*FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX)*FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame()==animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1381,7 +1381,7 @@ void YuyukoFighter::Advance() {
             if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00)*FloatConstants::OneTenth;
+        opponentVelocityDeltaX = (-scriptCounterF00)*FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00-10;
         if (AdvanceNestedFrame()==animationStageCount)
@@ -1408,7 +1408,7 @@ void YuyukoFighter::Advance() {
             if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00)*FloatConstants::OneTenth;
+        opponentVelocityDeltaX = (-scriptCounterF00)*FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00-10;
         if (AdvanceNestedFrame()==animationStageCount)
@@ -1421,12 +1421,12 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
             velocityX = 8.0f;
             velocityY = 12.5f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY-field05C;
+            velocityY = velocityY-verticalAcceleration;
             if (y+velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1446,12 +1446,12 @@ void YuyukoFighter::Advance() {
             ClearMotionFields();
             velocityX = -8.0f;
             velocityY = 12.5f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
         if ((y) > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1506,14 +1506,14 @@ void YuyukoFighter::Advance() {
         if (animationStage == 1 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 2.0f;
-            field05C = 0.2f;
+            verticalAcceleration = 0.2f;
         }
         if ((y) > FloatConstants::Zero && animationStage > 0 && animationStage < 5) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 animationFrame = 0;
                 ResetSecondaryCounter(5);
@@ -1532,14 +1532,14 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
         }
         if ((y) > FloatConstants::Zero && animationStage > 1) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 animationFrame = 0;
                 ResetPrimaryCounters(10);
@@ -1553,7 +1553,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             velocityX = 7.5f;
             velocityY = 3.5f;
-            field05C = 0.45f;
+            verticalAcceleration = 0.45f;
         }
         break;
 
@@ -1563,14 +1563,14 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
         }
         if ((y) > FloatConstants::Zero && animationStage > 0) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 animationFrame = 0;
                 ResetPrimaryCounters(10);
@@ -1582,7 +1582,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             velocityX = -7.5f;
             velocityY = 3.5f;
-            field05C = 0.45f;
+            verticalAcceleration = 0.45f;
         }
         if (animationStage == 5 && scriptCounterF00 < 1) {
             ++scriptCounterF00;
@@ -1598,7 +1598,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if ((y) > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1615,7 +1615,7 @@ void YuyukoFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = 0.0f;
                 velocityY = 18.5f;
-                field05C = 0.55f;
+                verticalAcceleration = 0.55f;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
             if (animationStage >= animationStageCount)
@@ -1632,7 +1632,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if ((y) > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1649,7 +1649,7 @@ void YuyukoFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = 10.0f;
                 velocityY = 13.5f;
-                field05C = 0.5f;
+                verticalAcceleration = 0.5f;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
             if (animationStage >= animationStageCount)
@@ -1666,7 +1666,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if ((y) > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1681,7 +1681,7 @@ void YuyukoFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = -10.0f;
                 velocityY = 13.5f;
-                field05C = 0.5f;
+                verticalAcceleration = 0.5f;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
             if (animationStage >= animationStageCount)
@@ -1710,9 +1710,9 @@ void YuyukoFighter::Advance() {
                 -facing;
             velocityX = -(velocityX);
         }
-        if (field05C == (FloatConstants::Zero))
-            field05C = 0.6f;
-        velocityY = velocityY-field05C;
+        if (verticalAcceleration == (FloatConstants::Zero))
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY-verticalAcceleration;
         if (y+velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y = 0.0f;
@@ -1755,7 +1755,7 @@ void YuyukoFighter::Advance() {
             collisionResult = 0;
         }
         if (animationStage > 3 && animationStage < 15) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -1770,7 +1770,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = 5.0f;
             velocityY = 10.0f;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             PlaySound(0x0C);
             SpawnBattleEffect(0x32F, x, (y) + GeometryConstants::Hundred, facing, 1);
         }
@@ -1826,11 +1826,11 @@ void YuyukoFighter::Advance() {
         break;
 
     case 0x130:
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             return;
         }
@@ -1848,11 +1848,11 @@ void YuyukoFighter::Advance() {
         break;
 
     case 0x131:
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             return;
         }
@@ -1875,7 +1875,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             remainingHits = 1;
             collisionResult = 0;
             ClearMotionFields();
@@ -2043,7 +2043,7 @@ void YuyukoFighter::Advance() {
             }
         }
         if (animationStage > 3 && animationStage < 15) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -2060,7 +2060,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = 8.0f;
             velocityY = 10.0f;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             SpawnBattleEffect(0x32F, x, (y) + GeometryConstants::Hundred, facing, 1);
             PlaySound(0x0C);
         }
@@ -2098,7 +2098,7 @@ void YuyukoFighter::Advance() {
             field3AC = 0;
             remainingHits = 1;
             collisionResult = 0;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             velocityX = 10.0f;
         }
@@ -2221,7 +2221,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF02 = 0;
         }
         if (animationStage > 3 && animationStage < 15) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -2247,7 +2247,7 @@ void YuyukoFighter::Advance() {
         }
         if (animationStage == 4 && animationFrame == 0) {
             velocityY = 10.0f;
-            field05C = 0.3f;
+            verticalAcceleration = 0.3f;
         }
         if (animationStage == 12 && animationFrame == 0 && scriptCounterF00 < 1) {
             ++scriptCounterF00;
@@ -2267,7 +2267,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF02 = 0;
         }
         if (animationStage > 16)
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             y = 0.0f;
             velocityY = 0.0f;
@@ -2370,7 +2370,7 @@ void YuyukoFighter::Advance() {
             fieldF06 = 0;
         }
         if (animationStage > 7) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 velocityY = 0.0f;
@@ -2497,7 +2497,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF02 = 0;
         }
         if (animationStage > 16)
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             y = 0.0f;
             velocityY = 0.0f;
@@ -2825,7 +2825,7 @@ void YuyukoFighter::Advance() {
             velocityY = (velocityY) * FloatConstants::OneFifth;
         }
         if (animationStage > 15)
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
         if (animationStage == 6 && animationFrame == 0) {
             UpdateGaugeTimer(200);
             SpawnBattleEffect(0x336, static_cast<float>(static_cast<int>(facing) * 0x55) + x,
@@ -2844,7 +2844,7 @@ void YuyukoFighter::Advance() {
             velocityY = (velocityY) * FloatConstants::OneFifth;
         }
         if (animationStage > 15)
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
         if (animationStage == 6 && animationFrame == 0) {
             UpdateGaugeTimer(250);
             SpawnBattleEffect(0x339, static_cast<float>(static_cast<int>(facing) * 0x55) + x,
@@ -3351,7 +3351,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 ResetPrimaryCounters(0x2DA);
@@ -3369,7 +3369,7 @@ void YuyukoFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = static_cast<float>(facing) * (opponent->x - x) / GeometryConstants::Fifty;
                 velocityY = 10.0f;
-                field05C = 0.4f;
+                verticalAcceleration = 0.4f;
             }
             if (animationStage >= animationStageCount)
                 animationStage -= 2;
@@ -3478,7 +3478,7 @@ void YuyukoFighter::Advance() {
                 scriptCounterF02 = 0;
             }
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY < FloatConstants::Zero)
             velocityY = 0.0f;
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3488,7 +3488,7 @@ void YuyukoFighter::Advance() {
         }
         if (animationStage == 2 && animationFrame == 0) {
             velocityY = 10.0f;
-            field05C = 0.3f;
+            verticalAcceleration = 0.3f;
         }
         if (animationStage == 3 && animationFrame == 0) {
             SpawnBattleEffect(0x38A, x, y, 1, 0);
@@ -3692,7 +3692,7 @@ void YuyukoFighter::Advance() {
                 --scriptCounterF00;
                 ++fieldF06;
             }
-            opponent->field490 = 0.0f;
+            opponent->opponentVelocityDeltaX = 0.0f;
             if (fieldF06 > 300 && animationStage == 1 && animationFrame == 0) {
                 scriptCounterF02 = static_cast<short>(scriptCounterF02 + 10);
                 if (scriptCounterF02 == 180)

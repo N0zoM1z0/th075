@@ -3,7 +3,7 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=0.0f;
                 velocityY=0.0f;
-                field05C=0.0f;
+                verticalAcceleration=0.0f;
                 remainingHits=1;
                 collisionResult=0;
             }

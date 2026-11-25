@@ -14,7 +14,7 @@ case 0x32: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)

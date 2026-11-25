@@ -121,7 +121,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -138,11 +138,11 @@ void SuikaFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = 0.0f;
                 velocityY = 16.0f;
-                field05C = 0.75f;
+                verticalAcceleration = 0.75f;
                 if (field3AC > 0) {
                     velocityX = 3.0f;
                     velocityY = 15.0f;
-                    field05C = 1.25f;
+                    verticalAcceleration = 1.25f;
                 }
             }
             if (animationStage >= (field070))
@@ -161,7 +161,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -178,7 +178,7 @@ void SuikaFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = 8.0f;
                 velocityY = 16.0f;
-                field05C = 0.75f;
+                verticalAcceleration = 0.75f;
             }
             if (animationStage >= animationStageCount)
                 animationStage -= 2;
@@ -196,7 +196,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero &&
-            ((velocityY = velocityY - field05C), y + velocityY <= FloatConstants::Zero)) {
+            ((velocityY = velocityY - verticalAcceleration), y + velocityY <= FloatConstants::Zero)) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -209,7 +209,7 @@ void SuikaFighter::Advance() {
             if (animationStage == 2) {
                 velocityX = -8.0f;
                 velocityY = 16.0f;
-                field05C = 0.75f;
+                verticalAcceleration = 0.75f;
             }
             if (animationStage >= animationStageCount)
                 animationStage -= 2;
@@ -219,9 +219,9 @@ void SuikaFighter::Advance() {
     }
 
     case 0x9: {
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -259,7 +259,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE != 0)
-            field490 = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
+            opponentVelocityDeltaX = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -278,7 +278,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -299,7 +299,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -321,7 +321,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -349,7 +349,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -370,7 +370,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -391,7 +391,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -413,7 +413,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -441,7 +441,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -462,7 +462,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -483,7 +483,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -505,7 +505,7 @@ void SuikaFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -526,7 +526,7 @@ void SuikaFighter::Advance() {
             velocityY += hitReactionVelocityY;
             if (velocityY < GeometryConstants::Six)
                 velocityY = 6.0f;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
             collisionResult = 0;
@@ -535,7 +535,7 @@ void SuikaFighter::Advance() {
             ResetSecondaryCounter(4);
             return;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             stageBannerHoldFrames = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -555,14 +555,14 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             stageBannerHoldFrames = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -582,14 +582,14 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 1.3f;
+            verticalAcceleration = 1.3f;
             collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             stageBannerHoldFrames = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -609,7 +609,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
@@ -640,7 +640,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
@@ -651,13 +651,13 @@ void SuikaFighter::Advance() {
             ResetPrimaryCounters(0x4C);
             velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
             SetCameraShake(2.0f);
             Fighter::PlaySharedSound(0x16);
             sequenceTimer = 0;
             return;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
 
             Fighter::PlaySharedSound(0x16);
@@ -683,7 +683,7 @@ void SuikaFighter::Advance() {
         }
 
         rotationZ = (rotationZ) + GeometryConstants::Thirty;
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
             sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -705,7 +705,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
@@ -745,7 +745,7 @@ void SuikaFighter::Advance() {
     case 0x59: {
         if (animationStage == 3) {
             rotationZ = (rotationZ) + GeometryConstants::Forty;
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 sequenceTimer = (velocityX) * GeometryConstants::Hundred;
                 stageBannerHoldFrames = (velocityY) * GeometryConstants::Hundred;
@@ -764,7 +764,7 @@ void SuikaFighter::Advance() {
         else if (animationStage == 3 && animationFrame == 0) {
             velocityX = static_cast<float>(sequenceTimer) * FloatConstants::OneFourHundredth;
             velocityY = static_cast<float>(-stageBannerHoldFrames) * FloatConstants::OneHundredth;
-            field05C = 0.7f;
+            verticalAcceleration = 0.7f;
             ResetTransform(0.0f, 95.0f, 0.0f);
         }
         return;
@@ -847,7 +847,7 @@ void SuikaFighter::Advance() {
             }
         }
         if (animationStage >= 3 && animationStage <= 5) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -863,7 +863,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             velocityX = static_cast<float>(sequenceTimer) * FloatConstants::OneTwoHundredth;
             velocityY = static_cast<float>(-stageBannerHoldFrames) * FloatConstants::OneTwoHundredth;
-            field05C = 2.0f;
+            verticalAcceleration = 2.0f;
         }
         if (animationStage == 6 && animationFrame == 0) {
             ResetSecondaryCounter(5);
@@ -889,7 +889,7 @@ void SuikaFighter::Advance() {
             }
         }
         if (animationStage >= 3 && animationStage <= 5) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -905,7 +905,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             velocityX = static_cast<float>(sequenceTimer) * FloatConstants::OneTwoHundredth;
             velocityY = static_cast<float>(-stageBannerHoldFrames) * FloatConstants::OneTwoHundredth;
-            field05C = 2.0f;
+            verticalAcceleration = 2.0f;
         }
         if (animationStage == 6 && animationFrame == 0) {
             ResetSecondaryCounter(5);
@@ -984,7 +984,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && sequenceTimer < 5) {
@@ -1007,7 +1007,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && sequenceTimer < 7) {
@@ -1030,7 +1030,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && sequenceTimer < 7) {
@@ -1044,14 +1044,14 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 14.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
             collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
             return;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             sequenceTimer = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             stageBannerHoldFrames = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -1082,7 +1082,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1104,7 +1104,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1126,7 +1126,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1148,7 +1148,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1170,7 +1170,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1192,7 +1192,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1206,12 +1206,12 @@ void SuikaFighter::Advance() {
 
             velocityX = -6.0f;
             velocityY = 8.0f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
         }
 
         if (y >= FloatConstants::Zero) {
 
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1240,7 +1240,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1262,7 +1262,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1284,7 +1284,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1305,7 +1305,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1326,7 +1326,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1347,7 +1347,7 @@ void SuikaFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1372,7 +1372,7 @@ void SuikaFighter::Advance() {
             if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-sequenceTimer) * FloatConstants::OneTenth;
+        opponentVelocityDeltaX = (-sequenceTimer) * FloatConstants::OneTenth;
         if (sequenceTimer > 0)
             sequenceTimer = sequenceTimer - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1399,7 +1399,7 @@ void SuikaFighter::Advance() {
             if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-sequenceTimer) * FloatConstants::OneTenth;
+        opponentVelocityDeltaX = (-sequenceTimer) * FloatConstants::OneTenth;
         if (sequenceTimer > 0)
             sequenceTimer = sequenceTimer - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1412,12 +1412,12 @@ void SuikaFighter::Advance() {
             ClearMotionFields();
             velocityX = 8.0f;
             velocityY = 12.5f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1437,12 +1437,12 @@ void SuikaFighter::Advance() {
             ClearMotionFields();
             velocityX = -8.0f;
             velocityY = 12.5f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1520,15 +1520,15 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             sequenceTimer = 0;
         }
         if (y > FloatConstants::Zero && animationStage > 1) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 animationFrame = 0;
                 ResetPrimaryCounters(10);
@@ -1540,7 +1540,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             velocityX = 8.5f;
             velocityY = 4.5f;
-            field05C = 0.45f;
+            verticalAcceleration = 0.45f;
         }
         if (animationStage == 7 && animationFrame == 0 && sequenceTimer < 1) {
             ResetSecondaryCounter(3);
@@ -1555,14 +1555,14 @@ void SuikaFighter::Advance() {
             sequenceTimer = 0;
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
         }
         if (y > FloatConstants::Zero && animationStage > 0) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 animationFrame = 0;
                 ResetPrimaryCounters(10);
@@ -1574,7 +1574,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             velocityX = -7.5f;
             velocityY = 4.0f;
-            field05C = 0.45f;
+            verticalAcceleration = 0.45f;
         }
         if (animationStage == 7 && animationFrame == 0 && sequenceTimer < 1) {
             ResetSecondaryCounter(3);
@@ -1591,7 +1591,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1608,7 +1608,7 @@ void SuikaFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = 0.0f;
                 velocityY = 21.0f;
-                field05C = 0.75f;
+                verticalAcceleration = 0.75f;
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
@@ -1627,7 +1627,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1644,7 +1644,7 @@ void SuikaFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = 10.0f;
                 velocityY = 16.0f;
-                field05C = 0.7f;
+                verticalAcceleration = 0.7f;
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
@@ -1663,7 +1663,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1678,7 +1678,7 @@ void SuikaFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = -10.0f;
                 velocityY = 16.0f;
-                field05C = 0.7f;
+                verticalAcceleration = 0.7f;
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
@@ -1708,9 +1708,9 @@ void SuikaFighter::Advance() {
             facing = static_cast<signed char>(-facing);
             velocityX = -velocityX;
         }
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY -= field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -1832,11 +1832,11 @@ void SuikaFighter::Advance() {
     }
 
     case 0x130: {
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             return;
         }
@@ -1855,11 +1855,11 @@ void SuikaFighter::Advance() {
     }
 
     case 0x131: {
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             return;
         }
@@ -1879,10 +1879,10 @@ void SuikaFighter::Advance() {
     }
 
     case 0x132: {
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
-            y = 0.0f; field05C = 0.0f; velocityY = 0.0f;
+            y = 0.0f; verticalAcceleration = 0.0f; velocityY = 0.0f;
             break;
         }
         if (animationStage == 0 && animationFrame == 0) { remainingHits = 1; collisionResult = 0; }
@@ -1897,16 +1897,16 @@ void SuikaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             remainingHits = 1;
             collisionResult = 0;
         }
         if (y > FloatConstants::Zero && animationStage > 2 && animationStage < 6) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 animationFrame = 0;
                 ResetSecondaryCounter(6);
@@ -1923,7 +1923,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 3 && animationFrame == 0) {
             velocityX = 8.0f;
             velocityY = 14.0f;
-            field05C = 1.5f;
+            verticalAcceleration = 1.5f;
         }
         if (animationStage == 6 && animationFrame == 0) {
             ResetSecondaryCounter(5);
@@ -1970,7 +1970,7 @@ void SuikaFighter::Advance() {
             }
         }
         if (y > FloatConstants::Zero && animationStage > 3 && animationStage < 6) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 ResetSecondaryCounter(6);
                 velocityY = 0.0f;
@@ -1986,7 +1986,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = 13.5f;
             velocityY = 6.5f;
-            field05C = 1.0f;
+            verticalAcceleration = 1.0f;
         }
         return;
     }
@@ -2006,7 +2006,7 @@ void SuikaFighter::Advance() {
             }
         }
         if (y > FloatConstants::Zero && animationStage > 4 && animationStage < 7) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 ResetSecondaryCounter(7);
                 y = 0.0f;
@@ -2019,7 +2019,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 5 && animationFrame == 0) {
             velocityX = 15.0f;
             velocityY = 6.0f;
-            field05C = 0.9f;
+            verticalAcceleration = 0.9f;
         }
         return;
     }
@@ -2052,7 +2052,7 @@ void SuikaFighter::Advance() {
             field3AC = 0;
             remainingHits = 1;
             collisionResult = 0;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             velocityX = 10.0f;
         }
@@ -2066,11 +2066,11 @@ void SuikaFighter::Advance() {
                 ResetSecondaryCounter(17);
                 velocityX = -3.0f;
                 velocityY = 13.0f;
-                field05C = 0.75f;
+                verticalAcceleration = 0.75f;
                 collisionResult = 1;
                 return;
             }
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -2079,10 +2079,10 @@ void SuikaFighter::Advance() {
             }
         }
         if (y > FloatConstants::Zero && animationStage > 16 && animationStage < 23) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 ResetSecondaryCounter(23);
                 ClearMotionFields();
@@ -2094,7 +2094,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = 12.0f;
             velocityY = 9.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
         }
         if (animationStage == 17 && animationFrame == 0) {
             ResetSecondaryCounter(9);
@@ -2819,7 +2819,7 @@ void SuikaFighter::Advance() {
                 opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -2894,7 +2894,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 8 && animationFrame == 0) {
             velocityX = 15.0f;
             velocityY = 10.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (animationStage == 17 && animationFrame == 0) {
             ResetSecondaryCounter(9);
@@ -3224,7 +3224,7 @@ void SuikaFighter::Advance() {
                 ResetPrimaryCounters(0x2C8);
                 return;
             }
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(15);
                 y = 0.0f;
@@ -3241,7 +3241,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 5 && animationFrame == 0) {
             velocityY = 10.0f;
-            field05C = 0.3f;
+            verticalAcceleration = 0.3f;
             if (sequenceTimer == 1)
                 velocityX = 7.0f;
             else
@@ -3316,7 +3316,7 @@ void SuikaFighter::Advance() {
             collisionResult = 0;
         }
         if (animationStage < 6) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(6);
                 y = 0.0f;
@@ -3342,10 +3342,10 @@ void SuikaFighter::Advance() {
             remainingHits = 1;
             collisionResult = 0;
             velocityY = 5.0f;
-            field05C = 0.45f;
+            verticalAcceleration = 0.45f;
         }
         if (animationStage < 3) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(3);
                 y = 0.0f;
@@ -3423,7 +3423,7 @@ void SuikaFighter::Advance() {
                 opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -3498,7 +3498,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 8 && animationFrame == 0) {
             velocityX = 15.0f;
             velocityY = 10.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (animationStage == 17 && animationFrame == 0) {
             ResetSecondaryCounter(9);
@@ -3826,7 +3826,7 @@ void SuikaFighter::Advance() {
                 ResetPrimaryCounters(0x2DC);
                 return;
             }
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(15);
                 y = 0.0f;
@@ -3843,7 +3843,7 @@ void SuikaFighter::Advance() {
         }
         if (animationStage == 5 && animationFrame == 0) {
             velocityY = 10.0f;
-            field05C = 0.3f;
+            verticalAcceleration = 0.3f;
             if (sequenceTimer == 1)
                 velocityX = 5.0f;
             else
@@ -3918,7 +3918,7 @@ void SuikaFighter::Advance() {
             collisionResult = 0;
         }
         if (animationStage < 6) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(6);
                 y = 0.0f;
@@ -3944,10 +3944,10 @@ void SuikaFighter::Advance() {
             remainingHits = 1;
             collisionResult = 0;
             velocityY = 5.0f;
-            field05C = 0.45f;
+            verticalAcceleration = 0.45f;
         }
         if (animationStage < 3) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(3);
                 y = 0.0f;
@@ -4265,7 +4265,7 @@ void SuikaFighter::Advance() {
                 opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -4335,7 +4335,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 8 && animationFrame == 0) {
             velocityX = 10.0f;
             velocityY = 10.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
             fieldF04 = 0;
         }
         if (animationStage == 17 && animationFrame == 0) {
@@ -4484,7 +4484,7 @@ void SuikaFighter::Advance() {
                 opponent->y = (y) + GeometryConstants::HundredTwenty + velocityY;
                 return;
             }
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ClearMotionFields();
                 y = 0.0f;
@@ -4559,7 +4559,7 @@ void SuikaFighter::Advance() {
         if (animationStage == 8 && animationFrame == 0) {
             velocityX = 10.0f;
             velocityY = 10.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (animationStage == 17 && animationFrame == 0) {
             ResetSecondaryCounter(9);
@@ -4873,7 +4873,7 @@ void SuikaFighter::Advance() {
 
     case 0x316: {
         x = 640.0f;
-        opponent->field490 = 0.0f;
+        opponent->opponentVelocityDeltaX = 0.0f;
         facing = -1;
         if (opponent->health > 0 && opponent->animationStage == 2 && opponent->roundsRemaining > 0 && opponent->action == 99) {
             opponent->ResetPrimaryCounters(0x5F);
@@ -4936,7 +4936,7 @@ void SuikaFighter::Advance() {
 
     case 0x317: {
         x = 640.0f;
-        opponent->field490 = 0.0f;
+        opponent->opponentVelocityDeltaX = 0.0f;
         ++stageBannerHoldFrames;
         if (opponent->health > 0 && opponent->animationStage == 2 && opponent->roundsRemaining > 0 && opponent->action == 99) {
             opponent->ResetPrimaryCounters(0x5F);
@@ -5029,7 +5029,7 @@ void SuikaFighter::Advance() {
 
     case 0x318: {
         x = 640.0f;
-        opponent->field490 = 0.0f;
+        opponent->opponentVelocityDeltaX = 0.0f;
         ++stageBannerHoldFrames;
         if (opponent->health > 0 && opponent->animationStage == 2 && opponent->roundsRemaining > 0 && opponent->action == 99) {
             opponent->ResetPrimaryCounters(0x5F);
@@ -5140,7 +5140,7 @@ void SuikaFighter::Advance() {
 
     case 0x319: {
         x = 640.0f;
-        opponent->field490 = 0.0f;
+        opponent->opponentVelocityDeltaX = 0.0f;
         ++stageBannerHoldFrames;
         ++scriptCounterF00;
         ++fieldF04;

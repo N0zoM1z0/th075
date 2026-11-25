@@ -30,7 +30,7 @@ case 0xC8: {
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=15.0f;
         velocityY=25.0f;
-        field05C=2.5f;
+        verticalAcceleration=2.5f;
         SpawnAuxEffect(0x7D,float((facing)*80)+(x),
             (*(&y))+GeometryConstants::Eighty,(facing),1);
         SpawnAuxEffect(0x7E,x,
@@ -62,7 +62,7 @@ case 0xC9: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-25.0f;
         velocityY=40.0f;
-        field05C=6.0f;
+        verticalAcceleration=6.0f;
         SpawnAuxEffect(0x7D,x-float((facing)*80),
             (*(&y))+GeometryConstants::Eighty,-(facing),1);
         SpawnAuxEffect(0x7E,x,
@@ -76,11 +76,11 @@ case 0xCA: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
     if (y>FloatConstants::Zero && (animationStage)>5) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
-            field05C=0.0f;
+            verticalAcceleration=0.0f;
             y=0.0f;
             animationFrame=0;
             ResetPrimaryCounters(0xA);
@@ -91,7 +91,7 @@ case 0xCA: {
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=30.0f;
         velocityY=-4.0f;
-        field05C=0.6f;
+        verticalAcceleration=0.6f;
         SpawnAuxEffect(0x7D,float((facing)*80)+(x),
             (*(&y))+GeometryConstants::Hundred,(facing),1);
         SpawnAuxEffect(0x7E,x,
@@ -108,11 +108,11 @@ case 0xCB: {
     SetCommandSelection(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
     if (y>FloatConstants::Zero && (animationStage)>4) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
-            field05C=0.0f;
+            verticalAcceleration=0.0f;
             y=0.0f;
             animationFrame=0;
             ResetPrimaryCounters(0xA);
@@ -123,7 +123,7 @@ case 0xCB: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-30.0f;
         velocityY=2.0f;
-        field05C=0.6f;
+        verticalAcceleration=0.6f;
         SpawnAuxEffect(0x7D,x-float((facing)*80),
             (*(&y))+GeometryConstants::Hundred,-(facing),1);
         SpawnAuxEffect(0x7E,x,

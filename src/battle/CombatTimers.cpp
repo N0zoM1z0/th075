@@ -7,9 +7,9 @@ void Fighter::UpdateCounters()
     if (opponent->opponentFreezeSnapshot > 0) goto updateViewBounds;
     {
         if (hitstopFrames > 0) --hitstopFrames;
-        else if (field3CC > 0) --field3CC;
-        field490 = 0.0f;
-        opponent->field490 = 0.0f;
+        else if (conditionalHitComboWindow > 0) --conditionalHitComboWindow;
+        opponentVelocityDeltaX = 0.0f;
+        opponent->opponentVelocityDeltaX = 0.0f;
         if (hitInvulnerabilityFrames > 0) --hitInvulnerabilityFrames;
         if (throwInvulnerabilityFrames > 0) --throwInvulnerabilityFrames;
         if (frameInfo->flags & 0x1000) throwInvulnerabilityFrames = 6;
@@ -70,7 +70,7 @@ void Fighter::UpdateCounters()
 updateViewBounds:
     if (health < 0) health = 0;
     if (recoverableHealth < 0) recoverableHealth = 0;
-    if (spriteHistoryHoldFrames > 0) --spriteHistoryHoldFrames;
+    if (spriteHistoryRetentionFrames > 0) --spriteHistoryRetentionFrames;
     if (hitFlashFrames > 0) --hitFlashFrames;
     if (fadeAlpha > 0) fadeAlpha -= 3;
     cameraState.viewLeft = (-g_CombatViewOffsetX - 320.0f + 640.0f) - (320.0f - g_CombatViewSpan) * 0.5f;

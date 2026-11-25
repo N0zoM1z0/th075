@@ -26,11 +26,11 @@ case 0x12F: {
 }
 // Original 0x130: ground contact, motion reset, and stage-3 projectile.
 case 0x130: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
         y=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
         velocityY=0.0f;
         break;
     }

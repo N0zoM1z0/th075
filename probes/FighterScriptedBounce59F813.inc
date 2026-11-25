@@ -4,7 +4,7 @@
         case 0x59: {
             if ((animationStage)==3) {
                 rotationZ=(rotationZ)+GeometryConstants::Forty;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (velocityY+y<=FloatConstants::Zero) {
                     scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
                     scriptCounterF02=static_cast<short>((*(&velocityY))*GeometryConstants::Hundred);
@@ -23,7 +23,7 @@
             else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneFourHundredth;
                 velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneHundredth;
-                field05C=0.7f;
+                verticalAcceleration=0.7f;
                 ResetTransform(0.0f, 95.0f, 0.0f);
             } else if (animationStage == 3 && animationFrame != 0) {
                 // Keep the rebound motion on later frames.

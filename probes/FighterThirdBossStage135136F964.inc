@@ -1,6 +1,6 @@
 // F964 original Japanese 004AC040 movement states 135 and 136.
 // Native 00453E20 entry/landing calls clear velocityX, velocityY, field058
-// and field05C. Preserve the separate collisionResult/hit-stop writes as well.
+// and verticalAcceleration. Preserve the separate collisionResult/hit-stop writes as well.
 // State 135 falls during stages 3/4, then damps X after stage 4; state 136
 // uses exact ground-Y equality for its X drag and lands only before stage 12.
 // Original third-fighter native game action 135, candidate.
@@ -60,7 +60,7 @@ case 0x136: {
         }
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero && (animationStage)<12) {
             y=0.0f;
             ClearMotionFields();
@@ -73,7 +73,7 @@ case 0x136: {
     if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=4.0f;
         velocityY=9.5f;
-        field05C=1.0f;
+        verticalAcceleration=1.0f;
     }
     if ((animationStage)==8 && (animationFrame)==0) {
         Fighter::SpawnTrackedEffect(0x337,x,y,

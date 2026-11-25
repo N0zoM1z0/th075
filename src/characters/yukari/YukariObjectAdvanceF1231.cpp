@@ -608,7 +608,7 @@ void YukariObject::Advance()
             remainingHits = 99;
             collisionResult = 0;
         }
-        if (animationStage == 3 && animationFrame == 0) owner->field490 = 0.0f;
+        if (animationStage == 3 && animationFrame == 0) owner->opponentVelocityDeltaX = 0.0f;
         rotationZ += 5.0f;
         if (scaleX < 1.0f) {
             scaleX += 0.1f;
@@ -626,7 +626,7 @@ void YukariObject::Advance()
             if (animationStage == 2) {
                 ++field0DA;
                 if (field0DA > 80) field0DA = 80;
-                owner->field490 = -(field0DA * 0.1f) *
+                owner->opponentVelocityDeltaX = -(field0DA * 0.1f) *
                     (facing * owner->opponent->facing) *
                     (((owner->opponent->x - x) * facing > 0.0f) * 2 - 1);
             }

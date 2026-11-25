@@ -24,12 +24,12 @@ case 0x1F8: {
             ResetSecondaryCounter(8);
             velocityX=60.0f;
             velocityY=10.0f;
-            field05C=0.4f;
+            verticalAcceleration=0.4f;
             break;
         }
     }
     if ((animationStage)==9 || (animationStage)==10) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((color[0])<235)
             color[0]=(color[0])+20;
         else
@@ -111,12 +111,12 @@ case 0x1F9: {
             ResetSecondaryCounter(8);
             velocityX=-60.0f;
             velocityY=10.0f;
-            field05C=0.4f;
+            verticalAcceleration=0.4f;
             break;
         }
     }
     if ((animationStage)==9 || (animationStage)==10) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((color[0])<235)
             color[0]=(color[0])+20;
         else

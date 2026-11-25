@@ -290,7 +290,7 @@ case 0x19D: {
 case 0x1A1: {
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
-        y=0.0f; field05C=0.0f; velocityY=0.0f;
+        y=0.0f; verticalAcceleration=0.0f; velocityY=0.0f;
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {

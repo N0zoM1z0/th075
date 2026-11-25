@@ -10,7 +10,7 @@ case 0xCE: {
     if (animationStage==0 && (field3AC)==0)
         ClearMotionFields();
     if (animationStage>2) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;
@@ -25,7 +25,7 @@ case 0xCE: {
         if (animationStage==3) {
             velocityX=-11.0f;
             velocityY=17.5f;
-            field05C=0.8f;
+            verticalAcceleration=0.8f;
             SpawnAuxEffect(0x3C,x,y,1,1);
             field3AC=0;
         }

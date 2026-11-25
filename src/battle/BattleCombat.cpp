@@ -111,10 +111,10 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
 {
     if (!(attack->savedFrameInfo->attackFlags & 0x20) &&
         ((defender->savedFrameInfo->flags & 0x80) ||
-         ((defender->savedFrameInfo->flags & 0x100) && defender->field3CA > 0))) {
-        if (defender->field3CA > 0)
-            --defender->field3CA;
-        if (defender->field3CC == 0) {
+         ((defender->savedFrameInfo->flags & 0x100) && defender->conditionalHitsRemaining > 0))) {
+        if (defender->conditionalHitsRemaining > 0)
+            --defender->conditionalHitsRemaining;
+        if (defender->conditionalHitComboWindow == 0) {
             attacker->comboCount = 0;
             attacker->comboDamage = 0;
             attacker->comboRate = 1.0f;
@@ -125,7 +125,7 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         defender->hitstopFrames = attack->savedFrameInfo->defenderHitStop;
         defender->hitReactionVelocityX = attack->savedFrameInfo->reactionVelocityX;
         defender->hitReactionVelocityY = attack->savedFrameInfo->reactionVelocityY;
-        defender->field3CC = 15;
+        defender->conditionalHitComboWindow = 15;
         defender->hitFlashFrames = 8;
         if ((attack->savedFrameInfo->attackFlags & 0x100) > 0)
             defender->flashGauge = 30000;

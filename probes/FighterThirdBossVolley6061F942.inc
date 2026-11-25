@@ -31,7 +31,7 @@
                 }
             }
             if ((animationStage)>2 && (animationStage)<6) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (velocityY+y<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -46,7 +46,7 @@
             } else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
                 velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
-                field05C=2.0f;
+                verticalAcceleration=2.0f;
             }
             break;
         }
@@ -72,7 +72,7 @@
                 }
             }
             if ((animationStage)>2 && (animationStage)<6) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (velocityY+y<FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -87,7 +87,7 @@
             } else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
                 velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
-                field05C=2.0f;
+                verticalAcceleration=2.0f;
             } else if (animationStage == 3 && animationFrame != 0) {
                 // Keep the launch speed on later frames.
             }

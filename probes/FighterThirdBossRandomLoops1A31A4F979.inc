@@ -10,7 +10,7 @@ case 0x1A3: {
     if ((animationStage)==0 && (animationFrame)==0) {
         collisionResult=1;
     }
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {
@@ -41,7 +41,7 @@ case 0x1A4: {
     if ((animationStage)==0 && (animationFrame)==0) {
         collisionResult=1;
     }
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==5 && (animationFrame)==0) {

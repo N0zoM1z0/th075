@@ -23,7 +23,7 @@ case F642_CASE: {
         if ((velocityX)>FloatConstants::Zero)
             velocityX=0.0f;
     }
-    field490=(-scriptCounterF00)*FloatConstants::OneTenth;
+    opponentVelocityDeltaX=(-scriptCounterF00)*FloatConstants::OneTenth;
     if (scriptCounterF00>0)
         scriptCounterF00=scriptCounterF00-10;
     if (AdvanceNestedFrame()==animationStageCount)

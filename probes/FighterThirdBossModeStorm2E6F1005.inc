@@ -19,7 +19,7 @@ case 0x2E6: {
         fieldF04=0;
         fieldF06=30;
         fieldF08=1;
-        field05C=0.15f;
+        verticalAcceleration=0.15f;
     }
     if ((animationStage)==6 || (animationStage)==7) {
         if ((color[0])>30)
@@ -47,7 +47,7 @@ case 0x2E6: {
     }
     if ((animationStage)>13 && (animationStage)<19) {
         if (y>FloatConstants::Zero) {
-            velocityY=velocityY-field05C;
+            velocityY=velocityY-verticalAcceleration;
             if (y+velocityY<=FloatConstants::Zero) {
                 color[0]=255;
                 ClearMotionFields();

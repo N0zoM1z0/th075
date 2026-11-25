@@ -85,25 +85,25 @@ case 0x130: {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
         if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
-    if (y>FloatConstants::Zero) velocityY=velocityY-field05C;
+    if (y>FloatConstants::Zero) velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero && (animationStage)<12 && (animationStage)>5) {
         ResetSecondaryCounter(12);
-        y=0.0f; field05C=0.0f; velocityY=0.0f; velocityX=0.0f;
+        y=0.0f; verticalAcceleration=0.0f; velocityY=0.0f; velocityX=0.0f;
         break;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        velocityX=5.0f; velocityY=12.5f; field05C=1.0f; field3AC=0;
+        velocityX=5.0f; velocityY=12.5f; verticalAcceleration=1.0f; field3AC=0;
         PlaySharedSound(0x1C);
     }
     if ((animationStage)==12 && (animationFrame)==0) ResetSecondaryCounter(11);
     break;
 }
 case 0x131: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
-        y=0.0f; field05C=0.0f; velocityY=0.0f;
+        y=0.0f; verticalAcceleration=0.0f; velocityY=0.0f;
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
@@ -123,10 +123,10 @@ case 0x131: {
     break;
 }
 case 0x132: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(10);
-        y=0.0f; field05C=0.0f; velocityY=0.0f;
+        y=0.0f; verticalAcceleration=0.0f; velocityY=0.0f;
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) { remainingHits=1; collisionResult=0; }
@@ -136,21 +136,21 @@ case 0x132: {
 }
 case 0x133: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        velocityX=0.0f; velocityY=0.0f; field05C=0.0f; remainingHits=1; collisionResult=0;
+        velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; remainingHits=1; collisionResult=0;
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         velocityX=(velocityX)-FloatConstants::OneFifth;
         if ((velocityX)<FloatConstants::Zero) velocityX=0.0f;
         if (velocityY+y<=FloatConstants::Zero) {
-            velocityX=0.0f; velocityY=0.0f; field05C=0.0f; y=0.0f;
+            velocityX=0.0f; velocityY=0.0f; verticalAcceleration=0.0f; y=0.0f;
             ResetSecondaryCounter(11);
             break;
         }
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
     if ((animationStage)==5 && (animationFrame)==0) {
-        velocityX=10.0f; velocityY=8.0f; field05C=0.8f;
+        velocityX=10.0f; velocityY=8.0f; verticalAcceleration=0.8f;
         PlaySharedSound(0x1C);
     }
     break;
@@ -172,16 +172,16 @@ case 0x135: {
         velocityX=(velocityX)-FloatConstants::ThreeQuarters;
         if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
-    if (y>FloatConstants::Zero) velocityY=velocityY-field05C;
+    if (y>FloatConstants::Zero) velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero && velocityY<FloatConstants::Zero && (animationStage)==2) {
         ResetSecondaryCounter(3);
-        y=0.0f; field05C=0.0f; velocityY=0.0f;
+        y=0.0f; verticalAcceleration=0.0f; velocityY=0.0f;
         PlaySharedSound(0x1D);
         break;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==2 && (animationFrame)==0) {
-        remainingHits=1; collisionResult=0; velocityX=12.0f; velocityY=6.0f; field05C=0.8f;
+        remainingHits=1; collisionResult=0; velocityX=12.0f; velocityY=6.0f; verticalAcceleration=0.8f;
     }
     // Original 004639D2..00463A2C really nests stage 5 under stage 3.
     // Keep both observed guards; simplifying this contradictory path would

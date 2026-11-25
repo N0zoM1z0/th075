@@ -102,9 +102,9 @@ void Fighter::AdvancePosition()
 {
     if (hitstopFrames == 0 && opponent->opponentFreezeTimer == 0) {
         if ((CheckHorizontalLimits() * facing) *
-            (velocityX + field488 + opponent->field490) >= 0.0f)
+            (velocityX + bodySeparationVelocityX + opponent->opponentVelocityDeltaX) >= 0.0f)
             x += facing *
-                (velocityX + field488 + opponent->field490);
+                (velocityX + bodySeparationVelocityX + opponent->opponentVelocityDeltaX);
         if (x < 40.0f) x = 40.0f;
         if (x > 1240.0f) x = 1240.0f;
         y += velocityY;

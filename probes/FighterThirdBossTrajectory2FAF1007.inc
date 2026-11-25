@@ -20,7 +20,7 @@ case 0x2FA: {
         fieldF08=g_OptionsModeAt006714D0+2;
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetSecondaryCounter(15);
             ClearMotionFields();
@@ -44,7 +44,7 @@ case 0x2FA: {
     }
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=16.0f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
         velocityX=float(RecordedRange(0,6)+12);
         if ((facing==1 &&
              (x)>GeometryConstants::ElevenHundredEighty) ||

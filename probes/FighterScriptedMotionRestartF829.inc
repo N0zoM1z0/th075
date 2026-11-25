@@ -7,12 +7,12 @@ case F645_CASE: {
         ClearMotionFields();
         velocityX=F645_START_POS;
         velocityY=12.5f;
-        field05C=0.75f;
+        verticalAcceleration=0.75f;
         rotationZ=0.0f;
         ClearTransformFlag();
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y=0.0f;

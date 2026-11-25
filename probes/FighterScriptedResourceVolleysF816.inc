@@ -30,7 +30,7 @@
                 }
             }
             if ((animationStage)==3 || (animationStage)==2) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (velocityY+y<FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -46,7 +46,7 @@
                 if ((animationStage)==2 && (animationFrame)==0) {
                     velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
                     velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
-                    field05C=2.0f;
+                    verticalAcceleration=2.0f;
                 }
                 if ((animationStage)==4 && (animationFrame)==0)
                     ResetSecondaryCounter(3);
@@ -76,7 +76,7 @@
                 }
             }
             if ((animationStage)==3 || (animationStage)==2) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (velocityY+y<FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -92,7 +92,7 @@
                 if ((animationStage)==2 && (animationFrame)==0) {
                     velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneTwoHundredth;
                     velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneTwoHundredth;
-                    field05C=2.0f;
+                    verticalAcceleration=2.0f;
                 }
                 if ((animationStage)==4 && (animationFrame)==0)
                     ResetSecondaryCounter(3);

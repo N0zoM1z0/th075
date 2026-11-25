@@ -118,7 +118,7 @@ void ReimuFighter::Advance() {
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -133,7 +133,7 @@ void ReimuFighter::Advance() {
                 if ((animationStage) == 2) {
                     velocityX = 0.0f;
                     velocityY = 12.5f;
-                    field05C = 0.55f;
+                    verticalAcceleration = 0.55f;
                     field3AC = 0;
                 }
                 if ((animationStage) >= (animationStageCount))
@@ -150,7 +150,7 @@ void ReimuFighter::Advance() {
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -165,7 +165,7 @@ void ReimuFighter::Advance() {
                 if ((animationStage) == 2) {
                     velocityX = 4.0f;
                     velocityY = 12.5f;
-                    field05C = 0.55f;
+                    verticalAcceleration = 0.55f;
                     field3AC = 0;
                 }
                 if ((animationStage) >= (animationStageCount))
@@ -182,7 +182,7 @@ void ReimuFighter::Advance() {
             if ((animationStage) == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -197,7 +197,7 @@ void ReimuFighter::Advance() {
                 if ((animationStage) == 2) {
                     velocityX = -4.0f;
                     velocityY = 12.5f;
-                    field05C = 0.55f;
+                    verticalAcceleration = 0.55f;
                     field3AC = 0;
                 }
                 if ((animationStage) >= (animationStageCount))
@@ -206,9 +206,9 @@ void ReimuFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -280,14 +280,14 @@ case 0x48: {
     if (animationStage==0 && animationFrame==0) {
         velocityX = -hitReactionVelocityX;
         velocityY = hitReactionVelocityY;
-        field05C = 1.3f;
+        verticalAcceleration = 1.3f;
         collisionResult = 0;
     }
     if (animationStage==F605_STAGE48 && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F605_EARLY48);
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00 = (velocityX) * GeometryConstants::Hundred;
         scriptCounterF02 = (velocityY) * GeometryConstants::Hundred;
@@ -335,7 +335,7 @@ case 0x48: {
             if (animationStage == 0 && animationFrame == 0) {
                 velocityX = -hitReactionVelocityX;
                 velocityY = hitReactionVelocityY;
-                field05C = 0.8f;
+                verticalAcceleration = 0.8f;
                 collisionResult = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {

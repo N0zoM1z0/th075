@@ -9,7 +9,7 @@ case 0x4C: {
     // Original PE executes this global angle advance on *every* frame,
     // even when the once-only F613_COUNTER initialization is skipped.
     rotationZ = (rotationZ) + GeometryConstants::Thirty;
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
         PlaySharedSound(0x16);
         scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);

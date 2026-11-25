@@ -17,7 +17,7 @@ case 0x1F6: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if ((animationStage)>3 && (animationStage)<6) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(6);
@@ -79,7 +79,7 @@ case 0x1F7: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     if ((animationStage)>3 && (animationStage)<6) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ClearMotionFields();
             ResetSecondaryCounter(6);

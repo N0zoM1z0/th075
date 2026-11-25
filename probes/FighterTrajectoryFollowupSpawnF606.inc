@@ -7,7 +7,7 @@ case F606_ACTION: {
     if (animationStage==0 && animationFrame==0) {
         velocityX = -(hitReactionVelocityX);
         velocityY = hitReactionVelocityY;
-        field05C = F606_DRAG;
+        verticalAcceleration = F606_DRAG;
         collisionResult = 0;
     }
     if (animationStage==1 && animationFrame==0 && fieldF0C==0) {
@@ -19,7 +19,7 @@ case F606_ACTION: {
         ResetSecondaryCounter(F606_EARLY);
         break;
     }
-    velocityY = velocityY - field05C;
+    velocityY = velocityY - verticalAcceleration;
     if (velocityY + y <= FloatConstants::Zero) {
         scriptCounterF00=static_cast<short>((velocityX) * GeometryConstants::Hundred);
         scriptCounterF02=static_cast<short>((velocityY) * GeometryConstants::Hundred);

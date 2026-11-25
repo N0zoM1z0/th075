@@ -3,7 +3,7 @@
 case 0x59: {
     if ((animationStage)==3) {
         rotationZ=(rotationZ)+GeometryConstants::Forty;
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             scriptCounterF00=(velocityX)*GeometryConstants::Hundred;
             scriptCounterF02=(*(&velocityY))*GeometryConstants::Hundred;
@@ -17,7 +17,7 @@ case 0x59: {
     else if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=float(int(scriptCounterF00))*FloatConstants::OneFourHundredth;
         velocityY=float(-int(scriptCounterF02))*FloatConstants::OneHundredth;
-        field05C=0.7f;
+        verticalAcceleration=0.7f;
         ResetTransform(-7.0f,75.0f,0.0f);
     } else if (animationStage == 3 && animationFrame != 0) {
         // Keep the rebound motion on later frames.
@@ -81,7 +81,7 @@ case 0x61: {
         }
     }
     if ((animationStage)==3 || (animationStage)==4) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<FloatConstants::Zero) {
             y=0.0f; ClearMotionFields(); ResetSecondaryCounter(5);
             break;
@@ -95,7 +95,7 @@ case 0x61: {
         if ((animationStage)==3 && (animationFrame)==0) {
             velocityX=float(int(scriptCounterF00))*FloatConstants::OneTwoHundredth;
             velocityY=float(-int(scriptCounterF02))*FloatConstants::OneTwoHundredth;
-            field05C=2.0f;
+            verticalAcceleration=2.0f;
         }
         if (animationStage == 4 && animationFrame == 0)
             ResetSecondaryCounter(3);

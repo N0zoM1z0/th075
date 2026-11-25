@@ -1097,7 +1097,7 @@ void SuikaObject::Advance()
                 }
                 if (animationStage == 1) {
                     --field0DE;
-                    owner->field490 = (facing * owner->opponent->facing) * -6.0f *
+                    owner->opponentVelocityDeltaX = (facing * owner->opponent->facing) * -6.0f *
                         (((owner->opponent->x - x) * facing > 0.0f) * 2 - 1);
                     if (field0DE <= 0) {
                         owner->SpawnBattleEffect(826, x, y, facing, 0);
@@ -1222,7 +1222,7 @@ void SuikaObject::Advance()
                 }
                 if (animationStage == 1) {
                     --field0DE;
-                    owner->field490 = (facing * owner->opponent->facing) * -6.0f *
+                    owner->opponentVelocityDeltaX = (facing * owner->opponent->facing) * -6.0f *
                         (((owner->opponent->x - x) * facing > 0.0f) * 2 - 1);
                     if (field0DE <= 0) {
                         owner->SpawnBattleEffect(826, x, y, facing, 0);
@@ -2001,7 +2001,7 @@ void SuikaObject::Advance()
                 --field0DE;
             }
             if (animationStage == 2) {
-                owner->field490 = -(field0D8 * 0.1f) *
+                owner->opponentVelocityDeltaX = -(field0D8 * 0.1f) *
                     (facing * owner->opponent->facing) *
                     (((owner->opponent->x - x) * facing > 0.0f) * 2 - 1);
                 owner->SetCameraShake(2.0f);
@@ -2293,7 +2293,7 @@ void SuikaObject::Advance()
                 --field0DE;
             }
             if (animationStage == 2) {
-                owner->field490 = -(field0D8 * 0.1f) *
+                owner->opponentVelocityDeltaX = -(field0D8 * 0.1f) *
                     (facing * owner->opponent->facing) *
                     (((owner->opponent->x - x) * facing > 0.0f) * 2 - 1);
                 owner->SetCameraShake(2.0f);

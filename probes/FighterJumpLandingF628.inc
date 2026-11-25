@@ -15,7 +15,7 @@ case F628_CASE: {
             velocityX=0.0f;
     }
     if (CheckHorizontalLimits() && field3BE)
-        field490=(velocityX)*FloatConstants::ThreeQuartersDouble;
+        opponentVelocityDeltaX=(velocityX)*FloatConstants::ThreeQuartersDouble;
     if (AdvanceNestedFrame()==animationStageCount)
         ResetPrimaryCounters(0);
     if (animationStage==3 && animationFrame==0 && scriptCounterF00<F628_LIMIT) {

@@ -1112,14 +1112,14 @@ void MarisaObject::Advance()
             color[3] = 255;
             velocityX = -30.0f;
             velocityY = 10.0f;
-            field05C = 0.01f;
+            verticalAcceleration = 0.01f;
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         if (x > GeometryConstants::FourteenHundred || x < GeometryConstants::NegativeTwoHundred) {
             ClearFrameInfo();
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(12);
         }
@@ -2237,7 +2237,7 @@ void MarisaObject::Advance()
         if (owner->action == 751 && owner->animationStage < 12) {
             x = owner->x + static_cast<float>(facing * 32);
             y = (owner->y) + GeometryConstants::Ninety;
-            owner->field490 = (facing * owner->opponent->facing) * GeometryConstants::Six *
+            owner->opponentVelocityDeltaX = (facing * owner->opponent->facing) * GeometryConstants::Six *
                 (2 * ((owner->opponent->x - owner->x) * facing > FloatConstants::Zero ? 1 : 0) - 1);
             owner->SetCameraShake(3.0f);
         }
@@ -2297,7 +2297,7 @@ void MarisaObject::Advance()
         if (owner->action == 752 && owner->animationStage < 12) {
             x = owner->x + static_cast<float>(facing * 32);
             y = (owner->y) + GeometryConstants::Ninety;
-            owner->field490 = (facing * owner->opponent->facing) * GeometryConstants::Six *
+            owner->opponentVelocityDeltaX = (facing * owner->opponent->facing) * GeometryConstants::Six *
                 (2 * ((owner->opponent->x - owner->x) * facing > FloatConstants::Zero ? 1 : 0) - 1);
             owner->SetCameraShake(3.0f);
         }

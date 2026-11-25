@@ -108,7 +108,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (animationStage > 2) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -123,7 +123,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = 0.0f;
                 velocityY = 16.0f;
-                field05C = 0.8f;
+                verticalAcceleration = 0.8f;
                 field3AC = 0;
             }
             break;
@@ -136,7 +136,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (animationStage > 2) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -149,7 +149,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = 5.5f;
                 velocityY = 16.0f;
-                field05C = 0.8f;
+                verticalAcceleration = 0.8f;
                 field3AC = 0;
             }
             break;
@@ -162,7 +162,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (animationStage > 2) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -175,14 +175,14 @@ void YoumuFighter::Advance() {
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = -5.5f;
                 velocityY = 16.0f;
-                field05C = 0.8f;
+                verticalAcceleration = 0.8f;
                 field3AC = 0;
             }
             break;
         case 0x9:
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -260,7 +260,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0) {
                 velocityX = -hitReactionVelocityX;
                 velocityY = hitReactionVelocityY;
-                field05C = 0.8f;
+                verticalAcceleration = 0.8f;
                 collisionResult = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
@@ -299,7 +299,7 @@ void YoumuFighter::Advance() {
         case 0x59: {
             if (animationStage == 3) {
                 rotationZ = (rotationZ) + GeometryConstants::Forty;
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (velocityY + y <= FloatConstants::Zero) {
                     scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
                     scriptCounterF02 = static_cast<short>((*(&velocityY)) * GeometryConstants::Hundred);
@@ -318,7 +318,7 @@ void YoumuFighter::Advance() {
             else if (animationStage == 3 && animationFrame == 0) {
                 velocityX = static_cast<float>(scriptCounterF00) * FloatConstants::OneFourHundredth;
                 velocityY = static_cast<float>(-scriptCounterF02) * FloatConstants::OneHundredth;
-                field05C = 0.7f;
+                verticalAcceleration = 0.7f;
                 ResetTransform(0.0f, 95.0f, 0.0f);
             } else if (animationStage == 3 && animationFrame != 0) {
                 // Keep the rebound motion on later frames.
@@ -327,7 +327,7 @@ void YoumuFighter::Advance() {
         }
         case 0x5D: {
             if (animationStage < 19 && y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     y = 0.0f;
                     ClearMotionFields();
@@ -350,7 +350,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 6 && animationFrame == 0) {
                 velocityY = 8.0f;
                 velocityX = 13.5f;
-                field05C = 0.6f;
+                verticalAcceleration = 0.6f;
             }
             if (animationStage == 19 && animationFrame == 0)
                 ResetSecondaryCounter(18);
@@ -361,7 +361,7 @@ void YoumuFighter::Advance() {
         }
         case 0x5E: {
             if (animationStage < 18 && y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     y = 0.0f;
                     ClearMotionFields();
@@ -383,7 +383,7 @@ void YoumuFighter::Advance() {
             if (animationStage == 6 && animationFrame == 0) {
                 velocityY = 8.0f;
                 velocityX = -13.5f;
-                field05C = 0.6f;
+                verticalAcceleration = 0.6f;
             }
             if (animationStage == 18 && animationFrame == 0)
                 ResetSecondaryCounter(16);

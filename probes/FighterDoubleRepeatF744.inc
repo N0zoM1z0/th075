@@ -11,7 +11,7 @@
                 velocityY=(*(&velocityY))*FloatConstants::Quarter;
             }
             if ((animationStage)>5) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     y=0.0f;
@@ -58,7 +58,7 @@
                 velocityY=(*(&velocityY))*FloatConstants::Quarter;
             }
             if ((animationStage)>5) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ClearMotionFields();
                     y=0.0f;

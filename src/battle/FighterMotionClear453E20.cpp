@@ -8,5 +8,5 @@ void Fighter::ClearMotionFields()
     velocityX = 0.0f;
     velocityY = 0.0f;
     field058 = 0;
-    field05C = 0.0f;
+    verticalAcceleration = 0.0f;
 }

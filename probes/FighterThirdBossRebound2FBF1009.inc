@@ -26,7 +26,7 @@ case 0x2FB: {
             color[0]=0;
     }
     if ((animationStage)>8 && (animationStage)<13) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if ((color[0])<235)
             color[0]=(color[0])+20;
         else
@@ -101,7 +101,7 @@ case 0x2FB: {
             velocityX=float(-(RecordedRange(0,180)+90) *
                 (facing));
         velocityY=3.0f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
     }
     if ((animationStage)==9 && (animationFrame)==0) {
         if (x >

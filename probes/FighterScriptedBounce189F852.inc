@@ -8,7 +8,7 @@ case 0x189: {
         remainingHits=1;
         collisionResult=0;
         velocityX=12.5f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
     }
     if (*(&y)==FloatConstants::Zero) {
         velocityX=(velocityX)-FloatConstants::One;
@@ -18,7 +18,7 @@ case 0x189: {
         }
     }
     if (y>FloatConstants::Zero && (animationStage)<7) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<FloatConstants::Zero) {
             y=0.0f;
             velocityX=(velocityX)*FloatConstants::Half;
@@ -31,7 +31,7 @@ case 0x189: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=15.0f;
         velocityY=8.5f;
-        field05C=0.85f;
+        verticalAcceleration=0.85f;
         PlaySharedSound(0x1D);
     }
     return;

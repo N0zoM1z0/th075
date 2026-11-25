@@ -71,7 +71,7 @@
                 velocityY=17.5f;
                 if (RecordedRange(0,100)<50)
                     velocityY=15.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)==10 && (animationFrame)==0)
                 ResetSecondaryCounter(8);

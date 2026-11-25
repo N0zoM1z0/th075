@@ -16,14 +16,14 @@
                 PlaySound(11);
                 velocityY=-10.0f;
                 velocityX=30.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)<4 && y>FloatConstants::Zero) {
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(4);
                     y=0.0f;
                     velocityY=0.0f;
-                    field05C=0.0f;
+                    verticalAcceleration=0.0f;
                     break;
                 }
             }

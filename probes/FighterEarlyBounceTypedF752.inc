@@ -7,7 +7,7 @@
         case 0x59: {
             if ((animationStage)>1) {
                 rotationZ=(rotationZ)+GeometryConstants::Forty;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (velocityY+y<=FloatConstants::Zero) {
                     scriptCounterF00=(velocityX)*GeometryConstants::Hundred;
                     scriptCounterF02=(*(&velocityY))*GeometryConstants::Hundred;
@@ -26,14 +26,14 @@
             else if ((animationStage)==2 && (animationFrame)==0) {
                 velocityX=static_cast<float>(scriptCounterF00)*FloatConstants::OneFourHundredth;
                 velocityY=static_cast<float>(-scriptCounterF02)*FloatConstants::OneHundredth;
-                field05C=0.7f;
+                verticalAcceleration=0.7f;
                 ResetTransform(0.0f,95.0f,0.0f);
             }
             break;
         }
         case 0x5D: {
             if ((animationStage)<8 && y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -55,7 +55,7 @@
             if ((animationStage)==3 && (animationFrame)==0) {
                 velocityY=8.0f;
                 velocityX=15.5f;
-                field05C=0.75f;
+                verticalAcceleration=0.75f;
             }
             if ((animationStage)==8 && (animationFrame)==0)
                 ResetSecondaryCounter(6);
@@ -63,7 +63,7 @@
         }
         case 0x5E: {
             if ((animationStage)<8 && y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     y=0.0f;
                     ClearMotionFields();
@@ -85,7 +85,7 @@
             if ((animationStage)==3 && (animationFrame)==0) {
                 velocityY=8.0f;
                 velocityX=-15.5f;
-                field05C=0.75f;
+                verticalAcceleration=0.75f;
             }
             if ((animationStage)==8 && (animationFrame)==0)
                 ResetSecondaryCounter(6);

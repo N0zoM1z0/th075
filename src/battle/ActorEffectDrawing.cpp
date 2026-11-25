@@ -67,7 +67,7 @@ void Fighter::Render() {
     TRANSFORM(transformedQuad)->TranslateQuad(x - facing * (frameInfo->originX), -y - (frameInfo->originY), 0);
     if (g_RenderByte0067161C == 0) {
         spriteHistory->AppendElement(frameInfo->textureIndex, x, y, transformedQuad, spriteOffset, drawColor, 1);
-        if (g_FramePresentToggle != 0 && spriteHistoryHoldFrames <= 0) {
+        if (g_FramePresentToggle != 0 && spriteHistoryRetentionFrames <= 0) {
             spriteHistory->RemoveFrontIfPresent();
             spriteHistory->RemoveFrontIfPresent();
         }

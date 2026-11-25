@@ -4,7 +4,7 @@ case 0x49: {
     if (animationStage==0 && animationFrame==0) {
         velocityX = -(hitReactionVelocityX);
         velocityY = hitReactionVelocityY;
-        field05C = 0.8f;
+        verticalAcceleration = 0.8f;
         collisionResult = 0;
     }
     if (velocityY + y <= FloatConstants::Zero) {

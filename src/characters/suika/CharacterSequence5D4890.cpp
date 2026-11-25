@@ -48,7 +48,7 @@ void SuikaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (fieldF28 > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -152,7 +152,7 @@ void SuikaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (fieldF28 > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -256,7 +256,7 @@ void SuikaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (fieldF28 > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -361,7 +361,7 @@ void SuikaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (fieldF28 > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -494,7 +494,7 @@ void SuikaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (opponent->action != 9) {
             opponent->x = 800.0f;
@@ -616,7 +616,7 @@ void SuikaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (opponent->action != 9) {
             opponent->x = 800.0f;

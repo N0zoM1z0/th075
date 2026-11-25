@@ -19,7 +19,7 @@
                 if (velocityY<FloatConstants::Zero) velocityY=0.0f;
             }
             if ((animationStage)>10 && (animationStage)<14) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0xE);
                     break;
@@ -29,7 +29,7 @@
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=15.0f;
-                field05C=0.85f;
+                verticalAcceleration=0.85f;
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnBattleEffect(0x326,x,0.0f,

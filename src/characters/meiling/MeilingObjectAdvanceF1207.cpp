@@ -2432,10 +2432,10 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 7 && animationFrame == 0 && owner->action != 771 && owner->action != 772) {
                     velocityY = 15.0f;
-                    field05C = -1.0f;
+                    verticalAcceleration = -1.0f;
                 }
                 if (animationStage == 7 && owner->action != 772 && owner->action != 771) {
-                    velocityY += field05C;
+                    velocityY += verticalAcceleration;
                     y += velocityY;
                 }
                 if (animationStage == 7 && (owner->action == 772 || owner->action == 771)) {

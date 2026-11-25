@@ -48,7 +48,7 @@ void MarisaFighter::AdvanceSequence()
             ResetPrimaryCounters(9);
             velocityX = 7.75f;
             velocityY = 18.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (sequenceTimer > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -81,7 +81,7 @@ void MarisaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (opponent->action != 9) {
             opponent->x = 800.0f;
@@ -174,7 +174,7 @@ void MarisaFighter::AdvanceSequence()
             ResetPrimaryCounters(9);
             velocityX = 7.75f;
             velocityY = 18.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (sequenceTimer > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -207,7 +207,7 @@ void MarisaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (opponent->action != 9) {
             opponent->x = 800.0f;
@@ -300,7 +300,7 @@ void MarisaFighter::AdvanceSequence()
             ResetPrimaryCounters(9);
             velocityX = 7.75f;
             velocityY = 18.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (sequenceTimer > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -333,7 +333,7 @@ void MarisaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (opponent->action != 9) {
             opponent->x = 800.0f;
@@ -428,7 +428,7 @@ void MarisaFighter::AdvanceSequence()
             ResetPrimaryCounters(9);
             velocityX = 7.75f;
             velocityY = 18.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (sequenceTimer > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -461,7 +461,7 @@ void MarisaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (opponent->action != 9) {
             opponent->x = 800.0f;
@@ -554,7 +554,7 @@ void MarisaFighter::AdvanceSequence()
             ResetPrimaryCounters(9);
             velocityX = 7.75f;
             velocityY = 18.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (sequenceTimer > 300) {
             if (stageLayerAlpha[0] >= 5) {
@@ -580,7 +580,7 @@ void MarisaFighter::AdvanceSequence()
             OPPONENT_ACTOR->ResetPrimaryCounters(9);
             opponent->velocityX = 7.75f;
             opponent->velocityY = 18.0f;
-            opponent->field05C = 0.6f;
+            opponent->verticalAcceleration = 0.6f;
         }
         if (opponent->action != 9) {
             opponent->x = 800.0f;
@@ -683,7 +683,7 @@ void MarisaFighter::AdvanceSequence()
             ResetPrimaryCounters(9);
             velocityX = 7.75f;
             velocityY = 18.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         if (sequenceTimer > 300) {
             if (stageLayerAlpha[0] >= 5) {

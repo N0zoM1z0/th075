@@ -12,12 +12,12 @@
                 PlaySound(11);
                 velocityY=10.0f;
                 velocityX=30.0f;
-                field05C=0.45f;
+                verticalAcceleration=0.45f;
                 scriptCounterF00=1;
             }
             if ((animationStage)<9 && y>FloatConstants::Zero && (animationStage)>3) {
                 velocityX=(velocityX)-FloatConstants::OneAndHalf;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if ((velocityX)<FloatConstants::Two)
                     velocityX=2.0f;
                 if (y+velocityY<=FloatConstants::Zero) {
@@ -64,7 +64,7 @@
             }
             if ((animationStage)<25 && y>FloatConstants::Zero && (animationStage)>14) {
                 velocityX=(velocityX)-FloatConstants::FourFifths;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if ((velocityX)<FloatConstants::Three)
                     velocityX=3.0f;
                 if (y+velocityY<=FloatConstants::Zero) {
@@ -87,7 +87,7 @@
                 PlaySound(11);
                 velocityY=9.0f;
                 velocityX=20.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if ((animationStage)>6 && (animationStage)<16) {
                 SpawnBattleEffect(0x329,

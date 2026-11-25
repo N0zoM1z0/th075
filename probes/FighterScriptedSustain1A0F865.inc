@@ -14,7 +14,7 @@ case 0x1A0: {
         y=0.0f;
     }
     if ((animationStage)>3)
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)

@@ -7,7 +7,7 @@ case R1185_ACTION: {
     }
     if ((animationStage)==0 && (field3AC)==0) ClearMotionFields();
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y=0.0f;
@@ -25,7 +25,7 @@ case R1185_ACTION: {
         if ((animationStage)==2) {
             velocityX=R1185_X_SPEED;
             velocityY=R1185_Y_SPEED;
-            field05C=0.65f;
+            verticalAcceleration=0.65f;
             field3AC=0;
             SpawnAuxEffect(0x3C,x,y,1,1);
         }

@@ -12,14 +12,14 @@ case 0xCB: {
         scriptCounterF00=0;
         velocityX=0.0f;
         velocityY=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
     }
     if (y>FloatConstants::Zero && (animationStage)>0) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             velocityX=0.0f;
             velocityY=0.0f;
-            field05C=0.0f;
+            verticalAcceleration=0.0f;
             y=0.0f;
             animationFrame=0;
             ResetPrimaryCounters(0xA);
@@ -31,7 +31,7 @@ case 0xCB: {
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-11.0f;
         velocityY=5.0f;
-        field05C=0.6f;
+        verticalAcceleration=0.6f;
         SpawnAuxEffect(0x7D,
             float((facing)*68)+(x),
             (*(&y))+GeometryConstants::Seventy,

@@ -13,10 +13,10 @@
                 fieldF04=0;
                 velocityX=15.0f;
                 velocityY=10.0f;
-                field05C=0.3f;
+                verticalAcceleration=0.3f;
             }
             if ((animationStage)<18) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(0x12);
                     y=0.0f;

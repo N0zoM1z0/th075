@@ -113,7 +113,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -130,7 +130,7 @@ void RemiliaFighter::Advance() {
                 if (animationStage == 3) {
                     velocityX = 0.0f;
                     velocityY = 19.0f;
-                    field05C = 0.95f;
+                    verticalAcceleration = 0.95f;
                 }
                 if (animationStage >= (animationStageCount))
                     animationStage -= 2;
@@ -146,7 +146,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 0 && (field3AC) == 0)
                 ClearMotionFields();
             if (y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -163,7 +163,7 @@ void RemiliaFighter::Advance() {
                 if (animationStage == 3) {
                     velocityX = 7.0f;
                     velocityY = 18.0f;
-                    field05C = 0.95f;
+                    verticalAcceleration = 0.95f;
                 }
                 if (animationStage >= (animationStageCount))
                     animationStage -= 2;
@@ -181,7 +181,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 3 && velocityY < FloatConstants::Four)
                 ResetSecondaryCounter(4);
             if (y > FloatConstants::Zero) {
-                velocityY = velocityY - field05C;
+                velocityY = velocityY - verticalAcceleration;
                 if (y + velocityY <= FloatConstants::Zero) {
                     ResetPrimaryCounters(10);
                     y = 0.0f;
@@ -197,7 +197,7 @@ void RemiliaFighter::Advance() {
                     velocityX = -7.0f;
                     field3AC = 0;
                     velocityY = 18.0f;
-                    field05C = 0.95f;
+                    verticalAcceleration = 0.95f;
                 }
                 if (animationStage >= (animationStageCount))
                     animationStage -= 2;
@@ -205,9 +205,9 @@ void RemiliaFighter::Advance() {
             }
             break;
         case 0x9:
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -287,7 +287,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0) {
                 velocityX = -hitReactionVelocityX;
                 velocityY = hitReactionVelocityY;
-                field05C = 0.8f;
+                verticalAcceleration = 0.8f;
                 collisionResult = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
@@ -698,7 +698,7 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage<25 && y>FloatConstants::Zero && animationStage>15) {
                 velocityX=(velocityX)-FloatConstants::FourFifths;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if ((velocityX)<FloatConstants::Three)
                     velocityX=3.0f;
                 if (y+velocityY<=FloatConstants::Zero) {
@@ -728,7 +728,7 @@ void RemiliaFighter::Advance() {
                 velocityY=9.0f;
                 velocityX=20.0f;
                 UpdateGaugeTimer(500);
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if (animationStage>6 && animationStage<15) {
                 SpawnBattleEffect(0x329,
@@ -763,7 +763,7 @@ void RemiliaFighter::Advance() {
                     velocityY=0.0f;
             }
             if (animationStage>10 && animationStage<14) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(14);
                     break;
@@ -775,7 +775,7 @@ void RemiliaFighter::Advance() {
                 ResetPrimaryCounters(0);
             if (animationStage==4 && animationFrame==0) {
                 velocityY=15.0f;
-                field05C=0.85f;
+                verticalAcceleration=0.85f;
             }
             if (animationStage==5 && animationFrame==0) {
                 SpawnBattleEffect(0x32A,
@@ -846,7 +846,7 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage<25 && y>FloatConstants::Zero && animationStage>15) {
                 velocityX=(velocityX)-FloatConstants::FourFifths;
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if ((velocityX)<FloatConstants::Three)
                     velocityX=3.0f;
                 if (y+velocityY<=FloatConstants::Zero) {
@@ -880,7 +880,7 @@ void RemiliaFighter::Advance() {
                 PlaySound(15);
                 velocityY=10.5f;
                 velocityX=25.0f;
-                field05C=0.8f;
+                verticalAcceleration=0.8f;
             }
             if (animationStage>6 && animationStage<15) {
                 SpawnBattleEffect(0x32E,

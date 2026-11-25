@@ -123,7 +123,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -138,7 +138,7 @@ void YukariFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = 0.0f;
                 velocityY = 12.5f;
-                field05C = 0.55f;
+                verticalAcceleration = 0.55f;
                 field3AC = 0;
             }
             if (animationStage >= animationStageCount)
@@ -157,7 +157,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -172,7 +172,7 @@ void YukariFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = 4.0f;
                 velocityY = 12.5f;
-                field05C = 0.55f;
+                verticalAcceleration = 0.55f;
                 field3AC = 0;
             }
             if (animationStage >= animationStageCount)
@@ -191,7 +191,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero &&
-            ((velocityY = velocityY - field05C), y + velocityY <= FloatConstants::Zero)) {
+            ((velocityY = velocityY - verticalAcceleration), y + velocityY <= FloatConstants::Zero)) {
             ResetPrimaryCounters(10);
             y = 0.0f;
             ClearMotionFields();
@@ -204,7 +204,7 @@ void YukariFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = -4.0f;
                 velocityY = 12.5f;
-                field05C = 0.55f;
+                verticalAcceleration = 0.55f;
             }
             if (animationStage >= animationStageCount)
                 animationStage -= 2;
@@ -214,9 +214,9 @@ void YukariFighter::Advance() {
     }
 
     case 0x9: {
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -254,7 +254,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE != 0)
-            field490 = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
+            opponentVelocityDeltaX = static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -273,7 +273,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -294,7 +294,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -316,7 +316,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -344,7 +344,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -365,7 +365,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -386,7 +386,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -408,7 +408,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -436,7 +436,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -457,7 +457,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -478,7 +478,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -500,7 +500,7 @@ void YukariFighter::Advance() {
         }
         if (CheckHorizontalLimits() &&
             field3BE) {
-            field490 =
+            opponentVelocityDeltaX =
                 static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -521,7 +521,7 @@ void YukariFighter::Advance() {
             velocityY += hitReactionVelocityY;
             if (velocityY < FloatConstants::Two)
                 velocityY = 2.0f;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             if (velocityY > GeometryConstants::Twelve)
                 velocityY = 12.0f;
             collisionResult = 0;
@@ -536,7 +536,7 @@ void YukariFighter::Advance() {
             ResetSecondaryCounter(3);
             break;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -556,7 +556,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
@@ -568,7 +568,7 @@ void YukariFighter::Advance() {
             ResetSecondaryCounter(3);
             break;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -588,7 +588,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 1.3f;
+            verticalAcceleration = 1.3f;
             collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
@@ -601,7 +601,7 @@ void YukariFighter::Advance() {
                 SpawnBattleEffect(999, x, y, facing, 0);
             }
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -621,7 +621,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
@@ -659,7 +659,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
@@ -680,13 +680,13 @@ void YukariFighter::Advance() {
             ResetPrimaryCounters(0x4C);
             velocityX = -(velocityX) * FloatConstants::Quarter;
             velocityY = 15.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
             SetCameraShake(2.0f);
             PlaySharedSound(0x16);
             scriptCounterF00 = 0;
             break;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -711,7 +711,7 @@ void YukariFighter::Advance() {
         }
 
         rotationZ = (rotationZ) + GeometryConstants::Thirty;
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             Fighter::PlaySharedSound(0x16);
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -733,7 +733,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
-            field05C = 0.8f;
+            verticalAcceleration = 0.8f;
             collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
@@ -777,7 +777,7 @@ void YukariFighter::Advance() {
     case 0x59: {
         if (animationStage == 3) {
             rotationZ = (rotationZ) + GeometryConstants::Forty;
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = (velocityX) * GeometryConstants::Hundred;
                 scriptCounterF02 = (velocityY) * GeometryConstants::Hundred;
@@ -792,7 +792,7 @@ void YukariFighter::Advance() {
         else if (animationStage == 3 && animationFrame == 0) {
             velocityX = float(int(scriptCounterF00)) * FloatConstants::OneFourHundredth;
             velocityY = float(-int(scriptCounterF02)) * FloatConstants::OneHundredth;
-            field05C = 0.7f;
+            verticalAcceleration = 0.7f;
             ResetTransform(-7.0f, 75.0f, 0.0f);
         }
         break;
@@ -895,7 +895,7 @@ void YukariFighter::Advance() {
             }
         }
         if (animationStage == 3 || animationStage == 4) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (velocityY + y < FloatConstants::Zero) {
                 y = 0.0f; ClearMotionFields(); ResetSecondaryCounter(5);
                 break;
@@ -909,7 +909,7 @@ void YukariFighter::Advance() {
             if (animationStage == 2 && animationFrame == 0) {
                 velocityX = float(int(scriptCounterF00)) * FloatConstants::OneTwoHundredth;
                 velocityY = float(-int(scriptCounterF02)) * FloatConstants::OneTwoHundredth;
-                field05C = 2.0f;
+                verticalAcceleration = 2.0f;
             }
             if (animationStage == 5 && animationFrame == 0)
                 ResetSecondaryCounter(4);
@@ -991,9 +991,9 @@ void YukariFighter::Advance() {
     }
 
     case 0x8A: {
-        if (field05C == FloatConstants::Zero)
-            field05C = 0.6f;
-        velocityY -= field05C;
+        if (verticalAcceleration == FloatConstants::Zero)
+            verticalAcceleration = 0.6f;
+        velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(0x8B);
             y = 0.0f;
@@ -1028,7 +1028,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 5) {
@@ -1051,7 +1051,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1074,7 +1074,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationStage == 3 && animationFrame == 0 && scriptCounterF00 < 7) {
@@ -1088,7 +1088,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 14.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
             collisionResult = 0;
         }
         if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
@@ -1100,7 +1100,7 @@ void YukariFighter::Advance() {
             ResetSecondaryCounter(3);
             break;
         }
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
             scriptCounterF02 = static_cast<short>((velocityY) * GeometryConstants::Hundred);
@@ -1133,7 +1133,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         break;
@@ -1157,7 +1157,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         break;
@@ -1181,7 +1181,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         break;
@@ -1205,7 +1205,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         break;
@@ -1229,7 +1229,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         break;
@@ -1253,7 +1253,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         break;
@@ -1268,12 +1268,12 @@ void YukariFighter::Advance() {
 
             velocityX = -6.0f;
             velocityY = 8.0f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
         }
 
         if (y >= FloatConstants::Zero) {
 
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1302,7 +1302,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1324,7 +1324,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1346,7 +1346,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         return;
@@ -1367,7 +1367,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1388,7 +1388,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1409,7 +1409,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (CheckHorizontalLimits() && field3BE)
-            field490 = (velocityX) * FloatConstants::ThreeQuartersDouble;
+            opponentVelocityDeltaX = (velocityX) * FloatConstants::ThreeQuartersDouble;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(2);
         return;
@@ -1434,7 +1434,7 @@ void YukariFighter::Advance() {
             if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00) * FloatConstants::OneTenth;
+        opponentVelocityDeltaX = (-scriptCounterF00) * FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00 - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1461,7 +1461,7 @@ void YukariFighter::Advance() {
             if ((velocityX) > FloatConstants::Zero)
                 velocityX = 0.0f;
         }
-        field490 = (-scriptCounterF00) * FloatConstants::OneTenth;
+        opponentVelocityDeltaX = (-scriptCounterF00) * FloatConstants::OneTenth;
         if (scriptCounterF00 > 0)
             scriptCounterF00 = scriptCounterF00 - 10;
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1474,12 +1474,12 @@ void YukariFighter::Advance() {
             ClearMotionFields();
             velocityX = 8.0f;
             velocityY = 12.5f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1499,12 +1499,12 @@ void YukariFighter::Advance() {
             ClearMotionFields();
             velocityX = -8.0f;
             velocityY = 12.5f;
-            field05C = 0.75f;
+            verticalAcceleration = 0.75f;
             rotationZ = 0.0f;
             ClearTransformFlag();
         }
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(0xA);
                 y = 0.0f;
@@ -1565,11 +1565,11 @@ void YukariFighter::Advance() {
             ClearMotionFields();
         }
         if (y > FloatConstants::Zero && animationStage > 1 && animationStage < 4) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field05C = 0.0f;
+                verticalAcceleration = 0.0f;
                 y = 0.0f;
                 animationFrame = 0;
                 ResetSecondaryCounter(4);
@@ -1581,7 +1581,7 @@ void YukariFighter::Advance() {
         if (animationStage == 2 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 5.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
             SpawnAuxEffect(0x7D, x,
                 (y) + GeometryConstants::Eighty, -facing, 1);
             SpawnAuxEffect(0x7E, x, (y) + GeometryConstants::Eighty, -facing, 1);
@@ -1595,9 +1595,9 @@ void YukariFighter::Advance() {
 
     case 0xCA: {
         SetCommandSelection(3, 4, 0xFF);
-        if (animationStage == 0 && animationFrame == 0) { velocityX = 0.0f; velocityY = 0.0f; field05C = 0.0f; }
+        if (animationStage == 0 && animationFrame == 0) { velocityX = 0.0f; velocityY = 0.0f; verticalAcceleration = 0.0f; }
         if (animationStage == 2 && animationFrame == 0) {
-            velocityX = 9.0f; velocityY = 5.0f; field05C = 0.45f;
+            velocityX = 9.0f; velocityY = 5.0f; verticalAcceleration = 0.45f;
             SpawnAuxEffect(0x7D, float(facing * 80) + (x),
                 (y) + GeometryConstants::HundredTen, facing, 1);
             SpawnAuxEffect(0x7E, x, (y) + GeometryConstants::HundredTen,
@@ -1605,9 +1605,9 @@ void YukariFighter::Advance() {
             PlaySharedSound(31);
         }
         if (y > FloatConstants::Zero && animationStage > 1) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
-                velocityX = 0.0f; velocityY = 0.0f; field05C = 0.0f; y = 0.0f; animationFrame = 0;
+                velocityX = 0.0f; velocityY = 0.0f; verticalAcceleration = 0.0f; y = 0.0f; animationFrame = 0;
                 ResetPrimaryCounters(10);
                 break;
             }
@@ -1619,11 +1619,11 @@ void YukariFighter::Advance() {
 
     case 0xCB: {
         SetCommandSelection(3, 4, 0xFF);
-        if (animationStage == 0 && animationFrame == 0) { scriptCounterF00 = 0; velocityX = 0.0f; velocityY = 0.0f; field05C = 0.0f; }
+        if (animationStage == 0 && animationFrame == 0) { scriptCounterF00 = 0; velocityX = 0.0f; velocityY = 0.0f; verticalAcceleration = 0.0f; }
         if (y > FloatConstants::Zero && animationStage > 0) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (velocityY + y <= FloatConstants::Zero) {
-                velocityX = 0.0f; velocityY = 0.0f; field05C = 0.0f; y = 0.0f; animationFrame = 0;
+                velocityX = 0.0f; velocityY = 0.0f; verticalAcceleration = 0.0f; y = 0.0f; animationFrame = 0;
                 ResetPrimaryCounters(10);
                 break;
             }
@@ -1631,7 +1631,7 @@ void YukariFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
         if (animationStage == 1 && animationFrame == 0) {
-            velocityX = -9.0f; velocityY = 5.0f; field05C = 0.45f;
+            velocityX = -9.0f; velocityY = 5.0f; verticalAcceleration = 0.45f;
             SpawnAuxEffect(0x7D, x, (y) + GeometryConstants::HundredTwenty,
                 -facing, 1);
             SpawnAuxEffect(0x7E, x, (y) + GeometryConstants::HundredTwenty,
@@ -1649,7 +1649,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1668,7 +1668,7 @@ void YukariFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = 0.0f;
                 velocityY = 20.0f;
-                field05C = 0.65f;
+                verticalAcceleration = 0.65f;
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
@@ -1686,7 +1686,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1705,7 +1705,7 @@ void YukariFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = 9.0f;
                 velocityY = 15.0f;
-                field05C = 0.65f;
+                verticalAcceleration = 0.65f;
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
@@ -1723,7 +1723,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
         if (y > FloatConstants::Zero) {
-            velocityY = velocityY - field05C;
+            velocityY = velocityY - verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y = 0.0f;
@@ -1739,7 +1739,7 @@ void YukariFighter::Advance() {
             if (animationStage == 4) {
                 velocityX = -9.0f;
                 velocityY = 15.0f;
-                field05C = 0.65f;
+                verticalAcceleration = 0.65f;
                 field3AC = 0;
                 SpawnAuxEffect(0x3C, x, y, 1, 1);
             }
@@ -1768,8 +1768,8 @@ void YukariFighter::Advance() {
             facing = -facing;
             velocityX = -(velocityX);
         }
-        if (field05C == (FloatConstants::Zero)) field05C = 0.6f;
-        velocityY = velocityY - field05C;
+        if (verticalAcceleration == (FloatConstants::Zero)) verticalAcceleration = 0.6f;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
@@ -1819,7 +1819,7 @@ void YukariFighter::Advance() {
                     facing, 1);
         }
 
-        velocityY = velocityY - (field05C) * FloatConstants::Quarter;
+        velocityY = velocityY - (verticalAcceleration) * FloatConstants::Quarter;
         if (AdvanceNestedFrame() == animationStageCount) {
             if (static_cast<unsigned int>(inputD) > 0)
                 ResetSecondaryCounter(2);
@@ -1923,11 +1923,11 @@ void YukariFighter::Advance() {
     }
 
     case 0x130: {
-        velocityY = velocityY - field05C;
+        velocityY = velocityY - verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(0xA);
             y = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             return;
         }
@@ -1943,11 +1943,11 @@ void YukariFighter::Advance() {
     }
 
     case 0x131: {
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             return;
         }
@@ -2117,11 +2117,11 @@ void YukariFighter::Advance() {
     }
 
     case 0x141: {
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(10);
             y = 0.0f;
-            field05C = 0.0f;
+            verticalAcceleration = 0.0f;
             velocityY = 0.0f;
             return;
         }
@@ -2403,7 +2403,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             collisionResult = 1;
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             y = 0.0f;
             velocityX = 0.0f;
@@ -2419,7 +2419,7 @@ void YukariFighter::Advance() {
             PlaySound(0);
             velocityX = -3.0f;
             velocityY = 8.0f;
-            field05C = 0.55f;
+            verticalAcceleration = 0.55f;
             field314 = -90.0f;
             field318 = 4.0f;
             field31C = 0.0f;
@@ -2456,7 +2456,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             collisionResult = 1;
         }
-        velocityY -= field05C;
+        velocityY -= verticalAcceleration;
         if (velocityY + y <= FloatConstants::Zero) {
             y = 0.0f;
             velocityX = 0.0f;
@@ -2472,7 +2472,7 @@ void YukariFighter::Advance() {
             PlaySound(0);
             velocityX = -3.0f;
             velocityY = 8.0f;
-            field05C = 0.55f;
+            verticalAcceleration = 0.55f;
             field314 = -60.0f;
             field318 = 4.0f;
             field31C = 30.0f;
@@ -2592,7 +2592,7 @@ void YukariFighter::Advance() {
             y = 0.0f;
         }
         if (animationStage > 5 && y > FloatConstants::Zero)
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
         if (animationStage == 4 && animationFrame == 0) {
             PlaySound(0x15);
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -2743,7 +2743,7 @@ void YukariFighter::Advance() {
         if (animationStage == 8)
             rotationZ = (rotationZ) + GeometryConstants::FortyFive;
         if (y > FloatConstants::Zero && animationStage > 7) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -2755,7 +2755,7 @@ void YukariFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 7 && animationFrame == 0) {
             velocityY = 12.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
             SpawnBattleEffect(0x33B, static_cast<float>(facing * 8) + x,
                 (y) + GeometryConstants::HundredThirtyFive, 1, 1);
             PlaySound(1);
@@ -2874,7 +2874,7 @@ void YukariFighter::Advance() {
             ResetTransform(0.0f, 0.0f, 0.0f);
             velocityX = 36.0f;
             velocityY = 20.0f;
-            field05C = 0.6f;
+            verticalAcceleration = 0.6f;
         }
         return;
     }
@@ -3380,7 +3380,7 @@ void YukariFighter::Advance() {
                 velocityX = 0.0f;
         }
         if (y > FloatConstants::Zero && animationStage > 8 && animationStage < 16) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(16);
                 ClearMotionFields();
@@ -3439,7 +3439,7 @@ void YukariFighter::Advance() {
                 if (RecordedRange(0, 100) < 50)
                     velocityX = -velocityY;
                 velocityY = 11.0f;
-                field05C = 0.15f;
+                verticalAcceleration = 0.15f;
                 scriptCounterF00 = 0;
                 if (x > opponent->x)
                     facing = -1;
@@ -3471,7 +3471,7 @@ void YukariFighter::Advance() {
 
     case 0x2DC: {
         if (y > FloatConstants::Zero && animationStage < 14) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 ResetSecondaryCounter(14);
                 ClearMotionFields();
@@ -3584,7 +3584,7 @@ void YukariFighter::Advance() {
             fieldF04 = 0;
         }
         if (y > FloatConstants::Zero && animationStage > 3 && animationStage != 10 && animationStage != 11) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -3606,7 +3606,7 @@ void YukariFighter::Advance() {
         }
         if (animationStage == 4 && animationFrame == 0) {
             velocityY = 11.0f;
-            field05C = 0.5f;
+            verticalAcceleration = 0.5f;
         }
         if (animationStage == 10 && animationFrame == 0) {
             velocityX = 0.0f;
@@ -3626,7 +3626,7 @@ void YukariFighter::Advance() {
                 ResetSecondaryCounter(10);
                 return;
             }
-            field05C = 0.15f;
+            verticalAcceleration = 0.15f;
         }
         if (animationStage == 14 && animationFrame == 0) {
             ResetSecondaryCounter(12);
@@ -3666,7 +3666,7 @@ void YukariFighter::Advance() {
         if (animationStage == 8)
             rotationZ = (rotationZ) + GeometryConstants::FortyFive;
         if (y > FloatConstants::Zero && animationStage > 7) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -3700,7 +3700,7 @@ void YukariFighter::Advance() {
             ResetPrimaryCounters(0);
         if (animationStage == 7 && animationFrame == 0) {
             velocityY = 10.5f;
-            field05C = 0.25f;
+            verticalAcceleration = 0.25f;
             velocityX = static_cast<float>(RecordedRange(0, 16) - 8);
             PlaySound(1);
         }
@@ -3729,7 +3729,7 @@ void YukariFighter::Advance() {
             fieldF04 = 0;
         }
         if (y > FloatConstants::Zero && animationStage > 3) {
-            velocityY -= field05C;
+            velocityY -= verticalAcceleration;
             if (y + velocityY <= FloatConstants::Zero) {
                 y = 0.0f;
                 ClearMotionFields();
@@ -3742,7 +3742,7 @@ void YukariFighter::Advance() {
             ResetSecondaryCounter(10);
         if (animationStage == 4 && animationFrame == 0) {
             velocityY = 8.5f;
-            field05C = 0.2f;
+            verticalAcceleration = 0.2f;
             velocityX = static_cast<float>(RecordedRange(0, 20) - 10);
         }
         return;

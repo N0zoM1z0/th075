@@ -12,7 +12,7 @@
                 ClearMotionFields();
             }
             if (y>FloatConstants::Zero) {
-                velocityY=velocityY-field05C;
+                velocityY=velocityY-verticalAcceleration;
                 if (y+velocityY<=FloatConstants::Zero) {
                     ResetSecondaryCounter(11);
                     y=0.0f;
@@ -25,7 +25,7 @@
             if ((animationStage)==2 && (animationFrame)==0) {
                 velocityY=13.5f;
                 velocityX=static_cast<float>(RecordedRange(0,8)-4);
-                field05C=0.25f;
+                verticalAcceleration=0.25f;
             }
             if ((animationStage)==9 && (animationFrame)==0) {
                 PlaySound(18);

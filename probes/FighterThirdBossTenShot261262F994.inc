@@ -17,13 +17,13 @@ case 0x261: {
         velocityY=(velocityY)*FloatConstants::Quarter;
     }
     if ((animationStage)>4)
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=-3.0f;
         velocityY=9.0f;
-        field05C=0.7f;
+        verticalAcceleration=0.7f;
         PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {
@@ -45,13 +45,13 @@ case 0x262: {
         velocityY=(velocityY)*FloatConstants::Quarter;
     }
     if ((animationStage)>4)
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=-3.0f;
         velocityY=9.0f;
-        field05C=0.7f;
+        verticalAcceleration=0.7f;
         PlaySound(0);
         UpdateGaugeTimer(0x96);
         for (int shot=0;shot<10;++shot) {

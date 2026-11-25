@@ -23,7 +23,7 @@ case 0x188: {
         }
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (velocityY+y<=FloatConstants::Zero) {
             ClearMotionFields();
             y=0.0f;
@@ -40,7 +40,7 @@ case 0x188: {
             PlaySharedSound(0x1C);
         velocityX=10.0f;
         velocityY=12.5f;
-        field05C=1.0f;
+        verticalAcceleration=1.0f;
     }
     break;
 }

@@ -18,7 +18,7 @@ case 0x33: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -39,7 +39,7 @@ case 0x34: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -61,7 +61,7 @@ case 0x35: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount) {
@@ -89,7 +89,7 @@ case 0x38: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -110,7 +110,7 @@ case 0x39: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -131,7 +131,7 @@ case 0x3A: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -153,7 +153,7 @@ case 0x3B: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount) {
@@ -181,7 +181,7 @@ case 0x3E: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -202,7 +202,7 @@ case 0x3F: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -223,7 +223,7 @@ case 0x40: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount)
@@ -245,7 +245,7 @@ case 0x41: {
     }
     if (CheckHorizontalLimits() &&
         field3BE) {
-        field490 =
+        opponentVelocityDeltaX =
             static_cast<float>((velocityX) * FloatConstants::ThreeQuartersDouble);
     }
     if (AdvanceNestedFrame() == animationStageCount) {

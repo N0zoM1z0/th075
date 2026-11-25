@@ -12,7 +12,7 @@ case 0x2DB: {
             velocityY=velocityY-FloatConstants::OneHundredth;
             if (y+velocityY<=FloatConstants::Zero) velocityX=0.0f;
         } else {
-            velocityY=velocityY-field05C;
+            velocityY=velocityY-verticalAcceleration;
             if (y+velocityY<=FloatConstants::Zero && (animationStage)<16) {
                 y=0.0f;
                 ClearMotionFields();

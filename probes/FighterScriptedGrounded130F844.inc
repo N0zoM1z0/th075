@@ -3,11 +3,11 @@
 // Physical PE shows prepare stage3, animation1C, action9.
 // Not independently callable whole original game CODE.
 case 0x130: {
-    velocityY=velocityY-field05C;
+    velocityY=velocityY-verticalAcceleration;
     if (y+velocityY<=FloatConstants::Zero) {
         ResetPrimaryCounters(0xA);
         y=0.0f;
-        field05C=0.0f;
+        verticalAcceleration=0.0f;
         velocityY=0.0f;
         return;
     }

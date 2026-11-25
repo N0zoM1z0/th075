@@ -670,13 +670,13 @@ dumps them):
   character's overrides and its own members from +0xF10 (shorts in some
   characters, floats in others). The constructors live in
   `src/characters/<Char>Init*.cpp`.
-- Fighter command-selection state uses `field47C` (+0x47C) and the
-  associated sprite-sequence pointer at +0x480. `SetCommandSelection`
-  (00454BC0) writes the selection and updates the sequence sampling/color
-  policy. The adjacent 24-byte leaf at 00454C00 is now reconstructed as
-  `Fighter::ClearField47CAt00454C00`; it is a natural member store of zero
-  to +0x47C and cold-replays exactly. Its address-anchored name is retained
-  because no static references to this leaf were found.
+- `SetCommandSelection` (00454BC0) sets `spriteHistoryRetentionFrames`
+  (+0x47C) along with the sampling mode and mask on `spriteHistory`
+  (+0x480). `UpdateCounters` decrements positive values, even while the
+  opponent freezes combat counters. The fighter renderer can drop the
+  two oldest samples only when this count reaches zero or below.
+  `ClearField47CAt00454C00` clears the count. Its address-anchored name
+  follows the lack of known static callers.
 - `CharacterObject : Actor` (`src/characters/CharacterObject.hpp`, constructor
   0045B760, base table 00659064, `sizeof` 0xE8) is each character's effect
   object: `sequences` at +0xC4, floats +0xC8–0xD0, shorts +0xD8–0xE2 and
@@ -959,6 +959,31 @@ object code uses the word at `+0xDA` as a movement parameter in one
 action and a reflection count in another. Keep those meanings with their
 action when recovering more of the object layout.
 [Sakuya object actions](../src/characters/sakuya/SakuyaObjectAdvanceF1222.cpp)
+
+### Shared motion and conditional hits
+
+`ActorRenderingBase::verticalAcceleration` (+0x05C) changes vertical
+velocity in fighter and object movement. Most airborne actions subtract
+a positive value. Reimu's object adds a negative value during the
+stage-7 launch, and Alice's action 0x2DD also uses addition.
+`Fighter::ClearMotionFields` clears the slot with both velocity components.
+[Reimu object motion](../src/characters/reimu/ReimuObjectAdvance.cpp) · [Alice fighter motion](../src/characters/alice/AliceFighterAdvance.cpp)
+
+`ResolveBodySeparation` clears and then writes `bodySeparationVelocityX`
+(+0x488) as the correction from each fighter's current speed to the
+resolved body speed. The other fighter's `opponentVelocityDeltaX`
+(+0x490) is a separate contribution in `AdvancePosition`. Fighter
+landings and Marisa's objects can write it, and the active counter
+update clears both fighters' contributions.
+[Body separation](../src/battle/BattleFrameDependencies.cpp) · [Position update](../src/battle/BattleFrame.cpp)
+
+`ApplyConditionalHit` consumes one positive `conditionalHitsRemaining`
+(+0x3CA) for each accepted conditional hit. The common initialization
+sets it to zero, and a positive refill source is still unconfirmed.
+The hit opens a 15-tick `conditionalHitComboWindow` (+0x3CC). The next
+conditional hit starts a new combo when the window has expired, and
+hitstop pauses its countdown.
+[Conditional hit](../src/battle/BattleCombat.cpp) · [Counter update](../src/battle/CombatTimers.cpp)
 
 ### Combat camera bounds and linked effects
 

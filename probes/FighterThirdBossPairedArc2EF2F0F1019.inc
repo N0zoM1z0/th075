@@ -1,6 +1,6 @@
 // F1019 original Japanese 004AC040 actions 2EF and 2F0.
 // Native entry and landing both call 00453E20, clearing velocityX,
-// velocityY, field058 and field05C before the stage handoff.
+// velocityY, field058 and verticalAcceleration before the stage handoff.
 // 2EF uses gravity 00658044, stage-13 lift 1.5 and angles -70/-50;
 // 2F0 uses gravity 00658354, stage-13 lift 3.5 and angles -70.
 // The stage-23 F04 repeat guard remains nested inside the final shot.
@@ -20,7 +20,7 @@ case 0x2EF: {
     if (y>FloatConstants::Zero && (animationStage)<22)
         velocityY=velocityY-FloatConstants::OneHundredth;
     if (y>FloatConstants::Zero && (animationStage)>23) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {
             ResetSecondaryCounter(34);
             ClearMotionFields();
@@ -38,7 +38,7 @@ case 0x2EF: {
         PlaySound(7);
         velocityX=float(RecordedRange(0,6)-3);
         velocityY=1.5f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);
@@ -142,7 +142,7 @@ case 0x2F0: {
     if (y>FloatConstants::Zero && (animationStage)<22)
         velocityY=velocityY-FloatConstants::TwoHundredths;
     if (y>FloatConstants::Zero && (animationStage)>23) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {
             ResetSecondaryCounter(34);
             ClearMotionFields();
@@ -160,7 +160,7 @@ case 0x2F0: {
         PlaySound(7);
         velocityX=float(RecordedRange(0,6)-3);
         velocityY=3.5f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
     }
     if ((animationStage)==15 && (animationFrame)==0) {
         scriptCounterF00=static_cast<short>((velocityX)*GeometryConstants::Hundred);

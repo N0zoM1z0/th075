@@ -18,7 +18,7 @@ case 0x2BF: {
         remainingHits=99;
     }
     if (y>FloatConstants::Zero && (animationStage)>23) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero && (animationStage)<34) {
             ResetSecondaryCounter(34);
             ClearMotionFields();
@@ -43,7 +43,7 @@ case 0x2BF: {
         PlaySound(7);
         velocityX=0.5f;
         velocityY=0.9f;
-        field05C=0.5f;
+        verticalAcceleration=0.5f;
         hitInvulnerabilityFrames=20;
     }
     if ((animationStage)==15 && (animationFrame)==0) {

@@ -1,10 +1,10 @@
 // F656: physical original native 0x131 ground/recovery stages in nonexact giant 00543210.
         case 0x131: {
-            velocityY=velocityY-field05C;
+            velocityY=velocityY-verticalAcceleration;
             if (y+velocityY<=FloatConstants::Zero) {
                 ResetPrimaryCounters(10);
                 y=0.0f;
-                field05C=0.0f;
+                verticalAcceleration=0.0f;
                 velocityY=0.0f;
                 break;
             }

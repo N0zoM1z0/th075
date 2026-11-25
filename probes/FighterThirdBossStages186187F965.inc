@@ -48,7 +48,7 @@ case 0x187: {
         }
     }
     if (y>FloatConstants::Zero) {
-        velocityY=velocityY-field05C;
+        velocityY=velocityY-verticalAcceleration;
         if (y+velocityY<=FloatConstants::Zero) {
             y=0.0f;
             ClearMotionFields();
@@ -61,7 +61,7 @@ case 0x187: {
     if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=15.0f;
         velocityY=8.5f;
-        field05C=0.6f;
+        verticalAcceleration=0.6f;
     }
     if ((animationStage)==7 && (animationFrame)==0)
         PlaySharedSound(0x1C);

@@ -23,7 +23,7 @@ case 0xD2: {
     }
     // The original applies this x87 drag every frame, even outside
     // the stage/frame-zero projectile initialization path.
-    velocityY=velocityY-(field05C)*FloatConstants::Quarter;
+    velocityY=velocityY-(verticalAcceleration)*FloatConstants::Quarter;
     if (AdvanceNestedFrame()==animationStageCount) {
         if (static_cast<unsigned int>(inputD)>0)
             ResetSecondaryCounter(2);

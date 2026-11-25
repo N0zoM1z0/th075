@@ -35,7 +35,7 @@ public:
     void LoadPattern();                                             // 00457660
     void SelectResourceParameters();                                // 00452B30
     void ApplyMode5Direction();                                      // 00454C20
-    void SetCommandSelection(int selection, unsigned char mode, unsigned int mask);  // 00454BC0
+    void SetCommandSelection(int retentionFrames, unsigned char mode, unsigned int mask);  // 00454BC0
     void ClearField47CAt00454C00();                                  // 00454C00
     void LoadStageResource();                                       // 004584D0
     void InitializeNotice(short notice);                            // 0045CDC0
@@ -160,8 +160,8 @@ public:
     short comboCount;                   // +0x3C4
     short comboDamage;                  // +0x3C6
     short flashGauge;                   // +0x3C8
-    short field3CA;                     // +0x3CA
-    short field3CC;                     // +0x3CC
+    short conditionalHitsRemaining;                     // +0x3CA
+    short conditionalHitComboWindow;                     // +0x3CC
     FighterOutcomeByteF992 field3CE;    // +0x3CE signed/unsigned round outcome (F992)
     unsigned char field3CF;             // +0x3CF unsigned continuation/status byte
     unsigned int roundSpellBonuses[12];      // +0x3D0
@@ -174,13 +174,13 @@ public:
     ActionSequenceSlots sequenceSlots;  // +0x468 action sequences, indexed by action id
     short mainTextureCount;                 // +0x478 signed texture slot count
     unsigned char unknown47A[0x47C - 0x47A];
-    int spriteHistoryHoldFrames;            // +0x47C
+    int spriteHistoryRetentionFrames;            // +0x47C
     CommandListF283* spriteHistory;         // +0x480
     signed char hitFlashFrames;             // +0x484
     unsigned char unknown485[0x488 - 0x485];
-    float field488;                     // +0x488
+    float bodySeparationVelocityX;                     // +0x488
     unsigned int field48C;              // +0x48C
-    float field490;                     // +0x490
+    float opponentVelocityDeltaX;                     // +0x490
     InputMapping4388D0 inputBindings;    // +0x494 controller binding block
     int inputX;                         // +0x4DC held input: direction -1/0/+1, buttons count held frames
     int inputY;                         // +0x4E0
