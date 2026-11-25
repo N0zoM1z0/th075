@@ -6,8 +6,6 @@
 #include "BattleStatusFloatPairF1096.hpp"
 #include "GameProgress.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define ACTOR(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x44 + i * 4) + (offset)))
 #define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 #define ACTOR_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[i]->drawing)
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
@@ -103,9 +101,6 @@ void BattleScene::RenderStatus() {
     }
 }
 
-#undef reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]
 #undef QUAD
 #undef ACTOR_DRAWING
 #undef DRAWING
-#undef ACTOR
-#undef FIELD

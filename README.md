@@ -14,10 +14,10 @@ relocation, cold-builds byte-identical to the original.
 
 `scripts/repo-python scripts/report-reconstruction-status.py --summary`
 prints the live exact coverage and origin counts. The conservative
-coverage exceeds the 98% authored-byte goal. All per-character fighter
-and object `Advance` methods have exact units. The stage base constructor
-is the remaining independently authored function awaiting a cold exact
-source unit. Pending function origins are reviewed separately.
+coverage exceeds the 98% authored-byte goal. Every function currently
+classified as independently authored has an accepted exact comparison,
+including the fighter and object `Advance` methods and the stage base
+constructor. The conservative coverage includes all pending-origin bytes.
 
 ## Where to start
 
@@ -47,8 +47,9 @@ Build the Windows x86 executable:
 
 This writes `build/program/th075.exe`, `build/program/th075.map` and
 `build/program/link.log`. Both aggregate builds use the pinned original
-executable in `resources/` to supply the remaining read-only data. See
-the [handoff](docs/RE_HANDOFF.md) for build details.
+executable in `resources/` to supply read-only data. The linked executable
+and the original completed the same four external replay recordings with
+matching battle checkpoints. [Build and replay evidence](docs/RE_HANDOFF.md)
 
 For a runtime check, stage the executable beside `th075.dat`,
 `th075bgm.dat`, and `th075b.dat` from the Japanese installation.
@@ -66,8 +67,8 @@ Read-only preflight:
     scripts/repo-python scripts/report-reconstruction-status.py --summary
     scripts/repo-python scripts/ghidra.py check
 
-Accept or re-verify a function with a cold build and complete comparison;
-pass several `--unit` flags to build each shared object once:
+Accept or re-verify a function with a cold build and complete comparison.
+Use `--batch` with repeated `--unit` flags for a larger set of affected units.
 
     scripts/repo-python scripts/replay-exact-units.py --unit UNIT_NAME
 

@@ -1,9 +1,10 @@
 # Compiler and function comparison setup
 
-TH075 currently reconstructs functions into native i386 COFF objects. It does
-not yet have a whole-program link graph or playable reconstructed executable.
-The linker is installed and attested; function acceptance uses the compiler
-and complete relocation-aware COFF comparison.
+VC7.1 compiles the reconstructed sources into i386 COFF objects.
+`scripts/repo-python scripts/build.py --program` links them into a Windows
+executable using a read-only data object from the supplied Japanese v1.11 PE.
+Function acceptance uses a separate cold build and complete relocation-aware
+COFF comparison. [Build and runtime evidence](RE_HANDOFF.md#windows-x86-build)
 
 ## Unified repository Python
 
@@ -127,7 +128,7 @@ path of `scripts/repo-python`. Bash commands must explicitly use the wrapper;
 the generic shell tool remains available for other authorized repository work.
 
 Function acceptance needs target/tracking checks, cold replay of new or affected
-units, the current progress card, and `git diff --check`. Run
+units, and `git diff --check`. Run
 `scripts/repo-python scripts/ci.py` only when changing exact-comparison,
 checkpoint, byte-accounting, or test infrastructure. Its public checks need
 neither the game nor private tools beyond the repository Python environment.

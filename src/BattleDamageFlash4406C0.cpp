@@ -60,5 +60,3 @@ void BattleScene::RenderDamageFlash() {
 }
 
 #undef STYLE
-#undef fighters[1]->frameInfo->flags
-#undef fighters[0]->frameInfo->flags

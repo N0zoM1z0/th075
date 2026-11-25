@@ -3,11 +3,6 @@
 #include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 
-// Typed views of independently observed fields, without guessed intervening
-// storage or complete owner layouts. Names describe inferred combat roles.
-#define FIELD(type, object, offset) \
-    (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-
 void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     attack->field07C = 1;
@@ -234,6 +229,3 @@ bool Fighter::UpdateFacingFromOpponent()
     }
     return false;
 }
-
-#undef opponent->x
-#undef x
