@@ -51,6 +51,16 @@ initializer array. Separate console probes round-tripped the same
 configuration in both object orders.
 [Windows position independence](POSITION_INDEPENDENCE.md)
 
+The Japanese 1.11 reference and the normal executable both played the
+same Coolier Youmu versus Marisa recording and returned to the replay
+browser. The test added 12 zero bytes to expand the downloaded file's
+header from `0x30` to `0x3C`. The record and its four input streams
+were byte-identical. The battle phase, both positions, actions, and
+health values agreed at all nine checkpoints through update 240.
+Both runs used isolated Xvfb sessions. The local logs and checkpoint CSV
+are under `build/program/external-replay/`.
+[Coolier replay](https://coolier.net/th_up4/index.php?id=6736)
+
 ### Selected earlier link checkpoints
 
 The grayscale shader, two clipping bounds and the texture and replay
