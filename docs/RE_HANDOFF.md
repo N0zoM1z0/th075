@@ -79,14 +79,14 @@ the file header from `0x30` to `0x3C` with twelve zero bytes. The local
 fixture hashes, logs and comparison are under `build/program/replay-suite/`.
 [Coolier replay pack](https://coolier.net/th_up4/index.php?id=6739)
 
-### Local 1P playtest
+### Previous 1P playtest
 
-The local overlay in `build/program/playtest/1p-no-damage.patch` protects
-the first fighter's health and recoverable health from hits, guard chip,
-opponent gauge attacks, and Yuyuko's drain. It applies to staged copies
-of four translation units. The playtest uses VC7.1 objects and a native
-Windows link. The console probe checked both players' health and healing.
-Use the normal executable for reference replay comparisons.
+The Windows playtest used a local overlay on staged copies of four
+translation units. It protected the first fighter's health and recoverable
+health from hits, guard chip, opponent gauge attacks, and Yuyuko's drain.
+The console probe checked both players' health and healing. The historical
+`build/program/playtest/1p-no-damage.patch` refers to earlier source names.
+The normal `--program` build compiles the checked-out sources directly.
 
 The playtest directory has its own 90-byte `config.ini`. The built-in 1P
 bindings use Q to confirm and Y/N for menu movement. The playtest file
