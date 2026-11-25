@@ -13,6 +13,7 @@ void MarisaFighter::Advance() {
         return;
 
     switch (action) {
+    // Neutral, crouch transitions and movement carryover.
     case 0x0: {
         if (field3AC == 0) {
             ClearMotionFields();
@@ -250,6 +251,7 @@ void MarisaFighter::Advance() {
         break;
     }
 
+    // Ground hit reactions and corner displacement.
     case 0x32: {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
@@ -1514,6 +1516,7 @@ void MarisaFighter::Advance() {
         return;
     }
 
+    // Directional movement chains. 0xC8 routes up to 0xCC/0xCD or ends at 0xCF.
     case 0xC8: {
         field3AC = 1;
         SetCommandSelection(3, 4, 0xFF);
@@ -1853,6 +1856,7 @@ void MarisaFighter::Advance() {
         return;
     }
 
+    // Normal attacks. Ground versions can carry momentum into startup.
     case 0x12C: {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
@@ -2260,6 +2264,7 @@ void MarisaFighter::Advance() {
         return;
     }
 
+    // Projectile startup. 0x190 creates object 0x320 at stage 5.
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
             collisionResult = 1;
@@ -3014,6 +3019,7 @@ void MarisaFighter::Advance() {
         return;
     }
 
+    // Spirit Strike and its recovery variants. 0x252 spends one stock on entry.
     case 0x252: {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
@@ -3288,6 +3294,7 @@ void MarisaFighter::Advance() {
         return;
     }
 
+    // Spell-card actions. The stage-6 transition to 0x2BD begins a spirit-drain loop.
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;

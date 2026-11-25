@@ -9,7 +9,7 @@ struct InputBindingKeys {
     signed char device;
     unsigned char unknown001[3];
     int left, right, up, down;
-    int buttons[5];
+    int buttons[5];  // A, B, C, D, then the scene pause or cancel binding.
 };
 
 class InputMapping4388D0 : private InputResourceClient {

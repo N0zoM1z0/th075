@@ -29,7 +29,7 @@ constructor. The conservative coverage includes all pending-origin bytes.
 | Subsystem | Entry point |
 | --- | --- |
 | [Battle](src/battle/) | [Scene phases and HUD state](src/battle/BattleScene.hpp), [shared fighter layout](src/battle/Fighter.hpp) |
-| [Characters](src/characters/) | [Stage rendering](src/characters/CharacterStageRendering.cpp), [fighter and object entry points](docs/GIANTS.md) |
+| [Characters](src/characters/) | [Shared Actor](src/battle/Actor.hpp), [fighter-owned objects](src/characters/CharacterObject.hpp), [object manager](src/battle/EffectManagerLifetimeF161.hpp), [shared auxiliary effects](src/characters/CharacterAuxAction.hpp), [per-fighter entry points](docs/GIANTS.md) |
 | [Replay](src/replay/) | [File header, record header and input streams](src/replay/ReplayRecords.hpp) |
 | [Input](src/input/) | [Device mapping and held controls](src/input/InputMapping4388D0.hpp) |
 | [Configuration](src/config/) | [Saved key bindings](src/config/GameConfigStorage.hpp), [display options](src/config/DisplayOptions.hpp) |
@@ -42,8 +42,9 @@ constructor. The conservative coverage includes all pending-origin bytes.
 
 Each playable fighter has a subdirectory under `src/characters/`.
 The parent directory contains shared character code.
-The Windows build compiles translation units from `src/`. Some of those
-units include shared reconstruction fragments from `probes/`.
+The Windows build compiles translation units from `src/`. Included
+`probes/*.inc` fragments are build inputs. Cold-replay their complete
+owning functions after edits. Use `.analysis/` for experiments.
 
 `config/match-units.toml` records the compiler profiles, extents and
 relocations. The target is the user-supplied Japanese TH075 v1.11

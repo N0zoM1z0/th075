@@ -21,6 +21,7 @@ void ReimuObject::Advance()
         return;
     }
     switch (action) {
+    // 0x320 homes after stage 1. 0xDA holds the target heading, 0xDC steers toward it.
     case 800:
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred ||
@@ -111,6 +112,7 @@ void ReimuObject::Advance()
         break;
 
 
+    // 0x321 and 0x322 track the opponent early and can spawn the 0x325 aftereffect.
     case 801:
         if (x > GeometryConstants::ThirteenHundredEighty ||
             x < GeometryConstants::NegativeHundred) {
@@ -298,6 +300,7 @@ void ReimuObject::Advance()
         }
         break;
 
+    // 0x327 starts with a speed of 0x5DC hundredths in 0xDA and uses 0xC8 as an eight-way selector.
     case 807:
         if (collisionResult == 5) {
             ClearFrameInfo();
@@ -454,6 +457,7 @@ void ReimuObject::Advance()
         }
         break;
 
+    // 0x329 and 0x32A repeat the 0x327 startup with their own child effects.
     case 809:
         if (collisionResult == 5) {
             ClearFrameInfo();
@@ -1017,6 +1021,7 @@ void ReimuObject::Advance()
         }
         break;
 
+    // 0x332 drains the owner spirit gauge after stage 0x13.
     case 818:
         static_cast<ReimuFighter*>(owner)->fieldF22 = 1;
         if (owner->action == 0x2C1 && animationStage < 0x13) {

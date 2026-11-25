@@ -31,10 +31,12 @@ Combat now names the verified frame and attack masks separately.
 The collision notes retain the unresolved special-contact pairs.
 [Flag behavior](KNOWLEDGE_BASE.md#frame-and-attack-flags)
 
-The reviewed action-local slots in `CharacterObject` and
-`CharacterAuxObject` can carry different values after a state transition.
-Further naming should follow their producers and consumers in each action.
-Keep the native action order and function extent when adding source navigation.
+The object notes show how all eleven characters reuse their shared
+slots. Marisa, Reimu, Patchouli and Alice have action guides in the
+selected large fighter and object methods. The separate shared auxiliary
+switch also has an action guide and a documented spawn and prune cycle.
+Keep the native action order and function extent when extending these guides.
+[Character-object slots](KNOWLEDGE_BASE.md#character-object-storage-by-action) · [Auxiliary effects](KNOWLEDGE_BASE.md#shared-auxiliary-effects)
 
 ## Windows x86 build
 

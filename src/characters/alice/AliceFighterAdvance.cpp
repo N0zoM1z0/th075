@@ -244,6 +244,7 @@ void AliceFighter::Advance() {
         break;
     }
 
+    // Ground hit reactions and corner displacement.
     case 0x32: {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
@@ -1827,6 +1828,7 @@ void AliceFighter::Advance() {
         return;
     }
 
+    // Normal attacks with separate ground and air recovery.
     case 0x12C: {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
@@ -2614,6 +2616,7 @@ void AliceFighter::Advance() {
         return;
     }
 
+    // Spirit Strike and its recovery variants.
     case 0x252: {
         if (animationStage == 0 && animationFrame == 0) {
             bombCount = bombCount - 1;
@@ -3021,6 +3024,7 @@ void AliceFighter::Advance() {
         break;
     }
 
+    // Spell-card actions. 0x2BC spends stock at stage 1 and creates 0x340 at stage 14.
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
@@ -3358,6 +3362,7 @@ void AliceFighter::Advance() {
         return;
     }
 
+    // Airborne descent ends at stage 9 on landing.
     case 0x2DD: {
         if (animationStage == 0 && animationFrame == 0) {
             collisionResult = 1;

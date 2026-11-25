@@ -34,6 +34,7 @@ void MarisaObject::Advance()
         return;
     }
     switch (action) {
+    // 0x320–0x322 share the owner-action check and projectile impact effects.
     case 800:
         if (owner->action == 400 && field0D8 == 0) {
             x = owner->x + static_cast<float>(facing * 100);
@@ -547,6 +548,7 @@ void MarisaObject::Advance()
         }
         break;
 
+    // 0x32B and 0x32C launch moving shots and switch to different cleanup actions.
     case 811:
         if (collisionResult == 5) {
             ClearFrameInfo();
@@ -1234,6 +1236,7 @@ void MarisaObject::Advance()
         UpdateTrackingNode();
         break;
 
+    // 0x342 and 0x343 update the shared angle and phase used by the orbiting objects.
     case 834:
         if (animationStage < 5 || animationStage == 6) {
             x = owner->x;
@@ -1500,6 +1503,7 @@ void MarisaObject::Advance()
         }
         break;
 
+    // 0x345 supplies the origin, facing and scale read by Marisa's chain renderer.
     case 837:
         if ((owner->action == 712 && owner->animationStage < 6) || owner->action == 713) {
             x = owner->x + static_cast<float>(facing * 32);

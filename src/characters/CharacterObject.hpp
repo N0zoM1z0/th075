@@ -14,10 +14,12 @@ public:
     void BindAnimation();               // slot 0, 0045B880
 
     ActionSequenceSlots* sequences;     // +0x0C4 the owner's sequence container (owner + 0x468)
+    // Four float parameters are copied at spawn and may become action-local state.
     float field0C8;                     // +0x0C8
     float field0CC;                     // +0x0CC
     float field0D0;                     // +0x0D0
     float field0D4;                     // +0x0D4 fourth spawn parameter
+    // Action-local words. The same offset can have a different role in the next action.
     short field0D8;                     // +0x0D8
     short field0DA;                     // +0x0DA
     short field0DC;                     // +0x0DC

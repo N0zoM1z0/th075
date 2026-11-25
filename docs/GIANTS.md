@@ -71,6 +71,12 @@ replay notes below describe the comparisons that led to acceptance.
 | 005D73C0 | Meiling fighter | 43,282 | [MeilingFighterAdvance.cpp](../src/characters/meiling/MeilingFighterAdvance.cpp) |
 | 005EB520 | Meiling object | 34,434 | [MeilingObjectAdvanceF1207.cpp](../src/characters/meiling/MeilingObjectAdvanceF1207.cpp) |
 
+The shared auxiliary object has its own switch at `0x005FAE30`.
+[CharacterAuxAction.cpp](../src/characters/CharacterAuxAction.cpp) groups
+its 69 actions by their effect and spawn behavior. Its exact unit covers
+all 31,352 bytes and the owned switch data.
+[Auxiliary object lifecycle and slots](KNOWLEDGE_BASE.md#shared-auxiliary-effects)
+
 The BG02a/BG02b/BG02c load constructors now use the same native
 NativeBackgroundBaseF479 layout as their destructor views. Each has a real
 SpriteQuad40CA80 member at +0x6C and the preceding +0x68 word; the base

@@ -3,6 +3,7 @@
 void CharacterAuxObject::Advance()
 {
     switch (action) {
+    // 0x01–0x0F. Expanding and fading sprites, some of which emit peers at stage 1.
     case 1:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -403,6 +404,7 @@ void CharacterAuxObject::Advance()
         ++field074;
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x32–0x36. Guard, graze and hit effects spawn their particles at startup.
     case 50:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -533,6 +535,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x37–0x3C. Expanding flashes and their fades, including the Spirit Strike effect.
     case 55:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -666,6 +669,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x3E–0x41. The emitter uses +0x74 as a launch angle. Its child reuses the word for alpha state.
     case 62:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -798,6 +802,7 @@ void CharacterAuxObject::Advance()
         scaleY -= 0.033f;
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x64–0x72. Spark and burst particles. 0x66, 0x6B, 0x6E and 0x72 decay +0x74 as speed.
     case 100:
         if (animationStage == 0 && animationFrame == 0) {
             SetPolarVelocity(rand(), rand() * 0.0005);
@@ -859,10 +864,10 @@ void CharacterAuxObject::Advance()
             color[3] = 255;
             rotationZ = ChooseIntegerRange(0, 360);
             field074 = ChooseIntegerRange(0, 750) + 1000;
-            field076 = ChooseIntegerRange(0, 360) - 180;
+            particleAngle = ChooseIntegerRange(0, 360) - 180;
         }
         field074 = field074 * 0.95f;
-        SetPolarVelocity(field076, field074 * 0.01f);
+        SetPolarVelocity(particleAngle, field074 * 0.01f);
         x += velocityX;
         y += velocityY;
         rotationZ += 5.0f;
@@ -990,19 +995,19 @@ void CharacterAuxObject::Advance()
         break;
     case 107:
         if (animationStage == 0 && animationFrame == 0) {
-            field078 = ChooseIntegerRange(50, 110);
+            initialScalePercent = ChooseIntegerRange(50, 110);
             ResetTransform(0.0f, 0.0f, 0.0f);
-            scaleX = field078 * 0.01f;
-            scaleY = field078 * 0.01f;
+            scaleX = initialScalePercent * 0.01f;
+            scaleY = initialScalePercent * 0.01f;
             color[0] = 255;
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
             field074 = ChooseIntegerRange(0, 750) + 1000;
-            field076 = ChooseIntegerRange(0, 360) - 180;
+            particleAngle = ChooseIntegerRange(0, 360) - 180;
         }
         field074 = field074 * 0.96f;
-        SetPolarVelocity(field076, field074 * 0.01f);
+        SetPolarVelocity(particleAngle, field074 * 0.01f);
         x += velocityX;
         y += velocityY;
         if (animationFrame > 2) {
@@ -1077,7 +1082,7 @@ void CharacterAuxObject::Advance()
         break;
     case 110:
         if (animationStage == 0 && animationFrame == 0) {
-            field078 = ChooseIntegerRange(50, 110);
+            initialScalePercent = ChooseIntegerRange(50, 110);
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -1086,11 +1091,11 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             field074 = ChooseIntegerRange(0, 500) + 1500;
-            field076 = ChooseIntegerRange(0, 360);
-            rotationZ = field076 - 90;
+            particleAngle = ChooseIntegerRange(0, 360);
+            rotationZ = particleAngle - 90;
         }
         field074 = field074 * 0.97f;
-        SetPolarVelocity(field076 - 180, field074 * 0.01f);
+        SetPolarVelocity(particleAngle - 180, field074 * 0.01f);
         x += velocityX;
         y += velocityY;
         scaleY += 0.05f;
@@ -1199,10 +1204,10 @@ void CharacterAuxObject::Advance()
             color[2] = 255;
             color[3] = 255;
             field074 = ChooseIntegerRange(0, 1000) + 4000;
-            field076 = ChooseIntegerRange(0, 360);
+            particleAngle = ChooseIntegerRange(0, 360);
         }
         field074 = field074 * 0.9f;
-        SetPolarVelocity(field076 - 180, field074 * 0.01f);
+        SetPolarVelocity(particleAngle - 180, field074 * 0.01f);
         x += velocityX;
         y += velocityY;
         if (animationFrame > 20) {
@@ -1219,6 +1224,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x73–0x74. Spell activation emitters spawn the particle groups below.
     case 115:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1273,6 +1279,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x75–0x7D. Projected rings and small particles, with animation loops at 0x7B and 0x7C.
     case 117:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1507,6 +1514,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x7E–0x82. Initialize a neutral transform, then let the pattern play out.
     case 126:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1567,6 +1575,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x83–0x88. Particles from 0x74, with animation loops at 0x87 and 0x88.
     case 131:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1733,6 +1742,7 @@ void CharacterAuxObject::Advance()
             ++field074;
         }
         break;
+    // 0x89–0x8C. Rotation, growth and opacity variants for earlier emitters.
     case 137:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
@@ -1838,6 +1848,7 @@ void CharacterAuxObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearField8();
         break;
+    // 0x8D–0x91. The five positioned companions emitted by 0x73.
     case 141:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);

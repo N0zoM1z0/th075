@@ -15,10 +15,10 @@ public:
                              unsigned char flags, unsigned char mode);
     void ClearField8();
 
-    short field074;
-    short field076;
-    short field078;
-    short field07A;
+    short field074;              // +0x74 action-local counter, angle, speed or state
+    short particleAngle;         // +0x76 direction used by the decelerating particles
+    short initialScalePercent;   // +0x78 read by action 0x6B
+    short field07A;              // +0x7A no recovered accesses
     std::vector<EffectPatternSequence*>* patterns;  // +0x7C
     union {
         float spawnParameters[4];

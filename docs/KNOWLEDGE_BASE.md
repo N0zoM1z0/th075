@@ -954,11 +954,54 @@ fighter texture pack supplies portraits and notice badges, and the
 sprite history records the drawn fighter frames for its trail.
 [Actor and frame layout](../src/battle/Actor.hpp) · [Collision pass](../src/battle/BattleActiveCollision.cpp) · [Fighter resources](../src/battle/FighterLoadResourcesF282.cpp)
 
-Some character-object slots have meanings local to one action. Sakuya's
-object code uses the word at `+0xDA` as a movement parameter in one
-action and a reflection count in another. Keep those meanings with their
-action when recovering more of the object layout.
-[Sakuya object actions](../src/characters/sakuya/SakuyaObjectAdvanceF1222.cpp)
+### Character-object storage by action
+
+The fighter's object manager initializes +0xC8, +0xCC, +0xD0 and +0xD4
+from four spawn parameters after resetting the action. The first three
+floats can then become working state. The recovered code writes +0xD4
+at spawn and has no reader for it. Constructors clear some of the shorts
+at +0xD8 through +0xE2. The action initializes and updates the shorts
+it uses. +0xE2 has recovered constructor stores only. A cleared
+`frameInfo` signals the object manager to remove the object.
+[Spawn](../src/battle/EffectManagerSpawnF161.cpp) · [Constructors](../src/characters/CharacterObjectConstructorsF422.cpp) · [Update and removal](../src/battle/BattleEffectAdvance.cpp)
+
+| Object | Action | Observed use of the shared slots |
+| --- | --- | --- |
+| Alice | 0x327 | +0xD8 is a heading and +0xDA is speed in tenths. +0xDC counts phase repeats. |
+| Marisa | 0x320 | +0xD8 and +0xDA track the short transitions around projectile startup and contact. Some later shots add +0xD0 to speed. |
+| Meiling | 0x321 | +0xC8 sets the initial Z rotation. +0xD8 supplies its per-update step, which decays to one. |
+| Patchouli | 0x323 | +0xC8 supplies the heading and the increasing +0xD8 raises speed. |
+| Reimu | 0x320, 0x327 | +0xDA holds a target heading in 0x320 and speed in hundredths in 0x327. +0xC8 changes from initial heading to an eight-way direction selector. |
+| Remilia | 0x320 | +0xD8 selects the repeated launch stage, hit count and speed. |
+| Sakuya | 0x321, 0x38F | +0xDA selects a lateral move in 0x321 and counts reflections in 0x38F. |
+| Suika | 0x321 | +0xC8 and +0xCC initialize polar motion. +0xD8 selects the direction of the vertical speed adjustment. |
+| Youmu | 0x320 | +0xC8 selects the emission pattern. +0xD8 indexes both the spawn position and the child parameter. |
+| Yukari | 0x320, 0x326 | +0xCC is initial speed in 0x320 and an animation-frame threshold in 0x326. |
+| Yuyuko | 0x320 | +0xC8 and +0xCC are heading and initial speed. +0xD8 adds a growing speed term. |
+
+The per-character action code is linked in the [Advance index](GIANTS.md#complete-research-parents).
+Reimu increments +0xDE in 0x320. In 0x332, +0xE0 is a flag
+for the end of the owner's spirit drain. Definitions stay tied to
+the particular action, since the next action can repurpose the slots.
+
+### Shared auxiliary effects
+
+`CombatEffects` owns a pattern catalog and two lists of auxiliary
+effects. A child borrows its owner's catalog and binds
+`patterns[action]->frames[animationStage]`. The spawn methods bind and
+advance it immediately. `SpawnConfigured` copies four float parameters.
+`SpawnPeer` forwards those same slots to the child. The owner advances
+each list's starting count and prunes entries with a cleared `drawFrame`.
+[Spawn](../src/battle/EffectSpawnF281.cpp) · [Pattern binding](../src/characters/CharacterAuxFrameF750.cpp) · [Pruning](../src/battle/AuxEffectPruneF354.cpp)
+
+The shared switch uses +0x74 for elapsed updates in 0x01 and speed in
+hundredths in 0x66. In 0x3E the initial value supplies an angle. In 0x3F
+the slot tracks alpha state. +0x76 supplies the decelerating particle
+angle. +0x78 stores the randomized initial scale percentage used by
+0x6B. 0x6E also writes +0x78 and initializes both scales to one. No
+recovered access uses +0x7A. The angle passed to 0x3F/0x41 occupies the
+first float in the spawn parameter block.
+[Auxiliary action switch](../src/characters/CharacterAuxAction.cpp)
 
 ### Shared motion and conditional hits
 
@@ -1007,10 +1050,15 @@ collision and guard handlers.
 
 The special-contact attack masks 0x2000, 0x4000 and 0x8000 match frame
 masks 0x8000, 0x10000 and 0x20000, respectively, giving result 3 to both
-actors. The concrete categories are still unknown. Frame 0x100000 also
-remains numeric because it gates movement, damage flashes and another
-frame predicate. Attack 0x100000 selects ground reaction 140 in one
-branch. The two flags have independent meanings.
+actors. The 25,469 frames in the installed update archive's 11 fighter
+patterns carry these frame masks once each. Remilia has 0x8000 on
+action 0x2BC, frame 6. Youmu has 0x10000 and 0x20000 on frame 2 of
+0x1F9 and 0x1FA. Youmu uses result 3 there to freeze the opponent and
+change to 0x1FB or 0x1FC. The attack categories remain provisional.
+The same archive has no frame with mask 0x100 set.
+
+Frame 0x100000 gates movement, damage flashes and another frame
+predicate. Attack 0x100000 selects ground reaction 140 in one branch.
 [Attack dispatch](../src/battle/BattleCollisionDispatch.cpp) · [Contact pairs](../src/battle/BattleActiveCollision.cpp) · [Hit and conditional hit](../src/battle/BattleCombat.cpp) · [Guard selection](../src/battle/FighterHitResponseF164.cpp)
 
 ### Combat camera bounds and linked effects

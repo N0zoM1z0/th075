@@ -258,6 +258,7 @@ void PatchouliFighter::Advance() {
         break;
     }
 
+    // Ground hit reactions and corner displacement.
     case 0x32: {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
@@ -1805,6 +1806,7 @@ void PatchouliFighter::Advance() {
         break;
     }
 
+    // Normal attacks with separate ground and air recovery.
     case 0x12C: {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
@@ -2247,6 +2249,7 @@ void PatchouliFighter::Advance() {
         return;
     }
 
+    // Projectile startup. 0x190 fires four 0x33B objects at the angles in effect parameter 0.
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
             collisionResult = 1;
@@ -2586,6 +2589,7 @@ void PatchouliFighter::Advance() {
         return;
     }
 
+    // 0x1F4 and 0x1F5 start the timed horizontal pull at stage 6.
     case 0x1F4: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
@@ -2659,6 +2663,7 @@ void PatchouliFighter::Advance() {
         return;
     }
 
+    // Spirit Strike and its recovery variants.
     case 0x252: {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
@@ -3002,6 +3007,7 @@ void PatchouliFighter::Advance() {
         return;
     }
 
+    // Spell-card actions. 0x2BC spends stock at stage 3 and creates 0x320/0x321 in stages 4/5.
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
