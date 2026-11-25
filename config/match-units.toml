@@ -25780,7 +25780,7 @@ target = 0x00414400
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 47
 type = "REL32"
-symbol = "??Hiterator@?$deque@EV?$allocator@E@std@@@std@@QBE?AV012@H@Z"
+symbol = "??Giterator@?$deque@EV?$allocator@E@std@@@std@@QBE?AV012@H@Z"
 target = 0x00455C60
 [[units.fighter-match-input-sequence-00455800.relocations]]
 offset = 65

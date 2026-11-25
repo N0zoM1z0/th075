@@ -13,6 +13,8 @@ The VC7.1 linker used the same 442 COFF inputs in reverse order, including
 the supplied read-only data object. The library order and link flags stayed
 the same. The experiment has its own response file, executable and map.
 The ordinary build remains under `build/program/`.
+Both layouts use image base `0x00400000`. Reordering tests internal link
+placement at that base.
 
 | Symbol | Ordinary link | Reordered link |
 | --- | --- | --- |
@@ -58,6 +60,20 @@ and Escape selected and confirmed exit. The batch debugger recorded both
 title renders, character selection, audio destruction and process exit
 for all three runs.
 
+The initial staging omitted the installation's `replay/` directory.
+After character confirmation, replay capture tried to create
+`replay/replay.tmp` and opened an error dialog. With a writable
+`replay/` directory in each run, the original and both reconstructed
+layouts loaded the characters and stage and returned from the first
+`BattleScene::Render` call.
+
+The first update initially failed in the command-history matcher in both
+reconstructed layouts. The native call uses iterator subtraction to
+start before the end of the deque. After correcting the source and
+checking the three VC7.1 iterator helpers, the original and both
+layouts completed 60 consecutive `BattleScene::Update` calls.
+[Iterator evidence](KNOWLEDGE_BASE.md#windows-link)
+
 The relocation audit covered 961 unit bodies. Of these, 957 had their
 original object owners in both maps. Four matched other map entries
 with the same instruction body and compatible relocation operands. The
@@ -66,5 +82,7 @@ masking the COFF relocation fields. A whole-image PI claim also requires
 evidence for library and startup code outside the configured units.
 
 Local evidence is under `build/program/xvfb-runtime.6WNFjB/`. The
-`pi-reordered/` subdirectory has both-layout relocation checks, and the
-`*-menu/` directories have the debugger traces.
+`pi-reordered/` subdirectory has both-layout relocation checks. The
+menu and first-battle directories hold the debugger traces.
+The `reference-battle-updates/` and `*-battle-updates-fixed/`
+directories record the 60-update checks.

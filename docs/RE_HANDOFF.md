@@ -41,8 +41,11 @@ and a strict relink used the refreshed objects.
 
 The ordinary and reverse-order Windows links both ran from the title
 through character selection and back to title before exiting under
-isolated Xvfb. The PI notes record which symbols moved and which
-relocations were verified in both layouts.
+isolated Xvfb. Both layouts also loaded and rendered the first battle
+with the installation's `replay/` directory staged. The command-history
+matcher now uses the native iterator subtraction, and both layouts
+completed 60 battle updates after the fix. The PI notes record which
+symbols moved and which relocations were verified in both layouts.
 [Windows position independence](POSITION_INDEPENDENCE.md)
 
 ### Selected earlier link checkpoints

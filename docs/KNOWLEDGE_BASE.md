@@ -162,6 +162,15 @@ so the reconstructed source still passed the numeric relocation check.
 The original import directory identifies the API. Both destructor units
 cold-replay with the corrected symbol.
 
+The history window in `Fighter::MatchInputPattern` starts at the end
+iterator minus the requested offset. The native wrapper at `0x00455C60`
+calls the subtraction-assignment helper at `0x00455D10`, which negates
+the offset before accumulating it at `0x0042E2D0`. The old addition
+binding passed the numeric relocation check and led beyond the command
+deque in the first battle update. The 803-byte comparison, including
+the switch data, and all three VC7.1 iterator helpers match after the
+subtraction binding.
+
 The AI policy templates inherit the `Fighter` integer range at
 `0x00455610`. `CharacterAuxObject` keeps a separate entry at `0x00410F00`.
 Both entries still compare over 44 bytes with their CRT `rand` relocation.

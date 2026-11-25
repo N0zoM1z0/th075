@@ -50,6 +50,12 @@ This writes `build/program/th075.exe`, `build/program/th075.map` and
 executable in `resources/` to supply the remaining read-only data. See
 the [handoff](docs/RE_HANDOFF.md) for build details.
 
+For a runtime check, stage the executable beside `th075.dat`,
+`th075bgm.dat`, and `th075b.dat` from the Japanese installation.
+Create a writable `replay/` directory beside them. Story mode opens
+`replay/replay.tmp` before loading the first battle.
+[Runtime and position independence checks](docs/POSITION_INDEPENDENCE.md)
+
 ## Checks
 
 Read-only preflight:

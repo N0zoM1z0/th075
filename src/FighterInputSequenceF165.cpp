@@ -2,7 +2,7 @@
 
 // The native command history is the Fighter-owned VC7 deque at +0x518.
 signed char Fighter::MatchInputPattern(const char* text, signed char count, signed char historyOffset) {
-    std::deque<unsigned char>::iterator current = inputHistory.end() + historyOffset;
+    std::deque<unsigned char>::iterator current = inputHistory.end() - historyOffset;
     int index;
     {
         std::deque<unsigned char>::iterator last = inputHistory.end();
