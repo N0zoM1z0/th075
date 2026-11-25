@@ -28,8 +28,8 @@ case 0x338: {
         color[2]=0xFF;
         color[3]=0xFF;
         field0D8=0;
-        field080=5;
-        field07C=0;
+        remainingHits=5;
+        collisionResult=0;
     }
     if (animationStage==1) {
         scaleX=(scaleX)+FloatConstants::FifteenHundredths;
@@ -40,8 +40,8 @@ case 0x338: {
             0x337,x,y,
             facing,1);
     if (AdvanceNestedFrame()==animationStageCount) {
-        if (field0D8<5 && field080>0) {
-            field07C=0;
+        if (field0D8<5 && remainingHits>0) {
+            collisionResult=0;
             ++field0D8;
             ResetSecondaryCounter(2);
             return;

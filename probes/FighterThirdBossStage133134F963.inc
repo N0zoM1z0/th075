@@ -8,8 +8,8 @@ case 0x133: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ClearMotionFields();
-                    field080=1;
-        field07C=0;
+                    remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -35,8 +35,8 @@ case 0x134: {
         velocityX=0.0f;
         velocityY=0.0f;
         field05C=0.0f;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((velocityX)>FloatConstants::Zero)
         velocityX=(velocityX)-FloatConstants::Half;

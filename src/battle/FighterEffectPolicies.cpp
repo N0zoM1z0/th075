@@ -8,7 +8,7 @@
 void Fighter::SpawnBattleEffect(short effect, float x, float y,
                                                  signed char facing, signed char layer)
 {
-    field2EC->Spawn(effect, x, y, facing, layer,
+    ownedObjects->Spawn(effect, x, y, facing, layer,
         0, 0, effectParameters, 0, 0);
 }
 
@@ -17,10 +17,10 @@ void Fighter::SpawnTrackedEffect(short effect, float x, float y,
                                                   unsigned char linked, unsigned char mode)
 {
     if (linked != 0) {
-        field2EC->Spawn(effect, x, y, facing, layer,
+        ownedObjects->Spawn(effect, x, y, facing, layer,
             0, 0, effectParameters, &effectTransformRecord, mode);
     } else {
-        field2EC->Spawn(effect, x, y, facing, layer,
+        ownedObjects->Spawn(effect, x, y, facing, layer,
             0, 0, effectParameters, 0, mode);
     }
 }

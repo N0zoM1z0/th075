@@ -8,7 +8,7 @@
 // F974 authentic original Japanese 004AC040 action 0x19B, one shot.
 case 0x19B: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;
@@ -33,7 +33,7 @@ case 0x19B: {
 // F974 authentic original Japanese 004AC040 action 0x19C, one shot.
 case 0x19C: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;

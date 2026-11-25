@@ -5,7 +5,7 @@
         case 0x2BC: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 scriptCounterF00=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 spellPower=(spellPower)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);

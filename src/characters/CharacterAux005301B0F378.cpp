@@ -18,7 +18,7 @@ void YoumuFighter::AdvanceAuxiliary() {
         snapshot.x=x;
         snapshot.y=y;
         snapshot.facing=facing;
-        snapshot.counter=field080;
+        snapshot.counter=remainingHits;
         historyQueue.push_back(snapshot);
         if (historyQueue.size()>10) historyQueue.pop_front();
     }

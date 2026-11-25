@@ -40,7 +40,7 @@ struct FighterFrameInfoHeader {
     short unknown04;          // +0x04
     short textureIndex;       // +0x06
     ActorPose* pose;           // +0x08
-    unsigned char field0C;    // +0x0C
+    unsigned char doubleScale;    // +0x0C
     unsigned char unknown0D[3];
 };
 
@@ -62,21 +62,21 @@ struct FighterFrameInfo : public FighterFrameInfoHeader {
 
     short damage;             // +0x10
     float comboRateScale;     // +0x14 multiplies the attacker's combo rate
-    short field18;            // +0x18
-    short field1A;            // +0x1A flash gauge given to the defender
+    short guardDamage;            // +0x18
+    short baseHitstun;            // +0x1A flash gauge given to the defender
     short attackerHitStop;    // +0x1C
     short defenderHitStop;    // +0x1E
-    short field20;            // +0x20
-    short field22;            // +0x22
+    short guardAttackerHitStop;            // +0x20
+    short guardDefenderHitStop;            // +0x22
     short meterGain;          // +0x24
-    short field26;            // +0x26
-    short field28;            // +0x28
-    short field2A;            // +0x2A
-    float field2C;            // +0x2C horizontal reaction velocity
-    float field30;            // +0x30 vertical reaction velocity
-    short field34;            // +0x34
+    short guardSpellCharge;            // +0x26
+    short airHitAction;            // +0x28
+    short groundHitAction;            // +0x2A
+    float reactionVelocityX;            // +0x2C horizontal reaction velocity
+    float reactionVelocityY;            // +0x30 vertical reaction velocity
+    short hitSound;            // +0x34
     short hitEffect;          // +0x36
-    signed char field38;      // +0x38
+    signed char reactionVariant;      // +0x38
     unsigned long flags;      // +0x3C defence flags; bit 0x20 is tested before action changes
     unsigned long attackFlags;// +0x40
     CollisionBounds bodyBox;  // +0x44 RECT
@@ -104,6 +104,20 @@ struct FighterSequenceInfo {
     short targetPriority;     // +0x10
     short priority;           // +0x12
 };
+
+// Actor collision results are shared with character object state machines.
+namespace CollisionResult {
+enum Value {
+    None = 0,
+    Hit = 1,
+    Blocked = 2,
+    SpecialContact = 3,
+    ClashConsumedHit = 4,
+    ClashPreservedHits = 5,
+    Grazed = 6,
+    ConditionalHit = 7,
+};
+}
 
 // The rendering and animation fields shared by fighters, projectiles and
 // auxiliary effects. The concrete classes own their state after offset 0x74.
@@ -171,7 +185,7 @@ public:
         short field072;                 // +0x072 native frame-count word
         short animationFrameCount;     // semantic alias
     };
-    // Helpers shared by every actor (src/Actor.cpp).
+    // Helpers shared by every actor.
     short AdvanceNestedFrame();                                     // 0040FA30
     void ResetPrimaryCounters(short state);                         // 0040FAC0
     void SetThreeCounters(short action, short stage, short frame);  // 0040FB00
@@ -201,23 +215,23 @@ public:
             short field07A;
         };
     };
-    int field07C;                       // +0x07C
-    short field080;                     // +0x080
-    short hitstopFrames;                     // +0x082 nonzero: skip this frame and count down
-    short field084;                     // +0x084
-    short field086;                     // +0x086
-    short field088;                     // +0x088
+    int collisionResult;                    // +0x07C
+    short remainingHits;                    // +0x080
+    short hitstopFrames;                    // +0x082 nonzero: skip this frame and count down
+    short hitInvulnerabilityFrames;         // +0x084
+    short throwInvulnerabilityFrames;       // +0x086
+    short grazeFrames;                      // +0x088
     short field08A;                     // +0x08A
-    float collisionPointX;                     // +0x08C
-    float collisionPointY;                     // +0x090
-    float hitReactionVelocityX;                     // +0x094 horizontal reaction velocity
-    float hitReactionVelocityY;                     // +0x098 vertical reaction velocity
+    float collisionPointX;                  // +0x08C
+    float collisionPointY;                  // +0x090
+    float hitReactionVelocityX;             // +0x094 horizontal reaction velocity
+    float hitReactionVelocityY;             // +0x098 vertical reaction velocity
     float field09C;                     // +0x09C
     float field0A0;                     // +0x0A0
     float field0A4;                     // +0x0A4
     // Snapshot that SaveCollisionFields takes before collisions are resolved;
     // hit tests read these rather than the live fields above.
-    int savedField07C;                  // +0x0A8 nonzero: this actor cannot hit
+    int savedCollisionResult;               // +0x0A8 nonzero: this actor cannot hit
     FighterFrameInfo* savedFrameInfo;   // +0x0AC
     FighterSequenceInfo* savedSequenceInfo; // +0x0B0
     short savedAction;                  // +0x0B4

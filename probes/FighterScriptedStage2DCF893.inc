@@ -10,8 +10,8 @@ case 0x2DC: {
         fieldF04=0;
     }
     if ((animationStage)==2 && (animationFrame)==0) {
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         velocityX=10.0f;
         velocityY=0.0f;
         SpawnBattleEffect(0x33B,x,y,
@@ -49,8 +49,8 @@ case 0x2DC: {
     if ((animationStage)==15 && (animationFrame)==0) {
         velocityX=12.5f;
         velocityY=15.0f;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
     }
     if ((animationStage)==24 && (animationFrame)==0)
         ResetSecondaryCounter(22);

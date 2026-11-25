@@ -9,8 +9,8 @@ PatchouliFighter::PatchouliFighter()
     field713=1;
     strcpy(name,g_PatchouliNameAt00659754);
     strcpy(tag,g_PatchouliTagAt00659760);
-    field478=0x32c;
-    field532=10;
+    mainTextureCount=0x32c;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

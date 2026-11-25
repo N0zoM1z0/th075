@@ -3,8 +3,8 @@
 case 0x35C: {
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=99;
-        field07C=0;
+        remainingHits=99;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;

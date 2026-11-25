@@ -10,8 +10,8 @@ YoumuFighter::YoumuFighter()
     field713=1;
     strcpy(name,g_YoumuNameAt006598C0);
     strcpy(tag,g_YoumuTagAt006598C8);
-    field478=0x2ef;
-    field532=10;
+    mainTextureCount=0x2ef;
+    overlayTextureCount=10;
     field06C=-10.0f;
     fieldF0C=0;
     field705[0]=4;

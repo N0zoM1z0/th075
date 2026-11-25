@@ -18,8 +18,8 @@ case 0x391: {
         field0D8=0;
         field0DA=0;
         field0DC=0;
-        field080=0;
-        field07C=0;
+        remainingHits=0;
+        collisionResult=0;
     }
     if (scaleX<FloatConstants::One) {
         scaleX=(scaleX)+FloatConstants::OneTenth;

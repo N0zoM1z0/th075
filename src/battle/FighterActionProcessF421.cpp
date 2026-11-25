@@ -75,7 +75,7 @@ unsigned char Fighter::ProcessAction() {
     if(scriptIndex==script.CountCommands(scriptId)) {
       g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
     }
-  } else if (field4E4==1 || g_InputCanCancelAt00671632) {
+  } else if (humanConfirmHeldFrames==1 || g_InputCanCancelAt00671632) {
     if(scriptBitMask>0) {
       bit=1;
       number=1;

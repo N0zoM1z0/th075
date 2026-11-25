@@ -7,7 +7,7 @@ case 0x91: {
         velocityX=-10.0f;
         velocityY=14.0f;
         field05C=0.5f;
-        field07C=0;
+        collisionResult=0;
     }
     if (animationStage==1 && animationFrame==0 && fieldF0C==0) {
         fieldF0C=1;

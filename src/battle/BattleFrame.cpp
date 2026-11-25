@@ -25,14 +25,14 @@ unsigned short BattleScene::Update()
                 fighters[0]->AdvanceSequence();
                 fighters[0]->Advance();
                 fighters[1]->Advance();
-                fighters[0]->field2EC->AdvanceAll();
-                fighters[1]->field2EC->AdvanceAll();
+                fighters[0]->ownedObjects->AdvanceAll();
+                fighters[1]->ownedObjects->AdvanceAll();
                 ResolveBodySeparation();
             } else {
                 fighters[0]->Advance();
                 fighters[1]->Advance();
-                fighters[0]->field2EC->AdvanceAll();
-                fighters[1]->field2EC->AdvanceAll();
+                fighters[0]->ownedObjects->AdvanceAll();
+                fighters[1]->ownedObjects->AdvanceAll();
                 if (battlePhase != BattlePhase::VersusRoundRecovery && battlePhase != BattlePhase::StoryRoundRecovery && battlePhase != BattlePhase::RoundIntro)
                     reinterpret_cast<BattleScene *>(this)->ResolveActiveCollisions();
                 ResolveBodySeparation();

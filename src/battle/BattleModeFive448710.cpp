@@ -3,7 +3,7 @@
 #include "battle/BattleScene.hpp"
 #include "battle/BattleModeFive448710.hpp"
 
-#define PORTRAIT reinterpret_cast<TextureManagerF198*>(fighters[0]->field534)
+#define PORTRAIT fighters[0]->overlayTextures
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 
 void BattleScene::RenderModeFive() {
@@ -114,7 +114,7 @@ void BattleScene::RenderModeFive() {
         SetRect(&region, 0, 0, 256, 256);
         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&region);
         QUAD->TranslateQuad(340.0f, 280.0f, 0.0f);
-        PORTRAIT->DrawQuad(fighters[0]->field532 - 1, packet, &region, 0xFFFFFFFF);
+        PORTRAIT->DrawQuad(fighters[0]->overlayTextureCount - 1, packet, &region, 0xFFFFFFFF);
     }
 }
 

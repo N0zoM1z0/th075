@@ -9,8 +9,8 @@ SakuyaFighter::SakuyaFighter()
     field713=1;
     strcpy(name,g_SakuyaNameAt0065949C);
     strcpy(tag,g_SakuyaTagAt006594A4);
-    field478=0x27d;
-    field532=10;
+    mainTextureCount=0x27d;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

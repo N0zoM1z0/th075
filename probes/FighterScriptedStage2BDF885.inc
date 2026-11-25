@@ -9,8 +9,8 @@
 case 0x2BD: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         ClearMotionFields();
     }
     if ((animationStage)>8) {
@@ -26,9 +26,9 @@ case 0x2BD: {
         scaleX=(scaleX)-FloatConstants::OneFifth;
         scaleY=(scaleY)+FloatConstants::NineteenHundredths;
     }
-    if ((scriptCounterF00)==0 && field07C!=0) {
+    if ((scriptCounterF00)==0 && collisionResult!=0) {
         ++scriptCounterF00;
-        if (field07C==1) {
+        if (collisionResult==1) {
             Fighter::SpawnTrackedEffect(0x346,x,
                 (*(&y))+GeometryConstants::Hundred,
                 (facing),1,0,1);

@@ -1,6 +1,6 @@
 case 0x303: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        scriptCounterF00=0; field07C=1;
+        scriptCounterF00=0; collisionResult=1;
         ClearMotionFields();
     }
     field490=0.0f;
@@ -73,7 +73,7 @@ case 0x303: {
 }
 case 0x304: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1; ClearMotionFields(); scriptCounterF00=0;
+        collisionResult=1; ClearMotionFields(); scriptCounterF00=0;
     }
     if (opponent->health>0 && opponent->animationStage==2 &&
         opponent->roundsRemaining>0 && opponent->action==0x63) {

@@ -1,7 +1,7 @@
 case 0x2EF: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1; field07C=0; field3AC=0; scriptCounterF00=0;
+        remainingHits=1; collisionResult=0; field3AC=0; scriptCounterF00=0;
     }
 #define R1188_FADE_STAGE 1
 #define R1188_RETURN_STAGE 3

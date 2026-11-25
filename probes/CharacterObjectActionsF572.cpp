@@ -46,17 +46,17 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             field0D8 = -30;
             field0DA = 150;
             field0DC = 0;
             ResetTransform(0.0f,0.0f,0.0f);
-            field080 = 4;
-            field07C = 0;
+            remainingHits = 4;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0xFF;
@@ -86,7 +86,7 @@ void AliceObject::Advance() {
         }
         x += facing * (velocityX);
         y = y - velocityY;
-        if ((animationStage) < 5 && (field080) == 0) {
+        if ((animationStage) < 5 && (remainingHits) == 0) {
             ResetSecondaryCounter((animationStage) + 4);
             break;
         }
@@ -105,7 +105,7 @@ void AliceObject::Advance() {
             break;
         }
         if ((animationFrame) == 0)
-            field07C = 0;
+            collisionResult = 0;
         if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
             ResetSecondaryCounter(1);
             ++field0DC;
@@ -124,17 +124,17 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             field0D8 = 70;
             field0DA = 150;
             field0DC = 0;
             ResetTransform(0.0f,0.0f,0.0f);
-            field080 = 4;
-            field07C = 0;
+            remainingHits = 4;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0xFF;
@@ -164,7 +164,7 @@ void AliceObject::Advance() {
         }
         x += facing * (velocityX);
         y = y - velocityY;
-        if ((animationStage) < 5 && (field080) == 0) {
+        if ((animationStage) < 5 && (remainingHits) == 0) {
             ResetSecondaryCounter((animationStage) + 4);
             break;
         }
@@ -183,7 +183,7 @@ void AliceObject::Advance() {
             break;
         }
         if ((animationFrame) == 0)
-            field07C = 0;
+            collisionResult = 0;
         if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
             ResetSecondaryCounter(1);
             ++field0DC;
@@ -202,17 +202,17 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             field0D8 = -30;
             field0DA = 200;
             field0DC = 0;
             ResetTransform(0.0f,0.0f,0.0f);
-            field080 = 4;
-            field07C = 0;
+            remainingHits = 4;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0xFF;
@@ -242,7 +242,7 @@ void AliceObject::Advance() {
         }
         x += facing * (velocityX);
         y = y - velocityY;
-        if ((animationStage) < 5 && (field080) == 0) {
+        if ((animationStage) < 5 && (remainingHits) == 0) {
             ResetSecondaryCounter((animationStage) + 4);
             break;
         }
@@ -261,7 +261,7 @@ void AliceObject::Advance() {
             break;
         }
         if ((animationFrame) == 0)
-            field07C = 0;
+            collisionResult = 0;
         if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
             ResetSecondaryCounter(1);
             ++field0DC;
@@ -280,14 +280,14 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             if (field0C8 == FloatConstants::Zero) {
                 velocityX = 5.0f;
                 velocityY = 6.0f;
@@ -345,8 +345,8 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
         scaleX = 1.0f;
@@ -388,8 +388,8 @@ void AliceObject::Advance() {
     } else {
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(field0C8,15.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -449,8 +449,8 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0 && (field0D8) == 1) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
         scaleX = 0.5f;
@@ -481,13 +481,13 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -556,13 +556,13 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -631,13 +631,13 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -697,12 +697,12 @@ void AliceObject::Advance() {
     break;
 }
         case 0x335: {
-    if ((field07C) == 6) {
-        field07C = 0;
-        field080 = 99;
+    if ((collisionResult) == 6) {
+        collisionResult = 0;
+        remainingHits = 99;
     }
     if ((owner->action) > 0x45 && (owner->action) < 0x96 &&
-            (field080) > 0 && (animationStage) < 11) {
+            (remainingHits) > 0 && (animationStage) < 11) {
         ClearFrameInfo();
         for (int iteration=0; iteration<8; ++iteration)
             owner->SpawnBattleEffect(0x3E4, x, y, 1, 1);
@@ -716,10 +716,10 @@ void AliceObject::Advance() {
             field0D8 = 0;
             field0DA = 0;
             field0DC = 0;
-            field07C = 0;
-            field080 = 99;
+            collisionResult = 0;
+            remainingHits = 99;
             ResetTransform(0.0f,0.0f,0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0xFF;
@@ -778,8 +778,8 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
         scaleX = 1.0f;
@@ -794,9 +794,9 @@ void AliceObject::Advance() {
         owner->SetCameraShake(10.0f);
         owner->SpawnBattleEffect(0x33A, x, y, facing, 1);
     }
-    if ((field07C) == 6) {
-        field07C = 0;
-        ++field080;
+    if ((collisionResult) == 6) {
+        collisionResult = 0;
+        ++remainingHits;
     }
     scaleX = (scaleX) + FloatConstants::SevenHundredths;
     scaleY = (scaleY) + FloatConstants::SevenHundredths;
@@ -819,8 +819,8 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
         scaleX = 1.3f;
@@ -913,7 +913,7 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field07C = 0;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0;
@@ -958,7 +958,7 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field07C = 0;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0;
@@ -998,8 +998,8 @@ void AliceObject::Advance() {
         break;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         if ((field0D8) != 1) {
             ResetTransform(0.0f,0.0f,0.0f);
             scaleX = 1.5f;
@@ -1009,7 +1009,7 @@ void AliceObject::Advance() {
             color[1] = 0xFF;
             color[2] = 0xFF;
             color[3] = 0xFF;
-            field080 = 10;
+            remainingHits = 10;
         }
     }
     if ((animationStage) == 6)
@@ -1021,7 +1021,7 @@ void AliceObject::Advance() {
         ClearFrameInfo();
     if ((animationStage) == 7 && (animationFrame) == 0 && (field0D8) < 10) {
         ResetSecondaryCounter(6);
-        field07C = 0;
+        collisionResult = 0;
         ++field0D8;
     }
     break;
@@ -1036,7 +1036,7 @@ void AliceObject::Advance() {
         break;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
-        field07C = 0;
+        collisionResult = 0;
         ResetTransform(0.0f,0.0f,0.0f);
         scaleX = 2.0f;
         scaleY = 1.5f;
@@ -1045,12 +1045,12 @@ void AliceObject::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        field080 = 25;
+        remainingHits = 25;
     }
     if (AdvanceNestedFrame() == (animationStageCount))
         ClearFrameInfo();
     if ((animationFrame) == 0)
-        field07C = 0;
+        collisionResult = 0;
     if ((animationStage) == 13 && (animationFrame) == 0 && (field0D8) < 2) {
         ResetSecondaryCounter(6);
         ++field0D8;
@@ -1058,14 +1058,14 @@ void AliceObject::Advance() {
     break;
 }
         case 0x340: {
-    if ((field07C) == 6) {
-        field07C = 0;
-        field080 = 1;
+    if ((collisionResult) == 6) {
+        collisionResult = 0;
+        remainingHits = 1;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityX = AbsFloatAt00412D90(
             owner->x + (owner->facing) * 90 - (owner->opponent->x)
         ) * FloatConstants::FourHundredths;
@@ -1101,14 +1101,14 @@ void AliceObject::Advance() {
     break;
 }
         case 0x341: {
-    if ((field07C) == 6) {
-        field07C = 0;
-        field080 = 1;
+    if ((collisionResult) == 6) {
+        collisionResult = 0;
+        remainingHits = 1;
     }
     if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityX = AbsFloatAt00412D90(
             owner->x + (owner->facing) * 90 - (owner->opponent->x)
         ) * FloatConstants::FourHundredths;
@@ -1147,8 +1147,8 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
         scaleX = 1.0f;
@@ -1162,9 +1162,9 @@ void AliceObject::Advance() {
         rotationZ = 0.0f;
         owner->SetCameraShake(10.0f);
     }
-    if ((field07C) == 6) {
-        field07C = 0;
-        ++field080;
+    if ((collisionResult) == 6) {
+        collisionResult = 0;
+        ++remainingHits;
     }
     if ((animationStage) == 3 && (animationFrame) == 0)
         owner->SpawnBattleEffect(0x343, x, y, facing, 1);
@@ -1176,8 +1176,8 @@ void AliceObject::Advance() {
     if ((animationStage) == 0 && (animationFrame) == 0) {
         field0D8 = 0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
         scaleX = 1.7f;
@@ -1261,9 +1261,9 @@ void AliceObject::Advance() {
         rotationZ = (rotationZ) + GeometryConstants::Fifteen;
         if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
             ResetSecondaryCounter(2);
-            field080 = 99;
+            remainingHits = 99;
             rotationZ = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             break;
         }
     }
@@ -1291,7 +1291,7 @@ void AliceObject::Advance() {
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
         ResetSecondaryCounter(2);
-        field07C = 0;
+        collisionResult = 0;
     }
     break;
 }
@@ -1356,9 +1356,9 @@ void AliceObject::Advance() {
         rotationZ = (rotationZ) + GeometryConstants::Fifteen;
         if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
             ResetSecondaryCounter(2);
-            field080 = 99;
+            remainingHits = 99;
             rotationZ = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             break;
         }
     }
@@ -1386,7 +1386,7 @@ void AliceObject::Advance() {
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
         ResetSecondaryCounter(2);
-        field07C = 0;
+        collisionResult = 0;
     }
     break;
 }
@@ -1420,9 +1420,9 @@ void AliceObject::Advance() {
         rotationZ = (rotationZ) + GeometryConstants::Fifteen;
         if ((static_cast<AliceFighter*>(owner)->fieldF12) == 1 && (animationStage) == 1 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
             ResetSecondaryCounter(2);
-            field080 = 99;
+            remainingHits = 99;
             rotationZ = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             break;
         }
     }
@@ -1450,7 +1450,7 @@ void AliceObject::Advance() {
     if ((animationStage) == 2 && (animationFrame) == 0) ResetSecondaryCounter(1);
     if ((animationStage) == 6 && (animationFrame) == 0 && (static_cast<AliceFighter*>(owner)->fieldF12) == 1) {
         ResetSecondaryCounter(2);
-        field07C = 0;
+        collisionResult = 0;
     }
     break;
 }
@@ -1496,13 +1496,13 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -1580,13 +1580,13 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C) == 6) {
-            field07C = 0;
-            field080 = 1;
+        if ((collisionResult) == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -1668,7 +1668,7 @@ void AliceObject::Advance() {
         }
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0xFF;
@@ -1743,14 +1743,14 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C)==6) {
-            field07C=0;
-            field080=1;
+        if ((collisionResult)==6) {
+            collisionResult=0;
+            remainingHits=1;
         }
         if ((animationStage)==0 && (animationFrame)==0) {
             ResetTransform(0.0f,0.0f,0.0f);
-            field080=1;
-            field07C=0;
+            remainingHits=1;
+            collisionResult=0;
             velocityX=field0C8;
             velocityY=field0CC;
             scaleX=1.0f;
@@ -1793,9 +1793,9 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C)==6) {
-            field07C=0;
-            field080=1;
+        if ((collisionResult)==6) {
+            collisionResult=0;
+            remainingHits=1;
         }
         if ((field0D8)>2) {
             scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
@@ -1843,9 +1843,9 @@ void AliceObject::Advance() {
         }
         break;
     } else {
-        if ((field07C)==6) {
-            field07C=0;
-            field080=1;
+        if ((collisionResult)==6) {
+            collisionResult=0;
+            remainingHits=1;
         }
         if ((field0D8)>1) {
             scaleX = (scaleX)*FloatConstants::EightyFiveHundredthsDouble;
@@ -1863,8 +1863,8 @@ void AliceObject::Advance() {
             velocityX=20.0f;
             velocityY=0.0f;
             field0D8=0;
-            field07C=0;
-            field080=1;
+            collisionResult=0;
+            remainingHits=1;
             scaleX=1.0f;
             scaleY=1.0f;
             color[0]=0xFF;
@@ -1972,8 +1972,8 @@ void AliceObject::Advance() {
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityY=0.0f;
         velocityX=0.0f;
         scaleX=0.75f;
@@ -1988,9 +1988,9 @@ void AliceObject::Advance() {
         owner->SetCameraShake(5.0f);
         owner->SpawnBattleEffect(0x387,x,y,facing,1);
     }
-    if ((field07C)==6) {
-        field07C=0;
-        ++field080;
+    if ((collisionResult)==6) {
+        collisionResult=0;
+        ++remainingHits;
     }
     scaleX = (scaleX)+FloatConstants::FourHundredths;
     scaleY = (scaleY)+FloatConstants::FourHundredths;
@@ -2017,8 +2017,8 @@ void AliceObject::Advance() {
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityY=0.0f;
         velocityX=0.0f;
         scaleX=0.75f;
@@ -2107,17 +2107,17 @@ void AliceObject::Advance() {
         ClearFrameInfo();
         break;
     }
-    if ((field07C)==6) {
-        field07C=0;
-        field080=1;
+    if ((collisionResult)==6) {
+        collisionResult=0;
+        remainingHits=1;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=-30;
         field0DA=150;
         field0DC=0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0;
@@ -2136,7 +2136,7 @@ void AliceObject::Advance() {
         else
             color[0]=0xFF;
     }
-    if ((animationStage)<8 && (field080)==0) {
+    if ((animationStage)<8 && (remainingHits)==0) {
         ResetSecondaryCounter((animationStage)+4);
         break;
     }
@@ -2155,7 +2155,7 @@ void AliceObject::Advance() {
         break;
     }
     if ((animationFrame)==0)
-        field07C=0;
+        collisionResult=0;
     if ((animationStage)==8 && (animationFrame)==0 && (field0DC)<5) {
         ResetSecondaryCounter(4);
         ++field0DC;
@@ -2169,8 +2169,8 @@ void AliceObject::Advance() {
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         ResetTransform(0.0f,0.0f,0.0f);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0;
@@ -2229,7 +2229,7 @@ void AliceObject::Advance() {
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         ResetTransform(0.0f,0.0f,0.0f);
-        field07C=0;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0;
@@ -2318,8 +2318,8 @@ void AliceObject::Advance() {
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityY=0.0f;
         velocityX=0.0f;
         scaleX=0.25f;
@@ -2333,9 +2333,9 @@ void AliceObject::Advance() {
         rotationZ = 0.0f;
         owner->SetCameraShake(10.0f);
     }
-    if ((field07C)==6) {
-        field07C=0;
-        ++field080;
+    if ((collisionResult)==6) {
+        collisionResult=0;
+        ++remainingHits;
     }
     if ((animationStage)==3 && (animationFrame)==0)
         owner->SpawnBattleEffect(0x343,x,y,facing,1);
@@ -2373,8 +2373,8 @@ void AliceObject::Advance() {
     if ((animationStage)==0 && (animationFrame)==0) {
         field0D8=0;
         ResetTransform(0.0f,0.0f,0.0f);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityY=0.0f;
         velocityX=0.0f;
         scaleX=0.75f;
@@ -2389,9 +2389,9 @@ void AliceObject::Advance() {
         owner->SetCameraShake(5.0f);
         owner->SpawnBattleEffect(0x387,x,y,facing,1);
     }
-    if ((field07C)==6) {
-        field07C=0;
-        ++field080;
+    if ((collisionResult)==6) {
+        collisionResult=0;
+        ++remainingHits;
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ClearFrameInfo();

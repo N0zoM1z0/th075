@@ -1,6 +1,6 @@
 case 0x2DB: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        scriptCounterF00=0; scriptCounterF02=0; field07C=1;
+        scriptCounterF00=0; scriptCounterF02=0; collisionResult=1;
         if (y==FloatConstants::Zero) ClearMotionFields();
         else {
             velocityX=(velocityX)*FloatConstants::OneFifth;

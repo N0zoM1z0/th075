@@ -9,7 +9,7 @@ case 0x33: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -9.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -30,7 +30,7 @@ case 0x34: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -12.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -52,7 +52,7 @@ case 0x35: {
         scriptCounterF00 = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -80,7 +80,7 @@ case 0x38: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -8.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -101,7 +101,7 @@ case 0x39: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -9.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -122,7 +122,7 @@ case 0x3A: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -12.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -144,7 +144,7 @@ case 0x3B: {
         scriptCounterF00 = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -172,7 +172,7 @@ case 0x3E: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -8.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -193,7 +193,7 @@ case 0x3F: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -9.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -214,7 +214,7 @@ case 0x40: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -12.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -236,7 +236,7 @@ case 0x41: {
         scriptCounterF00 = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;

@@ -3,8 +3,8 @@
 // Entire original fighter remains NONEXACT; do not credit interior as callable.
 case 0x2E4: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         fieldF04=0;

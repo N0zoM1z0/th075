@@ -3,9 +3,9 @@ case R1189_ACTION: {
 #if R1189_AIR
         velocityX=(velocityX)*FloatConstants::Quarter;
         velocityY=(*(&velocityY))*FloatConstants::Quarter;
-        field07C=1;
+        collisionResult=1;
 #else
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
 #endif
     }

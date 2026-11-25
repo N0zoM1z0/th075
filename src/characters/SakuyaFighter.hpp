@@ -8,7 +8,7 @@ class SakuyaFighter : public Fighter {
 public:
     SakuyaFighter();
     void RenderStage(signed char stage);
-    virtual void Advance(); // slot 1: nonexact giant at 004AC040
+    virtual void Advance(); // slot 1, 004AC040
 
     void ConfigureStage();
     void ChooseAction();

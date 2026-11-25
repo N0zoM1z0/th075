@@ -3,14 +3,14 @@
 
 void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if (attack->savedField07C != 0 || attack->field080 <= 0) return;
+    if (attack->savedCollisionResult != CollisionResult::None || attack->remainingHits <= 0) return;
     if (defender->IsGroundedStateWindow()) return;
     if (!(attack->savedFrameInfo->attackFlags & 0x400000)) {
-        if (defender->field084 != 0) return;
+        if (defender->hitInvulnerabilityFrames != 0) return;
         if (defender->savedFrameInfo->flags & 0x2000) return;
     }
     if ((attack->savedFrameInfo->attackFlags & 0x80) > 0) {
-        if (defender->field086 > 0) return;
+        if (defender->throwInvulnerabilityFrames > 0) return;
         if (defender->savedFrameInfo->flags & 0x800) return;
         if (defender->savedFrameInfo->flags & 0x1000) return;
     }
@@ -53,8 +53,8 @@ void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighte
 
 void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
 {
-    if (first->savedField07C != 0 || first->field080 <= 0) return;
-    if (second->savedField07C != 0 || second->field080 <= 0) return;
+    if (first->savedCollisionResult != CollisionResult::None || first->remainingHits <= 0) return;
+    if (second->savedCollisionResult != CollisionResult::None || second->remainingHits <= 0) return;
     if (first->savedSequenceInfo->targetPriority == 0) return;
     if (second->savedSequenceInfo->targetPriority == 0) return;
     int i;
@@ -84,16 +84,16 @@ void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
         first->collisionPointY = second->collisionPointY;
         if (first->sequenceInfo->priority >= second->sequenceInfo->targetPriority ||
             second->sequenceInfo->priority >= first->sequenceInfo->targetPriority) {
-            first->field07C = 5;
-            second->field07C = 5;
+            first->collisionResult = CollisionResult::ClashPreservedHits;
+            second->collisionResult = CollisionResult::ClashPreservedHits;
         } else {
             if (first->sequenceInfo->targetPriority <= second->sequenceInfo->targetPriority) {
-                first->field07C = 4;
-                --first->field080;
+                first->collisionResult = CollisionResult::ClashConsumedHit;
+                --first->remainingHits;
             }
             if (first->sequenceInfo->targetPriority >= second->sequenceInfo->targetPriority) {
-                second->field07C = 4;
-                --second->field080;
+                second->collisionResult = CollisionResult::ClashConsumedHit;
+                --second->remainingHits;
             }
         }
     }
@@ -102,7 +102,7 @@ void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
 // Preserve the collision snapshot as ordinary float members.
 void Actor::SaveCollisionFields()
 {
-    savedField07C = field07C;
+    savedCollisionResult = collisionResult;
     savedFrameInfo = frameInfo;
     savedSequenceInfo = sequenceInfo;
     savedX = x;

@@ -5,8 +5,8 @@
 case 0x200: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=0;
-        field07C=0;
+        remainingHits=0;
+        collisionResult=0;
         field3AC=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {

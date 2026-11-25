@@ -281,7 +281,7 @@ case 0x48: {
         velocityX = -hitReactionVelocityX;
         velocityY = hitReactionVelocityY;
         field05C = 1.3f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if (animationStage==F605_STAGE48 && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(F605_EARLY48);
@@ -336,7 +336,7 @@ case 0x48: {
                 velocityX = -hitReactionVelocityX;
                 velocityY = hitReactionVelocityY;
                 field05C = 0.8f;
-                field07C = 0;
+                collisionResult = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);

@@ -14,8 +14,8 @@ case 0x131: {
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);

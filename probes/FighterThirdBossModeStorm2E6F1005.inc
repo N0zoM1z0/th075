@@ -12,7 +12,7 @@
 case 0x2E6: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field07C=0;
+        collisionResult=0;
         field3AC=0;
         scriptCounterF00=0;
         scriptCounterF02=0;

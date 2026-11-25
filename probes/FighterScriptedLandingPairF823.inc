@@ -15,7 +15,7 @@ case F633_CASE: {
         scriptCounterF00=0;
         velocityX=F633_START_HEIGHT;
         velocityY=0.0f;
-        field07C=0;
+        collisionResult=0;
 #if F633_EXTRA_FLAG && !F633_EXTRA_BEFORE
         fieldF0A=0;
 #endif

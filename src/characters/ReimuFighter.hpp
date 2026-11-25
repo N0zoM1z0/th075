@@ -12,7 +12,7 @@ public:
     void ChooseCardAction();
     static int cardCountdown;
     void RenderStage(signed char stage);
-    virtual void Advance(); // slot 1, 0045DD70 (nonexact giant research parent)
+    virtual void Advance(); // slot 1, 0045DD70
 
     void AdvanceAuxiliary();
     void PollCommands();

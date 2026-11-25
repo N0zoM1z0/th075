@@ -234,7 +234,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -255,7 +255,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -276,7 +276,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -298,7 +298,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -326,7 +326,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -347,7 +347,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -368,7 +368,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -390,7 +390,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -418,7 +418,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -439,7 +439,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -460,7 +460,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -482,7 +482,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -515,7 +515,7 @@ void YuyukoFighter::Advance() {
             field05C = 0.8f;
             if ((velocityY) > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
@@ -541,7 +541,7 @@ void YuyukoFighter::Advance() {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
@@ -567,7 +567,7 @@ void YuyukoFighter::Advance() {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
             field05C = 1.3f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
@@ -593,7 +593,7 @@ void YuyukoFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -625,7 +625,7 @@ void YuyukoFighter::Advance() {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
@@ -686,7 +686,7 @@ void YuyukoFighter::Advance() {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -965,7 +965,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -988,7 +988,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1011,7 +1011,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1035,7 +1035,7 @@ void YuyukoFighter::Advance() {
             velocityX = -10.0f;
             velocityY = 14.0f;
             field05C = 0.5f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(2);
@@ -1065,7 +1065,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1089,7 +1089,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1113,7 +1113,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1137,7 +1137,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1161,7 +1161,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1185,7 +1185,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1236,7 +1236,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1260,7 +1260,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1284,7 +1284,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1306,7 +1306,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1327,7 +1327,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1348,7 +1348,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1593,7 +1593,7 @@ void YuyukoFighter::Advance() {
     case 0xCC:
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1627,7 +1627,7 @@ void YuyukoFighter::Advance() {
     case 0xCD:
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1661,7 +1661,7 @@ void YuyukoFighter::Advance() {
     case 0xCE:
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1728,8 +1728,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1751,8 +1751,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage > 3 && animationStage < 15) {
             velocityY -= field05C;
@@ -1783,8 +1783,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 2;
-            field07C = 0;
+            remainingHits = 2;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1806,8 +1806,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1835,8 +1835,8 @@ void YuyukoFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -1857,13 +1857,13 @@ void YuyukoFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 4;
-            field07C = 0;
+            remainingHits = 4;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
         if (animationFrame == 0 && animationStage < 9)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 4 && animationFrame == 0)
             PlaySharedSound(0x1D);
         if (animationStage == 4 && animationFrame == 0) {
@@ -1876,8 +1876,8 @@ void YuyukoFighter::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field05C = 0.0f;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame == 0) {
@@ -1920,8 +1920,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0 && animationStage < 2) {
             velocityX -= FloatConstants::ThreeTenths;
@@ -1954,8 +1954,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1979,8 +1979,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2007,8 +2007,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2021,7 +2021,7 @@ void YuyukoFighter::Advance() {
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if (animationFrame == 0 && animationStage < 7)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 4 && animationFrame == 0)
             SpawnBattleEffect(0x334, static_cast<float>(static_cast<int>(facing) * 0x92) + x,
                 (y) + GeometryConstants::Eighty, facing, 1);
@@ -2031,8 +2031,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0 && y == FloatConstants::Zero) {
@@ -2056,7 +2056,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
         }
         if (animationFrame == 0 && animationStage < 10)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 4 && animationFrame == 0) {
             velocityX = 8.0f;
             velocityY = 10.0f;
@@ -2073,8 +2073,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2096,8 +2096,8 @@ void YuyukoFighter::Advance() {
     case 0x189:
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field05C = 0.0f;
             velocityY = 0.0f;
             velocityX = 10.0f;
@@ -2115,8 +2115,8 @@ void YuyukoFighter::Advance() {
 
     case 0x18A: {
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
@@ -2138,8 +2138,8 @@ void YuyukoFighter::Advance() {
 
     case 0x18B: {
         if ((animationStage) == 0 && (animationFrame) == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
             scriptCounterF00 = 0;
         }
@@ -2155,8 +2155,8 @@ void YuyukoFighter::Advance() {
         if ((animationStage) == 7 && (animationFrame) == 0 && (scriptCounterF00) < 2) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if ((animationStage) == 6 && (animationFrame) == 0) {
             SpawnBattleEffect(0x328,
@@ -2169,7 +2169,7 @@ void YuyukoFighter::Advance() {
 
     case 0x190:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2193,7 +2193,7 @@ void YuyukoFighter::Advance() {
 
     case 0x191:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2216,7 +2216,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
         }
@@ -2260,7 +2260,7 @@ void YuyukoFighter::Advance() {
 
     case 0x194:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::QuarterDouble;
             velocityY = (velocityY) * FloatConstants::QuarterDouble;
             scriptCounterF00 = 0;
@@ -2292,7 +2292,7 @@ void YuyukoFighter::Advance() {
 
     case 0x196:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2315,7 +2315,7 @@ void YuyukoFighter::Advance() {
 
     case 0x197:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2338,7 +2338,7 @@ void YuyukoFighter::Advance() {
 
     case 0x198:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2361,7 +2361,7 @@ void YuyukoFighter::Advance() {
 
     case 0x19A:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneFifth;
             velocityY = (velocityY) * FloatConstants::OneFifth;
             scriptCounterF00 = 0;
@@ -2399,7 +2399,7 @@ void YuyukoFighter::Advance() {
 
     case 0x19C:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2423,8 +2423,8 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0 && animationStage < 2) {
             velocityX -= FloatConstants::ThreeTenths;
@@ -2490,7 +2490,7 @@ void YuyukoFighter::Advance() {
 
     case 0x1A0:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::QuarterDouble;
             velocityY = (velocityY) * FloatConstants::QuarterDouble;
             scriptCounterF00 = 0;
@@ -2521,8 +2521,8 @@ void YuyukoFighter::Advance() {
     case 0x1F4:
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
             fieldF04 = 0;
@@ -2558,8 +2558,8 @@ void YuyukoFighter::Advance() {
     case 0x1F5:
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2601,12 +2601,12 @@ void YuyukoFighter::Advance() {
         if ((animationStage) == 0 && (animationFrame) == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if ((spiritCooldown) == 0 && field07C == 1) spirit=1000;
+        if ((spiritCooldown) == 0 && collisionResult == 1) spirit=1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if ((animationStage) == 4 && (animationFrame) == 0) {
@@ -2623,12 +2623,12 @@ void YuyukoFighter::Advance() {
         if ((animationStage) == 0 && (animationFrame) == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if ((spiritCooldown) == 0 && field07C == 1) spirit=1000;
+        if ((spiritCooldown) == 0 && collisionResult == 1) spirit=1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
         if ((animationStage) == 4 && (animationFrame) == 0) {
@@ -2645,8 +2645,8 @@ void YuyukoFighter::Advance() {
         if ((animationStage) == 0 && (animationFrame) == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2666,8 +2666,8 @@ void YuyukoFighter::Advance() {
     case 0x255: {
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2688,8 +2688,8 @@ void YuyukoFighter::Advance() {
     case 0x256: {
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2707,8 +2707,8 @@ void YuyukoFighter::Advance() {
     case 0x257: {
         if ((animationStage) == 0 && (animationFrame) == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2728,7 +2728,7 @@ void YuyukoFighter::Advance() {
 
     case 0x258:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -2748,7 +2748,7 @@ void YuyukoFighter::Advance() {
 
     case 0x259:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -2768,7 +2768,7 @@ void YuyukoFighter::Advance() {
 
     case 0x25A:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -2788,7 +2788,7 @@ void YuyukoFighter::Advance() {
 
     case 0x25F:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 6 && animationFrame == 0) {
@@ -2804,7 +2804,7 @@ void YuyukoFighter::Advance() {
 
     case 0x260:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 6 && animationFrame == 0) {
@@ -2820,7 +2820,7 @@ void YuyukoFighter::Advance() {
 
     case 0x261:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneFifth;
             velocityY = (velocityY) * FloatConstants::OneFifth;
         }
@@ -2839,7 +2839,7 @@ void YuyukoFighter::Advance() {
 
     case 0x262:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneFifth;
             velocityY = (velocityY) * FloatConstants::OneFifth;
         }
@@ -2858,8 +2858,8 @@ void YuyukoFighter::Advance() {
 
     case 0x263:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
-            field080 = 8;
+            collisionResult = 0;
+            remainingHits = 8;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2882,21 +2882,21 @@ void YuyukoFighter::Advance() {
                 ResetSecondaryCounter(7);
                 return;
             }
-            field07C = 1;
+            collisionResult = 1;
         }
         if (animationStage == 11 && animationFrame == 0 && scriptCounterF00 < 2) {
             ++scriptCounterF00;
             ResetSecondaryCounter(9);
         }
         if (animationFrame == 0 && animationStage < 9) {
-            field07C = 0;
+            collisionResult = 0;
         }
         break;
 
     case 0x264:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
-            field080 = 10;
+            collisionResult = 0;
+            remainingHits = 10;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2919,22 +2919,22 @@ void YuyukoFighter::Advance() {
                 ResetSecondaryCounter(7);
                 return;
             }
-            field07C = 1;
+            collisionResult = 1;
         }
         if (animationStage == 11 && animationFrame == 0 && scriptCounterF00 < 4) {
             ++scriptCounterF00;
             ResetSecondaryCounter(9);
         }
         if (animationFrame == 0 && animationStage < 9) {
-            field07C = 0;
+            collisionResult = 0;
         }
         break;
 
     case 0x265:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
-            field080 = 10;
-            field080 = 0;
+            collisionResult = 1;
+            remainingHits = 10;
+            remainingHits = 0;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2957,7 +2957,7 @@ void YuyukoFighter::Advance() {
                 ResetSecondaryCounter(7);
                 return;
             }
-            field07C = 1;
+            collisionResult = 1;
         }
         if (animationStage == 11 && animationFrame == 0 && scriptCounterF00 < 7) {
             ++scriptCounterF00;
@@ -2969,7 +2969,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3024,7 +3024,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3074,7 +3074,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             SetNonnegativeWord(0x28);
             PlaySharedSound(0x17);
@@ -3098,7 +3098,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3122,7 +3122,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3200,7 +3200,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             SetNonnegativeWord(0x28);
             PlaySharedSound(0x17);
@@ -3224,7 +3224,7 @@ void YuyukoFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3249,7 +3249,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             fieldF04 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame < 30) {
@@ -3379,8 +3379,8 @@ void YuyukoFighter::Advance() {
 
     case 0x2E4:
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
-            field080 = 8;
+            collisionResult = 0;
+            remainingHits = 8;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3403,7 +3403,7 @@ void YuyukoFighter::Advance() {
                 ResetSecondaryCounter(7);
                 return;
             }
-            field07C = 1;
+            collisionResult = 1;
         }
         if (animationStage == 11 && animationFrame == 0 && scriptCounterF00 < 5) {
             ++scriptCounterF00;
@@ -3416,7 +3416,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             fieldF04 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 9 || animationStage == 10) {
@@ -3450,7 +3450,7 @@ void YuyukoFighter::Advance() {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             fieldF04 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3635,7 +3635,7 @@ void YuyukoFighter::Advance() {
     case 0x302:
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 1) {
@@ -3834,7 +3834,7 @@ void YuyukoFighter::Advance() {
     case 0x31B:
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3854,7 +3854,7 @@ void YuyukoFighter::Advance() {
     case 0x31C:
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {

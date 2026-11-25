@@ -6,7 +6,7 @@
         case 0x31C: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 scriptCounterF00=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(0);

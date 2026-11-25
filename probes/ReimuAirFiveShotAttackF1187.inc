@@ -1,7 +1,7 @@
 // Native 194/195 airborne five-shot policy, with explicit per-shot values.
 case R1187_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
     }
     velocityY=velocityY-field05C;

@@ -21,7 +21,7 @@ case F1065_ACTION: {
         }
         return;
     }
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
@@ -36,8 +36,8 @@ case F1065_ACTION: {
         field0D8=0;
         field0DA=0;
         field0DC=0xAA;
-        field080=0;
-        field07C=0;
+        remainingHits=0;
+        collisionResult=0;
     }
     SetPolarVelocity(F1066_INITIAL_ANGLE,
         float(field0DC)*FloatConstants::OneTenth);
@@ -56,17 +56,17 @@ case F1065_ACTION: {
         }
         if (color[0]==0xFF && field0D8==0) {
             ++field0D8;
-            field080=10;
+            remainingHits=10;
         }
     }
-    if ((field07C==6 || field07C==4) &&
-        field080>0)
-        field07C=0;
-    if (field07C!=0)
+    if ((collisionResult==6 || collisionResult==4) &&
+        remainingHits>0)
+        collisionResult=0;
+    if (collisionResult!=0)
         ++field0D8;
     x=float(facing)*velocityX + x;
     y=y-velocityY;
-    if (field080==0 &&
+    if (remainingHits==0 &&
         animationStage<0x17 && field0D8>0) {
         ResetSecondaryCounter(0x17);
         return;

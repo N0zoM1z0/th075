@@ -69,7 +69,7 @@ void ActorRenderingBase::RenderMirroredNode()
               drawFrame->pose->rotationY,
               drawFrame->pose->rotationZ);
         TRANSFORM(transformed)->ScaleQuad(0.0f,0.0f,0.0f,static_cast<float>(facing),1.0f,1.0f);
-    } else if (drawFrame->field0C) {
+    } else if (drawFrame->doubleScale) {
         TRANSFORM(transformed)->ScaleQuad(0.0f,0.0f,0.0f,static_cast<float>(static_cast<int>(facing)<<1),2.0f,2.0f);
     }
     if (field040) {

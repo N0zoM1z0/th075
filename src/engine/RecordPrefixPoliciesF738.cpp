@@ -5,10 +5,10 @@
 FighterFrameInfoHeader::FighterFrameInfoHeader() {
  memset(this,0,16);
  pose=0;
- field0C=1;
+ doubleScale=1;
 }
 void FighterFrameInfoHeader::ResetExtension() {
- field0C=0;
+ doubleScale=0;
  if (!pose) {
    ActorPose* newPose=static_cast<ActorPose*>(::operator new(sizeof(ActorPose)));
    pose=newPose;

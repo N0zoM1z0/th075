@@ -22,7 +22,7 @@ void YukariObject::Advance()
     }
     switch (action) {
     case 800:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -36,8 +36,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -51,7 +51,7 @@ void YukariObject::Advance()
             ++field0D8;
             if (animationStage < 2)
                 SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+            if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                 ResetSecondaryCounter(2);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -119,8 +119,8 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             velocityX = 25.0f;
         }
         velocityX -= 0.8f;
@@ -179,14 +179,14 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 99;
+            remainingHits = 99;
         }
         if ((owner->animationStage > 6 && owner->action == 700) || owner->action != 700) {
             ClearFrameInfo(); return;
         }
         else if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
-            field07C = 0;
+            collisionResult = 0;
         }
         break;
 
@@ -216,8 +216,8 @@ void YukariObject::Advance()
                 ResetSecondaryCounter(1);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             x = facing * velocityX + x;
             y += velocityY;
@@ -227,7 +227,7 @@ void YukariObject::Advance()
                 owner->field314 = field0D0;
                 owner->field318 = field0D8;
                 owner->SpawnBattleEffect(807, x, y, facing, 1);
-                if (field07C != 0) {
+                if (collisionResult != 0) {
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                     ResetSecondaryCounter(2);
@@ -259,8 +259,8 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             rotationZ = field0C8;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
@@ -275,27 +275,27 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 255;
-            field07C = 0;
+            remainingHits = 255;
+            collisionResult = 0;
             field0D8 = 0;
         }
         if (animationStage < 6) {
             scaleX += 0.2f;
             if (scaleX > 1.5) scaleX = 1.5f;
         }
-        if (animationStage > 5 && field07C == 5) {
-            field07C = 0;
+        if (animationStage > 5 && collisionResult == 5) {
+            collisionResult = 0;
             ++static_cast<YukariFighter*>(owner)->fieldF30;
             if (static_cast<YukariFighter*>(owner)->fieldF30 > 10) static_cast<YukariFighter*>(owner)->fieldF30 = 10;
         }
-        if (field080 == 0) {
+        if (remainingHits == 0) {
             if (scaleX > 0.15f) scaleX -= 0.15f;
             else { ClearFrameInfo(); return; }
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(6);
             ++field0D8;
-            if (field0D8 > 1) field080 = 0;
+            if (field0D8 > 1) remainingHits = 0;
         }
         break;
 
@@ -308,27 +308,27 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 255;
-            field07C = 0;
+            remainingHits = 255;
+            collisionResult = 0;
             field0D8 = 0;
         }
         if (animationStage < 6) {
             scaleX += 0.2f;
             if (scaleX > 1.5) scaleX = 1.5f;
         }
-        if (animationStage > 5 && field07C == 5) {
-            field07C = 0;
+        if (animationStage > 5 && collisionResult == 5) {
+            collisionResult = 0;
             ++static_cast<YukariFighter*>(owner)->fieldF30;
             if (static_cast<YukariFighter*>(owner)->fieldF30 > 10) static_cast<YukariFighter*>(owner)->fieldF30 = 10;
         }
-        if (field080 == 0) {
+        if (remainingHits == 0) {
             if (scaleX > 0.15f) scaleX -= 0.15f;
             else { ClearFrameInfo(); return; }
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(6);
             ++field0D8;
-            if (field0D8 > 2) field080 = 0;
+            if (field0D8 > 2) remainingHits = 0;
         }
         break;
 
@@ -350,8 +350,8 @@ void YukariObject::Advance()
     case 811:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -390,8 +390,8 @@ void YukariObject::Advance()
         owner->fieldF0E = 1;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 20;
-            field07C = 0;
+            remainingHits = 20;
+            collisionResult = 0;
             scaleX = 0.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -438,13 +438,13 @@ void YukariObject::Advance()
                 else {
                     if (animationStage == 2 && animationFrame == 0) velocityX = 30.0f;
                     if (animationStage == 4 && animationFrame == 0) {
-                        if (field0D8 < 20 && field080 > 0) {
+                        if (field0D8 < 20 && remainingHits > 0) {
                             ResetSecondaryCounter(3);
-                            field07C = 0;
+                            collisionResult = 0;
                             ++field0D8;
                             return;
                         }
-                        if (field07C != 0) {
+                        if (collisionResult != 0) {
                             ResetSecondaryCounter(4);
                             velocityX = -3.0f;
                             velocityY = 15.0f;
@@ -461,8 +461,8 @@ void YukariObject::Advance()
         owner->fieldF0E = 1;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 30;
-            field07C = 0;
+            remainingHits = 30;
+            collisionResult = 0;
             scaleX = 0.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -510,13 +510,13 @@ void YukariObject::Advance()
                 else {
                     if (animationStage == 2 && animationFrame == 0) velocityX = 30.0f;
                     if (animationStage == 4 && animationFrame == 0) {
-                        if (field0D8 < 30 && field080 > 0) {
+                        if (field0D8 < 30 && remainingHits > 0) {
                             ResetSecondaryCounter(3);
-                            field07C = 0;
+                            collisionResult = 0;
                             ++field0D8;
                             return;
                         }
-                        if (field07C != 0) {
+                        if (collisionResult != 0) {
                             ResetSecondaryCounter(4);
                             velocityX = -2.0f;
                             velocityY = 15.0f;
@@ -533,8 +533,8 @@ void YukariObject::Advance()
         static_cast<YukariFighter*>(owner)->fieldF10 = 1;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 20;
-            field07C = 0;
+            remainingHits = 20;
+            collisionResult = 0;
             scaleX = 0.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -562,8 +562,8 @@ void YukariObject::Advance()
             velocityY -= 0.8f;
             if (y + velocityY < 0.0f && velocityY < 0.0f) {
                 ++field0D8;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityY = -velocityY;
                 owner->PlaySound(13);
             }
@@ -605,8 +605,8 @@ void YukariObject::Advance()
             rotationY = facing * -50;
             field0D8 = 0;
             field0DA = 0;
-            field080 = 99;
-            field07C = 0;
+            remainingHits = 99;
+            collisionResult = 0;
         }
         if (animationStage == 3 && animationFrame == 0) owner->field490 = 0.0f;
         rotationZ += 5.0f;
@@ -637,7 +637,7 @@ void YukariObject::Advance()
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0) {
                 ResetSecondaryCounter(2);
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         break;
@@ -659,8 +659,8 @@ void YukariObject::Advance()
             rotationY = facing * -50;
             field0D8 = 0;
             field0DA = 0;
-            field080 = 99;
-            field07C = 0;
+            remainingHits = 99;
+            collisionResult = 0;
         }
         rotationZ -= 5.0f;
         if (scaleX < 1.0f) {
@@ -683,7 +683,7 @@ void YukariObject::Advance()
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0) {
                 ResetSecondaryCounter(2);
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         break;
@@ -718,8 +718,8 @@ void YukariObject::Advance()
     case 819:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -745,8 +745,8 @@ void YukariObject::Advance()
                     (x > owner->field2DC && facing == 1)) {
                     ResetSecondaryCounter(2);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 2) {
@@ -761,8 +761,8 @@ void YukariObject::Advance()
                 if (y > owner->field2E0) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 3) {
@@ -777,8 +777,8 @@ void YukariObject::Advance()
                     (x > owner->field2DC && facing == -1)) {
                     ResetSecondaryCounter(4);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 4) {
@@ -798,8 +798,8 @@ void YukariObject::Advance()
                     owner->field314 = 0.0f;
                     owner->SpawnBattleEffect(818, x, y, facing, 1);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             x = facing * velocityX + x;
@@ -843,8 +843,8 @@ void YukariObject::Advance()
     case 821:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -870,8 +870,8 @@ void YukariObject::Advance()
                     (x > owner->field2DC && facing == 1)) {
                     ResetSecondaryCounter(2);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 2) {
@@ -886,8 +886,8 @@ void YukariObject::Advance()
                 if (y > owner->field2E0) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 3) {
@@ -902,8 +902,8 @@ void YukariObject::Advance()
                     (x > owner->field2DC && facing == -1)) {
                     ResetSecondaryCounter(4);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 4) {
@@ -923,8 +923,8 @@ void YukariObject::Advance()
                     owner->field314 = 0.0f;
                     owner->SpawnBattleEffect(820, x, y, facing, 1);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             x = facing * velocityX + x;
@@ -968,8 +968,8 @@ void YukariObject::Advance()
     case 823:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -995,8 +995,8 @@ void YukariObject::Advance()
                     (x > owner->field2DC && facing == 1)) {
                     ResetSecondaryCounter(2);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 2) {
@@ -1011,8 +1011,8 @@ void YukariObject::Advance()
                 if (y > owner->field2E0) {
                     ResetSecondaryCounter(3);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 3) {
@@ -1027,8 +1027,8 @@ void YukariObject::Advance()
                     (x > owner->field2DC && facing == -1)) {
                     ResetSecondaryCounter(4);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             if (animationStage == 4) {
@@ -1048,8 +1048,8 @@ void YukariObject::Advance()
                     owner->field314 = 0.0f;
                     owner->SpawnBattleEffect(822, x, y, facing, 1);
                     ++field0D8;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
             x = facing * velocityX + x;
@@ -1167,8 +1167,8 @@ void YukariObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
                 rotationY = 60.0f;
-                field080 = 255;
-                field07C = 0;
+                remainingHits = 255;
+                collisionResult = 0;
             }
             if (animationStage == 1) {
                 scaleY += 0.25;
@@ -1197,8 +1197,8 @@ void YukariObject::Advance()
             rotationY = facing * -50;
             field0D8 = 0;
             field0DA = 0;
-            field080 = 99;
-            field07C = 0;
+            remainingHits = 99;
+            collisionResult = 0;
         }
         rotationZ -= 5.0f;
         if (scaleX < 1.0f) {
@@ -1226,8 +1226,8 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 30.0f;
         }
         x = facing * velocityX + x;
@@ -1245,8 +1245,8 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityY = 30.0f;
         }
         y += velocityY;
@@ -1265,8 +1265,8 @@ void YukariObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 255;
-            field07C = 0;
+            remainingHits = 255;
+            collisionResult = 0;
             field0D8 = static_cast<YukariFighter*>(owner)->fieldF30 + 3;
             static_cast<YukariFighter*>(owner)->fieldF30 = 0;
         }
@@ -1318,7 +1318,7 @@ void YukariObject::Advance()
         break;
 
     case 835:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -1332,8 +1332,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -1354,7 +1354,7 @@ void YukariObject::Advance()
                     return;
                 }
             }
-            if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+            if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                 ResetSecondaryCounter(2);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -1431,8 +1431,8 @@ void YukariObject::Advance()
                 ResetSecondaryCounter(1);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             x = facing * velocityX + x;
             y += velocityY;
@@ -1442,7 +1442,7 @@ void YukariObject::Advance()
                 owner->field314 = -90.0f;
                 owner->field318 = 0.0f;
                 owner->SpawnBattleEffect(807, x, y, facing, 1);
-                if (field07C != 0) {
+                if (collisionResult != 0) {
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                     ResetSecondaryCounter(2);
@@ -1630,8 +1630,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 20;
-                field07C = 0;
+                remainingHits = 20;
+                collisionResult = 0;
                 scaleX = 0.0f;
                 scaleY = 2.0f;
                 color[0] = 255;
@@ -1646,8 +1646,8 @@ void YukariObject::Advance()
             }
             if (animationStage == 2 && animationFrame == 0) {
                 SetPolarVelocity(field0DA, 30.0f);
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             if (animationStage == 1) {
                 if (scaleX < 1.0f) scaleX += 0.25f;
@@ -1671,8 +1671,8 @@ void YukariObject::Advance()
             y -= velocityY;
             if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(3);
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 return;
             }
             else {
@@ -1700,8 +1700,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 field0D8 = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
@@ -1712,7 +1712,7 @@ void YukariObject::Advance()
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -1737,8 +1737,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 field0D8 = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
@@ -1749,7 +1749,7 @@ void YukariObject::Advance()
                 SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
             }
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -1790,8 +1790,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 20;
-                field07C = 0;
+                remainingHits = 20;
+                collisionResult = 0;
                 scaleX = 0.0f;
                 scaleY = 2.0f;
                 color[0] = 255;
@@ -1805,8 +1805,8 @@ void YukariObject::Advance()
             }
             if (animationStage == 2 && animationFrame == 0) {
                 SetPolarVelocity(field0DA, 30.0f);
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             if (animationStage == 1) {
                 if (scaleX < 1.0f) scaleX += 0.25f;
@@ -1830,8 +1830,8 @@ void YukariObject::Advance()
             y -= velocityY;
             if (AdvanceNestedFrame() == animationStageCount) {
                 ResetSecondaryCounter(3);
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 return;
             }
             else {
@@ -1927,8 +1927,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1938,10 +1938,10 @@ void YukariObject::Advance()
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, 7.0f);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
-            if (animationStage == 1 && field07C != 0) { ResetSecondaryCounter(2); return; }
+            if (animationStage == 1 && collisionResult != 0) { ResetSecondaryCounter(2); return; }
             else {
                 if (animationStage == 2) { scaleX *= 0.85f; scaleY *= 0.85f; }
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
@@ -1961,8 +1961,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 0;
@@ -1971,7 +1971,7 @@ void YukariObject::Advance()
                 color[3] = 255;
                 field0DA = RecordedRange(0, 359);
                 SetPolarVelocity(field0DA, 20.0f);
-                field07C = 0;
+                collisionResult = 0;
                 field0D8 = 0;
                 field0DC = 0;
             }
@@ -2044,8 +2044,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2055,10 +2055,10 @@ void YukariObject::Advance()
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, 7.0f);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
-            if (animationStage == 1 && field07C != 0) { ResetSecondaryCounter(2); return; }
+            if (animationStage == 1 && collisionResult != 0) { ResetSecondaryCounter(2); return; }
             else {
                 if (animationStage == 2) { scaleX *= 0.85f; scaleY *= 0.85f; }
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
@@ -2093,7 +2093,7 @@ void YukariObject::Advance()
                     ResetSecondaryCounter(1);
                     velocityX = owner->facing * 8.0f;
                     velocityY = -20.0f;
-                    field080 = 15;
+                    remainingHits = 15;
                     return;
                 }
                 if (owner->action == 731 || (owner->action == 732 && owner->animationStage < 7)) {
@@ -2121,7 +2121,7 @@ void YukariObject::Advance()
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
                 ResetSecondaryCounter(1);
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         break;
@@ -2207,8 +2207,8 @@ void YukariObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             scaleX += 0.5f;
             scaleY *= 0.95;
@@ -2228,8 +2228,8 @@ void YukariObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             scaleX += 0.5f;
             scaleY *= 0.95;
@@ -2443,8 +2443,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2454,10 +2454,10 @@ void YukariObject::Advance()
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
-            if (animationStage == 1 && field07C != 0) { ResetSecondaryCounter(2); return; }
+            if (animationStage == 1 && collisionResult != 0) { ResetSecondaryCounter(2); return; }
             else {
                 if (animationStage == 2) { scaleX *= 0.8f; scaleY *= 0.8f; }
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
@@ -2477,8 +2477,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 3.0f;
                 scaleY = 3.0f;
                 color[0] = 255;
@@ -2489,15 +2489,15 @@ void YukariObject::Advance()
                 field0DA = RecordedRange(0, 359);
                 SetPolarVelocity(field0DA, field0D8 * 0.05f);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             if (animationStage == 1) {
                 scaleX -= 0.1f;
                 scaleY -= 0.1f;
                 if (scaleX < 1.0f) { scaleX = 1.0f; scaleY = 1.0f; }
             }
-            if (animationStage == 2 && field07C != 0) {
+            if (animationStage == 2 && collisionResult != 0) {
                 ResetSecondaryCounter(3);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2526,8 +2526,8 @@ void YukariObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 3.0f;
                 scaleY = 3.0f;
                 color[0] = 0;
@@ -2535,8 +2535,8 @@ void YukariObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
                 field0D8 = 0;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             if (animationStage == 1) {
                 scaleX -= 0.1f;
@@ -2545,7 +2545,7 @@ void YukariObject::Advance()
                 if (color[0] < 245) color[0] += 10;
                 else color[0] = 255;
             }
-            if (animationStage == 2 && field07C != 0) {
+            if (animationStage == 2 && collisionResult != 0) {
                 ResetSecondaryCounter(3);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2589,7 +2589,7 @@ void YukariObject::Advance()
                     ResetSecondaryCounter(1);
                     velocityX = owner->facing * 8.0f;
                     velocityY = -20.0f;
-                    field080 = 15;
+                    remainingHits = 15;
                     return;
                 }
                 if (owner->action == 731 || (owner->action == 732 && owner->animationStage < 7)) {
@@ -2616,7 +2616,7 @@ void YukariObject::Advance()
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
                 ResetSecondaryCounter(1);
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         break;
@@ -2641,7 +2641,7 @@ void YukariObject::Advance()
                     ResetSecondaryCounter(1);
                     velocityX = owner->facing * 10.0f;
                     velocityY = -20.0f;
-                    field080 = 15;
+                    remainingHits = 15;
                     return;
                 }
                 if (owner->action == 731 || (owner->action == 732 && owner->animationStage < 7)) {
@@ -2668,7 +2668,7 @@ void YukariObject::Advance()
             if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
             if (animationStage == 2 && animationFrame == 0) {
                 ResetSecondaryCounter(1);
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         break;

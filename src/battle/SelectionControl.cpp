@@ -227,6 +227,6 @@ void Fighter::UpdateControls() {
         inputHistory.pop_front();
         PollCommands();
     }
-    if (cpuControlled == 0) field4E4 = inputA;
-    else field4E4 = 0;
+    if (cpuControlled == 0) humanConfirmHeldFrames = inputA;
+    else humanConfirmHeldFrames = 0;
 }

@@ -10,7 +10,7 @@ case 0x91: {
         velocityX=-10.0f;
         velocityY=14.0f;
         field05C=0.5f;
-        field07C=0;
+        collisionResult=0;
     }
     if (animationStage==F629_STAGE && velocityY<FloatConstants::Two) {
         ResetSecondaryCounter(F629_EARLY);

@@ -9,7 +9,7 @@
 // F989 original Japanese TH075 fighter 004AC040 action258
 case 0x258: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;

@@ -13,7 +13,7 @@ case F641_CASE: {
     if (animationStage==0 && animationFrame==0) {
         velocityX=F641_START_HEIGHT;
         velocityY=0.0f;
-        field07C=0;
+        collisionResult=0;
     }
     if ((velocityX)<FloatConstants::Zero) {
         velocityX=(velocityX)+FloatConstants::ThreeFifths;

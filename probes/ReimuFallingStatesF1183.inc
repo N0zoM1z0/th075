@@ -25,8 +25,8 @@
 case 0x12E: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -60,15 +60,15 @@ case 0x12E: {
 case 0x12F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
-        field080=6;
-        field07C=0;
+        remainingHits=6;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
         if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
-    if ((animationFrame)==0 && (animationStage)<12) field07C=0;
+    if ((animationFrame)==0 && (animationStage)<12) collisionResult=0;
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1B);
     if ((animationStage)==5 && (animationFrame)==0) PlaySharedSound(0x1B);
     if ((animationStage)==7 && (animationFrame)==0) PlaySharedSound(0x1B);
@@ -78,8 +78,8 @@ case 0x12F: {
 case 0x130: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -107,7 +107,7 @@ case 0x131: {
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        scriptCounterF00=0; field080=3; field07C=0;
+        scriptCounterF00=0; remainingHits=3; collisionResult=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==1 && (animationFrame)==0) PlaySharedSound(0x1B);
@@ -118,7 +118,7 @@ case 0x131: {
     if ((animationStage)==4 && (animationFrame)==0 && (scriptCounterF00)<2) {
         ++scriptCounterF00;
         ResetSecondaryCounter(2);
-        field07C=0;
+        collisionResult=0;
     }
     break;
 }
@@ -129,14 +129,14 @@ case 0x132: {
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if ((animationStage)==0 && (animationFrame)==0) { field080=1; field07C=0; }
+    if ((animationStage)==0 && (animationFrame)==0) { remainingHits=1; collisionResult=0; }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(9);
     if ((animationStage)==2 && (animationFrame)==0) PlaySharedSound(0x1C);
     break;
 }
 case 0x133: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        velocityX=0.0f; velocityY=0.0f; field05C=0.0f; field080=1; field07C=0;
+        velocityX=0.0f; velocityY=0.0f; field05C=0.0f; remainingHits=1; collisionResult=0;
     }
     if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
@@ -181,7 +181,7 @@ case 0x135: {
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==2 && (animationFrame)==0) {
-        field080=1; field07C=0; velocityX=12.0f; velocityY=6.0f; field05C=0.8f;
+        remainingHits=1; collisionResult=0; velocityX=12.0f; velocityY=6.0f; field05C=0.8f;
     }
     // Original 004639D2..00463A2C really nests stage 5 under stage 3.
     // Keep both observed guards; simplifying this contradictory path would
@@ -196,7 +196,7 @@ case 0x135: {
 }
 case 0x136: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field3AC=0; ClearMotionFields(); field080=1; field07C=0;
+        field3AC=0; ClearMotionFields(); remainingHits=1; collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;

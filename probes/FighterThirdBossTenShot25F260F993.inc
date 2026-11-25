@@ -10,7 +10,7 @@
 // F993 original Japanese fighter 004AC040 action 0x25F 10-shot loop.
 case 0x25F: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;
@@ -39,7 +39,7 @@ case 0x25F: {
 // F993 original Japanese fighter 004AC040 action 0x260 10-shot loop.
 case 0x260: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;

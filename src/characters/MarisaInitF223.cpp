@@ -9,8 +9,8 @@ MarisaFighter::MarisaFighter()
     field713=1;
     strcpy(name,g_MarisaNameAt006592A8);
     strcpy(tag,g_MarisaTagAt006592B0);
-    field478=0x299;
-    field532=10;
+    mainTextureCount=0x299;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

@@ -46,7 +46,7 @@ void ActorRenderingBase::Render() {
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
-        if (drawFrame->field0C != 0)
+        if (drawFrame->doubleScale != 0)
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, (facing) * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
@@ -97,7 +97,7 @@ void ActorRenderingBase::RenderNode() {
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
-        if (drawFrame->field0C != 0)
+        if (drawFrame->doubleScale != 0)
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, (facing) * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }

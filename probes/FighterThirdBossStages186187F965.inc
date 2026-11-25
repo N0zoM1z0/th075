@@ -11,8 +11,8 @@ case 0x186: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityX=10.0f;
     }
     if ((animationStage)>0) {
@@ -36,8 +36,8 @@ case 0x187: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ClearMotionFields();
-        field080=2;
-        field07C=0;
+        remainingHits=2;
+        collisionResult=0;
         velocityX=10.0f;
     }
     if ((animationStage)<2) {
@@ -66,7 +66,7 @@ case 0x187: {
     if ((animationStage)==7 && (animationFrame)==0)
         PlaySharedSound(0x1C);
     if ((animationStage)==8 && (animationFrame)==0)
-        field07C=0;
+        collisionResult=0;
     if ((animationStage)==14 && (animationFrame)==0)
         ResetSecondaryCounter(0xC);
     break;

@@ -8,7 +8,7 @@
 // F997 real original Japanese 004AC040 state25D full 360-degree 36 shots
 case 0x25D: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         velocityX=(velocityX)*FloatConstants::Quarter;

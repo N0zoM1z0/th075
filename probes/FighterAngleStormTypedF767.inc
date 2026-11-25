@@ -12,7 +12,7 @@ case 0x2F9: {
                 scriptCounterF00=0;
                 scriptCounterF02=0;
                 fieldF04=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)>1 && (animationStage)<20) {

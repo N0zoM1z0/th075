@@ -10,7 +10,7 @@
 case 0x1FB: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field07C=1;
+        collisionResult=1;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
@@ -96,7 +96,7 @@ case 0x1FB: {
 case 0x1FC: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field07C=1;
+        collisionResult=1;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
@@ -182,7 +182,7 @@ case 0x1FC: {
 case 0x1FD: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field07C=1;
+        collisionResult=1;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;

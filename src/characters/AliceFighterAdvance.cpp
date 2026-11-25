@@ -248,7 +248,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityX < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -266,7 +266,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -287,7 +287,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -309,7 +309,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -337,7 +337,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -358,7 +358,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -379,7 +379,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -401,7 +401,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -429,7 +429,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -450,7 +450,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -471,7 +471,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -493,7 +493,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -526,7 +526,7 @@ void AliceFighter::Advance() {
             field05C = 0.8f;
             if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -553,7 +553,7 @@ void AliceFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -580,7 +580,7 @@ void AliceFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 1.3f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -607,7 +607,7 @@ void AliceFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -639,7 +639,7 @@ void AliceFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -704,7 +704,7 @@ void AliceFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX)*GeometryConstants::Hundred);
@@ -996,7 +996,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1019,7 +1019,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1042,7 +1042,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1066,7 +1066,7 @@ void AliceFighter::Advance() {
             velocityX = -10.0f;
             velocityY = 14.0f;
             field05C = 0.5f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -1096,7 +1096,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1120,7 +1120,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1144,7 +1144,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1168,7 +1168,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1192,7 +1192,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1216,7 +1216,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1267,7 +1267,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1291,7 +1291,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1315,7 +1315,7 @@ void AliceFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1337,7 +1337,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1358,7 +1358,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1379,7 +1379,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1647,7 +1647,7 @@ void AliceFighter::Advance() {
     case 0xCC: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3,4,0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0) ClearMotionFields();
         if (y > FloatConstants::Zero) {
@@ -1683,7 +1683,7 @@ void AliceFighter::Advance() {
     case 0xCD: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3,4,0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0) ClearMotionFields();
         if (y > FloatConstants::Zero) {
@@ -1719,7 +1719,7 @@ void AliceFighter::Advance() {
     case 0xCE: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3,4,0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0) ClearMotionFields();
         if (y > FloatConstants::Zero) {
@@ -1831,8 +1831,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 5;
-            field07C = 0;
+            remainingHits = 5;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1852,15 +1852,15 @@ void AliceFighter::Advance() {
         if (animationStage == 10 && animationFrame == 0)
             PlaySharedSound(0x1b);
         if (animationStage < 11 && animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         return;
     }
 
     case 0x12D: {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0) ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX)-FloatConstants::ThreeFifths;
@@ -1884,8 +1884,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 6;
-            field07C = 0;
+            remainingHits = 6;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1905,7 +1905,7 @@ void AliceFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0)
             PlaySharedSound(0x1b);
         if (animationStage < 11 && animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         return;
     }
 
@@ -1913,8 +1913,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1940,8 +1940,8 @@ void AliceFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 4;
-            field07C = 0;
+            remainingHits = 4;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -1954,7 +1954,7 @@ void AliceFighter::Advance() {
         if (animationStage == 8 && animationFrame == 0)
             PlaySharedSound(0x1b);
         if (animationStage < 8 && animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         return;
     }
 
@@ -1968,8 +1968,8 @@ void AliceFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -1982,8 +1982,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2009,8 +2009,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2032,8 +2032,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2062,8 +2062,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2089,8 +2089,8 @@ void AliceFighter::Advance() {
     case 0x186: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 5;
-            field07C = 0;
+            remainingHits = 5;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2111,15 +2111,15 @@ void AliceFighter::Advance() {
         if (animationStage == 10 && animationFrame == 0)
             PlaySharedSound(0x1b);
         if (animationFrame == 0 && animationStage < 11)
-            field07C = 0;
+            collisionResult = 0;
         return;
     }
 
     case 0x187: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
@@ -2139,8 +2139,8 @@ void AliceFighter::Advance() {
     case 0x188: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 5;
-            field07C = 0;
+            remainingHits = 5;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2161,15 +2161,15 @@ void AliceFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0)
             PlaySharedSound(0x1b);
         if (animationFrame == 0 && animationStage < 11)
-            field07C = 0;
+            collisionResult = 0;
         return;
     }
 
     case 0x189: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
@@ -2188,8 +2188,8 @@ void AliceFighter::Advance() {
 
     case 0x18A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
@@ -2210,8 +2210,8 @@ void AliceFighter::Advance() {
 
     case 0x18B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
             scriptCounterF00 = 0;
         }
@@ -2227,8 +2227,8 @@ void AliceFighter::Advance() {
         if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 2) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x328,
@@ -2240,7 +2240,7 @@ void AliceFighter::Advance() {
 
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame == 0) {
@@ -2256,7 +2256,7 @@ void AliceFighter::Advance() {
 
     case 0x191: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 10 && animationFrame == 0)
@@ -2275,7 +2275,7 @@ void AliceFighter::Advance() {
 
     case 0x192: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -2291,7 +2291,7 @@ void AliceFighter::Advance() {
 
     case 0x194: {
         if (animationStage == 0 && animationFrame == 0)
-            field07C = 1;
+            collisionResult = 1;
         velocityY -= field05C;
         if (y + velocityY <= FloatConstants::Zero)
             velocityX = 0.0f;
@@ -2311,7 +2311,7 @@ void AliceFighter::Advance() {
 
     case 0x197: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneFifth;
             velocityY = (velocityY) * FloatConstants::OneFifth;
         }
@@ -2334,7 +2334,7 @@ void AliceFighter::Advance() {
 
     case 0x198: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2356,7 +2356,7 @@ void AliceFighter::Advance() {
 
     case 0x19A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2373,7 +2373,7 @@ void AliceFighter::Advance() {
 
     case 0x19C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneFifth;
             velocityY = (velocityY) * FloatConstants::OneFifth;
             scriptCounterF00 = 0;
@@ -2395,7 +2395,7 @@ void AliceFighter::Advance() {
 
     case 0x19D: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneFifth;
             velocityY = (velocityY) * FloatConstants::OneFifth;
             scriptCounterF00 = 0;
@@ -2418,7 +2418,7 @@ void AliceFighter::Advance() {
     case 0x19E: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2445,7 +2445,7 @@ void AliceFighter::Advance() {
     case 0x19F: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2472,7 +2472,7 @@ void AliceFighter::Advance() {
     case 0x1A0: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2498,7 +2498,7 @@ void AliceFighter::Advance() {
 
     case 0x1A2: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (y > FloatConstants::Zero && animationStage < 9) {
@@ -2539,8 +2539,8 @@ void AliceFighter::Advance() {
     case 0x1F4: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
@@ -2578,8 +2578,8 @@ void AliceFighter::Advance() {
     case 0x1F5: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (velocityX > FloatConstants::Zero) {
@@ -2618,12 +2618,12 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             bombCount = bombCount - 1;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2639,12 +2639,12 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             bombCount = bombCount - 1;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2660,8 +2660,8 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             bombCount = bombCount - 1;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2678,8 +2678,8 @@ void AliceFighter::Advance() {
     case 0x255: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2700,8 +2700,8 @@ void AliceFighter::Advance() {
     case 0x256: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2719,8 +2719,8 @@ void AliceFighter::Advance() {
     case 0x257: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2740,7 +2740,7 @@ void AliceFighter::Advance() {
 
     case 0x258: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -2756,7 +2756,7 @@ void AliceFighter::Advance() {
 
     case 0x259: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -2772,7 +2772,7 @@ void AliceFighter::Advance() {
 
     case 0x25A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -2790,7 +2790,7 @@ void AliceFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX)*FloatConstants::Quarter;
             velocityY = (velocityY)*FloatConstants::Quarter;
-            field07C = 1;
+            collisionResult = 1;
         }
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x32D,
@@ -2805,7 +2805,7 @@ void AliceFighter::Advance() {
 
     case 0x25E: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2848,7 +2848,7 @@ void AliceFighter::Advance() {
 
     case 0x25F: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2891,7 +2891,7 @@ void AliceFighter::Advance() {
 
     case 0x260: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2934,7 +2934,7 @@ void AliceFighter::Advance() {
 
     case 0x264: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (y > FloatConstants::Zero && animationStage < 9) {
@@ -2972,7 +2972,7 @@ void AliceFighter::Advance() {
 
     case 0x265: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3007,7 +3007,7 @@ void AliceFighter::Advance() {
 
     case 0x25D: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3024,7 +3024,7 @@ void AliceFighter::Advance() {
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3048,7 +3048,7 @@ void AliceFighter::Advance() {
     case 0x2BD: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3083,7 +3083,7 @@ void AliceFighter::Advance() {
     case 0x2BE: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -3115,7 +3115,7 @@ void AliceFighter::Advance() {
     case 0x2BF: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3139,7 +3139,7 @@ void AliceFighter::Advance() {
     case 0x2C0: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3186,7 +3186,7 @@ void AliceFighter::Advance() {
     case 0x2C1: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -3255,7 +3255,7 @@ void AliceFighter::Advance() {
     case 0x2DB: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (y > FloatConstants::Zero) {
@@ -3315,7 +3315,7 @@ void AliceFighter::Advance() {
     case 0x2DC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3360,7 +3360,7 @@ void AliceFighter::Advance() {
 
     case 0x2DD: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3396,7 +3396,7 @@ void AliceFighter::Advance() {
 
     case 0x2E5: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3418,7 +3418,7 @@ void AliceFighter::Advance() {
 
     case 0x2EF: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3462,7 +3462,7 @@ void AliceFighter::Advance() {
     case 0x31B: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3483,7 +3483,7 @@ void AliceFighter::Advance() {
     case 0x31C: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame()==animationStageCount)

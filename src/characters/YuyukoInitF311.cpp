@@ -11,8 +11,8 @@ YuyukoFighter::YuyukoFighter()
     field713=1;
     strcpy(name,g_YuyukoNameAt00659B74);
     strcpy(tag,g_YuyukoTagAt00659B7C);
-    field478=0x21c;
-    field532=10;
+    mainTextureCount=0x21c;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

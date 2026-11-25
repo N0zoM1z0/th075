@@ -7,8 +7,8 @@ case 0x38F: {
     }
     if (animationStage==0 && animationFrame==0) {
         field0D8=0;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==animationStageCount)
         ClearFrameInfo();

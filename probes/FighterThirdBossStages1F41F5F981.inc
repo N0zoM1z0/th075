@@ -10,8 +10,8 @@
 case 0x1F4: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=99;
-        field07C=0;
+        remainingHits=99;
+        collisionResult=0;
         field3AC=0;
         scriptCounterF00=0;
         scriptCounterF02=0;
@@ -25,11 +25,11 @@ case 0x1F4: {
             break;
         }
     }
-    if (field07C!=0) {
+    if (collisionResult!=0) {
         ++scriptCounterF02;
         if ((scriptCounterF02)>6) {
             scriptCounterF02=0;
-            field07C=0;
+            collisionResult=0;
         }
     }
     if (AdvanceNestedFrame()==(animationStageCount))
@@ -78,8 +78,8 @@ case 0x1F4: {
 case 0x1F5: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=99;
-        field07C=0;
+        remainingHits=99;
+        collisionResult=0;
         field3AC=0;
         scriptCounterF00=0;
         scriptCounterF02=0;
@@ -93,11 +93,11 @@ case 0x1F5: {
             break;
         }
     }
-    if (field07C!=0) {
+    if (collisionResult!=0) {
         ++scriptCounterF02;
         if ((scriptCounterF02)>6) {
             scriptCounterF02=0;
-            field07C=0;
+            collisionResult=0;
         }
     }
     if (AdvanceNestedFrame()==(animationStageCount))

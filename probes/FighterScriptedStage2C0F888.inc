@@ -4,8 +4,8 @@
 case 0x2C0: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         ClearMotionFields();
     }
     if ((animationStage)==1 && (animationFrame)==0) {

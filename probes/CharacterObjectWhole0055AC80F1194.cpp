@@ -30,17 +30,17 @@ void RemiliaObject::Advance()
 
 // Native0055AD32..0055B0DA observation chunk; no standalone unit or credit.
 case 800:
-    if (field07C == 6 && animationStage == 4) {
-        field07C = 0;
-        field080 = 1;
+    if (collisionResult == 6 && animationStage == 4) {
+        collisionResult = 0;
+        remainingHits = 1;
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
         velocityX = 0.0f;
         velocityY = 0.0f;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -55,7 +55,7 @@ case 800:
     rotationZ = rotationZ + 5.0f;
     x = facing * velocityX + x;
     y = y + velocityY;
-    if (field080 == 0 && animationStage < 5) {
+    if (remainingHits == 0 && animationStage < 5) {
         ResetSecondaryCounter(5);
         scaleX = scaleX + 0.5f;
         scaleY = scaleY + 0.5f;
@@ -76,7 +76,7 @@ case 800:
             }
             if (owner->action == 400 && owner->animationStage > 4) {
                 ResetSecondaryCounter(field0D8 + 2);
-                field080 = field0D8 + 1;
+                remainingHits = field0D8 + 1;
                 velocityX = field0D8 * 4.0f + 12.0f;
                 return;
             }
@@ -91,15 +91,15 @@ case 800:
             if (field0D8 > 2) field0D8 = 2;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ResetSecondaryCounter(2);
         }
         if (animationStage == 4 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ResetSecondaryCounter(3);
         }
         if (animationStage == 5 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ResetSecondaryCounter(4);
         }
     }
@@ -110,8 +110,8 @@ case 801:
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 0;
-        field07C = 0;
+        remainingHits = 0;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -150,8 +150,8 @@ case 802: {
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -197,7 +197,7 @@ case 802: {
 
 // Native0055B599..0055B7B7 observation chunk; no standalone unit or credit.
 case 803: {
-    if (owner->action > 49 && owner->action < 150 && field080 > 0) {
+    if (owner->action > 49 && owner->action < 150 && remainingHits > 0) {
         ClearFrameInfo();
         if (owner->fieldEFA > 25) {
             owner->fieldEFA = 0;
@@ -215,8 +215,8 @@ case 803: {
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityX = 15.0f;
     }
     x = facing * velocityX + x;
@@ -225,7 +225,7 @@ case 803: {
         ClearFrameInfo();
         return;
     }
-    if (field080 == 0) {
+    if (remainingHits == 0) {
         if (color[0] > 10)
             color[0] = color[0] - 10;
         else
@@ -238,7 +238,7 @@ case 803: {
 
 // Native0055B7B7..0055BAAA observation chunk; no standalone unit or credit.
 case 804: {
-    if (field07C == 5) {
+    if (collisionResult == 5) {
         ClearFrameInfo();
         return;
     }
@@ -255,8 +255,8 @@ case 804: {
     if (animationStage == 0 && animationFrame == 0) {
         field0DA = field0C8;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(
             field0DA + 15 - RecordedRange(0, 30),
             RecordedRange(1600, 2400) * 0.01f);
@@ -268,8 +268,8 @@ case 804: {
         color[3] = 255;
         rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
-    if ((field07C == 1 || field07C == 2 ||
-         field07C == 4) && animationStage < 2) {
+    if ((collisionResult == 1 || collisionResult == 2 ||
+         collisionResult == 4) && animationStage < 2) {
         ResetSecondaryCounter(2);
         return;
     }
@@ -290,7 +290,7 @@ case 804: {
 // Native0055BAAA..0055BC84 observation chunk; no standalone unit or credit.
 case 805:
     if (animationStage == 0 && animationFrame == 0) {
-        field07C = 0;
+        collisionResult = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 0.5f;
         scaleY = 0.5f;
@@ -298,22 +298,22 @@ case 805:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field080 = 5;
+        remainingHits = 5;
         velocityX = 15.0f;
     }
     x = facing * velocityX + x;
     velocityX = velocityX - 0.5f;
     if (velocityX < 8.0f) velocityX = 8.0f;
-    if (field07C == 4) {
-        field07C = 0;
-        field080--;
+    if (collisionResult == 4) {
+        collisionResult = 0;
+        remainingHits--;
     }
-    if (field07C == 6) {
-        field07C = 0;
-        field080++;
+    if (collisionResult == 6) {
+        collisionResult = 0;
+        remainingHits++;
     }
-    if (field07C != 0) field080 = 0;
-    if (animationStage == 1 && field080 == 0)
+    if (collisionResult != 0) remainingHits = 0;
+    if (animationStage == 1 && remainingHits == 0)
         ResetSecondaryCounter(2);
     if (animationStage == 0) {
         scaleX = scaleX + 0.2f;
@@ -340,8 +340,8 @@ case 806:
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        field080 = 12;
-        field07C = 0;
+        remainingHits = 12;
+        collisionResult = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -352,9 +352,9 @@ case 806:
         field0D8 = 0;
         field0DA = 0;
     }
-    if (field07C != 0 && ++field0DA > 5) {
+    if (collisionResult != 0 && ++field0DA > 5) {
         field0DA = 0;
-        field07C = 0;
+        collisionResult = 0;
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
@@ -362,7 +362,7 @@ case 806:
     }
     if (animationStage == 19 && animationFrame == 0 && field0D8 < 3) {
         field0D8++;
-        field07C = 0;
+        collisionResult = 0;
         ResetSecondaryCounter(9);
     }
     return;
@@ -400,8 +400,8 @@ case 808:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field080 = 5;
-        field07C = 0;
+        remainingHits = 5;
+        collisionResult = 0;
         velocityX = 45.0f;
         velocityY = 0.0f;
     }
@@ -412,7 +412,7 @@ case 808:
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetSecondaryCounter(1);
-        field07C = 0;
+        collisionResult = 0;
     }
     return;
 
@@ -452,8 +452,8 @@ case 810:
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        field080 = 20;
-        field07C = 0;
+        remainingHits = 20;
+        collisionResult = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.5f;
         scaleY = 1.25f;
@@ -464,9 +464,9 @@ case 810:
         field0D8 = 0;
         field0DA = 0;
     }
-    if (field07C != 0 && ++field0DA > 5) {
+    if (collisionResult != 0 && ++field0DA > 5) {
         field0DA = 0;
-        field07C = 0;
+        collisionResult = 0;
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ClearFrameInfo();
@@ -474,7 +474,7 @@ case 810:
     }
     if (animationStage == 19 && animationFrame == 0 && field0D8 < 6) {
         field0D8++;
-        field07C = 0;
+        collisionResult = 0;
         ResetSecondaryCounter(9);
     }
     return;
@@ -489,8 +489,8 @@ case 811:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityX = 45.0f;
         velocityY = 0.0f;
     }
@@ -501,7 +501,7 @@ case 811:
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetSecondaryCounter(1);
-        field07C = 0;
+        collisionResult = 0;
     }
     return;
 
@@ -534,7 +534,7 @@ case 814:
 
 // Native0055C514..0055C7D8 observation chunk; no standalone unit or credit.
 case 816: {
-    if (field07C == 5) {
+    if (collisionResult == 5) {
         ClearFrameInfo();
         return;
     }
@@ -550,8 +550,8 @@ case 816: {
     }
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(
             field0C8 + 15.0f - RecordedRange(0, 30), 25.0f);
         scaleX = 1.0f;
@@ -562,8 +562,8 @@ case 816: {
         color[3] = 255;
         rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
-    if ((field07C == 1 || field07C == 2 ||
-         field07C == 4) && animationStage < 2) {
+    if ((collisionResult == 1 || collisionResult == 2 ||
+         collisionResult == 4) && animationStage < 2) {
         ResetSecondaryCounter(2);
         return;
     }
@@ -588,7 +588,7 @@ case 817: {
         ClearFrameInfo();
         return;
     }
-    if (field07C == 5) {
+    if (collisionResult == 5) {
         ClearFrameInfo();
         return;
     }
@@ -604,8 +604,8 @@ case 817: {
     }
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -638,7 +638,7 @@ case 817: {
         ClearFrameInfo();
         return;
     }
-    if (field07C != 0 && field07C != 6) {
+    if (collisionResult != 0 && collisionResult != 6) {
         ResetSecondaryCounter(5);
         velocityX = 0.0f;
         velocityY = 0.0f;
@@ -710,7 +710,7 @@ case 820:
 
 // Native0055CEE8..0055D2B4 observation chunk; no standalone unit or credit.
 case 821: {
-    if (field07C == 5) {
+    if (collisionResult == 5) {
         ClearFrameInfo();
         return;
     }
@@ -729,8 +729,8 @@ case 821: {
         field0DA = field0C8;
         field0DC = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 6;
-        field07C = 0;
+        remainingHits = 6;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -740,11 +740,11 @@ case 821: {
     }
     SetPolarVelocity(field0DA, 25.0f);
     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
-    if (field07C == 4 && field080 > 0)
-        field07C = 0;
+    if (collisionResult == 4 && remainingHits > 0)
+        collisionResult = 0;
     // Preserve both independently observed nonzero flag reads.
-    if (field07C != 0 && field07C != 0)
-        field080 = 0;
+    if (collisionResult != 0 && collisionResult != 0)
+        remainingHits = 0;
     x = facing * velocityX + x;
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
@@ -752,7 +752,7 @@ case 821: {
         ClearFrameInfo();
         return;
     }
-    if (field07C != 0) {
+    if (collisionResult != 0) {
         if (color[0] > 20) {
             color[0] = color[0] - 20;
         } else {
@@ -1094,8 +1094,8 @@ case 834:
 case 835:
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 0;
-        field07C = 0;
+        remainingHits = 0;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         rotationZ = RecordedRange(0, 359);
@@ -1104,11 +1104,11 @@ case 835:
         color[2] = 255;
         color[3] = 255;
     }
-    if (field07C == 6) {
-        field07C = 0;
-        field080++;
+    if (collisionResult == 6) {
+        collisionResult = 0;
+        remainingHits++;
     }
-    if (field07C == 4) field07C = 0;
+    if (collisionResult == 4) collisionResult = 0;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
         ClearFrameInfo();
@@ -1147,7 +1147,7 @@ case 836:
 case 837:
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field07C = 0;
+        collisionResult = 0;
         scaleX = 0.5f;
         scaleY = 0.5f;
         color[0] = 255;
@@ -1159,7 +1159,7 @@ case 837:
         velocityX = 0.0f;
         velocityY = 0.0f;
         field0D8 = 10;
-        field07C = 0;
+        collisionResult = 0;
     }
     rotationZ = rotationZ + 1.0f;
     scaleX = field0D8 * 0.05f + 0.05f + scaleX;
@@ -1181,7 +1181,7 @@ case 837:
 
 // Native0055E41C..0055E813 observation chunk; no standalone unit or credit.
 case 838: {
-    if (field07C == 5) {
+    if (collisionResult == 5) {
         ClearFrameInfo();
         return;
     }
@@ -1200,8 +1200,8 @@ case 838: {
         field0DA = field0C8;
         field0DC = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 6;
-        field07C = 0;
+        remainingHits = 6;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1211,8 +1211,8 @@ case 838: {
     }
     SetPolarVelocity(field0DA, 3.0f);
     rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
-    if (field07C == 4 && field080 > 0)
-        field07C = 0;
+    if (collisionResult == 4 && remainingHits > 0)
+        collisionResult = 0;
     x = facing * velocityX + x;
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
@@ -1220,7 +1220,7 @@ case 838: {
         ClearFrameInfo();
         return;
     }
-    if (field080 == 0) {
+    if (remainingHits == 0) {
         if (color[0] > 20) {
             color[0] = color[0] - 20;
         } else {
@@ -1233,16 +1233,16 @@ case 838: {
     if (animationStage == 4 && animationFrame == 0) {
         owner->field314 = field0DA;
         owner->SpawnBattleEffect(837, x, y, facing, 1);
-        if (field07C == 2)
-            field07C = 0;
+        if (collisionResult == 2)
+            collisionResult = 0;
         else
             ResetPrimaryCounters(821);
     }
     if (animationStage == 9 && animationFrame == 0) {
         owner->field314 = field0DA;
         owner->SpawnBattleEffect(837, x, y, facing, 1);
-        if (field07C == 2)
-            field07C = 0;
+        if (collisionResult == 2)
+            collisionResult = 0;
         else
             ResetPrimaryCounters(821);
     }
@@ -1251,7 +1251,7 @@ case 838: {
 
 // Native0055E813..0055EB1A observation chunk; no standalone unit or credit.
 case 839: {
-    if (field07C == 5) {
+    if (collisionResult == 5) {
         ClearFrameInfo();
         return;
     }
@@ -1268,8 +1268,8 @@ case 839: {
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 3;
-        field07C = 0;
+        remainingHits = 3;
+        collisionResult = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0;
@@ -1283,8 +1283,8 @@ case 839: {
         owner->SpawnBattleEffect(835, x, y, facing, 1);
     velocityX = velocityX - 0.45f;
     if (velocityX < -18.0f) velocityX = -18.0f;
-    if (field07C == 4) field07C = 0;
-    if (field080 == 0) {
+    if (collisionResult == 4) collisionResult = 0;
+    if (remainingHits == 0) {
         ClearFrameInfo();
         return;
     }
@@ -1298,7 +1298,7 @@ case 839: {
     if (AdvanceNestedFrame() == animationStageCount) {
         if (field0D8 < 7) {
             ResetSecondaryCounter(1);
-            field07C = 0;
+            collisionResult = 0;
             field0D8++;
             return;
         } else {
@@ -1352,8 +1352,8 @@ case 900:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(field0C8, 40.0f);
         rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
@@ -1370,7 +1370,7 @@ case 900:
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetSecondaryCounter(1);
-        field07C = 0;
+        collisionResult = 0;
     }
     return;
 
@@ -1389,8 +1389,8 @@ case 901:
         color[2] = 255;
         color[3] = 255;
         field0D8 = RecordedRange(0, 5);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(
             -field0C8 + 20.0f - RecordedRange(0, 40),
             RecordedRange(5, 10));
@@ -1456,8 +1456,8 @@ case 903:
         color[2] = 255;
         color[3] = 255;
         field0D8 = RecordedRange(0, 5);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(
             RecordedRange(0, 359),
             RecordedRange(5, 10));
@@ -1500,8 +1500,8 @@ case 904:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(field0C8, 40.0f);
         rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
     }
@@ -1518,7 +1518,7 @@ case 904:
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetSecondaryCounter(1);
-        field07C = 0;
+        collisionResult = 0;
     }
     return;
 
@@ -1534,7 +1534,7 @@ case 905:
     }
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
+        remainingHits = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
         color[0] = 255;
@@ -1564,10 +1564,10 @@ case 905:
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetSecondaryCounter(2);
-        field07C = 0;
+        collisionResult = 0;
         return;
     }
-    if (animationFrame == 0) field07C = 0;
+    if (animationFrame == 0) collisionResult = 0;
     if (animationStage == 2 && animationFrame == 0) {
         owner->PlaySound(17);
         SetPolarVelocity(AngleAt00483300(
@@ -1584,7 +1584,7 @@ case 906:
     }
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
+        remainingHits = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
         color[0] = 255;
@@ -1654,10 +1654,10 @@ case 907:
     }
     if (AdvanceNestedFrame() == animationStageCount) {
         ResetSecondaryCounter(2);
-        field07C = 0;
+        collisionResult = 0;
         return;
     }
-    if (animationFrame == 0) field07C = 0;
+    if (animationFrame == 0) collisionResult = 0;
     if (animationStage == 2 && animationFrame == 0) {
         field0DA = RecordedRange(0, 40);
         scaleX = field0DA * 0.01f + 0.8f;
@@ -1678,7 +1678,7 @@ case 908:
     }
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
+        remainingHits = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
         color[0] = 255;
@@ -1727,8 +1727,8 @@ case 909:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         velocityX = 0.0f;
         velocityY = 0.0f;
     }
@@ -1783,7 +1783,7 @@ case 911:
     }
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
+        remainingHits = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
         color[0] = 255;
@@ -1826,8 +1826,8 @@ case 912:
         velocityX = 0.0f;
         velocityY = 0.0f;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         scaleX = 0.25f;
         scaleY = 0.25f;
         color[0] = 255;
@@ -1867,8 +1867,8 @@ case 913:
     if (animationStage == 0 && animationFrame == 0) {
         field0DA = field0C8;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(field0DA, 18.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1899,8 +1899,8 @@ case 914:
     if (animationStage == 0 && animationFrame == 0) {
         field0DA = field0C8;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(
             field0DA + 10 - RecordedRange(0, 20),
             RecordedRange(0, 9) + 6);
@@ -1911,8 +1911,8 @@ case 914:
         color[2] = 255;
         color[3] = 255;
     }
-    if ((field07C == 1 || field07C == 2 ||
-         field07C == 4) && animationStage < 2) {
+    if ((collisionResult == 1 || collisionResult == 2 ||
+         collisionResult == 4) && animationStage < 2) {
         ResetSecondaryCounter(2);
         return;
     }
@@ -1940,8 +1940,8 @@ case 915:
         field0DA = field0C8;
         field0DC = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         SetPolarVelocity(field0DA, 7.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1967,16 +1967,16 @@ case 915:
             owner->PlaySound(11);
             field0DA = -field0DA;
             field0DC++;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0CC = 4.0f;
         }
         if (y < 0.0f && field0DC < 1 && velocityY > 0.0f) {
             owner->PlaySound(11);
             field0DA = -field0DA;
             field0DC++;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0CC = 4.0f;
         }
         if (x < owner->cameraState.field04 && field0DC < 1 &&
@@ -1988,8 +1988,8 @@ case 915:
             if (field0DA < 0)
                 field0DA = -180 - field0DA;
             field0DC++;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0CC = 4.0f;
         }
         if (x > owner->field2DC && field0DC < 1 &&
@@ -2001,8 +2001,8 @@ case 915:
             if (field0DA < 0)
                 field0DA = -180 - field0DA;
             field0DC++;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0CC = 4.0f;
         }
     }
@@ -2031,8 +2031,8 @@ case 916:
     }
     if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = 0;
         scaleX = 3.0f;
         scaleY = 3.0f;
         color[0] = 255;
@@ -2044,8 +2044,8 @@ case 916:
         SetPolarVelocity(
             field0DA, field0D8 * 0.05f);
         rotationZ = AngleAt00483300(velocityY, velocityX) / 0.01745328866f;
-        field07C = 0;
-        field080 = 1;
+        collisionResult = 0;
+        remainingHits = 1;
     }
     if (animationStage == 1) {
         scaleX = scaleX - 0.1f;
@@ -2055,7 +2055,7 @@ case 916:
             scaleY = 1.0f;
         }
     }
-    if (animationStage == 2 && field07C != 0) {
+    if (animationStage == 2 && collisionResult != 0) {
         ResetSecondaryCounter(3);
         velocityX = 0.0f;
         velocityY = 0.0f;

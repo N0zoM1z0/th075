@@ -54,9 +54,9 @@ void CombatEffects::LoadPatternCatalog()
 
             READ(&reinterpret_cast<signed char*>(&values.kindStorage)[3],1);
             if (reinterpret_cast<signed char*>(&values.kindStorage)[3]==0) {
-                RECORD.field0C=1;
+                RECORD.doubleScale=1;
             } else if (reinterpret_cast<signed char*>(&values.kindStorage)[3]==1) {
-                RECORD.field0C=0;
+                RECORD.doubleScale=0;
             } else if(reinterpret_cast<signed char*>(&values.kindStorage)[3]==2) {
                 RECORD.ResetExtension();
                 READ(DATA,2);

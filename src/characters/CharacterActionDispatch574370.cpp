@@ -1,7 +1,7 @@
 #include "characters/CharacterActionDispatch574370.hpp"
 
 #define TARGET_PRIORITY(index) (sequenceSlots.at(index)->targetPriority)
-#define ACTION_CHANGE_ALLOWED ((action > 299 && field07C != 0 && field07C != 3) || action < 300)
+#define ACTION_CHANGE_ALLOWED ((action > 299 && collisionResult != 0 && collisionResult != 3) || action < 300)
 #define FORWARD_INPUT \
     ((aiCommand == 1 && facing == 1) || \
     (aiCommand == 2 && facing == -1) || \

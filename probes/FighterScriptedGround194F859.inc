@@ -4,8 +4,8 @@
 // Current whole giant remains register/JMP NONEXACT.
 case 0x194: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     velocityY=velocityY-field05C;
     if (y+velocityY<=FloatConstants::Zero) {
@@ -25,6 +25,6 @@ case 0x194: {
         PlaySound(0);
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        field07C=1;
+        collisionResult=1;
     return;
 }

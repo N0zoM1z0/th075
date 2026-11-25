@@ -8,15 +8,15 @@
 case 0x2BF: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=0x63;
-        field080=1;
+        collisionResult=0;
+        remainingHits=0x63;
+        remainingHits=1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(0);
     if ((animationFrame)==0)
-        field07C=0;
+        collisionResult=0;
     if ((animationStage)==2 && (animationFrame)==0) {
         SetNonnegativeWord(0x28);
         PlaySharedSound(0x17);

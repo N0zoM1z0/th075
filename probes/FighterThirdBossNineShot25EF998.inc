@@ -10,7 +10,7 @@
 // F998 true original Japanese game fighter 004AC040 action25E
 case 0x25E: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         velocityX=(velocityX)*FloatConstants::Quarter;

@@ -6,7 +6,7 @@
 
 void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    attack->field07C = 1;
+    attack->collisionResult = CollisionResult::Hit;
     if (defender->action < 50 || defender->action >= 143) {
         attacker->comboCount = 0;
         attacker->comboDamage = 0;
@@ -14,26 +14,26 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     }
     defender->ClearTransformFlag();
     if (defender->y > 0.0f || (defender->savedFrameInfo->flags & 4)) {
-        if (attack->savedFrameInfo->field28)
-            defender->ResetPrimaryCounters(attack->savedFrameInfo->field28);
+        if (attack->savedFrameInfo->airHitAction)
+            defender->ResetPrimaryCounters(attack->savedFrameInfo->airHitAction);
         else
             defender->ResetPrimaryCounters(70);
     } else {
-        if (attack->savedFrameInfo->field2A)
-            defender->ResetPrimaryCounters(attack->savedFrameInfo->field2A);
+        if (attack->savedFrameInfo->groundHitAction)
+            defender->ResetPrimaryCounters(attack->savedFrameInfo->groundHitAction);
         else if (defender->savedFrameInfo->flags & 1) {
             if (attack->savedFrameInfo->attackFlags & 1)
-                defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 56);
+                defender->ResetPrimaryCounters(attack->savedFrameInfo->reactionVariant + 56);
             else
-                defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 50);
+                defender->ResetPrimaryCounters(attack->savedFrameInfo->reactionVariant + 50);
         } else if (defender->savedFrameInfo->flags & 2)
-            defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 62);
+            defender->ResetPrimaryCounters(attack->savedFrameInfo->reactionVariant + 62);
     }
-    --attack->field080;
+    --attack->remainingHits;
     attack->hitstopFrames = attack->savedFrameInfo->attackerHitStop;
     defender->hitstopFrames = attack->savedFrameInfo->defenderHitStop;
-    defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
-    defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
+    defender->hitReactionVelocityX = attack->savedFrameInfo->reactionVelocityX;
+    defender->hitReactionVelocityY = attack->savedFrameInfo->reactionVelocityY;
     attacker->pendingSpellCharge += attack->savedFrameInfo->meterGain;
     if (attacker->pendingSpellCharge > 2000.0f)
         attacker->pendingSpellCharge = 2000.0f;
@@ -43,7 +43,7 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     if ((attack->savedFrameInfo->attackFlags & 0x100) > 0)
         defender->flashGauge = 15000;
     else
-        defender->flashGauge = static_cast<short>(attack->savedFrameInfo->field1A * attacker->comboRate);
+        defender->flashGauge = static_cast<short>(attack->savedFrameInfo->baseHitstun * attacker->comboRate);
     if ((attack->savedFrameInfo->attackFlags & 0x400) && (defender->savedFrameInfo->flags & 0x40)) {
         attacker->comboDamage += attacker->CalculateDamage(attack) * 1.25;
         if (attacker->field3CE.signedAt3CE == 0) {
@@ -71,8 +71,8 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
             defender->health = 1;
         else {
             defender->health = 0;
-            if (attack->savedFrameInfo->field28) {
-                defender->ResetPrimaryCounters(attack->savedFrameInfo->field28);
+            if (attack->savedFrameInfo->airHitAction) {
+                defender->ResetPrimaryCounters(attack->savedFrameInfo->airHitAction);
                 defender->ClearTransformFlag();
             } else {
                 defender->ResetPrimaryCounters(70);
@@ -88,8 +88,8 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
         static_cast<short>(attacker->comboRate * 1000.0f));
     defender->UpdateFacingFromOpponent();
     SpawnMidpointEffect(attack->savedFrameInfo->hitEffect, attack->facing);
-    g_SoundBank->Play(attack->savedFrameInfo->field34);
-    switch (attack->savedFrameInfo->field38) {
+    g_SoundBank->Play(attack->savedFrameInfo->hitSound);
+    switch (attack->savedFrameInfo->reactionVariant) {
     case 0: attacker->score += 100; break;
     case 1: attacker->score += 200; break;
     case 2: attacker->score += 300; break;
@@ -119,18 +119,18 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
             attacker->comboDamage = 0;
             attacker->comboRate = 1.0f;
         }
-        attack->field07C = 7;
-        --attack->field080;
+        attack->collisionResult = CollisionResult::ConditionalHit;
+        --attack->remainingHits;
         attack->hitstopFrames = attack->savedFrameInfo->attackerHitStop;
         defender->hitstopFrames = attack->savedFrameInfo->defenderHitStop;
-        defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
-        defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
+        defender->hitReactionVelocityX = attack->savedFrameInfo->reactionVelocityX;
+        defender->hitReactionVelocityY = attack->savedFrameInfo->reactionVelocityY;
         defender->field3CC = 15;
-        defender->field484 = 8;
+        defender->hitFlashFrames = 8;
         if ((attack->savedFrameInfo->attackFlags & 0x100) > 0)
             defender->flashGauge = 30000;
         else
-            defender->flashGauge = static_cast<short>(attack->savedFrameInfo->field1A * attacker->comboRate);
+            defender->flashGauge = static_cast<short>(attack->savedFrameInfo->baseHitstun * attacker->comboRate);
         if ((attack->savedFrameInfo->attackFlags & 0x400) && (defender->savedFrameInfo->flags & 0x40)) {
             attacker->comboDamage += attacker->CalculateDamage(attack) * 1.25 / 2.0;
             if (attacker->field3CE.signedAt3CE == 0) {
@@ -158,8 +158,8 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
                 defender->health = 1;
             else {
                 defender->health = 0;
-                if (attack->savedFrameInfo->field28) {
-                    defender->ResetPrimaryCounters(attack->savedFrameInfo->field28);
+                if (attack->savedFrameInfo->airHitAction) {
+                    defender->ResetPrimaryCounters(attack->savedFrameInfo->airHitAction);
                     defender->ClearTransformFlag();
                 } else {
                     defender->ResetPrimaryCounters(70);
@@ -180,8 +180,8 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         if (defender->pendingSpellCharge > 2000.0f)
             defender->pendingSpellCharge = 2000.0f;
         SpawnMidpointEffect(attack->savedFrameInfo->hitEffect, attack->facing);
-        g_SoundBank->Play(attack->savedFrameInfo->field34);
-        switch (attack->savedFrameInfo->field38) {
+        g_SoundBank->Play(attack->savedFrameInfo->hitSound);
+        switch (attack->savedFrameInfo->reactionVariant) {
         case 0: attacker->score += 100; break;
         case 1: attacker->score += 200; break;
         case 2: attacker->score += 300; break;

@@ -9,8 +9,8 @@ case 0x2DD: {
         fieldF04=0;
     }
     if ((animationStage)==2 && (animationFrame)==0) {
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         velocityX=10.0f;
         velocityY=0.0f;
     }
@@ -33,8 +33,8 @@ case 0x2DD: {
             (facing),1);
         velocityX=float(RecordedRange(0,6))+FloatConstants::TenAndHalf;
         velocityY=16.0f;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
     }
     if ((animationStage)==18 && (animationFrame)==0) {
         SpawnBattleEffect(0x335,x,y,

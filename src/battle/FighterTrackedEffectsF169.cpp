@@ -7,11 +7,11 @@ void Fighter::SpawnTrackedEffect(
     unsigned char linked)
 {
     if (linked) {
-        field2EC->Spawn(
+        ownedObjects->Spawn(
             effect, x, y, facing, layer, 0, 0,
             &field314, &effectTransformRecord, 0);
     } else {
-        field2EC->Spawn(
+        ownedObjects->Spawn(
             effect, x, y, facing, layer, 0, 0,
             &field314, 0, 0);
     }
@@ -22,11 +22,11 @@ void SuikaFighter::SpawnTrackedEffectWithFlags(
     unsigned char flagA, unsigned char flagB, unsigned char linked)
 {
     if (linked) {
-        field2EC->Spawn(
+        ownedObjects->Spawn(
             effect, x, y, facing, layer, flagA, flagB,
             &field314, &effectTransformRecord, 0);
     } else {
-        field2EC->Spawn(
+        ownedObjects->Spawn(
             effect, x, y, facing, layer, flagA, flagB,
             &field314, 0, 0);
     }

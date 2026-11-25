@@ -14,7 +14,7 @@
 case 0x2FB: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field07C=1;
+        collisionResult=1;
         field3AC=0;
         scriptCounterF00=0;
         scriptCounterF02=0;

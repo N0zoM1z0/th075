@@ -1,7 +1,7 @@
 case R1188_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1; field07C=0; field3AC=0;
+        remainingHits=1; collisionResult=0; field3AC=0;
     }
 #include "ReimuChargeTransformF1188.inc"
     if (y>FloatConstants::Zero && (animationStage)<R1188_LAND_STAGE

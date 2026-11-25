@@ -28,14 +28,14 @@ case F1057_CASE: {
         }
         return;
     }
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0,0);
-        field080=3;
-        field07C=0;
+        remainingHits=3;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -82,8 +82,8 @@ case F1057_CASE: {
     }
     x=float(facing)*velocityX+x;
     y=y-velocityY;
-    if (field07C!=0 && field07C!=6 && animationStage==1) {
-        if (field080==0 || field07C!=4) {
+    if (collisionResult!=0 && collisionResult!=6 && animationStage==1) {
+        if (remainingHits==0 || collisionResult!=4) {
             velocityX=0.0f;
             velocityY=0.0f;
             ResetSecondaryCounter(2);
@@ -91,8 +91,8 @@ case F1057_CASE: {
             scaleY=2.5f;
             return;
         }
-        if (field080>0 && field07C==4 && field080>0)
-            field07C=0;
+        if (remainingHits>0 && collisionResult==4 && remainingHits>0)
+            collisionResult=0;
     }
     if (animationStage>1) {
         scaleX=(scaleX)*g_F1055_FadeScaleAt006598A4;

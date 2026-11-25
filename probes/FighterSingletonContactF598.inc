@@ -5,7 +5,7 @@ case 0x32: {
     if (animationStage == 0 && animationFrame == 0) {
         velocityX = -8.0f;
         velocityY = 0.0f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if ((velocityX) < FloatConstants::Zero) {
         velocityX = (velocityX) + FloatConstants::ThreeFifths;

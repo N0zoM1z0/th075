@@ -10,7 +10,7 @@
 // F994 original Japanese 004AC040 action0x261 ten real sprite calls
 case 0x261: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         velocityX=(velocityX)*FloatConstants::Quarter;
@@ -38,7 +38,7 @@ case 0x261: {
 // F994 original Japanese 004AC040 action0x262 ten real sprite calls
 case 0x262: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
         velocityX=(velocityX)*FloatConstants::Quarter;

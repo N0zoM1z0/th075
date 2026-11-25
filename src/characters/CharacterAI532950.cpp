@@ -253,7 +253,7 @@ void YoumuFighter::ChooseAction()
         if (action == 307 &&
             rand() < 5000 &&
             distance.x < 120.0f &&
-            field07C == 1) {
+            collisionResult == 1) {
             aiCommand = 30;
             if (rand() < 18000) aiCommand = 31;
             return;
@@ -272,7 +272,7 @@ void YoumuFighter::ChooseAction()
         if (action == 300 &&
             rand() < 10000 &&
             distance.x < 120.0f &&
-            field07C == 1) {
+            collisionResult == 1) {
             aiCommand = 30;
             if (rand() < 18000) aiCommand = 31;
             return;
@@ -349,7 +349,7 @@ void YoumuFighter::ChooseAction()
         }
         if (action == 303 &&
             rand() < 5000 &&
-            field07C == 1) {
+            collisionResult == 1) {
             aiCommand = 30;
             if (rand() < 18000) aiCommand = 31;
             return;
@@ -363,7 +363,7 @@ void YoumuFighter::ChooseAction()
         if (action == 308 &&
             rand() < 5000 &&
             distance.x < 120.0f &&
-            field07C == 1) {
+            collisionResult == 1) {
             aiCommand = 30;
             if (rand() < 18000) aiCommand = 31;
             return;

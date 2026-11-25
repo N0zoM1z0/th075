@@ -24,6 +24,7 @@ public:
 
 private:
     friend class Fighter;
+    friend class BattleScene;
     EffectManagerLifetimeF161();
     EffectManagerLifetimeF161(const EffectManagerLifetimeF161&);
     EffectManagerLifetimeF161& operator=(const EffectManagerLifetimeF161&);

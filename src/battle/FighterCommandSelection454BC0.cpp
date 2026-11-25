@@ -15,7 +15,7 @@ void CommandListF283::SetColorMask(unsigned int mask)
 void Fighter::SetCommandSelection(
     int selection, unsigned char mode, unsigned int mask)
 {
-    field47C = selection;
-    field480->SetSamplingMode(mode);
-    field480->SetColorMask(mask);
+    spriteHistoryHoldFrames = selection;
+    spriteHistory->SetSamplingMode(mode);
+    spriteHistory->SetColorMask(mask);
 }

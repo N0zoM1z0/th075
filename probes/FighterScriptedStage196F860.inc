@@ -4,8 +4,8 @@
 // Whole original fighter nonexact; no split-case exact CODE.
 case 0x196: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame()==(animationStageCount))

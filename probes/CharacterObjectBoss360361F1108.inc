@@ -27,8 +27,8 @@ case F1108_CASE: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         field0D8=15;
         SetPolarVelocity(field0C8,
             float(field0D8));

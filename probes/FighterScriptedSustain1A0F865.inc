@@ -3,8 +3,8 @@
 // Enclosing giant remains original GPR and full-parent-JMP nonexact.
 case 0x1A0: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityX=(velocityX)*FloatConstants::OneFifth;
         velocityY=(*(&velocityY))*FloatConstants::OneFifth;
     }
@@ -18,6 +18,6 @@ case 0x1A0: {
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);
     if ((animationStage)==4 && (animationFrame)==0)
-        field07C=1;
+        collisionResult=1;
     return;
 }

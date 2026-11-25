@@ -196,7 +196,7 @@ void MarisaFighter::ChooseCardAction()
             return;
         }
         if (distance.x < 100.0f && (action == 301 || action == 308) &&
-            rand() < 5000 && field07C == 1) {
+            rand() < 5000 && collisionResult == 1) {
             aiCommand = 31;
             return;
         }

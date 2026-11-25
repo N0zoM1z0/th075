@@ -5,8 +5,8 @@
 // Float members are cleared with integer stores, as the original does.
 CharacterObject::CharacterObject()
 {
-    field080 = 0;
-    field07C = 0;
+    remainingHits = 0;
+    collisionResult = CollisionResult::None;
     hitstopFrames = 0;
     collisionPointX = 0.0f;
     collisionPointY = 0.0f;
@@ -17,7 +17,7 @@ CharacterObject::CharacterObject()
     field058 = 0;
     field05C = 0.0f;
     field04C = 0.0f;
-    field084 = 0;
-    field086 = 0;
-    field088 = 0;
+    hitInvulnerabilityFrames = 0;
+    throwInvulnerabilityFrames = 0;
+    grazeFrames = 0;
 }

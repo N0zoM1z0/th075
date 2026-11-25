@@ -4,8 +4,8 @@
                 velocityX=0.0f;
                 velocityY=0.0f;
                 field05C=0.0f;
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
             }
             if ((velocityX)>FloatConstants::Zero)
                 velocityX=(velocityX)-FloatConstants::OneAndHalf;
@@ -19,8 +19,8 @@
             if ((animationStage)==6 && (animationFrame)==0) velocityX=15.0f;
             if ((animationStage)==8 && (animationFrame)==0) {
                 PlaySharedSound(0x1C);
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 SpawnBattleEffect(0x342,x,y,
                     facing,1);
             }
@@ -29,8 +29,8 @@
         case 0x134: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 if ((field3AC)==0) ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
             }
             if ((field3AC)>0) {
                 velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -49,8 +49,8 @@
         case 0x135: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 if ((field3AC)==0) ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
             }
             if ((field3AC)>0) {
                 velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -76,8 +76,8 @@
         case 0x136: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 if ((field3AC)==0) ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
             }
             if ((field3AC)>0) {
                 velocityX=(velocityX)-FloatConstants::ThreeFifths;

@@ -9,8 +9,8 @@
         case 0x1F4: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
             }
             if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
@@ -50,8 +50,8 @@
         case 0x1F5: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
             }
             if ((velocityX)>FloatConstants::Zero) {

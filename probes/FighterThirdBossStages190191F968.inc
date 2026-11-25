@@ -9,7 +9,7 @@
 // F968 natural original Japanese 004AC040 action 0x190, 597 B 147 native x86.
 case 0x190: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;
@@ -46,7 +46,7 @@ case 0x190: {
 // F968 natural original Japanese 004AC040 action 0x191, 597 B 147 native x86.
 case 0x191: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;

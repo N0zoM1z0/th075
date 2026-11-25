@@ -10,8 +10,6 @@
 
 class EffectManagerLifetimeF161;
 class CharacterObject;
-class TimelineDrawing438D00;
-class FighterTextureF282;
 class TextureManagerF198;
 
 typedef std::vector<FighterSequenceInfo*> ActionSequenceSlots;
@@ -113,7 +111,7 @@ public:
     float field2E0;                     // +0x2E0
     float field2E4;                     // +0x2E4
     Fighter* opponent;                  // +0x2E8 the other player
-    EffectManagerLifetimeF161* field2EC; // +0x2EC owned effect-manager object
+    EffectManagerLifetimeF161* ownedObjects; // +0x2EC owned effect-manager object
     // Linked effects copy this exact 36-byte fighter packet into Actor+0x10.
     // Retain all existing field names while exposing its shared transform type.
     union {
@@ -194,11 +192,11 @@ public:
     unsigned char autoGuard;            // +0x465 bypass the manual guard direction check
     unsigned char unknown466[0x468 - 0x466];
     ActionSequenceSlots sequenceSlots;  // +0x468 action sequences, indexed by action id
-    short field478;                     // +0x478 signed texture slot count
+    short mainTextureCount;                 // +0x478 signed texture slot count
     unsigned char unknown47A[0x47C - 0x47A];
-    int field47C;                       // +0x47C
-    CommandListF283* field480;                     // +0x480
-    signed char field484;               // +0x484
+    int spriteHistoryHoldFrames;            // +0x47C
+    CommandListF283* spriteHistory;         // +0x480
+    signed char hitFlashFrames;             // +0x484
     unsigned char unknown485[0x488 - 0x485];
     float field488;                     // +0x488
     unsigned int field48C;              // +0x48C
@@ -206,7 +204,7 @@ public:
     InputMapping4388D0 inputBindings;    // +0x494 controller binding block
     int inputX;                         // +0x4DC held input: direction -1/0/+1, buttons count held frames
     int inputY;                         // +0x4E0
-    int field4E4;                       // +0x4E4
+    int humanConfirmHeldFrames;             // +0x4E4
     int inputA;                         // +0x4E8
     int inputB;                         // +0x4EC
     int inputC;                         // +0x4F0
@@ -229,12 +227,9 @@ public:
     signed char practiceGuardMode;      // +0x52F off, standing, crouching, or match the attack
     signed char practiceActionMode;     // +0x530 stand, crouch, jump, or use the CPU AI
     signed char practiceCenterPosition; // +0x531 move the dummy toward the arena center
-    signed char field532;               // +0x532
+    signed char overlayTextureCount;        // +0x532
     unsigned char unknown533[0x534 - 0x533];
-    union {
-        TimelineDrawing438D00* field534; // +0x534 renderer view
-        FighterTextureF282* field534Texture; // secondary texture/resource view
-    };
+    TextureManagerF198* overlayTextures;    // +0x534
     unsigned char fadeAlpha;            // +0x538
     unsigned char drawMode;             // +0x539
     signed char quoteLineCount;         // +0x53A lines in the win quote
@@ -302,7 +297,7 @@ typedef char FighterLayoutCheck[(
     offsetof(Fighter, opponentFreezeSnapshot) == 0x3BA &&
     offsetof(Fighter, guardResponseCooldown) == 0x3BC &&
     offsetof(Fighter, sequenceSlots) == 0x468 &&
-    offsetof(Fighter, field478) == 0x478 &&
+    offsetof(Fighter, mainTextureCount) == 0x478 &&
     offsetof(Fighter, inputBindings) == 0x494 &&
     offsetof(Fighter, inputHistory) == 0x518 &&
     sizeof(std::deque<unsigned char>) == 0x14 &&

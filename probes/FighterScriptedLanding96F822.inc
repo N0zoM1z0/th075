@@ -15,7 +15,7 @@ case 0x96: {
         scriptCounterF00=0;
         velocityX=-9.0f;
         velocityY=0.0f;
-        field07C=0;
+        collisionResult=0;
 #if F631_EXTRA_FLAG && !F631_EXTRA_BEFORE
         fieldF0A=0;
 #endif

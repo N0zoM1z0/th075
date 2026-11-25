@@ -246,7 +246,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityX < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -264,7 +264,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -285,7 +285,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -307,7 +307,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -335,7 +335,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -356,7 +356,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -377,7 +377,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -399,7 +399,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -427,7 +427,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -448,7 +448,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -469,7 +469,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -491,7 +491,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -524,7 +524,7 @@ void YukariFighter::Advance() {
             field05C = 0.8f;
             if (velocityY > GeometryConstants::Twelve)
                 velocityY = 12.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
 
         if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
@@ -557,7 +557,7 @@ void YukariFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
             fieldF0C = 1;
@@ -589,7 +589,7 @@ void YukariFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 1.3f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -622,7 +622,7 @@ void YukariFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -660,7 +660,7 @@ void YukariFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
             fieldF0C = 1;
@@ -734,7 +734,7 @@ void YukariFighter::Advance() {
             velocityX = -hitReactionVelocityX;
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -1019,7 +1019,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1042,7 +1042,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1065,7 +1065,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1089,7 +1089,7 @@ void YukariFighter::Advance() {
             velocityX = -10.0f;
             velocityY = 14.0f;
             field05C = 0.5f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
             fieldF0C = 1;
@@ -1125,7 +1125,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1149,7 +1149,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1173,7 +1173,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1197,7 +1197,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1221,7 +1221,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1245,7 +1245,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1294,7 +1294,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1316,7 +1316,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1338,7 +1338,7 @@ void YukariFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1359,7 +1359,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1380,7 +1380,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1401,7 +1401,7 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1644,7 +1644,7 @@ void YukariFighter::Advance() {
     case 0xCC: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1681,7 +1681,7 @@ void YukariFighter::Advance() {
     case 0xCD: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1718,7 +1718,7 @@ void YukariFighter::Advance() {
     case 0xCE: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1833,8 +1833,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1855,8 +1855,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1880,8 +1880,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1901,8 +1901,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1932,8 +1932,8 @@ void YukariFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -1952,8 +1952,8 @@ void YukariFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -1968,8 +1968,8 @@ void YukariFighter::Advance() {
 
     case 0x133: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1984,8 +1984,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2007,8 +2007,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2033,8 +2033,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2065,8 +2065,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2083,8 +2083,8 @@ void YukariFighter::Advance() {
     case 0x140: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2126,8 +2126,8 @@ void YukariFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2143,8 +2143,8 @@ void YukariFighter::Advance() {
     case 0x186: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2165,8 +2165,8 @@ void YukariFighter::Advance() {
     case 0x187: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2188,8 +2188,8 @@ void YukariFighter::Advance() {
     case 0x188: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 15.0f;
         }
         if (animationStage > 0) {
@@ -2209,8 +2209,8 @@ void YukariFighter::Advance() {
     case 0x189: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2229,8 +2229,8 @@ void YukariFighter::Advance() {
 
     case 0x18A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
@@ -2251,8 +2251,8 @@ void YukariFighter::Advance() {
 
     case 0x18B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
             scriptCounterF00 = 0;
         }
@@ -2268,8 +2268,8 @@ void YukariFighter::Advance() {
         if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 2) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x328,
@@ -2281,7 +2281,7 @@ void YukariFighter::Advance() {
 
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2322,7 +2322,7 @@ void YukariFighter::Advance() {
 
     case 0x191: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2362,7 +2362,7 @@ void YukariFighter::Advance() {
 
     case 0x192: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 4 && animationFrame == 0) {
@@ -2401,7 +2401,7 @@ void YukariFighter::Advance() {
 
     case 0x194: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
         }
         velocityY -= field05C;
         if (velocityY + y <= FloatConstants::Zero) {
@@ -2454,7 +2454,7 @@ void YukariFighter::Advance() {
 
     case 0x195: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
         }
         velocityY -= field05C;
         if (velocityY + y <= FloatConstants::Zero) {
@@ -2507,7 +2507,7 @@ void YukariFighter::Advance() {
 
     case 0x196: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2543,7 +2543,7 @@ void YukariFighter::Advance() {
 
     case 0x198: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2579,7 +2579,7 @@ void YukariFighter::Advance() {
 
     case 0x19A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             fieldF04 = 0;
@@ -2623,7 +2623,7 @@ void YukariFighter::Advance() {
 
     case 0x19B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2644,7 +2644,7 @@ void YukariFighter::Advance() {
 
     case 0x19D: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2664,7 +2664,7 @@ void YukariFighter::Advance() {
 
     case 0x19F: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             fieldF04 = 0;
@@ -2697,8 +2697,8 @@ void YukariFighter::Advance() {
     case 0x1F4: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2723,7 +2723,7 @@ void YukariFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0) {
             if (scriptCounterF00 < 4) {
                 ++scriptCounterF00;
-                field07C = 0;
+                collisionResult = 0;
                 ResetSecondaryCounter(8);
                 return;
             }
@@ -2735,8 +2735,8 @@ void YukariFighter::Advance() {
     case 0x1F5: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2766,7 +2766,7 @@ void YukariFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0) {
             if (scriptCounterF00 < 2) {
                 ++scriptCounterF00;
-                field07C = 0;
+                collisionResult = 0;
                 ResetSecondaryCounter(8);
                 return;
             }
@@ -2883,12 +2883,12 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2905,12 +2905,12 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2927,8 +2927,8 @@ void YukariFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2946,8 +2946,8 @@ void YukariFighter::Advance() {
     case 0x255: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2968,8 +2968,8 @@ void YukariFighter::Advance() {
     case 0x256: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2987,8 +2987,8 @@ void YukariFighter::Advance() {
     case 0x257: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -3008,7 +3008,7 @@ void YukariFighter::Advance() {
 
     case 0x258: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3024,7 +3024,7 @@ void YukariFighter::Advance() {
 
     case 0x259: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3040,7 +3040,7 @@ void YukariFighter::Advance() {
 
     case 0x25A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -3056,7 +3056,7 @@ void YukariFighter::Advance() {
 
     case 0x25B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -3072,7 +3072,7 @@ void YukariFighter::Advance() {
 
     case 0x25C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 3 && animationFrame == 0) {
@@ -3088,7 +3088,7 @@ void YukariFighter::Advance() {
 
     case 0x25D: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3104,7 +3104,7 @@ void YukariFighter::Advance() {
 
     case 0x25E: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3120,7 +3120,7 @@ void YukariFighter::Advance() {
 
     case 0x25F: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3136,7 +3136,7 @@ void YukariFighter::Advance() {
 
     case 0x260: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3152,7 +3152,7 @@ void YukariFighter::Advance() {
 
     case 0x261: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -3168,7 +3168,7 @@ void YukariFighter::Advance() {
 
     case 0x262: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3184,7 +3184,7 @@ void YukariFighter::Advance() {
 
     case 0x263: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3200,7 +3200,7 @@ void YukariFighter::Advance() {
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
@@ -3222,7 +3222,7 @@ void YukariFighter::Advance() {
     case 0x2BD: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3246,7 +3246,7 @@ void YukariFighter::Advance() {
     case 0x2BE: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3269,7 +3269,7 @@ void YukariFighter::Advance() {
     case 0x2BF: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
@@ -3293,7 +3293,7 @@ void YukariFighter::Advance() {
     case 0x2C0: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3317,7 +3317,7 @@ void YukariFighter::Advance() {
     case 0x2C1: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3341,7 +3341,7 @@ void YukariFighter::Advance() {
     case 0x2C2: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3365,8 +3365,8 @@ void YukariFighter::Advance() {
     case 0x2DB: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -3412,8 +3412,8 @@ void YukariFighter::Advance() {
             if (scriptCounterF00 == 6) {
                 PlaySound(1);
                 velocityX = 25.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             if (scriptCounterF00 < 10) {
                 ++scriptCounterF00;
@@ -3425,8 +3425,8 @@ void YukariFighter::Advance() {
                 velocityX = 18.0f;
                 --scriptCounterF02;
                 scriptCounterF00 = 0;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 ResetSecondaryCounter(8);
                 if (x > opponent->x)
                     facing = -1;
@@ -3451,8 +3451,8 @@ void YukariFighter::Advance() {
         if (animationStage == 10 && animationFrame == 0) {
             if (scriptCounterF00 < 4) {
                 ++scriptCounterF00;
-                field07C = 0;
-                ++field080;
+                collisionResult = 0;
+                ++remainingHits;
                 ResetSecondaryCounter(9);
                 return;
             }
@@ -3493,8 +3493,8 @@ void YukariFighter::Advance() {
     case 0x2DD: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 5;
-            field07C = 0;
+            remainingHits = 5;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -3519,7 +3519,7 @@ void YukariFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0) {
             if (scriptCounterF00 < 6) {
                 ++scriptCounterF00;
-                field07C = 0;
+                collisionResult = 0;
                 ResetSecondaryCounter(8);
                 return;
             }
@@ -3531,8 +3531,8 @@ void YukariFighter::Advance() {
     case 0x2DE: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -3566,7 +3566,7 @@ void YukariFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0) {
             if (scriptCounterF00 < 15) {
                 ++scriptCounterF00;
-                field07C = 0;
+                collisionResult = 0;
                 ResetSecondaryCounter(8);
                 return;
             }
@@ -3622,7 +3622,7 @@ void YukariFighter::Advance() {
         if (animationStage == 12 && animationFrame == 0) {
             if (scriptCounterF00 < 60) {
                 ++scriptCounterF00;
-                field07C = 0;
+                collisionResult = 0;
                 ResetSecondaryCounter(10);
                 return;
             }
@@ -3637,7 +3637,7 @@ void YukariFighter::Advance() {
     case 0x2EF: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3656,8 +3656,8 @@ void YukariFighter::Advance() {
     case 0x2F0: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -3707,7 +3707,7 @@ void YukariFighter::Advance() {
         if (animationStage == 9 && animationFrame == 0) {
             if (fieldF04 < 25) {
                 ++fieldF04;
-                field07C = 0;
+                collisionResult = 0;
                 ResetSecondaryCounter(8);
                 return;
             }
@@ -3722,7 +3722,7 @@ void YukariFighter::Advance() {
     case 0x2F1: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field07C = 1;
+            collisionResult = 1;
             field3AC = 0;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -3751,7 +3751,7 @@ void YukariFighter::Advance() {
     case 0x2F8: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             fieldF04 = static_cast<short>(RecordedRange(0, 5));
             fieldF06 = static_cast<short>(RecordedRange(0, 4));
@@ -3807,7 +3807,7 @@ void YukariFighter::Advance() {
     case 0x302: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3820,7 +3820,7 @@ void YukariFighter::Advance() {
     case 0x303: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3877,7 +3877,7 @@ void YukariFighter::Advance() {
     case 0x31B: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3898,7 +3898,7 @@ void YukariFighter::Advance() {
     case 0x31C: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 0 && animationFrame == 0) {

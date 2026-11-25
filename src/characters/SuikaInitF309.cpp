@@ -9,8 +9,8 @@ SuikaFighter::SuikaFighter()
     field713=1;
     strcpy(name,g_SuikaNameAt00659E24);
     strcpy(tag,g_SuikaTagAt00659E2C);
-    field478=0x2a6;
-    field532=10;
+    mainTextureCount=0x2a6;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

@@ -7,8 +7,8 @@ MeilingFighter::MeilingFighter()
     field713=1;
     strcpy(name,g_MeilingNameAt00659F40);
     strcpy(tag,g_MeilingTagAt00659F48);
-    field478=0x264;
-    field532=10;
+    mainTextureCount=0x264;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

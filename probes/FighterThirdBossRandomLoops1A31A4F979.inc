@@ -8,7 +8,7 @@
  // 67/71 GPR roles wrong. Still NONEXACT entire 82KB original.
 case 0x1A3: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
     }
     velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(animationStageCount))
@@ -39,7 +39,7 @@ case 0x1A3: {
 }
 case 0x1A4: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
     }
     velocityY=velocityY-field05C;
     if (AdvanceNestedFrame()==(animationStageCount))

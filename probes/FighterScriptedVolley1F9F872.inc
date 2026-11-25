@@ -4,11 +4,11 @@
 case 0x1F9: {
     if ((animationStage)==0 && (animationFrame)==0) {
         ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         field3AC=0;
     }
-    if ((animationStage)==2 && field07C==3) {
+    if ((animationStage)==2 && collisionResult==3) {
         SpawnAuxEffect(0x32,
             float((facing)*50)+(x),
             (*(&y))+g_F872Volley1F9YAt006598BC,

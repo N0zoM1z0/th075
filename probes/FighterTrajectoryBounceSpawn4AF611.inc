@@ -6,7 +6,7 @@ case 0x4A: {
         velocityX = -(hitReactionVelocityX);
         velocityY = hitReactionVelocityY;
         field05C = 0.8f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if (animationStage==1 && animationFrame==0 && fieldF0C==0) {
         fieldF0C=1;

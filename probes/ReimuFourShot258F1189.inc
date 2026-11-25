@@ -3,7 +3,7 @@
 // the native second effect field, followed by the 250-point gauge and reset 4.
 case 0x258:
     if (animationStage == 0 && animationFrame == 0) {
-        field07C = 1;
+        collisionResult = 1;
         ClearMotionFields();
     }
     if (AdvanceNestedFrame() == animationStageCount) {

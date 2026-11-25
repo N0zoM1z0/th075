@@ -5,8 +5,8 @@
 case F897_CASE: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=0x63;
+        collisionResult=0;
+        remainingHits=0x63;
         ClearMotionFields();
     }
     if ((animationStage)==3 && (animationFrame)<30) {
@@ -26,7 +26,7 @@ case F897_CASE: {
         return;
     }
     if ((animationFrame)==0)
-        field07C=0;
+        collisionResult=0;
     if ((animationStage)==2 && (animationFrame)==0) {
         PlaySharedSound(0x17);
         scriptCounterF00=(x);

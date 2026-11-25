@@ -9,7 +9,7 @@
 // Native original Japanese TH075 fighter 004AC040 stage 0x194, 644B/168x86.
 case 0x194: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
     }
@@ -51,7 +51,7 @@ case 0x194: {
 // Native original Japanese TH075 fighter 004AC040 stage 0x195, 644B/168x86.
 case 0x195: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         scriptCounterF00=0;
         scriptCounterF02=0;
     }

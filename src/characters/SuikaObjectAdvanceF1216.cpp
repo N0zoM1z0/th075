@@ -29,22 +29,22 @@ void SuikaObject::Advance()
             x = owner->x + facing * 128;
             y = owner->y + 66.0f;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            field080 = 1;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.2f;
             color[0] = 255;
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 1;
+            remainingHits = 1;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
@@ -64,8 +64,8 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 0.1f;
                 scaleY = 0.1f;
                 color[0] = 255;
@@ -85,7 +85,7 @@ void SuikaObject::Advance()
                     scaleY = 0.5f;
                 }
             }
-            if (field080 == 0 && animationStage < 9) {
+            if (remainingHits == 0 && animationStage < 9) {
                 ResetSecondaryCounter(9);
                 velocityX = -2.0f - RecordedRange(0, 4);
                 velocityY = RecordedRange(0, 6) + 8.0f;
@@ -137,8 +137,8 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 0.1f;
                 scaleY = 0.1f;
                 color[0] = 255;
@@ -163,7 +163,7 @@ void SuikaObject::Advance()
                     velocityY = 0.0f;
                 }
             }
-            if (field080 == 0 && animationStage < 16) {
+            if (remainingHits == 0 && animationStage < 16) {
                 ResetSecondaryCounter(16);
                 velocityX = -2.0f - RecordedRange(0, 4);
                 velocityY = RecordedRange(0, 6) + 8.0f;
@@ -211,8 +211,8 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -245,8 +245,8 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 0.6f;
             scaleY = 0.6f;
             color[0] = 255;
@@ -277,8 +277,8 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 2;
-                field07C = 0;
+                remainingHits = 2;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -289,8 +289,8 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 1) {
                 field0D8 = 0;
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -306,7 +306,7 @@ void SuikaObject::Advance()
                 owner->SpawnBattleEffect(806, x, y, facing, 1);
                 scaleX = RecordedRange(0, 4) * 0.1f + 0.8f;
                 scaleY = scaleX;
-                if (field080 == 0) ResetSecondaryCounter(1);
+                if (remainingHits == 0) ResetSecondaryCounter(1);
             }
             if (animationStage == 1) {
                 scaleX *= 0.85f;
@@ -320,8 +320,8 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 0.75f;
             scaleY = 0.75f;
             color[0] = 255;
@@ -367,8 +367,8 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -412,8 +412,8 @@ void SuikaObject::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -454,8 +454,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 2.0f;
                 scaleY = 2.0f;
                 color[0] = 255;
@@ -554,8 +554,8 @@ void SuikaObject::Advance()
                 field0D8 = 0;
                 field0DA = 0;
                 field0DC = 0;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             SetPolarVelocity(field0C8, field0CC);
             if (field0CC > 2.0f) field0CC -= 1.0f;
@@ -610,8 +610,8 @@ void SuikaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -776,8 +776,8 @@ void SuikaObject::Advance()
             field0D8 = 0;
             field0DA = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -897,8 +897,8 @@ void SuikaObject::Advance()
             field0D8 = 0;
             field0DA = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -926,8 +926,8 @@ void SuikaObject::Advance()
             field0D8 = 0;
             field0DA = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f - RecordedRange(0, 5) * 0.1f;
             scaleY = scaleX;
             color[0] = 255;
@@ -986,7 +986,7 @@ void SuikaObject::Advance()
         break;
 
     case 824:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1005,8 +1005,8 @@ void SuikaObject::Advance()
                 y + 10.0f - RecordedRange(0, 20), facing, 1);
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1016,15 +1016,15 @@ void SuikaObject::Advance()
                 field0D8 = 0;
                 SetPolarVelocity(field0C8, 30.0f);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             if (animationStage == 1 &&
-                ((field07C != 0 && field07C != 6) || y + velocityY <= 0.0f)) {
+                ((collisionResult != 0 && collisionResult != 6) || y + velocityY <= 0.0f)) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 NoOpAt0045B850(1);
                 ResetSecondaryCounter(2);
                 owner->SpawnBattleEffect(827, x, y, facing, 1);
@@ -1140,7 +1140,7 @@ void SuikaObject::Advance()
         break;
 
     case 827:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1157,16 +1157,16 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
                 ClearFrameInfo();
@@ -1248,7 +1248,7 @@ void SuikaObject::Advance()
         break;
 
     case 829:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1265,8 +1265,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1276,8 +1276,8 @@ void SuikaObject::Advance()
                 field0D8 = 0;
                 velocityX = 15.0f;
                 velocityY = 10.0f;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             rotationZ += 5.0f;
             velocityY -= 1.5f;
@@ -1285,11 +1285,11 @@ void SuikaObject::Advance()
                 y = 0.0f;
                 velocityY = -velocityY;
             }
-            if (animationStage == 1 && field07C != 0 && field07C != 6) {
+            if (animationStage == 1 && collisionResult != 0 && collisionResult != 6) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 NoOpAt0045B850(1);
                 ClearFrameInfo();
                 owner->SpawnBattleEffect(830, x, y, facing, 1);
@@ -1313,7 +1313,7 @@ void SuikaObject::Advance()
         break;
 
     case 830:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1330,16 +1330,16 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
             }
             if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
                 ClearFrameInfo();
@@ -1510,7 +1510,7 @@ void SuikaObject::Advance()
     case 900:
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
-            field07C = 0;
+            collisionResult = 0;
             velocityX = RecordedRange(0, 30) - 15;
             velocityY = RecordedRange(0, 15);
         }
@@ -1581,8 +1581,8 @@ void SuikaObject::Advance()
                     y + 50.0f - RecordedRange(0, 100), facing, 1);
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 0;
@@ -1704,8 +1704,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 6.0f;
                 scaleY = 6.0f;
                 color[0] = 0;
@@ -1728,7 +1728,7 @@ void SuikaObject::Advance()
                 if (color[0] < 235) color[0] += 20;
                 else color[0] = 255;
             }
-            if (animationStage == 1 && field07C != 0) {
+            if (animationStage == 1 && collisionResult != 0) {
                 ResetSecondaryCounter(2);
                 return;
             }
@@ -1752,8 +1752,8 @@ void SuikaObject::Advance()
                         SetPolarVelocity(AngleAt00483300(owner->opponent->y + 100.0f - y,
                             (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree, 6.0f);
                         rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                        field07C = 0;
-                        field080 = 1;
+                        collisionResult = 0;
+                        remainingHits = 1;
                     }
                 }
             }
@@ -1768,15 +1768,15 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
+                collisionResult = 0;
             }
             field0CC += 1.0f;
             SetPolarVelocity(field0C8, field0CC * 0.1f);
@@ -1942,8 +1942,8 @@ void SuikaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             if (owner->action == 774 && owner->animationStage > 15 && animationStage == 0) {
                 x = owner->x + facing * 140;
@@ -2075,8 +2075,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2114,8 +2114,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 field0D8 = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
@@ -2128,7 +2128,7 @@ void SuikaObject::Advance()
             }
             x = facing * velocityX + x;
             y -= velocityY;
-            if ((field07C != 0 || field0D0 <= 0.0f) && animationStage == 1) {
+            if ((collisionResult != 0 || field0D0 <= 0.0f) && animationStage == 1) {
                 ResetSecondaryCounter(2);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2156,7 +2156,7 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 99;
+                remainingHits = 99;
                 scaleX = 0.0f;
                 scaleY = 0.0f;
                 color[0] = 255;
@@ -2190,7 +2190,7 @@ void SuikaObject::Advance()
             else {
                 if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(3);
-                    field07C = 0;
+                    collisionResult = 0;
                     return;
                 }
                 else if (animationStage == 3 && animationFrame == 0) {
@@ -2210,8 +2210,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 3.0f;
                 scaleY = 3.0f;
                 color[0] = 0;
@@ -2219,8 +2219,8 @@ void SuikaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
                 field0D8 = 0;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -2234,7 +2234,7 @@ void SuikaObject::Advance()
                 if (field0D8 < 15) ++field0D8;
                 SetPolarVelocity(field0C8, 20 - field0D8);
             }
-            if (animationStage == 1 && field07C != 0) {
+            if (animationStage == 1 && collisionResult != 0) {
                 ResetSecondaryCounter(2);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2349,8 +2349,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2371,8 +2371,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2412,8 +2412,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2434,8 +2434,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2475,8 +2475,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2497,8 +2497,8 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2522,8 +2522,8 @@ void SuikaObject::Advance()
                 if (y - velocityY <= 0.0f) {
                     if (field0D8 == 0) {
                         velocityY = -velocityY * 0.75f;
-                        field080 = 1;
-                        field07C = 0;
+                        remainingHits = 1;
+                        collisionResult = 0;
                         ++field0D8;
                         return;
                     }
@@ -2542,7 +2542,7 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 99;
+                remainingHits = 99;
                 scaleX = 0.0f;
                 scaleY = 0.0f;
                 color[0] = 255;
@@ -2576,7 +2576,7 @@ void SuikaObject::Advance()
             else {
                 if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(3);
-                    field07C = 0;
+                    collisionResult = 0;
                     return;
                 }
                 else if (animationStage == 3 && animationFrame == 0) {
@@ -2596,7 +2596,7 @@ void SuikaObject::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 99;
+                remainingHits = 99;
                 scaleX = 0.0f;
                 scaleY = 0.0f;
                 color[0] = 255;
@@ -2630,7 +2630,7 @@ void SuikaObject::Advance()
             else {
                 if (AdvanceNestedFrame() == animationStageCount) {
                     ResetSecondaryCounter(3);
-                    field07C = 0;
+                    collisionResult = 0;
                     return;
                 }
                 else if (animationStage == 3 && animationFrame == 0) {

@@ -5,8 +5,8 @@ case 0x351: {
     ++field0DA;
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=99;
-        field07C=0;
+        remainingHits=99;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -53,7 +53,7 @@ case 0x351: {
         ResetSecondaryCounter(16);
         return;
     }
-    if (animationFrame==0) field07C=0;
+    if (animationFrame==0) collisionResult=0;
     if (animationStage==6 && animationFrame==0)
         ResetSecondaryCounter(1);
     if (animationStage==11 && animationFrame==0)

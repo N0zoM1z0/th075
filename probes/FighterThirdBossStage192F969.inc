@@ -10,7 +10,7 @@
 // F969 genuine original Japanese 004AC040 0x192 stage3 three-shot trial.
 case 0x192: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;

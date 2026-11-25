@@ -937,6 +937,23 @@ arrays that the renderers read. The fourth layer is the stage banner and
 starts fading out after its full-alpha timer exceeds 180 frames.
 [Script format](../src/assets/ScriptResource4205F0.hpp) · [Round setup](../src/battle/BindingRoundF171.cpp) · [Stage rendering](../src/characters/CharacterStageRendering.cpp)
 
+### Actor collision and sprite resources
+
+The collision pass snapshots both fighters and the character objects in
+the first two lists of each owned object manager. It resolves object
+clashes before hits against each fighter. All four lists remain available
+to object update and rendering. The collision result and remaining hit
+count belong to the actor, and object state machines use them to decide
+whether to keep or replace the current action.
+
+The frame record carries both hitstop pairs, guard damage and spell
+charge, ground and air reaction actions, reaction velocities and the hit
+sound. Pattern loaders, combat and drawing share that layout. Frames
+without a pose can select the doubled sprite scale. The secondary
+fighter texture pack supplies portraits and notice badges, and the
+sprite history records the drawn fighter frames for its trail.
+[Actor and frame layout](../src/battle/Actor.hpp) · [Collision pass](../src/battle/BattleActiveCollision.cpp) · [Fighter resources](../src/battle/FighterLoadResourcesF282.cpp)
+
 ## Scene commands and archive files
 
 The Windows loop consumes a 16-bit scene command. The low byte selects the

@@ -13,12 +13,12 @@ Fighter::~Fighter()
     }
     sequenceSlots.clear();
     inputHistory.clear();
-    delete field480;
-    delete field2EC;
+    delete spriteHistory;
+    delete ownedObjects;
     if (drawing)
         delete static_cast<TextureManagerF198*>(drawing);
-    if (field534)
-        delete reinterpret_cast<TextureManagerF198*>(field534);
+    if (overlayTextures)
+        delete overlayTextures;
     if (stageTexture)
         delete stageTexture;
 }

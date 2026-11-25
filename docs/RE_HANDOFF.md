@@ -86,6 +86,15 @@ compressed bitmap rows and round-tripped two configurations and five
 replay files.
 [Texture and display evidence](KNOWLEDGE_BASE.md#texture-packs-and-display-options)
 
+The collision pass uses the actual character-object lists, and frame
+loaders and attack handlers share named collision and reaction fields.
+All 480 affected units passed. The typed deque lets the normal link
+choose different owners for its template instantiations, which moves
+code and data in the PE. The forward and reverse retained links both
+passed all 1,023 configured unit checks, 56,374 linked relocation checks,
+80 vtables and the initializer array.
+[Actor and collision evidence](KNOWLEDGE_BASE.md#actor-collision-and-sprite-resources)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

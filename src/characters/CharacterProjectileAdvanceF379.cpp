@@ -5,7 +5,7 @@
 // Called by the seven projectile action states of AliceObject::Advance.
 extern float AngleAt00483300(float,float);
 void AliceObject::AdvanceProjectileBehavior() {
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
     } else if (owner->action>49 && owner->action<150 && animationStage<2) {
         ClearFrameInfo();
@@ -21,8 +21,8 @@ void AliceObject::AdvanceProjectileBehavior() {
             field0DA=static_cast<short>(field0C8);
             field0DC=static_cast<short>(field0CC);
             ResetTransform(0,0,0);
-            field080=1;
-            field07C=0;
+            remainingHits=1;
+            collisionResult=0;
             SetPolarVelocity(static_cast<float>(field0DC),static_cast<float>(field0DA)*FloatConstants::OneHundredth);
             scaleX=1.5f;scaleY=1.5f;
             color[0]=255;
@@ -31,7 +31,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             color[3]=255;
             rotationZ=AngleAt00483300(velocityY,velocityX)/GeometryConstants::RadiansPerDegree;
         }
-        if ((field07C==1 || field07C==2 || field07C==4 || field07C==6) && animationStage<2) {
+        if ((collisionResult==1 || collisionResult==2 || collisionResult==4 || collisionResult==6) && animationStage<2) {
             ResetSecondaryCounter(2);
             velocityX=0.0f;
             velocityY=0.0f;

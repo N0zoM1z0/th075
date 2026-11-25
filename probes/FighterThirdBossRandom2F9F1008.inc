@@ -1,5 +1,5 @@
 // F1008 original Japanese 004AC040 state 2F9.
-// Entry initializes F00/F02/F04/F06, field07C and field080, then calls
+// Entry initializes F00/F02/F04/F06, collisionResult and remainingHits, then calls
 // native 00453E20 to clear velocityX, velocityY, field058 and field05C.
 // Stages 9/10 emit mode-gated random 38B/38A effects; stage 5 delays three
 // times before opponent transform, then stages 11/13 repeat at counters 9/11.
@@ -10,9 +10,9 @@ case 0x2F9: {
         scriptCounterF02=0;
         fieldF04=static_cast<short>(RecordedRange(0,3));
         fieldF06=static_cast<short>(RecordedRange(0,100));
-        field07C=0;
+        collisionResult=0;
         ClearMotionFields();
-        field080=99;
+        remainingHits=99;
     }
     if ((animationFrame)==0 && ((animationStage)==9 || (animationStage)==10)) {
         SpawnBattleEffect(0x38B,

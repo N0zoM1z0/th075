@@ -20,7 +20,7 @@ void SakuyaObject::Advance()
     }
     switch (action) {
     case 800:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 5) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -40,8 +40,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -66,7 +66,7 @@ void SakuyaObject::Advance()
                 owner->field30C = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
             }
-            if ((field07C == 2 || field07C == 4) && animationStage == 0) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage == 0) {
                 ResetSecondaryCounter(6);
                 return;
             }
@@ -94,7 +94,7 @@ void SakuyaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = RecordedRange(0, 7) * 0.1f + 1.0f;
             scaleY = scaleX;
             color[0] = 255;
@@ -116,7 +116,7 @@ void SakuyaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = RecordedRange(0, 9) * 0.1f + 1.7f;
             scaleY = scaleX;
             color[0] = 255;
@@ -134,7 +134,7 @@ void SakuyaObject::Advance()
         break;
 
     case 803:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
@@ -149,8 +149,8 @@ void SakuyaObject::Advance()
                 color[3] = 255;
             }
             if (animationStage == 2 && animationFrame == 0 && field0D8 == 0) {
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 field0DC = AngleAt00483300(owner->opponent->y + 100.0f - y,
                     (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 ++field0D8;
@@ -196,7 +196,7 @@ void SakuyaObject::Advance()
         break;
 
     case 805:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 69 && owner->action < 150 && animationStage < 1) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -220,8 +220,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DA = 0;
             }
             x = facing * velocityX + x;
@@ -252,8 +252,8 @@ void SakuyaObject::Advance()
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x < owner->cameraState.field04 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
@@ -262,8 +262,8 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x > owner->field2DC && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
@@ -272,11 +272,11 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
-            if ((field07C == 2 || field07C == 4) && animationStage == 0) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage == 0) {
                 ResetSecondaryCounter(1);
                 return;
             }
@@ -299,7 +299,7 @@ void SakuyaObject::Advance()
         break;
 
     case 806:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 1) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -323,8 +323,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DA = 0;
             }
             x = facing * velocityX + x;
@@ -355,15 +355,15 @@ void SakuyaObject::Advance()
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (y < 0.0f && field0DA < 1 && velocityY > 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x < owner->cameraState.field04 && field0DA < 1 &&
                     ((facing == -1 && velocityX > 0.0f) ||
@@ -372,8 +372,8 @@ void SakuyaObject::Advance()
                     if (field0C8 >= 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x > owner->field2DC && field0DA < 1 &&
                     ((facing == -1 && velocityX < 0.0f) ||
@@ -382,11 +382,11 @@ void SakuyaObject::Advance()
                     if (field0C8 >= 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
-            if ((field07C == 2 || field07C == 4) && animationStage == 0) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage == 0) {
                 ResetSecondaryCounter(1);
                 return;
             }
@@ -409,7 +409,7 @@ void SakuyaObject::Advance()
         break;
 
     case 807:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (((owner->action > 69 && animationStage < 2) ||
                   (owner->action > 59 && animationStage == 2)) && owner->action < 150) {
             ClearFrameInfo();
@@ -445,8 +445,8 @@ void SakuyaObject::Advance()
                     color[1] = 255;
                     color[2] = 255;
                     color[3] = 255;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                     field0D8 = 0;
                     field0DA = 0;
                 }
@@ -477,7 +477,7 @@ void SakuyaObject::Advance()
                 }
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if ((field07C == 2 || field07C == 4) && animationStage < 3) {
+                if ((collisionResult == 2 || collisionResult == 4) && animationStage < 3) {
                     ResetSecondaryCounter(3);
                     return;
                 }
@@ -488,8 +488,8 @@ void SakuyaObject::Advance()
                     }
                     if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                     if (animationStage == 2 && animationFrame == 0) {
-                        field080 = 1;
-                        field07C = 0;
+                        remainingHits = 1;
+                        collisionResult = 0;
                         field0C8 = AngleAt00483300(owner->opponent->y + 100.0f - y,
                             (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                         field0CC = 17.5f;
@@ -502,7 +502,7 @@ void SakuyaObject::Advance()
         break;
 
     case 808:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -524,8 +524,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -544,7 +544,7 @@ void SakuyaObject::Advance()
                 return;
             }
             else {
-                if (field080 == 0) {
+                if (remainingHits == 0) {
                     if (color[0] > 10) color[0] -= 10;
                     else {
                         color[0] = 0;
@@ -627,7 +627,7 @@ void SakuyaObject::Advance()
         break;
 
     case 811:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
@@ -640,8 +640,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field080 = 0;
-                field07C = 0;
+                remainingHits = 0;
+                collisionResult = 0;
             }
             if (animationStage > 1 && animationStage < 6) {
                 ++field0DA;
@@ -679,8 +679,8 @@ void SakuyaObject::Advance()
                     scaleX = 1.0f;
                     field0D8 = 0;
                     field0DA = 0;
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     field0DC = AngleAt00483300(owner->opponent->y + 100.0f - y,
                         (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 }
@@ -697,8 +697,8 @@ void SakuyaObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             rotationZ = field0C8;
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
@@ -1175,8 +1175,8 @@ void SakuyaObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 SetPolarVelocity(RecordedRange(0, 90) - 45, 20.0f);
             }
             x = facing * velocityX + x;
@@ -1198,8 +1198,8 @@ void SakuyaObject::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 SetPolarVelocity(RecordedRange(0, 80) - 40, 30.0f);
             }
             x = facing * velocityX + x;
@@ -1242,7 +1242,7 @@ void SakuyaObject::Advance()
         break;
 
     case 834:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 5) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -1265,8 +1265,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DC = 0;
                 field0DA = 0;
                 field0D8 = 0;
@@ -1301,7 +1301,7 @@ void SakuyaObject::Advance()
                     field0C8 = RecordedRange(0, 180) - 90;
                 }
             }
-            if ((field07C == 2 || field07C == 4) && animationStage < 5) ResetSecondaryCounter(5);
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage < 5) ResetSecondaryCounter(5);
             if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) {
                 ClearFrameInfo();
                 return;
@@ -1337,7 +1337,7 @@ void SakuyaObject::Advance()
         break;
 
     case 836:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 6) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -1357,8 +1357,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -1385,7 +1385,7 @@ void SakuyaObject::Advance()
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 }
             }
-            if ((field07C == 2 || field07C == 4) && animationStage < 6) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage < 6) {
                 ResetSecondaryCounter(7);
                 velocityX = -velocityX * 0.25;
                 velocityY = -14.0f;
@@ -1403,8 +1403,8 @@ void SakuyaObject::Advance()
                 if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) field08A = 0;
                 if (animationStage == 2 && animationFrame == 0) {
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (animationStage == 6 && animationFrame == 0) ResetSecondaryCounter(2);
                 if (animationStage == 7 && animationFrame == 0) ResetSecondaryCounter(6);
@@ -1413,7 +1413,7 @@ void SakuyaObject::Advance()
         break;
 
     case 837:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 5) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -1433,8 +1433,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DA = 0;
                 field0D8 = 0;
                 velocityX = 0.0f;
@@ -1450,15 +1450,15 @@ void SakuyaObject::Advance()
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (y < 0.0f && field0DA < 2 && velocityY > 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x < owner->cameraState.field04 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
@@ -1467,8 +1467,8 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x > owner->field2DC && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
@@ -1477,8 +1477,8 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (animationStage > 0) {
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
@@ -1497,7 +1497,7 @@ void SakuyaObject::Advance()
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(835, x, y, facing, 0, 1);
                 }
             }
-            if ((field07C == 2 || field07C == 4) && animationStage == 0) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage == 0) {
                 ResetSecondaryCounter(6);
                 return;
             }
@@ -1517,8 +1517,8 @@ void SakuyaObject::Advance()
                 if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) field08A = 0;
                 if (animationStage == 2 && animationFrame == 0) {
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (animationStage == 6 && animationFrame == 0) ResetSecondaryCounter(2);
                 if (animationStage == 8 && animationFrame == 0) ResetSecondaryCounter(7);
@@ -1527,7 +1527,7 @@ void SakuyaObject::Advance()
         break;
 
     case 838:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (((owner->action > 69 && animationStage < 2) ||
                   (owner->action > 59 && animationStage == 2)) && owner->action < 150) {
             ClearFrameInfo();
@@ -1550,8 +1550,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0D8 = 0;
                 field0DA = 0;
             }
@@ -1589,7 +1589,7 @@ void SakuyaObject::Advance()
                     owner->field30C = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
-                if ((field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 4) {
+                if ((collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage < 4) {
                     ResetSecondaryCounter(4);
                     velocityX = -RecordedRange(0, 5) + 7;
                     velocityY = -RecordedRange(0, 7) + 7;
@@ -1607,7 +1607,7 @@ void SakuyaObject::Advance()
         break;
 
     case 839:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (((owner->action > 69 && animationStage < 2) ||
                   (owner->action > 59 && animationStage == 2)) && owner->action < 150) {
             ClearFrameInfo();
@@ -1630,8 +1630,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0D8 = 0;
                 field0DA = 0;
             }
@@ -1669,7 +1669,7 @@ void SakuyaObject::Advance()
                     owner->field30C = 0.0f;
                     static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
                 }
-                if ((field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 4) {
+                if ((collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage < 4) {
                     ResetSecondaryCounter(4);
                     velocityX = -RecordedRange(0, 5) + 7;
                     velocityY = -RecordedRange(0, 7) + 7;
@@ -1698,8 +1698,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -1723,8 +1723,8 @@ void SakuyaObject::Advance()
                 owner->field308 = 0.0f;
                 owner->field30C = 0.0f;
             }
-            if (field07C == 6) field080 = 1;
-            if ((field07C == 2 || field07C == 4) && animationStage < 5) {
+            if (collisionResult == 6) remainingHits = 1;
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage < 5) {
                 ResetSecondaryCounter(6);
                 return;
             }
@@ -1761,8 +1761,8 @@ void SakuyaObject::Advance()
                 color[3] = 255;
             }
             if (animationStage == 2 && animationFrame == 0 && field0D8 == 0) {
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 field0DC = AngleAt00483300(owner->opponent->y + 100.0f - y,
                     (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
                 ++field0D8;
@@ -1804,11 +1804,11 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DA = 0;
             }
-            if (field07C != 0) color[0] = 128;
+            if (collisionResult != 0) color[0] = 128;
             else color[0] = 255;
             x = facing * velocityX + x;
             y -= velocityY;
@@ -1817,7 +1817,7 @@ void SakuyaObject::Advance()
             if (animationStage == 1) {
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                if (field07C == 0) {
+                if (collisionResult == 0) {
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
@@ -1840,16 +1840,16 @@ void SakuyaObject::Advance()
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                     field0CC = 4.0f;
                 }
                 if (y < 0.0f && field0DA < 1 && velocityY > 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                     field0CC = 4.0f;
                 }
                 if (x < owner->cameraState.field04 && field0DA < 1 &&
@@ -1859,8 +1859,8 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                     field0CC = 4.0f;
                 }
                 if (x > owner->field2DC && field0DA < 1 &&
@@ -1870,12 +1870,12 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                     field0CC = 4.0f;
                 }
             }
-            if ((field07C == 2 || field07C == 4) && animationStage == 1) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage == 1) {
                 ResetSecondaryCounter(2);
                 return;
             }
@@ -1907,11 +1907,11 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DA = 0;
             }
-            if (field07C != 0) color[0] = 128;
+            if (collisionResult != 0) color[0] = 128;
             else color[0] = 255;
             x = facing * velocityX + x;
             y -= velocityY;
@@ -1920,7 +1920,7 @@ void SakuyaObject::Advance()
             if (animationStage == 1) {
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
-                if (field07C == 0) {
+                if (collisionResult == 0) {
                     owner->field314 = rotationZ;
                     owner->field318 = field0D8;
                     owner->SpawnBattleEffect(812, x, y, facing, 1);
@@ -1943,15 +1943,15 @@ void SakuyaObject::Advance()
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (y < 0.0f && field0DA < 2 && velocityY > 0.0f) {
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x < owner->cameraState.field04 && field0DA < 2 &&
                     ((facing == -1 && velocityX > 0.0f) ||
@@ -1960,8 +1960,8 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x > owner->field2DC && field0DA < 2 &&
                     ((facing == -1 && velocityX < 0.0f) ||
@@ -1970,11 +1970,11 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
             }
-            if ((field07C == 2 || field07C == 4) && animationStage == 1) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage == 1) {
                 ResetSecondaryCounter(2);
                 return;
             }
@@ -2005,8 +2005,8 @@ void SakuyaObject::Advance()
                 color[2] = 255;
                 color[3] = 255;
                 field08A = 0;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DC = 5;
                 field0DA = RecordedRange(0, 30) - 15;
                 field0D8 = RecordedRange(0, 50);
@@ -2019,7 +2019,7 @@ void SakuyaObject::Advance()
             field0DC += 5 + field0D8;
             x = facing * velocityX + x;
             y -= velocityY;
-            if (field080 == 0 && animationStage < 5) { ResetSecondaryCounter(6); return; }
+            if (remainingHits == 0 && animationStage < 5) { ResetSecondaryCounter(6); return; }
             else if (x > 1320.0f || x < -40.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
             else {
                 if (animationStage == 6) {
@@ -2043,8 +2043,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0D8 = RecordedRange(0, 50);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2052,7 +2052,7 @@ void SakuyaObject::Advance()
             velocityX = field0D8 * 0.01 + 0.05f + velocityX;
             x = facing * velocityX + x;
             y -= velocityY;
-            if (field080 == 0 && animationStage < 5) { ResetSecondaryCounter(6); return; }
+            if (remainingHits == 0 && animationStage < 5) { ResetSecondaryCounter(6); return; }
             else if (x > 1320.0f || x < -40.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
             else {
                 if (animationStage == 6) {
@@ -2076,8 +2076,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0D8 = RecordedRange(0, 50);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2085,7 +2085,7 @@ void SakuyaObject::Advance()
             velocityX = field0D8 * 0.01 + 0.05f + velocityX;
             x = facing * velocityX + x;
             y -= velocityY;
-            if (field080 == 0 && animationStage < 5) { ResetSecondaryCounter(6); return; }
+            if (remainingHits == 0 && animationStage < 5) { ResetSecondaryCounter(6); return; }
             else if (x > 1320.0f || x < -40.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
             else {
                 if (animationStage == 6) {
@@ -2109,8 +2109,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
@@ -2135,7 +2135,7 @@ void SakuyaObject::Advance()
                 owner->field30C = 0.0f;
                 static_cast<SakuyaFighter*>(owner)->SpawnTrackedEffect(813, x, y, facing, 0, 1);
             }
-            if ((field07C == 2 || field07C == 4) && animationStage < 5) {
+            if ((collisionResult == 2 || collisionResult == 4) && animationStage < 5) {
                 ResetSecondaryCounter(6);
                 return;
             }
@@ -2187,8 +2187,8 @@ void SakuyaObject::Advance()
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 field0DA = 0;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -2201,8 +2201,8 @@ void SakuyaObject::Advance()
                     owner->PlaySound(11);
                     field0C8 = -field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x < owner->cameraState.field04 && field0DA < g_OptionsModeAt006714D0 &&
                     ((facing == -1 && velocityX > 0.0f) ||
@@ -2211,8 +2211,8 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 if (x > owner->field2DC && field0DA < g_OptionsModeAt006714D0 &&
                     ((facing == -1 && velocityX < 0.0f) ||
@@ -2221,8 +2221,8 @@ void SakuyaObject::Advance()
                     if (field0C8 > 0.0f) field0C8 = 180.0f - field0C8;
                     if (field0C8 < 0.0f) field0C8 = -180.0f - field0C8;
                     ++field0DA;
-                    field07C = 0;
-                    field080 = 1;
+                    collisionResult = 0;
+                    remainingHits = 1;
                 }
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
@@ -2244,7 +2244,7 @@ void SakuyaObject::Advance()
                 owner->field318 = field0CC;
                 owner->SpawnBattleEffect(812, x, y, facing, 1);
             }
-            if ((field07C == 2 || field07C == 4 || field07C == 6) && animationStage < 5) {
+            if ((collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage < 5) {
                 ResetSecondaryCounter(6);
                 return;
             }

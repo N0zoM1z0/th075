@@ -2,8 +2,8 @@
 case 0x186: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -30,7 +30,7 @@ case 0x187: {
     }
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=9.0f; velocityY=0.0f; field05C=0.0f;
-        field080=1; field07C=0;
+        remainingHits=1; collisionResult=0;
     }
     if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;
@@ -51,7 +51,7 @@ case 0x187: {
 case 0x188: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
-        field07C=0;
+        collisionResult=0;
         velocityX=8.0f;
     }
     if ((animationStage)>0) {
@@ -59,11 +59,11 @@ case 0x188: {
         if ((velocityX)<FloatConstants::Zero) { velocityX=0.0f; field3AC=0; }
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=8;
-        field07C=0;
+        remainingHits=8;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
-    if ((animationFrame)==0 && (animationStage)<12) field07C=0;
+    if ((animationFrame)==0 && (animationStage)<12) collisionResult=0;
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1B);
     if ((animationStage)==5 && (animationFrame)==0) PlaySharedSound(0x1B);
     if ((animationStage)==7 && (animationFrame)==0) PlaySharedSound(0x1B);
@@ -73,7 +73,7 @@ case 0x188: {
 case 0x189: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ClearMotionFields();
-        field080=1; field07C=0;
+        remainingHits=1; collisionResult=0;
         velocityX=12.0f; field3AC=0;
     }
     if ((animationStage)==0 && (animationFrame)==0) scriptCounterF00=0;
@@ -83,7 +83,7 @@ case 0x189: {
     }
     if (AdvanceNestedFrame()==(animationStageCount)) ResetPrimaryCounters(2);
     if ((animationStage)==2 && (animationFrame)==0) {
-        field080=1; field07C=0; velocityX=12.0f;
+        remainingHits=1; collisionResult=0; velocityX=12.0f;
     }
     if ((animationStage)==3 && (animationFrame)==0) PlaySharedSound(0x1D);
     if ((animationStage)==5 && (animationFrame)==0 && (scriptCounterF00)<1) {
@@ -128,7 +128,7 @@ case 0x189: {
 #undef R1186_Y_OFFSET
 case 0x192: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
         scriptCounterF00=0;
     }

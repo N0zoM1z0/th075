@@ -8,7 +8,7 @@
 // F971 original 004AC040 native 0x196 is five real projectile calls.
 case 0x196: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
             }
     if (AdvanceNestedFrame()==(animationStageCount))
@@ -44,7 +44,7 @@ case 0x196: {
 // F971 original 004AC040 native 0x197 is five real projectile calls.
 case 0x197: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
             }
     if (AdvanceNestedFrame()==(animationStageCount))
@@ -80,7 +80,7 @@ case 0x197: {
 // F971 original 004AC040 native 0x198 is five real projectile calls.
 case 0x198: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
             }
     if (AdvanceNestedFrame()==(animationStageCount))

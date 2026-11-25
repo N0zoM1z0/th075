@@ -1,7 +1,7 @@
 // F1076: genuine Japanese native 00511D25..005123B9 (1684B/365 x86).
 // Real 0x346 source inside ONE original 81KB CharacterObject, NONEXACT.
 case 0x346: {
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
@@ -29,8 +29,8 @@ case 0x346: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
         field0D8=15;
         SetPolarVelocity(field0C8,
                                     float(field0D8));
@@ -71,7 +71,7 @@ case 0x346: {
             return;
         }
     }
-    if ((field07C==2 || field07C==4) && animationStage==2) {
+    if ((collisionResult==2 || collisionResult==4) && animationStage==2) {
         ResetSecondaryCounter(3);
         return;
     }

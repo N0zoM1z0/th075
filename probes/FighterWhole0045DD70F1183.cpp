@@ -326,7 +326,7 @@ case 0x48: {
         velocityX = -hitReactionVelocityX;
         velocityY = hitReactionVelocityY;
         field05C = 1.3f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if (animationStage==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
         ResetSecondaryCounter(F605_EARLY48);

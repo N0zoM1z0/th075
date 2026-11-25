@@ -6,8 +6,8 @@
 #include "battle/BattleScene.hpp"
 #include "battle/BattleEndOverlay441910.hpp"
 
-#define LEFT_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[0]->field534)
-#define RIGHT_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[1]->field534)
+#define LEFT_DRAWING fighters[0]->overlayTextures
+#define RIGHT_DRAWING fighters[1]->overlayTextures
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 
 void BattleScene::RenderEndOverlay() {
@@ -29,15 +29,15 @@ void BattleScene::RenderEndOverlay() {
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&rect);
                 if (fighters[0]->cpuControlled == 0 && fighters[1]->cpuControlled == 0) {
                     QUAD->TranslateQuad(32.0f, 280.0f, 0.0f);
-                    LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, packet, &rect, 0xFFFFFFFF);
+                    LEFT_DRAWING->DrawQuad(fighters[0]->overlayTextureCount - 1, packet, &rect, 0xFFFFFFFF);
                     QUAD->TranslateQuad(320.0f, 0.0f, 0.0f);
-                    RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, packet, &rect, 0xFFFFFFFF);
+                    RIGHT_DRAWING->DrawQuad(fighters[1]->overlayTextureCount - 1, packet, &rect, 0xFFFFFFFF);
                 } else if (fighters[0]->cpuControlled != 0) {
                     QUAD->TranslateQuad(192.0f, 280.0f, 0.0f);
-                    RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, packet, &rect, 0xFFFFFFFF);
+                    RIGHT_DRAWING->DrawQuad(fighters[1]->overlayTextureCount - 1, packet, &rect, 0xFFFFFFFF);
                 } else {
                     QUAD->TranslateQuad(192.0f, 280.0f, 0.0f);
-                    LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, packet, &rect, 0xFFFFFFFF);
+                    LEFT_DRAWING->DrawQuad(fighters[0]->overlayTextureCount - 1, packet, &rect, 0xFFFFFFFF);
                 }
             }
             if (battlePhase == BattlePhase::StoryContinuePrompt && g_ContinueCountAt00671623 > 0) {

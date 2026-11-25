@@ -4,15 +4,15 @@
 case 0x2E6: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=0;
-        field080=1;
+        collisionResult=0;
+        remainingHits=1;
     }
     velocityX=(velocityX)-FloatConstants::Half;
     if ((velocityX)<FloatConstants::Zero)
         velocityX=0.0f;
     if (AdvanceNestedFrame()==(animationStageCount)) {
         scriptCounterF00=RecordedRange(0,100);
-        if (field07C==0) {
+        if (collisionResult==0) {
             ResetPrimaryCounters(0);
             aiCardTimer=RecordedRange(60,120);
             return;

@@ -13,9 +13,9 @@ case 0x2C0: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
         scriptCounterF02=0;
-        field07C=0;
+        collisionResult=0;
         ClearMotionFields();
-        field080=99;
+        remainingHits=99;
     }
     if (AdvanceNestedFrame()==(animationStageCount)) {
         ResetPrimaryCounters(0);
@@ -53,9 +53,9 @@ case 0x2C1: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
         scriptCounterF02=0;
-        field07C=0;
+        collisionResult=0;
         ClearMotionFields();
-        field080=99;
+        remainingHits=99;
     }
     if ((animationStage)>=5)
         fieldF0C=180;

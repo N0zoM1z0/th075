@@ -10,7 +10,7 @@ public:
     YoumuFighter();
     void RenderStage(signed char stage);
     virtual ~YoumuFighter();
-    virtual void Advance(); // slot 1, native 005214B0, nonexact natural-C++ parent in YoumuFighterAdvanceF1040.cpp
+    virtual void Advance(); // slot 1, native 005214B0
 
     void ConfigureStage();
     void ChooseAction();

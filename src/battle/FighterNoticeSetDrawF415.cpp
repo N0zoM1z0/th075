@@ -8,7 +8,7 @@
 // Two physically complete native fighter notice policies; only borrowed
 // owner offsets and the original notice-drawing renderer ABI are asserted.
 void Fighter::SetNoticeFields(signed char notice,unsigned char first,unsigned char second) {
-    if(notice>=0 && notice<=field532)
+    if(notice>=0 && notice<=overlayTextureCount)
         noticeBadge=notice;
     noticeFirst=first;
     noticeColor=second;

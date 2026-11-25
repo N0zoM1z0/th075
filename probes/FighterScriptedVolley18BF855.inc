@@ -3,8 +3,8 @@
 // Incomplete giant register allocation remains nonnative; no case exact credit.
 case 0x18B: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         velocityX=10.0f;
         scriptCounterF00=0;
     }
@@ -20,8 +20,8 @@ case 0x18B: {
     if ((animationStage)==7 && (animationFrame)==0 && (scriptCounterF00)<2) {
         ++scriptCounterF00;
         ResetSecondaryCounter(6);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if ((animationStage)==6 && (animationFrame)==0) {
         SpawnBattleEffect(0x328,

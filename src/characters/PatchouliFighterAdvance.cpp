@@ -262,7 +262,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityX < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -280,7 +280,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -301,7 +301,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -323,7 +323,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -351,7 +351,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -372,7 +372,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -393,7 +393,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -415,7 +415,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -443,7 +443,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -464,7 +464,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -485,7 +485,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -507,7 +507,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -540,7 +540,7 @@ void PatchouliFighter::Advance() {
             field05C = 0.8f;
             if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -567,7 +567,7 @@ void PatchouliFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -594,7 +594,7 @@ void PatchouliFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 1.3f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -621,7 +621,7 @@ void PatchouliFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -652,7 +652,7 @@ void PatchouliFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -717,7 +717,7 @@ void PatchouliFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -982,7 +982,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1005,7 +1005,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1028,7 +1028,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1052,7 +1052,7 @@ void PatchouliFighter::Advance() {
             velocityX = -10.0f;
             velocityY = 14.0f;
             field05C = 0.5f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -1081,7 +1081,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1103,7 +1103,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1125,7 +1125,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1147,7 +1147,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1169,7 +1169,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1191,7 +1191,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1239,7 +1239,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1261,7 +1261,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1283,7 +1283,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1304,7 +1304,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1325,7 +1325,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1346,7 +1346,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1618,7 +1618,7 @@ void PatchouliFighter::Advance() {
     case 0xCC: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1655,7 +1655,7 @@ void PatchouliFighter::Advance() {
     case 0xCD: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1692,7 +1692,7 @@ void PatchouliFighter::Advance() {
     case 0xCE: {
         if ((y == (FloatConstants::Zero)) || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1809,8 +1809,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1830,8 +1830,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1855,8 +1855,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1876,8 +1876,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-                        field080 = 1;
-            field07C = 0;
+                        remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1903,8 +1903,8 @@ void PatchouliFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -1926,8 +1926,8 @@ void PatchouliFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -1953,8 +1953,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 0;
-            field07C = 1;
+            remainingHits = 0;
+            collisionResult = 1;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1979,8 +1979,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 0;
-            field07C = 1;
+            remainingHits = 0;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
         }
@@ -2005,9 +2005,9 @@ void PatchouliFighter::Advance() {
     case 0x135: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
+            remainingHits = 1;
             field3AC = 0;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityX > FloatConstants::Zero) {
             velocityX -= FloatConstants::NineTenths;
@@ -2028,9 +2028,9 @@ void PatchouliFighter::Advance() {
     case 0x136: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
+            remainingHits = 1;
             field3AC = 0;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityX > FloatConstants::Zero) {
             velocityX -= FloatConstants::NineTenths;
@@ -2056,8 +2056,8 @@ void PatchouliFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2080,8 +2080,8 @@ void PatchouliFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2097,8 +2097,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 8.0f;
         }
         if (animationStage > 0) {
@@ -2120,8 +2120,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2144,8 +2144,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2167,8 +2167,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             velocityX = 10.0f;
             scriptCounterF00 = 0;
         }
@@ -2189,7 +2189,7 @@ void PatchouliFighter::Advance() {
         }
         if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 2) {
             ++scriptCounterF00;
-            field07C = 0;
+            collisionResult = 0;
             ResetSecondaryCounter(5);
         }
         return;
@@ -2197,8 +2197,8 @@ void PatchouliFighter::Advance() {
 
     case 0x18A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
@@ -2219,8 +2219,8 @@ void PatchouliFighter::Advance() {
 
     case 0x18B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
             scriptCounterF00 = 0;
         }
@@ -2236,8 +2236,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 2) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x328,
@@ -2249,7 +2249,7 @@ void PatchouliFighter::Advance() {
 
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2276,7 +2276,7 @@ void PatchouliFighter::Advance() {
 
     case 0x191: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2303,7 +2303,7 @@ void PatchouliFighter::Advance() {
 
     case 0x192: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2332,7 +2332,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
-            field07C = 1;
+            collisionResult = 1;
         }
         if (y + velocityY <= FloatConstants::Zero) {
             velocityY = 0.0f;
@@ -2364,7 +2364,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
-            field07C = 1;
+            collisionResult = 1;
         }
         if (y + velocityY <= FloatConstants::Zero) {
             velocityY = 0.0f;
@@ -2396,8 +2396,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 0;
-            field07C = 1;
+            remainingHits = 0;
+            collisionResult = 1;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2426,8 +2426,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 0;
-            field07C = 1;
+            remainingHits = 0;
+            collisionResult = 1;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2451,7 +2451,7 @@ void PatchouliFighter::Advance() {
 
     case 0x198: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2470,7 +2470,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
-            field07C = 1;
+            collisionResult = 1;
         }
         if (animationStage > 8)
             velocityY -= field05C;
@@ -2495,7 +2495,7 @@ void PatchouliFighter::Advance() {
 
     case 0x19C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2517,7 +2517,7 @@ void PatchouliFighter::Advance() {
 
     case 0x19E: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2536,7 +2536,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
-            field07C = 1;
+            collisionResult = 1;
         }
         if (animationStage > 8)
             velocityY -= field05C;
@@ -2558,7 +2558,7 @@ void PatchouliFighter::Advance() {
 
     case 0x1A1: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneFifth;
             velocityY = (velocityY) * FloatConstants::OneFifth;
             scriptCounterF00 = 0;
@@ -2589,8 +2589,8 @@ void PatchouliFighter::Advance() {
     case 0x1F4: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 0;
-            field07C = 0;
+            remainingHits = 0;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (y > FloatConstants::Zero) {
@@ -2613,10 +2613,10 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 100;
         }
         if (animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 13 && animationFrame == 0 && velocityY > GeometryConstants::Twelve) {
             ResetSecondaryCounter(6);
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 17 && animationFrame == 0)
             ResetSecondaryCounter(15);
@@ -2626,8 +2626,8 @@ void PatchouliFighter::Advance() {
     case 0x1F5: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 10;
-            field07C = 0;
+            remainingHits = 10;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (y > FloatConstants::Zero) {
@@ -2649,10 +2649,10 @@ void PatchouliFighter::Advance() {
             field05C = 0.5f;
         }
         if (animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 13 && animationFrame == 0 && velocityY > FloatConstants::Four) {
             ResetSecondaryCounter(6);
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 17 && animationFrame == 0)
             ResetSecondaryCounter(15);
@@ -2663,12 +2663,12 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2685,12 +2685,12 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2707,8 +2707,8 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2726,8 +2726,8 @@ void PatchouliFighter::Advance() {
     case 0x255: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2748,8 +2748,8 @@ void PatchouliFighter::Advance() {
     case 0x256: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2767,8 +2767,8 @@ void PatchouliFighter::Advance() {
     case 0x257: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -2788,7 +2788,7 @@ void PatchouliFighter::Advance() {
 
     case 0x258: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -2806,7 +2806,7 @@ void PatchouliFighter::Advance() {
 
     case 0x259: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 7 && animationFrame == 0) {
@@ -2824,7 +2824,7 @@ void PatchouliFighter::Advance() {
 
     case 0x25A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
         }
@@ -2853,7 +2853,7 @@ void PatchouliFighter::Advance() {
 
     case 0x25C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 6 && animationFrame == 0) {
@@ -2867,7 +2867,7 @@ void PatchouliFighter::Advance() {
 
     case 0x260: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2881,7 +2881,7 @@ void PatchouliFighter::Advance() {
 
     case 0x261: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2895,7 +2895,7 @@ void PatchouliFighter::Advance() {
 
     case 0x262: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -2910,7 +2910,7 @@ void PatchouliFighter::Advance() {
     case 0x263: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field07C = 1;
+            collisionResult = 1;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -2943,7 +2943,7 @@ void PatchouliFighter::Advance() {
     case 0x264: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field07C = 1;
+            collisionResult = 1;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -3005,7 +3005,7 @@ void PatchouliFighter::Advance() {
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         } else if (animationStage == 0 && animationFrame != 0) {
             // Continue the startup animation.
@@ -3036,7 +3036,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 20;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3089,9 +3089,9 @@ void PatchouliFighter::Advance() {
     case 0x2BE: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
-            field080 = 99;
+            remainingHits = 99;
         }
         if (animationStage > 6 && animationStage < 9) {
             velocityY -= field05C;
@@ -3125,7 +3125,7 @@ void PatchouliFighter::Advance() {
             }
         }
         if (animationStage == 9 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ResetSecondaryCounter(7);
         }
         return;
@@ -3135,7 +3135,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3174,7 +3174,7 @@ void PatchouliFighter::Advance() {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             fieldF04 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             spellPower -= GeometryConstants::Hundred;
             SetNonnegativeWord(40);
@@ -3221,7 +3221,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 1 && animationFrame == 0) {
@@ -3303,7 +3303,7 @@ void PatchouliFighter::Advance() {
     case 0x2DB: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = static_cast<short>(RecordedRange(0, 36));
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3378,7 +3378,7 @@ void PatchouliFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 20;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage <= 3 && animationFrame < 25) {
@@ -3415,8 +3415,8 @@ void PatchouliFighter::Advance() {
     case 0x2EF: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 10;
-            field07C = 0;
+            remainingHits = 10;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -3471,7 +3471,7 @@ void PatchouliFighter::Advance() {
             field05C = 0.2f;
         }
         if (animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 20 && animationFrame == 0 && scriptCounterF02 < 10) {
             ++scriptCounterF02;
             ResetSecondaryCounter(13);
@@ -3484,7 +3484,7 @@ void PatchouliFighter::Advance() {
     case 0x31B: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3507,7 +3507,7 @@ void PatchouliFighter::Advance() {
     case 0x31C: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {

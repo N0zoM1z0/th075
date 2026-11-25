@@ -1,33 +1,30 @@
 #include "battle/BattleScene.hpp"
-#include <deque>
+#include "battle/EffectManagerLifetimeF161.hpp"
+#include "characters/CharacterObject.hpp"
 #include "engine/GameLeafHelpers.hpp"
-typedef std::deque<Actor *> ActiveActors;
-typedef char CheckedDequeSize[sizeof(ActiveActors) == 20 ? 1 : -1];
-typedef char CheckedIteratorSize[sizeof(ActiveActors::iterator) == 8 ? 1 : -1];
-// The fighter's object manager (+0x2EC) keeps two lists of active objects from +4.
-#define ACTIVE(actor, index) (reinterpret_cast<ActiveActors *>(reinterpret_cast<unsigned char *>((actor)->field2EC) + 4)[index])
+typedef std::deque<CharacterObject*> ActiveObjects;
 void BattleScene::ResolveActiveCollisions()
 {
     // cursor and end2 retain the two range ends across the inner loops.
-    ActiveActors::iterator it, cursor, other, end2;
+    ActiveObjects::iterator it, cursor, other, end2;
     int i, j;
     for (i = 0; i < 2; ++i) {
         fighters[i]->SaveCollisionFields();
         fighters[i]->healthBeforeCollision = fighters[i]->health;
         for (j = 0; j < 2; ++j) {
-            it = ACTIVE(fighters[i], j).begin();
-            cursor = ACTIVE(fighters[i], j).end();
+            it = fighters[i]->ownedObjects->entries_[j].begin();
+            cursor = fighters[i]->ownedObjects->entries_[j].end();
             for (; it != cursor; it++)
                 (*it)->SaveCollisionFields();
         }
     }
     for (i = 0; i < 2; ++i) {
-        it = ACTIVE(fighters[0], i).begin();
-        cursor = ACTIVE(fighters[0], i).end();
+        it = fighters[0]->ownedObjects->entries_[i].begin();
+        cursor = fighters[0]->ownedObjects->entries_[i].end();
         for (; it != cursor; it++) {
             for (j = 0; j < 2; ++j) {
-                other = ACTIVE(fighters[1], j).begin();
-                end2 = ACTIVE(fighters[1], j).end();
+                other = fighters[1]->ownedObjects->entries_[j].begin();
+                end2 = fighters[1]->ownedObjects->entries_[j].end();
                 for (; other != end2; other++)
                     ResolveBodyContact(*it, *other);
             }
@@ -36,8 +33,8 @@ void BattleScene::ResolveActiveCollisions()
     for (i = 0; i < 2; ++i) {
         activeComboDisplay = comboDisplays[i];
         for (j = 0; j < 2; ++j) {
-            it = ACTIVE(fighters[i], j).begin();
-            cursor = ACTIVE(fighters[i], j).end();
+            it = fighters[i]->ownedObjects->entries_[j].begin();
+            cursor = fighters[i]->ownedObjects->entries_[j].end();
             for (; it != cursor; it++) {
                 (*it)->SaveCollisionFields();
                 ResolveAttackHitboxes(*it, fighters[i], fighters[1-i]);
@@ -62,9 +59,9 @@ bool BattleScene::ResolveGuard(Actor *attack, Fighter *attacker, Fighter *defend
 {
     if (!(attack->savedFrameInfo->attackFlags & 0x40000) &&
         !defender->IsState50To149() &&
-        (defender->field088 != 0 || (defender->savedFrameInfo->flags & 0x4000))) {
-        attack->field07C = 6;
-        --attack->field080;
+        (defender->grazeFrames != 0 || (defender->savedFrameInfo->flags & 0x4000))) {
+        attack->collisionResult = CollisionResult::Grazed;
+        --attack->remainingHits;
         defender->spellPower += 0.5f;
         if (defender->spellPower > 900.0f) defender->spellPower = 900.0f;
         SpawnMidpointEffect(52, attack->facing);
@@ -77,21 +74,21 @@ bool BattleScene::ResolveGuard(Actor *attack, Fighter *attacker, Fighter *defend
 bool BattleScene::ResolveSpecialHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if ((attack->savedFrameInfo->attackFlags & 0x2000) && (defender->savedFrameInfo->flags & 0x8000)) {
-        attack->field07C = 3;
-        --attack->field080;
-        defender->field07C = 3;
+        attack->collisionResult = CollisionResult::SpecialContact;
+        --attack->remainingHits;
+        defender->collisionResult = CollisionResult::SpecialContact;
         return true;
     }
     if ((attack->savedFrameInfo->attackFlags & 0x4000) && (defender->savedFrameInfo->flags & 0x10000)) {
-        attack->field07C = 3;
-        --attack->field080;
-        defender->field07C = 3;
+        attack->collisionResult = CollisionResult::SpecialContact;
+        --attack->remainingHits;
+        defender->collisionResult = CollisionResult::SpecialContact;
         return true;
     }
     if ((attack->savedFrameInfo->attackFlags & 0x8000) && (defender->savedFrameInfo->flags & 0x20000)) {
-        attack->field07C = 3;
-        --attack->field080;
-        defender->field07C = 3;
+        attack->collisionResult = CollisionResult::SpecialContact;
+        --attack->remainingHits;
+        defender->collisionResult = CollisionResult::SpecialContact;
         return true;
     }
     return false;
@@ -100,15 +97,15 @@ bool BattleScene::ResolveSpecialHit(Actor *attack, Fighter *attacker, Fighter *d
 bool BattleScene::ResolveContact(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if ((attack->savedFrameInfo->attackFlags & 2) && (defender->savedFrameInfo->flags & 0x200)) {
-        attack->field07C = 3;
-        --attack->field080;
+        attack->collisionResult = CollisionResult::SpecialContact;
+        --attack->remainingHits;
         SpawnMidpointEffect(51, defender->facing);
         ApplyImpact(attack, attacker, defender);
         return true;
     }
     if ((attack->savedFrameInfo->attackFlags & 4) && (defender->savedFrameInfo->flags & 0x400)) {
-        attack->field07C = 3;
-        --attack->field080;
+        attack->collisionResult = CollisionResult::SpecialContact;
+        --attack->remainingHits;
         SpawnMidpointEffect(51, defender->facing);
         ApplyImpact(attack, attacker, defender);
         return true;

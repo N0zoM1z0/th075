@@ -289,7 +289,7 @@ void RemiliaFighter::Advance() {
                 velocityX = -hitReactionVelocityX;
                 velocityY = hitReactionVelocityY;
                 field05C = 0.8f;
-                field07C = 0;
+                collisionResult = 0;
             }
             if (velocityY + y <= FloatConstants::Zero) {
                 scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -659,7 +659,7 @@ void RemiliaFighter::Advance() {
         case 0x2BF: {
             if (animationStage==0 && animationFrame==0) {
                 scriptCounterF00=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 spellPower=(spellPower)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
@@ -698,8 +698,8 @@ void RemiliaFighter::Advance() {
         case 0x2C0: {
             if (animationStage==0 && animationFrame==0) {
                 ClearMotionFields();
-                field080=99;
-                field07C=0;
+                remainingHits=99;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
@@ -718,7 +718,7 @@ void RemiliaFighter::Advance() {
             if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if (animationFrame==0)
-                field07C=0;
+                collisionResult=0;
             if (animationStage==1 && animationFrame==0) {
                 spellPower=(spellPower)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
@@ -755,7 +755,7 @@ void RemiliaFighter::Advance() {
         case 0x2C1: {
             if (animationStage==0 && animationFrame==0) {
                 scriptCounterF00=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);
@@ -810,7 +810,7 @@ void RemiliaFighter::Advance() {
         case 0x2C4: {
             if (animationStage==0 && animationFrame==0) {
                 scriptCounterF00=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
                 spellPower=(spellPower)-GeometryConstants::Hundred;
                 SetNonnegativeWord(40);
@@ -851,8 +851,8 @@ void RemiliaFighter::Advance() {
         case 0x2C5: {
             if (animationStage==0 && animationFrame==0) {
                 ClearMotionFields();
-                field080=99;
-                field07C=0;
+                remainingHits=99;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
@@ -871,7 +871,7 @@ void RemiliaFighter::Advance() {
             if (AdvanceNestedFrame()==(animationStageCount))
                 ResetPrimaryCounters(0);
             if (animationFrame==0)
-                field07C=0;
+                collisionResult=0;
             if (animationStage==1 && animationFrame==0) {
                 SetNonnegativeWord(40);
                 PlaySharedSound(23);

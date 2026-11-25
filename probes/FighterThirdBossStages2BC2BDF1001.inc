@@ -12,7 +12,7 @@
 case 0x2BC: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;
@@ -62,7 +62,7 @@ case 0x2BC: {
 case 0x2BD: {
     if ((animationStage)==0 && (animationFrame)==0) {
         scriptCounterF00=0;
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
         scriptCounterF00=0;
         scriptCounterF02=0;

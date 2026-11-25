@@ -42,12 +42,12 @@ public:
 class SakuyaObject : public CharacterObject {
 public:
     SakuyaObject(void* ownerFighter);
-    virtual void Advance();    // 004CA6E0, nonexact natural-C++ parent in SakuyaObjectAdvanceF1222.cpp
+    virtual void Advance();    // 004CA6E0
 };
 class AliceObject : public CharacterObject {
 public:
     AliceObject(void* ownerFighter);
-    virtual void Advance();   // 004EBDA0, whole nonexact research parent
+    virtual void Advance();   // 004EBDA0
 
     // Call-shape declarations from the giant research source; actual
     // implementations use the shared Actor and object helper addresses.
@@ -56,37 +56,37 @@ public:
 class PatchouliObject : public CharacterObject {
 public:
     PatchouliObject(void* ownerFighter);
-    virtual void Advance();  // 0050A580, nonexact natural-C++ parent in PatchouliObjectAdvanceF1044.cpp
+    virtual void Advance();  // 0050A580
 };
 class YoumuObject : public CharacterObject {
 public:
     YoumuObject(void* ownerFighter);
-    virtual void Advance(); // 00536400, nonexact natural-C++ parent in YoumuObjectAdvanceF1211.cpp
+    virtual void Advance(); // 00536400
 };
 class RemiliaObject : public CharacterObject {
 public:
     RemiliaObject(void* ownerFighter);
-    virtual void Advance();        // 0055AC80, nonexact complete research parent
+    virtual void Advance();        // 0055AC80
 };
 class YuyukoObject : public CharacterObject {
 public:
     YuyukoObject(void* ownerFighter);
-    virtual void Advance();   // 0057D580, nonexact natural-C++ parent in YuyukoObjectAdvanceF1237.cpp
+    virtual void Advance();   // 0057D580
 };
 class YukariObject : public CharacterObject {
 public:
     YukariObject(void* ownerFighter);
-    virtual void Advance();  // 005A1600, nonexact natural-C++ parent in YukariObjectAdvanceF1231.cpp
+    virtual void Advance();  // 005A1600
 };
 class SuikaObject : public CharacterObject {
 public:
     SuikaObject(void* ownerFighter);
-    virtual void Advance(); // 005C9CC0, nonexact natural-C++ parent in SuikaObjectAdvanceF1216.cpp
+    virtual void Advance(); // 005C9CC0
 };
 class MeilingObject : public CharacterObject {
 public:
     MeilingObject(void* ownerFighter);
-    virtual void Advance();  // 005EB520, nonexact natural-C++ parent in MeilingObjectAdvanceF1207.cpp
+    virtual void Advance();  // 005EB520
 };
 
 typedef char CharacterObjectLayoutCheck[(

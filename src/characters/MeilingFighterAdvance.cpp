@@ -247,7 +247,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityX < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -265,7 +265,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -286,7 +286,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -308,7 +308,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -336,7 +336,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -357,7 +357,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -378,7 +378,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -400,7 +400,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -428,7 +428,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -449,7 +449,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -470,7 +470,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -492,7 +492,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -525,7 +525,7 @@ void MeilingFighter::Advance() {
             field05C = 0.8f;
             if (velocityY > GeometryConstants::Twelve)
                 velocityY = 12.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -552,7 +552,7 @@ void MeilingFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -579,7 +579,7 @@ void MeilingFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 1.3f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -606,7 +606,7 @@ void MeilingFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -637,7 +637,7 @@ void MeilingFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -699,7 +699,7 @@ void MeilingFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -966,7 +966,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -989,7 +989,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1012,7 +1012,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1036,7 +1036,7 @@ void MeilingFighter::Advance() {
             velocityX = -10.0f;
             velocityY = 14.0f;
             field05C = 0.5f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 2 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(3);
@@ -1065,7 +1065,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1087,7 +1087,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1109,7 +1109,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1131,7 +1131,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1153,7 +1153,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1175,7 +1175,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1223,7 +1223,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1245,7 +1245,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1267,7 +1267,7 @@ void MeilingFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1288,7 +1288,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1309,7 +1309,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1330,7 +1330,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -1586,7 +1586,7 @@ void MeilingFighter::Advance() {
     case 0xCC: {
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1623,7 +1623,7 @@ void MeilingFighter::Advance() {
         if ((y == (FloatConstants::Zero)) ||
             velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1661,7 +1661,7 @@ void MeilingFighter::Advance() {
     case 0xCE: {
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1777,8 +1777,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1799,8 +1799,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
             velocityX = (velocityX) - GeometryConstants::TwentyFive;
@@ -1841,8 +1841,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1863,8 +1863,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1893,13 +1893,13 @@ void MeilingFighter::Advance() {
         }
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 8 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(9);
@@ -1925,7 +1925,7 @@ void MeilingFighter::Advance() {
             velocityY = 0.0f;
             break;
         }
-        if (animationStage == 0 && animationFrame == 0) { field080 = 1; field07C = 0; }
+        if (animationStage == 0 && animationFrame == 0) { remainingHits = 1; collisionResult = 0; }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
         if (animationStage == 2 && animationFrame == 0)
@@ -1937,8 +1937,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0 || animationStage > 2) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1963,8 +1963,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -1985,8 +1985,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -2007,8 +2007,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage < 5 && velocityX > FloatConstants::Zero) {
             velocityX = (velocityX) - FloatConstants::FourFifths;
@@ -2041,8 +2041,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -2064,8 +2064,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
             velocityX = (velocityX) - GeometryConstants::TwentyFive;
@@ -2106,8 +2106,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage > 0) {
             velocityX = (velocityX) - FloatConstants::One;
@@ -2129,8 +2129,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0 || animationStage > 2) {
             velocityX = (velocityX) - FloatConstants::ThreeFifths;
@@ -2154,8 +2154,8 @@ void MeilingFighter::Advance() {
     case 0x144: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -2169,8 +2169,8 @@ void MeilingFighter::Advance() {
     case 0x145: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
             velocityX = 0.0f;
@@ -2206,8 +2206,8 @@ void MeilingFighter::Advance() {
     case 0x146: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -2221,8 +2221,8 @@ void MeilingFighter::Advance() {
     case 0x186: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 11.0f;
         }
         if (animationStage == 0) {
@@ -2261,8 +2261,8 @@ void MeilingFighter::Advance() {
     case 0x187: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 12.0f;
         }
         velocityX = (velocityX) - FloatConstants::SixtyFiveHundredths;
@@ -2301,7 +2301,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field07C = 0;
+            collisionResult = 0;
             velocityX = 10.0f;
         }
         if (animationStage > 0) {
@@ -2312,8 +2312,8 @@ void MeilingFighter::Advance() {
             }
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(2);
@@ -2328,8 +2328,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 12.0f;
         }
         if (animationStage == 0 && animationFrame == 0) {
@@ -2351,7 +2351,7 @@ void MeilingFighter::Advance() {
 
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2369,7 +2369,7 @@ void MeilingFighter::Advance() {
 
     case 0x192: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2386,7 +2386,7 @@ void MeilingFighter::Advance() {
 
     case 0x194: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         velocityY -= field05C;
@@ -2406,7 +2406,7 @@ void MeilingFighter::Advance() {
 
     case 0x195: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         velocityY = velocityY - field05C;
@@ -2475,7 +2475,7 @@ void MeilingFighter::Advance() {
 
     case 0x196: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2497,7 +2497,7 @@ void MeilingFighter::Advance() {
 
     case 0x197: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2519,7 +2519,7 @@ void MeilingFighter::Advance() {
 
     case 0x198: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2539,7 +2539,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 6)
@@ -2571,7 +2571,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 6)
@@ -2601,7 +2601,7 @@ void MeilingFighter::Advance() {
 
     case 0x19C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2618,7 +2618,7 @@ void MeilingFighter::Advance() {
 
     case 0x19E: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2654,7 +2654,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 4)
@@ -2688,7 +2688,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
-            field07C = 1;
+            collisionResult = 1;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -2706,8 +2706,8 @@ void MeilingFighter::Advance() {
     case 0x1F4: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (animationStage == 2 && animationFrame == 0) {
@@ -2720,8 +2720,8 @@ void MeilingFighter::Advance() {
             velocityX = 0.0f;
         }
         if (animationStage == 8 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (animationStage == 12 && animationFrame == 0) {
@@ -2770,8 +2770,8 @@ void MeilingFighter::Advance() {
     case 0x1F5: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (animationStage == 2 && animationFrame == 0) {
@@ -2784,8 +2784,8 @@ void MeilingFighter::Advance() {
             velocityX = 0.0f;
         }
         if (animationStage == 8 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (animationStage == 12 && animationFrame == 0) {
@@ -2836,8 +2836,8 @@ void MeilingFighter::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field05C = 0.0f;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -2860,8 +2860,8 @@ void MeilingFighter::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field05C = 0.0f;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(0);
@@ -2882,13 +2882,13 @@ void MeilingFighter::Advance() {
     case 0x1FC: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (y > FloatConstants::Zero && animationStage < 12) {
@@ -2927,8 +2927,8 @@ void MeilingFighter::Advance() {
     case 0x1FD: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (animationStage == 2 && animationFrame == 0) {
@@ -2941,8 +2941,8 @@ void MeilingFighter::Advance() {
             velocityX = 0.0f;
         }
         if (animationStage == 6 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             velocityX = 0.0f;
         }
@@ -2992,12 +2992,12 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -3014,12 +3014,12 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -3036,8 +3036,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -3054,7 +3054,7 @@ void MeilingFighter::Advance() {
 
     case 0x258: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3080,7 +3080,7 @@ void MeilingFighter::Advance() {
 
     case 0x259: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3108,7 +3108,7 @@ void MeilingFighter::Advance() {
 
     case 0x25A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3129,7 +3129,7 @@ void MeilingFighter::Advance() {
 
     case 0x25B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3152,8 +3152,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 0;
-            field080 = 99;
+            collisionResult = 0;
+            remainingHits = 99;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3175,7 +3175,7 @@ void MeilingFighter::Advance() {
             ResetPrimaryCounters(0);
         }
         if (animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 2 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
@@ -3201,8 +3201,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 0;
-            field080 = 99;
+            collisionResult = 0;
+            remainingHits = 99;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3228,7 +3228,7 @@ void MeilingFighter::Advance() {
             ResetPrimaryCounters(0);
         }
         if (animationFrame == 0)
-            field07C = 0;
+            collisionResult = 0;
         if (animationStage == 2 && animationFrame == 0) {
             SetNonnegativeWord(40);
             PlaySharedSound(0x17);
@@ -3254,7 +3254,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame == 0) {
@@ -3288,7 +3288,7 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame == 0) {
@@ -3331,14 +3331,14 @@ void MeilingFighter::Advance() {
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x73, static_cast<float>(facing * 20) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
             spellPower = (spellPower) - GeometryConstants::Hundred;
-            field080 = 1;
+            remainingHits = 1;
             UpdateGaugeTimer(500);
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 15 && animationFrame == 0) {
             SpawnAuxEffect(0x7F, x, y, facing, 1);
             SpawnAuxEffect(0x81, x, y, -facing, 1);
-            if (field07C == 1) {
+            if (collisionResult == 1) {
                 SetCameraShake(10.0f);
                 PlaySound(16);
                 PlaySound(17);
@@ -3357,8 +3357,8 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             ClearMotionFields();
         }
         if (velocityX > FloatConstants::Zero) {
@@ -3389,11 +3389,11 @@ void MeilingFighter::Advance() {
             PlaySharedSound(0x17);
             SpawnAuxEffect(0x74, static_cast<float>(facing * 20) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
             spellPower = (spellPower) - GeometryConstants::Hundred;
-            field080 = 1;
+            remainingHits = 1;
             UpdateGaugeTimer(500);
-            field07C = 0;
+            collisionResult = 0;
         }
-        if (animationStage == 14 && field07C == 1) {
+        if (animationStage == 14 && collisionResult == 1) {
             PlaySound(18);
             ResetPrimaryCounters(0x2C3);
             SpawnBattleEffect(0x350, static_cast<float>(facing * 94) + x, (y) + GeometryConstants::Hundred, facing, 1);
@@ -3413,11 +3413,11 @@ void MeilingFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 0;
-            field080 = 2;
+            collisionResult = 0;
+            remainingHits = 2;
             ClearMotionFields();
         }
-        if (animationStage == 7 && field07C == 1) {
+        if (animationStage == 7 && collisionResult == 1) {
             PlaySound(19);
             SpawnBattleEffect(0x351, static_cast<float>(facing * 45) + x, (y) + GeometryConstants::HundredTwenty, facing, 1);
         }
@@ -3434,7 +3434,7 @@ void MeilingFighter::Advance() {
         }
         if (animationStage == 16 && animationFrame == 0) {
             SetCameraShake(10.0f);
-            field07C = 0;
+            collisionResult = 0;
             PlaySound(20);
             PlaySound(21);
             SpawnBattleEffect(0x345, static_cast<float>(facing * 76) + x, (y) + GeometryConstants::HundredSixtyEight, facing, 1);
@@ -3452,7 +3452,7 @@ void MeilingFighter::Advance() {
     case 0x31B: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3474,7 +3474,7 @@ void MeilingFighter::Advance() {
     case 0x31C: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount) {

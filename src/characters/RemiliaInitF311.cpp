@@ -12,8 +12,8 @@ RemiliaFighter::RemiliaFighter()
     field713=1;
     strcpy(name,g_RemiliaNameAt00659A34);
     strcpy(tag,g_RemiliaTagAt00659A3C);
-    field478=0x2a0;
-    field532=11;
+    mainTextureCount=0x2a0;
+    overlayTextureCount=11;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

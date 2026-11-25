@@ -11,7 +11,7 @@
                 scriptCounterF00=0;
                 scriptCounterF02=0;
                 fieldF04=0;
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)==2) {

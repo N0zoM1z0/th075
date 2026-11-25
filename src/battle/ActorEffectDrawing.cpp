@@ -49,7 +49,7 @@ void Fighter::Render() {
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(0);
-        if (frameInfo->field0C != 0)
+        if (frameInfo->doubleScale != 0)
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
@@ -66,10 +66,10 @@ void Fighter::Render() {
     }
     TRANSFORM(transformedQuad)->TranslateQuad(x - facing * (frameInfo->originX), -y - (frameInfo->originY), 0);
     if (g_RenderByte0067161C == 0) {
-        field480->AppendElement(frameInfo->textureIndex, x, y, transformedQuad, spriteOffset, drawColor, 1);
-        if (g_FramePresentToggle != 0 && field47C <= 0) {
-            field480->RemoveFrontIfPresent();
-            field480->RemoveFrontIfPresent();
+        spriteHistory->AppendElement(frameInfo->textureIndex, x, y, transformedQuad, spriteOffset, drawColor, 1);
+        if (g_FramePresentToggle != 0 && spriteHistoryHoldFrames <= 0) {
+            spriteHistory->RemoveFrontIfPresent();
+            spriteHistory->RemoveFrontIfPresent();
         }
     }
     TRANSFORM(transformedQuad)->TranslateQuad(cameraHorizontal, cameraY + 420.0f, 0);
@@ -77,7 +77,7 @@ void Fighter::Render() {
         reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
     else
         reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
-    if (field484 > 0) {
+    if (hitFlashFrames > 0) {
         reinterpret_cast<TextureManagerF198*>(DRAWING)->SetBlendMode(2);
         if (spriteOffset.x != 0.0f || spriteOffset.y != 0.0f || spriteOffset.z != 0.0f)
             reinterpret_cast<TextureManagerF198*>(DRAWING)->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);

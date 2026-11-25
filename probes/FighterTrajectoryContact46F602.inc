@@ -12,7 +12,7 @@ case 0x46: {
         field05C = 0.8f;
         if (velocityY > TRAJECTORY_UPPER_THRESHOLD)
             velocityY = TRAJECTORY_MAXIMUM_SPEED;
-        field07C = 0;
+        collisionResult = 0;
     }
     if (animationStage == TRAJECTORY_STAGE_THRESHOLD && velocityY < FloatConstants::Two) {
         ResetSecondaryCounter(TRAJECTORY_EARLY_STATE);

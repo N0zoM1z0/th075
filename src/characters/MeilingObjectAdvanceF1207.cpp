@@ -36,8 +36,8 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -57,7 +57,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 0.5f;
                 scaleY = 0.5f;
                 color[0] = 255;
@@ -69,7 +69,7 @@ void MeilingObject::Advance() {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field0D8 = 15;
-                field07C = 0;
+                collisionResult = 0;
             }
             rotationZ += field0D8;
             field0D8 = field0D8 - 1;
@@ -98,7 +98,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 0.5f;
                 scaleY = 0.5f;
                 color[0] = 255;
@@ -109,7 +109,7 @@ void MeilingObject::Advance() {
                 rotationZ = RecordedRange(0, 359);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field07C = 0;
+                collisionResult = 0;
             }
             scaleX += 0.03f;
             scaleY += 0.03f;
@@ -148,8 +148,8 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 3;
-                field07C = 0;
+                remainingHits = 3;
+                collisionResult = 0;
                 scaleX = 0.1f;
                 scaleY = 0.1f;
                 color[0] = 255;
@@ -199,13 +199,13 @@ void MeilingObject::Advance() {
                 scaleY = scaleX;
                 if (field0D8 > 4) {
                     field0D8 = 0;
-                    field07C = 0;
+                    collisionResult = 0;
                 }
             }
         }
         break;
     case 804:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -230,8 +230,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 10;
-                    field07C = 0;
+                    remainingHits = 10;
+                    collisionResult = 0;
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                     color[0] = 255;
@@ -243,12 +243,12 @@ void MeilingObject::Advance() {
                     field0D8 = 0;
                     field0DA = 0;
                 }
-                if (field07C == 6) {
-                    field07C = 0;
-                    ++field080;
+                if (collisionResult == 6) {
+                    collisionResult = 0;
+                    ++remainingHits;
                 }
-                if (field07C == 4) {
-                    field07C = 0;
+                if (collisionResult == 4) {
+                    collisionResult = 0;
                 }
                 velocityX -= 0.4f;
                 if (velocityX <= 2.0f) velocityX = 2.0f;
@@ -270,7 +270,7 @@ void MeilingObject::Advance() {
                 x += facing * velocityX;
                 y += velocityY;
                 if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
-                if (animationStage == 2 && animationFrame == 0 && field080 > 0 && field0DA < 20) {
+                if (animationStage == 2 && animationFrame == 0 && remainingHits > 0 && field0DA < 20) {
                     ResetSecondaryCounter(1);
                     ++field0D8;
                     ++field0DA;
@@ -280,9 +280,9 @@ void MeilingObject::Advance() {
                     }
                     scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
                     scaleY = scaleX;
-                    if (field07C != 0) {
-                        field07C = 0;
-                        field080 -= 3;
+                    if (collisionResult != 0) {
+                        collisionResult = 0;
+                        remainingHits -= 3;
                     }
                 }
             }
@@ -296,7 +296,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 0.5f;
                 scaleY = 0.5f;
                 color[0] = 255;
@@ -308,7 +308,7 @@ void MeilingObject::Advance() {
                 rotationZ = RecordedRange(0, 359);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field07C = 0;
+                collisionResult = 0;
             }
             scaleX += 0.085f;
             scaleY += 0.085f;
@@ -329,7 +329,7 @@ void MeilingObject::Advance() {
     case 806:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 2.5f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -444,17 +444,17 @@ void MeilingObject::Advance() {
                     color[1] = 0;
                     color[2] = 0;
                     color[3] = 255;
-                    field080 = 20;
+                    remainingHits = 20;
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                     field0D8 = 0;
                 }
-                if (field07C == 6) {
-                    field07C = 0;
-                    ++field080;
+                if (collisionResult == 6) {
+                    collisionResult = 0;
+                    ++remainingHits;
                 }
                 if (animationStage == 2 && animationFrame == 0) {
-                    field07C = 0;
+                    collisionResult = 0;
                     ++field0D8;
                     scaleX = 1.0f - RecordedRange(0, 20) * 0.01f;
                     scaleY = scaleX;
@@ -521,7 +521,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 0.5f;
                 scaleY = 0.5f;
                 color[0] = 255;
@@ -533,7 +533,7 @@ void MeilingObject::Advance() {
                 rotationZ = RecordedRange(0, 359);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field07C = 0;
+                collisionResult = 0;
             }
             scaleX += 0.065f;
             scaleY += 0.065f;
@@ -552,7 +552,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 811:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -570,8 +570,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     SetPolarVelocity(field0C8, field0CC);
                     field0D8 = 0;
                     field0DC = 0;
@@ -590,7 +590,7 @@ void MeilingObject::Advance() {
                 if (animationStage < 2) {
                     SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+                if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                     ResetSecondaryCounter(2);
                     return;
                 }
@@ -619,7 +619,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 812:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -637,8 +637,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     SetPolarVelocity(field0C8, field0CC);
                     field0D8 = 0;
                     field0DC = 0;
@@ -657,7 +657,7 @@ void MeilingObject::Advance() {
                 if (animationStage < 2) {
                     SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+                if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                     ResetSecondaryCounter(2);
                     return;
                 }
@@ -686,7 +686,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 813:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -704,8 +704,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     SetPolarVelocity(field0C8, field0CC);
                     field0D8 = 0;
                     field0DC = 0;
@@ -724,7 +724,7 @@ void MeilingObject::Advance() {
                 if (animationStage < 2) {
                     SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+                if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                     ResetSecondaryCounter(2);
                     return;
                 }
@@ -753,7 +753,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 814:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -771,8 +771,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     SetPolarVelocity(field0C8, field0CC);
                     field0D8 = 0;
                     field0DC = 0;
@@ -791,7 +791,7 @@ void MeilingObject::Advance() {
                 if (animationStage < 2) {
                     SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+                if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                     ResetSecondaryCounter(2);
                     return;
                 }
@@ -820,7 +820,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 815:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -838,8 +838,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     SetPolarVelocity(field0C8, field0CC);
                     field0D8 = 0;
                     field0DC = 0;
@@ -858,7 +858,7 @@ void MeilingObject::Advance() {
                 if (animationStage < 2) {
                     SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+                if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                     ResetSecondaryCounter(2);
                     return;
                 }
@@ -887,7 +887,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 816:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -905,8 +905,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     SetPolarVelocity(field0C8, field0CC);
                     field0D8 = 0;
                     field0DC = 0;
@@ -925,7 +925,7 @@ void MeilingObject::Advance() {
                 if (animationStage < 2) {
                     SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+                if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                     ResetSecondaryCounter(2);
                     return;
                 }
@@ -954,7 +954,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 817:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -972,8 +972,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     SetPolarVelocity(field0C8, field0CC);
                     field0D8 = 0;
                     field0DC = 0;
@@ -992,7 +992,7 @@ void MeilingObject::Advance() {
                 if (animationStage < 2) {
                     SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
+                if ((collisionResult == 1 || collisionResult == 2 || collisionResult == 4 || collisionResult == 6) && animationStage == 1) {
                     ResetSecondaryCounter(2);
                     return;
                 }
@@ -1023,8 +1023,8 @@ void MeilingObject::Advance() {
     case 818:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
             scaleY = scaleX;
             color[1] = 255;
@@ -1054,8 +1054,8 @@ void MeilingObject::Advance() {
     case 819:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
             scaleY = scaleX;
             color[1] = 255;
@@ -1085,8 +1085,8 @@ void MeilingObject::Advance() {
     case 820:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
             scaleY = scaleX;
             color[1] = 255;
@@ -1116,8 +1116,8 @@ void MeilingObject::Advance() {
     case 821:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
             scaleY = scaleX;
             color[1] = 255;
@@ -1147,8 +1147,8 @@ void MeilingObject::Advance() {
     case 822:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
             scaleY = scaleX;
             color[1] = 255;
@@ -1178,8 +1178,8 @@ void MeilingObject::Advance() {
     case 823:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
             scaleY = scaleX;
             color[1] = 255;
@@ -1209,8 +1209,8 @@ void MeilingObject::Advance() {
     case 824:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
             scaleY = scaleX;
             color[1] = 255;
@@ -1238,7 +1238,7 @@ void MeilingObject::Advance() {
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         break;
     case 825:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1262,8 +1262,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 10;
-                    field07C = 0;
+                    remainingHits = 10;
+                    collisionResult = 0;
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                     color[1] = 255;
@@ -1271,22 +1271,22 @@ void MeilingObject::Advance() {
                     color[3] = 255;
                     field0DA = 2000;
                     SetPolarVelocity(0.0f, field0DA * 0.01f);
-                    field080 = 5;
+                    remainingHits = 5;
                     field0D8 = 0;
                 }
-                if (field07C == 6) {
-                    field07C = 0;
-                    ++field080;
+                if (collisionResult == 6) {
+                    collisionResult = 0;
+                    ++remainingHits;
                 }
-                if (field07C != 0) {
-                    if (field07C == 4) {
-                        field07C = 0;
+                if (collisionResult != 0) {
+                    if (collisionResult == 4) {
+                        collisionResult = 0;
                     }
                     else {
-                        field080 = 0;
+                        remainingHits = 0;
                     }
                 }
-                if (field080 == 0 && animationStage < 26) {
+                if (remainingHits == 0 && animationStage < 26) {
                     ResetSecondaryCounter(26);
                     return;
                 }
@@ -1306,7 +1306,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 826:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1330,8 +1330,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                     color[1] = 255;
@@ -1339,22 +1339,22 @@ void MeilingObject::Advance() {
                     color[3] = 255;
                     field0DA = 2000;
                     SetPolarVelocity(0.0f, field0DA * 0.01f);
-                    field080 = 5;
+                    remainingHits = 5;
                     field0D8 = 0;
                 }
-                if (field07C == 6) {
-                    field07C = 0;
-                    ++field080;
+                if (collisionResult == 6) {
+                    collisionResult = 0;
+                    ++remainingHits;
                 }
-                if (field07C != 0) {
-                    if (field07C == 4) {
-                        field07C = 0;
+                if (collisionResult != 0) {
+                    if (collisionResult == 4) {
+                        collisionResult = 0;
                     }
                     else {
-                        field080 = 0;
+                        remainingHits = 0;
                     }
                 }
-                if (field080 == 0 && animationStage < 26) {
+                if (remainingHits == 0 && animationStage < 26) {
                     ResetSecondaryCounter(26);
                     return;
                 }
@@ -1374,7 +1374,7 @@ void MeilingObject::Advance() {
         }
         break;
     case 827:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1398,8 +1398,8 @@ void MeilingObject::Advance() {
             else {
                 if (animationStage == 0 && animationFrame == 0) {
                     ResetTransform(0.0f, 0.0f, 0.0f);
-                    field080 = 1;
-                    field07C = 0;
+                    remainingHits = 1;
+                    collisionResult = 0;
                     scaleX = 1.0f;
                     scaleY = 1.0f;
                     color[1] = 255;
@@ -1407,22 +1407,22 @@ void MeilingObject::Advance() {
                     color[3] = 255;
                     field0DA = 2000;
                     SetPolarVelocity(-30.0f, field0DA * 0.01f);
-                    field080 = 5;
+                    remainingHits = 5;
                     field0D8 = 0;
                 }
-                if (field07C == 6) {
-                    field07C = 0;
-                    ++field080;
+                if (collisionResult == 6) {
+                    collisionResult = 0;
+                    ++remainingHits;
                 }
-                if (field07C != 0) {
-                    if (field07C == 4) {
-                        field07C = 0;
+                if (collisionResult != 0) {
+                    if (collisionResult == 4) {
+                        collisionResult = 0;
                     }
                     else {
-                        field080 = 0;
+                        remainingHits = 0;
                     }
                 }
-                if (field080 == 0 && animationStage < 26) {
+                if (remainingHits == 0 && animationStage < 26) {
                     ResetSecondaryCounter(26);
                     return;
                 }
@@ -1444,7 +1444,7 @@ void MeilingObject::Advance() {
     case 828:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1455,7 +1455,7 @@ void MeilingObject::Advance() {
             rotationY = 40.0f;
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += 0.065f;
         scaleY += 0.065f;
@@ -1475,7 +1475,7 @@ void MeilingObject::Advance() {
     case 829:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1486,7 +1486,7 @@ void MeilingObject::Advance() {
             rotationY = 40.0f;
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += 0.065f;
         scaleY += 0.065f;
@@ -1507,7 +1507,7 @@ void MeilingObject::Advance() {
     case 830:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1518,7 +1518,7 @@ void MeilingObject::Advance() {
             rotationY = 40.0f;
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += 0.2f;
         scaleY += 0.2f;
@@ -1543,7 +1543,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1553,7 +1553,7 @@ void MeilingObject::Advance() {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 field0D8 = 10;
-                field07C = 0;
+                collisionResult = 0;
             }
             scaleX += field0D8 * 0.01f + 0.01f;
             scaleY += field0D8 * 0.01f + 0.01f;
@@ -1585,7 +1585,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1594,14 +1594,14 @@ void MeilingObject::Advance() {
                 color[3] = 255;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             scaleX *= 0.9f;
             scaleY += 0.05f;
-            if (field07C == 6) {
-                ++field080;
-                field07C = 0;
+            if (collisionResult == 6) {
+                ++remainingHits;
+                collisionResult = 0;
             }
             if (animationStage == 2) {
                 if (color[0] > 5) {
@@ -1625,7 +1625,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1634,13 +1634,13 @@ void MeilingObject::Advance() {
                 color[3] = 255;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             scaleY += 0.05f;
-            if (field07C == 6) {
-                ++field080;
-                field07C = 0;
+            if (collisionResult == 6) {
+                ++remainingHits;
+                collisionResult = 0;
             }
             if (animationStage == 2) {
                 if (color[0] > 5) {
@@ -1664,7 +1664,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1673,8 +1673,8 @@ void MeilingObject::Advance() {
                 color[3] = 255;
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
             }
             scaleX += 0.1f;
             scaleY += 0.1f;
@@ -1695,7 +1695,7 @@ void MeilingObject::Advance() {
     case 835:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1706,8 +1706,8 @@ void MeilingObject::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field0D8 = 10;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
         }
         scaleX += field0D8 * 0.03 + 0.02f;
         scaleY += field0D8 * 0.03 + 0.02f;
@@ -1727,7 +1727,7 @@ void MeilingObject::Advance() {
     case 836:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.65f;
             scaleY = 0.65f;
             color[0] = 255;
@@ -1738,8 +1738,8 @@ void MeilingObject::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field0D8 = 10;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
         }
         scaleX += field0D8 * 0.03 + 0.02f;
         scaleY += field0D8 * 0.03 + 0.02f;
@@ -1759,7 +1759,7 @@ void MeilingObject::Advance() {
     case 837:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1771,7 +1771,7 @@ void MeilingObject::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field0D8 = 10;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += field0D8 * 0.05f + 0.05f;
         scaleY += field0D8 * 0.05f + 0.05f;
@@ -1792,7 +1792,7 @@ void MeilingObject::Advance() {
     case 838:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1801,7 +1801,7 @@ void MeilingObject::Advance() {
             color[3] = 255;
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += 0.02f;
         scaleY += 0.02f;
@@ -1821,7 +1821,7 @@ void MeilingObject::Advance() {
     case 839:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1830,7 +1830,7 @@ void MeilingObject::Advance() {
             color[3] = 255;
             velocityX = 0.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += 0.05f;
         scaleY += 0.05f;
@@ -1850,7 +1850,7 @@ void MeilingObject::Advance() {
     case 840:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 2.5f;
             scaleY = 3.0f;
             color[0] = 255;
@@ -1965,7 +1965,7 @@ void MeilingObject::Advance() {
                     color[1] = 0;
                     color[2] = 0;
                     color[3] = 255;
-                    field080 = 20;
+                    remainingHits = 20;
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                     field0D8 = 0;
@@ -1973,17 +1973,17 @@ void MeilingObject::Advance() {
                 if (animationStage < 3) {
                     rotationZ = RecordedRange(0, 360);
                 }
-                if (field07C == 6) {
-                    field07C = 0;
-                    ++field080;
+                if (collisionResult == 6) {
+                    collisionResult = 0;
+                    ++remainingHits;
                 }
                 if (animationStage == 2 && animationFrame == 0) {
-                    field07C = 0;
+                    collisionResult = 0;
                     scaleX = 1.0f - RecordedRange(0, 10) * 0.01f;
                     scaleY = scaleX;
                 }
                 if (animationStage == 3 && animationFrame == 0) {
-                    field07C = 0;
+                    collisionResult = 0;
                     scaleX = 1.0f - RecordedRange(0, 20) * 0.01f;
                     scaleY = scaleX;
                     ++field0D8;
@@ -2014,8 +2014,8 @@ void MeilingObject::Advance() {
                     ResetSecondaryCounter(3);
                     velocityX = 20.0f;
                     rotationZ = 0.0f;
-                    field080 = 20;
-                    field07C = 0;
+                    remainingHits = 20;
+                    collisionResult = 0;
                 }
                 if (animationStage == 3) {
                     owner->SpawnBattleEffect(RecordedRange(0, 7) + 818, x + 150.0f - RecordedRange(0, 300), y + 150.0f - RecordedRange(0, 300), facing, 1);
@@ -2036,11 +2036,11 @@ void MeilingObject::Advance() {
                 if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
                 if (animationStage == 3 && animationFrame == 0) {
                     ResetSecondaryCounter(2);
-                    field07C = 0;
+                    collisionResult = 0;
                 }
                 if (animationStage == 4 && animationFrame == 0) {
                     ResetSecondaryCounter(3);
-                    field07C = 0;
+                    collisionResult = 0;
                 }
             }
         }
@@ -2053,7 +2053,7 @@ void MeilingObject::Advance() {
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field07C = 0;
+                collisionResult = 0;
                 scaleX = 0.5f;
                 scaleY = 0.5f;
                 color[0] = 255;
@@ -2065,7 +2065,7 @@ void MeilingObject::Advance() {
                 rotationZ = RecordedRange(0, 359);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                field07C = 0;
+                collisionResult = 0;
             }
             scaleX += 0.085f;
             scaleY += 0.085f;
@@ -2110,7 +2110,7 @@ void MeilingObject::Advance() {
     case 847:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -2121,7 +2121,7 @@ void MeilingObject::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field0D8 = 10;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += field0D8 * 0.02f + 0.02f;
         scaleY += field0D8 * 0.02f + 0.02f;
@@ -2142,7 +2142,7 @@ void MeilingObject::Advance() {
     case 848:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -2153,7 +2153,7 @@ void MeilingObject::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field0D8 = 10;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += field0D8 * 0.05f + 0.05f;
         scaleY += field0D8 * 0.05f + 0.05f;
@@ -2174,7 +2174,7 @@ void MeilingObject::Advance() {
     case 849:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -2186,7 +2186,7 @@ void MeilingObject::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field0D8 = 10;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX += field0D8 * 0.05f + 0.05f;
         scaleY += field0D8 * 0.05f + 0.05f;
@@ -2207,7 +2207,7 @@ void MeilingObject::Advance() {
     case 850:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -2217,7 +2217,7 @@ void MeilingObject::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field0D8 = 10;
-            field07C = 0;
+            collisionResult = 0;
         }
         scaleX -= 0.02f;
         scaleY -= 0.02f;
@@ -2379,8 +2379,8 @@ void MeilingObject::Advance() {
                 color[1] = 255;
                 color[2] = 255;
                 color[3] = 255;
-                field07C = 0;
-                field080 = 1;
+                collisionResult = 0;
+                remainingHits = 1;
                 velocityY = 15.0f;
             }
             rotationZ -= 35.0f;

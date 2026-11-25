@@ -21,8 +21,8 @@ void MarisaObject::UpdateTrackingNode()
         field0DE = 0;
         field0E0 = 0;
         ResetTransform(0.0f, 0.0f, 0.0f);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = CollisionResult::None;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -101,18 +101,18 @@ void MarisaObject::UpdateTrackingNode()
         SetPolarVelocity(field0D8, field0DA);
         x = static_cast<int>(owner->fieldF0C + facing * velocityX);
         y = static_cast<int>(owner->fieldF0E + velocityY);
-        field080 = 1;
-        field07C = 0;
+        remainingHits = 1;
+        collisionResult = CollisionResult::None;
     }
     if (animationStage == 2 && static_cast<MarisaFighter*>(owner)->fieldF12 == 3 && field0DC == 0) {
         SetPolarVelocity(field0D8, field0DA);
         x = static_cast<int>(owner->fieldF0C + facing * velocityX);
         y = static_cast<int>(owner->fieldF0E + velocityY);
         owner->SpawnBattleEffect(836, x, y, 1, 0);
-        if (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6) { ResetSecondaryCounter(7); return; }
-        if (field07C == 4 || field07C == 5 || field07C == 6) {
-            field080 = 1;
-            field07C = 0;
+        if (collisionResult != CollisionResult::None && collisionResult != CollisionResult::ClashConsumedHit && collisionResult != CollisionResult::ClashPreservedHits && collisionResult != CollisionResult::Grazed) { ResetSecondaryCounter(7); return; }
+        if (collisionResult == CollisionResult::ClashConsumedHit || collisionResult == CollisionResult::ClashPreservedHits || collisionResult == CollisionResult::Grazed) {
+            remainingHits = 1;
+            collisionResult = CollisionResult::None;
         }
     }
     if (animationStage == 2 && field0DC > 0) {
@@ -122,10 +122,10 @@ void MarisaObject::UpdateTrackingNode()
         x = facing * velocityX + x;
         y = y - velocityY;
         owner->SpawnBattleEffect(836, x, y, 1, 0);
-        if (field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { ResetSecondaryCounter(7); return; }
-        if (field07C == 5 || field07C == 6) {
-            field080 = 1;
-            field07C = 0;
+        if (collisionResult == CollisionResult::ClashConsumedHit || (collisionResult != CollisionResult::None && collisionResult != CollisionResult::ClashConsumedHit && collisionResult != CollisionResult::ClashPreservedHits && collisionResult != CollisionResult::Grazed)) { ResetSecondaryCounter(7); return; }
+        if (collisionResult == CollisionResult::ClashPreservedHits || collisionResult == CollisionResult::Grazed) {
+            remainingHits = 1;
+            collisionResult = CollisionResult::None;
         }
     }
     if (animationStage == 3) {
@@ -134,7 +134,7 @@ void MarisaObject::UpdateTrackingNode()
         y = static_cast<int>(owner->fieldF0E + velocityY);
         owner->field314 = action - 828;
         if (field0DC == 0) owner->SpawnBattleEffect(841, owner->facing * 20 + x, y, owner->facing, 1);
-        if (field0DC > 120 || field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) {
+        if (field0DC > 120 || collisionResult == CollisionResult::ClashConsumedHit || (collisionResult != CollisionResult::None && collisionResult != CollisionResult::ClashConsumedHit && collisionResult != CollisionResult::ClashPreservedHits && collisionResult != CollisionResult::Grazed)) {
             ResetSecondaryCounter(7);
             field0DC = 0;
             return;
@@ -144,7 +144,7 @@ void MarisaObject::UpdateTrackingNode()
     }
     if (animationStage == 4) {
         if (field0DC == 1) owner->SpawnBattleEffect(841, owner->facing * 20 + x, y, owner->facing, 1);
-        if (field0DC > 120 || field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { ResetSecondaryCounter(7); return; }
+        if (field0DC > 120 || collisionResult == CollisionResult::ClashConsumedHit || (collisionResult != CollisionResult::None && collisionResult != CollisionResult::ClashConsumedHit && collisionResult != CollisionResult::ClashPreservedHits && collisionResult != CollisionResult::Grazed)) { ResetSecondaryCounter(7); return; }
         ++field0DC;
     }
     if (animationStage == 7) color[0] = color[0] - 25;

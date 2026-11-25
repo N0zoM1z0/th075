@@ -11,7 +11,7 @@ case 0x199: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*FloatConstants::Quarter;
         velocityY=(velocityY)*FloatConstants::Quarter;
-        field07C=1;
+        collisionResult=1;
     }
     if (y+velocityY<=FloatConstants::Zero) {
         y=0.0f;
@@ -54,7 +54,7 @@ case 0x19A: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*FloatConstants::Quarter;
         velocityY=(velocityY)*FloatConstants::Quarter;
-        field07C=1;
+        collisionResult=1;
     }
     if (y+velocityY<=FloatConstants::Zero) {
         y=0.0f;

@@ -2,7 +2,7 @@
 #include "graphics/TextureManagerF198.hpp"
 #include <stdlib.h>
 
-#define DRAWING reinterpret_cast<TextureManagerF198*>(field534)
+#define DRAWING overlayTextures
 
 void Fighter::RenderSideEffect()
 {

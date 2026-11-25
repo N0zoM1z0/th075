@@ -3,7 +3,7 @@
 // Natural normal C++ still has real register and final-JMP byte mismatches.
 case 0x191: {
     if ((animationStage)==0 && (animationFrame)==0)
-        field07C=1;
+        collisionResult=1;
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnBattleEffect(0x321,
             float((facing)*100)+(x),

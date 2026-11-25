@@ -1,7 +1,7 @@
 case R1188_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f; velocityY=0.0f; field05C=0.0f;
-        field080=1; field07C=0;
+        remainingHits=1; collisionResult=0;
     }
     if (y>FloatConstants::Zero) {
         velocityY=velocityY-field05C;

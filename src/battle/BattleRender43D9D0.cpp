@@ -41,23 +41,23 @@ void BattleScene::Render() {
             g_CurrentBattleStageAt00671424->Render();
             textureManager->SetDepthMode(0);
             textureManager->SetDepthMode(3);
-            fighters[0]->field2EC->DispatchAll();
-            fighters[1]->field2EC->DispatchAll();
+            fighters[0]->ownedObjects->DispatchAll();
+            fighters[1]->ownedObjects->DispatchAll();
             fighters[0]->RenderMirroredNode();
             fighters[1]->RenderMirroredNode();
             textureManager->SetColorMultiplier(1.0f);
             g_CurrentBattleStageAt00671424->Slot3();
             textureManager->SetDepthMode(0);
             textureManager->SetDepthMode(3);
-            fighters[0]->field2EC->DispatchSelected(2);
-            fighters[1]->field2EC->DispatchSelected(2);
+            fighters[0]->ownedObjects->DispatchSelected(2);
+            fighters[1]->ownedObjects->DispatchSelected(2);
             textureManager->SetDepthMode(1);
             textureManager->SetDepthMode(2);
-            fighters[0]->field480->RenderElements();
-            fighters[1]->field480->RenderElements();
+            fighters[0]->spriteHistory->RenderElements();
+            fighters[1]->spriteHistory->RenderElements();
             g_CombatEffects.DispatchSelectedList(0);
-            fighters[0]->field2EC->DispatchSelected(0);
-            fighters[1]->field2EC->DispatchSelected(0);
+            fighters[0]->ownedObjects->DispatchSelected(0);
+            fighters[1]->ownedObjects->DispatchSelected(0);
             if (g_RenderOrderAt0068C860 != 0) {
                 fighters[0]->Render();
                 fighters[1]->Render();
@@ -69,8 +69,8 @@ void BattleScene::Render() {
                 fighters[1]->RenderChain();
                 fighters[0]->RenderChain();
             }
-            fighters[0]->field2EC->DispatchSelected(1);
-            fighters[1]->field2EC->DispatchSelected(1);
+            fighters[0]->ownedObjects->DispatchSelected(1);
+            fighters[1]->ownedObjects->DispatchSelected(1);
             g_CombatEffects.DispatchSelectedList(1);
             textureManager->SetColorMultiplier(spellBackgroundBrightness);
             g_CurrentBattleStageAt00671424->Slot2();
@@ -88,8 +88,8 @@ void BattleScene::Render() {
                 (static_cast<D3DCOLOR>(g_StateFadeAlpha) << 24) | g_StateResetCounter);
         }
         RenderHud();
-        fighters[0]->field2EC->DispatchSelected(3);
-        fighters[1]->field2EC->DispatchSelected(3);
+        fighters[0]->ownedObjects->DispatchSelected(3);
+        fighters[1]->ownedObjects->DispatchSelected(3);
         if (fighters[0]->fadeAlpha > 0)
             fighters[0]->RenderFadeOverlay();
         if (fighters[1]->fadeAlpha > 0)

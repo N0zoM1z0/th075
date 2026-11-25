@@ -25,6 +25,6 @@ case 0x19A: {
         field05C=0.65f;
     }
     if ((animationStage)==6 && (animationFrame)==0)
-        field07C=1;
+        collisionResult=1;
     return;
 }

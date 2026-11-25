@@ -254,7 +254,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityX < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -272,7 +272,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -293,7 +293,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -315,7 +315,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -343,7 +343,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -364,7 +364,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -385,7 +385,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -407,7 +407,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -435,7 +435,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -8.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -456,7 +456,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -477,7 +477,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -499,7 +499,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -15.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX) + FloatConstants::ThreeFifths;
@@ -532,7 +532,7 @@ void MarisaFighter::Advance() {
             field05C = 0.8f;
             if (velocityY > GeometryConstants::TwentyFive)
                 velocityY = 25.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -559,7 +559,7 @@ void MarisaFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -586,7 +586,7 @@ void MarisaFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 1.3f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -613,7 +613,7 @@ void MarisaFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX) * GeometryConstants::Hundred);
@@ -645,7 +645,7 @@ void MarisaFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -710,7 +710,7 @@ void MarisaFighter::Advance() {
             velocityX = -(hitReactionVelocityX);
             velocityY = hitReactionVelocityY;
             field05C = 0.8f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (velocityY + y <= FloatConstants::Zero) {
             scriptCounterF00 = static_cast<short>((velocityX)*GeometryConstants::Hundred);
@@ -1013,7 +1013,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -11.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1036,7 +1036,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1059,7 +1059,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -12.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
             scriptCounterF00 = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1083,7 +1083,7 @@ void MarisaFighter::Advance() {
             velocityX = -10.0f;
             velocityY = 14.0f;
             field05C = 0.5f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && velocityY < FloatConstants::Two) {
             ResetSecondaryCounter(4);
@@ -1113,7 +1113,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1137,7 +1137,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1161,7 +1161,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1185,7 +1185,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1209,7 +1209,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1233,7 +1233,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1284,7 +1284,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1308,7 +1308,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1332,7 +1332,7 @@ void MarisaFighter::Advance() {
             scriptCounterF00 = 0;
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
 
         }
         if ((velocityX) < FloatConstants::Zero) {
@@ -1354,7 +1354,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -9.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1375,7 +1375,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -10.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1396,7 +1396,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = -13.0f;
             velocityY = 0.0f;
-            field07C = 0;
+            collisionResult = 0;
         }
         if ((velocityX) < FloatConstants::Zero) {
             velocityX = (velocityX)+FloatConstants::ThreeFifths;
@@ -1672,7 +1672,7 @@ void MarisaFighter::Advance() {
     case 0xCC: {
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1708,7 +1708,7 @@ void MarisaFighter::Advance() {
     case 0xCD: {
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1744,7 +1744,7 @@ void MarisaFighter::Advance() {
     case 0xCE: {
         if (y == FloatConstants::Zero || velocityY > FloatConstants::Zero) {
             SetCommandSelection(3, 4, 0xFF);
-            field088 = 2;
+            grazeFrames = 2;
         }
         if (animationStage == 0 && field3AC == 0)
             ClearMotionFields();
@@ -1857,8 +1857,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1878,8 +1878,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1901,8 +1901,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1922,8 +1922,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -1949,8 +1949,8 @@ void MarisaFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetPrimaryCounters(9);
@@ -1976,8 +1976,8 @@ void MarisaFighter::Advance() {
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(9);
@@ -1991,8 +1991,8 @@ void MarisaFighter::Advance() {
             velocityX = 0.0f;
             velocityY = 0.0f;
             field05C = 0.0f;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (velocityX > FloatConstants::Zero)
             velocityX -= FloatConstants::OneTwentieth;
@@ -2028,8 +2028,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2051,8 +2051,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2074,8 +2074,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             if (field3AC == 0)
                 ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (field3AC > 0) {
             velocityX -= FloatConstants::ThreeFifths;
@@ -2106,8 +2106,8 @@ void MarisaFighter::Advance() {
 
     case 0x186: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             velocityX = 12.5f;
         }
@@ -2134,8 +2134,8 @@ void MarisaFighter::Advance() {
     case 0x187: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 12.5f;
         }
         if (animationStage > 0) {
@@ -2152,8 +2152,8 @@ void MarisaFighter::Advance() {
 
     case 0x188: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             velocityX = 12.5f;
         }
@@ -2174,8 +2174,8 @@ void MarisaFighter::Advance() {
     case 0x189: {
         if (animationStage == 0 && animationFrame == 0) {
             field3AC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field05C = 0.0f;
             velocityY = 0.0f;
             velocityX = 12.5f;
@@ -2210,8 +2210,8 @@ void MarisaFighter::Advance() {
 
     case 0x18A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 15.0f;
             scriptCounterF00 = 0;
         }
@@ -2232,8 +2232,8 @@ void MarisaFighter::Advance() {
 
     case 0x18B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = 10.0f;
             scriptCounterF00 = 0;
         }
@@ -2249,8 +2249,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 7 && animationFrame == 0 && scriptCounterF00 < 2) {
             ++scriptCounterF00;
             ResetSecondaryCounter(6);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage == 6 && animationFrame == 0) {
             SpawnBattleEffect(0x328,
@@ -2262,7 +2262,7 @@ void MarisaFighter::Advance() {
 
     case 0x190: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2282,7 +2282,7 @@ void MarisaFighter::Advance() {
 
     case 0x191: {
         if (animationStage == 0 && animationFrame == 0)
-            field07C = 1;
+            collisionResult = 1;
         if (animationStage == 5 && animationFrame == 0) {
             SpawnBattleEffect(0x321,
                 static_cast<float>(facing * 100) + x,
@@ -2295,7 +2295,7 @@ void MarisaFighter::Advance() {
 
     case 0x192: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2315,7 +2315,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -2334,7 +2334,7 @@ void MarisaFighter::Advance() {
 
     case 0x196: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2364,7 +2364,7 @@ void MarisaFighter::Advance() {
 
     case 0x197: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2394,7 +2394,7 @@ void MarisaFighter::Advance() {
 
     case 0x198: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
             UpdateGaugeTimer(100);
@@ -2419,7 +2419,7 @@ void MarisaFighter::Advance() {
 
     case 0x199: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2449,7 +2449,7 @@ void MarisaFighter::Advance() {
 
     case 0x19A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         velocityY -= field05C;
@@ -2482,7 +2482,7 @@ void MarisaFighter::Advance() {
 
     case 0x19B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         velocityY -= field05C;
@@ -2515,7 +2515,7 @@ void MarisaFighter::Advance() {
 
     case 0x19C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2534,7 +2534,7 @@ void MarisaFighter::Advance() {
 
     case 0x19D: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2553,7 +2553,7 @@ void MarisaFighter::Advance() {
 
     case 0x19E: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2577,7 +2577,7 @@ void MarisaFighter::Advance() {
 
     case 0x19F: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -2596,7 +2596,7 @@ void MarisaFighter::Advance() {
 
     case 0x1A0: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
         }
@@ -2615,7 +2615,7 @@ void MarisaFighter::Advance() {
 
     case 0x1A1: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
         }
@@ -2634,7 +2634,7 @@ void MarisaFighter::Advance() {
 
     case 0x1A2: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -2664,7 +2664,7 @@ void MarisaFighter::Advance() {
 
     case 0x1A3: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -2695,8 +2695,8 @@ void MarisaFighter::Advance() {
     case 0x1F4: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
@@ -2736,8 +2736,8 @@ void MarisaFighter::Advance() {
     case 0x1F5: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (velocityX > FloatConstants::Zero) {
@@ -2776,9 +2776,9 @@ void MarisaFighter::Advance() {
 
     case 0x208: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ClearMotionFields();
-            field080 = 1;
+            remainingHits = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 6) {
@@ -2803,13 +2803,13 @@ void MarisaFighter::Advance() {
 
     case 0x20A: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ClearMotionFields();
-            field080 = 1;
+            remainingHits = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 8 && animationStage < 15 &&
-            (field07C != 0 ||
+            (collisionResult != 0 ||
              (CheckHorizontalLimits() &&
               ((x > GeometryConstants::SixHundredForty && facing == 1) ||
                (x < GeometryConstants::SixHundredForty && facing == -1))))) {
@@ -2849,13 +2849,13 @@ void MarisaFighter::Advance() {
 
     case 0x20B: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ClearMotionFields();
-            field080 = 1;
+            remainingHits = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 8 && animationStage < 15 &&
-            (field07C != 0 ||
+            (collisionResult != 0 ||
              (CheckHorizontalLimits() &&
               ((x > GeometryConstants::SixHundredForty && facing == 1) ||
                (x < GeometryConstants::SixHundredForty && facing == -1))))) {
@@ -2895,13 +2895,13 @@ void MarisaFighter::Advance() {
 
     case 0x20C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ClearMotionFields();
-            field080 = 1;
+            remainingHits = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 8 && animationStage < 15 &&
-            (field07C != 0 ||
+            (collisionResult != 0 ||
              (CheckHorizontalLimits() &&
               ((x > GeometryConstants::SixHundredForty && facing == 1) ||
                (x < GeometryConstants::SixHundredForty && facing == -1))))) {
@@ -2943,13 +2943,13 @@ void MarisaFighter::Advance() {
 
     case 0x20D: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ClearMotionFields();
-            field080 = 1;
+            remainingHits = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage > 8 && animationStage < 15 &&
-            (field07C != 0 ||
+            (collisionResult != 0 ||
              (CheckHorizontalLimits() &&
               ((x > GeometryConstants::SixHundredForty && facing == 1) ||
                (x < GeometryConstants::SixHundredForty && facing == -1))))) {
@@ -2992,7 +2992,7 @@ void MarisaFighter::Advance() {
     case 0x20E: {
         if (animationStage == 0 && animationFrame == 0) {
             if (y == FloatConstants::Zero)
-                field07C = 1;
+                collisionResult = 1;
             ClearMotionFields();
             velocityX = 10.0f;
             velocityY = 7.0f;
@@ -3018,12 +3018,12 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -3040,12 +3040,12 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
-        if (spiritCooldown == 0 && field07C == 1)
+        if (spiritCooldown == 0 && collisionResult == 1)
             spirit = 1000;
         if (AdvanceNestedFrame() == animationStageCount)
             ResetPrimaryCounters(0);
@@ -3062,8 +3062,8 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             --bombCount;
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -3081,8 +3081,8 @@ void MarisaFighter::Advance() {
     case 0x255: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -3103,8 +3103,8 @@ void MarisaFighter::Advance() {
     case 0x256: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -3121,8 +3121,8 @@ void MarisaFighter::Advance() {
     case 0x257: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
             scriptCounterF00 = 0;
         }
@@ -3142,7 +3142,7 @@ void MarisaFighter::Advance() {
 
     case 0x258: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3161,7 +3161,7 @@ void MarisaFighter::Advance() {
 
     case 0x259: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3182,7 +3182,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage == 6 && animationFrame == 0) {
@@ -3202,7 +3202,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::Quarter;
             velocityY = (velocityY) * FloatConstants::Quarter;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (animationStage == 6 && animationFrame == 0) {
@@ -3220,7 +3220,7 @@ void MarisaFighter::Advance() {
 
     case 0x25C: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3236,7 +3236,7 @@ void MarisaFighter::Advance() {
 
     case 0x25D: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3252,7 +3252,7 @@ void MarisaFighter::Advance() {
 
     case 0x270: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3271,7 +3271,7 @@ void MarisaFighter::Advance() {
 
     case 0x271: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3291,7 +3291,7 @@ void MarisaFighter::Advance() {
     case 0x2BC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame == 10) {
@@ -3346,20 +3346,20 @@ void MarisaFighter::Advance() {
     case 0x2BF: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 0;
-            field080 = 6;
+            collisionResult = 0;
+            remainingHits = 6;
             ClearMotionFields();
             scriptCounterF02 = 0;
             fieldF04 = 0;
         }
-        if (field07C == 1 && scriptCounterF02 == 0) {
+        if (collisionResult == 1 && scriptCounterF02 == 0) {
             ++scriptCounterF02;
             PlaySound(0x0B);
         }
-        if (((CheckHorizontalLimits() && field07C != 1 &&
+        if (((CheckHorizontalLimits() && collisionResult != 1 &&
               ((facing == 1 && x > GeometryConstants::SixHundredForty) ||
                (facing == -1 && x < GeometryConstants::SixHundredForty))) ||
-             (field080 == 0 && field07C == 2)) && animationStage < 23) {
+             (remainingHits == 0 && collisionResult == 2)) && animationStage < 23) {
             ResetSecondaryCounter(0x17);
             velocityX = -2.5f;
             velocityY = 15.0f;
@@ -3390,7 +3390,7 @@ void MarisaFighter::Advance() {
                 (y) + GeometryConstants::Seventy, facing, 1);
         }
         if (animationStage == 15 && animationFrame == 0) {
-            field080 = 20;
+            remainingHits = 20;
             velocityX = 25.0f;
             PlaySound(10);
             UpdateGaugeTimer(500);
@@ -3408,11 +3408,11 @@ void MarisaFighter::Advance() {
                 SpawnAuxEffect(0x80,
                     x - static_cast<float>(facing * 200), y, facing, 1);
             }
-            if (field07C != 0) {
-                field07C = 0;
+            if (collisionResult != 0) {
+                collisionResult = 0;
                 velocityX = 10.0f;
             } else {
-                field07C = 0;
+                collisionResult = 0;
                 velocityX = 25.0f;
             }
         }
@@ -3425,8 +3425,8 @@ void MarisaFighter::Advance() {
 
     case 0x2C0: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 0;
-            field080 = 6;
+            collisionResult = 0;
+            remainingHits = 6;
             ClearMotionFields();
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
@@ -3485,8 +3485,8 @@ void MarisaFighter::Advance() {
     case 0x2C1: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 0;
-            field080 = 6;
+            collisionResult = 0;
+            remainingHits = 6;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3512,8 +3512,8 @@ void MarisaFighter::Advance() {
     case 0x2C2: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 0;
-            field080 = 6;
+            collisionResult = 0;
+            remainingHits = 6;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3539,7 +3539,7 @@ void MarisaFighter::Advance() {
     case 0x2C3: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3560,7 +3560,7 @@ void MarisaFighter::Advance() {
     case 0x2C4: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3583,7 +3583,7 @@ void MarisaFighter::Advance() {
     case 0x2C5: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3596,7 +3596,7 @@ void MarisaFighter::Advance() {
     case 0x2C6: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
         }
@@ -3610,7 +3610,7 @@ void MarisaFighter::Advance() {
     case 0x2C8: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 5 && animationFrame == 0) {
@@ -3671,7 +3671,7 @@ void MarisaFighter::Advance() {
     case 0x2CA: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3692,7 +3692,7 @@ void MarisaFighter::Advance() {
     case 0x2CB: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3715,7 +3715,7 @@ void MarisaFighter::Advance() {
     case 0x2CC: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -3728,7 +3728,7 @@ void MarisaFighter::Advance() {
     case 0x2CD: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
         }
@@ -3741,7 +3741,7 @@ void MarisaFighter::Advance() {
 
     case 0x2CE: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3753,7 +3753,7 @@ void MarisaFighter::Advance() {
 
     case 0x2CF: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
             scriptCounterF00 = 0;
         }
@@ -3767,7 +3767,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3780,7 +3780,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             velocityX = (velocityX) * FloatConstants::OneTenth;
             velocityY = (velocityY) * FloatConstants::OneTenth;
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
@@ -3792,8 +3792,8 @@ void MarisaFighter::Advance() {
     case 0x2DB: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             ClearMotionFields();
             scriptCounterF02 = 0;
             fieldF04 = 0;
@@ -3851,7 +3851,7 @@ void MarisaFighter::Advance() {
 
     case 0x2E5: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             ClearMotionFields();
@@ -3888,7 +3888,7 @@ void MarisaFighter::Advance() {
 
     case 0x2E6: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             ClearMotionFields();
@@ -3939,7 +3939,7 @@ void MarisaFighter::Advance() {
 
     case 0x2E7: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             ClearMotionFields();
@@ -3971,7 +3971,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame < 45) {
@@ -4025,7 +4025,7 @@ void MarisaFighter::Advance() {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (animationStage == 2 && animationFrame < 45) {
@@ -4077,7 +4077,7 @@ void MarisaFighter::Advance() {
 
     case 0x2F2: {
         if (animationStage == 0 && animationFrame == 0) {
-            field07C = 1;
+            collisionResult = 1;
             scriptCounterF00 = 0;
             scriptCounterF02 = 0;
             ClearMotionFields();
@@ -4108,8 +4108,8 @@ void MarisaFighter::Advance() {
     case 0x2F8: {
         if (animationStage == 0 && animationFrame == 0) {
             ClearMotionFields();
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field3AC = 0;
         }
         if (RecordedRange(0, 100) < 40 && animationStage > 3 && animationStage < 8) {
@@ -4216,7 +4216,7 @@ void MarisaFighter::Advance() {
     case 0x31B: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)
@@ -4238,7 +4238,7 @@ void MarisaFighter::Advance() {
     case 0x31C: {
         if (animationStage == 0 && animationFrame == 0) {
             scriptCounterF00 = 0;
-            field07C = 1;
+            collisionResult = 1;
             ClearMotionFields();
         }
         if (AdvanceNestedFrame() == animationStageCount)

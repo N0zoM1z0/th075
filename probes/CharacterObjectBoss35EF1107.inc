@@ -21,14 +21,14 @@ case 0x35E: {
         }
         return;
     }
-    if (field07C==5) {
+    if (collisionResult==5) {
         ClearFrameInfo();
         return;
     }
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -45,7 +45,7 @@ case 0x35E: {
             float(field0D8)*FloatConstants::OneTenth);
     }
     if (animationStage>0) {
-        if (field080==0) {
+        if (remainingHits==0) {
             ClearFrameInfo();
             owner->PlaySound(1);
             owner->SpawnBattleEffect(

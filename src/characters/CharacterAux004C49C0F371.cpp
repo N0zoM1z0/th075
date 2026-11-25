@@ -27,7 +27,7 @@ void SakuyaFighter::AdvanceAuxiliary() {
     }
     else field09C=1.0f;
     if(fieldF12>0) {
-        field084=2;field088=2;
+        hitInvulnerabilityFrames=2;grazeFrames=2;
         if(fieldF10<=0) {
             fieldF10=0;fieldF12=0;
             opponent->guardResponseCooldown=0;

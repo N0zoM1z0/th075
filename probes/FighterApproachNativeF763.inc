@@ -9,8 +9,8 @@
         case 0x2DB: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }

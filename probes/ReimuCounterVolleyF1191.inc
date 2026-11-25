@@ -1,6 +1,6 @@
 case R1191_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
 #if !R1191_AIR
         ClearMotionFields();
 #endif

@@ -11,7 +11,7 @@ case 0x46: {
         field05C = 0.8f;
         if (velocityY > TRAJECTORY_UPPER_THRESHOLD)
             velocityY = TRAJECTORY_MAXIMUM_SPEED;
-        field07C = 0;
+        collisionResult = 0;
     }
     // Native 131-instruction owners alone have this real one-shot
     // stage-one projectile branch (+0xF0C is the original flag).

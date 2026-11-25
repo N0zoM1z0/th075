@@ -53,9 +53,9 @@ void Fighter::LoadPattern() {
             ReadFile(sourceFile, &FRAME.unknown04, 2, &nRead, 0);
             ReadFile(sourceFile, &frameType, 1, &nRead, 0);
             if (frameType == 0) {
-                FRAME.field0C = 1;
+                FRAME.doubleScale = 1;
             } else if (frameType == 1) {
-                FRAME.field0C = 0;
+                FRAME.doubleScale = 0;
             } else if (frameType == 2) {
                 // Declare this borrowed type at its real use site. Earlier
                 // native filename literals keep their original COFF symbols.
@@ -83,23 +83,23 @@ void Fighter::LoadPattern() {
             ReadFile(sourceFile, &FRAME.damage, 2, &nRead, 0);
             ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
             FRAME.comboRateScale = packedValue * 0.001f;
-            ReadFile(sourceFile, &FRAME.field18, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field1A, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.guardDamage, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.baseHitstun, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.attackerHitStop, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.defenderHitStop, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field20, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field22, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.guardAttackerHitStop, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.guardDefenderHitStop, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.meterGain, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field26, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field28, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field2A, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.guardSpellCharge, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.airHitAction, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.groundHitAction, 2, &nRead, 0);
             ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-            FRAME.field2C = packedValue * 0.01f;
+            FRAME.reactionVelocityX = packedValue * 0.01f;
             ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-            FRAME.field30 = packedValue * 0.01f;
-            ReadFile(sourceFile, &FRAME.field34, 2, &nRead, 0);
+            FRAME.reactionVelocityY = packedValue * 0.01f;
+            ReadFile(sourceFile, &FRAME.hitSound, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.hitEffect, 2, &nRead, 0);
-            ReadFile(sourceFile, &FRAME.field38, 2, &nRead, 0);
+            ReadFile(sourceFile, &FRAME.reactionVariant, 2, &nRead, 0);
             ReadFile(sourceFile, &FRAME.flags, 4, &nRead, 0);
             ReadFile(sourceFile, &FRAME.attackFlags, 4, &nRead, 0);
             ReadFile(sourceFile, &FRAME.bodyBox, 16, &nRead, 0);

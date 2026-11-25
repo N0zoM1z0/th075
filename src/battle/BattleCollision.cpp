@@ -4,16 +4,16 @@
 
 void BattleScene::ApplyImpact(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    attack->field07C = 2;
-    --attack->field080;
-    attack->hitstopFrames = attack->savedFrameInfo->field20;
-    defender->hitstopFrames = attack->savedFrameInfo->field22;
-    defender->hitReactionVelocityX = attack->savedFrameInfo->field2C;
-    defender->hitReactionVelocityY = attack->savedFrameInfo->field30;
+    attack->collisionResult = CollisionResult::Blocked;
+    --attack->remainingHits;
+    attack->hitstopFrames = attack->savedFrameInfo->guardAttackerHitStop;
+    defender->hitstopFrames = attack->savedFrameInfo->guardDefenderHitStop;
+    defender->hitReactionVelocityX = attack->savedFrameInfo->reactionVelocityX;
+    defender->hitReactionVelocityY = attack->savedFrameInfo->reactionVelocityY;
     if (defender->health <= 0) defender->health = 1;
     if (defender->spellTimer > 0 || defender->spellDeclarationExpired)
         defender->recoverableHealth = defender->health;
-    attacker->pendingSpellCharge += attack->savedFrameInfo->field26;
+    attacker->pendingSpellCharge += attack->savedFrameInfo->guardSpellCharge;
     if (attacker->pendingSpellCharge > 2000.0f) attacker->pendingSpellCharge = 2000.0f;
     defender->UpdateFacingFromOpponent();
     g_SoundBank->Play(20);

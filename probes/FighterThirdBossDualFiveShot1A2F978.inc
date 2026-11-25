@@ -8,7 +8,7 @@
 // F978 physical original 004AC040 game action1A2: two 5-shot branches.
 case 0x1A2: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
             }
     if (AdvanceNestedFrame()==(animationStageCount))

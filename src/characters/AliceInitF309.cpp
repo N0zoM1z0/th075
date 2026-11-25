@@ -9,8 +9,8 @@ AliceFighter::AliceFighter()
     field713=1;
     strcpy(name,g_AliceNameAt006595F8);
     strcpy(tag,g_AliceTagAt00659600);
-    field478=0x2ad;
-    field532=10;
+    mainTextureCount=0x2ad;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

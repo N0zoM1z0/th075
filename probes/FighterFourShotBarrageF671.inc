@@ -5,7 +5,7 @@
 // This is not whole-giant or native-inner-case strict acceptance.
 case 0x258: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                field07C=1;
+                collisionResult=1;
                 ClearMotionFields();
             }
             if ((animationStage)==4 && (animationFrame)==0) {

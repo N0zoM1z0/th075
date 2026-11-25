@@ -8,8 +8,8 @@ case 0x12F: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ClearMotionFields();
-                    field080=1;
-        field07C=0;
+                    remainingHits=1;
+        collisionResult=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-FloatConstants::ThreeFifths;
@@ -35,8 +35,8 @@ case 0x130: {
         break;
     }
     if ((animationStage)==0 && (animationFrame)==0) {
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
     if (AdvanceNestedFrame()==(animationStageCount))
         ResetPrimaryCounters(9);

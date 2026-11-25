@@ -7,7 +7,7 @@
 // Actual full original 82KB fighter remains NONEXACT, not case exact.
 case 0x1A1: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
             }
     if (AdvanceNestedFrame()==(animationStageCount))

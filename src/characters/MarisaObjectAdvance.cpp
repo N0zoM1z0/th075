@@ -70,15 +70,15 @@ void MarisaObject::Advance()
             owner->SpawnBattleEffect(0x3E2, static_cast<float>(facing * 880) + x, y, 1, 1);
             return;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
-        if (field07C == 4) {
-            field07C = 0;
+        if (collisionResult == 4) {
+            collisionResult = 0;
             ++field0DA;
             if (field0DA > 1) {
-                ++field080;
+                ++remainingHits;
                 field0DA = 0;
             }
         }
@@ -89,8 +89,8 @@ void MarisaObject::Advance()
             field0D8 = 0;
             field0DA = 0;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 5;
-            field07C = 0;
+            remainingHits = 5;
+            collisionResult = 0;
             scaleX = 2.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -98,11 +98,11 @@ void MarisaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (field07C != 0) {
+        if (collisionResult != 0) {
             if (field0DA < 2) {
                 ++field0DA;
             } else {
-                field07C = 0;
+                collisionResult = 0;
                 field0DA = 0;
             }
         }
@@ -163,15 +163,15 @@ void MarisaObject::Advance()
             owner->SpawnBattleEffect(0x3E2, static_cast<float>(facing * 880) + x, y, 1, 1);
             return;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
-        if (field07C == 4) {
-            field07C = 0;
+        if (collisionResult == 4) {
+            collisionResult = 0;
             ++field0DA;
             if (field0DA > 1) {
-                ++field080;
+                ++remainingHits;
                 field0DA = 0;
             }
         }
@@ -182,8 +182,8 @@ void MarisaObject::Advance()
             field0D8 = 0;
             field0DA = 0;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 5;
-            field07C = 0;
+            remainingHits = 5;
+            collisionResult = 0;
             scaleX = 2.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -191,11 +191,11 @@ void MarisaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (field07C != 0) {
+        if (collisionResult != 0) {
             if (field0DA < 2) {
                 ++field0DA;
             } else {
-                field07C = 0;
+                collisionResult = 0;
                 field0DA = 0;
             }
         }
@@ -256,15 +256,15 @@ void MarisaObject::Advance()
             owner->SpawnBattleEffect(0x3E2, static_cast<float>(facing * 880) + x, y, 1, 1);
             return;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
-        if (field07C == 4) {
-            field07C = 0;
+        if (collisionResult == 4) {
+            collisionResult = 0;
             ++field0DA;
             if (field0DA > 1) {
-                ++field080;
+                ++remainingHits;
                 field0DA = 0;
             }
         }
@@ -275,8 +275,8 @@ void MarisaObject::Advance()
             field0D8 = 0;
             field0DA = 0;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 5;
-            field07C = 0;
+            remainingHits = 5;
+            collisionResult = 0;
             scaleX = 2.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -284,11 +284,11 @@ void MarisaObject::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (field07C != 0) {
+        if (collisionResult != 0) {
             if (field0DA < 2) {
                 ++field0DA;
             } else {
-                field07C = 0;
+                collisionResult = 0;
                 field0DA = 0;
             }
         }
@@ -393,13 +393,13 @@ void MarisaObject::Advance()
             (owner->action != 700 || owner->animationStage >= 6) &&
             animationStage < 10) {
             ResetSecondaryCounter(animationStage + 10);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             if (field0D8 != 1) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.5f;
@@ -414,8 +414,8 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage == 5 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage < 10) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -548,7 +548,7 @@ void MarisaObject::Advance()
         break;
 
     case 811:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -569,8 +569,8 @@ void MarisaObject::Advance()
             field0DA = 200;
             field0DC = static_cast<short>(field0C8);
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(static_cast<float>(field0DC), field0DA * FloatConstants::OneHundredth);
             scaleX = 2.0f;
             scaleY = 2.0f;
@@ -580,12 +580,12 @@ void MarisaObject::Advance()
             color[3] = 255;
             rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         }
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
         RecordedRange(0, 100);
-        if (field07C == 1 || field07C == 2 || field07C == 4 ||
+        if (collisionResult == 1 || collisionResult == 2 || collisionResult == 4 ||
             y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(813);
             owner->SpawnBattleEffect(815, x, y, facing, 1);
@@ -611,7 +611,7 @@ void MarisaObject::Advance()
         break;
 
     case 812:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -641,8 +641,8 @@ void MarisaObject::Advance()
             field0DA = 100;
             field0DC = static_cast<short>(field0C8);
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(static_cast<float>(field0DC), field0DA * FloatConstants::OneHundredth);
             scaleX = 2.0f;
             scaleY = 2.0f;
@@ -652,12 +652,12 @@ void MarisaObject::Advance()
             color[3] = 255;
         }
         rotationZ = (rotationZ) + FloatConstants::Two;
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
         RecordedRange(0, 100);
-        if (field07C == 1 || field07C == 2 || field07C == 4 ||
+        if (collisionResult == 1 || collisionResult == 2 || collisionResult == 4 ||
             y + velocityY <= FloatConstants::Zero) {
             ResetPrimaryCounters(814);
             owner->SpawnBattleEffect(845, x, y, facing, 1);
@@ -689,8 +689,8 @@ void MarisaObject::Advance()
             NoOpAt0045B850(7);
             ResetTransform(0.0f, 0.0f, 0.0f);
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -722,8 +722,8 @@ void MarisaObject::Advance()
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 1) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field0D8 = static_cast<short>(
                 AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree);
             SetPolarVelocity(static_cast<float>(field0D8 - 20 + RecordedRange(0, 40)), 2.0f);
@@ -853,7 +853,7 @@ void MarisaObject::Advance()
         break;
 
     case 818:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -872,8 +872,8 @@ void MarisaObject::Advance()
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityX = (field0C8) * FloatConstants::OneTenth;
             velocityY = (field0CC) * FloatConstants::OneTenth;
             scaleX = 1.0f;
@@ -892,7 +892,7 @@ void MarisaObject::Advance()
                 x + static_cast<float>(RecordedRange(-20, 20)),
                 y + static_cast<float>(RecordedRange(-20, 20)), facing, 1);
         }
-        if (y < FloatConstants::Zero || field07C == 4) {
+        if (y < FloatConstants::Zero || collisionResult == 4) {
             ResetPrimaryCounters(854);
             owner->SpawnBattleEffect(815, x, y, facing, 1);
             owner->SpawnBattleEffect(821, x, y, facing, 1);
@@ -909,7 +909,7 @@ void MarisaObject::Advance()
         break;
 
     case 819:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -929,8 +929,8 @@ void MarisaObject::Advance()
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(-60.0f, 15.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -973,13 +973,13 @@ void MarisaObject::Advance()
             (owner->action != 700 || owner->animationStage >= 6) &&
             animationStage < 25) {
             ResetSecondaryCounter(animationStage + 25);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             if (field0D8 != 1) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 4.0f;
@@ -994,8 +994,8 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage == 5 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage < 25) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -1032,8 +1032,8 @@ void MarisaObject::Advance()
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 1) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityY = 0.0f;
             velocityX = 0.0f;
             scaleX = 0.5f;
@@ -1060,9 +1060,9 @@ void MarisaObject::Advance()
             x = owner->x + static_cast<float>(facing * 120);
             y = (owner->y) + GeometryConstants::Hundred;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            field080 = 1;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            remainingHits = 1;
         }
         if (owner->action != 400) {
             field0D8 = 1;
@@ -1070,8 +1070,8 @@ void MarisaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.7f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1080,8 +1080,8 @@ void MarisaObject::Advance()
             color[3] = 255;
         }
         if (animationStage == 3 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         scaleX = (scaleX) + FloatConstants::OneHundredth;
         if (animationStage == 4) {
@@ -1102,8 +1102,8 @@ void MarisaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1129,8 +1129,8 @@ void MarisaObject::Advance()
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             field0D8 = 1;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1161,7 +1161,7 @@ void MarisaObject::Advance()
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(0);
-            field07C = 0;
+            collisionResult = 0;
         }
         break;
 
@@ -1169,8 +1169,8 @@ void MarisaObject::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1283,7 +1283,7 @@ void MarisaObject::Advance()
         if (animationStage == 4 && owner->action == 707 &&
             owner->animationStage == 5) {
             ResetSecondaryCounter(5);
-            field080 = 15;
+            remainingHits = 15;
             static_cast<MarisaFighter*>(owner)->fieldF12 = 2;
             facing = owner->facing;
         }
@@ -1305,7 +1305,7 @@ void MarisaObject::Advance()
                 ResetSecondaryCounter(7);
                 return;
             }
-            if (field07C != 0 && field07C != 6 && field07C != 4) {
+            if (collisionResult != 0 && collisionResult != 6 && collisionResult != 4) {
                 x = facing * FloatConstants::Five + x;
             } else {
                 x = facing * FloatConstants::Ten + x;
@@ -1331,7 +1331,7 @@ void MarisaObject::Advance()
         }
         if (animationStage == 6 && animationFrame == 0) {
             ResetSecondaryCounter(5);
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 7 && animationFrame == 0) {
             ResetSecondaryCounter(6);
@@ -1402,7 +1402,7 @@ void MarisaObject::Advance()
         if (animationStage == 6 && owner->action == 714 &&
             owner->animationStage == 5) {
             ResetSecondaryCounter(7);
-            field080 = 20;
+            remainingHits = 20;
             static_cast<MarisaFighter*>(owner)->fieldF12 = 6;
             facing = owner->facing;
             field0DC = static_cast<short>(AngleAt00483300(
@@ -1432,8 +1432,8 @@ void MarisaObject::Advance()
                 ResetSecondaryCounter(9);
                 return;
             }
-            if (field07C == 6 && field07C != 4) {
-                field07C = 0;
+            if (collisionResult == 6 && collisionResult != 4) {
+                collisionResult = 0;
             }
             if (field0DA == 0) {
                 field0DC = static_cast<short>(AngleAt00483300(
@@ -1469,7 +1469,7 @@ void MarisaObject::Advance()
         }
         if (animationStage == 8 && animationFrame == 0) {
             ResetSecondaryCounter(7);
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 9 && animationFrame == 0) {
             ResetSecondaryCounter(8);
@@ -1509,8 +1509,8 @@ void MarisaObject::Advance()
             (owner->action != 712 || owner->animationStage >= 6) &&
             animationStage < 25) {
             ResetSecondaryCounter(animationStage + 25);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
@@ -1518,8 +1518,8 @@ void MarisaObject::Advance()
             static_cast<MarisaFighter*>(owner)->field1008 = x;
             static_cast<MarisaFighter*>(owner)->field100C = y;
             static_cast<MarisaFighter*>(owner)->field1014 = facing;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             if (field0D8 != 1) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 4.0f;
@@ -1534,8 +1534,8 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage == 5 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage < 25) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -1663,15 +1663,15 @@ void MarisaObject::Advance()
             x = static_cast<float>(static_cast<MarisaFighter*>(owner)->fieldF24);
             y = static_cast<float>(static_cast<MarisaFighter*>(owner)->fieldF30);
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
-        if (field07C == 4) {
-            field07C = 0;
+        if (collisionResult == 4) {
+            collisionResult = 0;
             ++field0DA;
             if (field0DA > 1) {
-                ++field080;
+                ++remainingHits;
                 field0DA = 0;
             }
         }
@@ -1679,8 +1679,8 @@ void MarisaObject::Advance()
             field0D8 = 0;
             field0DA = 0;
             ResetTransform(-20.0f, 0.0f, 0.0f);
-            field080 = 20;
-            field07C = 0;
+            remainingHits = 20;
+            collisionResult = 0;
             scaleX = 2.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1689,11 +1689,11 @@ void MarisaObject::Advance()
             color[3] = 255;
             field0D8 = 0;
         }
-        if (field07C != 0) {
+        if (collisionResult != 0) {
             if (field0DA < 15) {
                 ++field0DA;
             } else {
-                field07C = 0;
+                collisionResult = 0;
                 field0DA = 0;
             }
         }
@@ -1842,7 +1842,7 @@ void MarisaObject::Advance()
         break;
 
     case 850:
-        if (field07C == 5) {
+        if (collisionResult == 5) {
             ClearFrameInfo();
             return;
         }
@@ -1858,8 +1858,8 @@ void MarisaObject::Advance()
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0D8 * FloatConstants::Half + FloatConstants::Five);
             scaleX = RecordedRange(0, 10) * FloatConstants::OneFortieth + FloatConstants::Half;
             scaleY = scaleX;
@@ -1873,7 +1873,7 @@ void MarisaObject::Advance()
         if (animationStage < 2) {
             SetPolarVelocity(field0C8, field0D8 * FloatConstants::Half + FloatConstants::Five);
         }
-        if (field07C != 0 && animationStage == 1) {
+        if (collisionResult != 0 && animationStage == 1) {
             velocityY = 0.0f;
             velocityX = 0.0f;
             ResetSecondaryCounter(2);
@@ -1983,13 +1983,13 @@ void MarisaObject::Advance()
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 1;
+            remainingHits = 1;
             field0D8 = 0;
             PlaySharedSound(4);
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
         if (animationStage == 1 && animationFrame == 0) {
             owner->SpawnBattleEffect(852,
@@ -2001,7 +2001,7 @@ void MarisaObject::Advance()
             ++field0D8;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
-            if (field0D8 > 15 || (field0D8 > 5 && field07C != 0)) {
+            if (field0D8 > 15 || (field0D8 > 5 && collisionResult != 0)) {
                 ClearFrameInfo();
             } else {
                 ResetSecondaryCounter(1);
@@ -2042,11 +2042,11 @@ void MarisaObject::Advance()
             color[2] = 255;
             color[3] = 255;
             if (g_OptionsModeAt006714D0 == 0) {
-                field080 = 0;
+                remainingHits = 0;
             } else {
-                field080 = 1;
+                remainingHits = 1;
             }
-            field07C = 0;
+            collisionResult = 0;
             field0D8 = RecordedRange(0, 60) - 30;
             field0DA = RecordedRange(5, 15);
         }
@@ -2077,15 +2077,15 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         ++field0D8;
-        if (field080 == 0 && animationStage == 1) {
+        if (remainingHits == 0 && animationStage == 1) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2118,15 +2118,15 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         ++field0D8;
-        if (field080 == 0 && animationStage == 1) {
+        if (remainingHits == 0 && animationStage == 1) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2159,15 +2159,15 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         ++field0D8;
-        if (field080 == 0 && animationStage == 1) {
+        if (remainingHits == 0 && animationStage == 1) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2200,15 +2200,15 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             SetPolarVelocity(field0C8 + field0CC, field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         ++field0D8;
-        if (field080 == 0 && animationStage == 1) {
+        if (remainingHits == 0 && animationStage == 1) {
             ResetSecondaryCounter(2);
             return;
         }
@@ -2244,13 +2244,13 @@ void MarisaObject::Advance()
         if ((owner->action != 751 || owner->action != 751 || owner->animationStage >= 12) &&
             animationStage < 25) {
             ResetSecondaryCounter(animationStage + 25);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             if (field0D8 != 1) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 4.0f;
@@ -2265,8 +2265,8 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage == 5 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage < 25) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -2304,8 +2304,8 @@ void MarisaObject::Advance()
         if ((owner->action != 752 || owner->action != 752 || owner->animationStage >= 12) &&
             animationStage < 25) {
             ResetSecondaryCounter(animationStage + 25);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
@@ -2313,8 +2313,8 @@ void MarisaObject::Advance()
             static_cast<MarisaFighter*>(owner)->field1008 = x;
             static_cast<MarisaFighter*>(owner)->field100C = y;
             static_cast<MarisaFighter*>(owner)->field1014 = facing;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             if (field0D8 != 1) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 4.0f;
@@ -2329,8 +2329,8 @@ void MarisaObject::Advance()
             }
         }
         if (animationStage == 5 && animationFrame == 0) {
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (animationStage < 25) {
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
@@ -2368,8 +2368,8 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             field0DA = static_cast<short>(field0C8 - RecordedRange(0, 40) + GeometryConstants::Twenty);
             field0DC = RecordedRange(0, 60) + 150;
@@ -2381,7 +2381,7 @@ void MarisaObject::Advance()
         if (field0DC > 30) {
             field0DC = field0DC - 2;
         }
-        if ((field080 == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
+        if ((remainingHits == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
             ResetSecondaryCounter(2);
             velocityX = 0.0f;
             velocityY = 0.0f;
@@ -2416,15 +2416,15 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         ++field0D8;
-        if ((field080 == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
+        if ((remainingHits == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
             ResetSecondaryCounter(2);
             velocityX = 0.0f;
             velocityY = 0.0f;
@@ -2459,15 +2459,15 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         ++field0D8;
-        if ((field080 == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
+        if ((remainingHits == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
             ResetSecondaryCounter(2);
             velocityX = 0.0f;
             velocityY = 0.0f;
@@ -2502,15 +2502,15 @@ void MarisaObject::Advance()
             rotationX = 0.0f;
             rotationY = 0.0f;
             rotationZ = static_cast<float>(RecordedRange(0, 359));
-            field07C = 0;
-            field080 = 1;
+            collisionResult = 0;
+            remainingHits = 1;
             field0D8 = 0;
             SetPolarVelocity(static_cast<float>(RecordedRange(0, 40) + 70), field0D8 * FloatConstants::OneTwentieth + field0D0);
         }
         x = facing * velocityX + x;
         y = y + velocityY;
         ++field0D8;
-        if ((field080 == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
+        if ((remainingHits == 0 || y + velocityY <= FloatConstants::Zero) && animationStage == 1) {
             ResetSecondaryCounter(2);
             velocityX = 0.0f;
             velocityY = 0.0f;
@@ -2542,8 +2542,8 @@ void MarisaObject::Advance()
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.005f;
             scaleY = 4.0f;
-            field07C = 0;
-            field080 = 0;
+            collisionResult = 0;
+            remainingHits = 0;
             field0D8 = 0;
             field0DA = 0;
             velocityX = 0.0f;
@@ -2565,7 +2565,7 @@ void MarisaObject::Advance()
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
-            field080 = 256;
+            remainingHits = 256;
         }
         if (field0D8 > 120 && field0D8 < 241) {
             if (scaleX < FloatConstants::OneAndHalf) {
@@ -2578,7 +2578,7 @@ void MarisaObject::Advance()
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         if (field0D8 == 240) {
@@ -2586,7 +2586,7 @@ void MarisaObject::Advance()
         }
         if (field0D8 > 240) {
             velocityX = 0.0f;
-            field080 = 0;
+            remainingHits = 0;
             scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;
@@ -2605,8 +2605,8 @@ void MarisaObject::Advance()
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.005f;
             scaleY = 4.0f;
-            field07C = 0;
-            field080 = 0;
+            collisionResult = 0;
+            remainingHits = 0;
             field0D8 = 0;
             field0DA = 0;
             velocityX = 0.0f;
@@ -2628,7 +2628,7 @@ void MarisaObject::Advance()
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
-            field080 = 256;
+            remainingHits = 256;
         }
         if (field0D8 > 120 && field0D8 < 321) {
             if (scaleX < FloatConstants::OneAndHalf) {
@@ -2641,7 +2641,7 @@ void MarisaObject::Advance()
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         if (field0D8 == 320) {
@@ -2649,7 +2649,7 @@ void MarisaObject::Advance()
         }
         if (field0D8 > 320) {
             velocityX = 0.0f;
-            field080 = 0;
+            remainingHits = 0;
             scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;
@@ -2668,8 +2668,8 @@ void MarisaObject::Advance()
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.005f;
             scaleY = 4.0f;
-            field07C = 0;
-            field080 = 0;
+            collisionResult = 0;
+            remainingHits = 0;
             field0D8 = 0;
             field0DA = 0;
             velocityX = 0.0f;
@@ -2691,7 +2691,7 @@ void MarisaObject::Advance()
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
-            field080 = 256;
+            remainingHits = 256;
         }
         if (field0D8 > 120 && field0D8 < 321) {
             if (scaleX < FloatConstants::OneAndHalf) {
@@ -2704,7 +2704,7 @@ void MarisaObject::Advance()
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         if (field0D8 == 320) {
@@ -2712,7 +2712,7 @@ void MarisaObject::Advance()
         }
         if (field0D8 > 320) {
             velocityX = 0.0f;
-            field080 = 0;
+            remainingHits = 0;
             scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;
@@ -2731,8 +2731,8 @@ void MarisaObject::Advance()
             ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.005f;
             scaleY = 4.0f;
-            field07C = 0;
-            field080 = 0;
+            collisionResult = 0;
+            remainingHits = 0;
             field0D8 = 0;
             field0DA = 0;
             velocityX = 0.0f;
@@ -2754,7 +2754,7 @@ void MarisaObject::Advance()
             scaleX = (scaleX) + FloatConstants::OneTwoHundredth;
         }
         if (field0D8 == 120) {
-            field080 = 256;
+            remainingHits = 256;
         }
         if (field0D8 > 120 && field0D8 < 341) {
             if (scaleX < FloatConstants::TwoAndHalf) {
@@ -2767,7 +2767,7 @@ void MarisaObject::Advance()
                 0.0f, facing, 1);
             if (field0DA <= 0) {
                 field0DA = 5;
-                field07C = 0;
+                collisionResult = 0;
             }
         }
         if (field0D8 == 340) {
@@ -2775,7 +2775,7 @@ void MarisaObject::Advance()
         }
         if (field0D8 > 340) {
             velocityX = 0.0f;
-            field080 = 0;
+            remainingHits = 0;
             scaleX = (scaleX) * FloatConstants::EightyFiveHundredths;
             if (color[0] > 10) {
                 color[0] -= 10;

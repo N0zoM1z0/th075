@@ -46,14 +46,14 @@ void Fighter::LoadResources()
     LoadPattern();
     DiagnosticLog::AppendString(g_LogPicturesAt00658ED0);
     drawing=new TextureManagerF198();
-    field534Texture=reinterpret_cast<FighterTextureF282*>(new TextureManagerF198());
-    static_cast<TextureManagerF198*>(drawing)->AllocateUnformattedSlots(field478);
+    overlayTextures=new TextureManagerF198();
+    static_cast<TextureManagerF198*>(drawing)->AllocateUnformattedSlots(mainTextureCount);
     sprintf(filename,g_MainTextureFormatAt00658EE4,tag);
     if (strcmp(name,g_CharacterAliceAt00658EFC)==0 || strcmp(name,g_CharacterMeiling2At00658F04)==0)
         static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(paletteIndex+1),g_MainTextureArchiveAltAt00658F0C);
     else
         static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(paletteIndex+1),g_MainTextureArchiveDefaultAt00658F14);
-    reinterpret_cast<TextureManagerF198*>(field534Texture)->AllocateUnformattedSlots(field532);
+    overlayTextures->AllocateUnformattedSlots(overlayTextureCount);
     sprintf(filename,g_SecondaryTextureFormatAt00658F1C,tag);
     if (strcmp(name,g_CharacterPatchouliAt00658F34)==0 ||
         strcmp(name,g_CharacterYuyukoAt00658F40)==0 ||
@@ -61,13 +61,13 @@ void Fighter::LoadResources()
         strcmp(name,g_CharacterYukariAt00658F50)==0 ||
         strcmp(name,g_CharacterYoumuAt00658F58)==0 ||
         strcmp(name,g_CharacterMeiling3At00658F60)==0)
-        reinterpret_cast<TextureManagerF198*>(field534Texture)->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
+        overlayTextures->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
     else
-        reinterpret_cast<TextureManagerF198*>(field534Texture)->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
+        overlayTextures->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
     sprintf(filename,g_ScriptFormatAt00658F78,name,name);
     script.LoadFile(filename,2,0);
     script.LoadArchive(filename,g_ScriptArchiveAt00658F94);
-    field480=new CommandListF283(static_cast<TextureManagerF198*>(drawing));
+    spriteHistory=new CommandListF283(static_cast<TextureManagerF198*>(drawing));
     SetNoticeMode(0);
     ResetRound();
 }

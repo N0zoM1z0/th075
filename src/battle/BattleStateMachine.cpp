@@ -72,7 +72,7 @@ short BattleScene::AdvanceState()
     case BattlePhase::VictoryQuote:
         if (hudOffsetY > -200.0f) hudOffsetY -= 5.0f;
         if (victoryBadgeX < 0.0f) victoryBadgeX += 10.0f;
-        if (fighters[0]->field4E4 == 1 || fighters[1]->field4E4 == 1) {
+        if (fighters[0]->humanConfirmHeldFrames == 1 || fighters[1]->humanConfirmHeldFrames == 1) {
             ++victoryQuoteLine;
             if (victoryQuoteLine < fighters[matchWinnerSide]->quoteLineCount) {
                 g_TextRenderer->RenderTextToTexture(fighters[matchWinnerSide]->quoteLines[victoryQuoteLine], 120, 120, 255, 24, 2, false);

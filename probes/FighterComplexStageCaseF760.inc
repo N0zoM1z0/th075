@@ -2,7 +2,7 @@ case F760_ACTION: {
     if ((*(&y)==FloatConstants::Zero) ||
         velocityY>FloatConstants::Zero) {
         SetCommandSelection(3,4,0xFF);
-        field088=2;
+        grazeFrames=2;
     }
     if ((animationStage)==0 && (field3AC)==0)
         ClearMotionFields();

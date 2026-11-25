@@ -6,7 +6,7 @@ case 0x58: {
         velocityX = -(hitReactionVelocityX);
         velocityY = hitReactionVelocityY;
         field05C = 0.8f;
-        field07C = 0;
+        collisionResult = 0;
     }
     if (velocityY + y <= g_ThresholdAt0065782C) {
         scriptCounterF00=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);

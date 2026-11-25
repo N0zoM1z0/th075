@@ -4,7 +4,7 @@
 // NOT standalone original game functions or accepted exact CODE.
         case 0x194: {
             if ((animationStage)==0 && (animationFrame)==0)
-                field07C=1;
+                collisionResult=1;
             velocityY=velocityY-field05C;
             if ((y+velocityY)<=FloatConstants::Zero) {
                 velocityY=0.0f;
@@ -31,7 +31,7 @@
         }
         case 0x195: {
             if ((animationStage)==0 && (animationFrame)==0)
-                field07C=1;
+                collisionResult=1;
             velocityY=velocityY-field05C;
             if ((y+velocityY)<=FloatConstants::Zero) {
                 velocityY=0.0f;

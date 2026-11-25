@@ -35,12 +35,12 @@ case F1074_CASE: {
         color[3]=0xFF;
         velocityX=F1074_X_SPEED;
         field0D8=0;
-        field080=1;
-        field07C=0;
+        remainingHits=1;
+        collisionResult=0;
     }
-    if (field07C==6) {
-        field07C=0;
-        ++field080;
+    if (collisionResult==6) {
+        collisionResult=0;
+        ++remainingHits;
     }
     x=float(facing)*velocityX+x;
     // The real random-position spawn precedes the status-dependent
@@ -51,7 +51,7 @@ case F1074_CASE: {
         float(RecordedRange(0,60))+x-GeometryConstants::Thirty,
         float(RecordedRange(0,60))+y-GeometryConstants::Thirty,
         facing,0);
-    if (field080==0) {
+    if (remainingHits==0) {
         ClearFrameInfo();
         owner->SetCameraShake(5.0f);
         owner->PlaySound(1);

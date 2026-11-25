@@ -7,8 +7,8 @@ ReimuFighter::ReimuFighter()
     field713=1;
     strcpy(name,g_ReimuNameAt006590C8);
     strcpy(tag,g_ReimuTagAt006590D0);
-    field478=0x287;
-    field532=10;
+    mainTextureCount=0x287;
+    overlayTextureCount=10;
     field06C=-10.0f;
     field705[0]=4;
     field705[1]=4;

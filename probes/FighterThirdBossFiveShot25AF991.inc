@@ -8,7 +8,7 @@
 // F991 pinned original Japanese 004AC040 action 25A native five-shot
 case 0x25A: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1;
+        collisionResult=1;
         ClearMotionFields();
                 scriptCounterF00=0;
         scriptCounterF02=0;

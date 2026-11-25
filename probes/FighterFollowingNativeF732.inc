@@ -11,7 +11,7 @@
                 velocityX=-5.0f;
                 velocityY=static_cast<float>((scriptCounterF00)==1)*FloatConstants::Five+GeometryConstants::Fifteen;
                 field05C=-0.8f;
-                field07C=0;
+                collisionResult=0;
                 field3AC=0;
             }
             if (y>FloatConstants::Zero && (animationStage)<8) {
@@ -30,15 +30,15 @@
         case 0x1FB: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
             if ((animationStage)<8 && y>FloatConstants::Zero && (animationStage)>2)
                 velocityY=velocityY-FloatConstants::One;
             if ((animationStage)==10) {
-                if (field07C!=0 && field07C!=3 && field07C!=1) {
+                if (collisionResult!=0 && collisionResult!=3 && collisionResult!=1) {
                     ResetPrimaryCounters(0x1FA);
                     break;
                 }
@@ -77,8 +77,8 @@
         case 0x1FE: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }
@@ -116,8 +116,8 @@
         case 0x1FF: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 ClearMotionFields();
-                field080=1;
-                field07C=0;
+                remainingHits=1;
+                collisionResult=0;
                 field3AC=0;
                 scriptCounterF00=0;
             }

@@ -21,7 +21,7 @@ void YuyukoObject::Advance()
     }
     switch (action) {
 case 800:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -35,8 +35,8 @@ case 800:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -49,7 +49,7 @@ case 800:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -68,7 +68,7 @@ case 800:
         break;
 
 case 801:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -82,8 +82,8 @@ case 801:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -96,7 +96,7 @@ case 801:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -115,7 +115,7 @@ case 801:
         break;
 
 case 802:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -129,8 +129,8 @@ case 802:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -143,7 +143,7 @@ case 802:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -162,7 +162,7 @@ case 802:
         break;
 
 case 803:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
             ClearFrameInfo(); return;
         }
@@ -170,8 +170,8 @@ case 803:
             field0D0 *= 0.9f;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0CC);
             field0D8 = 0;
             scaleX = 1.0f;
@@ -193,7 +193,7 @@ case 803:
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
             ResetSecondaryCounter(1);
-            field07C = 0;
+            collisionResult = 0;
             ++field0D8;
         }
         break;
@@ -208,13 +208,13 @@ case 804:
             color[2] = 255;
             color[3] = 255;
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
         if (field0CC > 2.0f) field0CC -= 1.0f;
         if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounter(2);
-        if (field080 == 0) { ClearFrameInfo(); return; }
+        if (remainingHits == 0) { ClearFrameInfo(); return; }
         else {
             x = facing * velocityX + x;
             y += velocityY;
@@ -321,8 +321,8 @@ case 808:
             color[2] = 255;
             color[3] = 255;
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field0DC = AngleAt00483300(owner->opponent->y + 128.0f - y,
                 (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
             if (field0DC < -20) field0DC = -20;
@@ -334,11 +334,11 @@ case 808:
         if (animationStage < 3)
             owner->SpawnBattleEffect(809, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
-        if (field07C == 6) {
-            ++field080;
-            field07C = 0;
+        if (collisionResult == 6) {
+            ++remainingHits;
+            collisionResult = 0;
         }
-        if (animationStage == 2 && field07C == 1) {
+        if (animationStage == 2 && collisionResult == 1) {
             ResetSecondaryCounter(3);
             NoOpAt0045B850(9);
             velocityX = 0.0f;
@@ -346,7 +346,7 @@ case 808:
             owner->fieldF0C = 0;
             return;
         }
-        if (animationStage == 3 && animationFrame == 0 && field07C == 1) {
+        if (animationStage == 3 && animationFrame == 0 && collisionResult == 1) {
             for (int burstIndex808 = 0; burstIndex808 < 8; ++burstIndex808) {
                 owner->field314 = burstIndex808;
                 owner->SpawnBattleEffect(810, owner->opponent->x, owner->opponent->y + 100.0f, 1, 1);
@@ -388,7 +388,7 @@ case 809:
 case 810:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -441,8 +441,8 @@ case 812:
             color[2] = 255;
             color[3] = 255;
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
         x = facing * velocityX + x;
@@ -481,7 +481,7 @@ case 812:
 
 
 case 813:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -495,8 +495,8 @@ case 813:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -509,7 +509,7 @@ case 813:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -577,8 +577,8 @@ case 816:
             color[2] = 255;
             color[3] = 255;
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
         x = facing * velocityX + x;
@@ -625,8 +625,8 @@ case 817:
             color[2] = 255;
             color[3] = 255;
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
         x = facing * velocityX + x;
@@ -666,7 +666,7 @@ case 817:
 
 
 case 818:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -680,8 +680,8 @@ case 818:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -694,7 +694,7 @@ case 818:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -713,7 +713,7 @@ case 818:
         break;
 
 case 819:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -727,8 +727,8 @@ case 819:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -741,7 +741,7 @@ case 819:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -825,11 +825,11 @@ case 822:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field0D8 = 0;
         }
-        if (field07C == 6) field07C = 0;
+        if (collisionResult == 6) collisionResult = 0;
         if (animationStage == 1 && field0D8 == 0) {
             if (scaleX < 1.0f) {
                 scaleX += 0.1f;
@@ -928,11 +928,11 @@ case 825:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             field0D8 = 0;
         }
-        if (field07C == 6) field07C = 0;
+        if (collisionResult == 6) collisionResult = 0;
         if (animationStage == 1 && field0D8 == 0) {
             if (scaleX < 1.0f) {
                 scaleX += 0.1f;
@@ -963,17 +963,17 @@ case 825:
         if (animationStage == 2 && animationFrame == 0) {
             owner->SpawnBattleEffect(824, x, y, facing, 1);
             owner->SetCameraShake(4.0f);
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 3 && animationFrame == 0) {
             owner->SpawnBattleEffect(824, x, y, facing, 1);
             owner->SetCameraShake(4.0f);
-            field07C = 0;
+            collisionResult = 0;
         }
         if (animationStage == 4 && animationFrame == 0) {
             owner->SpawnBattleEffect(824, x, y, facing, 1);
             owner->SetCameraShake(4.0f);
-            field07C = 0;
+            collisionResult = 0;
         }
         break;
 
@@ -1081,7 +1081,7 @@ case 829:
         break;
 
 case 830:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -1095,8 +1095,8 @@ case 830:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 1;
-                field07C = 0;
+                remainingHits = 1;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -1110,7 +1110,7 @@ case 830:
             --field0D8;
             if (field0D8 < 0) field0D8 = 0;
             SetPolarVelocity(0.0f, field0D8 * field0CC * 0.01f);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
+            if (collisionResult != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
@@ -1142,8 +1142,8 @@ case 831:
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
-            field080 = 0;
+            collisionResult = 0;
+            remainingHits = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1194,7 +1194,7 @@ case 831:
 
 
 case 832:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
             ClearFrameInfo(); return;
         }
@@ -1202,8 +1202,8 @@ case 832:
             field0D0 *= 0.9f;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0CC);
             field0D8 = 0;
             scaleX = 1.0f;
@@ -1225,13 +1225,13 @@ case 832:
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
             ResetSecondaryCounter(1);
-            field07C = 0;
+            collisionResult = 0;
             ++field0D8;
         }
         break;
 
 case 833:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
             ClearFrameInfo(); return;
         }
@@ -1239,8 +1239,8 @@ case 833:
             field0D0 *= 0.75f;
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0CC);
             field0D8 = 0;
             scaleX = 1.0f;
@@ -1262,13 +1262,13 @@ case 833:
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
             ResetSecondaryCounter(1);
-            field07C = 0;
+            collisionResult = 0;
             ++field0D8;
         }
         break;
 
 case 834:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 38) {
             ClearFrameInfo();
             if (owner->fieldEFA > 25) {
@@ -1282,8 +1282,8 @@ case 834:
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 ResetTransform(0.0f, 0.0f, 0.0f);
-                field080 = 2;
-                field07C = 0;
+                remainingHits = 2;
+                collisionResult = 0;
                 SetPolarVelocity(field0C8, field0CC);
                 field0D8 = 0;
                 scaleX = 1.0f;
@@ -1296,8 +1296,8 @@ case 834:
             }
             ++field0D8;
             if (animationStage < 38) SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C == 4 && field080 > 0) field07C = 0;
-            if (field07C != 0 && animationStage < 38) {
+            if (collisionResult == 4 && remainingHits > 0) collisionResult = 0;
+            if (collisionResult != 0 && animationStage < 38) {
                 ResetSecondaryCounter(38);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
@@ -1396,8 +1396,8 @@ case 837:
             color[2] = 255;
             color[3] = 255;
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
         if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounter(2);
@@ -1434,9 +1434,9 @@ case 838:
         }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
-            if (owner->action == 613) field080 = 1;
-            else field080 = 0;
+            collisionResult = 0;
+            if (owner->action == 613) remainingHits = 1;
+            else remainingHits = 0;
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1452,7 +1452,7 @@ case 838:
             if (field0D8 > 120) field0D8 = 120;
             x = velocityX + field0CC;
             y = velocityY + field0D0;
-            if ((field080 == 0 && owner->action != 611 && owner->action != 612) ||
+            if ((remainingHits == 0 && owner->action != 611 && owner->action != 612) ||
                 ((owner->action == 611 || owner->action == 612 || owner->action == 613) && owner->animationStage == 0)) {
                 ResetSecondaryCounter(3);
                 velocityX = 0.0f;
@@ -1486,7 +1486,7 @@ case 838:
         break;
 
 case 839:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
             ClearFrameInfo();
             owner->SpawnBattleEffect(996, x, y, 1, 1);
@@ -1511,15 +1511,15 @@ case 839:
             field0DA = 0;
             field0DC = 0;
             SetPolarVelocity(RecordedRange(0, 60) - 30, 4.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
-        if (field07C != 0) { ClearFrameInfo(); return; }
+        if (collisionResult != 0) { ClearFrameInfo(); return; }
         if (owner->opponent->y + 100.0f < y) velocityY -= 0.02f;
         if (owner->opponent->y + 100.0f >= y) velocityY += 0.02f;
         velocityX += 0.05f;
         if (field0D8 <= 0) {
-            field07C = 0;
+            collisionResult = 0;
             field0D8 = 10;
         }
         --field0D8;
@@ -1534,7 +1534,7 @@ case 839:
             scaleY = field0DA * 0.01f + 0.9f;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
-            if (field0DC < 60 && field080 > 0) {
+            if (field0DC < 60 && remainingHits > 0) {
                 ResetSecondaryCounter(1);
                 ++field0DC;
             }
@@ -1596,7 +1596,7 @@ case 841:
 case 842:
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field07C = 0;
+            collisionResult = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -1649,8 +1649,8 @@ case 843:
             color[2] = 255;
             color[3] = 255;
             field0D8 = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field0DC = AngleAt00483300(owner->opponent->y + 128.0f - y,
                 (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
             if (field0DC < -40) field0DC = -40;
@@ -1662,11 +1662,11 @@ case 843:
         if (animationStage < 3)
             owner->SpawnBattleEffect(809, x - 10.0f + RecordedRange(0, 20),
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
-        if (field07C == 6) {
-            ++field080;
-            field07C = 0;
+        if (collisionResult == 6) {
+            ++remainingHits;
+            collisionResult = 0;
         }
-        if (animationStage == 2 && field07C == 1) {
+        if (animationStage == 2 && collisionResult == 1) {
             NoOpAt0045B850(14);
             ResetSecondaryCounter(3);
             velocityX = 0.0f;
@@ -1674,7 +1674,7 @@ case 843:
             owner->fieldF0C = 0;
             return;
         }
-        if (animationStage == 3 && animationFrame == 0 && field07C == 1) {
+        if (animationStage == 3 && animationFrame == 0 && collisionResult == 1) {
             for (int burstIndex843 = 0; burstIndex843 < 8; ++burstIndex843) {
                 owner->field314 = burstIndex843;
                 owner->SpawnBattleEffect(842, owner->opponent->x, owner->opponent->y + 100.0f, 1, 1);
@@ -1803,12 +1803,12 @@ case 899:
         return;
 
 case 900:
-        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (collisionResult == 5) { ClearFrameInfo(); return; }
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 3;
-            field07C = 0;
+            remainingHits = 3;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0CC);
             field0D8 = 0;
             field0DA = 0;
@@ -1838,12 +1838,12 @@ case 900:
         }
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             ResetSecondaryCounter(1);
         }
         if (animationStage == 3 && animationFrame == 0 && field0D8 < g_OptionsModeAt006714D0 * 2) {
             ResetSecondaryCounter(2);
-            field07C = 0;
+            collisionResult = 0;
             ++field0D8;
         }
         break;
@@ -1900,8 +1900,8 @@ case 903:
             color[3] = 255;
             field0D8 = 0;
             field0DA = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
         if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounter(2);
@@ -1941,8 +1941,8 @@ case 904:
             field0D8 = 0;
             field0DA = 0;
             field0DC = 0;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             field0C8 = -RecordedRange(0, 90) - 30;
             field0CC = RecordedRange(0, 9) + 8;
             SetPolarVelocity(field0C8, field0CC);
@@ -1966,7 +1966,7 @@ case 904:
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
             field0DC = 2;
         }
-        if (field07C != 0 && animationStage == 2) { ResetSecondaryCounter(3); return; }
+        if (collisionResult != 0 && animationStage == 2) { ResetSecondaryCounter(3); return; }
         if (animationFrame == 0) {
             field0DA = RecordedRange(0, 20);
             scaleX = field0DA * 0.02f + 0.9f;
@@ -2095,8 +2095,8 @@ case 908:
             field0D8 = 0;
             field0DA = field0C8;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 256;
-            field07C = 0;
+            remainingHits = 256;
+            collisionResult = 0;
             SetPolarVelocity(field0DA, field0D8 * 0.1f + 5.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -2105,9 +2105,9 @@ case 908:
             color[2] = 255;
             color[3] = 255;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
         ++field0D8;
         SetPolarVelocity(field0DA, field0D8 * 0.1f + 5.0f);
@@ -2117,7 +2117,7 @@ case 908:
         if (color[0] > 20 && animationStage == 2) color[0] -= 20;
         if (AdvanceNestedFrame() == animationStageCount) {
             ResetSecondaryCounter(1);
-            field07C = 0;
+            collisionResult = 0;
             return;
         }
         break;
@@ -2128,8 +2128,8 @@ case 909:
             field0D8 = 0;
             field0DA = field0C8;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, 1.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -2146,11 +2146,11 @@ case 909:
         y -= velocityY;
         rotationZ = AngleAt00483300(velocityY, velocityX) / GeometryConstants::RadiansPerDegree;
         if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
-        if (field07C != 0 && animationStage < 3) { ResetSecondaryCounter(3); return; }
+        if (collisionResult != 0 && animationStage < 3) { ResetSecondaryCounter(3); return; }
         if (color[0] > 20 && animationStage == 3) color[0] -= 20;
         if (AdvanceNestedFrame() == animationStageCount) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) {
-            field07C = 0;
+            collisionResult = 0;
             field0D8 = 0;
             field0C8 = AngleAt00483300(owner->opponent->y + 100.0f - y,
                 (owner->opponent->x - x) * facing) / GeometryConstants::RadiansPerDegree;
@@ -2183,8 +2183,8 @@ case 911:
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityY = 0.0f;
             velocityX = 0.0f;
             scaleX = 0.25f;
@@ -2197,9 +2197,9 @@ case 911:
             rotationY = 0.0f;
             rotationZ = 0.0f;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
         if (animationStage == 1 && animationFrame == 0)
             owner->SpawnBattleEffect(912, x, y, facing, 1);
@@ -2272,8 +2272,8 @@ case 914:
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             velocityY = 0.0f;
             velocityX = 0.0f;
             scaleX = 0.25f;
@@ -2286,9 +2286,9 @@ case 914:
             rotationY = 0.0f;
             rotationZ = 0.0f;
         }
-        if (field07C == 6) {
-            field07C = 0;
-            ++field080;
+        if (collisionResult == 6) {
+            collisionResult = 0;
+            ++remainingHits;
         }
         if (animationStage == 1 && animationFrame == 0)
             owner->SpawnBattleEffect(915, x, y, facing, 1);
@@ -2335,8 +2335,8 @@ case 916:
         if (owner->spellTimer <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0CC);
             field0D8 = 0;
             scaleX = 1.0f;
@@ -2360,8 +2360,8 @@ case 917:
         if (owner->spellTimer <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0CC);
             field0D8 = 0;
             scaleX = 1.0f;
@@ -2385,8 +2385,8 @@ case 918:
         if (owner->spellTimer <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             ResetTransform(0.0f, 0.0f, 0.0f);
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
             SetPolarVelocity(field0C8, field0CC);
             field0D8 = 0;
             scaleX = 1.0f;
@@ -2418,8 +2418,8 @@ case 919:
             color[1] = 255;
             color[2] = 255;
             color[3] = 255;
-            field080 = 1;
-            field07C = 0;
+            remainingHits = 1;
+            collisionResult = 0;
         }
         if (AdvanceNestedFrame() == animationStageCount) {
             if (field0D8 < 2 - g_OptionsModeAt006714D0) ++field0D8;
