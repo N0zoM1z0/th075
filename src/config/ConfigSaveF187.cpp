@@ -19,7 +19,7 @@ void SaveConfiguration()
     if (file == INVALID_HANDLE_VALUE)
         return;
     SetFilePointer(file, 0, 0, FILE_BEGIN);
-    WriteFile(file, g_KeyBindingsAt00671440, 0x50, &written, 0);
+    WriteFile(file, g_PlayerKeyBindings, sizeof(g_PlayerKeyBindings), &written, 0);
     WriteFile(file, &g_OptionsFlagAt00671604, 1, &written, 0);
     WriteFile(file, &g_SettingsByteAt006714D2, 1, &written, 0);
     g_SettingsByteAt006714D2 = 1;

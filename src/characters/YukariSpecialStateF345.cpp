@@ -6,7 +6,7 @@
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 void YukariFighter::AdvanceAuxiliary() {
-    if (field3B8 == 0)
+    if (opponentFreezeTimer == 0)
         fieldF12 = fieldF12 + 2;
     if (fieldF12 >= 180)
         fieldF12 = -180;

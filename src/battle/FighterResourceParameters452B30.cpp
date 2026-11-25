@@ -7,7 +7,7 @@
 void Fighter::SelectResourceParameters()
 {
     field3A2 = 0;
-    if (field2CD != 0 && g_CombatMode == CombatMode::Story) {
+    if (cpuControlled != 0 && g_CombatMode == CombatMode::Story) {
         spellTimer = 9999;
         field3A4 =
             field3D0[field39D];

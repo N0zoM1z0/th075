@@ -14,7 +14,7 @@ namespace DisplayOptions
     bool use16BitBackBuffer;
 }
 
-BYTE g_KeyBindingsAt00671440[0x50];
+InputBindingKeys g_PlayerKeyBindings[2];
 BYTE g_OptionsFlagAt00671604;
 BYTE g_SettingsByteAt006714D2;
 BYTE g_OptionsFlagAt00671430;
@@ -68,7 +68,7 @@ void ReadIni()
     if (file == INVALID_HANDLE_VALUE)
         return;
     SetFilePointer(file, 0, 0, FILE_BEGIN);
-    ReadFile(file, g_KeyBindingsAt00671440, 0x50, &readSize, 0);
+    ReadFile(file, g_PlayerKeyBindings, sizeof(g_PlayerKeyBindings), &readSize, 0);
     ReadFile(file, &g_OptionsFlagAt00671604, 1, &readSize, 0);
     ReadFile(file, &g_SettingsByteAt006714D2, 1, &readSize, 0);
     g_SettingsByteAt006714D2 = 1;

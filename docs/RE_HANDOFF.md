@@ -35,6 +35,16 @@ same executable. The headless replay reader and writer round-tripped
 the four external fixtures and one fixture with a timed battle command.
 [Mode and replay evidence](KNOWLEDGE_BASE.md#battle-modes-controls-and-replay-data)
 
+The fighter layout now identifies player and controller selection, palette,
+opponent freeze and practice settings. The configuration reader and both
+input consumers share two typed keyboard records. All 447 affected exact
+units passed. The strict relink moved uninitialized data, changing the
+data section's virtual size and the operands that point into it. The
+remaining linked bytes match after accounting for the COFF timestamp.
+The game configuration reader, writer and input mapper also round-tripped
+the 90-byte Windows playtest file and recovered all 18 expected scan codes.
+[Player and input evidence](KNOWLEDGE_BASE.md#battle-modes-controls-and-replay-data)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

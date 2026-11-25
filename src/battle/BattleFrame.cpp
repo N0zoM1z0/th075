@@ -83,14 +83,14 @@ void BattleScene::UpdatePlayerCounters()
 {
     fighters[0]->UpdateCounters();
     fighters[1]->UpdateCounters();
-    fighters[0]->field3BA = fighters[0]->field3B8;
-    fighters[1]->field3BA = fighters[1]->field3B8;
-    if (fighters[0]->field3B8 > 0) --fighters[0]->field3B8;
-    if (fighters[1]->field3B8 > 0) --fighters[1]->field3B8;
+    fighters[0]->opponentFreezeSnapshot = fighters[0]->opponentFreezeTimer;
+    fighters[1]->opponentFreezeSnapshot = fighters[1]->opponentFreezeTimer;
+    if (fighters[0]->opponentFreezeTimer > 0) --fighters[0]->opponentFreezeTimer;
+    if (fighters[1]->opponentFreezeTimer > 0) --fighters[1]->opponentFreezeTimer;
 }
 void Fighter::AdvanceGuardedState()
 {
-    if (field082 == 0 && opponent->field3B8 == 0) {
+    if (field082 == 0 && opponent->opponentFreezeTimer == 0) {
         if (action < 50) ForwardBaseAction();
         if (action >= 50 && action < 150 && y > 0.0f)
             ChooseFrameAction();
@@ -99,7 +99,7 @@ void Fighter::AdvanceGuardedState()
 }
 void Fighter::AdvancePosition()
 {
-    if (field082 == 0 && opponent->field3B8 == 0) {
+    if (field082 == 0 && opponent->opponentFreezeTimer == 0) {
         if ((CheckHorizontalLimits() * facing) *
             (velocityX + field488 + opponent->field490) >= 0.0f)
             x += facing *
@@ -125,7 +125,7 @@ void Fighter::ChooseFrameAction()
     if (health <= 0) return;
     if (flashGauge > 0) {
         if (y > 0.0f) --flashGauge;
-    } else if (field2CD != 0 && g_CombatMode == CombatMode::Practice && field52E == 0) {
+    } else if (cpuControlled != 0 && g_CombatMode == CombatMode::Practice && practiceManualAirRecovery == 0) {
         if (rand() % 2) ResetPrimaryCounters(180);
         else ResetPrimaryCounters(181);
     } else if (inputX != 0 &&

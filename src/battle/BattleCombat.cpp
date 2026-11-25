@@ -95,7 +95,7 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     case 2: attacker->score += 300; break;
     case 3: attacker->score += 500; break;
     }
-    if (g_CombatMode == CombatMode::Story && attacker->field2CC == 0) {
+    if (g_CombatMode == CombatMode::Story && attacker->playerSide == 0) {
         if (attacker->comboDamage > g_GameProgress.GetSelectedValue12())
             g_GameProgress.SetSelectedValue12(attacker->comboDamage);
         if (attacker->comboCount > g_GameProgress.GetSelectedValue8())
@@ -187,7 +187,7 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         case 2: attacker->score += 300; break;
         case 3: attacker->score += 500; break;
         }
-        if (g_CombatMode == CombatMode::Story && attacker->field2CC == 0) {
+        if (g_CombatMode == CombatMode::Story && attacker->playerSide == 0) {
             if (attacker->comboDamage > g_GameProgress.GetSelectedValue12())
                 g_GameProgress.SetSelectedValue12(attacker->comboDamage);
             if (attacker->comboCount > g_GameProgress.GetSelectedValue8())
@@ -205,7 +205,7 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
 
 short Fighter::CalculateDamage(Actor *attack)
 {
-    if (opponent->field2CD != 0 && g_CombatMode == CombatMode::Story) {
+    if (opponent->cpuControlled != 0 && g_CombatMode == CombatMode::Story) {
         return static_cast<short>(attack->savedFrameInfo->damage * attack->field09C *
             attack->field0A4 * field0A0 * comboRate *
             (opponent->healthBeforeCollision / 4.0f / opponent->healthLimits[opponent->field39D] + 0.75));

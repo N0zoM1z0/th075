@@ -6,7 +6,7 @@
 
 void Fighter::RenderSideEffect()
 {
-    if (field2CC == 0) {
+    if (playerSide == 0) {
         DRAWING->DrawSprite(noticeBadge,
             0 - noticeAxis * noticeAxis -
                 noticeExtent * noticeExtent - 96,
@@ -25,7 +25,7 @@ void Fighter::RenderSideEffect()
 
 void Fighter::DrawFacingSprite(short sprite, float position, float y, DWORD color)
 {
-    if (field2CC == 0) {
+    if (playerSide == 0) {
         DRAWING->DrawSprite(sprite, 0.0f + position - 256.0f + 160.0f,
             y, color, 0, 0, 1.0f, 0, 0);
     } else {
@@ -37,7 +37,7 @@ void Fighter::DrawFacingSprite(short sprite, float position, float y, DWORD colo
 void Fighter::RenderFadeOverlay()
 {
     unsigned char alpha = 160 - abs(128 - fadeAlpha) * 5 / 4;
-    if (field2CC == 0) {
+    if (playerSide == 0) {
         DRAWING->DrawSprite(drawMode,
             0 - fadeAlpha / 2, 0,
             D3DCOLOR_ARGB(alpha, 255, 255, 255), 0, 0, 1.0f, 0, 0);

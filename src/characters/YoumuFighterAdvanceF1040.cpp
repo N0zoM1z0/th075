@@ -15,7 +15,7 @@ extern float g_F857ShotYAt00659298;
 // five instruction widths remain NONEXACT. No whole CODE credit.
 
 void YoumuFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:

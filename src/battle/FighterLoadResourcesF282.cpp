@@ -50,9 +50,9 @@ void Fighter::LoadResources()
     static_cast<TextureManagerF198*>(drawing)->AllocateUnformattedSlots(field478);
     sprintf(filename,g_MainTextureFormatAt00658EE4,tag);
     if (strcmp(name,g_CharacterAliceAt00658EFC)==0 || strcmp(name,g_CharacterMeiling2At00658F04)==0)
-        static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(field2CE+1),g_MainTextureArchiveAltAt00658F0C);
+        static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(paletteIndex+1),g_MainTextureArchiveAltAt00658F0C);
     else
-        static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(field2CE+1),g_MainTextureArchiveDefaultAt00658F14);
+        static_cast<TextureManagerF198*>(drawing)->Load(filename,static_cast<signed char>(paletteIndex+1),g_MainTextureArchiveDefaultAt00658F14);
     reinterpret_cast<TextureManagerF198*>(field534Texture)->AllocateUnformattedSlots(field532);
     sprintf(filename,g_SecondaryTextureFormatAt00658F1C,tag);
     if (strcmp(name,g_CharacterPatchouliAt00658F34)==0 ||

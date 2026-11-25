@@ -9,7 +9,7 @@ extern float g_MarisaResourceYAt00659298;
 extern float g_MarisaResourceYAt0065928C;
 extern float g_MarisaResourceYAt00659274;
 void MarisaFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
 
     switch (action) {
@@ -971,7 +971,7 @@ void MarisaFighter::Advance() {
 
     case 0x63: {
         if (g_CombatMode != CombatMode::Story ||
-            field2CD == 0) {
+            cpuControlled == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
                 opponent->action < 150) {

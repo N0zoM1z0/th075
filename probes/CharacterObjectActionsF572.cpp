@@ -19,9 +19,9 @@ extern float AngleAt00483300(float first, float second);
 extern float AbsFloatAt00412D90(float value);
 
 void AliceObject::Advance() {
-    if (owner->opponent->field3BA != 0)
+    if (owner->opponent->opponentFreezeSnapshot != 0)
         return;
-    if (owner->field3BA != 0 && field08A == 0)
+    if (owner->opponentFreezeSnapshot != 0 && field08A == 0)
         return;
     if (field082 != 0) {
         --field082;

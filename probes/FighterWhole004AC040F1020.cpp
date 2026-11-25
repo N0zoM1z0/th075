@@ -83,7 +83,7 @@ extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 void SakuyaFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:

@@ -14,7 +14,7 @@ void Fighter::AdjustCameraOffset(signed char alternate)
         direction = -1;
     }
 
-    if (field2CC == 0) {
+    if (playerSide == 0) {
         g_CameraHorizontalBiasAt006713EC = direction * -50;
         if (y > OPPONENT_Y) {
             g_CameraVerticalBiasAt0067140C = 0;

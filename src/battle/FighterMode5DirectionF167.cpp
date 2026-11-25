@@ -3,7 +3,7 @@
 
 void Fighter::ApplyMode5Direction()
 {
-    switch (field530) {
+    switch (practiceActionMode) {
     case 0:
         inputY = 0;
         break;
@@ -17,7 +17,7 @@ void Fighter::ApplyMode5Direction()
         ChooseAction();
         return;
     }
-    if (field531 > 0) {
+    if (practiceCenterPosition > 0) {
         if (x < 620.0f)
             inputX = 1;
         if (x > 660.0f)

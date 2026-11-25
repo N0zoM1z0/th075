@@ -16,7 +16,7 @@ extern float g_F743_Y19CAt00659A14;
 extern float g_OneShotYAt0065928C;
 extern float g_StormYAt0065948C;
 void RemiliaFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:

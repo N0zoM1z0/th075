@@ -103,31 +103,31 @@ void BattleScene::ProcessDebugKeys()
 {
     if (g_InputMappings[0].IsKeyDown(0x3B)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            fighters[1]->field52C = (fighters[1]->field52C + 1) % 6;
+            fighters[1]->practiceSpellSelection = (fighters[1]->practiceSpellSelection + 1) % 6;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappings[0].IsKeyDown(0x3C)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            fighters[1]->field52D = (fighters[1]->field52D + 9) % 10;
+            fighters[1]->practiceSpellStock = (fighters[1]->practiceSpellStock + 9) % 10;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappings[0].IsKeyDown(0x3D)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            fighters[1]->field52D = (fighters[1]->field52D + 1) % 10;
+            fighters[1]->practiceSpellStock = (fighters[1]->practiceSpellStock + 1) % 10;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappings[0].IsKeyDown(0x3E)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            fighters[1]->field52F = (fighters[1]->field52F + 1) % 4;
+            fighters[1]->practiceGuardMode = (fighters[1]->practiceGuardMode + 1) % 4;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappings[0].IsKeyDown(0x3F)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            fighters[1]->field52E = (fighters[1]->field52E + 1) % 2;
+            fighters[1]->practiceManualAirRecovery = (fighters[1]->practiceManualAirRecovery + 1) % 2;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappings[0].IsKeyDown(0x40)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            fighters[1]->field530 = (fighters[1]->field530 + 1) % 4;
+            fighters[1]->practiceActionMode = (fighters[1]->practiceActionMode + 1) % 4;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappings[0].IsKeyDown(0x41)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
-            fighters[1]->field531 = (fighters[1]->field531 + 1) % 2;
+            fighters[1]->practiceCenterPosition = (fighters[1]->practiceCenterPosition + 1) % 2;
         g_DebugKeyRepeatAt0068D618++;
     } else if (g_InputMappings[0].IsKeyDown(0x42)) {
         if (g_DebugKeyRepeatAt0068D618 == 1)
@@ -136,7 +136,7 @@ void BattleScene::ProcessDebugKeys()
     } else {
         g_DebugKeyRepeatAt0068D618 = 0;
     }
-    fighters[0]->field39D = 2 - fighters[1]->field52C / 3;
-    fighters[0]->selectedSpellCards[0] = fighters[1]->field52C % 3;
-    fighters[0]->selectedSpellCards[1] = fighters[1]->field52C % 3;
+    fighters[0]->field39D = 2 - fighters[1]->practiceSpellSelection / 3;
+    fighters[0]->selectedSpellCards[0] = fighters[1]->practiceSpellSelection % 3;
+    fighters[0]->selectedSpellCards[1] = fighters[1]->practiceSpellSelection % 3;
 }

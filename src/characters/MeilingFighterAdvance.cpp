@@ -7,7 +7,7 @@
 extern float g_MeilingDoubleShotYAt00659F3C;
 
 void MeilingFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
 
     switch (action) {
@@ -916,7 +916,7 @@ void MeilingFighter::Advance() {
 
     case 0x63: {
         if (g_CombatMode != CombatMode::Story ||
-            field2CD == 0) {
+            cpuControlled == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
                 opponent->action < 150) {

@@ -92,15 +92,15 @@ void BattleCharacterLoaderF398::LoadCharacters() {
          case 9:g_BattleFightersAt00671418[side]=new SuikaFighter;break;
          case 10:g_BattleFightersAt00671418[side]=new MeilingFighter;break;
        }
-       g_BattleFightersAt00671418[side]->field2CC=static_cast<signed char>(side);
-       g_BattleFightersAt00671418[side]->field2CE=g_PlayerRoundAt006714AC[side];
+       g_BattleFightersAt00671418[side]->playerSide=static_cast<signed char>(side);
+       g_BattleFightersAt00671418[side]->paletteIndex=g_PlayerRoundAt006714AC[side];
        g_BattleFightersAt00671418[side]->selectedSpellCards[0]=g_PlayerAltAt00671610[side];
        g_BattleFightersAt00671418[side]->selectedSpellCards[1]=g_PlayerOtherAt006714CC[side];
        g_BattleFightersAt00671418[side]->LoadResources();
-       g_BattleFightersAt00671418[side]->SetBindings(g_KeyBindingsAt00671440+side*0x28);
+       g_BattleFightersAt00671418[side]->SetBindings(&g_PlayerKeyBindings[side]);
        if (g_CombatMode==CombatMode::Story || (g_CombatMode==CombatMode::Arcade && side==1)) {
           g_BattleFightersAt00671418[side]->field0A4=1.0f;
-          g_BattleFightersAt00671418[side]->field465=static_cast<int>(g_OptionsModeAt006714D0==0);
+          g_BattleFightersAt00671418[side]->autoGuard=static_cast<int>(g_OptionsModeAt006714D0==0);
        } else {
           switch(g_PlayerSettingsAt00671434[side]) {
              case 0:g_BattleFightersAt00671418[side]->field0A4=0.5f;break;
@@ -109,7 +109,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
              case 3:g_BattleFightersAt00671418[side]->field0A4=1.5f;break;
              case 4:g_BattleFightersAt00671418[side]->field0A4=2.0f;break;
           }
-          g_BattleFightersAt00671418[side]->field465=g_PlayerDifficultyAt00671438[side];
+          g_BattleFightersAt00671418[side]->autoGuard=g_PlayerDifficultyAt00671438[side];
        }
     }
     if(side==0 && g_CombatMode==CombatMode::Story) {
@@ -133,11 +133,11 @@ void BattleCharacterLoaderF398::LoadCharacters() {
     g_BattleFightersAt00671418[side]->ResetRound();
  }
  if(g_CombatMode==CombatMode::Practice || g_CombatMode==CombatMode::DuelCpu || g_CombatMode==CombatMode::Story || g_CombatMode==CombatMode::Arcade) {
-   if(g_SelectedSideAt006714B8==0) {g_BattleFightersAt00671418[0]->field2CD=0;g_BattleFightersAt00671418[1]->field2CD=1;}
-   else {g_BattleFightersAt00671418[0]->field2CD=1;g_BattleFightersAt00671418[1]->field2CD=0;}
+   if(g_SelectedSideAt006714B8==0) {g_BattleFightersAt00671418[0]->cpuControlled=0;g_BattleFightersAt00671418[1]->cpuControlled=1;}
+   else {g_BattleFightersAt00671418[0]->cpuControlled=1;g_BattleFightersAt00671418[1]->cpuControlled=0;}
  } else if (g_CombatMode==CombatMode::Attract) {
-   g_BattleFightersAt00671418[0]->field2CD=1;g_BattleFightersAt00671418[1]->field2CD=1;
- } else {g_BattleFightersAt00671418[0]->field2CD=0;g_BattleFightersAt00671418[1]->field2CD=0;}
+   g_BattleFightersAt00671418[0]->cpuControlled=1;g_BattleFightersAt00671418[1]->cpuControlled=1;
+ } else {g_BattleFightersAt00671418[0]->cpuControlled=0;g_BattleFightersAt00671418[1]->cpuControlled=0;}
  g_BattleFightersAt00671418[0]->BindOpponent(g_BattleFightersAt00671418[1]);
  g_BattleFightersAt00671418[1]->BindOpponent(g_BattleFightersAt00671418[0]);
  CameraInputs412660::Initialize(&g_BattleFightersAt00671418[0]->x,&g_BattleFightersAt00671418[0]->y,&g_BattleFightersAt00671418[1]->x,&g_BattleFightersAt00671418[1]->y);

@@ -30,12 +30,12 @@ void SakuyaFighter::AdvanceAuxiliary() {
         field084=2;field088=2;
         if(fieldF10<=0) {
             fieldF10=0;fieldF12=0;
-            opponent->field3BC=0;
+            opponent->guardResponseCooldown=0;
             opponent->field010=0;
         }
         if(fieldF10>0 && action!=0x2C0 && action!=0x2C2) {
             fieldF10=spirit;
-            field3B8=2;
+            opponentFreezeTimer=2;
             if(field39D==2) {
                 if(spirit>8) UpdateGaugeTimer(8);
                 else fieldF10=0;

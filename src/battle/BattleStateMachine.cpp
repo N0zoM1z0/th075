@@ -228,7 +228,7 @@ short BattleScene::AdvanceState()
         for (j = 0; j < 2; ++j) {
             if (fighters[j]->action < 50) {
                 fighters[j]->health = 10000; fighters[j]->recoverableHealth = 10000;
-                fighters[j]->spellPower = static_cast<float>(fighters[1]->field52D * 100);
+                fighters[j]->spellPower = static_cast<float>(fighters[1]->practiceSpellStock * 100);
                 fighters[j]->spellDeclarationExpired = 0; fighters[j]->bombCount = 2;
             }
         }

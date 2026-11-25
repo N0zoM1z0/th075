@@ -10,8 +10,8 @@ float __cdecl AngleAt00483300(float, float);
 
 // The state labels and names describe observed behavior, not original identity.
 void MeilingObject::Advance() {
-    if (owner->opponent->field3BA != 0) return;
-    if (owner->field3BA != 0 && field08A == 0) return;
+    if (owner->opponent->opponentFreezeSnapshot != 0) return;
+    if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
     if (field082 != 0) {
         --field082;
         return;
@@ -433,7 +433,7 @@ void MeilingObject::Advance() {
                 return;
             }
             else {
-                if (field08A > 0 && owner->field3B8 == 0) {
+                if (field08A > 0 && owner->opponentFreezeTimer == 0) {
                     field08A = 0;
                 }
                 if (animationStage == 0 && animationFrame == 0) {
@@ -1949,7 +1949,7 @@ void MeilingObject::Advance() {
             return;
         }
         else {
-            if (field08A > 0 && owner->field3B8 == 0) {
+            if (field08A > 0 && owner->opponentFreezeTimer == 0) {
                 field08A = 0;
             }
             if (animationStage < 3 && owner->action != 703) {

@@ -20,7 +20,7 @@ extern float g_ReimuStormRightBoundaryAt0065920C;
 extern float g_ReimuApproachRightBoundAt0065945C;
 
 void ReimuFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
     switch (action) {
         case 0x0:

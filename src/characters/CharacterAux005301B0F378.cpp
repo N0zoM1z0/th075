@@ -11,7 +11,7 @@
 // The snapshot is a genuine physically observed 16-byte command structure,
 // not an inferred complete character class or artificial padding.
 void YoumuFighter::AdvanceAuxiliary() {
-    if (field082==0 && field3B8==0) {
+    if (field082==0 && opponentFreezeTimer==0) {
         ObservedInputSnapshotF378 snapshot;
         snapshot.action=action;
         snapshot.stage=animationStage;
@@ -42,12 +42,12 @@ void YoumuFighter::AdvanceAuxiliary() {
                 SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
                 ++fieldF0E;
             }
-            if (field2CD!=0 && opponent->field6EF!=0 && fieldF0C==0) {
+            if (cpuControlled!=0 && opponent->field6EF!=0 && fieldF0C==0) {
                 SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
                 ++fieldF0E;
                 fieldF0C=1;
             }
-            if (field2CD==0 && field6EF!=0 && fieldF0C==0) {
+            if (cpuControlled==0 && field6EF!=0 && fieldF0C==0) {
                 SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
                 ++fieldF0E;
                 fieldF0C=1;

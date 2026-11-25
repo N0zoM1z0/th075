@@ -882,6 +882,27 @@ durations for A, B, C, D and pause. Scene-specific actions such as menu
 confirmation read the same button slots as fighter controls.
 [Replay layout](../src/replay/ReplayRecords.hpp) · [Input slots](../src/input/InputControl.hpp) · [Combat modes](../src/battle/CombatMode.hpp)
 
+The fighter loader sets `playerSide` before reset and assigns
+`cpuControlled` according to the combat mode and selected human player.
+`paletteIndex` comes from character selection and selects the texture
+variant during resource loading. The battle tick snapshots each fighter's
+`opponentFreezeTimer` before decrementing it. Character and projectile
+updates later in that frame read `opponentFreezeSnapshot`, so the final
+freeze frame still applies consistently.
+
+Practice uses six bytes on the dummy fighter for spell choice and stock,
+air recovery, guard, movement and return to center. The menu and debug
+keys write those bytes. Fighter input dispatch consumes the guard and
+movement settings, and the battle frame uses the spell settings for the
+player's spell stock and selected card.
+
+The keyboard config starts with two 40-byte `InputBindingKeys` records.
+The settings reader, defaults, menu input and fighter input share that
+type. The signed device byte uses `-1` for the keyboard. Native initialization
+leaves the pause scancode at its zero-initialized value unless a saved
+configuration supplies one.
+[Fighter layout](../src/battle/Fighter.hpp) · [Config storage](../src/config/GameConfigStorage.hpp) · [Practice settings](../src/battle/BattleMode5OptionsF168.cpp)
+
 ## Game progress (save data)
 
 The progress object `g_GameProgress` at `0x006718F8` serves battle combo

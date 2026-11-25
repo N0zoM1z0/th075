@@ -3,6 +3,7 @@
 #include "engine/GameSharedState.hpp"
 #include "config/DisplayOptions.hpp"
 #include "config/GameDefaultsF193.hpp"
+#include "input/InputDevice.hpp"
 #include <windows.h>
 #include <string.h>
 
@@ -13,30 +14,29 @@ extern unsigned char g_OptionsFlagAt00671604;
 extern unsigned char g_SettingsByteAt006714D2;
 namespace GameConfigF193 { void ReadIni(); }
 
-#define SET_DWORD(off,val) (*reinterpret_cast<DWORD*>(g_KeyBindingsAt00671440 + (off)) = (val))
-#define SET_BYTE(off,val) (g_KeyBindingsAt00671440[(off)] = (val))
+enum BindingButton { ButtonA, ButtonB, ButtonC, ButtonD };
 
 GameDefaultsF193::GameDefaultsF193()
 {
     if (g_GameDefaultsUseCountAt00671614 == 0) {
-        SET_BYTE(0, 255);
-        SET_DWORD(4, 0x22);
-        SET_DWORD(8, 0x24);
-        SET_DWORD(12, 0x15);
-        SET_DWORD(16, 0x31);
-        SET_DWORD(20, 0x10);
-        SET_DWORD(24, 0x11);
-        SET_DWORD(28, 0x12);
-        SET_DWORD(32, 0x20);
-        SET_BYTE(40, 255);
-        SET_DWORD(44, 0xcb);
-        SET_DWORD(48, 0xcd);
-        SET_DWORD(52, 200);
-        SET_DWORD(56, 0xd0);
-        SET_DWORD(72, 0x1b);
-        SET_DWORD(60, 0x91);
-        SET_DWORD(68, 0x1a);
-        SET_DWORD(64, 0x1b);
+        g_PlayerKeyBindings[0].device = -1;
+        g_PlayerKeyBindings[0].left = DIK_G;
+        g_PlayerKeyBindings[0].right = DIK_J;
+        g_PlayerKeyBindings[0].up = DIK_Y;
+        g_PlayerKeyBindings[0].down = DIK_N;
+        g_PlayerKeyBindings[0].buttons[ButtonA] = DIK_Q;
+        g_PlayerKeyBindings[0].buttons[ButtonB] = DIK_W;
+        g_PlayerKeyBindings[0].buttons[ButtonC] = DIK_E;
+        g_PlayerKeyBindings[0].buttons[ButtonD] = DIK_D;
+        g_PlayerKeyBindings[1].device = -1;
+        g_PlayerKeyBindings[1].left = DIK_LEFT;
+        g_PlayerKeyBindings[1].right = DIK_RIGHT;
+        g_PlayerKeyBindings[1].up = DIK_UP;
+        g_PlayerKeyBindings[1].down = DIK_DOWN;
+        g_PlayerKeyBindings[1].buttons[ButtonD] = DIK_RBRACKET;
+        g_PlayerKeyBindings[1].buttons[ButtonA] = DIK_AT;
+        g_PlayerKeyBindings[1].buttons[ButtonC] = DIK_LBRACKET;
+        g_PlayerKeyBindings[1].buttons[ButtonB] = DIK_RBRACKET;
         g_BattleFightersAt00671418[0] = 0;
         g_BattleFightersAt00671418[1] = 0;
         strcpy(g_CharacterNamesAt006714D8[0], "reimu");
@@ -65,5 +65,3 @@ GameDefaultsF193::GameDefaultsF193()
     }
     ++g_GameDefaultsUseCountAt00671614;
 }
-#undef SET_BYTE
-#undef SET_DWORD

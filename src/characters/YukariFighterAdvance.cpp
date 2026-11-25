@@ -10,7 +10,7 @@ extern float g_YukariOffsetAt00659CA4;
 extern float g_YukariOffsetAt00659CAC;
 
 void YukariFighter::Advance() {
-    if (field082 != 0 || opponent->field3BA != 0)
+    if (field082 != 0 || opponent->opponentFreezeSnapshot != 0)
         return;
 
     switch (action) {
@@ -945,7 +945,7 @@ void YukariFighter::Advance() {
 
     case 0x63: {
         if (g_CombatMode != CombatMode::Story ||
-            field2CD == 0) {
+            cpuControlled == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&
                 opponent->action < 150) {

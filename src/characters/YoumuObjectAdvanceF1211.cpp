@@ -18,8 +18,8 @@ void YoumuObject::Advance()
 {
     int burstIndex;
     ObservedInputSnapshotF378* entry;
-    if (owner->opponent->field3BA != 0) return;
-    if (owner->field3BA != 0 && field08A == 0) return;
+    if (owner->opponent->opponentFreezeSnapshot != 0) return;
+    if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
 
     if (action < 800) {
         static_cast<YoumuFighter*>(owner)->fieldF12 = 1;

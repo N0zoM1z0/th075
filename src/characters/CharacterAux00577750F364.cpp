@@ -13,7 +13,7 @@ void YuyukoFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
     }
-    if (field3B8 == 0)
+    if (opponentFreezeTimer == 0)
         fieldF0E = fieldF0E + 2;
     if (fieldF0E < 0)
         fieldF0E = 0;

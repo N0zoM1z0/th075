@@ -29,12 +29,12 @@ void BattleScene::RenderEndOverlay() {
             if (g_ReplayModeAt0066C238 != ReplayMode::Playback) {
                 SetRect(&rect, 0, 0, 256, 256);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&rect);
-                if (fighters[0]->field2CD == 0 && fighters[1]->field2CD == 0) {
+                if (fighters[0]->cpuControlled == 0 && fighters[1]->cpuControlled == 0) {
                     QUAD->TranslateQuad(32.0f, 280.0f, 0.0f);
                     LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, packet, &rect, 0xFFFFFFFF);
                     QUAD->TranslateQuad(320.0f, 0.0f, 0.0f);
                     RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, packet, &rect, 0xFFFFFFFF);
-                } else if (fighters[0]->field2CD != 0) {
+                } else if (fighters[0]->cpuControlled != 0) {
                     QUAD->TranslateQuad(192.0f, 280.0f, 0.0f);
                     RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, packet, &rect, 0xFFFFFFFF);
                 } else {

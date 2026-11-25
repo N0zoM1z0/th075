@@ -14,11 +14,11 @@ void PatchouliFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
     }
-    if (field3B8 == 0)
+    if (opponentFreezeTimer == 0)
         fieldF0E += facing * 5;
     if (fieldF0E < 0) fieldF0E = 359;
     if (fieldF0E >= 360) fieldF0E = 0;
-    if (field3B8 == 0)
+    if (opponentFreezeTimer == 0)
         fieldF0C = fieldF0C + 2;
     if (fieldF0C < 0) fieldF0C = 359;
     if (fieldF0C >= 360) fieldF0C = 0;

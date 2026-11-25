@@ -66,7 +66,7 @@ void BattleScene::UpdatePlayerEffects()
                 fighters[i]->aiCommand = 0;
             }
             if (fighters[i]->aiCommand >= 10
-                || fighters[i]->field2CD != 0)
+                || fighters[i]->cpuControlled != 0)
                 fighters[i]->aiCommand = 0;
         }
         for (j = 0; j < 5; j++) {

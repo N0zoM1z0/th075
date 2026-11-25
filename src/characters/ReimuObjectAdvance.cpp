@@ -12,9 +12,9 @@ extern const float g_ReimuObjectOwnerYOffsetAt00659080;
 
 void ReimuObject::Advance()
 {
-    if (owner->opponent->field3BA != 0)
+    if (owner->opponent->opponentFreezeSnapshot != 0)
         return;
-    if (owner->field3BA != 0 && field08A == 0)
+    if (owner->opponentFreezeSnapshot != 0 && field08A == 0)
         return;
     if (field082 != 0) {
         --field082;
@@ -3441,7 +3441,7 @@ void ReimuObject::Advance()
                     field0DA = 1;
                 }
             }
-            if (owner->field3B8 == 0) {
+            if (owner->opponentFreezeTimer == 0) {
                 static_cast<ReimuFighter*>(owner)->fieldF24 += field0CC;
             }
             if (static_cast<ReimuFighter*>(owner)->fieldF24 > 0xB4) {
@@ -3513,7 +3513,7 @@ void ReimuObject::Advance()
             if (field0CC >= FloatConstants::Five) {
                 field0CC = 5.0f;
             }
-            if (owner->field3B8 == 0) {
+            if (owner->opponentFreezeTimer == 0) {
                 static_cast<ReimuFighter*>(owner)->fieldF24 += FloatConstants::One;
             }
             if (static_cast<ReimuFighter*>(owner)->fieldF24 > 0xB4) {

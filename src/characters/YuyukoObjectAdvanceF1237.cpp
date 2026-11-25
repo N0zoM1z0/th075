@@ -13,8 +13,8 @@ float __cdecl AbsFloatAt00412D90(float);
 
 void YuyukoObject::Advance()
 {
-    if (owner->opponent->field3BA != 0) return;
-    if (owner->field3BA != 0 && field08A == 0) return;
+    if (owner->opponent->opponentFreezeSnapshot != 0) return;
+    if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
     if (field082 != 0) {
         --field082;
         return;

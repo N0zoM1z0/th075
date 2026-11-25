@@ -15,8 +15,8 @@ extern const char g_WaveArchiveIndexAt00657A1C[] = "data";
 namespace GameGlobalsF212 {
 void InitializeSound()
 {
-    g_InputMappings[0].SetBindings(g_KeyBindingsAt00671440);
-    g_InputMappings[1].SetBindings(g_KeyBindingsAt00671440 + sizeof(InputBindingKeys));
+    g_InputMappings[0].SetBindings(&g_PlayerKeyBindings[0]);
+    g_InputMappings[1].SetBindings(&g_PlayerKeyBindings[1]);
     g_TextRenderer = new TextOverlay();
     g_WindowOverlayAt006714C4 = new WindowOverlayF212();
     g_SoundBank = new SoundBank();

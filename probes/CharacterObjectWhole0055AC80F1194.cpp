@@ -20,8 +20,8 @@
 // All 696 physical COFF relocations resolve to their original destinations.
 void RemiliaObject::Advance()
 {
-    if (owner->opponent->field3BA != 0) return;
-    if (owner->field3BA != 0 && field08A == 0) return;
+    if (owner->opponent->opponentFreezeSnapshot != 0) return;
+    if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
     if (field082 != 0) {
         field082--;
         return;

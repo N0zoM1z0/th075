@@ -102,9 +102,9 @@ public:
 
     char name[0x104];                   // +0x0C4 character name, set by each constructor
     char tag[0x104];                    // +0x1C8 character tag, set by each constructor
-    signed char field2CC;               // +0x2CC
-    signed char field2CD;               // +0x2CD
-    signed char field2CE;               // +0x2CE LoadResources loads field2CE + 1 texture pages
+    signed char playerSide;             // +0x2CC 0 for P1, 1 for P2
+    signed char cpuControlled;          // +0x2CD controlled by the CPU or the practice dummy
+    signed char paletteIndex;           // +0x2CE zero-based palette index passed through resource loading
     unsigned char unknown2CF[0x2D0 - 0x2CF];
     int score;                          // +0x2D0 raised by 100-500 per hit
     CameraResetF481 cameraState;        // +0x2D4
@@ -172,9 +172,9 @@ public:
     short spiritPrevious;               // +0x3B2
     short spiritWait;                   // +0x3B4
     short spiritCooldown;               // +0x3B6
-    short field3B8;                     // +0x3B8
-    short field3BA;                     // +0x3BA
-    short field3BC;                     // +0x3BC
+    short opponentFreezeTimer;          // +0x3B8 pauses the other fighter while positive
+    short opponentFreezeSnapshot;       // +0x3BA current-frame copy used after decrement
+    short guardResponseCooldown;        // +0x3BC temporarily suppresses guard responses
     signed char field3BE;               // +0x3BE
     unsigned char unknown3BF[0x3C0 - 0x3BF];
     float comboRate;                    // +0x3C0 damage scale; each hit multiplies it
@@ -190,7 +190,7 @@ public:
     unsigned int field430[12];          // +0x430
     int field460;                       // +0x460
     unsigned char field464;             // +0x464 set while a knockout is being resolved
-    unsigned char field465;             // +0x465
+    unsigned char autoGuard;            // +0x465 bypass the manual guard direction check
     unsigned char unknown466[0x468 - 0x466];
     ActionSequenceSlots sequenceSlots;  // +0x468 action sequences, indexed by action id
     short field478;                     // +0x478 signed texture slot count
@@ -222,12 +222,12 @@ public:
     short aiStep;                       // +0x514
     short aiCardTimer;                  // +0x516
     std::deque<unsigned char> inputHistory; // +0x518, native command history
-    signed char field52C;             // +0x52C
-    signed char field52D;             // +0x52D
-    signed char field52E;             // +0x52E
-    signed char field52F;               // +0x52F
-    signed char field530;             // +0x530
-    signed char field531;             // +0x531
+    signed char practiceSpellSelection; // +0x52C one of six spell cards
+    signed char practiceSpellStock;     // +0x52D initial number of spell power stocks
+    signed char practiceManualAirRecovery; // +0x52E zero allows automatic random air recovery
+    signed char practiceGuardMode;      // +0x52F off, standing, crouching, or match the attack
+    signed char practiceActionMode;     // +0x530 stand, crouch, jump, or use the CPU AI
+    signed char practiceCenterPosition; // +0x531 move the dummy toward the arena center
     signed char field532;               // +0x532
     unsigned char unknown533[0x534 - 0x533];
     union {
@@ -284,6 +284,9 @@ typedef char FighterLayoutCheck[(
     offsetof(Fighter, cameraState) == 0x2D4 &&
     offsetof(Fighter, soundBank) == 0x6D0 &&
     offsetof(Fighter, opponent) == 0x2E8 &&
+    offsetof(Fighter, playerSide) == 0x2CC &&
+    offsetof(Fighter, cpuControlled) == 0x2CD &&
+    offsetof(Fighter, paletteIndex) == 0x2CE &&
     offsetof(Fighter, effectTransformRecord) == 0x2F0 &&
     offsetof(Fighter, health) == 0x324 &&
     offsetof(Fighter, healthBeforeCollision) == 0x328 &&
@@ -294,6 +297,9 @@ typedef char FighterLayoutCheck[(
     offsetof(Fighter, spellDeclarationExpired) == 0x39C &&
     offsetof(Fighter, spellTimer) == 0x3A0 &&
     offsetof(Fighter, spirit) == 0x3B0 &&
+    offsetof(Fighter, opponentFreezeTimer) == 0x3B8 &&
+    offsetof(Fighter, opponentFreezeSnapshot) == 0x3BA &&
+    offsetof(Fighter, guardResponseCooldown) == 0x3BC &&
     offsetof(Fighter, sequenceSlots) == 0x468 &&
     offsetof(Fighter, field478) == 0x478 &&
     offsetof(Fighter, inputBindings) == 0x494 &&

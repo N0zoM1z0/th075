@@ -5,7 +5,7 @@ void Fighter::SetNonnegativeWord(short value)
 {
     if (value < 0)
         return;
-    field3B8 = value;
+    opponentFreezeTimer = value;
 }
 
 void Fighter::BeginFadeParameters(unsigned char mode)

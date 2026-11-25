@@ -18,10 +18,10 @@ bool Fighter::IsState95To99() {
 unsigned char Fighter::SelectHitResponse(unsigned int flags) {
     if (!(savedFrameInfo->flags & 0x10)) return 0;
     if (flags & 0x10) return 0;
-    if (field3BC > 0) return 0;
-    if (field2CD != 0) {
+    if (guardResponseCooldown > 0) return 0;
+    if (cpuControlled != 0) {
         if (g_CombatMode == CombatMode::Practice) {
-            switch (field52F) {
+            switch (practiceGuardMode) {
             case 0:
                 return 0;
             case 1:
@@ -60,7 +60,7 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
         }
     }
     if (IsState150To199()) goto classifyResponse;
-    if (field465 == 0) {
+    if (autoGuard == 0) {
         if ((OPPONENT_X - x) * inputX > 0.0f || inputX == 0) return 0;
     }
 classifyResponse:

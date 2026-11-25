@@ -96,7 +96,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
 void Fighter::UpdateControls() {
     unsigned char relativeBits = 0;
     unsigned char physicalInputBits = 0;
-    if (field2CD != 0) {
+    if (cpuControlled != 0) {
         ClearAuxiliaryWords();
         inputX = 0;
         inputY = 0;
@@ -227,6 +227,6 @@ void Fighter::UpdateControls() {
         inputHistory.pop_front();
         PollCommands();
     }
-    if (field2CD == 0) field4E4 = inputA;
+    if (cpuControlled == 0) field4E4 = inputA;
     else field4E4 = 0;
 }

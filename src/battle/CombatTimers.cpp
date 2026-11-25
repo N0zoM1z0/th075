@@ -4,7 +4,7 @@
 void Fighter::UpdateCounters()
 {
     // Opponent freeze suspends counters but not view bounds and the frame count.
-    if (opponent->field3BA > 0) goto updateViewBounds;
+    if (opponent->opponentFreezeSnapshot > 0) goto updateViewBounds;
     {
         if (field082 > 0) --field082;
         else if (field3CC > 0) --field3CC;
@@ -14,9 +14,9 @@ void Fighter::UpdateCounters()
         if (field086 > 0) --field086;
         if (frameInfo->flags & 0x1000) field086 = 6;
         if (field088 > 0) --field088;
-        if (field3BC > 0) --field3BC;
+        if (guardResponseCooldown > 0) --guardResponseCooldown;
         if (spellTimer > 0) {
-            if (field2CD == 0 || g_CombatMode != CombatMode::Story) {
+            if (cpuControlled == 0 || g_CombatMode != CombatMode::Story) {
                 spellTimer -= 2;
                 if (spellTimer <= 0) {
                     spellTimer = 0;
@@ -43,8 +43,8 @@ void Fighter::UpdateCounters()
         if (spellPower > 900.0f) spellPower = 900.0f;
         if (pendingSpellCharge < 0.0f) pendingSpellCharge = 0.0f;
         if (pendingSpellCharge > 1000.0f) pendingSpellCharge = 1000.0f;
-        if (g_CombatMode == CombatMode::Story && field2CD != 0) spellPower = 900.0f;
-        if (g_CombatMode != CombatMode::Story || field2CD == 0) {
+        if (g_CombatMode == CombatMode::Story && cpuControlled != 0) spellPower = 900.0f;
+        if (g_CombatMode != CombatMode::Story || cpuControlled == 0) {
             if (spellTimer > 0 && recoverableHealth > health) health += 100;
             if (recoverableHealth < health) health = recoverableHealth;
         }

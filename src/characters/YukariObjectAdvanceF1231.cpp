@@ -14,8 +14,8 @@ float __cdecl AbsFloatAt00412D90(float);
 
 void YukariObject::Advance()
 {
-    if (owner->opponent->field3BA != 0) return;
-    if (owner->field3BA != 0 && field08A == 0) return;
+    if (owner->opponent->opponentFreezeSnapshot != 0) return;
+    if (owner->opponentFreezeSnapshot != 0 && field08A == 0) return;
     if (field082 != 0) {
         --field082;
         return;
@@ -473,7 +473,7 @@ void YukariObject::Advance()
             velocityY = 0.0f;
             field0D8 = 0;
         }
-        if (field08A > 0 && owner->field3B8 == 0) field08A = 0;
+        if (field08A > 0 && owner->opponentFreezeTimer == 0) field08A = 0;
         if (animationStage == 1) {
             if (scaleX < 1.0f) scaleX += 0.25f;
             if (scaleY > 1.0f) scaleY -= 0.25f;
@@ -545,7 +545,7 @@ void YukariObject::Advance()
             velocityY = 0.0f;
             field0D8 = 0;
         }
-        if (field08A > 0 && owner->field3B8 == 0) field08A = 0;
+        if (field08A > 0 && owner->opponentFreezeTimer == 0) field08A = 0;
         if (animationStage == 1) {
             if (scaleX < 1.0f) scaleX += 0.25f;
             if (scaleY > 1.0f) scaleY -= 0.25f;
@@ -2388,7 +2388,7 @@ void YukariObject::Advance()
         if (owner->spellTimer <= 0) { ClearFrameInfo(); return; }
         else {
             facing = 1;
-            if (owner->field3B8 == 0) {
+            if (owner->opponentFreezeTimer == 0) {
                 static_cast<YukariFighter*>(owner)->fieldF18 = x;
                 static_cast<YukariFighter*>(owner)->fieldF1A = y;
             }
