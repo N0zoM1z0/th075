@@ -2,7 +2,7 @@
 #include "assets/DataArchive.hpp"
 #include "graphics/GraphicsTexture.hpp"
 #include "graphics/TextureManagerF198.hpp"
-#include "assets/TexturePack40BF60.hpp"
+#include "assets/TexturePackRecord.hpp"
 #include <new>
 
 void TextureManagerF198::LoadDefault(const char* filename, const char* archiveName) {
@@ -14,7 +14,7 @@ void TextureManagerF198::Load(const char* filename, signed char selectedPalette,
     // The archive context owns this positioned handle.
     HANDLE sourceFile = ResourceLookupF217::FindByName(archiveName)->SeekNamedEntry(filename);
     int index;
-    TextureRecordSnapshot40BF60 record;
+    TexturePackRecord record;
     DWORD dwRead;
     signed char paletteHeaderCount;
     if (sourceFile == INVALID_HANDLE_VALUE)
@@ -36,27 +36,27 @@ void TextureManagerF198::Load(const char* filename, signed char selectedPalette,
         palette = 0;
     }
     for (index = 0; index < nEntriesCount; index++) {
-        entries[index].uploadFormat = textureDepth;
+        entries[index].bitsPerPixel = textureDepth;
         entries[index].palette = palette;
-        entries[index].paletteFlag = 0;
+        entries[index].usesSharedPaletteTexture = 0;
         ReadFile(sourceFile, &record.width, 4, &dwRead, 0);
         ReadFile(sourceFile, &record.height, 4, &dwRead, 0);
-        ReadFile(sourceFile, &record.stride, 4, &dwRead, 0);
-        ReadFile(sourceFile, &record.depth, 1, &dwRead, 0);
-        ReadFile(sourceFile, &record.encodedSize, 4, &dwRead, 0);
-        if (record.encodedSize > 0) {
-            record.data = new BYTE[record.encodedSize];
-            ReadFile(sourceFile, record.data, record.encodedSize, &dwRead, 0);
-        } else if (record.depth >= 24) {
-            record.data = new BYTE[record.stride * record.height * 4];
-            ReadFile(sourceFile, record.data, record.stride * record.height * 4, &dwRead, 0);
+        ReadFile(sourceFile, &record.stridePixels, 4, &dwRead, 0);
+        ReadFile(sourceFile, &record.bitsPerPixel, 1, &dwRead, 0);
+        ReadFile(sourceFile, &record.compressedBytes, 4, &dwRead, 0);
+        if (record.compressedBytes > 0) {
+            record.pixelData = new BYTE[record.compressedBytes];
+            ReadFile(sourceFile, record.pixelData, record.compressedBytes, &dwRead, 0);
+        } else if (record.bitsPerPixel >= 24) {
+            record.pixelData = new BYTE[record.stridePixels * record.height * 4];
+            ReadFile(sourceFile, record.pixelData, record.stridePixels * record.height * 4, &dwRead, 0);
         } else {
-            record.data = new BYTE[(static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3];
-            ReadFile(sourceFile, record.data, (static_cast<unsigned int>(record.stride * record.height) * record.depth) >> 3, &dwRead, 0);
+            record.pixelData = new BYTE[(static_cast<unsigned int>(record.stridePixels * record.height) * record.bitsPerPixel) >> 3];
+            ReadFile(sourceFile, record.pixelData, (static_cast<unsigned int>(record.stridePixels * record.height) * record.bitsPerPixel) >> 3, &dwRead, 0);
         }
         entries[index].LoadSerialized(&record);
-        delete[] static_cast<BYTE*>(record.data);
-        Graphics::CreateTexture(static_cast<unsigned short>(entries[index].storedWidth), static_cast<unsigned short>(entries[index].storedHeight), &textures[index], entries[index].uploadFormat);
+        delete[] record.pixelData;
+        Graphics::CreateTexture(static_cast<unsigned short>(entries[index].storedWidth), static_cast<unsigned short>(entries[index].storedHeight), &textures[index], entries[index].bitsPerPixel);
         Refresh(index);
         delete[] entries[index].pixels;
         entries[index].pixels = 0;

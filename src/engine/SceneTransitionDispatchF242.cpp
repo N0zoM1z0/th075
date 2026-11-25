@@ -1,14 +1,14 @@
+#include "config/DisplayOptions.hpp"
 #include "engine/SceneTransition.hpp"
 #include "engine/SceneTransitionLayers.hpp"
 #include "engine/SceneBase.hpp"
 #include <windows.h>
 #include <d3d8.h>
 
-extern unsigned char g_SettingsByteAt006714D2;
 unsigned short SceneBase::TranslateState(unsigned short command)
 {
     if (g_TransitionFrame < 0) {
-        if (!g_SettingsByteAt006714D2 && ((command & SceneTransition::OutMask)>0))
+        if (!DisplayOptions::useRequestedTransitions && ((command & SceneTransition::OutMask)>0))
             command = (command & SceneTransition::KeepAfterOut) | SceneTransition::BlackOut;
         switch (command & SceneTransition::OutMask) {
         case SceneTransition::BlackOut:
@@ -34,7 +34,7 @@ unsigned short SceneBase::TranslateState(unsigned short command)
             g_TransitionFrame = 0;
             break;
         case 0:
-            if (!g_SettingsByteAt006714D2 && ((command & SceneTransition::InMask)>0))
+            if (!DisplayOptions::useRequestedTransitions && ((command & SceneTransition::InMask)>0))
                 command = (command & SceneTransition::KeepBeforeIn) | SceneTransition::BlackIn;
             switch (command & SceneTransition::InMask) {
             case SceneTransition::BlackIn:

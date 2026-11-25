@@ -954,6 +954,27 @@ sample members and read the installed `data\system\battle.dat` member at
 the offset resolved from its original index.
 [Index entry](../src/assets/DataArchive.hpp) · [Reader](../src/assets/ArchiveOpenReadIndexF338.cpp) · [Writer](../src/assets/ArchiveWriteF339.cpp)
 
+### Texture packs and display options
+
+The file and archive texture loaders use the manager's allocated slot
+count. The pack starts with a palette count and a 512-byte block per
+palette. Each image writes width, height, row stride in pixels, a format
+byte and the compressed length before the payload. A zero compressed
+length selects raw pixels. Formats 24 and 32 both store raw pixels in
+four-byte elements.
+
+The texture manager owns the pack file methods and the bitmap upload
+methods. Its 44-byte bitmap entry carries the row stride, compressed
+length and shared-palette texture flag.
+[Texture manager](../src/graphics/TextureManagerF198.hpp) · [Pack record](../src/assets/TexturePackRecord.hpp) · [Bitmap entry](../src/graphics/TextureEntry.hpp)
+
+The config reader and options menu share the animated-background,
+per-frame rendering and damage-flash settings. The scene dispatcher uses
+the requested animation when the transition setting is enabled and
+selects the short black fade otherwise. The native reader sets this
+setting to one after reading its saved byte.
+[Display settings](../src/config/DisplayOptions.hpp) · [Config reader](../src/config/ConfigLoadF194.cpp)
+
 ## Game progress (save data)
 
 The progress object at `0x006718F8` holds 15 character records, each

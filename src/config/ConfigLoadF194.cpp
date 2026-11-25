@@ -12,14 +12,14 @@ namespace DisplayOptions
     bool startFullscreen;
     bool squareTextures;
     bool use16BitBackBuffer;
+    unsigned char animatedBackgrounds;
+    unsigned char useRequestedTransitions;
+    unsigned char renderEveryFrame;
+    unsigned char showDamageFlash;
 }
 
 InputBindingKeys g_PlayerKeyBindings[2];
-BYTE g_OptionsFlagAt00671604;
-BYTE g_SettingsByteAt006714D2;
-BYTE g_OptionsFlagAt00671430;
 signed char g_OptionsModeAt006714D0;
-BYTE g_OptionsFlagAt00671428;
 BYTE g_StreamVolumeAt006714B7;
 BYTE g_SoundVolumeAt006714B6;
 
@@ -69,15 +69,15 @@ void ReadIni()
         return;
     SetFilePointer(file, 0, 0, FILE_BEGIN);
     ReadFile(file, g_PlayerKeyBindings, sizeof(g_PlayerKeyBindings), &readSize, 0);
-    ReadFile(file, &g_OptionsFlagAt00671604, 1, &readSize, 0);
-    ReadFile(file, &g_SettingsByteAt006714D2, 1, &readSize, 0);
-    g_SettingsByteAt006714D2 = 1;
-    ReadFile(file, &g_OptionsFlagAt00671430, 1, &readSize, 0);
+    ReadFile(file, &DisplayOptions::animatedBackgrounds, 1, &readSize, 0);
+    ReadFile(file, &DisplayOptions::useRequestedTransitions, 1, &readSize, 0);
+    DisplayOptions::useRequestedTransitions = 1;
+    ReadFile(file, &DisplayOptions::renderEveryFrame, 1, &readSize, 0);
     ReadFile(file, &DisplayOptions::startFullscreen, 1, &readSize, 0);
     ReadFile(file, &DisplayOptions::squareTextures, 1, &readSize, 0);
     ReadFile(file, &DisplayOptions::use16BitBackBuffer, 1, &readSize, 0);
     ReadFile(file, &g_OptionsModeAt006714D0, 1, &readSize, 0);
-    ReadFile(file, &g_OptionsFlagAt00671428, 1, &readSize, 0);
+    ReadFile(file, &DisplayOptions::showDamageFlash, 1, &readSize, 0);
     ReadFile(file, &g_StreamVolumeAt006714B7, 1, &readSize, 0);
     ReadFile(file, &g_SoundVolumeAt006714B6, 1, &readSize, 0);
     CloseHandle(file);

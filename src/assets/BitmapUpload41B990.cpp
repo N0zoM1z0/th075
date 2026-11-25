@@ -1,7 +1,7 @@
-#include "graphics/TextureManagerBorrowedF925.hpp"
+#include "graphics/TextureEntry.hpp"
 
 void TextureEntryStorageF769::CopyTo(void* output, unsigned char depth, unsigned int outputWidth) {
-    if (encodedSize) {
+    if (compressedBytes) {
         switch (depth) {
         case 8: {
             unsigned short* out = static_cast<unsigned short*>(output);
@@ -81,7 +81,7 @@ void TextureEntryStorageF769::CopyTo(void* output, unsigned char depth, unsigned
             unsigned char* input = pixels;
             for (unsigned int y = 0; y < storedHeight; y++) {
                 for (unsigned int x = 0; x < storedWidth; x++)
-                    out[y * outputWidth + x] = palette[input[y * storedStride + x]];
+                    out[y * outputWidth + x] = palette[input[y * stridePixels + x]];
             }
             break;
         }
@@ -89,7 +89,7 @@ void TextureEntryStorageF769::CopyTo(void* output, unsigned char depth, unsigned
             // Native 16-bit copying groups pairs into DWORD elements.
             outputWidth >>= 1;
             unsigned int width16 = storedWidth >> 1;
-            unsigned int sourcePitch = storedStride >> 1;
+            unsigned int sourcePitch = stridePixels >> 1;
             unsigned int* out = static_cast<unsigned int*>(output);
             unsigned int* input = reinterpret_cast<unsigned int*>(pixels);
             for (unsigned int y = 0; y < storedHeight; y++) {
@@ -104,7 +104,7 @@ void TextureEntryStorageF769::CopyTo(void* output, unsigned char depth, unsigned
             unsigned int* input = reinterpret_cast<unsigned int*>(pixels);
             for (unsigned int y = 0; y < storedHeight; y++) {
                 for (unsigned int x = 0; x < storedWidth; x++)
-                    out[y * outputWidth + x] = input[y * storedStride + x];
+                    out[y * outputWidth + x] = input[y * stridePixels + x];
             }
         }
         }

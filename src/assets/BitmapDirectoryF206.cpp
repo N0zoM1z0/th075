@@ -13,16 +13,16 @@ void TextureManagerF198::LoadBitmapDirectory(const char* baseDir)
     } work;
     work.total = static_cast<int>(entries.size());
     for (work.index = 0; work.index < work.total; ++work.index) {
-        ENTRY.uploadFormat = textureDepth;
+        ENTRY.bitsPerPixel = textureDepth;
         ENTRY.palette = palette;
         sprintf(work.filename, "%s\\%04d.bmp", baseDir, work.index);
         if (ENTRY.LoadFile(work.filename)) {
             if (ENTRY.storedWidth < 256 && ENTRY.storedHeight < 256 &&
                 (ENTRY.storedHeight > 64 || ENTRY.storedHeight > 64)) {
-                ENTRY.paletteFlag = 1;
+                ENTRY.usesSharedPaletteTexture = 1;
                 ENTRY.Encode();
             } else {
-                ENTRY.paletteFlag = 0;
+                ENTRY.usesSharedPaletteTexture = 0;
                 Graphics::Create16BitTexture(
                     static_cast<unsigned short>(ENTRY.storedWidth),
                     static_cast<unsigned short>(ENTRY.storedHeight), &textures[work.index]);

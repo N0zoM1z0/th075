@@ -1,6 +1,6 @@
 #pragma once
 #include "graphics/GraphicsResourceClient.hpp"
-#include "graphics/TextureManagerBorrowedF925.hpp"
+#include "graphics/TextureEntry.hpp"
 #include <d3d8.h>
 #include <deque>
 #include <vector>
@@ -34,6 +34,12 @@ public:
     void ClearSlots();
     void LoadDefault(const char* filename, const char* archiveName);
     void Load(const char* filename, signed char selectedPalette, const char* archiveName);
+    void LoadPackFile(const char* filename, signed char selectedPalette);
+    void LoadPackFileDefaultPalette(const char* filename);
+    void SavePackFile(const char* directory, const char* filename, signed char paletteCount);
+    void SavePackFileDefaultPalette(const char* directory, const char* filename);
+    void UploadBitmap(TextureEntryStorageF769* bitmap, IDirect3DTexture8** slot);
+    void UploadBitmapByIndex(TextureEntryStorageF769* bitmap, int index);
     void LoadPalette(const char* filename);
     void LoadBitmapDirectory(const char* baseDir);
     void LoadBitmapDirectoryWithFormat(const char* baseDir);

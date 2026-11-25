@@ -1,23 +1,23 @@
-#include "graphics/TextureManagerBorrowedF925.hpp"
+#include "graphics/TextureEntry.hpp"
 
 TextureEntryStorageF769::TextureEntryStorageF769()
 {
-    uploadFormat = 0;
+    bitsPerPixel = 0;
     pixels = 0;
     palette = 0;
-    encodedSize = 0;
+    compressedBytes = 0;
     ownsPalette = 0;
 }
 
 TextureEntryStorageF769::TextureEntryStorageF769(BYTE format)
 {
     if (format != 8 && format != 16 && format != 24 && format != 32)
-        uploadFormat = 0;
+        bitsPerPixel = 0;
     else
-        uploadFormat = format;
+        bitsPerPixel = format;
     pixels = 0;
     palette = 0;
-    encodedSize = 0;
+    compressedBytes = 0;
     ownsPalette = 0;
 }
 

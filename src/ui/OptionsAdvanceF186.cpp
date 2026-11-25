@@ -1,3 +1,4 @@
+#include "config/DisplayOptions.hpp"
 #include "engine/SceneTransition.hpp"
 #include "config/GameConfigStorage.hpp"
 #include "engine/GameSharedState.hpp"
@@ -14,9 +15,6 @@ namespace AudioVolume4073B0 {
 }
 namespace OptionsSettingsF186 { void SaveConfiguration(); }
 
-extern unsigned char g_OptionsFlagAt00671604;
-extern unsigned char g_OptionsFlagAt00671430;
-extern unsigned char g_OptionsFlagAt00671428;
 
 #define SOUND(value) g_SoundBank->Play(value)
 
@@ -52,19 +50,19 @@ unsigned short OptionsScene::Update()
     case 1:
         if (horizontalInput || confirmInput) {
             SOUND(45);
-            g_OptionsFlagAt00671604 = g_OptionsFlagAt00671604 ? 0 : 1;
+            DisplayOptions::animatedBackgrounds = DisplayOptions::animatedBackgrounds ? 0 : 1;
         }
         break;
     case 2:
         if (horizontalInput || confirmInput) {
             SOUND(45);
-            g_OptionsFlagAt00671430 = g_OptionsFlagAt00671430 ? 0 : 1;
+            DisplayOptions::renderEveryFrame = DisplayOptions::renderEveryFrame ? 0 : 1;
         }
         break;
     case 3:
         if (horizontalInput || confirmInput) {
             SOUND(45);
-            g_OptionsFlagAt00671428 = g_OptionsFlagAt00671428 ? 0 : 1;
+            DisplayOptions::showDamageFlash = DisplayOptions::showDamageFlash ? 0 : 1;
         }
         break;
     case 4:
@@ -84,11 +82,11 @@ unsigned short OptionsScene::Update()
             SOUND(45);
         break;
     case 5:
-        if (pressedItem == 0) {
+        if (soundPreviewCooldown == 0) {
             SOUND(40);
-            pressedItem = 60;
+            soundPreviewCooldown = 60;
         }
-        pressedItem--;
+        soundPreviewCooldown--;
         if (horizontalInput > 0) {
             reinterpret_cast<signed char&>(g_SoundVolumeAt006714B6) += 5;
             if (static_cast<signed char>(g_SoundVolumeAt006714B6) > 100) g_SoundVolumeAt006714B6 = 100;

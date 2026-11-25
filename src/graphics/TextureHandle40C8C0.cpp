@@ -5,7 +5,7 @@ IDirect3DTexture8* TextureManagerF198::GetTexture(int index) {
     static int cachedIndex = index;
     if (index < 0 || index >= static_cast<int>(entries.size()))
         return 0;
-    if (entries[index].paletteFlag) {
+    if (entries[index].usesSharedPaletteTexture) {
         if (cachedIndex != index) {
             Refresh(index);
             cachedIndex = index;

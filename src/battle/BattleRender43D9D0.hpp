@@ -10,5 +10,4 @@
 
 void __cdecl DrawAtlasNumberDefaultAt00446B60(float, float, D3DCOLOR, int, signed char);
 
-extern unsigned char g_OptionsFlagAt00671428;
 extern signed char g_RenderOrderAt0068C860;

@@ -9,9 +9,6 @@
 
 unsigned int g_GameDefaultsUseCountAt00671614;
 char g_CharacterNamesAt006714D8[11][20];
-extern unsigned char g_OptionsFlagAt00671430;
-extern unsigned char g_OptionsFlagAt00671604;
-extern unsigned char g_SettingsByteAt006714D2;
 namespace GameConfigF193 { void ReadIni(); }
 
 enum BindingButton { ButtonA, ButtonB, ButtonC, ButtonD };
@@ -50,9 +47,9 @@ GameDefaultsF193::GameDefaultsF193()
         strcpy(g_CharacterNamesAt006714D8[8], "yukari");
         strcpy(g_CharacterNamesAt006714D8[9], "suika");
         strcpy(g_CharacterNamesAt006714D8[10], "meiling");
-        g_OptionsFlagAt00671430 = 1;
-        g_OptionsFlagAt00671604 = 1;
-        g_SettingsByteAt006714D2 = 1;
+        DisplayOptions::renderEveryFrame = 1;
+        DisplayOptions::animatedBackgrounds = 1;
+        DisplayOptions::useRequestedTransitions = 1;
         DisplayOptions::startFullscreen = false;
         DisplayOptions::squareTextures = false;
         DisplayOptions::use16BitBackBuffer = false;

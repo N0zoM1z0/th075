@@ -20,7 +20,7 @@ public:
     TextureManagerF198* textures;                     // +0x008 the scene's texture manager
     IDirect3DTexture8* canvas;          // +0x00C surface the option values are drawn on
     short currentItem;                  // +0x010
-    short pressedItem;                  // +0x012
+    short soundPreviewCooldown;                  // +0x012
     unsigned char displayAlpha;             // +0x014 alpha of the menu
     signed char horizontalInput;               // +0x015 input this frame
     signed char verticalInput;               // +0x016

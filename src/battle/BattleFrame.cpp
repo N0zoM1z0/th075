@@ -1,3 +1,4 @@
+#include "config/DisplayOptions.hpp"
 #include "replay/ReplayMode.hpp"
 #include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
@@ -48,7 +49,7 @@ unsigned short BattleScene::Update()
             --knockoutFreezeFrames;
         }
         if (g_FramePresentToggle) Present();
-        if (g_OptionsFlagAt00671430) g_FramePresentToggle = 1;
+        if (DisplayOptions::renderEveryFrame) g_FramePresentToggle = 1;
         else g_FramePresentToggle = static_cast<int>(!g_FramePresentToggle);
         return AdvanceState();
     } else {
@@ -59,7 +60,7 @@ unsigned short BattleScene::Update()
             if (pauseOverlayAlpha > 0) pauseOverlayAlpha -= 5;
         }
         if (g_FramePresentToggle) Present();
-        if (g_OptionsFlagAt00671430) g_FramePresentToggle = 1;
+        if (DisplayOptions::renderEveryFrame) g_FramePresentToggle = 1;
         else g_FramePresentToggle = static_cast<int>(!g_FramePresentToggle);
         if (!pauseMenuOpen && !pauseOverlayAlpha) {
             fighters[0]->inputBindings.held = inputSnapshots[0];

@@ -1,3 +1,4 @@
+#include "config/DisplayOptions.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/BackgroundStageBaseF479.hpp"
 #include "graphics/Graphics.hpp"
@@ -75,7 +76,7 @@ void BattleScene::Render() {
             g_CurrentBattleStageAt00671424->Slot2();
             textureManager->SetColorMultiplier(1.0f);
             textureManager->SetDepthMode(0);
-            if (g_OptionsFlagAt00671428)
+            if (DisplayOptions::showDamageFlash)
                 RenderDamageFlash();
         }
         Graphics::SetDrawTransform(1.0f, 0.0f, 0.0f);

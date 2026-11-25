@@ -2,28 +2,28 @@
 #include <windows.h>
 #include <stddef.h>
 
-struct TextureRecordSnapshot40BF60;
+struct TexturePackRecord;
 
 // Storage for one complete 44-byte vector entry. Bitmap operations receive
 // the entry address and access its leading fields.
 struct TextureEntryStorageF769 {
-    BYTE uploadFormat;
+    BYTE bitsPerPixel;
     BYTE unknown01[3];
     unsigned int storedWidth;
     unsigned int storedHeight;
-    unsigned int storedStride;
-    DWORD encodedSize;
+    unsigned int stridePixels;        // row width including alignment
+    DWORD compressedBytes;            // zero for uncompressed pixels
     WORD* palette;
     BYTE ownsPalette;
     BYTE unknown19[3];
     BYTE* pixels;
     BYTE unknown20[8];
-    BYTE paletteFlag;
+    BYTE usesSharedPaletteTexture;     // upload through the shared GPU slot
     BYTE unknown29[3];
 
     bool LoadFile(const char* filename);
     void Encode();
-    void LoadSerialized(const TextureRecordSnapshot40BF60* record);
+    void LoadSerialized(const TexturePackRecord* record);
     void CopyTo(void* output, unsigned char depth, unsigned int outputWidth);
 
 protected:
@@ -37,13 +37,6 @@ struct NativeTextureElementF769 : public TextureEntryStorageF769 {
     ~NativeTextureElementF769();
 };
 typedef char NativeTextureElementSizeF925[(sizeof(NativeTextureElementF769)==44)?1:-1];
-
-// Borrowed *receiver tail* view: native mode is a byte at this+0x4C in
-// both complete game allocator functions. Never instantiate/embed this
-// 0x4D-byte borrowed view as a complete texture-manager object.
-struct NativeTextureManagerModeF925 {
-    unsigned char unknownBeforeKind[0x4C];
-    unsigned char allocationKindAt4C;
-};
-typedef char NativeTextureManagerModeOffsetF925[
-    (offsetof(NativeTextureManagerModeF925, allocationKindAt4C)==0x4C)?1:-1];
+typedef char TextureEntryOffsets[(offsetof(TextureEntryStorageF769, stridePixels) == 0x0C &&
+                                 offsetof(TextureEntryStorageF769, compressedBytes) == 0x10 &&
+                                 offsetof(TextureEntryStorageF769, usesSharedPaletteTexture) == 0x28) ? 1 : -1];

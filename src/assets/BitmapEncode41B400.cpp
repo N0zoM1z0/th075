@@ -1,12 +1,12 @@
-#include "graphics/TextureManagerBorrowedF925.hpp"
+#include "graphics/TextureEntry.hpp"
 #include <windows.h>
 #include <string.h>
 
 
 void TextureEntryStorageF769::Encode() {
-    if (encodedSize)
+    if (compressedBytes)
         return;
-    switch (uploadFormat) {
+    switch (bitsPerPixel) {
     case 8: {
         BYTE* temp = new BYTE[storedHeight * storedWidth * 2];
         // Used run-length field index; this compiler folds its reads into addresses.
@@ -16,13 +16,13 @@ void TextureEntryStorageF769::Encode() {
         BYTE runColor = pixels[0];
         for (unsigned int y = 0; y < storedHeight; y++) {
             for (unsigned int x = 0; x < storedWidth; x++) {
-                if (runColor == pixels[y * storedStride + x] && numPixels < 255) {
+                if (runColor == pixels[y * stridePixels + x] && numPixels < 255) {
                     numPixels++;
                 } else {
                     temp[runIndex + lengthField] = numPixels;
                     temp[runIndex + 1] = runColor;
                     runIndex += 2;
-                    runColor = pixels[y * storedStride + x];
+                    runColor = pixels[y * stridePixels + x];
                     numPixels = 1;
                 }
             }
@@ -32,7 +32,7 @@ void TextureEntryStorageF769::Encode() {
         runIndex += 2;
         delete[] pixels;
         pixels = new BYTE[runIndex];
-        encodedSize = runIndex;
+        compressedBytes = runIndex;
         memcpy(pixels, temp, runIndex);
         delete[] temp;
         break;
@@ -47,13 +47,13 @@ void TextureEntryStorageF769::Encode() {
         WORD runColor = pPixels[0];
         for (unsigned int y = 0; y < storedHeight; y++) {
             for (unsigned int x = 0; x < storedWidth; x++) {
-                if (runColor == pPixels[y * storedStride + x]) {
+                if (runColor == pPixels[y * stridePixels + x]) {
                     numPixels++;
                 } else {
                     temp[runIndex + lengthField] = numPixels;
                     temp[runIndex + 1] = runColor;
                     runIndex += 2;
-                    runColor = pPixels[y * storedStride + x];
+                    runColor = pPixels[y * stridePixels + x];
                     numPixels = 1;
                 }
             }
@@ -63,7 +63,7 @@ void TextureEntryStorageF769::Encode() {
         runIndex += 2;
         delete[] pixels;
         pixels = new BYTE[runIndex * 2];
-        encodedSize = runIndex * 2;
+        compressedBytes = runIndex * 2;
         memcpy(pixels, temp, runIndex * 2);
         delete[] temp;
         break;
@@ -78,13 +78,13 @@ void TextureEntryStorageF769::Encode() {
         DWORD runColor = reinterpret_cast<DWORD*>(pixels)[0];
         for (unsigned int y = 0; y < storedHeight; y++) {
             for (unsigned int x = 0; x < storedWidth; x++) {
-                if (runColor == reinterpret_cast<DWORD*>(pixels)[y * storedStride + x]) {
+                if (runColor == reinterpret_cast<DWORD*>(pixels)[y * stridePixels + x]) {
                     numPixels++;
                 } else {
                     temp[runIndex + lengthField] = numPixels;
                     temp[runIndex + 1] = runColor;
                     runIndex += 2;
-                    runColor = reinterpret_cast<DWORD*>(pixels)[y * storedStride + x];
+                    runColor = reinterpret_cast<DWORD*>(pixels)[y * stridePixels + x];
                     numPixels = 1;
                 }
             }
@@ -94,7 +94,7 @@ void TextureEntryStorageF769::Encode() {
         runIndex += 2;
         delete[] pixels;
         pixels = new BYTE[runIndex * 4];
-        encodedSize = runIndex * 4;
+        compressedBytes = runIndex * 4;
         memcpy(pixels, temp, runIndex * 4);
         delete[] temp;
     }

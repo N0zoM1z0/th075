@@ -2090,7 +2090,7 @@ relocations = [
   { offset = 0x201, type = "DIR32", symbol = "?g_CurrentBattleStageAt00671424@@3PAVNativeBackgroundBaseF479@@A", target = 0x00671424 },
   { offset = 0x21F, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x22B, type = "REL32", symbol = "?Present@BattleScene@@QAEXXZ", target = 0x0043B5D0 },
-  { offset = 0x232, type = "DIR32", symbol = "?g_OptionsFlagAt00671430@@3EA", target = 0x00671430 },
+  { offset = 0x232, type = "DIR32", symbol = "?renderEveryFrame@DisplayOptions@@3EA", target = 0x00671430 },
   { offset = 0x23C, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x246, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x251, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
@@ -2098,7 +2098,7 @@ relocations = [
   { offset = 0x266, type = "REL32", symbol = "?HandlePauseMenu@BattleScene@@QAEXXZ", target = 0x004461D0 },
   { offset = 0x2C8, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x2D4, type = "REL32", symbol = "?Present@BattleScene@@QAEXXZ", target = 0x0043B5D0 },
-  { offset = 0x2DB, type = "DIR32", symbol = "?g_OptionsFlagAt00671430@@3EA", target = 0x00671430 },
+  { offset = 0x2DB, type = "DIR32", symbol = "?renderEveryFrame@DisplayOptions@@3EA", target = 0x00671430 },
   { offset = 0x2E5, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x2EF, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
   { offset = 0x2FA, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
@@ -16370,7 +16370,7 @@ relocations = [
   { offset = 0x3DF, type = "DIR32", symbol = "?g_CurrentBattleStageAt00671424@@3PAVNativeBackgroundBaseF479@@A", target = 0x00671424 },
   { offset = 0x3F2, type = "REL32", symbol = "?SetColorMultiplier@TextureManagerF198@@QAEXM@Z", target = 0x0040C8A0 },
   { offset = 0x3FF, type = "REL32", symbol = "?SetDepthMode@TextureManagerF198@@QAEXH@Z", target = 0x0040C840 },
-  { offset = 0x406, type = "DIR32", symbol = "?g_OptionsFlagAt00671428@@3EA", target = 0x00671428 },
+  { offset = 0x406, type = "DIR32", symbol = "?showDamageFlash@DisplayOptions@@3EA", target = 0x00671428 },
   { offset = 0x412, type = "REL32", symbol = "?RenderDamageFlash@BattleScene@@QAEXXZ", target = 0x004406C0 },
   { offset = 0x420, type = "REL32", symbol = "?SetDrawTransform@Graphics@@YAXMMM@Z", target = 0x00401B00 },
   { offset = 0x42A, type = "DIR32", symbol = "?g_StateFadeAlpha@@3EA", target = 0x006714D1 },
@@ -17751,8 +17751,8 @@ relocations = [
 source = "src/assets/TextureUpload40C730.cpp"
 object = "build/matching/TextureUpload40C730.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["TextureUpload40C730::Upload"]
-symbol = "?Upload@TextureUpload40C730@@QAEXPAUTextureEntryStorageF769@@PAPAUIDirect3DTexture8@@@Z"
+functions = ["TextureManagerF198::UploadBitmap"]
+symbol = "?UploadBitmap@TextureManagerF198@@QAEXPAUTextureEntryStorageF769@@PAPAUIDirect3DTexture8@@@Z"
 target_address = 0x0040C730
 size = 173
 compare_size = 173
@@ -17764,14 +17764,14 @@ relocations = [
 source = "src/assets/TextureUpload40C730.cpp"
 object = "build/matching/TextureUpload40C730.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["TextureUpload40C730::UploadByHandle"]
-symbol = "?UploadByHandle@TextureUpload40C730@@QAEXPAUTextureEntryStorageF769@@H@Z"
+functions = ["TextureManagerF198::UploadBitmapByIndex"]
+symbol = "?UploadBitmapByIndex@TextureManagerF198@@QAEXPAUTextureEntryStorageF769@@H@Z"
 target_address = 0x0040C6F0
 size = 54
 compare_size = 54
 relocations = [
   { offset = 0x11, type = "REL32", symbol = "?GetTexture@TextureManagerF198@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
-  { offset = 0x2C, type = "REL32", symbol = "?Upload@TextureUpload40C730@@QAEXPAUTextureEntryStorageF769@@PAPAUIDirect3DTexture8@@@Z", target = 0x0040C730 },
+  { offset = 0x2C, type = "REL32", symbol = "?UploadBitmap@TextureManagerF198@@QAEXPAUTextureEntryStorageF769@@PAPAUIDirect3DTexture8@@@Z", target = 0x0040C730 },
 ]
 
 [units."bitmap-palette-load-0040c380"]
@@ -17798,8 +17798,8 @@ relocations = [
 source = "src/assets/TexturePack40BF60.cpp"
 object = "build/matching/TexturePack40BF60.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["TexturePack40BF60::Save"]
-symbol = "?Save@TexturePack40BF60@@QAEXPBD0C@Z"
+functions = ["TextureManagerF198::SavePackFile"]
+symbol = "?SavePackFile@TextureManagerF198@@QAEXPBD0C@Z"
 target_address = 0x0040BF60
 size = 1046
 compare_size = 1046
@@ -17848,13 +17848,13 @@ relocations = [
 source = "src/assets/TexturePack40BF60.cpp"
 object = "build/matching/TexturePack40BF60.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["TexturePack40BF60::SaveDefault"]
-symbol = "?SaveDefault@TexturePack40BF60@@QAEXPBD0@Z"
+functions = ["TextureManagerF198::SavePackFileDefaultPalette"]
+symbol = "?SavePackFileDefaultPalette@TextureManagerF198@@QAEXPBD0@Z"
 target_address = 0x0040BF40
 size = 31
 compare_size = 31
 relocations = [
-  { offset = 0x15, type = "REL32", symbol = "?Save@TexturePack40BF60@@QAEXPBD0C@Z", target = 0x0040BF60 },
+  { offset = 0x15, type = "REL32", symbol = "?SavePackFile@TextureManagerF198@@QAEXPBD0C@Z", target = 0x0040BF60 },
 ]
 
 [units."bitmap-load-0041a3d0"]
@@ -17931,7 +17931,7 @@ source = "src/assets/BitmapSerialized41B2B0.cpp"
 object = "build/matching/BitmapSerialized41B2B0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["BitmapSerialized41B2B0::Load"]
-symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTextureRecordSnapshot40BF60@@@Z"
+symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTexturePackRecord@@@Z"
 target_address = 0x0041B2B0
 size = 326
 compare_size = 326
@@ -17948,8 +17948,8 @@ relocations = [
 source = "src/assets/TexturePackLoad40B7C0.cpp"
 object = "build/matching/TexturePackLoad40B7C0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["TexturePackLoad40B7C0::Load"]
-symbol = "?Load@TexturePackLoad40B7C0@@QAEXPBDC@Z"
+functions = ["TextureManagerF198::LoadPackFile"]
+symbol = "?LoadPackFile@TextureManagerF198@@QAEXPBDC@Z"
 target_address = 0x0040B7C0
 size = 949
 compare_size = 949
@@ -17980,7 +17980,7 @@ relocations = [
   { offset = 0x2A9, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0x2DB, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x2EE, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x2F5, type = "REL32", symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
+  { offset = 0x2F5, type = "REL32", symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTexturePackRecord@@@Z", target = 0x0041B2B0 },
   { offset = 0x304, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x316, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x328, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
@@ -17998,13 +17998,13 @@ relocations = [
 source = "src/assets/TexturePackLoad40B7C0.cpp"
 object = "build/matching/TexturePackLoad40B7C0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["TexturePackLoad40B7C0::LoadDefault"]
-symbol = "?LoadDefault@TexturePackLoad40B7C0@@QAEXPBD@Z"
+functions = ["TextureManagerF198::LoadPackFileDefaultPalette"]
+symbol = "?LoadPackFileDefaultPalette@TextureManagerF198@@QAEXPBD@Z"
 target_address = 0x0040B7A0
 size = 27
 compare_size = 27
 relocations = [
-  { offset = 0x11, type = "REL32", symbol = "?Load@TexturePackLoad40B7C0@@QAEXPBDC@Z", target = 0x0040B7C0 },
+  { offset = 0x11, type = "REL32", symbol = "?LoadPackFile@TextureManagerF198@@QAEXPBDC@Z", target = 0x0040B7C0 },
 ]
 
 [units."texture-pack-archive-0040bba0"]
@@ -18043,7 +18043,7 @@ relocations = [
   { offset = 0x294, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
   { offset = 0x2C6, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x2D9, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
-  { offset = 0x2E0, type = "REL32", symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTextureRecordSnapshot40BF60@@@Z", target = 0x0041B2B0 },
+  { offset = 0x2E0, type = "REL32", symbol = "?LoadSerialized@TextureEntryStorageF769@@QAEXPBUTexturePackRecord@@@Z", target = 0x0041B2B0 },
   { offset = 0x2EF, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x301, type = "REL32", symbol = "??A?$vector@UNativeTextureElementF769@@V?$allocator@UNativeTextureElementF769@@@std@@@std@@QAEAAUNativeTextureElementF769@@I@Z", target = 0x0040DD60 },
   { offset = 0x313, type = "REL32", symbol = "??A?$vector@PAUIDirect3DTexture8@@V?$allocator@PAUIDirect3DTexture8@@@std@@@std@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
@@ -22604,20 +22604,20 @@ relocations = [
   { offset = 0x2F5, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
   { offset = 0x30C, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x350, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x357, type = "DIR32", symbol = "?g_OptionsFlagAt00671604@@3EA", target = 0x00671604 },
-  { offset = 0x367, type = "DIR32", symbol = "?g_OptionsFlagAt00671604@@3EA", target = 0x00671604 },
+  { offset = 0x357, type = "DIR32", symbol = "?animatedBackgrounds@DisplayOptions@@3EA", target = 0x00671604 },
+  { offset = 0x367, type = "DIR32", symbol = "?animatedBackgrounds@DisplayOptions@@3EA", target = 0x00671604 },
   { offset = 0x37D, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x396, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x3AD, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x3F1, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x3F8, type = "DIR32", symbol = "?g_OptionsFlagAt00671430@@3EA", target = 0x00671430 },
-  { offset = 0x408, type = "DIR32", symbol = "?g_OptionsFlagAt00671430@@3EA", target = 0x00671430 },
+  { offset = 0x3F8, type = "DIR32", symbol = "?renderEveryFrame@DisplayOptions@@3EA", target = 0x00671430 },
+  { offset = 0x408, type = "DIR32", symbol = "?renderEveryFrame@DisplayOptions@@3EA", target = 0x00671430 },
   { offset = 0x41E, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x437, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x44E, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x48E, type = "REL32", symbol = "?DrawQuad@TextureManagerF198@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
-  { offset = 0x495, type = "DIR32", symbol = "?g_OptionsFlagAt00671428@@3EA", target = 0x00671428 },
-  { offset = 0x4AC, type = "DIR32", symbol = "?g_OptionsFlagAt00671428@@3EA", target = 0x00671428 },
+  { offset = 0x495, type = "DIR32", symbol = "?showDamageFlash@DisplayOptions@@3EA", target = 0x00671428 },
+  { offset = 0x4AC, type = "DIR32", symbol = "?showDamageFlash@DisplayOptions@@3EA", target = 0x00671428 },
   { offset = 0x4C9, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x4E2, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x4F9, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
@@ -31652,12 +31652,12 @@ target = 0x004079C0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 340
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 351
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 386
@@ -31672,12 +31672,12 @@ target = 0x004079C0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 398
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671430@@3EA"
+symbol = "?renderEveryFrame@DisplayOptions@@3EA"
 target = 0x00671430
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 409
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671430@@3EA"
+symbol = "?renderEveryFrame@DisplayOptions@@3EA"
 target = 0x00671430
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 444
@@ -31692,12 +31692,12 @@ target = 0x004079C0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 456
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671428@@3EA"
+symbol = "?showDamageFlash@DisplayOptions@@3EA"
 target = 0x00671428
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 466
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671428@@3EA"
+symbol = "?showDamageFlash@DisplayOptions@@3EA"
 target = 0x00671428
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 489
@@ -31961,7 +31961,7 @@ target = 0x00657124
 [[units.game-config-save-00419450.relocations]]
 offset = 97
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.game-config-save-00419450.relocations]]
 offset = 107
@@ -31971,7 +31971,7 @@ target = 0x00657124
 [[units.game-config-save-00419450.relocations]]
 offset = 120
 type = "DIR32"
-symbol = "?g_SettingsByteAt006714D2@@3EA"
+symbol = "?useRequestedTransitions@DisplayOptions@@3EA"
 target = 0x006714D2
 [[units.game-config-save-00419450.relocations]]
 offset = 130
@@ -31981,12 +31981,12 @@ target = 0x00657124
 [[units.game-config-save-00419450.relocations]]
 offset = 136
 type = "DIR32"
-symbol = "?g_SettingsByteAt006714D2@@3EA"
+symbol = "?useRequestedTransitions@DisplayOptions@@3EA"
 target = 0x006714D2
 [[units.game-config-save-00419450.relocations]]
 offset = 150
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671430@@3EA"
+symbol = "?renderEveryFrame@DisplayOptions@@3EA"
 target = 0x00671430
 [[units.game-config-save-00419450.relocations]]
 offset = 160
@@ -32036,7 +32036,7 @@ target = 0x00657124
 [[units.game-config-save-00419450.relocations]]
 offset = 265
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671428@@3EA"
+symbol = "?showDamageFlash@DisplayOptions@@3EA"
 target = 0x00671428
 [[units.game-config-save-00419450.relocations]]
 offset = 275
@@ -32917,17 +32917,17 @@ target = 0x00641B80
 [[units.game-globals-initialize-00417210.relocations]]
 offset = 414
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671430@@3EA"
+symbol = "?renderEveryFrame@DisplayOptions@@3EA"
 target = 0x00671430
 [[units.game-globals-initialize-00417210.relocations]]
 offset = 421
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.game-globals-initialize-00417210.relocations]]
 offset = 428
 type = "DIR32"
-symbol = "?g_SettingsByteAt006714D2@@3EA"
+symbol = "?useRequestedTransitions@DisplayOptions@@3EA"
 target = 0x006714D2
 [[units.game-globals-initialize-00417210.relocations]]
 offset = 435
@@ -33036,7 +33036,7 @@ target = 0x0065712C
 [[units.game-config-load-004192f0.relocations]]
 offset = 97
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.game-config-load-004192f0.relocations]]
 offset = 107
@@ -33046,7 +33046,7 @@ target = 0x0065712C
 [[units.game-config-load-004192f0.relocations]]
 offset = 120
 type = "DIR32"
-symbol = "?g_SettingsByteAt006714D2@@3EA"
+symbol = "?useRequestedTransitions@DisplayOptions@@3EA"
 target = 0x006714D2
 [[units.game-config-load-004192f0.relocations]]
 offset = 130
@@ -33056,12 +33056,12 @@ target = 0x0065712C
 [[units.game-config-load-004192f0.relocations]]
 offset = 136
 type = "DIR32"
-symbol = "?g_SettingsByteAt006714D2@@3EA"
+symbol = "?useRequestedTransitions@DisplayOptions@@3EA"
 target = 0x006714D2
 [[units.game-config-load-004192f0.relocations]]
 offset = 150
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671430@@3EA"
+symbol = "?renderEveryFrame@DisplayOptions@@3EA"
 target = 0x00671430
 [[units.game-config-load-004192f0.relocations]]
 offset = 160
@@ -33111,7 +33111,7 @@ target = 0x0065712C
 [[units.game-config-load-004192f0.relocations]]
 offset = 265
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671428@@3EA"
+symbol = "?showDamageFlash@DisplayOptions@@3EA"
 target = 0x00671428
 [[units.game-config-load-004192f0.relocations]]
 offset = 275
@@ -39365,7 +39365,7 @@ target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 25
 type = "DIR32"
-symbol = "?g_SettingsByteAt006714D2@@3EA"
+symbol = "?useRequestedTransitions@DisplayOptions@@3EA"
 target = 0x006714D2
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 212
@@ -39420,7 +39420,7 @@ target = 0x0066C240
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 345
 type = "DIR32"
-symbol = "?g_SettingsByteAt006714D2@@3EA"
+symbol = "?useRequestedTransitions@DisplayOptions@@3EA"
 target = 0x006714D2
 [[units.scene-transition-dispatch-mode-00431f60.relocations]]
 offset = 460
@@ -52275,7 +52275,7 @@ target = 0x00419285
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 154
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 168
@@ -52310,7 +52310,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 329
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 343
@@ -52345,7 +52345,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 503
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 517
@@ -52380,7 +52380,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 680
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 694
@@ -52415,7 +52415,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 858
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 872
@@ -52450,7 +52450,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1035
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1049
@@ -52485,7 +52485,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1212
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1226
@@ -52520,7 +52520,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1399
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1413
@@ -52555,7 +52555,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1606
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1620
@@ -52590,7 +52590,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1813
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 1827
@@ -52625,7 +52625,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2021
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2035
@@ -52660,7 +52660,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2225
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2239
@@ -52695,7 +52695,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2429
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2443
@@ -52730,7 +52730,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2637
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2651
@@ -52765,7 +52765,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2844
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 2858
@@ -52800,7 +52800,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3051
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3065
@@ -52835,7 +52835,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3259
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3273
@@ -52870,7 +52870,7 @@ target = 0x00671424
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3463
 type = "DIR32"
-symbol = "?g_OptionsFlagAt00671604@@3EA"
+symbol = "?animatedBackgrounds@DisplayOptions@@3EA"
 target = 0x00671604
 [[units.battle-loader-load-stage-004183d0.relocations]]
 offset = 3477

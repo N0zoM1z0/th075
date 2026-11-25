@@ -77,6 +77,15 @@ and dialogue summaries for Reimu, Patchouli and Meiling's scripts from
 the installed update archive.
 [Story script and stage layer evidence](KNOWLEDGE_BASE.md#story-scripts-and-character-stage-layers)
 
+Texture pack file methods now use the shared texture manager. The bitmap
+entry identifies stride, compression and shared-palette handling. The
+configuration fields identify their display options. All 491 affected
+units passed. The strict link changed the COFF timestamp and 1,949 linked
+operands for moved uninitialized data. Headless checks decoded raw and
+compressed bitmap rows and round-tripped two configurations and five
+replay files.
+[Texture and display evidence](KNOWLEDGE_BASE.md#texture-packs-and-display-options)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

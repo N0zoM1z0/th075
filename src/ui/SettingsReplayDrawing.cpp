@@ -1,3 +1,4 @@
+#include "config/DisplayOptions.hpp"
 #include "replay/ReplayBrowserScene.hpp"
 #include "config/GameConfigStorage.hpp"
 #include "engine/GameSharedState.hpp"
@@ -7,9 +8,6 @@
 #include "graphics/SpriteDraw40CA80.hpp"
 #include "graphics/SpriteTransform.hpp"
 
-extern unsigned char g_OptionsFlagAt00671604;
-extern unsigned char g_OptionsFlagAt00671430;
-extern unsigned char g_OptionsFlagAt00671428;
 
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 #define POSITIONS(value) reinterpret_cast<const float (*)[4]>(&(value))
@@ -46,15 +44,15 @@ void OptionsScene::Render() {
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(240.0f, 64.0f, 0);
         textures->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(displayAlpha, 255, 255, 255));
-        SetRect(&region, 0, g_OptionsFlagAt00671604 * 32 + 32, 64, g_OptionsFlagAt00671604 * 32 + 64);
+        SetRect(&region, 0, DisplayOptions::animatedBackgrounds * 32 + 32, 64, DisplayOptions::animatedBackgrounds * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 96.0f, 0);
         textures->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(displayAlpha, 255, 255, 255));
-        SetRect(&region, 0, g_OptionsFlagAt00671430 * 32 + 32, 64, g_OptionsFlagAt00671430 * 32 + 64);
+        SetRect(&region, 0, DisplayOptions::renderEveryFrame * 32 + 32, 64, DisplayOptions::renderEveryFrame * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 128.0f, 0);
         textures->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(displayAlpha, 255, 255, 255));
-        SetRect(&region, 0, (1 - g_OptionsFlagAt00671428) * 32 + 32, 64, (1 - g_OptionsFlagAt00671428) * 32 + 64);
+        SetRect(&region, 0, (1 - DisplayOptions::showDamageFlash) * 32 + 32, 64, (1 - DisplayOptions::showDamageFlash) * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 160.0f, 0);
         textures->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(displayAlpha, 255, 255, 255));

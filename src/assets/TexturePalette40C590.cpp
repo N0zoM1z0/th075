@@ -15,10 +15,10 @@ void TextureManagerF198::Refresh(int index) {
     // Their values have no later consumer in this function.
     int width = ENTRY.storedWidth;
     int height = ENTRY.storedHeight;
-    int metadataAt0C = ENTRY.storedStride;
+    int metadataAt0C = ENTRY.stridePixels;
     unsigned int surfaceWidth;
     IDirect3DTexture8* pTexture;
-    if (ENTRY.paletteFlag) {
+    if (ENTRY.usesSharedPaletteTexture) {
         surfaceWidth = 256;
         pTexture = paletteTextures[0];
     } else {
@@ -34,7 +34,7 @@ void TextureManagerF198::Refresh(int index) {
     HRESULT result = pTexture->LockRect(0, &rect, 0, 0);
     if (result == D3D_OK) {
         ENTRY.CopyTo(
-            rect.pBits, ENTRY.uploadFormat, surfaceWidth);
+            rect.pBits, ENTRY.bitsPerPixel, surfaceWidth);
         pTexture->UnlockRect(0);
     }
 }

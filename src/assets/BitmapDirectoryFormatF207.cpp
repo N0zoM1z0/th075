@@ -13,13 +13,13 @@ void TextureManagerF198::LoadBitmapDirectoryWithFormat(const char* baseDir)
     } work;
     work.total = static_cast<int>(entries.size());
     for (work.index = 0; work.index < work.total; ++work.index) {
-        ENTRY.uploadFormat = textureDepth;
+        ENTRY.bitsPerPixel = textureDepth;
         ENTRY.palette = palette;
         sprintf(work.filename, "%s\\%04d.bmp", baseDir, work.index);
         if (ENTRY.LoadFile(work.filename)) {
-            ENTRY.paletteFlag = 0;
+            ENTRY.usesSharedPaletteTexture = 0;
             Graphics::CreateTexture(static_cast<unsigned short>(ENTRY.storedWidth),
-                static_cast<unsigned short>(ENTRY.storedHeight), &textures[work.index], ENTRY.uploadFormat);
+                static_cast<unsigned short>(ENTRY.storedHeight), &textures[work.index], ENTRY.bitsPerPixel);
             Refresh(work.index);
             void* buffer = ENTRY.pixels;
             free(buffer);

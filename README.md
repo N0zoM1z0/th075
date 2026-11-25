@@ -32,11 +32,11 @@ constructor. The conservative coverage includes all pending-origin bytes.
 | [Characters](src/characters/) | [Stage rendering](src/characters/CharacterStageRendering.cpp), [fighter and object entry points](docs/GIANTS.md) |
 | [Replay](src/replay/) | [File header, record header and input streams](src/replay/ReplayRecords.hpp) |
 | [Input](src/input/) | [Device mapping and held controls](src/input/InputMapping4388D0.hpp) |
-| [Configuration](src/config/) | [Saved key bindings](src/config/GameConfigStorage.hpp) |
+| [Configuration](src/config/) | [Saved key bindings](src/config/GameConfigStorage.hpp), [display options](src/config/DisplayOptions.hpp) |
 | [Engine](src/engine/) | [Scene commands](src/engine/SceneTransition.hpp), [score data](src/engine/GameProgress.hpp) |
 | [Menus](src/ui/) | [Character selection](src/ui/CharacterSelectScene.hpp), [results browser](src/ui/ResultListScene.hpp) |
 | [Resources](src/assets/) | [Archive index](src/assets/DataArchive.hpp), [story script records](src/assets/ScriptResource4205F0.hpp) |
-| [Graphics](src/graphics/) | [Texture management](src/graphics/TextureManagerF198.hpp) |
+| [Graphics](src/graphics/) | [Texture management](src/graphics/TextureManagerF198.hpp), [bitmap entry layout](src/graphics/TextureEntry.hpp) |
 | [Audio](src/audio/) | [Streaming](src/audio/AudioStream.hpp), [sound effects](src/audio/SoundBank.hpp) |
 | [Platform](src/platform/) | [Windows startup and main loop](src/platform/WinMainF1171.cpp) |
 

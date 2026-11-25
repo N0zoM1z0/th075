@@ -15,6 +15,6 @@ OptionsScene::OptionsScene() {
     Graphics::CreateTexture(0x400, 0x200, &canvas, 0x20);
     displayAlpha=5;
     currentItem=0;
-    pressedItem=0;
+    soundPreviewCooldown=0;
     Apply(static_cast<unsigned char>(currentItem));
 }
