@@ -96,10 +96,10 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     case 3: attacker->score += 500; break;
     }
     if (g_CombatMode == CombatMode::Story && attacker->playerSide == 0) {
-        if (attacker->comboDamage > g_GameProgress.GetSelectedValue12())
-            g_GameProgress.SetSelectedValue12(attacker->comboDamage);
-        if (attacker->comboCount > g_GameProgress.GetSelectedValue8())
-            g_GameProgress.SetSelectedValue8(attacker->comboCount);
+        if (attacker->comboDamage > g_GameProgress.GetMaxComboDamage())
+            g_GameProgress.SetMaxComboDamage(attacker->comboDamage);
+        if (attacker->comboCount > g_GameProgress.GetMaxComboHits())
+            g_GameProgress.SetMaxComboHits(attacker->comboCount);
         if (attacker->comboCount > g_MaxComboCount)
             g_MaxComboCount = attacker->comboCount;
         if (attacker->score > g_MaxCombatScore)
@@ -188,10 +188,10 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
         case 3: attacker->score += 500; break;
         }
         if (g_CombatMode == CombatMode::Story && attacker->playerSide == 0) {
-            if (attacker->comboDamage > g_GameProgress.GetSelectedValue12())
-                g_GameProgress.SetSelectedValue12(attacker->comboDamage);
-            if (attacker->comboCount > g_GameProgress.GetSelectedValue8())
-                g_GameProgress.SetSelectedValue8(attacker->comboCount);
+            if (attacker->comboDamage > g_GameProgress.GetMaxComboDamage())
+                g_GameProgress.SetMaxComboDamage(attacker->comboDamage);
+            if (attacker->comboCount > g_GameProgress.GetMaxComboHits())
+                g_GameProgress.SetMaxComboHits(attacker->comboCount);
             if (attacker->comboCount > g_MaxComboCount)
                 g_MaxComboCount = attacker->comboCount;
             if (attacker->score > g_MaxCombatScore)

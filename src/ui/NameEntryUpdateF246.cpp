@@ -16,7 +16,7 @@ unsigned short PlayerNameEntryScene::Update()
                 selectedRecord->scores[rank].name[field014]=100;
         } else if (SELECTION_CODE==0x5c) {
             g_GameProgress.SaveScoreFile();
-            g_GameProgress.LoadWorkingEightBytes(rank);
+            g_GameProgress.CopyRankNameToWorking(rank);
             if (g_StateReturnFlag) return 0x2207;
             return 0x2202;
         } else {

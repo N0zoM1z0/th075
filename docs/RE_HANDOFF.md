@@ -45,6 +45,13 @@ The game configuration reader, writer and input mapper also round-tripped
 the 90-byte Windows playtest file and recovered all 18 expected scan codes.
 [Player and input evidence](KNOWLEDGE_BASE.md#battle-modes-controls-and-replay-data)
 
+The progress methods and results pages now use named story, combo, spell
+and ranking records. All 74 affected units passed. The normal Windows
+link matched the preceding build except for the COFF timestamp. With
+identical random seeds, headless runs of both versions produced identical
+93,124-byte score files from the Windows playtest save.
+[Save data and result fields](KNOWLEDGE_BASE.md#game-progress-save-data)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

@@ -6,7 +6,7 @@
 
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 #define DRAW reinterpret_cast<TextureManagerF198*>(menuTextures)
-#define VALUE g_GameProgress.GetSelectedValue()
+#define VALUE g_GameProgress.GetHighestStoryStage()
 
 void CharacterSelectScene::RenderSinglePlayerOptions() {
     if (optionsOpen[0] == 0)
@@ -33,8 +33,8 @@ void CharacterSelectScene::RenderSinglePlayerOptions() {
     }
 }
 
-signed char GameProgress::GetSelectedValue() {
-    return characters[selectedFighter].difficulties[selectedDifficulty].field556;
+signed char GameProgress::GetHighestStoryStage() {
+    return characters[selectedFighter].difficulties[selectedDifficulty].highestStoryStage;
 }
 
 #undef VALUE

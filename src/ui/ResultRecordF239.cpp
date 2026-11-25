@@ -7,18 +7,15 @@
 #include "ui/ResultListScene.hpp"
 
 
-// Borrowed original record selection and deque access interfaces. No full
-// nominal class/allocator ownership layout is reconstructed in this source.
 extern const char g_RecordEmptyAt006580B1[] = "";
 extern const char g_RecordEmptyNameAt006580B4[] = "\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48\x81\x48";
 extern const char g_RecordMissingFormatAt006580D8[] = " No.%03d  %-59s %03d/%03d\\n";
 extern const char g_RecordFullFormatAt006580F4[] = " No.%03d  %-59s %03d/%03d\\n";
 extern const char g_RecordFontAt00658110[];
-#define META(index,offset) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(selectedRecord)+(offset)+2*(index)))
 void ResultListScene::BuildRecordPage()
 {
     g_GameProgress.SetSelection((static_cast<unsigned char>(selectedCharacter)),0);
-    (selectedRecord)=g_GameProgress.GetSelectedRecordAddress();
+    selectedRecord = g_GameProgress.GetSelectedDifficultyRecord();
     D3DLOCKED_RECT locked;
     {
         char line[200];
@@ -27,11 +24,11 @@ void ResultListScene::BuildRecordPage()
             strcpy(message,g_RecordEmptyAt006580B1);
             for (int i=(pageIndex)*10;
                  i<(pageIndex)*10+10 && i<static_cast<int>(records.size()); ++i) {
-                if (META(i,0x394)==0)
+                if (selectedRecord->spellAttempts[i]==0)
                     sprintf(line,g_RecordMissingFormatAt006580D8,i+1,g_RecordEmptyNameAt006580B4,0,0);
                 else
                     sprintf(line,g_RecordFullFormatAt006580F4,i+1,records[i],
-                            static_cast<unsigned int>(META(i,0x268)),static_cast<unsigned int>(META(i,0x394)));
+                            static_cast<unsigned int>(selectedRecord->spellBonusClears[i]),static_cast<unsigned int>(selectedRecord->spellAttempts[i]));
                 strcat(message,line);
             }
             if ((canvas)->LockRect(0,&locked,0,0)==D3D_OK) {
@@ -44,4 +41,3 @@ void ResultListScene::BuildRecordPage()
         }
     }
 }
-#undef META

@@ -124,7 +124,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00437380,CharacterSelectScene::RenderCharacterCards,CharacterSelectScene::RenderCards,R043,character-select-cards-00437380
 0x00438240,CharacterSelectScene::RenderPlayerOptions,CharacterSelectScene::RenderOptions,R041,character-select-options-00438240
 0x00438670,CharacterSelectScene::RenderSinglePlayerOptions,CharacterSelectScene::RenderSinglePlayerOptions,R041,single-player-options-00438670
-0x00438A80,ProgressRecords::GetSelectedCardValue,GameProgress::GetSelectedValue,R043,progress-card-value-00438a80
+0x00438A80,ProgressRecords::GetSelectedCardValue,GameProgress::GetHighestStoryStage,R043,progress-card-value-00438a80
 0x004388D0,CharacterSelectScene::PollInput,CharacterSelectScene::PollInput,R043,select-input-004388d0
 0x00407170,InputMapping::IsKeyDown,InputMapping4388D0::IsKeyDown,R015,input-key-down-00407170
 0x00406E80,InputMapping::UpdateHeldCounts,InputMapping4388D0::UpdateHeldCounts,R015,input-held-counts-00406e80
@@ -281,7 +281,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00454BC0,FighterState::SetCommandSelectionAt00454BC0 [provisional],Fighter::SetCommandSelection,R213,fighter-command-selection-00454bc0
 0x00452B30,FighterState::SelectResourceParametersAt00452B30,Fighter::SelectResourceParameters,R109,fighter-resource-parameters-00452b30
 0x00453D80,FighterBase::BindAnimationAt00453D80,FighterAnimationReset453D80::BindAnimation,R068,fighter-bind-animation-00453d80
-0x00454D00,ProfileSelection::IncrementSelectedWordCounterAt00454D00,GameProgress::IncrementSelectedWordCounter,R182,profile-increment-counter-00454d00
+0x00454D00,ProfileSelection::IncrementSelectedWordCounterAt00454D00,GameProgress::RecordSpellAttempt,R182,profile-increment-counter-00454d00
 0x0049C8F0,CharacterObject::AdvanceAt0049C8F0,MarisaObject::Advance,R048,marisa-object-advance-0049c8f0
 0x00476A40,CharacterObject::AdvanceAt00476A40,ReimuObject::Advance,R048,reimu-object-advance-00476a40
 0x00564BE0,CharacterMove::AdvanceAt00564BE0,YuyukoFighter::Advance,R048,yuyuko-fighter-advance-00564be0
@@ -293,3 +293,20 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00453AC0,FighterState::SpawnTrackedEffectAt00453AC0,Fighter::SpawnTrackedEffectAt00453AC0,R102,fighter-spawn-tracked-effect-00453ac0
 0x00453BE0,FighterState::SpawnTrackedEffectAt00453BE0,Fighter::SpawnTrackedEffectAt00453BE0,R102,fighter-spawn-tracked-effect-flags-00453be0
 0x005D73C0,CharacterMove::AdvanceAt005D73C0,MeilingFighter::Advance,R048,meiling-fighter-advance-005d73c0
+0x00416E20,ProfileSelection::StoreWorkingEightBytesAt00416E20,GameProgress::CopyWorkingNameToRank,R180,profile-selection-store-working-eight-00416e20
+0x00416E80,ProfileSelection::LoadWorkingEightBytesAt00416E80,GameProgress::CopyRankNameToWorking,R180,profile-selection-load-working-eight-00416e80
+0x0041A1D0,ProgressRecords::RaiseSelectedValue,GameProgress::UpdateHighestStoryStage,R021,progress-record-raise-selected-value-0041a1d0
+0x0041A240,ProgressRecords::GetSelectedRecordAddress,GameProgress::GetSelectedDifficultyRecord,R021,progress-records-selected-address-0041a240
+0x0041A270,ProgressRecords::IncrementSelectedRecordCount,GameProgress::RecordStoryAttempt,R021,progress-record-increment-selected-count-0041a270
+0x00425130,GameProgress::IncrementSelectedRecordAt00425130,GameProgress::RecordStoryClear,R103,game-progress-increment-selected-record-00425130
+0x0043D360,ProgressRecords::IncrementModeCounter,GameProgress::RecordMatchWin,R043,progress-increment-mode-counter-0043d360
+0x0043D3B0,ProgressRecords::SetCardValue,GameProgress::SetBestSpellBonus,R043,progress-set-card-value-0043d3b0
+0x0043D3E0,ProgressRecords::IncrementCardCounter,GameProgress::RecordSpellBonusClear,R043,progress-increment-card-counter-0043d3e0
+0x0043D430,ProgressRecords::MarkCardFlag,GameProgress::MarkSpellCapture,R043,progress-mark-card-flag-0043d430
+0x0043D460,ProgressRecords::GetCardValue,GameProgress::GetBestSpellBonus,R043,progress-get-card-value-0043d460
+0x00441FE0,GameProgress::ReadSelectedWord268At00441FE0,GameProgress::GetSpellBonusClears,R103,progress-read-selected-word268-00441fe0
+0x00442010,GameProgress::ReadSelectedWord394At00442010,GameProgress::GetSpellAttempts,R103,progress-read-selected-word394-00442010
+0x004451D0,GameProgress::SetSelectedValue8At004451D0,GameProgress::SetMaxComboHits,R103,progress-set-selected-value8-004451d0
+0x00445210,GameProgress::SetSelectedValue12At00445210,GameProgress::SetMaxComboDamage,R103,progress-set-selected-value12-00445210
+0x00445250,GameProgress::GetSelectedValue8At00445250,GameProgress::GetMaxComboHits,R103,progress-get-selected-value8-00445250
+0x00445290,GameProgress::GetSelectedValue12At00445290,GameProgress::GetMaxComboDamage,R103,progress-get-selected-value12-00445290

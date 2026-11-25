@@ -10,7 +10,7 @@ void CharacterSelectScene::ProcessSubselection()
 {
     if (::abs(static_cast<long>((input[0].vertical)))==1) {
         g_SoundBank->Play(0x27);
-        (optionsCursor[0])=((optionsCursor[0])+(input[0].vertical)+g_GameProgress.GetSelectedValue())%g_GameProgress.GetSelectedValue();
+        (optionsCursor[0])=((optionsCursor[0])+(input[0].vertical)+g_GameProgress.GetHighestStoryStage())%g_GameProgress.GetHighestStoryStage();
     }
     if ((input[0].confirm)==1) {
         g_SoundBank->Play(0x2d);

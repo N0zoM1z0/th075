@@ -1,19 +1,19 @@
 #include "engine/GameProgress.hpp"
-// Borrowed this-pointer record layout. The original source-level complete
-// record class and packed element types are unknown; these two methods never
-// instantiate it.
-void GameProgress::RaiseSelectedValue(signed char value)
+
+void GameProgress::UpdateHighestStoryStage(signed char stage)
 {
-    if (value > characters[selectedFighter].difficulties[selectedDifficulty].field556)
-        characters[selectedFighter].difficulties[selectedDifficulty].field556 = value;
+    if (stage > characters[selectedFighter].difficulties[selectedDifficulty].highestStoryStage)
+        characters[selectedFighter].difficulties[selectedDifficulty].highestStoryStage = stage;
 }
-// characters[selectedFighter].difficulties[selectedDifficulty].field000, but
-// the original adds the difficulty stride before the character stride,
-// which no nested-array spelling reproduces.
-#define SELECTED_COUNT (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) \
-    + (0x5fc * selectedDifficulty + 0x17f0 * selectedFighter)))
-void GameProgress::IncrementSelectedRecordCount()
+
+// This method indexes the byte stride of both record dimensions before
+// dereferencing the selected record. VC7.1 preserves that evaluation order.
+#define SELECTED_RECORD reinterpret_cast<ProgressDifficulty*>( \
+    reinterpret_cast<unsigned char*>(characters) + \
+    (sizeof(ProgressDifficulty) * selectedDifficulty + sizeof(ProgressCharacter) * selectedFighter))
+
+void GameProgress::RecordStoryAttempt()
 {
-    SELECTED_COUNT = SELECTED_COUNT + 1;
+    SELECTED_RECORD->storyAttempts = SELECTED_RECORD->storyAttempts + 1;
 }
-#undef SELECTED_COUNT
+#undef SELECTED_RECORD

@@ -4,10 +4,11 @@
 #include <d3d8.h>
 #include <deque>
 struct IDirect3DTexture8;
+struct ProgressDifficulty;
 class TextureManagerF198;
 
 // Result-list browser (separate from the match-scoring ResultScene).
-// Only observed fields are declared; never instantiate or infer its full size.
+// The scene allocator reserves 0x1D0 bytes.
 class ResultListScene : public SceneBase {
 public:
     ResultListScene();
@@ -28,7 +29,7 @@ public:
     TextureManagerF198* mainTexture;     // +008
     TextureManagerF198* auxiliaryTexture; // +00C
     IDirect3DTexture8* canvas;        // +010
-    void* selectedRecord;              // +014
+    ProgressDifficulty* selectedRecord;// +014
     std::deque<char*> records;        // +018, owned card names
     unsigned char unknown02C[0x1BC - 0x02C];
     short pageIndex;                   // +1BC

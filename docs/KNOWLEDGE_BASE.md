@@ -905,35 +905,31 @@ configuration supplies one.
 
 ## Game progress (save data)
 
-The progress object `g_GameProgress` at `0x006718F8` serves battle combo
-records, mode counters, the status display and character selection.
-Combo count and damage use fields `+0x008` and `+0x00C` of the selected
-difficulty. The status display reads the words at `+0x268` and `+0x394`
-from difficulty zero for the selected character. The layout is:
+The progress object at `0x006718F8` holds 15 character records, each
+containing four 0x5FC-byte difficulty records. The story loader counts
+attempts and advances the highest-stage limit for the character selection
+menu. The normal story ending increments the clear counter. Combat updates
+the longest combo and highest combo damage in the same difficulty record.
+The ranking at `+0x55C` holds ten 16-byte entries with an eight-byte encoded
+name, a month, a day and a score at `+0xC`.
 
-- 15 character blocks of 0x17F0 bytes from +0, each 4 difficulty blocks of
-  0x5FC bytes. A difficulty block ends with 10 ranked scores of 16 bytes at
-  +0x55C (8 name bytes, a DWORD, the score at +0xC; the lowest score sits
-  at +0x5F8). `ProgressRankingF375::InsertRankedScore` (00416EE0) works on
-  one difficulty block. +0x04 of a block counts selections and +0x556 is
-  read by the single-player options.
-- +0x16710: a 15×15 int table of mode counters; +0x16A94: 8 bytes (100
-  each by default); +0x16A9C: 40 bytes of unlock bits; +0x16AC4/+0x16AC5:
-  the selected fighter and difficulty; +0x16AC6: 256 bytes saved with the
-  scores.
+Story spell records use difficulty slot zero for the selected character.
+A CPU declaration increments the attempt count at `+0x394`. A knockout
+with a positive spell bonus increments the count at `+0x268` and can
+update the best bonus and capture flag. The battle HUD and results browser
+read those fields. The win matrix at `+0x16710` is indexed by winner and
+opponent, in that order. The name-entry flow copies between its ranked
+slot and the working name at `+0x16A94`.
 
-`src/engine/GameProgress.hpp` declares this layout and 27 of its methods.
-Nested indexing `characters[f].difficulties[d].x` compiles exactly like the
-left-to-right sum `this + f*0x17F0 + d*0x5FC + off`, but not like
-`this + (d*0x5FC + f*0x17F0)`: VC7.1 evaluates a parenthesized offset sum
-before adding the base, in a different instruction order.
-`IncrementSelectedRecordCount` (0041A270) needs that grouping and keeps it.
+The loader accepts the older, smaller `score.dat` layout. The writer
+uses all 15 character records and refreshes part of the 256-byte tail with
+random bytes before writing. The selection fields are runtime state.
+[Record layout](../src/engine/GameProgress.hpp) · [Reader](../src/engine/ScoreLoadF248.cpp) · [Writer](../src/engine/ProgressSaveF247.cpp)
 
-The selected-record accessors and mode counter live with the other
-record methods in `ProgressSelectionF274.cpp`. A headless consumer
-linked their archive member and exercised separate difficulty fields,
-zero extension of both card counters, mode counter writes and the
-selection check.
+`RecordStoryAttempt` at `0x0041A270` calculates the two byte strides
+before dereferencing the selected difficulty. The parenthesized sum
+preserves VC7.1's instruction order and selects the named member from the
+shared record. Nested array indexing evaluates the character stride first.
 
 ## VC7.1 `/Od` code generation
 

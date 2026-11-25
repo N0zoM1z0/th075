@@ -12,24 +12,24 @@
 
 #define CARD_RECORDS (&g_GameProgress)
 
-void GameProgress::MarkCardFlag(signed char key)
+void GameProgress::MarkSpellCapture(signed char key)
 {
-    characters[selectedFighter].difficulties[0].cardFlags[key] = 1;
+    characters[selectedFighter].difficulties[0].spellCaptureFlags[key] = 1;
 }
 
-void GameProgress::IncrementCardCounter(signed char key)
+void GameProgress::RecordSpellBonusClear(signed char key)
 {
-    characters[selectedFighter].difficulties[0].cardCounters[key]++;
+    characters[selectedFighter].difficulties[0].spellBonusClears[key]++;
 }
 
-int GameProgress::GetCardValue(signed char key)
+int GameProgress::GetBestSpellBonus(signed char key)
 {
-    return characters[selectedFighter].difficulties[0].cardValues[key];
+    return characters[selectedFighter].difficulties[0].bestSpellBonus[key];
 }
 
-void GameProgress::SetCardValue(signed char key, int value)
+void GameProgress::SetBestSpellBonus(signed char key, int value)
 {
-    characters[selectedFighter].difficulties[0].cardValues[key] = value;
+    characters[selectedFighter].difficulties[0].bestSpellBonus[key] = value;
 }
 
 void BattleScene::ResolveKnockout()
@@ -40,13 +40,13 @@ void BattleScene::ResolveKnockout()
         if (fighters[1]->field3A4 > 0) {
             if (g_ReplayModeAt0066C238 == ReplayMode::Recording) {
                 if (fighters[0]->field464 != 0)
-                    CARD_RECORDS->MarkCardFlag(
+                    CARD_RECORDS->MarkSpellCapture(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
-                CARD_RECORDS->IncrementCardCounter(
+                CARD_RECORDS->RecordSpellBonusClear(
                     reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
-                if (fighters[1]->field3A4 > CARD_RECORDS->GetCardValue(
+                if (fighters[1]->field3A4 > CARD_RECORDS->GetBestSpellBonus(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D])) {
-                    CARD_RECORDS->SetCardValue(
+                    CARD_RECORDS->SetBestSpellBonus(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D],
                         fighters[1]->field3A4);
                 }

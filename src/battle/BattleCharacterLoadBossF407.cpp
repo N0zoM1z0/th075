@@ -153,9 +153,9 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        g_SequenceCounterAt00671622=2;
        g_GameProgress.SetSelection(g_PlayerIdAt006714C8[0],g_OptionsModeAt006714D0);
        g_BattleFightersAt00671418[0]->score=0;
-       g_MaxCombatScore=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;
-       g_StateScoreThreshold=g_GameProgress.GetSelectedRecordAddress()->scores[9].score;
-       if(g_ReplayModeAt0066C238!=ReplayMode::Playback) g_GameProgress.IncrementSelectedRecordCount();
+       g_MaxCombatScore=g_GameProgress.GetSelectedDifficultyRecord()->scores[0].score;
+       g_StateScoreThreshold=g_GameProgress.GetSelectedDifficultyRecord()->scores[9].score;
+       if(g_ReplayModeAt0066C238!=ReplayMode::Playback) g_GameProgress.RecordStoryAttempt();
        g_BattleFightersAt00671418[0]->recoverableHealth=10000;
        g_BattleFightersAt00671418[0]->health=10000;
    }
@@ -167,7 +167,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
      g_BattleFightersAt00671418[0]->recoverableHealth=g_ReplayRecords.recordHeader.startingHealth;
      g_BattleFightersAt00671418[0]->health=g_ReplayRecords.recordHeader.startingHealth;
      g_BattleFightersAt00671418[0]->score=g_ReplayRecords.recordHeader.startingScore;
-   } else {g_GameProgress.RaiseSelectedValue(g_StageAt0067161E);g_GameProgress.SaveScoreFile();}
+   } else {g_GameProgress.UpdateHighestStoryStage(g_StageAt0067161E);g_GameProgress.SaveScoreFile();}
  } else {
    g_BattleFightersAt00671418[0]->score=0;g_BattleFightersAt00671418[1]->score=0;
    g_MaxCombatScore=0;g_StateScoreThreshold=0;g_StateFadeAlpha=0;

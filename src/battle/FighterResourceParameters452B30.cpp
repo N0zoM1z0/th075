@@ -14,7 +14,7 @@ void Fighter::SelectResourceParameters()
         field3A8 =
             field400[field39D];
         if (g_ReplayModeAt0066C238 == ReplayMode::Recording)
-            g_GameProgress.IncrementSelectedWordCounter(
+            g_GameProgress.RecordSpellAttempt(
                 reinterpret_cast<signed char*>(field384)[field39D]);
     } else {
         spellTimer = static_cast<short>(static_cast<int>(spellPower * 8800.0f / 900.0f) + 1201);

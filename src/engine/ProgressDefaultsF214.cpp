@@ -31,14 +31,14 @@ GameProgress::GameProgress()
             }
         }
         for (int t=0; t<15; ++t)
-            modeCounts[i][t] = 10;
+            matchWinsByFighterPair[i][t] = 10;
     }
-    field16A94[0]=100;
-    field16A94[1]=100;
-    field16A94[2]=100;
-    field16A94[3]=100;
-    field16A94[4]=100;
-    field16A94[5]=100;
-    field16A94[6]=100;
-    field16A94[7]=100;
+    workingPlayerName[0]=100;
+    workingPlayerName[1]=100;
+    workingPlayerName[2]=100;
+    workingPlayerName[3]=100;
+    workingPlayerName[4]=100;
+    workingPlayerName[5]=100;
+    workingPlayerName[6]=100;
+    workingPlayerName[7]=100;
 }

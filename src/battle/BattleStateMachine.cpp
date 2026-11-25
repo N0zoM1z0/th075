@@ -47,7 +47,7 @@ short BattleScene::AdvanceState()
                 fighters[WINNER]->ChoosePatternSequence();
                 g_TextRenderer->RenderTextToTexture(STATE_TEXT, 120, 120, 255, 24, 2, false);
                 fighters[WINNER]->noticeBadge = fighters[WINNER]->quoteBadges[LINE];
-                g_GameProgress.IncrementModeCounter(g_PlayerIdAt006714C8[WINNER], g_PlayerIdAt006714C8[1 - WINNER]);
+                g_GameProgress.RecordMatchWin(g_PlayerIdAt006714C8[WINNER], g_PlayerIdAt006714C8[1 - WINNER]);
                 STATE = 5; TIMER = 160;
             }
         }

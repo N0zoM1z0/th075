@@ -7,6 +7,6 @@
 // Signed fighter and difficulty selectors are observed at +0x16AC4/5;
 // owned record extents have original 0x17F0 and 0x5FC strides.
 // No complete private original owner type is asserted by this view.
-void GameProgress::IncrementSelectedRecord() {
-    characters[selectedFighter].difficulties[selectedDifficulty].field004++;
+void GameProgress::RecordStoryClear() {
+    characters[selectedFighter].difficulties[selectedDifficulty].storyClears++;
 }

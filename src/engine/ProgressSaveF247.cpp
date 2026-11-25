@@ -12,14 +12,14 @@ void GameProgress::SaveScoreFile()
         SetFilePointer(file,0,0,FILE_BEGIN);
         for (int i=0;i<256;++i) {
             if (rand()<4096)
-                field16AC6[i]=rand()%256;
+                randomizedSaveTail[i]=rand()%256;
         }
         DWORD written;
         WriteFile(file,characters,sizeof(characters),&written,0);
-        WriteFile(file,field16A94,sizeof(field16A94),&written,0);
-        WriteFile(file,modeCounts,sizeof(modeCounts),&written,0);
+        WriteFile(file,workingPlayerName,sizeof(workingPlayerName),&written,0);
+        WriteFile(file,matchWinsByFighterPair,sizeof(matchWinsByFighterPair),&written,0);
         WriteFile(file,unlockBits,sizeof(unlockBits),&written,0);
-        WriteFile(file,field16AC6,sizeof(field16AC6),&written,0);
+        WriteFile(file,randomizedSaveTail,sizeof(randomizedSaveTail),&written,0);
         CloseHandle(file);
     }
 }

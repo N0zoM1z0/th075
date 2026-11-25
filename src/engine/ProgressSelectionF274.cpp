@@ -1,54 +1,52 @@
 #include "engine/GameProgress.hpp"
 #include <string.h>
 
-// Borrowed game-profile owner method ABI only. The complete original score
-// matrix and profile metadata layout are not inferred from these accesses.
 void GameProgress::SetSelection(signed char fighter, signed char difficulty)
 {
     selectedFighter=fighter;
     selectedDifficulty=difficulty;
 }
-ProgressDifficulty* GameProgress::GetSelectedRecordAddress()
+ProgressDifficulty* GameProgress::GetSelectedDifficultyRecord()
 {
     return &characters[selectedFighter].difficulties[selectedDifficulty];
 }
-void GameProgress::StoreWorkingEightBytes(signed char slot)
+void GameProgress::CopyWorkingNameToRank(signed char slot)
 {
     memcpy(characters[selectedFighter].difficulties[selectedDifficulty].scores[slot].name,
-           field16A94,8);
+           workingPlayerName,8);
 }
 
-void GameProgress::IncrementModeCounter(signed char category, signed char key)
+void GameProgress::RecordMatchWin(signed char winner, signed char opponent)
 {
-    modeCounts[category][key]++;
+    matchWinsByFighterPair[winner][opponent]++;
 }
 
-unsigned int GameProgress::ReadSelectedWord268(signed char key)
+unsigned int GameProgress::GetSpellBonusClears(signed char key)
 {
-    return characters[selectedFighter].difficulties[0].cardCounters[key];
+    return characters[selectedFighter].difficulties[0].spellBonusClears[key];
 }
 
-unsigned int GameProgress::ReadSelectedWord394(signed char key)
+unsigned int GameProgress::GetSpellAttempts(signed char key)
 {
-    return characters[selectedFighter].difficulties[0].cardCounters2[key];
+    return characters[selectedFighter].difficulties[0].spellAttempts[key];
 }
 
-void GameProgress::SetSelectedValue8(int value)
+void GameProgress::SetMaxComboHits(int value)
 {
-    characters[selectedFighter].difficulties[selectedDifficulty].field008 = value;
+    characters[selectedFighter].difficulties[selectedDifficulty].maxComboHits = value;
 }
 
-void GameProgress::SetSelectedValue12(int value)
+void GameProgress::SetMaxComboDamage(int value)
 {
-    characters[selectedFighter].difficulties[selectedDifficulty].field00C = value;
+    characters[selectedFighter].difficulties[selectedDifficulty].maxComboDamage = value;
 }
 
-int GameProgress::GetSelectedValue8()
+int GameProgress::GetMaxComboHits()
 {
-    return characters[selectedFighter].difficulties[selectedDifficulty].field008;
+    return characters[selectedFighter].difficulties[selectedDifficulty].maxComboHits;
 }
 
-int GameProgress::GetSelectedValue12()
+int GameProgress::GetMaxComboDamage()
 {
-    return characters[selectedFighter].difficulties[selectedDifficulty].field00C;
+    return characters[selectedFighter].difficulties[selectedDifficulty].maxComboDamage;
 }

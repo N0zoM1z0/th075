@@ -25,7 +25,7 @@ BattleEndScene::BattleEndScene()
         g_GameProgress.SetUnlockBit(g_PlayerIdAt006714C8[0]+20);
     } else {
         g_StateReturnFlag=-1;
-        g_GameProgress.IncrementSelectedRecord();
+        g_GameProgress.RecordStoryClear();
         g_GameProgress.SetUnlockBit(g_PlayerIdAt006714C8[0]+40);
     }
 }

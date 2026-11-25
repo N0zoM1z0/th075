@@ -82,7 +82,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     if ((input[side].special) == 1) (stageCountdown[side]) = rand() % 10 + 30;
     if ((stageCountdown[side]) > 0) --(stageCountdown[side]);
     if ((input[side].alternative) == 1) {
-        if (g_GameProgress.GetSelectedValue() > 0 && g_CombatMode == CombatMode::Story) {
+        if (g_GameProgress.GetHighestStoryStage() > 0 && g_CombatMode == CombatMode::Story) {
             g_SoundBank->Play(45);
             (optionsOpen[side]) = !(optionsOpen[side]);
         }

@@ -68,10 +68,10 @@ void BattleScene::RenderStatus() {
                             D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), fighters[i]->field3A4, 4, 7);
                         DrawAtlasNumberAt00446B90(610.0f,
                             F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 31.0f,
-                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), g_GameProgress.ReadSelectedWord268(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
+                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), g_GameProgress.GetSpellBonusClears(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
                         DrawAtlasNumberAt00446B90(639.0f,
                             F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 33.0f,
-                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), g_GameProgress.ReadSelectedWord394(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
+                            D3DCOLOR_ARGB(field0E0[i], 255, 255, 255), g_GameProgress.GetSpellAttempts(reinterpret_cast<signed char*>(fighters[i]->field384)[fighters[i]->field39D]), 4, 3);
                         SetRect(&rect, 0, 0, 256, 32);
                         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(-nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f,
                             256.0f - nameSlide, F1096_STATUS_FLOAT(this, 0xF4, i) + 5.0f + 32.0f);

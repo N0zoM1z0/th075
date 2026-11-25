@@ -11,20 +11,20 @@ void GameProgress::LoadScoreFile()
     if (size<=0x11170) {
         SetFilePointer(file,0,0,FILE_BEGIN);
         ReadFile(file,characters,0xef60,&read,0);
-        ReadFile(file,field16A94,sizeof(field16A94),&read,0);
+        ReadFile(file,workingPlayerName,sizeof(workingPlayerName),&read,0);
         for (int outer=0;outer<10;++outer) {
             for (int inner=0;inner<10;++inner) {
-                ReadFile(file,&modeCounts[outer][inner],4,&read,0);
+                ReadFile(file,&matchWinsByFighterPair[outer][inner],4,&read,0);
             }
         }
         ReadFile(file,unlockBits,sizeof(unlockBits),&read,0);
-        ReadFile(file,field16AC6,sizeof(field16AC6),&read,0);
+        ReadFile(file,randomizedSaveTail,sizeof(randomizedSaveTail),&read,0);
     } else {
         ReadFile(file,characters,sizeof(characters),&read,0);
-        ReadFile(file,field16A94,sizeof(field16A94),&read,0);
-        ReadFile(file,modeCounts,sizeof(modeCounts),&read,0);
+        ReadFile(file,workingPlayerName,sizeof(workingPlayerName),&read,0);
+        ReadFile(file,matchWinsByFighterPair,sizeof(matchWinsByFighterPair),&read,0);
         ReadFile(file,unlockBits,sizeof(unlockBits),&read,0);
-        ReadFile(file,field16AC6,sizeof(field16AC6),&read,0);
+        ReadFile(file,randomizedSaveTail,sizeof(randomizedSaveTail),&read,0);
     }
     CloseHandle(file);
     }
