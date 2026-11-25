@@ -67,7 +67,7 @@ void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
         }
     }
     if (defender->health <= 0) {
-        if (field018 != 1)
+        if (battlePhase != BattlePhase::Fighting)
             defender->health = 1;
         else {
             defender->health = 0;
@@ -154,7 +154,7 @@ bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter 
             }
         }
         if (defender->health <= 0) {
-            if (field018 != 1)
+            if (battlePhase != BattlePhase::Fighting)
                 defender->health = 1;
             else {
                 defender->health = 0;

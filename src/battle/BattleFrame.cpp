@@ -12,15 +12,15 @@ unsigned short BattleScene::Update()
 {
     PollPauseShortcut();
     Render();
-    if (!field0A0 && !field0A1) {
-        ++field010;
-        if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::Recording) ++field014;
+    if (!pauseMenuOpen && !pauseOverlayAlpha) {
+        ++elapsedBattleFrames;
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::Recording) ++replayFrame;
         UpdatePlayerEffects();
         ApplySequence();
-        if (field01A <= 0) {
+        if (knockoutFreezeFrames <= 0) {
             fighters[0]->AdvanceGuardedState();
             fighters[1]->AdvanceGuardedState();
-            if (field018 == 7) {
+            if (battlePhase == BattlePhase::StoryDialogue) {
                 fighters[0]->AdvanceSequence();
                 fighters[0]->Advance();
                 fighters[1]->Advance();
@@ -32,7 +32,7 @@ unsigned short BattleScene::Update()
                 fighters[1]->Advance();
                 fighters[0]->field2EC->AdvanceAll();
                 fighters[1]->field2EC->AdvanceAll();
-                if (field018 != 4 && field018 != 9 && field018 != 0)
+                if (battlePhase != BattlePhase::VersusRoundRecovery && battlePhase != BattlePhase::StoryRoundRecovery && battlePhase != BattlePhase::RoundIntro)
                     reinterpret_cast<BattleScene *>(this)->ResolveActiveCollisions();
                 ResolveBodySeparation();
                 if (g_CombatMode != CombatMode::Practice) ResolveRoundEndMode();
@@ -45,7 +45,7 @@ unsigned short BattleScene::Update()
             g_CombatEffects.AdvanceAndPrune();
             g_CurrentBattleStageAt00671424->Advance();
         } else {
-            --field01A;
+            --knockoutFreezeFrames;
         }
         if (g_FramePresentToggle) Present();
         if (g_OptionsFlagAt00671430) g_FramePresentToggle = 1;
@@ -53,15 +53,15 @@ unsigned short BattleScene::Update()
         return AdvanceState();
     } else {
         HandlePauseMenu();
-        if (field0A0) {
-            if (field0A1 < 128) field0A1 += 5;
+        if (pauseMenuOpen) {
+            if (pauseOverlayAlpha < 128) pauseOverlayAlpha += 5;
         } else {
-            if (field0A1 > 0) field0A1 -= 5;
+            if (pauseOverlayAlpha > 0) pauseOverlayAlpha -= 5;
         }
         if (g_FramePresentToggle) Present();
         if (g_OptionsFlagAt00671430) g_FramePresentToggle = 1;
         else g_FramePresentToggle = static_cast<int>(!g_FramePresentToggle);
-        if (!field0A0 && !field0A1) {
+        if (!pauseMenuOpen && !pauseOverlayAlpha) {
             fighters[0]->inputBindings.held = inputSnapshots[0];
             fighters[1]->inputBindings.held = inputSnapshots[1];
         }
@@ -75,7 +75,7 @@ void BattleScene::Present()
 }
 void BattleScene::ResolveRoundEndMode()
 {
-    if (field018 != 1) return;
+    if (battlePhase != BattlePhase::Fighting) return;
     if (g_CombatMode == CombatMode::Story) ResolveKnockout();
     else EnterRoundEnd();
 }

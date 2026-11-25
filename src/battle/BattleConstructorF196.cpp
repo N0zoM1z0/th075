@@ -20,46 +20,46 @@ namespace StateAudioF196 {
 
 BattleScene::BattleScene()
 {
-    field028 = timeGetTime();
-    textures = 0;
+    renderSampleStartMs = timeGetTime();
+    textureManager = 0;
     comboDisplays[0] = 0;
     comboDisplays[1] = 0;
     digitAtlas = 0;
-    textures = new TextureManagerF198();
-    static_cast<TextureManagerF198*>(textures)->AllocateUnformattedSlots(11);
-    static_cast<TextureManagerF198*>(textures)->LoadDefault(
+    textureManager = new TextureManagerF198();
+    textureManager->AllocateUnformattedSlots(11);
+    textureManager->LoadDefault(
         g_BattleTextureDataAt0065831C, g_BattleTextureRootAt00658314);
     digitAtlas = new DigitAtlasesF177(
-        static_cast<TextureManagerF198*>(textures)->GetTexture(1),
-        static_cast<TextureManagerF198*>(textures)->GetTexture(8),
-        static_cast<TextureManagerF198*>(textures)->GetTexture(9));
+        textureManager->GetTexture(1),
+        textureManager->GetTexture(8),
+        textureManager->GetTexture(9));
     comboDisplays[0] =
-        new ComboDisplay(static_cast<TextureManagerF198*>(textures)->GetTexture(0), 1);
+        new ComboDisplay(textureManager->GetTexture(0), 1);
     comboDisplays[1] =
-        new ComboDisplay(static_cast<TextureManagerF198*>(textures)->GetTexture(0), -1);
+        new ComboDisplay(textureManager->GetTexture(0), -1);
     fighters[0] = g_BattleFightersAt00671418[0];
     fighters[1] = g_BattleFightersAt00671418[1];
-    field060 = 0;
-    field08C = 0.0f;
+    noticeFrames = 0;
+    hudOffsetY = 0.0f;
     field094 = 0;
-    field090 = -300.0f;
-    field00C = 200;
-    field01A = 0;
-    field0A0 = 0;
-    field0A1 = 0;
-    field09C = 1.0f;
+    victoryBadgeX = -300.0f;
+    phaseFrames = 200;
+    knockoutFreezeFrames = 0;
+    pauseMenuOpen = 0;
+    pauseOverlayAlpha = 0;
+    spellBackgroundBrightness = 1.0f;
     g_FramePresentToggle = 1;
-    field05C = 0;
-    field020 = 0;
-    field024 = 0;
-    field028 = timeGetTime();
-    field01C = 0;
+    storyDialogueEnds = 0;
+    previousSecondRenderCount = 0;
+    currentSecondRenderCount = 0;
+    renderSampleStartMs = timeGetTime();
+    restoreResources = 0;
     g_InputCanCancelAt00671632 = 0;
     if (g_CombatMode == CombatMode::Story) {
         g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
         fighters[0]->noticeEnabled = 0;
-        field08C = -200.0f;
-        field018 = 7;
+        hudOffsetY = -200.0f;
+        battlePhase = BattlePhase::StoryDialogue;
         if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
             g_ReplayModeAt0066C238 = ReplayMode::ReplayDialogue;
             g_InputCanCancelAt00671632 = 1;
@@ -68,17 +68,17 @@ BattleScene::BattleScene()
             g_ReplayModeAt0066C238 = ReplayMode::LiveDialogue;
     } else {
         CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
-        field08C = 0.0f;
-        field018 = 0;
+        hudOffsetY = 0.0f;
+        battlePhase = BattlePhase::RoundIntro;
     }
-    field010 = 0;
-    field014 = 0;
-    field118 = 0;
-    field10C = 0;
-    field06C = 0;
+    elapsedBattleFrames = 0;
+    replayFrame = 0;
+    pauseMenuRow = 0;
+    attractFrames = 0;
+    spellBonusBannerFrames = 0;
     g_SequenceByteAt0066C239 = 255;
     g_SequenceByteAt0066C23A = 255;
-    field110 = 0;
-    field114 = 0;
-    field05E = 0;
+    reduceRoundStockKeyHeldFrames = 0;
+    escapeKeyHeldFrames = 0;
+    victoryQuoteLine = 0;
 }

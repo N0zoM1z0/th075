@@ -8,13 +8,13 @@
 
 void BattleScene::HandleMode5Options()
 {
-    if (field0A0 == 0)
+    if (pauseMenuOpen == 0)
         return;
 
     if (::abs(static_cast<long>(g_InputMappings[0].held.counts[InputControl::Horizontal])) == 1) {
         g_SoundBank->Play(39);
         signed char horizontal = *reinterpret_cast<signed char*>(&g_InputMappings[0].held);
-        switch (field118) {
+        switch (pauseMenuRow) {
         case 0:
             fighters[1]->practiceSpellSelection = (fighters[1]->practiceSpellSelection + 6 + horizontal) % 6;
             break;
@@ -37,31 +37,31 @@ void BattleScene::HandleMode5Options()
     }
 
     if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1) {
-        switch (field118) {
+        switch (pauseMenuRow) {
         case 6:
             fighters[0]->spellTimer = 1;
             g_SoundBank->Play(45);
             break;
         case 7:
-            field0A0 = 0;
+            pauseMenuOpen = 0;
             g_SoundBank->Play(45);
             break;
         case 8:
-            field0A0 = 0;
+            pauseMenuOpen = 0;
             g_SoundBank->Play(45);
-            field018 = 6;
+            battlePhase = BattlePhase::LeaveBattle;
             break;
         }
     }
     if (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1)
-        field0A0 = 0;
+        pauseMenuOpen = 0;
     if (g_InputMappings[0].held.counts[InputControl::Vertical] == 1 || g_InputMappings[1].held.counts[InputControl::Vertical] == 1) {
         g_SoundBank->Play(39);
-        field118 = (field118 + 1) % 9;
+        pauseMenuRow = (pauseMenuRow + 1) % 9;
     }
     if (g_InputMappings[0].held.counts[InputControl::Vertical] == -1 || g_InputMappings[1].held.counts[InputControl::Vertical] == -1) {
         g_SoundBank->Play(39);
-        field118 = (field118 + 8) % 9;
+        pauseMenuRow = (pauseMenuRow + 8) % 9;
     }
     fighters[0]->field39D = 2 - fighters[1]->practiceSpellSelection / 3;
     fighters[0]->selectedSpellCards[0] = fighters[1]->practiceSpellSelection % 3;

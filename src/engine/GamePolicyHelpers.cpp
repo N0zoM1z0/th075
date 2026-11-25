@@ -29,7 +29,7 @@ u8 FontSurface::DecodeHexDigit(char digit)
 
 void BattleScene::DrawSelectedNotice()
 {
-    fighters[field05D]->DrawFacingSprite(fighters[field05D]->noticeBadge, field090, 0.0f, 0xffffffffUL);
+    fighters[matchWinnerSide]->DrawFacingSprite(fighters[matchWinnerSide]->noticeBadge, victoryBadgeX, 0.0f, 0xffffffffUL);
     g_TextRenderer->DrawBox();
 }
 

@@ -2,8 +2,6 @@
 #include "battle/RoundEndHudF173.hpp"
 #include "battle/CameraUpdate4126C0.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-
 void BattleScene::EnterRoundEnd()
 {
     if (fighters[0]->health <= 0 || fighters[1]->health <= 0) {
@@ -11,32 +9,32 @@ void BattleScene::EnterRoundEnd()
         fighters[1]->spellTimer = 0;
         fighters[0]->spellDeclarationExpired = 0;
         fighters[1]->spellDeclarationExpired = 0;
-        field01A = 60;
+        knockoutFreezeFrames = 60;
         if (fighters[0]->health <= 0) {
             if (fighters[1]->health <= 0) {
                 fighters[0]->field39D = 1;
                 fighters[1]->field39D = 1;
-                field018 = 2;
+                battlePhase = BattlePhase::VersusRoundKnockout;
                 fighters[0]->field3CF = 0;
                 fighters[1]->field3CF = 0;
                 fighters[0]->field3CE.unsignedAt3CE = 1;
                 fighters[1]->field3CE.unsignedAt3CE = 1;
-                field00C = 300;
+                phaseFrames = 300;
             } else {
                 fighters[0]->field39D--;
                 fighters[0]->field3CF = 0;
                 fighters[0]->field3CE.unsignedAt3CE = 1;
                 fighters[1]->field3CE.unsignedAt3CE = 0;
-                field01A = 60;
+                knockoutFreezeFrames = 60;
                 if (fighters[0]->field39D != 0) {
                     fighters[0]->recoverableHealth = 10000;
                     fighters[0]->health = 10000;
-                    field018 = 2;
-                    field00C = 300;
+                    battlePhase = BattlePhase::VersusRoundKnockout;
+                    phaseFrames = 300;
                 } else {
-                    field05D = 1;
-                    field018 = 3;
-                    field00C = 180;
+                    matchWinnerSide = 1;
+                    battlePhase = BattlePhase::VersusMatchKnockout;
+                    phaseFrames = 180;
                 }
             }
         } else if (fighters[1]->health <= 0) {
@@ -47,12 +45,12 @@ void BattleScene::EnterRoundEnd()
             if (fighters[1]->field39D != 0) {
                 fighters[1]->recoverableHealth = 10000;
                 fighters[1]->health = 10000;
-                field018 = 2;
-                field00C = 300;
+                battlePhase = BattlePhase::VersusRoundKnockout;
+                phaseFrames = 300;
             } else {
-                field05D = 0;
-                field018 = 3;
-                field00C = 180;
+                matchWinnerSide = 0;
+                battlePhase = BattlePhase::VersusMatchKnockout;
+                phaseFrames = 180;
             }
         }
     }
@@ -82,5 +80,3 @@ void ComboDisplay::UpdateCounter(short count, short damage, short rate)
         }
     }
 }
-
-#undef FIELD

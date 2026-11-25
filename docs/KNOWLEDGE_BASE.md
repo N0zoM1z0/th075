@@ -903,6 +903,24 @@ leaves the pause scancode at its zero-initialized value unless a saved
 configuration supplies one.
 [Fighter layout](../src/battle/Fighter.hpp) · [Config storage](../src/config/GameConfigStorage.hpp) · [Practice settings](../src/battle/BattleMode5OptionsF168.cpp)
 
+### Battle frame and overlays
+
+`BattleScene::Update` advances the scene clock when the pause overlay is
+closed. The replay clock advances during recording and playback, including
+knockout freeze frames. Timed replay commands use that clock for round-stock
+changes, resource restoration and direct spell-power adjustments.
+
+The battle phase byte distinguishes the introduction and active fight
+from versus round recovery, the victory quote and the story sequence.
+Story knockout has separate paths for round recovery, a continue prompt
+and the reset that follows a continue. The pause menu saves both input
+snapshots and restores them when it finishes closing.
+
+Spell overlay fields are parallel arrays indexed by fighter side. The
+update and draw paths share named members for panel position, rise speed,
+title scale, the numeric readout and their alphas.
+[Phase values](../src/battle/BattlePhase.hpp) · [Scene layout](../src/battle/BattleScene.hpp) · [Battle update](../src/battle/BattleFrame.cpp)
+
 ## Game progress (save data)
 
 The progress object at `0x006718F8` holds 15 character records, each

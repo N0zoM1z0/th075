@@ -25,76 +25,76 @@ void BattleScene::HandlePauseMenu()
     } else {
         if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1
             || g_InputMappings[1].held.counts[InputControl::ButtonA] == 1) {
-            field0A0 = 0;
+            pauseMenuOpen = 0;
             g_SoundBank->Play(45);
-            switch (field118) {
+            switch (pauseMenuRow) {
             case 0:
-                if (field018 == 12 && g_ContinueCountAt00671623 > 0) {
+                if (battlePhase == BattlePhase::StoryContinuePrompt && g_ContinueCountAt00671623 > 0) {
                     fighters[0]->field39D = 2;
                     fighters[0]->score = 0;
                     g_ContinueCountAt00671623--;
                     g_ContinueUsedAt00671624 = 1;
                     g_SequenceCounterAt00671622 = 2;
-                    field018 = 13;
-                    field00C = 299;
+                    battlePhase = BattlePhase::StoryContinueReset;
+                    phaseFrames = 299;
                 }
                 break;
             case 1:
-                if (field018 == 12) {
+                if (battlePhase == BattlePhase::StoryContinuePrompt) {
                     g_StateReturnFlag = 0;
-                    field018 = 14;
+                    battlePhase = BattlePhase::LeaveStory;
                     break;
                 }
-                field018 = 6;
+                battlePhase = BattlePhase::LeaveBattle;
                 break;
             case 2:
-                if (field018 == 12) {
+                if (battlePhase == BattlePhase::StoryContinuePrompt) {
                     g_StateReturnFlag = 1;
-                    field018 = 14;
+                    battlePhase = BattlePhase::LeaveStory;
                 } else {
-                    field018 = 8;
+                    battlePhase = BattlePhase::LeaveAndSaveReplay;
                 }
                 break;
             }
         }
-        if (field018 != 5 && field018 != 12
+        if (battlePhase != BattlePhase::VictoryQuote && battlePhase != BattlePhase::StoryContinuePrompt
             && (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1
                 || g_InputMappings[1].held.counts[InputControl::ButtonB] == 1))
-            field0A0 = 0;
+            pauseMenuOpen = 0;
         if (g_InputMappings[0].held.counts[InputControl::Vertical] == 1
             || g_InputMappings[1].held.counts[InputControl::Vertical] == 1) {
             g_SoundBank->Play(39);
-            field118++;
+            pauseMenuRow++;
         }
         if (g_InputMappings[0].held.counts[InputControl::Vertical] == -1
             || g_InputMappings[1].held.counts[InputControl::Vertical] == -1) {
             g_SoundBank->Play(39);
-            field118--;
+            pauseMenuRow--;
         }
         if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
-            if (field118 < 0)
-                field118 = 1;
-            if (field118 > 1)
-                field118 = 0;
+            if (pauseMenuRow < 0)
+                pauseMenuRow = 1;
+            if (pauseMenuRow > 1)
+                pauseMenuRow = 0;
         }
-        if (field018 == 5) {
-            if (field118 < 1)
-                field118 = 2;
-            if (field118 > 2)
-                field118 = 1;
-        } else if (field018 == 12 && g_ContinueCountAt00671623 == 0) {
-            field118 = 1;
+        if (battlePhase == BattlePhase::VictoryQuote) {
+            if (pauseMenuRow < 1)
+                pauseMenuRow = 2;
+            if (pauseMenuRow > 2)
+                pauseMenuRow = 1;
+        } else if (battlePhase == BattlePhase::StoryContinuePrompt && g_ContinueCountAt00671623 == 0) {
+            pauseMenuRow = 1;
         } else if (g_CombatMode == CombatMode::Story
-            && (g_ContinueUsedAt00671624 != 0 || field018 == 7)) {
-            if (field118 < 0)
-                field118 = 1;
-            if (field118 > 1)
-                field118 = 0;
+            && (g_ContinueUsedAt00671624 != 0 || battlePhase == BattlePhase::StoryDialogue)) {
+            if (pauseMenuRow < 0)
+                pauseMenuRow = 1;
+            if (pauseMenuRow > 1)
+                pauseMenuRow = 0;
         } else {
-            if (field118 < 0)
-                field118 = 2;
-            if (field118 > 2)
-                field118 = 0;
+            if (pauseMenuRow < 0)
+                pauseMenuRow = 2;
+            if (pauseMenuRow > 2)
+                pauseMenuRow = 0;
         }
     }
 }

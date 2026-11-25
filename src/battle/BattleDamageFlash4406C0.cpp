@@ -2,7 +2,6 @@
 #include "battle/BattleScene.hpp"
 #include "battle/BattleHud43E040.hpp"
 
-#define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 
 void BattleScene::RenderDamageFlash() {
     float x;
@@ -10,7 +9,7 @@ void BattleScene::RenderDamageFlash() {
     D3DCOLOR color;
     RECT region;
     unsigned char component;
-    reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
+    textureManager->SetBlendMode(0);
     x = g_CombatViewOffsetX - 160.0f;
     screenY = g_CombatViewOffsetY;
     if ((fighters[0]->frameInfo->flags & 0x100000) == 0 && fighters[0]->health > 0 &&
@@ -58,5 +57,3 @@ void BattleScene::RenderDamageFlash() {
         Graphics::DrawFilledRectangle(&region, 0xFF000000);
     }
 }
-
-#undef STYLE

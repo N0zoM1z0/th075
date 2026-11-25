@@ -1,6 +1,5 @@
 #include "battle/BattleScene.hpp"
 #include "battle/BattleFrameDependencies.hpp"
-#include "battle/BattleStatusFloatPairF1096.hpp"
 #define COLLISION reinterpret_cast<BattleScene *>(this)
 signed char g_LeftBoundaryOwner = -1;
 signed char g_RightBoundaryOwner = -1;
@@ -80,36 +79,35 @@ void BattleScene::ResolveBodySeparation()
 }
 
 #include "battle/BattleStateMachine.hpp"
-#define SLOT(type, offset) reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset)[i]
 void BattleScene::UpdateTransition()
 {
     int i;
-    if (field09C > 0.33f && (fighters[0]->spellTimer > 0 || fighters[1]->spellTimer > 0))
-        field09C -= 0.02f;
+    if (spellBackgroundBrightness > 0.33f && (fighters[0]->spellTimer > 0 || fighters[1]->spellTimer > 0))
+        spellBackgroundBrightness -= 0.02f;
     for (i = 0; i < 2; ++i) {
         if ((fighters[i]->spellTimer) > 0) {
             if ((fighters[i]->field3A2) < 80) {
                 if ((fighters[i]->field3A2) == 0) {
-                    SLOT(unsigned char, 0xDC) = 15;
-                    SLOT(unsigned char, 0xDE) = 5;
-                    SLOT(unsigned char, 0xE0) = 5;
-                    F1096_STATUS_FLOAT(this, 0xF4, i) = 351.0f;
-                    F1096_STATUS_FLOAT(this, 0x104, i) = 12.0f;
-                    F1096_STATUS_FLOAT(this, 0xE4, i) = 7.0f;
-                    F1096_STATUS_FLOAT(this, 0xFC, i) = 20.0f;
-                    SLOT(int, 0xEC) = (fighters[i]->spellTimer);
+                    spellPanelAlpha[i] = 15;
+                    spellTitleAlpha[i] = 5;
+                    spellNumbersAlpha[i] = 5;
+                    spellPanelY[i] = 351.0f;
+                    spellNumbersOffsetY[i] = 12.0f;
+                    spellTitleScale[i] = 7.0f;
+                    spellPanelRiseSpeed[i] = 20.0f;
+                    initialSpellTimer[i] = (fighters[i]->spellTimer);
                 }
-                if (F1096_STATUS_FLOAT(this, 0xFC, i) > 0.0f && (fighters[i]->field3A2) >= 40) {
-                    F1096_STATUS_FLOAT(this, 0xF4, i) -= F1096_STATUS_FLOAT(this, 0xFC, i);
-                    F1096_STATUS_FLOAT(this, 0xFC, i) -= 0.75f;
+                if (spellPanelRiseSpeed[i] > 0.0f && (fighters[i]->field3A2) >= 40) {
+                    spellPanelY[i] -= spellPanelRiseSpeed[i];
+                    spellPanelRiseSpeed[i] -= 0.75f;
                 }
-                if (SLOT(unsigned char, 0xDC) < 255) SLOT(unsigned char, 0xDC) += 12;
-                if (SLOT(unsigned char, 0xDE) < 255) SLOT(unsigned char, 0xDE) += 25;
-                if (SLOT(unsigned char, 0xE0) < 255 && (fighters[i]->field3A2) >= 20) SLOT(unsigned char, 0xE0) += 25;
-                if (F1096_STATUS_FLOAT(this, 0x104, i) > 0.0f && (fighters[i]->field3A2) >= 30) F1096_STATUS_FLOAT(this, 0x104, i) -= 1.2f;
-                if (F1096_STATUS_FLOAT(this, 0xE4, i) > 1.0f) {
-                    F1096_STATUS_FLOAT(this, 0xE4, i) -= 0.2f;
-                    if (F1096_STATUS_FLOAT(this, 0xE4, i) < 1.0f) F1096_STATUS_FLOAT(this, 0xE4, i) = 1.0f;
+                if (spellPanelAlpha[i] < 255) spellPanelAlpha[i] += 12;
+                if (spellTitleAlpha[i] < 255) spellTitleAlpha[i] += 25;
+                if (spellNumbersAlpha[i] < 255 && (fighters[i]->field3A2) >= 20) spellNumbersAlpha[i] += 25;
+                if (spellNumbersOffsetY[i] > 0.0f && (fighters[i]->field3A2) >= 30) spellNumbersOffsetY[i] -= 1.2f;
+                if (spellTitleScale[i] > 1.0f) {
+                    spellTitleScale[i] -= 0.2f;
+                    if (spellTitleScale[i] < 1.0f) spellTitleScale[i] = 1.0f;
                 }
             }
             ++(fighters[i]->field3A2);
@@ -117,58 +115,57 @@ void BattleScene::UpdateTransition()
     }
 }
 
-#define OVERLAY_TIME field060
 void BattleScene::AdvanceOverlay()
 {
-    if (OVERLAY_TIME > 0) {
-        switch (field064) {
+    if (noticeFrames > 0) {
+        switch (noticeKind) {
         case 0:
-            if (OVERLAY_TIME >= 150) {
-                field074 = 350.0f; field070 = 430.0f; field078 = 300.0f;
-                field07C = -300.0f; field080 = 0.0f; field084 = 0.0f; field088 = 0.0f;
-            } else if (OVERLAY_TIME >= 140) {
-                field074 -= 40.0f; field070 -= 70.0f; field078 -= 30.0f;
-            } else if (OVERLAY_TIME >= 75) {
-                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
-                field080 += field084; field084 += 0.05f;
-            } else if (OVERLAY_TIME >= 70) {
-                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
-                field07C += 30.0f; field088 += 0.2f;
-            } else if (OVERLAY_TIME >= 65) {
-                field074 -= 0.3f; field070 -= 0.3f; field078 -= 30.0f;
-                field07C += 30.0f; field088 += 0.15f;
-            } else if (OVERLAY_TIME >= 60) {
-                field074 -= 0.3f; field070 -= 0.3f; field078 -= 30.0f;
-                field07C += 0.5f; field088 += 0.15f;
-            } else if (OVERLAY_TIME >= 10) {
-                field074 -= 30.0f; field070 -= 30.0f; field078 -= 30.0f;
-                field07C += 0.5f; field088 += 0.15f;
-            } else if (OVERLAY_TIME > 0) {
-                field074 -= 30.0f; field070 -= 30.0f; field078 -= 30.0f;
-                field07C += 0.5f; field07C += 200.0f;
+            if (noticeFrames >= 150) {
+                noticeHorizontalEdgeOffset = 350.0f; noticeVerticalEdgeOffset = 430.0f; noticeTitleMotion = 300.0f;
+                noticeSubtitleMotion = -300.0f; noticeFlashScale = 0.0f; noticeFlashScaleStep = 0.0f; noticePulseScale = 0.0f;
+            } else if (noticeFrames >= 140) {
+                noticeHorizontalEdgeOffset -= 40.0f; noticeVerticalEdgeOffset -= 70.0f; noticeTitleMotion -= 30.0f;
+            } else if (noticeFrames >= 75) {
+                noticeHorizontalEdgeOffset -= 0.3f; noticeVerticalEdgeOffset -= 0.3f; noticeTitleMotion -= 0.3f;
+                noticeFlashScale += noticeFlashScaleStep; noticeFlashScaleStep += 0.05f;
+            } else if (noticeFrames >= 70) {
+                noticeHorizontalEdgeOffset -= 0.3f; noticeVerticalEdgeOffset -= 0.3f; noticeTitleMotion -= 0.3f;
+                noticeSubtitleMotion += 30.0f; noticePulseScale += 0.2f;
+            } else if (noticeFrames >= 65) {
+                noticeHorizontalEdgeOffset -= 0.3f; noticeVerticalEdgeOffset -= 0.3f; noticeTitleMotion -= 30.0f;
+                noticeSubtitleMotion += 30.0f; noticePulseScale += 0.15f;
+            } else if (noticeFrames >= 60) {
+                noticeHorizontalEdgeOffset -= 0.3f; noticeVerticalEdgeOffset -= 0.3f; noticeTitleMotion -= 30.0f;
+                noticeSubtitleMotion += 0.5f; noticePulseScale += 0.15f;
+            } else if (noticeFrames >= 10) {
+                noticeHorizontalEdgeOffset -= 30.0f; noticeVerticalEdgeOffset -= 30.0f; noticeTitleMotion -= 30.0f;
+                noticeSubtitleMotion += 0.5f; noticePulseScale += 0.15f;
+            } else if (noticeFrames > 0) {
+                noticeHorizontalEdgeOffset -= 30.0f; noticeVerticalEdgeOffset -= 30.0f; noticeTitleMotion -= 30.0f;
+                noticeSubtitleMotion += 0.5f; noticeSubtitleMotion += 200.0f;
             }
             break;
         case 1:
-            if (OVERLAY_TIME >= 150) {
-                field074 = 350.0f; field070 = 430.0f; field078 = 300.0f;
-                field07C = -300.0f; field080 = 0.0f; field084 = 0.0f; field088 = 0.0f;
-            } else if (OVERLAY_TIME >= 140) {
-                field074 -= 40.0f; field070 -= 70.0f; field078 -= 30.0f;
-            } else if (OVERLAY_TIME >= 75) {
-                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
-                field088 += 0.15f;
-            } else if (OVERLAY_TIME >= 70) {
-                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
-                field07C += 30.0f; field088 += 0.15f;
-            } else if (OVERLAY_TIME >= 65) {
-                field074 -= 0.3f; field070 -= 0.3f; field078 -= 30.0f;
-                field07C += 30.0f; field088 += 0.15f;
-            } else if (OVERLAY_TIME > 0) {
-                field074 -= 30.0f; field070 -= 30.0f; field078 -= 30.0f;
-                field088 += 0.15f;
+            if (noticeFrames >= 150) {
+                noticeHorizontalEdgeOffset = 350.0f; noticeVerticalEdgeOffset = 430.0f; noticeTitleMotion = 300.0f;
+                noticeSubtitleMotion = -300.0f; noticeFlashScale = 0.0f; noticeFlashScaleStep = 0.0f; noticePulseScale = 0.0f;
+            } else if (noticeFrames >= 140) {
+                noticeHorizontalEdgeOffset -= 40.0f; noticeVerticalEdgeOffset -= 70.0f; noticeTitleMotion -= 30.0f;
+            } else if (noticeFrames >= 75) {
+                noticeHorizontalEdgeOffset -= 0.3f; noticeVerticalEdgeOffset -= 0.3f; noticeTitleMotion -= 0.3f;
+                noticePulseScale += 0.15f;
+            } else if (noticeFrames >= 70) {
+                noticeHorizontalEdgeOffset -= 0.3f; noticeVerticalEdgeOffset -= 0.3f; noticeTitleMotion -= 0.3f;
+                noticeSubtitleMotion += 30.0f; noticePulseScale += 0.15f;
+            } else if (noticeFrames >= 65) {
+                noticeHorizontalEdgeOffset -= 0.3f; noticeVerticalEdgeOffset -= 0.3f; noticeTitleMotion -= 30.0f;
+                noticeSubtitleMotion += 30.0f; noticePulseScale += 0.15f;
+            } else if (noticeFrames > 0) {
+                noticeHorizontalEdgeOffset -= 30.0f; noticeVerticalEdgeOffset -= 30.0f; noticeTitleMotion -= 30.0f;
+                noticePulseScale += 0.15f;
             }
             break;
         }
-        --OVERLAY_TIME;
+        --noticeFrames;
     }
 }

@@ -10,8 +10,8 @@ BattleScene::~BattleScene() {
     // Preserve the original literal nonzero second operand and its native test.
     if (g_ReplayModeAt0066C238 == ReplayMode::Playback || 4)
         SetClampedGameValue(16);
-    if (textures)
-        delete static_cast<TextureManagerF198*>(textures);
+    if (textureManager)
+        delete textureManager;
     if (digitAtlas)
         delete digitAtlas;
     if (comboDisplays[0])

@@ -99,7 +99,7 @@ bool BattleScene::ApplyAttackHit(Actor *attack, Fighter *attacker, Fighter *defe
     if (attacker->field3CE.signedAt3CE == 0)
         defender->health -= attacker->CalculateDamage(attack);
     if (defender->health <= 0) {
-        if (field018 != 1)
+        if (battlePhase != BattlePhase::Fighting)
             defender->health = 1;
         else {
             defender->health = 0;

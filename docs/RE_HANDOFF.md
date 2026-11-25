@@ -52,6 +52,13 @@ identical random seeds, headless runs of both versions produced identical
 93,124-byte score files from the Windows playtest save.
 [Save data and result fields](KNOWLEDGE_BASE.md#game-progress-save-data)
 
+The battle scene now has named phases for round recovery, the victory
+quote, story dialogue and continues. The replay dispatcher uses named
+commands, and the HUD reads the scene's typed spell panel fields. All 92
+affected units passed, and the Windows link matched the preceding build
+except for the COFF timestamp.
+[Battle phase and overlay evidence](KNOWLEDGE_BASE.md#battle-frame-and-overlays)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

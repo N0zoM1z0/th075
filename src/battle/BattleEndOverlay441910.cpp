@@ -6,8 +6,6 @@
 #include "battle/BattleScene.hpp"
 #include "battle/BattleEndOverlay441910.hpp"
 
-#define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
-#define DRAWING reinterpret_cast<TextureManagerF198*>(textures)
 #define LEFT_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[0]->field534)
 #define RIGHT_DRAWING reinterpret_cast<TextureManagerF198*>(fighters[1]->field534)
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
@@ -19,12 +17,12 @@ void BattleScene::RenderEndOverlay() {
         RenderQuadPacket5E68C0 packet;
         {
             RECT rect;
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
+            textureManager->SetBlendMode(0);
             SetRect(&rect, 0, 0, 640, 480);
-            Graphics::DrawFilledRectangle(&rect, D3DCOLOR_ARGB(field0A1, 0, 0, 0));
-            if (field0A1 < 50)
+            Graphics::DrawFilledRectangle(&rect, D3DCOLOR_ARGB(pauseOverlayAlpha, 0, 0, 0));
+            if (pauseOverlayAlpha < 50)
                 return;
-            if (field0A0 == 0)
+            if (pauseMenuOpen == 0)
                 return;
             if (g_ReplayModeAt0066C238 != ReplayMode::Playback) {
                 SetRect(&rect, 0, 0, 256, 256);
@@ -42,30 +40,30 @@ void BattleScene::RenderEndOverlay() {
                     LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, packet, &rect, 0xFFFFFFFF);
                 }
             }
-            if (field018 == 12 && g_ContinueCountAt00671623 > 0) {
+            if (battlePhase == BattlePhase::StoryContinuePrompt && g_ContinueCountAt00671623 > 0) {
                 SetRect(&rect, 288, 192, 512, 224);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(176.0f, 230.0f, 400.0f, 262.0f);
-                DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
+                textureManager->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
                 SetRect(&rect, 512, g_ContinueCountAt00671623 * 32 + 96, 576, g_ContinueCountAt00671623 * 32 + 128);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(390.0f, 230.0f, 454.0f, 262.0f);
-                DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
+                textureManager->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
             }
-            if (field018 != 5 &&
-                (field018 != 12 || g_ContinueCountAt00671623 != 0)) {
-                SetRect(&rect, 384, (field118 != 0) * 32 + 128,
-                    512, (field118 != 0) * 32 + 160);
+            if (battlePhase != BattlePhase::VictoryQuote &&
+                (battlePhase != BattlePhase::StoryContinuePrompt || g_ContinueCountAt00671623 != 0)) {
+                SetRect(&rect, 384, (pauseMenuRow != 0) * 32 + 128,
+                    512, (pauseMenuRow != 0) * 32 + 160);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(256.0f, 140.0f, 384.0f, 172.0f);
-                DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
+                textureManager->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
             }
-            SetRect(&rect, 256, (field118 != 1) * 32 + 128,
-                384, (field118 != 1) * 32 + 160);
+            SetRect(&rect, 256, (pauseMenuRow != 1) * 32 + 128,
+                384, (pauseMenuRow != 1) * 32 + 160);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(256.0f, 170.0f, 384.0f, 202.0f);
-            DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
-            if (g_ReplayModeAt0066C238 != ReplayMode::Playback && g_ContinueUsedAt00671624 == 0 && field018 != 7) {
-                SetRect(&rect, 0, (field118 != 2) * 32 + 128,
-                    256, (field118 != 2) * 32 + 155);
+            textureManager->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
+            if (g_ReplayModeAt0066C238 != ReplayMode::Playback && g_ContinueUsedAt00671624 == 0 && battlePhase != BattlePhase::StoryDialogue) {
+                SetRect(&rect, 0, (pauseMenuRow != 2) * 32 + 128,
+                    256, (pauseMenuRow != 2) * 32 + 155);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(192.0f, 200.0f, 448.0f, 227.0f);
-                DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
+                textureManager->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
             }
 
         }
@@ -75,5 +73,3 @@ void BattleScene::RenderEndOverlay() {
 #undef QUAD
 #undef RIGHT_DRAWING
 #undef LEFT_DRAWING
-#undef DRAWING
-#undef STYLE

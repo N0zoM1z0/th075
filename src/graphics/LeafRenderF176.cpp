@@ -12,8 +12,8 @@ void __cdecl DrawAtlasNumberDefaultAt00446B60(float x, float y, D3DCOLOR color,
 
 void BattleScene::SetNotice(unsigned char state)
 {
-    field060 = 150;
-    field064 = state;
+    noticeFrames = 150;
+    noticeKind = state;
 }
 
 void AuxiliaryForwardersF176::SpawnAuxEffect(short effect, float x, float y,

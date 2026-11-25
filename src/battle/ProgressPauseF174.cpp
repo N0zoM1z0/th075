@@ -22,22 +22,22 @@ void BattleScene::PollPauseShortcut()
             || g_InputMappings[0].IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     if (g_InputMappings[0].IsKeyDown(1))
-        field114++;
+        escapeKeyHeldFrames++;
     else
-        field114 = 0;
-    if ((field114 == 3
+        escapeKeyHeldFrames = 0;
+    if ((escapeKeyHeldFrames == 3
             || g_InputMappings[0].held.counts[InputControl::Pause] == 1
             || g_InputMappings[1].held.counts[InputControl::Pause] == 1)
-        && field018 != 5
-        && field018 != 0
-        && field018 != 7
+        && battlePhase != BattlePhase::VictoryQuote
+        && battlePhase != BattlePhase::RoundIntro
+        && battlePhase != BattlePhase::StoryDialogue
         && g_CombatMode != CombatMode::Attract) {
-        field0A0 = static_cast<int>(!field0A0);
-        if (field0A0 != 0)
-            field118 = 0;
+        pauseMenuOpen = static_cast<int>(!pauseMenuOpen);
+        if (pauseMenuOpen != 0)
+            pauseMenuRow = 0;
         g_SoundBank->Play(48);
     }
-    g_RenderByte0067161C = field0A0;
+    g_RenderByte0067161C = pauseMenuOpen;
 }
 
 void BattleScene::UpdatePlayerEffects()
@@ -46,19 +46,19 @@ void BattleScene::UpdatePlayerEffects()
     int j;
     for (i = 0; i < 2; i++) {
         fighters[i]->UpdateControls();
-        if (field018 != 1) {
+        if (battlePhase != BattlePhase::Fighting) {
             fighters[i]->inputA = 0;
             fighters[i]->inputB = 0;
             fighters[i]->inputC = 0;
             fighters[i]->ClearAuxiliaryWords();
-            if (field018 == 13
-                || field018 == 11
-                || field018 == 10
-                || field018 == 3
-                || field018 == 2
-                || field018 == 0
-                || field018 == 5
-                || field018 == 7) {
+            if (battlePhase == BattlePhase::StoryContinueReset
+                || battlePhase == BattlePhase::StoryMatchKnockout
+                || battlePhase == BattlePhase::StoryRoundKnockout
+                || battlePhase == BattlePhase::VersusMatchKnockout
+                || battlePhase == BattlePhase::VersusRoundKnockout
+                || battlePhase == BattlePhase::RoundIntro
+                || battlePhase == BattlePhase::VictoryQuote
+                || battlePhase == BattlePhase::StoryDialogue) {
                 fighters[i]->inputD = 0;
                 fighters[i]->inputX = 0;
                 fighters[i]->inputY = 0;
@@ -71,7 +71,7 @@ void BattleScene::UpdatePlayerEffects()
         }
         for (j = 0; j < 5; j++) {
             if (HELD_BUTTON != 0)
-                field10C = 3600;
+                attractFrames = 3600;
         }
     }
 }

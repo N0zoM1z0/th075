@@ -56,8 +56,8 @@ void BattleScene::ResolveKnockout()
                 static_cast<unsigned long>(fighters[0]->score) + fighters[1]->field3A4);
             if (fighters[0]->score > g_MaxCombatScore)
                 g_MaxCombatScore = fighters[0]->score;
-            field06C = 120;
-            field068 = fighters[1]->field3A4;
+            spellBonusBannerFrames = 120;
+            awardedSpellBonus = fighters[1]->field3A4;
             fighters[1]->field3A4 = 0;
         }
         if (fighters[0]->spellTimer > 0)
@@ -73,17 +73,17 @@ void BattleScene::ResolveKnockout()
         if (fighters[0]->health <= 0)
             fighters[0]->health = 1;
         if (fighters[1]->field39D > 0) {
-            field018 = 9;
-            field00C = 147;
+            battlePhase = BattlePhase::StoryRoundRecovery;
+            phaseFrames = 147;
             if (reinterpret_cast<signed char*>(fighters[1]->field32A + 1)[fighters[1]->field39D] == 0) {
                 fighters[1]->health = fighters[1]->healthLimits[fighters[1]->field39D];
                 fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->field39D];
                 fighters[1]->field3A8 = 0;
             }
         } else {
-            field018 = 11;
-            field00C = 180;
-            field01A = 60;
+            battlePhase = BattlePhase::StoryMatchKnockout;
+            phaseFrames = 180;
+            knockoutFreezeFrames = 60;
         }
     } else if (fighters[0]->health <= 0) {
         fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->field39D];
@@ -97,19 +97,19 @@ void BattleScene::ResolveKnockout()
         if (fighters[0]->field39D != 0) {
             fighters[0]->recoverableHealth = 10000;
             fighters[0]->health = 10000;
-            field018 = 10;
-            field00C = 300;
-            field01A = 60;
+            battlePhase = BattlePhase::StoryRoundKnockout;
+            phaseFrames = 300;
+            knockoutFreezeFrames = 60;
         } else if (static_cast<signed char>(g_SequenceCounterAt00671622) > 0) {
             g_SequenceCounterAt00671622--;
             fighters[0]->field39D = 2;
-            field018 = 10;
-            field00C = 300;
-            field01A = 60;
+            battlePhase = BattlePhase::StoryRoundKnockout;
+            phaseFrames = 300;
+            knockoutFreezeFrames = 60;
         } else {
-            field018 = 11;
-            field00C = 180;
-            field01A = 60;
+            battlePhase = BattlePhase::StoryMatchKnockout;
+            phaseFrames = 180;
+            knockoutFreezeFrames = 60;
         }
     }
 }

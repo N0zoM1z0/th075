@@ -9,18 +9,17 @@
 #include "battle/CommandListF283.hpp"
 #include "battle/EffectManagerLifetimeF161.hpp"
 
-#define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 signed char g_RenderOrderAt0068C860;
 
 void BattleScene::Render() {
-    if (field0A0 == 0 && field0A1 == 0) {
+    if (pauseMenuOpen == 0 && pauseOverlayAlpha == 0) {
         CameraUpdate4126C0::Advance();
-        if (field09C < 1.0f) {
-            if (field09C < 0.0f)
-                field09C = 0.0f;
-            field09C += 0.01f;
-            if (field09C > 1.0f)
-                field09C = 1.0f;
+        if (spellBackgroundBrightness < 1.0f) {
+            if (spellBackgroundBrightness < 0.0f)
+                spellBackgroundBrightness = 0.0f;
+            spellBackgroundBrightness += 0.01f;
+            if (spellBackgroundBrightness > 1.0f)
+                spellBackgroundBrightness = 1.0f;
         }
         if ((fighters[1]->action) >= 300) {
             if ((fighters[0]->action) < 300)
@@ -37,22 +36,22 @@ void BattleScene::Render() {
         ((((320.0f - g_CombatViewSpan) * 0.0f) / 320.0f) * 280.0f) / 2.0f);
     if (Graphics::BeginFrame()) {
         if (g_FramePresentToggle) {
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
+            textureManager->SetColorMultiplier(spellBackgroundBrightness);
             g_CurrentBattleStageAt00671424->Render();
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(3);
+            textureManager->SetDepthMode(0);
+            textureManager->SetDepthMode(3);
             fighters[0]->field2EC->DispatchAll();
             fighters[1]->field2EC->DispatchAll();
             fighters[0]->RenderMirroredNode();
             fighters[1]->RenderMirroredNode();
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
+            textureManager->SetColorMultiplier(1.0f);
             g_CurrentBattleStageAt00671424->Slot3();
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(3);
+            textureManager->SetDepthMode(0);
+            textureManager->SetDepthMode(3);
             fighters[0]->field2EC->DispatchSelected(2);
             fighters[1]->field2EC->DispatchSelected(2);
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(1);
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(2);
+            textureManager->SetDepthMode(1);
+            textureManager->SetDepthMode(2);
             fighters[0]->field480->RenderElements();
             fighters[1]->field480->RenderElements();
             g_CombatEffects.DispatchSelectedList(0);
@@ -72,10 +71,10 @@ void BattleScene::Render() {
             fighters[0]->field2EC->DispatchSelected(1);
             fighters[1]->field2EC->DispatchSelected(1);
             g_CombatEffects.DispatchSelectedList(1);
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(field09C);
+            textureManager->SetColorMultiplier(spellBackgroundBrightness);
             g_CurrentBattleStageAt00671424->Slot2();
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetColorMultiplier(1.0f);
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetDepthMode(0);
+            textureManager->SetColorMultiplier(1.0f);
+            textureManager->SetDepthMode(0);
             if (g_OptionsFlagAt00671428)
                 RenderDamageFlash();
         }
@@ -83,7 +82,7 @@ void BattleScene::Render() {
         if (g_StateFadeAlpha > 0) {
             RECT rectangle;
             SetRect(&rectangle, 0, 0, 640, 480);
-            reinterpret_cast<TextureManagerF198*>(STYLE)->SetBlendMode(0);
+            textureManager->SetBlendMode(0);
             Graphics::DrawFilledRectangle(&rectangle,
                 (static_cast<D3DCOLOR>(g_StateFadeAlpha) << 24) | g_StateResetCounter);
         }
@@ -95,9 +94,9 @@ void BattleScene::Render() {
         if (fighters[1]->fadeAlpha > 0)
             fighters[1]->RenderFadeOverlay();
         RenderStatus();
-        if (field018 == 5) {
+        if (battlePhase == BattlePhase::VictoryQuote) {
             DrawSelectedNotice();
-        } else if (field018 == 7) {
+        } else if (battlePhase == BattlePhase::StoryDialogue) {
             if ((fighters[0]->noticeFirst) == 0) {
                 if ((fighters[0]->noticeBadge) >= 0)
                     fighters[0]->RenderSideEffect();
@@ -113,22 +112,20 @@ void BattleScene::Render() {
                 g_TextRenderer->DrawBox();
             fighters[0]->RenderStage(g_StageAt0067161E);
         }
-        if (field060 > 0)
+        if (noticeFrames > 0)
             RenderOverlayTimeline();
-        if (field06C > 0)
+        if (spellBonusBannerFrames > 0)
             RenderRoundBanner();
-        if (field0A1)
+        if (pauseOverlayAlpha)
             RenderEndOverlay();
-        if (field028 + 1000U < timeGetTime()) {
-            field020 = field024;
-            field024 = 0;
-            field028 = timeGetTime();
+        if (renderSampleStartMs + 1000U < timeGetTime()) {
+            previousSecondRenderCount = currentSecondRenderCount;
+            currentSecondRenderCount = 0;
+            renderSampleStartMs = timeGetTime();
         }
-        ++field024;
+        ++currentSecondRenderCount;
         DrawAtlasNumberDefaultAt00446B60(640.0f, 0.0f, 0xFFFFFFFF,
-                                       field020, 4);
+                                       previousSecondRenderCount, 4);
         Graphics::EndFrame();
     }
 }
-
-#undef STYLE
