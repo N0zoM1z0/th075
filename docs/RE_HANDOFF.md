@@ -61,6 +61,16 @@ Both runs used isolated Xvfb sessions. The local logs and checkpoint CSV
 are under `build/program/external-replay/`.
 [Coolier replay](https://coolier.net/th_up4/index.php?id=6736)
 
+Four more Coolier recordings tested the normal link against the Japanese
+1.11 executable. All four pairs returned to the replay browser at the
+same update. The suite covered 28,417 battle updates per executable.
+All 544 observations at battle entry, hit handlers and replay exit
+agreed on the update counter, phase, timer, and both fighters' positions,
+actions, animation state, health, spirit, and scores. The test adapted
+only the replay headers as above. The local fixture hashes, traces and
+comparison report are under `build/program/replay-suite/`.
+[Coolier replay pack](https://coolier.net/th_up4/index.php?id=6739)
+
 ### Selected earlier link checkpoints
 
 The grayscale shader, two clipping bounds and the texture and replay
