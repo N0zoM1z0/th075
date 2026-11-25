@@ -2,18 +2,17 @@
 
 Original pinned user-supplied Japanese TH075 v1.11 `resources/th075.exe`,
 SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-These are **two distinct complete native registered PE functions**,
-not hand-cropped original giant snippets. Their actual original
-`config/function-origins.csv` rows stay **`origin=unknown,
-disposition=review`**. Native virtual ABI and byte identity do NOT
-establish the game's original author, SDK class names or a complete
-resource object layout.
+F687 reproduced the complete bodies at `0x00608D8E` and
+`0x00608F96`. R273 later matched each body and its incoming SDK
+caller against the pinned D3DX8 archive. The origin ledger classifies
+them as `CD3DXFont::~CD3DXFont` and `CD3DXSprite::~CD3DXSprite`.
+[R273 archive comparison](ORIGIN_PENDING_REVIEW.md#r273--remaining-d3dx8-lifetime-bodies)
 
 | Original whole function | Actual original complete CODE | Native original x86 | PE/COFF source refs | Source C++ program |
 | --- | ---: | ---: | ---: | --- |
 | `00608D8E` | **58/58 linked native B** | **22** | 4 actual typed fields | Null-checked resource reset/destroy, imported free and COM release |
 | `00608F96` | **64/64 linked native B** | **27** | 1 vftable `DIR32` | Two conditional stdcall COM handle releases plus final COM release |
-| **Two independent complete original functions** | **122/122 B** | **49** | **5 genuinely typed PE fields** | Source provenance still UNKNOWN |
+| **Two independent complete original functions** | **122/122 B** | **49** | **5 genuinely typed PE fields** | D3DX8 archive provenance resolved by R273 |
 
 The original `00608D8E` first saves ESI, loads actual resource at
 `this+0x48`, tests for nonnull, writes its genuine vftable
@@ -64,42 +63,20 @@ emitted. Both tested `/O1` and `/O2` produce whole native byte
 identity for these **particular** two functions; no executable-wide
 compiler profile is inferred.
 
-[`verify-sdk-native-com-owner-destructors-f687.py`](../scripts/verify-sdk-native-com-owner-destructors-f687.py)
-compiles **one small native C++ translation unit** under pinned
-VC7.1 `/O1`. It independently checks the two registered original
-complete PE extents, every original x86 instruction width/operand,
-original call and virtual slot geometry, and each actual typed
-zero-addend compiler COFF field and genuine original PE target.
-It temporarily links only the physically authenticated original
-`DIR32` vtables, original two real thiscall `REL32` destinations,
-and the real original imported free `DIR32` in the new compiler
-CODE buffers. It then requires **all 122 original machine CODE
-bytes** to match exactly. Independently scanning all 4,351
-registered native CODE functions finds **one direct original caller
-for each destructor**, each currently classified as `compiler`,
-not historically author-attributed. Indirect uses are not excluded.
+The historical [F687 verifier](../scripts/verify-sdk-native-com-owner-destructors-f687.py)
+cold-compiled one translation unit with VC7.1 `/O1`. It compared
+both complete bodies and bound the five COFF fields to the original
+vtables, two `thiscall` destinations and imported free. The resulting
+122 bytes matched the PE. The scan found one direct caller of each
+destructor, at `0x006049A0` and `0x006049BC`. Both callers are
+classified as compiler-generated.
 
-F595–F686 research had **82 distinct source-backed whole origin-
-UNKNOWN functions /1,578 true original CODE bytes**. F687 adds
-**two new complete originals /122 B**, raising the still-uncredited
-research cohort to **84 distinct complete original functions /
-1,700 native CODE bytes**. All **95 historical source-unknown
-ledger candidates** retain `unknown,review`; neither of these
-functions gets whole game-authored exact credit. Formal accepted
-authored whole-game exact stays **943 functions /862,726 original
-CODE bytes (43.71% reviewed)**. Fighter internal-case source
-research likewise remains separate and uncredited.
+The F687 script expects the origin rows from its checkpoint. Use the
+R273 archive comparison for the current classification.
 
 ```bash
-scripts/repo-python scripts/verify-sdk-native-com-owner-destructors-f687.py
-scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python .analysis/sdk-lifetime-origin/native-replay.py 0x00608D8E 0x00608F96
 ```
 
-The new complete linked original PE/COFF comparison receipt, cold
-VC7.1 OBJ/PDB, compiler log, source hash and original direct caller
-graph remain in ignored `.analysis/f687-native-com-owner-source/`;
-meaningful wrong-wrapper source alternatives and their actual
-compiler outputs in ignored `.analysis/f687-sdk-com-lifetimes/`.
-No original EXE patch, fake padding, arbitrary machine bytes,
-all-943-unit cold replay or external Oracle whole-function
-acceptance was performed.
+The historical comparison receipt is in
+`.analysis/f687-native-com-owner-source/summary.json`.

@@ -2,11 +2,11 @@
 
 Pinned user-supplied Japanese TH075 1.11 `resources/th075.exe`,
 SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-This is a **complete original native PE machine-byte identical
-function**, not a compiler-created excerpt or a separate part of a
-giant. Actual original `config/function-origins.csv` remains
-**`origin=unknown, disposition=review`**: current byte-perfect C++
-source does not prove the author's historical type/SDK ownership.
+F691 reproduced the complete 249-byte body at `0x0061F125`. R273
+later matched the defining D3DX8 archive section and its incoming
+SDK caller. The origin ledger classifies the body as a D3DX8 library
+function, `CD3DXText::~CD3DXText`.
+[R273 archive comparison](ORIGIN_PENDING_REVIEW.md#r273--remaining-d3dx8-lifetime-bodies)
 
 ## Full native original 249-byte function and actual source operations
 
@@ -93,39 +93,18 @@ it is not interchangeable for this function.
 | `+205` | `DIR32` | `0068E264` | original global list head read |
 | `+210` | `DIR32` | `0068E264` | original global list head address |
 
-[`verify-sdk-native-com-manager-cleanup-f691.py`](../scripts/verify-sdk-native-com-manager-cleanup-f691.py)
-fresh-compiles **only this selected small source TU**, checks all
-104 genuine original complete x86 mnemonics/widths/raw operands,
-the actual COM slot and native loop/callback roles, independently
-verifies every physical original source COFF `DIR32` symbol,
-zero addend and original PE target, and compares **all 249
-original linked machine CODE bytes** after linking only these
-five genuine fields in a comparison bytearray. The original EXE
-is never modified. A separate scan over all 4,351 registered
-original native CODE function extents finds **one real direct
-CALL** to this whole function; absence of other direct calls does
-not exclude indirect use or identify original authorship.
+The historical [F691 verifier](../scripts/verify-sdk-native-com-manager-cleanup-f691.py)
+cold-compiled this translation unit and compared all 104 instructions
+and five `DIR32` fields. Resolving those fields against their PE
+destinations reproduced the entire 249-byte body. The caller scan
+found one direct caller at `0x0061F221`.
 
-The previous F595–F687 research cohort contained **84 distinct
-complete source-backed but origin-UNKNOWN whole functions /
-1,700 original CODE bytes**. F691 adds this substantial **249-byte
-complete original**, giving **85 distinct whole original source-
-backed UNKNOWN functions /1,949 genuine CODE bytes**. All 95
-historical source-unknown candidates remain `unknown,review` and
-uncredited. Official authored exact coverage remains **943
-whole functions /862,726 original CODE bytes (43.71% reviewed)**;
-no 22 giant parent exactness is asserted.
+The F691 script expects the origin row from its checkpoint. Use the
+R273 archive comparison for the current classification.
 
 ```bash
-scripts/repo-python scripts/verify-sdk-native-com-manager-cleanup-f691.py
-scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python .analysis/sdk-lifetime-origin/native-replay.py 0x0061F125
 ```
 
-Compiler CPP/OBJ/PDB, original target/COFF field receipts, original
-direct-caller graph and source hash remain in ignored
-`.analysis/f691-native-com-manager-cleanup/`. All meaningful
-wrong C++ list/COM calls and selected native compiler controls
-are preserved under ignored `.analysis/f691-com-cleanup-large/`.
-No original EXE patch, fake dummy object layout/stack locals,
-all-943-unit cold replay or external Oracle whole-function
-acceptance was performed.
+The historical comparison receipt is in
+`.analysis/f691-native-com-manager-cleanup/summary.json`.
