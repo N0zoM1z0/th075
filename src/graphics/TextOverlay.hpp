@@ -13,9 +13,9 @@ public:
     void DrawBox();                                                 // 00412EB0
     void ConfigureText(float positionX, float positionY, unsigned char mode);
     void RenderTextToTexture(const char* text, unsigned char r, unsigned char g,
-                             unsigned char b, unsigned char color, unsigned char depth,
-                             unsigned char restore);                // 00413460
-    void SetRasterParametersAt004135F0(unsigned char color, float rasterX, float rasterY);
+                             unsigned char b, unsigned char size, unsigned char lines,
+                             unsigned char preservePreviousLines);                // 00413460
+    void SetRasterParametersAt004135F0(unsigned char size, float rasterX, float rasterY);
 
     union {
         IDirect3DTexture8* texture;     // +0x00 texture pointer view
@@ -29,19 +29,19 @@ public:
         float y;                        // +0x08
         DWORD yBits;                    // raw float argument view
     };
-    unsigned char field00C;             // +0x0C
+    unsigned char newTextAlpha;         // +0x0C
     unsigned char unknown00D[0x010 - 0x00D];
     union {
-        float field010;                 // +0x10 box scale
-        DWORD field010Bits;             // raw transform scale word
+        float boxScaleY;                 // +0x10 box scale
+        DWORD boxScaleYBits;             // raw vertical-scale word
     };
-    unsigned char field014;             // +0x14
-    signed char field015;               // +0x15
+    unsigned char lineCount;            // +0x14
+    signed char unfadedLineCount;       // +0x15
     unsigned char unknown016[0x018 - 0x016];
-    FontSurface* raster;        // +0x18
-    float field01C;                     // +0x1C
-    float field020;                     // +0x20
-    unsigned char field024;             // +0x24
+    FontSurface* raster;                // +0x18
+    float rasterOffsetX;                // +0x1C
+    float rasterOffsetY;                // +0x20
+    unsigned char fontSize;             // +0x24
     unsigned char mode;                 // +0x25
     unsigned char unknown026[2];
     TextureManagerF198 textureManager;  // +0x28

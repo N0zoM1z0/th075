@@ -4,42 +4,42 @@
 #include "engine/GameProgress.hpp"
 #include "graphics/Graphics.hpp"
 #include "audio/SoundBank.hpp"
-#define SELECTION_CODE (static_cast<int>(field010)+static_cast<int>(field012)*26)
+#define SELECTION_CODE (static_cast<int>(glyphColumn)+static_cast<int>(glyphRow)*26)
 unsigned short PlayerNameEntryScene::Update()
 {
     PollInput();
-    if (field016==1) {
+    if (editInput==1) {
         g_SoundBank->Play(0x2d);
         if (SELECTION_CODE==0x5b) {
-            if (field014>7)
+            if (nameCursor>7)
                 selectedRecord->scores[rank].name[7]=100;
             else
-                selectedRecord->scores[rank].name[field014]=100;
+                selectedRecord->scores[rank].name[nameCursor]=100;
         } else if (SELECTION_CODE==0x5c) {
             g_GameProgress.SaveScoreFile();
             g_GameProgress.CopyRankNameToWorking(rank);
             if (g_StateReturnFlag) return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::ReplayNameEntry;
             return SceneTransition::BlackIn | SceneTransition::BlackOut | SceneId::Title;
         } else {
-            if (field014>7)
+            if (nameCursor>7)
                 selectedRecord->scores[rank].name[7]=static_cast<unsigned char>(SELECTION_CODE);
             else
-                selectedRecord->scores[rank].name[field014]=static_cast<unsigned char>(SELECTION_CODE);
+                selectedRecord->scores[rank].name[nameCursor]=static_cast<unsigned char>(SELECTION_CODE);
         }
-        ++field014;
-        if (field014>8)
-            field014=8;
-        if (field014==8) {
-            field010=14;
-            field012=3;
+        ++nameCursor;
+        if (nameCursor>8)
+            nameCursor=8;
+        if (nameCursor==8) {
+            glyphColumn=14;
+            glyphRow=3;
         }
     }
-    if (field016==2) {
+    if (editInput==2) {
         g_SoundBank->Play(0x28);
-        --field014;
-        if (field014<0)
-            field014=0;
-        selectedRecord->scores[rank].name[field014]=100;
+        --nameCursor;
+        if (nameCursor<0)
+            nameCursor=0;
+        selectedRecord->scores[rank].name[nameCursor]=100;
     }
     Render();
     Graphics::Present();

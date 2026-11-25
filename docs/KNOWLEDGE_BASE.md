@@ -859,7 +859,7 @@ the power and sets `spellDeclarationExpired` (+0x39C) until the next reset.
 `bombCount` (+0x366) is the separate Spirit Strike stock. The HUD draws an
 icon per unit, and the `22C` action consumes one.
 
-[Fighter layout](../src/battle/Fighter.hpp) · [Timers](../src/battle/CombatTimers.cpp) · [Patchouli's spell dispatch](../src/characters/CharacterActionDispatch502450.cpp)
+[Fighter layout](../src/battle/Fighter.hpp) · [Timers](../src/battle/CombatTimers.cpp) · [Patchouli's spell dispatch](../src/characters/patchouli/CharacterActionDispatch502450.cpp)
 
 ### Battle modes, controls, and replay data
 
@@ -953,6 +953,12 @@ without a pose can select the doubled sprite scale. The secondary
 fighter texture pack supplies portraits and notice badges, and the
 sprite history records the drawn fighter frames for its trail.
 [Actor and frame layout](../src/battle/Actor.hpp) · [Collision pass](../src/battle/BattleActiveCollision.cpp) · [Fighter resources](../src/battle/FighterLoadResourcesF282.cpp)
+
+Some character-object slots have meanings local to one action. Sakuya's
+object code uses the word at `+0xDA` as a movement parameter in one
+action and a reflection count in another. Keep those meanings with their
+action when recovering more of the object layout.
+[Sakuya object actions](../src/characters/sakuya/SakuyaObjectAdvanceF1222.cpp)
 
 ## Scene commands and archive files
 

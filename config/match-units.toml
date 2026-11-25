@@ -2551,7 +2551,7 @@ relocations = [
 ]
 
 [units.reimu-fighter-dispatch-actions]
-source = "src/characters/ReimuActionDispatch.cpp"
+source = "src/characters/reimu/ReimuActionDispatch.cpp"
 object = "build/matching/ReimuActionDispatch.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["ReimuFighter::DispatchActions"]
@@ -2840,7 +2840,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-004c0ad0]
-source = "src/characters/CharacterActionDispatch.cpp"
+source = "src/characters/sakuya/CharacterActionDispatch.cpp"
 object = "build/matching/CharacterActionDispatch.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SakuyaFighter::DispatchActions"]
@@ -3173,7 +3173,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-00597660]
-source = "src/characters/CharacterActionDispatch597660.cpp"
+source = "src/characters/yukari/CharacterActionDispatch597660.cpp"
 object = "build/matching/CharacterActionDispatch597660.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YukariFighter::DispatchActions"]
@@ -3499,7 +3499,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-00551c00]
-source = "src/characters/CharacterActionDispatch551C00.cpp"
+source = "src/characters/remilia/CharacterActionDispatch551C00.cpp"
 object = "build/matching/CharacterActionDispatch551C00.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["RemiliaFighter::DispatchActions"]
@@ -3799,7 +3799,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-00493470]
-source = "src/characters/CharacterActionDispatch493470.cpp"
+source = "src/characters/marisa/CharacterActionDispatch493470.cpp"
 object = "build/matching/CharacterActionDispatch493470.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::DispatchActions"]
@@ -4079,7 +4079,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-00502450]
-source = "src/characters/CharacterActionDispatch502450.cpp"
+source = "src/characters/patchouli/CharacterActionDispatch502450.cpp"
 object = "build/matching/CharacterActionDispatch502450.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::DispatchActions"]
@@ -4360,7 +4360,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-00574370]
-source = "src/characters/CharacterActionDispatch574370.cpp"
+source = "src/characters/yuyuko/CharacterActionDispatch574370.cpp"
 object = "build/matching/CharacterActionDispatch574370.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YuyukoFighter::DispatchActions"]
@@ -4629,7 +4629,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-004e2f20]
-source = "src/characters/CharacterActionDispatch4E2F20.cpp"
+source = "src/characters/alice/CharacterActionDispatch4E2F20.cpp"
 object = "build/matching/CharacterActionDispatch4E2F20.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["AliceFighter::DispatchActions"]
@@ -4895,7 +4895,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-005c0d70]
-source = "src/characters/CharacterActionDispatch5C0D70.cpp"
+source = "src/characters/suika/CharacterActionDispatch5C0D70.cpp"
 object = "build/matching/CharacterActionDispatch5C0D70.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SuikaFighter::DispatchActions"]
@@ -5158,7 +5158,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-005e2310]
-source = "src/characters/CharacterActionDispatch5E2310.cpp"
+source = "src/characters/meiling/CharacterActionDispatch5E2310.cpp"
 object = "build/matching/CharacterActionDispatch5E2310.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::DispatchActions"]
@@ -5408,7 +5408,7 @@ relocations = [
 ]
 
 [units.character-action-dispatch-0052d230]
-source = "src/characters/CharacterActionDispatch52D230.cpp"
+source = "src/characters/youmu/CharacterActionDispatch52D230.cpp"
 object = "build/matching/CharacterActionDispatch52D230.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::DispatchActions"]
@@ -7072,7 +7072,7 @@ relocations = [
 ]
 
 [units.character-ai-004c6b50]
-source = "src/characters/CharacterAI4C6B50.cpp"
+source = "src/characters/sakuya/CharacterAI4C6B50.cpp"
 object = "build/matching/CharacterAI4C6B50.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SakuyaFighter::ChooseAction"]
@@ -7301,7 +7301,7 @@ relocations = [
 ]
 
 [units.character-ai-0059f4f0]
-source = "src/characters/CharacterAI59F4F0.cpp"
+source = "src/characters/yukari/CharacterAI59F4F0.cpp"
 object = "build/matching/CharacterAI59F4F0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YukariFighter::ChooseCardAction"]
@@ -7541,7 +7541,7 @@ relocations = [
 ]
 
 [units.character-ai-00532950]
-source = "src/characters/CharacterAI532950.cpp"
+source = "src/characters/youmu/CharacterAI532950.cpp"
 object = "build/matching/CharacterAI532950.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::ChooseAction"]
@@ -7769,7 +7769,7 @@ relocations = [
 ]
 
 [units.character-ai-00499030]
-source = "src/characters/CharacterAI499030.cpp"
+source = "src/characters/marisa/CharacterAI499030.cpp"
 object = "build/matching/CharacterAI499030.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::ChooseAction"]
@@ -8417,7 +8417,7 @@ relocations = [
 ]
 
 [units.character-ai-005086e0]
-source = "src/characters/CharacterAI5086E0.cpp"
+source = "src/characters/patchouli/CharacterAI5086E0.cpp"
 object = "build/matching/CharacterAI5086E0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::ChooseCardAction"]
@@ -8634,7 +8634,7 @@ relocations = [
 ]
 
 [units.character-ai-00558f50]
-source = "src/characters/CharacterAI558F50.cpp"
+source = "src/characters/remilia/CharacterAI558F50.cpp"
 object = "build/matching/CharacterAI558F50.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["RemiliaFighter::ChooseCardAction"]
@@ -8867,7 +8867,7 @@ relocations = [
 ]
 
 [units.character-ai-004ea090]
-source = "src/characters/CharacterAI4EA090.cpp"
+source = "src/characters/alice/CharacterAI4EA090.cpp"
 object = "build/matching/CharacterAI4EA090.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["AliceFighter::ChooseCardAction"]
@@ -9076,7 +9076,7 @@ relocations = [
 ]
 
 [units.character-ai-005c7fc0]
-source = "src/characters/CharacterAI5C7FC0.cpp"
+source = "src/characters/suika/CharacterAI5C7FC0.cpp"
 object = "build/matching/CharacterAI5C7FC0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SuikaFighter::ChooseCardAction"]
@@ -9279,7 +9279,7 @@ relocations = [
 ]
 
 [units.character-ai-0057b900]
-source = "src/characters/CharacterAI57B900.cpp"
+source = "src/characters/yuyuko/CharacterAI57B900.cpp"
 object = "build/matching/CharacterAI57B900.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YuyukoFighter::ChooseCardAction"]
@@ -9481,7 +9481,7 @@ relocations = [
 ]
 
 [units.character-ai-00557380]
-source = "src/characters/CharacterAI557380.cpp"
+source = "src/characters/remilia/CharacterAI557380.cpp"
 object = "build/matching/CharacterAI557380.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["RemiliaFighter::ChooseAction"]
@@ -9690,7 +9690,7 @@ relocations = [
 ]
 
 [units.character-ai-005349b0]
-source = "src/characters/CharacterAI5349B0.cpp"
+source = "src/characters/youmu/CharacterAI5349B0.cpp"
 object = "build/matching/CharacterAI5349B0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::ChooseCardAction"]
@@ -9890,7 +9890,7 @@ relocations = [
 ]
 
 [units.character-ai-004c8cd0]
-source = "src/characters/CharacterAI4C8CD0.cpp"
+source = "src/characters/sakuya/CharacterAI4C8CD0.cpp"
 object = "build/matching/CharacterAI4C8CD0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SakuyaFighter::ChooseCardAction"]
@@ -10084,7 +10084,7 @@ relocations = [
 ]
 
 [units.character-ai-0049b070]
-source = "src/characters/CharacterAI49B070.cpp"
+source = "src/characters/marisa/CharacterAI49B070.cpp"
 object = "build/matching/CharacterAI49B070.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::ChooseCardAction"]
@@ -10260,7 +10260,7 @@ relocations = [
 ]
 
 [units.character-sequence-004a9050]
-source = "src/characters/CharacterSequence4A9050.cpp"
+source = "src/characters/marisa/CharacterSequence4A9050.cpp"
 object = "build/matching/CharacterSequence4A9050.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::AdvanceSequence"]
@@ -10670,7 +10670,7 @@ relocations = [
 ]
 
 [units.character-sequence-00483350]
-source = "src/characters/CharacterSequence483350.cpp"
+source = "src/characters/reimu/CharacterSequence483350.cpp"
 object = "build/matching/CharacterSequence483350.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["ReimuFighter::AdvanceSequence"]
@@ -11133,7 +11133,7 @@ relocations = [
 ]
 
 [units.character-sequence-004d4ea0]
-source = "src/characters/CharacterSequence4D4EA0.cpp"
+source = "src/characters/sakuya/CharacterSequence4D4EA0.cpp"
 object = "build/matching/CharacterSequence4D4EA0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SakuyaFighter::AdvanceSequence"]
@@ -11543,7 +11543,7 @@ relocations = [
 ]
 
 [units.character-sequence-004f44d0]
-source = "src/characters/CharacterSequence4F44D0.cpp"
+source = "src/characters/alice/CharacterSequence4F44D0.cpp"
 object = "build/matching/CharacterSequence4F44D0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["AliceFighter::AdvanceSequence"]
@@ -11930,7 +11930,7 @@ relocations = [
 ]
 
 [units.character-sequence-0051e640]
-source = "src/characters/CharacterSequence51E640.cpp"
+source = "src/characters/patchouli/CharacterSequence51E640.cpp"
 object = "build/matching/CharacterSequence51E640.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::AdvanceSequence"]
@@ -12329,7 +12329,7 @@ relocations = [
 ]
 
 [units.character-sequence-00540290]
-source = "src/characters/CharacterSequence540290.cpp"
+source = "src/characters/youmu/CharacterSequence540290.cpp"
 object = "build/matching/CharacterSequence540290.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::AdvanceSequence"]
@@ -12738,7 +12738,7 @@ relocations = [
 ]
 
 [units.character-sequence-00561d40]
-source = "src/characters/CharacterSequence561D40.cpp"
+source = "src/characters/remilia/CharacterSequence561D40.cpp"
 object = "build/matching/CharacterSequence561D40.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["RemiliaFighter::AdvanceSequence"]
@@ -13134,7 +13134,7 @@ relocations = [
 ]
 
 [units.character-sequence-005882b0]
-source = "src/characters/CharacterSequence5882B0.cpp"
+source = "src/characters/yuyuko/CharacterSequence5882B0.cpp"
 object = "build/matching/CharacterSequence5882B0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YuyukoFighter::AdvanceSequence"]
@@ -13511,7 +13511,7 @@ relocations = [
 ]
 
 [units.character-sequence-005ac250]
-source = "src/characters/CharacterSequence5AC250.cpp"
+source = "src/characters/yukari/CharacterSequence5AC250.cpp"
 object = "build/matching/CharacterSequence5AC250.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YukariFighter::AdvanceSequence"]
@@ -13902,7 +13902,7 @@ relocations = [
 ]
 
 [units.character-sequence-005d4890]
-source = "src/characters/CharacterSequence5D4890.cpp"
+source = "src/characters/suika/CharacterSequence5D4890.cpp"
 object = "build/matching/CharacterSequence5D4890.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SuikaFighter::AdvanceSequence"]
@@ -14269,7 +14269,7 @@ relocations = [
 ]
 
 [units.meiling-special-states-005f3d60]
-source = "src/characters/MeilingSequence.cpp"
+source = "src/characters/meiling/MeilingSequence.cpp"
 object = "build/matching/MeilingSequence.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::AdvanceSequence"]
@@ -15657,7 +15657,7 @@ relocations = [
 ]
 
 [units.character-aux-policy-005e5500]
-source = "src/characters/CharacterAux5E5500.cpp"
+source = "src/characters/meiling/CharacterAux5E5500.cpp"
 object = "build/matching/CharacterAux5E5500.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::AdvanceAuxiliary"]
@@ -15680,7 +15680,7 @@ relocations = [
 ]
 
 [units.character-special-stage-005e59c0]
-source = "src/characters/CharacterSpecial5E59C0.cpp"
+source = "src/characters/meiling/CharacterSpecial5E59C0.cpp"
 object = "build/matching/CharacterSpecial5E59C0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::ConfigureStage"]
@@ -15856,7 +15856,7 @@ relocations = [
 ]
 
 [units.character-special-render-005e68c0]
-source = "src/characters/CharacterSpecial5E68C0.cpp"
+source = "src/characters/meiling/CharacterSpecial5E68C0.cpp"
 object = "build/matching/CharacterSpecial5E68C0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::RenderStage"]
@@ -15908,7 +15908,7 @@ relocations = [
 ]
 
 [units.character-input-policy-005e6f70]
-source = "src/characters/CharacterInput5E6F70.cpp"
+source = "src/characters/meiling/CharacterInput5E6F70.cpp"
 object = "build/matching/CharacterInput5E6F70.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::PollCommands"]
@@ -19182,7 +19182,7 @@ relocations = [
 ]
 
 [units."character-special-stage-00470f00"]
-source = "src/characters/CharacterSpecial470F00.cpp"
+source = "src/characters/reimu/CharacterSpecial470F00.cpp"
 object = "build/matching/CharacterSpecial470F00.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReimuFighter::ConfigureStage"]
@@ -21461,7 +21461,7 @@ relocations = [
 ]
 
 [units."character-special-render-00507040"]
-source = "src/characters/CharacterSpecial507040.cpp"
+source = "src/characters/patchouli/CharacterSpecial507040.cpp"
 object = "build/matching/CharacterSpecial507040.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::RenderStage"]
@@ -21513,7 +21513,7 @@ relocations = [
 ]
 
 [units."character-input-005076f0"]
-source = "src/characters/CharacterSpecial507040.cpp"
+source = "src/characters/patchouli/CharacterSpecial507040.cpp"
 object = "build/matching/CharacterSpecial507040.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::PollCommands"]
@@ -36547,7 +36547,7 @@ symbol = "?SetSelection@GameProgress@@QAEXCC@Z"
 target = 0x0041A1A0
 
 [units.marisa-fighter-reset-round-00493130]
-source = "src/characters/MarisaResetF222.cpp"
+source = "src/characters/marisa/MarisaResetF222.cpp"
 object = "build/matching/MarisaResetF222.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::ResetRound"]
@@ -36571,7 +36571,7 @@ symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.marisa-fighter-initialize-00492fb0]
-source = "src/characters/MarisaInitF223.cpp"
+source = "src/characters/marisa/MarisaInitF223.cpp"
 object = "build/matching/MarisaInitF223.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::Initialize"]
@@ -36611,7 +36611,7 @@ target = 0x00641B80
 
 
 [units.marisa-fighter-create-owned-object-004930b0]
-source = "src/characters/MarisaOwnedF223.cpp"
+source = "src/characters/marisa/MarisaOwnedF223.cpp"
 object = "build/matching/MarisaOwnedF223.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::CreateOwnedObject"]
@@ -36651,7 +36651,7 @@ target = 0x00000000
 
 
 [units.youmu-fighter-initialize-0052cee0]
-source = "src/characters/YoumuInitF223.cpp"
+source = "src/characters/youmu/YoumuInitF223.cpp"
 object = "build/matching/YoumuInitF223.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::Initialize"]
@@ -36715,7 +36715,7 @@ symbol = "__except_list"
 target = 0x00000000
 
 [units.youmu-fighter-create-owned-object-0052d090]
-source = "src/characters/YoumuOwnedF224.cpp"
+source = "src/characters/youmu/YoumuOwnedF224.cpp"
 object = "build/matching/YoumuOwnedF224.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::CreateOwnedObject"]
@@ -36754,7 +36754,7 @@ symbol = "__except_list"
 target = 0x00000000
 
 [units.youmu-fighter-reset-round-0052d110]
-source = "src/characters/YoumuResetF224.cpp"
+source = "src/characters/youmu/YoumuResetF224.cpp"
 object = "build/matching/YoumuResetF224.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::ResetRound"]
@@ -37394,7 +37394,7 @@ target = 0x004079C0
 
 
 [units.reimu-fighter-create-owned-object-0046d160]
-source = "src/characters/ReimuOwnedF227.cpp"
+source = "src/characters/reimu/ReimuOwnedF227.cpp"
 object = "build/matching/ReimuOwnedF227.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["ReimuFighter::CreateOwnedObject"]
@@ -37434,7 +37434,7 @@ target = 0x00000000
 
 
 [units.reimu-fighter-reset-round-0046d1e0]
-source = "src/characters/ReimuResetF227.cpp"
+source = "src/characters/reimu/ReimuResetF227.cpp"
 object = "build/matching/ReimuResetF227.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReimuFighter::ResetRound"]
@@ -37449,7 +37449,7 @@ target = 0x00457010
 
 
 [units.alice-fighter-create-owned-object-004e2d90]
-source = "src/characters/AliceOwnedF227.cpp"
+source = "src/characters/alice/AliceOwnedF227.cpp"
 object = "build/matching/AliceOwnedF227.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["AliceFighter::CreateOwnedObject"]
@@ -37489,7 +37489,7 @@ target = 0x00000000
 
 
 [units.alice-fighter-reset-round-004e2e10]
-source = "src/characters/AliceResetF227.cpp"
+source = "src/characters/alice/AliceResetF227.cpp"
 object = "build/matching/AliceResetF227.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["AliceFighter::ResetRound"]
@@ -44907,7 +44907,7 @@ symbol = "__except_list"
 target = 0x00000000
 
 [units.sakuya-fighter-initialize-004c0820]
-source = "src/characters/SakuyaInitF309.cpp"
+source = "src/characters/sakuya/SakuyaInitF309.cpp"
 object = "build/matching/SakuyaInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SakuyaFighter::Initialize"]
@@ -44946,7 +44946,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.alice-fighter-initialize-004e2c90]
-source = "src/characters/AliceInitF309.cpp"
+source = "src/characters/alice/AliceInitF309.cpp"
 object = "build/matching/AliceInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["AliceFighter::Initialize"]
@@ -44985,7 +44985,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.patchouli-fighter-initialize-005021c0]
-source = "src/characters/PatchouliInitF309.cpp"
+source = "src/characters/patchouli/PatchouliInitF309.cpp"
 object = "build/matching/PatchouliInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::Initialize"]
@@ -45024,7 +45024,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.yukari-fighter-initialize-00597380]
-source = "src/characters/YukariInitF309.cpp"
+source = "src/characters/yukari/YukariInitF309.cpp"
 object = "build/matching/YukariInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YukariFighter::Initialize"]
@@ -45063,7 +45063,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.suika-fighter-initialize-005c0ab0]
-source = "src/characters/SuikaInitF309.cpp"
+source = "src/characters/suika/SuikaInitF309.cpp"
 object = "build/matching/SuikaInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SuikaFighter::Initialize"]
@@ -45102,7 +45102,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.reimu-fighter-initialize-0046d080]
-source = "src/characters/ReimuInitF311.cpp"
+source = "src/characters/reimu/ReimuInitF311.cpp"
 object = "build/matching/ReimuInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReimuFighter::Initialize"]
@@ -45141,7 +45141,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.meiling-fighter-initialize-005e2090]
-source = "src/characters/MeilingInitF311.cpp"
+source = "src/characters/meiling/MeilingInitF311.cpp"
 object = "build/matching/MeilingInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::Initialize"]
@@ -45180,7 +45180,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.remilia-fighter-initialize-00551980]
-source = "src/characters/RemiliaInitF311.cpp"
+source = "src/characters/remilia/RemiliaInitF311.cpp"
 object = "build/matching/RemiliaInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["RemiliaFighter::Initialize"]
@@ -45219,7 +45219,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.yuyuko-fighter-initialize-00574100]
-source = "src/characters/YuyukoInitF311.cpp"
+source = "src/characters/yuyuko/YuyukoInitF311.cpp"
 object = "build/matching/YuyukoInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YuyukoFighter::Initialize"]
@@ -45258,7 +45258,7 @@ symbol = "_strcpy"
 target = 0x00641B80
 
 [units.yukari-fighter-reset-round-00597500]
-source = "src/characters/YukariResetRoundF315.cpp"
+source = "src/characters/yukari/YukariResetRoundF315.cpp"
 object = "build/matching/YukariResetRoundF315.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YukariFighter::ResetRound"]
@@ -45272,7 +45272,7 @@ symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.suika-fighter-reset-round-005c0c30]
-source = "src/characters/SuikaResetRoundF315.cpp"
+source = "src/characters/suika/SuikaResetRoundF315.cpp"
 object = "build/matching/SuikaResetRoundF315.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SuikaFighter::ResetRound"]
@@ -45296,7 +45296,7 @@ symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.patchouli-fighter-reset-round-00502340]
-source = "src/characters/PatchouliResetF314.cpp"
+source = "src/characters/patchouli/PatchouliResetF314.cpp"
 object = "build/matching/PatchouliResetF314.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::ResetRound"]
@@ -45310,7 +45310,7 @@ symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.remilia-fighter-reset-round-00551b20]
-source = "src/characters/RemiliaResetF314.cpp"
+source = "src/characters/remilia/RemiliaResetF314.cpp"
 object = "build/matching/RemiliaResetF314.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["RemiliaFighter::ResetRound"]
@@ -45324,7 +45324,7 @@ symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.yuyuko-fighter-reset-round-00574290]
-source = "src/characters/YuyukoResetF314.cpp"
+source = "src/characters/yuyuko/YuyukoResetF314.cpp"
 object = "build/matching/YuyukoResetF314.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YuyukoFighter::ResetRound"]
@@ -45338,7 +45338,7 @@ symbol = "?ResetRound@Fighter@@UAEXXZ"
 target = 0x00457010
 
 [units.meiling-fighter-reset-round-005e21f0]
-source = "src/characters/MeilingResetF314.cpp"
+source = "src/characters/meiling/MeilingResetF314.cpp"
 object = "build/matching/MeilingResetF314.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::ResetRound"]
@@ -46807,7 +46807,7 @@ target = 0x00640611
 
 
 [units.yukari-fighter-update-special-state-0059b490]
-source = "src/characters/YukariSpecialStateF345.cpp"
+source = "src/characters/yukari/YukariSpecialStateF345.cpp"
 object = "build/matching/YukariSpecialStateF345.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YukariFighter::UpdateSpecialStateAt0059B490"]
@@ -47122,7 +47122,7 @@ target = 0x0040C9A0
 
 
 [units.suika-fighter-update-special-state-005c3fb0]
-source = "src/characters/SuikaSpecialStateF348.cpp"
+source = "src/characters/suika/SuikaSpecialStateF348.cpp"
 object = "build/matching/SuikaSpecialStateF348.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SuikaFighter::UpdateSpecialStateAt005C3FB0"]
@@ -47412,7 +47412,7 @@ target = 0x005F8420
 
 
 [units.character-aux-special-00496c60]
-source = "src/characters/CharacterAuxSpecial00496C60F361.cpp"
+source = "src/characters/marisa/CharacterAuxSpecial00496C60F361.cpp"
 object = "build/matching/CharacterAuxSpecial00496C60F361.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt00496C60"]
@@ -47477,7 +47477,7 @@ target = 0x00657880
 
 
 [units.character-aux-special-00470a40]
-source = "src/characters/CharacterAuxSpecial00470A40F362.cpp"
+source = "src/characters/reimu/CharacterAuxSpecial00470A40F362.cpp"
 object = "build/matching/CharacterAuxSpecial00470A40F362.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt00470A40"]
@@ -47542,7 +47542,7 @@ target = 0x00657880
 
 
 [units.character-aux-effect-distance-first-00555530]
-source = "src/characters/CharacterAux00555530F363.cpp"
+source = "src/characters/remilia/CharacterAux00555530F363.cpp"
 object = "build/matching/CharacterAux00555530F363.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt00555530"]
@@ -47607,7 +47607,7 @@ target = 0x00453AC0
 
 
 [units.character-aux-timed-special-00577750]
-source = "src/characters/CharacterAux00577750F364.cpp"
+source = "src/characters/yuyuko/CharacterAux00577750F364.cpp"
 object = "build/matching/CharacterAux00577750F364.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt00577750"]
@@ -47792,7 +47792,7 @@ target = 0x0040C7F0
 
 
 [units.character-aux-extended-composite-00505a60]
-source = "src/characters/CharacterAux00505A60F365.cpp"
+source = "src/characters/patchouli/CharacterAux00505A60F365.cpp"
 object = "build/matching/CharacterAux00505A60F365.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt00505A60"]
@@ -47892,7 +47892,7 @@ target = 0x00657880
 
 
 [units.character-input-priority-controller-00532520]
-source = "src/characters/CharacterInputPriorityF370.cpp"
+source = "src/characters/youmu/CharacterInputPriorityF370.cpp"
 object = "build/matching/CharacterInputPriorityF370.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt00532520"]
@@ -48172,7 +48172,7 @@ target = 0x00455800
 
 
 [units.character-aux-active-opponent-special-004c49c0]
-source = "src/characters/CharacterAux004C49C0F371.cpp"
+source = "src/characters/sakuya/CharacterAux004C49C0F371.cpp"
 object = "build/matching/CharacterAux004C49C0F371.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt004C49C0"]
@@ -51383,7 +51383,7 @@ target = 0x00000000
 
 
 [units.character-aux-queue-and-mode-effects-005301b0]
-source = "src/characters/CharacterAux005301B0F378.cpp"
+source = "src/characters/youmu/CharacterAux005301B0F378.cpp"
 object = "build/matching/CharacterAux005301B0F378.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt005301B0"]
@@ -51483,7 +51483,7 @@ target = 0x00657880
 
 
 [units.character-projectile-advance-004f4170]
-source = "src/characters/CharacterProjectileAdvanceF379.cpp"
+source = "src/characters/alice/CharacterProjectileAdvanceF379.cpp"
 object = "build/matching/CharacterProjectileAdvanceF379.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["AliceObject::AdvanceProjectileBehavior"]
@@ -53075,7 +53075,7 @@ target = 0x00419154
 
 
 [units.alice-fighter-special-state-004e62a0]
-source = "src/characters/AliceSpecialStateF391.cpp"
+source = "src/characters/alice/AliceSpecialStateF391.cpp"
 object = "build/matching/AliceSpecialStateF391.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["AliceFighter::UpdateSpecialStateAt004E62A0"]
@@ -55681,7 +55681,7 @@ target = 0x0040C860
 
 
 [units.marisa-auxiliary-projectile-chain-render-00497070]
-source = "src/characters/MarisaProjectileChainRenderF440.cpp"
+source = "src/characters/marisa/MarisaProjectileChainRenderF440.cpp"
 object = "build/matching/MarisaProjectileChainRenderF440.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterAux::RunAt00497070"]
@@ -59066,7 +59066,7 @@ target = 0x00000000
 
 
 [units.character-resources-clear-and-release-base-0052d020]
-source = "src/characters/CharacterOwnedResourceDestructorF492.cpp"
+source = "src/characters/youmu/CharacterOwnedResourceDestructorF492.cpp"
 object = "build/matching/CharacterOwnedResourceDestructorF492.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["CharacterResource::ClearEntriesAndReleaseBaseAt0052D020"]
@@ -66377,7 +66377,7 @@ size = 24
 relocations = []
 
 [units.meiling-object-advance-005eb520]
-source = "src/characters/MeilingObjectAdvanceF1207.cpp"
+source = "src/characters/meiling/MeilingObjectAdvanceF1207.cpp"
 object = "build/matching/MeilingObjectAdvanceF1207.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["MeilingObject::Advance"]
@@ -67195,7 +67195,7 @@ relocations = [
 ]
 
 [units.suika-object-advance-005c9cc0]
-source = "src/characters/SuikaObjectAdvanceF1216.cpp"
+source = "src/characters/suika/SuikaObjectAdvanceF1216.cpp"
 object = "build/matching/SuikaObjectAdvanceF1216.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["SuikaObject::Advance"]
@@ -68198,7 +68198,7 @@ relocations = [
 ]
 
 [units.sakuya-object-advance-004ca6e0]
-source = "src/characters/SakuyaObjectAdvanceF1222.cpp"
+source = "src/characters/sakuya/SakuyaObjectAdvanceF1222.cpp"
 object = "build/matching/SakuyaObjectAdvanceF1222.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["SakuyaObject::Advance"]
@@ -69139,7 +69139,7 @@ relocations = [
 ]
 
 [units.patchouli-object-advance-0050a580]
-source = "src/characters/PatchouliObjectAdvanceF1044.cpp"
+source = "src/characters/patchouli/PatchouliObjectAdvanceF1044.cpp"
 object = "build/matching/PatchouliObjectAdvanceF1044.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["PatchouliObject::Advance"]
@@ -70600,7 +70600,7 @@ relocations = [
 ]
 
 [units.yukari-object-advance-005a1600]
-source = "src/characters/YukariObjectAdvanceF1231.cpp"
+source = "src/characters/yukari/YukariObjectAdvanceF1231.cpp"
 object = "build/matching/YukariObjectAdvanceF1231.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["YukariObject::Advance"]
@@ -71555,7 +71555,7 @@ relocations = [
 ]
 
 [units.youmu-object-advance-00536400]
-source = "src/characters/YoumuObjectAdvanceF1211.cpp"
+source = "src/characters/youmu/YoumuObjectAdvanceF1211.cpp"
 object = "build/matching/YoumuObjectAdvanceF1211.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["YoumuObject::Advance"]
@@ -72505,7 +72505,7 @@ relocations = [
 ]
 
 [units.yuyuko-object-advance-0057d580]
-source = "src/characters/YuyukoObjectAdvanceF1237.cpp"
+source = "src/characters/yuyuko/YuyukoObjectAdvanceF1237.cpp"
 object = "build/matching/YuyukoObjectAdvanceF1237.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["YuyukoObject::Advance"]
@@ -73560,7 +73560,7 @@ relocations = [
 ]
 
 [units.remilia-fighter-advance-00543210]
-source = "src/characters/RemiliaFighterAdvanceF1041.cpp"
+source = "src/characters/remilia/RemiliaFighterAdvanceF1041.cpp"
 object = "build/matching/RemiliaFighterAdvanceF1041.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["RemiliaFighter::Advance"]
@@ -75435,7 +75435,7 @@ relocations = [
 ]
 
 [units.youmu-fighter-advance-005214b0]
-source = "src/characters/YoumuFighterAdvanceF1040.cpp"
+source = "src/characters/youmu/YoumuFighterAdvanceF1040.cpp"
 object = "build/matching/YoumuFighterAdvanceF1040.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["YoumuFighter::Advance"]
@@ -76938,7 +76938,7 @@ relocations = [
 ]
 
 [units.reimu-fighter-advance-0045dd70]
-source = "src/characters/ReimuFighterAdvanceF1183.cpp"
+source = "src/characters/reimu/ReimuFighterAdvanceF1183.cpp"
 object = "build/matching/ReimuFighterAdvanceF1183.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["ReimuFighter::AdvanceActionStatesAt0045DD70"]
@@ -78774,7 +78774,7 @@ relocations = [
 ]
 
 [units.sakuya-fighter-advance-004ac040]
-source = "src/characters/SakuyaFighterAdvanceF1020.cpp"
+source = "src/characters/sakuya/SakuyaFighterAdvanceF1020.cpp"
 object = "build/matching/SakuyaFighterAdvanceF1020.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["SakuyaFighter::Advance"]
@@ -81138,7 +81138,7 @@ relocations = [
 ]
 
 [units.reimu-object-advance-00476a40]
-source = "src/characters/ReimuObjectAdvance.cpp"
+source = "src/characters/reimu/ReimuObjectAdvance.cpp"
 object = "build/matching/ReimuObjectAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["ReimuObject::Advance"]
@@ -82302,7 +82302,7 @@ relocations = [
 ]
 
 [units.marisa-object-advance-0049c8f0]
-source = "src/characters/MarisaObjectAdvance.cpp"
+source = "src/characters/marisa/MarisaObjectAdvance.cpp"
 object = "build/matching/MarisaObjectAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["MarisaObject::Advance"]
@@ -83335,7 +83335,7 @@ relocations = [
 ]
 
 [units.yuyuko-fighter-advance-00564be0]
-source = "src/characters/YuyukoFighterAdvance.cpp"
+source = "src/characters/yuyuko/YuyukoFighterAdvance.cpp"
 object = "build/matching/YuyukoFighterAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["YuyukoFighter::Advance"]
@@ -84785,7 +84785,7 @@ relocations = [
 ]
 
 [units.marisa-fighter-advance-00486550]
-source = "src/characters/MarisaFighterAdvance.cpp"
+source = "src/characters/marisa/MarisaFighterAdvance.cpp"
 object = "build/matching/MarisaFighterAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["MarisaFighter::Advance"]
@@ -86480,7 +86480,7 @@ relocations = [
 ]
 
 [units.alice-fighter-advance-004d7e70]
-source = "src/characters/AliceFighterAdvance.cpp"
+source = "src/characters/alice/AliceFighterAdvance.cpp"
 object = "build/matching/AliceFighterAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["AliceFighter::Advance"]
@@ -87919,7 +87919,7 @@ relocations = [
 ]
 
 [units.patchouli-fighter-advance-004f7130]
-source = "src/characters/PatchouliFighterAdvance.cpp"
+source = "src/characters/patchouli/PatchouliFighterAdvance.cpp"
 object = "build/matching/PatchouliFighterAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["PatchouliFighter::Advance"]
@@ -89349,7 +89349,7 @@ relocations = [
 ]
 
 [units.yukari-fighter-advance-0058af60]
-source = "src/characters/YukariFighterAdvance.cpp"
+source = "src/characters/yukari/YukariFighterAdvance.cpp"
 object = "build/matching/YukariFighterAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["YukariFighter::Advance"]
@@ -90937,7 +90937,7 @@ relocations = [
 ]
 
 [units.suika-fighter-advance-005aeec0]
-source = "src/characters/SuikaFighterAdvance.cpp"
+source = "src/characters/suika/SuikaFighterAdvance.cpp"
 object = "build/matching/SuikaFighterAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["SuikaFighter::Advance"]
@@ -93069,7 +93069,7 @@ relocations = [
 ]
 
 [units.meiling-fighter-advance-005d73c0]
-source = "src/characters/MeilingFighterAdvance.cpp"
+source = "src/characters/meiling/MeilingFighterAdvance.cpp"
 object = "build/matching/MeilingFighterAdvance.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src", "/I", "probes"]
 functions = ["MeilingFighter::Advance"]

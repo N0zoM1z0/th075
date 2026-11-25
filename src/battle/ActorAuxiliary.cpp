@@ -1,16 +1,12 @@
-#include "characters/PatchouliFighter.hpp"
-#include "characters/MarisaFighter.hpp"
+#include "characters/patchouli/PatchouliFighter.hpp"
+#include "characters/marisa/MarisaFighter.hpp"
 #include "battle/Fighter.hpp"
 #include "characters/CharacterObject.hpp"
-#include "battle/FighterAnimationPhaseBorrowedF1024.hpp"
 #include "characters/CharacterAuxAction.hpp"
 #include "characters/CharacterAIPolicy.hpp"
 
 int g_AI507B20Countdown;
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner) + (offset)))
-#define OWNER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(owner) + (offset))
 
 void MarisaObject::UpdateTrackingNode()
 {
@@ -163,13 +159,8 @@ void MarisaObject::UpdateTrackingNode()
     }
 }
 
-#undef OWNER
-#undef FIELD
 
-#undef OTHER_FLOAT
-#undef OWNER_FLOAT
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define OPPONENT_GUARD static_cast<Fighter*>(opponent)->IsState50To149()
 
 // Independent two-component local value. Both stores are present in the target;
@@ -357,4 +348,3 @@ void PatchouliFighter::ChooseAction()
 }
 
 #undef OPPONENT_GUARD
-#undef FIELD

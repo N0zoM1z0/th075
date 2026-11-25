@@ -2,8 +2,7 @@
 #include "engine/MathFloatHelpers.hpp"
 #include "engine/GeometryConstants.hpp"
 #include "engine/FloatConstants.hpp"
-#include "characters/SakuyaFighter.hpp"
-#include "battle/FighterAnimationPhaseBorrowedF1024.hpp"
+#include "characters/sakuya/SakuyaFighter.hpp"
 // F1203 complete original-shaped 004AC040 parent, continued from F1020.
 // Native frame 0x720, saved-this, all EBP operands and narrow call ABIs are verified.
 // All direct branch targets and non-GPR operands are verified. Remaining

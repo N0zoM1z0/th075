@@ -1,4 +1,4 @@
-#include "characters/SuikaFighter.hpp"
+#include "characters/suika/SuikaFighter.hpp"
 #include "battle/EffectManagerLifetimeF161.hpp"
 
 

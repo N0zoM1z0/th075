@@ -139,11 +139,11 @@ void PlayerNameEntryScene::Render() {
         SetRect(&textureRect, 0, 80, 500, 160);
         TRANSFORM(transformedQuad)->BuildQuad(70.0f, 300.0f, 570.0f, 380.0f);
         texture->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
-        SetRect(&textureRect, field010 * 19, field012 * 20 + 160,
-            field010 * 19 + 19, field012 * 20 + 180);
+        SetRect(&textureRect, glyphColumn * 19, glyphRow * 20 + 160,
+            glyphColumn * 19 + 19, glyphRow * 20 + 180);
         TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
         TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-        TRANSFORM(transformedQuad)->TranslateQuad(field010 * 19 + 70, field012 * 20 + 300, 0);
+        TRANSFORM(transformedQuad)->TranslateQuad(glyphColumn * 19 + 70, glyphRow * 20 + 300, 0);
         texture->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
         for (int entry = 0; entry < 10; ++entry) {
             DWORD rowColor;
@@ -158,12 +158,12 @@ void PlayerNameEntryScene::Render() {
             DrawNumber(370.0f, entry * 20 + 80, rowColor, static_cast<signed char>(selectedRecord->scores[entry].day), 2);
             DrawNumber(560.0f, entry * 20 + 80, rowColor, selectedRecord->scores[entry].score, 0);
         }
-        if (field014 < 8 && field010 + field012 * 26 != 92) {
-            SetRect(&textureRect, field010 * 19, field012 * 20 + 160,
-                field010 * 19 + 19, field012 * 20 + 180);
+        if (nameCursor < 8 && glyphColumn + glyphRow * 26 != 92) {
+            SetRect(&textureRect, glyphColumn * 19, glyphRow * 20 + 160,
+                glyphColumn * 19 + 19, glyphRow * 20 + 180);
             TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
             TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-            TRANSFORM(transformedQuad)->TranslateQuad(field014 * 14 + 160, rank * 20 + 80, 0);
+            TRANSFORM(transformedQuad)->TranslateQuad(nameCursor * 14 + 160, rank * 20 + 80, 0);
             texture->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
         }
         Graphics::EndFrame();
@@ -183,27 +183,27 @@ void SharedNameEntryScene::Render() {
         SetRect(&textureRect, 192, 160, 512, 192);
         TRANSFORM(transformedQuad)->BuildQuad(160.0f, 20.0f, 480.0f, 52.0f);
         texture->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
-        if (field00C == 0) {
+        if (confirmingCancel == 0) {
             SetRect(&textureRect, 0, 80, 500, 160);
             TRANSFORM(transformedQuad)->BuildQuad(70.0f, 300.0f, 570.0f, 380.0f);
             texture->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
-            SetRect(&textureRect, field00E * 19, field010 * 20 + 160,
-                field00E * 19 + 19, field010 * 20 + 180);
+            SetRect(&textureRect, glyphColumn * 19, glyphRow * 20 + 160,
+                glyphColumn * 19 + 19, glyphRow * 20 + 180);
             TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
             TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-            TRANSFORM(transformedQuad)->TranslateQuad(field00E * 19 + 70, field010 * 20 + 300, 0);
+            TRANSFORM(transformedQuad)->TranslateQuad(glyphColumn * 19 + 70, glyphRow * 20 + 300, 0);
             texture->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             SetRect(&textureRect, 0, 0, 512, 20);
             TRANSFORM(transformedQuad)->BuildQuad(64.0f, 100.0f, 576.0f, 120.0f);
             texture->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
             DrawSaveFilename(50.0f, 130.0f, 0xFFFFFFFF, replayPath);
             DrawNameGlyphs(160.0f, 130.0f, 0xFFFFFFFF, reinterpret_cast<signed char*>(g_ReplayRecords.fileHeader.playerName));
-            if (field012 < 8 && field00E + field010 * 26 != 92) {
-                SetRect(&textureRect, field00E * 19, field010 * 20 + 160,
-                    field00E * 19 + 19, field010 * 20 + 180);
+            if (nameCursor < 8 && glyphColumn + glyphRow * 26 != 92) {
+                SetRect(&textureRect, glyphColumn * 19, glyphRow * 20 + 160,
+                    glyphColumn * 19 + 19, glyphRow * 20 + 180);
                 TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
                 TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-                TRANSFORM(transformedQuad)->TranslateQuad(field012 * 14 + 160, 130.0f, 0);
+                TRANSFORM(transformedQuad)->TranslateQuad(nameCursor * 14 + 160, 130.0f, 0);
                 texture->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             }
             DrawNumber(330.0f, 130.0f, 0xFFFFFFFF, static_cast<signed char>(g_ReplayRecords.fileHeader.month), 2);
@@ -227,7 +227,7 @@ void SharedNameEntryScene::Render() {
             SetRect(&textureRect, 200, 20, 460, 60);
             TRANSFORM(transformedQuad)->BuildQuad(190.0f, 200.0f, 450.0f, 240.0f);
             texture->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
-            if (field014 == 0) SetRect(&textureRect, 320, 192, 448, 224);
+            if (cancelChoice == 0) SetRect(&textureRect, 320, 192, 448, 224);
             else SetRect(&textureRect, 192, 192, 320, 224);
             TRANSFORM(transformedQuad)->BuildQuad(256.0f, 280.0f, 384.0f, 312.0f);
             texture->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
@@ -235,5 +235,4 @@ void SharedNameEntryScene::Render() {
         Graphics::EndFrame();
     }
 }
-#undef FIELD
 #undef TRANSFORM

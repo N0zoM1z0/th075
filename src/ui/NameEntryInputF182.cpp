@@ -18,45 +18,45 @@ void PlayerNameEntryScene::PollInput()
     for (int i = 0; i < 2; i++) {
         if (HELD(InputControl::Horizontal) == 1 || (HELD(InputControl::Horizontal) % 6 == 1 && HELD(InputControl::Horizontal) > 30)) {
             g_SoundBank->Play(39);
-            field010++;
+            glyphColumn++;
         }
         if (HELD(InputControl::Horizontal) == -1 || (HELD(InputControl::Horizontal) % 6 == -1 && HELD(InputControl::Horizontal) < -30)) {
             g_SoundBank->Play(39);
-            field010--;
+            glyphColumn--;
         }
         if (HELD(InputControl::Vertical) == 1 || (HELD(InputControl::Vertical) % 6 == 1 && HELD(InputControl::Vertical) > 30)) {
             g_SoundBank->Play(39);
-            field012++;
+            glyphRow++;
         }
         if (HELD(InputControl::Vertical) == -1 || (HELD(InputControl::Vertical) % 6 == -1 && HELD(InputControl::Vertical) < -30)) {
             g_SoundBank->Play(39);
-            field012--;
+            glyphRow--;
         }
         if (HELD(InputControl::Pause) == 1) {
-            field010 = 14;
-            field012 = 3;
+            glyphColumn = 14;
+            glyphRow = 3;
         }
     }
     if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonA] == 1)
-        field016 = 1;
+        editInput = 1;
     else if (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonB] == 1)
-        field016 = 2;
+        editInput = 2;
     else
-        field016 = 0;
-    if (field012 < 0)
-        field012 = 3;
-    if (field012 > 3)
-        field012 = 0;
-    if (field012 < 3) {
-        if (field010 < 0)
-            field010 = 25;
-        if (field010 > 25)
-            field010 = 0;
+        editInput = 0;
+    if (glyphRow < 0)
+        glyphRow = 3;
+    if (glyphRow > 3)
+        glyphRow = 0;
+    if (glyphRow < 3) {
+        if (glyphColumn < 0)
+            glyphColumn = 25;
+        if (glyphColumn > 25)
+            glyphColumn = 0;
     } else {
-        if (field010 < 0)
-            field010 = 14;
-        if (field010 > 14)
-            field010 = 14;
+        if (glyphColumn < 0)
+            glyphColumn = 14;
+        if (glyphColumn > 14)
+            glyphColumn = 14;
     }
 }
 
@@ -73,47 +73,47 @@ void SharedNameEntryScene::PollInput()
     for (int i = 0; i < 2; i++) {
         if (HELD(InputControl::Horizontal) == 1 || (HELD(InputControl::Horizontal) % 6 == 1 && HELD(InputControl::Horizontal) > 30)) {
             g_SoundBank->Play(39);
-            field00E++;
-            field014 = 1 - field014;
+            glyphColumn++;
+            cancelChoice = 1 - cancelChoice;
         }
         if (HELD(InputControl::Horizontal) == -1 || (HELD(InputControl::Horizontal) % 6 == -1 && HELD(InputControl::Horizontal) < -30)) {
             g_SoundBank->Play(39);
-            field00E--;
-            field014 = 1 - field014;
+            glyphColumn--;
+            cancelChoice = 1 - cancelChoice;
         }
         if (HELD(InputControl::Vertical) == 1 || (HELD(InputControl::Vertical) % 6 == 1 && HELD(InputControl::Vertical) > 30)) {
             g_SoundBank->Play(39);
-            field010++;
+            glyphRow++;
         }
         if (HELD(InputControl::Vertical) == -1 || (HELD(InputControl::Vertical) % 6 == -1 && HELD(InputControl::Vertical) < -30)) {
             g_SoundBank->Play(39);
-            field010--;
+            glyphRow--;
         }
         if (HELD(InputControl::Pause) == 1) {
-            field00E = 14;
-            field010 = 3;
+            glyphColumn = 14;
+            glyphRow = 3;
         }
     }
     if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonA] == 1)
-        field016 = 1;
+        editInput = 1;
     else if (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonB] == 1)
-        field016 = 2;
+        editInput = 2;
     else
-        field016 = 0;
-    if (field010 < 0)
-        field010 = 3;
-    if (field010 > 3)
-        field010 = 0;
-    if (field010 < 3) {
-        if (field00E < 0)
-            field00E = 25;
-        if (field00E > 25)
-            field00E = 0;
+        editInput = 0;
+    if (glyphRow < 0)
+        glyphRow = 3;
+    if (glyphRow > 3)
+        glyphRow = 0;
+    if (glyphRow < 3) {
+        if (glyphColumn < 0)
+            glyphColumn = 25;
+        if (glyphColumn > 25)
+            glyphColumn = 0;
     } else {
-        if (field00E < 0)
-            field00E = 14;
-        if (field00E > 14)
-            field00E = 14;
+        if (glyphColumn < 0)
+            glyphColumn = 14;
+        if (glyphColumn > 14)
+            glyphColumn = 14;
     }
 }
 

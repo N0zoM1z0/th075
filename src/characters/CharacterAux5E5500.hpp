@@ -1,4 +1,4 @@
 #pragma once
 
-#include "characters/MeilingFighter.hpp"
+#include "characters/meiling/MeilingFighter.hpp"
 #include "battle/Fighter.hpp"

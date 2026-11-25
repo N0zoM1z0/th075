@@ -21,10 +21,10 @@ private:
 
     TextureManagerF198* texture;
     ProgressDifficulty* selectedRecord;
-    short field010;
-    short field012;
-    short field014;
-    short field016;
+    short glyphColumn;
+    short glyphRow;
+    short nameCursor;
+    short editInput;
     int pathIndex;
     char replayPath[MAX_PATH];
     signed char rank;
@@ -44,12 +44,12 @@ private:
     void DrawNumber(float x, float y, DWORD tint, int number, int minDigits);
 
     TextureManagerF198* texture;
-    signed char field00C;
-    short field00E;
-    short field010;
-    short field012;
-    short field014;
-    short field016;
+    signed char confirmingCancel;
+    short glyphColumn;
+    short glyphRow;
+    short nameCursor;
+    short cancelChoice;
+    short editInput;
     int pathIndex;
     char replayPath[MAX_PATH];
 };

@@ -1,7 +1,7 @@
 #include "engine/GeometryConstants.hpp"
 #include "engine/FloatConstants.hpp"
 #include "engine/GameSharedState.hpp"
-#include "characters/AliceFighter.hpp"
+#include "characters/alice/AliceFighter.hpp"
 #include "characters/CharacterObject.hpp"
 // F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593/F596: selected natural VC7.1 source, original PE 004EBDA0.
 // Original entire 33,293-byte CODE + 438 post-RET DATA now have the

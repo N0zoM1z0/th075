@@ -1,11 +1,11 @@
-#include "characters/SuikaFighter.hpp"
-#include "characters/YukariFighter.hpp"
-#include "characters/YuyukoFighter.hpp"
-#include "characters/RemiliaFighter.hpp"
-#include "characters/SakuyaFighter.hpp"
-#include "characters/MarisaFighter.hpp"
-#include "characters/ReimuFighter.hpp"
-#include "characters/AliceFighter.hpp"
+#include "characters/suika/SuikaFighter.hpp"
+#include "characters/yukari/YukariFighter.hpp"
+#include "characters/yuyuko/YuyukoFighter.hpp"
+#include "characters/remilia/RemiliaFighter.hpp"
+#include "characters/sakuya/SakuyaFighter.hpp"
+#include "characters/marisa/MarisaFighter.hpp"
+#include "characters/reimu/ReimuFighter.hpp"
+#include "characters/alice/AliceFighter.hpp"
 // Eight independent native input policies; private owners are pointer-only.
 // Original names, types and complete layouts remain provisional.
 

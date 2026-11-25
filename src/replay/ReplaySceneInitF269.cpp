@@ -15,9 +15,9 @@ PlayerNameEntryScene::PlayerNameEntryScene()
     texture=new TextureManagerF198();
     texture->AllocateUnformattedSlots(3);
     texture->LoadDefault(g_ReplaySceneFileAt00657F4C,g_ReplaySceneRootAt00657F44);
-    field010 = 0;
-    field012 = 0;
-    field014 = 0;
+    glyphColumn = 0;
+    glyphRow = 0;
+    nameCursor = 0;
     g_GameProgress.SetSelection(g_PlayerIdAt006714C8[0],static_cast<unsigned char>(g_OptionsModeAt006714D0));
     selectedRecord = g_GameProgress.GetSelectedDifficultyRecord();
     rank = selectedRecord->InsertRankedScore(g_BattleFightersAt00671418[0]->score);

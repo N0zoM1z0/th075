@@ -40,6 +40,8 @@ constructor. The conservative coverage includes all pending-origin bytes.
 | [Audio](src/audio/) | [Streaming](src/audio/AudioStream.hpp), [sound effects](src/audio/SoundBank.hpp) |
 | [Platform](src/platform/) | [Windows startup and main loop](src/platform/WinMainF1171.cpp) |
 
+Each playable fighter has a subdirectory under `src/characters/`.
+The parent directory contains shared character code.
 `probes/` contains sources included by accepted exact units.
 
 `config/match-units.toml` records the compiler profiles, extents and

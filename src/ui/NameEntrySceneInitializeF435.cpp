@@ -9,11 +9,11 @@ SharedNameEntryScene::SharedNameEntryScene() {
     texture = new TextureManagerF198;
     texture->AllocateUnformattedSlots(3);
     texture->LoadDefault(g_ReplayDataPathAt00657F84,g_ReplayArchiveRootAt00657F7C);
-    field00E=0;
-    field010=0;
-    field012=0;
-    field014=0;
-    if(g_StateReturnFlag<0) field00C=1;
-    else field00C=0;
+    glyphColumn=0;
+    glyphRow=0;
+    nameCursor=0;
+    cancelChoice=0;
+    if(g_StateReturnFlag<0) confirmingCancel=1;
+    else confirmingCancel=0;
     pathIndex = g_ReplayRecords.FindAvailablePath(replayPath);
 }

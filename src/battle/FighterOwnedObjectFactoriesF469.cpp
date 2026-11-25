@@ -1,11 +1,11 @@
 #include "characters/CharacterObject.hpp"
-#include "characters/MeilingFighter.hpp"
-#include "characters/SuikaFighter.hpp"
-#include "characters/YukariFighter.hpp"
-#include "characters/YuyukoFighter.hpp"
-#include "characters/RemiliaFighter.hpp"
-#include "characters/PatchouliFighter.hpp"
-#include "characters/SakuyaFighter.hpp"
+#include "characters/meiling/MeilingFighter.hpp"
+#include "characters/suika/SuikaFighter.hpp"
+#include "characters/yukari/YukariFighter.hpp"
+#include "characters/yuyuko/YuyukoFighter.hpp"
+#include "characters/remilia/RemiliaFighter.hpp"
+#include "characters/patchouli/PatchouliFighter.hpp"
+#include "characters/sakuya/SakuyaFighter.hpp"
 
 typedef char SakuyaObjectFactorySizeCheck[(sizeof(SakuyaObject) == 0xE8) ? 1 : -1];
 

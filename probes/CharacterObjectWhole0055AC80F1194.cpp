@@ -1,7 +1,7 @@
 #include "engine/MathFloatHelpers.hpp"
 #include "engine/GameSharedState.hpp"
 #include "characters/CharacterObject.hpp"
-#include "characters/RemiliaFighter.hpp"
+#include "characters/remilia/RemiliaFighter.hpp"
 #include "engine/GameLeafHelpers.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "battle/EffectServices.hpp"

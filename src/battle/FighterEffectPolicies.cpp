@@ -1,4 +1,4 @@
-#include "characters/ReimuFighter.hpp"
+#include "characters/reimu/ReimuFighter.hpp"
 #include "audio/SoundBank.hpp"
 #include "battle/EffectManagerLifetimeF161.hpp"
 #include "battle/CombatEffects.hpp"

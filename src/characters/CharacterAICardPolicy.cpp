@@ -1,6 +1,6 @@
 #include "characters/CharacterAIPolicy.hpp"
-#include "characters/ReimuFighter.hpp"
-#include "characters/MeilingFighter.hpp"
+#include "characters/reimu/ReimuFighter.hpp"
+#include "characters/meiling/MeilingFighter.hpp"
 
 #define OPPONENT_GUARD static_cast<Fighter*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))

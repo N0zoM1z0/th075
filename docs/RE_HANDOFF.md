@@ -95,6 +95,14 @@ passed all 1,023 configured unit checks, 56,374 linked relocation checks,
 80 vtables and the initializer array.
 [Actor and collision evidence](KNOWLEDGE_BASE.md#actor-collision-and-sprite-resources)
 
+Each playable fighter now has its own source directory. The dialogue
+overlay names its raster settings and tracks the alpha and line count
+of newly revealed text. The result and replay name-entry scenes name
+the glyph grid position, text cursor and edit state. All 333 affected
+units passed. The normal link matched the preceding build except for
+the COFF timestamp.
+[Fighter and object sources](GIANTS.md#complete-research-parents) · [Text overlay](../src/graphics/TextOverlay.hpp) · [Name entry](../src/ui/NameEntryScenes.hpp)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

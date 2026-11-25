@@ -1,7 +1,7 @@
 #ifndef TH075_CHARACTER_SEQUENCE_483350_HPP
 #define TH075_CHARACTER_SEQUENCE_483350_HPP
 #include "battle/BattleSessionState.hpp"
-#include "characters/ReimuFighter.hpp"
+#include "characters/reimu/ReimuFighter.hpp"
 #include "battle/Fighter.hpp"
 #include "battle/BattleStateMachine.hpp"
 

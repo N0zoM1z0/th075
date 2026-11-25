@@ -1,10 +1,10 @@
 #include "characters/CharacterAIPolicy.hpp"
-#include "characters/ReimuFighter.hpp"
-#include "characters/AliceFighter.hpp"
-#include "characters/YuyukoFighter.hpp"
-#include "characters/YukariFighter.hpp"
-#include "characters/SuikaFighter.hpp"
-#include "characters/MeilingFighter.hpp"
+#include "characters/reimu/ReimuFighter.hpp"
+#include "characters/alice/AliceFighter.hpp"
+#include "characters/yuyuko/YuyukoFighter.hpp"
+#include "characters/yukari/YukariFighter.hpp"
+#include "characters/suika/SuikaFighter.hpp"
+#include "characters/meiling/MeilingFighter.hpp"
 
 #define OPPONENT_GUARD static_cast<Fighter*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))

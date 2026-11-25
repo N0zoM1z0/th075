@@ -4,8 +4,8 @@ void TextOverlay::ConfigureText(float positionX, float positionY, unsigned char 
 {
  xBits=reinterpret_cast<const DWORD&>(positionX);
  yBits=reinterpret_cast<const DWORD&>(positionY);
- field010Bits=0;
- field015=0;
- field014=0;
+ boxScaleYBits=0;
+ unfadedLineCount=0;
+ lineCount=0;
  this->mode=mode;
 }
