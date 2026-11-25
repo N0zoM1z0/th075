@@ -1,3 +1,4 @@
+#include "input/InputControl.hpp"
 #include "ui/SelectionInput4388D0.hpp"
 #include "graphics/GraphicsDevice.hpp"
 #include "input/InputJoystick.hpp"
@@ -16,17 +17,17 @@ void ResultListScene::PollInput()
     cancelInput=0;
     g_InputMappings[0].UpdateHeldCounts();
     g_InputMappings[1].UpdateHeldCounts();
-    if (g_InputMappings[0].held.counts[1]==1 || g_InputMappings[1].held.counts[1]==1)
+    if (g_InputMappings[0].held.counts[InputControl::Vertical]==1 || g_InputMappings[1].held.counts[InputControl::Vertical]==1)
         verticalInput=1;
-    if (g_InputMappings[0].held.counts[1]==-1 || g_InputMappings[1].held.counts[1]==-1)
+    if (g_InputMappings[0].held.counts[InputControl::Vertical]==-1 || g_InputMappings[1].held.counts[InputControl::Vertical]==-1)
         verticalInput=-1;
-    if (g_InputMappings[0].held.counts[0]==1 || g_InputMappings[1].held.counts[0]==1)
+    if (g_InputMappings[0].held.counts[InputControl::Horizontal]==1 || g_InputMappings[1].held.counts[InputControl::Horizontal]==1)
         horizontalInput=1;
-    if (g_InputMappings[0].held.counts[0]==-1 || g_InputMappings[1].held.counts[0]==-1)
+    if (g_InputMappings[0].held.counts[InputControl::Horizontal]==-1 || g_InputMappings[1].held.counts[InputControl::Horizontal]==-1)
         horizontalInput=-1;
-    if (g_InputMappings[0].held.counts[2]==1 || g_InputMappings[1].held.counts[2]==1)
+    if (g_InputMappings[0].held.counts[InputControl::ButtonA]==1 || g_InputMappings[1].held.counts[InputControl::ButtonA]==1)
         confirmInput=1;
-    if (g_InputMappings[0].held.counts[3]==1 || g_InputMappings[1].held.counts[3]==1)
+    if (g_InputMappings[0].held.counts[InputControl::ButtonB]==1 || g_InputMappings[1].held.counts[InputControl::ButtonB]==1)
         cancelInput=1;
     if (g_InputMappings[0].IsKeyDown(1))
         cancelInput=1;

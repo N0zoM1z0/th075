@@ -1,3 +1,6 @@
+#include "input/InputControl.hpp"
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "engine/GameSharedState.hpp"
@@ -17,11 +20,11 @@ unsigned int g_DebugKeyRepeatAt0068D618;
 
 void BattleScene::HandlePauseMenu()
 {
-    if (g_CombatMode == 5) {
+    if (g_CombatMode == CombatMode::Practice) {
         HandleMode5Options();
     } else {
-        if (g_InputMappings[0].held.counts[2] == 1
-            || g_InputMappings[1].held.counts[2] == 1) {
+        if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1
+            || g_InputMappings[1].held.counts[InputControl::ButtonA] == 1) {
             field0A0 = 0;
             g_SoundBank->Play(45);
             switch (field118) {
@@ -55,20 +58,20 @@ void BattleScene::HandlePauseMenu()
             }
         }
         if (field018 != 5 && field018 != 12
-            && (g_InputMappings[0].held.counts[3] == 1
-                || g_InputMappings[1].held.counts[3] == 1))
+            && (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1
+                || g_InputMappings[1].held.counts[InputControl::ButtonB] == 1))
             field0A0 = 0;
-        if (g_InputMappings[0].held.counts[1] == 1
-            || g_InputMappings[1].held.counts[1] == 1) {
+        if (g_InputMappings[0].held.counts[InputControl::Vertical] == 1
+            || g_InputMappings[1].held.counts[InputControl::Vertical] == 1) {
             g_SoundBank->Play(39);
             field118++;
         }
-        if (g_InputMappings[0].held.counts[1] == -1
-            || g_InputMappings[1].held.counts[1] == -1) {
+        if (g_InputMappings[0].held.counts[InputControl::Vertical] == -1
+            || g_InputMappings[1].held.counts[InputControl::Vertical] == -1) {
             g_SoundBank->Play(39);
             field118--;
         }
-        if (g_ReplayModeAt0066C238 == 2) {
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
             if (field118 < 0)
                 field118 = 1;
             if (field118 > 1)
@@ -81,7 +84,7 @@ void BattleScene::HandlePauseMenu()
                 field118 = 1;
         } else if (field018 == 12 && g_ContinueCountAt00671623 == 0) {
             field118 = 1;
-        } else if (g_CombatMode == 3
+        } else if (g_CombatMode == CombatMode::Story
             && (g_ContinueUsedAt00671624 != 0 || field018 == 7)) {
             if (field118 < 0)
                 field118 = 1;

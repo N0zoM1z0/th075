@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "battle/PlayerState.hpp"
 #include "engine/GameSharedState.hpp"
 #include "graphics/TextureManagerF198.hpp"
@@ -35,7 +36,7 @@ void CharacterSelectScene::RenderOptions() {
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 64.0f, 32.0f);
             QUAD->TranslateQuad(float(i * 320 + 32), float((optionsCursor[i]) * 32 + 120), 0.0f);
             DRAW->DrawQuad(5, packet, &region, 0xFFFFFFFF);
-            if (g_CombatMode != 4) {
+            if (g_CombatMode != CombatMode::Arcade) {
                 SetRect(&region, 256, 832, 512, 1024);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(0.0f, 0.0f, 256.0f, 192.0f);
                 QUAD->TranslateQuad(float(i * 320 + 32), 280.0f, 0.0f);

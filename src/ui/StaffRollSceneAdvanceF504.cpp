@@ -1,3 +1,4 @@
+#include "input/InputControl.hpp"
 #include "battle/BattleResultState.hpp"
 #include "engine/SequenceScenes.hpp"
 #include "battle/PlayerState.hpp"
@@ -20,7 +21,7 @@ unsigned short StaffRollScene::Update() {
     Render();
     Graphics::Present();
     AdvanceHookAt00438CF0();
-    if (static_cast<unsigned int>(g_InputMappings[0].held.counts[2])==1) {
+    if (static_cast<unsigned int>(g_InputMappings[0].held.counts[InputControl::ButtonA])==1) {
         if (elapsed>0x14C08 || elapsed<0x13880) {
             MusicF204::PlayTrackByIndex(40);
             AudioControl407CA0::ScheduleFade(-10000,-160,1,1);

@@ -1,3 +1,5 @@
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
 #include "battle/PlayerState.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "engine/GameSharedState.hpp"
@@ -53,17 +55,17 @@ BattleScene::BattleScene()
     field028 = timeGetTime();
     field01C = 0;
     g_InputCanCancelAt00671632 = 0;
-    if (g_CombatMode == 3) {
+    if (g_CombatMode == CombatMode::Story) {
         g_TextRenderer->ConfigureText(35.0f, 360.0f, 1);
         fighters[0]->noticeEnabled = 0;
         field08C = -200.0f;
         field018 = 7;
-        if (g_ReplayModeAt0066C238 == 2) {
-            g_ReplayModeAt0066C238 = 4;
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
+            g_ReplayModeAt0066C238 = ReplayMode::ReplayDialogue;
             g_InputCanCancelAt00671632 = 1;
         }
-        if (g_ReplayModeAt0066C238 == 1)
-            g_ReplayModeAt0066C238 = 3;
+        if (g_ReplayModeAt0066C238 == ReplayMode::Recording)
+            g_ReplayModeAt0066C238 = ReplayMode::LiveDialogue;
     } else {
         CameraMotionOverrideF484::SetOverride(0, 0.0f, 0.0f, 0.0f);
         field08C = 0.0f;

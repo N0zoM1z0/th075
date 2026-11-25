@@ -1,3 +1,4 @@
+#include "replay/ReplayMode.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "engine/GameProgress.hpp"
 #include "audio/AudioControl.hpp"
@@ -38,8 +39,8 @@ void PlayTrackByIndex(int track)
     else
         AudioQueueArchiveF760::QueueArchiveEntry(wavePath, 0, g_EndingSoundFolderAt00657B04);
 
-    if (g_ReplayModeAt0066C238 != 2 &&
-        g_ReplayModeAt0066C238 != 4)
+    if (g_ReplayModeAt0066C238 != ReplayMode::Playback &&
+        g_ReplayModeAt0066C238 != ReplayMode::ReplayDialogue)
         g_GameProgress.SetUnlockBit(track + 100);
 }
 }

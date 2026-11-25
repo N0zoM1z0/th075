@@ -1,3 +1,4 @@
+#include "replay/ReplayMode.hpp"
 #include "replay/ReplayBrowserScene.hpp"
 #include "battle/PlayerState.hpp"
 #include "battle/BattleSessionState.hpp"
@@ -65,19 +66,19 @@ unsigned short ReplayBrowserScene::Update()
                     field04A = 0;
                 } else {
                     g_RecordSequenceAt006714A4 = 1;
-                    g_ReplayModeAt0066C238 = 2;
+                    g_ReplayModeAt0066C238 = ReplayMode::Playback;
                     TRANSITION();
                     return 0x2201;
                 }
             } else {
                 g_RecordSequenceAt006714A4 = field04A + 1;
-                g_ReplayModeAt0066C238 = 2;
+                g_ReplayModeAt0066C238 = ReplayMode::Playback;
                 TRANSITION();
                 return 0x2201;
             }
         } else {
             PLAY(0x2d);
-            g_ReplayModeAt0066C238 = 2;
+            g_ReplayModeAt0066C238 = ReplayMode::Playback;
             TRANSITION();
             return 0x2201;
         }

@@ -1,3 +1,4 @@
+#include "input/InputControl.hpp"
 #include <math.h>
 #include "battle/BattleScene.hpp"
 #include "battle/BattleMode5OptionsF168.hpp"
@@ -10,7 +11,7 @@ void BattleScene::HandleMode5Options()
     if (field0A0 == 0)
         return;
 
-    if (::abs(static_cast<long>(g_InputMappings[0].held.counts[0])) == 1) {
+    if (::abs(static_cast<long>(g_InputMappings[0].held.counts[InputControl::Horizontal])) == 1) {
         g_SoundBank->Play(39);
         signed char horizontal = *reinterpret_cast<signed char*>(&g_InputMappings[0].held);
         switch (field118) {
@@ -35,7 +36,7 @@ void BattleScene::HandleMode5Options()
         }
     }
 
-    if (g_InputMappings[0].held.counts[2] == 1) {
+    if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1) {
         switch (field118) {
         case 6:
             fighters[0]->spellTimer = 1;
@@ -52,13 +53,13 @@ void BattleScene::HandleMode5Options()
             break;
         }
     }
-    if (g_InputMappings[0].held.counts[3] == 1)
+    if (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1)
         field0A0 = 0;
-    if (g_InputMappings[0].held.counts[1] == 1 || g_InputMappings[1].held.counts[1] == 1) {
+    if (g_InputMappings[0].held.counts[InputControl::Vertical] == 1 || g_InputMappings[1].held.counts[InputControl::Vertical] == 1) {
         g_SoundBank->Play(39);
         field118 = (field118 + 1) % 9;
     }
-    if (g_InputMappings[0].held.counts[1] == -1 || g_InputMappings[1].held.counts[1] == -1) {
+    if (g_InputMappings[0].held.counts[InputControl::Vertical] == -1 || g_InputMappings[1].held.counts[InputControl::Vertical] == -1) {
         g_SoundBank->Play(39);
         field118 = (field118 + 8) % 9;
     }

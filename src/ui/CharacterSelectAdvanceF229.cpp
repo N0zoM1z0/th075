@@ -1,7 +1,9 @@
+#include "input/InputControl.hpp"
+#include "battle/CombatMode.hpp"
 #include "engine/GeometryConstants.hpp"
 #include "engine/FloatConstants.hpp"
 #include "battle/PlayerState.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "engine/GameSharedState.hpp"
 #include "ui/SelectionInput4388D0.hpp"
@@ -36,8 +38,8 @@ unsigned short CharacterSelectScene::Update()
         if (FloatConstants::Zero < (portraitFade[1]))
             (portraitFade[1]) -= FloatConstants::Five;
     }
-    if (g_CombatMode==1 || g_CombatMode==5) {
-        if (g_InputMappings[g_SelectedSideAt006714B8].held.counts[3]==1 || (cancellationRequested)==1) {
+    if (g_CombatMode==CombatMode::DuelCpu || g_CombatMode==CombatMode::Practice) {
+        if (g_InputMappings[g_SelectedSideAt006714B8].held.counts[InputControl::ButtonB]==1 || (cancellationRequested)==1) {
             PLAY(0x28);
             if ((optionsOpen[g_SelectedSideAt006714B8])!=0) {
                 (optionsOpen[g_SelectedSideAt006714B8])=0;
@@ -53,8 +55,8 @@ unsigned short CharacterSelectScene::Update()
                 (input[g_SelectedSideAt006714B8].cancel)=1;
             }
         }
-    } else if (g_CombatMode==3 || g_CombatMode==4) {
-        if ((g_InputMappings[0].held.counts[3]==1 && (playerState[0])==0) || (cancellationRequested)==1) {
+    } else if (g_CombatMode==CombatMode::Story || g_CombatMode==CombatMode::Arcade) {
+        if ((g_InputMappings[0].held.counts[InputControl::ButtonB]==1 && (playerState[0])==0) || (cancellationRequested)==1) {
             PLAY(0x28);
             if ((optionsOpen[0])!=0)
                 (optionsOpen[0])=0;
@@ -62,20 +64,20 @@ unsigned short CharacterSelectScene::Update()
                 return 0x2202;
         }
         (playerState[1])=8;
-    } else if (g_InputMappings[0].held.counts[3]==1 && (optionsOpen[0])!=0) {
+    } else if (g_InputMappings[0].held.counts[InputControl::ButtonB]==1 && (optionsOpen[0])!=0) {
         PLAY(0x28);
         (optionsOpen[0])=0;
-    } else if (g_InputMappings[1].held.counts[3]==1 && (optionsOpen[1])!=0) {
+    } else if (g_InputMappings[1].held.counts[InputControl::ButtonB]==1 && (optionsOpen[1])!=0) {
         PLAY(0x28);
         (optionsOpen[1])=0;
-    } else if ((g_InputMappings[0].held.counts[3]==1 || g_InputMappings[1].held.counts[3]==1 || (cancellationRequested)==1)
+    } else if ((g_InputMappings[0].held.counts[InputControl::ButtonB]==1 || g_InputMappings[1].held.counts[InputControl::ButtonB]==1 || (cancellationRequested)==1)
                && (((playerState[0])==0 && (playerState[1])==0) || (cancellationRequested)==1)) {
         PLAY(0x28);
         return 0x2202;
     }
     for (int i=0;i<2;++i) {
         if ((optionsOpen[i])!=0) {
-            if (i==0 && g_CombatMode==3)
+            if (i==0 && g_CombatMode==CombatMode::Story)
                 ProcessSubselection();
             else
                 ProcessPlayerOptions(static_cast<signed char>(i));
@@ -93,7 +95,7 @@ unsigned short CharacterSelectScene::Update()
         g_StageAt0067161E=0;
         if ((g_PlayerIdAt006714C8[0]==6 || g_PlayerIdAt006714C8[1]==6) && g_StageSelectionAt0067161D <6)
             g_StageSelectionAt0067161D += 10;
-        if (g_CombatMode==3) {
+        if (g_CombatMode==CombatMode::Story) {
             g_PlayerRoundAt006714AC[0]=0;
             g_PlayerRoundAt006714AC[1]=0;
         }

@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GeometryConstants.hpp"
 #include "engine/FloatConstants.hpp"
 #include "engine/GameSharedState.hpp"
@@ -938,7 +939,7 @@ void PatchouliFighter::Advance() {
     }
 
     case 0x63: {
-        if (g_CombatMode != 3 ||
+        if (g_CombatMode != CombatMode::Story ||
             field2CD == 0) {
             if (animationStage == 2 &&
                 field39D > 0 &&

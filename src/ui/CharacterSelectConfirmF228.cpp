@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GeometryConstants.hpp"
 #include "engine/FloatConstants.hpp"
 #include "battle/PlayerState.hpp"
@@ -38,7 +39,7 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
             (choiceStop[player])=75.0f;
         g_PlayerOtherAt006714CC[player]=(chosenPalette[player]);
         (playerState[player])=4;
-        if (g_CombatMode==3 || g_CombatMode==4) {
+        if (g_CombatMode==CombatMode::Story || g_CombatMode==CombatMode::Arcade) {
             playerState[0]=8;
             playerState[1]=8;
         }
@@ -52,7 +53,7 @@ void CharacterSelectScene::UpdatePlayerConfirmation(signed char player)
     if ((input[player].special)==1) {
         g_PlayerOtherAt006714CC[player]=static_cast<unsigned char>(rand()%3);
         (playerState[player])=4;
-        if (g_CombatMode==3 || g_CombatMode==4) {
+        if (g_CombatMode==CombatMode::Story || g_CombatMode==CombatMode::Arcade) {
             playerState[0]=8;
             playerState[1]=8;
         }

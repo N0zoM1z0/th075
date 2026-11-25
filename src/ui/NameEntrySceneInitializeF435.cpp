@@ -1,7 +1,7 @@
 #include "battle/BattleResultState.hpp"
 #include "ui/NameEntryScenes.hpp"
 #include "graphics/TextureManagerF198.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 extern const char g_ReplayDataPathAt00657F84[] = "data\\system\\replay.dat";
 extern const char g_ReplayArchiveRootAt00657F7C[] = "datab";
 

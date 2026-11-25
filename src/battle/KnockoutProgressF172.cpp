@@ -1,3 +1,4 @@
+#include "replay/ReplayMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "engine/GameProgress.hpp"
@@ -37,7 +38,7 @@ void BattleScene::ResolveKnockout()
         fighters[0]->field3CE.unsignedAt3CE = 0;
         fighters[1]->field3CE.unsignedAt3CE = 1;
         if (fighters[1]->field3A4 > 0) {
-            if (g_ReplayModeAt0066C238 == 1) {
+            if (g_ReplayModeAt0066C238 == ReplayMode::Recording) {
                 if (fighters[0]->field464 != 0)
                     CARD_RECORDS->MarkCardFlag(
                         reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);

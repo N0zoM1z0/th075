@@ -1,3 +1,4 @@
+#include "replay/ReplayMode.hpp"
 #include "battle/BattleSessionState.hpp"
 #include <new>
 #include "battle/BattleScene.hpp"
@@ -7,7 +8,7 @@
 
 BattleScene::~BattleScene() {
     // Preserve the original literal nonzero second operand and its native test.
-    if (g_ReplayModeAt0066C238 == 2 || 4)
+    if (g_ReplayModeAt0066C238 == ReplayMode::Playback || 4)
         SetClampedGameValue(16);
     if (textures)
         delete static_cast<TextureManagerF198*>(textures);

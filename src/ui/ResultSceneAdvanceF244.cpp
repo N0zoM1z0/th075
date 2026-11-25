@@ -1,7 +1,8 @@
+#include "replay/ReplayMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "engine/FloatConstants.hpp"
 #include "battle/PlayerState.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "engine/GameSharedState.hpp"
 #include "audio/AudioControl.hpp"
@@ -46,7 +47,7 @@ unsigned short ResultScene::Update()
         } else {
             if (static_cast<unsigned int>(g_BattleFightersAt00671418[0]->score)>g_MaxCombatScore)
                 g_MaxCombatScore=g_BattleFightersAt00671418[0]->score;
-            if (g_ReplayModeAt0066C238==2 && g_StageAt0067161E>=g_ReplayRecords.fileHeader.recordCount) {
+            if (g_ReplayModeAt0066C238==ReplayMode::Playback && g_StageAt0067161E>=g_ReplayRecords.fileHeader.recordCount) {
                 MusicF204::PlayTrackByIndex(0x28);
                 AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
                 return 0x2205;
@@ -58,7 +59,7 @@ unsigned short ResultScene::Update()
                 return 0x2207;
             }
             if ((g_BattleFightersAt00671418[0]->field713)>=8) {
-                if (g_ReplayModeAt0066C238==2) {
+                if (g_ReplayModeAt0066C238==ReplayMode::Playback) {
                     MusicF204::PlayTrackByIndex(0x28);
                     AudioControl407CA0::ScheduleFade(-10000,-160,1,1);
                     return 0x2205;

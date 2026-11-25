@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "graphics/TextureManagerF198.hpp"
 #include "ui/CharacterSelectScene.hpp"
@@ -21,9 +22,9 @@ void CharacterSelectScene::RenderCards() {
                 unsigned char alpha;
                 D3DCOLOR color;
                 int atlasOffset;
-                if (g_CombatMode == 3 && i == 1)
+                if (g_CombatMode == CombatMode::Story && i == 1)
                     break;
-                if (g_CombatMode == 4 && i == 1)
+                if (g_CombatMode == CombatMode::Arcade && i == 1)
                     break;
                 normal[i] = 255 - ((optionsOpen[i]) << 7);
                 dim[i] = 128 - ((optionsOpen[i]) << 6);

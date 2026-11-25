@@ -1,3 +1,5 @@
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "graphics/SpriteTransform.hpp"
 #include "graphics/TextureManagerF198.hpp"
@@ -11,7 +13,7 @@
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 
 void BattleScene::RenderEndOverlay() {
-    if (g_CombatMode == 5) {
+    if (g_CombatMode == CombatMode::Practice) {
         RenderModeFive();
     } else {
         RenderQuadPacket5E68C0 packet;
@@ -24,7 +26,7 @@ void BattleScene::RenderEndOverlay() {
                 return;
             if (field0A0 == 0)
                 return;
-            if (g_ReplayModeAt0066C238 != 2) {
+            if (g_ReplayModeAt0066C238 != ReplayMode::Playback) {
                 SetRect(&rect, 0, 0, 256, 256);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuadFromRect(&rect);
                 if (fighters[0]->field2CD == 0 && fighters[1]->field2CD == 0) {
@@ -59,7 +61,7 @@ void BattleScene::RenderEndOverlay() {
                 384, (field118 != 1) * 32 + 160);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(256.0f, 170.0f, 384.0f, 202.0f);
             DRAWING->DrawQuad(0, packet, &rect, 0xFFFFFFFF);
-            if (g_ReplayModeAt0066C238 != 2 && g_ContinueUsedAt00671624 == 0 && field018 != 7) {
+            if (g_ReplayModeAt0066C238 != ReplayMode::Playback && g_ContinueUsedAt00671624 == 0 && field018 != 7) {
                 SetRect(&rect, 0, (field118 != 2) * 32 + 128,
                     256, (field118 != 2) * 32 + 155);
                 reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(192.0f, 200.0f, 448.0f, 227.0f);

@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "graphics/SpriteTransform.hpp"
 #include "graphics/TextureManagerF198.hpp"
@@ -72,7 +73,7 @@ void BattleScene::RenderHud() {
                 field098, field098, field098));
         }
 
-        if (g_CombatMode == 3) {
+        if (g_CombatMode == CombatMode::Story) {
             switch (fighters[1]->field32A[fighters[1]->field39D]) {
             case 0:
                 if (field018 == 9 || field018 == 10) {
@@ -151,7 +152,7 @@ void BattleScene::RenderHud() {
             QUAD->TranslateQuad(0.0f, field08C, 0.0f);
         RIGHT_DRAWING->DrawQuad(tex, packet, &region, color);
 
-        if (g_CombatMode == 3) {
+        if (g_CombatMode == CombatMode::Story) {
             SetRect(&region, 756, 39, 797, 53);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(115.0f, 5.0f, 156.0f, 19.0f);
             if (field08C != 0.0f)
@@ -266,7 +267,7 @@ void BattleScene::RenderHud() {
         if (field08C != 0.0f)
             QUAD->TranslateQuad(0.0f, -field08C, 0.0f);
         DRAWING->DrawQuad(0, packet, &region, color);
-        if (g_CombatMode != 3) {
+        if (g_CombatMode != CombatMode::Story) {
             QUAD->TranslateQuad(431.0f, 0.0f, 0.0f);
             DRAWING->DrawQuad(0, packet, &region, color);
         }
@@ -277,7 +278,7 @@ void BattleScene::RenderHud() {
         DRAWING->DrawQuad(0, packet, &region, color);
         QUAD->TranslateQuad(16.0f, 0.0f, 0.0f);
         DRAWING->DrawQuad(0, packet, &region, color);
-        if (g_CombatMode != 3) {
+        if (g_CombatMode != CombatMode::Story) {
             QUAD->TranslateQuad(431.0f, 0.0f, 0.0f);
             DRAWING->DrawQuad(0, packet, &region, color);
             QUAD->TranslateQuad(-16.0f, 0.0f, 0.0f);
@@ -291,7 +292,7 @@ void BattleScene::RenderHud() {
             DRAWING->DrawQuad(0, packet, &region, color);
             QUAD->TranslateQuad(16.0f, 0.0f, 0.0f);
         }
-        if (g_CombatMode != 3) {
+        if (g_CombatMode != CombatMode::Story) {
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(546.0f, 440.0f, 562.0f, 455.0f);
             if (field08C != 0.0f)
                 QUAD->TranslateQuad(0.0f, -field08C, 0.0f);
@@ -306,7 +307,7 @@ void BattleScene::RenderHud() {
         if (field08C != 0.0f)
             QUAD->TranslateQuad(0.0f, -field08C, 0.0f);
         DRAWING->DrawQuad(0, packet, &region, color);
-        if (g_CombatMode != 3) {
+        if (g_CombatMode != CombatMode::Story) {
             SetRect(&region, (2 - fighters[1]->field39D) * 64 + 832, 64,
                 (2 - fighters[1]->field39D) * 64 + 896, 96);
             reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(380.0f, 433.0f, 444.0f, 465.0f);
@@ -315,7 +316,7 @@ void BattleScene::RenderHud() {
             DRAWING->DrawQuad(0, packet, &region, color);
         }
         DrawAtlasNumberDefaultAt00446B60(33.0f, 439.0f - field08C, color, static_cast<int>(static_cast<short>(fighters[0]->spellPower / 100.0f)), 10);
-        if (g_CombatMode == 3) {
+        if (g_CombatMode == CombatMode::Story) {
             // This mode omits the right numeric gauge.
         } else {
             DrawAtlasNumberDefaultAt00446B60(637.0f, 439.0f - field08C, color, static_cast<int>(static_cast<short>(fighters[1]->spellPower / 100.0f)), 10);

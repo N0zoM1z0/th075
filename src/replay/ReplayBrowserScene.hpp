@@ -1,6 +1,6 @@
 #pragma once
 
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "engine/SceneBase.hpp"
 
 class TextureManagerF198;

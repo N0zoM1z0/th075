@@ -1,3 +1,4 @@
+#include "input/InputControl.hpp"
 #include "ui/NameEntryScenes.hpp"
 #include "ui/SelectionInput4388D0.hpp"
 #include "engine/GameLeafHelpers.hpp"
@@ -15,30 +16,30 @@ void PlayerNameEntryScene::PollInput()
             || g_InputMappings[0].IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     for (int i = 0; i < 2; i++) {
-        if (HELD(0) == 1 || (HELD(0) % 6 == 1 && HELD(0) > 30)) {
+        if (HELD(InputControl::Horizontal) == 1 || (HELD(InputControl::Horizontal) % 6 == 1 && HELD(InputControl::Horizontal) > 30)) {
             g_SoundBank->Play(39);
             field010++;
         }
-        if (HELD(0) == -1 || (HELD(0) % 6 == -1 && HELD(0) < -30)) {
+        if (HELD(InputControl::Horizontal) == -1 || (HELD(InputControl::Horizontal) % 6 == -1 && HELD(InputControl::Horizontal) < -30)) {
             g_SoundBank->Play(39);
             field010--;
         }
-        if (HELD(1) == 1 || (HELD(1) % 6 == 1 && HELD(1) > 30)) {
+        if (HELD(InputControl::Vertical) == 1 || (HELD(InputControl::Vertical) % 6 == 1 && HELD(InputControl::Vertical) > 30)) {
             g_SoundBank->Play(39);
             field012++;
         }
-        if (HELD(1) == -1 || (HELD(1) % 6 == -1 && HELD(1) < -30)) {
+        if (HELD(InputControl::Vertical) == -1 || (HELD(InputControl::Vertical) % 6 == -1 && HELD(InputControl::Vertical) < -30)) {
             g_SoundBank->Play(39);
             field012--;
         }
-        if (HELD(6) == 1) {
+        if (HELD(InputControl::Pause) == 1) {
             field010 = 14;
             field012 = 3;
         }
     }
-    if (g_InputMappings[0].held.counts[2] == 1 || g_InputMappings[1].held.counts[2] == 1)
+    if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonA] == 1)
         field016 = 1;
-    else if (g_InputMappings[0].held.counts[3] == 1 || g_InputMappings[1].held.counts[3] == 1)
+    else if (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonB] == 1)
         field016 = 2;
     else
         field016 = 0;
@@ -70,32 +71,32 @@ void SharedNameEntryScene::PollInput()
             || g_InputMappings[0].IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     for (int i = 0; i < 2; i++) {
-        if (HELD(0) == 1 || (HELD(0) % 6 == 1 && HELD(0) > 30)) {
+        if (HELD(InputControl::Horizontal) == 1 || (HELD(InputControl::Horizontal) % 6 == 1 && HELD(InputControl::Horizontal) > 30)) {
             g_SoundBank->Play(39);
             field00E++;
             field014 = 1 - field014;
         }
-        if (HELD(0) == -1 || (HELD(0) % 6 == -1 && HELD(0) < -30)) {
+        if (HELD(InputControl::Horizontal) == -1 || (HELD(InputControl::Horizontal) % 6 == -1 && HELD(InputControl::Horizontal) < -30)) {
             g_SoundBank->Play(39);
             field00E--;
             field014 = 1 - field014;
         }
-        if (HELD(1) == 1 || (HELD(1) % 6 == 1 && HELD(1) > 30)) {
+        if (HELD(InputControl::Vertical) == 1 || (HELD(InputControl::Vertical) % 6 == 1 && HELD(InputControl::Vertical) > 30)) {
             g_SoundBank->Play(39);
             field010++;
         }
-        if (HELD(1) == -1 || (HELD(1) % 6 == -1 && HELD(1) < -30)) {
+        if (HELD(InputControl::Vertical) == -1 || (HELD(InputControl::Vertical) % 6 == -1 && HELD(InputControl::Vertical) < -30)) {
             g_SoundBank->Play(39);
             field010--;
         }
-        if (HELD(6) == 1) {
+        if (HELD(InputControl::Pause) == 1) {
             field00E = 14;
             field010 = 3;
         }
     }
-    if (g_InputMappings[0].held.counts[2] == 1 || g_InputMappings[1].held.counts[2] == 1)
+    if (g_InputMappings[0].held.counts[InputControl::ButtonA] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonA] == 1)
         field016 = 1;
-    else if (g_InputMappings[0].held.counts[3] == 1 || g_InputMappings[1].held.counts[3] == 1)
+    else if (g_InputMappings[0].held.counts[InputControl::ButtonB] == 1 || g_InputMappings[1].held.counts[InputControl::ButtonB] == 1)
         field016 = 2;
     else
         field016 = 0;

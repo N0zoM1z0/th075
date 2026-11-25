@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/FighterOpponentGaugeF170.hpp"
 
@@ -5,7 +6,7 @@ void Fighter::ApplyOpponentGaugeChange(
     short base, short multiplier, short count)
 {
     short change;
-    if (opponent->field2CD != 0 && g_CombatMode == 3) {
+    if (opponent->field2CD != 0 && g_CombatMode == CombatMode::Story) {
         change = static_cast<short>(base * field09C * field0A4 *
             field0A0 * comboRate *
             (opponent->healthBeforeCollision / 4.0f /

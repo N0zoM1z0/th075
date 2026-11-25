@@ -28,6 +28,13 @@ include root where a profile had relied on the flat tree. All configured
 units were cold-built and compared. The strict Windows relink matches the
 replay-tested executable byte for byte except for its COFF timestamp.
 
+The next batch named the combat and replay mode values, replay metadata
+and streams, held-input indices, and DirectSound refill and fade state.
+All affected units replayed exactly and the strict relink matched the
+same executable. The headless replay reader and writer round-tripped
+the four external fixtures and one fixture with a timed battle command.
+[Mode and replay evidence](KNOWLEDGE_BASE.md#battle-modes-controls-and-replay-data)
+
 ## Windows x86 build
 
 Run `scripts/repo-python scripts/build.py --program` to build

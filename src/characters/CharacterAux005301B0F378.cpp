@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "characters/YoumuFighter.hpp"
 #include "battle/Fighter.hpp"
@@ -33,10 +34,10 @@ void YoumuFighter::AdvanceAuxiliary() {
         field2F2=255;
         field2F3=255;
         field2F4=255;
-        if (g_CombatMode != 3) {
+        if (g_CombatMode != CombatMode::Story) {
             SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
             ++fieldF0E;
-        } else if (g_CombatMode == 3) {
+        } else if (g_CombatMode == CombatMode::Story) {
             if (fieldF0C==1) {
                 SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
                 ++fieldF0E;

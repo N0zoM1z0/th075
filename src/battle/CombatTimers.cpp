@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/CombatTimers.hpp"
 void Fighter::UpdateCounters()
@@ -15,7 +16,7 @@ void Fighter::UpdateCounters()
         if (field088 > 0) --field088;
         if (field3BC > 0) --field3BC;
         if (spellTimer > 0) {
-            if (field2CD == 0 || g_CombatMode != 3) {
+            if (field2CD == 0 || g_CombatMode != CombatMode::Story) {
                 spellTimer -= 2;
                 if (spellTimer <= 0) {
                     spellTimer = 0;
@@ -42,8 +43,8 @@ void Fighter::UpdateCounters()
         if (spellPower > 900.0f) spellPower = 900.0f;
         if (pendingSpellCharge < 0.0f) pendingSpellCharge = 0.0f;
         if (pendingSpellCharge > 1000.0f) pendingSpellCharge = 1000.0f;
-        if (g_CombatMode == 3 && field2CD != 0) spellPower = 900.0f;
-        if (g_CombatMode != 3 || field2CD == 0) {
+        if (g_CombatMode == CombatMode::Story && field2CD != 0) spellPower = 900.0f;
+        if (g_CombatMode != CombatMode::Story || field2CD == 0) {
             if (spellTimer > 0 && recoverableHealth > health) health += 100;
             if (recoverableHealth < health) health = recoverableHealth;
         }

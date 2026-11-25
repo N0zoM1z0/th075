@@ -1,18 +1,18 @@
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 
 template<>
 void ReplayRecords::ClearFourQueues()
 {
-    byteInputs.clear();
-    wordInputs.clear();
-    secondaryInputs.clear();
-    dwordInputs.clear();
+    frameInputBits.clear();
+    randomSamplesAndAiTimers.clear();
+    aiCommandsAndGuardChoices.clear();
+    timedBattleCommands.clear();
 }
 
 template<>
 unsigned char ReplayRecords::IsPrimaryInputQueueEmpty()
 {
-    if (byteInputs.size() > 0)
+    if (frameInputBits.size() > 0)
         return 0;
     return 1;
 }

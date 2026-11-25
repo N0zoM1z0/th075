@@ -1,6 +1,6 @@
 #include "ui/NameEntryScenes.hpp"
 #include "engine/GameProgress.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "graphics/Graphics.hpp"
 #include "graphics/TextureManagerF198.hpp"
 #include "characters/CharacterObject.hpp"
@@ -212,7 +212,7 @@ void SharedNameEntryScene::Render() {
             texture->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             DrawNumber(370.0f, 130.0f, 0xFFFFFFFF, static_cast<signed char>(g_ReplayRecords.fileHeader.day), 2);
             if (static_cast<signed char>(g_ReplayRecords.fileHeader.mode) == 0) {
-                SetRect(&textureRect, 0, g_ReplayRecords.header.field144 * 20 + 20, 100, g_ReplayRecords.header.field144 * 20 + 40);
+                SetRect(&textureRect, 0, g_ReplayRecords.recordHeader.secondaryFighter * 20 + 20, 100, g_ReplayRecords.recordHeader.secondaryFighter * 20 + 40);
                 TRANSFORM(transformedQuad)->BuildQuad(380.0f, 136.0f, 480.0f, 150.0f);
                 TRANSFORM(transformedQuad)->TranslateQuad(36.0f, 8.0f, 0);
                 texture->DrawQuad(1, transformedQuad, &textureRect, 0xFFB0B0B0);

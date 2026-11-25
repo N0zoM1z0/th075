@@ -3,7 +3,7 @@
 #include "engine/GameSharedState.hpp"
 #include "engine/GameProgress.hpp"
 #include "battle/Fighter.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "graphics/TextureManagerF198.hpp"
 #include <windows.h>
 

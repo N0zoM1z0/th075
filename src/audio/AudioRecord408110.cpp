@@ -57,9 +57,9 @@ void AudioStream::OpenFile(const char* filename, DWORD requestedBytes) {
         buffer->Lock(0, bufferBytes >> 1, &firstRegion, &firstBytes,
                             &buffer2, &regionSize2, DSBLOCK_ENTIREBUFFER);
         ReadFile(file, firstRegion, bufferBytes >> 1, &readBytes, 0);
-        activeHalf = 0;
-        halfBoundary = bufferBytes >> 1;
-        nextFilePosition = halfBoundary + dataBegin;
+        lastRefillOffset = 0;
+        nextRefillOffset = bufferBytes >> 1;
+        nextFilePosition = nextRefillOffset + dataBegin;
         buffer->Unlock(firstRegion, firstBytes, buffer2, regionSize2);
     }
 }
@@ -108,9 +108,9 @@ void AudioStream::OpenArchiveEntry(const char* filename, DWORD requestedBytes, c
         buffer->Lock(0, bufferBytes >> 1, &firstRegion, &firstBytes,
                             &buffer2, &regionSize2, DSBLOCK_ENTIREBUFFER);
         ReadFile(file, firstRegion, bufferBytes >> 1, &readBytes, 0);
-        activeHalf = 0;
-        halfBoundary = bufferBytes >> 1;
-        nextFilePosition = halfBoundary + dataBegin;
+        lastRefillOffset = 0;
+        nextRefillOffset = bufferBytes >> 1;
+        nextFilePosition = nextRefillOffset + dataBegin;
         buffer->Unlock(firstRegion, firstBytes, buffer2, regionSize2);
     }
     archiveReadRequested = 0;

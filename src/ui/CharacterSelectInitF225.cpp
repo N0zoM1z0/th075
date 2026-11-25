@@ -1,3 +1,4 @@
+#include "replay/ReplayMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "battle/Fighter.hpp"
 #include "battle/PlayerState.hpp"
@@ -33,7 +34,7 @@ CharacterSelectScene::CharacterSelectScene()
     (backgroundTextures)=new TextureManagerF198();
     (backgroundTextures)->AllocateUnformattedSlots(17);
     (backgroundTextures)->LoadDefault(g_BackgroundTextureDataAt00658230,g_BackgroundTextureRootAt00658228);
-    g_ReplayModeAt0066C238=1;
+    g_ReplayModeAt0066C238=ReplayMode::Recording;
     g_StoryChoiceAt00671620=0;
     g_ContinueUsedAt00671624=0;
     GameConfigF193::ReadIni();

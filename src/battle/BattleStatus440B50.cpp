@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "graphics/SpriteTransform.hpp"
 #include "graphics/TextureManagerF198.hpp"
@@ -20,7 +21,7 @@ void BattleScene::RenderStatus() {
         int group;
         for (i = 0; i < 2; i = i + 1) {
             if (fighters[i]->spellTimer > 0) {
-                if (g_CombatMode == 3 && i == 1) {
+                if (g_CombatMode == CombatMode::Story && i == 1) {
                     group = fighters[1]->field370[fighters[1]->field39D] + 42;
                     nameSlide = float(fighters[i]->sequenceSlots.at(group)->frames.at(g_OptionsModeAt006714D0 + 5).originX);
                     texture = fighters[i]->sequenceSlots.at(group)->frames.at(g_OptionsModeAt006714D0 + 5).textureIndex;
@@ -57,7 +58,7 @@ void BattleScene::RenderStatus() {
                     SetRect(&rect, 641, 140, 862, 182);
                     reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(440.0f, F1096_STATUS_FLOAT(this, 0xF4, i), 661.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + 42.0f);
                     DRAWING->DrawQuad(0, packet, &rect, D3DCOLOR_ARGB(field0DC[i], 255, 255, 255));
-                    if (g_CombatMode == 3) {
+                    if (g_CombatMode == CombatMode::Story) {
                         SetRect(&rect, 720, 124, 913, 140);
                         reinterpret_cast<SpriteTransform*>(&packet)->BuildQuad(425.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 32.0f,
                             618.0f, F1096_STATUS_FLOAT(this, 0xF4, i) + F1096_STATUS_FLOAT(this, 0x104, i) + 32.0f + 16.0f);

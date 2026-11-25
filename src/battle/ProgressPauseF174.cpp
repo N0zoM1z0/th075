@@ -1,3 +1,5 @@
+#include "input/InputControl.hpp"
+#include "battle/CombatMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/BattleScene.hpp"
@@ -7,7 +9,7 @@
 
 // Existing unsigned byte view, written from the observed scene pause byte.
 
-#define HELD_BUTTON g_InputMappings[i].held.counts[2 + j]
+#define HELD_BUTTON g_InputMappings[i].held.counts[InputControl::ButtonA + j]
 
 void BattleScene::PollPauseShortcut()
 {
@@ -24,12 +26,12 @@ void BattleScene::PollPauseShortcut()
     else
         field114 = 0;
     if ((field114 == 3
-            || g_InputMappings[0].held.counts[6] == 1
-            || g_InputMappings[1].held.counts[6] == 1)
+            || g_InputMappings[0].held.counts[InputControl::Pause] == 1
+            || g_InputMappings[1].held.counts[InputControl::Pause] == 1)
         && field018 != 5
         && field018 != 0
         && field018 != 7
-        && g_CombatMode != 6) {
+        && g_CombatMode != CombatMode::Attract) {
         field0A0 = static_cast<int>(!field0A0);
         if (field0A0 != 0)
             field118 = 0;

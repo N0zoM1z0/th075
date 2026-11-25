@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "engine/GeometryConstants.hpp"
 #include "engine/FloatConstants.hpp"
 #include "characters/ReimuFighter.hpp"

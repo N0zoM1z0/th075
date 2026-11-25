@@ -1,3 +1,4 @@
+#include "replay/ReplayMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "battle/PlayerState.hpp"
 #include "config/GameConfigStorage.hpp"
@@ -28,7 +29,7 @@ unsigned char g_StateFadeAlpha;
 int g_StateResetCounter;
 
 unsigned char g_FramePresentToggle = 1;
-signed char g_ReplayModeAt0066C238 = 1;
+signed char g_ReplayModeAt0066C238 = ReplayMode::Recording;
 unsigned char g_SequenceByteAt0066C239 = 1;
 unsigned char g_SequenceByteAt0066C23A = 1;
 signed char g_SelectedSideAt006714B8;

@@ -1,4 +1,6 @@
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/FighterHitResponseF164.hpp"
 #include <cstdlib>
@@ -18,7 +20,7 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
     if (flags & 0x10) return 0;
     if (field3BC > 0) return 0;
     if (field2CD != 0) {
-        if (g_CombatMode == 5) {
+        if (g_CombatMode == CombatMode::Practice) {
             switch (field52F) {
             case 0:
                 return 0;
@@ -41,14 +43,14 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
             }
         } else {
             unsigned char choice = 0;
-            if (g_ReplayModeAt0066C238 == 2) {
-                choice = g_ReplayRecords.secondaryInputs.front();
-                g_ReplayRecords.secondaryInputs.pop_front();
+            if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
+                choice = g_ReplayRecords.aiCommandsAndGuardChoices.front();
+                g_ReplayRecords.aiCommandsAndGuardChoices.pop_front();
             } else {
                 if (g_OptionsModeAt006714D0 == 1) choice = std::rand() % 10 + 9;
                 else if (g_OptionsModeAt006714D0 == 0) choice = std::rand() % 10 + 5;
                 else choice = 16;
-                if (g_ReplayModeAt0066C238 == 1) g_ReplayRecords.secondaryInputs.push_back(choice);
+                if (g_ReplayModeAt0066C238 == ReplayMode::Recording) g_ReplayRecords.aiCommandsAndGuardChoices.push_back(choice);
             }
             if (choice < 10) return 0;
             if (OPPONENT_X - x > 0.0f) inputX = -1;

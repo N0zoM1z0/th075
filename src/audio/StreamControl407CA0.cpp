@@ -53,8 +53,8 @@ void __cdecl ScheduleFade(LONG target, LONG step, BYTE stopAfter, BYTE startNext
             if (audioQueue.front().buffer) {
                 audioQueue.front().fadeLimit = target;
                 audioQueue.front().fadeStep = step;
-                audioQueue.front().field038 = stopAfter;
-                audioQueue.front().field039 = startNext;
+                audioQueue.front().stopOnFadeEnd = stopAfter;
+                audioQueue.front().startNextOnFadeEnd = startNext;
                 audioFading = 1;
             }
         } else {
@@ -65,7 +65,7 @@ void __cdecl ScheduleFade(LONG target, LONG step, BYTE stopAfter, BYTE startNext
     }
 }
 DWORD WINAPI Worker(LPVOID) {
-    DWORD position;
+    DWORD writeCursor;
     DWORD status;
     if (audioWorkerEvent == 0)
         audioWorkerEvent = CreateEventA(0, 0, 0, 0);
@@ -85,9 +85,9 @@ DWORD WINAPI Worker(LPVOID) {
                     } else {
                         if (record->loopEnabled) {
                             if (record->loopEnd > 0) {
-                                record->buffer->GetCurrentPosition(0, &position);
-                                if (position > record->loopEnd)
-                                    record->buffer->SetCurrentPosition(position - record->loopLength);
+                                record->buffer->GetCurrentPosition(0, &writeCursor);
+                                if (writeCursor > record->loopEnd)
+                                    record->buffer->SetCurrentPosition(writeCursor - record->loopLength);
                             }
                         } else {
                             record->buffer->GetStatus(&status);
@@ -111,8 +111,8 @@ DWORD WINAPI Worker(LPVOID) {
                                 audioFading = 0;
                             }
                         }
-                        if (!audioFading && record->field038) {
-                            if (record->field039) {
+                        if (!audioFading && record->stopOnFadeEnd) {
+                            if (record->startNextOnFadeEnd) {
                                 Stop();
                                 Start();
                             } else {

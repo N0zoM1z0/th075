@@ -1,3 +1,5 @@
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "battle/BattleResourceLoaders.hpp"
 #include "engine/GameSharedState.hpp"
@@ -89,8 +91,8 @@ void BattleStageLoaderF389::LoadStage() {
         else g_CurrentBattleStageAt00671424=new BackgroundBG02zF377;
         break;
     }
-    if(g_CombatMode!=3) MusicF204::PlayTrackByIndex(int(g_StageSelectionAt0067161D));
-    if(g_ReplayModeAt0066C238!=2 && g_ReplayModeAt0066C238!=4)
+    if(g_CombatMode!=CombatMode::Story) MusicF204::PlayTrackByIndex(int(g_StageSelectionAt0067161D));
+    if(g_ReplayModeAt0066C238!=ReplayMode::Playback && g_ReplayModeAt0066C238!=ReplayMode::ReplayDialogue)
         g_GameProgress.SetUnlockBit(int(g_StageSelectionAt0067161D)+200);
     DiagnosticLog::AppendString(g_EndStageLogAt00657A5C);
 }

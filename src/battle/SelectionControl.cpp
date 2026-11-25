@@ -1,3 +1,6 @@
+#include "input/InputControl.hpp"
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
 #include "battle/PlayerState.hpp"
 #include "engine/GameSharedState.hpp"
 #include "engine/GameProgress.hpp"
@@ -5,7 +8,7 @@
 #include "audio/SoundBank.hpp"
 #include "ui/CharacterSelectScene.hpp"
 #include "battle/BattleSessionState.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "battle/Fighter.hpp"
 #include <math.h>
 
@@ -30,7 +33,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
         (alternateCharacter[side]) = (chosenCharacter[side]);
         if ((input[side].horizontal) > 0) {
             ++(chosenCharacter[side]);
-            if (g_CombatMode == 3) {
+            if (g_CombatMode == CombatMode::Story) {
                 if ((chosenCharacter[side]) == 6 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
                 if ((chosenCharacter[side]) == 7 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
                 if ((chosenCharacter[side]) == 8 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) ++(chosenCharacter[side]);
@@ -47,7 +50,7 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
         } else {
             --(chosenCharacter[side]);
             if ((chosenCharacter[side]) < 0) (chosenCharacter[side]) = 10;
-            if (g_CombatMode == 3) {
+            if (g_CombatMode == CombatMode::Story) {
                 if ((chosenCharacter[side]) == 10 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
                 if ((chosenCharacter[side]) == 9 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
                 if ((chosenCharacter[side]) == 8 && (rightCharacterAvailable[chosenCharacter[side]]) == 0) --(chosenCharacter[side]);
@@ -69,9 +72,9 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
         g_PlayerRoundAt006714AC[side] = (input[side].toggle) == 1;
         (playerState[side]) = 1;
         choiceStop[side] = 0;
-        if (g_CombatMode != 4 && (playerState[1 - side]) != 0 && g_PlayerIdAt006714C8[0] == g_PlayerIdAt006714C8[1] && g_PlayerRoundAt006714AC[side] == g_PlayerRoundAt006714AC[1 - side])
+        if (g_CombatMode != CombatMode::Arcade && (playerState[1 - side]) != 0 && g_PlayerIdAt006714C8[0] == g_PlayerIdAt006714C8[1] && g_PlayerRoundAt006714AC[side] == g_PlayerRoundAt006714AC[1 - side])
             g_PlayerRoundAt006714AC[side] = 1 - g_PlayerRoundAt006714AC[side];
-        if (g_CombatMode == 3) {
+        if (g_CombatMode == CombatMode::Story) {
             g_PlayerRoundAt006714AC[0] = 0;
             g_PlayerRoundAt006714AC[1] = 0;
         }
@@ -79,11 +82,11 @@ void CharacterSelectScene::UpdateSelect(signed char side) {
     if ((input[side].special) == 1) (stageCountdown[side]) = rand() % 10 + 30;
     if ((stageCountdown[side]) > 0) --(stageCountdown[side]);
     if ((input[side].alternative) == 1) {
-        if (g_GameProgress.GetSelectedValue() > 0 && g_CombatMode == 3) {
+        if (g_GameProgress.GetSelectedValue() > 0 && g_CombatMode == CombatMode::Story) {
             g_SoundBank->Play(45);
             (optionsOpen[side]) = !(optionsOpen[side]);
         }
-        if (g_CombatMode != 3 && g_CombatMode != 5) {
+        if (g_CombatMode != CombatMode::Story && g_CombatMode != CombatMode::Practice) {
             g_SoundBank->Play(45);
             (optionsOpen[side]) = !(optionsOpen[side]);
         }
@@ -102,10 +105,10 @@ void Fighter::UpdateControls() {
         inputC = 0;
         inputD = 0;
         aiCommand = 0;
-        if (g_ReplayModeAt0066C238 == 2) {
-            if (g_ReplayRecords.byteInputs.size() > 0) { relativeBits = g_ReplayRecords.byteInputs.front(); g_ReplayRecords.byteInputs.pop_front(); }
-            if (g_ReplayRecords.secondaryInputs.size() > 0) { aiCommand = g_ReplayRecords.secondaryInputs.front(); g_ReplayRecords.secondaryInputs.pop_front(); }
-            if (g_ReplayRecords.wordInputs.size() > 0) { aiCardTimer = g_ReplayRecords.wordInputs.front(); g_ReplayRecords.wordInputs.pop_front(); }
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
+            if (g_ReplayRecords.frameInputBits.size() > 0) { relativeBits = g_ReplayRecords.frameInputBits.front(); g_ReplayRecords.frameInputBits.pop_front(); }
+            if (g_ReplayRecords.aiCommandsAndGuardChoices.size() > 0) { aiCommand = g_ReplayRecords.aiCommandsAndGuardChoices.front(); g_ReplayRecords.aiCommandsAndGuardChoices.pop_front(); }
+            if (g_ReplayRecords.randomSamplesAndAiTimers.size() > 0) { aiCardTimer = g_ReplayRecords.randomSamplesAndAiTimers.front(); g_ReplayRecords.randomSamplesAndAiTimers.pop_front(); }
             if (relativeBits & 0x1) inputX = -1;
             if (relativeBits & 0x2) inputX = 1;
             if (relativeBits & 0x4) inputY = -1;
@@ -114,9 +117,9 @@ void Fighter::UpdateControls() {
             if (relativeBits & 0x20) inputB = 1;
             if (relativeBits & 0x40) inputC = 1;
             if (relativeBits & 0x80) inputD = 1;
-        } else if (g_ReplayModeAt0066C238 == 1) {
-            if (g_CombatMode == 3) ChooseCardAction();
-            else if (g_CombatMode == 5) ApplyMode5Direction();
+        } else if (g_ReplayModeAt0066C238 == ReplayMode::Recording) {
+            if (g_CombatMode == CombatMode::Story) ChooseCardAction();
+            else if (g_CombatMode == CombatMode::Practice) ApplyMode5Direction();
             else ChooseAction();
             if (g_OptionsModeAt006714D0 < 2 && rand() > (g_OptionsModeAt006714D0 * 3 + 1) * 2048) {
                 inputA = 0;
@@ -137,41 +140,41 @@ void Fighter::UpdateControls() {
             relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputB) > 0) << 5;
             relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputC) > 0) << 6;
             relativeBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputD) > 0) << 7;
-            g_ReplayRecords.byteInputs.push_back(relativeBits);
-            g_ReplayRecords.secondaryInputs.push_back(aiCommand);
-            g_ReplayRecords.wordInputs.push_back(aiCardTimer);
+            g_ReplayRecords.frameInputBits.push_back(relativeBits);
+            g_ReplayRecords.aiCommandsAndGuardChoices.push_back(aiCommand);
+            g_ReplayRecords.randomSamplesAndAiTimers.push_back(aiCardTimer);
         }
     } else {
-        if (g_ReplayModeAt0066C238 == 2) {
-            if (g_ReplayRecords.byteInputs.size() > 0) { physicalInputBits = g_ReplayRecords.byteInputs.front(); g_ReplayRecords.byteInputs.pop_front(); }
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback) {
+            if (g_ReplayRecords.frameInputBits.size() > 0) { physicalInputBits = g_ReplayRecords.frameInputBits.front(); g_ReplayRecords.frameInputBits.pop_front(); }
             if (physicalInputBits & 0x1) {
-                if (inputBindings.held.counts[0] > 0) inputBindings.held.counts[0] = 0;
-                inputBindings.held.counts[0] = inputBindings.held.counts[0] - 1;
+                if (inputBindings.held.counts[InputControl::Horizontal] > 0) inputBindings.held.counts[InputControl::Horizontal] = 0;
+                inputBindings.held.counts[InputControl::Horizontal] = inputBindings.held.counts[InputControl::Horizontal] - 1;
             } else if (physicalInputBits & 0x2) {
-                if (inputBindings.held.counts[0] < 0) inputBindings.held.counts[0] = 0;
-                inputBindings.held.counts[0] = inputBindings.held.counts[0] + 1;
-            } else inputBindings.held.counts[0] = 0;
+                if (inputBindings.held.counts[InputControl::Horizontal] < 0) inputBindings.held.counts[InputControl::Horizontal] = 0;
+                inputBindings.held.counts[InputControl::Horizontal] = inputBindings.held.counts[InputControl::Horizontal] + 1;
+            } else inputBindings.held.counts[InputControl::Horizontal] = 0;
             if (physicalInputBits & 0x4) {
-                if (inputBindings.held.counts[1] > 0) inputBindings.held.counts[1] = 0;
-                inputBindings.held.counts[1] = inputBindings.held.counts[1] - 1;
+                if (inputBindings.held.counts[InputControl::Vertical] > 0) inputBindings.held.counts[InputControl::Vertical] = 0;
+                inputBindings.held.counts[InputControl::Vertical] = inputBindings.held.counts[InputControl::Vertical] - 1;
             } else if (physicalInputBits & 0x8) {
-                if (inputBindings.held.counts[1] < 0) inputBindings.held.counts[1] = 0;
-                inputBindings.held.counts[1] = inputBindings.held.counts[1] + 1;
-            } else inputBindings.held.counts[1] = 0;
-            if (physicalInputBits & 0x10) inputBindings.held.counts[2] = inputBindings.held.counts[2] + 1;
-            else inputBindings.held.counts[2] = 0;
-            if (physicalInputBits & 0x20) inputBindings.held.counts[3] = inputBindings.held.counts[3] + 1;
-            else inputBindings.held.counts[3] = 0;
-            if (physicalInputBits & 0x40) inputBindings.held.counts[4] = inputBindings.held.counts[4] + 1;
-            else inputBindings.held.counts[4] = 0;
-            if (physicalInputBits & 0x80) inputBindings.held.counts[5] = inputBindings.held.counts[5] + 1;
-            else inputBindings.held.counts[5] = 0;
-            inputX = inputBindings.held.counts[0];
-            inputY = inputBindings.held.counts[1];
-            inputA = inputBindings.held.counts[2];
-            inputB = inputBindings.held.counts[3];
-            inputC = inputBindings.held.counts[4];
-            inputD = inputBindings.held.counts[5];
+                if (inputBindings.held.counts[InputControl::Vertical] < 0) inputBindings.held.counts[InputControl::Vertical] = 0;
+                inputBindings.held.counts[InputControl::Vertical] = inputBindings.held.counts[InputControl::Vertical] + 1;
+            } else inputBindings.held.counts[InputControl::Vertical] = 0;
+            if (physicalInputBits & 0x10) inputBindings.held.counts[InputControl::ButtonA] = inputBindings.held.counts[InputControl::ButtonA] + 1;
+            else inputBindings.held.counts[InputControl::ButtonA] = 0;
+            if (physicalInputBits & 0x20) inputBindings.held.counts[InputControl::ButtonB] = inputBindings.held.counts[InputControl::ButtonB] + 1;
+            else inputBindings.held.counts[InputControl::ButtonB] = 0;
+            if (physicalInputBits & 0x40) inputBindings.held.counts[InputControl::ButtonC] = inputBindings.held.counts[InputControl::ButtonC] + 1;
+            else inputBindings.held.counts[InputControl::ButtonC] = 0;
+            if (physicalInputBits & 0x80) inputBindings.held.counts[InputControl::ButtonD] = inputBindings.held.counts[InputControl::ButtonD] + 1;
+            else inputBindings.held.counts[InputControl::ButtonD] = 0;
+            inputX = inputBindings.held.counts[InputControl::Horizontal];
+            inputY = inputBindings.held.counts[InputControl::Vertical];
+            inputA = inputBindings.held.counts[InputControl::ButtonA];
+            inputB = inputBindings.held.counts[InputControl::ButtonB];
+            inputC = inputBindings.held.counts[InputControl::ButtonC];
+            inputD = inputBindings.held.counts[InputControl::ButtonD];
             relativeBits = facing * inputX < 0;
             relativeBits |= static_cast<unsigned char>(facing * inputX > 0) << 1;
             relativeBits |= static_cast<unsigned char>(inputY < 0) << 2;
@@ -182,12 +185,12 @@ void Fighter::UpdateControls() {
             relativeBits |= static_cast<unsigned char>(inputD == 1) << 7;
         } else {
             inputBindings.UpdateHeldCounts();
-            inputX = inputBindings.held.counts[0];
-            inputY = inputBindings.held.counts[1];
-            inputA = inputBindings.held.counts[2];
-            inputB = inputBindings.held.counts[3];
-            inputC = inputBindings.held.counts[4];
-            inputD = inputBindings.held.counts[5];
+            inputX = inputBindings.held.counts[InputControl::Horizontal];
+            inputY = inputBindings.held.counts[InputControl::Vertical];
+            inputA = inputBindings.held.counts[InputControl::ButtonA];
+            inputB = inputBindings.held.counts[InputControl::ButtonB];
+            inputC = inputBindings.held.counts[InputControl::ButtonC];
+            inputD = inputBindings.held.counts[InputControl::ButtonD];
             relativeBits = facing * inputX < 0;
             relativeBits |= static_cast<unsigned char>(facing * inputX > 0) << 1;
             relativeBits |= static_cast<unsigned char>(inputY < 0) << 2;
@@ -204,7 +207,7 @@ void Fighter::UpdateControls() {
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputB) > 0) << 5;
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputC) > 0) << 6;
             physicalInputBits |= static_cast<unsigned char>(static_cast<unsigned int>(inputD) > 0) << 7;
-            if (g_ReplayModeAt0066C238 == 1) g_ReplayRecords.byteInputs.push_back(physicalInputBits);
+            if (g_ReplayModeAt0066C238 == ReplayMode::Recording) g_ReplayRecords.frameInputBits.push_back(physicalInputBits);
         }
         if (action >= 300 && (inputA == 1 || inputB == 1 || inputC == 1 || inputD == 1)) {
             field510 = 10;

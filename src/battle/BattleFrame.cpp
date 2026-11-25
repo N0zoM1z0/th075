@@ -1,3 +1,5 @@
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
 #include "engine/GameSharedState.hpp"
 #include "battle/BackgroundStageBaseF479.hpp"
 #include "battle/BattleScene.hpp"
@@ -12,7 +14,7 @@ unsigned short BattleScene::Update()
     Render();
     if (!field0A0 && !field0A1) {
         ++field010;
-        if (g_ReplayModeAt0066C238 == 2 || g_ReplayModeAt0066C238 == 1) ++field014;
+        if (g_ReplayModeAt0066C238 == ReplayMode::Playback || g_ReplayModeAt0066C238 == ReplayMode::Recording) ++field014;
         UpdatePlayerEffects();
         ApplySequence();
         if (field01A <= 0) {
@@ -33,7 +35,7 @@ unsigned short BattleScene::Update()
                 if (field018 != 4 && field018 != 9 && field018 != 0)
                     reinterpret_cast<BattleScene *>(this)->ResolveActiveCollisions();
                 ResolveBodySeparation();
-                if (g_CombatMode != 5) ResolveRoundEndMode();
+                if (g_CombatMode != CombatMode::Practice) ResolveRoundEndMode();
             }
             fighters[0]->AdvancePosition();
             fighters[1]->AdvancePosition();
@@ -74,7 +76,7 @@ void BattleScene::Present()
 void BattleScene::ResolveRoundEndMode()
 {
     if (field018 != 1) return;
-    if (g_CombatMode == 3) ResolveKnockout();
+    if (g_CombatMode == CombatMode::Story) ResolveKnockout();
     else EnterRoundEnd();
 }
 void BattleScene::UpdatePlayerCounters()
@@ -123,7 +125,7 @@ void Fighter::ChooseFrameAction()
     if (health <= 0) return;
     if (flashGauge > 0) {
         if (y > 0.0f) --flashGauge;
-    } else if (field2CD != 0 && g_CombatMode == 5 && field52E == 0) {
+    } else if (field2CD != 0 && g_CombatMode == CombatMode::Practice && field52E == 0) {
         if (rand() % 2) ResetPrimaryCounters(180);
         else ResetPrimaryCounters(181);
     } else if (inputX != 0 &&

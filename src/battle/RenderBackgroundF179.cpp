@@ -1,3 +1,4 @@
+#include "battle/CombatMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "engine/GameSharedState.hpp"
@@ -44,7 +45,7 @@ void CharacterSelectScene::Render()
             characterTextures->DrawQuad((alternateCharacter[0]) << 1, spriteQuad, &clipRect,
                                  FORWARD_ALPHA(portraitReturn[0], 100.0f, tint[0]));
         }
-        if (g_CombatMode != 3) {
+        if (g_CombatMode != CombatMode::Story) {
             SetRect(&clipRect, 0, 0, 512, 512);
             QUAD->BuildQuad(-96.0f - portraitFade[1], 0.0f,
                             416.0f - portraitFade[1], 512.0f);
@@ -168,11 +169,11 @@ void CharacterSelectScene::Render()
         menuTextures->DrawQuad(1, spriteQuad, &clipRect, D3DCOLOR_ARGB(255 - (transitionAlpha), 255, 255, 255));
         SetRect(&clipRect, int(animationPhase), 0, int(640.0f + animationPhase), 16);
         QUAD->BuildQuad(0.0f, 448.0f, 640.0f, 464.0f);
-        if (g_CombatMode == 3)
+        if (g_CombatMode == CombatMode::Story)
             menuTextures->DrawQuad(7, spriteQuad, &clipRect, 0xFFFFFFFF);
         else
             menuTextures->DrawQuad(4, spriteQuad, &clipRect, 0xFFFFFFFF);
-        if ((g_CombatMode == 3 && (optionsOpen[0]) == 0) || g_CombatMode == 4) {
+        if ((g_CombatMode == CombatMode::Story && (optionsOpen[0]) == 0) || g_CombatMode == CombatMode::Arcade) {
             SetRect(&clipRect, 256, 832, 512, 1024);
             QUAD->BuildQuad(0.0f, 0.0f, 256.0f, 192.0f);
             QUAD->TranslateQuad(352.0f, 128.0f, 0.0f);
@@ -186,7 +187,7 @@ void CharacterSelectScene::Render()
             QUAD->TranslateQuad(530.0f, 400.0f, 0.0f);
             menuTextures->DrawQuad(6, spriteQuad, &clipRect, 0xFFFFFFFF);
         }
-        if (g_CombatMode == 3)
+        if (g_CombatMode == CombatMode::Story)
             RenderSinglePlayerOptions();
         else
             RenderOptions();

@@ -1,6 +1,8 @@
+#include "replay/ReplayMode.hpp"
+#include "battle/CombatMode.hpp"
 #include "battle/BattleResultState.hpp"
 #include "battle/PlayerState.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "config/GameConfigStorage.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "battle/BattleResourceLoaders.hpp"
@@ -41,8 +43,8 @@ extern const char g_LoadCharactersDoneAt00657A44[] = "...OK\r\n";
 
 void BattleCharacterLoaderF398::LoadCharacters() {
  DiagnosticLog::AppendString(g_LoadCharacterLogAt00657A30);
- if (g_ReplayModeAt0066C238==2) GameStateF202::RestoreFromSnapshot();
- else if (g_CombatMode==4) {
+ if (g_ReplayModeAt0066C238==ReplayMode::Playback) GameStateF202::RestoreFromSnapshot();
+ else if (g_CombatMode==CombatMode::Arcade) {
    ++g_StageAt0067161E;
    if (g_StageAt0067161E==1) {
       struct SelectionTrackerF408 {int count; unsigned int seen;};
@@ -75,7 +77,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
    g_PlayerOtherAt006714CC[1]=static_cast<signed char>(rand()%3);
  }
  for(int side=0;side<2;++side) {
-    if ((g_CombatMode!=3 && g_CombatMode!=4) || side!=0 || !g_BattleFightersAt00671418[side]) {
+    if ((g_CombatMode!=CombatMode::Story && g_CombatMode!=CombatMode::Arcade) || side!=0 || !g_BattleFightersAt00671418[side]) {
        if(g_BattleFightersAt00671418[side]) delete g_BattleFightersAt00671418[side];
        switch(g_PlayerIdAt006714C8[side]) {
          case 0:g_BattleFightersAt00671418[side]=new ReimuFighter;break;
@@ -96,7 +98,7 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        g_BattleFightersAt00671418[side]->selectedSpellCards[1]=g_PlayerOtherAt006714CC[side];
        g_BattleFightersAt00671418[side]->LoadResources();
        g_BattleFightersAt00671418[side]->SetBindings(g_KeyBindingsAt00671440+side*0x28);
-       if (g_CombatMode==3 || (g_CombatMode==4 && side==1)) {
+       if (g_CombatMode==CombatMode::Story || (g_CombatMode==CombatMode::Arcade && side==1)) {
           g_BattleFightersAt00671418[side]->field0A4=1.0f;
           g_BattleFightersAt00671418[side]->field465=static_cast<int>(g_OptionsModeAt006714D0==0);
        } else {
@@ -110,8 +112,8 @@ void BattleCharacterLoaderF398::LoadCharacters() {
           g_BattleFightersAt00671418[side]->field465=g_PlayerDifficultyAt00671438[side];
        }
     }
-    if(side==0 && g_CombatMode==3) {
-       if(g_ReplayModeAt0066C238!=2) {
+    if(side==0 && g_CombatMode==CombatMode::Story) {
+       if(g_ReplayModeAt0066C238!=ReplayMode::Playback) {
           g_StoryResultAt00671621=0;
           if(g_StoryChoiceAt00671620!=0) {
              g_StoryResultAt00671621=1;
@@ -130,16 +132,16 @@ void BattleCharacterLoaderF398::LoadCharacters() {
     }
     g_BattleFightersAt00671418[side]->ResetRound();
  }
- if(g_CombatMode==5 || g_CombatMode==1 || g_CombatMode==3 || g_CombatMode==4) {
+ if(g_CombatMode==CombatMode::Practice || g_CombatMode==CombatMode::DuelCpu || g_CombatMode==CombatMode::Story || g_CombatMode==CombatMode::Arcade) {
    if(g_SelectedSideAt006714B8==0) {g_BattleFightersAt00671418[0]->field2CD=0;g_BattleFightersAt00671418[1]->field2CD=1;}
    else {g_BattleFightersAt00671418[0]->field2CD=1;g_BattleFightersAt00671418[1]->field2CD=0;}
- } else if (g_CombatMode==6) {
+ } else if (g_CombatMode==CombatMode::Attract) {
    g_BattleFightersAt00671418[0]->field2CD=1;g_BattleFightersAt00671418[1]->field2CD=1;
  } else {g_BattleFightersAt00671418[0]->field2CD=0;g_BattleFightersAt00671418[1]->field2CD=0;}
  g_BattleFightersAt00671418[0]->BindOpponent(g_BattleFightersAt00671418[1]);
  g_BattleFightersAt00671418[1]->BindOpponent(g_BattleFightersAt00671418[0]);
  CameraInputs412660::Initialize(&g_BattleFightersAt00671418[0]->x,&g_BattleFightersAt00671418[0]->y,&g_BattleFightersAt00671418[1]->x,&g_BattleFightersAt00671418[1]->y);
- if(g_CombatMode==3) {
+ if(g_CombatMode==CombatMode::Story) {
    g_StateFadeAlpha=0;
    g_BattleFightersAt00671418[0]->ConfigureStage();
    g_BattleFightersAt00671418[0]->LoadStageResource();
@@ -153,18 +155,18 @@ void BattleCharacterLoaderF398::LoadCharacters() {
        g_BattleFightersAt00671418[0]->score=0;
        g_MaxCombatScore=g_GameProgress.GetSelectedRecordAddress()->scores[0].score;
        g_StateScoreThreshold=g_GameProgress.GetSelectedRecordAddress()->scores[9].score;
-       if(g_ReplayModeAt0066C238!=2) g_GameProgress.IncrementSelectedRecordCount();
+       if(g_ReplayModeAt0066C238!=ReplayMode::Playback) g_GameProgress.IncrementSelectedRecordCount();
        g_BattleFightersAt00671418[0]->recoverableHealth=10000;
        g_BattleFightersAt00671418[0]->health=10000;
    }
    g_MaxComboCount=0;g_ResultScoreTotalAt0067160C=0;g_CumulativeScoreAt006714BC=0;
    for(int k=1;k<=g_BattleFightersAt00671418[1]->field39D;++k)
      g_CumulativeScoreAt006714BC+=g_BattleFightersAt00671418[1]->field400[k];
-   if(g_ReplayModeAt0066C238==2) {
+   if(g_ReplayModeAt0066C238==ReplayMode::Playback) {
      g_MaxCombatScore=0;g_StateScoreThreshold=0;
-     g_BattleFightersAt00671418[0]->recoverableHealth=g_ReplayRecords.header.field14C;
-     g_BattleFightersAt00671418[0]->health=g_ReplayRecords.header.field14C;
-     g_BattleFightersAt00671418[0]->score=g_ReplayRecords.header.field150;
+     g_BattleFightersAt00671418[0]->recoverableHealth=g_ReplayRecords.recordHeader.startingHealth;
+     g_BattleFightersAt00671418[0]->health=g_ReplayRecords.recordHeader.startingHealth;
+     g_BattleFightersAt00671418[0]->score=g_ReplayRecords.recordHeader.startingScore;
    } else {g_GameProgress.RaiseSelectedValue(g_StageAt0067161E);g_GameProgress.SaveScoreFile();}
  } else {
    g_BattleFightersAt00671418[0]->score=0;g_BattleFightersAt00671418[1]->score=0;
@@ -173,6 +175,6 @@ void BattleCharacterLoaderF398::LoadCharacters() {
    g_BattleFightersAt00671418[1]->recoverableHealth=10000;g_BattleFightersAt00671418[1]->health=10000;
  }
  g_CombatEffects.ReleaseEntries();
- if(g_ReplayModeAt0066C238==1) GameStateF201::SaveSnapshot();
+ if(g_ReplayModeAt0066C238==ReplayMode::Recording) GameStateF201::SaveSnapshot();
  DiagnosticLog::AppendString(g_LoadCharactersDoneAt00657A44);
 }

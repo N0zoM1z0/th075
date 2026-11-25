@@ -1,5 +1,6 @@
+#include "replay/ReplayMode.hpp"
 #include "ui/NameEntryScenes.hpp"
-#include "replay/ReplaySegmentedQueueF219.hpp"
+#include "replay/ReplayRecords.hpp"
 #include "battle/BattleSessionState.hpp"
 #include "graphics/Graphics.hpp"
 #include "audio/SoundBank.hpp"
@@ -16,7 +17,7 @@ unsigned short SharedNameEntryScene::Update()
                 else
                     g_ReplayRecords.fileHeader.playerName[field012]=100;
             } else if (SELECTED==0x5c) {
-                if (g_ReplayModeAt0066C238==1)
+                if (g_ReplayModeAt0066C238==ReplayMode::Recording)
                     g_ReplayRecords.FinalizeFile();
                 return 0x2202;
             } else {

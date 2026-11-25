@@ -1,5 +1,6 @@
 #ifndef TH075_AUDIO_STREAM_HPP
 #define TH075_AUDIO_STREAM_HPP
+#include <stddef.h>
 #include <windows.h>
 #include <deque>
 
@@ -24,20 +25,27 @@ public:
     DWORD dataBegin;                    // +0x0C
     DWORD dataEnd;                      // +0x10
     DWORD nextFilePosition;             // +0x14
-    DWORD activeHalf;                   // +0x18 which half of the buffer plays
-    DWORD halfBoundary;                 // +0x1C
+    DWORD lastRefillOffset;             // +0x18 start of the previous refill
+    DWORD nextRefillOffset;             // +0x1C byte offset for the next write
     DWORD loopEnd;                      // +0x20
     DWORD loopLength;                   // +0x24
     DWORD loopEnabled;                  // +0x28
     LONG volume;                        // +0x2C current volume (DirectSound hundredths of dB)
     LONG fadeLimit;                     // +0x30 volume the fade stops at
     LONG fadeStep;                      // +0x34 per-tick change, negative to fade out
-    BYTE field038;                      // +0x38
-    BYTE field039;                      // +0x39
+    BYTE stopOnFadeEnd;                 // +0x38
+    BYTE startNextOnFadeEnd;            // +0x39
     BYTE archiveMode;                   // +0x3A read from an archive rather than a file
     BYTE unknown03B;
     HANDLE file;                        // +0x3C
 };
+
+typedef char AudioStreamLayout[(
+    sizeof(AudioStream) == 0x40 &&
+    offsetof(AudioStream, lastRefillOffset) == 0x18 &&
+    offsetof(AudioStream, nextRefillOffset) == 0x1C &&
+    offsetof(AudioStream, stopOnFadeEnd) == 0x38 &&
+    offsetof(AudioStream, startNextOnFadeEnd) == 0x39) ? 1 : -1];
 
 typedef std::deque<AudioStream> AudioQueue;
 typedef char AudioQueueSize[(sizeof(AudioQueue) == 20) ? 1 : -1];

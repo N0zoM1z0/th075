@@ -431,6 +431,12 @@ startup and exit use the separate construction and destruction entries
 at `0x0040AC80` and `0x0040AD60`. Both wrappers and the queue operations
 were compared with the actual record type.
 
+The refill uses the DirectSound write cursor and the previous and next
+refill offsets at +0x18 and +0x1C. `ScheduleFade` stores the two flags
+at +0x38 and +0x39. At fade completion the worker can stop the current
+track and optionally start the next queued one.
+[Stream state](../src/audio/AudioStream.hpp) · [DirectSound cursor API](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ee418062(v=vs.85))
+
 The initializer at `0x00656D60` constructs two 72-byte input mappings
 at `0x00671638`. Each holds a 40-byte key configuration at `+0x04` and
 seven signed held counts at `+0x2C`. Scene callers read the shared array
@@ -852,6 +858,29 @@ the power and sets `spellDeclarationExpired` (+0x39C) until the next reset.
 icon per unit, and the `22C` action consumes one.
 
 [Fighter layout](../src/battle/Fighter.hpp) · [Timers](../src/battle/CombatTimers.cpp) · [Patchouli's spell dispatch](../src/characters/CharacterActionDispatch502450.cpp)
+
+### Battle modes, controls, and replay data
+
+The combat mode byte selects CPU duel, local duel, Story, Arcade,
+Practice, or the title demo. The replay state byte distinguishes live
+recording and playback from their Story dialogue states. The replay
+file has its own mode encoding. `SaveSnapshot` and `RestoreFromSnapshot`
+translate between these representations.
+
+Replay snapshots hold the two selected spell cards separately from the
+palette index and record each player's auto-guard and damage settings.
+Story snapshots carry the starting health, score and remaining lives.
+The file starts with a 60-byte header. The record reader and writer
+transfer 14 bytes of metadata per record before the four streams.
+Those streams hold input masks, interleaved random samples and AI timers,
+AI commands and guard choices, and frame-indexed battle commands. Actor
+random sampling and guard selection consume their values from the same
+ordered streams as the AI control update.
+
+The seven input counters hold a signed duration on each axis and held
+durations for A, B, C, D and pause. Scene-specific actions such as menu
+confirmation read the same button slots as fighter controls.
+[Replay layout](../src/replay/ReplayRecords.hpp) · [Input slots](../src/input/InputControl.hpp) · [Combat modes](../src/battle/CombatMode.hpp)
 
 ## Game progress (save data)
 
